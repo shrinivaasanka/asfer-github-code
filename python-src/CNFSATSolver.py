@@ -24,10 +24,18 @@ from collections import defaultdict
 #from scipy.linalg import solve
 from scipy.linalg import lstsq
 from numpy.linalg import solve
+from numpy.linalg import inv 
 #from numpy.linalg import lstsq
 from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
+from scipy.sparse.linalg import bicgstab 
+from scipy.sparse.linalg import gmres 
+from scipy.sparse.linalg import lgmres 
+from scipy.sparse.linalg import minres 
+from scipy.sparse.linalg import bicg 
+from scipy.sparse.linalg import cg 
+from scipy.sparse.linalg import cgs 
 from scipy.sparse import csc_matrix
 from scipy.linalg import pinv
 from scipy.linalg import pinv2
@@ -40,6 +48,7 @@ variables=defaultdict(int)
 negations=defaultdict(int)
 
 nuvariables=defaultdict(int)
+rounding_threshold="Static"
 
 class SATSolver(object):
 	def __init__(self,algorithm):
@@ -182,31 +191,51 @@ class SATSolver(object):
                 #print "b.shape:",b.shape
 
 		x=None
-		if self.Algorithm=="solve()":
-                	x = solve(a,b)
-		if self.Algorithm=="lstsq()":
-                	x = lstsq(a,b,lapack_driver='gelsy')
-		if self.Algorithm=="lsqr()":
-                	x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-		if self.Algorithm=="lsmr()":
-                	#x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
-                	x = lsmr(a,b,damp=0.00001,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
-		if self.Algorithm=="spsolve()":
-			x = dsolve.spsolve(csc_matrix(a),b)
-		if self.Algorithm=="pinv2()":
-			x=[]
-			#pseudoinverse_a=pinv(a)
-			pseudoinverse_a=pinv2(a,check_finite=False)
-			x.append(matmul(pseudoinverse_a,b))
-		if self.Algorithm=="lsq_linear()":
-			x = lsq_linear(a,b,lsq_solver='exact')
+		if number_of_variables == number_of_clauses:
+			#x = np.dot(np.linalg.inv(a),b)
+			#x = gmres(a,b) 
+			#x = lgmres(a,b) 
+			#x = minres(a,b) 
+			#x = bicg(a,b) 
+			#x = cg(a,b) 
+			#x = cgs(a,b) 
+			#x = bicgstab(a,b)
+                	#x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+                	x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True)
+		else:
+			if self.Algorithm=="solve()":
+                		x = solve(a,b)
+			if self.Algorithm=="lstsq()":
+                		x = lstsq(a,b,lapack_driver='gelsy')
+			if self.Algorithm=="lsqr()":
+                		x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+			if self.Algorithm=="lsmr()":
+                		#x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
+                		x = lsmr(a,b,damp=0.00001,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+			if self.Algorithm=="spsolve()":
+				x = dsolve.spsolve(csc_matrix(a),b)
+			if self.Algorithm=="pinv2()":
+				x=[]
+				#pseudoinverse_a=pinv(a)
+				pseudoinverse_a=pinv2(a,check_finite=False)
+				x.append(matmul(pseudoinverse_a,b))
+			if self.Algorithm=="lsq_linear()":
+				x = lsq_linear(a,b,lsq_solver='exact')
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
 		cnt=0
 		binary_parity=0
 		real_parity=0.0
+		if rounding_threshold == "Randomized":
+			randomized_rounding_threshold=float(random.randint(1,100000))/100000.0
+		else:
+			min_assignment=min(x[0])
+			max_assignment=max(x[0])
+			randomized_rounding_threshold=(min_assignment + max_assignment)/2
+		print "randomized_rounding_threshold = ", randomized_rounding_threshold
+		print "approximate assignment :",x[0]
 		for e in x[0]:
-			if e >= 0.5:
+			if e > randomized_rounding_threshold:
 				satass.append(1)
 				binary_parity += 1
 			else:
