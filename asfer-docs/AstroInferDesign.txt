@@ -18378,3 +18378,32 @@ References:
 1227.8 Integer Square Root - new isqrt() function in Python 3.8 - https://docs.python.org/3/library/math.html#math.isqrt
 1227.9 Integer Square Root - https://en.wikipedia.org/wiki/Integer_square_root
 1227.10 Square roots by subtraction - Jarvis algorithm - http://www.afjarvis.staff.shef.ac.uk/maths/jarvisspec02.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1228. (THEORY and FEATURE) Kernel lift random walk in tree of TOP Category Shell Turing Machines and UNIX Shell Game Example - 28 March 2022 - related to 624,651,728 and all sections on Shell Turing Machines, MRDP Theorem, Category Theory, Diophantine Equations, Turing Degrees, Embedding Formal Languages in Vector Space, Kernel lifting - Set Partition (1D) to Tile Cover (2D) Reduction by Computational Geometric Factorization, Exact Money Changing Problem(MCP) Solution, Quadratic Programs, Pell Equation, Shell Turing Machines(TOP-Category of Topological Spaces), Unix Shell Implementations of Category of Topological Spaces, Turing Degrees, Turing Jump, Hilbert Space Turing Machines,Chinese Remaindering
+-------------------------------------------------------------------------------------------------------------------------------------------
+1228.1 Nested Shells of Category of Topological Spaces (TOP) could be schematically visualized as a tree of shell topological spaces (binary tree or k-dimensional trees depending on how many subshells are nested within a supershell).
+1228.2 An earlier formulation of nested topological spaces in 624 was based on Partial Order Semi Lattice dimensional hierarchy of Shell Turing Machines having Least Upper Bound dimensional Shell defined on Topological spaces (e.g Hilbert Space Turing Machines,Reproducing Kernel Hilbert Space of computable functions). As a partial order does not guarantee a shell space to be a unique subspace of a superspace, a simplified tree nesting alternative of shell TOP spaces and kernel lift random walk in its interior is herein discussed. 
+1228.3 Turing Degree is a measure of unsolvability of a set or an equivalence class of Turing Machines solving sets of similar hardness. Turing Jump of a Turing Machine X is the set of Turing Machines X' having oracle access to X or X' is the set of problems harder than X solvable by oracle access to X.
+1228.4 Turing Degree of Shell Turing Machines increases from leaves to root in Tree model of Nested Shell Turing Machines - computational power of shell Turing Machines and hardness of set they solve evolve gradually from leaves to root as a result of higher visibility of logical truths available in TOP space vertices bottom-to-top. Random Kernel lifting (upwards and downwards) of logical truths within lower dimensional shells to-and-from higher dimensional shells (and viceversa) close to root is a graph random walk traversal of Tree of TOP Shell spaces. Root shell is omniscient and there is nothing to lift upwards beyond root. 
+1228.5 Every interior vertex of Shell TOP space tree defines a space of logical statements embedded on vectorspace of some dimension and Turing Jump is indirectly defined by considering the lower dimensional TOP space children C(X) of an interior shell TOP space vertex X as oracles (or) X has oracle access to C(X) by Conduit Morphism Turing Machines which internally export-import logical statements between spaces of X and C(X).
+1228.6 Arbitrarily traversing the tree of Shell TOP categories from leaves to root by kernel lift (upwards and downwards) of logical statements between pair of subshell and supershell vertices could be a random walk on the tree of TOP spaces. Estimating expected time to reach root shell from a leaf shell by kernel lifting is non-trivial and such a random walk could be exponential - O(k^n) for n-level nesting and k-dimensional tree. 
+1228.7 Earlier Random walk traversal within a TOP Category of Topological spaces could be exemplified by a hypothetical UNIX Shell Tree Game below:
+	1228.7.1 Intialize Root Shell
+	1228.7.2 while (number of iterations < maximum)
+		 {
+			(*) Randomly create k subshells in parallel within each existing shell
+			(*) Within each shell define some environment variables visible only within that shell (simulates logical truths known only within the shell space)
+		 }
+	1228.7.3 while (number of iterations < maximum)
+		 { 
+			(*) Turing Jump: Randomly EXPORT-IMPORT environment variables (kernel lifting random walk of logical statements 
+			across spaces) to-and-from pairs of supershells and subshells (Most unix implementations support only EXPORT of 
+			variables) within the TOP Shell space tree created in 1228.7.2. Direction of kernel lift (up or down) at each 
+			shell space vertex is decided by pseudorandom coin toss (EXPORT or IMPORT) - this process draws a random walk
+			kernel lift streak from leaf shells to root shell.
+		 }
+1228.8 Previous Shell Game terminates when all kernel lift (EXPORT-IMPORT) random walks reach root UNIX shell from leaf UNIX shells and truth values of all logical statements (environment variables) are visible within entire tree (In 1228.7.2 visibility of logical truths was restricted to individual shell TOP space vertices). It is obvious that there are random walks which may not end in root shell (because of perpetually oscillating kernel up-down lifts with in Shell TOP tree) causing the Turing machine computing the Shell Game to loop forever - Shell Game is undecidable and recursively enumerable.
+1228.9 Kernel lifting in NeuronRain Theory Drafts are mostly devoted to 1-dimensional to 2-dimensional lift by Lagrange Four Square Theorem and 1-dimensional to k-dimensional lift by Chinese Remaindering Theorem (by a ring isomorphism between a ring of integer X mod N=n1*n2*...nk and direct product space of coprime integer rings X mod n1,X mod n2,...,X mod nk):
+	Z/NZ <=> Z/n1Z * Z/n2Z * .... * Z/nkZ
+1228.10 By MRDP Theorem Every Recursively Enumerable Set is Diophantine and earlier shell Turing Machine tree of TOP spaces defined by Turing Jump could be mapped to a corresponding tree of diophantines for the respective shell Turing Machine vertices.
