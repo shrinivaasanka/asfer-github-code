@@ -78,7 +78,7 @@ if RecommenderEngineOption=="Classified":
 	classification=RecursiveGlossOverlap_Classify(inputfcontents)
 	print "classification :"
 	print classification
-	creamylayer=int(len(classification[0])*0.30)
+	creamylayer=int(len(classification[0])*1.0)
 	toppercentileclasses=classification[0][:creamylayer]
 	print "top percentile classes:"
 	print toppercentileclasses

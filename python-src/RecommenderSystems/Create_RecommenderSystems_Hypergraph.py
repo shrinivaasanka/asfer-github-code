@@ -11,25 +11,20 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
+from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 from collections import defaultdict
 import ast
 import json
 import operator
 import SentimentAnalyzer
+
+Merit_Criterion="GraphTensorNeuronNetworkIntrinsicMerit"
 
 def sort_evocative_sentiments_per_class(edges, edge_senti_dict):
 	edge_senti_subset_dict={}
@@ -59,7 +54,13 @@ if __name__=="__main__":
 	lines=ast.literal_eval(contents)
 	while edge_number < len(lines):
 		print "line=",lines[edge_number]
-		edge_sentiment_dict[edge_number]=nett_sentiment(SentimentAnalyzer.SentimentAnalysis_SentiWordNet(lines[edge_number]))
+		if Merit_Criterion == "Sentiment": 
+			edge_sentiment_dict[edge_number]=nett_sentiment(SentimentAnalyzer.SentimentAnalysis_SentiWordNet(lines[edge_number]))
+		if Merit_Criterion == "GraphTensorNeuronNetworkIntrinsicMerit":
+                        recursivelambdafunctiongrowth=RecursiveLambdaFunctionGrowth()
+                        intrinsic_merit_dict=recursivelambdafunctiongrowth.grow_lambda_function3(lines[edge_number])
+                        edge_sentiment_dict[edge_number]=intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"]
+
 		classification=RecursiveGlossOverlap_Classify(lines[edge_number])
 		for k in range(0,len(classification[0])-1):
 			#at present edge numbers are just appended by sorting based on sentiment scoring per hyperedge. 
