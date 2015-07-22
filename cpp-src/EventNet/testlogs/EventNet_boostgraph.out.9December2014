@@ -1,0 +1,283 @@
+edge:
+ 0
+ 1
+edge_array[e].first=0; edge_array[e].second=1
+edge:
+ 0
+ 2
+edge_array[e].first=0; edge_array[e].second=2
+edge:
+ 2
+ 1
+edge_array[e].first=2; edge_array[e].second=1
+edge:
+ 1
+ 3
+edge_array[e].first=1; edge_array[e].second=3
+edge:
+ 2
+ 3
+edge_array[e].first=2; edge_array[e].second=3
+edge:
+ 2
+ 4
+edge_array[e].first=2; edge_array[e].second=4
+edge:
+ 4
+ 9
+edge_array[e].first=4; edge_array[e].second=9
+edge:
+ 5
+ 7
+edge_array[e].first=5; edge_array[e].second=7
+edge:
+ 4
+ 6
+edge_array[e].first=4; edge_array[e].second=6
+edge:
+ 6
+ 9
+edge_array[e].first=6; edge_array[e].second=9
+edge:
+ 6
+ 7
+edge_array[e].first=6; edge_array[e].second=7
+edge:
+ 7
+ 8
+edge_array[e].first=7; edge_array[e].second=8
+edge:
+ 8
+ 9
+edge_array[e].first=8; edge_array[e].second=9
+edge:
+ 9
+ 1
+edge_array[e].first=9; edge_array[e].second=1
+edge:
+ 1
+ 11
+edge_array[e].first=1; edge_array[e].second=11
+edge:
+ 11
+ 15
+edge_array[e].first=11; edge_array[e].second=15
+edge:
+ 15
+ 17
+edge_array[e].first=15; edge_array[e].second=17
+edge:
+ 17
+ 16
+edge_array[e].first=17; edge_array[e].second=16
+edge:
+ 19
+ 5
+edge_array[e].first=19; edge_array[e].second=5
+edge:
+vertex: 
+ 0 
+  p11, p12, p13 
+  (p11,p12)#(p12,p13)
+name[0] :0 
+vertex: 
+ 1 
+  p21, p22 
+  (p21,p22)
+name[1] :1 
+vertex: 
+ 2 
+  p31, p32 
+  (p31,p32)
+name[2] :2 
+vertex: 
+ 3 
+  p41, p42, p43 
+  (p41,p42)#(p41,p43)
+name[3] :3 
+vertex: 
+ 4 
+  p51, p52 
+  (p51,p52)
+name[4] :4 
+vertex: 
+ 5 
+  p61, p62, p63 
+  (p61,p62)#(p61,p63)
+name[5] :5 
+vertex: 
+ 6 
+  p71, p72 
+  (p71, p72)
+name[6] :6 
+vertex: 
+ 7 
+  p81, p82 
+  (p81, p82)
+name[7] :7 
+vertex: 
+ 8 
+  p91, p92, p93 
+  (p91,p92)#(p91,p93)
+name[8] :8 
+vertex: 
+ 9 
+  p101, p102 
+  (p101,p102)
+name[9] :9 
+vertex: 
+ 10 
+  p111,p112 
+  (p111,p112)
+name[10] :10 
+vertex: 
+ 11 
+  p121,p122 
+  (p121,p122)
+name[11] :11 
+vertex: 
+ 12 
+  p131,p132 
+  (p131,p132)
+name[12] :12 
+vertex: 
+ 13 
+  p141,p142 
+  (p141,p142)
+name[13] :13 
+vertex: 
+ 14 
+  p151,p152,p153 
+  (p152,p151)#p(151,p153)
+name[14] :14 
+vertex: 
+ 15 
+  p161,p162 
+  (p161,p162)
+name[15] :15 
+vertex: 
+ 16 
+  p171,p172 
+  (p172,p171)
+name[16] :16 
+vertex: 
+ 17 
+  p181,p182,p183 
+  (p183,p181)
+name[17] :17 
+vertex: 
+ 18 
+  p191,p192 
+  (p192,p191)
+name[18] :18 
+vertex: 
+ 19 
+  p201,p202,p203 
+  (p203,p201)#(p201,p202)
+name[19] :19 
+vertex: 
+u=0,v=1
+0  -> 1 
+u=0,v=2
+0  -> 2 
+u=1,v=3
+1  -> 3 
+u=1,v=11
+1  -> 11 
+u=2,v=1
+2  -> 1 
+u=2,v=3
+2  -> 3 
+u=2,v=4
+2  -> 4 
+u=4,v=9
+4  -> 9 
+u=4,v=6
+4  -> 6 
+u=5,v=7
+5  -> 7 
+u=6,v=9
+6  -> 9 
+u=6,v=7
+6  -> 7 
+u=7,v=8
+7  -> 8 
+u=8,v=9
+8  -> 9 
+u=9,v=1
+9  -> 1 
+u=11,v=15
+11  -> 15 
+u=15,v=17
+15  -> 17 
+u=17,v=16
+17  -> 16 
+u=19,v=5
+19  -> 5 
+EventNet has cycle?: 0
+topological ordering(back_inserter):
+====================================
+0 - 19
+1 - 18
+2 - 14
+3 - 13
+4 - 12
+5 - 10
+6 - 5
+7 - 0
+8 - 2
+9 - 4
+10 - 6
+11 - 7
+12 - 8
+13 - 9
+14 - 1
+15 - 11
+16 - 15
+17 - 17
+18 - 16
+19 - 3
+topological ordering(front_inserter):
+====================================
+0 - 19
+1 - 18
+2 - 14
+3 - 13
+4 - 12
+5 - 10
+6 - 5
+7 - 0
+8 - 2
+9 - 4
+10 - 6
+11 - 7
+12 - 8
+13 - 9
+14 - 1
+15 - 11
+16 - 15
+17 - 17
+18 - 16
+19 - 3
+vertices
+===========
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19

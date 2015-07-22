@@ -1,0 +1,143 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+15/03/10 15:51:19 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.0.1; using 14.96.107.200 instead (on interface ppp0)
+15/03/10 15:51:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+15/03/10 15:51:20 INFO SecurityManager: Changing view acls to: root
+15/03/10 15:51:20 INFO SecurityManager: Changing modify acls to: root
+15/03/10 15:51:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/03/10 15:51:21 INFO Slf4jLogger: Slf4jLogger started
+15/03/10 15:51:21 INFO Remoting: Starting remoting
+15/03/10 15:51:21 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@14.96.107.200:51616]
+15/03/10 15:51:21 INFO Utils: Successfully started service 'sparkDriver' on port 51616.
+15/03/10 15:51:21 INFO SparkEnv: Registering MapOutputTracker
+15/03/10 15:51:21 INFO SparkEnv: Registering BlockManagerMaster
+15/03/10 15:51:21 INFO DiskBlockManager: Created local directory at /tmp/spark-0220a10f-f811-49e5-95ff-996136b7831c/spark-615c1f55-14df-462f-b95c-b590e2427043
+15/03/10 15:51:21 INFO MemoryStore: MemoryStore started with capacity 265.1 MB
+15/03/10 15:51:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+15/03/10 15:51:22 INFO HttpFileServer: HTTP File server directory is /tmp/spark-c34b0206-af73-48ad-ad61-08aed4a52035/spark-9857dce2-e0a1-4cec-902d-f00433c02b74
+15/03/10 15:51:22 INFO HttpServer: Starting HTTP Server
+15/03/10 15:51:22 INFO Utils: Successfully started service 'HTTP file server' on port 37909.
+15/03/10 15:51:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/03/10 15:51:22 INFO SparkUI: Started SparkUI at http://14.96.107.200:4040
+15/03/10 15:51:23 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py to /tmp/spark-f9e9d6cf-a962-4bec-9100-2914f57802c9/spark-c194eb0d-1cc6-4f1d-acb3-58642cb24baa/SparkKernelLogMapReduceParser.py
+15/03/10 15:51:23 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py at http://14.96.107.200:37909/files/SparkKernelLogMapReduceParser.py with timestamp 1425982883095
+15/03/10 15:51:23 INFO Executor: Starting executor ID <driver> on host localhost
+15/03/10 15:51:23 INFO AkkaUtils: Connecting to HeartbeatReceiver: akka.tcp://sparkDriver@14.96.107.200:51616/user/HeartbeatReceiver
+15/03/10 15:51:23 INFO NettyBlockTransferService: Server created on 53646
+15/03/10 15:51:23 INFO BlockManagerMaster: Trying to register BlockManager
+15/03/10 15:51:23 INFO BlockManagerMasterActor: Registering block manager localhost:53646 with 265.1 MB RAM, BlockManagerId(<driver>, localhost, 53646)
+15/03/10 15:51:23 INFO BlockManagerMaster: Registered BlockManager
+15/03/10 15:51:24 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+15/03/10 15:51:24 INFO MemoryStore: ensureFreeSpace(175289) called with curMem=0, maxMem=278019440
+15/03/10 15:51:24 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 171.2 KB, free 265.0 MB)
+15/03/10 15:51:24 INFO MemoryStore: ensureFreeSpace(25432) called with curMem=175289, maxMem=278019440
+15/03/10 15:51:24 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 24.8 KB, free 264.9 MB)
+15/03/10 15:51:24 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:53646 (size: 24.8 KB, free: 265.1 MB)
+15/03/10 15:51:24 INFO BlockManagerMaster: Updated info of block broadcast_0_piece0
+15/03/10 15:51:24 INFO SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:-2
+15/03/10 15:51:24 INFO FileInputFormat: Total input paths to process : 1
+15/03/10 15:51:24 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43
+15/03/10 15:51:24 INFO DAGScheduler: Registering RDD 4 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:42)
+15/03/10 15:51:24 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43) with 2 output partitions (allowLocal=false)
+15/03/10 15:51:24 INFO DAGScheduler: Final stage: Stage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43)
+15/03/10 15:51:24 INFO DAGScheduler: Parents of final stage: List(Stage 0)
+15/03/10 15:51:24 INFO DAGScheduler: Missing parents: List(Stage 0)
+15/03/10 15:51:24 INFO DAGScheduler: Submitting Stage 0 (PairwiseRDD[4] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:42), which has no missing parents
+15/03/10 15:51:24 INFO MemoryStore: ensureFreeSpace(8456) called with curMem=200721, maxMem=278019440
+15/03/10 15:51:24 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 8.3 KB, free 264.9 MB)
+15/03/10 15:51:24 INFO MemoryStore: ensureFreeSpace(6503) called with curMem=209177, maxMem=278019440
+15/03/10 15:51:24 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 6.4 KB, free 264.9 MB)
+15/03/10 15:51:24 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:53646 (size: 6.4 KB, free: 265.1 MB)
+15/03/10 15:51:24 INFO BlockManagerMaster: Updated info of block broadcast_1_piece0
+15/03/10 15:51:24 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:838
+15/03/10 15:51:24 INFO DAGScheduler: Submitting 2 missing tasks from Stage 0 (PairwiseRDD[4] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:42)
+15/03/10 15:51:24 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/03/10 15:51:24 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 1350 bytes)
+15/03/10 15:51:24 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 1350 bytes)
+15/03/10 15:51:24 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/03/10 15:51:24 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/03/10 15:51:24 INFO Executor: Fetching http://14.96.107.200:37909/files/SparkKernelLogMapReduceParser.py with timestamp 1425982883095
+15/03/10 15:51:24 INFO Utils: Fetching http://14.96.107.200:37909/files/SparkKernelLogMapReduceParser.py to /tmp/spark-f9e9d6cf-a962-4bec-9100-2914f57802c9/spark-c194eb0d-1cc6-4f1d-acb3-58642cb24baa/fetchFileTemp3294957063613534767.tmp
+15/03/10 15:51:25 INFO Utils: /tmp/spark-f9e9d6cf-a962-4bec-9100-2914f57802c9/spark-c194eb0d-1cc6-4f1d-acb3-58642cb24baa/fetchFileTemp3294957063613534767.tmp has been previously copied to /tmp/spark-f9e9d6cf-a962-4bec-9100-2914f57802c9/spark-c194eb0d-1cc6-4f1d-acb3-58642cb24baa/SparkKernelLogMapReduceParser.py
+15/03/10 15:51:25 INFO HadoopRDD: Input split: file:/var/log/kern.log:193925+193925
+15/03/10 15:51:25 INFO HadoopRDD: Input split: file:/var/log/kern.log:0+193925
+15/03/10 15:51:25 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+15/03/10 15:51:25 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+15/03/10 15:51:25 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+15/03/10 15:51:25 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+15/03/10 15:51:25 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 288, boot = 180, init = 72, finish = 36
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 301, boot = 180, init = 83, finish = 38
+15/03/10 15:51:25 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1958 bytes result sent to driver
+15/03/10 15:51:25 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1958 bytes result sent to driver
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 726 ms on localhost (1/2)
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 752 ms on localhost (2/2)
+15/03/10 15:51:25 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/03/10 15:51:25 INFO DAGScheduler: Stage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:42) finished in 0.781 s
+15/03/10 15:51:25 INFO DAGScheduler: looking for newly runnable stages
+15/03/10 15:51:25 INFO DAGScheduler: running: Set()
+15/03/10 15:51:25 INFO DAGScheduler: waiting: Set(Stage 1)
+15/03/10 15:51:25 INFO DAGScheduler: failed: Set()
+15/03/10 15:51:25 INFO DAGScheduler: Missing parents for Stage 1: List()
+15/03/10 15:51:25 INFO DAGScheduler: Submitting Stage 1 (PythonRDD[7] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43), which is now runnable
+15/03/10 15:51:25 INFO MemoryStore: ensureFreeSpace(4856) called with curMem=215680, maxMem=278019440
+15/03/10 15:51:25 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 4.7 KB, free 264.9 MB)
+15/03/10 15:51:25 INFO MemoryStore: ensureFreeSpace(3582) called with curMem=220536, maxMem=278019440
+15/03/10 15:51:25 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.5 KB, free 264.9 MB)
+15/03/10 15:51:25 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:53646 (size: 3.5 KB, free: 265.1 MB)
+15/03/10 15:51:25 INFO BlockManagerMaster: Updated info of block broadcast_2_piece0
+15/03/10 15:51:25 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:838
+15/03/10 15:51:25 INFO DAGScheduler: Submitting 2 missing tasks from Stage 1 (PythonRDD[7] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43)
+15/03/10 15:51:25 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/03/10 15:51:25 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 1131 bytes)
+15/03/10 15:51:25 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 1131 bytes)
+15/03/10 15:51:25 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/03/10 15:51:25 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 40, boot = -196, init = 236, finish = 0
+15/03/10 15:51:25 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 5425 bytes result sent to driver
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 40, boot = -199, init = 238, finish = 1
+15/03/10 15:51:25 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 4993 bytes result sent to driver
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 61 ms on localhost (1/2)
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 65 ms on localhost (2/2)
+15/03/10 15:51:25 INFO DAGScheduler: Stage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43) finished in 0.066 s
+15/03/10 15:51:25 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/03/10 15:51:25 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:43, took 1.039691 s
+15/03/10 15:51:25 INFO SparkContext: Starting job: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44
+15/03/10 15:51:25 INFO MapOutputTrackerMaster: Size of output statuses for shuffle 0 is 157 bytes
+15/03/10 15:51:25 INFO DAGScheduler: Got job 1 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44) with 2 output partitions (allowLocal=false)
+15/03/10 15:51:25 INFO DAGScheduler: Final stage: Stage 3(reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44)
+15/03/10 15:51:25 INFO DAGScheduler: Parents of final stage: List(Stage 2)
+15/03/10 15:51:25 INFO DAGScheduler: Missing parents: List()
+15/03/10 15:51:25 INFO DAGScheduler: Submitting Stage 3 (PythonRDD[8] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44), which has no missing parents
+15/03/10 15:51:25 INFO MemoryStore: ensureFreeSpace(6104) called with curMem=224118, maxMem=278019440
+15/03/10 15:51:25 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 6.0 KB, free 264.9 MB)
+15/03/10 15:51:25 INFO MemoryStore: ensureFreeSpace(4634) called with curMem=230222, maxMem=278019440
+15/03/10 15:51:25 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.5 KB, free 264.9 MB)
+15/03/10 15:51:25 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:53646 (size: 4.5 KB, free: 265.1 MB)
+15/03/10 15:51:25 INFO BlockManagerMaster: Updated info of block broadcast_3_piece0
+15/03/10 15:51:25 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:838
+15/03/10 15:51:25 INFO DAGScheduler: Submitting 2 missing tasks from Stage 3 (PythonRDD[8] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44)
+15/03/10 15:51:25 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks
+15/03/10 15:51:25 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 4, localhost, PROCESS_LOCAL, 1131 bytes)
+15/03/10 15:51:25 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 5, localhost, PROCESS_LOCAL, 1131 bytes)
+15/03/10 15:51:25 INFO Executor: Running task 0.0 in stage 3.0 (TID 4)
+15/03/10 15:51:25 INFO Executor: Running task 1.0 in stage 3.0 (TID 5)
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/03/10 15:51:25 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 49, boot = -65, init = 114, finish = 0
+15/03/10 15:51:25 INFO Executor: Finished task 1.0 in stage 3.0 (TID 5). 929 bytes result sent to driver
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 5) in 61 ms on localhost (1/2)
+15/03/10 15:51:25 INFO PythonRDD: Times: total = 44, boot = -75, init = 119, finish = 0
+15/03/10 15:51:25 INFO Executor: Finished task 0.0 in stage 3.0 (TID 4). 929 bytes result sent to driver
+15/03/10 15:51:25 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 4) in 69 ms on localhost (2/2)
+15/03/10 15:51:25 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+15/03/10 15:51:25 INFO DAGScheduler: Stage 3 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44) finished in 0.071 s
+15/03/10 15:51:25 INFO DAGScheduler: Job 1 finished: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py:44, took 0.091046 s
+=============================================
+(u'SRC=104.249.207.198', 94)
+=============================================

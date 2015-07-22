@@ -1,0 +1,138 @@
+Breakpoint 1, CalculatorSwe::calc_jd (this=0x8295a98, year=@0xbfffac08: 1863, month=@0xbfffac0c: 1, day=@0xbfffac10: 12, 
+    time=@0xbfffabf8: 6.5499999999999998) at Calculator.cpp:634
+634		printf("CalculatorSWE::calc_jd()------: %d, %d, %d, %f\n",year, month, day);
+(gdb) n
+CalculatorSWE::calc_jd()------: 1863, 1, 12, -1.979459
+635		fflush(stdout);
+(gdb) print time
+$1 = (const double &) @0xbfffabf8: 6.5499999999999998
+(gdb) n
+636		return swe_julday( year, month, day, time, 1 );
+(gdb) s
+swe_julday (year=1863, month=1, day=12, hour=6.5499999999999998, gregflag=1) at swedate.c:168
+168	{
+(gdb) n
+171	  u = year;
+(gdb) n
+172	  if (month < 3) u -=1;
+(gdb) n
+174	  u1 = month + 1.0;
+(gdb) n
+175	  if (u1 < 4) u1 += 12.0;
+(gdb) n
+178	     + day + hour/24.0 - 63.5;
+(gdb) n
+176	  jd = floor(u0*365.25)
+(gdb) n
+179	  if (gregflag == SE_GREG_CAL) {
+(gdb) n
+176	  jd = floor(u0*365.25)
+(gdb) print jd
+$2 = 0
+(gdb) n
+179	  if (gregflag == SE_GREG_CAL) {
+(gdb) n
+180	    u2 = floor(fabs(u) / 100) - floor(fabs(u) / 400);
+(gdb) n
+181	    if (u < 0.0) u2 = -u2;
+(gdb) n
+182	    jd = jd - u2 + 2;            
+(gdb) print gregflag
+$3 = 1
+(gdb) n
+186	  printf("swe_julday():------------------:jd = %d\n",jd);
+(gdb) print jd
+$4 = 0
+(gdb) n
+swe_julday():------------------:jd = -487657745
+187	  fflush(stdout);
+(gdb) n
+189	}
+(gdb) n
+CalculatorSwe::calc_jd (this=0x8295a98, year=@0xbfffac08: 1863, month=@0xbfffac0c: 1, day=@0xbfffac10: 12, 
+    time=@0xbfffabf8: 6.5499999999999998) at Calculator.cpp:637
+637	}
+(gdb) n
+JDate::updateJD (this=0x8229d80, day=@0xbfffac10: 12, month=@0xbfffac0c: 1, year=@0xbfffac08: 1863, time=@0xbfffabf8: 6.5499999999999998)
+    at DataSet.cpp:104
+104	}
+(gdb) n
+MaitreyaTextclient::setDate (this=0xbffff1a0, s=...) at textclient.cpp:405
+405				dataset.setDate( day, month, year, time );
+(gdb) n
+407		}
+(gdb) n
+MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82295e8) at textclient.cpp:476
+476		if ( parser.Found( wxT( "date" ), &s )) setDate( s );
+(gdb) n
+477		if ( parser.Found( wxT( "location" ), &s )) setLocation( s );
+(gdb) 
+====================================================
+
+Breakpoint 1, CalculatorSwe::calc_jd (this=0x89447e8, year=@0xbfffdf20: 1863, month=@0xbfffdf24: 1, day=@0xbfffdf28: 12, 
+    time=@0xbfffdf10: 0.64999998999999953) at Calculator.cpp:634
+634		printf("CalculatorSWE::calc_jd()------: %d, %d, %d, %f\n",year, month, day, time);
+(gdb) where
+#0  CalculatorSwe::calc_jd (this=0x89447e8, year=@0xbfffdf20: 1863, month=@0xbfffdf24: 1, day=@0xbfffdf28: 12, 
+    time=@0xbfffdf10: 0.64999998999999953) at Calculator.cpp:634
+#1  0x0825a995 in JDate::updateJD (this=0x8a8bfd0, day=@0xbfffdf28: 12, month=@0xbfffdf24: 1, year=@0xbfffdf20: 1863, 
+    time=@0xbfffdf10: 0.64999998999999953) at DataSet.cpp:103
+#2  0x0825c665 in setDate (time=@0xb78ffff4: -5.3171989979388173e-40, year=@0xb789bd9c: 2122332041, this=0x8af29c8, 
+    month=@0x89447e8: 138465768, day=@0x89447e8: 138465768) at DataSet.cpp:123
+#3  setDate (time=@0xb78ffff4: -5.3171989979388173e-40, year=@0xb789bd9c: 2122332041, month=@0x3: <error reading variable>, 
+    day=@0x8417540: 97, this=0x8af29c8) at DataSet.cpp:330
+#4  FileDataSet::readMtxFile (this=0x8af29c8) at DataSet.cpp:686
+#5  0x0825e500 in FileDataSet::openFile (this=0x8af29c8, fn=..., isAtxFile=true) at DataSet.cpp:432
+#6  0x081131c9 in SimpleHoroscope::openFile (this=0x8b0a800, filename=0x8b0a51c L"/media/OS_/Personal/SwamiVivekananda.mtx")
+    at SimpleHoroscope.cpp:343
+#7  0x0806df65 in ApplicationWindow::OpenFile (this=0x8849888, 
+    filename=<error reading variable: DWARF-2 expression error: DW_OP_reg operations must be used either alone or in conjunction with DW_OP_piece or DW_OP_bit_piece.>) at ApplicationWindow.cpp:416
+#8  0x0806e6d1 in ApplicationWindow::OnFileOpen (this=0x8849888, event=...) at ApplicationWindow.cpp:397
+#9  0xb780f038 in wxAppConsole::HandleEvent(wxEvtHandler*, void (wxEvtHandler::*)(wxEvent&), wxEvent&) const ()
+   from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#10 0xb789e78a in wxEvtHandler::ProcessEventIfMatches(wxEventTableEntryBase const&, wxEvtHandler*, wxEvent&) ()
+   from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#11 0xb789ebb1 in wxEvtHandler::SearchDynamicEventTable(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#12 0xb789ec9c in wxEvtHandler::ProcessEvent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#13 0xb7b6e1e3 in wxWindowBase::TryParent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#14 0xb789ec66 in wxEvtHandler::ProcessEvent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#15 0xb7b666d7 in wxToolBarBase::OnLeftClick(int, bool) () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#16 0xb7aea392 in ?? () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#17 0xb6eb6243 in g_cclosure_marshal_VOID__VOIDv () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#18 0xb6eb4727 in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#19 0xb6ecda29 in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#20 0xb6ece453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#21 0xb701e21a in gtk_button_clicked () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#22 0xb701f630 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#23 0xb6eb61ec in g_cclosure_marshal_VOID__VOID () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#24 0xb6eb32fd in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#25 0xb6eb4484 in g_closure_invoke () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#26 0xb6ec6535 in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#27 0xb6ece2dc in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#28 0xb6ece453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+---Type <return> to continue, or q <return> to quit---
+#29 0xb701e13a in gtk_button_released () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#30 0xb701e184 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#31 0xb70dd8a2 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#32 0xb6eb32fd in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#33 0xb6eb4484 in g_closure_invoke () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#34 0xb6ec670d in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#35 0xb6ecdff5 in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#36 0xb6ece453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#37 0xb7217413 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#38 0xb70dba6e in gtk_propagate_event () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#39 0xb70dbe00 in gtk_main_do_event () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#40 0xb6f4d758 in ?? () from /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0
+#41 0xb6dd2d86 in g_main_context_dispatch () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#42 0xb6dd3125 in ?? () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#43 0xb6dd356b in g_main_loop_run () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#44 0xb70dab8f in gtk_main () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#45 0xb7a7063a in wxEventLoop::Run() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#46 0xb7af590f in wxAppBase::MainLoop() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#47 0xb7af519f in wxAppBase::OnRun() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#48 0xb7844f36 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#49 0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#50 0x0806d80b in main (argc=1, argv=0xbffff344) at ApplicationWindow.cpp:64
+(gdb) 
+
+

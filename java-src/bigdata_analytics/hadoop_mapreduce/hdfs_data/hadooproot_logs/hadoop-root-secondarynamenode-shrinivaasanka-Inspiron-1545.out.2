@@ -1,0 +1,22 @@
+OpenJDK Server VM warning: You have loaded library /usr/local/hadoop/lib/native/libhadoop.so.1.0.0 which might have disabled stack guard. The VM will try to fix the stack guard now.
+It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -60 namespaceID = 1726966655 cTime = 0 ; clusterId = CID-f3e868ae-34b6-46b2-99b3-a9bbc3a2a91a ; blockpoolId = BP-1562001288-127.0.0.1-1424768828319.
+Expecting respectively: -60; 495027567; 0; CID-975390f8-7f1e-4999-bafb-d1e845945f41; BP-762311704-127.0.0.1-1424753988129.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:412)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.IOException: Inconsistent checkpoint fields.
+LV = -60 namespaceID = 1726966655 cTime = 0 ; clusterId = CID-f3e868ae-34b6-46b2-99b3-a9bbc3a2a91a ; blockpoolId = BP-1562001288-127.0.0.1-1424768828319.
+Expecting respectively: -60; 495027567; 0; CID-975390f8-7f1e-4999-bafb-d1e845945f41; BP-762311704-127.0.0.1-1424753988129.
+	at org.apache.hadoop.hdfs.server.namenode.CheckpointSignature.validateStorageInfo(CheckpointSignature.java:134)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doCheckpoint(SecondaryNameNode.java:531)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.doWork(SecondaryNameNode.java:395)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode$1.run(SecondaryNameNode.java:361)
+	at org.apache.hadoop.security.SecurityUtil.doAsLoginUserOrFatal(SecurityUtil.java:412)
+	at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.run(SecondaryNameNode.java:357)
+	at java.lang.Thread.run(Thread.java:745)

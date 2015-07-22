@@ -1,0 +1,906 @@
+asclen = calculator->calcAscendantAya( d.getJD(), d.getLocation()->getLatitude(),
+                                               d.getLocation()->getLongitude(), config->preferVedic );
+
+
+
+(gdb) where
+#0  CalculatorSwe::calcAscendant (this=0x9219290, jd=@0xbfdc6a00: 2401517.0522260768, lat=@0xbfdc69a8: 22.666671669999999, 
+    lon=@0xbfdc69a0: 88.500005000000002) at Calculator.cpp:680
+#1  0x0810230e in Horoscope::update (this=0x94110a8) at Horoscope.cpp:150
+#2  0x0806d246 in ApplicationWindow::CreateNewChild (this=0x90e84e8, doc=0x94110a8) at ApplicationWindow.cpp:437
+#3  0x0806ddbe in ApplicationWindow::OpenFile (this=0x90e84e8, 
+    filename=<error reading variable: DWARF-2 expression error: DW_OP_reg operations must be used either alone or in conjunction with DW_OP_piece or DW_OP_bit_piece.>) at ApplicationWindow.cpp:425
+#4  0x0806e461 in ApplicationWindow::OnFileOpen (this=0x90e84e8, event=...) at ApplicationWindow.cpp:397
+#5  0xb6f52038 in wxAppConsole::HandleEvent(wxEvtHandler*, void (wxEvtHandler::*)(wxEvent&), wxEvent&) const ()
+   from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#6  0xb6fe178a in wxEvtHandler::ProcessEventIfMatches(wxEventTableEntryBase const&, wxEvtHandler*, wxEvent&) ()
+   from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#7  0xb6fe1bb1 in wxEvtHandler::SearchDynamicEventTable(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#8  0xb6fe1c9c in wxEvtHandler::ProcessEvent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#9  0xb72b11e3 in wxWindowBase::TryParent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#10 0xb6fe1c66 in wxEvtHandler::ProcessEvent(wxEvent&) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#11 0xb72a96d7 in wxToolBarBase::OnLeftClick(int, bool) () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#12 0xb722d392 in ?? () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#13 0xb65f9243 in g_cclosure_marshal_VOID__VOIDv () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#14 0xb65f7727 in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#15 0xb6610a29 in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#16 0xb6611453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#17 0xb676121a in gtk_button_clicked () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#18 0xb6762630 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#19 0xb65f91ec in g_cclosure_marshal_VOID__VOID () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#20 0xb65f62fd in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#21 0xb65f7484 in g_closure_invoke () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#22 0xb6609535 in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#23 0xb66112dc in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#24 0xb6611453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#25 0xb676113a in gtk_button_released () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#26 0xb6761184 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#27 0xb68208a2 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#28 0xb65f62fd in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#29 0xb65f7484 in g_closure_invoke () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#30 0xb660970d in ?? () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#31 0xb6610ff5 in g_signal_emit_valist () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+#32 0xb6611453 in g_signal_emit () from /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+---Type <return> to continue, or q <return> to quit---
+#33 0xb695a413 in ?? () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#34 0xb681ea6e in gtk_propagate_event () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#35 0xb681ee00 in gtk_main_do_event () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#36 0xb6690758 in ?? () from /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0
+#37 0xb6515d86 in g_main_context_dispatch () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#38 0xb6516125 in ?? () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#39 0xb651656b in g_main_loop_run () from /lib/i386-linux-gnu/libglib-2.0.so.0
+#40 0xb681db8f in gtk_main () from /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+#41 0xb71b363a in wxEventLoop::Run() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#42 0xb723890f in wxAppBase::MainLoop() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#43 0xb723819f in wxAppBase::OnRun() () from /usr/lib/i386-linux-gnu/libwx_gtk2u_core-2.8.so.0
+#44 0xb6f87f36 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#45 0xb6f87fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#46 0x0806d59b in main (argc=2, argv=0xbfdc7de4) at ApplicationWindow.cpp:64
+
+
+
+
+=========================
+(gdb) where
+#0  TextHelper::writeVedicPlanets (this=0x82d6330) at TextHelper.cpp:432
+#1  0x08050feb in showPlanets (this=<optimized out>) at textclient.cpp:247
+#2  MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:512
+#3  0x08051dfe in TextClientApplication::OnInit (this=0x82393f0) at textclient.cpp:593
+#4  0xb7844f28 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#5  0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#6  0x0804e7eb in main (argc=4, argv=0xbffff2e4) at textclient.cpp:582
+
+===============================
+545		if ( parser.Found( wxT( "partner-vedic" )) || parser.Found( wxT( "partner-composite" )))
+(gdb) n
+558			if ( parser.Found( wxT( "partner-composite" ))) showPartnerAnalysis( 1 );
+(gdb) n
+561		if ( writecount == 0 ) parser.Usage();
+(gdb) n
+564			writer->endWriting();
+(gdb) n
+565			Cout( writer->getContents() );
+(gdb) n
+Planet     Length                 D-9          Nakshatra  
+----------------------------------------------------------
+Sun        29 40'41" Sagittarius  Sagittarius  U.Shadha   
+Moon       20 40'49" Virgo        Cancer       Hasta      
+Mars       06 27'12" Aries        Taurus       Aswini     
+Mercury    12 10'58" Capricorn    Aries        Sravana    
+Jupiter    04 02'26" Libra        Scorpio      Chitra     
+Venus      07 24'58" Capricorn    Pisces       U.Shadha   
+Saturn     13 34'47" Virgo        Taurus       Hasta      
+Rahu       22 14'20" Scorpio      Capricorn    Jyeshta    
+Ketu       22 14'20" Taurus       Cancer       Rohini     
+Ascendant  14 10'18" Aries        Leo          Bharani    
+
+566		}
+(gdb) where
+#0  MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:566
+#1  0x08051dfe in TextClientApplication::OnInit (this=0x82393f0) at textclient.cpp:593
+#2  0xb7844f28 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#3  0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#4  0x0804e7eb in main (argc=4, argv=0xbffff2e4) at textclient.cpp:582
+
+================================
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+441			rowindex++;
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+203	int TextHelper::writeVedicPlanets()
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+315			pindex = obs[i];
+(gdb) n
+317			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) n
+342			if ( opt_declinations )
+(gdb) n
+346			if ( opt_lord )
+(gdb) n
+350			if ( opt_dig )
+(gdb) n
+358			if ( opt_nav )
+(gdb) n
+359				table.setEntry( col++, rowindex, writer->getSignName( getRasi( pos.length * 9 ), config->signPrecision ));
+(gdb) n
+362			if ( opt_nak )
+(gdb) n
+364				                lang.getNakshatraName( getNakshatra( pos.length, nakshatramode ), nakshatramode, TMEDIUM ));
+(gdb) n
+367			if ( opt_pada )
+(gdb) n
+374			if ( opt_kp )
+(gdb) n
+391			if ( opt_shast )
+(gdb) n
+403			if ( opt_dasa )
+(gdb) n
+414			if ( opt_bha  && obs[i] <= MAX_EPHEM_OBJECTS )
+(gdb) n
+421			if ( opt_kara )
+(gdb) n
+432			if ( opt_ashtaka )
+(gdb) n
+437					table.setEntry( col++, rowindex, s );
+(gdb) n
+313		for ( i = 0; i < obs.size(); i++ )
+(gdb) n
+443		writer->writeTable( table );
+(gdb) n
+444		return ret;
+(gdb) n
+445	}
+(gdb) n
+showPlanets (this=<optimized out>) at textclient.cpp:248
+248			writecount++;
+(gdb) nn
+Undefined command: "nn".  Try "help".
+(gdb) n
+MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:513
+513		if ( parser.Found( wxT( "base-data" )))       showTextAnalysis( TEXT_MODE_BASE );
+(gdb) n
+514		if ( parser.Found( wxT( "westernplanets" )))  showTextAnalysis( TEXT_MODE_WESTERN_PLANETS );
+(gdb) n
+515		if ( parser.Found( wxT( "vedicplanets" )))    showTextAnalysis( TEXT_MODE_VEDIC_PLANETS );
+(gdb) n
+516		if ( parser.Found( wxT( "bhavas" )))          showTextAnalysis( TEXT_MODE_BHAVA );
+(gdb) n
+517		if ( parser.Found( wxT( "kp" )))              showTextAnalysis( TEXT_MODE_KP );
+(gdb) n
+518		if ( parser.Found( wxT( "nakshatras" )))      showTextAnalysis( TEXT_MODE_NAKSHATRA );
+(gdb) n
+519		if ( parser.Found( wxT( "ashtakavarga" )))     showTextAnalysis( TEXT_MODE_ASHTAKAVARGA );
+(gdb) n
+520		if ( parser.Found( wxT( "jaimini" )))         showTextAnalysis( TEXT_MODE_JAIMINI );
+(gdb) n
+521		if ( parser.Found( wxT( "vargas" )))          showTextAnalysis( TEXT_MODE_VARGA );
+(gdb) n
+522		if ( parser.Found( wxT( "arabic" )))          showTextAnalysis( TEXT_MODE_ARABICPARTS );
+(gdb) n
+523		if ( parser.Found( wxT( "astronomical" )))    showTextAnalysis( TEXT_MODE_ASTRONOMICAL );
+(gdb) n
+524		if ( parser.Found( wxT( "dasas" ), &a ))      showTextAnalysis( TEXT_MODE_DASA, 0, (int)a );
+(gdb) n
+525		if ( parser.Found( wxT( "dasas-compact" ), &a )) showTextAnalysis( TEXT_MODE_DASACOMPACT, 0, (int)a );
+(gdb) n
+526		if ( parser.Found( wxT( "dasas-long" ), &a )) showTextAnalysis( TEXT_MODE_DASALONG, 0, (int)a );
+(gdb) n
+527		if ( parser.Found( wxT( "aspects" )))         showTextAnalysis(
+(gdb) n
+530		if ( parser.Found( wxT( "printsummary" ), &a )) showPrintoutSummary( (int)a );
+(gdb) n
+532		if ( parser.Found( wxT( "yogas" )))        showYogas();
+(gdb) n
+533		if ( parser.Found( wxT( "transits" )))     showTransits( TRANSIT_MODE_TRANSIT, tjd );
+(gdb) n
+534		if ( parser.Found( wxT( "solar-arc" )))    showTransits( TRANSIT_MODE_SOLAR_ARC, tjd );
+(gdb) n
+535		if ( parser.Found( wxT( "directions" )))   showTransits( TRANSIT_MODE_DIRECTION, tjd );
+(gdb) n
+536		if ( parser.Found( wxT( "lunar-arc" )))    showTransits( TRANSIT_MODE_LUNAR_ARC, tjd );
+(gdb) n
+537		if ( parser.Found( wxT( "constant-arc" ))) showTransits( TRANSIT_MODE_CONSTANT_ARC, tjd );
+(gdb) n
+540		if ( parser.Found( wxT( "solar" ))) showTajaka( tyear );
+(gdb) n
+542		if ( parser.Found( wxT( "uranian" ))) showUranian( 0 );
+(gdb) n
+543		if ( parser.Found( wxT( "uranian-yearlypreview" ))) showUranian( 1, tyear );
+(gdb) n
+545		if ( parser.Found( wxT( "partner-vedic" )) || parser.Found( wxT( "partner-composite" )))
+(gdb) n
+567	}
+(gdb) n
+545		if ( parser.Found( wxT( "partner-vedic" )) || parser.Found( wxT( "partner-composite" )))
+(gdb) n
+558			if ( parser.Found( wxT( "partner-composite" ))) showPartnerAnalysis( 1 );
+(gdb) n
+561		if ( writecount == 0 ) parser.Usage();
+(gdb) n
+564			writer->endWriting();
+(gdb) n
+565			Cout( writer->getContents() );
+(gdb) n
+Planet     Length                 D-9          Nakshatra  
+----------------------------------------------------------
+Sun        29 40'41" Sagittarius  Sagittarius  U.Shadha   
+Moon       20 40'49" Virgo        Cancer       Hasta      
+Mars       06 27'12" Aries        Taurus       Aswini     
+Mercury    12 10'58" Capricorn    Aries        Sravana    
+Jupiter    04 02'26" Libra        Scorpio      Chitra     
+Venus      07 24'58" Capricorn    Pisces       U.Shadha   
+Saturn     13 34'47" Virgo        Taurus       Hasta      
+Rahu       22 14'20" Scorpio      Capricorn    Jyeshta    
+Ketu       22 14'20" Taurus       Cancer       Rohini     
+Ascendant  14 10'18" Aries        Leo          Bharani    
+
+566		}
+(gdb) where
+#0  MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:566
+#1  0x08051dfe in TextClientApplication::OnInit (this=0x82393f0) at textclient.cpp:593
+#2  0xb7844f28 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#3  0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#4  0x0804e7eb in main (argc=4, argv=0xbffff2e4) at textclient.cpp:582
+(gdb) 
+
+=============
+
+(gdb) print pos
+$2 = {length = 0, latitude = 0, speed = 0, retro = false}
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) print pos
+$3 = {length = 0, latitude = 0, speed = 0, retro = false}
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) print pos
+$4 = {length = 269.67801508558404, latitude = 0, speed = 0, retro = false}
+(gdb) n
+325				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) n
+328				if ( pos.length == 0 && pindex != OARIES ) ret++;
+(gdb) print pindex
+$5 = 0
+(gdb) n
+333			assert( (int)table.nb_rows >= rowindex );
+(gdb) n
+336			                ( pindex <= LAST_ARABIC_OBJECT ? writer->getObjectName( pindex, TLARGE, true ) : lang.getBhavaName( pindex - HOUSE_QUALIFIER )));
+(gdb) n
+337			if ( pindex <= OSATURN ) planet = horoscope->getPlanet( pindex );
+(gdb) n
+339			table.setEntry( 1, rowindex, writer->getPosFormatted( pos.length, pos.retro ));
+(gdb) print planet
+$6 = (Planet *) 0x82dc2f8
+(gdb) print *planet
+$7 = {horoscope = 0x82da570, index = 0, length = 269.67801508558404, vargadata = {0x82dc398, 0x82d6310, 0x82da470, 0x82da490, 0x82da4b0, 
+    0x82dc468, 0x82dc488, 0x82dc4a8, 0x82dc4c8, 0x82dc4e8, 0x82dc508, 0x82dc528, 0x82dc548, 0x82dc568, 0x82dc588, 0x82dc5a8, 0x82dc5c8, 
+    0x82dc5e8, 0x82dc608, 0x82dc628, 0x82dc648}, vimsopakaBala = {17.200000000000003, 15.550000000000001, 14.5, 15.65}, 
+  vimsopakaBalaGoodVargas = {1, 1, 1, 2}, averageVimsopakaBala = 15.725000000000001}
+(gdb) n
+342			if ( opt_declinations )
+(gdb) print rowindex
+$8 = 1
+(gdb) 
+===========
+
+199		return lang->getSignName( i, format );
+(gdb) s
+Lang::getSignName (this=0x82c8260, i=@0xbfffa164: 8, format=2) at Lang.cpp:436
+436		wxString s;
+(gdb) n
+434	{
+(gdb) n
+439			_( "Li" ), _( "Sc" ), _( "Sa" ), _( "Cp" ), _( "Aq" ), _( "Pi" ) };
+(gdb) n
+434	{
+(gdb) n
+436		wxString s;
+(gdb) n
+439			_( "Li" ), _( "Sc" ), _( "Sa" ), _( "Cp" ), _( "Aq" ), _( "Pi" ) };
+(gdb) n
+443			_( "Aquarius" ), _( "Pisces" ) };
+(gdb) n
+439			_( "Li" ), _( "Sc" ), _( "Sa" ), _( "Cp" ), _( "Aq" ), _( "Pi" ) };
+(gdb) n
+443			_( "Aquarius" ), _( "Pisces" ) };
+(gdb) n
+456		if ( format == TLARGE )
+(gdb) n
+443			_( "Aquarius" ), _( "Pisces" ) };
+(gdb) n
+456		if ( format == TLARGE )
+(gdb) n
+458			if ( cfg->useVedicSignNames ) s = k_sign_full_vedic[i];
+(gdb) n
+459			else s = k_sign_full[i];
+(gdb) n
+472	}
+
+===================================
+
+Breakpoint 1, Lang::getSignName (this=0x826abf8, i=@0xbfffa164: 8, format=2) at Lang.cpp:458
+458			if ( cfg->useVedicSignNames ) s = k_sign_full_vedic[i];
+(gdb) print i
+$1 = (const int &) @0xbfffa164: 8
+(gdb) print k_sign_full_vedic
+$2 = {0x39 <Address 0x39 out of bounds>, 0x5b <Address 0x5b out of bounds>, 0x6e <Address 0x6e out of bounds>, 
+  0x77 <Address 0x77 out of bounds>, 0x7c <Address 0x7c out of bounds>, 
+  0xb767d478 L"\xb767d470\xb767d470\xb767d478\xb767d478\xb767d480\xb767d480\xb767d488\xb767d488\xb767d490\xb767d490\xb767d498\xb767d498\x830cd30\x830cd30\xb767d4a8\xb767d4a8\x830ca30\x830ca30\xb767d4b8\xb767d4b8\xb767d4c0\xb767d4c0\xb767d4c8\xb767d4c8\xb767d4d0\xb767d4d0\xb767d4d8\xb767d4d8\xb767d4e0\xb767d4e0\xb767d4e8\xb767d4e8\xb767d4f0\xb767d4f0\xb767d4f8\xb767d4f8\xb767d500\xb767d500\xb767d508\xb767d508\xb767d510\xb767d510\xb767d518\xb767d518\xb767d520\xb767d520\xb767d528\xb767d528\xb767d530\xb767d530\xb767d538\xb767d538\xb767d540\xb767d540\xb767d548\xb767d548\xb767d550\xb767d550\xb767d558\xb767d558\xb767d560\xb767d560\xb767d568\xb767d568\xb767d570\xb767d570\xb767d578\xb767d578\xb767d580\xb767d580\xb767d588\xb767d588\xb767d590\xb767d590\xb767d598\xb767d598\xb767d5a0\xb767d5a0\xb767d5a8\xb767d5a8\xb767d5b0\xb767d5b0\xb767d5b8\xb767d5b8\xb767d5c0\xb767d5c0\xb767d5c8\xb767d5c8\xb767d5d0\xb767d5d0\xb767d5d8\xb767d5d8\xb767d5e0\xb767d5e0\xb767d5e8\xb767d5e8\xb767d5f0\xb767d5f0\xb767d5f8\xb767d5f8\xb767d600\xb767d600\xb767d608\xb767d608\xb767d610\xb767d610\xb767d618\xb767d618\xb767d620\xb767d620\xb767d628\xb767d628\xb767d630\xb767d630\xb767d638\xb767d638\xb767d640\xb767d640\xb767d648\xb767d648\xb767d650\xb767d650\xb767d658\xb767d658\xb767d660\xb767d660\xb767d668\xb767d668\xb767d670\xb767d670\xb767d678\xb767d678\xb767d680\xb767d680\xb767d688\xb767d688\xb767d690\xb767d690\xb767d698\xb767d698\xb767d6a0\xb767d6a0\xb767d6a8\xb767d6a8\xb767d6b0\xb767d6b0\xb767d6b8\xb767d6b8\xb767d6c0\xb767d6c0\xb767d6c8\xb767d6c8\xb767d6d0\xb767d6d0\xb767d6d8\xb767d6d8\xb767d6e0\xb767d6e0\xb767d6e8\xb767d6e8\xb767d6f0\xb767d6f0\xb767d6f8\xb767d6f8\xb767d700\xb767d700\xb767d708\xb767d708\xb767d710\xb767d710\xb767d718\xb767d718\xb767d720\xb767d720\xb767d728\xb767d728\xb767d730\xb767d730\xb767d738\xb767d738\xb767d740\xb767d740\xb767d748\xb767d748\xb767d750\xb767d750\xb767d758\xb767d758\xb767d760\xb767d760\xb767d768\xb767d768\xb767d770\xb767d770\xb767d778\xb767d778\xb767d780\xb767d780\xb767d788\xb767d788"..., 0x68 <Address 0x68 out of bounds>, 0x5c <Address 0x5c out of bounds>, 
+  0xb754d5e9 L"\xfa0bc381\xc7890012\x89f8e783\x39daf7fa\x246c89d6\x60870f44\xf7000006߆\x54850f00\x83000006\x860f0fffٷ\x1914bb3b\x870f0000«\x8b3e148d\xf8830442\x95860f08\x8b000006\x8338246c\x853bf8e0ш\x682830f\x838b0000ᤘ\x850fc085؛\x3824448b\xc3d8365", 0xb767d440 L"", 0x0, 
+  0x5c <Address 0x5c out of bounds>}
+(gdb) print k_sign_full_vedic[i]
+$3 = (
+    const wxChar *) 0xb754d5e9 L"\xfa0bc381\xc7890012\x89f8e783\x39daf7fa\x246c89d6\x60870f44\xf7000006߆\x54850f00\x83000006\x860f0fffٷ\x1914bb3b\x870f0000«\x8b3e148d\xf8830442\x95860f08\x8b000006\x8338246c\x853bf8e0ш\x682830f\x838b0000ᤘ\x850fc085؛\x3824448b\xc3d8365"
+(gdb) 
+============================
+
+(gdb) where
+#0  Lang::getSignName (this=0x826abf8, i=@0xbfffab14: 8, format=2) at Lang.cpp:458
+#1  0x0808fd0a in Writer::getSignName (this=0x82d6270, i=@0xbfffab14: 8, format=2) at Writer.cpp:199
+#2  0x08073f36 in TextHelper::writeVedicPlanets (this=0x82d62a8) at TextHelper.cpp:359
+#3  0x08050feb in showPlanets (this=<optimized out>) at textclient.cpp:247
+#4  MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:512
+#5  0x08051dfe in TextClientApplication::OnInit (this=0x82393f0) at textclient.cpp:593
+#6  0xb7844f28 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#7  0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#8  0x0804e7eb in main (argc=4, argv=0xbffff2e4) at textclient.cpp:582
+(gdb) print cfg->useVedicSignNames
+$15 = false
+(gdb) n
+459			else s = k_sign_full[i];
+(gdb) print k_sign_full[i]
+$16 = (const wxChar *) 0x8159104 L"Sagittarius"
+(gdb) 
+================
+
+
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) n
+114		TableEntry entry;
+(gdb) n
+122			for ( r = 0; r < t.nb_rows; r++ )
+(gdb) where
+#0  TextWriter::writeTable (this=0x82d6270, t=..., repeatHeader=false) at TextWriter.cpp:122
+#1  0x08074110 in TextHelper::writeVedicPlanets (this=0x82d62a8) at TextHelper.cpp:443
+#2  0x08050feb in showPlanets (this=<optimized out>) at textclient.cpp:247
+#3  MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:512
+#4  0x08051dfe in TextClientApplication::OnInit (this=0x82393f0) at textclient.cpp:593
+#5  0xb7844f28 in wxEntry(int&, wchar_t**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#6  0xb7844fd6 in wxEntry(int&, char**) () from /usr/lib/i386-linux-gnu/libwx_baseu-2.8.so.0
+#7  0x0804e7eb in main (argc=4, argv=0xbffff2e4) at textclient.cpp:582
+(gdb) print t.nb_cols
+$19 = 4
+(gdb) print t.nb_rows
+$20 = 11
+(gdb) 
+-----------------------
+
+Breakpoint 3, TextWriter::writeTable (this=0x82d6270, t=..., repeatHeader=false) at TextWriter.cpp:145
+145				writeEntry(  entry.value, len[c] );
+(gdb) 
+144				entry = row.value[c];
+(gdb) 
+145				writeEntry(  entry.value, len[c] );
+(gdb) 
+144				entry = row.value[c];
+(gdb) 
+145				writeEntry(  entry.value, len[c] );
+(gdb) 
+142			for ( c = 0; c < t.nb_cols; c++ )
+(gdb) 
+147			s << Endl;
+(gdb) 
+139		for ( r = 1; r < t.nb_rows; r++ )
+(gdb) 
+149		s << Endl;
+(gdb) 
+150	}
+(gdb) 
+TextHelper::writeVedicPlanets (this=0x82d62a8) at TextHelper.cpp:444
+444		return ret;
+(gdb) 
+445	}
+(gdb) print ret
+No symbol "ret" in current context.
+(gdb) v
+Undefined command: "v".  Try "help".
+(gdb) n
+showPlanets (this=<optimized out>) at textclient.cpp:248
+248			writecount++;
+(gdb) n
+MaitreyaTextclient::run (this=0xbffff1a0, argc=4, argv=0x82285e8) at textclient.cpp:513
+513		if ( parser.Found( wxT( "base-data" )))       showTextAnalysis( TEXT_MODE_BASE );
+(gdb) 
+
+------------------------------
+Breakpoint 1, TextHelper::writeVedicPlanets (this=0x82d7328) at TextHelper.cpp:316
+316			pindex = obs[i];
+(gdb) n
+318			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+316			pindex = obs[i];
+(gdb) n
+318			if ( pindex >= HOUSE_QUALIFIER )
+(gdb) n
+328				pos = horoscope->getObjectPosition( pindex, true );
+(gdb) s
+Horoscope::getObjectPosition (this=0x82db5b8, planet=@0xbfffac24: 14, vedic=@0xbfffac2e: true) at Horoscope.cpp:365
+365	{
+(gdb) n
+366		ASSERT_VALID_OBJECT( planet )
+(gdb) n
+367		if ( planet <= LAST_EPHEM_OBJECT ) return SimpleHoroscope::getObjectPosition( planet, vedic );
+(gdb) s
+SimpleHoroscope::getObjectPosition (this=0x82db5b8, planet=@0xbfffac24: 14, vedic=@0xbfffac2e: true) at SimpleHoroscope.cpp:198
+198		ASSERT_VALID_EPHEM_OBJECT( planet )
+(gdb) n
+197	{
+(gdb) n
+198		ASSERT_VALID_EPHEM_OBJECT( planet )
+(gdb) n
+199		return( vedic ? vpos[planet] : wpos[planet] );
+(gdb) print vedic
+$1 = (const bool &) @0xbfffac2e: true
+(gdb) print vpos
+$2 = {{length = 269.67801508558404, latitude = -0.00017667824015884227, speed = 1.0186562900953282, retro = false}, {
+    length = 170.68028766921339, latitude = -4.6302094243063943, speed = 13.193776570408042, retro = false}, {length = 282.18265791162315, 
+    latitude = -1.9409829898812641, speed = 1.6498865186134921, retro = false}, {length = 277.41599685559839, latitude = -1.18907204624193, 
+    speed = 1.2563031331353616, retro = false}, {length = 6.453377722831469, latitude = 0.90840099414693609, speed = 0.50991895893063477, 
+    retro = false}, {length = 184.04066059594186, latitude = 1.306431585303703, speed = 0.089300539998150325, retro = false}, {
+    length = 163.57968599745897, latitude = 2.3784289024372551, speed = 0.0047608458071006768, retro = false}, {length = 55.445370644481628, 
+    latitude = 0.080524986230187653, speed = -0.033082423204945227, retro = true}, {length = 339.39328954394426, 
+    latitude = -1.4054200026153547, speed = 0.017306269556569241, retro = false}, {length = 17.500715438137529, 
+    latitude = -16.055876398856554, speed = -0.004097272705734881, retro = true}, {length = 232.23899942246564, latitude = 0, 
+    speed = -0.052968389195400402, retro = false}, {length = 233.50340703280528, latitude = 0, speed = -0.01050301159843902, retro = true}, {
+    length = 52.238999422465653, latitude = 0, speed = -0.052968389195400402, retro = false}, {length = 53.503407032805271, latitude = 0, 
+    speed = -0.01050301159843902, retro = true}, {length = 14.171773182056537, latitude = 0, speed = 1, retro = false}, {
+    length = 274.06812984641226, latitude = 0, speed = 1, retro = false}, {length = 31.175046555569157, latitude = -1.0644117662642369, 
+    speed = -0.0092557462383051122, retro = true}, {length = 277.60752109293526, latitude = 0.68122663599198652, 
+    speed = 0.021958362673150569, retro = false}, {length = 52.02416873076568, latitude = -0.0048420795005454098, 
+    speed = -0.011448057758331553, retro = true}, {length = 329.39779314103583, latitude = 0.0001181192537222801, 
+    speed = 0.0094721958070167443, retro = false}, {length = 93.07228064482031, latitude = -0.0041862018666911265, 
+    speed = -0.012698793725246198, retro = true}, {length = 307.34209933509948, latitude = 0.0019265686359291483, 
+    speed = 0.012136274064888635, retro = false}, {length = 13.135824696831211, latitude = -0.0032630643472368755, 
+    speed = -0.0016892937016199725, retro = true}, {length = 126.07575539290899, latitude = -0.0021355935819099827, 
+    speed = -0.0083214367389969086, retro = true}, {length = 0, latitude = 0, speed = 0, retro = false}, {length = 0, latitude = 0, 
+    speed = 0, retro = false}, {length = 0, latitude = 0, speed = 0, retro = false}, {length = 0, latitude = 0, speed = 0, retro = false}, {
+    length = 0, latitude = 0, speed = 0, retro = false}, {length = 0, latitude = 0, speed = 0, retro = false}, {length = 68.124188920577325, 
+    latitude = -1.4118619993015618, speed = 0.11082697730419341, retro = false}}
+(gdb) print vpos[planet]
+$3 = {length = 14.171773182056537, latitude = 0, speed = 1, retro = false}
+(gdb) print planet
+$4 = (const int &) @0xbfffac24: 14
+(gdb) print vpos[0]
+$5 = {length = 269.67801508558404, latitude = -0.00017667824015884227, speed = 1.0186562900953282, retro = false}
+(gdb) print vpos[1]
+$6 = {length = 170.68028766921339, latitude = -4.6302094243063943, speed = 13.193776570408042, retro = false}
+(gdb) print vpos[2]
+$7 = {length = 282.18265791162315, latitude = -1.9409829898812641, speed = 1.6498865186134921, retro = false}
+(gdb) print vpos[3]
+$8 = {length = 277.41599685559839, latitude = -1.18907204624193, speed = 1.2563031331353616, retro = false}
+(gdb) print vpos[4]
+$9 = {length = 6.453377722831469, latitude = 0.90840099414693609, speed = 0.50991895893063477, retro = false}
+(gdb) print vpos[5]
+$10 = {length = 184.04066059594186, latitude = 1.306431585303703, speed = 0.089300539998150325, retro = false}
+(gdb) print vpos[6]
+$11 = {length = 163.57968599745897, latitude = 2.3784289024372551, speed = 0.0047608458071006768, retro = false}
+(gdb) print vpos[7]
+$12 = {length = 55.445370644481628, latitude = 0.080524986230187653, speed = -0.033082423204945227, retro = true}
+(gdb) print vpos[8]
+$13 = {length = 339.39328954394426, latitude = -1.4054200026153547, speed = 0.017306269556569241, retro = false}
+(gdb) print vpos[9]
+$14 = {length = 17.500715438137529, latitude = -16.055876398856554, speed = -0.004097272705734881, retro = true}
+(gdb) print vpos[10]
+$15 = {length = 232.23899942246564, latitude = 0, speed = -0.052968389195400402, retro = false}
+(gdb) print vpos[11]
+$16 = {length = 233.50340703280528, latitude = 0, speed = -0.01050301159843902, retro = true}
+(gdb) print vpos[12]
+$17 = {length = 52.238999422465653, latitude = 0, speed = -0.052968389195400402, retro = false}
+(gdb) print vpos[13]
+$18 = {length = 53.503407032805271, latitude = 0, speed = -0.01050301159843902, retro = true}
+(gdb) print vpos[14]
+$19 = {length = 14.171773182056537, latitude = 0, speed = 1, retro = false}
+(gdb) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

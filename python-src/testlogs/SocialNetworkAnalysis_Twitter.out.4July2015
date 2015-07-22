@@ -1,0 +1,829 @@
+nSource/SourceForge/asfer-code/python-src$ sudo python SocialNetworkAnalysis_Twitter.py 
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 6, "followers_count": 15, "friends_count": 99, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan ", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Sun Jun 21 11:01:08 +0000 2015", "favorited": false, "id": 612575978217304064, "lang": "en", "retweeted": false, "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>", "text": "Enterprise Analytics with NeuronRain - Introduction\nhttps://t.co/SxfbzjfEdV", "truncated": false, "urls": {"https://t.co/SxfbzjfEdV": "https://github.com/shrinivaasanka/ZodiacDatasoft/blob/master/EnterpriseAnalytics_with_NeuronRain.pdf"}}, "statuses_count": 20, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+======================================
+2420143758L
+======================================
+======================================
+128582668
+======================================
+======================================
+2428395070L
+===========================================================================================
+Bonacich Power Centrality of the Social Network (Twitter) Crawled - computed using PageRank
+(a degree centrality based on social prestige)
+===========================================================================================
+[(1977078144, 0.06666666666666667), (917076067, 0.06666666666666667), (517205925, 0.06666666666666667), (429868038, 0.06666666666666667), (128582668, 0.06666666666666667), (47945595, 0.06666666666666667), (135815468, 0.06666666666666667), (2420143758L, 0.06666666666666667), (92554510, 0.06666666666666667), (30277494, 0.06666666666666667), (22766489, 0.06666666666666667), (23219674, 0.06666666666666667), (238550107, 0.06666666666666667), (2428395070L, 0.06666666666666667), (115943189, 0.06666666666666667)]
+===========================================================================================
+Eigen Vector Centrality
+===========================================================================================
+{1977078144: 0.25819888974716115, 2420143758L: 0.25819888974716115, 917076067: 0.25819888974716115, 23219674: 0.25819888974716115, 115943189: 0.25819888974716115, 429868038: 0.25819888974716115, 135815468: 0.25819888974716115, 2428395070L: 0.25819888974716115, 22766489: 0.25819888974716115, 30277494: 0.25819888974716115, 238550107: 0.25819888974716115, 128582668: 0.25819888974716115, 47945595: 0.25819888974716115, 92554510: 0.25819888974716115, 517205925: 0.25819888974716115}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  MBABAZI: I speak with no doubt that I will be in the election of 2016 if we hold transparent and democratic elections. #CapitalGang #NRM
+2
+defaultdict(<type 'list'>, {u'office': [u'election', u'election'], u'transmitting': [u'crystalline'], u'able': [u'crystalline'], u'principles': [u'democratic'], u'one': [u'hold'], u'something': [u'doubt'], u'vote': [u'election', u'election'], u'seen': [u'crystalline'], u'clarity': [u'crystalline'], u'select': [u'election', u'election'], u'based': [u'democratic'], u'democracy': [u'democratic'], u'winner': [u'election', u'election'], u'political': [u'election', u'election'], u'state': [u'doubt'], u'speech': [u'talk'], u'grip': [u'hold'], u'unsure': [u'doubt'], u'express': [u'talk'], u'upon': [u'democratic'], u'hands': [u'hold'], u'equality': [u'democratic'], u'hold': [u'hold'], u'advocating': [u'democratic'], u'light': [u'crystalline'], u'social': [u'democratic'], u'position': [u'election', u'election'], u'characterized': [u'democratic']})
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('transmission.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('able.a.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('principle.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('see.v.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('clarity.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('establish.v.08')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('democracy.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('address.n.03')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('diffident.a.02')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('express.n.01')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('hands.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('equality.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('recommend.v.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('light.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('sociable.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('qualify.v.06')
+lsynset= Synset('democratic.a.01')
+Core number (sorted) : [(u'democratic', 8), (u'election', 6), (u'crystalline', 5), (u'doubt', 3), (u'hold', 3), (u'office', 2), (u'transmitting', 2), (u'political', 2), (u'principles', 2), (u'one', 2), (u'vote', 2), (u'seen', 2), (u'select', 2), (u'clarity', 2), (u'based', 2), (u'democracy', 2), (u'winner', 2), (u'able', 2), (u'state', 2), (u'speech', 2), (u'grip', 2), (u'unsure', 2), (u'express', 2), (u'upon', 2), (u'hands', 2), (u'equality', 2), (u'advocating', 2), (u'light', 2), (u'talk', 2), (u'social', 2), (u'position', 2), (u'characterized', 2), (u'something', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: democratic ,core number= 8
+This document belongs to class: election ,core number= 6
+This document belongs to class: crystalline ,core number= 5
+This document belongs to class: doubt ,core number= 3
+This document belongs to class: hold ,core number= 3
+	max_core_number 8
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'democratic', 0.12776664579742597), (u'election', 0.09991989851331294), (u'crystalline', 0.08599652487125642), (u'doubt', 0.05814977758714336), (u'hold', 0.05814977758714336), (u'talk', 0.04422640394508684), (u'speech', 0.023341343482002046), (u'express', 0.023341343482002046), (u'one', 0.02102078120832595), (u'state', 0.02102078120832595), (u'grip', 0.02102078120832595), (u'unsure', 0.02102078120832595), (u'hands', 0.02102078120832595), (u'something', 0.02102078120832595), (u'transmitting', 0.019164331389385083), (u'seen', 0.019164331389385083), (u'clarity', 0.019164331389385083), (u'able', 0.019164331389385083), (u'light', 0.019164331389385083), (u'office', 0.018700218934649862), (u'political', 0.018700218934649862), (u'vote', 0.018700218934649862), (u'select', 0.018700218934649862), (u'winner', 0.018700218934649862), (u'position', 0.018700218934649862), (u'principles', 0.018120078366230842), (u'based', 0.018120078366230842), (u'democracy', 0.018120078366230842), (u'upon', 0.018120078366230842), (u'equality', 0.018120078366230842), (u'advocating', 0.018120078366230842), (u'social', 0.018120078366230842), (u'characterized', 0.018120078366230842)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'hold - hands': [' is a superinstance of '], u'election - winner': [' is a superinstance of ', ' is a superinstance of '], u'talk - express': [' is a superinstance of '], u'democratic - social': [' is a superinstance of '], u'democracy - democratic': [' is a subinstance of '], u'hold - hold': [' is a subinstance of ', ' is a superinstance of '], u'upon - democratic': [' is a subinstance of '], u'crystalline - seen': [' is a superinstance of '], u'democratic - characterized': [' is a superinstance of '], u'election - select': [' is a superinstance of ', ' is a superinstance of '], u'select - election': [' is a subinstance of ', ' is a subinstance of '], u'something - doubt': [' is a subinstance of '], u'unsure - doubt': [' is a subinstance of '], u'seen - crystalline': [' is a subinstance of '], u'light - crystalline': [' is a subinstance of '], u'crystalline - able': [' is a superinstance of '], u'clarity - crystalline': [' is a subinstance of '], u'election - office': [' is a superinstance of ', ' is a superinstance of '], u'election - vote': [' is a superinstance of ', ' is a superinstance of '], u'democratic - advocating': [' is a superinstance of '], u'express - talk': [' is a subinstance of '], u'crystalline - clarity': [' is a superinstance of '], u'doubt - state': [' is a superinstance of '], u'winner - election': [' is a subinstance of ', ' is a subinstance of '], u'democratic - democracy': [' is a superinstance of '], u'hands - hold': [' is a subinstance of '], u'position - election': [' is a subinstance of ', ' is a subinstance of '], u'democratic - principles': [' is a superinstance of '], u'office - election': [' is a subinstance of ', ' is a subinstance of '], u'characterized - democratic': [' is a subinstance of '], u'equality - democratic': [' is a subinstance of '], u'vote - election': [' is a subinstance of ', ' is a subinstance of '], u'speech - talk': [' is a subinstance of '], u'democratic - based': [' is a superinstance of '], u'grip - hold': [' is a subinstance of '], u'principles - democratic': [' is a subinstance of '], u'crystalline - transmitting': [' is a superinstance of '], u'crystalline - light': [' is a superinstance of '], u'based - democratic': [' is a subinstance of '], u'able - crystalline': [' is a subinstance of '], u'hold - grip': [' is a superinstance of '], u'democratic - upon': [' is a superinstance of '], u'state - doubt': [' is a subinstance of '], u'social - democratic': [' is a subinstance of '], u'political - election': [' is a subinstance of ', ' is a subinstance of '], u'election - position': [' is a superinstance of ', ' is a superinstance of '], u'advocating - democratic': [' is a subinstance of '], u'hold - one': [' is a superinstance of '], u'doubt - unsure': [' is a superinstance of '], u'talk - speech': [' is a superinstance of '], u'one - hold': [' is a subinstance of '], u'election - political': [' is a superinstance of ', ' is a superinstance of '], u'democratic - equality': [' is a superinstance of '], u'doubt - something': [' is a superinstance of '], u'transmitting - crystalline': [' is a subinstance of ']})
+((((((((((((((((((((((((((( [lambda: office  is a subinstance of  election]) [lambda: election  is a superinstance of  winner]) [lambda: election  is a superinstance of  political]) [lambda: election  is a superinstance of  vote]) [lambda: election  is a superinstance of  position]) [lambda: election  is a superinstance of  select]) [lambda: transmitting  is a subinstance of  crystalline]) [lambda: crystalline  is a superinstance of  seen]) [lambda: crystalline  is a superinstance of  clarity]) [lambda: crystalline  is a superinstance of  able]) [lambda: crystalline  is a superinstance of  light]) [lambda: principles  is a subinstance of  democratic]) [lambda: democratic  is a superinstance of  equality]) [lambda: democratic  is a superinstance of  democracy]) [lambda: democratic  is a superinstance of  upon]) [lambda: democratic  is a superinstance of  social]) [lambda: democratic  is a superinstance of  advocating]) [lambda: democratic  is a superinstance of  characterized]) [lambda: democratic  is a superinstance of  based]) [lambda: one  is a subinstance of  hold]) [lambda: hold  is a superinstance of  grip]) [lambda: hold  is a superinstance of  hands]) [lambda: state  is a subinstance of  doubt]) [lambda: doubt  is a superinstance of  unsure]) [lambda: doubt  is a superinstance of  something]) [lambda: speech  is a subinstance of  talk]) [lambda: talk  is a superinstance of  express])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.875
+Negativity =  0.5
+Objectivity =  9.625
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  election :  0.0
+posscore of  election :  0.0
+negscore of  doubt :  0.0
+posscore of  doubt :  0.125
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  office :  0.0
+posscore of  office :  0.0
+negscore of  transmitting :  0.0
+posscore of  transmitting :  0.0
+negscore of  political :  0.0
+posscore of  political :  0.0
+negscore of  principles :  0.0
+posscore of  principles :  0.0
+negscore of  vote :  0.0
+posscore of  vote :  0.125
+negscore of  seen :  0.0
+posscore of  seen :  0.0
+negscore of  based :  0.0
+posscore of  based :  0.0
+negscore of  democracy :  0.0
+posscore of  democracy :  0.0
+negscore of  winner :  0.0
+posscore of  winner :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  speech :  0.0
+posscore of  speech :  0.0
+negscore of  grip :  0.0
+posscore of  grip :  0.0
+negscore of  express :  0.0
+posscore of  express :  0.0
+negscore of  hands :  0.0
+posscore of  hands :  0.0
+negscore of  light :  0.0
+posscore of  light :  0.0
+negscore of  talk :  0.125
+posscore of  talk :  0.0
+negscore of  social :  0.0
+posscore of  social :  0.0
+negscore of  position :  0.0
+posscore of  position :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.015625, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.125000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+belief_propagated_posscore: 0.000244140625
+belief_propagated_negscore: 1.0
+tweet:  RT @primagaba: "I have absolutely no doubt about being in the 2016 elections if we hold free and fair elections" @AmamaMbabazi #capitalgang
+2
+defaultdict(<type 'list'>, {u'office': [u'election', u'election', u'election'], u'people': [u'free'], u'transmitting': [u'crystalline'], u'able': [u'crystalline'], u'informally': [u'absolutely'], u'principles': [u'democratic'], u'one': [u'hold'], u"''": [u'keep'], u'standards': [u'fair'], u'bias': [u'fair'], u'something': [u'doubt', u'doubt'], u'vote': [u'election', u'election', u'election'], u'seen': [u'crystalline'], u'clarity': [u'crystalline'], u'select': [u'election', u'election', u'election'], u'established': [u'fair'], u'intensifiers': [u'absolutely'], u'based': [u'democratic'], u'e.g.': [u'keep'], u'democracy': [u'democratic'], u'winner': [u'election', u'election', u'election'], u'political': [u'election', u'election', u'election'], u'conforming': [u'fair'], u'state': [u'doubt', u'doubt', u'keep'], u'speech': [u'talk'], u'certain': [u'keep'], u'grip': [u'hold'], u'``': [u'keep'], u'used': [u'absolutely'], u'unsure': [u'doubt', u'doubt'], u'qualification': [u'absolutely'], u'favoritism': [u'fair'], u'rules': [u'fair'], u'express': [u'talk'], u'upon': [u'democratic'], u'free': [u'fair', u'free'], u'completely': [u'absolutely'], u'hands': [u'hold'], u'equality': [u'democratic'], u'hold': [u'hold'], u'deception': [u'fair'], u'activity': [u'keep'], u'advocating': [u'democratic'], u'light': [u'crystalline'], u'self-interest': [u'fair'], u'keep': [u'keep'], u'without': [u'absolutely'], u'clean': [u'keep'], u'social': [u'democratic'], u'position': [u'election', u'election', u'keep', u'election'], u'characterized': [u'democratic']})
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('free.n.01')
+ksynset= Synset('transmission.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('able.a.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('principle.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('standard.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('bias.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('see.v.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('clarity.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('establish.v.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('intensifier.n.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('establish.v.08')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('for_example.r.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('democracy.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('conform.v.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('state.n.01')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('address.n.03')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('use.v.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('diffident.a.02')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('diffident.a.02')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('qualification.n.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('favoritism.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('rule.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('express.n.01')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('free.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('free.n.01')
+lsynset= Synset('free.n.01')
+ksynset= Synset('wholly.r.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('hands.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('equality.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('misrepresentation.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('recommend.v.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('light.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('opportunism.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('support.n.06')
+lsynset= Synset('support.n.06')
+ksynset= Synset('clean_and_jerk.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('sociable.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('qualify.v.06')
+lsynset= Synset('democratic.a.01')
+Core number (sorted) : [(u'fair', 9), (u'keep', 8), (u'democratic', 8), (u'election', 6), (u'absolutely', 6), (u'crystalline', 5), (u'state', 4), (u'doubt', 4), (u'position', 4), (u'free', 3), (u'hold', 3), (u'office', 2), (u'people', 2), (u'transmitting', 2), (u'able', 2), (u'informally', 2), (u'principles', 2), (u'one', 2), (u"''", 2), (u'standards', 2), (u'bias', 2), (u'vote', 2), (u'seen', 2), (u'clarity', 2), (u'select', 2), (u'established', 2), (u'based', 2), (u'democracy', 2), (u'winner', 2), (u'political', 2), (u'conforming', 2), (u'speech', 2), (u'certain', 2), (u'grip', 2), (u'``', 2), (u'used', 2), (u'unsure', 2), (u'qualification', 2), (u'favoritism', 2), (u'rules', 2), (u'express', 2), (u'upon', 2), (u'talk', 2), (u'e.g.', 2), (u'completely', 2), (u'hands', 2), (u'deception', 2), (u'activity', 2), (u'equality', 2), (u'light', 2), (u'advocating', 2), (u'self-interest', 2), (u'without', 2), (u'intensifiers', 2), (u'clean', 2), (u'social', 2), (u'characterized', 2), (u'something', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: fair ,core number= 9
+This document belongs to class: keep ,core number= 8
+This document belongs to class: democratic ,core number= 8
+This document belongs to class: election ,core number= 6
+This document belongs to class: absolutely ,core number= 6
+This document belongs to class: crystalline ,core number= 5
+This document belongs to class: state ,core number= 4
+	max_core_number 9
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'fair', 0.07918683030243934), (u'democratic', 0.07269105016767459), (u'keep', 0.06655900131917689), (u'absolutely', 0.05684828706558034), (u'election', 0.05235845312856117), (u'crystalline', 0.048926905514533256), (u'hold', 0.033084142412439024), (u'doubt', 0.027863262095861697), (u'talk', 0.025162760861391933), (u'free', 0.019199585553123465), (u'state', 0.017553560350126927), (u'position', 0.017076419546321286), (u'speech', 0.013280688534821276), (u'express', 0.013280688534821276), (u'hands', 0.011960458276313417), (u'one', 0.011960458276313417), (u'grip', 0.011960458276313417), (u'transmitting', 0.010904274069507143), (u'seen', 0.010904274069507143), (u'clarity', 0.010904274069507143), (u'able', 0.010904274069507143), (u'light', 0.010904274069507143), (u'people', 0.010745599175580036), (u'used', 0.010640228017805568), (u'completely', 0.010640228017805568), (u'informally', 0.010640228017805568), (u'without', 0.010640228017805568), (u'intensifiers', 0.010640228017805568), (u'qualification', 0.010640228017805568), (u'unsure', 0.010481231685115215), (u'something', 0.010481231685115215), (u'principles', 0.010310170453178611), (u'based', 0.010310170453178611), (u'democracy', 0.010310170453178611), (u'upon', 0.010310170453178611), (u'characterized', 0.010310170453178611), (u'equality', 0.010310170453178611), (u'advocating', 0.010310170453178611), (u'social', 0.010310170453178611), (u'bias', 0.010065394672831279), (u'established', 0.010065394672831279), (u'conforming', 0.010065394672831279), (u'favoritism', 0.010065394672831279), (u'rules', 0.010065394672831279), (u'deception', 0.010065394672831279), (u'self-interest', 0.010065394672831279), (u'standards', 0.010065394672831279), (u'political', 0.010004090881309572), (u'vote', 0.010004090881309572), (u'select', 0.010004090881309572), (u'office', 0.010004090881309572), (u'winner', 0.010004090881309572), (u"''", 0.009658535561563436), (u'certain', 0.009658535561563436), (u'``', 0.009658535561563436), (u'clean', 0.009658535561563436), (u'e.g.', 0.009658535561563436), (u'activity', 0.009658535561563436)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'hold - hands': [' is a superinstance of '], u'talk - express': [' is a superinstance of '], u'democracy - democratic': [' is a subinstance of '], u'absolutely - completely': [' is a superinstance of '], u'fair - rules': [' is a superinstance of '], u'something - doubt': [' is a subinstance of ', ' is a subinstance of '], u'democratic - social': [' is a superinstance of '], u'people - free': [' is a subinstance of '], u'unsure - doubt': [' is a subinstance of ', ' is a subinstance of '], u'democratic - democracy': [' is a superinstance of '], u'activity - keep': [' is a subinstance of '], u'absolutely - informally': [' is a superinstance of '], u'able - crystalline': [' is a subinstance of '], u'state - doubt': [' is a subinstance of ', ' is a subinstance of '], u'keep - activity': [' is a superinstance of '], u'keep - clean': [' is a superinstance of '], u'rules - fair': [' is a subinstance of '], u'democratic - upon': [' is a superinstance of '], u'fair - deception': [' is a superinstance of '], u'absolutely - without': [' is a superinstance of '], u'intensifiers - absolutely': [' is a subinstance of '], u'advocating - democratic': [' is a subinstance of '], u'free - fair': [' is a subinstance of '], u'one - hold': [' is a subinstance of '], u'transmitting - crystalline': [' is a subinstance of '], u'crystalline - able': [' is a superinstance of '], u'upon - democratic': [' is a subinstance of '], u'crystalline - seen': [' is a superinstance of '], u'`` - keep': [' is a subinstance of '], u'keep - ``': [' is a superinstance of '], u'select - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'e.g. - keep': [' is a subinstance of '], u'used - absolutely': [' is a subinstance of '], u'vote - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'election - office': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'democratic - characterized': [' is a superinstance of '], u'doubt - state': [' is a superinstance of ', ' is a superinstance of '], u'winner - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'fair - self-interest': [' is a superinstance of '], u'hands - hold': [' is a subinstance of '], u'position - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'characterized - democratic': [' is a subinstance of '], u"keep - ''": [' is a superinstance of '], u'absolutely - intensifiers': [' is a superinstance of '], u'fair - established': [' is a superinstance of '], u'fair - favoritism': [' is a superinstance of '], u'election - position': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'hold - one': [' is a superinstance of '], u'free - free': [' is a subinstance of ', ' is a superinstance of '], u'talk - speech': [' is a superinstance of '], u'based - democratic': [' is a subinstance of '], u'position - keep': [' is a subinstance of '], u'absolutely - qualification': [' is a superinstance of '], u'express - talk': [' is a subinstance of '], u'light - crystalline': [' is a subinstance of '], u'certain - keep': [' is a subinstance of '], u'favoritism - fair': [' is a subinstance of '], u'democratic - advocating': [' is a superinstance of '], u'crystalline - clarity': [' is a superinstance of '], u'bias - fair': [' is a subinstance of '], u'clean - keep': [' is a subinstance of '], u'crystalline - transmitting': [' is a superinstance of '], u'crystalline - light': [' is a superinstance of '], u'hold - grip': [' is a superinstance of '], u'absolutely - used': [' is a superinstance of '], u'fair - free': [' is a superinstance of '], u'completely - absolutely': [' is a subinstance of '], u'free - people': [' is a superinstance of '], u'fair - bias': [' is a superinstance of '], u"'' - keep": [' is a subinstance of '], u'democratic - based': [' is a superinstance of '], u'qualification - absolutely': [' is a subinstance of '], u'election - winner': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'conforming - fair': [' is a subinstance of '], u'hold - hold': [' is a subinstance of ', ' is a superinstance of '], u'informally - absolutely': [' is a subinstance of '], u'election - select': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'equality - democratic': [' is a subinstance of '], u'seen - crystalline': [' is a subinstance of '], u'keep - keep': [' is a subinstance of ', ' is a superinstance of '], u'clarity - crystalline': [' is a subinstance of '], u'deception - fair': [' is a subinstance of '], u'election - vote': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'self-interest - fair': [' is a subinstance of '], u'without - absolutely': [' is a subinstance of '], u'democratic - principles': [' is a superinstance of '], u'keep - state': [' is a superinstance of '], u'office - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'fair - standards': [' is a superinstance of '], u'speech - talk': [' is a subinstance of '], u'keep - e.g.': [' is a superinstance of '], u'keep - position': [' is a superinstance of '], u'grip - hold': [' is a subinstance of '], u'principles - democratic': [' is a subinstance of '], u'state - keep': [' is a subinstance of '], u'standards - fair': [' is a subinstance of '], u'social - democratic': [' is a subinstance of '], u'political - election': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'doubt - unsure': [' is a superinstance of ', ' is a superinstance of '], u'keep - certain': [' is a superinstance of '], u'election - political': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'fair - conforming': [' is a superinstance of '], u'democratic - equality': [' is a superinstance of '], u'doubt - something': [' is a superinstance of ', ' is a superinstance of '], u'established - fair': [' is a subinstance of ']})
+((((((((((((((((((((((((((((((((((((((((((((((((((( [lambda: grip  is a subinstance of  hold]) [lambda: hold  is a superinstance of  hands]) [lambda: hold  is a superinstance of  one]) [lambda: fair  is a superinstance of  established]) [lambda: fair  is a superinstance of  deception]) [lambda: fair  is a superinstance of  favoritism]) [lambda: fair  is a superinstance of  rules]) [lambda: fair  is a superinstance of  self-interest]) [lambda: fair  is a superinstance of  free]) [lambda: free  is a superinstance of  people]) [lambda: fair  is a superinstance of  standards]) [lambda: fair  is a superinstance of  conforming]) [lambda: fair  is a superinstance of  bias]) [lambda: transmitting  is a subinstance of  crystalline]) [lambda: crystalline  is a superinstance of  seen]) [lambda: crystalline  is a superinstance of  clarity]) [lambda: crystalline  is a superinstance of  able]) [lambda: crystalline  is a superinstance of  light]) [lambda: political  is a subinstance of  election]) [lambda: election  is a superinstance of  office]) [lambda: election  is a superinstance of  winner]) [lambda: election  is a superinstance of  vote]) [lambda: election  is a superinstance of  position]) [lambda: position  is a subinstance of  keep]) [lambda: keep  is a superinstance of  ``]) [lambda: keep  is a superinstance of  e.g.]) [lambda: keep  is a superinstance of  certain]) [lambda: keep  is a superinstance of  '']) [lambda: keep  is a superinstance of  state]) [lambda: state  is a subinstance of  doubt]) [lambda: doubt  is a superinstance of  unsure]) [lambda: doubt  is a superinstance of  something]) [lambda: keep  is a superinstance of  clean]) [lambda: keep  is a superinstance of  activity]) [lambda: election  is a superinstance of  select]) [lambda: principles  is a subinstance of  democratic]) [lambda: democratic  is a superinstance of  equality]) [lambda: democratic  is a superinstance of  democracy]) [lambda: democratic  is a superinstance of  upon]) [lambda: democratic  is a superinstance of  social]) [lambda: democratic  is a superinstance of  advocating]) [lambda: democratic  is a superinstance of  characterized]) [lambda: democratic  is a superinstance of  based]) [lambda: absolutely  is a superinstance of  used]) [lambda: absolutely  is a superinstance of  completely]) [lambda: absolutely  is a superinstance of  without]) [lambda: absolutely  is a superinstance of  qualification]) [lambda: absolutely  is a superinstance of  informally]) [lambda: absolutely  is a superinstance of  intensifiers]) [lambda: speech  is a subinstance of  talk]) [lambda: talk  is a superinstance of  express])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.125
+Negativity =  0.5
+Objectivity =  9.375
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  fair :  0.0
+posscore of  fair :  0.0
+negscore of  keep :  0.0
+posscore of  keep :  0.0
+negscore of  election :  0.0
+posscore of  election :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  doubt :  0.0
+posscore of  doubt :  0.125
+negscore of  position :  0.0
+posscore of  position :  0.0
+negscore of  free :  0.0
+posscore of  free :  0.0
+negscore of  hold :  0.0
+posscore of  hold :  0.0
+negscore of  office :  0.0
+posscore of  office :  0.0
+negscore of  people :  0.0
+posscore of  people :  0.0
+negscore of  transmitting :  0.0
+posscore of  transmitting :  0.0
+negscore of  principles :  0.0
+posscore of  principles :  0.0
+negscore of  standards :  0.0
+posscore of  standards :  0.0
+negscore of  bias :  0.875
+posscore of  bias :  0.0
+negscore of  vote :  0.0
+posscore of  vote :  0.125
+negscore of  seen :  0.0
+posscore of  seen :  0.0
+negscore of  established :  0.0
+posscore of  established :  0.0
+negscore of  based :  0.0
+posscore of  based :  0.0
+negscore of  democracy :  0.0
+posscore of  democracy :  0.0
+negscore of  winner :  0.0
+posscore of  winner :  0.0
+negscore of  political :  0.0
+posscore of  political :  0.0
+negscore of  speech :  0.0
+posscore of  speech :  0.0
+negscore of  certain :  0.5
+posscore of  certain :  0.25
+negscore of  grip :  0.0
+posscore of  grip :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  qualification :  0.0
+posscore of  qualification :  0.0
+negscore of  rules :  0.0
+posscore of  rules :  0.25
+negscore of  express :  0.0
+posscore of  express :  0.0
+negscore of  talk :  0.125
+posscore of  talk :  0.0
+negscore of  hands :  0.0
+posscore of  hands :  0.0
+negscore of  deception :  0.625
+posscore of  deception :  0.0
+negscore of  activity :  0.0
+posscore of  activity :  0.125
+negscore of  light :  0.0
+posscore of  light :  0.0
+negscore of  clean :  0.0
+posscore of  clean :  0.0
+negscore of  social :  0.0
+posscore of  social :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.625000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.625000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.875000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.875000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.500000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.500000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.015625, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.125000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000244, 1.000000
+belief_propagated_posscore: 0.000244140625
+belief_propagated_negscore: 1.0
+tweet:  "@SMSMediaUganda: @AmamaMbabazi - "If the elections are not fair, well some of us will remain democratic.""
+let those that have ears listen
+2
+defaultdict(<type 'list'>, {u'office': [u'election', u'election', u'election', u'election'], u'transmitting': [u'crystalline'], u'intensifiers': [u'absolutely'], u'1776': [u'United_States'], u'group': [u'Lashkar-e-Taiba'], u'evenhanded': [u'fairly'], u'winner': [u'election', u'election', u'election', u'election'], u'republic': [u'United_States'], u'equilibrium': [u'ear'], u'grip': [u'hold'], u'rules': [u'fair'], u'express': [u'talk'], u'Alaska': [u'United_States'], u'hands': [u'hold'], u'hearing': [u'ear'], u'equality': [u'democratic', u'democratic'], u'organ': [u'ear'], u'India': [u'Lashkar-e-Taiba'], u'50': [u'United_States'], u'standards': [u'fair'], u'restoring': [u'Lashkar-e-Taiba'], u'activity': [u'keep'], u'favoring': [u'fairly'], u'characterized': [u'democratic', u'democratic'], u'fair': [u'fairly'], u'people': [u'free'], u'principles': [u'democratic', u'democratic'], u'established': [u'fair'], u'Hawaiian': [u'United_States'], u'state': [u'doubt', u'doubt', u'keep', u'stay'], u'America': [u'United_States'], u'independence': [u'United_States'], u'unsure': [u'doubt', u'doubt'], u'attention': [u'listen'], u'Kashmir': [u'Lashkar-e-Taiba'], u'free': [u'fair', u'free'], u'completely': [u'absolutely'], u'active': [u'Lashkar-e-Taiba'], u'based': [u'democratic', u'democratic'], u'Ocean': [u'United_States'], u'self-interest': [u'fair'], u'brutal': [u'Lashkar-e-Taiba'], u'keep': [u'keep'], u'plus': [u'United_States'], u'qualification': [u'absolutely'], u'social': [u'democratic', u'democratic'], u'one': [u'hold', u'fairly'], u'Islands': [u'United_States'], u'vote': [u'election', u'election', u'election', u'election'], u'clarity': [u'crystalline'], u'select': [u'election', u'election', u'election', u'election'], u'North': [u'United_States'], u'achieved': [u'United_States'], u'political': [u'election', u'election', u'election', u'election'], u'listen': [u'listen'], u'``': [u'keep'], u'favoritism': [u'fair'], u'American': [u'United_States'], u'informally': [u'absolutely'], u'hold': [u'hold'], u'states': [u'United_States'], u'advocating': [u'democratic', u'democratic'], u'Pacific': [u'United_States'], u'remain': [u'stay'], u'deception': [u'fair'], u'manner': [u'fairly'], u'e.g.': [u'keep'], u'certain': [u'keep', u'stay'], u'fights': [u'Lashkar-e-Taiba'], u"''": [u'keep'], u'bias': [u'fair'], u'something': [u'doubt', u'doubt'], u'sense': [u'ear'], u'seen': [u'crystalline'], u'containing': [u'United_States'], u'terrorist': [u'Lashkar-e-Taiba'], u'goal': [u'Lashkar-e-Taiba'], u'democracy': [u'democratic', u'democratic'], u'pay': [u'listen'], u'able': [u'crystalline'], u'conforming': [u'fair'], u'Islamic': [u'Lashkar-e-Taiba'], u'conterminous': [u'United_States'], u'speech': [u'talk'], u'northwest': [u'United_States'], u'party': [u'fairly'], u'used': [u'absolutely'], u'upon': [u'democratic', u'democratic'], u'stay': [u'stay'], u'48': [u'United_States'], u'light': [u'crystalline'], u'rule': [u'Lashkar-e-Taiba'], u'without': [u'absolutely', u'fairly'], u'clean': [u'keep'], u'position': [u'election', u'election', u'keep', u'election', u'election']})
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('transmission.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('intensifier.n.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+
+
+ksynset= Synset('evenhanded.s.01')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('winner.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('democracy.n.02')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('equilibrium.n.01')
+lsynset= Synset('ear.n.01')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('rule.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('express.n.01')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('alaska.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('hands.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('hearing.n.01')
+lsynset= Synset('ear.n.01')
+ksynset= Synset('equality.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('equality.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('organ.n.01')
+lsynset= Synset('ear.n.01')
+ksynset= Synset('india.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('fifty.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('standard.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('restore.v.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('prefer.v.03')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('qualify.v.06')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('qualify.v.06')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('carnival.n.03')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('free.n.01')
+ksynset= Synset('principle.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('principle.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('establish.v.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('hawaiian.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('state.n.01')
+lsynset= Synset('stay.n.01')
+ksynset= Synset('united_states.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('independence.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('diffident.a.02')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('diffident.a.02')
+lsynset= Synset('doubt.n.01')
+ksynset= Synset('attention.n.01')
+lsynset= Synset('listen.v.01')
+ksynset= Synset('kashmir.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('free.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('free.n.01')
+lsynset= Synset('free.n.01')
+ksynset= Synset('wholly.r.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('active_agent.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('establish.v.08')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('establish.v.08')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('ocean.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('opportunism.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('barbarous.s.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('support.n.06')
+lsynset= Synset('support.n.06')
+ksynset= Synset('asset.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('qualification.n.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('sociable.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('sociable.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('one.n.01')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('island.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('vote.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('clarity.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('north.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('achieve.v.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('listen.v.01')
+lsynset= Synset('listen.v.01')
+ksynset= Synset('favoritism.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('american.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('clasp.n.02')
+lsynset= Synset('clasp.n.02')
+ksynset= Synset('state.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('recommend.v.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('recommend.v.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('pacific.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('stay.v.01')
+lsynset= Synset('stay.n.01')
+ksynset= Synset('misrepresentation.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('manner.n.01')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('for_example.r.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('stay.n.01')
+ksynset= Synset('battle.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('bias.n.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('sense.n.01')
+lsynset= Synset('ear.n.01')
+ksynset= Synset('see.v.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('incorporate.v.02')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('terrorist.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('goal.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('democracy.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('democracy.n.01')
+lsynset= Synset('democratic.a.01')
+ksynset= Synset('wage.n.01')
+lsynset= Synset('listen.v.01')
+ksynset= Synset('able.a.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('conform.v.01')
+lsynset= Synset('carnival.n.03')
+ksynset= Synset('muslim.a.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('conterminous.s.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('address.n.03')
+lsynset= Synset('talk.n.01')
+ksynset= Synset('northwest.n.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('reasonably.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('absolutely.r.01')
+ksynset= Synset('stay.n.01')
+lsynset= Synset('stay.n.01')
+ksynset= Synset('forty-eight.s.01')
+lsynset= Synset('united_states.n.01')
+ksynset= Synset('light.n.01')
+lsynset= Synset('crystalline.a.01')
+ksynset= Synset('rule.n.01')
+lsynset= Synset('lashkar-e-taiba.n.01')
+ksynset= Synset('clean_and_jerk.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('support.n.06')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('election.n.01')
+
+

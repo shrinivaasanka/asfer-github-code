@@ -1,0 +1,403 @@
+ /user/root/input
+ 1859  bin/hdfs dfs -cat /user/root/input/*
+ 1860  bin/hdfs dfs -cat /user/root/input/
+ 1861  bin/hdfs dfs -ls /user/root/input/*
+ 1862  bin/hdfs dfs -ls /user/root/input
+ 1863  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1864  sudo sbin/start-yarn.sh 
+ 1865  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1866  ls
+ 1867  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1868  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1869  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output/output
+ 1870  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1871  ls
+ 1872  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1873  echo $CLASSPATH
+ 1874  export CLASSPATH=./MinedRulesFromDatasets_MapReducer.jar:$CLASSPATH
+ 1875  export HADOOP_CLASSPATH=./MinedRulesFromDatasets_MapReducer.jar:$HADOOP_CLASSPATH
+ 1876  echo $HADOOP_CLASSPATH
+ 1877  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output/output
+ 1878  cd /tmp/hadoop-root/
+ 1879  ls
+ 1880  cd dfs
+ 1881  ls
+ 1882  cd data/
+ 1883  ls
+ 1884  cd data
+ 1885  sudo cd data
+ 1886  ls
+ 1887  ls -lrt
+ 1888  ls data
+ 1889  ls name
+ 1890  ls namesecondary/
+ 1891  cd ..
+ 1892  ls
+ 1893  cd nm-local-dir/
+ 1894  ls
+ 1895  cd usercache/
+ 1896  ls
+ 1897  cd root/
+ 1898  ls
+ 1899  cd root/
+ 1900  ls
+ 1901  sudo su
+ 1902  ls
+ 1903  cd 
+ 1904  ls
+ 1905  pwd
+ 1906  cd /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/
+ 1907  ls
+ 1908  cd /usr/local/hadoop/
+ 1909  ls
+ 1910  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input 
+ 1911  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1912  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1913  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1914  sudo bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input output 'dfs[a-z.]+'
+ 1915  sudo bin/hadoop dfs -rmdir /usr/root/output
+ 1916  sudo bin/hdfs dfs -rmdir /usr/root/output
+ 1917  sudo vi bin/hdfs
+ 1918  sudo bin/hdfs dfs
+ 1919  sudo bin/hdfs dfs -rmdir /usr/root/output2
+ 1920  sudo bin/hdfs dfs -rmdir /user/root/output2
+ 1921  sudo bin/hdfs dfs -rmdir /user/root/output
+ 1922  sudo bin/hdfs dfs -rmdir /user/root/output/output
+ 1923  sudo bin/hdfs dfs -rmdir /user/root/output
+ 1924  sudo bin/hdfs dfs -mkdir /user/root/output
+ 1925  sudo bin/hadoop dfs -rm /usr/root/input
+ 1926  sudo bin/hdfs dfs -rm /usr/root/input
+ 1927  sudo bin/hdfs dfs -rm /user/root/input
+ 1928  sudo bin/hdfs dfs -mkdir /user/root/input
+ 1929  sudo bin/hdfs dfs -put
+ 1930  sudo bin/hdfs dfs -put /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/MinedRulesFromDatasets.earthquakes /user/root/input
+ 1931  sudo bin/hdfs dfs -ls 
+ 1932  sudo bin/hdfs dfs -ls /user/root
+ 1933  sudo bin/hdfs dfs -ls /user/root/input
+ 1934  jar tvf *jar
+ 1935  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1936  sudo bin/hdfs dfs -rmdir /user/root/output
+ 1937  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1938  sudo bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input output 'dfs[a-z.]+'
+ 1939  sudo bin/hdfs dfs -rmdir /user/root/output
+ 1940  sudo bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.6.0.jar grep input output 'dfs[a-z.]+'
+ 1941  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1942  ls
+ 1943  cp MinedRulesFromDatasets_MapReducer.java  WordCount.java
+ 1944  sudo cp MinedRulesFromDatasets_MapReducer.java  WordCount.java
+ 1945  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 1946  sudo vi WordCount.java
+ 1947  sudo bin/hadoop com.sun.tools.javac.Main WordCount.java
+ 1948  ls
+ 1949  sudo jar cf wc.jar WordCount*.class
+ 1950  ls
+ 1951  sudo vi file1.txt
+ 1952  ls
+ 1953  sudo bin/hdfs dfs -put file1.txt /user/root/input
+ 1954  sudo bin/hdfs dfs -rmdir /user/root/output
+ 1955  sudo bin/hdfs dfs -rmdir /user/root/output/*
+ 1956  sudo bin/hdfs dfs -rm /user/root/output/*
+ 1957  sudo bin/hdfs dfs -rmdir /user/root/output/
+ 1958  ls
+ 1959  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 1960  ls
+ 1961  sudo bin/hdfs dfs -rmdir /user/root/output/
+ 1962  echo $HADOOP_CLASSPATH
+ 1963  export HADOOP_CLASSPATH=wc.jar:$HADOOP_CLASSPATH
+ 1964  echo $CLASSPATH
+ 1965  export CLASSPATH=wc.jar:$CLASSPATH
+ 1966  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 1967  sudo vi bin/hadoop
+ 1968  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 1969  sudo bin/hdfs dfs -rmdir /user/root/output/
+ 1970  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 1971  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1972  sudo vi bin/hadoop
+ 1973  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1974  sudo vi bin/hadoop
+ 1975  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1976  sudo bin/hdfs dfs -rmdir /user/root/output/
+ 1977  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 1978  sudo sbin/stop-yarn.sh
+ 1979  cd
+ 1980  cd /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/
+ 1981  ls
+ 1982  cd asfer-code
+ 1983  ls
+ 1984  pwd
+ 1985  ls
+ 1986  sudo mkdir java-src
+ 1987  cd java-src/
+ 1988  ls
+ 1989  sudo vi MapReducer.java
+ 1990  cd ..
+ 1991  ls
+ 1992  cd cpp-src/
+ 1993  ls
+ 1994  cd ..
+ 1995  ls
+ 1996  cd python-src/
+ 1997  ls
+ 1998  vi MinedRulesFromDatasets.earthquakes 
+ 1999  ls
+ 2000  pwd
+ 2001  ls
+ 2002  cd /media/shrinivaasanka/
+ 2003  ls
+ 2004  cd OS
+ 2005  ls
+ 2006  cd /usr/local/hadoop/
+ 2007  ls
+ 2008  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 2009  sudo bin/hdfs namenode -format
+ 2010  cd /tmp
+ 2011  ls
+ 2012  sudo rm -rf hadoop-root*
+ 2013  sudo rm -rf *
+ 2014  ls
+ 2015  cd -
+ 2016  ls
+ 2017  cd logs
+ 2018  ls
+ 2019  sudo rm -rf *
+ 2020  cd ..
+ 2021  ls
+ 2022  sudo sbin/start-dfs.sh 
+ 2023  sudo bin/hdfs dfs -mkdir /user/
+ 2024  sudo bin/hdfs dfs -mkdir /user/root
+ 2025  sudo bin/hdfs dfs -put file1.txt /user/root/input
+ 2026  sudo bin/hdfs dfs -cat /user/
+ 2027  sudo bin/hdfs dfs -cat /user/root/*
+ 2028  sudo bin/hdfs dfs -cat /user/root/input/*
+ 2029  sudo bin/hdfs dfs -ls /user/root/input/*
+ 2030  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2031  cd etc/hadoop/
+ 2032  ls
+ 2033  ls -lrt
+ 2034  sudo vi core-site.xml 
+ 2035  sudo vi hdfs-site.xml 
+ 2036  sudo vi mapred-site.xml
+ 2037  sudo vi yarn-site.xml 
+ 2038  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2039  cd ../..
+ 2040  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2041  sudo hdfs dfsadmin -safemode leave
+ 2042  sudo bin/hdfs dfsadmin -safemode leave
+ 2043  sudo bin/hdfs dfs -rmdir /user/root/output/
+ 2044  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2045  sudo bin/hdfs dfsadmin -safemode leave
+ 2046  sudo bin/hdfs dfs -rmdir /user/root/output/*
+ 2047  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2048  man ulimit
+ 2049  ulimit
+ 2050  ulimit -h
+ 2051  ulimit -a
+ 2052  ulimit -n unlimited
+ 2053  sudo ulimit -n unlimited
+ 2054  ulimit -n unlimited
+ 2055  man ulimit
+ 2056  man bash
+ 2057  ls
+ 2058  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output2
+ 2059  sudo bin/hdfs dfsadmin -safemode leave
+ 2060  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output2
+ 2061  swap -l
+ 2062  swap
+ 2063  ulimit
+ 2064  echo $JAVA
+ 2065  echo $JAVA_HOME
+ 2066  vi bin/hadoop
+ 2067  sudo vi .bashrc
+ 2068  . .bashrc 
+ 2069  echo $JAVA_HOME
+ 2070  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output2
+ 2071  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 2072  df -k
+ 2073  cd /tmp
+ 2074  ls
+ 2075  cd hadoop-root/
+ 2076  ls
+ 2077  ls -lrt
+ 2078  cd dfs
+ 2079  ls
+ 2080  cd /usr/local/hadoop/
+ 2081  ls
+ 2082  sudo sbin/stop-dfs.sh
+ 2083  ls
+ 2084  sudo bin/hdfs namenode -format
+ 2085  cd /tmp
+ 2086  ls
+ 2087  sudo rm -rf *
+ 2088  cd -
+ 2089  cd logs
+ 2090  ls
+ 2091  sudo rm -rf *
+ 2092  ls
+ 2093  cd ..
+ 2094  ls
+ 2095  sudo sbin/start-dfs.sh 
+ 2096  ls
+ 2097  df -k
+ 2098  ls /tmp
+ 2099  ls
+ 2100  sudo bin/hdfs dfsadmin -safemode leave
+ 2101  ls
+ 2102  cd lib
+ 2103  ls
+ 2104  cd native/
+ 2105  ls
+ 2106  sudo execstack -c *
+ 2107  cd ../..
+ 2108  ls
+ 2109  sudo sbin/stop-dfs.sh 
+ 2110  ls
+ 2111  sudo bin/hdfs namenode -format
+ 2112  sudo sbin/start-dfs.sh 
+ 2113* 
+ 2114  sudo sbin/stop-dfs.sh 
+ 2115  sudo bin/hdfs namenode -format
+ 2116  cd /tmp/
+ 2117  ls
+ 2118  sudo rm -rf *
+ 2119  cd -
+ 2120  sudo bin/hdfs namenode -format
+ 2121  cd /tmp/
+ 2122  ls
+ 2123  cd -
+ 2124  ps -eaf|grep hadoop
+ 2125  sudo kill -9 `ps -eaf|grep hadoop|awk '{print $2}'`
+ 2126  ps -eaf|grep hadoop
+ 2127  sudo sbin/start-dfs.sh 
+ 2128  sudo bin/hdfs dfs -mkdir /user/
+ 2129  sudo bin/hdfs dfs -mkdir /user/root
+ 2130  sudo bin/hdfs dfs -put file1.txt /user/root/input
+ 2131  sudo bin/hadoop jar wc.jar WordCount /user/root/input /user/root/output
+ 2132  ls
+ 2133  cp /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/MinedRulesFromDatasets.earthquakes .
+ 2134  sudo cp /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/MinedRulesFromDatasets.earthquakes .
+ 2135  sudo bin/hdfs dfs -put MinedRulesFromDatasets /user/root/input
+ 2136  sudo bin/hdfs dfs -rm /user/root/input
+ 2137  sudo bin/hdfs dfs -put MinedRulesFromDatasets /user/root/input
+ 2138  sudo bin/hdfs dfs -put MinedRulesFromDatasets.earthquakes /user/root/input
+ 2139  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 2140  sudo bin/hdfs dfs -rmdir /user/root/output/*
+ 2141  sudo bin/hdfs dfs -rmdir /user/root/output
+ 2142  sudo bin/hdfs dfs -rmdir /user/root/output/*
+ 2143  sudo sbin/stop-dfs.sh 
+ 2144  sudo bin/hdfs namenode -format
+ 2145  sudo kill -9 `ps -eaf|grep hadoop|awk '{print $2}'`
+ 2146  sudo kill -9 `ps -eaf|grep hadoop
+ 2147  ps -eaf|grep hadoop
+ 2148  ls /tmp/
+ 2149  cd /tmp
+ 2150  sudo rm -rf *
+ 2151  cd -
+ 2152  ls
+ 2153  sudo bin/hdfs namenode -format
+ 2154  cd /tmp
+ 2155  ls
+ 2156  cd -
+ 2157  sudo sbin/start-dfs.sh 
+ 2158  sudo bin/hdfs dfs -mkdir /user/
+ 2159  sudo bin/hdfs dfs -mkdir /user/root
+ 2160  sudo bin/hdfs dfs -put MinedRulesFromDatasets.earthquakes /user/root/input
+ 2161  sudo bin/hadoop jar MinedRulesFromDatasets_MapReducer.jar MinedRulesFromDatasets_MapReducer /user/root/input /user/root/output
+ 2162  ls
+ 2163  sudo mv MinedRulesFromDatasets* /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/*
+ 2164  ls
+ 2165  sudo mv MinedRulesFromDatasets* /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/
+ 2166  ls
+ 2167  cd /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code
+ 2168  ls
+ 2169  cd java-src/
+ 2170  ls
+ 2171  pwd
+ 2172  ls
+ 2173  sudo mkdir bigdata_analytics
+ 2174  ls
+ 2175  cd bigdata_analytics/
+ 2176  ls
+ 2177  sudo mkdir hadoop
+ 2178  ls
+ 2179  cd hadoop
+ 2180  ls
+ 2181  sudo mv ../../MinedRulesFromDatasets* .
+ 2182  ls
+ 2183  cd ../..
+ 2184  ls
+ 2185  cd bigdata_analytics/
+ 2186  ls
+ 2187  cd hadoop/
+ 2188  ls
+ 2189  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 2190  sudo vi ../../../../asfer-code/asfer-docs/AstroInferDesign.txt 
+ 2191  ls
+ 2192  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 2193  ls
+ 2194  cd /usr/local/hadoop
+ 2195  ls
+ 2196  sudo bin/hdfs dfs -get
+ 2197  ls
+ 2198  ls output
+ 2199  rm -rf output
+ 2200  sudo rm -rf output
+ 2201  sudo bin/hdfs dfs -get
+ 2202  sudo bin/hdfs dfs -get /user/root/output userroot_output
+ 2203  ls
+ 2204  cd userroot_output/
+ 2205  ls
+ 2206  sudo vi *
+ 2207  cd ..
+ 2208  ls
+ 2209  cd logs
+ 2210  ls -lrt
+ 2211  cd ..
+ 2212  ls
+ 2213  sudo mv userroot_output/ /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/bigdata_analytics/hadoop/
+ 2214  ls
+ 2215  sudo cp -r logs /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/bigdata_analytics/hadoop/
+ 2216  sudo cd /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/java-src/bigdata_analytics/hadoop/
+ 2217  ls
+ 2218  sudo mkdir hdfs_data
+ 2219  ls
+ 2220  sudo mv logs hdfs_data/
+ 2221  sudo mv userroot_output/ hdfs_data/
+ 2222  ls
+ 2223  cd hdfs_data/
+ 2224  ls
+ 2225  cd logs
+ 2226  ls
+ 2227  cd ..
+ 2228  ls
+ 2229  sudo mv logs hadooproot_logs
+ 2230  ls
+ 2231  cd hadooproot_logs/
+ 2232  ls
+ 2233  sudo vi *
+ 2234  cd ..
+ 2235  ls
+ 2236  cd ..
+ 2237  ls
+ 2238  cd hdfs_data/
+ 2239  cd userroot_output/
+ 2240  ls
+ 2241  vi *
+ 2242  cd ../..
+ 2243  ls
+ 2244  sudo vi MinedRulesFromDatasets_MapReducer.java 
+ 2245  cd ..
+ 2246  ls
+ 2247  sudo mv hadoop/ hadoop_mapreduce
+ 2248  ls
+ 2249  cd hadoop_mapreduce/
+ 2250  ls
+ 2251  cd hdfs_data/
+ 2252  ls
+ 2253  sudo mv /media/shrinivaasanka/OS/UBUNTU_Personal/*13Feb* .
+ 2254  ls
+ 2255  sudo vi MinedRulesFromDatasets_HadoopMapReducer.console.log.13February2015 
+ 2256  history
+ 2257  fc -l
+ 2258  sudo su
+ 2259  ls
+

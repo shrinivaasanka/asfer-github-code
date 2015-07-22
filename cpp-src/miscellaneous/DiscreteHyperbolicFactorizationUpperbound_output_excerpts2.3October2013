@@ -1,0 +1,26 @@
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ ./a.out |grep FactorFactorization of n=187; Stirling upperbound for sum of logs ---------- =-881.896
+binary_search_int(): N=187; Factor is 187
+binary_search_int(): N=187; Factor is 17
+binary_search_int(): N=187; Factor is 11
+binary_search_int(): N=187; Factor is 1
+Factorization of n=187; sum of logs ----- should be almost equal to or less than Stirling Upperbound:-889.456
+Factorization of n=187; sum of logs as single log ----- log2l(n^(n-1)/n!*(n-1)!) =-881.901
+Factorization of n, log2l(n)=7.54689
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ vi DiscreteHyperbolicFactorizationUpperbound.cpp 
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ g++ DiscreteHyperbolicFactorizationUpperbound.cpp 
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ ./a.out |grep FactorFactorization of n=31527; Stirling upperbound for sum of logs ---------- =-nan
+binary_search_int(): N=31527; Factor is 31527
+binary_search_int(): N=31527; Factor is 10509
+binary_search_int(): N=31527; Factor is 3503
+Factorization of n=31527; sum of logs ----- should be almost equal to or less than Stirling Upperbound:-380214
+Factorization of n=31527; sum of logs as single log ----- log2l(n^(n-1)/n!*(n-1)!) =-nan
+Factorization of n, log2l(n)=14.9443
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ vi DiscreteHyperbolicFactorizationUpperbound.cpp 
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ g++ DiscreteHyperbolicFactorizationUpperbound.cpp 
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ ./a.out |grep FactorFactorization of n=457083; Stirling upperbound for sum of logs ---------- =-nan
+binary_search_int(): N=457083; Factor is 457083
+binary_search_int(): N=457083; Factor is 152361
+Factorization of n=457083; sum of logs ----- should be almost equal to or less than Stirling Upperbound:-7.2753e+06
+Factorization of n=457083; sum of logs as single log ----- log2l(n^(n-1)/n!*(n-1)!) =-nan
+Factorization of n, log2l(n)=18.8021
+

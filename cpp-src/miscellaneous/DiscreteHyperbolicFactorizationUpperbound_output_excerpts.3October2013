@@ -1,0 +1,15 @@
+[this took less than a minute]
+kashrinivaasan@kashrinivaasan-Inspiron-1545:~/KrishnaiResearch_OpenSource/asfer-code/cpp-src/miscellaneous$ ./a.out |grep FactorFactorization of n=37500; Stirling upperbound for sum of logs ---------- =-nan
+binary_search_int(): N=37500; Factor is 37500
+binary_search_int(): N=37500; Factor is 18750
+binary_search_int(): N=37500; Factor is 12500
+binary_search_int(): N=37500; Factor is 9375
+binary_search_int(): N=37500; Factor is 7500
+binary_search_int(): N=37500; Factor is 6250
+binary_search_int(): N=37500; Factor is 300
+binary_search_int(): N=37500; Factor is 60
+binary_search_int(): N=37500; Factor is 50
+Factorization of n=37500; sum of logs ----- should be almost equal to or less than Stirling Upperbound:-461629
+Factorization of n=37500; sum of logs as single log ----- log2l(n^(n-1)/n!*(n-1)!) =-nan
+Factorization of n, log2l(n)=15.1946
+

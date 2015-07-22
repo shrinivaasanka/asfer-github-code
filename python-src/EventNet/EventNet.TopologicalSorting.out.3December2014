@@ -1,0 +1,41 @@
+Couldn't import dot_parser, loading of dot files will not be possible.
+e1 - p11, p12, p13
+
+['e1 ', ' p11, p12, p13\n']
+e2 - p21, p22
+
+['e2 ', ' p21, p22\n']
+e3 - p31, p32
+
+['e3 ', ' p31, p32\n']
+e4 - p41, p42, p43
+
+['e4 ', ' p41, p42, p43\n']
+e5 - p51, p52
+
+['e5 ', ' p51, p52\n']
+e1,e2
+
+['e1', 'e2\n']
+e1,e3
+
+['e1', 'e3\n']
+e3,e2
+
+['e3', 'e2\n']
+e2,e4
+
+['e2', 'e4\n']
+e3,e4
+
+['e3', 'e4\n']
+e3,e5
+
+['e3', 'e5\n']
+e5,e4
+
+['e5', 'e4\n']
+############################################
+Topological sorting of the graph:
+############################################
+['e1', 'e3', 'e2', 'e5', 'e4']

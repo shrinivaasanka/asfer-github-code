@@ -1,0 +1,114 @@
+s= noun ; observation= PoSTagging
+s= verb ; observation= PoSTagging
+s= object ; observation= PoSTagging
+s= adjective ; observation= PoSTagging
+s= conjunction ; observation= PoSTagging
+Viterbi initialised to:
+[{'adjective': 0.010000000000000002, 'conjunction': 0.0, 'verb': 0.020000000000000004, 'noun': 0.21, 'object': 0.020000000000000004}]
+9
+============================
+CRF Viterbi computation
+============================
+[{'adjective': 0.010000000000000002,
+  'conjunction': 0.0,
+  'noun': 0.21,
+  'object': 0.020000000000000004,
+  'verb': 0.020000000000000004},
+ {'adjective': 0.042,
+  'conjunction': 0.021,
+  'noun': 0.006000000000000001,
+  'object': 0.042,
+  'verb': 0.105},
+ {'adjective': 0.004200000000000001,
+  'conjunction': 0.042,
+  'noun': 0.0252,
+  'object': 0.063,
+  'verb': 0.008400000000000001},
+ {'adjective': 0.0063,
+  'conjunction': 0.0441,
+  'noun': 0.021,
+  'object': 0.00504,
+  'verb': 0.016800000000000002},
+ {'adjective': 0.00441,
+  'conjunction': 0.006720000000000001,
+  'noun': 0.02205,
+  'object': 0.01008,
+  'verb': 0.01764},
+ {'adjective': 0.00441,
+  'conjunction': 0.007056,
+  'noun': 0.0033600000000000006,
+  'object': 0.010584,
+  'verb': 0.011025},
+ {'adjective': 0.0010584,
+  'conjunction': 0.007408799999999999,
+  'noun': 0.003528,
+  'object': 0.006615,
+  'verb': 0.0028224},
+ {'adjective': 0.00074088,
+  'conjunction': 0.0046305,
+  'noun': 0.0037043999999999996,
+  'object': 0.00169344,
+  'verb': 0.00296352},
+ {'adjective': 0.00074088,
+  'conjunction': 0.001185408,
+  'noun': 0.00231525,
+  'object': 0.0017781119999999999,
+  'verb': 0.0018522}]
+============================
+CRF Viterbi path computation
+============================
+{'adjective': ['noun',
+               'verb',
+               'object',
+               'conjunction',
+               'verb',
+               'object',
+               'conjunction',
+               'noun',
+               'adjective'],
+ 'conjunction': ['noun',
+                 'verb',
+                 'object',
+                 'conjunction',
+                 'verb',
+                 'object',
+                 'conjunction',
+                 'verb',
+                 'conjunction'],
+ 'noun': ['noun',
+          'verb',
+          'object',
+          'conjunction',
+          'noun',
+          'verb',
+          'object',
+          'conjunction',
+          'noun'],
+ 'object': ['noun',
+            'verb',
+            'object',
+            'conjunction',
+            'verb',
+            'object',
+            'conjunction',
+            'verb',
+            'object'],
+ 'verb': ['noun',
+          'verb',
+          'object',
+          'conjunction',
+          'noun',
+          'verb',
+          'object',
+          'conjunction',
+          'verb']}
+============================
+PoS tagging with CRF
+============================
+Sentence to be PoS tagged ['PoSTagging', 'is', 'used', 'to', 'annotate', 'complex', 'sentences', 'with', 'PoS']
+Previous tagged PoS ['verb', 'conjunction', 'object']
+PoS tagged words in previous sentence ['noun', 'verb', '?', 'conjunction', '?', 'verb', 'object', '?', 'object']
+words missing PoS tag: ['used', 'annotate', 'with']
+ " used " PoS tagged using CRF as:  object
+ " annotate " PoS tagged using CRF as:  object
+ " with " PoS tagged using CRF as:  conjunction

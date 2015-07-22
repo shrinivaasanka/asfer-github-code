@@ -1,0 +1,110 @@
+shrinivaasanka@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src$ sudo python SocialNetworkAnalysis_Twitter.py 
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 6, "followers_count": 14, "friends_count": 99, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan ", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Wed May 06 20:21:07 +0000 2015", "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596047058894622720, "lang": "en", "retweet_count": 598, "retweeted": true, "retweeted_status": {"created_at": "Wed May 06 20:15:35 +0000 2015", "favorite_count": 591, "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596045664636796928, "lang": "en", "retweet_count": 598, "retweeted": true, "source": "<a href=\"http://vine.co\" rel=\"nofollow\">Vine - Make a Scene</a>", "text": "#India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}}, "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", "text": "RT @AstroTerry: #India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}, "user_mentions": [{"id": 1115148079, "name": "Terry W. Virts", "screen_name": "AstroTerry"}]}, "statuses_count": 19, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+======================================
+128582668
+======================================
+======================================
+2428395070L
+======================================
+======================================
+917076067
+===========================================================================================
+Bonacich Power Centrality of the Social Network (Twitter) Crawled - computed using PageRank
+(a degree centrality based on social prestige)
+===========================================================================================
+[(1977078144, 0.0714285714285714), (917076067, 0.0714285714285714), (517205925, 0.0714285714285714), (429868038, 0.0714285714285714), (128582668, 0.0714285714285714), (47945595, 0.0714285714285714), (135815468, 0.0714285714285714), (92554510, 0.0714285714285714), (115943189, 0.0714285714285714), (30277494, 0.0714285714285714), (22766489, 0.0714285714285714), (23219674, 0.0714285714285714), (238550107, 0.0714285714285714), (2428395070L, 0.0714285714285714)]
+===========================================================================================
+Eigen Vector Centrality
+===========================================================================================
+{1977078144: 0.26726124191242434, 92554510: 0.26726124191242434, 917076067: 0.26726124191242434, 23219674: 0.26726124191242434, 517205925: 0.26726124191242434, 429868038: 0.26726124191242434, 135815468: 0.26726124191242434, 22766489: 0.26726124191242434, 30277494: 0.26726124191242434, 238550107: 0.26726124191242434, 128582668: 0.26726124191242434, 47945595: 0.26726124191242434, 2428395070L: 0.26726124191242434, 115943189: 0.26726124191242434}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  As to keep pace but pelf amongst finished packers else movers good understanding chennai being unstaid: nfkr
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 11.5
+tweet:  Kakka Muttai (at @Sathyam_Cinemas in Chennai, India) https://t.co/Xum6MwEWtn
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 1.0
+tweet:  Is there a list of #publictoilets in #Chennai with address or maps?? Pls RT.
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 6.625
+tweet:  RT @BuzzFeedIndia: This Video Perfectly Explains What Hand Gestures From Chennai Mean http://t.co/dRmYjmq9OZ http://t.co/TwKzNfmzAY
+Positivity: 1.25
+Negativity: 0.0
+Objectivity: 5.75
+tweet:  TIL Desk Chennai/ A Madras high court judge, who had threatened the chief justice of the court with contempt of... http://t.co/zHGMUlPTtg
+Positivity: 0.875
+Negativity: 1.0
+Objectivity: 10.125
+tweet:  an illustrative guide, accompanies with news reports -- 'the Chennai Water Map' http://t.co/LsPZdAVPif @LakshmiImmanuel @ramyakannan
+Positivity: 0.0
+Negativity: 0.125
+Objectivity: 5.875
+tweet:  Muslim yoga teacher says community should not ignore proven benefits http://t.co/lu6wf07M64 via @TOIChennai
+Positivity: 0.125
+Negativity: 1.125
+Objectivity: 7.75
+tweet:  RT @behindwoods: '#VIJAY59' IS GEARING UP FOR THE BEGINNING
+#Ilayathalapathy
+http://t.co/eb9rkb6ODN http://t.co/I4bhz6jxTs
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 3.625
+tweet:  Chennai classifieds, We are in Need of Online Copy Paste Workers – interested Can Apply. http://t.co/3g5S6gJ0L0
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 9.625
+tweet:  underground tunnelling work leaves cracks on houses near metro site in Chintardipet http://t.co/1FbtOUCaLY @aloysius_axl @SunithaSekar
+Positivity: 0.125
+Negativity: 0.0
+Objectivity: 10.875
+tweet:  Chennai and Kolkata 5 Secrets To Weight Loss While Gaining Back Youth http://t.co/Kr1jhJBWoA
+Positivity: 0.0
+Negativity: 0.5
+Objectivity: 9.5
+tweet:  I miss Chennai and being absolutely dependent on Ola cabs/autos and Luxe Cinemas.
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 7.5
+tweet:  Court to decide if last year’s Class 12 students can seek MBBS seats this year http://t.co/l2IHUShqrM via @TOIChennai
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 10.0
+tweet:  RT @ChennaiConnect: underground tunnelling work leaves cracks on houses near metro site in Chintardipet http://t.co/1FbtOUCaLY @aloysius_ax…
+Positivity: 0.125
+Negativity: 0.0
+Objectivity: 10.875
+tweet:  thousands witness Triplicane Parthasarathy Temple 'maha samprokshanam' held after 12 years http://t.co/ODRv37xZv2
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 7.0
+tweet:  Chennai packages: stepping into straight a departement regarding provocative contrasts: dWNV
+Positivity: 0.625
+Negativity: 0.125
+Objectivity: 5.25
+tweet:  RT @infidelpreacher: Is there a list of #publictoilets in #Chennai with address or maps?? Pls RT.
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 6.625
+tweet:  Part time jobs in chennai. Call MrRaj/Miss.Priyanka at 9962688515 /9600028477 for more details.
+Choose between... http://t.co/dSw76sCrIf
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 8.0
+tweet:  http://t.co/O7K1oKr7nR @Clickindia.com: MBA Projects in CHENNAI with Good Standards
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 5.5
+tweet:  45% of the Chennai's Trends for Friday 12 were hashtags: http://t.co/vJoNJnvAtd #trndnl
+Positivity: 0.25
+Negativity: 0.125
+Objectivity: 3.625
+tweet:  a vehicle ramp will make it easy for passengers to exit Chennai airport http://t.co/A3hCoWjKHz @SunithaSekar
+Positivity: 1.25
+Negativity: 0.25
+Objectivity: 9.5
+

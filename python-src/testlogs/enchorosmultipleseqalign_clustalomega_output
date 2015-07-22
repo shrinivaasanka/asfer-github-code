@@ -1,0 +1,30 @@
+Executing ClustalOmega on unaligned Encoded Horoscopes File with commandline: clustalo -i asfer.enchoros.unaligned.fasta -o asfer.enchoros.aligned.fasta --auto -v
+Using 2 threads
+Read 89 sequences (type: DNA) from asfer.enchoros.unaligned.fasta
+Setting options automatically based on input sequence characteristics (might overwrite some of your options).
+Auto settings: Setting iteration to 1.
+Using 41 seeds (chosen with constant stride from length sorted seqs) for mBed (from a total of 89 sequences)
+Calculating pairwise ktuple-distances...
+Ktuple-distance calculation progress done. CPU time: 0.07u 0.00s 00:00:00.07 Elapsed: 00:00:00
+mBed created 1 cluster/s (with a minimum of 1 and a soft maximum of 100 sequences each)
+Distance calculation within sub-clusters done. CPU time: 0.10u 0.00s 00:00:00.10 Elapsed: 00:00:00
+Guide-tree computation (mBed) done.
+WARNING: DNA alignment is still experimental.
+Progressive alignment progress done. CPU time: 0.13u 0.00s 00:00:00.13 Elapsed: 00:00:00
+Iteration step 1 out of 1
+Computing new guide tree (iteration step 1)
+Using 41 seeds (chosen with constant stride from length sorted seqs) for mBed (from a total of 89 sequences)
+Calculating Kimura-corrected pairwise aligned identity distances...
+WARNING: Using Kimura distance corretion which includes Dayhoff substitution table lookup for non-protein sequences
+WARNING: Using Kimura distance corretion which includes Dayhoff substitution table lookup for non-protein sequences
+Pairwise identity calculation progress done. CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00
+mBed created 1 cluster/s (with a minimum of 1 and a soft maximum of 100 sequences each)
+WARNING: Using Kimura distance corretion which includes Dayhoff substitution table lookup for non-protein sequences
+WARNING: Using Kimura distance corretion which includes Dayhoff substitution table lookup for non-protein sequences
+Distance calculation within sub-clusters done. CPU time: 0.01u 0.00s 00:00:00.01 Elapsed: 00:00:00
+Guide-tree computation (mBed) done.
+Computing HMM from alignment
+WARNING: DNA alignment is still experimental.
+Progressive alignment progress done. CPU time: 0.32u 0.01s 00:00:00.33 Elapsed: 00:00:00
+Alignment written to asfer.enchoros.aligned.fasta
+

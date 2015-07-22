@@ -1,0 +1,26 @@
+digraph {
+	"e1 " [label="Event e1  Partakers - p11, p12, p13
+"]
+	"e2 " [label="Event e2  Partakers - p21, p22
+"]
+	"e3 " [label="Event e3  Partakers - p31, p32
+"]
+	"e4 " [label="Event e4  Partakers - p41, p42, p43
+"]
+	"e5 " [label="Event e5  Partakers - p51, p52
+"]
+		e1 -> e2
+
+		e1 -> e3
+
+		e3 -> e2
+
+		e2 -> e4
+
+		e3 -> e4
+
+		e3 -> e5
+
+		e5 -> e4
+
+}

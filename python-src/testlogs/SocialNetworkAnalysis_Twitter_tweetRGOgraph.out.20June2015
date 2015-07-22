@@ -1,0 +1,762 @@
+shrinivaasanka@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src$ sudo python SocialNetworkAnalysis_Twitter.py 
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 6, "followers_count": 14, "friends_count": 99, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan ", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Wed May 06 20:21:07 +0000 2015", "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596047058894622720, "lang": "en", "retweet_count": 602, "retweeted": true, "retweeted_status": {"created_at": "Wed May 06 20:15:35 +0000 2015", "favorite_count": 592, "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596045664636796928, "lang": "en", "retweet_count": 602, "retweeted": true, "source": "<a href=\"http://vine.co\" rel=\"nofollow\">Vine - Make a Scene</a>", "text": "#India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}}, "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", "text": "RT @AstroTerry: #India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}, "user_mentions": [{"id": 1115148079, "name": "Terry W. Virts", "screen_name": "AstroTerry"}]}, "statuses_count": 19, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+======================================
+128582668
+======================================
+======================================
+2428395070L
+======================================
+======================================
+917076067
+===========================================================================================
+Bonacich Power Centrality of the Social Network (Twitter) Crawled - computed using PageRank
+(a degree centrality based on social prestige)
+===========================================================================================
+[(1977078144, 0.0714285714285714), (917076067, 0.0714285714285714), (517205925, 0.0714285714285714), (429868038, 0.0714285714285714), (128582668, 0.0714285714285714), (47945595, 0.0714285714285714), (135815468, 0.0714285714285714), (92554510, 0.0714285714285714), (115943189, 0.0714285714285714), (30277494, 0.0714285714285714), (22766489, 0.0714285714285714), (23219674, 0.0714285714285714), (238550107, 0.0714285714285714), (2428395070L, 0.0714285714285714)]
+===========================================================================================
+Eigen Vector Centrality
+===========================================================================================
+{1977078144: 0.26726124191242434, 92554510: 0.26726124191242434, 917076067: 0.26726124191242434, 23219674: 0.26726124191242434, 517205925: 0.26726124191242434, 429868038: 0.26726124191242434, 135815468: 0.26726124191242434, 22766489: 0.26726124191242434, 30277494: 0.26726124191242434, 238550107: 0.26726124191242434, 128582668: 0.26726124191242434, 47945595: 0.26726124191242434, 2428395070L: 0.26726124191242434, 115943189: 0.26726124191242434}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  Oh Dear Chennai! ;) http://t.co/XBX1fvBdlA
+2
+defaultdict(<type 'list'>, {u'United': [u'Ohio'], u'protocol': [u'hypertext_transfer_protocol'], u'Madras': [u'Chennai'], u'hypertext': [u'hypertext_transfer_protocol'], u'midwestern': [u'Ohio'], u'Bengal': [u'Chennai'], u'browsers': [u'hypertext_transfer_protocol'], u'endearment': [u'beloved'], u'north': [u'Ohio'], u'information': [u'hypertext_transfer_protocol'], u'formerly': [u'Chennai'], u'transfer': [u'hypertext_transfer_protocol'], u'Lakes': [u'Ohio'], u'TCP': [u'hypertext_transfer_protocol'], u'state': [u'Ohio'], u'beloved': [u'beloved'], u'utilizing': [u'hypertext_transfer_protocol'], u'Tamil': [u'Chennai'], u'Nadu': [u'Chennai'], u'Great': [u'Ohio'], u'used': [u'beloved'], u'terms': [u'beloved'], u'city': [u'Chennai'], u'Bay': [u'Chennai'], u'servers': [u'hypertext_transfer_protocol'], u'central': [u'Ohio'], u'region': [u'Ohio'], u'States': [u'Ohio'], u'person': [u'beloved'], u'requests': [u'hypertext_transfer_protocol']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('midwestern.s.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('endearment.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('north.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('lake.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('beloved.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('great.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('footing.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('central.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+Core number (sorted) : [(u'hypertext_transfer_protocol', 9), (u'Ohio', 9), (u'Chennai', 7), (u'beloved', 4), (u'United', 2), (u'protocol', 2), (u'Madras', 2), (u'hypertext', 2), (u'midwestern', 2), (u'Bengal', 2), (u'browsers', 2), (u'endearment', 2), (u'north', 2), (u'information', 2), (u'formerly', 2), (u'transfer', 2), (u'Lakes', 2), (u'TCP', 2), (u'state', 2), (u'utilizing', 2), (u'Tamil', 2), (u'Nadu', 2), (u'Great', 2), (u'used', 2), (u'terms', 2), (u'city', 2), (u'Bay', 2), (u'servers', 2), (u'central', 2), (u'region', 2), (u'States', 2), (u'person', 2), (u'requests', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: hypertext_transfer_protocol ,core number= 9
+This document belongs to class: Ohio ,core number= 9
+This document belongs to class: Chennai ,core number= 7
+This document belongs to class: beloved ,core number= 4
+This document belongs to class: United ,core number= 2
+	max_core_number 9
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'hypertext_transfer_protocol', 0.1416892208632079), (u'Ohio', 0.1416892208632079), (u'Chennai', 0.11384267322316349), (u'beloved', 0.07207285176309693), (u'endearment', 0.01986057493801365), (u'used', 0.01986057493801365), (u'terms', 0.01986057493801365), (u'person', 0.01986057493801365), (u'Madras', 0.01836879560015412), (u'Bengal', 0.01836879560015412), (u'formerly', 0.01836879560015412), (u'Tamil', 0.01836879560015412), (u'Nadu', 0.01836879560015412), (u'city', 0.01836879560015412), (u'Bay', 0.01836879560015412), (u'United', 0.017926786907455014), (u'protocol', 0.017926786907455014), (u'hypertext', 0.017926786907455014), (u'midwestern', 0.017926786907455014), (u'browsers', 0.017926786907455014), (u'north', 0.017926786907455014), (u'information', 0.017926786907455014), (u'transfer', 0.017926786907455014), (u'Lakes', 0.017926786907455014), (u'TCP', 0.017926786907455014), (u'state', 0.017926786907455014), (u'utilizing', 0.017926786907455014), (u'Great', 0.017926786907455014), (u'servers', 0.017926786907455014), (u'central', 0.017926786907455014), (u'region', 0.017926786907455014), (u'States', 0.017926786907455014), (u'requests', 0.017926786907455014)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'Ohio - Great': [' is a superinstance of '], u'hypertext_transfer_protocol - protocol': [' is a superinstance of '], u'Great - Ohio': [' is a subinstance of '], u'United - Ohio': [' is a subinstance of '], u'used - beloved': [' is a subinstance of '], u'Chennai - Tamil': [' is a superinstance of '], u'midwestern - Ohio': [' is a subinstance of '], u'Ohio - north': [' is a superinstance of '], u'hypertext_transfer_protocol - servers': [' is a superinstance of '], u'Ohio - region': [' is a superinstance of '], u'formerly - Chennai': [' is a subinstance of '], u'hypertext_transfer_protocol - browsers': [' is a superinstance of '], u'state - Ohio': [' is a subinstance of '], u'Tamil - Chennai': [' is a subinstance of '], u'Ohio - States': [' is a superinstance of '], u'Ohio - central': [' is a superinstance of '], u'hypertext_transfer_protocol - transfer': [' is a superinstance of '], u'central - Ohio': [' is a subinstance of '], u'Chennai - Bengal': [' is a superinstance of '], u'Ohio - state': [' is a superinstance of '], u'beloved - used': [' is a superinstance of '], u'utilizing - hypertext_transfer_protocol': [' is a subinstance of '], u'Bengal - Chennai': [' is a subinstance of '], u'beloved - beloved': [' is a subinstance of ', ' is a superinstance of '], u'Chennai - Madras': [' is a superinstance of '], u'Ohio - Lakes': [' is a superinstance of '], u'hypertext_transfer_protocol - hypertext': [' is a superinstance of '], u'north - Ohio': [' is a subinstance of '], u'Nadu - Chennai': [' is a subinstance of '], u'requests - hypertext_transfer_protocol': [' is a subinstance of '], u'city - Chennai': [' is a subinstance of '], u'Chennai - city': [' is a superinstance of '], u'endearment - beloved': [' is a subinstance of '], u'browsers - hypertext_transfer_protocol': [' is a subinstance of '], u'Ohio - United': [' is a superinstance of '], u'beloved - terms': [' is a superinstance of '], u'transfer - hypertext_transfer_protocol': [' is a subinstance of '], u'region - Ohio': [' is a subinstance of '], u'protocol - hypertext_transfer_protocol': [' is a subinstance of '], u'terms - beloved': [' is a subinstance of '], u'Chennai - Bay': [' is a superinstance of '], u'hypertext_transfer_protocol - utilizing': [' is a superinstance of '], u'servers - hypertext_transfer_protocol': [' is a subinstance of '], u'information - hypertext_transfer_protocol': [' is a subinstance of '], u'Bay - Chennai': [' is a subinstance of '], u'beloved - person': [' is a superinstance of '], u'States - Ohio': [' is a subinstance of '], u'hypertext - hypertext_transfer_protocol': [' is a subinstance of '], u'hypertext_transfer_protocol - requests': [' is a superinstance of '], u'Lakes - Ohio': [' is a subinstance of '], u'Chennai - Nadu': [' is a superinstance of '], u'Ohio - midwestern': [' is a superinstance of '], u'Madras - Chennai': [' is a subinstance of '], u'hypertext_transfer_protocol - TCP': [' is a superinstance of '], u'hypertext_transfer_protocol - information': [' is a superinstance of '], u'Chennai - formerly': [' is a superinstance of '], u'person - beloved': [' is a subinstance of '], u'beloved - endearment': [' is a superinstance of '], u'TCP - hypertext_transfer_protocol': [' is a subinstance of ']})
+((((((((((((((((((((((((((((( [lambda: United  is a subinstance of  Ohio]) [lambda: Ohio  is a superinstance of  Great]) [lambda: Ohio  is a superinstance of  north]) [lambda: Ohio  is a superinstance of  region]) [lambda: Ohio  is a superinstance of  Lakes]) [lambda: Ohio  is a superinstance of  midwestern]) [lambda: Ohio  is a superinstance of  States]) [lambda: Ohio  is a superinstance of  state]) [lambda: Ohio  is a superinstance of  central]) [lambda: protocol  is a subinstance of  hypertext_transfer_protocol]) [lambda: hypertext_transfer_protocol  is a superinstance of  information]) [lambda: hypertext_transfer_protocol  is a superinstance of  transfer]) [lambda: hypertext_transfer_protocol  is a superinstance of  hypertext]) [lambda: hypertext_transfer_protocol  is a superinstance of  TCP]) [lambda: hypertext_transfer_protocol  is a superinstance of  servers]) [lambda: hypertext_transfer_protocol  is a superinstance of  browsers]) [lambda: hypertext_transfer_protocol  is a superinstance of  utilizing]) [lambda: hypertext_transfer_protocol  is a superinstance of  requests]) [lambda: formerly  is a subinstance of  Chennai]) [lambda: Chennai  is a superinstance of  city]) [lambda: Chennai  is a superinstance of  Madras]) [lambda: Chennai  is a superinstance of  Bengal]) [lambda: Chennai  is a superinstance of  Bay]) [lambda: Chennai  is a superinstance of  Tamil]) [lambda: Chennai  is a superinstance of  Nadu]) [lambda: endearment  is a subinstance of  beloved]) [lambda: beloved  is a superinstance of  person]) [lambda: beloved  is a superinstance of  used]) [lambda: beloved  is a superinstance of  terms])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.125
+Negativity =  0.0
+Objectivity =  1.875
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  protocol :  0.0
+posscore of  protocol :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  north :  0.0
+posscore of  north :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  transfer :  0.0
+posscore of  transfer :  0.0
+negscore of  Lakes :  0.0
+posscore of  Lakes :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  terms :  0.0
+posscore of  terms :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  servers :  0.0
+posscore of  servers :  0.0
+negscore of  region :  0.0
+posscore of  region :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  requests :  0.0
+posscore of  requests :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+belief_propagated_posscore: 1.0
+belief_propagated_negscore: 1.0
+tweet:  kohli in chennai
+2
+defaultdict(<type 'list'>, {u'United': [u'Ohio'], u'protocol': [u'hypertext_transfer_protocol'], u'Madras': [u'Chennai', u'Chennai'], u'hypertext': [u'hypertext_transfer_protocol'], u'midwestern': [u'Ohio'], u'Bengal': [u'Chennai', u'Chennai'], u'browsers': [u'hypertext_transfer_protocol'], u'endearment': [u'beloved'], u'north': [u'Ohio'], u'information': [u'hypertext_transfer_protocol'], u'formerly': [u'Chennai', u'Chennai'], u'transfer': [u'hypertext_transfer_protocol'], u'Lakes': [u'Ohio'], u'TCP': [u'hypertext_transfer_protocol'], u'state': [u'Ohio'], u'beloved': [u'beloved'], u'utilizing': [u'hypertext_transfer_protocol'], u'Tamil': [u'Chennai', u'Chennai'], u'Nadu': [u'Chennai', u'Chennai'], u'Great': [u'Ohio'], u'used': [u'beloved'], u'terms': [u'beloved'], u'city': [u'Chennai', u'Chennai'], u'Bay': [u'Chennai', u'Chennai'], u'servers': [u'hypertext_transfer_protocol'], u'central': [u'Ohio'], u'region': [u'Ohio'], u'States': [u'Ohio'], u'person': [u'beloved'], u'requests': [u'hypertext_transfer_protocol']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('midwestern.s.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('endearment.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('north.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('lake.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('beloved.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('great.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('footing.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('central.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+Core number (sorted) : [(u'hypertext_transfer_protocol', 9), (u'Ohio', 9), (u'Chennai', 7), (u'beloved', 4), (u'United', 2), (u'protocol', 2), (u'Madras', 2), (u'hypertext', 2), (u'midwestern', 2), (u'Bengal', 2), (u'browsers', 2), (u'endearment', 2), (u'north', 2), (u'information', 2), (u'formerly', 2), (u'transfer', 2), (u'Lakes', 2), (u'TCP', 2), (u'state', 2), (u'utilizing', 2), (u'Tamil', 2), (u'Nadu', 2), (u'Great', 2), (u'used', 2), (u'terms', 2), (u'city', 2), (u'Bay', 2), (u'servers', 2), (u'central', 2), (u'region', 2), (u'States', 2), (u'person', 2), (u'requests', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: hypertext_transfer_protocol ,core number= 9
+This document belongs to class: Ohio ,core number= 9
+This document belongs to class: Chennai ,core number= 7
+This document belongs to class: beloved ,core number= 4
+This document belongs to class: United ,core number= 2
+	max_core_number 9
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'hypertext_transfer_protocol', 0.1416892208632079), (u'Ohio', 0.1416892208632079), (u'Chennai', 0.11384267322316349), (u'beloved', 0.07207285176309693), (u'endearment', 0.01986057493801365), (u'used', 0.01986057493801365), (u'terms', 0.01986057493801365), (u'person', 0.01986057493801365), (u'Madras', 0.01836879560015412), (u'Bengal', 0.01836879560015412), (u'formerly', 0.01836879560015412), (u'Tamil', 0.01836879560015412), (u'Nadu', 0.01836879560015412), (u'city', 0.01836879560015412), (u'Bay', 0.01836879560015412), (u'United', 0.017926786907455014), (u'protocol', 0.017926786907455014), (u'hypertext', 0.017926786907455014), (u'midwestern', 0.017926786907455014), (u'browsers', 0.017926786907455014), (u'north', 0.017926786907455014), (u'information', 0.017926786907455014), (u'transfer', 0.017926786907455014), (u'Lakes', 0.017926786907455014), (u'TCP', 0.017926786907455014), (u'state', 0.017926786907455014), (u'utilizing', 0.017926786907455014), (u'Great', 0.017926786907455014), (u'servers', 0.017926786907455014), (u'central', 0.017926786907455014), (u'region', 0.017926786907455014), (u'States', 0.017926786907455014), (u'requests', 0.017926786907455014)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'Ohio - Great': [' is a superinstance of '], u'hypertext_transfer_protocol - protocol': [' is a superinstance of '], u'Great - Ohio': [' is a subinstance of '], u'United - Ohio': [' is a subinstance of '], u'used - beloved': [' is a subinstance of '], u'Chennai - Tamil': [' is a superinstance of ', ' is a superinstance of '], u'midwestern - Ohio': [' is a subinstance of '], u'Ohio - north': [' is a superinstance of '], u'hypertext_transfer_protocol - servers': [' is a superinstance of '], u'Ohio - region': [' is a superinstance of '], u'formerly - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'hypertext_transfer_protocol - browsers': [' is a superinstance of '], u'state - Ohio': [' is a subinstance of '], u'Tamil - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'Ohio - States': [' is a superinstance of '], u'Ohio - central': [' is a superinstance of '], u'hypertext_transfer_protocol - transfer': [' is a superinstance of '], u'central - Ohio': [' is a subinstance of '], u'Chennai - Bengal': [' is a superinstance of ', ' is a superinstance of '], u'Ohio - state': [' is a superinstance of '], u'beloved - used': [' is a superinstance of '], u'utilizing - hypertext_transfer_protocol': [' is a subinstance of '], u'Bengal - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'beloved - beloved': [' is a subinstance of ', ' is a superinstance of '], u'Chennai - Madras': [' is a superinstance of ', ' is a superinstance of '], u'Ohio - Lakes': [' is a superinstance of '], u'hypertext_transfer_protocol - hypertext': [' is a superinstance of '], u'north - Ohio': [' is a subinstance of '], u'Nadu - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'requests - hypertext_transfer_protocol': [' is a subinstance of '], u'city - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'Chennai - city': [' is a superinstance of ', ' is a superinstance of '], u'endearment - beloved': [' is a subinstance of '], u'browsers - hypertext_transfer_protocol': [' is a subinstance of '], u'Ohio - United': [' is a superinstance of '], u'beloved - terms': [' is a superinstance of '], u'transfer - hypertext_transfer_protocol': [' is a subinstance of '], u'region - Ohio': [' is a subinstance of '], u'protocol - hypertext_transfer_protocol': [' is a subinstance of '], u'terms - beloved': [' is a subinstance of '], u'Chennai - Bay': [' is a superinstance of ', ' is a superinstance of '], u'hypertext_transfer_protocol - utilizing': [' is a superinstance of '], u'servers - hypertext_transfer_protocol': [' is a subinstance of '], u'information - hypertext_transfer_protocol': [' is a subinstance of '], u'Bay - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'beloved - person': [' is a superinstance of '], u'States - Ohio': [' is a subinstance of '], u'hypertext - hypertext_transfer_protocol': [' is a subinstance of '], u'hypertext_transfer_protocol - requests': [' is a superinstance of '], u'Lakes - Ohio': [' is a subinstance of '], u'Chennai - Nadu': [' is a superinstance of ', ' is a superinstance of '], u'Ohio - midwestern': [' is a superinstance of '], u'Madras - Chennai': [' is a subinstance of ', ' is a subinstance of '], u'hypertext_transfer_protocol - TCP': [' is a superinstance of '], u'hypertext_transfer_protocol - information': [' is a superinstance of '], u'Chennai - formerly': [' is a superinstance of ', ' is a superinstance of '], u'person - beloved': [' is a subinstance of '], u'beloved - endearment': [' is a superinstance of '], u'TCP - hypertext_transfer_protocol': [' is a subinstance of ']})
+((((((((((((((((((((((((((((( [lambda: United  is a subinstance of  Ohio]) [lambda: Ohio  is a superinstance of  Great]) [lambda: Ohio  is a superinstance of  north]) [lambda: Ohio  is a superinstance of  region]) [lambda: Ohio  is a superinstance of  Lakes]) [lambda: Ohio  is a superinstance of  midwestern]) [lambda: Ohio  is a superinstance of  States]) [lambda: Ohio  is a superinstance of  state]) [lambda: Ohio  is a superinstance of  central]) [lambda: protocol  is a subinstance of  hypertext_transfer_protocol]) [lambda: hypertext_transfer_protocol  is a superinstance of  information]) [lambda: hypertext_transfer_protocol  is a superinstance of  transfer]) [lambda: hypertext_transfer_protocol  is a superinstance of  hypertext]) [lambda: hypertext_transfer_protocol  is a superinstance of  TCP]) [lambda: hypertext_transfer_protocol  is a superinstance of  servers]) [lambda: hypertext_transfer_protocol  is a superinstance of  browsers]) [lambda: hypertext_transfer_protocol  is a superinstance of  utilizing]) [lambda: hypertext_transfer_protocol  is a superinstance of  requests]) [lambda: formerly  is a subinstance of  Chennai]) [lambda: Chennai  is a superinstance of  city]) [lambda: Chennai  is a superinstance of  Madras]) [lambda: Chennai  is a superinstance of  Bengal]) [lambda: Chennai  is a superinstance of  Bay]) [lambda: Chennai  is a superinstance of  Tamil]) [lambda: Chennai  is a superinstance of  Nadu]) [lambda: endearment  is a subinstance of  beloved]) [lambda: beloved  is a superinstance of  person]) [lambda: beloved  is a superinstance of  used]) [lambda: beloved  is a superinstance of  terms])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.0
+Negativity =  0.0
+Objectivity =  2.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  protocol :  0.0
+posscore of  protocol :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  north :  0.0
+posscore of  north :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  transfer :  0.0
+posscore of  transfer :  0.0
+negscore of  Lakes :  0.0
+posscore of  Lakes :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  terms :  0.0
+posscore of  terms :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  servers :  0.0
+posscore of  servers :  0.0
+negscore of  region :  0.0
+posscore of  region :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  requests :  0.0
+posscore of  requests :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+belief_propagated_posscore: 1.0
+belief_propagated_negscore: 1.0
+tweet:  Approved Plots Available at SHARMA NAGAR in SRIPERUMPUDUR. #ResidentialPlot #Land #ForSale #Sriperumbudur #Chennai
+http://t.co/5UZnwlcQXE
+2
+defaultdict(<type 'list'>, {u'accessible': [u'available'], u'United': [u'Ohio'], u'protocol': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'Madras': [u'Chennai', u'Chennai', u'Chennai'], u'give': [u'approve'], u'hypertext': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'sanction': [u'approve'], u'midwestern': [u'Ohio'], u'Bengal': [u'Chennai', u'Chennai', u'Chennai'], u'browsers': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'something': [u'plot'], u'endearment': [u'beloved'], u'ready': [u'available'], u'north': [u'Ohio'], u'information': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'use': [u'available'], u'formerly': [u'Chennai', u'Chennai', u'Chennai'], u'service': [u'available'], u'located': [u'land'], u'transfer': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'Lakes': [u'Ohio'], u'TCP': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'obtainable': [u'available'], u'state': [u'Ohio'], u'beloved': [u'beloved'], u'utilizing': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'scheme': [u'plot'], u'Tamil': [u'Chennai', u'Chennai', u'Chennai'], u'Nadu': [u'Chennai', u'Chennai', u'Chennai'], u'real': [u'land'], u'Great': [u'Ohio'], u'used': [u'beloved'], u'terms': [u'beloved'], u'estate': [u'land'], u'city': [u'Chennai', u'Chennai', u'Chennai'], u'Bay': [u'Chennai', u'Chennai', u'Chennai'], u'underhand': [u'plot'], u'servers': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol'], u'land': [u'land'], u'central': [u'Ohio'], u'especially': [u'plot'], u'region': [u'Ohio'], u'secret': [u'plot'], u'States': [u'Ohio'], u'person': [u'beloved'], u'illegal': [u'plot'], u'requests': [u'hypertext_transfer_protocol', u'hypertext_transfer_protocol']})
+ksynset= Synset('accessible.a.01')
+lsynset= Synset('available.a.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('give.n.01')
+lsynset= Synset('approve.v.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('sanction.n.01')
+lsynset= Synset('approve.v.01')
+ksynset= Synset('midwestern.s.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('endearment.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('ready.n.01')
+lsynset= Synset('available.a.01')
+ksynset= Synset('north.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('available.a.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('service.n.01')
+lsynset= Synset('available.a.01')
+ksynset= Synset('locate.v.01')
+lsynset= Synset('land.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('lake.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('gettable.s.01')
+lsynset= Synset('available.a.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('beloved.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('scheme.n.01')
+lsynset= Synset('plot.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('real_number.n.01')
+lsynset= Synset('land.n.01')
+ksynset= Synset('great.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('footing.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('estate.n.01')
+lsynset= Synset('land.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('underhand.a.01')
+lsynset= Synset('plot.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('land.n.01')
+lsynset= Synset('land.n.01')
+ksynset= Synset('central.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('particularly.r.01')
+lsynset= Synset('plot.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('secret.n.01')
+lsynset= Synset('plot.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('ohio.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('beloved.n.01')
+ksynset= Synset('illegal.a.01')
+lsynset= Synset('plot.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+Core number (sorted) : [(u'hypertext_transfer_protocol', 9), (u'Ohio', 9), (u'Chennai', 7), (u'plot', 6), (u'available', 5), (u'beloved', 4), (u'land', 3), (u'accessible', 2), (u'United', 2), (u'protocol', 2), (u'formerly', 2), (u'give', 2), (u'hypertext', 2), (u'sanction', 2), (u'midwestern', 2), (u'Bengal', 2), (u'browsers', 2), (u'something', 2), (u'endearment', 2), (u'ready', 2), (u'north', 2), (u'use', 2), (u'Madras', 2), (u'service', 2), (u'located', 2), (u'transfer', 2), (u'Lakes', 2), (u'TCP', 2), (u'obtainable', 2), (u'state', 2), (u'utilizing', 2), (u'scheme', 2), (u'Tamil', 2), (u'Nadu', 2), (u'real', 2), (u'Great', 2), (u'used', 2), (u'terms', 2), (u'estate', 2), (u'information', 2), (u'Bay', 2), (u'underhand', 2), (u'servers', 2), (u'central', 2), (u'especially', 2), (u'region', 2), (u'secret', 2), (u'States', 2), (u'person', 2), (u'city', 2), (u'illegal', 2), (u'requests', 2), (u'approve', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: hypertext_transfer_protocol ,core number= 9
+This document belongs to class: Ohio ,core number= 9
+This document belongs to class: Chennai ,core number= 7
+This document belongs to class: plot ,core number= 6
+This document belongs to class: available ,core number= 5
+This document belongs to class: beloved ,core number= 4
+This document belongs to class: land ,core number= 3
+	max_core_number 9
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'hypertext_transfer_protocol', 0.08822277577862303), (u'Ohio', 0.08822277577862303), (u'Chennai', 0.07088406296604274), (u'plot', 0.0622147065597526), (u'available', 0.053545350153462457), (u'beloved', 0.04487599374717233), (u'land', 0.03620663734088216), (u'approve', 0.02753728093459203), (u'give', 0.01453324632515681), (u'sanction', 0.01453324632515681), (u'located', 0.013088353590775117), (u'real', 0.013088353590775117), (u'estate', 0.013088353590775117), (u'endearment', 0.012365907223584275), (u'used', 0.012365907223584275), (u'terms', 0.012365907223584275), (u'person', 0.012365907223584275), (u'accessible', 0.011932439403269771), (u'ready', 0.011932439403269771), (u'use', 0.011932439403269771), (u'service', 0.011932439403269771), (u'obtainable', 0.011932439403269771), (u'something', 0.01164346085639343), (u'scheme', 0.01164346085639343), (u'underhand', 0.01164346085639343), (u'especially', 0.01164346085639343), (u'secret', 0.01164346085639343), (u'illegal', 0.01164346085639343), (u'formerly', 0.011437047608624618), (u'Bengal', 0.011437047608624618), (u'Madras', 0.011437047608624618), (u'Tamil', 0.011437047608624618), (u'Nadu', 0.011437047608624618), (u'Bay', 0.011437047608624618), (u'city', 0.011437047608624618), (u'United', 0.011161829944932866), (u'protocol', 0.011161829944932866), (u'hypertext', 0.011161829944932866), (u'midwestern', 0.011161829944932866), (u'browsers', 0.011161829944932866), (u'north', 0.011161829944932866), (u'transfer', 0.011161829944932866), (u'Lakes', 0.011161829944932866), (u'TCP', 0.011161829944932866), (u'state', 0.011161829944932866), (u'utilizing', 0.011161829944932866), (u'Great', 0.011161829944932866), (u'information', 0.011161829944932866), (u'servers', 0.011161829944932866), (u'central', 0.011161829944932866), (u'region', 0.011161829944932866), (u'States', 0.011161829944932866), (u'requests', 0.011161829944932866)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'plot - illegal': [' is a superinstance of '], u'Ohio - Great': [' is a superinstance of '], u'region - Ohio': [' is a subinstance of '], u'land - estate': [' is a superinstance of '], u'ready - available': [' is a subinstance of '], u'midwestern - Ohio': [' is a subinstance of '], u'formerly - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'state - Ohio': [' is a subinstance of '], u'Ohio - central': [' is a superinstance of '], u'Chennai - Bengal': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'beloved - used': [' is a superinstance of '], u'utilizing - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'Nadu - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'Chennai - Madras': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'Chennai - city': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'endearment - beloved': [' is a subinstance of '], u'Bay - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'illegal - plot': [' is a subinstance of '], u'transfer - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'Chennai - Bay': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'service - available': [' is a subinstance of '], u'Madras - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'use - available': [' is a subinstance of '], u'person - beloved': [' is a subinstance of '], u'approve - give': [' is a superinstance of '], u'plot - scheme': [' is a superinstance of '], u'used - beloved': [' is a subinstance of '], u'land - located': [' is a superinstance of '], u'plot - secret': [' is a superinstance of '], u'something - plot': [' is a subinstance of '], u'land - real': [' is a superinstance of '], u'plot - underhand': [' is a superinstance of '], u'north - Ohio': [' is a subinstance of '], u'Bengal - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'Ohio - Lakes': [' is a superinstance of '], u'hypertext_transfer_protocol - utilizing': [' is a superinstance of ', ' is a superinstance of '], u'sanction - approve': [' is a subinstance of '], u'Ohio - region': [' is a superinstance of '], u'accessible - available': [' is a subinstance of '], u'States - Ohio': [' is a subinstance of '], u'hypertext_transfer_protocol - requests': [' is a superinstance of ', ' is a superinstance of '], u'real - land': [' is a subinstance of '], u'available - accessible': [' is a superinstance of '], u'available - obtainable': [' is a superinstance of '], u'Chennai - formerly': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'protocol - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'Ohio - midwestern': [' is a superinstance of '], u'Great - Ohio': [' is a subinstance of '], u'especially - plot': [' is a subinstance of '], u'Tamil - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'Ohio - States': [' is a superinstance of '], u'hypertext_transfer_protocol - transfer': [' is a superinstance of ', ' is a superinstance of '], u'approve - sanction': [' is a superinstance of '], u'obtainable - available': [' is a subinstance of '], u'plot - especially': [' is a superinstance of '], u'hypertext_transfer_protocol - hypertext': [' is a superinstance of ', ' is a superinstance of '], u'available - service': [' is a superinstance of '], u'available - ready': [' is a superinstance of '], u'city - Chennai': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'browsers - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'scheme - plot': [' is a subinstance of '], u'Chennai - Tamil': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'give - approve': [' is a subinstance of '], u'servers - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'land - land': [' is a subinstance of ', ' is a superinstance of '], u'beloved - person': [' is a superinstance of '], u'Lakes - Ohio': [' is a subinstance of '], u'Chennai - Nadu': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'plot - something': [' is a superinstance of '], u'underhand - plot': [' is a subinstance of '], u'available - use': [' is a superinstance of '], u'hypertext_transfer_protocol - TCP': [' is a superinstance of ', ' is a superinstance of '], u'hypertext_transfer_protocol - information': [' is a superinstance of ', ' is a superinstance of '], u'beloved - endearment': [' is a superinstance of '], u'TCP - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'hypertext_transfer_protocol - servers': [' is a superinstance of ', ' is a superinstance of '], u'hypertext_transfer_protocol - protocol': [' is a superinstance of ', ' is a superinstance of '], u'United - Ohio': [' is a subinstance of '], u'Ohio - north': [' is a superinstance of '], u'hypertext_transfer_protocol - browsers': [' is a superinstance of ', ' is a superinstance of '], u'estate - land': [' is a subinstance of '], u'central - Ohio': [' is a subinstance of '], u'Ohio - state': [' is a superinstance of '], u'located - land': [' is a subinstance of '], u'requests - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'secret - plot': [' is a subinstance of '], u'beloved - terms': [' is a superinstance of '], u'terms - beloved': [' is a subinstance of '], u'information - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'Ohio - United': [' is a superinstance of '], u'hypertext - hypertext_transfer_protocol': [' is a subinstance of ', ' is a subinstance of '], u'beloved - beloved': [' is a subinstance of ', ' is a superinstance of ']})
+((((((((((((((((((((((((((((((((((((((((((((( [lambda: accessible  is a subinstance of  available]) [lambda: available  is a superinstance of  ready]) [lambda: available  is a superinstance of  use]) [lambda: available  is a superinstance of  service]) [lambda: available  is a superinstance of  obtainable]) [lambda: real  is a subinstance of  land]) [lambda: land  is a superinstance of  located]) [lambda: land  is a superinstance of  estate]) [lambda: United  is a subinstance of  Ohio]) [lambda: Ohio  is a superinstance of  Great]) [lambda: Ohio  is a superinstance of  north]) [lambda: Ohio  is a superinstance of  region]) [lambda: Ohio  is a superinstance of  Lakes]) [lambda: Ohio  is a superinstance of  midwestern]) [lambda: Ohio  is a superinstance of  States]) [lambda: Ohio  is a superinstance of  state]) [lambda: Ohio  is a superinstance of  central]) [lambda: protocol  is a subinstance of  hypertext_transfer_protocol]) [lambda: hypertext_transfer_protocol  is a superinstance of  information]) [lambda: hypertext_transfer_protocol  is a superinstance of  transfer]) [lambda: hypertext_transfer_protocol  is a superinstance of  hypertext]) [lambda: hypertext_transfer_protocol  is a superinstance of  TCP]) [lambda: hypertext_transfer_protocol  is a superinstance of  servers]) [lambda: hypertext_transfer_protocol  is a superinstance of  browsers]) [lambda: hypertext_transfer_protocol  is a superinstance of  utilizing]) [lambda: hypertext_transfer_protocol  is a superinstance of  requests]) [lambda: Madras  is a subinstance of  Chennai]) [lambda: Chennai  is a superinstance of  city]) [lambda: Chennai  is a superinstance of  formerly]) [lambda: Chennai  is a superinstance of  Bengal]) [lambda: Chennai  is a superinstance of  Bay]) [lambda: Chennai  is a superinstance of  Tamil]) [lambda: Chennai  is a superinstance of  Nadu]) [lambda: give  is a subinstance of  approve]) [lambda: approve  is a superinstance of  sanction]) [lambda: something  is a subinstance of  plot]) [lambda: plot  is a superinstance of  especially]) [lambda: plot  is a superinstance of  illegal]) [lambda: plot  is a superinstance of  underhand]) [lambda: plot  is a superinstance of  secret]) [lambda: plot  is a superinstance of  scheme]) [lambda: endearment  is a subinstance of  beloved]) [lambda: beloved  is a superinstance of  person]) [lambda: beloved  is a superinstance of  used]) [lambda: beloved  is a superinstance of  terms])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.375
+Negativity =  0.0
+Objectivity =  4.625
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  plot :  0.0
+posscore of  plot :  0.0
+negscore of  land :  0.0
+posscore of  land :  0.0
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  protocol :  0.0
+posscore of  protocol :  0.0
+negscore of  give :  0.0
+posscore of  give :  0.0
+negscore of  sanction :  0.0
+posscore of  sanction :  0.25
+negscore of  ready :  0.25
+posscore of  ready :  0.0
+negscore of  north :  0.0
+posscore of  north :  0.0
+negscore of  use :  0.0
+posscore of  use :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  service :  0.0
+posscore of  service :  0.0
+negscore of  located :  0.0
+posscore of  located :  0.0
+negscore of  transfer :  0.0
+posscore of  transfer :  0.0
+negscore of  Lakes :  0.0
+posscore of  Lakes :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  scheme :  0.0
+posscore of  scheme :  0.125
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  real :  0.0
+posscore of  real :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  terms :  0.0
+posscore of  terms :  0.0
+negscore of  estate :  0.0
+posscore of  estate :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  underhand :  0.0
+posscore of  underhand :  0.0
+negscore of  servers :  0.0
+posscore of  servers :  0.0
+negscore of  region :  0.0
+posscore of  region :  0.0
+negscore of  secret :  0.25
+posscore of  secret :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  requests :  0.0
+posscore of  requests :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 1.000000, 1.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 1.000000, 1.000000, 0.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 1.000000, 1.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 1.000000, 1.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 1.000000, 1.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 0.250000
+belief_propagated_posscore: 1.0
+belief_propagated_negscore: 0.25
+

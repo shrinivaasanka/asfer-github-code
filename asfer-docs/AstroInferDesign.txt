@@ -1,0 +1,1594 @@
+#--------------------------------------------------------------------------------------------------------`
+#ASFER - a ruleminer which gets rules specific to a query and executes them (component of NeuronRain Platform)
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#---------------------------------------------------------------------------------------------------------
+#Copyright (C): 
+#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+#Ph: 9789346927, 9003082186, 9791165980
+#Krishna iResearch Open Source Products Profiles: 
+#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#Personal website(research): https://sites.google.com/site/kuja27/
+#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, 
+#kashrinivaasan@live.com
+#---------------------------------------------------------------------------------------------------------
+
+Copyright attributions for other open source products dependencies:
+------------------------------------------------------------------
+1.Maitreya's Dreams - http://www.saravali.de (some bugs were fixed locally in degree computation of textual display mode)
+2.SVMLight -  http://svmlight.joachims.org/ 
+3.BioPython and ClustalOmega Multiple Sequence Alignment BioInformatics Tools (www.biopython.org, www.ebi.ac.uk/Tools/msa/clustalo/ )
+
+----------------------------
+Open Source Design and Academic Research Notes have been uploaded to http://sourceforge.net/projects/acadpdrafts/files/MiscellaneousOpenSourceDesignAndAcademicResearchNotes_2013-08-11.pdf/download
+
+Presently a complete string sequence mining subsystem and classification algorithms with indexing have been implemented for mining patterns in rules and encoded strings and executing those rules (in special case,an encoded horoscope). 
+*********************************************************************************************************
+			AstroInfer Classifiers - Documentation on the dataset files used
+*********************************************************************************************************
+
+decisiontree-attrvalues.txt - Attributes based on which decision is done and the values they can take (comma separated list)
+decisiontree-test.txt - Test dataset with set of values for attributes in each line
+decisiontree-training.txt - Training dataset with set of values for attributes and class it belongs in each line
+test-set.txt - List of article id(s) to be classified - NaiveBayes
+topics.txt - List of classes the article id(s) in training set belong to - NaiveBayes
+training-set.txt - List of articles id(s) already classified - training dataset for NaiveBayes
+word-frequency.txt - Words and their frequencies of occurrence in all articles - NaiveBayes
+words.txt - words, the article id(s) having those words and number of occurrences of those words within specific article id (~ separated)
+
+Above XXX.txt files need to be populated after doing some preprocessing of the articles to be classified. Preprocessing might include finding the word frequencies in the articles, finding classes of the articles, finding attributes and possible values of those attributes. At present the asfer.enchoros file contains encoded horoscopes for single class of events. Thus classification is redundant. But if it has encoded horo strings for all events then to filter out strings of a particular class of events, classification is needed. 
+
+Python script for autogenerating above txt files has been added under python-src/autogen_classifier_dataset.This script needs to be changed forgenerating training and test set files.
+
+**********************************************************************************************************************************************
+DESIGN NOTES, THEORETICAL INTERLUDES(might have errors), TODO AND NICE TO HAVE FEATURES (long-term design goals with no deadline)
+***********************************************************************************************************************************************
+
+(DONE-MDL,Entropy,Edit Distance) 1. Test with Massive Data Sets of encoded strings for pattern mining. Algorithms for Approximate Kolmogorov Complexity or Minimum Description Length (MDL), Shannon Entropy, Levenshtein Edit Distance have been implemented in Python and C++. [Long term: Compressed Sensing (used in Image and Signal Processing) which "sense" from "compressed" large data. This involves computing a matrix product AX=B where X is an image or bitmap and A is a chosen matrix which together give a sketch B]
+
+(THEORY-POC Implementation-DONE) 2. An experimental text compression algorithm that deletes vowels and stores only consonants as far as meaning is not altered. For example "follow" could be stored as "fllw". Since on an average every third letter in an english word is a vowel, approximate compression is 33%. Message is reconstructed using most probable meaningful word for "fllw" (For example "follow" could be more probable than "fellow" or vice versa). This is similar to Texting in phones and to some extent encoding in Match Rating (http://en.wikipedia.org/wiki/Match_rating_approach). One more example could be "Decision" which can be compressed as "Dcsn". An interesting phonetic aspect of this is that "Decision" is spelt as "Dee-C-shan", or each vowel following a consonant is subsumed or coalesced into the preceding consonant while spelling. Thus "Dcsn" gives 50% compression ratio. PyEnchant python package SpellChecker has suggest() function that returns a tuple of closely related words to a compressed (or "misspelt") word. Conventional WSD algorithms might have to be used on this tuple to get the maximum match. Initial testing reveals that the accuracy with spellcheckers is less and this problem requires a non-trivial algorithm which might require error-correcting codes like Reed-Solomon and Berelekamp-Massey assuming the english text as a finite field of alphabets as elements. Predominantly used dictionary-based Lesk's disambiguation Algorithm can find the intersection between "follow" and the rest of the context and "fellow" and rest of the context and choose the word with maximum intersection with context - this is quite commonsensical too. But the drawback of this disambiguation is that keywords are disambiguated well while other connectives (is, are, thus,  this, who, why etc.,) in the sentences are not. Another limitation of applying WSD while decompressing is lack of meaningful context words at runtime - only compressed words are available and they cannot be used as disambiguating context creating a circular dependency - disambiguation requires decompression and decompression needs disambiguation. For computing maximum likelihood, most probable vowel between 2 consonants can be zeroed in on by a 26*26 table of consonant ordered pairs and having vowels between them as probability distribution priors. This is feasible only if priors are available. For example th-t has (h,t) as consonant pairs and a is most probable vowel than e,i,o and u and th-t is disambiguated as "that". The vowels missing in compressed text can be represented by a single extra bit. This is an alternative to PyEnchant spellcheck suggest() function. This can be Hidden Markov Model also - with missing vowels as hidden states to measure and compressed letters as observations. This requires forward-backward probabilities computation or Viterbi path which gives most likely word for a compressed word. For "th-t" the Markov Model looks like:
+			x1--------x2--------x3------x4
+			|	  |	    |	    |
+			t         h	    -       t	
+and Bayesian for the above is:
+	Pr(x3/[t,h,-,t]) is directly proportional to Pr(x3/[t,h]) * Pr([t]/x3) 
+and to be precise it is:
+	Pr(x3/[t,h,-,t] = Pr(x3/[t,h]) * Pr([t]/x3) / Pr(t)/Pr(t,h) with denominator being a pre-computable constant from substring hashtable as below.
+
+Viterbi path would give the most likely path or most likely word for above. 
+
+(2.1) Pr(x3/[t,h]) is computed from dictionary - number of words having the sequence / total number of words
+which is the argmax( Pr(a/t,h), Pr(e/t,h), Pr(i/t,h), Pr(o/t,h), Pr(u/t,h)) and priors are computed for the substrings tha, the, thi, tho, thu.
+
+(2.2) Pr(t/x3) is computed from dictionary similar to the previous for argmax of probabilities for substrings at, et, it, ot, ut.
+
+(2.3) If total number words in dictionary is E (could be 200000 to 300000) and yi is the number of words of length i, then y1 + y2 + .... + yn = E .
+
+(2.4) Number of substrings of an n bit word is (n-1)n/2.
+
+(2.5) Thus number of substrings for all words in dictionary is y2 + 3*y3 + 6*y4 + 10*y5 + ... + (n-1)n*yn/2. Thus number of substrings (could be significantly more than 500000) is independent of the text to be decompressed and the substring prior probabilties can be precomputed and stored in a hash table (size of the table is = number of substrings * 5 for each vowel). This table has to be huge but does not depend on text to be decompressed. 
+
+(2.6) Above is theoretical basis only implementation of which needs precomputing the above hashtable. 
+
+(2.7) Above experimental compression scheme that ignores vowels gives a string complexity measure (a minimum description length) similar to Kolmogorov complexity.
+
+(2.8) Algebraically, above can be imagined as a Group Action where group G is set of consonants (with the assumption that inverses exist for each consonant with a special "backspace" element added to alphabet set and identity is "space" element) and set X to act on is the set of vowels. Orbit is the set of X elements moved (g.x) and if concatenation (with phonetic coalition) is a group operator then consonants act on vowel sets. For example, the consonant "t" acts on "o" from vowel set to give the word "to". The concatenation is non-abelian.  Interestingly the above phonetic coalition of vowels to an adjoining consonant is the Stabilizer set or set of Fixed points(g.x=g). For example, the consonant "d" acting on the vowel "e" gives a phonetically coalesced compression "d" ("d" ,"de" and "dee" are phonetically same as "d") as a fixedpoint. Thus Orbit-Stabilizer Theorem ( set of cosets of Fixed points - Quotient group G/G(x) -  isomorphic to Orbit) should apply to the above.  There may be scenarios where a maximum likely vowel from above argmax() computation does not equal the actual vowel expected and for arbitrary non-dictionary strings prior computation is difficult. Thus this algorithm is quite experimental.
+
+3. (THEORY - Pairwise LCS implementation DONE) KMeans, KNN and other clustering and classification algorithms implemented thus far, group similar encoded strings for astronomical (or any other) data. Clustered strings can further be mined for patterns with ordering by applying a Longest Common Substring algorithm within each cluster. This gives a fine grained pattern hidden in the encoded input strings. These longest common substrings can then be translated to a rule similar to class association rule (Frequent item set and GSP algorithms are quite expensive and do not fit well for mining patterns in strings).
+
+4. (DONE) Implementation of String Distance measure using different distance measures (python-src/StringMatch.py) for comparing Encoded Strings in addition to pairwise and Multiple Sequence Alignment.
+
+5. (DONE) Construct a Hidden Markov Model with State transitions and Observations(events). If the number of states are exponential then this will be infeasible. A HMM has been implemented for text decompression with vowel-removed strings. Also a HMM has been implemented for Part-of-Speech tagging, Named Entity Recognition and Conditional Random Fields.
+
+6. (DONE - continuation of point 3) Correlate with Rules from Classics (BPHS, BJ etc.,) with the mined datasets for particular class of events (Special Case of Mundane Predictive Model is described in items 47 to 51 and basic framework is already implemented). The Longest Common Substring implementation already mines for most common pattern with in a clustered or classified dataset of encoded strings which suffices for astronomical datasets. Script for parsing the clustered data from classifiers and decoding the longest common pattern have been added.
+
+7. (DONE) Integrate Classifiers in above String Pattern mining (classify strings and then mine).
+
+8. (DONE) At present fundamental algorithms like - Perceptrons with Gradient Descent, Linear and Logistic Regression, Hidden Markov Model for Text Decompression, KMeans Clustering, Naive Bayesian, Decision Tree, SVM (uses thirdparty OSS) and kNN Classifiers, String Alignment and Distance based algorithms, Knuth-Morris-Pratt String Match Algorithm, Sequence Mining - have been implemented specialized for the encoded strings astronomical datasets.
+
+9. (DONE) InterviewAlgorithm code in https://sourceforge.net/p/asfer/code/146/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py and Classification based on indegrees of wordnet subgraph node in action item 6 above (as mentioned in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). Related Publication Drafts are: https://sites.google.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf?attredirects=0, https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting.pdf?attredirects=0, https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC.pdf?attredirects=0. Test C++ code written in 2006 for computing Majority voting error probability is at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/pgood.cpp and python script written in 2010 is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/pgood.py. 
+
+---------------------------------------------------------------------------
+Psuedorandom Choice and Majority Voting (Majority circuit with SAT inputs)
+---------------------------------------------------------------------------
+10. (THEORY) https://sites.google.com/site/kuja27/ImplicationRandomGraphConvexHullsAndPerfectVoterProblem_2014-01-11.pdf?attredirects=0&d=1 on decidability of existence of perfect voter and the probability series for a good choice of https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1 are related to already well studied problems in social choice theory but problem definition is completely different. Arrow's theorem of social choice for an irrational outcome in condorcet election of more than 2 candidates and its complexity theory fourier analysis proof [GilKalai] are described in www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf. Irrational outcome is a paradox where the society is "confused" or "ranks circularly" in choice of a candidate in multipartisan condorcet voting. Rational outcome converges to 91.2% (Guilbaud number) with a possibility of 8.8% irrational outcome. 
+
+Additional References:
+---------------------
+10.1. Social Choice Theory, Arrow's Theorem and Boolean functions - http://www.ma.huji.ac.il/~kalai/CHAOS.pdf
+10.2. http://www.project-syndicate.org/commentary/kenneth-arrow-impossibility-theorem-social-welfare-by-amartya-sen-2014-11
+
+11.(THEORY) What is perplexing is the fact that this seems to contravene guarantee of unique restricted partitions described based on money changing problem and lattices in https://sites.google.com/site/kuja27/SchurTheoremMCPAndDistinctPartitions_2014-04-17.pdf?attredirects=0 and https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf?attredirects=0&d=1 which are also for elections in multipartisan setting (if condorcet election is done). Probably a "rational outcome" is different from "good choice" where rationality implies without any paradoxes in ranking alone without giving too much weightage to the "goodness" of a choice by the elector. Actual real-life elections are not condorcet elections where NAE tuples are generated. It is not a conflict between Arrow's theorem as finding atleast 1 denumerant in multipartisan voting partition is NP-complete (as it looks) - which can be proved by ILP as in point 20 of https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf?attredirects=0&d=1 - the assumption is that candidates are not ranked; they are voted independently in a secret ballot by electors and they can be more than 3. The elector just chooses a candidate and votes without giving any ordered ranking for the candidates which makes it non-condorcet. 
+
+12.(THEORY) Moreover Arrow's theorem for 3 candidate condorcet election implies a non-zero probability of error in voting which by itself prohibits a perfect voting system. If generalized to any election and any number of candidates it could be an evidence in favour of P != NP by proving that perfect voter does not exist and using democracy Maj+SAT circuits and P(Good) probability series convergence (As described in handwritten notes and drafts http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download, https://sites.google.com/site/kuja27/ImplicationRandomGraphConvexHullsAndPerfectVoterProblem_2014-01-11.pdf?attredirects=0&d=1, https://sites.google.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf?attredirects=0, https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1 and https://sites.google.com/site/kuja27/PhilosophicalAnalysisOfDemocracyCircuitAndPRGChoice_2014-03-26.pdf?attredirects=0). 
+
+13.(THEORY) But it is not known that if Arrow's theorem can be generalized for infinite number of candidates as above and whether such an electoral system is decidable. The possibility of a circular ranking in 3-condorcet election implies that there are some scenarios where voter can err though not exactly an error in making a "good choice" (or Perfect Voter Problem is decidable in case of 3 candidates condorcet election).
+
+14.(THEORY) Each Voter has a k-SAT circuit which is input to Majority circuit. k-SAT can be reduced to 3-SAT (not 2-SAT) and thus is NP-complete. Error by a Voter SAT circuit implies that voter votes 0 instead of 1 and 1 instead of 0. This is nothing but the sensitivity of the voter boolean function i.e number of erroneous variable assignments by the voter that change the per-voter decision input to the Majority circuit. Thus more the sensitivity or number of bits to be flipped to change the voter decision, less the probability of error by the voter. If sensitivity is denoted by s, 1/q is probability that a single bit is flipped and probability of error by the voter is p then p = k/q^s for some constant k which is derived by the conditional probability that Pr[m bits are flipped] = Pr[m-th bit is flipped/(m-1) bits already flipped]*Pr[(m-1) bits are flipped] = 1/q*1/q^(m-1) = 1/q^m (and m=s) . This expression for p  can be substituted in the Probability series defined in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1. Probability of single bit is 1/q if the number of variables across all clauses is q and each variable is flipped independent of the other. The Voter SAT circuit has an interesting application of Hastad's Switching Lemma - random probabilistic setting of variables known as "restrictions" decreases the decision tree depth significantly , or, number of variables that determine the Voter SAT outcome reduces significantly - in other words, random "restricted convincing" of a voter SAT CNF has huge impact on number of variables yet to be "convinced".
+
+Additional References:
+----------------------
+14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
+14.2 k-SAT and 3-SAT - http://www-verimag.imag.fr/~duclos/teaching/inf242/SAT-3SAT-and-other-red.pdf 
+14.3 Switching Lemma
+
+----------------------------------------------------------
+
+15. (DONE-Minimum Implementation using NetworkX algorithms) Add Graph Search (for example subgraph isomorphism, frequent subgraph mining etc.,) for "inferring" a graph from dataset with edges as relations and nodes as entities(astronomical or otherwise).Reference survey of FSM algorithms: http://cgi.csc.liv.ac.uk/~frans/PostScriptFiles/ker-jct-6-May-11.pdf. The context of "Graph Search" includes deducing relationships hidden in a text data by use of WordNet(construction of wordnet subgraph by Definition Graph Recursive Gloss Overlap etc.,), mining graph patterns in Social Networks etc., At present a WordNet Graph Search and Visualizer python script that renders the definition graph and computes core numbers for unsupervised classification (subgraph of WordNet projected to a text data) has been added to repository.
+
+16. (DONE) Use of already implemented Bayesian and Decision Tree Classifiers on astronomical data set for prediction (this would complement the use of classifiers for string mining) - autogen_classifier_dataset/ directory contains Automated Classified Dataset and Encoded Horoscopes Generation code.
+
+17. (DONE) Added Support for datasets other than USGS EQ dataset(parseUSGSdata.py). NOAA HURDAT2 dataset has been parsed and encoded pygen horoscope string dataset has been autogenerated by parseNOAA_HURDAT2_data.py
+
+18. (Minimum Functionality DONE-TwitterFollowersGraphRendering, Centrality) (Astro)PsychoSocialAnalysis  - Social Network Graph Analysis and Sentiment Analysis of Social Media and drawing inferences on Psychology and Human Opinion Mining in broader sense - for example, how a social network forms, how opinions, edges and vertices appear over time , Rich-get-Richer in Random Network Erdos-Renyi Model - which by majority opinion seems to be a bad model choice for Social Networking (Do people flock to popular social groups?), Bonacich Power Centrality (a social prestige measure predating PageRank) etc.,. Related to point 15.
+------------
+References:
+-----------
+18.1 Networks,Crowds,Markets - http://www.cs.cornell.edu/home/kleinber/networks-book/networks-book.pdf
+18.2 Introduction to Social Network Methods - http://faculty.ucr.edu/~hanneman/nettext/
+18.3 Bonacich Power Centrality - http://www.leonidzhukov.net/hse/2014/socialnetworks/papers/Bonacich-Centrality.pdf 
+18.4 Modelling Human Emotions - http://www.jmlr.org/proceedings/papers/v31/kim13a.pdf
+18.5 Depression Detection - http://www.ubiwot.cn/download/A%20Depression%20Detection%20Model%20Based%20on%20Sentiment%20Analysis%20in%20Micro-blog%20Social%20Network.pdf
+18.6 Market Sentiments - http://www.forexfraternity.com/chapter-4-fundamentals/sentiment-analysis/the-psychology-of-sentiment-analysis
+18.7 Sentiment Analysis - http://www.lct-master.org/files/MullenSentimentCourseSlides.pdf
+18.8 Dream Analysis - http://cogprints.org/5030/1/NRC-48725.pdf
+18.9 Opinion Mining - http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf
+
+19. (DONE-PAC Learnt Boolean Conjunction) Implement prototypical PAC learning of Boolean Functions from dataset. Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
+	19.1 There are two datasets - dataset1 of size 2^n of consecutive integers and dataset2 of first n-bit prime numbers of size 2^n
+	19.2 Each element of dataset1 is mapped to i-th bit of the corresponding prime number element in the dataset2. Boolean Conjunction is learnt for each of the i mappings.
+	19.3 Above step gives i probabilistic, approximate, correct learnt boolean conjunctions for each bit of all the prime numbers. 
+	19.4 Reference: PAC Learning - http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html 
+	19.5 PAC Learnt Boolean Conjunction is an approximated Decision Tree.
+	19.6 PAC learning is based on Occam's Razor (no unnecessary variables)
+
+20. (DONE) Integrate AstroInfer to VIRGO-KingCobra-USBmd Platform which makes it an Approximately Intelligent Cloud Operating System Framework - a Cloud OS that "learns" ,"decides" from datasets and "drives" using AstroInfer code. AsFer+USBmd+VIRGO+KingCobra integrated cloud platform with machine learning features together have been christened as "Krishna iResearch Intelligent Cloud Platform" or "NeuronRain". 
+
+21. (DONE-Minimum Implementation) Unsupervised Named Entity Recognition and Part-of-Speech tagging using Conditional Random Fields(CRF) and Viterbi path computation in CRF. Bayesian Network and Belief propagation might be implemented if necessary - as they are graphical models where graph edges are labelled with conditional probabilities and belief potentials respectively and can be part of other larger modules. 
+
+############################################################################################
+A.	Design Notes on Mining Numerical Datasets
+############################################################################################
+
+22. (DONE-Minimum Implementation) Period Three theorem (www.its.caltech.edu/~matilde/LiYorke.pdf) which is one of the earliest results in Chaotic NonLinear Systems, implies any data that has a periodicity of 3 can have larger periods. Fractals, Mandelbrot-Julia Sets have modelled natural phenomena. Thus finding if a data has periodicity or Chaos and if it has sensitive dependence on initial conditions (for example logistic equations similar to x(n+1) = kx(n)(1-x(n))) is a way to mine numerical data. Computation of Hausdorff-Besicovitch Dimension can be implemented to get Fractal Dimension of an uncountable set (this has to be visualized as a fractal curve than set of points). In addition to these, an Implementation of Chaotic PRG algorithms as described in https://sites.google.com/site/kuja27/ChaoticPRG.pdf?attredirects=0 and https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0 can be done.
+
+23. (DONE) Entropy of numerical data - Sum of -Pr(x)LogPr(x) for all possible outcome probabilities for a random variable. This is already computed in Decision Tree Classifier as impurity measure of a dataset. Also a python Entropy implementation for texts has been added to repository - computes weighted average of number of bits required to minimum-describe the text.
+
+
+#############################################################################################################################################
+
+===========================================================================================================================================
+(THEORY) DECIDABILITY OF EXISTENCE AND CONSTRUCTION OF COMPLEMENT OF A FUNCTION (important draft additions to http://arxiv.org/pdf/1106.4102v1.pdf - quite experimental and not necessarily correct)
+===========================================================================================================================================
+
+(*)24. (ONGOING) COMPLEMENT OF A FUNCTION - Approximating or Interpolating with a Polynomial: This is quite expensive and is undecidable for infinite sets. Better alternative is to approximate with Spline interpolant polynomials, for example, cubic splines which have less approximation error. (On a related note, algorithms described by the author (that is, myself) in http://arxiv.org/pdf/1106.4102v1.pdf for construction of a complement of a function are also in a way eliciting pattern in numerical data. The polynomial interpolation algorithm for complement finding can be improved with Spline interpolants which reduce the error and Discrete Fourier Transform in addition to Fourier series for the boolean expression. Adding this as a note here since TeX file for this arXiv submission got mysteriously deleted and the PDF in arXiv has to be updated somehow later.). A test python script written in 2011 while at CMI for implementing the above is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/complement.py. Also Trigonometric Polynomial Interpolation which is a special case of Polynomial interpolation, has following relation to DFT X(i)s:
+	p(t) = 1/N [X0 + X1*e^(2*pi*i*t) + ... upto XN] and 
+	p(n/N) = xn
+Thus DFT amd interpolation coincide in the above.
+
+-----------------------------------------------------------------------------------------------------------------------
+Theorems on prime number generating polynomials - special case is to generate all primes or integral complement of xy=z 
+-----------------------------------------------------------------------------------------------------------------------
+Legendre - There is no rational algebraic function which always gives primes.
+Goldbach - No polynomial with integer coefficients can give primes for all integer values
+Jones-Sato-Wada-Wiens - Polynomial of degree 25 in 26 variables whose values are exactly primes exists
+
+Polynomial interpolation and Fourier expansion of the boolean function in http://arxiv.org/pdf/1106.4102v1.pdf probably would have non-integral coefficients due to the above.
+
+--------------------------------------------------------------------------------------------
+Circuit construction for the complement function boolean DNF constructed in http://arxiv.org/pdf/1106.4102v1.pdf
+--------------------------------------------------------------------------------------------
+The DNF constructed for complement function has to be minimized (through some lowerbound techniques) before it is represented as a circuit because the number of clauses could be exponential. The circuit minimization problem has been shown to be NP-complete(unpublished proof by Masek, [GareyJohnson]). The above complement function boolean DNF would yield a constant depth 2 circuit (probably after minimization also) with unbounded fanin. If the size of the circuit is polynomial it is in AC (=NC). The size of the circuit depends on the boolean DNF constructed above which inturn depends on input complement set. Thus circuit depends on input making it a Non-Uniform AC circuit.  Though complement function is undecidable as described in http://arxiv.org/pdf/1106.4102v1.pdf, Non-uniform circuits "decide" undecidable languages by definition.
+
+Old draft of the complement function - https://sites.google.com/site/kuja27/ComplementOfAFunction_earlier_draft.pdf?attredirects=0 describes this and proposes a name of co-TC0 as integer multiplication is in TC0 (threshold circuits) which may not be true if the circuit size is super-polynomial. Super-polynomial size circuits are DC circuits allowing exponential size. Assuming polynomial size the above may be named as "Non-uniform co-TC".
+
+Due to equivalence of Riemann Zeta Function and Euler's theorem - inverse(infiniteproduct(1-1/p(i)^z)) for all primes p(i) - gives a pattern in distribution of primes which is the Riemann Hypothesis of Re(nontrivial zeroes of RZF)=0.5. Complement function for xy=z obtained by http://arxiv.org/pdf/1106.4102v1.pdf by polynomial interpolation or Fourier approximation polynomial of the DNF boolean formula can thus be conjectured to have a strong relation to RZF or even generalize RZF. In circuit parlance, the DNF boolean formula and its minimized Non-uniform AC(if polynomial sized) circuit that outputs prime number bits, thus are related to non-trivial zeroes of Riemann Zeta Function. Another conjecture that can be made is that if the real part of the non-trivial zeroes is 0.5 in RZF, then the Non-uniform circuit family constructed for the above complement function DNF should also have a pattern in the circuit graph drawn - subgraphs of the circuit family of graphs have some common structure property.
+
+Fourier polynomial of a boolean formula is of the form:
+	f(x) = Sigma_S(fouriercoeff(S)parityfn(S))
+
+and is multilinear with variables for each input. S is the restriction or powerset of the bit positions.
+
+Thus if a prime number is b-bit, there are b fourier polynomials for each bit of the prime. Thus for x-th prime number fourier expression is,
+	P(x) = 1+2*fx1(x)+2^2*fx2(x).....+2^b*fxb(x)
+where each fxi() is one of the b fourier expansion polynomials for prime bits.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+This can be substituted in Euler formula and equated to Riemann Zeta Function:
+RZF = Inverse((1-1/P(x1)^s)(1-1/P(x2)^s))...ad infinitum---------------------------------------------------------------------(1).
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Non-trivial complex zero s is obtained by,
+	P(xi)^s = 1
+	P(xi)	= (1)^(1/s)
+----------------------------------------------------------------------------------------------------------------------------------------------
+	1+2*fx1(xi)+2^2*fx2(xi).....+2^b*fxb(xi) = (1)^(e^(-i*theta)/r) after rewriting in phasor notation s=r*e^(i*theta).-----------(2)
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Above (1) links Fourier polynomials for each prime to roots of unity involving non-trivial zeroes of Riemann Zeta Function in RHS. LHS is the xi-th prime number. Since LHS is real without imaginary part, RHS should also be real though exponent involves imaginary part. There are as many roots of unity in RHS as there are prime numbers. The radian is taninverse which is semi-determined assuming RH with Re(s) = 0.5.
+
+LHS is multilinear with at most b variables for b bits of the prime number. A striking aspect of the above is that Fourier parity function is +1 or -1 and a lot of them might cancel out in the above summed up polynomial in LHS after substitution and rewriting.
+
+If s is written as a+ic, then (1)^(1/s) = (1)^(1/a+ic) = (1)^((a-ic)/(a^2+c^2))
+
+If RH is true a=0.5 and above becomes, (1)^((0.5-ic)/(0.25+c^2)).
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+	1+2*fx1(xi)+2^2*fx2(xi).....+2^b*fxb(xi) = (1)^((0.5-ic)/(0.25+c^2)) -----------(3)
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Thus imaginary part c has one-to-one correspondence to each prime. Non-trivial zeroes are usually found using functional notation of RZF instead of the above - applying Analytic Continuation that extends the domain in steps to be exact. Finding pattern in distribution of primes is equivalent to finding pattern in above set of prime bit circuits or fourier polynomials for each prime - The family of circuits for primes above has to be mined for circuit DAG subgraph patterns which is more of machine learning than complexity (there is almost no complexity theoretic reference to this aspect). The set of fourier polynomials can be mined for linear independence for example. (1),(2) and (3) are multiple ways of expressing same relation between complement function boolean circuit and RZF.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Delving deeper into (1) above which equates Riemann Zeta Function with Complement Function Fourier Polynomials substituted in Euler's infinite product (Hereinafter referred to as Fourier-Euler polynomial):
+--------------------------------------------------------------------------------------------------------------------------------------------
+Similar to zeros of RZF, Fourier poynomial obtained from Euler's formula using complement function prime bits polynomials gives a very complex polynomial whose degree could be d*s in b variables, where d is the maximum degree in prime bit fourier polynomials. In randomized setting, Schwartz-Zippel Lemma can be applied for finding an upperbound for number of roots of this Fourier-Euler polynomial which is the traditional tool in Polynomial Identity Testing. Using the lemma, number of roots of the above polynomial is <= d*s/ |K| where K is the random finite subset of b variables in the boolean complement function. If |K| = b, then number of roots is upperbounded by d*s/b.[This is assuming rewriting as (2) or (3)]. But degree is a complex number d*s (It is not known if there is a Schwartz-Zippel Lemma for complex degree).  The roots of this Fourier-Euler polynomial should intuitively correspond to zeros of Riemann Zeta Function which probably gives a complexity theoretic expression of Riemann Zeta Function (than Analytic Number Theoretic). This implies that there should be complex roots also to the Fourier-Euler polynomial which itself is puzzling on what it means to have a complex number in boolean circuits. 
+
+Important thing to note is that what it means to be a zero of the Euler-Fourier polynomial [(1),(2) and (3)] which has complex degree variable and also boolean variables within each clause. RZF just has the s in exponent. Thus Euler-Fourier polynomial is more generic and fine-grained. But zeroes of this polynomial are both within the multilinear components and the exponents instead of just in exponent in RZF. This might reveal more pattern than what RH predicts conjecturally. Moreover due to non-uniformity each Fourier polynomial component substituted in Euler formula for each prime, is different.
+
+Sensitivity and Block sensitity of the above complement function circuit should also have a strong relation to prime distribution as sensitivity is the number of input bits or block of bits that are to be flipped for change in value of the circuit(prime bit is the value) . For each Fourier polynomial for a prime bit above the sensitivity measure would differ and  the prime distribution is proportional to collective sensitivity of all the prime bit Fourier polynomials . Also the degree of approximating Fourier polynomial is lower bounded by sensitivity (www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf).
+
+-----------------------------------------------
+Arithmetic Circuit for Euler Product and RZF
+-----------------------------------------------
+
+Instead of a boolean circuit above can be an arithmetic circuit (with * and + gates with elements of some field as inputs to these) alternatively which is useful in representing polynomials. The division in the above Euler product can be replaced by the transform f/g = f/(1-(1-g)) = f*(1+(1-g)+(1-g)^2+...) by geometric series expansion. This is how division is implemented using powering and hence multiplication in NC circuits. Above Euler product can be represented as a depth 3 Pi-Sigma-Pi ----  * for product of each prime clause,+ for subtraction within each clause,* for raising (1/p) to power s ---- circuit assuming 1/p. Powering with complex exponent s requires representing s as a 2*2 matrix M(s) where a and b are real and imaginary parts of s:
+	
+	M(s) =  | a  -b|
+	        | b   a|
+
+Thus p^s can be written as p^M(s) with matrix exponent. Rewriting this as e^(M(s) ln p) and expanding as series,
+
+	e^(M(s) ln p) = 1 + M ln p + M*M lnp^2/2! + ...
+and 	1 - 1/p^s = 1 - e^(-M(s) ln p) = 1-(1-M*ln p+ M*M ln p^2/2! - ...) = M*ln p - M*M ln p^2/2! + ... (alternating +,- terms ad infinitum) 
+
+Thus each prime clause in the Euler product is written as an infinite summation of 2*2 matrix products. Using the transform f/g above division 1/(1-1/p^s) for each prime clause in the Euler product can be reduced to powering. Product gate at root multiplies all such prime clauses. Obviously above circuit is exponential and probably is the lowerbound for this circuit. If the product is made finite then a non-uniform arithmetic circuit family is created depending on input advice and degree of the above polynomial varies. This is an alternative to Euler-Fourier polynomial obtained based on complement function boolean circuit. No Fourier polynomial for prime bits is used here but prime power as such is input to arithmetic gates.
+
+Instead of Euler formula, circuit for Riemann Zeta Function can be constructed with + gate at the root and circuits for n^s (or e^(s ln p)) computation at the leaves using the above series expansion.  For first n terms of RZF, the circuit represents the polynomial (with s replaced by the 2*2 matrix for the complex s):
+	RZF(n) = n - M(s) * (ln 2 + ln 3 + ...+ ln n)/1! + M(s)^2 * ( ln 2^2 + ln3^2 +...+ lnn^2)/2! + ... + M(s)^n * (ln2^n + ...+lnn^n)/n!
+
+The reason for drawing above arithmetic circuit is to represent the Riemann Zeta Function in complex plane as a circuit that depends on Matrix representation of complex number field(determinant of the matrix is the norm) and relate the roots of it to non-trivial zeroes of Riemann Zeta Function. The geometric intuition of Schwartz Zippel lemma is to find the probability of a point being on this circuit represented polynomial's surface. In the above circuit the variable is the Matrix M (matrix representation for the zero s). The imaginary part is hidden within the 2*2 matrices. The degree of above polynomial is n and is univariate in M. Non-uniform Sigma-Pi-Sigma Arithmetic circuit for above restricted version of Riemann Zeta Function can be constructed similar to the above for arbitrary n. 
+
+Using Taylor series expansion and Jordan Normal Form above can be written as a huge square matrix.(http://en.wikipedia.org/wiki/Matrix_function). Taylor series for a real function f(x) = f(0) + f'(0)/1! + f''(0)/2! + ... and 2*2 matrix for complex zero can be written in Jordan Normal Form as XYX^(-1) with Y being the Jordan block of diagonal fixed entries and superdiagonal 1s. Evaluating f(Y) with Taylor expansion gives a square matrix. Thus Riemann Zeta Function has a matrix in Jordan Normal Form. Finding zeros of RZF is equivalent to solving system of equations represented as Jordan Nomal Form using Gauss-Jordan Elimination. The matrix is already upper triangular and can be equated to zero matrix. 
+
+Eigen values of Chaotic systems Wave modelling Random matrices (matrix as random variable) have been shown to have a striking relation to zeros of RZF - Spacing of Random matrix eigenphases and RZF zeros have been conjectured to be identical (Montgomery). From complexity standpoint, the characteristic polynomial or the determinant of such Random Matrices can be computed by determinant circuits which have polynomial size and polylog depth.
+
+-----------------------------------------------------------------------
+Experimental - Different way to reduce the complex exponent in (1) 
+-----------------------------------------------------------------------
+From (1), P(xi)^s = 1.
+=> P(xi) ^ (k+il) = 1 where s=k+il
+=> P(xi)^k * P(xi)^(il) - 1 = 0
+ P(xi)^k * [cos(l*ln(P(xi))) + i*sin(l*ln(P(xi)))] - 1 = 0	-----------------(4)
+
+Thus real and imaginary parts can be equated to zero independently as,
+	P(xi)^k * cos(l*ln(P(xi))) = 1 ------------------------------------------(5)
+
+	P(xi)^k * sin(l*ln(P(xi))) = 0 ------------------------------------------(6)
+	
+
+From (5) and (6), it can be deduced that:
+
+	tan(l*ln(P(xi))) = 0 ----------------------------------------------------(7)
+
+From (7), it can be inferred that Re(s)=k is not involved and PIT has to be done only on the b+1 variables (b bits in primes and the Im(s)=l). This probably points to the fact that for all primes, the prime distribution is independent of the Re(s). Series expansion of (7) gives,
+
+	tan(T) = T + T^3/3 + 2*T^5/15 + .... = 0  where T = l*ln(P(xi)) ---------(8)
+
+
+l*ln(P(xi)) = 0 =>
+	l = 0 or ln(P(xi)) = 0
+	P(xi) = 1	
+both of which can not hold. 
+
+From (5),
+	P(xi)^k = sec(l*ln(P(xi))) ----------------------------------------------(9)
+
+if T = l*lnP(xi), e^(T/l) = P(xi)
+
+	P(xi)^k = e^(kT/l) = 1+T^2/2 + 5T^4/24 + 61*T^6/720 + 277T^8/8064 + ... (expansion of sec)	---------- (10)
+
+	1+kT/l + (kT/l)^2/2! + (kT/l)^3/3! + .... =	1 + T^2/2 + 5T^4/24 + ....(expansion of e^(KT/l))  --------(11) 
+
+
+(5) can also be written as,
+
+	ln P(xi)^k	=	ln(sec(l*ln(P(xi)))
+
+	k	=	ln[sec(l*ln(P(xi)))] / lnP(xi)	-----------------------------------------------------------(12)
+
+By RH k has to be 0.5 irrespective of RHS.
+
+Approximation of l:
+-------------------
+By assuming k=0.5 and Using series expansion of cos(x) - choosing only first two terms, l is approximately,
+
+	P(xi) = 1/[cos(l*lnP(xi))]^2			-----------------------------------------------------------(13)
+	l = sqrt(2)*sqrt(sqrt(P(xi)) - 1) / ln (P(xi)	-----------------------------------------------------------(14)
+
+More on (7):
+------------
+	tan(l*ln(P(xi))) = 0 implies that l*ln(P(xi)) = n*pi for some integer n. 
+	ln(P(xi)) = n*pi/l
+	P(xi) = e^(n*pi/l) ----------------------------------------------------------------------------------------(15)
+
+Above equates the Fourier polynomial for xi-th prime in terms of exponent of e with Imaginary part l of some RZF zero. It is not necessary that primes have one-one correspondence with zeros in the same order. All above just imply that it is true for some prime(and its Fourier polynomial) and some RZF zero that satisfy these identities.
+
+-----------------------------------------------------------------
+Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function
+-----------------------------------------------------------------
+A graph is Ramanujan graph if it is d-regular and eigen values of its adjacency matrix are sqrt(d-1)*2 or d. Ihara zeta function similar to RZF is a Dirichlet series that is based on prime cycle lengths of a graph defined as ProductOf(1/1-q^(-s*p)) where s is a zero and p prime for a (q+1)-regular graph. Thus a reduction is already available from RZF to a graph. The Ihara Zeta Function satisfies Riemann Hypothesis iff graph is Ramanujan - this follows from Ihara identity that relates Ihara Zeta Function and the adjacency matrix of a graph. Thus proving above conjecture for Euler-Fourier polynomial of complement function for primes boolean and arithmetic circuits family might need this gadget using prime cycles.
+
+If a set of p-regular graphs for all primes is considered,then Riemann Zeta Function can be derived (using Ihara Zeta Function identity) as a function of product of Ihara Zeta Functions for these graphs and a function of the determinants of adjacency matrices for these graphs divided by an infinite product similar to Euler product with (1+1/p^s) clauses instead of (1-1/p^s). This requires computing product of determinants of a function of adjancency matrices for these graphs. A regular connected graph is Ramanujan if and only if it satisfies RH. Zeroes of the individual Ihara zeta functions are also zeroes of this product for the set of graphs and hence for the RZF. Intuitively the product might imply set of all paths of all possible lengths across these graphs. Determinant of the product of adjacent matrices is product of determinants of the matrices and equating it to zero yields eigenvalues. All these graphs have same number of edges and vertices. The eigen values then are of the form sqrt(q^(2-2a)+q^(2a)+2q) were s=a+ib for each of the regular graphs. The RHS of Ihara Zeta Function can be written as [(1+1/q^s)(1-1/q^s)]^[V-E] and the product gives the RZF and the other series mentioned above. Eigen values can be atmost q.
+
+If an eigen value is t (<= q), then it can be derived that
+	q^s = q + (or) - sqrt(q^2 -4t) / 2
+where s=a+ib. Setting a=0.5 is creating a contradiction apparently  which is above divided by sqrt(q) (while equating real and imaginary parts for q^(ib) or e^(ib*logq)- needs to be verified if this kind of derivation is allowed in meromorphic functions) .
+
+-------------------------------------------------------
+
+Above and the Informal notes in https://sites.google.com/site/kuja27/RamanujanGraphsRiemannZetaFunctionAndIharaZetaFunction.pdf?attredirects=0&d=1 can further be simplified as follows to get RZF in terms of IZF identity (it is not in anyway an attempted proof or disproof of RH):
+
+Note: Following are derived based on Ihara Identity of Ihara Zeta Function.[https://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824] for a prime+1 regular graph.
+
+(1) For some i-th prime+1 regular graph (i.e q+1 regular graph where q is prime),
+			[1+q^-s]				1
+	-----------------------------------------	= -------------- 
+	[zi(s)det(I-A*qi^-s + qi^(1-2s)*I]^(1/|V|-|E|)	     [1-q^-s]
+
+
+(2) Infinite product of the above terms for all prime+1 regular graphs gives the RZF in right in terms of
+Ihara Zeta Function Identities product on the left -  The infinite set of prime+1 regular graphs relate to
+RZF zeros.
+
+(3) For non-trivial zeros s=a+ib,RZF in RHS is zero and thus either numerator product is zero or denominator product tends to infinity 
+
+(4) From Handshake Lemma, it can be derived that a q-regular graph with order n(=|V| vertices) has
+q*n/2 edges (=|E| edges)
+
+(5) If numerator is set to zero in LHS, 
+		q^(a+ib) = -1
+and
+		cos(blogq) + isin(blogq) = -1/q^a which seems to give further contradiction
+
+(6) If denominator is set to infinity in LHS,
+	[z1*z2*.....det()det()....]^1/|V|-|E| = Inf 
+			(or)
+	[z1*z2*.....det()det()....]^1/|E|-|V| = 0 
+
+for some term in the infinite product of LHS which implies that
+	[z1*z2*.....det()det()....] = 0 which is described earlier above in the notes. 
+
+(7) More derivations of the above are in the notes uploaded in  handwritten preliminary drafts at: 
+	(6.1) https://sites.google.com/site/kuja27/RZFAndIZF_25October2014.pdf?attredirects=0&d=1 
+	(6.2) http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf
+	
+(8) Written notes in (7) derive values of s=a+ib for non-Ramanujan prime+1 regular graphs for the expressions in points (1) to (6) above. They seem to suggest that RH is true with elementary complex arithmetic without using any complex analysis, with or without any assumption on the eigenvalue surprisingly - assuming q^s + q^(1-s) = v (v can be set to any eigenvalue - can be atmost q+1 for the q+1-regular non-ramanujan graph) and solving for s=a+ib - gives a=1/2 and thus for both ramanujan and non-ramanujan graphs as eigen value becomes irrelevant - needs lot of reviewing - because it implies that graph formulation above of Riemann Hypothesis is true for all prime+1 regular graphs by applying Ihara Identity of Ihara Zeta Function and thus Riemann Hypothesis is true. The choice of prime+1 regularity is just a contrived gadget to equate to Riemann Zeta Function through an infinite product. Crucial fact is the independence of eigen value in the previous derivation whenever the graph regularity is prime+1, thus directly connecting prime numbers and real part of Riemann Zeta Function non-trivial zero.
+
+(9) Above doesn't look circular also because infinite product of characterstic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator. 
+
+----------------------------------------------------
+PAC Learning and Complement Function Construction
+----------------------------------------------------
+Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
+        - There are two datasets - dataset1 of size 2^n of consecutive integers and dataset2 of first n-bit prime numbers of size 2^n 
+        - Each element of dataset1 is mapped to i-th bit of the corresponding prime number element in the dataset2. Boolean Conjunction is learnt for each of the i mappings (PAC Learning Algorithm: http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html).
+        - Above step gives n probabilistic, approximate, correct learnt boolean conjunctions for each bit of all the 2^n prime numbers.
+	- An example PAC Boolean Conjunction Learner is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/PACLearning.py
+
+----------------------
+Additional references:
+----------------------
+24.1 Google groups thread reference 2003 (OP done by self): https://groups.google.com/forum/#!search/ka_shrinivaasan%7Csort:relevance%7Cspell:false/sci.math/RqsDNc6SBdk/Lgc0wLiFhTMJ
+24.2 Math StackExchange thread 2013: http://math.stackexchange.com/questions/293383/complement-of-a-function-f-2n-n-in-mathbbn-0-n-rightarrow-n1
+24.3 Theory of Negation - http://mentalmodels.princeton.edu/skhemlani/portfolio/negation-theory/ and a quoted excerpt from it :
+"... The principle of negative meaning: negation is a function that takes a single argument, which is a set of fully explicit models of possibilities, and in its core meaning this function returns the complement of the set..."
+24.4 Boolean Complementation [0 or 1 as range and domain] is a special case of Complement Function above (DeMorgan theorem - http://www.ctp.bilkent.edu.tr/~yavuz/BOOLEEAN.html)
+24.5 Interpolation - http://caig.cs.nctu.edu.tw/course/NM07S/slides/chap3_1.pdf 
+24.6 Formal Concept Analysis - http://en.wikipedia.org/wiki/Formal_concept_analysis, http://ijcai.org/papers11/Papers/IJCAI11-227.pdf
+24.7 Prime generating polynomials - http://en.wikipedia.org/wiki/Formula_for_primes
+24.8 Patterns in primes - every even number > 2 is sum of 2 primes - Goldbach conjecture : http://en.wikipedia.org/wiki/Goldbach%27s_conjecture
+24.9 Arbitrarily many Arithmetic progressions - Green-Tao theorem: http://en.wikipedia.org/wiki/Green%E2%80%93Tao_theorem
+24.10 Prime generating functions - https://www.sonoma.edu/math/colloq/primes_sonoma_state_9_24_08.pdf
+24.11 Hardness of Minimizing and Learning DNF Expressions - https://cs.nyu.edu/~khot/papers/minDNF.pdf
+24.12 DNF Minimization - http://users.cms.caltech.edu/~umans/papers/BU07.pdf
+24.13 DNF Minimization - http://www.cs.toronto.edu/~toni/Papers/mindnf.pdf
+24.14 Riemann Zeta Function Hypothesis - all non-trivial(complex) zeroes of RZF have Re(z) = 0.5 - http://en.wikipedia.org/wiki/Riemann_hypothesis. 
+24.15 Frequent Subgraph Mining - http://research.microsoft.com/pubs/173864/icde08gsearch.pdf
+24.16 Frequent Subgraph Mining - http://glaros.dtc.umn.edu/gkhome/fetch/papers/sigramDMKD05.pdf
+24.17 Roots of polynomials - Beauty of Roots - http://www.math.ucr.edu/home/baez/roots/
+24.18 Circuit lowerbounds (Nechiporuk, Krapchenko, etc) - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation_Chapter9.pdf
+24.19 Schwartz-Zippel Lemma for Polynomial Identity Testing - http://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma
+24.20 Schwartz-Zippel Lemma for PIT of multilinear polynomials - http://www.cs.huji.ac.il/~noam/degree.ps
+24.21 Analysis of Boolean Functions - http://analysisofbooleanfunctions.org/
+24.22 Riemann-Siegel Formula for computation of zeros - http://numbers.computation.free.fr/Constants/Miscellaneous/zetaevaluations.html
+24.23 RZF zeros computation - http://math.stackexchange.com/questions/134362/calculating-the-zeroes-of-the-riemann-zeta-function 
+24.24 Online Encyclopedia of Integer Sequences for Prime numbers - all theorems and articles related to primes - https://oeis.org/search?q=2%2C3%2C5%2C7%2C11%2C13%2C17%2C19%2C23%2C29%2C31%2C37%2C41%2C43%2C47%2C&language=english&go=Search
+24.25 Intuitive proof of Schwartz-Zippel lemma - http://rjlipton.wordpress.com/2009/11/30/the-curious-history-of-the-schwartz-zippel-lemma/
+24.26 Random Matrices and RZF zeros - http://www.maths.bris.ac.uk/~majpk/papers/67.pdf
+24.27 Circuit for determinant - S. J. Berkowitz. On computing the determinant in small parallel time using a small number of processors. Inf. Prod. Letters 18, pp. 147–150, 1984.
+24.28 Mangoldt Function, Ihara Zeta Function, Ramanujan Graphs - http://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824
+24.29 Multiplicity of an eigen value in k-regular graph - http://math.stackexchange.com/questions/255334/the-number-of-connected-components-of-a-k-regular-graph-equals-the-multiplicit
+24.30 PAC Learning - http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html
+
+===============================================================================================================================================
+===============================================================================================================================================
+
+###############################################################################################################################################
+
+
+25. Approximating with some probability distribution - Gaussian, Binomial etc., that model the probability of occurence of a datapoint in the set
+
+(DONE) 26. Streaming algorithms - Finding Frequency moments, Heavy Hitters(most prominent items), Distinct Elements etc., in the numerical dataset. Usually numerical data occur in streams making these best choice for mining numerical data. 
+(DONE) 26.1 Implementation of LogLog and HyperLogLog Counter(cardinality - distinct elements in streamed multiset), CountMinSketch (Frequencies and heavy hitters) and Bloom Filters(membership)
+(DONE) 26.2 Parser and non-text file Storage framework for Realtime Streaming Data - Hive, HBase, Cassandra, Spark and Pig Scripts and Clients for Storage Backends have been implemented. The Storage is abstracted by a generator - architecture diagram at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/BigDataStorageAbstractionInAsFer.jpg
+(DONE) 26.3 Python scripts for Stock Quotes Data and Twitter tweets stream search data for a query.
+-------------
+References:
+-------------
+26.3 https://gist.github.com/debasishg/8172796 
+
+27. Usual Probabilistic Measures of Mean, Median, Standard Deviation, Curve fitting on the numeric data. 
+
+28. (DONE - using python, R+rpy2) Application of Discrete Fourier Transform(using R), LOESS(using R), Linear Polynomial Approximate Interpolation(using R), Logistic Regression and Gradient Descent
+
+29. Least Squares Method on datapoints y(i)s for some x(i)s such that f(x)~y needs to be found. Computation of L0, L1 and L2 norms.
+
+(DONE)30. K-Means and kNN Clustering(if necessary and some training data is available) - unsupervised and supervised clustering based on coordinates of the numerical dataset
+
+31. (DONE) Discrete Hyperbolic Factorization - Author has been working on a factorization algorithm with elementary proof based on discretization of a hyperbola since 2000 and there seems to be some headway recently in 2013. To confirm the polylog correctness, a minimal implementation of Discrete Hyperbolic Factorization (and could be even less than polylog due to a weird upperbound obtained using stirling formula) has been added to AstroInfer repository at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound.cpp with factors output logs.
+
+32. (DONE) Multiple versions of Discrete Hyperbolic Factorization algorithms have been uploaded as drafts in https://sites.google.com/site/kuja27:
+	 32.1) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicFactorization_UpperboundDerivedWithStirlingFormula_2013-09-10.pdf/download and 
+	 32.2) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download(and multiple versions due to various possible algorithms for search and upperbound technique used) 
+
+33. (DONE) NC PRAM version of Discrete Hyperbolic Factorization:
+	33.1) An updated NC PRAM version of Discrete Hyperbolic Factorization has been uploaded at:
+http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound.pdf/download that does PRAM k-merge of discrete tiles in logarithmic time before binary search on merged tile.
+
+	33.2) Preliminary Design notes for CRCW PRAM implementation of the above is added to repository at: http://sourceforge.net/p/asfer/code/237/tree/ImplementationDesignNotesForDiscreteHyperbolicFactorizationInPRAM.jpg. This adds a tile_id to each tile so that during binary search, the factors are correctly found since coordinate info gets shuffled after k-tile merge.
+
+
+34. (DONE) An updated draft version of PRAM NC algorithm for Discrete Hyperbolic Factorization has been uploaded - with a new section for Parallel RAM to NC reduction, disambiguation on input size (N and not logN is the input size for ANSV algorithm and yet is in NC - in NC2 to be exact - (logN)^2 time and polynomial in N PRAM processors - NC circuit depth translates to PRAM time and NC circuit size to number of PRAMs):
+	34.1 LaTeX - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download
+
+	34.2 PDF - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
+
+---------------------
+Additional references:
+---------------------
+	34.3) Instead of [BerkmanSchieberVishkin] an O(logloglogN) algorithm can be used described in (since the numbers in tiles are within a known range) - Triply-Logarithmic Parallel Upper and Lower Bounds for Minimum and Range Minima over Small Domains (Omer Berkman, Yossi Matiasb, Prabhakar Ragde) - 1998 - http://www.sciencedirect.com/science/article/pii/S0196677497909056. 
+
+	34.4) Randomized Algorithms ,Rajeev Motwani and Prabhakar Raghavan, Chapter 12 on Distributed and Parallel Algorithms, also describes input size and randomized algorithms for Parallel sort. 
+
+	34.5) Also an alternative merge algorithm in constant depth polysize circuit described in Chandra-Stockmeyer-Vishkin [http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf] can be applied (but it is for merging two lists of m, m-bit numbers where as the above factorization needs merging two lists of O(m), log(m)-bit numbers)
+
+	34.6) [KarpRamachandran] define the inclusion of PRAM models in NC in page 29 of http://digitalassets.lib.berkeley.edu/techreports/ucb/text/CSD-88-408.pdf - NCk in EREWk in CREWk in CRCWk=ACk in NC(k+1). [KarpRamachandran] cite [HooverKlawePippenger] - Bounding Fanout in Logical Networks - http://dl.acm.org/citation.cfm?id=322412 - for this inclusion. Thus references for PRAM=NC imply All Nearest Smaller Values (ANSV) CRCW PRAM algorithm [BerkmanSchieberVishkin] is also in NC counterintuitively despite the input size being N=n (and not logN). 
+
+	34.7) Parallel RAM survey - http://www.cs.utoronto.ca/~faith/PRAMsurvey.ps
+
+	34.8) Related: Quantum Search using Grover Algorithm over unsorted lists can be done in O(sqrt(N)) - https://en.wikipedia.org/wiki/Grover's_algorithm. This is another counterintuitive fact that a quantum search on unsorted lists is slower than ANSV Parallel RAM algorithm.
+
+        34.9) Recent Advances in All Nearest Smaller Values algorithms:
+		34.9.1) ANSV in hypercube - Kravets and Plaxton - http://www.cs.utexas.edu/~plaxton/pubs/1996/ieee_tpds.ps
+                34.9.2) ANSV lowerbound - Katajainen - http://www.diku.dk/~jyrki/Paper/CATS96.ps - omega(n) processors with omega(logn) time
+                34.9.3) ANSV in BSP machines - Chun Hsi Huang - http://www.cse.buffalo.edu/tech-reports/2001-06.ps
+        
+        34.10) The crucial fact in the above is not the practicality of having order of n parallel processors with RAM to get the logarithmic time lowerbound (which looks costly in number of PRAMs wise), but the equivalence of PRAM to NC which is theoretically allowed despite input size being n instead of logn (because each PRAM cell mapped to a circuit element can have polylogn bits and polyn such PRAMs are allowed) which is sufficient for Discrete Hyperbolic Factorization to be in NC.
+
+
+35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) .
+
+########################################################################################################################
+B.	EXPERIMENTAL NON-STATISTICAL INFERENCE MODEL BASED ON ALREADY KNOWN THEORETICAL COMPUTER SCIENCE RESULTS:
+########################################################################################################################
+
+35. (DONE-WordNet Visualizer implementation for point 15) The classification using Interview Algorithm Definition Graph (obtained from Recursive Gloss Overlap algorithm described in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf ) wordnet node indegrees can classify a same document in multiple classes without any training set (unsupervised). Thus same document will be in multiple classes. This can be visualized as one stack per class and documents in same class are pushed into a stack corresponding to each class. When a same document is across multiple classes, a document can be visualized as a "hyperedge" of a hypergraph that transcends multiple class nodes. Here each class node in this non-planar graph (or multi-planar graph) is a stack. 
+
+36. (DONE) Thus if number of classes and documents are infinite, an infinite hypergraph is obtained. This is also somewhat a variant of an inverted index or a hashtable where in addition to hashing ,the chained buckets across the keys are interconnected (Quite similar to https://sites.google.com/site/kuja27/SurvivalIndexBasedTxnTimeoutManager.pdf?attredirects=0 and https://sites.google.com/site/kuja27/PhDThesisProposal.pdf?attredirects=0). This is also similar to "Connectionism" in Computational Psychology which allows cycles or interconnections in Perceptrons and Neural Networks. An old version of this was written in an old deleted blog few years ago in 2006 at: http://shrinivaskannan.blogspot.com. If the relation between Hash Functions and Integer Partitions is also applied as described using Generating Functions in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions.pdf?attredirects=0 then an upperbound on number of possible Hypergraphs (visualizing them as interconnected Hash tables) can be derived which is a stronger notion to prove. 
+
+37.(PoC WordNet Visualizer Closure DONE) Above multiplanar hypergraph is quite related as a theoretical construct to a Pushdown Automata for Context Free Grammar. Also the Definition Graph Construction using Recursive Gloss Overlap is a Context-Sensitive counterpart of Parse Trees obtained for Context Free Grammar, but ignoring Parts-Of-Speech Tagging and relying only on the relation between words or concepts within each sentence of the document which is mapped to a multipartite or general graph. Infact this Definition Graph and Concept Hypergraph constructed above from indegrees quite resemble a Functional Programming Paradigm where each relationship edge is a Functional Program subroutine and the vertices are the parameters to it. Thus a hyperedge could be visualized as Composition Operator of Functional Programs including FP routines for Parts-of-Speech if necessary [WordNet or above Concept Hypergraph can be strengthened with FPs like LISP, Haskell etc.,]. RecursiveNeuralNetworks(MV-RNN and RNTN) have a notion of compositionality quite similar to Functional Programming in FPs (Reference: http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf ) but for tree structures. Applying the compositionality for Concept Hypergraphs constructed above using FPs is a possible research direction.
+
+38.But above is not context free because context is easily obtainable from the hyperedge which connects multiple classes. As an experimental gadget above seems to represent an alternative computational model for context sensitivity and also process of human thought. This needs HyperEdge Search algorithms for hypergraph. A Related Neuropsychological notion of Hippocampus Memory Allocation in Human Brain can be found in http://people.seas.harvard.edu/~valiant/Hippocampus.pdf. Also a similar gadget is a special case of Artificial Neural Network - http://en.wikipedia.org/wiki/Hopfield_network - Hopfield Network - used to model human associative memory (pattern based memory retrieval than address based retrieval). Hyperedges of the above hypergraph can be memory vectors retrieved in an associative memory.
+
+39.An interesting academic question to pose is - "Does the above hypergraph have a strong connectivity and a diameter upperbounded by a constant?". Equivalently, is the collection of universal knowledge close-knit or does nature connect seemingly unrelated concepts beyond what is "observable"? For example, path algorithms for Hypergraphs etc., can be applied to check s-t connectivity of two concepts. Some realworld linear programming and optimization problems which have strong natural applications are KnapSack problem,Tiling Problem or Packing problem that occur in everyday life of humanbeings (packing items for travel, arranging on a limited space etc.,). Thus the concept hypergraph might have a path connecting these.  
+
+40.A recent result of Rubik's cube (http://www.cube20.org/) permutations to get solution having a constant upperbound (of approximately 20-25 moves) indicates this could be true (if all intermediary states of Rubik's transitions are considered as vertices of a convex polytope of Concepts then isn't this just a Simplex algorithm with constant upperbound? Is every concept reachable from any other within 20-25 moves? Or if the above hypergraph is considered as a variant of Rubik's Cube in higher dimensions, say "Rubik's Hypercube" then is every concept node reachable from the other within 20 logical implication moves or is the diameter upperbounded by 20?).  Most problems for hypergraph are NP-Complete which are in P for graphs thus making lot of path related questions computationally harder. Counting the number of paths in hypergraph could be #P-Complete. There was also a recent study on constant upperbound for interconnectedness of World Wide Web document link graph which further substantiates it (http://www9.org/w9cdrom/160/160.html - paragraph on diameter of the Strongly Connected Component Core of WWW). Probably this is a special case of Ramsey theory that shows order emerging in large graphs (monochromatic subgraphs in an arbitrary coloring of large graph).
+
+41.Mapping Rubik's Cube to Concept Wide Hypergraph above - Each configuration in Rubik's Cube transition function can be mapped to a class stack node in the Concept Hypergraph. In other words a feature vector uniquely identifies each node in each class stack vertex of the Hypergraph. Thus move in a Rubik's cube is nothing but the hyperedge or a part of the hyperedge that contains those unique vectors. Thus hyperedges signify the Rubik's cube moves. For example if each class stack vertex is denoted as c(i) for i-th class and each element of the stack is denoted by n(i) i.e. nth element of stack for class i, then the ordered pair [c(i),n(i)] uniquely identifies a node in class stack and correspondingly uniquely identifies an instantaneous face configuration of a Rubik's Hypercube(colored subsquares represent the elements of the feature vector). Thus any hyperedge is a set of these ordered pairs that transcend multiple class stacks.
+
+42.(DONE) The Multiplanar Primordial Field Turing Machine model described by the author in "Theory of Shell Turing Machines" in [http://sites.google.com/site/kuja27/UndecidabilityOfFewNonTrivialQuestions.pdf?attredirects=0] with multiple dimensions seems to be analogous to the above. If dimension info is also added to each plane in above hypergraph then both above formulations and Shell Turing Machines look strikingly similar. One more salient feature of this hypergraph is that each class node stack indirectly encodes timing information for events from bottom to top of the stack and height of each stack independently varies. Thus this is more than just a hypergraph. There also exists a strong similarity with Evocation WordNet (one word "reminding" or "evocative" of the other) - http://wordnet.cs.princeton.edu/downloads.html - difference being above is a hypergraph of facts or concepts rather than just words. The accuracy of sense disambiguation is high or even 100% because context is the hyperedge and also depends on how well the hyperedges are constructed connecting the class stack vertices.
+
+43.(DONE) Instead of a wordnet if a relationship amongst logical statements (First Order Logic etc.,) by logical implication is considered then the above becomes even more important as this creates a giant Concept Wide Web as mentioned in [http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download] and thus is an alternative knowledge representation algorithm.
+
+44. Implication graphs of logical statements can be modelled as a Random Growth Network where a graph is randomly grown by adding new edges and vertices over a period of learning. 
+
+45. If a statistical constraint on the degree of this graph is needed, power law distributions (Zipf, Pareto etc.,) can be applied to the degrees of the nodes along with Preferential Attachment of newborn nodes.
+
+46.Set cover or Hitting Set of Hypergraph is a Transversal of hypergraph which is a subset of set of vertices in the hypergraph that have non-empty intersection with every hyperedge. Transversal of the above Concept Wide Hypergraph is in a way essence of the knowledge in the hypergraph as in real world what this does is to grasp some information from each document (which is a hyperedge of class vertices) and produces a "summary nucleus subgraph" of the knowledge of the encompassing hypergraph.
+
+47. Random walk on the above concept hypergraph, Cover time etc., which is a markov process. Probably, Cover time of the hypergraph could be the measure of time needed for learning the concept hypergraph.
+
+48. Tree decomposition or Junction Trees of concept hypergraph with bounded tree width constant.[If Junction tree is constructed from Hypergraph modelled as Bayesian Network, then message passing between the treenodes can be implemented, but still needs to be seen as what this message passing would imply for a junction tree of concept hypergraph above.]
+
+49. 2(or more)-dimensional random walk model for thinking process and reasoning (Soccer model in 2-dimensions):
+--------------------------------------------------------------------------------------------------------------
+As an experimental extension of point 47 for human reasoning process,  random walk on non-planar Concept hypergraph (collective wisdom gained over in the past) or a planar version of it which is 2-dimensional can be theorized. Conflicts in human mind could mimick the bipartite competing sets that make it a semi-random walk converging in a binary "decision". Semi randomness is because of the two competing sets that drive the "reasoning" in opposite directions. If the planar graph is generalized as a complex plane grid with no direction restrictions (more than 8), and the direction is anything between 0 to 2*pi radians, then the distance d after N steps is sqrt(N) (summation of complex numbers and the norm of the sum) which gives an expression for decision making time in soccer model.(related: http://web.archive.org/web/20041210231937/http://oz.ss.uci.edu/237/readings/EBRW_nosofsky_1997.pdf). In other words, if mental conflict is phrased as "sequence of 2 bipartite sets of thoughts related by causation" then "decision" is dependent on which set is overpowering. That is the corresponding graph vertices are 2-colored, one color for each set and yet not exactly a bipartite graph as edges can go between nodes of same set. Brownian Motion is also a related to this. 
+ 
+
+##################################################################################
+C.	Slightly Philosophical - Inferences from conflicting opinions:
+################################################################################## 
+
+50. (DONE) As an example, if there are "likes" and "dislikes" on an entity which could be anything under universe - human being, machine, products, movies, food etc., then a fundamental and hardest philosophical question that naturally has evaded an apt algorithm: Is there a way to judge an entity in the presence of conflicting witnesses - "likes" and "dislikes" - and how to ascertain the genuineness of witnesses. In http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf this has been the motivation for Interview Algorithm and P(Good) error probability for majority voting which is the basis for this. Moreover the opinions of living beings are far from correct due to inherent bias and prejudices which a machine cannot have.
+
+51. (DONE) Another philosophical question is what happens to the majority voting when every voter or witness is wrong intentionally or makes an error by innocous mistake.[http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download]. This places a theoretical limitation on validity of "perceptional judgement" vis-a-vis the "reality".
+
+52. There is a realword example of the above - An entity having critical acclaim does not have majority acclaim often. Similarly an entity having majority acclaim does not have critical acclaim. Do these coincide and if yes, how and when? This could be a Gaussian where tails are the entities getting imperfect judgements and the middle is where majority and critical acclaim coincide.
+
+53. Items 50,51,52 present the inherent difficulty of perfect judgement or perfect inference. On a related note,Byzantine algorithms have similar issues of deciding on a course of action in the presence of faulty processors or human beings and faulty communications between them. Thus, probably above problem reduces to Byzantine i.e Faulty human beings or machines vote "like" or "dislike" on an entity and a decision has to be taken.
+
+54(THEORY). Would the following experimental gadget work? It might, but impractical:
+A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
+
+55(THEORY). Evocation is a realworld everyday phenomenon - a word reminding of the other. Positive thought chooses the right evocation and a negative thought chooses the negative evocation in the absence of context to disambiguate. For example, for a pessimist "fall" means "falling down" while for an optimist "fall" could mean "windfall or sudden gain". For a pestimist((optimist+pessimist)/2), fall could mean one of the "seasons" or even nothing. Mind sees what it chooses to see. Pessimism and Optimism are probably mathematically definable as accumulated weighted thoughts of past occurrences and any future thought or decision is driven by this "accumulated past" which acts as an implicit "disambiguator". This accumulated past or a Karma is reminiscent of above hypergraph of class stacks. 
+
+56(THEORY). A crude way to automatically disambiguate is to lookup the corresponding class stack and analyze only bounded height of events from the top of the stack. Bounded height would imply analyzing only a small window of the past events. For example, looking up the class stack from top to bottom for limited height of 2 for "fall" might have hyperedges "tree fall, heavy rain fall". Thus automatic disambiguation context could be the tuple of tuples [[tree], [heavy, rain]] gathered from each hyperedge analyzed from top. Then this tuple of tuples has to be weighted to get majority. Alternatively, each tuple in this tuple set, as a random variable, could be assigned a belief potential or a conditional probability of occurrence based on occurrence of other tuples in the set. Thus a Bayesian Belief Network can be constructed and by propagating belief potential, probability of each tuple can be computed. Most disambiguating tuple is the one with high belief propagation output. Alternatively, elements of the set of tuples above can be construed as Observations and the State - the most disambiguating tuple - is Hidden and needs to be measured. Thus a Hidden Markov Model can be built. Emission probabilities for an Observation at a State are to be given as priors - probability of a tuple being observed for a word or "class". Importantly each stack is grown over time and is a candidate for Markov process with the restriction - node at height h is dependent only on node at height (h-1) - height encodes timestamp. (But this makes the inference semi-statistical). Consequently, this gives a Trellis from which a Viterbi path can be extracted. Forward-Backward probabilities can be computed (Either generative or discriminative model can be applied, generative being costlier) using this Markov property and deeming the stack itself as a dynamically grown Hidden Markov Model where the Observations are the tuples(hyperedges) and the hidden state is the document that disambiguates. Using the Forward-Backward algorithm, the State(hyperedge) which maximizes the Probability of ending up in that State is the most disambiguating document hyperedge = argmax [Pr(State(t)=Hyperedge(e) / ObservedTuples(1..t)] i.e The tuple or hyperedge that has highest forward conditional probability in the Trellis transition. This assumes the Hypergraph node stack as a Markov Chain. Moreover, State need not be a hyperedge. State is rather a "meaningful context". As in above example, uttering "fall" would kickoff a Forward-Backward computation on the Hypergraph node class stack for "fall" considering the stack as a Hidden Markov Model and would output the argmax State (which is not limited to hyperedge) as above. (Handwritten illustration at: https://sites.google.com/site/kuja27/NotesOnConceptHypergraphHMM_and_ImplicationGraphConvexHulls_2013-12-30.pdf?attredirects=0&d=1). Above assumption that node at height (h-1) implies node at height h is quite experimental and is just to model how the human neuropsycological process of "evocation" works on uttering a word. There is no real-life application to this - an event at height (h-1) need not imply an event at height h.
+
+57(THEORY). Thus Sentiment Mining techniques can be used for the above hypergraph to get the overall sentiment of the hypergraph past. Probably each hyperedge might have to be analyzed for positive or negative sentiment to get grand total. Citation graph maxflow in http://arxiv.org/abs/1006.4458 already gives a SentiWordnet based algorithm to weight each edge of a citation graph. Citations can be generalized as "like" or "dislike" opinions on entities as mentioned above.
+
+58(THEORY). Thus not only documents but also events in human life can be modelled as above hypergraph to get a graphical model of the past and a PsychoProfiling of an individual could be arrived at using Sentiment mining. Thus, item 18 about "AstroPschoAnalysis" is feasible by two parallel paths which converge - Psychoprofiling by above concept or event hypergraph for a human being and equating it with results from Astronomical+Astrological analysis done through String Multiple Sequence Alignment mining.
+
+##################################################################################
+59. Initial Design Notes for - Mundane Predictive Model:
+##################################################################################
+
+- (DONE) DecisionTree, NaiveBayes and SVM classifiers and horoscope encoders are already in the AstroInfer codebase. 
+- (DONE) Encode the dataset which might be USGS or NOAA(Science on a Sphere) datasets or anyother dataset available after getting text horos for these using Maitreya's Dreams textclient (AstroInfer version)
+- (DONE) Above gives encoded horoscope strings for all classes of mundane events in both Zodiacal and AscendantRelative formats (autogenerated by Python scripts in python-src/)
+- (DONE) Above set is a mix of encoded strings for all events which can be classified using one of the classifiers above.
+- (DONE) For each class the set of encoded horo strings in that class can be pairwise or multiple-sequence aligned to get the pattern for that class
+- (DONE) There are two sets for each class after running the classifiers - one set is AscendantRelative and the other is Zodiacal
+- (DONE) The above steps give the mined astronomical patterns for all observed mundane events - Pattern_Mundane_Observed_AscRelative and Pattern_Mundane_Observed_Zodiacal
+
+60. Above has implemented a basic Class and Inference Model that was envisaged in 2003. Class is the set-theoretic notion of sets sharing common underlying theme. Using VC Dimension is a way to determine accuracy of how well the dataset is "shattered" by the classes. 
+
+61. Now on to mining the classics for patterns: For all classes of events, running the classifier partitions the rules in a classic into set of rules or patterns for that class. Here again there are two sets for each class - Pattern_Mundane_Classic_AscRelative and Pattern_Mundane_Classic_Zodiacal
+
+62. Thus correlation of the two sets *_Observed_* and *_Classic_* (each set has 2 subsets) for percentage similarity using any known similarity coefficient would unravel any cryptic pattern hidden astronomical datasets for that event and would be a circumstantial and scientific proof of rules in astrological classics with strong theoretical footing and would also bring to light new rules earlier unknown.
+
+63. More  importantly, for example, if a non-statistical,astrological model of rainfall is computed based on a classical rule which says that "Venus-Mercury in single sign or Venus-Sun-Mercury in close proximity degrees with Sun in the middle causes copious rainfall" is used as a model, expected output of the model could be "Between 28October2013 and 15December2013 there could be peak monsoon activity in ----- longitude ---- latitude with --- percentage probability". And thus this could be a Medium Range Weather Forecasting tool.
+
+64. (DONE-related to 65 and 139) Integrate AstroInfer,USB-md,KingCobra and VIRGO into an approximately intelligent cloud OS platform that not just executes code statically but also dynamically learns from the processes (say through log files, executables, execution times etc., and builds predictive models).
+USB-md Design Document: http://sourceforge.net/p/usb-md/code-0/HEAD/tree/USBmd_notes.txt
+VIRGO Design Document: http://sourceforge.net/p/virgo-linux/code-0/HEAD/tree/trunk/virgo-docs/VirgoDesign.txt
+KingCobra Design Document: http://sourceforge.net/p/kcobra/code-svn/HEAD/tree/KingCobraDesignNotes.txt
+This AsFer+USBmd+VIRGO+KingCobra would henceforth be known as "Krishna iResearch Intelligent Cloud OS - NeuronRain "
+
+65. (THEORY and ONGOING) Related to point 64 - Software Analytics - source code and logs analytics - related to Program comprehension - point 139 on BigData Analytics has more on this. Recently added VIRGO kernel_analytics module is in a way a software analytics module which reads config file set by the machine learning software after mining the kernel logs and objects.
+----------
+References:
+----------
+65.1  Analytics of Device Driver code - http://research.microsoft.com/en-us/groups/sa/drivermine_asplos14.pdf
+65.2  Logging - http://research.microsoft.com/en-US/groups/sa/loggingpractice.pdf
+65.3  Law of leaky abstraction - http://www.joelonsoftware.com/Articles/LeakyAbstractions.html 
+
+66. Encoding a document with above Hypergraph of Class stack vertices and Hyperedges - This hypergraph of concepts can also be used as a steganographic encoding tool for obfuscating a document (somewhat an encryption of different kind). For example, each document is a hyperedge in this hypergraph of class stack vertices. By choosing a suitable encoding function every concept or a word can be replaced with some element within each class stack vertex. This encoding function chooses some element in each class stack - f(word or concept C1 in a document) = a different word or concept C2 in the class stack vertex that contains C1. This function f has to be one-one and onto so that it is invertible to get the original document. This function can be anything modulo the height of that stack. Thus a plain text meaningful document can encrypt another meaningful hidden document without any ciphertext generation.
+
+67. An automaton or Turing machine model for data or voice (or musical) samples - Voice samples or musical notations are discrete in time and occur in stream. As an experimental research,  explore on possibility of automatically constructing an automaton or Turing machine that recognizes these languages (RE or CFG) where the notes are the alphabets. 
+
+(DONE) 68. Computational Music - Alternatively, a Discrete Fourier Transform on a set of data or voice samples gives a set of frequencies - a traditional DSP paradigm.
+-----------
+References:
+-----------
+68.1 https://ccrma.stanford.edu/~jos/st/
+
+69. Experimental Idea of previous two points is to mine patterns in discrete data and voice(music for example) samples. Music as an expression of mathematics is widely studied as Musical Set Theory - Transpositions and Inversions (E.g http://en.wikipedia.org/wiki/Music_and_mathematics, http://www.ams.org/samplings/feature-column/fcarc-canons, http://www-personal.umd.umich.edu/~tmfiore/1/musictotal.pdf). Items 56,57 and 58 could help mining deep mathematical patterns in classical and other music and as a measure of similarity and creativity. 
+
+-------------------------------------------------
+(THEORY - ONGOING) EventNet and Theoretical analysis of Logical Time:
+--------------------------------------------------
+
+70. In addition to Concept wide hypergraph above, an interesting research could be to create an EventNet or events connected by causation as edge (there is an edge (x,y) if event x causes event y). Each event node in this EventNet is a set of entities that take part in that event and interactions among them.This causation hypergraph if comprehensively constructed could yield insights into apparently unrelated events.This is hypergraph because an event can cause a finite sequence of events one after the other, thereby including all those event vertices. For simplicity,it can be assumed as just a graph. This has some similarities with Feynman Diagrams and Sum-over-histories in theoretical physics.
+
+71. Each event node in the node which is a set as above, can have multiple outcomes and hence cause multiple effects. Outcome of an interaction amongst the elements of an event node is input to the adjacent event node which is also a set. Thus there could be multiple outgoing outcome edges each with a probability. Hence the EventNet is a random, directed, acyclic graph (acyclic assuming future cannot affect past preventing retrocausality). Thus EventNet is nothing but real history laid out as a graph. Hypothetically,  if every event from beginning of the universe is causally connected as above, an indefinite ever growing EventNet is created. 
+
+72. If the EventNet is formulated as a Dynamic Graph with cycles instead of Static Graph as above where there causal edges can be deleted, updated or added, then the above EventNet allows changing the past theoretically though impossible in reality. For example, in an EventNet grown upto present, if a causal edge is added from a present node to past or some causal edge is deleted or updated in the past, then "present" causes "past" with or without cycles in the graph.
+
+73. EventNet can be partitioned into "Past","Present" and "Future" probably by using some MaxFlow-MinCut Algorithms. The Cut of the graph as Flow Network is the "Present" and either side of the Cut is "Past" and "Future".
+
+74. A recreational riddle on the EventNet: Future(Past) = Present. If the Future is modelled as a mathematical function, and if Past is fixed and Present is determined by 100% freewill and can have any value based on whimsical human actions, then is the function Future() well-defined?
+
+75. Conjecture: Undirected version of EventNet is Strongly Connected or there is no event in EventNet without a cause (outgoing edge) or an effect(incoming edge).
+
+76. Events with maximum indegree and outdegree are crucial events that have deep impact in history.
+
+77. Events in each individual entity's existence are subgraphs of universal EventNet. These subgraphs overlap with each other.
+
+78. There is an implicit time ordering in EventNet due to each causation edge. This is a "Logical Clock" similar to Lamport's Clock. In a cloud (e.g VIRGO Linux nodes, KingCobra MAC currency transactions) the EventNet is spread across the nodes and each node might have a subgraph of the giant EventNet. 
+
+79. EventNet can also be viewed as a Bayesian Network.
+
+--------------------------------
+80. Mining EventNet for Patterns: 
+---------------------------------
+As an old saying goes "history repeats itself". Or does it really? Are there cycles of events? Such questions warrant checking the EventNet for cycles. But the above EventNet is acyclic by definition.This probably goes under the item 48 above that models the events as a hypergraph based on classification of events which is different from EventNet altogether. Alternatively, the EventNet nodes which are events with set of partakers and their interactions,can be mined for commonalities amongst them. Thus checking any pair of event nodes separated by a path of few edges (and thus separated in logical time) for common pattern suffices and this recursively continues. 
+
+Frequent Subgraph Mining of above EventNet (i.e whether a subgraph "repeats" with in the supergraph) as mentioned in Graph Search feature above could find patterns in events history.(Reference: Graph growing algorithms in chapter "Graph Mining", Data Mining, Han and Kamber)
+
+There is a striking resemblance of EventNet to sequence mining algorithm CAMLS - a refined Apriori algorithm - (http://www.cs.bgu.ac.il/~yarongon/papers/camls.dasfaa2010.pdf) which is for mining a sequence of events - each event has intraevent partakers  occurring at different points in time with gaps. EventNet mining is infact a generalization of linear time in CAMLS to distributed logical clock defined as EventNet causation infinite graph above. The topological orderings of EventNet can be mined using CAMLS. Sequence Mining python script that implements Apriori GSP has been added to repository and it can be applied to topologically sorted EventNet graphs as well.
+
+----------------------------
+81. Fractal nature of events:
+-----------------------------
+Are events self-similar or exhibit fractal nature? This as in item 71, needs mining the event nodes which are sets of partakers for self-similarity. A fractal event is the one which has a cycle and any arbitrary point on the cycle has a cycle attached at that point and so on. An example of fractal event is the Hindu Vedic Calendar that has Major cycles, subcycles, cycles within cycles that occur recursively implying that calendar is self-similar. How to verify if the EventNet graph has a fractal nature or how to prove that a graph is "Fractal" in general? Would it be Ramsey theory again?
+
+82. EventNet is a Partial Order where there may not be edges of causality between some elements. Thus a Topological Sort on this EventNet directed,acyclic graph gives many possible orderings of events. If history of the universe assuming absolute time is formulated as EventNet, then the topological sort does not give a unique ordering of events which is counterintuitive to absolute time.(Is this sufficient to say there is no absolute time?). 
+
+83. EventNet on history of events in the universe is quite similar to Directed Acyclic Graph based Scheduling of tasks with dependencies on parallel computers. Thus universe is akin to a Infinitely Massive Parallel Computer where events are dynamically scheduled with partakers, outcomes and with non-determinism. Even static scheduling is NP-Complete.
+
+84. In the above EventNet, each node which is a set can indeed be a graph also with freewill interactions amongst the set members as edges. This gives a graph G1 with each node being replaced by a graph G2. This is a fractal graph constructed naturally and notions of Outer products or Tensor products or Kronecker products with each entry in adjacency matrix replaced by another adjacency matrix apply. By definition each node can be replaced by different graph.
+
+85. Similar to Implication graphs as Random Growth Graphs, EventNet also qualifies as a Random Growth Network as events happen randomly and new edges are added whenever events happen (with previous Kronecker Tensor model). Rich-Get-Richer paradigm can also hold where nodes with more adjacent nodes are more likely to have future adjacent nodes. (A related notion of Freewill Interactions in http://sites.google.com/site/kuja27/UndecidabilityOfFewNonTrivialQuestions.pdf?attredirects=0 is worth mentioning here). 
+
+86. Regularity Lemma can be used as a tool to test Implication and EventNet Random Growth Graphs - specifically seems to have an application in EventNet Kronecker Graph model above where each node is replaced by a graph and thus can be construed as epsilon-partition of the vertices that differ infinitesimally in density. Each element in the partition is the event.
+
+********************************************************************************************************
+87.					COMMIT RELATED NOTES
+********************************************************************************************************
+
+commits as on 3 September 2013
+------------------------------
+DecisionTree, NaiveBayes and SVM classifier code has been integrated into AstroInfer toplevel invocation with boolean flags
+
+commits as on 6 September 2013
+------------------------------
+In addition to USGS data, NOAA Hurricane dataset HURDAT2 has been downloaded and added to repository. Asfer Classifier Preprocessor script has been updated to classify set of articles listed in articlesdataset.txt using NaiveBayesian or DecisionTree Classifiers and training and test set text files are also autogenerated. New parser for NOAA HURDAT2 datset has been added to repository. With this datasets HTML files listed in articlesdataset.txt are classified by either classifiers and segregated into "Event Classes".Each dataset document is of proprietary format and requires parser for its own to parse and autogenerate the date-time-longlat text file.Date-time-longlat data for same "Event Class" will be appended and collated into single Date-time-longlat text file for that "Event Class".
+
+commits as on 12 September 2013
+-------------------------------
+1.asfer_dataset_segregator.py and asfer_dataset_segregator.sh - Python and wrapper shell script that partitions the parsed datasets which contain date-time-long-lat data based on classifier output grepped by the invoker shell script - asfer_dataset_segregator.sh -  and writes the names of parsed dataset files which are classified into Event Class "<class>" into text files with names of regular expression "EventClassDataSet_<class>.txt"
+
+2.DateTimeLongLat data for all datasets within an event class (text file) need to be collated into a single asfer.enchoros.<classname>.zodiacal or asfer.enchoros.<classname>.ascrelative. For this a Python script MaitreyaToEncHoroClassified.py has been added to repository that reads the segregated parsed dataset files generated by asfer_dataset_aggregator.sh and invokes maitreya_textclient for all date-time-long-lat data within all parsed datasets for a particular event class - "EventClassDataset_<class>.txt" and also creates autogenerated asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative encoded files
+
+commits as on 2 November 2013
+-----------------------------
+Lot of commits for implementation of Discrete Hyperbolic Factorization with Stirling Formula Upperbound (http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound.cpp) have gone in. Overflow errors prevent testing large numbers.(URLs:
+	 1) Multiple versions of Discrete Hyperbolic Factorization uploaded in http://sites.google.com/site/kuja27/ 
+         2) Handwritten by myself - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicFactorization_UpperboundDerivedWithStirlingFormula_2013-09-10.pdf/download and
+         3) Latex version - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download
+)
+
+commits as on 20 November 2013 and 21 November 2013
+----------------------------------------------------
+1. Lots of testing done on Discrete Hyperbolic Factorization sequential implementation and logs have been added to repository.
+
+2. An updated draft of PRAM NC version of Discrete Hyperbolic Factorization has been uploaded at: 
+http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound.pdf/download that does PRAM merge of discrete tiles in logarithmic time before binary search on merged tile.
+
+3. Preliminary Design notes for CRCW PRAM implementation of the above is added to repository at: http://sourceforge.net/p/asfer/code/237/tree/ImplementationDesignNotesForDiscreteHyperbolicFactorizationInPRAM.jpg. This adds a tile_id to each tile so that during binary search, the factors are correctly found since coordinate info gets shuffled after k-tile merge.
+
+
+-------------------------------
+88.Tagging as on 16 December 2013
+-------------------------------
+AsFer version 12.0 and VIRGO version 12.0 have been tagged on 6 December 2013 (updated the action items above).
+
+(THEORY) 89. More reference URLs for Parallel RAM design of above NC algorithm for Discrete Hyperbolic Factorization for merging sorted lists:
+-------------------------------------------------------------------------------------------------------------------------------------
+1.http://arxiv.org/pdf/1202.6575.pdf?origin=publication_detail
+2.https://electures.informatik.uni-freiburg.de/portal/download/3/6951/thm15%20-%20parallel%20merging.ppt (Ranks of elements)
+3.http://cs.brown.edu/courses/csci2560/syllabus.html (Lecture Notes on CREW PRAM and Circuit Equivalence used in the NC algorithm for Discrete
+Hyperbolic Factorization above - http://cs.brown.edu/courses/csci2560/lectures/lect.24.pdf)
+4.http://cs.brown.edu/courses/csci2560/lectures/lect.22.ParallelComputationIV.pdf
+5.http://www.cs.toronto.edu/~bor/Papers/routing-merging-sorting.pdf
+6.http://www.compgeom.com/~piyush/teach/AA09/slides/lecture16.ppt
+7.Shift-and-subtract algorithm for approximate square root computation implemented in Linux kernel (http://lxr.free-electrons.com/source/lib/int_sqrt.c) which might be useful in finding the approximate square root in discretization of hyperbola (Sequential version of Discrete Hyperbolic Factorization)
+8.http://research.sun.com/pls/apex/f?p=labs:bio:0:120 - Guy Steele - approximate square root algorithm 
+9.http://cstheory.stackexchange.com/questions/1558/parallel-algorithms-for-directed-st-connectivity - related theoretical discussion thread on PRAM algorithms for st-connectivity
+10.PRAM and NC algorithms - http://www.cs.cmu.edu/afs/cs/academic/class/15750-s11/www/handouts/par-notes.pdf
+11. An Efficient Parallel Algorithm for Merging in the Postal Model - http://etrij.etri.re.kr/etrij/journal/getPublishedPaperFile.do?fileId=SPF-1043116303185
+12. Parallel Merge Sort - http://www.inf.fu-berlin.de/lehre/SS10/SP-Par/download/parmerge1.pdf
+13. NC and PRAM equivalence - www.cs.tau.ac.il/~safra/ACT/CCandSpaceB.ppt
+14. Extended version of BerkmanSchieberVishkin ANSV algorithm - http://www1.cs.columbia.edu/~dany/papers/highly.ps.Z (has some references to NC, its limitations, higly parallelizable - loglog algorithms) - input to this ANSV algorithm is elements in array (of size N) and not number of bits (logN) which is crucial to applying this to merge tree of factorization and proving in NC.
+15. Structural PRAM algorithms (with references to NC) - http://www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/icalp91.ps
+16. Parallel Algorithms FAQ - NC, RAM and PRAM - Q24 - http://nptel.ac.in/courses/106102114/downloads/faq.pdf 
+
+17. Defintions related to PRAM model - http://pages.cs.wisc.edu/~tvrdik/2/html/Section2.html - Input to PRAM is N items stored in N memory locations - (For factorization, this directly fits in as the O(N) ~ Pi^2/6 * N coordinate product integers stored in as many locations - for discretized tiles of hyperbola)
+
+18. Reduction from PRAM to NC circuits - http://web.cse.ohio-state.edu/~gurari/theory-bk/theory-bk-sevense6.html#Q1-80006-21 (The SIMULATE_RAM layer in each step is a subcircuit that is abstracted as a node in NC circuit. This subcircuit performs the internal computation of PRAM processor in that NC circuit node at some depth i. The NC circuit is simulated from PRAM model as - depth is equal to PRAM time and size is equal to number of processors.). Thus for Discrete Hyperbolic Factorization, the ANSV PRAM mergetree of polylogdepth is simulated as NC circuit with this reduction. Thus though each array element in ANSV is a logN bit integer, the SIMULATE_RAM abstraction reduces it to a node in NC circuit that processes the input and propagates the output to next step towards root. 
+
+19. Length of input instance in PRAM (n or N) - http://web.cse.ohio-state.edu/~gurari/theory-bk/theory-bk-sevense2.html#Q1-80002-3 - "... When no confusion arises, because of the obvious relationship between the number N of values in the input and the length n of the input, N and n are used interchangeably. ...". For ANSV algorithm, the number N of values in the input array and the length n of the input are the same (N=n) and due to this it runs in polyloglogtime in input size O(loglogN) and with polynomial processors N/loglogN. 
+
+20. Quoted abstract - "... The all nearest smaller values problem is defined as follows. Let A = (a1 ; a2 ; : : : ; an ) be n elements drawn from a totally ordered domain. For each ai , 1 <= i <= n, find the two nearest elements in A that are smaller than ai (if such exists): the left nearest smaller element aj (with j <= i) and the right nearest smaller element ak (with k >= i). We give an O(log log n) time optimal parallel algorithm for the problem on a CRCW PRAM ...". Thus N=n.
+
+21. SIMULATE_RAM subcircuit in point 18 - Number of bits allowed per PRAM cell in PRAM to NC reduction - http://hall.org.ua/halls/wizzard/books2/limits-to-parallel-computation-p-completeness-theory.9780195085914.35897.pdf - pages 33-36 - quoted excerpts - "... Let M be a CREW-PRAM that computes in parallel time t(n) = (log n)^O(1) and processors p(n) = n^O(1) . Then there exists a constant c and a logarithmic space uniform Boolean circuit family, {αn }, such that αn on input x1 , . . . , xn computes output y1,1 , y1,2 , . . . , yi,j , . . . , where yi,j is the value of bit j of shared memory cell i at time t(n), for 1 ≤ i ≤ p(n) ∗ t(n) and 1 ≤ j ≤ c*t(n) ...". Thus number of bits allowed per PRAM memory location is upperbounded by polylogn. For ANSV algorithm underlying the Discrete Hyperbolic Factorization, maximum number of bits per PRAM cell is thus logN where N is the integer to factorize (and maximum number of PRAM cells is  ~ pi^2/6 *N) thereby much below the above polylogN bound for number of bits per PRAM cell for creating a uniform NC circuit from PRAM model. 
+
+
+---------------------------------------------------------------------------------------------------------------
+(THEORY) 90.Some notes on extensions to Integer partitions and Hash Functions 
+(https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions.pdf?attredirects=0)
+---------------------------------------------------------------------------------------------------------------
+1. Riemann sums (discrete approximation of Riemann integral) of all the functions corresponding to the hash functions are same. Thus all such functions form an equivalence class.(Assuming each partition created by the hash functions as a function plot)
+
+2. Hardy-Ramanujan asymptotic bound for partition function p(n) is ~ O(e^(pi*sqrt(0.66*n))/(4*1.732*n) which places a bound on number of hash functions also.(http://en.wikipedia.org/wiki/Partition_(number_theory))
+
+3. If m-sized subsets of the above O(m!*e^(sqrt(n))/n) number of hash functions are considered as a (k,u)-universal or (k,u)-independent family of functions(Pr(f(x1)=y1...) < u/m^k,then follwing the notation in the link mentioned above, this m-sized subset family of hash functions follow the Pr(f(x1)=y1 & ...) < u/m^n where n is number of keys and m is the number of values. (m! is for summation over (m,lamda(i)) for all partitions)
+
+4. Thus deriving a bound for number of possible hash functions in terms of number of keys and values could have bearing on almost all hashes including MD5 and SHA.
+
+5. Birthday problem and Balls and Bins problem - Since randomly populating m bins with n balls and probability of people in a congregation to have same birthday are a variant of Integer partitioning and thus hash table bucket chaining, bounds for birthday problem and Chernoff bounds derived for balls and bins could be used for Hash tables also (http://en.wikipedia.org/wiki/Birthday_problem, http://www.cs.ubc.ca/~nickhar/W12/Lecture3Notes.pdf)
+
+6. Restricted partitions which is the special case of integer partitions has some problems which are NP-complete. Money changing problem which is finding number of ways of partitioning a given amount of money with fixed denominations(Frobenius number) is NP-complete(http://citeseer.uark.edu:8080/citeseerx/showciting;jsessionid=92CBF53F1D9823C47F64AAC119D30FC4?cid=3509754, Naoki Abe 1987). Number of partitions with distinct and non-repeating parts follow Roger-Ramanujan identities (2 kinds of generating functions).
+
+7. The special of case of majority voting which involves integer partitions described in https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC_2014.pdf requires a hash function that non-uniformly distributes the keys into hashes so that no two chains are equal in size (to simulate voting patterns without ties between candidates). This is the special case of restricted partitions with distinct and non-repeating parts of which money changing is the special case and finding a single solution is itself NP-complete. 
+
+8. Thus Majority voting can be shown to be NP-complete in 2 ways:
+	8.1 by Democracy circuit (Majority with SAT) in http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download and https://sites.google.com/site/kuja27/PhilosophicalAnalysisOfDemocracyCircuitAndPRGChoice_2014-03-26.pdf
+	8.2 by reduction from an NP-hard instance of Restricted Partition problem like Money changing problem for Majority voting with constituencies described in https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC_2014.pdf
+
+9. Infact the above two ways occur in two places in the process of democratic voting: The democracy circuit is needed when a single candidate is elected while the restricted partition in second point is needed in a multi-partisan voting where multiple candidates are voted for.
+
+10. Point 8.2 above requires a restricted partition with distinct non-repeating parts. There are many results on this like Roger-Ramanujan identities, Glaisher theorem and its special case Euler's theorem which equate number of partitions with parts divisible by a constant and distinctiveness of the parts (odd, differing by some constant etc.,). Such a restricted partition is needed for a tiebreaker and hence correspond bijectively to  hash collision chaining.
+
+11. An interesting manifestation of point 10 is that nothing in real-life voting precludes a tie and enforces a restricted partition, with no two candidates getting equal votes, where all voters take decisions independent of one another(voter independence is questionable to some extent if swayed by phenomena like "votebank","herd mentality" etc.,) thereby theoretically invalidating the whole electoral process. 
+
+12. Counting Number of such restricted partitions is a #P-complete problem - https://www.math.ucdavis.edu/~deloera/TALKS/denumerant.pdf. 
+
+13. If a Hash table is recursive i.e the chains themselves are hashtables and so on... then this bijectively corresponds to a recurrence relation for partition function (expressing a partition of a higher integer in terms of lower integer).
+
+14. If the hash table chains are alternatively viewed as Compositions of an integer (ordered partitions) then there are 2^(n-1) maximum possible compositions.(http://en.wikipedia.org/wiki/Composition_(number_theory))
+
+15. In the summation over all parts of partitions derived in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions.pdf if m==n then it is the composition in point 14 above and thus summation over all parts of partitions is greater than or equal to 2^(n-1) since some permutations might get repeated across partitions. Thus the summation expresses generalized restricted composition(summation_over_all_partitions_of_n((n,lamda(i))>=2^(n-1)).
+
+16. Logarithm of above summation then is equal to (n-1) and thus can be equated to any partition of n. Thus any partition can be written as a series which is the combinatorial function of parts in all individual partitions.
+
+------------------------------------------------------------------------------------------------------------
+91. Updated drafts on Integer partitions and hash function (with points in 80 above) , Circuits for Error probability in Majority Voting
+-------------------------------------------------------------------------------------------------------------
+1. https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf?attredirects=0&d=1
+2. https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1
+
+-----------------------------------------------------------------------------------
+92. Reference URLs for restricted integer partitions with distinct parts
+-----------------------------------------------------------------------------------
+(for http://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf?attredirects=0&d=1)
+1. Generating function - http://math.berkeley.edu/~mhaiman/math172-spring10/partitions.pdf
+2. Schur's theorem for asymptotic bound for number of denumerants - http://en.wikipedia.org/wiki/Schur's_theorem
+3. Frobenius problem - http://www.math.univ-montp2.fr/~ramirez/Tenerif3.pdf
+4. Locality Sensitive Hashing (that groups similar keys into a collision bucket chain using standard metrics like Hamming Distance) - http://hal.inria.fr/inria-00567191/en/,  http://web.mit.edu/andoni/www/LSH/index.html, http://en.wikipedia.org/wiki/Locality-sensitive_hashing
+5. Locality Sensitive Hashing and Lattice sets (of the diophantine form a1*x1+a2*x2+...+an*xn) -  http://hal.inria.fr/docs/00/56/71/91/PDF/paper.pdf
+6. Minhash and Jaccard similarity coefficient - http://en.wikipedia.org/wiki/MinHash#Jaccard_similarity_and_minimum_hash_values (similar to LSH that emphasizes on hash collisions for similarity measures between sets e.g bag of words of URLs)
+
+-------------------------------------------------------------------------------------
+(THEORY) 93. Reduction from Money Changing Problem or 0-1 Integer LP to Restricted Partitions with distinct parts
+-------------------------------------------------------------------------------------
+If the denominations are fixed as 1,2,3,4,5,....,n then the denumerants to be found are from the diaphantine equation:
+a1*1 + a2*2 + a3*3 + a4*4 + a5*5 + ...+ an*n
+(with ai = 0 or 1). GCD of all ai(s) is 1. Thus Schur's theorem for MCP or Coin Problem applies.
+Integet 0-1 LP NP-complete problem can also be reduced to above diophantine format instead of MCP. Finding one such denumerant with
+boolean values is then NP-complete and hence finding one partition with distinct non-repeating parts is NP-complete (needed in multipartisan
+majority vote).
+
+---------------------------------------------------
+94. Commits as on 23 April 2014
+---------------------------------------------------
+Updated pgood.cpp with some optimizations for factorial computations and batched summation to circumvent overflow to some extent.
+For Big decimals IEEE 754 with 112+ bits precision is needed for which boost::multiprecision or java.math.BigDecimal might have to be used.
+
+--------------------------------------------------
+95. Commits as on 7 July 2014
+--------------------------------------------------
+Initial implementation of a Chaos attractor sequence implementation committed to repository.
+
+--------------------------------------------------
+96. Commits as on 8 July 2014
+--------------------------------------------------
+Python-R (rpy2) code for correlation coefficient computation added to above Chaos attractor implementation.
+
+--------------------------------------------------
+97. Commits as on 9 July 2014
+--------------------------------------------------
+DJIA dataset, parser for it and updated ChaosAttractor.py for chaotic and linear correlation coefficient computation of DJIA dataset
+have been committed.
+
+--------------------------------------------------
+98. Commits as on 10 July 2014
+--------------------------------------------------
+Python(rpy2) script for computing Discrete Fourier Transform for DJIA dataset has been added (internally uses R). [python-src/DFT.py]
+
+--------------------------------------------------
+99. Commits as on 11 July 2014
+--------------------------------------------------
+Python(rpy2) script for spline interpolation of DJIA dataset and plotting a graph of that using R graphics has been added. [python-src/Spline.py]
+
+--------------------------------------------------
+100. Commits as on 15 July 2014 and 16 July 2014
+--------------------------------------------------
+Doxygen documentation for AsFer, USBmd, VIRGO, KingCobra and Acadpdrafts have been committed to GitHub at https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs. LOESS local polynomial regression fitting code using loess() function in R has been added at python-src/LOESS.py. Approximate linear interpolation code using approx() and approxfun() in R has been added at python-src/Approx.py
+
+-------------------------------------------------
+101.Commits as on 23 July 2014
+-------------------------------------------------
+Draft additions to http://arxiv.org/pdf/1106.4102v1.pdf are in the Complement Function item above. An R graphics rpy2 script RiemannZetaFunctionZeros.py has been added to parse the first 100000 zeros of RZF and plot them using R Graphics.
+
+--------------------------------------------------------------------
+(THEORY - Visualizer Implementation DONE) 102. Dense Subgraphs of the WordNet subgraphs from Recursive Gloss Overlap
+--------------------------------------------------------------------
+http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf have been extended for a summary creation algorithm from WordNet subgraphs of Recursive Gloss Overlap by filtering out low degree vertices(https://sites.google.com/site/kuja27/DocumentSummarization_using_SpectralGraphTheory_RGOGraph_2014.pdf?attredirects=0&d=1). For undirected graphs there is a notion of k-core of a graph which is an induced subgraph of degree k vertices. Since Wordnet is a directed graph, recently there are measures to measure degeneracy(D-cores - http://www.graphdegeneracy.org/dcores_ICDM_2011.pdf). Graph peeling is a process of removing edges to create a dense subgraph. This can be better visualized using visual wordnet implementations: 
+	102.1 http://kylescholz.com/projects/wordnet/
+	102.2 http://www.visuwords.com
+	102.3 http://www.visualthesaurus.com/browse/en/Princeton%20WordNet
+
+------------------------------------------------------------------
+103. AsFer version 14.9.9 release tagged on 9 September 2014
+------------------------------------------------------------------
+-------------------------------------------------------------------
+104. Commits as on 9 October 2014
+-------------------------------------------------------------------
+Initial python script implementation for Text compression committed with logs and screenshot. Decompression is still hazy and needs some more algorithmic work. 
+
+------------------------------------------------------------------
+105. Commits as on 21 October 2014
+------------------------------------------------------------------
+An experimental POC python implementation that uses Hidden Markov Model for decompression has been committed. But it depends on one-time computing a huge number of priors and their accuracy.
+
+------------------------------------------------------------------
+(THEORY) 106. Creating a summary graph from EventNet
+------------------------------------------------------------------
+EventNet graph for historical cause and effect described above can be huge of the order of trillion vertices and edges. To get a summary of the
+events might be necessary at times - similar to a document summarization. Summarizing a graph of event cause-effects requires giving importance to most important events in the graph - vertices with high number of degrees (indegrees + outdegrees) . This is nothing but finding k-core of a graph which is a maximal connected subgraph of EventNet where every vertex is of degree atleast k.
+
+-----------------------------------------------------------------
+107. Commits as on 1 November 2014
+-----------------------------------------------------------------
+A minimal PAC learning implementation in python to learn a Boolean Conjunction from dataset has been added to repository.
+
+-----------------------------------------------------------------
+108. Commits as on 4 November 2014
+-----------------------------------------------------------------
+Initial implementation for Minimum Description Length has been added to repository.
+
+-----------------------------------------------------------------
+109. Commits as on 6 November 2014
+-----------------------------------------------------------------
+Python Shannon Entropy implementation for texts has been added to repository and is invoked in MinimumDescLength.py MDL computation.
+
+-----------------------------------------------------------------
+110. Commits as on 7 November 2014
+-----------------------------------------------------------------
+Python Kraft Inequality MDL implementation has been committed.
+
+-----------------------------------------------------------------
+111. Commits as on 11 November 2014
+-----------------------------------------------------------------
+C++ implementation for Wagner-Fischer Dynamic Programming algorithm that iteratively computes Levenshtein Edit Distance than recursively has been added to repository.
+
+-----------------------------------------------------------------
+(ONGOING) 112. Expirable objects
+-----------------------------------------------------------------
+Setting expiry to an object is sometimes essential to control updates and access to an object. Example application of this - A JPEG image
+should be accessible or displayable for only a finite number of times and after that it has to self-destruct. Though doing this in C++ is 
+straightforward with operator overloading, in C it looks non-trivial. Presently only C++ implementation is added to repository.
+
+-----------------------------------------------------------------------------
+113. Commits as on 11 November 2014 - Expirable template class implementation 
+-----------------------------------------------------------------------------
+Similar to weak_ptr and shared_ptr, a generic datatype that wraps any datatype and sets an expiry count to it has been added to repository 
+in cpp-src/expirable/ . For example, a bitmap or a JPEG image can be wrapped in expirable container and it can be access-controlled. 
+If expiry count is 1, the object (an image for example) can be written to or displayed only once and thus a singleton.  Presently this is 
+only for rvalues. Implementing for lvalues (just a usage without assignment should be able to expire an object) seems to be a hurdle as 
+there is no operator overloading available for lvalues - i.e there is no "access" operator to overload. This might be needed for KingCobra
+MAC electronic money also.(std::move() copy-by-move instead of a std::swap() copy-by-swap idiom)
+
+----------------------------------------------------------------------------
+114. Commits as on 12 November 2014 
+----------------------------------------------------------------------------
+Expirable template in asferexpirable.h has been updated with 2 operator=()
+functions for copy-assignment and move-assignment which interally invoke
+std::swap() and std::move(). Explicit delete(s) are thus removed. Also example
+testcase has been updated to use a non-primitive datatype.
+
+----------------------------------------------------------------------------
+115. Commits as on 13 November 2014
+----------------------------------------------------------------------------
+Overloaded operator*() function added for expiry of "access" to objects. With this problem mentioned in 113 in tracking access or just usage is
+circumvented indirectly. 
+
+---------------------------------------------------------------------------
+116. Commits as on 15 November 2014
+---------------------------------------------------------------------------
+Python implementation for Perceptron and Gradient has been added to repository.
+
+---------------------------------------------------------------------------
+117. Commits as on 17 November 2014
+---------------------------------------------------------------------------
+Python implementation for Linear and Logistic Regression in 2 variables.
+
+---------------------------------------------------------------------------
+118. Commits as on 20 November 2014
+---------------------------------------------------------------------------
+C++ implementation of K-Means clustering with edit distance as metric has been added to
+repository.
+
+---------------------------------------------------------------------------
+119. Commits as on 21 November 2014
+---------------------------------------------------------------------------
+C++ implementation of k-Nearest Neighbour clustering has been added to repository.
+
+---------------------------------------------------------------------------
+120. Commits as on 24 November 2014
+---------------------------------------------------------------------------
+Bugfixes to kNN implementation.
+
+---------------------------------------------------------------------------
+121. Commits as on 25 November 2014
+---------------------------------------------------------------------------
+Python script for decoding encoded horoscope strings (from Maitreya's Dreams) has been added to
+repository.
+
+--------------------------------------------------------------------------
+122. Commits as on 3 December 2014
+--------------------------------------------------------------------------
+Initial implementation for EventNet:
+-----------------------------------
+1. EventNet python script has inputs from two text files - EventNetEdges.txt and EventNetVertices.txt - which define the event vertices and the causations amongst them with partakers in each event node
+2. This uses GraphViz (that in turn writes a dot file) and python-graph+gv packages
+3. GraphViz writes to EventNet.graphviz.pdf and EventNet.gv.png rendered and visualized graph files.
+4. Above text files are disk-stored and can be grown infinitely.
+5. EventNetVertices.txt has the format:
+        <event vertex> - <csv of partakers in the event vertex>
+   EventNetEdges.txt has the format:
+        <ordered pairs of vertices for each causation edge>
+6. Topological Sorting of EventNet using python-graph algorithms package
+
+----------------------------------------------------------------------------------------
+(THEORY) 123. EventNet - partakers of events and an application of EventNet to a related problem
+----------------------------------------------------------------------------------------
+Event vertices have partakers of event as defined in 122. Point 84-86 previously defined EventNet as
+a fractal graph tensor where each vertex is a graph or partakers. Alternative formulation of this is
+where the partakers are just key words or persons in that event. For example, a fictitious story can be translated into a giant EventNet where each vertex is an event with corresponding partakers in it. It could be difficult to find edges among the partakers (Ideally the edges are conversations among the partakers of an event specific to this example). As an approximation, the partakers could be simply the keywords parsed from that set of conversations. Complexity or connectedness and number of topological orderings possible for this translated EventNet is a measure of elegance.
+
+---------------------------------------------------------------------------------------
+124. Commits as on 4 December 2014
+---------------------------------------------------------------------------------------
+EventNet - a cloudwide event ordering with unique id implementation
+--------------------------------------------------------------------
+EventNet has 2 input files for vertices and edges with partakers and 
+writes an output file with ordering of the events
+
+Input - EventNetVertices.txt has the format:
+       <event vertex> - <csv of partakers> - <tuples of conversations amongst the partakers # separated>
+       partakers could be machine id(s) or IP addresses and thread id(s) and the conversations being the        messages to-and-fro across the partakers, which create an IntraEvent Graph of Conversations
+       within each event vertex
+
+Input - EventNetEdges.txt has the format:
+       <event vertex1, event vertex2>
+
+Output - EventNetOrdering.txt has the format:
+       <index in chronologically ascending order> - <event id>
+
+EventNet script thus is run in a central node which has the input files above that is
+updated by all the nodes in cloud. Outgoing edge from an event vertex has partakers from multiple
+events and thus is an outcome of the event. If the input files are split and stored in multiple cloud
+nodes, the topological sorts for multiple input files have to be merged to create a single cloudwide
+ordering. 
+
+--------------------------------------------------------------------------------------------------
+(THEORY) 125. Massive EventNet computation 
+--------------------------------------------------------------------------------------------------
+Each conversation of the events needs to create a log message that is sent to the EventNet service
+which updates the input vertices and edges files. The python EventNet script run optionally on a hadoop
+cluster mapreduce recomputes the topological ordering periodically. This is quite tedious a process that can flood the cloud with log messages enabled by config boolean flag or compile time #ifdef.  
+
+--------------------------------------------------------------------------------------------------
+126. Commits as on 5 December 2014
+--------------------------------------------------------------------------------------------------
+Initial C++ Boost::graph based implementation for EventNet has been added to repository.
+
+--------------------------------------------------------------------------------------------------
+(THEORY) 127. 2-dimensional random walks for decision making (experimental)
+--------------------------------------------------------------------------------------------------
+Continued from point 49 above, the psychological process of decision making (in a mental conflict with
+two opposing directions) is akin to a game theoretical notion of Nash Equilibrium - where a huge payoff
+matrix is constructed for the random walk directions as strategies for the two conflicting decisions. There could be Nash Equilibria where decision1 doesn't gain from changing the random walk direction and decision2 doesn't gain from changing the direction (max(column),max(row)). These equilibria are like a win-win or a dilemma . For that matter this should apply to decision trees as well. Related application of equilibria for epidemic and malware are at: http://www.aaai.org/ocs/index.php/AAAI/AAAI14/paper/view/8478
+
+---------------------------------------------------------------------------------------------
+128. Commits as on 9 December 2014
+---------------------------------------------------------------------------------------------
+Bugfixes for DOT file generation and toposort in C++ EventNet implementation. 
+
+---------------------------------------------------------------------------------------------
+129. (THEORY) Draft Updates to https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1 - P(Good) series computation
+---------------------------------------------------------------------------------------------
+For even number of finite population (electorate) the binomial coefficient summation in uniform distribution has an extra coefficient which when summed up tends to zero at infinity. Thus P(Good) series converges to,
+
+	(2^n - nC(n/2))/2^(n+1) = 0.5 - epsilon where epsilon=sqrt(1/(2*n*pi)) limit for which vanishes at infinity
+
+(or) probability of good choice is epsilon less than 50% for finite even number of electorate for uniform distribution - a weird counterintuitive special case. Thus the counterexample for P Vs NP is still valid at infinity if infinite majority is decidable(related to decidability of infinite-candidate condorcet election and Arrow's theorem) . Written notes for this are at: http://sourceforge.net/p/asfer/code/568/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf
+
+---------------------------------------------------------------------------------------------
+130. (THEORY) Counterexample definition for P Vs NP
+---------------------------------------------------------------------------------------------
+Majority Circuit with SAT voter inputs with finite odd number of voters, in uniform distribution
+converges to 1/2 same as LHS for pseudorandom choice. Even number of voters is a special case described
+previously. Also both LHS and RHS converge to 1 if probability is 1 (without any errors in pseudorandom choice and majority voting) which is counterintuitive in the sense that LHS nonprobabilistically achieves in PTIME what RHS does in NPTIME.
+
+---------------------------------------------------------
+131. (THEORY) Infinite majority and SAT+Majority Circuit
+---------------------------------------------------------
+Infinite version of majority circuit is also a kind of heavy hitters problem for streaming algorithms where majority has to be found in an infinite bitstream of output from majority circuits for voters(http://en.wikipedia.org/wiki/Streaming_algorithm#Heavy_hitters). But nonuniform distribution still requires hypergeometric series. Moreover the SAT circuit is NP-complete as the inputs are unknown and is P-Complete only for non-variable gates(Circuit Value Problem). Odd number of electorate does not give rise to above extra coefficient in summation and is directly deducible to 0.5.
+
+----------------------------------------------------------
+132. (THEORY) May's Theorem of social choice 
+----------------------------------------------------------
+May's Theorem: In a two-candidate election with an odd number of voters, majority rule is the only voting system that is anonymous, neutral, and monotone, and that avoids the possibilites of ties. 
+
+May's theorem is 2-candidate analog of Arrow's Theorem for 3-candidate condorcet voting. May's theorem for 2 candidate simple majority voting defines a Group Decision Function which is valued at -1, 0 or 1 (http://www.jmc-berlin.org/new/theorems/MaysTheorem.pdf) for negative, abstention and positive vote for a candidate. For 2 candidates, positive vote for one candidate is negative for the other (entanglement).In the democracy circuit (SAT+Majority) the SAT clauses are kind of Group Decision Functions but with only binary values without any abstention. This is kind of alternative formulation - corollary - for May's theorem. Arrow's theorem does not apply for 2 candidate simple majority voting. May's theorem stipulates the conditions of anonymity,neutrality,decisiveness,monotonicity which should apply to the Majority+SAT circuit decision function as well. Neutrality guarantees that all outcomes are equally probable without bias which might imply that only uniform distribution is allowed in 2 candidate Majority+SAT voting. Thus there is a reduction from May's theorem to SAT+Majority democracy circuit. May's theorem does not apply to ties.This has been generalized to infinite electorate by Mark Fey. Anonymity is secret balloting. Monotonicity is non-decremental (e.g by losing votes a losing candidate is not winner and vice versa).
+
+Additional References:
+----------------------
+132.1 May's theorem - http://www.math.cornell.edu/~mec/Summer2008/anema/maystheorem.html
+
+------------------------------------------------------------------------------------
+133. (THEORY) Pseudorandom number generator and Majority voting for choice on a set
+------------------------------------------------------------------------------------
+Let S be a set of elements with "goodness" attribute for each element. Choice using LHS and RHS on this set is by a PRG and a majority voting circuit with SAT inputs. LHS for pseudorandom choice consists of two steps:
+133.1 Accuracy of the PRG - how random or k-wise independent the PRG is - this is usually by construction of a PRG (Blum-Micali, Nisan etc.,) 
+133.2 Goodness of chosen element - PRG is used to choose an element from the set - this mimicks the realworld phenomenon of non-democractic social or non-social choices. Nature itself is the PRG or RG in this case. After choice is made, how "good" is the chosen is independent of (133.1). Proof is by contradiction - if it were dependent on PRG used then a distinguisher can discern the PRGs by significant fraction.
+133.3 Thus if the set S is 100% perfect - all elements in it are the best - LHS of P(Good) is 1. Similarly the RHS is the majority voting within these "best" elements which can never err (i.e their SAT clauses are all perfect) that converges to 1 by binomial coefficient summation in uniform distribution.
+
+From the aforementioned,it is evident that for a 100% perfect set,both PRG(LHS) and Majority+SAT(RHS) Voting are two choice algorithms of equal outcome but with differing lowerbounds(with p=0.5 both LHS and RHS are in BPP or BPNC,but when p=1 then RHS is NP and LHS is P or NC). The set in toto is a black-box which is not known to the PRG or individual voters who are the constituents of it.
+
+--------------------------------------------------------------------------------
+134.Commits as on 8 January 2015
+--------------------------------------------------------------------------------
+134.1 C++ implementation for Longest Common Substring has been added to repository with logs. Datasets were the clustered encoded strings output by KMeans clustering C++ implementation.
+134.2 AsFer+USBmd+VIRGO+KingCobra+Acadpdrafts - version 15.1.8 release tagged.
+
+
+--------------------------------------------------------------------------------
+135. (THEORY) Updates, Corrigenda and References to Space Filling Algorithm in :
+https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0
+--------------------------------------------------------------------------------
+135.1 The standard LP form can be obtained by slack variables (with only equalities) - mentioned as free variables in above - http://ocw.mit.edu/courses/sloan-school-of-management/15-053-optimization-methods-in-management-science-spring-2013/tutorials/MIT15_053S13_tut06.pdf 
+
+135.2 Pseudorandom generator with linear stretch in NC1 - http://homepages.inf.ed.ac.uk/mcryan/mfcs01.ps
+- ... " The notion of deterministically expanding a short seed into a long string that ... the question of whether strong pseudorandom generators actually exist is a huge ... hardness assumption, that there is a secure pseudorandom generator in NC1 " ... [Kharitonov]
+
+135.3 This space filling algorithm is in NC (using Tygar-Rief) with an assumption that multiplicative inverse problem is almost always not in RNC. 
+
+135.4 Tygar-Rief algorithm outputs n^c bits in parallel (through its PRAM processors) for n=logN for some composite N and is internal to the algorithm. For the sake of disambiguation, the number of bit positions in grid corresponding to the LP is set to Z.  
+
+135.5 Above pseudorandom bits have to be translated into the coordinate positions in the grid which is Z. In other words, pseudorandom bits are split into Z substrings (n^c/logZ = Z) because each coordinate in the grid of size 2^logZ/2 * 2^logZ/2 is notated by the tuple of size(logZ/2, logZ/2)
+
+135.6 Constant c can be suitably chosen as previously to be c = log(Z*logZ)/logn (n need not be equal to Z)
+
+135.7 Either the n^c sized pseudorandom string can be split sequentially into (logZ/2+logZ/2) sized substring coordinate tuples (or) an additional layer of pseudorandomness can be added to output the coordinate tuples by psuedorandomly choosing the start-end of substrings from n^c size string, latter being a 2-phase pseudo-pseudo-random generator
+
+135.8 In both splits above, same coordinate tuple might get repeated - same bit position can be set to 1 more than once. Circumventing this requires a Pseudorandom Permutation which is a bijection where Z substrings do not repeat and map one-one and onto Z coordinates on grid. With this assumption of a PRP all Z coordinates are set to 1 (or) the P-Complete LP is maximized in this special case, in NC.
+
+135.9 There are Z substrings created out of the 2^n^c pseudorandom strings generated by Tygar-Rief Parallel PRG. Hence non-repeating meaningful substrings can be obtained only from Z!/2^n^c fraction of all pseudorandom substrings.
+
+135.10 Maximizing the LP can be reduced to minimizing the collisions (or) repetitive coordinate substrings above thus filling the grid to maximum possible. An NC algorithm to get non-repetitive sequence of coordinates is to add the index of the substring to the each split substring to get the hashed coordinates in the grid. For example in the 2*2 grid, if the parallel PRG outputs 01011100 as the pseudorandom bit string, the substrings are 01, 01, 11 and 00 which has a collision. This is resolved by adding the index binary (0,1,2,3) to corresponding substring left-right or right-left. Thus 01+00, 01+01, 11+10, 00+11 - (001,010,101,011) - are the non-repetitive hashed coordinates. The carryover can be avoided by choosing the PRG output string size. This is a trivial bijection permutation.
+
+135.11 The grid filling can be formulated as a Cellular Automaton of a different kind - by setting or incrementing the 8 neighbour bit positions of a coordinate to 1 while setting or incrementing a coordinate to 1.
+
+135.12 Instead of requiring the non-repetitive coordinate substrings mentioned in (10) supra, the grid filling can be a multi-step algorithm as below which uses the Cellular Automaton mentioned in (11).
+
+------------------------------------
+135.13 Cellular Automaton Algorithm:
+------------------------------------
+(Reference for reductions below: http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf [Chandra-Stockmeyer-Vishkin])
+
+The circuits described in [ChandraStockmeyerVishkin] are constant depth circuits [AC0] and thus in [NC1]  (unbounded to bounded fanin logdepth reduction)
+
+loop_forever
+{
+	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This is in NC.
+	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in NC. 
+	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
+}
+
+Above can be diagramatically represented as: (for N cells in grid in parallel)
+------------------------------------------------------------------------------
+	
+		cell1		..............		cellN
+		----------------------------------------------	
+		PRG in parallel		....	PRG in parallel
+		      ||				||
+		Comparison 		....	   Comparison
+		      ||				||	
+		Minimum of 8		....	  Minimum of 8
+		      ||				||
+		Increment			    Increment  
+		and				    and
+		Decrement			    Decrement
+
+135.14 For example, a 3*3 grid is set by pseudorandom coordinate substrings obtained from Parallel PRG (6,7,7,8,9,1,3,3,2) as follows with collisions:
+		
+		1  1  2
+		0  0  1
+		2  1  1
+
+By applying cellular automaton algorithm above, grid becomes: (minimizes collisions and maximizes LP)
+
+		1  1  1
+		1  1  1
+		1  1  1
+
+Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid).
+
+----------------------------------------------------------------------------------------------
+135.15 References on Cellular Automata, Parallel Computation of CA, Fluid Dynamics, Navier-Stokes equation, Percolation Theory etc.,:
+----------------------------------------------------------------------------------------------
+135.15.1 http://www.nt.ntnu.no/users/skoge/prost/proceedings/acc11/data/papers/1503.pdf
+135.15.2 http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.52.8377
+135.15.3 http://www.stephenwolfram.com/publications/academic/cellular-automaton-fluids-theory.pdf
+135.15.4 Constant Depth Circuits - http://www.cs.berkeley.edu/~vazirani/s99cs294/notes/lec5.ps
+135.15.5 Complexity Theory Companion - https://books.google.co.in/books?id=ysu-bt4UPPIC&pg=PA281&lpg=PA281&dq=Chandra+Stockmeyer+Vishkin+AC0&source=bl&ots=fzmsGWrZXi&sig=jms3hmJoeiHsf5dq-vnMHUOU54c&hl=ta&sa=X&ei=jjcqVYrNFc25uATkvICoDA&ved=0CCAQ6AEwAQ#v=onepage&q=Chandra%20Stockmeyer%20Vishkin%20AC0&f=false
+
+--------------------------------------------------------------------------------------------
+135.16 A related algorithm - filling a square with infinitely many inscribed circles
+--------------------------------------------------------------------------------------------
+Let S be a square of unit area. This square is filled with infinitely many circles of varying radii. This
+can be expressed in terms of geometric equations for circle - x(i)^2 +y(i)^2 = r(i)^2. Each (x(i),y(i)) is a coordinate on the circle of radius r(i). Since x(i) and y(i) are < 1, let x(i) = 1/a(i) and y(i) = 1/b(i) for some integers a(i) and b(i). At infinity the square is filled with above infinite number of circles that cover the unit area (has some analogies to set cover and VC-dimension-shattering). This can be written as the infinite summation pi*(1/a(1)^2 + 1/b(1)^2 + 1/a(2)^2 + 1/b(2)^2 + ....) = 1 (or sum of areas of all circles equals the unit area of square). Thus this equation is a quadratic program instead of a linear program. This is extensible to higher dimensions also (filling a hypercube with infinite number of n-spheres). For example, in 3 dimensions, set of spherical bubbles of varying radii covers the entire cube.
+
+135.17 Above grid can be alternatively formulated as a Voronoi Diagram where Parallel PRG randomly sets multiple points on the plane and a tesselation of the plane covers these points. Instead of squares a Delaunay Triangulation is obtained from the dual of the Voronoi diagram.
+
+------------------------------------------------------------------------------
+136. Commits as on 28,29 January 2015
+------------------------------------------------------------------------------
+Python parser script to translate Longest Common Substring extracted from clustered or classified
+set of encoded strings has been added to repository.
+
+---------------------------------------------------------------------------------------------
+(DONE) 137. Mining the Astronomical Datasets using KMeans and kNN - sequence of algorithms in AstroInfer
+- Commits as on 4 February 2015
+---------------------------------------------------------------------------------------------
+1. MaitreyaToEnchoros.py - This scripts reads a text file with set of date,time and long/lat for a specific class of events (at present it has earthquakes of 8+ magnitude from 1900). This script creates two encoded files asfer.enchoros.zodiacal and asfer.enchoros.ascrelative using Maitreya's Dreams opensource CLI.
+2. asfer.cpp is executed with doClustering=true by which kNN and KMeans clustered data are obtained.
+3. asferkmeansclustering.cpp and asferkNNclustering.cpp implement the KMeans and kNN respectively.
+4. Set of strings from any of the clusters has to be written manually in asfer.enchoros.clustered  
+5. asferlongestcommonsubstring.cpp - Within each cluster a pairwise longest common substring is found out.
+6. TranslateClusterPairwiseLCS.py - Translates the longest common substring to textual rule description mined from above dataset. Mined rules are grep-ed in python-src/MinedRulesFromDatasets.earthquakes. Thus the astronomy dataset cpp-src/earthquakesFrom1900with8plusmag.txt (or cpp-src/magnitude8_1900_date.php.html) ends up as the set of automatically mined rules.
+
+-----------------------------------------------------------------------------------------------
+(DONE) 138. Commandline sequence for Mining Astronomical Datasets (e.g Earthquakes as above) 
+using KMeans and kNN - Commits as on 4 February 2015
+-----------------------------------------------------------------------------------------------
+138.1 In asfer.cpp, set doClustering=true and build asfer binary
+138.2 Set asfer.enchoros to asfer.enchoros.ascrelative or asfer.enchoros.zodiacal
+138.3 $./asfer 2>&1 > logfile1
+138.4 From logfile1 get maximum iteration clustered data for any cluster and update asfer.enchoros.clustered
+138.5 In asfer.cpp set doLCS=true and build asfer binary
+138.6 $./asfer 2>&1 > logfile2
+138.7 grep "Longest Common Substring for" logfile2 2>&1 > python-src/asfer.ClusterPairwiseLCS.txt
+138.8 sudo python TranslateClusterPairwiseLCS.py | grep "Textually" 2>&1 >> MinedRulesFromDatasets.earthquakes
+
+----------------------------------------------------------------------------------------
+(DONE) 139. BigData Analytics subsystem (related to point 64,65 on software analytics) 
+----------------------------------------------------------------------------------------
+139.1 (DONE) As mentioned in commit notes(13February2015) below, new multipurpose Java Hadoop MapReduce 
+code has been added to a bigdata_analytics/ directory. At present it computes the frequencies of astronomical entities in the MinedRulesFromDatasets textfile obtained from clustering+LCS. 
+
+139.2 VIRGO Linux Kernel has following design choices to interface with the machine learning code 
+in AsFer :
+	139.2.1 (DONE) the kernel module does an upcall to userspace asfer code - already this facility exists in VIRGO linux drivers
+	139.2.2 (INITIAL VIRGO COMMITS - DONE) the analytics subsystem creates a policy config file /etc/virgo_kernel_analytics.conf having key-value pairs for each config variable by mining the datasets with classification+clustering+any-hadoop-based-analytics. This is read by a VIRGO Linux kernel module - kernel_analytics - with VFS calls and sets(and exports symbols) the runtime config variables that indirectly determine the kernel behaviour. These exported analytics variables can be read by other interested kernel modules in VIRGO Linux, USB-md and KingCobra (and obviously mainline kernel itself). An example Apache Spark python script which mines the most frequent IP address from Uncomplicated Fire Wall and some device driver info from logs in /var/log/kern.log and /var/log/udev which can be set as a config key-value in /etc/virgo_kernel_analytics.conf has been added to AsFer repository.
+	139.2.3 kernel module implements the machine learning algorithm in C (C++ in kernel is not preferable - http://harmful.cat-v.org/software/c++/linus) which doesn't reuse existing code and hence less attractive.
+
+Diagrams depicting the above options have been uploaded at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/AsFerVIRGOLinuxKernelInterfaceDesignChoices.jpg
+
+
+----------------------------------------------------------------------------------
+Commits as on 4 February 2015
+----------------------------------------------------------------------------------
+C++ implementation of Knuth-Morris-Pratt String Match Algorithm added to repository.
+
+----------------------------------------------------------------------------------
+Commits as on 9 February 2015
+----------------------------------------------------------------------------------
+Python+R script for DFT analysis of multimedia data has been added to repository.
+
+----------------------------------------------------------------------------------
+Commits as on 13 February 2015
+----------------------------------------------------------------------------------
+Initial commits for BigData Analytics (for mined astro datasets) using Hadoop 2.6.0 MapReduce:
+
+- new folder bigdata_analytics has been added
+- hadoop_mapreduce is subfolder of above
+- A Hadoop Java MapReduce implementation to compute frequencies of astronomical entities in MinedRulesFromDatasets.earthquakes (obtained from clustering+LCS earlier in python-src) has been added with compiled bytecode and jar(MinedRulesFromDatasets_MapReducer.java)
+- This jar was executed on a Single Node Hadoop Cluster as per the documentation at:
+	- http://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+	- http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html
+- The HDFS filesystem data is in hdfs_data - /user/root output with frequencies are in userroot_output and namenode and datanode logs are in hadooproot_logs(part_r_0000 has the frequencies)
+- hdfs_data also has commandlines history and the console output logs for above.
+
+--------------------------------------------------------------------
+Commits as on 17 February 2015
+--------------------------------------------------------------------
+Python implementations for LogLog and HyperLogLog cardinality estimation for streamed multiset data have been added to repository.
+
+--------------------------------------------------------------------
+Commits as on 18 February 2015
+--------------------------------------------------------------------
+Python implementations for CountMinSketch(frequencies and heavy-hitters) and BloomFilter(membership) for Streaming Data have been added to repository.
+
+--------------------------------------------------------------------
+Commits as on 19,20 February 2015
+--------------------------------------------------------------------
+Python clients for Apache Hive and HBase have been added to repository and invoked from
+Stream Abstract Generator script as 2-phase streamer for Streaming_<algorithm> scripts.
+Hive,Pig,HBase HDFS and script data added to repository in java-src/bigdata_analytics.
+
+---------------------------------------------------------------------------------
+(DONE) 140. Schematic for Apache Cassandra/Hive/HBase <=> AsFer Streaming_<algorithm> scripts interface 
+---------------------------------------------------------------------------------
+
+($) BigData Source(e.g MovieLens) => Populated in Apache Cassandra, Apache HiveQL CLI(CREATE TABLE..., LOAD DATA LOCAL INPATH...),HBase shell/python client(create 'stream_data','cf'...) (or) Apache PigLatin
+
+($) Apache Hive or HBase SQL/NoSQL or Cassandra table => Read by Apache Hive or HBase or Cassandra python client => StreamAbstractGenerator => Iterable,Generator => Streaming_<algorithm> scripts
+
+--------------------------------------------------------------------
+Commits as on 25 February 2015
+--------------------------------------------------------------------
+Added the Hive Storage client code for Streaming Abstract Generator __iter__ overridden function. With this Streaming_<algorithm> scripts can instantiate this class which mimicks the streaming through iterable with three storages - HBase, File and Hive.
+
+--------------------------------------------------------------------
+(DONE) 141. Classpaths required for Pig-to-Hive interface - for pig grunt shell in -x local mode
+--------------------------------------------------------------------
+1. SLF4J jars
+2. DataNucleus JDO, core and RDBMS jars (has to be version compatible) 
+in pig/lib and hive/lib directories:
+datanucleus-api-jdo-3.2.6.jar
+datanucleus-core-3.2.10.jar
+datanucleus-rdbms-3.2.9.jar
+3. Derby client and server jars
+4. Hive Shims jars
+hive-shims-0.11.0.jar
+5. All Hadoop core jars in /usr/local/hadoop/share/hadoop:
+common hdfs httpfs kms mapreduce tools yarn
+6. HADOOP_CONF_DIR($HADOOP_HOME/etc/hadoop) is also required in classpath.
+
+--------------------------------------------------------------------
+(DONE) 142. Classpaths required for Pig-to-HBase interface
+--------------------------------------------------------------------
+In addition to the jars above, following cloudera trace jars are required:
+htrace-core-2.01.jar and htrace-1.45.jar
+
+hadoop2_core_classpath.sh shell script in bigdata_analytics exports all the jars in (141) and (142).
+
+--------------------------------------------------------------------
+Commits as on 26 February 2015
+--------------------------------------------------------------------
+Pig-HBase stream_data table creation and population related Pig scripts, HDFS data and screenshots have been added to repository.
+
+--------------------------------------------------------------------
+Commits as on 27 February 2015
+--------------------------------------------------------------------
+Cassandra Python Client has been added to repository and Streaming_AbstractGenerator.py has been
+updated to invoke Cassandra in addition to Hive,HBase and File storage. Cassandra data have been added
+in bigdata_analytics/
+
+--------------------------------------------------------------------
+143. (DONE) Storage Abstraction in AsFer - Architecture Diagram
+--------------------------------------------------------------------
+Architecture diagram for Hive/Cassandra/HBase/File NoSQL and other storage abstraction implemented in python has been uploaded at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/BigDataStorageAbstractionInAsFer.jpg
+
+--------------------------------------------------------------------
+144. (DONE) Apache Spark and VIRGO Linux Kernel Analytics and Commits as on 6 March 2015
+--------------------------------------------------------------------
+1. Prerequisite: Spark built with Hadoop 2.6.0 with maven commandline:
+mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.6.0 -DskipTests package
+
+2. Spark Python RDD MapReduce Transformation script for parsing the most frequent source IP address
+from Uncomplicated FireWall logs in /var/log/kern.log has been added to repository. This parsed
+IP address can be set as a config in VIRGO kernel_analytics module (/etc/virgo_kernel_analytics.conf)
+
+--------------------------------------------------------------------
+Commits as on 10 March 2015
+--------------------------------------------------------------------
+Spark python script updated for parsing /var/log/udev and logs in python-src/testlogs.
+(spark-submit Commandline: bin/spark-submit /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py  2> /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/testlogs/Spark_Logs.kernlogUFWandHUAWEIparser.10March2015)
+
+--------------------------------------------------------------------
+145. (DONE) Commits as on 26 March 2015
+--------------------------------------------------------------------
+New python script to fetch stock quotes by ticker symbol that can be used for Streaming_<algorithm> scripts has been added.
+
+--------------------------------------------------------------------
+146. (DONE) Commits as on 2 April 2015
+--------------------------------------------------------------------
+New Python script to get Twitter tweets stream data for a search query has been added.
+
+--------------------------------------------------------------------
+147. (DONE) Related to Item 3 - Sequence Mining Implementation - Commits as on 3 April 2015
+--------------------------------------------------------------------
+Python class that implements Apriori GSP algorithm for mining frequent subsequences in ordered sequences
+dataset has been added to repository. Though exponential, together with Longest Common Subsequence, Apriori GSP gives a near accurate subsequences - befitting trend of the dataset. For example the logs added to repository print the candidate support after 5 iterations (which can be modified) for asfer.enchoros dataset thereby eliciting a pattern in astronomical objects.
+
+148. An example Class Association Rule Learnt from Sequence Mining:
+--------------------------------------------------------------
+For length 6 most frequent subsequences in earthquake astronomical data from 1900 are: ('conjoinedplanets',frequency)
+---------------------------------------------------------------------------------------------------------------------
+[('0', 313), ('4', 313), ('8', 313), ('3', 313), ('7', 313), ('2', 313), ('6', 313), ('1', 313), ('5', 313), ('9', 313), ('a', 313), ('14', 121), ('46', 66), ('56', 51), ('13', 51), ('34', 42), ('45', 36), ('9a', 33), ('79', 31), ('24', 30), ('16', 30), ('69', 29), ('7a', 29), ('146', 29), ('36', 26), ('12', 25), ('57', 24), ('68', 23), ('6a', 22), ('49', 22), ('47', 22), ('28', 21), ('58', 21), ('8a', 21), ('78', 21), ('134', 20), ('25', 20), ('35', 20), ('23', 18), ('29', 18), ('48', 18), ('27', 17), ('3a', 17), ('4a', 17), ('59', 16), ('37', 16), ('67', 15), ('5a', 14), ('17', 14), ('38', 13), ('346', 12), ('26', 11), ('124', 11), ('39', 11), ('15', 11), ('145', 11), ('14a', 10), ('456', 9), ('348', 8), ('2a', 8), ('247', 7), ('345', 7), ('1a', 7), ('469', 7), ('147', 7), ('356', 7), ('378', 6), ('156', 6), ('69a', 5), ('249', 5), ('179', 5), ('167', 5), ('358', 5), ('37a', 4), ('347', 4), ('279', 4), ('46a', 4), ('79a', 4), ('568', 4), ('169', 4), ('57a', 4), ('18', 4), ('1456', 4), ('679', 4), ('149', 4), ('359', 4), ('137', 3), ('135', 3), ('1469', 3), ('13a', 3), ('368', 3), ('1345', 3), ('123', 3), ('125', 3), ('268', 3), ('1346', 3), ('24a', 3), ('1347', 3), ('56a', 3), ('1256', 3), ('1348', 3), ('59a', 3), ('457', 3), ('256', 3), ('1468', 3), ('468', 3), ('467', 3), ('1356', 3), ('168', 3), ('1378', 3), ('19', 3), ('234', 3), ('68a', 3), ('1247', 3), ('148', 3), ('136', 2), ('67a', 2), ('29a', 2), ('349', 2), ('167a', 2), ('38a', 2), ('123a', 2), ('78a', 2), ('245', 2), ('247a', 2), ('248', 2), ('4568', 2), ('1248', 2), ('258', 2), ('1247a', 2), ('359a', 2), ('158', 2), ('36a', 2), ('47a', 2), ('23a', 2), ('12a', 1), ('26a', 1), ('1349', 1), ('2349', 1), ('139', 1), ('1467', 1), ('349a', 1), ('678', 1), ('49a', 1), ('126', 1), ('127', 1), ('34a', 1), ('379', 1), ('3568', 1), ('23469', 1), ('2349a', 1), ('179a', 1), ('124a', 1), ('3479', 1), ('369', 1), ('27a', 1), ('39a', 1), ('458', 1), ('459', 1), ('578', 1), ('16a', 1), ('259', 1), ('257', 1), ('1678', 1), ('368a', 1), ('17a', 1), ('134a', 1), ('1458', 1), ('159', 1), ('3469', 1), ('2345', 1), ('2346', 1), ('13479', 1), ('479', 1), ('169a', 1), ('469a', 1)]
+
+-------------------
+indices for planets:
+-------------------
+ * 0 - for unoccupied
+ * 1 - Sun
+ * 2 - Moon
+ * 3 - Mars
+ * 4 - Mercury
+ * 5 - Jupiter
+ * 6 - Venus
+ * 7 - Saturn
+ * 8 - Rahu
+ * 9 - Ketu
+
+Some inferences can be made from above:
+-------------------------------------- 
+By choosing the creamy layer of items with support > 30 (out of 313 historic events) - ~10%:
+[('14', 121), ('46', 66), ('56', 51), ('13', 51), ('34', 42), ('45', 36), ('9a', 33), ('79', 31), ('24', 30), ('16', 30)]
+
+Above implies that:
+-------------------
+Earthquakes occur most likely when, following happen - in descending order of frequencies:
+- Sun+Mercury (very common)
+- Mercury+Venus 
+- Jupiter+Venus
+- Sun+Mars
+- Mars+Mercury
+- Mercury+Jupiter
+- Ketu is in Ascendant
+- Saturn+Ketu
+- Moon+Mercury
+- Sun+Venus
+
+Machine Learnt pattern above strikingly coincides with some combinations in Brihat Samhita (Role of Mars, Nodes, and 2 heavy planets, Mercury-Venus duo's role in weather vagaries) and also shows some new astronomical patterns (Jupiter+Venus as major contributor). Above technique is purely astronomical and scientific with no assumptions on astrology.
+
+---------------------------------------------------------------
+Commits as on 5 April 2015 
+---------------------------------------------------------------
+Textual translation of Class Association Rules added to SequenceMining.py with logs.
+
+---------------------------------------------------------------
+Commits as on 13 April 2015
+---------------------------------------------------------------
+Python implementation of :
+   - Part-of-Speech tagging using Maximum Entropy Equation of Conditional Random Fields(CRF) and 
+   - Viterbi path computation in HMM-CRF for Named Entity Recognition has been added to repository.
+
+--------------------------------------------------------------
+Commits as on 15 April 2015
+--------------------------------------------------------------
+Named Entity Recognition Python script updated with:
+  - More PoS tags
+  - Expanded HMM Viterbi probabilities matrix
+  - Feature function with conditional probabilities on previously labelled word
+
+--------------------------------------------------------------
+Commits as on 17 April 2015
+--------------------------------------------------------------
+Twitter Streaming python script updated with GetStreamFilter() generator object for streaming tweets data.
+
+-------------------------------------------------------------
+149. Commits as on 10 May 2015
+-------------------------------------------------------------
+A Graph Search NetworkX+MatPlotLib Visualizer for WordNet has been implemented in python and has been added to repository. This is an initial code and more algorithms to mine relationships within a text data would be added using WordNet as ontology - with some similarities to WordNet definition subgraph obtained in http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py. But in this script visualization is more important.
+
+-------------------------------------------------------------
+Commits as on 12 May 2015
+-------------------------------------------------------------
+WordNet Visualizer script has been updated to take and render the WordNet subgraph computed by Recursive Gloss Overlap algorithm in:
+- http://arxiv.org/abs/1006.4458
+- http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf
+- https://sites.google.com/site/kuja27/PresentationTAC2010.pdf?attredirects=0
+
+------------------------------------------------------------
+150. Commits as on 14 May 2015
+------------------------------------------------------------
+Updated WordNet Visualizer with:
+- bidirectional edges
+- graph datastructure changed to dictionary mapping a node to a list of nodes (multigraph)
+- With these the connectivity has increased manifold as shown by gloss overlap
+- the graph nodes are simply words or first element of lemma names of the synset
+- more networkx drawing layout options have been added
+
+Added code for:
+- removing self-loops in the WordNet subgraph
+- for computing core number of each node (maximum k such that node is part of k-core decomposition)
+
+In the input example, nodes "India" and "China" have core numbers 15 and 13 respectively which readily classify the document to belong to
+class "India and China". Thus a new unsupervised classifier is obtained based on node degrees.
+
+------------------------------------------------------------
+Commits as on 16 May 2015
+------------------------------------------------------------
+- added sorting the core numbers descending and printing the top 10% core numbers which are prospective classes the document could belong to.
+This is a new unsupervised text classification algorithm and is based on recursive gloss overlap algorithm in http://arxiv.org/abs/1006.4458 and
+http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf. A major feature of this algorithm is that it is more precise in finding the class of a document as intrinsic merit is computed by mapping a text to subgraph of wordnet, than conventional text classification and clustering based on distance metrics and training data.
+
+------------------------------------------------------------
+151. Commits as on 18 May 2015
+------------------------------------------------------------
+An interesting research was done on the wordnet subgraph obtained by Recursive Gloss Overlap algorithm:
+- PageRank computation for the WordNet subgraph was added from NetworkX library. This is probably one of the first applications of PageRank to
+a graph other than web link graph.
+- The objective was to find the most popular word in the subgraph obtained by the Random Walk Markov Model till it stabilized (PageRank)
+- The resultant word with maximum pagerank remarkably coincides with the most probable class of the document and is almost similar in
+ranking to core numbers of nodes ranked descending.
+- Some random blog text was used.
+- Above was mentioned as a theoretical statement in 5.12 of http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf
+
+--------------------------------------------------------------
+Commits as on 19 May 2015
+--------------------------------------------------------------
+A primitive text generation from the definition graph has been implemented by:
+- computing the k-core of the graph above certain degree k so that the core is dense
+- each edge is mapped to a relation - at present "has" , "is in" are the only 2 relations (more could be added based on
+hypernyms)
+- Each edge is output as "X <relation> Y"
+- Above gives a nucleus text extracted from the original document
+- It implements the theory mentioned in: https://sites.google.com/site/kuja27/DocumentSummarization_using_SpectralGraphTheory_RGOGraph_2014.pdf?attredirects=0&d=1
+
+-------------------------------------------------------------
+Commits as on 20 May 2015
+-------------------------------------------------------------
+Hypernyms/Hyponyms based sentence construction added to WordNet Visualizer. The core-number and pagerank based classifier was tested with more inputs. The accuracy and relevance of the word node with topmost core number and pagerank for RGO graph looks to be better than the traditional supervised and unsupervised classifiers/clusterers. The name of the class is inferred automatically without any training inputs or distance metrics based only on density of k-core subgraphs.
+
+-------------------------------------------------------------
+Commits as on 21 May 2015
+-------------------------------------------------------------
+Updated the Visualizer to print the WordNet closure of hypernyms and hyponyms to generate a blown-up huge sentence. The closure() operator
+uncovers new vertices and edges in the definition graph (strict supergraph of RGO graph) and it is a mathematically generated sentence
+(similar to first order logic and functional programming compositionality) and mimicks an ideal human-thinking process (psychological process of evocation which is complete closure in human brain on a word utterance).
+
+-------------------------------------------------------------
+151. Commits as on 22,23,24 May 2015
+-------------------------------------------------------------
+Added code for computing recursive composition of lambda functions over the RGO graph relations(edges):
+- For this the Depth First Search Tree of the graph is computed with NetworkX
+- The lambda function is created for each edge
+- Composition is done by concatenating a recursive parenthesisation string of lambda expressions:
+	for each DFS edge:
+		Composed_at_tplus1 = Composed_at_t(lambda <edge>) 
+- DFS is chosen as it mimicks a function invocation stack
+- Lambda composition closure on the Recursive Gloss Overlap graph has been rewritten to create a huge lambda composition string with parentheses. Also two new lambda function relations have been introduced - "subinstance of" and "superinstance of". These are at present most likely do
+not exist in WordNet parlance, because the Recursive Gloss OVerlap algorithm grows a graph recursively from WordNet Synset definition tokenization.
+- Thus a tree is built which is made into a graph by pruning duplicate edges and word vertices. WordNet graph does not have a depth. RGO algorithm adds one more dimension to WordNet by defining above relations. These are different from hyper/hypo-nymns. During recursive gloss overlap, if Y is in Synset definition of X, Y is " subinstance of" X and X is "superinstance of" Y.
+- Thus RGO in a way adds new hierarchical recursive relationships to WordNet based on Synset definition.
+- The lambda composition obtained above is a mathematical or lambda calculus representation of a text document - Natural Language reduced to Lambda calculus compositionality operator.
+
+--------------------------------------------------------------
+Commits as on 26 May 2015
+--------------------------------------------------------------
+Added initial code for Social Network Analyzer for Twitter following to create a NetworkX graph and render it with MatPlotLib.
+
+---------------------------------------------------------------
+Commits as on 3 June 2015
+---------------------------------------------------------------
+Bonacich Power Centrality computation added to Twitter Social Network Analyzer using PageRank computation.
+
+---------------------------------------------------------------
+Commits as on 4 June 2015
+---------------------------------------------------------------
+- Eigen Vector Centrality added to Twitter Social Network Analyzer.
+- File storage read replaced with Streaming_AbstractGenerator in Streaming_HyperLogLogCounter.py and Streaming_LogLogCounter.py
+
+--------------------------------------------------------------
+152. Commits as on 7 June 2015
+--------------------------------------------------------------
+New Sentiment Analyzer script has been added to repository:
+- This script adds to WordNet Visualizer with Sentiment analysis using SentiWordNet from NLTK corpus
+- added a Simple Sentiment Analysis function that tokenizes the text and sums up positivity and negativity score
+- A non-trivial Sentiment Analysis based on Recursive Gloss Overlap graph - selects top vertices with high core numbers
+and elicits the positivity and negativity of those vertex words.
+- Above is intuitive as cores of the graph are nuclei centering the document and the sentiments of the vertices of those cores
+are important which decide the sentiment of the whole document.
+- Analogy: Document is akin to an atom and the Recursive Gloss Overlap does a nuclear fission to extricate the inner strucure of a document
+(subatomic particles are the vertices and forces are edges)
+- Instead of core numbers, page_rank can also be applied (It is intriguing to see that classes obtained from core_numbers 
+and page_rank coincide to large extent) and it is not unusual to classify a document in more than one class (as it is more realistic).
+
+Above script can be used for any text including social media and can be invoked as a utility from SocialNetworkAnalysis_<brand> scripts.
+Microblogging tweets are more crisp and "emotionally precise" i.e. extempore - convey instantaneous sentiment (without much of a preparation) 
+
+------------------------------------------------------------------
+Commits as on 8 June 2015
+------------------------------------------------------------------
+Commits for:
+ - fixing errors due to NLTK API changes in lemma_names(), definition() ... [ variables made into function calls ]
+ - Unicode errors
+ - Above were probably either due to Ubuntu upgrade to 15.04 which might have added some unicode dependencies and/or recent changes to NLTK 3.0
+   (SentimentAnalyzer.py already has been updated to reflect above)
+
+------------------------------------------------------------------
+Commits as on 10 June 2015
+------------------------------------------------------------------
+Sentiment Analysis for twitter followers' tweets texts added to SocialNetworkAnalysis_Twitter.py which invokes SentimentAnalyzer.py
+
+------------------------------------------------------------------
+Commits as on 13 June 2015
+------------------------------------------------------------------
+Sentiment Analysis for tweet stream texts added to SocialNetworksAnalysis_Twitter.py which invokes SentimentAnalyzer.py
+
+----------------------------------------------------------------------------------------------------------------
+153. (THEORY - Minimum Implementation DONE) Sentiment Analysis as lambda function composition of the Recursive Gloss Overlap WordNet subgraph
+----------------------------------------------------------------------------------------------------------------
+SentiWordNet based scoring of the tweets and texts have some false positives and negatives. But the lambda composition of the
+Recursive Gloss Overlap graph is done by depth-first-search - set of composition trees which overlap. If each edge is replaced by
+a function of sentiment scores of two vertex words, then lambda composition performed over the graph is a better representation of sentiment
+of the document. This is at present a conjecture only. An implementation of this has been added to SentimentAnalyzer.py by doing a Belief
+Propagation of a sentiment potential in the Recursive Gloss Overlap graph considering it as a Bayesian graphical model.
+
+--------------------------------------------------------------------------
+Commits as on 15 June 2015
+---------------------------
+NeuronRain - (AsFer+USBmd+VIRGO+KingCobra) - version 15.6.15 release tagged
+Most of features and bugfixes are in AsFer and VIRGO
+--------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+154. Belief Propagation and RGO - Commits as on 20 June 2015
+----------------------------------------------------------------------------------------------------------
+SentimentAnalyzer is updated with a belief propagation algorithm (Pearl) based Sentiment scoring by
+considering Recursive Gloss Overlap Definition Graph as graphical model and sentiwordnet score for
+edge vertices as the belief potential propagated in the bayesian network (RGO graph). Since the
+sentiment is a collective belief extracted from a text rather than on isolated words and the
+sentiwordnet scores are probabilities if normalized, Sentiment Analysis is reduced to Belief Propagation problem.
+The previous Belief Propagation function is invoked from SocialNetworkAnalysis_<> code to Sentiment Analyze tweet stream.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+155. Updates to https://sites.google.com/site/kuja27/DocumentSummarization_using_SpectralGraphTheory_RGOGraph_2014.pdf?attredirects=0&d=1
+------------------------------------------------------------------------------------------------------------------------------------------
+Algorithms and features based on Recursive Gloss Overlap graph:
+155.1 RGO visualizer
+155.2 RGO based Sentiment Analyzer - Belief Propagation in RGO as a graphical model
+155.3 Graph Search in text - map a text to wordnet relations by RGO graph growth - prints the graph edges which are relations hidden in 
+a text
+155.4 New unsupervised text classifier based in RGO core numbers and PageRank
+155.5 Social Network Analyzer (Tweets analysis by RGO graph growth)
+155.5 Lambda expression construction from the RGO graph 
+155.6 Sentence construction by composition of edges
+
+----------------------------------------------------------------------------
+156. Commits as on 4 July 2015 - RGO sentiment analyzer on cynical tweets
+----------------------------------------------------------------------------
+Added query for a "elections" to stream tweets related to it. Few sample cynical tweets were sentiment-analyzed with
+RGO Belief Propagation SentimentAnalyzer that gives negative sentiment scores as expected whereas trivial SentiWordNet score summation  
+gives a positive score wrongly.
+
+--------------------------------------------------------------------------------------------------------------------
+157. (THEORY) Recursive Gloss Overlap graphical model as a Deep Learning algorithm that is an alternative to Perceptrons - for text data
+--------------------------------------------------------------------------------------------------------------------
+Point 155 mentions the diverse applications of Recursive Gloss Overlap algorithm each of which touch upon multiple facets of Machine Learning (or) Deep Learning. Instead of a multi-layered perceptron and a backpropagation on it which have the standard notation (W . X + bias) and have to be built, the wordnet RGO subgraph presents itself readily as a deep learning model without any additional need for perceptrons with additional advantage that complete graph theory results apply to it(core numbers, pageranks, connectivity etc.,), making it a Graph-theoretical learning instead of statistical (for text data). 
+
+-------------------------------------------------------------------------------------------------------------------
+158. (THEORY) Graph Discovery (or) Graph Guessing and EventNet (related to EventNet points 70-79)
+-------------------------------------------------------------------------------------------------------------------
+EventNet mentioned previously is an infinite cause-effect graph of event vertices with partakers for each event 
+(kind of a PetriNet yet different). A special case of interest is when only few subgraphs of a giant EventNet is available and it is
+often necessary to discover or guess the complete graph of causality with partakers. A familiar example is a crime scene investigation
+where:
+ - it is necessary to recreate the complete set of events and their causalities with partakers of a crime (reverse-engineering)
+ - but only few clues or none are available - which are akin to very sparse subgraphs of the crime scene EventNet
+ - Guessing (100-x)% of the graph from x% clue subgraphs can be conjectured to be an NP problem - because non-deterministic polynomially an
+EventNet path can be guessed. As a counting problem this is #P-complete (set of all paths among known subgraphs of an unknown supergraph). But there is only one accepting path (could be in Unambigous Logspace if the number of states is in logspace) 
+
+Another example: set of blind men try to make out an object by touch.
+- 
+Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+https://sites.google.com/site/kuja27/

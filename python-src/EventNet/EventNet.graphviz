@@ -1,0 +1,52 @@
+digraph {
+	"e1 " [label="Event e1  Partakers - p11, p12, p13 - IntraEventConversations: (p11,p12)#(p12,p13)
+"]
+	"e2 " [label="Event e2  Partakers - p21, p22 - IntraEventConversations: (p21,p22)
+"]
+	"e3 " [label="Event e3  Partakers - p31, p32 - IntraEventConversations: (p31,p32)
+"]
+	"e4 " [label="Event e4  Partakers - p41, p42, p43 - IntraEventConversations: (p41,p42)#(p41,p43)
+"]
+	"e5 " [label="Event e5  Partakers - p51, p52 - IntraEventConversations: (p51,p52)
+"]
+	"e6 " [label="Event e6  Partakers - p61, p62, p63 - IntraEventConversations: (p61,p62)#(p61,p63)
+"]
+	"e7 " [label="Event e7  Partakers - p71, p72 - IntraEventConversations: (p71, p72)
+"]
+	"e8 " [label="Event e8  Partakers - p81, p82 - IntraEventConversations: (p81, p82)
+"]
+	"e9 " [label="Event e9  Partakers - p91, p92, p93 - IntraEventConversations: (p91,p92)#(p91,p93)
+"]
+	"e10 " [label="Event e10  Partakers - p101, p102 - IntraEventConversations: (p101,p102)
+"]
+		e1 -> e2
+
+		e1 -> e3
+
+		e3 -> e2
+
+		e2 -> e4
+
+		e3 -> e4
+
+		e3 -> e5
+
+		e5 -> e4
+
+		e5 -> e10
+
+		e6 -> e8
+
+		e5 -> e7
+
+		e7 -> e10
+
+		e10 -> e4
+
+		e4 -> e9
+
+		e6 -> e7
+
+		e3 -> e10
+
+}

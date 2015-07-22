@@ -1,0 +1,1646 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+2
+defaultdict(<type 'list'>, {u'represent': [u'enact'], u'serving': [u'area', u'area'], u'Madras': [u'Chennai'], u'deck': [u'deuce'], u'money': [u'cost'], u'felt': [u'felt'], u'Bengal': [u'Chennai'], u'four': [u'deuce'], u'purely': [u'growth'], u'including': [u'cost'], u'legal': [u'act', u'act'], u'committee': [u'act', u'act'], u'skin': [u'lupus_erythematosus'], u'go': [u'predate'], u'follow': [u'adopt'], u'fifth': [u'Thursday'], u'geography': [u'area', u'area'], u'profitable': [u'exploitation', u'exploitation'], u'compose': [u'constitute'], u'knowledge': [u'comprehensive_examination'], u'title': [u'metropolitan'], u'chosen': [u'option'], u'situations': [u'position'], u'fix': [u'regulate'], u'supply': [u'provision'], u'exercising': [u'government'], u'branch': [u'information_technology'], u'labor': [u'cost'], u'intensive': [u'either', u'comprehensive_examination'], u'instrument': [u'zero'], u'charge': [u'head'], u'program': [u'planning', u'planning'], u'device': [u'zero'], u'choose': [u'adopt'], u'engineering': [u'information_technology'], u'administrative': [u'agency', u'state', u'district', u'district'], u'indicating': [u'fast'], u'real': [u'probable', u'effective'], u'`also': [u'either'], u'presently': [u'existing'], u'provisions': [u'provision'], u'means': [u'feasible'], u'express': [u'state'], u'nation': [u'state'], u'barrier': [u'separate'], u'transmit': [u'information_technology'], u'made': [u'include'], u'course': [u'planning', u'planning'], u'words': [u'state'], u'formulating': [u'planning', u'planning'], u'existing': [u'existing', u'effective'], u'day': [u'Thursday'], u'condition': [u'need'], u'regarding': [u'position'], u'like': [u'either'], u'level': [u'growth'], u'India': [u'Tamil'], u'disease': [u'lupus_erythematosus'], u'deals': [u'information_technology'], u'miles': [u'kilometer', u'kilometer'], u'unstable': [u'astatine'], u'characteristic': [u'regional'], u'small': [u'workshop'], u'Dravidian': [u'Tamil'], u'fixed': [u'town'], u'two': [u'run', u'public_square', u'deuce', u'run', u'run'], u'set': [u'time'], u'retrieve': [u'information_technology'], u'uninhabited': [u'barren'], u'people': [u'area', u'state', u'state', u'area'], u'series': [u'first', u'astatine'], u'streets': [u'public_square'], u'back': [u'predate'], u'authority': [u'government'], u'Christianity': [u'metropolitan'], u'carefully': [u'consider'], u'likely': [u'probable'], u'individual': [u'growth'], u'meters': [u'kilometer', u'kilometer'], u'result': [u'act', u'act'], u'choosing': [u'choice', u'choice'], u'topics': [u'position'], u'beyond': [u'run', u'run', u'run'], u'special': [u'area', u'area', u'comprehensive_examination'], u'addition': [u'besides'], u'0.621371': [u'kilometer', u'kilometer'], u'total': [u'cost'], u'extend': [u'run', u'run', u'run'], u"'": [u'either'], u'Orthodox': [u'metropolitan'], u'culture': [u'area', u'area'], u'highest': [u'first'], u'since': [u'Tamil'], u'definite': [u'planning', u'planning'], u'connective': [u'lupus_erythematosus'], u'acting': [u'solid'], u'magnitude': [u'second'], u'biological': [u'growth'], u'affecting': [u'lupus_erythematosus'], u'boundary': [u'area', u'town', u'area'], u'correct': [u'fast'], u'body': [u'state', u'act', u'state', u'act'], u'biology': [u'growth'], u'one': [u'option', u'state', u'deuce'], u'run': [u'run', u'run', u'run'], u'degree': [u'second', u'regulate'], u'selecting': [u'choice', u'choice'], u'equivalent': [u'metropolitan'], u'Sri': [u'Tamil'], u'worthless': [u'barren'], u'governing': [u'government'], u'thorium': [u'astatine'], u'water': [u'exploitation', u'exploitation'], u'timepieces': [u'fast'], u'making': [u'exploitation', u'exploitation'], u'manufacturing': [u'workshop'], u'handcrafts': [u'workshop'], u'interpret': [u'legal_power'], u'cultivation': [u'barren'], u'goods': [u'cost'], u'ahead': [u'fast'], u'involved': [u'growth'], u'region': [u'area', u'district', u'area', u'district', u'regional'], u'decay': [u'astatine'], u'equal': [u'kilometer', u'kilometer'], u'times': [u'Tamil'], u'etc': [u'position'], u'amount': [u'sum', u'regulate'], u'workplace': [u'workshop'], u'act': [u'planning', u'government', u'planning', u'enact', u'choice', u'choice', u'exploitation', u'exploitation', u'separate'], u'action': [u'planning', u'planning'], u'whole': [u'solid', u'sum'], u'think': [u'consider'], u'first': [u'first', u'second'], u'inflammatory': [u'lupus_erythematosus'], u'useful': [u'exploitation', u'exploitation'], u'wilderness': [u'barren'], u'point': [u'run', u'run', u'run'], u'simple': [u'growth'], u'requiring': [u'need'], u'collagen': [u'lupus_erythematosus'], u'way': [u'position'], u'number': [u'option'], u'marked': [u'district', u'district'], u'highly': [u'astatine'], u'chronic': [u'lupus_erythematosus'], u'right': [u'legal_power'], u'done': [u'feasible', u'workshop'], u'codifying': [u'act', u'act'], u'apply': [u'legal_power'], u'indefinite': [u'area', u'area'], u'open': [u'public_square'], u'telecommunications': [u'information_technology'], u'unit': [u'agency', u'kilometer', u'kilometer'], u'legislative': [u'act', u'act'], u'city': [u'Chennai', u'town'], u'use': [u'information_technology'], u'smaller': [u'town'], u'working': [u'Thursday'], u'capable': [u'feasible'], u'stretch': [u'run', u'run', u'run'], u'archbishop': [u'metropolitan'], u'later': [u'fast'], u'negative': [u'either'], u'spots': [u'deuce'], u'next': [u'second'], u'devise': [u'plan'], u'halogen': [u'astatine'], u'examination': [u'comprehensive_examination'], u'formerly': [u'Chennai'], u'certain': [u'run', u'probable', u'run', u'run'], u'scope': [u'run', u'run', u'run'], u'proposal': [u'propose'], u'territory': [u'state'], u'meeting': [u'public_square'], u'theoretical': [u'effective'], u'store': [u'information_technology'], u'location': [u'region'], u'urban': [u'town'], u'testing': [u'comprehensive_examination'], u'statement': [u'either'], u'form': [u'constitute'], u'geographical': [u'area', u'area'], u'influence': [u'extend', u'extend'], u'politically': [u'state', u'state'], u'spoken': [u'Tamil'], u'cards': [u'deuce'], u'part': [u'include'], u'western': [u'metropolitan'], u'particular': [u'area', u'area'], u'constituent': [u'state'], u'given': [u'metropolitan'], u'true': [u'probable'], u'eat': [u'devour'], u'circumstances': [u'feasible'], u'deliberations': [u'act', u'act'], u'distance': [u'run', u'run', u'run'], u'prehistoric': [u'Tamil'], u'language': [u'Tamil'], u'society': [u'act', u'act'], u'Tamil': [u'Chennai', u'Tamil'], u'work': [u'plan'], u'patriarch': [u'metropolitan'], u'undiversified': [u'solid'], u'theories': [u'adopt'], u'districts': [u'state'], u'Eastern': [u'metropolitan'], u'adjust': [u'zero', u'regulate'], u'policies': [u'adopt'], u'Church': [u'metropolitan'], u'growing': [u'growth'], u'strategies': [u'adopt'], u'land': [u'exploitation', u'exploitation'], u'rate': [u'regulate'], u'distinguished': [u'area', u'area'], u'unfolding': [u'growth'], u'computers': [u'information_technology'], u'play': [u'enact'], u'process': [u'growth'], u'joints': [u'lupus_erythematosus'], u'metric': [u'kilometer', u'kilometer'], u'heaviest': [u'astatine'], u'organized': [u'state', u'state'], u'purposes': [u'district', u'district'], u'ordering': [u'first'], u'immoderately': [u'devour'], u'single': [u'state', u'solid', u'state'], u'tissue': [u'lupus_erythematosus'], u'something': [u'either', u'propose', u'region'], u'plan': [u'propose', u'plan'], u'regulate': [u'time'], u'occupied': [u'state'], u'bishop': [u'metropolitan'], u'information': [u'information_technology'], u'productive': [u'exploitation', u'exploitation'], u'zero': [u'zero'], u'perform': [u'enact'], u'things': [u'option'], u'make': [u'propose', u'plan'], u'government': [u'agency', u'state', u'state'], u'uranium': [u'astatine'], u'length': [u'kilometer', u'kilometer'], u'power': [u'legal_power'], u'field': [u'comprehensive_examination'], u'complex': [u'growth'], u'fourth': [u'Thursday'], u'spatial': [u'region'], u'declare': [u'propose'], u'document': [u'act', u'act'], u'Lanka': [u'Tamil'], u'events': [u'growth'], u'Nadu': [u'Chennai'], u'stand': [u'separate'], u'week': [u'Thursday'], u'area': [u'public_square', u'town', u'exploitation', u'exploitation'], u'product': [u'astatine'], u'extended': [u'region'], u'plans': [u'planner', u'adopt'], u'earlier': [u'predate'], u'southern': [u'Tamil'], u'gradually': [u'growth'], u'hand': [u'feasible'], u'proficiency': [u'comprehensive_examination'], u'usually': [u'area', u'area'], u'meaning': [u'either'], u'weigh': [u'consider'], u'purpose': [u'area', u'area'], u'student': [u'comprehensive_examination'], u'coming': [u'second'], u'services': [u'cost'], u'changing': [u'growth'], u'Bay': [u'Chennai'], u'law': [u'legal_power'], u'expand': [u'extend', u'extend'], u'value': [u'zero'], u'organically': [u'growth'], u'ideas': [u'adopt'], u'radioactive': [u'astatine'], u'`likewise': [u'either'], u'makes': [u'planner'], u'space': [u'run', u'second', u'run', u'run'], u'cover': [u'felt'], u'spent': [u'cost'], u'together': [u'solid'], u'element': [u'astatine'], u'person': [u'planner', u'head'], u'points': [u'run', u'run', u'run'], u'used': [u'either', u'fast'], u'relief': [u'need'], u'time': [u'run', u'cost', u'fast', u'second', u'predate', u'regulate', u'run', u'run', u'time'], u'become': [u'probable'], u'position': [u'second', u'metropolitan'], u'1000': [u'kilometer', u'kilometer'], u'organism': [u'growth'], u'playing': [u'deuce'], u'fact': [u'effective']})
+ksynset= Synset('represent.v.01')
+lsynset= Synset('ordain.v.01')
+ksynset= Synset('helping.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('helping.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('tamil_nadu.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('deck.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('money.n.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('felt.n.01')
+lsynset= Synset('felt.n.01')
+ksynset= Synset('bengal.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('four.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('strictly.r.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('include.v.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('legal.a.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('legal.a.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('committee.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('committee.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('skin.n.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('go.n.01')
+lsynset= Synset('predate.v.01')
+ksynset= Synset('follow.v.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('fifth.n.01')
+lsynset= Synset('thursday.n.01')
+ksynset= Synset('geography.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('geography.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('profitable.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('profitable.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('compose.v.01')
+lsynset= Synset('constitute.v.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('title.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('chosen.n.01')
+lsynset= Synset('option.n.01')
+ksynset= Synset('situation.n.01')
+lsynset= Synset('position.n.01')
+ksynset= Synset('fix.n.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('supply.n.01')
+lsynset= Synset('provision.n.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('branch.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('labor.n.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('intensifier.n.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('intensifier.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('instrument.n.01')
+lsynset= Synset('nothing.n.01')
+ksynset= Synset('charge.n.01')
+lsynset= Synset('head.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('device.n.01')
+lsynset= Synset('nothing.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('technology.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('administrative.a.01')
+lsynset= Synset('agency.n.01')
+ksynset= Synset('administrative.a.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('administrative.a.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('administrative.a.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('bespeak.v.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('real_number.n.01')
+lsynset= Synset('probable.n.01')
+ksynset= Synset('real_number.n.01')
+lsynset= Synset('effective.a.01')
+ksynset= Synset('soon.r.01')
+lsynset= Synset('exist.v.01')
+ksynset= Synset('commissariat.n.01')
+lsynset= Synset('provision.n.01')
+ksynset= Synset('means.n.01')
+lsynset= Synset('feasible.s.01')
+ksynset= Synset('express.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('state.n.04')
+lsynset= Synset('state.n.01')
+ksynset= Synset('barrier.n.01')
+lsynset= Synset('offprint.n.01')
+ksynset= Synset('convey.v.03')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('make.v.01')
+lsynset= Synset('include.v.01')
+ksynset= Synset('course.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('course.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('words.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('explicate.v.02')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('explicate.v.02')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('exist.v.01')
+lsynset= Synset('exist.v.01')
+ksynset= Synset('exist.v.01')
+lsynset= Synset('effective.a.01')
+ksynset= Synset('day.n.01')
+lsynset= Synset('thursday.n.01')
+ksynset= Synset('condition.n.01')
+lsynset= Synset('need.n.01')
+ksynset= Synset('see.v.05')
+lsynset= Synset('position.n.01')
+ksynset= Synset('like.n.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('india.n.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('disease.n.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('deal.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('mile.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('mile.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('unstable.a.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('feature.n.01')
+lsynset= Synset('regional.a.01')
+ksynset= Synset('small.n.01')
+lsynset= Synset('workshop.n.01')
+ksynset= Synset('dravidian.n.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('repair.v.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('two.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('two.n.01')
+lsynset= Synset('public_square.n.01')
+ksynset= Synset('two.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('two.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('two.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('set.n.01')
+lsynset= Synset('time.n.01')
+ksynset= Synset('recover.v.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('uninhabited.a.01')
+lsynset= Synset('barren.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('series.n.01')
+lsynset= Synset('first.n.01')
+ksynset= Synset('series.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('street.n.01')
+lsynset= Synset('public_square.n.01')
+ksynset= Synset('back.n.01')
+lsynset= Synset('predate.v.01')
+ksynset= Synset('authority.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('christianity.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('carefully.r.01')
+lsynset= Synset('see.v.05')
+ksynset= Synset('likely.a.01')
+lsynset= Synset('probable.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('meter.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('meter.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('consequence.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('consequence.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('subject.n.01')
+lsynset= Synset('position.n.01')
+ksynset= Synset('beyond.r.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('beyond.r.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('beyond.r.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('addition.n.01')
+lsynset= Synset('besides.r.01')
+ksynset= Synset('sum.n.05')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('widen.v.04')
+lsynset= Synset('run.n.01')
+ksynset= Synset('widen.v.04')
+lsynset= Synset('run.n.01')
+ksynset= Synset('widen.v.04')
+lsynset= Synset('run.n.01')
+ksynset= Synset('orthodox.a.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('culture.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('culture.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('high.a.01')
+lsynset= Synset('first.n.01')
+ksynset= Synset('definite.a.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('definite.a.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('conjunction.n.03')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('solid.n.01')
+ksynset= Synset('magnitude.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('biological.a.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('affect.v.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('boundary.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('boundary.n.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('boundary.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('correct.v.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('biology.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('option.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('run.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('run.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('run.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('choose.v.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('equivalent.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('worthless.a.01')
+lsynset= Synset('barren.n.01')
+ksynset= Synset('government.n.02')
+lsynset= Synset('government.n.01')
+ksynset= Synset('thorium.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('water.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('water.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('timepiece.n.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('devising.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('devising.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('fabrication.n.03')
+lsynset= Synset('workshop.n.01')
+ksynset= Synset('handicraft.n.01')
+lsynset= Synset('workshop.n.01')
+ksynset= Synset('interpret.v.01')
+lsynset= Synset('legal_power.n.01')
+ksynset= Synset('cultivation.n.01')
+lsynset= Synset('barren.n.01')
+ksynset= Synset('good.n.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('ahead.s.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('involve.v.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('region.n.01')
+lsynset= Synset('regional.a.01')
+ksynset= Synset('decay.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('peer.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('peer.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('times.n.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('sum.n.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('workplace.n.01')
+lsynset= Synset('workshop.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('ordain.v.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('choice.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('offprint.n.01')
+ksynset= Synset('action.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('action.n.01')
+lsynset= Synset('planning.n.01')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('solid.n.01')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('sum.n.01')
+ksynset= Synset('think.n.01')
+lsynset= Synset('see.v.05')
+ksynset= Synset('first.n.01')
+lsynset= Synset('first.n.01')
+ksynset= Synset('first.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('inflammatory.s.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('useful.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('useful.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('wilderness.n.01')
+lsynset= Synset('barren.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('simple.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('necessitate.v.01')
+lsynset= Synset('need.n.01')
+ksynset= Synset('collagen.n.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('manner.n.01')
+lsynset= Synset('position.n.01')
+ksynset= Synset('number.n.01')
+lsynset= Synset('option.n.01')
+ksynset= Synset('tag.v.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('tag.v.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('highly.r.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('chronic.a.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('right.n.01')
+lsynset= Synset('legal_power.n.01')
+ksynset= Synset('make.v.01')
+lsynset= Synset('feasible.s.01')
+ksynset= Synset('make.v.01')
+lsynset= Synset('workshop.n.01')
+ksynset= Synset('codify.v.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('codify.v.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('legal_power.n.01')
+ksynset= Synset('indefinite.a.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('indefinite.a.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('open.n.01')
+lsynset= Synset('public_square.n.01')
+ksynset= Synset('telecommunication.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('agency.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('legislative.a.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('legislative.a.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('city.n.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('smaller.s.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('working.n.01')
+lsynset= Synset('thursday.n.01')
+ksynset= Synset('capable.a.01')
+lsynset= Synset('feasible.s.01')
+ksynset= Synset('stretch.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('stretch.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('stretch.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('archbishop.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('later.s.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('negative.n.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('musca_volitans.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('following.s.02')
+lsynset= Synset('second.n.01')
+ksynset= Synset('devise.n.01')
+lsynset= Synset('plan.n.01')
+ksynset= Synset('halogen.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('examination.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('once.r.03')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('probable.n.01')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('certain.s.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('scope.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('scope.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('scope.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('proposal.n.01')
+lsynset= Synset('propose.v.01')
+ksynset= Synset('district.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('meeting.n.01')
+lsynset= Synset('public_square.n.01')
+ksynset= Synset('theoretical.a.01')
+lsynset= Synset('effective.a.01')
+ksynset= Synset('shop.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('location.n.01')
+lsynset= Synset('region.n.01')
+ksynset= Synset('urban.a.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('testing.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('statement.n.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('constitute.v.01')
+ksynset= Synset('geographic.a.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('geographic.a.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('influence.n.01')
+lsynset= Synset('widen.v.04')
+ksynset= Synset('influence.n.01')
+lsynset= Synset('widen.v.04')
+ksynset= Synset('politically.r.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('politically.r.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('talk.v.02')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('card_game.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('include.v.01')
+ksynset= Synset('western.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('component.n.03')
+lsynset= Synset('state.n.01')
+ksynset= Synset('given.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('true.n.01')
+lsynset= Synset('probable.n.01')
+ksynset= Synset('eat.v.01')
+lsynset= Synset('devour.v.01')
+ksynset= Synset('fortune.n.04')
+lsynset= Synset('feasible.s.01')
+ksynset= Synset('deliberation.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('deliberation.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('distance.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('distance.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('distance.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('prehistoric.s.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('language.n.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('society.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('society.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('tamil.n.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('work.n.01')
+lsynset= Synset('plan.n.01')
+ksynset= Synset('patriarch.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('undiversified.a.01')
+lsynset= Synset('solid.n.01')
+ksynset= Synset('theory.n.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('district.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('eastern.s.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('adjust.v.01')
+lsynset= Synset('nothing.n.01')
+ksynset= Synset('adjust.v.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('policy.n.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('church.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('growth.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('scheme.n.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('land.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('land.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('rate.n.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('distinguish.v.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('distinguish.v.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('unfolding.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('computer.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('play.n.01')
+lsynset= Synset('ordain.v.01')
+ksynset= Synset('procedure.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('joint.n.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('metric_function.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('metric_function.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('heavy.a.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('form.v.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('form.v.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('purpose.n.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('purpose.n.01')
+lsynset= Synset('district.n.01')
+ksynset= Synset('ordering.n.01')
+lsynset= Synset('first.n.01')
+ksynset= Synset('immoderately.r.01')
+lsynset= Synset('devour.v.01')
+ksynset= Synset('single.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('single.n.01')
+lsynset= Synset('solid.n.01')
+ksynset= Synset('single.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('tissue.n.01')
+lsynset= Synset('lupus_erythematosus.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('propose.v.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('plan.n.01')
+ksynset= Synset('regulate.v.01')
+lsynset= Synset('time.n.01')
+ksynset= Synset('busy.v.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('bishop.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('productive.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('productive.a.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('nothing.n.01')
+lsynset= Synset('nothing.n.01')
+ksynset= Synset('perform.v.01')
+lsynset= Synset('ordain.v.01')
+ksynset= Synset('things.n.01')
+lsynset= Synset('option.n.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('propose.v.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('plan.n.01')
+ksynset= Synset('government.n.01')
+lsynset= Synset('agency.n.01')
+ksynset= Synset('government.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('government.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('uranium.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('length.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('length.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('legal_power.n.01')
+ksynset= Synset('field.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('complex.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('fourth.n.01')
+lsynset= Synset('thursday.n.01')
+ksynset= Synset('spatial.a.01')
+lsynset= Synset('region.n.01')
+ksynset= Synset('declare.v.01')
+lsynset= Synset('propose.v.01')
+ksynset= Synset('document.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('document.n.01')
+lsynset= Synset('act.n.01')
+ksynset= Synset('event.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('base.n.08')
+lsynset= Synset('offprint.n.01')
+ksynset= Synset('week.n.01')
+lsynset= Synset('thursday.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('public_square.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('town.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('exploitation.n.01')
+ksynset= Synset('merchandise.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('widen.v.04')
+lsynset= Synset('region.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('planner.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('earlier.s.01')
+lsynset= Synset('predate.v.01')
+ksynset= Synset('southern.a.01')
+lsynset= Synset('tamil.n.01')
+ksynset= Synset('gradually.r.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('hand.n.01')
+lsynset= Synset('feasible.s.01')
+ksynset= Synset('proficiency.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('normally.r.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('normally.r.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('meaning.n.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('weigh.v.01')
+lsynset= Synset('see.v.05')
+ksynset= Synset('purpose.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('purpose.n.01')
+lsynset= Synset('area.n.01')
+ksynset= Synset('student.n.01')
+lsynset= Synset('comprehensive_examination.n.01')
+ksynset= Synset('approach.n.02')
+lsynset= Synset('second.n.01')
+ksynset= Synset('services.n.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('change.v.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('bay.n.01')
+lsynset= Synset('chennai.n.01')
+ksynset= Synset('law.n.01')
+lsynset= Synset('legal_power.n.01')
+ksynset= Synset('expand.v.01')
+lsynset= Synset('widen.v.04')
+ksynset= Synset('expand.v.01')
+lsynset= Synset('widen.v.04')
+ksynset= Synset('value.n.01')
+lsynset= Synset('nothing.n.01')
+ksynset= Synset('organically.r.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('idea.n.01')
+lsynset= Synset('adopt.v.01')
+ksynset= Synset('radioactive.a.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('planner.n.01')
+ksynset= Synset('space.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('space.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('space.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('space.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('screen.n.04')
+lsynset= Synset('felt.n.01')
+ksynset= Synset('spend.v.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('together.s.01')
+lsynset= Synset('solid.n.01')
+ksynset= Synset('component.n.01')
+lsynset= Synset('astatine.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('planner.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('head.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('point.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('either.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('relief.n.01')
+lsynset= Synset('need.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('cost.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('fast.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('predate.v.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('regulate.v.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('run.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('time.n.01')
+ksynset= Synset('become.v.01')
+lsynset= Synset('probable.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('second.n.01')
+ksynset= Synset('position.n.01')
+lsynset= Synset('metropolitan.n.01')
+ksynset= Synset('thousand.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('thousand.n.01')
+lsynset= Synset('kilometer.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('growth.n.01')
+ksynset= Synset('playing.n.01')
+lsynset= Synset('deuce.n.01')
+ksynset= Synset('fact.n.01')
+lsynset= Synset('effective.a.01')
+Core number (sorted) : [(u'growth', 16), (u'area', 16), (u'state', 15), (u'act', 15), (u'metropolitan', 12), (u'Tamil', 11), (u'astatine', 11), (u'run', 11), (u'exploitation', 10), (u'information_technology', 10), (u'either', 10), (u'cost', 9), (u'lupus_erythematosus', 9), (u'second', 9), (u'position', 9), (u'time', 9), (u'Chennai', 8), (u'kilometer', 8), (u'region', 8), (u'government', 8), (u'comprehensive_examination', 8), (u'fast', 8), (u'town', 7), (u'regulate', 7), (u'adopt', 7), (u'planning', 7), (u'deuce', 7), (u'two', 6), (u'something', 6), (u'propose', 6), (u'public_square', 6), (u'feasible', 5), (u'first', 5), (u'predate', 5), (u'one', 5), (u'district', 5), (u'option', 5), (u'agency', 5), (u'plan', 5), (u'probable', 5), (u'workshop', 5), (u'solid', 5), (u'administrative', 5), (u'enact', 5), (u'legal_power', 5), (u'Thursday', 5), (u'intensive', 4), (u'choice', 4), (u'adjust', 4), (u'zero', 4), (u'sum', 4), (u'body', 4), (u'degree', 4), (u'amount', 4), (u'unit', 4), (u'plans', 4), (u'effective', 4), (u'series', 4), (u'special', 4), (u'space', 4), (u'done', 4), (u'city', 4), (u'barren', 4), (u'boundary', 4), (u'extend', 4), (u'planner', 4), (u'whole', 4), (u'single', 4), (u'make', 4), (u'used', 4), (u'real', 4), (u'people', 4), (u'certain', 4), (u'separate', 4), (u'consider', 3), (u'regional', 3), (u'existing', 3), (u'need', 3), (u'person', 3), (u'head', 3), (u'represent', 2), (u'Madras', 2), (u'Bengal', 2), (u'four', 2), (u'skin', 2), (u'go', 2), (u'follow', 2), (u'charge', 2), (u'program', 2), (u'device', 2), (u'include', 2), (u'indicating', 2), (u'presently', 2), (u'condition', 2), (u'level', 2), (u'deals', 2), (u'small', 2), (u'Dravidian', 2), (u'smaller', 2), (u'streets', 2), (u'Orthodox', 2), (u'water', 2), (u'compose', 2), (u'strategies', 2), (u'interpret', 2), (u'ahead', 2), (u'involved', 2), (u'action', 2), (u'makes', 2), (u'useful', 2), (u'requiring', 2), (u'marked', 2), (u'highly', 2), (u'apply', 2), (u'total', 2), (u'use', 2), (u'working', 2), (u'archbishop', 2), (u'next', 2), (u'halogen', 2), (u'examination', 2), (u'scope', 2), (u'theoretical', 2), (u'particular', 2), (u'circumstances', 2), (u'work', 2), (u'patriarch', 2), (u'undiversified', 2), (u'theories', 2), (u'districts', 2), (u'growing', 2), (u'making', 2), (u'process', 2), (u'joints', 2), (u'organized', 2), (u'purposes', 2), (u'information', 2), (u'productive', 2), (u'fourth', 2), (u'product', 2), (u'earlier', 2), (u'southern', 2), (u'coming', 2), (u'law', 2), (u'element', 2), (u'playing', 2), (u'serving', 2), (u'deck', 2), (u'course', 2), (u'including', 2), (u'committee', 2), (u'wilderness', 2), (u'decay', 2), (u'chosen', 2), (u'fix', 2), (u'labor', 2), (u'choose', 2), (u'nation', 2), (u'formulating', 2), (u'provision', 2), (u'day', 2), (u'India', 2), (u'magnitude', 2), (u'retrieve', 2), (u'constitute', 2), (u'society', 2), (u'extended', 2), (u'beyond', 2), (u"'", 2), (u'since', 2), (u'handcrafts', 2), (u'acting', 2), (u'correct', 2), (u'barrier', 2), (u'thorium', 2), (u'governing', 2), (u'besides', 2), (u'biological', 2), (u'language', 2), (u'computers', 2), (u'times', 2), (u'length', 2), (u'think', 2), (u'1000', 2), (u'spoken', 2), (u'collagen', 2), (u'number', 2), (u'codifying', 2), (u'open', 2), (u'legislative', 2), (u'given', 2), (u'Eastern', 2), (u'ordering', 2), (u'statement', 2), (u'store', 2), (u'urban', 2), (u'part', 2), (u'western', 2), (u'constituent', 2), (u'distance', 2), (u'rate', 2), (u'cards', 2), (u'distinguished', 2), (u'topics', 2), (u'heaviest', 2), (u'`also', 2), (u'occupied', 2), (u'ideas', 2), (u'transmit', 2), (u'Nadu', 2), (u'play', 2), (u'services', 2), (u'radioactive', 2), (u'cover', 2), (u'disease', 2), (u'points', 2), (u'weigh', 2), (u'organism', 2), (u'fact', 2), (u'purely', 2), (u'carefully', 2), (u'fifth', 2), (u'geography', 2), (u'highest', 2), (u'knowledge', 2), (u'title', 2), (u'situations', 2), (u'means', 2), (u'express', 2), (u'likely', 2), (u'words', 2), (u'regarding', 2), (u'miles', 2), (u'fixed', 2), (u'set', 2), (u'uninhabited', 2), (u'testing', 2), (u'Christianity', 2), (u'culture', 2), (u'individual', 2), (u'result', 2), (u'0.621371', 2), (u'definite', 2), (u'connective', 2), (u'affecting', 2), (u'Sri', 2), (u'devour', 2), (u'equal', 2), (u'declare', 2), (u'etc', 2), (u'workplace', 2), (u'inflammatory', 2), (u'supply', 2), (u'simple', 2), (u'indefinite', 2), (u'telecommunications', 2), (u'worthless', 2), (u'capable', 2), (u'addition', 2), (u'proposal', 2), (u'territory', 2), (u'meeting', 2), (u'deliberations', 2), (u'prehistoric', 2), (u'value', 2), (u'policies', 2), (u'Church', 2), (u'metric', 2), (u'immoderately', 2), (u'tissue', 2), (u'perform', 2), (u'things', 2), (u'complex', 2), (u'geographical', 2), (u'document', 2), (u'Lanka', 2), (u'events', 2), (u'week', 2), (u'hand', 2), (u'proficiency', 2), (u'usually', 2), (u'purpose', 2), (u'student', 2), (u'changing', 2), (u'Bay', 2), (u'expand', 2), (u'organically', 2), (u'`likewise', 2), (u'spent', 2), (u'relief', 2), (u'money', 2), (u'profitable', 2), (u'point', 2), (u'exercising', 2), (u'instrument', 2), (u'location', 2), (u'provisions', 2), (u'like', 2), (u'unstable', 2), (u'timepieces', 2), (u'become', 2), (u'right', 2), (u'back', 2), (u'authority', 2), (u'meters', 2), (u'choosing', 2), (u'gradually', 2), (u'legal', 2), (u'biology', 2), (u'power', 2), (u'selecting', 2), (u'equivalent', 2), (u'manufacturing', 2), (u'goods', 2), (u'stretch', 2), (u'stand', 2), (u'formerly', 2), (u'negative', 2), (u'chronic', 2), (u'spots', 2), (u'cultivation', 2), (u'way', 2), (u'form', 2), (u'true', 2), (u'eat', 2), (u'made', 2), (u'characteristic', 2), (u'politically', 2), (u'unfolding', 2), (u'later', 2), (u'devise', 2), (u'influence', 2), (u'engineering', 2), (u'bishop', 2), (u'uranium', 2), (u'field', 2), (u'branch', 2), (u'spatial', 2), (u'felt', 2), (u'meaning', 2), (u'land', 2), (u'together', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: growth ,core number= 16
+This document belongs to class: area ,core number= 16
+This document belongs to class: state ,core number= 15
+This document belongs to class: act ,core number= 15
+This document belongs to class: metropolitan ,core number= 12
+This document belongs to class: Tamil ,core number= 11
+This document belongs to class: astatine ,core number= 11
+This document belongs to class: run ,core number= 11
+This document belongs to class: exploitation ,core number= 10
+This document belongs to class: information_technology ,core number= 10
+This document belongs to class: either ,core number= 10
+This document belongs to class: cost ,core number= 9
+This document belongs to class: lupus_erythematosus ,core number= 9
+This document belongs to class: second ,core number= 9
+This document belongs to class: position ,core number= 9
+This document belongs to class: time ,core number= 9
+This document belongs to class: Chennai ,core number= 8
+This document belongs to class: kilometer ,core number= 8
+This document belongs to class: region ,core number= 8
+This document belongs to class: government ,core number= 8
+This document belongs to class: comprehensive_examination ,core number= 8
+This document belongs to class: fast ,core number= 8
+This document belongs to class: town ,core number= 7
+This document belongs to class: regulate ,core number= 7
+This document belongs to class: adopt ,core number= 7
+This document belongs to class: planning ,core number= 7
+This document belongs to class: deuce ,core number= 7
+This document belongs to class: two ,core number= 6
+This document belongs to class: something ,core number= 6
+This document belongs to class: propose ,core number= 6
+This document belongs to class: public_square ,core number= 6
+This document belongs to class: feasible ,core number= 5
+This document belongs to class: first ,core number= 5
+This document belongs to class: predate ,core number= 5
+This document belongs to class: one ,core number= 5
+This document belongs to class: district ,core number= 5
+max_core_number 16
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'growth', 0.023085412427446255), (u'area', 0.018996164738614884), (u'act', 0.01867766053215486), (u'state', 0.017858095640161192), (u'metropolitan', 0.016786105932183597), (u'astatine', 0.01556095870557073), (u'Tamil', 0.015529138858929797), (u'information_technology', 0.015020838099742612), (u'lupus_erythematosus', 0.013676742378458655), (u'run', 0.013353700838287491), (u'either', 0.012804710937432802), (u'kilometer', 0.011374054430000625), (u'cost', 0.01098878830111513), (u'comprehensive_examination', 0.010712161074149294), (u'exploitation', 0.01035257643731106), (u'adopt', 0.010338870133906594), (u'Chennai', 0.009569564140230979), (u'second', 0.009463668679483343), (u'position', 0.009290832620402114), (u'fast', 0.009125233293762029), (u'deuce', 0.009110991660301949), (u'region', 0.008541685561903952), (u'planning', 0.00844616811254383), (u'legal_power', 0.008300359493322902), (u'Thursday', 0.0083003594933229), (u'time', 0.008174671705613736), (u'feasible', 0.007628311632680931), (u'workshop', 0.007628311632680931), (u'town', 0.00745011835216689), (u'government', 0.0072788992704307465), (u'regulate', 0.007242637001858494), (u'barren', 0.006956263772038957), (u'probable', 0.006879000246864421), (u'solid', 0.006755934718075054), (u'public_square', 0.006359473775449949), (u'propose', 0.006247269863334293), (u'zero', 0.005926320932923774), (u'effective', 0.005915339459622992), (u'option', 0.005734069642238476), (u'enact', 0.005708618377110922), (u'consider', 0.005612168050755018), (u'need', 0.005612168050755018), (u'predate', 0.005566740370712321), (u'first', 0.005263813037902645), (u'plan', 0.005258503916427656), (u'district', 0.005051084312108144), (u'planner', 0.0044845202308112135), (u'choice', 0.004326297919555826), (u'separate', 0.004326297919555825), (u'extend', 0.004274466507859325), (u'include', 0.004268072329471077), (u'provision', 0.004268072329471077), (u'constitute', 0.004268072329471077), (u'devour', 0.004268072329471077), (u'one', 0.003774516572156261), (u'two', 0.0036571344816733334), (u'something', 0.0036259273283341413), (u'agency', 0.0036096262448645326), (u'administrative', 0.0035460332316005227), (u'head', 0.0033572095088311824), (u'existing', 0.003237379790042901), (u'person', 0.003134650722141208), (u'done', 0.003030546691956869), (u'plans', 0.0029632478504240988), (u'besides', 0.0029239766081871343), (u'cover', 0.0029239766081871343), (u'addition', 0.0029239766081871343), (u'felt', 0.0029239766081871343), (u'regional', 0.0028941315638319953), (u'real', 0.0028641332132792975), (u'series', 0.002759253884941226), (u'whole', 0.0027412339877975096), (u'adjust', 0.002723109205835596), (u'sum', 0.0027173542491397656), (u'unit', 0.0026690868668944765), (u'intensive', 0.002664620201273912), (u'city', 0.002656325210071013), (u'certain', 0.002639097773548453), (u'used', 0.0026343773118816514), (u'amount', 0.0026187079412572016), (u'make', 0.002618032597874365), (u'single', 0.0025984839248432445), (u'special', 0.0025856169662224608), (u'body', 0.0025086089847865135), (u'boundary', 0.002503216805125992), (u'space', 0.0024753050599954003), (u'degree', 0.0024694279305271048), (u'people', 0.0024594465008242724), (u'compose', 0.002251928747545163), (u'part', 0.002251928747545163), (u'supply', 0.002251928747545163), (u'immoderately', 0.002251928747545163), (u'provisions', 0.002251928747545163), (u'form', 0.002251928747545163), (u'eat', 0.002251928747545163), (u'made', 0.002251928747545163), (u'condition', 0.0020279127939978403), (u'requiring', 0.0020279127939978403), (u'think', 0.0020279127939978403), (u'weigh', 0.0020279127939978403), (u'carefully', 0.0020279127939978403), (u'relief', 0.0020279127939978403), (u'wilderness', 0.0019159048172241785), (u'uninhabited', 0.0019159048172241785), (u'worthless', 0.0019159048172241785), (u'cultivation', 0.0019159048172241785), (u'charge', 0.001864727912875303), (u'interpret', 0.001848700031159982), (u'apply', 0.001848700031159982), (u'law', 0.001848700031159982), (u'right', 0.001848700031159982), (u'power', 0.001848700031159982), (u'working', 0.0018487000311599817), (u'fourth', 0.0018487000311599817), (u'day', 0.0018487000311599817), (u'fifth', 0.0018487000311599817), (u'week', 0.0018487000311599817), (u'presently', 0.0018149539182195653), (u'small', 0.0017345715915924695), (u'circumstances', 0.0017345715915924695), (u'handcrafts', 0.0017345715915924695), (u'means', 0.0017345715915924695), (u'workplace', 0.0017345715915924695), (u'capable', 0.0017345715915924695), (u'hand', 0.0017345715915924695), (u'manufacturing', 0.0017345715915924695), (u'skin', 0.0017292248559347418), (u'joints', 0.0017292248559347418), (u'collagen', 0.0017292248559347418), (u'disease', 0.0017292248559347418), (u'connective', 0.0017292248559347418), (u'affecting', 0.0017292248559347418), (u'inflammatory', 0.0017292248559347418), (u'tissue', 0.0017292248559347418), (u'chronic', 0.0017292248559347418), (u'deals', 0.0017142904590315873), (u'use', 0.0017142904590315873), (u'information', 0.0017142904590315873), (u'retrieve', 0.0017142904590315873), (u'computers', 0.0017142904590315873), (u'store', 0.0017142904590315873), (u'transmit', 0.0017142904590315873), (u'telecommunications', 0.0017142904590315873), (u'engineering', 0.0017142904590315873), (u'branch', 0.0017142904590315873), (u'makes', 0.0017085193004939755), (u'device', 0.001697478031558349), (u'value', 0.001697478031558349), (u'instrument', 0.001697478031558349), (u'theoretical', 0.0016951402347044574), (u'fact', 0.0016951402347044574), (u'follow', 0.0016933250411581935), (u'strategies', 0.0016933250411581935), (u'theories', 0.0016933250411581935), (u'choose', 0.0016933250411581935), (u'ideas', 0.0016933250411581935), (u'policies', 0.0016933250411581935), (u'characteristic', 0.0016685864924840677), (u'barrier', 0.0016644898927420941), (u'choosing', 0.0016644898927420941), (u'selecting', 0.0016644898927420941), (u'stand', 0.0016644898927420941), (u'level', 0.001663886869483439), (u'involved', 0.001663886869483439), (u'growing', 0.001663886869483439), (u'process', 0.001663886869483439), (u'biological', 0.001663886869483439), (u'organism', 0.001663886869483439), (u'purely', 0.001663886869483439), (u'individual', 0.001663886869483439), (u'simple', 0.001663886869483439), (u'complex', 0.001663886869483439), (u'events', 0.001663886869483439), (u'changing', 0.001663886869483439), (u'organically', 0.001663886869483439), (u'gradually', 0.001663886869483439), (u'biology', 0.001663886869483439), (u'unfolding', 0.001663886869483439), (u'chosen', 0.0016567554961768331), (u'number', 0.0016567554961768331), (u'things', 0.0016567554961768331), (u'represent', 0.0016517811597478451), (u'play', 0.0016517811597478451), (u'perform', 0.0016517811597478451), (u'expand', 0.0016500766515274462), (u'influence', 0.0016500766515274462), (u'length', 0.0016466224935176288), (u'1000', 0.0016466224935176288), (u'miles', 0.0016466224935176288), (u'0.621371', 0.0016466224935176288), (u'equal', 0.0016466224935176288), (u'metric', 0.0016466224935176288), (u'meters', 0.0016466224935176288), (u'highly', 0.0016406348524791137), (u'halogen', 0.0016406348524791137), (u'product', 0.0016406348524791137), (u'element', 0.0016406348524791137), (u'decay', 0.0016406348524791137), (u'thorium', 0.0016406348524791137), (u'heaviest', 0.0016406348524791137), (u'radioactive', 0.0016406348524791137), (u'unstable', 0.0016406348524791137), (u'uranium', 0.0016406348524791137), (u'Dravidian', 0.0016383144945518715), (u'southern', 0.0016383144945518715), (u'India', 0.0016383144945518715), (u'since', 0.0016383144945518715), (u'language', 0.0016383144945518715), (u'times', 0.0016383144945518715), (u'spoken', 0.0016383144945518715), (u'Sri', 0.0016383144945518715), (u'prehistoric', 0.0016383144945518715), (u'Lanka', 0.0016383144945518715), (u'program', 0.0016352192948201867), (u'action', 0.0016352192948201867), (u'course', 0.0016352192948201867), (u'formulating', 0.0016352192948201867), (u'definite', 0.0016352192948201867), (u'Orthodox', 0.0016271648150229436), (u'archbishop', 0.0016271648150229436), (u'patriarch', 0.0016271648150229436), (u'given', 0.0016271648150229436), (u'Eastern', 0.0016271648150229436), (u'western', 0.0016271648150229436), (u'title', 0.0016271648150229436), (u'Christianity', 0.0016271648150229436), (u'Church', 0.0016271648150229436), (u'equivalent', 0.0016271648150229436), (u'bishop', 0.0016271648150229436), (u'go', 0.0016211002423609886), (u'earlier', 0.0016211002423609886), (u'back', 0.0016211002423609886), (u'likely', 0.0016075894698029103), (u'become', 0.0016075894698029103), (u'true', 0.0016075894698029103), (u'total', 0.0016056845875054235), (u'including', 0.0016056845875054235), (u'labor', 0.0016056845875054235), (u'services', 0.0016056845875054235), (u'spent', 0.0016056845875054235), (u'money', 0.0016056845875054235), (u'goods', 0.0016056845875054235), (u'Madras', 0.0016008246929716742), (u'Bengal', 0.0016008246929716742), (u'Nadu', 0.0016008246929716742), (u'Bay', 0.0016008246929716742), (u'formerly', 0.0016008246929716742), (u'undiversified', 0.0015867537120456256), (u'acting', 0.0015867537120456256), (u'together', 0.0015867537120456256), (u'examination', 0.0015764971694238778), (u'knowledge', 0.0015764971694238778), (u'testing', 0.0015764971694238778), (u'proficiency', 0.0015764971694238778), (u'student', 0.0015764971694238778), (u'field', 0.0015764971694238778), (u'topics', 0.001567160216720161), (u'situations', 0.001567160216720161), (u'regarding', 0.001567160216720161), (u'etc', 0.001567160216720161), (u'way', 0.001567160216720161), (u'ordering', 0.0015572155236901822), (u'highest', 0.0015572155236901822), (u'work', 0.001556046523034315), (u'devise', 0.001556046523034315), (u'indicating', 0.001546254280031617), (u'ahead', 0.001546254280031617), (u'correct', 0.001546254280031617), (u'timepieces', 0.001546254280031617), (u'later', 0.001546254280031617), (u'four', 0.0015446273544098793), (u'playing', 0.0015446273544098793), (u'deck', 0.0015446273544098793), (u'cards', 0.0015446273544098793), (u'spots', 0.0015446273544098793), (u'water', 0.001538636403556445), (u'useful', 0.001538636403556445), (u'making', 0.001538636403556445), (u'productive', 0.001538636403556445), (u'profitable', 0.001538636403556445), (u'land', 0.001538636403556445), (u"'", 0.0015267195230781047), (u'statement', 0.0015267195230781047), (u'`also', 0.0015267195230781047), (u'`likewise', 0.0015267195230781047), (u'like', 0.0015267195230781047), (u'negative', 0.0015267195230781047), (u'meaning', 0.0015267195230781047), (u'streets', 0.0015195953147459818), (u'open', 0.0015195953147459818), (u'meeting', 0.0015195953147459818), (u'marked', 0.001511838645426056), (u'purposes', 0.001511838645426056), (u'declare', 0.0015005825660681202), (u'proposal', 0.0015005825660681202), (u'committee', 0.0014968787719888941), (u'society', 0.0014968787719888941), (u'codifying', 0.0014968787719888941), (u'legislative', 0.0014968787719888941), (u'result', 0.0014968787719888941), (u'deliberations', 0.0014968787719888941), (u'document', 0.0014968787719888941), (u'legal', 0.0014968787719888941), (u'smaller', 0.0014940970083274089), (u'urban', 0.0014940970083274089), (u'fixed', 0.0014940970083274089), (u'extended', 0.001475818221644057), (u'location', 0.001475818221644057), (u'spatial', 0.001475818221644057), (u'scope', 0.001470104794973613), (u'beyond', 0.001470104794973613), (u'distance', 0.001470104794973613), (u'points', 0.001470104794973613), (u'point', 0.001470104794973613), (u'stretch', 0.001470104794973613), (u'governing', 0.0014699811985924814), (u'exercising', 0.0014699811985924814), (u'authority', 0.0014699811985924814), (u'fix', 0.0014642276655053173), (u'rate', 0.0014642276655053173), (u'districts', 0.0014503267040256894), (u'organized', 0.0014503267040256894), (u'nation', 0.0014503267040256894), (u'constituent', 0.0014503267040256894), (u'occupied', 0.0014503267040256894), (u'express', 0.0014503267040256894), (u'words', 0.0014503267040256894), (u'territory', 0.0014503267040256894), (u'politically', 0.0014503267040256894), (u'particular', 0.0014477162880266532), (u'serving', 0.0014477162880266532), (u'distinguished', 0.0014477162880266532), (u'geography', 0.0014477162880266532), (u'culture', 0.0014477162880266532), (u'indefinite', 0.0014477162880266532), (u'geographical', 0.0014477162880266532), (u'usually', 0.0014477162880266532), (u'purpose', 0.0014477162880266532), (u'next', 0.0014437967562498575), (u'coming', 0.0014437967562498575), (u'magnitude', 0.0014437967562498575), (u'set', 0.001431639097266197)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+area  contains bed_ground contains rain_shadow contains gathering_place contains state_capital contains nook contains midfield contains midstream contains parking_space contains seascape contains stage contains mooring contains see contains terreplein contains disk_space contains national_capital contains shrubbery contains city_center contains separation contains disaster_area contains no-parking_zone contains key contains winner's_circle contains scene contains seat contains seat contains outskirts contains venue contains ashram contains 'hood contains financial_center contains tank_farm contains sanctum contains pleasance contains hub contains storm_center contains county_seat contains retreat contains center_stage contains capital contains neighborhood contains darkness contains anchorage contains perch contains free_port contains borscht_circuit contains civic_center contains ashram contains proximity contains provincial_capital contains disk_overhead contains airspace contains scenery contains gold_coast contains county_town contains field_of_honor contains danger contains arena contains presence contains watering_place contains open contains hearth contains broadcast_area contains no-go_area contains center contains flies contains roads contains space contains block contains corner contains quadrant contains vicinity contains quadrant contains inner_city contains no_man's_land contains workspace contains hunting_ground contains harborage contains landscape contains light contains high_country contains section contains corner contains medical_center contains place contains staging_area contains swap_space contains haunt contains resort_area contains safety contains crawlspace contains nest contains bed_ground contains rain_shadow contains gathering_place contains state_capital contains nook contains midfield contains midstream contains parking_space contains seascape contains stage contains mooring contains see contains terreplein contains disk_space contains national_capital contains shrubbery contains city_center contains separation contains disaster_area contains no-parking_zone contains key contains winner's_circle contains scene contains seat contains seat contains outskirts contains venue contains ashram contains 'hood contains financial_center contains tank_farm contains sanctum contains pleasance contains hub contains storm_center contains county_seat contains retreat contains center_stage contains capital contains neighborhood contains darkness contains anchorage contains perch contains free_port contains borscht_circuit contains civic_center contains ashram contains proximity contains provincial_capital contains disk_overhead contains airspace contains scenery contains gold_coast contains county_town contains field_of_honor contains danger contains arena contains presence contains watering_place contains open contains hearth contains broadcast_area contains no-go_area contains center contains flies contains roads contains space contains block contains corner contains quadrant contains vicinity contains quadrant contains inner_city contains no_man's_land contains workspace contains hunting_ground contains harborage contains landscape contains light contains high_country contains section contains corner contains medical_center contains place contains staging_area contains swap_space contains haunt contains resort_area contains safety contains crawlspace exploitation . act  contains special_act contains pragmatic_sanction contains ukase contains fair-trade_act contains mandatory_injunction contains decree_nisi contains prohibition contains Stamp_Act contains decree contains programma contains stay contains curfew contains legislative_act contains imperial_decree contains banning-order contains permanent_injunction contains bull contains injunction contains nullity contains legal_separation contains consent_decree contains Foreign_Intelligence_Surveillance_Act contains temporary_injunction contains stay_of_execution contains enabling_act contains ordinance contains interdict contains special_act contains pragmatic_sanction contains ukase contains fair-trade_act contains mandatory_injunction contains decree_nisi contains prohibition contains Stamp_Act contains decree contains programma contains stay contains curfew contains legislative_act contains imperial_decree contains banning-order contains permanent_injunction contains bull contains injunction contains nullity contains legal_separation contains consent_decree contains Foreign_Intelligence_Surveillance_Act contains temporary_injunction contains stay_of_execution contains enabling_act contains ordinance exploitation . exploitation  is part of abstraction is part of activity is part of use is part of psychological_feature is part of entity is part of act is part of event is part of abstraction is part of activity is part of use is part of psychological_feature is part of entity is part of act area . exploitation  is part of abstraction is part of activity is part of use is part of psychological_feature is part of entity is part of act is part of event is part of abstraction is part of activity is part of use is part of psychological_feature is part of entity is part of act act . 
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'growth - involved': [' is a superinstance of '], u'barren - worthless': [' is a superinstance of '], u'1000 - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'fast - time': [' is a superinstance of '], u'result - act': [' is a subinstance of ', ' is a subinstance of '], u'town - smaller': [' is a superinstance of '], u'act - legislative': [' is a superinstance of ', ' is a superinstance of '], u'adopt - strategies': [' is a superinstance of '], u'tissue - lupus_erythematosus': [' is a subinstance of '], u'skin - lupus_erythematosus': [' is a subinstance of '], u'scope - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'meters - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'fifth - Thursday': [' is a subinstance of '], u'small - workshop': [' is a subinstance of '], u'metropolitan - given': [' is a superinstance of '], u'useful - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'government - authority': [' is a superinstance of '], u'coming - second': [' is a subinstance of '], u'head - person': [' is a superinstance of '], u'regional - characteristic': [' is a superinstance of '], u'immoderately - devour': [' is a subinstance of '], u'workshop - workplace': [' is a superinstance of '], u'true - probable': [' is a subinstance of '], u'day - Thursday': [' is a subinstance of '], u'Bay - Chennai': [' is a subinstance of '], u'working - Thursday': [' is a subinstance of '], u'cost - money': [' is a superinstance of '], u'one - option': [' is a subinstance of '], u'effective - fact': [' is a superinstance of '], u'regarding - position': [' is a subinstance of '], u'statement - either': [' is a subinstance of '], u'sum - amount': [' is a superinstance of '], u'extend - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'choice - choosing': [' is a superinstance of ', ' is a superinstance of '], u'single - state': [' is a subinstance of ', ' is a subinstance of '], u'deuce - four': [' is a superinstance of '], u'information_technology - branch': [' is a superinstance of '], u'need - condition': [' is a superinstance of '], u'lupus_erythematosus - skin': [' is a superinstance of '], u'Madras - Chennai': [' is a subinstance of '], u'metropolitan - bishop': [' is a superinstance of '], u'astatine - heaviest': [' is a superinstance of '], u'probable - certain': [' is a superinstance of '], u'ordering - first': [' is a subinstance of '], u'predate - go': [' is a superinstance of '], u'state - nation': [' is a superinstance of '], u'regional - region': [' is a superinstance of '], u'Tamil - Lanka': [' is a superinstance of '], u'deck - deuce': [' is a subinstance of '], u'person - planner': [' is a subinstance of '], u'means - feasible': [' is a subinstance of '], u'deuce - one': [' is a superinstance of '], u'go - predate': [' is a subinstance of '], u'time - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'second - coming': [' is a superinstance of '], u'comprehensive_examination - knowledge': [' is a superinstance of '], u'exploitation - act': [' is a superinstance of ', ' is a superinstance of '], u'form - constitute': [' is a subinstance of '], u'zero - zero': [' is a subinstance of ', ' is a superinstance of '], u'effective - existing': [' is a superinstance of '], u'Thursday - fourth': [' is a superinstance of '], u'position - regarding': [' is a superinstance of '], u'magnitude - second': [' is a subinstance of '], u'set - time': [' is a subinstance of '], u'examination - comprehensive_examination': [' is a subinstance of '], u'Bengal - Chennai': [' is a subinstance of '], u'transmit - information_technology': [' is a subinstance of '], u'requiring - need': [' is a subinstance of '], u'feasible - done': [' is a superinstance of '], u'Tamil - language': [' is a superinstance of '], u'stretch - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'plan - plan': [' is a subinstance of ', ' is a superinstance of '], u'existing - effective': [' is a subinstance of '], u'growth - changing': [' is a superinstance of '], u'stand - separate': [' is a subinstance of '], u'zero - adjust': [' is a superinstance of '], u'codifying - act': [' is a subinstance of ', ' is a subinstance of '], u'planner - person': [' is a superinstance of '], u'second - time': [' is a superinstance of '], u'proposal - propose': [' is a subinstance of '], u'area - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'adjust - zero': [' is a subinstance of '], u'agency - unit': [' is a superinstance of '], u'course - planning': [' is a subinstance of ', ' is a subinstance of '], u'meaning - either': [' is a subinstance of '], u'predate - back': [' is a superinstance of '], u'second - magnitude': [' is a superinstance of '], u'cost - time': [' is a superinstance of '], u'metropolitan - Church': [' is a superinstance of '], u'Thursday - week': [' is a superinstance of '], u'computers - information_technology': [' is a subinstance of '], u'regulate - adjust': [' is a superinstance of '], u'urban - town': [' is a subinstance of '], u'done - workshop': [' is a subinstance of '], u'profitable - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'authority - government': [' is a subinstance of '], u'fourth - Thursday': [' is a subinstance of '], u'fast - indicating': [' is a superinstance of '], u'right - legal_power': [' is a subinstance of '], u'spoken - Tamil': [' is a subinstance of '], u'follow - adopt': [' is a subinstance of '], u'people - state': [' is a subinstance of ', ' is a subinstance of '], u'workshop - done': [' is a superinstance of '], u'time - second': [' is a subinstance of '], u'make - propose': [' is a subinstance of '], u'propose - proposal': [' is a superinstance of '], u'act - society': [' is a superinstance of ', ' is a superinstance of '], u'fix - regulate': [' is a subinstance of '], u'first - series': [' is a superinstance of '], u'point - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'planning - program': [' is a superinstance of ', ' is a superinstance of '], u'area - people': [' is a superinstance of ', ' is a superinstance of '], u'city - town': [' is a subinstance of '], u'either - something': [' is a superinstance of '], u'theoretical - effective': [' is a subinstance of '], u'comprehensive_examination - student': [' is a superinstance of '], u'besides - addition': [' is a superinstance of '], u'Christianity - metropolitan': [' is a subinstance of '], u'legal_power - interpret': [' is a superinstance of '], u'public_square - area': [' is a superinstance of '], u'comprehensive_examination - testing': [' is a superinstance of '], u'knowledge - comprehensive_examination': [' is a subinstance of '], u'run - run': [' is a subinstance of ', ' is a superinstance of ', ' is a subinstance of ', ' is a superinstance of ', ' is a subinstance of ', ' is a superinstance of '], u'include - made': [' is a superinstance of '], u'comprehensive_examination - intensive': [' is a superinstance of '], u'spots - deuce': [' is a subinstance of '], u'public_square - open': [' is a superinstance of '], u'services - cost': [' is a subinstance of '], u'represent - enact': [' is a subinstance of '], u'single - solid': [' is a subinstance of '], u'town - area': [' is a superinstance of '], u'planning - definite': [' is a superinstance of ', ' is a superinstance of '], u'ideas - adopt': [' is a subinstance of '], u'think - consider': [' is a subinstance of '], u'value - zero': [' is a subinstance of '], u'done - feasible': [' is a subinstance of '], u'plans - adopt': [' is a subinstance of '], u'exploitation - making': [' is a superinstance of ', ' is a superinstance of '], u'Thursday - day': [' is a superinstance of '], u'geographical - area': [' is a subinstance of ', ' is a subinstance of '], u'something - propose': [' is a subinstance of '], u'state - politically': [' is a superinstance of ', ' is a superinstance of '], u'state - constituent': [' is a superinstance of '], u'bishop - metropolitan': [' is a subinstance of '], u'run - distance': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'government - state': [' is a subinstance of ', ' is a subinstance of '], u'public_square - streets': [' is a superinstance of '], u'act - document': [' is a superinstance of ', ' is a superinstance of '], u'lupus_erythematosus - affecting': [' is a superinstance of '], u'effective - theoretical': [' is a superinstance of '], u'position - metropolitan': [' is a subinstance of '], u'government - governing': [' is a superinstance of '], u'separate - stand': [' is a superinstance of '], u'spent - cost': [' is a subinstance of '], u'policies - adopt': [' is a subinstance of '], u'predate - earlier': [' is a superinstance of '], u'equal - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'probable - become': [' is a superinstance of '], u'government - exercising': [' is a superinstance of '], u'area - purpose': [' is a superinstance of ', ' is a superinstance of '], u'legal_power - apply': [' is a superinstance of '], u'formulating - planning': [' is a subinstance of ', ' is a subinstance of '], u'chronic - lupus_erythematosus': [' is a subinstance of '], u'either - used': [' is a superinstance of '], u'information_technology - computers': [' is a superinstance of '], u'intensive - either': [' is a subinstance of '], u'kilometer - unit': [' is a superinstance of ', ' is a superinstance of '], u'feasible - hand': [' is a superinstance of '], u'capable - feasible': [' is a subinstance of '], u'area - indefinite': [' is a superinstance of ', ' is a superinstance of '], u'perform - enact': [' is a subinstance of '], u'topics - position': [' is a subinstance of '], u'exploitation - useful': [' is a superinstance of ', ' is a superinstance of '], u'planning - formulating': [' is a superinstance of ', ' is a superinstance of '], u'spatial - region': [' is a subinstance of '], u'Eastern - metropolitan': [' is a subinstance of '], u'include - part': [' is a superinstance of '], u'condition - need': [' is a subinstance of '], u'first - highest': [' is a superinstance of '], u'formerly - Chennai': [' is a subinstance of '], u'area - geography': [' is a superinstance of ', ' is a superinstance of '], u'kilometer - miles': [' is a superinstance of ', ' is a superinstance of '], u'provisions - provision': [' is a subinstance of '], u'agency - government': [' is a superinstance of '], u'choice - selecting': [' is a superinstance of ', ' is a superinstance of '], u'relief - need': [' is a subinstance of '], u'position - situations': [' is a superinstance of '], u'cultivation - barren': [' is a subinstance of '], u'Nadu - Chennai': [' is a subinstance of '], u'correct - fast': [' is a subinstance of '], u'area - public_square': [' is a subinstance of '], u'public_square - meeting': [' is a superinstance of '], u'action - planning': [' is a subinstance of ', ' is a subinstance of '], u'distinguished - area': [' is a subinstance of ', ' is a subinstance of '], u'program - planning': [' is a subinstance of ', ' is a subinstance of '], u'purely - growth': [' is a subinstance of '], u'back - predate': [' is a subinstance of '], u'run - beyond': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'series - first': [' is a subinstance of '], u'land - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'choosing - choice': [' is a subinstance of ', ' is a subinstance of '], u'interpret - legal_power': [' is a subinstance of '], u'Chennai - Bay': [' is a superinstance of '], u'fast - later': [' is a superinstance of '], u'run - points': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'act - planning': [' is a subinstance of ', ' is a subinstance of '], u'region - district': [' is a subinstance of ', ' is a subinstance of '], u'student - comprehensive_examination': [' is a subinstance of '], u'consider - carefully': [' is a superinstance of '], u'field - comprehensive_examination': [' is a subinstance of '], u'area - geographical': [' is a superinstance of ', ' is a superinstance of '], u'cost - spent': [' is a superinstance of '], u'amount - regulate': [' is a subinstance of '], u'barren - uninhabited': [' is a superinstance of '], u"either - '": [' is a superinstance of '], u'regulate - fix': [' is a superinstance of '], u'disease - lupus_erythematosus': [' is a subinstance of '], u'choice - act': [' is a superinstance of ', ' is a superinstance of '], u'since - Tamil': [' is a subinstance of '], u'fact - effective': [' is a subinstance of '], u'position - way': [' is a superinstance of '], u'fast - ahead': [' is a superinstance of '], u'probable - real': [' is a superinstance of '], u'fast - correct': [' is a superinstance of '], u'town - urban': [' is a superinstance of '], u'deliberations - act': [' is a subinstance of ', ' is a subinstance of '], u'legal_power - right': [' is a superinstance of '], u'state - organized': [' is a superinstance of ', ' is a superinstance of '], u'information_technology - retrieve': [' is a superinstance of '], u'ahead - fast': [' is a subinstance of '], u'earlier - predate': [' is a subinstance of '], u'astatine - series': [' is a superinstance of '], u'series - astatine': [' is a subinstance of '], u'acting - solid': [' is a subinstance of '], u'fast - used': [' is a superinstance of '], u'times - Tamil': [' is a subinstance of '], u'negative - either': [' is a subinstance of '], u'metropolitan - position': [' is a superinstance of '], u'simple - growth': [' is a subinstance of '], u'state - people': [' is a superinstance of ', ' is a superinstance of '], u'district - administrative': [' is a superinstance of ', ' is a superinstance of '], u'kilometer - length': [' is a superinstance of ', ' is a superinstance of '], u'area - serving': [' is a superinstance of ', ' is a superinstance of '], u'inflammatory - lupus_erythematosus': [' is a subinstance of '], u'information_technology - engineering': [' is a superinstance of '], u'run - stretch': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'either - intensive': [' is a superinstance of '], u'district - region': [' is a superinstance of ', ' is a superinstance of '], u'lupus_erythematosus - chronic': [' is a superinstance of '], u'Chennai - formerly': [' is a superinstance of '], u'lupus_erythematosus - joints': [' is a superinstance of '], u'points - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'comprehensive_examination - field': [' is a superinstance of '], u'playing - deuce': [' is a subinstance of '], u'first - second': [' is a subinstance of '], u'state - territory': [' is a superinstance of '], u'barren - cultivation': [' is a superinstance of '], u'together - solid': [' is a subinstance of '], u'administrative - district': [' is a subinstance of ', ' is a subinstance of '], u'act - body': [' is a superinstance of ', ' is a superinstance of '], u'town - fixed': [' is a superinstance of '], u'effective - real': [' is a superinstance of '], u'involved - growth': [' is a subinstance of '], u'either - negative': [' is a superinstance of '], u'deuce - two': [' is a superinstance of '], u'space - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'equivalent - metropolitan': [' is a subinstance of '], u'including - cost': [' is a subinstance of '], u'legal_power - power': [' is a superinstance of '], u'later - fast': [' is a subinstance of '], u'number - option': [' is a subinstance of '], u'degree - second': [' is a subinstance of '], u'etc - position': [' is a subinstance of '], u'second - space': [' is a superinstance of '], u'barren - wilderness': [' is a superinstance of '], u'extend - influence': [' is a superinstance of ', ' is a superinstance of '], u'feasible - means': [' is a superinstance of '], u"' - either": [' is a subinstance of '], u'Chennai - Tamil': [' is a superinstance of '], u'second - next': [' is a superinstance of '], u'meeting - public_square': [' is a subinstance of '], u'act - result': [' is a superinstance of ', ' is a superinstance of '], u'unit - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'existing - existing': [' is a subinstance of ', ' is a superinstance of '], u'adopt - follow': [' is a superinstance of '], u'information_technology - use': [' is a superinstance of '], u'addition - besides': [' is a subinstance of '], u'region - regional': [' is a subinstance of '], u'astatine - radioactive': [' is a superinstance of '], u'lupus_erythematosus - collagen': [' is a superinstance of '], u'option - things': [' is a superinstance of '], u'enact - play': [' is a superinstance of '], u'act - enact': [' is a subinstance of '], u'solid - together': [' is a superinstance of '], u'0.621371 - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'eat - devour': [' is a subinstance of '], u'astatine - highly': [' is a superinstance of '], u'growth - events': [' is a superinstance of '], u'apply - legal_power': [' is a subinstance of '], u'act - separate': [' is a subinstance of '], u'area - usually': [' is a superinstance of ', ' is a superinstance of '], u'astatine - halogen': [' is a superinstance of '], u'area - distinguished': [' is a superinstance of ', ' is a superinstance of '], u'degree - regulate': [' is a subinstance of '], u'one - deuce': [' is a subinstance of '], u'growth - individual': [' is a superinstance of '], u'area - culture': [' is a superinstance of ', ' is a superinstance of '], u'biological - growth': [' is a subinstance of '], u'play - enact': [' is a subinstance of '], u'retrieve - information_technology': [' is a subinstance of '], u'government - agency': [' is a subinstance of '], u'constitute - form': [' is a superinstance of '], u'handcrafts - workshop': [' is a subinstance of '], u'way - position': [' is a subinstance of '], u'Tamil - southern': [' is a superinstance of '], u'unit - agency': [' is a subinstance of '], u'strategies - adopt': [' is a subinstance of '], u'cost - labor': [' is a superinstance of '], u'carefully - consider': [' is a subinstance of '], u'next - second': [' is a subinstance of '], u'astatine - unstable': [' is a superinstance of '], u'wilderness - barren': [' is a subinstance of '], u'exploitation - productive': [' is a superinstance of ', ' is a superinstance of '], u'astatine - element': [' is a superinstance of '], u'governing - government': [' is a subinstance of '], u'open - public_square': [' is a subinstance of '], u'cost - total': [' is a superinstance of '], u'lupus_erythematosus - connective': [' is a superinstance of '], u'growing - growth': [' is a subinstance of '], u'device - zero': [' is a subinstance of '], u'lupus_erythematosus - disease': [' is a superinstance of '], u'adopt - theories': [' is a superinstance of '], u'culture - area': [' is a subinstance of ', ' is a subinstance of '], u'plan - devise': [' is a superinstance of '], u'time - time': [' is a subinstance of ', ' is a superinstance of '], u'making - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'week - Thursday': [' is a subinstance of '], u'declare - propose': [' is a subinstance of '], u'purposes - district': [' is a subinstance of ', ' is a subinstance of '], u'boundary - town': [' is a subinstance of '], u'express - state': [' is a subinstance of '], u'town - city': [' is a superinstance of '], u'Tamil - since': [' is a superinstance of '], u'act - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'cost - goods': [' is a superinstance of '], u'state - occupied': [' is a superinstance of '], u'events - growth': [' is a subinstance of '], u'words - state': [' is a subinstance of '], u'first - ordering': [' is a superinstance of '], u'southern - Tamil': [' is a subinstance of '], u'planning - act': [' is a superinstance of ', ' is a superinstance of '], u'growth - simple': [' is a superinstance of '], u'first - first': [' is a subinstance of ', ' is a superinstance of '], u'run - certain': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'Chennai - Madras': [' is a superinstance of '], u'element - astatine': [' is a subinstance of '], u'Church - metropolitan': [' is a subinstance of '], u'circumstances - feasible': [' is a subinstance of '], u'certain - probable': [' is a subinstance of '], u'two - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'Chennai - city': [' is a superinstance of '], u'given - metropolitan': [' is a subinstance of '], u'Tamil - India': [' is a superinstance of '], u'adopt - plans': [' is a superinstance of '], u'uranium - astatine': [' is a subinstance of '], u'rate - regulate': [' is a subinstance of '], u'total - cost': [' is a subinstance of '], u'enact - represent': [' is a superinstance of '], u'state - single': [' is a superinstance of ', ' is a superinstance of '], u'information_technology - store': [' is a superinstance of '], u'archbishop - metropolitan': [' is a subinstance of '], u'occupied - state': [' is a subinstance of '], u'made - include': [' is a subinstance of '], u'people - area': [' is a subinstance of ', ' is a subinstance of '], u'area - region': [' is a superinstance of ', ' is a superinstance of '], u'Tamil - Dravidian': [' is a superinstance of '], u'branch - information_technology': [' is a subinstance of '], u'indefinite - area': [' is a subinstance of ', ' is a subinstance of '], u'cards - deuce': [' is a subinstance of '], u'astatine - uranium': [' is a superinstance of '], u'planning - course': [' is a superinstance of ', ' is a superinstance of '], u'either - meaning': [' is a superinstance of '], u'cost - services': [' is a superinstance of '], u'metropolitan - western': [' is a superinstance of '], u'real - effective': [' is a subinstance of '], u'workshop - handcrafts': [' is a superinstance of '], u'devise - plan': [' is a subinstance of '], u'region - spatial': [' is a superinstance of '], u'cost - including': [' is a superinstance of '], u'exploitation - profitable': [' is a superinstance of ', ' is a superinstance of '], u'worthless - barren': [' is a subinstance of '], u'Tamil - Sri': [' is a superinstance of '], u'growth - biological': [' is a superinstance of '], u'plan - make': [' is a superinstance of '], u'store - information_technology': [' is a subinstance of '], u'`likewise - either': [' is a subinstance of '], u'lupus_erythematosus - inflammatory': [' is a superinstance of '], u'devour - immoderately': [' is a superinstance of '], u'makes - planner': [' is a subinstance of '], u'Lanka - Tamil': [' is a subinstance of '], u'deuce - cards': [' is a superinstance of '], u'joints - lupus_erythematosus': [' is a subinstance of '], u'administrative - agency': [' is a subinstance of '], u'provision - provisions': [' is a superinstance of '], u'kilometer - metric': [' is a superinstance of ', ' is a superinstance of '], u'presently - existing': [' is a subinstance of '], u'state - administrative': [' is a superinstance of '], u'things - option': [' is a subinstance of '], u'town - boundary': [' is a superinstance of '], u'growth - growing': [' is a superinstance of '], u'serving - area': [' is a subinstance of ', ' is a subinstance of '], u'run - extend': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'run - point': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'feasible - circumstances': [' is a superinstance of '], u'deuce - playing': [' is a superinstance of '], u'organically - growth': [' is a subinstance of '], u'four - deuce': [' is a subinstance of '], u'western - metropolitan': [' is a subinstance of '], u'legal_power - law': [' is a superinstance of '], u'level - growth': [' is a subinstance of '], u'districts - state': [' is a subinstance of '], u'consider - think': [' is a superinstance of '], u'title - metropolitan': [' is a subinstance of '], u'influence - extend': [' is a subinstance of ', ' is a subinstance of '], u'workshop - manufacturing': [' is a superinstance of '], u'Sri - Tamil': [' is a subinstance of '], u'definite - planning': [' is a subinstance of ', ' is a subinstance of '], u'act - deliberations': [' is a superinstance of ', ' is a superinstance of '], u'work - plan': [' is a subinstance of '], u'boundary - area': [' is a subinstance of ', ' is a subinstance of '], u'legal - act': [' is a subinstance of ', ' is a subinstance of '], u'comprehensive_examination - proficiency': [' is a superinstance of '], u'either - `likewise': [' is a superinstance of '], u'particular - area': [' is a subinstance of ', ' is a subinstance of '], u'Chennai - Bengal': [' is a superinstance of '], u'option - number': [' is a superinstance of '], u'proficiency - comprehensive_examination': [' is a subinstance of '], u'water - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'area - special': [' is a superinstance of ', ' is a superinstance of '], u'area - boundary': [' is a superinstance of ', ' is a superinstance of '], u'region - something': [' is a superinstance of '], u'act - legal': [' is a superinstance of ', ' is a superinstance of '], u'growth - purely': [' is a superinstance of '], u'growth - gradually': [' is a superinstance of '], u'city - Chennai': [' is a subinstance of '], u'Tamil - spoken': [' is a superinstance of '], u'option - chosen': [' is a superinstance of '], u'unfolding - growth': [' is a subinstance of '], u'separate - barrier': [' is a superinstance of '], u'language - Tamil': [' is a subinstance of '], u'head - charge': [' is a superinstance of '], u'state - government': [' is a superinstance of ', ' is a superinstance of '], u'supply - provision': [' is a subinstance of '], u'extend - expand': [' is a superinstance of ', ' is a superinstance of '], u'state - one': [' is a superinstance of '], u'fixed - town': [' is a subinstance of '], u'exploitation - water': [' is a superinstance of ', ' is a superinstance of '], u'enact - perform': [' is a superinstance of '], u'distance - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'propose - something': [' is a superinstance of '], u'individual - growth': [' is a subinstance of '], u'planning - action': [' is a superinstance of ', ' is a superinstance of '], u'state - express': [' is a superinstance of '], u'biology - growth': [' is a subinstance of '], u'indicating - fast': [' is a subinstance of '], u'halogen - astatine': [' is a subinstance of '], u'process - growth': [' is a subinstance of '], u'zero - value': [' is a superinstance of '], u'product - astatine': [' is a subinstance of '], u'goods - cost': [' is a subinstance of '], u'radioactive - astatine': [' is a subinstance of '], u'nation - state': [' is a subinstance of '], u'Dravidian - Tamil': [' is a subinstance of '], u'agency - administrative': [' is a superinstance of '], u'existing - presently': [' is a superinstance of '], u'compose - constitute': [' is a subinstance of '], u'connective - lupus_erythematosus': [' is a subinstance of '], u'thorium - astatine': [' is a subinstance of '], u'run - scope': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'deals - information_technology': [' is a subinstance of '], u'information - information_technology': [' is a subinstance of '], u'two - public_square': [' is a subinstance of '], u'special - comprehensive_examination': [' is a subinstance of '], u'complex - growth': [' is a subinstance of '], u'act - committee': [' is a superinstance of ', ' is a superinstance of '], u'constituent - state': [' is a subinstance of '], u'legislative - act': [' is a subinstance of ', ' is a subinstance of '], u'metropolitan - patriarch': [' is a superinstance of '], u'Thursday - working': [' is a superinstance of '], u'smaller - town': [' is a subinstance of '], u'position - topics': [' is a superinstance of '], u'unstable - astatine': [' is a subinstance of '], u'become - probable': [' is a subinstance of '], u'adjust - regulate': [' is a subinstance of '], u'collagen - lupus_erythematosus': [' is a subinstance of '], u'expand - extend': [' is a subinstance of ', ' is a subinstance of '], u'something - region': [' is a subinstance of '], u'lupus_erythematosus - tissue': [' is a superinstance of '], u'kilometer - 1000': [' is a superinstance of ', ' is a superinstance of '], u'regulate - amount': [' is a superinstance of '], u'choose - adopt': [' is a subinstance of '], u'person - head': [' is a subinstance of '], u'feasible - capable': [' is a superinstance of '], u'solid - acting': [' is a superinstance of '], u'affecting - lupus_erythematosus': [' is a subinstance of '], u'length - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'society - act': [' is a subinstance of ', ' is a subinstance of '], u'whole - sum': [' is a subinstance of '], u'felt - cover': [' is a superinstance of '], u'second - degree': [' is a superinstance of '], u'planner - plans': [' is a superinstance of '], u'district - marked': [' is a superinstance of ', ' is a superinstance of '], u'felt - felt': [' is a subinstance of ', ' is a superinstance of '], u'beyond - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'certain - run': [' is a subinstance of ', ' is a subinstance of ', ' is a subinstance of '], u'adopt - policies': [' is a superinstance of '], u'theories - adopt': [' is a subinstance of '], u'probable - likely': [' is a superinstance of '], u'constitute - compose': [' is a superinstance of '], u'part - include': [' is a subinstance of '], u'need - requiring': [' is a superinstance of '], u'two - deuce': [' is a subinstance of '], u'location - region': [' is a subinstance of '], u'undiversified - solid': [' is a subinstance of '], u'metropolitan - Christianity': [' is a superinstance of '], u'characteristic - regional': [' is a subinstance of '], u'territory - state': [' is a subinstance of '], u'like - either': [' is a subinstance of '], u'separate - act': [' is a superinstance of '], u'changing - growth': [' is a subinstance of '], u'information_technology - deals': [' is a superinstance of '], u'use - information_technology': [' is a subinstance of '], u'region - area': [' is a subinstance of ', ' is a subinstance of '], u'weigh - consider': [' is a subinstance of '], u'purpose - area': [' is a subinstance of ', ' is a subinstance of '], u'one - state': [' is a subinstance of '], u'Tamil - times': [' is a superinstance of '], u'growth - process': [' is a superinstance of '], u'astatine - product': [' is a superinstance of '], u'something - either': [' is a subinstance of '], u'enact - act': [' is a superinstance of '], u'intensive - comprehensive_examination': [' is a subinstance of '], u'second - first': [' is a superinstance of '], u'body - state': [' is a subinstance of ', ' is a subinstance of '], u'predate - time': [' is a superinstance of '], u'region - extended': [' is a superinstance of '], u'astatine - decay': [' is a superinstance of '], u'solid - undiversified': [' is a superinstance of '], u'propose - make': [' is a superinstance of '], u'highest - first': [' is a subinstance of '], u'information_technology - transmit': [' is a superinstance of '], u'geography - area': [' is a subinstance of ', ' is a subinstance of '], u'cover - felt': [' is a subinstance of '], u'run - space': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'devour - eat': [' is a superinstance of '], u'India - Tamil': [' is a subinstance of '], u'adopt - choose': [' is a superinstance of '], u'Tamil - Chennai': [' is a subinstance of '], u'workplace - workshop': [' is a subinstance of '], u'labor - cost': [' is a subinstance of '], u'planner - makes': [' is a superinstance of '], u'metropolitan - title': [' is a superinstance of '], u'heaviest - astatine': [' is a subinstance of '], u'engineering - information_technology': [' is a subinstance of '], u'extended - region': [' is a subinstance of '], u'Tamil - Tamil': [' is a subinstance of ', ' is a superinstance of '], u'politically - state': [' is a subinstance of ', ' is a subinstance of '], u'decay - astatine': [' is a subinstance of '], u'space - second': [' is a subinstance of '], u'growth - biology': [' is a superinstance of '], u'document - act': [' is a subinstance of ', ' is a subinstance of '], u'district - purposes': [' is a superinstance of ', ' is a superinstance of '], u'need - relief': [' is a superinstance of '], u'miles - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'either - `also': [' is a superinstance of '], u'kilometer - equal': [' is a superinstance of ', ' is a superinstance of '], u'time - predate': [' is a subinstance of '], u'position - etc': [' is a superinstance of '], u'run - two': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'chosen - option': [' is a subinstance of '], u'state - body': [' is a superinstance of ', ' is a superinstance of '], u'time - set': [' is a superinstance of '], u'uninhabited - barren': [' is a subinstance of '], u'testing - comprehensive_examination': [' is a subinstance of '], u'organism - growth': [' is a subinstance of '], u'position - second': [' is a subinstance of '], u'growth - complex': [' is a superinstance of '], u'gradually - growth': [' is a subinstance of '], u'kilometer - meters': [' is a superinstance of ', ' is a superinstance of '], u'situations - position': [' is a subinstance of '], u'time - fast': [' is a subinstance of '], u'special - area': [' is a subinstance of ', ' is a subinstance of '], u'organized - state': [' is a subinstance of ', ' is a subinstance of '], u'used - either': [' is a subinstance of '], u'comprehensive_examination - examination': [' is a superinstance of '], u'information_technology - information': [' is a superinstance of '], u'Thursday - fifth': [' is a superinstance of '], u'productive - exploitation': [' is a subinstance of ', ' is a subinstance of '], u'`also - either': [' is a subinstance of '], u'money - cost': [' is a subinstance of '], u'law - legal_power': [' is a subinstance of '], u'usually - area': [' is a subinstance of ', ' is a subinstance of '], u'government - act': [' is a superinstance of '], u'comprehensive_examination - special': [' is a superinstance of '], u'sum - whole': [' is a superinstance of '], u'solid - single': [' is a superinstance of '], u'likely - probable': [' is a subinstance of '], u'regulate - time': [' is a subinstance of ', ' is a superinstance of '], u'deuce - spots': [' is a superinstance of '], u'either - like': [' is a superinstance of '], u'time - cost': [' is a subinstance of '], u'propose - declare': [' is a superinstance of '], u'timepieces - fast': [' is a subinstance of '], u'zero - instrument': [' is a superinstance of '], u'whole - solid': [' is a subinstance of '], u'plans - planner': [' is a subinstance of '], u'Tamil - prehistoric': [' is a superinstance of '], u'used - fast': [' is a subinstance of '], u'information_technology - telecommunications': [' is a superinstance of '], u'region - location': [' is a superinstance of '], u'growth - unfolding': [' is a superinstance of '], u'real - probable': [' is a subinstance of '], u'administrative - state': [' is a subinstance of '], u'area - particular': [' is a superinstance of ', ' is a superinstance of '], u'regulate - rate': [' is a superinstance of '], u'metropolitan - equivalent': [' is a superinstance of '], u'Orthodox - metropolitan': [' is a subinstance of '], u'provision - supply': [' is a superinstance of '], u'act - codifying': [' is a superinstance of ', ' is a superinstance of '], u'make - plan': [' is a subinstance of '], u'amount - sum': [' is a subinstance of '], u'propose - plan': [' is a superinstance of '], u'plan - propose': [' is a subinstance of '], u'metropolitan - archbishop': [' is a superinstance of '], u'growth - level': [' is a superinstance of '], u'zero - device': [' is a superinstance of '], u'selecting - choice': [' is a subinstance of ', ' is a subinstance of '], u'adopt - ideas': [' is a superinstance of '], u'body - act': [' is a subinstance of ', ' is a subinstance of '], u'Chennai - Nadu': [' is a superinstance of '], u'marked - district': [' is a subinstance of ', ' is a subinstance of '], u'area - town': [' is a subinstance of '], u'highly - astatine': [' is a subinstance of '], u'metropolitan - Eastern': [' is a superinstance of '], u'instrument - zero': [' is a subinstance of '], u'power - legal_power': [' is a subinstance of '], u'hand - feasible': [' is a subinstance of '], u'kilometer - 0.621371': [' is a superinstance of ', ' is a superinstance of '], u'consider - weigh': [' is a superinstance of '], u'metropolitan - Orthodox': [' is a superinstance of '], u'deuce - deck': [' is a superinstance of '], u'either - statement': [' is a superinstance of '], u'solid - whole': [' is a superinstance of '], u'growth - organically': [' is a superinstance of '], u'patriarch - metropolitan': [' is a subinstance of '], u'act - choice': [' is a subinstance of ', ' is a subinstance of '], u'state - districts': [' is a superinstance of '], u'second - position': [' is a superinstance of '], u'state - words': [' is a superinstance of '], u'manufacturing - workshop': [' is a subinstance of '], u'streets - public_square': [' is a subinstance of '], u'exercising - government': [' is a subinstance of '], u'growth - organism': [' is a superinstance of '], u'workshop - small': [' is a superinstance of '], u'plan - work': [' is a superinstance of '], u'barrier - separate': [' is a subinstance of '], u'telecommunications - information_technology': [' is a subinstance of '], u'run - time': [' is a superinstance of ', ' is a superinstance of ', ' is a superinstance of '], u'charge - head': [' is a subinstance of '], u'probable - true': [' is a superinstance of '], u'committee - act': [' is a subinstance of ', ' is a subinstance of '], u'act - government': [' is a subinstance of '], u'public_square - two': [' is a superinstance of '], u'regulate - degree': [' is a superinstance of '], u'astatine - thorium': [' is a superinstance of '], u'exploitation - land': [' is a superinstance of ', ' is a superinstance of '], u'metric - kilometer': [' is a subinstance of ', ' is a subinstance of '], u'prehistoric - Tamil': [' is a subinstance of '], u'fast - timepieces': [' is a superinstance of '], u'exploitation - area': [' is a superinstance of ', ' is a superinstance of '], u'option - one': [' is a superinstance of '], u'time - regulate': [' is a superinstance of ', ' is a subinstance of ']})
+((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((( [lambda: represent  is a subinstance of  enact]) [lambda: enact  is a superinstance of  perform]) [lambda: enact  is a superinstance of  play]) [lambda: enact  is a superinstance of  act]) [lambda: act  is a superinstance of  body]) [lambda: body  is a subinstance of  state]) [lambda: state  is a superinstance of  territory]) [lambda: state  is a superinstance of  people]) [lambda: people  is a subinstance of  area]) [lambda: area  is a subinstance of  town]) [lambda: town  is a superinstance of  city]) [lambda: city  is a subinstance of  Chennai]) [lambda: Chennai  is a superinstance of  Madras]) [lambda: Chennai  is a superinstance of  formerly]) [lambda: Chennai  is a superinstance of  Bengal]) [lambda: Chennai  is a superinstance of  Bay]) [lambda: Chennai  is a superinstance of  Tamil]) [lambda: Tamil  is a superinstance of  Sri]) [lambda: Tamil  is a superinstance of  language]) [lambda: Tamil  is a superinstance of  spoken]) [lambda: Tamil  is a superinstance of  Lanka]) [lambda: Tamil  is a superinstance of  since]) [lambda: Tamil  is a superinstance of  India]) [lambda: Tamil  is a superinstance of  times]) [lambda: Tamil  is a superinstance of  prehistoric]) [lambda: Tamil  is a superinstance of  southern]) [lambda: Tamil  is a superinstance of  Dravidian]) [lambda: Chennai  is a superinstance of  Nadu]) [lambda: town  is a superinstance of  smaller]) [lambda: town  is a superinstance of  boundary]) [lambda: town  is a superinstance of  fixed]) [lambda: town  is a superinstance of  urban]) [lambda: area  is a superinstance of  serving]) [lambda: area  is a superinstance of  region]) [lambda: region  is a superinstance of  extended]) [lambda: region  is a subinstance of  district]) [lambda: district  is a superinstance of  administrative]) [lambda: administrative  is a subinstance of  agency]) [lambda: agency  is a superinstance of  unit]) [lambda: unit  is a subinstance of  kilometer]) [lambda: kilometer  is a superinstance of  0.621371]) [lambda: kilometer  is a superinstance of  metric]) [lambda: kilometer  is a superinstance of  equal]) [lambda: kilometer  is a superinstance of  length]) [lambda: kilometer  is a superinstance of  miles]) [lambda: kilometer  is a superinstance of  meters]) [lambda: kilometer  is a superinstance of  1000]) [lambda: agency  is a superinstance of  government]) [lambda: government  is a superinstance of  exercising]) [lambda: government  is a superinstance of  governing]) [lambda: government  is a superinstance of  authority]) [lambda: district  is a superinstance of  purposes]) [lambda: district  is a superinstance of  marked]) [lambda: region  is a subinstance of  regional]) [lambda: regional  is a superinstance of  characteristic]) [lambda: region  is a superinstance of  something]) [lambda: something  is a subinstance of  propose]) [lambda: propose  is a superinstance of  make]) [lambda: make  is a subinstance of  plan]) [lambda: plan  is a superinstance of  devise]) [lambda: plan  is a superinstance of  work]) [lambda: propose  is a superinstance of  proposal]) [lambda: propose  is a superinstance of  declare]) [lambda: something  is a subinstance of  either]) [lambda: either  is a superinstance of  `also]) [lambda: either  is a superinstance of  used]) [lambda: used  is a subinstance of  fast]) [lambda: fast  is a superinstance of  ahead]) [lambda: fast  is a superinstance of  later]) [lambda: fast  is a superinstance of  time]) [lambda: time  is a superinstance of  set]) [lambda: time  is a subinstance of  run]) [lambda: run  is a superinstance of  distance]) [lambda: run  is a superinstance of  extend]) [lambda: extend  is a superinstance of  influence]) [lambda: extend  is a superinstance of  expand]) [lambda: run  is a superinstance of  point]) [lambda: run  is a superinstance of  stretch]) [lambda: run  is a superinstance of  certain]) [lambda: certain  is a subinstance of  probable]) [lambda: probable  is a superinstance of  real]) [lambda: real  is a subinstance of  effective]) [lambda: effective  is a superinstance of  theoretical]) [lambda: effective  is a superinstance of  fact]) [lambda: effective  is a superinstance of  existing]) [lambda: existing  is a superinstance of  presently]) [lambda: probable  is a superinstance of  likely]) [lambda: probable  is a superinstance of  true]) [lambda: probable  is a superinstance of  become]) [lambda: run  is a superinstance of  space]) [lambda: space  is a subinstance of  second]) [lambda: second  is a superinstance of  degree]) [lambda: degree  is a subinstance of  regulate]) [lambda: regulate  is a superinstance of  fix]) [lambda: regulate  is a superinstance of  amount]) [lambda: amount  is a subinstance of  sum]) [lambda: sum  is a superinstance of  whole]) [lambda: whole  is a subinstance of  solid]) [lambda: solid  is a superinstance of  together]) [lambda: solid  is a superinstance of  acting]) [lambda: solid  is a superinstance of  single]) [lambda: solid  is a superinstance of  undiversified]) [lambda: regulate  is a superinstance of  rate]) [lambda: regulate  is a superinstance of  adjust]) [lambda: adjust  is a subinstance of  zero]) [lambda: zero  is a superinstance of  device]) [lambda: zero  is a superinstance of  instrument]) [lambda: zero  is a superinstance of  value]) [lambda: second  is a superinstance of  next]) [lambda: second  is a superinstance of  magnitude]) [lambda: second  is a superinstance of  coming]) [lambda: second  is a superinstance of  position]) [lambda: position  is a superinstance of  regarding]) [lambda: position  is a subinstance of  metropolitan]) [lambda: metropolitan  is a superinstance of  given]) [lambda: metropolitan  is a superinstance of  Orthodox]) [lambda: metropolitan  is a superinstance of  archbishop]) [lambda: metropolitan  is a superinstance of  equivalent]) [lambda: metropolitan  is a superinstance of  title]) [lambda: metropolitan  is a superinstance of  patriarch]) [lambda: metropolitan  is a superinstance of  Christianity]) [lambda: metropolitan  is a superinstance of  Eastern]) [lambda: metropolitan  is a superinstance of  western]) [lambda: metropolitan  is a superinstance of  Church]) [lambda: metropolitan  is a superinstance of  bishop]) [lambda: position  is a superinstance of  situations]) [lambda: position  is a superinstance of  topics]) [lambda: position  is a superinstance of  etc]) [lambda: position  is a superinstance of  way]) [lambda: second  is a superinstance of  first]) [lambda: first  is a superinstance of  ordering]) [lambda: first  is a superinstance of  series]) [lambda: series  is a subinstance of  astatine]) [lambda: astatine  is a superinstance of  product]) [lambda: astatine  is a superinstance of  radioactive]) [lambda: astatine  is a superinstance of  decay]) [lambda: astatine  is a superinstance of  heaviest]) [lambda: astatine  is a superinstance of  uranium]) [lambda: astatine  is a superinstance of  thorium]) [lambda: astatine  is a superinstance of  highly]) [lambda: astatine  is a superinstance of  halogen]) [lambda: astatine  is a superinstance of  unstable]) [lambda: astatine  is a superinstance of  element]) [lambda: first  is a superinstance of  highest]) [lambda: run  is a superinstance of  two]) [lambda: two  is a subinstance of  deuce]) [lambda: deuce  is a superinstance of  deck]) [lambda: deuce  is a superinstance of  spots]) [lambda: deuce  is a superinstance of  one]) [lambda: one  is a subinstance of  option]) [lambda: option  is a superinstance of  chosen]) [lambda: option  is a superinstance of  things]) [lambda: option  is a superinstance of  number]) [lambda: deuce  is a superinstance of  four]) [lambda: deuce  is a superinstance of  cards]) [lambda: deuce  is a superinstance of  playing]) [lambda: two  is a subinstance of  public_square]) [lambda: public_square  is a superinstance of  meeting]) [lambda: public_square  is a superinstance of  streets]) [lambda: public_square  is a superinstance of  open]) [lambda: run  is a superinstance of  points]) [lambda: run  is a superinstance of  scope]) [lambda: run  is a superinstance of  beyond]) [lambda: time  is a subinstance of  predate]) [lambda: predate  is a superinstance of  go]) [lambda: predate  is a superinstance of  earlier]) [lambda: predate  is a superinstance of  back]) [lambda: time  is a subinstance of  cost]) [lambda: cost  is a superinstance of  goods]) [lambda: cost  is a superinstance of  money]) [lambda: cost  is a superinstance of  spent]) [lambda: cost  is a superinstance of  labor]) [lambda: cost  is a superinstance of  including]) [lambda: cost  is a superinstance of  services]) [lambda: cost  is a superinstance of  total]) [lambda: fast  is a superinstance of  timepieces]) [lambda: fast  is a superinstance of  correct]) [lambda: fast  is a superinstance of  indicating]) [lambda: either  is a superinstance of  like]) [lambda: either  is a superinstance of  ']) [lambda: either  is a superinstance of  `likewise]) [lambda: either  is a superinstance of  negative]) [lambda: either  is a superinstance of  intensive]) [lambda: intensive  is a subinstance of  comprehensive_examination]) [lambda: comprehensive_examination  is a superinstance of  proficiency]) [lambda: comprehensive_examination  is a superinstance of  knowledge]) [lambda: comprehensive_examination  is a superinstance of  testing]) [lambda: comprehensive_examination  is a superinstance of  field]) [lambda: comprehensive_examination  is a superinstance of  examination]) [lambda: comprehensive_examination  is a superinstance of  student]) [lambda: comprehensive_examination  is a superinstance of  special]) [lambda: either  is a superinstance of  meaning]) [lambda: either  is a superinstance of  statement]) [lambda: region  is a superinstance of  spatial]) [lambda: region  is a superinstance of  location]) [lambda: area  is a subinstance of  exploitation]) [lambda: exploitation  is a superinstance of  profitable]) [lambda: exploitation  is a superinstance of  land]) [lambda: exploitation  is a superinstance of  useful]) [lambda: exploitation  is a superinstance of  water]) [lambda: exploitation  is a superinstance of  productive]) [lambda: exploitation  is a superinstance of  making]) [lambda: area  is a superinstance of  culture]) [lambda: area  is a superinstance of  purpose]) [lambda: area  is a superinstance of  geographical]) [lambda: area  is a superinstance of  particular]) [lambda: area  is a superinstance of  usually]) [lambda: area  is a superinstance of  indefinite]) [lambda: area  is a superinstance of  distinguished]) [lambda: area  is a superinstance of  geography]) [lambda: state  is a superinstance of  occupied]) [lambda: state  is a superinstance of  express]) [lambda: state  is a superinstance of  organized]) [lambda: state  is a superinstance of  politically]) [lambda: state  is a superinstance of  nation]) [lambda: state  is a superinstance of  districts]) [lambda: state  is a superinstance of  words]) [lambda: state  is a superinstance of  constituent]) [lambda: act  is a superinstance of  legislative]) [lambda: act  is a subinstance of  separate]) [lambda: separate  is a superinstance of  stand]) [lambda: separate  is a superinstance of  barrier]) [lambda: act  is a superinstance of  legal]) [lambda: act  is a subinstance of  choice]) [lambda: choice  is a superinstance of  selecting]) [lambda: choice  is a superinstance of  choosing]) [lambda: act  is a superinstance of  deliberations]) [lambda: act  is a subinstance of  planning]) [lambda: planning  is a superinstance of  definite]) [lambda: planning  is a superinstance of  course]) [lambda: planning  is a superinstance of  program]) [lambda: planning  is a superinstance of  action]) [lambda: planning  is a superinstance of  formulating]) [lambda: act  is a superinstance of  result]) [lambda: act  is a superinstance of  committee]) [lambda: act  is a superinstance of  society]) [lambda: act  is a superinstance of  document]) [lambda: act  is a superinstance of  codifying]) [lambda: consider  is a superinstance of  carefully]) [lambda: consider  is a superinstance of  weigh]) [lambda: consider  is a superinstance of  think]) [lambda: skin  is a subinstance of  lupus_erythematosus]) [lambda: lupus_erythematosus  is a superinstance of  inflammatory]) [lambda: lupus_erythematosus  is a superinstance of  joints]) [lambda: lupus_erythematosus  is a superinstance of  collagen]) [lambda: lupus_erythematosus  is a superinstance of  disease]) [lambda: lupus_erythematosus  is a superinstance of  connective]) [lambda: lupus_erythematosus  is a superinstance of  chronic]) [lambda: lupus_erythematosus  is a superinstance of  tissue]) [lambda: lupus_erythematosus  is a superinstance of  affecting]) [lambda: follow  is a subinstance of  adopt]) [lambda: adopt  is a superinstance of  plans]) [lambda: plans  is a subinstance of  planner]) [lambda: planner  is a superinstance of  person]) [lambda: person  is a subinstance of  head]) [lambda: head  is a superinstance of  charge]) [lambda: planner  is a superinstance of  makes]) [lambda: adopt  is a superinstance of  ideas]) [lambda: adopt  is a superinstance of  theories]) [lambda: adopt  is a superinstance of  choose]) [lambda: adopt  is a superinstance of  policies]) [lambda: adopt  is a superinstance of  strategies]) [lambda: include  is a superinstance of  part]) [lambda: include  is a superinstance of  made]) [lambda: condition  is a subinstance of  need]) [lambda: need  is a superinstance of  requiring]) [lambda: need  is a superinstance of  relief]) [lambda: level  is a subinstance of  growth]) [lambda: growth  is a superinstance of  unfolding]) [lambda: growth  is a superinstance of  biology]) [lambda: growth  is a superinstance of  changing]) [lambda: growth  is a superinstance of  simple]) [lambda: growth  is a superinstance of  involved]) [lambda: growth  is a superinstance of  organically]) [lambda: growth  is a superinstance of  complex]) [lambda: growth  is a superinstance of  purely]) [lambda: growth  is a superinstance of  individual]) [lambda: growth  is a superinstance of  gradually]) [lambda: growth  is a superinstance of  growing]) [lambda: growth  is a superinstance of  biological]) [lambda: growth  is a superinstance of  process]) [lambda: growth  is a superinstance of  organism]) [lambda: growth  is a superinstance of  events]) [lambda: deals  is a subinstance of  information_technology]) [lambda: information_technology  is a superinstance of  information]) [lambda: information_technology  is a superinstance of  use]) [lambda: information_technology  is a superinstance of  retrieve]) [lambda: information_technology  is a superinstance of  computers]) [lambda: information_technology  is a superinstance of  engineering]) [lambda: information_technology  is a superinstance of  branch]) [lambda: information_technology  is a superinstance of  transmit]) [lambda: information_technology  is a superinstance of  telecommunications]) [lambda: information_technology  is a superinstance of  store]) [lambda: small  is a subinstance of  workshop]) [lambda: workshop  is a superinstance of  done]) [lambda: done  is a subinstance of  feasible]) [lambda: feasible  is a superinstance of  circumstances]) [lambda: feasible  is a superinstance of  capable]) [lambda: feasible  is a superinstance of  hand]) [lambda: feasible  is a superinstance of  means]) [lambda: workshop  is a superinstance of  manufacturing]) [lambda: workshop  is a superinstance of  handcrafts]) [lambda: workshop  is a superinstance of  workplace]) [lambda: compose  is a subinstance of  constitute]) [lambda: constitute  is a superinstance of  form]) [lambda: interpret  is a subinstance of  legal_power]) [lambda: legal_power  is a superinstance of  apply]) [lambda: legal_power  is a superinstance of  right]) [lambda: legal_power  is a superinstance of  power]) [lambda: legal_power  is a superinstance of  law]) [lambda: working  is a subinstance of  Thursday]) [lambda: Thursday  is a superinstance of  week]) [lambda: Thursday  is a superinstance of  day]) [lambda: Thursday  is a superinstance of  fifth]) [lambda: Thursday  is a superinstance of  fourth]) [lambda: provision  is a superinstance of  provisions]) [lambda: provision  is a superinstance of  supply]) [lambda: besides  is a superinstance of  addition]) [lambda: cover  is a subinstance of  felt]) [lambda: barren  is a superinstance of  worthless]) [lambda: barren  is a superinstance of  cultivation]) [lambda: barren  is a superinstance of  wilderness]) [lambda: barren  is a superinstance of  uninhabited]) [lambda: devour  is a superinstance of  immoderately]) [lambda: devour  is a superinstance of  eat])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+[SentiSynset('state.n.01'), SentiSynset('state.n.02'), SentiSynset('state.n.03'), SentiSynset('state.n.04'), SentiSynset('state_of_matter.n.01'), SentiSynset('state.n.06'), SentiSynset('country.n.02'), SentiSynset('department_of_state.n.01'), SentiSynset('state.v.01'), SentiSynset('submit.v.02'), SentiSynset('express.v.04')]
+[SentiSynset('government.n.01'), SentiSynset('government.n.02'), SentiSynset('government.n.03'), SentiSynset('politics.n.02')]
+[SentiSynset('zero.v.01'), SentiSynset('zero.v.02')]
+[SentiSynset('inch.n.01'), SentiSynset('indium.n.01'), SentiSynset('indiana.n.01'), SentiSynset('in.r.01')]
+[SentiSynset('on.a.01'), SentiSynset('on.a.02'), SentiSynset('along.r.01'), SentiSynset('on.r.02'), SentiSynset('on.r.03')]
+[SentiSynset('two.n.01'), SentiSynset('deuce.n.04')]
+[SentiSynset('option.n.01'), SentiSynset('option.n.02'), SentiSynset('choice.n.02')]
+[SentiSynset('propose.v.01'), SentiSynset('hint.v.01'), SentiSynset('suggest.v.03'), SentiSynset('indicate.v.05'), SentiSynset('suggest.v.05')]
+[SentiSynset('by.r.01'), SentiSynset('aside.r.06')]
+[SentiSynset('chennai.n.01')]
+[SentiSynset('metropolitan.n.01'), SentiSynset('metropolitan.n.02'), SentiSynset('metropolitan.a.01')]
+[SentiSynset('development.n.01'), SentiSynset('development.n.02'), SentiSynset('growth.n.01'), SentiSynset('development.n.04'), SentiSynset('exploitation.n.01'), SentiSynset('development.n.06'), SentiSynset('development.n.07'), SentiSynset('development.n.08'), SentiSynset('development.n.09')]
+[SentiSynset('authority.n.01'), SentiSynset('authority.n.02'), SentiSynset('authority.n.03'), SentiSynset('assurance.n.01'), SentiSynset('agency.n.01'), SentiSynset('authority.n.06'), SentiSynset('authority.n.07')]
+[]
+[SentiSynset('expand.v.01'), SentiSynset('expand.v.02'), SentiSynset('expand.v.03'), SentiSynset('boom.v.05'), SentiSynset('inflate.v.01'), SentiSynset('elaborate.v.01'), SentiSynset('extend.v.09')]
+[SentiSynset('chennai.n.01')]
+[SentiSynset('metropolitan.n.01'), SentiSynset('metropolitan.n.02'), SentiSynset('metropolitan.a.01')]
+[]
+[SentiSynset('information_technology.n.01')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('likely.a.01'), SentiSynset('probable.a.01'), SentiSynset('probably.r.01')]
+[]
+[]
+[SentiSynset('state.n.01'), SentiSynset('state.n.02'), SentiSynset('state.n.03'), SentiSynset('state.n.04'), SentiSynset('state_of_matter.n.01'), SentiSynset('state.n.06'), SentiSynset('country.n.02'), SentiSynset('department_of_state.n.01'), SentiSynset('state.v.01'), SentiSynset('submit.v.02'), SentiSynset('express.v.04')]
+[SentiSynset('may.n.01'), SentiSynset('whitethorn.n.01')]
+[SentiSynset('adopt.v.01'), SentiSynset('adopt.v.02'), SentiSynset('assume.v.02'), SentiSynset('assume.v.03'), SentiSynset('adopt.v.05'), SentiSynset('dramatize.v.01'), SentiSynset('espouse.v.03')]
+[]
+[SentiSynset('second.n.01'), SentiSynset('moment.n.02'), SentiSynset('second_base.n.02'), SentiSynset('moment.n.01'), SentiSynset('second.n.05'), SentiSynset('second.n.06'), SentiSynset('second.n.07'), SentiSynset('second.n.08'), SentiSynset('second_gear.n.01'), SentiSynset('irregular.n.02'), SentiSynset('second.v.01'), SentiSynset('second.v.02'), SentiSynset('second.a.02'), SentiSynset('second.r.01')]
+[SentiSynset('option.n.01'), SentiSynset('option.n.02'), SentiSynset('choice.n.02')]
+[]
+[SentiSynset('widen.v.04'), SentiSynset('run.v.03'), SentiSynset('cover.v.03'), SentiSynset('extend.v.04'), SentiSynset('exsert.v.01'), SentiSynset('extend.v.06'), SentiSynset('offer.v.05'), SentiSynset('stretch.v.02'), SentiSynset('extend.v.09'), SentiSynset('prolong.v.01'), SentiSynset('unfold.v.03'), SentiSynset('gallop.v.03'), SentiSynset('extend.v.13'), SentiSynset('strain.v.03'), SentiSynset('extend.v.15'), SentiSynset('carry.v.09'), SentiSynset('extend.v.17')]
+[]
+[]
+[]
+[]
+[SentiSynset('square.n.01'), SentiSynset('square.n.02'), SentiSynset('public_square.n.01'), SentiSynset('square.n.04'), SentiSynset('square.n.05'), SentiSynset('square.n.06'), SentiSynset('square.n.07'), SentiSynset('square.n.08'), SentiSynset('square.v.01'), SentiSynset('square.v.02'), SentiSynset('square.v.03'), SentiSynset('square.v.04'), SentiSynset('square.v.05'), SentiSynset('square.v.06'), SentiSynset('feather.v.03'), SentiSynset('feather.v.04'), SentiSynset('square.a.01'), SentiSynset('straight.a.06'), SentiSynset('squarely.r.02'), SentiSynset('squarely.r.04'), SentiSynset('squarely.r.03')]
+[]
+[SentiSynset('astatine.n.01'), SentiSynset('at.n.02')]
+[SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07')]
+[SentiSynset('workshop.n.01'), SentiSynset('workshop.n.02')]
+[SentiSynset('on.a.01'), SentiSynset('on.a.02'), SentiSynset('along.r.01'), SentiSynset('on.r.02'), SentiSynset('on.r.03')]
+[]
+[SentiSynset('planning.n.01'), SentiSynset('planning.n.02'), SentiSynset('planning.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[SentiSynset('position.n.03'), SentiSynset('perspective.n.02')]
+[]
+[SentiSynset('chennai.n.01')]
+[]
+[]
+[SentiSynset('here.n.01'), SentiSynset('hera.n.01'), SentiSynset('here.r.01'), SentiSynset('here.r.02'), SentiSynset('here.r.03'), SentiSynset('here.r.04')]
+[SentiSynset('on.a.01'), SentiSynset('on.a.02'), SentiSynset('along.r.01'), SentiSynset('on.r.02'), SentiSynset('on.r.03')]
+[]
+[SentiSynset('head.n.04'), SentiSynset('foreman.n.01'), SentiSynset('headman.n.02')]
+[SentiSynset('planner.n.01'), SentiSynset('planner.n.02')]
+[]
+[]
+[SentiSynset('second.n.01'), SentiSynset('sulfur.n.01'), SentiSynset('south.n.03'), SentiSynset('mho.n.01'), SentiSynset('s.n.05'), SentiSynset('randomness.n.01')]
+[]
+[SentiSynset('propose.v.01'), SentiSynset('hint.v.01'), SentiSynset('suggest.v.03'), SentiSynset('indicate.v.05'), SentiSynset('suggest.v.05')]
+[]
+[]
+[SentiSynset('second.n.01'), SentiSynset('moment.n.02'), SentiSynset('second_base.n.02'), SentiSynset('moment.n.01'), SentiSynset('second.n.05'), SentiSynset('second.n.06'), SentiSynset('second.n.07'), SentiSynset('second.n.08'), SentiSynset('second_gear.n.01'), SentiSynset('irregular.n.02'), SentiSynset('second.v.01'), SentiSynset('second.v.02'), SentiSynset('second.a.02'), SentiSynset('second.r.01')]
+[]
+[]
+[SentiSynset('include.v.01'), SentiSynset('include.v.02'), SentiSynset('include.v.03'), SentiSynset('admit.v.03')]
+[]
+[SentiSynset('whole.n.01'), SentiSynset('whole.n.02'), SentiSynset('whole.a.01'), SentiSynset('whole.a.02'), SentiSynset('wholly.r.01')]
+[]
+[]
+[]
+[]
+[]
+[SentiSynset('district.n.01'), SentiSynset('zone.v.01')]
+[]
+[]
+[]
+[]
+[]
+[]
+[SentiSynset('district.n.01'), SentiSynset('zone.v.01')]
+[]
+[SentiSynset('widen.v.04'), SentiSynset('run.v.03'), SentiSynset('cover.v.03'), SentiSynset('extend.v.04'), SentiSynset('exsert.v.01'), SentiSynset('extend.v.06'), SentiSynset('offer.v.05'), SentiSynset('stretch.v.02'), SentiSynset('extend.v.09'), SentiSynset('prolong.v.01'), SentiSynset('unfold.v.03'), SentiSynset('gallop.v.03'), SentiSynset('extend.v.13'), SentiSynset('strain.v.03'), SentiSynset('extend.v.15'), SentiSynset('carry.v.09'), SentiSynset('extend.v.17')]
+[]
+[SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07')]
+[SentiSynset('sum.n.05'), SentiSynset('sum.n.02'), SentiSynset('total.v.01'), SentiSynset('total.v.02'), SentiSynset('total.v.03')]
+[]
+[]
+[SentiSynset('square.n.01'), SentiSynset('square.n.02'), SentiSynset('public_square.n.01'), SentiSynset('square.n.04'), SentiSynset('square.n.05'), SentiSynset('square.n.06'), SentiSynset('square.n.07'), SentiSynset('square.n.08'), SentiSynset('square.v.01'), SentiSynset('square.v.02'), SentiSynset('square.v.03'), SentiSynset('square.v.04'), SentiSynset('square.v.05'), SentiSynset('square.v.06'), SentiSynset('feather.v.03'), SentiSynset('feather.v.04'), SentiSynset('square.a.01'), SentiSynset('straight.a.06'), SentiSynset('squarely.r.02'), SentiSynset('squarely.r.04'), SentiSynset('squarely.r.03')]
+[SentiSynset('kilometer.n.01')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('more.n.01'), SentiSynset('more.a.01'), SentiSynset('more.a.02'), SentiSynset('more.r.01'), SentiSynset('more.r.02')]
+[]
+[SentiSynset('arsenic.n.02'), SentiSynset('american_samoa.n.01'), SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07'), SentiSynset('equally.r.01')]
+[]
+[SentiSynset('region.n.01'), SentiSynset('area.n.03'), SentiSynset('region.n.03'), SentiSynset('region.n.04'), SentiSynset('region.n.05')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('growth.n.01'), SentiSynset('growing.n.02'), SentiSynset('turn.v.07'), SentiSynset('grow.v.02'), SentiSynset('grow.v.03'), SentiSynset('grow.v.04'), SentiSynset('mature.v.01'), SentiSynset('originate.v.01'), SentiSynset('grow.v.07'), SentiSynset('grow.v.08'), SentiSynset('develop.v.14'), SentiSynset('grow.v.10'), SentiSynset('growing.a.01')]
+[SentiSynset('fast.n.01'), SentiSynset('fast.v.01'), SentiSynset('fast.v.02'), SentiSynset('fast.a.01'), SentiSynset('fast.a.02'), SentiSynset('fast.a.03'), SentiSynset('fast.r.01'), SentiSynset('fast.r.02')]
+[]
+[SentiSynset('need.n.01'), SentiSynset('need.n.02'), SentiSynset('motivation.n.01'), SentiSynset('indigence.n.01'), SentiSynset('necessitate.v.01'), SentiSynset('want.v.02'), SentiSynset('need.v.03'), SentiSynset('inevitably.r.01')]
+[SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07')]
+[SentiSynset('comprehensive_examination.n.01'), SentiSynset('comprehensive.a.01')]
+[SentiSynset('plan.n.01'), SentiSynset('design.n.02'), SentiSynset('plan.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[SentiSynset('inch.n.01'), SentiSynset('indium.n.01'), SentiSynset('indiana.n.01'), SentiSynset('in.r.01')]
+[]
+[]
+[]
+[SentiSynset('state.v.01'), SentiSynset('allege.v.01'), SentiSynset('suppose.v.01'), SentiSynset('read.v.02'), SentiSynset('order.v.01'), SentiSynset('pronounce.v.01'), SentiSynset('say.v.07'), SentiSynset('say.v.08'), SentiSynset('say.v.09'), SentiSynset('say.v.10'), SentiSynset('say.v.11')]
+[SentiSynset('there.n.01'), SentiSynset('there.r.01'), SentiSynset('there.r.02'), SentiSynset('there.r.03')]
+[SentiSynset('are.n.01'), SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('barren.n.01')]
+[SentiSynset('land.n.01'), SentiSynset('land.n.02'), SentiSynset('domain.n.02'), SentiSynset('land.n.04'), SentiSynset('country.n.02'), SentiSynset('kingdom.n.01'), SentiSynset('estate.n.02'), SentiSynset('nation.n.02'), SentiSynset('state.n.04'), SentiSynset('land.n.10'), SentiSynset('farming.n.02'), SentiSynset('land.v.01'), SentiSynset('land.v.02'), SentiSynset('bring.v.05'), SentiSynset('land.v.04'), SentiSynset('land.v.05'), SentiSynset('land.v.06'), SentiSynset('down.v.04')]
+[SentiSynset('inch.n.01'), SentiSynset('indium.n.01'), SentiSynset('indiana.n.01'), SentiSynset('in.r.01')]
+[]
+[SentiSynset('area.n.01'), SentiSynset('area.n.02'), SentiSynset('area.n.03'), SentiSynset('sphere.n.01'), SentiSynset('area.n.05'), SentiSynset('area.n.06')]
+[]
+[SentiSynset('planning.n.01'), SentiSynset('planning.n.02'), SentiSynset('planning.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[SentiSynset('can.n.01'), SentiSynset('can.n.02'), SentiSynset('can.n.03'), SentiSynset('buttocks.n.01'), SentiSynset('toilet.n.02'), SentiSynset('toilet.n.01'), SentiSynset('can.v.01'), SentiSynset('displace.v.03')]
+[SentiSynset('predate.v.01'), SentiSynset('precede.v.02'), SentiSynset('precede.v.03'), SentiSynset('precede.v.04'), SentiSynset('precede.v.05')]
+[]
+[]
+[SentiSynset('first.n.01'), SentiSynset('first.n.02'), SentiSynset('beginning.n.02'), SentiSynset('first_base.n.02'), SentiSynset('first.n.05'), SentiSynset('first_gear.n.01'), SentiSynset('first.a.01'), SentiSynset('first.a.06'), SentiSynset('first.r.01'), SentiSynset('first.r.02'), SentiSynset('first.r.03'), SentiSynset('foremost.r.01')]
+[SentiSynset('option.n.01'), SentiSynset('option.n.02'), SentiSynset('choice.n.02')]
+[SentiSynset('propose.v.01'), SentiSynset('hint.v.01'), SentiSynset('suggest.v.03'), SentiSynset('indicate.v.05'), SentiSynset('suggest.v.05')]
+[SentiSynset('by.r.01'), SentiSynset('aside.r.06')]
+[]
+[SentiSynset('include.v.01'), SentiSynset('include.v.02'), SentiSynset('include.v.03'), SentiSynset('admit.v.03')]
+[SentiSynset('whole.n.01'), SentiSynset('whole.n.02'), SentiSynset('whole.a.01'), SentiSynset('whole.a.02'), SentiSynset('wholly.r.01')]
+[]
+[]
+[SentiSynset('chennai.n.01')]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[SentiSynset('district.n.01'), SentiSynset('zone.v.01')]
+[SentiSynset('widen.v.04'), SentiSynset('run.v.03'), SentiSynset('cover.v.03'), SentiSynset('extend.v.04'), SentiSynset('exsert.v.01'), SentiSynset('extend.v.06'), SentiSynset('offer.v.05'), SentiSynset('stretch.v.02'), SentiSynset('extend.v.09'), SentiSynset('prolong.v.01'), SentiSynset('unfold.v.03'), SentiSynset('gallop.v.03'), SentiSynset('extend.v.13'), SentiSynset('strain.v.03'), SentiSynset('extend.v.15'), SentiSynset('carry.v.09'), SentiSynset('extend.v.17')]
+[SentiSynset('up.v.01'), SentiSynset('up.a.01'), SentiSynset('up.r.01'), SentiSynset('up.r.02'), SentiSynset('up.r.03'), SentiSynset('up.r.04'), SentiSynset('up.r.05')]
+[]
+[]
+[SentiSynset('square.n.01'), SentiSynset('square.n.02'), SentiSynset('public_square.n.01'), SentiSynset('square.n.04'), SentiSynset('square.n.05'), SentiSynset('square.n.06'), SentiSynset('square.n.07'), SentiSynset('square.n.08'), SentiSynset('square.v.01'), SentiSynset('square.v.02'), SentiSynset('square.v.03'), SentiSynset('square.v.04'), SentiSynset('square.v.05'), SentiSynset('square.v.06'), SentiSynset('feather.v.03'), SentiSynset('feather.v.04'), SentiSynset('square.a.01'), SentiSynset('straight.a.06'), SentiSynset('squarely.r.02'), SentiSynset('squarely.r.04'), SentiSynset('squarely.r.03')]
+[]
+[]
+[SentiSynset('state.v.01'), SentiSynset('allege.v.01'), SentiSynset('suppose.v.01'), SentiSynset('read.v.02'), SentiSynset('order.v.01'), SentiSynset('pronounce.v.01'), SentiSynset('say.v.07'), SentiSynset('say.v.08'), SentiSynset('say.v.09'), SentiSynset('say.v.10'), SentiSynset('say.v.11')]
+[]
+[SentiSynset('government.n.01'), SentiSynset('government.n.02'), SentiSynset('government.n.03'), SentiSynset('politics.n.02')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('besides.r.02')]
+[SentiSynset('consider.v.05'), SentiSynset('debate.v.03')]
+[SentiSynset('on.a.01'), SentiSynset('on.a.02'), SentiSynset('along.r.01'), SentiSynset('on.r.02'), SentiSynset('on.r.03')]
+[]
+[]
+[SentiSynset('regulate.v.01'), SentiSynset('regulate.v.02'), SentiSynset('determine.v.02'), SentiSynset('baffle.v.03')]
+[SentiSynset('development.n.01'), SentiSynset('development.n.02'), SentiSynset('growth.n.01'), SentiSynset('development.n.04'), SentiSynset('exploitation.n.01'), SentiSynset('development.n.06'), SentiSynset('development.n.07'), SentiSynset('development.n.08'), SentiSynset('development.n.09')]
+[]
+[]
+[SentiSynset('widen.v.04'), SentiSynset('run.v.03'), SentiSynset('cover.v.03'), SentiSynset('extend.v.04'), SentiSynset('exsert.v.01'), SentiSynset('extend.v.06'), SentiSynset('offer.v.05'), SentiSynset('stretch.v.02'), SentiSynset('extend.v.09'), SentiSynset('prolong.v.01'), SentiSynset('unfold.v.03'), SentiSynset('gallop.v.03'), SentiSynset('extend.v.13'), SentiSynset('strain.v.03'), SentiSynset('extend.v.15'), SentiSynset('carry.v.09'), SentiSynset('extend.v.17'), SentiSynset('extended.a.02')]
+[]
+[]
+[SentiSynset('information_technology.n.01')]
+[SentiSynset('hour_angle.n.02'), SentiSynset('have.v.01'), SentiSynset('have.v.02'), SentiSynset('experience.v.03'), SentiSynset('own.v.01'), SentiSynset('get.v.03'), SentiSynset('consume.v.02'), SentiSynset('have.v.07'), SentiSynset('hold.v.03'), SentiSynset('have.v.09'), SentiSynset('have.v.10'), SentiSynset('have.v.11'), SentiSynset('have.v.12'), SentiSynset('induce.v.02'), SentiSynset('accept.v.02'), SentiSynset('receive.v.01'), SentiSynset('suffer.v.02'), SentiSynset('have.v.17'), SentiSynset('give_birth.v.01'), SentiSynset('take.v.35')]
+[SentiSynset('zero.v.01'), SentiSynset('zero.v.02')]
+[SentiSynset('inch.n.01'), SentiSynset('indium.n.01'), SentiSynset('indiana.n.01'), SentiSynset('in.r.01')]
+[SentiSynset('on.a.01'), SentiSynset('on.a.02'), SentiSynset('along.r.01'), SentiSynset('on.r.02'), SentiSynset('on.r.03')]
+[SentiSynset('two.n.01'), SentiSynset('deuce.n.04')]
+[SentiSynset('option.n.02')]
+[SentiSynset('either.r.01')]
+[]
+[SentiSynset('constitute.v.01'), SentiSynset('appoint.v.01'), SentiSynset('form.v.02'), SentiSynset('establish.v.02')]
+[SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07')]
+[SentiSynset('offprint.n.01'), SentiSynset('separate.n.02'), SentiSynset('separate.v.01'), SentiSynset('separate.v.02'), SentiSynset('distinguish.v.01'), SentiSynset('divide.v.01'), SentiSynset('separate.v.05'), SentiSynset('classify.v.01'), SentiSynset('separate.v.07'), SentiSynset('separate.v.08'), SentiSynset('separate.v.09'), SentiSynset('break.v.02'), SentiSynset('discriminate.v.02'), SentiSynset('separate.v.12'), SentiSynset('branch.v.02'), SentiSynset('separate.a.01')]
+[SentiSynset('regional.a.01')]
+[SentiSynset('planning.n.01'), SentiSynset('planning.n.02'), SentiSynset('planning.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[SentiSynset('authority.n.01'), SentiSynset('authority.n.02'), SentiSynset('authority.n.03'), SentiSynset('assurance.n.01'), SentiSynset('agency.n.01'), SentiSynset('authority.n.06'), SentiSynset('authority.n.07')]
+[SentiSynset('by.r.01'), SentiSynset('aside.r.06')]
+[SentiSynset('ordain.v.01'), SentiSynset('enact.v.02')]
+[SentiSynset('angstrom.n.01'), SentiSynset('vitamin_a.n.01'), SentiSynset('deoxyadenosine_monophosphate.n.01'), SentiSynset('adenine.n.01'), SentiSynset('ampere.n.02'), SentiSynset('a.n.06'), SentiSynset('a.n.07')]
+[SentiSynset('offprint.n.01'), SentiSynset('separate.n.02'), SentiSynset('separate.v.01'), SentiSynset('separate.v.02'), SentiSynset('distinguish.v.01'), SentiSynset('divide.v.01'), SentiSynset('separate.v.05'), SentiSynset('classify.v.01'), SentiSynset('separate.v.07'), SentiSynset('separate.v.08'), SentiSynset('separate.v.09'), SentiSynset('break.v.02'), SentiSynset('discriminate.v.02'), SentiSynset('separate.v.12'), SentiSynset('branch.v.02'), SentiSynset('separate.a.01')]
+[SentiSynset('act.n.01'), SentiSynset('act.n.02'), SentiSynset('act.n.03'), SentiSynset('act.n.04'), SentiSynset('act.n.05'), SentiSynset('act.v.01'), SentiSynset('act.v.02'), SentiSynset('act.v.03'), SentiSynset('act.v.04'), SentiSynset('act.v.05'), SentiSynset('act.v.06'), SentiSynset('work.v.03'), SentiSynset('act.v.08'), SentiSynset('dissemble.v.03'), SentiSynset('act.v.10')]
+[SentiSynset('oregon.n.01'), SentiSynset('operating_room.n.01')]
+[]
+[SentiSynset('expand.v.01'), SentiSynset('expand.v.02'), SentiSynset('expand.v.03'), SentiSynset('boom.v.05'), SentiSynset('inflate.v.01'), SentiSynset('elaborate.v.01'), SentiSynset('extend.v.09')]
+[]
+[SentiSynset('legal_power.n.01'), SentiSynset('jurisdiction.n.02')]
+[SentiSynset('under.r.01'), SentiSynset('under.r.02'), SentiSynset('under.r.03'), SentiSynset('under.r.04'), SentiSynset('under.r.05'), SentiSynset('under.r.06'), SentiSynset('under.r.07'), SentiSynset('under.r.08')]
+[]
+[SentiSynset('exist.v.01'), SentiSynset('exist.v.02'), SentiSynset('existent.a.01')]
+[SentiSynset('commissariat.n.01'), SentiSynset('provision.n.01'), SentiSynset('provision.n.02'), SentiSynset('planning.n.03'), SentiSynset('provision.n.04'), SentiSynset('provision.v.01')]
+[]
+[SentiSynset('tamil.n.01'), SentiSynset('tamil.n.02'), SentiSynset('tamil.a.01')]
+[]
+[SentiSynset('town.n.01'), SentiSynset('town.n.02'), SentiSynset('township.n.01'), SentiSynset('town.n.04')]
+[]
+[SentiSynset('state.n.04'), SentiSynset('country.n.02'), SentiSynset('nation.n.02'), SentiSynset('country.n.04'), SentiSynset('area.n.01')]
+[SentiSynset('planning.n.01'), SentiSynset('planning.n.02'), SentiSynset('planning.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[]
+[SentiSynset('information_technology.n.01')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('felt.n.01'), SentiSynset('felt.v.01'), SentiSynset('felt.v.02'), SentiSynset('felt.v.03'), SentiSynset('feel.v.01'), SentiSynset('find.v.05'), SentiSynset('feel.v.03'), SentiSynset('feel.v.04'), SentiSynset('feel.v.05'), SentiSynset('feel.v.06'), SentiSynset('feel.v.07'), SentiSynset('feel.v.08'), SentiSynset('feel.v.09'), SentiSynset('palpate.v.01'), SentiSynset('feel.v.11'), SentiSynset('feel.v.12'), SentiSynset('feel.v.13')]
+[]
+[]
+[SentiSynset('second.n.01'), SentiSynset('moment.n.02'), SentiSynset('second_base.n.02'), SentiSynset('moment.n.01'), SentiSynset('second.n.05'), SentiSynset('second.n.06'), SentiSynset('second.n.07'), SentiSynset('second.n.08'), SentiSynset('second_gear.n.01'), SentiSynset('irregular.n.02'), SentiSynset('second.v.01'), SentiSynset('second.v.02'), SentiSynset('second.a.02'), SentiSynset('second.r.01')]
+[SentiSynset('option.n.01'), SentiSynset('option.n.02'), SentiSynset('choice.n.02')]
+[SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('cost.n.01'), SentiSynset('monetary_value.n.01'), SentiSynset('price.n.03'), SentiSynset('cost.v.01'), SentiSynset('cost.v.02')]
+[SentiSynset('effective.a.01')]
+[]
+[SentiSynset('lupus_erythematosus.n.01'), SentiSynset('less.a.01'), SentiSynset('less.r.01'), SentiSynset('less.r.02')]
+[SentiSynset('time.n.01'), SentiSynset('time.n.02'), SentiSynset('time.n.03'), SentiSynset('time.n.04'), SentiSynset('time.n.05'), SentiSynset('time.n.06'), SentiSynset('clock_time.n.01'), SentiSynset('fourth_dimension.n.01'), SentiSynset('meter.n.04'), SentiSynset('prison_term.n.01'), SentiSynset('clock.v.01'), SentiSynset('time.v.02'), SentiSynset('time.v.03'), SentiSynset('time.v.04'), SentiSynset('time.v.05')]
+[SentiSynset('devour.v.03'), SentiSynset('consume.v.02'), SentiSynset('consume.v.03'), SentiSynset('consume.v.04'), SentiSynset('consume.v.05'), SentiSynset('consume.v.06')]
+[]
+[]
+[SentiSynset('legal_power.n.01'), SentiSynset('jurisdiction.n.02')]
+[SentiSynset('can.n.01'), SentiSynset('can.n.02'), SentiSynset('can.n.03'), SentiSynset('buttocks.n.01'), SentiSynset('toilet.n.02'), SentiSynset('toilet.n.01'), SentiSynset('can.v.01'), SentiSynset('displace.v.03')]
+[SentiSynset('beryllium.n.01'), SentiSynset('be.v.01'), SentiSynset('be.v.02'), SentiSynset('be.v.03'), SentiSynset('exist.v.01'), SentiSynset('be.v.05'), SentiSynset('equal.v.01'), SentiSynset('constitute.v.01'), SentiSynset('be.v.08'), SentiSynset('embody.v.02'), SentiSynset('be.v.10'), SentiSynset('be.v.11'), SentiSynset('be.v.12'), SentiSynset('cost.v.01')]
+[SentiSynset('expand.v.01'), SentiSynset('expand.v.02'), SentiSynset('expand.v.03'), SentiSynset('boom.v.05'), SentiSynset('inflate.v.01'), SentiSynset('elaborate.v.01'), SentiSynset('extend.v.09'), SentiSynset('expanded.a.01')]
+[SentiSynset('under.r.01'), SentiSynset('under.r.02'), SentiSynset('under.r.03'), SentiSynset('under.r.04'), SentiSynset('under.r.05'), SentiSynset('under.r.06'), SentiSynset('under.r.07'), SentiSynset('under.r.08')]
+[]
+[SentiSynset('exist.v.01'), SentiSynset('exist.v.02'), SentiSynset('existent.a.01')]
+[SentiSynset('commissariat.n.01'), SentiSynset('provision.n.01'), SentiSynset('provision.n.02'), SentiSynset('planning.n.03'), SentiSynset('provision.n.04'), SentiSynset('provision.v.01')]
+[]
+[]
+[SentiSynset('town.n.01'), SentiSynset('town.n.02'), SentiSynset('township.n.01'), SentiSynset('town.n.04')]
+[]
+[SentiSynset('state.n.04'), SentiSynset('country.n.02'), SentiSynset('nation.n.02'), SentiSynset('country.n.04'), SentiSynset('area.n.01')]
+[SentiSynset('planning.n.01'), SentiSynset('planning.n.02'), SentiSynset('planning.n.03'), SentiSynset('plan.v.01'), SentiSynset('plan.v.02'), SentiSynset('plan.v.03'), SentiSynset('design.v.04')]
+[]
+Positivity =  3.875
+Negativity =  3.25
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  growth :  0.0
+posscore of  growth :  0.0
+negscore of  area :  0.0
+posscore of  area :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  metropolitan :  0.0
+posscore of  metropolitan :  0.0
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  run :  0.0
+posscore of  run :  0.0
+negscore of  cost :  0.0
+posscore of  cost :  0.0
+negscore of  second :  0.0
+posscore of  second :  0.0
+negscore of  position :  0.0
+posscore of  position :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  region :  0.0
+posscore of  region :  0.0
+negscore of  government :  0.0
+posscore of  government :  0.0
+negscore of  fast :  0.0
+posscore of  fast :  0.0
+negscore of  town :  0.0
+posscore of  town :  0.0
+negscore of  regulate :  0.0
+posscore of  regulate :  0.0
+negscore of  adopt :  0.0
+posscore of  adopt :  0.0
+negscore of  planning :  0.0
+posscore of  planning :  0.0
+negscore of  deuce :  0.0
+posscore of  deuce :  0.0
+negscore of  propose :  0.0
+posscore of  propose :  0.0
+negscore of  first :  0.0
+posscore of  first :  0.0
+negscore of  predate :  0.0
+posscore of  predate :  0.0
+negscore of  option :  0.25
+posscore of  option :  0.0
+negscore of  agency :  0.0
+posscore of  agency :  0.0
+negscore of  plan :  0.0
+posscore of  plan :  0.0
+negscore of  solid :  0.0
+posscore of  solid :  0.0
+negscore of  intensive :  0.0
+posscore of  intensive :  0.0
+negscore of  choice :  0.0
+posscore of  choice :  0.0
+negscore of  adjust :  0.0
+posscore of  adjust :  0.125
+negscore of  zero :  0.25
+posscore of  zero :  0.25
+negscore of  sum :  0.0
+posscore of  sum :  0.0
+negscore of  body :  0.0
+posscore of  body :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  amount :  0.0
+posscore of  amount :  0.0
+negscore of  unit :  0.0
+posscore of  unit :  0.0
+negscore of  plans :  0.0
+posscore of  plans :  0.0
+negscore of  series :  0.0
+posscore of  series :  0.0
+negscore of  special :  0.0
+posscore of  special :  0.0
+negscore of  space :  0.0
+posscore of  space :  0.0
+negscore of  done :  0.0
+posscore of  done :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  boundary :  0.0
+posscore of  boundary :  0.0
+negscore of  extend :  0.0
+posscore of  extend :  0.0
+negscore of  whole :  0.0
+posscore of  whole :  0.0
+negscore of  single :  0.0
+posscore of  single :  0.0
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  real :  0.0
+posscore of  real :  0.0
+negscore of  people :  0.0
+posscore of  people :  0.0
+negscore of  certain :  0.5
+posscore of  certain :  0.25
+negscore of  separate :  0.0
+posscore of  separate :  0.0
+negscore of  consider :  0.0
+posscore of  consider :  0.125
+negscore of  existing :  0.0
+posscore of  existing :  0.0
+negscore of  need :  0.125
+posscore of  need :  0.125
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  head :  0.0
+posscore of  head :  0.0
+negscore of  represent :  0.0
+posscore of  represent :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  skin :  0.0
+posscore of  skin :  0.0
+negscore of  go :  0.0
+posscore of  go :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  charge :  0.0
+posscore of  charge :  0.0
+negscore of  program :  0.0
+posscore of  program :  0.0
+negscore of  device :  0.0
+posscore of  device :  0.0
+negscore of  include :  0.0
+posscore of  include :  0.0
+negscore of  indicating :  0.0
+posscore of  indicating :  0.0
+negscore of  condition :  0.0
+posscore of  condition :  0.0
+negscore of  level :  0.25
+posscore of  level :  0.0
+negscore of  deals :  0.0
+posscore of  deals :  0.0
+negscore of  small :  0.0
+posscore of  small :  0.0
+negscore of  streets :  0.0
+posscore of  streets :  0.0
+negscore of  Orthodox :  0.0
+posscore of  Orthodox :  0.0
+negscore of  water :  0.0
+posscore of  water :  0.0
+negscore of  compose :  0.0
+posscore of  compose :  0.0
+negscore of  interpret :  0.0
+posscore of  interpret :  0.0
+negscore of  ahead :  0.0
+posscore of  ahead :  0.0
+negscore of  involved :  0.0
+posscore of  involved :  0.0
+negscore of  action :  0.0
+posscore of  action :  0.0
+negscore of  makes :  0.0
+posscore of  makes :  0.5
+negscore of  requiring :  0.25
+posscore of  requiring :  0.25
+negscore of  marked :  0.0
+posscore of  marked :  0.0
+negscore of  highly :  0.0
+posscore of  highly :  0.625
+negscore of  apply :  0.0
+posscore of  apply :  0.0
+negscore of  total :  0.0
+posscore of  total :  0.0
+negscore of  use :  0.0
+posscore of  use :  0.0
+negscore of  working :  0.0
+posscore of  working :  0.0
+negscore of  examination :  0.0
+posscore of  examination :  0.0
+negscore of  scope :  0.0
+posscore of  scope :  0.0
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  circumstances :  0.0
+posscore of  circumstances :  0.0
+negscore of  work :  0.0
+posscore of  work :  0.0
+negscore of  patriarch :  0.0
+posscore of  patriarch :  0.0
+negscore of  theories :  0.0
+posscore of  theories :  0.0
+negscore of  growing :  0.0
+posscore of  growing :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  process :  0.0
+posscore of  process :  0.0
+negscore of  joints :  0.0
+posscore of  joints :  0.0
+negscore of  organized :  0.0
+posscore of  organized :  0.0
+negscore of  purposes :  0.0
+posscore of  purposes :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  fourth :  0.0
+posscore of  fourth :  0.0
+negscore of  product :  0.0
+posscore of  product :  0.0
+negscore of  earlier :  0.0
+posscore of  earlier :  0.0
+negscore of  coming :  0.0
+posscore of  coming :  0.0
+negscore of  law :  0.0
+posscore of  law :  0.0
+negscore of  element :  0.0
+posscore of  element :  0.0
+negscore of  playing :  0.0
+posscore of  playing :  0.0
+negscore of  serving :  0.0
+posscore of  serving :  0.0
+negscore of  deck :  0.0
+posscore of  deck :  0.0
+negscore of  course :  0.0
+posscore of  course :  0.0
+negscore of  including :  0.0
+posscore of  including :  0.0
+negscore of  wilderness :  0.125
+posscore of  wilderness :  0.0
+negscore of  decay :  0.375
+posscore of  decay :  0.0
+negscore of  chosen :  0.0
+posscore of  chosen :  0.0
+negscore of  fix :  0.5
+posscore of  fix :  0.0
+negscore of  labor :  0.0
+posscore of  labor :  0.0
+negscore of  choose :  0.0
+posscore of  choose :  0.0
+negscore of  nation :  0.0
+posscore of  nation :  0.0
+negscore of  formulating :  0.125
+posscore of  formulating :  0.0
+negscore of  provision :  0.0
+posscore of  provision :  0.0
+negscore of  day :  0.0
+posscore of  day :  0.0
+negscore of  magnitude :  0.0
+posscore of  magnitude :  0.0
+negscore of  retrieve :  0.0
+posscore of  retrieve :  0.0
+negscore of  constitute :  0.0
+posscore of  constitute :  0.0
+negscore of  society :  0.0
+posscore of  society :  0.0
+negscore of  extended :  0.0
+posscore of  extended :  0.0
+negscore of  beyond :  0.0
+posscore of  beyond :  0.0
+negscore of  acting :  0.0
+posscore of  acting :  0.0
+negscore of  correct :  0.0
+posscore of  correct :  0.25
+negscore of  barrier :  0.0
+posscore of  barrier :  0.0
+negscore of  governing :  0.0
+posscore of  governing :  0.0
+negscore of  language :  0.0
+posscore of  language :  0.0
+negscore of  times :  0.0
+posscore of  times :  0.5
+negscore of  length :  0.0
+posscore of  length :  0.0
+negscore of  think :  0.0
+posscore of  think :  0.0
+negscore of  spoken :  0.0
+posscore of  spoken :  0.0
+negscore of  number :  0.375
+posscore of  number :  0.0
+negscore of  open :  0.0
+posscore of  open :  0.0
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  ordering :  0.0
+posscore of  ordering :  0.125
+negscore of  statement :  0.0
+posscore of  statement :  0.0
+negscore of  store :  0.0
+posscore of  store :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  western :  0.0
+posscore of  western :  0.0
+negscore of  constituent :  0.0
+posscore of  constituent :  0.0
+negscore of  distance :  0.0
+posscore of  distance :  0.0
+negscore of  rate :  0.0
+posscore of  rate :  0.0
+negscore of  cards :  0.0
+posscore of  cards :  0.0
+negscore of  distinguished :  0.25
+posscore of  distinguished :  0.0
+negscore of  heaviest :  0.0
+posscore of  heaviest :  0.0
+negscore of  occupied :  0.0
+posscore of  occupied :  0.375
+negscore of  ideas :  0.0
+posscore of  ideas :  0.125
+negscore of  transmit :  0.0
+posscore of  transmit :  0.0
+negscore of  play :  0.0
+posscore of  play :  0.0
+negscore of  services :  0.0
+posscore of  services :  0.0
+negscore of  cover :  0.0
+posscore of  cover :  0.0
+negscore of  points :  0.0
+posscore of  points :  0.0
+negscore of  weigh :  0.0
+posscore of  weigh :  0.0
+negscore of  fact :  0.0
+posscore of  fact :  0.0
+negscore of  fifth :  0.0
+posscore of  fifth :  0.0
+negscore of  highest :  0.25
+posscore of  highest :  0.125
+negscore of  title :  0.0
+posscore of  title :  0.0
+negscore of  situations :  0.0
+posscore of  situations :  0.0
+negscore of  means :  0.0
+posscore of  means :  0.0
+negscore of  express :  0.0
+posscore of  express :  0.0
+negscore of  likely :  0.0
+posscore of  likely :  0.5
+negscore of  words :  0.0
+posscore of  words :  0.0
+negscore of  regarding :  0.0
+posscore of  regarding :  0.125
+negscore of  miles :  0.0
+posscore of  miles :  0.0
+negscore of  fixed :  0.125
+posscore of  fixed :  0.0
+negscore of  set :  0.0
+posscore of  set :  0.125
+negscore of  testing :  0.0
+posscore of  testing :  0.0
+negscore of  culture :  0.0
+posscore of  culture :  0.0
+negscore of  individual :  0.0
+posscore of  individual :  0.0
+negscore of  result :  0.0
+posscore of  result :  0.0
+negscore of  affecting :  0.0
+posscore of  affecting :  0.125
+negscore of  devour :  0.375
+posscore of  devour :  0.125
+negscore of  equal :  0.0
+posscore of  equal :  0.0
+negscore of  declare :  0.0
+posscore of  declare :  0.0
+negscore of  supply :  0.0
+posscore of  supply :  0.0
+negscore of  simple :  0.0
+posscore of  simple :  0.0
+negscore of  addition :  0.0
+posscore of  addition :  0.0
+negscore of  proposal :  0.0
+posscore of  proposal :  0.0
+negscore of  territory :  0.125
+posscore of  territory :  0.375
+negscore of  meeting :  0.0
+posscore of  meeting :  0.0
+negscore of  deliberations :  0.0
+posscore of  deliberations :  0.0
+negscore of  value :  0.0
+posscore of  value :  0.0
+negscore of  policies :  0.0
+posscore of  policies :  0.0
+negscore of  Church :  0.0
+posscore of  Church :  0.0
+negscore of  metric :  0.0
+posscore of  metric :  0.0
+negscore of  tissue :  0.0
+posscore of  tissue :  0.0
+negscore of  perform :  0.0
+posscore of  perform :  0.0
+negscore of  things :  0.0
+posscore of  things :  0.0
+negscore of  complex :  0.0
+posscore of  complex :  0.0
+negscore of  document :  0.0
+posscore of  document :  0.0
+negscore of  events :  0.0
+posscore of  events :  0.0
+negscore of  week :  0.0
+posscore of  week :  0.0
+negscore of  hand :  0.0
+posscore of  hand :  0.5
+negscore of  purpose :  0.0
+posscore of  purpose :  0.0
+negscore of  changing :  0.0
+posscore of  changing :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  expand :  0.0
+posscore of  expand :  0.0
+negscore of  organically :  0.0
+posscore of  organically :  0.0
+negscore of  spent :  0.0
+posscore of  spent :  0.125
+negscore of  relief :  0.0
+posscore of  relief :  0.125
+negscore of  money :  0.0
+posscore of  money :  0.0
+negscore of  point :  0.0
+posscore of  point :  0.0
+negscore of  exercising :  0.0
+posscore of  exercising :  0.0
+negscore of  instrument :  0.0
+posscore of  instrument :  0.5
+negscore of  location :  0.0
+posscore of  location :  0.0
+negscore of  provisions :  0.0
+posscore of  provisions :  0.0
+negscore of  like :  0.0
+posscore of  like :  0.125
+negscore of  become :  0.0
+posscore of  become :  0.0
+negscore of  right :  0.0
+posscore of  right :  0.0
+negscore of  back :  0.0
+posscore of  back :  0.0
+negscore of  authority :  0.0
+posscore of  authority :  0.0
+negscore of  meters :  0.0
+posscore of  meters :  0.0
+negscore of  choosing :  0.0
+posscore of  choosing :  0.0
+negscore of  legal :  0.0
+posscore of  legal :  0.0
+negscore of  biology :  0.0
+posscore of  biology :  0.0
+negscore of  power :  0.0
+posscore of  power :  0.0
+negscore of  manufacturing :  0.0
+posscore of  manufacturing :  0.0
+negscore of  goods :  0.0
+posscore of  goods :  0.5
+negscore of  stretch :  0.0
+posscore of  stretch :  0.0
+negscore of  stand :  0.0
+posscore of  stand :  0.0
+negscore of  negative :  0.25
+posscore of  negative :  0.0
+negscore of  spots :  0.5
+posscore of  spots :  0.0
+negscore of  cultivation :  0.0
+posscore of  cultivation :  0.25
+negscore of  way :  0.0
+posscore of  way :  0.0
+negscore of  form :  0.0
+posscore of  form :  0.0
+negscore of  true :  0.0
+posscore of  true :  0.5
+negscore of  eat :  0.0
+posscore of  eat :  0.0
+negscore of  made :  0.0
+posscore of  made :  0.0
+negscore of  characteristic :  0.0
+posscore of  characteristic :  0.0
+negscore of  unfolding :  0.0
+posscore of  unfolding :  0.0
+negscore of  later :  0.0
+posscore of  later :  0.0
+negscore of  devise :  0.0
+posscore of  devise :  0.0
+negscore of  influence :  0.0
+posscore of  influence :  0.25
+negscore of  engineering :  0.0
+posscore of  engineering :  0.0
+negscore of  bishop :  0.0
+posscore of  bishop :  0.0
+negscore of  field :  0.0
+posscore of  field :  0.0
+negscore of  branch :  0.0
+posscore of  branch :  0.0
+negscore of  felt :  0.0
+posscore of  felt :  0.0
+negscore of  meaning :  0.0
+posscore of  meaning :  0.0
+negscore of  land :  0.0
+posscore of  land :  0.0
+negscore of  together :  0.0
+posscore of  together :  0.0

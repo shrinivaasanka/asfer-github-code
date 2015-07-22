@@ -1,0 +1,2331 @@
+date string =0xa0f01f4
+year =1978
+month =5
+day =19
+hour =13
+minute =30
+second =0
+timezone =0xa0f0154
+getDoubleFromString() : 5.5
+getDoubleFromString() : l=5.5
+CalculatorSWE::calc_jd()------: 1978, 5, 19, 8.000000
+swe_julday():------------------:jd = -357913941
+CalculatorSWE::calc_jd()------: 1978, 5, 19, 0.000000
+swe_julday():------------------:jd = -1073741824
+swe_houses() parameters to function:2443647.833333, 9.933333, 78.116667, 80, 3216322408, 3216322512 
+swe_houses_armc(): parameters 74.755730, 9.933333, 23.439463, 80, 3216322408, 3216322512 
+Asc1(): ass=164.604329
+CalcH(): hsp->ac = 164.604329
+Asc1(): ass=104.878834
+Asc1(): ass=104.878749
+Asc1(): ass=104.878749
+Asc1(): ass=104.878749
+Asc1(): ass=134.278475
+Asc1(): ass=134.277929
+Asc1(): ass=134.277929
+Asc1(): ass=134.277929
+Asc1(): ass=195.258328
+Asc1(): ass=195.258692
+Asc1(): ass=195.258692
+Asc1(): ass=195.258692
+Asc1(): ass=226.218508
+Asc1(): ass=226.218948
+Asc1(): ass=226.218948
+Asc1(): ass=226.218948
+Asc1(): ass=190.740470
+Asc1(): ass=342.130299
+Asc1(): ass=175.238393
+Asc1(): ass=342.130299
+swe_houses_armc(): ascmc[0] = 164.604329 
+swe_houses(): ascmc[0] = 164.604329 
+CalculatorSwe::calcHouses(): r[0]=164.604
+CalculatorSwe::calcHouses(): r[1]=195.259
+CalculatorSwe::calcHouses(): r[2]=226.219
+CalculatorSwe::calcHouses(): r[3]=255.962
+CalculatorSwe::calcHouses(): r[4]=284.879
+CalculatorSwe::calcHouses(): r[5]=314.278
+CalculatorSwe::calcHouses(): r[6]=344.604
+CalculatorSwe::calcHouses(): r[7]=15.2587
+CalculatorSwe::calcHouses(): r[8]=46.2189
+CalculatorSwe::calcHouses(): r[9]=75.9618
+CalculatorSwe::calcHouses(): r[10]=104.879
+CalculatorSwe::calcHouses(): r[11]=134.278
+SimpleHoroscope::updatePlanets....:object_len[OASCENDANT=14]=164.604
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[0].length=57.9902
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[0].length=34.4352
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[1].length=195.272
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[1].length=171.717
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[2].length=34.0042
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[2].length=10.4492
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[3].length=86.6872
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[3].length=63.1322
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[4].length=136.548
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[4].length=112.993
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[5].length=96.5121
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[5].length=72.9571
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[6].length=144.151
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[6].length=120.596
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[7].length=223.802
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[7].length=200.247
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[8].length=257.468
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[8].length=233.913
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[9].length=194.241
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[9].length=170.686
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[10].length=183.229
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[10].length=159.674
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[11].length=184.639
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[11].length=161.084
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[12].length=3.22927
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[12].length=339.674
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[13].length=4.63868
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[13].length=341.084
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[14].length=164.604
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[14].length=141.049
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[15].length=75.9618
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[15].length=52.4068
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[16].length=212.451
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[16].length=188.896
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[17].length=56.7773
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[17].length=33.2223
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[18].length=166.156
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[18].length=142.601
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[19].length=72.5918
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[19].length=49.0368
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[20].length=186.374
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[20].length=162.819
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[21].length=37.3622
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[21].length=13.8071
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[22].length=98.0574
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[22].length=74.5024
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[23].length=203.086
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[23].length=179.531
+SimpleHoroscope::updatePositionArrays(): before deducting ayanamsa..........vpos[30].length=103.622
+SimpleHoroscope::updatePositionArrays(): after deducting ayanamsa..........vpos[30].length=80.0665
+swe_houses() parameters to function:2443647.585529, 9.933333, 78.116667, 80, 3216322760, 3216322864 
+swe_houses_armc(): parameters 345.302047, 9.933333, 23.439466, 80, 3216322760, 3216322864 
+Asc1(): ass=80.427557
+CalcH(): hsp->ac = 80.427557
+Asc1(): ass=17.027675
+Asc1(): ass=17.027332
+Asc1(): ass=17.027332
+Asc1(): ass=17.027332
+Asc1(): ass=49.886248
+Asc1(): ass=49.885711
+Asc1(): ass=49.885711
+Asc1(): ass=49.885711
+Asc1(): ass=106.657382
+Asc1(): ass=106.657251
+Asc1(): ass=106.657252
+Asc1(): ass=106.657252
+Asc1(): ass=133.838238
+Asc1(): ass=133.837797
+Asc1(): ass=133.837797
+Asc1(): ass=133.837797
+Asc1(): ass=201.119951
+Asc1(): ass=252.636556
+Asc1(): ass=154.616413
+Asc1(): ass=252.636556
+swe_houses_armc(): ascmc[0] = 80.427557 
+swe_houses(): ascmc[0] = 80.427557 
+jd =2.44365e+06;lat=9.93333;lon=9.93333
+CalculatorSwe::calcAscendant():: ascmc[0] :80.4276
+Horoscope::update():: asc=80.4276
+swe_houses() parameters to function:2443647.715523, 9.933333, 78.116667, 80, 3216322760, 3216322864 
+swe_houses_armc(): parameters 32.227871, 9.933333, 23.439465, 80, 3216322760, 3216322864 
+Asc1(): ass=123.454394
+CalcH(): hsp->ac = 123.454394
+Asc1(): ass=65.444515
+Asc1(): ass=65.444303
+Asc1(): ass=65.444303
+Asc1(): ass=65.444303
+Asc1(): ass=94.698835
+Asc1(): ass=94.698823
+Asc1(): ass=94.698823
+Asc1(): ass=94.698823
+Asc1(): ass=151.502120
+Asc1(): ass=151.501563
+Asc1(): ass=151.501563
+Asc1(): ass=151.501563
+Asc1(): ass=182.368058
+Asc1(): ass=182.368108
+Asc1(): ass=182.368108
+Asc1(): ass=182.368108
+Asc1(): ass=205.393030
+Asc1(): ass=296.383367
+Asc1(): ass=162.963622
+Asc1(): ass=296.383367
+swe_houses_armc(): ascmc[0] = 123.454394 
+swe_houses(): ascmc[0] = 123.454394 
+jd =2.44365e+06;lat=9.93333;lon=9.93333
+CalculatorSwe::calcAscendant():: ascmc[0] :123.454
+Horoscope::update():: asc=123.454
+swe_houses() parameters to function:2443647.845517, 9.933333, 78.116667, 80, 3216322760, 3216322864 
+swe_houses_armc(): parameters 79.153694, 9.933333, 23.439463, 80, 3216322760, 3216322864 
+Asc1(): ass=169.029582
+CalcH(): hsp->ac = 169.029582
+Asc1(): ass=108.945912
+Asc1(): ass=108.945779
+Asc1(): ass=108.945779
+Asc1(): ass=108.945779
+Asc1(): ass=138.548462
+Asc1(): ass=138.547886
+Asc1(): ass=138.547886
+Asc1(): ass=138.547886
+Asc1(): ass=199.763693
+Asc1(): ass=199.764141
+Asc1(): ass=199.764141
+Asc1(): ass=199.764141
+Asc1(): ass=230.512648
+Asc1(): ass=230.513049
+Asc1(): ass=230.513049
+Asc1(): ass=230.513049
+Asc1(): ass=187.819279
+Asc1(): ass=347.247239
+Asc1(): ass=176.605470
+Asc1(): ass=347.247239
+swe_houses_armc(): ascmc[0] = 169.029582 
+swe_houses(): ascmc[0] = 169.029582 
+jd =2.44365e+06;lat=9.93333;lon=9.93333
+CalculatorSwe::calcAscendant():: ascmc[0] :169.03
+Horoscope::update():: asc=169.03
+swe_houses() parameters to function:2443647.910513, 9.933333, 78.116667, 80, 3216322760, 3216322864 
+swe_houses_armc(): parameters 102.616606, 9.933333, 23.439463, 80, 3216322760, 3216322864 
+Asc1(): ass=192.754029
+CalcH(): hsp->ac = 192.754029
+Asc1(): ass=131.209897
+Asc1(): ass=131.209478
+Asc1(): ass=131.209478
+Asc1(): ass=131.209478
+Asc1(): ass=162.046423
+Asc1(): ass=162.046007
+Asc1(): ass=162.046007
+Asc1(): ass=162.046007
+Asc1(): ass=223.175646
+Asc1(): ass=223.176212
+Asc1(): ass=223.176212
+Asc1(): ass=223.176212
+Asc1(): ass=252.693908
+Asc1(): ass=252.694020
+Asc1(): ass=252.694020
+Asc1(): ass=252.694020
+Asc1(): ass=170.980432
+Asc1(): ass=14.817905
+Asc1(): ass=183.945780
+Asc1(): ass=14.817905
+swe_houses_armc(): ascmc[0] = 192.754029 
+swe_houses(): ascmc[0] = 192.754029 
+jd =2.44365e+06;lat=9.93333;lon=9.93333
+CalculatorSwe::calcAscendant():: ascmc[0] :192.754
+Horoscope::update():: asc=192.754
+swe_houses() parameters to function:2443647.975510, 9.933333, 78.116667, 80, 3216322760, 3216322864 
+swe_houses_armc(): parameters 126.079518, 9.933333, 23.439462, 80, 3216322760, 3216322864 
+Asc1(): ass=215.979537
+CalcH(): hsp->ac = 215.979537
+Asc1(): ass=154.806505
+Asc1(): ass=154.806076
+Asc1(): ass=154.806076
+Asc1(): ass=154.806076
+Asc1(): ass=186.303396
+Asc1(): ass=186.303556
+Asc1(): ass=186.303556
+Asc1(): ass=186.303556
+Asc1(): ass=245.401865
+Asc1(): ass=245.402122
+Asc1(): ass=245.402122
+Asc1(): ass=245.402122
+Asc1(): ass=274.251926
+Asc1(): ass=274.251934
+Asc1(): ass=274.251934
+Asc1(): ass=274.251934
+Asc1(): ass=158.946243
+Asc1(): ass=41.236215
+Asc1(): ass=191.059774
+Asc1(): ass=41.236215
+swe_houses_armc(): ascmc[0] = 215.979537 
+swe_houses(): ascmc[0] = 215.979537 
+jd =2.44365e+06;lat=9.93333;lon=9.93333
+CalculatorSwe::calcAscendant():: ascmc[0] :215.98
+Horoscope::update():: asc=215.98
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[4]=0xa0f2190
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[4]=0xa0f2190
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[5]=0xa0f21b0
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[5]=0xa0f21b0
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[7]=0xa0f0108
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[7]=0xa0f0108
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[11]=0xa0f2338
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[11]=0xa0f2338
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[12]=0xa0f2358
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[12]=0xa0f2358
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[13]=0xa0f2378
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[13]=0xa0f2378
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[15]=0xa0f23b8
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[15]=0xa0f23b8
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[16]=0xa0f23d8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[16]=0xa0f23d8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[18]=0xa0f2418
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[18]=0xa0f2418
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[19]=0xa0f2438
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[19]=0xa0f2438
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[20]=0xa0f2458
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[20]=0xa0f2458
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[2]=0xa0f2150
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[3]=0xa0f2170
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[1]=0xa0f2130
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[9]=0xa0f22f8
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[14]=0xa0f2398
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[6]=0xa0f00e8
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+Planet::getVargaData()-----vargadata[8]=0xa0f0128
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+Planet::getVargaData()-----vargadata[10]=0xa0f2318
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+Planet::getVargaData()-----vargadata[17]=0xa0f23f8
+Planet::getVargaData()-----vargadata[11]=0xa0f2338
+Planet::getVargaData()-----vargadata[11]=0xa0f2338
+Planet::getVargaData()-----vargadata[12]=0xa0f2358
+Planet::getVargaData()-----vargadata[12]=0xa0f2358
+Planet::getVargaData()-----vargadata[13]=0xa0f2378
+Planet::getVargaData()-----vargadata[13]=0xa0f2378
+Planet::getVargaData()-----vargadata[4]=0xa0f2190
+Planet::getVargaData()-----vargadata[4]=0xa0f2190
+Planet::getVargaData()-----vargadata[15]=0xa0f23b8
+Planet::getVargaData()-----vargadata[15]=0xa0f23b8
+Planet::getVargaData()-----vargadata[16]=0xa0f23d8
+Planet::getVargaData()-----vargadata[16]=0xa0f23d8
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[4]=0xa0f2598
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[4]=0xa0f2598
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[5]=0xa0f25b8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[5]=0xa0f25b8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[7]=0xa0f25f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[7]=0xa0f25f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[11]=0xa0f2678
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[11]=0xa0f2678
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[12]=0xa0f2698
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[12]=0xa0f2698
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[13]=0xa0f26b8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[13]=0xa0f26b8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[15]=0xa0f26f8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[15]=0xa0f26f8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[16]=0xa0f2718
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[16]=0xa0f2718
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[18]=0xa0f2758
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[18]=0xa0f2758
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[19]=0xa0f2778
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[19]=0xa0f2778
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[20]=0xa0f2798
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[20]=0xa0f2798
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[2]=0xa0f2558
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[3]=0xa0f2578
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[1]=0xa0f2538
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[9]=0xa0f2638
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[14]=0xa0f26d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[6]=0xa0f25d8
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+Planet::getVargaData()-----vargadata[8]=0xa0f2618
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+Planet::getVargaData()-----vargadata[10]=0xa0f2658
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+Planet::getVargaData()-----vargadata[17]=0xa0f2738
+Planet::getVargaData()-----vargadata[11]=0xa0f2678
+Planet::getVargaData()-----vargadata[11]=0xa0f2678
+Planet::getVargaData()-----vargadata[12]=0xa0f2698
+Planet::getVargaData()-----vargadata[12]=0xa0f2698
+Planet::getVargaData()-----vargadata[13]=0xa0f26b8
+Planet::getVargaData()-----vargadata[13]=0xa0f26b8
+Planet::getVargaData()-----vargadata[4]=0xa0f2598
+Planet::getVargaData()-----vargadata[4]=0xa0f2598
+Planet::getVargaData()-----vargadata[15]=0xa0f26f8
+Planet::getVargaData()-----vargadata[15]=0xa0f26f8
+Planet::getVargaData()-----vargadata[16]=0xa0f2718
+Planet::getVargaData()-----vargadata[16]=0xa0f2718
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[4]=0xa0f28d8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[4]=0xa0f28d8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[5]=0xa0f28f8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[5]=0xa0f28f8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[7]=0xa0f2938
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[7]=0xa0f2938
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[11]=0xa0f29b8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[11]=0xa0f29b8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[12]=0xa0f29d8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[12]=0xa0f29d8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[13]=0xa0f29f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[13]=0xa0f29f8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[15]=0xa0f2a38
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[15]=0xa0f2a38
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[16]=0xa0f2a58
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[16]=0xa0f2a58
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[18]=0xa0f2a98
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[18]=0xa0f2a98
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[19]=0xa0f2ab8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[19]=0xa0f2ab8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[20]=0xa0f2ad8
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[20]=0xa0f2ad8
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[2]=0xa0f2898
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[3]=0xa0f28b8
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[1]=0xa0f2878
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[9]=0xa0f2978
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[14]=0xa0f2a18
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[6]=0xa0f2918
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+Planet::getVargaData()-----vargadata[8]=0xa0f2958
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+Planet::getVargaData()-----vargadata[10]=0xa0f2998
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+Planet::getVargaData()-----vargadata[17]=0xa0f2a78
+Planet::getVargaData()-----vargadata[11]=0xa0f29b8
+Planet::getVargaData()-----vargadata[11]=0xa0f29b8
+Planet::getVargaData()-----vargadata[12]=0xa0f29d8
+Planet::getVargaData()-----vargadata[12]=0xa0f29d8
+Planet::getVargaData()-----vargadata[13]=0xa0f29f8
+Planet::getVargaData()-----vargadata[13]=0xa0f29f8
+Planet::getVargaData()-----vargadata[4]=0xa0f28d8
+Planet::getVargaData()-----vargadata[4]=0xa0f28d8
+Planet::getVargaData()-----vargadata[15]=0xa0f2a38
+Planet::getVargaData()-----vargadata[15]=0xa0f2a38
+Planet::getVargaData()-----vargadata[16]=0xa0f2a58
+Planet::getVargaData()-----vargadata[16]=0xa0f2a58
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[4]=0xa0f2c18
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[4]=0xa0f2c18
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[5]=0xa0f2c38
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[5]=0xa0f2c38
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[7]=0xa0f2c78
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[7]=0xa0f2c78
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[11]=0xa0f2cf8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[11]=0xa0f2cf8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[12]=0xa0f2d18
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[12]=0xa0f2d18
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[13]=0xa0f2d38
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[13]=0xa0f2d38
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[15]=0xa0f2d78
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[15]=0xa0f2d78
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[16]=0xa0f2d98
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[16]=0xa0f2d98
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[18]=0xa0f2dd8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[18]=0xa0f2dd8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[19]=0xa0f2df8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[19]=0xa0f2df8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[20]=0xa0f2e18
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[20]=0xa0f2e18
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[2]=0xa0f2bd8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[3]=0xa0f2bf8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[1]=0xa0f2bb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[9]=0xa0f2cb8
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[14]=0xa0f2d58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[6]=0xa0f2c58
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+Planet::getVargaData()-----vargadata[8]=0xa0f2c98
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+Planet::getVargaData()-----vargadata[10]=0xa0f2cd8
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+Planet::getVargaData()-----vargadata[17]=0xa0f2db8
+Planet::getVargaData()-----vargadata[11]=0xa0f2cf8
+Planet::getVargaData()-----vargadata[11]=0xa0f2cf8
+Planet::getVargaData()-----vargadata[12]=0xa0f2d18
+Planet::getVargaData()-----vargadata[12]=0xa0f2d18
+Planet::getVargaData()-----vargadata[13]=0xa0f2d38
+Planet::getVargaData()-----vargadata[13]=0xa0f2d38
+Planet::getVargaData()-----vargadata[4]=0xa0f2c18
+Planet::getVargaData()-----vargadata[4]=0xa0f2c18
+Planet::getVargaData()-----vargadata[15]=0xa0f2d78
+Planet::getVargaData()-----vargadata[15]=0xa0f2d78
+Planet::getVargaData()-----vargadata[16]=0xa0f2d98
+Planet::getVargaData()-----vargadata[16]=0xa0f2d98
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+VargaData::getRasi()= 11
+Planet::getVargaData()-----vargadata[4]=0xa0f2f58
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[4]=0xa0f2f58
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[5]=0xa0f2f78
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[5]=0xa0f2f78
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[7]=0xa0f2fb8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[7]=0xa0f2fb8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[11]=0xa0f3038
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[11]=0xa0f3038
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[12]=0xa0f3058
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[12]=0xa0f3058
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[13]=0xa0f3078
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[13]=0xa0f3078
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[15]=0xa0f30b8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[15]=0xa0f30b8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[16]=0xa0f30d8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[16]=0xa0f30d8
+VargaData::getRasi()= 10
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[18]=0xa0f3118
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[18]=0xa0f3118
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[19]=0xa0f3138
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[19]=0xa0f3138
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[20]=0xa0f3158
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[20]=0xa0f3158
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[2]=0xa0f2f18
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[3]=0xa0f2f38
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[1]=0xa0f2ef8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[9]=0xa0f2ff8
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[14]=0xa0f3098
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[6]=0xa0f2f98
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+Planet::getVargaData()-----vargadata[8]=0xa0f2fd8
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+Planet::getVargaData()-----vargadata[10]=0xa0f3018
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+Planet::getVargaData()-----vargadata[17]=0xa0f30f8
+Planet::getVargaData()-----vargadata[11]=0xa0f3038
+Planet::getVargaData()-----vargadata[11]=0xa0f3038
+Planet::getVargaData()-----vargadata[12]=0xa0f3058
+Planet::getVargaData()-----vargadata[12]=0xa0f3058
+Planet::getVargaData()-----vargadata[13]=0xa0f3078
+Planet::getVargaData()-----vargadata[13]=0xa0f3078
+Planet::getVargaData()-----vargadata[4]=0xa0f2f58
+Planet::getVargaData()-----vargadata[4]=0xa0f2f58
+Planet::getVargaData()-----vargadata[15]=0xa0f30b8
+Planet::getVargaData()-----vargadata[15]=0xa0f30b8
+Planet::getVargaData()-----vargadata[16]=0xa0f30d8
+Planet::getVargaData()-----vargadata[16]=0xa0f30d8
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[4]=0xa0f3298
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[4]=0xa0f3298
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[5]=0xa0f32b8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[5]=0xa0f32b8
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[7]=0xa0f32f8
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[7]=0xa0f32f8
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[11]=0xa0f3378
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[11]=0xa0f3378
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[12]=0xa0f3398
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[12]=0xa0f3398
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[13]=0xa0f33b8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[13]=0xa0f33b8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[15]=0xa0f33f8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[15]=0xa0f33f8
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[16]=0xa0f3418
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[16]=0xa0f3418
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[18]=0xa0f3458
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[18]=0xa0f3458
+VargaData::getRasi()= 7
+Planet::getVargaData()-----vargadata[19]=0xa0f3478
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[19]=0xa0f3478
+VargaData::getRasi()= 9
+Planet::getVargaData()-----vargadata[20]=0xa0f3498
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[20]=0xa0f3498
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[2]=0xa0f3258
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[3]=0xa0f3278
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[1]=0xa0f3238
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[9]=0xa0f3338
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[14]=0xa0f33d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[6]=0xa0f32d8
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+Planet::getVargaData()-----vargadata[8]=0xa0f3318
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+Planet::getVargaData()-----vargadata[10]=0xa0f3358
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+Planet::getVargaData()-----vargadata[17]=0xa0f3438
+Planet::getVargaData()-----vargadata[11]=0xa0f3378
+Planet::getVargaData()-----vargadata[11]=0xa0f3378
+Planet::getVargaData()-----vargadata[12]=0xa0f3398
+Planet::getVargaData()-----vargadata[12]=0xa0f3398
+Planet::getVargaData()-----vargadata[13]=0xa0f33b8
+Planet::getVargaData()-----vargadata[13]=0xa0f33b8
+Planet::getVargaData()-----vargadata[4]=0xa0f3298
+Planet::getVargaData()-----vargadata[4]=0xa0f3298
+Planet::getVargaData()-----vargadata[15]=0xa0f33f8
+Planet::getVargaData()-----vargadata[15]=0xa0f33f8
+Planet::getVargaData()-----vargadata[16]=0xa0f3418
+Planet::getVargaData()-----vargadata[16]=0xa0f3418
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[4]=0xa0f35d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[4]=0xa0f35d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[5]=0xa0f35f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[5]=0xa0f35f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[7]=0xa0f3638
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[7]=0xa0f3638
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[11]=0xa0f36b8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3218
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[11]=0xa0f36b8
+VargaData::getRasi()= 8
+Planet::getVargaData()-----vargadata[12]=0xa0f36d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[12]=0xa0f36d8
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[13]=0xa0f36f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[13]=0xa0f36f8
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[15]=0xa0f3738
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2ed8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[15]=0xa0f3738
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[16]=0xa0f3758
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2110
+VargaData::getRasi()= 1
+Planet::getVargaData()-----vargadata[16]=0xa0f3758
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[18]=0xa0f3798
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2858
+VargaData::getRasi()= 0
+Planet::getVargaData()-----vargadata[18]=0xa0f3798
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[19]=0xa0f37b8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2b98
+VargaData::getRasi()= 2
+Planet::getVargaData()-----vargadata[19]=0xa0f37b8
+VargaData::getRasi()= 6
+Planet::getVargaData()-----vargadata[20]=0xa0f37d8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+VargaData::getRasi()= 4
+Planet::getVargaData()-----vargadata[0]=0xa0f2518
+VargaData::getRasi()= 5
+Planet::getVargaData()-----vargadata[20]=0xa0f37d8
+VargaData::getRasi()= 3
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[0]=0xa0f3558
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[2]=0xa0f3598
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[3]=0xa0f35b8
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[1]=0xa0f3578
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[9]=0xa0f3678
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[14]=0xa0f3718
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[6]=0xa0f3618
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+Planet::getVargaData()-----vargadata[8]=0xa0f3658
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+Planet::getVargaData()-----vargadata[10]=0xa0f3698
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+Planet::getVargaData()-----vargadata[17]=0xa0f3778
+Planet::getVargaData()-----vargadata[11]=0xa0f36b8
+Planet::getVargaData()-----vargadata[11]=0xa0f36b8
+Planet::getVargaData()-----vargadata[12]=0xa0f36d8
+Planet::getVargaData()-----vargadata[12]=0xa0f36d8
+Planet::getVargaData()-----vargadata[13]=0xa0f36f8
+Planet::getVargaData()-----vargadata[13]=0xa0f36f8
+Planet::getVargaData()-----vargadata[4]=0xa0f35d8
+Planet::getVargaData()-----vargadata[4]=0xa0f35d8
+Planet::getVargaData()-----vargadata[15]=0xa0f3738
+Planet::getVargaData()-----vargadata[15]=0xa0f3738
+Planet::getVargaData()-----vargadata[16]=0xa0f3758
+Planet::getVargaData()-----vargadata[16]=0xa0f3758
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+SimpleHoroscope::getHouse() ---------housenb:0
+SimpleHoroscope::getHouse() ---------ihousesandhi[housenb]:156.376
+SimpleHoroscope::getHouse() ---------ihousecusp[housenb]:141.049
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 34.4352
+Writer::getPosFormatted...sign=:1
+Table::setEntry---:s1=04 26'07" Taurus
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 171.717
+Writer::getPosFormatted...sign=:5
+Table::setEntry---:s1=21 43'02" Virgo
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 112.993
+Writer::getPosFormatted...sign=:3
+Table::setEntry---:s1=22 59'36" Cancer
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 10.4492
+Writer::getPosFormatted...sign=:0
+Table::setEntry---:s1=10 26'57" Aries
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 72.9571
+Writer::getPosFormatted...sign=:2
+Table::setEntry---:s1=12 57'25" Gemini
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 63.1322
+Writer::getPosFormatted...sign=:2
+Table::setEntry---:s1=03 07'56" Gemini
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 120.596
+Writer::getPosFormatted...sign=:4
+Table::setEntry---:s1=00 35'44" Leo
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 159.674
+Writer::getPosFormatted...sign=:5
+Table::setEntry---:s1=09 40'27" Virgo
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 339.674
+Writer::getPosFormatted...sign=:11
+Table::setEntry---:s1=09 40'27" Pisces
+else clause:TextHelper::writeVedicPlanets()::::::::pos.length = 141.049
+Writer::getPosFormatted...sign=:4
+Table::setEntry---:s1=21 02'57" Leo
+TextWriter::writeEntry()---:Planet         
+TextWriter::writeEntry()---:Length                
+TextWriter::writeEntry()---:D-9         
+TextWriter::writeEntry()---:Nakshatra          
+TextWriter::writeEntry()---:Sun          
+TextWriter::writeEntry()---:04 26'07" Taurus                
+TextWriter::writeEntry()---:Aquarius         
+TextWriter::writeEntry()---:Krittika          
+TextWriter::writeEntry()---:Moon         
+TextWriter::writeEntry()---:21 43'02" Virgo                
+TextWriter::writeEntry()---:Cancer         
+TextWriter::writeEntry()---:Hasta          
+TextWriter::writeEntry()---:Mars         
+TextWriter::writeEntry()---:22 59'36" Cancer                
+TextWriter::writeEntry()---:Capricorn         
+TextWriter::writeEntry()---:Aslesha          
+TextWriter::writeEntry()---:Mercury         
+TextWriter::writeEntry()---:10 26'57" Aries                
+TextWriter::writeEntry()---:Cancer         
+TextWriter::writeEntry()---:Aswini          
+TextWriter::writeEntry()---:Jupiter         
+TextWriter::writeEntry()---:12 57'25" Gemini                
+TextWriter::writeEntry()---:Capricorn         
+TextWriter::writeEntry()---:Ardra          
+TextWriter::writeEntry()---:Venus         
+TextWriter::writeEntry()---:03 07'56" Gemini                
+TextWriter::writeEntry()---:Libra         
+TextWriter::writeEntry()---:Mrigasira          
+TextWriter::writeEntry()---:Saturn         
+TextWriter::writeEntry()---:00 35'44" Leo                
+TextWriter::writeEntry()---:Aries         
+TextWriter::writeEntry()---:Magha          
+TextWriter::writeEntry()---:Rahu         
+TextWriter::writeEntry()---:09 40'27" Virgo                
+TextWriter::writeEntry()---:Pisces         
+TextWriter::writeEntry()---:U.Phalguni          
+TextWriter::writeEntry()---:Ketu         
+TextWriter::writeEntry()---:09 40'27" Pisces                
+TextWriter::writeEntry()---:Virgo         
+TextWriter::writeEntry()---:U.Bhadra          
+TextWriter::writeEntry()---:Ascendant         
+TextWriter::writeEntry()---:21 02'57" Leo                
+TextWriter::writeEntry()---:Libra         
+TextWriter::writeEntry()---:P.Phalguni          
+Planet     Length            D-9        Nakshatra   
+----------------------------------------------------
+Sun        04 26'07" Taurus  Aquarius   Krittika    
+Moon       21 43'02" Virgo   Cancer     Hasta       
+Mars       22 59'36" Cancer  Capricorn  Aslesha     
+Mercury    10 26'57" Aries   Cancer     Aswini      
+Jupiter    12 57'25" Gemini  Capricorn  Ardra       
+Venus      03 07'56" Gemini  Libra      Mrigasira   
+Saturn     00 35'44" Leo     Aries      Magha       
+Rahu       09 40'27" Virgo   Pisces     U.Phalguni  
+Ketu       09 40'27" Pisces  Virgo      U.Bhadra    
+Ascendant  21 02'57" Leo     Libra      P.Phalguni  
+

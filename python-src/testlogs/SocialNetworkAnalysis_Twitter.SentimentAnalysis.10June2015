@@ -1,0 +1,243 @@
+shrinivaasanka@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src$ sudo python SocialNetworkAnalysis_Twitter.py 
+/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src/SentimentAnalyzer.py:146: SyntaxWarning: import * only allowed at module level
+  def main():
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 6, "followers_count": 14, "friends_count": 99, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan ", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Wed May 06 20:21:07 +0000 2015", "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596047058894622720, "lang": "en", "retweet_count": 597, "retweeted": true, "retweeted_status": {"created_at": "Wed May 06 20:15:35 +0000 2015", "favorite_count": 589, "favorited": false, "hashtags": ["India", "Delhi", "Ahmedabad", "Chennai", "SpaceVine"], "id": 596045664636796928, "lang": "en", "retweet_count": 597, "retweeted": true, "source": "<a href=\"http://vine.co\" rel=\"nofollow\">Vine - Make a Scene</a>", "text": "#India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}}, "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", "text": "RT @AstroTerry: #India sparkles from #Delhi and #Ahmedabad all the way to #Chennai.  #SpaceVine https://t.co/2zYaQbyf1o", "truncated": false, "urls": {"https://t.co/2zYaQbyf1o": "https://vine.co/v/eZFJOWPxJ6I"}, "user_mentions": [{"id": 1115148079, "name": "Terry W. Virts", "screen_name": "AstroTerry"}]}, "statuses_count": 19, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+======================================
+128582668
+======================================
+======================================
+2428395070L
+======================================
+======================================
+917076067
+===========================================================================================
+Bonacich Power Centrality of the Social Network (Twitter) Crawled - computed using PageRank
+(a degree centrality based on social prestige)
+===========================================================================================
+[(1977078144, 0.0714285714285714), (917076067, 0.0714285714285714), (517205925, 0.0714285714285714), (429868038, 0.0714285714285714), (128582668, 0.0714285714285714), (47945595, 0.0714285714285714), (135815468, 0.0714285714285714), (92554510, 0.0714285714285714), (115943189, 0.0714285714285714), (30277494, 0.0714285714285714), (22766489, 0.0714285714285714), (23219674, 0.0714285714285714), (238550107, 0.0714285714285714), (2428395070L, 0.0714285714285714)]
+===========================================================================================
+Eigen Vector Centrality
+===========================================================================================
+{1977078144: 0.26726124191242434, 92554510: 0.26726124191242434, 917076067: 0.26726124191242434, 23219674: 0.26726124191242434, 517205925: 0.26726124191242434, 429868038: 0.26726124191242434, 135815468: 0.26726124191242434, 22766489: 0.26726124191242434, 30277494: 0.26726124191242434, 238550107: 0.26726124191242434, 128582668: 0.26726124191242434, 47945595: 0.26726124191242434, 2428395070L: 0.26726124191242434, 115943189: 0.26726124191242434}
+================================
+429868038
+===========================================
+Sentiment analysis of twitter text: TamilNaduDr.AmbedkarLawuniversity approved my tentative research topic Right to food in TN(Amma Unavakkam)in my Ph.d. http://t.co/1NywRJqHtt
+Positivity: 0.25
+Negativity: 0.0
+Objectivity: 6.75
+===========================================
+Sentiment analysis of twitter text: http://t.co/ZCtfxXEP3h
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: @WegoIndia we had registered with you but awaiting GETTING LISTED,
+Positivity: 0.25
+Negativity: 0.25
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: @PMOIndia Humble request to Hno.PM, kindly create a distress fund to protect formers and invite people too contribute.  I pledge to donate.
+Positivity: 0.625
+Negativity: 2.25
+Objectivity: 11.125
+===========================================
+Sentiment analysis of twitter text: @PlayboySocial &lt;3 :* http://t.co/OQuR1pIByP
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: I just entered to win $1,000 by sharing my article with  @AngiesList http://t.co/Fxl9AekjIN #ALExperts
+Positivity: 0.75
+Negativity: 0.375
+Objectivity: 5.875
+===========================================
+Sentiment analysis of twitter text: I saved a @YouTube playlist http://t.co/sLBn19eI3l Aasai Movie All
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 5.5
+===========================================
+Sentiment analysis of twitter text: Corestack for automating your Cloud infrastructure needs via powerful templating support! https://t.co/Ou6JIgN1MW
+Positivity: 0.375
+Negativity: 0.125
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: DealBook: Joseph H. Flom, Pioneering Deal Lawyer, Dies at 87 http://nyti.ms/f58tCS
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 5.0
+===========================================
+Sentiment analysis of twitter text: @Airtel_Presence Thanks a lot for pushing the operator update for iOS 8. Got 3G toggle button. You let a very loyal customer suffer so long
+Positivity: 1.375
+Negativity: 0.625
+Objectivity: 15.0
+================================
+1977078144
+===========================================
+Sentiment analysis of twitter text: TamilNaduDr.AmbedkarLawuniversity approved my tentative research topic Right to food in TN(Amma Unavakkam)in my Ph.d. http://t.co/1NywRJqHtt
+Positivity: 0.25
+Negativity: 0.0
+Objectivity: 6.75
+===========================================
+Sentiment analysis of twitter text: http://t.co/ZCtfxXEP3h
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: @WegoIndia we had registered with you but awaiting GETTING LISTED,
+Positivity: 0.25
+Negativity: 0.25
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: @PMOIndia Humble request to Hno.PM, kindly create a distress fund to protect formers and invite people too contribute.  I pledge to donate.
+Positivity: 0.625
+Negativity: 2.25
+Objectivity: 11.125
+===========================================
+Sentiment analysis of twitter text: @PlayboySocial &lt;3 :* http://t.co/OQuR1pIByP
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: I just entered to win $1,000 by sharing my article with  @AngiesList http://t.co/Fxl9AekjIN #ALExperts
+Positivity: 0.75
+Negativity: 0.375
+Objectivity: 5.875
+===========================================
+Sentiment analysis of twitter text: I saved a @YouTube playlist http://t.co/sLBn19eI3l Aasai Movie All
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 5.5
+===========================================
+Sentiment analysis of twitter text: Corestack for automating your Cloud infrastructure needs via powerful templating support! https://t.co/Ou6JIgN1MW
+Positivity: 0.375
+Negativity: 0.125
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: DealBook: Joseph H. Flom, Pioneering Deal Lawyer, Dies at 87 http://nyti.ms/f58tCS
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 5.0
+===========================================
+Sentiment analysis of twitter text: @Airtel_Presence Thanks a lot for pushing the operator update for iOS 8. Got 3G toggle button. You let a very loyal customer suffer so long
+Positivity: 1.375
+Negativity: 0.625
+Objectivity: 15.0
+================================
+517205925
+===========================================
+Sentiment analysis of twitter text: TamilNaduDr.AmbedkarLawuniversity approved my tentative research topic Right to food in TN(Amma Unavakkam)in my Ph.d. http://t.co/1NywRJqHtt
+Positivity: 0.25
+Negativity: 0.0
+Objectivity: 6.75
+===========================================
+Sentiment analysis of twitter text: http://t.co/ZCtfxXEP3h
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: @WegoIndia we had registered with you but awaiting GETTING LISTED,
+Positivity: 0.25
+Negativity: 0.25
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: @PMOIndia Humble request to Hno.PM, kindly create a distress fund to protect formers and invite people too contribute.  I pledge to donate.
+Positivity: 0.625
+Negativity: 2.25
+Objectivity: 11.125
+===========================================
+Sentiment analysis of twitter text: @PlayboySocial &lt;3 :* http://t.co/OQuR1pIByP
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: I just entered to win $1,000 by sharing my article with  @AngiesList http://t.co/Fxl9AekjIN #ALExperts
+Positivity: 0.75
+Negativity: 0.375
+Objectivity: 5.875
+===========================================
+Sentiment analysis of twitter text: I saved a @YouTube playlist http://t.co/sLBn19eI3l Aasai Movie All
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 5.5
+===========================================
+Sentiment analysis of twitter text: Corestack for automating your Cloud infrastructure needs via powerful templating support! https://t.co/Ou6JIgN1MW
+Positivity: 0.375
+Negativity: 0.125
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: DealBook: Joseph H. Flom, Pioneering Deal Lawyer, Dies at 87 http://nyti.ms/f58tCS
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 5.0
+===========================================
+Sentiment analysis of twitter text: @Airtel_Presence Thanks a lot for pushing the operator update for iOS 8. Got 3G toggle button. You let a very loyal customer suffer so long
+Positivity: 1.375
+Negativity: 0.625
+Objectivity: 15.0
+================================
+92554510
+===========================================
+Sentiment analysis of twitter text: TamilNaduDr.AmbedkarLawuniversity approved my tentative research topic Right to food in TN(Amma Unavakkam)in my Ph.d. http://t.co/1NywRJqHtt
+Positivity: 0.25
+Negativity: 0.0
+Objectivity: 6.75
+===========================================
+Sentiment analysis of twitter text: http://t.co/ZCtfxXEP3h
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: @WegoIndia we had registered with you but awaiting GETTING LISTED,
+Positivity: 0.25
+Negativity: 0.25
+Objectivity: 4.5
+===========================================
+Sentiment analysis of twitter text: @PMOIndia Humble request to Hno.PM, kindly create a distress fund to protect formers and invite people too contribute.  I pledge to donate.
+Positivity: 0.625
+Negativity: 2.25
+Objectivity: 11.125
+===========================================
+Sentiment analysis of twitter text: @PlayboySocial &lt;3 :* http://t.co/OQuR1pIByP
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 0.0
+===========================================
+Sentiment analysis of twitter text: I just entered to win $1,000 by sharing my article with  @AngiesList http://t.co/Fxl9AekjIN #ALExperts
+Positivity: 0.75
+Negativity: 0.375
+Objectivity: 5.875
+===========================================
+Sentiment analysis of twitter text: I saved a @YouTube playlist http://t.co/sLBn19eI3l Aasai Movie All
+Positivity: 0.5
+Negativity: 0.0
+Objectivity: 5.5
+================================
+22766489
+================================
+47945595
+================================
+115943189
+================================
+238550107
+================================
+135815468
+================================
+30277494
+================================
+23219674
+Traceback (most recent call last):
+  File "SocialNetworkAnalysis_Twitter.py", line 108, in <module>
+    snat.followersTweetsSentimentAnalyzer()
+  File "SocialNetworkAnalysis_Twitter.py", line 88, in followersTweetsSentimentAnalyzer
+    for f in self.api.GetFollowers(twitter_id):
+  File "/usr/local/lib/python2.7/dist-packages/twitter/api.py", line 1690, in GetFollowers
+    next_cursor, previous_cursor, data = self.GetFollowersPaged(user_id, screen_name, cursor, count, skip_status, include_user_entities)
+  File "/usr/local/lib/python2.7/dist-packages/twitter/api.py", line 1639, in GetFollowersPaged
+    data = self._ParseAndCheckTwitter(json.content)
+  File "/usr/local/lib/python2.7/dist-packages/twitter/api.py", line 3530, in _ParseAndCheckTwitter
+    self._CheckForTwitterError(data)
+  File "/usr/local/lib/python2.7/dist-packages/twitter/api.py", line 3557, in _CheckForTwitterError
+    raise TwitterError(data['errors'])
+twitter.error.TwitterError: [{u'message': u'Rate limit exceeded', u'code': 88}]
+
