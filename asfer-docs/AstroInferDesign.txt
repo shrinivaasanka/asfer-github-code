@@ -1093,11 +1093,13 @@ https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Fi
 
 The circuits described in [ChandraStockmeyerVishkin] are constant depth circuits [AC0] and thus in [NC1]  (unbounded to bounded fanin logdepth reduction)
 
+Grid cells are initialized to 0.
+
 loop_forever
 {
-	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This is in NC.
+	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This simulates parallel computation in many natural processes viz., rain. This is in NC.
 	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in NC. 
-	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
+	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a viscous fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
 }
 
 Above can be diagramatically represented as: (for N cells in grid in parallel)
@@ -1127,7 +1129,7 @@ By applying cellular automaton algorithm above, grid becomes: (minimizes collisi
 		1  1  1
 		1  1  1
 
-Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid).
+Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid).
 
 ----------------------------------------------------------------------------------------------
 135.15 References on Cellular Automata, Parallel Computation of CA, Fluid Dynamics, Navier-Stokes equation, Percolation Theory etc.,:
