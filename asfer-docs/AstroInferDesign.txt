@@ -1090,10 +1090,26 @@ https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Fi
 135.13 Cellular Automaton Algorithm:
 ------------------------------------
 (Reference for reductions below: http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf [Chandra-Stockmeyer-Vishkin])
+[http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/AstroInferDesign.txt and 
+https://github.com/shrinivaasanka/asfer-github-code/blob/master/asfer-docs/AstroInferDesign.txt ]
 
 The circuits described in [ChandraStockmeyerVishkin] are constant depth circuits [AC0] and thus in [NC1]  (unbounded to bounded fanin logdepth reduction)
 
-Grid cells are initialized to 0.
+From wikipedia - Linear programs are problems that can be expressed in canonical form:
+c^T * X
+subject to AX <= b 
+and X >= 0 
+
+maximize X
+subject to AX <= some maximum limit
+and X >= 0  
+
+Below Cellular Automaton NC algorithm for grid filling assumes that:
+C=[1,1,1,...1]
+A=[1,1,1....1] in the above and the vector of variables X is mapped to the grid - sequentially labelled in ascending from top-left to bottom-right, row-by-row and column-by-column. Though this limits the number of variables to be a square, additional variables can be set to a constant.
+
+
+Grid cells (or variables in above grid) are initialized to 0.
 
 loop_forever
 {
@@ -1123,12 +1139,14 @@ Above can be diagramatically represented as: (for N cells in grid in parallel)
 		0  0  1
 		2  1  1
 
+Above can be likened to a scenario where a viscous fluid is unevenly spread at random from heavens.
 By applying cellular automaton algorithm above, grid becomes: (minimizes collisions and maximizes LP)
 
 		1  1  1
 		1  1  1
 		1  1  1
 
+Above can be likened to a scenario where each 8-neighbour grid cell underneath computes the evened-out cellular automaton in parallel. Size of the NC circuit is polynomial in variables n and is constant depth as the neighbours are constant (ChandraStockmeyerVishkin)
 Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid).
 
 ----------------------------------------------------------------------------------------------
