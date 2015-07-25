@@ -121,7 +121,10 @@ Additional References:
 14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
 14.2 k-SAT and 3-SAT - http://www-verimag.imag.fr/~duclos/teaching/inf242/SAT-3SAT-and-other-red.pdf 
 14.3 Switching Lemma
-14.4 Donald Knuth - Satisfiability textbook chapter - http://www-cs-faculty.stanford.edu/~uno/fasc6a.ps.gz
+14.4 Donald Knuth - Satisfiability textbook chapter - http://www-cs-faculty.stanford.edu/~uno/fasc6a.ps.gz - Quoted excerpts:
+" ... Section 7.2.2.2 Satisfiability
+Satisfiability is a natural progenitor of every NP-complete problem’
+Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that NO(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
 
 ----------------------------------------------------------
 
@@ -1016,7 +1019,42 @@ For even number of finite population (electorate) the binomial coefficient summa
 
 	(2^n - nC(n/2))/2^(n+1) = 0.5 - epsilon where epsilon=sqrt(1/(2*n*pi)) limit for which vanishes at infinity
 
-(or) probability of good choice is epsilon less than 50% for finite even number of electorate for uniform distribution - a weird counterintuitive special case. Thus the counterexample for P Vs NP is still valid at infinity if infinite majority is decidable(related to decidability of infinite-candidate condorcet election and Arrow's theorem) . Written notes for this are at: http://sourceforge.net/p/asfer/code/568/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf
+(or) probability of good choice is epsilon less than 50% for finite even number of electorate for uniform distribution - a weird counterintuitive special case. Thus the counterexample for P Vs NP is still valid at infinity if infinite majority is decidable(related to decidability of infinite-candidate condorcet election , May's theorem and Arrow's theorem) . Written notes for this are at: http://sourceforge.net/p/asfer/code/568/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf. What this implies is the LHS is PRG circuit in NC or P while the RHS is a humongous infinite majority+SAT (oracle) circuit - unbounded fan-in constant depth circuit. This then becomes an NP-complete Circuit SAT problem - http://www.cs.berkeley.edu/~luca/cs170/notes/lecture22.pdf. 
+
+If this infinite-ness breaches the polynomiality then what is quite puzzling is that RHS becomes a Direct Connect DC circuit equivalent to PH(Polynomial Hierarchy). Quotes excerpts from Arora-Barak for DC uniform circuits:
+
+"... 
+6.6
+Circuits of exponential size
+As noted, every language has circuits of size O(n^2^n ). However, actually finding these circuits may
+be difficult— sometimes even undecidable. If we place a uniformity condition on the circuits, that
+is, require them to be efficiently computable then the circuit complexity of some languages could
+exceed n^2^n . In fact it is possible to give alternative definitions of some familiar complexity classes,
+analogous to the definition of P in Theorem 6.7.
+Definition 6.28 (DC-Uniform)
+Let {C n } n≥1 be a circuit family. We say that it is a Direct Connect uniform (DC uniform) family if,
+given hn, ii, we can compute in polynomial time the i th bit of (the representation of) the circuit C n .
+More concretely, we use the adjacency matrix representation and hence a family {C n } n∈N is DC
+uniform iff the functions SIZE, TYPE and EDGE defined in Remark ?? are computable in polynomial
+time.
+Note that the circuits may have exponential size, but they have a succinct representation in
+terms of a TM which can systematically generate any required node of the circuit in polynomial
+time.
+Now we give a (yet another) characterization of the class PH, this time as languages computable
+by uniform circuit families of bounded depth. We leave it as Exercise 13.
+
+Theorem 6.29
+L ∈ P H iff L can be computed by a DC uniform circuit family {C n } that
+• uses AND, OR, NOT gates.
+O(1)
+• has size 2^n
+and constant depth (i.e., depth O(1)).
+• gates can have unbounded (exponential) fanin.
+• the NOT gates appear only at the input level.
+If we drop the restriction that the circuits have constant depth, then we obtain exactly EXP
+..."
+
+The RHS Majority+SAT circuit has all characteristics satisfying the DC-uniformity in the theorem above - size can be exponential, unbounded fanin, depth is constant (each Voter Circuit SAT CNF is OR of ANDs - depth 3) and NOT gates are required only in leaf nodes of the Voter Circuit SAT. Thus the counterexample could imply very,very importantly that P could be equal to PH or EXP (P=PH or P=EXP based on depth restricted or unrestricted) in infinite or exponential case respectively - could have tumultuous ramifications for complexity theory as a whole as it goes beyond P=NP question - for perfect voter scenario described in point 133 - all circumstantial evidences above point to this.
 
 ---------------------------------------------------------------------------------------------
 130. (THEORY) Counterexample definition for P Vs NP
@@ -1046,7 +1084,7 @@ Additional References:
 ------------------------------------------------------------------------------------
 Let S be a set of elements with "goodness" attribute for each element. Choice using LHS and RHS on this set is by a PRG and a majority voting circuit with SAT inputs. LHS for pseudorandom choice consists of two steps:
 133.1 Accuracy of the PRG - how random or k-wise independent the PRG is - this is usually by construction of a PRG (Blum-Micali, Nisan etc.,) 
-133.2 Goodness of chosen element - PRG is used to choose an element from the set - this mimicks the realworld phenomenon of non-democractic social or non-social choices. Nature itself is the PRG or RG in this case. After choice is made, how "good" is the chosen is independent of (133.1). Proof is by contradiction - if it were dependent on PRG used then a distinguisher can discern the PRGs by significant fraction.
+133.2 Goodness of chosen element - PRG is used to choose an element from the set - this mimicks the realworld phenomenon of non-democractic social or non-social choices. Nature itself is the PRG or RG in this case. After choice is made, how "good" is the chosen is independent of (133.1). Proof is by contradiction - if it were dependent on PRG used then a distinguisher can discern the PRGs from True Randomness by significant fraction.
 133.3 Thus if the set S is 100% perfect - all elements in it are the best - LHS of P(Good) is 1. Similarly the RHS is the majority voting within these "best" elements which can never err (i.e their SAT clauses are all perfect) that converges to 1 by binomial coefficient summation in uniform distribution.
 
 From the aforementioned,it is evident that for a 100% perfect set,both PRG(LHS) and Majority+SAT(RHS) Voting are two choice algorithms of equal outcome but with differing lowerbounds(with p=0.5 both LHS and RHS are in BPP or BPNC,but when p=1 then RHS is NP and LHS is P or NC). The set in toto is a black-box which is not known to the PRG or individual voters who are the constituents of it.
@@ -1114,7 +1152,7 @@ Grid cells (or variables in above grid) are initialized to 0.
 
 loop_forever
 {
-	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This simulates parallel computation in many natural processes viz., rain. This is in NC.
+	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This simulates parallel computation in many natural processes viz., rain. This is in NC. This is related to Randomness Extractors - https://en.wikipedia.org/wiki/Randomness_extractor - if rainfall from cloud can be used a natural weak entropy parallel randomness source (or strong?) - predicting which steam particle of a cloud would become a droplet is heavily influenced by the huge number of natural variables - fluid mechanics comes into force and this happens in parallel. Extractor is a stronger notion than Pseudorandom Generator. Extracting parallel random bits can also be done from a fluid mechanical natural processes like turbulent flows.
 	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in NC. 
 	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a viscous fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
 }
@@ -1128,7 +1166,7 @@ Above can be diagramatically represented as: (for N cells in grid in parallel)
 		      ||				||
 		Comparison 		....	   Comparison
 		      ||				||	
-		Minimum of 8		....	  Minimum of 8
+	Minimum of 8 neighbours		....	  Minimum of 8 neighbours
 		      ||				||
 		Increment			    Increment  
 		and				    and
