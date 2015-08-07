@@ -1056,7 +1056,25 @@ If we drop the restriction that the circuits have constant depth, then we obtain
 
 The RHS Majority+SAT circuit has all characteristics satisfying the DC-uniformity in the theorem above - size can be exponential, unbounded fanin, depth is constant (each Voter Circuit SAT CNF is AND of ORs - depth 3) and NOT gates are required only in leaf nodes of the Voter Circuit SAT. Thus the counterexample could imply very,very importantly that P could be equal to PH or EXP (P=PH or P=EXP based on depth restricted or unrestricted) in infinite or exponential case respectively - could have tumultuous ramifications for complexity theory as a whole as it goes beyond P=NP question - for perfect voter scenario described in point 133 - all circumstantial evidences above point to this. 
 
-[Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample]
+[Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample
+
+There are zero error voting systems:
+E.g Paxos protocol without byzantine failures - http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf
+]
+
+129.1 Toda's theorem and P(good) circuit above:
+------------------------------------------------
+PH is contained in P^#P (or) P with #no-of-solutions-to-SAT oracle (Toda's theorem). 
+If zero-error Majority+SAT voting DC uniform circuit is in PH then due to LHS=RHS of the P(good) series convergence, 
+PH collapses(?) to P (quite unbelievably):
+LHS Pseudorandom choice is in P while RHS Majority+SAT is in PH=DC circuit (restricted depth) or EXP (unrestricted depth)
+(i.e there is a P algorithm for PH). 
+if P=PH:
+  P=PH is in P^#P by Toda's theorem 
+
+if P=EXP:
+ P=PH=EXP in P^#P or P=PH=EXP=P^#P (which is a complete collapse)
+
 
 ---------------------------------------------------------------------------------------------
 130. (THEORY) Counterexample definition for P Vs NP
