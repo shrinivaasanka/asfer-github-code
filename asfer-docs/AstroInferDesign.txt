@@ -1058,7 +1058,14 @@ If we drop the restriction that the circuits have constant depth, then we obtain
 
 The RHS Majority+SAT circuit has all characteristics satisfying the DC-uniformity in the theorem above - size can be exponential, unbounded fanin, depth is constant (each Voter Circuit SAT CNF is AND of ORs - depth 3) and NOT gates are required only in leaf nodes of the Voter Circuit SAT. Thus the counterexample could imply very,very importantly that P could be equal to PH or EXP (P=PH or P=EXP based on depth restricted or unrestricted) in infinite or exponential case respectively - could have tumultuous ramifications for complexity theory as a whole as it goes beyond P=NP question - for perfect voter scenario described in point 133 - all circumstantial evidences above point to this. 
 
-[Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample
+It is not necessary that per voter SAT is same for all voters. Each voter can have unrestricted depth SAT clauses (in real world ,each voter decides on his-her own volition and depth of their SAT circuits can vary based on complexity of per-individual decision making algorithm) - due to which RHS zero-error DC circuit need not be in PH but in EXP.
+
+even if a BQP algorithm is used in voting outside the purview of PH but in EXP, it doesn't change the above unless:
+ - perfection is imposible i.e there cannot be zero-error processes in the universe
+ - DC-circuit is not drawable (or undecidable if it can be constructed)
+ - infinite majority is undecidable (so circuit is DC non-uniform and not DC-uniform)
+
+[Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points elsewhere in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample
 
 There are zero error voting systems:
 E.g Paxos protocol without byzantine failures - http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf
