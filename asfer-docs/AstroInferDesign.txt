@@ -114,7 +114,12 @@ Additional References:
 
 13.(THEORY) But it is not known that if Arrow's theorem can be generalized for infinite number of candidates as above and whether such an electoral system is decidable. The possibility of a circular ranking in 3-condorcet election implies that there are some scenarios where voter can err though not exactly an error in making a "good choice" (or Perfect Voter Problem is decidable in case of 3 candidates condorcet election).
 
-14.(THEORY) Each Voter has a k-SAT circuit which is input to Majority circuit. k-SAT can be reduced to 3-SAT (not 2-SAT) and thus is NP-complete. Error by a Voter SAT circuit implies that voter votes 0 instead of 1 and 1 instead of 0. This is nothing but the sensitivity of the voter boolean function i.e number of erroneous variable assignments by the voter that change the per-voter decision input to the Majority circuit. Thus more the sensitivity or number of bits to be flipped to change the voter decision, less the probability of error by the voter. If sensitivity is denoted by s, 1/q is probability that a single bit is flipped and probability of error by the voter is p then p = k/q^s for some constant k which is derived by the conditional probability that Pr[m bits are flipped] = Pr[m-th bit is flipped/(m-1) bits already flipped]*Pr[(m-1) bits are flipped] = 1/q*1/q^(m-1) = 1/q^m (and m=s) . This expression for p  can be substituted in the Probability series defined in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1. Probability of single bit flip is 1/q if the number of variables across all clauses is q and each variable is flipped independent of the other. The Voter SAT circuit has an interesting application of Hastad's Switching Lemma - random probabilistic setting of variables known as "restrictions" decreases the decision tree depth significantly , or, number of variables that determine the Voter SAT outcome reduces significantly - in other words, random "restricted convincing" of a voter SAT CNF has huge impact on number of variables yet to be "convinced".
+14.(THEORY) Each Voter has a k-SAT circuit which is input to Majority circuit. k-SAT can be reduced to 3-SAT (not 2-SAT) and thus is NP-complete. Error by a Voter SAT circuit implies that voter votes 0 instead of 1 and 1 instead of 0. This is nothing but the sensitivity of the voter boolean function i.e number of erroneous variable assignments by the voter that change the per-voter decision input to the Majority circuit. Thus more the sensitivity or number of bits to be flipped to change the voter decision, less the probability of error by the voter. If sensitivity is denoted by s, 1/q is probability that a single bit is flipped and probability of error by the voter is p then p = 1/q^s which is derived by the conditional probability that Pr[m bits are flipped] = Pr[m-th bit is flipped/(m-1) bits already flipped]*Pr[(m-1) bits are flipped] = 1/q*1/q^(m-1) = 1/q^m (and m=s) . This expression for p  can be substituted in the Probability series defined in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf?attredirects=0&d=1. Probability of single bit flip is 1/q if the number of variables across all clauses is q and each variable is flipped independent of the other. 
+
+For example, a term in the binomial summation becomes:
+mC(n+1) * (1/q^s)^(n+1) * (1/q^s)^(m-n-1) where m is total number of voter SATs and (1/q) is probability of single variable flip in Voter SAT and s is sensitivity of Voter SAT boolean function - s can change for each voter SAT in which case it has to be s1,s2,s3,s4,s5,... and the summation requires hypergeometric algorithms.
+
+The Voter SAT circuit has an interesting application of Hastad's Switching Lemma - random probabilistic setting of variables known as "restrictions" decreases the decision tree depth significantly , or, number of variables that determine the Voter SAT outcome reduces significantly - in other words, random "restricted convincing" of a voter SAT CNF has huge impact on number of variables yet to be "convinced".
 
 Additional References:
 ----------------------
@@ -124,7 +129,7 @@ Additional References:
 14.4 Donald Knuth - Satisfiability textbook chapter - http://www-cs-faculty.stanford.edu/~uno/fasc6a.ps.gz - Quoted excerpts:
 " ... Section 7.2.2.2 Satisfiability
 Satisfiability is a natural progenitor of every NP-complete problem’
-Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that NO(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
+Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that N^O(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
 
 ----------------------------------------------------------
 
@@ -1064,7 +1069,7 @@ even if a BQP algorithm is used in voting outside the purview of PH but in EXP, 
  - perfection is impossible i.e there cannot be zero-error processes in the universe
  - DC-circuit is not drawable (or undecidable if it can be constructed)
  - infinite majority is undecidable (so circuit is DC non-uniform and not DC-uniform)
- - the voter CNF can only be 2-SAT (which is higly unlikely) and not k-SAT or 3-SAT
+ - the voter CNF can only be 2-SAT (which is highly unlikely) and not k-SAT or 3-SAT
 
 [Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points elsewhere in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample
 
@@ -1679,6 +1684,22 @@ where:
 EventNet path can be guessed. As a counting problem this is #P-complete (set of all paths among known subgraphs of an unknown supergraph). But there is only one accepting path (could be in Unambigous Logspace if the number of states is in logspace) 
 
 Another example: set of blind men try to make out an object by touch.
+
+------------------------------------------------------------------------------------------------------------------
+159. (THEORY) Pattern Grammar
+------------------------------------------------------------------------------------------------------------------
+Grammar for patterns like texts, pictures similar to RE,CFG etc., for pattern recognition:
+   - example text grammar:  <a> := <o> <operator> <)>
+   - example text grammar:  <d> := <o> <operator> <l>
+   - example text grammar:  <v> := <\> <operator> </>
+
+-----------------------------------------------------------------------------------------------------------------
+160. (THEORY) Cognitive Element
+-----------------------------------------------------------------------------------------------------------------
+An element of a list or group is cognitive with respect to an operator if it "knows" about all or subset of other elements of list or group where "knowing" is subject to definition of operation as below:
+   - In list 2,3,5,7,17 - 17 knows about 2,3,5,7 in the sense that 17 = 2+3+5+7 with + operator
+   - In list "addon","add","on" - "addon" knows about "add" and "on" with concatenation operator 
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
