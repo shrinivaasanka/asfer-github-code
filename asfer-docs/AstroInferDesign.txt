@@ -1061,9 +1061,10 @@ The RHS Majority+SAT circuit has all characteristics satisfying the DC-uniformit
 It is not necessary that per voter SAT is same for all voters. Each voter can have unrestricted depth SAT clauses (in real world ,each voter decides on his-her own volition and depth of their SAT circuits can vary based on complexity of per-individual decision making algorithm) - due to which RHS zero-error DC circuit need not be in PH but in EXP.
 
 even if a BQP algorithm is used in voting outside the purview of PH but in EXP, it doesn't change the above unless:
- - perfection is imposible i.e there cannot be zero-error processes in the universe
+ - perfection is impossible i.e there cannot be zero-error processes in the universe
  - DC-circuit is not drawable (or undecidable if it can be constructed)
  - infinite majority is undecidable (so circuit is DC non-uniform and not DC-uniform)
+ - the voter CNF can only be 2-SAT (which is higly unlikely) and not k-SAT or 3-SAT
 
 [Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points elsewhere in this document on majority voting + SAT versus psuedorandom choice are work-in-progress drafts only which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample
 
