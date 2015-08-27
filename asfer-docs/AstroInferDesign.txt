@@ -121,6 +121,8 @@ mC(n+1) * (1/q^s)^(n+1) * (1/q^s)^(m-n-1) where m is total number of voter SATs 
 
 The Voter SAT circuit has an interesting application of Hastad's Switching Lemma - random probabilistic setting of variables known as "restrictions" decreases the decision tree depth significantly , or, number of variables that determine the Voter SAT outcome reduces significantly - in other words, random "restricted convincing" of a voter SAT CNF has huge impact on number of variables yet to be "convinced".
 
+As done in the Switching Lemma proof, parity circuit can be an AND of ORs (or OR of ANDs) which is randomly restricted to switch the connectives in lowest 2 levels to arrive at super-polynomial lowerbound for parity and hence for each voter SAT. Thus the Parity CNF can be the special case of Voter SAT also (i.e voter wants odd number of variables to be satisfied - odd voter indeed). This kind of extends switching lemma to an infinite majority with parity oracle case.
+
 Additional References:
 ----------------------
 14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
@@ -130,6 +132,7 @@ Additional References:
 " ... Section 7.2.2.2 Satisfiability
 Satisfiability is a natural progenitor of every NP-complete problem’
 Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that N^O(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
+14.5 Majority and Parity not in AC0 - www.cs.tau.ac.il/~safra/ACT/CCandSpaceB.ppt, http://www.math.rutgers.edu/~sk1233/courses/topics-S13/lec3.pdf
 
 ----------------------------------------------------------
 
