@@ -123,6 +123,13 @@ The Voter SAT circuit has an interesting application of Hastad's Switching Lemma
 
 As done in the Switching Lemma proof, parity circuit can be an AND of ORs (or OR of ANDs) which is randomly restricted to switch the connectives in lowest 2 levels to arrive at super-polynomial lowerbound for parity and hence for each voter SAT. Thus the Parity CNF can be the special case of Voter SAT also (i.e voter wants odd number of variables to be satisfied - odd voter indeed). This kind of extends switching lemma to an infinite majority with parity oracle case.
 
+Fourier expansion of the unbounded fan-in Majority+SAT circuit is obtained from indicator polynomial (http://www.contrib.andrew.cmu.edu/~ryanod/?p=207). Conjectuarally, this expansion might give an infinite summation of multilinear monomials - has some similarities to permanent computation if represented as an infinite matrix i.e Permanent converges to 1 for this infinite matrix for perfect voting (?) and Permanent is #P complete. 
+
+Demarcation of linear and exponential sized ciruits: P(good) RHS has Circuit SAT for each voter with unbounded fanin.
+1) If the variables for each SAT are same, then the circuit size is exponential in number of variables - DC-uniform
+2) else if the variables are different for each SAT, then the circuit is linear in number of variables - polynomial size
+1) is more likely than 2) if lot of variables among voters are common - Circuit lies between 1) and 2) - kind of super-polynomial and sub-exponential - where as 2) is the worst case exponential (or even ackermann function?)
+
 Additional References:
 ----------------------
 14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
@@ -133,6 +140,7 @@ Additional References:
 Satisfiability is a natural progenitor of every NP-complete problem’
 Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that N^O(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
 14.5 Majority and Parity not in AC0 - www.cs.tau.ac.il/~safra/ACT/CCandSpaceB.ppt, http://www.math.rutgers.edu/~sk1233/courses/topics-S13/lec3.pdf
+14.6 Sampling Fourier Polynomials - http://cstheory.stackexchange.com/questions/17431/the-complexity-of-sampling-approximately-the-fourier-transform-of-a-boolean-fu 
 
 ----------------------------------------------------------
 
