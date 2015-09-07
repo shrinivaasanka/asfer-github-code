@@ -123,7 +123,7 @@ The Voter SAT circuit has an interesting application of Hastad's Switching Lemma
 
 As done in the Switching Lemma proof, parity circuit can be an AND of ORs (or OR of ANDs) which is randomly restricted to switch the connectives in lowest 2 levels to arrive at super-polynomial lowerbound for parity and hence for each voter SAT. Thus the Parity CNF can be the special case of Voter SAT also (i.e voter wants odd number of variables to be satisfied - odd voter indeed). This kind of extends switching lemma to an infinite majority with parity oracle case.
 
-Fourier expansion of the unbounded fan-in Majority+SAT circuit is obtained from indicator polynomial (http://www.contrib.andrew.cmu.edu/~ryanod/?p=207). Conjectuarally, this expansion might give an infinite summation of multilinear monomials - has some similarities to permanent computation if represented as an infinite matrix i.e Permanent converges to 1 for this infinite matrix for perfect voting (?) and Permanent is #P complete. 
+Fourier expansion of the unbounded fan-in Majority+SAT circuit is obtained from indicator polynomial (http://www.contrib.andrew.cmu.edu/~ryanod/?p=207). Conjecturally, this expansion might give an infinite summation of multilinear monomials - has some similarities to permanent computation if represented as an infinite matrix i.e Permanent converges to 1 for this infinite matrix for perfect voting (?) and Permanent is #P complete. 
 
 Demarcation of linear and exponential sized ciruits: P(good) RHS has Circuit SAT for each voter with unbounded fanin.
 1) If the variables for each SAT are same, then the circuit size is exponential in number of variables - DC-uniform
@@ -141,6 +141,25 @@ Satisfiability is a natural progenitor of every NP-complete problem’
 Footnote:  At the present time very few people believe that P = NP. In other words, almost everybody who has studied the subject thinks that satisfiability cannot be decided in polynomial time.  The author of this book, however, suspects that N^O(1)–step algorithms do exist, yet that they’re unknowable.  Almost all polynomial time algorithms are so complicated that they are beyond human comprehension, and could never be programmed for an actual computer in the real world.  Existence is different from embodiment. ..."
 14.5 Majority and Parity not in AC0 - www.cs.tau.ac.il/~safra/ACT/CCandSpaceB.ppt, http://www.math.rutgers.edu/~sk1233/courses/topics-S13/lec3.pdf
 14.6 Sampling Fourier Polynomials - http://cstheory.stackexchange.com/questions/17431/the-complexity-of-sampling-approximately-the-fourier-transform-of-a-boolean-fu 
+
+14.7 Kummer's theorem on binomial coefficient summation - quoted from Wikipedia:
+"In mathematics, Kummer's theorem on binomial coeffients gives the highest power of a prime number p dividing a binomial coefficient. In particular, it asserts that givenintegers n ≥ m ≥ 0 and a prime number p, the maximum integer k such that p^k divides the binomial coefficient \tbinom n m  is equal to the number of carries when m is added to n − m in base p.  The theorem is named after Ernst Kummer, who proved it in the paper Kummer (1852). It can be proved by writing \tbinom{n}{m} as \tfrac{n!}{m! (n-m)!} and using Legendre's formula."
+
+14.8 Summation of first k binomial coefficients for fixed n:
+ - http://mathoverflow.net/questions/17202/sum-of-the-first-k-binomial-coefficients-for-fixed-n
+ - https://books.google.co.in/books?id=Tn0pBAAAQBAJ&pg=PA61&lpg=PA61&dq=summation+of+first+k+binomial+coefficients&source=bl&ots=sqB_iQweyS&sig=ye5TxmCkjP-Ud5JnWilMzqOkDjM&hl=en&sa=X&ved=0CFgQ6AEwCWoVChMI6rDEo9nVxwIVR0yOCh2AXgpz#v=onepage&q=summation%20of%20first%20k%20binomial%20coefficients&f=false
+which imply bounds for the summation:
+ - sum_k_2n(2nCi) = 2^2n - sum_0_k-1(2nCi)
+ - 2^2n - sum_0_k-1(2nCi) >  2^2n - (2nCk) * 2^(2n) / 2*(2nCn) 
+
+14.9 Probabilistic boolean formulae - truth table with probabilities - simulates the Voter Circuit SAT with errors
+http://www.cs.rice.edu/~kvp1/probabilisticboolean.pdf
+
+14.10 BPAC circuits ( = Probabilistic CNF?)
+http://www.cs.jhu.edu/~lixints/class/nw.pdf
+
+14.11 Mark Fey's proof of infinite version of May's theorem for 2 candidate majority voting - Cantor set arguments for levels of infinities - 
+https://www.rochester.edu/college/faculty/markfey/papers/MayRevised2.pdf
 
 ----------------------------------------------------------
 
