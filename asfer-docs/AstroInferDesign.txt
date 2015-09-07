@@ -188,7 +188,7 @@ A.	Design Notes on Mining Numerical Datasets
 #############################################################################################################################################
 
 ===========================================================================================================================================
-(THEORY) DECIDABILITY OF EXISTENCE AND CONSTRUCTION OF COMPLEMENT OF A FUNCTION (important draft additions to http://arxiv.org/pdf/1106.4102v1.pdf - quite experimental and not necessarily correct)
+(THEORY) DECIDABILITY OF EXISTENCE AND CONSTRUCTION OF COMPLEMENT OF A FUNCTION (important draft additions to http://arxiv.org/pdf/1106.4102v1.pdf - quite experimental, non-conventional and not necessarily correct)
 ===========================================================================================================================================
 
 (*)24. (ONGOING) COMPLEMENT OF A FUNCTION - Approximating or Interpolating with a Polynomial: This is quite expensive and is undecidable for infinite sets. Better alternative is to approximate with Spline interpolant polynomials, for example, cubic splines which have less approximation error. (On a related note, algorithms described by the author (that is, myself) in http://arxiv.org/pdf/1106.4102v1.pdf for construction of a complement of a function are also in a way eliciting pattern in numerical data. The polynomial interpolation algorithm for complement finding can be improved with Spline interpolants which reduce the error and Discrete Fourier Transform in addition to Fourier series for the boolean expression. Adding this as a note here since TeX file for this arXiv submission got mysteriously deleted and the PDF in arXiv has to be updated somehow later.). A test python script written in 2011 while at CMI for implementing the above is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/complement.py. Also Trigonometric Polynomial Interpolation which is a special case of Polynomial interpolation, has following relation to DFT X(i)s:
@@ -197,7 +197,7 @@ A.	Design Notes on Mining Numerical Datasets
 Thus DFT amd interpolation coincide in the above.
 
 -----------------------------------------------------------------------------------------------------------------------
-Theorems on prime number generating polynomials - special case is to generate all primes or integral complement of xy=z 
+24a. Theorems on prime number generating polynomials - special case is to generate all primes or integral complement of xy=z 
 -----------------------------------------------------------------------------------------------------------------------
 Legendre - There is no rational algebraic function which always gives primes.
 Goldbach - No polynomial with integer coefficients can give primes for all integer values
@@ -206,7 +206,7 @@ Jones-Sato-Wada-Wiens - Polynomial of degree 25 in 26 variables whose values are
 Polynomial interpolation and Fourier expansion of the boolean function in http://arxiv.org/pdf/1106.4102v1.pdf probably would have non-integral coefficients due to the above.
 
 --------------------------------------------------------------------------------------------
-Circuit construction for the complement function boolean DNF constructed in http://arxiv.org/pdf/1106.4102v1.pdf
+24b. Circuit construction for the complement function boolean DNF constructed in http://arxiv.org/pdf/1106.4102v1.pdf
 --------------------------------------------------------------------------------------------
 The DNF constructed for complement function has to be minimized (through some lowerbound techniques) before it is represented as a circuit because the number of clauses could be exponential. The circuit minimization problem has been shown to be NP-complete(unpublished proof by Masek, [GareyJohnson]). The above complement function boolean DNF would yield a constant depth 2 circuit (probably after minimization also) with unbounded fanin. If the size of the circuit is polynomial it is in AC (=NC). The size of the circuit depends on the boolean DNF constructed above which inturn depends on input complement set. Thus circuit depends on input making it a Non-Uniform AC circuit.  Though complement function is undecidable as described in http://arxiv.org/pdf/1106.4102v1.pdf, Non-uniform circuits "decide" undecidable languages by definition.
 
@@ -224,18 +224,17 @@ Thus if a prime number is b-bit, there are b fourier polynomials for each bit of
 where each fxi() is one of the b fourier expansion polynomials for prime bits.
 
 -----------------------------------------------------------------------------------------------------------------------------------
-This can be substituted in Euler formula and equated to Riemann Zeta Function:
+24c. Riemann Zeta Function written as Euler-Fourier Polynomial :
+------------------------------------------------------------
+Fourier polynomials for each prime can be substituted in Euler formula and equated to Riemann Zeta Function:
 RZF = Inverse((1-1/P(x1)^s)(1-1/P(x2)^s))...ad infinitum---------------------------------------------------------------------(1).
------------------------------------------------------------------------------------------------------------------------------------
 
 Non-trivial complex zero s is obtained by,
 	P(xi)^s = 1
 	P(xi)	= (1)^(1/s)
-----------------------------------------------------------------------------------------------------------------------------------------------
 	1+2*fx1(xi)+2^2*fx2(xi).....+2^b*fxb(xi) = (1)^(e^(-i*theta)/r) after rewriting in phasor notation s=r*e^(i*theta).-----------(2)
-----------------------------------------------------------------------------------------------------------------------------------------------
 
-Above (1) links Fourier polynomials for each prime to roots of unity involving non-trivial zeroes of Riemann Zeta Function in RHS. LHS is the xi-th prime number. Since LHS is real without imaginary part, RHS should also be real though exponent involves imaginary part. There are as many roots of unity in RHS as there are prime numbers. The radian is taninverse which is semi-determined assuming RH with Re(s) = 0.5.
+Above links Fourier polynomials for each prime to roots of unity involving non-trivial zeroes of Riemann Zeta Function in RHS. LHS is the xi-th prime number. Since LHS is real without imaginary part, RHS should also be real though exponent involves imaginary part. There are as many roots of unity in RHS as there are prime numbers. The radian is taninverse which is semi-determined assuming RH with Re(s) = 0.5.
 
 LHS is multilinear with at most b variables for b bits of the prime number. A striking aspect of the above is that Fourier parity function is +1 or -1 and a lot of them might cancel out in the above summed up polynomial in LHS after substitution and rewriting.
 
@@ -243,26 +242,26 @@ If s is written as a+ic, then (1)^(1/s) = (1)^(1/a+ic) = (1)^((a-ic)/(a^2+c^2))
 
 If RH is true a=0.5 and above becomes, (1)^((0.5-ic)/(0.25+c^2)).
 
-----------------------------------------------------------------------------------------------------------------------------------------------
 	1+2*fx1(xi)+2^2*fx2(xi).....+2^b*fxb(xi) = (1)^((0.5-ic)/(0.25+c^2)) -----------(3)
-----------------------------------------------------------------------------------------------------------------------------------------------
 
-Thus imaginary part c has one-to-one correspondence to each prime. Non-trivial zeroes are usually found using functional notation of RZF instead of the above - applying Analytic Continuation that extends the domain in steps to be exact. Finding pattern in distribution of primes is equivalent to finding pattern in above set of prime bit circuits or fourier polynomials for each prime - The family of circuits for primes above has to be mined for circuit DAG subgraph patterns which is more of machine learning than complexity (there is almost no complexity theoretic reference to this aspect). The set of fourier polynomials can be mined for linear independence for example. (1),(2) and (3) are multiple ways of expressing same relation between complement function boolean circuit and RZF.
+Thus imaginary part c has one-to-one correspondence to each prime. Non-trivial zeroes are usually found using functional notation of RZF instead of the above - applying Analytic Continuation that extends the domain in steps to be exact. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-Delving deeper into (1) above which equates Riemann Zeta Function with Complement Function Fourier Polynomials substituted in Euler's infinite product (Hereinafter referred to as Fourier-Euler polynomial):
+24d. Delving deeper into (1) above which equates Riemann Zeta Function with Complement Function Fourier Polynomials substituted in Euler's infinite product (Hereinafter referred to as Euler-Fourier polynomial) - Pattern in primes from above Euler-Fourier polynomial:
 --------------------------------------------------------------------------------------------------------------------------------------------
-Similar to zeros of RZF, Fourier poynomial obtained from Euler's formula using complement function prime bits polynomials gives a very complex polynomial whose degree could be d*s in b variables, where d is the maximum degree in prime bit fourier polynomials. In randomized setting, Schwartz-Zippel Lemma can be applied for finding an upperbound for number of roots of this Fourier-Euler polynomial which is the traditional tool in Polynomial Identity Testing. Using the lemma, number of roots of the above polynomial is <= d*s/ |K| where K is the random finite subset of b variables in the boolean complement function. If |K| = b, then number of roots is upperbounded by d*s/b.[This is assuming rewriting as (2) or (3)]. But degree is a complex number d*s (It is not known if there is a Schwartz-Zippel Lemma for complex degree).  The roots of this Fourier-Euler polynomial should intuitively correspond to zeros of Riemann Zeta Function which probably gives a complexity theoretic expression of Riemann Zeta Function (than Analytic Number Theoretic). This implies that there should be complex roots also to the Fourier-Euler polynomial which itself is puzzling on what it means to have a complex number in boolean circuits. 
+Finding pattern in distribution of primes is equivalent to finding pattern in above set of prime bit circuits or fourier polynomials for each prime - The family of circuits for primes above has to be mined for circuit DAG subgraph patterns which is more of machine learning than complexity (there is almost no complexity theoretic reference to this aspect). The set of fourier polynomials can be mined for linear independence for example. (1),(2) and (3) are multiple ways of expressing same relation between complement function boolean circuit and RZF.
+
+Similar to zeros of RZF, Fourier poynomial obtained from Euler's formula by substituting complement function prime bits fourier polynomials gives a very complex polynomial whose degree could be d*s in b variables, where d is the maximum degree in prime bit fourier polynomials. In randomized setting, Schwartz-Zippel Lemma can be applied for finding an upperbound for number of roots of this Fourier-Euler polynomial which is the traditional tool in Polynomial Identity Testing. Using the lemma, number of roots of the above polynomial is <= d*s/ |K| where K is the random finite subset of b variables in the boolean complement function. If |K| = b, then number of roots is upperbounded by d*s/b.[This is assuming rewriting as (2) or (3)]. But degree is a complex number d*s (It is not known if there is a Schwartz-Zippel Lemma for complex degree).  The roots of this Fourier-Euler polynomial should intuitively correspond to zeros of Riemann Zeta Function which probably gives a complexity theoretic expression of Riemann Zeta Function (than Analytic Number Theoretic). This implies that there should be complex roots also to the Euler-Fourier polynomial which itself is puzzling on what it means to have a complex number in boolean circuits. 
 
 Important thing to note is that what it means to be a zero of the Euler-Fourier polynomial [(1),(2) and (3)] which has complex degree variable and also boolean variables within each clause. RZF just has the s in exponent. Thus Euler-Fourier polynomial is more generic and fine-grained. But zeroes of this polynomial are both within the multilinear components and the exponents instead of just in exponent in RZF. This might reveal more pattern than what RH predicts conjecturally. Moreover due to non-uniformity each Fourier polynomial component substituted in Euler formula for each prime, is different.
 
-Sensitivity and Block sensitity of the above complement function circuit should also have a strong relation to prime distribution as sensitivity is the number of input bits or block of bits that are to be flipped for change in value of the circuit(prime bit is the value) . For each Fourier polynomial for a prime bit above the sensitivity measure would differ and  the prime distribution is proportional to collective sensitivity of all the prime bit Fourier polynomials . Also the degree of approximating Fourier polynomial is lower bounded by sensitivity (www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf).
+Sensitivity and Block sensitity of the above complement function circuit should also have a strong relation to prime distribution as sensitivity is the number of input bits or block of bits that are to be flipped for change in value of the circuit(prime bit is the value) . For each Fourier polynomial of a prime bit above the sensitivity measure would differ and  the prime distribution is proportional to collective sensitivity of all the prime bit circuit Fourier polynomials . Also the degree of approximating Fourier polynomial is lower bounded by sensitivity (www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf).
 
------------------------------------------------
-Arithmetic Circuit for Euler Product and RZF
------------------------------------------------
+----------------------------------------------------------------------------------------------------
+24e. Arithmetic Circuit for Euler Product and RZF - Alternative formulation to Euler-Fourier polynomials
+----------------------------------------------------------------------------------------------------
 
-Instead of a boolean circuit above can be an arithmetic circuit (with * and + gates with elements of some field as inputs to these) alternatively which is useful in representing polynomials. The division in the above Euler product can be replaced by the transform f/g = f/(1-(1-g)) = f*(1+(1-g)+(1-g)^2+...) by geometric series expansion. This is how division is implemented using powering and hence multiplication in NC circuits. Above Euler product can be represented as a depth 3 Pi-Sigma-Pi ----  * for product of each prime clause,+ for subtraction within each clause,* for raising (1/p) to power s ---- circuit assuming 1/p. Powering with complex exponent s requires representing s as a 2*2 matrix M(s) where a and b are real and imaginary parts of s:
+Instead of a boolean circuit above can be an arithmetic circuit (with * and + gates with elements of some field as inputs to these) alternatively which is useful in representing polynomials. The division in the above Euler product can be replaced by the transform f/g = f/(1-(1-g)) = f*(1+(1-g)+(1-g)^2+...) by geometric series expansion. This is how division is implemented using powering and hence multiplication in NC circuits. Above Euler product can be represented as a depth 3 Pi-Sigma-Pi ----  * for product of each prime clause, + for subtraction within each clause, * for raising (1/p) to power s ---- circuit assuming 1/p. Powering with complex exponent s requires representing s as a 2*2 matrix M(s) where a and b are real and imaginary parts of s:
 	
 	M(s) =  | a  -b|
 	        | b   a|
@@ -283,9 +282,9 @@ Using Taylor series expansion and Jordan Normal Form above can be written as a h
 
 Eigen values of Chaotic systems Wave modelling Random matrices (matrix as random variable) have been shown to have a striking relation to zeros of RZF - Spacing of Random matrix eigenphases and RZF zeros have been conjectured to be identical (Montgomery). From complexity standpoint, the characteristic polynomial or the determinant of such Random Matrices can be computed by determinant circuits which have polynomial size and polylog depth.
 
------------------------------------------------------------------------
-Experimental - Different way to reduce the complex exponent in (1) 
------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+24f. Can be ignored - quite Experimental - Different way to reduce the complex exponent in (1) 
+-----------------------------------------------------------------------------------------------
 From (1), P(xi)^s = 1.
 => P(xi) ^ (k+il) = 1 where s=k+il
 => P(xi)^k * P(xi)^(il) - 1 = 0
@@ -345,17 +344,16 @@ More on (7):
 Above equates the Fourier polynomial for xi-th prime in terms of exponent of e with Imaginary part l of some RZF zero. It is not necessary that primes have one-one correspondence with zeros in the same order. All above just imply that it is true for some prime(and its Fourier polynomial) and some RZF zero that satisfy these identities.
 
 -----------------------------------------------------------------
-Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function
+24g. Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function
 -----------------------------------------------------------------
 A graph is Ramanujan graph if it is d-regular and eigen values of its adjacency matrix are sqrt(d-1)*2 or d. Ihara zeta function similar to RZF is a Dirichlet series that is based on prime cycle lengths of a graph defined as ProductOf(1/1-q^(-s*p)) where s is a zero and p prime for a (q+1)-regular graph. Thus a reduction is already available from RZF to a graph. The Ihara Zeta Function satisfies Riemann Hypothesis iff graph is Ramanujan - this follows from Ihara identity that relates Ihara Zeta Function and the adjacency matrix of a graph. Thus proving above conjecture for Euler-Fourier polynomial of complement function for primes boolean and arithmetic circuits family might need this gadget using prime cycles.
 
 If a set of p-regular graphs for all primes is considered,then Riemann Zeta Function can be derived (using Ihara Zeta Function identity) as a function of product of Ihara Zeta Functions for these graphs and a function of the determinants of adjacency matrices for these graphs divided by an infinite product similar to Euler product with (1+1/p^s) clauses instead of (1-1/p^s). This requires computing product of determinants of a function of adjancency matrices for these graphs. A regular connected graph is Ramanujan if and only if it satisfies RH. Zeroes of the individual Ihara zeta functions are also zeroes of this product for the set of graphs and hence for the RZF. Intuitively the product might imply set of all paths of all possible lengths across these graphs. Determinant of the product of adjacent matrices is product of determinants of the matrices and equating it to zero yields eigenvalues. All these graphs have same number of edges and vertices. The eigen values then are of the form sqrt(q^(2-2a)+q^(2a)+2q) were s=a+ib for each of the regular graphs. The RHS of Ihara Zeta Function can be written as [(1+1/q^s)(1-1/q^s)]^[V-E] and the product gives the RZF and the other series mentioned above. Eigen values can be atmost q.
 
-If an eigen value is t (<= q), then it can be derived that
+[If an eigen value is t (<= q), then it can be derived that
 	q^s = q + (or) - sqrt(q^2 -4t) / 2
-where s=a+ib. Setting a=0.5 is creating a contradiction apparently  which is above divided by sqrt(q) (while equating real and imaginary parts for q^(ib) or e^(ib*logq)- needs to be verified if this kind of derivation is allowed in meromorphic functions) .
+where s=a+ib. Setting a=0.5 is creating a contradiction apparently  which is above divided by sqrt(q) (while equating real and imaginary parts for q^(ib) or e^(ib*logq)- needs to be verified if this kind of derivation is allowed in meromorphic functions).]
 
--------------------------------------------------------
 
 Above and the Informal notes in https://sites.google.com/site/kuja27/RamanujanGraphsRiemannZetaFunctionAndIharaZetaFunction.pdf?attredirects=0&d=1 can further be simplified as follows to get RZF in terms of IZF identity (it is not in anyway an attempted proof or disproof of RH):
 
@@ -398,7 +396,7 @@ for some term in the infinite product of LHS which implies that
 (9) Above doesn't look circular also because infinite product of characterstic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator. 
 
 ----------------------------------------------------
-PAC Learning and Complement Function Construction
+24h. PAC Learning and Complement Function Construction
 ----------------------------------------------------
 Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
         - There are two datasets - dataset1 of size 2^n of consecutive integers and dataset2 of first n-bit prime numbers of size 2^n 
@@ -406,9 +404,9 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
         - Above step gives n probabilistic, approximate, correct learnt boolean conjunctions for each bit of all the 2^n prime numbers.
 	- An example PAC Boolean Conjunction Learner is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/PACLearning.py
 
-----------------------
-Additional references:
-----------------------
+----------------------------
+24i. Additional references:
+----------------------------
 24.1 Google groups thread reference 2003 (OP done by self): https://groups.google.com/forum/#!search/ka_shrinivaasan%7Csort:relevance%7Cspell:false/sci.math/RqsDNc6SBdk/Lgc0wLiFhTMJ
 24.2 Math StackExchange thread 2013: http://math.stackexchange.com/questions/293383/complement-of-a-function-f-2n-n-in-mathbbn-0-n-rightarrow-n1
 24.3 Theory of Negation - http://mentalmodels.princeton.edu/skhemlani/portfolio/negation-theory/ and a quoted excerpt from it :
@@ -440,9 +438,6 @@ Additional references:
 24.28 Mangoldt Function, Ihara Zeta Function, Ramanujan Graphs - http://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824
 24.29 Multiplicity of an eigen value in k-regular graph - http://math.stackexchange.com/questions/255334/the-number-of-connected-components-of-a-k-regular-graph-equals-the-multiplicit
 24.30 PAC Learning - http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html
-
-===============================================================================================================================================
-===============================================================================================================================================
 
 ###############################################################################################################################################
 
