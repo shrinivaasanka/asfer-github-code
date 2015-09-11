@@ -161,6 +161,14 @@ http://www.cs.jhu.edu/~lixints/class/nw.pdf
 14.11 Mark Fey's proof of infinite version of May's theorem for 2 candidate majority voting - Cantor set arguments for levels of infinities - 
 https://www.rochester.edu/college/faculty/markfey/papers/MayRevised2.pdf
 
+-------------------------------------------------------------------------------------------
+14.12 (*IMPORTANT*) Connections between Hypergeometric series and Riemann Zeta Function :
+-------------------------------------------------------------------------------------------
+- http://matwbn.icm.edu.pl/ksiazki/aa/aa82/aa8221.pdf - This relation implies that:
+      - P(good) binomial coefficient infinite series summation (and hence the Psuedorandom Vs Majority Voting circuit) which require Hypergeometric functions 
+      - and Complement Function circuit special case for RZF (and hence the Euler-Fourier polynomial for Riemann Zeta Function circuit) 
+are deeply intertwined. Kummer theorem gives the p-adic number (prime power of an integer) for dividing a binomial coefficient which relates prime powers in Euler product RZF notation and Binomial coefficients in Majority voting summation. If these two apparently unrelated problems of Complexity-Theoretic Majority voting and Analytic-Number-Theoretic Riemann Zeta Function are related then complexity lowerbound for some computational problems might hinge on Riemann Zeta Function - for example PH=DC circuit problems .  
+
 ----------------------------------------------------------
 
 15. (DONE-Minimum Implementation using NetworkX algorithms) Add Graph Search (for example subgraph isomorphism, frequent subgraph mining etc.,) for "inferring" a graph from dataset with edges as relations and nodes as entities(astronomical or otherwise).Reference survey of FSM algorithms: http://cgi.csc.liv.ac.uk/~frans/PostScriptFiles/ker-jct-6-May-11.pdf. The context of "Graph Search" includes deducing relationships hidden in a text data by use of WordNet(construction of wordnet subgraph by Definition Graph Recursive Gloss Overlap etc.,), mining graph patterns in Social Networks etc., At present a WordNet Graph Search and Visualizer python script that renders the definition graph and computes core numbers for unsupervised classification (subgraph of WordNet projected to a text data) has been added to repository.
