@@ -161,6 +161,10 @@ http://www.cs.jhu.edu/~lixints/class/nw.pdf
 14.11 Mark Fey's proof of infinite version of May's theorem for 2 candidate majority voting - Cantor set arguments for levels of infinities - 
 https://www.rochester.edu/college/faculty/markfey/papers/MayRevised2.pdf
 
+14.12 Upperbounds for Binomial Coefficients Summation - http://mathoverflow.net/questions/17202/sum-of-the-first-k-binomial-coefficients-for-fixed-n - Gallier, Lovasz bounds - where Lovasz bound is:
+            f(n,k)≤ 2^(n−1)*exp((n−2k−2)^2/4(1+k−n))
+for f(n,k) = sum_i_0_to_k(nCi). Proof by Lovasz at: http://yaroslavvb.com/upload/lovasz-proof2.pdf
+
 -------------------------------------------------------------------------------------------
 14.12 (*IMPORTANT*) Connections between Hypergeometric series and Riemann Zeta Function :
 -------------------------------------------------------------------------------------------
