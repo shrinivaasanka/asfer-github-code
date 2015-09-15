@@ -123,7 +123,7 @@ The Voter SAT circuit has an interesting application of Hastad's Switching Lemma
 
 As done in the Switching Lemma proof, parity circuit can be an AND of ORs (or OR of ANDs) which is randomly restricted to switch the connectives in lowest 2 levels to arrive at super-polynomial lowerbound for parity and hence for each voter SAT. Thus the Parity CNF can be the special case of Voter SAT also (i.e voter wants odd number of variables to be satisfied - odd voter indeed). This kind of extends switching lemma to an infinite majority with parity oracle case.
 
-Fourier expansion of the unbounded fan-in Majority+SAT circuit is obtained from indicator polynomial (http://www.contrib.andrew.cmu.edu/~ryanod/?p=207). Conjecturally, this expansion might give an infinite summation of multilinear monomials - has some similarities to permanent computation if represented as an infinite matrix i.e Permanent converges to 1 for this infinite matrix for perfect voting (?) and Permanent is #P complete. 
+Fourier expansion of the unbounded fan-in Majority+SAT circuit is obtained from indicator polynomial (http://www.contrib.andrew.cmu.edu/~ryanod/?p=207) by substituting fourier polynomial for each voter SAT in the majority circuit fourier polynomial. Conjecturally, this expansion might give an infinite summation of multilinear monomials - has some similarities to permanent computation if represented as an infinite matrix i.e Permanent converges to 1 for this infinite matrix for perfect voting (?) and Permanent is #P complete. Permanent computes bipartite matchings - non-overlapping edges between two disjoint vertex sets - probably pointing to the bipartisan majority voting. This makes sense if the entire electorate is viewed as a social network graph and voting is performed on this network electorate. Majority voting divides the social network into two disjoint sets (for and against) with edges among them - division is by matching - "for" voter vertex matched with "against" voter vertex. 
 
 Demarcation of linear and exponential sized ciruits: P(good) RHS has Circuit SAT for each voter with unbounded fanin.
 1) If the variables for each SAT are same, then the circuit size is exponential in number of variables - DC-uniform
@@ -1736,6 +1736,42 @@ Grammar for patterns like texts, pictures similar to RE,CFG etc., for pattern re
 An element of a list or group is cognitive with respect to an operator if it "knows" about all or subset of other elements of list or group where "knowing" is subject to definition of operation as below:
    - In list 2,3,5,7,17 - 17 knows about 2,3,5,7 in the sense that 17 = 2+3+5+7 with + operator
    - In list "addon","add","on" - "addon" knows about "add" and "on" with concatenation operator 
+
+-----------------------------------------------------------------------------------------------------------------------
+161. (THEORY) Philosophical intuition for P(Good) summation - Continuation of (129) and other previous related points.
+-----------------------------------------------------------------------------------------------------------------------
+The apparent paradox in Perfect Voting can be reconciled as below to some extent:
+- Voting is done in parallel in real-world elections and not serially
+- Votes are counted in parallel - iterated integer addition in NC1
+- Thus if RHS is just Circuit-Value Problem and not a Circuit-SAT then LHS getting equated to RHS is not unusual - both can be NC or P-Complete
+- Separation of RHS from LHS happens only when the Circuit-SAT is required in RHS.
+- P(Good) convergence in perfect voting implies that Voter SAT is not necessary of there is perfection (proving the obvious). This is
+true even though the PRG is imperfect that operates to choose on a perfect set.
+- Parallelism implies NC circuits
+- Above applies to infinite majority also (Mark Fey)
+- RHS in worst-case can be EXP-Complete if the Majority+Voter SAT oracle circuit is of unrestricted depth and lot of variables are common across all voters. Proving EXP-completeness is ignored as it is evident from definition of DC circuits. Thus LHS has a P or NC algorithm to RHS EXP-Complete problem (something seemingly preposterous unless perfection is prohibited and voters do not have common variables in their boolean functions)
+
+---------------------------------------------------------------------------------------------------------
+162. (THEORY) Majority Voting Circuit with Boolean Function Oracles
+---------------------------------------------------------------------------------------------------------
+If each voter has a boolean function to decide which has a fanout > 1 gates instead of a formula, RHS Majority Voting becomes generic.
+Decision tree, Certificate,  and other complexity measures automatically come into reckoning. Thus RHS circuit is an infinite (non-uniform) majority circuit with boolean function circuit DAGs or oracles.
+
+---------------------------------------------------------------------------------------------------------
+163. (THEORY) Parity and Constant Depth - intuition (not a formal proof, might have errors)
+---------------------------------------------------------------------------------------------------------
+Inductive Hypothesis:
+---------------------
+For depth d and n variables parity has n^k sized circuit.
+
+For n+1 variables:
+-----------------
+       XOR gate
+       /      \
+n-variable   (n+1)th variable
+circuit     
+
+Each XOR gate is of atleast depth 2 or 3 with formula - (x /\ not y) V (not x /\ y). Thus for each additional variable added depth gets added by atleast 2 contradicting the constant depth d though size is polynomial.
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
