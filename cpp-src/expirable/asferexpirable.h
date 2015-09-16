@@ -83,7 +83,7 @@ public:
 		Overloaded Copy Assignment operator
 	*/
 
-	T& operator=(expirable<T>& rvalue)
+	T& operator=(expirable<T>& lvalue)
 	{
 		if(copy_assignment)
 		{
@@ -91,12 +91,12 @@ public:
 			{
 				cout<<"copy_assignment: assignment operator invoked"<<endl;
 				assign_refcount++;
-				std::swap(data,rvalue.data);
+				std::swap(data,lvalue.data);
 			}
 			else
 			{
 				cout<<"copy_assignment: this object expires, cannot be assigned to rvalue anylonger"<<endl;
-				//delete &rvalue;	
+				//delete &lvalue;	
 			}
 		}
 		return *data;
