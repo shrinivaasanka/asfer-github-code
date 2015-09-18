@@ -30,8 +30,10 @@ emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@li
 int main()
 {
         std::cout<< "Cloud Move - Listener Server" <<endl;
-        MessageObject msg1("MessageDest");
-        cloudmove<MessageObject> cm_dest(&msg1, "localhost");
+        //MessageObject msg1("MessageDest");
+        //cloudmove<MessageObject> cm_dest(&msg1, "localhost");
+        currency::Currency currency_dest;
+	cloudmove<currency::Currency> cm_dest(&currency_dest, "localhost");	
         cm_dest.receive_moved();
-        std::cout<< " cloud destination - received cloud-moved object :" <<cm_dest.get_data().msg <<endl;
+        std::cout<< " cloud destination - received cloud-moved object :" <<cm_dest.get_data().uuid_and_denom() <<endl;
 }

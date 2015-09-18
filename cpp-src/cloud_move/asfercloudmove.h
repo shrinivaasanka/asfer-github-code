@@ -34,6 +34,8 @@ emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@li
 #include <sys/types.h>
 #include <netdb.h>      // Needed for the socket functions
 #include <arpa/inet.h>
+#include "protocol_buffers/out_dir/currency.pb.h"
+#include "protocol_buffers/out_dir/currency.pb.cc"
 
 
 using namespace std;
@@ -64,6 +66,15 @@ client proxy destination lvalue<-/
 		  |-------------------------> cloud server destination 
 
 lvalue reference& does additional copy which is removed by rvalue reference&& to get the rvalue directly. Move client proxies the remote object and connects to Move server and the object is written over socket.
+
+Currency object has been implemented with Google Protocol Buffers - in protocol_buffers/ src_dir and out_dir directories. Currency has been defined in src_dir/currency.proto file. Choice of Protocol Buffer over other formats is due to:
+- lack of JSON format language specific compilers 
+- XML is too complicated
+- Protocol Buffers also have object serialization-to-text member functions in generated C++ classes.
+
+Protocol Buffer compilation after change to currency object:
+protoc -I=src_dir/ --cpp_out=out_dir/ src_dir/currency.proto
+ 
 */
 
 #define BUF_SIZE 10000
@@ -155,7 +166,7 @@ public:
              	std::cout << "Receiving complete. Closing socket..." << std::endl;
              	freeaddrinfo(host_info_list);
              	string recds(buffer);
-             	data->msg = recds; 
+             	data->set_uuid_and_denom(recds); 
              	shutdown(new_sd,SHUT_RDWR);
 	     } 
              else
@@ -192,7 +203,7 @@ public:
 
              	len  = recvmsg(clientsock, &msg, msg.msg_flags);
 		string recds(buffer);
-		data->msg = recds;
+             	data->set_uuid_and_denom(recds); 
              }
 	}
 
@@ -234,12 +245,13 @@ public:
                 	if (status == -1)  
                       		std::cout << "connect error" ;
 
-                	std::cout << "Object move - send()ing message object...:"  << rvalue.data->msg.c_str() <<std::endl;
+                	std::cout << "Object move - send()ing message object...:"  << rvalue.data->uuid_and_denom() <<std::endl;
                 	int len;
                 	ssize_t bytes_sent;
-                	len = strlen(rvalue.data->msg.c_str());
-                	bytes_sent = send(socketfd, rvalue.data->msg.c_str(), len, 0);
-                	rvalue.data->msg="";
+                	len = strlen(rvalue.data->uuid_and_denom().c_str());
+                	bytes_sent = send(socketfd, rvalue.data->uuid_and_denom().c_str(), len, 0);
+                	//rvalue.data->msg="";
+			rvalue.data->set_uuid_and_denom("");
 	        }
 		else
 		{	
@@ -260,7 +272,7 @@ public:
 			inet_pton(AF_INET, hostip, &sin.sin_addr.s_addr);
 			sin.sin_family=AF_INET;
        			sin.sin_port=htons(port);
-			strcpy(buf,rvalue.data->msg.c_str());
+			strcpy(buf,rvalue.data->uuid_and_denom().c_str());
 
 			iov.iov_base=buf;
 			iov.iov_len=strlen(buf);
@@ -276,7 +288,8 @@ public:
 			sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 			connect(sock, (struct sockaddr*)&sin, sizeof(sin));
 			len = sendmsg(sock, &msg, msg.msg_flags);
-                	rvalue.data->msg="";
+                	//rvalue.data->msg="";
+			rvalue.data->set_uuid_and_denom("");
 		}
         }
 };

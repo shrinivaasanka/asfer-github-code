@@ -1,0 +1,5 @@
+package currency;
+
+message Currency {
+  required string uuid_and_denom = 2;
+}

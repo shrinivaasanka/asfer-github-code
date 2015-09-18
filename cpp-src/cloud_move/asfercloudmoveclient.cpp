@@ -29,13 +29,25 @@ emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@li
 
 int main()
 {
-        std::cout<< " Cloud Move - Client"<<endl;
-	MessageObject msg1("MessageSource1");
-	MessageObject msg2("None");
-	cloudmove<MessageObject> cm_source(&msg1, "localhost");
-        cloudmove<MessageObject> cm_dest(&msg2, "localhost");
-	std::cout<<" source before std::move "<<cm_source.get_data().msg<<endl;
-        cm_dest = std::move(cm_source);
-	std::cout<<" source after std::move "<<cm_source.get_data().msg<<endl;
-	std::cout<<" proxy remote destination "<<cm_dest.get_data().msg<<endl;
+        //std::cout<< " Cloud Move - Client"<<endl;
+	//MessageObject msg1("MessageSource1");
+	//MessageObject msg2("None");
+	//cloudmove<MessageObject> cm_source(&msg1, "localhost");
+        //cloudmove<MessageObject> cm_dest(&msg2, "localhost");
+	//std::cout<<" source before std::move "<<cm_source.get_data().msg<<endl;
+        //cm_dest = std::move(cm_source);
+	//std::cout<<" source after std::move "<<cm_source.get_data().msg<<endl;
+	//std::cout<<" proxy remote destination "<<cm_dest.get_data().msg<<endl;
+
+	//Protocol Buffer Currency Object
+	currency::Currency c1;
+	currency::Currency c2;
+	const char* uuid_and_denom="dssdow9e9wiodowdoiw09iedcnkn:100";
+	c1.set_uuid_and_denom(uuid_and_denom);
+	cloudmove<currency::Currency> currency_src(&c1,"localhost");
+	cloudmove<currency::Currency> currency_dest(&c2,"localhost");
+	std::cout<<" source before std::move "<<currency_src.get_data().uuid_and_denom()<<endl;
+	currency_dest = std::move(currency_src);
+	std::cout<<" source after std::move "<<currency_src.get_data().uuid_and_denom()<<endl;
+	std::cout<<" proxy remote destination "<<currency_dest.get_data().uuid_and_denom()<<endl;
 }
