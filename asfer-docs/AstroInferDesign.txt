@@ -1812,6 +1812,19 @@ client proxy destination lvalue<-/
 
 lvalue reference& does additional copy which is removed by rvalue reference&& to get the rvalue directly. Move client proxies the remote object and connects to Move server and the object is written over socket.
 
+--------------------------------------------------------------------------------------------
+165. Commits as on 18 September 2015
+--------------------------------------------------------------------------------------------
+Cloud Perfect Forwarding - Google Protocol Buffer Currency :
+------------------------------------------------------------
+Currency object has been implemented with Google Protocol Buffers - in cloud_move/protocol_buffers/ src_dir and out_dir directories. Currency has been defined in src_dir/currency.proto file. Choice of Protocol Buffer over other formats is due to:
+- lack of JSON format language specific compilers
+- XML is too complicated
+- Protocol Buffers also have object serialization-to-text member functions in generated C++ classes.
+
+Protocol Buffer compilation after change to currency object:
+protoc -I=src_dir/ --cpp_out=out_dir/ src_dir/currency.proto
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
