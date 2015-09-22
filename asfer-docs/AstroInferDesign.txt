@@ -186,6 +186,11 @@ Above implies that binomial coefficients can be written in terms of prime powers
 ----------------------------------------------------------------------------
 ACC circuits are AC circuits augmented with mod(m) gates. i.e output 1 iff sum(xi) is divisible by m. It is known that NEXP is not computable in ACC0 - http://www.cs.cmu.edu/~ryanw/acc-lbs.pdf [RyanWilliams]. From (129) above the P(good) RHS can be an EXP circuit if the boolean functions of the voters are of unrestricted depth. Thus open question is: can RHS of P(Good) which is deterministic EXP, be computed in ACC0. [RyanWilliams] has two theorems. Second theorem looks applicable to P(Good) RHS circuit i.e "E^NP, the class of languages recognized in 2^O(n) time with an NP oracle, doesn’t have non-uniform ACC circuits of 2^n^o(1) size". Boolean functions are the NP oracles for this P(Good) Majority Voting EXP circuit if the variables are common across voters. Applying this theorem places strong super-exponential lowerbound on the size of the P(Good) majority voting circuit. 
 
+--------------------------------------------------------
+14.16. Infinite Majority as Erdos Discrepancy Problem
+--------------------------------------------------------
+Related to (132) - May's Theorem proves conditions for infinite majority with sign inversions {+1,-1} and abstention (zero). Erdos discrepancy problem which questions existence of integers k,d, and C in sequence of {+1,-1} such that sum_0_to_k(x(i*d)) > C and has been proved for C=infinite - [TerenceTao] - http://arxiv.org/abs/1509.05363. For spacing d=1, Erdos Discrepancy Problem reduces to Infinite Majority and as C is proved to be infinite, it looks like an alternative proof of non-decrementality condition in Infinite version of May's Theorem.
+
 ----------------------------------------------------------
 
 15. (DONE-Minimum Implementation using NetworkX algorithms) Add Graph Search (for example subgraph isomorphism, frequent subgraph mining etc.,) for "inferring" a graph from dataset with edges as relations and nodes as entities(astronomical or otherwise).Reference survey of FSM algorithms: http://cgi.csc.liv.ac.uk/~frans/PostScriptFiles/ker-jct-6-May-11.pdf. The context of "Graph Search" includes deducing relationships hidden in a text data by use of WordNet(construction of wordnet subgraph by Definition Graph Recursive Gloss Overlap etc.,), mining graph patterns in Social Networks etc., At present a WordNet Graph Search and Visualizer python script that renders the definition graph and computes core numbers for unsupervised classification (subgraph of WordNet projected to a text data) has been added to repository.
@@ -1502,13 +1507,14 @@ Earthquakes occur most likely when, following happen - in descending order of fr
 - Moon+Mercury
 - Sun+Venus
 
-Machine Learnt pattern above strikingly coincides with some combinations in Brihat Samhita (Role of Mars, Nodes, and 2 heavy planets, Mercury-Venus duo's role in weather vagaries) and also shows some new astronomical patterns (Jupiter+Venus as major contributor). Above technique is purely astronomical and scientific with no assumptions on astrology.
+Machine Learnt pattern above strikingly coincides with some combinations in Brihat Samhita (Role of Mars, Nodes, and 2 heavy planets, Mercury-Venus duo's role in weather vagaries) and also shows some new astronomical patterns (Sun+Mars and Jupiter+Venus as major contributors). Above technique is purely astronomical and scientific with no assumptions on astrology.
 
 Some recent major intensity earthquakes having above sequence mined astronomical conjunctions :
 -----------------------------------------------------------------------------------------------
+Sendai Earthquake - 11 March 2011 14:46 - Sun+Mars in Aquarius, Mercury+Jupiter in Pisces
 Nepal Earthquake - 25 April 2015 11:56 - Sun+Mars+Mercury in Aries 
 Chile Earthquake - 16 September 2015 22:55 -  Sun+Mars+Jupiter in Leo 
-both have Sun+Mars coincidentally.
+All three have Sun+Mars coincidentally.
  
 
 ---------------------------------------------------------------
