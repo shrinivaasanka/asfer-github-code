@@ -1848,6 +1848,15 @@ Currency object has been implemented with Google Protocol Buffers - in cloud_mov
 Protocol Buffer compilation after change to currency object:
 protoc -I=src_dir/ --cpp_out=out_dir/ src_dir/currency.proto
 
+------------------------------------------------------------------------------------------
+166. (THEORY) Related to 65 - Debug Analytics (as part of Software Analytics)
+------------------------------------------------------------------------------------------
+Debugging software is painful process with repetitive labour - For example kernel and device driver development has the following lifecycle:
+1. Writing the kernel patch code for some deep kernel panics.
+2. Kernel incremental or full build.
+3. Test the patch.
+(1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton with least number of cycles and cycles of least length.
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
