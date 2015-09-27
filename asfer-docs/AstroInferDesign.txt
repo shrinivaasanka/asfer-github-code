@@ -410,10 +410,10 @@ Above and the Informal notes in https://sites.google.com/site/kuja27/RamanujanGr
 
 Note: Following are derived based on Ihara Identity of Ihara Zeta Function.[https://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824] for a prime+1 regular graph.
 
-(1) For some i-th prime+1 regular graph (i.e q+1 regular graph where q is prime),
-			[1+q^-s]				1
+(1) For some i-th prime+1 regular graph (i.e q+1 regular graph where qi is prime),
+			[1+qi^-s]				1
 	-----------------------------------------	= -------------- 
-	[zi(s)det(I-A*qi^-s + qi^(1-2s)*I]^(1/|V|-|E|)	     [1-q^-s]
+	[zi(s)det(I-A*qi^-s + qi^(1-2s)*I]^(1/|V|-|E|)	     [1-qi^-s]
 
 
 (2) Infinite product of the above terms for all prime+1 regular graphs gives the RZF in right in terms of
@@ -446,7 +446,21 @@ for some term in the infinite product of LHS which implies that
 
 (9) Above doesn't look circular also because infinite product of characterstic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator. 
 
-(10) Expression in (1) for a prime+1 regular graph can also be equated to Euler-Fourier polynomial mentioned in (24c) per-prime term for each prime+1 regular graph - LHS is a graph while RHS is a fourier polynomial for boolean circuit for a prime. Thus pattern in prime polynomials in RHS are related to patterns in graphs on left.
+(10) Expression in (1) for a prime+1 regular graph can also be equated to Euler-Fourier polynomial mentioned in (24c) per-prime term for each prime+1 regular graph - LHS is a graph while RHS is a fourier polynomial for boolean circuit for a prime - P(xi). Thus pattern in prime polynomials in RHS are related to patterns in graphs on left:
+			[1+qi^-s]				1
+	-----------------------------------------	= -------------- 
+	[zi(s)det(I-A*qi^-s + qi^(1-2s)*I]^(1/|V|-|E|)	     [1-P(xi)^-s]
+
+(11) qi can be replaced with Fourier polynomial P(xi),and the above becomes:
+		[1-P(xi)^-2s] = [zi(s)det(I-A*P(xi)^-s + P(xi)^(1-2s)*I]^(1/|V|-|E|)
+	(or)    [1-P(xi)^-2s]^(|V|-|E|) = [zi(s)det(I-A*P(xi)^-s + P(xi)^(1-2s)*I]
+
+(12) Thus Euler-Fourier polynomial is coalesced into Ihara identity to give Euler-Fourier-Ihara polynomial for a prime(and hence corresponding prime+1 regular graph). Partial Derivatives of the above polynomial look crucial in deciphering pattern in primes - for example doe(s)/doe(P(xi)). 
+
+(13) ACC circuits have support for mod(m) gates. Thus a trivial circuit for non-primality is set of mod(i) circuits - 1,2,3,...,sqrt(N) - that output 1 to an OR gate up (factor gates output 1). This non-primality circuit is equivalent to complement of complement function circuit for xy=z described previously (and it can be stated in its dual form also).
+
+(14) The Fourier polynomial of a prime P(xi) is holographic in the sense that it has information of all primes due to the multiplexor construction. 
+
 
 ----------------------------------------------------
 24h. PAC Learning and Complement Function Construction
@@ -1273,7 +1287,7 @@ Above can be diagramatically represented as: (for N cells in grid in parallel)
 		2  1  1
 
 Above can be likened to a scenario where a viscous fluid is unevenly spread at random from heavens.
-By applying cellular automaton algorithm above, grid becomes: (minimizes collisions and maximizes LP)
+By applying cellular automaton algorithm above, grid becomes: (minimizes collisions,maximizes variables and LP)
 
 		1  1  1
 		1  1  1
@@ -1855,7 +1869,7 @@ Debugging software is painful process with repetitive labour - For example kerne
 1. Writing the kernel patch code for some deep kernel panics.
 2. Kernel incremental or full build.
 3. Test the patch.
-(1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton with least number of cycles and cycles of least length.
+(1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton without cycles or with least number of cycles and cycles of least length.
 
 
 - 
