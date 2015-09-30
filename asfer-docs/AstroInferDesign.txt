@@ -138,6 +138,9 @@ Circuit is 2) - there are no common variables
 
 As an alternative formulation, LHS of the P(Good) series can be a dictator boolean function (property testing algorithms like BLR, NAE tuples - http://www.contrib.andrew.cmu.edu/~ryanod/?p=1153) that always depends on only one variable and not on a Pseudorandom generator. Thus how error-free is the assignment to LHS dictator boolean function determines P(Good) LHS(sensitivity and probabilistic truth tables are the measures applicable as described previously). Thus both LHS and RHS can be boolean functions with corresponding circuits constructible for them.
 
+Influence of a variable i in a boolean function is Probability[f(x) != f(x with i-th bit flipped)]. For Majority function influence is ~ 1/sqrt(n). Thus in infinite majority a voter is insignificant.  Error in majority voting can be better defined with Stability and Noise Sensitivity measures of a Boolean Function (Influence, Stability, Noise, Majority is Stablest theorem etc., - www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf) where correlated pairs of boolean variable tuples form an inner product to get the expression : Noise(f) = 1/2 - 1/2*Stability(f) where Noise is the measure of corruption in votes polled while Stability is the resilience of votes polled to corruption so that outcome is not altered. [But for infinite majority inner product could become infinite and the measures many lose relevance].
+
+
 Additional References:
 ----------------------
 14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
@@ -1251,7 +1254,7 @@ maximize X
 subject to AX <= some maximum limit
 and X >= 0  
 
-Below Cellular Automaton NC algorithm for grid filling assumes that:
+Below Cellular Automaton Monte Carlo NC algorithm for grid filling assumes that:
 C=[1,1,1,...1]
 A=[1,1,1....1] in the above and the vector of variables X is mapped to the grid - sequentially labelled in ascending from top-left to bottom-right, row-by-row and column-by-column. Though this limits the number of variables to be a square, additional variables can be set to a constant.
 
@@ -1262,13 +1265,13 @@ loop_forever
 {
 	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This simulates parallel computation in many natural processes viz., rain. This is in NC. This is related to Randomness Extractors - https://en.wikipedia.org/wiki/Randomness_extractor - if rainfall from cloud can be used a natural weak entropy parallel randomness source (or strong?) - predicting which steam particle of a cloud would become a droplet is heavily influenced by the huge number of natural variables - fluid mechanics comes into force and this happens in parallel. Extractor is a stronger notion than Pseudorandom Generator. Extracting parallel random bits can also be done from a fluid mechanical natural processes like turbulent flows.
 	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in NC. 
-	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a viscous fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
+	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8 neighbours for each cell in 2-dimensional grid), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a viscous fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
 }
 
-Above can be diagramatically represented as: (for N cells in grid in parallel)
+Above can be diagramatically represented as: (for N=a*b cells in grid in parallel)
 ------------------------------------------------------------------------------
 	
-		cell1		..............		cellN
+		cell(1,1)	..............	   cell(a,b)
 		----------------------------------------------	
 		PRG in parallel		....	PRG in parallel
 		      ||				||
@@ -1280,21 +1283,21 @@ Above can be diagramatically represented as: (for N cells in grid in parallel)
 		and				    and
 		Decrement			    Decrement
 
-135.14 For example, a 3*3 grid is set by pseudorandom coordinate substrings obtained from Parallel PRG (6,7,7,8,9,1,3,3,2) as follows with collisions:
+135.14 For example, a 3*3 grid is set by pseudorandom coordinate substrings obtained from Parallel PRG (6,7,7,8,9,1,3,3,2) as follows with collisions (grid coordinates numbered from 1-9 from left-to-right and top-to-bottom):
 		
 		1  1  2
 		0  0  1
 		2  1  1
 
 Above can be likened to a scenario where a viscous fluid is unevenly spread at random from heavens.
-By applying cellular automaton algorithm above, grid becomes: (minimizes collisions,maximizes variables and LP)
+By applying cellular automaton NC circuit algorithm above, grid becomes: (minimizes collisions,maximizes variables and LP)
 
 		1  1  1
 		1  1  1
 		1  1  1
 
-Above can be likened to a scenario where each 8-neighbour grid cell underneath computes the evened-out cellular automaton in parallel. Size of the NC circuit is polynomial in variables n and is constant depth as the neighbours are constant (ChandraStockmeyerVishkin)
-Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid).
+Above can be likened to a scenario where each 8-neighbour grid cell underneath computes the evened-out cellular automaton in parallel. Size of the NC circuit is polynomial in LP variables n and is constant depth as the neighbours are constant (ChandraStockmeyerVishkin)
+Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid). This is both a Monte-Carlo and Las Vegas algorithm. The Parallel coordinate generation with Tyger-Reif Parallel PRG is Monte Carlo Simulation where as there is a guaranteed outcome with 100% possibility due to Comparison and Increment-Decrement circuits.
 
 ----------------------------------------------------------------------------------------------
 135.15 References on Cellular Automata, Parallel Computation of CA, Fluid Dynamics, Navier-Stokes equation, Percolation Theory etc.,:
