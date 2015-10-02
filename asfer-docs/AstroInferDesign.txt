@@ -154,7 +154,11 @@ Upper bound for P(Good) binomial distribution can be derived from Chernoff bound
 When p=0.5 , P[ X > n/2] < 1 which is an upperbound for 0.5.
 But intriguingly for p=1 the upper tail bound is:
 		(e^(-1)*sqrt(2))^n	
-which is increasingly less than 1 for high values of n whereas P(good) converges to 1 in exact case (why are these different?).
+which is increasingly less than 1 for high values of n whereas P(good) converges to 1 in exact case (why are these different?). This contradiction arises since in exact derivation of P[X > n]:
+    mC(n+1)(p)^(n+1)(1-p)^(m-n-1) + mC(n+2)(p)^(n+2)(1-p)^(m-n-2) + ... + mCm (p)^m (1-p)^(m-m) 
+all the terms vanish by zero multiplication except mCm (p)^m (1-p)^m which becomes:
+	mCm*1*0^0 
+and by convention, 0^0 = 1, thereby converging to 1 while the Chernoff upper tail bound decreases with n.
 
 
 Additional References:
