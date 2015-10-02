@@ -141,7 +141,9 @@ As an alternative formulation, LHS of the P(Good) series can be a dictator boole
 Influence of a variable i in a boolean function is Probability[f(x) != f(x with i-th bit flipped)]. For Majority function influence is ~ 1/sqrt(n) from Berry-Esseen Central Limit Theorem - sum of probability distributions of values assigned to boolean random variables converge to Gaussian. Thus in infinite majority a voter is insignificant.  Error in majority voting can be better defined with Stability and Noise Sensitivity measures of a Boolean Function (Influence, Stability, Noise, Majority is Stablest theorem etc., - www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf) where correlated pairs of boolean variable tuples form an inner product to get the expression : Noise(f) = 1/2 - 1/2*Stability(f) where Noise is the measure of corruption in votes polled while Stability is the resilience of votes polled to corruption so that outcome is not altered. [But for infinite majority inner product could become infinite and the measures may lose relevance]. Also related is the Kahn-Kalai-Linial Theorem for corrupted voting - http://www.contrib.andrew.cmu.edu/~ryanod/?p=1484 - that derives a lower bound for the maximum influence.  
 
 As done for sensitivity previously, a term in the P(Good) binomial summation becomes:
-mC(n+1) * (NoiseSensitivityOfVoterSAT(i))^(n+1) * (1-NoiseSensitivityOfVoterSAT(i))^(m-n-1) where m is total number of voter SATs and the summation requires hypergeometric algorithms. Infact it makes sense to have Stability as a zero-error measure i.e the binomial summation term can be written as mC(n+1) * (NoiseSensitivityOfVoterSAT(i))^(n+1) * (StabilityOfVoterSAT(i))^(m-n-1). 
+mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(1-NoiseSensitivityOfVoterSAT(i)) where m is total number of voter SATs and the summation requires hypergeometric algorithms. Infact it makes sense to have Stability as a zero-error measure i.e the binomial summation term can be written as mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(StabilityOfVoterSAT(i)). 
+
+Summation of binomial coefficients in RHS is the collective stability or noise in the infinite majority circuit. It converges to 0.5 if NoiseStability is uniform 0.5 for all Voter SATs and in best case converges to 1. This summation connects analysis, non-uniform infinite majority voting and complexity theory - Hypergeometric functions, Noise and Stability of Voter Boolean functions, Majority Circuit.
 
 
 Additional References:
@@ -198,6 +200,8 @@ ACC circuits are AC circuits augmented with mod(m) gates. i.e output 1 iff sum(x
 14.16. Infinite Majority as Erdos Discrepancy Problem
 --------------------------------------------------------
 Related to (132) - May's Theorem proves conditions for infinite majority with sign inversions {+1,-1} and abstention (zero). Erdos discrepancy problem which questions existence of integers k,d, and C in sequence of {+1,-1} such that sum_0_to_k(x(i*d)) > C and has been proved for C=infinite - [TerenceTao] - http://arxiv.org/abs/1509.05363. For spacing d=1, Erdos Discrepancy Problem reduces to Infinite Majority and as C is proved to be infinite, it looks like an alternative proof of non-decrementality condition in Infinite version of May's Theorem.
+
+14.17 Noise Sensitivity of Boolean Functions and Percolation - http://arxiv.org/pdf/1102.5761.pdf
 
 ----------------------------------------------------------
 
