@@ -138,7 +138,7 @@ Circuit is 2) - there are no common variables
 
 As an alternative formulation, LHS of the P(Good) series can be a dictator boolean function (property testing algorithms like BLR, NAE tuples - http://www.contrib.andrew.cmu.edu/~ryanod/?p=1153) that always depends on only one variable and not on a Pseudorandom generator. Thus how error-free is the assignment to LHS dictator boolean function determines P(Good) LHS(sensitivity and probabilistic truth tables are the measures applicable as described previously). Thus both LHS and RHS can be boolean functions with corresponding circuits constructible for them.
 
-Influence of a variable i in a boolean function is Probability[f(x) != f(x with i-th bit flipped)]. For Majority function influence is ~ 1/sqrt(n) from Berry-Esseen Central Limit Theorem - sum of probability distributions of values assigned to boolean random variables converge to Gaussian. Thus in infinite majority a voter is insignificant.  Error in majority voting can be better defined with Stability and Noise Sensitivity measures of a Boolean Function (Influence, Stability, Noise, Majority is Stablest theorem etc., - www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf) where correlated pairs of boolean variable tuples form an inner product to get the expression : Noise(f) = 1/2 - 1/2*Stability(f) where Noise is the measure of corruption in votes polled while Stability is the resilience of votes polled to corruption so that outcome is not altered. [But for infinite majority inner product could become infinite and the measures may lose relevance]. Also related is the Kahn-Kalai-Linial Theorem for corrupted voting - http://www.contrib.andrew.cmu.edu/~ryanod/?p=1484 - that derives a lower bound for the maximum influence.  
+Influence of a variable i in a boolean function is Probability[f(x) != f(x with i-th bit flipped)]. For Majority function influence is ~ 1/sqrt(n) from Berry-Esseen Central Limit Theorem - sum of probability distributions of values assigned to boolean random variables converge to Gaussian. Thus in infinite majority a voter is insignificant.  Error in majority voting can be better defined with Stability and Noise Sensitivity measures of a Boolean Function (Influence, Stability, Noise, Majority is Stablest theorem etc., - www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf) where correlated pairs of boolean variable tuples form an inner product to get the expression : Noise(f) = 1/2 - 1/2*Stability(f) where Noise is the measure of corruption in votes polled while Stability is the resilience of votes polled to corruption so that outcome is not altered. [But for infinite majority inner product could become infinite and the measures may lose relevance]. Also related is the Kahn-Kalai-Linial Theorem for corrupted voting - http://www.contrib.andrew.cmu.edu/~ryanod/?p=1484 - that derives a lower bound for the maximum influence (log(n)/n).  
 
 As done for sensitivity previously, a term in the P(Good) binomial summation becomes:
 mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(1-NoiseSensitivityOfVoterSAT(i)) where m is total number of voter SATs and the summation requires hypergeometric algorithms. Infact it makes sense to have Stability as a zero-error measure i.e the binomial summation term can be written as mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(StabilityOfVoterSAT(i)). 
@@ -174,6 +174,14 @@ P(X > n/2) <= exp(-2(0.5-p)^2*n)
 For p=1, P(X > n/2) <= exp(-n/2) which for infinite n converges to 1.
 
 Thus tailbounds above are only less tight estimates and exact summation is better for p=0.5 and 1. 
+
+--------------------------------------------------------
+There are two independent aspects to the P(Good) series:
+--------------------------------------------------------
+(1) Goodness of Voting: 
+The convergence of the binomial coefficient summation series in RHS is the "goodness" side of the voting expressed in terms of Noise sensitivity and Stability of each Voter's Boolean Function - whether the voters have exercised their franchise prudently to elect a "good" choice. If the Voter Boolean Functions are all balanced then by Kahn-Kalai-Linial lowerbound there are n/log(n) influential variables that control the decision of each Voter.
+(2) Voting: 
+The circuit for RHS and its Fourier polynomial expansion. 
 
 Additional References:
 ----------------------
@@ -233,6 +241,8 @@ Related to (132) - May's Theorem proves conditions for infinite majority with si
 14.17 Noise Sensitivity of Boolean Functions and Percolation - http://arxiv.org/pdf/1102.5761.pdf
 
 14.18 Binomial distributions, Bernoulli trials (which is the basis for modelling voter decision making - good or bad - in P(Good) series) - http://www.stat.yale.edu/Courses/1997-98/101/binom.htm
+
+14.19 Fourier Coefficients of Majority Function -  http://www.contrib.andrew.cmu.edu/~ryanod/?p=877,  Majority and Central Limit Theorem - http://www.contrib.andrew.cmu.edu/~ryanod/?p=866
 
 ----------------------------------------------------------
 
@@ -1142,7 +1152,7 @@ For even number of finite population (electorate) the binomial coefficient summa
 
 (or) probability of good choice is epsilon less than 50% for finite even number of electorate for uniform distribution - a weird counterintuitive special case. Thus the counterexample for P Vs NP is still valid at infinity if infinite majority is decidable(related to decidability of infinite-candidate condorcet election , May's theorem and Arrow's theorem) . Written notes for this are at: http://sourceforge.net/p/asfer/code/568/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf. What this implies is the LHS is PRG circuit in NC or P while the RHS is a humongous infinite majority+SAT (oracle) circuit - unbounded fan-in constant depth circuit. This then becomes an NP-complete Circuit SAT problem - http://www.cs.berkeley.edu/~luca/cs170/notes/lecture22.pdf. 
 
-If this infinite-ness breaches the polynomiality then what is quite puzzling is that RHS becomes a Direct Connect DC circuit equivalent to PH(Polynomial Hierarchy). Quotes excerpts from Arora-Barak for DC uniform circuits:
+If this infinite-ness breaches the polynomiality then what is quite puzzling is that RHS becomes a Direct Connect DC circuit equivalent to PH(Polynomial Hierarchy). Quoted excerpts from Arora-Barak for DC uniform circuits:
 
 "... 
 6.6
