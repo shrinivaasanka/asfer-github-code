@@ -145,6 +145,9 @@ mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(1-N
 
 Summation of binomial coefficients in RHS is the collective stability or noise in the infinite majority circuit. It converges to 0.5 if NoiseStability is uniform 0.5 for all Voter SATs and in best case converges to 1. This summation connects analysis, non-uniform infinite majority voting and complexity theory - Hypergeometric functions, Noise and Stability of Voter Boolean functions, Majority Circuit.
 
+--------------------------
+Chernoff upper tail bound
+--------------------------
 Upper bound for P(Good) binomial distribution can be derived from Chernoff bound (assuming Central Limit Theorem applies to sum of Binomial random variables)- http://www.cs.berkeley.edu/~jfc/cs174/lecs/lec10/lec10.pdf - For P(Good) series the upper tail bound is needed i.e. Pr(Number of voters making good decision > n/2) which is derivable to 0.5 and 1 exactly wherein the upper bound is not necessary. But for other cases , upper tail Chernoff bound is:
 	P[X > (1+delta)*mean] < {e^delta/(1+delta)^(1+delta)}^mean
 	Total population is n, mean=n*p and (1+delta)*mean = n/2
@@ -160,6 +163,17 @@ all the terms vanish by zero multiplication except mCm (p)^m (1-p)^m which becom
 	mCm*1*0^0 
 and by convention, 0^0 = 1, thereby converging to 1 while the Chernoff upper tail bound decreases with n.
 
+--------------------------
+Hoeffding upper tail bound
+--------------------------
+For Bernoulli trials involving binomial distribution summation, Hoeffding Inequality can be applied for upper tail bound - https://en.wikipedia.org/wiki/Hoeffding%27s_inequality - defined by:
+        P(X > (p+epsilon)n) <= exp(-2*epsilon^2 * n)
+
+If p+epsilon = 0.5 for halfway mark, epsilon = 1/2 -p.
+P(X > n/2) <= exp(-2(0.5-p)^2*n)
+For p=1, P(X > n/2) <= exp(-n/2) which for infinite n converges to 1.
+
+Thus tailbounds above are only less tight estimates and exact summation is better for p=0.5 and 1. 
 
 Additional References:
 ----------------------
