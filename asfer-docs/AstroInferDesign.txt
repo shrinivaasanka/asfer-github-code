@@ -183,6 +183,21 @@ The convergence of the binomial coefficient summation series in RHS is the "good
 (2) Voting: 
 The circuit for RHS and its Fourier polynomial expansion. 
 
+-------------------------------------------------------------------------------------------------
+Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
+-------------------------------------------------------------------------------------------------
+Hastad Switching Lemma for circuit of width w and size s with probability of random restriction p for each variable states the inequality:
+   Pr[DecisionTree(f/restricted) > k ] <= (constant*p*w)^k 
+where p is a function of width w and p is proportional to 1/w. In forecasting, a sample of voters and their boolean functions are necessary. If the Majority circuit is PH=DC(variables are common across voters) or AC(variables are not so common across voters), the sampling algorithm pseudorandomly chooses a subset from first layer of the circuit's fanin and applies random restriction to those Voters' Boolean Circuits which abides by above inequality. The rationale is that probability of obtaining required decision tree depth decreases exponentially (RHS mantissa < 1). Thus the forecast is a 3-phase process:
+(1) Pseudorandomly choose subset of Voter Boolean Functions in the first layer of the circuit - This is also a random restriction
+(2) Randomly Restrict variables in each boolean circuit to get decision trees of required depth if voters reveal their blackbox boolean functions
+(3) Simulated Voting (and a property testing) on the restricted boolean functions subset accuracy of which is a conditional probability function of (1) and (2). This could be repetitive random restrictions of (2) also.
+
+(1) and (2) are random restrictions happening in 2 different layers of the circuit - amongst voters and amongst variables for each voter .
+
+Alternatively if subset of voters reveal their votes (1 or 0) in opinion polls then the above becomes a Learning Theory problem (e.g. PAC learning) - how to learn the boolean function of the voters who reveal their votes in a secret ballot and extrapolate them to all voters. This is opposite of (1),(2),(3) and the most likely scenario as voters hold back their decision making algorithms usually.  From Linial-Mansour-Nisan theorem , class of boolean functions of n variables with depth-d can be learnt in O(n^O(logn^d)) with 1/poly(n) error. From Hastad Switching Lemma, Parseval spectrum theorem (sum of squares of fourier coefficients) and LMN theorem , for a random restriction r, the fourier spectrum is e-concentrated upto degree 3k/r where k is the decision tree depth of the restriction.
+
+----------------------
 Additional References:
 ----------------------
 14.1 k-SAT and 3-SAT - http://cstheory.stackexchange.com/questions/7213/direct-sat-to-3-sat-reduction
@@ -243,6 +258,10 @@ Related to (132) - May's Theorem proves conditions for infinite majority with si
 14.18 Binomial distributions, Bernoulli trials (which is the basis for modelling voter decision making - good or bad - in P(Good) series) - http://www.stat.yale.edu/Courses/1997-98/101/binom.htm
 
 14.19 Fourier Coefficients of Majority Function -  http://www.contrib.andrew.cmu.edu/~ryanod/?p=877,  Majority and Central Limit Theorem - http://www.contrib.andrew.cmu.edu/~ryanod/?p=866
+
+14.20 Hastad's Switching Lemma - http://windowsontheory.org/2012/07/10/the-switching-lemma/, http://www.contrib.andrew.cmu.edu/~ryanod/?p=811#lemrand-restr-dt 
+
+14.21 Degree of Fourier Polynomial and Decision tree depth - http://www.contrib.andrew.cmu.edu/~ryanod/?p=547#propdt-spectrum (degree of fourier polynomial < decision tree depth, intuitive to some extent as each multilinear monomial can be thought of as a path from root to leaf)
 
 ----------------------------------------------------------
 
