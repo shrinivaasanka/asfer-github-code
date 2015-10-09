@@ -208,6 +208,66 @@ Quoting Corollary 6.2 in http://eccc.hpi-web.de/report/2012/163/ for inclusions 
 		"... C(f) ≤ D(F) ≤ bs(f) · deg(f) ≤ deg(f)^3 ..." 
 ]
 
+-----------------------------------------------------------------------------------------------
+Noise Sensitivity and Probability of Goodness in P(Good) LHS and RHS - Elaboration on previous
+-----------------------------------------------------------------------------------------------
+LHS of P(Good):
+--------------
+(1) Depends either on a natural (psuedo)random process or a Dictator Boolean Function that unilaterally decides outcome.
+
+(2) When error is zero, probability of good decision is 1 (or) Pr(f(x) != f(y)) is zero where x and y are correlated bit strings obtained by
+a bit flip. In other words Noise in input does not alter outcome. If NS is Noise Sensitivity, probability of good outcome is 1-NS which is 1/2 + 1/2*Stability. 
+
+RHS of P(Good):
+---------------
+(1) Depends on the Noise Sensitivity of Boolean Function Composition - Maj(n)*SAT - Majn(SAT1, SAT2,....,SATn).
+
+(2) When error is zero, probability of good decision is 1 because nCn*(1)^n*(1-1)^(0) becomes 1 in summation and all other terms vanish.
+
+(3) NoiseSensitivity is a fitting measure for voter error or voting error as it estimates the probability of how a randomly changed input distorts outcome of an election. Randomly changed input could be wrong assignment by voter, wrong recording by the voting process etc.,
+
+(4) Perfect Voter has a SAT or Boolean Function that is completely resilient to correlation i.e Pr(f(x) != f(y)) = 0. The open question is: is it possible to find or learn such a Voter Boolean Function. 
+
+(5) Brute Force exponential algorithm to find perfect voter is by property testing:
+   - For 2^n bit strings find correlation pairs with random flips - 2^n * (2^n - 1) such pairs are possible.
+   - Test Pr(f(x) != f(y))
+   - This is not a learning algorithm.
+
+(6) For perfect voter, probability p of good decision is 1-NS or 1/2+1/2*Stability and has to be 1 which makes NS=0 and Stability=1.
+
+(7) Open Question: Is there a learning algorithm that outputs a Perfect Voter Decision Boolean Function f such that NS=Pr(f(x) != f(y)) = 0 for all correlated pairs x,y? (Or) Can LHS and RHS of P(Good) be learnt with NS=0 and Stability=1.Such a function is not influenced by any voting or voter errors. 
+
+(8) Theorem 2.45 in http://analysisofbooleanfunctions.org/ is important which proves Stability and NoiseSensitivity for infinite majority:
+    lt (n->infinity, n odd) Stability[Majn] = 2/pi*arcsin(rho) 
+    (or)
+    lt (n->infinity, n odd) NS[delta,Majn] = 2/pi*delta + O(delta^1.5) where delta is the probability of correlation - flipping x to y. 
+
+(9) There are two random variables f(x)=f(y) and f(x) != f(y) with respective probabilities.
+
+(10) This implies for infinite electorate, error probability is (an error that causes x to become y with probability delta): 
+    lt (n->infinity, n odd) NS[delta,Majn] = 2/pi*delta + O(delta^1.5) where delta is the probability of correlation - flipping x to y. 
+
+(11) probability of good outcome = p = 1-NS:
+    p = 1 - lt (n->infinity, n odd) NS[delta,Majn] = 1 - 2/pi*delta - O(delta^1.5). 
+
+(12) If delta = 1:
+    lt (n->infinity, n odd) NS[delta,Majn] = 2/pi + O(1). 
+    (and)
+    probability of good outcome = 1-NS = 1/2+1/2*Stability = 1-2/pi-O(1).
+
+(13) In P(Good) RHS:
+--------------------
+If the error probability of voter is 0 and probability of good decision is 1 then binomial summation becomes nCn*(p)^n*(1-p)^n = 1 and all other terms are zero. From (11) p can be 1 only if delta is 0 or no correlation flips exist. This proves the obvious because commonsensically votes are perfect iff there is no wrongdoing.
+
+(14) In P(Good) LHS:
+-------------------
+If error probability of dictator boolean function is 0 and p=1 then:
+ p = 1 - NS(DictatorFunction)
+   = 1 - delta^n
+Similar to RHS p=1 iff delta=0 
+Thus if there is no Noise on either side LHS=RHS (or) LHS is a P algorithm to RHS EXP or PH=DC. This depends on existence of perfect voter function defined in (7). This just gives a counterexample when LHS can be as efficient as RHS and viceversa.
+
+
 ----------------------
 Additional References:
 ----------------------
