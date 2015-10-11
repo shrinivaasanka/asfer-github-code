@@ -235,7 +235,7 @@ RHS of P(Good):
 
 (6) For perfect voter, probability p of good decision is 1-NS or 1/2+1/2*Stability and has to be 1 which makes NS=0 and Stability=1.
 
-(7) Open Question: Is there a learning algorithm that outputs a Perfect Voter Decision Boolean Function f such that NS=Pr(f(x) != f(y)) = 0 for all correlated pairs x,y? (Or) Can LHS and RHS of P(Good) be learnt with NS=0 and Stability=1.Such a function is not influenced by any voting or voter errors. 
+(7) Open Question: Is there a learning algorithm that outputs a Perfect Voter Decision Boolean Function f such that NS=Pr(f(x) != f(y)) = 0 for all correlated pairs x,y? (Or) Can LHS and RHS of P(Good) be learnt with NS=0 and Stability=1.Such a function is not influenced by any voting or voter errors. Majority is Stablest theorem implies that Majority function is the most stable of all boolean functions with least noise, but still it does not make it zero noise for perfect stability (is there some other function stabler than stablest - answer has to be no). An obvious corollary is that for stablest voting boolean function, majority is apt choice (or) in the Majority voting circuit each voter has a majority as voter boolean function i.e it is a boolean function composition of Majority*Majority = Maj(Maj1,Maj2,Maj3,...,Majn)
 
 (8) Theorem 2.45 in http://analysisofbooleanfunctions.org/ is important which proves Stability and NoiseSensitivity for infinite majority:
     lt (n->infinity, n odd) Stability[Majn] = 2/pi*arcsin(rho) 
@@ -266,6 +266,15 @@ If error probability of dictator boolean function is 0 and p=1 then:
    = 1 - delta^n
 Similar to RHS p=1 iff delta=0 
 Thus if there is no Noise on either side LHS=RHS (or) LHS is a P algorithm to RHS EXP or PH=DC. This depends on existence of perfect voter function defined in (7). This just gives a counterexample when LHS can be as efficient as RHS and viceversa.
+
+(15) [Benjamini-Kalai-Schramm] theorem states the condition for a boolean function to be noise sensitive:
+A boolean function is noise sensitive if and only if L2 norm (sum of squares) of influences of variables in f tends to zero.
+Therefore, for stability any voter boolean function in P(Good) RHS should not have the L2 norm of influences to tend to zero.
+
+(16) "How much increasing sets are positively correlated" by [Talagrand] - http://boolean-analysis.blogspot.in/2007/03/how-much-are-increasing-sets-positively.html - defines the inequality (Level-1 inequality):
+	Weight(f) = sum_1_to_n(fouriercoeff(i)) <= O(mean^2*1/log(mean)) 
+where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). 
+
 
 
 ----------------------
