@@ -222,7 +222,7 @@ RHS of P(Good):
 ---------------
 (1) Depends on the Noise Sensitivity of Boolean Function Composition - Maj(n)*SAT - Majn(SAT1, SAT2,....,SATn).
 
-(2) When error is zero, probability of good decision is 1 because nCn*(1)^n*(1-1)^(0) becomes 1 in summation and all other terms vanish.
+(2) When error is zero, probability of good decision is 1 because nCn*(1)^n*(1-1)^(0) becomes 1 in summation and all other terms vanish. If each individual voter has different probability of good decision (which is most likely in real world elections) then it becomes Poisson Probability Distribution trial.
 
 (3) NoiseSensitivity is a fitting measure for voter error or voting error as it estimates the probability of how a randomly changed input distorts outcome of an election. Randomly changed input could be wrong assignment by voter, wrong recording by the voting process etc.,
 
@@ -235,7 +235,7 @@ RHS of P(Good):
 
 (6) For perfect voter, probability p of good decision is 1-NS or 1/2+1/2*Stability and has to be 1 which makes NS=0 and Stability=1.
 
-(7) Open Question: Is there a learning algorithm that outputs a Perfect Voter Decision Boolean Function f such that NS=Pr(f(x) != f(y)) = 0 for all correlated pairs x,y? (Or) Can LHS and RHS of P(Good) be learnt with NS=0 and Stability=1.Such a function is not influenced by any voting or voter errors. Majority is Stablest theorem implies that Majority function is the most stable of all boolean functions with least noise, but still it does not make it zero noise for perfect stability (is there some other function stabler than stablest - answer has to be no). An obvious corollary is that for stablest voting boolean function, majority is apt choice (or) in the Majority voting circuit each voter has a majority as voter boolean function i.e it is a boolean function composition of Majority*Majority = Maj(Maj1,Maj2,Maj3,...,Majn)
+(7) Open Question: Is there a learning algorithm that outputs a Perfect Voter Decision Boolean Function f such that NS=Pr(f(x) != f(y)) = 0 for all correlated pairs x,y? (Or) Can LHS and RHS of P(Good) be learnt with NS=0 and Stability=1.Such a function is not influenced by any voting or voter errors. Majority is Stablest theorem implies that Majority function is the most stable of all boolean functions with least noise, but still it does not make it zero noise for perfect stability (is there some other function stabler than stablest - answer has to be no). An obvious corollary is that for stablest voting boolean function, majority is apt choice (or) in the Majority voting circuit each voter has a majority as voter boolean function i.e it is a boolean function composition of Majority*Majority = Maj(Maj1,Maj2,Maj3,...,Majn). This composition of Maj*Maj is the stablest with least noise. 
 
 (8) Theorem 2.45 in http://analysisofbooleanfunctions.org/ is important which proves Stability and NoiseSensitivity for infinite majority:
     lt (n->infinity, n odd) Stability[Majn] = 2/pi*arcsin(rho) 
@@ -275,7 +275,24 @@ Therefore, for stability any voter boolean function in P(Good) RHS should not ha
 	Weight(f) = sum_1_to_n(fouriercoeff(i)) <= O(mean^2*1/log(mean)) 
 where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). 
 
+(17) By Majority is Stablest Theorem if P(Good) RHS is a boolean function composition of Maj*Maj=Majn(Maj1,Maj2,...,Majn) then its stability is derived as:
+   (1-2/pi * arccos(rho))*(1-2/pi * arccos(rho)) assuming that stability of the composition is the product like other measures
+If the LHS of P(Good) is the Dictator Boolean Function its stability is (rho)^n (because all bits have to be flipped). By equating the two stability measures both sides following expression results:
+   cos(pi/2*(1-(rho)^n)) = rho
 
+For rho=0:
+---------
+ [cos (pi/2*(1-0^n))]^2 = 0 hence LHS=RHS
+
+For rho=1:
+---------
+ [cos (pi/2*(1-1^n))]^2 = 1 hence LHS=RHS
+
+But for rho=0.5:
+---------------
+ arccos 1/sqrt(2) =  pi/2*(1-0.5^n)
+ n = log(1-2/pi*0.7071)/log(0.5)
+ n = 0.863499276 which is quite meaningless probably hinting that for uniform distribution the parity size n is < 1. 
 
 ----------------------
 Additional References:
