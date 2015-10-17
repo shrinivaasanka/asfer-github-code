@@ -307,6 +307,14 @@ Above summation should ideally converge to holistic Noise Sensitivity of the Boo
 
 If each voter has boolean function with varied Noise Sensitivities, above becomes a Poisson Trial instead of Bernoulli. Above is a closed form for the goodness of voting expressed as the binomial coefficient summation which otherwise requires hypergeometric algorithms. Previous identity equates Noise Sensitivity of Majority Voting Circuit in two versions: Boolean Function Composition and Majority with Oracle Voter SAT inputs.
 
+(19) There are classes of boolean functions based on percolation crossings ( http://arxiv.org/pdf/1102.5761.pdf - Noise Sensitivity of Boolean Functions and Percolation) which decide if the paths (left-to-right) in a percolation random graph in which edges are created with a probability p, have a left-right crossing. Perturbed paths are analogous to correlated bit strings. [Russo-Seymour-Welsh] theorem states that the percolation crossing boolean functions are non-degenerate i.e function depends on all variables (quite intuitive as to find out a left-right crossing entire path has to be analyzed). Noise Stability Regime of the crossing events [page 68] answers the following question on noise stability of crossing events:
+
+For epsilon=o(1/n^2*alpha4), Pr[fn=fn/epsilon] tends to zero at infinity where alpha4 is the four-arm crossing event probability (paths cross at a point on the percolation random graph creating four arms to the boundary from that point). [Is such a percolation crossing the perfect voting boolean function required in (7) and does it prove BKS Majority is least stable conjecture?]
+
+
+
+
+
 ----------------------
 Additional References:
 ----------------------
