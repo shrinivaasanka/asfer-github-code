@@ -810,7 +810,7 @@ C.	Slightly Philosophical - Inferences from conflicting opinions:
 
 53. Items 50,51,52 present the inherent difficulty of perfect judgement or perfect inference. On a related note,Byzantine algorithms have similar issues of deciding on a course of action in the presence of faulty processors or human beings and faulty communications between them. Thus, probably above problem reduces to Byzantine i.e Faulty human beings or machines vote "like" or "dislike" on an entity and a decision has to be taken. This is also in a way related to Boolean Noise Sensitivity where collective intelligence of an entity can be represented as a "judging" boolean function and its decision tree. This "judge" boolean function accepts arguments from two opposing parties and outputs 1 or 0 in favour of one of them. How perfect is this "judge" depends on NoiseSensitivity of its boolean function. Thus a perfect judge boolean function is 100% NoiseStable even though attempts are made to confuse it through noise inputs.
 
-53.1 Judge Boolean Function (there doesn't seem to be an equivalent to this in literature - hence it is defined as below:
+53.1 Judge Boolean Function (there doesn't seem to be an equivalent to this in literature - hence it is defined as below):
 -------------------------------------------------------------------------------------------------------------------------
 A Judge Boolean function f:(0,1)^n->(0,1) has two classes of input bit sets (x1,x2,x3,...) and (y1,y2,y3,...) corresponding to two adversarial parties x and y and outputs 0 (in favor of x) or 1 (in favor of y) based on the decision tree algorithm internal to f. This function is quite relevant to P(Good) summation because:
 	- LHS PRG/Dictator boolean function choice can also be thought of as randomly chosen Judge boolean function (from a set of judge boolean functions) defined above. NoiseStability of this Judge boolean function is its efficacy.
@@ -1348,7 +1348,7 @@ E.g Paxos protocol without byzantine failures - http://research.microsoft.com/en
 129.1 Toda's theorem and P(good) circuit above:
 ------------------------------------------------
 PH is contained in P^#P (or) P with #no-of-solutions-to-SAT oracle (Toda's theorem). 
-If zero-error Majority+SAT voting DC uniform circuit is in PH then due to LHS=RHS of the P(good) series convergence, 
+If zero-error Majority+SAT voting DC uniform circuit is in PH then due to LHS=RHS of the P(good) series convergence (in cases of p=0,p=1 and p=0.5 as derived in http://sourceforge.net/p/asfer/code/916/tree/cpp-src/miscellaneous/MajorityVotingErrorProbabilityConvergence.JPG), 
 PH collapses(?) to P (quite unbelievably):
 LHS Pseudorandom choice is in P while RHS Majority+SAT is in PH=DC circuit (restricted depth) or EXP (unrestricted depth)
 (i.e there is a P algorithm for PH). 
@@ -1357,6 +1357,8 @@ if P=PH:
 
 if P=EXP:
  P=PH=EXP in P^#P or P=PH=EXP=P^#P (which is a complete collapse)
+
+[p=0.5 is the uniform distribution which is a zero bias space while other probabilities some bit patterns are less likely - epsilon-bias spaces]
 
 
 ---------------------------------------------------------------------------------------------
