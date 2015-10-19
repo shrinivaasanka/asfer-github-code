@@ -305,7 +305,7 @@ nC0(1-NS)^0(NS)^n + nC1(1-NS)^1(NS)^(n-1) + nC2(1-NS)^2(NS)^(n-2) + ...
 Above summation should ideally converge to holistic Noise Sensitivity of the Boolean Function Composition of Maj*Maj described previously for stablest voting:
        1/2 + 1/2*(1-2/pi*arccos(rho))^2 = nC0(1-NS)^0(NS)^n + nC1(1-NS)^1(NS)^(n-1) + nC2(1-NS)^2(NS)^(n-2) + ...
 
-If each voter has boolean function with varied Noise Sensitivities, above becomes a Poisson Trial instead of Bernoulli. Above is a closed form for the goodness of voting expressed as the binomial coefficient summation which otherwise requires hypergeometric algorithms. Previous identity equates Noise Sensitivity of Majority Voting Circuit in two versions: Boolean Function Composition and Majority with Oracle Voter SAT inputs.
+If each voter has boolean function with varied Noise Sensitivities, above becomes a Poisson Trial instead of Bernoulli. Above is a closed form for the goodness of voting expressed as the binomial coefficient summation which otherwise requires hypergeometric algorithms because for NS=a/b (!=0.5) summation becomes (nC0*(b-a)^0a^n + nC1(b-a)^1(a)^(n-1) + nC2(b-a)^2(a)^(n-2) + ...)/b^n and closed form is non-trivial as summation is asymmetric as was the case with NS=1/2. Previous identity equates Noise Sensitivity of Majority Voting Circuit in two versions: Boolean Function Composition and Majority with Oracle Voter SAT inputs.
 
 (19) There are classes of boolean functions based on percolation crossings ( http://arxiv.org/pdf/1102.5761.pdf - Noise Sensitivity of Boolean Functions and Percolation) which decide if the paths (left-to-right) in a percolation random graph in which edges are created with a probability p, have a left-right crossing. Perturbed paths are analogous to correlated bit strings. [Russo-Seymour-Welsh] theorem states that the percolation crossing boolean functions are non-degenerate i.e function depends on all variables (quite intuitive as to find out a left-right crossing entire path has to be analyzed). Noise Stability Regime of the crossing events [page 68] answers the following question on noise stability of crossing events:
 
@@ -1358,7 +1358,7 @@ if P=PH:
 if P=EXP:
  P=PH=EXP in P^#P or P=PH=EXP=P^#P (which is a complete collapse)
 
-[p=0.5 is the uniform distribution which is a zero bias space while other probabilities some bit patterns are less likely - epsilon-bias spaces]
+[p=0.5 is the uniform distribution which is a zero bias space while for other probabilities some bit patterns are less likely - epsilon-bias spaces]
 
 
 ---------------------------------------------------------------------------------------------
