@@ -2077,6 +2077,17 @@ Debugging software is painful process with repetitive labour - For example kerne
 ------------------------------------------------------------------------------------------
 Web Search Engine Rankings by prestige measures are n-tuples of rankings (for n candidate web pages where n could be few billions) which are not condorcet rankings. Arrow's Theorem for 3-candidate condorcet election allows a winner if and only if there is dictatorship. If there are m search engines each creating n-tuples of condorcet rankings (NAE tuples), then conjecturally there shouldn't be a voting rule or a meta search engine that circumvents circular rankings and produces a reconciled ranking of all NAE tuples from m search engines.
 
+--------------------------------------------------------------------------
+168. Commits as on 20,21,22 October 2015
+--------------------------------------------------------------------------
+Initial code for LinkedIn crawl-scrape. Uses Python-linkedin from https://github.com/ozgur/python-linkedin with
+some additional parsing for url rewriting and wait for authurl input:
+- prints a linkedin url which is manually accessed through curl or browser
+- created redirect_url with code is supplied to raw_input "authurl:"
+- parses the authcode and logs-in to linkedin to retrieve profile data; get_connections() creates a forbidden error
+
+Logs for the above has been added to testlogs
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
