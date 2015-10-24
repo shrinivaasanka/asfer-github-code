@@ -830,6 +830,23 @@ A Judge Boolean function f:(0,1)^n->(0,1) has two classes of input sets of bit s
 P(Good) RHS is in PH if depth restricted and in EXP if depth unrestricted. LHS is a pseudorandomly chosen Judge Boolean Function. PH-completeness or EXP-completeness of RHS remains to be proven (if not obvious). PH is the set of all problems in polynomial hierarchy - PH=U sigma(p,i). For every i there exists a problem in sigma(p,i) that is sigma(p,i)-complete. If there exists a PH-complete problem then PH collapses to sigma(p,i) for some level i.[Arijit Bishnu - http://www.isical.ac.in/~arijit/courses/spring2010/slides/complexitylec12.pdf] . Hence it remains an open question if there exists a PH-complete problem. Thus instead of depth restriction, the hardest depth unrestricted EXP circuit class(EXP=DC) is analyzed as a Judge Boolean Function. There are known EXP-complete problems e.g. Generalized Chess with n*n board and 2n pawns - [Fraenkel - http://www.ms.mff.cuni.cz/~truno7am/slozitostHer/chessExptime.pdf]. In RHS, each voter has a Judge Boolean Function, output of which is input to Majority circuit. This Judge Boolean Function can be shown to be EXP-complete by reduction from Chess. Reduction function is as below:
 Each Voter can be thought of as simulator of both adversaries in Chess i.e Voter TQBF has two sets of inputs x1,x2,x3,... and y1,y2,y3,... Each xi is a move of adversary1-simulated-by-voter while each yi is a move of adversary2-simulated-by-voter. Voter thus makes both sides of moves and votes for x or y depending on whichever simulation wins. Thus there is a reduction from generalized Chess EXP-complete problem to Voter Judge Boolean Function (special cases of Chess with n constant are PSPACE-complete). Hence RHS is a Majority(n) boolean function composed with EXP-complete Judge Boolean Function (assumption: voters vote in parallel). When P(Good) summation converges to 1(i.e Judge Boolean Function has zero noise and 100% stability existence of which is still an open problem), LHS is an EXP-complete algorithm for RHS which is harder than EXP-complete - it is still quite debatable as to how to affix notation to above RHS - probably it is P^EXP(oracle access) or P*EXP(composition).
 
+---------------------------------------------------------------------------------------------------------------
+53.3 (THEORY- *IMPORTANT* ) Conditions for complexity classes of LHS and RHS of P(Good) summation being equated
+---------------------------------------------------------------------------------------------------------------
+RHS of P(Good) is either PH-complete or EXP-complete as mentioned in 53.2.
+LHS of P(Good) is a pseudorandomly chosen Judge Boolean Function while RHS is a huge mixture of judge boolean functions of almost all conceivable complexity classes depending on voter which together make the DC-circuit. LHS thus can belong to any of the complexity classes depending on the pseudorandom choice.
+
+Probability of LHS Judge Boolean Function belonging to a complexity class C with NoiseStability p is =
+Probability of LHS PRG choice Judge Boolean Function in complexity class C * Probability of Goodness in terms of NoiseStability of PRG choice =
+ c/n * p where c is the number of judge boolean functions in complexity class C and n is the total number of judge boolean functions
+
+When p=1 and c=n LHS is 1 and is a complexity class C algorithm to RHS PH-complete or EXP-complete DC circuit when RHS P(Good) summation in terms of NoiseStabilities also converges to 1. Thus complexity_class(LHS) has a very high probability of being unequal to complexity_class(RHS). This is the perfect boolean function problem (in point 14 above) rephrased in probabilities. This is very tight condition as it requires:
+  - all boolean functions to be in same circuit complexity class
+  - LHS has to have 100% noise stability
+  - RHS has to have 100% noise stability
+Thus above conditions are to be satisified for equating complexity classes in LHS and RHS to get a lowerbound result.
+
+
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
