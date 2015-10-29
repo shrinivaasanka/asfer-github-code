@@ -38,6 +38,7 @@
 # function (or error from expected output) might have to be learnt through standard 4 backpropagation 
 # partial differential equations which are non-trivial. Convolution is deep in the sense that hidden structure in
 # input is learnt. Has some similarities to construction of a hologram.
+# Reference: http://neuralnetworksanddeeplearning.com
 ############################################################################################################################
 
 import math
