@@ -113,10 +113,10 @@ while iter < 20000:
 	bpnn.backpropagation_pde_update_hidden_to_output(0,6)
 	bpnn.backpropagation_pde_update_hidden_to_output(1,5)
 	bpnn.backpropagation_pde_update_hidden_to_output(1,7)
-	bpnn.backpropagation_pde_update_hidden_to_output(0,0)
-	bpnn.backpropagation_pde_update_hidden_to_output(0,1)
-	bpnn.backpropagation_pde_update_hidden_to_output(1,2)
-	bpnn.backpropagation_pde_update_hidden_to_output(1,3)
+	bpnn.backpropagation_pde_update_input_to_hidden(0,0)
+	bpnn.backpropagation_pde_update_input_to_hidden(0,1)
+	bpnn.backpropagation_pde_update_input_to_hidden(1,2)
+	bpnn.backpropagation_pde_update_input_to_hidden(1,3)
 	print "Recomputing Neural Network after backpropagation weight update"
 	bpnn.compute_neural_network()
 	print "Error after Backpropagation- iteration :",iter
