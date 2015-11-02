@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------`
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of NeuronRain Platform)
+#-------------------------------------------------------------------------------------------------------
+#ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,18 +10,18 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-#---------------------------------------------------------------------------------------------------------
-#Copyright (C): 
+#--------------------------------------------------------------------------------------------------------
+#Copyright (C):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, 
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
 #kashrinivaasan@live.com
-#---------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------
 
 Copyright attributions for other open source products dependencies:
 ------------------------------------------------------------------
@@ -54,9 +54,9 @@ Python script for autogenerating above txt files has been added under python-src
 DESIGN NOTES, THEORETICAL INTERLUDES(might have errors), TODO AND NICE TO HAVE FEATURES (long-term design goals with no deadline)
 ***********************************************************************************************************************************************
 
-(DONE-MDL,Entropy,Edit Distance) 1. Test with Massive Data Sets of encoded strings for pattern mining. Algorithms for Approximate Kolmogorov Complexity or Minimum Description Length (MDL), Shannon Entropy, Levenshtein Edit Distance have been implemented in Python and C++. [Long term: Compressed Sensing (used in Image and Signal Processing) which "sense" from "compressed" large data. This involves computing a matrix product AX=B where X is an image or bitmap and A is a chosen matrix which together give a sketch B]
+(FEATURE - DONE-MDL,Entropy,Edit Distance) 1. Test with Massive Data Sets of encoded strings for pattern mining. Algorithms for Approximate Kolmogorov Complexity or Minimum Description Length (MDL), Shannon Entropy, Levenshtein Edit Distance have been implemented in Python and C++. [Long term: Compressed Sensing (used in Image and Signal Processing) which "sense" from "compressed" large data. This involves computing a matrix product AX=B where X is an image or bitmap and A is a chosen matrix which together give a sketch B]
 
-(THEORY-POC Implementation-DONE) 2. An experimental text compression algorithm that deletes vowels and stores only consonants as far as meaning is not altered. For example "follow" could be stored as "fllw". Since on an average every third letter in an english word is a vowel, approximate compression is 33%. Message is reconstructed using most probable meaningful word for "fllw" (For example "follow" could be more probable than "fellow" or vice versa). This is similar to Texting in phones and to some extent encoding in Match Rating (http://en.wikipedia.org/wiki/Match_rating_approach). One more example could be "Decision" which can be compressed as "Dcsn". An interesting phonetic aspect of this is that "Decision" is spelt as "Dee-C-shan", or each vowel following a consonant is subsumed or coalesced into the preceding consonant while spelling. Thus "Dcsn" gives 50% compression ratio. PyEnchant python package SpellChecker has suggest() function that returns a tuple of closely related words to a compressed (or "misspelt") word. Conventional WSD algorithms might have to be used on this tuple to get the maximum match. Initial testing reveals that the accuracy with spellcheckers is less and this problem requires a non-trivial algorithm which might require error-correcting codes like Reed-Solomon and Berelekamp-Massey assuming the english text as a finite field of alphabets as elements. Predominantly used dictionary-based Lesk's disambiguation Algorithm can find the intersection between "follow" and the rest of the context and "fellow" and rest of the context and choose the word with maximum intersection with context - this is quite commonsensical too. But the drawback of this disambiguation is that keywords are disambiguated well while other connectives (is, are, thus,  this, who, why etc.,) in the sentences are not. Another limitation of applying WSD while decompressing is lack of meaningful context words at runtime - only compressed words are available and they cannot be used as disambiguating context creating a circular dependency - disambiguation requires decompression and decompression needs disambiguation. For computing maximum likelihood, most probable vowel between 2 consonants can be zeroed in on by a 26*26 table of consonant ordered pairs and having vowels between them as probability distribution priors. This is feasible only if priors are available. For example th-t has (h,t) as consonant pairs and a is most probable vowel than e,i,o and u and th-t is disambiguated as "that". The vowels missing in compressed text can be represented by a single extra bit. This is an alternative to PyEnchant spellcheck suggest() function. This can be Hidden Markov Model also - with missing vowels as hidden states to measure and compressed letters as observations. This requires forward-backward probabilities computation or Viterbi path which gives most likely word for a compressed word. For "th-t" the Markov Model looks like:
+(FEATURE - THEORY-POC Implementation-DONE) 2. An experimental text compression algorithm that deletes vowels and stores only consonants as far as meaning is not altered. For example "follow" could be stored as "fllw". Since on an average every third letter in an english word is a vowel, approximate compression is 33%. Message is reconstructed using most probable meaningful word for "fllw" (For example "follow" could be more probable than "fellow" or vice versa). This is similar to Texting in phones and to some extent encoding in Match Rating (http://en.wikipedia.org/wiki/Match_rating_approach). One more example could be "Decision" which can be compressed as "Dcsn". An interesting phonetic aspect of this is that "Decision" is spelt as "Dee-C-shan", or each vowel following a consonant is subsumed or coalesced into the preceding consonant while spelling. Thus "Dcsn" gives 50% compression ratio. PyEnchant python package SpellChecker has suggest() function that returns a tuple of closely related words to a compressed (or "misspelt") word. Conventional WSD algorithms might have to be used on this tuple to get the maximum match. Initial testing reveals that the accuracy with spellcheckers is less and this problem requires a non-trivial algorithm which might require error-correcting codes like Reed-Solomon and Berelekamp-Massey assuming the english text as a finite field of alphabets as elements. Predominantly used dictionary-based Lesk's disambiguation Algorithm can find the intersection between "follow" and the rest of the context and "fellow" and rest of the context and choose the word with maximum intersection with context - this is quite commonsensical too. But the drawback of this disambiguation is that keywords are disambiguated well while other connectives (is, are, thus,  this, who, why etc.,) in the sentences are not. Another limitation of applying WSD while decompressing is lack of meaningful context words at runtime - only compressed words are available and they cannot be used as disambiguating context creating a circular dependency - disambiguation requires decompression and decompression needs disambiguation. For computing maximum likelihood, most probable vowel between 2 consonants can be zeroed in on by a 26*26 table of consonant ordered pairs and having vowels between them as probability distribution priors. This is feasible only if priors are available. For example th-t has (h,t) as consonant pairs and a is most probable vowel than e,i,o and u and th-t is disambiguated as "that". The vowels missing in compressed text can be represented by a single extra bit. This is an alternative to PyEnchant spellcheck suggest() function. This can be Hidden Markov Model also - with missing vowels as hidden states to measure and compressed letters as observations. This requires forward-backward probabilities computation or Viterbi path which gives most likely word for a compressed word. For "th-t" the Markov Model looks like:
 			x1--------x2--------x3------x4
 			|	  |	    |	    |
 			t         h	    -       t	
@@ -84,19 +84,19 @@ which is the argmax( Pr(a/t,h), Pr(e/t,h), Pr(i/t,h), Pr(o/t,h), Pr(u/t,h)) and 
 
 (2.8) Algebraically, above can be imagined as a Group Action where group G is set of consonants (with the assumption that inverses exist for each consonant with a special "backspace" element added to alphabet set and identity is "space" element) and set X to act on is the set of vowels. Orbit is the set of X elements moved (g.x) and if concatenation (with phonetic coalition) is a group operator then consonants act on vowel sets. For example, the consonant "t" acts on "o" from vowel set to give the word "to". The concatenation is non-abelian.  Interestingly the above phonetic coalition of vowels to an adjoining consonant is the Stabilizer set or set of Fixed points(g.x=g). For example, the consonant "d" acting on the vowel "e" gives a phonetically coalesced compression "d" ("d" ,"de" and "dee" are phonetically same as "d") as a fixedpoint. Thus Orbit-Stabilizer Theorem ( set of cosets of Fixed points - Quotient group G/G(x) -  isomorphic to Orbit) should apply to the above.  There may be scenarios where a maximum likely vowel from above argmax() computation does not equal the actual vowel expected and for arbitrary non-dictionary strings prior computation is difficult. Thus this algorithm is quite experimental.
 
-3. (THEORY - Pairwise LCS implementation DONE) KMeans, KNN and other clustering and classification algorithms implemented thus far, group similar encoded strings for astronomical (or any other) data. Clustered strings can further be mined for patterns with ordering by applying a Longest Common Substring algorithm within each cluster. This gives a fine grained pattern hidden in the encoded input strings. These longest common substrings can then be translated to a rule similar to class association rule (Frequent item set and GSP algorithms are quite expensive and do not fit well for mining patterns in strings).
+3. (FEATURE - THEORY - Pairwise LCS implementation DONE) KMeans, KNN and other clustering and classification algorithms implemented thus far, group similar encoded strings for astronomical (or any other) data. Clustered strings can further be mined for patterns with ordering by applying a Longest Common Substring algorithm within each cluster. This gives a fine grained pattern hidden in the encoded input strings. These longest common substrings can then be translated to a rule similar to class association rule (Frequent item set and GSP algorithms are quite expensive and do not fit well for mining patterns in strings).
 
-4. (DONE) Implementation of String Distance measure using different distance measures (python-src/StringMatch.py) for comparing Encoded Strings in addition to pairwise and Multiple Sequence Alignment.
+4. (FEATURE - DONE) Implementation of String Distance measure using different distance measures (python-src/StringMatch.py) for comparing Encoded Strings in addition to pairwise and Multiple Sequence Alignment.
 
-5. (DONE) Construct a Hidden Markov Model with State transitions and Observations(events). If the number of states are exponential then this will be infeasible. A HMM has been implemented for text decompression with vowel-removed strings. Also a HMM has been implemented for Part-of-Speech tagging, Named Entity Recognition and Conditional Random Fields.
+5. (FEATURE - DONE) Construct a Hidden Markov Model with State transitions and Observations(events). If the number of states are exponential then this will be infeasible. A HMM has been implemented for text decompression with vowel-removed strings. Also a HMM has been implemented for Part-of-Speech tagging, Named Entity Recognition and Conditional Random Fields.
 
-6. (DONE - continuation of point 3) Correlate with Rules from Classics (BPHS, BJ etc.,) with the mined datasets for particular class of events (Special Case of Mundane Predictive Model is described in items 47 to 51 and basic framework is already implemented). The Longest Common Substring implementation already mines for most common pattern with in a clustered or classified dataset of encoded strings which suffices for astronomical datasets. Script for parsing the clustered data from classifiers and decoding the longest common pattern have been added.
+6. (FEATURE - DONE - continuation of point 3) Correlate with Rules from Classics (BPHS, BJ etc.,) with the mined datasets for particular class of events (Special Case of Mundane Predictive Model is described in items 47 to 51 and basic framework is already implemented). The Longest Common Substring implementation already mines for most common pattern with in a clustered or classified dataset of encoded strings which suffices for astronomical datasets. Script for parsing the clustered data from classifiers and decoding the longest common pattern have been added.
 
-7. (DONE) Integrate Classifiers in above String Pattern mining (classify strings and then mine).
+7. (FEATURE - DONE) Integrate Classifiers in above String Pattern mining (classify strings and then mine).
 
-8. (DONE) At present fundamental algorithms like - Perceptrons with Gradient Descent, Linear and Logistic Regression, Hidden Markov Model for Text Decompression, KMeans Clustering, Naive Bayesian, Decision Tree, SVM (uses thirdparty OSS) and kNN Classifiers, String Alignment and Distance based algorithms, Knuth-Morris-Pratt String Match Algorithm, Sequence Mining - have been implemented specialized for the encoded strings astronomical datasets.
+8. (FEATURE - DONE) At present fundamental algorithms like - Perceptrons with Gradient Descent, Linear and Logistic Regression, Hidden Markov Model for Text Decompression, KMeans Clustering, Naive Bayesian, Decision Tree, SVM (uses thirdparty OSS) and kNN Classifiers, String Alignment and Distance based algorithms, Knuth-Morris-Pratt String Match Algorithm, Sequence Mining, Deep Learning(Convolution and Backpropagation), Social Network Analysis, Sentiment Analysis - have been implemented specialized for the encoded strings astronomical datasets.
 
-9. (DONE) InterviewAlgorithm code in https://sourceforge.net/p/asfer/code/146/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py and Classification based on indegrees of wordnet subgraph node in action item 6 above (as mentioned in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). Related Publication Drafts are: https://sites.google.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf?attredirects=0, https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting.pdf?attredirects=0, https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC.pdf?attredirects=0. Test C++ code written in 2006 for computing Majority voting error probability is at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/pgood.cpp and python script written in 2010 is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/pgood.py. 
+9. (FEATURE - DONE) InterviewAlgorithm code in https://sourceforge.net/p/asfer/code/146/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py and Classification based on indegrees of wordnet subgraph node in action item 6 above (as mentioned in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). Related Publication Drafts are: https://sites.google.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf?attredirects=0, https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting.pdf?attredirects=0, https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC.pdf?attredirects=0. Test C++ code written in 2006 for computing Majority voting error probability is at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/pgood.cpp and python script written in 2010 is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/pgood.py. 
 
 ---------------------------------------------------------------------------
 Psuedorandom Choice and Majority Voting (Majority circuit with SAT inputs)
@@ -385,13 +385,13 @@ Related to (132) - May's Theorem proves conditions for infinite majority with si
 
 ----------------------------------------------------------
 
-15. (DONE-Minimum Implementation using NetworkX algorithms) Add Graph Search (for example subgraph isomorphism, frequent subgraph mining etc.,) for "inferring" a graph from dataset with edges as relations and nodes as entities(astronomical or otherwise).Reference survey of FSM algorithms: http://cgi.csc.liv.ac.uk/~frans/PostScriptFiles/ker-jct-6-May-11.pdf. The context of "Graph Search" includes deducing relationships hidden in a text data by use of WordNet(construction of wordnet subgraph by Definition Graph Recursive Gloss Overlap etc.,), mining graph patterns in Social Networks etc., At present a WordNet Graph Search and Visualizer python script that renders the definition graph and computes core numbers for unsupervised classification (subgraph of WordNet projected to a text data) has been added to repository.
+15. (FEATURE - DONE-Minimum Implementation using NetworkX algorithms) Add Graph Search (for example subgraph isomorphism, frequent subgraph mining etc.,) for "inferring" a graph from dataset with edges as relations and nodes as entities(astronomical or otherwise).Reference survey of FSM algorithms: http://cgi.csc.liv.ac.uk/~frans/PostScriptFiles/ker-jct-6-May-11.pdf. The context of "Graph Search" includes deducing relationships hidden in a text data by use of WordNet(construction of wordnet subgraph by Definition Graph Recursive Gloss Overlap etc.,), mining graph patterns in Social Networks etc., At present a WordNet Graph Search and Visualizer python script that renders the definition graph and computes core numbers for unsupervised classification (subgraph of WordNet projected to a text data) has been added to repository.
 
-16. (DONE) Use of already implemented Bayesian and Decision Tree Classifiers on astronomical data set for prediction (this would complement the use of classifiers for string mining) - autogen_classifier_dataset/ directory contains Automated Classified Dataset and Encoded Horoscopes Generation code.
+16. (FEATURE - DONE) Use of already implemented Bayesian and Decision Tree Classifiers on astronomical data set for prediction (this would complement the use of classifiers for string mining) - autogen_classifier_dataset/ directory contains Automated Classified Dataset and Encoded Horoscopes Generation code.
 
-17. (DONE) Added Support for datasets other than USGS EQ dataset(parseUSGSdata.py). NOAA HURDAT2 dataset has been parsed and encoded pygen horoscope string dataset has been autogenerated by parseNOAA_HURDAT2_data.py
+17. (FEATURE - DONE) Added Support for datasets other than USGS EQ dataset(parseUSGSdata.py). NOAA HURDAT2 dataset has been parsed and encoded pygen horoscope string dataset has been autogenerated by parseNOAA_HURDAT2_data.py
 
-18. (Minimum Functionality DONE-TwitterFollowersGraphRendering, Centrality) (Astro)PsychoSocialAnalysis  - Social Network Graph Analysis and Sentiment Analysis of Social Media and drawing inferences on Psychology and Human Opinion Mining in broader sense - for example, how a social network forms, how opinions, edges and vertices appear over time , Rich-get-Richer in Random Network Erdos-Renyi Model - which by majority opinion seems to be a bad model choice for Social Networking (Do people flock to popular social groups?), Bonacich Power Centrality (a social prestige measure predating PageRank) etc.,. Related to point 15.
+18. (FEATURE - Minimum Functionality DONE-TwitterFollowersGraphRendering, Centrality) (Astro)PsychoSocialAnalysis  - Social Network Graph Analysis and Sentiment Analysis of Social Media and drawing inferences on Psychology and Human Opinion Mining in broader sense - for example, how a social network forms, how opinions, edges and vertices appear over time , Rich-get-Richer in Random Network Erdos-Renyi Model - which by majority opinion seems to be a bad model choice for Social Networking (Do people flock to popular social groups?), Bonacich Power Centrality (a social prestige measure predating PageRank) etc.,. Related to point 15.
 ------------
 References:
 -----------
@@ -405,7 +405,7 @@ References:
 18.8 Dream Analysis - http://cogprints.org/5030/1/NRC-48725.pdf
 18.9 Opinion Mining - http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf
 
-19. (DONE-PAC Learnt Boolean Conjunction) Implement prototypical PAC learning of Boolean Functions from dataset. Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
+19. (FEATURE - DONE-PAC Learnt Boolean Conjunction) Implement prototypical PAC learning of Boolean Functions from dataset. Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
 	19.1 There are two datasets - dataset1 of size 2^n of consecutive integers and dataset2 of first n-bit prime numbers of size 2^n
 	19.2 Each element of dataset1 is mapped to i-th bit of the corresponding prime number element in the dataset2. Boolean Conjunction is learnt for each of the i mappings.
 	19.3 Above step gives i probabilistic, approximate, correct learnt boolean conjunctions for each bit of all the prime numbers. 
@@ -413,17 +413,17 @@ References:
 	19.5 PAC Learnt Boolean Conjunction is an approximated Decision Tree.
 	19.6 PAC learning is based on Occam's Razor (no unnecessary variables)
 
-20. (DONE) Integrate AstroInfer to VIRGO-KingCobra-USBmd Platform which makes it an Approximately Intelligent Cloud Operating System Framework - a Cloud OS that "learns" ,"decides" from datasets and "drives" using AstroInfer code. AsFer+USBmd+VIRGO+KingCobra integrated cloud platform with machine learning features together have been christened as "Krishna iResearch Intelligent Cloud Platform" or "NeuronRain". 
+20. (FEATURE - DONE) Integrate AstroInfer to VIRGO-KingCobra-USBmd Platform which makes it an Approximately Intelligent Cloud Operating System Framework - a Cloud OS that "learns" ,"decides" from datasets and "drives" using AstroInfer code. AsFer+USBmd+VIRGO+KingCobra integrated cloud platform with machine learning features together have been christened as "Krishna iResearch Intelligent Cloud Platform" or "NeuronRain". 
 
-21. (DONE-Minimum Implementation) Unsupervised Named Entity Recognition and Part-of-Speech tagging using Conditional Random Fields(CRF) and Viterbi path computation in CRF. Bayesian Network and Belief propagation might be implemented if necessary - as they are graphical models where graph edges are labelled with conditional probabilities and belief potentials respectively and can be part of other larger modules. 
+21. (FEATURE - DONE-Minimum Implementation) Unsupervised Named Entity Recognition and Part-of-Speech tagging using Conditional Random Fields(CRF) and Viterbi path computation in CRF. Bayesian Network and Belief propagation might be implemented if necessary - as they are graphical models where graph edges are labelled with conditional probabilities and belief potentials respectively and can be part of other larger modules. 
 
 ############################################################################################
 A.	Design Notes on Mining Numerical Datasets
 ############################################################################################
 
-22. (DONE-Minimum Implementation) Period Three theorem (www.its.caltech.edu/~matilde/LiYorke.pdf) which is one of the earliest results in Chaotic NonLinear Systems, implies any data that has a periodicity of 3 can have larger periods. Fractals, Mandelbrot-Julia Sets have modelled natural phenomena. Thus finding if a data has periodicity or Chaos and if it has sensitive dependence on initial conditions (for example logistic equations similar to x(n+1) = kx(n)(1-x(n))) is a way to mine numerical data. Computation of Hausdorff-Besicovitch Dimension can be implemented to get Fractal Dimension of an uncountable set (this has to be visualized as a fractal curve than set of points). In addition to these, an Implementation of Chaotic PRG algorithms as described in https://sites.google.com/site/kuja27/ChaoticPRG.pdf?attredirects=0 and https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0 can be done.
+22. (FEATURE - DONE-Minimum Implementation) Period Three theorem (www.its.caltech.edu/~matilde/LiYorke.pdf) which is one of the earliest results in Chaotic NonLinear Systems, implies any data that has a periodicity of 3 can have larger periods. Fractals, Mandelbrot-Julia Sets have modelled natural phenomena. Thus finding if a data has periodicity or Chaos and if it has sensitive dependence on initial conditions (for example logistic equations similar to x(n+1) = kx(n)(1-x(n))) is a way to mine numerical data. Computation of Hausdorff-Besicovitch Dimension can be implemented to get Fractal Dimension of an uncountable set (this has to be visualized as a fractal curve than set of points). In addition to these, an Implementation of Chaotic PRG algorithms as described in https://sites.google.com/site/kuja27/ChaoticPRG.pdf?attredirects=0 and https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0 can be done.
 
-23. (DONE) Entropy of numerical data - Sum of -Pr(x)LogPr(x) for all possible outcome probabilities for a random variable. This is already computed in Decision Tree Classifier as impurity measure of a dataset. Also a python Entropy implementation for texts has been added to repository - computes weighted average of number of bits required to minimum-describe the text.
+23. (FEATURE - DONE) Entropy of numerical data - Sum of -Pr(x)LogPr(x) for all possible outcome probabilities for a random variable. This is already computed in Decision Tree Classifier as impurity measure of a dataset. Also a python Entropy implementation for texts has been added to repository - computes weighted average of number of bits required to minimum-describe the text.
 
 
 #############################################################################################################################################
@@ -701,10 +701,10 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
 
 25. Approximating with some probability distribution - Gaussian, Binomial etc., that model the probability of occurence of a datapoint in the set
 
-(DONE) 26. Streaming algorithms - Finding Frequency moments, Heavy Hitters(most prominent items), Distinct Elements etc., in the numerical dataset. Usually numerical data occur in streams making these best choice for mining numerical data. 
-(DONE) 26.1 Implementation of LogLog and HyperLogLog Counter(cardinality - distinct elements in streamed multiset), CountMinSketch (Frequencies and heavy hitters) and Bloom Filters(membership)
-(DONE) 26.2 Parser and non-text file Storage framework for Realtime Streaming Data - Hive, HBase, Cassandra, Spark and Pig Scripts and Clients for Storage Backends have been implemented. The Storage is abstracted by a generator - architecture diagram at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/BigDataStorageAbstractionInAsFer.jpg
-(DONE) 26.3 Python scripts for Stock Quotes Data and Twitter tweets stream search data for a query.
+(FEATURE - DONE) 26. Streaming algorithms - Finding Frequency moments, Heavy Hitters(most prominent items), Distinct Elements etc., in the numerical dataset. Usually numerical data occur in streams making these best choice for mining numerical data. 
+(FEATURE - DONE) 26.1 Implementation of LogLog and HyperLogLog Counter(cardinality - distinct elements in streamed multiset), CountMinSketch (Frequencies and heavy hitters) and Bloom Filters(membership)
+(FEATURE - DONE) 26.2 Parser and non-text file Storage framework for Realtime Streaming Data - Hive, HBase, Cassandra, Spark and Pig Scripts and Clients for Storage Backends have been implemented. The Storage is abstracted by a generator - architecture diagram at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/BigDataStorageAbstractionInAsFer.jpg
+(FEATURE - DONE) 26.3 Python scripts for Stock Quotes Data and Twitter tweets stream search data for a query.
 -------------
 References:
 -------------
@@ -712,15 +712,15 @@ References:
 
 27. Usual Probabilistic Measures of Mean, Median, Standard Deviation, Curve fitting on the numeric data. 
 
-28. (DONE - using python, R+rpy2) Application of Discrete Fourier Transform(using R), LOESS(using R), Linear Polynomial Approximate Interpolation(using R), Logistic Regression and Gradient Descent
+28. (FEATURE - DONE - using python, R+rpy2) Application of Discrete Fourier Transform(using R), LOESS(using R), Linear Polynomial Approximate Interpolation(using R), Logistic Regression and Gradient Descent
 
 29. Least Squares Method on datapoints y(i)s for some x(i)s such that f(x)~y needs to be found. Computation of L0, L1 and L2 norms.
 
-(DONE)30. K-Means and kNN Clustering(if necessary and some training data is available) - unsupervised and supervised clustering based on coordinates of the numerical dataset
+(FEATURE - DONE)30. K-Means and kNN Clustering(if necessary and some training data is available) - unsupervised and supervised clustering based on coordinates of the numerical dataset
 
-31. (DONE) Discrete Hyperbolic Factorization - Author has been working on a factorization algorithm with elementary proof based on discretization of a hyperbola since 2000 and there seems to be some headway recently in 2013. To confirm the polylog correctness, a minimal implementation of Discrete Hyperbolic Factorization (and could be even less than polylog due to a weird upperbound obtained using stirling formula) has been added to AstroInfer repository at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound.cpp with factors output logs.
+31. (FEATURE - DONE) Discrete Hyperbolic Factorization - Author has been working on a factorization algorithm with elementary proof based on discretization of a hyperbola since 2000 and there seems to be some headway recently in 2013. To confirm the polylog correctness, a minimal implementation of Discrete Hyperbolic Factorization (and could be even less than polylog due to a weird upperbound obtained using stirling formula) has been added to AstroInfer repository at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound.cpp with factors output logs.
 
-32. (DONE) Multiple versions of Discrete Hyperbolic Factorization algorithms have been uploaded as drafts in https://sites.google.com/site/kuja27:
+32. (FEATURE - DONE) Multiple versions of Discrete Hyperbolic Factorization algorithms have been uploaded as drafts in https://sites.google.com/site/kuja27:
 	 32.1) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicFactorization_UpperboundDerivedWithStirlingFormula_2013-09-10.pdf/download and 
 	 32.2) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download(and multiple versions due to various possible algorithms for search and upperbound technique used) 
 
@@ -731,7 +731,7 @@ http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarith
 	33.2) Preliminary Design notes for CRCW PRAM implementation of the above is added to repository at: http://sourceforge.net/p/asfer/code/237/tree/ImplementationDesignNotesForDiscreteHyperbolicFactorizationInPRAM.jpg. This adds a tile_id to each tile so that during binary search, the factors are correctly found since coordinate info gets shuffled after k-tile merge.
 
 
-34. (DONE) An updated draft version of PRAM NC algorithm for Discrete Hyperbolic Factorization has been uploaded - with a new section for Parallel RAM to NC reduction, disambiguation on input size (N and not logN is the input size for ANSV algorithm and yet is in NC - in NC2 to be exact - (logN)^2 time and polynomial in N PRAM processors - NC circuit depth translates to PRAM time and NC circuit size to number of PRAMs):
+34. (FEATURE - DONE) An updated draft version of PRAM NC algorithm for Discrete Hyperbolic Factorization has been uploaded - with a new section for Parallel RAM to NC reduction, disambiguation on input size (N and not logN is the input size for ANSV algorithm and yet is in NC - in NC2 to be exact - (logN)^2 time and polynomial in N PRAM processors - NC circuit depth translates to PRAM time and NC circuit size to number of PRAMs):
 	34.1 LaTeX - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download
 
 	34.2 PDF - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
@@ -767,11 +767,11 @@ Additional references:
 B.	EXPERIMENTAL NON-STATISTICAL INFERENCE MODEL BASED ON ALREADY KNOWN THEORETICAL COMPUTER SCIENCE RESULTS:
 ########################################################################################################################
 
-35. (DONE-WordNet Visualizer implementation for point 15) The classification using Interview Algorithm Definition Graph (obtained from Recursive Gloss Overlap algorithm described in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf ) wordnet node indegrees can classify a same document in multiple classes without any training set (unsupervised). Thus same document will be in multiple classes. This can be visualized as one stack per class and documents in same class are pushed into a stack corresponding to each class. When a same document is across multiple classes, a document can be visualized as a "hyperedge" of a hypergraph that transcends multiple class nodes. Here each class node in this non-planar graph (or multi-planar graph) is a stack. 
+35. (FEATURE - DONE-WordNet Visualizer implementation for point 15) The classification using Interview Algorithm Definition Graph (obtained from Recursive Gloss Overlap algorithm described in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf ) wordnet node indegrees can classify a same document in multiple classes without any training set (unsupervised). Thus same document will be in multiple classes. This can be visualized as one stack per class and documents in same class are pushed into a stack corresponding to each class. When a same document is across multiple classes, a document can be visualized as a "hyperedge" of a hypergraph that transcends multiple class nodes. Here each class node in this non-planar graph (or multi-planar graph) is a stack. 
 
-36. (DONE) Thus if number of classes and documents are infinite, an infinite hypergraph is obtained. This is also somewhat a variant of an inverted index or a hashtable where in addition to hashing ,the chained buckets across the keys are interconnected (Quite similar to https://sites.google.com/site/kuja27/SurvivalIndexBasedTxnTimeoutManager.pdf?attredirects=0 and https://sites.google.com/site/kuja27/PhDThesisProposal.pdf?attredirects=0). This is also similar to "Connectionism" in Computational Psychology which allows cycles or interconnections in Perceptrons and Neural Networks. An old version of this was written in an old deleted blog few years ago in 2006 at: http://shrinivaskannan.blogspot.com. If the relation between Hash Functions and Integer Partitions is also applied as described using Generating Functions in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions.pdf?attredirects=0 then an upperbound on number of possible Hypergraphs (visualizing them as interconnected Hash tables) can be derived which is a stronger notion to prove. 
+36. (THEORY) Thus if number of classes and documents are infinite, an infinite hypergraph is obtained. This is also somewhat a variant of an inverted index or a hashtable where in addition to hashing ,the chained buckets across the keys are interconnected (Quite similar to https://sites.google.com/site/kuja27/SurvivalIndexBasedTxnTimeoutManager.pdf?attredirects=0 and https://sites.google.com/site/kuja27/PhDThesisProposal.pdf?attredirects=0). This is also similar to "Connectionism" in Computational Psychology which allows cycles or interconnections in Perceptrons and Neural Networks. An old version of this was written in an old deleted blog few years ago in 2006 at: http://shrinivaskannan.blogspot.com. If the relation between Hash Functions and Integer Partitions is also applied as described using Generating Functions in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions.pdf?attredirects=0 then an upperbound on number of possible Hypergraphs (visualizing them as interconnected Hash tables) can be derived which is a stronger notion to prove. 
 
-37.(PoC WordNet Visualizer Closure DONE) Above multiplanar hypergraph is quite related as a theoretical construct to a Pushdown Automata for Context Free Grammar. Also the Definition Graph Construction using Recursive Gloss Overlap is a Context-Sensitive counterpart of Parse Trees obtained for Context Free Grammar, but ignoring Parts-Of-Speech Tagging and relying only on the relation between words or concepts within each sentence of the document which is mapped to a multipartite or general graph. Infact this Definition Graph and Concept Hypergraph constructed above from indegrees quite resemble a Functional Programming Paradigm where each relationship edge is a Functional Program subroutine and the vertices are the parameters to it. Thus a hyperedge could be visualized as Composition Operator of Functional Programs including FP routines for Parts-of-Speech if necessary [WordNet or above Concept Hypergraph can be strengthened with FPs like LISP, Haskell etc.,]. RecursiveNeuralNetworks(MV-RNN and RNTN) have a notion of compositionality quite similar to Functional Programming in FPs (Reference: http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf ) but for tree structures. Applying the compositionality for Concept Hypergraphs constructed above using FPs is a possible research direction.
+37.(FEATURE - PoC WordNet Visualizer Closure DONE) Above multiplanar hypergraph is quite related as a theoretical construct to a Pushdown Automata for Context Free Grammar. Also the Definition Graph Construction using Recursive Gloss Overlap is a Context-Sensitive counterpart of Parse Trees obtained for Context Free Grammar, but ignoring Parts-Of-Speech Tagging and relying only on the relation between words or concepts within each sentence of the document which is mapped to a multipartite or general graph. Infact this Definition Graph and Concept Hypergraph constructed above from indegrees quite resemble a Functional Programming Paradigm where each relationship edge is a Functional Program subroutine and the vertices are the parameters to it. Thus a hyperedge could be visualized as Composition Operator of Functional Programs including FP routines for Parts-of-Speech if necessary [WordNet or above Concept Hypergraph can be strengthened with FPs like LISP, Haskell etc.,]. RecursiveNeuralNetworks(MV-RNN and RNTN) have a notion of compositionality quite similar to Functional Programming in FPs (Reference: http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf ) but for tree structures. Applying the compositionality for Concept Hypergraphs constructed above using FPs is a possible research direction.
 
 38.(THEORY) But above is not context free because context is easily obtainable from the hyperedge which connects multiple classes. As an experimental gadget above seems to represent an alternative computational model for context sensitivity and also process of human thought. This needs HyperEdge Search algorithms for hypergraph. A Related Neuropsychological notion of Hippocampus Memory Allocation in Human Brain can be found in http://people.seas.harvard.edu/~valiant/Hippocampus.pdf. Also a similar gadget is a special case of Artificial Neural Network - http://en.wikipedia.org/wiki/Hopfield_network - Hopfield Network - used to model human associative memory (pattern based memory retrieval than address based retrieval). Hyperedges of the above hypergraph can be memory vectors retrieved in an associative memory.
 
@@ -781,9 +781,9 @@ B.	EXPERIMENTAL NON-STATISTICAL INFERENCE MODEL BASED ON ALREADY KNOWN THEORETIC
 
 41.(THEORY) Mapping Rubik's Cube to Concept Wide Hypergraph above - Each configuration in Rubik's Cube transition function can be mapped to a class stack node in the Concept Hypergraph. In other words a feature vector uniquely identifies each node in each class stack vertex of the Hypergraph. Thus move in a Rubik's cube is nothing but the hyperedge or a part of the hyperedge that contains those unique vectors. Thus hyperedges signify the Rubik's cube moves. For example if each class stack vertex is denoted as c(i) for i-th class and each element of the stack is denoted by n(i) i.e. nth element of stack for class i, then the ordered pair [c(i),n(i)] uniquely identifies a node in class stack and correspondingly uniquely identifies an instantaneous face configuration of a Rubik's Hypercube(colored subsquares represent the elements of the feature vector). Thus any hyperedge is a set of these ordered pairs that transcend multiple class stacks.
 
-42.(DONE) The Multiplanar Primordial Field Turing Machine model described by the author in "Theory of Shell Turing Machines" in [http://sites.google.com/site/kuja27/UndecidabilityOfFewNonTrivialQuestions.pdf?attredirects=0] with multiple dimensions seems to be analogous to the above. If dimension info is also added to each plane in above hypergraph then both above formulations and Shell Turing Machines look strikingly similar. One more salient feature of this hypergraph is that each class node stack indirectly encodes timing information for events from bottom to top of the stack and height of each stack independently varies. Thus this is more than just a hypergraph. There also exists a strong similarity with Evocation WordNet (one word "reminding" or "evocative" of the other) - http://wordnet.cs.princeton.edu/downloads.html - difference being above is a hypergraph of facts or concepts rather than just words. The accuracy of sense disambiguation is high or even 100% because context is the hyperedge and also depends on how well the hyperedges are constructed connecting the class stack vertices.
+42.(THEORY) The Multiplanar Primordial Field Turing Machine model described by the author in "Theory of Shell Turing Machines" in [http://sites.google.com/site/kuja27/UndecidabilityOfFewNonTrivialQuestions.pdf?attredirects=0] with multiple dimensions seems to be analogous to the above. If dimension info is also added to each plane in above hypergraph then both above formulations and Shell Turing Machines look strikingly similar. One more salient feature of this hypergraph is that each class node stack indirectly encodes timing information for events from bottom to top of the stack and height of each stack independently varies. Thus this is more than just a hypergraph. There also exists a strong similarity with Evocation WordNet (one word "reminding" or "evocative" of the other) - http://wordnet.cs.princeton.edu/downloads.html - difference being above is a hypergraph of facts or concepts rather than just words. The accuracy of sense disambiguation is high or even 100% because context is the hyperedge and also depends on how well the hyperedges are constructed connecting the class stack vertices.
 
-43.(DONE) Instead of a wordnet if a relationship amongst logical statements (First Order Logic etc.,) by logical implication is considered then the above becomes even more important as this creates a giant Concept Wide Web as mentioned in [http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download] and thus is an alternative knowledge representation algorithm.
+43.(THEORY) Instead of a wordnet if a relationship amongst logical statements (First Order Logic etc.,) by logical implication is considered then the above becomes even more important as this creates a giant Concept Wide Web as mentioned in [http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download] and thus is an alternative knowledge representation algorithm.
 
 44.(THEORY)  Implication graphs of logical statements can be modelled as a Random Growth Network where a graph is randomly grown by adding new edges and vertices over a period of learning. 
 
@@ -870,15 +870,15 @@ A voter gadget spawns itself into liker, disliker and neutral parallel threads o
 59. Initial Design Notes for - Mundane Predictive Model:
 ##################################################################################
 
-- (DONE) DecisionTree, NaiveBayes and SVM classifiers and horoscope encoders are already in the AstroInfer codebase. 
-- (DONE) Encode the dataset which might be USGS or NOAA(Science on a Sphere) datasets or anyother dataset available after getting text horos for these using Maitreya's Dreams textclient (AstroInfer version)
-- (DONE) Above gives encoded horoscope strings for all classes of mundane events in both Zodiacal and AscendantRelative formats (autogenerated by Python scripts in python-src/)
-- (DONE) Above set is a mix of encoded strings for all events which can be classified using one of the classifiers above.
-- (DONE) For each class the set of encoded horo strings in that class can be pairwise or multiple-sequence aligned to get the pattern for that class
-- (DONE) There are two sets for each class after running the classifiers - one set is AscendantRelative and the other is Zodiacal
-- (DONE) The above steps give the mined astronomical patterns for all observed mundane events - Pattern_Mundane_Observed_AscRelative and Pattern_Mundane_Observed_Zodiacal
+- (FEATURE - DONE) DecisionTree, NaiveBayes and SVM classifiers and horoscope encoders are already in the AstroInfer codebase. 
+- (FEATURE - DONE) Encode the dataset which might be USGS or NOAA(Science on a Sphere) datasets or anyother dataset available after getting text horos for these using Maitreya's Dreams textclient (AstroInfer version)
+- (FEATURE - DONE) Above gives encoded horoscope strings for all classes of mundane events in both Zodiacal and AscendantRelative formats (autogenerated by Python scripts in python-src/)
+- (FEATURE - DONE) Above set is a mix of encoded strings for all events which can be classified using one of the classifiers above.
+- (FEATURE - DONE) For each class the set of encoded horo strings in that class can be pairwise or multiple-sequence aligned to get the pattern for that class
+- (FEATURE - DONE) There are two sets for each class after running the classifiers - one set is AscendantRelative and the other is Zodiacal
+- (FEATURE - DONE) The above steps give the mined astronomical patterns for all observed mundane events - Pattern_Mundane_Observed_AscRelative and Pattern_Mundane_Observed_Zodiacal
 
-60. (DONE) Above has implemented a basic Class and Inference Model that was envisaged in 2003. Class is the set-theoretic notion of sets sharing common underlying theme. Using VC Dimension is a way to determine accuracy of how well the dataset is "shattered" by the classes. 
+60. (FEATURE - DONE) Above has implemented a basic Class and Inference Model that was envisaged in 2003. Class is the set-theoretic notion of sets sharing common underlying theme. Using VC Dimension is a way to determine accuracy of how well the dataset is "shattered" by the classes. 
 
 61. (THEORY) Now on to mining the classics for patterns: For all classes of events, running the classifier partitions the rules in a classic into set of rules or patterns for that class. Here again there are two sets for each class - Pattern_Mundane_Classic_AscRelative and Pattern_Mundane_Classic_Zodiacal
 
@@ -886,7 +886,7 @@ A voter gadget spawns itself into liker, disliker and neutral parallel threads o
 
 63. (THEORY) More  importantly, for example, if a non-statistical,astrological model of rainfall is computed based on a classical rule which says that "Venus-Mercury in single sign or Venus-Sun-Mercury in close proximity degrees with Sun in the middle causes copious rainfall" is used as a model, expected output of the model could be "Between 28October2013 and 15December2013 there could be peak monsoon activity in ----- longitude ---- latitude with --- percentage probability". And thus this could be a Medium Range Weather Forecasting tool.
 
-64. (DONE-related to 65 and 139) Integrate AstroInfer,USB-md,KingCobra and VIRGO into an approximately intelligent cloud OS platform that not just executes code statically but also dynamically learns from the processes (say through log files, executables, execution times etc., and builds predictive models).
+64. (FEATURE - DONE-related to 65 and 139) Integrate AstroInfer,USB-md,KingCobra and VIRGO into an approximately intelligent cloud OS platform that not just executes code statically but also dynamically learns from the processes (say through log files, executables, execution times etc., and builds predictive models).
 USB-md Design Document: http://sourceforge.net/p/usb-md/code-0/HEAD/tree/USBmd_notes.txt
 VIRGO Design Document: http://sourceforge.net/p/virgo-linux/code-0/HEAD/tree/trunk/virgo-docs/VirgoDesign.txt
 KingCobra Design Document: http://sourceforge.net/p/kcobra/code-svn/HEAD/tree/KingCobraDesignNotes.txt
@@ -904,7 +904,7 @@ References:
 
 67. An automaton or Turing machine model for data or voice (or musical) samples - Voice samples or musical notations are discrete in time and occur in stream. As an experimental research,  explore on possibility of automatically constructing an automaton or Turing machine that recognizes these languages (RE or CFG) where the notes are the alphabets. 
 
-(DONE) 68. Computational Music - Alternatively, a Discrete Fourier Transform on a set of data or voice samples gives a set of frequencies - a traditional DSP paradigm.
+(FEATURE - DONE) 68. Computational Music - Alternatively, a Discrete Fourier Transform on a set of data or voice samples gives a set of frequencies - a traditional DSP paradigm.
 -----------
 References:
 -----------
@@ -964,21 +964,21 @@ There is a striking resemblance of EventNet to sequence mining algorithm CAMLS -
 87.					COMMIT RELATED NOTES
 ********************************************************************************************************
 
-commits as on 3 September 2013
+(FEATURE- DONE) commits as on 3 September 2013
 ------------------------------
 DecisionTree, NaiveBayes and SVM classifier code has been integrated into AstroInfer toplevel invocation with boolean flags
 
-commits as on 6 September 2013
+(FEATURE- DONE) commits as on 6 September 2013
 ------------------------------
 In addition to USGS data, NOAA Hurricane dataset HURDAT2 has been downloaded and added to repository. Asfer Classifier Preprocessor script has been updated to classify set of articles listed in articlesdataset.txt using NaiveBayesian or DecisionTree Classifiers and training and test set text files are also autogenerated. New parser for NOAA HURDAT2 datset has been added to repository. With this datasets HTML files listed in articlesdataset.txt are classified by either classifiers and segregated into "Event Classes".Each dataset document is of proprietary format and requires parser for its own to parse and autogenerate the date-time-longlat text file.Date-time-longlat data for same "Event Class" will be appended and collated into single Date-time-longlat text file for that "Event Class".
 
-commits as on 12 September 2013
+(FEATURE- DONE) commits as on 12 September 2013
 -------------------------------
 1.asfer_dataset_segregator.py and asfer_dataset_segregator.sh - Python and wrapper shell script that partitions the parsed datasets which contain date-time-long-lat data based on classifier output grepped by the invoker shell script - asfer_dataset_segregator.sh -  and writes the names of parsed dataset files which are classified into Event Class "<class>" into text files with names of regular expression "EventClassDataSet_<class>.txt"
 
 2.DateTimeLongLat data for all datasets within an event class (text file) need to be collated into a single asfer.enchoros.<classname>.zodiacal or asfer.enchoros.<classname>.ascrelative. For this a Python script MaitreyaToEncHoroClassified.py has been added to repository that reads the segregated parsed dataset files generated by asfer_dataset_aggregator.sh and invokes maitreya_textclient for all date-time-long-lat data within all parsed datasets for a particular event class - "EventClassDataset_<class>.txt" and also creates autogenerated asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative encoded files
 
-commits as on 2 November 2013
+(FEATURE- DONE) commits as on 2 November 2013
 -----------------------------
 Lot of commits for implementation of Discrete Hyperbolic Factorization with Stirling Formula Upperbound (http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound.cpp) have gone in. Overflow errors prevent testing large numbers.(URLs:
 	 1) Multiple versions of Discrete Hyperbolic Factorization uploaded in http://sites.google.com/site/kuja27/ 
@@ -986,7 +986,7 @@ Lot of commits for implementation of Discrete Hyperbolic Factorization with Stir
          3) Latex version - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download
 )
 
-commits as on 20 November 2013 and 21 November 2013
+(FEATURE- DONE) commits as on 20 November 2013 and 21 November 2013
 ----------------------------------------------------
 1. Lots of testing done on Discrete Hyperbolic Factorization sequential implementation and logs have been added to repository.
 
@@ -1098,49 +1098,49 @@ boolean values is then NP-complete and hence finding one partition with distinct
 majority vote).
 
 ---------------------------------------------------
-94. Commits as on 23 April 2014
+(FEATURE- DONE) 94. Commits as on 23 April 2014
 ---------------------------------------------------
 Updated pgood.cpp with some optimizations for factorial computations and batched summation to circumvent overflow to some extent.
 For Big decimals IEEE 754 with 112+ bits precision is needed for which boost::multiprecision or java.math.BigDecimal might have to be used.
 
 --------------------------------------------------
-95. Commits as on 7 July 2014
+(FEATURE- DONE) 95. Commits as on 7 July 2014
 --------------------------------------------------
 Initial implementation of a Chaos attractor sequence implementation committed to repository.
 
 --------------------------------------------------
-96. Commits as on 8 July 2014
+(FEATURE- DONE) 96. Commits as on 8 July 2014
 --------------------------------------------------
 Python-R (rpy2) code for correlation coefficient computation added to above Chaos attractor implementation.
 
 --------------------------------------------------
-97. Commits as on 9 July 2014
+(FEATURE- DONE) 97. Commits as on 9 July 2014
 --------------------------------------------------
 DJIA dataset, parser for it and updated ChaosAttractor.py for chaotic and linear correlation coefficient computation of DJIA dataset
 have been committed.
 
 --------------------------------------------------
-98. Commits as on 10 July 2014
+(FEATURE- DONE) 98. Commits as on 10 July 2014
 --------------------------------------------------
 Python(rpy2) script for computing Discrete Fourier Transform for DJIA dataset has been added (internally uses R). [python-src/DFT.py]
 
 --------------------------------------------------
-99. Commits as on 11 July 2014
+(FEATURE- DONE) 99. Commits as on 11 July 2014
 --------------------------------------------------
 Python(rpy2) script for spline interpolation of DJIA dataset and plotting a graph of that using R graphics has been added. [python-src/Spline.py]
 
 --------------------------------------------------
-100. Commits as on 15 July 2014 and 16 July 2014
+(FEATURE- DONE) 100. Commits as on 15 July 2014 and 16 July 2014
 --------------------------------------------------
 Doxygen documentation for AsFer, USBmd, VIRGO, KingCobra and Acadpdrafts have been committed to GitHub at https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs. LOESS local polynomial regression fitting code using loess() function in R has been added at python-src/LOESS.py. Approximate linear interpolation code using approx() and approxfun() in R has been added at python-src/Approx.py
 
 -------------------------------------------------
-101.Commits as on 23 July 2014
+(FEATURE- DONE) 101.Commits as on 23 July 2014
 -------------------------------------------------
 Draft additions to http://arxiv.org/pdf/1106.4102v1.pdf are in the Complement Function item above. An R graphics rpy2 script RiemannZetaFunctionZeros.py has been added to parse the first 100000 zeros of RZF and plot them using R Graphics.
 
 --------------------------------------------------------------------
-(THEORY - Visualizer Implementation DONE) 102. Dense Subgraphs of the WordNet subgraphs from Recursive Gloss Overlap
+(FEATURE - THEORY - Visualizer Implementation DONE) 102. Dense Subgraphs of the WordNet subgraphs from Recursive Gloss Overlap
 --------------------------------------------------------------------
 http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf have been extended for a summary creation algorithm from WordNet subgraphs of Recursive Gloss Overlap by filtering out low degree vertices(https://sites.google.com/site/kuja27/DocumentSummarization_using_SpectralGraphTheory_RGOGraph_2014.pdf?attredirects=0&d=1). For undirected graphs there is a notion of k-core of a graph which is an induced subgraph of degree k vertices. Since Wordnet is a directed graph, recently there are measures to measure degeneracy(D-cores - http://www.graphdegeneracy.org/dcores_ICDM_2011.pdf). Graph peeling is a process of removing edges to create a dense subgraph. This can be better visualized using visual wordnet implementations: 
 	102.1 http://kylescholz.com/projects/wordnet/
@@ -1151,12 +1151,12 @@ http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/par
 103. AsFer version 14.9.9 release tagged on 9 September 2014
 ------------------------------------------------------------------
 -------------------------------------------------------------------
-104. Commits as on 9 October 2014
+(FEATURE- DONE) 104. Commits as on 9 October 2014
 -------------------------------------------------------------------
 Initial python script implementation for Text compression committed with logs and screenshot. Decompression is still hazy and needs some more algorithmic work. 
 
 ------------------------------------------------------------------
-105. Commits as on 21 October 2014
+(FEATURE- DONE) 105. Commits as on 21 October 2014
 ------------------------------------------------------------------
 An experimental POC python implementation that uses Hidden Markov Model for decompression has been committed. But it depends on one-time computing a huge number of priors and their accuracy.
 
@@ -1167,39 +1167,39 @@ EventNet graph for historical cause and effect described above can be huge of th
 events might be necessary at times - similar to a document summarization. Summarizing a graph of event cause-effects requires giving importance to most important events in the graph - vertices with high number of degrees (indegrees + outdegrees) . This is nothing but finding k-core of a graph which is a maximal connected subgraph of EventNet where every vertex is of degree atleast k.
 
 -----------------------------------------------------------------
-107. Commits as on 1 November 2014
+(FEATURE- DONE) 107. Commits as on 1 November 2014
 -----------------------------------------------------------------
 A minimal PAC learning implementation in python to learn a Boolean Conjunction from dataset has been added to repository.
 
 -----------------------------------------------------------------
-108. Commits as on 4 November 2014
+(FEATURE- DONE) 108. Commits as on 4 November 2014
 -----------------------------------------------------------------
 Initial implementation for Minimum Description Length has been added to repository.
 
 -----------------------------------------------------------------
-109. Commits as on 6 November 2014
+(FEATURE- DONE) 109. Commits as on 6 November 2014
 -----------------------------------------------------------------
 Python Shannon Entropy implementation for texts has been added to repository and is invoked in MinimumDescLength.py MDL computation.
 
 -----------------------------------------------------------------
-110. Commits as on 7 November 2014
+(FEATURE- DONE) 110. Commits as on 7 November 2014
 -----------------------------------------------------------------
 Python Kraft Inequality MDL implementation has been committed.
 
 -----------------------------------------------------------------
-111. Commits as on 11 November 2014
+(FEATURE- DONE) 111. Commits as on 11 November 2014
 -----------------------------------------------------------------
 C++ implementation for Wagner-Fischer Dynamic Programming algorithm that iteratively computes Levenshtein Edit Distance than recursively has been added to repository.
 
 -----------------------------------------------------------------
-(ONGOING) 112. Expirable objects
+(FEATURE - DONE) 112. Expirable objects
 -----------------------------------------------------------------
 Setting expiry to an object is sometimes essential to control updates and access to an object. Example application of this - A JPEG image
 should be accessible or displayable for only a finite number of times and after that it has to self-destruct. Though doing this in C++ is 
 straightforward with operator overloading, in C it looks non-trivial. Presently only C++ implementation is added to repository.
 
 -----------------------------------------------------------------------------
-113. Commits as on 11 November 2014 - Expirable template class implementation 
+(FEATURE- DONE) 113. Commits as on 11 November 2014 - Expirable template class implementation 
 -----------------------------------------------------------------------------
 Similar to weak_ptr and shared_ptr, a generic datatype that wraps any datatype and sets an expiry count to it has been added to repository 
 in cpp-src/expirable/ . For example, a bitmap or a JPEG image can be wrapped in expirable container and it can be access-controlled. 
@@ -1209,7 +1209,7 @@ there is no operator overloading available for lvalues - i.e there is no "access
 MAC electronic money also.(std::move() copy-by-move instead of a std::swap() copy-by-swap idiom)
 
 ----------------------------------------------------------------------------
-114. Commits as on 12 November 2014 
+(FEATURE- DONE) 114. Commits as on 12 November 2014 
 ----------------------------------------------------------------------------
 Expirable template in asferexpirable.h has been updated with 2 operator=()
 functions for copy-assignment and move-assignment which interally invoke
@@ -1217,29 +1217,29 @@ std::swap() and std::move(). Explicit delete(s) are thus removed. Also example
 testcase has been updated to use a non-primitive datatype.
 
 ----------------------------------------------------------------------------
-115. Commits as on 13 November 2014
+(FEATURE- DONE) 115. Commits as on 13 November 2014
 ----------------------------------------------------------------------------
 Overloaded operator*() function added for expiry of "access" to objects. With this problem mentioned in 113 in tracking access or just usage is
 circumvented indirectly. 
 
 ---------------------------------------------------------------------------
-116. Commits as on 15 November 2014
+(FEATURE- DONE) 116. Commits as on 15 November 2014
 ---------------------------------------------------------------------------
 Python implementation for Perceptron and Gradient has been added to repository.
 
 ---------------------------------------------------------------------------
-117. Commits as on 17 November 2014
+(FEATURE- DONE) 117. Commits as on 17 November 2014
 ---------------------------------------------------------------------------
 Python implementation for Linear and Logistic Regression in 2 variables.
 
 ---------------------------------------------------------------------------
-118. Commits as on 20 November 2014
+(FEATURE- DONE) 118. Commits as on 20 November 2014
 ---------------------------------------------------------------------------
 C++ implementation of K-Means clustering with edit distance as metric has been added to
 repository.
 
 ---------------------------------------------------------------------------
-119. Commits as on 21 November 2014
+(FEATURE- DONE) 119. Commits as on 21 November 2014
 ---------------------------------------------------------------------------
 C++ implementation of k-Nearest Neighbour clustering has been added to repository.
 
@@ -1249,13 +1249,13 @@ C++ implementation of k-Nearest Neighbour clustering has been added to repositor
 Bugfixes to kNN implementation.
 
 ---------------------------------------------------------------------------
-121. Commits as on 25 November 2014
+(FEATURE- DONE) 121. Commits as on 25 November 2014
 ---------------------------------------------------------------------------
 Python script for decoding encoded horoscope strings (from Maitreya's Dreams) has been added to
 repository.
 
 --------------------------------------------------------------------------
-122. Commits as on 3 December 2014
+122. (FEATURE - DONE) Commits as on 3 December 2014
 --------------------------------------------------------------------------
 Initial implementation for EventNet:
 -----------------------------------
@@ -1277,7 +1277,7 @@ a fractal graph tensor where each vertex is a graph or partakers. Alternative fo
 where the partakers are just key words or persons in that event. For example, a fictitious story can be translated into a giant EventNet where each vertex is an event with corresponding partakers in it. It could be difficult to find edges among the partakers (Ideally the edges are conversations among the partakers of an event specific to this example). As an approximation, the partakers could be simply the keywords parsed from that set of conversations. Complexity or connectedness and number of topological orderings possible for this translated EventNet is a measure of elegance.
 
 ---------------------------------------------------------------------------------------
-124. Commits as on 4 December 2014
+(FEATURE- DONE) 124. Commits as on 4 December 2014
 ---------------------------------------------------------------------------------------
 EventNet - a cloudwide event ordering with unique id implementation
 --------------------------------------------------------------------
@@ -1309,7 +1309,7 @@ which updates the input vertices and edges files. The python EventNet script run
 cluster mapreduce recomputes the topological ordering periodically. This is quite tedious a process that can flood the cloud with log messages enabled by config boolean flag or compile time #ifdef.  
 
 --------------------------------------------------------------------------------------------------
-126. Commits as on 5 December 2014
+(FEATURE- DONE) 126. Commits as on 5 December 2014
 --------------------------------------------------------------------------------------------------
 Initial C++ Boost::graph based implementation for EventNet has been added to repository.
 
@@ -1433,7 +1433,7 @@ Let S be a set of elements with "goodness" attribute for each element. Choice us
 From the aforementioned,it is evident that for a 100% perfect set,both PRG(LHS) and Majority+SAT(RHS) Voting are two choice algorithms of equal outcome but with differing lowerbounds(with p=0.5 both LHS and RHS are in BPP or BPNC,but when p=1 then RHS is NP and LHS is P or NC). The set in toto is a black-box which is not known to the PRG or individual voters who are the constituents of it.
 
 --------------------------------------------------------------------------------
-134.Commits as on 8 January 2015
+(FEATURE- DONE) 134.Commits as on 8 January 2015
 --------------------------------------------------------------------------------
 134.1 C++ implementation for Longest Common Substring has been added to repository with logs. Datasets were the clustered encoded strings output by KMeans clustering C++ implementation.
 134.2 AsFer+USBmd+VIRGO+KingCobra+Acadpdrafts - version 15.1.8 release tagged.
@@ -1550,13 +1550,13 @@ can be expressed in terms of geometric equations for circle - x(i)^2 +y(i)^2 = r
 135.17 Above grid can be alternatively formulated as a Voronoi Diagram where Parallel PRG randomly sets multiple points on the plane and a tesselation of the plane covers these points. Instead of squares a Delaunay Triangulation is obtained from the dual of the Voronoi diagram.
 
 ------------------------------------------------------------------------------
-136. Commits as on 28,29 January 2015
+(FEATURE- DONE) 136. Commits as on 28,29 January 2015
 ------------------------------------------------------------------------------
 Python parser script to translate Longest Common Substring extracted from clustered or classified
 set of encoded strings has been added to repository.
 
 ---------------------------------------------------------------------------------------------
-(DONE) 137. Mining the Astronomical Datasets using KMeans and kNN - sequence of algorithms in AstroInfer
+(FEATURE - DONE) 137. Mining the Astronomical Datasets using KMeans and kNN - sequence of algorithms in AstroInfer
 - Commits as on 4 February 2015
 ---------------------------------------------------------------------------------------------
 1. MaitreyaToEnchoros.py - This scripts reads a text file with set of date,time and long/lat for a specific class of events (at present it has earthquakes of 8+ magnitude from 1900). This script creates two encoded files asfer.enchoros.zodiacal and asfer.enchoros.ascrelative using Maitreya's Dreams opensource CLI.
@@ -1567,7 +1567,7 @@ set of encoded strings has been added to repository.
 6. TranslateClusterPairwiseLCS.py - Translates the longest common substring to textual rule description mined from above dataset. Mined rules are grep-ed in python-src/MinedRulesFromDatasets.earthquakes. Thus the astronomy dataset cpp-src/earthquakesFrom1900with8plusmag.txt (or cpp-src/magnitude8_1900_date.php.html) ends up as the set of automatically mined rules.
 
 -----------------------------------------------------------------------------------------------
-(DONE) 138. Commandline sequence for Mining Astronomical Datasets (e.g Earthquakes as above) 
+(FEATURE - DONE) 138. Commandline sequence for Mining Astronomical Datasets (e.g Earthquakes as above) 
 using KMeans and kNN - Commits as on 4 February 2015
 -----------------------------------------------------------------------------------------------
 138.1 In asfer.cpp, set doClustering=true and build asfer binary
@@ -1580,7 +1580,7 @@ using KMeans and kNN - Commits as on 4 February 2015
 138.8 sudo python TranslateClusterPairwiseLCS.py | grep "Textually" 2>&1 >> MinedRulesFromDatasets.earthquakes
 
 ----------------------------------------------------------------------------------------
-(DONE) 139. BigData Analytics subsystem (related to point 64,65 on software analytics) 
+(FEATURE - DONE) 139. BigData Analytics subsystem (related to point 64,65 on software analytics) 
 ----------------------------------------------------------------------------------------
 139.1 (DONE) As mentioned in commit notes(13February2015) below, new multipurpose Java Hadoop MapReduce 
 code has been added to a bigdata_analytics/ directory. At present it computes the frequencies of astronomical entities in the MinedRulesFromDatasets textfile obtained from clustering+LCS. 
@@ -1595,17 +1595,17 @@ Diagrams depicting the above options have been uploaded at: http://sourceforge.n
 
 
 ----------------------------------------------------------------------------------
-Commits as on 4 February 2015
+(FEATURE - DONE) Commits as on 4 February 2015
 ----------------------------------------------------------------------------------
 C++ implementation of Knuth-Morris-Pratt String Match Algorithm added to repository.
 
 ----------------------------------------------------------------------------------
-Commits as on 9 February 2015
+(FEATURE - DONE) Commits as on 9 February 2015
 ----------------------------------------------------------------------------------
 Python+R script for DFT analysis of multimedia data has been added to repository.
 
 ----------------------------------------------------------------------------------
-Commits as on 13 February 2015
+(FEATURE - DONE) Commits as on 13 February 2015
 ----------------------------------------------------------------------------------
 Initial commits for BigData Analytics (for mined astro datasets) using Hadoop 2.6.0 MapReduce:
 
@@ -1619,24 +1619,24 @@ Initial commits for BigData Analytics (for mined astro datasets) using Hadoop 2.
 - hdfs_data also has commandlines history and the console output logs for above.
 
 --------------------------------------------------------------------
-Commits as on 17 February 2015
+(FEATURE - DONE) Commits as on 17 February 2015
 --------------------------------------------------------------------
 Python implementations for LogLog and HyperLogLog cardinality estimation for streamed multiset data have been added to repository.
 
 --------------------------------------------------------------------
-Commits as on 18 February 2015
+(FEATURE - DONE) Commits as on 18 February 2015
 --------------------------------------------------------------------
 Python implementations for CountMinSketch(frequencies and heavy-hitters) and BloomFilter(membership) for Streaming Data have been added to repository.
 
 --------------------------------------------------------------------
-Commits as on 19,20 February 2015
+(FEATURE - DONE) Commits as on 19,20 February 2015
 --------------------------------------------------------------------
 Python clients for Apache Hive and HBase have been added to repository and invoked from
 Stream Abstract Generator script as 2-phase streamer for Streaming_<algorithm> scripts.
 Hive,Pig,HBase HDFS and script data added to repository in java-src/bigdata_analytics.
 
 ---------------------------------------------------------------------------------
-(DONE) 140. Schematic for Apache Cassandra/Hive/HBase <=> AsFer Streaming_<algorithm> scripts interface 
+(FEATURE - DONE) 140. Schematic for Apache Cassandra/Hive/HBase <=> AsFer Streaming_<algorithm> scripts interface 
 ---------------------------------------------------------------------------------
 
 ($) BigData Source(e.g MovieLens) => Populated in Apache Cassandra, Apache HiveQL CLI(CREATE TABLE..., LOAD DATA LOCAL INPATH...),HBase shell/python client(create 'stream_data','cf'...) (or) Apache PigLatin
@@ -1644,7 +1644,7 @@ Hive,Pig,HBase HDFS and script data added to repository in java-src/bigdata_anal
 ($) Apache Hive or HBase SQL/NoSQL or Cassandra table => Read by Apache Hive or HBase or Cassandra python client => StreamAbstractGenerator => Iterable,Generator => Streaming_<algorithm> scripts
 
 --------------------------------------------------------------------
-Commits as on 25 February 2015
+(FEATURE - DONE) Commits as on 25 February 2015
 --------------------------------------------------------------------
 Added the Hive Storage client code for Streaming Abstract Generator __iter__ overridden function. With this Streaming_<algorithm> scripts can instantiate this class which mimicks the streaming through iterable with three storages - HBase, File and Hive.
 
@@ -1673,24 +1673,24 @@ htrace-core-2.01.jar and htrace-1.45.jar
 hadoop2_core_classpath.sh shell script in bigdata_analytics exports all the jars in (141) and (142).
 
 --------------------------------------------------------------------
-Commits as on 26 February 2015
+(FEATURE - DONE) Commits as on 26 February 2015
 --------------------------------------------------------------------
 Pig-HBase stream_data table creation and population related Pig scripts, HDFS data and screenshots have been added to repository.
 
 --------------------------------------------------------------------
-Commits as on 27 February 2015
+(FEATURE - DONE) Commits as on 27 February 2015
 --------------------------------------------------------------------
 Cassandra Python Client has been added to repository and Streaming_AbstractGenerator.py has been
 updated to invoke Cassandra in addition to Hive,HBase and File storage. Cassandra data have been added
 in bigdata_analytics/
 
 --------------------------------------------------------------------
-143. (DONE) Storage Abstraction in AsFer - Architecture Diagram
+143. (FEATURE - DONE) Storage Abstraction in AsFer - Architecture Diagram
 --------------------------------------------------------------------
 Architecture diagram for Hive/Cassandra/HBase/File NoSQL and other storage abstraction implemented in python has been uploaded at: http://sourceforge.net/p/asfer/code/HEAD/tree/asfer-docs/BigDataStorageAbstractionInAsFer.jpg
 
 --------------------------------------------------------------------
-144. (DONE) Apache Spark and VIRGO Linux Kernel Analytics and Commits as on 6 March 2015
+144. (FEATURE - DONE) Apache Spark and VIRGO Linux Kernel Analytics and Commits as on 6 March 2015
 --------------------------------------------------------------------
 1. Prerequisite: Spark built with Hadoop 2.6.0 with maven commandline:
 mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.6.0 -DskipTests package
@@ -1700,23 +1700,23 @@ from Uncomplicated FireWall logs in /var/log/kern.log has been added to reposito
 IP address can be set as a config in VIRGO kernel_analytics module (/etc/virgo_kernel_analytics.conf)
 
 --------------------------------------------------------------------
-Commits as on 10 March 2015
+(FEATURE - DONE) Commits as on 10 March 2015
 --------------------------------------------------------------------
 Spark python script updated for parsing /var/log/udev and logs in python-src/testlogs.
 (spark-submit Commandline: bin/spark-submit /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/SparkKernelLogMapReduceParser.py  2> /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/testlogs/Spark_Logs.kernlogUFWandHUAWEIparser.10March2015)
 
 --------------------------------------------------------------------
-145. (DONE) Commits as on 26 March 2015
+145. (FEATURE - DONE) Commits as on 26 March 2015
 --------------------------------------------------------------------
 New python script to fetch stock quotes by ticker symbol that can be used for Streaming_<algorithm> scripts has been added.
 
 --------------------------------------------------------------------
-146. (DONE) Commits as on 2 April 2015
+146. (FEATURE - DONE) Commits as on 2 April 2015
 --------------------------------------------------------------------
 New Python script to get Twitter tweets stream data for a search query has been added.
 
 --------------------------------------------------------------------
-147. (DONE) Related to Item 3 - Sequence Mining Implementation - Commits as on 3 April 2015
+147. (FEATURE - DONE) Related to Item 3 - Sequence Mining Implementation - Commits as on 3 April 2015
 --------------------------------------------------------------------
 Python class that implements Apriori GSP algorithm for mining frequent subsequences in ordered sequences
 dataset has been added to repository. Though exponential, together with Longest Common Subsequence, Apriori GSP gives a near accurate subsequences - befitting trend of the dataset. For example the logs added to repository print the candidate support after 5 iterations (which can be modified) for asfer.enchoros dataset thereby eliciting a pattern in astronomical objects.
@@ -1771,19 +1771,19 @@ All three have Sun+Mars coincidentally.
  
 
 ---------------------------------------------------------------
-Commits as on 5 April 2015 
+(FEATURE - DONE) Commits as on 5 April 2015 
 ---------------------------------------------------------------
 Textual translation of Class Association Rules added to SequenceMining.py with logs.
 
 ---------------------------------------------------------------
-Commits as on 13 April 2015
+(FEATURE - DONE) Commits as on 13 April 2015
 ---------------------------------------------------------------
 Python implementation of :
    - Part-of-Speech tagging using Maximum Entropy Equation of Conditional Random Fields(CRF) and 
    - Viterbi path computation in HMM-CRF for Named Entity Recognition has been added to repository.
 
 --------------------------------------------------------------
-Commits as on 15 April 2015
+(FEATURE - DONE) Commits as on 15 April 2015
 --------------------------------------------------------------
 Named Entity Recognition Python script updated with:
   - More PoS tags
@@ -1791,17 +1791,17 @@ Named Entity Recognition Python script updated with:
   - Feature function with conditional probabilities on previously labelled word
 
 --------------------------------------------------------------
-Commits as on 17 April 2015
+(FEATURE - DONE) Commits as on 17 April 2015
 --------------------------------------------------------------
 Twitter Streaming python script updated with GetStreamFilter() generator object for streaming tweets data.
 
 -------------------------------------------------------------
-149. Commits as on 10 May 2015
+(FEATURE - DONE) 149. Commits as on 10 May 2015
 -------------------------------------------------------------
 A Graph Search NetworkX+MatPlotLib Visualizer for WordNet has been implemented in python and has been added to repository. This is an initial code and more algorithms to mine relationships within a text data would be added using WordNet as ontology - with some similarities to WordNet definition subgraph obtained in http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py. But in this script visualization is more important.
 
 -------------------------------------------------------------
-Commits as on 12 May 2015
+(FEATURE - DONE) Commits as on 12 May 2015
 -------------------------------------------------------------
 WordNet Visualizer script has been updated to take and render the WordNet subgraph computed by Recursive Gloss Overlap algorithm in:
 - http://arxiv.org/abs/1006.4458
@@ -1809,7 +1809,7 @@ WordNet Visualizer script has been updated to take and render the WordNet subgra
 - https://sites.google.com/site/kuja27/PresentationTAC2010.pdf?attredirects=0
 
 ------------------------------------------------------------
-150. Commits as on 14 May 2015
+(FEATURE - DONE) 150. Commits as on 14 May 2015
 ------------------------------------------------------------
 Updated WordNet Visualizer with:
 - bidirectional edges
@@ -1826,14 +1826,14 @@ In the input example, nodes "India" and "China" have core numbers 15 and 13 resp
 class "India and China". Thus a new unsupervised classifier is obtained based on node degrees.
 
 ------------------------------------------------------------
-Commits as on 16 May 2015
+(FEATURE - DONE) Commits as on 16 May 2015
 ------------------------------------------------------------
 - added sorting the core numbers descending and printing the top 10% core numbers which are prospective classes the document could belong to.
 This is a new unsupervised text classification algorithm and is based on recursive gloss overlap algorithm in http://arxiv.org/abs/1006.4458 and
 http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf. A major feature of this algorithm is that it is more precise in finding the class of a document as intrinsic merit is computed by mapping a text to subgraph of wordnet, than conventional text classification and clustering based on distance metrics and training data.
 
 ------------------------------------------------------------
-151. Commits as on 18 May 2015
+(FEATURE - DONE) 151. Commits as on 18 May 2015
 ------------------------------------------------------------
 An interesting research was done on the wordnet subgraph obtained by Recursive Gloss Overlap algorithm:
 - PageRank computation for the WordNet subgraph was added from NetworkX library. This is probably one of the first applications of PageRank to
@@ -1845,7 +1845,7 @@ ranking to core numbers of nodes ranked descending.
 - Above was mentioned as a theoretical statement in 5.12 of http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf
 
 --------------------------------------------------------------
-Commits as on 19 May 2015
+(FEATURE - DONE) Commits as on 19 May 2015
 --------------------------------------------------------------
 A primitive text generation from the definition graph has been implemented by:
 - computing the k-core of the graph above certain degree k so that the core is dense
@@ -1856,19 +1856,19 @@ hypernyms)
 - It implements the theory mentioned in: https://sites.google.com/site/kuja27/DocumentSummarization_using_SpectralGraphTheory_RGOGraph_2014.pdf?attredirects=0&d=1
 
 -------------------------------------------------------------
-Commits as on 20 May 2015
+(FEATURE - DONE) Commits as on 20 May 2015
 -------------------------------------------------------------
 Hypernyms/Hyponyms based sentence construction added to WordNet Visualizer. The core-number and pagerank based classifier was tested with more inputs. The accuracy and relevance of the word node with topmost core number and pagerank for RGO graph looks to be better than the traditional supervised and unsupervised classifiers/clusterers. The name of the class is inferred automatically without any training inputs or distance metrics based only on density of k-core subgraphs.
 
 -------------------------------------------------------------
-Commits as on 21 May 2015
+(FEATURE - DONE) Commits as on 21 May 2015
 -------------------------------------------------------------
 Updated the Visualizer to print the WordNet closure of hypernyms and hyponyms to generate a blown-up huge sentence. The closure() operator
 uncovers new vertices and edges in the definition graph (strict supergraph of RGO graph) and it is a mathematically generated sentence
 (similar to first order logic and functional programming compositionality) and mimicks an ideal human-thinking process (psychological process of evocation which is complete closure in human brain on a word utterance).
 
 -------------------------------------------------------------
-151. Commits as on 22,23,24 May 2015
+(FEATURE - DONE) 151. Commits as on 22,23,24 May 2015
 -------------------------------------------------------------
 Added code for computing recursive composition of lambda functions over the RGO graph relations(edges):
 - For this the Depth First Search Tree of the graph is computed with NetworkX
@@ -1884,23 +1884,23 @@ not exist in WordNet parlance, because the Recursive Gloss OVerlap algorithm gro
 - The lambda composition obtained above is a mathematical or lambda calculus representation of a text document - Natural Language reduced to Lambda calculus compositionality operator.
 
 --------------------------------------------------------------
-Commits as on 26 May 2015
+(FEATURE - DONE) Commits as on 26 May 2015
 --------------------------------------------------------------
 Added initial code for Social Network Analyzer for Twitter following to create a NetworkX graph and render it with MatPlotLib.
 
 ---------------------------------------------------------------
-Commits as on 3 June 2015
+(FEATURE - DONE) Commits as on 3 June 2015
 ---------------------------------------------------------------
 Bonacich Power Centrality computation added to Twitter Social Network Analyzer using PageRank computation.
 
 ---------------------------------------------------------------
-Commits as on 4 June 2015
+(FEATURE - DONE) Commits as on 4 June 2015
 ---------------------------------------------------------------
 - Eigen Vector Centrality added to Twitter Social Network Analyzer.
 - File storage read replaced with Streaming_AbstractGenerator in Streaming_HyperLogLogCounter.py and Streaming_LogLogCounter.py
 
 --------------------------------------------------------------
-152. Commits as on 7 June 2015
+(FEATURE - DONE) 152. Commits as on 7 June 2015
 --------------------------------------------------------------
 New Sentiment Analyzer script has been added to repository:
 - This script adds to WordNet Visualizer with Sentiment analysis using SentiWordNet from NLTK corpus
@@ -1918,7 +1918,7 @@ Above script can be used for any text including social media and can be invoked 
 Microblogging tweets are more crisp and "emotionally precise" i.e. extempore - convey instantaneous sentiment (without much of a preparation) 
 
 ------------------------------------------------------------------
-Commits as on 8 June 2015
+(FEATURE - DONE) Commits as on 8 June 2015
 ------------------------------------------------------------------
 Commits for:
  - fixing errors due to NLTK API changes in lemma_names(), definition() ... [ variables made into function calls ]
@@ -1927,17 +1927,17 @@ Commits for:
    (SentimentAnalyzer.py already has been updated to reflect above)
 
 ------------------------------------------------------------------
-Commits as on 10 June 2015
+(FEATURE - DONE) Commits as on 10 June 2015
 ------------------------------------------------------------------
 Sentiment Analysis for twitter followers' tweets texts added to SocialNetworkAnalysis_Twitter.py which invokes SentimentAnalyzer.py
 
 ------------------------------------------------------------------
-Commits as on 13 June 2015
+(FEATURE - DONE) Commits as on 13 June 2015
 ------------------------------------------------------------------
 Sentiment Analysis for tweet stream texts added to SocialNetworksAnalysis_Twitter.py which invokes SentimentAnalyzer.py
 
 ----------------------------------------------------------------------------------------------------------------
-153. (THEORY - Minimum Implementation DONE) Sentiment Analysis as lambda function composition of the Recursive Gloss Overlap WordNet subgraph
+153. (FEATURE - THEORY - Minimum Implementation DONE) Sentiment Analysis as lambda function composition of the Recursive Gloss Overlap WordNet subgraph
 ----------------------------------------------------------------------------------------------------------------
 SentiWordNet based scoring of the tweets and texts have some false positives and negatives. But the lambda composition of the
 Recursive Gloss Overlap graph is done by depth-first-search - set of composition trees which overlap. If each edge is replaced by
@@ -1953,7 +1953,7 @@ Most of features and bugfixes are in AsFer and VIRGO
 --------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
-154. Belief Propagation and RGO - Commits as on 20 June 2015
+154. (FEATURE - DONE) Belief Propagation and RGO - Commits as on 20 June 2015
 ----------------------------------------------------------------------------------------------------------
 SentimentAnalyzer is updated with a belief propagation algorithm (Pearl) based Sentiment scoring by
 considering Recursive Gloss Overlap Definition Graph as graphical model and sentiwordnet score for
@@ -1976,7 +1976,7 @@ a text
 155.6 Sentence construction by composition of edges
 
 ----------------------------------------------------------------------------
-156. Commits as on 4 July 2015 - RGO sentiment analyzer on cynical tweets
+156. (FEATURE - DONE) Commits as on 4 July 2015 - RGO sentiment analyzer on cynical tweets
 ----------------------------------------------------------------------------
 Added query for a "elections" to stream tweets related to it. Few sample cynical tweets were sentiment-analyzed with
 RGO Belief Propagation SentimentAnalyzer that gives negative sentiment scores as expected whereas trivial SentiWordNet score summation  
@@ -2058,7 +2058,7 @@ circuit
 Each XOR gate is of atleast depth 2 or 3 with formula - (x /\ not y) V (not x /\ y). Thus for each additional variable added depth gets added by atleast 2 contradicting the constant depth d in hypothesis above though size is polynomial.
 
 ---------------------------------------------------------------------------------------------------------
-164. Commits as on 16 September 2015
+164. (FEATURE - DONE) Commits as on 16 September 2015
 ---------------------------------------------------------------------------------------------------------
 cpp-src/cloud_move - Implementation of Move Semantics for Cloud objects:
 -------------------------------------------------------------------------
@@ -2085,7 +2085,7 @@ client proxy destination lvalue<-/
 lvalue reference& does additional copy which is removed by rvalue reference&& to get the rvalue directly. Move client proxies the remote object and connects to Move server and the object is written over socket.
 
 --------------------------------------------------------------------------------------------
-165. Commits as on 18 September 2015
+165. (FEATURE - DONE) Commits as on 18 September 2015
 --------------------------------------------------------------------------------------------
 Cloud Perfect Forwarding - Google Protocol Buffer Currency :
 ------------------------------------------------------------
@@ -2112,7 +2112,7 @@ Debugging software is painful process with repetitive labour - For example kerne
 Web Search Engine Rankings by prestige measures are n-tuples of rankings (for n candidate web pages where n could be few billions) which are not condorcet rankings. Arrow's Theorem for 3-candidate condorcet election allows a winner if and only if there is dictatorship. If there are m search engines each creating n-tuples of condorcet rankings (NAE tuples), then conjecturally there shouldn't be a voting rule or a meta search engine that circumvents circular rankings and produces a reconciled ranking of all NAE tuples from m search engines.
 
 --------------------------------------------------------------------------
-168. Commits as on 20,21,22 October 2015
+168. (FEATURE - DONE) Commits as on 20,21,22 October 2015
 --------------------------------------------------------------------------
 Initial code for LinkedIn crawl-scrape. Uses Python-linkedin from https://github.com/ozgur/python-linkedin with
 some additional parsing for url rewriting and wait for authurl input:
@@ -2123,12 +2123,12 @@ some additional parsing for url rewriting and wait for authurl input:
 Logs for the above has been added to testlogs
 
 ---------------------------------------------------------------------------
-169. Commits as on 28 October 2015
+169. (FEATURE - DONE) Commits as on 28 October 2015
 ---------------------------------------------------------------------------
 Deep Learning Convolution Perceptron Python Implementation.
 
 ---------------------------------------------------------------------------
-170. Commits as on 29 October 2015, 1 November 2015
+170. (FEATURE - DONE) Commits as on 29 October 2015, 1 November 2015
 ---------------------------------------------------------------------------
 Deep Learning BackPropagation Multilayered Perceptron Python Implementation.
 
