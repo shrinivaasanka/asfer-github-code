@@ -28,12 +28,19 @@
 import math
 
 class BackPropagation(object):
-	def __init__(self,i1,i2,h1,h2):
+	def __init__(self,i1,i2,h1,h2,expected_o1,expected_o2,weights):
 		self.input_layer=[i1,i2]	
 		self.hidden_layer=[h1,h2]
 		self.output_layer=[0.0,0.0]
-		self.expected_output_layer=[0.98,0.57]
-		w1=w2=w3=w4=w5=w6=w7=w8=0.073
+		self.expected_output_layer=[expected_o1,expected_o2]
+		w1=weights[0]
+		w2=weights[1]
+		w3=weights[2]
+		w4=weights[3]
+		w5=weights[4]
+		w6=weights[5]
+		w7=weights[6]
+		w8=weights[7]
 		self.weights=[w1,w2,w3,w4,w5,w6,w7,w8]
 		self.weight_input_neuron_map={0:0,1:1,2:0,3:1,4:0,5:1,6:0,7:1}
 		self.bias=0.02
@@ -103,12 +110,13 @@ class BackPropagation(object):
 
 
 iter=0
-bpnn=BackPropagation(0.01,0.5,0.7,0.38)
+weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021]
+bpnn=BackPropagation(0.6,0.3,0.8,0.9,0.99,0.88,weights)
 bpnn.compute_neural_network()
 bpnn.print_layers()
 print "Error before Backpropagation:"
 print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-while iter < 20000:
+while iter < 50000:
 	bpnn.backpropagation_pde_update_hidden_to_output(0,4)
 	bpnn.backpropagation_pde_update_hidden_to_output(0,6)
 	bpnn.backpropagation_pde_update_hidden_to_output(1,5)
@@ -121,6 +129,8 @@ while iter < 20000:
 	bpnn.compute_neural_network()
 	print "Error after Backpropagation- iteration :",iter
 	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+	print "Layers in this iteration:"
+	bpnn.print_layers()
 	iter=iter+1
 
 		
