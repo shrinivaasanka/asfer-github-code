@@ -312,14 +312,14 @@ If each voter has boolean function with varied Noise Sensitivities, above become
 
 (19) There are classes of boolean functions based on percolation crossings ( http://arxiv.org/pdf/1102.5761.pdf - Noise Sensitivity of Boolean Functions and Percolation) which decide if the paths (left-to-right) in a percolation random graph in which edges are created with a probability p, have a left-right crossing. Perturbed paths are analogous to correlated bit strings. [Russo-Seymour-Welsh] theorem states that the percolation crossing boolean functions are non-degenerate i.e function depends on all variables (quite intuitive as to find out a left-right crossing entire path has to be analyzed). Noise Stability Regime of the crossing events [page 68] answers the following question on noise stability of crossing events:
 
-For epsilon=o(1/n^2*alpha4), Pr[fn(sequence)=fn(sequence with epsilon perturbation)] tends to zero at infinity where alpha4 is the four-arm crossing event probability (paths cross at a point on the percolation random graph creating four arms to the boundary from that point). [Is such a percolation crossing the perfect voting boolean function required in (7) and does it prove BKS Majority is least stable conjecture? But this happens only when there are infinite number of Z2 grid cells - n * n is infinite]. If this is the only available perfect boolean function with 100% stability, [Benjamini-Kalai-Schramm] conjecture is true and both LHS and RHS use only percolation as judge boolean functions(in compositions for each voter - Majority * Percolation), then LHS=RHS by P(Good) binomial summation convergence.
+For epsilon=o(1/n^2*alpha4), Pr[fn(sequence)=fn(sequence with epsilon perturbation)] tends to zero at infinity where alpha4 is the four-arm crossing event probability (paths cross at a point on the percolation random graph creating four arms to the boundary from that point). [Open question: Is such a percolation crossing the perfect voting boolean function required in (7) and does it prove BKS Majority is least stable conjecture? But this happens only when there are infinite number of Z^2 grid cells - n * n is infinite]. If this is the only available perfect boolean function with 100% stability, [Benjamini-Kalai-Schramm] conjecture is true and both LHS and RHS use only percolation as judge boolean functions(in compositions for each voter - Majority * Percolation), then LHS=RHS by P(Good) binomial summation convergence and LHS is class C algorithm for RHS PH-complete or EXP-complete algorithm where C is the hardness of LHS pseudorandom choice judge boolean function.
 
-Open question: If Percolation Boolean Functions are 100% noise stable, what is the lowerbound of such boolean functions (or) how hard and in what complexity class should they be.
+Open question: If Percolation Boolean Functions are 100% noise stable (as in infinite grid previously), what is the lowerbound of such boolean functions (or) how hard and in what complexity class C should they be. This infinite version of percolation is a non-uniform polynomial circuit class (grid has n^2 coordinates).
 
 (20) Noise stability in terms of Fourier coefficient weights is defined as:
 	summation( rho^k * W^k ) for all degree-k weights where W = summation(fourier_coeff(S)^2) for all |S|, S in [n]
 
-
+(21) Variant of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit.
 
 ----------------------
 Additional References:
@@ -845,7 +845,7 @@ Probability of LHS PRG choice Judge Boolean Function in complexity class C * Pro
  c/n * p where c is the number of judge boolean functions in complexity class C and n is the total number of judge boolean functions
 
 When p=1 and c=n LHS is 1 and is a complexity class C algorithm to RHS PH-complete or EXP-complete DC circuit when RHS P(Good) summation in terms of NoiseStabilities also converges to 1. Thus complexity_class(LHS) has a very high probability of being unequal to complexity_class(RHS). This is the perfect boolean function problem (in point 14 above) rephrased in probabilities. This is very tight condition as it requires:
-  - all boolean functions to be in same circuit complexity class
+  - boolean function composition in RHS is in some fixed circuit complexity class (PH-complete or EXP-complete) and only LHS complexity class varies depending on pseudorandom choice
   - LHS has to have 100% noise stability
   - RHS has to have 100% noise stability
 Thus above conditions are to be satisified for equating complexity classes in LHS and RHS to get a lowerbound result.
@@ -857,6 +857,11 @@ which is the proverbial "one and all".
 
 Assuming there exists a boolean percolation function with noise stability 100%, voter with such a boolean function could be a pseudorandom choice in LHS and RHS has to exclude this function.
 
+--------------------------------------------------------------------------------------------
+53.4 (THEORY) Variant of Percolation as a Judge boolean function (related to 14 above)
+--------------------------------------------------------------------------------------------
+Percolation boolean function returns 1 if there is a left-right crossing event in a path within the Z^2 grid random graph else 0. The definition of percolation is modified slightly as below to obtain a ranking of 2 adversaries:
+There are n parameters on which the voter or a judge weighs two adversaries a and b (each take the 2 coordinates in the grid) and scores them as set of ordered pairs (a1,b1),(a2,b2),(a3,b3),...,(an,bn) where each ai is the score given by voter for adversary a on parameter i and each bi is the score given by voter for adversary n on parameter i. These coordinates are plotted on the grid and a left-right traversal of these coordinates is done via a path that covers all of them. At each coordinate, total score summations of ai(s) and bi(s) so far traversed are computed. The boolean function outputs 1 if sum(ai) > sum(bi) favouring adversary a and outputs 0 if sum(ai) < sum(bi) favouring adversary b. This is just a 2 candidate ranking variant of 3-candidate condorcet elections. In terms of circuit complexity, this is an iterated integer addition circuit(in non-uniform NC1) which inputs to a comparator circuit(in AC0 - [Chandra-Stockmeyer-Vishkin] - http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf) which together make non-uniform NC1 (since AC0 is contained in NC1). Thus this variant of percolation decides based on sum of integral scores than left-right crossing. It always has a left-right crossing and there are no random graph edges.
 
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
@@ -1500,7 +1505,7 @@ Grid cells (or variables in above grid) are initialized to 0.
 loop_forever
 {
 	(135.13.1) Parallel Pseudorandom Generator (Tygar-Rief) outputs bit string which are split into coordinates of grid and corresponding Grid cells are incremented instead of overwriting. This simulates parallel computation in many natural processes viz., rain. This is in NC. This is related to Randomness Extractors - https://en.wikipedia.org/wiki/Randomness_extractor - if rainfall from cloud can be used a natural weak entropy parallel randomness source (or strong?) - predicting which steam particle of a cloud would become a droplet is heavily influenced by the huge number of natural variables - fluid mechanics comes into force and this happens in parallel. Extractor is a stronger notion than Pseudorandom Generator. Extracting parallel random bits can also be done from a fluid mechanical natural processes like turbulent flows.
-	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in NC. 
+	(135.13.2) Each grid cell has a constant depth Comparison Circuit that outputs 1 if the grid cell value exceeds 1. This is in AC0(constant-depth, polynomial size).
 	(135.13.3) If above Comparison gate outputs 1, then another NC circuit can be constructed that finds the minimum of grid neigbours of a cell (maximum 8 neighbours for each cell in 2-dimensional grid), decrements the central cell value and increments the minimum neighbour cell. This can be done by a sorting circuit defined in [ChandraStockMeyerVishkin]. This simulates a percolation of a viscous fluid that flows from elevation to lowlying and makes even. Each grid cell requires the above comparator and decrement NC circuit.
 }
 
@@ -1533,7 +1538,7 @@ By applying cellular automaton NC circuit algorithm above, grid becomes: (minimi
 		1  1  1
 
 Above can be likened to a scenario where each 8-neighbour grid cell underneath computes the evened-out cellular automaton in parallel. Size of the NC circuit is polynomial in LP variables n and is constant depth as the neighbours are constant (ChandraStockmeyerVishkin)
-Thus there are 3 NC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid). This is both a Monte-Carlo and Las Vegas algorithm. The Parallel coordinate generation with Tyger-Reif Parallel PRG is Monte Carlo Simulation where as there is a guaranteed outcome with 100% possibility due to Comparison and Increment-Decrement circuits.
+Thus there are 2 NC + 1 AC circuits which together maximize the special case of P-Complete LP instance without simplex where each grid coordinate is an LP variable. 135.13.1 (randomly strewn fluid) is independent of 135.13.2 and 135.13.3 (percolation of the fluid). This is both a Monte-Carlo and Las Vegas algorithm. The Parallel coordinate generation with Tyger-Reif Parallel PRG is Monte Carlo Simulation where as there is a guaranteed outcome with 100% possibility due to Comparison and Increment-Decrement circuits.
 
 ----------------------------------------------------------------------------------------------
 135.15 References on Cellular Automata, Parallel Computation of CA, Fluid Dynamics, Navier-Stokes equation, Percolation Theory etc.,:
@@ -2025,7 +2030,7 @@ An element of a list or group is cognitive with respect to an operator if it "kn
 -----------------------------------------------------------------------------------------------------------------------
 The apparent paradox in Perfect Voting can be reconciled as below to some extent:
 - Voting is done in parallel in real-world elections and not serially
-- Votes are counted in parallel - iterated integer addition in NC1
+- Votes are counted in parallel - iterated integer addition in NC1 (http://www.ccs.neu.edu/home/viola/classes/gems-08/lectures/le8.pdf)
 - Thus if RHS is just Circuit-Value Problem and not a Circuit-SAT then LHS getting equated to RHS is not unusual - both can be NC or P-Complete
 - Separation of RHS from LHS happens only when the Circuit-SAT is required in RHS.
 - P(Good) convergence in perfect voting implies that Voter SAT is not necessary if there is perfection (proving the obvious). This is
