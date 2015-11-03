@@ -2115,6 +2115,9 @@ Debugging software is painful process with repetitive labour - For example kerne
 3. Test the patch.
 (1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton without cycles or with least number of cycles and cycles of least length.
 
+References:
+166.1 Learning Finite State Machines - https://www.cs.upc.edu/~bballe/other/phdthesis.pdf
+
 ------------------------------------------------------------------------------------------
 167. (THEORY) Prestige based ranking and Condorcet Elections
 ------------------------------------------------------------------------------------------
