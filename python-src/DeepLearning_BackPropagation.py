@@ -117,7 +117,7 @@ bpnn.compute_neural_network()
 bpnn.print_layers()
 print "Error before Backpropagation:"
 print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-while iter < 50000:
+while iter < 100000:
 	bpnn.backpropagation_pde_update_hidden_to_output(0,4)
 	bpnn.backpropagation_pde_update_hidden_to_output(0,6)
 	bpnn.backpropagation_pde_update_hidden_to_output(1,5)
