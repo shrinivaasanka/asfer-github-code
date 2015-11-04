@@ -2188,6 +2188,106 @@ Deep Learning BackPropagation Multilayered Perceptron Python Implementation.
 ---------------------------------------------------------------------------
 DeepLearning BackPropagation implementation revamped with some hardcoded data removal.
 
+----------------------------------------------------------------------------------------
+172. (FEATURE - DONE) Hurricane Datasets Sequence Mining - Commits as on 4 November 2015
+----------------------------------------------------------------------------------------
+Miscellaneous code changes:
+---------------------------
+- Weight updates in each iteration are printed in DeepLearning_BackPropagation.py
+- Changed maitreya_textclient path for Maitreya's Dreams 7.0 text client; Updated to read HURDAT2 NOAA Hurricane Dataset (years 1851-2012) in MaitreyaToEncHoro.py
+- Maximum sequence length set to 7 for mining HURDAT2 asfer.enchoros.seqmining
+- New files asfer.enchoros.ascrelative.hurricanes, asfer.enchoros.zodiacal.hurricanes have been added which are created by MaitreyaToEncHoro.py
+- an example chartsummary for Maitreya's Dreams 7.0 has been updated
+- 2 logs for SequenceMining for HURDAT2 encoded datasets and Text Class Association Rules learnt by SequenceMining.py Apriori GSP have been added to testlogs/
+- Increased number of iterations in BackPropagation to 100000; logs for this with weights printed are added in testlogs/; shows a beautiful convergence and error tapering (~10^-12)
+
+===================================================
+Sorted Candidate support for all subsequence lengths - gives an approximate pattern in dataset:
+[('0', 1333), ('4', 1333), ('8', 1333), ('3', 1333), ('7', 1333), ('2', 1333), ('6', 1333), ('1', 1333), ('5', 1333), ('9', 1333), ('a', 1333), ('14', 613), ('46', 315), ('67', 261), ('78', 190), ('59', 189), ('49', 186), ('34', 180), ('57', 165), ('45', 161), ('13', 159), ('56', 158), ('58', 147), ('12', 134), ('23', 128), ('146', 116), ('36', 115), ('8a', 113), ('25', 108), ('9a', 106), ('346', 103), ('69', 99), ('26', 98), ('24', 95), ('134', 90), ('16', 83), ('6a', 81), ('35', 77), ('38', 75), ('149', 75), ('68', 73), ('467', 73), ('28', 71), ('2a', 71), ('569', 70), ('29', 66), ('367', 66), ('4a', 64), ('37', 59), ('567', 59), ('3a', 57), ('457', 56), ('27', 55), ('7a', 55), ('47', 51), ('145', 50), ('3467', 49), ('5a', 48), ('124', 44), ('79', 41), ('14a', 38), ('1346', 37), ('459', 36), ('17', 32), ('126', 29), ('246', 29), ('1459', 28), ('46a', 27), ('59a', 25), ('1a', 25), ('15', 25), ('156', 25), ('39', 24), ('345', 23), ('13467', 22), ('1345', 22), ('3457', 22), ('19', 22), ('13457', 22), ('1457', 21), ('234', 21), ('136', 20), ('1367', 20), ('2346', 18), ('3567', 18), ('356', 18), ('78a', 17), ('258', 16), ('259', 16), ('169', 16), ('135', 14), ('146a', 14), ('278', 14), ('67a', 13), ('49a', 13), ('469', 13), ('13567', 12), ('679', 12), ('178', 12), ('1356', 12), ('237', 12), ('3679', 12), ('4569', 11), ('678', 11), ('268', 11), ('456', 11), ('57a', 11), ('129', 10), ('28a', 10), ('238', 10), ('68a', 10), ('147', 10), ('23a', 10), ('459a', 10), ('267', 10), ('26a', 9), ('23467', 9), ('247', 9), ('16a', 9), ('256', 9), ('2569', 9), ('137', 8), ('249', 8), ('1246', 8), ('257', 8), ('36a', 8), ('168', 8), ('1567', 8), ('12a', 7), ('346a', 7), ('1459a', 7), ('245', 7), ('2459', 7), ('2367', 7), ('236', 7), ('1268', 6), ('567a', 6), ('25a', 6), ('1247', 6), ('79a', 5), ('47a', 5), ('149a', 4), ('29a', 4), ('1469', 4), ('126a', 4), ('19a', 4), ('2469', 4), ('37a', 3), ('679a', 3), ('24a', 3), ('367a', 3), ('268a', 3), ('1367a', 3), ('58a', 3), ('147a', 3), ('3679a', 3), ('357', 3), ('123', 2), ('69a', 2), ('246a', 2), ('56a', 2), ('1268a', 2), ('124a', 2), ('1234', 2), ('1249', 2), ('4569a', 2), ('1567a', 2), ('2459a', 2), ('1357', 2), ('168a', 2), ('35a', 2), ('569a', 2), ('1346a', 2), ('1246a', 2), ('349', 1), ('34a', 1), ('137a', 1), ('467a', 1), ('38a', 1), ('2345', 1), ('237a', 1), ('267a', 1), ('27a', 1), ('39a', 1), ('247a', 1), ('123467', 1), ('1247a', 1), ('134a', 1), ('13467a', 1), ('12345', 1), ('12346', 1), ('239', 1), ('3467a', 1)]
+size of dataset =  1333
+
+=========================================
+Sun , Mercury ,
+=========================================
+Class Association Rule  12  mined from dataset: with frequencies: 23.6309077269  percentage
+=========================================
+Mercury , Venus ,
+=========================================
+Class Association Rule  13  mined from dataset: with frequencies: 19.5798949737  percentage
+=========================================
+Venus , Saturn ,
+=========================================
+Class Association Rule  14  mined from dataset: with frequencies: 14.2535633908  percentage
+=========================================
+Saturn , Rahu ,
+=========================================
+Class Association Rule  15  mined from dataset: with frequencies: 14.1785446362  percentage
+=========================================
+Jupiter , Ketu ,
+=========================================
+Class Association Rule  16  mined from dataset: with frequencies: 13.9534883721  percentage
+=========================================
+Mercury , Ketu ,
+=========================================
+Class Association Rule  17  mined from dataset: with frequencies: 13.503375844  percentage
+=========================================
+Mars , Mercury ,
+=========================================
+Class Association Rule  18  mined from dataset: with frequencies: 12.3780945236  percentage
+=========================================
+Jupiter , Saturn ,
+=========================================
+Class Association Rule  19  mined from dataset: with frequencies: 12.0780195049  percentage
+=========================================
+Mercury , Jupiter ,
+=========================================
+Class Association Rule  20  mined from dataset: with frequencies: 11.9279819955  percentage
+=========================================
+Sun , Mars ,
+=========================================
+Class Association Rule  21  mined from dataset: with frequencies: 11.8529632408  percentage
+=========================================
+Jupiter , Venus ,
+=========================================
+Class Association Rule  22  mined from dataset: with frequencies: 11.0277569392  percentage
+=========================================
+Jupiter , Rahu ,
+=========================================
+Class Association Rule  23  mined from dataset: with frequencies: 10.0525131283  percentage
+=========================================
+Sun , Moon ,
+=========================================
+Class Association Rule  24  mined from dataset: with frequencies: 9.60240060015  percentage
+=========================================
+Moon , Mars ,
+=========================================
+Class Association Rule  25  mined from dataset: with frequencies: 8.70217554389  percentage
+=========================================
+Sun , Mercury , Venus ,
+=========================================
+Class Association Rule  26  mined from dataset: with frequencies: 8.6271567892  percentage
+=========================================
+Mars , Venus ,
+=========================================
+Class Association Rule  27  mined from dataset: with frequencies: 8.47711927982  percentage
+=========================================
+Rahu , Ascendant ,
+=========================================
+Class Association Rule  28  mined from dataset: with frequencies: 8.10202550638  percentage
+=========================================
+Moon , Jupiter ,
+=========================================
+Class Association Rule  29  mined from dataset: with frequencies: 7.951987997  percentage
+=========================================
+Ketu , Ascendant ,
+=========================================
+Class Association Rule  30  mined from dataset: with frequencies: 7.72693173293  percentage
+=========================================
+Mars , Mercury , Venus ,
+=========================================
+
+Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
