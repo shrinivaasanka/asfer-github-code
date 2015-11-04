@@ -319,7 +319,7 @@ Open question: If Percolation Boolean Functions are 100% noise stable (as in inf
 (20) Noise stability in terms of Fourier coefficient weights is defined as:
 	summation( rho^k * W^k ) for all degree-k weights where W = summation(fourier_coeff(S)^2) for all |S|, S in [n]
 
-(21) Variant of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit.
+(21) Variant 1 of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit. Variant 2 of Percolation as Judge boolean function is also in non-uniform NC1.
 
 ----------------------
 Additional References:
@@ -858,10 +858,48 @@ which is the proverbial "one and all".
 Assuming there exists a boolean percolation function with noise stability 100%, voter with such a boolean function could be a pseudorandom choice in LHS and RHS has to exclude this function.
 
 --------------------------------------------------------------------------------------------
-53.4 (THEORY) Variant of Percolation as a Judge boolean function (related to 14 above)
+53.4 (THEORY) Variant 1 of Percolation as a Judge boolean function (related to 14 above)
 --------------------------------------------------------------------------------------------
 Percolation boolean function returns 1 if there is a left-right crossing event in a path within the Z^2 grid random graph else 0. The definition of percolation is modified slightly as below to obtain a ranking of 2 adversaries:
 There are n parameters on which the voter or a judge weighs two adversaries a and b (each take the 2 coordinates in the grid) and scores them as set of ordered pairs (a1,b1),(a2,b2),(a3,b3),...,(an,bn) where each ai is the score given by voter for adversary a on parameter i and each bi is the score given by voter for adversary n on parameter i. These coordinates are plotted on the grid and a left-right traversal of these coordinates is done via a path that covers all of them. At each coordinate, total score summations of ai(s) and bi(s) so far traversed are computed. The boolean function outputs 1 if sum(ai) > sum(bi) favouring adversary a and outputs 0 if sum(ai) < sum(bi) favouring adversary b. This is just a 2 candidate ranking variant of 3-candidate condorcet elections. In terms of circuit complexity, this is an iterated integer addition circuit(in non-uniform NC1) which inputs to a comparator circuit(in AC0 - [Chandra-Stockmeyer-Vishkin] - http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf) which together make non-uniform NC1 (since AC0 is contained in NC1). Thus this variant of percolation decides based on sum of integral scores than left-right crossing. It always has a left-right crossing and there are no random graph edges.
+
+---------------------------------------------------------------------------------------------
+53.5 (THEORY) Variant 2 of Percolation as a Judge boolean function (related to 14 above)
+---------------------------------------------------------------------------------------------
+53.5.1 Both x and y axes have the criteria common to both adversaries a and b as coordinates.
+53.5.2 If adversary a is equal to b for a criterion c, then there is a horizontal left-right edge with probability p.
+53.5.3 If adversary b is better than a for criterion c, then there is a vertical edge (down-top) with probability p.
+53.5.4 If adversary a is better than b for criterion c, then there is a vertical edge (top-down) with probability p.
+-----------------
+53.5.5 Example 1:
+-----------------
+criterion    a    b
+c1           5    4 (top-down)
+c2           3    5 (down-top)
+c3           2    2 (left-right)
+c4           4    6 (down-top)
+c5           7    8 (down-top)
+	--------------------
+	    21    25  (a < b)
+        --------------------
+----------------
+53.5.6 Example 2:
+----------------
+criterion    a    b
+c1           2    1 (top-down)
+c2           7    2 (top-down)
+c3           5    5 (left-right)
+c4           3    8 (down-top)
+c5           9    7 (top-down)
+        ---------------------
+            26    23  (a > b)
+        ---------------------
+53.5.7 Length of each edge is proportional to the difference between score(a) and score(b) at criterion c.
+53.5.8 Lemma: a is better than b implies a top-down crossing event and b is better than a implies down-top crossing event.
+Proof: If a is better than b in majority of the criteria then the path is more "top-down"-ish due to 53.5.4 (top-left to bottom-right) and if b is better than a then path is more "down-top"-ish due to 53.5.3 (bottom-left to top-right). Thus this formulation of percolation subdivides left-right paths into two classes top-down and down-top and all paths are left-right paths.
+53.5.9 Above variant of percolation boolean function returns 1 if path is top-down (a > b) else 0 if path is down-top (a < b).
+53.5.10 Previous description is an equivalence reduction of percolation and judging two adversaries.
+53.5.11 To differentiate top-down and down-top left-right paths, comparator circuits (constant depth, polysize) and non-uniform NC1 circuit for integer addition of scores are required. Together this is also a non-uniform NC1 circuit (for infinite grid) similar to Variant1 in 53.4.
 
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
