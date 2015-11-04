@@ -60,7 +60,7 @@ class SequenceMining(object):
 					self.F[1].add(cand)	
 
 		length=1
-		maxlength=10
+		maxlength=7
 		print self.candidates
 		print self.F
 

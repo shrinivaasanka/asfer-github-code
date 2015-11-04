@@ -180,7 +180,8 @@ bhavaplanetsdict["Aquarius"]=[]
 bhavaplanetsdict["Pisces"]=[]
 
 #eqfile=open("/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/cpp-src/earthquakesFrom1900with8plusmag.txt","r")
-eqfile=open("./earthquakesFrom1900with8plusmag.txt","r")
+#eqfile=open("./earthquakesFrom1900with8plusmag.txt","r")
+eqfile=open("./hurdat2_1851_2012-jun2013.pygen.txt","r")
 for line in eqfile:
 	tokens=line.split()
 	print tokens
@@ -213,13 +214,13 @@ for line in eqfile:
 
 	if len(timetokens)==1 :
 		#timezone and longitude/latitude hardcoded at present
-		cmd="./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00:00 "+ geonames_timezone + "\" --location=\"" + placelonglat + "\" --planet-list 2>&1 > chartsummary"
+		cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00:00 "+ geonames_timezone + "\" --location=\"" + placelonglat + "\" --planet-list 2>&1 > chartsummary"
 	if len(timetokens)==2 :
 		#timezone and longitude/latitude hardcoded at present
-		cmd="./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00 "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > chartsummary"
+		cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00 "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > chartsummary"
 	else:
 		#timezone and longitude/latitude hardcoded at present
-		cmd="./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ " "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > chartsummary"
+		cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ " "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > chartsummary"
 		
 	print cmd
 	os.system(cmd)

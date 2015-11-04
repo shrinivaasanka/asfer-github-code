@@ -111,6 +111,7 @@ class BackPropagation(object):
 
 iter=0
 weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021]
+#parameters - initial conditions - input1,input2,hidden1,hidden2,expected_output1,expected_output2,weights_array
 bpnn=BackPropagation(0.6,0.3,0.8,0.9,0.99,0.88,weights)
 bpnn.compute_neural_network()
 bpnn.print_layers()
@@ -131,7 +132,6 @@ while iter < 50000:
 	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
 	print "Layers in this iteration:"
 	bpnn.print_layers()
+	print "Weights updated in this iteration:"
+	print bpnn.weights
 	iter=iter+1
-
-		
-		

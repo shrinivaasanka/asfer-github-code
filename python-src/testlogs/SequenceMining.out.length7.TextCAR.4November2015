@@ -1,0 +1,362 @@
+===================================================
+Sorted Candidate support for all subsequence lengths - gives an approximate pattern in dataset:
+[('0', 555), ('4', 555), ('8', 555), ('3', 555), ('7', 555), ('2', 555), ('6', 555), ('1', 555), ('5', 555), ('9', 555), ('a', 555), ('14', 304), ('78', 160), ('46', 109), ('58', 95), ('59', 86), ('24', 63), ('26', 58), ('12', 58), ('146', 57), ('35', 56), ('27', 55), ('23', 52), ('68', 47), ('4a', 47), ('25', 43), ('69', 41), ('8a', 39), ('37', 39), ('9a', 38), ('16', 38), ('49', 37), ('45', 36), ('6a', 34), ('56', 31), ('14a', 31), ('3a', 29), ('124', 28), ('2a', 28), ('67', 28), ('28', 21), ('29', 20), ('5a', 20), ('36', 18), ('126', 17), ('367', 17), ('246', 17), ('15', 17), ('156', 17), ('259', 16), ('169', 16), ('1a', 15), ('278', 14), ('569', 14), ('7a', 14), ('78a', 13), ('237', 12), ('678', 11), ('39', 11), ('469', 11), ('59a', 9), ('46a', 9), ('137', 8), ('13', 8), ('146a', 6), ('249', 6), ('16a', 6), ('258', 6), ('68a', 6), ('26a', 5), ('268', 5), ('23a', 5), ('1469', 4), ('2469', 4), ('28a', 4), ('12a', 3), ('24a', 3), ('37a', 2), ('126a', 2), ('124a', 2), ('25a', 2), ('35a', 2), ('349', 1), ('137a', 1), ('237a', 1), ('27a', 1), ('39a', 1), ('34', 1), ('268a', 1)]
+size of dataset =  555
+
+=========================================
+Class Association Rule  0  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Unoccupied ,
+=========================================
+Class Association Rule  1  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Mercury ,
+=========================================
+Class Association Rule  2  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Rahu ,
+=========================================
+Class Association Rule  3  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Mars ,
+=========================================
+Class Association Rule  4  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Saturn ,
+=========================================
+Class Association Rule  5  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Moon ,
+=========================================
+Class Association Rule  6  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Venus ,
+=========================================
+Class Association Rule  7  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Sun ,
+=========================================
+Class Association Rule  8  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Jupiter ,
+=========================================
+Class Association Rule  9  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Ketu ,
+=========================================
+Class Association Rule  10  mined from dataset: with frequencies: 100.0  percentage
+=========================================
+Ascendant ,
+=========================================
+Class Association Rule  11  mined from dataset: with frequencies: 54.7747747748  percentage
+=========================================
+Sun , Mercury ,
+=========================================
+Class Association Rule  12  mined from dataset: with frequencies: 28.8288288288  percentage
+=========================================
+Saturn , Rahu ,
+=========================================
+Class Association Rule  13  mined from dataset: with frequencies: 19.6396396396  percentage
+=========================================
+Mercury , Venus ,
+=========================================
+Class Association Rule  14  mined from dataset: with frequencies: 17.1171171171  percentage
+=========================================
+Jupiter , Rahu ,
+=========================================
+Class Association Rule  15  mined from dataset: with frequencies: 15.4954954955  percentage
+=========================================
+Jupiter , Ketu ,
+=========================================
+Class Association Rule  16  mined from dataset: with frequencies: 11.3513513514  percentage
+=========================================
+Moon , Mercury ,
+=========================================
+Class Association Rule  17  mined from dataset: with frequencies: 10.4504504505  percentage
+=========================================
+Moon , Venus ,
+=========================================
+Class Association Rule  18  mined from dataset: with frequencies: 10.4504504505  percentage
+=========================================
+Sun , Moon ,
+=========================================
+Class Association Rule  19  mined from dataset: with frequencies: 10.2702702703  percentage
+=========================================
+Sun , Mercury , Venus ,
+=========================================
+Class Association Rule  20  mined from dataset: with frequencies: 10.0900900901  percentage
+=========================================
+Mars , Jupiter ,
+=========================================
+Class Association Rule  21  mined from dataset: with frequencies: 9.90990990991  percentage
+=========================================
+Moon , Saturn ,
+=========================================
+Class Association Rule  22  mined from dataset: with frequencies: 9.36936936937  percentage
+=========================================
+Moon , Mars ,
+=========================================
+Class Association Rule  23  mined from dataset: with frequencies: 8.46846846847  percentage
+=========================================
+Venus , Rahu ,
+=========================================
+Class Association Rule  24  mined from dataset: with frequencies: 8.46846846847  percentage
+=========================================
+Mercury , Ascendant ,
+=========================================
+Class Association Rule  25  mined from dataset: with frequencies: 7.74774774775  percentage
+=========================================
+Moon , Jupiter ,
+=========================================
+Class Association Rule  26  mined from dataset: with frequencies: 7.38738738739  percentage
+=========================================
+Venus , Ketu ,
+=========================================
+Class Association Rule  27  mined from dataset: with frequencies: 7.02702702703  percentage
+=========================================
+Rahu , Ascendant ,
+=========================================
+Class Association Rule  28  mined from dataset: with frequencies: 7.02702702703  percentage
+=========================================
+Mars , Saturn ,
+=========================================
+Class Association Rule  29  mined from dataset: with frequencies: 6.84684684685  percentage
+=========================================
+Ketu , Ascendant ,
+=========================================
+Class Association Rule  30  mined from dataset: with frequencies: 6.84684684685  percentage
+=========================================
+Sun , Venus ,
+=========================================
+Class Association Rule  31  mined from dataset: with frequencies: 6.66666666667  percentage
+=========================================
+Mercury , Ketu ,
+=========================================
+Class Association Rule  32  mined from dataset: with frequencies: 6.48648648649  percentage
+=========================================
+Mercury , Jupiter ,
+=========================================
+Class Association Rule  33  mined from dataset: with frequencies: 6.12612612613  percentage
+=========================================
+Venus , Ascendant ,
+=========================================
+Class Association Rule  34  mined from dataset: with frequencies: 5.58558558559  percentage
+=========================================
+Jupiter , Venus ,
+=========================================
+Class Association Rule  35  mined from dataset: with frequencies: 5.58558558559  percentage
+=========================================
+Sun , Mercury , Ascendant ,
+=========================================
+Class Association Rule  36  mined from dataset: with frequencies: 5.22522522523  percentage
+=========================================
+Mars , Ascendant ,
+=========================================
+Class Association Rule  37  mined from dataset: with frequencies: 5.04504504505  percentage
+=========================================
+Sun , Moon , Mercury ,
+=========================================
+Class Association Rule  38  mined from dataset: with frequencies: 5.04504504505  percentage
+=========================================
+Moon , Ascendant ,
+=========================================
+Class Association Rule  39  mined from dataset: with frequencies: 5.04504504505  percentage
+=========================================
+Venus , Saturn ,
+=========================================
+Class Association Rule  40  mined from dataset: with frequencies: 3.78378378378  percentage
+=========================================
+Moon , Rahu ,
+=========================================
+Class Association Rule  41  mined from dataset: with frequencies: 3.6036036036  percentage
+=========================================
+Moon , Ketu ,
+=========================================
+Class Association Rule  42  mined from dataset: with frequencies: 3.6036036036  percentage
+=========================================
+Jupiter , Ascendant ,
+=========================================
+Class Association Rule  43  mined from dataset: with frequencies: 3.24324324324  percentage
+=========================================
+Mars , Venus ,
+=========================================
+Class Association Rule  44  mined from dataset: with frequencies: 3.06306306306  percentage
+=========================================
+Sun , Moon , Venus ,
+=========================================
+Class Association Rule  45  mined from dataset: with frequencies: 3.06306306306  percentage
+=========================================
+Mars , Venus , Saturn ,
+=========================================
+Class Association Rule  46  mined from dataset: with frequencies: 3.06306306306  percentage
+=========================================
+Moon , Mercury , Venus ,
+=========================================
+Class Association Rule  47  mined from dataset: with frequencies: 3.06306306306  percentage
+=========================================
+Sun , Jupiter ,
+=========================================
+Class Association Rule  48  mined from dataset: with frequencies: 3.06306306306  percentage
+=========================================
+Sun , Jupiter , Venus ,
+=========================================
+Class Association Rule  49  mined from dataset: with frequencies: 2.88288288288  percentage
+=========================================
+Moon , Jupiter , Ketu ,
+=========================================
+Class Association Rule  50  mined from dataset: with frequencies: 2.88288288288  percentage
+=========================================
+Sun , Venus , Ketu ,
+=========================================
+Class Association Rule  51  mined from dataset: with frequencies: 2.7027027027  percentage
+=========================================
+Sun , Ascendant ,
+=========================================
+Class Association Rule  52  mined from dataset: with frequencies: 2.52252252252  percentage
+=========================================
+Moon , Saturn , Rahu ,
+=========================================
+Class Association Rule  53  mined from dataset: with frequencies: 2.52252252252  percentage
+=========================================
+Jupiter , Venus , Ketu ,
+=========================================
+Class Association Rule  54  mined from dataset: with frequencies: 2.52252252252  percentage
+=========================================
+Saturn , Ascendant ,
+=========================================
+Class Association Rule  55  mined from dataset: with frequencies: 2.34234234234  percentage
+=========================================
+Saturn , Rahu , Ascendant ,
+=========================================
+Class Association Rule  56  mined from dataset: with frequencies: 2.16216216216  percentage
+=========================================
+Moon , Mars , Saturn ,
+=========================================
+Class Association Rule  57  mined from dataset: with frequencies: 1.98198198198  percentage
+=========================================
+Venus , Saturn , Rahu ,
+=========================================
+Class Association Rule  58  mined from dataset: with frequencies: 1.98198198198  percentage
+=========================================
+Mars , Ketu ,
+=========================================
+Class Association Rule  59  mined from dataset: with frequencies: 1.98198198198  percentage
+=========================================
+Mercury , Venus , Ketu ,
+=========================================
+Class Association Rule  60  mined from dataset: with frequencies: 1.62162162162  percentage
+=========================================
+Jupiter , Ketu , Ascendant ,
+=========================================
+Class Association Rule  61  mined from dataset: with frequencies: 1.62162162162  percentage
+=========================================
+Mercury , Venus , Ascendant ,
+=========================================
+Class Association Rule  62  mined from dataset: with frequencies: 1.44144144144  percentage
+=========================================
+Sun , Mars , Saturn ,
+=========================================
+Class Association Rule  63  mined from dataset: with frequencies: 1.44144144144  percentage
+=========================================
+Sun , Mars ,
+=========================================
+Class Association Rule  64  mined from dataset: with frequencies: 1.08108108108  percentage
+=========================================
+Sun , Mercury , Venus , Ascendant ,
+=========================================
+Class Association Rule  65  mined from dataset: with frequencies: 1.08108108108  percentage
+=========================================
+Moon , Mercury , Ketu ,
+=========================================
+Class Association Rule  66  mined from dataset: with frequencies: 1.08108108108  percentage
+=========================================
+Sun , Venus , Ascendant ,
+=========================================
+Class Association Rule  67  mined from dataset: with frequencies: 1.08108108108  percentage
+=========================================
+Moon , Jupiter , Rahu ,
+=========================================
+Class Association Rule  68  mined from dataset: with frequencies: 1.08108108108  percentage
+=========================================
+Venus , Rahu , Ascendant ,
+=========================================
+Class Association Rule  69  mined from dataset: with frequencies: 0.900900900901  percentage
+=========================================
+Moon , Venus , Ascendant ,
+=========================================
+Class Association Rule  70  mined from dataset: with frequencies: 0.900900900901  percentage
+=========================================
+Moon , Venus , Rahu ,
+=========================================
+Class Association Rule  71  mined from dataset: with frequencies: 0.900900900901  percentage
+=========================================
+Moon , Mars , Ascendant ,
+=========================================
+Class Association Rule  72  mined from dataset: with frequencies: 0.720720720721  percentage
+=========================================
+Sun , Mercury , Venus , Ketu ,
+=========================================
+Class Association Rule  73  mined from dataset: with frequencies: 0.720720720721  percentage
+=========================================
+Moon , Mercury , Venus , Ketu ,
+=========================================
+Class Association Rule  74  mined from dataset: with frequencies: 0.720720720721  percentage
+=========================================
+Moon , Rahu , Ascendant ,
+=========================================
+Class Association Rule  75  mined from dataset: with frequencies: 0.540540540541  percentage
+=========================================
+Sun , Moon , Ascendant ,
+=========================================
+Class Association Rule  76  mined from dataset: with frequencies: 0.540540540541  percentage
+=========================================
+Moon , Mercury , Ascendant ,
+=========================================
+Class Association Rule  77  mined from dataset: with frequencies: 0.36036036036  percentage
+=========================================
+Mars , Saturn , Ascendant ,
+=========================================
+Class Association Rule  78  mined from dataset: with frequencies: 0.36036036036  percentage
+=========================================
+Sun , Moon , Venus , Ascendant ,
+=========================================
+Class Association Rule  79  mined from dataset: with frequencies: 0.36036036036  percentage
+=========================================
+Sun , Moon , Mercury , Ascendant ,
+=========================================
+Class Association Rule  80  mined from dataset: with frequencies: 0.36036036036  percentage
+=========================================
+Moon , Jupiter , Ascendant ,
+=========================================
+Class Association Rule  81  mined from dataset: with frequencies: 0.36036036036  percentage
+=========================================
+Mars , Jupiter , Ascendant ,
+=========================================
+Class Association Rule  82  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Mars , Mercury , Ketu ,
+=========================================
+Class Association Rule  83  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Sun , Mars , Saturn , Ascendant ,
+=========================================
+Class Association Rule  84  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Moon , Mars , Saturn , Ascendant ,
+=========================================
+Class Association Rule  85  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Moon , Saturn , Ascendant ,
+=========================================
+Class Association Rule  86  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Mars , Ketu , Ascendant ,
+=========================================
+Class Association Rule  87  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Mars , Mercury ,
+=========================================
+Class Association Rule  88  mined from dataset: with frequencies: 0.18018018018  percentage
+=========================================
+Moon , Venus , Rahu , Ascendant ,
+
