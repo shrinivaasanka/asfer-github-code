@@ -2288,6 +2288,24 @@ Mars , Mercury , Venus ,
 
 Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
 
+================================================================================
+173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer:
+--------------------------------------------------------------------------------
+- These are initial minimal commits for abstracting storage of ingested bigdata for AsFer Machine Learning code
+- A dependency injection implementation of database-provider-specific objects is added to repository.
+- Presently MySQLdb based MySQL backend has been implemented with decoupled configuration which are injected into Abstract Backend class to build an object graph. Python injector library based on Google Guice Dependency Injection Framework (https://pythonhosted.org/injector/) is used for this.  Logs for a sample MySQL query has been added to testlogs/
+
+Schematic Dependency Injected Object Graph:
+-------------------------------------------
+					Injector ===========================================================
+													   |
+													   |
+													   V
+		MySQL_Configuration ---injects config ----> MySQL_DBBackend ---- injects connection ----> Abstract_DBBackend ---> exec_query()
+													  /\
+													   |
+		xxx_Configuration ---injects config ----> xxx_DBBackend ---- injects connection -----------|
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
