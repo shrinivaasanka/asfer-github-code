@@ -146,6 +146,11 @@ mC(n+1) * product_of_n+1_(NoiseSensitivityOfVoterSAT(i)) * product_of_m-n-1_(1-N
 
 Summation of binomial coefficients in RHS is the collective stability or noise in the infinite majority circuit. It converges to 0.5 if NoiseStability is uniform 0.5 for all Voter SATs and in best case converges to 1. This summation connects analysis, non-uniform infinite majority voting and complexity theory - Hypergeometric functions, Noise and Stability of Voter Boolean functions, Majority Circuit.
 
+----------------------------------------------------------------------------------------------------
+P(Good) summation is Complementary Cumulative Binomial Distribution Function (or) Survival Function
+----------------------------------------------------------------------------------------------------
+Goodness Probability of an elected choice is derived in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf . For a good choice atleast majority populace must have made a good decision (this is axiomatically assumed without proof where all voters have equal weightages). In probability notation this is Pr(X > n/2) where X is the binomial random variable denoting the number of electorate who have made a good choice which has to be atleast halfway mark. For each Pr(X=k) the binomial distribution mass function is nCk(p)^k(1-p)^k [Reference: https://en.wikipedia.org/wiki/Binomial_distribution]. Cumulative distributive function is defined as Pr(X <= k) = summation_0_k(nCk(p)^k(1-p)^(n-k)) and its complement is Pr(X > k) = 1 - Pr(X <= k) mentioned as Complementary Cumulative Distributive Function [Reference: https://en.wikipedia.org/wiki/Cumulative_distribution_function] which is also known as Survival Function[Reference: https://en.wikipedia.org/wiki/Survival_function].
+
 --------------------------
 Chernoff upper tail bound
 --------------------------
