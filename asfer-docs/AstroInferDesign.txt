@@ -149,7 +149,29 @@ Summation of binomial coefficients in RHS is the collective stability or noise i
 ----------------------------------------------------------------------------------------------------
 P(Good) summation is Complementary Cumulative Binomial Distribution Function (or) Survival Function
 ----------------------------------------------------------------------------------------------------
-Goodness Probability of an elected choice is derived in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf . For a good choice atleast majority populace must have made a good decision (this is axiomatically assumed without proof where all voters have equal weightages). In probability notation this is Pr(X > n/2) where X is the binomial random variable denoting the number of electorate who have made a good choice which has to be atleast halfway mark. For each Pr(X=k) the binomial distribution mass function is nCk(p)^k(1-p)^k [Reference: https://en.wikipedia.org/wiki/Binomial_distribution]. Cumulative distributive function is defined as Pr(X <= k) = summation_0_k(nCk(p)^k(1-p)^(n-k)) and its complement is Pr(X > k) = 1 - Pr(X <= k) mentioned as Complementary Cumulative Distributive Function [Reference: https://en.wikipedia.org/wiki/Cumulative_distribution_function] which is also known as Survival Function[Reference: https://en.wikipedia.org/wiki/Survival_function].
+Goodness Probability of an elected choice is derived in https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting_2014.pdf . For an above average good choice (i.e a choice which is more than 50% good) atleast majority populace must have made a good decision (this is axiomatically assumed without proof where all voters have equal weightages). In probability notation this is Pr(X > n/2) where X is the binomial random variable denoting the number of electorate who have made a good choice which has to be atleast halfway mark. For each Pr(X=k) the binomial distribution mass function is nCk(p)^k(1-p)^k [Reference: https://en.wikipedia.org/wiki/Binomial_distribution]. Cumulative distributive function is defined as Pr(X <= k) = summation_0_k(nCk(p)^k(1-p)^(n-k)) and its complement is Pr(X > k) = 1 - Pr(X <= k) mentioned as Complementary Cumulative Distributive Function [Reference: https://en.wikipedia.org/wiki/Cumulative_distribution_function] which is also known as Survival Function[Reference: https://en.wikipedia.org/wiki/Survival_function].
+
+A plausible proof for the assumption that for an above average good choice atleast half of the popluation must have made a good decision:
+If there are n inputs to the Majority circuits, the voter inputs with good decision can be termed as "Noiseless" and voter inputs with bad decisions can be termed as "Noisy" in Noise Sensitivity parlance. For infinite majority it is known that(from http://analysisofbooleanfunctions.org/):
+	lim  NS(delta, Majority(n))  = 1/pi * arccos(1-2*delta) (due to Central Limit Theorem and Sheppard's Formula)
+	n->infinity
+	n odd
+
+where delta is probability of noise and hence bad decision. If delta is assumed to be 0.5 for each voter (each voter is likely to err with probability 0.5) then above limit becomes:
+	1/pi * arccos(1-1) = 1/pi * pi/2 = 1/2 which is the Noise (Goodness or Badness) of the majority circuit as a whole.
+From this expected number of bad decision voters can be deduced as E(x) = x*p(x) = 0.5 * n = n/2 (halfway mark)
+
+Above is infact a simpler proof for P(Good) without any binomial summation series for delta=0.5. In other words the number of bad decisions are reverse engineered. But P(Good) binomial summation (complementary cumulative distributive function) is very much required in the hardest problem where each voter has a judging function to produce an input to Majority function and each such judging function is of varied complexities and noise stabilities.
+
+For delta=0.5, NoiseSensitivity of infinite majority=0.5 and both are equal. For other values of delta this is not the case. For example interesting anomalies below surface:
+
+delta=0.3333...:
+----------------
+NS = 1/pi * arccos(1 - 2*0.333...) = 0.3918
+
+delta=0.25:
+----------
+NS = 1/pi * arccos(1-2*0.25) = 0.333...
 
 --------------------------
 Chernoff upper tail bound
