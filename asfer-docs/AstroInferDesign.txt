@@ -346,7 +346,7 @@ Open question: If Percolation Boolean Functions are 100% noise stable (as in inf
 (20) Noise stability in terms of Fourier coefficient weights is defined as:
 	summation( rho^k * W^k ) for all degree-k weights where W = summation(fourier_coeff(S)^2) for all |S|, S in [n]
 
-(21) Variant 1 of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit. Variant 2 of Percolation as Judge boolean function is also in non-uniform NC1 subject to 100% noise stability condition.
+(21) Variant 1 of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit. Variant 2 of Percolation in 53.5 as Judge boolean function is also in non-uniform NC1 subject to 100% noise stability condition. In 53.6 a sorting network based circuit is described for Percolation boolean function.
 
 ----------------------
 Additional References:
@@ -928,6 +928,16 @@ Proof: If a is better than b in majority of the criteria then the path is more "
 53.5.10 Previous description is an equivalence reduction of percolation and judging two adversaries.
 53.5.11 To differentiate top-down and down-top left-right paths, comparator circuits (constant depth, polysize) and non-uniform NC1 circuit for integer addition of scores are required. Together this is also a non-uniform NC1 circuit (for infinite grid) similar to Variant1 in 53.4.
 
+---------------------------------------------------------------------------------------------------------
+53.6 (THEORY) Circuit for Percolation as a Judge Boolean Function
+---------------------------------------------------------------------------------------------------------
+For an m * m grid with random edges, maximum length of the left-right path is m^2 (traverses all grid cells). Each coordinate on the grid requires 2logm bits. Hence maximum input bits required is m^2 * 2logm = O(m^2*logm). Coordinates are sorted on left coordinate left-right ascending by a Sorting Netwok (e.g Ajtai-Komlos-Szemeredi). This function outputs, with the sorted coordinates as inputs:
+  - 1 if both leftmost left coordinate is 0 and rightmost left coordinate is m
+  - else 0
+which requires comparators. Sorting networks of depth O((logm)^2*m) and size O(m(logm)^2) exist for algorithms like Bitonic sort, Merge sort, Shell sort et.,. AKS sorting network is of O(logm) depth and O(mlogm) size. Thus percolation circuit consists of:
+  - Sorting network that sorts the coordinates left-right in NC1 or NC2
+  - Comparator circuits in constant depth and polynomial size
+which together are in NC.
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
