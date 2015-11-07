@@ -934,7 +934,7 @@ Proof: If a is better than b in majority of the criteria then the path is more "
 For an m * m grid with random edges, maximum length of the left-right path is m^2 (traverses all grid cells). Each coordinate on the grid requires 2logm bits. Hence maximum input bits required is m^2 * 2logm = O(m^2*logm). Coordinates are sorted on left coordinate left-right ascending by a Sorting Netwok (e.g Ajtai-Komlos-Szemeredi). This function outputs, with the sorted coordinates as inputs:
   - 1 if both leftmost left coordinate is 0 and rightmost left coordinate is m
   - else 0
-which requires comparators. Sorting networks of depth O((logm)^2*m) and size O(m(logm)^2) exist for algorithms like Bitonic sort, Merge sort, Shell sort et.,. AKS sorting network is of O(logm) depth and O(mlogm) size. Thus percolation circuit consists of:
+which requires comparators. Sorting networks of depth O((logn)^2*n) and size O(n(logn)^2) exist for algorithms like Bitonic sort, Merge sort, Shell sort et.,. AKS sorting network is of O(logn) depth and O(nlogn) size. For n=m^2, AKS sorting network is of O(log(m^2)) depth and O(m^2log(m^2)) size. Thus percolation circuit consists of:
   - Sorting network that sorts the coordinates left-right in NC1 or NC2
   - Comparator circuits in constant depth and polynomial size
 which together are in NC.
