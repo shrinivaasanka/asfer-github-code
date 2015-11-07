@@ -932,12 +932,12 @@ Proof: If a is better than b in majority of the criteria then the path is more "
 53.6 (THEORY) Circuit for Percolation as a Judge Boolean Function
 ---------------------------------------------------------------------------------------------------------
 For an m * m grid with random edges, maximum length of the left-right path is m^2 (traverses all grid cells). Each coordinate on the grid requires 2logm bits. Hence maximum input bits required is m^2 * 2logm = O(m^2*logm). Coordinates are sorted on left coordinate left-right ascending by a Sorting Netwok (e.g Ajtai-Komlos-Szemeredi). This function outputs, with the sorted coordinates as inputs:
-  - 1 if both leftmost left coordinate is 0 and rightmost left coordinate is m
+  - 1 if both x-axis coordinate of the leftmost ordered pair is 0 and x-axis coordinate of the rightmost ordered pair is m
   - else 0
 which requires comparators. Sorting networks of depth O((logn)^2*n) and size O(n(logn)^2) exist for algorithms like Bitonic sort, Merge sort, Shell sort et.,. AKS sorting network is of O(logn) depth and O(nlogn) size. For n=m^2, AKS sorting network is of O(log(m^2)) depth and O(m^2log(m^2)) size. Thus percolation circuit consists of:
   - Sorting network that sorts the coordinates left-right in NC1 or NC2
   - Comparator circuits in constant depth and polynomial size
-which together are in NC.
+which together are in NC. If the left-right paths are classified as top-down and down-top paths for ranking two adversaries (in 53.5 above) additional comparator circuits are required for finding if right coordinate is in top or down half-space. This is by comparing the y-axis of the leftmost and rightmost in sorted ordered pairs and output 1 if y-axis of leftmost lies between m/2 and m and y-axis of rightmost lies between 0 and m/2 (top-down) and output 0 else (down-top).
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
