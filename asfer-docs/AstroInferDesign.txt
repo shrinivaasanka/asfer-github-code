@@ -1198,9 +1198,9 @@ Initial implementation of a Chaos attractor sequence implementation committed to
 --------------------------------------------------
 Python-R (rpy2) code for correlation coefficient computation added to above Chaos attractor implementation.
 
---------------------------------------------------
-(FEATURE- DONE) 97. Commits as on 9 July 2014
---------------------------------------------------
+--------------------------------------------------------------------
+(FEATURE- DONE) 97. Time Series Analysis - Commits as on 9 July 2014
+--------------------------------------------------------------------
 DJIA dataset, parser for it and updated ChaosAttractor.py for chaotic and linear correlation coefficient computation of DJIA dataset
 have been committed.
 
@@ -2325,9 +2325,9 @@ Mars , Mercury , Venus ,
 
 Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
 
-================================================================================
-173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer:
---------------------------------------------------------------------------------
+=================================================================================================================
+173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer - Commits as on 5 November 2015 :
+-----------------------------------------------------------------------------------------------------------------
 - These are initial minimal commits for abstracting storage of ingested bigdata for AsFer Machine Learning code
 - A dependency injection implementation of database-provider-specific objects is added to repository.
 - Presently MySQLdb based MySQL backend has been implemented with decoupled configuration which are injected into Abstract Backend class to build an object graph. Python injector library based on Google Guice Dependency Injection Framework (https://pythonhosted.org/injector/) is used for this.  Logs for a sample MySQL query has been added to testlogs/
@@ -2342,6 +2342,13 @@ Schematic Dependency Injected Object Graph:
 													  /\
 													   |
 		xxx_Configuration ---injects config ----> xxx_DBBackend ---- injects connection -----------|
+
+-----------------------------------------------------------------------------------------------------------------
+174. (FEATURE - DONE) Embedding Python in AsFer C++ - Commits as on 11 November 2015
+-----------------------------------------------------------------------------------------------------------------
+Python Embedding in C++ implementation has been added and invoked from asfer main entrypoint with a boolean flag. This at present is not
+based on boost::python and directly uses CPython API. Logs for this has been added in cpp-src/testlogs.
+
 
 
 - 

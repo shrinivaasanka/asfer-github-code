@@ -54,3 +54,4 @@ if len(sys.argv) == 1:
 	token=authentication.get_access_token()
 	application = linkedin.LinkedInApplication(authentication)
 	print application.get_profile()
+	print application.get_connections()
