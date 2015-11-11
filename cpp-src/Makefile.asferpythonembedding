@@ -1,0 +1,14 @@
+
+PYLIB=/usr/lib/python2.7/config-i386-linux-gnu/libpython2.7.a
+PYINC=-I-I/usr/include -I/usr/include -I/usr/include/python2.7 -I/usr/include/python2.7 
+LIBS=-L/usr/lib -L/usr/lib -lz -lpthread -ldl  -lutil -lm
+OPTS=-DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes
+PROGRAMS=asferpythonembedding 
+all: $(PROGRAMS)
+
+asferpythonembedding: asferpythonembedding.o
+	g++ asferpythonembedding.o $(LIBS) $(PYLIB) -o asferpythonembedding
+asferpythonembedding.o: asferpythonembedding.cpp
+	g++ asferpythonembedding.cpp -c $(PYINC) $(OPTS)
+clean:
+	rm -f $(PROGRAMS) *.o *.pyc core

@@ -38,6 +38,9 @@ emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@li
 
 #include "asferKnuthMorrisPrattStringMatch.h"
 
+#include "asferpythonembedding.cpp"
+
+
 extern "C" {
 #include "string.h"
 }
@@ -54,12 +57,13 @@ bool extractPatterns=false;
 bool doClustering=false;
 bool doLCS=false;
 bool doStringMatch=true;
+bool doEmbedPython=true;
 
 const char* strplanets[] = {"Sun","Moon","Mars","Mercury","Jupiter","Venus","Saturn","Rahu","Ketu"};
 
 std::string asferroot;
 
-int main()
+int main(int argc, char* argv[])
 {
 	string basepath("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/cpp-src");
 	asferroot=basepath;
@@ -182,4 +186,10 @@ int main()
 		cout<<"Knuth Morris Pratt String Match location for ["<<s1<<"] and ["<<s2<<"]:"<<substrloc<<endl;
 		cout<<"############################################################"<<endl;
 	}	
+
+	if(doEmbedPython)
+	{
+		asferpythonembedding ape;
+		ape.execute_python_script(argv[1]);
+	}
 }
