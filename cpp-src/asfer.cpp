@@ -1,5 +1,5 @@
-/*****************************************************************************************
---------------------------------------------------------------------------------------------------
+/*********************************************************************************************************
+---------------------------------------------------------------------------------------------------------
 ASFER - Inference Software for Large Datasets - component of iCloud Platform
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -11,18 +11,23 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
----------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------
 Copyright (C):
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-Ph: 9789346927, 9003082186, 9791165980
+Ph: 9791499106, 9003082186
 Krishna iResearch Open Source Products Profiles:
-http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+http://sourceforge.net/users/ka_shrinivaasan
+https://github.com/shrinivaasanka/
+https://www.openhub.net/accounts/ka_shrinivaasan
 Personal website(research): https://sites.google.com/site/kuja27/
-ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
 emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
---------------------------------------------------------------------------------------------------
-*****************************************************************************************/
+---------------------------------------------------------------------------------------------------------
+*********************************************************************************************************/
+
+using namespace std;
 #include <iostream>
+#include <tr1/unordered_map>
 #include <fstream>
 #include "indexer.h"
 #include "asferclassifiers.h"
@@ -47,21 +52,13 @@ extern "C" {
 
 int asferrule::next_token_id = 0;
 
-bool parseDatasetAndPredict=false;
-bool doClassification=false;
-bool doSVMRetrieve=false;
-bool doSequenceAlignment=false;
-bool doTestDataSet=false;
-bool doDistance=false;
-bool extractPatterns=false;
-bool doClustering=false;
-bool doLCS=false;
-bool doStringMatch=true;
-bool doEmbedPython=true;
+void read_asfer_config();
+
 
 const char* strplanets[] = {"Sun","Moon","Mars","Mercury","Jupiter","Venus","Saturn","Rahu","Ketu"};
 
 std::string asferroot;
+unordered_map<string,bool> config_map;
 
 int main(int argc, char* argv[])
 {
@@ -70,17 +67,19 @@ int main(int argc, char* argv[])
 	std::cout<<"AStro inFER - Inference Software for Large Datasets " << std::endl;
 	std::cout<<"-----------------------------------------------------" << std::endl;
 
-	if(doClassification)
+	read_asfer_config();
+
+	if(config_map["doClassification"])
 	{
 		doNaiveBayesAndDecisionTreeClassification();	
 	}
 
-	if(doTestDataSet)
+	if(config_map["doTestDataSet"])
 	{
 		test_asferdataset();
 	}
 
-	if(parseDatasetAndPredict)
+	if(config_map["parseDatasetAndPredict"])
 	{	
 		asferindexer asindex ("asfer.rules");
 	
@@ -99,7 +98,7 @@ int main(int argc, char* argv[])
 		ifstream input;
 		Horoscope horo;
 		char line[256];
-		input.open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/cpp-src/asfer.query", ifstream::in);
+		input.open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/asfer.query", ifstream::in);
 	
 		input.getline(line, 256);
 		horo.lagna = strdup(line);
@@ -118,7 +117,7 @@ int main(int argc, char* argv[])
 	
 		retriever *retr = new retriever(&asindex);
 		std::string* algo;
-		if(doSVMRetrieve)
+		if(config_map["doSVMRetrieve"])
 		{
 			algo = new std::string("svm");
 		}
@@ -135,7 +134,7 @@ int main(int argc, char* argv[])
 		cout<< *prediction << endl;
 	}
 	asferencodehoro aehoro;
-	if(extractPatterns)
+	if(config_map["extractPatterns"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"pairwise and powerset pattern extraction"<<endl;
@@ -144,14 +143,14 @@ int main(int argc, char* argv[])
 		aehoro.allCompAndExtractPatterns();
 		aehoro.powerSetCompAndExtractPatterns();
 	}
-	if(doSequenceAlignment)
+	if(config_map["doSequenceAlignment"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"Needleman Wunsch String Alignment"<<endl;
 		cout<<"###########################################"<<endl;
 		aehoro.pairwiseNeedlemanWunshSequenceAlignment();
 	}
-	if(doDistance)
+	if(config_map["doDistance"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"Wagner-Fischer Edit Distance"<<endl;
@@ -159,7 +158,7 @@ int main(int argc, char* argv[])
 		aehoro.computeWagnerFischerEditDistance();	
 	}
 
-	if(doClustering)
+	if(config_map["doClustering"])
 	{
 		cout<<"############################################################"<<endl;
 		cout<<"Clustering - Unsupervised - KMeans"<<endl;
@@ -171,12 +170,12 @@ int main(int argc, char* argv[])
 		aehoro.clusterEncodedHoro("kNN");
 	}
 
-	if(doLCS)
+	if(config_map["doLCS"])
 	{
 		aehoro.longestCommonSubstring();
 	}
 
-	if(doStringMatch)
+	if(config_map["doStringMatch"])
 	{
 		asferKMPStringMatch akmpsm;
 		string s1("KnuthMorrisPratt");
@@ -187,9 +186,36 @@ int main(int argc, char* argv[])
 		cout<<"############################################################"<<endl;
 	}	
 
-	if(doEmbedPython)
+	if(config_map["doEmbedPython"])
 	{
 		asferpythonembedding ape;
 		ape.execute_python_script(argv[1]);
+	}
+}
+
+void read_asfer_config()
+{
+        config_map["parseDatasetAndPredict"]=false;
+	config_map["doClassification"]=false;
+	config_map["doSVMRetrieve"]=false;
+	config_map["doSequenceAlignment"]=false;
+	config_map["doTestDataSet"]=false;
+	config_map["doDistance"]=false;
+	config_map["extractPatterns"]=false;
+	config_map["doClustering"]=false;
+	config_map["doLCS"]=false;
+	config_map["doStringMatch"]=true;
+	config_map["doEmbedPython"]=true;
+	ifstream config;
+	char line[256];
+	config.open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/asfer.conf", ifstream::in);
+	config.getline(line, 256);
+	while(line != NULL && !config.eof())
+	{
+		string config_key(strtok(line, "="));
+		string config_value(strtok(NULL, ";"));
+		cout<<config_key<<":"<<config_value<<endl;
+		config.getline(line, 256);
+		config_map[config_key]=(config_value=="true")?true:false;
 	}
 }
