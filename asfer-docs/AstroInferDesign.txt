@@ -939,6 +939,23 @@ which requires comparators. Sorting networks of depth O((logn)^2*n) and size O(n
   - Comparator circuits in constant depth and polynomial size
 which together are in NC. If the left-right paths are classified as top-down and down-top paths for ranking two adversaries (in 53.5 above) additional comparator circuits are required for finding if right coordinate is in top or down half-space. This is by comparing the y-axis of the leftmost and rightmost in sorted ordered pairs and output 1 if y-axis of leftmost lies between m/2 and m and y-axis of rightmost lies between 0 and m/2 (top-down) and output 0 else (down-top).
 
+--------------------------------------------------------------------------------------------------------
+53.7 (THEORY) P/Poly and P(Good) LHS and RHS - Karp-Lipton and Meyer's Theorems
+--------------------------------------------------------------------------------------------------------
+P/poly is the circuit class of polynomial size with polynomial advice strings and unrestricted depth. Thus P/poly is non-uniform circuit class.  Hence non-uniform NC is in P/poly. In 53.4, 53.5 and 53.6 example non-uniform NC1 circuits (subject to 100% noise stablility) Percolation boolean function were described. These are in P/poly as non-uniform NC is in P/poly and thus LHS of P(Good) is in P/poly. Hence when LHS and RHS binomial coefficient summations converge to 100% noise stability satisfying the conditions in 53.3, LHS is a P/poly algorithm to RHS EXPTIME DC uniform circuit (because both sides are depth unrestricted).
+
+If RHS is simply NP (if depth restricted and unlikely for arbitrary number of electorate) then LHS is a P/poly algorithm to RHS NP implying NP is contained in P/poly. By Karp-Lipton theorem NP in P/poly implies that PH collapses to second-level i.e sigma(p,2) and from [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995)] NP in P/poly implies AM=MA.
+
+EXPTIME version of this is Meyer's Theorem which states that if EXPTIME is in P/poly (which is the hardest case for RHS of P(good) and can be m-EXPTIME) then EXPTIME = sigma(p,2) \intersection pi(p,2) and EXPTIME=MA. When RHS of P(good) is a DC uniform EXPTIME circuit, P(good) convergence subject to availability of 100% noise stable percolation boolean functions satisfying conditions in 53.3, implies that EXPTIME=MA.
+
+References:
+----------
+53.7.1 Relation between NC and P/poly - http://cs.stackexchange.com/questions/41344/what-is-the-relation-between-nc-and-p-poly
+53.7.2 P/poly - https://en.wikipedia.org/wiki/P/poly
+53.7.3 Karp-Lipton Theorem - https://en.wikipedia.org/wiki/Karp%E2%80%93Lipton_theorem
+53.7.4 NP in P/poly implies AM=MA - [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995),] - http://www.informatik.hu-berlin.de/forschung/gebiete/algorithmenII/Publikationen/Papers/ma-am.ps.gz
+53.7.5 BPP,PH,P/poly,Meyer's theorem etc., - http://www.cs.au.dk/~arnsfelt/CT10/scribenotes/lecture9.pdf
+
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
 
@@ -2343,11 +2360,10 @@ Schematic Dependency Injected Object Graph:
 													   |
 		xxx_Configuration ---injects config ----> xxx_DBBackend ---- injects connection -----------|
 
------------------------------------------------------------------------------------------------------------------
-174. (FEATURE - DONE) Embedding Python in AsFer C++ - Commits as on 11 November 2015
------------------------------------------------------------------------------------------------------------------
-Python Embedding in C++ implementation has been added and invoked from asfer main entrypoint with a boolean flag. This at present is not
-based on boost::python and directly uses CPython API. Logs for this has been added in cpp-src/testlogs.
+------------------------------------------------------------------------------------------------------------------------
+174. (FEATURE - DONE) AsFer C++ - Python Integration - Embedding Python in AsFer C++ - Commits as on 11 November 2015
+------------------------------------------------------------------------------------------------------------------------
+Python Embedding in C++ implementation has been added and invoked from asfer main entrypoint with a boolean flag. This at present is not based on boost::python and directly uses CPython API. Logs for this has been added in cpp-src/testlogs. With this all AsFer machine learning algorithms can be invoked from asfer.cpp main() through commandline as: $./asfer <python-script>.
 
 
 
