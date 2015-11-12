@@ -2365,6 +2365,11 @@ Schematic Dependency Injected Object Graph:
 ------------------------------------------------------------------------------------------------------------------------
 Python Embedding in C++ implementation has been added and invoked from asfer main entrypoint with a boolean flag. This at present is not based on boost::python and directly uses CPython API. Logs for this has been added in cpp-src/testlogs. With this all AsFer machine learning algorithms can be invoked from asfer.cpp main() through commandline as: $./asfer <python-script>.
 
+--------------------------------------------------------------------------------------------------------------------------------
+175. (FEATURE - DONE) Config File Support for AsFer C++ and Python Machine Learning Algorithms - Commits as on 12 November 2015
+--------------------------------------------------------------------------------------------------------------------------------
+Config File support for asfer has been added. In asfer.cpp main(), read_asfer_config() is invoked which reads config in asfer.conf and executes the enabled AsFer algorithms in C++ and Embedded Python. Config key-values are stored in a map.
+
 
 
 - 
