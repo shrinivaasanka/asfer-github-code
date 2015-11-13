@@ -191,6 +191,13 @@ int main(int argc, char* argv[])
 		asferpythonembedding ape;
 		ape.execute_python_script(argv[1]);
 	}
+
+	if(config_map["enableCloudPerfectForwarding"])
+        {
+                cout<<"KingCobra - Cloud Perfect Forwarding C++ std::move client-server binaries invoked"<<endl;
+                execl("/bin/sh", "sh", "-c", "/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/drivers/kcobra/kingcobra_cloud_perfect_forwarding.sh", (char *) 0);
+        }
+
 }
 
 void read_asfer_config()
@@ -204,8 +211,9 @@ void read_asfer_config()
 	config_map["extractPatterns"]=false;
 	config_map["doClustering"]=false;
 	config_map["doLCS"]=false;
-	config_map["doStringMatch"]=true;
-	config_map["doEmbedPython"]=true;
+	config_map["doStringMatch"]=false;
+	config_map["doEmbedPython"]=false;
+	config_map["enableCloudPerfectForwarding"]=false;
 	ifstream config;
 	char line[256];
 	config.open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/asfer.conf", ifstream::in);
