@@ -2384,6 +2384,22 @@ Config File support for asfer has been added. In asfer.cpp main(), read_asfer_co
 ------------------------------------------------------------------------------------------------------------
 http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf describe the Recursive Gloss Overlap Algorithm to construct a Definition Graph from a text document with WordNet or any other Ontology. If Definition Graphs extracted from two documents are Isomorphic, then it can be deduced that there is an intrinsic structural similarity between the two texts ignoring grammatical variations, though vertices differ in their labelling. [QuasiPTIME algorithm for GI - Lazlo Babai - http://jeremykun.com/2015/11/12/a-quasipolynomial-time-algorithm-for-graph-isomorphism-the-details/]
 
+---------------------------------------------------------------------------------------------
+177. Commits as on 13 November 2015
+---------------------------------------------------------------------------------------------
+    - Corrections to Convolution Map Neuron computation with per-coordinate weight added
+    - Removed hardcoded convolution stride and pooling width in the class
+    - testlogs following input bitmap features have been added with the output of 5 neurons in final layer:
+        - Without Zero inscribed
+        - With Zero inscribed in bitmap as 1s
+        - With Bigger Zero inscribed in bitmap as 1s
+        - With Biggest Zero inscribed in bitmap as 1s
+      The variation of final neural outputs can be gleaned as the size of the pattern increases from none to biggest. 
+      The threshold has to be set to neural output without patterns. Anything above it shows a pattern.
+    - Added a config variable for invoking cloud perfect forwarding binaries in KingCobra in asfer.conf
+    - config_map updated in asfer.cpp for enableCloudPerfectForwarding config variable
+
+
 
 
 - 
