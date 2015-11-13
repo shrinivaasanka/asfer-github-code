@@ -956,6 +956,15 @@ References:
 53.7.4 NP in P/poly implies AM=MA - [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995),] - http://www.informatik.hu-berlin.de/forschung/gebiete/algorithmenII/Publikationen/Papers/ma-am.ps.gz
 53.7.5 BPP,PH,P/poly,Meyer's theorem etc., - http://www.cs.au.dk/~arnsfelt/CT10/scribenotes/lecture9.pdf
 
+---------------------------------------------------------------------------------------------------------------------------
+53.8 (THEORY) An example Majority+SAT majority voting circuit, P(Good) convergence and some observations on Noise Stability
+---------------------------------------------------------------------------------------------------------------------------
+Let the number of voters be 8 (=2^3). Each voter has a boolean function of 3 variables - x1,x2 and x3. From Boolean Function Composition, this is defined as Maj(SAT1(x1,x2,x3),SAT2(x1,x2,x3),...,SAT8(x1,x2,x3)). Each variable xi corresponds to a criterion i and xi=1 if and only if the criterion i is satisfied in 2-candidate voting (candidate0 and candidate1). Thus all voters should vote xi=1 if the candidate1 satisfies criterion xi. If some of the voters vote xi=0 even though the candidate1 satisifes criterion xi, then it becomes noise in the boolean function. This composition has exponential size in number of inputs (32 = 2^3 + 3*2^3) = O(n*exp(n))). For negation NOT gates are allowed and it is not necessarily a monotone circuit. If the variables are different for each voter, there are 24 variables and circuit is polynomial in input size - O(n^k).This illustrates the pivotality of noise when voters have a variable in common.
+
+If the RHS doesn't converge to 1 and thus is in BPP and Noise Stability of LHS is 100% (e.g by PRG choice of a percolation function) then LHS is a P/poly algorithm for RHS BPP. This implies BPP is in P/poly , an already known amplification result. Infact this result implies something stronger: Since BPP is in P/poly, even if RHS doesn't converge, there is always a P/poly algorithm in LHS by amplification.
+
+If the RHS has a perfect k-SAT boolean decision function for all voters, size of the circuit is super-polynomial and sub-exponential(if exponential, circuit is DC uniform), P(Good) series converges to 100% and LHS is 100% noise stable Percolation function, then LHS is a P/poly algorithm for RHS NP-complete instance. Special case is when RHS has only one voter - LHS is P/poly and RHS is NP-complete(assuming k-SAT of RHS voter is 100% noise stable) - and thus there is a P/poly circuit for NP in such a special case. From [Karp-Lipton] (53.7) if NP is in P/poly, PH collapses to second level and AM=MA.
+
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
 
@@ -993,7 +1002,7 @@ VIRGO Design Document: http://sourceforge.net/p/virgo-linux/code-0/HEAD/tree/tru
 KingCobra Design Document: http://sourceforge.net/p/kcobra/code-svn/HEAD/tree/KingCobraDesignNotes.txt
 This AsFer+USBmd+VIRGO+KingCobra would henceforth be known as "Krishna iResearch Intelligent Cloud OS - NeuronRain "
 
-65. (THEORY and ONGOING) Related to point 64 - Software Analytics - source code and logs analytics - related to Program comprehension - point 139 on BigData Analytics has more on this. Recently added VIRGO kernel_analytics module is in a way a software analytics module which reads config file set by the machine learning software after mining the kernel logs and objects. Kernel Analytics VIRGO driver module at present reads key-value pairs written to by the AsFer Machine Learning code from /etc/virgo_kernel_analytics.conf. Optionally, AsFer code can directly modify the kernel tunable parameters learnt by AsFer (https://www.kernel.org/doc/Documentation/kernel-parameters.txt) through modprobe or "echo -n ${value} > /sys/module/${modulename}/parameters/${parm}" for existing modules while virgo_kernel_analytics.conf is read for VIRGO specific modules.
+65. (THEORY and ONGOING) Related to point 64 - Software Analytics - source code and logs analytics - related to Program comprehension - point 139 on BigData Analytics has more on this. Recently added VIRGO kernel_analytics module is in a way a software analytics module which reads config file set by the machine learning software after mining the kernel logs and objects. Kernel Analytics VIRGO driver module at present reads key-value pairs written to by the AsFer Machine Learning code from /etc/virgo_kernel_analytics.conf. Optionally, AsFer code can directly modify the kernel tunable parameters learnt by AsFer (https://www.kernel.org/doc/Documentation/kernel-parameters.txt) through modprobe or "echo -n ${value} > /sys/module/${modulename}/parameters/${parm}" for existing modules while virgo_kernel_analytics.conf is read for VIRGO specific modules. Graph Isomorphism of Program Slice Dependency Graphs for 2 codebases mentioned in https://sites.google.com/site/kuja27/PhDThesisProposal.pdf is also a Software Analytics problem. There are Slicing and Graph Isomorphism tools already available. Recently there has been a QuasiPolynomial Time algorithm for GI - [Lazlo Babai].
 
 ----------
 References:
@@ -2369,6 +2378,11 @@ Python Embedding in C++ implementation has been added and invoked from asfer mai
 175. (FEATURE - DONE) Config File Support for AsFer C++ and Python Machine Learning Algorithms - Commits as on 12 November 2015
 --------------------------------------------------------------------------------------------------------------------------------
 Config File support for asfer has been added. In asfer.cpp main(), read_asfer_config() is invoked which reads config in asfer.conf and executes the enabled AsFer algorithms in C++ and Embedded Python. Config key-values are stored in a map.
+
+------------------------------------------------------------------------------------------------------------
+176. (THEORY) Isomorphism of two Document Definition Graphs
+------------------------------------------------------------------------------------------------------------
+http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf describe the Recursive Gloss Overlap Algorithm to construct a Definition Graph from a text document with WordNet or any other Ontology. If Definition Graphs extracted from two documents are Isomorphic, then it can be deduced that there is an intrinsic structural similarity between the two texts ignoring grammatical variations, though vertices differ in their labelling. [QuasiPTIME algorithm for GI - Lazlo Babai - http://jeremykun.com/2015/11/12/a-quasipolynomial-time-algorithm-for-graph-isomorphism-the-details/]
 
 
 
