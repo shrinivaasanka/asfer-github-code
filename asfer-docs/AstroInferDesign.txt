@@ -2414,6 +2414,12 @@ For natural language X (=English) an RGO graph can be constructed (based on algo
 Initial commits for a Web Spider - Crawl and Scrape - done with Scrapy framework. Presently it crawls Google News for a query and scrapes the search results to output a list of lines or a digest of the news link texts. This output file can be used for Sentiment Analysis with Recursive Gloss Overlap already implemented.  Complete Scrapy project hierarchy is being added to the repository with spider in WebSpider.py and
 crawled items in items.py
 
+------------------------------------------------------------------------------------------------------------
+180. (FEATURE - DONE) Sentiment Analyzer Implementation for Spidered Texts - Commits as on 16 November 2015
+------------------------------------------------------------------------------------------------------------
+Sentiment Analyzer implementation for Crawled-Scraped Google News Search result texts with testlogs and screenshots of the RGO graph has
+been added. This has been made a specialized analyzer for spidered texts different from twitter analyzer.
+
 
 
 
