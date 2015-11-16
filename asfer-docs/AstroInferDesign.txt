@@ -2408,6 +2408,13 @@ http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/par
 ----------------------------------------------------------------------------------------------
 For natural language X (=English) an RGO graph can be constructed (based on algorithms in http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). This definition graph is a subgraph of WordNet-English. Each vertex is a word from English dictionary. New RGO graph for language Y is constructed from RGO(X) by mapping each vertex in RGO(X) to corresponding word in language Y. RGO(X) and RGO(Y) are isomorphic graphs. Sentences in language Y can be constructed with lamda composition closure on the RGO(Y) graph implemented already. This is an approximation for machine translation between two natural languages.
 
+-------------------------------------------------------------------------------------------------------
+179. (FEATURE - DONE) Web Spider Implementation with Scrapy Framework - Commits as on 16 November 2015
+-------------------------------------------------------------------------------------------------------
+Initial commits for a Web Spider - Crawl and Scrape - done with Scrapy framework. Presently it crawls Google News for a query and scrapes the search results to output a list of lines or a digest of the news link texts. This output file can be used for Sentiment Analysis with Recursive Gloss Overlap already implemented.  Complete Scrapy project hierarchy is being added to the repository with spider in WebSpider.py and
+crawled items in items.py
+
+
 
 
 
