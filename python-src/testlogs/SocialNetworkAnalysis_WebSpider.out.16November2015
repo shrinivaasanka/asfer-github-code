@@ -1,0 +1,1002 @@
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src# python SocialNetworkAnalysis_WebSpider.py webspider/WebSpider.out 
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+2
+defaultdict(<type 'list'>, {u'United': [u'India'], u'less': [u'building'], u'money': [u'monetary_value'], u'move': [u'paralysis'], u'dose': [u'roentgen'], u'discovered': [u'new'], u'bring': [u'monetary_value'], u'radio': [u'frequency_modulation'], u'Kingdom': [u'India'], u'group': [u'policy'], u'knowledge': [u'expert'], u'electricity': [u'roentgen'], u'flash': [u'flicker'], u'1947': [u'India'], u'permanently': [u'building'], u'invokes': [u'magic'], u'include': [u'city'], u'administrative': [u'city'], u'worth': [u'monetary_value'], u'surprised': [u'dismay'], u'ionizing': [u'roentgen'], u'somebody': [u'bring'], u'material': [u'monetary_value'], u'prudence': [u'wary'], u'wave': [u'frequency_modulation'], u'walls': [u'building'], u'marked': [u'wary'], u'words': [u'state'], u'world': [u'India'], u'loss': [u'paralysis'], u'course': [u'battle'], u'India': [u'Bollywood'], u'subcontinent': [u'India'], u'large': [u'city'], u'item': [u'issue'], u'undercover': [u'NOC'], u'art': [u'magic'], u'often': [u'monetary_value'], u'populated': [u'city'], u'acquired': [u'new'], u'authority': [u'government', u'government'], u'operates': [u'scope'], u'second': [u'India'], u'electrostatic': [u'roentgen'], u'duration': [u'new'], u'special': [u'expert'], u'momentary': [u'flicker'], u'stands': [u'building'], u'state': [u'constraint'], u'supernatural': [u'magic'], u'performs': [u'expert'], u'cause': [u'dismay'], u'independence': [u'India'], u'body': [u'fever', u'paralysis'], u'recently': [u'new'], u'ability': [u'paralysis', u'expert'], u'power': [u'scope'], u'opening': [u'crack'], u'sold': [u'monetary_value'], u'use': [u'issue'], u'governing': [u'government', u'government'], u'densely': [u'city'], u'skillfully': [u'expert'], u'consideration': [u'consider'], u'come': [u'new'], u'dry': [u'roentgen'], u'property': [u'monetary_value'], u'jet': [u'scope'], u'country': [u'India'], u'industry': [u'Bollywood'], u'keen': [u'wary'], u'range': [u'scope'], u'carrier': [u'frequency_modulation'], u'place': [u'building'], u'act': [u'issue'], u'usually': [u'issue'], u'military': [u'battle'], u'narrow': [u'crack'], u'cc': [u'roentgen'], u'Asia': [u'India'], u'one': [u'building'], u'long': [u'new', u'crack'], u'unit': [u'roentgen', u'government', u'government'], u'unpleasantly': [u'dismay'], u'given': [u'NOC'], u'temperature': [u'fever'], u'would': [u'monetary_value'], u'area': [u'scope', u'city'], u'achieved': [u'India'], u'political': [u'government', u'government'], u'adopted': [u'policy'], u'physically': [u'constraint'], u'show': [u'picture', u'consider'], u'meeting': [u'battle'], u'war': [u'battle'], u'urban': [u'city'], u'``': [u'scope'], u'infection': [u'fever'], u'part': [u'paralysis'], u'symptom': [u'fever'], u'hostile': [u'battle'], u'account': [u'consider'], u'made': [u'new'], u'apprehension': [u'dismay'], u'official': [u'issue', u'NOC'], u'roof': [u'building'], u'air': [u'roentgen'], u'districts': [u'city'], u'frequency': [u'frequency_modulation'], u'analog': [u'digitization'], u'providing': [u'issue'], u'powers': [u'magic'], u'control': [u'scope'], u'indicated': [u'monetary_value'], u'purposes': [u'issue'], u'agent': [u'NOC'], u'general': [u'issue'], u"''": [u'scope'], u'caution': [u'wary'], u'something': [u'scope', u'monetary_value', u'bring'], u'constrained': [u'constraint'], u'film': [u'Bollywood'], u'fill': [u'dismay'], u'information': [u'digitization'], u'watchful': [u'wary'], u'acts': [u'scope'], u'radiation': [u'roentgen'], u'amount': [u'monetary_value'], u'1': [u'roentgen'], u'republic': [u'India'], u'take': [u'bring', u'consider'], u'forces': [u'battle'], u'digital': [u'digitization'], u'populous': [u'India'], u'several': [u'city'], u'independent': [u'city'], u'express': [u'state'], u'relatively': [u'new'], u'oneself': [u'bring'], u'somewhere': [u'bring'], u'modulation': [u'frequency_modulation'], u'social': [u'policy'], u'southern': [u'India'], u'conversion': [u'digitization'], u'action': [u'policy'], u'rise': [u'fever'], u'produce': [u'roentgen'], u'plan': [u'policy'], u'frequently': [u'fever'], u'structure': [u'building'], u'exposure': [u'roentgen'], u'supersonic': [u'scope'], u'picture': [u'picture'], u'individual': [u'policy'], u'light': [u'flicker'], u'alarm': [u'dismay'], u'cover': [u'NOC'], u'person': [u'expert'], u'opposing': [u'battle'], u'Asian': [u'India'], u'organization': [u'government', u'government'], u'quantity': [u'issue']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('lupus_erythematosus.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('money.n.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('move.n.01')
+lsynset= Synset('paralysis.n.01')
+ksynset= Synset('dose.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('detect.v.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('bring.v.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('radio.n.01')
+lsynset= Synset('frequency_modulation.n.01')
+ksynset= Synset('kingdom.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('electricity.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('flash.n.01')
+lsynset= Synset('flicker.n.01')
+ksynset= Synset('permanently.r.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('raise.v.07')
+lsynset= Synset('magic.n.01')
+ksynset= Synset('include.v.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('administrative.a.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('worth.n.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('surprise.v.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('ionize.v.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('bring.v.01')
+ksynset= Synset('material.n.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('prudence.n.01')
+lsynset= Synset('wary.a.01')
+ksynset= Synset('wave.n.01')
+lsynset= Synset('frequency_modulation.n.01')
+ksynset= Synset('wall.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('tag.v.01')
+lsynset= Synset('wary.a.01')
+ksynset= Synset('words.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('universe.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('loss.n.01')
+lsynset= Synset('paralysis.n.01')
+ksynset= Synset('course.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('india.n.01')
+lsynset= Synset('bollywood.n.01')
+ksynset= Synset('subcontinent.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('large.n.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('item.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('clandestine.s.01')
+lsynset= Synset('noc.n.01')
+ksynset= Synset('art.n.01')
+lsynset= Synset('magic.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('populate.v.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('get.v.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('authority.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('authority.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('operate.v.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('second.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('electrostatic.a.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('duration.n.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('fleeting.s.01')
+lsynset= Synset('flicker.n.01')
+ksynset= Synset('base.n.08')
+lsynset= Synset('building.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('constraint.n.01')
+ksynset= Synset('supernatural.n.01')
+lsynset= Synset('magic.n.01')
+ksynset= Synset('perform.v.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('independence.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('body.n.01')
+lsynset= Synset('paralysis.n.01')
+ksynset= Synset('recently.r.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('ability.n.01')
+lsynset= Synset('paralysis.n.01')
+ksynset= Synset('ability.n.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('opening.n.01')
+lsynset= Synset('crack.n.01')
+ksynset= Synset('sell.v.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('government.n.02')
+lsynset= Synset('government.n.01')
+ksynset= Synset('government.n.02')
+lsynset= Synset('government.n.01')
+ksynset= Synset('dumbly.r.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('skillfully.r.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('consideration.n.01')
+lsynset= Synset('see.v.05')
+ksynset= Synset('semen.n.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('dry.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('property.n.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('jet.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('state.n.04')
+lsynset= Synset('india.n.01')
+ksynset= Synset('industry.n.01')
+lsynset= Synset('bollywood.n.01')
+ksynset= Synset('keen.n.01')
+lsynset= Synset('wary.a.01')
+ksynset= Synset('scope.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('carrier.n.01')
+lsynset= Synset('frequency_modulation.n.01')
+ksynset= Synset('topographic_point.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('normally.r.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('military.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('narrow.n.01')
+lsynset= Synset('crack.n.01')
+ksynset= Synset('milliliter.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('asia.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('hanker.v.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('hanker.v.01')
+lsynset= Synset('crack.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('unit_of_measurement.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('unpleasantly.r.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('given.n.01')
+lsynset= Synset('noc.n.01')
+ksynset= Synset('temperature.n.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('area.n.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('achieve.v.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('political.a.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('adopt.v.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('physically.r.01')
+lsynset= Synset('constraint.n.01')
+ksynset= Synset('show.n.01')
+lsynset= Synset('picture.n.01')
+ksynset= Synset('show.n.01')
+lsynset= Synset('see.v.05')
+ksynset= Synset('meeting.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('war.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('urban.a.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('infection.n.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('paralysis.n.01')
+ksynset= Synset('symptom.n.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('hostile.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('history.n.02')
+lsynset= Synset('see.v.05')
+ksynset= Synset('make.v.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('apprehension.n.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('official.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('official.n.01')
+lsynset= Synset('noc.n.01')
+ksynset= Synset('roof.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('air.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('district.n.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('frequency.n.01')
+lsynset= Synset('frequency_modulation.n.01')
+ksynset= Synset('analogue.n.01')
+lsynset= Synset('digitization.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('magic.n.01')
+ksynset= Synset('control.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('bespeak.v.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('purpose.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('agent.n.01')
+lsynset= Synset('noc.n.01')
+ksynset= Synset('general.n.01')
+lsynset= Synset('issue.n.01')
+ksynset= Synset('caution.n.01')
+lsynset= Synset('wary.a.01')
+ksynset= Synset('restrain.v.04')
+lsynset= Synset('constraint.n.01')
+ksynset= Synset('movie.n.01')
+lsynset= Synset('bollywood.n.01')
+ksynset= Synset('fill.n.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('digitization.n.01')
+ksynset= Synset('alert.a.01')
+lsynset= Synset('wary.a.01')
+ksynset= Synset('acts_of_the_apostles.n.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('radiation.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('monetary_value.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('democracy.n.02')
+lsynset= Synset('india.n.01')
+ksynset= Synset('return.n.06')
+lsynset= Synset('bring.v.01')
+ksynset= Synset('return.n.06')
+lsynset= Synset('see.v.05')
+ksynset= Synset('force.n.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('digital.a.01')
+lsynset= Synset('digitization.n.01')
+ksynset= Synset('populous.s.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('several.s.01')
+lsynset= Synset('city.n.01')
+ksynset= Synset('mugwump.n.02')
+lsynset= Synset('city.n.01')
+ksynset= Synset('express.n.01')
+lsynset= Synset('state.n.01')
+ksynset= Synset('relatively.r.01')
+lsynset= Synset('new.a.01')
+ksynset= Synset('somewhere.n.01')
+lsynset= Synset('bring.v.01')
+ksynset= Synset('transition.n.04')
+lsynset= Synset('frequency_modulation.n.01')
+ksynset= Synset('sociable.n.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('southern.a.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('conversion.n.01')
+lsynset= Synset('digitization.n.01')
+ksynset= Synset('action.n.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('rise.n.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('produce.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('fever.n.01')
+ksynset= Synset('structure.n.01')
+lsynset= Synset('building.n.01')
+ksynset= Synset('exposure.n.01')
+lsynset= Synset('roentgen.n.01')
+ksynset= Synset('supersonic.a.01')
+lsynset= Synset('scope.n.01')
+ksynset= Synset('picture.n.01')
+lsynset= Synset('picture.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('policy.n.01')
+ksynset= Synset('light.n.01')
+lsynset= Synset('flicker.n.01')
+ksynset= Synset('alarm.n.01')
+lsynset= Synset('discouragement.n.01')
+ksynset= Synset('screen.n.04')
+lsynset= Synset('noc.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('expert.n.01')
+ksynset= Synset('oppose.v.01')
+lsynset= Synset('battle.n.01')
+ksynset= Synset('asian.n.01')
+lsynset= Synset('india.n.01')
+ksynset= Synset('organization.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('organization.n.01')
+lsynset= Synset('government.n.01')
+ksynset= Synset('measure.n.02')
+lsynset= Synset('issue.n.01')
+Core number (sorted) : [(u'India', 15), (u'roentgen', 12), (u'monetary_value', 11), (u'scope', 11), (u'city', 10), (u'issue', 9), (u'new', 8), (u'building', 8), (u'bring', 7), (u'battle', 7), (u'policy', 6), (u'expert', 6), (u'dismay', 6), (u'something', 6), (u'fever', 6), (u'frequency_modulation', 5), (u'government', 5), (u'paralysis', 5), (u'NOC', 5), (u'wary', 5), (u'consider', 4), (u'crack', 4), (u'magic', 4), (u'state', 4), (u'body', 4), (u'ability', 4), (u'digitization', 4), (u'constraint', 4), (u'long', 4), (u'unit', 4), (u'area', 4), (u'Bollywood', 4), (u'official', 4), (u'take', 4), (u'flicker', 3), (u'show', 3), (u'United', 2), (u'less', 2), (u'money', 2), (u'move', 2), (u'dose', 2), (u'discovered', 2), (u'radio', 2), (u'Kingdom', 2), (u'group', 2), (u'knowledge', 2), (u'electricity', 2), (u'flash', 2), (u'1947', 2), (u'permanently', 2), (u'invokes', 2), (u'include', 2), (u'administrative', 2), (u'worth', 2), (u'surprised', 2), (u'ionizing', 2), (u'somebody', 2), (u'material', 2), (u'prudence', 2), (u'wave', 2), (u'walls', 2), (u'marked', 2), (u'words', 2), (u'world', 2), (u'loss', 2), (u'course', 2), (u'cause', 2), (u'subcontinent', 2), (u'large', 2), (u'item', 2), (u'independence', 2), (u'undercover', 2), (u'art', 2), (u'often', 2), (u'populated', 2), (u'acquired', 2), (u'authority', 2), (u'operates', 2), (u'second', 2), (u'electrostatic', 2), (u'duration', 2), (u'special', 2), (u'momentary', 2), (u'stands', 2), (u'supernatural', 2), (u'performs', 2), (u'recently', 2), (u'power', 2), (u'opening', 2), (u'sold', 2), (u'use', 2), (u'governing', 2), (u'densely', 2), (u'skillfully', 2), (u'consideration', 2), (u'come', 2), (u'dry', 2), (u'property', 2), (u'country', 2), (u'industry', 2), (u'keen', 2), (u'range', 2), (u'carrier', 2), (u'place', 2), (u'act', 2), (u'usually', 2), (u'military', 2), (u'narrow', 2), (u'cc', 2), (u'Asia', 2), (u'one', 2), (u'jet', 2), (u'unpleasantly', 2), (u'given', 2), (u'temperature', 2), (u'would', 2), (u'achieved', 2), (u'political', 2), (u'adopted', 2), (u'physically', 2), (u'meeting', 2), (u'war', 2), (u'``', 2), (u'infection', 2), (u'part', 2), (u'symptom', 2), (u'hostile', 2), (u'account', 2), (u'made', 2), (u'apprehension', 2), (u'roof', 2), (u'air', 2), (u'districts', 2), (u'frequency', 2), (u'providing', 2), (u'powers', 2), (u'control', 2), (u'independent', 2), (u'indicated', 2), (u'urban', 2), (u'cover', 2), (u'purposes', 2), (u'agent', 2), (u'general', 2), (u"''", 2), (u'caution', 2), (u'constrained', 2), (u'film', 2), (u'fill', 2), (u'information', 2), (u'watchful', 2), (u'acts', 2), (u'radiation', 2), (u'amount', 2), (u'1', 2), (u'republic', 2), (u'forces', 2), (u'digital', 2), (u'populous', 2), (u'several', 2), (u'picture', 2), (u'express', 2), (u'relatively', 2), (u'oneself', 2), (u'somewhere', 2), (u'modulation', 2), (u'social', 2), (u'southern', 2), (u'conversion', 2), (u'action', 2), (u'rise', 2), (u'produce', 2), (u'plan', 2), (u'frequently', 2), (u'structure', 2), (u'exposure', 2), (u'supersonic', 2), (u'individual', 2), (u'light', 2), (u'alarm', 2), (u'analog', 2), (u'person', 2), (u'opposing', 2), (u'Asian', 2), (u'organization', 2), (u'quantity', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: India ,core number= 15
+This document belongs to class: roentgen ,core number= 12
+This document belongs to class: monetary_value ,core number= 11
+This document belongs to class: scope ,core number= 11
+This document belongs to class: city ,core number= 10
+This document belongs to class: issue ,core number= 9
+This document belongs to class: new ,core number= 8
+This document belongs to class: building ,core number= 8
+This document belongs to class: bring ,core number= 7
+This document belongs to class: battle ,core number= 7
+This document belongs to class: policy ,core number= 6
+This document belongs to class: expert ,core number= 6
+This document belongs to class: dismay ,core number= 6
+This document belongs to class: something ,core number= 6
+This document belongs to class: fever ,core number= 6
+This document belongs to class: frequency_modulation ,core number= 5
+This document belongs to class: government ,core number= 5
+This document belongs to class: paralysis ,core number= 5
+This document belongs to class: NOC ,core number= 5
+This document belongs to class: wary ,core number= 5
+	max_core_number 15
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'India', 0.03933697504230141), (u'roentgen', 0.03149520322543557), (u'scope', 0.02725446661122223), (u'monetary_value', 0.02684551779680327), (u'city', 0.026187126567783478), (u'issue', 0.02403786147937471), (u'building', 0.02266515946972457), (u'new', 0.021714344492324754), (u'battle', 0.020195328700624137), (u'policy', 0.0177254979315237), (u'dismay', 0.017725497931523698), (u'expert', 0.01634735440910145), (u'fever', 0.016347354409101445), (u'frequency_modulation', 0.01525566716242327), (u'wary', 0.015255667162423263), (u'bring', 0.014231984793582248), (u'NOC', 0.013882965152773123), (u'government', 0.013835115714013597), (u'paralysis', 0.013072292669066886), (u'magic', 0.012785836393322824), (u'digitization', 0.012785836393322824), (u'consider', 0.010735041882423637), (u'flicker', 0.010316005624222382), (u'state', 0.009265614275909217), (u'constraint', 0.009265614275909217), (u'crack', 0.008796989832521774), (u'Bollywood', 0.0085025634438653), (u'something', 0.00700346856696947), (u'show', 0.005907168025725612), (u'long', 0.005607107325009969), (u'official', 0.005437906586838848), (u'unit', 0.00539049272823945), (u'body', 0.00534561263852004), (u'ability', 0.00534561263852004), (u'area', 0.005139086376075559), (u'take', 0.005103948921715903), (u'flash', 0.0037297902399545464), (u'momentary', 0.0037297902399545464), (u'light', 0.0037297902399545464), (u'supernatural', 0.0035239710091961775), (u'art', 0.0035239710091961775), (u'invokes', 0.0035239710091961775), (u'analog', 0.0035239710091961775), (u'powers', 0.0035239710091961775), (u'information', 0.0035239710091961775), (u'digital', 0.0035239710091961775), (u'conversion', 0.0035239710091961775), (u'words', 0.00343170899107765), (u'physically', 0.00343170899107765), (u'constrained', 0.00343170899107765), (u'express', 0.00343170899107765), (u'radio', 0.0034004794707411558), (u'prudence', 0.0034004794707411558), (u'wave', 0.0034004794707411558), (u'keen', 0.0034004794707411558), (u'carrier', 0.0034004794707411558), (u'marked', 0.0034004794707411558), (u'frequency', 0.0034004794707411558), (u'caution', 0.0034004794707411558), (u'watchful', 0.0034004794707411558), (u'modulation', 0.0034004794707411558), (u'group', 0.0033181517784378065), (u'surprised', 0.0033181517784378065), (u'cause', 0.0033181517784378065), (u'adopted', 0.0033181517784378065), (u'unpleasantly', 0.0033181517784378065), (u'apprehension', 0.0033181517784378065), (u'fill', 0.0033181517784378065), (u'social', 0.0033181517784378065), (u'action', 0.0033181517784378065), (u'plan', 0.0033181517784378065), (u'individual', 0.0033181517784378065), (u'alarm', 0.0033181517784378065), (u'picture', 0.0033169341204889887), (u'opening', 0.0032994450365981557), (u'narrow', 0.0032994450365981557), (u'course', 0.0032593462839354153), (u'military', 0.0032593462839354153), (u'meeting', 0.0032593462839354153), (u'war', 0.0032593462839354153), (u'hostile', 0.0032593462839354153), (u'forces', 0.0032593462839354153), (u'opposing', 0.0032593462839354153), (u'less', 0.0032152421630586223), (u'permanently', 0.0032152421630586223), (u'walls', 0.0032152421630586223), (u'stands', 0.0032152421630586223), (u'place', 0.0032152421630586223), (u'one', 0.0032152421630586223), (u'roof', 0.0032152421630586223), (u'structure', 0.0032152421630586223), (u'industry', 0.0032150132224841896), (u'film', 0.0032150132224841896), (u'undercover', 0.0031671093816501694), (u'given', 0.0031671093816501694), (u'agent', 0.0031671093816501694), (u'cover', 0.0031671093816501694), (u'authority', 0.0031590008388387037), (u'governing', 0.0031590008388387037), (u'political', 0.0031590008388387037), (u'organization', 0.0031590008388387037), (u'knowledge', 0.003122824861401062), (u'special', 0.003122824861401062), (u'performs', 0.003122824861401062), (u'skillfully', 0.003122824861401062), (u'temperature', 0.003122824861401062), (u'infection', 0.003122824861401062), (u'symptom', 0.003122824861401062), (u'rise', 0.003122824861401062), (u'frequently', 0.003122824861401062), (u'person', 0.003122824861401062), (u'discovered', 0.0031141139013150386), (u'acquired', 0.0031141139013150386), (u'duration', 0.0031141139013150386), (u'recently', 0.0031141139013150386), (u'come', 0.0031141139013150386), (u'made', 0.0031141139013150386), (u'relatively', 0.0031141139013150386), (u'consideration', 0.0030877089300141193), (u'account', 0.0030877089300141193), (u'item', 0.003077248818091904), (u'providing', 0.003077248818091904), (u'act', 0.003077248818091904), (u'usually', 0.003077248818091904), (u'use', 0.003077248818091904), (u'purposes', 0.003077248818091904), (u'general', 0.003077248818091904), (u'quantity', 0.003077248818091904), (u'dose', 0.0030379435023039723), (u'electricity', 0.0030379435023039723), (u'ionizing', 0.0030379435023039723), (u'electrostatic', 0.0030379435023039723), (u'dry', 0.0030379435023039723), (u'cc', 0.0030379435023039723), (u'air', 0.0030379435023039723), (u'radiation', 0.0030379435023039723), (u'1', 0.0030379435023039723), (u'produce', 0.0030379435023039723), (u'exposure', 0.0030379435023039723), (u'United', 0.003036044901232288), (u'Kingdom', 0.003036044901232288), (u'1947', 0.003036044901232288), (u'Asia', 0.003036044901232288), (u'world', 0.003036044901232288), (u'subcontinent', 0.003036044901232288), (u'independence', 0.003036044901232288), (u'second', 0.003036044901232288), (u'country', 0.003036044901232288), (u'achieved', 0.003036044901232288), (u'republic', 0.003036044901232288), (u'populous', 0.003036044901232288), (u'southern', 0.003036044901232288), (u'Asian', 0.003036044901232288), (u'include', 0.0030327881758590446), (u'administrative', 0.0030327881758590446), (u'large', 0.0030327881758590446), (u'populated', 0.0030327881758590446), (u'densely', 0.0030327881758590446), (u'districts', 0.0030327881758590446), (u'urban', 0.0030327881758590446), (u'several', 0.0030327881758590446), (u'independent', 0.0030327881758590446), (u'move', 0.0030292393900222046), (u'loss', 0.0030292393900222046), (u'part', 0.0030292393900222046), (u'operates', 0.002912749813119741), (u'power', 0.002912749813119741), (u'range', 0.002912749813119741), (u'jet', 0.002912749813119741), (u'``', 0.002912749813119741), (u'control', 0.002912749813119741), (u"''", 0.002912749813119741), (u'acts', 0.002912749813119741), (u'supersonic', 0.002912749813119741), (u'money', 0.002880930375051172), (u'worth', 0.002880930375051172), (u'material', 0.002880930375051172), (u'often', 0.002880930375051172), (u'sold', 0.002880930375051172), (u'property', 0.002880930375051172), (u'would', 0.002880930375051172), (u'indicated', 0.002880930375051172), (u'amount', 0.002880930375051172), (u'somebody', 0.0028226916046050097), (u'oneself', 0.0028226916046050097), (u'somewhere', 0.0028226916046050097)]
+================================================================================
+A primitive text generated from traversal of the k-core closure of RGO Definition Graph
+================================================================================
+
+
+==============================================================================
+Lambda Composition Closure with Depth First Search of RGO graph edges as relations
+==============================================================================
+defaultdict(<type 'list'>, {u'radiation - roentgen': [' is a subinstance of '], u'issue - usually': [' is a superinstance of '], u'wave - frequency_modulation': [' is a subinstance of '], u'monetary_value - amount': [' is a superinstance of '], u'forces - battle': [' is a subinstance of '], u'place - building': [' is a subinstance of '], u'government - authority': [' is a superinstance of ', ' is a superinstance of '], u'new - acquired': [' is a superinstance of '], u'ionizing - roentgen': [' is a subinstance of '], u'Kingdom - India': [' is a subinstance of '], u'India - world': [' is a superinstance of '], u'dry - roentgen': [' is a subinstance of '], u'populated - city': [' is a subinstance of '], u'NOC - official': [' is a superinstance of '], u'roentgen - exposure': [' is a superinstance of '], u'constraint - constrained': [' is a superinstance of '], u'battle - meeting': [' is a superinstance of '], u'area - city': [' is a subinstance of '], u'scope - supersonic': [' is a superinstance of '], u'radio - frequency_modulation': [' is a subinstance of '], u'consideration - consider': [' is a subinstance of '], u'bring - somebody': [' is a superinstance of '], u'large - city': [' is a subinstance of '], u'Bollywood - industry': [' is a superinstance of '], u'city - districts': [' is a superinstance of '], u'take - bring': [' is a subinstance of '], u'show - picture': [' is a subinstance of '], u'battle - hostile': [' is a superinstance of '], u'scope - jet': [' is a superinstance of '], u'part - paralysis': [' is a subinstance of '], u'adopted - policy': [' is a subinstance of '], u'bring - oneself': [' is a superinstance of '], u'often - monetary_value': [' is a subinstance of '], u'building - less': [' is a superinstance of '], u'fever - infection': [' is a superinstance of '], u'issue - official': [' is a superinstance of '], u'building - walls': [' is a superinstance of '], u'government - unit': [' is a superinstance of ', ' is a superinstance of '], u'authority - government': [' is a subinstance of ', ' is a subinstance of '], u'constraint - physically': [' is a superinstance of '], u'made - new': [' is a subinstance of '], u'organization - government': [' is a subinstance of ', ' is a subinstance of '], u'districts - city': [' is a subinstance of '], u'film - Bollywood': [' is a subinstance of '], u'one - building': [' is a subinstance of '], u'ability - paralysis': [' is a subinstance of '], u'consider - show': [' is a superinstance of '], u'Bollywood - India': [' is a superinstance of '], u'special - expert': [' is a subinstance of '], u'magic - supernatural': [' is a superinstance of '], u'issue - act': [' is a superinstance of '], u'building - permanently': [' is a superinstance of '], u'roentgen - 1': [' is a superinstance of '], u'alarm - dismay': [' is a subinstance of '], u'discovered - new': [' is a subinstance of '], u'analog - digitization': [' is a subinstance of '], u'republic - India': [' is a subinstance of '], u'India - 1947': [' is a superinstance of '], u'purposes - issue': [' is a subinstance of '], u'cover - NOC': [' is a subinstance of '], u'course - battle': [' is a subinstance of '], u'come - new': [' is a subinstance of '], u'digitization - conversion': [' is a superinstance of '], u'frequently - fever': [' is a subinstance of '], u'monetary_value - sold': [' is a superinstance of '], u'India - southern': [' is a superinstance of '], u'wary - prudence': [' is a superinstance of '], u'cc - roentgen': [' is a subinstance of '], u'India - achieved': [' is a superinstance of '], u'constrained - constraint': [' is a subinstance of '], u'relatively - new': [' is a subinstance of '], u'political - government': [' is a subinstance of ', ' is a subinstance of '], u'ability - expert': [' is a subinstance of '], u'take - consider': [' is a subinstance of '], u'stands - building': [' is a subinstance of '], u'government - governing': [' is a superinstance of ', ' is a superinstance of '], u'magic - invokes': [' is a superinstance of '], u'battle - opposing': [' is a superinstance of '], u'paralysis - loss': [' is a superinstance of '], u'India - Kingdom': [' is a superinstance of '], u'NOC - cover': [' is a superinstance of '], u'expert - ability': [' is a superinstance of '], u'scope - range': [' is a superinstance of '], u'roentgen - air': [' is a superinstance of '], u'duration - new': [' is a subinstance of '], u'Bollywood - film': [' is a superinstance of '], u'military - battle': [' is a subinstance of '], u'roentgen - unit': [' is a superinstance of '], u'apprehension - dismay': [' is a subinstance of '], u'monetary_value - often': [' is a superinstance of '], u'roentgen - produce': [' is a superinstance of '], u'crack - opening': [' is a superinstance of '], u'city - include': [' is a superinstance of '], u'new - duration': [' is a superinstance of '], u'scope - something': [' is a superinstance of '], u'policy - social': [' is a superinstance of '], u'include - city': [' is a subinstance of '], u'Asian - India': [' is a subinstance of '], u'dismay - unpleasantly': [' is a superinstance of '], u'administrative - city': [' is a subinstance of '], u'India - United': [' is a superinstance of '], u'acquired - new': [' is a subinstance of '], u'supernatural - magic': [' is a subinstance of '], u'scope - control': [' is a superinstance of '], u'building - structure': [' is a superinstance of '], u'independent - city': [' is a subinstance of '], u'sold - monetary_value': [' is a subinstance of '], u'group - policy': [' is a subinstance of '], u'roof - building': [' is a subinstance of '], u'new - recently': [' is a superinstance of '], u'paralysis - move': [' is a superinstance of '], u'roentgen - dose': [' is a superinstance of '], u'material - monetary_value': [' is a subinstance of '], u'frequency - frequency_modulation': [' is a subinstance of '], u'populous - India': [' is a subinstance of '], u'wary - marked': [' is a superinstance of '], u'expert - skillfully': [' is a superinstance of '], u'dismay - apprehension': [' is a superinstance of '], u'picture - show': [' is a superinstance of '], u'monetary_value - property': [' is a superinstance of '], u'new - long': [' is a superinstance of '], u'fever - body': [' is a superinstance of '], u'move - paralysis': [' is a subinstance of '], u'scope - operates': [' is a superinstance of '], u'jet - scope': [' is a subinstance of '], u'new - come': [' is a superinstance of '], u'monetary_value - bring': [' is a superinstance of '], u'flicker - light': [' is a superinstance of '], u'rise - fever': [' is a subinstance of '], u'scope - ``': [' is a superinstance of '], u'consider - take': [' is a superinstance of '], u'picture - picture': [' is a subinstance of ', ' is a superinstance of '], u'subcontinent - India': [' is a subinstance of '], u'would - monetary_value': [' is a subinstance of '], u'frequency_modulation - carrier': [' is a superinstance of '], u'item - issue': [' is a subinstance of '], u'unpleasantly - dismay': [' is a subinstance of '], u'long - crack': [' is a subinstance of '], u'range - scope': [' is a subinstance of '], u'acts - scope': [' is a subinstance of '], u'crack - long': [' is a superinstance of '], u'roentgen - cc': [' is a superinstance of '], u'agent - NOC': [' is a subinstance of '], u'new - relatively': [' is a superinstance of '], u'city - administrative': [' is a superinstance of '], u'opening - crack': [' is a subinstance of '], u'state - express': [' is a superinstance of '], u'worth - monetary_value': [' is a subinstance of '], u'issue - quantity': [' is a superinstance of '], u'meeting - battle': [' is a subinstance of '], u'powers - magic': [' is a subinstance of '], u'southern - India': [' is a subinstance of '], u'monetary_value - material': [' is a superinstance of '], u'policy - action': [' is a superinstance of '], u'issue - item': [' is a superinstance of '], u'somebody - bring': [' is a subinstance of '], u'consider - account': [' is a superinstance of '], u'governing - government': [' is a subinstance of ', ' is a subinstance of '], u'general - issue': [' is a subinstance of '], u'city - large': [' is a superinstance of '], u'monetary_value - money': [' is a superinstance of '], u'unit - roentgen': [' is a subinstance of '], u'control - scope': [' is a subinstance of '], u'air - roentgen': [' is a subinstance of '], u'express - state': [' is a subinstance of '], u'electricity - roentgen': [' is a subinstance of '], u'India - country': [' is a superinstance of '], u'scope - area': [' is a superinstance of '], u'fill - dismay': [' is a subinstance of '], u'digitization - information': [' is a superinstance of '], u'individual - policy': [' is a subinstance of '], u'words - state': [' is a subinstance of '], u'city - urban': [' is a superinstance of '], u'structure - building': [' is a subinstance of '], u'bring - somewhere': [' is a superinstance of '], u'surprised - dismay': [' is a subinstance of '], u'expert - performs': [' is a superinstance of '], u'watchful - wary': [' is a subinstance of '], u'achieved - India': [' is a subinstance of '], u'policy - plan': [' is a superinstance of '], u'unit - government': [' is a subinstance of ', ' is a subinstance of '], u'flash - flicker': [' is a subinstance of '], u'issue - providing': [' is a superinstance of '], u'dismay - surprised': [' is a superinstance of '], u'information - digitization': [' is a subinstance of '], u'something - monetary_value': [' is a subinstance of '], u'India - Asia': [' is a superinstance of '], u'narrow - crack': [' is a subinstance of '], u'city - area': [' is a superinstance of '], u'city - populated': [' is a superinstance of '], u'show - consider': [' is a subinstance of '], u'prudence - wary': [' is a subinstance of '], u'India - independence': [' is a superinstance of '], u'body - fever': [' is a subinstance of '], u'paralysis - body': [' is a superinstance of '], u'keen - wary': [' is a subinstance of '], u'paralysis - ability': [' is a superinstance of '], u'permanently - building': [' is a subinstance of '], u'roentgen - radiation': [' is a superinstance of '], u'official - NOC': [' is a subinstance of '], u'NOC - agent': [' is a superinstance of '], u'performs - expert': [' is a subinstance of '], u'modulation - frequency_modulation': [' is a subinstance of '], u'government - organization': [' is a superinstance of ', ' is a superinstance of '], u'building - stands': [' is a superinstance of '], u'flicker - momentary': [' is a superinstance of '], u'knowledge - expert': [' is a subinstance of '], u'action - policy': [' is a subinstance of '], u'infection - fever': [' is a subinstance of '], u'wary - watchful': [' is a superinstance of '], u'digital - digitization': [' is a subinstance of '], u'second - India': [' is a subinstance of '], u'social - policy': [' is a subinstance of '], u'Asia - India': [' is a subinstance of '], u'monetary_value - indicated': [' is a superinstance of '], u'new - discovered': [' is a superinstance of '], u'policy - adopted': [' is a superinstance of '], u'fever - temperature': [' is a superinstance of '], u'supersonic - scope': [' is a subinstance of '], u'bring - monetary_value': [' is a subinstance of '], u'monetary_value - something': [' is a superinstance of '], u'bring - take': [' is a superinstance of '], u'war - battle': [' is a subinstance of '], u'frequency_modulation - modulation': [' is a superinstance of '], u'India - Asian': [' is a superinstance of '], u'wary - caution': [' is a superinstance of '], u'country - India': [' is a subinstance of '], u'battle - forces': [' is a superinstance of '], u'crack - narrow': [' is a superinstance of '], u'constraint - state': [' is a superinstance of '], u"'' - scope": [' is a subinstance of '], u'policy - individual': [' is a superinstance of '], u'undercover - NOC': [' is a subinstance of '], u'roentgen - ionizing': [' is a superinstance of '], u'carrier - frequency_modulation': [' is a subinstance of '], u'magic - art': [' is a superinstance of '], u'1947 - India': [' is a subinstance of '], u'fever - rise': [' is a superinstance of '], u'power - scope': [' is a subinstance of '], u'NOC - undercover': [' is a superinstance of '], u'money - monetary_value': [' is a subinstance of '], u'act - issue': [' is a subinstance of '], u'1 - roentgen': [' is a subinstance of '], u'less - building': [' is a subinstance of '], u'opposing - battle': [' is a subinstance of '], u'area - scope': [' is a subinstance of '], u'paralysis - part': [' is a superinstance of '], u'hostile - battle': [' is a subinstance of '], u'dose - roentgen': [' is a subinstance of '], u'frequency_modulation - frequency': [' is a superinstance of '], u'long - new': [' is a subinstance of '], u'dismay - cause': [' is a superinstance of '], u"scope - ''": [' is a superinstance of '], u'person - expert': [' is a subinstance of '], u'roentgen - electrostatic': [' is a superinstance of '], u'loss - paralysis': [' is a subinstance of '], u'building - one': [' is a superinstance of '], u'conversion - digitization': [' is a subinstance of '], u'temperature - fever': [' is a subinstance of '], u'cause - dismay': [' is a subinstance of '], u'use - issue': [' is a subinstance of '], u'momentary - flicker': [' is a subinstance of '], u'dismay - alarm': [' is a superinstance of '], u'indicated - monetary_value': [' is a subinstance of '], u'policy - group': [' is a superinstance of '], u'city - densely': [' is a superinstance of '], u'expert - knowledge': [' is a superinstance of '], u'something - scope': [' is a subinstance of '], u'building - roof': [' is a superinstance of '], u'exposure - roentgen': [' is a subinstance of '], u'bring - something': [' is a superinstance of '], u'produce - roentgen': [' is a subinstance of '], u'wary - keen': [' is a superinstance of '], u'India - Bollywood': [' is a subinstance of '], u'physically - constraint': [' is a subinstance of '], u'independence - India': [' is a subinstance of '], u'digitization - digital': [' is a superinstance of '], u'NOC - given': [' is a superinstance of '], u'India - populous': [' is a superinstance of '], u'light - flicker': [' is a subinstance of '], u'India - subcontinent': [' is a superinstance of '], u'oneself - bring': [' is a subinstance of '], u'dismay - fill': [' is a superinstance of '], u'somewhere - bring': [' is a subinstance of '], u'battle - war': [' is a superinstance of '], u'several - city': [' is a subinstance of '], u'electrostatic - roentgen': [' is a subinstance of '], u'recently - new': [' is a subinstance of '], u'monetary_value - worth': [' is a superinstance of '], u'monetary_value - would': [' is a superinstance of '], u'marked - wary': [' is a subinstance of '], u'building - place': [' is a superinstance of '], u'operates - scope': [' is a subinstance of '], u'issue - general': [' is a superinstance of '], u'consider - consideration': [' is a superinstance of '], u'official - issue': [' is a subinstance of '], u'fever - frequently': [' is a superinstance of '], u'art - magic': [' is a subinstance of '], u'given - NOC': [' is a subinstance of '], u'caution - wary': [' is a subinstance of '], u'frequency_modulation - wave': [' is a superinstance of '], u'scope - power': [' is a superinstance of '], u'United - India': [' is a subinstance of '], u'invokes - magic': [' is a subinstance of '], u'flicker - flash': [' is a superinstance of '], u'account - consider': [' is a subinstance of '], u'battle - military': [' is a superinstance of '], u'India - second': [' is a superinstance of '], u'expert - special': [' is a superinstance of '], u'digitization - analog': [' is a superinstance of '], u'something - bring': [' is a subinstance of '], u'expert - person': [' is a superinstance of '], u'magic - powers': [' is a superinstance of '], u'issue - use': [' is a superinstance of '], u'plan - policy': [' is a subinstance of '], u'city - several': [' is a superinstance of '], u'urban - city': [' is a subinstance of '], u'body - paralysis': [' is a subinstance of '], u'roentgen - electricity': [' is a superinstance of '], u'state - constraint': [' is a subinstance of '], u'quantity - issue': [' is a subinstance of '], u'densely - city': [' is a subinstance of '], u'providing - issue': [' is a subinstance of '], u'state - words': [' is a superinstance of '], u'fever - symptom': [' is a superinstance of '], u'new - made': [' is a superinstance of '], u'symptom - fever': [' is a subinstance of '], u'issue - purposes': [' is a superinstance of '], u'walls - building': [' is a subinstance of '], u'city - independent': [' is a superinstance of '], u'roentgen - dry': [' is a superinstance of '], u'`` - scope': [' is a subinstance of '], u'battle - course': [' is a superinstance of '], u'property - monetary_value': [' is a subinstance of '], u'amount - monetary_value': [' is a subinstance of '], u'usually - issue': [' is a subinstance of '], u'world - India': [' is a subinstance of '], u'skillfully - expert': [' is a subinstance of '], u'scope - acts': [' is a superinstance of '], u'industry - Bollywood': [' is a subinstance of '], u'India - republic': [' is a superinstance of '], u'government - political': [' is a superinstance of ', ' is a superinstance of '], u'frequency_modulation - radio': [' is a superinstance of ']})
+(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((( [lambda: United  is a subinstance of  India]) [lambda: India  is a superinstance of  Kingdom]) [lambda: India  is a superinstance of  achieved]) [lambda: India  is a superinstance of  country]) [lambda: India  is a superinstance of  southern]) [lambda: India  is a superinstance of  1947]) [lambda: India  is a superinstance of  subcontinent]) [lambda: India  is a superinstance of  second]) [lambda: India  is a superinstance of  republic]) [lambda: India  is a superinstance of  Asia]) [lambda: India  is a superinstance of  populous]) [lambda: India  is a superinstance of  world]) [lambda: India  is a subinstance of  Bollywood]) [lambda: Bollywood  is a superinstance of  industry]) [lambda: Bollywood  is a superinstance of  film]) [lambda: India  is a superinstance of  independence]) [lambda: India  is a superinstance of  Asian]) [lambda: consider  is a superinstance of  consideration]) [lambda: consider  is a superinstance of  account]) [lambda: consider  is a superinstance of  take]) [lambda: take  is a subinstance of  bring]) [lambda: bring  is a superinstance of  somebody]) [lambda: bring  is a superinstance of  oneself]) [lambda: bring  is a superinstance of  something]) [lambda: something  is a subinstance of  scope]) [lambda: scope  is a superinstance of  control]) [lambda: scope  is a superinstance of  supersonic]) [lambda: scope  is a superinstance of  ``]) [lambda: scope  is a superinstance of  power]) [lambda: scope  is a superinstance of  jet]) [lambda: scope  is a superinstance of  area]) [lambda: area  is a subinstance of  city]) [lambda: city  is a superinstance of  urban]) [lambda: city  is a superinstance of  several]) [lambda: city  is a superinstance of  populated]) [lambda: city  is a superinstance of  large]) [lambda: city  is a superinstance of  districts]) [lambda: city  is a superinstance of  independent]) [lambda: city  is a superinstance of  densely]) [lambda: city  is a superinstance of  include]) [lambda: city  is a superinstance of  administrative]) [lambda: scope  is a superinstance of  acts]) [lambda: scope  is a superinstance of  operates]) [lambda: scope  is a superinstance of  '']) [lambda: scope  is a superinstance of  range]) [lambda: something  is a subinstance of  monetary_value]) [lambda: monetary_value  is a superinstance of  often]) [lambda: monetary_value  is a superinstance of  would]) [lambda: monetary_value  is a superinstance of  indicated]) [lambda: monetary_value  is a superinstance of  money]) [lambda: monetary_value  is a superinstance of  sold]) [lambda: monetary_value  is a superinstance of  material]) [lambda: monetary_value  is a superinstance of  amount]) [lambda: monetary_value  is a superinstance of  property]) [lambda: monetary_value  is a superinstance of  worth]) [lambda: bring  is a superinstance of  somewhere]) [lambda: consider  is a superinstance of  show]) [lambda: show  is a subinstance of  picture]) [lambda: less  is a subinstance of  building]) [lambda: building  is a superinstance of  stands]) [lambda: building  is a superinstance of  roof]) [lambda: building  is a superinstance of  one]) [lambda: building  is a superinstance of  walls]) [lambda: building  is a superinstance of  place]) [lambda: building  is a superinstance of  permanently]) [lambda: building  is a superinstance of  structure]) [lambda: move  is a subinstance of  paralysis]) [lambda: paralysis  is a superinstance of  body]) [lambda: body  is a subinstance of  fever]) [lambda: fever  is a superinstance of  temperature]) [lambda: fever  is a superinstance of  rise]) [lambda: fever  is a superinstance of  infection]) [lambda: fever  is a superinstance of  frequently]) [lambda: fever  is a superinstance of  symptom]) [lambda: paralysis  is a superinstance of  loss]) [lambda: paralysis  is a superinstance of  part]) [lambda: paralysis  is a superinstance of  ability]) [lambda: ability  is a subinstance of  expert]) [lambda: expert  is a superinstance of  person]) [lambda: expert  is a superinstance of  performs]) [lambda: expert  is a superinstance of  skillfully]) [lambda: expert  is a superinstance of  special]) [lambda: expert  is a superinstance of  knowledge]) [lambda: dose  is a subinstance of  roentgen]) [lambda: roentgen  is a superinstance of  dry]) [lambda: roentgen  is a superinstance of  ionizing]) [lambda: roentgen  is a superinstance of  electricity]) [lambda: roentgen  is a superinstance of  radiation]) [lambda: roentgen  is a superinstance of  produce]) [lambda: roentgen  is a superinstance of  1]) [lambda: roentgen  is a superinstance of  cc]) [lambda: roentgen  is a superinstance of  electrostatic]) [lambda: roentgen  is a superinstance of  air]) [lambda: roentgen  is a superinstance of  unit]) [lambda: unit  is a subinstance of  government]) [lambda: government  is a superinstance of  organization]) [lambda: government  is a superinstance of  political]) [lambda: government  is a superinstance of  governing]) [lambda: government  is a superinstance of  authority]) [lambda: roentgen  is a superinstance of  exposure]) [lambda: discovered  is a subinstance of  new]) [lambda: new  is a superinstance of  made]) [lambda: new  is a superinstance of  recently]) [lambda: new  is a superinstance of  acquired]) [lambda: new  is a superinstance of  long]) [lambda: long  is a subinstance of  crack]) [lambda: crack  is a superinstance of  narrow]) [lambda: crack  is a superinstance of  opening]) [lambda: new  is a superinstance of  duration]) [lambda: new  is a superinstance of  come]) [lambda: new  is a superinstance of  relatively]) [lambda: radio  is a subinstance of  frequency_modulation]) [lambda: frequency_modulation  is a superinstance of  modulation]) [lambda: frequency_modulation  is a superinstance of  frequency]) [lambda: frequency_modulation  is a superinstance of  carrier]) [lambda: frequency_modulation  is a superinstance of  wave]) [lambda: battle  is a superinstance of  hostile]) [lambda: battle  is a superinstance of  course]) [lambda: battle  is a superinstance of  opposing]) [lambda: battle  is a superinstance of  forces]) [lambda: battle  is a superinstance of  military]) [lambda: battle  is a superinstance of  meeting]) [lambda: battle  is a superinstance of  war]) [lambda: group  is a subinstance of  policy]) [lambda: policy  is a superinstance of  adopted]) [lambda: policy  is a superinstance of  individual]) [lambda: policy  is a superinstance of  plan]) [lambda: policy  is a superinstance of  social]) [lambda: policy  is a superinstance of  action]) [lambda: flash  is a subinstance of  flicker]) [lambda: flicker  is a superinstance of  light]) [lambda: flicker  is a superinstance of  momentary]) [lambda: digitization  is a superinstance of  information]) [lambda: digitization  is a superinstance of  conversion]) [lambda: digitization  is a superinstance of  analog]) [lambda: digitization  is a superinstance of  digital]) [lambda: supernatural  is a subinstance of  magic]) [lambda: magic  is a superinstance of  art]) [lambda: magic  is a superinstance of  invokes]) [lambda: magic  is a superinstance of  powers]) [lambda: surprised  is a subinstance of  dismay]) [lambda: dismay  is a superinstance of  unpleasantly]) [lambda: dismay  is a superinstance of  apprehension]) [lambda: dismay  is a superinstance of  alarm]) [lambda: dismay  is a superinstance of  cause]) [lambda: dismay  is a superinstance of  fill]) [lambda: prudence  is a subinstance of  wary]) [lambda: wary  is a superinstance of  keen]) [lambda: wary  is a superinstance of  caution]) [lambda: wary  is a superinstance of  watchful]) [lambda: wary  is a superinstance of  marked]) [lambda: words  is a subinstance of  state]) [lambda: state  is a superinstance of  express]) [lambda: state  is a subinstance of  constraint]) [lambda: constraint  is a superinstance of  physically]) [lambda: constraint  is a superinstance of  constrained]) [lambda: item  is a subinstance of  issue]) [lambda: issue  is a superinstance of  use]) [lambda: issue  is a superinstance of  official]) [lambda: official  is a subinstance of  NOC]) [lambda: NOC  is a superinstance of  given]) [lambda: NOC  is a superinstance of  cover]) [lambda: NOC  is a superinstance of  undercover]) [lambda: NOC  is a superinstance of  agent]) [lambda: issue  is a superinstance of  purposes]) [lambda: issue  is a superinstance of  general]) [lambda: issue  is a superinstance of  act]) [lambda: issue  is a superinstance of  usually]) [lambda: issue  is a superinstance of  providing]) [lambda: issue  is a superinstance of  quantity])
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  2.0
+Negativity =  0.0
+Objectivity =  39.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  scope :  0.0
+posscore of  scope :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  issue :  0.0
+posscore of  issue :  0.125
+negscore of  new :  0.0
+posscore of  new :  0.375
+negscore of  building :  0.0
+posscore of  building :  0.0
+negscore of  bring :  0.0
+posscore of  bring :  0.0
+negscore of  battle :  0.0
+posscore of  battle :  0.0
+negscore of  policy :  0.0
+posscore of  policy :  0.0
+negscore of  dismay :  0.375
+posscore of  dismay :  0.125
+negscore of  government :  0.0
+posscore of  government :  0.0
+negscore of  consider :  0.0
+posscore of  consider :  0.125
+negscore of  crack :  0.0
+posscore of  crack :  0.125
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  body :  0.0
+posscore of  body :  0.0
+negscore of  constraint :  0.0
+posscore of  constraint :  0.0
+negscore of  long :  0.375
+posscore of  long :  0.375
+negscore of  unit :  0.0
+posscore of  unit :  0.0
+negscore of  area :  0.0
+posscore of  area :  0.0
+negscore of  official :  0.0
+posscore of  official :  0.0
+negscore of  take :  0.0
+posscore of  take :  0.0
+negscore of  flicker :  0.0
+posscore of  flicker :  0.0
+negscore of  show :  0.0
+posscore of  show :  0.0
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  less :  0.375
+posscore of  less :  0.125
+negscore of  money :  0.0
+posscore of  money :  0.0
+negscore of  move :  0.0
+posscore of  move :  0.0
+negscore of  dose :  0.0
+posscore of  dose :  0.0
+negscore of  discovered :  0.0
+posscore of  discovered :  0.0
+negscore of  radio :  0.0
+posscore of  radio :  0.0
+negscore of  Kingdom :  0.0
+posscore of  Kingdom :  0.0
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  electricity :  0.0
+posscore of  electricity :  0.0
+negscore of  flash :  0.25
+posscore of  flash :  0.0
+negscore of  invokes :  0.0
+posscore of  invokes :  0.125
+negscore of  include :  0.0
+posscore of  include :  0.0
+negscore of  worth :  0.0
+posscore of  worth :  0.0
+negscore of  surprised :  0.0
+posscore of  surprised :  0.125
+negscore of  material :  0.0
+posscore of  material :  0.0
+negscore of  wave :  0.0
+posscore of  wave :  0.0
+negscore of  walls :  0.0
+posscore of  walls :  0.0
+negscore of  marked :  0.0
+posscore of  marked :  0.0
+negscore of  words :  0.0
+posscore of  words :  0.0
+negscore of  world :  0.0
+posscore of  world :  0.0
+negscore of  loss :  0.25
+posscore of  loss :  0.0
+negscore of  course :  0.0
+posscore of  course :  0.0
+negscore of  cause :  0.0
+posscore of  cause :  0.0
+negscore of  large :  0.0
+posscore of  large :  0.0
+negscore of  item :  0.0
+posscore of  item :  0.0
+negscore of  independence :  0.0
+posscore of  independence :  0.0
+negscore of  art :  0.0
+posscore of  art :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  acquired :  0.0
+posscore of  acquired :  0.125
+negscore of  authority :  0.0
+posscore of  authority :  0.0
+negscore of  operates :  0.0
+posscore of  operates :  0.0
+negscore of  second :  0.0
+posscore of  second :  0.0
+negscore of  duration :  0.0
+posscore of  duration :  0.0
+negscore of  special :  0.0
+posscore of  special :  0.0
+negscore of  stands :  0.0
+posscore of  stands :  0.0
+negscore of  performs :  0.0
+posscore of  performs :  0.0
+negscore of  power :  0.0
+posscore of  power :  0.0
+negscore of  opening :  0.0
+posscore of  opening :  0.0
+negscore of  sold :  0.0
+posscore of  sold :  0.0
+negscore of  use :  0.0
+posscore of  use :  0.0
+negscore of  governing :  0.0
+posscore of  governing :  0.0
+negscore of  consideration :  0.0
+posscore of  consideration :  0.25
+negscore of  come :  0.0
+posscore of  come :  0.0
+negscore of  dry :  0.0
+posscore of  dry :  0.0
+negscore of  property :  0.0
+posscore of  property :  0.0
+negscore of  country :  0.0
+posscore of  country :  0.0
+negscore of  industry :  0.0
+posscore of  industry :  0.0
+negscore of  range :  0.0
+posscore of  range :  0.0
+negscore of  carrier :  0.0
+posscore of  carrier :  0.0
+negscore of  place :  0.0
+posscore of  place :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  military :  0.0
+posscore of  military :  0.0
+negscore of  narrow :  0.0
+posscore of  narrow :  0.0
+negscore of  jet :  0.0
+posscore of  jet :  0.0
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  political :  0.0
+posscore of  political :  0.0
+negscore of  adopted :  0.0
+posscore of  adopted :  0.0
+negscore of  meeting :  0.0
+posscore of  meeting :  0.0
+negscore of  war :  0.0
+posscore of  war :  0.0
+negscore of  infection :  0.125
+posscore of  infection :  0.125
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  hostile :  0.0
+posscore of  hostile :  0.125
+negscore of  account :  0.0
+posscore of  account :  0.0
+negscore of  made :  0.0
+posscore of  made :  0.0
+negscore of  apprehension :  0.25
+posscore of  apprehension :  0.125
+negscore of  roof :  0.0
+posscore of  roof :  0.0
+negscore of  air :  0.0
+posscore of  air :  0.0
+negscore of  frequency :  0.0
+posscore of  frequency :  0.0
+negscore of  providing :  0.0
+posscore of  providing :  0.0
+negscore of  powers :  0.0
+posscore of  powers :  0.0
+negscore of  control :  0.0
+posscore of  control :  0.0
+negscore of  independent :  0.0
+posscore of  independent :  0.0
+negscore of  indicated :  0.0
+posscore of  indicated :  0.0
+negscore of  cover :  0.0
+posscore of  cover :  0.0
+negscore of  purposes :  0.0
+posscore of  purposes :  0.0
+negscore of  agent :  0.0
+posscore of  agent :  0.5
+negscore of  general :  0.0
+posscore of  general :  0.0
+negscore of  caution :  0.0
+posscore of  caution :  0.375
+negscore of  film :  0.0
+posscore of  film :  0.0
+negscore of  fill :  0.375
+posscore of  fill :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  acts :  0.0
+posscore of  acts :  0.0
+negscore of  radiation :  0.0
+posscore of  radiation :  0.0
+negscore of  amount :  0.0
+posscore of  amount :  0.0
+negscore of  forces :  0.0
+posscore of  forces :  0.0
+negscore of  digital :  0.0
+posscore of  digital :  0.125
+negscore of  picture :  0.0
+posscore of  picture :  0.0
+negscore of  express :  0.0
+posscore of  express :  0.0
+negscore of  modulation :  0.0
+posscore of  modulation :  0.0
+negscore of  social :  0.0
+posscore of  social :  0.0
+negscore of  conversion :  0.0
+posscore of  conversion :  0.0
+negscore of  action :  0.0
+posscore of  action :  0.0
+negscore of  rise :  0.0
+posscore of  rise :  0.25
+negscore of  produce :  0.0
+posscore of  produce :  0.0
+negscore of  plan :  0.0
+posscore of  plan :  0.0
+negscore of  structure :  0.0
+posscore of  structure :  0.0
+negscore of  exposure :  0.125
+posscore of  exposure :  0.0
+negscore of  individual :  0.0
+posscore of  individual :  0.0
+negscore of  light :  0.0
+posscore of  light :  0.0
+negscore of  alarm :  0.25
+posscore of  alarm :  0.375
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  opposing :  0.0
+posscore of  opposing :  0.0
+negscore of  organization :  0.0
+posscore of  organization :  0.0
+negscore of  quantity :  0.375
+posscore of  quantity :  0.0
+==========================================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the text
+==========================================================================================================
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 1.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.250000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.250000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.250000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.375000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.031250, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.001465, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.375000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000206, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.375000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.375000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.250000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000010, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.125000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 1.000000
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.125000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.140625
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.125000, 0.250000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.013184
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.375000, 0.250000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.001236
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.001236
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000174
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000024
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.375000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.375000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.375000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.125000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.125000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.000000, 0.000000, 0.500000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.000000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: 0.125000, 0.000000, 0.000000, 0.375000
+RGO_sentiment_analysis_belief_propagation: 0.000000, 0.000003
+belief_propagated_posscore: 3.79384024196e-15
+belief_propagated_negscore: 3.43710416928e-06
+
