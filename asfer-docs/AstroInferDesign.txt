@@ -2420,6 +2420,13 @@ crawled items in items.py
 Sentiment Analyzer implementation for Crawled-Scraped Google News Search result texts with testlogs and screenshots of the RGO graph has
 been added. This has been made a specialized analyzer for spidered texts different from twitter analyzer.
 
+----------------------------------------------------------------------------------------------------------
+181. Commits as on 17 November 2015
+----------------------------------------------------------------------------------------------------------
+Requirements.txt for package dependencies have been added to asfer-docs/.
+WebSpider Crawl-Scraped URLs descriptions are inserted into MySQL table (asfer_webspider) by importing backend/Abstract_DBBackend.py MySQL
+implementation. Logs for this Scrapy crawl has been added to webspider/testlogs. WebSpider.py parse() has been updated with MySQL_DBBackend execute_query()s.  __init__.py have been added for directory-as-package imports.
+
 
 
 
