@@ -29,6 +29,7 @@ import re
 import os
 import sys 
 
+from injector import Module, provides, Injector, inject, singleton
 from scrapy.spiders import Spider
 from scrapy.selector import Selector
 from webspider.items import WebSpiderItem
@@ -36,10 +37,19 @@ from webspider.items import WebSpiderItem
 class WebSpider(Spider):
 	name = "webspider"
 	allowed_domains = "www.google.com"
-	start_urls = ['https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion']
+	start_urls = ['https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion','https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8']
 	output=open("WebSpider.out","w")
 
 	def parse(self,response):
+		sys.path.insert(0,"/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/backend")
+		import Abstract_DBBackend
+		import MySQL_DBBackend
+		import MySQL_Configuration
+		mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
+		mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
+		injector=Injector([mysqldbobj,mysqlconfigobj])
+		handler=injector.get(Abstract_DBBackend.Abstract_DBBackend)
+		#handler.execute_query("CREATE TABLE asfer_webspider(Description varchar(100))")
 		select = Selector(response)
 		links_list = select.xpath('//h3/a/@href').extract()
 		links_list2 = [re.search('q=(.*)&sa',n).group(1) for n in links_list]
@@ -51,5 +61,6 @@ class WebSpider(Spider):
 			items.append(item)
 			self.output.write(desc)
 			self.output.write("\n")
+			handler.execute_query("INSERT INTO asfer_webspider(Description) VALUES(\""+desc+"\")")
+		handler.execute_query("SELECT * FROM asfer_webspider")
 		return items
-			 
