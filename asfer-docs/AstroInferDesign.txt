@@ -969,6 +969,18 @@ If the RHS doesn't converge to 1 and thus is in BPP and Noise Stability of LHS i
 
 If the RHS has a perfect k-SAT boolean decision function for all voters, size of the circuit is super-polynomial and sub-exponential(if exponential, circuit is DC uniform), P(Good) series converges to 100% and LHS is 100% noise stable Percolation function, then LHS is a P/poly algorithm for RHS NP-complete instance. Special case is when RHS has only one voter - LHS is P/poly (or NC/poly or NC/log) and RHS is NP-complete(assuming k-SAT of RHS voter is 100% noise stable) - and thus there is a P/poly circuit for NP in such a special case. From [Karp-Lipton] (53.7) if NP is in P/poly, PH collapses to second level and AM=MA. If LHS is P/log and RHS is NP, then P=NP. Thus 100% noise stable boolean function in LHS has huge ramifications and the P(Good) summation, its circuit version devour complexity arena in toto and variety of results can be concluded subject to noise stability.
 
+-------------------------------------------------------------------------------------------------------------------
+53.9 (THEORY) Possible Scenarios in P(Good) LHS and RHS summation
+-------------------------------------------------------------------------------------------------------------------
+53.9.1 LHS = RHS is 100%                -   LHS and RHS are equally efficient and can be equated to get a lowerbound.
+53.9.2 LHS is < 100% and RHS is < 100%  -   RHS is more efficient than LHS and both sides are in BP* classes
+and LHS < RHS
+53.9.3 LHS is < 100% and RHS is < 100%  -   LHS and RHS are equally efficient and can be equated to get a lowerbound. Both are in BP* classes
+and LHS = RHS
+53.9.4 LHS is < 100% and RHS is < 100%  -   LHS is more efficient than RHS and both sides are in BP* classes
+and LHS > RHS
+
+
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
 
