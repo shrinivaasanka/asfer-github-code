@@ -187,7 +187,7 @@ def SentimentAnalysis_RGO(text,output):
 	tokenized = nltk.word_tokenize(text)
 	fdist1 = FreqDist(tokenized)
 	stopwords = nltk.corpus.stopwords.words('english')
-	stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
+	stopwords = stopwords + [u'why',u'be',u'what',u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may',u'might',u'would',u'shall',u'will',u'should',u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
 	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
@@ -371,23 +371,23 @@ def SentimentAnalysis_RGO(text,output):
 	print "==================================================================="
 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
 
-	print "================================================================================"
-	print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
-	print "================================================================================"
-	kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
+	#print "================================================================================"
+	#print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
+	#print "================================================================================"
+	#kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
 	#kcore_nxg=nx.k_core(nxg)
-	for k,v in kcore_nxg.edges():
-		print k, weight_str_map[k+" - "+v], v, ".",
+	#for k,v in kcore_nxg.edges():
+	#	print k, weight_str_map[k+" - "+v], v, ".",
 
-	print "\n"
-	print "=============================================================================="
-	print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
-	print "=============================================================================="
-	print definitiongraphedgelabels
-	lambda_vertex_map={}
-	lambda_edge_map={}
+	#print "\n"
+	#print "=============================================================================="
+	#print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
+	#print "=============================================================================="
+	#print definitiongraphedgelabels
+	#lambda_vertex_map={}
+	#lambda_edge_map={}
 
-	print composition_lambda(nxg)
+	#print composition_lambda(nxg)
 
 	print "=============================================================================="
 	print "Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text"
