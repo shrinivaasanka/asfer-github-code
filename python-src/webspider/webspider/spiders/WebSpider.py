@@ -37,6 +37,7 @@ from webspider.items import WebSpiderItem
 class WebSpider(Spider):
 	name = "webspider"
 	allowed_domains = "www.google.com"
+	#start_urls = ['https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=theoretical+computer+science&oq=theoretical+computer+science&gs_l=news-cc.3..43j43i53.30043.38477.0.38618.28.9.0.19.19.2.775.3607.2j1j1j0j1j2j2.9.0...0.0...1ac.1.mtwb_lgjbI4']
 	start_urls = ['https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.#q=Chennai&hl=en&gl=in&authuser=0&tbm=nws&tbs=sbd:1','https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion','https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8']
 	output=open("WebSpider.out","w")
 

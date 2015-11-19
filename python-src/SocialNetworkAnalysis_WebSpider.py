@@ -220,7 +220,8 @@ def SentimentAnalysis_RGO(text,output):
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
-					definitiongraphedges[x].append(ylemmanames[0])
+					for yl in ylemmanames:
+						definitiongraphedges[x].append(yl)
 					definitiongraphedgelabels[x + " - " + ylemmanames[0]].append(" is a subinstance of ")
 					definitiongraphedgelabels[ylemmanames[0] + " - " + x].append(" is a superinstance of ")
 						
