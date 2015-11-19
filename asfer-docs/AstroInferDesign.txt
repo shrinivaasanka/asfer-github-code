@@ -2450,6 +2450,15 @@ Requirements.txt for package dependencies have been added to asfer-docs/.
 WebSpider Crawl-Scraped URLs descriptions are inserted into MySQL table (asfer_webspider) by importing backend/Abstract_DBBackend.py MySQL
 implementation. Logs for this Scrapy crawl has been added to webspider/testlogs. WebSpider.py parse() has been updated with MySQL_DBBackend execute_query()s.  __init__.py have been added for directory-as-package imports.
 
+----------------------------------------------------------------------------------------------------------
+182. Commits as on 19 November 2015
+----------------------------------------------------------------------------------------------------------
+- Added more stop words in spidered text and commented text generation in SocialNetworkAnalysis_WebSpider.py
+- logs and screenshots for this has been added to testlogs/
+- crawl urls in WebSpider.py has been updated
+- Added more edges in definition graph by enumerating all the lemma names of a keyword in previous iteration. This makes the graph dense
+and probability of a node having more k-core number increases and classification is more accurate.
+- logs and screenshots for updated web spidered news texts of two topics "Theoretical Computer Science" and "Chennai" have been added
 
 
 
