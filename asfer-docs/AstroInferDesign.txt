@@ -623,9 +623,9 @@ More on (7):
 
 Above equates the Fourier polynomial for xi-th prime in terms of exponent of e with Imaginary part l of some RZF zero. It is not necessary that primes have one-one correspondence with zeros in the same order. All above just imply that it is true for some prime(and its Fourier polynomial) and some RZF zero that satisfy these identities.
 
------------------------------------------------------------------
-24g. Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function
------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+24g. Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function and Special case of Complement Function
+-------------------------------------------------------------------------------------------------------------
 A graph is Ramanujan graph if it is d-regular and eigen values of its adjacency matrix are sqrt(d-1)*2 or d. Ihara zeta function similar to RZF is a Dirichlet series that is based on prime cycle lengths of a graph defined as ProductOf(1/1-q^(-s*p)) where s is a zero and p prime for a (q+1)-regular graph. Thus a reduction is already available from RZF to a graph. The Ihara Zeta Function satisfies Riemann Hypothesis iff graph is Ramanujan - this follows from Ihara identity that relates Ihara Zeta Function and the adjacency matrix of a graph. Thus proving above conjecture for Euler-Fourier polynomial of complement function for primes boolean and arithmetic circuits family might need this gadget using prime cycles.
 
 If a set of p-regular graphs for all primes is considered,then Riemann Zeta Function can be derived (using Ihara Zeta Function identity) as a function of product of Ihara Zeta Functions for these graphs and a function of the determinants of adjacency matrices for these graphs divided by an infinite product similar to Euler product with (1+1/p^s) clauses instead of (1-1/p^s). This requires computing product of determinants of a function of adjancency matrices for these graphs. A regular connected graph is Ramanujan if and only if it satisfies RH. Zeroes of the individual Ihara zeta functions are also zeroes of this product for the set of graphs and hence for the RZF. Intuitively the product might imply set of all paths of all possible lengths across these graphs. Determinant of the product of adjacent matrices is product of determinants of the matrices and equating it to zero yields eigenvalues. All these graphs have same number of edges and vertices. The eigen values then are of the form sqrt(q^(2-2a)+q^(2a)+2q) were s=a+ib for each of the regular graphs. The RHS of Ihara Zeta Function can be written as [(1+1/q^s)(1-1/q^s)]^[V-E] and the product gives the RZF and the other series mentioned above. Eigen values can be atmost q.
@@ -673,7 +673,7 @@ for some term in the infinite product of LHS which implies that
 	
 (8) By equating the determinant in (6) above to zero, written notes in (7) derive values of s=a+ib for non-Ramanujan prime+1 regular graphs for the expressions in points (1) to (6) above. They seem to suggest that RH is true with elementary complex arithmetic without using any complex analysis, with or without any assumption on the eigenvalue surprisingly - assuming q^s + q^(1-s) = v (v can be set to any eigenvalue - can be atmost q+1 for the q+1-regular non-ramanujan graph) and solving for s=a+ib - gives a=1/2 and thus for both ramanujan and non-ramanujan graphs as eigen value becomes irrelevant - needs lot of reviewing - because it implies that graph formulation above of Riemann Hypothesis is true for all prime+1 regular graphs by applying Ihara Identity of Ihara Zeta Function and thus Riemann Hypothesis is true. The choice of prime+1 regularity is just a contrived gadget to equate to Riemann Zeta Function through an infinite product. Crucial fact is the independence of eigen value in the previous derivation whenever the graph regularity is prime+1, thus directly connecting prime numbers and real part of Riemann Zeta Function non-trivial zero.
 
-(9) Above doesn't look circular also because infinite product of characterstic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator. 
+(9) Above doesn't look circular also because infinite product of characteristic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator.
 
 (10) Expression in (1) for a prime+1 regular graph can also be equated to Euler-Fourier polynomial mentioned in (24c) per-prime term for each prime+1 regular graph - LHS is a graph while RHS is a fourier polynomial for boolean circuit for a prime - P(xi). Thus pattern in prime polynomials in RHS are related to patterns in graphs on left:
 			[1+qi^-s]				1
@@ -2459,6 +2459,17 @@ implementation. Logs for this Scrapy crawl has been added to webspider/testlogs.
 - Added more edges in definition graph by enumerating all the lemma names of a keyword in previous iteration. This makes the graph dense
 and probability of a node having more k-core number increases and classification is more accurate.
 - logs and screenshots for updated web spidered news texts of two topics "Theoretical Computer Science" and "Chennai" have been added
+
+----------------------------------------------------------------------------------------------------------
+183. Commits as on 20 November 2015
+----------------------------------------------------------------------------------------------------------
+- Updated Spidered text for Sentiment Analysis
+- Changed the Sentiment Analysis scoring belief potential propagation algorithm:
+  - Two ways of scoring have been added - one is based on DFS tree of k-core subgraph of the larger wordnet subgraph and the other is based on top core numbered vertices of the wordnet subgraph
+  - Sentiment thus is computed only for the core of the graph which is more relevant to the crux or class of the document and less pertinent
+vertices are ignored.
+  - the fraction score is multiplied by a heuristic factor to circumvent floating points
+
 
 
 
