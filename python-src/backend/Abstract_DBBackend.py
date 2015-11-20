@@ -52,8 +52,9 @@ class Abstract_DBBackend(object):
                      print row
 		return rows
 
-mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
-mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
-injector=Injector([mysqldbobj,mysqlconfigobj])
-handler=injector.get(Abstract_DBBackend)
-handler.execute_query("SELECT * FROM asfer_table")
+if __name__=="__main__":
+	mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
+	mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
+	injector=Injector([mysqldbobj,mysqlconfigobj])
+	handler=injector.get(Abstract_DBBackend)
+	handler.execute_query("SELECT * FROM asfer_table")
