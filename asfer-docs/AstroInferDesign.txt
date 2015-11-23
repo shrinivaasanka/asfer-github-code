@@ -2470,6 +2470,21 @@ and probability of a node having more k-core number increases and classification
 vertices are ignored.
   - the fraction score is multiplied by a heuristic factor to circumvent floating points
 
+----------------------------------------------------------------------------------------------------------
+184. Commits as on 23 November 2015
+----------------------------------------------------------------------------------------------------------
+- Updated SentimentAnalyzer.py and SocialNetworkAnalysis_Twitter.py scripts with core number and k-core DFS belief potential propagation
+similar to SocialNetworkAnalysis_WebSpider.py.
+- logs and screenshots for twitter followers graph and tweet RGO graph Sentiment Analysis have been added.
+- Example tweet is correctly automatically classified into "Education" class based on top core number of the vertices and top PageRank. Again this is an intriguing instance where Top core numbered vertices coincide with Top PageRank vertices which is probably self-evident from the fact that PageRank is a Markov Model Converging Random Walk and PageRank matrix multiplication is influenced by high weightage vertices (with lot of incoming links)
+Sentiment Analysis of the tweet:
+- K-Core DFS belief_propagated_posscore: 244.140625
+  K-Core DFS belief_propagated_negscore: 1.0
+- Core Number belief_propagated_posscore: 419095.158577
+  Core Number belief_propagated_negscore: 22888.1835938
+- Above Sentiment Analysis rates the tweet with positive tonality.
+
+
 
 
 
