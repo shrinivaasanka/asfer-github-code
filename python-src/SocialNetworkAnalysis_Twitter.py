@@ -49,17 +49,23 @@ class SNA_Twitter:
 	def buildGraphFromTwitterFollowing(self):
 		while True:
 			twitter_id=self.userq.get()
-		        print "======================================"
-		        pprint.pprint(twitter_id.GetId())
+		        #print "======================================"
+			twitter_id_dict=json.loads(twitter_id.AsJsonString())
+			#print twitter_id_dict["name"]
 		        #print i.AsJsonString()
 		        #pprint.pprint(i.GetCreatedAt())
 		        #pprint.pprint(i.GetGeo())
 		        #pprint.pprint(i.GetLocation())
 		        #pprint.pprint(i.GetText())
 			for f in self.api.GetFollowers(twitter_id):
-				self.tng.add_edge(twitter_id.GetId(),f.GetId())
-				self.userq.put(f)	
-				self.no_of_vertices+=1
+				try:
+					follower_id_dict=json.loads(f.AsJsonString())
+					#print follower_id_dict["name"]
+					self.tng.add_edge(twitter_id_dict["name"],follower_id_dict["name"])
+					self.userq.put(f)	
+					self.no_of_vertices+=1
+				except:
+					pass
 			if self.no_of_vertices > 50:
 				break
 			print "======================================"
@@ -120,9 +126,11 @@ class SNA_Twitter:
                                 print "=================================================================================="
                                 print "Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet"
                                 print "=================================================================================="
-                                belief_propagated_posscore, belief_propagated_negscore = SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation(nxg)
-                                print "belief_propagated_posscore:",float(belief_propagated_posscore)
-                                print "belief_propagated_negscore:",float(belief_propagated_negscore)
+                                dfs_belief_propagated_posscore, dfs_belief_propagated_negscore, core_belief_propagated_posscore, core_belief_propagated_negscore = SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation(nxg)
+                                print "K-Core DFS belief_propagated_posscore:",float(dfs_belief_propagated_posscore)
+                                print "K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore)
+                                print "Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore)
+                                print "Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore)
                         else:
                                 posscore,negscore,objscore=SentimentAnalyzer.SentimentAnalysis_SentiWordNet(i["text"].encode("utf-8"))
                                 print "=================================================================================="
@@ -139,5 +147,6 @@ snat.buildGraphFromTwitterFollowing()
 if tweet_type:
 	snat.followersTweetsSentimentAnalyzer()
 else:
-	snat.tweetStreamSentimentAnalyzer("Chennai","RGO_Belief_Propagation")
-	snat.tweetStreamSentimentAnalyzer("elections","RGO_Belief_Propagation")
+	#snat.tweetStreamSentimentAnalyzer("Chennai","RGO_Belief_Propagation")
+	#snat.tweetStreamSentimentAnalyzer("elections","RGO_Belief_Propagation")
+	snat.tweetStreamSentimentAnalyzer("Computer Science","RGO_Belief_Propagation")

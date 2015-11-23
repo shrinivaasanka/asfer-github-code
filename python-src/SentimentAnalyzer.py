@@ -76,36 +76,52 @@ def composition_lambda(nxg):
 
 def SentimentAnalysis_RGO_Belief_Propagation(nxg):
 	#Bayesian Pearl Belief Propagation is done by
-	#assuming the senti scores as propabilities with positive
+	#assuming the senti scores as probabilities with positive
 	#and negative signs and the Recursive Gloss Overlap
 	#definition graph being the graphical model.
-	#Sentiment as a message is passed through 
-	#the DFS tree of this graph. This is also a composition
-	#done on the graph edge sentiment functions
-	positive_belief_propagated=1.0
-	negative_belief_propagated=1.0
-	knegscore=kposscore=vposscore=vnegscore=1.0
-	for k,v in nx.dfs_edges(nxg):
+	#Sentiment as a belief potential is passed through 
+	#the DFS tree of this graph.  
+	dfs_positive_belief_propagated=1.0
+	core_positive_belief_propagated=1.0
+	dfs_negative_belief_propagated=1.0
+	core_negative_belief_propagated=1.0
+	core_xnegscore=core_xposscore=1.0
+	dfs_knegscore=dfs_kposscore=dfs_vposscore=dfs_vnegscore=1.0
+	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
+	kcore_nxg=nx.k_core(nxg,6,nx.core_number(nxg))
+	for x in sorted_core_nxg:
+	      xsset = swn.senti_synsets(x[0])
+	      if len(xsset) > 2:
+	     		core_xnegscore = float(xsset[0].neg_score())*10.0
+	      		core_xposscore = float(xsset[0].pos_score())*10.0
+	      if core_xnegscore == 0.0:
+			core_xnegscore = 1.0
+	      if core_xposscore == 0.0:
+			core_xposscore = 1.0
+	      core_positive_belief_propagated *= float(core_xposscore)
+	      core_negative_belief_propagated *= float(core_xnegscore)
+	print "Core Number: RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(core_positive_belief_propagated), float(core_negative_belief_propagated))
+	#for k,v in nx.dfs_edges(nxg):
+	for k,v in nx.dfs_edges(kcore_nxg):
 	      ksynset = swn.senti_synsets(k)
 	      vsynset = swn.senti_synsets(v)
 	      if len(ksynset) > 2:
-	     		knegscore = float(ksynset[0].neg_score())
-	      		kposscore = float(ksynset[0].pos_score())
+	     		dfs_knegscore = float(ksynset[0].neg_score())*10.0
+	      		dfs_kposscore = float(ksynset[0].pos_score())*10.0
 	      if len(vsynset) > 2:
-			vnegscore = float(vsynset[0].neg_score())
-			vposscore = float(vsynset[0].pos_score())
-	      kposscore_vposscore = float(kposscore*vposscore)
-	      knegscore_vnegscore = float(knegscore*vnegscore)
-	      if kposscore_vposscore == 0.0:
-		kposscore_vposscore = 1.0
-	      if knegscore_vnegscore == 0.0:
-		knegscore_vnegscore = 1.0
-	      positive_belief_propagated *= float(kposscore_vposscore)
-	      negative_belief_propagated *= float(knegscore_vnegscore)
-	      print "RGO_sentiment_analysis_belief_propagation - edge vertices pos,neg score: %f, %f, %f, %f" % (float(kposscore),float(knegscore),float(vposscore),float(vnegscore))
-	      print "RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(positive_belief_propagated),float(negative_belief_propagated))
-	return (positive_belief_propagated, negative_belief_propagated)
-		
+			dfs_vnegscore = float(vsynset[0].neg_score())*10.0
+			dfs_vposscore = float(vsynset[0].pos_score())*10.0
+	      dfs_kposscore_vposscore = float(dfs_kposscore*dfs_vposscore)
+	      dfs_knegscore_vnegscore = float(dfs_knegscore*dfs_vnegscore)
+	      if dfs_kposscore_vposscore == 0.0:
+		dfs_kposscore_vposscore = 1.0
+	      if dfs_knegscore_vnegscore == 0.0:
+		dfs_knegscore_vnegscore = 1.0
+	      dfs_positive_belief_propagated *= float(dfs_kposscore_vposscore)
+	      dfs_negative_belief_propagated *= float(dfs_knegscore_vnegscore)
+	print "K-Core DFS: RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(dfs_positive_belief_propagated),float(dfs_negative_belief_propagated))
+	return (dfs_positive_belief_propagated, dfs_negative_belief_propagated, core_positive_belief_propagated, core_negative_belief_propagated)
+
 
 #function - compute_idf()
 def compute_idf(corpus, keyword):
@@ -218,7 +234,8 @@ def SentimentAnalysis_RGO(text,output):
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
-					definitiongraphedges[x].append(ylemmanames[0])
+					for yl in ylemmanames:
+						definitiongraphedges[x].append(yl)
 					definitiongraphedgelabels[x + " - " + ylemmanames[0]].append(" is a subinstance of ")
 					definitiongraphedgelabels[ylemmanames[0] + " - " + x].append(" is a superinstance of ")
 						
@@ -369,23 +386,23 @@ def SentimentAnalysis_RGO(text,output):
 	print "==================================================================="
 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
 
-	print "================================================================================"
-	print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
-	print "================================================================================"
-	kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
+	#print "================================================================================"
+	#print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
+	#print "================================================================================"
+	#kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
 	#kcore_nxg=nx.k_core(nxg)
-	for k,v in kcore_nxg.edges():
-		print k, weight_str_map[k+" - "+v], v, ".",
+	#for k,v in kcore_nxg.edges():
+	#	print k, weight_str_map[k+" - "+v], v, ".",
 
-	print "\n"
-	print "=============================================================================="
-	print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
-	print "=============================================================================="
-	print definitiongraphedgelabels
-	lambda_vertex_map={}
-	lambda_edge_map={}
+	#print "\n"
+	#print "=============================================================================="
+	#print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
+	#print "=============================================================================="
+	#print definitiongraphedgelabels
+	#lambda_vertex_map={}
+	#lambda_edge_map={}
 
-	print composition_lambda(nxg)
+	#print composition_lambda(nxg)
 
 	print "=============================================================================="
 	print "Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text"
@@ -424,6 +441,9 @@ if __name__=="__main__":
 	print "=========================================================================================================="
 	print "Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the text"
 	print "=========================================================================================================="
-	belief_propagated_posscore, belief_propagated_negscore = SentimentAnalysis_RGO_Belief_Propagation(nxg)
-	print "belief_propagated_posscore:",float(belief_propagated_posscore)
-	print "belief_propagated_negscore:",float(belief_propagated_negscore)
+	dfs_belief_propagated_posscore, dfs_belief_propagated_negscore, core_belief_propagated_posscore, core_belief_propagated_negscore = SentimentAnalysis_RGO_Belief_Propagation(nxg)
+	print "DFS belief_propagated_posscore:",float(dfs_belief_propagated_posscore)
+	print "DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore)
+	print "Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore)
+	print "Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore)
+

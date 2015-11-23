@@ -1,0 +1,467 @@
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src# python SocialNetworkAnalysis_Twitter.py 
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 8, "followers_count": 16, "friends_count": 101, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan ", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Sun Jul 05 15:53:54 +0000 2015", "favorited": false, "id": 617723084175310848, "lang": "en", "retweet_count": 1, "retweeted": true, "retweeted_status": {"created_at": "Sun Jul 05 15:25:31 +0000 2015", "favorite_count": 2, "favorited": false, "id": 617715940134944769, "lang": "en", "retweet_count": 1, "retweeted": true, "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>", "text": "Electronic Voting Systems http://t.co/gqz2JCE5fA", "truncated": false, "urls": {"http://t.co/gqz2JCE5fA": "http://ow.ly/Ov8tX"}}, "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>", "text": "RT @ACMQueue: Electronic Voting Systems http://t.co/gqz2JCE5fA", "truncated": false, "urls": {"http://t.co/gqz2JCE5fA": "http://ow.ly/Ov8tX"}, "user_mentions": [{"id": 86967199, "name": "ACM Queue", "screen_name": "ACMQueue"}]}, "statuses_count": 21, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+======================================
+======================================
+===========================================================================================
+Bonacich Power Centrality of the Social Network (Twitter) Crawled - computed using PageRank
+(a degree centrality based on social prestige)
+===========================================================================================
+[(u'SourcePro', 0.0714285714285714), (u'Kuberan Marimuthu', 0.0714285714285714), (u'bibin', 0.0714285714285714), (u'AppleCoreHosting.com', 0.0714285714285714), (u'Varun Singh ', 0.0714285714285714), (u'Vinod Kumar Devi', 0.0714285714285714), (u'G.Ganesh kumar', 0.0714285714285714), (u'Selvendran', 0.0714285714285714), (u'Thamilarasu K', 0.0714285714285714), (u'Olive Kumbakonam ', 0.0714285714285714), (u'Shanker Perumal', 0.0714285714285714), (u'lara', 0.0714285714285714), (u'Varun kumar', 0.0714285714285714), (u'Rosemary Mccrorie', 0.0714285714285714)]
+===========================================================================================
+Eigen Vector Centrality
+===========================================================================================
+{u'Olive Kumbakonam ': 0.26726124191242434, u'SourcePro': 0.26726124191242434, u'lara': 0.26726124191242434, u'Kuberan Marimuthu': 0.26726124191242434, u'Selvendran': 0.26726124191242434, u'Varun kumar': 0.26726124191242434, u'Shanker Perumal': 0.26726124191242434, u'Thamilarasu K': 0.26726124191242434, u'AppleCoreHosting.com': 0.26726124191242434, u'Varun Singh ': 0.26726124191242434, u'Vinod Kumar Devi': 0.26726124191242434, u'G.Ganesh kumar': 0.26726124191242434, u'bibin': 0.26726124191242434, u'Rosemary Mccrorie': 0.26726124191242434}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  How an education startup, Make School, is challenging conventional computer science education ... - https://t.co/tZHCTJRgaH #STEM
+2
+defaultdict(<type 'list'>, {u'United': [u'Department_of_Education', u'Education_Department', u'Education'], u'protocol': [u'hypertext_transfer_protocol', u'HTTP'], u'people': [u'school', u'schoolhouse'], u'dealing': [u'Department_of_Education', u'Education_Department', u'Education'], u'hypertext': [u'hypertext_transfer_protocol', u'HTTP'], u'servers': [u'hypertext_transfer_protocol', u'HTTP'], u'browsers': [u'hypertext_transfer_protocol', u'HTTP'], u'including': [u'Department_of_Education', u'Education_Department', u'Education'], u'operation': [u'startup'], u'education': [u'school', u'schoolhouse', u'Department_of_Education', u'Education_Department', u'Education'], u'linguistics': [u'root', u'root_word', u'base', u'stem', u'theme', u'radical'], u'educational': [u'Department_of_Education', u'Education_Department', u'Education'], u'recognizable': [u'brand', u'make'], u'knowledge': [u'science', u'scientific_discipline'], u'federal': [u'Department_of_Education', u'Education_Department', u'Education'], u'transfer': [u'hypertext_transfer_protocol', u'HTTP'], u'young': [u'school', u'schoolhouse'], u'TCP': [u'hypertext_transfer_protocol', u'HTTP'], u'proprieties': [u'conventional'], u'machine': [u'computer', u'computing_machine', u'computing_device', u'data_processor', u'electronic_computer', u'information_processing_system'], u'setting': [u'startup'], u'take': [u'challenge', u'dispute', u'gainsay'], u'administers': [u'Department_of_Education', u'Education_Department', u'Education'], u'department': [u'Department_of_Education', u'Education_Department', u'Education'], u'utilizing': [u'hypertext_transfer_protocol', u'HTTP'], u'scientific': [u'science', u'scientific_discipline'], u'form': [u'root', u'root_word', u'base', u'stem', u'theme', u'radical'], u'information': [u'hypertext_transfer_protocol', u'HTTP'], u'students': [u'Department_of_Education', u'Education_Department', u'Education'], u'exception': [u'challenge', u'dispute', u'gainsay'], u'customs': [u'conventional'], u'particular': [u'science', u'scientific_discipline'], u'affixes': [u'root', u'root_word', u'base', u'stem', u'theme', u'radical'], u'accepted': [u'conventional'], u'building': [u'school', u'schoolhouse'], u'kind': [u'brand', u'make'], u'word': [u'root', u'root_word', u'base', u'stem', u'theme', u'radical'], u'1979': [u'Department_of_Education', u'Education_Department', u'Education'], u'created': [u'Department_of_Education', u'Education_Department', u'Education'], u'receive': [u'school', u'schoolhouse'], u'removed': [u'root', u'root_word', u'base', u'stem', u'theme', u'radical'], u'performing': [u'computer', u'computing_machine', u'computing_device', u'data_processor', u'electronic_computer', u'information_processing_system'], u'branch': [u'science', u'scientific_discipline'], u'States': [u'Department_of_Education', u'Education_Department', u'Education'], u'calculations': [u'computer', u'computing_machine', u'computing_device', u'data_processor', u'electronic_computer', u'information_processing_system'], u'programs': [u'Department_of_Education', u'Education_Department', u'Education'], u'act': [u'startup'], u'following': [u'conventional'], u'aid': [u'Department_of_Education', u'Education_Department', u'Education'], u'requests': [u'hypertext_transfer_protocol', u'HTTP'], u'institutions': [u'Department_of_Education', u'Education_Department', u'Education'], u'automatically': [u'computer', u'computing_machine', u'computing_device', u'data_processor', u'electronic_computer', u'information_processing_system']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('school.n.01')
+ksynset= Synset('people.n.01')
+lsynset= Synset('school.n.02')
+ksynset= Synset('dealing.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('dealing.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('dealing.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('hypertext.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('waiter.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('browser.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('include.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('include.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('include.v.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('operation.n.01')
+lsynset= Synset('startup.n.01')
+ksynset= Synset('education.n.01')
+lsynset= Synset('school.n.01')
+ksynset= Synset('education.n.01')
+lsynset= Synset('school.n.02')
+ksynset= Synset('education.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('education.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('education.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('root.n.01')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('base.n.01')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('subject.n.01')
+ksynset= Synset('linguistics.n.01')
+lsynset= Synset('group.n.02')
+ksynset= Synset('educational.a.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('educational.a.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('educational.a.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('recognizable.s.01')
+lsynset= Synset('trade_name.n.01')
+ksynset= Synset('recognizable.s.01')
+lsynset= Synset('brand.n.02')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('federal.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('federal.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('federal.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('transportation.n.02')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('school.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('school.n.02')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('transmission_control_protocol.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('propriety.n.01')
+lsynset= Synset('conventional.a.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('machine.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('setting.n.01')
+lsynset= Synset('startup.n.01')
+ksynset= Synset('return.n.06')
+lsynset= Synset('challenge.n.01')
+ksynset= Synset('return.n.06')
+lsynset= Synset('dispute.n.01')
+ksynset= Synset('return.n.06')
+lsynset= Synset('challenge.v.01')
+ksynset= Synset('administer.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('administer.v.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('administer.v.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('department.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('department.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('department.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('scientific.a.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('scientific.a.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('root.n.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('form.n.01')
+lsynset= Synset('base.n.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('form.n.01')
+lsynset= Synset('subject.n.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('group.n.02')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('student.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('student.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('student.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('exception.n.01')
+lsynset= Synset('challenge.n.01')
+ksynset= Synset('exception.n.01')
+lsynset= Synset('dispute.n.01')
+ksynset= Synset('exception.n.01')
+lsynset= Synset('challenge.v.01')
+ksynset= Synset('customs.n.01')
+lsynset= Synset('conventional.a.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('root.n.01')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('base.n.01')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('subject.n.01')
+ksynset= Synset('affix.n.01')
+lsynset= Synset('group.n.02')
+ksynset= Synset('accept.v.01')
+lsynset= Synset('conventional.a.01')
+ksynset= Synset('building.n.01')
+lsynset= Synset('school.n.01')
+ksynset= Synset('building.n.01')
+lsynset= Synset('school.n.02')
+ksynset= Synset('kind.n.01')
+lsynset= Synset('trade_name.n.01')
+ksynset= Synset('kind.n.01')
+lsynset= Synset('brand.n.02')
+ksynset= Synset('word.n.01')
+lsynset= Synset('root.n.01')
+ksynset= Synset('word.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('word.n.01')
+lsynset= Synset('base.n.01')
+ksynset= Synset('word.n.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('word.n.01')
+lsynset= Synset('subject.n.01')
+ksynset= Synset('word.n.01')
+lsynset= Synset('group.n.02')
+ksynset= Synset('make.v.03')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('make.v.03')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('make.v.03')
+lsynset= Synset('education.n.01')
+ksynset= Synset('receive.v.01')
+lsynset= Synset('school.n.01')
+ksynset= Synset('receive.v.01')
+lsynset= Synset('school.n.02')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('root.n.01')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('base.n.01')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('root.n.03')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('subject.n.01')
+ksynset= Synset('remove.v.01')
+lsynset= Synset('group.n.02')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('acting.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('branch.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('branch.n.01')
+lsynset= Synset('science.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('calculation.n.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('plan.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('act.n.01')
+lsynset= Synset('startup.n.01')
+ksynset= Synset('following.n.01')
+lsynset= Synset('conventional.a.01')
+ksynset= Synset('aid.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('aid.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('aid.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('request.n.01')
+lsynset= Synset('hypertext_transfer_protocol.n.01')
+ksynset= Synset('institution.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('institution.n.01')
+lsynset= Synset('department_of_education.n.01')
+ksynset= Synset('institution.n.01')
+lsynset= Synset('education.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+ksynset= Synset('automatically.r.01')
+lsynset= Synset('computer.n.01')
+Core number (sorted) : [(u'Education_Department', 15), (u'Department_of_Education', 15), (u'Education', 15), (u'root_word', 10), (u'linguistics', 10), (u'theme', 10), (u'radical', 10), (u'stem', 10), (u'base', 10), (u'affixes', 10), (u'removed', 10), (u'word', 10), (u'form', 10), (u'root', 10), (u'HTTP', 9), (u'hypertext_transfer_protocol', 9), (u'computing_machine', 8), (u'electronic_computer', 8), (u'education', 8), (u'computing_device', 8), (u'machine', 8), (u'data_processor', 8), (u'information_processing_system', 8), (u'performing', 8), (u'computer', 8), (u'calculations', 8), (u'automatically', 8), (u'dealing', 6), (u'United', 6), (u'including', 6), (u'States', 6), (u'schoolhouse', 6), (u'educational', 6), (u'federal', 6), (u'administers', 6), (u'department', 6), (u'students', 6), (u'1979', 6), (u'programs', 6), (u'created', 6), (u'school', 6), (u'aid', 6), (u'institutions', 6), (u'protocol', 4), (u'people', 4), (u'hypertext', 4), (u'conventional', 4), (u'servers', 4), (u'knowledge', 4), (u'transfer', 4), (u'make', 4), (u'young', 4), (u'TCP', 4), (u'take', 4), (u'utilizing', 4), (u'dispute', 4), (u'browsers', 4), (u'recognizable', 4), (u'scientific', 4), (u'information', 4), (u'brand', 4), (u'kind', 4), (u'scientific_discipline', 4), (u'particular', 4), (u'gainsay', 4), (u'building', 4), (u'exception', 4), (u'receive', 4), (u'science', 4), (u'challenge', 4), (u'branch', 4), (u'requests', 4), (u'startup', 3), (u'operation', 2), (u'accepted', 2), (u'proprieties', 2), (u'setting', 2), (u'customs', 2), (u'act', 2), (u'following', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: Education_Department ,core number= 15
+This document belongs to class: Department_of_Education ,core number= 15
+This document belongs to class: Education ,core number= 15
+This document belongs to class: root_word ,core number= 10
+This document belongs to class: linguistics ,core number= 10
+This document belongs to class: theme ,core number= 10
+This document belongs to class: radical ,core number= 10
+This document belongs to class: stem ,core number= 10
+This document belongs to class: base ,core number= 10
+	max_core_number 15
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'Education_Department', 0.03588842064915783), (u'Education', 0.03588842064915783), (u'Department_of_Education', 0.03588842064915782), (u'hypertext_transfer_protocol', 0.03260325726851189), (u'HTTP', 0.03260325726851188), (u'conventional', 0.029731363373010196), (u'startup', 0.023987575582006794), (u'science', 0.018243787791003403), (u'scientific_discipline', 0.0182437877910034), (u'schoolhouse', 0.01762388356328705), (u'school', 0.017623883563287045), (u'automatically', 0.015371893895501696), (u'machine', 0.015371893895501696), (u'calculations', 0.015371893895501696), (u'performing', 0.015371893895501696), (u'exception', 0.015371893895501691), (u'take', 0.015371893895501691), (u'education', 0.013966869989669905), (u'linguistics', 0.013648757558200686), (u'affixes', 0.013648757558200685), (u'word', 0.013648757558200685), (u'removed', 0.013648757558200685), (u'form', 0.013648757558200685), (u'make', 0.0125), (u'recognizable', 0.0125), (u'brand', 0.0125), (u'kind', 0.0125), (u'root_word', 0.011542702034832769), (u'theme', 0.011542702034832769), (u'radical', 0.011542702034832769), (u'base', 0.011542702034832769), (u'root', 0.011542702034832769), (u'stem', 0.011542702034832769), (u'computer', 0.010585404069665535), (u'computing_machine', 0.010585404069665533), (u'electronic_computer', 0.010585404069665533), (u'computing_device', 0.010585404069665533), (u'data_processor', 0.010585404069665533), (u'information_processing_system', 0.010585404069665533), (u'challenge', 0.010585404069665528), (u'dispute', 0.010585404069665528), (u'gainsay', 0.010585404069665528), (u'knowledge', 0.009628106104498301), (u'scientific', 0.009628106104498301), (u'particular', 0.009628106104498301), (u'branch', 0.009628106104498301), (u'operation', 0.008670808139331064), (u'setting', 0.008670808139331064), (u'act', 0.008670808139331064), (u'proprieties', 0.008192159156747451), (u'customs', 0.008192159156747451), (u'accepted', 0.008192159156747451), (u'following', 0.008192159156747451), (u'protocol', 0.008032609495886245), (u'hypertext', 0.008032609495886245), (u'servers', 0.008032609495886245), (u'browsers', 0.008032609495886245), (u'transfer', 0.008032609495886245), (u'TCP', 0.008032609495886245), (u'utilizing', 0.008032609495886245), (u'information', 0.008032609495886245), (u'requests', 0.008032609495886245), (u'dealing', 0.007975262097760286), (u'including', 0.007975262097760286), (u'federal', 0.007975262097760286), (u'administers', 0.007975262097760286), (u'department', 0.007975262097760286), (u'students', 0.007975262097760286), (u'educational', 0.007975262097760286), (u'United', 0.007975262097760286), (u'1979', 0.007975262097760286), (u'created', 0.007975262097760286), (u'States', 0.007975262097760286), (u'programs', 0.007975262097760286), (u'aid', 0.007975262097760286), (u'institutions', 0.007975262097760286), (u'people', 0.007866607891909618), (u'young', 0.007866607891909618), (u'building', 0.007866607891909618), (u'receive', 0.007866607891909618)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.625
+Negativity =  0.625
+Objectivity =  6.75
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  Education :  0.0
+posscore of  Education :  0.25
+negscore of  theme :  0.0
+posscore of  theme :  0.0
+negscore of  radical :  0.0
+posscore of  radical :  0.0
+negscore of  stem :  0.0
+posscore of  stem :  0.0
+negscore of  base :  0.0
+posscore of  base :  0.0
+negscore of  affixes :  0.0
+posscore of  affixes :  0.0
+negscore of  removed :  0.0
+posscore of  removed :  0.0
+negscore of  word :  0.0
+posscore of  word :  0.0
+negscore of  form :  0.0
+posscore of  form :  0.0
+negscore of  root :  0.0
+posscore of  root :  0.0
+negscore of  education :  0.0
+posscore of  education :  0.25
+negscore of  machine :  0.0
+posscore of  machine :  0.0
+negscore of  performing :  0.0
+posscore of  performing :  0.0
+negscore of  calculations :  0.0
+posscore of  calculations :  0.0
+negscore of  dealing :  0.0
+posscore of  dealing :  0.0
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  including :  0.0
+posscore of  including :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  federal :  0.0
+posscore of  federal :  0.0
+negscore of  administers :  0.0
+posscore of  administers :  0.0
+negscore of  department :  0.0
+posscore of  department :  0.0
+negscore of  programs :  0.0
+posscore of  programs :  0.0
+negscore of  created :  0.0
+posscore of  created :  0.0
+negscore of  school :  0.0
+posscore of  school :  0.0
+negscore of  aid :  0.25
+posscore of  aid :  0.0
+negscore of  institutions :  0.0
+posscore of  institutions :  0.0
+negscore of  protocol :  0.0
+posscore of  protocol :  0.0
+negscore of  people :  0.0
+posscore of  people :  0.0
+negscore of  conventional :  0.375
+posscore of  conventional :  0.375
+negscore of  servers :  0.0
+posscore of  servers :  0.0
+negscore of  transfer :  0.0
+posscore of  transfer :  0.0
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  young :  0.125
+posscore of  young :  0.0
+negscore of  take :  0.0
+posscore of  take :  0.0
+negscore of  dispute :  0.5
+posscore of  dispute :  0.25
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  brand :  0.0
+posscore of  brand :  0.0
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  building :  0.0
+posscore of  building :  0.0
+negscore of  exception :  0.0
+posscore of  exception :  0.0
+negscore of  receive :  0.0
+posscore of  receive :  0.0
+negscore of  challenge :  0.25
+posscore of  challenge :  0.375
+negscore of  branch :  0.0
+posscore of  branch :  0.0
+negscore of  requests :  0.0
+posscore of  requests :  0.0
+negscore of  operation :  0.0
+posscore of  operation :  0.0
+negscore of  accepted :  0.0
+posscore of  accepted :  0.125
+negscore of  setting :  0.0
+posscore of  setting :  0.0
+negscore of  customs :  0.0
+posscore of  customs :  0.0
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  following :  0.0
+posscore of  following :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 419095.158577, 22888.183594
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 244.140625, 1.000000
+K-Core DFS belief_propagated_posscore: 244.140625
+K-Core DFS belief_propagated_negscore: 1.0
+Core Number belief_propagated_posscore: 419095.158577
+Core Number belief_propagated_negscore: 22888.1835938
+
