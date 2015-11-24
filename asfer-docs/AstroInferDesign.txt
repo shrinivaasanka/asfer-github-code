@@ -993,6 +993,36 @@ and LHS > RHS
 53.9.5 LHS is 100% and RHS is < 100%    -   LHS is non-BP algorithm to RHS BP* algorithm. (e.g P/poly algorithm for BPP)
 53.9.6 LHS is < 100% and RHS is 100%    -   RHS is non-BP algorithm to LHS BP* algorithm.
 
+--------------------------------------------------------------------------------------------------------------------
+53.10 (THEORY) Dictatorship, k-juntas testing and P(Good) circuit - simulation
+--------------------------------------------------------------------------------------------------------------------
+LHS of P(Good) is a pseudorandom choice judge boolean function. It has to be tested for dictatorship and k-junta property. This step adds to
+the hardness of LHS. What is the probability of LHS pseudorandom choice being a dictator or k-junta boolean function? This probability is independent of Goodness probability of LHS which is the noise stability. If the size of the population is n and k out of n are having dictators or k-juntas as judge boolean functions, probability of LHS being dictator or k-juntas is k/n. Following steps are required:
+	- PRG Choice outputs a Judge boolean function candidate for LHS.
+	- Dictatorship or k-juntas testing algorithm is executed for this candidate PRG choice.
+Expected number of steps required for choosing a dictator via PRG is arrived at by Bernoulli trial. Repeated PRG choices are made and property tested for dictatorship and k-juntas. Probability of PRG choice being a dictator is k/n. Probability p(t) that after t trials a dictator or k-juntas is found:
+p(t) = (1-k/n)^(t-1)(k/n) = (n-k)^(t-1) * k/n^t
+
+If t is the random variable, expectation of t is:
+E(t) = sigma(t*p(t)) = sigma((n-k)^(t-1)*tk/n^t)
+
+For a property testing algorithm running in O(q), time required in finding a dictator or k-juntas is O(q*sigma((n-k)^(t-1)*tk/n^t))
+
+For k=0:
+	E(t) = 0
+For k=1:
+	E(t) = sigma((n-1)^(t-1) * t/n^t) = 1/n + (n-1)*2/n^2 + (n-1)^2*3/n^3 + ...
+	     < 1/n + 2n/n^2 + 3n^2/n^3 + ...
+	     = 1+2+3+...+n/n
+             = n(n+1)/2n
+	     = (n+1)/2
+Thus to find one dictator approximately (n+1)/2 PRG expected choices are required. Above is not necessarily an exact process by which LHS arises but just a simulation of one special scenario.
+
+[Axiomatically k shouldn't be greater than 1 i.e there shouldn't be more than one dictator or juntas. Philosophical proof of this is by contradiction. Every element in a population set is subservient to a dictator by definition. The meaning of "dictator" here is global uniqueness for all voters and not locally unique to a voter boolean function. If there are 2 dictators population-wide, this definition is violated.]
+
+References:
+-----------
+53.10.1 Dictatorship,k-juntas testing - [Oded Goldreich] - http://www.wisdom.weizmann.ac.il/~oded/PDF/pt-junta.pdf
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
