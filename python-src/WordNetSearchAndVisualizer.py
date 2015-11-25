@@ -32,6 +32,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import Queue
 import operator
+import WordNetPath
 
 #########################################################################################################
 #Derived from Old version of Example Python code written more than 5 years ago in January 2010 during MSc thesis at IIT Chennai 
@@ -362,9 +363,15 @@ print "A primitive text generated from traversal of the k-core closure of RGO De
 print "================================================================================"
 kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
 #kcore_nxg=nx.k_core(nxg)
+text=""
+path=[]
 for k,v in kcore_nxg.edges():
-	print k, weight_str_map[k+" - "+v], v, ".",
-
+#for k,v in nxg.edges():
+	#print k, weight_str_map[k+" - "+v], v, ".",
+	path=WordNetPath.path_between(k,v)
+	path_sentence = " is related to ".join(path)
+	text = text + path_sentence + ". "
+print text
 print "\n"
 print "=============================================================================="
 print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
@@ -382,5 +389,3 @@ def composition_lambda(nxg):
 		composition_lambda_str="(" + composition_lambda_str + get_edge_lambda(k,v,nxg) + ")"
 	return composition_lambda_str
 print composition_lambda(nxg)
-
-
