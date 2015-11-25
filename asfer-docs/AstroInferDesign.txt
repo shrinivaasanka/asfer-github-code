@@ -955,7 +955,7 @@ which together are in NC. If the left-right paths are classified as top-down and
 --------------------------------------------------------------------------------------------------------
 53.7 (THEORY) P/Poly and P(Good) LHS and RHS - Karp-Lipton and Meyer's Theorems
 --------------------------------------------------------------------------------------------------------
-P/poly is the circuit class of polynomial size with polynomial advice strings and unrestricted depth. Thus P/poly is non-uniform circuit class.  Hence non-uniform NC is in P/poly. In 53.4, 53.5 and 53.6 example non-uniform NC1 circuits (subject to 100% noise stablility) Percolation boolean function were described. These are in P/poly as non-uniform NC is in P/poly and thus LHS of P(Good) is in P/poly. Hence when LHS and RHS binomial coefficient summations converge to 100% noise stability satisfying the conditions in 53.3, LHS is a P/poly algorithm to RHS EXPTIME DC uniform circuit (because both sides are depth unrestricted). To be precise LHS is an NC/poly circuit. If the advice string is logarithmic size, it is NC/log and there is a known result which states that NP in P/log implies P=NP.
+P/poly is the circuit class of polynomial size with polynomial advice strings and unrestricted depth. Thus P/poly is non-uniform circuit class.  Hence non-uniform NC is in P/poly. In 53.4, 53.5 and 53.6 example non-uniform NC1 circuits (subject to 100% noise stablility) Percolation boolean function were described. These are in P/poly as non-uniform NC is in P/poly and thus LHS of P(Good) is in P/poly. Hence when LHS and RHS binomial coefficient summations converge to 100% noise stability satisfying the conditions in 53.3, LHS is a P/poly algorithm to RHS EXPTIME DC uniform circuit (because both sides are depth unrestricted). To be precise LHS is an NC/poly circuit. If the advice string is logarithmic size, it is NC/log and there is a known result which states that NP in P/log implies P=NP. For percolation boolean functions with 100% noise stability regime (page 68 - http://arxiv.org/pdf/1102.5761.pdf), if the grid boundaries are the only advice strings, boundary coordinates can be specified in log(N) bits and hence LHS is in NC/log.
 
 If RHS is simply NP (if depth restricted and unlikely for arbitrary number of electorate) then LHS is a P/poly algorithm to RHS NP implying NP is contained in P/poly. By Karp-Lipton theorem NP in P/poly implies that PH collapses to second-level i.e sigma(p,2) and from [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995)] NP in P/poly implies AM=MA.
 
@@ -980,6 +980,17 @@ If the RHS doesn't converge to 1 and thus is in BPP and Noise Stability of LHS i
 
 If the RHS has a perfect k-SAT boolean decision function for all voters, size of the circuit is super-polynomial and sub-exponential(if exponential, circuit is DC uniform), P(Good) series converges to 100% and LHS is 100% noise stable Percolation function, then LHS is a P/poly algorithm for RHS NP-complete instance. Special case is when RHS has only one voter - LHS is P/poly (or NC/poly or NC/log) and RHS is NP-complete(assuming k-SAT of RHS voter is 100% noise stable) - and thus there is a P/poly circuit for NP in such a special case. From [Karp-Lipton] (53.7) if NP is in P/poly, PH collapses to second level and AM=MA. If LHS is P/log and RHS is NP, then P=NP. Thus 100% noise stable boolean function in LHS has huge ramifications and the P(Good) summation, its circuit version devour complexity arena in toto and variety of results can be concluded subject to noise stability.
 
+If LHS of P(Good) is in NC/log (Percolation as Judge boolean function) and RHS doesn't converge to 100% (i.e Majority*SAT boolean function composition has < 100% noise stability), LHS is a more efficient NC/log algorithm for RHS BP* hard circuit(e.g RHS is single voter with a SAT judge boolean function without 100% noise stability and thus in BPP). BPP is already known to have P/poly circuits and this implies a better bound that BPP is in NC/log. BPP is not known to have complete problems in which case , NC/log algorithm for RHS BPP-complete problem would imply NC/log = BPP for the single voter RHS with 3-SAT judging function with < 100% noise stability.
+
+Subtlety 1: For single voter in RHS with a 3-SAT voter judge boolean function, RHS is NP-complete from voting complexity standpoint irrespective of noise stability(Goodness of voting). But if noise stability is the criterion and 3-SAT is not noise stable 100%, RHS is a BPP problem. This is already mentioned in point 14 above(2 facets of voting - judging hardness and goodness).
+
+Subtlety 2: [Impagliazzo-Wigderson] theorem states that if there exists a decision problem with O(exp(n)) runtime and Omega(exp(n)) circuit size, then P=BPP. P(Good) RHS being a DC uniform circuit can have exponential size if variables are common across voter judge boolean functions, but is questionable if it is a decision problem of runtime O(exp(n)).
+
+References:
+----------
+53.8.1 Pseudorandomness - [Impagliazzo-Wigderson] - http://people.seas.harvard.edu/~salil/pseudorandomness/pseudorandomness-Aug12.pdf
+53.8.2 XOR Lemma [Yao] and [Impagliazzo-Wigderson] theorem - theory.stanford.edu/~trevisan/pubs/stv99stoc.ps
+
 -------------------------------------------------------------------------------------------------------------------
 53.9 (THEORY) Possible Scenarios in P(Good) LHS and RHS summation
 -------------------------------------------------------------------------------------------------------------------
@@ -990,8 +1001,8 @@ and LHS < RHS
 and LHS = RHS
 53.9.4 LHS is < 100% and RHS is < 100%  -   LHS is more efficient than RHS and both sides are in BP* classes
 and LHS > RHS
-53.9.5 LHS is 100% and RHS is < 100%    -   LHS is non-BP algorithm to RHS BP* algorithm. (e.g P/poly algorithm for BPP)
-53.9.6 LHS is < 100% and RHS is 100%    -   RHS is non-BP algorithm to LHS BP* algorithm.
+53.9.5 LHS is 100% and RHS is < 100%    -   LHS is more efficient than RHS. LHS is non-BP algorithm to RHS BP* algorithm. (e.g P/poly algorithm for BPP)
+53.9.6 LHS is < 100% and RHS is 100%    -   RHS is more efficient than LHS. RHS is non-BP algorithm to LHS BP* algorithm.
 
 --------------------------------------------------------------------------------------------------------------------
 53.10 (THEORY) Dictatorship, k-juntas testing and P(Good) circuit - simulation
