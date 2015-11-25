@@ -2527,7 +2527,16 @@ Sentiment Analysis of the tweet:
   Core Number belief_propagated_negscore: 22888.1835938
 - Above Sentiment Analysis rates the tweet with positive tonality.
 
+----------------------------------------------------------------------------------------------------------
+185. Commits as on 25 November 2015
+----------------------------------------------------------------------------------------------------------
+- New WordNetPath.py file has been added to compute the path in a WordNet graph between two words
+- WordNetSearchAndVisualizer.py text generation code has been updated for importing and invoking path_between() function in WordNetPath.py
+by which set of sentences are created from the RGO WordNet subgraph. This path is obtained from common hypernyms for two word vertices for each of the edges in RGO WordNet subgraph. RGO graph is a WordNet+ graph as it adds a new relation "is in definition of" to the existing WordNet
+that enhances WordNet relations. Each edge in RGO graph is made a hyperedge due to this hypernym path finding.
+- logs and screenshots have been added for above
 
+The text generated for the hypernym paths in WordNet subgraph in testlogs/ is quite primitive and sentences are connected with " is related to " phrase. More natural-looking sentences can be created with randomly chosen phrase connectives and random sentence lengths.
 
 
 
