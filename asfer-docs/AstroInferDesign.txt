@@ -984,7 +984,9 @@ If LHS of P(Good) is in NC/log (Percolation as Judge boolean function) and RHS d
 
 Subtlety 1: For single voter in RHS with a 3-SAT voter judge boolean function, RHS is NP-complete from voting complexity standpoint irrespective of noise stability(Goodness of voting). But if noise stability is the criterion and 3-SAT is not noise stable 100%, RHS is a BPP problem. This is already mentioned in point 14 above(2 facets of voting - judging hardness and goodness).
 
-Subtlety 2: [Impagliazzo-Wigderson] theorem states that if there exists a decision problem with O(exp(n)) runtime and Omega(exp(n)) circuit size, then P=BPP. P(Good) RHS being a DC uniform circuit can have exponential size if variables are common across voter judge boolean functions, but is questionable if it is a decision problem of runtime O(exp(n)).
+Subtlety 2: [Impagliazzo-Wigderson] theorem states that if there exists a decision problem with O(exp(n)) runtime and Omega(exp(n)) circuit size, then P=BPP. P(Good) RHS being a DC uniform circuit can have exponential size if variables are common across voter judge boolean functions, but is questionable if it is a decision problem of runtime O(exp(n)) - for m-EXPTIME circuits this bound could be O(staircase_exp(n)).
+
+NC/log circuits can be made into a uniform circuits by hardwiring advice strings which are logarithmic size. There are 2^(log(n)) = n advice strings possible for NC/log circuit with O(logn) depth and O(n^k) size. The n advice strings are added as hardwired gates into NC/log circuit which doesnot alter the polynomial size of the circuit. Due to this NC/log is in NC and hence in P. For NC/log LHS with 100% noise stability, if RHS is BPP-complete with < 100% noise stability, LHS is NC/log algorithm for BPP-complete problem (or) BPP is in NC/log and hence in P. But P is in BPP. Together this implies P=BPP if LHS is NC/log and RHS is a BPP-complete majority voting circuit(special case: one voter with less than 100% noise stability and 3-SAT boolean function).
 
 References:
 ----------
