@@ -203,13 +203,15 @@ For p=1, P(X > n/2) <= exp(-n/2) which for infinite n converges to 1.
 
 Thus tailbounds above are only less tight estimates and exact summation is better for p=0.5 and 1. 
 
---------------------------------------------------------
-There are two independent aspects to the P(Good) series:
---------------------------------------------------------
-(1) Goodness of Voting: 
+--------------------------------------------------------------------------------
+There are two independent aspects to the P(Good) series - Goodness and Hardness:
+--------------------------------------------------------------------------------
+(1) Goodness of Voting:
 The convergence of the binomial coefficient summation series in RHS is the "goodness" side of the voting expressed in terms of Noise sensitivity and Stability of each Voter's Boolean Function - whether the voters have exercised their franchise prudently to elect a "good" choice. If the Voter Boolean Functions are all balanced then by Kahn-Kalai-Linial lowerbound there are n/log(n) influential variables that control the decision of each Voter.
-(2) Voting: 
-The circuit for RHS(e.g Boolean Function Composition) and its Fourier polynomial expansion. 
+(2) Hardness of Voting:
+The circuit for RHS(e.g Boolean Function Composition) and its Fourier polynomial expansion.
+
+Mix of Hardness and Goodness result in variety of BP* classes or P* classes (if error is unbounded). Goodness is related to Noise Sensitivity and Stability. Probabilistic Hardness is due to pseudorandomness. Are Goodness and Pseudorandomness related? Yes, because Noise Sensitivity occurs when there is a correlation between two strings with flips. Correlation inturn occurs when flips are pseudorandom. Connection between Stability, Fourier coefficients and pseudorandom flip probability are expressed in (16) and (20) below (Plancherel's theorem).
 
 -------------------------------------------------------------------------------------------------
 Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
@@ -309,9 +311,9 @@ Thus if there is no Noise on either side LHS=RHS (or) LHS is a P algorithm to RH
 A boolean function is noise sensitive if and only if L2 norm (sum of squares) of influences of variables in f tends to zero.
 Therefore, for stability any voter boolean function in P(Good) RHS should not have the L2 norm of influences to tend to zero.
 
-(16) "How much increasing sets are positively correlated" by [Talagrand] - http://boolean-analysis.blogspot.in/2007/03/how-much-are-increasing-sets-positively.html - defines the inequality (Level-1 inequality):
+(16) "How much increasing sets are positively correlated" by [Talagrand] - http://boolean-analysis.blogspot.in/2007/03/how-much-are-increasing-sets-positively.html - defines the inequality (Chang's Level-1 inequality):
 	Weight(f) = sum_1_to_n(fouriercoeff(i)) <= O(mean^2*1/log(mean)) 
-where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). 
+where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). Related to this, point (20) is derived from Plancherel's theorem which equates E(f(x)g(x)) to summation(f_fourier(x)g_fourier(y)). But stability is E(f(x)f(y/x-correlated). The noise operator E(f(y)) is introduced for each monomial in fourier series by which E(monomial(S)) = (rho^|S|*fourier_f(S)). E(f(y)) is thus equivalent to a new boolean function g(x) for which Plancherel formula can be applied - E(f(x)E(f(y))) = summation(rho^|S|*fourier_f(S)^2) = Noise stability. First derivative of Stability wrt rho at rho=0 is Weight(f) - in other words this connects pseudorandomness with stability of a boolean function in terms of fourier coefficients.
 
 (17) By Majority is Stablest Theorem if P(Good) RHS is a boolean function composition of Maj*Maj=Majn(Maj1,Maj2,...,Majn) then its stability is derived as:
    (1-2/pi * arccos(rho))*(1-2/pi * arccos(rho)) assuming that stability of the composition is the product like other measures
@@ -986,7 +988,7 @@ Subtlety 1: For single voter in RHS with a 3-SAT voter judge boolean function, R
 
 Subtlety 2: [Impagliazzo-Wigderson] theorem states that if there exists a decision problem with O(exp(n)) runtime and Omega(exp(n)) circuit size, then P=BPP. P(Good) RHS being a DC uniform circuit can have exponential size if variables are common across voter judge boolean functions, but is questionable if it is a decision problem of runtime O(exp(n)) - for m-EXPTIME circuits this bound could be O(staircase_exp(n)).
 
-NC/log circuits can be made into a uniform circuits by hardwiring advice strings which are logarithmic size. There are 2^(log(n)) = n advice strings possible for NC/log circuit with O(logn) depth and O(n^k) size. The n advice strings are added as hardwired gates into NC/log circuit which doesnot alter the polynomial size of the circuit. Due to this NC/log is in NC and hence in P. For NC/log LHS with 100% noise stability, if RHS is BPP-complete with < 100% noise stability, LHS is NC/log algorithm for BPP-complete problem (or) BPP is in NC/log and hence in P. But P is in BPP. Together this implies P=BPP if LHS is NC/log and RHS is a BPP-complete majority voting circuit(special case: one voter with less than 100% noise stability and 3-SAT boolean function).
+NC/log circuits can be made into a uniform circuits by hardwiring advice strings which are logarithmic size. There are 2^(log(n)) = n advice strings possible for NC/log circuit with O(logn) depth and O(n^k) size. The n advice strings are added as hardwired gates into NC/log circuit which doesnot alter the polynomial size of the circuit. Due to this NC/log is in NC and hence in P. For NC/log LHS with 100% noise stability, if RHS is BPP-complete with < 100% noise stability, LHS is NC/log algorithm for BPP-complete problem (or) BPP is in NC/log and hence in P. But P is in BPP. Together this implies P=BPP if LHS is NC/log and RHS is a BPP-complete majority voting circuit(special case: one voter with less than 100% noise stability and 3-SAT boolean function). This leads to the question: Is there a 3-SAT voter judge boolean function with 100% noise stability? Is percolation with 100% noise stability regime reducible to 3-SAT? If yes, then LHS [P/log, NC/log or P/poly] percolation boolean function with 100% noise stability solves RHS NP-complete problem and hence NP is in P/poly, PH collapses to second level and AM=MA (or) NP is in [P/log, NC/log] and P=NP.
 
 References:
 ----------
