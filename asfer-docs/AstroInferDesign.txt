@@ -347,6 +347,9 @@ For epsilon=o(1/n^2*alpha4), Pr[fn(sequence)=fn(sequence with epsilon perturbati
 
 Open question: If Percolation Boolean Functions are 100% noise stable (as in infinite grid previously), what is the lowerbound of such boolean functions (or) how hard and in what complexity class C should they be. This infinite version of percolation is a non-uniform polynomial circuit class (grid has n^2 coordinates).
 
+(*IMPORTANT* - this requires lot of reviewing - if correct places a theoretical limit on when stability occurs) From Plancherel's theorem and stability relation mentioned in (16), summation(rho^|S|*fourier_f(S)^2) = Noise stability. When stability is 1, this summation is equal to 1. In other words rho^|S1|*fourier_f(S1)^2 + rho^|S2|*fourier_f(S2)^2 + ...+ - 1 = 0 which is a univariate polynomial in rho as variable with n roots and degree n. Polynomial Identity Testing algorithms are required to ensure that this polynomial is non-zero (coefficients are non zero). The roots of this polynomial are the probabilities where a boolean function is resilient to noise and 100% stable. It non-constructively shows existence of such stable boolean functions. [Talagrand] proved existence of a random CNF with noise sensitivity > Omega(1) - described in http://www.cs.cmu.edu/~odonnell/papers/thesis.pdf. Noise stability depends on huge [S] as evidenced by stability = summation(rho^|S|*fourier_coeff(f(S))^2). What this implies is that for any boolean function, 100% stability is attainable at only n points in [0,1]. In other words there is no boolean function which is 100% noise stable for all points of rho in [0,1]. It also implies that BKS majority is least stable conjecture is true at these points of rho.
+
+
 (20) Noise stability in terms of Fourier coefficient weights is defined as:
 	summation( rho^k * W^k ) for all degree-k weights where W = summation(fourier_coeff(S)^2) for all |S|, S in [n]
 
