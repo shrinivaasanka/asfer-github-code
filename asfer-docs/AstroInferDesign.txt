@@ -1062,7 +1062,8 @@ Stability can be written as:
 Since rho < 1:
 	epsilon = sigma_S_>_t_((rho^|S|*f(S))^2) < epsilon_stable = sigma_S_>_t_(rho^|S|*f(S)^2) , |S| > t
 	s_stable = 2^[[1-sigma_S_<_t(rho^|S|*f(S)^2)]*t^(1/d-1)/k^(1/d-1)] > s , t=O((log s/epsilon_stable)^(d-1)), |S| > t
-s_stable in last line is the size of the 100% noise stable circuit fo f. Important deduction from the s_stable is that the size of a 100% noise stable circuit for f is exponentially more than less stable circuit size for f (because exponent of rho reduces by 1 in epsilon_stable summation as against epsilon) - in other words stability requires more circuit size i.e computational power. This is a kind of Noise-Size Hierarchy Result for circuits.
+s_stable in last line is the size of the 100% noise stable circuit for f. Important deduction from the s_stable is that the size of a 100% noise stable circuit for f is exponentially more than less stable circuit size for f (because exponent of rho reduces by 1 in epsilon_stable summation as against epsilon) - in other words stability requires more circuit size i.e computational power. This is a kind of Noise-Size Hierarchy Result for circuits. Substituting the value of t in s_stable above and reducing shows:
+	sigma(rho^|S|*f(S)) = (log s/ l*log(sqrt(s))) for |S| > t
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
