@@ -1046,24 +1046,35 @@ References:
 -------------------------------------------------------------------------------------------------------------------
 Hastad-Linial-Mansour-Nisan Theorem states that for a boolean function f:{0,1}^n->{0,1} computed by circuit of size < s and depth < d, if the
 fourier coefficients for large S are epsilon-concentrated:
-	sigma(fourier_coeff(S)) < epsilon for |S| > t where t = O((log s/epsilon)^(1/d-1)).
+	sigma(fourier_coeff(S)^2) < epsilon for |S| > t where t = O((log s/epsilon)^(1/d-1)).
 Above implies that:
-	s = 2^(epsilon*(t/k)^1/(d-1))
+	t = O(log s/epsilon)^(d-1) = k*(log s/epsilon)^(d-1) for some constant k.
+	(t/k)^(1/d-1) = log(s/epsilon)
+	s = epsilon*2^((t/k)^1/(d-1))
 For a noisy boolean function f with rho probability of flip, the noise operator T is applied to the Fourier expansion of f:
 	T(f) = sigma(rho^|S|*fourier_coeff(S)*parity(S)) for S in [n] and each Fourier coefficient of T(f) = rho^|S|*fourier_coeff(S)
+From HLMN theorem, applying noise operator above (this needs to be verified) to noisy boolean function circuit Fourier spectrum:
+	if sigma([rho^|S|*fourier_coeff(S)]^2) <= epsilon, |S| > t where t=O((log s/epsilon)^(d-1)),
+	size s = sigma([rho^|S|*fourier_coeff(S)]^2)*2^[(t/k)^1/(d-1)] substituting for epsilon and |S| > t.
+	Thus size of the circuit exponentially depends on t - size of parity sets S in [n] - |S| - which can have maximum value of n(number of inputs).
+
 If f is 100% noise stable, from Plancherel theorem:
 	sigma(rho^|S|*f(S)^2) = 1, S in [n]
-From HLMN theorem, applying noise operator above (this needs to be verified) to noisy boolean function circuit Fourier spectrum:
-	if sigma((rho^|S|*fourier_coeff(S))^2) <= epsilon, |S| > t where t=O((log s/epsilon)^(d-1)),
-	size s = 2^(sigma((rho^|S|*fourier_coeff(S))^2)*(t/k)^1/(d-1)) substituting for maximum epsilon and |S| > t.
 Stability can be written as:
 	sigma_S_<_t(rho^|S|*f(S)^2) + sigma_S_>=_t(rho^|S|*f(S)^2) = 1
 	[1 - sigma_S_<=_t(rho^|S|*f(S)^2)] = sigma_S_>_t(rho^|S|*f(S)^2)
 Since rho < 1:
 	epsilon = sigma_S_>_t_((rho^|S|*f(S))^2) < epsilon_stable = sigma_S_>_t_(rho^|S|*f(S)^2) , |S| > t
-	s_stable = 2^[[1-sigma_S_<_t(rho^|S|*f(S)^2)]*t^(1/d-1)/k^(1/d-1)] > s , t=O((log s/epsilon_stable)^(d-1)), |S| > t
-s_stable in last line is the size of the 100% noise stable circuit for f. Important deduction from the s_stable is that the size of a 100% noise stable circuit for f is exponentially more than less stable circuit size for f (because exponent of rho reduces by |S| - from 2|S| to |S| -  in epsilon_stable summation as against epsilon) - in other words stability requires more circuit size i.e computational power. This is a kind of Noise-Size Hierarchy Result for circuits. Substituting the value of t in s_stable above and reducing shows:
-	sigma(rho^|S|*f(S)) = (log s/ l*log(sqrt(s))) for |S| > t
+
+	s_stable = [1-sigma_S_<_t(rho^|S|*f(S)^2)]*2^((t/k)^1/(d-1)) > s , t=O((log s/epsilon_stable)^(d-1)), |S| > t
+	(or)
+	s_stable = sigma(rho^|S|*[fourier_coeff(S)]^2)*2^[(t/k)^1/(d-1)] , t=O((log s/epsilon_stable)^(d-1)), |S| > t.
+s_stable is the size of the 100% noise stable circuit for f.
+From above, t with noise operator is:
+	t(noise_operator)=O(log s/sigma(rho^|S|*f(S)^2)), |S| > t
+and t without noise operator is:
+	t=O(log s/sigma(f(S)^2)), |S| > t
+which implies that t(noise_operator) > t since denominator summation of fourier coefficients is attenuated by rho^|S| i.e the lowerbound of t in exponent for size increases due to noise operator. This should be the case for both expressions of s_stable above using Plancherel version of stability.
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
