@@ -1074,7 +1074,9 @@ From above, t with noise operator is:
 	t(noise_operator)=O(log s/sigma(rho^|S|*f(S)^2)), |S| > t
 and t without noise operator is:
 	t=O(log s/sigma(f(S)^2)), |S| > t
-which implies that t(noise_operator) > t since denominator summation of fourier coefficients is attenuated by rho^|S| i.e the lowerbound of t in exponent for size increases due to noise operator. This should be the case for both expressions of s_stable above using Plancherel version of stability.
+which implies that t(noise_operator) > t since denominator summation of fourier coefficients is attenuated by rho^|S| i.e the lowerbound of t in exponent for size increases due to noise operator. This should be the case for both expressions of s_stable above using Plancherel version of stability. This has strong relation to non-uniformity as rho is set of pseudorandom number strings for flip corresponding to values of rho where stability=1. The circuit size increases due to these pseudorandom strings as advice to the circuit whereas without noise operator these advice strings are lacking. If size of a noisy boolean function circuit is poly(n), these advice strings in the exponent t with noise operator add to the size of the circuit to make it stable. The increase in circuit size due to noise operator can be derived to be approximately:
+	s_stable ~ s * [sigma(f(S)^2)/sigma(rho^|S|*f(S)^2)]^2 , |S| > t and equivalently for |S| < t from Stability interms of Plancherel theorem.
+This is the circuit size lowerbound for boolean function with 100% noise stability compared to the same function with noise.
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
