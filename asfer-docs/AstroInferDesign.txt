@@ -1065,18 +1065,19 @@ Stability can be written as:
 	[1 - sigma_S_<=_t(rho^|S|*f(S)^2)] = sigma_S_>_t(rho^|S|*f(S)^2)
 Since rho < 1:
 	epsilon = sigma_S_>_t_((rho^|S|*f(S))^2) < epsilon_stable = sigma_S_>_t_(rho^|S|*f(S)^2) , |S| > t
+	epsilon_stable can also be written as = sigma_S_<_t_(1-rho^|S|*f(S)^2), |S| < t
 
-	s_stable = [1-sigma_S_<_t(rho^|S|*f(S)^2)]*2^((t/k)^1/(d-1)) > s , t=O((log s/epsilon_stable)^(d-1)), |S| > t
+	s = sigma[f(S)^2] * 2^(t/k)^1/(d-1)) , t=O((log s/epsilon)^(d-1)), |S| > t
+	s_stable = [1-sigma_S_<_t(rho^|S|*f(S)^2)]*2^((t/k)^1/(d-1))  , t=O((log s_stable/epsilon_stable)^(d-1)), |S| < t
 	(or)
-	s_stable = sigma(rho^|S|*[fourier_coeff(S)]^2)*2^[(t/k)^1/(d-1)] , t=O((log s/epsilon_stable)^(d-1)), |S| > t.
+	s_stable = sigma(rho^|S|*[fourier_coeff(S)]^2)*2^[(t/k)^1/(d-1)] , t=O((log s_stable/epsilon_stable)^(d-1)), |S| > t.
 s_stable is the size of the 100% noise stable circuit for f.
 From above, t with noise operator is:
-	t(noise_operator)=O(log s/sigma(rho^|S|*f(S)^2)), |S| > t
-and t without noise operator is:
+	t(noise_operator)=O(log s/sigma(rho^|S|*f(S)^2)), |S| > t (or)
+	t(noise_operator)=O(log s/(1-sigma_S_<_t(rho^|S|*f(S)^2))), |S| < t
+which is substituted for t in s_stable above and t without noise operator is:
 	t=O(log s/sigma(f(S)^2)), |S| > t
-which implies that t(noise_operator) > t since denominator summation of fourier coefficients is attenuated by rho^|S| i.e the lowerbound of t in exponent for size increases due to noise operator. This should be the case for both expressions of s_stable above using Plancherel version of stability. This has strong relation to non-uniformity as rho is set of pseudorandom number strings for flip corresponding to values of rho where stability=1. The circuit size increases due to these pseudorandom strings as advice to the circuit whereas without noise operator these advice strings are lacking. If size of a noisy boolean function circuit is poly(n), these advice strings in the exponent t with noise operator add to the size of the circuit to make it stable. The increase in circuit size due to noise operator can be derived to be approximately:
-	s_stable ~ s * [sigma(f(S)^2)/sigma(rho^|S|*f(S)^2)]^2 , |S| > t and equivalently for |S| < t from Stability interms of Plancherel theorem.
-This is the circuit size lowerbound for boolean function with 100% noise stability compared to the same function with noise.
+which implies that t(noise_operator) > t since denominator summation of fourier coefficients is attenuated by rho^|S| i.e the lowerbound of t in exponent for size increases due to noise operator. This should be the case for both expressions of s_stable above using Plancherel version of stability. This has strong relation to non-uniformity as rho is set of pseudorandom number strings for flip corresponding to values of rho where stability=1 which are advice strings to the circuit.
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
 A voter gadget spawns itself into liker, disliker and neutral parallel threads on an entity to be judged. The neutral thread gathers inputs from liker and disliker threads and gets a weighted sum on them to classify the entity as "like-able" or "dislike-able". Thus real-world classification or judgement and perception seem mythical. (And how is weightage decided? Can this be using SentiWordNet score?)
@@ -2464,6 +2465,11 @@ Mars , Mercury , Venus ,
 
 Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
 
+------------------------------------------
+Update on 2 December 2015 - Chennai Rains:
+------------------------------------------
+A strong bout of Mined rules (11),(12),(13) and (25) above - Sun, Mercury, Venus, Saturn - occurs from 21 November 2015 till 15 January 2016 across 3 juxtaposed astronomical signs , with increased activity from 2 December 2015 and peaking at 7 December 2015 - 16 December 2015 and 27 December 2015 - 15 Januray 2016. Chennai seems to be feeling the brunt of this. [Friends and Relatives in My Beloved Chennai, Be safe. I pray God it stops. Unfortunately I am not in Chennai at present.Just an alert.]
+
 =================================================================================================================
 173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer - Commits as on 5 November 2015 :
 -----------------------------------------------------------------------------------------------------------------
@@ -2580,6 +2586,7 @@ that enhances WordNet relations. Each edge in RGO graph is made a hyperedge due 
 - logs and screenshots have been added for above
 
 The text generated for the hypernym paths in WordNet subgraph in testlogs/ is quite primitive and sentences are connected with " is related to " phrase. More natural-looking sentences can be created with randomly chosen phrase connectives and random sentence lengths.
+
 
 
 
