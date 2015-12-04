@@ -2589,6 +2589,16 @@ that enhances WordNet relations. Each edge in RGO graph is made a hyperedge due 
 
 The text generated for the hypernym paths in WordNet subgraph in testlogs/ is quite primitive and sentences are connected with " is related to " phrase. More natural-looking sentences can be created with randomly chosen phrase connectives and random sentence lengths.
 
+----------------------------------------------------------------------------------------------------------
+186. Commits as on 4 December 2015
+----------------------------------------------------------------------------------------------------------
+All the Streaming_<>.py Streaming Algorithm implementations have been updated with:
+- hashlib ripemd160 hash MD algorithm for hash functions and return hexdigest()
+- USBWWAN byte stream data from USBmd print_buffer() logs has been added as a Data Storage and Data Source
+- logs for the above have been added to testlogs/
+- Streaming Abstract Generator has been updated with USB stream data iterable and parametrized for data source and storage
+- Some corrections to the scripts
+
 
 
 
