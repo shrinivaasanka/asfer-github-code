@@ -35,10 +35,17 @@
 #----------------------------------------------------
 
 import binascii
+import hashlib
 import Streaming_AbstractGenerator
 
-def getHash(inp, hashfn_index):
-	hash=(int(binascii.hexlify(inp),16)*hashfn_index) % bloomfiltersize 
+def string_hash_code(str):
+	h=hashlib.new("ripemd160")
+	h.update(str)
+	return h.hexdigest()
+
+def getHashedLocation(inp, hashfn_index):
+	hash=(int(string_hash_code(inp),16)*hashfn_index) % bloomfiltersize 
+	#hash=(int(binascii.hexlify(inp),16)*hashfn_index) % bloomfiltersize 
 	#print "hash for [",inp,"] :",hash
 	return hash
 
@@ -51,10 +58,10 @@ for i in xrange(bloomfiltersize):
 
 
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen()
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 for i in inputf:
 	for k in xrange(no_of_hashfns):
-		bloom_bitset[getHash(i,k)]=1
+		bloom_bitset[getHashedLocation(i,k)]=1
 print bloom_bitset
 
 #sample queries from the input stream and not in input stream
@@ -63,16 +70,22 @@ print bloom_bitset
 #query=["osoioiiee" ,"73885.399249226" ,"2292179968"]
 
 #for HBase storage
-query=["osoioiiee" ,"880130065\x0A", "875310463\x0A"]
+#query=["osoioiiee" ,"880130065\x0A", "875310463\x0A"]
+
+#for USBWWAN stream storage
 
 queryoutput=1
-for t in xrange(len(query)):
+num_queries=0
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+for t in inputf:
 	for k in xrange(no_of_hashfns):
-		queryoutput = queryoutput & bloom_bitset[getHash(query[t],k)]
+		queryoutput = queryoutput & bloom_bitset[getHashedLocation(t,k)]
 		if queryoutput == 0:
-			print "Element [",query[t],"] is not member of this set"
+			print "Element [",t,"] is not member of this set"
 			break
-
-	if queryoutput==1:
-		print "Element [",query[t],"] may be member of this set"
+	if queryoutput == 1:
+		print "Element [",t,"] may be member of this set"
 	queryoutput=1
+	num_queries += 1
+	if num_queries > 10:
+		break

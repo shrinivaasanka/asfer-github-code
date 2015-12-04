@@ -28,15 +28,18 @@
 # alpha*no_of_buckets*2^(sigma(buckets)/no_of_buckets) where alpha ~ 0.39701
 
 import binascii
+import hashlib
 import math
 import Streaming_AbstractGenerator
 
 
 no_of_buckets=256
 
-def getHash(value):
-	hash=bin((int(binascii.hexlify(value),16)) | len(value))
-	print "hash for string [",value,"] :",hash
+def getHash(str):
+        h=hashlib.new("ripemd160")
+        h.update(str)
+	hash=bin(int(h.hexdigest(),16))
+	print "hash for string [",str,"] :",hash
 	return hash
 
 def getRank(hashstring):
@@ -50,7 +53,7 @@ for n in xrange(no_of_buckets):
 
 #The text file is updated by a stream of data
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen()
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 for i in inputf:
 	print "######################################"
 	hashstring=getHash(i)

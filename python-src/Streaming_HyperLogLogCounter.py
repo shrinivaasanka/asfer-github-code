@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,17 +10,17 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #--------------------------------------------------------------------------------------------------------
 #Copyright (C):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9789346927, 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch):
-#http://sourceforge.net/users/ka_shrinivaasan
-#https://www.ohloh.net/accounts/ka_shrinivaasan
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 # Streaming - HyperLogLog counter algorithm - Cardinality Estimation :
@@ -31,16 +31,19 @@
 # of these subset cardinalities is the HyperLogLog estimation
 
 import binascii
+import hashlib
 import math
 import Streaming_AbstractGenerator
 
 
 no_of_buckets=256
 
-def getHash(value):
-	hash=bin((int(binascii.hexlify(value),16)) | len(value))
-	print "hash for string [",value,"] :",hash
-	return hash
+def getHash(str):
+        h=hashlib.new("ripemd160")
+        h.update(str)
+        hash=bin(int(h.hexdigest(),16))
+        print "hash for string [",str,"] :",hash
+        return hash
 
 def getRank(hashstring):
 	rank=hashstring.find("1") + 1
@@ -55,7 +58,7 @@ for n in xrange(no_of_buckets):
 line=0
 cardinality=[]
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen()
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 for i in inputf:
 	line=line+1
 	if line < 20:

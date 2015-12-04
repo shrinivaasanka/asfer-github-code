@@ -34,20 +34,29 @@ import pyhs2
 from cassandra.cluster import Cluster
 
 class StreamAbsGen(object):
-	def __init__(self):
+	def __init__(self,data_storage,data_source):
 		#For Apache Cassandra, HBase and Hive, code from HivePythonClient.py for HiveServer2,
 		#HBasePythonClient.py and CassandraPythonClient.py has been #replicated in __iter__(). 
 
-		self.data_storage="file"
+		#Possible storages:
+		#self.data_storage="file"
 		#self.data_storage="hive"
 		#self.data_storage="hbase"
 		#self.data_storage="cassandra"
+		#self.data_storage="USBWWAN_stream"
+		self.data_storage=data_storage
 
+		#Possible datasources:
 		#self.data_source="RZF"
-		self.data_source="movielens"
+		#self.data_source="movielens"
+		#self.data_source="USBWWAN"
+		self.data_source=data_source
 
 		if self.data_storage=="file":
 			self.inputfile=open("StreamingData.txt")
+
+		if self.data_storage=="USBWWAN_stream":
+			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/usb-md/usb_wwan_modified/testlogs/kern.log.print_buffer_byte.3December2015")
 
 		if self.data_storage=="hbase":
 			self.hbase_connection = happybase.Connection(host='localhost',port=9090,transport='buffered')
@@ -106,5 +115,9 @@ class StreamAbsGen(object):
 			        #print row.row_id,' ',row.alphanum
 				print "StreamAbsGen(Cassandra storage): iterator yielding %s" % row.alphanum 
 				yield row.alphanum
+		if self.data_storage=="USBWWAN_stream":
+			for i in self.inputfile:
+				print "StreamAbsGen(USBWWAN byte stream data): iterator yielding %s" % i
+				yield i
 
 		

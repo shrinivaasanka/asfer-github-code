@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,17 +10,17 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #--------------------------------------------------------------------------------------------------------
 #Copyright (C):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9789346927, 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch):
-#http://sourceforge.net/users/ka_shrinivaasan
-#https://www.ohloh.net/accounts/ka_shrinivaasan
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------
@@ -32,11 +32,15 @@
 # estimate of frequency of the value in input stream.
 
 import binascii
+import hashlib
+import Streaming_AbstractGenerator
 
-def getHash(inp, row):
-	hash=int(binascii.hexlify(inp),16)*row % columns 
-	return hash
-
+def getHash(str):
+        h=hashlib.new("ripemd160")
+        h.update(str)
+        hash=int(h.hexdigest(),16)
+        print "hash for string [",str,"] :",hash
+        return hash
 
 rows=3
 columns=30
@@ -49,17 +53,20 @@ for m in xrange(rows):
 	countminsketch.append(rowvector)
 print countminsketch
 
-inputf=open("StreamingData.txt","r")
+#inputf=open("StreamingData.txt","r")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #add and populate sketch
 for i in inputf:
 	for row in xrange(rows):
-		countminsketch[row][getHash(i,row)]+=1	
+		countminsketch[row][getHash(i)%columns]+=1	
 print countminsketch
 
-inputf=open("StreamingData.txt","r")
+#inputf=open("StreamingData.txt","r")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #frequencies of each input - minimum of all hashed cells 
 for i in inputf:
 	maximum=10000000000
 	for row in xrange(rows):
-		minsketch=min(maximum, getHash(i,row))	
+		minsketch=min(maximum, countminsketch[row][getHash(i)%columns])	
+		maximum=minsketch
 	print "minsketch for [",i,"] :",minsketch
