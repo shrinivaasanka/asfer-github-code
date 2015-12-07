@@ -2618,6 +2618,17 @@ All the Streaming_<>.py Streaming Algorithm implementations have been updated wi
 - Streaming Abstract Generator has been updated with USB stream data iterable and parametrized for data source and storage
 - Some corrections to the scripts
 
+----------------------------------------------------------------------------------------------------------
+187. Commits as on 7 December 2015
+----------------------------------------------------------------------------------------------------------
+- USB stream file storage name updated in Streaming_AbstractGenerator
+- Corrections to CountMinSketch - hashing updated to include rows (now the element frquencies are estimated almost exactly)
+- logs for above updated to CountMinSketch
+Added Cardinality estimation with LogLog and HyperLogLog counters for USB stream datasets
+- HyperLogLog estimation: ~110 elements
+- LogLog estimation: ~140 elements
+
+
 
 
 
