@@ -56,7 +56,7 @@ class StreamAbsGen(object):
 			self.inputfile=open("StreamingData.txt")
 
 		if self.data_storage=="USBWWAN_stream":
-			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/usb-md/usb_wwan_modified/testlogs/kern.log.print_buffer_byte.3December2015")
+			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
 
 		if self.data_storage=="hbase":
 			self.hbase_connection = happybase.Connection(host='localhost',port=9090,transport='buffered')
@@ -117,7 +117,7 @@ class StreamAbsGen(object):
 				yield row.alphanum
 		if self.data_storage=="USBWWAN_stream":
 			for i in self.inputfile:
-				print "StreamAbsGen(USBWWAN byte stream data): iterator yielding %s" % i
+				#print "StreamAbsGen(USBWWAN byte stream data): iterator yielding %s" % i
 				yield i
 
 		

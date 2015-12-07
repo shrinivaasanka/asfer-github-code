@@ -35,15 +35,15 @@ import binascii
 import hashlib
 import Streaming_AbstractGenerator
 
-def getHash(str):
+def getHash(str,row):
         h=hashlib.new("ripemd160")
         h.update(str)
-        hash=int(h.hexdigest(),16)
-        print "hash for string [",str,"] :",hash
+        hash=int(h.hexdigest(),16)*row
+        #print "hash for string [",str,"] :",hash
         return hash
 
-rows=3
-columns=30
+rows=10
+columns=1000
 
 countminsketch=[]
 rowvector=[]
@@ -51,14 +51,16 @@ for n in xrange(columns):
 	rowvector.append(0)
 for m in xrange(rows):
 	countminsketch.append(rowvector)
-print countminsketch
+#print countminsketch
 
 #inputf=open("StreamingData.txt","r")
 inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #add and populate sketch
 for i in inputf:
 	for row in xrange(rows):
-		countminsketch[row][getHash(i)%columns]+=1	
+		column=getHash(i,row)%columns
+		countminsketch[row][column]+=1	
+	row=0
 print countminsketch
 
 #inputf=open("StreamingData.txt","r")
@@ -67,6 +69,8 @@ inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 for i in inputf:
 	maximum=10000000000
 	for row in xrange(rows):
-		minsketch=min(maximum, countminsketch[row][getHash(i)%columns])	
+		column=getHash(i,row)%columns
+		minsketch=min(maximum, countminsketch[row][column])	
 		maximum=minsketch
-	print "minsketch for [",i,"] :",minsketch
+	print "minsketch frequency estimation for [",i,"] :",minsketch
+	row=0
