@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,22 +10,25 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #--------------------------------------------------------------------------------------------------------
 #Copyright (C):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9789346927, 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch):
-#http://sourceforge.net/users/ka_shrinivaasan
-#https://www.ohloh.net/accounts/ka_shrinivaasan
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 # Streaming - LogLog counter algorithm - Cardinality Estimation :
 #----------------------------------------------------------------
 # alpha*no_of_buckets*2^(sigma(buckets)/no_of_buckets) where alpha ~ 0.39701
+#
+# Each hashed bitstring is split into two substrings [0-k] and [k-n] and there are 2^k estimation buckets. Rank of each hash substring [k-n] is
+# computed - number of leading 0s + 1 - which is the cardinality of [k-n] subtring sets. Thus there are two logarithms k and n-k which together # constitute LogLog counting.
 
 import binascii
 import hashlib
@@ -74,5 +77,5 @@ for bucket in xrange(no_of_buckets):
 
 print "sum of buckets : ",sum
 cardinality = 0.39701 * no_of_buckets * math.pow(2, float(sum)/float(no_of_buckets))
-print cardinality
+print "Cardinality of the stream dataset:",cardinality
 	
