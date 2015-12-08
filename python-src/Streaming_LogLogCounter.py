@@ -56,7 +56,8 @@ for n in xrange(no_of_buckets):
 
 #The text file is updated by a stream of data
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
 for i in inputf:
 	print "######################################"
 	hashstring=getHash(i)

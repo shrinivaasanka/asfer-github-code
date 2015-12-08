@@ -58,7 +58,8 @@ for n in xrange(no_of_buckets):
 line=0
 cardinality=[]
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
 for i in inputf:
 	line=line+1
 	if line < 20:
@@ -93,4 +94,4 @@ for i in cardinality:
 	harmonicmean = harmonicmean + 1/i
 harmonicmean = len(cardinality)/harmonicmean
 
-print "harmonic mean :", harmonicmean
+print "Cardinality of Stream Dataset - harmonic mean :", harmonicmean
