@@ -2647,8 +2647,15 @@ Added Cardinality estimation with LogLog and HyperLogLog counters for USB stream
 - HyperLogLog estimation: ~110 elements
 - LogLog estimation: ~140 elements
 
-
-
+----------------------------------------------------------------------------------------------------------
+188. Commits as on 8 December 2015
+----------------------------------------------------------------------------------------------------------
+- Updated the Streaming LogLogCounter and HyperLogLogCounter scripts to accept StreamData.txt dataset from Abstract Generator and added a
+Spark MapReducer script for Streaming Data sets for comparison of exact data with Streaming_<algorithm>.py estimations.
+- Added logs for the Counters and Spark MapReducer script on the StreamData.txt
+- LogLog estimation: ~133
+- HyperLogLog estimation: ~106
+- Exact cardinality: 104
 
 
 
