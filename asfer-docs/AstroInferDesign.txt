@@ -218,6 +218,25 @@ The circuit for RHS(e.g Boolean Function Composition) and its Fourier polynomial
 
 Mix of Hardness and Goodness result in variety of BP* classes or P* classes (if error is unbounded). Goodness is related to Noise Sensitivity and Stability. Probabilistic Hardness is due to pseudorandomness. Are Goodness and Pseudorandomness related? Yes, because Noise Sensitivity occurs when there is a correlation between two strings with flips. Correlation inturn occurs when flips are pseudorandom. Connection between Stability, Fourier coefficients and pseudorandom flip probability are expressed in (16) and (20) below (Plancherel's theorem).
 
+--------------------------------------------------------------------------------
+Noise Stability and Complexity Class BPP
+--------------------------------------------------------------------------------
+In all points in this document, an assumption is made that Noise Stability and BPP are equivalent notions. Is this valid? A language L is in BPP if for x in L there exists a Turing Machine that accepts x and outputs 1 with bounded probability (e.g 2/3) and if x not in L, rejects x and outputs 0 with bounded probability (e.d 1/3). Following table illustrates all possible scenarios and where BPP and Noise Stability fill-in (x/e is correlated, flipped version of x):
+-------------------------------------------------------------------------------------------------
+	x				|    f(x) = f(x/e)	|	f(x) != f(x/e) Noise    |
+-------------------------------------------------------------------------------------------------
+x in L, x/e in L			|	No error	|	Error		        |
+-------------------------------------------------------------------------------------------------
+x in L, x/e not in L			|       Error		|   No error if f(x)=1,f(x/e)=0 |
+					|			|   else Error			|
+-------------------------------------------------------------------------------------------------
+x not in L, x/e in L			|       Error		|   No error if f(x)=0,f(x/e)=1 |
+					|			|   else Error			|
+-------------------------------------------------------------------------------------------------
+x not in L, x/e not in L		|       No error	|      Error			|
+-------------------------------------------------------------------------------------------------
+Third column of the table relates Noise Sensitivity and BPP. Hence Noise Sensitivity is a special case of BPP and hence in BPP.
+
 -------------------------------------------------------------------------------------------------
 Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
 -------------------------------------------------------------------------------------------------
