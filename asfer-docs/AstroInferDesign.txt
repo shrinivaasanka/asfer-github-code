@@ -2668,6 +2668,15 @@ Spark MapReducer script for Streaming Data sets for comparison of exact data wit
 - HyperLogLog estimation: ~106
 - Exact cardinality: 104
 
+----------------------------------------------------------------------------------------------------------
+189. Commits as on 9 December 2015
+----------------------------------------------------------------------------------------------------------
+- New python implementation for CountMeanMinSketch Streaming Data Frequency Estimation has been added which is an improved version of
+CountMinSketch that computes median of average of estimator rows in sketch
+- Corrections to CountMinSketch hashing algorithms and Sketch width-depth as per the error bounds has been made
+- Spark MapReducer prints the number of elements in the stream data set
+- Logs for the above have been added to testlogs
+
 
 
 - 
