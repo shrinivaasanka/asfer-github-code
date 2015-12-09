@@ -235,7 +235,18 @@ x not in L, x/e in L			|       Error		|   No error if f(x)=0,f(x/e)=1 |
 -------------------------------------------------------------------------------------------------
 x not in L, x/e not in L		|       No error	|      Error			|
 -------------------------------------------------------------------------------------------------
-Third column of the table relates Noise Sensitivity and BPP. Hence Noise Sensitivity is a special case of BPP and hence in BPP.
+
+Third column of the table relates Noise Sensitivity and BPP - it subdivides the Noise Sensitivity into 4 probable scenarios. Hence Noise Sensitivity is a special case of BPP - explains one half of the error. Even after a circuit is denoisified i.e third column is removed, it can still be in BPP due to the second column possibilities above. Noise sensitivity handles only half the possibilities in the above table for output noise. The second and third rows in second column represent noise in input where the circuit doesn't distinguish inputs correctly (false positives and false negatives). This requires derandomization. Thus error-free decision making depends on both denoisification and derandomization. A Turing machine that computes all 8 possibilities in the table above without error is 100% perfect decision maker. In terms of probability:
+	Probability of Good Decision = Input noise stability (second column) + Output noise stability (third column)
+which can also be stated as:
+	Probability of Good Decision = 1-(Probability of False positives + Probability of False negatives)
+
+Above is a better ,rather ideal, error probability measure that can be substituted in P(Good) RHS binomial distribution summation because it accounts for all possible scenarios of errors. Presently, P(Good) binomial summation depends only on output noise sensitivity. Complexity literature doesn't yet appear to have the theoretical notion of input noise counterpart of output noise sensitivity for boolean functions(e.g what is the fourier theoretic estimation of false positivity similar to the Plancherel version of noise stability?). Second column input noise can be written as TotalError-[f(x) != f(x/e)] where TotalError<=1. Probability of Good Decision is sum of conditional probabilities of these 8 possibilities in the table:
+	Probability of Good Decision = Pr(f(x)=f(x/e) / x in L, x/e in L)*Pr(x in L, x/e in L) +
+				       Pr(f(x)!=f(x/e) / x in L, x/e in L)*Pr(x in L, x/e in L) +
+					...
+				       Pr(f(x)!=f(x/e) / x not in L, x/e not in L)*Pr(x not in L, x/e not in L)
+Computation of the above conditional probability summation further confounds the estimation of voter decision error in Judge Boolean Functions.
 
 -------------------------------------------------------------------------------------------------
 Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
@@ -1107,7 +1118,7 @@ which implies that t(noise_operator) > t since denominator summation of fourier 
 
 *Implication 2 of above: If LHS of P(Good) has BP.(NC/log) circuit due to <100% noise stability, with polynomial size increase it can be derandomized or denoisified to 100% noise stable circuit. NC/log is in P/log. With polynomial size increase P/log is still P/log. If RHS is BPP it can be denoisified as mentioned in Implication 1 to NP-complete instance. Thus both LHS and RHS converge in P(Good) binomial summation and RHS is NP-complete and LHS is P/log. Thus NP is in P/log implying P=NP.
 
-Points 53.4, 53.5, 53.6 and 53.7 describe P/poly, NC/poly and NC/log circuits for Percolation Boolean Functions subject to 100% noise stability regime.
+Points 53.4, 53.5, 53.6 and 53.7 describe P/poly, NC/poly and NC/log circuits for Percolation Boolean Functions subject to 100% noise stability regime. Important disclaimer is that above considers only denoisification and just denoisification may not be sufficient to remove errors in BP* circuits. As described in 14 on "Noise Stability and Complexity Class BPP" table of error scenarios, there might be cases where both denoisification(column three) and derandomization(column two) might be required that could further bloat the circuit size and make it superpolynomial increase in size.
 
 ---------------------------------------------------------------------------------------------------------------------
 53.12. Partial Derivative of Circuit size wrt rho (noise probability) - increase in circuit size for Denoisification
