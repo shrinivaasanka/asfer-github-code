@@ -61,3 +61,8 @@ print "SparkSQL DataFrame query results:"
 print dict_query_results
 print "Cardinality of Stream Dataset:"
 print len(dict_query_results)
+no_of_elements=0
+for key,value in dict_k.items():
+	no_of_elements += value
+print "Number of elements in Stream Dataset:"
+print no_of_elements

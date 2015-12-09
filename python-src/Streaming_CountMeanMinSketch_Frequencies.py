@@ -24,20 +24,31 @@
 #--------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------
-# CountMinSketch Algorithm for Frequencies in Stream
+# CountMeanMinSketch Algorithm for Frequencies in Stream
 #----------------------------------------------------
 # a matrix of m-rows*n-columns where each value in the stream is hashed to some grid cell on 
 # every row (the cell value is incremented). For each row different hash function is applied. 
 # Each row is an estimator and minimum of counters in the hashed cells in all rows is an
-# estimate of frequency of the value in input stream.
+# estimate of frequency of the value in input stream. Noise in each row is estimated and median of the estimators is
+# output as frequency.
 #
 # Estimation error epsilon <= 2n/width
 # with probability delta = 1 - (1/2)^depth
+#
+# Reference: https://highlyscalable.wordpress.com/2012/05/01/probabilistic-structures-web-analytics-data-mining/
 
 import binascii
 import hashlib
 import Streaming_AbstractGenerator
 import random
+import numpy
+
+def sum_of_row_estimations(countminsketch,columns,row,exclude_column):
+	sum=0
+	for x in xrange(columns):
+		if x != exclude_column:
+			sum+=countminsketch[row][x]	
+	return sum
 
 def getHash(str,row,a,b):
         h=hashlib.new("ripemd160")
@@ -47,7 +58,7 @@ def getHash(str,row,a,b):
         return hash
 
 #Depth
-rows=300
+rows=30
 
 #Width
 columns=30000
@@ -61,10 +72,12 @@ for x in xrange(rows):
 
 countminsketch=[]
 rowvector=[]
+estimator=[]
 for n in xrange(columns):
 	rowvector.append(0)
 for m in xrange(rows):
 	countminsketch.append(rowvector)
+	estimator.append(0)
 #print countminsketch
 
 #inputf=open("StreamingData.txt","r")
@@ -74,7 +87,7 @@ inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
 for i in inputf:
 	for row in xrange(rows):
 		column=getHash(i,row,a,b)%columns
-		countminsketch[row][column]+=1
+		countminsketch[row][column]+=1	
 		no_of_elements_added+=1
 	row=0
 print countminsketch
@@ -82,7 +95,7 @@ print countminsketch
 #inputf=open("StreamingData.txt","r")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
-#frequencies of each input - minimum of all hashed cells
+#frequencies of each input - minimum of all hashed cells 
 no_of_elements_estimated=0
 no_of_elements_exact=0
 minsketch_dict={}
@@ -92,8 +105,12 @@ for i in inputf:
 	minsketch=10000000000
 	for row in xrange(rows):
 		column=getHash(i,row,a,b)%columns
-		minsketch=min(minsketch, countminsketch[row][column])
-	print "minsketch frequency estimation for [",i,"] :",minsketch
+		sketchEstimator = countminsketch[row][column]	
+		noiseEstimator = int(abs(sum_of_row_estimations(countminsketch,columns,row,column) - sketchEstimator) / (columns - 1))
+		estimator[row] = (sketchEstimator - noiseEstimator)
+	numpy_estimator = numpy.array(estimator)
+	minsketch=int(numpy.median(numpy_estimator))
+	print "Mean minsketch frequency estimation for [",i,"] :",minsketch
 	if minsketch_dict.get(i,None)==None:
 		minsketch_dict[i]=minsketch
 	else:
@@ -101,7 +118,7 @@ for i in inputf:
 	row=0
 
 for key,value in minsketch_dict.items():
-	no_of_elements_estimated += value
+	no_of_elements_estimated += value 
 
 print "CountMinSketch estimate:"
 print minsketch_dict
