@@ -37,24 +37,47 @@ from injector import Module, provides, Injector, inject, singleton
 import MySQLdb
 import MySQL_DBBackend
 import MySQL_Configuration
+import MongoDB_DBBackend
+import MongoDB_Configuration
+from pymongo.collection import Collection
 
 class Abstract_DBBackend(object):
-	@inject(con=MySQLdb.Connection)
-	def __init__(self,con):
-		self.con = con 
+	@inject(mysqlcon=MySQLdb.Connection)
+	@inject(mongodbcollection=Collection)
+	def __init__(self,mysqlcon=None,mongodbcollection=None):
+		self.mysqlcon = mysqlcon
+		self.mongodbcollection = mongodbcollection
 
-	def execute_query(self,query): 
+	def execute_query(self,query,backend):
 		print "Abstract_DBBackend.execute_query():"
-                cur = self.con.cursor()
-                cur.execute(query)
-                rows = cur.fetchall()
-                for row in rows:
-                     print row
-		return rows
+		if backend=="MySQL":
+			cur = self.mysqlcon.cursor()
+			cur.execute(query)
+			rows = cur.fetchall()
+			for row in rows:
+				print row
+			return rows
+		else:
+			print "MongoDB_DBBackend.execute_query():"
+			try:
+				documents=self.mongodbcollection.find()
+				for document in documents:
+					print document
+			except e:
+				print "Error :",e
 
+
+backend="MongoDB"
 if __name__=="__main__":
-	mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
-	mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
-	injector=Injector([mysqldbobj,mysqlconfigobj])
-	handler=injector.get(Abstract_DBBackend)
-	handler.execute_query("SELECT * FROM asfer_table")
+	if backend=="MySQL":
+		mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
+		mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
+		injector=Injector([mysqldbobj,mysqlconfigobj])
+		handler=injector.get(Abstract_DBBackend)
+		handler.execute_query("SELECT * FROM asfer_table",backend)
+	else:
+		mongodbobj=MongoDB_DBBackend.MongoDB_DBBackend()
+		mongodbconfigobj=MongoDB_Configuration.MongoDB_Configuration()
+		injector=Injector([mongodbobj,mongodbconfigobj])
+		handler=injector.get(Abstract_DBBackend)
+		handler.execute_query("",backend)
