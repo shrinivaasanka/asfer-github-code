@@ -2688,6 +2688,13 @@ Streaming Abstract Generator iterable framework.
 - log with a simple NoSQL table with StreamingData.txt and USBWWAN data has been added to testlogs/.
 - MongoDB configuration has a database(asfer-database) and a collection(asfer-collection).
 - MongoDB_DBBackend @provides pymongo.collection.Collection which is @inject-ed to Abstract_DBBackend
+- Abstract_DBBackend changes have been reflected in Scrapy Web Spider - backend added as argument in execute_query()
+- Abstract_DBBackend.py has a subtle problem:
+        - Multiple @inject(s) are not supported in Python Injector
+        - only the innermost @inject works and outer @inject throws a __init__ argument errors in webspider/
+        - Conditional @inject depending on backend is required but at present switching the order of @inject(s) circumvents this
+- most recent scrapy crawl logs for this have been added to webspider/testlogs
+
 
 
 - 
