@@ -46,6 +46,9 @@ class WebSpider(Spider):
 		import Abstract_DBBackend
 		import MySQL_DBBackend
 		import MySQL_Configuration
+		import MongoDB_DBBackend
+		import MongoDB_Configuration
+		from pymongo.collection import Collection
 		mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()
 		mysqlconfigobj=MySQL_Configuration.MySQL_Configuration()
 		injector=Injector([mysqldbobj,mysqlconfigobj])
@@ -62,6 +65,6 @@ class WebSpider(Spider):
 			items.append(item)
 			self.output.write(desc)
 			self.output.write("\n")
-			handler.execute_query("INSERT INTO asfer_webspider(Description) VALUES(\""+desc+"\")")
-		handler.execute_query("SELECT * FROM asfer_webspider")
+			handler.execute_query("INSERT INTO asfer_webspider(Description) VALUES(\""+desc+"\")","MySQL")
+		handler.execute_query("SELECT * FROM asfer_webspider","MySQL")
 		return items

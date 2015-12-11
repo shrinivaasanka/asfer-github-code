@@ -42,8 +42,8 @@ import MongoDB_Configuration
 from pymongo.collection import Collection
 
 class Abstract_DBBackend(object):
-	@inject(mysqlcon=MySQLdb.Connection)
 	@inject(mongodbcollection=Collection)
+	@inject(mysqlcon=MySQLdb.Connection)
 	def __init__(self,mysqlcon=None,mongodbcollection=None):
 		self.mysqlcon = mysqlcon
 		self.mongodbcollection = mongodbcollection
@@ -67,7 +67,8 @@ class Abstract_DBBackend(object):
 				print "Error :",e
 
 
-backend="MongoDB"
+backend="MySQL"
+#backend="MongoDB"
 if __name__=="__main__":
 	if backend=="MySQL":
 		mysqldbobj=MySQL_DBBackend.MySQL_DBBackend()

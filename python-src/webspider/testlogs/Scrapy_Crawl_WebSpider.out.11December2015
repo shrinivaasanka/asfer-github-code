@@ -1,0 +1,554 @@
+2015-12-11 17:05:13 [scrapy] INFO: Scrapy 1.0.3 started (bot: webspider)
+2015-12-11 17:05:13 [scrapy] INFO: Optional features available: ssl, http11
+2015-12-11 17:05:13 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'webspider.spiders', 'SPIDER_MODULES': ['webspider.spiders'], 'BOT_NAME': 'webspider'}
+2015-12-11 17:05:13 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-12-11 17:05:13 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-12-11 17:05:13 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-12-11 17:05:13 [scrapy] INFO: Enabled item pipelines: 
+2015-12-11 17:05:13 [scrapy] INFO: Spider opened
+2015-12-11 17:05:13 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-12-11 17:05:13 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-12-11 17:05:24 [scrapy] DEBUG: Crawled (200) <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.#q=Chennai&hl=en&gl=in&authuser=0&tbm=nws&tbs=sbd:1> (referer: None)
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods: PIL seeks action against chief secy, top officials'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Weather Update: Sunny days ahead for rain ravaged '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Flooded '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' dirty secret: Dalits clean rotting mess'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Flood: Madras HC concerned over lack of coordination '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Nissan reopens workshops as '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' back to normalcy'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Caught in '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods, They Screamed For Help For 9 Hours '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods triggered a $3 billion loss to the Indian Economy'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'World T20: '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' matches not to be broadcast'}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'No more heavy rains in '}
+2015-12-11 17:05:24 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u', says Met, as city limps back to '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Crawled (200) <GET https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8> (referer: None)
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - Wikipedia, the free encyclopedia'}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'With 8,878 sq km, '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Set to Turn Giant Megapolis - The New '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Could Be Tricky, Suggests History - The New '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Arakkonam to come under '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' limits - The Hindu'}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Images for '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' mega region in offing, to include parts of 3 nearby districts '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Development Authority, Government of '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Second Master Plan For '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u', 2026'}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Push to expand '}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - IBNLive'}
+2015-12-11 17:05:32 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'An Analysis of Growth Dynamics in '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Crawled (200) <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion> (referer: None)
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Where are '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' lifelines?'}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u"'Development' Disaster"}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'A tale of two cities: The similar story of Mumbai and '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' floods'}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u" floods: Forget 'smart' cities, India needs old ones to be less "}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Japan commits Rs.4456 crore Loan Assistance for Ahmedabad '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Greed for realty floods city'}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'ALE India head Sanjay Sapru on business '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' plans'}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u"India's Second Largest Food Delivery Platform Swiggy Launches "}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Jayalalithaa orders release of additional drinking water for '}
+2015-12-11 17:05:35 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' '}
+2015-12-11 17:05:35 [scrapy] INFO: Closing spider (finished)
+2015-12-11 17:05:35 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1021,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 38162,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 11, 11, 35, 35, 301234),
+ 'item_scraped_count': 43,
+ 'log_count/DEBUG': 47,
+ 'log_count/INFO': 7,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2015, 12, 11, 11, 35, 13, 464814)}
+2015-12-11 17:05:35 [scrapy] INFO: Spider closed (finished)
+2015-12-11 17:05:35 [scrapy] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+===========================================================================================================
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/webspider# scrapy crawl webspider 2>&1 > testlogs/Scrapy_Crawl_WebSpider.out.11December2015
+2015-12-11 17:04:47 [scrapy] INFO: Scrapy 1.0.3 started (bot: webspider)
+2015-12-11 17:04:47 [scrapy] INFO: Optional features available: ssl, http11
+2015-12-11 17:04:47 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'webspider.spiders', 'SPIDER_MODULES': ['webspider.spiders'], 'BOT_NAME': 'webspider'}
+2015-12-11 17:04:48 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-12-11 17:04:48 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-12-11 17:04:48 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-12-11 17:04:48 [scrapy] INFO: Enabled item pipelines: 
+2015-12-11 17:04:48 [scrapy] INFO: Spider opened
+2015-12-11 17:04:48 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-12-11 17:04:48 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-12-11 17:04:57 [scrapy] DEBUG: Redirecting (302) to <GET https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg> from <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+2015-12-11 17:04:58 [scrapy] DEBUG: Crawled (200) <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.#q=Chennai&hl=en&gl=in&authuser=0&tbm=nws&tbs=sbd:1> (referer: None)
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods: PIL seeks action against chief secy, top officials'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Weather Update: Sunny days ahead for rain ravaged '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Flooded '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' dirty secret: Dalits clean rotting mess'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Flood: Madras HC concerned over lack of coordination '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Nissan reopens workshops as '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' back to normalcy'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Caught in '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods, They Screamed For Help For 9 Hours '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods triggered a $3 billion loss to the Indian Economy'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'World T20: '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' matches not to be broadcast'}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'No more heavy rains in '}
+2015-12-11 17:04:58 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u', says Met, as city limps back to '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Crawled (200) <GET https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8> (referer: None)
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - Wikipedia, the free encyclopedia'}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'With 8,878 sq km, '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Set to Turn Giant Megapolis - The New '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Could Be Tricky, Suggests History - The New '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Arakkonam to come under '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' limits - The Hindu'}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Images for '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' mega region in offing, to include parts of 3 nearby districts '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Development Authority, Government of '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Second Master Plan For '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u', 2026'}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Push to expand '}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - IBNLive'}
+2015-12-11 17:04:59 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'An Analysis of Growth Dynamics in '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Crawled (200) <GET https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg> (referer: None)
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'Where are '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u' lifelines?'}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u"'Development' Disaster"}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'A tale of two cities: The similar story of Mumbai and '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u' floods'}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u" floods: Forget 'smart' cities, India needs old ones to be less "}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'Japan commits Rs.4456 crore Loan Assistance for Ahmedabad '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'Greed for realty floods city'}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'ALE India head Sanjay Sapru on business '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u' plans'}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u"India's Second Largest Food Delivery Platform Swiggy Launches "}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u'Jayalalithaa orders release of additional drinking water for '}
+2015-12-11 17:05:04 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?hl=en&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion&gws_rd=cr&ei=3rRqVvn5IMOJuASJ_52ACg>
+{'desc': u' '}
+2015-12-11 17:05:04 [scrapy] INFO: Closing spider (finished)
+2015-12-11 17:05:04 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1350,
+ 'downloader/request_count': 4,
+ 'downloader/request_method_count/GET': 4,
+ 'downloader/response_bytes': 39455,
+ 'downloader/response_count': 4,
+ 'downloader/response_status_count/200': 3,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 11, 11, 35, 4, 955908),
+ 'item_scraped_count': 43,
+ 'log_count/DEBUG': 48,
+ 'log_count/INFO': 7,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2015, 12, 11, 11, 34, 48, 209960)}
+2015-12-11 17:05:04 [scrapy] INFO: Spider closed (finished)
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/webspider# scrapy crawl webspider 2> testlogs/Scrapy_Crawl_WebSpider.out.11December2015
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+(' paid the price for loss of wetlands and open spaces: study',)
+(' Floods: PIL seeks action against chief secy, top officials',)
+(' Weather Update: Sunny days ahead for rain ravaged ',)
+('Flooded ',)
+(' dirty secret: Dalits clean rotting mess',)
+(' Flood: Madras HC concerned over lack of coordination ',)
+('Nissan reopens workshops as ',)
+(' back to normalcy',)
+('Caught in ',)
+(' Floods, They Screamed For Help For 9 Hours ',)
+(' Floods triggered a $3 billion loss to the Indian Economy',)
+('World T20: ',)
+(' matches not to be broadcast',)
+('No more heavy rains in ',)
+(', says Met, as city limps back to ',)
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+(' - Wikipedia, the free encyclopedia',)
+('With 8,878 sq km, ',)
+(' Set to Turn Giant Megapolis - The New ',)
+(' Could Be Tricky, Suggests History - The New ',)
+('Arakkonam to come under ',)
+(' limits - The Hindu',)
+('Images for ',)
+(' mega region in offing, to include parts of 3 nearby districts ',)
+(' Development Authority, Government of ',)
+('Second Master Plan For ',)
+(', 2026',)
+('Push to expand ',)
+(' - IBNLive',)
+('An Analysis of Growth Dynamics in ',)
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+('Where are ',)
+(' lifelines?',)
+(' paid the price for loss of wetlands and open spaces: study',)
+("'Development' Disaster",)
+('A tale of two cities: The similar story of Mumbai and ',)
+(' floods',)
+(" floods: Forget 'smart' cities, India needs old ones to be less ",)
+('Japan commits Rs.4456 crore Loan Assistance for Ahmedabad ',)
+('Greed for realty floods city',)
+('ALE India head Sanjay Sapru on business ',)
+(' plans',)
+("India's Second Largest Food Delivery Platform Swiggy Launches ",)
+('Jayalalithaa orders release of additional drinking water for ',)
+(' ',)
+^Croot@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GHub/asfer-github-code/python-src/webspider# scrapy crawl webspider 
+2015-12-11 17:05:47 [scrapy] INFO: Scrapy 1.0.3 started (bot: webspider)
+2015-12-11 17:05:47 [scrapy] INFO: Optional features available: ssl, http11
+2015-12-11 17:05:47 [scrapy] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'webspider.spiders', 'SPIDER_MODULES': ['webspider.spiders'], 'BOT_NAME': 'webspider'}
+2015-12-11 17:05:48 [scrapy] INFO: Enabled extensions: CloseSpider, TelnetConsole, LogStats, CoreStats, SpiderState
+2015-12-11 17:05:48 [scrapy] INFO: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, MetaRefreshMiddleware, HttpCompressionMiddleware, RedirectMiddleware, CookiesMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2015-12-11 17:05:48 [scrapy] INFO: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2015-12-11 17:05:48 [scrapy] INFO: Enabled item pipelines: 
+2015-12-11 17:05:48 [scrapy] INFO: Spider opened
+2015-12-11 17:05:48 [scrapy] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2015-12-11 17:05:48 [scrapy] DEBUG: Telnet console listening on 127.0.0.1:6023
+2015-12-11 17:06:06 [scrapy] DEBUG: Crawled (200) <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion> (referer: None)
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+('Where are ',)
+(' lifelines?',)
+(' paid the price for loss of wetlands and open spaces: study',)
+("'Development' Disaster",)
+('A tale of two cities: The similar story of Mumbai and ',)
+(' floods',)
+(" floods: Forget 'smart' cities, India needs old ones to be less ",)
+('Japan commits Rs.4456 crore Loan Assistance for Ahmedabad ',)
+('Greed for realty floods city',)
+('ALE India head Sanjay Sapru on business ',)
+(' plans',)
+("India's Second Largest Food Delivery Platform Swiggy Launches ",)
+('Jayalalithaa orders release of additional drinking water for ',)
+(' ',)
+2015-12-11 17:06:07 [scrapy] DEBUG: Crawled (200) <GET https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8> (referer: None)
+2015-12-11 17:06:07 [scrapy] DEBUG: Crawled (200) <GET https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.#q=Chennai&hl=en&gl=in&authuser=0&tbm=nws&tbs=sbd:1> (referer: None)
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Where are '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' lifelines?'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u"'Development' Disaster"}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'A tale of two cities: The similar story of Mumbai and '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' floods'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u" floods: Forget 'smart' cities, India needs old ones to be less "}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Japan commits Rs.4456 crore Loan Assistance for Ahmedabad '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Greed for realty floods city'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'ALE India head Sanjay Sapru on business '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' plans'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u"India's Second Largest Food Delivery Platform Swiggy Launches "}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u'Jayalalithaa orders release of additional drinking water for '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&gl=in&authuser=0&tbs=sbd:1&tbm=nws&q=chennai+metropolitan+area+expansion>
+{'desc': u' '}
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+(' - Wikipedia, the free encyclopedia',)
+('With 8,878 sq km, ',)
+(' Set to Turn Giant Megapolis - The New ',)
+(' Could Be Tricky, Suggests History - The New ',)
+('Arakkonam to come under ',)
+(' limits - The Hindu',)
+('Images for ',)
+(' mega region in offing, to include parts of 3 nearby districts ',)
+(' Development Authority, Government of ',)
+('Second Master Plan For ',)
+(', 2026',)
+('Push to expand ',)
+(' - IBNLive',)
+('An Analysis of Growth Dynamics in ',)
+{'host': 'localhost', 'password': 'asferuser', 'user': 'asferuser', 'database': 'asfer_backend'}
+<class 'MySQLdb.connections.Connection'>
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+Abstract_DBBackend.execute_query():
+(' paid the price for loss of wetlands and open spaces: study',)
+(' Floods: PIL seeks action against chief secy, top officials',)
+(' Weather Update: Sunny days ahead for rain ravaged ',)
+('Flooded ',)
+(' dirty secret: Dalits clean rotting mess',)
+(' Flood: Madras HC concerned over lack of coordination ',)
+('Nissan reopens workshops as ',)
+(' back to normalcy',)
+('Caught in ',)
+(' Floods, They Screamed For Help For 9 Hours ',)
+(' Floods triggered a $3 billion loss to the Indian Economy',)
+('World T20: ',)
+(' matches not to be broadcast',)
+('No more heavy rains in ',)
+(', says Met, as city limps back to ',)
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - Wikipedia, the free encyclopedia'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'With 8,878 sq km, '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Set to Turn Giant Megapolis - The New '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Could Be Tricky, Suggests History - The New '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Arakkonam to come under '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' limits - The Hindu'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Images for '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' mega region in offing, to include parts of 3 nearby districts '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' Development Authority, Government of '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Second Master Plan For '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u', 2026'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' paid the price for loss of wetlands and open spaces: study'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods: PIL seeks action against chief secy, top officials'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Weather Update: Sunny days ahead for rain ravaged '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Flooded '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' dirty secret: Dalits clean rotting mess'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Flood: Madras HC concerned over lack of coordination '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Nissan reopens workshops as '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' back to normalcy'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'Caught in '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods, They Screamed For Help For 9 Hours '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' Floods triggered a $3 billion loss to the Indian Economy'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'World T20: '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u' matches not to be broadcast'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'Push to expand '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u' - IBNLive'}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.co.in/search?q=Chennai+metropolitan+area+expansion&oq=Chennai+metropolitan+area+expansion&aqs=chrome..69i57.12903j0j8&sourceid=chrome&es_sm=93&ie=UTF-8>
+{'desc': u'An Analysis of Growth Dynamics in '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u'No more heavy rains in '}
+2015-12-11 17:06:07 [scrapy] DEBUG: Scraped from <200 https://www.google.com/search?hl=en&gl=in&tbm=nws&authuser=0&q=Chennai&oq=Chennai&gs_l=news-cc.3...1525.3020.0.3307.7.6.0.0.0.0.0.0..0.0...0.0...1ac.1.>
+{'desc': u', says Met, as city limps back to '}
+2015-12-11 17:06:07 [scrapy] INFO: Closing spider (finished)
+2015-12-11 17:06:07 [scrapy] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1021,
+ 'downloader/request_count': 3,
+ 'downloader/request_method_count/GET': 3,
+ 'downloader/response_bytes': 38151,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2015, 12, 11, 11, 36, 7, 657279),
+ 'item_scraped_count': 43,
+ 'log_count/DEBUG': 47,
+ 'log_count/INFO': 7,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 3,
+ 'scheduler/dequeued/memory': 3,
+ 'scheduler/enqueued': 3,
+ 'scheduler/enqueued/memory': 3,
+ 'start_time': datetime.datetime(2015, 12, 11, 11, 35, 48, 340679)}
+2015-12-11 17:06:07 [scrapy] INFO: Spider closed (finished)
