@@ -2677,6 +2677,17 @@ CountMinSketch that computes median of average of estimator rows in sketch
 - Spark MapReducer prints the number of elements in the stream data set
 - Logs for the above have been added to testlogs
 
+-----------------------------------------------------------------------------------------------------------
+190. Commits as on 11 December 2015
+-----------------------------------------------------------------------------------------------------------
+Dependency Injection code commits for MongoDB backend - With this MongoDB is also a storage backend for AsFer algorithms similar to MySQL:
+- Abstract_DBBackend.py has been updated for both MySQL and MongoDB injections
+- MongoDB configuration and backend connect/query code has been added. Backend is either populated by Robomongo or pymongo reading from the
+Streaming Abstract Generator iterable framework.
+- With this AsFer supports both SQL(MySQL) and NoSQL(file,hive,hbase,cassandra backends in Streaming Abstract Generator).
+- log with a simple NoSQL table with StreamingData.txt and USBWWAN data has been added to testlogs/.
+- MongoDB configuration has a database(asfer-database) and a collection(asfer-collection).
+- MongoDB_DBBackend @provides pymongo.collection.Collection which is @inject-ed to Abstract_DBBackend
 
 
 - 
