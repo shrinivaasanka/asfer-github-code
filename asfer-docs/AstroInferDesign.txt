@@ -2676,7 +2676,7 @@ Spark MapReducer script for Streaming Data sets for comparison of exact data wit
 - Exact cardinality: 104
 
 ----------------------------------------------------------------------------------------------------------
-189. Commits as on 9 December 2015
+189. (FEATURE - DONE) Commits as on 9 December 2015
 ----------------------------------------------------------------------------------------------------------
 - New python implementation for CountMeanMinSketch Streaming Data Frequency Estimation has been added which is an improved version of
 CountMinSketch that computes median of average of estimator rows in sketch
@@ -2685,7 +2685,7 @@ CountMinSketch that computes median of average of estimator rows in sketch
 - Logs for the above have been added to testlogs
 
 -----------------------------------------------------------------------------------------------------------
-190. Commits as on 11 December 2015
+190. (FEATURE - DONE) Commits as on 11 December 2015
 -----------------------------------------------------------------------------------------------------------
 Dependency Injection code commits for MongoDB backend - With this MongoDB is also a storage backend for AsFer algorithms similar to MySQL:
 - Abstract_DBBackend.py has been updated for both MySQL and MongoDB injections
@@ -2703,7 +2703,7 @@ Streaming Abstract Generator iterable framework.
 - most recent scrapy crawl logs for this have been added to webspider/testlogs
 
 -----------------------------------------------------------------------------------------------------------
-191. An update to runtime analysis of Recursive Gloss Overlap Algorithm in TAC 2010
+191. (THEORY) An update to runtime analysis of Recursive Gloss Overlap Algorithm in TAC 2010
 (http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf)
 -----------------------------------------------------------------------------------------------------------
 Analysis of runtime in the link above is too cryptic. An updated analysis of steps are given here:
@@ -2720,6 +2720,16 @@ T(d) = sigma([x^i - Overlap(i-1)*x]^2 + subtree_isomorphism(i)))
 for less than O(E*V^2) mentioned in TAC 2010 link.
 - On a related note runtime for intrinsic merit ranking of the RGO wordnet subgraph can not be equated per-se to ranking from prestige-based search engines as RGO is objective graph-theoretic ranking (does not require massive bot-crawling, indexing and link graph construction) and PageRank is subjective prestige based ranking(depends on crawling, indexing and time needed for link graph construction). Standard publicly available PageRank iteratively computes random walk matrix multiplication for link graphs for billions of nodes on WWW and this runtime has to be apportioned per-node. Time and Space for crawling and indexing have also to be accounted for per-node. Naive bound for PageRank per node is O(time_for_iterative_matrix_multiplication_till_convergence/number_of_nodes). Matrix multiplication is O(n^omega) where omega~2.3. Thus pagerank bound per node is O((n^omega^iterations)/n) assuming serial PageRank computation. Parallel Distributed Versions of PageRank depend on network size and scalable.
 
+---------------------------------------------------------------------------------------------------------------
+192. (FEATURE - DONE) Commits as on 14 December 2015
+---------------------------------------------------------------------------------------------------------------
+- New Interview Algorithm script with NetworkX+Matplotlib rendering and takes as input a randomly crawled HTML webpage(uses beautiful soup to
+rip off script and style tags and write only text in the HTML page) has been added
+- Above script also computes the graph theoretic connectivity of the RGO wordnet subgraph based on Menger's theorem - prints number of nodes
+required to disconnect the graph or equivalently number of node indpendent paths
+- logs and screenshots for the above have been added
+- WebSpider.py has been updated to crawl based on a crawling target parameter - Either a streaming website(twitter, streamed news etc.,) or a
+HTML webpage
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
