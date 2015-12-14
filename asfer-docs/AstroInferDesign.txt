@@ -2712,9 +2712,9 @@ Analysis of runtime in the link above is too cryptic. An updated analysis of ste
 - Tree isomorphism algorithms can be optionally applied to reduce number of nodes getting recomputed. There are
 polytime algorithms for subtree isomorphisms (www.cs.bgu.ac.il/~dekelts/publications/subtree.pdf)
 - Nodes at level i-1 are reduced by Overlap(i-1) : x^(i-1) - Overlap(i-1)
-- Nodes at level i are from gloss expansion of those at i-1 : (x^(i-1) - Overlap(i-1))*x
-- Thus total time at level i is: Time_for_pairwise_comparison + Time_for_removing_isomorphic_nodes
-T(i) = sigma([x^(i-1) - Overlap(i-1)*x]^2 + subtree_isomorphism(i)))
+- Maximum number Nodes at level i - are from gloss expansion of those at i-1 : (x^(i-1) - Overlap(i-1))*x
+- Thus total time at level i is: Time_for_pairwise_comparison_to_find_gloss_verlap + Time_for_removing_isomorphic_nodes
+T(i) = sigma([x^(i-1) - Overlap(i-1)]^2 + subtree_isomorphism(i)))
 - Above is naively upperbounded to O(x^(2d)) [as subtree isomorphism is polynomial in supertree and subtree vertices] .
 - If number of vertices in RGO multipartite graph (ignoring isomorphism) constructed above is V=O(x^(d)), runtime is O(V^2)  which is
 for less than O(E*V^2) mentioned in TAC 2010 link.
