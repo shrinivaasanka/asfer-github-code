@@ -2708,17 +2708,18 @@ Streaming Abstract Generator iterable framework.
 -----------------------------------------------------------------------------------------------------------
 Analysis of runtime in the link above is too cryptic. An updated analysis of steps are given here:
 - Nodes at level i-1 are computed (base case) : x^(i-1) where x is average size of gloss definition
-- Naive pairwise comparison of overlap is done at level i-1 which makes it x^(i-1)
+- Naive pairwise comparison of overlap is done at level i-1 which makes it x^2(i-1)
 - Tree isomorphism algorithms can be optionally applied to reduce number of nodes getting recomputed. There are
 polytime algorithms for subtree isomorphisms (www.cs.bgu.ac.il/~dekelts/publications/subtree.pdf)
 - Nodes at level i-1 are reduced by Overlap(i-1) : x^(i-1) - Overlap(i-1)
 - Nodes at level i are from gloss expansion of those at i-1 : (x^(i-1) - Overlap(i-1))*x
-- Thus total time at level d is:
-T(d) = sigma([x^i - Overlap(i-1)*x]^2 + subtree_isomorphism(i)))
-- Above is naively upperbounded to O(x^(2d+1)) [as subtree isomorphism is polynomial in supertree and subtree vertices] .
-- If number of vertices in RGO multipartite graph (ignoring isomorphism) constructed above is V=O(x^(d+1)), runtime is O(V^2/x)  which is
+- Thus total time at level i is: Time_for_pairwise_comparison + Time_for_removing_isomorphic_nodes
+T(i) = sigma([x^(i-1) - Overlap(i-1)*x]^2 + subtree_isomorphism(i)))
+- Above is naively upperbounded to O(x^(2d)) [as subtree isomorphism is polynomial in supertree and subtree vertices] .
+- If number of vertices in RGO multipartite graph (ignoring isomorphism) constructed above is V=O(x^(d)), runtime is O(V^2)  which is
 for less than O(E*V^2) mentioned in TAC 2010 link.
 - On a related note runtime for intrinsic merit ranking of the RGO wordnet subgraph can not be equated per-se to ranking from prestige-based search engines as RGO is objective graph-theoretic ranking (does not require massive bot-crawling, indexing and link graph construction) and PageRank is subjective prestige based ranking(depends on crawling, indexing and time needed for link graph construction). Standard publicly available PageRank iteratively computes random walk matrix multiplication for link graphs for billions of nodes on WWW and this runtime has to be apportioned per-node. Time and Space for crawling and indexing have also to be accounted for per-node. Naive bound for PageRank per node is O(time_for_iterative_matrix_multiplication_till_convergence/number_of_nodes). Matrix multiplication is O(n^omega) where omega~2.3. Thus pagerank bound per node is O((n^omega^iterations)/n) assuming serial PageRank computation. Parallel Distributed Versions of PageRank depend on network size and scalable.
+- Parallel graph construction on a cloud could reduce the runtime to O(V^2/c) where c is size of the cloud.
 
 ---------------------------------------------------------------------------------------------------------------
 192. (FEATURE - DONE) Commits as on 14 December 2015
