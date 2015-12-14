@@ -1120,6 +1120,13 @@ which implies that t(noise_operator) > t since denominator summation of fourier 
 
 Points 53.4, 53.5, 53.6 and 53.7 describe P/poly, NC/poly and NC/log circuits for Percolation Boolean Functions subject to 100% noise stability regime. Important disclaimer is that above considers only denoisification and just denoisification may not be sufficient to remove errors in BP* circuits. As described in 14 on "Noise Stability and Complexity Class BPP" table of error scenarios, there might be cases where both denoisification(removing errors in column three) and derandomization(removing errors in column two) might be required that could add to the circuit size. But since BPP is in P/poly (Adleman's theorem) this is just another polynomial overhead in size. Thus increase in size due to denoisification + derandomization = poly(n) + poly(n) = poly(n) in P/poly.
 
+Noise sensitive NC/log percolation circuit in LHS of P(Good) is in BP(NC/log) which requires denoisification and derandomization. Is BP(NC/log) in P/log? If yes, this could imply P=NP when RHS is an error-free NP-complete k-SAT instance (denoisified and derandomized BPP). BP(NC/log) can be denoisified with poly(n) additional gates from derivation above from HMLN theorem which makes NC/log to be in P/log. Next step of derandomization is by naive enumeration of all possible pseudorandom advice strings. Assumption here is that length of pseudorandom strings required for derandomizing percolation is log(n) which is sufficient to specify any point on an axis in the percolation grid. If log(n) bit pseudorandom advice is enumerated there are 2^(logn)=n possible pseudorandom strings which is poly(n) addition in circuit size again. P/log circuit is executed for all 2^(logn) psuedorandom strings which makes the total runtime n*poly(n)=poly(n). Thus derandomization takes as input a denoisified P/log circuit , adds poly(n) gates to it and outputs a circuit that has runtime poly(n) with logarithmic advice i.e P/log. This has a strange consequence that NP can have P/log circuits and P=NP (Implication 2) contrary to popular belief if logarithmic advice is valid.
+
+Reference:
+-----------
+53.11.1 Derandomizing BPNC - [Periklis Papakonstantinou] - http://iiis.tsinghua.edu.cn/~papakons/pdfs/phd_thesis.pdf
+53.11.2 Derandomization basics - [Salil] - Enumeration - http://people.seas.harvard.edu/~salil/pseudorandomness/basic.pdf
+
 ---------------------------------------------------------------------------------------------------------------------
 53.12. Partial Derivative of Circuit size wrt rho (noise probability) - increase in circuit size for Denoisification
 ---------------------------------------------------------------------------------------------------------------------
