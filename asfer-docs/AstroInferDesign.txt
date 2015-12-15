@@ -873,7 +873,7 @@ B.	EXPERIMENTAL NON-STATISTICAL INFERENCE MODEL BASED ON ALREADY KNOWN THEORETIC
 
 47.(THEORY)  Random walk on the above concept hypergraph, Cover time etc., which is a markov process. Probably, Cover time of the hypergraph could be the measure of time needed for learning the concept hypergraph.
 
-48.(THEORY)  Tree decomposition or Junction Trees of concept hypergraph with bounded tree width constant.[If Junction tree is constructed from Hypergraph modelled as Bayesian Network, then message passing between the treenodes can be implemented, but still needs to be seen as what this message passing would imply for a junction tree of concept hypergraph above.]
+48.(THEORY - IMPLEMENTATION - DONE)  Tree decomposition or Junction Trees of concept hypergraph with bounded tree width constant.[If Junction tree is constructed from Hypergraph modelled as Bayesian Network, then message passing between the treenodes can be implemented, but still needs to be seen as what this message passing would imply for a junction tree of concept hypergraph above.]. A tree width measure computing script for Recursive Gloss Overlap graph for a text document has been added in python-src/InterviewAlgorithm which is a standard graph complexity measure.
 
 49.(THEORY)  2(or more)-dimensional random walk model for thinking process and reasoning (Soccer model in 2-dimensions):
 ------------------------------------------------------------------------------------------------------------------------
@@ -2731,6 +2731,15 @@ required to disconnect the graph or equivalently number of node indpendent paths
 - logs and screenshots for the above have been added
 - WebSpider.py has been updated to crawl based on a crawling target parameter - Either a streaming website(twitter, streamed news etc.,) or a
 HTML webpage
+
+-----------------------------------------------------------------------------------------------------------------------------
+193. (FEATURE - DONE) RGO graph complexity measures for intrinsic merit of a text document - Commits as on 15 December 2015
+-----------------------------------------------------------------------------------------------------------------------------
+- Interview Algorithm Crawl-Visual script has been updated with a DOT graph file writing which creates a .dot file for the RGO graph constructed
+- Also variety of connectivity and graph complexity measures have been added
+- Importantly a new Tree Width computing script has been added. NetworkX does not have API for tree width, hence a naive script that iterates
+through all subgraphs and finds intersecting subgraphs to connect them and form a junction tree, has been written. This is a costly measure compared to intrinsic merit which depends only on graph edges,vertices and depth of recursive gloss overlap. Tree decomposition of graph is NP-hard.
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan

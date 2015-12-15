@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets 
+#ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -13,12 +13,14 @@
 #--------------------------------------------------------------------------------------------------------
 #Copyright (C):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 from __future__ import division
@@ -32,7 +34,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import Queue
 import operator
-import WordNetPath
+import TreeWidth
 
 #########################################################################################################
 #Derived from Old version of Example Python code written more than 5 years ago in January 2010 during MSc thesis at IIT Chennai 
@@ -267,45 +269,8 @@ for filestr in files:
 
 print definitiongraphedges
 
-#labels={}
-#index=1
-#q=Queue.Queue()
-#word=wn.synset("rain.n.01")
-#print word.hyponyms()
-#nxg=nx.DiGraph()
-#pos=nx.spring_layout(nxg)
-#for h in word.hypernyms():
-#	q.put(h)
-#	print "adding node",h
-#	nxg.add_node(h)
-#	labels[h]=r"$x$"
-#	index+=1
-#	print "adding edge",word,"-",h
-#	nxg.add_edge(word, h)
-#
-#while not q.empty():
-#	e=q.get()
-#	print "adding node"
-#	nxg.add_node(e)
-#	for k in e.hypernyms():
-#		q.put(k)	
-#		print "adding edge",k
-#		nxg.add_node(k)
-#		labels[k]=r"$x$"
-#		index+=1
-#		print "adding edge",e,"-",k
-#		nxg.add_edge(e, k)
-#
-#print labels
-#nx.draw_graphviz(nxg,prog="neato")
-#nx.draw_networkx(nxg)
-#plt.show()
 
 nxg=nx.DiGraph()
-#pos=nx.spring_layout(nxg)
-#pos=nx.shell_layout(nxg)
-#pos=nx.random_layout(nxg)
-#weight_str_map={}
 pos=nx.spectral_layout(nxg)
 for k,v in definitiongraphedges.iteritems():
 	for l in v:
@@ -331,8 +296,11 @@ for k,v in definitiongraphedges.iteritems():
 				except KeyError:
 					weight_str_map[l+" - "+k]=""
 
-#nx.draw_graphviz(nxg,prog="neato")
 nx.draw_networkx(nxg)
+try:
+	nx.write_dot(nxg,"InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_RGOGraph.dot")
+except:
+	pass
 plt.show()
 nxg.remove_edges_from(nxg.selfloop_edges())
 #print "Core number =",nx.core_number(nxg)
@@ -359,40 +327,31 @@ print "Page Rank of the vertices of RGO Definition Graph"
 print "==================================================================="
 print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
 
-print "=========================================================================================================="
-print "Alternative Quantitative Intrinsic Merit - connectivity of RGO Definition Graph - Mengers Theorem"
-print "=========================================================================================================="
-print nx.node_connectivity(nxg)
-
-
-#print "================================================================================"
-#print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
-#print "================================================================================"
-#kcore_nxg=nx.k_core(nxg,10,nx.core_number(nxg))
-#kcore_nxg=nx.k_core(nxg)
-#text=""
-#path=[]
-#for k,v in kcore_nxg.edges():
-#for k,v in nxg.edges():
-#	#print k, weight_str_map[k+" - "+v], v, ".",
-#	path=WordNetPath.path_between(k,v)
-#	path_sentence = " is related to ".join(path)
-#	text = text + path_sentence + ". "
-#print text
-#print "\n"
-#print "=============================================================================="
-#print "Lambda Composition Closure with Depth First Search of RGO graph edges as relations"
-#print "=============================================================================="
-#print definitiongraphedgelabels
-#lambda_vertex_map={}
-#lambda_edge_map={}
-#
-#def get_edge_lambda(f,t,nxg): 
-#	return " [lambda: " + f + " " + definitiongraphedgelabels[f + " - " + t][0] + " " + t + "]"
-#
-#def composition_lambda(nxg):
-#	composition_lambda_str=""
-#	for k,v in nx.dfs_edges(nxg):
-#		composition_lambda_str="(" + composition_lambda_str + get_edge_lambda(k,v,nxg) + ")"
-#	return composition_lambda_str
-#print composition_lambda(nxg)
+try:
+	print "=========================================================================================================="
+	print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"
+	print "=========================================================================================================="
+	print nx.node_connectivity(nxg)
+except:
+	pass 
+try:
+	print "=========================================================================================================="
+	print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"
+	print "=========================================================================================================="
+	print nx.minimum_edge_cut(nxg)
+except:
+	pass 
+try:
+	print "=========================================================================================================="
+	print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"
+	print "=========================================================================================================="
+	print nx.stoer_wagner(nxg)
+except:
+	pass 
+try:
+	print "=========================================================================================================="
+	print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
+	print "=========================================================================================================="
+	print TreeWidth.tree_width(nxg)
+except:
+	pass 
