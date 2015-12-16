@@ -348,10 +348,10 @@ try:
 	print nx.stoer_wagner(nxg)
 except:
 	pass 
-try:
-	print "=========================================================================================================="
-	print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
-	print "=========================================================================================================="
-	print TreeWidth.tree_width(nxg)
-except:
-	pass 
+#try:
+print "=========================================================================================================="
+print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
+print "=========================================================================================================="
+print TreeWidth.tree_width(nxg,int(len(nxg.edges())/2))
+#except:
+#	pass 

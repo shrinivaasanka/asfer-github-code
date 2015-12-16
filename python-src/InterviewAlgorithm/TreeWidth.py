@@ -34,18 +34,35 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import itertools
 
-def create_all_subsets(nodes):
-	all_subsets=[]
-	size=len(nodes)
-	for i in xrange(size):
-		for s in itertools.combinations(nodes,i):
-			all_subsets.append(s)
-	return all_subsets
+def hash_graph(edges):
+	hash="Set"
+	for e in edges:
+		hash+="#"+str(e)
+	return hash
 
-def tree_width(nxg):
+def create_all_subgraphs(edges,size_edges):
+	all_subgraphs=[]
+	for i in xrange(size_edges):
+		all_subgraphs += itertools.combinations(edges,i)
+	return all_subgraphs
+
+def tree_width(nxg,i):
+	maxsize=1000000000
 	junction_tree=nx.Graph()
-	all_subsets=create_all_subsets(nxg.nodes())
-	for k in zip(all_subsets, all_subsets):
+	max_junction_tree_node=junction_tree
+	all_subgraphs=create_all_subgraphs(nxg.edges(),i)
+	print "All subgraphs:",all_subgraphs
+	print "============================================"
+	for k in zip(all_subgraphs, all_subgraphs):
 		if len(set(k[0]).intersection(set(k[1]))) > 0:
-			junction_tree.add_edge(k[0],k[1])
-	print "Junction Tree :",junction_tree	
+			junction_tree.add_edge(hash_graph(k[0]),hash_graph(k[1]))
+			if len(k[0]) < maxsize:
+				max_junction_tree_node=k[0]
+				maxsize = len(k[0])
+			if len(k[1]) < maxsize:
+				max_junction_tree_node=k[1]
+				maxsize = len(k[1])
+	print "============================================"
+	print "Junction Tree (with subgraphs of size less than",i," :",junction_tree.edges()
+	print "============================================"
+	print "Junction Tree Width for subgraphs of size less than",i," - size of largest node set:",maxsize
