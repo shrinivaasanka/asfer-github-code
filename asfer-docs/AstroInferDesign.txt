@@ -2740,6 +2740,18 @@ HTML webpage
 - Importantly a new Tree Width computing script has been added. NetworkX does not have API for tree width, hence a naive script that iterates
 through all subgraphs and finds intersecting subgraphs to connect them and form a junction tree, has been written. This is a costly measure compared to intrinsic merit which depends only on graph edges,vertices and depth of recursive gloss overlap. Tree decomposition of graph is NP-hard.
 
+--------------------------------------------------------------------------------------------------------------
+194. Commits as on 16 December 2015
+--------------------------------------------------------------------------------------------------------------
+- TreeWidth implementation has been corrected to take as input set of edges of the RGO graph
+- TreeWidth for set of subgraphs less than an input parameter size is computed as TreeWidth computation is exponential in graph size
+and there are MemoryErrors in python for huge set of all subgraphs. For example even a small graph with 10 nodes gives rise to 1024
+possible subgraphs
+- Spidered text has been updated to create a small RGO graph
+- Logs and screenshots have been added
+- Each subgraph is hashed to create a unique string for each subgraph
+- TreeWidth is printed by finding maximum set in junction tree
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
