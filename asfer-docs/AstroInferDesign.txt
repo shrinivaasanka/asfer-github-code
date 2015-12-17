@@ -2752,6 +2752,12 @@ possible subgraphs
 - Each subgraph is hashed to create a unique string for each subgraph
 - TreeWidth is printed by finding maximum set in junction tree
 
+-------------------------------------------------------------------------------------------------------------
+195. (THEORY) WordNet, Evocation, Neural networks, Recursive Gloss Overlap and Circuit Complexity
+-------------------------------------------------------------------------------------------------------------
+WordNet and Evocation WordNet are machine learning models based on findings from psychological experiments. Are WordNet and Neural networks
+related? Evocation WordNet which is network of words based on how evocative a word is of another word readily translates to a neural network.
+This is because a machine learning abstraction of neuron - perceptron - takes weights, inputs and biases and if the linear program of these breach a threshold, output is activated. Evocative WordNet can be formulated as a neuron with input word as one end of an edge and the output word as the other end - a word evokes another word. Each edge of an Evocation WordNet or even a WordNet is a single input neuron and WordNet is one giant multilayered perceptron neural network. Since Threshold circuits or TC circuit complexity class are theoretical equivalents of a machine learning neuron model (threshold gate outputs 1 if more than k of inputs are 1 and thus an activation function of a neuron), WordNet is hence a gigantic non-uniform TC circuit of Threshold gates. Further TCk is in NC(k+1). This implies that all problems depending on WordNet are inherently parallelizable in theory and Recursive Gloss Overlap algorithm that depends on WordNet subgraph construction in http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf and updates to it in (191) above are non-uniformly parallelizable.
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan

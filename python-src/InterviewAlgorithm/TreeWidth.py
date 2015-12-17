@@ -53,16 +53,21 @@ def tree_width(nxg,i):
 	all_subgraphs=create_all_subgraphs(nxg.edges(),i)
 	print "All subgraphs:",all_subgraphs
 	print "============================================"
-	for k in zip(all_subgraphs, all_subgraphs):
-		if len(set(k[0]).intersection(set(k[1]))) > 0:
-			junction_tree.add_edge(hash_graph(k[0]),hash_graph(k[1]))
-			if len(k[0]) < maxsize:
-				max_junction_tree_node=k[0]
-				maxsize = len(k[0])
-			if len(k[1]) < maxsize:
-				max_junction_tree_node=k[1]
-				maxsize = len(k[1])
+	for k0 in all_subgraphs:
+		for k1 in all_subgraphs:
+			hash_graph_k0 = hash_graph(k0)
+			hash_graph_k1 = hash_graph(k1)
+			if (hash_graph_k0 != hash_graph_k1) and len(set(k0).intersection(set(k1))) > 0:
+				junction_tree.add_edge(hash_graph_k0,hash_graph_k1)
+				if len(k0) < maxsize:
+					max_junction_tree_node=k0
+					maxsize = len(k0)
+				if len(k1) < maxsize:
+					max_junction_tree_node=k1
+					maxsize = len(k1)
 	print "============================================"
 	print "Junction Tree (with subgraphs of size less than",i," :",junction_tree.edges()
 	print "============================================"
 	print "Junction Tree Width for subgraphs of size less than",i," - size of largest node set:",maxsize
+	nx.draw_networkx(junction_tree)
+	plt.show()
