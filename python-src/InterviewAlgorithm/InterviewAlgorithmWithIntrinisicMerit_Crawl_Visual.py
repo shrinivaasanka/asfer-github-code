@@ -352,6 +352,6 @@ except:
 print "=========================================================================================================="
 print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
 print "=========================================================================================================="
-print TreeWidth.tree_width(nxg,4)
+print TreeWidth.tree_width(nxg,3)
 #except:
 #	pass 

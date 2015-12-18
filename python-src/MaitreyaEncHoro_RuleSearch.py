@@ -36,41 +36,43 @@
 import os
 import geonames
 import math
+from datetime import date, time, datetime, timedelta
 from collections import defaultdict
 
 useGeonames=True
 max_iterations=100000000
 min_year=2015
-min_month=1
-min_days=1
-min_hours=0
+min_month=11
+min_days=21
+min_hours=10
 min_minutes=0
 min_seconds=0
-min_long=0
-min_lat=0
+min_long=80
+min_lat=13
 max_year=2016
-max_month=2
-max_days=2
-max_hours=23
-max_minutes=59
-max_seconds=59
-max_long=59
-max_lat=59
+max_month=1
+max_days=15
+max_hours=10
+max_minutes=0
+max_seconds=1
+max_long=81
+max_lat=14
 
 class NextDateTimeTimezoneLonglat:
 	def __iter__(self):
-		for year in xrange(min_year, max_year,1):
-			for month in xrange(min_month, max_month,1):
-				for day in xrange(min_days, max_days,1):
-					for hour in xrange(min_hours, max_hours,1):
-						for minute in xrange(min_minutes, max_minutes,1):
-							for second in xrange(min_seconds, max_seconds,1):
-								for long_deg in xrange(min_long, max_long,1):
-									for long_min in xrange(0,9,1):
-										for lat_deg in xrange(min_lat, max_lat,1):
-											for lat_min in xrange(0,9,1):
-												date_time_timezone_longlat = " --date=\""+ str(year) + "-" + str(month) + "-" + str(day) + " " + str(hour) + ":" + str(minute) + ":" + str(second) + " " + self.geonames_time_zone(str(long_deg) +"."+ str(long_min) +" "+ str(lat_deg) +"."+ str(lat_min)) +"\"  --location=\" x "+ str(long_deg) +":"+ str(long_min) + ":" + str(0) + " "+ str(lat_deg) +":"+ str(lat_min) + ":" + str(0) +" \" --planet-list"
-												yield date_time_timezone_longlat  
+		for long_deg in xrange(min_long, max_long,1):
+			for long_min in xrange(0,9,1):
+				for lat_deg in xrange(min_lat, max_lat,1):
+					for lat_min in xrange(0,9,1):
+						begin_datetime = datetime(min_year, min_month, min_days, min_hours, min_minutes, min_seconds)
+						next_datetime = datetime(min_year, min_month, min_days, min_hours, min_minutes, min_seconds)
+						end_datetime = datetime(max_year, max_month, max_days, max_hours, max_minutes, max_seconds)
+						time_delta = timedelta(days=1)
+						while next_datetime <= end_datetime:
+							next_datetime = next_datetime + time_delta
+							print "next_datetime: ", next_datetime
+							date_time_timezone_longlat = " --date=\""+ str(next_datetime.year) + "-" + str(next_datetime.month) + "-" + str(next_datetime.day) + " " + str(next_datetime.hour) + ":" + str(next_datetime.minute) + ":" + str(next_datetime.second) + " " + self.geonames_time_zone(str(long_deg) +"."+ str(long_min) +" "+ str(lat_deg) +"."+ str(lat_min)) +"\"  --location=\" x "+ str(long_deg) +":"+ str(long_min) + ":" + str(0) + " "+ str(lat_deg) +":"+ str(lat_min) + ":" + str(0) +" \" --planet-list"
+							yield date_time_timezone_longlat  
 
 
 	def geonames_time_zone(self, latlong):
@@ -93,30 +95,36 @@ class NextDateTimeTimezoneLonglat:
 
 if __name__=="__main__":
 	rules_file=open("./MinedClassAssociationRules.txt","r")
-	next=NextDateTimeTimezoneLonglat()
-	sign_planets_dict=defaultdict(list)
+	rule_planets_list=[]
 	for rule in rules_file:
 		if rule.find("==============") == -1 and rule.find("Class Association") == -1:
-			planets=rule.split(',')
-			#Example commandline: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list 
-			#/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="0-0-0 0:0:0 0  --location=" x 0:0:0 0:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+			rule_planets=rule.strip().split(' ,')
+			rule_planets_stripped=[]
+			for r in rule_planets:
+				rule_planets_stripped.append(r.strip())	
+			rule_planets_list.append(rule_planets_stripped)
+	next=NextDateTimeTimezoneLonglat()
+	sign_planets_dict=defaultdict(list)
 
-			for date_time_timezone_longlat in next:
-				cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
-				print cmd
-				os.system(cmd)
-				print "============================================"
-				chart=open("chartsummary.rulesearch","r")
-				chart.readline()
-				chart.readline()
-				for row in chart:
-					row_tokens=row.split()
-					if row_tokens:
-						sign_planets_dict[row_tokens[4]].append(row_tokens[0])
-				print "sign_planets_dict=",sign_planets_dict
-				message="{" + date_time_timezone_longlat + "} - There is no Class Association Rule match"
-				for k,v in sign_planets_dict.iteritems():
-					if set(v) == set(planets):
-						message="{",date_time_timezone_longlat,"} - There is a Class Association Rule match [",k,"] in sign ",v
-				print message
-				sign_planets_dict=defaultdict(list)
+	for date_time_timezone_longlat in next:
+		#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list 
+		#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list 
+		cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+		print cmd
+		os.system(cmd)
+		print "============================================"
+		chart=open("chartsummary.rulesearch","r")
+		chart.readline()
+		chart.readline()
+		for row in chart:
+			row_tokens=row.split()
+			if row_tokens:
+				sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
+		print "sign_planets_dict=",sign_planets_dict
+		for rule_planets in rule_planets_list:
+			for k,v in sign_planets_dict.iteritems():
+				if (set(rule_planets[:-1]).issubset(set(v))):
+					print "{",date_time_timezone_longlat,"} - There is a Class Association Rule match [",rule_planets[:-1],"] in sign ",k
+				else:
+					print "{",date_time_timezone_longlat,"} - There is no Class Association Rule match [",rule_planets[:-1],"] in sign ",k
+			sign_planets_dict=defaultdict(list)

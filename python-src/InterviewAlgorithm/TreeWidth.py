@@ -66,8 +66,8 @@ def tree_width(nxg,i):
 					max_junction_tree_node=k1
 					maxsize = len(k1)
 	print "============================================"
-	print "Junction Tree (with subgraphs of size less than",i," :",junction_tree.edges()
-	print "============================================"
-	print "Junction Tree Width for subgraphs of size less than",i," - size of largest node set:",maxsize
+	print "Junction Tree (with subgraphs of size less than",i,") :"
 	nx.draw_networkx(junction_tree)
 	plt.show()
+	print "============================================"
+	print "Junction Tree Width for subgraphs of size less than ",i," - size of largest node set:",maxsize
