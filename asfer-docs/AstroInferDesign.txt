@@ -2766,6 +2766,17 @@ This is because a machine learning abstraction of neuron - perceptron - takes we
 data with date, time and longitude-latitude queries.
 - Where this is useful is after mining the astronomical data with SequenceMining, there is a necessity to search when a particular mined rule occurs. This is an experimental, non-conventional automated weather prediction (but not necessarily unscientific as it requires expertise beyond computer science to establish veracity).
 - Logs for this has been added in testlogs/ and chartsummary.rulesearch
+
+-------------------------------------------------------------------------------------------------------
+197. Commits as on 18 December 2015
+-------------------------------------------------------------------------------------------------------
+- Interview Algorithm crawl-visual script changed for treewidth invocation
+- Spidered text changed
+- Rule Search script corrected to use datetime objects
+- Rule Search script corrected to use timedelta for incrementing date and time
+- logs and screenshots for above
+- Junction Tree for RGO graph - logs and screenshots
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
