@@ -676,7 +676,7 @@ where s=a+ib. Setting a=0.5 is creating a contradiction apparently  which is abo
 
 Above and the Informal notes in https://sites.google.com/site/kuja27/RamanujanGraphsRiemannZetaFunctionAndIharaZetaFunction.pdf?attredirects=0&d=1 can further be simplified as follows to get RZF in terms of IZF identity.
 
-Disclaimer: It is not in anyway an attempted proof or disproof of RH as I am not an expert in analytical number theory. Following was found serendipitously as a surprise while working on special case of circuits for complement function for primes and it does not have direct relation to complementation - Fourier polynomial for Complement Function generalizes Riemann Hypothesis in a sense. Moreover, Notion of complementing a function is absent in mathematical literature I have searched so far except in mathematical logic. Following are derived based on Ihara Identity of Ihara Zeta Function.[https://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824] for a prime+1 regular graph.
+Disclaimer: It is not in anyway an attempted proof or disproof of RH as I am not an expert in analytical number theory. Hence arguments might be elementary. Following was found serendipitously as a surprise while working on special case of circuits for complement function for primes and it does not have direct relation to complementation - Fourier polynomial for Complement Function generalizes Riemann Hypothesis in a sense. Moreover, Notion of complementing a function is absent in mathematical literature I have searched so far except in mathematical logic. Following are derived based on Ihara Identity of Ihara Zeta Function.[https://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824] for a prime+1 regular graph.
 
 (1) For some i-th prime+1 regular graph (i.e q+1 regular graph where qi is prime),
 			[1+qi^-s]				1
@@ -707,12 +707,12 @@ for some term in the infinite product of LHS which implies that
 	[z1*z2*.....det()det()....] = 0 which is described earlier above in the notes. 
 
 (7) More derivations of the above are in the notes uploaded in  handwritten preliminary drafts at: 
-	(6.1) https://sites.google.com/site/kuja27/RZFAndIZF_25October2014.pdf?attredirects=0&d=1 
-	(6.2) http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf
+	(7.1) https://sites.google.com/site/kuja27/RZFAndIZF_25October2014.pdf?attredirects=0&d=1
+	(7.2) http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/ComplFunction_DHF_PVsNP_Misc_Notes.pdf
 	
 (8) By equating the determinant in (6) above to zero, written notes in (7) derive values of s=a+ib for non-Ramanujan prime+1 regular graphs for the expressions in points (1) to (6) above. They seem to suggest that RH is true with elementary complex arithmetic without using any complex analysis, with or without any assumption on the eigenvalue surprisingly - assuming q^s + q^(1-s) = v (v can be set to any eigenvalue - can be atmost q+1 for the q+1-regular non-ramanujan graph) and solving for s=a+ib - gives a=1/2 and thus for both ramanujan and non-ramanujan graphs as eigen value becomes irrelevant - needs lot of reviewing - because it implies that graph formulation above of Riemann Hypothesis is true for all prime+1 regular graphs by applying Ihara Identity of Ihara Zeta Function and thus Riemann Hypothesis is true. The choice of prime+1 regularity is just a contrived gadget to equate to Riemann Zeta Function through an infinite product. Crucial fact is the independence of eigen value in the previous derivation whenever the graph regularity is prime+1, thus directly connecting prime numbers and real part of Riemann Zeta Function non-trivial zero.
 
-(9) Above doesn't look circular also because infinite product of characteristic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator - this happens only when the product z1*z2*... is not zero i.e when the graphs are non-ramanujan. The infinite product of determinants of the form det(I-A(qi)^(-s)+(qi)^(1-2s)I) when solved for zero do not depend of eigenvalue. Had it been circular, the eigenvalue for Ramanujan graph should have occurred somewhere in the derivation throwing back to square one.
+(9) Above doesn't look circular also because infinite product of characteristic polynomials - determinants - are independent of infinite product of Ihara Zeta Functions preceding them in denominator - this happens only when the product z1*z2*... is not zero i.e when the graphs are non-ramanujan. The infinite product of determinants of the form det(I-A(qi)^(-s)+(qi)^(1-2s)I) when solved for zero do not depend on eigenvalue and s is assumed nowhere. Independence of eigen value implies all possible graphs. Further the last step is independent of regularity q too. Had it been circular, the eigenvalue for Ramanujan graph should have occurred somewhere in the derivation throwing back to square one.
 
 (10) Expression in (1) for a prime+1 regular graph can also be equated to Euler-Fourier polynomial mentioned in (24c) per-prime term for each prime+1 regular graph - LHS is a graph while RHS is a fourier polynomial for boolean circuit for a prime - P(xi). Thus pattern in prime polynomials in RHS are related to patterns in graphs on left:
 			[1+qi^-s]				1
@@ -2776,6 +2776,12 @@ data with date, time and longitude-latitude queries.
 - Rule Search script corrected to use timedelta for incrementing date and time
 - logs and screenshots for above
 - Junction Tree for RGO graph - logs and screenshots
+
+-------------------------------------------------------------------------------------------------------
+198. (THEORY) Star Complexity of Graphs - Complement Function circuit and Unsupervised Classification with RGO graph
+-------------------------------------------------------------------------------------------------------
+Star complexity of a graph defined in [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
+ is the minimum number of union and intersection operations of star subgraphs required to create the larger graph which is strikingly relevant to the necessity of quantitative intrinsic merit computation in Recursive Gloss Overlap algorithm [http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf]. Each star subgraph of the definition graph is an unsupervised automatically found class a text belongs to. Apart from this star complexity of a boolean circuit graph for Complement Function http://arxiv.org/pdf/1106.4102v1.pdf and in particular for Prime complement special case should have direct relationship conjecturally to pattern in primes because boolean formula for the graph depends on prime bits.
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
