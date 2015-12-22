@@ -2783,6 +2783,27 @@ data with date, time and longitude-latitude queries.
 Star complexity of a graph defined in [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
  is the minimum number of union and intersection operations of star subgraphs required to create the larger graph which is strikingly relevant to the necessity of quantitative intrinsic merit computation in Recursive Gloss Overlap algorithm [http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf]. Each star subgraph of the definition graph is an unsupervised automatically found class a text belongs to. Apart from this star complexity of a boolean circuit graph for Complement Function http://arxiv.org/pdf/1106.4102v1.pdf and in particular for Prime complement special case should have direct relationship conjecturally to pattern in primes because boolean formula for the graph depends on prime bits.
 
+---------------------------------------------------------------------------------------------------------
+199. (FEATURE - DONE) Tornado Webserver, REST API and GUI for NeuronRain - Commits as on 22 December 2015
+---------------------------------------------------------------------------------------------------------
+Commits for NeuronRain WebServer-RESTfulAPI-GUI based on tornado in python-src/webserver_rest_ui/:
+- NeuronRain entrypoint based on tornado that reads a template and implements GET and POST methods
+- templates/ contains renderable html templates
+- testlogs/ has neuronrain GUI logs
+- RESTful API entrypoint <host:33333>/neuronrain
+
+---------------------------------------------------------------------------------------------------------
+200. (FEATURE - DONE) NeuronRain as SaaS and PaaS - for commits above in (199)
+---------------------------------------------------------------------------------------------------------
+RESTful and python tornado based Graphical User Interface entrypoint that reads from various html templates and passes on
+incoming concurrent requests to NeuronRain subsystems - AsFer, VIRGO, KingCobra, USBmd and Acadpdrafts - has bee added. Presently implements
+simplest possible POST form without too much rendering (might require flask, twisted, jinja2 etc.,) for AsFer algorithms execution.
+This exposes a RESTful API for commandline clients like cURL. For example a cURL POST is done to NeuronRain as:
+cURL POST: curl -H "Content-Type: text/plain" -X POST -d '{"component":"AsFer","script":"<script_name>","arguments":"<args>"}' http://localhost:33333/neuronrain where REST url is <host:port>/neuronrain.  Otherwise REST clients such as Advanced RESTful Client browser app can be used.
+With this NeuronRain is Software-As-A-Service (SaaS) Platform deployable on VIRGO linux kernel cloud, cloud OSes and containers like Docker.
+More so, it is Platform-As-A-Service (PaaS) when run on a VIRGO cloud.
+
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
