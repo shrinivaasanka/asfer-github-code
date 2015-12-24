@@ -2803,6 +2803,34 @@ cURL POST: curl -H "Content-Type: text/plain" -X POST -d '{"component":"AsFer","
 With this NeuronRain is Software-As-A-Service (SaaS) Platform deployable on VIRGO linux kernel cloud, cloud OSes and containers like Docker.
 More so, it is Platform-As-A-Service (PaaS) when run on a VIRGO cloud.
 
+------------------------------------------------------------------------------------------------------------------------------------
+201. (FEATURE - DONE) Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
+ - Commits as on 24 December 2015
+------------------------------------------------------------------------------------------------------------------------------------
+- 2 python files for Spark MapReduce of Recursive Gloss Overlap graph construction has been added to repository
+- These two implement Interview Algorithm Recursive Gloss Overlap graph construction and Map-Reduce functions that parallellize
+each recursion step computing the gloss tokens from previous recursion level. This is the most important part of the algorithm which
+consumes lot of time in serial version. Apache Spark has been recently gaining importance over its plain Hadoop counterpart and is many times
+faster than Hadoop in benchmarks.
+- In this implementation, Resilient Distributed Dataset is the set of tokens in each recursion level and is parallelly computable in a
+huge Spark cluster.
+- For example if Spark cluster has 10000 nodes, and each level of recursion produces X number of gloss tokens for graph vertices, time
+complexity in Spark is O(X/10000) where as serial version is O(X) with negligible network overhead. Spark has in-memory datasets which
+minimizes network latency because of disk access.
+- There were lot of implementation issues to make the parallellism. Map and Reduce functions use namedtuples to return data. With more than one
+field in namedtuple, there are internal pickling issues in Py4J - Python4Java which PySpark internally invokes to get streamed socket bytes from
+Java side of the object wrapped as an iterable. This prevents returning multiple values - for example Synsets - in Map-Reduce functions.
+- So only tokens at a level are map-reduced and returned while the prevlevelsynsets (required for adding edges across vertices) are "pickled"
+with a properietary asfer_pickle_load() and asfer_pickle_dump() functions that circumvents the python and java vagaries in pickling.
+- With proprietary pickling and Map-Reduce functions, Recursive Gloss Overlap graph has been constructed in parallel. Screenshots for this has bee added in testlogs.
+- Proprietary pickling is done to a text file which is also added to repository. This file is truncated at the end of each recursion.
+- Subtlety here is that maximum number of tokens at a recursion level t = number_of_tokens_at_level_(t-1) * maximum_size_of_gloss_per_word(s)
+which grows as series 1 + s + s^2 + s^3 + ... + s^t. If size of the Spark cluster is O(s^t_max), each recursion step is O(1) and total time for
+all levels is O(t_max) which is per text document. This bound neglects optimization from overlaps and isomorphic nodes removal and
+is worst case upperbound. This implies size of cluster is independent of document size and depends only on depth of recursion.
+For ranking n documents this bound becomes O(n*t_max). For constant t_max this bound is O(n) - linear in number of documents and thus scalable.
+- Maximum size of gloss per word (s) is also an upper-boundable constant. With constant t_max , size of cluster O(s^t_max) is constant too.
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
