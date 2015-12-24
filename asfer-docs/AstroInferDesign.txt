@@ -2703,10 +2703,11 @@ Streaming Abstract Generator iterable framework.
 - most recent scrapy crawl logs for this have been added to webspider/testlogs
 
 -----------------------------------------------------------------------------------------------------------
-191. (THEORY) An update to runtime analysis of Recursive Gloss Overlap Algorithm in TAC 2010
+191. (THEORY) An update and additions to runtime analysis of Recursive Gloss Overlap Algorithm in TAC 2010
 (http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf)
 -----------------------------------------------------------------------------------------------------------
 Analysis of runtime in the link above is too cryptic. An updated analysis of steps are given here:
+- Nodes at topmost level are keywords in document. For each subsequent recursion step following analysis is per keyword.
 - Nodes at level i-1 are computed (base case) : x^(i-1) where x is average size of gloss definition
 - Naive pairwise comparison of overlap is done at level i-1 which makes it x^2(i-1)
 - Tree isomorphism algorithms can be optionally applied to reduce number of nodes getting recomputed. There are
@@ -2715,11 +2716,11 @@ polytime algorithms for subtree isomorphisms (www.cs.bgu.ac.il/~dekelts/publicat
 - Maximum number Nodes at level i - are from gloss expansion of those at i-1 : (x^(i-1) - Overlap(i-1))*x
 - Thus total time at level i is: Time_for_pairwise_comparison_to_find_gloss_verlap + Time_for_removing_isomorphic_nodes
 T(i) = sigma([x^(i-1) - Overlap(i-1)]^2 + subtree_isomorphism(i)))
-- Above is naively upperbounded to O(x^(2d)) [as subtree isomorphism is polynomial in supertree and subtree vertices and is only an optimization step that can be ignored].
-- If number of vertices in RGO multipartite graph (ignoring isomorphism) constructed above is V=O(x^(d)), runtime is O(V^2)  which is
-far less than O(E*V^2) mentioned in TAC 2010 link.
+- Above is naively upperbounded to O(x^(2d)) [as subtree isomorphism is polynomial in supertree and subtree vertices and is only an optimization step that can be ignored]. For W keywords in the document time bound is O(W*x^(2d)).
+- If number of vertices in RGO multipartite graph (ignoring isomorphism) constructed above is V=O(x^(d)), runtime is O(W*V^2)  which is
+far less than O(E*V^2) mentioned in TAC 2010 link because number of keywords in toplevel are less than number of edges created during recursion which depend on x and exponentially on d. For example after first recursion completion, number of edges are W*x.
 - On a related note runtime for intrinsic merit ranking of the RGO wordnet subgraph can not be equated per-se to ranking from prestige-based search engines as RGO is objective graph-theoretic ranking (does not require massive bot-crawling, indexing and link graph construction) and PageRank is subjective prestige based ranking(depends on crawling, indexing and time needed for link graph construction). Standard publicly available PageRank iteratively computes random walk matrix multiplication for link graphs for billions of nodes on WWW and this runtime has to be apportioned per-node. Time and Space for crawling and indexing have also to be accounted for per-node. Naive bound for PageRank per node is O(time_for_iterative_matrix_multiplication_till_convergence/number_of_nodes). Matrix multiplication is O(n^omega) where omega~2.3. Thus pagerank bound per node is O(((n^omega)*iterations)/n) assuming serial PageRank computation. Parallel Distributed Versions of PageRank depend on network size and scalable.
-- Parallel Recursive Gloss Overlap graph construction on a cloud could reduce the runtime to O(V^2/c) where c is size of the cloud.
+- Parallel Recursive Gloss Overlap graph construction on a cloud could reduce the runtime to O(W*V^2/c) where c is size of the cloud.
 
 ---------------------------------------------------------------------------------------------------------------
 192. (FEATURE - DONE) Commits as on 14 December 2015
@@ -2810,8 +2811,7 @@ More so, it is Platform-As-A-Service (PaaS) when run on a VIRGO cloud.
 - 2 python files for Spark MapReduce of Recursive Gloss Overlap graph construction has been added to repository
 - These two implement Interview Algorithm Recursive Gloss Overlap graph construction and Map-Reduce functions that parallellize
 each recursion step computing the gloss tokens from previous recursion level. This is the most important part of the algorithm which
-consumes lot of time in serial version. Apache Spark has been recently gaining importance over its plain Hadoop counterpart and is many times
-faster than Hadoop in benchmarks.
+consumes lot of time in serial version along with overlap computation. Apache Spark has been recently gaining importance over its plain Hadoop counterpart and is many times faster than Hadoop in benchmarks.
 - In this implementation, Resilient Distributed Dataset is the set of tokens in each recursion level and is parallelly computable in a
 huge Spark cluster.
 - For example if Spark cluster has 10000 nodes, and each level of recursion produces X number of gloss tokens for graph vertices, time
@@ -2822,15 +2822,15 @@ field in namedtuple, there are internal pickling issues in Py4J - Python4Java wh
 Java side of the object wrapped as an iterable. This prevents returning multiple values - for example Synsets - in Map-Reduce functions.
 - So only tokens at a level are map-reduced and returned while the prevlevelsynsets (required for adding edges across vertices) are "pickled"
 with a properietary asfer_pickle_load() and asfer_pickle_dump() functions that circumvents the python and java vagaries in pickling.
-- With proprietary pickling and Map-Reduce functions, Recursive Gloss Overlap graph has been constructed in parallel. Screenshots for this has bee added in testlogs.
+- With proprietary pickling and Map-Reduce functions, Recursive Gloss Overlap graph has been constructed in parallel. Screenshots for this has been added in testlogs.
 - Proprietary pickling is done to a text file which is also added to repository. This file is truncated at the end of each recursion.
 - Subtlety here is that maximum number of tokens at a recursion level t = number_of_tokens_at_level_(t-1) * maximum_size_of_gloss_per_word(s)
-which grows as series 1 + s + s^2 + s^3 + ... + s^t. If size of the Spark cluster is O(s^t_max), each recursion step is O(1) and total time for
-all levels is O(t_max) which is per text document. This bound neglects optimization from overlaps and isomorphic nodes removal and
-is worst case upperbound. This implies size of cluster is independent of document size and depends only on depth of recursion.
-For ranking n documents this bound becomes O(n*t_max). For constant t_max this bound is O(n) - linear in number of documents and thus scalable.
-- Maximum size of gloss per word (s) is also an upper-boundable constant. With constant t_max , size of cluster O(s^t_max) is constant too.
-
+which grows as series = number_of_words*(1 + s + s^2 + s^3 + ... + s^t_max). Size of a document - number of words - can be upperbounded by a constant (d) due to finiteness of average text documents in realworld ignoring special cases of huge webpages with PDF/other.
+- If size of the Spark cluster is O(f(d)*s^t_max), each recursion step is of time O(d*s^t_max/f(d)*s^t_max)=O(d/f(d)) and total time for all levels is O(d*t_max/f(d)) which is ranking time per text document. This bound neglects optimization from overlaps and isomorphic nodes removal and is worst case upperbound. For ranking n documents this time bound becomes O(n*d*t_max/f(d)). For constant t_max this bound is O(n*d/f(d)) - and thus linearly scalable.
+- Maximum size of gloss per word (s) is also an upper-boundable constant. With constant d and t_max , size of cluster O(f(d)*s^t_max) is constant too independent of number of documents.
+- Example: For set of 1000 word documents with f(d)=log(d), max gloss size 5 and recursion depth 2, size of cluster is O(log(1000)*25)~250 nodes with runtime for ranking n documents = O(n*1000*t_max/log(1000)=O(n*100*t_max) which is O(n) for constant t_max.
+- Above is just an estimate of approximate speedup achievable in Spark cluster. Ideally runtime in Spark cloud should be on the lines of analysis in (191) - O(n*d*s^2(t_max)/f(d)*s^t_max) = O(n*d*s^t_max/f(d)).
+- Thus runtime upperbound in worst case is O(n*d*s^t_max/f(d)) for cluster size O(f(d)*s^t_max).
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
