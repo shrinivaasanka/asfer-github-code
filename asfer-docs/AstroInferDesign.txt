@@ -2831,6 +2831,7 @@ which grows as series = number_of_words*(1 + s + s^2 + s^3 + ... + s^t_max). Siz
 - Example: For set of 1000 word documents with f(d)=log(d), max gloss size 5 and recursion depth 2, size of cluster is O(log(1000)*25)~250 nodes with runtime for ranking n documents = O(n*1000*t_max/log(1000)=O(n*100*t_max) which is O(n) for constant t_max.
 - Above is just an estimate of approximate speedup achievable in Spark cluster. Ideally runtime in Spark cloud should be on the lines of analysis in (191) - O(n*d*s^2(t_max)/f(d)*s^t_max) = O(n*d*s^t_max/f(d)).
 - Thus runtime upperbound in worst case is O(n*d*s^t_max/f(d)) for cluster size O(f(d)*s^t_max).
+- If cluster autoscales based on number of documents also, size is a function of n and hence previous size bound is changed to O(g(n)*f(d)*s^t_max) and corresponding time bound = O(n*d*s^2(t_max)/(f(d)*s^t_max*g(n))) = O(n*d*s^t_max/(f(d)*g(n)))
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
