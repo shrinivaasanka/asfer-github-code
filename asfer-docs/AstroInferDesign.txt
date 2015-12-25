@@ -2833,6 +2833,18 @@ which grows as series = number_of_words*(1 + s + s^2 + s^3 + ... + s^t_max). Siz
 - Thus runtime upperbound in worst case is O(n*d*s^t_max/f(d)) for cluster size O(f(d)*s^t_max).
 - If cluster autoscales based on number of documents also, size is a function of n and hence previous size bound is changed to O(g(n)*f(d)*s^t_max) and corresponding time bound = O(n*d*s^2(t_max)/(f(d)*s^t_max*g(n))) = O(n*d*s^t_max/(f(d)*g(n)))
 
+----------------------------------------------------------------------------------------------------------------
+202. (THEORY) Recursive Gloss Overlap, Cognitive and PsychoLinguistics and Language Comprehension
+----------------------------------------------------------------------------------------------------------------
+Recursive Gloss Overlap algorithm constructs a graph from text documents. Presently WordNet is probably the only solution available to
+get relations across words in a document. But the algorithm does not assume WordNet alone. Any future available algorithms to create
+relational graphs from texts should be able to take the place of WordNet. Merit of a document is independent of grammar and language in which it is written. For example a text in English and French with grammatical errors delving on the same subject are equivalently treated by this
+algorithm as language is just a pointer to latent information buried in a document. Process of Language Comprehension is a field of study in Cognitive and Psychological Linguistics. Problem with prestige based subjective rankings is that same document might get varied reviews from multiple sources and consensus with majority voting is required. This is somewhat contrary to commonsense because it assumes majority decision is correct 100% (this is exactly the problem analyzed by P(Good) binomial summation and majority voting circuits elsewhere in this document). In complexity parlance prestige rankings are in BP* classes. Objective rankings are also in BP* classes because of dependency on the framework like WordNet to extract relationships without errors, but less costlier than prestige rankings.
+
+Intuition for Recursive Gloss Overlap for weighing natural language texts is from computational linguistics. Human process of comprehending language, recursion as an inherent trait of human faculty and evolution of language from primates to human is described in http://www.sciencemag.org/content/298/5598/1569, www.ncbi.nlm.nih.gov/pubmed/12446899 and http://ling.umd.edu/~colin/courses/honr218l_2007/honr218l_presentation7.ppt by [Hauser, NoamChomsky and Fitch] with an example part-of-speech recursive tree of a sentence. From theory of computation perspective, recursive gloss overlap constructs a disambiguated Context Sensitive graph from Natural language text a superset of context free grammars. But natural languages are suspected to be subset of larger classes of context sensitive languages accepted by Linear Bounded Automata. Thus reverse engineering a text from the recursive gloss overlap graph may yield a language larger than natural languages.
+
+
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/

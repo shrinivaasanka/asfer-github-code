@@ -71,30 +71,7 @@ def parents(keyword, prevlevelsynsets):
 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
 			if keyword in syndef_tokens:
 				parents = parents + [syn]
-	#output.write('Parents of ' + keyword + ' are:\n')
-	#pickle.dump(parents,output)
-	#output.write('\n')
 	return parents
-	
-
-#function - best_matching_synset()
-#def best_matching_synset(doc_tokens, synsets):
-#	#output.write('best_matching_synset():\n')
-#	maxmatch = -1
-#	retset = []
-#	for synset in synsets:
-#		def_tokens = set(nltk.word_tokenize(synset.definition()))
-#		intersection = def_tokens.intersection(doc_tokens)
-#		#output.write('--------------------')
-#		#output.write('intersection:\n')
-#		#pickle.dump(intersection, output)	
-#		#output.write('\n')
-#		#output.write('--------------------')
-#		if len(intersection) > maxmatch:
-#			maxmatch = len(intersection)
-#			retset = synset
-#	#output.write(retset.definition)
-#	return retset
 
 #function - get_context()
 def get_context(query, documents):
@@ -179,26 +156,26 @@ for filestr in files:
 		if current_level > 1:
 			print current_level
 			for x in freqterms1:
-				for y in parents(x,prevlevelsynsets):
-					ylemmanames=y.lemma_names()
-					definitiongraphedges[x].append(ylemmanames[0])
-					definitiongraphedgelabels[x + " - " + ylemmanames[0]].append(" is a subinstance of ")
-					definitiongraphedgelabels[ylemmanames[0] + " - " + x].append(" is a superinstance of ")
+				#for y in parents(x,prevlevelsynsets):
+				for y in InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel):
+					definitiongraphedges[x].append(y)
+					definitiongraphedgelabels[x + " - " + y].append(" is a subinstance of ")
+					definitiongraphedgelabels[y + " - " + x].append(" is a superinstance of ")
 						
-			convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
+			#convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
+			convergingterms = [w for w in freqterms1 if len(InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(w,tokensofprevlevel)) > 1]
 			for kw in freqterms1:
-				convergingparents = convergingparents + ([w for w in parents(kw, prevlevelsynsets) if len(parents(kw, prevlevelsynsets)) > 1])
+				parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+				#convergingparents = convergingparents + ([w for w in parents(kw, prevlevelsynsets) if len(parents(kw, prevlevelsynsets)) > 1])
+				convergingparents = convergingparents + ([w for w in parents_kw if len(parents_kw) > 1])
 			for kw in freqterms1:
-				noofparents = len(parents(kw, prevlevelsynsets))
+				parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+				noofparents = len(parents_kw)
 				if noofparents > maxparents:
 					maxparents = noofparents
 					nodewithmaxparents = kw
 			output.write('converging terms(terms with more than 1 parent):\n ')
-			#pickle.dump(convergingterms,output)
-			output.write('\n')
 			output.write('converging parents :\n')
-			#pickle.dump(convergingparents,output)
-			output.write('\n')
 	
 		tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
 		print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
@@ -228,7 +205,7 @@ for filestr in files:
 		#relatedness must be increased since repetition of keywords in two successive levels is a sign of 
 		#interrelatedness(a backedge from child-of-one-of-siblings to one-of-siblings). Remove vertices and edges 			#corresponding to common tokens
 		commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))
-		tokensofthislevel = set(tokensofthislevel).difference(commontokens)
+		tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
 		relatedness = relatedness + len(commontokens)
 		output.write('removing tokens already grasped:\n')
 		#pickle.dump(commontokens,output)
@@ -247,7 +224,7 @@ for filestr in files:
 		output.write(str(edges))
 		output.write('\n')
 		current_level = current_level + 1
-		freqterms1 = set(tokensofthislevel)
+		freqterms1 = tokensofthislevel
 		tokensofprevlevel = tokensofthislevel
 		tokensofthislevel = []
 	
@@ -341,9 +318,9 @@ try:
 except:
 	pass 
 #try:
-print "=========================================================================================================="
-print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
-print "=========================================================================================================="
-print TreeWidth.tree_width(nxg,3)
+#print "=========================================================================================================="
+#print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
+#print "=========================================================================================================="
+#print TreeWidth.tree_width(nxg,3)
 #except:
 #	pass 

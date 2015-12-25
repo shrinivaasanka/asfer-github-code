@@ -88,9 +88,9 @@ def mapFunction(freqterms1):
       		         disamb_synset_def = disamb_synset.definition()
       			 tokens = nltk.word_tokenize(disamb_synset_def)
              		 fdist_tokens = FreqDist(tokens)
-         		 #fdist_tokens=[w for fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)]
+         		 fdist_tokens=[w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)]
 	 		 #mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
-	 		 mapped_object=rgo_object(fdist_tokens.keys())
+	 		 mapped_object=rgo_object(fdist_tokens)
      picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
      asfer_pickle_dump(prevlevelsynsets,picklef)
      return (1,mapped_object)
@@ -137,7 +137,57 @@ def Spark_MapReduce(level, wordsatthislevel):
 	recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
 	query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
 	dict_query_results=dict(query_results.collect())
-	print "SparkSQL DataFrame query results:"
+	print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+	print dict_query_results[1]
+	spcon.stop()
+	return dict_query_results[1]
+
+#Following parents computation from prevlevel synsets is map-reduced in Spark
+#parents (at level i-1) of a given vertex at level i
+#arguments are a keyword at present level and all disambiguated synsets of previous level
+#def parents(keyword, prevlevelsynsets):
+#        parents = []
+#        for syn in prevlevelsynsets:
+#                if type(syn) is nltk.corpus.reader.wordnet.Synset:
+#                        syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+#                        if keyword in syndef_tokens:
+#                                parents = parents + [syn]
+#        return parents
+
+def mapFunction_Parents(keyword_prevleveltokens_pair):
+	syns=wn.synsets(keyword_prevleveltokens_pair[1])
+	if len(syns) > 1:
+		syns_lemma_names=syns[0].lemma_names()
+		for prevleveltoken in list(keyword_prevleveltokens_pair[1]):
+		   syn=best_matching_synset(list(keyword_prevleveltokens_pair[1]), wn.synsets(prevleveltoken))
+		   print "mapFunction_Parents(): type(syn):",type(syn)
+		   print "mapFunction_Parents(): syn:",syn
+                   if type(syn) is nltk.corpus.reader.wordnet.Synset:
+                           syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+		           print "mapFunction_Parents(): syndef_tokens=",syndef_tokens
+                           if keyword_prevleveltokens_pair[0] in syndef_tokens:
+				syn_lemma_names=syn.lemma_names()
+				print "mapFunction_Parents(): returning synset lemma name[0]:",syn_lemma_names[0]
+				return (1, syn_lemma_names[0])
+	print "mapFunction_Parents(): keyword_prevleveltokens_pair=",keyword_prevleveltokens_pair
+	print "mapFunction_Parents(): syns=",syns
+	return (1,u'')
+
+def reduceFunction_Parents(token1, token2):
+	return [token1] + [token2]
+
+def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+	spcon = SparkContext()
+	keyword_prevleveltokens_pair=(keyword, tokensofprevlevel)
+	paralleldata = spcon.parallelize(keyword_prevleveltokens_pair)
+        kwprevleveltokens = paralleldata.filter(lambda kwtoken: kwtoken)
+	k=kwprevleveltokens.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+	sqlContext=SQLContext(spcon)
+	parents_schema=sqlContext.createDataFrame(k.collect())
+	parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+	query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+	dict_query_results=dict(query_results.collect())
+	print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
 	print dict_query_results[1]
 	spcon.stop()
 	return dict_query_results[1]
