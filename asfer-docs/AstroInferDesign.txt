@@ -2843,6 +2843,16 @@ algorithm as language is just a pointer to latent information buried in a docume
 
 Intuition for Recursive Gloss Overlap for weighing natural language texts is from computational linguistics. Human process of comprehending language, recursion as an inherent trait of human faculty and evolution of language from primates to human is described in http://www.sciencemag.org/content/298/5598/1569, www.ncbi.nlm.nih.gov/pubmed/12446899 and http://ling.umd.edu/~colin/courses/honr218l_2007/honr218l_presentation7.ppt by [Hauser, NoamChomsky and Fitch] with an example part-of-speech recursive tree of a sentence. From theory of computation perspective, recursive gloss overlap constructs a disambiguated Context Sensitive graph from Natural language text a superset of context free grammars. But natural languages are suspected to be subset of larger classes of context sensitive languages accepted by Linear Bounded Automata. Thus reverse engineering a text from the recursive gloss overlap graph may yield a language larger than natural languages.
 
+--------------------------------------------------------------------------------------------------------------------
+203. Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
+- Commits as on 25 December 2015
+--------------------------------------------------------------------------------------------------------------------
+- Added more parallelism to python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py. New map-reduce functions
+for computing parents (backedges in the recursion) have been added - mapFunction_Parents(), reduceFunction_Parents(), SparkMapReduce_Parents()
+in python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py
+- These functions take the previous level tokens as inputs instead if synsets
+
+
 
 
 - 
