@@ -1156,6 +1156,7 @@ Reference:
 53.11.4 Derandomizing BPNC - Existence of Hitting Set Generators for BPNC=NC - [Alexander E.Andreev, Andrea E.F.Clementi, Jose D.P.Rolim] - http://ac.els-cdn.com/S0304397599000249/1-s2.0-S0304397599000249-main.pdf?_tid=e56d3a1e-ad3d-11e5-a4ef-00000aacb35e&acdnat=1451291885_fbff7c6ae94326758cf8d6d7b7a84d7b
 53.11.5 Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
 	For |A| > t, Summation(fourier_coeff(A)) <= 2*(Size)*2^(-t^(1/d)/20)
+53.11.6 The Computational Complexity Column [Allender-Clementi-Rolim-Trevisan] - theory.stanford.edu/~trevisan/pubs/eatcs.ps
 
 ---------------------------------------------------------------------------------------------------------------------
 53.12. Partial Derivative of Circuit size wrt rho (noise probability) - increase in circuit size for Denoisification
@@ -2885,6 +2886,10 @@ for computing parents (backedges in the recursion) have been added - mapFunction
 in python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py
 - These functions take the previous level tokens as inputs instead if synsets
 
+--------------------------------------------------------------------------------------------
+204. Commits as on 28 December 2015
+--------------------------------------------------------------------------------------------
+- Updated MapReduce functions in Spark Recursive Gloss Overlap implementation
 
 
 
