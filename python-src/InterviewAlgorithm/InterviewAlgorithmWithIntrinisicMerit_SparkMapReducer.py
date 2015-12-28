@@ -47,7 +47,7 @@ import sys
 import nltk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
-from nltk.book import *
+from nltk.book import FreqDist 
 from nltk.corpus import stopwords
 from collections import namedtuple
 
@@ -154,40 +154,35 @@ def Spark_MapReduce(level, wordsatthislevel):
 #                                parents = parents + [syn]
 #        return parents
 
-def mapFunction_Parents(keyword_prevleveltokens_pair):
-	syns=wn.synsets(keyword_prevleveltokens_pair[1])
-	if len(syns) > 1:
-		syns_lemma_names=syns[0].lemma_names()
-		for prevleveltoken in list(keyword_prevleveltokens_pair[1]):
-		   syn=best_matching_synset(list(keyword_prevleveltokens_pair[1]), wn.synsets(prevleveltoken))
-		   print "mapFunction_Parents(): type(syn):",type(syn)
-		   print "mapFunction_Parents(): syn:",syn
-                   if type(syn) is nltk.corpus.reader.wordnet.Synset:
-                           syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-		           print "mapFunction_Parents(): syndef_tokens=",syndef_tokens
-                           if keyword_prevleveltokens_pair[0] in syndef_tokens:
-				syn_lemma_names=syn.lemma_names()
-				print "mapFunction_Parents(): returning synset lemma name[0]:",syn_lemma_names[0]
-				return (1, syn_lemma_names[0])
-	print "mapFunction_Parents(): keyword_prevleveltokens_pair=",keyword_prevleveltokens_pair
-	print "mapFunction_Parents(): syns=",syns
-	return (1,u'')
+def mapFunction_Parents(keyword,prevleveltokens):
+	parents=[]
+	for prevleveltoken in list(prevleveltokens):
+	   #syn=best_matching_synset(list(prevleveltokens), wn.synsets(prevleveltoken))
+	   syns=wn.synsets(prevleveltoken)
+	   syn=syns[0]
+           if type(syn) is nltk.corpus.reader.wordnet.Synset:
+                   syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+	           #print "mapFunction_Parents(): syndef_tokens=",syndef_tokens
+       	           if keyword in syndef_tokens:
+				parents = parents + [prevleveltoken]
+	print "mapFunction_Parents(): returns=",parents
+	return (1,parents)
 
-def reduceFunction_Parents(token1, token2):
-	return [token1] + [token2]
+
+def reduceFunction_Parents(parents1, parents2):
+	print "reduceFunction_Parents(): returns=", parents1 + parents2
+	return parents1 + parents2
 
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	spcon = SparkContext()
-	keyword_prevleveltokens_pair=(keyword, tokensofprevlevel)
-	paralleldata = spcon.parallelize(keyword_prevleveltokens_pair)
-        kwprevleveltokens = paralleldata.filter(lambda kwtoken: kwtoken)
-	k=kwprevleveltokens.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+	paralleldata = spcon.parallelize(tokensofprevlevel)
+	k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
 	sqlContext=SQLContext(spcon)
 	parents_schema=sqlContext.createDataFrame(k.collect())
 	parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
 	query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
 	dict_query_results=dict(query_results.collect())
 	print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
-	print dict_query_results[1]
 	spcon.stop()
 	return dict_query_results[1]
+	

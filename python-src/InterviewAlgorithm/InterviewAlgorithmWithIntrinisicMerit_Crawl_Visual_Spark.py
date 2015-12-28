@@ -31,6 +31,8 @@ from pyspark import SparkContext, SparkConf
 import nltk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
+from nltk.book import FreqDist
+from nltk.corpus import stopwords
 import networkx as nx
 import matplotlib.pyplot as plt
 import Queue
@@ -122,8 +124,6 @@ for filestr in files:
 	file1 = open(filestr)
 	raw1 = file1.read()
 	doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
-	from nltk.book import *
-	from nltk.corpus import stopwords
 	fdist1 = FreqDist(doc1)
 	stopwords = nltk.corpus.stopwords.words('english')
 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
@@ -168,8 +168,8 @@ for filestr in files:
 				parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
 				#convergingparents = convergingparents + ([w for w in parents(kw, prevlevelsynsets) if len(parents(kw, prevlevelsynsets)) > 1])
 				convergingparents = convergingparents + ([w for w in parents_kw if len(parents_kw) > 1])
-			for kw in freqterms1:
-				parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+			#for kw in freqterms1:
+			#	parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
 				noofparents = len(parents_kw)
 				if noofparents > maxparents:
 					maxparents = noofparents
