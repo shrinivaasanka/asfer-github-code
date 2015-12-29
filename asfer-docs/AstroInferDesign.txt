@@ -2902,6 +2902,23 @@ in python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapR
 --------------------------------------------------------------------------------------------
 - Updated MapReduce functions in Spark Recursive Gloss Overlap implementation
 
+--------------------------------------------------------------------------------------------
+205. Commits as on 29 December 2015
+--------------------------------------------------------------------------------------------
+- Updated python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py for choosing parallel spark mapreduce or
+serial parents backedges computation based on a boolean function.
+- This is because Recursive tokens mapreduce computation (Spark_MapReduce) is faster than serial version.
+But serial parents computation is faster than parallel parents computation ironically(Spark_MapReduce_Parents).
+This happens on single node Spark cluster.  So, parents computation has been made configurable(serial or parallel)
+- Logs and Screenshots for various texts experimented have been added to testlogs/
+- python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py mapreduce uses best_matching_synset() for
+disambiguation now which was commented earlier.
+- MapFunction_Parents() has a pickling problem in taking a tuple of synset objects as input arg due to which synsets have to be recomputed that
+ causes the slowdown mentioned above compared to serial parents() version. MapFunction_Parents() has been rewritten to take previous level gloss tokens in lieu of synsets to circumvent pickling issues.
+- Slowdown could be resolved on a huge cluster.
+- Thus this is a mix of serial+parallel implementation.
+- Logs,DOT file and Screenshots for mapreduced parents() computation
+
 
 
 - 
