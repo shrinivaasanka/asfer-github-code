@@ -40,6 +40,8 @@ import operator
 import TreeWidth
 import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
 
+parents_computation_spark=True
+
 #########################################################################################################
 #Derived from Old version of Example Python code written more than 5 years ago in January 2010 during MSc thesis at IIT Chennai 
 #for Intrinsic Merit computation and Interview Algorithm 
@@ -128,8 +130,6 @@ for filestr in files:
 	stopwords = nltk.corpus.stopwords.words('english')
 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
-	#at present tfidf filter is not applied
-	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
 	freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
 
 	current_level = 1
@@ -148,7 +148,6 @@ for filestr in files:
 	edges = 0
 	overlap = 0
 	iter = 0
-	from nltk.corpus import wordnet as wn
 	#recurse down to required depth and update intrinsic merit score
 	#relatedness is either sum(overlaps) or sum((overlapping_parents)*(overlaps)^2) also called convergence factor
 	while current_level < 3:
@@ -156,31 +155,44 @@ for filestr in files:
 		if current_level > 1:
 			print current_level
 			for x in freqterms1:
-				#for y in parents(x,prevlevelsynsets):
-				for y in InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel):
-					definitiongraphedges[x].append(y)
-					definitiongraphedgelabels[x + " - " + y].append(" is a subinstance of ")
-					definitiongraphedgelabels[y + " - " + x].append(" is a superinstance of ")
-						
-			#convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
-			convergingterms = [w for w in freqterms1 if len(InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(w,tokensofprevlevel)) > 1]
+				if parents_computation_spark:
+					parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel)
+				else:
+					parents_x = parents(x,prevlevelsynsets)
+				for y in parents_x:
+					if parents_computation_spark:
+						definitiongraphedges[x].append(y)
+					else:
+						y_lemma_names=y.lemma_names()
+						definitiongraphedges[x].append(y_lemma_names[0])
+	
+			if parents_computation_spark:					
+				convergingterms = [w for w in freqterms1 if len(InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(w,tokensofprevlevel)) > 1]
+			else:
+				convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
 			for kw in freqterms1:
-				parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
-				#convergingparents = convergingparents + ([w for w in parents(kw, prevlevelsynsets) if len(parents(kw, prevlevelsynsets)) > 1])
+				if parents_computation_spark:
+					parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+				else:
+					parents_kw = parents(kw, prevlevelsynsets)
 				convergingparents = convergingparents + ([w for w in parents_kw if len(parents_kw) > 1])
-			#for kw in freqterms1:
-			#	parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+				if parents_computation_spark:
+					parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
+				else:
+					parents_kw = parents(kw, prevlevelsynsets)
 				noofparents = len(parents_kw)
 				if noofparents > maxparents:
 					maxparents = noofparents
 					nodewithmaxparents = kw
 			output.write('converging terms(terms with more than 1 parent):\n ')
 			output.write('converging parents :\n')
-	
+
+		print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1	
 		tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
 		print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
 		picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
 		prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
+		print "prevlevelsynsets:",prevlevelsynsets
 		picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
 		picklef.seek(0)
 		picklef.truncate()

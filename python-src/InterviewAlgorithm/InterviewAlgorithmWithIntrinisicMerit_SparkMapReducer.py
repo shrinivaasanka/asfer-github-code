@@ -64,14 +64,14 @@ def asfer_pickle_load(picklef):
      stringsynsets=line.split(",")
      for s in stringsynsets:
          s_synset_tokens=s.split("'")
-	 print "s_synset_tokens:",s_synset_tokens
+	 #print "s_synset_tokens:",s_synset_tokens
 	 if len(s_synset_tokens) == 3:
 	     s_synset_word_tokens=s_synset_tokens[1].split(".")
-	     print "s_synset_word_tokens:",s_synset_word_tokens
+	     #print "s_synset_word_tokens:",s_synset_word_tokens
 	     s_synsets=wn.synsets(s_synset_word_tokens[0])
-	     print "s_synsets:",s_synsets
+	     #print "s_synsets:",s_synsets
              synsets.append(s_synsets[0])	
-     print "asfer_pickle_load(): synsets=",synsets
+     #print "asfer_pickle_load(): synsets=",synsets
      return synsets
 
 def mapFunction(freqterms1):
@@ -80,9 +80,11 @@ def mapFunction(freqterms1):
      stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
      puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
      mapped_object=()
-     for keyword in freqterms1:
+     print "mapFunction(): freqterms1:",freqterms1
+     for keyword in [freqterms1]:
        	 #WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
          disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
+     	 #print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
          prevlevelsynsets = prevlevelsynsets + [disamb_synset]
          if len(wn.synsets(keyword)) != 0:
       		         disamb_synset_def = disamb_synset.definition()
@@ -91,14 +93,15 @@ def mapFunction(freqterms1):
          		 fdist_tokens=[w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)]
 	 		 #mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
 	 		 mapped_object=rgo_object(fdist_tokens)
+     #print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
      picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
      asfer_pickle_dump(prevlevelsynsets,picklef)
      return (1,mapped_object)
  
 def reduceFunction(mapped_object1,mapped_object2):
     reduced_rgo_object=()
-    print "reduceFunction():mapped_object1: ",mapped_object1
-    print "reduceFunction():mapped_object2: ",mapped_object2
+    #print "reduceFunction():mapped_object1: ",mapped_object1
+    #print "reduceFunction():mapped_object2: ",mapped_object2
     #reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel,mapped_object1.prevlevelsynsets+mapped_object2.prevlevelsynsets) 
     if (not mapped_object1):	
     	reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel) 
@@ -123,9 +126,10 @@ def best_matching_synset(doc_tokens, synsets):
 
 def Spark_MapReduce(level, wordsatthislevel):
         spcon=SparkContext() 
+	print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
 	paralleldata=spcon.parallelize(wordsatthislevel)
-	words=paralleldata.filter(lambda word: word)
-	k=words.map(mapFunction).reduceByKey(reduceFunction)
+	#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
+	k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
 
 	#dict_k=k.collect()
 	#s = sorted(dict_k.items(),key=operator.itemgetter(1), reverse=True)
@@ -156,10 +160,11 @@ def Spark_MapReduce(level, wordsatthislevel):
 
 def mapFunction_Parents(keyword,prevleveltokens):
 	parents=[]
-	for prevleveltoken in list(prevleveltokens):
-	   #syn=best_matching_synset(list(prevleveltokens), wn.synsets(prevleveltoken))
-	   syns=wn.synsets(prevleveltoken)
-	   syn=syns[0]
+	print "mapFunction_Parents(): keyword = ",keyword,";prevleveltokens:",prevleveltokens
+	for prevleveltoken in prevleveltokens:
+	   syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
+	   #syns=wn.synsets(prevleveltoken)
+	   #syn=syns[0]
            if type(syn) is nltk.corpus.reader.wordnet.Synset:
                    syndef_tokens = set(nltk.word_tokenize(syn.definition()))
 	           #print "mapFunction_Parents(): syndef_tokens=",syndef_tokens
@@ -184,5 +189,6 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	dict_query_results=dict(query_results.collect())
 	print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
 	spcon.stop()
+	print "Spark_MapReduce_Parents(): dict_query_results[1]=",dict_query_results[1]
 	return dict_query_results[1]
 	
