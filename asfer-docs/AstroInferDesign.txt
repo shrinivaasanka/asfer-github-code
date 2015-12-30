@@ -1088,7 +1088,7 @@ References:
 53.10.1 Dictatorship,k-juntas testing - [Oded Goldreich] - http://www.wisdom.weizmann.ac.il/~oded/PDF/pt-junta.pdf
 
 ----------------------------------------------------------------------------------------------------------------------------
-(THEORY-*IMPORTANT*) 53.11 Hastad-Linial-Mansour-Nisan (HLMN) Theorem and Noise Stable boolean functions - Denoisification
+(THEORY-*IMPORTANT*) 53.11 Hastad-Linial-Mansour-Nisan (HLMN) Theorem and Noise Stable boolean functions - Denoisification 1
 ----------------------------------------------------------------------------------------------------------------------------
 Hastad-Linial-Mansour-Nisan Theorem states that for a boolean function f:{0,1}^n->{0,1} computed by circuit of size < s and depth < d, if the
 fourier coefficients for large S are epsilon-concentrated:
@@ -1133,6 +1133,9 @@ Points 53.4, 53.5, 53.6 and 53.7 describe P/poly, NC/poly and NC/log circuits fo
 
 Noise sensitive NC/log percolation circuit in LHS of P(Good) is in BP(NC/log) which requires denoisification and derandomization. Is BP(NC/log) in P/log? If yes, this could imply P=NP when RHS is an error-free NP-complete k-SAT instance (denoisified and derandomized BPP). BP(NC/log) can be denoisified with poly(n) additional gates from derivation above from HMLN theorem which makes NC/log to be in P/log. Next step of derandomization is by naive enumeration of all possible pseudorandom advice strings. Assumption here is that length of pseudorandom strings required for derandomizing percolation is log(n) which is sufficient to specify any point on an axis in the percolation grid. If log(n) bit pseudorandom advice is enumerated there are 2^(logn)=n possible pseudorandom strings which is poly(n) addition in circuit size again. P/log circuit is executed for all 2^(logn) psuedorandom strings which makes the total runtime n*poly(n)=poly(n). Thus derandomization takes as input a denoisified P/log circuit , adds poly(n) gates to it and outputs a circuit that has runtime poly(n) with logarithmic advice i.e P/log. This has a strange consequence that NP can have P/log circuits and P=NP (Implication 2) contrary to popular belief if logarithmic advice is valid. Equivalently for error-free , denoisified and derandomized PH-Complete problems in RHS (assuming PH-complete problems exist - from (53.2) above), denoisified and derandomized P/log circuit in LHS implies P=PH - collapse of polynomial hierarchy.
 
+----------------------------------------------------------------------------------------------------------------------------
+(THEORY-*IMPORTANT*) 53.12 Hastad-Linial-Mansour-Nisan (HLMN) Theorem and Noise Stable boolean functions - Denoisification 2
+----------------------------------------------------------------------------------------------------------------------------
 Above version derived by rewriting HLMN in terms of s(size) and t(size of fourier basis) is not too appealing. Basically, rate of change of circuit size with respect to noise is required and may not be necessary if denoisification is a subproblem of larger derandomization. It then reduces to the question of how size of circuit increases with derandomization, specifically for BPNC percolation circuits - Since BPP is in P/poly, is BPNC in NC/poly or NC/log.  From Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf - Circuit size and Fourier coefficients are related as:
 	For |S| > t, Summation(fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 For Noise-operated Fourier Spectra, the summation is augmented with rho(noise operator):
@@ -1145,21 +1148,34 @@ Applying Plancherel theorem and stability=1:
 which is the circuit size lowerbound in terms of noise probability and fourier coefficients. As rho increases from 0 to 1, lowerbound for
 size decreases, that is, low noise requires high circuit size. Partial Derivative of size bound wrt rho:
     -Summation(fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= doe(Size)/doe(rho)
-which points to exponential - in t and d - decrease in size (because t=O(n) and d=O(function(n)) with linear increase in rho (noise) due to negative sign and vice versa. Consequences of this are significant. Though derandomization could result in polysize circuits, denoisification does not necessarily add poly(n) size and in worst case could be exponential too. For NC circuits, t=O(n) and d=O(polylog(n)) and denoisification results in 2^O(n/polylog(n)) increase in size which is superpolynomial.
+which points to exponential - in t and d - decrease in size (because t=O(n) and d=O(function(n)) with linear increase in rho (noise) due to negative sign and vice versa. Consequences of this are significant. Though derandomization could result in polysize circuits, denoisification does not necessarily add poly(n) size and in worst case could be exponential too. For NC circuits, t=O(n) and d=O(polylog(n)) , denoisification results in 2^O(n^(1/polylog(n))) increase in size which is superpolynomial. Stability=1 is the point when LHS and RHS of P(Good) binomial summation converge i.e both sides are equally efficient and are perfect voter boolean functions not affected by input noise. Therefore BPNC can not be denoisified in polynomial circuit size even if it can be derandomized to be in NC with polynomial size (i.e if BPNC is in NC/poly). Thus percolation NC circuit in LHS cannot be made 100% stable with denoisification with mere polynomial size and has superpolynomial size lowerbound. This implies when RHS is also 100% stable circuit size of RHS is atleast superpolynomial. Rephrasing:
+	---------------------------------------------------------------------------------------------------------
+	| P(Good) binomial summation in its circuit version can not have polynomial size circuits 		|
+	| when LHS and RHS converge with 100% noise stability.							|
+	---------------------------------------------------------------------------------------------------------
+
+For example, if LHS is a percolation logdepth circuit and RHS is single voter with 3-SAT NP-complete circuit, when LHS and RHS are both 100% noise stable and derandomized (rho=0):
+
+	LHS circuit size >= O(2^n^(1/polylog(n))) = superpolynomial, quasiexponential lowerbound, depth is polylog(n)
+implying LHS percolation circuit could become superpolynomial sized when noise stability is 1 and not in NC despite being logdepth.
+
+	RHS circuit size >= O(2^n^(1/d)) = higher superpolynomial, quasiexponential lowerbound, depth is arbitrary ,could be constant for 3-CNF
+and thus LHS and RHS circuits are equally efficient algorithms with differing circuit sizes. As RHS is NP-complete, LHS is size lowerbound for RHS - LHS has lesser superpolynomial size than RHS where d(depth of RHS which could be a constant 3) < polylog(n)(depth of LHS).
+[Open question: Does this imply superpolynomial size lowerbounds for NP and thus P != NP]
 
 
 Reference:
 -----------
-53.11.1 Derandomizing BPNC - [Periklis Papakonstantinou] - http://iiis.tsinghua.edu.cn/~papakons/pdfs/phd_thesis.pdf
-53.11.2 Derandomization basics - [Salil] - Enumeration - http://people.seas.harvard.edu/~salil/pseudorandomness/basic.pdf
-53.11.3 Simplified Hitting Sets Derandomization of BPP - [Goldreich-Vadhan-Wigderson] - http://www.wisdom.weizmann.ac.il/~oded/COL/gvw.pdf - where hitting sets are set of strings at least one element of which is accepted by any circuit that accepts atleast half of its inputs (i.e randomized algorithms in RP and BPP). Hitting Set generators H expand k(n) to n so that a function f returns f(H(k(n)))=1 always where f is in RP or BPP.
-53.11.4 Derandomizing BPNC - Existence of Hitting Set Generators for BPNC=NC - [Alexander E.Andreev, Andrea E.F.Clementi, Jose D.P.Rolim] - http://ac.els-cdn.com/S0304397599000249/1-s2.0-S0304397599000249-main.pdf?_tid=e56d3a1e-ad3d-11e5-a4ef-00000aacb35e&acdnat=1451291885_fbff7c6ae94326758cf8d6d7b7a84d7b
-53.11.5 Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
+53.12.1 Derandomizing BPNC - [Periklis Papakonstantinou] - http://iiis.tsinghua.edu.cn/~papakons/pdfs/phd_thesis.pdf
+53.12.2 Derandomization basics - [Salil] - Enumeration - http://people.seas.harvard.edu/~salil/pseudorandomness/basic.pdf
+53.12.3 Simplified Hitting Sets Derandomization of BPP - [Goldreich-Vadhan-Wigderson] - http://www.wisdom.weizmann.ac.il/~oded/COL/gvw.pdf - where hitting sets are set of strings at least one element of which is accepted by any circuit that accepts atleast half of its inputs (i.e randomized algorithms in RP and BPP). Hitting Set generators H expand k(n) to n so that a function f returns f(H(k(n)))=1 always where f is in RP or BPP.
+53.12.4 Derandomizing BPNC - Existence of Hitting Set Generators for BPNC=NC - [Alexander E.Andreev, Andrea E.F.Clementi, Jose D.P.Rolim] - http://ac.els-cdn.com/S0304397599000249/1-s2.0-S0304397599000249-main.pdf?_tid=e56d3a1e-ad3d-11e5-a4ef-00000aacb35e&acdnat=1451291885_fbff7c6ae94326758cf8d6d7b7a84d7b
+53.12.5 Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
 	For |A| > t, Summation(fourier_coeff(A)) <= 2*(Size)*2^(-t^(1/d)/20)
-53.11.6 The Computational Complexity Column [Allender-Clementi-Rolim-Trevisan] - theory.stanford.edu/~trevisan/pubs/eatcs.ps
+53.12.6 The Computational Complexity Column [Allender-Clementi-Rolim-Trevisan] - theory.stanford.edu/~trevisan/pubs/eatcs.ps
 
 ---------------------------------------------------------------------------------------------------------------------
-53.12. Partial Derivative of Circuit size wrt rho (noise probability) - increase in circuit size for Denoisification
+53.13. Partial Derivative of Circuit size wrt rho (noise probability) - increase in circuit size for Denoisification
 ---------------------------------------------------------------------------------------------------------------------
 From 53.11 above, size of denoisified circuit from HMLN theorem, and Stability in terms of Fourier coefficients with noise operator is:
 	s_stable = [1-sigma_S_<_t(rho^|S|*f(S)^2)]*2^((t/k)^1/(d-1))  , t=O((log s_stable/epsilon_stable)^(d-1)), |S| < t
