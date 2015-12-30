@@ -70,11 +70,16 @@ def compute_idf(corpus, keyword):
 #arguments are a keyword at present level and all disambiguated synsets of previous level
 def parents(keyword, prevlevelsynsets):
 	parents = []
+	print "parents(): prevlevelsynsets:",prevlevelsynsets
 	for syn in prevlevelsynsets:
+		print "type(syn):",type(syn)
 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+			print "parents(): syndef_tokens:",syndef_tokens
 			if keyword in syndef_tokens:
+				print "parents(): keyword :",keyword," in syndef, adding to parents:"
 				parents = parents + [syn]
+	print "parents(): returning parents:",parents
 	return parents
 
 #function - get_context()
@@ -156,34 +161,35 @@ for filestr in files:
 			print current_level
 			for x in freqterms1:
 				if parents_computation_spark:
-					parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel)
+					prevlevelsynsets_tokens=[]
+					for s in prevlevelsynsets:
+						s_lemma=s.lemma_names()
+						prevlevelsynsets_tokens.append(s_lemma[0])
+					#parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel)
+					parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
+					parents_x_serial = parents(x,prevlevelsynsets)
+					print "Serial and Parallel parents : parents_x:",parents_x 
+					print "Serial and Parallel parents : parents_x_serial:",parents_x_serial 
+					print "Serial and Parallel synsets : prevlevelsynsets:",prevlevelsynsets 
+					print "Serial and Parallel synsets : prevlevelsynsets_tokens:",prevlevelsynsets_tokens
+					
+					if len(parents_x) > 1:
+						convergingterms.append(x)
 				else:
 					parents_x = parents(x,prevlevelsynsets)
+					if len(parents_x) > 1:
+						convergingterms.append(x)
+				convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
+				noofparents = len(parents_x)
+				if noofparents > maxparents:
+					maxparents = noofparents
+					nodewithmaxparents = x 
 				for y in parents_x:
 					if parents_computation_spark:
 						definitiongraphedges[x].append(y)
 					else:
 						y_lemma_names=y.lemma_names()
 						definitiongraphedges[x].append(y_lemma_names[0])
-	
-			if parents_computation_spark:					
-				convergingterms = [w for w in freqterms1 if len(InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(w,tokensofprevlevel)) > 1]
-			else:
-				convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
-			for kw in freqterms1:
-				if parents_computation_spark:
-					parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
-				else:
-					parents_kw = parents(kw, prevlevelsynsets)
-				convergingparents = convergingparents + ([w for w in parents_kw if len(parents_kw) > 1])
-				if parents_computation_spark:
-					parents_kw = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(kw, tokensofprevlevel)
-				else:
-					parents_kw = parents(kw, prevlevelsynsets)
-				noofparents = len(parents_kw)
-				if noofparents > maxparents:
-					maxparents = noofparents
-					nodewithmaxparents = kw
 			output.write('converging terms(terms with more than 1 parent):\n ')
 			output.write('converging parents :\n')
 

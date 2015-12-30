@@ -76,6 +76,7 @@ def asfer_pickle_load(picklef):
 
 def mapFunction(freqterms1):
      prevlevelsynsets=[]
+     prevlevelsynsets_earlier=[]
      stopwords = nltk.corpus.stopwords.words('english')
      stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
      puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
@@ -94,7 +95,10 @@ def mapFunction(freqterms1):
 	 		 #mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
 	 		 mapped_object=rgo_object(fdist_tokens)
      #print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
+     #picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
+     #prevlevelsynsets_earlier=asfer_pickle_load(picklef)
      picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
+     #asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
      asfer_pickle_dump(prevlevelsynsets,picklef)
      return (1,mapped_object)
  
@@ -167,8 +171,8 @@ def mapFunction_Parents(keyword,prevleveltokens):
 	   #syn=syns[0]
            if type(syn) is nltk.corpus.reader.wordnet.Synset:
                    syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-	           #print "mapFunction_Parents(): syndef_tokens=",syndef_tokens
        	           if keyword in syndef_tokens:
+	           		print "mapFunction_Parents(): syn = ",syn,"; keyword: ", keyword," in syndef_tokens=",syndef_tokens
 				parents = parents + [prevleveltoken]
 	print "mapFunction_Parents(): returns=",parents
 	return (1,parents)
