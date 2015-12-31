@@ -2940,6 +2940,22 @@ disambiguation now which was commented earlier.
 ---------------------------------------------------------------------------------------------
 Some optimizations and redundant code elimination in python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
 
+---------------------------------------------------------------------------------------------
+207. Commits as on 31 December 2015
+---------------------------------------------------------------------------------------------
+- Spark Recursive Gloss Overlap Intrinsic Merit code has been optimized and some minutiae bugs have been resolved.
+- Map function for parents computation in Spark cluster has been updated to act upon only the previous recursion level glosses
+by proprietary pickling of the keyword into a file storage and loading it, and not as a function argument
+- Problems with previous level gloss tokens were almost similar to MapReduce functions of the recursion
+- New pickling file for parents computation in Spark has been added
+- logs and screenshots have been added to testlogs
+- With this, Spark Intrinsic Merit computation is highly parallellized apt for large clouds
+- Also a parents_tokens() function that uses gloss tokens instead of synsets has been added
+- New pickling dump() and load() functions have been added for keyword storage
+- pickling is synchronized with python threading lock acquire() and release(). Shouldn't be necessary because of
+Concurrent Read Exclusive Write (CREW) of keyword, but for safer side to prevent Spark-internal races.
+
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
