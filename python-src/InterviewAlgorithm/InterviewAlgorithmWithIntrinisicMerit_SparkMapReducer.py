@@ -50,9 +50,20 @@ from nltk.corpus import wordnet as wn
 from nltk.book import FreqDist 
 from nltk.corpus import stopwords
 from collections import namedtuple
+import threading
 
 #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
 rgo_object=namedtuple("rgo_object", "tokensatthislevel")
+picklelock=""
+
+def asfer_pickle_string_dump(s,picklef):
+	print "asfer_pickle_string_dump(): picklef.write():",s
+	picklef.write(s)
+
+def asfer_pickle_string_load(picklef):
+	keyword=picklef.read()
+	print "asfer_pickle_string_load(): picklef.readlines():",keyword
+	return keyword
 
 def asfer_pickle_dump(prevlevelsynsets,picklef):
      for s in prevlevelsynsets:
@@ -162,30 +173,42 @@ def Spark_MapReduce(level, wordsatthislevel):
 #                                parents = parents + [syn]
 #        return parents
 
-def mapFunction_Parents(keyword,prevleveltokens):
+def mapFunction_Parents(prevleveltokens):
+	picklelock=threading.Lock()
+	picklelock.acquire()
+	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","r")
+	keyword=asfer_pickle_string_load(picklef_keyword)
+	picklef_keyword.close()
 	parents=[]
-	print "mapFunction_Parents(): keyword = ",keyword,";prevleveltokens:",prevleveltokens
-	for prevleveltoken in prevleveltokens:
-	   syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
-	   #syns=wn.synsets(prevleveltoken)
-	   #syn=syns[0]
-           if type(syn) is nltk.corpus.reader.wordnet.Synset:
-                   syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-       	           if keyword in syndef_tokens:
-	           		print "mapFunction_Parents(): syn = ",syn,"; keyword: ", keyword," in syndef_tokens=",syndef_tokens
+	print "mapFunction_Parents(): keyword:",keyword,"; prevleveltokens:",prevleveltokens
+	for prevleveltoken in [prevleveltokens]:
+		#syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
+		syns=wn.synsets(prevleveltoken)
+		syn=syns[0]
+		if type(syn) is nltk.corpus.reader.wordnet.Synset:
+			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+			print "mapFunction_Parents(): keyword=",keyword,"; syndef_tokens=",syndef_tokens
+			if keyword in syndef_tokens:
+				print "mapFunction_Parents(): adding to parents: syn = ",syn,"; keyword: ", keyword," in syndef_tokens=",syndef_tokens
 				parents = parents + [prevleveltoken]
 	print "mapFunction_Parents(): returns=",parents
+	picklelock.release()
 	return (1,parents)
-
 
 def reduceFunction_Parents(parents1, parents2):
 	print "reduceFunction_Parents(): returns=", parents1 + parents2
 	return parents1 + parents2
 
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+	picklelock=threading.Lock()
+	picklelock.acquire()
 	spcon = SparkContext()
+     	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+	asfer_pickle_string_dump(keyword,picklef_keyword)
+	picklef_keyword.close()
 	paralleldata = spcon.parallelize(tokensofprevlevel)
-	k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+	#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+	k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
 	sqlContext=SQLContext(spcon)
 	parents_schema=sqlContext.createDataFrame(k.collect())
 	parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
@@ -194,5 +217,5 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
 	spcon.stop()
 	print "Spark_MapReduce_Parents(): dict_query_results[1]=",dict_query_results[1]
+	picklelock.release()
 	return dict_query_results[1]
-	

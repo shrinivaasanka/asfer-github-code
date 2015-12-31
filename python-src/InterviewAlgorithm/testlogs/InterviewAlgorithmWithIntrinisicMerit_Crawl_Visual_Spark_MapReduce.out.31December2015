@@ -1,0 +1,931 @@
+15/12/31 15:42:42 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 234 ms on localhost (2/2)
+15/12/31 15:42:42 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:42:42 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) finished in 0.218 s
+15/12/31 15:42:42 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213, took 37.069279 s
+15/12/31 15:42:42 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216
+15/12/31 15:42:42 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) with 2 output partitions
+15/12/31 15:42:42 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:42:42 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:42:42 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:42:42 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216), which has no missing parents
+15/12/31 15:42:42 INFO MemoryStore: ensureFreeSpace(5816) called with curMem=18754, maxMem=555755765
+15/12/31 15:42:42 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:42:42 INFO MemoryStore: ensureFreeSpace(3374) called with curMem=24570, maxMem=555755765
+15/12/31 15:42:42 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:42:42 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:34271 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:42:42 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:42:42 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:42:42 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:42:42 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:42:42 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2348 bytes)
+15/12/31 15:42:42 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:42:42 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:42:42 INFO PythonRunner: Times: total = 24, boot = 8, init = 16, finish = 0
+15/12/31 15:42:42 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 1330 bytes result sent to driver
+15/12/31 15:42:42 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 46 ms on localhost (1/2)
+15/12/31 15:42:42 INFO PythonRunner: Times: total = 53, boot = -9, init = 62, finish = 0
+15/12/31 15:42:42 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:42:42 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 66 ms on localhost (2/2)
+15/12/31 15:42:42 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:42:42 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) finished in 0.066 s
+15/12/31 15:42:42 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216, took 0.109029 s
+Spark_MapReduce_Parents() - SparkSQL DataFrame query results:
+15/12/31 15:42:42 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:42:42 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:42:42 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:42:42 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:42:42 INFO BlockManager: BlockManager stopped
+15/12/31 15:42:42 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:42:42 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:42:42 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:42:42 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+15/12/31 15:42:42 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+15/12/31 15:42:42 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+Spark_MapReduce_Parents(): dict_query_results[1]= [u'electric']
+15/12/31 15:42:43 INFO SparkContext: Running Spark version 1.5.2
+15/12/31 15:42:43 INFO SecurityManager: Changing view acls to: root
+15/12/31 15:42:43 INFO SecurityManager: Changing modify acls to: root
+15/12/31 15:42:43 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/31 15:42:43 INFO Slf4jLogger: Slf4jLogger started
+15/12/31 15:42:43 INFO Remoting: Starting remoting
+15/12/31 15:42:43 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:59009]
+15/12/31 15:42:43 INFO Utils: Successfully started service 'sparkDriver' on port 59009.
+15/12/31 15:42:43 INFO SparkEnv: Registering MapOutputTracker
+15/12/31 15:42:43 INFO SparkEnv: Registering BlockManagerMaster
+15/12/31 15:42:43 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-df83ffe6-20c2-43d0-9873-19e69babd154
+15/12/31 15:42:43 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/31 15:42:43 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/httpd-94927b80-c5ce-449a-ab28-7d642c216d9d
+15/12/31 15:42:43 INFO HttpServer: Starting HTTP Server
+15/12/31 15:42:43 INFO Utils: Successfully started service 'HTTP file server' on port 37881.
+15/12/31 15:42:43 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/31 15:42:44 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/31 15:42:44 INFO SparkUI: Started SparkUI at http://localhost:4040
+15/12/31 15:42:44 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-0e7874d8-502b-4820-83f6-6ea4f22c35db/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+15/12/31 15:42:44 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556764345
+15/12/31 15:42:44 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/12/31 15:42:44 INFO Executor: Starting executor ID driver on host localhost
+15/12/31 15:42:44 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45895.
+15/12/31 15:42:44 INFO NettyBlockTransferService: Server created on 45895
+15/12/31 15:42:44 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/31 15:42:44 INFO BlockManagerMasterEndpoint: Registering block manager localhost:45895 with 530.0 MB RAM, BlockManagerId(driver, localhost, 45895)
+15/12/31 15:42:44 INFO BlockManagerMaster: Registered BlockManager
+asfer_pickle_string_dump(): picklef.write(): drawn
+15/12/31 15:42:44 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213
+15/12/31 15:42:44 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:42:44 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) with 2 output partitions
+15/12/31 15:42:44 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:42:44 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+15/12/31 15:42:44 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+15/12/31 15:42:44 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211), which has no missing parents
+15/12/31 15:42:44 INFO MemoryStore: ensureFreeSpace(6568) called with curMem=0, maxMem=555755765
+15/12/31 15:42:44 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 530.0 MB)
+15/12/31 15:42:44 INFO MemoryStore: ensureFreeSpace(4148) called with curMem=6568, maxMem=555755765
+15/12/31 15:42:44 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 530.0 MB)
+15/12/31 15:42:44 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:45895 (size: 4.1 KB, free: 530.0 MB)
+15/12/31 15:42:44 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/31 15:42:44 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:42:44 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/12/31 15:42:44 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2328 bytes)
+15/12/31 15:42:44 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2325 bytes)
+15/12/31 15:42:44 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/12/31 15:42:44 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556764345
+15/12/31 15:42:44 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/12/31 15:42:44 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py has been previously copied to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-0e7874d8-502b-4820-83f6-6ea4f22c35db/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): drawn
+mapFunction_Parents(): keyword: drawn ; prevleveltokens: electric
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): drawn
+mapFunction_Parents(): keyword: drawn ; prevleveltokens: train
+mapFunction_Parents(): keyword= drawn ; syndef_tokens= set([u'a', u'powered', u'electricity', u'car', u'is', u'that', u'by'])
+mapFunction_Parents(): returns= []
+15/12/31 15:43:20 INFO PythonRunner: Times: total = 35830, boot = 516, init = 27712, finish = 7602
+15/12/31 15:43:20 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1223 bytes result sent to driver
+15/12/31 15:43:20 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 35925 ms on localhost (1/2)
+mapFunction_Parents(): keyword= drawn ; syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): adding to parents: syn =  Synset('train.n.01') ; keyword:  drawn  in syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): returns= [u'train']
+15/12/31 15:43:22 INFO PythonRunner: Times: total = 37671, boot = 500, init = 29437, finish = 7734
+15/12/31 15:43:22 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1223 bytes result sent to driver
+15/12/31 15:43:22 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 37762 ms on localhost (2/2)
+15/12/31 15:43:22 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211) finished in 37.752 s
+15/12/31 15:43:22 INFO DAGScheduler: looking for newly runnable stages
+15/12/31 15:43:22 INFO DAGScheduler: running: Set()
+15/12/31 15:43:22 INFO DAGScheduler: waiting: Set(ResultStage 1)
+15/12/31 15:43:22 INFO DAGScheduler: failed: Set()
+15/12/31 15:43:22 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+15/12/31 15:43:22 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213), which is now runnable
+15/12/31 15:43:22 INFO MemoryStore: ensureFreeSpace(4984) called with curMem=10716, maxMem=555755765
+15/12/31 15:43:22 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.9 KB, free 530.0 MB)
+15/12/31 15:43:22 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/31 15:43:22 INFO MemoryStore: ensureFreeSpace(3054) called with curMem=15700, maxMem=555755765
+15/12/31 15:43:22 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.0 KB, free 530.0 MB)
+15/12/31 15:43:22 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:45895 (size: 3.0 KB, free: 530.0 MB)
+15/12/31 15:43:22 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/12/31 15:43:22 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:43:22 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/12/31 15:43:22 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:43:22 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:43:22 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/12/31 15:43:22 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:43:22 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/12/31 15:43:22 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:43:22 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/12/31 15:43:22 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 4 ms
+reduceFunction_Parents(): returns= [u'train']
+15/12/31 15:43:22 INFO PythonRunner: Times: total = 29, boot = -1671, init = 1700, finish = 0
+15/12/31 15:43:22 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1264 bytes result sent to driver
+15/12/31 15:43:22 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 69 ms on localhost (1/2)
+15/12/31 15:43:22 INFO PythonRunner: Times: total = 282, boot = 281, init = 1, finish = 0
+15/12/31 15:43:22 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1213 bytes result sent to driver
+15/12/31 15:43:22 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 303 ms on localhost (2/2)
+15/12/31 15:43:22 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:43:22 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) finished in 0.296 s
+15/12/31 15:43:22 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213, took 38.122702 s
+15/12/31 15:43:22 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216
+15/12/31 15:43:22 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) with 2 output partitions
+15/12/31 15:43:22 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:43:22 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:43:22 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:43:22 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216), which has no missing parents
+15/12/31 15:43:22 INFO MemoryStore: ensureFreeSpace(5816) called with curMem=18754, maxMem=555755765
+15/12/31 15:43:22 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:43:22 INFO MemoryStore: ensureFreeSpace(3376) called with curMem=24570, maxMem=555755765
+15/12/31 15:43:22 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:43:22 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:45895 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:43:22 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:43:22 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:43:22 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:43:22 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:43:22 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2345 bytes)
+15/12/31 15:43:22 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:43:22 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:43:22 INFO PythonRunner: Times: total = 71, boot = -190, init = 261, finish = 0
+15/12/31 15:43:22 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:43:22 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 89 ms on localhost (1/2)
+15/12/31 15:43:23 INFO PythonRunner: Times: total = 202, boot = 202, init = 0, finish = 0
+15/12/31 15:43:23 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 1327 bytes result sent to driver
+15/12/31 15:43:23 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 218 ms on localhost (2/2)
+15/12/31 15:43:23 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:43:23 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) finished in 0.223 s
+15/12/31 15:43:23 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216, took 0.266172 s
+Spark_MapReduce_Parents() - SparkSQL DataFrame query results:
+15/12/31 15:43:23 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:43:23 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:43:23 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:43:23 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:43:23 INFO BlockManager: BlockManager stopped
+15/12/31 15:43:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:43:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:43:23 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:43:23 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+Spark_MapReduce_Parents(): dict_query_results[1]= [u'train']
+15/12/31 15:43:24 INFO SparkContext: Running Spark version 1.5.2
+15/12/31 15:43:24 INFO SecurityManager: Changing view acls to: root
+15/12/31 15:43:24 INFO SecurityManager: Changing modify acls to: root
+15/12/31 15:43:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/31 15:43:24 INFO Slf4jLogger: Slf4jLogger started
+15/12/31 15:43:24 INFO Remoting: Starting remoting
+15/12/31 15:43:24 INFO Utils: Successfully started service 'sparkDriver' on port 38410.
+15/12/31 15:43:24 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:38410]
+15/12/31 15:43:24 INFO SparkEnv: Registering MapOutputTracker
+15/12/31 15:43:24 INFO SparkEnv: Registering BlockManagerMaster
+15/12/31 15:43:24 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-4da861ed-b124-4181-98dd-41efc4f061a9
+15/12/31 15:43:24 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/31 15:43:24 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/httpd-8fad20dd-1ba3-4b60-bda7-afe54b68fb71
+15/12/31 15:43:24 INFO HttpServer: Starting HTTP Server
+15/12/31 15:43:24 INFO Utils: Successfully started service 'HTTP file server' on port 45691.
+15/12/31 15:43:24 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/31 15:43:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/31 15:43:24 INFO SparkUI: Started SparkUI at http://localhost:4040
+15/12/31 15:43:24 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-cee55fb9-90fc-4c6e-8da7-b9e1f7eff217/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+15/12/31 15:43:24 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556804750
+15/12/31 15:43:24 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/12/31 15:43:24 INFO Executor: Starting executor ID driver on host localhost
+15/12/31 15:43:24 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45027.
+15/12/31 15:43:24 INFO NettyBlockTransferService: Server created on 45027
+15/12/31 15:43:24 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/31 15:43:24 INFO BlockManagerMasterEndpoint: Registering block manager localhost:45027 with 530.0 MB RAM, BlockManagerId(driver, localhost, 45027)
+15/12/31 15:43:24 INFO BlockManagerMaster: Registered BlockManager
+asfer_pickle_string_dump(): picklef.write(): line
+15/12/31 15:43:24 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213
+15/12/31 15:43:24 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:43:24 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) with 2 output partitions
+15/12/31 15:43:24 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:43:24 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+15/12/31 15:43:24 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+15/12/31 15:43:24 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211), which has no missing parents
+15/12/31 15:43:24 INFO MemoryStore: ensureFreeSpace(6568) called with curMem=0, maxMem=555755765
+15/12/31 15:43:24 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 530.0 MB)
+15/12/31 15:43:24 INFO MemoryStore: ensureFreeSpace(4148) called with curMem=6568, maxMem=555755765
+15/12/31 15:43:24 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 530.0 MB)
+15/12/31 15:43:24 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:45027 (size: 4.1 KB, free: 530.0 MB)
+15/12/31 15:43:24 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/31 15:43:24 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:43:24 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/12/31 15:43:24 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2328 bytes)
+15/12/31 15:43:24 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2325 bytes)
+15/12/31 15:43:24 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/12/31 15:43:24 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556804750
+15/12/31 15:43:24 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/12/31 15:43:24 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py has been previously copied to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-cee55fb9-90fc-4c6e-8da7-b9e1f7eff217/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text7: Wall Street Journal
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): line
+mapFunction_Parents(): keyword: line ; prevleveltokens: train
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): line
+mapFunction_Parents(): keyword: line ; prevleveltokens: electric
+mapFunction_Parents(): keyword= line ; syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): adding to parents: syn =  Synset('train.n.01') ; keyword:  line  in syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): returns= [u'train']
+15/12/31 15:44:00 INFO PythonRunner: Times: total = 35666, boot = 536, init = 27629, finish = 7501
+15/12/31 15:44:00 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1223 bytes result sent to driver
+15/12/31 15:44:00 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 35755 ms on localhost (1/2)
+mapFunction_Parents(): keyword= line ; syndef_tokens= set([u'a', u'powered', u'electricity', u'car', u'is', u'that', u'by'])
+mapFunction_Parents(): returns= []
+15/12/31 15:44:01 INFO PythonRunner: Times: total = 36452, boot = 511, init = 28250, finish = 7691
+15/12/31 15:44:01 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1223 bytes result sent to driver
+15/12/31 15:44:01 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211) finished in 36.541 s
+15/12/31 15:44:01 INFO DAGScheduler: looking for newly runnable stages
+15/12/31 15:44:01 INFO DAGScheduler: running: Set()
+15/12/31 15:44:01 INFO DAGScheduler: waiting: Set(ResultStage 1)
+15/12/31 15:44:01 INFO DAGScheduler: failed: Set()
+15/12/31 15:44:01 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+15/12/31 15:44:01 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213), which is now runnable
+15/12/31 15:44:01 INFO MemoryStore: ensureFreeSpace(4984) called with curMem=10716, maxMem=555755765
+15/12/31 15:44:01 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.9 KB, free 530.0 MB)
+15/12/31 15:44:01 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 36559 ms on localhost (2/2)
+15/12/31 15:44:01 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/31 15:44:01 INFO MemoryStore: ensureFreeSpace(3054) called with curMem=15700, maxMem=555755765
+15/12/31 15:44:01 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.0 KB, free 530.0 MB)
+15/12/31 15:44:01 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:45027 (size: 3.0 KB, free: 530.0 MB)
+15/12/31 15:44:01 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:01 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:44:01 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/12/31 15:44:01 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:44:01 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:44:01 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/12/31 15:44:01 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/12/31 15:44:01 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:44:01 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+15/12/31 15:44:01 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:44:01 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+reduceFunction_Parents(): returns= [u'train']
+15/12/31 15:44:01 INFO PythonRunner: Times: total = 39, boot = -576, init = 615, finish = 0
+15/12/31 15:44:01 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1264 bytes result sent to driver
+15/12/31 15:44:01 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 77 ms on localhost (1/2)
+15/12/31 15:44:01 INFO PythonRunner: Times: total = 208, boot = 207, init = 1, finish = 0
+15/12/31 15:44:01 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1213 bytes result sent to driver
+15/12/31 15:44:01 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) finished in 0.229 s
+15/12/31 15:44:01 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213, took 36.833102 s
+15/12/31 15:44:01 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 226 ms on localhost (2/2)
+15/12/31 15:44:01 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:44:01 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216
+15/12/31 15:44:01 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) with 2 output partitions
+15/12/31 15:44:01 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:44:01 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:44:01 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:44:01 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216), which has no missing parents
+15/12/31 15:44:01 INFO MemoryStore: ensureFreeSpace(5816) called with curMem=18754, maxMem=555755765
+15/12/31 15:44:01 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:44:01 INFO MemoryStore: ensureFreeSpace(3376) called with curMem=24570, maxMem=555755765
+15/12/31 15:44:01 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:44:01 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:45027 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:44:01 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:01 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:44:01 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:44:01 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:44:01 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2345 bytes)
+15/12/31 15:44:01 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:44:01 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:44:02 INFO PythonRunner: Times: total = 155, boot = 154, init = 1, finish = 0
+15/12/31 15:44:02 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 1327 bytes result sent to driver
+15/12/31 15:44:02 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 166 ms on localhost (1/2)
+15/12/31 15:44:02 INFO PythonRunner: Times: total = 164, boot = 164, init = 0, finish = 0
+15/12/31 15:44:02 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:44:02 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 177 ms on localhost (2/2)
+15/12/31 15:44:02 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:44:02 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) finished in 0.166 s
+15/12/31 15:44:02 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216, took 0.198858 s
+Spark_MapReduce_Parents() - SparkSQL DataFrame query results:
+15/12/31 15:44:02 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:44:02 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:44:02 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:44:02 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:44:02 INFO BlockManager: BlockManager stopped
+15/12/31 15:44:02 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:44:02 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:44:02 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:44:02 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+Spark_MapReduce_Parents(): dict_query_results[1]= [u'train']
+15/12/31 15:44:03 INFO SparkContext: Running Spark version 1.5.2
+15/12/31 15:44:03 INFO SecurityManager: Changing view acls to: root
+15/12/31 15:44:03 INFO SecurityManager: Changing modify acls to: root
+15/12/31 15:44:03 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/31 15:44:03 INFO Slf4jLogger: Slf4jLogger started
+15/12/31 15:44:03 INFO Remoting: Starting remoting
+15/12/31 15:44:03 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:53315]
+15/12/31 15:44:03 INFO Utils: Successfully started service 'sparkDriver' on port 53315.
+15/12/31 15:44:03 INFO SparkEnv: Registering MapOutputTracker
+15/12/31 15:44:03 INFO SparkEnv: Registering BlockManagerMaster
+15/12/31 15:44:03 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-33ca99b6-e60e-4c27-aa3b-7bc60fd4a16a
+15/12/31 15:44:03 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/31 15:44:03 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/httpd-ecba9fb4-e67f-488a-95c2-5c86720e586a
+15/12/31 15:44:03 INFO HttpServer: Starting HTTP Server
+15/12/31 15:44:03 INFO Utils: Successfully started service 'HTTP file server' on port 41362.
+15/12/31 15:44:03 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/31 15:44:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/31 15:44:03 INFO SparkUI: Started SparkUI at http://localhost:4040
+15/12/31 15:44:03 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-26770c07-3245-44c6-a503-2cfea4b0b7dc/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+15/12/31 15:44:03 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556843708
+15/12/31 15:44:03 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/12/31 15:44:03 INFO Executor: Starting executor ID driver on host localhost
+15/12/31 15:44:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49546.
+15/12/31 15:44:03 INFO NettyBlockTransferService: Server created on 49546
+15/12/31 15:44:03 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/31 15:44:03 INFO BlockManagerMasterEndpoint: Registering block manager localhost:49546 with 530.0 MB RAM, BlockManagerId(driver, localhost, 49546)
+15/12/31 15:44:03 INFO BlockManagerMaster: Registered BlockManager
+asfer_pickle_string_dump(): picklef.write(): public
+15/12/31 15:44:03 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213
+15/12/31 15:44:03 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:44:03 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) with 2 output partitions
+15/12/31 15:44:03 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:44:03 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+15/12/31 15:44:03 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+15/12/31 15:44:03 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211), which has no missing parents
+15/12/31 15:44:03 INFO MemoryStore: ensureFreeSpace(6568) called with curMem=0, maxMem=555755765
+15/12/31 15:44:03 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 530.0 MB)
+15/12/31 15:44:03 INFO MemoryStore: ensureFreeSpace(4148) called with curMem=6568, maxMem=555755765
+15/12/31 15:44:03 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 530.0 MB)
+15/12/31 15:44:03 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:49546 (size: 4.1 KB, free: 530.0 MB)
+15/12/31 15:44:03 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:03 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:44:03 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/12/31 15:44:03 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2328 bytes)
+15/12/31 15:44:03 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2325 bytes)
+15/12/31 15:44:03 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/12/31 15:44:03 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556843708
+15/12/31 15:44:03 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/12/31 15:44:03 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py has been previously copied to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-26770c07-3245-44c6-a503-2cfea4b0b7dc/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): public
+mapFunction_Parents(): keyword: public ; prevleveltokens: train
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): public
+mapFunction_Parents(): keyword: public ; prevleveltokens: electric
+mapFunction_Parents(): keyword= public ; syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): adding to parents: syn =  Synset('train.n.01') ; keyword:  public  in syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): returns= [u'train']
+15/12/31 15:44:39 INFO PythonRunner: Times: total = 35369, boot = 454, init = 27207, finish = 7708
+15/12/31 15:44:39 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1223 bytes result sent to driver
+15/12/31 15:44:39 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 35479 ms on localhost (1/2)
+mapFunction_Parents(): keyword= public ; syndef_tokens= set([u'a', u'powered', u'electricity', u'car', u'is', u'that', u'by'])
+mapFunction_Parents(): returns= []
+15/12/31 15:44:39 INFO PythonRunner: Times: total = 35941, boot = 456, init = 27867, finish = 7618
+15/12/31 15:44:39 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1223 bytes result sent to driver
+15/12/31 15:44:39 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 36069 ms on localhost (2/2)
+15/12/31 15:44:39 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/31 15:44:39 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211) finished in 36.063 s
+15/12/31 15:44:39 INFO DAGScheduler: looking for newly runnable stages
+15/12/31 15:44:39 INFO DAGScheduler: running: Set()
+15/12/31 15:44:39 INFO DAGScheduler: waiting: Set(ResultStage 1)
+15/12/31 15:44:39 INFO DAGScheduler: failed: Set()
+15/12/31 15:44:39 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+15/12/31 15:44:39 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213), which is now runnable
+15/12/31 15:44:39 INFO MemoryStore: ensureFreeSpace(4984) called with curMem=10716, maxMem=555755765
+15/12/31 15:44:39 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.9 KB, free 530.0 MB)
+15/12/31 15:44:39 INFO MemoryStore: ensureFreeSpace(3054) called with curMem=15700, maxMem=555755765
+15/12/31 15:44:39 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.0 KB, free 530.0 MB)
+15/12/31 15:44:39 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:49546 (size: 3.0 KB, free: 530.0 MB)
+15/12/31 15:44:39 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:39 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:44:39 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/12/31 15:44:39 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:44:39 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:44:39 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/12/31 15:44:39 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/12/31 15:44:40 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:44:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+15/12/31 15:44:40 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:44:40 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+reduceFunction_Parents(): returns= [u'train']
+15/12/31 15:44:40 INFO PythonRunner: Times: total = 51, boot = -407, init = 458, finish = 0
+15/12/31 15:44:40 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1264 bytes result sent to driver
+15/12/31 15:44:40 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 82 ms on localhost (1/2)
+15/12/31 15:44:40 INFO PythonRunner: Times: total = 213, boot = 212, init = 0, finish = 1
+15/12/31 15:44:40 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1213 bytes result sent to driver
+15/12/31 15:44:40 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 236 ms on localhost (2/2)
+15/12/31 15:44:40 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) finished in 0.237 s
+15/12/31 15:44:40 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213, took 36.341589 s
+15/12/31 15:44:40 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:44:40 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216
+15/12/31 15:44:40 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) with 2 output partitions
+15/12/31 15:44:40 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:44:40 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:44:40 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:44:40 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216), which has no missing parents
+15/12/31 15:44:40 INFO MemoryStore: ensureFreeSpace(5816) called with curMem=18754, maxMem=555755765
+15/12/31 15:44:40 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:44:40 INFO MemoryStore: ensureFreeSpace(3376) called with curMem=24570, maxMem=555755765
+15/12/31 15:44:40 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:44:40 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:49546 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:44:40 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:40 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:44:40 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:44:40 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:44:40 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2345 bytes)
+15/12/31 15:44:40 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:44:40 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:44:40 INFO PythonRunner: Times: total = 155, boot = 154, init = 0, finish = 1
+15/12/31 15:44:40 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:44:40 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 165 ms on localhost (1/2)
+15/12/31 15:44:40 INFO PythonRunner: Times: total = 169, boot = 168, init = 1, finish = 0
+15/12/31 15:44:40 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 1327 bytes result sent to driver
+15/12/31 15:44:40 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 181 ms on localhost (2/2)
+15/12/31 15:44:40 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:44:40 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) finished in 0.173 s
+15/12/31 15:44:40 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216, took 0.210130 s
+Spark_MapReduce_Parents() - SparkSQL DataFrame query results:
+15/12/31 15:44:40 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:44:40 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:44:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:44:40 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:44:40 INFO BlockManager: BlockManager stopped
+15/12/31 15:44:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:44:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+15/12/31 15:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+15/12/31 15:44:40 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+Spark_MapReduce_Parents(): dict_query_results[1]= [u'train']
+15/12/31 15:44:41 INFO SparkContext: Running Spark version 1.5.2
+15/12/31 15:44:41 INFO SecurityManager: Changing view acls to: root
+15/12/31 15:44:41 INFO SecurityManager: Changing modify acls to: root
+15/12/31 15:44:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/31 15:44:41 INFO Slf4jLogger: Slf4jLogger started
+15/12/31 15:44:41 INFO Remoting: Starting remoting
+15/12/31 15:44:41 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:35466]
+15/12/31 15:44:41 INFO Utils: Successfully started service 'sparkDriver' on port 35466.
+15/12/31 15:44:41 INFO SparkEnv: Registering MapOutputTracker
+15/12/31 15:44:41 INFO SparkEnv: Registering BlockManagerMaster
+15/12/31 15:44:41 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b8499a64-78d7-4369-a037-8200bf3eb4b4
+15/12/31 15:44:41 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/31 15:44:41 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/httpd-e5e73b37-057b-4a62-a9e9-3aac00496442
+15/12/31 15:44:41 INFO HttpServer: Starting HTTP Server
+15/12/31 15:44:41 INFO Utils: Successfully started service 'HTTP file server' on port 51900.
+15/12/31 15:44:41 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/31 15:44:42 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/31 15:44:42 INFO SparkUI: Started SparkUI at http://localhost:4040
+15/12/31 15:44:42 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-c1ff1a38-9500-47ff-bcb6-250327d5fa5c/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+15/12/31 15:44:42 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556882142
+15/12/31 15:44:42 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/12/31 15:44:42 INFO Executor: Starting executor ID driver on host localhost
+15/12/31 15:44:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43919.
+15/12/31 15:44:42 INFO NettyBlockTransferService: Server created on 43919
+15/12/31 15:44:42 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/31 15:44:42 INFO BlockManagerMasterEndpoint: Registering block manager localhost:43919 with 530.0 MB RAM, BlockManagerId(driver, localhost, 43919)
+15/12/31 15:44:42 INFO BlockManagerMaster: Registered BlockManager
+asfer_pickle_string_dump(): picklef.write(): transport
+15/12/31 15:44:42 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213
+15/12/31 15:44:42 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:44:42 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) with 2 output partitions
+15/12/31 15:44:42 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:44:42 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+15/12/31 15:44:42 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+15/12/31 15:44:42 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211), which has no missing parents
+15/12/31 15:44:42 INFO MemoryStore: ensureFreeSpace(6568) called with curMem=0, maxMem=555755765
+15/12/31 15:44:42 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 530.0 MB)
+15/12/31 15:44:42 INFO MemoryStore: ensureFreeSpace(4148) called with curMem=6568, maxMem=555755765
+15/12/31 15:44:42 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 530.0 MB)
+15/12/31 15:44:42 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:43919 (size: 4.1 KB, free: 530.0 MB)
+15/12/31 15:44:42 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/31 15:44:42 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211)
+15/12/31 15:44:42 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/12/31 15:44:42 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2328 bytes)
+15/12/31 15:44:42 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2325 bytes)
+15/12/31 15:44:42 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/12/31 15:44:42 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556882142
+15/12/31 15:44:42 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/12/31 15:44:42 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py has been previously copied to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-c1ff1a38-9500-47ff-bcb6-250327d5fa5c/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text4: Inaugural Address Corpus
+
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+
+
+text7: Wall Street Journal
+text8: Personals Corpus
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): transport
+mapFunction_Parents(): keyword: transport ; prevleveltokens: train
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+asfer_pickle_string_load(): picklef.readlines(): transport
+mapFunction_Parents(): keyword: transport ; prevleveltokens: electric
+mapFunction_Parents(): keyword= transport ; syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): adding to parents: syn =  Synset('train.n.01') ; keyword:  transport  in syndef_tokens= set([u'a', u'provided', u'and', u'drawn', u'coupled', u'of', u'together', u'by', u'cars', u'locomotive', u'railway', u'line', u'public', u'transport'])
+mapFunction_Parents(): returns= [u'train']
+15/12/31 15:45:19 INFO PythonRunner: Times: total = 37067, boot = 460, init = 29073, finish = 7534
+15/12/31 15:45:19 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1223 bytes result sent to driver
+15/12/31 15:45:19 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 37150 ms on localhost (1/2)
+mapFunction_Parents(): keyword= transport ; syndef_tokens= set([u'a', u'powered', u'electricity', u'car', u'is', u'that', u'by'])
+mapFunction_Parents(): returns= []
+15/12/31 15:45:19 INFO PythonRunner: Times: total = 37280, boot = 455, init = 29431, finish = 7394
+15/12/31 15:45:19 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1223 bytes result sent to driver
+15/12/31 15:45:19 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:211) finished in 37.355 s
+15/12/31 15:45:19 INFO DAGScheduler: looking for newly runnable stages
+15/12/31 15:45:19 INFO DAGScheduler: running: Set()
+15/12/31 15:45:19 INFO DAGScheduler: waiting: Set(ResultStage 1)
+15/12/31 15:45:19 INFO DAGScheduler: failed: Set()
+15/12/31 15:45:19 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+15/12/31 15:45:19 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213), which is now runnable
+15/12/31 15:45:19 INFO MemoryStore: ensureFreeSpace(4984) called with curMem=10716, maxMem=555755765
+15/12/31 15:45:19 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.9 KB, free 530.0 MB)
+15/12/31 15:45:19 INFO MemoryStore: ensureFreeSpace(3054) called with curMem=15700, maxMem=555755765
+15/12/31 15:45:19 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.0 KB, free 530.0 MB)
+15/12/31 15:45:19 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 37357 ms on localhost (2/2)
+15/12/31 15:45:19 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/31 15:45:19 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:43919 (size: 3.0 KB, free: 530.0 MB)
+15/12/31 15:45:19 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/12/31 15:45:19 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213)
+15/12/31 15:45:19 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/12/31 15:45:19 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:45:19 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:45:19 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/12/31 15:45:19 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:45:19 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/12/31 15:45:19 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:45:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+15/12/31 15:45:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+reduceFunction_Parents(): returns= [u'train']
+15/12/31 15:45:19 INFO PythonRunner: Times: total = 95, boot = 94, init = 0, finish = 1
+15/12/31 15:45:19 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1264 bytes result sent to driver
+15/12/31 15:45:19 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 112 ms on localhost (1/2)
+15/12/31 15:45:19 INFO PythonRunner: Times: total = 237, boot = 236, init = 0, finish = 1
+15/12/31 15:45:19 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1213 bytes result sent to driver
+15/12/31 15:45:20 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213) finished in 0.245 s
+15/12/31 15:45:20 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 255 ms on localhost (2/2)
+15/12/31 15:45:20 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:213, took 37.645659 s
+15/12/31 15:45:20 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:45:20 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216
+15/12/31 15:45:20 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) with 2 output partitions
+15/12/31 15:45:20 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:45:20 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:45:20 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:45:20 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216), which has no missing parents
+15/12/31 15:45:20 INFO MemoryStore: ensureFreeSpace(5816) called with curMem=18754, maxMem=555755765
+15/12/31 15:45:20 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:45:20 INFO MemoryStore: ensureFreeSpace(3376) called with curMem=24570, maxMem=555755765
+15/12/31 15:45:20 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:45:20 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:43919 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:45:20 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:45:20 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216)
+15/12/31 15:45:20 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:45:20 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:45:20 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 2345 bytes)
+15/12/31 15:45:20 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:45:20 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:45:20 INFO PythonRunner: Times: total = 64, boot = 64, init = 0, finish = 0
+15/12/31 15:45:20 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:45:20 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 81 ms on localhost (1/2)
+15/12/31 15:45:20 INFO PythonRunner: Times: total = 175, boot = 174, init = 1, finish = 0
+15/12/31 15:45:20 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 1327 bytes result sent to driver
+15/12/31 15:45:20 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 193 ms on localhost (2/2)
+15/12/31 15:45:20 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:45:20 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216) finished in 0.195 s
+15/12/31 15:45:20 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:216, took 0.211270 s
+Spark_MapReduce_Parents() - SparkSQL DataFrame query results:
+15/12/31 15:45:20 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:45:20 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:45:20 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:45:20 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:45:20 INFO BlockManager: BlockManager stopped
+15/12/31 15:45:20 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:45:20 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:45:20 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:45:20 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+15/12/31 15:45:20 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+15/12/31 15:45:20 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+Spark_MapReduce_Parents(): dict_query_results[1]= [u'train']
+InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1= [u'provided', u'powered', u'electricity', u'cars', u'coupled', u'together', u'locomotive', u'railway', u'car', u'drawn', u'line', u'public', u'transport']
+15/12/31 15:45:21 INFO SparkContext: Running Spark version 1.5.2
+15/12/31 15:45:21 INFO SecurityManager: Changing view acls to: root
+15/12/31 15:45:21 INFO SecurityManager: Changing modify acls to: root
+15/12/31 15:45:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+15/12/31 15:45:21 INFO Slf4jLogger: Slf4jLogger started
+15/12/31 15:45:21 INFO Remoting: Starting remoting
+15/12/31 15:45:21 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:53313]
+15/12/31 15:45:21 INFO Utils: Successfully started service 'sparkDriver' on port 53313.
+15/12/31 15:45:21 INFO SparkEnv: Registering MapOutputTracker
+15/12/31 15:45:21 INFO SparkEnv: Registering BlockManagerMaster
+15/12/31 15:45:21 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ea8c7490-a6f3-4e66-a877-dad2151f9d78
+15/12/31 15:45:21 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+15/12/31 15:45:21 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/httpd-39615bfc-9bfe-4fbb-a664-f164999c90ac
+15/12/31 15:45:21 INFO HttpServer: Starting HTTP Server
+15/12/31 15:45:21 INFO Utils: Successfully started service 'HTTP file server' on port 39913.
+15/12/31 15:45:21 INFO SparkEnv: Registering OutputCommitCoordinator
+15/12/31 15:45:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+15/12/31 15:45:21 INFO SparkUI: Started SparkUI at http://localhost:4040
+15/12/31 15:45:21 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-b21ddf12-b575-437e-b473-ce311e05858d/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+15/12/31 15:45:21 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556921931
+15/12/31 15:45:21 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+15/12/31 15:45:21 INFO Executor: Starting executor ID driver on host localhost
+15/12/31 15:45:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35622.
+15/12/31 15:45:22 INFO NettyBlockTransferService: Server created on 35622
+15/12/31 15:45:22 INFO BlockManagerMaster: Trying to register BlockManager
+15/12/31 15:45:22 INFO BlockManagerMasterEndpoint: Registering block manager localhost:35622 with 530.0 MB RAM, BlockManagerId(driver, localhost, 35622)
+15/12/31 15:45:22 INFO BlockManagerMaster: Registered BlockManager
+Spark_MapReduce(): wordsatthislevel: [u'provided', u'powered', u'electricity', u'cars', u'coupled', u'together', u'locomotive', u'railway', u'car', u'drawn', u'line', u'public', u'transport']
+15/12/31 15:45:22 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155
+15/12/31 15:45:22 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:147)
+15/12/31 15:45:22 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155) with 2 output partitions
+15/12/31 15:45:22 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155)
+15/12/31 15:45:22 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+15/12/31 15:45:22 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+15/12/31 15:45:22 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:147), which has no missing parents
+15/12/31 15:45:22 INFO MemoryStore: ensureFreeSpace(6552) called with curMem=0, maxMem=555755765
+15/12/31 15:45:22 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 530.0 MB)
+15/12/31 15:45:22 INFO MemoryStore: ensureFreeSpace(4139) called with curMem=6552, maxMem=555755765
+15/12/31 15:45:22 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.0 KB, free 530.0 MB)
+15/12/31 15:45:22 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:35622 (size: 4.0 KB, free: 530.0 MB)
+15/12/31 15:45:22 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+15/12/31 15:45:22 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:147)
+15/12/31 15:45:22 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks
+15/12/31 15:45:22 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2401 bytes)
+15/12/31 15:45:22 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2424 bytes)
+15/12/31 15:45:22 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+15/12/31 15:45:22 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py with timestamp 1451556921931
+15/12/31 15:45:22 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+15/12/31 15:45:22 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py has been previously copied to /tmp/spark-3062aac5-103b-49f0-897e-0ed4d382bb82/userFiles-b21ddf12-b575-437e-b473-ce311e05858d/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+mapFunction(): freqterms1: locomotive
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+mapFunction(): freqterms1: provided
+mapFunction(): freqterms1: railway
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line'])
+mapFunction(): freqterms1: car
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels'])
+mapFunction(): freqterms1: drawn
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark'])
+mapFunction(): freqterms1: line
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things'])
+mapFunction(): freqterms1: public
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things', u'people', u'considered', u'general', u'whole'])
+mapFunction(): freqterms1: transport
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things', u'people', u'considered', u'general', u'whole', u'transportation', u'means', u'serves', u'something'])
+15/12/31 15:45:58 INFO PythonRunner: Times: total = 36297, boot = 453, init = 27692, finish = 8152
+15/12/31 15:45:58 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1223 bytes result sent to driver
+15/12/31 15:45:58 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 36386 ms on localhost (1/2)
+mapFunction(): freqterms1: powered
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning'])
+mapFunction(): freqterms1: electricity
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical'])
+mapFunction(): freqterms1: cars
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels'])
+mapFunction(): freqterms1: coupled
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'people', u'ideas', u'together', u'two', u'bring', u'objects'])
+mapFunction(): freqterms1: together
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'people', u'ideas', u'together', u'two', u'bring', u'objects', u'emotionally', u'mentally', u'stable'])
+15/12/31 15:45:59 INFO PythonRunner: Times: total = 37125, boot = 454, init = 28890, finish = 7781
+15/12/31 15:45:59 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1223 bytes result sent to driver
+15/12/31 15:45:59 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:147) finished in 37.211 s
+15/12/31 15:45:59 INFO DAGScheduler: looking for newly runnable stages
+15/12/31 15:45:59 INFO DAGScheduler: running: Set()
+15/12/31 15:45:59 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 37205 ms on localhost (2/2)
+15/12/31 15:45:59 INFO DAGScheduler: waiting: Set(ResultStage 1)
+15/12/31 15:45:59 INFO DAGScheduler: failed: Set()
+15/12/31 15:45:59 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+15/12/31 15:45:59 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+15/12/31 15:45:59 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155), which is now runnable
+15/12/31 15:45:59 INFO MemoryStore: ensureFreeSpace(4976) called with curMem=10691, maxMem=555755765
+15/12/31 15:45:59 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 4.9 KB, free 530.0 MB)
+15/12/31 15:45:59 INFO MemoryStore: ensureFreeSpace(3046) called with curMem=15667, maxMem=555755765
+15/12/31 15:45:59 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.0 KB, free 530.0 MB)
+15/12/31 15:45:59 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:35622 (size: 3.0 KB, free: 530.0 MB)
+15/12/31 15:45:59 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+15/12/31 15:45:59 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155)
+15/12/31 15:45:59 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+15/12/31 15:45:59 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:45:59 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2137 bytes)
+15/12/31 15:45:59 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+15/12/31 15:45:59 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:45:59 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+15/12/31 15:45:59 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 2 blocks
+15/12/31 15:45:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+15/12/31 15:45:59 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+reduceFunction():returns :  rgo_object(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'people', u'ideas', u'together', u'two', u'bring', u'objects', u'emotionally', u'mentally', u'stable', u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things', u'people', u'considered', u'general', u'whole', u'transportation', u'means', u'serves', u'something'])
+15/12/31 15:45:59 INFO PythonRunner: Times: total = 22, boot = -587, init = 607, finish = 2
+15/12/31 15:45:59 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 2494 bytes result sent to driver
+15/12/31 15:45:59 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 49 ms on localhost (1/2)
+15/12/31 15:45:59 INFO PythonRunner: Times: total = 261, boot = 260, init = 0, finish = 1
+15/12/31 15:45:59 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1213 bytes result sent to driver
+15/12/31 15:45:59 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155) finished in 0.265 s
+15/12/31 15:45:59 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:155, took 37.521667 s
+15/12/31 15:45:59 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 275 ms on localhost (2/2)
+15/12/31 15:45:59 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+15/12/31 15:45:59 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158
+15/12/31 15:45:59 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158) with 2 output partitions
+15/12/31 15:45:59 INFO DAGScheduler: Final stage: ResultStage 2(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158)
+15/12/31 15:45:59 INFO DAGScheduler: Parents of final stage: List()
+15/12/31 15:45:59 INFO DAGScheduler: Missing parents: List()
+15/12/31 15:45:59 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158), which has no missing parents
+15/12/31 15:45:59 INFO MemoryStore: ensureFreeSpace(5872) called with curMem=18713, maxMem=555755765
+15/12/31 15:45:59 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.7 KB, free 530.0 MB)
+15/12/31 15:45:59 INFO MemoryStore: ensureFreeSpace(3417) called with curMem=24585, maxMem=555755765
+15/12/31 15:45:59 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 3.3 KB, free 530.0 MB)
+15/12/31 15:45:59 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:35622 (size: 3.3 KB, free: 530.0 MB)
+15/12/31 15:45:59 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+15/12/31 15:45:59 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[12] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158)
+15/12/31 15:45:59 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks
+15/12/31 15:45:59 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4, localhost, PROCESS_LOCAL, 2307 bytes)
+15/12/31 15:45:59 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5, localhost, PROCESS_LOCAL, 3495 bytes)
+15/12/31 15:45:59 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+15/12/31 15:45:59 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+15/12/31 15:45:59 INFO PythonRunner: Times: total = 49, boot = 48, init = 0, finish = 1
+15/12/31 15:45:59 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 963 bytes result sent to driver
+15/12/31 15:45:59 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 61 ms on localhost (1/2)
+15/12/31 15:45:59 INFO PythonRunner: Times: total = 74, boot = -226, init = 300, finish = 0
+15/12/31 15:45:59 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 2796 bytes result sent to driver
+15/12/31 15:45:59 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 100 ms on localhost (2/2)
+15/12/31 15:45:59 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+15/12/31 15:45:59 INFO DAGScheduler: ResultStage 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158) finished in 0.088 s
+15/12/31 15:45:59 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py:158, took 0.125179 s
+Spark_MapReduce() - SparkSQL DataFrame query results:
+Row(tokensatthislevel=[u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'people', u'ideas', u'together', u'two', u'bring', u'objects', u'emotionally', u'mentally', u'stable', u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things', u'people', u'considered', u'general', u'whole', u'transportation', u'means', u'serves', u'something'])
+15/12/31 15:46:00 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+15/12/31 15:46:00 INFO DAGScheduler: Stopping DAGScheduler
+15/12/31 15:46:00 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+15/12/31 15:46:00 INFO MemoryStore: MemoryStore cleared
+15/12/31 15:46:00 INFO BlockManager: BlockManager stopped
+15/12/31 15:46:00 INFO BlockManagerMaster: BlockManagerMaster stopped
+15/12/31 15:46:00 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+15/12/31 15:46:00 INFO SparkContext: Successfully stopped SparkContext
+15/12/31 15:46:00 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+15/12/31 15:46:00 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+15/12/31 15:46:00 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel: [u'necessary', u'give', u'something', u'useful', u'force', u'power', u'supply', u'functioning', u'associated', u'phenomenon', u'stationary', u'protons', u'moving', u'electrons', u'physical', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'people', u'ideas', u'together', u'two', u'bring', u'objects', u'emotionally', u'mentally', u'stable', u'engine', u'draw', u'used', u'trains', u'self-propelled', u'wheeled', u'tracks', u'vehicle', u'railway', u'along', u'consisting', u'pull', u'passengers', u'transportation', u'responsible', u'commercial', u'system', u'operating', u'freight', u'trains', u'organization', u'line', u'engine', u'combustion', u'propelled', u'four', u'internal', u'motor', u'vehicle', u'usually', u'wheels', u'make', u'lines', u'surface', u'mark', u'people', u'one', u'beside', u'formation', u'another', u'things', u'people', u'considered', u'general', u'whole', u'transportation', u'means', u'serves', u'something']
+prevlevelsynsets: [Synset('locomotive.n.01'), Synset('railway.n.01'), Synset('car.n.01'), Synset('trace.n.01'), Synset('line.n.01'), Synset('populace.n.01'), Synset('conveyance.n.01'), Synset('supply.n.01'), Synset('power.n.01'), Synset('electricity.n.01'), Synset('car.n.01'), Synset('match.n.01'), Synset('together.s.01')]
+defaultdict(<type 'list'>, {u'provided': [u'train'], u'coupled': [u'train'], u'electricity': [u'electric'], u'cars': [u'train'], u'powered': [u'electric'], u'line': [u'train'], u'together': [u'train'], u'public': [u'train'], u'car': [u'electric'], u'drawn': [u'train'], u'railway': [u'train'], u'locomotive': [u'train'], u'transport': [u'train']})
+ksynset= Synset('supply.v.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('match.v.03')
+lsynset= Synset('train.n.01')
+ksynset= Synset('electricity.n.01')
+lsynset= Synset('electric.n.01')
+ksynset= Synset('car.n.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('power.v.01')
+lsynset= Synset('electric.n.01')
+ksynset= Synset('line.n.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('together.s.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('populace.n.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('car.n.01')
+lsynset= Synset('electric.n.01')
+ksynset= Synset('pull.v.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('railway.n.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('locomotive.n.01')
+lsynset= Synset('train.n.01')
+ksynset= Synset('conveyance.n.03')
+lsynset= Synset('train.n.01')
+Core number (sorted) : [(u'train', 10), (u'electric', 3), (u'provided', 2), (u'powered', 2), (u'electricity', 2), (u'cars', 2), (u'coupled', 2), (u'line', 2), (u'together', 2), (u'public', 2), (u'car', 2), (u'drawn', 2), (u'railway', 2), (u'locomotive', 2), (u'transport', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: train ,core number= 10
+This document belongs to class: electric ,core number= 3
+This document belongs to class: provided ,core number= 2
+max_core_number 10
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'train', 0.34234502856602345), (u'electric', 0.12792852486652376), (u'powered', 0.046246047266714295), (u'electricity', 0.046246047266714295), (u'car', 0.046246047266714295), (u'provided', 0.039098830476731), (u'cars', 0.039098830476731), (u'coupled', 0.039098830476731), (u'line', 0.039098830476731), (u'together', 0.039098830476731), (u'public', 0.039098830476731), (u'drawn', 0.039098830476731), (u'railway', 0.039098830476731), (u'locomotive', 0.039098830476731), (u'transport', 0.039098830476731)]
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem
+==========================================================================================================
+0
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut
+==========================================================================================================
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner
+==========================================================================================================
+

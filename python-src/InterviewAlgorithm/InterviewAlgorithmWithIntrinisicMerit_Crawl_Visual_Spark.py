@@ -82,6 +82,37 @@ def parents(keyword, prevlevelsynsets):
 	print "parents(): returning parents:",parents
 	return parents
 
+#parents (at level i-1) of a given vertex at level i
+#arguments are a keyword at present level and all disambiguated synsets of previous level
+def parents_tokens(keyword, prevleveltokens):
+	parents = []
+	print "parents_tokens(): prevleveltokens:",prevleveltokens
+        for prevleveltoken in prevleveltokens:
+           #syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
+	   syns=wn.synsets(prevleveltoken)
+	   syn=syns[0]
+	   print "type(syn):",type(syn)
+	   if type(syn) is nltk.corpus.reader.wordnet.Synset:
+			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
+			print "parents_tokens(): syndef_tokens:",syndef_tokens
+			if keyword in syndef_tokens:
+				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"
+				parents = parents + [syn]
+	print "parents_tokens(): returning parents:",parents
+	return parents
+
+#function - best_matching_synset()
+def best_matching_synset(doc_tokens, synsets):
+    maxmatch = -1
+    retset = []
+    for synset in synsets:
+         def_tokens = set(nltk.word_tokenize(synset.definition()))
+         intersection = def_tokens.intersection(doc_tokens)
+         if len(intersection) > maxmatch:
+                  maxmatch = len(intersection)
+                  retset = synset
+    return retset
+
 #function - get_context()
 def get_context(query, documents):
 	file1 = open(documents[0])
@@ -160,23 +191,17 @@ for filestr in files:
 		if current_level > 1:
 			print current_level
 			for x in freqterms1:
+				prevlevelsynsets_tokens=[]
+				for s in prevlevelsynsets:
+					s_lemma=s.lemma_names()
+					prevlevelsynsets_tokens.append(s_lemma[0])
 				if parents_computation_spark:
-					prevlevelsynsets_tokens=[]
-					for s in prevlevelsynsets:
-						s_lemma=s.lemma_names()
-						prevlevelsynsets_tokens.append(s_lemma[0])
-					#parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,tokensofprevlevel)
 					parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
-					parents_x_serial = parents(x,prevlevelsynsets)
-					print "Serial and Parallel parents : parents_x:",parents_x 
-					print "Serial and Parallel parents : parents_x_serial:",parents_x_serial 
-					print "Serial and Parallel synsets : prevlevelsynsets:",prevlevelsynsets 
-					print "Serial and Parallel synsets : prevlevelsynsets_tokens:",prevlevelsynsets_tokens
-					
 					if len(parents_x) > 1:
 						convergingterms.append(x)
 				else:
-					parents_x = parents(x,prevlevelsynsets)
+					#parents_x = parents(x,prevlevelsynsets)
+					parents_x = parents_tokens(x,prevlevelsynsets_tokens)
 					if len(parents_x) > 1:
 						convergingterms.append(x)
 				convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
