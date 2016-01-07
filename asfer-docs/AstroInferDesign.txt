@@ -236,7 +236,7 @@ x not in L, x/e in L			|       Error		|   No error if f(x)=0,f(x/e)=1 |
 x not in L, x/e not in L		|       No error	|      Error			|
 -------------------------------------------------------------------------------------------------
 
-Third column of the table relates Noise Sensitivity and BPP - it subdivides the Noise Sensitivity into 4 probable scenarios. Hence Noise Sensitivity is a special case of BPP - explains one half of the error. Even after a circuit is denoisified i.e third column is removed, it can still be in BPP due to the second column possibilities above. Noise sensitivity handles only half the possibilities in the above table for output noise. The second and third rows in second column represent noise in input where the circuit doesn't distinguish inputs correctly (false positives and false negatives). This requires derandomization. Thus error-free decision making depends on both denoisification and derandomization. A Turing machine that computes all 8 possibilities in the table above without error is 100% perfect decision maker. In terms of probability:
+Third column of the table relates Noise Sensitivity and BPP - it subdivides the Noise Sensitivity into 4 probable scenarios. Hence Noise Sensitivity overlaps BPP - explains one half of the error. Even after a circuit is denoisified i.e third column is removed, it can still be in BPP due to the second column possibilities above. Noise sensitivity handles only half the possibilities in the above table for output noise. The second and third rows in second column represent noise in input where the circuit doesn't distinguish inputs correctly (false positives and false negatives). This requires derandomization. Thus error-free decision making depends on both denoisification and derandomization. A Turing machine that computes all 8 possibilities in the table above without error is 100% perfect decision maker. In terms of probability:
 	Probability of Good Decision = Input noise stability (second column) + Output noise stability (third column)
 which can also be stated as:
 	Probability of Good Decision = 1-(Probability of False positives + Probability of False negatives)
@@ -255,7 +255,7 @@ In other words, a precise estimate of voter or voting error from table above whi
 							+ {Pr(f(x)=f(x/e))/x not in L, x/e in L}
 which may be more or less than NoiseSensitivity depending on cancellation of other conditional probability terms. This is the error term that
 has to be substituted for each voter decision making error. Because of this delta, NoiseSensitivity mentioned everywhere in this document in
-P(Good) binomial summation and majority voting circuit is indeed NoiseSensitivity (+ or -) delta. Previous probability coalesces Noise and Error into one expressible quantity - i.e denoisification is part of derandomization.
+P(Good) binomial summation and majority voting circuit is indeed NoiseSensitivity (+ or -) delta. Previous probability coalesces Noise and Error into one expressible quantity - i.e denoisification + derandomization.
 
 -------------------------------------------------------------------------------------------------
 Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
@@ -1139,11 +1139,11 @@ Noise sensitive NC/log percolation circuit in LHS of P(Good) is in BP(NC/log) wh
 Above version derived by rewriting HLMN in terms of s(size) and t(size of fourier basis) is not too appealing. Basically, rate of change of circuit size with respect to noise is required and may not be necessary if denoisification is a subproblem of larger derandomization. It then reduces to the question of how size of circuit increases with derandomization, specifically for BPNC percolation circuits - Since BPP is in P/poly, is BPNC in NC/poly or NC/log.  From Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf - Circuit size and Fourier coefficients are related as:
 	For |S| > t, Summation(fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 For Noise-operated Fourier Spectra, the summation is augmented with rho(noise operator):
-	For |S| > t, Summation(rho*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
+	For |S| > t, Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 Applying Plancherel theorem and stability=1:
     -----------------------------------------------------------------------------------------------------------------------
     |	For |S| < t, 1-Summation(rho*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)					  |
-    |	=> [1-Summation(rho*fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size 						  |
+    |	=> [1-Summation(rho^|S|*fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size 						  |
     -----------------------------------------------------------------------------------------------------------------------
 which is the circuit size lowerbound in terms of noise probability and fourier coefficients. As rho increases from 0 to 1, lowerbound for
 size decreases, that is, low noise requires high circuit size. Partial Derivative of size bound wrt rho:
@@ -1171,7 +1171,7 @@ Reference:
 53.12.3 Simplified Hitting Sets Derandomization of BPP - [Goldreich-Vadhan-Wigderson] - http://www.wisdom.weizmann.ac.il/~oded/COL/gvw.pdf - where hitting sets are set of strings at least one element of which is accepted by any circuit that accepts atleast half of its inputs (i.e randomized algorithms in RP and BPP). Hitting Set generators H expand k(n) to n so that a function f returns f(H(k(n)))=1 always where f is in RP or BPP.
 53.12.4 Derandomizing BPNC - Existence of Hitting Set Generators for BPNC=NC - [Alexander E.Andreev, Andrea E.F.Clementi, Jose D.P.Rolim] - http://ac.els-cdn.com/S0304397599000249/1-s2.0-S0304397599000249-main.pdf?_tid=e56d3a1e-ad3d-11e5-a4ef-00000aacb35e&acdnat=1451291885_fbff7c6ae94326758cf8d6d7b7a84d7b
 53.12.5 Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
-	For |A| > t, Summation(fourier_coeff(A)) <= 2*(Size)*2^(-t^(1/d)/20)
+	For |A| > t, Summation(fourier_coeff(A)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 53.12.6 The Computational Complexity Column [Allender-Clementi-Rolim-Trevisan] - theory.stanford.edu/~trevisan/pubs/eatcs.ps
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -1187,6 +1187,89 @@ which implies that sigma_S>t_(rho^|S|*f(S)^2) decreases when sigma_S<t_(rho^|S|*
 
 Partial derivative of Circuit size wrt to rho can be derived as:
 	delta_s/delta_rho = sigma_S>t_(|s|*rho^(|s|-1) * f(S)^2) / (1 - sigma_S<t_(rho^|S|*f(S)^2)) where delta_s is increase in size of circuit with delta_rho increase in noise probability. When rho=0, increase in circuit size is 0 (obvious base case). When rho=1, which is the worst case, increase in circuit size is = sigma_S>t_(|S|*f(S)^2) / f(S)^2 which is upperbounded by n - poly(n) increase in size.
+
+-----------------------------------------------------------------------------------------------------------------
+53.14. Hastad-Linial-Mansour-Nisan Theorem, Circuit size, Noise Stability and BP* classes
+-----------------------------------------------------------------------------------------------------------------
+Percolation circuit defined previously has:
+- Sorting Network for creating path sequentially on grid (NC logdepth and polysize)
+- Comparators (Constant depth and polysize) are required for comparing the leftmost and rightmost coordinates.
+Together Percolation is in non-uniform NC. This circuit depends on number of points on the left-right path which is poly(n).
+Therefore percolation is in NC/poly because size of advice strings could be O((n^2)log(n^2)) and it may not have NC/log circuits.
+From Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
+	For |A| > t, Summation(fourier_coeff(A)^2) <= 2*(Size)*2^(-t^(1/d)/20)
+With noise operator, noise stability=1 from Plancherel's theorem:
+    -----------------------------------------------------------------------------------------------------------------------
+    |	For |S| < t, 1-Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)			          |
+    |	Corollary: For |S| > t, Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)   	         	  |
+    |	=> [1-Summation(rho^|S|*fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size 					  |
+    -----------------------------------------------------------------------------------------------------------------------
+When denoisified, rho=0 and lowerbound for size:
+	[1-(0^0*f(phi)^2+0+0+..)]*2^((t^(1/d)/20)-1) <= size
+	[1-f(phi)^2]*2^((t^(1/d)/20)-1) <= size (as all other coefficients vanish)
+when t=n, the size is lowerbounded by :
+	[1-f(phi)^2]*2^((n^(1/d)/20)-1)
+which is superpolynomial. This implies an NC/poly polysize circuit when denoisified becomes O(2^((n^(1/polylog(n)/20)-1) .
+
+From the table that describes relation between Noise and Error(BP* and PP) in 14 previously, it is evident that Noise intersects Error
+if following is drawn as a Venn Diagram i.e. Noise stability solves just a fraction of total error, and remaining requires derandomization.
+In other words, Noisy circuit could be error-free and Noise-free circuit could have error.
+-------------------------------------------------------------------------------------------------
+	x				|    f(x) = f(x/e)	|	f(x) != f(x/e) Noise    |
+-------------------------------------------------------------------------------------------------
+x in L, x/e in L			|	No error	|	Error		        |
+-------------------------------------------------------------------------------------------------
+x in L, x/e not in L			|       Error		|   No error if f(x)=1,f(x/e)=0 |
+					|			|   else Error			|
+-------------------------------------------------------------------------------------------------
+x not in L, x/e in L			|       Error		|   No error if f(x)=0,f(x/e)=1 |
+					|			|   else Error			|
+-------------------------------------------------------------------------------------------------
+x not in L, x/e not in L		|       No error	|      Error			|
+-------------------------------------------------------------------------------------------------
+
+Noise percolation circuit in P(Good) summation converges in noise stability regime:
+	lt Pr[f(w(n)) != f(w(n)/e)] = 0, e=1/(alpha4*n^2)
+	n -> inf
+Infinite f(n) is representable as Non-uniform NC/poly circuit though undecidable because turing machine computing the above limit is not in recursive but recursively enumerable languages.
+
+For a 3-CNFSAT boolean function with noise, size of circuit is lowerbounded as:
+     [1-Summation(rho^|S|*fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size , for constant depth d.
+For rho=1,
+     [1-Summation(fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size , for constant depth d, |S| < t.
+
+Gist of the above:
+53.14.1 Size of percolation logdepth circuit (with noise) rho=1:
+	(f([n])^2) * 2^(n^(1/polylog(n-1)/20)-1) <= size
+53.14.2 Size of depth d circuit (with noise) rho=1:
+	(f([n])^2) * 2^((n-1)^(1/d/20)-1) <= size
+53.14.3 Size of percolation logdepth circuit (with noise) rho=0:
+	(1-f([phi])^2) * 2^(n^(1/polylog(n)/20)-1) <= size, phi is empty set
+53.14.4 Size of depth d circuit (with noise) rho=0:
+	(1-f([phi])^2) * 2^(n^(1/d/20)-1) <= size, phi is empty set
+
+-------------------------------------------------------------------------------------------------------------
+53.15 Special Case of HLMN theorem for PARITY as 3-SAT and counterexample for polynomial circuit size
+-------------------------------------------------------------------------------------------------------------
+From HMLN theorem:
+     Summation(fourier_coeff(S)^2)] * 2^((t^(1/d)/20)-1) <= Size , for constant depth d, |S| > t.
+When t=n-1, fourier series has only coefficient for the parity set that has all variables:
+	fourier_coeff([n])^2 * 2^(((n-1)^(1/d)/20)-1) <= size, for constant depth d.
+For a circuit of size polynomial (n^k) and depth 3:
+	fourier_coeff([n])^2 = n^k / 2^(((n-1)^(1/3)/20)-1).
+From definition of fourier coefficients:
+	fourier_coeff([n]) = summation(f(x)*(-1)^(parity(xi)))/2^n for all x in {0,1}^n
+Maximum of fourier_coeff([n]) occurs when f(x)=1 for (-1)^parity(xi) = 1 and when f(x)=-1 for (-1)^parity(xi) = -1 together summing to 2^n.
+	Maximum(fourier_coeff([n])) = 2^n/2^n = 1
+Which happens when f(x) is equivalent to Parity function.
+An example PARITY as 3-CNFSAT from DIMACS32 XORSAT [Jing Chao Chen - http://arxiv.org/abs/cs/0703006] that computes parity of n=3 variables x1,x2,x3 is:
+	(x1 V not x2 V not x3) /\ (not x1 V x2 V not x3) /\ (not x1 V not x2 V x3) /\ (x1 V x2 V x3)
+Previous PARITY SAT accepts odd parity strings. Complementing each clause makes it accept even parity:
+	(not x1 V x2 V x3) /\ (x1 V not x2 V x3) /\ (x1 V x2 V not x3) /\ (not x1 V not x2 V not x3)
+Assumption: PARITY as 3-CNFSAT has polynomial size.
+PARITY 3-SAT is satisified by odd parity bit strings and is NP-complete because this is search version of parity - it searches for strings that have odd parity. Complementing each clause would make it satisfy even parity bit strings.  This example PARITY as 3-SAT with each clause complemented maximizes the fourier coefficient to 1 at S=[n]. An extension of this 3-CNF for arbitrary n should be recursively obtainable from the above example by XOR-ing with additional variables and simplifying.
+=>    1^2 <=  n^k / 2^(((n-1)^(1/3)/20)-1) which is a contradiction to assumption (denominator is exponential) that PARITY 3-SAT has polynomial size (n^k) circuits.
+(How can a special case of NP-complete problem have superpolynomial size circuits? Is this a counterexample and thus implies superpolynomial size circuits for all problems in NP and P != NP)
 
 
 54(THEORY). Would the following experimental gadget work? It might, but impractical:
