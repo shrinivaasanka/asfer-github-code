@@ -182,9 +182,9 @@ def mapFunction_Parents(prevleveltokens):
 	parents=[]
 	print "mapFunction_Parents(): keyword:",keyword,"; prevleveltokens:",prevleveltokens
 	for prevleveltoken in [prevleveltokens]:
-		#syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
-		syns=wn.synsets(prevleveltoken)
-		syn=syns[0]
+		syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
+		#syns=wn.synsets(prevleveltoken)
+		#syn=syns[0]
 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
 			print "mapFunction_Parents(): keyword=",keyword,"; syndef_tokens=",syndef_tokens
