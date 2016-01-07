@@ -3038,6 +3038,16 @@ by proprietary pickling of the keyword into a file storage and loading it, and n
 - pickling is synchronized with python threading lock acquire() and release(). Shouldn't be necessary because of
 Concurrent Read Exclusive Write (CREW) of keyword, but for safer side to prevent Spark-internal races.
 
+---------------------------------------------------------------------------------------------
+208. Commits as on 1,2,3,4,5,6,7 January 2016
+---------------------------------------------------------------------------------------------
+- Added sections 53.14, 53.15 for HLMN and PARITY 3-SAT in 53
+- updated spidered text
+- best_matching_synset() enabled in mapreduce backedges computation which accurately disambiguates the graph. Spark single node cluster is
+significantly slower than serial version of parents() computation with only python calls probably due to costly Python4Java
+back-and-forth stream socket reads.
+- logs, DOT file and screenshots for single node Spark cluster have been added to testlogs/
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
