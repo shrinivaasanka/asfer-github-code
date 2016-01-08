@@ -140,7 +140,7 @@ def best_matching_synset(doc_tokens, synsets):
     return retset
 
 def Spark_MapReduce(level, wordsatthislevel):
-        spcon=SparkContext() 
+        spcon=SparkContext("local[2]","Spark_MapReduce")
 	print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
 	paralleldata=spcon.parallelize(wordsatthislevel)
 	#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
@@ -202,7 +202,7 @@ def reduceFunction_Parents(parents1, parents2):
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	picklelock=threading.Lock()
 	picklelock.acquire()
-	spcon = SparkContext()
+	spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
      	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
 	asfer_pickle_string_dump(keyword,picklef_keyword)
 	picklef_keyword.close()
