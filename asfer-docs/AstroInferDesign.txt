@@ -1256,7 +1256,7 @@ From HMLN theorem:
 When t=n-1, fourier series has only coefficient for the parity set that has all variables:
 	fourier_coeff([n])^2 * 2^(((n-1)^(1/d)/20)-1) <= size, for constant depth d.
 For a circuit of size polynomial (n^k) and depth 3:
-	fourier_coeff([n])^2 = n^k / 2^(((n-1)^(1/3)/20)-1).
+	fourier_coeff([n])^2 <= n^k / 2^(((n-1)^(1/3)/20)-1).
 From definition of fourier coefficients:
 	fourier_coeff([n]) = summation(f(x)*(-1)^(parity(xi)))/2^n for all x in {0,1}^n
 Maximum of fourier_coeff([n]) occurs when f(x)=1 for (-1)^parity(xi) = 1 and when f(x)=-1 for (-1)^parity(xi) = -1 together summing to 2^n.
@@ -3047,6 +3047,15 @@ Concurrent Read Exclusive Write (CREW) of keyword, but for safer side to prevent
 significantly slower than serial version of parents() computation with only python calls probably due to costly Python4Java
 back-and-forth stream socket reads.
 - logs, DOT file and screenshots for single node Spark cluster have been added to testlogs/
+
+---------------------------------------------------------------------------------------------
+209. Commits as on 8 January 2016
+---------------------------------------------------------------------------------------------
+- In InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py increased local threads to 2 (for dual core cpu(s)) for
+all SparkContexts instantiated
+- Added screenshot and logs for 2 local threads SparkContext mapreduce
+- Reference: Berkeley EdX Spark OpenCourse - https://courses.edx.org/c4x/BerkeleyX/CS100.1x/asset/Week2Lec4.pdf
+
 
 
 - 
