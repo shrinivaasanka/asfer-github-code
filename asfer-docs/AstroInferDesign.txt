@@ -3069,6 +3069,21 @@ all SparkContexts instantiated
 --------------------------------------------------------------------------------------------
 NeuronRain Enterprise (GitHub) version 2016.1.10 released.
 
+--------------------------------------------------------------------------------------------
+211. Commits as on 11 January 2016
+--------------------------------------------------------------------------------------------
+Added section 53.16 for an apparent contradiction between polysize and superpolynomial size among P/poly, Percolation and
+special case of HLMN theorem.
+
+--------------------------------------------------------------------------------------------------------------------------------
+212. (FEATURE - DONE) Principal Component Analysis (PCA) and Singular Value Decomposition (SVD) - Commits as on 12 January 2016
+--------------------------------------------------------------------------------------------------------------------------------
+Python rpy2 wrapper implementation for :
+        - Principal Component Analysis(PCA)
+        - Singular Value Decomposition(SVD)
+which invoke R PCA and SVD functions and plot into 2 separate pdf files has been added to repository.
+Logs for an example have been added to testlogs/
+
 
 
 
