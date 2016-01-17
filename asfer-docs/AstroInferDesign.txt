@@ -3086,6 +3086,14 @@ Python rpy2 wrapper implementation for :
 which invoke R PCA and SVD functions and plot into 2 separate pdf files has been added to repository.
 Logs for an example have been added to testlogs/
 
+------------------------------------------------------------------------------------------------------------------------
+213. (FEATURE - DONE) Kullback-Leibler Divergence - Commits as on 17 January 2016
+------------------------------------------------------------------------------------------------------------------------
+Kullback-Leibler Divergence implementation:
+-------------------------------------------
+Approximate distance between 2 probability distributions with logs
+in terms of weighted average distance represented as bits
+
 
 
 
