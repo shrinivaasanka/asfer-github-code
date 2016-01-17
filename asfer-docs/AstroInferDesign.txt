@@ -785,7 +785,7 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
 ###############################################################################################################################################
 
 
-25. Approximating with some probability distribution - Gaussian, Binomial etc., that model the probability of occurence of a datapoint in the set
+25. (FEATURE - DONE) Approximating with some probability distribution - Gaussian, Binomial etc., that model the probability of occurence of a datapoint in the set. Kullback-Leibler Divergence python implementation which computes distance in terms of amount of bits between two probability distribution has been added to python-src/. Minimum of the distance for different standard distributions with a dataset is the closest distribution approximation for the dataset.
 
 (FEATURE - DONE) 26. Streaming algorithms - Finding Frequency moments, Heavy Hitters(most prominent items), Distinct Elements etc., in the numerical dataset. Usually numerical data occur in streams making these best choice for mining numerical data. 
 (FEATURE - DONE) 26.1 Implementation of LogLog and HyperLogLog Counter(cardinality - distinct elements in streamed multiset), CountMinSketch (Frequencies and heavy hitters) and Bloom Filters(membership)
