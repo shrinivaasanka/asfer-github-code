@@ -796,11 +796,11 @@ References:
 -------------
 26.4 https://gist.github.com/debasishg/8172796 
 
-27. Usual Probabilistic Measures of Mean, Median, Standard Deviation, Curve fitting on the numeric data. 
+27. (FEATURE - DONE) Usual Probabilistic Measures of Mean, Median, Curve fitting on the numeric data. Python+RPy2+R implementation wrapper has been added to repository (python-src/Norms_and_Basic_Statistics.py)
 
 28. (FEATURE - DONE - using python, R+rpy2) Application of Discrete Fourier Transform(using R), LOESS(using R), Linear Polynomial Approximate Interpolation(using R), Logistic Regression and Gradient Descent
 
-29. Least Squares Method on datapoints y(i)s for some x(i)s such that f(x)~y needs to be found. Computation of L0, L1 and L2 norms.
+29. (FEATURE - DONE) Least Squares Method on datapoints y(i)s for some x(i)s such that f(x)~y needs to be found. Computation of L0, L1 and L2 norms. Python+RPy2+R implementation wrapper has been added to repository (python-src/Norms_and_Basic_Statistics.py)
 
 (FEATURE - DONE)30. K-Means and kNN Clustering(if necessary and some training data is available) - unsupervised and supervised clustering based on coordinates of the numerical dataset
 
