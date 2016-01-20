@@ -29,7 +29,7 @@ import rpy2.robjects as robj
 
 class Norms_and_Basic_Statistics:
 	def diff_elements(self,e):
-		return e[0]-e[1]
+		return abs(e[0]-e[1])
 
 	def compute_norm_median_statistics(self):	
 		f1=open("KLDivergence_Dataset2.txt")
@@ -45,6 +45,8 @@ class Norms_and_Basic_Statistics:
 		print xydiffmatrix
 		rnorm = robj.r['norm']
 		median = robj.r['median']
+		sd = robj.r['sd']
+		chisquared = robj.r['chisq.test']
 		norm=rnorm(xydiffmatrix,"O")
 		print "L1 norm"
 		print norm
@@ -66,6 +68,15 @@ class Norms_and_Basic_Statistics:
 		print "Median of :",dists1
 		mediany=median(robj.FloatVector(dists1))
 		print mediany
+		print "Standard Deviation of :",dists0
+		sdx=sd(robj.FloatVector(dists0))
+		print sdx
+		print "Standard Deviation of :",dists1
+		sdy=sd(robj.FloatVector(dists1))
+		print sdy
+		chisq=chisquared(xydiffmatrix)
+		print "Chi-Squared Test:"
+		print chisq
 
 if __name__=="__main__":
 	nb=Norms_and_Basic_Statistics()
