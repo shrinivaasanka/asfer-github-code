@@ -38,7 +38,8 @@ class Norms_and_Basic_Statistics:
 		dists1=map(float,f2.read().split())
 		plotfn = robj.r['plot']
 		pdffn = robj.r['pdf']
-	
+		xyvec = robj.FloatVector(dists0+dists1)
+		xymatrix = robj.r.matrix(xyvec,len(dists0))
 		xydiff = map(self.diff_elements,zip(dists0,dists1))
 		xydiffvec = robj.FloatVector(xydiff)
 		xydiffmatrix = robj.r.matrix(xydiffvec,len(dists0))
@@ -74,10 +75,10 @@ class Norms_and_Basic_Statistics:
 		print "Standard Deviation of :",dists1
 		sdy=sd(robj.FloatVector(dists1))
 		print sdy
-		chisq=chisquared(xydiffmatrix)
+		chisq=chisquared(xymatrix)
 		print "Chi-Squared Test:"
 		print chisq
 
 if __name__=="__main__":
 	nb=Norms_and_Basic_Statistics()
-	nb.compute_norm_median_statistics()	
+	nb.compute_norm_median_statistics()
