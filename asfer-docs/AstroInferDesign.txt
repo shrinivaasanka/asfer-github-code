@@ -2995,7 +2995,7 @@ which grows as series = number_of_words*(1 + s + s^2 + s^3 + ... + s^t_max). Siz
 Recursive Gloss Overlap algorithm constructs a graph from text documents. Presently WordNet is probably the only solution available to
 get relations across words in a document. But the algorithm does not assume WordNet alone. Any future available algorithms to create relational graphs from texts should be able to take the place of WordNet. Evocation WordNet (http://wordnet.cs.princeton.edu/downloads/evocation.zip) is better than WordNet as it closely resembles a neural network model of a word evocative of the other word and has stronger psychological motivation. There have been efforts to combine FrameNet, VerbNet and WordNet into one graph. Merit of a document is independent of grammar and language in which it is written. For example a text in English and French with grammatical errors delving on the same subject are equivalently treated by this algorithm as language is just a pointer to latent information buried in a document. Process of Language Comprehension is a field of study in Cognitive and Psychological Linguistics. Problem with prestige based subjective rankings is that same document might get varied reviews from multiple sources and consensus with majority voting is required. This is somewhat contrary to commonsense because it assumes majority decision is correct 100% (this is exactly the problem analyzed by P(Good) binomial summation and majority voting circuits elsewhere in this document). In complexity parlance prestige rankings are in BP* classes. Objective rankings are also in BP* classes because of dependency on the framework like WordNet to extract relationships without errors, but less costlier than prestige rankings - major cost saving being lack of dependence on WWW link graph crawling to rank a document.
 
-Intuition for Recursive Gloss Overlap for weighing natural language texts is from computational linguistics, Eye-Movement tracking and Circuit of the Mind [Leslie Valiant]. Human process of comprehending language, recursion as an inherent trait of human faculty and evolution of language from primates to human is described in http://www.sciencemag.org/content/298/5598/1569, www.ncbi.nlm.nih.gov/pubmed/12446899 and http://ling.umd.edu/~colin/courses/honr218l_2007/honr218l_presentation7.ppt by [Hauser, NoamChomsky and Fitch] with an example part-of-speech recursive tree of a sentence. For example, a human reader's eye usually scans each sentence in a text document word by word left-to-right, concatenating the meanings of the words read so far. Usually such a reader assumes grammatical correctness (any grammatical anamoly raises his/her eyebrows) and only accrues the keyword meanings and tries to connect them through a meaninful path between words by thinking deep into meaning of each word. This is exactly simulated in Recursive Gloss Overlap graph where gloss overlaps connect the words recursively. Fast readers have reasonably high eye-movement, sometimes randomly. The varied degree of this ability to form an accurate connected visualization of a text probably differentiates people's intellectual wherewithal to draw inferences. From theory of computation perspective, recursive gloss overlap constructs a disambiguated Context Sensitive graph from Natural language text a superset of context free grammars. But natural languages are suspected to be subset of larger classes of context sensitive languages accepted by Linear Bounded Automata. Thus reverse engineering a text from the recursive gloss overlap graph may yield a language larger than natural languages. Information loss due to text-to-graph translation should only be grammatical ideally (e.g Parts of Speech, connectives etc.,) because for comparing two documents for information quality, grammar shouldn't be a factor unless there are fringe cases where missing grammar might change the meaning of a document. This fringe case should be already taken care of by preprocessing ingestion phase that proof-reads the document for grammar and part-of-speech. Recursive Gloss Overlap graph constructed with Semantic Net frameworks like WordNet, Evocation WordNet, VerbNet, FrameNet, ConceptNet, SentiWordNet etc., can be fortified by mingling Part-of-Speech trees for sentences in a document with already constructed graph. This adds grammar information to the text graph.
+Intuition for Recursive Gloss Overlap for weighing natural language texts is from computational linguistics, Eye-Movement tracking and Circuit of the Mind [Leslie Valiant]. Human process of comprehending language, recursion as an inherent trait of human faculty and evolution of language from primates to human is described in http://www.sciencemag.org/content/298/5598/1569, www.ncbi.nlm.nih.gov/pubmed/12446899 and http://ling.umd.edu/~colin/courses/honr218l_2007/honr218l_presentation7.ppt by [Hauser, NoamChomsky and Fitch] with an example part-of-speech recursive tree of a sentence. For example, a human reader's eye usually scans each sentence in a text document word by word left-to-right, concatenating the meanings of the words read so far. Usually such a reader assumes grammatical correctness (any grammatical anamoly raises his eyebrows) and only accrues the keyword meanings and tries to connect them through a meaningful path between words by thinking deep into meaning of each word. This is exactly simulated in Recursive Gloss Overlap graph where gloss overlaps connect the words recursively. Fast readers have reasonably high eye-movement, sometimes randomly. The varied degree of this ability to form an accurate connected visualization of a text probably differentiates people's intellectual wherewithal to draw inferences. From theory of computation perspective, recursive gloss overlap constructs a disambiguated Context Sensitive graph from Natural language text a superset of context free grammars. But natural languages are suspected to be subset of larger classes of context sensitive languages accepted by Linear Bounded Automata. Thus reverse engineering a text from the recursive gloss overlap graph may yield a language larger than natural languages. Information loss due to text-to-graph translation should only be grammatical ideally (e.g Parts of Speech, connectives etc.,) because for comparing two documents for information quality, grammar shouldn't be a factor unless there are fringe cases where missing grammar might change the meaning of a document. This fringe case should be already taken care of by preprocessing ingestion phase that proof-reads the document for grammar and part-of-speech. Recursive Gloss Overlap graph constructed with Semantic Net frameworks like WordNet, Evocation WordNet, VerbNet, FrameNet, ConceptNet, SentiWordNet etc., can be fortified by mingling Part-of-Speech trees for sentences in a document with already constructed graph. This adds grammar information to the text graph.
 
 Psycholinguistics have the notion of event related potentials - when brain reacts excessively to anamolous words in neural impulses. Ideal intrinsic merit rankings should also account for such ERP data to distinguish unusual sentences, but datasets for ERPs are not widely accessible except SentiWordNet. Hence Recursive Gloss Overlap is the closest possible for comparative study of multiple documents that ignores parts-of-speech, subjective assessments and focuses only on intrinsic information content and relatedness.
 
@@ -3013,6 +3013,8 @@ References:
 202.6 Computational Psycholinguistics - PoS Parsers - http://www.coli.uni-saarland.de/~crocker/courses/comp_psych/comp_psych.html
 202.7 Brain Data for Psycholinguistics - http://personality.altervista.org/docs/14yg-al_brainsent@jlcl.pdf
 202.8 ConceptNet 5 - http://conceptnet5.media.mit.edu/
+202.9 Sanskrit WordNet - http://www.cfilt.iitb.ac.in/wordnet/webswn/
+202.10 IndoWordNet - http://www.cfilt.iitb.ac.in/indowordnet/index.jsp
 
 --------------------------------------------------------------------------------------------------------------------
 203. Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
@@ -3121,6 +3123,43 @@ Implementation for basic statistics - L1, L2 norms, median etc.,
 ------------------------------------------------------------------------------------------------------------------------
 - Updated AsFer Design Document for Psycholinguistics of Reading a Text document and Recursive Gloss Overlap
 - Added Standard Deviation and Chi-Squared Test R functions to python-src/Norms_and_Basic_Statistics.py
+
+-----------------------------------------------------------------------------------------------------------------------
+216. (THEORY) Psycholinguistic Functional Programming simulation of Human Reader Eye Movement Tracking and its
+special setting application in Recursive Gloss Overlap
+-----------------------------------------------------------------------------------------------------------------------
+Example sentence:
+California Gas Leak Exposes Growing Natural Gas Risks.
+
+A left-right scan of the human reading groups the sentence into set of phrases and connectives and grows top-down gloss overlap graphs:
+p1 - California Gas Leak
+p2 - Exposes
+p3 - Growing Natural Gas Risks
+
+For each phrase left-right, meaning is created by recursive gloss overlap disambiguated graph construction top-down (graph is constructed left-right, top-down):
+p1 - graph g1
+p2 - graph g2
+p3 - graph g3
+
+Prefix graph construction and functional programming:
+Above sentence has three prefix phrases and graphs- p1, p1-p2, p1-p2-p3 in order (and g1, g1-g2, g1-g2-g3). As reader scans the sentence, meaning is built over time period by lambda function composition.  Function f1 is applied to g1,g2 - f1(g1,g2) - f1(g1(California Gas Leak), g2(Exposes)) - which returns a new graph for prefix p1-p2.  Function f2 is applied to f1(g1,g2) and g3 - f2(f1(g1,g2),g3(Growing Natural Gas Risks)) - which returns a new graph for sentence p1-p2-p3. This is recursively continued and above example can be generalized to arbitrarily long sentences.
+
+This formulation does not depend on just semantic graphs - graphs g1,g2 and g3 could be functional programming subroutines too, which makes f2(f1(g1,g2),g3) as one complete function composition tree. In previous example, for each phrase a function is defined and finally they are composed:
+p1 - function g1  - california_gas_leak()
+p2 - function g2  - exposes()
+p3 - function g3  - growing_natural_gas_risks()
+f3 = f2(f1(g1,g2),g3)
+
+How functions f1,f2,g1,g2,g3 are internally implemented is subjective. These functions are dynamically created and evaluated on the fly. Grouping sentences into phrases and connectives has to be a preprocessing step that uses PoS NER tagger - even a naive parsing for language connectives should suffice. There functions themselves might invoke smaller subroutines internally which build meaning and return to previous level. Recursive Gloss Overlap implements a special case of this where f1,f2 are gloss overlap functions and g1,g2,g3 are wordnet subgraphs. Its Spark implementation does a "Parallel-Read, Top-Down Graph construction" as against left-right read. In a more generic alternative, these functions could be deep learning neural networks, LISP subroutines etc., that compute "meaning" of the corresponding phrase. If the reading is not restricted to left-right, the composition tree should ideally look like a balanced binary tree per sentence. This is a kind of "Mind-Grows-Functions" formalism similar to the Mind-Grows-Circuit paradigm in [Rina Panigrahy, Li Zhang] - http://arxiv.org/pdf/1203.0088v2.pdf. It is questionable as to what does "Meaning" mean - is it a graph, neural electric impulse in brain etc., and the question itself is self-referencing godel sentence: What is meant by meaning? - which may not have answers in an axiomatic system because word "meaning" has to be defined by something more atomic than "meaning" itself.
+
+--------------------------------------------------------------------------------------
+Commits as on 21 January 2016
+--------------------------------------------------------------------------------------
+- Corrected Chi-squared test input args
+- logs added to testlogs/
+
+
+
 
 
 
