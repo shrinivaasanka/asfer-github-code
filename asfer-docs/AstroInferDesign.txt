@@ -356,7 +356,7 @@ Therefore, for stability any voter boolean function in P(Good) RHS should not ha
 
 (16) "How much increasing sets are positively correlated" by [Talagrand] - http://boolean-analysis.blogspot.in/2007/03/how-much-are-increasing-sets-positively.html - defines the inequality (Chang's Level-1 inequality):
 	Weight(f) = sum_1_to_n(fouriercoeff(i)) <= O(mean^2*1/log(mean)) 
-where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). Related to this, point (20) is derived from Plancherel's theorem which equates E(f(x)g(x)) to summation(f_fourier(x)g_fourier(y)). But stability is E(f(x)f(y/x-correlated). The noise operator E(f(y)) is introduced for each monomial in fourier series by which E(monomial(S)) = (rho^|S|*fourier_f(S)). E(f(y)) is thus equivalent to a new boolean function g(x) for which Plancherel formula can be applied - E(f(x)E(f(y))) = summation(rho^|S|*fourier_f(S)^2) = Noise stability. First derivative of Stability wrt rho at rho=0 is Weight(f) - in other words this connects pseudorandomness with stability of a boolean function in terms of fourier coefficients.
+where Weight of boolean function f in n variables is the sum of squares of n fourier coefficients and mean is Pr(f(x)=1)-(Pr(f(x)=-1). This is alternatively defined as derivative of stability of f wrt rho at rho=0. This measure intuitively quantifies how Pr(f(x)=f(y)) changes as x becomes increasingly correlated with y (due to random flips). Related to this, point (20) is derived from Plancherel's theorem which equates E(f(x)g(x)) to summation(f_fourier(x)g_fourier(y)). But stability is E(f(x)f(y/x-correlated)). The noise operator E(f(y)) is introduced for each monomial in fourier series by which E(monomial(S)) = (rho^|S|*fourier_f(S)). E(f(y)) is thus equivalent to a new boolean function g(x) for which Plancherel formula can be applied - E(f(x)E(f(y))) = summation(rho^|S|*fourier_f(S)^2) = Noise stability. First derivative of Stability wrt rho at rho=0 is Weight(f) - in other words this connects pseudorandomness with stability of a boolean function in terms of fourier coefficients.
 
 (17) By Majority is Stablest Theorem if P(Good) RHS is a boolean function composition of Maj*Maj=Majn(Maj1,Maj2,...,Majn) then its stability is derived as:
    (1-2/pi * arccos(rho))*(1-2/pi * arccos(rho)) assuming that stability of the composition is the product like other measures
@@ -396,6 +396,20 @@ Open question: If Percolation Boolean Functions are 100% noise stable (as in inf
 	summation( rho^k * W^k ) for all degree-k weights where W = summation(fourier_coeff(S)^2) for all |S|, S in [n]
 
 (21) Variant 1 of Percolation as a Judge boolean function is defined in 53.4 below which is in non-uniform NC1. If this is 100% noise stable judge boolean function for LHS and RHS noise stability also converges to 100%, then there is a non-uniform NC1 circuit for RHS PH-complete or EXP-complete DC uniform circuit. This gives a non-uniform algorithm for an RHS uniform circuit. Variant 2 of Percolation in 53.5 as Judge boolean function is also in non-uniform NC1 subject to 100% noise stability condition. In 53.6 a sorting network based circuit is described for Percolation boolean function.
+
+(22) Also from Theorem 5.17 - [RyanODonnell] - http://analysisofbooleanfunctions.org/ - for any rho in [0,1], Stability of Infinite Majority is bounded as:
+	2/pi*arcsin ρ ≤ Stabρ[Majn] ≤ 2/pi*arcsin ρ + O(1/(sqrt(1-rho^2)*sqrt(n))).
+
+(23) Peres' Theorem rephrases above bound for NoiseStability in terms of NoiseSensitivity for class of uniform noise stable linear threshold functions f (which includes Majority):
+	NoiseSensitivityδ[f] ≤ O(sqrt(δ))
+
+(24) From http://arxiv.org/pdf/1504.03398.pdf: [Boppana-Linial-Mansour-Nisan] theorem states that influence of a boolean function f of size S and depth d is:
+	Inf(f) = O((logS)^d-1)
+
+(25) [Benjamini-Kalai-Schramm] Conjecture (different from Majority is least stable BKS conjecture which is still open) is the converse of above that states:
+Every monotone boolean function f can be epsilon (e) approximated by a circuit of depth d and of size exp((K(e)*Inf(f))^1/(d−1)) for some constant K(e). This conjecture was disproved by [ODonnell-Wimmer] and strengthened in http://arxiv.org/pdf/1504.03398.pdf.
+
+(26) Class of uniform noise stable LTFs in (23) are quite apt for Voter Boolean Functions in the absence of 100% noise stable functions, which place an upperlimit on decision error. Depth hierarchy theorem in http://arxiv.org/pdf/1504.03398.pdf separates on what fraction, 2 circuits of varying depths agree in outputs.
 
 ----------------------
 Additional References:
@@ -920,6 +934,8 @@ P(Good) RHS is in PH if depth restricted and in EXP if depth unrestricted. LHS i
 Each Voter can be thought of as simulator of both adversaries in Chess i.e Voter TQBF has two sets of inputs x1,x2,x3,... and y1,y2,y3,... Each xi is a move of adversary1-simulated-by-voter while each yi is a move of adversary2-simulated-by-voter. Voter thus makes both sides of moves and votes for x or y depending on whichever simulation wins. Thus there is a reduction from generalized Chess EXP-complete problem to Voter Judge Boolean Function (special cases of Chess with n constant are PSPACE-complete). Hence RHS is a Majority(n) boolean function composed with EXP-complete Judge Boolean Function (assumption: voters vote in parallel). When P(Good) summation converges to 1(i.e Judge Boolean Function has zero noise and 100% stability existence of which is still an open problem), LHS is an EXP-complete algorithm for RHS which is harder than EXP-complete - it is still quite debatable as to how to affix notation to above RHS - probably it is P/EXP(access to an oracle circuit) or P*EXP(composition).RHS of P(Good) belongs to a family of hardest of boolean functions. [Kabanets - http://www.cs.sfu.ca/~kabanets/papers/thes-double.pdf] describes various classes of hard boolean functions and Minimum Circuit Size Problem [is there a circuit of size at most s for a boolean function f] and also constructs a read-once(each variable occurs once in the branching) branching program hard boolean function [Read-Once Branching Programs - http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/RWY97/proc.pdf, Bounded Width polysize Branching Programs and non-uniform NC1 - http://www.complexity.ethz.ch/education/Lectures/ComplexityHS10/ScriptChapterTwelve] . In a general setting, RHS of P(Good) summation is m-EXP-complete (staircase exponents). RHS always has a fixed complexity class (PH-complete or EXP-complete or NEXP-complete if RHS is non-deterministically evaluated) while only complexity class of LHS changes due to pseudorandomly chosen Judge Boolean Function.
 
 A special case of Complexity of Quantified 3-CNF Boolean Forumlas is analyzed in http://eccc.hpi-web.de/report/2012/059/download/ - if 3CNF quantified boolean formulas of n variables and poly(n) size can be decided in 2^(n-n^(0.5+e)) time deterministically, NEXP is not contained in NC1/poly. This has direct implications for P(Good) majority voting circuit - if LHS is 100% noise stable NC1/poly percolation boolean function circuit and RHS is Quantified 3-CNF QBFs as Judge Boolean Functions decidable in 2^(n-n^(0.5+e)) time then, since NEXP in RHS can not have NC1/poly circuits, RHS P(Good) summation shouldn't be equal to LHS which implies that RHS NEXPTIME Quantified 3-CNF decidable in 2^(n-n^(0.5+e)) time cannot be 100% noise stable. There are other NEXP-complete problems viz., Succinct 3-SAT. The 100% noise stability regime for percolation boolean function is described in [http://arxiv.org/pdf/1102.5761.pdf - page 68]
+
+Depth Hierarchy Theorem ,a recent result in 2015 in http://arxiv.org/pdf/1504.03398.pdf proved PH to be infinite relative to some and random oracles i.e PH does not collapse with respect to oracles, which mounts the evidence in favour of non-existence of PH-Complete problems, but does not rule them out.
 
 ---------------------------------------------------------------------------------------------------------------
 53.3 (THEORY- *IMPORTANT* ) Conditions for complexity classes of LHS and RHS of P(Good) summation being equated
@@ -2684,11 +2700,6 @@ Mars , Mercury , Venus ,
 
 Above are excerpts from the logs added to testlogs/ for Sequence mined from HURDAT2 dataset for hurricanes from 1851 to 2012. Similar to the sequence mining done for Earthquake datasets, some of the mined sequences above are strikingly similar to astronomical conjunctions already mentioned in few astrological classics (E.g Sun-Mercury-Venus - the legendary Sun flanked by Mercury and Venus, Mercury-Venus) and many others look quite new (e.g prominence of Venus-Saturn). Though these correlations can be dismissed as coincidental, these patterns are output automatically through a standard machine learning algorithm like Sequence Mining on astronomical datasets without any non-scientific assumptions whatsoever. Scientific corroboration of the above might require knowhow beyond purview of computer science - e.g Oceanography, Gravitational Effects on Tectonic Geology etc.,
 
-------------------------------------------
-Update on 2 December 2015 - Chennai Rains:
-------------------------------------------
-A strong bout of Mined rules (11),(12),(13) and (25) above - Sun, Mercury, Venus, Saturn - occurs from 21 November 2015 till 15 January 2016 across 3 juxtaposed astronomical signs , with increased activity from 2 December 2015 and peaking at 7 December 2015 - 16 December 2015 and 27 December 2015 - 15 January 2016. Chennai seems to be feeling the brunt of this. [Friends and Relatives in My Beloved Chennai, Be safe. I pray God it stops. Unfortunately I am not in Chennai at present.Just an alert.]
-
 =================================================================================================================
 173. (FEATURE - DONE) BigData Storage Backend Abstraction subsystem for AsFer - Commits as on 5 November 2015 :
 -----------------------------------------------------------------------------------------------------------------
@@ -3130,8 +3141,7 @@ Implementation for basic statistics - L1, L2 norms, median etc.,
 - Added Standard Deviation and Chi-Squared Test R functions to python-src/Norms_and_Basic_Statistics.py
 
 -----------------------------------------------------------------------------------------------------------------------
-216. (THEORY) Psycholinguistic Functional Programming simulation of Human Reader Eye Movement Tracking and its
-special setting application in Recursive Gloss Overlap
+216. (THEORY) Recursive Lambda Function Growth Algorithm - Psycholinguistic Functional Programming simulation of Human Reader Eye Movement Tracking and its special setting application in Recursive Gloss Overlap
 -----------------------------------------------------------------------------------------------------------------------
 Example sentence:
 California Gas Leak Exposes Growing Natural Gas Risks.
@@ -3157,6 +3167,10 @@ f3 = f2(f1(g1,g2),g3)
 
 How functions f1,f2,g1,g2,g3 are internally implemented is subjective. These functions are dynamically created and evaluated on the fly. Grouping sentences into phrases and connectives has to be a preprocessing step that uses PoS NER tagger - even a naive parsing for language connectives should suffice. Return values of these functions are functions themselves - this is standard "First Class Object" concept in higher order lambda calculus - https://en.wikipedia.org/wiki/First-class_citizen . These functions themselves might invoke smaller subroutines internally which build meaning and return to previous level. Recursive Gloss Overlap implements a special case of this where f1,f2 are gloss overlap functions and g1,g2,g3 are wordnet subgraphs. Its Spark implementation does a "Parallel-Read, Top-Down Graph construction" as against left-right read. In a more generic alternative, these functions could be deep learning neural networks, LISP subroutines etc., that compute "meaning" of the corresponding phrase. If the reading is not restricted to left-right, the composition tree should ideally look like a balanced binary tree per sentence. This is a kind of "Mind-Grows-Functions" formalism similar to the Mind-Grows-Circuit paradigm in [Rina Panigrahy, Li Zhang] - http://arxiv.org/pdf/1203.0088v2.pdf. It is questionable as to what does "Meaning" mean - is it a graph, neural electric impulse in brain etc., and the question itself is self-referencing godel sentence: What is meant by meaning? - which may not have answers in an axiomatic system because word "meaning" has to be defined by something more atomic than "meaning" itself.
 
+As an ideal human sense of "meaning" stored in brain is vague and requires a "Consciousness and Freewill" theory, only a computation theoretic definition of meaning (i.e a circuit graph) is axiomatically assumed. Thus above lambda function composition is theoretically equivalent to boolean function composition (hence circuit composition). With this the above recursive lambda function growth algorithm bridges two apparently disconnected worlds - complexity theory and machine learning practice - and hence a computational learning theory algorithm only difference being it learns a generic higher-order lambda function (special case is recursive gloss overlap) from text alphabet strings rather than a boolean function from binary strings over {0,1} alphabet. Essentially every lambda function should have a circuit by Church-Turing thesis and its variants - Church-Turing thesis which states that any human computable function is turing-computable is still an axiom without proof on which computer science has been founded. Theoretically, concepts of noise sensitivity, influence which measure the probability of output change for flipped input should apply to this lambda function learning algorithm for text documents - For example typo or error in grammar that affects the meaning.
+
+Learning theory perspective of the previous - From Linial-Mansour-Nisan theorem , class of boolean functions of n variables with depth-d can be learnt in O(n^O(logn^d)) with 1/poly(n) error. Consequentially, Above Lambda Function Growth for depth d can be encoded as a circuit (a TC circuit in wordnet special case) that has n inputs where n are number of keywords in text (each word is boolean encoded to a binary string of constant length) and learnt in O(n^O(logn^d)) with 1/poly(n) error. This learning theory bound has striking resemblance to parallel Recursive Gloss Overlap bound of O(n1*d1*s^t_max/(g(n1)*f(d1))) for n1 documents with d1 keywords each on a cluster. Equating to LMN bound gives rise to interesting implication that average number of gloss per keyword = log(number_of_keywords) which is too high gloss size per word(other variables equated as n=d1,t_max=d). Therefore recursive gloss overlap could be faster than LMN learning algorithm.
+
 References:
 -----------
 216.1 Eye Movement Tracking - https://en.wikipedia.org/wiki/Psycholinguistics#Eye-movements
@@ -3168,6 +3182,10 @@ Commits as on 21 January 2016
 - Corrected Chi-squared test input args
 - logs added to testlogs/
 
+--------------------------------------------------------------------------------------
+Commits as on 27 January 2016
+--------------------------------------------------------------------------------------
+Updated Sections 14 and 216.
 
 
 
