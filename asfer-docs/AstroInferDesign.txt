@@ -3187,6 +3187,42 @@ Commits as on 27 January 2016
 --------------------------------------------------------------------------------------
 Updated Sections 14 and 216.
 
+--------------------------------------------------------------------------------------
+Commits as on 29 January 2016
+--------------------------------------------------------------------------------------
+-  Uncommented both commandlines in cpp-src/asferpythonembedding.sh
+------------------------------------------------------------------------------------------------------------
+(FEATURE - DONE)  Python-C++-VIRGOKernel and Python-C-VIRGOKernel boost::python and cpython implementations:
+-----------------------------------------------------------------------------------------------------------
+- It is a known idiom that Linux Kernel and C++ are not compatible.
+- In this commit an important feature to invoke VIRGO Linux Kernel from userspace python libraries via two alternatives have been added.
+- In one alternative, C++ boost::python extensions have been added to encapsulate access to VIRGO memory system calls - virgo_malloc(), virgo_set(), virgo_get(), virgo_free(). Initial testing reveals that C++ and Kernel are not too incompatible and all the VIRGO memory system calls work well though initially there were some errors because of config issues.
+- In the other alternative, C Python extensions have been added that replicate boost::python extensions above in C - C Python with Linux kernel
+works exceedingly well compared to boost::python.
+- This functionality is required when there is a need to set kernel analytics configuration variables learnt by AsFer Machine Learning Code
+dynamically without re-reading /etc/virgo_kernel_analytics.conf.
+- This completes a major integration step of NeuronRain suite - request travel roundtrip to-and-fro top level machine-learning C++/python
+code and rock-bottom C linux kernel - bull tamed ;-).
+- This kind of python access to device drivers is available for Graphics Drivers already on linux (GPIO - for accessing device states)
+- logs for both C++ and C paths have been added in cpp_boost_python_extensions/ and cpython_extensions.
+- top level python scripts to access VIRGO kernel system calls have been added in both directories:
+        CPython - python cpython_extensions/asferpythonextensions.py
+        C++ Boost::Python - python cpp_boost_python_extensions/asferpythonextensions.py
+- .so, .o files with build commandlines(asferpythonextensions.build.out) for "python setup.py build" have been added
+in build lib and temp directories.
+- main implementations for C++ and C are in cpp_boost_python_extensions/asferpythonextensions.cpp and cpython_extensions/asferpythonextensions.c
+
+- Schematic Diagram:
+--------------------
+        AsFer Python -----> Boost::Python C++ Extension ------> VIRGO memory system calls --------> VIRGO Linux Kernel Memory Drivers
+        /\                                                                                              V
+         |                                                                                              |
+         ---------------------------------------------<--------------------------------------------------
+        AsFer Python -----> CPython Extensions ------> VIRGO memory system calls --------> VIRGO Linux Kernel Memory Drivers
+         /\                                                                                             V
+         |                                                                                              |
+         ---------------------------------------------<--------------------------------------------------
+
 
 
 
