@@ -1,0 +1,197 @@
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.764157] read_virgo_config(): virgo_client.config file being read 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788969] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788969]  
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788979] tokenize_list_of_ip_addrs(): bufdup = 127.0.0.1,127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788979] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788983] tokenize_list_of_ip_addrs(): 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788988] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788991] tokenize_list_of_ip_addrs(): 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788991] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788995] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.788995] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789003] get_host_from_cloud_PRG_mempool() - get_random_int() returned 3539952792 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789006] get_host_from_cloud_PRG_mempool() range mapping for 2 cloud nodes(virgomemorypooling_num_cloud_nodes_client) returns random integer 0, host ip(nodes_ip_addrs_in_cloud): 127.0.0.1 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789010] get_least_loaded_hostport_from_cloud(): get_host_from_cloud_PRG_mempool() - cloud_host(before kstrdup): 127.0.0.1 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789013] get_least_loaded_hostport_from_cloud(): get_host_from_cloud_PRG_mempool() returns host ip: 127.0.0.1 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789016] virgo_malloc() syscall: leastloadedhostport->port=30000
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789019] virgo_malloc() syscall: leastloadedhostport->hostip=127.0.0.1<6>[  642.789024] virgo_malloc() syscall: after in4_pton and htons, leastloadedhostport->hostip=127.0.0.1, leastloadedhostport->port=30000, sin.sin_addr.s_addr=100007f, sin.sin_port=3075
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789028] virgo_malloc() syscall: size=100, sum_alloc_size=0 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789031] 2. virgo_malloc() syscall: size=100, sum_alloc_size=0, chunk_size==100
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789034] int_to_str(): n=100
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789037] int_to_str(): ret=[100]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789040] virgo_malloc() syscall: malloc_cmd=virgo_cloud_malloc(100), buf=virgo_cloud_malloc(100), tempbuf=virgo_cloud_malloc(100)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789055] virgo_malloc() syscall: created client kernel socket
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789224] virgo_malloc() syscall: sent len=3000; iov.iov_base=virgo_cloud_malloc(100), sent message: virgo_cloud_malloc(100), iovbuf=virgo_cloud_malloc(100) 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789250] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789254] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789344] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789349] virgocloudexec_mempool_create(): before kernel_accept(); sock=cb419c80 ... 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789352] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789356] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789361] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789365] strip_control_M(): str=virgo_cloud_malloc(100) before strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789368] strip_control_M(): newstr=virgo_cloud_malloc(100) after carriage return newline strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789372] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov_base=virgo_cloud_malloc(100), buffer: virgo_cloud_malloc(100)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789375] virgo_cloudexec_mempool: print_buffer(): 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789377] vi
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789381] rg
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789384] o_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789388] cl
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789391] ou
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789394] d_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789398] ma
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789401] ll
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789404] oc
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789408] (1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789411] 00
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.789414] )<6>[  642.790164] <6>[  642.790825] <6>[  642.791719] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791722] tokenize_list_of_ip_addrs(): 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791722] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791726] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791726] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791730] virgo_get() system call: before virgo_unique_id_to_addr()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791734] virgo_unique_id_to_addr(): vaddr=c1bd4e80, virgo_unique_id=3250409088
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791737] virgo_get() system call: vuid=-1044558208, virgo address to retrieve data from is vaddr=c1bd4e80
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791742] addr_to_str(): addr=f1212a80
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791744] addr_to_str(): ret=[f1212a80]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791748] virgo_get() system call: tempbuf=virgo_cloud_get(f1212a80), buf=virgo_cloud_get(f1212a80), virgo_get_cmd=virgo_cloud_get(f1212a80)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791751] virgo_get() system call: iov.iov_base=virgo_cloud_set(f1212a80,key1:value1)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791758] virgo_get() syscall: created client kernel socket
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791839] virgo_get() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base=virgo_cloud_get(f1212a80)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791839]  
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791856] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791860] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791871] virgo_get() syscall: sent message: virgo_cloud_get(f1212a80) 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791905] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791909] virgocloudexec_mempool_create(): before kernel_accept(); sock=cb419c80 ... 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791913] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791916] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791921] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791925] strip_control_M(): str=virgo_cloud_get(f1212a80) before strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791928] strip_control_M(): newstr=virgo_cloud_get(f1212a80) after carriage return newline strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791931] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov_base=virgo_cloud_get(f1212a80), buffer: virgo_cloud_get(f1212a80)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791934] virgo_cloudexec_mempool: print_buffer(): 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791936] vi
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791940] rg
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791943] o_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791947] cl
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791950] ou
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791953] d_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791957] ge
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791960] t(
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791963] f1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791967] 21
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791970] 2a
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791973] 80
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.791977] )<6>[  642.794049] mempool_func(): creating kernel thread and waking up, parameterIsExecutable=2
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794058] Creating Kernel Thread for virgo_cloud_get in virgo_cloud_mempool_kernelspace mempool driver module with mempool_args[0]=f1212a80, mempool_args[1]=(null)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794066] virgo_cloud_mempool_kernelspace.c:Executing virgo_cloud_mempool on cloud node, Invoking virgo_cloud_get_kernelspace(), Writing to file opened by Kernel, Kernel Space to User space communication works
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794074] virgo_parse_integer(): *s=f, res=0
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794081] virgo_parse_integer(): *s=1, res=15
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794087] virgo_parse_integer(): *s=2, res=241
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794093] virgo_parse_integer(): *s=1, res=3858
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794100] virgo_parse_integer(): *s=2, res=61729
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794107] virgo_parse_integer(): *s=a, res=987666
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794113] virgo_parse_integer(): *s=8, res=15802666
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794119] virgo_parse_integer(): *s=0, res=252842664
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794129] toKernelAddress(): virgo_parse_integer: ll3=-249484672, (char*)ll3=  (null), (void*)ll3=f1212a80, strAddress=[key1:value1]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794136] toKernelAddress(): virgo_parse_integer: data at (char*)ll3=[key1:value1]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794143] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): data at ptr parsed by toKernelAddress() = [key1:value1]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794153] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): address=f1212a80, data=key1:value1, data with added prefix=virgodata:key1:value1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794160] mempool_func(): virgo mempool kernelspace module returns value virgo_mempool_ret=f37b7880
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794168] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_sendto()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794175] virgocloudexec_mempool_sendto(): virgo_mempool_ret=virgodata:key1:value1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794182] virgocloudexec_mempool_sendto(): data sent=key1:value1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794189] virgocloudexec_mempool_sendto(): before kernel_sendmsg() for send buffer: key1:value1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794220] virgocloudexec_mempool_sendto(): kernel_sendmsg() returns ret: 500
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794249] virgo_get() syscall: received message: key1:value1 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794255] virgo_get() syscall: le32_to_cpus(buf): virgo_cloud_get(f1212a80) 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794262] virgo_get() system_call: before data_out memcpy()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794268] virgo_get() system_call: after data_out memcpy()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794274] virgo_get() syscall:  data_out=key1:value1�PDN	R0
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794291] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 1: 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794299] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 2: 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794299] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794307] read_virgo_config(): virgo_client.config file being read 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794318] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794318]  
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794327] tokenize_list_of_ip_addrs(): bufdup = 127.0.0.1,127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794327] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794334] tokenize_list_of_ip_addrs(): 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794341] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794349] tokenize_list_of_ip_addrs(): 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794349] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794357] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794357] 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794365] virgo_unique_id_to_addr(): vaddr=c1bd4e80, virgo_unique_id=3250409088
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794372] addr_to_str(): addr=f1212a80
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794379] addr_to_str(): ret=[f1212a80]
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794387] virgo_free() system call: tempbuf=-972835868, buf=virgo_cloud_free(f1212a80), free_cmd=virgo_cloud_free(f1212a80) 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794394] virgo_free() system call: iov.iov_base=key1:value1
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794405] virgo_free() syscall: created client kernel socket
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794487] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794494] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794510] virgo_free() syscall: connected kernel client to virgo cloudexec kernel service
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794510]  
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794544] virgo_free() syscall: sent message: virgo_cloud_free(f1212a80) 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794577] virgocloudexec_mempool_sendto(): sock_release invoked on client socket 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794639] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794643] virgocloudexec_mempool_create(): before kernel_accept(); sock=cb419c80 ... 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794651] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794653] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794658] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794661] strip_control_M(): str=virgo_cloud_free(f1212a80) before strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794664] strip_control_M(): newstr=virgo_cloud_free(f1212a80) after carriage return newline strsep
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794668] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov_base=virgo_cloud_free(f1212a80), buffer: virgo_cloud_free(f1212a80)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794670] virgo_cloudexec_mempool: print_buffer(): 
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794673] vi
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794677] rg
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794680] o_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794683] cl
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794687] ou
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794690] d_
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794693] fr
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794696] ee
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794700] (f
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794703] 12
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794706] 12
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794710] a8
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794713] 0)
+Jan 29 13:55:45 shrinivaasanka-Inspiron-1545 kernel: [  642.794716] <6>[  642.795134] 
+                                                                                      �
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.795137] �<4>[  642.797518] Modules linked in: virgo_cloudexec_mempool(OE+) virgo_cloud_mempool_kernelspace(OE) ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt cfg80211 nf_conntrack_ipv6 nf_defrag_ipv6 ipt_REJECT btusb nf_reject_ipv4 btbcm btintel nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype nf_conntrack_ipv4 nf_defrag_ipv4 xt_conntrack ip6table_filter ip6_tables nf_conntrack_netbios_ns nf_conntrack_broadcast nf_nat_ftp nf_nat i915 gpio_ich nf_conntrack_ftp dell_wmi nf_conntrack sparse_keymap snd_hda_codec_idt snd_hda_codec_generic snd_hda_intel iptable_filter snd_hda_controller ip_tables uvcvideo x_tables dell_laptop snd_hda_codec dcdbas i8k snd_hda_core videobuf2_vmalloc bnep snd_hwdep rfcomm coretemp videobuf2_memops snd_pcm videobuf2_core joydev v4l2_common videodev snd_seq_midi bluetooth serio_raw snd_seq_midi_event snd_rawmidi snd_seq media lpc_ich snd_seq_device mac_hid wmi snd_timer snd drm_kms_helper soundcore drm shpchp parport_pc i2c_algo_bit ppdev video lp parport binfmt_misc hid_generic usbhid hid ums_realtek uas usb_storage sky2 psmouse ahci libahci
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] CPU: 1 PID: 5262 Comm: virgo memorypoo Tainted: G           OE   4.1.5 #15
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] task: f37d9940 ti: c60b2000 task.ti: c60b2000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] EIP: 0060:[<c13528b1>] EFLAGS: 00010206 CPU: 1
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] EIP is at strncmp+0x11/0x30
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] EAX: 00000000 EBX: c60b3d18 ECX: 00000009 EDX: f8667230
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] ESI: 00000000 EDI: f8667230 EBP: c60b3cfc ESP: c60b3cf4
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] CR0: 8005003b CR2: 00000000 CR3: 34d561c0 CR4: 000406f0
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] Stack:
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  cb419680 00000000 c60b3f58 f8665ac7 f8666f68 00000000 00000000 c60b3d54
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  000001f4 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] Call Trace:
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<f8665ac7>] virgocloudexec_mempool_sendto+0x77/0x190 [virgo_cloudexec_mempool]
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c134f95c>] ? number.isra.13+0x35c/0x370
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c1350b9b>] ? vsnprintf+0x24b/0x3b0
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c1350dec>] ? sprintf+0x1c/0x20
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b54c3>] ? print_time.part.12+0x73/0xb0
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b555e>] ? print_prefix+0x5e/0xb0
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b769d>] ? console_unlock+0x2ed/0x500
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b540d>] ? log_store+0x1cd/0x210
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b7bc6>] ? vprintk_emit+0x316/0x580
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<f8665000>] ? 0xf8665000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<f8665000>] ? 0xf8665000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<f866503b>] virgo_mempool_client_thread+0x3b/0x50 [virgo_cloudexec_mempool]
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c10818cb>] kthread+0x9b/0xb0
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c17095c1>] ret_from_kernel_thread+0x21/0x30
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054]  [<c1081830>] ? kthread_create_on_node+0x110/0x110
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] Code: 31 c0 eb 04 19 c0 0c 01 5e 5f 5d c3 8d b4 26 00 00 00 00 8d bc 27 00 00 00 00 55 89 e5 57 56 66 66 66 66 90 89 c6 89 d7 49 78 08 <ac> ae 75 08 84 c0 75 f5 31 c0 eb 04 19 c0 0c 01 5e 5f 5d c3 8d
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] EIP: [<c13528b1>] strncmp+0x11/0x30 SS:ESP 0068:c60b3cf4
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.800054] CR2: 0000000000000000
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: [  642.827322] ---[ end trace 2e885c868297b6d2 ]---
+Jan 29 13:55:46 shrinivaasanka-Inspiron-1545 kernel: 

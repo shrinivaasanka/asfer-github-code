@@ -1,0 +1,19 @@
+running build
+running build_ext
+building 'asfer_virgo_pyext' extension
+i686-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c asferpythonextensions.cpp -o build/temp.linux-i686-2.7/asferpythonextensions.o
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+asferpythonextensions.cpp: In function ‘void asfer_virgo_set_kernel_analytics(char*, char*)’:
+asferpythonextensions.cpp:56:24: warning: unused variable ‘vaddr’ [-Wunused-variable]
+  struct virgo_address* vaddr;
+                        ^
+asferpythonextensions.cpp:64:7: warning: unused variable ‘set_data’ [-Wunused-variable]
+  char set_data[256];
+       ^
+asferpythonextensions.cpp:69:7: warning: unused variable ‘set_ret’ [-Wunused-variable]
+  long set_ret=syscall(361,virgo_unique_id,"key1:value1");
+       ^
+asferpythonextensions.cpp:73:7: warning: unused variable ‘get_ret’ [-Wunused-variable]
+  long get_ret=syscall(362,virgo_unique_id,get_data);
+       ^
+c++ -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-i686-2.7/asferpythonextensions.o -lboost_python -o build/lib.linux-i686-2.7/asfer_virgo_pyext.so
