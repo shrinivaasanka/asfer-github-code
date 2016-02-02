@@ -48,16 +48,11 @@ static PyObject* asfer_virgo_set_kernel_analytics(PyObject* self, PyObject* args
 {
 	/* VIRGO malloc system calls to set the key-value pairs */
 	
-	char key[30];
-	char value[30];	
-	/*
-	if (!PyArg_ParseTuple(args, "s", &key))
-		return NULL;
-	if (!PyArg_ParseTuple(args, "s", &value))
+	char keyvalue[80];
+	if (!PyArg_ParseTuple(args, "s", keyvalue))
 		return NULL;
 	
-	printf("asfer_virgo_set_kernel_analytics(): %s %s \n",key,value);
-	*/
+	printf("asfer_virgo_set_kernel_analytics(): %s \n",keyvalue);
 	
 	struct virgo_address* vaddr;
 	unsigned long virgo_unique_id=3250409088u;
@@ -66,23 +61,21 @@ static PyObject* asfer_virgo_set_kernel_analytics(PyObject* self, PyObject* args
 	syscall(360,100,&virgo_unique_id);
 
 	/* virgo_set */
+	printf("asfer_virgo_set_kernel_analytics(): keyvalue: %s\n",keyvalue);
+	long set_ret=syscall(361,virgo_unique_id,keyvalue);
 	/*
-	char set_data[256];
-	strcpy(set_data,key);
-	strcpy(set_data,":");
-	strcpy(set_data,value);
-	printf("asfer_virgo_set_kernel_analytics(): set_data: %s\n",set_data);
-	long set_ret=syscall(361,virgo_unique_id,set_data);
-	*/
 	long set_ret=syscall(361,virgo_unique_id,"key1:value1");
+	*/
 
 	/* virgo_get */
 	char get_data[256];
 	long get_ret=syscall(362,virgo_unique_id,get_data);
 
 	/* virgo_free */
+	/*
 	long free_ret=syscall(363,virgo_unique_id); 
-	Py_RETURN_NONE;
+	*/
+        return Py_BuildValue("l",virgo_unique_id);
 }
 
 static char py_add_doc[]="asfer_virgo_set_kernel_analytics";
