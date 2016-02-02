@@ -3258,22 +3258,22 @@ References:
 216.2 Eye Movements in Text Comprehension - Fixations, Saccades, Regressions - http://www.jove.com/video/50780/using-eye-movements-to-evaluate-cognitive-processes-involved-text
 
 --------------------------------------------------------------------------------------
-Commits as on 21 January 2016
+217. Commits as on 21 January 2016
 --------------------------------------------------------------------------------------
 - Corrected Chi-squared test input args
 - logs added to testlogs/
 
 --------------------------------------------------------------------------------------
-Commits as on 27 January 2016
+218. Commits as on 27 January 2016
 --------------------------------------------------------------------------------------
 Updated Sections 14 and 216.
 
 --------------------------------------------------------------------------------------
-Commits as on 29 January 2016
+219. Commits as on 29 January 2016
 --------------------------------------------------------------------------------------
 -  Uncommented both commandlines in cpp-src/asferpythonembedding.sh
 ------------------------------------------------------------------------------------------------------------
-217. (FEATURE - DONE)  Python-C++-VIRGOKernel and Python-C-VIRGOKernel boost::python and cpython implementations:
+220. (FEATURE - DONE)  Python-C++-VIRGOKernel and Python-C-VIRGOKernel boost::python and cpython implementations:
 -----------------------------------------------------------------------------------------------------------
 - It is a known idiom that Linux Kernel and C++ are not compatible.
 - In this commit an important feature to invoke VIRGO Linux Kernel from userspace python libraries via two alternatives have been added.
@@ -3303,6 +3303,15 @@ in build lib and temp directories.
          /\                                                                                             V
          |                                                                                              |
          ---------------------------------------------<--------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------
+221. Commits as on 2 February 2016
+----------------------------------------------------------------------------------------------------------------
+- Uncommented PyArg_ParseTuple() to read in the key-value passed from Python layer
+- Unified key-value in Python layer and within CPython code with : delimiter
+- added Py_BuildValue() to return vuid - VIRGO Unique ID - to python and commented virgo_free() so that a parallel code
+can connect to kmem cache and do a virgo_get on this vuid - this is a precise scenario where Read-Copy-Update fits in so that
+multiple versions can co-exist at a time
 
 
 
