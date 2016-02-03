@@ -3313,6 +3313,71 @@ in build lib and temp directories.
 can connect to kmem cache and do a virgo_get on this vuid - this is a precise scenario where Read-Copy-Update fits in so that
 multiple versions can co-exist at a time
 
+----------------------------------------------------------------------------------------------------------------
+222. (THEORY) Recursive Lambda Function Growth Algorithm - 216 elaborated with examples
+----------------------------------------------------------------------------------------------------------------
+Boolean function learning and PAC learning are special cases of this Lambda function learning algorithm because any
+intermediate lambda function can be a boolean function too.
+
+Algorithms steps for English Natural Language Procssing - Parallel read:
+------------------------------------------------------------------------
+- Approximate midpoint of the sentence is known apriori
+- Language specific connectives are known apriori (e.g is, was, were, when, who etc.,)
+- Sentence is recursively split into phrases and connectives and converted into lambda functions with balanced number of nodes in left and right subtrees
+- Root of each subtree is unique name of the function
+
+Example Sentence1:
+-----------------
+PH is infinite relative to random oracle.
+
+Above sentence is translated into a lambda function composition tree as:
+relative(is(PH, infinite), to(random,oracle))) which is a tree of depth 3
+
+In this example every word and grammatical connective is a lambda function that takes some arguments and returns a partial "purport" or "meaning" of that segment of sentence. These partial computations are aggregated bottom-up and culminate in root.
+
+Example Sentence2:
+-----------------
+Farming and Farmers are critical to success of a country like India.
+
+Above sentence is translated into a lambda function composition tree as:
+Critical(are(and(Farming,Farmers)), a(success(to,of), like(country, India)))
+
+This composition is slightly different from Part-of-Speech trees and inorder traversal of the tree yields original sentence.
+As functions are evaluated over time period, at any time point there is a partially evaluated composition prefix tree which operates on
+rest of the sentence to be translated yet - these partial trees have placeholder templates that can be filledup by a future lambda function
+from rest of the sentence.
+
+Each of these lambda functions can be:
+- Boolean functions
+- Neural networks
+- Belief propagated potentials assigned by a dictionary of English language and computed bottom-up
+
+The language of Sanskrit with Panini's Grammar fits the above lambda calculus framework well because Sanskrit case endings and sentence meaning is independent of word orderings. For example following sentence in Sanskrit:
+	Sambhala Grama Mukhyasya VishnuYashas Mahatmana: ... ( Chieftain of Sambhala Village, Vishnuyashas the great ...)
+
+can be rearranged and shuffled without altering the meaning a precise requisite for lambda function composition tree representation of a 
+sentence which is tantamount to re-ordering of parameters of a lambda function.
+
+As an alternative to WordNet:
+----------------------------
+Each lambda function carries dictionary meaning of corresponding word with placeholders for arguments.
+For example, for word "Critical" corresponding lambda function is defined as:
+	Critical(x1,x2)
+If dictionary meanings of critical are defined with placeholders:
+	1) Disapproval of something -
+	2)  - is Important to something -
+there is a need for disambiguation and 2) has to be chosen based either on number of arguments or disambiguation using lesk algorithm or more sophisticated one. If Second meaning fits context then, lambda function Critical(x1,x2) returns:
+	x1 is important to something x2
+Thus WordNet can be replaced by something more straightforward. These steps can be recursed top-down to expand the meaning - in above example "important" might have to be lookedup in dictionary. This simulates basic human process of language learning and comprehension.
+
+This algorithm accepts natural languages that are between Context Free Languages and Context Sensitive Languages.
+
+References:
+222.1 Charles Wikner - Introductory Sanskrit - http://sanskritdocuments.org/learning_tutorial_wikner/
+222.2 Michael Coulson - Teach yourself - Sanskrit - http://www.amazon.com/Complete-Sanskrit-Teach-Yourself-Language/dp/0071752668)
+
+
+
 
 
 
