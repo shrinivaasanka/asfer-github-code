@@ -3380,7 +3380,26 @@ References:
 222.1 Charles Wikner - Introductory Sanskrit - http://sanskritdocuments.org/learning_tutorial_wikner/
 222.2 Michael Coulson - Teach yourself - Sanskrit - http://www.amazon.com/Complete-Sanskrit-Teach-Yourself-Language/dp/0071752668)
 
-
+-------------------------------------------------------------------------------------
+223. Commits as on 4 February 2016
+-------------------------------------------------------------------------------------
+ - Updated AsFer Design Document with more references for Discrete Hyperbolic Factorization in NC - PRAM-NC equivalence
+-------------------------------------------------------------------------------------------------
+C++ - Input Dataset Files nomenclature change for NeuronRain Enterprise
+-------------------------------------------------------------------------------------------------
+- 3 new input files cpp-src/asfer.enterprise.encstr, cpp-src/asfer.enterprise.encstr.clustered, cpp-src/asfer.enterprise.encstr.kNN
+have been added which contain set of generic binary strings for KMeans, KNN clustering and Longest Common Subsequence of a clustered set .
+- Code changes for above new input files have been done in asfer.cpp and new class(asferencodestr.cpp and asferencodestr.h) has been added
+for generic string dataset processing
+- Changes for generic string datasets have been done for kNN and KMeans clustering
+- logs for clustering and longest common subsequence have been added
+-------------------------------------------------------------------------------------------------
+Python - Input Dataset Files nomenclature change for NeuronRain Enterprise
+-------------------------------------------------------------------------------------------------
+- 1 new input file  python-src/asfer.enterprise.encstr.seqmining has been added for Sequence Mining of generic string dataset -
+presently contains set of generic binary strings .
+- Code changes for above new input files have been done in SequenceMining.py
+- logs for SequenceMining of binary strings with maximum subsequence length of 15 have been added
 
 
 
