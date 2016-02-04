@@ -42,14 +42,12 @@ class SequenceMining(object):
 
 #######################################################################
 	def doAprioriGSPSequenceMining(self):
-		inputf=open("asfer.enchoros.seqmining")
+		inputf=open("asfer.enterprise.encstr.seqmining")
 		input=inputf.readlines()
 
 		self.candidates[0]=[]
+		self.candidates.append(['0','1'])
 
-		# '#' delimiter can be added if necessary, but gives some meaningless subsequences
-		#self.candidates.append(['a','0','1','2','3','4','5','6','7','8','9','#'])
-		self.candidates.append(['a','0','1','2','3','4','5','6','7','8','9'])
 		candidate_support={}
 
 		self.F[0]=set()
@@ -60,7 +58,7 @@ class SequenceMining(object):
 					self.F[1].add(cand)	
 
 		length=1
-		maxlength=7
+		maxlength=15
 		print self.candidates
 		print self.F
 
@@ -92,28 +90,6 @@ class SequenceMining(object):
 		s = sorted(candidate_support.items(),key=operator.itemgetter(1), reverse=True)
 		print s
 
-		#Translate to text Class Association Rules
-		planet_names={'0':"Unoccupied",'1':"Sun",'2':"Moon",'3':"Mars",'4':"Mercury",'5':"Jupiter",'6':"Venus",'7':"Saturn",'8':"Rahu",'9':"Ketu",'a':"Ascendant"}
-
-		bhava_names=[]
-		zodiacaldataset=True
-		ascrelativedataset=False
-		if zodiacaldataset==True:
-		        bhava_names=["Aries","Taurus","Gemini","Cancer","Leo","Virgo","Libra","Scorpio","Sagittarius","Capricorn","Aquarius","Pisces"]
-		if ascrelativedataset==True:
-		        bhava_names=["Bhava1","Bhava2","Bhava3","Bhava4","Bhava5","Bhava6","Bhava7","Bhava8","Bhava9","Bhava10","Bhava11","Bhava12"]
-		r=0
-		print "size of dataset = ", len(input)
-		for key,value in s:
-			#if value > 0.10 * len(input) :
-				print
-				print "========================================="
-				print "Class Association Rule ",r," mined from dataset: with frequencies:",float(value*100.0)/float(len(input))," percentage"
-				print "========================================="
-				for l in key:
-					print planet_names[l],",",
-				r+=1
-				 
-##################################################33
-s=SequenceMining()
-s.doAprioriGSPSequenceMining()
+if __name__=="__main__":
+	s=SequenceMining()
+	s.doAprioriGSPSequenceMining()
