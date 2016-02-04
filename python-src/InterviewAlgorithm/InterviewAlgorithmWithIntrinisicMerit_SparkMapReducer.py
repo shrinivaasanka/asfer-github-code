@@ -47,7 +47,7 @@ import sys
 import nltk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
-from nltk.book import FreqDist 
+#from nltk.book import FreqDist 
 from nltk.corpus import stopwords
 from collections import namedtuple
 import threading
@@ -66,81 +66,87 @@ def asfer_pickle_string_load(picklef):
 	return keyword
 
 def asfer_pickle_dump(prevlevelsynsets,picklef):
-     for s in prevlevelsynsets:
-	picklef.write(repr(s)+",")
+	for s in prevlevelsynsets:
+		picklef.write(repr(s)+",")
 
 def asfer_pickle_load(picklef):
-     line=picklef.readline()
-     synsets=[]
-     stringsynsets=line.split(",")
-     for s in stringsynsets:
-         s_synset_tokens=s.split("'")
-	 #print "s_synset_tokens:",s_synset_tokens
-	 if len(s_synset_tokens) == 3:
-	     s_synset_word_tokens=s_synset_tokens[1].split(".")
-	     #print "s_synset_word_tokens:",s_synset_word_tokens
-	     s_synsets=wn.synsets(s_synset_word_tokens[0])
-	     #print "s_synsets:",s_synsets
-             synsets.append(s_synsets[0])	
-     #print "asfer_pickle_load(): synsets=",synsets
-     return synsets
+	line=picklef.readline()
+	synsets=[]
+	stringsynsets=line.split(",")
+	for s in stringsynsets:
+		s_synset_tokens=s.split("'")
+		#print "s_synset_tokens:",s_synset_tokens
+		if len(s_synset_tokens) == 3:
+			s_synset_word_tokens=s_synset_tokens[1].split(".")
+			#print "s_synset_word_tokens:",s_synset_word_tokens
+			s_synsets=wn.synsets(s_synset_word_tokens[0])
+			#print "s_synsets:",s_synsets
+			synsets.append(s_synsets[0])	
+	#print "asfer_pickle_load(): synsets=",synsets
+	return synsets
 
 def mapFunction(freqterms1):
-     prevlevelsynsets=[]
-     prevlevelsynsets_earlier=[]
-     stopwords = nltk.corpus.stopwords.words('english')
-     stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-     puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
-     mapped_object=()
-     print "mapFunction(): freqterms1:",freqterms1
-     for keyword in [freqterms1]:
-       	 #WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
-         disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
-     	 #print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
-         prevlevelsynsets = prevlevelsynsets + [disamb_synset]
-         if len(wn.synsets(keyword)) != 0:
-      		         disamb_synset_def = disamb_synset.definition()
-      			 tokens = nltk.word_tokenize(disamb_synset_def)
-             		 fdist_tokens = FreqDist(tokens)
-         		 fdist_tokens=[w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)]
-	 		 #mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
-	 		 mapped_object=rgo_object(fdist_tokens)
-     #print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
-     #picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
-     #prevlevelsynsets_earlier=asfer_pickle_load(picklef)
-     picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
-     #asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
-     asfer_pickle_dump(prevlevelsynsets,picklef)
-     return (1,mapped_object)
+	prevlevelsynsets=[]
+	prevlevelsynsets_earlier=[]
+	stopwords = nltk.corpus.stopwords.words('english')
+	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
+	mapped_object=()
+	print "mapFunction(): freqterms1:",freqterms1
+	for keyword in [freqterms1]:
+		#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
+		disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
+		#print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
+		prevlevelsynsets = prevlevelsynsets + [disamb_synset]
+		if len(wn.synsets(keyword)) != 0:
+			disamb_synset_def = disamb_synset.definition()
+			tokens = nltk.word_tokenize(disamb_synset_def)
+			#fdist_tokens = FreqDist(tokens)
+			fdist_tokens=[w for w in tokens if w not in stopwords and w not in puncts]
+			#mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
+			mapped_object=rgo_object(fdist_tokens)
+	#print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
+	#picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
+	#prevlevelsynsets_earlier=asfer_pickle_load(picklef)
+	picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
+	#asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
+	asfer_pickle_dump(prevlevelsynsets,picklef)
+	return (1,mapped_object)
  
 def reduceFunction(mapped_object1,mapped_object2):
-    reduced_rgo_object=()
-    #print "reduceFunction():mapped_object1: ",mapped_object1
-    #print "reduceFunction():mapped_object2: ",mapped_object2
-    #reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel,mapped_object1.prevlevelsynsets+mapped_object2.prevlevelsynsets) 
-    if (not mapped_object1):	
-    	reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel) 
-    if (not mapped_object2):
-    	reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel) 
-    if (mapped_object1 and mapped_object2):
-    	reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel) 
-    print "reduceFunction():returns : ",reduced_rgo_object
-    return reduced_rgo_object
+	reduced_rgo_object=()
+	#print "reduceFunction():mapped_object1: ",mapped_object1
+	#print "reduceFunction():mapped_object2: ",mapped_object2
+	#reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel,mapped_object1.prevlevelsynsets+mapped_object2.prevlevelsynsets) 
+	if (mapped_object1 and mapped_object2):
+		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel) 
+		return reduced_rgo_object
+	if (not mapped_object1 and not mapped_object2):
+		reduced_rgo_object=rgo_object([]) 
+		return reduced_rgo_object
+	if not mapped_object1:	
+		reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel) 
+		return reduced_rgo_object
+	if not mapped_object2:	
+		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel) 
+		return reduced_rgo_object
+	print "reduceFunction():returns : ",reduced_rgo_object
+	return reduced_rgo_object
 
 #function - best_matching_synset()
 def best_matching_synset(doc_tokens, synsets):
-    maxmatch = -1
-    retset = []
-    for synset in synsets:
-     	 def_tokens = set(nltk.word_tokenize(synset.definition()))
-       	 intersection = def_tokens.intersection(doc_tokens)
-       	 if len(intersection) > maxmatch:
-       	          maxmatch = len(intersection)
-       	          retset = synset
-    return retset
+	maxmatch = -1
+	retset = []
+	for synset in synsets:
+		def_tokens = set(nltk.word_tokenize(synset.definition()))
+		intersection = def_tokens.intersection(doc_tokens)
+		if len(intersection) > maxmatch:
+			maxmatch = len(intersection)
+			retset = synset
+	return retset
 
 def Spark_MapReduce(level, wordsatthislevel):
-        spcon=SparkContext("local[2]","Spark_MapReduce")
+	spcon=SparkContext("local[2]","Spark_MapReduce")
 	print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
 	paralleldata=spcon.parallelize(wordsatthislevel)
 	#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
@@ -203,7 +209,7 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	picklelock=threading.Lock()
 	picklelock.acquire()
 	spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
-     	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
 	asfer_pickle_string_dump(keyword,picklef_keyword)
 	picklef_keyword.close()
 	paralleldata = spcon.parallelize(tokensofprevlevel)

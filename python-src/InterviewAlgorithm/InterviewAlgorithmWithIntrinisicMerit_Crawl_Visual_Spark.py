@@ -31,7 +31,7 @@ from pyspark import SparkContext, SparkConf
 import nltk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
-from nltk.book import FreqDist
+#from nltk.book import FreqDist
 from nltk.corpus import stopwords
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -162,11 +162,12 @@ for filestr in files:
 	file1 = open(filestr)
 	raw1 = file1.read()
 	doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
-	fdist1 = FreqDist(doc1)
+	#fdist1 = FreqDist(doc1)
 	stopwords = nltk.corpus.stopwords.words('english')
 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
-	freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
+	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
+	freqterms1 = [w for w in doc1 if w not in stopwords and w not in puncts]
 
 	current_level = 1
 	nodewithmaxparents = ''
