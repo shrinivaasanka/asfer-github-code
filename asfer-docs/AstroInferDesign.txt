@@ -3385,7 +3385,7 @@ References:
 -------------------------------------------------------------------------------------
  - Updated AsFer Design Document with more references for Discrete Hyperbolic Factorization in NC - PRAM-NC equivalence
 -------------------------------------------------------------------------------------------------
-C++ - Input Dataset Files nomenclature change for NeuronRain Enterprise
+(FEATURE - DONE) C++ - Input Dataset Files nomenclature change for NeuronRain Enterprise
 -------------------------------------------------------------------------------------------------
 - 3 new input files cpp-src/asfer.enterprise.encstr, cpp-src/asfer.enterprise.encstr.clustered, cpp-src/asfer.enterprise.encstr.kNN
 have been added which contain set of generic binary strings for KMeans, KNN clustering and Longest Common Subsequence of a clustered set .
@@ -3394,12 +3394,32 @@ for generic string dataset processing
 - Changes for generic string datasets have been done for kNN and KMeans clustering
 - logs for clustering and longest common subsequence have been added
 -------------------------------------------------------------------------------------------------
-Python - Input Dataset Files nomenclature change for NeuronRain Enterprise
+(FEATURE - DONE) Python - Input Dataset Files nomenclature change for NeuronRain Enterprise
 -------------------------------------------------------------------------------------------------
 - 1 new input file  python-src/asfer.enterprise.encstr.seqmining has been added for Sequence Mining of generic string dataset -
 presently contains set of generic binary strings .
 - Code changes for above new input files have been done in SequenceMining.py
 - logs for SequenceMining of binary strings with maximum subsequence length of 15 have been added
+
+---------------------------------------------------------------------------------------
+224. Commits as on 4 February 2016
+---------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
+(FEATURE - DONE) Crucial commits for Performance improvements and Cython build of Spark Interview algorithm implementation
+--------------------------------------------------------------------------------------------------------------------------
+- New setup.py has been added to do a Cythonized build of PySpark Interview algorithm MapReduce script
+- Commandline for cython build: python setup.py build_ext --inplace
+- This compiles python spark mapreduce script into a .c file that does CPython bindings and creates .o and .so files
+- FreqDist has been commented which was slowing down the bootstrap
+- MapReduce function has been updated for NULL object checks
+- Thanks to Cython, Performance of Spark MapReduce has performance shootup by factor of almost 100x - Spark GUI job execution time
+shown for this interview execution is ~10 seconds excluding GUI graph rendering which requires few minutes. This was earlier taking few hours.
+- With Cython ,essentially Spark-Python becomes as fast as C implementation.
+- DOT file, Output log, Spark logs and Screenshot has been added
+- This completes important benchmark and performance improvement for Recursive Gloss Overlap Graph construction on local Spark single node
+cluster.
+- Above Cythonizes just a small percentage of Python-Spark code. If complete python execution path is Cythonized and JVM GC and Heap tunables for Spark are configured, this could increase throughput significantly further. Also Spark's shuffling parameters tuning could reduce the communication cost.
+
 
 
 
