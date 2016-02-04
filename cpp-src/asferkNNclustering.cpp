@@ -49,20 +49,20 @@ void asferknnclustering::kNNClustering(string distancemetric)
         ifstream input1;
         char line1[256];
         char line2[256];
-        string enchorospath1(asferroot);
-        enchorospath1.append("/asfer.enchoros.kNN");
-        input1.open(enchorospath1.c_str(), ifstream::in);
+        string encstrpath1(asferroot);
+        encstrpath1.append("/asfer.enterprise.encstr.kNN");
+        input1.open(encstrpath1.c_str(), ifstream::in);
 	labelled_points.clear();
 	
 	int i=0;
         while (!input1.eof())
         {
                input1.getline(line1,256);
-               string enchorostr(line1);
-	       if(enchorostr != "")
+               string encstrtr(line1);
+	       if(encstrtr != "")
 	       {
-	       		cout<<"training dataset : enchorostr = "<<enchorostr<<endl;
-	       		labelled_points[enchorostr] = i % MAX_NO_CLUSTERS;
+			cout<<"training dataset : encstrtr = "<<encstrtr<<endl;
+			labelled_points[encstrtr] = i % MAX_NO_CLUSTERS;
 	       		i++;
 	       }
         }
@@ -72,15 +72,15 @@ void asferknnclustering::kNNClustering(string distancemetric)
                                             
        	//kNN clustering classification 
         ifstream input2;
-        string enchorospath2(asferroot);
-        enchorospath2.append("/asfer.enchoros");
-        input2.open(enchorospath2.c_str(), ifstream::in);
+        string encstrpath2(asferroot);
+        encstrpath2.append("/asfer.enterprise.encstr");
+        input2.open(encstrpath2.c_str(), ifstream::in);
 
         while (!input2.eof()) //for each unlabelled encoded string 
         {
                 input2.getline(line2,256);
-                string enchorostr(line2);
-		if(enchorostr != "")
+                string encstrtr(line2);
+		if(encstrtr != "")
 		{
 			int editdistance_radius=8;
 	      		unordered_map<string,int> kNearestNeighbours; // <encoded_string,cluster_id>
@@ -92,10 +92,10 @@ void asferknnclustering::kNNClustering(string distancemetric)
 				//and create a map of k Nearest neighbours that are with in a
 				//radius edit distance
 	       			int ed;
-				cout<<"kNNClustering iteration: enchorostr = "<<enchorostr<<endl;
+				cout<<"kNNClustering iteration: encstrtr = "<<encstrtr<<endl;
 				if(it1->first != "")
 				{
-					ed = asd.editDistanceWagnerFischer(enchorostr, it1->first);
+					ed = asd.editDistanceWagnerFischer(encstrtr, it1->first);
 					if(ed < editdistance_radius)
 					{
 						kNearestNeighbours[it1->first] = it1->second;
@@ -121,7 +121,7 @@ void asferknnclustering::kNNClustering(string distancemetric)
 				}
 			}
 			//label with max_cluster_id
-			labelled_points[enchorostr]=max_cluster_id;
+			labelled_points[encstrtr]=max_cluster_id;
 			max_no_of_points=0;
 			max_cluster_id=0;
         	}

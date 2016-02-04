@@ -39,7 +39,7 @@ using namespace std;
 #endif
 
 #include "retriever.h"
-#include "asferencodehoro.h"
+#include "asferencodestr.h"
 
 #include "asferKnuthMorrisPrattStringMatch.h"
 
@@ -62,7 +62,7 @@ unordered_map<string,bool> config_map;
 
 int main(int argc, char* argv[])
 {
-	string basepath("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea22/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/cpp-src");
+	string basepath("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src");
 	asferroot=basepath;
 	std::cout<<"AStro inFER - Inference Software for Large Datasets " << std::endl;
 	std::cout<<"-----------------------------------------------------" << std::endl;
@@ -133,29 +133,29 @@ int main(int argc, char* argv[])
 		cout<< "----------" << endl;
 		cout<< *prediction << endl;
 	}
-	asferencodehoro aehoro;
+	asferencodestr aestr;
 	if(config_map["extractPatterns"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"pairwise and powerset pattern extraction"<<endl;
 		cout<<"###########################################"<<endl;
-		aehoro.pairwiseCompAndExtractPatterns();
-		aehoro.allCompAndExtractPatterns();
-		aehoro.powerSetCompAndExtractPatterns();
+		aestr.pairwiseCompAndExtractPatterns();
+		aestr.allCompAndExtractPatterns();
+		aestr.powerSetCompAndExtractPatterns();
 	}
 	if(config_map["doSequenceAlignment"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"Needleman Wunsch String Alignment"<<endl;
 		cout<<"###########################################"<<endl;
-		aehoro.pairwiseNeedlemanWunshSequenceAlignment();
+		aestr.pairwiseNeedlemanWunshSequenceAlignment();
 	}
 	if(config_map["doDistance"])
 	{
 		cout<<"###########################################"<<endl;
 		cout<<"Wagner-Fischer Edit Distance"<<endl;
 		cout<<"###########################################"<<endl;
-		aehoro.computeWagnerFischerEditDistance();	
+		aestr.computeWagnerFischerEditDistance();
 	}
 
 	if(config_map["doClustering"])
@@ -163,16 +163,16 @@ int main(int argc, char* argv[])
 		cout<<"############################################################"<<endl;
 		cout<<"Clustering - Unsupervised - KMeans"<<endl;
 		cout<<"############################################################"<<endl;
-		aehoro.clusterEncodedHoro("KMeans");
+		aestr.clusterEncodedHoro("KMeans");
 		cout<<"############################################################"<<endl;
 		cout<<"Clustering -  Supervised - kNN"<<endl;
 		cout<<"############################################################"<<endl;
-		aehoro.clusterEncodedHoro("kNN");
+		aestr.clusterEncodedHoro("kNN");
 	}
 
 	if(config_map["doLCS"])
 	{
-		aehoro.longestCommonSubstring();
+		aestr.longestCommonSubstring();
 	}
 
 	if(config_map["doStringMatch"])

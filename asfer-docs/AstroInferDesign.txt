@@ -845,7 +845,7 @@ Additional references:
 
 	34.5) Also an alternative merge algorithm in constant depth polysize circuit described in Chandra-Stockmeyer-Vishkin [http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf] can be applied (but it is for merging two lists of m, m-bit numbers where as the above factorization needs merging two lists of O(m), log(m)-bit numbers)
 
-	34.6) [KarpRamachandran] define the inclusion of PRAM models in NC in page 29 of http://digitalassets.lib.berkeley.edu/techreports/ucb/text/CSD-88-408.pdf - NCk in EREWk in CREWk in CRCWk=ACk in NC(k+1). [KarpRamachandran] cite [HooverKlawePippenger] - Bounding Fanout in Logical Networks - http://dl.acm.org/citation.cfm?id=322412 - for this inclusion. Thus references for PRAM=NC imply All Nearest Smaller Values (ANSV) CRCW PRAM algorithm [BerkmanSchieberVishkin] is also in NC counterintuitively despite the input size being N=n (and not logN). 
+	34.6) [RichardKarp-VijayaRamachandran] define the inclusion of PRAM models in NC in page 29 of http://digitalassets.lib.berkeley.edu/techreports/ucb/text/CSD-88-408.pdf - NCk in EREWk in CREWk in CRCWk=ACk in NC(k+1). [KarpRamachandran] cite [HooverKlawePippenger] - Bounding Fanout in Logical Networks - http://dl.acm.org/citation.cfm?id=322412 - for this inclusion. Thus references for PRAM=NC imply All Nearest Smaller Values (ANSV) CRCW PRAM algorithm [BerkmanSchieberVishkin] is also in NC counterintuitively despite the input size being N=n (and not logN).
 
 	34.7) Parallel RAM survey - http://www.cs.utoronto.ca/~faith/PRAMsurvey.ps
 
@@ -862,8 +862,12 @@ Additional references:
 
 	34.12) Handbook of Parallel Computing - [SanguthevarRajasekaran-JohnReif] - http://www.engr.uconn.edu/~rajasek/HandbookParallelComp.pdf,  https://books.google.co.in/books?id=OF9hk4oC6FIC&pg=PA179&lpg=PA179&dq=PRAM+NC+equivalence&source=bl&ots=LpYceSocLO&sig=GtslRh1I1AveOLo0kTylSzyDd48&hl=en&sa=X&ved=0ahUKEwi_1OfmuKbJAhUCHY4KHTpdAfoQ6AEISTAI#v=onepage&q=PRAM%20NC%20equivalence&f=false
 
+	34.13) [Eric Allender] - NC^1 and EREW PRAM - March 1990 - https://groups.google.com/forum/#!topic/comp.theory/0a5Y_DSkOao - "... Since NC^1 is contained in DLOG, and many people suspect that the containment is proper, it seems unlikely that NC^1 corresponds to log time on an EREW PRAM ..." - contradicts 34.6.
 
-35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) .
+	34.14) Efficient and Highly Parallel Computation - [JeffreyFinkelstein] - https://cs-people.bu.edu/jeffreyf/static/pdf/parallel.pdf - "... NC represents the class of languages decidable by a CREW PRAM with a polynomial number of processors running in polylogarithmic parallel time. Languages in NC are considered highly parallel ...".  [Berkman-Schieber-Vishkin] algorithm - www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/ansv.ps - for ANSV is for both CREW PRAM of O(logn, n/logn) and CRCW PRAM of O(loglogn, n/loglogn) and thus former is in NC.
+
+
+35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
 B.	EXPERIMENTAL NON-STATISTICAL INFERENCE MODEL BASED ON ALREADY KNOWN THEORETICAL COMPUTER SCIENCE RESULTS:

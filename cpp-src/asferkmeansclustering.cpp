@@ -25,7 +25,7 @@ emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@li
 *********************************************************************************************************/
 
 /*
-KMeans clustering for AsFer encoded horo strings with a distance metric
+KMeans clustering for AsFer encoded strings with a distance metric
 */
 
 
@@ -52,15 +52,15 @@ void asferkmeansclustering::KMeansClustering(string distanceMetric)
    	std::vector<string> enchoro_vec;
         ifstream input;
         char line[256];
-        string enchorospath(asferroot);
-        enchorospath.append("/asfer.enchoros");
-        input.open(enchorospath.c_str(), ifstream::in);
+        string encstrpath(asferroot);
+        encstrpath.append("/asfer.enterprise.encstr");
+        input.open(encstrpath.c_str(), ifstream::in);
         
 	while (!input.eof())
         {
                input.getline(line,256);
-               string enchorostr(line);
-               enchoro_vec.push_back(enchorostr);
+               string encstrtr(line);
+               enchoro_vec.push_back(encstrtr);
         }
 
 	//label initially with some cluster id
@@ -100,7 +100,7 @@ void asferkmeansclustering::KMeansClustering(string distanceMetric)
 				int closestClusterId=0;
 				for(int p=0; p < k; p++) // for each cluster centroid 
 				{
-					//cout<<"*it1="<<*it1<<", "<<(*it1).length()<<endl;
+					cout<<"*it1="<<*it1<<", "<<(*it1).length()<<endl;
 					int ed=minEditDistance;
 					if((*it1).length() > 0)
 					{
