@@ -1,0 +1,7 @@
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm# python setup.py build_ext --inplace
+Compiling InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py because it changed.
+Cythonizing InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py
+running build_ext
+building 'InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer' extension
+i686-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.c -o build/temp.linux-i686-2.7/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.o
+i686-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-i686-2.7/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.o -o /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.so

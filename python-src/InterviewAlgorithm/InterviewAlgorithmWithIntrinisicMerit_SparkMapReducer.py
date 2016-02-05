@@ -54,7 +54,7 @@ import threading
 
 #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
 rgo_object=namedtuple("rgo_object", "tokensatthislevel")
-picklelock=""
+picklelock=threading.Lock()
 
 def asfer_pickle_string_dump(s,picklef):
 	print "asfer_pickle_string_dump(): picklef.write():",s
@@ -180,7 +180,6 @@ def Spark_MapReduce(level, wordsatthislevel):
 #        return parents
 
 def mapFunction_Parents(prevleveltokens):
-	picklelock=threading.Lock()
 	picklelock.acquire()
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","r")
 	keyword=asfer_pickle_string_load(picklef_keyword)
@@ -202,11 +201,14 @@ def mapFunction_Parents(prevleveltokens):
 	return (1,parents)
 
 def reduceFunction_Parents(parents1, parents2):
-	print "reduceFunction_Parents(): returns=", parents1 + parents2
-	return parents1 + parents2
+	reduced_parents = parents1 + parents2
+	print "reduceFunction_Parents(): returns=", reduced_parents 
+	if len(reduced_parents) == 0:
+		return ["None"] 
+	else:
+		return parents1 + parents2
 
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
-	picklelock=threading.Lock()
 	picklelock.acquire()
 	spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
