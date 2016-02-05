@@ -3431,6 +3431,25 @@ shown for this interview execution is ~10 seconds excluding GUI graph rendering 
 cluster.
 - Above Cythonizes just a small percentage of Python-Spark code. If complete python execution path is Cythonized and JVM GC and Heap tunables for Spark are configured, this could increase throughput significantly further. Also Spark's shuffling parameters tuning could reduce the communication cost.
 
+-----------------------------------------------------------------------------------------
+225. Commits as on 5 February 2016
+-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------
+Further optimizations to Spark-Cython Interview algorithm implementation:
+-------------------------------------------------------------------------
+- webspidered text for RGO graph construction updated
+- PySpark-Cython build commandlines added as a text file log
+- Commented unused python functions - shingling and jaccard coefficient
+- threading.Lock() Spark thread pickling synchronizer variable made global in MapReducer
+- renamed yesterday's logs and screenshot to correct datetime 4 February 2016
+- Added a new special graph node ["None"] for special cases when no parents are found in backedges computation in MapReducer. This makes a
+default root in the RGO graph as shown in matplotlib networkx graph plot
+- Spark logs show time per RDD job - an example MapReduce job takes 335 milliseconds
+- Tried Cythonizing InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py but there is a serious cython compiler error in
+Matplotlib-PyQt. Hence those changes have been backed out.
+- DOT file and Cython C file have been updated
+
+
 
 
 
