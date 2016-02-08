@@ -54,6 +54,8 @@ parents_computation_spark=True
 #Adds some visualizations and a graph theoretic intrinsic merit based on connectivity.
 #########################################################################################################
 
+required_none_vertices=False
+
 #function - compute_idf()
 def compute_idf(corpus, keyword):
 	import math
@@ -126,6 +128,11 @@ def get_context(query, documents):
 	for i in file_tokens[first_occur-5:first_occur+5]:
 		context = context + ' ' + i
 	return context
+
+def filter_none_vertices(nxg):
+	for e in nx.edges(nxg):
+		if e[0] == "None" or e[1] == "None":
+			nxg.remove_edge(e[0],e[1])
 
 #function - get_jaccard_coefficient()
 #def get_jaccard_coefficient(refanswer, candidanswer):
@@ -308,6 +315,8 @@ def InterviewAlgorithm_main(argv1):
 						weight_str_map[l+" - "+k]=weight_str_map[l+" - "+k]+" is part of "+nlemmanames[0]
 					except KeyError:
 						weight_str_map[l+" - "+k]=""
+	if not required_none_vertices:
+		filter_none_vertices(nxg)
 	
 	nx.draw_networkx(nxg)
 	try:

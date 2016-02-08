@@ -505,7 +505,7 @@ References:
 18.8 Dream Analysis - http://cogprints.org/5030/1/NRC-48725.pdf
 18.9 Opinion Mining - http://www.cs.uic.edu/~liub/FBS/SentimentAnalysis-and-OpinionMining.pdf
 18.10 Linked - [Albert Laszlo Barabazi] - [Ginestra Bianconi - http://www.maths.qmul.ac.uk/~gbianconi/Condensation.html] Bose gas theory of networks - Bose-Einstein Condensate is equivalent to evolution of complex networks - Page 101 on Einstein's Legacy - "Nodes in Network are energy levels of subatomic paritcles and Links across nodes are subatomic particles" - "Winner takes it all" - particles occupying lowest energy correspond to people flocking to a central node in social networks - This finding is from behaviour of large scale networks viz., WWW, Social networks etc., This Condensate theory has striking applications to Recursive Gloss Overlap Graph construction and using it for unsupervised classification based on core numbers - each network and for that matter a graph constructed from text document is a macrocosmic counterpart of quantum mechanics.
-18.11 Small Word Experiment and Six Degrees of Separation - [Stanley Milgram] - https://en.wikipedia.org/wiki/Small-world_experiment
+18.11 Small World Experiment and Six Degrees of Separation - [Stanley Milgram] - https://en.wikipedia.org/wiki/Small-world_experiment
 18.12 LogLog estimation of Degrees in Facebook graph - 3.57 Degrees of Separation - https://research.facebook.com/blog/three-and-a-half-degrees-of-separation/
 
 19. (FEATURE - DONE-PAC Learnt Boolean Conjunction) Implement prototypical PAC learning of Boolean Functions from dataset. Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
@@ -3359,7 +3359,7 @@ Each of these lambda functions can be any of the following but not limited to:
 - Generic mathematical functions
 - Neural networks (which include all Semantic graphs like WordNet etc.,)
 - Belief propagated potentials assigned by a dictionary of English language and computed bottom-up
-- Visuals of corresponding words - this is the closest simulation of process of cognition and comprehension because when a sentence is read by a human left-right, visuals corresponding to each word based on previous experience are evoked and collated in brain to create a "movie" meaning of the sentence. For example, following sentence:
+- Experimental theory of Cognitive Psycholinguistics - Visuals of corresponding words - this is the closest simulation of process of cognition and comprehension because when a sentence is read by a human left-right, visuals corresponding to each word based on previous experience are evoked and collated in brain to create a "movie" meaning of the sentence. For example, following sentence:
 
 	Mobile phones operate through towers in each cellular area that transmit signals.
 
@@ -3368,7 +3368,7 @@ with its per-word lambda function composition tree :
 	in(operate(mobile phones, through(tower)), that(each(cellular area), transmit(signals)))
 
 evokes from left-to-right visuals of Mobile phones, towers, a bounded area in quick succession based on user's personal "experience" which are
-merged to form a visual motion-pictured meaning of the sentence. Here "experience" is defined as the accumulated past stored in brain which differs from one person to the other. This evocation model based on an infinite hypergraph of stacked thoughts as vertices and edges has been described earlier in sections 35-49 and 54-59. This hypergraph of thoughts grows over time forming "experiences". For some words visual storage might be missing, blurred or may not exist at all. An example for this non-visualizable entity in above sentence is "transmit" and "signal" which is not a tangible. Thus the lambda function composition of these visuals are superimposed collations of individual lambda functions that return visuals specific to a word, to create a sum total animated version. Important to note is that these lambda functions are specific to each reader which depend on pre-built "experience" hypergraph of thoughts which differs for each reader. This explains the phenomenon where the process of learning and grasping varies among people. Hypergraph model also explains why recent events belonging to a particular category are evoked more easily than those in distant past - because nodes in stack can have associated potential which fades from top to down and evocation can be modelled as a hidden markov model process on a stack node in the thought hypergraph top-down as the markov chain. Rephasing, thoughts stored as multiplanar hypergraphs with stack vertices act as a context to reader-specific lambda functions.
+merged to form a visual motion-pictured meaning of the sentence. Here "experience" is defined as the accumulated past stored in brain which differs from one person to the other. This evocation model based on an infinite hypergraph of stacked thoughts as vertices and edges has been described earlier in sections 35-49 and 54-59. This hypergraph of thoughts grows over time forming "experiences". For some words visual storage might be missing, blurred or may not exist at all. An example for this non-visualizable entity in above sentence is "transmit" and "signal" which is not a tangible. Thus the lambda function composition of these visuals are superimposed collations of individual lambda functions that return visuals specific to a word, to create a sum total animated version. Important to note is that these lambda functions are specific to each reader which depend on pre-built "experience" hypergraph of thoughts which differs for each reader. This explains the phenomenon where the process of learning and grasping varies among people. Hypergraph model also explains why recent events belonging to a particular category are evoked more easily than those in distant past - because nodes in stack can have associated potential which fades from top to down and evocation can be modelled as a hidden markov model process on a stack node in the thought hypergraph top-down as the markov chain. Rephasing, thoughts stored as multiplanar hypergraphs with stack vertices act as a context to reader-specific lambda functions. If stack nodes of thought hypergraph are not markov models - node at depth t need not imply node at depth t-1 - topmost node is the context disambiguating visual returned by the lambda function for that word. This unifies storage and computation and hence a plausible cerebral computational model - striking parallel in non-human turing computation is the virtual address space or tape for each process serving as context.
 
 The language of Sanskrit with Panini's Grammar fits the above lambda calculus framework well because in Sanskrit case endings and sentence meaning are independent of word orderings. For example following sentence in Sanskrit:
 	Sambhala Grama Mukhyasya VishnuYashas Mahatmana: ... ( Chieftain of Sambhala Village, Vishnuyashas the great ...)
@@ -3451,6 +3451,18 @@ default root in the RGO graph as shown in matplotlib networkx graph plot
 - Tried Cythonizing InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py but there is a serious cython compiler error in
 Matplotlib-PyQt. Hence those changes have been backed out.
 - DOT file and Cython C file have been updated
+
+-----------------------------------------------------------------------------------------
+226. Commits as on 8 February 2016
+-----------------------------------------------------------------------------------------
+- PySpark-Cythonized Interview Algorithm implementation generated graph has been pruned to remove edges invoving "None" vertices which were
+added during Spark MapReduce based on a config variable.
+- Logs and Screenshots for the above have been added to testlogs/
+- Some benchmark results parsed from the Spark logs with commandline - "for i in `grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized.8February2016.out |grep TaskSetManager| awk '{print $14}'`; do sum=$(expr $sum + $i); done":
+	- Total time in milliseconds - 99201
+	- Number of jobs - 113
+	- Average time per mapreduce job in milliseconds - 877
+Thus a merit computation of sample document with few lines (33 keywords) requires ~100 seconds in local Spark cluster. This excludes NetworkX and other unoptimized code overhead.
 
 
 
