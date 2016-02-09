@@ -3464,6 +3464,18 @@ added during Spark MapReduce based on a config variable.
 	- Average time per mapreduce job in milliseconds - 877
 Thus a merit computation of sample document with few lines (33 keywords) requires ~100 seconds in local Spark cluster. This excludes NetworkX and other unoptimized code overhead.
 
+-----------------------------------------------------------------------------------------------------------------------------------
+227. (THEORY) Graph Edit Distance in Interview Algorithm, PySpark-Cython Interview Algorithm benchmarks and Merit in Recursive
+Lambda Function Growth Algorithm
+-----------------------------------------------------------------------------------------------------------------------------------
+Interview Algorithm to assess merit, throughout this document, refers to 3 algorithms - Citation graph maxflow, Recursive Lambda Function growth and Graph edit distance (or Q&A) based interview between a pair of documents.  Recent result about impossibility of better algorithms for edit distance (Backurs-Indyk - http://arxiv.org/abs/1412.0348 - edit distance cannot be computed in subquadratic time unless Strong Exponential Time Hypothesis is false) finds its applications in Graph edit distance for Interview Algorithm Questions&Answering where one document's Recursive Gloss Overlap graph is compared for distance from another graph's RGO WordNet subgraph (http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). Graph edit distance is a special case of edit distance when graph edges are encoded as strings. A better algorithm to find edit distance between 2 documents' wordnet subgraphs ,therefore implies SETH is false.
+
+Previous benchmarks for PySpark-Cython parallel interview algorithm implementation could scale significantly on a cluster with ~100 Spark nodes with parallel runtime of ~800 milliseconds. If all Java Spark code is JVM tuned and python modules are Cythonized fully, even this could be bettered bringing it to order of few milliseconds.
+
+Computing Intrinsic Merit of a text with Recursive Lambda Function growth could involve multitude of complexity notions:
+	- Depth of Composition tree for a text
+	- Size of resultant lambda function composition e.g size of WordNet subgraphs, neural nets, complexity of context disambiguation with thought hypergraph psychological model enunciated in 222.
+	- In essence, this reduces to a lowerbound of lambda function composition - boolean circuit lowerbounds are special cases of lambda function composition lowerbounds. Since thought hypergraph disambiguator is reader dependent, each reader might get different merit value for same document which explains the real-life phenomenon of "subjectivity". To put it simply, Objectivity evolves into Subjectivity with "experience and thought" context. Evaluating merit based on thought context is non-trivial because disambiguating a word visually as mentioned in 222 requires traversal of complete depth of thought hypergraph - it is like billions of stacks interconnected across making it tremendously multiplanar - a thought versioning system. This explains another realword phenomenon of experiential learning: An experienced person "views" a text differently from a relatively less experienced person.
 
 
 
