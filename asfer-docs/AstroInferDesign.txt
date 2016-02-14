@@ -3500,6 +3500,17 @@ which could be electric potentials - some stronger thoughts might have heavy pot
 (*) In other words, the sentence "It is TRUE that this sentence is a lie" is different from "It is true that this sentence is a lie" - in the former the observer is independent of observed sentence (complete) where as in the latter observer and observed coalesce (incomplete). If Truth and Falsehood are scoped with a universe of discourse, above paradox seems to get reconciled and looks like an extension of Incompleteness theorems in logic.
 (*) Above philosophical dissection of meaning has striking similarities to quantum mechanics - If language has substructure abiding by quantum mechanics [e.g Bose-Einstein model for recursive gloss overlap wordnet subgraph], the links across words which correspond to subatomic particles must obey Heisenberg uncertainty principle also i.e As a linguistic parallel, 100% accurate meaning may never be found by any model of computation.
 
+--------------------------------------------------------------------------------------------------
+229. (THEORY) Bose-Einstein Condensate model for Recursive Gloss Overlap based Classification
+--------------------------------------------------------------------------------------------------
+Bose-Einstein condensate fitness model by [Ginestra Bianconi] described in 18.10 for any complex network graph is:
+	Fitness of a vertex = 2^(-b*Energy) where b is a Bose-Einstein condensate function.
+
+Here fitness of a vertex is defined as ability to attract links to itself - Star complexity. It is not known if ability of a word to attract links from other words is same as intrinsic merit of a document in recursive gloss overlap context - prima facie both look equal. As energy of a node decreases, it attracts increased number of node edges. In Recursive Gloss Overlap graph, node with maximum core number or PageRank must have lowest energy and hence the Fittest. Previous equation is by applying Einstein'd derivation of Satyendranath Bose's Planck's formula for Quantum mechanics where in a critical temperature above zero kelvin most of the particles "condense" in lowest enery level. This was proved in 1995-2001 by NIST lab.
+
+Applying the above model to a relational graph obtained from text document implies language has lurking quantum mechanical traits. For example, when a winner word vertex takes all links to other words, the winner word becomes a dictator and thus the only class a document can belong to. Thus Bose-Einstein condensate can be mapped to a Dictator boolean function. This should ideally be extensible to structural complexity of circuit graphs. If energy implies information entropy in a document, low energy implies low entropy of a text i.e sigma(p log p) of a text as bag of words probability distribution, decreases as text document increasingly becomes less chaotic and vice-versa holds too. As a document becomes more chaotic with high entropy and energy, fitness per word vertex decreases as there are multiple energy centres within it. Hence low entropy is equivalent to presence of a high fitness word vertex in the graph.
+
+Analogy: Recursive Gloss Overlap graph can be construed as a 3 dimensional rubbersheet with low energy words as troughs. Deepest troughs are words (lowest energy levels) that classify a document.
 
 
 
