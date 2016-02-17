@@ -3512,6 +3512,18 @@ Reference:
 ---------
 229.1 Linked [Albert Laszlo Barabasi] - Chapter 8 - Einstein's Legacy
 
+--------------------------------------------------------------------------------------------------------
+230. (THEORY) Expander Graphs, Bose-Einstein Condensate Fitness model and Intrinsic Merit
+--------------------------------------------------------------------------------------------------------
+Edge expander graphs are defined with Cheeger's constant for minimum high edge boundary per vertex subset:
+	minimum(|boundary(S)|/|S|), 1 < |S| < n/2
+where boundary(S) of a subset S of vertices of G (V(G)) is:
+	boundary(S) = { (u,v) | u in S, v in V(G) \ S}
+From Bose-Einstein condensate fitness model, ability of a vertex to attract links increases with decreasing energy of a vertex. This implies
+boundary(S) expands with presence of low energy vertices. Thus Bose-Einstein condensate model translates into an edge expander construction. Also high expansion implies high star complexity. Recursive Gloss Overlap graph with a low energy vertex is a high edge expander and easiliy classifiable to a topic with core numbers.
+
+Measuring intrinsic merit (and therefore fitness if both are equivalent concepts) by edge expansion (Cheeger's constant) over and above usual connectivity measures formalises a stronger notion of "meaningfulness" of a text document. For example High Cheeger's constant of RGO graph implies high intrinsic merit of a text.
+
 
 
 
