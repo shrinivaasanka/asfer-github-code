@@ -3557,7 +3557,22 @@ boundary(S) expands with presence of low energy vertices. Thus Bose-Einstein con
 
 Measuring intrinsic merit (and therefore fitness if both are equivalent concepts) by edge expansion (Cheeger's constant) over and above usual connectivity measures formalises a stronger notion of "meaningfulness" of a text document. For example High Cheeger's constant of RGO graph implies high intrinsic merit of a text.
 
-
+------------------------------------------------------------------------------------------------------------------
+231. (THEORY) Sentiment analysis and ThoughtNet Continuum - Fine grained emotions and evocation - related to 228
+------------------------------------------------------------------------------------------------------------------
+(*) ThoughtNet need not be a discrete hypergraph but a continuum of edges and nodes. Analogy: Set of countably infinite natural numbers and continuum of uncountably infinite reals. It is difficult to visualize a continuum as a graph - no graph theoretic gadget exists for a continuum graph - Infinite graph is countable, Continuum graph is uncountable. By diagonalization, continuum could be as hard as halting problem.
+(*) Each feature of a visual thought is a class stack node in ThoughtNet. Number of features per visual could be thousands. Visual is flattened
+into a hyperedge across class stack nodes corresponding to feature vector vertices.
+---------------------
+(*) Example schematic:
+----------------------
+		-------->Lambda computation---------
+returns		|				   |  stores thought hyperedges
+evocatives	|				   |
+		---------ThoughtNet <---------------
+(*) Colors of Thought hyperedges are determined by sentimentality of class stack nodes. The class stack nodes are colored too, not just edges. If an edge transcends various colored class stack nodes, resultant color of thought hyperedge is a function of colors of constituent class stack nodes:
+	Edge sentiment color of ThoughtNet Hyperedge = weight_function(node colors in the hyperedge).
+(*) Node colors are priors. How these priors are decided for each class stack node is the mainstay of emotional inference. This requires assumption of Desire/Prejudice/Bounded Rationality/Irrational Exuberance arising from Consciousness or equivalent. This irrationality creates a pre-conceived potential per class stack node, though no edges may be part of the class at all. Irrationality has to be assumed to be an independent variable and atomic because if it is not, what it depends on is a question. Though previous inquistion on Sentiments, Meaning et al border on Theology, it is inevitable to exclude the emotional root causes while working on a close-to-perfect mathematical simulation of human sentiments.
 
 
 
