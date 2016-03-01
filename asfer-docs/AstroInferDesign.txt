@@ -51,7 +51,7 @@ Above XXX.txt files need to be populated after doing some preprocessing of the a
 Python script for autogenerating above txt files has been added under python-src/autogen_classifier_dataset.This script needs to be changed forgenerating training and test set files.
 
 **********************************************************************************************************************************************
-DESIGN NOTES, THEORETICAL INTERLUDES(might have errors), TODO AND NICE TO HAVE FEATURES (long-term design goals with no deadline)
+DESIGN NOTES, THEORETICAL INTERLUDES(might have errors), TODO AND NICE TO HAVE FEATURES (list is quite dynamic and might be rewritten depending on feasibility - long-term design goals with no deadline)
 ***********************************************************************************************************************************************
 
 (FEATURE - DONE-MDL,Entropy,Edit Distance) 1. Test with Massive Data Sets of encoded strings for pattern mining. Algorithms for Approximate Kolmogorov Complexity or Minimum Description Length (MDL), Shannon Entropy, Levenshtein Edit Distance have been implemented in Python and C++. [Long term: Compressed Sensing (used in Image and Signal Processing) which "sense" from "compressed" large data. This involves computing a matrix product AX=B where X is an image or bitmap and A is a chosen matrix which together give a sketch B]
@@ -1430,6 +1430,7 @@ KingCobra Design Document: http://sourceforge.net/p/kcobra/code-svn/HEAD/tree/Ki
 This AsFer+USBmd+VIRGO+KingCobra would henceforth be known as "Krishna iResearch Intelligent Cloud OS - NeuronRain "
 
 65. (THEORY and ONGOING) Related to point 64 - Software Analytics - source code and logs analytics - related to Program comprehension - point 139 on BigData Analytics has more on this. Recently added VIRGO kernel_analytics module is in a way a software analytics module which reads config file set by the machine learning software after mining the kernel logs and objects. Kernel Analytics VIRGO driver module at present reads key-value pairs written to by the AsFer Machine Learning code from /etc/virgo_kernel_analytics.conf. Optionally, AsFer code can directly modify the kernel tunable parameters learnt by AsFer (https://www.kernel.org/doc/Documentation/kernel-parameters.txt) through modprobe or "echo -n ${value} > /sys/module/${modulename}/parameters/${parm}" for existing modules while virgo_kernel_analytics.conf is read for VIRGO specific modules. Graph Isomorphism of Program Slice Dependency Graphs for 2 codebases mentioned in https://sites.google.com/site/kuja27/PhDThesisProposal.pdf is also a Software Analytics problem. There are Slicing and Graph Isomorphism tools already available. Recently there has been a QuasiPolynomial Time algorithm for GI - [Lazlo Babai]. Kernel Analytics config in filesystem requires reloading. New feature to set the kernel analytics key-value pairs directly from userspace to kernel memory locations dynamically has been added via boost::python C++ and CPython extensions - described in 217.
+SATURN Program Analysis Framework has been integrated into VIRGO Linux - error logs of SATURN are AsFer analyzable - more on this in 232.
 
         AsFer Python -----> Boost::Python C++ Extension ------> VIRGO memory system calls --------> VIRGO Linux Kernel Memory Drivers
         /\                                                                                              V
@@ -3573,6 +3574,21 @@ evocatives	|				   |
 (*) Colors of Thought hyperedges are determined by sentimentality of class stack nodes. The class stack nodes are colored too, not just edges. If an edge transcends various colored class stack nodes, resultant color of thought hyperedge is a function of colors of constituent class stack nodes:
 	Edge sentiment color of ThoughtNet Hyperedge = weight_function(node colors in the hyperedge).
 (*) Node colors are priors. How these priors are decided for each class stack node is the mainstay of emotional inference. This requires assumption of Desire/Prejudice/Bounded Rationality/Irrational Exuberance arising from Consciousness or equivalent. This irrationality creates a pre-conceived potential per class stack node, though no edges may be part of the class at all. Irrationality has to be assumed to be an independent variable and atomic because if it is not, what it depends on is a question. Though previous inquistion on Sentiments, Meaning et al border on Theology, it is inevitable to exclude the emotional root causes while working on a close-to-perfect mathematical simulation of human sentiments.
+
+--------------------------------------------------------------------------------------------------------------
+232. VIRGO commits for AsFer Software Analytics with SATURN Program Analysis - 29 February 2016, 1 March 2016
+--------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Software Analytics - SATURN Program Analysis added to VIRGO Linux kernel drivers
+-------------------------------------------------------------------------------------
+- SATURN (saturn.stanford.edu) Program Analysis and Verification software has been
+integrated into VIRGO Kernel as a Verification+SoftwareAnalytics subsystem
+- A sample driver that can invoke an exported function has been added in drivers - saturn_program_analysis
+- Detailed document for an example null pointer analysis usecase has been created in virgo-docs/VIRGO_SATURN_Program_Analysis_Integration.txt
+- linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/error.txt is the error report from SATURN
+- SATURN generated preproc and trees are in linux-kernel-extensions/drivers/virgo/saturn_program_analysis/preproc and
+linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/
+
 
 
 
