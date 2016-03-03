@@ -3588,6 +3588,13 @@ integrated into VIRGO Kernel as a Verification+SoftwareAnalytics subsystem
 - SATURN generated preproc and trees are in linux-kernel-extensions/drivers/virgo/saturn_program_analysis/preproc and
 linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/
 
+------------------------------------------------------------------------------------------------------------
+233. (FEATURE-DONE) Commits as on 3 March 2016 - PERL WordNet::Similarity subroutine for pair of words
+------------------------------------------------------------------------------------------------------------
+*) New perl-src folder with perl code for computing WordNet Distance with Ted Pedersen et al WordNet::Similarity CPAN module
+*) Logs for some example word distances have been included in testlogs. Some weird behaviour for similar word pairs - distance is 1 instead of 0. Probably a clockwise distance rather than anticlockwise.
+
+This leverages PERLs powerful CPAN support for text data processing. Also python can invoke PERL with PyPerl if necessary.
 
 
 
