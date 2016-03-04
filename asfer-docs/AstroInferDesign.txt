@@ -3596,6 +3596,18 @@ linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_ana
 
 This leverages PERLs powerful CPAN support for text data processing. Also python can invoke PERL with PyPerl if necessary.
 
+-----------------------------------------------------------------------------------------------------------
+234. (FEATURE-DONE) PERL WordNet::Similarity build and python issues notes
+-----------------------------------------------------------------------------------------------------------
+- NLTK WordNet corpora despite being 3.0 doesnot work with WNHOME setting (errors in exception files and locations of lot of files are wrongly pointed to)
+- Only Direct download from Princeton WordNet 3.0 works with WNHOME.
+- Tcl/Tk 8.6 is prerequisite and there is a build error "missing result field in Tk_Inter" in /usr/include/tcl8.6/tcl.h. Remedy is to enable USE_INTERP_RESULT flag with macro: #define USE_INTERP_RESULT  1 in this header and then do:
+	make Makefile.PL
+	make
+	make install
+in WordNet::Similarity with WNHOME set to /usr/local/WordNet-3.0.
+- PyPerl is no longer in active development - so only subprocess.call() is invoked to execute perl with shell=False.
+
 
 
 - 
