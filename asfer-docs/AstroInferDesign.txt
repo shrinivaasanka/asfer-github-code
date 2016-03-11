@@ -2565,6 +2565,9 @@ Grammar for patterns like texts, pictures similar to RE,CFG etc., for pattern re
 An element of a list or group is cognitive with respect to an operator if it "knows" about all or subset of other elements of list or group where "knowing" is subject to definition of operation as below:
    - In list 2,3,5,7,17 - 17 knows about 2,3,5,7 in the sense that 17 = 2+3+5+7 with + operator
    - In list "addon","add","on" - "addon" knows about "add" and "on" with concatenation operator 
+   - In list "2,3,6,8,9,10,..." - 6 knows about 2 and 3, 10 knows about 2 and 5 with factorization as operator.
+This might have an equivalent notion in algebra. Motivation for this is to abstract cognition as group operator. Essentially, this reduces
+to an equivalence relation graph where elements are related by a cognitive operator edge.
 
 -----------------------------------------------------------------------------------------------------------------------
 161. (THEORY) Philosophical intuition for P(Good) summation - Continuation of (129) and other previous related points.
@@ -3628,6 +3631,18 @@ Dream Analysis in http://cogprints.org/5030/1/NRC-48725.pdf (mentioned in 18.8) 
 Throughout this document, ranking of documents which is so far a pure statistical and machine learning problem is viewed from Graph Theory and Lambda Function growth perspective - theory invades what was till now engineering.  Both Regularity Lemma and Ramsey theory elucidate order in large graphs. Regularity Lemma has a notion of density which is defined as:
 	d(V1, V2) = |E(V1, V2)|/|V1||V2|
 where V1 and V2 are subsets of vertices V(G) for a graph G and E(V1,V2) are edges among subsets V1 and V2. Density is a quantitative measure of graph complexity and intrinsic connectedness merit of a text document. Ramsey Number R(a,b) of a graph is the least number such that there always exists a graph of vertex order R(a,b) with a clique of size a and an independent set of size b. Typically associated with "Party problem" where it is required to find minimum number of people to be invited so that a people know each other and b people do not know each other, Ramsey number of ThoughtNet sentiment colorings - e.g bipartisan red-blue colorings for 2 thought hyperedge sentiment polarities - provides a theoretical bound on size of ThoughtNet as such so that order arises in a motley mix of emotionally tagged thoughts - a clique of similar sentimental edges emerges. Similar application of Ramsey number holds good for Recursive Gloss Overlap graph also - a document's graph can have cliques and independent sets with vertex colorings for word sentiments.
+
+==========================================================================================================================
+237. (FEATURE-DONE) Commits as on 11 March 2016 - Deep Learning Convolution - Multi Feature Convolution Map Kernel Filters
+==========================================================================================================================
+- Convolution Network supports Multiple Feature Maps (presently 3)
+- New example bitmap for feature recognition of pattern "3" inscribed as 1s has been introduced
+- Final neural network from Max pooling layer now is randomized with randint() based weights for
+each of the 10 neurons
+- Logs for this have been committed to testlogs
+- Logs show a marked swing in Maxpooling map where the segments of pattern "3" are pronounced.
+- Final neural layer shows a variegated decision from each neuron for corresponding 3 convolution maps
+
 
 
 - 
