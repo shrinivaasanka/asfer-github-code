@@ -3643,6 +3643,20 @@ each of the 10 neurons
 - Logs show a marked swing in Maxpooling map where the segments of pattern "3" are pronounced.
 - Final neural layer shows a variegated decision from each neuron for corresponding 3 convolution maps
 
+---------------------------------------------------------------------------------------------------------------
+238. (FEATURE-DONE) Commits as on 14 March 2016
+---------------------------------------------------------------------------------------------------------------
+    - Some bugs resolved
+    - Added one more example with no pattern
+    - Convolution is computed for all 3 bitmap examples
+    - Final neuron layer now is a function of each point in all maxpooling layers
+    - The existence of pattern is identified by the final output of each of 10 neurons
+    - Patterns 0 and 3 have a greater neural value than no pattern. Gradation of neural value indicates intensity of pattern.
+    - Above is a very fundamental pattern recognition for 2 dimensional data. Sophisticated deconvolution is explained in http://arxiv.org/abs/1311.2901
+    which reverse engineers pooling layers with Unpooling.
+    - 3 logs for this commit have been included in testlogs/
+    - random weighting has been removed.
+
 
 
 - 
