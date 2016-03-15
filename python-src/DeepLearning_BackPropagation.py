@@ -134,7 +134,7 @@ if __name__=="__main__":
 	bpnn.print_layers()
 	print "Error before Backpropagation:"
 	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-	while iter < 1000000:
+	while iter < 3000000:
 		bpnn.backpropagation_pde_update_hidden_to_output(0,4)
 		bpnn.backpropagation_pde_update_hidden_to_output(0,6)
 		bpnn.backpropagation_pde_update_hidden_to_output(1,5)
