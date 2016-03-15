@@ -3662,6 +3662,17 @@ each of the 10 neurons
 Deep Learning Convolution Network for Image Pattern Recognition elicits features from the image considered as 2-dimensional array. In the
 Deep Learning implementation in python-src/ image is represented as {0,1}* bitmap blob. Each row of this bit map can be construed as satisfying assignment to some boolean function to be learnt. Thus the 2-dimensional bitmap is set of assignments satisfying a boolean function - A boolean function learnt from this data - by some standard algorithms viz., PAC learning, Hastad-Linial-Mansour-Nisan fourier coefficient concentration bounds and low-degree polynomial approximation (learning phase averages the coefficients from all sample points and prediction phase uses this averaged fourier coefficient) - accepts the image as input. Deep Learning Convolution Network is thus equivalent to a boolean function learnt from an image - quite similar to HMLN low-degree learning, deep learning convolution also does weighted averaging in local receptive field feature kernel map layers, maxpooling layer and final neuron layers with binary output. Essentially convolution learns a TC circuit. It presupposes existence of set of satisfying assignments which by itself is a #P-complete problem. This connects two hitherto unrelated concepts - Image Recognition and Satisifiability - into a learning theory algorithm for 2-dimensional binary data. Same learning theory approach may not work for BackPropagation which depend on 4 standard Partial Differential Equations.
 
+---------------------------------------------------------------------------------------------------------------
+240. (THEORY) Deep Learning Convolution Network and a boolean function learning algorithm of different kind
+---------------------------------------------------------------------------------------------------------------
+- DeepLearning BackPropagation implementation:
+        - An example Software Analytics usecase for CPU and Memory usage has been included
+        - Number of Backpropagation weight update iterations has been increased 10 fold to 1000000.
+        - logs for some iterations have been included in testlogs/
+- DeepLearning Convolution Network implementation:
+        - Image patterns have been changed to 0, 8 and no-pattern.
+        - Final neuron layer weights have been changed by squaring to scale down the output - this differentiates patterns better.
+        - logs for this have been included in testlogs/
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
