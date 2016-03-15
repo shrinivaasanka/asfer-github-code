@@ -11,7 +11,7 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
+#Copyleft (Copyright+):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
@@ -108,30 +108,47 @@ class BackPropagation(object):
 			sum_of_squared_error=sum_of_squared_error + (output_layer[i]-expected_output_layer[i])*(output_layer[i]-expected_output_layer[i])
 		return 0.5*sum_of_squared_error
 
+#######################################################################################################
+#Software Analytics with Backpropagation - Example learning from top output for CPU and Memory usage:
+#---------------------------------------------------------------------------------------------------
+#top - 14:34:33 up  4:46,  2 users,  load average: 0.25, 0.26, 0.41
+#Tasks: 212 total,   1 running, 211 sleeping,   0 stopped,   0 zombie
+#%Cpu(s):  5.1 us,  3.9 sy,  0.0 ni, 89.4 id,  1.7 wa,  0.0 hi,  0.0 si,  0.0 st
+#KiB Mem:   2930068 total,  2803660 used,   126408 free,   156176 buffers
+#KiB Swap:  3103740 total,   166656 used,  2937084 free.  1017176 cached Mem
+#
+#  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+# 4273 shriniv+   9 -11  231168   7592   6412 S   4.6  0.3   6:18.91 pulseaudio
+#-----------------------------------------------------------------------------------------
+#In above %CPU=4.6 and %MEM=0.3 are used as input to backpropagation as below with expected outputs
+#for 2 neurons in output layers being 0.09 and 0.01.
+#4.6% is converted to 0.046 and 0.3% to 0.003.
+#######################################################################################################
 
-iter=0
-weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021]
-#parameters - initial conditions - input1,input2,hidden1,hidden2,expected_output1,expected_output2,weights_array
-bpnn=BackPropagation(0.6,0.3,0.8,0.9,0.99,0.88,weights)
-bpnn.compute_neural_network()
-bpnn.print_layers()
-print "Error before Backpropagation:"
-print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-while iter < 100000:
-	bpnn.backpropagation_pde_update_hidden_to_output(0,4)
-	bpnn.backpropagation_pde_update_hidden_to_output(0,6)
-	bpnn.backpropagation_pde_update_hidden_to_output(1,5)
-	bpnn.backpropagation_pde_update_hidden_to_output(1,7)
-	bpnn.backpropagation_pde_update_input_to_hidden(0,0)
-	bpnn.backpropagation_pde_update_input_to_hidden(0,1)
-	bpnn.backpropagation_pde_update_input_to_hidden(1,2)
-	bpnn.backpropagation_pde_update_input_to_hidden(1,3)
-	print "Recomputing Neural Network after backpropagation weight update"
+if __name__=="__main__":
+	iter=0
+	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021]
+	#parameters - initial conditions - input1,input2,hidden1,hidden2,expected_output1,expected_output2,weights_array
+	bpnn=BackPropagation(0.046,0.003,0.8,0.9,0.09,0.01,weights)
 	bpnn.compute_neural_network()
-	print "Error after Backpropagation- iteration :",iter
-	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-	print "Layers in this iteration:"
 	bpnn.print_layers()
-	print "Weights updated in this iteration:"
-	print bpnn.weights
-	iter=iter+1
+	print "Error before Backpropagation:"
+	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+	while iter < 1000000:
+		bpnn.backpropagation_pde_update_hidden_to_output(0,4)
+		bpnn.backpropagation_pde_update_hidden_to_output(0,6)
+		bpnn.backpropagation_pde_update_hidden_to_output(1,5)
+		bpnn.backpropagation_pde_update_hidden_to_output(1,7)
+		bpnn.backpropagation_pde_update_input_to_hidden(0,0)
+		bpnn.backpropagation_pde_update_input_to_hidden(0,1)
+		bpnn.backpropagation_pde_update_input_to_hidden(1,2)
+		bpnn.backpropagation_pde_update_input_to_hidden(1,3)
+		print "Recomputing Neural Network after backpropagation weight update"
+		bpnn.compute_neural_network()
+		print "Error after Backpropagation- iteration :",iter
+		print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+		print "Layers in this iteration:"
+		bpnn.print_layers()
+		print "Weights updated in this iteration:"
+		print bpnn.weights
+		iter=iter+1

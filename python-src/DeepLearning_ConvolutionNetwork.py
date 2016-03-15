@@ -11,7 +11,7 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
+#Copyleft (Copyright+):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
@@ -49,24 +49,24 @@ class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
 	        self.input_bitmap = input_bitmap
 		self.max_pooling_inference = []
-		self.weight=[[[0.1,0.1,0.1,0.1,0.1],
-			      [0.1,0.1,0.1,0.1,0.1],
-			      [0.1,0.1,0.1,0.1,0.1],
-			      [0.1,0.1,0.1,0.1,0.1],
-			      [0.1,0.1,0.1,0.1,0.1],
-			      [0.1,0.1,0.1,0.1,0.1]],
-			     [[0.2,0.2,0.2,0.2,0.2],
-			      [0.2,0.2,0.2,0.2,0.2],
-			      [0.2,0.2,0.2,0.2,0.2],
-			      [0.2,0.2,0.2,0.2,0.2],
-			      [0.2,0.2,0.2,0.2,0.2],
-			      [0.2,0.2,0.2,0.2,0.2]],
-			     [[0.3,0.3,0.3,0.3,0.3],
-			      [0.3,0.3,0.3,0.3,0.3],
-			      [0.3,0.3,0.3,0.3,0.3],
-			      [0.3,0.3,0.3,0.3,0.3],
-			      [0.3,0.3,0.3,0.3,0.3],
-			      [0.3,0.3,0.3,0.3,0.3]]]
+		self.weight=[[[0.05,0.05,0.05,0.05,0.05],
+			      [0.05,0.05,0.05,0.05,0.05],
+			      [0.05,0.05,0.05,0.05,0.05],
+			      [0.05,0.05,0.05,0.05,0.05],
+			      [0.05,0.05,0.05,0.05,0.05],
+			      [0.05,0.05,0.05,0.05,0.05]],
+			     [[0.06,0.06,0.06,0.06,0.06],
+			      [0.06,0.06,0.06,0.06,0.06],
+			      [0.06,0.06,0.06,0.06,0.06],
+			      [0.06,0.06,0.06,0.06,0.06],
+			      [0.06,0.06,0.06,0.06,0.06],
+			      [0.06,0.06,0.06,0.06,0.06]],
+			     [[0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07]]]
 		self.convolution_map=[[[0,0,0,0,0,0,0,0,0,0],
  	      			       [0,0,0,0,0,0,0,0,0,0],
 	     			       [0,0,0,0,0,0,0,0,0,0],
@@ -167,120 +167,120 @@ class DeepLearningConvolution(object):
 		for p in xrange(maxpool_map_width):
 			for q in xrange(maxpool_map_width):
 				for convolution_map_index in xrange(3):
-					weighted_sum = weighted_sum + max_pooling_map[convolution_map_index][p][q]*(self.weight[convolution_map_index][p][q])
+					weighted_sum = weighted_sum + max_pooling_map[convolution_map_index][p][q]*(self.weight[convolution_map_index][p][q]*self.weight[convolution_map_index][p][q])
 		self.max_pooling_inference.append(self.sigmoid(weighted_sum+self.bias))
 		return self.max_pooling_inference
                        
 			
+if __name__=="__main__":
+	#An example input picture bitmap with '0' inscribed as set of 1s
+	input_bitmap1=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,1,1,1,1,1,1,1,0,0,0,0],
+		[0,0,0,1,1,0,0,0,1,1,0,0,0,0],
+		[0,0,0,1,1,0,0,0,1,1,0,0,0,0],
+		[0,0,0,1,1,0,0,0,1,1,0,0,0,0],
+		[0,0,0,1,1,0,0,0,1,1,0,0,0,0],
+		[0,0,0,1,1,1,1,1,1,1,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-#An example input picture bitmap with '0' inscribed as set of 1s
-input_bitmap1=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,1,1,1,1,0,0,0,1,1,1,1,0,0],
-	[0,1,1,1,1,0,0,0,1,1,1,1,0,0],
-	[0,1,1,1,1,0,0,0,1,1,1,1,0,0],
-	[0,1,1,1,1,0,0,0,1,1,1,1,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,1,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+	#An example input picture bitmap with '8' inscribed as set of 1s
+	input_bitmap2=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
+		[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
+		[0,0,1,1,1,0,0,0,1,1,1,0,0,0],
+		[0,0,0,1,1,0,0,0,1,1,0,0,0,0],
+		[0,0,0,0,1,1,1,1,1,0,0,0,0,0],
+		[0,0,0,0,1,1,1,1,1,0,0,0,0,0],
+		[0,0,0,0,1,1,1,1,1,0,0,0,0,0],
+		[0,0,1,1,1,0,0,0,1,1,1,0,0,0],
+		[0,0,1,1,1,0,0,0,1,1,1,1,0,0],
+		[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
+		[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-#An example input picture bitmap with '3' inscribed as set of 1s
-input_bitmap2=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,1,1,1,1,1,1,1,1,1,1,1,0],
-	[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,0,1,1,1,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,0,0,1,1,1,0,0,0,0],
-	[0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,0,0,0,1,1,1,1,1,1,0,0,0],
-	[0,0,1,0,0,0,0,0,1,1,1,0,0,0],
-	[0,0,1,1,1,1,1,1,1,1,1,1,0,0],
-	[0,0,1,1,1,1,1,1,1,1,1,1,1,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+	#An example input picture bitmap with no patterns
+	input_bitmap3=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-#An example input picture bitmap with no patterns
-input_bitmap3=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+	dlc1=DeepLearningConvolution(input_bitmap1)
+	dlc2=DeepLearningConvolution(input_bitmap2)
+	dlc3=DeepLearningConvolution(input_bitmap3)
 
-dlc1=DeepLearningConvolution(input_bitmap1)
-dlc2=DeepLearningConvolution(input_bitmap2)
-dlc3=DeepLearningConvolution(input_bitmap3)
+	#maximum stride is 5
+	convolution_stride=2
+	conv_map1=dlc1.convolution(convolution_stride)
+	conv_map2=dlc2.convolution(convolution_stride)
+	conv_map3=dlc3.convolution(convolution_stride)
 
-#maximum stride is 5
-convolution_stride=2
-conv_map1=dlc1.convolution(convolution_stride)
-conv_map2=dlc2.convolution(convolution_stride)
-conv_map3=dlc3.convolution(convolution_stride)
+	#maximum pool sliding window width is 5
+	pool_slidewindow_width=2
+	pool_map1=dlc1.max_pooling(pool_slidewindow_width)
+	pool_map2=dlc2.max_pooling(pool_slidewindow_width)
+	pool_map3=dlc3.max_pooling(pool_slidewindow_width)
 
-#maximum pool sliding window width is 5
-pool_slidewindow_width=2
-pool_map1=dlc1.max_pooling(pool_slidewindow_width)
-pool_map2=dlc2.max_pooling(pool_slidewindow_width)
-pool_map3=dlc3.max_pooling(pool_slidewindow_width)
-
-print "##########################################"
-print "Set of Convolution Maps"
-print "##########################################"
-print "Example 1:"
-print "###########"
-pprint.pprint(conv_map1)
-print "###########"
-print "Example 2:"
-print "###########"
-pprint.pprint(conv_map2)
-print "###########"
-print "Example 3:"
-print "###########"
-pprint.pprint(conv_map3)
-print "##########################################"
-print "Max Pooling Map"
-print "##########################################"
-print "Example 1:"
-print "###########"
-pprint.pprint(pool_map1)
-print "###########"
-print "Example 2:"
-print "###########"
-pprint.pprint(pool_map2)
-print "###########"
-print "Example 3:"
-print "###########"
-pprint.pprint(pool_map3)
-print "####################################################################################################"
-print "Final layer that connects all neurons in max pooling map into set of 10 neurons"
-print "####################################################################################################"
-maxpool_map_width=5
-for w in xrange(10):
-	print "###########################################################################################"
-	print "Inference from Max Pooling Layer - Neuron ",w
-	print "###########################################################################################"
+	print "##########################################"
+	print "Set of Convolution Maps"
+	print "##########################################"
 	print "Example 1:"
 	print "###########"
-	pprint.pprint(dlc1.infer_from_max_pooling(pool_map1,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+	pprint.pprint(conv_map1)
 	print "###########"
 	print "Example 2:"
 	print "###########"
-	pprint.pprint(dlc2.infer_from_max_pooling(pool_map2,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+	pprint.pprint(conv_map2)
 	print "###########"
 	print "Example 3:"
 	print "###########"
-	pprint.pprint(dlc3.infer_from_max_pooling(pool_map3,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+	pprint.pprint(conv_map3)
+	print "##########################################"
+	print "Max Pooling Map"
+	print "##########################################"
+	print "Example 1:"
+	print "###########"
+	pprint.pprint(pool_map1)
+	print "###########"
+	print "Example 2:"
+	print "###########"
+	pprint.pprint(pool_map2)
+	print "###########"
+	print "Example 3:"
+	print "###########"
+	pprint.pprint(pool_map3)
+	print "####################################################################################################"
+	print "Final layer that connects all neurons in max pooling map into set of 10 neurons"
+	print "####################################################################################################"
+	maxpool_map_width=5
+	for w in xrange(10):
+		print "###########################################################################################"
+		print "Inference from Max Pooling Layer - Neuron ",w
+		print "###########################################################################################"
+		print "Example 1:"
+		print "###########"
+		pprint.pprint(dlc1.infer_from_max_pooling(pool_map1,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+		print "###########"
+		print "Example 2:"
+		print "###########"
+		pprint.pprint(dlc2.infer_from_max_pooling(pool_map2,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+		print "###########"
+		print "Example 3:"
+		print "###########"
+		pprint.pprint(dlc3.infer_from_max_pooling(pool_map3,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
