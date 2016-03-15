@@ -3667,7 +3667,7 @@ Deep Learning implementation in python-src/ image is represented as {0,1}* bitma
 ---------------------------------------------------------------------------------------------------------------
 - DeepLearning BackPropagation implementation:
         - An example Software Analytics usecase for CPU and Memory usage has been included
-        - Number of Backpropagation weight update iterations has been increased 10 fold to 1000000.
+        - Number of Backpropagation weight update iterations has been increased 10 fold to 3000000.
         - logs for some iterations have been included in testlogs/
 - DeepLearning Convolution Network implementation:
         - Image patterns have been changed to 0, 8 and no-pattern.
