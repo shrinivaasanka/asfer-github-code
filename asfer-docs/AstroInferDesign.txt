@@ -1306,7 +1306,7 @@ PARITY 3-SAT is satisified by odd parity bit strings and is NP-complete because 
 From above, for some circuit size of PARITY as 3-CNFSAT, there exists t(=O(n)) such that:
       2^(((t)^(1/3)/20)-1) <=  size / summation(f(S)^2) , |S| > t
       2^(((t)^(1/3)/20)-1) <=  size (for all t < n-1, fourier coefficients of PARITY 3-SAT are 0, and this bound is meaningful only for t=n-1).
-i.e for all values of t, circuit size is bounded from below by a quantity exponential in function of n (which could be O(n), W(n) or Theta(n).If this is O(n), might imply a lowerbound by upperbound - reminiscent of Greatest Lower Bound in a Lattice if Complexity Classes form a Lattice). LHS of the inequality can have values of t from 1 to n-1 and only one value of this can be chosen lowerbound. If LHS is not a function of n, it leads to a contradiction that 2 PARITY 3SAT circuits of varying sizes can have constant lowerbound. Also finding Minimum Circuit Size problem is believed to be NP-complete.
+i.e for all values of t, circuit size is bounded from below by a quantity exponential in function of n (which could be O(n), W(n) or Theta(n).If this is O(n), might imply a lowerbound by upperbound - reminiscent of Greatest Lower Bound in a Lattice if Complexity Classes form a Lattice). LHS of the inequality can have values of t from 1 to n-1 and only one value of this can be chosen lowerbound. If LHS is not a function of n, it leads to a contradiction that 2 PARITY 3SAT circuits of varying sizes can have constant lowerbound. Also finding Minimum Circuit Size problem is believed to be in NP but not known to be NP-Complete(http://web.cs.iastate.edu/~pavan/papers/mcsp.pdf).
 (How can a special case of NP-complete problem have superpolynomial size circuits? Is this a counterexample and thus implies superpolynomial size circuits for all problems in NP and P != NP. Because of this correctness of above counterexample has to be reviewed)
 
 References:
@@ -3673,6 +3673,23 @@ Deep Learning implementation in python-src/ image is represented as {0,1}* bitma
         - Image patterns have been changed to 0, 8 and no-pattern.
         - Final neuron layer weights have been changed by squaring to scale down the output - this differentiates patterns better.
         - logs for this have been included in testlogs/
+
+--------------------------------------------------------------------------------------------------------------
+241. (THEORY) ThoughtNet and Reinforcement Learning
+--------------------------------------------------------------------------------------------------------------
+Reinforcement Learning is based on following schematic principle of interaction between environment and agent learning from environment. ThoughtNet described in 228 and previous is an environmental context that every human agent has access to in decision making. This makes human thought process and thought-driven-actions to be a special case of Reinforcement Learning.
+
+				---------> ThoughtNet context (environment) ------
+	action (evocation)	|				  		 |  reward and state transition (most potent evocative thought)
+				|<----------- Text Document (agent) ------<----- |
+
+Schematic above illustrates text document study as reinforcement learning. During left-right reading of text, evocation action is taken per-word which accesses ThoughtNet storage and returns a reward which is the strongest thought edge. State transition after each evocation is the partially evaluated lambda composition prefix mentioned in 222 - this prefix is updated after reading each word left-right. Human practical reading is most of the time lopsided - it is not exactly left-right but eye observes catchy keywords and swivels/oscillates around those pivots creating a balanced composition tree.
+
+References:
+-----------
+241.1 Reinforcement Learning - [Richard Sutton] - http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html, https://www.dropbox.com/s/b3psxv2r0ccmf80/book2015oct.pdf?dl=0.
+
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
