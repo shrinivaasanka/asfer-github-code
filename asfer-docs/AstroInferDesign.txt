@@ -98,7 +98,7 @@ which is the argmax( Pr(a/t,h), Pr(e/t,h), Pr(i/t,h), Pr(o/t,h), Pr(u/t,h)) and 
 
 9. (FEATURE - DONE) InterviewAlgorithm code in https://sourceforge.net/p/asfer/code/146/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py and Classification based on indegrees of wordnet subgraph node in action item 6 above (as mentioned in http://arxiv.org/abs/1006.4458 , https://sites.google.com/site/kuja27/TAC2010papersubmission.pdf?attredirects=0 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). Related Publication Drafts are: https://sites.google.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf?attredirects=0, https://sites.google.com/site/kuja27/CircuitForComputingErrorProbabilityOfMajorityVoting.pdf?attredirects=0, https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC.pdf?attredirects=0. Test C++ code written in 2006 for computing Majority voting error probability is at: http://sourceforge.net/p/asfer/code/HEAD/tree/cpp-src/miscellaneous/pgood.cpp and python script written in 2010 is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/pgood.py. 
 
-[Disclaimer and Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points elsewhere in this document on majority voting + SAT versus psuedorandom choice (e.g 100% noise stability and circuit lowerbounds for it) are work-in-progress not-quite rigorous drafts only with possible theoretical errors, which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. It is not an attempt to prove or disprove P=NP,but rather an analysis of very generic unnatural proof framework based on boolean social choice complexity for proving lowerbounds which might include the question of P=NP. Infact it shrouds entire complexity classes underneath it. It is non-conventional and questionable as to whether LHS pseudorandomness or dictator boolean function can be equated to RHS Majority Voting. This just analyzes the special case when there is zero-error or same-error on both sides and the outcomes of processeses related to pseudorandom/dictator choice and Majority Voting with Voter SAT oracles are "equally good" where "Goodness" is defined as for all scenarios which could be infinite, a PRG/Dictator choice or Majority Voted Choice "make zero-error decisions". It is not a statistical mean on both sides in which all probabilities are averaged. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample. In theoretical interludes in this document probability of perfection is defined as a function of NoiseSensitivity or NoiseStability which is based on commonsense notion that if an entity (human or software) has "correct thinking in decision making" outcome "decision" is "correct". For example if noisy inputs do not perturb a voter's boolean function, voter is 100% stable. This is equivalent to real life scenarios where conflicting inputs from people make a person to decide incorrectly. A perfect voter is never swayed. Even without equating the 2 sides(e.g whether there exists a P algorithm for RHS PH or EXP circuit) above are non-trivial problems. Lot of assumptions have been made in arriving at conclusions in this document, most important being equal stability implies circuit lowerbounds which is based on a matrix of scenarios where error and noise intersect. It is more apt to say there are no conclusions arrived at.
+[Disclaimer and Caveat: Due to radical conclusions that are derivable from the P(good) binomial coefficients summation infinite series when applied to majority voting with SAT setting in perfect zero-error case, all the related points elsewhere in this document on majority voting + SAT versus psuedorandom choice (e.g 100% noise stability and circuit lowerbounds for it) are work-in-progress , unreviewed (excluding those done during 2009-2011) , not-quite rigorous drafts only with possible theoretical errors, which might have commissions-omissions and more additions to make as mentioned earlier and this analyzes a very special case of voting scenario. It is not an attempt to prove or disprove P=NP,but rather an analysis of very generic unnatural proof framework based on boolean social choice complexity for proving lowerbounds which might include the question of P=NP. Infact it shrouds entire complexity classes underneath it. It is non-conventional and questionable as to whether LHS pseudorandomness or dictator boolean function can be equated to RHS Majority Voting. This just analyzes the special case when there is zero-error or same-error on both sides and the outcomes of processeses related to pseudorandom/dictator choice and Majority Voting with Voter SAT oracles are "equally good" where "Goodness" is defined as for all scenarios which could be infinite, a PRG/Dictator choice or Majority Voted Choice "make zero-error decisions". It is not a statistical mean on both sides in which all probabilities are averaged. More specifically, (in)tractability of perfect voting is pivotal to this - assuming perfection which does away with BP* complexity classes this poses itself as a strong non-trivial counterexample. In theoretical interludes in this document probability of perfection is defined as a function of NoiseSensitivity or NoiseStability which is based on commonsense notion that if an entity (human or software) has "correct thinking in decision making" outcome "decision" is "correct". For example if noisy inputs do not perturb a voter's boolean function, voter is 100% stable. This is equivalent to real life scenarios where conflicting inputs from people make a person to decide incorrectly. A perfect voter is never swayed. Even without equating the 2 sides(e.g whether there exists a P algorithm for RHS PH or EXP circuit) above are non-trivial problems. Lot of assumptions have been made in arriving at conclusions in this document, most important being equal stability implies circuit lowerbounds which is based on a matrix of scenarios where error and noise intersect. It is more apt to say there are no conclusions arrived at.
 
 There are zero error voting systems:
 E.g Paxos protocol without byzantine failures - http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf
@@ -3683,7 +3683,13 @@ Reinforcement Learning is based on following schematic principle of interaction 
 	action (evocation)	|				  		 |  reward and state transition (most potent evocative thought)
 				|<----------- Text Document (agent) ------<----- |
 
-Schematic above illustrates text document study as reinforcement learning. During left-right reading of text, evocation action is taken per-word which accesses ThoughtNet storage and returns a reward which is the strongest thought edge. State transition after each evocation is the partially evaluated lambda composition prefix mentioned in 222 - this prefix is updated after reading each word left-right. Human practical reading is most of the time lopsided - it is not exactly left-right but eye observes catchy keywords and swivels/oscillates around those pivots creating a balanced composition tree.
+Schematic above illustrates text document study as reinforcement learning. During left-right reading of text, evocation action is taken per-word which accesses ThoughtNet storage and returns a reward which is the strongest thought edge. State transition after each evocation is the partially evaluated lambda composition prefix mentioned in 222 - this prefix is updated after reading each word left-right. Human practical reading is most of the time lopsided - it is not exactly left-right but eye observes catchy keywords and swivels/oscillates around those pivots creating a balanced composition tree. Error in disambiguation can be simulated with a model similar to what is known as "Huygen's Gambler's Ruin Theorem" which avers that in any Gambling/Betting game, player always has a non-zero probability of becoming insolvent - this is through a Bernoulli trial sequence as below with fair coin toss (probability=0.5):
+	- 1) First coin flip - Pr(doubling1) = 0.5, Pr(bankrupt1) = 0.5
+	- 2) Second coin flip - Pr(bankrupt2) = Pr(bankrupt1)*0.5 = 0.25
+	- 3) Third coin flip - Pr(bankrupt3) = Pr(bankrupt2)*0.5 = 0.125
+	....
+By union bound probability of gambler going bankrupt after infinite number of coin flips is 1. This convergence to 1 applies to unfair biased coin tosses also. This theorem has useful application in ThoughtNet reinforcement learning disambiguation. Reward is defined as probability of most potent evocative thought being retrieved from ThoughtNet (this is when return value is set of hyperedges and not unique - probability of reward is 1/size_of_set_returned) and state transition is akin to consecutive coin flips. This proves that probability of imperfect disambiguation is eventually 1 even though reward probability is quite close to 1.
+
 
 References:
 -----------
@@ -3742,7 +3748,7 @@ Per task time in milliseconds: ~446 which is twice faster than earlier benchmark
 A spark-defaults.conf file has been committed to repository (Reference: http://spark.apache.org/docs/latest/configuration.html). With Spark configuration settings for memory and multicore, something happens with Spark performance which is counterintuitive despite document size being almost same.
 
 ----------------------------------------------------------
-243. Commits as on 16,17 March 2016
+243. Commits (1) as on 16,17 March 2016
 ----------------------------------------------------------
 PySpark-Cython Interview Algorithm for Merit - Benchmark
 ----------------------------------------------------------
@@ -3756,6 +3762,36 @@ to create .c and .so files
 - Text document has been recrawled and updated (number of keywords almost same as previous benchmark)
 - Spark config file has been committed
 
+---------------------------------------------------------------
+244. Commits (2) as on 16,17 March 2016
+---------------------------------------------------------------
+More benchmarking of PySpark-Cython Intrinsic Merit computation
+----------------------------------------------------------------
+- Enabled Spark RDD cacheing with cache() - storage level MEMORY
+- Recompiled .c and .so with Cython
+- uncommented both lines in Cython setup.py
+- logs and screenshots for above have been committed in testlogs/
+- locking.acquire() and locking.release() have been commented
+- With this per task duration has been brought down to ~402 milliseconds on single node cluster. Ideally on a multinode cluster
+when tasks are perfectly distributable, this should be the runtime.
+
+--------------------------------------------------------------------------------
+With spark-defaults.conf - multiple contexts disabled and reuse worker enabled
+--------------------------------------------------------------------------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+246796
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized.17March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+156
+Per task time milliseconds: ~1582
+
+-----------------------------------------------------------------------------------------------------
+Without spark-defaults.conf - locking.acquire()/release() disabled and Spark RDD cacheing enabled
+-----------------------------------------------------------------------------------------------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+248900
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized2.17March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+618
+Per task time milliseconds: ~402 (fastest observed thus far per task; Obviously something is wrong with spark-defaults.conf enabled)
 
 
 - 
