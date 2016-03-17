@@ -26,5 +26,5 @@
 from distutils.core import setup
 from Cython.Build import cythonize
 
-#setup ( name = 'Spark Interview Algorithm implementation - Cythonized', ext_modules = cythonize("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py"))
+setup ( name = 'Spark Interview Algorithm implementation - Cythonized', ext_modules = cythonize("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py"))
 setup ( name = 'Spark Interview Algorithm implementation - Cythonized', ext_modules = cythonize("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py"))

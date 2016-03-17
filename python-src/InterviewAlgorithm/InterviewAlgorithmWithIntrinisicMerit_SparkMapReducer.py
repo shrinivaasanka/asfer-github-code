@@ -148,7 +148,7 @@ def best_matching_synset(doc_tokens, synsets):
 def Spark_MapReduce(level, wordsatthislevel):
 	spcon=SparkContext("local[2]","Spark_MapReduce")
 	print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
-	paralleldata=spcon.parallelize(wordsatthislevel)
+	paralleldata=spcon.parallelize(wordsatthislevel).cache()
 	#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
 	k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
 
@@ -180,7 +180,7 @@ def Spark_MapReduce(level, wordsatthislevel):
 #        return parents
 
 def mapFunction_Parents(prevleveltokens):
-	picklelock.acquire()
+	#picklelock.acquire()
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","r")
 	keyword=asfer_pickle_string_load(picklef_keyword)
 	picklef_keyword.close()
@@ -197,7 +197,7 @@ def mapFunction_Parents(prevleveltokens):
 				print "mapFunction_Parents(): adding to parents: syn = ",syn,"; keyword: ", keyword," in syndef_tokens=",syndef_tokens
 				parents = parents + [prevleveltoken]
 	print "mapFunction_Parents(): returns=",parents
-	picklelock.release()
+	#picklelock.release()
 	return (1,parents)
 
 def reduceFunction_Parents(parents1, parents2):
@@ -209,12 +209,12 @@ def reduceFunction_Parents(parents1, parents2):
 		return parents1 + parents2
 
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
-	picklelock.acquire()
+	#picklelock.acquire()
 	spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
 	asfer_pickle_string_dump(keyword,picklef_keyword)
 	picklef_keyword.close()
-	paralleldata = spcon.parallelize(tokensofprevlevel)
+	paralleldata = spcon.parallelize(tokensofprevlevel).cache()
 	#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
 	k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
 	sqlContext=SQLContext(spcon)
@@ -225,5 +225,5 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 	print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
 	spcon.stop()
 	print "Spark_MapReduce_Parents(): dict_query_results[1]=",dict_query_results[1]
-	picklelock.release()
+	#picklelock.release()
 	return dict_query_results[1]
