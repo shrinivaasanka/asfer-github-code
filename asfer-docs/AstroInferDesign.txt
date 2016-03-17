@@ -3689,6 +3689,73 @@ References:
 -----------
 241.1 Reinforcement Learning - [Richard Sutton] - http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html, https://www.dropbox.com/s/b3psxv2r0ccmf80/book2015oct.pdf?dl=0.
 
+------------------------------------------------------------------------------------------------------------------------------
+242. (FEATURE-BENCHMARK-DONE) Interview Algorithm PySpark-Cython implementation benchmark with and without Spark configurables
+------------------------------------------------------------------------------------------------------------------------------
+This benchmark is done with both:
+InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py
+InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py
+both precompiled with Cython to create .c source files and .so libraries.
+
+Number of keywords in newly crawled web page: 35
+
+---------------------------
+With spark-defaults.conf :
+---------------------------
+Execution 1:
+------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# for i in `grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized.16March2016.out |grep TaskSetManager| awk '{print $14}'`
+> do
+> sum=$(expr $sum + $i)
+> done
+
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+243058
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized.16March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+156
+Per task time in milliseconds: ~1558
+
+------------
+Execution 2:
+------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# for i in `grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized2.16March2016.out |grep TaskSetManager| awk '{print $14}'`
+> do
+> sum=$(expr $sum + $i)
+> done
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+520074
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized2.16March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+312
+Per task time in milliseconds: ~1666
+
+------------------------------
+Without spark-defaults.conf
+------------------------------
+Execution 3:
+------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+69691
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized3.16March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+156
+Per task time in milliseconds: ~446 which is twice faster than earlier benchmark done in February 2016 and almost 4 times faster than previous 2 executions with spark-defaults.conf enabled.
+
+A spark-defaults.conf file has been committed to repository (Reference: http://spark.apache.org/docs/latest/configuration.html). With Spark configuration settings for memory and multicore, something happens with Spark performance which is counterintuitive despite document size being almost same.
+
+----------------------------------------------------------
+243. Commits as on 16,17 March 2016
+----------------------------------------------------------
+PySpark-Cython Interview Algorithm for Merit - Benchmark
+----------------------------------------------------------
+- 3 executions with and without spark-defaults.conf config settings have been benchmarked
+- Cython setup.py has been updated to compile both InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py and InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py
+to create .c and .so files
+- Benchmark yields some intriguing results:
+        - Executions with spark-defaults.conf enabled are 4 times slower than executions without spark-defaults.conf
+        - Execution without spark config is twice faster than earlier benchmark
+- Logs and screenshots for above have been committed to testlogs
+- Text document has been recrawled and updated (number of keywords almost same as previous benchmark)
+- Spark config file has been committed
+
 
 
 - 
