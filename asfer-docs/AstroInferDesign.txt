@@ -760,7 +760,9 @@ for some term in the infinite product of LHS which implies that
 
 (17) Assuming Real(s)=0.5 from 7.1 and 7.2, it can be derived with a little more steps that eigen_value = 2*sqrt(q)*cos(b*log(q)) - eigen value depends only on imaginary(s) and regularity.
 
-(18) It is not known if there exists a One-to-one mapping between {Imaginary(RZF_zero)} and {Imaginary(s)} or they are same. The set {Imaginary(s)} can be computed for indefinite sequence of q(s) from 1/log(q)*cosinverse(eigen_value/2*sqrt(q)) = b for infinite set of q. If these two sets are not same, then this presents a totally different problem than RZF and could be an overlap/superset of RZF zeroes.
+(18) It is not known if {Imaginary(RZF_zero)} = {Imaginary(s)}. If not equal this presents a totally different problem than RZF and could be a disjoint_set/overlap/superset of RZF zeroes.
+
+(19) Maximum eigen value of (q+1)-regular graph is (q+1) and the infinite set {Imaginary(s)} can be derived from eigen_value=2*sqrt(q)*cos(b*log(q)) in (17) for infinite set of (q+1)-regular graphs.
 
 ----------------------------------------------------
 24h. PAC Learning and Complement Function Construction
@@ -834,6 +836,7 @@ References:
 	 32.1) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicFactorization_UpperboundDerivedWithStirlingFormula_2013-09-10.pdf/download and 
 	 32.2) http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download(and multiple versions due to various possible algorithms for search and upperbound technique used) 
 
+
 33. (DONE) NC PRAM version of Discrete Hyperbolic Factorization:
 	33.1) An updated NC PRAM version of Discrete Hyperbolic Factorization has been uploaded at:
 http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound.pdf/download that does PRAM k-merge of discrete tiles in logarithmic time before binary search on merged tile.
@@ -849,34 +852,38 @@ http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarith
 ---------------------
 Additional references:
 ---------------------
-	34.3) Instead of [BerkmanSchieberVishkin] an O(logloglogN) algorithm can be used described in (since the numbers in tiles are within a known range) - Triply-Logarithmic Parallel Upper and Lower Bounds for Minimum and Range Minima over Small Domains (Omer Berkman, Yossi Matiasb, Prabhakar Ragde) - 1998 - http://www.sciencedirect.com/science/article/pii/S0196677497909056. 
+	34.3 Above PRAM k-merge algorithm implies Factorization is in NC, a far more audacious claim than Factorization in P. It has been disputed if PRAM is indeed in NC because of input size being N and not logN. But there have been insurmountable evidences so far which all point to PRAM model being equivalent to NC circuits in certain conditions and NC circuit nodes can simulate PRAM with polylog upperbound on number of bits [HooverGreenlawRuzzo]- https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf . References for this are in LaTex and PDF links previously and also mentioned below in "Additional References"
 
-	34.4) Randomized Algorithms ,Rajeev Motwani and Prabhakar Raghavan, Chapter 12 on Distributed and Parallel Algorithms, also describes input size and randomized algorithms for Parallel sort. 
+	34.4) Instead of [BerkmanSchieberVishkin] an O(logloglogN) algorithm can be used described in (since the numbers in tiles are within a known range) - Triply-Logarithmic Parallel Upper and Lower Bounds for Minimum and Range Minima over Small Domains (Omer Berkman, Yossi Matiasb, Prabhakar Ragde) - 1998 - http://www.sciencedirect.com/science/article/pii/S0196677497909056.
 
-	34.5) Also an alternative merge algorithm in constant depth polysize circuit described in Chandra-Stockmeyer-Vishkin [http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf] can be applied (but it is for merging two lists of m, m-bit numbers where as the above factorization needs merging two lists of O(m), log(m)-bit numbers)
+	34.5) Randomized Algorithms ,Rajeev Motwani and Prabhakar Raghavan, Chapter 12 on Distributed and Parallel Algorithms, also describes input size and randomized algorithms for Parallel sort.
 
-	34.6) [RichardKarp-VijayaRamachandran] define the inclusion of PRAM models in NC in page 29 of http://digitalassets.lib.berkeley.edu/techreports/ucb/text/CSD-88-408.pdf - NCk in EREWk in CREWk in CRCWk=ACk in NC(k+1). [KarpRamachandran] cite [HooverKlawePippenger] - Bounding Fanout in Logical Networks - http://dl.acm.org/citation.cfm?id=322412 - for this inclusion. Thus references for PRAM=NC imply All Nearest Smaller Values (ANSV) CRCW PRAM algorithm [BerkmanSchieberVishkin] is also in NC counterintuitively despite the input size being N=n (and not logN).
+	34.6) Also an alternative merge algorithm in constant depth polysize circuit described in Chandra-Stockmeyer-Vishkin [http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf] can be applied (but it is for merging two lists of m, m-bit numbers where as the above factorization needs merging two lists of O(m), log(m)-bit numbers)
 
-	34.7) Parallel RAM survey - http://www.cs.utoronto.ca/~faith/PRAMsurvey.ps
+	34.7) [RichardKarp-VijayaRamachandran] define the inclusion of PRAM models in NC in page 29 of http://digitalassets.lib.berkeley.edu/techreports/ucb/text/CSD-88-408.pdf - NCk in EREWk in CREWk in CRCWk=ACk in NC(k+1). [KarpRamachandran] cite [HooverKlawePippenger] - Bounding Fanout in Logical Networks - http://dl.acm.org/citation.cfm?id=322412 - for this inclusion. Thus references for PRAM=NC imply All Nearest Smaller Values (ANSV) CRCW PRAM algorithm [BerkmanSchieberVishkin] is also in NC counterintuitively despite the input size being N=n (and not logN).
 
-	34.8) Related: Quantum Search using Grover Algorithm over unsorted lists can be done in O(sqrt(N)) - https://en.wikipedia.org/wiki/Grover's_algorithm. This is another counterintuitive fact that a quantum search on unsorted lists is slower than ANSV Parallel RAM algorithm.
+	34.8) Parallel RAM survey - http://www.cs.utoronto.ca/~faith/PRAMsurvey.ps
 
-        34.9) Recent Advances in All Nearest Smaller Values algorithms:
-		34.9.1) ANSV in hypercube - Kravets and Plaxton - http://www.cs.utexas.edu/~plaxton/pubs/1996/ieee_tpds.ps
-                34.9.2) ANSV lowerbound - Katajainen - http://www.diku.dk/~jyrki/Paper/CATS96.ps - omega(n) processors with omega(logn) time
-                34.9.3) ANSV in BSP machines - Chun Hsi Huang - http://www.cse.buffalo.edu/tech-reports/2001-06.ps
+	34.9) Related: Quantum Search using Grover Algorithm over unsorted lists can be done in O(sqrt(N)) - https://en.wikipedia.org/wiki/Grover's_algorithm. This is another counterintuitive fact that a quantum search on unsorted lists is slower than ANSV Parallel RAM algorithm.
+
+        34.10) Recent Advances in All Nearest Smaller Values algorithms:
+		34.10.1) ANSV in hypercube - Kravets and Plaxton - http://www.cs.utexas.edu/~plaxton/pubs/1996/ieee_tpds.ps
+                34.10.2) ANSV lowerbound - Katajainen - http://www.diku.dk/~jyrki/Paper/CATS96.ps - omega(n) processors with omega(logn) time
+                34.10.3) ANSV in BSP machines - Chun Hsi Huang - http://www.cse.buffalo.edu/tech-reports/2001-06.ps
         
-        34.10) The crucial fact in the above is not the practicality of having order of n parallel processors with RAM to get the logarithmic time lowerbound (which looks costly in number of PRAMs wise), but the equivalence of PRAM to NC which is theoretically allowed despite input size being n instead of logn (because each PRAM cell mapped to a circuit element can have polylogn bits and polyn such PRAMs are allowed) which is sufficient for Discrete Hyperbolic Factorization to be in NC.
+        34.11) The crucial fact in the above is not the practicality of having order of n parallel processors with RAM to get the logarithmic time lowerbound (which looks costly in number of PRAMs wise), but the equivalence of PRAM to NC which is theoretically allowed despite input size being n instead of logn (because each PRAM cell mapped to a circuit element can have polylogn bits and polyn such PRAMs are allowed) which is sufficient for Discrete Hyperbolic Factorization to be in NC.
 
-        34.11) Rsync - PhD thesis - chapters on external and internal sorting - https://www.samba.org/~tridge/phd_thesis.pdf
+        34.12) Rsync - PhD thesis - chapters on external and internal sorting - https://www.samba.org/~tridge/phd_thesis.pdf
 
-	34.12) Handbook of Parallel Computing - [SanguthevarRajasekaran-JohnReif] - http://www.engr.uconn.edu/~rajasek/HandbookParallelComp.pdf,  https://books.google.co.in/books?id=OF9hk4oC6FIC&pg=PA179&lpg=PA179&dq=PRAM+NC+equivalence&source=bl&ots=LpYceSocLO&sig=GtslRh1I1AveOLo0kTylSzyDd48&hl=en&sa=X&ved=0ahUKEwi_1OfmuKbJAhUCHY4KHTpdAfoQ6AEISTAI#v=onepage&q=PRAM%20NC%20equivalence&f=false
+	34.13) Handbook of Parallel Computing - [SanguthevarRajasekaran-JohnReif] - http://www.engr.uconn.edu/~rajasek/HandbookParallelComp.pdf,  https://books.google.co.in/books?id=OF9hk4oC6FIC&pg=PA179&lpg=PA179&dq=PRAM+NC+equivalence&source=bl&ots=LpYceSocLO&sig=GtslRh1I1AveOLo0kTylSzyDd48&hl=en&sa=X&ved=0ahUKEwi_1OfmuKbJAhUCHY4KHTpdAfoQ6AEISTAI#v=onepage&q=PRAM%20NC%20equivalence&f=false
 
-	34.13) [Eric Allender] - NC^1 and EREW PRAM - March 1990 - https://groups.google.com/forum/#!topic/comp.theory/0a5Y_DSkOao - "... Since NC^1 is contained in DLOG, and many people suspect that the containment is proper, it seems unlikely that NC^1 corresponds to log time on an EREW PRAM ..." - contradicts 34.6.
+	34.14) [Eric Allender] - NC^1 and EREW PRAM - March 1990 - https://groups.google.com/forum/#!topic/comp.theory/0a5Y_DSkOao - "... Since NC^1 is contained in DLOG, and many people suspect that the containment is proper, it seems unlikely that NC^1 corresponds to log time on an EREW PRAM ..." - contradicts 34.7.
 
-	34.14) Efficient and Highly Parallel Computation - [JeffreyFinkelstein] - https://cs-people.bu.edu/jeffreyf/static/pdf/parallel.pdf - "... NC represents the class of languages decidable by a CREW PRAM with a polynomial number of processors running in polylogarithmic parallel time. Languages in NC are considered highly parallel ...".  [Berkman-Schieber-Vishkin] algorithm - www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/ansv.ps - for ANSV is for both CREW PRAM of O(logn, n/logn) and CRCW PRAM of O(loglogn, n/loglogn) and thus former is in NC.
+	34.15) Efficient and Highly Parallel Computation - [JeffreyFinkelstein] - https://cs-people.bu.edu/jeffreyf/static/pdf/parallel.pdf - "... NC represents the class of languages decidable by a CREW PRAM with a polynomial number of processors running in polylogarithmic parallel time. Languages in NC are considered highly parallel ...".  [Berkman-Schieber-Vishkin] algorithm - www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/ansv.ps - for ANSV is for both CREW PRAM of O(logn, n/logn) and CRCW PRAM of O(loglogn, n/loglogn) and thus former is in NC.
 
-	34.15) There is no commercially available Parallel RAM chip implementation. This is a limitation of implementing All Nearest Smaller Values PRAM merge for discretized hyperbolic arc and doing a benchmark.
+	34.16) There is no commercially available Parallel RAM chip implementation. This is a limitation of implementing All Nearest Smaller Values PRAM merge for discretized hyperbolic arc and doing a benchmark.
+
+	34.17) StackExchange thread on Consequences of Factorization in P - http://cstheory.stackexchange.com/questions/5096/consequences-of-factoring-being-in-p . Factorization in P is unlikely to have any significant effect on existing class containments, though practical ecommerce becomes less secure.
 
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
