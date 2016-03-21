@@ -3806,6 +3806,18 @@ root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-
 618
 Per task time milliseconds: ~402 (fastest observed thus far per task; Obviously something is wrong with spark-defaults.conf enabled)
 
+------------------------------------------------------------------------------------------------------------------------------
+245. (FEATURE-BENCHMARK-DONE) Interview Algorithm PySpark-Cython implementation benchmark with Spark configurables
+- Commits as on 21 March 2016
+------------------------------------------------------------------------------------------------------------------------------
+Following benchmark was done with a new spark-defaults.conf (committed as spark-defaults2.conf):
+
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# echo $sum
+965910
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/InterviewAlgorithm/testlogs# grep Finished InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.2localthreads.CythonOptimized.21March2016.out |grep TaskSetManager| awk '{print $14}'|wc -l
+618
+Time per task in milliseconds: ~1562 (Again, with spark-defaults.conf with some additional settings, there is a blockade)
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
