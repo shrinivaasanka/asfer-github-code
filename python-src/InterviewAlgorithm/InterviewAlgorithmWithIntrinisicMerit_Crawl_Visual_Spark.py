@@ -133,6 +133,7 @@ def filter_none_vertices(nxg):
 	for e in nx.edges(nxg):
 		if e[0] == "None" or e[1] == "None":
 			nxg.remove_edge(e[0],e[1])
+	#nxg.remove_vertex("None")
 
 #function - get_jaccard_coefficient()
 #def get_jaccard_coefficient(refanswer, candidanswer):
@@ -198,11 +199,16 @@ def InterviewAlgorithm_main(argv1):
 			#crucial - gather nodes which converge/overlap (have more than 1 parent)
 			if current_level > 1:
 				print current_level
+				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
+				prevlevelsynsets_tokens=[]
+				for s in prevlevelsynsets:
+					s_lemma=s.lemma_names()
+					prevlevelsynsets_tokens.append(s_lemma[0])
 				for x in freqterms1:
-					prevlevelsynsets_tokens=[]
-					for s in prevlevelsynsets:
-						s_lemma=s.lemma_names()
-						prevlevelsynsets_tokens.append(s_lemma[0])
+					#prevlevelsynsets_tokens=[]
+					#for s in prevlevelsynsets:
+					#	s_lemma=s.lemma_names()
+					#	prevlevelsynsets_tokens.append(s_lemma[0])
 					if parents_computation_spark:
 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
 						if len(parents_x) > 1:
