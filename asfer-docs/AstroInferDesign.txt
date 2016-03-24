@@ -3822,6 +3822,20 @@ Time per task in milliseconds: ~1562 (Again, with spark-defaults.conf with some 
 Nicknames/UserIds in social media are assumed to be unique to an individual. Authentication and authorization with Public-Key Infrastructure
 is assumed to guarantee unique identification. In an exceptional case, if more than one person shares a userid intentionally or because of cybercrime to portray a false picture of other end, is it possible to distinguish and learn such spoof behaviour? This is a direct opposite of differential privacy [Cynthia Dwork - http://research.microsoft.com/pubs/64346/dwork.pdf] where 2 databases differing in one element are indistinguishable to queries by a randomized algorithm with coin tosses. But in previous example of shared id(s) in social network, distinguisher should be able to discern the cases when a remote id is genuine and spoofed/shared - probably suitable name for it is Differential Identification. This can theoretically happen despite all PKI security measures in place when id is intentionally shared i.e a coalition of people decide to hoodwink PKI by sharing credentials and the receiving end sees them as one. For example, if a chat id is compromised by a coalition, the chat transcript is no longer credible reflection of the other end, and receiving end may not be aware of this at all. Here chat transcript is a mix of both genuine and spoofed portrayal of other end. An example statistical Learning algorithm for distinguishing when spoof happened analyzes the chat transcript conversations with genuine chat as priors if there is a prior available. Non-statistically, it is not known how a boolean function learner would look like for this example. A special case is when a coalition is unnecessary. The remote end can be a single individual garnering collective wisdom from multiple sources to present a deceptive portrayal of multitude.
 
+--------------------------------------------------------------------------------------------------------------------------------
+247. (FEATURE-DONE) Commits as on 24 March 2016 - Code Optimizations - Cacheing and Loop invariant - Interview Algorithm
+--------------------------------------------------------------------------------------------------------------------------------
+- New Cacheing datastructures have been included for storing already found previous level backedge vertices for each level and
+already found gloss tokens. Presently these caches are python dictionaries only and in a distributed setting this can be replaced with an
+object key-value stores like memcached.(InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py)
+- There was an inefficient loop invariant computation for prevelevesynsets_tokens which has been moved to outermost while.(InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py)
+- spark-default2.conf has been updated with few more Spark config settings
+- Spidered text has been recrawled
+- logs and screenshots for this commits have been included in testlogs/
+- Cython .c , .so files have been rebuilt
+- Cacheing above in someway accomplishes the isomorphic node removal by way of Cache lookup
+
+
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
