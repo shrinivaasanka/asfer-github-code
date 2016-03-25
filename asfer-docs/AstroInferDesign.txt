@@ -3835,6 +3835,29 @@ object key-value stores like memcached.(InterviewAlgorithm/InterviewAlgorithmWit
 - Cython .c , .so files have been rebuilt
 - Cacheing above in someway accomplishes the isomorphic node removal by way of Cache lookup
 
+--------------------------------------------------------------------------------------------------------------------------
+248. (FEATURE-BENCHMARK-DONE) Intrinsic Merit PySpark-Cython implementation - With and Without cacheing
+- Commits as on 25 March 2016
+--------------------------------------------------------------------------------------------------------------------------
+1.Cache md5 hashkey has been changed to be the complete tuple (tokensofprevlevel,keyword) - the rationale is to have perfect
+uniqueness to find backvertices for a keyword and gloss from previous recursion step.
+2.Following benchmark was done by disabling and enabling lookupCache and lookupCacheParents boolean flags.
+3.Cache values are "Novalue" string literals by default initialized in lambda and the Cache updates are not append()s but
+simple key-value assignments.
+--
+Number of keywords: 7
+Without Cacheing: 9 minutes for all tasks (including NetworkX and graphics rendering times which is quite considerable)
+With Cacheing: 9 minutes for all tasks (including NetworkX and graphics rendering times which is quite considerable)
+
+Summation of individual task times in milliseconds and averaging sometimes gives misleadingly high duration per task though
+total execution is faster. Because of this start-end time duration is measured. For above example Cacheing has no effect because
+there are no repetitions cached to do lookup. Logs and screenshots with and without cacheing have been committed to testlogs/
+
+--------------------------------------------------------------------------------------------------------------------------
+249. (THEORY) An alternative USTCONN LogSpace algorithm for constructing Recursive Gloss Overlap Graph
+--------------------------------------------------------------------------------------------------------------------------
+Benchmarks above are selected best from multiple executions. Sometimes a mysterious slowdown was observed with both CPUs clocking 100%
+load which could be result of JVM Garbage Collection for Spark processes among others. These benchmarks are thus just for assessing feasibility of Spark clustering only and a perfect benchmark might require a cloud of few thousand nodes for a crawled webpage. At present there is no known standard algorithm to convert a natural language text to a relational graph without WordNet and internally looking up some *Net ontology to get path relations between two words could be indispensable theoretically speaking. This is the reverse process of Graph Traversals - Breadth First and Depth First - traversal is the input text and a graph has to be extracted from it. For n keywords, there are n^2 ordered pairs of word vertices possible for each of which WordNet paths have to be found. This is Undirected ST Connectivity in graphs for which there are quite a few algorithms known right from [Savitch] theorem upto [OmerReingold] ZigZag product based algorithm in logspace. This is more optimal compared to all pairs shortest paths on WordNet. This algorithm does not do deep learning recursion top-down to learn a graph from text. For all pairs this is  better than O(n^3) which is upperbound for All Pairs Shortest Paths. These n^2 pairs overlap and intersect to create a graph. Presently implemented Recursive Gloss Overlap learns deeper than all pairs USTCONN algorithm because it uses "superinstance" notion - whether x is in definition of y - something absent in WordNet jargon.
 
 
 - 

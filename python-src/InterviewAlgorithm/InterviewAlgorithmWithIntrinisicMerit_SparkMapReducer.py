@@ -61,8 +61,8 @@ lookupCacheParents=True
 #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
 rgo_object=namedtuple("rgo_object", "tokensatthislevel")
 picklelock=threading.Lock()
-graphcache_mapreduce=defaultdict(list)
-graphcache_mapreduce_parents=defaultdict(list)
+graphcache_mapreduce=defaultdict(lambda: "Novalue")
+graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
 
 def asfer_pickle_string_dump(s,picklef):
 	print "asfer_pickle_string_dump(): picklef.write():",s
@@ -155,9 +155,9 @@ def best_matching_synset(doc_tokens, synsets):
 
 def Spark_MapReduce(level, wordsatthislevel):
 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
-	if lookupCache and graphcache_mapreduce[md5hash] != []:
+	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
-		return graphcache_mapreduce[md5hash][0]
+		return graphcache_mapreduce[md5hash]
 	else:	
 		spcon=SparkContext("local[2]","Spark_MapReduce")
 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
@@ -177,7 +177,7 @@ def Spark_MapReduce(level, wordsatthislevel):
 		dict_query_results=dict(query_results.collect())
 		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
 		#print dict_query_results[1]
-		graphcache_mapreduce[md5hash].append(dict_query_results[1])
+		graphcache_mapreduce[md5hash]=dict_query_results[1]
 		print "graphcache_mapreduce updated:", graphcache_mapreduce
 		spcon.stop()
 		return dict_query_results[1]
@@ -224,14 +224,16 @@ def reduceFunction_Parents(parents1, parents2):
 		return parents1 + parents2
 
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
-	#md5hashparents = hashlib.md5(",".join(tokensofprevlevel)).hexdigest()
-	md5hashparents = hashlib.md5(keyword).hexdigest()
+	tokensofprevlevelkeyword=tokensofprevlevel
+	tokensofprevlevelkeyword.append(keyword)
+	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
+	#md5hashparents = hashlib.md5(keyword).hexdigest()
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
 	asfer_pickle_string_dump(keyword,picklef_keyword)
 	picklef_keyword.close()
-	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != []:
+	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
 		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
-		return graphcache_mapreduce_parents[md5hashparents][0]
+		return graphcache_mapreduce_parents[md5hashparents]
 	else:	
 		#picklelock.acquire()
 		spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
@@ -248,7 +250,7 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
 		dict_query_results=dict(query_results.collect())
 		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
 		#picklelock.release()
-		graphcache_mapreduce_parents[md5hashparents].append(dict_query_results[1])
+		graphcache_mapreduce_parents[md5hashparents]=dict_query_results[1]
 		spcon.stop()
 		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents
 		return dict_query_results[1]
