@@ -29,6 +29,8 @@
 
 use WordNet::QueryData;
 use WordNet::Similarity::path;
+use WordNet::Similarity::PathFinder;
+use 5.010;
 #use warnings;
 
 sub WordNetDistance
@@ -39,11 +41,36 @@ sub WordNetDistance
 	my $measure = WordNet::Similarity::path->new($wn);
 	my $distance = $measure->getRelatedness($word1, $word2);
 	($error, $errorString) = $measure->getError();
-
+	my $traceString = $measure->getTraceString();
 	print "distance=$distance \n";
 	print "error=$error, errorString=$errorString \n";
+	print "trace string = $traceString \n";
+}
+
+sub WordNetPath
+{
+	my $word1 = shift;
+	my $word2 = shift;
+	my $wn = WordNet::QueryData->new;
+	my $measure = WordNet::Similarity::PathFinder->new($wn);
+	my @paths = $measure->getAllPaths($word1, $word2, "n", "wps");
+	print "All paths = $paths \n";
+	print "path top = $paths[0][0] \n";
+	print "path length = $paths[0][1] \n";
+	print "path synsets = $paths[0][2] \n";
+
+	my @synsets=$paths[0][2];
+	foreach my $i (0 .. 100)
+	{
+		print "synset $i in path = $paths[0][2][$i] \n";
+		if ($paths[0][2][$i] eq $word2)
+		{
+			last;
+		}
+	}
 }
 
 my $word1 = $ARGV[0];
 my $word2 = $ARGV[1];
 WordNetDistance($word1, $word2);
+WordNetPath($word1, $word2);

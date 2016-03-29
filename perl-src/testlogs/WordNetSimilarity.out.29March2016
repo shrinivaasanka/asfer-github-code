@@ -1,0 +1,22 @@
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/perl-src# perl WordNetSimilarity.pl microsoft#n#1 google#n#1
+distance= 
+error=1, errorString=Warning (WordNet::Similarity::path::validateSynset()) - microsoft#n#1 not found in WordNet. 
+trace string =  
+All paths =  
+path top = *Root*#n#1 
+path length = 13 
+path synsets = ARRAY(0xb47e6b4) 
+synset 0 in path = microsoft#n#1 
+synset 1 in path = *Root*#n#1 
+synset 2 in path = entity#n#1 
+synset 3 in path = abstraction#n#6 
+synset 4 in path = communication#n#2 
+synset 5 in path = written_communication#n#1 
+synset 6 in path = writing#n#4 
+synset 7 in path = coding_system#n#1 
+synset 8 in path = code#n#3 
+synset 9 in path = software#n#1 
+synset 10 in path = program#n#7 
+synset 11 in path = search_engine#n#1 
+synset 12 in path = google#n#1 
+
