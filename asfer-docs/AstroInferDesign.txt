@@ -3868,7 +3868,7 @@ load which could be result of JVM Garbage Collection for Spark processes among o
 From the example path in logs, distance is more of a metapath than a thesaurus-like path implemented in Recursive Gloss Overlap in NeuronRain. Due to this limitation of WordNet hyper-hyponyms the usual unsupervised classifier based on core numbers of the graph translated from text would not work as accurately with straightforward WordNet paths. This necessitates the superinstance relation which relates two words k and l: k is in definition of l.
 
 -----------------------------------------------------------------------------------------------------------------------
-251. (FEATURE-DONE) Commits as on 30 March 2016 - MemCache Integration with Spark-Cython Intrinsic Merit Computation
+251. (FEATURE-DONE) Commits (1) as on 30 March 2016 - MemCache Integration with Spark-Cython Intrinsic Merit Computation
 -----------------------------------------------------------------------------------------------------------------------
 - In this commit, native python dictionary based cache lookup for Spark_MapReduce() and Spark_MapReduce_Parents() is replaced with
 standard MemCache Distributed Object Cacheing get()/set() invocations.
@@ -3877,6 +3877,16 @@ standard MemCache Distributed Object Cacheing get()/set() invocations.
 - a recrawled webpage has been merit-computed
 - MemCached is better than native dict(s) because of standalone nature of Cache Listener which can be looked up from
 anywhere on cloud
+
+--------------------------------------------------------------------------------------------------------------------------------
+252. (FEATURE-DONE) Commits (2) as on 30 March 2016 - Spark-Cython Intrinsic Merit computation with spark-defaults.conf enabled
+--------------------------------------------------------------------------------------------------------------------------------
+- spark-defaults2.conf has been enabled with extra java options for performance (reference: http://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html)
+- lookupCache and lookupCacheParents boolean flags have been done away with because memcache has been enabled by default for subgraph cacheing
+- With this spark logs show more concurrency and less latency. Dynamic allocation was in conflict with number of executors and executors has been hence commented in spark-defaults2.conf
+- text document has been updated to have ~10 keywords. This took almost 7 minutes which looks better than one with spark-defaults.conf disabled
+- Screenshot and logs have been committed in testlogs/
+ 
 
 
 
