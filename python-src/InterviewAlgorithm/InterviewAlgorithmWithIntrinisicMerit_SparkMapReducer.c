@@ -602,18 +602,6 @@ static CYTHON_INLINE int __Pyx_ListComp_Append(PyObject* list, PyObject* x) {
 static CYTHON_INLINE PyObject* __Pyx_PyBytes_Join(PyObject* sep, PyObject* values);
 #endif
 
-#include <string.h>
-
-static CYTHON_INLINE int __Pyx_PyBytes_Equals(PyObject* s1, PyObject* s2, int equals);
-
-static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int equals);
-
-#if PY_MAJOR_VERSION >= 3
-#define __Pyx_PyString_Equals __Pyx_PyUnicode_Equals
-#else
-#define __Pyx_PyString_Equals __Pyx_PyBytes_Equals
-#endif
-
 #if PY_MAJOR_VERSION >= 3
 static PyObject *__Pyx_PyDict_GetItem(PyObject *d, PyObject* key) {
     PyObject *value;
@@ -737,8 +725,6 @@ int __pyx_module_is_main_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer =
 
 /* Implementation of 'InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer' */
 static PyObject *__pyx_builtin_open;
-static PyObject *__pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda1(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda2(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_asfer_pickle_string_dump(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_s, PyObject *__pyx_v_picklef); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_2asfer_pickle_string_load(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_picklef); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_4asfer_pickle_dump(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_prevlevelsynsets, PyObject *__pyx_v_picklef); /* proto */
@@ -746,12 +732,11 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_8mapFunction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_freqterms1); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_10reduceFunction(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mapped_object1, PyObject *__pyx_v_mapped_object2); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_12best_matching_synset(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_doc_tokens, PyObject *__pyx_v_synsets); /* proto */
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_level, PyObject *__pyx_v_wordsatthislevel); /* proto */
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_level, PyObject *__pyx_v_wordsatthislevel, PyObject *__pyx_v_graphcache); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_16mapFunction_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_prevleveltokens); /* proto */
 static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_18reduceFunction_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_parents1, PyObject *__pyx_v_parents2); /* proto */
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_keyword, PyObject *__pyx_v_tokensofprevlevel); /* proto */
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCacheParents(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_24flushCache(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_keyword, PyObject *__pyx_v_tokensofprevlevel, PyObject *__pyx_v_graphcache); /* proto */
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCache(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_graphcache); /* proto */
 static char __pyx_k_[] = ",";
 static char __pyx_k_A[] = "A";
 static char __pyx_k_B[] = "B";
@@ -817,10 +802,12 @@ static char __pyx_k__27[] = ";";
 static char __pyx_k_and[] = "and";
 static char __pyx_k_are[] = "are";
 static char __pyx_k_end[] = "end";
+static char __pyx_k_get[] = "get";
 static char __pyx_k_map[] = "map";
 static char __pyx_k_may[] = "may";
 static char __pyx_k_md5[] = "md5";
 static char __pyx_k_s_2[] = "'s";
+static char __pyx_k_set[] = "set";
 static char __pyx_k_she[] = "she";
 static char __pyx_k_sql[] = "sql";
 static char __pyx_k_syn[] = "syn";
@@ -858,14 +845,12 @@ static char __pyx_k_Synset[] = "Synset";
 static char __pyx_k_append[] = "append";
 static char __pyx_k_corpus[] = "corpus";
 static char __pyx_k_import[] = "__import__";
-static char __pyx_k_lambda[] = "<lambda>";
 static char __pyx_k_pickle[] = "pickle";
 static char __pyx_k_puncts[] = "puncts";
 static char __pyx_k_reader[] = "reader";
 static char __pyx_k_retset[] = "retset";
 static char __pyx_k_synset[] = "synset";
 static char __pyx_k_tokens[] = "tokens";
-static char __pyx_k_Novalue[] = "Novalue";
 static char __pyx_k_collect[] = "collect";
 static char __pyx_k_english[] = "english";
 static char __pyx_k_hashlib[] = "hashlib";
@@ -883,17 +868,20 @@ static char __pyx_k_parents1[] = "parents1";
 static char __pyx_k_parents2[] = "parents2";
 static char __pyx_k_readline[] = "readline";
 static char __pyx_k_SparkConf[] = "SparkConf";
+static char __pyx_k_flush_all[] = "flush_all";
 static char __pyx_k_hexdigest[] = "hexdigest";
 static char __pyx_k_keyword_2[] = "keyword";
 static char __pyx_k_s_synsets[] = "s_synsets";
 static char __pyx_k_stopwords[] = "stopwords";
 static char __pyx_k_threading[] = "threading";
 static char __pyx_k_SQLContext[] = "SQLContext";
+static char __pyx_k_cachevalue[] = "cachevalue";
 static char __pyx_k_def_tokens[] = "def_tokens";
 static char __pyx_k_definition[] = "definition";
 static char __pyx_k_doc_tokens[] = "doc_tokens";
 static char __pyx_k_flushCache[] = "flushCache";
 static char __pyx_k_freqterms1[] = "freqterms1";
+static char __pyx_k_graphcache[] = "graphcache";
 static char __pyx_k_namedtuple[] = "namedtuple";
 static char __pyx_k_picklelock[] = "picklelock";
 static char __pyx_k_rgo_object[] = "rgo_object";
@@ -935,7 +923,6 @@ static char __pyx_k_wordsatthislevel[] = "wordsatthislevel";
 static char __pyx_k_asfer_pickle_dump[] = "asfer_pickle_dump";
 static char __pyx_k_asfer_pickle_load[] = "asfer_pickle_load";
 static char __pyx_k_disamb_synset_def[] = "disamb_synset_def";
-static char __pyx_k_flushCacheParents[] = "flushCacheParents";
 static char __pyx_k_prevleveltokens_2[] = "prevleveltokens";
 static char __pyx_k_registerTempTable[] = "registerTempTable";
 static char __pyx_k_tokensatthislevel[] = "tokensatthislevel";
@@ -946,7 +933,6 @@ static char __pyx_k_reduced_rgo_object[] = "reduced_rgo_object";
 static char __pyx_k_mapFunction_Parents[] = "mapFunction_Parents";
 static char __pyx_k_Spark_MapReduce_hash[] = "Spark_MapReduce(): hash = ";
 static char __pyx_k_best_matching_synset[] = "best_matching_synset";
-static char __pyx_k_graphcache_mapreduce[] = "graphcache_mapreduce";
 static char __pyx_k_returning_from_cache[] = "; returning from cache";
 static char __pyx_k_s_synset_word_tokens[] = "s_synset_word_tokens";
 static char __pyx_k_mapFunction_freqterms1[] = "mapFunction(): freqterms1:";
@@ -960,7 +946,6 @@ static char __pyx_k_tokensofprevlevelkeyword[] = "tokensofprevlevelkeyword";
 static char __pyx_k_mapFunction_Parents_keyword[] = "mapFunction_Parents(): keyword:";
 static char __pyx_k_mapFunction_Parents_returns[] = "mapFunction_Parents(): returns=";
 static char __pyx_k_Spark_MapReduce_Parents_hash[] = "Spark_MapReduce_Parents(): hash = ";
-static char __pyx_k_graphcache_mapreduce_parents[] = "graphcache_mapreduce_parents";
 static char __pyx_k_graphcache_mapreduce_updated[] = "graphcache_mapreduce updated:";
 static char __pyx_k_recursiveglossoverlap_schema[] = "recursiveglossoverlap_schema";
 static char __pyx_k_mapFunction_Parents_keyword_2[] = "mapFunction_Parents(): keyword=";
@@ -999,7 +984,6 @@ static PyObject *__pyx_n_s_Lock;
 static PyObject *__pyx_n_s_M;
 static PyObject *__pyx_n_s_N;
 static PyObject *__pyx_n_s_None;
-static PyObject *__pyx_n_s_Novalue;
 static PyObject *__pyx_n_s_O;
 static PyObject *__pyx_n_s_P;
 static PyObject *__pyx_n_s_Q;
@@ -1061,6 +1045,7 @@ static PyObject *__pyx_n_s_asfer_pickle_string_load;
 static PyObject *__pyx_kp_s_asfer_pickle_string_load_picklef;
 static PyObject *__pyx_n_s_best_matching_synset;
 static PyObject *__pyx_n_s_cache;
+static PyObject *__pyx_n_s_cachevalue;
 static PyObject *__pyx_n_s_close;
 static PyObject *__pyx_n_s_collect;
 static PyObject *__pyx_n_s_collections;
@@ -1078,10 +1063,10 @@ static PyObject *__pyx_n_s_english;
 static PyObject *__pyx_n_s_fdist_tokens;
 static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_flushCache;
-static PyObject *__pyx_n_s_flushCacheParents;
+static PyObject *__pyx_n_s_flush_all;
 static PyObject *__pyx_n_s_freqterms1;
-static PyObject *__pyx_n_s_graphcache_mapreduce;
-static PyObject *__pyx_n_s_graphcache_mapreduce_parents;
+static PyObject *__pyx_n_s_get;
+static PyObject *__pyx_n_s_graphcache;
 static PyObject *__pyx_kp_s_graphcache_mapreduce_parents_upd;
 static PyObject *__pyx_kp_s_graphcache_mapreduce_updated;
 static PyObject *__pyx_n_s_hashlib;
@@ -1097,7 +1082,6 @@ static PyObject *__pyx_n_s_json;
 static PyObject *__pyx_n_s_k;
 static PyObject *__pyx_kp_s_keyword;
 static PyObject *__pyx_n_s_keyword_2;
-static PyObject *__pyx_n_s_lambda;
 static PyObject *__pyx_n_s_level;
 static PyObject *__pyx_n_s_line;
 static PyObject *__pyx_kp_s_local_2;
@@ -1168,6 +1152,7 @@ static PyObject *__pyx_kp_s_s_2;
 static PyObject *__pyx_n_s_s_synset_tokens;
 static PyObject *__pyx_n_s_s_synset_word_tokens;
 static PyObject *__pyx_n_s_s_synsets;
+static PyObject *__pyx_n_s_set;
 static PyObject *__pyx_n_s_she;
 static PyObject *__pyx_n_s_spcon;
 static PyObject *__pyx_n_s_split;
@@ -1231,7 +1216,6 @@ static PyObject *__pyx_tuple__54;
 static PyObject *__pyx_tuple__56;
 static PyObject *__pyx_tuple__58;
 static PyObject *__pyx_tuple__60;
-static PyObject *__pyx_tuple__62;
 static PyObject *__pyx_codeobj__39;
 static PyObject *__pyx_codeobj__41;
 static PyObject *__pyx_codeobj__43;
@@ -1244,86 +1228,9 @@ static PyObject *__pyx_codeobj__55;
 static PyObject *__pyx_codeobj__57;
 static PyObject *__pyx_codeobj__59;
 static PyObject *__pyx_codeobj__61;
-static PyObject *__pyx_codeobj__63;
-
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":64
- * rgo_object=namedtuple("rgo_object", "tokensatthislevel")
- * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")             # <<<<<<<<<<<<<<
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_26lambda1(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_26lambda1 = {"lambda1", (PyCFunction)__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_26lambda1, METH_NOARGS, 0};
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_26lambda1(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda1 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda1(__pyx_self);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda1(CYTHON_UNUSED PyObject *__pyx_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda1", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_n_s_Novalue);
-  __pyx_r = __pyx_n_s_Novalue;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
 
 /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":65
  * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")             # <<<<<<<<<<<<<<
- * 
- * def asfer_pickle_string_dump(s,picklef):
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_27lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_27lambda2 = {"lambda2", (PyCFunction)__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_27lambda2, METH_NOARGS, 0};
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_27lambda2(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda2 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda2(__pyx_self);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_lambda_funcdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_lambda2(CYTHON_UNUSED PyObject *__pyx_self) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda2", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_n_s_Novalue);
-  __pyx_r = __pyx_n_s_Novalue;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":67
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
  * 
  * def asfer_pickle_string_dump(s,picklef):             # <<<<<<<<<<<<<<
  * 	print "asfer_pickle_string_dump(): picklef.write():",s
@@ -1362,11 +1269,11 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_picklef)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("asfer_pickle_string_dump", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("asfer_pickle_string_dump", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "asfer_pickle_string_dump") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "asfer_pickle_string_dump") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1379,7 +1286,7 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("asfer_pickle_string_dump", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("asfer_pickle_string_dump", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_string_dump", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1404,14 +1311,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("asfer_pickle_string_dump", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":68
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":66
  * 
  * def asfer_pickle_string_dump(s,picklef):
  * 	print "asfer_pickle_string_dump(): picklef.write():",s             # <<<<<<<<<<<<<<
  * 	picklef.write(s)
  * 
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_asfer_pickle_string_dump_picklef);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_asfer_pickle_string_dump_picklef);
@@ -1419,17 +1326,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_s);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_s);
   __Pyx_GIVEREF(__pyx_v_s);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":69
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":67
  * def asfer_pickle_string_dump(s,picklef):
  * 	print "asfer_pickle_string_dump(): picklef.write():",s
  * 	picklef.write(s)             # <<<<<<<<<<<<<<
  * 
  * def asfer_pickle_string_load(picklef):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1442,24 +1349,24 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_s); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_s); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_v_s);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_s);
     __Pyx_GIVEREF(__pyx_v_s);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":67
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":65
+ * picklelock=threading.Lock()
  * 
  * def asfer_pickle_string_dump(s,picklef):             # <<<<<<<<<<<<<<
  * 	print "asfer_pickle_string_dump(): picklef.write():",s
@@ -1482,7 +1389,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":71
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":69
  * 	picklef.write(s)
  * 
  * def asfer_pickle_string_load(picklef):             # <<<<<<<<<<<<<<
@@ -1516,14 +1423,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("asfer_pickle_string_load", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":72
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":70
  * 
  * def asfer_pickle_string_load(picklef):
  * 	keyword=picklef.read()             # <<<<<<<<<<<<<<
  * 	print "asfer_pickle_string_load(): picklef.readlines():",keyword
  * 	return keyword
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1536,24 +1443,24 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_keyword = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":73
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":71
  * def asfer_pickle_string_load(picklef):
  * 	keyword=picklef.read()
  * 	print "asfer_pickle_string_load(): picklef.readlines():",keyword             # <<<<<<<<<<<<<<
  * 	return keyword
  * 
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_asfer_pickle_string_load_picklef);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_asfer_pickle_string_load_picklef);
@@ -1561,10 +1468,10 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_keyword);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_keyword);
   __Pyx_GIVEREF(__pyx_v_keyword);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":74
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":72
  * 	keyword=picklef.read()
  * 	print "asfer_pickle_string_load(): picklef.readlines():",keyword
  * 	return keyword             # <<<<<<<<<<<<<<
@@ -1576,7 +1483,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_r = __pyx_v_keyword;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":71
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":69
  * 	picklef.write(s)
  * 
  * def asfer_pickle_string_load(picklef):             # <<<<<<<<<<<<<<
@@ -1598,7 +1505,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":76
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":74
  * 	return keyword
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):             # <<<<<<<<<<<<<<
@@ -1638,11 +1545,11 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_picklef)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("asfer_pickle_dump", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("asfer_pickle_dump", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "asfer_pickle_dump") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "asfer_pickle_dump") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1655,7 +1562,7 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("asfer_pickle_dump", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("asfer_pickle_dump", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_dump", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1685,7 +1592,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("asfer_pickle_dump", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":77
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":75
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):
  * 	for s in prevlevelsynsets:             # <<<<<<<<<<<<<<
@@ -1696,25 +1603,25 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __pyx_t_1 = __pyx_v_prevlevelsynsets; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -1723,7 +1630,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -1732,18 +1639,18 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":78
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":76
  * def asfer_pickle_dump(prevlevelsynsets,picklef):
  * 	for s in prevlevelsynsets:
  * 		picklef.write(repr(s)+",")             # <<<<<<<<<<<<<<
  * 
  * def asfer_pickle_load(picklef):
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = PyObject_Repr(__pyx_v_s); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyObject_Repr(__pyx_v_s); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyNumber_Add(__pyx_t_6, __pyx_kp_s_); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = PyNumber_Add(__pyx_t_6, __pyx_kp_s_); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -1757,24 +1664,24 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_6) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":77
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":75
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):
  * 	for s in prevlevelsynsets:             # <<<<<<<<<<<<<<
@@ -1784,7 +1691,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":76
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":74
  * 	return keyword
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):             # <<<<<<<<<<<<<<
@@ -1811,7 +1718,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":80
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":78
  * 		picklef.write(repr(s)+",")
  * 
  * def asfer_pickle_load(picklef):             # <<<<<<<<<<<<<<
@@ -1859,14 +1766,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("asfer_pickle_load", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":81
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":79
  * 
  * def asfer_pickle_load(picklef):
  * 	line=picklef.readline()             # <<<<<<<<<<<<<<
  * 	synsets=[]
  * 	stringsynsets=line.split(",")
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_readline); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_readline); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -1879,44 +1786,44 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_line = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":82
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":80
  * def asfer_pickle_load(picklef):
  * 	line=picklef.readline()
  * 	synsets=[]             # <<<<<<<<<<<<<<
  * 	stringsynsets=line.split(",")
  * 	for s in stringsynsets:
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_synsets = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":83
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":81
  * 	line=picklef.readline()
  * 	synsets=[]
  * 	stringsynsets=line.split(",")             # <<<<<<<<<<<<<<
  * 	for s in stringsynsets:
  * 		s_synset_tokens=s.split("'")
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_stringsynsets = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":84
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":82
  * 	synsets=[]
  * 	stringsynsets=line.split(",")
  * 	for s in stringsynsets:             # <<<<<<<<<<<<<<
@@ -1927,25 +1834,25 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __pyx_t_2 = __pyx_v_stringsynsets; __Pyx_INCREF(__pyx_t_2); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_stringsynsets); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_stringsynsets); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_5)) {
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -1954,7 +1861,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -1963,63 +1870,63 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":85
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":83
  * 	stringsynsets=line.split(",")
  * 	for s in stringsynsets:
  * 		s_synset_tokens=s.split("'")             # <<<<<<<<<<<<<<
  * 		#print "s_synset_tokens:",s_synset_tokens
  * 		if len(s_synset_tokens) == 3:
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_XDECREF_SET(__pyx_v_s_synset_tokens, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":87
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":85
  * 		s_synset_tokens=s.split("'")
  * 		#print "s_synset_tokens:",s_synset_tokens
  * 		if len(s_synset_tokens) == 3:             # <<<<<<<<<<<<<<
  * 			s_synset_word_tokens=s_synset_tokens[1].split(".")
  * 			#print "s_synset_word_tokens:",s_synset_word_tokens
  */
-    __pyx_t_6 = PyObject_Length(__pyx_v_s_synset_tokens); if (unlikely(__pyx_t_6 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyObject_Length(__pyx_v_s_synset_tokens); if (unlikely(__pyx_t_6 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_t_7 = ((__pyx_t_6 == 3) != 0);
     if (__pyx_t_7) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":88
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":86
  * 		#print "s_synset_tokens:",s_synset_tokens
  * 		if len(s_synset_tokens) == 3:
  * 			s_synset_word_tokens=s_synset_tokens[1].split(".")             # <<<<<<<<<<<<<<
  * 			#print "s_synset_word_tokens:",s_synset_word_tokens
  * 			s_synsets=wn.synsets(s_synset_word_tokens[0])
  */
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_s_synset_tokens, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_s_synset_tokens, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF_SET(__pyx_v_s_synset_word_tokens, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":90
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":88
  * 			s_synset_word_tokens=s_synset_tokens[1].split(".")
  * 			#print "s_synset_word_tokens:",s_synset_word_tokens
  * 			s_synsets=wn.synsets(s_synset_word_tokens[0])             # <<<<<<<<<<<<<<
  * 			#print "s_synsets:",s_synsets
  * 			synsets.append(s_synsets[0])
  */
-      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_synsets); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_synsets); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s_synset_word_tokens, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_s_synset_word_tokens, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_9 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -2032,17 +1939,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         }
       }
       if (!__pyx_t_9) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_GOTREF(__pyx_t_3);
       } else {
-        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_9); __Pyx_GIVEREF(__pyx_t_9); __pyx_t_9 = NULL;
         PyTuple_SET_ITEM(__pyx_t_10, 0+1, __pyx_t_1);
         __Pyx_GIVEREF(__pyx_t_1);
         __pyx_t_1 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
@@ -2050,22 +1957,22 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __Pyx_XDECREF_SET(__pyx_v_s_synsets, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":92
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":90
  * 			s_synsets=wn.synsets(s_synset_word_tokens[0])
  * 			#print "s_synsets:",s_synsets
  * 			synsets.append(s_synsets[0])             # <<<<<<<<<<<<<<
  * 	#print "asfer_pickle_load(): synsets=",synsets
  * 	return synsets
  */
-      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_s_synsets, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_s_synsets, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_synsets, __pyx_t_3); if (unlikely(__pyx_t_11 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_synsets, __pyx_t_3); if (unlikely(__pyx_t_11 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       goto __pyx_L5;
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":84
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":82
  * 	synsets=[]
  * 	stringsynsets=line.split(",")
  * 	for s in stringsynsets:             # <<<<<<<<<<<<<<
@@ -2075,7 +1982,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":94
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":92
  * 			synsets.append(s_synsets[0])
  * 	#print "asfer_pickle_load(): synsets=",synsets
  * 	return synsets             # <<<<<<<<<<<<<<
@@ -2087,7 +1994,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_r = __pyx_v_synsets;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":80
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":78
  * 		picklef.write(repr(s)+",")
  * 
  * def asfer_pickle_load(picklef):             # <<<<<<<<<<<<<<
@@ -2118,7 +2025,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":96
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":94
  * 	return synsets
  * 
  * def mapFunction(freqterms1):             # <<<<<<<<<<<<<<
@@ -2173,62 +2080,62 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("mapFunction", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":97
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":95
  * 
  * def mapFunction(freqterms1):
  * 	prevlevelsynsets=[]             # <<<<<<<<<<<<<<
  * 	prevlevelsynsets_earlier=[]
  * 	stopwords = nltk.corpus.stopwords.words('english')
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_prevlevelsynsets = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":98
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":96
  * def mapFunction(freqterms1):
  * 	prevlevelsynsets=[]
  * 	prevlevelsynsets_earlier=[]             # <<<<<<<<<<<<<<
  * 	stopwords = nltk.corpus.stopwords.words('english')
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_prevlevelsynsets_earlier = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":99
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":97
  * 	prevlevelsynsets=[]
  * 	prevlevelsynsets_earlier=[]
  * 	stopwords = nltk.corpus.stopwords.words('english')             # <<<<<<<<<<<<<<
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_corpus); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_corpus); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_stopwords); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_stopwords); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_words); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_words); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_stopwords = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":100
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":98
  * 	prevlevelsynsets_earlier=[]
  * 	stopwords = nltk.corpus.stopwords.words('english')
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']             # <<<<<<<<<<<<<<
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  * 	mapped_object=()
  */
-  __pyx_t_1 = PyList_New(46); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(46); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s__8);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s__8);
@@ -2368,20 +2275,20 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_n_s_Z);
   PyList_SET_ITEM(__pyx_t_1, 45, __pyx_n_s_Z);
   __Pyx_GIVEREF(__pyx_n_s_Z);
-  __pyx_t_2 = PyNumber_Add(__pyx_v_stopwords, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Add(__pyx_v_stopwords, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_stopwords, __pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":101
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":99
  * 	stopwords = nltk.corpus.stopwords.words('english')
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']             # <<<<<<<<<<<<<<
  * 	mapped_object=()
  * 	print "mapFunction(): freqterms1:",freqterms1
  */
-  __pyx_t_2 = PyList_New(23); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyList_New(23); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_kp_s__8);
   PyList_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s__8);
@@ -2455,7 +2362,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_v_puncts = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":102
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":100
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  * 	mapped_object=()             # <<<<<<<<<<<<<<
@@ -2465,14 +2372,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_empty_tuple);
   __pyx_v_mapped_object = __pyx_empty_tuple;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":103
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":101
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  * 	mapped_object=()
  * 	print "mapFunction(): freqterms1:",freqterms1             # <<<<<<<<<<<<<<
  * 	for keyword in [freqterms1]:
  * 		#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_kp_s_mapFunction_freqterms1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_mapFunction_freqterms1);
@@ -2480,17 +2387,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_freqterms1);
   PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_freqterms1);
   __Pyx_GIVEREF(__pyx_v_freqterms1);
-  if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":104
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":102
  * 	mapped_object=()
  * 	print "mapFunction(): freqterms1:",freqterms1
  * 	for keyword in [freqterms1]:             # <<<<<<<<<<<<<<
  * 		#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
  * 		disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
  */
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_freqterms1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_freqterms1);
@@ -2500,25 +2407,25 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   for (;;) {
     if (__pyx_t_3 >= 1) break;
     #if CYTHON_COMPILING_IN_CPYTHON
-    __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_3); __Pyx_INCREF(__pyx_t_2); __pyx_t_3++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     #else
-    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     #endif
     __Pyx_XDECREF_SET(__pyx_v_keyword, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":106
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":104
  * 	for keyword in [freqterms1]:
  * 		#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
  * 		disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))             # <<<<<<<<<<<<<<
  * 		#print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
  * 		prevlevelsynsets = prevlevelsynsets + [disamb_synset]
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_best_matching_synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_best_matching_synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_synsets); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_synsets); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -2532,16 +2439,16 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_6) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_keyword); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_keyword); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
     } else {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       __Pyx_INCREF(__pyx_v_keyword);
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_v_keyword);
       __Pyx_GIVEREF(__pyx_v_keyword);
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_8, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
@@ -2558,7 +2465,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         __pyx_t_9 = 1;
       }
     }
-    __pyx_t_8 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_8);
     if (__pyx_t_7) {
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
@@ -2569,41 +2476,41 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_9, __pyx_t_5);
     __Pyx_GIVEREF(__pyx_t_5);
     __pyx_t_5 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_XDECREF_SET(__pyx_v_disamb_synset, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":108
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":106
  * 		disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
  * 		#print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
  * 		prevlevelsynsets = prevlevelsynsets + [disamb_synset]             # <<<<<<<<<<<<<<
  * 		if len(wn.synsets(keyword)) != 0:
  * 			disamb_synset_def = disamb_synset.definition()
  */
-    __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_disamb_synset);
     PyList_SET_ITEM(__pyx_t_2, 0, __pyx_v_disamb_synset);
     __Pyx_GIVEREF(__pyx_v_disamb_synset);
-    __pyx_t_4 = PyNumber_Add(__pyx_v_prevlevelsynsets, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyNumber_Add(__pyx_v_prevlevelsynsets, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF_SET(__pyx_v_prevlevelsynsets, ((PyObject*)__pyx_t_4));
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":109
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":107
  * 		#print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
  * 		prevlevelsynsets = prevlevelsynsets + [disamb_synset]
  * 		if len(wn.synsets(keyword)) != 0:             # <<<<<<<<<<<<<<
  * 			disamb_synset_def = disamb_synset.definition()
  * 			tokens = nltk.word_tokenize(disamb_synset_def)
  */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_synsets); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_synsets); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -2617,33 +2524,33 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_2) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_v_keyword); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_v_keyword); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_INCREF(__pyx_v_keyword);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_keyword);
       __Pyx_GIVEREF(__pyx_v_keyword);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_9 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = PyObject_Length(__pyx_t_4); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_10 = ((__pyx_t_9 != 0) != 0);
     if (__pyx_t_10) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":110
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":108
  * 		prevlevelsynsets = prevlevelsynsets + [disamb_synset]
  * 		if len(wn.synsets(keyword)) != 0:
  * 			disamb_synset_def = disamb_synset.definition()             # <<<<<<<<<<<<<<
  * 			tokens = nltk.word_tokenize(disamb_synset_def)
  * 			#fdist_tokens = FreqDist(tokens)
  */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_disamb_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_disamb_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_5 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_8))) {
@@ -2656,26 +2563,26 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         }
       }
       if (__pyx_t_5) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       } else {
-        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_8); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_8); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_XDECREF_SET(__pyx_v_disamb_synset_def, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":111
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":109
  * 		if len(wn.synsets(keyword)) != 0:
  * 			disamb_synset_def = disamb_synset.definition()
  * 			tokens = nltk.word_tokenize(disamb_synset_def)             # <<<<<<<<<<<<<<
  * 			#fdist_tokens = FreqDist(tokens)
  * 			fdist_tokens=[w for w in tokens if w not in stopwords and w not in puncts]
  */
-      __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_8 = NULL;
@@ -2689,16 +2596,16 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         }
       }
       if (!__pyx_t_8) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_disamb_synset_def); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_disamb_synset_def); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_2);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_8); __Pyx_GIVEREF(__pyx_t_8); __pyx_t_8 = NULL;
         __Pyx_INCREF(__pyx_v_disamb_synset_def);
         PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_disamb_synset_def);
         __Pyx_GIVEREF(__pyx_v_disamb_synset_def);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
@@ -2706,38 +2613,38 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __Pyx_XDECREF_SET(__pyx_v_tokens, __pyx_t_4);
       __pyx_t_4 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":113
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":111
  * 			tokens = nltk.word_tokenize(disamb_synset_def)
  * 			#fdist_tokens = FreqDist(tokens)
  * 			fdist_tokens=[w for w in tokens if w not in stopwords and w not in puncts]             # <<<<<<<<<<<<<<
  * 			#mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
  * 			mapped_object=rgo_object(fdist_tokens)
  */
-      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       if (likely(PyList_CheckExact(__pyx_v_tokens)) || PyTuple_CheckExact(__pyx_v_tokens)) {
         __pyx_t_5 = __pyx_v_tokens; __Pyx_INCREF(__pyx_t_5); __pyx_t_9 = 0;
         __pyx_t_11 = NULL;
       } else {
-        __pyx_t_9 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_tokens); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_9 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_v_tokens); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_11 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_11 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       for (;;) {
         if (likely(!__pyx_t_11)) {
           if (likely(PyList_CheckExact(__pyx_t_5))) {
             if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #endif
           } else {
             if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_COMPILING_IN_CPYTHON
-            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_2); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             #endif
           }
         } else {
@@ -2746,7 +2653,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             }
             break;
           }
@@ -2754,19 +2661,19 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         }
         __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_2);
         __pyx_t_2 = 0;
-        __pyx_t_12 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_stopwords, Py_NE)); if (unlikely(__pyx_t_12 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_12 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_stopwords, Py_NE)); if (unlikely(__pyx_t_12 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __pyx_t_13 = (__pyx_t_12 != 0);
         if (__pyx_t_13) {
         } else {
           __pyx_t_10 = __pyx_t_13;
           goto __pyx_L9_bool_binop_done;
         }
-        __pyx_t_13 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_puncts, Py_NE)); if (unlikely(__pyx_t_13 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_13 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_puncts, Py_NE)); if (unlikely(__pyx_t_13 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __pyx_t_12 = (__pyx_t_13 != 0);
         __pyx_t_10 = __pyx_t_12;
         __pyx_L9_bool_binop_done:;
         if (__pyx_t_10) {
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_4, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_4, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           goto __pyx_L8;
         }
         __pyx_L8:;
@@ -2775,14 +2682,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __Pyx_XDECREF_SET(__pyx_v_fdist_tokens, ((PyObject*)__pyx_t_4));
       __pyx_t_4 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":115
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":113
  * 			fdist_tokens=[w for w in tokens if w not in stopwords and w not in puncts]
  * 			#mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
  * 			mapped_object=rgo_object(fdist_tokens)             # <<<<<<<<<<<<<<
  * 	#print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
  * 	#picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  */
-      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_2 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -2795,16 +2702,16 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         }
       }
       if (!__pyx_t_2) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_fdist_tokens); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_fdist_tokens); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
         PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
         __Pyx_INCREF(__pyx_v_fdist_tokens);
         PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_v_fdist_tokens);
         __Pyx_GIVEREF(__pyx_v_fdist_tokens);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
@@ -2815,7 +2722,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":104
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":102
  * 	mapped_object=()
  * 	print "mapFunction(): freqterms1:",freqterms1
  * 	for keyword in [freqterms1]:             # <<<<<<<<<<<<<<
@@ -2825,26 +2732,26 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":119
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":117
  * 	#picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  * 	#prevlevelsynsets_earlier=asfer_pickle_load(picklef)
  * 	picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")             # <<<<<<<<<<<<<<
  * 	#asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
  * 	asfer_pickle_dump(prevlevelsynsets,picklef)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_picklef = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":121
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":119
  * 	picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
  * 	#asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
  * 	asfer_pickle_dump(prevlevelsynsets,picklef)             # <<<<<<<<<<<<<<
  * 	return (1,mapped_object)
  * 
  */
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_asfer_pickle_dump); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_asfer_pickle_dump); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_3 = 0;
@@ -2858,7 +2765,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __pyx_t_3 = 1;
     }
   }
-  __pyx_t_8 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_8 = PyTuple_New(2+__pyx_t_3); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_8);
   if (__pyx_t_5) {
     PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
@@ -2869,13 +2776,13 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_picklef);
   PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_3, __pyx_v_picklef);
   __Pyx_GIVEREF(__pyx_v_picklef);
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":122
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":120
  * 	#asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
  * 	asfer_pickle_dump(prevlevelsynsets,picklef)
  * 	return (1,mapped_object)             # <<<<<<<<<<<<<<
@@ -2883,7 +2790,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
  * def reduceFunction(mapped_object1,mapped_object2):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_1);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_int_1);
@@ -2895,7 +2802,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":96
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":94
  * 	return synsets
  * 
  * def mapFunction(freqterms1):             # <<<<<<<<<<<<<<
@@ -2932,7 +2839,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":124
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":122
  * 	return (1,mapped_object)
  * 
  * def reduceFunction(mapped_object1,mapped_object2):             # <<<<<<<<<<<<<<
@@ -2972,11 +2879,11 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mapped_object2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("reduceFunction", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("reduceFunction", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "reduceFunction") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "reduceFunction") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2989,7 +2896,7 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("reduceFunction", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("reduceFunction", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.reduceFunction", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3019,7 +2926,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("reduceFunction", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":125
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":123
  * 
  * def reduceFunction(mapped_object1,mapped_object2):
  * 	reduced_rgo_object=()             # <<<<<<<<<<<<<<
@@ -3029,38 +2936,38 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_empty_tuple);
   __pyx_v_reduced_rgo_object = __pyx_empty_tuple;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":129
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":127
  * 	#print "reduceFunction():mapped_object2: ",mapped_object2
  * 	#reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel,mapped_object1.prevlevelsynsets+mapped_object2.prevlevelsynsets)
  * 	if (mapped_object1 and mapped_object2):             # <<<<<<<<<<<<<<
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   if (__pyx_t_2) {
   } else {
     __pyx_t_1 = __pyx_t_2;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 127; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_1 = __pyx_t_2;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":130
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":128
  * 	#reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel,mapped_object1.prevlevelsynsets+mapped_object2.prevlevelsynsets)
  * 	if (mapped_object1 and mapped_object2):
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel)             # <<<<<<<<<<<<<<
  * 		return reduced_rgo_object
  * 	if (not mapped_object1 and not mapped_object2):
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object1, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object1, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object2, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object2, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = PyNumber_Add(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = PyNumber_Add(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -3075,17 +2982,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_6) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_3);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -3093,7 +3000,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_DECREF_SET(__pyx_v_reduced_rgo_object, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":131
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":129
  * 	if (mapped_object1 and mapped_object2):
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object             # <<<<<<<<<<<<<<
@@ -3106,36 +3013,36 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     goto __pyx_L0;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":132
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":130
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel+mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object
  * 	if (not mapped_object1 and not mapped_object2):             # <<<<<<<<<<<<<<
  * 		reduced_rgo_object=rgo_object([])
  * 		return reduced_rgo_object
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_8 = ((!__pyx_t_2) != 0);
   if (__pyx_t_8) {
   } else {
     __pyx_t_1 = __pyx_t_8;
     goto __pyx_L7_bool_binop_done;
   }
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_2 = ((!__pyx_t_8) != 0);
   __pyx_t_1 = __pyx_t_2;
   __pyx_L7_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":133
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":131
  * 		return reduced_rgo_object
  * 	if (not mapped_object1 and not mapped_object2):
  * 		reduced_rgo_object=rgo_object([])             # <<<<<<<<<<<<<<
  * 		return reduced_rgo_object
  * 	if not mapped_object1:
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_7 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -3148,17 +3055,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_7) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_3);
     } else {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
       PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_t_5 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 131; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -3166,7 +3073,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_DECREF_SET(__pyx_v_reduced_rgo_object, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":134
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":132
  * 	if (not mapped_object1 and not mapped_object2):
  * 		reduced_rgo_object=rgo_object([])
  * 		return reduced_rgo_object             # <<<<<<<<<<<<<<
@@ -3179,27 +3086,27 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     goto __pyx_L0;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":135
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":133
  * 		reduced_rgo_object=rgo_object([])
  * 		return reduced_rgo_object
  * 	if not mapped_object1:             # <<<<<<<<<<<<<<
  * 		reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object1); if (unlikely(__pyx_t_1 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_2 = ((!__pyx_t_1) != 0);
   if (__pyx_t_2) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":136
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":134
  * 		return reduced_rgo_object
  * 	if not mapped_object1:
  * 		reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel)             # <<<<<<<<<<<<<<
  * 		return reduced_rgo_object
  * 	if not mapped_object2:
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object2, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object2, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_5 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -3212,17 +3119,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_3);
     } else {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
       PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
       PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -3230,7 +3137,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_DECREF_SET(__pyx_v_reduced_rgo_object, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":137
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":135
  * 	if not mapped_object1:
  * 		reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object             # <<<<<<<<<<<<<<
@@ -3243,27 +3150,27 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     goto __pyx_L0;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":138
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":136
  * 		reduced_rgo_object=rgo_object(mapped_object2.tokensatthislevel)
  * 		return reduced_rgo_object
  * 	if not mapped_object2:             # <<<<<<<<<<<<<<
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel)
  * 		return reduced_rgo_object
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 138; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_mapped_object2); if (unlikely(__pyx_t_2 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_t_1 = ((!__pyx_t_2) != 0);
   if (__pyx_t_1) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":139
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":137
  * 		return reduced_rgo_object
  * 	if not mapped_object2:
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel)             # <<<<<<<<<<<<<<
  * 		return reduced_rgo_object
  * 	print "reduceFunction():returns : ",reduced_rgo_object
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_rgo_object); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object1, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_mapped_object1, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_6 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -3276,17 +3183,17 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_6) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_3);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 137; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -3294,7 +3201,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_DECREF_SET(__pyx_v_reduced_rgo_object, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":140
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":138
  * 	if not mapped_object2:
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel)
  * 		return reduced_rgo_object             # <<<<<<<<<<<<<<
@@ -3307,14 +3214,14 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     goto __pyx_L0;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":141
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":139
  * 		reduced_rgo_object=rgo_object(mapped_object1.tokensatthislevel)
  * 		return reduced_rgo_object
  * 	print "reduceFunction():returns : ",reduced_rgo_object             # <<<<<<<<<<<<<<
  * 	return reduced_rgo_object
  * 
  */
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_kp_s_reduceFunction_returns);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s_reduceFunction_returns);
@@ -3322,10 +3229,10 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_reduced_rgo_object);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_reduced_rgo_object);
   __Pyx_GIVEREF(__pyx_v_reduced_rgo_object);
-  if (__Pyx_Print(0, __pyx_t_3, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 141; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_3, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 139; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":142
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":140
  * 		return reduced_rgo_object
  * 	print "reduceFunction():returns : ",reduced_rgo_object
  * 	return reduced_rgo_object             # <<<<<<<<<<<<<<
@@ -3337,7 +3244,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_r = __pyx_v_reduced_rgo_object;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":124
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":122
  * 	return (1,mapped_object)
  * 
  * def reduceFunction(mapped_object1,mapped_object2):             # <<<<<<<<<<<<<<
@@ -3361,7 +3268,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":145
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":143
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
@@ -3401,11 +3308,11 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_synsets)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "best_matching_synset") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "best_matching_synset") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3418,7 +3325,7 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.best_matching_synset", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3454,7 +3361,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("best_matching_synset", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":146
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":144
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):
  * 	maxmatch = -1             # <<<<<<<<<<<<<<
@@ -3463,19 +3370,19 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
  */
   __pyx_v_maxmatch = -1;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":147
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":145
  * def best_matching_synset(doc_tokens, synsets):
  * 	maxmatch = -1
  * 	retset = []             # <<<<<<<<<<<<<<
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_retset = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":148
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":146
  * 	maxmatch = -1
  * 	retset = []
  * 	for synset in synsets:             # <<<<<<<<<<<<<<
@@ -3486,25 +3393,25 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __pyx_t_1 = __pyx_v_synsets; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_synsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_synsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -3513,7 +3420,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 146; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -3522,19 +3429,19 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_XDECREF_SET(__pyx_v_synset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":149
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":147
  * 	retset = []
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))             # <<<<<<<<<<<<<<
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:
  */
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
@@ -3547,10 +3454,10 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (__pyx_t_8) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -3565,35 +3472,35 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_7) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_t_5 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 147; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_XDECREF_SET(__pyx_v_def_tokens, ((PyObject*)__pyx_t_6));
     __pyx_t_6 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":150
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":148
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  * 		intersection = def_tokens.intersection(doc_tokens)             # <<<<<<<<<<<<<<
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_8 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
@@ -3606,16 +3513,16 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       }
     }
     if (!__pyx_t_8) {
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_doc_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_doc_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_8); __Pyx_GIVEREF(__pyx_t_8); __pyx_t_8 = NULL;
       __Pyx_INCREF(__pyx_v_doc_tokens);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_doc_tokens);
       __Pyx_GIVEREF(__pyx_v_doc_tokens);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -3623,28 +3530,28 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     __Pyx_XDECREF_SET(__pyx_v_intersection, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":151
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":149
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:             # <<<<<<<<<<<<<<
  * 			maxmatch = len(intersection)
  * 			retset = synset
  */
-    __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 151; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_t_10 = ((__pyx_t_9 > __pyx_v_maxmatch) != 0);
     if (__pyx_t_10) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":152
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":150
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)             # <<<<<<<<<<<<<<
  * 			retset = synset
  * 	return retset
  */
-      __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 152; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 150; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_v_maxmatch = __pyx_t_9;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":153
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":151
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)
  * 			retset = synset             # <<<<<<<<<<<<<<
@@ -3657,7 +3564,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":148
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":146
  * 	maxmatch = -1
  * 	retset = []
  * 	for synset in synsets:             # <<<<<<<<<<<<<<
@@ -3667,19 +3574,19 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":154
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":152
  * 			maxmatch = len(intersection)
  * 			retset = synset
  * 	return retset             # <<<<<<<<<<<<<<
  * 
- * def Spark_MapReduce(level, wordsatthislevel):
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_retset);
   __pyx_r = __pyx_v_retset;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":145
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":143
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
@@ -3707,12 +3614,12 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":156
+/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":154
  * 	return retset
  * 
- * def Spark_MapReduce(level, wordsatthislevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):             # <<<<<<<<<<<<<<
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
+ * 	if lookupCache:
  */
 
 /* Python wrapper */
@@ -3721,6 +3628,7 @@ static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapRe
 static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_15Spark_MapReduce(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED PyObject *__pyx_v_level = 0;
   PyObject *__pyx_v_wordsatthislevel = 0;
+  PyObject *__pyx_v_graphcache = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3728,12 +3636,13 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("Spark_MapReduce (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_level,&__pyx_n_s_wordsatthislevel,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_level,&__pyx_n_s_wordsatthislevel,&__pyx_n_s_graphcache,0};
+    PyObject* values[3] = {0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
         case  0: break;
@@ -3747,38 +3656,46 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_wordsatthislevel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        }
+        case  2:
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_graphcache)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "Spark_MapReduce") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "Spark_MapReduce") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_level = values[0];
     __pyx_v_wordsatthislevel = values[1];
+    __pyx_v_graphcache = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("Spark_MapReduce", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("Spark_MapReduce", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(__pyx_self, __pyx_v_level, __pyx_v_wordsatthislevel);
+  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(__pyx_self, __pyx_v_level, __pyx_v_wordsatthislevel, __pyx_v_graphcache);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_level, PyObject *__pyx_v_wordsatthislevel) {
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_14Spark_MapReduce(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_level, PyObject *__pyx_v_wordsatthislevel, PyObject *__pyx_v_graphcache) {
   PyObject *__pyx_v_md5hash = NULL;
+  PyObject *__pyx_v_cachevalue = NULL;
   PyObject *__pyx_v_spcon = NULL;
   PyObject *__pyx_v_paralleldata = NULL;
   PyObject *__pyx_v_k = NULL;
@@ -3795,25 +3712,25 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
   int __pyx_t_7;
-  int __pyx_t_8;
+  Py_ssize_t __pyx_t_8;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("Spark_MapReduce", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":157
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":155
  * 
- * def Spark_MapReduce(level, wordsatthislevel):
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()             # <<<<<<<<<<<<<<
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
- * 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
+ * 	if lookupCache:
+ * 		cachevalue=graphcache.get(md5hash)
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_hashlib); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_hashlib); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_md5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_md5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s_, __pyx_v_wordsatthislevel); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyString_Join(__pyx_kp_s_, __pyx_v_wordsatthislevel); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -3826,22 +3743,22 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (!__pyx_t_5) {
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_2);
   } else {
-    __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
     PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_hexdigest); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_hexdigest); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3855,495 +3772,549 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 155; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_md5hash = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":158
- * def Spark_MapReduce(level, wordsatthislevel):
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":156
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":             # <<<<<<<<<<<<<<
- * 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
- * 		return graphcache_mapreduce[md5hash]
+ * 	if lookupCache:             # <<<<<<<<<<<<<<
+ * 		cachevalue=graphcache.get(md5hash)
+ * 		if cachevalue:
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_lookupCache); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_lookupCache); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_8 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_7 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (__pyx_t_8) {
-  } else {
-    __pyx_t_7 = __pyx_t_8;
-    goto __pyx_L4_bool_binop_done;
-  }
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = PyObject_GetItem(__pyx_t_1, __pyx_v_md5hash); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_8 = (__Pyx_PyString_Equals(__pyx_t_4, __pyx_n_s_Novalue, Py_NE)); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_7 = __pyx_t_8;
-  __pyx_L4_bool_binop_done:;
   if (__pyx_t_7) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":159
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":157
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
- * 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"             # <<<<<<<<<<<<<<
- * 		return graphcache_mapreduce[md5hash]
- * 	else:
+ * 	if lookupCache:
+ * 		cachevalue=graphcache.get(md5hash)             # <<<<<<<<<<<<<<
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
  */
-    __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_graphcache, __pyx_n_s_get); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_hash);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_Spark_MapReduce_hash);
-    __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_hash);
-    __Pyx_INCREF(__pyx_v_md5hash);
-    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_md5hash);
-    __Pyx_GIVEREF(__pyx_v_md5hash);
-    __Pyx_INCREF(__pyx_kp_s_returning_from_cache);
-    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_s_returning_from_cache);
-    __Pyx_GIVEREF(__pyx_kp_s_returning_from_cache);
-    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":160
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
- * 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
- * 		return graphcache_mapreduce[md5hash]             # <<<<<<<<<<<<<<
- * 	else:
- * 		spcon=SparkContext("local[2]","Spark_MapReduce")
- */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 160; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyObject_GetItem(__pyx_t_4, __pyx_v_md5hash); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 160; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_r = __pyx_t_1;
-    __pyx_t_1 = 0;
-    goto __pyx_L0;
-  }
-  /*else*/ {
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":162
- * 		return graphcache_mapreduce[md5hash]
- * 	else:
- * 		spcon=SparkContext("local[2]","Spark_MapReduce")             # <<<<<<<<<<<<<<
- * 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
- * 		paralleldata=spcon.parallelize(wordsatthislevel).cache()
- */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_SparkContext); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_spcon = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":163
- * 	else:
- * 		spcon=SparkContext("local[2]","Spark_MapReduce")
- * 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel             # <<<<<<<<<<<<<<
- * 		paralleldata=spcon.parallelize(wordsatthislevel).cache()
- * 		#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
- */
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_wordsatthislevel);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_Spark_MapReduce_wordsatthislevel);
-    __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_wordsatthislevel);
-    __Pyx_INCREF(__pyx_v_wordsatthislevel);
-    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_wordsatthislevel);
-    __Pyx_GIVEREF(__pyx_v_wordsatthislevel);
-    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":164
- * 		spcon=SparkContext("local[2]","Spark_MapReduce")
- * 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
- * 		paralleldata=spcon.parallelize(wordsatthislevel).cache()             # <<<<<<<<<<<<<<
- * 		#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
- * 		k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_parallelize); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (!__pyx_t_6) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_wordsatthislevel); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_1);
-    } else {
-      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-      __Pyx_INCREF(__pyx_v_wordsatthislevel);
-      PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_wordsatthislevel);
-      __Pyx_GIVEREF(__pyx_v_wordsatthislevel);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_cache); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_1)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_1);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_1) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    } else {
-      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_paralleldata = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":166
- * 		paralleldata=spcon.parallelize(wordsatthislevel).cache()
- * 		#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
- * 		k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)             # <<<<<<<<<<<<<<
- * 
- * 		#dict_k=k.collect()
- */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_paralleldata, __pyx_n_s_map); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_mapFunction); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    if (!__pyx_t_6) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_GOTREF(__pyx_t_2);
-    } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_5);
-      PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_3);
-      __Pyx_GIVEREF(__pyx_t_3);
-      __pyx_t_3 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_reduceByKey); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_reduceFunction); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    if (!__pyx_t_5) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
-    } else {
-      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_2);
-      __pyx_t_2 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_k = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":173
- * 		#print s
- * 		############################
- * 		sqlContext=SQLContext(spcon)             # <<<<<<<<<<<<<<
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
- */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_SQLContext); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    if (!__pyx_t_3) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_spcon); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-    } else {
-      __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-      __Pyx_INCREF(__pyx_v_spcon);
-      PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_spcon);
-      __Pyx_GIVEREF(__pyx_v_spcon);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_sqlContext = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":174
- * 		############################
- * 		sqlContext=SQLContext(spcon)
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())             # <<<<<<<<<<<<<<
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
- */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_createDataFrame); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_k, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
-      }
-    }
-    if (__pyx_t_5) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    } else {
-      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    if (!__pyx_t_3) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_GOTREF(__pyx_t_4);
-    } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_5);
-      PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_2);
-      __pyx_t_2 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_recursiveglossoverlap_schema = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":175
- * 		sqlContext=SQLContext(spcon)
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
- * 		dict_query_results=dict(query_results.collect())
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_recursiveglossoverlap_schema, __pyx_n_s_registerTempTable); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":176
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
- * 		dict_query_results=dict(query_results.collect())
- * 		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
- */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_sql); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_query_results = __pyx_t_4;
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":177
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
- * 		dict_query_results=dict(query_results.collect())             # <<<<<<<<<<<<<<
- * 		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
- * 		#print dict_query_results[1]
- */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query_results, __pyx_n_s_collect); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_5)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_5);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    if (__pyx_t_5) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    } else {
-      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_4);
-    __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyDict_Type))), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_v_dict_query_results = ((PyObject*)__pyx_t_4);
-    __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":180
- * 		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
- * 		#print dict_query_results[1]
- * 		graphcache_mapreduce[md5hash]=dict_query_results[1]             # <<<<<<<<<<<<<<
- * 		print "graphcache_mapreduce updated:", graphcache_mapreduce
- * 		spcon.stop()
- */
-    __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_v_md5hash, __pyx_t_4) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":181
- * 		#print dict_query_results[1]
- * 		graphcache_mapreduce[md5hash]=dict_query_results[1]
- * 		print "graphcache_mapreduce updated:", graphcache_mapreduce             # <<<<<<<<<<<<<<
- * 		spcon.stop()
- * 		return dict_query_results[1]
- */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_INCREF(__pyx_kp_s_graphcache_mapreduce_updated);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_graphcache_mapreduce_updated);
-    __Pyx_GIVEREF(__pyx_kp_s_graphcache_mapreduce_updated);
-    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_4);
-    __pyx_t_4 = 0;
-    if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":182
- * 		graphcache_mapreduce[md5hash]=dict_query_results[1]
- * 		print "graphcache_mapreduce updated:", graphcache_mapreduce
- * 		spcon.stop()             # <<<<<<<<<<<<<<
- * 		return dict_query_results[1]
- * 
- */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_stop); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = NULL;
+    __pyx_t_2 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_5)) {
+      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
+      if (likely(__pyx_t_2)) {
         PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(function);
         __Pyx_DECREF_SET(__pyx_t_4, function);
       }
     }
-    if (__pyx_t_5) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (!__pyx_t_2) {
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_md5hash); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
     } else {
-      __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+      __Pyx_INCREF(__pyx_v_md5hash);
+      PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_md5hash);
+      __Pyx_GIVEREF(__pyx_v_md5hash);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
-    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_v_cachevalue = __pyx_t_1;
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":183
- * 		print "graphcache_mapreduce updated:", graphcache_mapreduce
- * 		spcon.stop()
- * 		return dict_query_results[1]             # <<<<<<<<<<<<<<
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":158
+ * 	if lookupCache:
+ * 		cachevalue=graphcache.get(md5hash)
+ * 		if cachevalue:             # <<<<<<<<<<<<<<
+ * 			print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
+ * 			return cachevalue
+ */
+    __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_cachevalue); if (unlikely(__pyx_t_7 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 158; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (__pyx_t_7) {
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":159
+ * 		cachevalue=graphcache.get(md5hash)
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"             # <<<<<<<<<<<<<<
+ * 			return cachevalue
+ * 		else:
+ */
+      __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_hash);
+      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_Spark_MapReduce_hash);
+      __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_hash);
+      __Pyx_INCREF(__pyx_v_md5hash);
+      PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_md5hash);
+      __Pyx_GIVEREF(__pyx_v_md5hash);
+      __Pyx_INCREF(__pyx_kp_s_returning_from_cache);
+      PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_s_returning_from_cache);
+      __Pyx_GIVEREF(__pyx_kp_s_returning_from_cache);
+      if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 159; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":160
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
+ * 			return cachevalue             # <<<<<<<<<<<<<<
+ * 		else:
+ * 			spcon=SparkContext("local[2]","Spark_MapReduce")
+ */
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_v_cachevalue);
+      __pyx_r = __pyx_v_cachevalue;
+      goto __pyx_L0;
+    }
+    /*else*/ {
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":162
+ * 			return cachevalue
+ * 		else:
+ * 			spcon=SparkContext("local[2]","Spark_MapReduce")             # <<<<<<<<<<<<<<
+ * 			print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
+ * 			paralleldata=spcon.parallelize(wordsatthislevel).cache()
+ */
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_SparkContext); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_spcon = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":163
+ * 		else:
+ * 			spcon=SparkContext("local[2]","Spark_MapReduce")
+ * 			print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel             # <<<<<<<<<<<<<<
+ * 			paralleldata=spcon.parallelize(wordsatthislevel).cache()
+ * 			#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
+ */
+      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_wordsatthislevel);
+      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_Spark_MapReduce_wordsatthislevel);
+      __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_wordsatthislevel);
+      __Pyx_INCREF(__pyx_v_wordsatthislevel);
+      PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_wordsatthislevel);
+      __Pyx_GIVEREF(__pyx_v_wordsatthislevel);
+      if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":164
+ * 			spcon=SparkContext("local[2]","Spark_MapReduce")
+ * 			print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
+ * 			paralleldata=spcon.parallelize(wordsatthislevel).cache()             # <<<<<<<<<<<<<<
+ * 			#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
+ * 			k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
+ */
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_parallelize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_2 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_6))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_6, function);
+        }
+      }
+      if (!__pyx_t_2) {
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_wordsatthislevel); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+      } else {
+        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+        __Pyx_INCREF(__pyx_v_wordsatthislevel);
+        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_wordsatthislevel);
+        __Pyx_GIVEREF(__pyx_v_wordsatthislevel);
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_cache); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_6))) {
+        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_1)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+          __Pyx_INCREF(__pyx_t_1);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_6, function);
+        }
+      }
+      if (__pyx_t_1) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      } else {
+        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_v_paralleldata = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":166
+ * 			paralleldata=spcon.parallelize(wordsatthislevel).cache()
+ * 			#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
+ * 			k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)             # <<<<<<<<<<<<<<
+ * 
+ * 			#dict_k=k.collect()
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_paralleldata, __pyx_n_s_map); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_mapFunction); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_2 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (!__pyx_t_2) {
+        __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_6);
+      } else {
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_reduceByKey); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_reduceFunction); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (!__pyx_t_5) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_4);
+      } else {
+        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_6);
+        __pyx_t_6 = 0;
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 166; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_k = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":173
+ * 			#print s
+ * 			############################
+ * 			sqlContext=SQLContext(spcon)             # <<<<<<<<<<<<<<
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+ */
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_SQLContext); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (!__pyx_t_3) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_spcon); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_6);
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_v_spcon);
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_spcon);
+        __Pyx_GIVEREF(__pyx_v_spcon);
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_sqlContext = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":174
+ * 			############################
+ * 			sqlContext=SQLContext(spcon)
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())             # <<<<<<<<<<<<<<
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_createDataFrame); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_k, __pyx_n_s_collect); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_5) {
+        __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      } else {
+        __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (!__pyx_t_3) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_4);
+      } else {
+        __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+        PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_6);
+        __pyx_t_6 = 0;
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_recursiveglossoverlap_schema = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":175
+ * 			sqlContext=SQLContext(spcon)
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
+ * 			dict_query_results=dict(query_results.collect())
+ */
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_recursiveglossoverlap_schema, __pyx_n_s_registerTempTable); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":176
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
+ * 			dict_query_results=dict(query_results.collect())
+ * 			#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_sql); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_query_results = __pyx_t_4;
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":177
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
+ * 			dict_query_results=dict(query_results.collect())             # <<<<<<<<<<<<<<
+ * 			#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+ * 			#print dict_query_results[1]
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_query_results, __pyx_n_s_collect); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_5 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_5)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_5);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (__pyx_t_5) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      } else {
+        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
+      __Pyx_GIVEREF(__pyx_t_4);
+      __pyx_t_4 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyDict_Type))), __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_dict_query_results = ((PyObject*)__pyx_t_4);
+      __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":180
+ * 			#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+ * 			#print dict_query_results[1]
+ * 			graphcache.set(md5hash, dict_query_results[1])             # <<<<<<<<<<<<<<
+ * 			print "graphcache_mapreduce updated:", graphcache
+ * 			spcon.stop()
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_graphcache, __pyx_n_s_set); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_6 = NULL;
+      __pyx_t_8 = 0;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+          __pyx_t_8 = 1;
+        }
+      }
+      __pyx_t_3 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      if (__pyx_t_6) {
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+      }
+      __Pyx_INCREF(__pyx_v_md5hash);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_8, __pyx_v_md5hash);
+      __Pyx_GIVEREF(__pyx_v_md5hash);
+      PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_8, __pyx_t_5);
+      __Pyx_GIVEREF(__pyx_t_5);
+      __pyx_t_5 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":181
+ * 			#print dict_query_results[1]
+ * 			graphcache.set(md5hash, dict_query_results[1])
+ * 			print "graphcache_mapreduce updated:", graphcache             # <<<<<<<<<<<<<<
+ * 			spcon.stop()
+ * 			return dict_query_results[1]
+ */
+      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_INCREF(__pyx_kp_s_graphcache_mapreduce_updated);
+      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_graphcache_mapreduce_updated);
+      __Pyx_GIVEREF(__pyx_kp_s_graphcache_mapreduce_updated);
+      __Pyx_INCREF(__pyx_v_graphcache);
+      PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_graphcache);
+      __Pyx_GIVEREF(__pyx_v_graphcache);
+      if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":182
+ * 			graphcache.set(md5hash, dict_query_results[1])
+ * 			print "graphcache_mapreduce updated:", graphcache
+ * 			spcon.stop()             # <<<<<<<<<<<<<<
+ * 			return dict_query_results[1]
+ * 
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_stop); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
+        }
+      }
+      if (__pyx_t_3) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      } else {
+        __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":183
+ * 			print "graphcache_mapreduce updated:", graphcache
+ * 			spcon.stop()
+ * 			return dict_query_results[1]             # <<<<<<<<<<<<<<
  * 
  * #Following parents computation from prevlevel synsets is map-reduced in Spark
  */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 183; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_r = __pyx_t_1;
-    __pyx_t_1 = 0;
-    goto __pyx_L0;
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 183; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_r = __pyx_t_4;
+      __pyx_t_4 = 0;
+      goto __pyx_L0;
+    }
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":156
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":154
  * 	return retset
  * 
- * def Spark_MapReduce(level, wordsatthislevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):             # <<<<<<<<<<<<<<
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
+ * 	if lookupCache:
  */
 
   /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
@@ -4355,6 +4326,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_md5hash);
+  __Pyx_XDECREF(__pyx_v_cachevalue);
   __Pyx_XDECREF(__pyx_v_spcon);
   __Pyx_XDECREF(__pyx_v_paralleldata);
   __Pyx_XDECREF(__pyx_v_k);
@@ -5026,7 +4998,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
  * 	else:
  * 		return parents1 + parents2             # <<<<<<<<<<<<<<
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_1 = PyNumber_Add(__pyx_v_parents1, __pyx_v_parents2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -5059,7 +5031,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
 /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":226
  * 		return parents1 + parents2
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):             # <<<<<<<<<<<<<<
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)
  */
@@ -5070,6 +5042,7 @@ static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapRe
 static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_21Spark_MapReduce_Parents(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_keyword = 0;
   PyObject *__pyx_v_tokensofprevlevel = 0;
+  PyObject *__pyx_v_graphcache = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5077,12 +5050,13 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("Spark_MapReduce_Parents (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_keyword_2,&__pyx_n_s_tokensofprevlevel,0};
-    PyObject* values[2] = {0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_keyword_2,&__pyx_n_s_tokensofprevlevel,&__pyx_n_s_graphcache,0};
+    PyObject* values[3] = {0,0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
         case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
         case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
         case  0: break;
@@ -5096,40 +5070,48 @@ static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_tokensofprevlevel)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce_Parents", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce_Parents", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        }
+        case  2:
+        if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_graphcache)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("Spark_MapReduce_Parents", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "Spark_MapReduce_Parents") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_keyword = values[0];
     __pyx_v_tokensofprevlevel = values[1];
+    __pyx_v_graphcache = values[2];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("Spark_MapReduce_Parents", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("Spark_MapReduce_Parents", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(__pyx_self, __pyx_v_keyword, __pyx_v_tokensofprevlevel);
+  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(__pyx_self, __pyx_v_keyword, __pyx_v_tokensofprevlevel, __pyx_v_graphcache);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_keyword, PyObject *__pyx_v_tokensofprevlevel) {
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_20Spark_MapReduce_Parents(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_keyword, PyObject *__pyx_v_tokensofprevlevel, PyObject *__pyx_v_graphcache) {
   PyObject *__pyx_v_tokensofprevlevelkeyword = NULL;
   PyObject *__pyx_v_md5hashparents = NULL;
   PyObject *__pyx_v_picklef_keyword = NULL;
+  PyObject *__pyx_v_cachevalue = NULL;
   PyObject *__pyx_v_spcon = NULL;
   PyObject *__pyx_v_paralleldata = NULL;
   PyObject *__pyx_v_k = NULL;
@@ -5148,7 +5130,6 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   PyObject *__pyx_t_7 = NULL;
   Py_ssize_t __pyx_t_8;
   int __pyx_t_9;
-  int __pyx_t_10;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5156,7 +5137,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":227
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
  * 	tokensofprevlevelkeyword=tokensofprevlevel             # <<<<<<<<<<<<<<
  * 	tokensofprevlevelkeyword.append(keyword)
  * 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
@@ -5165,11 +5146,11 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_v_tokensofprevlevelkeyword = __pyx_v_tokensofprevlevel;
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":228
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)             # <<<<<<<<<<<<<<
  * 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
- * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
+ * 	md5hashparents = md5hashparents + "parents"
  */
   __pyx_t_1 = __Pyx_PyObject_Append(__pyx_v_tokensofprevlevelkeyword, __pyx_v_keyword); if (unlikely(__pyx_t_1 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 228; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
@@ -5177,8 +5158,8 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)
  * 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()             # <<<<<<<<<<<<<<
+ * 	md5hashparents = md5hashparents + "parents"
  * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
- * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
  */
   __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_hashlib); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 229; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
@@ -5237,26 +5218,38 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __pyx_v_md5hashparents = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":231
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":230
+ * 	tokensofprevlevelkeyword.append(keyword)
  * 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
+ * 	md5hashparents = md5hashparents + "parents"             # <<<<<<<<<<<<<<
+ * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
+ * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+ */
+  __pyx_t_2 = PyNumber_Add(__pyx_v_md5hashparents, __pyx_n_s_parents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 230; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF_SET(__pyx_v_md5hashparents, __pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":232
+ * 	md5hashparents = md5hashparents + "parents"
  * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
  * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")             # <<<<<<<<<<<<<<
  * 	asfer_pickle_string_dump(keyword,picklef_keyword)
  * 	picklef_keyword.close()
  */
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__33, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_v_picklef_keyword = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":232
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":233
  * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
  * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
  * 	asfer_pickle_string_dump(keyword,picklef_keyword)             # <<<<<<<<<<<<<<
  * 	picklef_keyword.close()
- * 	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
+ * 	if lookupCacheParents:
  */
-  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_asfer_pickle_string_dump); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_asfer_pickle_string_dump); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_3 = NULL;
   __pyx_t_8 = 0;
@@ -5270,7 +5263,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __pyx_t_8 = 1;
     }
   }
-  __pyx_t_7 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
   if (__pyx_t_3) {
     PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
@@ -5281,20 +5274,20 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_INCREF(__pyx_v_picklef_keyword);
   PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_8, __pyx_v_picklef_keyword);
   __Pyx_GIVEREF(__pyx_v_picklef_keyword);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":233
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":234
  * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
  * 	asfer_pickle_string_dump(keyword,picklef_keyword)
  * 	picklef_keyword.close()             # <<<<<<<<<<<<<<
- * 	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
- * 		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
+ * 	if lookupCacheParents:
+ * 		cachevalue=graphcache.get(md5hashparents)
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef_keyword, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef_keyword, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_7 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_5))) {
@@ -5307,476 +5300,530 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
     }
   }
   if (__pyx_t_7) {
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_7); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   } else {
-    __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":234
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":235
  * 	asfer_pickle_string_dump(keyword,picklef_keyword)
  * 	picklef_keyword.close()
- * 	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":             # <<<<<<<<<<<<<<
- * 		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
- * 		return graphcache_mapreduce_parents[md5hashparents]
+ * 	if lookupCacheParents:             # <<<<<<<<<<<<<<
+ * 		cachevalue=graphcache.get(md5hashparents)
+ * 		if cachevalue:
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_lookupCacheParents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_lookupCacheParents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__pyx_t_10) {
-  } else {
-    __pyx_t_9 = __pyx_t_10;
-    goto __pyx_L4_bool_binop_done;
-  }
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce_parents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = PyObject_GetItem(__pyx_t_2, __pyx_v_md5hashparents); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-  __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_10 = (__Pyx_PyString_Equals(__pyx_t_5, __pyx_n_s_Novalue, Py_NE)); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 234; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_9 = __pyx_t_10;
-  __pyx_L4_bool_binop_done:;
   if (__pyx_t_9) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":235
- * 	picklef_keyword.close()
- * 	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
- * 		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"             # <<<<<<<<<<<<<<
- * 		return graphcache_mapreduce_parents[md5hashparents]
- * 	else:
- */
-    __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_Parents_hash);
-    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_kp_s_Spark_MapReduce_Parents_hash);
-    __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_Parents_hash);
-    __Pyx_INCREF(__pyx_v_md5hashparents);
-    PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_md5hashparents);
-    __Pyx_GIVEREF(__pyx_v_md5hashparents);
-    __Pyx_INCREF(__pyx_kp_s_returning_from_cache);
-    PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_kp_s_returning_from_cache);
-    __Pyx_GIVEREF(__pyx_kp_s_returning_from_cache);
-    if (__Pyx_Print(0, __pyx_t_5, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
     /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":236
- * 	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
- * 		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
- * 		return graphcache_mapreduce_parents[md5hashparents]             # <<<<<<<<<<<<<<
- * 	else:
- * 		#picklelock.acquire()
+ * 	picklef_keyword.close()
+ * 	if lookupCacheParents:
+ * 		cachevalue=graphcache.get(md5hashparents)             # <<<<<<<<<<<<<<
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
  */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce_parents); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_graphcache, __pyx_n_s_get); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = PyObject_GetItem(__pyx_t_5, __pyx_v_md5hashparents); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_r = __pyx_t_2;
-    __pyx_t_2 = 0;
-    goto __pyx_L0;
-  }
-  /*else*/ {
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":239
- * 	else:
- * 		#picklelock.acquire()
- * 		spcon = SparkContext("local[2]","Spark_MapReduce_Parents")             # <<<<<<<<<<<<<<
- * 		#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
- * 		#asfer_pickle_string_dump(keyword,picklef_keyword)
- */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_SparkContext); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_spcon = __pyx_t_5;
-    __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":243
- * 		#asfer_pickle_string_dump(keyword,picklef_keyword)
- * 		#picklef_keyword.close()
- * 		paralleldata = spcon.parallelize(tokensofprevlevel).cache()             # <<<<<<<<<<<<<<
- * 		#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
- * 		k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
- */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_parallelize); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_3 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_7 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_5))) {
+      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_7)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+        __Pyx_INCREF(__pyx_t_7);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __Pyx_DECREF_SET(__pyx_t_5, function);
       }
     }
-    if (!__pyx_t_3) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_tokensofprevlevel); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!__pyx_t_7) {
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_md5hashparents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
     } else {
-      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-      __Pyx_INCREF(__pyx_v_tokensofprevlevel);
-      PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_tokensofprevlevel);
-      __Pyx_GIVEREF(__pyx_v_tokensofprevlevel);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+      __Pyx_INCREF(__pyx_v_md5hashparents);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_md5hashparents);
+      __Pyx_GIVEREF(__pyx_v_md5hashparents);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_cache); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-      if (likely(__pyx_t_2)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_2);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
-      }
-    }
-    if (__pyx_t_2) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __pyx_v_cachevalue = __pyx_t_2;
+    __pyx_t_2 = 0;
+
+    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":237
+ * 	if lookupCacheParents:
+ * 		cachevalue=graphcache.get(md5hashparents)
+ * 		if cachevalue:             # <<<<<<<<<<<<<<
+ * 			print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
+ * 			return cachevalue
+ */
+    __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_v_cachevalue); if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (__pyx_t_9) {
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":238
+ * 		cachevalue=graphcache.get(md5hashparents)
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"             # <<<<<<<<<<<<<<
+ * 			return cachevalue
+ * 		else:
+ */
+      __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_kp_s_Spark_MapReduce_Parents_hash);
+      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_Spark_MapReduce_Parents_hash);
+      __Pyx_GIVEREF(__pyx_kp_s_Spark_MapReduce_Parents_hash);
+      __Pyx_INCREF(__pyx_v_md5hashparents);
+      PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_md5hashparents);
+      __Pyx_GIVEREF(__pyx_v_md5hashparents);
+      __Pyx_INCREF(__pyx_kp_s_returning_from_cache);
+      PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_kp_s_returning_from_cache);
+      __Pyx_GIVEREF(__pyx_kp_s_returning_from_cache);
+      if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_v_paralleldata = __pyx_t_5;
-    __pyx_t_5 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":245
- * 		paralleldata = spcon.parallelize(tokensofprevlevel).cache()
- * 		#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
- * 		k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)             # <<<<<<<<<<<<<<
- * 		sqlContext=SQLContext(spcon)
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":239
+ * 		if cachevalue:
+ * 			print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
+ * 			return cachevalue             # <<<<<<<<<<<<<<
+ * 		else:
+ * 			#picklelock.acquire()
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_paralleldata, __pyx_n_s_map); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_mapFunction_Parents); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_3);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
+      __Pyx_XDECREF(__pyx_r);
+      __Pyx_INCREF(__pyx_v_cachevalue);
+      __pyx_r = __pyx_v_cachevalue;
+      goto __pyx_L0;
     }
-    if (!__pyx_t_3) {
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_GOTREF(__pyx_t_7);
-    } else {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_4);
-      __Pyx_GIVEREF(__pyx_t_4);
-      __pyx_t_4 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_reduceByKey); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_reduceFunction_Parents); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (!__pyx_t_6) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    /*else*/ {
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":242
+ * 		else:
+ * 			#picklelock.acquire()
+ * 			spcon = SparkContext("local[2]","Spark_MapReduce_Parents")             # <<<<<<<<<<<<<<
+ * 			#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+ * 			#asfer_pickle_string_dump(keyword,picklef_keyword)
+ */
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_SparkContext); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
-    } else {
-      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_spcon = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":246
+ * 			#asfer_pickle_string_dump(keyword,picklef_keyword)
+ * 			#picklef_keyword.close()
+ * 			paralleldata = spcon.parallelize(tokensofprevlevel).cache()             # <<<<<<<<<<<<<<
+ * 			#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+ * 			k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+ */
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_parallelize); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_7 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (!__pyx_t_7) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_tokensofprevlevel); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+        __Pyx_INCREF(__pyx_v_tokensofprevlevel);
+        PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_tokensofprevlevel);
+        __Pyx_GIVEREF(__pyx_v_tokensofprevlevel);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_cache); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (__pyx_t_2) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      } else {
+        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_v_paralleldata = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":248
+ * 			paralleldata = spcon.parallelize(tokensofprevlevel).cache()
+ * 			#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+ * 			k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)             # <<<<<<<<<<<<<<
+ * 			sqlContext=SQLContext(spcon)
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_paralleldata, __pyx_n_s_map); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_mapFunction_Parents); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      if (!__pyx_t_7) {
+        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_GOTREF(__pyx_t_3);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_6);
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_4);
+        __Pyx_GIVEREF(__pyx_t_4);
+        __pyx_t_4 = 0;
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_reduceByKey); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_reduceFunction_Parents); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_6 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      if (!__pyx_t_6) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+      } else {
+        __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_k = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":249
+ * 			#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+ * 			k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+ * 			sqlContext=SQLContext(spcon)             # <<<<<<<<<<<<<<
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+ */
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_SQLContext); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      if (!__pyx_t_4) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_spcon); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+      } else {
+        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+        __Pyx_INCREF(__pyx_v_spcon);
+        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_spcon);
+        __Pyx_GIVEREF(__pyx_v_spcon);
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_sqlContext = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":250
+ * 			k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+ * 			sqlContext=SQLContext(spcon)
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())             # <<<<<<<<<<<<<<
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_createDataFrame); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_k, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_6 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_4, function);
+        }
+      }
+      if (__pyx_t_6) {
+        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      } else {
+        __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      if (!__pyx_t_4) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_5);
+      } else {
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_6);
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_5);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_parents_schema = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":251
+ * 			sqlContext=SQLContext(spcon)
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+ * 			dict_query_results=dict(query_results.collect())
+ */
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_parents_schema, __pyx_n_s_registerTempTable); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":252
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
+ * 			dict_query_results=dict(query_results.collect())
+ * 			#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_sql); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_query_results = __pyx_t_5;
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":253
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+ * 			dict_query_results=dict(query_results.collect())             # <<<<<<<<<<<<<<
+ * 			#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
+ * 			#picklelock.release()
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_query_results, __pyx_n_s_collect); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      if (__pyx_t_6) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      } else {
+        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5);
+      __Pyx_GIVEREF(__pyx_t_5);
+      __pyx_t_5 = 0;
+      __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyDict_Type))), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_v_dict_query_results = ((PyObject*)__pyx_t_5);
+      __pyx_t_5 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":256
+ * 			#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
+ * 			#picklelock.release()
+ * 			graphcache.set(md5hashparents,dict_query_results[1])             # <<<<<<<<<<<<<<
+ * 			spcon.stop()
+ * 			print "graphcache_mapreduce_parents updated:", graphcache
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_graphcache, __pyx_n_s_set); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_3 = NULL;
+      __pyx_t_8 = 0;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __pyx_t_8 = 1;
+        }
+      }
+      __pyx_t_4 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      if (__pyx_t_3) {
+        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+      }
+      __Pyx_INCREF(__pyx_v_md5hashparents);
+      PyTuple_SET_ITEM(__pyx_t_4, 0+__pyx_t_8, __pyx_v_md5hashparents);
+      __Pyx_GIVEREF(__pyx_v_md5hashparents);
+      PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_8, __pyx_t_6);
+      __Pyx_GIVEREF(__pyx_t_6);
+      __pyx_t_6 = 0;
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_k = __pyx_t_5;
-    __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":246
- * 		#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
- * 		k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
- * 		sqlContext=SQLContext(spcon)             # <<<<<<<<<<<<<<
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":257
+ * 			#picklelock.release()
+ * 			graphcache.set(md5hashparents,dict_query_results[1])
+ * 			spcon.stop()             # <<<<<<<<<<<<<<
+ * 			print "graphcache_mapreduce_parents updated:", graphcache
+ * 			return dict_query_results[1]
  */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_SQLContext); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_stop); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 257; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_4 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_4)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_4);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
       }
-    }
-    if (!__pyx_t_4) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_spcon); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (__pyx_t_4) {
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 257; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      } else {
+        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 257; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
       __Pyx_GOTREF(__pyx_t_5);
-    } else {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
-      __Pyx_INCREF(__pyx_v_spcon);
-      PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_spcon);
-      __Pyx_GIVEREF(__pyx_v_spcon);
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_sqlContext = __pyx_t_5;
-    __pyx_t_5 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":247
- * 		k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
- * 		sqlContext=SQLContext(spcon)
- * 		parents_schema=sqlContext.createDataFrame(k.collect())             # <<<<<<<<<<<<<<
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_createDataFrame); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_k, __pyx_n_s_collect); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_4);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (!__pyx_t_4) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_5);
-    } else {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_parents_schema = __pyx_t_5;
-    __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":248
- * 		sqlContext=SQLContext(spcon)
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
- * 		dict_query_results=dict(query_results.collect())
- */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_parents_schema, __pyx_n_s_registerTempTable); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":249
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
- * 		dict_query_results=dict(query_results.collect())
- * 		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_sqlContext, __pyx_n_s_sql); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_query_results = __pyx_t_5;
-    __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":250
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
- * 		dict_query_results=dict(query_results.collect())             # <<<<<<<<<<<<<<
- * 		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
- * 		#picklelock.release()
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_query_results, __pyx_n_s_collect); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_5);
-    __Pyx_GIVEREF(__pyx_t_5);
-    __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyDict_Type))), __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_v_dict_query_results = ((PyObject*)__pyx_t_5);
-    __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":253
- * 		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
- * 		#picklelock.release()
- * 		graphcache_mapreduce_parents[md5hashparents]=dict_query_results[1]             # <<<<<<<<<<<<<<
- * 		spcon.stop()
- * 		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents
- */
-    __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce_parents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_v_md5hashparents, __pyx_t_5) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":254
- * 		#picklelock.release()
- * 		graphcache_mapreduce_parents[md5hashparents]=dict_query_results[1]
- * 		spcon.stop()             # <<<<<<<<<<<<<<
- * 		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents
- * 		return dict_query_results[1]
- */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_spcon, __pyx_n_s_stop); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-      if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-        __Pyx_INCREF(__pyx_t_6);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_2, function);
-      }
-    }
-    if (__pyx_t_6) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    }
-    __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":255
- * 		graphcache_mapreduce_parents[md5hashparents]=dict_query_results[1]
- * 		spcon.stop()
- * 		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents             # <<<<<<<<<<<<<<
- * 		return dict_query_results[1]
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":258
+ * 			graphcache.set(md5hashparents,dict_query_results[1])
+ * 			spcon.stop()
+ * 			print "graphcache_mapreduce_parents updated:", graphcache             # <<<<<<<<<<<<<<
+ * 			return dict_query_results[1]
  * 
  */
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_graphcache_mapreduce_parents); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 255; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 255; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_INCREF(__pyx_kp_s_graphcache_mapreduce_parents_upd);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_graphcache_mapreduce_parents_upd);
-    __Pyx_GIVEREF(__pyx_kp_s_graphcache_mapreduce_parents_upd);
-    PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_5);
-    __Pyx_GIVEREF(__pyx_t_5);
-    __pyx_t_5 = 0;
-    if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 255; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_INCREF(__pyx_kp_s_graphcache_mapreduce_parents_upd);
+      PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_kp_s_graphcache_mapreduce_parents_upd);
+      __Pyx_GIVEREF(__pyx_kp_s_graphcache_mapreduce_parents_upd);
+      __Pyx_INCREF(__pyx_v_graphcache);
+      PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_graphcache);
+      __Pyx_GIVEREF(__pyx_v_graphcache);
+      if (__Pyx_Print(0, __pyx_t_5, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":256
- * 		spcon.stop()
- * 		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents
- * 		return dict_query_results[1]             # <<<<<<<<<<<<<<
+      /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":259
+ * 			spcon.stop()
+ * 			print "graphcache_mapreduce_parents updated:", graphcache
+ * 			return dict_query_results[1]             # <<<<<<<<<<<<<<
  * 
- * def flushCacheParents():
+ * def flushCache(graphcache):
  */
-    __Pyx_XDECREF(__pyx_r);
-    __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_r = __pyx_t_2;
-    __pyx_t_2 = 0;
-    goto __pyx_L0;
+      __Pyx_XDECREF(__pyx_r);
+      __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_dict_query_results, __pyx_int_1); if (unlikely(__pyx_t_5 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __Pyx_GOTREF(__pyx_t_5);
+      __pyx_r = __pyx_t_5;
+      __pyx_t_5 = 0;
+      goto __pyx_L0;
+    }
   }
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":226
  * 		return parents1 + parents2
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):             # <<<<<<<<<<<<<<
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)
  */
 
   /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
@@ -5790,6 +5837,7 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_XDECREF(__pyx_v_tokensofprevlevelkeyword);
   __Pyx_XDECREF(__pyx_v_md5hashparents);
   __Pyx_XDECREF(__pyx_v_picklef_keyword);
+  __Pyx_XDECREF(__pyx_v_cachevalue);
   __Pyx_XDECREF(__pyx_v_spcon);
   __Pyx_XDECREF(__pyx_v_paralleldata);
   __Pyx_XDECREF(__pyx_v_k);
@@ -5802,132 +5850,33 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":258
- * 		return dict_query_results[1]
- * 
- * def flushCacheParents():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce_parents=defaultdict(list)
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCacheParents(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCacheParents = {"flushCacheParents", (PyCFunction)__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCacheParents, METH_NOARGS, 0};
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCacheParents(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("flushCacheParents (wrapper)", 0);
-  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCacheParents(__pyx_self);
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCacheParents(CYTHON_UNUSED PyObject *__pyx_self) {
-  CYTHON_UNUSED PyObject *__pyx_v_graphcache_mapreduce_parents = NULL;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("flushCacheParents", 0);
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":259
- * 
- * def flushCacheParents():
- * 	graphcache_mapreduce_parents=defaultdict(list)             # <<<<<<<<<<<<<<
- * 
- * def flushCache():
- */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
-    __Pyx_GIVEREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_graphcache_mapreduce_parents = __pyx_t_1;
-  __pyx_t_1 = 0;
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":258
- * 		return dict_query_results[1]
- * 
- * def flushCacheParents():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce_parents=defaultdict(list)
- * 
- */
-
-  /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_graphcache_mapreduce_parents);
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
 /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":261
- * 	graphcache_mapreduce_parents=defaultdict(list)
+ * 			return dict_query_results[1]
  * 
- * def flushCache():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce=defaultdict(list)
+ * def flushCache(graphcache):             # <<<<<<<<<<<<<<
+ * 	graphcache.flush_all()
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_25flushCache(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_25flushCache = {"flushCache", (PyCFunction)__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_25flushCache, METH_NOARGS, 0};
-static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_25flushCache(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCache(PyObject *__pyx_self, PyObject *__pyx_v_graphcache); /*proto*/
+static PyMethodDef __pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCache = {"flushCache", (PyCFunction)__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCache, METH_O, 0};
+static PyObject *__pyx_pw_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCache(PyObject *__pyx_self, PyObject *__pyx_v_graphcache) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("flushCache (wrapper)", 0);
-  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_24flushCache(__pyx_self);
+  __pyx_r = __pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCache(__pyx_self, ((PyObject *)__pyx_v_graphcache));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_24flushCache(CYTHON_UNUSED PyObject *__pyx_self) {
-  CYTHON_UNUSED PyObject *__pyx_v_graphcache_mapreduce = NULL;
+static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_22flushCache(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_graphcache) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -5935,13 +5884,13 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":262
  * 
- * def flushCache():
- * 	graphcache_mapreduce=defaultdict(list)             # <<<<<<<<<<<<<<
+ * def flushCache(graphcache):
+ * 	graphcache.flush_all()             # <<<<<<<<<<<<<<
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_graphcache, __pyx_n_s_flush_all); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
     __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
     if (likely(__pyx_t_3)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
@@ -5950,29 +5899,21 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
       __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+  if (__pyx_t_3) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
-    __Pyx_GIVEREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 262; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
+  __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_graphcache_mapreduce = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":261
- * 	graphcache_mapreduce_parents=defaultdict(list)
+ * 			return dict_query_results[1]
  * 
- * def flushCache():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce=defaultdict(list)
+ * def flushCache(graphcache):             # <<<<<<<<<<<<<<
+ * 	graphcache.flush_all()
  */
 
   /* function exit code */
@@ -5982,11 +5923,9 @@ static PyObject *__pyx_pf_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReduce
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCache", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_graphcache_mapreduce);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -6036,7 +5975,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_M, __pyx_k_M, sizeof(__pyx_k_M), 0, 0, 1, 1},
   {&__pyx_n_s_N, __pyx_k_N, sizeof(__pyx_k_N), 0, 0, 1, 1},
   {&__pyx_n_s_None, __pyx_k_None, sizeof(__pyx_k_None), 0, 0, 1, 1},
-  {&__pyx_n_s_Novalue, __pyx_k_Novalue, sizeof(__pyx_k_Novalue), 0, 0, 1, 1},
   {&__pyx_n_s_O, __pyx_k_O, sizeof(__pyx_k_O), 0, 0, 1, 1},
   {&__pyx_n_s_P, __pyx_k_P, sizeof(__pyx_k_P), 0, 0, 1, 1},
   {&__pyx_n_s_Q, __pyx_k_Q, sizeof(__pyx_k_Q), 0, 0, 1, 1},
@@ -6098,6 +6036,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_asfer_pickle_string_load_picklef, __pyx_k_asfer_pickle_string_load_picklef, sizeof(__pyx_k_asfer_pickle_string_load_picklef), 0, 0, 1, 0},
   {&__pyx_n_s_best_matching_synset, __pyx_k_best_matching_synset, sizeof(__pyx_k_best_matching_synset), 0, 0, 1, 1},
   {&__pyx_n_s_cache, __pyx_k_cache, sizeof(__pyx_k_cache), 0, 0, 1, 1},
+  {&__pyx_n_s_cachevalue, __pyx_k_cachevalue, sizeof(__pyx_k_cachevalue), 0, 0, 1, 1},
   {&__pyx_n_s_close, __pyx_k_close, sizeof(__pyx_k_close), 0, 0, 1, 1},
   {&__pyx_n_s_collect, __pyx_k_collect, sizeof(__pyx_k_collect), 0, 0, 1, 1},
   {&__pyx_n_s_collections, __pyx_k_collections, sizeof(__pyx_k_collections), 0, 0, 1, 1},
@@ -6115,10 +6054,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_fdist_tokens, __pyx_k_fdist_tokens, sizeof(__pyx_k_fdist_tokens), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
   {&__pyx_n_s_flushCache, __pyx_k_flushCache, sizeof(__pyx_k_flushCache), 0, 0, 1, 1},
-  {&__pyx_n_s_flushCacheParents, __pyx_k_flushCacheParents, sizeof(__pyx_k_flushCacheParents), 0, 0, 1, 1},
+  {&__pyx_n_s_flush_all, __pyx_k_flush_all, sizeof(__pyx_k_flush_all), 0, 0, 1, 1},
   {&__pyx_n_s_freqterms1, __pyx_k_freqterms1, sizeof(__pyx_k_freqterms1), 0, 0, 1, 1},
-  {&__pyx_n_s_graphcache_mapreduce, __pyx_k_graphcache_mapreduce, sizeof(__pyx_k_graphcache_mapreduce), 0, 0, 1, 1},
-  {&__pyx_n_s_graphcache_mapreduce_parents, __pyx_k_graphcache_mapreduce_parents, sizeof(__pyx_k_graphcache_mapreduce_parents), 0, 0, 1, 1},
+  {&__pyx_n_s_get, __pyx_k_get, sizeof(__pyx_k_get), 0, 0, 1, 1},
+  {&__pyx_n_s_graphcache, __pyx_k_graphcache, sizeof(__pyx_k_graphcache), 0, 0, 1, 1},
   {&__pyx_kp_s_graphcache_mapreduce_parents_upd, __pyx_k_graphcache_mapreduce_parents_upd, sizeof(__pyx_k_graphcache_mapreduce_parents_upd), 0, 0, 1, 0},
   {&__pyx_kp_s_graphcache_mapreduce_updated, __pyx_k_graphcache_mapreduce_updated, sizeof(__pyx_k_graphcache_mapreduce_updated), 0, 0, 1, 0},
   {&__pyx_n_s_hashlib, __pyx_k_hashlib, sizeof(__pyx_k_hashlib), 0, 0, 1, 1},
@@ -6134,7 +6073,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_k, __pyx_k_k, sizeof(__pyx_k_k), 0, 0, 1, 1},
   {&__pyx_kp_s_keyword, __pyx_k_keyword, sizeof(__pyx_k_keyword), 0, 0, 1, 0},
   {&__pyx_n_s_keyword_2, __pyx_k_keyword_2, sizeof(__pyx_k_keyword_2), 0, 0, 1, 1},
-  {&__pyx_n_s_lambda, __pyx_k_lambda, sizeof(__pyx_k_lambda), 0, 0, 1, 1},
   {&__pyx_n_s_level, __pyx_k_level, sizeof(__pyx_k_level), 0, 0, 1, 1},
   {&__pyx_n_s_line, __pyx_k_line, sizeof(__pyx_k_line), 0, 0, 1, 1},
   {&__pyx_kp_s_local_2, __pyx_k_local_2, sizeof(__pyx_k_local_2), 0, 0, 1, 0},
@@ -6205,6 +6143,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_s_synset_tokens, __pyx_k_s_synset_tokens, sizeof(__pyx_k_s_synset_tokens), 0, 0, 1, 1},
   {&__pyx_n_s_s_synset_word_tokens, __pyx_k_s_synset_word_tokens, sizeof(__pyx_k_s_synset_word_tokens), 0, 0, 1, 1},
   {&__pyx_n_s_s_synsets, __pyx_k_s_synsets, sizeof(__pyx_k_s_synsets), 0, 0, 1, 1},
+  {&__pyx_n_s_set, __pyx_k_set, sizeof(__pyx_k_set), 0, 0, 1, 1},
   {&__pyx_n_s_she, __pyx_k_she, sizeof(__pyx_k_she), 0, 0, 1, 1},
   {&__pyx_n_s_spcon, __pyx_k_spcon, sizeof(__pyx_k_spcon), 0, 0, 1, 1},
   {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
@@ -6244,7 +6183,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -6254,89 +6193,89 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":83
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":81
  * 	line=picklef.readline()
  * 	synsets=[]
  * 	stringsynsets=line.split(",")             # <<<<<<<<<<<<<<
  * 	for s in stringsynsets:
  * 		s_synset_tokens=s.split("'")
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":85
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":83
  * 	stringsynsets=line.split(",")
  * 	for s in stringsynsets:
  * 		s_synset_tokens=s.split("'")             # <<<<<<<<<<<<<<
  * 		#print "s_synset_tokens:",s_synset_tokens
  * 		if len(s_synset_tokens) == 3:
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s__3); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s__3); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":88
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":86
  * 		#print "s_synset_tokens:",s_synset_tokens
  * 		if len(s_synset_tokens) == 3:
  * 			s_synset_word_tokens=s_synset_tokens[1].split(".")             # <<<<<<<<<<<<<<
  * 			#print "s_synset_word_tokens:",s_synset_word_tokens
  * 			s_synsets=wn.synsets(s_synset_word_tokens[0])
  */
-  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s__5); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__6 = PyTuple_Pack(1, __pyx_kp_s__5); if (unlikely(!__pyx_tuple__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 86; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":99
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":97
  * 	prevlevelsynsets=[]
  * 	prevlevelsynsets_earlier=[]
  * 	stopwords = nltk.corpus.stopwords.words('english')             # <<<<<<<<<<<<<<
  * 	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  */
-  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_english); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_english); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":119
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":117
  * 	#picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  * 	#prevlevelsynsets_earlier=asfer_pickle_load(picklef)
  * 	picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")             # <<<<<<<<<<<<<<
  * 	#asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
  * 	asfer_pickle_dump(prevlevelsynsets,picklef)
  */
-  __pyx_tuple__28 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_ab); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__28 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_ab); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 117; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":162
- * 		return graphcache_mapreduce[md5hash]
- * 	else:
- * 		spcon=SparkContext("local[2]","Spark_MapReduce")             # <<<<<<<<<<<<<<
- * 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
- * 		paralleldata=spcon.parallelize(wordsatthislevel).cache()
+ * 			return cachevalue
+ * 		else:
+ * 			spcon=SparkContext("local[2]","Spark_MapReduce")             # <<<<<<<<<<<<<<
+ * 			print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
+ * 			paralleldata=spcon.parallelize(wordsatthislevel).cache()
  */
   __pyx_tuple__29 = PyTuple_Pack(2, __pyx_kp_s_local_2, __pyx_n_s_Spark_MapReduce); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":175
- * 		sqlContext=SQLContext(spcon)
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
- * 		dict_query_results=dict(query_results.collect())
+ * 			sqlContext=SQLContext(spcon)
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
+ * 			dict_query_results=dict(query_results.collect())
  */
   __pyx_tuple__30 = PyTuple_Pack(1, __pyx_n_s_Interview_RecursiveGlossOverlap); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":176
- * 		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
- * 		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
- * 		dict_query_results=dict(query_results.collect())
- * 		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+ * 			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+ * 			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")             # <<<<<<<<<<<<<<
+ * 			dict_query_results=dict(query_results.collect())
+ * 			#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
  */
   __pyx_tuple__31 = PyTuple_Pack(1, __pyx_kp_s_SELECT_FROM_Interview_RecursiveG); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__31);
@@ -6353,47 +6292,47 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__32);
   __Pyx_GIVEREF(__pyx_tuple__32);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":231
- * 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":232
+ * 	md5hashparents = md5hashparents + "parents"
  * 	#md5hashparents = hashlib.md5(keyword).hexdigest()
  * 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")             # <<<<<<<<<<<<<<
  * 	asfer_pickle_string_dump(keyword,picklef_keyword)
  * 	picklef_keyword.close()
  */
-  __pyx_tuple__33 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce_2, __pyx_n_s_w); if (unlikely(!__pyx_tuple__33)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__33 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce_2, __pyx_n_s_w); if (unlikely(!__pyx_tuple__33)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":239
- * 	else:
- * 		#picklelock.acquire()
- * 		spcon = SparkContext("local[2]","Spark_MapReduce_Parents")             # <<<<<<<<<<<<<<
- * 		#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
- * 		#asfer_pickle_string_dump(keyword,picklef_keyword)
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":242
+ * 		else:
+ * 			#picklelock.acquire()
+ * 			spcon = SparkContext("local[2]","Spark_MapReduce_Parents")             # <<<<<<<<<<<<<<
+ * 			#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+ * 			#asfer_pickle_string_dump(keyword,picklef_keyword)
  */
-  __pyx_tuple__34 = PyTuple_Pack(2, __pyx_kp_s_local_2, __pyx_n_s_Spark_MapReduce_Parents); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__34 = PyTuple_Pack(2, __pyx_kp_s_local_2, __pyx_n_s_Spark_MapReduce_Parents); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":248
- * 		sqlContext=SQLContext(spcon)
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
- * 		dict_query_results=dict(query_results.collect())
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":251
+ * 			sqlContext=SQLContext(spcon)
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+ * 			dict_query_results=dict(query_results.collect())
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_n_s_Interview_RecursiveGlossOverlap_2); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_n_s_Interview_RecursiveGlossOverlap_2); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":249
- * 		parents_schema=sqlContext.createDataFrame(k.collect())
- * 		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
- * 		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
- * 		dict_query_results=dict(query_results.collect())
- * 		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":252
+ * 			parents_schema=sqlContext.createDataFrame(k.collect())
+ * 			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+ * 			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")             # <<<<<<<<<<<<<<
+ * 			dict_query_results=dict(query_results.collect())
+ * 			#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
  */
-  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_SELECT_FROM_Interview_RecursiveG_2); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s_SELECT_FROM_Interview_RecursiveG_2); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__36);
   __Pyx_GIVEREF(__pyx_tuple__36);
 
@@ -6402,107 +6341,107 @@ static int __Pyx_InitCachedConstants(void) {
  * #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
  * rgo_object=namedtuple("rgo_object", "tokensatthislevel")             # <<<<<<<<<<<<<<
  * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")
+ * 
  */
   __pyx_tuple__37 = PyTuple_Pack(2, __pyx_n_s_rgo_object, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_tuple__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":67
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":65
+ * picklelock=threading.Lock()
  * 
  * def asfer_pickle_string_dump(s,picklef):             # <<<<<<<<<<<<<<
  * 	print "asfer_pickle_string_dump(): picklef.write():",s
  * 	picklef.write(s)
  */
-  __pyx_tuple__38 = PyTuple_Pack(2, __pyx_n_s_s, __pyx_n_s_picklef); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__38 = PyTuple_Pack(2, __pyx_n_s_s, __pyx_n_s_picklef); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
-  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_string_dump, 67, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_string_dump, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":71
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":69
  * 	picklef.write(s)
  * 
  * def asfer_pickle_string_load(picklef):             # <<<<<<<<<<<<<<
  * 	keyword=picklef.read()
  * 	print "asfer_pickle_string_load(): picklef.readlines():",keyword
  */
-  __pyx_tuple__40 = PyTuple_Pack(2, __pyx_n_s_picklef, __pyx_n_s_keyword_2); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__40 = PyTuple_Pack(2, __pyx_n_s_picklef, __pyx_n_s_keyword_2); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__40);
   __Pyx_GIVEREF(__pyx_tuple__40);
-  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_string_load, 71, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__40, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_string_load, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":76
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":74
  * 	return keyword
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):             # <<<<<<<<<<<<<<
  * 	for s in prevlevelsynsets:
  * 		picklef.write(repr(s)+",")
  */
-  __pyx_tuple__42 = PyTuple_Pack(3, __pyx_n_s_prevlevelsynsets, __pyx_n_s_picklef, __pyx_n_s_s); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__42 = PyTuple_Pack(3, __pyx_n_s_prevlevelsynsets, __pyx_n_s_picklef, __pyx_n_s_s); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
-  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_dump, 76, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_dump, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":80
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":78
  * 		picklef.write(repr(s)+",")
  * 
  * def asfer_pickle_load(picklef):             # <<<<<<<<<<<<<<
  * 	line=picklef.readline()
  * 	synsets=[]
  */
-  __pyx_tuple__44 = PyTuple_Pack(8, __pyx_n_s_picklef, __pyx_n_s_line, __pyx_n_s_synsets, __pyx_n_s_stringsynsets, __pyx_n_s_s, __pyx_n_s_s_synset_tokens, __pyx_n_s_s_synset_word_tokens, __pyx_n_s_s_synsets); if (unlikely(!__pyx_tuple__44)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__44 = PyTuple_Pack(8, __pyx_n_s_picklef, __pyx_n_s_line, __pyx_n_s_synsets, __pyx_n_s_stringsynsets, __pyx_n_s_s, __pyx_n_s_s_synset_tokens, __pyx_n_s_s_synset_word_tokens, __pyx_n_s_s_synsets); if (unlikely(!__pyx_tuple__44)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__44);
   __Pyx_GIVEREF(__pyx_tuple__44);
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_load, 80, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__44, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_asfer_pickle_load, 78, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":96
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":94
  * 	return synsets
  * 
  * def mapFunction(freqterms1):             # <<<<<<<<<<<<<<
  * 	prevlevelsynsets=[]
  * 	prevlevelsynsets_earlier=[]
  */
-  __pyx_tuple__46 = PyTuple_Pack(13, __pyx_n_s_freqterms1, __pyx_n_s_prevlevelsynsets, __pyx_n_s_prevlevelsynsets_earlier, __pyx_n_s_stopwords, __pyx_n_s_puncts, __pyx_n_s_mapped_object, __pyx_n_s_keyword_2, __pyx_n_s_disamb_synset, __pyx_n_s_disamb_synset_def, __pyx_n_s_tokens, __pyx_n_s_fdist_tokens, __pyx_n_s_picklef, __pyx_n_s_w); if (unlikely(!__pyx_tuple__46)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__46 = PyTuple_Pack(13, __pyx_n_s_freqterms1, __pyx_n_s_prevlevelsynsets, __pyx_n_s_prevlevelsynsets_earlier, __pyx_n_s_stopwords, __pyx_n_s_puncts, __pyx_n_s_mapped_object, __pyx_n_s_keyword_2, __pyx_n_s_disamb_synset, __pyx_n_s_disamb_synset_def, __pyx_n_s_tokens, __pyx_n_s_fdist_tokens, __pyx_n_s_picklef, __pyx_n_s_w); if (unlikely(!__pyx_tuple__46)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_mapFunction, 96, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 13, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_mapFunction, 94, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":124
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":122
  * 	return (1,mapped_object)
  * 
  * def reduceFunction(mapped_object1,mapped_object2):             # <<<<<<<<<<<<<<
  * 	reduced_rgo_object=()
  * 	#print "reduceFunction():mapped_object1: ",mapped_object1
  */
-  __pyx_tuple__48 = PyTuple_Pack(3, __pyx_n_s_mapped_object1, __pyx_n_s_mapped_object2, __pyx_n_s_reduced_rgo_object); if (unlikely(!__pyx_tuple__48)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__48 = PyTuple_Pack(3, __pyx_n_s_mapped_object1, __pyx_n_s_mapped_object2, __pyx_n_s_reduced_rgo_object); if (unlikely(!__pyx_tuple__48)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__48);
   __Pyx_GIVEREF(__pyx_tuple__48);
-  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_reduceFunction, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_reduceFunction, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":145
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":143
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
  * 	maxmatch = -1
  * 	retset = []
  */
-  __pyx_tuple__50 = PyTuple_Pack(7, __pyx_n_s_doc_tokens, __pyx_n_s_synsets, __pyx_n_s_maxmatch, __pyx_n_s_retset, __pyx_n_s_synset, __pyx_n_s_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_tuple__50)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__50 = PyTuple_Pack(7, __pyx_n_s_doc_tokens, __pyx_n_s_synsets, __pyx_n_s_maxmatch, __pyx_n_s_retset, __pyx_n_s_synset, __pyx_n_s_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_tuple__50)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__50);
   __Pyx_GIVEREF(__pyx_tuple__50);
-  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_best_matching_synset, 145, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__50, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_best_matching_synset, 143, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":156
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":154
  * 	return retset
  * 
- * def Spark_MapReduce(level, wordsatthislevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):             # <<<<<<<<<<<<<<
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
+ * 	if lookupCache:
  */
-  __pyx_tuple__52 = PyTuple_Pack(10, __pyx_n_s_level, __pyx_n_s_wordsatthislevel, __pyx_n_s_md5hash, __pyx_n_s_spcon, __pyx_n_s_paralleldata, __pyx_n_s_k, __pyx_n_s_sqlContext, __pyx_n_s_recursiveglossoverlap_schema, __pyx_n_s_query_results, __pyx_n_s_dict_query_results); if (unlikely(!__pyx_tuple__52)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__52 = PyTuple_Pack(12, __pyx_n_s_level, __pyx_n_s_wordsatthislevel, __pyx_n_s_graphcache, __pyx_n_s_md5hash, __pyx_n_s_cachevalue, __pyx_n_s_spcon, __pyx_n_s_paralleldata, __pyx_n_s_k, __pyx_n_s_sqlContext, __pyx_n_s_recursiveglossoverlap_schema, __pyx_n_s_query_results, __pyx_n_s_dict_query_results); if (unlikely(!__pyx_tuple__52)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__52);
   __Pyx_GIVEREF(__pyx_tuple__52);
-  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(2, 0, 10, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_Spark_MapReduce, 156, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__52, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_Spark_MapReduce, 154, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":197
  * #        return parents
@@ -6531,37 +6470,25 @@ static int __Pyx_InitCachedConstants(void) {
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":226
  * 		return parents1 + parents2
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):             # <<<<<<<<<<<<<<
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)
  */
-  __pyx_tuple__58 = PyTuple_Pack(12, __pyx_n_s_keyword_2, __pyx_n_s_tokensofprevlevel, __pyx_n_s_tokensofprevlevelkeyword, __pyx_n_s_md5hashparents, __pyx_n_s_picklef_keyword, __pyx_n_s_spcon, __pyx_n_s_paralleldata, __pyx_n_s_k, __pyx_n_s_sqlContext, __pyx_n_s_parents_schema, __pyx_n_s_query_results, __pyx_n_s_dict_query_results); if (unlikely(!__pyx_tuple__58)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__58 = PyTuple_Pack(14, __pyx_n_s_keyword_2, __pyx_n_s_tokensofprevlevel, __pyx_n_s_graphcache, __pyx_n_s_tokensofprevlevelkeyword, __pyx_n_s_md5hashparents, __pyx_n_s_picklef_keyword, __pyx_n_s_cachevalue, __pyx_n_s_spcon, __pyx_n_s_paralleldata, __pyx_n_s_k, __pyx_n_s_sqlContext, __pyx_n_s_parents_schema, __pyx_n_s_query_results, __pyx_n_s_dict_query_results); if (unlikely(!__pyx_tuple__58)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__58);
   __Pyx_GIVEREF(__pyx_tuple__58);
-  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(2, 0, 12, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_Spark_MapReduce_Parents, 226, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":258
- * 		return dict_query_results[1]
- * 
- * def flushCacheParents():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce_parents=defaultdict(list)
- * 
- */
-  __pyx_tuple__60 = PyTuple_Pack(1, __pyx_n_s_graphcache_mapreduce_parents); if (unlikely(!__pyx_tuple__60)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__60);
-  __Pyx_GIVEREF(__pyx_tuple__60);
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_flushCacheParents, 258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(3, 0, 14, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__58, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_Spark_MapReduce_Parents, 226, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":261
- * 	graphcache_mapreduce_parents=defaultdict(list)
+ * 			return dict_query_results[1]
  * 
- * def flushCache():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce=defaultdict(list)
+ * def flushCache(graphcache):             # <<<<<<<<<<<<<<
+ * 	graphcache.flush_all()
  */
-  __pyx_tuple__62 = PyTuple_Pack(1, __pyx_n_s_graphcache_mapreduce); if (unlikely(!__pyx_tuple__62)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_tuple__62);
-  __Pyx_GIVEREF(__pyx_tuple__62);
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_flushCache, 261, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__60 = PyTuple_Pack(1, __pyx_n_s_graphcache); if (unlikely(!__pyx_tuple__60)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__60);
+  __Pyx_GIVEREF(__pyx_tuple__60);
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_flushCache, 261, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6588,8 +6515,6 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -6913,7 +6838,7 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
  * #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
  * rgo_object=namedtuple("rgo_object", "tokensatthislevel")             # <<<<<<<<<<<<<<
  * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")
+ * 
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_namedtuple); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
@@ -6927,8 +6852,8 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
  * #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
  * rgo_object=namedtuple("rgo_object", "tokensatthislevel")
  * picklelock=threading.Lock()             # <<<<<<<<<<<<<<
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
+ * 
+ * def asfer_pickle_string_dump(s,picklef):
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_threading); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 63; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
@@ -6956,180 +6881,100 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_picklelock, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 63; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":64
- * rgo_object=namedtuple("rgo_object", "tokensatthislevel")
- * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")             # <<<<<<<<<<<<<<
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
- * 
- */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_26lambda1, 0, __pyx_n_s_lambda, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  if (!__pyx_t_4) {
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
-  } else {
-    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_5);
-    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
-    PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_1);
-    __Pyx_GIVEREF(__pyx_t_1);
-    __pyx_t_1 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_graphcache_mapreduce, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":65
  * picklelock=threading.Lock()
- * graphcache_mapreduce=defaultdict(lambda: "Novalue")
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")             # <<<<<<<<<<<<<<
- * 
- * def asfer_pickle_string_dump(s,picklef):
- */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_27lambda2, 0, __pyx_n_s_lambda, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, NULL); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_1)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_1);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
-    }
-  }
-  if (!__pyx_t_1) {
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __Pyx_GOTREF(__pyx_t_2);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_5);
-    __Pyx_GIVEREF(__pyx_t_5);
-    __pyx_t_5 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_graphcache_mapreduce_parents, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":67
- * graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
  * 
  * def asfer_pickle_string_dump(s,picklef):             # <<<<<<<<<<<<<<
  * 	print "asfer_pickle_string_dump(): picklef.write():",s
  * 	picklef.write(s)
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_1asfer_pickle_string_dump, 0, __pyx_n_s_asfer_pickle_string_dump, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_1asfer_pickle_string_dump, 0, __pyx_n_s_asfer_pickle_string_dump, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_string_dump, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_string_dump, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":71
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":69
  * 	picklef.write(s)
  * 
  * def asfer_pickle_string_load(picklef):             # <<<<<<<<<<<<<<
  * 	keyword=picklef.read()
  * 	print "asfer_pickle_string_load(): picklef.readlines():",keyword
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_3asfer_pickle_string_load, 0, __pyx_n_s_asfer_pickle_string_load, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_3asfer_pickle_string_load, 0, __pyx_n_s_asfer_pickle_string_load, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_string_load, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_string_load, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":76
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":74
  * 	return keyword
  * 
  * def asfer_pickle_dump(prevlevelsynsets,picklef):             # <<<<<<<<<<<<<<
  * 	for s in prevlevelsynsets:
  * 		picklef.write(repr(s)+",")
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_5asfer_pickle_dump, 0, __pyx_n_s_asfer_pickle_dump, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_5asfer_pickle_dump, 0, __pyx_n_s_asfer_pickle_dump, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_dump, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_dump, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":80
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":78
  * 		picklef.write(repr(s)+",")
  * 
  * def asfer_pickle_load(picklef):             # <<<<<<<<<<<<<<
  * 	line=picklef.readline()
  * 	synsets=[]
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_7asfer_pickle_load, 0, __pyx_n_s_asfer_pickle_load, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_7asfer_pickle_load, 0, __pyx_n_s_asfer_pickle_load, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_load, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_asfer_pickle_load, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":96
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":94
  * 	return synsets
  * 
  * def mapFunction(freqterms1):             # <<<<<<<<<<<<<<
  * 	prevlevelsynsets=[]
  * 	prevlevelsynsets_earlier=[]
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_9mapFunction, 0, __pyx_n_s_mapFunction, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_9mapFunction, 0, __pyx_n_s_mapFunction, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_mapFunction, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_mapFunction, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":124
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":122
  * 	return (1,mapped_object)
  * 
  * def reduceFunction(mapped_object1,mapped_object2):             # <<<<<<<<<<<<<<
  * 	reduced_rgo_object=()
  * 	#print "reduceFunction():mapped_object1: ",mapped_object1
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_11reduceFunction, 0, __pyx_n_s_reduceFunction, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_11reduceFunction, 0, __pyx_n_s_reduceFunction, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_reduceFunction, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_reduceFunction, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":145
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":143
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
  * 	maxmatch = -1
  * 	retset = []
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_13best_matching_synset, 0, __pyx_n_s_best_matching_synset, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_13best_matching_synset, 0, __pyx_n_s_best_matching_synset, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_best_matching_synset, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 145; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_best_matching_synset, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 143; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":156
+  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":154
  * 	return retset
  * 
- * def Spark_MapReduce(level, wordsatthislevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce(level, wordsatthislevel, graphcache):             # <<<<<<<<<<<<<<
  * 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
- * 	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
+ * 	if lookupCache:
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_15Spark_MapReduce, 0, __pyx_n_s_Spark_MapReduce, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_15Spark_MapReduce, 0, __pyx_n_s_Spark_MapReduce, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Spark_MapReduce, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Spark_MapReduce, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":197
@@ -7159,7 +7004,7 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":226
  * 		return parents1 + parents2
  * 
- * def Spark_MapReduce_Parents(keyword, tokensofprevlevel):             # <<<<<<<<<<<<<<
+ * def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):             # <<<<<<<<<<<<<<
  * 	tokensofprevlevelkeyword=tokensofprevlevel
  * 	tokensofprevlevelkeyword.append(keyword)
  */
@@ -7168,25 +7013,13 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_Spark_MapReduce_Parents, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":258
- * 		return dict_query_results[1]
- * 
- * def flushCacheParents():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce_parents=defaultdict(list)
- * 
- */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCacheParents, 0, __pyx_n_s_flushCacheParents, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_flushCacheParents, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
   /* "InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.py":261
- * 	graphcache_mapreduce_parents=defaultdict(list)
+ * 			return dict_query_results[1]
  * 
- * def flushCache():             # <<<<<<<<<<<<<<
- * 	graphcache_mapreduce=defaultdict(list)
+ * def flushCache(graphcache):             # <<<<<<<<<<<<<<
+ * 	graphcache.flush_all()
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_25flushCache, 0, __pyx_n_s_flushCache, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_53InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer_23flushCache, 0, __pyx_n_s_flushCache, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_flushCache, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 261; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -7208,8 +7041,6 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer(void
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
   if (__pyx_m) {
     if (__pyx_d) {
       __Pyx_AddTraceback("init InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -7579,126 +7410,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyBytes_Join(PyObject* sep, PyObject* value
     return PyObject_CallMethodObjArgs(sep, __pyx_n_s_join, values, NULL);
 }
 #endif
-
-static CYTHON_INLINE int __Pyx_PyBytes_Equals(PyObject* s1, PyObject* s2, int equals) {
-#if CYTHON_COMPILING_IN_PYPY
-    return PyObject_RichCompareBool(s1, s2, equals);
-#else
-    if (s1 == s2) {
-        return (equals == Py_EQ);
-    } else if (PyBytes_CheckExact(s1) & PyBytes_CheckExact(s2)) {
-        const char *ps1, *ps2;
-        Py_ssize_t length = PyBytes_GET_SIZE(s1);
-        if (length != PyBytes_GET_SIZE(s2))
-            return (equals == Py_NE);
-        ps1 = PyBytes_AS_STRING(s1);
-        ps2 = PyBytes_AS_STRING(s2);
-        if (ps1[0] != ps2[0]) {
-            return (equals == Py_NE);
-        } else if (length == 1) {
-            return (equals == Py_EQ);
-        } else {
-            int result = memcmp(ps1, ps2, (size_t)length);
-            return (equals == Py_EQ) ? (result == 0) : (result != 0);
-        }
-    } else if ((s1 == Py_None) & PyBytes_CheckExact(s2)) {
-        return (equals == Py_NE);
-    } else if ((s2 == Py_None) & PyBytes_CheckExact(s1)) {
-        return (equals == Py_NE);
-    } else {
-        int result;
-        PyObject* py_result = PyObject_RichCompare(s1, s2, equals);
-        if (!py_result)
-            return -1;
-        result = __Pyx_PyObject_IsTrue(py_result);
-        Py_DECREF(py_result);
-        return result;
-    }
-#endif
-}
-
-static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int equals) {
-#if CYTHON_COMPILING_IN_PYPY
-    return PyObject_RichCompareBool(s1, s2, equals);
-#else
-#if PY_MAJOR_VERSION < 3
-    PyObject* owned_ref = NULL;
-#endif
-    int s1_is_unicode, s2_is_unicode;
-    if (s1 == s2) {
-        goto return_eq;
-    }
-    s1_is_unicode = PyUnicode_CheckExact(s1);
-    s2_is_unicode = PyUnicode_CheckExact(s2);
-#if PY_MAJOR_VERSION < 3
-    if ((s1_is_unicode & (!s2_is_unicode)) && PyString_CheckExact(s2)) {
-        owned_ref = PyUnicode_FromObject(s2);
-        if (unlikely(!owned_ref))
-            return -1;
-        s2 = owned_ref;
-        s2_is_unicode = 1;
-    } else if ((s2_is_unicode & (!s1_is_unicode)) && PyString_CheckExact(s1)) {
-        owned_ref = PyUnicode_FromObject(s1);
-        if (unlikely(!owned_ref))
-            return -1;
-        s1 = owned_ref;
-        s1_is_unicode = 1;
-    } else if (((!s2_is_unicode) & (!s1_is_unicode))) {
-        return __Pyx_PyBytes_Equals(s1, s2, equals);
-    }
-#endif
-    if (s1_is_unicode & s2_is_unicode) {
-        Py_ssize_t length;
-        int kind;
-        void *data1, *data2;
-        if (unlikely(__Pyx_PyUnicode_READY(s1) < 0) || unlikely(__Pyx_PyUnicode_READY(s2) < 0))
-            return -1;
-        length = __Pyx_PyUnicode_GET_LENGTH(s1);
-        if (length != __Pyx_PyUnicode_GET_LENGTH(s2)) {
-            goto return_ne;
-        }
-        kind = __Pyx_PyUnicode_KIND(s1);
-        if (kind != __Pyx_PyUnicode_KIND(s2)) {
-            goto return_ne;
-        }
-        data1 = __Pyx_PyUnicode_DATA(s1);
-        data2 = __Pyx_PyUnicode_DATA(s2);
-        if (__Pyx_PyUnicode_READ(kind, data1, 0) != __Pyx_PyUnicode_READ(kind, data2, 0)) {
-            goto return_ne;
-        } else if (length == 1) {
-            goto return_eq;
-        } else {
-            int result = memcmp(data1, data2, (size_t)(length * kind));
-            #if PY_MAJOR_VERSION < 3
-            Py_XDECREF(owned_ref);
-            #endif
-            return (equals == Py_EQ) ? (result == 0) : (result != 0);
-        }
-    } else if ((s1 == Py_None) & s2_is_unicode) {
-        goto return_ne;
-    } else if ((s2 == Py_None) & s1_is_unicode) {
-        goto return_ne;
-    } else {
-        int result;
-        PyObject* py_result = PyObject_RichCompare(s1, s2, equals);
-        if (!py_result)
-            return -1;
-        result = __Pyx_PyObject_IsTrue(py_result);
-        Py_DECREF(py_result);
-        return result;
-    }
-return_eq:
-    #if PY_MAJOR_VERSION < 3
-    Py_XDECREF(owned_ref);
-    #endif
-    return (equals == Py_EQ);
-return_ne:
-    #if PY_MAJOR_VERSION < 3
-    Py_XDECREF(owned_ref);
-    #endif
-    return (equals == Py_NE);
-#endif
-}
 
 static PyObject* __Pyx_PyObject_CallMethod1(PyObject* obj, PyObject* method_name, PyObject* arg) {
     PyObject *method, *result = NULL;

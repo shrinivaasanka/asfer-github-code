@@ -860,6 +860,7 @@ static char __pyx_k_whom[] = "whom";
 static char __pyx_k_Edges[] = "Edges:\n";
 static char __pyx_k_Queue[] = "Queue";
 static char __pyx_k_argv1[] = "argv1";
+static char __pyx_k_debug[] = "debug";
 static char __pyx_k_edges[] = "edges";
 static char __pyx_k_file1[] = "file1";
 static char __pyx_k_files[] = "files";
@@ -872,6 +873,7 @@ static char __pyx_k_utf_8[] = "utf-8";
 static char __pyx_k_where[] = "where";
 static char __pyx_k_words[] = "words";
 static char __pyx_k_write[] = "write";
+static char __pyx_k_Client[] = "Client";
 static char __pyx_k_Synset[] = "Synset";
 static char __pyx_k_append[] = "append";
 static char __pyx_k_corpus[] = "corpus";
@@ -908,6 +910,7 @@ static char __pyx_k_add_edge[] = "add_edge";
 static char __pyx_k_contains[] = " contains ";
 static char __pyx_k_hyponyms[] = "hyponyms";
 static char __pyx_k_maxmatch[] = "maxmatch";
+static char __pyx_k_memcache[] = "memcache";
 static char __pyx_k_networkx[] = "networkx";
 static char __pyx_k_operator[] = "operator";
 static char __pyx_k_pagerank[] = "pagerank";
@@ -930,7 +933,9 @@ static char __pyx_k_def_tokens[] = "def_tokens";
 static char __pyx_k_definition[] = "definition";
 static char __pyx_k_difference[] = "difference";
 static char __pyx_k_doc_tokens[] = "doc_tokens";
+static char __pyx_k_flushCache[] = "flushCache";
 static char __pyx_k_freqterms1[] = "freqterms1";
+static char __pyx_k_graphcache[] = "graphcache";
 static char __pyx_k_is_part_of[] = " is part of ";
 static char __pyx_k_itemgetter[] = "itemgetter";
 static char __pyx_k_maxparents[] = "maxparents";
@@ -971,6 +976,7 @@ static char __pyx_k_prevleveltoken[] = "prevleveltoken";
 static char __pyx_k_selfloop_edges[] = "selfloop_edges";
 static char __pyx_k_top_percentile[] = "top_percentile";
 static char __pyx_k_weight_str_map[] = "weight_str_map";
+static char __pyx_k_127_0_0_1_11211[] = "127.0.0.1:11211";
 static char __pyx_k_Spark_MapReduce[] = "Spark_MapReduce";
 static char __pyx_k_convergingterms[] = "convergingterms";
 static char __pyx_k_intrinsic_merit[] = "intrinsic_merit";
@@ -983,7 +989,6 @@ static char __pyx_k_minimum_edge_cut[] = "minimum_edge_cut";
 static char __pyx_k_prevlevelsynsets[] = "prevlevelsynsets";
 static char __pyx_k_asfer_pickle_load[] = "asfer_pickle_load";
 static char __pyx_k_convergingparents[] = "convergingparents";
-static char __pyx_k_flushCacheParents[] = "flushCacheParents";
 static char __pyx_k_matplotlib_pyplot[] = "matplotlib.pyplot";
 static char __pyx_k_node_connectivity[] = "node_connectivity";
 static char __pyx_k_remove_edges_from[] = "remove_edges_from";
@@ -1032,6 +1037,7 @@ static char __pyx_k_InterviewAlgorithmWithIntrinisic_2[] = "InterviewAlgorithmWi
 static char __pyx_k_InterviewAlgorithmWithIntrinisic_3[] = "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:";
 static char __pyx_k_InterviewAlgorithmWithIntrinisic_4[] = "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark";
 static char __pyx_k_InterviewAlgorithmWithIntrinisic_5[] = "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_RGOGraph.dot";
+static PyObject *__pyx_kp_s_127_0_0_1_11211;
 static PyObject *__pyx_n_s_A;
 static PyObject *__pyx_kp_s_Alternative_Quantitative_Intrins;
 static PyObject *__pyx_kp_s_Alternative_Quantitative_Intrins_2;
@@ -1039,6 +1045,7 @@ static PyObject *__pyx_kp_s_Alternative_Quantitative_Intrins_3;
 static PyObject *__pyx_kp_s_At_level;
 static PyObject *__pyx_n_s_B;
 static PyObject *__pyx_n_s_C;
+static PyObject *__pyx_n_s_Client;
 static PyObject *__pyx_kp_s_Core_number_sorted;
 static PyObject *__pyx_n_s_D;
 static PyObject *__pyx_n_s_DiGraph;
@@ -1142,6 +1149,7 @@ static PyObject *__pyx_n_s_core_number;
 static PyObject *__pyx_kp_s_core_number_2;
 static PyObject *__pyx_n_s_corpus;
 static PyObject *__pyx_n_s_current_level;
+static PyObject *__pyx_n_s_debug;
 static PyObject *__pyx_n_s_decode;
 static PyObject *__pyx_n_s_def_tokens;
 static PyObject *__pyx_n_s_defaultdict;
@@ -1166,9 +1174,10 @@ static PyObject *__pyx_n_s_filestr;
 static PyObject *__pyx_n_s_filter_none_vertices;
 static PyObject *__pyx_n_s_first_convergence_level;
 static PyObject *__pyx_n_s_first_occur;
-static PyObject *__pyx_n_s_flushCacheParents;
+static PyObject *__pyx_n_s_flushCache;
 static PyObject *__pyx_n_s_freqterms1;
 static PyObject *__pyx_n_s_get_context;
+static PyObject *__pyx_n_s_graphcache;
 static PyObject *__pyx_n_s_he;
 static PyObject *__pyx_n_s_hyperlsynsets;
 static PyObject *__pyx_n_s_hypernyms;
@@ -1208,6 +1217,7 @@ static PyObject *__pyx_n_s_maxmatch;
 static PyObject *__pyx_n_s_maxparents;
 static PyObject *__pyx_n_s_may;
 static PyObject *__pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1;
+static PyObject *__pyx_n_s_memcache;
 static PyObject *__pyx_n_s_minimum_edge_cut;
 static PyObject *__pyx_n_s_mlemmanames;
 static PyObject *__pyx_n_s_n;
@@ -1364,7 +1374,7 @@ static PyObject *__pyx_codeobj__64;
 static PyObject *__pyx_codeobj__66;
 static PyObject *__pyx_codeobj__68;
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":60
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":61
  * 
  * #function - compute_idf()
  * def compute_idf(corpus, keyword):             # <<<<<<<<<<<<<<
@@ -1404,11 +1414,11 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_keyword)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("compute_idf", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("compute_idf", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "compute_idf") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "compute_idf") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1421,7 +1431,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("compute_idf", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("compute_idf", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.compute_idf", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1460,19 +1470,19 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("compute_idf", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":61
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":62
  * #function - compute_idf()
  * def compute_idf(corpus, keyword):
  * 	import math             # <<<<<<<<<<<<<<
  * 	total_occur = 0
  * 	keyword_occur = 0
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_math, 0, -1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_math, 0, -1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_math = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":62
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":63
  * def compute_idf(corpus, keyword):
  * 	import math
  * 	total_occur = 0             # <<<<<<<<<<<<<<
@@ -1482,7 +1492,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_total_occur = __pyx_int_0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":63
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":64
  * 	import math
  * 	total_occur = 0
  * 	keyword_occur = 0             # <<<<<<<<<<<<<<
@@ -1492,7 +1502,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_keyword_occur = __pyx_int_0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":64
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":65
  * 	total_occur = 0
  * 	keyword_occur = 0
  * 	for file in corpus:             # <<<<<<<<<<<<<<
@@ -1503,25 +1513,25 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_1 = __pyx_v_corpus; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_corpus); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_corpus); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -1530,7 +1540,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 64; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -1539,22 +1549,22 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_file, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":65
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":66
  * 	keyword_occur = 0
  * 	for file in corpus:
  * 		raw = open(file).read()             # <<<<<<<<<<<<<<
  * 		tokens = nltk.word_tokenize(raw.decode("utf-8"))
  * 		total_occur = total_occur + len(tokens)
  */
-    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_v_file);
     PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_file);
     __Pyx_GIVEREF(__pyx_v_file);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_read); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_read); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -1568,31 +1578,31 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (__pyx_t_6) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     } else {
-      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_XDECREF_SET(__pyx_v_raw, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":66
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":67
  * 	for file in corpus:
  * 		raw = open(file).read()
  * 		tokens = nltk.word_tokenize(raw.decode("utf-8"))             # <<<<<<<<<<<<<<
  * 		total_occur = total_occur + len(tokens)
  * 		keyword_occur = keyword_occur + len([w for w in tokens if w == keyword])
  */
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_raw, __pyx_n_s_decode); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_raw, __pyx_n_s_decode); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -1606,17 +1616,17 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_7);
       __Pyx_GIVEREF(__pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
@@ -1624,54 +1634,54 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_tokens, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":67
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":68
  * 		raw = open(file).read()
  * 		tokens = nltk.word_tokenize(raw.decode("utf-8"))
  * 		total_occur = total_occur + len(tokens)             # <<<<<<<<<<<<<<
  * 		keyword_occur = keyword_occur + len([w for w in tokens if w == keyword])
  * 	return math.log(total_occur / (keyword_occur))
  */
-    __pyx_t_9 = PyObject_Length(__pyx_v_tokens); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = PyObject_Length(__pyx_v_tokens); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = PyNumber_Add(__pyx_v_total_occur, __pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyNumber_Add(__pyx_v_total_occur, __pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF_SET(__pyx_v_total_occur, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":68
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":69
  * 		tokens = nltk.word_tokenize(raw.decode("utf-8"))
  * 		total_occur = total_occur + len(tokens)
  * 		keyword_occur = keyword_occur + len([w for w in tokens if w == keyword])             # <<<<<<<<<<<<<<
  * 	return math.log(total_occur / (keyword_occur))
  * 
  */
-    __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     if (likely(PyList_CheckExact(__pyx_v_tokens)) || PyTuple_CheckExact(__pyx_v_tokens)) {
       __pyx_t_4 = __pyx_v_tokens; __Pyx_INCREF(__pyx_t_4); __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_tokens); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_tokens); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     for (;;) {
       if (likely(!__pyx_t_10)) {
         if (likely(PyList_CheckExact(__pyx_t_4))) {
           if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         } else {
           if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_9); __Pyx_INCREF(__pyx_t_8); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_4, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         }
       } else {
@@ -1680,7 +1690,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
           break;
         }
@@ -1688,27 +1698,27 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
       __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_8);
       __pyx_t_8 = 0;
-      __pyx_t_8 = PyObject_RichCompare(__pyx_v_w, __pyx_v_keyword, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyObject_RichCompare(__pyx_v_w, __pyx_v_keyword, Py_EQ); __Pyx_XGOTREF(__pyx_t_8); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (__pyx_t_11) {
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         goto __pyx_L7;
       }
       __pyx_L7:;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_9 = PyList_GET_SIZE(__pyx_t_6); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = PyList_GET_SIZE(__pyx_t_6); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = PyNumber_Add(__pyx_v_keyword_occur, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 68; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyNumber_Add(__pyx_v_keyword_occur, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF_SET(__pyx_v_keyword_occur, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":64
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":65
  * 	total_occur = 0
  * 	keyword_occur = 0
  * 	for file in corpus:             # <<<<<<<<<<<<<<
@@ -1718,7 +1728,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":69
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":70
  * 		total_occur = total_occur + len(tokens)
  * 		keyword_occur = keyword_occur + len([w for w in tokens if w == keyword])
  * 	return math.log(total_occur / (keyword_occur))             # <<<<<<<<<<<<<<
@@ -1726,9 +1736,9 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * #parents (at level i-1) of a given vertex at level i
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_math, __pyx_n_s_log); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_math, __pyx_n_s_log); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_total_occur, __pyx_v_keyword_occur); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_total_occur, __pyx_v_keyword_occur); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_8 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
@@ -1741,17 +1751,17 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
   }
   if (!__pyx_t_8) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8); __Pyx_GIVEREF(__pyx_t_8); __pyx_t_8 = NULL;
     PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_6);
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
@@ -1760,7 +1770,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":60
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":61
  * 
  * #function - compute_idf()
  * def compute_idf(corpus, keyword):             # <<<<<<<<<<<<<<
@@ -1791,7 +1801,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":73
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":74
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents(keyword, prevlevelsynsets):             # <<<<<<<<<<<<<<
@@ -1831,11 +1841,11 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_prevlevelsynsets)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("parents", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("parents", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "parents") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "parents") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1848,7 +1858,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("parents", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("parents", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.parents", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1882,26 +1892,26 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("parents", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":74
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":75
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents(keyword, prevlevelsynsets):
  * 	parents = []             # <<<<<<<<<<<<<<
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  * 	for syn in prevlevelsynsets:
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_parents = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":75
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":76
  * def parents(keyword, prevlevelsynsets):
  * 	parents = []
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets             # <<<<<<<<<<<<<<
  * 	for syn in prevlevelsynsets:
  * 		print "type(syn):",type(syn)
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_parents_prevlevelsynsets);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_parents_prevlevelsynsets);
@@ -1909,10 +1919,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_v_prevlevelsynsets);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_prevlevelsynsets);
   __Pyx_GIVEREF(__pyx_v_prevlevelsynsets);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":76
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":77
  * 	parents = []
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  * 	for syn in prevlevelsynsets:             # <<<<<<<<<<<<<<
@@ -1923,25 +1933,25 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_1 = __pyx_v_prevlevelsynsets; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -1950,7 +1960,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -1959,14 +1969,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_syn, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":77
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":78
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  * 	for syn in prevlevelsynsets:
  * 		print "type(syn):",type(syn)             # <<<<<<<<<<<<<<
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  */
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_kp_s_type_syn);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_type_syn);
@@ -1974,28 +1984,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(((PyObject *)Py_TYPE(__pyx_v_syn)));
     PyTuple_SET_ITEM(__pyx_t_4, 1, ((PyObject *)Py_TYPE(__pyx_v_syn)));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(__pyx_v_syn)));
-    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 77; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":78
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":79
  * 	for syn in prevlevelsynsets:
  * 		print "type(syn):",type(syn)
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:             # <<<<<<<<<<<<<<
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents(): syndef_tokens:",syndef_tokens
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_corpus); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_corpus); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_reader); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_reader); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_wordnet); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_wordnet); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_Synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_Synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_6 = (((PyObject *)Py_TYPE(__pyx_v_syn)) == __pyx_t_4);
@@ -2003,19 +2013,19 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_7 = (__pyx_t_6 != 0);
     if (__pyx_t_7) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":79
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":80
  * 		print "type(syn):",type(syn)
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))             # <<<<<<<<<<<<<<
  * 			print "parents(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:
  */
-      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_syn, __pyx_n_s_definition); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_syn, __pyx_n_s_definition); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_10 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_9))) {
@@ -2028,10 +2038,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (__pyx_t_10) {
-        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_t_10); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       } else {
-        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_9); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -2046,35 +2056,35 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (!__pyx_t_9) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_9); __Pyx_GIVEREF(__pyx_t_9); __pyx_t_9 = NULL;
         PyTuple_SET_ITEM(__pyx_t_10, 0+1, __pyx_t_5);
         __Pyx_GIVEREF(__pyx_t_5);
         __pyx_t_5 = 0;
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_10, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_10, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF_SET(__pyx_v_syndef_tokens, ((PyObject*)__pyx_t_8));
       __pyx_t_8 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":80
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":81
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents(): syndef_tokens:",syndef_tokens             # <<<<<<<<<<<<<<
  * 			if keyword in syndef_tokens:
  * 				print "parents(): keyword :",keyword," in syndef, adding to parents:"
  */
-      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_kp_s_parents_syndef_tokens);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_kp_s_parents_syndef_tokens);
@@ -2082,28 +2092,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_INCREF(__pyx_v_syndef_tokens);
       PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_v_syndef_tokens);
       __Pyx_GIVEREF(__pyx_v_syndef_tokens);
-      if (__Pyx_Print(0, __pyx_t_8, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (__Pyx_Print(0, __pyx_t_8, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":81
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":82
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:             # <<<<<<<<<<<<<<
  * 				print "parents(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]
  */
-      __pyx_t_7 = (__Pyx_PySequence_Contains(__pyx_v_keyword, __pyx_v_syndef_tokens, Py_EQ)); if (unlikely(__pyx_t_7 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = (__Pyx_PySequence_Contains(__pyx_v_keyword, __pyx_v_syndef_tokens, Py_EQ)); if (unlikely(__pyx_t_7 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_6 = (__pyx_t_7 != 0);
       if (__pyx_t_6) {
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":82
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":83
  * 			print "parents(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:
  * 				print "parents(): keyword :",keyword," in syndef, adding to parents:"             # <<<<<<<<<<<<<<
  * 				parents = parents + [syn]
  * 	print "parents(): returning parents:",parents
  */
-        __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = PyTuple_New(3); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_kp_s_parents_keyword);
         PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_kp_s_parents_keyword);
@@ -2114,22 +2124,22 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         __Pyx_INCREF(__pyx_kp_s_in_syndef_adding_to_parents);
         PyTuple_SET_ITEM(__pyx_t_8, 2, __pyx_kp_s_in_syndef_adding_to_parents);
         __Pyx_GIVEREF(__pyx_kp_s_in_syndef_adding_to_parents);
-        if (__Pyx_Print(0, __pyx_t_8, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (__Pyx_Print(0, __pyx_t_8, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":83
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":84
  * 			if keyword in syndef_tokens:
  * 				print "parents(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]             # <<<<<<<<<<<<<<
  * 	print "parents(): returning parents:",parents
  * 	return parents
  */
-        __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_8 = PyList_New(1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_v_syn);
         PyList_SET_ITEM(__pyx_t_8, 0, __pyx_v_syn);
         __Pyx_GIVEREF(__pyx_v_syn);
-        __pyx_t_4 = PyNumber_Add(__pyx_v_parents, __pyx_t_8); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyNumber_Add(__pyx_v_parents, __pyx_t_8); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF_SET(__pyx_v_parents, ((PyObject*)__pyx_t_4));
@@ -2141,7 +2151,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":76
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":77
  * 	parents = []
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  * 	for syn in prevlevelsynsets:             # <<<<<<<<<<<<<<
@@ -2151,14 +2161,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":84
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":85
  * 				print "parents(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]
  * 	print "parents(): returning parents:",parents             # <<<<<<<<<<<<<<
  * 	return parents
  * 
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_parents_returning_parents);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_parents_returning_parents);
@@ -2166,10 +2176,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_v_parents);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_parents);
   __Pyx_GIVEREF(__pyx_v_parents);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":85
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":86
  * 				parents = parents + [syn]
  * 	print "parents(): returning parents:",parents
  * 	return parents             # <<<<<<<<<<<<<<
@@ -2181,7 +2191,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_r = __pyx_v_parents;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":73
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":74
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents(keyword, prevlevelsynsets):             # <<<<<<<<<<<<<<
@@ -2208,7 +2218,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":89
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":90
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents_tokens(keyword, prevleveltokens):             # <<<<<<<<<<<<<<
@@ -2248,11 +2258,11 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_prevleveltokens)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("parents_tokens", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("parents_tokens", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "parents_tokens") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "parents_tokens") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2265,7 +2275,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("parents_tokens", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("parents_tokens", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.parents_tokens", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2301,26 +2311,26 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("parents_tokens", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":90
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":91
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents_tokens(keyword, prevleveltokens):
  * 	parents = []             # <<<<<<<<<<<<<<
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens
  * 	for prevleveltoken in prevleveltokens:
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_parents = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":91
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":92
  * def parents_tokens(keyword, prevleveltokens):
  * 	parents = []
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens             # <<<<<<<<<<<<<<
  * 	for prevleveltoken in prevleveltokens:
  *            #syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_parents_tokens_prevleveltokens);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_parents_tokens_prevleveltokens);
@@ -2328,10 +2338,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_v_prevleveltokens);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_prevleveltokens);
   __Pyx_GIVEREF(__pyx_v_prevleveltokens);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":92
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":93
  * 	parents = []
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens
  * 	for prevleveltoken in prevleveltokens:             # <<<<<<<<<<<<<<
@@ -2342,25 +2352,25 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_1 = __pyx_v_prevleveltokens; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevleveltokens); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevleveltokens); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -2369,7 +2379,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -2378,16 +2388,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_prevleveltoken, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":94
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":95
  * 	for prevleveltoken in prevleveltokens:
  *            #syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
  * 		syns=wn.synsets(prevleveltoken)             # <<<<<<<<<<<<<<
  * 		syn=syns[0]
  * 		print "type(syn):",type(syn)
  */
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_synsets); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_synsets); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -2401,16 +2411,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_prevleveltoken); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_prevleveltoken); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
       PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
       __Pyx_INCREF(__pyx_v_prevleveltoken);
       PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_prevleveltoken);
       __Pyx_GIVEREF(__pyx_v_prevleveltoken);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -2418,26 +2428,26 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_syns, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":95
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":96
  *            #syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
  * 		syns=wn.synsets(prevleveltoken)
  * 		syn=syns[0]             # <<<<<<<<<<<<<<
  * 		print "type(syn):",type(syn)
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  */
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_syns, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_syns, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_XDECREF_SET(__pyx_v_syn, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":96
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":97
  * 		syns=wn.synsets(prevleveltoken)
  * 		syn=syns[0]
  * 		print "type(syn):",type(syn)             # <<<<<<<<<<<<<<
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  */
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_kp_s_type_syn);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_type_syn);
@@ -2445,28 +2455,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(((PyObject *)Py_TYPE(__pyx_v_syn)));
     PyTuple_SET_ITEM(__pyx_t_4, 1, ((PyObject *)Py_TYPE(__pyx_v_syn)));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(__pyx_v_syn)));
-    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":97
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":98
  * 		syn=syns[0]
  * 		print "type(syn):",type(syn)
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:             # <<<<<<<<<<<<<<
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents_tokens(): syndef_tokens:",syndef_tokens
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_corpus); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_corpus); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_reader); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_reader); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_wordnet); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_wordnet); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 97; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Synset); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_8 = (((PyObject *)Py_TYPE(__pyx_v_syn)) == __pyx_t_4);
@@ -2474,19 +2484,19 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_9 = (__pyx_t_8 != 0);
     if (__pyx_t_9) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":98
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":99
  * 		print "type(syn):",type(syn)
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))             # <<<<<<<<<<<<<<
  * 			print "parents_tokens(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:
  */
-      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_syn, __pyx_n_s_definition); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_syn, __pyx_n_s_definition); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_10 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_5))) {
@@ -2499,10 +2509,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (__pyx_t_10) {
-        __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_10); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_10); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       } else {
-        __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = __Pyx_PyObject_CallNoArg(__pyx_t_5); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -2517,35 +2527,35 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (!__pyx_t_5) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_10 = PyTuple_New(1+1); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_10);
         PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
         PyTuple_SET_ITEM(__pyx_t_10, 0+1, __pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_t_6 = 0;
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_10, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 98; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_XDECREF_SET(__pyx_v_syndef_tokens, ((PyObject*)__pyx_t_7));
       __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":99
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":100
  * 		if type(syn) is nltk.corpus.reader.wordnet.Synset:
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents_tokens(): syndef_tokens:",syndef_tokens             # <<<<<<<<<<<<<<
  * 			if keyword in syndef_tokens:
  * 				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"
  */
-      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_kp_s_parents_tokens_syndef_tokens);
       PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_parents_tokens_syndef_tokens);
@@ -2553,28 +2563,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_INCREF(__pyx_v_syndef_tokens);
       PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_syndef_tokens);
       __Pyx_GIVEREF(__pyx_v_syndef_tokens);
-      if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":100
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":101
  * 			syndef_tokens = set(nltk.word_tokenize(syn.definition()))
  * 			print "parents_tokens(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:             # <<<<<<<<<<<<<<
  * 				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]
  */
-      __pyx_t_9 = (__Pyx_PySequence_Contains(__pyx_v_keyword, __pyx_v_syndef_tokens, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = (__Pyx_PySequence_Contains(__pyx_v_keyword, __pyx_v_syndef_tokens, Py_EQ)); if (unlikely(__pyx_t_9 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_8 = (__pyx_t_9 != 0);
       if (__pyx_t_8) {
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":101
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":102
  * 			print "parents_tokens(): syndef_tokens:",syndef_tokens
  * 			if keyword in syndef_tokens:
  * 				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"             # <<<<<<<<<<<<<<
  * 				parents = parents + [syn]
  * 	print "parents_tokens(): returning parents:",parents
  */
-        __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_kp_s_parents_tokens_keyword);
         PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_parents_tokens_keyword);
@@ -2585,22 +2595,22 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         __Pyx_INCREF(__pyx_kp_s_in_syndef_adding_to_parents);
         PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_kp_s_in_syndef_adding_to_parents);
         __Pyx_GIVEREF(__pyx_kp_s_in_syndef_adding_to_parents);
-        if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 101; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":102
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":103
  * 			if keyword in syndef_tokens:
  * 				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]             # <<<<<<<<<<<<<<
  * 	print "parents_tokens(): returning parents:",parents
  * 	return parents
  */
-        __pyx_t_7 = PyList_New(1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_7 = PyList_New(1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_v_syn);
         PyList_SET_ITEM(__pyx_t_7, 0, __pyx_v_syn);
         __Pyx_GIVEREF(__pyx_v_syn);
-        __pyx_t_4 = PyNumber_Add(__pyx_v_parents, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 102; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyNumber_Add(__pyx_v_parents, __pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_DECREF_SET(__pyx_v_parents, ((PyObject*)__pyx_t_4));
@@ -2612,7 +2622,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":92
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":93
  * 	parents = []
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens
  * 	for prevleveltoken in prevleveltokens:             # <<<<<<<<<<<<<<
@@ -2622,14 +2632,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":103
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":104
  * 				print "parents_tokens(): keyword :",keyword," in syndef, adding to parents:"
  * 				parents = parents + [syn]
  * 	print "parents_tokens(): returning parents:",parents             # <<<<<<<<<<<<<<
  * 	return parents
  * 
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_kp_s_parents_tokens_returning_parents);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_parents_tokens_returning_parents);
@@ -2637,10 +2647,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_v_parents);
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_parents);
   __Pyx_GIVEREF(__pyx_v_parents);
-  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 103; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 104; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":104
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":105
  * 				parents = parents + [syn]
  * 	print "parents_tokens(): returning parents:",parents
  * 	return parents             # <<<<<<<<<<<<<<
@@ -2652,7 +2662,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_r = __pyx_v_parents;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":89
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":90
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents_tokens(keyword, prevleveltokens):             # <<<<<<<<<<<<<<
@@ -2681,7 +2691,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":107
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":108
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
@@ -2721,11 +2731,11 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_synsets)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "best_matching_synset") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "best_matching_synset") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2738,7 +2748,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("best_matching_synset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.best_matching_synset", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2774,7 +2784,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("best_matching_synset", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":108
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":109
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):
  * 	maxmatch = -1             # <<<<<<<<<<<<<<
@@ -2783,19 +2793,19 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  */
   __pyx_v_maxmatch = -1;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":109
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":110
  * def best_matching_synset(doc_tokens, synsets):
  * 	maxmatch = -1
  * 	retset = []             # <<<<<<<<<<<<<<
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  */
-  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 109; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_retset = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":110
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":111
  * 	maxmatch = -1
  * 	retset = []
  * 	for synset in synsets:             # <<<<<<<<<<<<<<
@@ -2806,25 +2816,25 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_1 = __pyx_v_synsets; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
     __pyx_t_3 = NULL;
   } else {
-    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_synsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_synsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_3)) {
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_2 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_4); __pyx_t_2++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -2833,7 +2843,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 110; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -2842,19 +2852,19 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_synset, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":111
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":112
  * 	retset = []
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))             # <<<<<<<<<<<<<<
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:
  */
-    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_synset, __pyx_n_s_definition); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
@@ -2867,10 +2877,10 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (__pyx_t_8) {
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_8); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     } else {
-      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -2885,35 +2895,35 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (!__pyx_t_7) {
-      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_5);
       __pyx_t_5 = 0;
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_8, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 111; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_XDECREF_SET(__pyx_v_def_tokens, ((PyObject*)__pyx_t_6));
     __pyx_t_6 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":112
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":113
  * 	for synset in synsets:
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  * 		intersection = def_tokens.intersection(doc_tokens)             # <<<<<<<<<<<<<<
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_8 = NULL;
     if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
@@ -2926,16 +2936,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
     }
     if (!__pyx_t_8) {
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_doc_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_doc_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
     } else {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_5);
       PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_8); __Pyx_GIVEREF(__pyx_t_8); __pyx_t_8 = NULL;
       __Pyx_INCREF(__pyx_v_doc_tokens);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_doc_tokens);
       __Pyx_GIVEREF(__pyx_v_doc_tokens);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 112; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -2943,28 +2953,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_intersection, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":113
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":114
  * 		def_tokens = set(nltk.word_tokenize(synset.definition()))
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:             # <<<<<<<<<<<<<<
  * 			maxmatch = len(intersection)
  * 			retset = synset
  */
-    __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 113; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 114; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __pyx_t_10 = ((__pyx_t_9 > __pyx_v_maxmatch) != 0);
     if (__pyx_t_10) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":114
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":115
  * 		intersection = def_tokens.intersection(doc_tokens)
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)             # <<<<<<<<<<<<<<
  * 			retset = synset
  * 	return retset
  */
-      __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 114; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PyObject_Length(__pyx_v_intersection); if (unlikely(__pyx_t_9 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 115; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_v_maxmatch = __pyx_t_9;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":115
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":116
  * 		if len(intersection) > maxmatch:
  * 			maxmatch = len(intersection)
  * 			retset = synset             # <<<<<<<<<<<<<<
@@ -2977,7 +2987,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":110
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":111
  * 	maxmatch = -1
  * 	retset = []
  * 	for synset in synsets:             # <<<<<<<<<<<<<<
@@ -2987,7 +2997,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":116
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":117
  * 			maxmatch = len(intersection)
  * 			retset = synset
  * 	return retset             # <<<<<<<<<<<<<<
@@ -2999,7 +3009,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_r = __pyx_v_retset;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":107
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":108
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
@@ -3027,7 +3037,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":119
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":120
  * 
  * #function - get_context()
  * def get_context(query, documents):             # <<<<<<<<<<<<<<
@@ -3067,11 +3077,11 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_documents)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_context", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("get_context", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_context") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_context") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3084,7 +3094,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_context", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("get_context", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.get_context", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -3121,34 +3131,34 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_context", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":120
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":121
  * #function - get_context()
  * def get_context(query, documents):
  * 	file1 = open(documents[0])             # <<<<<<<<<<<<<<
  * 	file_contents = file1.read()
  * 	file_tokens = nltk.word_tokenize(file_contents)
  */
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_documents, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_documents, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_file1 = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":121
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":122
  * def get_context(query, documents):
  * 	file1 = open(documents[0])
  * 	file_contents = file1.read()             # <<<<<<<<<<<<<<
  * 	file_tokens = nltk.word_tokenize(file_contents)
  * 	try:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_file1, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_file1, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3161,26 +3171,26 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 121; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_file_contents = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":122
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":123
  * 	file1 = open(documents[0])
  * 	file_contents = file1.read()
  * 	file_tokens = nltk.word_tokenize(file_contents)             # <<<<<<<<<<<<<<
  * 	try:
  * 		first_occur = file_tokens.index(query)
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3194,16 +3204,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_file_contents); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_file_contents); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
     __Pyx_INCREF(__pyx_v_file_contents);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_file_contents);
     __Pyx_GIVEREF(__pyx_v_file_contents);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 122; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 123; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -3211,7 +3221,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_v_file_tokens = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":123
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":124
  * 	file_contents = file1.read()
  * 	file_tokens = nltk.word_tokenize(file_contents)
  * 	try:             # <<<<<<<<<<<<<<
@@ -3225,14 +3235,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XGOTREF(__pyx_t_7);
     /*try:*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":124
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":125
  * 	file_tokens = nltk.word_tokenize(file_contents)
  * 	try:
  * 		first_occur = file_tokens.index(query)             # <<<<<<<<<<<<<<
  * 	except ValueError:
  * 		return ""
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_file_tokens, __pyx_n_s_index); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_file_tokens, __pyx_n_s_index); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
@@ -3245,16 +3255,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (!__pyx_t_4) {
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_query); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_query); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         __Pyx_GOTREF(__pyx_t_1);
       } else {
-        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         __Pyx_GOTREF(__pyx_t_2);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
         __Pyx_INCREF(__pyx_v_query);
         PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_query);
         __Pyx_GIVEREF(__pyx_v_query);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 124; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
@@ -3272,7 +3282,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":125
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":126
  * 	try:
  * 		first_occur = file_tokens.index(query)
  * 	except ValueError:             # <<<<<<<<<<<<<<
@@ -3282,12 +3292,12 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_8 = PyErr_ExceptionMatches(__pyx_builtin_ValueError);
     if (__pyx_t_8) {
       __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.get_context", __pyx_clineno, __pyx_lineno, __pyx_filename);
-      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_3, &__pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L5_except_error;}
+      if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_3, &__pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L5_except_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GOTREF(__pyx_t_2);
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":126
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":127
  * 		first_occur = file_tokens.index(query)
  * 	except ValueError:
  * 		return ""             # <<<<<<<<<<<<<<
@@ -3318,7 +3328,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_L10_try_end:;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":127
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":128
  * 	except ValueError:
  * 		return ""
  * 	context = ''             # <<<<<<<<<<<<<<
@@ -3328,18 +3338,18 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_kp_s__2);
   __pyx_v_context = __pyx_kp_s__2;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":128
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":129
  * 		return ""
  * 	context = ''
  * 	for i in file_tokens[first_occur-5:first_occur+5]:             # <<<<<<<<<<<<<<
  * 		context = context + ' ' + i
  * 	return context
  */
-  __pyx_t_2 = PyNumber_Subtract(__pyx_v_first_occur, __pyx_int_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = PyNumber_Subtract(__pyx_v_first_occur, __pyx_int_5); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_Add(__pyx_v_first_occur, __pyx_int_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyNumber_Add(__pyx_v_first_occur, __pyx_int_5); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_file_tokens, 0, 0, &__pyx_t_2, &__pyx_t_3, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_file_tokens, 0, 0, &__pyx_t_2, &__pyx_t_3, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -3347,9 +3357,9 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_9 = 0;
     __pyx_t_10 = NULL;
   } else {
-    __pyx_t_9 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_9 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_10 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3357,16 +3367,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -3375,7 +3385,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 128; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -3384,22 +3394,22 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":129
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":130
  * 	context = ''
  * 	for i in file_tokens[first_occur-5:first_occur+5]:
  * 		context = context + ' ' + i             # <<<<<<<<<<<<<<
  * 	return context
  * 
  */
-    __pyx_t_1 = PyNumber_Add(__pyx_v_context, __pyx_kp_s__3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = PyNumber_Add(__pyx_v_context, __pyx_kp_s__3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 129; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 130; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_context, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":128
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":129
  * 		return ""
  * 	context = ''
  * 	for i in file_tokens[first_occur-5:first_occur+5]:             # <<<<<<<<<<<<<<
@@ -3409,7 +3419,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":130
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":131
  * 	for i in file_tokens[first_occur-5:first_occur+5]:
  * 		context = context + ' ' + i
  * 	return context             # <<<<<<<<<<<<<<
@@ -3421,7 +3431,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_r = __pyx_v_context;
   goto __pyx_L0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":119
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":120
  * 
  * #function - get_context()
  * def get_context(query, documents):             # <<<<<<<<<<<<<<
@@ -3449,7 +3459,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":132
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
  * 	return context
  * 
  * def filter_none_vertices(nxg):             # <<<<<<<<<<<<<<
@@ -3492,16 +3502,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("filter_none_vertices", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":134
  * 
  * def filter_none_vertices(nxg):
  * 	for e in nx.edges(nxg):             # <<<<<<<<<<<<<<
  * 		if e[0] == "None" or e[1] == "None":
  * 			nxg.remove_edge(e[0],e[1])
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_edges); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3515,16 +3525,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
     PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
     __Pyx_INCREF(__pyx_v_nxg);
     PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_nxg);
     __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -3533,9 +3543,9 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_5 = 0;
     __pyx_t_6 = NULL;
   } else {
-    __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_6 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3543,16 +3553,16 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
         if (__pyx_t_5 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_5); __Pyx_INCREF(__pyx_t_1); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
@@ -3561,7 +3571,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -3570,42 +3580,42 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_e, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":134
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":135
  * def filter_none_vertices(nxg):
  * 	for e in nx.edges(nxg):
  * 		if e[0] == "None" or e[1] == "None":             # <<<<<<<<<<<<<<
  * 			nxg.remove_edge(e[0],e[1])
  * 	#nxg.remove_vertex("None")
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_e, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_e, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_None, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_None, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_8) {
     } else {
       __pyx_t_7 = __pyx_t_8;
       goto __pyx_L6_bool_binop_done;
     }
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_e, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_e, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_None, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 134; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_None, Py_EQ)); if (unlikely(__pyx_t_8 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_7 = __pyx_t_8;
     __pyx_L6_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":135
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":136
  * 	for e in nx.edges(nxg):
  * 		if e[0] == "None" or e[1] == "None":
  * 			nxg.remove_edge(e[0],e[1])             # <<<<<<<<<<<<<<
  * 	#nxg.remove_vertex("None")
  * 
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_remove_edge); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_remove_edge); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_e, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_e, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_e, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __pyx_t_9 = __Pyx_GetItemInt(__pyx_v_e, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_9 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_10 = NULL;
       __pyx_t_11 = 0;
@@ -3619,7 +3629,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
           __pyx_t_11 = 1;
         }
       }
-      __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_12);
       if (__pyx_t_10) {
         PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_10); __Pyx_GIVEREF(__pyx_t_10); __pyx_t_10 = NULL;
@@ -3630,7 +3640,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_GIVEREF(__pyx_t_9);
       __pyx_t_2 = 0;
       __pyx_t_9 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 135; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 136; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3639,7 +3649,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
     __pyx_L5:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":134
  * 
  * def filter_none_vertices(nxg):
  * 	for e in nx.edges(nxg):             # <<<<<<<<<<<<<<
@@ -3649,7 +3659,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":132
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
  * 	return context
  * 
  * def filter_none_vertices(nxg):             # <<<<<<<<<<<<<<
@@ -3677,7 +3687,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":148
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":149
  * #	return bigrams(nltk.word_tokenize(phrase))
  * 
  * def InterviewAlgorithm_main(argv1):             # <<<<<<<<<<<<<<
@@ -3699,7 +3709,7 @@ static PyObject *__pyx_pw_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":310
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":315
  * 				print "ksynset=",ksynset[0]
  * 				print "lsynset=",lsynset[0]
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])             # <<<<<<<<<<<<<<
@@ -3732,7 +3742,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda1", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_hyponyms); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_hyponyms); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3745,10 +3755,10 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -3769,7 +3779,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":311
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":316
  * 				print "lsynset=",lsynset[0]
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])             # <<<<<<<<<<<<<<
@@ -3802,7 +3812,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda2", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_hypernyms); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_hypernyms); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3815,10 +3825,10 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -3839,7 +3849,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":148
+/* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":149
  * #	return bigrams(nltk.word_tokenize(phrase))
  * 
  * def InterviewAlgorithm_main(argv1):             # <<<<<<<<<<<<<<
@@ -3850,6 +3860,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
 static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_12InterviewAlgorithm_main(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_argv1) {
   CYTHON_UNUSED PyObject *__pyx_v_corpus = NULL;
   PyObject *__pyx_v_files = NULL;
+  PyObject *__pyx_v_graphcache = NULL;
   PyObject *__pyx_v_definitiongraphedges = NULL;
   CYTHON_UNUSED PyObject *__pyx_v_definitiongraphedgelabels = NULL;
   PyObject *__pyx_v_weight_str_map = NULL;
@@ -3938,14 +3949,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("InterviewAlgorithm_main", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":153
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":154
  * 	#----------------------------------------------
  * 
  * 	corpus = [argv1]             # <<<<<<<<<<<<<<
  * 	#get keywords
  * 
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 153; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 154; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_argv1);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_argv1);
@@ -3953,14 +3964,14 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_v_corpus = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":156
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":157
  * 	#get keywords
  * 
  * 	files = [argv1]             # <<<<<<<<<<<<<<
  * 
- * 
+ * 	#----------------------------------------------
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 156; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 157; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_argv1);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_v_argv1);
@@ -3968,129 +3979,201 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_v_files = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":162
+ * 	#2.Initialize MemCached Client
+ * 	#----------------------------------------------
+ * 	graphcache=memcache.Client(["127.0.0.1:11211"], debug=1)             # <<<<<<<<<<<<<<
+ * 	InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCache(graphcache)
+ * 
+ */
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_memcache); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Client); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_kp_s_127_0_0_1_11211);
+  PyList_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_127_0_0_1_11211);
+  __Pyx_GIVEREF(__pyx_kp_s_127_0_0_1_11211);
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __pyx_t_1 = 0;
+  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_debug, __pyx_int_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 162; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_graphcache = __pyx_t_4;
+  __pyx_t_4 = 0;
+
   /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":163
+ * 	#----------------------------------------------
+ * 	graphcache=memcache.Client(["127.0.0.1:11211"], debug=1)
+ * 	InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCache(graphcache)             # <<<<<<<<<<<<<<
+ * 
+ * 	#---------------------------------------------------------------------------------
+ */
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_flushCache); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (!__pyx_t_1) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_graphcache); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+  } else {
+    __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
+    __Pyx_INCREF(__pyx_v_graphcache);
+    PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_graphcache);
+    __Pyx_GIVEREF(__pyx_v_graphcache);
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":169
  * 	#---------------------------------------------------------------------------------
  * 
  * 	definitiongraphedges=defaultdict(list)             # <<<<<<<<<<<<<<
  * 	definitiongraphedgelabels=defaultdict(list)
  * 	weight_str_map=defaultdict()
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (!__pyx_t_2) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
-    __Pyx_GIVEREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 163; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  } else {
+    __pyx_t_1 = PyTuple_New(1+1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+    __Pyx_INCREF(((PyObject *)((PyObject*)(&PyList_Type))));
+    PyTuple_SET_ITEM(__pyx_t_1, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
+    __Pyx_GIVEREF(((PyObject *)((PyObject*)(&PyList_Type))));
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_definitiongraphedges = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_definitiongraphedges = __pyx_t_4;
+  __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":164
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":170
  * 
  * 	definitiongraphedges=defaultdict(list)
  * 	definitiongraphedgelabels=defaultdict(list)             # <<<<<<<<<<<<<<
  * 	weight_str_map=defaultdict()
  * 
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_1 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+  if (!__pyx_t_1) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, ((PyObject *)((PyObject*)(&PyList_Type)))); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
   } else {
-    __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+    __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
     __Pyx_INCREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    PyTuple_SET_ITEM(__pyx_t_3, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
+    PyTuple_SET_ITEM(__pyx_t_2, 0+1, ((PyObject *)((PyObject*)(&PyList_Type))));
     __Pyx_GIVEREF(((PyObject *)((PyObject*)(&PyList_Type))));
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 164; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_definitiongraphedgelabels = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_definitiongraphedgelabels = __pyx_t_4;
+  __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":165
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":171
  * 	definitiongraphedges=defaultdict(list)
  * 	definitiongraphedgelabels=defaultdict(list)
  * 	weight_str_map=defaultdict()             # <<<<<<<<<<<<<<
  * 
  * 	for filestr in files:
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_defaultdict); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
-  if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__pyx_t_2) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 165; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_weight_str_map = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_v_weight_str_map = __pyx_t_4;
+  __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":167
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":173
  * 	weight_str_map=defaultdict()
  * 
  * 	for filestr in files:             # <<<<<<<<<<<<<<
  * 		outputfile = 'Output-Webspider-HTML.out'
  * 		output = open(outputfile, 'w')
  */
-  __pyx_t_1 = __pyx_v_files; __Pyx_INCREF(__pyx_t_1); __pyx_t_5 = 0;
+  __pyx_t_4 = __pyx_v_files; __Pyx_INCREF(__pyx_t_4); __pyx_t_5 = 0;
   for (;;) {
-    if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_1)) break;
+    if (__pyx_t_5 >= PyList_GET_SIZE(__pyx_t_4)) break;
     #if CYTHON_COMPILING_IN_CPYTHON
-    __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_5); __Pyx_INCREF(__pyx_t_3); __pyx_t_5++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     #else
-    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 167; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 173; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     #endif
-    __Pyx_XDECREF_SET(__pyx_v_filestr, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_filestr, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":168
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":174
  * 
  * 	for filestr in files:
  * 		outputfile = 'Output-Webspider-HTML.out'             # <<<<<<<<<<<<<<
@@ -4100,420 +4183,420 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_kp_s_Output_Webspider_HTML_out);
     __Pyx_XDECREF_SET(__pyx_v_outputfile, __pyx_kp_s_Output_Webspider_HTML_out);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":169
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":175
  * 	for filestr in files:
  * 		outputfile = 'Output-Webspider-HTML.out'
  * 		output = open(outputfile, 'w')             # <<<<<<<<<<<<<<
  * 		file1 = open(filestr)
  * 		raw1 = file1.read()
  */
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_v_outputfile);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_outputfile);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_outputfile);
     __Pyx_GIVEREF(__pyx_v_outputfile);
     __Pyx_INCREF(__pyx_n_s_w);
-    PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_w);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_n_s_w);
     __Pyx_GIVEREF(__pyx_n_s_w);
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 169; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_output, __pyx_t_3);
-    __pyx_t_3 = 0;
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_output, __pyx_t_2);
+    __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":170
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":176
  * 		outputfile = 'Output-Webspider-HTML.out'
  * 		output = open(outputfile, 'w')
  * 		file1 = open(filestr)             # <<<<<<<<<<<<<<
  * 		raw1 = file1.read()
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
  */
-    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_INCREF(__pyx_v_filestr);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_filestr);
-    __Pyx_GIVEREF(__pyx_v_filestr);
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 170; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_file1, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_INCREF(__pyx_v_filestr);
+    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_filestr);
+    __Pyx_GIVEREF(__pyx_v_filestr);
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_file1, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":171
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":177
  * 		output = open(outputfile, 'w')
  * 		file1 = open(filestr)
  * 		raw1 = file1.read()             # <<<<<<<<<<<<<<
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
  * 		#fdist1 = FreqDist(doc1)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_file1, __pyx_n_s_read); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-      __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-      if (likely(__pyx_t_4)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-        __Pyx_INCREF(__pyx_t_4);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_file1, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_1)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_1);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_3, function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
       }
     }
-    if (__pyx_t_4) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (__pyx_t_1) {
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
-      __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 171; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 177; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_raw1, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_raw1, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":172
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":178
  * 		file1 = open(filestr)
  * 		raw1 = file1.read()
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))             # <<<<<<<<<<<<<<
  * 		#fdist1 = FreqDist(doc1)
  * 		stopwords = nltk.corpus.stopwords.words('english')
  */
-    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_raw1, __pyx_n_s_decode); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_word_tokenize); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_raw1, __pyx_n_s_decode); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__4, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_3)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_2)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
-    if (!__pyx_t_3) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_6); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (!__pyx_t_2) {
+      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_GOTREF(__pyx_t_3);
     } else {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
       PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_doc1, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_doc1, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":174
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":180
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
  * 		#fdist1 = FreqDist(doc1)
  * 		stopwords = nltk.corpus.stopwords.words('english')             # <<<<<<<<<<<<<<
  * 		stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  */
-    __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_corpus); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_stopwords); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_words); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_stopwords, __pyx_t_2);
-    __pyx_t_2 = 0;
+    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_nltk); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_corpus); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_stopwords); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_words); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_stopwords, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":175
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":181
  * 		#fdist1 = FreqDist(doc1)
  * 		stopwords = nltk.corpus.stopwords.words('english')
  * 		stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']             # <<<<<<<<<<<<<<
  * 		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  * 		#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
  */
-    __pyx_t_2 = PyList_New(46); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = PyList_New(46); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_kp_s__3);
-    PyList_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s__3);
+    PyList_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s__3);
     __Pyx_GIVEREF(__pyx_kp_s__3);
     __Pyx_INCREF(__pyx_n_s_or);
-    PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_or);
+    PyList_SET_ITEM(__pyx_t_3, 1, __pyx_n_s_or);
     __Pyx_GIVEREF(__pyx_n_s_or);
     __Pyx_INCREF(__pyx_n_s_and);
-    PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_and);
+    PyList_SET_ITEM(__pyx_t_3, 2, __pyx_n_s_and);
     __Pyx_GIVEREF(__pyx_n_s_and);
     __Pyx_INCREF(__pyx_n_s_who);
-    PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_who);
+    PyList_SET_ITEM(__pyx_t_3, 3, __pyx_n_s_who);
     __Pyx_GIVEREF(__pyx_n_s_who);
     __Pyx_INCREF(__pyx_n_s_he);
-    PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_he);
+    PyList_SET_ITEM(__pyx_t_3, 4, __pyx_n_s_he);
     __Pyx_GIVEREF(__pyx_n_s_he);
     __Pyx_INCREF(__pyx_n_s_she);
-    PyList_SET_ITEM(__pyx_t_2, 5, __pyx_n_s_she);
+    PyList_SET_ITEM(__pyx_t_3, 5, __pyx_n_s_she);
     __Pyx_GIVEREF(__pyx_n_s_she);
     __Pyx_INCREF(__pyx_n_s_whom);
-    PyList_SET_ITEM(__pyx_t_2, 6, __pyx_n_s_whom);
+    PyList_SET_ITEM(__pyx_t_3, 6, __pyx_n_s_whom);
     __Pyx_GIVEREF(__pyx_n_s_whom);
     __Pyx_INCREF(__pyx_n_s_well);
-    PyList_SET_ITEM(__pyx_t_2, 7, __pyx_n_s_well);
+    PyList_SET_ITEM(__pyx_t_3, 7, __pyx_n_s_well);
     __Pyx_GIVEREF(__pyx_n_s_well);
     __Pyx_INCREF(__pyx_n_s_is);
-    PyList_SET_ITEM(__pyx_t_2, 8, __pyx_n_s_is);
+    PyList_SET_ITEM(__pyx_t_3, 8, __pyx_n_s_is);
     __Pyx_GIVEREF(__pyx_n_s_is);
     __Pyx_INCREF(__pyx_n_s_was);
-    PyList_SET_ITEM(__pyx_t_2, 9, __pyx_n_s_was);
+    PyList_SET_ITEM(__pyx_t_3, 9, __pyx_n_s_was);
     __Pyx_GIVEREF(__pyx_n_s_was);
     __Pyx_INCREF(__pyx_n_s_were);
-    PyList_SET_ITEM(__pyx_t_2, 10, __pyx_n_s_were);
+    PyList_SET_ITEM(__pyx_t_3, 10, __pyx_n_s_were);
     __Pyx_GIVEREF(__pyx_n_s_were);
     __Pyx_INCREF(__pyx_n_s_are);
-    PyList_SET_ITEM(__pyx_t_2, 11, __pyx_n_s_are);
+    PyList_SET_ITEM(__pyx_t_3, 11, __pyx_n_s_are);
     __Pyx_GIVEREF(__pyx_n_s_are);
     __Pyx_INCREF(__pyx_n_s_there);
-    PyList_SET_ITEM(__pyx_t_2, 12, __pyx_n_s_there);
+    PyList_SET_ITEM(__pyx_t_3, 12, __pyx_n_s_there);
     __Pyx_GIVEREF(__pyx_n_s_there);
     __Pyx_INCREF(__pyx_n_s_where);
-    PyList_SET_ITEM(__pyx_t_2, 13, __pyx_n_s_where);
+    PyList_SET_ITEM(__pyx_t_3, 13, __pyx_n_s_where);
     __Pyx_GIVEREF(__pyx_n_s_where);
     __Pyx_INCREF(__pyx_n_s_when);
-    PyList_SET_ITEM(__pyx_t_2, 14, __pyx_n_s_when);
+    PyList_SET_ITEM(__pyx_t_3, 14, __pyx_n_s_when);
     __Pyx_GIVEREF(__pyx_n_s_when);
     __Pyx_INCREF(__pyx_n_s_may);
-    PyList_SET_ITEM(__pyx_t_2, 15, __pyx_n_s_may);
+    PyList_SET_ITEM(__pyx_t_3, 15, __pyx_n_s_may);
     __Pyx_GIVEREF(__pyx_n_s_may);
     __Pyx_INCREF(__pyx_n_s_The);
-    PyList_SET_ITEM(__pyx_t_2, 16, __pyx_n_s_The);
+    PyList_SET_ITEM(__pyx_t_3, 16, __pyx_n_s_The);
     __Pyx_GIVEREF(__pyx_n_s_The);
     __Pyx_INCREF(__pyx_n_s_the);
-    PyList_SET_ITEM(__pyx_t_2, 17, __pyx_n_s_the);
+    PyList_SET_ITEM(__pyx_t_3, 17, __pyx_n_s_the);
     __Pyx_GIVEREF(__pyx_n_s_the);
     __Pyx_INCREF(__pyx_n_s_In);
-    PyList_SET_ITEM(__pyx_t_2, 18, __pyx_n_s_In);
+    PyList_SET_ITEM(__pyx_t_3, 18, __pyx_n_s_In);
     __Pyx_GIVEREF(__pyx_n_s_In);
     __Pyx_INCREF(__pyx_n_s_in);
-    PyList_SET_ITEM(__pyx_t_2, 19, __pyx_n_s_in);
+    PyList_SET_ITEM(__pyx_t_3, 19, __pyx_n_s_in);
     __Pyx_GIVEREF(__pyx_n_s_in);
     __Pyx_INCREF(__pyx_n_s_A);
-    PyList_SET_ITEM(__pyx_t_2, 20, __pyx_n_s_A);
+    PyList_SET_ITEM(__pyx_t_3, 20, __pyx_n_s_A);
     __Pyx_GIVEREF(__pyx_n_s_A);
     __Pyx_INCREF(__pyx_n_s_B);
-    PyList_SET_ITEM(__pyx_t_2, 21, __pyx_n_s_B);
+    PyList_SET_ITEM(__pyx_t_3, 21, __pyx_n_s_B);
     __Pyx_GIVEREF(__pyx_n_s_B);
     __Pyx_INCREF(__pyx_n_s_C);
-    PyList_SET_ITEM(__pyx_t_2, 22, __pyx_n_s_C);
+    PyList_SET_ITEM(__pyx_t_3, 22, __pyx_n_s_C);
     __Pyx_GIVEREF(__pyx_n_s_C);
     __Pyx_INCREF(__pyx_n_s_D);
-    PyList_SET_ITEM(__pyx_t_2, 23, __pyx_n_s_D);
+    PyList_SET_ITEM(__pyx_t_3, 23, __pyx_n_s_D);
     __Pyx_GIVEREF(__pyx_n_s_D);
     __Pyx_INCREF(__pyx_n_s_E);
-    PyList_SET_ITEM(__pyx_t_2, 24, __pyx_n_s_E);
+    PyList_SET_ITEM(__pyx_t_3, 24, __pyx_n_s_E);
     __Pyx_GIVEREF(__pyx_n_s_E);
     __Pyx_INCREF(__pyx_n_s_F);
-    PyList_SET_ITEM(__pyx_t_2, 25, __pyx_n_s_F);
+    PyList_SET_ITEM(__pyx_t_3, 25, __pyx_n_s_F);
     __Pyx_GIVEREF(__pyx_n_s_F);
     __Pyx_INCREF(__pyx_n_s_G);
-    PyList_SET_ITEM(__pyx_t_2, 26, __pyx_n_s_G);
+    PyList_SET_ITEM(__pyx_t_3, 26, __pyx_n_s_G);
     __Pyx_GIVEREF(__pyx_n_s_G);
     __Pyx_INCREF(__pyx_n_s_H);
-    PyList_SET_ITEM(__pyx_t_2, 27, __pyx_n_s_H);
+    PyList_SET_ITEM(__pyx_t_3, 27, __pyx_n_s_H);
     __Pyx_GIVEREF(__pyx_n_s_H);
     __Pyx_INCREF(__pyx_n_s_I);
-    PyList_SET_ITEM(__pyx_t_2, 28, __pyx_n_s_I);
+    PyList_SET_ITEM(__pyx_t_3, 28, __pyx_n_s_I);
     __Pyx_GIVEREF(__pyx_n_s_I);
     __Pyx_INCREF(__pyx_n_s_J);
-    PyList_SET_ITEM(__pyx_t_2, 29, __pyx_n_s_J);
+    PyList_SET_ITEM(__pyx_t_3, 29, __pyx_n_s_J);
     __Pyx_GIVEREF(__pyx_n_s_J);
     __Pyx_INCREF(__pyx_n_s_K);
-    PyList_SET_ITEM(__pyx_t_2, 30, __pyx_n_s_K);
+    PyList_SET_ITEM(__pyx_t_3, 30, __pyx_n_s_K);
     __Pyx_GIVEREF(__pyx_n_s_K);
     __Pyx_INCREF(__pyx_n_s_L);
-    PyList_SET_ITEM(__pyx_t_2, 31, __pyx_n_s_L);
+    PyList_SET_ITEM(__pyx_t_3, 31, __pyx_n_s_L);
     __Pyx_GIVEREF(__pyx_n_s_L);
     __Pyx_INCREF(__pyx_n_s_M);
-    PyList_SET_ITEM(__pyx_t_2, 32, __pyx_n_s_M);
+    PyList_SET_ITEM(__pyx_t_3, 32, __pyx_n_s_M);
     __Pyx_GIVEREF(__pyx_n_s_M);
     __Pyx_INCREF(__pyx_n_s_N);
-    PyList_SET_ITEM(__pyx_t_2, 33, __pyx_n_s_N);
+    PyList_SET_ITEM(__pyx_t_3, 33, __pyx_n_s_N);
     __Pyx_GIVEREF(__pyx_n_s_N);
     __Pyx_INCREF(__pyx_n_s_O);
-    PyList_SET_ITEM(__pyx_t_2, 34, __pyx_n_s_O);
+    PyList_SET_ITEM(__pyx_t_3, 34, __pyx_n_s_O);
     __Pyx_GIVEREF(__pyx_n_s_O);
     __Pyx_INCREF(__pyx_n_s_P);
-    PyList_SET_ITEM(__pyx_t_2, 35, __pyx_n_s_P);
+    PyList_SET_ITEM(__pyx_t_3, 35, __pyx_n_s_P);
     __Pyx_GIVEREF(__pyx_n_s_P);
     __Pyx_INCREF(__pyx_n_s_Q);
-    PyList_SET_ITEM(__pyx_t_2, 36, __pyx_n_s_Q);
+    PyList_SET_ITEM(__pyx_t_3, 36, __pyx_n_s_Q);
     __Pyx_GIVEREF(__pyx_n_s_Q);
     __Pyx_INCREF(__pyx_n_s_R);
-    PyList_SET_ITEM(__pyx_t_2, 37, __pyx_n_s_R);
+    PyList_SET_ITEM(__pyx_t_3, 37, __pyx_n_s_R);
     __Pyx_GIVEREF(__pyx_n_s_R);
     __Pyx_INCREF(__pyx_n_s_S);
-    PyList_SET_ITEM(__pyx_t_2, 38, __pyx_n_s_S);
+    PyList_SET_ITEM(__pyx_t_3, 38, __pyx_n_s_S);
     __Pyx_GIVEREF(__pyx_n_s_S);
     __Pyx_INCREF(__pyx_n_s_T);
-    PyList_SET_ITEM(__pyx_t_2, 39, __pyx_n_s_T);
+    PyList_SET_ITEM(__pyx_t_3, 39, __pyx_n_s_T);
     __Pyx_GIVEREF(__pyx_n_s_T);
     __Pyx_INCREF(__pyx_n_s_U);
-    PyList_SET_ITEM(__pyx_t_2, 40, __pyx_n_s_U);
+    PyList_SET_ITEM(__pyx_t_3, 40, __pyx_n_s_U);
     __Pyx_GIVEREF(__pyx_n_s_U);
     __Pyx_INCREF(__pyx_n_s_V);
-    PyList_SET_ITEM(__pyx_t_2, 41, __pyx_n_s_V);
+    PyList_SET_ITEM(__pyx_t_3, 41, __pyx_n_s_V);
     __Pyx_GIVEREF(__pyx_n_s_V);
     __Pyx_INCREF(__pyx_n_s_W);
-    PyList_SET_ITEM(__pyx_t_2, 42, __pyx_n_s_W);
+    PyList_SET_ITEM(__pyx_t_3, 42, __pyx_n_s_W);
     __Pyx_GIVEREF(__pyx_n_s_W);
     __Pyx_INCREF(__pyx_n_s_X);
-    PyList_SET_ITEM(__pyx_t_2, 43, __pyx_n_s_X);
+    PyList_SET_ITEM(__pyx_t_3, 43, __pyx_n_s_X);
     __Pyx_GIVEREF(__pyx_n_s_X);
     __Pyx_INCREF(__pyx_n_s_Y);
-    PyList_SET_ITEM(__pyx_t_2, 44, __pyx_n_s_Y);
+    PyList_SET_ITEM(__pyx_t_3, 44, __pyx_n_s_Y);
     __Pyx_GIVEREF(__pyx_n_s_Y);
     __Pyx_INCREF(__pyx_n_s_Z);
-    PyList_SET_ITEM(__pyx_t_2, 45, __pyx_n_s_Z);
+    PyList_SET_ITEM(__pyx_t_3, 45, __pyx_n_s_Z);
     __Pyx_GIVEREF(__pyx_n_s_Z);
-    __pyx_t_4 = PyNumber_Add(__pyx_v_stopwords, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 175; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_DECREF_SET(__pyx_v_stopwords, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyNumber_Add(__pyx_v_stopwords, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 181; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF_SET(__pyx_v_stopwords, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":176
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":182
  * 		stopwords = nltk.corpus.stopwords.words('english')
  * 		stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']             # <<<<<<<<<<<<<<
  * 		#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
  * 		freqterms1 = [w for w in doc1 if w not in stopwords and w not in puncts]
  */
-    __pyx_t_4 = PyList_New(23); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 176; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_1 = PyList_New(23); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 182; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_kp_s__3);
-    PyList_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s__3);
+    PyList_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s__3);
     __Pyx_GIVEREF(__pyx_kp_s__3);
     __Pyx_INCREF(__pyx_kp_s__6);
-    PyList_SET_ITEM(__pyx_t_4, 1, __pyx_kp_s__6);
+    PyList_SET_ITEM(__pyx_t_1, 1, __pyx_kp_s__6);
     __Pyx_GIVEREF(__pyx_kp_s__6);
     __Pyx_INCREF(__pyx_kp_s__7);
-    PyList_SET_ITEM(__pyx_t_4, 2, __pyx_kp_s__7);
+    PyList_SET_ITEM(__pyx_t_1, 2, __pyx_kp_s__7);
     __Pyx_GIVEREF(__pyx_kp_s__7);
     __Pyx_INCREF(__pyx_kp_s__8);
-    PyList_SET_ITEM(__pyx_t_4, 3, __pyx_kp_s__8);
+    PyList_SET_ITEM(__pyx_t_1, 3, __pyx_kp_s__8);
     __Pyx_GIVEREF(__pyx_kp_s__8);
     __Pyx_INCREF(__pyx_kp_s__9);
-    PyList_SET_ITEM(__pyx_t_4, 4, __pyx_kp_s__9);
+    PyList_SET_ITEM(__pyx_t_1, 4, __pyx_kp_s__9);
     __Pyx_GIVEREF(__pyx_kp_s__9);
     __Pyx_INCREF(__pyx_kp_s__10);
-    PyList_SET_ITEM(__pyx_t_4, 5, __pyx_kp_s__10);
+    PyList_SET_ITEM(__pyx_t_1, 5, __pyx_kp_s__10);
     __Pyx_GIVEREF(__pyx_kp_s__10);
     __Pyx_INCREF(__pyx_kp_s__11);
-    PyList_SET_ITEM(__pyx_t_4, 6, __pyx_kp_s__11);
+    PyList_SET_ITEM(__pyx_t_1, 6, __pyx_kp_s__11);
     __Pyx_GIVEREF(__pyx_kp_s__11);
     __Pyx_INCREF(__pyx_kp_s__12);
-    PyList_SET_ITEM(__pyx_t_4, 7, __pyx_kp_s__12);
+    PyList_SET_ITEM(__pyx_t_1, 7, __pyx_kp_s__12);
     __Pyx_GIVEREF(__pyx_kp_s__12);
     __Pyx_INCREF(__pyx_kp_s__13);
-    PyList_SET_ITEM(__pyx_t_4, 8, __pyx_kp_s__13);
+    PyList_SET_ITEM(__pyx_t_1, 8, __pyx_kp_s__13);
     __Pyx_GIVEREF(__pyx_kp_s__13);
     __Pyx_INCREF(__pyx_kp_s__14);
-    PyList_SET_ITEM(__pyx_t_4, 9, __pyx_kp_s__14);
+    PyList_SET_ITEM(__pyx_t_1, 9, __pyx_kp_s__14);
     __Pyx_GIVEREF(__pyx_kp_s__14);
     __Pyx_INCREF(__pyx_kp_s__15);
-    PyList_SET_ITEM(__pyx_t_4, 10, __pyx_kp_s__15);
+    PyList_SET_ITEM(__pyx_t_1, 10, __pyx_kp_s__15);
     __Pyx_GIVEREF(__pyx_kp_s__15);
     __Pyx_INCREF(__pyx_kp_s__16);
-    PyList_SET_ITEM(__pyx_t_4, 11, __pyx_kp_s__16);
+    PyList_SET_ITEM(__pyx_t_1, 11, __pyx_kp_s__16);
     __Pyx_GIVEREF(__pyx_kp_s__16);
     __Pyx_INCREF(__pyx_kp_s__17);
-    PyList_SET_ITEM(__pyx_t_4, 12, __pyx_kp_s__17);
+    PyList_SET_ITEM(__pyx_t_1, 12, __pyx_kp_s__17);
     __Pyx_GIVEREF(__pyx_kp_s__17);
     __Pyx_INCREF(__pyx_kp_s__18);
-    PyList_SET_ITEM(__pyx_t_4, 13, __pyx_kp_s__18);
+    PyList_SET_ITEM(__pyx_t_1, 13, __pyx_kp_s__18);
     __Pyx_GIVEREF(__pyx_kp_s__18);
     __Pyx_INCREF(__pyx_kp_s__19);
-    PyList_SET_ITEM(__pyx_t_4, 14, __pyx_kp_s__19);
+    PyList_SET_ITEM(__pyx_t_1, 14, __pyx_kp_s__19);
     __Pyx_GIVEREF(__pyx_kp_s__19);
     __Pyx_INCREF(__pyx_kp_s__20);
-    PyList_SET_ITEM(__pyx_t_4, 15, __pyx_kp_s__20);
+    PyList_SET_ITEM(__pyx_t_1, 15, __pyx_kp_s__20);
     __Pyx_GIVEREF(__pyx_kp_s__20);
     __Pyx_INCREF(__pyx_kp_s__21);
-    PyList_SET_ITEM(__pyx_t_4, 16, __pyx_kp_s__21);
+    PyList_SET_ITEM(__pyx_t_1, 16, __pyx_kp_s__21);
     __Pyx_GIVEREF(__pyx_kp_s__21);
     __Pyx_INCREF(__pyx_kp_s__22);
-    PyList_SET_ITEM(__pyx_t_4, 17, __pyx_kp_s__22);
+    PyList_SET_ITEM(__pyx_t_1, 17, __pyx_kp_s__22);
     __Pyx_GIVEREF(__pyx_kp_s__22);
     __Pyx_INCREF(__pyx_kp_s__23);
-    PyList_SET_ITEM(__pyx_t_4, 18, __pyx_kp_s__23);
+    PyList_SET_ITEM(__pyx_t_1, 18, __pyx_kp_s__23);
     __Pyx_GIVEREF(__pyx_kp_s__23);
     __Pyx_INCREF(__pyx_kp_s__24);
-    PyList_SET_ITEM(__pyx_t_4, 19, __pyx_kp_s__24);
+    PyList_SET_ITEM(__pyx_t_1, 19, __pyx_kp_s__24);
     __Pyx_GIVEREF(__pyx_kp_s__24);
     __Pyx_INCREF(__pyx_kp_s__25);
-    PyList_SET_ITEM(__pyx_t_4, 20, __pyx_kp_s__25);
+    PyList_SET_ITEM(__pyx_t_1, 20, __pyx_kp_s__25);
     __Pyx_GIVEREF(__pyx_kp_s__25);
     __Pyx_INCREF(__pyx_kp_s__26);
-    PyList_SET_ITEM(__pyx_t_4, 21, __pyx_kp_s__26);
+    PyList_SET_ITEM(__pyx_t_1, 21, __pyx_kp_s__26);
     __Pyx_GIVEREF(__pyx_kp_s__26);
     __Pyx_INCREF(__pyx_kp_s_s);
-    PyList_SET_ITEM(__pyx_t_4, 22, __pyx_kp_s_s);
+    PyList_SET_ITEM(__pyx_t_1, 22, __pyx_kp_s_s);
     __Pyx_GIVEREF(__pyx_kp_s_s);
-    __Pyx_XDECREF_SET(__pyx_v_puncts, ((PyObject*)__pyx_t_4));
-    __pyx_t_4 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_puncts, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":178
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":184
  * 		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  * 		#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
  * 		freqterms1 = [w for w in doc1 if w not in stopwords and w not in puncts]             # <<<<<<<<<<<<<<
  * 
  * 		current_level = 1
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
     if (likely(PyList_CheckExact(__pyx_v_doc1)) || PyTuple_CheckExact(__pyx_v_doc1)) {
-      __pyx_t_2 = __pyx_v_doc1; __Pyx_INCREF(__pyx_t_2); __pyx_t_8 = 0;
+      __pyx_t_3 = __pyx_v_doc1; __Pyx_INCREF(__pyx_t_3); __pyx_t_8 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_8 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_doc1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_doc1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
-        if (likely(PyList_CheckExact(__pyx_t_2))) {
-          if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_2)) break;
+        if (likely(PyList_CheckExact(__pyx_t_3))) {
+          if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         } else {
-          if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
+          if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         }
       } else {
-        __pyx_t_7 = __pyx_t_9(__pyx_t_2);
+        __pyx_t_7 = __pyx_t_9(__pyx_t_3);
         if (unlikely(!__pyx_t_7)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
           break;
         }
@@ -4521,28 +4604,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
       __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_11 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_stopwords, Py_NE)); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_stopwords, Py_NE)); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_12 = (__pyx_t_11 != 0);
       if (__pyx_t_12) {
       } else {
         __pyx_t_10 = __pyx_t_12;
         goto __pyx_L8_bool_binop_done;
       }
-      __pyx_t_12 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_puncts, Py_NE)); if (unlikely(__pyx_t_12 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_12 = (__Pyx_PySequence_Contains(__pyx_v_w, __pyx_v_puncts, Py_NE)); if (unlikely(__pyx_t_12 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_11 = (__pyx_t_12 != 0);
       __pyx_t_10 = __pyx_t_11;
       __pyx_L8_bool_binop_done:;
       if (__pyx_t_10) {
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_4, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 184; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         goto __pyx_L7;
       }
       __pyx_L7:;
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_freqterms1, ((PyObject*)__pyx_t_4));
-    __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_freqterms1, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":180
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":186
  * 		freqterms1 = [w for w in doc1 if w not in stopwords and w not in puncts]
  * 
  * 		current_level = 1             # <<<<<<<<<<<<<<
@@ -4552,7 +4635,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_1);
     __Pyx_XDECREF_SET(__pyx_v_current_level, __pyx_int_1);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":181
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":187
  * 
  * 		current_level = 1
  * 		nodewithmaxparents = ''             # <<<<<<<<<<<<<<
@@ -4562,7 +4645,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_kp_s__2);
     __Pyx_XDECREF_SET(__pyx_v_nodewithmaxparents, __pyx_kp_s__2);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":182
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":188
  * 		current_level = 1
  * 		nodewithmaxparents = ''
  * 		noofparents = 0             # <<<<<<<<<<<<<<
@@ -4571,7 +4654,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  */
     __pyx_v_noofparents = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":183
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":189
  * 		nodewithmaxparents = ''
  * 		noofparents = 0
  * 		maxparents = 0             # <<<<<<<<<<<<<<
@@ -4580,7 +4663,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  */
     __pyx_v_maxparents = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":184
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":190
  * 		noofparents = 0
  * 		maxparents = 0
  * 		relatedness = 0             # <<<<<<<<<<<<<<
@@ -4590,7 +4673,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_relatedness, __pyx_int_0);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":185
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":191
  * 		maxparents = 0
  * 		relatedness = 0
  * 		first_convergence_level = 1             # <<<<<<<<<<<<<<
@@ -4600,79 +4683,79 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_1);
     __Pyx_XDECREF_SET(__pyx_v_first_convergence_level, __pyx_int_1);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":186
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":192
  * 		relatedness = 0
  * 		first_convergence_level = 1
  * 		tokensofthislevel = []             # <<<<<<<<<<<<<<
  * 		convergingterms = []
  * 		convergingparents = []
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 186; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 192; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":187
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":193
  * 		first_convergence_level = 1
  * 		tokensofthislevel = []
  * 		convergingterms = []             # <<<<<<<<<<<<<<
  * 		convergingparents = []
  * 		tokensofprevlevel = []
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 187; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_convergingterms, ((PyObject*)__pyx_t_4));
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 193; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_convergingterms, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":188
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":194
  * 		tokensofthislevel = []
  * 		convergingterms = []
  * 		convergingparents = []             # <<<<<<<<<<<<<<
  * 		tokensofprevlevel = []
  * 		prevlevelsynsets = []
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 188; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_convergingparents, ((PyObject*)__pyx_t_4));
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 194; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_convergingparents, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":189
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":195
  * 		convergingterms = []
  * 		convergingparents = []
  * 		tokensofprevlevel = []             # <<<<<<<<<<<<<<
  * 		prevlevelsynsets = []
  * 		commontokens = []
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 189; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_tokensofprevlevel, ((PyObject*)__pyx_t_4));
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 195; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_tokensofprevlevel, ((PyObject*)__pyx_t_1));
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":190
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":196
  * 		convergingparents = []
  * 		tokensofprevlevel = []
  * 		prevlevelsynsets = []             # <<<<<<<<<<<<<<
  * 		commontokens = []
  * 		vertices = 0
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 190; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_prevlevelsynsets, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 196; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_prevlevelsynsets, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":191
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":197
  * 		tokensofprevlevel = []
  * 		prevlevelsynsets = []
  * 		commontokens = []             # <<<<<<<<<<<<<<
  * 		vertices = 0
  * 		edges = 0
  */
-    __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 191; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_XDECREF_SET(__pyx_v_commontokens, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 197; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_XDECREF_SET(__pyx_v_commontokens, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":192
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":198
  * 		prevlevelsynsets = []
  * 		commontokens = []
  * 		vertices = 0             # <<<<<<<<<<<<<<
@@ -4682,7 +4765,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_vertices, __pyx_int_0);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":193
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":199
  * 		commontokens = []
  * 		vertices = 0
  * 		edges = 0             # <<<<<<<<<<<<<<
@@ -4692,7 +4775,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_edges, __pyx_int_0);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":194
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":200
  * 		vertices = 0
  * 		edges = 0
  * 		overlap = 0             # <<<<<<<<<<<<<<
@@ -4702,7 +4785,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_INCREF(__pyx_int_0);
     __Pyx_XDECREF_SET(__pyx_v_overlap, __pyx_int_0);
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":195
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":201
  * 		edges = 0
  * 		overlap = 0
  * 		iter = 0             # <<<<<<<<<<<<<<
@@ -4711,7 +4794,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  */
     __pyx_v_iter = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":198
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":204
  * 		#recurse down to required depth and update intrinsic merit score
  * 		#relatedness is either sum(overlaps) or sum((overlapping_parents)*(overlaps)^2) also called convergence factor
  * 		while current_level < 3:             # <<<<<<<<<<<<<<
@@ -4719,218 +4802,254 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 			if current_level > 1:
  */
     while (1) {
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_current_level, __pyx_int_3, Py_LT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 198; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_1 = PyObject_RichCompare(__pyx_v_current_level, __pyx_int_3, Py_LT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (!__pyx_t_10) break;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":200
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":206
  * 		while current_level < 3:
  * 			#crucial - gather nodes which converge/overlap (have more than 1 parent)
  * 			if current_level > 1:             # <<<<<<<<<<<<<<
  * 				print current_level
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
+ * 				prevlevelsynsets_tokens=[]
  */
-      __pyx_t_4 = PyObject_RichCompare(__pyx_v_current_level, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 200; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 200; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_1 = PyObject_RichCompare(__pyx_v_current_level, __pyx_int_1, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_10) {
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":201
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":207
  * 			#crucial - gather nodes which converge/overlap (have more than 1 parent)
  * 			if current_level > 1:
  * 				print current_level             # <<<<<<<<<<<<<<
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
- * 				prevlevelsynsets_tokens=[]
- */
-        if (__Pyx_PrintOne(0, __pyx_v_current_level) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 201; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":202
- * 			if current_level > 1:
- * 				print current_level
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()             # <<<<<<<<<<<<<<
  * 				prevlevelsynsets_tokens=[]
  * 				for s in prevlevelsynsets:
  */
-        __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_flushCacheParents); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = NULL;
-        if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
-          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-          if (likely(__pyx_t_2)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-            __Pyx_INCREF(__pyx_t_2);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_7, function);
-          }
-        }
-        if (__pyx_t_2) {
-          __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        } else {
-          __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 202; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        }
-        __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (__Pyx_PrintOne(0, __pyx_v_current_level) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":203
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":208
+ * 			if current_level > 1:
  * 				print current_level
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
  * 				prevlevelsynsets_tokens=[]             # <<<<<<<<<<<<<<
  * 				for s in prevlevelsynsets:
  * 					s_lemma=s.lemma_names()
  */
-        __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 203; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_XDECREF_SET(__pyx_v_prevlevelsynsets_tokens, ((PyObject*)__pyx_t_4));
-        __pyx_t_4 = 0;
+        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 208; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_XDECREF_SET(__pyx_v_prevlevelsynsets_tokens, ((PyObject*)__pyx_t_1));
+        __pyx_t_1 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":204
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":209
+ * 				print current_level
  * 				prevlevelsynsets_tokens=[]
  * 				for s in prevlevelsynsets:             # <<<<<<<<<<<<<<
  * 					s_lemma=s.lemma_names()
  * 					prevlevelsynsets_tokens.append(s_lemma[0])
  */
         if (likely(PyList_CheckExact(__pyx_v_prevlevelsynsets)) || PyTuple_CheckExact(__pyx_v_prevlevelsynsets)) {
-          __pyx_t_4 = __pyx_v_prevlevelsynsets; __Pyx_INCREF(__pyx_t_4); __pyx_t_8 = 0;
+          __pyx_t_1 = __pyx_v_prevlevelsynsets; __Pyx_INCREF(__pyx_t_1); __pyx_t_8 = 0;
           __pyx_t_9 = NULL;
         } else {
-          __pyx_t_8 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_4);
-          __pyx_t_9 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_8 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_prevlevelsynsets); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_1);
+          __pyx_t_9 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         for (;;) {
           if (likely(!__pyx_t_9)) {
-            if (likely(PyList_CheckExact(__pyx_t_4))) {
-              if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_4)) break;
+            if (likely(PyList_CheckExact(__pyx_t_1))) {
+              if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_1)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_7 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             } else {
-              if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
+              if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             }
           } else {
-            __pyx_t_7 = __pyx_t_9(__pyx_t_4);
-            if (unlikely(!__pyx_t_7)) {
+            __pyx_t_3 = __pyx_t_9(__pyx_t_1);
+            if (unlikely(!__pyx_t_3)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 204; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 209; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
               break;
             }
-            __Pyx_GOTREF(__pyx_t_7);
+            __Pyx_GOTREF(__pyx_t_3);
           }
-          __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_7);
-          __pyx_t_7 = 0;
+          __Pyx_XDECREF_SET(__pyx_v_s, __pyx_t_3);
+          __pyx_t_3 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":205
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":210
  * 				prevlevelsynsets_tokens=[]
  * 				for s in prevlevelsynsets:
  * 					s_lemma=s.lemma_names()             # <<<<<<<<<<<<<<
  * 					prevlevelsynsets_tokens.append(s_lemma[0])
  * 				for x in freqterms1:
  */
-          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_7);
           __pyx_t_6 = NULL;
-          if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-            __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+          if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
+            __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
             if (likely(__pyx_t_6)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
               __Pyx_INCREF(__pyx_t_6);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_2, function);
+              __Pyx_DECREF_SET(__pyx_t_7, function);
             }
           }
           if (__pyx_t_6) {
-            __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
           } else {
-            __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 205; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 210; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
-          __Pyx_GOTREF(__pyx_t_7);
-          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-          __Pyx_XDECREF_SET(__pyx_v_s_lemma, __pyx_t_7);
-          __pyx_t_7 = 0;
+          __Pyx_GOTREF(__pyx_t_3);
+          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __Pyx_XDECREF_SET(__pyx_v_s_lemma, __pyx_t_3);
+          __pyx_t_3 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":206
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":211
  * 				for s in prevlevelsynsets:
  * 					s_lemma=s.lemma_names()
  * 					prevlevelsynsets_tokens.append(s_lemma[0])             # <<<<<<<<<<<<<<
  * 				for x in freqterms1:
  * 					#prevlevelsynsets_tokens=[]
  */
-          __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_s_lemma, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-          __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_prevlevelsynsets_tokens, __pyx_t_7); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 206; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_s_lemma, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 211; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_prevlevelsynsets_tokens, __pyx_t_3); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 211; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":204
- * 				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":209
+ * 				print current_level
  * 				prevlevelsynsets_tokens=[]
  * 				for s in prevlevelsynsets:             # <<<<<<<<<<<<<<
  * 					s_lemma=s.lemma_names()
  * 					prevlevelsynsets_tokens.append(s_lemma[0])
  */
         }
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":207
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":212
  * 					s_lemma=s.lemma_names()
  * 					prevlevelsynsets_tokens.append(s_lemma[0])
  * 				for x in freqterms1:             # <<<<<<<<<<<<<<
  * 					#prevlevelsynsets_tokens=[]
  * 					#for s in prevlevelsynsets:
  */
-        __pyx_t_4 = __pyx_v_freqterms1; __Pyx_INCREF(__pyx_t_4); __pyx_t_8 = 0;
+        __pyx_t_1 = __pyx_v_freqterms1; __Pyx_INCREF(__pyx_t_1); __pyx_t_8 = 0;
         for (;;) {
-          if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_4)) break;
+          if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_7); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_8); __Pyx_INCREF(__pyx_t_3); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 212; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 207; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 212; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
-          __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_7);
-          __pyx_t_7 = 0;
+          __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_3);
+          __pyx_t_3 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":212
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":217
  * 					#	s_lemma=s.lemma_names()
  * 					#	prevlevelsynsets_tokens.append(s_lemma[0])
  * 					if parents_computation_spark:             # <<<<<<<<<<<<<<
- * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
+ * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens,graphcache)
  * 						if len(parents_x) > 1:
  */
-          __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_computation_spark); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 212; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_7);
-          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 212; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+          __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_computation_spark); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 217; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
           if (__pyx_t_10) {
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":213
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":218
  * 					#	prevlevelsynsets_tokens.append(s_lemma[0])
  * 					if parents_computation_spark:
- * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)             # <<<<<<<<<<<<<<
+ * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens,graphcache)             # <<<<<<<<<<<<<<
  * 						if len(parents_x) > 1:
  * 							convergingterms.append(x)
  */
-            __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 213; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_2);
-            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_Spark_MapReduce_Parents); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 213; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_7);
+            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_Spark_MapReduce_Parents); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __Pyx_GOTREF(__pyx_t_6);
+            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+            __pyx_t_7 = NULL;
+            __pyx_t_14 = 0;
+            if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_6))) {
+              __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
+              if (likely(__pyx_t_7)) {
+                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+                __Pyx_INCREF(__pyx_t_7);
+                __Pyx_INCREF(function);
+                __Pyx_DECREF_SET(__pyx_t_6, function);
+                __pyx_t_14 = 1;
+              }
+            }
+            __pyx_t_2 = PyTuple_New(3+__pyx_t_14); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_2);
+            if (__pyx_t_7) {
+              PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+            }
+            __Pyx_INCREF(__pyx_v_x);
+            PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_14, __pyx_v_x);
+            __Pyx_GIVEREF(__pyx_v_x);
+            __Pyx_INCREF(__pyx_v_prevlevelsynsets_tokens);
+            PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_14, __pyx_v_prevlevelsynsets_tokens);
+            __Pyx_GIVEREF(__pyx_v_prevlevelsynsets_tokens);
+            __Pyx_INCREF(__pyx_v_graphcache);
+            PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_14, __pyx_v_graphcache);
+            __Pyx_GIVEREF(__pyx_v_graphcache);
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+            __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+            __Pyx_XDECREF_SET(__pyx_v_parents_x, __pyx_t_3);
+            __pyx_t_3 = 0;
+
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":219
+ * 					if parents_computation_spark:
+ * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens,graphcache)
+ * 						if len(parents_x) > 1:             # <<<<<<<<<<<<<<
+ * 							convergingterms.append(x)
+ * 					else:
+ */
+            __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 219; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_10 = ((__pyx_t_14 > 1) != 0);
+            if (__pyx_t_10) {
+
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":220
+ * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens,graphcache)
+ * 						if len(parents_x) > 1:
+ * 							convergingterms.append(x)             # <<<<<<<<<<<<<<
+ * 					else:
+ * 						#parents_x = parents(x,prevlevelsynsets)
+ */
+              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_convergingterms, __pyx_v_x); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 220; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              goto __pyx_L18;
+            }
+            __pyx_L18:;
+            goto __pyx_L17;
+          }
+          /*else*/ {
+
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":223
+ * 					else:
+ * 						#parents_x = parents(x,prevlevelsynsets)
+ * 						parents_x = parents_tokens(x,prevlevelsynsets_tokens)             # <<<<<<<<<<<<<<
+ * 						if len(parents_x) > 1:
+ * 							convergingterms.append(x)
+ */
+            __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_6);
             __pyx_t_2 = NULL;
             __pyx_t_14 = 0;
             if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_6))) {
@@ -4943,226 +5062,58 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
                 __pyx_t_14 = 1;
               }
             }
-            __pyx_t_3 = PyTuple_New(2+__pyx_t_14); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 213; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_3);
+            __pyx_t_7 = PyTuple_New(2+__pyx_t_14); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_7);
             if (__pyx_t_2) {
-              PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+              PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
             }
             __Pyx_INCREF(__pyx_v_x);
-            PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_14, __pyx_v_x);
+            PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_14, __pyx_v_x);
             __Pyx_GIVEREF(__pyx_v_x);
             __Pyx_INCREF(__pyx_v_prevlevelsynsets_tokens);
-            PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_14, __pyx_v_prevlevelsynsets_tokens);
+            PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_14, __pyx_v_prevlevelsynsets_tokens);
             __Pyx_GIVEREF(__pyx_v_prevlevelsynsets_tokens);
-            __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 213; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_7);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+            __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 223; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_3);
+            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
             __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_parents_x, __pyx_t_7);
-            __pyx_t_7 = 0;
+            __Pyx_XDECREF_SET(__pyx_v_parents_x, __pyx_t_3);
+            __pyx_t_3 = 0;
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":214
- * 					if parents_computation_spark:
- * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
- * 						if len(parents_x) > 1:             # <<<<<<<<<<<<<<
- * 							convergingterms.append(x)
- * 					else:
- */
-            __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 214; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __pyx_t_10 = ((__pyx_t_14 > 1) != 0);
-            if (__pyx_t_10) {
-
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":215
- * 						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
- * 						if len(parents_x) > 1:
- * 							convergingterms.append(x)             # <<<<<<<<<<<<<<
- * 					else:
- * 						#parents_x = parents(x,prevlevelsynsets)
- */
-              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_convergingterms, __pyx_v_x); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 215; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-              goto __pyx_L18;
-            }
-            __pyx_L18:;
-            goto __pyx_L17;
-          }
-          /*else*/ {
-
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":218
- * 					else:
- * 						#parents_x = parents(x,prevlevelsynsets)
- * 						parents_x = parents_tokens(x,prevlevelsynsets_tokens)             # <<<<<<<<<<<<<<
- * 						if len(parents_x) > 1:
- * 							convergingterms.append(x)
- */
-            __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_tokens); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_3 = NULL;
-            __pyx_t_14 = 0;
-            if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_6))) {
-              __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_6);
-              if (likely(__pyx_t_3)) {
-                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-                __Pyx_INCREF(__pyx_t_3);
-                __Pyx_INCREF(function);
-                __Pyx_DECREF_SET(__pyx_t_6, function);
-                __pyx_t_14 = 1;
-              }
-            }
-            __pyx_t_2 = PyTuple_New(2+__pyx_t_14); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_2);
-            if (__pyx_t_3) {
-              PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
-            }
-            __Pyx_INCREF(__pyx_v_x);
-            PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_14, __pyx_v_x);
-            __Pyx_GIVEREF(__pyx_v_x);
-            __Pyx_INCREF(__pyx_v_prevlevelsynsets_tokens);
-            PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_14, __pyx_v_prevlevelsynsets_tokens);
-            __Pyx_GIVEREF(__pyx_v_prevlevelsynsets_tokens);
-            __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 218; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_7);
-            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __Pyx_XDECREF_SET(__pyx_v_parents_x, __pyx_t_7);
-            __pyx_t_7 = 0;
-
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":219
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":224
  * 						#parents_x = parents(x,prevlevelsynsets)
  * 						parents_x = parents_tokens(x,prevlevelsynsets_tokens)
  * 						if len(parents_x) > 1:             # <<<<<<<<<<<<<<
  * 							convergingterms.append(x)
  * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
  */
-            __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 219; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 224; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
             __pyx_t_10 = ((__pyx_t_14 > 1) != 0);
             if (__pyx_t_10) {
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":220
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":225
  * 						parents_x = parents_tokens(x,prevlevelsynsets_tokens)
  * 						if len(parents_x) > 1:
  * 							convergingterms.append(x)             # <<<<<<<<<<<<<<
  * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
  * 					noofparents = len(parents_x)
  */
-              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_convergingterms, __pyx_v_x); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 220; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_convergingterms, __pyx_v_x); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 225; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               goto __pyx_L19;
             }
             __pyx_L19:;
           }
           __pyx_L17:;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":221
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":226
  * 						if len(parents_x) > 1:
  * 							convergingterms.append(x)
  * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])             # <<<<<<<<<<<<<<
  * 					noofparents = len(parents_x)
  * 					if noofparents > maxparents:
  */
-          __pyx_t_7 = PyList_New(0); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_7);
-          if (likely(PyList_CheckExact(__pyx_v_parents_x)) || PyTuple_CheckExact(__pyx_v_parents_x)) {
-            __pyx_t_6 = __pyx_v_parents_x; __Pyx_INCREF(__pyx_t_6); __pyx_t_14 = 0;
-            __pyx_t_9 = NULL;
-          } else {
-            __pyx_t_14 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_parents_x); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_6);
-            __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          }
-          for (;;) {
-            if (likely(!__pyx_t_9)) {
-              if (likely(PyList_CheckExact(__pyx_t_6))) {
-                if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_6)) break;
-                #if CYTHON_COMPILING_IN_CPYTHON
-                __pyx_t_2 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                #else
-                __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                #endif
-              } else {
-                if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
-                #if CYTHON_COMPILING_IN_CPYTHON
-                __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                #else
-                __pyx_t_2 = PySequence_ITEM(__pyx_t_6, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                #endif
-              }
-            } else {
-              __pyx_t_2 = __pyx_t_9(__pyx_t_6);
-              if (unlikely(!__pyx_t_2)) {
-                PyObject* exc_type = PyErr_Occurred();
-                if (exc_type) {
-                  if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                  else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                }
-                break;
-              }
-              __Pyx_GOTREF(__pyx_t_2);
-            }
-            __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_2);
-            __pyx_t_2 = 0;
-            __pyx_t_15 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_15 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __pyx_t_10 = ((__pyx_t_15 > 1) != 0);
-            if (__pyx_t_10) {
-              if (unlikely(__Pyx_ListComp_Append(__pyx_t_7, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-              goto __pyx_L22;
-            }
-            __pyx_L22:;
-          }
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_6 = PyNumber_Add(__pyx_v_convergingparents, __pyx_t_7); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 221; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-          __Pyx_DECREF_SET(__pyx_v_convergingparents, ((PyObject*)__pyx_t_6));
-          __pyx_t_6 = 0;
-
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":222
- * 							convergingterms.append(x)
- * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
- * 					noofparents = len(parents_x)             # <<<<<<<<<<<<<<
- * 					if noofparents > maxparents:
- * 						maxparents = noofparents
- */
-          __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 222; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __pyx_v_noofparents = __pyx_t_14;
-
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":223
- * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
- * 					noofparents = len(parents_x)
- * 					if noofparents > maxparents:             # <<<<<<<<<<<<<<
- * 						maxparents = noofparents
- * 						nodewithmaxparents = x
- */
-          __pyx_t_10 = ((__pyx_v_noofparents > __pyx_v_maxparents) != 0);
-          if (__pyx_t_10) {
-
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":224
- * 					noofparents = len(parents_x)
- * 					if noofparents > maxparents:
- * 						maxparents = noofparents             # <<<<<<<<<<<<<<
- * 						nodewithmaxparents = x
- * 					for y in parents_x:
- */
-            __pyx_v_maxparents = __pyx_v_noofparents;
-
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":225
- * 					if noofparents > maxparents:
- * 						maxparents = noofparents
- * 						nodewithmaxparents = x             # <<<<<<<<<<<<<<
- * 					for y in parents_x:
- * 						if parents_computation_spark:
- */
-            __Pyx_INCREF(__pyx_v_x);
-            __Pyx_DECREF_SET(__pyx_v_nodewithmaxparents, __pyx_v_x);
-            goto __pyx_L23;
-          }
-          __pyx_L23:;
-
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":226
- * 						maxparents = noofparents
- * 						nodewithmaxparents = x
- * 					for y in parents_x:             # <<<<<<<<<<<<<<
- * 						if parents_computation_spark:
- * 							definitiongraphedges[x].append(y)
- */
+          __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_3);
           if (likely(PyList_CheckExact(__pyx_v_parents_x)) || PyTuple_CheckExact(__pyx_v_parents_x)) {
             __pyx_t_6 = __pyx_v_parents_x; __Pyx_INCREF(__pyx_t_6); __pyx_t_14 = 0;
             __pyx_t_9 = NULL;
@@ -5200,85 +5151,188 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
               }
               __Pyx_GOTREF(__pyx_t_7);
             }
-            __Pyx_XDECREF_SET(__pyx_v_y, __pyx_t_7);
+            __Pyx_XDECREF_SET(__pyx_v_w, __pyx_t_7);
             __pyx_t_7 = 0;
+            __pyx_t_15 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_15 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __pyx_t_10 = ((__pyx_t_15 > 1) != 0);
+            if (__pyx_t_10) {
+              if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_w))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              goto __pyx_L22;
+            }
+            __pyx_L22:;
+          }
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __pyx_t_6 = PyNumber_Add(__pyx_v_convergingparents, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 226; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_6);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF_SET(__pyx_v_convergingparents, ((PyObject*)__pyx_t_6));
+          __pyx_t_6 = 0;
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":227
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":227
+ * 							convergingterms.append(x)
+ * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
+ * 					noofparents = len(parents_x)             # <<<<<<<<<<<<<<
+ * 					if noofparents > maxparents:
+ * 						maxparents = noofparents
+ */
+          __pyx_t_14 = PyObject_Length(__pyx_v_parents_x); if (unlikely(__pyx_t_14 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_v_noofparents = __pyx_t_14;
+
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":228
+ * 					convergingparents = convergingparents + ([w for w in parents_x if len(parents_x) > 1])
+ * 					noofparents = len(parents_x)
+ * 					if noofparents > maxparents:             # <<<<<<<<<<<<<<
+ * 						maxparents = noofparents
+ * 						nodewithmaxparents = x
+ */
+          __pyx_t_10 = ((__pyx_v_noofparents > __pyx_v_maxparents) != 0);
+          if (__pyx_t_10) {
+
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":229
+ * 					noofparents = len(parents_x)
+ * 					if noofparents > maxparents:
+ * 						maxparents = noofparents             # <<<<<<<<<<<<<<
+ * 						nodewithmaxparents = x
+ * 					for y in parents_x:
+ */
+            __pyx_v_maxparents = __pyx_v_noofparents;
+
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":230
+ * 					if noofparents > maxparents:
+ * 						maxparents = noofparents
+ * 						nodewithmaxparents = x             # <<<<<<<<<<<<<<
+ * 					for y in parents_x:
+ * 						if parents_computation_spark:
+ */
+            __Pyx_INCREF(__pyx_v_x);
+            __Pyx_DECREF_SET(__pyx_v_nodewithmaxparents, __pyx_v_x);
+            goto __pyx_L23;
+          }
+          __pyx_L23:;
+
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":231
+ * 						maxparents = noofparents
+ * 						nodewithmaxparents = x
+ * 					for y in parents_x:             # <<<<<<<<<<<<<<
+ * 						if parents_computation_spark:
+ * 							definitiongraphedges[x].append(y)
+ */
+          if (likely(PyList_CheckExact(__pyx_v_parents_x)) || PyTuple_CheckExact(__pyx_v_parents_x)) {
+            __pyx_t_6 = __pyx_v_parents_x; __Pyx_INCREF(__pyx_t_6); __pyx_t_14 = 0;
+            __pyx_t_9 = NULL;
+          } else {
+            __pyx_t_14 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_v_parents_x); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_9 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          }
+          for (;;) {
+            if (likely(!__pyx_t_9)) {
+              if (likely(PyList_CheckExact(__pyx_t_6))) {
+                if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_6)) break;
+                #if CYTHON_COMPILING_IN_CPYTHON
+                __pyx_t_3 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                #else
+                __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                #endif
+              } else {
+                if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
+                #if CYTHON_COMPILING_IN_CPYTHON
+                __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_14); __Pyx_INCREF(__pyx_t_3); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                #else
+                __pyx_t_3 = PySequence_ITEM(__pyx_t_6, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                #endif
+              }
+            } else {
+              __pyx_t_3 = __pyx_t_9(__pyx_t_6);
+              if (unlikely(!__pyx_t_3)) {
+                PyObject* exc_type = PyErr_Occurred();
+                if (exc_type) {
+                  if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+                  else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                }
+                break;
+              }
+              __Pyx_GOTREF(__pyx_t_3);
+            }
+            __Pyx_XDECREF_SET(__pyx_v_y, __pyx_t_3);
+            __pyx_t_3 = 0;
+
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":232
  * 						nodewithmaxparents = x
  * 					for y in parents_x:
  * 						if parents_computation_spark:             # <<<<<<<<<<<<<<
  * 							definitiongraphedges[x].append(y)
  * 						else:
  */
-            __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_computation_spark); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_GOTREF(__pyx_t_7);
-            __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 227; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-            __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+            __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_parents_computation_spark); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_GOTREF(__pyx_t_3);
+            __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             if (__pyx_t_10) {
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":228
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":233
  * 					for y in parents_x:
  * 						if parents_computation_spark:
  * 							definitiongraphedges[x].append(y)             # <<<<<<<<<<<<<<
  * 						else:
  * 							y_lemma_names=y.lemma_names()
  */
-              __pyx_t_7 = PyObject_GetItem(__pyx_v_definitiongraphedges, __pyx_v_x); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 228; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-              __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_13 = __Pyx_PyObject_Append(__pyx_t_7, __pyx_v_y); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 228; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_3 = PyObject_GetItem(__pyx_v_definitiongraphedges, __pyx_v_x); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_13 = __Pyx_PyObject_Append(__pyx_t_3, __pyx_v_y); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               goto __pyx_L26;
             }
             /*else*/ {
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":230
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":235
  * 							definitiongraphedges[x].append(y)
  * 						else:
  * 							y_lemma_names=y.lemma_names()             # <<<<<<<<<<<<<<
  * 							definitiongraphedges[x].append(y_lemma_names[0])
  * 				output.write('converging terms(terms with more than 1 parent):\n ')
  */
-              __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_y, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 230; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_3 = NULL;
-              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-                __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-                if (likely(__pyx_t_3)) {
-                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                  __Pyx_INCREF(__pyx_t_3);
+              __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_y, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_2 = NULL;
+              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
+                __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
+                if (likely(__pyx_t_2)) {
+                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+                  __Pyx_INCREF(__pyx_t_2);
                   __Pyx_INCREF(function);
-                  __Pyx_DECREF_SET(__pyx_t_2, function);
+                  __Pyx_DECREF_SET(__pyx_t_7, function);
                 }
               }
-              if (__pyx_t_3) {
-                __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 230; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-                __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+              if (__pyx_t_2) {
+                __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               } else {
-                __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 230; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
-              __Pyx_GOTREF(__pyx_t_7);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __Pyx_XDECREF_SET(__pyx_v_y_lemma_names, __pyx_t_7);
-              __pyx_t_7 = 0;
+              __Pyx_GOTREF(__pyx_t_3);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_y_lemma_names, __pyx_t_3);
+              __pyx_t_3 = 0;
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":231
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":236
  * 						else:
  * 							y_lemma_names=y.lemma_names()
  * 							definitiongraphedges[x].append(y_lemma_names[0])             # <<<<<<<<<<<<<<
  * 				output.write('converging terms(terms with more than 1 parent):\n ')
  * 				output.write('converging parents :\n')
  */
-              __pyx_t_7 = PyObject_GetItem(__pyx_v_definitiongraphedges, __pyx_v_x); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+              __pyx_t_3 = PyObject_GetItem(__pyx_v_definitiongraphedges, __pyx_v_x); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_y_lemma_names, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_y_lemma_names, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_13 = __Pyx_PyObject_Append(__pyx_t_7, __pyx_t_2); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 231; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_13 = __Pyx_PyObject_Append(__pyx_t_3, __pyx_t_7); if (unlikely(__pyx_t_13 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
             }
             __pyx_L26:;
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":226
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":231
  * 						maxparents = noofparents
  * 						nodewithmaxparents = x
  * 					for y in parents_x:             # <<<<<<<<<<<<<<
@@ -5288,7 +5342,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
           }
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":207
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":212
  * 					s_lemma=s.lemma_names()
  * 					prevlevelsynsets_tokens.append(s_lemma[0])
  * 				for x in freqterms1:             # <<<<<<<<<<<<<<
@@ -5296,276 +5350,228 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 					#for s in prevlevelsynsets:
  */
         }
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":232
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":237
  * 							y_lemma_names=y.lemma_names()
  * 							definitiongraphedges[x].append(y_lemma_names[0])
  * 				output.write('converging terms(terms with more than 1 parent):\n ')             # <<<<<<<<<<<<<<
  * 				output.write('converging parents :\n')
  * 
  */
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__27, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":233
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":238
  * 							definitiongraphedges[x].append(y_lemma_names[0])
  * 				output.write('converging terms(terms with more than 1 parent):\n ')
  * 				output.write('converging parents :\n')             # <<<<<<<<<<<<<<
  * 
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__28, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         goto __pyx_L12;
       }
       __pyx_L12:;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":235
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":240
  * 				output.write('converging parents :\n')
  * 
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1             # <<<<<<<<<<<<<<
- * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
+ * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
  */
-      __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 240; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_2);
-      PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_2);
+      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_2);
       __Pyx_GIVEREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_2);
       __Pyx_INCREF(__pyx_v_freqterms1);
-      PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_freqterms1);
+      PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_freqterms1);
       __Pyx_GIVEREF(__pyx_v_freqterms1);
-      if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 235; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 240; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":236
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":241
  * 
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1
- * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel             # <<<<<<<<<<<<<<
+ * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel             # <<<<<<<<<<<<<<
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  */
-      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Spark_MapReduce); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_Spark_MapReduce); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_6 = NULL;
       __pyx_t_8 = 0;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
         if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
           __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __Pyx_DECREF_SET(__pyx_t_7, function);
           __pyx_t_8 = 1;
         }
       }
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_3 = PyTuple_New(3+__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       if (__pyx_t_6) {
-        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       }
       __Pyx_INCREF(__pyx_v_current_level);
-      PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_8, __pyx_v_current_level);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_8, __pyx_v_current_level);
       __Pyx_GIVEREF(__pyx_v_current_level);
       __Pyx_INCREF(__pyx_v_freqterms1);
-      PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_8, __pyx_v_freqterms1);
+      PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_8, __pyx_v_freqterms1);
       __Pyx_GIVEREF(__pyx_v_freqterms1);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_INCREF(__pyx_v_graphcache);
+      PyTuple_SET_ITEM(__pyx_t_3, 2+__pyx_t_8, __pyx_v_graphcache);
+      __Pyx_GIVEREF(__pyx_v_graphcache);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 236; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_tokensatthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_7);
+      __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":237
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":242
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1
- * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
+ * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel             # <<<<<<<<<<<<<<
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  */
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_3);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_3);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_3);
       __Pyx_GIVEREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_3);
       __Pyx_INCREF(__pyx_v_tokensofthislevel);
-      PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_tokensofthislevel);
+      PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_tokensofthislevel);
       __Pyx_GIVEREF(__pyx_v_tokensofthislevel);
-      if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":238
- * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":243
+ * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")             # <<<<<<<<<<<<<<
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  * 			print "prevlevelsynsets:",prevlevelsynsets
  */
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_XDECREF_SET(__pyx_v_picklef, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__29, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_XDECREF_SET(__pyx_v_picklef, __pyx_t_7);
+      __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":239
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":244
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)             # <<<<<<<<<<<<<<
  * 			print "prevlevelsynsets:",prevlevelsynsets
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
  */
-      __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_asfer_pickle_load); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_4)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithmWithIntrinisic); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asfer_pickle_load); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_1)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_1);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_7, function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
         }
       }
-      if (!__pyx_t_4) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_picklef); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
+      if (!__pyx_t_1) {
+        __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_picklef); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
         __Pyx_INCREF(__pyx_v_picklef);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_picklef);
         __Pyx_GIVEREF(__pyx_v_picklef);
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 239; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF_SET(__pyx_v_prevlevelsynsets, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF_SET(__pyx_v_prevlevelsynsets, __pyx_t_7);
+      __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":240
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":245
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  * 			print "prevlevelsynsets:",prevlevelsynsets             # <<<<<<<<<<<<<<
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
  * 			picklef.seek(0)
  */
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 240; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_kp_s_prevlevelsynsets_2);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_prevlevelsynsets_2);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_prevlevelsynsets_2);
       __Pyx_GIVEREF(__pyx_kp_s_prevlevelsynsets_2);
       __Pyx_INCREF(__pyx_v_prevlevelsynsets);
-      PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_prevlevelsynsets);
+      PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_prevlevelsynsets);
       __Pyx_GIVEREF(__pyx_v_prevlevelsynsets);
-      if (__Pyx_Print(0, __pyx_t_2, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 240; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":241
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":246
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  * 			print "prevlevelsynsets:",prevlevelsynsets
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")             # <<<<<<<<<<<<<<
  * 			picklef.seek(0)
  * 			picklef.truncate()
  */
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF_SET(__pyx_v_picklef, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__30, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF_SET(__pyx_v_picklef, __pyx_t_7);
+      __pyx_t_7 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":242
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":247
  * 			print "prevlevelsynsets:",prevlevelsynsets
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
  * 			picklef.seek(0)             # <<<<<<<<<<<<<<
  * 			picklef.truncate()
  * 			output.write('At level:\n')
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_seek); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_seek); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__31, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":243
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":248
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
  * 			picklef.seek(0)
  * 			picklef.truncate()             # <<<<<<<<<<<<<<
  * 			output.write('At level:\n')
  * 			output.write(str(current_level))
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_truncate); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_6);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
-        }
-      }
-      if (__pyx_t_6) {
-        __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      } else {
-        __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      }
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_picklef, __pyx_n_s_truncate); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":244
- * 			picklef.seek(0)
- * 			picklef.truncate()
- * 			output.write('At level:\n')             # <<<<<<<<<<<<<<
- * 			output.write(str(current_level))
- * 			output.write('\n')
- */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":245
- * 			picklef.truncate()
- * 			output.write('At level:\n')
- * 			output.write(str(current_level))             # <<<<<<<<<<<<<<
- * 			output.write('\n')
- * 			output.write('tokens grasped at this level:\n')
- */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_INCREF(__pyx_v_current_level);
-      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_current_level);
-      __Pyx_GIVEREF(__pyx_v_current_level);
-      __pyx_t_4 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_6 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
         __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
@@ -5576,117 +5582,168 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
           __Pyx_DECREF_SET(__pyx_t_7, function);
         }
       }
-      if (!__pyx_t_6) {
-        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
+      if (__pyx_t_6) {
+        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       } else {
-        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_t_4);
-        __Pyx_GIVEREF(__pyx_t_4);
-        __pyx_t_4 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 245; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 248; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       }
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":246
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":249
+ * 			picklef.seek(0)
+ * 			picklef.truncate()
+ * 			output.write('At level:\n')             # <<<<<<<<<<<<<<
+ * 			output.write(str(current_level))
+ * 			output.write('\n')
+ */
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__32, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":250
+ * 			picklef.truncate()
+ * 			output.write('At level:\n')
+ * 			output.write(str(current_level))             # <<<<<<<<<<<<<<
+ * 			output.write('\n')
+ * 			output.write('tokens grasped at this level:\n')
+ */
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_INCREF(__pyx_v_current_level);
+      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_current_level);
+      __Pyx_GIVEREF(__pyx_v_current_level);
+      __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
+        }
+      }
+      if (!__pyx_t_6) {
+        __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_GOTREF(__pyx_t_7);
+      } else {
+        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_1);
+        __pyx_t_1 = 0;
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":251
  * 			output.write('At level:\n')
  * 			output.write(str(current_level))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			output.write('tokens grasped at this level:\n')
  * 			#pickle.dump(tokensofthislevel, output)
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__34, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":247
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":252
  * 			output.write(str(current_level))
  * 			output.write('\n')
  * 			output.write('tokens grasped at this level:\n')             # <<<<<<<<<<<<<<
  * 			#pickle.dump(tokensofthislevel, output)
  * 			output.write('\n')
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__35, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":249
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":254
  * 			output.write('tokens grasped at this level:\n')
  * 			#pickle.dump(tokensofthislevel, output)
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			listcount = len(tokensofthislevel)
  * 			setcount = len(set(tokensofthislevel))
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__36, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":250
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":255
  * 			#pickle.dump(tokensofthislevel, output)
  * 			output.write('\n')
  * 			listcount = len(tokensofthislevel)             # <<<<<<<<<<<<<<
  * 			setcount = len(set(tokensofthislevel))
  * 			overlap =  listcount-setcount
  */
-      __pyx_t_8 = PyObject_Length(__pyx_v_tokensofthislevel); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_7 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 250; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_v_listcount, __pyx_t_7);
-      __pyx_t_7 = 0;
+      __pyx_t_8 = PyObject_Length(__pyx_v_tokensofthislevel); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 255; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 255; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_XDECREF_SET(__pyx_v_listcount, __pyx_t_3);
+      __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":251
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":256
  * 			output.write('\n')
  * 			listcount = len(tokensofthislevel)
  * 			setcount = len(set(tokensofthislevel))             # <<<<<<<<<<<<<<
  * 			overlap =  listcount-setcount
  * 			if overlap > 0 and iter == 0 :
  */
-      __pyx_t_7 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = PySet_Size(__pyx_t_7); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_XDECREF_SET(__pyx_v_setcount, __pyx_t_7);
-      __pyx_t_7 = 0;
+      __pyx_t_3 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_8 = PySet_Size(__pyx_t_3); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 256; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_XDECREF_SET(__pyx_v_setcount, __pyx_t_3);
+      __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":252
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":257
  * 			listcount = len(tokensofthislevel)
  * 			setcount = len(set(tokensofthislevel))
  * 			overlap =  listcount-setcount             # <<<<<<<<<<<<<<
  * 			if overlap > 0 and iter == 0 :
  * 				first_convergence_level = current_level
  */
-      __pyx_t_7 = PyNumber_Subtract(__pyx_v_listcount, __pyx_v_setcount); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF_SET(__pyx_v_overlap, __pyx_t_7);
-      __pyx_t_7 = 0;
+      __pyx_t_3 = PyNumber_Subtract(__pyx_v_listcount, __pyx_v_setcount); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 257; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF_SET(__pyx_v_overlap, __pyx_t_3);
+      __pyx_t_3 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":253
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":258
  * 			setcount = len(set(tokensofthislevel))
  * 			overlap =  listcount-setcount
  * 			if overlap > 0 and iter == 0 :             # <<<<<<<<<<<<<<
  * 				first_convergence_level = current_level
  * 				iter = 1
  */
-      __pyx_t_7 = PyObject_RichCompare(__pyx_v_overlap, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 253; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_3 = PyObject_RichCompare(__pyx_v_overlap, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 258; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       if (__pyx_t_11) {
       } else {
         __pyx_t_10 = __pyx_t_11;
@@ -5697,7 +5754,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __pyx_L28_bool_binop_done:;
       if (__pyx_t_10) {
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":254
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":259
  * 			overlap =  listcount-setcount
  * 			if overlap > 0 and iter == 0 :
  * 				first_convergence_level = current_level             # <<<<<<<<<<<<<<
@@ -5707,7 +5764,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         __Pyx_INCREF(__pyx_v_current_level);
         __Pyx_DECREF_SET(__pyx_v_first_convergence_level, __pyx_v_current_level);
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":255
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":260
  * 			if overlap > 0 and iter == 0 :
  * 				first_convergence_level = current_level
  * 				iter = 1             # <<<<<<<<<<<<<<
@@ -5719,79 +5776,190 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
       __pyx_L27:;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":259
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":264
  * 			#1) simple linear overlap or 2) zipf distributed quadratic overlap
  * 			#relatedness = relatedness + len(convergingparents)*overlap
  * 			relatedness = relatedness + overlap + len(convergingparents)             # <<<<<<<<<<<<<<
  * 			#relatedness = relatedness + ((len(convergingparents)*overlap*overlap) + 1)
  * 			#find out common tokens of this and previous level so that same token does not get grasped again -
  */
-      __pyx_t_7 = PyNumber_Add(__pyx_v_relatedness, __pyx_v_overlap); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_8 = PyList_GET_SIZE(__pyx_v_convergingparents); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = PyNumber_Add(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 259; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyNumber_Add(__pyx_v_relatedness, __pyx_v_overlap); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_8 = PyList_GET_SIZE(__pyx_v_convergingparents); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_2 = PyNumber_Add(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF_SET(__pyx_v_relatedness, __pyx_t_3);
-      __pyx_t_3 = 0;
+      __Pyx_DECREF_SET(__pyx_v_relatedness, __pyx_t_2);
+      __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":264
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":269
  * 			#relatedness must be increased since repetition of keywords in two successive levels is a sign of
  * 			#interrelatedness(a backedge from child-of-one-of-siblings to one-of-siblings). Remove vertices and edges 					#corresponding to common tokens
  * 			commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))             # <<<<<<<<<<<<<<
  * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
  * 			relatedness = relatedness + len(commontokens)
  */
-      __pyx_t_2 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_intersection); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PySet_New(__pyx_v_tokensofprevlevel); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_4 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_4)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_4);
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_intersection); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = PySet_New(__pyx_v_tokensofprevlevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_1 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_1)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_1);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_7, function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
         }
       }
-      if (!__pyx_t_4) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
+      if (!__pyx_t_1) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_7); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_2);
-        __Pyx_GIVEREF(__pyx_t_2);
-        __pyx_t_2 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 264; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_7);
+        __Pyx_GIVEREF(__pyx_t_7);
+        __pyx_t_7 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF_SET(__pyx_v_commontokens, __pyx_t_3);
-      __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF_SET(__pyx_v_commontokens, __pyx_t_2);
+      __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":265
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":270
  * 			#interrelatedness(a backedge from child-of-one-of-siblings to one-of-siblings). Remove vertices and edges 					#corresponding to common tokens
  * 			commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))
  * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))             # <<<<<<<<<<<<<<
  * 			relatedness = relatedness + len(commontokens)
  * 			output.write('removing tokens already grasped:\n')
  */
-      __pyx_t_7 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_difference); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PySet_New(__pyx_v_tokensofthislevel); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_difference); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_6))) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_3)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_6, function);
+        }
+      }
+      if (!__pyx_t_3) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_commontokens); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+      } else {
+        __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_v_commontokens);
+        PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_commontokens);
+        __Pyx_GIVEREF(__pyx_v_commontokens);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2);
+      __Pyx_GIVEREF(__pyx_t_2);
+      __pyx_t_2 = 0;
+      __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyList_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_2);
+      __pyx_t_2 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":271
+ * 			commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))
+ * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
+ * 			relatedness = relatedness + len(commontokens)             # <<<<<<<<<<<<<<
+ * 			output.write('removing tokens already grasped:\n')
+ * 			#pickle.dump(commontokens,output)
+ */
+      __pyx_t_8 = PyObject_Length(__pyx_v_commontokens); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = PyNumber_Add(__pyx_v_relatedness, __pyx_t_2); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF_SET(__pyx_v_relatedness, __pyx_t_6);
+      __pyx_t_6 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":272
+ * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
+ * 			relatedness = relatedness + len(commontokens)
+ * 			output.write('removing tokens already grasped:\n')             # <<<<<<<<<<<<<<
+ * 			#pickle.dump(commontokens,output)
+ * 			output.write('\n')
+ */
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":274
+ * 			output.write('removing tokens already grasped:\n')
+ * 			#pickle.dump(commontokens,output)
+ * 			output.write('\n')             # <<<<<<<<<<<<<<
+ * 			output.write('Relatedness:\n')
+ * 			output.write(str(relatedness))
+ */
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 274; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 274; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":275
+ * 			#pickle.dump(commontokens,output)
+ * 			output.write('\n')
+ * 			output.write('Relatedness:\n')             # <<<<<<<<<<<<<<
+ * 			output.write(str(relatedness))
+ * 			output.write('\n')
+ */
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":276
+ * 			output.write('\n')
+ * 			output.write('Relatedness:\n')
+ * 			output.write(str(relatedness))             # <<<<<<<<<<<<<<
+ * 			output.write('\n')
+ * 			#decrease the vertices count to address common tokens removed above - edges should remain same since they
+ */
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_INCREF(__pyx_v_relatedness);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_relatedness);
+      __Pyx_GIVEREF(__pyx_v_relatedness);
+      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_7 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_6))) {
@@ -5804,338 +5972,227 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
       }
       if (!__pyx_t_7) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_commontokens); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-      } else {
-        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
-        __Pyx_INCREF(__pyx_v_commontokens);
-        PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_commontokens);
-        __Pyx_GIVEREF(__pyx_v_commontokens);
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3);
-      __Pyx_GIVEREF(__pyx_t_3);
-      __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyList_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 265; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_3);
-      __pyx_t_3 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":266
- * 			commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))
- * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
- * 			relatedness = relatedness + len(commontokens)             # <<<<<<<<<<<<<<
- * 			output.write('removing tokens already grasped:\n')
- * 			#pickle.dump(commontokens,output)
- */
-      __pyx_t_8 = PyObject_Length(__pyx_v_commontokens); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 266; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 266; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = PyNumber_Add(__pyx_v_relatedness, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 266; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF_SET(__pyx_v_relatedness, __pyx_t_6);
-      __pyx_t_6 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":267
- * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
- * 			relatedness = relatedness + len(commontokens)
- * 			output.write('removing tokens already grasped:\n')             # <<<<<<<<<<<<<<
- * 			#pickle.dump(commontokens,output)
- * 			output.write('\n')
- */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__37, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":269
- * 			output.write('removing tokens already grasped:\n')
- * 			#pickle.dump(commontokens,output)
- * 			output.write('\n')             # <<<<<<<<<<<<<<
- * 			output.write('Relatedness:\n')
- * 			output.write(str(relatedness))
- */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__38, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":270
- * 			#pickle.dump(commontokens,output)
- * 			output.write('\n')
- * 			output.write('Relatedness:\n')             # <<<<<<<<<<<<<<
- * 			output.write(str(relatedness))
- * 			output.write('\n')
- */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_tuple__39, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":271
- * 			output.write('\n')
- * 			output.write('Relatedness:\n')
- * 			output.write(str(relatedness))             # <<<<<<<<<<<<<<
- * 			output.write('\n')
- * 			#decrease the vertices count to address common tokens removed above - edges should remain same since they
- */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_INCREF(__pyx_v_relatedness);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_relatedness);
-      __Pyx_GIVEREF(__pyx_v_relatedness);
-      __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_2)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_2);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
-        }
-      }
-      if (!__pyx_t_2) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
       } else {
-        __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
-        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
-        PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_7);
-        __Pyx_GIVEREF(__pyx_t_7);
-        __pyx_t_7 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 271; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __pyx_t_1 = PyTuple_New(1+1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_1, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":272
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":277
  * 			output.write('Relatedness:\n')
  * 			output.write(str(relatedness))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			#decrease the vertices count to address common tokens removed above - edges should remain same since they
  * 			#would just point elsewhere
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__40, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":275
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":280
  * 			#decrease the vertices count to address common tokens removed above - edges should remain same since they
  * 			#would just point elsewhere
  * 			vertices = vertices + setcount - len(commontokens)             # <<<<<<<<<<<<<<
  * 			output.write('Vertices:\n')
  * 			output.write(str(vertices))
  */
-      __pyx_t_6 = PyNumber_Add(__pyx_v_vertices, __pyx_v_setcount); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyNumber_Add(__pyx_v_vertices, __pyx_v_setcount); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_8 = PyObject_Length(__pyx_v_commontokens); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = PyNumber_Subtract(__pyx_t_6, __pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_8 = PyObject_Length(__pyx_v_commontokens); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = PyNumber_Subtract(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF_SET(__pyx_v_vertices, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF_SET(__pyx_v_vertices, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":276
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":281
  * 			#would just point elsewhere
  * 			vertices = vertices + setcount - len(commontokens)
  * 			output.write('Vertices:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(vertices))
  * 			output.write('\n')
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__41, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":277
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":282
  * 			vertices = vertices + setcount - len(commontokens)
  * 			output.write('Vertices:\n')
  * 			output.write(str(vertices))             # <<<<<<<<<<<<<<
  * 			output.write('\n')
  * 			edges = edges + listcount
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_v_vertices);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_vertices);
       __Pyx_GIVEREF(__pyx_v_vertices);
-      __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __pyx_t_6 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
         if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
           __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
         }
       }
       if (!__pyx_t_6) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
-      } else {
-        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_GOTREF(__pyx_t_2);
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-        PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_t_7);
-        __Pyx_GIVEREF(__pyx_t_7);
-        __pyx_t_7 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      } else {
+        __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":278
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":283
  * 			output.write('Vertices:\n')
  * 			output.write(str(vertices))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			edges = edges + listcount
  * 			output.write('Edges:\n')
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__42, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__42, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":279
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":284
  * 			output.write(str(vertices))
  * 			output.write('\n')
  * 			edges = edges + listcount             # <<<<<<<<<<<<<<
  * 			output.write('Edges:\n')
  * 			output.write(str(edges))
  */
-      __pyx_t_4 = PyNumber_Add(__pyx_v_edges, __pyx_v_listcount); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 279; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF_SET(__pyx_v_edges, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __pyx_t_1 = PyNumber_Add(__pyx_v_edges, __pyx_v_listcount); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 284; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF_SET(__pyx_v_edges, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":280
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":285
  * 			output.write('\n')
  * 			edges = edges + listcount
  * 			output.write('Edges:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(edges))
  * 			output.write('\n')
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__43, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__43, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":281
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":286
  * 			edges = edges + listcount
  * 			output.write('Edges:\n')
  * 			output.write(str(edges))             # <<<<<<<<<<<<<<
  * 			output.write('\n')
  * 			current_level = current_level + 1
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_INCREF(__pyx_v_edges);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_edges);
-      __Pyx_GIVEREF(__pyx_v_edges);
-      __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_2)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_v_edges);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_edges);
+      __Pyx_GIVEREF(__pyx_v_edges);
+      __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_7);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
         }
       }
-      if (!__pyx_t_2) {
-        __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
+      if (!__pyx_t_7) {
+        __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_GOTREF(__pyx_t_2);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
-        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_7);
-        __Pyx_GIVEREF(__pyx_t_7);
-        __pyx_t_7 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+        __Pyx_GIVEREF(__pyx_t_3);
+        __pyx_t_3 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":282
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":287
  * 			output.write('Edges:\n')
  * 			output.write(str(edges))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			current_level = current_level + 1
  * 			freqterms1 = tokensofthislevel
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__44, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 287; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__44, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 287; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":283
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":288
  * 			output.write(str(edges))
  * 			output.write('\n')
  * 			current_level = current_level + 1             # <<<<<<<<<<<<<<
  * 			freqterms1 = tokensofthislevel
  * 			tokensofprevlevel = tokensofthislevel
  */
-      __pyx_t_4 = PyNumber_Add(__pyx_v_current_level, __pyx_int_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF_SET(__pyx_v_current_level, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __pyx_t_1 = PyNumber_Add(__pyx_v_current_level, __pyx_int_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF_SET(__pyx_v_current_level, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":284
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":289
  * 			output.write('\n')
  * 			current_level = current_level + 1
  * 			freqterms1 = tokensofthislevel             # <<<<<<<<<<<<<<
@@ -6145,7 +6202,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_INCREF(__pyx_v_tokensofthislevel);
       __Pyx_DECREF_SET(__pyx_v_freqterms1, __pyx_v_tokensofthislevel);
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":285
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":290
  * 			current_level = current_level + 1
  * 			freqterms1 = tokensofthislevel
  * 			tokensofprevlevel = tokensofthislevel             # <<<<<<<<<<<<<<
@@ -6155,175 +6212,175 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_INCREF(__pyx_v_tokensofthislevel);
       __Pyx_DECREF_SET(__pyx_v_tokensofprevlevel, __pyx_v_tokensofthislevel);
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":286
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":291
  * 			freqterms1 = tokensofthislevel
  * 			tokensofprevlevel = tokensofthislevel
  * 			tokensofthislevel = []             # <<<<<<<<<<<<<<
  * 
  * 		intrinsic_merit = vertices*edges*relatedness / first_convergence_level
  */
-      __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 286; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 291; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF_SET(__pyx_v_tokensofthislevel, __pyx_t_1);
+      __pyx_t_1 = 0;
     }
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":288
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":293
  * 			tokensofthislevel = []
  * 
  * 		intrinsic_merit = vertices*edges*relatedness / first_convergence_level             # <<<<<<<<<<<<<<
  * 		output.write('Intrinsic merit of this document is:\n')
  * 		output.write(str(intrinsic_merit))
  */
-    __pyx_t_4 = PyNumber_Multiply(__pyx_v_vertices, __pyx_v_edges); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_t_4, __pyx_v_relatedness); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyNumber_Divide(__pyx_t_3, __pyx_v_first_convergence_level); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 288; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_intrinsic_merit, __pyx_t_4);
-    __pyx_t_4 = 0;
+    __pyx_t_1 = PyNumber_Multiply(__pyx_v_vertices, __pyx_v_edges); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = PyNumber_Multiply(__pyx_t_1, __pyx_v_relatedness); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_v_first_convergence_level); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_intrinsic_merit, __pyx_t_1);
+    __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":289
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":294
  * 
  * 		intrinsic_merit = vertices*edges*relatedness / first_convergence_level
  * 		output.write('Intrinsic merit of this document is:\n')             # <<<<<<<<<<<<<<
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 289; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__45, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 289; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__45, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":290
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":295
  * 		intrinsic_merit = vertices*edges*relatedness / first_convergence_level
  * 		output.write('Intrinsic merit of this document is:\n')
  * 		output.write(str(intrinsic_merit))             # <<<<<<<<<<<<<<
  * 		output.write('\n')
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_intrinsic_merit);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_intrinsic_merit);
     __Pyx_GIVEREF(__pyx_v_intrinsic_merit);
-    __pyx_t_7 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)((PyObject*)(&PyString_Type))), __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_4);
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
       if (likely(__pyx_t_6)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
         __Pyx_INCREF(__pyx_t_6);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
     if (!__pyx_t_6) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_3);
-    } else {
-      __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_2);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
-      PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_t_7);
-      __Pyx_GIVEREF(__pyx_t_7);
-      __pyx_t_7 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 290; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    } else {
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+      PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_t_3);
+      __Pyx_GIVEREF(__pyx_t_3);
+      __pyx_t_3 = 0;
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 295; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":291
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":296
  * 		output.write('Intrinsic merit of this document is:\n')
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')             # <<<<<<<<<<<<<<
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  * 		output.write(nodewithmaxparents)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 291; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__46, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 291; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 296; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__46, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 296; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":292
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":297
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')             # <<<<<<<<<<<<<<
  * 		output.write(nodewithmaxparents)
  * 		output.write('\n')
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 292; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 292; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 297; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__47, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 297; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":293
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":298
  * 		output.write('\n')
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  * 		output.write(nodewithmaxparents)             # <<<<<<<<<<<<<<
  * 		output.write('\n')
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_4);
-      if (likely(__pyx_t_2)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-        __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_7 = NULL;
+    if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_7)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_7);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_4, function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
-    if (!__pyx_t_2) {
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_nodewithmaxparents); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
+    if (!__pyx_t_7) {
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_nodewithmaxparents); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
     } else {
-      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
-      __Pyx_INCREF(__pyx_v_nodewithmaxparents);
-      PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nodewithmaxparents);
-      __Pyx_GIVEREF(__pyx_v_nodewithmaxparents);
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 293; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+      __Pyx_INCREF(__pyx_v_nodewithmaxparents);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_nodewithmaxparents);
+      __Pyx_GIVEREF(__pyx_v_nodewithmaxparents);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 298; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":294
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":299
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  * 		output.write(nodewithmaxparents)
  * 		output.write('\n')             # <<<<<<<<<<<<<<
  * 
  * 	print definitiongraphedges
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_output, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__48, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":167
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":173
  * 	weight_str_map=defaultdict()
  * 
  * 	for filestr in files:             # <<<<<<<<<<<<<<
@@ -6331,91 +6388,91 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 		output = open(outputfile, 'w')
  */
   }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":296
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":301
  * 		output.write('\n')
  * 
  * 	print definitiongraphedges             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_v_definitiongraphedges) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 296; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_v_definitiongraphedges) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":299
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":304
  * 
  * 
  * 	nxg=nx.DiGraph()             # <<<<<<<<<<<<<<
  * 	pos=nx.spectral_layout(nxg)
  * 	for k,v in definitiongraphedges.iteritems():
  */
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_DiGraph); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_4);
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DiGraph); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_1 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
     }
   }
-  if (__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (__pyx_t_1) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_v_nxg = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v_nxg = __pyx_t_4;
+  __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":300
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":305
  * 
  * 	nxg=nx.DiGraph()
  * 	pos=nx.spectral_layout(nxg)             # <<<<<<<<<<<<<<
  * 	for k,v in definitiongraphedges.iteritems():
  * 		for l in v:
  */
-  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_spectral_layout); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-      __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_spectral_layout); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_4, function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
     }
   }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+  if (!__pyx_t_2) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
   } else {
-    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+    __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
     __Pyx_INCREF(__pyx_v_nxg);
-    PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nxg);
+    PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_nxg);
     __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 300; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_v_pos = __pyx_t_1;
-  __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_pos = __pyx_t_4;
+  __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":301
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":306
  * 	nxg=nx.DiGraph()
  * 	pos=nx.spectral_layout(nxg)
  * 	for k,v in definitiongraphedges.iteritems():             # <<<<<<<<<<<<<<
@@ -6425,25 +6482,25 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_t_5 = 0;
   if (unlikely(__pyx_v_definitiongraphedges == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%s'", "iteritems");
-    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
-  __pyx_t_4 = __Pyx_dict_iterator(__pyx_v_definitiongraphedges, 0, __pyx_n_s_iteritems, (&__pyx_t_8), (&__pyx_t_16)); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_1);
-  __pyx_t_1 = __pyx_t_4;
-  __pyx_t_4 = 0;
+  __pyx_t_1 = __Pyx_dict_iterator(__pyx_v_definitiongraphedges, 0, __pyx_n_s_iteritems, (&__pyx_t_8), (&__pyx_t_16)); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __pyx_t_4 = __pyx_t_1;
+  __pyx_t_1 = 0;
   while (1) {
-    __pyx_t_17 = __Pyx_dict_iter_next(__pyx_t_1, __pyx_t_8, &__pyx_t_5, &__pyx_t_4, &__pyx_t_7, NULL, __pyx_t_16);
+    __pyx_t_17 = __Pyx_dict_iter_next(__pyx_t_4, __pyx_t_8, &__pyx_t_5, &__pyx_t_1, &__pyx_t_3, NULL, __pyx_t_16);
     if (unlikely(__pyx_t_17 == 0)) break;
-    if (unlikely(__pyx_t_17 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 301; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_4);
-    __pyx_t_4 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_7);
-    __pyx_t_7 = 0;
+    if (unlikely(__pyx_t_17 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_1);
+    __pyx_t_1 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_v, __pyx_t_3);
+    __pyx_t_3 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":302
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":307
  * 	pos=nx.spectral_layout(nxg)
  * 	for k,v in definitiongraphedges.iteritems():
  * 		for l in v:             # <<<<<<<<<<<<<<
@@ -6451,70 +6508,70 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 			nxg.add_edge(l,k)
  */
     if (likely(PyList_CheckExact(__pyx_v_v)) || PyTuple_CheckExact(__pyx_v_v)) {
-      __pyx_t_7 = __pyx_v_v; __Pyx_INCREF(__pyx_t_7); __pyx_t_14 = 0;
+      __pyx_t_3 = __pyx_v_v; __Pyx_INCREF(__pyx_t_3); __pyx_t_14 = 0;
       __pyx_t_9 = NULL;
     } else {
-      __pyx_t_14 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_v); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_9 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_14 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_v); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     }
     for (;;) {
       if (likely(!__pyx_t_9)) {
-        if (likely(PyList_CheckExact(__pyx_t_7))) {
-          if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_7)) break;
+        if (likely(PyList_CheckExact(__pyx_t_3))) {
+          if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_4 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_14); __Pyx_INCREF(__pyx_t_4); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_1); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_4 = PySequence_ITEM(__pyx_t_7, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         } else {
-          if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
+          if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_COMPILING_IN_CPYTHON
-          __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_14); __Pyx_INCREF(__pyx_t_4); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_14); __Pyx_INCREF(__pyx_t_1); __pyx_t_14++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #else
-          __pyx_t_4 = PySequence_ITEM(__pyx_t_7, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           #endif
         }
       } else {
-        __pyx_t_4 = __pyx_t_9(__pyx_t_7);
-        if (unlikely(!__pyx_t_4)) {
+        __pyx_t_1 = __pyx_t_9(__pyx_t_3);
+        if (unlikely(!__pyx_t_1)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 302; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+            else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           }
           break;
         }
-        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_GOTREF(__pyx_t_1);
       }
-      __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_l, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":303
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":308
  * 	for k,v in definitiongraphedges.iteritems():
  * 		for l in v:
  * 			nxg.add_edge(k,l)             # <<<<<<<<<<<<<<
  * 			nxg.add_edge(l,k)
  * 			ksynset=wn.synsets(k)
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = NULL;
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = NULL;
       __pyx_t_15 = 0;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
-        if (likely(__pyx_t_2)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-          __Pyx_INCREF(__pyx_t_2);
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_7);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_3, function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
           __pyx_t_15 = 1;
         }
       }
-      __pyx_t_6 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      if (__pyx_t_2) {
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+      if (__pyx_t_7) {
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
       }
       __Pyx_INCREF(__pyx_v_k);
       PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_15, __pyx_v_k);
@@ -6522,263 +6579,263 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       __Pyx_INCREF(__pyx_v_l);
       PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_15, __pyx_v_l);
       __Pyx_GIVEREF(__pyx_v_l);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 303; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":304
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":309
  * 		for l in v:
  * 			nxg.add_edge(k,l)
  * 			nxg.add_edge(l,k)             # <<<<<<<<<<<<<<
  * 			ksynset=wn.synsets(k)
  * 			lsynset=wn.synsets(l)
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_add_edge); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_6 = NULL;
       __pyx_t_15 = 0;
-      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_3);
+      if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
         if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
           __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_3, function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
           __pyx_t_15 = 1;
         }
       }
-      __pyx_t_2 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_7 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_6) {
-        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __Pyx_GIVEREF(__pyx_t_6); __pyx_t_6 = NULL;
       }
       __Pyx_INCREF(__pyx_v_l);
-      PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_15, __pyx_v_l);
+      PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_15, __pyx_v_l);
       __Pyx_GIVEREF(__pyx_v_l);
       __Pyx_INCREF(__pyx_v_k);
-      PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_15, __pyx_v_k);
+      PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_15, __pyx_v_k);
       __Pyx_GIVEREF(__pyx_v_k);
-      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_2, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 304; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":305
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":310
  * 			nxg.add_edge(k,l)
  * 			nxg.add_edge(l,k)
  * 			ksynset=wn.synsets(k)             # <<<<<<<<<<<<<<
  * 			lsynset=wn.synsets(l)
  * 			if ksynset and lsynset:
  */
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_synsets); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-        if (likely(__pyx_t_3)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-          __Pyx_INCREF(__pyx_t_3);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_synsets); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __Pyx_DECREF_SET(__pyx_t_7, function);
         }
       }
-      if (!__pyx_t_3) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_k); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
+      if (!__pyx_t_2) {
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_k); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
       } else {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
         __Pyx_INCREF(__pyx_v_k);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_k);
         __Pyx_GIVEREF(__pyx_v_k);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 305; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_ksynset, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_ksynset, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":306
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":311
  * 			nxg.add_edge(l,k)
  * 			ksynset=wn.synsets(k)
  * 			lsynset=wn.synsets(l)             # <<<<<<<<<<<<<<
  * 			if ksynset and lsynset:
  * 				print "ksynset=",ksynset[0]
  */
-      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_synsets); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_wn); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_synsets); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = NULL;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_2)) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_7)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_7);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_6, function);
         }
       }
-      if (!__pyx_t_2) {
-        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_l); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
+      if (!__pyx_t_7) {
+        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_l); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
       } else {
-        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
-        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+        __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
         __Pyx_INCREF(__pyx_v_l);
-        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_l);
+        PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_l);
         __Pyx_GIVEREF(__pyx_v_l);
-        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 306; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_lsynset, __pyx_t_4);
-      __pyx_t_4 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_lsynset, __pyx_t_1);
+      __pyx_t_1 = 0;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":307
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":312
  * 			ksynset=wn.synsets(k)
  * 			lsynset=wn.synsets(l)
  * 			if ksynset and lsynset:             # <<<<<<<<<<<<<<
  * 				print "ksynset=",ksynset[0]
  * 				print "lsynset=",lsynset[0]
  */
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_ksynset); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_ksynset); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 312; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       if (__pyx_t_11) {
       } else {
         __pyx_t_10 = __pyx_t_11;
         goto __pyx_L35_bool_binop_done;
       }
-      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_lsynset); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 307; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_lsynset); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 312; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_10 = __pyx_t_11;
       __pyx_L35_bool_binop_done:;
       if (__pyx_t_10) {
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":308
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":313
  * 			lsynset=wn.synsets(l)
  * 			if ksynset and lsynset:
  * 				print "ksynset=",ksynset[0]             # <<<<<<<<<<<<<<
  * 				print "lsynset=",lsynset[0]
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  */
-        __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_ksynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ksynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 313; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 313; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_INCREF(__pyx_kp_s_ksynset);
         PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_kp_s_ksynset);
         __Pyx_GIVEREF(__pyx_kp_s_ksynset);
-        PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_4);
-        __Pyx_GIVEREF(__pyx_t_4);
-        __pyx_t_4 = 0;
-        if (__Pyx_Print(0, __pyx_t_6, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 308; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_1);
+        __pyx_t_1 = 0;
+        if (__Pyx_Print(0, __pyx_t_6, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 313; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":309
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":314
  * 			if ksynset and lsynset:
  * 				print "ksynset=",ksynset[0]
  * 				print "lsynset=",lsynset[0]             # <<<<<<<<<<<<<<
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
  */
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_lsynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_lsynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_kp_s_lsynset);
-        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_lsynset);
+        PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_lsynset);
         __Pyx_GIVEREF(__pyx_kp_s_lsynset);
-        PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_6);
+        PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_6);
         __pyx_t_6 = 0;
-        if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 309; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":310
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":315
  * 				print "ksynset=",ksynset[0]
  * 				print "lsynset=",lsynset[0]
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])             # <<<<<<<<<<<<<<
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
  * 				for m in hypoksynsets:
  */
-        __pyx_t_4 = PyList_New(0); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_ksynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_3 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_closure); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_ksynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
         __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_23InterviewAlgorithm_main_lambda1, 0, __pyx_n_s_InterviewAlgorithm_main_locals_l, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_closure); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_23InterviewAlgorithm_main_lambda1, 0, __pyx_n_s_InterviewAlgorithm_main_locals_l, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_18 = NULL;
-        if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-          __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_2);
+        if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
+          __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_7);
           if (likely(__pyx_t_18)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
             __Pyx_INCREF(__pyx_t_18);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_2, function);
+            __Pyx_DECREF_SET(__pyx_t_7, function);
           }
         }
         if (!__pyx_t_18) {
-          __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_2); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_6);
         } else {
-          __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_19);
           PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_18); __Pyx_GIVEREF(__pyx_t_18); __pyx_t_18 = NULL;
-          PyTuple_SET_ITEM(__pyx_t_19, 0+1, __pyx_t_3);
-          __Pyx_GIVEREF(__pyx_t_3);
-          __pyx_t_3 = 0;
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_19, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          PyTuple_SET_ITEM(__pyx_t_19, 0+1, __pyx_t_2);
+          __Pyx_GIVEREF(__pyx_t_2);
+          __pyx_t_2 = 0;
+          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_19, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_6);
           __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
         }
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
-          __pyx_t_2 = __pyx_t_6; __Pyx_INCREF(__pyx_t_2); __pyx_t_15 = 0;
+          __pyx_t_7 = __pyx_t_6; __Pyx_INCREF(__pyx_t_7); __pyx_t_15 = 0;
           __pyx_t_20 = NULL;
         } else {
-          __pyx_t_15 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_20 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_15 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_7);
+          __pyx_t_20 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         for (;;) {
           if (likely(!__pyx_t_20)) {
-            if (likely(PyList_CheckExact(__pyx_t_2))) {
-              if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_2)) break;
+            if (likely(PyList_CheckExact(__pyx_t_7))) {
+              if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_7)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_6 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_15); __Pyx_INCREF(__pyx_t_6); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_6 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_15); __Pyx_INCREF(__pyx_t_6); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_6 = PySequence_ITEM(__pyx_t_7, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             } else {
-              if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
+              if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_15); __Pyx_INCREF(__pyx_t_6); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_15); __Pyx_INCREF(__pyx_t_6); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_6 = PySequence_ITEM(__pyx_t_2, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_6 = PySequence_ITEM(__pyx_t_7, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             }
           } else {
-            __pyx_t_6 = __pyx_t_20(__pyx_t_2);
+            __pyx_t_6 = __pyx_t_20(__pyx_t_7);
             if (unlikely(!__pyx_t_6)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
               break;
             }
@@ -6786,133 +6843,133 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
           }
           __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_6);
           __pyx_t_6 = 0;
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_4, (PyObject*)__pyx_v_i))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_v_i))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = PySet_New(__pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 310; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_hypoksynsets, ((PyObject*)__pyx_t_2));
-        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_7 = PySet_New(__pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_hypoksynsets, ((PyObject*)__pyx_t_7));
+        __pyx_t_7 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":311
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":316
  * 				print "lsynset=",lsynset[0]
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])             # <<<<<<<<<<<<<<
  * 				for m in hypoksynsets:
  * 					try:
  */
-        __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_lsynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+        __pyx_t_7 = PyList_New(0); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_lsynset, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_6 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_closure); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_closure); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_19);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_23InterviewAlgorithm_main_1lambda2, 0, __pyx_n_s_InterviewAlgorithm_main_locals_l, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_23InterviewAlgorithm_main_1lambda2, 0, __pyx_n_s_InterviewAlgorithm_main_locals_l, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_3 = NULL;
+        __pyx_t_2 = NULL;
         if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_19))) {
-          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
-          if (likely(__pyx_t_3)) {
+          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_19);
+          if (likely(__pyx_t_2)) {
             PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-            __Pyx_INCREF(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_2);
             __Pyx_INCREF(function);
             __Pyx_DECREF_SET(__pyx_t_19, function);
           }
         }
-        if (!__pyx_t_3) {
-          __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        if (!__pyx_t_2) {
+          __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __Pyx_GOTREF(__pyx_t_4);
+          __Pyx_GOTREF(__pyx_t_1);
         } else {
-          __pyx_t_18 = PyTuple_New(1+1); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_18 = PyTuple_New(1+1); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_18);
-          PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+          PyTuple_SET_ITEM(__pyx_t_18, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
           PyTuple_SET_ITEM(__pyx_t_18, 0+1, __pyx_t_6);
           __Pyx_GIVEREF(__pyx_t_6);
           __pyx_t_6 = 0;
-          __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_18, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-          __Pyx_GOTREF(__pyx_t_4);
+          __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_18, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_GOTREF(__pyx_t_1);
           __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         }
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-        if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
-          __pyx_t_19 = __pyx_t_4; __Pyx_INCREF(__pyx_t_19); __pyx_t_15 = 0;
+        if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
+          __pyx_t_19 = __pyx_t_1; __Pyx_INCREF(__pyx_t_19); __pyx_t_15 = 0;
           __pyx_t_20 = NULL;
         } else {
-          __pyx_t_15 = -1; __pyx_t_19 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_15 = -1; __pyx_t_19 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
           __Pyx_GOTREF(__pyx_t_19);
-          __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         for (;;) {
           if (likely(!__pyx_t_20)) {
             if (likely(PyList_CheckExact(__pyx_t_19))) {
               if (__pyx_t_15 >= PyList_GET_SIZE(__pyx_t_19)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_4 = PyList_GET_ITEM(__pyx_t_19, __pyx_t_15); __Pyx_INCREF(__pyx_t_4); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_1 = PyList_GET_ITEM(__pyx_t_19, __pyx_t_15); __Pyx_INCREF(__pyx_t_1); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_4 = PySequence_ITEM(__pyx_t_19, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_1 = PySequence_ITEM(__pyx_t_19, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             } else {
               if (__pyx_t_15 >= PyTuple_GET_SIZE(__pyx_t_19)) break;
               #if CYTHON_COMPILING_IN_CPYTHON
-              __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_19, __pyx_t_15); __Pyx_INCREF(__pyx_t_4); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_19, __pyx_t_15); __Pyx_INCREF(__pyx_t_1); __pyx_t_15++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #else
-              __pyx_t_4 = PySequence_ITEM(__pyx_t_19, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+              __pyx_t_1 = PySequence_ITEM(__pyx_t_19, __pyx_t_15); __pyx_t_15++; if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               #endif
             }
           } else {
-            __pyx_t_4 = __pyx_t_20(__pyx_t_19);
-            if (unlikely(!__pyx_t_4)) {
+            __pyx_t_1 = __pyx_t_20(__pyx_t_19);
+            if (unlikely(!__pyx_t_1)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
               break;
             }
-            __Pyx_GOTREF(__pyx_t_4);
+            __Pyx_GOTREF(__pyx_t_1);
           }
-          __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_4);
-          __pyx_t_4 = 0;
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_v_i))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
+          __pyx_t_1 = 0;
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_7, (PyObject*)__pyx_v_i))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-        __pyx_t_19 = PySet_New(__pyx_t_2); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 311; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PySet_New(__pyx_t_7); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_19);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __Pyx_XDECREF_SET(__pyx_v_hyperlsynsets, ((PyObject*)__pyx_t_19));
         __pyx_t_19 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":312
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":317
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
  * 				for m in hypoksynsets:             # <<<<<<<<<<<<<<
  * 					try:
  * 						mlemmanames=m.lemma_names()
  */
-        __pyx_t_19 = PyObject_GetIter(__pyx_v_hypoksynsets); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 312; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PyObject_GetIter(__pyx_v_hypoksynsets); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_19);
-        __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 312; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         for (;;) {
           {
-            __pyx_t_2 = __pyx_t_20(__pyx_t_19);
-            if (unlikely(!__pyx_t_2)) {
+            __pyx_t_7 = __pyx_t_20(__pyx_t_19);
+            if (unlikely(!__pyx_t_7)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 312; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
               break;
             }
-            __Pyx_GOTREF(__pyx_t_2);
+            __Pyx_GOTREF(__pyx_t_7);
           }
-          __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_2);
-          __pyx_t_2 = 0;
+          __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_7);
+          __pyx_t_7 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":313
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":318
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
  * 				for m in hypoksynsets:
  * 					try:             # <<<<<<<<<<<<<<
@@ -6926,67 +6983,67 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __Pyx_XGOTREF(__pyx_t_23);
             /*try:*/ {
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":314
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":319
  * 				for m in hypoksynsets:
  * 					try:
  * 						mlemmanames=m.lemma_names()             # <<<<<<<<<<<<<<
  * 						weight_str_map[k+" - "+l]=weight_str_map[k+" - "+l]+" contains "+mlemmanames[0]
  * 					except KeyError:
  */
-              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_m, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_4);
+              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_m, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_18 = NULL;
-              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-                __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_4);
+              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+                __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_1);
                 if (likely(__pyx_t_18)) {
-                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
                   __Pyx_INCREF(__pyx_t_18);
                   __Pyx_INCREF(function);
-                  __Pyx_DECREF_SET(__pyx_t_4, function);
+                  __Pyx_DECREF_SET(__pyx_t_1, function);
                 }
               }
               if (__pyx_t_18) {
-                __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_18); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+                __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_18); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
                 __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
               } else {
-                __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 314; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+                __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 319; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
               }
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_XDECREF_SET(__pyx_v_mlemmanames, __pyx_t_2);
-              __pyx_t_2 = 0;
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_mlemmanames, __pyx_t_7);
+              __pyx_t_7 = 0;
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":315
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":320
  * 					try:
  * 						mlemmanames=m.lemma_names()
  * 						weight_str_map[k+" - "+l]=weight_str_map[k+" - "+l]+" contains "+mlemmanames[0]             # <<<<<<<<<<<<<<
  * 					except KeyError:
  * 						weight_str_map[k+" - "+l]=""
  */
-              __pyx_t_2 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_v_l); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = PyObject_GetItem(__pyx_v_weight_str_map, __pyx_t_4); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;};
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_kp_s_contains); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_mlemmanames, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;};
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_18 = PyNumber_Add(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __pyx_t_7 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_v_l); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = PyObject_GetItem(__pyx_v_weight_str_map, __pyx_t_1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;};
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_kp_s_contains); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_mlemmanames, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;};
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_18 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
               __Pyx_GOTREF(__pyx_t_18);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_v_l); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_4, __pyx_t_18) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 315; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_v_l); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_1, __pyx_t_18) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L43_error;}
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
             }
             __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
@@ -6994,13 +7051,13 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
             goto __pyx_L50_try_end;
             __pyx_L43_error:;
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-            __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+            __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+            __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":316
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":321
  * 						mlemmanames=m.lemma_names()
  * 						weight_str_map[k+" - "+l]=weight_str_map[k+" - "+l]+" contains "+mlemmanames[0]
  * 					except KeyError:             # <<<<<<<<<<<<<<
@@ -7010,28 +7067,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __pyx_t_17 = PyErr_ExceptionMatches(__pyx_builtin_KeyError);
             if (__pyx_t_17) {
               __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.InterviewAlgorithm_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_4, &__pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
+              if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_1, &__pyx_t_7) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
               __Pyx_GOTREF(__pyx_t_18);
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_GOTREF(__pyx_t_2);
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_GOTREF(__pyx_t_7);
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":317
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":322
  * 						weight_str_map[k+" - "+l]=weight_str_map[k+" - "+l]+" contains "+mlemmanames[0]
  * 					except KeyError:
  * 						weight_str_map[k+" - "+l]=""             # <<<<<<<<<<<<<<
  * 				for n in hyperlsynsets:
  * 					try:
  */
-              __pyx_t_6 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
+              __pyx_t_6 = PyNumber_Add(__pyx_v_k, __pyx_kp_s__49); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_3 = PyNumber_Add(__pyx_t_6, __pyx_v_l); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
-              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_2 = PyNumber_Add(__pyx_t_6, __pyx_v_l); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
+              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_3, __pyx_kp_s__2) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 317; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
-              __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_2, __pyx_kp_s__2) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L45_except_error;}
               __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
               goto __pyx_L44_exception_handled;
             }
             goto __pyx_L45_except_error;
@@ -7049,7 +7106,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __pyx_L50_try_end:;
           }
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":312
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":317
  * 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
  * 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
  * 				for m in hypoksynsets:             # <<<<<<<<<<<<<<
@@ -7059,33 +7116,33 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
         }
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":318
+        /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":323
  * 					except KeyError:
  * 						weight_str_map[k+" - "+l]=""
  * 				for n in hyperlsynsets:             # <<<<<<<<<<<<<<
  * 					try:
  * 						nlemmanames=n.lemma_names()
  */
-        __pyx_t_19 = PyObject_GetIter(__pyx_v_hyperlsynsets); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PyObject_GetIter(__pyx_v_hyperlsynsets); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         __Pyx_GOTREF(__pyx_t_19);
-        __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_20 = Py_TYPE(__pyx_t_19)->tp_iternext; if (unlikely(!__pyx_t_20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         for (;;) {
           {
-            __pyx_t_2 = __pyx_t_20(__pyx_t_19);
-            if (unlikely(!__pyx_t_2)) {
+            __pyx_t_7 = __pyx_t_20(__pyx_t_19);
+            if (unlikely(!__pyx_t_7)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 318; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+                else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
               }
               break;
             }
-            __Pyx_GOTREF(__pyx_t_2);
+            __Pyx_GOTREF(__pyx_t_7);
           }
-          __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_2);
-          __pyx_t_2 = 0;
+          __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_7);
+          __pyx_t_7 = 0;
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":319
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":324
  * 						weight_str_map[k+" - "+l]=""
  * 				for n in hyperlsynsets:
  * 					try:             # <<<<<<<<<<<<<<
@@ -7099,67 +7156,67 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __Pyx_XGOTREF(__pyx_t_21);
             /*try:*/ {
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":320
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":325
  * 				for n in hyperlsynsets:
  * 					try:
  * 						nlemmanames=n.lemma_names()             # <<<<<<<<<<<<<<
  * 						weight_str_map[l+" - "+k]=weight_str_map[l+" - "+k]+" is part of "+nlemmanames[0]
  * 					except KeyError:
  */
-              __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_4);
+              __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_n, __pyx_n_s_lemma_names); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_1);
               __pyx_t_18 = NULL;
-              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
-                __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_4);
+              if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_1))) {
+                __pyx_t_18 = PyMethod_GET_SELF(__pyx_t_1);
                 if (likely(__pyx_t_18)) {
-                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+                  PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
                   __Pyx_INCREF(__pyx_t_18);
                   __Pyx_INCREF(function);
-                  __Pyx_DECREF_SET(__pyx_t_4, function);
+                  __Pyx_DECREF_SET(__pyx_t_1, function);
                 }
               }
               if (__pyx_t_18) {
-                __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_18); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+                __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_18); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
                 __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
               } else {
-                __pyx_t_2 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 320; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+                __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
               }
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_XDECREF_SET(__pyx_v_nlemmanames, __pyx_t_2);
-              __pyx_t_2 = 0;
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_nlemmanames, __pyx_t_7);
+              __pyx_t_7 = 0;
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":321
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":326
  * 					try:
  * 						nlemmanames=n.lemma_names()
  * 						weight_str_map[l+" - "+k]=weight_str_map[l+" - "+k]+" is part of "+nlemmanames[0]             # <<<<<<<<<<<<<<
  * 					except KeyError:
  * 						weight_str_map[l+" - "+k]=""
  */
-              __pyx_t_2 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_v_k); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = PyObject_GetItem(__pyx_v_weight_str_map, __pyx_t_4); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;};
-              __Pyx_GOTREF(__pyx_t_2);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_kp_s_is_part_of); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_nlemmanames, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;};
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_18 = PyNumber_Add(__pyx_t_4, __pyx_t_2); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __pyx_t_7 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_v_k); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = PyObject_GetItem(__pyx_v_weight_str_map, __pyx_t_1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;};
+              __Pyx_GOTREF(__pyx_t_7);
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_kp_s_is_part_of); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_nlemmanames, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;};
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_18 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
               __Pyx_GOTREF(__pyx_t_18);
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              __pyx_t_2 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_2);
-              __pyx_t_4 = PyNumber_Add(__pyx_t_2, __pyx_v_k); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_4, __pyx_t_18) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              __pyx_t_7 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_7);
+              __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_v_k); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_1, __pyx_t_18) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 326; __pyx_clineno = __LINE__; goto __pyx_L55_error;}
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
             }
             __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
@@ -7168,12 +7225,12 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             goto __pyx_L62_try_end;
             __pyx_L55_error:;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-            __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-            __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+            __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+            __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
 
-            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":322
+            /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":327
  * 						nlemmanames=n.lemma_names()
  * 						weight_str_map[l+" - "+k]=weight_str_map[l+" - "+k]+" is part of "+nlemmanames[0]
  * 					except KeyError:             # <<<<<<<<<<<<<<
@@ -7183,28 +7240,28 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __pyx_t_17 = PyErr_ExceptionMatches(__pyx_builtin_KeyError);
             if (__pyx_t_17) {
               __Pyx_AddTraceback("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.InterviewAlgorithm_main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_4, &__pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 322; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
+              if (__Pyx_GetException(&__pyx_t_18, &__pyx_t_1, &__pyx_t_7) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
               __Pyx_GOTREF(__pyx_t_18);
-              __Pyx_GOTREF(__pyx_t_4);
-              __Pyx_GOTREF(__pyx_t_2);
+              __Pyx_GOTREF(__pyx_t_1);
+              __Pyx_GOTREF(__pyx_t_7);
 
-              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":323
+              /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":328
  * 						weight_str_map[l+" - "+k]=weight_str_map[l+" - "+k]+" is part of "+nlemmanames[0]
  * 					except KeyError:
  * 						weight_str_map[l+" - "+k]=""             # <<<<<<<<<<<<<<
  * 	if not required_none_vertices:
  * 		filter_none_vertices(nxg)
  */
-              __pyx_t_3 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
-              __Pyx_GOTREF(__pyx_t_3);
-              __pyx_t_6 = PyNumber_Add(__pyx_t_3, __pyx_v_k); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
+              __pyx_t_2 = PyNumber_Add(__pyx_v_l, __pyx_kp_s__49); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
+              __Pyx_GOTREF(__pyx_t_2);
+              __pyx_t_6 = PyNumber_Add(__pyx_t_2, __pyx_v_k); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
               __Pyx_GOTREF(__pyx_t_6);
-              __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_6, __pyx_kp_s__2) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 323; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              if (unlikely(PyObject_SetItem(__pyx_v_weight_str_map, __pyx_t_6, __pyx_kp_s__2) < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 328; __pyx_clineno = __LINE__; goto __pyx_L57_except_error;}
               __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
-              __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
               goto __pyx_L56_exception_handled;
             }
             goto __pyx_L57_except_error;
@@ -7222,7 +7279,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
             __pyx_L62_try_end:;
           }
 
-          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":318
+          /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":323
  * 					except KeyError:
  * 						weight_str_map[k+" - "+l]=""
  * 				for n in hyperlsynsets:             # <<<<<<<<<<<<<<
@@ -7235,7 +7292,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
       }
       __pyx_L34:;
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":302
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":307
  * 	pos=nx.spectral_layout(nxg)
  * 	for k,v in definitiongraphedges.iteritems():
  * 		for l in v:             # <<<<<<<<<<<<<<
@@ -7243,103 +7300,103 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 			nxg.add_edge(l,k)
  */
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":324
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":329
  * 					except KeyError:
  * 						weight_str_map[l+" - "+k]=""
  * 	if not required_none_vertices:             # <<<<<<<<<<<<<<
  * 		filter_none_vertices(nxg)
  * 
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_required_none_vertices); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 324; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 324; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_required_none_vertices); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_10 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_10 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_11 = ((!__pyx_t_10) != 0);
   if (__pyx_t_11) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":325
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":330
  * 						weight_str_map[l+" - "+k]=""
  * 	if not required_none_vertices:
  * 		filter_none_vertices(nxg)             # <<<<<<<<<<<<<<
  * 
  * 	nx.draw_networkx(nxg)
  */
-    __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_filter_none_vertices); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_filter_none_vertices); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 330; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_19 = NULL;
-    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
-      __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_7);
+    if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_3);
       if (likely(__pyx_t_19)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_19);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_7, function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
       }
     }
     if (!__pyx_t_19) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 330; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
     } else {
-      __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_19); __Pyx_GIVEREF(__pyx_t_19); __pyx_t_19 = NULL;
+      __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 330; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_19); __Pyx_GIVEREF(__pyx_t_19); __pyx_t_19 = NULL;
       __Pyx_INCREF(__pyx_v_nxg);
-      PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_nxg);
+      PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nxg);
       __Pyx_GIVEREF(__pyx_v_nxg);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 325; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 330; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     goto __pyx_L65;
   }
   __pyx_L65:;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":327
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":332
  * 		filter_none_vertices(nxg)
  * 
  * 	nx.draw_networkx(nxg)             # <<<<<<<<<<<<<<
  * 	try:
  * 		nx.write_dot(nxg,"InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_RGOGraph.dot")
  */
-  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_draw_networkx); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_draw_networkx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_7)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
     }
   }
-  if (!__pyx_t_7) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+  if (!__pyx_t_3) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
   } else {
-    __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_19);
-    PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+    PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_v_nxg);
     PyTuple_SET_ITEM(__pyx_t_19, 0+1, __pyx_v_nxg);
     __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_19, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 327; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_19, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":328
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":333
  * 
  * 	nx.draw_networkx(nxg)
  * 	try:             # <<<<<<<<<<<<<<
@@ -7353,62 +7410,62 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XGOTREF(__pyx_t_23);
     /*try:*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":329
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":334
  * 	nx.draw_networkx(nxg)
  * 	try:
  * 		nx.write_dot(nxg,"InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_RGOGraph.dot")             # <<<<<<<<<<<<<<
  * 	except:
  * 		pass
  */
-      __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_write_dot); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
+      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 334; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_write_dot); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 334; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
       __Pyx_GOTREF(__pyx_t_19);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = NULL;
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = NULL;
       __pyx_t_8 = 0;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_19))) {
-        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_19);
-        if (likely(__pyx_t_2)) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_19);
+        if (likely(__pyx_t_7)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-          __Pyx_INCREF(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_7);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_19, function);
           __pyx_t_8 = 1;
         }
       }
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      if (__pyx_t_2) {
-        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
+      __pyx_t_3 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 334; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      if (__pyx_t_7) {
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
       }
       __Pyx_INCREF(__pyx_v_nxg);
-      PyTuple_SET_ITEM(__pyx_t_7, 0+__pyx_t_8, __pyx_v_nxg);
+      PyTuple_SET_ITEM(__pyx_t_3, 0+__pyx_t_8, __pyx_v_nxg);
       __Pyx_GIVEREF(__pyx_v_nxg);
       __Pyx_INCREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_5);
-      PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_8, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_5);
+      PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_8, __pyx_kp_s_InterviewAlgorithmWithIntrinisic_5);
       __Pyx_GIVEREF(__pyx_kp_s_InterviewAlgorithmWithIntrinisic_5);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 329; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 334; __pyx_clineno = __LINE__; goto __pyx_L66_error;}
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
     __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
     __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
     goto __pyx_L73_try_end;
     __pyx_L66_error:;
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":330
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":335
  * 	try:
  * 		nx.write_dot(nxg,"InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_RGOGraph.dot")
  * 	except:             # <<<<<<<<<<<<<<
@@ -7427,229 +7484,101 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_L73_try_end:;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":332
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":337
  * 	except:
  * 		pass
  * 	plt.show()             # <<<<<<<<<<<<<<
  * 	nxg.remove_edges_from(nxg.selfloop_edges())
  * 	#print "Core number =",nx.core_number(nxg)
  */
-  __pyx_t_19 = __Pyx_GetModuleGlobalName(__pyx_n_s_plt); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_19 = __Pyx_GetModuleGlobalName(__pyx_n_s_plt); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 337; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_19);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_show); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_show); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 337; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   __pyx_t_19 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
-    __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_7);
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_3);
     if (likely(__pyx_t_19)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_19);
       __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_7, function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
     }
   }
   if (__pyx_t_19) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_19); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_19); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 337; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 332; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 337; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":333
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":338
  * 		pass
  * 	plt.show()
  * 	nxg.remove_edges_from(nxg.selfloop_edges())             # <<<<<<<<<<<<<<
  * 	#print "Core number =",nx.core_number(nxg)
  * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_remove_edges_from); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_remove_edges_from); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_selfloop_edges); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_nxg, __pyx_n_s_selfloop_edges); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (__pyx_t_4) {
-    __pyx_t_19 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  } else {
-    __pyx_t_19 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
+  __pyx_t_1 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_7))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-    if (likely(__pyx_t_2)) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_1)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_7, function);
     }
   }
-  if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_19); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-    __Pyx_GOTREF(__pyx_t_1);
+  if (__pyx_t_1) {
+    __pyx_t_19 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_19 = __Pyx_PyObject_CallNoArg(__pyx_t_7); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  __Pyx_GOTREF(__pyx_t_19);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_7 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_7)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_7);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (!__pyx_t_7) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_19); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
     __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_19);
+  } else {
+    __pyx_t_1 = PyTuple_New(1+1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+    PyTuple_SET_ITEM(__pyx_t_1, 0+1, __pyx_t_19);
     __Pyx_GIVEREF(__pyx_t_19);
     __pyx_t_19 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 333; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":335
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":340
  * 	nxg.remove_edges_from(nxg.selfloop_edges())
  * 	#print "Core number =",nx.core_number(nxg)
  * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)             # <<<<<<<<<<<<<<
  * 	print "Core number (sorted) :",sorted_core_nxg
  * 	print "============================================================================================================="
- */
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_core_number); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_19, function);
-    }
-  }
-  if (!__pyx_t_4) {
-    __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-  } else {
-    __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
-    __Pyx_INCREF(__pyx_v_nxg);
-    PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_nxg);
-    __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_items); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_7)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_7);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_19, function);
-    }
-  }
-  if (__pyx_t_7) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_7); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_19);
-  PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_1);
-  __Pyx_GIVEREF(__pyx_t_1);
-  __pyx_t_1 = 0;
-  __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_key, __pyx_t_7) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_reverse, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_19, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_v_sorted_core_nxg = __pyx_t_7;
-  __pyx_t_7 = 0;
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":336
- * 	#print "Core number =",nx.core_number(nxg)
- * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
- * 	print "Core number (sorted) :",sorted_core_nxg             # <<<<<<<<<<<<<<
- * 	print "============================================================================================================="
- * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
- */
-  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 336; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_INCREF(__pyx_kp_s_Core_number_sorted);
-  PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_Core_number_sorted);
-  __Pyx_GIVEREF(__pyx_kp_s_Core_number_sorted);
-  __Pyx_INCREF(__pyx_v_sorted_core_nxg);
-  PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_sorted_core_nxg);
-  __Pyx_GIVEREF(__pyx_v_sorted_core_nxg);
-  if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 336; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":337
- * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
- * 	print "Core number (sorted) :",sorted_core_nxg
- * 	print "============================================================================================================="             # <<<<<<<<<<<<<<
- * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
- * 	print "============================================================================================================="
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__51) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 337; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":338
- * 	print "Core number (sorted) :",sorted_core_nxg
- * 	print "============================================================================================================="
- * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"             # <<<<<<<<<<<<<<
- * 	print "============================================================================================================="
- * 	no_of_classes=len(nx.core_number(nxg))
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Unsupervised_Classification_base) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 338; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":339
- * 	print "============================================================================================================="
- * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
- * 	print "============================================================================================================="             # <<<<<<<<<<<<<<
- * 	no_of_classes=len(nx.core_number(nxg))
- * 	top_percentile=0
- */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__51) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 339; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":340
- * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
- * 	print "============================================================================================================="
- * 	no_of_classes=len(nx.core_number(nxg))             # <<<<<<<<<<<<<<
- * 	top_percentile=0
- * 	max_core_number=0
  */
   __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
@@ -7667,28 +7596,156 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
   }
   if (!__pyx_t_1) {
-    __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
   } else {
-    __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_2);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
-    __Pyx_INCREF(__pyx_v_nxg);
-    PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_v_nxg);
-    __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
+    __Pyx_INCREF(__pyx_v_nxg);
+    PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nxg);
+    __Pyx_GIVEREF(__pyx_v_nxg);
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_8 = PyObject_Length(__pyx_t_7); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_items); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_19);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_19))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_19, function);
+    }
+  }
+  if (__pyx_t_3) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __pyx_t_4 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
+  __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_19);
+  PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = PyDict_New(); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_v_no_of_classes = __pyx_t_7;
-  __pyx_t_7 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_tuple__50, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_key, __pyx_t_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reverse, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_19, __pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_v_sorted_core_nxg = __pyx_t_3;
+  __pyx_t_3 = 0;
 
   /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":341
+ * 	#print "Core number =",nx.core_number(nxg)
+ * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
+ * 	print "Core number (sorted) :",sorted_core_nxg             # <<<<<<<<<<<<<<
+ * 	print "============================================================================================================="
+ * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+ */
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 341; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_INCREF(__pyx_kp_s_Core_number_sorted);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_s_Core_number_sorted);
+  __Pyx_GIVEREF(__pyx_kp_s_Core_number_sorted);
+  __Pyx_INCREF(__pyx_v_sorted_core_nxg);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_sorted_core_nxg);
+  __Pyx_GIVEREF(__pyx_v_sorted_core_nxg);
+  if (__Pyx_Print(0, __pyx_t_3, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 341; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":342
+ * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
+ * 	print "Core number (sorted) :",sorted_core_nxg
+ * 	print "============================================================================================================="             # <<<<<<<<<<<<<<
+ * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+ * 	print "============================================================================================================="
+ */
+  if (__Pyx_PrintOne(0, __pyx_kp_s__51) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 342; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":343
+ * 	print "Core number (sorted) :",sorted_core_nxg
+ * 	print "============================================================================================================="
+ * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"             # <<<<<<<<<<<<<<
+ * 	print "============================================================================================================="
+ * 	no_of_classes=len(nx.core_number(nxg))
+ */
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Unsupervised_Classification_base) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":344
+ * 	print "============================================================================================================="
+ * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+ * 	print "============================================================================================================="             # <<<<<<<<<<<<<<
+ * 	no_of_classes=len(nx.core_number(nxg))
+ * 	top_percentile=0
+ */
+  if (__Pyx_PrintOne(0, __pyx_kp_s__51) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 344; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":345
+ * 	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+ * 	print "============================================================================================================="
+ * 	no_of_classes=len(nx.core_number(nxg))             # <<<<<<<<<<<<<<
+ * 	top_percentile=0
+ * 	max_core_number=0
+ */
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_core_number); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_19);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_19))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_19);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_19, function);
+    }
+  }
+  if (!__pyx_t_4) {
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+  } else {
+    __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+    __Pyx_INCREF(__pyx_v_nxg);
+    PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nxg);
+    __Pyx_GIVEREF(__pyx_v_nxg);
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_7, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
+  __pyx_t_8 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_8 == -1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_v_no_of_classes = __pyx_t_3;
+  __pyx_t_3 = 0;
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":346
  * 	print "============================================================================================================="
  * 	no_of_classes=len(nx.core_number(nxg))
  * 	top_percentile=0             # <<<<<<<<<<<<<<
@@ -7698,7 +7755,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_top_percentile = __pyx_int_0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":342
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":347
  * 	no_of_classes=len(nx.core_number(nxg))
  * 	top_percentile=0
  * 	max_core_number=0             # <<<<<<<<<<<<<<
@@ -7708,7 +7765,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __Pyx_INCREF(__pyx_int_0);
   __pyx_v_max_core_number = __pyx_int_0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":343
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":348
  * 	top_percentile=0
  * 	max_core_number=0
  * 	for n in sorted_core_nxg:             # <<<<<<<<<<<<<<
@@ -7716,37 +7773,37 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  * 		if top_percentile < no_of_classes*0.10:
  */
   if (likely(PyList_CheckExact(__pyx_v_sorted_core_nxg)) || PyTuple_CheckExact(__pyx_v_sorted_core_nxg)) {
-    __pyx_t_7 = __pyx_v_sorted_core_nxg; __Pyx_INCREF(__pyx_t_7); __pyx_t_8 = 0;
+    __pyx_t_3 = __pyx_v_sorted_core_nxg; __Pyx_INCREF(__pyx_t_3); __pyx_t_8 = 0;
     __pyx_t_9 = NULL;
   } else {
-    __pyx_t_8 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_v_sorted_core_nxg); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_9 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_8 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_v_sorted_core_nxg); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_9 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   for (;;) {
     if (likely(!__pyx_t_9)) {
-      if (likely(PyList_CheckExact(__pyx_t_7))) {
-        if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_7)) break;
+      if (likely(PyList_CheckExact(__pyx_t_3))) {
+        if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_19 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_19); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_19); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_19 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       } else {
-        if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
+        if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_COMPILING_IN_CPYTHON
-        __pyx_t_19 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_8); __Pyx_INCREF(__pyx_t_19); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_8); __Pyx_INCREF(__pyx_t_19); __pyx_t_8++; if (unlikely(0 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #else
-        __pyx_t_19 = PySequence_ITEM(__pyx_t_7, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+        __pyx_t_19 = PySequence_ITEM(__pyx_t_3, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         #endif
       }
     } else {
-      __pyx_t_19 = __pyx_t_9(__pyx_t_7);
+      __pyx_t_19 = __pyx_t_9(__pyx_t_3);
       if (unlikely(!__pyx_t_19)) {
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(exc_type == PyExc_StopIteration || PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 343; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+          else {__pyx_filename = __pyx_f[0]; __pyx_lineno = 348; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
         }
         break;
       }
@@ -7755,65 +7812,65 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XDECREF_SET(__pyx_v_n, __pyx_t_19);
     __pyx_t_19 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":344
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":349
  * 	max_core_number=0
  * 	for n in sorted_core_nxg:
  * 		print "This document belongs to class:",n[0],",core number=",n[1]             # <<<<<<<<<<<<<<
  * 		if top_percentile < no_of_classes*0.10:
  * 			top_percentile+=1
  */
-    __pyx_t_19 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_19 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 344; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_19 = __Pyx_GetItemInt(__pyx_v_n, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_19 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_19);
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 344; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 344; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_4 = PyTuple_New(4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_kp_s_This_document_belongs_to_class);
-    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_s_This_document_belongs_to_class);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_s_This_document_belongs_to_class);
     __Pyx_GIVEREF(__pyx_kp_s_This_document_belongs_to_class);
-    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_19);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_19);
     __Pyx_GIVEREF(__pyx_t_19);
     __Pyx_INCREF(__pyx_kp_s_core_number_2);
-    PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_s_core_number_2);
+    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_s_core_number_2);
     __Pyx_GIVEREF(__pyx_kp_s_core_number_2);
-    PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_2);
-    __Pyx_GIVEREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
     __pyx_t_19 = 0;
-    __pyx_t_2 = 0;
-    if (__Pyx_Print(0, __pyx_t_1, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 344; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_7 = 0;
+    if (__Pyx_Print(0, __pyx_t_4, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":345
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":350
  * 	for n in sorted_core_nxg:
  * 		print "This document belongs to class:",n[0],",core number=",n[1]
  * 		if top_percentile < no_of_classes*0.10:             # <<<<<<<<<<<<<<
  * 			top_percentile+=1
  * 		else:
  */
-    __pyx_t_1 = PyNumber_Multiply(__pyx_v_no_of_classes, __pyx_float_0_10); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = PyObject_RichCompare(__pyx_v_top_percentile, __pyx_t_1, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 345; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_4 = PyNumber_Multiply(__pyx_v_no_of_classes, __pyx_float_0_10); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_7 = PyObject_RichCompare(__pyx_v_top_percentile, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_11) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":346
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":351
  * 		print "This document belongs to class:",n[0],",core number=",n[1]
  * 		if top_percentile < no_of_classes*0.10:
  * 			top_percentile+=1             # <<<<<<<<<<<<<<
  * 		else:
  * 			break
  */
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_top_percentile, __pyx_int_1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 346; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF_SET(__pyx_v_top_percentile, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_top_percentile, __pyx_int_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 351; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF_SET(__pyx_v_top_percentile, __pyx_t_7);
+      __pyx_t_7 = 0;
       goto __pyx_L76;
     }
     /*else*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":348
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":353
  * 			top_percentile+=1
  * 		else:
  * 			break             # <<<<<<<<<<<<<<
@@ -7824,37 +7881,37 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     }
     __pyx_L76:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":349
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":354
  * 		else:
  * 			break
  * 		if n[1] > max_core_number:             # <<<<<<<<<<<<<<
  * 			max_core_number=n[1]
  * 	print "max_core_number",max_core_number
  */
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_2 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyObject_RichCompare(__pyx_t_2, __pyx_v_max_core_number, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 349; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_7 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_7 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_4 = PyObject_RichCompare(__pyx_t_7, __pyx_v_max_core_number, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_11 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     if (__pyx_t_11) {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":350
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":355
  * 			break
  * 		if n[1] > max_core_number:
  * 			max_core_number=n[1]             # <<<<<<<<<<<<<<
  * 	print "max_core_number",max_core_number
  * 
  */
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_1 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 350; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_DECREF_SET(__pyx_v_max_core_number, __pyx_t_1);
-      __pyx_t_1 = 0;
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_v_n, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 355; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF_SET(__pyx_v_max_core_number, __pyx_t_4);
+      __pyx_t_4 = 0;
       goto __pyx_L77;
     }
     __pyx_L77:;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":343
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":348
  * 	top_percentile=0
  * 	max_core_number=0
  * 	for n in sorted_core_nxg:             # <<<<<<<<<<<<<<
@@ -7863,137 +7920,137 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
  */
   }
   __pyx_L75_break:;
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":351
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":356
  * 		if n[1] > max_core_number:
  * 			max_core_number=n[1]
  * 	print "max_core_number",max_core_number             # <<<<<<<<<<<<<<
  * 
  * 	print "==================================================================="
  */
-  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 351; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_n_s_max_core_number);
-  PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_n_s_max_core_number);
+  PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_max_core_number);
   __Pyx_GIVEREF(__pyx_n_s_max_core_number);
   __Pyx_INCREF(__pyx_v_max_core_number);
-  PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_v_max_core_number);
+  PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_max_core_number);
   __Pyx_GIVEREF(__pyx_v_max_core_number);
-  if (__Pyx_Print(0, __pyx_t_7, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 351; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  if (__Pyx_Print(0, __pyx_t_3, 1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":353
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":358
  * 	print "max_core_number",max_core_number
  * 
  * 	print "==================================================================="             # <<<<<<<<<<<<<<
  * 	print "Page Rank of the vertices of RGO Definition Graph"
  * 	print "==================================================================="
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__52) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 353; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_kp_s__52) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 358; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":354
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":359
  * 
  * 	print "==================================================================="
  * 	print "Page Rank of the vertices of RGO Definition Graph"             # <<<<<<<<<<<<<<
  * 	print "==================================================================="
  * 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Page_Rank_of_the_vertices_of_RGO) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 354; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Page_Rank_of_the_vertices_of_RGO) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":355
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":360
  * 	print "==================================================================="
  * 	print "Page Rank of the vertices of RGO Definition Graph"
  * 	print "==================================================================="             # <<<<<<<<<<<<<<
  * 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s__52) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 355; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (__Pyx_PrintOne(0, __pyx_kp_s__52) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 360; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":356
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":361
  * 	print "Page Rank of the vertices of RGO Definition Graph"
  * 	print "==================================================================="
  * 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)             # <<<<<<<<<<<<<<
  * 
  * 	try:
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_pagerank); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_7);
+  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_pagerank); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = NULL;
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_7 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_2)) {
+    __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_19);
+    if (likely(__pyx_t_7)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_7);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_19, function);
     }
   }
-  if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (!__pyx_t_7) {
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __Pyx_GIVEREF(__pyx_t_2); __pyx_t_2 = NULL;
-    __Pyx_INCREF(__pyx_v_nxg);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_nxg);
-    __Pyx_GIVEREF(__pyx_v_nxg);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  } else {
+    __pyx_t_1 = PyTuple_New(1+1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
+    __Pyx_INCREF(__pyx_v_nxg);
+    PyTuple_SET_ITEM(__pyx_t_1, 0+1, __pyx_v_nxg);
+    __Pyx_GIVEREF(__pyx_v_nxg);
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_items); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_items); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_19);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = NULL;
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
   if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_1)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_19);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_19, function);
     }
   }
-  if (__pyx_t_1) {
-    __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_4) {
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_4); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
-    __pyx_t_7 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_19); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
-  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_19 = PyTuple_New(1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_19);
-  PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_7);
-  __Pyx_GIVEREF(__pyx_t_7);
-  __pyx_t_7 = 0;
-  __pyx_t_7 = PyDict_New(); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_3);
+  __Pyx_GIVEREF(__pyx_t_3);
+  __pyx_t_3 = 0;
+  __pyx_t_3 = PyDict_New(); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_operator); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_itemgetter); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_key, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__53, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_reverse, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_19, __pyx_t_7); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_key, __pyx_t_4) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_reverse, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_19, __pyx_t_3); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__Pyx_PrintOne(0, __pyx_t_4) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":358
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":363
  * 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
  * 
  * 	try:             # <<<<<<<<<<<<<<
@@ -8007,88 +8064,88 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XGOTREF(__pyx_t_21);
     /*try:*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":359
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":364
  * 
  * 	try:
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"
  * 		print "=========================================================================================================="
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 359; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 364; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":360
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":365
  * 	try:
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"             # <<<<<<<<<<<<<<
  * 		print "=========================================================================================================="
  * 		print nx.node_connectivity(nxg)
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 360; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 365; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":361
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":366
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print nx.node_connectivity(nxg)
  * 	except:
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 366; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":362
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":367
  * 		print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"
  * 		print "=========================================================================================================="
  * 		print nx.node_connectivity(nxg)             # <<<<<<<<<<<<<<
  * 	except:
  * 		pass
  */
-      __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_node_connectivity); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_node_connectivity); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
       __Pyx_GOTREF(__pyx_t_19);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = NULL;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = NULL;
       if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_19))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_19);
-        if (likely(__pyx_t_7)) {
+        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
+        if (likely(__pyx_t_3)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_3);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_19, function);
         }
       }
-      if (!__pyx_t_7) {
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
-        __Pyx_GOTREF(__pyx_t_1);
-      } else {
-        __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      if (!__pyx_t_3) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
         __Pyx_GOTREF(__pyx_t_4);
-        PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_7); __Pyx_GIVEREF(__pyx_t_7); __pyx_t_7 = NULL;
-        __Pyx_INCREF(__pyx_v_nxg);
-        PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v_nxg);
-        __Pyx_GIVEREF(__pyx_v_nxg);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      } else {
+        __pyx_t_1 = PyTuple_New(1+1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_3); __Pyx_GIVEREF(__pyx_t_3); __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_v_nxg);
+        PyTuple_SET_ITEM(__pyx_t_1, 0+1, __pyx_v_nxg);
+        __Pyx_GIVEREF(__pyx_v_nxg);
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_19, __pyx_t_1, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 362; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_4) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L78_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
     __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
     __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
     goto __pyx_L85_try_end;
     __pyx_L78_error:;
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":363
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":368
  * 		print "=========================================================================================================="
  * 		print nx.node_connectivity(nxg)
  * 	except:             # <<<<<<<<<<<<<<
@@ -8107,7 +8164,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_L85_try_end:;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":365
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":370
  * 	except:
  * 		pass
  * 	try:             # <<<<<<<<<<<<<<
@@ -8121,88 +8178,88 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XGOTREF(__pyx_t_23);
     /*try:*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":366
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":371
  * 		pass
  * 	try:
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"
  * 		print "=========================================================================================================="
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 366; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 371; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":367
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":372
  * 	try:
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"             # <<<<<<<<<<<<<<
  * 		print "=========================================================================================================="
  * 		print nx.minimum_edge_cut(nxg)
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 367; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 372; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":368
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":373
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print nx.minimum_edge_cut(nxg)
  * 	except:
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 368; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 373; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":369
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":374
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"
  * 		print "=========================================================================================================="
  * 		print nx.minimum_edge_cut(nxg)             # <<<<<<<<<<<<<<
  * 	except:
  * 		pass
  */
-      __pyx_t_19 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      __pyx_t_19 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
       __Pyx_GOTREF(__pyx_t_19);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_minimum_edge_cut); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
-      __Pyx_GOTREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_19, __pyx_n_s_minimum_edge_cut); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       __pyx_t_19 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_4);
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_19 = PyMethod_GET_SELF(__pyx_t_1);
         if (likely(__pyx_t_19)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
           __Pyx_INCREF(__pyx_t_19);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
         }
       }
       if (!__pyx_t_19) {
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+        __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_7 = PyTuple_New(1+1); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
-        __Pyx_GOTREF(__pyx_t_7);
-        PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_19); __Pyx_GIVEREF(__pyx_t_19); __pyx_t_19 = NULL;
+        __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+        __Pyx_GOTREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_19); __Pyx_GIVEREF(__pyx_t_19); __pyx_t_19 = NULL;
         __Pyx_INCREF(__pyx_v_nxg);
-        PyTuple_SET_ITEM(__pyx_t_7, 0+1, __pyx_v_nxg);
+        PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_nxg);
         __Pyx_GIVEREF(__pyx_v_nxg);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+        __Pyx_GOTREF(__pyx_t_4);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 369; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_4) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L86_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
     __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
     __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
     goto __pyx_L93_try_end;
     __pyx_L86_error:;
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":370
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":375
  * 		print "=========================================================================================================="
  * 		print nx.minimum_edge_cut(nxg)
  * 	except:             # <<<<<<<<<<<<<<
@@ -8221,7 +8278,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_L93_try_end:;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":372
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":377
  * 	except:
  * 		pass
  * 	try:             # <<<<<<<<<<<<<<
@@ -8235,88 +8292,88 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __Pyx_XGOTREF(__pyx_t_21);
     /*try:*/ {
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":373
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":378
  * 		pass
  * 	try:
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"
  * 		print "=========================================================================================================="
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 373; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 378; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":374
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":379
  * 	try:
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"             # <<<<<<<<<<<<<<
  * 		print "=========================================================================================================="
  * 		print nx.stoer_wagner(nxg)
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 374; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Alternative_Quantitative_Intrins_3) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 379; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":375
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":380
  * 		print "=========================================================================================================="
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"
  * 		print "=========================================================================================================="             # <<<<<<<<<<<<<<
  * 		print nx.stoer_wagner(nxg)
  * 	except:
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 375; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      if (__Pyx_PrintOne(0, __pyx_kp_s__54) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 380; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
 
-      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":376
+      /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":381
  * 		print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"
  * 		print "=========================================================================================================="
  * 		print nx.stoer_wagner(nxg)             # <<<<<<<<<<<<<<
  * 	except:
  * 		pass
  */
-      __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_stoer_wagner); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __pyx_t_4 = NULL;
-      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_4)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_4);
+      __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_nx); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_stoer_wagner); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = NULL;
+      if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_3);
+        if (likely(__pyx_t_1)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_1);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_7, function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
         }
       }
-      if (!__pyx_t_4) {
-        __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_nxg); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
-        __Pyx_GOTREF(__pyx_t_1);
+      if (!__pyx_t_1) {
+        __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_nxg); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+        __Pyx_GOTREF(__pyx_t_4);
       } else {
-        __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+        __pyx_t_19 = PyTuple_New(1+1); if (unlikely(!__pyx_t_19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
         __Pyx_GOTREF(__pyx_t_19);
-        PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_4); __Pyx_GIVEREF(__pyx_t_4); __pyx_t_4 = NULL;
+        PyTuple_SET_ITEM(__pyx_t_19, 0, __pyx_t_1); __Pyx_GIVEREF(__pyx_t_1); __pyx_t_1 = NULL;
         __Pyx_INCREF(__pyx_v_nxg);
         PyTuple_SET_ITEM(__pyx_t_19, 0+1, __pyx_v_nxg);
         __Pyx_GIVEREF(__pyx_v_nxg);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_19, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_19, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+        __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       }
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 376; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_4) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 381; __pyx_clineno = __LINE__; goto __pyx_L94_error;}
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_XDECREF(__pyx_t_23); __pyx_t_23 = 0;
     __Pyx_XDECREF(__pyx_t_22); __pyx_t_22 = 0;
     __Pyx_XDECREF(__pyx_t_21); __pyx_t_21 = 0;
     goto __pyx_L101_try_end;
     __pyx_L94_error:;
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
-    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_XDECREF(__pyx_t_19); __pyx_t_19 = 0;
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":377
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":382
  * 		print "=========================================================================================================="
  * 		print nx.stoer_wagner(nxg)
  * 	except:             # <<<<<<<<<<<<<<
@@ -8335,7 +8392,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
     __pyx_L101_try_end:;
   }
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":148
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":149
  * #	return bigrams(nltk.word_tokenize(phrase))
  * 
  * def InterviewAlgorithm_main(argv1):             # <<<<<<<<<<<<<<
@@ -8360,6 +8417,7 @@ static PyObject *__pyx_pf_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_S
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_corpus);
   __Pyx_XDECREF(__pyx_v_files);
+  __Pyx_XDECREF(__pyx_v_graphcache);
   __Pyx_XDECREF(__pyx_v_definitiongraphedges);
   __Pyx_XDECREF(__pyx_v_definitiongraphedgelabels);
   __Pyx_XDECREF(__pyx_v_weight_str_map);
@@ -8443,6 +8501,7 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {&__pyx_kp_s_127_0_0_1_11211, __pyx_k_127_0_0_1_11211, sizeof(__pyx_k_127_0_0_1_11211), 0, 0, 1, 0},
   {&__pyx_n_s_A, __pyx_k_A, sizeof(__pyx_k_A), 0, 0, 1, 1},
   {&__pyx_kp_s_Alternative_Quantitative_Intrins, __pyx_k_Alternative_Quantitative_Intrins, sizeof(__pyx_k_Alternative_Quantitative_Intrins), 0, 0, 1, 0},
   {&__pyx_kp_s_Alternative_Quantitative_Intrins_2, __pyx_k_Alternative_Quantitative_Intrins_2, sizeof(__pyx_k_Alternative_Quantitative_Intrins_2), 0, 0, 1, 0},
@@ -8450,6 +8509,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_At_level, __pyx_k_At_level, sizeof(__pyx_k_At_level), 0, 0, 1, 0},
   {&__pyx_n_s_B, __pyx_k_B, sizeof(__pyx_k_B), 0, 0, 1, 1},
   {&__pyx_n_s_C, __pyx_k_C, sizeof(__pyx_k_C), 0, 0, 1, 1},
+  {&__pyx_n_s_Client, __pyx_k_Client, sizeof(__pyx_k_Client), 0, 0, 1, 1},
   {&__pyx_kp_s_Core_number_sorted, __pyx_k_Core_number_sorted, sizeof(__pyx_k_Core_number_sorted), 0, 0, 1, 0},
   {&__pyx_n_s_D, __pyx_k_D, sizeof(__pyx_k_D), 0, 0, 1, 1},
   {&__pyx_n_s_DiGraph, __pyx_k_DiGraph, sizeof(__pyx_k_DiGraph), 0, 0, 1, 1},
@@ -8553,6 +8613,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_core_number_2, __pyx_k_core_number_2, sizeof(__pyx_k_core_number_2), 0, 0, 1, 0},
   {&__pyx_n_s_corpus, __pyx_k_corpus, sizeof(__pyx_k_corpus), 0, 0, 1, 1},
   {&__pyx_n_s_current_level, __pyx_k_current_level, sizeof(__pyx_k_current_level), 0, 0, 1, 1},
+  {&__pyx_n_s_debug, __pyx_k_debug, sizeof(__pyx_k_debug), 0, 0, 1, 1},
   {&__pyx_n_s_decode, __pyx_k_decode, sizeof(__pyx_k_decode), 0, 0, 1, 1},
   {&__pyx_n_s_def_tokens, __pyx_k_def_tokens, sizeof(__pyx_k_def_tokens), 0, 0, 1, 1},
   {&__pyx_n_s_defaultdict, __pyx_k_defaultdict, sizeof(__pyx_k_defaultdict), 0, 0, 1, 1},
@@ -8577,9 +8638,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_filter_none_vertices, __pyx_k_filter_none_vertices, sizeof(__pyx_k_filter_none_vertices), 0, 0, 1, 1},
   {&__pyx_n_s_first_convergence_level, __pyx_k_first_convergence_level, sizeof(__pyx_k_first_convergence_level), 0, 0, 1, 1},
   {&__pyx_n_s_first_occur, __pyx_k_first_occur, sizeof(__pyx_k_first_occur), 0, 0, 1, 1},
-  {&__pyx_n_s_flushCacheParents, __pyx_k_flushCacheParents, sizeof(__pyx_k_flushCacheParents), 0, 0, 1, 1},
+  {&__pyx_n_s_flushCache, __pyx_k_flushCache, sizeof(__pyx_k_flushCache), 0, 0, 1, 1},
   {&__pyx_n_s_freqterms1, __pyx_k_freqterms1, sizeof(__pyx_k_freqterms1), 0, 0, 1, 1},
   {&__pyx_n_s_get_context, __pyx_k_get_context, sizeof(__pyx_k_get_context), 0, 0, 1, 1},
+  {&__pyx_n_s_graphcache, __pyx_k_graphcache, sizeof(__pyx_k_graphcache), 0, 0, 1, 1},
   {&__pyx_n_s_he, __pyx_k_he, sizeof(__pyx_k_he), 0, 0, 1, 1},
   {&__pyx_n_s_hyperlsynsets, __pyx_k_hyperlsynsets, sizeof(__pyx_k_hyperlsynsets), 0, 0, 1, 1},
   {&__pyx_n_s_hypernyms, __pyx_k_hypernyms, sizeof(__pyx_k_hypernyms), 0, 0, 1, 1},
@@ -8619,6 +8681,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_maxparents, __pyx_k_maxparents, sizeof(__pyx_k_maxparents), 0, 0, 1, 1},
   {&__pyx_n_s_may, __pyx_k_may, sizeof(__pyx_k_may), 0, 0, 1, 1},
   {&__pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_k_media_shrinivaasanka_0fc4d8a2_1, sizeof(__pyx_k_media_shrinivaasanka_0fc4d8a2_1), 0, 0, 1, 0},
+  {&__pyx_n_s_memcache, __pyx_k_memcache, sizeof(__pyx_k_memcache), 0, 0, 1, 1},
   {&__pyx_n_s_minimum_edge_cut, __pyx_k_minimum_edge_cut, sizeof(__pyx_k_minimum_edge_cut), 0, 0, 1, 1},
   {&__pyx_n_s_mlemmanames, __pyx_k_mlemmanames, sizeof(__pyx_k_mlemmanames), 0, 0, 1, 1},
   {&__pyx_n_s_n, __pyx_k_n, sizeof(__pyx_k_n), 0, 0, 1, 1},
@@ -8732,10 +8795,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 125; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 316; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_builtin_sorted = __Pyx_GetBuiltinName(__pyx_n_s_sorted); if (!__pyx_builtin_sorted) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_open = __Pyx_GetBuiltinName(__pyx_n_s_open); if (!__pyx_builtin_open) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 126; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 321; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_builtin_sorted = __Pyx_GetBuiltinName(__pyx_n_s_sorted); if (!__pyx_builtin_sorted) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -8745,375 +8808,375 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":66
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":67
  * 	for file in corpus:
  * 		raw = open(file).read()
  * 		tokens = nltk.word_tokenize(raw.decode("utf-8"))             # <<<<<<<<<<<<<<
  * 		total_occur = total_occur + len(tokens)
  * 		keyword_occur = keyword_occur + len([w for w in tokens if w == keyword])
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_utf_8); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_utf_8); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":172
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":178
  * 		file1 = open(filestr)
  * 		raw1 = file1.read()
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))             # <<<<<<<<<<<<<<
  * 		#fdist1 = FreqDist(doc1)
  * 		stopwords = nltk.corpus.stopwords.words('english')
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_utf_8); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 172; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_kp_s_utf_8); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 178; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":174
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":180
  * 		doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
  * 		#fdist1 = FreqDist(doc1)
  * 		stopwords = nltk.corpus.stopwords.words('english')             # <<<<<<<<<<<<<<
  * 		stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In', 		'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
  * 		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_english); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 174; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_n_s_english); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 180; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":232
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":237
  * 							y_lemma_names=y.lemma_names()
  * 							definitiongraphedges[x].append(y_lemma_names[0])
  * 				output.write('converging terms(terms with more than 1 parent):\n ')             # <<<<<<<<<<<<<<
  * 				output.write('converging parents :\n')
  * 
  */
-  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_converging_terms_terms_with_more); if (unlikely(!__pyx_tuple__27)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 232; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__27 = PyTuple_Pack(1, __pyx_kp_s_converging_terms_terms_with_more); if (unlikely(!__pyx_tuple__27)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 237; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__27);
   __Pyx_GIVEREF(__pyx_tuple__27);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":233
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":238
  * 							definitiongraphedges[x].append(y_lemma_names[0])
  * 				output.write('converging terms(terms with more than 1 parent):\n ')
  * 				output.write('converging parents :\n')             # <<<<<<<<<<<<<<
  * 
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1
  */
-  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_converging_parents); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 233; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__28 = PyTuple_Pack(1, __pyx_kp_s_converging_parents); if (unlikely(!__pyx_tuple__28)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":238
- * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":243
+ * 			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel
  * 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")             # <<<<<<<<<<<<<<
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  * 			print "prevlevelsynsets:",prevlevelsynsets
  */
-  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_r); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 238; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__29 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_r); if (unlikely(!__pyx_tuple__29)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 243; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":241
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":246
  * 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)
  * 			print "prevlevelsynsets:",prevlevelsynsets
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")             # <<<<<<<<<<<<<<
  * 			picklef.seek(0)
  * 			picklef.truncate()
  */
-  __pyx_tuple__30 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_w); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 241; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__30 = PyTuple_Pack(2, __pyx_kp_s_RecursiveGlossOverlap_MapReduce, __pyx_n_s_w); if (unlikely(!__pyx_tuple__30)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":242
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":247
  * 			print "prevlevelsynsets:",prevlevelsynsets
  * 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","w")
  * 			picklef.seek(0)             # <<<<<<<<<<<<<<
  * 			picklef.truncate()
  * 			output.write('At level:\n')
  */
-  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_int_0); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 242; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__31 = PyTuple_Pack(1, __pyx_int_0); if (unlikely(!__pyx_tuple__31)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":244
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":249
  * 			picklef.seek(0)
  * 			picklef.truncate()
  * 			output.write('At level:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(current_level))
  * 			output.write('\n')
  */
-  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_At_level); if (unlikely(!__pyx_tuple__32)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 244; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__32 = PyTuple_Pack(1, __pyx_kp_s_At_level); if (unlikely(!__pyx_tuple__32)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__32);
   __Pyx_GIVEREF(__pyx_tuple__32);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":246
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":251
  * 			output.write('At level:\n')
  * 			output.write(str(current_level))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			output.write('tokens grasped at this level:\n')
  * 			#pickle.dump(tokensofthislevel, output)
  */
-  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 246; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__34 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__34)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 251; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__34);
   __Pyx_GIVEREF(__pyx_tuple__34);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":247
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":252
  * 			output.write(str(current_level))
  * 			output.write('\n')
  * 			output.write('tokens grasped at this level:\n')             # <<<<<<<<<<<<<<
  * 			#pickle.dump(tokensofthislevel, output)
  * 			output.write('\n')
  */
-  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_tokens_grasped_at_this_level); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 247; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__35 = PyTuple_Pack(1, __pyx_kp_s_tokens_grasped_at_this_level); if (unlikely(!__pyx_tuple__35)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 252; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":249
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":254
  * 			output.write('tokens grasped at this level:\n')
  * 			#pickle.dump(tokensofthislevel, output)
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			listcount = len(tokensofthislevel)
  * 			setcount = len(set(tokensofthislevel))
  */
-  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 249; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__36 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__36)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 254; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__36);
   __Pyx_GIVEREF(__pyx_tuple__36);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":267
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":272
  * 			tokensofthislevel = list(set(tokensofthislevel).difference(commontokens))
  * 			relatedness = relatedness + len(commontokens)
  * 			output.write('removing tokens already grasped:\n')             # <<<<<<<<<<<<<<
  * 			#pickle.dump(commontokens,output)
  * 			output.write('\n')
  */
-  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_removing_tokens_already_grasped); if (unlikely(!__pyx_tuple__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 267; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__37 = PyTuple_Pack(1, __pyx_kp_s_removing_tokens_already_grasped); if (unlikely(!__pyx_tuple__37)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__37);
   __Pyx_GIVEREF(__pyx_tuple__37);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":269
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":274
  * 			output.write('removing tokens already grasped:\n')
  * 			#pickle.dump(commontokens,output)
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			output.write('Relatedness:\n')
  * 			output.write(str(relatedness))
  */
-  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 269; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__38 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__38)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 274; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__38);
   __Pyx_GIVEREF(__pyx_tuple__38);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":270
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":275
  * 			#pickle.dump(commontokens,output)
  * 			output.write('\n')
  * 			output.write('Relatedness:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(relatedness))
  * 			output.write('\n')
  */
-  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_Relatedness); if (unlikely(!__pyx_tuple__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 270; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__39 = PyTuple_Pack(1, __pyx_kp_s_Relatedness); if (unlikely(!__pyx_tuple__39)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 275; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__39);
   __Pyx_GIVEREF(__pyx_tuple__39);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":272
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":277
  * 			output.write('Relatedness:\n')
  * 			output.write(str(relatedness))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			#decrease the vertices count to address common tokens removed above - edges should remain same since they
  * 			#would just point elsewhere
  */
-  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 272; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__40 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__40)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 277; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__40);
   __Pyx_GIVEREF(__pyx_tuple__40);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":276
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":281
  * 			#would just point elsewhere
  * 			vertices = vertices + setcount - len(commontokens)
  * 			output.write('Vertices:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(vertices))
  * 			output.write('\n')
  */
-  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_Vertices); if (unlikely(!__pyx_tuple__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 276; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__41 = PyTuple_Pack(1, __pyx_kp_s_Vertices); if (unlikely(!__pyx_tuple__41)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 281; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__41);
   __Pyx_GIVEREF(__pyx_tuple__41);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":278
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":283
  * 			output.write('Vertices:\n')
  * 			output.write(str(vertices))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			edges = edges + listcount
  * 			output.write('Edges:\n')
  */
-  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 278; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__42 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__42)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 283; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__42);
   __Pyx_GIVEREF(__pyx_tuple__42);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":280
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":285
  * 			output.write('\n')
  * 			edges = edges + listcount
  * 			output.write('Edges:\n')             # <<<<<<<<<<<<<<
  * 			output.write(str(edges))
  * 			output.write('\n')
  */
-  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_kp_s_Edges); if (unlikely(!__pyx_tuple__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 280; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__43 = PyTuple_Pack(1, __pyx_kp_s_Edges); if (unlikely(!__pyx_tuple__43)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 285; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__43);
   __Pyx_GIVEREF(__pyx_tuple__43);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":282
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":287
  * 			output.write('Edges:\n')
  * 			output.write(str(edges))
  * 			output.write('\n')             # <<<<<<<<<<<<<<
  * 			current_level = current_level + 1
  * 			freqterms1 = tokensofthislevel
  */
-  __pyx_tuple__44 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__44)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 282; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__44 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__44)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 287; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__44);
   __Pyx_GIVEREF(__pyx_tuple__44);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":289
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":294
  * 
  * 		intrinsic_merit = vertices*edges*relatedness / first_convergence_level
  * 		output.write('Intrinsic merit of this document is:\n')             # <<<<<<<<<<<<<<
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')
  */
-  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_kp_s_Intrinsic_merit_of_this_document); if (unlikely(!__pyx_tuple__45)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 289; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__45 = PyTuple_Pack(1, __pyx_kp_s_Intrinsic_merit_of_this_document); if (unlikely(!__pyx_tuple__45)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__45);
   __Pyx_GIVEREF(__pyx_tuple__45);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":291
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":296
  * 		output.write('Intrinsic merit of this document is:\n')
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')             # <<<<<<<<<<<<<<
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  * 		output.write(nodewithmaxparents)
  */
-  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__46)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 291; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__46 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__46)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 296; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":292
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":297
  * 		output.write(str(intrinsic_merit))
  * 		output.write('\n')
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')             # <<<<<<<<<<<<<<
  * 		output.write(nodewithmaxparents)
  * 		output.write('\n')
  */
-  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_Node_with_maximum_parents_and_he); if (unlikely(!__pyx_tuple__47)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 292; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__47 = PyTuple_Pack(1, __pyx_kp_s_Node_with_maximum_parents_and_he); if (unlikely(!__pyx_tuple__47)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 297; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__47);
   __Pyx_GIVEREF(__pyx_tuple__47);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":294
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":299
  * 		output.write('Node with maximum parents (and hence the most likely class of document) is:\n')
  * 		output.write(nodewithmaxparents)
  * 		output.write('\n')             # <<<<<<<<<<<<<<
  * 
  * 	print definitiongraphedges
  */
-  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__48)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 294; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__48 = PyTuple_Pack(1, __pyx_kp_s__33); if (unlikely(!__pyx_tuple__48)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 299; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__48);
   __Pyx_GIVEREF(__pyx_tuple__48);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":335
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":340
  * 	nxg.remove_edges_from(nxg.selfloop_edges())
  * 	#print "Core number =",nx.core_number(nxg)
  * 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)             # <<<<<<<<<<<<<<
  * 	print "Core number (sorted) :",sorted_core_nxg
  * 	print "============================================================================================================="
  */
-  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__50)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 335; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__50 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__50)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 340; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__50);
   __Pyx_GIVEREF(__pyx_tuple__50);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":356
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":361
  * 	print "Page Rank of the vertices of RGO Definition Graph"
  * 	print "==================================================================="
  * 	print sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)             # <<<<<<<<<<<<<<
  * 
  * 	try:
  */
-  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__53)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 356; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_int_1); if (unlikely(!__pyx_tuple__53)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 361; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__53);
   __Pyx_GIVEREF(__pyx_tuple__53);
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":60
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":61
  * 
  * #function - compute_idf()
  * def compute_idf(corpus, keyword):             # <<<<<<<<<<<<<<
  * 	import math
  * 	total_occur = 0
  */
-  __pyx_tuple__55 = PyTuple_Pack(9, __pyx_n_s_corpus, __pyx_n_s_keyword, __pyx_n_s_math, __pyx_n_s_total_occur, __pyx_n_s_keyword_occur, __pyx_n_s_file, __pyx_n_s_raw, __pyx_n_s_tokens, __pyx_n_s_w); if (unlikely(!__pyx_tuple__55)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__55 = PyTuple_Pack(9, __pyx_n_s_corpus, __pyx_n_s_keyword, __pyx_n_s_math, __pyx_n_s_total_occur, __pyx_n_s_keyword_occur, __pyx_n_s_file, __pyx_n_s_raw, __pyx_n_s_tokens, __pyx_n_s_w); if (unlikely(!__pyx_tuple__55)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__55);
   __Pyx_GIVEREF(__pyx_tuple__55);
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_compute_idf, 60, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_compute_idf, 61, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":73
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":74
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents(keyword, prevlevelsynsets):             # <<<<<<<<<<<<<<
  * 	parents = []
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  */
-  __pyx_tuple__57 = PyTuple_Pack(5, __pyx_n_s_keyword, __pyx_n_s_prevlevelsynsets, __pyx_n_s_parents, __pyx_n_s_syn, __pyx_n_s_syndef_tokens); if (unlikely(!__pyx_tuple__57)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__57 = PyTuple_Pack(5, __pyx_n_s_keyword, __pyx_n_s_prevlevelsynsets, __pyx_n_s_parents, __pyx_n_s_syn, __pyx_n_s_syndef_tokens); if (unlikely(!__pyx_tuple__57)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__57);
   __Pyx_GIVEREF(__pyx_tuple__57);
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_parents, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(2, 0, 5, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_parents, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":89
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":90
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents_tokens(keyword, prevleveltokens):             # <<<<<<<<<<<<<<
  * 	parents = []
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens
  */
-  __pyx_tuple__59 = PyTuple_Pack(7, __pyx_n_s_keyword, __pyx_n_s_prevleveltokens, __pyx_n_s_parents, __pyx_n_s_prevleveltoken, __pyx_n_s_syns, __pyx_n_s_syn, __pyx_n_s_syndef_tokens); if (unlikely(!__pyx_tuple__59)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__59 = PyTuple_Pack(7, __pyx_n_s_keyword, __pyx_n_s_prevleveltokens, __pyx_n_s_parents, __pyx_n_s_prevleveltoken, __pyx_n_s_syns, __pyx_n_s_syn, __pyx_n_s_syndef_tokens); if (unlikely(!__pyx_tuple__59)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__59);
   __Pyx_GIVEREF(__pyx_tuple__59);
-  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_parents_tokens, 89, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_parents_tokens, 90, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":107
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":108
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
  * 	maxmatch = -1
  * 	retset = []
  */
-  __pyx_tuple__61 = PyTuple_Pack(7, __pyx_n_s_doc_tokens, __pyx_n_s_synsets, __pyx_n_s_maxmatch, __pyx_n_s_retset, __pyx_n_s_synset, __pyx_n_s_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_tuple__61)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__61 = PyTuple_Pack(7, __pyx_n_s_doc_tokens, __pyx_n_s_synsets, __pyx_n_s_maxmatch, __pyx_n_s_retset, __pyx_n_s_synset, __pyx_n_s_def_tokens, __pyx_n_s_intersection); if (unlikely(!__pyx_tuple__61)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__61);
   __Pyx_GIVEREF(__pyx_tuple__61);
-  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_best_matching_synset, 107, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_best_matching_synset, 108, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":119
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":120
  * 
  * #function - get_context()
  * def get_context(query, documents):             # <<<<<<<<<<<<<<
  * 	file1 = open(documents[0])
  * 	file_contents = file1.read()
  */
-  __pyx_tuple__63 = PyTuple_Pack(8, __pyx_n_s_query, __pyx_n_s_documents, __pyx_n_s_file1, __pyx_n_s_file_contents, __pyx_n_s_file_tokens, __pyx_n_s_first_occur, __pyx_n_s_context, __pyx_n_s_i); if (unlikely(!__pyx_tuple__63)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__63 = PyTuple_Pack(8, __pyx_n_s_query, __pyx_n_s_documents, __pyx_n_s_file1, __pyx_n_s_file_contents, __pyx_n_s_file_tokens, __pyx_n_s_first_occur, __pyx_n_s_context, __pyx_n_s_i); if (unlikely(!__pyx_tuple__63)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__63);
   __Pyx_GIVEREF(__pyx_tuple__63);
-  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__63, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_get_context, 119, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__63, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_get_context, 120, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":132
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
  * 	return context
  * 
  * def filter_none_vertices(nxg):             # <<<<<<<<<<<<<<
  * 	for e in nx.edges(nxg):
  * 		if e[0] == "None" or e[1] == "None":
  */
-  __pyx_tuple__65 = PyTuple_Pack(2, __pyx_n_s_nxg, __pyx_n_s_e); if (unlikely(!__pyx_tuple__65)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__65 = PyTuple_Pack(2, __pyx_n_s_nxg, __pyx_n_s_e); if (unlikely(!__pyx_tuple__65)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__65);
   __Pyx_GIVEREF(__pyx_tuple__65);
-  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__65, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_filter_none_vertices, 132, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__65, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_filter_none_vertices, 133, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":148
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":149
  * #	return bigrams(nltk.word_tokenize(phrase))
  * 
  * def InterviewAlgorithm_main(argv1):             # <<<<<<<<<<<<<<
  * 	#----------------------------------------------
  * 	#1.Get the input documents
  */
-  __pyx_tuple__67 = PyTuple_Pack(61, __pyx_n_s_argv1, __pyx_n_s_corpus, __pyx_n_s_files, __pyx_n_s_definitiongraphedges, __pyx_n_s_definitiongraphedgelabels, __pyx_n_s_weight_str_map, __pyx_n_s_filestr, __pyx_n_s_outputfile, __pyx_n_s_output, __pyx_n_s_file1, __pyx_n_s_raw1, __pyx_n_s_doc1, __pyx_n_s_stopwords, __pyx_n_s_puncts, __pyx_n_s_freqterms1, __pyx_n_s_current_level, __pyx_n_s_nodewithmaxparents, __pyx_n_s_noofparents, __pyx_n_s_maxparents, __pyx_n_s_relatedness, __pyx_n_s_first_convergence_level, __pyx_n_s_tokensofthislevel, __pyx_n_s_convergingterms, __pyx_n_s_convergingparents, __pyx_n_s_tokensofprevlevel, __pyx_n_s_prevlevelsynsets, __pyx_n_s_commontokens, __pyx_n_s_vertices, __pyx_n_s_edges, __pyx_n_s_overlap, __pyx_n_s_iter, __pyx_n_s_prevlevelsynsets_tokens, __pyx_n_s_s_2, __pyx_n_s_s_lemma, __pyx_n_s_x, __pyx_n_s_parents_x, __pyx_n_s_y, __pyx_n_s_y_lemma_names, __pyx_n_s_picklef, __pyx_n_s_listcount, __pyx_n_s_setcount, __pyx_n_s_intrinsic_merit, __pyx_n_s_nxg, __pyx_n_s_pos, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_l, __pyx_n_s_ksynset_2, __pyx_n_s_lsynset_2, __pyx_n_s_hypoksynsets, __pyx_n_s_hyperlsynsets, __pyx_n_s_m, __pyx_n_s_mlemmanames, __pyx_n_s_n, __pyx_n_s_nlemmanames, __pyx_n_s_sorted_core_nxg, __pyx_n_s_no_of_classes, __pyx_n_s_top_percentile, __pyx_n_s_max_core_number, __pyx_n_s_w, __pyx_n_s_i); if (unlikely(!__pyx_tuple__67)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__67 = PyTuple_Pack(62, __pyx_n_s_argv1, __pyx_n_s_corpus, __pyx_n_s_files, __pyx_n_s_graphcache, __pyx_n_s_definitiongraphedges, __pyx_n_s_definitiongraphedgelabels, __pyx_n_s_weight_str_map, __pyx_n_s_filestr, __pyx_n_s_outputfile, __pyx_n_s_output, __pyx_n_s_file1, __pyx_n_s_raw1, __pyx_n_s_doc1, __pyx_n_s_stopwords, __pyx_n_s_puncts, __pyx_n_s_freqterms1, __pyx_n_s_current_level, __pyx_n_s_nodewithmaxparents, __pyx_n_s_noofparents, __pyx_n_s_maxparents, __pyx_n_s_relatedness, __pyx_n_s_first_convergence_level, __pyx_n_s_tokensofthislevel, __pyx_n_s_convergingterms, __pyx_n_s_convergingparents, __pyx_n_s_tokensofprevlevel, __pyx_n_s_prevlevelsynsets, __pyx_n_s_commontokens, __pyx_n_s_vertices, __pyx_n_s_edges, __pyx_n_s_overlap, __pyx_n_s_iter, __pyx_n_s_prevlevelsynsets_tokens, __pyx_n_s_s_2, __pyx_n_s_s_lemma, __pyx_n_s_x, __pyx_n_s_parents_x, __pyx_n_s_y, __pyx_n_s_y_lemma_names, __pyx_n_s_picklef, __pyx_n_s_listcount, __pyx_n_s_setcount, __pyx_n_s_intrinsic_merit, __pyx_n_s_nxg, __pyx_n_s_pos, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_l, __pyx_n_s_ksynset_2, __pyx_n_s_lsynset_2, __pyx_n_s_hypoksynsets, __pyx_n_s_hyperlsynsets, __pyx_n_s_m, __pyx_n_s_mlemmanames, __pyx_n_s_n, __pyx_n_s_nlemmanames, __pyx_n_s_sorted_core_nxg, __pyx_n_s_no_of_classes, __pyx_n_s_top_percentile, __pyx_n_s_max_core_number, __pyx_n_s_w, __pyx_n_s_i); if (unlikely(!__pyx_tuple__67)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__67);
   __Pyx_GIVEREF(__pyx_tuple__67);
-  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(1, 0, 61, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__67, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_InterviewAlgorithm_main, 148, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(1, 0, 62, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__67, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_shrinivaasanka_0fc4d8a2_1, __pyx_n_s_InterviewAlgorithm_main, 149, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -9397,7 +9460,7 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark(v
  * import Queue
  * import operator             # <<<<<<<<<<<<<<
  * #import TreeWidth
- * import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
+ * import memcache
  */
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_operator, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
@@ -9407,142 +9470,154 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark(v
   /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":41
  * import operator
  * #import TreeWidth
+ * import memcache             # <<<<<<<<<<<<<<
+ * import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
+ * 
+ */
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_memcache, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_memcache, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":42
+ * #import TreeWidth
+ * import memcache
  * import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer             # <<<<<<<<<<<<<<
  * 
  * parents_computation_spark=True
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_InterviewAlgorithmWithIntrinisic, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_InterviewAlgorithmWithIntrinisic, 0, -1); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_InterviewAlgorithmWithIntrinisic, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":43
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":44
  * import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
  * 
  * parents_computation_spark=True             # <<<<<<<<<<<<<<
  * 
  * #########################################################################################################
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents_computation_spark, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 43; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents_computation_spark, Py_True) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 44; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":57
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":58
  * #########################################################################################################
  * 
  * required_none_vertices=False             # <<<<<<<<<<<<<<
  * 
  * #function - compute_idf()
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_required_none_vertices, Py_False) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_required_none_vertices, Py_False) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":60
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":61
  * 
  * #function - compute_idf()
  * def compute_idf(corpus, keyword):             # <<<<<<<<<<<<<<
  * 	import math
  * 	total_occur = 0
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_1compute_idf, 0, __pyx_n_s_compute_idf, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_1compute_idf, 0, __pyx_n_s_compute_idf, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_compute_idf, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_compute_idf, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":73
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":74
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents(keyword, prevlevelsynsets):             # <<<<<<<<<<<<<<
  * 	parents = []
  * 	print "parents(): prevlevelsynsets:",prevlevelsynsets
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_3parents, 0, __pyx_n_s_parents, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_3parents, 0, __pyx_n_s_parents, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":89
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":90
  * #parents (at level i-1) of a given vertex at level i
  * #arguments are a keyword at present level and all disambiguated synsets of previous level
  * def parents_tokens(keyword, prevleveltokens):             # <<<<<<<<<<<<<<
  * 	parents = []
  * 	print "parents_tokens(): prevleveltokens:",prevleveltokens
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_5parents_tokens, 0, __pyx_n_s_parents_tokens, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_5parents_tokens, 0, __pyx_n_s_parents_tokens, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents_tokens, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_parents_tokens, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":107
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":108
  * 
  * #function - best_matching_synset()
  * def best_matching_synset(doc_tokens, synsets):             # <<<<<<<<<<<<<<
  * 	maxmatch = -1
  * 	retset = []
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_7best_matching_synset, 0, __pyx_n_s_best_matching_synset, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_7best_matching_synset, 0, __pyx_n_s_best_matching_synset, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_best_matching_synset, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 107; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_best_matching_synset, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 108; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":119
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":120
  * 
  * #function - get_context()
  * def get_context(query, documents):             # <<<<<<<<<<<<<<
  * 	file1 = open(documents[0])
  * 	file_contents = file1.read()
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_9get_context, 0, __pyx_n_s_get_context, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_9get_context, 0, __pyx_n_s_get_context, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_context, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 119; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_context, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 120; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":132
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":133
  * 	return context
  * 
  * def filter_none_vertices(nxg):             # <<<<<<<<<<<<<<
  * 	for e in nx.edges(nxg):
  * 		if e[0] == "None" or e[1] == "None":
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_11filter_none_vertices, 0, __pyx_n_s_filter_none_vertices, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_11filter_none_vertices, 0, __pyx_n_s_filter_none_vertices, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_filter_none_vertices, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 132; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_filter_none_vertices, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 133; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":148
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":149
  * #	return bigrams(nltk.word_tokenize(phrase))
  * 
  * def InterviewAlgorithm_main(argv1):             # <<<<<<<<<<<<<<
  * 	#----------------------------------------------
  * 	#1.Get the input documents
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_13InterviewAlgorithm_main, 0, __pyx_n_s_InterviewAlgorithm_main, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_56InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark_13InterviewAlgorithm_main, 0, __pyx_n_s_InterviewAlgorithm_main, NULL, __pyx_n_s_InterviewAlgorithmWithIntrinisic_4, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_InterviewAlgorithm_main, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 148; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_InterviewAlgorithm_main, __pyx_t_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":387
+  /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":392
  * 	#	pass
  * 
  * if __name__=="__main__":             # <<<<<<<<<<<<<<
  * 	InterviewAlgorithm_main(sys.argv[1])
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_name); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 387; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_name); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 392; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_main, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 387; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_n_s_main, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 392; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":388
+    /* "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py":393
  * 
  * if __name__=="__main__":
  * 	InterviewAlgorithm_main(sys.argv[1])             # <<<<<<<<<<<<<<
  */
-    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithm_main); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_InterviewAlgorithm_main); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_sys); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_argv); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_argv); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_5, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
+    __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_5, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(__pyx_t_4 == NULL)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -9556,17 +9631,17 @@ PyMODINIT_FUNC PyInit_InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark(v
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_6);
       PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __Pyx_GIVEREF(__pyx_t_5); __pyx_t_5 = NULL;
       PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_4);
       __pyx_t_4 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 388; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 393; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }

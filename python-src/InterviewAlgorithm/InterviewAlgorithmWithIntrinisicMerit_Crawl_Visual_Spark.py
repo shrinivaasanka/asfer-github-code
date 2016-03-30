@@ -38,6 +38,7 @@ import matplotlib.pyplot as plt
 import Queue
 import operator
 #import TreeWidth
+import memcache
 import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
 
 parents_computation_spark=True
@@ -155,9 +156,14 @@ def InterviewAlgorithm_main(argv1):
 
 	files = [argv1]
 
+	#----------------------------------------------
+	#2.Initialize MemCached Client
+	#----------------------------------------------
+	graphcache=memcache.Client(["127.0.0.1:11211"], debug=1)
+	InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCache(graphcache)
 
 	#---------------------------------------------------------------------------------
-	#2.Compute intrinsic merit (either using linear or quadratic overlap)
+	#3.Compute intrinsic merit (either using linear or quadratic overlap)
 	#---------------------------------------------------------------------------------
 
 	definitiongraphedges=defaultdict(list)
@@ -199,7 +205,6 @@ def InterviewAlgorithm_main(argv1):
 			#crucial - gather nodes which converge/overlap (have more than 1 parent)
 			if current_level > 1:
 				print current_level
-				InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCacheParents()
 				prevlevelsynsets_tokens=[]
 				for s in prevlevelsynsets:
 					s_lemma=s.lemma_names()
@@ -210,7 +215,7 @@ def InterviewAlgorithm_main(argv1):
 					#	s_lemma=s.lemma_names()
 					#	prevlevelsynsets_tokens.append(s_lemma[0])
 					if parents_computation_spark:
-						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens)
+						parents_x = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce_Parents(x,prevlevelsynsets_tokens,graphcache)
 						if len(parents_x) > 1:
 							convergingterms.append(x)
 					else:
@@ -233,7 +238,7 @@ def InterviewAlgorithm_main(argv1):
 				output.write('converging parents :\n')
 	
 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=",freqterms1	
-			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1).tokensatthislevel
+			tokensofthislevel=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(current_level, freqterms1, graphcache).tokensatthislevel
 			print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:",tokensofthislevel
 			picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
 			prevlevelsynsets=InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(picklef)

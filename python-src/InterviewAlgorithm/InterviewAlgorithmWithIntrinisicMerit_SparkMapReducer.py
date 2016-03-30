@@ -61,8 +61,6 @@ lookupCacheParents=True
 #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
 rgo_object=namedtuple("rgo_object", "tokensatthislevel")
 picklelock=threading.Lock()
-graphcache_mapreduce=defaultdict(lambda: "Novalue")
-graphcache_mapreduce_parents=defaultdict(lambda: "Novalue")
 
 def asfer_pickle_string_dump(s,picklef):
 	print "asfer_pickle_string_dump(): picklef.write():",s
@@ -153,34 +151,36 @@ def best_matching_synset(doc_tokens, synsets):
 			retset = synset
 	return retset
 
-def Spark_MapReduce(level, wordsatthislevel):
+def Spark_MapReduce(level, wordsatthislevel, graphcache):
 	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
-	if lookupCache and graphcache_mapreduce[md5hash] != "Novalue":
-		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
-		return graphcache_mapreduce[md5hash]
-	else:	
-		spcon=SparkContext("local[2]","Spark_MapReduce")
-		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
-		paralleldata=spcon.parallelize(wordsatthislevel).cache()
-		#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
-		k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
-
-		#dict_k=k.collect()
-		#s = sorted(dict_k.items(),key=operator.itemgetter(1), reverse=True)
-		#print "Spark MapReduce results:"
-		#print s
-		############################
-		sqlContext=SQLContext(spcon)
-		recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
-		recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
-		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
-		dict_query_results=dict(query_results.collect())
-		#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
-		#print dict_query_results[1]
-		graphcache_mapreduce[md5hash]=dict_query_results[1]
-		print "graphcache_mapreduce updated:", graphcache_mapreduce
-		spcon.stop()
-		return dict_query_results[1]
+	if lookupCache:
+		cachevalue=graphcache.get(md5hash)
+		if cachevalue: 
+			print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
+			return cachevalue 
+		else:	
+			spcon=SparkContext("local[2]","Spark_MapReduce")
+			print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
+			paralleldata=spcon.parallelize(wordsatthislevel).cache()
+			#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
+			k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
+	
+			#dict_k=k.collect()
+			#s = sorted(dict_k.items(),key=operator.itemgetter(1), reverse=True)
+			#print "Spark MapReduce results:"
+			#print s
+			############################
+			sqlContext=SQLContext(spcon)
+			recursiveglossoverlap_schema=sqlContext.createDataFrame(k.collect())
+			recursiveglossoverlap_schema.registerTempTable("Interview_RecursiveGlossOverlap")
+			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap")
+			dict_query_results=dict(query_results.collect())
+			#print "Spark_MapReduce() - SparkSQL DataFrame query results:"
+			#print dict_query_results[1]
+			graphcache.set(md5hash, dict_query_results[1])
+			print "graphcache_mapreduce updated:", graphcache
+			spcon.stop()
+			return dict_query_results[1]
 
 #Following parents computation from prevlevel synsets is map-reduced in Spark
 #parents (at level i-1) of a given vertex at level i
@@ -223,40 +223,40 @@ def reduceFunction_Parents(parents1, parents2):
 	else:
 		return parents1 + parents2
 
-def Spark_MapReduce_Parents(keyword, tokensofprevlevel):
+def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
 	tokensofprevlevelkeyword=tokensofprevlevel
 	tokensofprevlevelkeyword.append(keyword)
 	md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
+	md5hashparents = md5hashparents + "parents"
 	#md5hashparents = hashlib.md5(keyword).hexdigest()
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
 	asfer_pickle_string_dump(keyword,picklef_keyword)
 	picklef_keyword.close()
-	if lookupCacheParents and graphcache_mapreduce_parents[md5hashparents] != "Novalue":
-		print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
-		return graphcache_mapreduce_parents[md5hashparents]
-	else:	
-		#picklelock.acquire()
-		spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
-		#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
-		#asfer_pickle_string_dump(keyword,picklef_keyword)
-		#picklef_keyword.close()
-		paralleldata = spcon.parallelize(tokensofprevlevel).cache()
-		#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
-		k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
-		sqlContext=SQLContext(spcon)
-		parents_schema=sqlContext.createDataFrame(k.collect())
-		parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
-		query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
-		dict_query_results=dict(query_results.collect())
-		#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
-		#picklelock.release()
-		graphcache_mapreduce_parents[md5hashparents]=dict_query_results[1]
-		spcon.stop()
-		print "graphcache_mapreduce_parents updated:", graphcache_mapreduce_parents
-		return dict_query_results[1]
+	if lookupCacheParents:
+		cachevalue=graphcache.get(md5hashparents)
+		if cachevalue:
+			print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
+			return cachevalue 
+		else:	
+			#picklelock.acquire()
+			spcon = SparkContext("local[2]","Spark_MapReduce_Parents")
+			#picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
+			#asfer_pickle_string_dump(keyword,picklef_keyword)
+			#picklef_keyword.close()
+			paralleldata = spcon.parallelize(tokensofprevlevel).cache()
+			#k=paralleldata.map(lambda keyword: mapFunction_Parents(keyword,tokensofprevlevel)).reduceByKey(reduceFunction_Parents)
+			k=paralleldata.map(mapFunction_Parents).reduceByKey(reduceFunction_Parents)
+			sqlContext=SQLContext(spcon)
+			parents_schema=sqlContext.createDataFrame(k.collect())
+			parents_schema.registerTempTable("Interview_RecursiveGlossOverlap_Parents")
+			query_results=sqlContext.sql("SELECT * FROM Interview_RecursiveGlossOverlap_Parents")
+			dict_query_results=dict(query_results.collect())
+			#print "Spark_MapReduce_Parents() - SparkSQL DataFrame query results:"
+			#picklelock.release()
+			graphcache.set(md5hashparents,dict_query_results[1])
+			spcon.stop()
+			print "graphcache_mapreduce_parents updated:", graphcache
+			return dict_query_results[1]
 
-def flushCacheParents():
-	graphcache_mapreduce_parents=defaultdict(list)
-
-def flushCache():
-	graphcache_mapreduce=defaultdict(list)
+def flushCache(graphcache):
+	graphcache.flush_all()
