@@ -3867,6 +3867,17 @@ load which could be result of JVM Garbage Collection for Spark processes among o
 
 From the example path in logs, distance is more of a metapath than a thesaurus-like path implemented in Recursive Gloss Overlap in NeuronRain. Due to this limitation of WordNet hyper-hyponyms the usual unsupervised classifier based on core numbers of the graph translated from text would not work as accurately with straightforward WordNet paths. This necessitates the superinstance relation which relates two words k and l: k is in definition of l.
 
+-----------------------------------------------------------------------------------------------------------------------
+251. (FEATURE-DONE) Commits as on 30 March 2016 - MemCache Integration with Spark-Cython Intrinsic Merit Computation
+-----------------------------------------------------------------------------------------------------------------------
+- In this commit, native python dictionary based cache lookup for Spark_MapReduce() and Spark_MapReduce_Parents() is replaced with
+standard MemCache Distributed Object Cacheing get()/set() invocations.
+- Logs and Screenshots for above have been committed to testlogs/
+- Prerequisites are MemCached (ubuntu apt package) and Python-memcache (pip install) libraries
+- a recrawled webpage has been merit-computed
+- MemCached is better than native dict(s) because of standalone nature of Cache Listener which can be looked up from
+anywhere on cloud
+
 
 
 - 
