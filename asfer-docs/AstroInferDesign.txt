@@ -881,9 +881,12 @@ Additional references:
 
 	34.15) Efficient and Highly Parallel Computation - [JeffreyFinkelstein] - https://cs-people.bu.edu/jeffreyf/static/pdf/parallel.pdf - "... NC represents the class of languages decidable by a CREW PRAM with a polynomial number of processors running in polylogarithmic parallel time. Languages in NC are considered highly parallel ...".  [Berkman-Schieber-Vishkin] algorithm - www.umiacs.umd.edu/users/vishkin/PUBLICATIONS/ansv.ps - for ANSV is for both CREW PRAM of O(logn, n/logn) and CRCW PRAM of O(loglogn, n/loglogn) and thus former is in NC.
 
-	34.16) There is no commercially available Parallel RAM chip implementation. This is a limitation of implementing All Nearest Smaller Values PRAM merge for discretized hyperbolic arc and doing a benchmark.
+	34.16) There is a commercially available Parallel CRCW RAM chip implementation by NVIDIA CUDA GPUs - http://developer.nvidia.com/cuda and XMT research project - www.umiacs.umd.edu/users/vishkin/XMT/ but not for CREW PRAM which is a limitation of implementing All Nearest Smaller Values PRAM merge for discretized hyperbolic arc and doing a benchmark.
 
 	34.17) StackExchange thread on Consequences of Factorization in P - http://cstheory.stackexchange.com/questions/5096/consequences-of-factoring-being-in-p . Factorization in P is unlikely to have any significant effect on existing class containments, though practical ecommerce becomes less secure.
+
+	34.18) What happened to PRAM - http://blog.computationalcomplexity.org/2005/04/what-happened-to-pram.html - Quoted excerpts from comments - "... I don't understand why some CS theory people apologize for the PRAM. NC is robust and interesting as a complexity class, and an easy way to show that a problem is in NC is to give a PRAM algorithm. That's all the argument I need for the PRAM's existence. And yes, I've heard all of the arguments about why the PRAM is completely unrealistic ..."
+
 
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
