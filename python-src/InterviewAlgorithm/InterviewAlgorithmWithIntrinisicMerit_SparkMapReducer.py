@@ -54,6 +54,14 @@ import threading
 
 import hashlib
 import json
+import memcache
+
+#This caches gloss tokens at each recursion level and thus serially accessed at each recursion depth - safe to be declared as module global
+#Required for loopless Map step
+freqterms1_local=[]
+
+#Graph Memcached object aliased for this module global
+graphcachelocal=defaultdict(lambda: "Novalue")
 
 #rgo_object=namedtuple("rgo_object", "tokensatthislevel prevlevelsynsets")
 rgo_object=namedtuple("rgo_object", "tokensatthislevel")
@@ -88,6 +96,35 @@ def asfer_pickle_load(picklef):
 	#print "asfer_pickle_load(): synsets=",synsets
 	return synsets
 
+#Map function without loop
+def mapFunction2(keyword):
+	cached_mapped_object=graphcachelocal[keyword]
+	if cached_mapped_object != "Novalue":
+		print "mapFunction2: returning from graphcachelocal"
+		return (1,cached_mapped_object)
+	else:
+		prevlevelsynsets=[]
+		stopwords = nltk.corpus.stopwords.words('english')
+		stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+		puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
+		mapped_object=()
+		#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
+		disamb_synset = best_matching_synset(freqterms1_local, wn.synsets(keyword))
+		#print "mapFunction(): keyword = ",keyword,"; disamb_synset=",disamb_synset
+		prevlevelsynsets = prevlevelsynsets + [disamb_synset]
+		if len(wn.synsets(keyword)) != 0:
+			disamb_synset_def = disamb_synset.definition()
+			tokens = nltk.word_tokenize(disamb_synset_def)
+			#fdist_tokens = FreqDist(tokens)
+			fdist_tokens=[w for w in tokens if w not in stopwords and w not in puncts]
+			#mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
+			mapped_object=rgo_object(fdist_tokens)
+		picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","ab")
+		asfer_pickle_dump(prevlevelsynsets,picklef)
+		graphcachelocal[keyword]=mapped_object
+		return (1,mapped_object)
+
+#Map function with loop
 def mapFunction(freqterms1):
 	prevlevelsynsets=[]
 	prevlevelsynsets_earlier=[]
@@ -149,6 +186,7 @@ def best_matching_synset(doc_tokens, synsets):
 	return retset
 
 def Spark_MapReduce(level, wordsatthislevel, graphcache):
+	freqterms1_local=wordsatthislevel
 	#md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
 	md5hash = ",".join(wordsatthislevel)
 	cachevalue=graphcache.get(md5hash)
@@ -160,7 +198,8 @@ def Spark_MapReduce(level, wordsatthislevel, graphcache):
 		print "Spark_MapReduce(): wordsatthislevel:",wordsatthislevel
 		paralleldata=spcon.parallelize(wordsatthislevel).cache()
 		#k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
-		k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
+		k=paralleldata.map(mapFunction2).reduceByKey(reduceFunction)
+		#k=paralleldata.map(mapFunction).reduceByKey(reduceFunction)
 
 		#dict_k=k.collect()
 		#s = sorted(dict_k.items(),key=operator.itemgetter(1), reverse=True)
