@@ -3890,7 +3890,19 @@ anywhere on cloud
 - With this spark logs show more concurrency and less latency. Dynamic allocation was in conflict with number of executors and executors has been hence commented in spark-defaults2.conf
 - text document has been updated to have ~10 keywords. This took almost 7 minutes which looks better than one with spark-defaults.conf disabled
 - Screenshot and logs have been committed in testlogs/
- 
+
+------------------------------------------------------------------------------------------------------------------------------
+253. (FEATURE-DONE) Commits as on 1 April 2016
+------------------------------------------------------------------------------------------------------------------------------
+Loopless Map function for Spark_MapReduce()
+------------------------------------------------------------------------------------------------------------------------------
+- new Map function MapFunction2() has been defined which doesn't loop through all keywords per level, but does the glossification per keyword
+which is aggregated by Reduce step. MapFunction() does for loop for all keywords per level.
+- a dictionary cacheing with graphcachelocal has been done for lookup of already gloss-tokenized keywords. This couldn't be memcached due to a weird error that
+resets the graphcachelocal to a null which shouldn't have.
+- This has a execution time of 6 minutes overall for all tasks compared to for-loop Map function in Spark_MapReduce().
+- logs and screenshots for Loopless Map with and without graphcachelocal have been committed
+- Rebuit Cython .c, .o, .so, intrinsic merit log and DOT files
 
 
 
