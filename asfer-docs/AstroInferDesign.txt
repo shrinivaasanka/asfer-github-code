@@ -3898,11 +3898,25 @@ Loopless Map function for Spark_MapReduce()
 ------------------------------------------------------------------------------------------------------------------------------
 - new Map function MapFunction2() has been defined which doesn't loop through all keywords per level, but does the glossification per keyword
 which is aggregated by Reduce step. MapFunction() does for loop for all keywords per level.
-- a dictionary cacheing with graphcachelocal has been done for lookup of already gloss-tokenized keywords. This couldn't be memcached due to a weird error that
-resets the graphcachelocal to a null which shouldn't have.
+- a dictionary cacheing with graphcachelocal has been done for lookup of already gloss-tokenized keywords. This couldn't be memcached due to a weird error that resets the graphcachelocal to a null which shouldn't have.
 - This has a execution time of 6 minutes overall for all tasks compared to for-loop Map function in Spark_MapReduce().
 - logs and screenshots for Loopless Map with and without graphcachelocal have been committed
-- Rebuit Cython .c, .o, .so, intrinsic merit log and DOT files
+- Rebuilt Cython .c, .o, .so, intrinsic merit log and DOT files
+
+------------------------------------------------------------------------------------------------------------------------------
+254. (THEORY) Hypercontractivity - Bonami-Beckner Theorem Inequality, Noise Operator and p-Norm of Boolean functions
+------------------------------------------------------------------------------------------------------------------------------
+Hypercontractivity implies that noise operator attenuates a boolean function and makes it close to constant function. Hypercontractivity is
+defined as:
+	|Trhof|q <= |f|p where 0 <= rho <= sqrt((p-1)(q-1)) for some p-norm and q-norm
+and in its expanded form as:
+	sigma(rho^|S|*(1/2^n*sigma(|f(x)|^q*(-1)^(parity(xi))))^(1/q)*parity(S)) <= (1/2^n*sigma(|f(x)|^p)^(1/p)
+Hypercontractivity upperbounds a noisy function's q-norm by same function's p-norm without noise. For 2-norm, by Parseval's theorem which gives 2-norm as sigma(f(S)^2), hypercontractivity can be directly applied to Denoisification in 53.11 and 53.12 as it connects noisy and noiseless boolean function norms.
+
+Reference:
+----------
+254.1 Bonami-Beckner Hypercontractivity - http://theoryofcomputing.org/articles/gs001/gs001.pdf
+
 
 
 
