@@ -3949,6 +3949,15 @@ Reference:
 ----------
 256.1. Elections can be manipulated often - [Friedgut-Kalai-Nisan] - http://www.cs.huji.ac.il/~noam/apx-gs.pdf
 
+-----------------------------------------------------------------------------------
+Commits as on 4 April 2016
+-----------------------------------------------------------------------------------
+- Updated AsFer Design Document - KKL inequality and Denoisification
+- Spark-Cython intrinsic merit computation has been md5hash enabled again since there were key errors with large strings
+- logs and screenshots have been committed to testlogs/
+- rebuilt Cython .c, .so files
+- Spidered text has been changed - This took 28 minutes for ~40+ keywords better than 6 minutes for ~7 keywords earlier. Again Spark in single node cluster dualcore has some bottleneck.
+
 
 
 - 
