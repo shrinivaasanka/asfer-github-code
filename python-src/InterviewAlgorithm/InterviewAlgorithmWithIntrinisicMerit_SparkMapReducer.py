@@ -187,8 +187,8 @@ def best_matching_synset(doc_tokens, synsets):
 
 def Spark_MapReduce(level, wordsatthislevel, graphcache):
 	freqterms1_local=wordsatthislevel
-	#md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
-	md5hash = ",".join(wordsatthislevel)
+	md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
+	#md5hash = ",".join(wordsatthislevel)
 	cachevalue=graphcache.get(md5hash)
 	if cachevalue: 
 		print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
@@ -262,9 +262,9 @@ def reduceFunction_Parents(parents1, parents2):
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
 	#tokensofprevlevelkeyword=tokensofprevlevel
 	#tokensofprevlevelkeyword.append(keyword)
-	#md5hashparents = hashlib.md5(",".join(tokensofprevlevelkeyword)).hexdigest()
+	md5hashparents = hashlib.md5(keyword).hexdigest()
 
-	md5hashparents = keyword
+	#md5hashparents = keyword
 	md5hashparents = md5hashparents + "$parents"
 
 	picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
