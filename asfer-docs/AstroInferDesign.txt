@@ -1474,13 +1474,13 @@ References:
 
 67. An automaton or Turing machine model for data or voice (or musical) samples - Voice samples or musical notations are discrete in time and occur in stream. As an experimental research,  explore on possibility of automatically constructing an automaton or Turing machine that recognizes these languages (RE or CFG) where the notes are the alphabets. 
 
-(FEATURE - DONE) 68. Computational Music - Alternatively, a Discrete Fourier Transform on a set of data or voice samples gives a set of frequencies - a traditional DSP paradigm.
+(FEATURE - DONE) 68. Music Pattern Mining - Computational Music - Alternatively, a Discrete Fourier Transform on a set of data or voice samples gives a set of frequencies - a traditional DSP paradigm.
 -----------
 References:
 -----------
 68.1 https://ccrma.stanford.edu/~jos/st/
 
-69. Experimental Idea of previous two points is to mine patterns in discrete data and voice(music for example) samples. Music as an expression of mathematics is widely studied as Musical Set Theory - Transpositions and Inversions (E.g http://en.wikipedia.org/wiki/Music_and_mathematics, http://www.ams.org/samplings/feature-column/fcarc-canons, http://www-personal.umd.umich.edu/~tmfiore/1/musictotal.pdf). Items 56,57 and 58 could help mining deep mathematical patterns in classical and other music and as a measure of similarity and creativity. 
+69. Music Pattern Mining - Experimental Idea of previous two points is to mine patterns in discrete data and voice(music for example) samples. Music as an expression of mathematics is widely studied as Musical Set Theory - Transpositions and Inversions (E.g http://en.wikipedia.org/wiki/Music_and_mathematics, http://www.ams.org/samplings/feature-column/fcarc-canons, http://www-personal.umd.umich.edu/~tmfiore/1/musictotal.pdf). Items 56,57 and 58 could help mining deep mathematical patterns in classical and other music and as a measure of similarity and creativity.
 
 -------------------------------------------------
 70-79 (THEORY - ONGOING) EventNet and Theoretical analysis of Logical Time:
@@ -3943,7 +3943,7 @@ generic RHS is when there is a multiway contest and error is bounded. P(Good) bi
 	- Generic Majority Function that needs to find most prominent index from an assorted mix of votes (Heavy hitter) - might require Sorting Networks on Hashvalues.
 	- There are three variables - number of variables per voter, number of voters and number of candidates (which is 2 in boolean decision functions special case for fixed 2 candidate elections) and these numbers can be arbitrarily huge - in the order of Graham's number for example.
 
-Voter judging functions have to choose an index within n candidates than simple 0-1. Measuring how good is the choice made by a multiway voter decision function has no equivalent notion of stability and sensitivity in non-boolean functions. For 2 voters 0-1 boolean function is sufficient. Multiparty Generic Majority Function without tie can be shown to be NP-complete from Money Changing Problem and 0-1 Integer Linear Programming. [Friedgut-Kalai-Nisan] theorem is quantitative extension of Arrow's Theorem and Gibbard-Satterthwaite Theorem which prove that there is a non-zero probability that elections with 3 candidates and more can be manipulated. This appears sufficient to prove that Goodness probability of a multiway contest in RHS of P(good) binomial summation can never converge to 100% implying that democracy is deficient. This non-constructively shows the impossibility without even knowing individual voter error and series summation. Interestingly, this divergence condition coincides with contradiction mentioned in 53.16.3.1 for PARITY3SAT superpolynomial size circuits. Assuming an NC/Poly or P/Poly LHS Percolation Boolean Function with 100% noise stability in P(Good) LHS, Multiway Election in RHS can be placed in hardest known complexity class - Polynomial Hierarchy PH - because of expoential DC-uniform circuit size required by RHS. This fits into scenario 53.9.5 when LHS is 100% stable circuit and RHS is unstable PH=DC circuit.
+Voter judging functions have to choose an index within n candidates than simple 0-1. In a special case non-boolean functions can be simulated by a functional aggregation of boolean functions e.g Voted Candidate index in binary representation is nothing but a logN sized binary string of 0-1 output gates from multiple boolean functions for maximum of N candidates. Measuring how good is the choice made by a multiway voter decision function has no equivalent notion of stability and sensitivity in non-boolean functions. For 2 voters 0-1 boolean function is sufficient. Multiparty Generic Majority Function without tie in which candidates are hashkeys and votes are hashvalues can be shown to be NP-complete from Money Changing Problem and 0-1 Integer Linear Programming(https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf). [Friedgut-Kalai-Nisan] theorem is quantitative extension of Arrow's Theorem and Gibbard-Satterthwaite Theorem which prove that there is a non-zero probability that elections with 3 candidates and more can be manipulated. This appears sufficient to prove that Goodness probability of a multiway contest in RHS of P(good) binomial summation can never converge to 100% implying that democracy is deficient. This non-constructively shows the impossibility without even knowing individual voter error and series summation. Interestingly, this divergence condition coincides with contradiction mentioned in 53.16.3.1 for PARITY3SAT superpolynomial size circuits. Assuming an NC/Poly or P/Poly LHS Percolation Boolean Function with 100% noise stability in P(Good) LHS, Multiway Election in RHS can be placed in hardest known complexity classes - Polynomial Hierarchy PH, EXPSPACE - *) for PH it is expoential DC-uniform circuit size required by RHS *) for adversarial simulation by Chess,Go etc., it is EXPTIME-hard required by RHS etc.,. This fits into scenario 53.9.5 when LHS is 100% stable circuit and RHS is unstable PH=DC circuit.
 
 Reference:
 ----------
@@ -3956,7 +3956,37 @@ Commits as on 4 April 2016
 - Spark-Cython intrinsic merit computation has been md5hash enabled again since there were key errors with large strings
 - logs and screenshots have been committed to testlogs/
 - rebuilt Cython .c, .so files
-- Spidered text has been changed - This took 28 minutes for ~40+ keywords better than 6 minutes for ~7 keywords earlier. Again Spark in single node cluster dualcore has some bottleneck.
+- Spidered text has been changed - This took 28 minutes for ~40+ keywords better than 6 minutes for ~10 keywords earlier. Again Spark in single node cluster dualcore has some bottleneck.
+
+--------------------------------------------------------------------------------------------------------------
+256. (FEATURE-BENCHMARK-DONE) Analysis of PySpark-Cython Intrinsic Merit Computation Benchmarks done so far
+--------------------------------------------------------------------------------------------------------------
+From 191 and 201 time complexity analysis of Recursive Gloss Overlap algorithm, for single node dualcore cluster following is the
+runtime bound:
+	O(n*d*s^tmax/cpus)
+where d is the number of keywords, n is the number of documents and s is the maximum gloss size per keyword. For last two benchmarks done with
+MD5 hashkeys, Local Cacheing and Global Cacheing(MemCached) enabled number of words are 10 and 40. Corresponding runtimes are:
+--------------
+10 words
+--------------
+n=1
+d=10
+s=constant
+tmax=2 (depth 2 recursion)
+cpus=2 (dual core)
+Runtime = 7 minutes = k*10*(s)^2/2
+--------------
+40 words
+--------------
+n=1
+d=40
+s=constant
+tmax=2 (depth 2 recursion)
+cpus=2 (dual core)
+Runtime = 28 minutes = k*40*(s)^2/2
+Ratio is 7/28 = k*10*(s)^2/2/k*40*(s)^2/2 = 0.25 a linear scaling in number of words which substantiates the theoretical bound. If cluster scales on number of words and documents (e.g logd and logn) this should have non-linear asymptotic scaling. Maximum number of words per document can be an assumption and set to a harcoded large number. If number of web documents versus number of keywords follow a Gaussian Normal distribution i.e a small fraction of documents have high number of words while the tails have less number of keywords, cluster prescales on a function of mean which is apriori known by a heuristic. Above excludes the crawling time per webpage - crawling does not build linkgraph.
+
+
 
 
 
