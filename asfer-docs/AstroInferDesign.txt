@@ -856,7 +856,7 @@ Additional references:
 
 	34.4) (IMPORTANT OPTIMIZATION OVER 34.1, 34.2 ABOVE) Instead of [BerkmanSchieberVishkin] an O(logloglogN) algorithm can be used described in (since the numbers in tiles are within a known range - 1 to N - for factorization of N in discretized tesselated hyperbolic arc) - Triply-Logarithmic Parallel Upper and Lower Bounds for Minimum and Range Minima over Small Domains (Omer Berkman, Yossi Matias, Prabhakar Ragde) - 1998 - http://www.sciencedirect.com/science/article/pii/S0196677497909056. This algorithm internally applies [BerkmanSchieberVishkin] but lemmas 2.3 and 3.1 mentioned in [BerkmanMatiasPrabhakar] preprocess the input within a known domain [1..N]. This takes O(logloglogN) time using (logN)^3/logloglogN processors for each merging problem and O(logloglogN) time using N/logloglogN processors overall. This algorithm can therefore supersede 34.1 and 34.2.
 
-	34.5) Randomized Algorithms ,Rajeev Motwani and Prabhakar Raghavan, Chapter 12 on Distributed and Parallel Algorithms, also describes input size and randomized algorithms for Parallel sort.
+	34.5) Randomized Algorithms ,Rajeev Motwani and Prabhakar Raghavan, Chapter 12 on Distributed and Parallel Algorithms, also describes input size and randomized algorithms for Parallel sort - Definition 12.1 of NC (Page 336) - "NC consists of languages that have PRAM algorithms with O(logN) time and O(N^k) PRAM processors".
 
 	34.6) Also an alternative merge algorithm in constant depth polysize circuit described in Chandra-Stockmeyer-Vishkin [http://cstheory.com/stockmeyer@sbcglobal.net/csv.pdf] can be applied (but it is for merging two lists of m, m-bit numbers where as the above factorization needs merging two lists of O(m), log(m)-bit numbers)
 
@@ -1237,7 +1237,7 @@ Percolation circuit defined previously has:
 - Sorting Network for creating path sequentially on grid (NC logdepth and polysize)
 - Comparators (Constant depth and polysize) are required for comparing the leftmost and rightmost coordinates.
 Together Percolation is in non-uniform NC. This circuit depends on number of points on the left-right path which is poly(n).
-Therefore percolation is in NC/poly because size of advice strings could be O((n^2)log(n^2)) and it may not have NC/log circuits.
+Therefore percolation is in NC/poly because size of list of advice strings could be O((n^2)log(n^2)) and it may not have NC/log circuits.
 From Linial-Mansour-Nisan Theorem - Lemma 7 (Main Lemma) - http://www.ma.huji.ac.il/~ehudf/courses/anal09/LMN.pdf:
 	For |A| > t, Summation(fourier_coeff(A)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 With noise operator, noise stability=1 from Plancherel's theorem:
@@ -3146,6 +3146,7 @@ References:
 202.8 ConceptNet 5 - http://conceptnet5.media.mit.edu/
 202.9 Sanskrit WordNet - http://www.cfilt.iitb.ac.in/wordnet/webswn/
 202.10 IndoWordNet - http://www.cfilt.iitb.ac.in/indowordnet/index.jsp
+202.11 Brain Connectivity and Multiclass Hopfield Network - Associative memory - http://www.umiacs.umd.edu/~joseph/Wangetal_Neuroinformatics2015.pdf
 
 --------------------------------------------------------------------------------------------------------------------
 203. Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
@@ -3861,7 +3862,7 @@ there are no repetitions cached to do lookup. Logs and screenshots with and with
 249. (THEORY) An alternative USTCONN LogSpace algorithm for constructing Recursive Gloss Overlap Graph
 --------------------------------------------------------------------------------------------------------------------------
 Benchmarks above are selected best from multiple executions. Sometimes a mysterious slowdown was observed with both CPUs clocking 100%
-load which could be result of JVM Garbage Collection for Spark processes among others. These benchmarks are thus just for assessing feasibility of Spark clustering only and a perfect benchmark might require a cloud of few thousand nodes for a crawled webpage. At present there is no known standard algorithm to convert a natural language text to a relational graph without WordNet and internally looking up some *Net ontology to get path relations between two words could be indispensable theoretically speaking. This is the reverse process of Graph Traversals - Breadth First and Depth First - traversal is the input text and a graph has to be extracted from it. For n keywords, there are n^2 ordered pairs of word vertices possible for each of which WordNet paths have to be found. This is Undirected ST Connectivity in graphs for which there are quite a few algorithms known right from [Savitch] theorem upto [OmerReingold] ZigZag product based algorithm in logspace. This is more optimal compared to all pairs shortest paths on WordNet. This algorithm does not do deep learning recursion top-down to learn a graph from text. For all pairs this is  better than O(n^3) which is upperbound for All Pairs Shortest Paths. These n^2 pairs of paths overlap and intersect to create a graph. Presently implemented Recursive Gloss Overlap learns deeper than all pairs USTCONN algorithm because it uses "superinstance" notion - whether x is in definition of y - something absent in WordNet jargon.
+load which could be result of JVM Garbage Collection for Spark processes among others. These benchmarks are thus just for assessing feasibility of Spark clustering only and a perfect benchmark might require a cloud of few thousand nodes for a crawled webpage. At present there is no known standard algorithm to convert a natural language text to a relational graph without WordNet and internally looking up some *Net ontology to get path relations between two words could be indispensable theoretically speaking. This is the reverse process of Graph Traversals - Breadth First and Depth First - traversal is the input text and a graph has to be extracted from it. For n keywords, there are n^2 ordered pairs of word vertices possible for each of which WordNet paths have to be found. This is Undirected ST Connectivity in graphs for which there are quite a few algorithms known right from [Savitch] theorem upto [OmerReingold] ZigZag product based algorithm in logspace. This is more optimal compared to all pairs shortest paths on WordNet. This algorithm does not do deep learning recursion top-down to learn a graph from text. For all pairs this is  better than O(n^3) which is upperbound for All Pairs Shortest Paths. These n^2 pairs of paths overlap and intersect to create a graph. Presently implemented Recursive Gloss Overlap learns deeper than all pairs USTCONN algorithm because it uses "superinstance" notion - whether x is in definition of y - something absent in WordNet jargon. This algorithm is quadratic in number of words where as Recursive Gloss Overlap is linear - O(n*d*s^tmax/cpus) - counterintuitively.
 
 --------------------------------------------------------------------------------------------------------------------------
 250. Commits as on 29 March 2016
@@ -3932,6 +3933,26 @@ for |S| > t. From KKL inequality, 2-norm in LHS can be set to maximum of (Pr[f!=
 a denoisified circuit:
 	(Pr[f!=0])^2/(1+delta) * 2^((t^(1/d)/20)-1) <= Size
 which is exponential when delta=1 and Pr[f!=0] is quite close to 1 i.e f is 1 or -1 for most of the inputs.
+
+If f is 100% noise stable, from Plancherel theorem:
+	sigma(rho^|S|*f(S)^2) = 1, S in [n]
+	For |S| < t=n, 1-Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
+	But for rho=p-1 and p=1+delta, 1-Summation(delta^|S|*fourier_coeff(S)^2) >  1-(Pr[f!=0])^2/(1+delta) from KKL inequality.
+	For |S| < t=n,  1-(Pr[f!=0])^2/(1+delta) < 1-Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
+=>  0.5*(1-(Pr[f!=0])^2/(1+delta))*2^(t^(1/d)/20) < 0.5*(1-Summation(rho^|S|*fourier_coeff(S)^2))*2^(t^(1/d)/20) <= Size
+
+Again denoisification by letting rho and delta tend to 0 in above, places an exponential lowerbound on a noiseless circuit size. This implies that RHS Majority Voting Circuit of whichever complexity class it may belong to, when denoisified cannot do better than an exponential size lowerbound. This leads to an important result if 100% stability implies lowerbound: LHS is an NC/Poly Percolation circuit in 100% noise stability regime of polynomial size. RHS is exponential, denoisified, 100% stable circuit of arbitrary hardness. From 53.9 and 53.16, RHS has an NC/Poly lowerbound e.g if RHS is PH-complete then PH in P/poly. From Toda's theorem, PH is in P^#P and there is a known result that P^#P in P/Poly implies P^#P = MA. Unifying:
+PH in P^#P in P/Poly => P^#P=MA. (assumption: NC/Poly is in P/Poly because any logdepth, polysize bounded fanin circuit has polysize gates)
+NC/log percolation circuit would imply collapse of polynomial hierarchy - RHS PH-complete is lowerbounded by LHS NC/log in P and trivially P=NP.
+
+Percolation boolean functions have a notion of revealment - that is, there exists a randomized algorithm corresponding to each percolation boolean function which has coin toss advice to query the next bit and revealment is the maximum probability that a bit index i in [n] is queried in these sets of bits B in [n]- it reveals the secret in randomness. Thus LHS Percolation in Pr(Good) circuit can be simulated by a randomized algorithm with revealment. In such a case, advice strings are random coin tosses. This revealment has close resemblance to random restrictions - each restriction brings down a variable by revealing it finally leading to a constant function. Following theorem connects Fourier weights of percolation and Randomized revealments:
+	Sigma(fourier_coeff(S)^2) <= revealment*constant*2-norm(f)
+
+There is a special case in which size of advice list can be brought down to logn from n for Z(n) grid. Set of logn points are pseudorandomly chosen from n points. This logn sized subset when sorted would still point to left-right trend unless leftmost and rightmost are not in sample. This places Percolation in NC/log which could imply a PH collapse mentioned previously. This is an exponential decrease in size of advice.
+
+Reference:
+----------
+255.1 Randomized Algorithms and Percolation - http://math.univ-lyon1.fr/~garban/Slides/Newton.pdf
 
 ---------------------------------------------------------------------------------------------------------------------------
 256. (THEORY) Majority Voting in Multipartisan Elections
