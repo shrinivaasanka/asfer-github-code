@@ -11,7 +11,7 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
+#Copyleft (Copyright+):
 #Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
@@ -3941,7 +3941,7 @@ If f is 100% noise stable, from Plancherel theorem:
 	For |S| < t=n,  1-(Pr[f!=0])^2/(1+delta) < 1-Summation(rho^|S|*fourier_coeff(S)^2) <= 2*(Size)*2^(-t^(1/d)/20)
 =>  0.5*(1-(Pr[f!=0])^2/(1+delta))*2^(t^(1/d)/20) < 0.5*(1-Summation(rho^|S|*fourier_coeff(S)^2))*2^(t^(1/d)/20) <= Size
 
-Again denoisification by letting rho and delta tend to 0 in above, places an exponential lowerbound on a noiseless circuit size. This implies that RHS Majority Voting Circuit of whichever complexity class it may belong to, when denoisified cannot do better than an exponential size lowerbound. This leads to an important result if 100% stability implies lowerbound: LHS is an NC/Poly Percolation circuit in 100% noise stability regime of polynomial size. RHS is exponential, denoisified, 100% stable circuit of arbitrary hardness. From 53.9 and 53.16, RHS has an NC/Poly lowerbound e.g if RHS is PH-complete then PH in P/poly. From Toda's theorem, PH is in P^#P and there is a known result that P^#P in P/Poly implies P^#P = MA. Unifying:
+Again denoisification by letting rho and delta tend to 0 in above, places an exponential lowerbound, with constant upperbound on depth, on a noiseless circuit size. In above size bound Lt n^(1/n) = 1 for n tending to infinity (Real analysis result - http://www.jpetrie.net/2014/10/12/proof-that-the-limit-as-n-approaches-infinity-of-n1n-1-lim_n-to-infty-n1n-1/). Percolation in 100% noise stable regime can have NC/poly circuits while above stipulates the lowerbound for noiseless circuits to be exponential when depth is constant. It implies NC/Poly formulation of percolation has unrestricted depth which is obvious because 100% noise stability regime is attained when n tends to infinity. Randomized algorithm equivalent of Percolation implies Percolation is in RP or RNC with pseudorandom advice which vindicates derandomized NC representation for percolation. This leads to an important result if 100% stability implies lowerbound: LHS is an NC/Poly Percolation circuit in 100% noise stability regime of polynomial size. RHS is exponential, denoisified, 100% stable circuit of arbitrary hardness. From 53.9 and 53.16, RHS has an NC/Poly lowerbound e.g if RHS is PH-complete then PH in P/poly. From Toda's theorem, PH is in P^#P and there is a known result that P^#P in P/Poly implies P^#P = MA. Unifying:
 PH in P^#P in P/Poly => P^#P=MA. (assumption: NC/Poly is in P/Poly because any logdepth, polysize bounded fanin circuit has polysize gates)
 NC/log percolation circuit would imply collapse of polynomial hierarchy - RHS PH-complete is lowerbounded by LHS NC/log in P and trivially P=NP.
 
