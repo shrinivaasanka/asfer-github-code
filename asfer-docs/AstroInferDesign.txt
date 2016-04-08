@@ -4007,9 +4007,22 @@ cpus=2 (dual core)
 Runtime = 28 minutes = k*40*(s)^2/2
 Ratio is 7/28 = k*10*(s)^2/2/k*40*(s)^2/2 = 0.25 a linear scaling in number of words which substantiates the theoretical bound. If cluster scales on number of words and documents (e.g logd and logn) this should have non-linear asymptotic scaling. Maximum number of words per document can be an assumption and set to a harcoded large number. If number of web documents versus number of keywords follow a Gaussian Normal distribution i.e a small fraction of documents have high number of words while the tails have less number of keywords, cluster prescales on a function of mean which is apriori known by a heuristic. Above excludes the crawling time per webpage - crawling does not build linkgraph.
 
+----------------------------------------------------------------------------------------------------------------------------
+259. (THEORY) Major update to Computational Geometric PRAM-NC algorithm for Discrete Hyperbolic Factorization
+----------------------------------------------------------------------------------------------------------------------------
+PRAM-NC Algorithm for Discrete Hyperbolic Factorization in 34 above:
 
+	34.1 LaTeX - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download
+	34.2 PDF - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
 
+internally relies on [BerkmanSchieberVishkin] and other All Nearest Smaller Values PRAM algorithms for merging sorted tesselated hyperbolic arc segments which is then binary searched to find a factor. There are some older alternatives to merging sorted lists other than All Nearest Smaller Values which require more processors. Section 2.4 in [RichardKarp-VijayaRamachandran] on "Sorting, Merging and Selection" in PRAM where input is an array of O(N=n) elements, describes some standard PRAM algorithms, gist of which is mentioned below (https://www.eecs.berkeley.edu/Pubs/TechRpts/1988/5865.html):
 
+	259.1) There are 3 parallel computing models - Parallel Comparisons, Comparator Sorting Networks and PRAMs
+	259.2) Section 2.4.1 on merging two increasing sequences of length n and m, n <= m in Page 19 gives an algorithm of O(loglogN) steps on O(n+m) CREW PRAM processors. This constructs a merge tree bottom-up to merge two sorted lists. For merging more than 2 lists, requires logarithmic additional parallel steps.
+	259.3) Section 2.4.2 describes Batcher's and [AjtaiKomlosSzmeredi] Bitonic Sort algorithm which sorts n elements in O((logn)^2) time with n/2 processors.
+	259.4) Section 2.4.3 describes Cole's PRAM sorting algorithm which requires O(logn) steps and O(n) PRAM processors.
+
+Advantage of these older algorithms is they are implementable e.g Bitonic sort - https://en.wikipedia.org/wiki/Bitonic_sorter, http://www.nist.gov/dads/HTML/bitonicSort.html. Replacing [BerkmanSchieberVishkin] in ANSV sorted tile merge for discrete hyperbolic factorization with older algorithms like bitonic parallel sorting networks would require more processors but still be in NC though not PRAM.
 
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
