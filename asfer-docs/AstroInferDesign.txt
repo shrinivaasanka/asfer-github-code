@@ -4024,6 +4024,10 @@ internally relies on [BerkmanSchieberVishkin] and other All Nearest Smaller Valu
 
 Advantage of these older algorithms is they are implementable e.g Bitonic sort - https://en.wikipedia.org/wiki/Bitonic_sorter, http://www.nist.gov/dads/HTML/bitonicSort.html. Replacing [BerkmanSchieberVishkin] in ANSV sorted tile merge for discrete hyperbolic factorization with older algorithms like bitonic parallel sorting networks would require more processors but still be in NC though not PRAM.
 
+References:
+----------
+259.1 Bitonic Sorting - https://cseweb.ucsd.edu/classes/wi13/cse160-a/Lectures/Lec14.pdf
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
