@@ -764,6 +764,8 @@ for some term in the infinite product of LHS which implies that
 
 (19) Maximum eigen value of (q+1)-regular graph is (q+1) and the infinite set {Imaginary(s)} can be derived from eigen_value=2*sqrt(q)*cos(b*log(q)) in (17) for infinite set of (q+1)-regular graphs.
 
+(20) An experimental python function to iterate through all {Imaginary(s)} mentioned in (19) supra has been included in complement.py. Because of the restriction that cos() is in [-1,1], eigen_value <= 2*sqrt(q) which has a trivial value of q=1 when eigen_value=q+1.
+
 ----------------------------------------------------
 24h. PAC Learning and Complement Function Construction
 ----------------------------------------------------
