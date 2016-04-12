@@ -4042,6 +4042,29 @@ Complement Function extended draft:
 
 Logs for this included in python-src/testlogs/
 
+-------------------------------------------------------------------------------------------------------
+261. Commits as on 12 April 2016
+-------------------------------------------------------------------------------------------------------
+  Implementation for NC Discrete Hyperbolic Factorization with Bitonic Sort alternative (in lieu of unavailable PRAM implementations):
+-----------------------------------------------------------------------------------------------------------------------------------
+- Bitonic Sort is O(logn) and theoretically in NC
+- Bitonic Sort requires O(n^2logn) parallel comparators. Presently this parallelism is limited to parallel
+exchange of variables in bitonic sequence for which python has builtin support (bitonic_compare()) - internally how it performs on
+multicore archs is not known.
+- a shell script has been added which does the following (cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.sh):
+        - NC Factorization implementation with Bitonic Sort is C+++Python (C++ and Python)
+        - C++ side creates an unsorted mergedtiles array for complete tesselated hyperbolic arc
+(cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.cpp)
+        - This mergedtiles is captured via output redirection and awk in a text file
+cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles
+        - Python bitonic sort implementation which is a modified version of algorithm in https://en.wikipedia.org/wiki/Bitonic_sorter
+requires the size of the array to be sorted in exponents of 2. Presently it is hardcoded as array of size 16384 - 2^16
+(python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic.py). It outputs the sorted array. Vacant elements in array are zero-filled
+
+- Binary and logs for C++ and Python side have been committed
+- Parallel comparators on large scale require huge cloud of machines per above bound which makes it NC.
+
+
 - 
 Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
 https://sites.google.com/site/kuja27/
