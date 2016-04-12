@@ -4043,9 +4043,9 @@ Complement Function extended draft:
 Logs for this included in python-src/testlogs/
 
 -------------------------------------------------------------------------------------------------------
-261. Commits as on 12 April 2016
+261. Commits (1) as on 12 April 2016
 -------------------------------------------------------------------------------------------------------
-  Implementation for NC Discrete Hyperbolic Factorization with Bitonic Sort alternative (in lieu of unavailable PRAM implementations):
+(FEATURE-DONE) Implementation for NC Discrete Hyperbolic Factorization with Bitonic Sort alternative (in lieu of unavailable PRAM implementations):
 -----------------------------------------------------------------------------------------------------------------------------------
 - Bitonic Sort is O(logn) and theoretically in NC
 - Bitonic Sort requires O(n^2logn) parallel comparators. Presently this parallelism is limited to parallel
@@ -4063,6 +4063,13 @@ requires the size of the array to be sorted in exponents of 2. Presently it is h
 
 - Binary and logs for C++ and Python side have been committed
 - Parallel comparators on large scale require huge cloud of machines per above bound which makes it NC.
+-------------------------------------------------------------------------------------------------------
+Commits (2) as on 12 April 2016
+-------------------------------------------------------------------------------------------------------
+- Compare step in Bitonic Sort for merged tiles has been Spark MapReduced with this separate script. Can be used only in a large cluster.
+With this comparators are highly parallelizable over a cloud and thus in NC.
+
+
 
 
 - 
