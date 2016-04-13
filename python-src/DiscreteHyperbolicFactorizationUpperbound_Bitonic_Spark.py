@@ -28,9 +28,10 @@ from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, Row
 
 from complement import toint
+from bidict import bidict
 
 midpoint=0
-globalmergedtiles={}
+globalmergedtiles=bidict()
 
 def bitonic_sort(up, mergedtiles):
 	if len(mergedtiles) <= 1:
@@ -67,9 +68,10 @@ def bitonic_compare(up, mergedtiles):
 
 def mapFunction_BitonicCompare(tileelement):
 	tileelement_index=0
-	for k, v in globalmergedtiles.iteritems():
-		if v==tileelement:
-			tileelement_index=k
+	#for k, v in globalmergedtiles.iteritems():
+	#	if v==tileelement:
+	#		tileelement_index=k
+	tileelement_index=globalmergedtiles.inv[tileelement]
 	return (1,tileelement_index)
 
 def reduceFunction_BitonicCompare(i, k):
@@ -82,15 +84,18 @@ def MergedTiles_BitonicSort():
 	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
 	#mergedtiles=[10, 3, 5, 71, 30, 11, 20, 4, 330, 21, 110, 7, 33, 9, 39, 46]
 	cnt=1
-	for i in mergedtilesf:
-		globalmergedtiles[cnt-1]=toint(i)
-		cnt+=1
-		if cnt == 16384:
-			break
-	if cnt < 16384:
-		while cnt <= 16384:
-			globalmergedtiles[cnt-1]=0
+	try:
+		for i in mergedtilesf:
+			globalmergedtiles[cnt-1]=toint(i)
 			cnt+=1
+			if cnt == 16384:
+				break
+		if cnt < 16384:
+			while cnt <= 16384:
+				globalmergedtiles[cnt-1]=0
+				cnt+=1
+	except:
+		pass
 	sorted=bitonic_sort(False, globalmergedtiles.values())
 	print sorted
 
