@@ -4069,6 +4069,12 @@ Commits (2) as on 12 April 2016
 - Compare step in Bitonic Sort for merged tiles has been Spark MapReduced with this separate script. Can be used only in a large cluster.
 With this comparators are highly parallelizable over a cloud and thus in NC.
 
+-------------------------------------------------------------------------------------------------------
+262. Commits as on 13 April 2016
+-------------------------------------------------------------------------------------------------------
+Spark Bitonic Sort - Imported BiDirectional Map - bidict - for reverse lookup (for a value, lookup a key in addition to for a key, 
+lookup a value) which is required to avoid the looping through of all keys to match against a tile element.
+
 
 
 
