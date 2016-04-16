@@ -893,6 +893,10 @@ Additional references:
 
 	34.19) [Page 29 - HooverGreenlawRuzzo] - "... but there is no a priori upper bound on the fanout of a gate. Hoover, Klawe, and Pippenger show that conversion to bounded fanout entails at most a constant factor increase in either size or depth [160]..."
 
+	34.20) (DONE-BITONIC SORT IMPLEMENTATION) In the absence of PRAM implementation, NC Bitonic Sort has been invoked as a suitable alternative in parallel tile merge sort step of Parallel Discrete Hyperbolic Factorization Implementation. Commit Notes 261 and 262 below have details on this. Bitonic Sort on SparkCloud requires O((logn)^2) time with O(n^2logn) parallel comparators (which simulate PRAM but comparators required are more than PRAMs). With this NC factorization has been implemented on a Spark cloud.
+
+	34.21) An important point to note in above is that an exhaustive search in parallel would always find a factor, but in how many steps is the question answered by NC computational geometric search. This is 1-dimensional geometric factorization counterpart of 2-dimensional Graham's Scan and Jarvis March for Convex Hull of n points. A parallel algorithm in O(n) steps wouldn't have qualified to be in NC. Above NC algorithm scans just an one-dimensional tesselated merged tiles of a hyperbolic arc in O((logn)^2) for merge + O(logn) for search and doesn't scan more than 1-dimension. Parallel tesselation of O(n) long hyperbolic arc to create locally sorted tile segments requires < O(logn) steps only if number of processors is > O(n/logn). Hence it adheres to all definitions of NC. Thus total parallel work time is O((logn)^2) + O(logn) + O(logn) = O((logn)^2). Here again N=n.
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
@@ -4047,6 +4051,11 @@ Logs for this included in python-src/testlogs/
 -------------------------------------------------------------------------------------------------------
 (FEATURE-DONE) Implementation for NC Discrete Hyperbolic Factorization with Bitonic Sort alternative (in lieu of unavailable PRAM implementations):
 -----------------------------------------------------------------------------------------------------------------------------------
+Bitonic Merge Sort Implementation of:
+	 - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download
+         - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
+
+
 - Bitonic Sort is O((logn)^2) and theoretically in NC
 - Bitonic Sort requires O(n^2logn) parallel comparators. Presently this parallelism is limited to parallel
 exchange of variables in bitonic sequence for which python has builtin support (bitonic_compare()) - internally how it performs on
