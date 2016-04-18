@@ -1,0 +1,328 @@
+unsorted= bidict({0: 46, 1: 47, 2: 48, 3: 49, 4: 50, 5: 51, 6: 52, 7: 53, 8: 54, 9: 55, 10: 56, 11: 57, 12: 58, 13: 59, 14: 60, 15: 61, 16: 62, 17: 63, 18: 64, 19: 65, 20: 66, 21: 67, 22: 68, 23: 69})
+bitonicsort: firsthalf:  [47]
+bitonicsort: secondhalf:  [48]
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/04/18 21:25:34 INFO SparkContext: Running Spark version 1.5.2
+16/04/18 21:25:35 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/04/18 21:25:35 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.43.22 instead (on interface wlan0)
+16/04/18 21:25:35 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/04/18 21:25:35 INFO SecurityManager: Changing view acls to: root
+16/04/18 21:25:35 INFO SecurityManager: Changing modify acls to: root
+16/04/18 21:25:35 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/04/18 21:25:38 INFO Slf4jLogger: Slf4jLogger started
+16/04/18 21:25:38 INFO Remoting: Starting remoting
+16/04/18 21:25:38 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.43.22:36272]
+16/04/18 21:25:38 INFO Utils: Successfully started service 'sparkDriver' on port 36272.
+16/04/18 21:25:38 INFO SparkEnv: Registering MapOutputTracker
+16/04/18 21:25:38 INFO SparkEnv: Registering BlockManagerMaster
+16/04/18 21:25:39 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b996549a-48ab-48f9-8ef2-a7d3a3f7c5fc
+16/04/18 21:25:39 INFO MemoryStore: MemoryStore started with capacity 794.9 MB
+16/04/18 21:25:39 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/httpd-1bfdef90-61a6-4a0f-9059-fd3a4acd6a86
+16/04/18 21:25:39 INFO HttpServer: Starting HTTP Server
+16/04/18 21:25:39 INFO Utils: Successfully started service 'HTTP file server' on port 34503.
+16/04/18 21:25:39 INFO SparkEnv: Registering OutputCommitCoordinator
+16/04/18 21:25:40 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/04/18 21:25:40 INFO SparkUI: Started SparkUI at http://192.168.43.22:4040
+16/04/18 21:25:40 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-28e86238-08af-43b5-bed8-dc7f6b33b387/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:25:40 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994940548
+16/04/18 21:25:40 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/18 21:25:40 INFO Executor: Starting executor ID driver on host localhost
+16/04/18 21:25:41 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38595.
+16/04/18 21:25:41 INFO NettyBlockTransferService: Server created on 38595
+16/04/18 21:25:41 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/18 21:25:41 INFO BlockManagerMasterEndpoint: Registering block manager localhost:38595 with 794.9 MB RAM, BlockManagerId(driver, localhost, 38595)
+16/04/18 21:25:41 INFO BlockManagerMaster: Registered BlockManager
+16/04/18 21:25:42 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1460994940781
+16/04/18 21:25:43 INFO SparkContext: Starting job: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69
+16/04/18 21:25:43 INFO DAGScheduler: Got job 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) with 3 output partitions
+16/04/18 21:25:43 INFO DAGScheduler: Final stage: ResultStage 0(reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:25:43 INFO DAGScheduler: Parents of final stage: List()
+16/04/18 21:25:43 INFO DAGScheduler: Missing parents: List()
+16/04/18 21:25:43 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69), which has no missing parents
+16/04/18 21:25:44 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+16/04/18 21:25:44 INFO MemoryStore: ensureFreeSpace(38480) called with curMem=0, maxMem=833527480
+16/04/18 21:25:44 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 37.6 KB, free 794.9 MB)
+16/04/18 21:25:45 INFO MemoryStore: ensureFreeSpace(5688) called with curMem=38480, maxMem=833527480
+16/04/18 21:25:45 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.6 KB, free 794.9 MB)
+16/04/18 21:25:45 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:38595 (size: 5.6 KB, free: 794.9 MB)
+16/04/18 21:25:45 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/18 21:25:45 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:25:45 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/18 21:25:45 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2230 bytes)
+16/04/18 21:25:45 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/18 21:25:45 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994940548
+16/04/18 21:25:45 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/18 21:25:45 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py has been previously copied to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-28e86238-08af-43b5-bed8-dc7f6b33b387/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:25:45 INFO CacheManager: Partition rdd_0_0 not found, computing it
+16/04/18 21:25:45 INFO MemoryStore: ensureFreeSpace(16) called with curMem=44168, maxMem=833527480
+16/04/18 21:25:45 INFO MemoryStore: Block rdd_0_0 stored as bytes in memory (estimated size 16.0 B, free 794.9 MB)
+16/04/18 21:25:45 INFO BlockManagerInfo: Added rdd_0_0 in memory on localhost:38595 (size: 16.0 B, free: 794.9 MB)
+16/04/18 21:25:51 INFO PythonRunner: Times: total = 6379, boot = 488, init = 5891, finish = 0
+16/04/18 21:25:52 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1556 bytes result sent to driver
+16/04/18 21:25:52 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:25:52 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/04/18 21:25:52 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 6898 ms on localhost (1/3)
+16/04/18 21:25:52 INFO CacheManager: Partition rdd_0_1 not found, computing it
+16/04/18 21:25:52 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44184, maxMem=833527480
+16/04/18 21:25:52 INFO MemoryStore: Block rdd_0_1 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:25:52 INFO BlockManagerInfo: Added rdd_0_1 in memory on localhost:38595 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:25:52 INFO PythonRunner: Times: total = 4, boot = -134, init = 138, finish = 0
+16/04/18 21:25:52 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1567 bytes result sent to driver
+16/04/18 21:25:52 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:25:52 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/04/18 21:25:52 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 186 ms on localhost (2/3)
+16/04/18 21:25:52 INFO CacheManager: Partition rdd_0_2 not found, computing it
+16/04/18 21:25:52 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44218, maxMem=833527480
+16/04/18 21:25:52 INFO MemoryStore: Block rdd_0_2 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:25:52 INFO BlockManagerInfo: Added rdd_0_2 in memory on localhost:38595 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:25:52 INFO PythonRunner: Times: total = 42, boot = -25, init = 67, finish = 0
+16/04/18 21:25:52 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1567 bytes result sent to driver
+16/04/18 21:25:52 INFO DAGScheduler: ResultStage 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) finished in 7.265 s
+16/04/18 21:25:52 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 215 ms on localhost (3/3)
+16/04/18 21:25:52 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/04/18 21:25:52 INFO DAGScheduler: Job 0 finished: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69, took 8.691851 s
+##################################################################################
+reduceFunction_BitonicCompare(): i= 1 ; k= 2
+16/04/18 21:25:52 INFO SparkUI: Stopped Spark web UI at http://192.168.43.22:4040
+16/04/18 21:25:52 INFO DAGScheduler: Stopping DAGScheduler
+16/04/18 21:25:52 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/04/18 21:25:52 INFO MemoryStore: MemoryStore cleared
+16/04/18 21:25:52 INFO BlockManager: BlockManager stopped
+16/04/18 21:25:52 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/04/18 21:25:52 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/04/18 21:25:52 INFO SparkContext: Successfully stopped SparkContext
+16/04/18 21:25:52 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/04/18 21:25:52 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/04/18 21:25:52 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+bitonic_merge: firsthalf:  [47]
+bitonic_merge: secondhalf:  [48]
+bitonicsort: firsthalf:  [46]
+bitonicsort: secondhalf:  [47, 48]
+16/04/18 21:25:53 INFO SparkContext: Running Spark version 1.5.2
+16/04/18 21:25:53 INFO SecurityManager: Changing view acls to: root
+16/04/18 21:25:53 INFO SecurityManager: Changing modify acls to: root
+16/04/18 21:25:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/04/18 21:25:53 INFO Slf4jLogger: Slf4jLogger started
+16/04/18 21:25:53 INFO Remoting: Starting remoting
+16/04/18 21:25:53 INFO Utils: Successfully started service 'sparkDriver' on port 41541.
+16/04/18 21:25:53 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:41541]
+16/04/18 21:25:53 INFO SparkEnv: Registering MapOutputTracker
+16/04/18 21:25:53 INFO SparkEnv: Registering BlockManagerMaster
+16/04/18 21:25:53 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-60f5e9ef-7971-4134-b105-a28b4ad1ad7e
+16/04/18 21:25:53 INFO MemoryStore: MemoryStore started with capacity 794.9 MB
+16/04/18 21:25:53 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/httpd-9198af4d-7bdb-4fff-b221-4ea733d25939
+16/04/18 21:25:53 INFO HttpServer: Starting HTTP Server
+16/04/18 21:25:53 INFO Utils: Successfully started service 'HTTP file server' on port 40813.
+16/04/18 21:25:53 INFO SparkEnv: Registering OutputCommitCoordinator
+16/04/18 21:25:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/04/18 21:25:53 INFO SparkUI: Started SparkUI at http://localhost:4040
+16/04/18 21:25:53 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-7aa04362-168e-4ad3-9d18-e6557821e766/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:25:53 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994953823
+16/04/18 21:25:53 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/18 21:25:53 INFO Executor: Starting executor ID driver on host localhost
+16/04/18 21:25:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 53575.
+16/04/18 21:25:53 INFO NettyBlockTransferService: Server created on 53575
+16/04/18 21:25:53 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/18 21:25:53 INFO BlockManagerMasterEndpoint: Registering block manager localhost:53575 with 794.9 MB RAM, BlockManagerId(driver, localhost, 53575)
+16/04/18 21:25:53 INFO BlockManagerMaster: Registered BlockManager
+16/04/18 21:25:53 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1460994953850
+16/04/18 21:25:54 INFO SparkContext: Starting job: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69
+16/04/18 21:25:54 INFO DAGScheduler: Got job 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) with 3 output partitions
+16/04/18 21:25:54 INFO DAGScheduler: Final stage: ResultStage 0(reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:25:54 INFO DAGScheduler: Parents of final stage: List()
+16/04/18 21:25:54 INFO DAGScheduler: Missing parents: List()
+16/04/18 21:25:54 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69), which has no missing parents
+16/04/18 21:25:54 INFO MemoryStore: ensureFreeSpace(38480) called with curMem=0, maxMem=833527480
+16/04/18 21:25:54 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 37.6 KB, free 794.9 MB)
+16/04/18 21:25:54 INFO MemoryStore: ensureFreeSpace(5688) called with curMem=38480, maxMem=833527480
+16/04/18 21:25:54 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.6 KB, free 794.9 MB)
+16/04/18 21:25:54 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:53575 (size: 5.6 KB, free: 794.9 MB)
+16/04/18 21:25:54 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/18 21:25:54 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:25:54 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/18 21:25:54 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:25:54 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/18 21:25:54 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/18 21:25:54 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994953823
+16/04/18 21:25:54 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py has been previously copied to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-7aa04362-168e-4ad3-9d18-e6557821e766/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:25:54 INFO CacheManager: Partition rdd_0_0 not found, computing it
+16/04/18 21:25:54 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44168, maxMem=833527480
+16/04/18 21:25:54 INFO MemoryStore: Block rdd_0_0 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:25:54 INFO BlockManagerInfo: Added rdd_0_0 in memory on localhost:53575 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:26:00 INFO PythonRunner: Times: total = 6464, boot = 449, init = 6015, finish = 0
+16/04/18 21:26:00 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1567 bytes result sent to driver
+16/04/18 21:26:00 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:26:00 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/04/18 21:26:00 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 6688 ms on localhost (1/3)
+16/04/18 21:26:00 INFO CacheManager: Partition rdd_0_1 not found, computing it
+16/04/18 21:26:00 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44202, maxMem=833527480
+16/04/18 21:26:00 INFO MemoryStore: Block rdd_0_1 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:26:00 INFO BlockManagerInfo: Added rdd_0_1 in memory on localhost:53575 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:26:00 INFO PythonRunner: Times: total = 27, boot = -56, init = 83, finish = 0
+16/04/18 21:26:00 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1567 bytes result sent to driver
+16/04/18 21:26:00 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:26:00 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/04/18 21:26:00 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 116 ms on localhost (2/3)
+16/04/18 21:26:00 INFO CacheManager: Partition rdd_0_2 not found, computing it
+16/04/18 21:26:00 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44236, maxMem=833527480
+16/04/18 21:26:00 INFO MemoryStore: Block rdd_0_2 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:26:00 INFO BlockManagerInfo: Added rdd_0_2 in memory on localhost:53575 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:26:01 INFO PythonRunner: Times: total = 39, boot = -17, init = 56, finish = 0
+16/04/18 21:26:01 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1567 bytes result sent to driver
+16/04/18 21:26:01 INFO DAGScheduler: ResultStage 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) finished in 6.906 s
+16/04/18 21:26:01 INFO DAGScheduler: Job 0 finished: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69, took 6.990438 s
+16/04/18 21:26:01 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 146 ms on localhost (3/3)
+16/04/18 21:26:01 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+##################################################################################
+reduceFunction_BitonicCompare(): i= 0 ; k= 1
+##################################################################################
+reduceFunction_BitonicCompare(): i= None ; k= 2
+16/04/18 21:26:01 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+16/04/18 21:26:01 INFO DAGScheduler: Stopping DAGScheduler
+16/04/18 21:26:01 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/04/18 21:26:01 INFO MemoryStore: MemoryStore cleared
+16/04/18 21:26:01 INFO BlockManager: BlockManager stopped
+16/04/18 21:26:01 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/04/18 21:26:01 INFO SparkContext: Successfully stopped SparkContext
+16/04/18 21:26:01 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/04/18 21:26:01 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/04/18 21:26:01 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/04/18 21:26:01 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+16/04/18 21:26:02 INFO SparkContext: Running Spark version 1.5.2
+16/04/18 21:26:02 INFO SecurityManager: Changing view acls to: root
+16/04/18 21:26:02 INFO SecurityManager: Changing modify acls to: root
+16/04/18 21:26:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/04/18 21:26:02 INFO Slf4jLogger: Slf4jLogger started
+16/04/18 21:26:02 INFO Remoting: Starting remoting
+16/04/18 21:26:02 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:54596]
+16/04/18 21:26:02 INFO Utils: Successfully started service 'sparkDriver' on port 54596.
+16/04/18 21:26:02 INFO SparkEnv: Registering MapOutputTracker
+16/04/18 21:26:02 INFO SparkEnv: Registering BlockManagerMaster
+16/04/18 21:26:02 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-3e1c2859-9976-4cb3-a2a6-153a0f03e282
+16/04/18 21:26:02 INFO MemoryStore: MemoryStore started with capacity 794.9 MB
+16/04/18 21:26:02 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/httpd-d426f3b7-f42a-4fa7-9a1d-36f727b14254
+16/04/18 21:26:02 INFO HttpServer: Starting HTTP Server
+16/04/18 21:26:02 INFO Utils: Successfully started service 'HTTP file server' on port 46886.
+16/04/18 21:26:02 INFO SparkEnv: Registering OutputCommitCoordinator
+16/04/18 21:26:02 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/04/18 21:26:02 INFO SparkUI: Started SparkUI at http://localhost:4040
+16/04/18 21:26:02 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-172d1302-be1b-4453-917d-f03bf78badaa/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:26:02 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994962406
+16/04/18 21:26:02 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/18 21:26:02 INFO Executor: Starting executor ID driver on host localhost
+16/04/18 21:26:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35141.
+16/04/18 21:26:02 INFO NettyBlockTransferService: Server created on 35141
+16/04/18 21:26:02 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/18 21:26:02 INFO BlockManagerMasterEndpoint: Registering block manager localhost:35141 with 794.9 MB RAM, BlockManagerId(driver, localhost, 35141)
+16/04/18 21:26:02 INFO BlockManagerMaster: Registered BlockManager
+16/04/18 21:26:02 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1460994962425
+16/04/18 21:26:02 INFO SparkContext: Starting job: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69
+16/04/18 21:26:02 INFO DAGScheduler: Got job 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) with 3 output partitions
+16/04/18 21:26:02 INFO DAGScheduler: Final stage: ResultStage 0(reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:26:02 INFO DAGScheduler: Parents of final stage: List()
+16/04/18 21:26:02 INFO DAGScheduler: Missing parents: List()
+16/04/18 21:26:02 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69), which has no missing parents
+16/04/18 21:26:02 INFO MemoryStore: ensureFreeSpace(38480) called with curMem=0, maxMem=833527480
+16/04/18 21:26:02 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 37.6 KB, free 794.9 MB)
+16/04/18 21:26:02 INFO MemoryStore: ensureFreeSpace(5688) called with curMem=38480, maxMem=833527480
+16/04/18 21:26:02 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.6 KB, free 794.9 MB)
+16/04/18 21:26:02 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:35141 (size: 5.6 KB, free: 794.9 MB)
+16/04/18 21:26:02 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/18 21:26:02 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:26:02 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/18 21:26:02 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2230 bytes)
+16/04/18 21:26:02 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/18 21:26:02 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/18 21:26:02 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994962406
+16/04/18 21:26:02 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py has been previously copied to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-172d1302-be1b-4453-917d-f03bf78badaa/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:26:02 INFO CacheManager: Partition rdd_0_0 not found, computing it
+16/04/18 21:26:02 INFO MemoryStore: ensureFreeSpace(16) called with curMem=44168, maxMem=833527480
+16/04/18 21:26:02 INFO MemoryStore: Block rdd_0_0 stored as bytes in memory (estimated size 16.0 B, free 794.9 MB)
+16/04/18 21:26:02 INFO BlockManagerInfo: Added rdd_0_0 in memory on localhost:35141 (size: 16.0 B, free: 794.9 MB)
+16/04/18 21:26:09 INFO PythonRunner: Times: total = 6468, boot = 459, init = 6009, finish = 0
+16/04/18 21:26:09 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1556 bytes result sent to driver
+16/04/18 21:26:09 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:26:09 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/04/18 21:26:09 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 6641 ms on localhost (1/3)
+16/04/18 21:26:09 INFO CacheManager: Partition rdd_0_1 not found, computing it
+16/04/18 21:26:09 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44184, maxMem=833527480
+16/04/18 21:26:09 INFO MemoryStore: Block rdd_0_1 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:26:09 INFO BlockManagerInfo: Added rdd_0_1 in memory on localhost:35141 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:26:09 INFO PythonRunner: Times: total = 10, boot = -8, init = 15, finish = 3
+16/04/18 21:26:09 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1567 bytes result sent to driver
+16/04/18 21:26:09 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 2241 bytes)
+16/04/18 21:26:09 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/04/18 21:26:09 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 119 ms on localhost (2/3)
+16/04/18 21:26:09 INFO CacheManager: Partition rdd_0_2 not found, computing it
+16/04/18 21:26:09 INFO MemoryStore: ensureFreeSpace(34) called with curMem=44218, maxMem=833527480
+16/04/18 21:26:09 INFO MemoryStore: Block rdd_0_2 stored as bytes in memory (estimated size 34.0 B, free 794.9 MB)
+16/04/18 21:26:09 INFO BlockManagerInfo: Added rdd_0_2 in memory on localhost:35141 (size: 34.0 B, free: 794.9 MB)
+16/04/18 21:26:09 INFO PythonRunner: Times: total = 52, boot = -54, init = 106, finish = 0
+16/04/18 21:26:09 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1567 bytes result sent to driver
+16/04/18 21:26:09 INFO DAGScheduler: ResultStage 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) finished in 6.846 s
+16/04/18 21:26:09 INFO DAGScheduler: Job 0 finished: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69, took 6.892585 s
+16/04/18 21:26:09 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 129 ms on localhost (3/3)
+16/04/18 21:26:09 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+##################################################################################
+reduceFunction_BitonicCompare(): i= 1 ; k= 2
+16/04/18 21:26:09 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+16/04/18 21:26:09 INFO DAGScheduler: Stopping DAGScheduler
+16/04/18 21:26:09 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/04/18 21:26:09 INFO MemoryStore: MemoryStore cleared
+16/04/18 21:26:09 INFO BlockManager: BlockManager stopped
+16/04/18 21:26:09 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/04/18 21:26:09 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/04/18 21:26:09 INFO SparkContext: Successfully stopped SparkContext
+16/04/18 21:26:09 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+bitonic_merge: firsthalf:  [47]
+bitonic_merge: secondhalf:  [48]
+bitonic_merge: firsthalf:  [46]
+bitonic_merge: secondhalf:  [47, 48]
+bitonicsort: firsthalf:  [50]
+bitonicsort: secondhalf:  [51]
+16/04/18 21:26:10 INFO SparkContext: Running Spark version 1.5.2
+16/04/18 21:26:10 INFO SecurityManager: Changing view acls to: root
+16/04/18 21:26:10 INFO SecurityManager: Changing modify acls to: root
+16/04/18 21:26:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/04/18 21:26:10 INFO Slf4jLogger: Slf4jLogger started
+16/04/18 21:26:10 INFO Remoting: Starting remoting
+16/04/18 21:26:10 INFO Utils: Successfully started service 'sparkDriver' on port 50413.
+16/04/18 21:26:10 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:50413]
+16/04/18 21:26:10 INFO SparkEnv: Registering MapOutputTracker
+16/04/18 21:26:10 INFO SparkEnv: Registering BlockManagerMaster
+16/04/18 21:26:10 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-bdca648c-49a8-49dd-94a5-d4e7d7844a91
+16/04/18 21:26:10 INFO MemoryStore: MemoryStore started with capacity 794.9 MB
+16/04/18 21:26:10 INFO HttpFileServer: HTTP File server directory is /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/httpd-a5835493-3aa5-43c5-acce-f522b6d7bf9a
+16/04/18 21:26:10 INFO HttpServer: Starting HTTP Server
+16/04/18 21:26:10 INFO Utils: Successfully started service 'HTTP file server' on port 43378.
+16/04/18 21:26:10 INFO SparkEnv: Registering OutputCommitCoordinator
+16/04/18 21:26:10 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/04/18 21:26:10 INFO SparkUI: Started SparkUI at http://localhost:4040
+16/04/18 21:26:10 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py to /tmp/spark-3aa85595-02dd-4aaf-9ed3-e72618467c8d/userFiles-5c3d33f0-3119-4493-b4c7-b5337d8c0448/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/18 21:26:10 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1460994970838
+16/04/18 21:26:10 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/18 21:26:10 INFO Executor: Starting executor ID driver on host localhost
+16/04/18 21:26:10 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58602.
+16/04/18 21:26:10 INFO NettyBlockTransferService: Server created on 58602
+16/04/18 21:26:10 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/18 21:26:10 INFO BlockManagerMasterEndpoint: Registering block manager localhost:58602 with 794.9 MB RAM, BlockManagerId(driver, localhost, 58602)
+16/04/18 21:26:10 INFO BlockManagerMaster: Registered BlockManager
+16/04/18 21:26:10 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1460994970855
+16/04/18 21:26:11 INFO SparkContext: Starting job: reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69
+16/04/18 21:26:11 INFO DAGScheduler: Got job 0 (reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69) with 3 output partitions
+16/04/18 21:26:11 INFO DAGScheduler: Final stage: ResultStage 0(reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:26:11 INFO DAGScheduler: Parents of final stage: List()
+16/04/18 21:26:11 INFO DAGScheduler: Missing parents: List()
+16/04/18 21:26:11 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69), which has no missing parents
+16/04/18 21:26:11 INFO MemoryStore: ensureFreeSpace(38480) called with curMem=0, maxMem=833527480
+16/04/18 21:26:11 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 37.6 KB, free 794.9 MB)
+16/04/18 21:26:11 INFO MemoryStore: ensureFreeSpace(5688) called with curMem=38480, maxMem=833527480
+16/04/18 21:26:11 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.6 KB, free 794.9 MB)
+16/04/18 21:26:11 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:58602 (size: 5.6 KB, free: 794.9 MB)
+16/04/18 21:26:11 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/18 21:26:11 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:69)
+16/04/18 21:26:11 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/18 21:26:11 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2230 bytes)
+16/04/18 21:26:11 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/18 21:26:11 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/18 21:26:11 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Biton
