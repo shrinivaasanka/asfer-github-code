@@ -30,8 +30,11 @@ from pyspark.sql import SQLContext, Row
 from complement import toint
 from bidict import bidict
 
+import sys
+
 midpoint=0
 globalmergedtiles=bidict()
+globalcoordinates=[]
 
 def bitonic_sort(up, mergedtiles):
 	if len(mergedtiles) <= 1:
@@ -44,7 +47,7 @@ def bitonic_sort(up, mergedtiles):
 		return bitonic_merge(up, firsthalf + secondhalf)
 
 def bitonic_merge(up, mergedtiles):
-	if len(mergedtiles) <= 1:
+	if len(mergedtiles) == 1:
 		return mergedtiles
 	else:
 		bitonic_compare(up, mergedtiles)
@@ -52,13 +55,18 @@ def bitonic_merge(up, mergedtiles):
 		secondhalf = bitonic_merge(up, mergedtiles[int(len(mergedtiles)/2):])
 		print "bitonic_merge: firsthalf: ", firsthalf
 		print "bitonic_merge: secondhalf: ", secondhalf
-		return firsthalf+secondhalf
+		if firsthalf[0] > secondhalf[len(secondhalf)-1]:
+			return secondhalf+firsthalf
+		else:
+			return firsthalf+secondhalf
 
 def bitonic_compare(up, mergedtiles):
 	midpoint = int(len(mergedtiles)/2)
 	spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
+        #paralleldata = spcon.parallelize(mergedtiles)
         paralleldata = spcon.parallelize(mergedtiles).cache()
-        k=paralleldata.map(mapFunction_BitonicCompare).reduceByKey(reduceFunction_BitonicCompare)
+        #k=paralleldata.map(mapFunction_BitonicCompare).reduceByKey(reduceFunction_BitonicCompare)
+        k=paralleldata.map(mapFunction_BitonicCompare).reduce(reduceFunction_BitonicCompare)
         #sqlContext=SQLContext(spcon)
         #parents_schema=sqlContext.createDataFrame(k.collect())
         #parents_schema.registerTempTable("Spark_MapReduce_Bitonic")
@@ -72,16 +80,26 @@ def mapFunction_BitonicCompare(tileelement):
 	#	if v==tileelement:
 	#		tileelement_index=k
 	tileelement_index=globalmergedtiles.inv[tileelement]
-	return (1,tileelement_index)
+	return tileelement_index
+	#return (1,tileelement_index)
 
 def reduceFunction_BitonicCompare(i, k):
-	if (globalmergedtiles[i] > globalmergedtiles[i+midpoint]) == True:
-		globalmergedtiles[i], globalmergedtiles[i+midpoint] = globalmergedtiles[i+midpoint], globalmergedtiles[i]
-	if (globalmergedtiles[k] > globalmergedtiles[k+midpoint]) == True:
-		globalmergedtiles[k], globalmergedtiles[k+midpoint] = globalmergedtiles[k+midpoint], globalmergedtiles[k]
+	print "##################################################################################"
+	print "reduceFunction_BitonicCompare(): i=",i,"; k=",k
+	if i is not None and k is not None:
+		if (globalmergedtiles[i] > globalmergedtiles[i+midpoint]) == True:
+			print "Shuffling mergedtiles and coordinates ..."
+			globalmergedtiles[i], globalmergedtiles[i+midpoint] = globalmergedtiles[i+midpoint], globalmergedtiles[i]
+			globalcoordinates[i], globalcoordinates[i+midpoint] = globalcoordinates[i+midpoint], globalcoordinates[i]
+		if (globalmergedtiles[k] > globalmergedtiles[k+midpoint]) == True:
+			print "Shuffling mergedtiles and coordinates ..."
+			globalmergedtiles[k], globalmergedtiles[k+midpoint] = globalmergedtiles[k+midpoint], globalmergedtiles[k]
+			globalcoordinates[k], globalcoordinates[k+midpoint] = globalcoordinates[k+midpoint], globalcoordinates[k]
+	#sys.stdout.flush()
 
 def MergedTiles_BitonicSort():
-	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
+	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
+	coordinatesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
 	#mergedtiles=[10, 3, 5, 71, 30, 11, 20, 4, 330, 21, 110, 7, 33, 9, 39, 46]
 	cnt=1
 	try:
@@ -90,14 +108,34 @@ def MergedTiles_BitonicSort():
 			cnt+=1
 			if cnt == 16384:
 				break
+
 		if cnt < 16384:
 			while cnt <= 16384:
 				globalmergedtiles[cnt-1]=0
 				cnt+=1
 	except:
+		print "Exception:"
 		pass
-	sorted=bitonic_sort(False, globalmergedtiles.values())
-	print sorted
+
+	try:
+		cnt=1
+		for i in coordinatesf:
+			globalcoordinates.append(toint(i))
+			cnt+=1
+			if cnt == 16384:
+				break
+
+		if cnt < 16384:
+			while cnt <= 16384:
+				globalcoordinates[cnt-1]=0
+				cnt+=1
+	except:
+		print "Exception:"
+		pass
+	print "unsorted=",globalmergedtiles
+	sorted=bitonic_sort(True, globalmergedtiles.values())
+	print "sorted=",globalmergedtiles
+	print "globalcoordinates=",globalcoordinates
 
 if __name__=="__main__":
 	MergedTiles_BitonicSort()
