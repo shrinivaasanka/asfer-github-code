@@ -901,7 +901,11 @@ Additional references:
 
 	34.23) Parallel Computational Geometry Techniques - [MikhailAtallah] - http://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1021&context=cstech - Section 3.1 - Sorting and Merging - "...best hypercube bound for Parallel Sorting is O(logn(loglogn)^2) - [CypherPlaxton] - http://dl.acm.org/citation.cfm?id=100240 ..."
 
-	34.24) [DexterKozen-CheeYap] - Cell Decomposition is in NC - http://anothersample.net/order/fe1d53539cff07d3e836ccc499d443b38b2848ba - This is a deep Algebraic Geometry/Topology result for Cell Decomposition by constructing NC circuit for it. Coincidentally, the connection between NC factorization and geometry conjectured in 35 below is already present as evidenced by this. This algorithm is for Cell decomposition of a manifold in arbitrary dimensions - manifold as a set of disjoint union of cells created by intersecting polynomials. For NC factorization, the dimension of cell is 1 while the polynomial of interest is hyperbola. Illustration in [Kozen-Yap] - page 517 - is for 2-dimension cells with 2 polynomials - parabola and circle. This corresponds to tesselation step of factorization where a continuous hyperbola is discretized into disjoint union of cells in 1-dimension.
+	34.24) [DexterKozen-CheeYap] - Cell Decomposition is in NC - http://anothersample.net/order/fe1d53539cff07d3e836ccc499d443b38b2848ba - This is a deep Algebraic Geometry/Topology result for Cell Decomposition by constructing NC circuit for it. Coincidentally, the connection between NC factorization and geometry conjectured in 35 below is already present as evidenced by this. This algorithm is for Cell decomposition of a manifold in arbitrary dimensions - a set of disjoint union of cells created by intersecting polynomials. For NC factorization, the polynomial of interest is hyperbola. Illustration in [Kozen-Yap] - page 517 - is for 0,1,2-dimension cells with 2 polynomials - parabola and circle. This corresponds to tesselation step of factorization where a continuous hyperbola is discretized into disjoint union of cells.
+
+	34.25) Cell decomposition for tesselation of hyperbola can be created in two ways. In the first example, set of polynomials are {hyperbola, stepfunction1, stepfunction2, y=k forall integer k}. Geometrically the hyperbola is bounded above and below by 2 step functions i.e hyperbola intersects a grid of x-y axes lines. This creates 2-dimensional cells above and below hyperbola ensconced between 2 step functions which are homeomorphic to R^2 (there is a bijective map between cells and R^2 - Topology - Thomas Munkres}. Each cell has same sign for a polynomial {above=+1, on=0, below=-1}. This cell decomposition is in NC. Cells above and below hyperbola have to be merged to get squared tesselation.
+
+	34.26) In another example Cell decomposition is created by intersection of integer y-axis lines and hyperbola which results in set of 0-cells (discrete set of points on hyperbola).
 
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
@@ -4081,8 +4085,7 @@ requires the size of the array to be sorted in exponents of 2. Presently it is h
 -------------------------------------------------------------------------------------------------------
 Commits (2) as on 12 April 2016
 -------------------------------------------------------------------------------------------------------
-- Compare step in Bitonic Sort for merged tiles has been Spark MapReduced with this separate script. Can be used only in a large cluster.
-With this comparators are highly parallelizable over a cloud and thus in NC.
+- Compare step in Bitonic Sort for merged tiles has been Spark MapReduced with this separate script - ../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py. Can be used only in a large cluster.  With this comparators are highly parallelizable over a cloud and thus in NC.
 
 References:
 -----------
