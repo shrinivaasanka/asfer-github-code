@@ -59,6 +59,10 @@ const int PADDING=0;
 
 int mergedtiles[16384];
 int coordinates[16384];
+/*
+int mergedtiles[256];
+int coordinates[256];
+*/
 int next=0;
 
 int main()
@@ -72,7 +76,7 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 	long double prevlogsumoflogs=0.0;
 	long double prevsum = 0.0, sum = 0.0, prevsumdiff = 0.0, sumdiff = 0.0, term1 = 0.0;
 	//for(n = 2.0; n <= 5000000.0; n++)
-	for(n = 46.0; n <= 46.0; n++)
+	for(n = 25.0; n <= 25.0; n++)
 	{
 		struct timeval tv_start;
 		gettimeofday(&tv_start,NULL);
@@ -114,6 +118,7 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 	//cout<<"Binary search for factors of 35 as :["<<factor<<",5]<<"<<endl; 
 
 	for(int mt=0; mt < 16384; mt++)
+	//for(int mt=0; mt < 256; mt++)
 	{
 		cout<<"mergedtiles = "<<mergedtiles[mt]<<endl;
 		cout<<"coordinates = "<<coordinates[mt]<<endl;

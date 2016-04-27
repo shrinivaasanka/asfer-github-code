@@ -61,8 +61,9 @@ def getgofx(x):
                 u=u+1
 
 def toint(primestr):
-	print int(decimal.Decimal(primestr))
-	return int(decimal.Decimal(primestr))
+	if primestr != '' and not None:
+		print int(decimal.Decimal(primestr))
+		return int(decimal.Decimal(primestr))
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
