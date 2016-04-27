@@ -4100,6 +4100,24 @@ References:
 Spark Bitonic Sort - Imported BiDirectional Map - bidict - for reverse lookup (for a value, lookup a key in addition to for a key, 
 lookup a value) which is required to avoid the looping through of all keys to match against a tile element.
 
+-------------------------------------------------------------------------------------
+263. Commits as on 27 April 2016
+-------------------------------------------------------------------------------------
+  Interim Commits for ongoing investigation of a race condition in Spark MapReduce for NC Factorization with Bitonic Sort :
+-------------------------------------------------------------------------------------------------------------------------
+- The sequential version of bitonic sort has been updated to do away with usage of boolean flag up by 2 compare functions for True and False
+- Spark NC implementation of Bitonic Sort for Factorization still has some strange behaviour in sorting. In progress commits for this do
+following in Compare-And-Exchange phase:
+        - Comparator code has been rewritten to just do comparison of parallelized RDD set of tuples where each tuple is of the form:
+                (i, i+midpoint)
+        - This comparison returns a set of boolean flags collect()ed in compare()
+        - The variable exchange is done sequentially at each local node.
+        - This is because Spark documentation advises against changing global state in worker nodes (though there are exceptions in accumulator)
+        - There were some unusual JVM out of memory crashes, logs for which have been committed
+        - some trivial null checks in complement.py
+        - Bitonic Sort presents one of the most non-trivial cases for parallelism - parallel variable compare-and-exchange to be specific
+and present commits are a result of few weeks of tweaks and trial-errors.
+        - Still the race condition is observed in merge which would require further commits.
 
 
 
