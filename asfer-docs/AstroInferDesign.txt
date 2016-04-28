@@ -4119,6 +4119,20 @@ following in Compare-And-Exchange phase:
 and present commits are a result of few weeks of tweaks and trial-errors.
         - Still the race condition is observed in merge which would require further commits.
 
+------------------------------------------------------------------------------------
+264. Commits as on 28 April 2016
+------------------------------------------------------------------------------------
+Interim commits 2 for ongoing investigation of race conditions in Spark Bitonic Sort:
+--------------------------------------------------------------------------------------
+        - bidict usage has been removed because it requires bidirectional uniqueness, there are better alternatives
+        - The variable exchange code has been rewritten in a less complicated way and just mimicks what sequential version does
+in CompareAndExchange phase.
+        - logs for Sequential version has been committed
+        - number to factor has been set to an example low value
+        - .coordinates and .mergedtiles files have been regenerated
+        - Still the race condition remains despite being behaviourally similar to sequential version except the parallel comparator array returned b mapreduce
+        - Parallel comparator preserves immutability in local worker nodes
+
 
 
 - 
