@@ -4130,7 +4130,7 @@ in CompareAndExchange phase.
         - logs for Sequential version has been committed
         - number to factor has been set to an example low value
         - .coordinates and .mergedtiles files have been regenerated
-        - Still the race condition remains despite being behaviourally similar to sequential version except the parallel comparator array returned b mapreduce
+        - Still the race condition remains despite being behaviourally similar to sequential version except the parallel comparator array returned by mapreduce
         - Parallel comparator preserves immutability in local worker nodes
 
 
