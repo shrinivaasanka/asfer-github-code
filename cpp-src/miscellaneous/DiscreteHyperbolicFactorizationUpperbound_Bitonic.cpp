@@ -76,7 +76,7 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 	long double prevlogsumoflogs=0.0;
 	long double prevsum = 0.0, sum = 0.0, prevsumdiff = 0.0, sumdiff = 0.0, term1 = 0.0;
 	//for(n = 2.0; n <= 5000000.0; n++)
-	for(n = 25.0; n <= 25.0; n++)
+	for(n = 10.0; n <= 10.0; n++)
 	{
 		struct timeval tv_start;
 		gettimeofday(&tv_start,NULL);
