@@ -42,10 +42,9 @@ import sys
 globalmergedtiles={}
 globalcoordinates=[]
 bitoniclock=threading.Lock()
-upglobal=True
 
 def bitonic_sort(up, mergedtiles):
-	upglobal=up
+	print "##################################################################################"
 	if len(mergedtiles) <= 1:
 		return mergedtiles
 	else:
@@ -83,17 +82,16 @@ Parallelizes comparator in:
 '''
 
 def bitonic_compare_true(mergedtiles):
-	#bitoniclock.acquire()
+	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
-	#bitoniclock.release()
 	midpointlist=[]
 	spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	for l in range(midpoint):
 		midpointlist.append(mergedtiles[l+midpoint])
-	mergedtilesmidpointlist=zip(mergedtiles[:midpoint],midpointlist)
+	mergedtilesmidpointlist=zip(range(midpoint),mergedtiles[:midpoint],midpointlist)
 
-        #paralleldata = spcon.parallelize(mergedtilesmidpointlist)
-        paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
+        paralleldata = spcon.parallelize(mergedtilesmidpointlist)
+        #paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
         #k=paralleldata.map(mapFunction_BitonicCompare_False).reduceByKey(reduceFunction_BitonicCompare)
         #k=paralleldata.map(mapFunction_BitonicCompare_False).reduce(reduceFunction_BitonicCompare)
         #k=paralleldata.map(mapFunction_BitonicCompare)
@@ -104,16 +102,17 @@ def bitonic_compare_true(mergedtiles):
 	if k is not None:
 		mergedtiles_comparators=k.collect()
 		print "bitonic_compare_true() collected:",mergedtiles_comparators
+	print "bitonic_compare_true(): mergedtiles: ",mergedtiles
 	print "bitonic_compare_true(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_true(): mergedtiles_comparators:",mergedtiles_comparators
 	
 	for i in range(midpoint):
-                if (mergedtiles_comparators[i]) == True:
-                        temp = mergedtiles[i+midpoint]
-                        mergedtiles[i+midpoint] = mergedtiles[i]
-                        mergedtiles[i] = temp
+                if (mergedtiles_comparators[i][3]):
+                        temp = mergedtiles[mergedtiles_comparators[i][0]]
+                        mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
+                        mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
 	
-	print "bitonic_compare_true(): mergedtiles=",mergedtiles
+	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 	#bitoniclock.release()
         #sqlContext=SQLContext(spcon)
         #parents_schema=sqlContext.createDataFrame(k.collect())
@@ -136,36 +135,35 @@ Parallelizes comparator in :
 '''
 
 def bitonic_compare_false(mergedtiles):
-	#bitoniclock.acquire()
+	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
-	#bitoniclock.release()
 	midpointlist=[]
 	spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	for l in range(midpoint):
 		midpointlist.append(mergedtiles[l+midpoint])
-	mergedtilesmidpointlist=zip(mergedtiles[:midpoint],midpointlist)
+	mergedtilesmidpointlist=zip(range(midpoint),mergedtiles[:midpoint],midpointlist)
 
-        #paralleldata = spcon.parallelize(mergedtilesmidpointlist)
-        paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
+        paralleldata = spcon.parallelize(mergedtilesmidpointlist)
+        #paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
         #k=paralleldata.map(mapFunction_BitonicCompare_False).reduceByKey(reduceFunction_BitonicCompare)
         #k=paralleldata.map(mapFunction_BitonicCompare_False).reduce(reduceFunction_BitonicCompare)
         #k=paralleldata.map(mapFunction_BitonicCompare)
        	#k=paralleldata.map(Foreach_BitonicCompare_False_map).reduceByKey(Foreach_BitonicCompare_False_reduce)
        	k=paralleldata.map(Foreach_BitonicCompare_False_map)
-	#bitoniclock.acquire()
 
 	mergedtiles_comparators=[]
 	if k is not None:
 		mergedtiles_comparators=k.collect()
-		print "bitonic_compare_true() collected:",mergedtiles_comparators
+		print "bitonic_compare_false() collected:",mergedtiles_comparators
+	print "bitonic_compare_false(): 2. mergedtiles: ",mergedtiles
 	print "bitonic_compare_false(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_false(): mergedtiles_comparators:",mergedtiles_comparators
         
 	for i in range(midpoint):
-                if (mergedtiles_comparators[i]) == False:
-                        temp = mergedtiles[i+midpoint]
-                        mergedtiles[i+midpoint] = mergedtiles[i]
-                        mergedtiles[i] = temp
+                if (mergedtiles_comparators[i][3]):
+                        temp = mergedtiles[mergedtiles_comparators[i][0]]
+                        mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
+                        mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
 	
 	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -177,21 +175,19 @@ def bitonic_compare_false(mergedtiles):
         spcon.stop()
 
 def Foreach_BitonicCompare_True_map(tileelement):
-	print "##################################################################################"
-	print "Foreach_BitonicCompare_True(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[0]=", tileelement[0], "; tileelement[1]=", tileelement[1]
-	midpoint=tileelement[1]
-	if (tileelement[0] > tileelement[1]) == True:
-		return True
+	print "Foreach_BitonicCompare_True(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
+	midpoint=tileelement[2]
+	if (tileelement[1] > tileelement[2]) == True:
+		return (tileelement[0], tileelement[1], tileelement[2], True)
 	else:
-		return False
+		return (tileelement[0], tileelement[1], tileelement[2], False)
 
 def Foreach_BitonicCompare_False_map(tileelement):
-	print "##################################################################################"
-	print "Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[0]=", tileelement[0], "; tileelement[1]=", tileelement[1]
-	if (tileelement[0] > tileelement[1]) == False:
-		return True 
+	print "Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
+	if (tileelement[1] > tileelement[2]) == False:
+		return (tileelement[0], tileelement[1], tileelement[2], True)
 	else:
-		return False
+		return (tileelement[0], tileelement[1], tileelement[2], False)
 
 def Foreach_BitonicCompare_True_reduce(flag1, flag2):
 	return flag1,flag2
@@ -251,8 +247,8 @@ def MergedTiles_BitonicSort():
 	#try:
 	mergedtileslist=mergedtilesf.read().split("\n")
 	print mergedtileslist
-	while cnt <= 16384:
-	#while cnt <= 128:
+	#while cnt <= 16384:
+	while cnt <= 256:
 		print "cnt=",cnt
 		globalmergedtiles[cnt-1]=toint(mergedtileslist[cnt])
 		cnt+=1
@@ -263,8 +259,8 @@ def MergedTiles_BitonicSort():
 	cnt=1
 	#try:
 	coordinateslist=coordinatesf.read().split("\n")
-	while cnt <= 16384:
-	#while cnt <= 128:
+	#while cnt <= 16384:
+	while cnt <= 256:
 		globalcoordinates.append(toint(coordinateslist[cnt]))
 		cnt+=1
 	#except:
@@ -272,7 +268,6 @@ def MergedTiles_BitonicSort():
 	#	pass
 
 	print "unsorted=",globalmergedtiles
-	upglobal=False
 	sorted=bitonic_sort(False, globalmergedtiles.values())
 	print "sorted=",globalmergedtiles
 	print "globalcoordinates=",globalcoordinates

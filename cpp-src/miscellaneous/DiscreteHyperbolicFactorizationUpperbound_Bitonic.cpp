@@ -57,12 +57,12 @@ static long double factor=-1.0;
 
 const int PADDING=0;
 
+/*
 int mergedtiles[16384];
 int coordinates[16384];
-/*
+*/
 int mergedtiles[256];
 int coordinates[256];
-*/
 int next=0;
 
 int main()
@@ -117,8 +117,8 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 	//binary_search_int(232,2,11,15,11);
 	//cout<<"Binary search for factors of 35 as :["<<factor<<",5]<<"<<endl; 
 
-	for(int mt=0; mt < 16384; mt++)
-	//for(int mt=0; mt < 256; mt++)
+	//for(int mt=0; mt < 16384; mt++)
+	for(int mt=0; mt < 256; mt++)
 	{
 		cout<<"mergedtiles = "<<mergedtiles[mt]<<endl;
 		cout<<"coordinates = "<<coordinates[mt]<<endl;
@@ -208,10 +208,10 @@ int binary_search_int(int N, int xleft, int yleft, int xright, int yright)
 	int i;
 	for(i=0;i <= (xright-xleft); i++)
 	{
-		array[i]=(xleft+i)*yleft;
-		mergedtiles[next]=(xright+i)*yleft;
-		coordinates[next]=yleft;
+		mergedtiles[next]=(xleft+i)*yleft;
 		next++;
+		array[i]=(xleft+i)*yleft;
+		coordinates[next]=yleft;
 		//cout<<array[i]<<",";
 	}
 	//cout<<"]"<<endl;

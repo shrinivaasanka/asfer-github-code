@@ -909,6 +909,8 @@ Additional references:
 
 	34.26) In another example Cell decomposition is created by intersection of integer y-axis lines and hyperbola which results in set of 0-cells (discrete set of points on hyperbola).
 
+	34.27) NVIDIA CUDA Parallel Bitonic Sort Implementation Reference - http://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/Data-Parallel_Algorithms.html, Linux code - http://developer.download.nvidia.com/compute/cuda/1.1-Beta/Projects/bitonic.tar.gz
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
