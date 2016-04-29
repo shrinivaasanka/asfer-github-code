@@ -4136,7 +4136,7 @@ in CompareAndExchange phase.
         - Parallel comparator preserves immutability in local worker nodes
 
 --------------------------------------------------------------------------------------------------------------
-265. UGC(Unique Games Conjecture) and Special Case of Percolation-Majority Voting Circuits
+265. (THEORY) UGC(Unique Games Conjecture) and Special Case of Percolation-Majority Voting Circuits
 --------------------------------------------------------------------------------------------------------------
 265.1 Unique Games Conjecture by [SubhashKhot] is a conjecture about hardness of approximating certain constraint satisfaction problems. It states that complexity of obtaining polynomial time approximation schemes for specific class of constraint satisfaction NP-hard problems is NP-hard itself i.e polytime approximation is NP-hard. From section 255 above, if in a special case percolation with sampling of left-right points on percolation grids results in logarithmic advice, then percolation is in NC/log. Thus if RHS has 100% stable NP-hard voting function then NP is in NC/log implying NP is in P/log and P=NP. This disproves UGC trivially because all NP problems have P algorithms. But this disproof depends on strong assumptions that percolation has NC/log circuit and RHS of Majority voting is 100% noise stable. There are already counterexamples showing divergence of RHS in sections 53.16.3.1 and 256.
 265.2 Voter Boolean Functions can be written as Constraint Satisfaction Problems also: Voter expects significant percentage of constraints involving variables to be satisfied while voting for a candidate which brings the majority voting problem into the UGC regime. Approximating the result of an Election mentioned in Section 14 is thus reducible to hardness of approximation of constraint satisfaction and could be NP-hard if UGC is true.
@@ -4145,3 +4145,19 @@ in CompareAndExchange phase.
 References:
 -----------
 265.4 Unique Games Conjecture and Label Cover - https://en.wikipedia.org/wiki/Unique_games_conjecture
+
+-------------------------------------------------------------------------
+266. Commits as on 29 April 2016
+-------------------------------------------------------------------------
+Interim commits 3 for Bitonic Sort Spark NC Factorization Implementation
+-------------------------------------------------------------------------
+- AsFer Design Document updated for already implemented NVIDIA CUDA Parallel C reference code for bitonic sort on hypercube
+- Bitonic Sort C++ code updated for max size of sort array - reduced from 16384 to 256
+- Bitonic Sort Python Spark implementation updated for returning a tuple containing index info also instead of plain boolean value 
+because Spark collect() after a comparator map() does not preserve order and index information was lost.
+- if clauses in exchange phase have been appropriately changed
+- Still there are random mysterious jumbled tuples which will be looked into in future commits
+- This implementation becomes redundant because of already existing better NVIDIA CUDA Parallel C implementation and 
+is of academic interest only.
+
+
