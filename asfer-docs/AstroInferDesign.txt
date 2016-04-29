@@ -4147,7 +4147,7 @@ References:
 265.4 Unique Games Conjecture and Label Cover - https://en.wikipedia.org/wiki/Unique_games_conjecture
 
 -------------------------------------------------------------------------
-266. Commits as on 29 April 2016
+266. Commits 1 as on 29 April 2016
 -------------------------------------------------------------------------
 Interim commits 3 for Bitonic Sort Spark NC Factorization Implementation
 -------------------------------------------------------------------------
@@ -4160,4 +4160,11 @@ because Spark collect() after a comparator map() does not preserve order and ind
 - This implementation becomes redundant because of already existing better NVIDIA CUDA Parallel C implementation and 
 is of academic interest only.
 
-
+----------------------------------------------------------------------------
+Final commits for Bitonic Sort Spark NC Factorization Implementation
+----------------------------------------------------------------------------
+- Indeed Bitonic Sort from previous commit itself works without any issues.
+- Nothing new in this except reduced sort array of size just 64 for circumventing frequent Py4Java Out of Memory errors and for quick runtime
+- Logs for this have been committed in testlogs/
+- the debug line "merged sorted halves" is the final sorted tiles array
+- .coordinates and .mergedtiles files have been updated
