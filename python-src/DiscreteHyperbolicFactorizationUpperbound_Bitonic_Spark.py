@@ -52,7 +52,9 @@ def bitonic_sort(up, mergedtiles):
 		secondhalf = bitonic_sort(False, mergedtiles[int(len(mergedtiles)/2):])
 		print "bitonicsort: firsthalf: ", firsthalf
 		print "bitonicsort: secondhalf: ", secondhalf
-		return bitonic_merge(up, firsthalf + secondhalf)
+		mergedhalves=bitonic_merge(up, firsthalf + secondhalf)
+		print "bitonic_sort(): merged sorted halves:", mergedhalves
+		return mergedhalves
 
 def bitonic_merge(up, mergedtiles):
 	if len(mergedtiles) == 1:
@@ -248,7 +250,7 @@ def MergedTiles_BitonicSort():
 	mergedtileslist=mergedtilesf.read().split("\n")
 	print mergedtileslist
 	#while cnt <= 16384:
-	while cnt <= 256:
+	while cnt <= 64:
 		print "cnt=",cnt
 		globalmergedtiles[cnt-1]=toint(mergedtileslist[cnt])
 		cnt+=1
@@ -260,7 +262,7 @@ def MergedTiles_BitonicSort():
 	#try:
 	coordinateslist=coordinatesf.read().split("\n")
 	#while cnt <= 16384:
-	while cnt <= 256:
+	while cnt <= 64:
 		globalcoordinates.append(toint(coordinateslist[cnt]))
 		cnt+=1
 	#except:

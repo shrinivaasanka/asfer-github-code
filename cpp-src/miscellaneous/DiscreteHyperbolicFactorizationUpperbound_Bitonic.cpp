@@ -61,8 +61,8 @@ const int PADDING=0;
 int mergedtiles[16384];
 int coordinates[16384];
 */
-int mergedtiles[256];
-int coordinates[256];
+int mergedtiles[64];
+int coordinates[64];
 int next=0;
 
 int main()
@@ -118,7 +118,7 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 	//cout<<"Binary search for factors of 35 as :["<<factor<<",5]<<"<<endl; 
 
 	//for(int mt=0; mt < 16384; mt++)
-	for(int mt=0; mt < 256; mt++)
+	for(int mt=0; mt < 64; mt++)
 	{
 		cout<<"mergedtiles = "<<mergedtiles[mt]<<endl;
 		cout<<"coordinates = "<<coordinates[mt]<<endl;

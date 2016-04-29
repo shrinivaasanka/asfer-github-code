@@ -53,6 +53,7 @@ def bitonic_merge(up, mergedtiles):
 		return firsthalf+secondhalf
 
 def bitonic_compare_true(mergedtiles):
+	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
 	print "bitonic_compare_true(): up= True" 
 	for i in range(midpoint):
@@ -60,8 +61,10 @@ def bitonic_compare_true(mergedtiles):
 			temp = mergedtiles[i+midpoint]
 			mergedtiles[i+midpoint] = mergedtiles[i]
 			mergedtiles[i] = temp 
+	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 
 def bitonic_compare_false(mergedtiles):
+	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
 	print "bitonic_compare_false(): up= False" 
 	for i in range(midpoint):
@@ -69,6 +72,7 @@ def bitonic_compare_false(mergedtiles):
 			temp = mergedtiles[i+midpoint]
 			mergedtiles[i+midpoint] = mergedtiles[i]
 			mergedtiles[i] = temp 
+	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 
 if __name__=="__main__":
 	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
