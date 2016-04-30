@@ -271,7 +271,7 @@ def MergedTiles_BitonicSort():
 
 	print "unsorted=",globalmergedtiles
 	sorted=bitonic_sort(False, globalmergedtiles.values())
-	print "sorted=",globalmergedtiles
+	print "sorted=",sorted
 	print "globalcoordinates=",globalcoordinates
 
 if __name__=="__main__":

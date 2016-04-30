@@ -1,0 +1,160 @@
+file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1461978879544
+16/04/30 06:44:39 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/30 06:44:39 INFO Executor: Starting executor ID driver on host localhost
+16/04/30 06:44:39 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39663.
+16/04/30 06:44:39 INFO NettyBlockTransferService: Server created on 39663
+16/04/30 06:44:39 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/30 06:44:39 INFO BlockManagerMasterEndpoint: Registering block manager localhost:39663 with 807.0 MB RAM, BlockManagerId(driver, localhost, 39663)
+16/04/30 06:44:39 INFO BlockManagerMaster: Registered BlockManager
+16/04/30 06:44:39 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1461978879549
+16/04/30 06:44:39 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158
+16/04/30 06:44:39 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158) with 3 output partitions
+16/04/30 06:44:39 INFO DAGScheduler: Final stage: ResultStage 0(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158)
+16/04/30 06:44:39 INFO DAGScheduler: Parents of final stage: List()
+16/04/30 06:44:39 INFO DAGScheduler: Missing parents: List()
+16/04/30 06:44:39 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158), which has no missing parents
+16/04/30 06:44:39 INFO MemoryStore: ensureFreeSpace(3872) called with curMem=0, maxMem=846161510
+16/04/30 06:44:39 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 3.8 KB, free 807.0 MB)
+16/04/30 06:44:39 INFO MemoryStore: ensureFreeSpace(2619) called with curMem=3872, maxMem=846161510
+16/04/30 06:44:39 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.6 KB, free 807.0 MB)
+16/04/30 06:44:39 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:39663 (size: 2.6 KB, free: 807.0 MB)
+16/04/30 06:44:39 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/30 06:44:39 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158)
+16/04/30 06:44:39 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/30 06:44:39 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2202 bytes)
+16/04/30 06:44:39 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/30 06:44:39 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/30 06:44:39 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1461978879544
+16/04/30 06:44:39 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py has been previously copied to /tmp/spark-48fe7479-a171-49f9-9143-26f3e29606b5/userFiles-3056f9cb-4432-48a2-875c-94933005dee3/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/30 06:44:40 INFO PythonRunner: Times: total = 559, boot = 544, init = 15, finish = 0
+16/04/30 06:44:40 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 942 bytes result sent to driver
+16/04/30 06:44:40 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2202 bytes)
+16/04/30 06:44:40 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/04/30 06:44:40 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 677 ms on localhost (1/3)
+16/04/30 06:44:40 INFO PythonRunner: Times: total = 50, boot = -1, init = 51, finish = 0
+16/04/30 06:44:40 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 942 bytes result sent to driver
+16/04/30 06:44:40 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 2220 bytes)
+16/04/30 06:44:40 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/04/30 06:44:40 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 100 ms on localhost (2/3)
+16/04/30 06:44:40 INFO PythonRunner: Times: total = 42, boot = 1, init = 41, finish = 0
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]= 0 ; tileelement[2]= 0
+16/04/30 06:44:40 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 962 bytes result sent to driver
+16/04/30 06:44:40 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 70 ms on localhost (3/3)
+16/04/30 06:44:40 INFO DAGScheduler: ResultStage 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158) finished in 0.817 s
+16/04/30 06:44:40 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158, took 0.848232 s
+bitonic_compare_false() collected: [(0, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(0, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(0, 0, 0, True)]
+bitonic_compare_false(): mergedtiles= [0, 0]
+16/04/30 06:44:40 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/04/30 06:44:40 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+16/04/30 06:44:40 INFO DAGScheduler: Stopping DAGScheduler
+16/04/30 06:44:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/04/30 06:44:40 INFO MemoryStore: MemoryStore cleared
+16/04/30 06:44:40 INFO BlockManager: BlockManager stopped
+16/04/30 06:44:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/04/30 06:44:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/04/30 06:44:40 INFO SparkContext: Successfully stopped SparkContext
+16/04/30 06:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/04/30 06:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/04/30 06:44:40 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [0]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+16/04/30 06:44:41 INFO SparkContext: Running Spark version 1.5.2
+16/04/30 06:44:41 INFO SecurityManager: Changing view acls to: root
+16/04/30 06:44:41 INFO SecurityManager: Changing modify acls to: root
+16/04/30 06:44:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/04/30 06:44:41 INFO Slf4jLogger: Slf4jLogger started
+16/04/30 06:44:41 INFO Remoting: Starting remoting
+16/04/30 06:44:41 INFO Utils: Successfully started service 'sparkDriver' on port 56820.
+16/04/30 06:44:41 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@localhost:56820]
+16/04/30 06:44:41 INFO SparkEnv: Registering MapOutputTracker
+16/04/30 06:44:41 INFO SparkEnv: Registering BlockManagerMaster
+16/04/30 06:44:41 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6bf62451-279d-456f-8b77-6dda71522bf7
+16/04/30 06:44:41 INFO MemoryStore: MemoryStore started with capacity 807.0 MB
+16/04/30 06:44:41 INFO HttpFileServer: HTTP File server directory is /tmp/spark-48fe7479-a171-49f9-9143-26f3e29606b5/httpd-19b86331-5f07-49ff-9fb0-1327bb44b62a
+16/04/30 06:44:41 INFO HttpServer: Starting HTTP Server
+16/04/30 06:44:41 INFO Utils: Successfully started service 'HTTP file server' on port 47898.
+16/04/30 06:44:41 INFO SparkEnv: Registering OutputCommitCoordinator
+16/04/30 06:44:41 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/04/30 06:44:41 INFO SparkUI: Started SparkUI at http://localhost:4040
+16/04/30 06:44:41 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py to /tmp/spark-48fe7479-a171-49f9-9143-26f3e29606b5/userFiles-2cdfa2e8-47cc-4665-b335-185285c0efbc/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/30 06:44:41 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1461978881689
+16/04/30 06:44:41 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/04/30 06:44:41 INFO Executor: Starting executor ID driver on host localhost
+16/04/30 06:44:41 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58051.
+16/04/30 06:44:41 INFO NettyBlockTransferService: Server created on 58051
+16/04/30 06:44:41 INFO BlockManagerMaster: Trying to register BlockManager
+16/04/30 06:44:41 INFO BlockManagerMasterEndpoint: Registering block manager localhost:58051 with 807.0 MB RAM, BlockManagerId(driver, localhost, 58051)
+16/04/30 06:44:41 INFO BlockManagerMaster: Registered BlockManager
+16/04/30 06:44:41 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1461978881700
+16/04/30 06:44:41 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158
+16/04/30 06:44:41 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158) with 3 output partitions
+16/04/30 06:44:41 INFO DAGScheduler: Final stage: ResultStage 0(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158)
+16/04/30 06:44:41 INFO DAGScheduler: Parents of final stage: List()
+16/04/30 06:44:41 INFO DAGScheduler: Missing parents: List()
+16/04/30 06:44:41 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158), which has no missing parents
+16/04/30 06:44:41 INFO MemoryStore: ensureFreeSpace(3872) called with curMem=0, maxMem=846161510
+16/04/30 06:44:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 3.8 KB, free 807.0 MB)
+16/04/30 06:44:41 INFO MemoryStore: ensureFreeSpace(2619) called with curMem=3872, maxMem=846161510
+16/04/30 06:44:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 2.6 KB, free 807.0 MB)
+16/04/30 06:44:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:58051 (size: 2.6 KB, free: 807.0 MB)
+16/04/30 06:44:41 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/04/30 06:44:41 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158)
+16/04/30 06:44:41 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/04/30 06:44:41 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 2202 bytes)
+16/04/30 06:44:41 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/04/30 06:44:41 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/04/30 06:44:41 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py with timestamp 1461978881689
+16/04/30 06:44:41 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py has been previously copied to /tmp/spark-48fe7479-a171-49f9-9143-26f3e29606b5/userFiles-2cdfa2e8-47cc-4665-b335-185285c0efbc/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+16/04/30 06:44:42 INFO PythonRunner: Times: total = 571, boot = 558, init = 12, finish = 1
+16/04/30 06:44:42 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 942 bytes result sent to driver
+16/04/30 06:44:42 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 2202 bytes)
+16/04/30 06:44:42 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/04/30 06:44:42 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 642 ms on localhost (1/3)
+16/04/30 06:44:42 INFO PythonRunner: Times: total = 47, boot = -2, init = 49, finish = 0
+16/04/30 06:44:42 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 942 bytes result sent to driver
+16/04/30 06:44:42 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 2219 bytes)
+16/04/30 06:44:42 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/04/30 06:44:42 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 95 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]= 0 ; tileelement[2]= None
+16/04/30 06:44:42 INFO PythonRunner: Times: total = 51, boot = 4, init = 47, finish = 0
+16/04/30 06:44:42 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 961 bytes result sent to driver
+16/04/30 06:44:42 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 78 ms on localhost (3/3)
+16/04/30 06:44:42 INFO DAGScheduler: ResultStage 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158) finished in 0.781 s
+16/04/30 06:44:42 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/04/30 06:44:42 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:158, took 0.808741 s
+bitonic_compare_false() collected: [(0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+16/04/30 06:44:42 INFO SparkUI: Stopped Spark web UI at http://localhost:4040
+16/04/30 06:44:42 INFO DAGScheduler: Stopping DAGScheduler
+16/04/30 06:44:42 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/04/30 06:44:42 INFO MemoryStore: MemoryStore cleared
+16/04/30 06:44:42 INFO BlockManager: BlockManager stopped
+16/04/30 06:44:42 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/04/30 06:44:42 INFO SparkContext: Successfully stopped SparkContext
+16/04/30 06:44:42 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/04/30 06:44:42 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/04/30 06:44:42 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/04/30 06:44:42 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [0, 0]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_merge: firsthalf:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_sort(): merged sorted halves: [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+sorted= [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+globalcoordinates= [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+

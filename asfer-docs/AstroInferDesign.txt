@@ -4168,3 +4168,11 @@ Final commits for Bitonic Sort Spark NC Factorization Implementation
 - Logs for this have been committed in testlogs/
 - the debug line "merged sorted halves" is the final sorted tiles array
 - .coordinates and .mergedtiles files have been updated
+
+----------------------------------------------------------------------------
+267. Commits as on 30 April 2016
+----------------------------------------------------------------------------
+- Printed return value of bitonic_sort() in sorted. Earlier it was wrongly printing globalmergedtiles a global state which is not changed
+anymore
+- logs for bitonic sort of tesselated hyperbolic arc
+
