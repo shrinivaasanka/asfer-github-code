@@ -110,9 +110,11 @@ def bitonic_compare_true(mergedtiles):
 	
 	for i in range(midpoint):
                 if (mergedtiles_comparators[i][3]):
-                        temp = mergedtiles[mergedtiles_comparators[i][0]]
-                        mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
-                        mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
+                        #temp = mergedtiles[mergedtiles_comparators[i][0]]
+                        #mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
+                        #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
+			mergedtiles[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][1]
+			mergedtiles[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][2]
 	
 	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -163,9 +165,11 @@ def bitonic_compare_false(mergedtiles):
         
 	for i in range(midpoint):
                 if (mergedtiles_comparators[i][3]):
-                        temp = mergedtiles[mergedtiles_comparators[i][0]]
-                        mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
-                        mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
+                        #temp = mergedtiles[mergedtiles_comparators[i][0]]
+                        #mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
+                        #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
+			mergedtiles[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][1]
+			mergedtiles[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][2]
 	
 	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -180,14 +184,14 @@ def Foreach_BitonicCompare_True_map(tileelement):
 	print "Foreach_BitonicCompare_True(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
 	midpoint=tileelement[2]
 	if (tileelement[1] > tileelement[2]) == True:
-		return (tileelement[0], tileelement[1], tileelement[2], True)
+		return (tileelement[0], tileelement[2], tileelement[1], True)
 	else:
 		return (tileelement[0], tileelement[1], tileelement[2], False)
 
 def Foreach_BitonicCompare_False_map(tileelement):
 	print "Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
 	if (tileelement[1] > tileelement[2]) == False:
-		return (tileelement[0], tileelement[1], tileelement[2], True)
+		return (tileelement[0], tileelement[2], tileelement[1], True)
 	else:
 		return (tileelement[0], tileelement[1], tileelement[2], False)
 
