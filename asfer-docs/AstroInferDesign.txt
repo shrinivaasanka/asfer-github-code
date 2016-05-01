@@ -4176,3 +4176,11 @@ Final commits for Bitonic Sort Spark NC Factorization Implementation
 anymore
 - logs for bitonic sort of tesselated hyperbolic arc
 
+----------------------------------------------------------------------------
+268. Commits as on 1 May 2016
+----------------------------------------------------------------------------
+- The Map step now does both Compare and Exchange within local worker nodes for each closure and result is returned in tuples
+- The driver collect()s and just assigns the variables based on comparator boolean field in tuple which are already exchanged within 
+local worker
+
+
