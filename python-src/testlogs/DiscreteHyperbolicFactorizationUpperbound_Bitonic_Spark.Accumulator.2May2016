@@ -1,0 +1,476 @@
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:02 INFO PythonRunner: Times: total = 40, boot = 7, init = 32, finish = 1
+16/05/02 21:13:02 INFO Executor: Finished task 2.0 in stage 313.0 (TID 941). 964 bytes result sent to driver
+16/05/02 21:13:02 INFO TaskSetManager: Finished task 2.0 in stage 313.0 (TID 941) in 75 ms on localhost (3/3)
+16/05/02 21:13:02 INFO TaskSchedulerImpl: Removed TaskSet 313.0, whose tasks have all completed, from pool 
+16/05/02 21:13:02 INFO DAGScheduler: ResultStage 313 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.189 s
+16/05/02 21:13:02 INFO DAGScheduler: Job 313 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.206113 s
+bitonic_compare_false() collected: [(54, 0, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(54, 0, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(54, 0, 0, 0, True)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [0]
+bitonic_merge: firsthalf:  [0, 0]
+bitonic_merge: secondhalf:  [0, 0]
+bitonic_merge: firsthalf:  [0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0]
+bitonic_compare_true(): 1. mergedtiles= [0, 0, 0, 0, 0, 0, 0, None]
+16/05/02 21:13:02 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:02 INFO DAGScheduler: Got job 314 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:02 INFO DAGScheduler: Final stage: ResultStage 314(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:02 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:02 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:02 INFO DAGScheduler: Submitting ResultStage 314 (PythonRDD[629] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:02 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=424115, maxMem=833527480
+16/05/02 21:13:02 INFO MemoryStore: Block broadcast_314 stored as values in memory (estimated size 3.8 KB, free 794.5 MB)
+16/05/02 21:13:02 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=428003, maxMem=833527480
+16/05/02 21:13:02 INFO MemoryStore: Block broadcast_314_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.5 MB)
+16/05/02 21:13:02 INFO BlockManagerInfo: Added broadcast_314_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.7 MB)
+16/05/02 21:13:02 INFO SparkContext: Created broadcast 314 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:02 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 314 (PythonRDD[629] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:02 INFO TaskSchedulerImpl: Adding task set 314.0 with 3 tasks
+16/05/02 21:13:02 INFO TaskSetManager: Starting task 0.0 in stage 314.0 (TID 942, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:02 INFO Executor: Running task 0.0 in stage 314.0 (TID 942)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:02 INFO PythonRunner: Times: total = 40, boot = -57, init = 97, finish = 0
+16/05/02 21:13:02 INFO Executor: Finished task 0.0 in stage 314.0 (TID 942). 964 bytes result sent to driver
+16/05/02 21:13:02 INFO TaskSetManager: Starting task 1.0 in stage 314.0 (TID 943, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:02 INFO TaskSetManager: Finished task 0.0 in stage 314.0 (TID 942) in 54 ms on localhost (1/3)
+16/05/02 21:13:02 INFO Executor: Running task 1.0 in stage 314.0 (TID 943)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 39, boot = 2, init = 37, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 1.0 in stage 314.0 (TID 943). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 2.0 in stage 314.0 (TID 944, localhost, PROCESS_LOCAL, 2243 bytes)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 1.0 in stage 314.0 (TID 943) in 57 ms on localhost (2/3)
+16/05/02 21:13:03 INFO Executor: Running task 2.0 in stage 314.0 (TID 944)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 40, boot = 7, init = 33, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 2.0 in stage 314.0 (TID 944). 985 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 2.0 in stage 314.0 (TID 944) in 54 ms on localhost (3/3)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Removed TaskSet 314.0, whose tasks have all completed, from pool 
+16/05/02 21:13:03 INFO DAGScheduler: ResultStage 314 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.156 s
+16/05/02 21:13:03 INFO DAGScheduler: Job 314 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.171070 s
+bitonic_compare_false() collected: [(56, 0, 0, 0, True), (57, 1, 0, 0, True), (58, 2, 0, 0, True), (59, 3, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(56, 0, 0, 0), (57, 1, 0, 0), (58, 2, 0, 0), (59, 3, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(56, 0, 0, 0, True), (57, 1, 0, 0, True), (58, 2, 0, 0, True), (59, 3, 0, None, False)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_true(): 1. mergedtiles= [0, 0, 0, 0]
+16/05/02 21:13:03 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:03 INFO DAGScheduler: Got job 315 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:03 INFO DAGScheduler: Final stage: ResultStage 315(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:03 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:03 INFO DAGScheduler: Submitting ResultStage 315 (PythonRDD[631] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=430640, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_315 stored as values in memory (estimated size 3.8 KB, free 794.5 MB)
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=434528, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_315_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.5 MB)
+16/05/02 21:13:03 INFO BlockManagerInfo: Added broadcast_315_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.7 MB)
+16/05/02 21:13:03 INFO SparkContext: Created broadcast 315 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:03 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 315 (PythonRDD[631] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Adding task set 315.0 with 3 tasks
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 0.0 in stage 315.0 (TID 945, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 0.0 in stage 315.0 (TID 945)
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 40, boot = -29, init = 69, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 0.0 in stage 315.0 (TID 945). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 1.0 in stage 315.0 (TID 946, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 1.0 in stage 315.0 (TID 946)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 0.0 in stage 315.0 (TID 945) in 55 ms on localhost (1/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 42, boot = 34, init = 8, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 1.0 in stage 315.0 (TID 946). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 2.0 in stage 315.0 (TID 947, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 1.0 in stage 315.0 (TID 946) in 57 ms on localhost (2/3)
+16/05/02 21:13:03 INFO Executor: Running task 2.0 in stage 315.0 (TID 947)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 40, boot = 11, init = 29, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 2.0 in stage 315.0 (TID 947). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 2.0 in stage 315.0 (TID 947) in 54 ms on localhost (3/3)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Removed TaskSet 315.0, whose tasks have all completed, from pool 
+16/05/02 21:13:03 INFO DAGScheduler: ResultStage 315 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.156 s
+16/05/02 21:13:03 INFO DAGScheduler: Job 315 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.170045 s
+bitonic_compare_false() collected: [(56, 0, 0, 0, True), (57, 1, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0, 0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(56, 0, 0, 0), (57, 1, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(56, 0, 0, 0, True), (57, 1, 0, 0, True)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0, 0, 0]
+bitonic_compare_true(): 1. mergedtiles= [0, 0]
+16/05/02 21:13:03 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:03 INFO DAGScheduler: Got job 316 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:03 INFO DAGScheduler: Final stage: ResultStage 316(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:03 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:03 INFO DAGScheduler: Submitting ResultStage 316 (PythonRDD[633] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=437165, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_316 stored as values in memory (estimated size 3.8 KB, free 794.5 MB)
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(2636) called with curMem=441053, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_316_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.5 MB)
+16/05/02 21:13:03 INFO BlockManagerInfo: Added broadcast_316_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.7 MB)
+16/05/02 21:13:03 INFO SparkContext: Created broadcast 316 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:03 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 316 (PythonRDD[633] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Adding task set 316.0 with 3 tasks
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 0.0 in stage 316.0 (TID 948, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 0.0 in stage 316.0 (TID 948)
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 41, boot = -116, init = 157, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 0.0 in stage 316.0 (TID 948). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 1.0 in stage 316.0 (TID 949, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 1.0 in stage 316.0 (TID 949)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 0.0 in stage 316.0 (TID 948) in 104 ms on localhost (1/3)
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 39, boot = 9, init = 30, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 1.0 in stage 316.0 (TID 949). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 2.0 in stage 316.0 (TID 950, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 1.0 in stage 316.0 (TID 949) in 98 ms on localhost (2/3)
+16/05/02 21:13:03 INFO Executor: Running task 2.0 in stage 316.0 (TID 950)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 252
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_250_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.7 MB)
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_315_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.7 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 317
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_314_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 316
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_313_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 315
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_312_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 314
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_311_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 313
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_310_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 312
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_309_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 311
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_308_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 310
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_307_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 309
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_306_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 308
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_305_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 307
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_304_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 306
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_303_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 305
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 39, boot = -47, init = 86, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 2.0 in stage 316.0 (TID 950). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 2.0 in stage 316.0 (TID 950) in 105 ms on localhost (3/3)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Removed TaskSet 316.0, whose tasks have all completed, from pool 
+16/05/02 21:13:03 INFO DAGScheduler: ResultStage 316 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.253 s
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_302_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO DAGScheduler: Job 316 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.264460 s
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 304
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_301_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 303
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_300_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 302
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_299_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 301
+bitonic_compare_false() collected: [(56, 0, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(56, 0, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(56, 0, 0, 0, True)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [0]
+bitonic_compare_true(): 1. mergedtiles= [0, 0]
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_298_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 300
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_297_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 299
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_296_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 298
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_295_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 297
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_294_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 296
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_293_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 295
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_292_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:03 INFO DAGScheduler: Got job 317 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:03 INFO DAGScheduler: Final stage: ResultStage 317(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:03 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:03 INFO DAGScheduler: Submitting ResultStage 317 (PythonRDD[635] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=280560, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_317 stored as values in memory (estimated size 3.8 KB, free 794.6 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 294
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_291_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=277923, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_317_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.6 MB)
+16/05/02 21:13:03 INFO BlockManagerInfo: Added broadcast_317_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 293
+16/05/02 21:13:03 INFO SparkContext: Created broadcast 317 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:03 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 317 (PythonRDD[635] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Adding task set 317.0 with 3 tasks
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_290_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 292
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 0.0 in stage 317.0 (TID 951, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 0.0 in stage 317.0 (TID 951)
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_289_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 291
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_288_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 290
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_287_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 289
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_286_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 288
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_285_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 287
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_284_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 286
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_283_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 285
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_282_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 284
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_281_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 283
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_280_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 282
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_279_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 281
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_278_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 280
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_277_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 279
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_276_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 278
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_275_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 277
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_274_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.8 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 276
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_273_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 275
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_272_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 274
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_271_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 273
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_270_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 272
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_269_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 271
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 39, boot = -46, init = 85, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 0.0 in stage 317.0 (TID 951). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 1.0 in stage 317.0 (TID 952, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 0.0 in stage 317.0 (TID 951) in 55 ms on localhost (1/3)
+16/05/02 21:13:03 INFO Executor: Running task 1.0 in stage 317.0 (TID 952)
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_268_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 270
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_267_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 269
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_266_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 268
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_265_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 267
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_264_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 266
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_263_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 265
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_262_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 264
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_261_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 263
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_260_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 262
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_259_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 261
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_258_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 260
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_257_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 259
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_256_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 258
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 45, boot = 4, init = 41, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 1.0 in stage 317.0 (TID 952). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 2.0 in stage 317.0 (TID 953, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 2.0 in stage 317.0 (TID 953)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 1.0 in stage 317.0 (TID 952) in 72 ms on localhost (2/3)
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_255_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 257
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_254_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 256
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_253_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 255
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_252_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 254
+16/05/02 21:13:03 INFO BlockManagerInfo: Removed broadcast_251_piece0 on localhost:45374 in memory (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO ContextCleaner: Cleaned accumulator 253
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 46, boot = 32, init = 14, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 2.0 in stage 317.0 (TID 953). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO DAGScheduler: ResultStage 317 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.173 s
+16/05/02 21:13:03 INFO DAGScheduler: Job 317 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.185977 s
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 2.0 in stage 317.0 (TID 953) in 57 ms on localhost (3/3)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Removed TaskSet 317.0, whose tasks have all completed, from pool 
+bitonic_compare_false() collected: [(58, 0, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(58, 0, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(58, 0, 0, 0, True)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [0]
+bitonic_merge: firsthalf:  [0, 0]
+bitonic_merge: secondhalf:  [0, 0]
+bitonic_compare_true(): 1. mergedtiles= [0, 0, 0, None]
+16/05/02 21:13:03 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:03 INFO DAGScheduler: Got job 318 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:03 INFO DAGScheduler: Final stage: ResultStage 318(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:03 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:03 INFO DAGScheduler: Submitting ResultStage 318 (PythonRDD[637] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=19568, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_318 stored as values in memory (estimated size 3.8 KB, free 794.9 MB)
+16/05/02 21:13:03 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=23456, maxMem=833527480
+16/05/02 21:13:03 INFO MemoryStore: Block broadcast_318_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.9 MB)
+16/05/02 21:13:03 INFO BlockManagerInfo: Added broadcast_318_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:03 INFO SparkContext: Created broadcast 318 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:03 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 318 (PythonRDD[637] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:03 INFO TaskSchedulerImpl: Adding task set 318.0 with 3 tasks
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 0.0 in stage 318.0 (TID 954, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 0.0 in stage 318.0 (TID 954)
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 40, boot = -36, init = 76, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 0.0 in stage 318.0 (TID 954). 942 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 1.0 in stage 318.0 (TID 955, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 1.0 in stage 318.0 (TID 955)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 0.0 in stage 318.0 (TID 954) in 53 ms on localhost (1/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:03 INFO PythonRunner: Times: total = 39, boot = 10, init = 29, finish = 0
+16/05/02 21:13:03 INFO Executor: Finished task 1.0 in stage 318.0 (TID 955). 964 bytes result sent to driver
+16/05/02 21:13:03 INFO TaskSetManager: Starting task 2.0 in stage 318.0 (TID 956, localhost, PROCESS_LOCAL, 2222 bytes)
+16/05/02 21:13:03 INFO Executor: Running task 2.0 in stage 318.0 (TID 956)
+16/05/02 21:13:03 INFO TaskSetManager: Finished task 1.0 in stage 318.0 (TID 955) in 53 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 39, boot = 9, init = 30, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 2.0 in stage 318.0 (TID 956). 963 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 2.0 in stage 318.0 (TID 956) in 50 ms on localhost (3/3)
+16/05/02 21:13:04 INFO TaskSchedulerImpl: Removed TaskSet 318.0, whose tasks have all completed, from pool 
+16/05/02 21:13:04 INFO DAGScheduler: ResultStage 318 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.145 s
+16/05/02 21:13:04 INFO DAGScheduler: Job 318 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.163247 s
+bitonic_compare_false() collected: [(60, 0, 0, 0, True), (61, 1, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0, 0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(60, 0, 0, 0), (61, 1, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(60, 0, 0, 0, True), (61, 1, 0, None, False)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0, 0, None]
+bitonic_compare_true(): 1. mergedtiles= [0, 0]
+16/05/02 21:13:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:04 INFO DAGScheduler: Got job 319 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:04 INFO DAGScheduler: Final stage: ResultStage 319(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:04 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:04 INFO DAGScheduler: Submitting ResultStage 319 (PythonRDD[639] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:04 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=26093, maxMem=833527480
+16/05/02 21:13:04 INFO MemoryStore: Block broadcast_319 stored as values in memory (estimated size 3.8 KB, free 794.9 MB)
+16/05/02 21:13:04 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=29981, maxMem=833527480
+16/05/02 21:13:04 INFO MemoryStore: Block broadcast_319_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.9 MB)
+16/05/02 21:13:04 INFO BlockManagerInfo: Added broadcast_319_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:04 INFO SparkContext: Created broadcast 319 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 319 (PythonRDD[639] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:04 INFO TaskSchedulerImpl: Adding task set 319.0 with 3 tasks
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 0.0 in stage 319.0 (TID 957, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:04 INFO Executor: Running task 0.0 in stage 319.0 (TID 957)
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 38, boot = -50, init = 88, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 0.0 in stage 319.0 (TID 957). 942 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 1.0 in stage 319.0 (TID 958, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:04 INFO Executor: Running task 1.0 in stage 319.0 (TID 958)
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 0.0 in stage 319.0 (TID 957) in 56 ms on localhost (1/3)
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 45, boot = 3, init = 42, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 1.0 in stage 319.0 (TID 958). 942 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 2.0 in stage 319.0 (TID 959, localhost, PROCESS_LOCAL, 2223 bytes)
+16/05/02 21:13:04 INFO Executor: Running task 2.0 in stage 319.0 (TID 959)
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 1.0 in stage 319.0 (TID 958) in 68 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= 0
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 44, boot = 4, init = 40, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 2.0 in stage 319.0 (TID 959). 964 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 2.0 in stage 319.0 (TID 959) in 65 ms on localhost (3/3)
+16/05/02 21:13:04 INFO DAGScheduler: ResultStage 319 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.170 s
+16/05/02 21:13:04 INFO DAGScheduler: Job 319 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.204994 s
+bitonic_compare_false() collected: [(60, 0, 0, 0, True)]
+bitonic_compare_false(): 2. mergedtiles:  [0, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(60, 0, 0, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(60, 0, 0, 0, True)]
+globalmergedtiles_accum:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_compare_false(): mergedtiles= [0, 0]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [0]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+16/05/02 21:13:04 INFO TaskSchedulerImpl: Removed TaskSet 319.0, whose tasks have all completed, from pool 
+16/05/02 21:13:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178
+16/05/02 21:13:04 INFO DAGScheduler: Got job 320 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) with 3 output partitions
+16/05/02 21:13:04 INFO DAGScheduler: Final stage: ResultStage 320(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/02 21:13:04 INFO DAGScheduler: Missing parents: List()
+16/05/02 21:13:04 INFO DAGScheduler: Submitting ResultStage 320 (PythonRDD[641] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178), which has no missing parents
+16/05/02 21:13:04 INFO MemoryStore: ensureFreeSpace(3888) called with curMem=32618, maxMem=833527480
+16/05/02 21:13:04 INFO MemoryStore: Block broadcast_320 stored as values in memory (estimated size 3.8 KB, free 794.9 MB)
+16/05/02 21:13:04 INFO MemoryStore: ensureFreeSpace(2637) called with curMem=36506, maxMem=833527480
+16/05/02 21:13:04 INFO MemoryStore: Block broadcast_320_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.9 MB)
+16/05/02 21:13:04 INFO BlockManagerInfo: Added broadcast_320_piece0 in memory on localhost:45374 (size: 2.6 KB, free: 794.9 MB)
+16/05/02 21:13:04 INFO SparkContext: Created broadcast 320 from broadcast at DAGScheduler.scala:861
+16/05/02 21:13:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 320 (PythonRDD[641] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178)
+16/05/02 21:13:04 INFO TaskSchedulerImpl: Adding task set 320.0 with 3 tasks
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 0.0 in stage 320.0 (TID 960, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:04 INFO Executor: Running task 0.0 in stage 320.0 (TID 960)
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 40, boot = -28, init = 68, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 0.0 in stage 320.0 (TID 960). 942 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 1.0 in stage 320.0 (TID 961, localhost, PROCESS_LOCAL, 2202 bytes)
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 0.0 in stage 320.0 (TID 960) in 54 ms on localhost (1/3)
+16/05/02 21:13:04 INFO Executor: Running task 1.0 in stage 320.0 (TID 961)
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 40, boot = 3, init = 37, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 1.0 in stage 320.0 (TID 961). 942 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Starting task 2.0 in stage 320.0 (TID 962, localhost, PROCESS_LOCAL, 2222 bytes)
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 1.0 in stage 320.0 (TID 961) in 56 ms on localhost (2/3)
+16/05/02 21:13:04 INFO Executor: Running task 2.0 in stage 320.0 (TID 962)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+16/05/02 21:13:04 INFO PythonRunner: Times: total = 39, boot = 8, init = 31, finish = 0
+16/05/02 21:13:04 INFO Executor: Finished task 2.0 in stage 320.0 (TID 962). 963 bytes result sent to driver
+16/05/02 21:13:04 INFO TaskSetManager: Finished task 2.0 in stage 320.0 (TID 962) in 53 ms on localhost (3/3)
+16/05/02 21:13:04 INFO TaskSchedulerImpl: Removed TaskSet 320.0, whose tasks have all completed, from pool 
+16/05/02 21:13:04 INFO DAGScheduler: ResultStage 320 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178) finished in 0.158 s
+16/05/02 21:13:04 INFO DAGScheduler: Job 320 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:178, took 0.170392 s
+bitonic_compare_false() collected: [(62, 0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(62, 0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(62, 0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [0, 0]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, None]
+bitonic_merge: firsthalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_merge: firsthalf:  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0]
+bitonic_merge: secondhalf:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+bitonic_sort(): merged sorted halves: [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+sorted= [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+globalcoordinates= [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 10, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+sorted globalmergedtiles accumulator version:  =  [10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 7, 7, 6, 6, 6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None]
+
+16/05/02 21:13:04 INFO SparkUI: Stopped Spark web UI at http://192.168.1.102:4040
+16/05/02 21:13:04 INFO DAGScheduler: Stopping DAGScheduler
+16/05/02 21:13:04 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/05/02 21:13:04 INFO MemoryStore: MemoryStore cleared
+16/05/02 21:13:04 INFO BlockManager: BlockManager stopped
+16/05/02 21:13:04 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/05/02 21:13:04 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/05/02 21:13:04 INFO SparkContext: Successfully stopped SparkContext
+16/05/02 21:13:04 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/05/02 21:13:04 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/05/02 21:13:04 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+16/05/02 21:13:05 INFO ShutdownHookManager: Shutdown hook called
+

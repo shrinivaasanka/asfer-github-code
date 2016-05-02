@@ -24,8 +24,17 @@
 #kashrinivaasan@live.com
 #-----------------------------------------------------------------------------------------------------------
 
-#Reference for global state modified within local worker node:
+#Reference for AccumulatorParam and global state modified within local worker node from code documentation of:
 #http://fossies.org/linux/spark/python/pyspark/accumulators.py
+
+from pyspark.accumulators import AccumulatorParam
+class VectorAccumulatorParam(AccumulatorParam):
+     def zero(self, value):
+         return [0.0] * len(value)
+     def addInPlace(self, val1, val2):
+         for i in range(len(val1)):
+              val1[i] += val2[i]
+         return val1
 
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, Row
@@ -40,32 +49,36 @@ import sys
 
 #globalmergedtiles=bidict()
 globalmergedtiles={}
+globalmergedtiles_accum=None
 globalcoordinates=[]
 bitoniclock=threading.Lock()
 
-def bitonic_sort(up, mergedtiles):
+spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
+globalmergedtiles_accum=spcon.accumulator([], VectorAccumulatorParam())
+
+def bitonic_sort(spcon, up, mergedtiles, start, end):
 	print "##################################################################################"
 	if len(mergedtiles) <= 1:
 		return mergedtiles
 	else:
-		firsthalf = bitonic_sort(True, mergedtiles[:int(len(mergedtiles)/2)])
-		secondhalf = bitonic_sort(False, mergedtiles[int(len(mergedtiles)/2):])
+		firsthalf = bitonic_sort(spcon, True, mergedtiles[:int(len(mergedtiles)/2)], start, start+int(len(mergedtiles)/2))
+		secondhalf = bitonic_sort(spcon, False, mergedtiles[int(len(mergedtiles)/2):], start+int(len(mergedtiles)/2), end)
 		print "bitonicsort: firsthalf: ", firsthalf
 		print "bitonicsort: secondhalf: ", secondhalf
-		mergedhalves=bitonic_merge(up, firsthalf + secondhalf)
+		mergedhalves=bitonic_merge(spcon, up, firsthalf + secondhalf, start, end)
 		print "bitonic_sort(): merged sorted halves:", mergedhalves
 		return mergedhalves
 
-def bitonic_merge(up, mergedtiles):
+def bitonic_merge(spcon, up, mergedtiles, start, end):
 	if len(mergedtiles) == 1:
 		return mergedtiles
 	else:
 		if (up==True):
-			bitonic_compare_true(mergedtiles)
+			bitonic_compare_true(spcon, mergedtiles, start, end)
 		else:
-			bitonic_compare_false(mergedtiles)
-		firsthalf = bitonic_merge(up, mergedtiles[:int(len(mergedtiles)/2)])
-		secondhalf = bitonic_merge(up, mergedtiles[int(len(mergedtiles)/2):])
+			bitonic_compare_false(spcon, mergedtiles, start, end)
+		firsthalf = bitonic_merge(spcon, up, mergedtiles[:int(len(mergedtiles)/2)], start, start+int(len(mergedtiles)/2))
+		secondhalf = bitonic_merge(spcon, up, mergedtiles[int(len(mergedtiles)/2):], start+int(len(mergedtiles)/2), end)
 		print "bitonic_merge: firsthalf: ", firsthalf
 		print "bitonic_merge: secondhalf: ", secondhalf
 		return firsthalf+secondhalf
@@ -83,14 +96,15 @@ Parallelizes comparator in:
 #####################################################
 '''
 
-def bitonic_compare_true(mergedtiles):
-	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
+def bitonic_compare_true(spcon, mergedtiles, start, end):
+	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles,";start=",start,";end=",end
 	midpoint = int(len(mergedtiles)/2)
 	midpointlist=[]
-	spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
+	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	for l in range(midpoint):
 		midpointlist.append(mergedtiles[l+midpoint])
-	mergedtilesmidpointlist=zip(range(midpoint),mergedtiles[:midpoint],midpointlist)
+	#tuple: (globalindex, localindex_per_recursion, firsthalfelement, secondhalfelement)
+	mergedtilesmidpointlist=zip(range(start,end),range(midpoint),mergedtiles[:midpoint],midpointlist)
 
         paralleldata = spcon.parallelize(mergedtilesmidpointlist)
         #paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
@@ -109,12 +123,14 @@ def bitonic_compare_true(mergedtiles):
 	print "bitonic_compare_true(): mergedtiles_comparators:",mergedtiles_comparators
 	
 	for i in range(midpoint):
-                if (mergedtiles_comparators[i][3]):
+                if (mergedtiles_comparators[i][4]):
                         #temp = mergedtiles[mergedtiles_comparators[i][0]]
                         #mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
                         #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
-			mergedtiles[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][1]
-			mergedtiles[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][2]
+			mergedtiles[mergedtiles_comparators[i][1]]=mergedtiles_comparators[i][2]
+			mergedtiles[mergedtiles_comparators[i][1] + midpoint]=mergedtiles_comparators[i][3]
+			globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
+			globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
 	
 	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -123,7 +139,7 @@ def bitonic_compare_true(mergedtiles):
         #parents_schema.registerTempTable("Spark_MapReduce_Bitonic")
         #query_results=sqlContext.sql("SELECT * FROM Spark_MapReduce_Bitonic")
         #dict_query_results=dict(query_results.collect())
-        spcon.stop()
+        #spcon.stop()
 
 '''
 #####################################################
@@ -138,14 +154,16 @@ Parallelizes comparator in :
 #####################################################
 '''
 
-def bitonic_compare_false(mergedtiles):
+def bitonic_compare_false(spcon, mergedtiles, start, end):
 	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
 	midpointlist=[]
-	spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
+	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	for l in range(midpoint):
 		midpointlist.append(mergedtiles[l+midpoint])
-	mergedtilesmidpointlist=zip(range(midpoint),mergedtiles[:midpoint],midpointlist)
+
+	#tuple: (globalindex, localindex_per_recursion, firsthalfelement, secondhalfelement)
+	mergedtilesmidpointlist=zip(range(start,end),range(midpoint),mergedtiles[:midpoint],midpointlist)
 
         paralleldata = spcon.parallelize(mergedtilesmidpointlist)
         #paralleldata = spcon.parallelize(mergedtilesmidpointlist).cache()
@@ -164,12 +182,15 @@ def bitonic_compare_false(mergedtiles):
 	print "bitonic_compare_false(): mergedtiles_comparators:",mergedtiles_comparators
         
 	for i in range(midpoint):
-                if (mergedtiles_comparators[i][3]):
+                if (mergedtiles_comparators[i][4]):
                         #temp = mergedtiles[mergedtiles_comparators[i][0]]
                         #mergedtiles[mergedtiles_comparators[i][0]] = mergedtiles[mergedtiles_comparators[i][0]+midpoint]
                         #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
-			mergedtiles[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][1]
-			mergedtiles[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][2]
+			mergedtiles[mergedtiles_comparators[i][1]]=mergedtiles_comparators[i][2]
+			mergedtiles[mergedtiles_comparators[i][1] + midpoint]=mergedtiles_comparators[i][3]
+			print "globalmergedtiles_accum: ",globalmergedtiles_accum.value
+			globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
+			globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
 	
 	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -178,22 +199,33 @@ def bitonic_compare_false(mergedtiles):
         #parents_schema.registerTempTable("Spark_MapReduce_Bitonic")
         #query_results=sqlContext.sql("SELECT * FROM Spark_MapReduce_Bitonic")
         #dict_query_results=dict(query_results.collect())
-        spcon.stop()
+        #spcon.stop()
 
 def Foreach_BitonicCompare_True_map(tileelement):
-	print "Foreach_BitonicCompare_True(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
-	midpoint=tileelement[2]
-	if (tileelement[1] > tileelement[2]) == True:
-		return (tileelement[0], tileelement[2], tileelement[1], True)
+	print "Foreach_BitonicCompare_True(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]=", tileelement[2], "; tileelement[3]=", tileelement[3]
+	if (tileelement[2] > tileelement[3]) == True:
+		#This has to be uncommented when accumulator values are mutable in tasks. Presently Spark does not support
+		#distributed synchronized mutables.
+                #temp = globalmergedtiles_accum.value[tileelement[0]]
+                #globalmergedtiles_accum.value[tileelement[0]] = globalmergedtiles_accum.value[tileelement[0]+midpoint]
+                #globalmergedtiles_accum.value[tileelement[0]+midpoint] = temp
+
+		return (tileelement[0], tileelement[1], tileelement[3], tileelement[2], True)
 	else:
-		return (tileelement[0], tileelement[1], tileelement[2], False)
+		return (tileelement[0], tileelement[1], tileelement[2], tileelement[3], False)
 
 def Foreach_BitonicCompare_False_map(tileelement):
-	print "Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[1]=", tileelement[1], "; tileelement[2]=", tileelement[2]
-	if (tileelement[1] > tileelement[2]) == False:
-		return (tileelement[0], tileelement[2], tileelement[1], True)
+	print "Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]=", tileelement[2], "; tileelement[3]=", tileelement[3]
+	if (tileelement[2] > tileelement[3]) == False:
+		#This has to be uncommented when accumulator values are mutable in tasks. Presently Spark does not support
+		#distributed synchronized mutables.
+                #temp = globalmergedtiles_accum.value[tileelement[0]]
+                #globalmergedtiles_accum.value[tileelement[0]] = globalmergedtiles_accum.value[tileelement[0]+midpoint]
+                #globalmergedtiles_accum.value[tileelement[0]+midpoint] = temp
+
+		return (tileelement[0], tileelement[1], tileelement[3], tileelement[2], True)
 	else:
-		return (tileelement[0], tileelement[1], tileelement[2], False)
+		return (tileelement[0], tileelement[1], tileelement[2], tileelement[3], False)
 
 def Foreach_BitonicCompare_True_reduce(flag1, flag2):
 	return flag1,flag2
@@ -246,9 +278,11 @@ def reduceFunction_BitonicCompare(i, k):
 	#sys.stdout.flush()
 
 def MergedTiles_BitonicSort():
+	global globalmergedtiles_accum
 	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
 	coordinatesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
 	#mergedtiles=[10, 3, 5, 71, 30, 11, 20, 4, 330, 21, 110, 7, 33, 9, 39, 46]
+	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	cnt=1
 	#try:
 	mergedtileslist=mergedtilesf.read().split("\n")
@@ -274,9 +308,14 @@ def MergedTiles_BitonicSort():
 	#	pass
 
 	print "unsorted=",globalmergedtiles
-	sorted=bitonic_sort(False, globalmergedtiles.values())
+
+	globalmergedtiles_accum=spcon.accumulator(globalmergedtiles.values(), VectorAccumulatorParam())
+	print "globalmergedtiles_accum: random element = ",globalmergedtiles_accum.value[3]
+	sorted=bitonic_sort(spcon, False, globalmergedtiles.values(), 0, len(globalmergedtiles.values())-1)
 	print "sorted=",sorted
 	print "globalcoordinates=",globalcoordinates
+	print "sorted globalmergedtiles accumulator version:  = ",globalmergedtiles_accum.value
+        spcon.stop()
 
 if __name__=="__main__":
 	bitoniccache=memcache.Client(["127.0.0.1:11211"], debug=1)
