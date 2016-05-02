@@ -4188,4 +4188,23 @@ anymore
 - The driver collect()s and just assigns the variables based on comparator boolean field in tuple which are already exchanged within 
 local worker
 
+--------------------------------------------------------------------------------------
+269. Commits as on 2 May 2016
+-------------------------------------------------------------------------------------
+Accumulator support for Bitonic Sort mapreduce globalmergedtiles
+-------------------------------------------------------------------------------------
+- Spark context has been parametrized and is passed around in the recursion so that single spark context keeps track of the
+accumulator variables
+- globalmergedtiles_accum is the new accumulator variable which is created in driver and used for storing distributed mutable globalmergedtiles
+- AccumulatorParam has been overridden for Vectors as globals
+- Spark does not permit however, at present, mutable global state within worker tasks and only driver creates the accumulator variables which can only be incrementally extended within closure workers.
+- muting or accessing accumulator.value within worker raises Exception: Can't access value of accumulator in worker tasks
+- Logs for above have been committed to testlogs/
+- Because of above limitation of Spark in global mutability, accumulator globalmergedtiles is updated only outside the Spark mapreduce closures.
+- Support for global mutables, if Spark has it, would make compare-and-exchange phase closer in behaviour to an NVIDIA Parallel bitonic sort.
+- Documentation on this necessary feature is scarce and some suggest use of datastores like Tachyon/Alluxio for distributed shared mutables
+which is non-trivial. This cloud parallel sort implementation achieves thus almost ~90% of NVIDIA CUDA parallel bitonic sort -
+CompareAndExchange is done in parallel but assigning CompareAndExchange results is done sequentially.
+
+
 
