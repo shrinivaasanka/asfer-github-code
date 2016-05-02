@@ -1491,6 +1491,8 @@ References:
 65.1  Analytics of Device Driver code - http://research.microsoft.com/en-us/groups/sa/drivermine_asplos14.pdf
 65.2  Logging - http://research.microsoft.com/en-US/groups/sa/loggingpractice.pdf
 65.3  Law of leaky abstraction - http://www.joelonsoftware.com/Articles/LeakyAbstractions.html 
+65.4  Function Point Analysis - http://www.bfpug.com.br/Artigos/Albrecht/MeasuringApplicationDevelopmentProductivity.pdf
+65.5  Function Point Analysis and Halstead Complexity Measures - https://en.wikipedia.org/wiki/Halstead_complexity_measures
 
 66. (THEORY) Encoding a document with above Hypergraph of Class stack vertices and Hyperedges - This hypergraph of concepts can also be used as a steganographic encoding tool for obfuscating a document (somewhat an encryption of different kind). For example, each document is a hyperedge in this hypergraph of class stack vertices. By choosing a suitable encoding function every concept or a word can be replaced with some element within each class stack vertex. This encoding function chooses some element in each class stack - f(word or concept C1 in a document) = a different word or concept C2 in the class stack vertex that contains C1. This function f has to be one-one and onto so that it is invertible to get the original document. This function can be anything modulo the height of that stack. Thus a plain text meaningful document can encrypt another meaningful hidden document without any ciphertext generation.
 
