@@ -1,0 +1,546 @@
+park.py:194) finished in 0.151 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1780 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.167540 s
+bitonic_compare_false() collected: [(240, 0, 79, 78, False), (241, 1, 80, 79, False)]
+bitonic_compare_false(): 2. mergedtiles:  [79, 80, 78, 79]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(240, 0, 79, 78), (241, 1, 80, 79)]
+bitonic_compare_false(): mergedtiles_comparators: [(240, 0, 79, 78, False), (241, 1, 80, 79, False)]
+bitonic_compare_false(): mergedtiles= [79, 80, 78, 79]
+bitonic_compare_true(): 1. mergedtiles= [79, 80]
+16/05/03 18:33:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:04 INFO DAGScheduler: Got job 1781 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:04 INFO DAGScheduler: Final stage: ResultStage 1781(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:04 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:04 INFO DAGScheduler: Submitting ResultStage 1781 (PythonRDD[3563] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=223557, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1781 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=227469, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1781_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO BlockManagerInfo: Added broadcast_1781_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:04 INFO SparkContext: Created broadcast 1781 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1781 (PythonRDD[3563] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Adding task set 1781.0 with 3 tasks
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 0.0 in stage 1781.0 (TID 5343, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 0.0 in stage 1781.0 (TID 5343)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 40, boot = -32, init = 72, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 0.0 in stage 1781.0 (TID 5343). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 1.0 in stage 1781.0 (TID 5344, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 0.0 in stage 1781.0 (TID 5343) in 50 ms on localhost (1/3)
+16/05/03 18:33:04 INFO Executor: Running task 1.0 in stage 1781.0 (TID 5344)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 38, boot = 4, init = 34, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 1.0 in stage 1781.0 (TID 5344). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 2.0 in stage 1781.0 (TID 5345, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 1.0 in stage 1781.0 (TID 5344) in 57 ms on localhost (2/3)
+16/05/03 18:33:04 INFO Executor: Running task 2.0 in stage 1781.0 (TID 5345)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 79 ; tileelement[3]= 80
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 40, boot = 2, init = 37, finish = 1
+16/05/03 18:33:04 INFO Executor: Finished task 2.0 in stage 1781.0 (TID 5345). 964 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 2.0 in stage 1781.0 (TID 5345) in 57 ms on localhost (3/3)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Removed TaskSet 1781.0, whose tasks have all completed, from pool 
+16/05/03 18:33:04 INFO DAGScheduler: ResultStage 1781 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.154 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1781 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.162319 s
+bitonic_compare_false() collected: [(240, 0, 80, 79, True)]
+bitonic_compare_false(): 2. mergedtiles:  [79, 80]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(240, 0, 79, 80)]
+bitonic_compare_false(): mergedtiles_comparators: [(240, 0, 80, 79, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 79, 80, 78, 79, 77, 78, 76, 77, 73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtiles= [80, 79]
+bitonic_merge: firsthalf:  [80]
+bitonic_merge: secondhalf:  [79]
+bitonic_compare_true(): 1. mergedtiles= [78, 79]
+16/05/03 18:33:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:04 INFO DAGScheduler: Got job 1782 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:04 INFO DAGScheduler: Final stage: ResultStage 1782(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:04 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:04 INFO DAGScheduler: Submitting ResultStage 1782 (PythonRDD[3565] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=230132, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1782 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=234044, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1782_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO BlockManagerInfo: Added broadcast_1782_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:04 INFO SparkContext: Created broadcast 1782 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1782 (PythonRDD[3565] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Adding task set 1782.0 with 3 tasks
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 0.0 in stage 1782.0 (TID 5346, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 0.0 in stage 1782.0 (TID 5346)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 39, boot = -29, init = 68, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 0.0 in stage 1782.0 (TID 5346). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 1.0 in stage 1782.0 (TID 5347, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 1.0 in stage 1782.0 (TID 5347)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 0.0 in stage 1782.0 (TID 5346) in 61 ms on localhost (1/3)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 37, boot = -7, init = 44, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 1.0 in stage 1782.0 (TID 5347). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 2.0 in stage 1782.0 (TID 5348, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 2.0 in stage 1782.0 (TID 5348)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 1.0 in stage 1782.0 (TID 5347) in 51 ms on localhost (2/3)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 41, boot = 8, init = 32, finish = 1
+16/05/03 18:33:04 INFO Executor: Finished task 2.0 in stage 1782.0 (TID 5348). 964 bytes result sent to driver
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 78 ; tileelement[3]= 79
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 2.0 in stage 1782.0 (TID 5348) in 54 ms on localhost (3/3)
+16/05/03 18:33:04 INFO DAGScheduler: ResultStage 1782 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.153 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1782 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.171601 s
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Removed TaskSet 1782.0, whose tasks have all completed, from pool 
+bitonic_compare_false() collected: [(242, 0, 79, 78, True)]
+bitonic_compare_false(): 2. mergedtiles:  [78, 79]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(242, 0, 78, 79)]
+bitonic_compare_false(): mergedtiles_comparators: [(242, 0, 79, 78, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 79, 77, 78, 76, 77, 73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtiles= [79, 78]
+bitonic_merge: firsthalf:  [79]
+bitonic_merge: secondhalf:  [78]
+bitonic_merge: firsthalf:  [80, 79]
+bitonic_merge: secondhalf:  [79, 78]
+bitonic_compare_true(): 1. mergedtiles= [77, 78, 76, 77]
+16/05/03 18:33:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:04 INFO DAGScheduler: Got job 1783 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:04 INFO DAGScheduler: Final stage: ResultStage 1783(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:04 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:04 INFO DAGScheduler: Submitting ResultStage 1783 (PythonRDD[3567] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=236707, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1783 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=240619, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1783_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO BlockManagerInfo: Added broadcast_1783_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:04 INFO SparkContext: Created broadcast 1783 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1783 (PythonRDD[3567] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Adding task set 1783.0 with 3 tasks
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 0.0 in stage 1783.0 (TID 5349, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 0.0 in stage 1783.0 (TID 5349)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 43, boot = -29, init = 72, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 0.0 in stage 1783.0 (TID 5349). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 1.0 in stage 1783.0 (TID 5350, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 1.0 in stage 1783.0 (TID 5350)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 0.0 in stage 1783.0 (TID 5349) in 54 ms on localhost (1/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 77 ; tileelement[3]= 76
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 44, boot = 8, init = 36, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 1.0 in stage 1783.0 (TID 5350). 964 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 2.0 in stage 1783.0 (TID 5351, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 2.0 in stage 1783.0 (TID 5351)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 1.0 in stage 1783.0 (TID 5350) in 56 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 78 ; tileelement[3]= 77
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 40, boot = 16, init = 24, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 2.0 in stage 1783.0 (TID 5351). 964 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 2.0 in stage 1783.0 (TID 5351) in 49 ms on localhost (3/3)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Removed TaskSet 1783.0, whose tasks have all completed, from pool 
+16/05/03 18:33:04 INFO DAGScheduler: ResultStage 1783 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.152 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1783 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.159381 s
+bitonic_compare_false() collected: [(244, 0, 77, 76, False), (245, 1, 78, 77, False)]
+bitonic_compare_false(): 2. mergedtiles:  [77, 78, 76, 77]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(244, 0, 77, 76), (245, 1, 78, 77)]
+bitonic_compare_false(): mergedtiles_comparators: [(244, 0, 77, 76, False), (245, 1, 78, 77, False)]
+bitonic_compare_false(): mergedtiles= [77, 78, 76, 77]
+bitonic_compare_true(): 1. mergedtiles= [77, 78]
+16/05/03 18:33:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:04 INFO DAGScheduler: Got job 1784 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:04 INFO DAGScheduler: Final stage: ResultStage 1784(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:04 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:04 INFO DAGScheduler: Submitting ResultStage 1784 (PythonRDD[3569] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=243282, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1784 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=247194, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1784_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO BlockManagerInfo: Added broadcast_1784_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:04 INFO SparkContext: Created broadcast 1784 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1784 (PythonRDD[3569] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Adding task set 1784.0 with 3 tasks
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 0.0 in stage 1784.0 (TID 5352, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 0.0 in stage 1784.0 (TID 5352)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 37, boot = -38, init = 75, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 0.0 in stage 1784.0 (TID 5352). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 1.0 in stage 1784.0 (TID 5353, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 1.0 in stage 1784.0 (TID 5353)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 0.0 in stage 1784.0 (TID 5352) in 47 ms on localhost (1/3)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 39, boot = 11, init = 28, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 1.0 in stage 1784.0 (TID 5353). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 2.0 in stage 1784.0 (TID 5354, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 2.0 in stage 1784.0 (TID 5354)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 1.0 in stage 1784.0 (TID 5353) in 51 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 77 ; tileelement[3]= 78
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 42, boot = 9, init = 32, finish = 1
+16/05/03 18:33:04 INFO Executor: Finished task 2.0 in stage 1784.0 (TID 5354). 964 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 2.0 in stage 1784.0 (TID 5354) in 49 ms on localhost (3/3)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Removed TaskSet 1784.0, whose tasks have all completed, from pool 
+16/05/03 18:33:04 INFO DAGScheduler: ResultStage 1784 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.142 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1784 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.151096 s
+bitonic_compare_false() collected: [(244, 0, 78, 77, True)]
+bitonic_compare_false(): 2. mergedtiles:  [77, 78]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(244, 0, 77, 78)]
+bitonic_compare_false(): mergedtiles_comparators: [(244, 0, 78, 77, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 77, 78, 76, 77, 73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtiles= [78, 77]
+bitonic_merge: firsthalf:  [78]
+bitonic_merge: secondhalf:  [77]
+bitonic_compare_true(): 1. mergedtiles= [76, 77]
+16/05/03 18:33:04 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:04 INFO DAGScheduler: Got job 1785 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:04 INFO DAGScheduler: Final stage: ResultStage 1785(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:04 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:04 INFO DAGScheduler: Submitting ResultStage 1785 (PythonRDD[3571] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=249857, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1785 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=253769, maxMem=833527480
+16/05/03 18:33:04 INFO MemoryStore: Block broadcast_1785_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:04 INFO BlockManagerInfo: Added broadcast_1785_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:04 INFO SparkContext: Created broadcast 1785 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:04 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1785 (PythonRDD[3571] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Adding task set 1785.0 with 3 tasks
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 0.0 in stage 1785.0 (TID 5355, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 0.0 in stage 1785.0 (TID 5355)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 41, boot = -22, init = 63, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 0.0 in stage 1785.0 (TID 5355). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 1.0 in stage 1785.0 (TID 5356, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 1.0 in stage 1785.0 (TID 5356)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 0.0 in stage 1785.0 (TID 5355) in 51 ms on localhost (1/3)
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 44, boot = 7, init = 37, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 1.0 in stage 1785.0 (TID 5356). 942 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Starting task 2.0 in stage 1785.0 (TID 5357, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:04 INFO Executor: Running task 2.0 in stage 1785.0 (TID 5357)
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 1.0 in stage 1785.0 (TID 5356) in 55 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 76 ; tileelement[3]= 77
+16/05/03 18:33:04 INFO PythonRunner: Times: total = 47, boot = 6, init = 41, finish = 0
+16/05/03 18:33:04 INFO Executor: Finished task 2.0 in stage 1785.0 (TID 5357). 964 bytes result sent to driver
+16/05/03 18:33:04 INFO TaskSetManager: Finished task 2.0 in stage 1785.0 (TID 5357) in 58 ms on localhost (3/3)
+16/05/03 18:33:04 INFO TaskSchedulerImpl: Removed TaskSet 1785.0, whose tasks have all completed, from pool 
+16/05/03 18:33:04 INFO DAGScheduler: ResultStage 1785 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.156 s
+16/05/03 18:33:04 INFO DAGScheduler: Job 1785 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.167039 s
+bitonic_compare_false() collected: [(246, 0, 77, 76, True)]
+bitonic_compare_false(): 2. mergedtiles:  [76, 77]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(246, 0, 76, 77)]
+bitonic_compare_false(): mergedtiles_comparators: [(246, 0, 77, 76, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 76, 77, 73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtiles= [77, 76]
+bitonic_merge: firsthalf:  [77]
+bitonic_merge: secondhalf:  [76]
+bitonic_merge: firsthalf:  [78, 77]
+bitonic_merge: secondhalf:  [77, 76]
+bitonic_merge: firsthalf:  [80, 79, 79, 78]
+bitonic_merge: secondhalf:  [78, 77, 77, 76]
+bitonic_compare_true(): 1. mergedtiles= [73, 74, 74, 75, 75, 76, 0, None]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1786 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1786(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1786 (PythonRDD[3573] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=256432, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1786 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=260344, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1786_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1786_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1786 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1786 (PythonRDD[3573] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1786.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1786.0 (TID 5358, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1786.0 (TID 5358)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 73 ; tileelement[3]= 75
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 39, boot = -14, init = 52, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 0.0 in stage 1786.0 (TID 5358). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 1.0 in stage 1786.0 (TID 5359, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 0.0 in stage 1786.0 (TID 5358) in 52 ms on localhost (1/3)
+16/05/03 18:33:05 INFO Executor: Running task 1.0 in stage 1786.0 (TID 5359)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 74 ; tileelement[3]= 76
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 40, boot = 0, init = 39, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 1.0 in stage 1786.0 (TID 5359). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 2.0 in stage 1786.0 (TID 5360, localhost, PROCESS_LOCAL, 2271 bytes)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 1.0 in stage 1786.0 (TID 5359) in 53 ms on localhost (2/3)
+16/05/03 18:33:05 INFO Executor: Running task 2.0 in stage 1786.0 (TID 5360)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 74 ; tileelement[3]= 0
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 75 ; tileelement[3]= None
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 39, boot = 9, init = 29, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 2.0 in stage 1786.0 (TID 5360). 985 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 2.0 in stage 1786.0 (TID 5360) in 48 ms on localhost (3/3)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Removed TaskSet 1786.0, whose tasks have all completed, from pool 
+16/05/03 18:33:05 INFO DAGScheduler: ResultStage 1786 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.145 s
+16/05/03 18:33:05 INFO DAGScheduler: Job 1786 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.156564 s
+bitonic_compare_false() collected: [(248, 0, 75, 73, True), (249, 1, 76, 74, True), (250, 2, 74, 0, False), (251, 3, 75, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(248, 0, 73, 75), (249, 1, 74, 76), (250, 2, 74, 0), (251, 3, 75, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(248, 0, 75, 73, True), (249, 1, 76, 74, True), (250, 2, 74, 0, False), (251, 3, 75, None, False)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 73, 74, 74, 75, 75, 76, 0, None]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 73, 74, 74, 75, 75, 76, 0, None]
+bitonic_compare_false(): mergedtiles= [75, 76, 74, 75, 73, 74, 0, None]
+bitonic_compare_true(): 1. mergedtiles= [75, 76, 74, 75]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1787 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1787(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1787 (PythonRDD[3575] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=263007, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1787 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=266919, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1787_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1787_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1787 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1787 (PythonRDD[3575] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1787.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1787.0 (TID 5361, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1787.0 (TID 5361)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 39, boot = -9, init = 48, finish = 0
+16/05/03 18:33:05 INFO Executor: Finished task 0.0 in stage 1787.0 (TID 5361). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 1.0 in stage 1787.0 (TID 5362, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 0.0 in stage 1787.0 (TID 5361) in 48 ms on localhost (1/3)
+16/05/03 18:33:05 INFO Executor: Running task 1.0 in stage 1787.0 (TID 5362)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 75 ; tileelement[3]= 74
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 42, boot = 2, init = 39, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 1.0 in stage 1787.0 (TID 5362). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 2.0 in stage 1787.0 (TID 5363, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 2.0 in stage 1787.0 (TID 5363)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 1.0 in stage 1787.0 (TID 5362) in 59 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 76 ; tileelement[3]= 75
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 42, boot = 3, init = 38, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 2.0 in stage 1787.0 (TID 5363). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 2.0 in stage 1787.0 (TID 5363) in 49 ms on localhost (3/3)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Removed TaskSet 1787.0, whose tasks have all completed, from pool 
+16/05/03 18:33:05 INFO DAGScheduler: ResultStage 1787 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.146 s
+16/05/03 18:33:05 INFO DAGScheduler: Job 1787 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.160384 s
+bitonic_compare_false() collected: [(248, 0, 75, 74, False), (249, 1, 76, 75, False)]
+bitonic_compare_false(): 2. mergedtiles:  [75, 76, 74, 75]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(248, 0, 75, 74), (249, 1, 76, 75)]
+bitonic_compare_false(): mergedtiles_comparators: [(248, 0, 75, 74, False), (249, 1, 76, 75, False)]
+bitonic_compare_false(): mergedtiles= [75, 76, 74, 75]
+bitonic_compare_true(): 1. mergedtiles= [75, 76]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1788 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1788(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1788 (PythonRDD[3577] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=269582, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1788 stored as values in memory (estimated size 3.8 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2664) called with curMem=273494, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1788_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.7 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1788_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1788 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1788 (PythonRDD[3577] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1788.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1788.0 (TID 5364, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1788.0 (TID 5364)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 37, boot = -17, init = 54, finish = 0
+16/05/03 18:33:05 INFO Executor: Finished task 0.0 in stage 1788.0 (TID 5364). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 1.0 in stage 1788.0 (TID 5365, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 1.0 in stage 1788.0 (TID 5365)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 0.0 in stage 1788.0 (TID 5364) in 50 ms on localhost (1/3)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 46, boot = 10, init = 36, finish = 0
+16/05/03 18:33:05 INFO Executor: Finished task 1.0 in stage 1788.0 (TID 5365). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 2.0 in stage 1788.0 (TID 5366, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 2.0 in stage 1788.0 (TID 5366)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 1.0 in stage 1788.0 (TID 5365) in 61 ms on localhost (2/3)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 45, boot = 14, init = 30, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 2.0 in stage 1788.0 (TID 5366). 964 bytes result sent to driver
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 75 ; tileelement[3]= 76
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 2.0 in stage 1788.0 (TID 5366) in 56 ms on localhost (3/3)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Removed TaskSet 1788.0, whose tasks have all completed, from pool 
+16/05/03 18:33:05 INFO DAGScheduler: ResultStage 1788 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.153 s
+16/05/03 18:33:05 INFO DAGScheduler: Job 1788 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.166239 s
+bitonic_compare_false() collected: [(248, 0, 76, 75, True)]
+bitonic_compare_false(): 2. mergedtiles:  [75, 76]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(248, 0, 75, 76)]
+bitonic_compare_false(): mergedtiles_comparators: [(248, 0, 76, 75, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 75, 76, 74, 75, 73, 74, 0, None]
+bitonic_compare_false(): mergedtiles= [76, 75]
+bitonic_merge: firsthalf:  [76]
+bitonic_merge: secondhalf:  [75]
+bitonic_compare_true(): 1. mergedtiles= [74, 75]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1789 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1789(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1789 (PythonRDD[3579] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=276158, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1789 stored as values in memory (estimated size 3.8 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=280070, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1789_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1789_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1789 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1789 (PythonRDD[3579] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1789.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1789.0 (TID 5367, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1789.0 (TID 5367)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 40, boot = -18, init = 57, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 0.0 in stage 1789.0 (TID 5367). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 1.0 in stage 1789.0 (TID 5368, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 0.0 in stage 1789.0 (TID 5367) in 50 ms on localhost (1/3)
+16/05/03 18:33:05 INFO Executor: Running task 1.0 in stage 1789.0 (TID 5368)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 39, boot = 3, init = 35, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 1.0 in stage 1789.0 (TID 5368). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 2.0 in stage 1789.0 (TID 5369, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 2.0 in stage 1789.0 (TID 5369)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 1.0 in stage 1789.0 (TID 5368) in 50 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 74 ; tileelement[3]= 75
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 48, boot = 28, init = 19, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 2.0 in stage 1789.0 (TID 5369). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 2.0 in stage 1789.0 (TID 5369) in 58 ms on localhost (3/3)
+16/05/03 18:33:05 INFO DAGScheduler: ResultStage 1789 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.154 s
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Removed TaskSet 1789.0, whose tasks have all completed, from pool 
+16/05/03 18:33:05 INFO DAGScheduler: Job 1789 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.160873 s
+bitonic_compare_false() collected: [(250, 0, 75, 74, True)]
+bitonic_compare_false(): 2. mergedtiles:  [74, 75]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(250, 0, 74, 75)]
+bitonic_compare_false(): mergedtiles_comparators: [(250, 0, 75, 74, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 74, 75, 73, 74, 0, None]
+bitonic_compare_false(): mergedtiles= [75, 74]
+bitonic_merge: firsthalf:  [75]
+bitonic_merge: secondhalf:  [74]
+bitonic_merge: firsthalf:  [76, 75]
+bitonic_merge: secondhalf:  [75, 74]
+bitonic_compare_true(): 1. mergedtiles= [73, 74, 0, None]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1790 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1790(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1790 (PythonRDD[3581] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=282733, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1790 stored as values in memory (estimated size 3.8 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=286645, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1790_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1790_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1790 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1790 (PythonRDD[3581] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1790.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1790.0 (TID 5370, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1790.0 (TID 5370)
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 38, boot = -35, init = 73, finish = 0
+16/05/03 18:33:05 INFO Executor: Finished task 0.0 in stage 1790.0 (TID 5370). 942 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 1.0 in stage 1790.0 (TID 5371, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 0.0 in stage 1790.0 (TID 5370) in 49 ms on localhost (1/3)
+16/05/03 18:33:05 INFO Executor: Running task 1.0 in stage 1790.0 (TID 5371)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 73 ; tileelement[3]= 0
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 40, boot = 5, init = 34, finish = 1
+16/05/03 18:33:05 INFO Executor: Finished task 1.0 in stage 1790.0 (TID 5371). 964 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 2.0 in stage 1790.0 (TID 5372, localhost, PROCESS_LOCAL, 2250 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 2.0 in stage 1790.0 (TID 5372)
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 1.0 in stage 1790.0 (TID 5371) in 51 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 74 ; tileelement[3]= None
+16/05/03 18:33:05 INFO PythonRunner: Times: total = 42, boot = 3, init = 39, finish = 0
+16/05/03 18:33:05 INFO Executor: Finished task 2.0 in stage 1790.0 (TID 5372). 963 bytes result sent to driver
+16/05/03 18:33:05 INFO TaskSetManager: Finished task 2.0 in stage 1790.0 (TID 5372) in 58 ms on localhost (3/3)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Removed TaskSet 1790.0, whose tasks have all completed, from pool 
+16/05/03 18:33:05 INFO DAGScheduler: ResultStage 1790 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.147 s
+16/05/03 18:33:05 INFO DAGScheduler: Job 1790 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.160841 s
+bitonic_compare_false() collected: [(252, 0, 73, 0, False), (253, 1, 74, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [73, 74, 0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 73, 0), (253, 1, 74, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 73, 0, False), (253, 1, 74, None, False)]
+bitonic_compare_false(): mergedtiles= [73, 74, 0, None]
+bitonic_compare_true(): 1. mergedtiles= [73, 74]
+16/05/03 18:33:05 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:05 INFO DAGScheduler: Got job 1791 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:05 INFO DAGScheduler: Final stage: ResultStage 1791(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:05 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:05 INFO DAGScheduler: Submitting ResultStage 1791 (PythonRDD[3583] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=289308, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1791 stored as values in memory (estimated size 3.8 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO MemoryStore: ensureFreeSpace(2663) called with curMem=293220, maxMem=833527480
+16/05/03 18:33:05 INFO MemoryStore: Block broadcast_1791_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.6 MB)
+16/05/03 18:33:05 INFO BlockManagerInfo: Added broadcast_1791_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:05 INFO SparkContext: Created broadcast 1791 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:05 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1791 (PythonRDD[3583] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:05 INFO TaskSchedulerImpl: Adding task set 1791.0 with 3 tasks
+16/05/03 18:33:05 INFO TaskSetManager: Starting task 0.0 in stage 1791.0 (TID 5373, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:05 INFO Executor: Running task 0.0 in stage 1791.0 (TID 5373)
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 43, boot = -32, init = 75, finish = 0
+16/05/03 18:33:06 INFO Executor: Finished task 0.0 in stage 1791.0 (TID 5373). 942 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Starting task 1.0 in stage 1791.0 (TID 5374, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 5373) in 58 ms on localhost (1/3)
+16/05/03 18:33:06 INFO Executor: Running task 1.0 in stage 1791.0 (TID 5374)
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 43, boot = 0, init = 42, finish = 1
+16/05/03 18:33:06 INFO Executor: Finished task 1.0 in stage 1791.0 (TID 5374). 942 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Starting task 2.0 in stage 1791.0 (TID 5375, localhost, PROCESS_LOCAL, 2251 bytes)
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 5374) in 57 ms on localhost (2/3)
+16/05/03 18:33:06 INFO Executor: Running task 2.0 in stage 1791.0 (TID 5375)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 73 ; tileelement[3]= 74
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 42, boot = 8, init = 33, finish = 1
+16/05/03 18:33:06 INFO Executor: Finished task 2.0 in stage 1791.0 (TID 5375). 964 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 2.0 in stage 1791.0 (TID 5375) in 53 ms on localhost (3/3)
+16/05/03 18:33:06 INFO TaskSchedulerImpl: Removed TaskSet 1791.0, whose tasks have all completed, from pool 
+16/05/03 18:33:06 INFO DAGScheduler: ResultStage 1791 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.161 s
+16/05/03 18:33:06 INFO DAGScheduler: Job 1791 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.180568 s
+bitonic_compare_false() collected: [(252, 0, 74, 73, True)]
+bitonic_compare_false(): 2. mergedtiles:  [73, 74]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 73, 74)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 74, 73, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 73, 74, 0, None]
+bitonic_compare_false(): mergedtiles= [74, 73]
+bitonic_merge: firsthalf:  [74]
+bitonic_merge: secondhalf:  [73]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+16/05/03 18:33:06 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+16/05/03 18:33:06 INFO DAGScheduler: Got job 1792 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 3 output partitions
+16/05/03 18:33:06 INFO DAGScheduler: Final stage: ResultStage 1792(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:06 INFO DAGScheduler: Parents of final stage: List()
+16/05/03 18:33:06 INFO DAGScheduler: Missing parents: List()
+16/05/03 18:33:06 INFO DAGScheduler: Submitting ResultStage 1792 (PythonRDD[3585] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+16/05/03 18:33:06 INFO MemoryStore: ensureFreeSpace(3912) called with curMem=295883, maxMem=833527480
+16/05/03 18:33:06 INFO MemoryStore: Block broadcast_1792 stored as values in memory (estimated size 3.8 KB, free 794.6 MB)
+16/05/03 18:33:06 INFO MemoryStore: ensureFreeSpace(2661) called with curMem=299795, maxMem=833527480
+16/05/03 18:33:06 INFO MemoryStore: Block broadcast_1792_piece0 stored as bytes in memory (estimated size 2.6 KB, free 794.6 MB)
+16/05/03 18:33:06 INFO BlockManagerInfo: Added broadcast_1792_piece0 in memory on localhost:38019 (size: 2.6 KB, free: 794.8 MB)
+16/05/03 18:33:06 INFO SparkContext: Created broadcast 1792 from broadcast at DAGScheduler.scala:861
+16/05/03 18:33:06 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1792 (PythonRDD[3585] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+16/05/03 18:33:06 INFO TaskSchedulerImpl: Adding task set 1792.0 with 3 tasks
+16/05/03 18:33:06 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 5376, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:06 INFO Executor: Running task 0.0 in stage 1792.0 (TID 5376)
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 39, boot = -50, init = 89, finish = 0
+16/05/03 18:33:06 INFO Executor: Finished task 0.0 in stage 1792.0 (TID 5376). 942 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 5377, localhost, PROCESS_LOCAL, 2230 bytes)
+16/05/03 18:33:06 INFO Executor: Running task 1.0 in stage 1792.0 (TID 5377)
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 5376) in 55 ms on localhost (1/3)
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 52, boot = 14, init = 38, finish = 0
+16/05/03 18:33:06 INFO Executor: Finished task 1.0 in stage 1792.0 (TID 5377). 942 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Starting task 2.0 in stage 1792.0 (TID 5378, localhost, PROCESS_LOCAL, 2250 bytes)
+16/05/03 18:33:06 INFO Executor: Running task 2.0 in stage 1792.0 (TID 5378)
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 5377) in 66 ms on localhost (2/3)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+16/05/03 18:33:06 INFO PythonRunner: Times: total = 55, boot = 16, init = 38, finish = 1
+16/05/03 18:33:06 INFO Executor: Finished task 2.0 in stage 1792.0 (TID 5378). 963 bytes result sent to driver
+16/05/03 18:33:06 INFO TaskSetManager: Finished task 2.0 in stage 1792.0 (TID 5378) in 63 ms on localhost (3/3)
+16/05/03 18:33:06 INFO DAGScheduler: ResultStage 1792 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.178 s
+16/05/03 18:33:06 INFO TaskSchedulerImpl: Removed TaskSet 1792.0, whose tasks have all completed, from pool 
+16/05/03 18:33:06 INFO DAGScheduler: Job 1792 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.195934 s
+bitonic_compare_false() collected: [(254, 0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(254, 0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(254, 0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [74, 73]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [76, 75, 75, 74]
+bitonic_merge: secondhalf:  [74, 73, 0, None]
+bitonic_merge: firsthalf:  [80, 79, 79, 78, 78, 77, 77, 76]
+bitonic_merge: secondhalf:  [76, 75, 75, 74, 74, 73, 0, None]
+bitonic_merge: firsthalf:  [96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81]
+bitonic_merge: secondhalf:  [80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+bitonic_merge: firsthalf:  [114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97]
+bitonic_merge: secondhalf:  [96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+bitonic_merge: firsthalf:  [132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114]
+bitonic_merge: secondhalf:  [114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+bitonic_merge: firsthalf:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132]
+bitonic_merge: secondhalf:  [132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+bitonic_sort(): merged sorted halves: [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+sorted= [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+globalcoordinates= [1, 21, 21, 49, 49, 7, 147, 147, 3, 3, 3, 3, 7, 73, 73, 147, 2, 2, 145, 2, 144, 5, 5, 29, 29, 5, 24, 16, 16, 9, 8, 24, 18, 18, 6, 6, 6, 143, 2, 2, 3, 4, 4, 4, 3, 3, 4, 8, 71, 12, 36, 47, 9, 36, 12, 142, 13, 13, 11, 11, 2, 70, 141, 2, 3, 3, 140, 3, 46, 34, 14, 7, 139, 2, 27, 14, 10, 10, 69, 19, 5, 7, 4, 4, 4, 5, 138, 45, 22, 68, 3, 137, 2, 6, 6, 3, 136, 2, 33, 16, 67, 135, 4, 4, 8, 3, 3, 5, 134, 5, 9, 14, 26, 44, 66, 133, 7, 132, 18, 65, 4, 3, 3, 4, 6, 43, 11, 131, 32, 21, 10, 130, 129, 5, 12, 25, 9, 64, 3, 3, 42, 128, 7, 127, 4, 31, 15, 63, 126, 8, 41, 13, 62, 6, 3, 5, 125, 17, 20, 24, 5, 124, 61, 30, 123, 4, 3, 122, 40, 60, 121, 120, 3, 4, 59, 39, 23, 29, 119, 4, 118, 117, 58, 38, 3, 116, 115, 3, 28, 57, 114, 113, 37, 3, 56, 112, 55, 111, 110, 3, 36, 109, 54, 108, 53, 107, 2, 35, 106, 52, 105, 104, 51, 103, 102, 101, 50, 100, 49, 99, 98, 48, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 1, 78, 77, 1, 76, 1, 1, 75, 74, 1, 73, 1, 72, 146, None]
+sorted globalmergedtiles accumulator version:  =  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+16/05/03 18:33:06 INFO SparkUI: Stopped Spark web UI at http://192.168.1.101:4040
+16/05/03 18:33:06 INFO DAGScheduler: Stopping DAGScheduler
+16/05/03 18:33:06 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/05/03 18:33:06 INFO MemoryStore: MemoryStore cleared
+16/05/03 18:33:06 INFO BlockManager: BlockManager stopped
+16/05/03 18:33:06 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/05/03 18:33:06 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/05/03 18:33:06 INFO SparkContext: Successfully stopped SparkContext
+16/05/03 18:33:06 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/05/03 18:33:06 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/05/03 18:33:06 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+16/05/03 18:33:07 INFO ShutdownHookManager: Shutdown hook called
+16/05/03 18:33:07 INFO ShutdownHookManager: Deleting directory /tmp/spark-3691b94f-4c68-4b3c-a6fc-350331aee8f1
+
