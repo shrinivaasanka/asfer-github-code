@@ -56,6 +56,17 @@ bitoniclock=threading.Lock()
 spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 globalmergedtiles_accum=spcon.accumulator([], VectorAccumulatorParam())
 
+#This thread function assigns the Spark Mapreduce result of Compare and Exchange
+#Mulithreading is an alternative for global state mutability in the absence of Spark support
+#and it does not require any third party in-memory cacheing products
+#Coordinates are also shuffled first few elements of which correspond to number to factor N are
+#the factors found finally. Multithreaded assignment maps to a multicore parallelism.
+def assign_compareexchange_multithreaded(mergedtiles_comparators, midpoint, i):
+	globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
+	globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
+	globalcoordinates[mergedtiles_comparators[i][0]], globalcoordinates[mergedtiles_comparators[i][0]+midpoint] = globalcoordinates[mergedtiles_comparators[i][0] + midpoint], globalcoordinates[mergedtiles_comparators[i][0]]
+
+
 def bitonic_sort(spcon, up, mergedtiles, start, end):
 	print "##################################################################################"
 	if len(mergedtiles) <= 1:
@@ -122,6 +133,7 @@ def bitonic_compare_true(spcon, mergedtiles, start, end):
 	print "bitonic_compare_true(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_true(): mergedtiles_comparators:",mergedtiles_comparators
 	
+	threads=[]
 	for i in range(midpoint):
                 if (mergedtiles_comparators[i][4]):
                         #temp = mergedtiles[mergedtiles_comparators[i][0]]
@@ -129,8 +141,12 @@ def bitonic_compare_true(spcon, mergedtiles, start, end):
                         #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
 			mergedtiles[mergedtiles_comparators[i][1]]=mergedtiles_comparators[i][2]
 			mergedtiles[mergedtiles_comparators[i][1] + midpoint]=mergedtiles_comparators[i][3]
-			globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
-			globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
+
+			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
+			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
+			t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
+			threads.append(t)
+			t.start()
 	
 	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -181,6 +197,7 @@ def bitonic_compare_false(spcon, mergedtiles, start, end):
 	print "bitonic_compare_false(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_false(): mergedtiles_comparators:",mergedtiles_comparators
         
+	threads=[]
 	for i in range(midpoint):
                 if (mergedtiles_comparators[i][4]):
                         #temp = mergedtiles[mergedtiles_comparators[i][0]]
@@ -189,8 +206,11 @@ def bitonic_compare_false(spcon, mergedtiles, start, end):
 			mergedtiles[mergedtiles_comparators[i][1]]=mergedtiles_comparators[i][2]
 			mergedtiles[mergedtiles_comparators[i][1] + midpoint]=mergedtiles_comparators[i][3]
 			print "globalmergedtiles_accum: ",globalmergedtiles_accum.value
-			globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
-			globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
+			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
+			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
+			t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
+			threads.append(t)
+			t.start()
 	
 	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
