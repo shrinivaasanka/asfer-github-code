@@ -4206,5 +4206,19 @@ accumulator variables
 which is non-trivial. This cloud parallel sort implementation achieves thus almost ~90% of NVIDIA CUDA parallel bitonic sort -
 CompareAndExchange is done in parallel but assigning CompareAndExchange results is done sequentially.
 
+--------------------------------------------------------------------------------------
+270. Commits as on 3 May 2016
+--------------------------------------------------------------------------------------
+New threading function assign_compareexchange_multithreaded() has been implemented which is
+invoked in lieu of sequential for loop assignment , by creating a thread for each pair of (i,i+midpoint) compare-exchange assignment
+of accumulator globalmergedtiles.This thread function assigns the Spark Mapreduce result of Compare and Exchange.
+
+Mulithreading is an alternative for global state mutability in the absence of Spark support
+and it does not require any third party in-memory cacheing products.
+
+Coordinates are also shuffled first few elements of which correspond to number to factor N - these are
+the factors found finally. Multithreaded assignment maps to a multicore parallelism. Logs for this have been
+committed to testlogs with and without Coordinates Shuffling.
+
 
 
