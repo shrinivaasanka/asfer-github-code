@@ -67,6 +67,7 @@ def toint(primestr):
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
+	primesbinf=open("First10000PrimesBinary.txt","wa")
 	for eigen_scaling in cosvalues:
 		print "#####################################################################"
 		for primestr in Lf:
@@ -78,12 +79,19 @@ def IharaIdentity():
 				imaginary=math.acos(num1)/den
 				print "eigen_scaling=",eigen_scaling,"; imaginary(s) for prime ",prime,": ",imaginary
 		print "#####################################################################"
+	for primestr in Lf:
+		if primestr != '':
+			print "primestr:",primestr
+			print "Prime in binary:",bin(toint(primestr))
+			primesbinf.write(bin(toint(primestr)))
+			primesbinf.write("\n")
 
 if __name__=="__main__":
 	primesf=open("First10000Primes.txt","r")
 	for line in primesf:
 		primes=line.split(" ")
-		Lf=Lf+primes[:-1]
+		primestr=primes[:-1]
+		Lf=Lf+primestr
 	print Lf
 
 	for i in range(10):

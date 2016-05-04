@@ -42,7 +42,8 @@ class SequenceMining(object):
 
 #######################################################################
 	def doAprioriGSPSequenceMining(self):
-		inputf=open("asfer.enterprise.encstr.seqmining")
+		#inputf=open("asfer.enterprise.encstr.seqmining")
+		inputf=open("First10000PrimesBinary.txt")
 		input=inputf.readlines()
 
 		self.candidates[0]=[]
