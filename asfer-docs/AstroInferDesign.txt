@@ -3175,6 +3175,7 @@ References:
 202.13 MultiWordNet for European Languages - http://multiwordnet.fbk.eu/english/home.php
 202.14 Coherence and Text readability indices (Coh-Metrix, FleschKincaid, Brain Overload etc.,) - http://lingured.info/clw2010/downloads/clw2010-talk_09.pdf - Coherence measures how connected the document is and thus closely related to Intrinsic Merit obtained by WordNet subgraph for a text.
 202.15 Readability and WordNet - http://www.aclweb.org/anthology/O08-1
+202.16. Semantic Networks (Frames, Slots and Facets) and WordNet - http://onlinelibrary.wiley.com/doi/10.1207/s15516709cog2901_3/epdf - describes various graph connectivity measures viz., Clustering coefficient for the probability that neighbours of a node are neighbours themselves , Power-Law distribution of degree of a random node. WordNet is modern knowledge representation framework inspired by Semantic Networks which is a graph of Frames with Slots and Facets for edges amongst Frames.
 
 --------------------------------------------------------------------------------------------------------------------
 203. Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
