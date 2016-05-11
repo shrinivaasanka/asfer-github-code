@@ -31,7 +31,8 @@ x_axs=[]
 y_axs=[]
 #Read input sequence (at present DJIA dataset)
 #f=open("ChaosAttractorInputSequence.txt")
-f=open("ChaosAttractorInputSequence_DJIA.txt")
+#f=open("ChaosAttractorInputSequence_DJIA.txt")
+f=open("PatternInFirst10000Primes.txt")
 f_str=f.read()
 y_axs=f_str.split(",")
 print y_axs 
@@ -67,9 +68,9 @@ approxdata = approxfn(dataframe)
 approxfundata = approxfunfn(dataframe)
 
 print approxdata
-pdffn("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/DJIA_approx_rplot.pdf")
+pdffn("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DJIA_approx_rplot.pdf")
 plotfn(approxdata)
 
-pdffn("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/asfer-code/python-src/DJIA_approxfun_rplot.pdf")
+pdffn("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/DJIA_approxfun_rplot.pdf")
 plotfn(approxfundata, 0, 19448)
 #curvefn(approxfundata)

@@ -91,6 +91,13 @@ class SequenceMining(object):
 		s = sorted(candidate_support.items(),key=operator.itemgetter(1), reverse=True)
 		print s
 
+		#Print the binary pattern in decimals
+		print "==================================================="
+		print "Pattern in prime binary strings in decimals - in descending order of support"
+		for pattern, support in s:
+			print int(pattern,2),",",
+
+
 if __name__=="__main__":
 	s=SequenceMining()
 	s.doAprioriGSPSequenceMining()
