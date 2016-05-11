@@ -4255,4 +4255,13 @@ Sequence Mining of Prime Numbers as binary strings
 - SequenceMining.py mines for most prominent sequences within prime binary strings - a measure of patterns in prime distribution
 - Logs for this have been committed to testlogs/
 
+-----------------------------------------------------------------------------------------------
+274. Commits as on 11 May 2016
+-----------------------------------------------------------------------------------------------
+Sequence Mining in Prime binary strings has been made sophisticated:
+        - Prints each binary string sequence pattern in decimals upto maximum of 15-bit sequences mined from first 10000 primes.
+        - This decimals are written to a file PatternInFirst10000Primes.txt
+        - Approx.py R+rpy2 has been invoked to print an R function plotter of this decimal pattern in prime binary string sequences
+        - The function plots the sequences in Y-axis and length of sequences in asscending orider in X-axis(with decreasing support)
+        - As can be seen from pdf plot, the sequences show dips amongst peaks periodically.
 
