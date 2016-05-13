@@ -916,6 +916,11 @@ Additional references:
 
         34.28) Tiling of Hyperbolic curve: The discretization step of a hyperbola to form set of contiguous tiled segments has been mentioned as "Tesselation" throughout this document which could be a misnomer. Precise equivalent of this tiling is pixelation in Computer Graphics where an image bitmap is downsampled to create a low-resolution approximation of image - in this example, an image of hyperbolic curve is pixelated to g et a tiled set of segments (http://demonstrations.wolfram.com/PixelizationOfAFont/ shows how a letter A is pixelated to create stylized pixelated A).
 
+        34.29) The tiling of hyperbolic curve is done by deltax = N/[y∗(y+1)] which is a process similar to low-pass filter or Box Blur in Graphics. In a parallel setting with PRAMs or Parallel Bitonic Sort, the preprocessing step required is the tiled hyperbolic arc already in place spread out across all nodes of total number O(N/logN). This naive tiling though not as sophisticated as Box Blur Gaussian Filter, needs time O(logN) for each node i.e delta computation per coordinate is O(1) and each node is allotted O(logN) long arc segment and thus O(1*logN) per node.
+
+        34.30) Above algorithm ignores Communication Complexity across PRAMs or Comparator nodes on a Cloud.
+
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
