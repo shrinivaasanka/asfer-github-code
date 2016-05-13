@@ -914,6 +914,7 @@ Additional references:
 
 	34.27) NVIDIA CUDA Parallel Bitonic Sort Implementation Reference - http://developer.download.nvidia.com/compute/cuda/1.1-Beta/x86_website/Data-Parallel_Algorithms.html, Linux code - http://developer.download.nvidia.com/compute/cuda/1.1-Beta/Projects/bitonic.tar.gz
 
+        34.28) Tiling of Hyperbolic curve: The discretization step of a hyperbola to form set of contiguous tiled segments has been mentioned as "Tesselation" throughout this document which could be a misnomer. Precise equivalent of this tiling is pixelation in Computer Graphics where an image bitmap is downsampled to create a low-resolution approximation of image - in this example, an image of hyperbolic curve is pixelated to g et a tiled set of segments (http://demonstrations.wolfram.com/PixelizationOfAFont/ shows how a letter A is pixelated to create stylized pixelated A).
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
