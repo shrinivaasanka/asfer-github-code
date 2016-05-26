@@ -4280,3 +4280,20 @@ Sequence Mining in Prime binary strings has been made sophisticated:
         - The function plots the sequences in Y-axis and length of sequences in asscending orider in X-axis(with decreasing support)
         - As can be seen from pdf plot, the sequences show dips amongst peaks periodically.
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+275. (THEORY) Non-boolean Social Choice Functions, Sensitivity, Stability and Multipartisan Majority Voting - 256 continued
+------------------------------------------------------------------------------------------------------------------------------------------------
+Let f be a voter decision function which takes in x1,x2,...xm as decision variables and outputs a vote for candidate 1 <= c <= n. This
+generalizes voter boolean judging functions for 2 candidates to arbitrarily large number of contestants. Assuming f to be continuous
+function and parameters to be continuous (as opposed to discrete binary string SAT assignments to variables in boolean setting), this
+generalizes Satisfiability problem to continuous, multivalued and non-boolean functions. This allows the candidate index to be
+continuous too. The function plot of this (candidate index versus decision string) would resemble any continuous mathematical function.
+Stability which is: Pr[f(s) == f(t)] - Pr[f(s) != f(t)] for randomly correlated s=(x11,x12,...,x1m) and t=(x21,x22,x23,...,x2m) where
+correlation (measured by usual euclidean distance between s and t) could be uncomputable value in terms of mean but can be approximated
+as difference in ratio of length integral of function arc segments with high curvature and low curvature (where function has huge fluctuations
+and relatively flat).  Sensitivity follows accordingly. This requires first derivative of the function to find out local maxima and minima.
+From Gibbard-Satterthwaite theorem any social choice function for more than 3 candidates has a non-zero probability of being manipulated though
+negligible in practice. Probably this implies atleast indirectly that the stability of any non-boolean social choice function < 1 if number of
+candidates > 3 hinting at divergence of Pr(Good) Binomial series. This function plot should not be confused with function plot mentioned in
+272 for votes partitioned across candidates which reduces to Riemann Sum. Unlike boolean sensitivity/stability, non-boolean counterparts can only be approximated and exact computation might never halt being undecidable.
+
