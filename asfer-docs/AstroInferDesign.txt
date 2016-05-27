@@ -4281,7 +4281,7 @@ Sequence Mining in Prime binary strings has been made sophisticated:
         - As can be seen from pdf plot, the sequences show dips amongst peaks periodically.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-275. (THEORY) Non-boolean Social Choice Functions, Sensitivity, Stability and Multipartisan Majority Voting - 256 continued
+275. (THEORY) Non-boolean Social Choice Functions Satisfiability, Sensitivity, Stability and Multipartisan Majority Voting - 256 continued
 ------------------------------------------------------------------------------------------------------------------------------------------------
 Let f be a voter decision function which takes in x1,x2,...xm as decision variables and outputs a vote for candidate 1 <= c <= n. This
 generalizes voter boolean judging functions for 2 candidates to arbitrarily large number of contestants. Assuming f to be continuous
@@ -4295,5 +4295,21 @@ and relatively flat).  Sensitivity follows accordingly. This requires first deri
 From Gibbard-Satterthwaite theorem any social choice function for more than 3 candidates has a non-zero probability of being manipulated though
 negligible in practice. Probably this implies atleast indirectly that the stability of any non-boolean social choice function < 1 if number of
 candidates > 3 hinting at divergence of Pr(Good) Binomial series. This function plot should not be confused with function plot mentioned in
-272 for votes partitioned across candidates which reduces to Riemann Sum. Unlike boolean sensitivity/stability, non-boolean counterparts can only be approximated and exact computation might never halt being undecidable.
+272 for votes partitioned across candidates which reduces to Riemann Sum. Unlike boolean sensitivity/stability, non-boolean counterparts
+can only be approximated and exact computation might never halt being undecidable. Non-boolean Social Choice Function generalizes
+satisfiability because an appropriate assignment to (x1,x2,x3,.....,xm) has to be found so that f(x1,x2,x3,.....,xm)=c where 1 <= c <= n.
+This is precisely curve-line intersection problem - curve f(x1,x2,x3,...,xn) and line y=c - in computational geometry. Intersecting points
+(a1,a2,a3,...,az) are the satisfying assignments which choose candidate c. Contrasting this with boolean kSAT which is NP-complete,
+non-boolean kSAT has polynomial time computational geometric algorithms to find satisfying intersection points. It is intriguing to observe
+a sharp threshold phenomenon in computational hardness of satisfiability - an easy polytime non-boolean kSAT becomes NP-hard boolean kSAT.
+Assuming that real-life voters have non-boolean decision functions only, the RHS circuit of Pr(Good) majority voting is confined to polytime
+satisfiability realm alone. Non-boolean voting decision functions can be specialized for 2 candidates special case too - this allows fractional
+values to decision variables. This is plausible because Linear Programming (non-boolean) is polytime while 0-1 Integer Linear Programming
+(boolean) is NP-complete.
+
+References:
+----------
+275.1 Intersection detection - https://www.cs.umd.edu/~mount/Papers/crc04-intersect.pdf
+275.2 Transversal Intersection of two curves - Newton iteration and Cramer's rule - https://en.wikipedia.org/wiki/Intersection_(Euclidean_geometry)
+
 
