@@ -11,9 +11,10 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#--------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------
 #Copyleft(Copyright+):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
 #http://sourceforge.net/users/ka_shrinivaasan,
@@ -22,7 +23,11 @@
 #Personal website(research): https://sites.google.com/site/kuja27/
 #emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
 #kashrinivaasan@live.com
-#--------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------
+*/
+
+/*
+invokes NEURONRAIN VIRGO system calls by number - defined in $VIRGO_SRC/linux-kernel-extensions/arch/x86/syscalls/syscalls_32.tbl
 */
 
 #include <iostream>
@@ -47,34 +52,55 @@ struct hostport
 
 using namespace std;
 
+int memory_versus_filesystem=1;
+
 void asfer_virgo_set_kernel_analytics(char* key, char* value)
 {
-	//cout<<"asfer_virgo_set_kernel_analytics():"<<"key:"<<key<<"; value:"<<value<<endl;	
+	switch(memory_versus_filesystem)
+	{
+		case 0:
+		{
+			//cout<<"asfer_virgo_set_kernel_analytics():"<<"key:"<<key<<"; value:"<<value<<endl;
 
-	// VIRGO malloc system calls to set the key-value pairs
+			// VIRGO malloc system calls to set the key-value pairs
 	
-	struct virgo_address* vaddr;
-	unsigned long virgo_unique_id=3250409088u;
+			struct virgo_address* vaddr;
+			unsigned long virgo_unique_id=3250409088u;
 
-	// virgo_malloc 
-	syscall(360,100,&virgo_unique_id);
-	//printf("vuid malloc-ed : %lu \n",virgo_unique_id);
+			// virgo_malloc
+			syscall(360,100,&virgo_unique_id);
+			//printf("vuid malloc-ed : %lu \n",virgo_unique_id);
 
-	// virgo_set 
-	char set_data[256];
-	//strcpy(set_data,key);
-	//strcpy(set_data,":");
-	//strcpy(set_data,value);
-	//printf("vuid virgo_set() \n");
-	long set_ret=syscall(361,virgo_unique_id,"key1:value1");
+			// virgo_set
+			char set_data[256];
+			strcpy(set_data,key);
+			strcpy(set_data,":");
+			strcpy(set_data,value);
+			//printf("vuid virgo_set() \n");
+			long set_ret=syscall(361,virgo_unique_id,"key1:value1");
+			//long set_ret=syscall(361,virgo_unique_id,set_data);
 
-	// virgo_get
-	char get_data[256];
-	long get_ret=syscall(362,virgo_unique_id,get_data);
-	//printf("vuid virgo_get() : %s \n",get_data);
+			// virgo_get
+			char get_data[256];
+			long get_ret=syscall(362,virgo_unique_id,get_data);
+			//printf("vuid virgo_get() : %s \n",get_data);
 
-	// virgo_free
-	// long free_ret=syscall(363,virgo_unique_id);
+			// virgo_free
+			// long free_ret=syscall(363,virgo_unique_id);
+			break;
+		}
+		case 1:
+		{
+			// virgo_open
+			long open_ret=syscall(364, "/home/shrinivaasanka/virgocloudfs.txt");
+
+			// virgo_read
+			syscall(366, open_ret, "text", 250, 0);
+
+			// virgo_write
+			syscall(367, open_ret, "AppendedText_30May2016", 250, 0);
+		}
+	}
 }
 
 #include <boost/python/module.hpp>
