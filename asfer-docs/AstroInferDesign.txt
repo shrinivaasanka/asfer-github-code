@@ -4316,4 +4316,11 @@ References:
 275.1 Intersection detection - https://www.cs.umd.edu/~mount/Papers/crc04-intersect.pdf
 275.2 Transversal Intersection of two curves - Newton iteration and Cramer's rule - https://en.wikipedia.org/wiki/Intersection_(Euclidean_geometry)
 
+--------------------------------------------------------------------------------------------------------------------------
+276. (FEATURE-DONE) Commits as on 30 May 2016 - Continued from 220
+--------------------------------------------------------------------------------------------------------------------------
+VIRGO CloudFS system calls have been added (invoked by unique number from syscall_32.tbl) for C++ Boost::Python interface to
+VIRGO Linux System Calls. Switch clause with a boolean flag has been introduced to select either VIRGO memory or filesystem calls.
+kern.log and CloudFS textfile Logs for VIRGO memory and filesystem invocations from AsFer python have been committed to testlogs/
+ 
 
