@@ -4323,4 +4323,12 @@ VIRGO CloudFS system calls have been added (invoked by unique number from syscal
 VIRGO Linux System Calls. Switch clause with a boolean flag has been introduced to select either VIRGO memory or filesystem calls.
 kern.log and CloudFS textfile Logs for VIRGO memory and filesystem invocations from AsFer python have been committed to testlogs/
  
+--------------------------------------------------------------------------------------------------------------------------
+277. (FEATURE-DONE) Commits as on 31 May 2016 - Continued from 220 and 276
+--------------------------------------------------------------------------------------------------------------------------
+Python CAPI interface to NEURONRAIN VIRGO Linux System Calls has been updated to include File System open, read, write primitives also.
+Rebuilt extension binaries, kern.logs and example appended text file have been committed to testlogs/. This is exactly similar to
+commits done for Boost::Python C++ interface. Switch clause has been added to select memory or filesystem VIRGO syscalls.
+
+
 
