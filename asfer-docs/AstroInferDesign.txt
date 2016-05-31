@@ -924,6 +924,10 @@ Additional references:
 
         34.30) Above algorithm ignores Communication Complexity across PRAMs or Comparator nodes on a Cloud.
 
+	34.31) Comparison of Parallel Sorting Algorithms (Bitonic, Parallel QuickSort on NVIDIA CUDA GPU etc.,) - http://arxiv.org/pdf/1511.03404.pdf. Bitonic Sort has the best parallel performance in most usecases.
+
+	34.32) NC-PRAM Equivalence and Parallel Algorithms - [David Eppstein] - https://www.ics.uci.edu/~eppstein/pubs/EppGal-ICALP-89.pdf
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
