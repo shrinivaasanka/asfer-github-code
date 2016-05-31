@@ -11,9 +11,9 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#--------------------------------------------------------------------------------------------------------
-#Copyleft(Copyright+):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+#-----------------------------------------------------------------------------------------------------
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
 #http://sourceforge.net/users/ka_shrinivaasan,
@@ -22,7 +22,7 @@
 #Personal website(research): https://sites.google.com/site/kuja27/
 #emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
 #kashrinivaasan@live.com
-#--------------------------------------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------
 */
 
 #include <Python.h>
@@ -44,38 +44,63 @@ struct hostport
         int port;
 };
 
+int memory_versus_filesystem=1;
+
+/*
+invokes NEURONRAIN VIRGO system calls by number - defined in $VIRGO_SRC/linux-kernel-extensions/arch/x86/syscalls/syscalls_32.tbl
+*/
+
 static PyObject* asfer_virgo_set_kernel_analytics(PyObject* self, PyObject* args)
 {
-	/* VIRGO malloc system calls to set the key-value pairs */
+	switch(memory_versus_filesystem)
+	{
+		case 0:
+		{
+			/* VIRGO malloc system calls to set the key-value pairs */
 	
-	char keyvalue[80];
-	if (!PyArg_ParseTuple(args, "s", keyvalue))
-		return NULL;
+			char keyvalue[80];
+			if (!PyArg_ParseTuple(args, "s", keyvalue))
+				return NULL;
 	
-	printf("asfer_virgo_set_kernel_analytics(): %s \n",keyvalue);
+			printf("asfer_virgo_set_kernel_analytics(): %s \n",keyvalue);
 	
-	struct virgo_address* vaddr;
-	unsigned long virgo_unique_id=3250409088u;
+			struct virgo_address* vaddr;
+			unsigned long virgo_unique_id=3250409088u;
 
-	/* virgo_malloc */
-	syscall(360,100,&virgo_unique_id);
+			/* virgo_malloc */
+			syscall(360,100,&virgo_unique_id);
 
-	/* virgo_set */
-	printf("asfer_virgo_set_kernel_analytics(): keyvalue: %s\n",keyvalue);
-	long set_ret=syscall(361,virgo_unique_id,keyvalue);
-	/*
-	long set_ret=syscall(361,virgo_unique_id,"key1:value1");
-	*/
+			/* virgo_set */
+			printf("asfer_virgo_set_kernel_analytics(): keyvalue: %s\n",keyvalue);
+			long set_ret=syscall(361,virgo_unique_id,keyvalue);
+			/*
+					long set_ret=syscall(361,virgo_unique_id,"key1:value1");
+			*/
 
-	/* virgo_get */
-	char get_data[256];
-	long get_ret=syscall(362,virgo_unique_id,get_data);
+			/* virgo_get */
+			char get_data[256];
+			long get_ret=syscall(362,virgo_unique_id,get_data);
 
-	/* virgo_free */
-	/*
-	long free_ret=syscall(363,virgo_unique_id); 
-	*/
-        return Py_BuildValue("l",virgo_unique_id);
+			/* virgo_free */
+			/*
+			long free_ret=syscall(363,virgo_unique_id); 
+			*/
+       			return Py_BuildValue("l",virgo_unique_id);
+	       }
+               case 1:
+               {
+                        // virgo_open
+                        long open_ret=syscall(364, "/home/shrinivaasanka/virgocloudfs.txt");
+
+                        // virgo_read
+                        syscall(366, open_ret, "text", 250, 0);
+
+                        // virgo_write
+                        syscall(367, open_ret, "AppendedText_31May2016", 250, 0);
+		
+	        	return Py_BuildValue("fd", open_ret);
+               }
+	}	
 }
 
 static char py_add_doc[]="asfer_virgo_set_kernel_analytics";
