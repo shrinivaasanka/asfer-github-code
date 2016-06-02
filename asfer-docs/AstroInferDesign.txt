@@ -928,6 +928,12 @@ Additional references:
 
 	34.32) NC-PRAM Equivalence and Parallel Algorithms - [David Eppstein] - https://www.ics.uci.edu/~eppstein/pubs/EppGal-ICALP-89.pdf
 
+        34.33) Parallel Merge Sort - [Richard Cole - https://www.cs.nyu.edu/cole/] - best known theoretical parallel sorting algorithm - requires O(logn) time with n processors and thus in NC - https://www.semanticscholar.org/paper/Parallel-Merge-Sort-Cole/6b67df5d908993eca7c03a564b5dcb1c4c8db999/pdf
+
+        34.34) NC-PRAM equivalence - http://courses.csail.mit.edu/6.854/06/notes/n32-parallel.pdf
+
+        34.35) Theorem 13 - PRAM(polylog,log) = uniform-NC - www.wisdom.weizmann.ac.il/~oded/PS/CC/l27.ps - This mentions that Communication Complexity in PRAM model is assumed to be O(1) and thus negligible though practically PRAMs unrealistic.
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
