@@ -34,6 +34,8 @@
 #****************************************************************************/
 
 import os
+import sys
+import getopt
 import geonames
 import math
 from datetime import date, time, datetime, timedelta
@@ -41,25 +43,81 @@ from collections import defaultdict
 
 useGeonames=True
 max_iterations=100000000
-min_year=2015
-min_month=11
-min_days=21
-min_hours=10
+min_year=0
+min_month=0
+min_days=0
+min_hours=0
 min_minutes=0
 min_seconds=0
-min_long=80
-min_lat=13
-max_year=2016
-max_month=1
-max_days=15
-max_hours=10
+min_long=0
+min_lat=0
+max_year=0
+max_month=0
+max_days=0
+max_hours=0
 max_minutes=0
-max_seconds=1
-max_long=81
-max_lat=14
+max_seconds=0
+max_long=0
+max_lat=0
+opts, args = getopt.getopt(sys.argv[1:], "x", [ "min_year=", "min_month=", "min_days=", "min_hours=", "min_minutes=", "min_seconds=", "min_long=", "min_lat=", "max_year=", "max_month=", "max_days=", "max_hours=", "max_minutes=", "max_seconds=", "max_long=", "max_lat="])
+print opts
+print args
+for opt, arg in opts:
+	print opt
+	print arg
+	if opt == "--min_year":
+			min_year = int(arg)
+	if opt == "--min_month":
+			min_month = int(arg)
+	if opt == "--min_days":
+			min_days = int(arg)
+	if opt == "--min_hours":
+			min_hours = int(arg)
+	if opt == "--min_minutes":
+			min_minutes = int(arg)
+	if opt == "--min_seconds":
+			min_seconds = int(arg)
+	if opt == "--min_long":
+			min_long = int(arg)
+	if opt == "--min_lat":
+			min_lat = int(arg)
+	if opt == "--max_year":
+			max_year = int(arg)
+	if opt == "--max_month":
+			max_month = int(arg)
+	if opt == "--max_days":
+			max_days = int(arg)
+	if opt == "--max_hours":
+			max_hours = int(arg)
+	if opt == "--max_minutes":
+			max_minutes = int(arg)
+	if opt == "--max_seconds":
+			max_seconds = int(arg)
+	if opt == "--max_long":
+			max_long = int(arg)
+	if opt == "--max_lat":
+			max_lat = int(arg)
+
 
 class NextDateTimeTimezoneLonglat:
 	def __iter__(self):
+		global min_year
+		global min_month
+		global min_days
+		global min_hours
+		global min_minutes
+		global min_seconds
+		global min_long
+		global min_lat
+		global max_year
+		global max_month
+		global max_days
+		global max_hours
+		global max_minutes
+		global max_seconds
+		global max_long
+		global max_lat
+		print "__iter__:",min_long,max_long
 		for long_deg in xrange(min_long, max_long,1):
 			for long_min in xrange(0,9,1):
 				for lat_deg in xrange(min_lat, max_lat,1):
