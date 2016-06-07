@@ -536,7 +536,7 @@ A.	Design Notes on Mining Numerical Datasets
 (THEORY) DECIDABILITY OF EXISTENCE AND CONSTRUCTION OF COMPLEMENT OF A FUNCTION (important draft additions to http://arxiv.org/pdf/1106.4102v1.pdf - quite experimental, non-conventional and not necessarily correct)
 ===========================================================================================================================================
 
-(*)24. (ONGOING) COMPLEMENT OF A FUNCTION - Approximating or Interpolating with a Polynomial: This is quite expensive and is undecidable for infinite sets. Better alternative is to approximate with Spline interpolant polynomials, for example, cubic splines which have less approximation error. (On a related note, algorithms described by the author (that is, myself) in http://arxiv.org/pdf/1106.4102v1.pdf for construction of a complement of a function are also in a way eliciting pattern in numerical data. The polynomial interpolation algorithm for complement finding can be improved with Spline interpolants which reduce the error and Discrete Fourier Transform in addition to Fourier series for the boolean expression. Adding this as a note here since TeX file for this arXiv submission got mysteriously deleted and the PDF in arXiv has to be updated somehow later.). A test python script written in 2011 while at CMI for implementing the above is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/complement.py. Also Trigonometric Polynomial Interpolation which is a special case of Polynomial interpolation, has following relation to DFT X(i)s:
+(*)24. (DONE) COMPLEMENT OF A FUNCTION - Approximating or Interpolating with a Polynomial: This is quite expensive and is undecidable for infinite sets. Better alternative is to approximate with Spline interpolant polynomials, for example, cubic splines which have less approximation error. (On a related note, algorithms described by the author (that is, myself) in http://arxiv.org/pdf/1106.4102v1.pdf for construction of a complement of a function are also in a way eliciting pattern in numerical data. The polynomial interpolation algorithm for complement finding can be improved with Spline interpolants which reduce the error and Discrete Fourier Transform in addition to Fourier series for the boolean expression. Adding this as a note here since TeX file for this arXiv submission got mysteriously deleted and the PDF in arXiv has to be updated somehow later.). A test python script written in 2011 while at CMI for implementing the above is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/complement.py. Also Trigonometric Polynomial Interpolation which is a special case of Polynomial interpolation, has following relation to DFT X(i)s:
 	p(t) = 1/N [X0 + X1*e^(2*pi*i*t) + ... upto XN] and 
 	p(n/N) = xn
 Thus DFT amd interpolation coincide in the above.
@@ -778,8 +778,13 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
         - Above step gives n probabilistic, approximate, correct learnt boolean conjunctions for each bit of all the 2^n prime numbers.
 	- An example PAC Boolean Conjunction Learner is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/PACLearning.py
 
+---------------------------------------------------------------------------------
+24i. Star Complexity and Complement Function Circuit Lowerbound (related to 198)
+---------------------------------------------------------------------------------
+Star Complexity of a Boolean Circuit is the minimum number of AND and OR gates required in monotone circuit graph. Size lowerbound for Complement Function circuit can thus be lowerbounded by Strong Magnification Lemma (Stasys Jukna - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf) - Size(ComplementCircuit) >= Star(ComplementCircuitGraph) - (2 + o(1))*n . Mapping from Boolean Circuit to Graph is done through a bipartite graph gadget wherein a boolean variable x(v1,v2) iff there is an edge from v1 to v2 in the bipartite graph and replacing each boolean literal by an OR of two new variables. Star Complexity views Boolean Circuits as a graph and for most graphs it is Omega(n^2/logn). Obtaining Size Lowerbounds for arbitrary complement functions is non-trivial.
+
 ----------------------------
-24i. Additional references:
+24j. Additional references:
 ----------------------------
 24.1 Google groups thread reference 2003 (OP done by self): https://groups.google.com/forum/#!search/ka_shrinivaasan%7Csort:relevance%7Cspell:false/sci.math/RqsDNc6SBdk/Lgc0wLiFhTMJ
 24.2 Math StackExchange thread 2013: http://math.stackexchange.com/questions/293383/complement-of-a-function-f-2n-n-in-mathbbn-0-n-rightarrow-n1
@@ -799,7 +804,7 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
 24.15 Frequent Subgraph Mining - http://research.microsoft.com/pubs/173864/icde08gsearch.pdf
 24.16 Frequent Subgraph Mining - http://glaros.dtc.umn.edu/gkhome/fetch/papers/sigramDMKD05.pdf
 24.17 Roots of polynomials - Beauty of Roots - http://www.math.ucr.edu/home/baez/roots/
-24.18 Circuit lowerbounds (Nechiporuk, Krapchenko, etc) - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation_Chapter9.pdf
+24.18 Circuit lowerbounds (Gate Elimination, Nechiporuk, Krapchenko, etc) - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation_Chapter9.pdf
 24.19 Schwartz-Zippel Lemma for Polynomial Identity Testing - http://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma
 24.20 Schwartz-Zippel Lemma for PIT of multilinear polynomials - http://www.cs.huji.ac.il/~noam/degree.ps
 24.21 Analysis of Boolean Functions - http://analysisofbooleanfunctions.org/
@@ -820,6 +825,8 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
 24.36 Riemann Hypothesis prediction of prime distribution - Integral_2_p(n)_[dt/logt] = n + O(sqrt(n(logn)^3)
 24.37 Brainfuck Turing Machine Compiler - https://esolangs.org/wiki/Brainfuck
 24.38 Laconic Turing Machine Compiler - https://esolangs.org/wiki/Laconic
+24.39 Circuit Complexity Lowerbound for Explicit Boolean Functions - http://logic.pdmi.ras.ru/~kulikov/papers/2011_3n_lower_bound_mfcs.pdf - 3n  - o(n)
+24.40 Star Complexity of Boolean Function Circuit - [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
 
 ###############################################################################################################################################
 
