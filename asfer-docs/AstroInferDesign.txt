@@ -4375,3 +4375,13 @@ applications in NLP, Speech Recognition, Image Pattern Recognition etc., The log
 a convergence of final output layer in 25th iteration itself (out of 10000). Learning the weights requires
 other algorithms like Gradient Descent, Backpropagation (and there are already known limitations in weight learning with these)
 
+------------------------------------------------------------------------------------------------------------------------------
+280. (FEATURE-DONE) Commits - 23 June 2016 - Minimal Reinforcement Learning (Monte Carlo Action Policy Search) implementation
+------------------------------------------------------------------------------------------------------------------------------
+Reinforcement Learning has been implemented which changes state based on environmental observation and an appropriate policy is
+chosen for observation by Monte Carlo Random Policy Search based on which rewards for each transitions are accumulated and output in the end.
+Logs for 3 consecutive executions of Reinforcement Learning have been committed with differing total rewards gained.
+Input observations are read from text file ReinforcementLearning.input.txt.
+
+Reference: Richard Sutton - http://webdocs.cs.ualberta.ca/~sutton/papers/Sutton-PhD-thesis.pdf
+
