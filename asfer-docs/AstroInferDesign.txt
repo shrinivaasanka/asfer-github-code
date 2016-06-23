@@ -4354,7 +4354,7 @@ commits done for Boost::Python C++ interface. Switch clause has been added to se
 -------------------------------------------------------------------------------------------------------------------------
 - getopts implementation for commandline args parsing has been introduced in Maitreya textclient rule search python script.
 - an example logs for possible high precipitation longitude/latitudes in future dates - July 2016 - predicted by sequence mining learnt
-+rules from past data has been added to testlogs/
+rules from past data has been added to testlogs/
  
 root@shrinivaasanka-Inspiron-1545:/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish# python MaitreyaEncHoro_RuleSearch.py  --min_year=2016 --min_month=7 --min_days=1 --min_hours=10 --min_minutes=10 --min_seconds=10 --min_long=77 --min_lat=07 --max_year=2016 --max_month=7 --max_days=15 --max_hours=10 --max_minutes=10 --max_seconds=10 --max_long=78 --max_lat=10 |grep " a Class Association"
 {  --date="2016-7-2 10:10:10 5"  --location=" x 77:0:0 7:0:0 " --planet-list } - There is a Class Association Rule match [ ['Mercury', 'Venus'] ] in sign  Gemini
@@ -4366,5 +4366,12 @@ root@shrinivaasanka-Inspiron-1545:/home/shrinivaasanka/Maitreya7_GitHub/martin-p
 {  --date="2016-7-13 10:10:10 5"  --location=" x 77:0:0 7:4:0 " --planet-list } - There is a Class Association Rule match [ ['Mercury', 'Venus'] ] in sign  Cancer
 {  --date="2016-7-14 10:10:10 5"  --location=" x 77:0:0 7:4:0 " --planet-list } - There is a Class Association Rule match [ ['Mercury', 'Venus'] ] in sign  Cancer
 
-
+----------------------------------------------------------------------------------------------------------------------------------
+279. (FEATURE-DONE) Commits - 23 June 2016 - Recurrent Neural Network Long Term Short Term Memory - Deep Learning - Implementation
+----------------------------------------------------------------------------------------------------------------------------------
+A very minimal python implementation of LSTM RNN based on Schmidhuber-Hochreiter LSTM has been added to
+already existing AsFer algorithms repertoire. LSTM RNN has gained traction in recent years in its variety of
+applications in NLP, Speech Recognition, Image Pattern Recognition etc., The logs for this implementation show
+a convergence of final output layer in 25th iteration itself (out of 10000). Learning the weights requires
+other algorithms like Gradient Descent, Backpropagation (and there are already known limitations in weight learning with these)
 
