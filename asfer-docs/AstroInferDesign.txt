@@ -3753,9 +3753,9 @@ Deep Learning implementation in python-src/ image is represented as {0,1}* bitma
         - logs for this have been included in testlogs/
 
 --------------------------------------------------------------------------------------------------------------
-241. (THEORY) ThoughtNet and Reinforcement Learning
+241. (THEORY and IMPLEMENTATION) ThoughtNet and Reinforcement Learning
 --------------------------------------------------------------------------------------------------------------
-Reinforcement Learning is based on following schematic principle of interaction between environment and agent learning from environment. ThoughtNet described in 228 and previous is an environmental context that every human agent has access to in decision making. This makes human thought process and thought-driven-actions to be a special case of Reinforcement Learning.
+Reinforcement Learning is based on following schematic principle of interaction between environment and agent learning from environment. ThoughtNet described in 228 and previous is an environmental context that every human agent has access to in decision making. This makes human thought process and thought-driven-actions to be a special case of Reinforcement Learning. Reinforcement Learning is itself inspired by behavioural psychology.
 
 				---------> ThoughtNet context (environment) ------
 	action (evocation)	|				  		 |  reward and state transition (most potent evocative thought)
@@ -3768,6 +3768,7 @@ Schematic above illustrates text document study as reinforcement learning. Durin
 	....
 By union bound probability of gambler going bankrupt after infinite number of coin flips is 1. This convergence to 1 applies to unfair biased coin tosses also. This theorem has useful application in ThoughtNet reinforcement learning disambiguation. Reward is defined as probability of most potent evocative thought being retrieved from ThoughtNet (this is when return value is set of hyperedges and not unique - probability of reward is 1/size_of_set_returned) and state transition is akin to consecutive coin flips. This proves that probability of imperfect disambiguation is eventually 1 even though reward probability is quite close to 1.
 
+A ThoughtNet Reinforcement Learning implementation has been committed as part of python-src/DeepLearning_ReinforcementLearningMonteCarlo.py
 
 References:
 -----------
