@@ -4386,3 +4386,8 @@ Input observations are read from text file ReinforcementLearning.input.txt.
 
 Reference: Richard Sutton - http://webdocs.cs.ualberta.ca/~sutton/papers/Sutton-PhD-thesis.pdf
 
+------------------------------------------------------------------------------------------------------------------------------
+281. (FEATURE-DONE) Commits - 24 June 2016 - ThoughtNet Reinforcement Learning implementation
+------------------------------------------------------------------------------------------------------------------------------
+ThoughtNet based Reinforcement Learning Evocation has been experimentally added as a clause in python-src/DeepLearning_ReinforcementLearningMonteCarlo.py.  This is just to demonstrate how ThoughtNet hypergraph based evocation is supposed to work. python-src/ReinforcementLearning.input.txt has been updated to have a meaningful textual excerpt. Logs for this evocative model has been committed to python-src/testlogs/DeepLearning_ReinforcementLearningMonteCarlo.ThoughtNet.out.24June2016
+
