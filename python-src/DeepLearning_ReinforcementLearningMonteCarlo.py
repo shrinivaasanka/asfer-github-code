@@ -30,6 +30,7 @@
 #Set of Transitions that maximize Sigma(R(t)) is the optimal. 
 
 import random
+import ast
 
 monte_carlo_policy_search=False
 ThoughtNet_policy_search=True
@@ -44,8 +45,12 @@ ThoughtNet_policy_search=True
 #In an advanced setting the ThoughtNet stores the lambda function composition parenthesized equivalent to the sentence and action taken upon
 #evocation is to evaluate the most potent evocative lambda expression.
 
-thoughtnet_edges=["services industry includes banking, finance etc.,", "security of online services transactions has come under intense scrutiny", "software engineers and developers are backbones of banking and ITES industry"]
-thoughtnet_hypergraph={"transactions":[1], "services":[0,1], "security":[1], "engineers":[2], "banking":[0,2]}
+#ThoughtNet File System Storage - eval()-ed to dict and list
+thoughtnet_edges_storage=open("./ThoughtNet/ThoughtNet_Edges.txt","r")
+thoughtnet_hypergraph_storage=open("./ThoughtNet/ThoughtNet_Hypergraph.txt","r")
+
+thoughtnet_edges=ast.literal_eval(thoughtnet_edges_storage.read())
+thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_storage.read())
 
 r=[0.5,0.8,0.2,0.9,0.75,0.8]
 states=[0,1,2,3,4,5]
