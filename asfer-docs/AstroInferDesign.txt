@@ -4391,3 +4391,9 @@ Reference: Richard Sutton - http://webdocs.cs.ualberta.ca/~sutton/papers/Sutton-
 ------------------------------------------------------------------------------------------------------------------------------
 ThoughtNet based Reinforcement Learning Evocation has been experimentally added as a clause in python-src/DeepLearning_ReinforcementLearningMonteCarlo.py.  This is just to demonstrate how ThoughtNet hypergraph based evocation is supposed to work. python-src/ReinforcementLearning.input.txt has been updated to have a meaningful textual excerpt. Logs for this evocative model has been committed to python-src/testlogs/DeepLearning_ReinforcementLearningMonteCarlo.ThoughtNet.out.24June2016
 
+---------------------------------------------------------------------------------------------------------------------
+282. (FEATURE-DONE) Commits - 26 June 2016 - ThoughtNet File System Storage
+---------------------------------------------------------------------------------------------------------------------
+ThoughtNet text files have been stored into a filesystem backend. It is read and eval()-ed into list of edges and hypergraphs.
+Separate ThoughtNet directory has been created for these text files.
+
