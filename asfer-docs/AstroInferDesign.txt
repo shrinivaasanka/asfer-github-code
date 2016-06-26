@@ -4397,3 +4397,14 @@ ThoughtNet based Reinforcement Learning Evocation has been experimentally added 
 ThoughtNet text files have been stored into a filesystem backend. It is read and eval()-ed into list of edges and hypergraphs.
 Separate ThoughtNet directory has been created for these text files.
 
+-----------------------------------------------------------------------------------------------------
+282a. ThoughtNet growth and Evocation Reinforcement Learning algorithm (not feasible to implement exactly):
+-----------------------------------------------------------------------------------------------------
+loop_forever
+{
+When an observation stimulus from environment arrives:
+	(*) Sensory instruments that simulate eye, ear, nose, etc., receive stimuli from environment (thoughts, music, noise, sound etc.,)
+and convert to sentential form - this is of the order of billions - and appended to list in ThoughtNet_Edges.txt
+	(*) Sentences are classified into categories (for example, by maximum core numbers in definition wordnet subgraph) which is also order of billions and added as hypergraph edges in dict with in ThoughtNet_Hypergraph.txt - hyperedge because same document can be in more than 2 classes. This creates a list for each key in dict and the list has to be sorted based on evocation potential - reward for reinforcement learning. There is no need for monte carlo and dynamic programming if pre-sorted because sum of rewards is always maximum - only topmost evocative edge is chosen in each list of a key.
+	(*) observation is split to atomic units - tokenized - or classified and each unit is lookedup in ThoughtNet_Hypergraph.txt to get a list and hyperedge with maximum potential is returned as evocative with optional lambda evaluation which is the action side of reinforcement learning.
+}
