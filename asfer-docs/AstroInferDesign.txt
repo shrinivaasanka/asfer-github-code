@@ -4420,3 +4420,20 @@ show the actual data and projected quotes by ARMA for few iterations have been c
 (1-sigma())X(t) = (1+sigma())
 3. Also committed is the R plot for SequenceMined Pattern in first 10000 prime numbers in binary format (DJIA approx and approxfun plots have been regenerated)
 
+--------------------------------------------------------------------------------------------
+285. (FEATURE-DONE) Commits 1 - 28 June 2016 - Neo4j ThoughtNet Hypergraph Database Creation
+--------------------------------------------------------------------------------------------
+1.New file ThoughtNet_Neo4j.py has been added to repository which reads the ThoughtNet edges and hypergraph text files and uploads them into
+Neo4j Graph Database through py2neo client for Neo4j.
+2.Neo4j being a NoSQL graph database assists in querying the thoughtnet and scalable.
+3.ThoughtNet text files have been updated with few more edges and logs for how Neo4j graph database for ThoughtNet looks like have been
+committed to testlogs/
+
+---------------------------------------------------------------------------------------------------
+286. (FEATURE-DONE) Commits 2 - 28 June 2016 -  ThoughtNet Neo4j Transactional graph creation
+---------------------------------------------------------------------------------------------------
+1.transactional begin() and commit() for graph node and edges creation has been
+included.
+2.This requires disabling bolt and neokit disable-auth due to an auth failure config issue.
+3.Logs and a screenshot for the ThoughtNet Hypergraph created in GUI (http://localhost:7474) have been committed to testlogs/
+
