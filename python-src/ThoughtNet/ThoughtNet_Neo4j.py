@@ -27,9 +27,10 @@
 #This code creates the ThoughtNet HyperGraph Database on Neo4j reading the contents of the thoughtnet edges and hypergraph text file 
 #storage. Python interface to Neo4j requires py2neo Neo4j python client.
 
-from py2neo import Node, Relationship
+from py2neo import Node, Relationship, Graph
 import ast
 
+g=Graph(bolt=False)
 thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph.txt","r")
 thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_file.read())
 thoughtnet_edges_file=open("ThoughtNet_Edges.txt","r")
@@ -59,18 +60,26 @@ for n in xrange(len(thoughtnet_edges)):
 			hyperedge.append(k)
 	hypergraph.append(hyperedge)
 
+tx = g.begin()
 neo4j_thoughtnet_nodes={}
 neo4j_thoughtnet_relationships=[]
 for category in thoughtnet_hypergraph.keys():
 	neo4j_thoughtnet_nodes[category]=Node("Thought",name=category)
+	tx.create(neo4j_thoughtnet_nodes[category])
+tx.commit()
 
+tx = g.begin()
 hyperedge_index=0
 for e in hypergraph:
 	hyperedge_traversal=0
 	while hyperedge_traversal < len(e)-1:
-		neo4j_thoughtnet_relationships.append(Relationship(neo4j_thoughtnet_nodes[e[hyperedge_traversal]],"HyperEdge"+str(hyperedge_index),neo4j_thoughtnet_nodes[e[hyperedge_traversal+1]]))
+		r=Relationship(neo4j_thoughtnet_nodes[e[hyperedge_traversal]],"HyperEdge"+str(hyperedge_index),neo4j_thoughtnet_nodes[e[hyperedge_traversal+1]])
+		neo4j_thoughtnet_relationships.append(r)
+		tx.create(r)
 		hyperedge_traversal+=1
 	hyperedge_index+=1
+
+tx.commit()
 
 print "============================================================================"
 print "Neo4j ThoughtNet Nodes"
