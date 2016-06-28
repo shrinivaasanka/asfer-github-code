@@ -1,0 +1,24 @@
+======================================================
+ThoughtNet Hypergraph Edges
+======================================================
+HyperEdge0 : services industry includes banking, finance etc.,
+HyperEdge1 : security of online services transactions has come under intense scrutiny
+HyperEdge2 : software engineers and developers are backbones of banking and ITES industry
+HyperEdge3 : Bulbs is an open-source Python persistence framework for graph databases and the first piece of a larger Web-development toolkit that will be released in the upcoming weeks
+HyperEdge4 : Post-Brexit power vacuum hits UK tech policy influence at European Parliament
+======================================================
+ThoughtNet classes 
+======================================================
+['europe', 'transactions', 'python', 'banking', 'services', 'security', 'engineers']
+=========================================================================
+ThoughtNet Hypergraph after classification of edges onto previous classes
+=========================================================================
+{'europe': [4], 'transactions': [1], 'python': [3], 'banking': [0, 2, 4], 'services': [0, 1], 'security': [1], 'engineers': [2, 3]}
+============================================================================
+Neo4j ThoughtNet Nodes
+============================================================================
+{'europe': (europe:Thought {name:"europe"}), 'transactions': (transactions:Thought {name:"transactions"}), 'python': (python:Thought {name:"python"}), 'banking': (banking:Thought {name:"banking"}), 'services': (services:Thought {name:"services"}), 'security': (security:Thought {name:"security"}), 'engineers': (engineers:Thought {name:"engineers"})}
+============================================================================
+Neo4j ThoughtNet HyperEdge Relationships
+============================================================================
+[(banking)-[:HyperEdge0]->(services), (transactions)-[:HyperEdge1]->(services), (services)-[:HyperEdge1]->(security), (banking)-[:HyperEdge2]->(engineers), (python)-[:HyperEdge3]->(engineers), (europe)-[:HyperEdge4]->(banking)]
