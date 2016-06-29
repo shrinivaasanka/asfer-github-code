@@ -47,7 +47,7 @@ ThoughtNet_policy_search=True
 
 #ThoughtNet File System Storage - eval()-ed to dict and list
 thoughtnet_edges_storage=open("./ThoughtNet/ThoughtNet_Edges.txt","r")
-thoughtnet_hypergraph_storage=open("./ThoughtNet/ThoughtNet_Hypergraph.txt","r")
+thoughtnet_hypergraph_storage=open("./ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
 
 thoughtnet_edges=ast.literal_eval(thoughtnet_edges_storage.read())
 thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_storage.read())
@@ -69,11 +69,12 @@ for obs in inputf.read().split():
 		reward += actions_rewards[actions[action_indx]]
 		print "Reward collected so far:", reward
 	if ThoughtNet_policy_search == True:
-		#Evocatives are returned from ThoughtNet storage - example in memory storage hypergraph has been defined previously
+		#Evocatives are returned from ThoughtNet storage
 		print "Observation:",obs.lower()
 		try:
 			if thoughtnet_hypergraph[obs.lower()] is not None:
-				print "Most potent evocative thought (reward) returned:", thoughtnet_edges[thoughtnet_hypergraph[obs.lower()][0]]
+				for s in thoughtnet_hypergraph[obs.lower()]:
+					print "evocative thought (reward) returned(in descending order of evocation potential):", thoughtnet_edges[s] 
 		except:
 			pass
 

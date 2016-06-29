@@ -31,7 +31,8 @@ from py2neo import Node, Relationship, Graph
 import ast
 
 g=Graph(bolt=False)
-thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph.txt","r")
+#thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph.txt","r")
+thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph_Generated.txt","r")
 thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_file.read())
 thoughtnet_edges_file=open("ThoughtNet_Edges.txt","r")
 thoughtnet_edges=ast.literal_eval(thoughtnet_edges_file.read())
