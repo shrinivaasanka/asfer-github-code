@@ -4437,3 +4437,18 @@ included.
 2.This requires disabling bolt and neokit disable-auth due to an auth failure config issue.
 3.Logs and a screenshot for the ThoughtNet Hypergraph created in GUI (http://localhost:7474) have been committed to testlogs/
 
+----------------------------------------------------------------------------------------------------------------------------------
+287. (FEATURE-DONE) Commits - 29 June 2016 - ThoughtNet and Reinforcement Deep Learning
+----------------------------------------------------------------------------------------------------------------------------------
+Major commits for ThoughtNet Hypergraph Construction and Reinforcement Learning from it
+---------------------------------------------------------------------------------------------
+1. python-src/DeepLearning_ReinforcementLearningMonteCarlo.py reads from automatically generated ThoughtNet Hypergraph text backend created
+by python-src/ThoughtNet/Create_ThoughtNet_Hypergraph.py in python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt
+2. Separate Recursive Gloss Overlap CoreNumber and PageRank based Unsupervised Classifier has been implemented in python-src/RecursiveGlossOverlap_Classifier.py
+which takes any text as input arg and returns the classes it belongs to without any training data. This script is imported in python-src/ThoughtNet/Create_ThoughtNet_Hypergraph.py
+to automatically classify observations from environment and to build ThoughtNet based on them for evocations later.
+3. python-src/ThoughtNet/ThoughtNet_Neo4j.py reads from automatically generated ThoughtNet in python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt
+4. Logs for above have been committed to respective testlogs/ directories
+5. Compared to human evaluated ThoughtNet Hypergraphs in python-src/ThoughtNet/ThoughtNet_Hypergraph.txt, generated python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt
+does quite a deep learning from WordNet mining and evocations based on this automated ThoughtNet are reasonably accurate.
+6. python-src/ReinforcementLearning.input.txt and python-src/ThoughtNet/ThoughtNet_Edges.txt have been updated manually.
