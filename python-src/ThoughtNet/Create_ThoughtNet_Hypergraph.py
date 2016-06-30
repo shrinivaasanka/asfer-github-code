@@ -28,22 +28,45 @@ from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
 from collections import defaultdict
 import ast
 import json
+import operator
+import SentimentAnalyzer
 
-thoughtnet_edges_file=open("ThoughtNet_Edges.txt","r")
-thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph_Generated.txt","w")
-thoughtnet_hypergraph=defaultdict(list)
-edge_number=0
-contents=thoughtnet_edges_file.read()
-lines=ast.literal_eval(contents)
-while edge_number < len(lines):
-	print "line=",lines[edge_number]
-	classification=RecursiveGlossOverlap_Classify(lines[edge_number])
-	for k in range(0,len(classification[0])-1):
-		#at present edge numbers are just appended without sorting based on evocation potential
-		#assigning evocation potential looks non trivial for each edge for a class than a plain sentiment scoring,
-		#because it requires some simulation of human brain EEG electric signal responses on uttering a word.
-		#This deficiency has already been mentioned in AstroInferDesign.txt
-		thoughtnet_hypergraph[classification[0][k][0]].append(edge_number)
-	edge_number += 1
-print thoughtnet_hypergraph
-json.dump(thoughtnet_hypergraph,thoughtnet_hypergraph_file)
+def sort_evocative_sentiments_per_class(edges, edge_senti_dict):
+	edge_senti_subset_dict={}
+	for e in edges: 
+		edge_senti_subset_dict[e]=edge_senti_dict[e]
+        sorted_edge_senti=sorted(edge_senti_subset_dict.items(),key=operator.itemgetter(1),reverse=True)
+	sorted_edge_senti_first=[x for x,y in sorted_edge_senti]
+	return sorted_edge_senti_first
+
+def nett_sentiment(senti_tuple):
+	return senti_tuple[0] - senti_tuple[1] + senti_tuple[2]
+
+if __name__=="__main__":
+	edge_sentiment_dict=defaultdict()
+	thoughtnet_edges_file=open("ThoughtNet_Edges.txt","r")
+	thoughtnet_hypergraph_file=open("ThoughtNet_Hypergraph_Generated.txt","w")
+	thoughtnet_hypergraph=defaultdict(list)
+	thoughtnet_hypergraph_sorted=defaultdict(list)
+	edge_number=0
+	contents=thoughtnet_edges_file.read()
+	lines=ast.literal_eval(contents)
+	while edge_number < len(lines):
+		print "line=",lines[edge_number]
+		edge_sentiment_dict[edge_number]=nett_sentiment(SentimentAnalyzer.SentimentAnalysis_SentiWordNet(lines[edge_number]))
+		classification=RecursiveGlossOverlap_Classify(lines[edge_number])
+		for k in range(0,len(classification[0])-1):
+			#at present edge numbers are just appended by sorting based on sentiment scoring per hyperedge. 
+			#assigning evocation potential looks non trivial for each edge for a class than a plain sentiment scoring,
+			#because it requires some simulation of human brain EEG electric signal responses on uttering a word.
+			#This deficiency has already been mentioned in AstroInferDesign.txt
+			thoughtnet_hypergraph[classification[0][k][0]].append(edge_number)
+		edge_number += 1
+
+	for k,v in thoughtnet_hypergraph.iteritems():
+		sorted_edge_senti_per_class=sort_evocative_sentiments_per_class(v, edge_sentiment_dict)
+		thoughtnet_hypergraph_sorted[k]=sorted_edge_senti_per_class
+
+	print thoughtnet_hypergraph_sorted
+	json.dump(thoughtnet_hypergraph_sorted,thoughtnet_hypergraph_file)
+	print "edge_sentiment_dict = ",edge_sentiment_dict

@@ -70,6 +70,7 @@ for obs in inputf.read().split():
 		print "Reward collected so far:", reward
 	if ThoughtNet_policy_search == True:
 		#Evocatives are returned from ThoughtNet storage
+		print "==========================================================================================="
 		print "Observation:",obs.lower()
 		try:
 			if thoughtnet_hypergraph[obs.lower()] is not None:

@@ -4462,3 +4462,13 @@ by python-src/ThoughtNet/Create_ThoughtNet_Hypergraph.py in python-src/ThoughtNe
 									    V
 			Observations----------------> DeepLearning_ReinforcementLearningMonteCarlo.py ---------> Evocations
 
+-------------------------------------------------------------------------------------------------------
+289. (FEATURE-DONE) Commits - 30 June 2016 - Sentiment Scoring of ThoughtNet edges and Sorting per Class
+-------------------------------------------------------------------------------------------------------
+1. Create_ThoughtNet_Hypergraph.py has been changed to do sentiment scoring which is a nett of positivity, negativity and objectivity per
+thought hyperedge and to sort the per-class key list of hyperedges descending based on sentiment scores computed.
+2. python-src/ReinforcementLearning.input.txt which is the input observation stimulus and python-src/ThoughtNet/ThoughtNet_Edges.txt, the training data for construction of Hypergraph have been updated with additional text sentences.
+3. Hypergraph created for this is committed at python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt with logs in python-src/ThoughtNet/testlogs/Create_ThoughtNet_Hypergraph.sentiment_sorted.out.30June2016.  Example evocatives for python-src/ReinforcementLearning.input.txt input to python-src/DeepLearning_ReinforcementLearningMonteCarlo.py are logged in python-src/testlogs/DeepLearning_ReinforcementLearningMonteCarlo.ThoughtNet_sentiment_sorted.out.30June2016
+
+This completes ThoughtNet Classifications based Evocative Inference implementation minimally.
+
