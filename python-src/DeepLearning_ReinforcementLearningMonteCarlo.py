@@ -30,27 +30,8 @@
 #Set of Transitions that maximize Sigma(R(t)) is the optimal. 
 
 import random
-import ast
 
-monte_carlo_policy_search=False
-ThoughtNet_policy_search=True
-
-#Two action policy searches have been implemented - one is the random montecarlo choice and the other is a non-trivial ThoughtNet evocation.
-#This is an example ThoughtNet storage with hyperedges and multiplanar hypergraph. A practical ThoughtNet storage could be of billions of
-#edges based on experiential learning of an individual over a period of lifetime and has to be suitably stored in a medium that mimicks brain.
-#Ideally following dictionary has to be in some persistence bigdate storage though it still is just an approximation.
-#Hypergraph encodes the edges as numbers - for example, "transactions":[1] and "security":[1] implies that a sentence numbered 1 has been
-#pre-classified under transactions and security categories. Also "services":[0,1] implies that there are two sentences encoded as 0 and 1 
-#classified in services category with descending order of evocative potentials - 0 is more evocative than 1.
-#In an advanced setting the ThoughtNet stores the lambda function composition parenthesized equivalent to the sentence and action taken upon
-#evocation is to evaluate the most potent evocative lambda expression.
-
-#ThoughtNet File System Storage - eval()-ed to dict and list
-thoughtnet_edges_storage=open("./ThoughtNet/ThoughtNet_Edges.txt","r")
-thoughtnet_hypergraph_storage=open("./ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
-
-thoughtnet_edges=ast.literal_eval(thoughtnet_edges_storage.read())
-thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_storage.read())
+#action policy search implemented - random montecarlo choice.
 
 r=[0.5,0.8,0.2,0.9,0.75,0.8]
 states=[0,1,2,3,4,5]
@@ -61,21 +42,9 @@ state_transitions={actions[0]:[0,1],actions[5]:[1,5],actions[2]:[3,6],actions[1]
 inputf=open("ReinforcementLearning.input.txt","r")
 reward=0.0
 for obs in inputf.read().split():
-	if monte_carlo_policy_search == True:
-		#choose an action - PseudoRandom Monte Carlo
-		action_indx=random.randint(0,5)
-		print "Policy action index chosen by Monte Carlo:", actions[action_indx]
-		print "State transition on observation :", obs, state_transitions[actions[action_indx]]
-		reward += actions_rewards[actions[action_indx]]
-		print "Reward collected so far:", reward
-	if ThoughtNet_policy_search == True:
-		#Evocatives are returned from ThoughtNet storage
-		print "==========================================================================================="
-		print "Observation:",obs.lower()
-		try:
-			if thoughtnet_hypergraph[obs.lower()] is not None:
-				for s in thoughtnet_hypergraph[obs.lower()]:
-					print "evocative thought (reward) returned(in descending order of evocation potential):", thoughtnet_edges[s] 
-		except:
-			pass
-
+	#choose an action - PseudoRandom Monte Carlo
+	action_indx=random.randint(0,5)
+	print "Policy action index chosen by Monte Carlo:", actions[action_indx]
+	print "State transition on observation :", obs, state_transitions[actions[action_indx]]
+	reward += actions_rewards[actions[action_indx]]
+	print "Reward collected so far:", reward
