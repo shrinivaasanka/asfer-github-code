@@ -4472,3 +4472,22 @@ thought hyperedge and to sort the per-class key list of hyperedges descending ba
 
 This completes ThoughtNet Classifications based Evocative Inference implementation minimally.
 
+------------------------------------------------------------------------------------------------------------
+290. (FEATURE-DONE) Commits - 1 July 2016 - Reinforcement Learning Bifurcation
+------------------------------------------------------------------------------------------------------------
+Reinforcement Learning code has been bifurcated into two files than having in if-else clause, for facilitating future imports :-
+one for MonteCarlo and the other for ThoughtNet Evocation.  Logs for these two have been committed to testlogs.
+
+-------------------------------------------------------------------------------------------------------------
+291. (THEORY) Logical Time and ThoughNet (related to EventNet 70-79)
+-------------------------------------------------------------------------------------------------------------
+ThoughtNet Hypergraph is multiplanar and when seen from elevation it resembles billions of skyscraper category towers interconnected by Thought
+HyperEdges which are classified onto these categories. This gives an alternative route to define Time. Each tower represents chronologically stacked up events/occurrences/thoughts when unsorted i.e most recent thought is on top always and evocation based on chronology returns topmost thought. ThoughtNet evocation is an associative memory process returning most relevant thought in past for an observation in present. Two stack node towers with differing depths define two views of time i.e time is subjective to the category than objective across ThoughtNet. In a timeless universe, measuring duration between two events reduces to height of these unequal stacks which is not absolute - there are many logical "Time"(s). Each stack node has its own independent logical "Clock". This makes no assumption about relativistic theory of time and is independent of any physical law. From theory of computation standpoint, this is similar to a multi-tape turing machine but with added feature in which tapes are interconnected. When the stacks are sorted for evocation potential based on some criterion (e.g sentiwordnet, EEG electric pulse etc.,) chronology information is lost to some extent but still the edge id retains it - most recent edge has largest edge numeric id. As a working example, following edges were evoked when word "economic" was uttered:
+===========================================================================================
+Observation: economic
+evocative thought (reward) returned(in descending order of evocation potential): The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+evocative thought (reward) returned(in descending order of evocation potential): We need an SPI and we need to understand its value in our society because we need to understand how we’re doing in terms of health and education and the quality of our water
+evocative thought (reward) returned(in descending order of evocation potential): Social progress depends on the policy choices, investments, and implementation capabilities of multiple stakeholders—government, civil society, and business.
+===========================================================================================
+Only the top most evocative edge (sorted based on sentiment scores) has the word "economics" in it while the other two don't. But still the classification by definition graph core numbers inferred that these belong to "economic" class and pigeonholed them to stack "economic" - in other words the concept "economics" was deep-learnt by inner graph structure of the sentence without training data. But bottom two edges were most recent compared to the topmost and yet scored less on sentiment.
+
