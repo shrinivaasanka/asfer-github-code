@@ -4329,7 +4329,7 @@ a sharp threshold phenomenon in computational hardness of satisfiability - an ea
 Assuming that real-life voters have non-boolean decision functions only, the RHS circuit of Pr(Good) majority voting is confined to polytime
 satisfiability realm alone. Non-boolean voting decision functions can be specialized for 2 candidates special case too - this allows fractional
 values to decision variables. This is plausible because Linear Programming (non-boolean) is polytime while 0-1 Integer Linear Programming
-(boolean) is NP-complete.
+(boolean) is NP-complete. Because of Non-boolean Social Choice functions (e.g Linear Programs with Constraints which each voter solves) being the most generic which allow fractional values to variables, any of the standard polytime Simplex algorithms - Dantzig Pivot Tableau and Karmarkar Interior Point Method - can be applied to find a satisfying assignment. Voter decides to vote for/againt when the solution to LP is above/below a threshold. This is a far from real,hypothetical,perfectly rational election setting. Real life elections have bounded rationality. It is an alternative to Computational Geometric intersection detection previously mentioned.
 
 References:
 ----------
