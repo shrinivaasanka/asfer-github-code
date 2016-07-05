@@ -32,15 +32,30 @@
 import random
 import ast
 
-#action policy search implemented - non-trivial ThoughtNet evocation.
+#action policy search implemented - non-trivial ThoughtNet evocation:
 #This is an example ThoughtNet storage with hyperedges and multiplanar hypergraph. A practical ThoughtNet storage could be of billions of
 #edges based on experiential learning of an individual over a period of lifetime and has to be suitably stored in a medium that mimicks brain.
-#Ideally following dictionary has to be in some persistence bigdate storage though it still is just an approximation.
-#Hypergraph encodes the edges as numbers - for example, "transactions":[1] and "security":[1] implies that a sentence numbered 1 has been
-#pre-classified under transactions and security categories. Also "services":[0,1] implies that there are two sentences encoded as 0 and 1 
-#classified in services category with descending order of evocative potentials - 0 is more evocative than 1.
-#In an advanced setting the ThoughtNet stores the lambda function composition parenthesized equivalent to the sentence and action taken upon
-#evocation is to evaluate the most potent evocative lambda expression.
+#Ideally ThoughtNet has to be in some persistence bigdata storage though it still is just an approximation. Neo4j backend for ThoughtNet
+#has been implemented in ThoughtNet/. ThoughtNet is kind of Evocation WordNet expanded for thoughts represented as sentences (because
+#there is no better way to encode thoughts than in a natural language) and classified. Hypergraph encodes the edges as numbers - for example, 
+#"transactions":[1] and "security":[1] implies that a sentence numbered 1 has been pre-classified under transactions and security categories. 
+#Also "services":[0,1] implies that there are two sentences encoded as 0 and 1 classified in services category with descending order of 
+#evocative potentials - 0 is more evocative than 1.  In an advanced setting the ThoughtNet stores the lambda function composition parenthesized
+#equivalent to the sentence and action taken upon evocation is to evaluate the most potent evocative lambda expression.
+#On an evocative thought, state of "ThoughtNet" mind changes with corresponding action associated with that state 
+#(the usual mind-word-action triad). Philosophically, this simulates the following thought experiment:
+#	- Word: Sensory receptors perceive stimuli - events
+#	- Mind: stimuli evoke thoughts in past
+#	- Action: Evocative thought is processed by intellect and inspires action - action is a lambda evaluation of a sentence.
+##############################################################################
+#
+#	Senses(Word) <---------> Mind(Evocation) <---------> Action(Intellect)
+#	 ^				                          ^
+#	 |<------------------------------------------------------>|
+#
+#and above is an infinite cycle. Previous schematic maps interestingly to Reinforcement Learning(Agent-Environment-Action-Reward).
+##############################################################################
+#In this aspect, ThoughtNet is a qualitative experimental inference model compared to quantitative Neural Networks.
 
 #ThoughtNet File System Storage - eval()-ed to dict and list
 thoughtnet_edges_storage=open("./ThoughtNet/ThoughtNet_Edges.txt","r")
@@ -56,6 +71,11 @@ for obs in inputf.read().split():
 	print "==========================================================================================="
 	print "Observation:",obs.lower()
 	try:
+		#It is assumed in present implementation that every thought edge is a state implicitly, and the action
+		#for the state is the "meaning" inferred by recursive lambda evaluation (lambda composition tree evaluation for a natural
+		#language sentence is not implemented separately because its reverse is already done through closure of a RGO graph in other
+		#code in NeuronRain AsFer. Approximately every edge in Recursive Gloss Overlap wordnet subgraph is a lambda function with its
+		#two vertices as operands which gives a more generic lambda graph composition of a text)
 		if thoughtnet_hypergraph[obs.lower()] is not None:
 			for s in thoughtnet_hypergraph[obs.lower()]:
 				print "evocative thought (reward) returned(in descending order of evocation potential):", thoughtnet_edges[s] 
