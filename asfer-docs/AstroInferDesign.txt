@@ -4513,3 +4513,14 @@ language sentence is not implemented separately because its reverse is already d
 code in NeuronRain AsFer. Approximately every edge in Recursive Gloss Overlap wordnet subgraph is a lambda function with its
 two vertices as operands which gives a more generic lambda graph composition of a text)
 
+----------------------------------------------------------------------------------------------------------------------------
+292. (THEORY) Recursive Lambda Function Growth Algorithm and Recursive Gloss Overlap Graph - 216 Continued
+----------------------------------------------------------------------------------------------------------------------------
+Lambda Function Recursive Growth algorithm for inferring meaning of natual language text approximately, mentioned in 216 relies
+on creation of lambda function composition tree top-down by parsing the connectives and keywords of the text. Alternative to this top-down
+parsing is to construct the lambda function composition graph instead from the Recursive Gloss Overlap WordNet subgraph itself where
+each edge is a lambda function with two vertex endpoints as operands (mentioned in 291). Depth First Traversal of this graph iteratively
+evaluates a lambda function f1 of an edge, f1 is applied to next edge vertices in traversal to return f2(f1), and so on upto function
+fn(fn-1(fn-2(.....(f2(f1))...) which completes the recursive composition. Which one is better - tree or graph lambda function growth - depends
+on the depth of learning necessary. Rationale in both is that the "meaning" is accumulated left-right and top-down on reading a text.
+
