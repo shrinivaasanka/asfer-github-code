@@ -1,0 +1,14 @@
+===========================================================================
+Lambda Composition AVL Tree (inorder traversed) is the original text itself:
+===========================================================================
+"The time has come," the Walrus said, "To talk of many things: Of shoes-- and ships-- and sealing-wax-- Of cabbages-- and kings-- And why the sea is boiling hot-- And whether pigs have wings."
+===========================================================================
+Lambda Composition AVL Tree (postorder traversed):
+Every parenthesis has two operands,operated by function outside:
+===============================================================
+"The has time the said, Walrus come," talk many of Of and shoes-- things: "To and Of sealing-wax-- and And kings-- cabbages-- the is sea hot-- whether And wings." have pigs boiling why ships--
+==============================================================
+Lambda Function Composition Postfix Evaluation (parenthesized):
+==============================================================
+"The((((((((((((((((ships--(why,boiling))(pigs,have))(wings.",And))(whether,hot--))(sea,is))(the,cabbages--))(kings--,And))(and,sealing-wax--))(Of,and))("To,things:))(shoes--,and))(Of,of))(many,talk))(come,",Walrus))(said,,the))(time,has))
+===============================================================
