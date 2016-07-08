@@ -85,26 +85,26 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.lambda_comp_tree.foreach(self.build_lambda_expression, 0)
 		print
 		print "==========================================================================="
-		print "Lambda Composition AVL Tree (postorder traversed):"
+		print "Lambda Composition AVL Tree (inorder traversed):"
 		print "Every parenthesis has two operands,operated by function outside:"
 		print "==============================================================="
 		self.lambda_expression=[]
-		self.lambda_comp_tree.foreach(self.build_lambda_expression, 1)
+		self.lambda_comp_tree.foreach(self.build_lambda_expression, 0)
 		print 
 		print "=============================================================="
-		print "Lambda Function Composition Postfix Evaluation (parenthesized):"
+		print "Lambda Function Composition Infix Evaluation (parenthesized):"
 		print "=============================================================="
 		#print self.lambda_expression
 		self.lambda_composition=[]
 		cnt=0
 		while len(self.lambda_expression) > 2 :
+			operand2=self.lambda_expression.pop()
 			function=self.lambda_expression.pop()
 			operand1=self.lambda_expression.pop()
-			operand2=self.lambda_expression.pop()
 			self.lambda_composition="("+function+"("+operand1+","+operand2+"))" 
 			self.lambda_expression.append(self.lambda_composition)
 			cnt+=1
-		print "".join(self.lambda_expression)
+		print self.lambda_expression[0] + self.lambda_expression[1]
 		print "==============================================================="	
 			
 
