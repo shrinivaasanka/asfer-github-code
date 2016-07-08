@@ -4533,3 +4533,10 @@ on the depth of learning necessary. Rationale in both is that the "meaning" is a
 for this have been committed to testlogs/ which show the inorder and postorder traversal and the final lambda function grown from a text.
 4.This is different from Part of Speech tree or a Context Free Grammar parse tree.
 5.On an average every english sentence has a connective on every third word which is exactly what inorder traversal of AVL binary tree does.If not a general B+-Tree can be an ideal choice to translate a sentence to tree. Every subtree root in AVL tree is a lambda function with leaves as operands.
+
+-----------------------------------------------------------------------------------------------------------
+294. (FEATURE-DONE) Commits - 8 July 2016
+-----------------------------------------------------------------------------------------------------------
+Changed Postfix Evaluation to Infix evaluation in Lambda Function Growth with logs in testlogs/
+
+
