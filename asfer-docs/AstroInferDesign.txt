@@ -2171,6 +2171,10 @@ can be expressed in terms of geometric equations for circle - x(i)^2 +y(i)^2 = r
 
 135.17 Above grid can be alternatively formulated as a Voronoi Diagram where Parallel PRG randomly sets multiple points on the plane and a tesselation of the plane covers these points. Instead of squares a Delaunay Triangulation is obtained from the dual of the Voronoi diagram.
 
+Reference:
+----------
+135.18. Circle Packing and Grid Filling - http://11011110.livejournal.com/332331.html - Filling a square with non-overlapping circles of maximum radii which is formulated as Dual of LP relaxation problem for matching where the constraints are that circles do not overlap i.e sum of radii <= distance between radii and objective function maximizes the radii variables.
+
 ------------------------------------------------------------------------------
 (FEATURE- DONE) 136. Commits as on 28,29 January 2015
 ------------------------------------------------------------------------------
@@ -4539,4 +4543,12 @@ for this have been committed to testlogs/ which show the inorder and postorder t
 -----------------------------------------------------------------------------------------------------------
 Changed Postfix Evaluation to Infix evaluation in Lambda Function Growth with logs in testlogs/
 
+------------------------------------------------------------------------------------------------------------------------------
+295. (THEORY) Contextual Multi-Armed Bandits, Reinforcement Learning and ThoughtNet - related to 241, 291, 292 - 18 July 2016
+------------------------------------------------------------------------------------------------------------------------------
+Contextual Multi-Armed Bandits are the class of problems where a choice has to be made amongst k arms and each iteration fetches a reward. Choice of an arm in next iteration depends on rewards for previous iteration. Ideal examples are Recommender Systems, Contextual website adverstisements etc., Thus an agent learns from past and policy action depends on rewards for previous actions. Translating this into ThoughtNet realm is fairly straightforward - Each class stack node in ThoughtNet is a multi-armed bandit and an evocative has to choose a hyperedge that 1) maximizes reward by fitting the context meaningfully and 2) learns from rewards for previous actions by virtue of ThoughtNet storage itself because ThoughtNet per partaker is built gradually by storing thought hyperedges colored with a sentiment mentioned in Ramsey coloring of ThoughtNet in 236 (or SentiWordNet score).
+
+Reference:
+---------
+295.1 Multiword Testing Decision Service - http://arxiv.org/pdf/1606.03966v1.pdf
 
