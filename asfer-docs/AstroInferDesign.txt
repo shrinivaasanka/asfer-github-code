@@ -1537,7 +1537,9 @@ References:
 -----------
 68.1 https://ccrma.stanford.edu/~jos/st/
 
-69. Music Pattern Mining - Experimental Idea of previous two points is to mine patterns in discrete data and voice(music for example) samples. Music as an expression of mathematics is widely studied as Musical Set Theory - Transpositions and Inversions (E.g http://en.wikipedia.org/wiki/Music_and_mathematics, http://www.ams.org/samplings/feature-column/fcarc-canons, http://www-personal.umd.umich.edu/~tmfiore/1/musictotal.pdf). Items 56,57 and 58 could help mining deep mathematical patterns in classical and other music and as a measure of similarity and creativity.
+69. (FEATURE - Audacity FFT - DONE) Music Pattern Mining - Experimental Idea of previous two points is to mine patterns in discrete data and voice(music for example) samples. Music as an expression of mathematics is widely studied as Musical Set Theory - Transpositions and Inversions (E.g http://en.wikipedia.org/wiki/Music_and_mathematics, http://www.ams.org/samplings/feature-column/fcarc-canons, http://www-personal.umd.umich.edu/~tmfiore/1/musictotal.pdf). Items 56,57 and 58 could help mining deep mathematical patterns in classical and other music and as a measure of similarity and creativity. In continuation of 68, following experiment was done on two eastern Indian Classical audio clips having similar raagas:
+	69.1 FFT of the two audio files were done by Audacity and frequency domain files were obtained with sampling size of 65536, Hanning Window, Log frequency
+	69.2 FFTs of these two have been committed in music_pattern_mining/. Similarity is observed by peak decibel frequency of ~ 500Hz in both FFTs - Similarity criterion here is the strongest frequency in the sample though there could be others like set of prominent frequencies, amplitudes etc.,. Frequencies with low peaks are neglected as noise.
 
 -------------------------------------------------
 70-79 (THEORY - ONGOING) EventNet and Theoretical analysis of Logical Time:
