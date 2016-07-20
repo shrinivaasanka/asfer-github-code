@@ -4554,3 +4554,30 @@ Reference:
 ---------
 295.1 Multiword Testing Decision Service - http://arxiv.org/pdf/1606.03966v1.pdf
 
+------------------------------------------------------------------------------------------------------------------------------------
+296. (FEATURE-DONE) Music Pattern Mining - Jensen-Shannon Divergence Distance between two FFT Frequency Distributions for similarity
+------------------------------------------------------------------------------------------------------------------------------------
+Commits - 20 July 2016 - related to 68, 69
+------------------------------------------------------------------------------------------------------------------------------------
+(NOTE: Because of some weird SourceForge/GitHub error, FFT txt files added to repos on 19 July 2016 are still flagged as new(?). They have been
+added to repos again along with new files)
+
+FFTs of 2 audio files are parsed and written to *_trimmed.txt by awk to contain only the frequencies for each sample.
+These files are read by JensenShannonDivergence.py to compute the JS Distance between these two FFT frequency distributions.
+Preprocessing is done so as to normalize the frequency to map to a probability (frequency/sum_of_frequencies) which gives
+probability distribution from frequency distribution. Jensen-Shannon Distance which is the weighted average of bidirectional
+Kullback-Leibler Divergence measures of the two distributions, indicates similarity or distance between two music samples
+quantitatively.
+
+There are 4 music samples: music_pattern_mining/FFT_classical_1_20July2016.txt and music_pattern_mining/FFT_classical_2_20July2016.txt
+are similar (similar notes sung by different musicians). music_pattern_mining/FFT_classical_1_19July2016.txt and
+music_pattern_mining/FFT_classical_2_19July2016.txt are also similar (different set of notes sung by different musicians). Jensen-Shannon
+distance across these 4 ordered pairs is captured and committed in testlogs/
+
+Jensen-Shannon Distance across 2 FFT Frquency-Probability distributions of music samples is a simple, basic measure for distance and can be
+basis for clustering and classification of music. There could be some inaccuracies because Audacity does not generate FFT for complete
+music file but only for first ~5 minutes. Two similar notes with different musicians could be distant and two dissimilar notes might be
+close because of this Audacity limitation. Presently noise filtering and cherrypick peak frequencies is not done and 
+entire frequency range is compared.
+
+
