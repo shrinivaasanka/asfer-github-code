@@ -1,0 +1,335 @@
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics# vi CyclomaticComplexitySparkMapReducer.py root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics# /home/shrinivaasanka/www.us.apache.org/dist/spark/spark-1.5.2/spark-1.5.2/bin/spark-submit  CyclomaticComplexitySparkMapReducer.py 
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/07/22 14:58:24 INFO SparkContext: Running Spark version 1.5.2
+16/07/22 14:58:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/07/22 14:58:25 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.1.100 instead (on interface wlan0)
+16/07/22 14:58:25 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+16/07/22 14:58:25 INFO SecurityManager: Changing view acls to: root
+16/07/22 14:58:25 INFO SecurityManager: Changing modify acls to: root
+16/07/22 14:58:25 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/07/22 14:58:27 INFO Slf4jLogger: Slf4jLogger started
+16/07/22 14:58:27 INFO Remoting: Starting remoting
+16/07/22 14:58:28 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@192.168.1.100:57802]
+16/07/22 14:58:28 INFO Utils: Successfully started service 'sparkDriver' on port 57802.
+16/07/22 14:58:28 INFO SparkEnv: Registering MapOutputTracker
+16/07/22 14:58:28 INFO SparkEnv: Registering BlockManagerMaster
+16/07/22 14:58:28 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-67db963a-fb39-470f-ace4-72c4e4b8d756
+16/07/22 14:58:28 INFO MemoryStore: MemoryStore started with capacity 794.9 MB
+16/07/22 14:58:28 INFO HttpFileServer: HTTP File server directory is /tmp/spark-a630962d-e232-4bcc-aadd-6483b2c4c16b/httpd-ff8b90ad-1d46-4a56-b3ae-659416c9b3e5
+16/07/22 14:58:28 INFO HttpServer: Starting HTTP Server
+16/07/22 14:58:28 INFO Utils: Successfully started service 'HTTP file server' on port 36290.
+16/07/22 14:58:28 INFO SparkEnv: Registering OutputCommitCoordinator
+16/07/22 14:58:29 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/07/22 14:58:29 INFO SparkUI: Started SparkUI at http://192.168.1.100:4040
+16/07/22 14:58:29 INFO Utils: Copying /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py to /tmp/spark-a630962d-e232-4bcc-aadd-6483b2c4c16b/userFiles-53d4c94a-7b4c-4e6e-a68c-d4487a530e08/CyclomaticComplexitySparkMapReducer.py
+16/07/22 14:58:29 INFO SparkContext: Added file file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py at file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py with timestamp 1469179709463
+16/07/22 14:58:29 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+16/07/22 14:58:29 INFO Executor: Starting executor ID driver on host localhost
+16/07/22 14:58:30 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45280.
+16/07/22 14:58:30 INFO NettyBlockTransferService: Server created on 45280
+16/07/22 14:58:30 INFO BlockManagerMaster: Trying to register BlockManager
+16/07/22 14:58:30 INFO BlockManagerMasterEndpoint: Registering block manager localhost:45280 with 794.9 MB RAM, BlockManagerId(driver, localhost, 45280)
+16/07/22 14:58:30 INFO BlockManagerMaster: Registered BlockManager
+16/07/22 14:58:30 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1469179709640
+16/07/22 14:58:31 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55
+16/07/22 14:58:31 INFO DAGScheduler: Registering RDD 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+16/07/22 14:58:31 INFO DAGScheduler: Got job 0 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55) with 3 output partitions
+16/07/22 14:58:31 INFO DAGScheduler: Final stage: ResultStage 1(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55)
+16/07/22 14:58:31 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+16/07/22 14:58:32 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+16/07/22 14:58:32 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54), which has no missing parents
+16/07/22 14:58:32 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+16/07/22 14:58:32 INFO MemoryStore: ensureFreeSpace(7664) called with curMem=0, maxMem=833527480
+16/07/22 14:58:32 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 7.5 KB, free 794.9 MB)
+16/07/22 14:58:33 INFO MemoryStore: ensureFreeSpace(4679) called with curMem=7664, maxMem=833527480
+16/07/22 14:58:33 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.6 KB, free 794.9 MB)
+16/07/22 14:58:33 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:45280 (size: 4.6 KB, free: 794.9 MB)
+16/07/22 14:58:33 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:33 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+16/07/22 14:58:33 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+16/07/22 14:58:33 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, PROCESS_LOCAL, 4407 bytes)
+16/07/22 14:58:33 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/07/22 14:58:33 INFO Executor: Fetching file:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py with timestamp 1469179709463
+16/07/22 14:58:33 INFO ExecutorAllocationManager: New executor driver has registered (new total is 1)
+16/07/22 14:58:33 INFO Utils: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py has been previously copied to /tmp/spark-a630962d-e232-4bcc-aadd-6483b2c4c16b/userFiles-53d4c94a-7b4c-4e6e-a68c-d4487a530e08/CyclomaticComplexitySparkMapReducer.py
+16/07/22 14:58:34 INFO PythonRunner: Times: total = 515, boot = 483, init = 25, finish = 7
+16/07/22 14:58:34 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1152 bytes result sent to driver
+16/07/22 14:58:34 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, PROCESS_LOCAL, 5024 bytes)
+16/07/22 14:58:34 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/07/22 14:58:34 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1143 ms on localhost (1/3)
+16/07/22 14:58:34 INFO PythonRunner: Times: total = 62, boot = -224, init = 285, finish = 1
+16/07/22 14:58:34 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1152 bytes result sent to driver
+16/07/22 14:58:34 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, PROCESS_LOCAL, 5558 bytes)
+16/07/22 14:58:34 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/07/22 14:58:34 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 268 ms on localhost (2/3)
+16/07/22 14:58:34 INFO PythonRunner: Times: total = 51, boot = -86, init = 136, finish = 1
+16/07/22 14:58:34 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1152 bytes result sent to driver
+16/07/22 14:58:34 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) finished in 1.497 s
+16/07/22 14:58:34 INFO DAGScheduler: looking for newly runnable stages
+16/07/22 14:58:34 INFO DAGScheduler: running: Set()
+16/07/22 14:58:34 INFO DAGScheduler: waiting: Set(ResultStage 1)
+16/07/22 14:58:34 INFO DAGScheduler: failed: Set()
+16/07/22 14:58:34 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 155 ms on localhost (3/3)
+16/07/22 14:58:34 INFO DAGScheduler: Missing parents for ResultStage 1: List()
+16/07/22 14:58:34 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/07/22 14:58:34 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55), which is now runnable
+16/07/22 14:58:34 INFO MemoryStore: ensureFreeSpace(5216) called with curMem=12343, maxMem=833527480
+16/07/22 14:58:34 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 5.1 KB, free 794.9 MB)
+16/07/22 14:58:34 INFO MemoryStore: ensureFreeSpace(3240) called with curMem=17559, maxMem=833527480
+16/07/22 14:58:34 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.2 KB, free 794.9 MB)
+16/07/22 14:58:34 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on localhost:45280 (size: 3.2 KB, free: 794.9 MB)
+16/07/22 14:58:34 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:34 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55)
+16/07/22 14:58:34 INFO TaskSchedulerImpl: Adding task set 1.0 with 3 tasks
+16/07/22 14:58:34 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 3, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:34 INFO Executor: Running task 0.0 in stage 1.0 (TID 3)
+16/07/22 14:58:34 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+16/07/22 14:58:34 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+16/07/22 14:58:34 INFO PythonRunner: Times: total = 40, boot = -204, init = 243, finish = 1
+16/07/22 14:58:34 INFO Executor: Finished task 0.0 in stage 1.0 (TID 3). 1922 bytes result sent to driver
+16/07/22 14:58:34 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 4, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:34 INFO Executor: Running task 1.0 in stage 1.0 (TID 4)
+16/07/22 14:58:34 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+16/07/22 14:58:34 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+16/07/22 14:58:34 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 3) in 155 ms on localhost (1/3)
+16/07/22 14:58:34 INFO PythonRunner: Times: total = 42, boot = -47, init = 89, finish = 0
+16/07/22 14:58:34 INFO Executor: Finished task 1.0 in stage 1.0 (TID 4). 1609 bytes result sent to driver
+16/07/22 14:58:34 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 5, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:34 INFO Executor: Running task 2.0 in stage 1.0 (TID 5)
+16/07/22 14:58:34 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 4) in 113 ms on localhost (2/3)
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 47, boot = -50, init = 96, finish = 1
+16/07/22 14:58:35 INFO Executor: Finished task 2.0 in stage 1.0 (TID 5). 2076 bytes result sent to driver
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 5) in 121 ms on localhost (3/3)
+16/07/22 14:58:35 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/07/22 14:58:35 INFO DAGScheduler: ResultStage 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55) finished in 0.358 s
+16/07/22 14:58:35 INFO DAGScheduler: Job 0 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55, took 3.222368 s
+16/07/22 14:58:35 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59
+16/07/22 14:58:35 INFO DAGScheduler: Registering RDD 7 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58)
+16/07/22 14:58:35 INFO DAGScheduler: Got job 1 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59) with 3 output partitions
+16/07/22 14:58:35 INFO DAGScheduler: Final stage: ResultStage 3(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59)
+16/07/22 14:58:35 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+16/07/22 14:58:35 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 2)
+16/07/22 14:58:35 INFO DAGScheduler: Submitting ShuffleMapStage 2 (PairwiseRDD[7] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58), which has no missing parents
+16/07/22 14:58:35 INFO MemoryStore: ensureFreeSpace(7656) called with curMem=20799, maxMem=833527480
+16/07/22 14:58:35 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 7.5 KB, free 794.9 MB)
+16/07/22 14:58:35 INFO MemoryStore: ensureFreeSpace(4678) called with curMem=28455, maxMem=833527480
+16/07/22 14:58:35 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.6 KB, free 794.9 MB)
+16/07/22 14:58:35 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on localhost:45280 (size: 4.6 KB, free: 794.9 MB)
+16/07/22 14:58:35 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:35 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 2 (PairwiseRDD[7] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58)
+16/07/22 14:58:35 INFO TaskSchedulerImpl: Adding task set 2.0 with 3 tasks
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 6, localhost, PROCESS_LOCAL, 4407 bytes)
+16/07/22 14:58:35 INFO Executor: Running task 0.0 in stage 2.0 (TID 6)
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 48, boot = -257, init = 304, finish = 1
+16/07/22 14:58:35 INFO Executor: Finished task 0.0 in stage 2.0 (TID 6). 1152 bytes result sent to driver
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 7, localhost, PROCESS_LOCAL, 5024 bytes)
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 6) in 119 ms on localhost (1/3)
+16/07/22 14:58:35 INFO Executor: Running task 1.0 in stage 2.0 (TID 7)
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 40, boot = -24, init = 63, finish = 1
+16/07/22 14:58:35 INFO Executor: Finished task 1.0 in stage 2.0 (TID 7). 1152 bytes result sent to driver
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 8, localhost, PROCESS_LOCAL, 5558 bytes)
+16/07/22 14:58:35 INFO Executor: Running task 2.0 in stage 2.0 (TID 8)
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 7) in 173 ms on localhost (2/3)
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 43, boot = -78, init = 120, finish = 1
+16/07/22 14:58:35 INFO Executor: Finished task 2.0 in stage 2.0 (TID 8). 1152 bytes result sent to driver
+16/07/22 14:58:35 INFO DAGScheduler: ShuffleMapStage 2 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58) finished in 0.397 s
+16/07/22 14:58:35 INFO DAGScheduler: looking for newly runnable stages
+16/07/22 14:58:35 INFO DAGScheduler: running: Set()
+16/07/22 14:58:35 INFO DAGScheduler: waiting: Set(ResultStage 3)
+16/07/22 14:58:35 INFO DAGScheduler: failed: Set()
+16/07/22 14:58:35 INFO DAGScheduler: Missing parents for ResultStage 3: List()
+16/07/22 14:58:35 INFO DAGScheduler: Submitting ResultStage 3 (PythonRDD[10] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59), which is now runnable
+16/07/22 14:58:35 INFO MemoryStore: ensureFreeSpace(5216) called with curMem=33133, maxMem=833527480
+16/07/22 14:58:35 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 5.1 KB, free 794.9 MB)
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 8) in 139 ms on localhost (3/3)
+16/07/22 14:58:35 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+16/07/22 14:58:35 INFO MemoryStore: ensureFreeSpace(3250) called with curMem=38349, maxMem=833527480
+16/07/22 14:58:35 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 3.2 KB, free 794.9 MB)
+16/07/22 14:58:35 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on localhost:45280 (size: 3.2 KB, free: 794.9 MB)
+16/07/22 14:58:35 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:35 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 3 (PythonRDD[10] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59)
+16/07/22 14:58:35 INFO TaskSchedulerImpl: Adding task set 3.0 with 3 tasks
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 9, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:35 INFO Executor: Running task 0.0 in stage 3.0 (TID 9)
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 8 ms
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 48, boot = -98, init = 146, finish = 0
+16/07/22 14:58:35 INFO Executor: Finished task 0.0 in stage 3.0 (TID 9). 1885 bytes result sent to driver
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 10, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 9) in 93 ms on localhost (1/3)
+16/07/22 14:58:35 INFO Executor: Running task 1.0 in stage 3.0 (TID 10)
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+16/07/22 14:58:35 INFO PythonRunner: Times: total = 40, boot = -37, init = 77, finish = 0
+16/07/22 14:58:35 INFO Executor: Finished task 1.0 in stage 3.0 (TID 10). 1559 bytes result sent to driver
+16/07/22 14:58:35 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 11, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:35 INFO Executor: Running task 2.0 in stage 3.0 (TID 11)
+16/07/22 14:58:35 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 10) in 126 ms on localhost (2/3)
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 50, boot = -4, init = 53, finish = 1
+16/07/22 14:58:36 INFO Executor: Finished task 2.0 in stage 3.0 (TID 11). 2037 bytes result sent to driver
+16/07/22 14:58:36 INFO DAGScheduler: ResultStage 3 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59) finished in 0.291 s
+16/07/22 14:58:36 INFO DAGScheduler: Job 1 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59, took 0.809389 s
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 11) in 107 ms on localhost (3/3)
+16/07/22 14:58:36 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+Edges + Vertices: [('"dg_cfg_node{p_io{\\"#287\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#11\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#392\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#75\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#318\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#230\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#17\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#138\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#0\\"}}"', 3), ('"dg_cfg_node{p_io{\\"#157\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#303\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#9\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#26\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#222\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#54\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#118\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#32\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#1\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#48\\"}}"', 2), ('node', 1), ('"dg_cfg_node{p_io{\\"#430\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#8\\"}}"', 3), ('"dg_cfg_node{p_so{\\"s#12\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#128\\"}}"', 3), ('"dg_cfg_node{p_io{\\"#2\\"}}"', 2), ('"dg_cfg_node{p_lnext{\\"s#4\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 2), ('"dg_cfg_node{p_io{\\"#20\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#4\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#270\\"}}"', 3), ('"dg_cfg_node{p_lnext{\\"s#12\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#5\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#352\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#64\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#13\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#372\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#324\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#101\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#346\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#1\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#42\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#340\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#249\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#424\\"}}"', 2), ('"dg_lab_node{p_bi{\\"#128\\"},nlooph{\\"s#4\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#169\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#238\\"}}"', 2), ('"dg_lab_node{p_so{\\"s#17\\"},nexit}"', 2), ('"dg_lab_node{p_bi{\\"#270\\"},nlooph{\\"s#12\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#187\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#113\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#170\\"}}"', 2)]
+Vertices: [('"dg_cfg_node{p_io{\\"#54\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#11\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#392\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#75\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#318\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#230\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#48\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#32\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#222\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#157\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#138\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#9\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#287\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#0\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#118\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#1\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#303\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#26\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#430\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#8\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#2\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#128\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#12\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 1), ('"dg_cfg_node{p_io{\\"#20\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#270\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#4\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#372\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#340\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#1\\"}}"', 1), ('"dg_lab_node{p_so{\\"s#17\\"},nexit}"', 1), ('"dg_cfg_node{p_so{\\"s#5\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#352\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#238\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#249\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#346\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#270\\"},nlooph{\\"s#12\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#424\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#324\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#64\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#187\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#101\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#128\\"},nlooph{\\"s#4\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#42\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#113\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#170\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#169\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#13\\"}}"', 1)]
+Cyclomatic Complexity: E-V+2 =  42
+16/07/22 14:58:36 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55
+16/07/22 14:58:36 INFO DAGScheduler: Registering RDD 13 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+16/07/22 14:58:36 INFO DAGScheduler: Got job 2 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55) with 3 output partitions
+16/07/22 14:58:36 INFO DAGScheduler: Final stage: ResultStage 5(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55)
+16/07/22 14:58:36 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 4)
+16/07/22 14:58:36 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 4)
+16/07/22 14:58:36 INFO DAGScheduler: Submitting ShuffleMapStage 4 (PairwiseRDD[13] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54), which has no missing parents
+16/07/22 14:58:36 INFO MemoryStore: ensureFreeSpace(7664) called with curMem=41599, maxMem=833527480
+16/07/22 14:58:36 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.5 KB, free 794.9 MB)
+16/07/22 14:58:36 INFO MemoryStore: ensureFreeSpace(4685) called with curMem=49263, maxMem=833527480
+16/07/22 14:58:36 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.6 KB, free 794.9 MB)
+16/07/22 14:58:36 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on localhost:45280 (size: 4.6 KB, free: 794.9 MB)
+16/07/22 14:58:36 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:36 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 4 (PairwiseRDD[13] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+16/07/22 14:58:36 INFO TaskSchedulerImpl: Adding task set 4.0 with 3 tasks
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 12, localhost, PROCESS_LOCAL, 2873 bytes)
+16/07/22 14:58:36 INFO Executor: Running task 0.0 in stage 4.0 (TID 12)
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 42, boot = -188, init = 229, finish = 1
+16/07/22 14:58:36 INFO Executor: Finished task 0.0 in stage 4.0 (TID 12). 1152 bytes result sent to driver
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 13, localhost, PROCESS_LOCAL, 2928 bytes)
+16/07/22 14:58:36 INFO Executor: Running task 1.0 in stage 4.0 (TID 13)
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 12) in 162 ms on localhost (1/3)
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 50, boot = -69, init = 118, finish = 1
+16/07/22 14:58:36 INFO Executor: Finished task 1.0 in stage 4.0 (TID 13). 1152 bytes result sent to driver
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 14, localhost, PROCESS_LOCAL, 3099 bytes)
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 13) in 136 ms on localhost (2/3)
+16/07/22 14:58:36 INFO Executor: Running task 2.0 in stage 4.0 (TID 14)
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 51, boot = -61, init = 111, finish = 1
+16/07/22 14:58:36 INFO Executor: Finished task 2.0 in stage 4.0 (TID 14). 1152 bytes result sent to driver
+16/07/22 14:58:36 INFO DAGScheduler: ShuffleMapStage 4 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) finished in 0.435 s
+16/07/22 14:58:36 INFO DAGScheduler: looking for newly runnable stages
+16/07/22 14:58:36 INFO DAGScheduler: running: Set()
+16/07/22 14:58:36 INFO DAGScheduler: waiting: Set(ResultStage 5)
+16/07/22 14:58:36 INFO DAGScheduler: failed: Set()
+16/07/22 14:58:36 INFO DAGScheduler: Missing parents for ResultStage 5: List()
+16/07/22 14:58:36 INFO DAGScheduler: Submitting ResultStage 5 (PythonRDD[16] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55), which is now runnable
+16/07/22 14:58:36 INFO MemoryStore: ensureFreeSpace(5216) called with curMem=53948, maxMem=833527480
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 14) in 169 ms on localhost (3/3)
+16/07/22 14:58:36 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+16/07/22 14:58:36 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 5.1 KB, free 794.9 MB)
+16/07/22 14:58:36 INFO MemoryStore: ensureFreeSpace(3250) called with curMem=59164, maxMem=833527480
+16/07/22 14:58:36 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 3.2 KB, free 794.9 MB)
+16/07/22 14:58:36 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on localhost:45280 (size: 3.2 KB, free: 794.9 MB)
+16/07/22 14:58:36 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:36 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 5 (PythonRDD[16] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55)
+16/07/22 14:58:36 INFO TaskSchedulerImpl: Adding task set 5.0 with 3 tasks
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 15, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:36 INFO Executor: Running task 0.0 in stage 5.0 (TID 15)
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 39, boot = -92, init = 131, finish = 0
+16/07/22 14:58:36 INFO Executor: Finished task 0.0 in stage 5.0 (TID 15). 1323 bytes result sent to driver
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 16, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:36 INFO Executor: Running task 1.0 in stage 5.0 (TID 16)
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Getting 3 non-empty blocks out of 3 blocks
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 15) in 85 ms on localhost (1/3)
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 55, boot = -4, init = 59, finish = 0
+16/07/22 14:58:36 INFO Executor: Finished task 1.0 in stage 5.0 (TID 16). 1467 bytes result sent to driver
+16/07/22 14:58:36 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 17, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:36 INFO Executor: Running task 2.0 in stage 5.0 (TID 17)
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:36 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 16) in 105 ms on localhost (2/3)
+16/07/22 14:58:36 INFO PythonRunner: Times: total = 41, boot = 2, init = 39, finish = 0
+16/07/22 14:58:36 INFO Executor: Finished task 2.0 in stage 5.0 (TID 17). 1289 bytes result sent to driver
+16/07/22 14:58:36 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 17) in 74 ms on localhost (3/3)
+16/07/22 14:58:36 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+16/07/22 14:58:36 INFO DAGScheduler: ResultStage 5 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55) finished in 0.247 s
+16/07/22 14:58:36 INFO DAGScheduler: Job 2 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:55, took 0.740254 s
+16/07/22 14:58:37 INFO SparkContext: Starting job: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59
+16/07/22 14:58:37 INFO DAGScheduler: Registering RDD 18 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58)
+16/07/22 14:58:37 INFO DAGScheduler: Got job 3 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59) with 3 output partitions
+16/07/22 14:58:37 INFO DAGScheduler: Final stage: ResultStage 7(collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59)
+16/07/22 14:58:37 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 6)
+16/07/22 14:58:37 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 6)
+16/07/22 14:58:37 INFO DAGScheduler: Submitting ShuffleMapStage 6 (PairwiseRDD[18] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58), which has no missing parents
+16/07/22 14:58:37 INFO MemoryStore: ensureFreeSpace(7656) called with curMem=62414, maxMem=833527480
+16/07/22 14:58:37 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 7.5 KB, free 794.8 MB)
+16/07/22 14:58:37 INFO MemoryStore: ensureFreeSpace(4688) called with curMem=70070, maxMem=833527480
+16/07/22 14:58:37 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 4.6 KB, free 794.8 MB)
+16/07/22 14:58:37 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on localhost:45280 (size: 4.6 KB, free: 794.9 MB)
+16/07/22 14:58:37 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:37 INFO DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 6 (PairwiseRDD[18] at reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58)
+16/07/22 14:58:37 INFO TaskSchedulerImpl: Adding task set 6.0 with 3 tasks
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 18, localhost, PROCESS_LOCAL, 2873 bytes)
+16/07/22 14:58:37 INFO Executor: Running task 0.0 in stage 6.0 (TID 18)
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 49, boot = -156, init = 205, finish = 0
+16/07/22 14:58:37 INFO Executor: Finished task 0.0 in stage 6.0 (TID 18). 1152 bytes result sent to driver
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 19, localhost, PROCESS_LOCAL, 2928 bytes)
+16/07/22 14:58:37 INFO Executor: Running task 1.0 in stage 6.0 (TID 19)
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 18) in 104 ms on localhost (1/3)
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 40, boot = -38, init = 77, finish = 1
+16/07/22 14:58:37 INFO Executor: Finished task 1.0 in stage 6.0 (TID 19). 1152 bytes result sent to driver
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 20, localhost, PROCESS_LOCAL, 3099 bytes)
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 19) in 140 ms on localhost (2/3)
+16/07/22 14:58:37 INFO Executor: Running task 2.0 in stage 6.0 (TID 20)
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 41, boot = -72, init = 113, finish = 0
+16/07/22 14:58:37 INFO Executor: Finished task 2.0 in stage 6.0 (TID 20). 1152 bytes result sent to driver
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 20) in 132 ms on localhost (3/3)
+16/07/22 14:58:37 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+16/07/22 14:58:37 INFO DAGScheduler: ShuffleMapStage 6 (reduceByKey at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:58) finished in 0.332 s
+16/07/22 14:58:37 INFO DAGScheduler: looking for newly runnable stages
+16/07/22 14:58:37 INFO DAGScheduler: running: Set()
+16/07/22 14:58:37 INFO DAGScheduler: waiting: Set(ResultStage 7)
+16/07/22 14:58:37 INFO DAGScheduler: failed: Set()
+16/07/22 14:58:37 INFO DAGScheduler: Missing parents for ResultStage 7: List()
+16/07/22 14:58:37 INFO DAGScheduler: Submitting ResultStage 7 (PythonRDD[21] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59), which is now runnable
+16/07/22 14:58:37 INFO MemoryStore: ensureFreeSpace(5216) called with curMem=74758, maxMem=833527480
+16/07/22 14:58:37 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 5.1 KB, free 794.8 MB)
+16/07/22 14:58:37 INFO MemoryStore: ensureFreeSpace(3246) called with curMem=79974, maxMem=833527480
+16/07/22 14:58:37 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 3.2 KB, free 794.8 MB)
+16/07/22 14:58:37 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on localhost:45280 (size: 3.2 KB, free: 794.9 MB)
+16/07/22 14:58:37 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:861
+16/07/22 14:58:37 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 7 (PythonRDD[21] at collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59)
+16/07/22 14:58:37 INFO TaskSchedulerImpl: Adding task set 7.0 with 3 tasks
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 21, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:37 INFO Executor: Running task 0.0 in stage 7.0 (TID 21)
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 41, boot = -86, init = 127, finish = 0
+16/07/22 14:58:37 INFO Executor: Finished task 0.0 in stage 7.0 (TID 21). 1323 bytes result sent to driver
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 22, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:37 INFO Executor: Running task 1.0 in stage 7.0 (TID 22)
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 21) in 89 ms on localhost (1/3)
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Getting 2 non-empty blocks out of 3 blocks
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 41, boot = 10, init = 31, finish = 0
+16/07/22 14:58:37 INFO Executor: Finished task 1.0 in stage 7.0 (TID 22). 1455 bytes result sent to driver
+16/07/22 14:58:37 INFO TaskSetManager: Starting task 2.0 in stage 7.0 (TID 23, localhost, PROCESS_LOCAL, 2116 bytes)
+16/07/22 14:58:37 INFO Executor: Running task 2.0 in stage 7.0 (TID 23)
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Getting 1 non-empty blocks out of 3 blocks
+16/07/22 14:58:37 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 22) in 76 ms on localhost (2/3)
+16/07/22 14:58:37 INFO PythonRunner: Times: total = 43, boot = 12, init = 31, finish = 0
+16/07/22 14:58:37 INFO Executor: Finished task 2.0 in stage 7.0 (TID 23). 1242 bytes result sent to driver
+16/07/22 14:58:37 INFO DAGScheduler: ResultStage 7 (collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59) finished in 0.232 s
+16/07/22 14:58:37 INFO DAGScheduler: Job 3 finished: collect at /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:59, took 0.682509 s
+16/07/22 14:58:37 INFO TaskSetManager: Finished task 2.0 in stage 7.0 (TID 23) in 80 ms on localhost (3/3)
+16/07/22 14:58:37 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+Edges + Vertices: [('"dg_memory_node{p_so{\\"s#0\\"}}"', 3), ('"dg_memory_node{p_bi{\\"#1\\"}}"', 3), ('"dg_memory_node{p_bi{\\"#3\\"}}"', 2), ('node', 1), ('"dg_memory_node{p_bi{\\"#26\\"}}"', 2), ('"dg_memory_node{p_so{\\"s#4\\"}}"', 3), ('"dg_memory_node{p_bi{\\"#46\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#59\\"}}"', 2), ('"dg_memory_node{p_so{\\"s#2\\"}}"', 2), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 2), ('"dg_memory_node{p_so{\\"s#7\\"}}"', 1), ('"dg_lab_node{p_so{\\"s#7\\"},nexit}"', 2)]
+Vertices: [('"dg_memory_node{p_so{\\"s#0\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#1\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#3\\"}}"', 1), ('"dg_memory_node{p_bi{\\"#26\\"}}"', 1), ('"dg_memory_node{p_so{\\"s#4\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#46\\"}}"', 1), ('"dg_memory_node{p_bi{\\"#59\\"}}"', 1), ('"dg_memory_node{p_so{\\"s#2\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 1), ('"dg_lab_node{p_so{\\"s#7\\"},nexit}"', 1)]
+Cyclomatic Complexity: E-V+2 =  6
+16/07/22 14:58:37 INFO SparkContext: Invoking stop() from shutdown hook
+16/07/22 14:58:37 INFO SparkUI: Stopped Spark web UI at http://192.168.1.100:4040
+16/07/22 14:58:37 INFO DAGScheduler: Stopping DAGScheduler
+16/07/22 14:58:38 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/07/22 14:58:38 INFO MemoryStore: MemoryStore cleared
+16/07/22 14:58:38 INFO BlockManager: BlockManager stopped
+16/07/22 14:58:38 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/07/22 14:58:38 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/07/22 14:58:38 INFO SparkContext: Successfully stopped SparkContext
+16/07/22 14:58:38 INFO ShutdownHookManager: Shutdown hook called
+16/07/22 14:58:38 INFO ShutdownHookManager: Deleting directory /tmp/spark-a630962d-e232-4bcc-aadd-6483b2c4c16b
+
