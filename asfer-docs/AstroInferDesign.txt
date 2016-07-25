@@ -943,6 +943,7 @@ Additional references:
 
 	34.36) PRAM Implementation Techniques - http://www.doc.ic.ac.uk/~nd/surprise_95/journal/vol4/fcw/report.html - "... However to say that an algorithm is in NC does not mean that it can be efficiently implemented on a massively parallel system..."
 
+	34.37) Logarithm Time Cost Parallel Sorting - [Lasse Natvig] - Survey on Batcher's Bitonic Sort, AKS Sorting Network, Richard Cole's Parallel Sort - www.idi.ntnu.no/~lasse/publics/SC90.ps - Bitonic Sort is faster in practice though Richard Cole Parallel Sorting is the fastest and most processor-efficient known.
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
