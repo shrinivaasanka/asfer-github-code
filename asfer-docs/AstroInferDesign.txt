@@ -4596,3 +4596,18 @@ There were some JVM crashes frequently while starting up spark-submit logs for w
 the two successful Spark computed Cyclomatic Complexity measures for two .dot files. These .dot files are sourced from
 VIRGO Linux saturn program analysis kernel driver.
 
+------------------------------------------------------------------------------------------------------------
+298. (FEATURE-DONE) String Search - Longest Common Substring - Suffix Trees(Suffix Arrays+LCP) Implementation
+------------------------------------------------------------------------------------------------------------
+Commits - 26 July 2016
+------------------------------------------------------------------------------------------------------------
+This implementation finds the most repeated substrings within a larger string by constructing Suffix Trees
+indirectly with Suffix Array and Longest Common Prefix (LCP) datastructures. An ideal application for String Search is
+in Bioinformatics, Streamed Data analysis etc., For example, a Time Series data with fluctuating curve can be 
+encoded as a huge binary string by mapping ebb and tide to 0 and 1. Thus a function graph time series is projected on to
+{0,1} alphabet to create blob. Usual Time Series analysis mines for Trends, Cycles, Seasons and Irregularities over time.
+This binary encoding of time series gives and alternative spectacle to look at the trends (highs and lows). Longest repeating
+pattern in this binary encoding is a cycle. Suffix Array by [UdiManber] has been implemented over Suffix Trees implementations
+of [Weiner] and [Ukkonen] because of simplicity of Suffix Arrays and Suffix Trees=Suffix Arrays + LCPs.
+
+
