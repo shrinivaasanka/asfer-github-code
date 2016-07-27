@@ -4610,4 +4610,14 @@ This binary encoding of time series gives an alternative spectacle to look at th
 pattern in this binary encoding is a cycle. Suffix Array by [UdiManber] has been implemented over Suffix Trees implementations
 of [Weiner] and [Ukkonen] because of simplicity of Suffix Arrays and Suffix Trees=Suffix Arrays + LCPs.
 
-
+------------------------------------------------------------------------------------------------------
+299. (FEATURE-DONE) Binary String Encoding of Time Series - Commits - 27 July 2016
+------------------------------------------------------------------------------------------------------
+1. New python script to encode a time series datastream as binary string has been added to repository.
+2. This writes to StringSearch_Pattern.txt which is read by StringSearch_LongestRepeatedSubstring.py
+3. Encoding scheme: If next data point is smaller, write 0 else if greater write 1. This captures the
+fluctuations in dataset irrespective of the amplitudes at each point.
+4. For example a bitonic sequence would have been encoded as ....111111110000000.... (ascends and descends)
+5. Suffix Array + LCP algorithm on this sequence finds the Longest Repeated Substring. For a specific example of
+Stock ticker time series data this amounts to frequently recurring fluctuation pattern.
+6. Logs for the above have been committed to testlogs/
