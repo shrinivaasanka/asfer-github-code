@@ -4621,3 +4621,13 @@ fluctuations in dataset irrespective of the amplitudes at each point.
 5. Suffix Array + LCP algorithm on this sequence finds the Longest Repeated Substring. For a specific example of
 Stock ticker time series data this amounts to frequently recurring fluctuation pattern.
 6. Logs for the above have been committed to testlogs/
+7. Every time series dataset is a union of bitonic sequences with varying lengths corresponding to peaks and troughs
+and has self-similar fractal structure (zooming out the series has similarities to original series) . This implies the 
+binary string encoded as previously is fractal too.
+
+------------------------------------------------------------------------------------------------------
+300. (FEATURE-DONE) Tornado GUI Authentication Template - Commits - 27 July 2016
+------------------------------------------------------------------------------------------------------
+Rewritten Tornado GUI with Login Template and redirect to Algorithms Execution Template. Presently implemented for only a 
+root user by cookie setting. Entry point has been changed to http://host:33333/neuronrain_auth (Login).
+
