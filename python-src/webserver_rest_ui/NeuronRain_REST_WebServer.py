@@ -37,19 +37,30 @@ import tornado.web
 import os
 import sys
 
-class NeuronRain_REST_Handler(tornado.web.RequestHandler):
-    def get(self):
-	sys.path.insert(0,"/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src")
-	template=open("templates/NeuronRain_Template_1.html","r")
-	for line in template:
- 		self.write(line)
+class NeuronRain_REST_BaseHandler(tornado.web.RequestHandler):
+    def get_current_user(self):
+	return self.get_secure_cookie("neuronrain_user")
 
+class NeuronRain_REST_MainHandler(NeuronRain_REST_BaseHandler):
+    @tornado.web.authenticated
+    def get(self):
+	self.render("templates/NeuronRain_Template_1.html")
+	
+class NeuronRain_REST_Algorithms_Handler(NeuronRain_REST_BaseHandler):
+    @tornado.web.authenticated
+    def get(self):
+	self.render("templates/NeuronRain_Template_1.html")
+
+    @tornado.web.authenticated
     def post(self):
 	sys.path.insert(0,"/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src")
-	self.set_header("Content-Type","text/plain")
+	self.set_header("Content-Type","text/html")
 	component=self.get_argument('component','#AsFer')
 	script=self.get_argument('script','#../WordNetSearchAndVisualizer.py')
 	arguments=self.get_argument('arguments','#../WordNetSearchAndVisualizer-Data-Source.txt')
+	print "component:",component
+	print "script:",script
+	print "arguments:",arguments
 	self.write(component)
 	self.write(" ")
 	self.write(script)
@@ -57,12 +68,27 @@ class NeuronRain_REST_Handler(tornado.web.RequestHandler):
 	self.write(arguments)
 	os.system("python " + script + " " + arguments)
 
+class NeuronRain_REST_Auth_Handler(NeuronRain_REST_BaseHandler):
+	def get(self):
+		self.render("templates/NeuronRain_Login_Template.html", errormessage="Invalid Login")
+	
+	def post(self):
+		username=self.get_argument('username','username')
+		password=self.get_argument('password','password')
+		if username=="root" and password=="root":
+			self.set_secure_cookie("neuronrain_user",tornado.escape.json_encode(username))
+			#self.redirect(self.get_argument('next'), r"/neuronrain", status=307)
+			self.redirect(r"/neuronrain")
+
 def make_app():
-    return tornado.web.Application([
-        (r"/neuronrain", NeuronRain_REST_Handler),
-    ])
+    return tornado.web.Application([(r"/",NeuronRain_REST_MainHandler),(r"/neuronrain", NeuronRain_REST_Algorithms_Handler),(r"/neuronrain_auth", NeuronRain_REST_Auth_Handler),], **settings)
+    #return tornado.web.Application([(r"/",NeuronRain_REST_MainHandler),(r"/neuronrain_auth", NeuronRain_REST_Auth_Handler),], **settings)
 
 if __name__ == "__main__":
+    settings = { 
+		"cookie_secret" : "ksjdksjwwiennknwiejiwjeionwnewijenkcnkn",
+		"login_url" : "/neuronrain_auth"
+	 }	
     app = make_app()
     app.listen(33333)
     tornado.ioloop.IOLoop.current().start()
