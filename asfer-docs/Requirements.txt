@@ -1,5 +1,5 @@
 NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright and licenses apply per respective codebases below:
-1. Boost C++ and Python libraries
+1. Boost C++ and Python libraries 
 2. g++
 3. Python NLTK
 4. NetworkX
@@ -25,7 +25,7 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 24. R
 25. Python Tornado
 26. Linux Kernel Mainline (4.1.5)
-27. MongoDB
+27. MongoDB and pymongo
 28. Cython
 29. SATURN Program Analyzer
 30. MemCached and Python-memcache (https://github.com/linsomniac/python-memcached/)
@@ -38,4 +38,7 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 37. Python zlib
 38. Neo4j Graph Database
 39. py2neo python client for Neo4j
+40. Python OAuth2
+41. Redis and Python Redis
+42. Passlib SHA256 encryption library
 
