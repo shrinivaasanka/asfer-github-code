@@ -4631,3 +4631,14 @@ binary string encoded as previously is fractal too.
 Rewritten Tornado GUI with Login Template and redirect to Algorithms Execution Template. Presently implemented for only a 
 root user by cookie setting. Entry point has been changed to http://host:33333/neuronrain_auth (Login).
 
+------------------------------------------------------------------------------------------------------------------
+301. (FEATURE-DONE) OAuth2 authentication and credentials storage in MongoDB/Redis with passlib sha256 encryption
+------------------------------------------------------------------------------------------------------------------
+1.Login Handler has been augmented with OAuth2 authentication by python-oauth2 library.
+2.MongoDB is used as OAuth2 credentials storage backend and Redis for token storage backend
+3.Passlib is used to encrypt the password with SHA256 hash digest and stored once in MongoDB (code is commented)
+4.Login page password is verified with passlib generated hash in MongoDB queried for a username argument
+5.With this minimal standard authentication has been implemented for NeuronRain cloud deployment.
+6.Prerequisite is to populate MongoDB neuronrain_oauth database and neuronrain_users collections with
+passlib encypted JSON by uncommenting the collections.insert_one() code.
+
