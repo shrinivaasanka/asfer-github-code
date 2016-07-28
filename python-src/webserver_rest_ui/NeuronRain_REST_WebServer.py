@@ -31,11 +31,21 @@
 #Otherwise REST clients such as Advanced RESTful Client browser app can be used.
 #With this NeuronRain is Software-As-A-Service (SaaS) Platform deployable on VIRGO linux kernel cloud, cloud OSes and containers like Docker. 
 #More so, it is Platform-As-A-Service (PaaS) when run on a VIRGO cloud.
+#Login page has entrypoint /neuronrain_auth and authentication is done by OAuth2 for non-root and plain cookie setting for root user. 
 
 import tornado.ioloop
 import tornado.web
 import os
 import sys
+from pymongo.collection import Collection
+from pymongo import MongoClient
+import sys
+import oauth2.tokengenerator
+import oauth2.grant
+import oauth2.store.mongodb
+import oauth2.store.redisdb
+import redis
+from passlib.hash import sha256_crypt
 
 class NeuronRain_REST_BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
@@ -47,9 +57,12 @@ class NeuronRain_REST_MainHandler(NeuronRain_REST_BaseHandler):
 	self.render("templates/NeuronRain_Template_1.html")
 	
 class NeuronRain_REST_Algorithms_Handler(NeuronRain_REST_BaseHandler):
-    @tornado.web.authenticated
     def get(self):
-	self.render("templates/NeuronRain_Template_1.html")
+	if self.current_user is not None:
+		print "self.current_user:",self.current_user
+		self.render("templates/NeuronRain_Template_1.html")
+	else:
+		self.redirect("/neuronrain_auth")
 
     @tornado.web.authenticated
     def post(self):
@@ -73,12 +86,58 @@ class NeuronRain_REST_Auth_Handler(NeuronRain_REST_BaseHandler):
 		self.render("templates/NeuronRain_Login_Template.html", errormessage="Invalid Login")
 	
 	def post(self):
+                self.database_name = 'neuronrain_oauth'
+                self.collection_name = 'neuronrain_users'
+                self.client=MongoClient('localhost',27017)
+
+		print "NeuronRain_REST_Auth_Handler.post()"
 		username=self.get_argument('username','username')
 		password=self.get_argument('password','password')
+		encrypted_password=sha256_crypt.encrypt(password)
+
+		self.set_secure_cookie("neuronrain_user",tornado.escape.json_encode(username))
 		if username=="root" and password=="root":
-			self.set_secure_cookie("neuronrain_user",tornado.escape.json_encode(username))
-			#self.redirect(self.get_argument('next'), r"/neuronrain", status=307)
+			#self.redirect(self.get_argument('next'), r"/neuronrain")
 			self.redirect(r"/neuronrain")
+		else:
+		 	try:
+				self.database = self.client[self.database_name]
+                		self.collection = self.database[self.collection_name]
+
+				#Can be uncommented if there is a necessity to populate MongoDB:
+				#---------------------------------------------------------------
+                		#credentials1={
+				#	  'identifier': 'neuronrain_user',
+                       		#	   'secret': encrypted_password,
+                       		#	   'redirect_uris': [],
+                       		#	   'authorized_grants': [oauth2.grant.ClientCredentialsGrant.grant_type]
+				#}
+                		#document_id=self.collection.insert_one(credentials1).inserted_id
+					
+                		credentials=self.collection.find_one({"identifier":username})
+				if sha256_crypt.verify(password, credentials["secret"]):
+    					client_store = oauth2.store.mongodb.ClientStore(credentials)
+    					token_store = oauth2.store.redisdb.TokenStore(rs=redis.Redis())
+    					token_generator = oauth2.tokengenerator.Uuid4()
+    					token_generator.expires_in[oauth2.grant.ClientCredentialsGrant.grant_type] = 3600
+	
+ 					auth_controller = oauth2.Provider(
+       						access_token_store=token_store,
+       						auth_code_store=token_store,
+       						client_store=client_store,
+       						#site_adapter=None,
+       						token_generator=token_generator
+  					)
+   					auth_controller.token_path = '/neuronrain'
+					print "NeuronRain_REST_Auth_Handler.post(): before redirect"
+					self.redirect(r"/neuronrain")
+					print "NeuronRain_REST_Auth_Handler.post(): after redirect"
+				else:
+					raise Exception("Invalid Credentials")
+			except:
+				self.write("Exception Caught:")
+				self.write(str(sys.exc_info()))
+				
 
 def make_app():
     return tornado.web.Application([(r"/",NeuronRain_REST_MainHandler),(r"/neuronrain", NeuronRain_REST_Algorithms_Handler),(r"/neuronrain_auth", NeuronRain_REST_Auth_Handler),], **settings)
