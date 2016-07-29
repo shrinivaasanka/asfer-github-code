@@ -4644,3 +4644,8 @@ root user by cookie setting. Entry point has been changed to http://host:33333/n
 6.Prerequisite is to populate MongoDB neuronrain_oauth database and neuronrain_users collections with
 passlib encypted JSON by uncommenting the collections.insert_one() code.
 
+-----------------------------------------------------------------------------------------------------------------
+302. Commits - 29 July 2016 - boost::python extensions for VIRGO Linux Kernel system calls
+-----------------------------------------------------------------------------------------------------------------
+virgo_clone() system call has been included in switch-case and invokes an exported kernel module function in kernelspace.
+
