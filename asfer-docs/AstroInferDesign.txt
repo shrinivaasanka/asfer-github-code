@@ -4657,12 +4657,13 @@ Bitonic Sort Merge Tree for Discrete Hyperbolic Factorization described in http:
 303.1 Bitonic Sort requires O((logN)^2) time with O(N*(logN)^2) processors.
 303.2 Discretized Hyperbolic arc of length N can be split into N/logN segments of length logN each.
 303.3 Above N/logN segments can be grouped in leaf level of merge tree into N/2logN pairs of (logN,logN) = 2logN length segments to be sorted together.
-303.4 Each such pair can be sorted in log(2logN) = O(loglogN) time in parallel with N/(2logN) * N(logN)^2 = N^2/2logN comparator processors in leaf level which is the maximum number of processors required.
-303.5 Height of the merge tree is O(log(N/logN)).
-303.6 Total sort time of merge tree is:
-	O(log(N/logN)*loglogN)
+303.4 Each such pair can be sorted in log(2logN) time in parallel with N/(2logN) * N(logN)^2 = N^2/2logN comparator processors in leaf level which is the maximum number of processors required. Next level requires log(4logN), log(8logN) and so on till root.
+303.5 Height of the merge tree is O(log(N/logN)). Total sort time is sum over sorts at each level of merge tree = log(2logN) + log(4logN) + ... + log((2^log(N/logN))*logN)
+303.6 Total sort time of merge tree is upperbounded as (not tight one) height * maximum_sort_time_per_level:
+	<= O(log(NlogN) * log(N/logN*logN)) = O(log(N/logN) * log(N))
       with maximum of N^2/2logN processor comparators at leaf which tapers down up the tree.
 303.7 Binary Search on final sorted merged tile requires additional O(logN) which effectively reduces to:
-	O(log(N/logN)*loglogN + logN) = O(log(N/logN)*loglogN) <= O((logN)^2) time
+	O(log(N/logN)*logN + logN) = O(log(N/logN)*logN) <= O((logN)^2) time
       with N^2/2logN processor comparators for finding a factor.
 303.8 This is comparably better bound than the Parallel RAM ANSV algorithm based merge sort alternatives and easy to implement on a cloud as done in 34.20 and also is in NC because of polylog time and polynomial comparator processors required.
+303.9 Again the input size is N and not logN, but yet definition of NC is abided by. It remains an open question whether Bitonic Sort Comparators are equivalent conceptually to PRAMs (Are cloud nodes same as PRAMs assuming the nodes have access to a shared memory?).
