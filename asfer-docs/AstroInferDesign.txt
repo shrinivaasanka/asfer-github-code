@@ -4667,3 +4667,11 @@ Bitonic Sort Merge Tree for Discrete Hyperbolic Factorization described in http:
       with N^2/2logN processor comparators for finding a factor.
 303.8 This is comparably better bound than the Parallel RAM ANSV algorithm based merge sort alternatives and easy to implement on a cloud as done in 34.20 and also is in NC because of polylog time and polynomial comparator processors required.
 303.9 Again the input size is N and not logN, but yet definition of NC is abided by. It remains an open question whether Bitonic Sort Comparators are equivalent conceptually to PRAMs (Are cloud nodes same as PRAMs assuming the nodes have access to a shared memory?).
+
+--------------------------------------------------------------------------------------------------------------------------
+304. Commits - 31 July 2016 - boost::python C++ and cpython virgo_clone() system call invocations
+--------------------------------------------------------------------------------------------------------------------------
+1. Boost C++ Python extensions - virgo_clone() system call has been included in switch-case for cpython invocation of VIRGO linux kernel with test logs for it with use_as_kingcobra_service=1 (Routing: C++Boost::Python ---> virgo_clone() ----> virgo_queue driver ----> KingCobra message queue pub/sub service).
+2. CPython extensions - test log for boost::python virgo_clone() invocation with use_as_kingcobra_service=0 which directly invokes a kernelspace function without forwarding to virgo_queue/kingcobra.
+ 
+
