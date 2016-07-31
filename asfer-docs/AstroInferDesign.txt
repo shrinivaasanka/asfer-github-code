@@ -4660,7 +4660,7 @@ Bitonic Sort Merge Tree for Discrete Hyperbolic Factorization described in http:
 303.4 Each such pair can be sorted in log(2logN) time in parallel with N/(2logN) * N(logN)^2 = N^2/2logN comparator processors in leaf level which is the maximum number of processors required. Next level requires log(4logN), log(8logN) and so on till root.
 303.5 Height of the merge tree is O(log(N/logN)). Total sort time is sum over sorts at each level of merge tree = log(2logN) + log(4logN) + ... + log((2^log(N/logN))*logN)
 303.6 Total sort time of merge tree is upperbounded as (not tight one) height * maximum_sort_time_per_level:
-	<= O(log(NlogN) * log(N/logN*logN)) = O(log(N/logN) * log(N))
+	<= O(log(N/logN) * log(N/logN*logN)) = O(log(N/logN) * log(N))
       with maximum of N^2/2logN processor comparators at leaf which tapers down up the tree.
 303.7 Binary Search on final sorted merged tile requires additional O(logN) which effectively reduces to:
 	O(log(N/logN)*logN + logN) = O(log(N/logN)*logN) <= O((logN)^2) time
@@ -4671,7 +4671,7 @@ Bitonic Sort Merge Tree for Discrete Hyperbolic Factorization described in http:
 --------------------------------------------------------------------------------------------------------------------------
 304. Commits - 31 July 2016 - boost::python C++ and cpython virgo_clone() system call invocations
 --------------------------------------------------------------------------------------------------------------------------
-1. Boost C++ Python extensions - virgo_clone() system call has been included in switch-case for cpython invocation of VIRGO linux kernel with test logs for it with use_as_kingcobra_service=1 (Routing: C++Boost::Python ---> virgo_clone() ----> virgo_queue driver ----> KingCobra message queue pub/sub service).
-2. CPython extensions - test log for boost::python virgo_clone() invocation with use_as_kingcobra_service=0 which directly invokes a kernelspace function without forwarding to virgo_queue/kingcobra.
+1. Boost C++ Python extensions - virgo_clone() system call has been included in switch-case for cpython invocation of VIRGO linux kernel with test logs for it with use_as_kingcobra_service=1 (Routing: C++Boost::Python ---> virgo_clone() ----> virgo_queue driver ----> KingCobra message queue pub/sub service). Test logs for it have been committed in testlogs/
+2. CPython extensions - test log for boost::python virgo_clone() invocation with use_as_kingcobra_service=0 which directly invokes a kernelspace function without forwarding to virgo_queue/kingcobra, has been committed to testlogs/.
  
 
