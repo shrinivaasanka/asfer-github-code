@@ -12,6 +12,7 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #-----------------------------------------------------------------------------------------------------
+#Copyleft(Copyright+):
 #Srinivasan Kannan
 #(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
 #Ph: 9791499106, 9003082186
@@ -44,7 +45,7 @@ struct hostport
         int port;
 };
 
-int memory_versus_filesystem=1;
+int memory_versus_filesystem=-1;
 
 /*
 invokes NEURONRAIN VIRGO system calls by number - defined in $VIRGO_SRC/linux-kernel-extensions/arch/x86/syscalls/syscalls_32.tbl
@@ -54,6 +55,11 @@ static PyObject* asfer_virgo_set_kernel_analytics(PyObject* self, PyObject* args
 {
 	switch(memory_versus_filesystem)
 	{
+		case -1:
+                {
+                        syscall(359,"virgo_cloud_test_kernelspace ");
+                        break;
+                }
 		case 0:
 		{
 			/* VIRGO malloc system calls to set the key-value pairs */
