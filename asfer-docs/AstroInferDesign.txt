@@ -4673,5 +4673,25 @@ Bitonic Sort Merge Tree for Discrete Hyperbolic Factorization described in http:
 --------------------------------------------------------------------------------------------------------------------------
 1. Boost C++ Python extensions - virgo_clone() system call has been included in switch-case for cpython invocation of VIRGO linux kernel with test logs for it with use_as_kingcobra_service=1 (Routing: C++Boost::Python ---> virgo_clone() ----> virgo_queue driver ----> KingCobra message queue pub/sub service). Test logs for it have been committed in testlogs/
 2. CPython extensions - test log for boost::python virgo_clone() invocation with use_as_kingcobra_service=0 which directly invokes a kernelspace function without forwarding to virgo_queue/kingcobra, has been committed to testlogs/.
+
+-----------------------------------------------------------------------------------------------------------------------------
+305. NEURONRAIN VIRGO Commits for ASFER Boost::Python C++ virgo memory system calls invocations
+-----------------------------------------------------------------------------------------------------------------------------
+(BUG - STABILITY ISSUES) Commits - 1 August 2016 - VIRGO Linux Stability Issues - Ongoing Random oops and panics investigation
+-----------------------------------------------------------------------------------------------------------------------------
+1. GFP_KERNEL has been replaced with GFP_ATOMIC flags in kmem allocations.
+2. NULL checks have been introduced in lot of places involving strcpy, strcat, strcmp etc., to circumvent
+buffer overflows.
+3. Though this has stabilized the driver to some extent, still there are OOPS in unrelated places deep
+with in kernel where paging datastructures are accessed - kmalloc somehow corrupts paging
+4. OOPS are debugged via gdb as:
+        4.1 gdb ./vmlinux /proc/kcore
+        or
+        4.2 gdb <loadable_kernel_module>.o
+   followed by
+        4.3 l *(address+offset in OOPS dump)
+5. kern.log(s) for the above have been committed in tar.gz format and have numerous OOPS occurred during repetitive telnet and syscall
+invocation(boost::python C++) invocations of virgo memory system calls.
+6. Paging related OOPS look like an offshoot of set_fs() encompassing the filp_open VFS calls.
  
 
