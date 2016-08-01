@@ -4693,5 +4693,6 @@ with in kernel where paging datastructures are accessed - kmalloc somehow corrup
 5. kern.log(s) for the above have been committed in tar.gz format and have numerous OOPS occurred during repetitive telnet and syscall
 invocation(boost::python C++) invocations of virgo memory system calls.
 6. Paging related OOPS look like an offshoot of set_fs() encompassing the filp_open VFS calls.
- 
+7. In C++ Boost::Python extensions, flag changed for VIRGO memory system calls invocation from python.
 
+ 
