@@ -52,7 +52,7 @@ struct hostport
 
 using namespace std;
 
-int memory_versus_filesystem=-1;
+int memory_versus_filesystem=0;
 
 void asfer_virgo_set_kernel_analytics(char* key, char* value)
 {
