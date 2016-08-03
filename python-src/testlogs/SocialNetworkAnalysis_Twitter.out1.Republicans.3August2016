@@ -1,0 +1,1726 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 9, "followers_count": 15, "friends_count": 109, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Wed Jul 27 06:28:50 +0000 2016", "favorited": false, "id": 758187373473570816, "lang": "en", "retweeted": false, "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>", "text": "4,000 Years After It Was 'Lost' Saraswati Could Be Brought Back To Life As Early As This Month! https://t.co/bdwPAq56uV via @indiatimes", "truncated": false, "urls": {"https://t.co/bdwPAq56uV": "http://www.indiatimes.com/news/india/4-000-years-after-it-was-lost-river-saraswati-could-be-brought-back-to-life-as-early-as-this-month-258766.html"}, "user_mentions": [{"id": 191768572, "name": "Indiatimes", "screen_name": "indiatimes"}]}, "statuses_count": 27, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  RT @syedmahmood: @realDonaldTrump: #DonaldTrump is a nasty piece of work. No wonder Republicans DISLIKE him more than ever.
+2
+defaultdict(<type 'list'>, {u'even': [u'nasty', u'awful'], u'Republican': [u'Republican'], u'group': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'person': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'separate': [u'piece'], u'malicious': [u'nasty', u'awful'], u'offensive': [u'nasty', u'awful'], u'negative': [u'no'], u'feelings': [u'wonder', u'marvel'], u'member': [u'Republican'], u'persons': [u'nasty', u'awful'], u'part': [u'piece'], u'something': [u'wonder', u'marvel'], u'Party': [u'Republican'], u'approval': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'withhold': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'whole': [u'piece'], u'inclination': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'causes': [u'wonder', u'marvel'], u'wonder': [u'wonder', u'marvel']})
+ksynset= Synset('evening.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('offprint.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('negative.n.01')
+lsynset= Synset('no.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('part.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.02')
+Core number (sorted) : [(u'disfavor', 8), (u'group', 8), (u'disapproval', 8), (u'dislike', 8), (u'disfavour', 8), (u'inclination', 8), (u'approval', 8), (u'withhold', 8), (u'person', 8), (u'wonder', 5), (u'marvel', 5), (u'feelings', 4), (u'something', 4), (u'causes', 4), (u'even', 4), (u'malicious', 4), (u'offensive', 4), (u'persons', 4), (u'awful', 4), (u'nasty', 4), (u'piece', 3), (u'Party', 2), (u'no', 2), (u'negative', 2), (u'member', 2), (u'Republican', 2), (u'separate', 2), (u'part', 2), (u'whole', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: disfavor ,core number= 8
+This document belongs to class: group ,core number= 8
+This document belongs to class: disapproval ,core number= 8
+This document belongs to class: dislike ,core number= 8
+	max_core_number 8
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'piece', 0.06617178857379286), (u'Republican', 0.05032727359724126), (u'awful', 0.05032727359724126), (u'nasty', 0.05032727359724126), (u'wonder', 0.047907344037943826), (u'marvel', 0.047907344037943826), (u'disfavor', 0.03844388736482757), (u'disapproval', 0.03844388736482757), (u'dislike', 0.03844388736482757), (u'disfavour', 0.03844388736482757), (u'no', 0.034482758620689655), (u'negative', 0.034482758620689655), (u'inclination', 0.03131385562537934), (u'approval', 0.03131385562537934), (u'withhold', 0.03131385562537934), (u'person', 0.03131385562537934), (u'group', 0.03131385562537933), (u'Party', 0.026560501132413854), (u'even', 0.026560501132413854), (u'malicious', 0.026560501132413854), (u'offensive', 0.026560501132413854), (u'member', 0.026560501132413854), (u'persons', 0.026560501132413854), (u'feelings', 0.025533035009186883), (u'something', 0.025533035009186883), (u'causes', 0.025533035009186883), (u'separate', 0.023919748636321916), (u'part', 0.023919748636321916), (u'whole', 0.023919748636321916)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.0
+Negativity =  1.25
+Objectivity =  6.75
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  disfavor :  0.0
+posscore of  disfavor :  0.125
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  disapproval :  0.375
+posscore of  disapproval :  0.125
+negscore of  dislike :  0.0
+posscore of  dislike :  0.0
+negscore of  disfavour :  0.0
+posscore of  disfavour :  0.125
+negscore of  inclination :  0.0
+posscore of  inclination :  0.375
+negscore of  approval :  0.0
+posscore of  approval :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  wonder :  0.0
+posscore of  wonder :  0.75
+negscore of  marvel :  0.0
+posscore of  marvel :  0.625
+negscore of  feelings :  0.125
+posscore of  feelings :  0.5
+negscore of  causes :  0.0
+posscore of  causes :  0.0
+negscore of  even :  0.0
+posscore of  even :  0.0
+negscore of  offensive :  0.0
+posscore of  offensive :  0.0
+negscore of  persons :  0.0
+posscore of  persons :  0.0
+negscore of  piece :  0.0
+posscore of  piece :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  no :  0.25
+posscore of  no :  0.0
+negscore of  negative :  0.25
+posscore of  negative :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  Republican :  0.0
+posscore of  Republican :  0.0
+negscore of  separate :  0.0
+posscore of  separate :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  whole :  0.0
+posscore of  whole :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 25.125000, 26.125000
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 6.078125, 8.140625
+K-Core DFS belief_propagated_posscore: 6.078125
+K-Core DFS belief_propagated_negscore: 8.140625
+Core Number belief_propagated_posscore: 25.125
+Core Number belief_propagated_negscore: 26.125
+tweet:  To the Go-Along Republicans.. https://t.co/arnps9twbO
+2
+defaultdict(<type 'list'>, {u'even': [u'nasty', u'awful'], u'Republican': [u'Republican'], u'group': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'person': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'separate': [u'piece'], u'malicious': [u'nasty', u'awful'], u'offensive': [u'nasty', u'awful'], u'negative': [u'no'], u'feelings': [u'wonder', u'marvel'], u'member': [u'Republican'], u'persons': [u'nasty', u'awful'], u'part': [u'piece'], u'something': [u'wonder', u'marvel'], u'Party': [u'Republican'], u'approval': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'withhold': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'whole': [u'piece'], u'inclination': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'causes': [u'wonder', u'marvel'], u'wonder': [u'wonder', u'marvel']})
+ksynset= Synset('evening.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('offprint.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('negative.n.01')
+lsynset= Synset('no.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('part.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.02')
+Core number (sorted) : [(u'disfavor', 8), (u'group', 8), (u'disapproval', 8), (u'dislike', 8), (u'disfavour', 8), (u'inclination', 8), (u'approval', 8), (u'withhold', 8), (u'person', 8), (u'wonder', 5), (u'marvel', 5), (u'feelings', 4), (u'something', 4), (u'causes', 4), (u'even', 4), (u'malicious', 4), (u'offensive', 4), (u'persons', 4), (u'awful', 4), (u'nasty', 4), (u'piece', 3), (u'Party', 2), (u'no', 2), (u'negative', 2), (u'member', 2), (u'Republican', 2), (u'separate', 2), (u'part', 2), (u'whole', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: disfavor ,core number= 8
+This document belongs to class: group ,core number= 8
+This document belongs to class: disapproval ,core number= 8
+This document belongs to class: dislike ,core number= 8
+	max_core_number 8
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'piece', 0.06617178857379286), (u'Republican', 0.05032727359724126), (u'awful', 0.05032727359724126), (u'nasty', 0.05032727359724126), (u'wonder', 0.047907344037943826), (u'marvel', 0.047907344037943826), (u'disfavor', 0.03844388736482757), (u'disapproval', 0.03844388736482757), (u'dislike', 0.03844388736482757), (u'disfavour', 0.03844388736482757), (u'no', 0.034482758620689655), (u'negative', 0.034482758620689655), (u'inclination', 0.03131385562537934), (u'approval', 0.03131385562537934), (u'withhold', 0.03131385562537934), (u'person', 0.03131385562537934), (u'group', 0.03131385562537933), (u'Party', 0.026560501132413854), (u'even', 0.026560501132413854), (u'malicious', 0.026560501132413854), (u'offensive', 0.026560501132413854), (u'member', 0.026560501132413854), (u'persons', 0.026560501132413854), (u'feelings', 0.025533035009186883), (u'something', 0.025533035009186883), (u'causes', 0.025533035009186883), (u'separate', 0.023919748636321916), (u'part', 0.023919748636321916), (u'whole', 0.023919748636321916)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.0
+Negativity =  0.0
+Objectivity =  0.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  disfavor :  0.0
+posscore of  disfavor :  0.125
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  disapproval :  0.375
+posscore of  disapproval :  0.125
+negscore of  dislike :  0.0
+posscore of  dislike :  0.0
+negscore of  disfavour :  0.0
+posscore of  disfavour :  0.125
+negscore of  inclination :  0.0
+posscore of  inclination :  0.375
+negscore of  approval :  0.0
+posscore of  approval :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  wonder :  0.0
+posscore of  wonder :  0.75
+negscore of  marvel :  0.0
+posscore of  marvel :  0.625
+negscore of  feelings :  0.125
+posscore of  feelings :  0.5
+negscore of  causes :  0.0
+posscore of  causes :  0.0
+negscore of  even :  0.0
+posscore of  even :  0.0
+negscore of  offensive :  0.0
+posscore of  offensive :  0.0
+negscore of  persons :  0.0
+posscore of  persons :  0.0
+negscore of  piece :  0.0
+posscore of  piece :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  no :  0.25
+posscore of  no :  0.0
+negscore of  negative :  0.25
+posscore of  negative :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  Republican :  0.0
+posscore of  Republican :  0.0
+negscore of  separate :  0.0
+posscore of  separate :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  whole :  0.0
+posscore of  whole :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 25.125000, 26.125000
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 6.078125, 8.140625
+K-Core DFS belief_propagated_posscore: 6.078125
+K-Core DFS belief_propagated_negscore: 8.140625
+Core Number belief_propagated_posscore: 25.125
+Core Number belief_propagated_negscore: 26.125
+tweet:  2
+defaultdict(<type 'list'>, {u'bearing': [u'black', u'blackness', u'inkiness'], u'United': [u'Lewis', u'Jerry_Lee_Lewis'], u'often': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'judgments': [u'think', u'cogitate', u'cerebrate'], u'color': [u'black', u'blackness', u'inkiness'], u'`whole': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'particular': [u'year'], u'mind': [u'think', u'cogitate', u'cerebrate'], u'period': [u'year'], u'`wholly': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'feelings': [u'wonder', u'marvel'], u'born': [u'Lewis', u'Jerry_Lee_Lewis'], u'single': [u'one'], u'used': [u'year', u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'something': [u'wonder', u'marvel'], u'year': [u'year'], u'Party': [u'Republican', u'Republican', u'Democrat'], u'calendar': [u'year'], u'activity': [u'year'], u'quality': [u'black', u'blackness', u'inkiness'], u'causes': [u'wonder', u'marvel'], u'wonder': [u'wonder', u'marvel'], u'even': [u'nasty', u'awful'], u'occupying': [u'year'], u'use': [u'think', u'cogitate', u'cerebrate'], u'Democratic': [u'Democrat'], u'group': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'knowledge': [u'learn', u'larn', u'acquire'], u"'": [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'thing': [u'one'], u'decisions': [u'think', u'cogitate', u'cerebrate'], u'make': [u'think', u'cogitate', u'cerebrate'], u'malicious': [u'nasty', u'awful'], u'offensive': [u'nasty', u'awful'], u'negative': [u'no'], u'least': [u'black', u'blackness', u'inkiness'], u'member': [u'Republican', u'Republican', u'Democrat'], u'state': [u'black', u'blackness', u'inkiness'], u'special': [u'thing'], u'white': [u'black', u'blackness', u'inkiness'], u'Republican': [u'Republican', u'Republican'], u'exercise': [u'think', u'cogitate', u'cerebrate'], u'inclination': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'extent': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'pianist': [u'Lewis', u'Jerry_Lee_Lewis'], u'full': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'star': [u'Lewis', u'Jerry_Lee_Lewis'], u'complete': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'degree': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'separate': [u'piece'], u'inferences': [u'think', u'cogitate', u'cerebrate'], u'time': [u'year'], u'persons': [u'nasty', u'awful'], u'reason': [u'think', u'cogitate', u'cerebrate'], u'part': [u'piece', u'year'], u'power': [u'think', u'cogitate', u'cerebrate'], u'gain': [u'learn', u'larn', u'acquire'], u'1935': [u'Lewis', u'Jerry_Lee_Lewis'], u'informally': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'approval': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'one': [u'think', u'cogitate', u'cerebrate'], u'lightness': [u'black', u'blackness', u'inkiness'], u'resemblance': [u'black', u'blackness', u'inkiness'], u'entire': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'singer': [u'Lewis', u'Jerry_Lee_Lewis'], u'achromatic': [u'black', u'blackness', u'inkiness'], u'skills': [u'learn', u'larn', u'acquire'], u'solution': [u'think', u'cogitate', u'cerebrate'], u'withhold': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'States': [u'Lewis', u'Jerry_Lee_Lewis'], u'person': [u'disfavor', u'disfavour', u'dislike', u'disapproval', u'one'], u'regular': [u'year'], u'rock': [u'Lewis', u'Jerry_Lee_Lewis'], u'situation': [u'thing'], u'arrive': [u'think', u'cogitate', u'cerebrate'], u'whole': [u'piece'], u'order': [u'think', u'cogitate', u'cerebrate']})
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('time_period.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('born.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('single.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('calendar.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('busy.v.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('get.v.01')
+ksynset= Synset('thing.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('think.n.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('think.v.03')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('negative.n.01')
+lsynset= Synset('no.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('thing.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('pianist.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('pianist.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('star.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('star.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('offprint.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('time.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('part.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('get.v.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('singer.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('singer.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('get.v.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('regular.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('rock.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('rock.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('situation.n.01')
+lsynset= Synset('thing.n.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('think.v.03')
+Core number (sorted) : [(u'all', 14), (u'altogether', 14), (u'entire', 14), (u'entirely', 14), (u'often', 14), (u"'", 14), (u'wholly', 14), (u'full', 14), (u'degree', 14), (u'completely', 14), (u'whole', 14), (u'extent', 14), (u'complete', 14), (u'informally', 14), (u'`whole', 14), (u'`wholly', 14), (u'used', 14), (u'totally', 14), (u'cerebrate', 13), (u'think', 13), (u'cogitate', 13), (u'year', 10), (u'black', 9), (u'blackness', 9), (u'one', 9), (u'inkiness', 9), (u'group', 8), (u'dislike', 8), (u'inclination', 8), (u'approval', 8), (u'disapproval', 8), (u'disfavor', 8), (u'Jerry_Lee_Lewis', 8), (u'disfavour', 8), (u'Lewis', 8), (u'withhold', 8), (u'person', 8), (u'judgments', 6), (u'decisions', 6), (u'knowledge', 6), (u'achromatic', 6), (u'skills', 6), (u'solution', 6), (u'power', 6), (u'state', 6), (u'inferences', 6), (u'larn', 6), (u'exercise', 6), (u'reason', 6), (u'lightness', 6), (u'arrive', 6), (u'color', 6), (u'least', 6), (u'quality', 6), (u'use', 6), (u'white', 6), (u'acquire', 6), (u'gain', 6), (u'learn', 6), (u'bearing', 6), (u'resemblance', 6), (u'mind', 6), (u'make', 6), (u'order', 6), (u'wonder', 5), (u'marvel', 5), (u'United', 4), (u'causes', 4), (u'awful', 4), (u'nasty', 4), (u'feelings', 4), (u'rock', 4), (u'born', 4), (u'even', 4), (u'Republican', 4), (u'Democrat', 4), (u'1935', 4), (u'thing', 4), (u'part', 4), (u'piece', 4), (u'something', 4), (u'Party', 4), (u'malicious', 4), (u'offensive', 4), (u'member', 4), (u'pianist', 4), (u'star', 4), (u'persons', 4), (u'singer', 4), (u'States', 4), (u'particular', 2), (u'calendar', 2), (u'special', 2), (u'activity', 2), (u'period', 2), (u'negative', 2), (u'occupying', 2), (u'Democratic', 2), (u'situation', 2), (u'single', 2), (u'no', 2), (u'separate', 2), (u'regular', 2), (u'time', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: all ,core number= 14
+This document belongs to class: altogether ,core number= 14
+This document belongs to class: entire ,core number= 14
+This document belongs to class: entirely ,core number= 14
+This document belongs to class: often ,core number= 14
+This document belongs to class: ' ,core number= 14
+This document belongs to class: wholly ,core number= 14
+This document belongs to class: full ,core number= 14
+This document belongs to class: degree ,core number= 14
+This document belongs to class: completely ,core number= 14
+This document belongs to class: whole ,core number= 14
+This document belongs to class: extent ,core number= 14
+	max_core_number 14
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'year', 0.032589396959499806), (u'think', 0.02518380520805945), (u'cogitate', 0.02518380520805945), (u'cerebrate', 0.025183805208059448), (u'Jerry_Lee_Lewis', 0.022871430213144296), (u'Lewis', 0.022871430213144296), (u'inkiness', 0.018452748347224403), (u'black', 0.0184527483472244), (u'blackness', 0.0184527483472244), (u'whole', 0.015826158732907953), (u'one', 0.014409233126819136), (u'Democrat', 0.01414047778551411), (u'awful', 0.014034066481304511), (u'nasty', 0.014034066481304511), (u'wonder', 0.013358778626116648), (u'marvel', 0.013358778626116648), (u'all', 0.013293189579615994), (u'altogether', 0.013293189579615994), (u'entirely', 0.013293189579615994), (u'wholly', 0.013293189579615993), (u'completely', 0.013293189579615993), (u'totally', 0.013293189579615993), (u'used', 0.011803690479205615), (u'thing', 0.011451765486555679), (u'person', 0.010720218132823303), (u'dislike', 0.010640971505567682), (u'disapproval', 0.010640971505567682), (u'disfavor', 0.010640971505567682), (u'disfavour', 0.010640971505567682), (u'negative', 0.009615384615384616), (u'no', 0.009615384615384616), (u'knowledge', 0.009615384615384614), (u'skills', 0.009615384615384614), (u'larn', 0.009615384615384614), (u'acquire', 0.009615384615384614), (u'gain', 0.009615384615384614), (u'learn', 0.009615384615384614), (u'Republican', 0.00950897331117501), (u'Party', 0.009489496243902783), (u'member', 0.009489496243902783), (u'piece', 0.008939781646749773), (u'entire', 0.008725878589548297), (u'often', 0.008725878589548297), (u"'", 0.008725878589548297), (u'full', 0.008725878589548297), (u'degree', 0.008725878589548297), (u'extent', 0.008725878589548297), (u'complete', 0.008725878589548297), (u'informally', 0.008725878589548297), (u'`whole', 0.008725878589548297), (u'`wholly', 0.008725878589548297), (u'group', 0.008678685959478955), (u'inclination', 0.008678685959478955), (u'approval', 0.008678685959478955), (u'withhold', 0.008678685959478955), (u'even', 0.007406043682424669), (u'malicious', 0.007406043682424669), (u'offensive', 0.007406043682424669), (u'persons', 0.007406043682424669), (u'causes', 0.007119788608229928), (u'feelings', 0.007119788608229928), (u'something', 0.007119788608229928), (u'part', 0.007053088735256971), (u'achromatic', 0.006669596704771355), (u'state', 0.006669596704771355), (u'lightness', 0.006669596704771355), (u'color', 0.006669596704771355), (u'least', 0.006669596704771355), (u'quality', 0.006669596704771355), (u'white', 0.006669596704771355), (u'bearing', 0.006669596704771355), (u'resemblance', 0.006669596704771355), (u'judgments', 0.006381462935712052), (u'decisions', 0.006381462935712052), (u'solution', 0.006381462935712052), (u'power', 0.006381462935712052), (u'inferences', 0.006381462935712052), (u'exercise', 0.006381462935712052), (u'reason', 0.006381462935712052), (u'arrive', 0.006381462935712052), (u'use', 0.0063814629357120504), (u'mind', 0.0063814629357120504), (u'make', 0.0063814629357120504), (u'order', 0.0063814629357120504), (u'United', 0.006301373215944697), (u'rock', 0.006301373215944697), (u'born', 0.006301373215944697), (u'1935', 0.006301373215944697), (u'pianist', 0.006301373215944697), (u'star', 0.006301373215944697), (u'singer', 0.006301373215944697), (u'States', 0.006301373215944697), (u'Democratic', 0.00544847949242838), (u'special', 0.004686748260697116), (u'situation', 0.004686748260697116), (u'particular', 0.00452011958196501), (u'calendar', 0.00452011958196501), (u'activity', 0.00452011958196501), (u'period', 0.00452011958196501), (u'occupying', 0.00452011958196501), (u'regular', 0.00452011958196501), (u'time', 0.00452011958196501), (u'separate', 0.003975276845599653), (u'single', 0.0034838398656520404)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.75
+Negativity =  0.5
+Objectivity =  11.75
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  altogether :  0.25
+posscore of  altogether :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  full :  0.0
+posscore of  full :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  whole :  0.0
+posscore of  whole :  0.0
+negscore of  complete :  0.0
+posscore of  complete :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  think :  0.0
+posscore of  think :  0.0
+negscore of  year :  0.0
+posscore of  year :  0.0
+negscore of  black :  0.375
+posscore of  black :  0.0
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  dislike :  0.0
+posscore of  dislike :  0.0
+negscore of  inclination :  0.0
+posscore of  inclination :  0.375
+negscore of  approval :  0.0
+posscore of  approval :  0.0
+negscore of  disapproval :  0.375
+posscore of  disapproval :  0.125
+negscore of  disfavor :  0.0
+posscore of  disfavor :  0.125
+negscore of  disfavour :  0.0
+posscore of  disfavour :  0.125
+negscore of  Lewis :  0.0
+posscore of  Lewis :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  judgments :  0.0
+posscore of  judgments :  0.0
+negscore of  decisions :  0.0
+posscore of  decisions :  0.0
+negscore of  solution :  0.0
+posscore of  solution :  0.0
+negscore of  power :  0.0
+posscore of  power :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  exercise :  0.0
+posscore of  exercise :  0.0
+negscore of  reason :  0.0
+posscore of  reason :  0.0
+negscore of  lightness :  0.5
+posscore of  lightness :  0.375
+negscore of  color :  0.0
+posscore of  color :  0.0
+negscore of  least :  0.0
+posscore of  least :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  use :  0.0
+posscore of  use :  0.0
+negscore of  white :  0.0
+posscore of  white :  0.0
+negscore of  acquire :  0.0
+posscore of  acquire :  0.125
+negscore of  gain :  0.0
+posscore of  gain :  0.0
+negscore of  learn :  0.0
+posscore of  learn :  0.0
+negscore of  bearing :  0.0
+posscore of  bearing :  0.0
+negscore of  mind :  0.0
+posscore of  mind :  0.125
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  order :  0.0
+posscore of  order :  0.0
+negscore of  wonder :  0.0
+posscore of  wonder :  0.75
+negscore of  marvel :  0.0
+posscore of  marvel :  0.625
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  causes :  0.0
+posscore of  causes :  0.0
+negscore of  feelings :  0.125
+posscore of  feelings :  0.5
+negscore of  rock :  0.0
+posscore of  rock :  0.0
+negscore of  born :  0.0
+posscore of  born :  0.0
+negscore of  even :  0.0
+posscore of  even :  0.0
+negscore of  Republican :  0.0
+posscore of  Republican :  0.0
+negscore of  thing :  0.0
+posscore of  thing :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  piece :  0.0
+posscore of  piece :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  offensive :  0.0
+posscore of  offensive :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  star :  0.0
+posscore of  star :  0.0
+negscore of  persons :  0.0
+posscore of  persons :  0.0
+negscore of  singer :  0.0
+posscore of  singer :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  calendar :  0.0
+posscore of  calendar :  0.0
+negscore of  special :  0.0
+posscore of  special :  0.0
+negscore of  activity :  0.0
+posscore of  activity :  0.125
+negscore of  period :  0.125
+posscore of  period :  0.125
+negscore of  negative :  0.25
+posscore of  negative :  0.0
+negscore of  occupying :  0.0
+posscore of  occupying :  0.375
+negscore of  situation :  0.0
+posscore of  situation :  0.0
+negscore of  single :  0.0
+posscore of  single :  0.0
+negscore of  no :  0.25
+posscore of  no :  0.0
+negscore of  separate :  0.0
+posscore of  separate :  0.0
+negscore of  regular :  0.0
+posscore of  regular :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 92.625000, 93.875000
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 55.093750, 54.312500
+K-Core DFS belief_propagated_posscore: 55.09375
+K-Core DFS belief_propagated_negscore: 54.3125
+Core Number belief_propagated_posscore: 92.625
+Core Number belief_propagated_negscore: 93.875
+tweet:  RT @LToddWood: It won't end well for Republicans that side with #Obama
+
+https://t.co/jLjKlU2IDq
+2
+defaultdict(<type 'list'>, {u'United': [u'Lewis', u'Jerry_Lee_Lewis'], u'judgments': [u'think', u'cogitate', u'cerebrate'], u'informally': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'decisions': [u'think', u'cogitate', u'cerebrate'], u'causes': [u'wonder', u'marvel'], u'group': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'knowledge': [u'learn', u'larn', u'acquire'], u'achromatic': [u'black', u'blackness', u'inkiness'], u'one': [u'think', u'cogitate', u'cerebrate', u'end', u'English', u'side'], u'entire': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'skills': [u'learn', u'larn', u'acquire'], u'solution': [u'think', u'cogitate', u'cerebrate'], u'deals': [u'information_technology', u'IT'], u'activity': [u'year'], u'side': [u'English', u'side'], u'retrieve': [u'information_technology', u'IT'], u'often': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'born': [u'Lewis', u'Jerry_Lee_Lewis'], u'ball': [u'English', u'side'], u'year': [u'year'], u'calendar': [u'year'], u'special': [u'thing'], u'wonder': [u'wonder', u'marvel'], u'even': [u'nasty', u'awful'], u'plays': [u'end'], u'power': [u'think', u'cogitate', u'cerebrate'], u"'": [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'state': [u'black', u'blackness', u'inkiness'], u'inferences': [u'think', u'cogitate', u'cerebrate'], u'Republican': [u'Republican', u'Republican', u'Republican'], u'exercise': [u'think', u'cogitate', u'cerebrate'], u'inclination': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'full': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'degree': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'rock': [u'Lewis', u'Jerry_Lee_Lewis'], u'given': [u'English', u'side'], u'reason': [u'think', u'cogitate', u'cerebrate'], u'extent': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'approval': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'lightness': [u'black', u'blackness', u'inkiness'], u'computers': [u'information_technology', u'IT'], u'thing': [u'one'], u'whole': [u'piece'], u'1935': [u'Lewis', u'Jerry_Lee_Lewis'], u'striking': [u'English', u'side'], u'color': [u'black', u'blackness', u'inkiness'], u'period': [u'year'], u'feelings': [u'wonder', u'marvel'], u'quality': [u'black', u'blackness', u'inkiness'], u'telecommunications': [u'information_technology', u'IT'], u'use': [u'think', u'cogitate', u'cerebrate', u'information_technology', u'IT'], u'negative': [u'no'], u'least': [u'black', u'blackness', u'inkiness'], u'sports': [u'English', u'side'], u'occupying': [u'year'], u'white': [u'black', u'blackness', u'inkiness'], u'store': [u'information_technology', u'IT'], u'complete': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'releasing': [u'English', u'side'], u'part': [u'piece', u'year'], u'gain': [u'learn', u'larn', u'acquire'], u'particular': [u'year'], u'line': [u'end'], u'Democratic': [u'Democrat'], u'spin': [u'English', u'side'], u'`whole': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'scrimmage': [u'end'], u'engineering': [u'information_technology', u'IT'], u'situation': [u'thing'], u'arrive': [u'think', u'cogitate', u'cerebrate'], u'bearing': [u'black', u'blackness', u'inkiness'], u'resemblance': [u'black', u'blackness', u'inkiness'], u'mind': [u'think', u'cogitate', u'cerebrate'], u'`wholly': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'twist': [u'English', u'side'], u'single': [u'one'], u'something': [u'wonder', u'marvel'], u'sharp': [u'English', u'side'], u'Party': [u'Republican', u'Republican', u'Democrat', u'Republican'], u'information': [u'information_technology', u'IT'], u'end': [u'end'], u'make': [u'think', u'cogitate', u'cerebrate'], u'malicious': [u'nasty', u'awful'], u'offensive': [u'nasty', u'awful'], u'member': [u'Republican', u'Republican', u'Democrat', u'Republican'], u'branch': [u'information_technology', u'IT'], u'transmit': [u'information_technology', u'IT'], u'pianist': [u'Lewis', u'Jerry_Lee_Lewis'], u'used': [u'year', u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'star': [u'Lewis', u'Jerry_Lee_Lewis'], u'separate': [u'piece'], u'football': [u'end'], u'persons': [u'nasty', u'awful'], u'regular': [u'year'], u'singer': [u'Lewis', u'Jerry_Lee_Lewis'], u'withhold': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'States': [u'Lewis', u'Jerry_Lee_Lewis'], u'person': [u'disfavor', u'disfavour', u'dislike', u'disapproval', u'one', u'end'], u'time': [u'year'], u'order': [u'think', u'cogitate', u'cerebrate']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('cognition.n.01')
+lsynset= Synset('get.v.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('achromatic.a.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('one.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('stallion.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('skill.n.01')
+lsynset= Synset('get.v.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('solution.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('deal.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('deal.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('side.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('side.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('recover.v.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('recover.v.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('ball.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('ball.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('calendar.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('special.n.01')
+lsynset= Synset('thing.n.01')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('wonder.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('evening.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('play.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('power.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('inference.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('republican.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('exercise.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('inclination.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('full_moon.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('rock.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('rock.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('given.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('given.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('reason.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('blessing.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('elation.n.02')
+lsynset= Synset('black.n.01')
+ksynset= Synset('computer.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('computer.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('thing.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('whole.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('contact.n.04')
+lsynset= Synset('english.n.01')
+ksynset= Synset('contact.n.04')
+lsynset= Synset('side.n.01')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('color.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('time_period.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('feelings.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('telecommunication.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('telecommunication.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('use.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('use.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('negative.n.01')
+lsynset= Synset('no.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('least.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('sport.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('sport.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('busy.v.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('white.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('shop.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('shop.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('complete.v.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('let_go_of.v.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('let_go_of.v.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('learn.v.01')
+ksynset= Synset('addition.n.03')
+lsynset= Synset('get.v.01')
+ksynset= Synset('particular.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('line.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('spin.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('spin.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('scrimmage.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('technology.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('technology.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('situation.n.01')
+lsynset= Synset('thing.n.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('arrive.v.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('bearing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('resemblance.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('mind.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('turn.n.04')
+lsynset= Synset('english.n.01')
+ksynset= Synset('turn.n.04')
+lsynset= Synset('side.n.01')
+ksynset= Synset('single.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('sharp.n.01')
+lsynset= Synset('english.n.01')
+ksynset= Synset('sharp.n.01')
+lsynset= Synset('side.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('information.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('end.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('think.n.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('brand.n.02')
+lsynset= Synset('think.v.03')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('malicious.a.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('offense.n.05')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('republican.n.01')
+ksynset= Synset('branch.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('branch.n.01')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('convey.v.03')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('convey.v.03')
+lsynset= Synset('information_technology.n.01')
+ksynset= Synset('pianist.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('pianist.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('star.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('star.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('offprint.n.01')
+lsynset= Synset('piece.n.01')
+ksynset= Synset('football.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('nasty.a.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('atrocious.s.02')
+ksynset= Synset('regular.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('singer.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('singer.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('withhold.v.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('state.n.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disfavor.n.02')
+ksynset= Synset('person.n.01')
+lsynset= Synset('disapproval.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('one.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('end.n.01')
+ksynset= Synset('time.n.01')
+lsynset= Synset('year.n.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('order.n.01')
+lsynset= Synset('think.v.03')
+Core number (sorted) : [(u'all', 14), (u'informally', 14), (u'altogether', 14), (u'entire', 14), (u'entirely', 14), (u'often', 14), (u"'", 14), (u'wholly', 14), (u'full', 14), (u'degree', 14), (u'extent', 14), (u'completely', 14), (u'whole', 14), (u'complete', 14), (u'`whole', 14), (u'`wholly', 14), (u'used', 14), (u'totally', 14), (u'cerebrate', 13), (u'think', 13), (u'cogitate', 13), (u'one', 12), (u'side', 12), (u'English', 12), (u'information_technology', 10), (u'year', 10), (u'use', 10), (u'IT', 10), (u'black', 9), (u'blackness', 9), (u'inkiness', 9), (u'group', 8), (u'dislike', 8), (u'inclination', 8), (u'approval', 8), (u'disapproval', 8), (u'disfavor', 8), (u'Jerry_Lee_Lewis', 8), (u'end', 8), (u'disfavour', 8), (u'Lewis', 8), (u'withhold', 8), (u'person', 8), (u'judgments', 6), (u'decisions', 6), (u'knowledge', 6), (u'achromatic', 6), (u'skills', 6), (u'solution', 6), (u'power', 6), (u'state', 6), (u'inferences', 6), (u'larn', 6), (u'exercise', 6), (u'reason', 6), (u'lightness', 6), (u'color', 6), (u'quality', 6), (u'least', 6), (u'white', 6), (u'acquire', 6), (u'gain', 6), (u'learn', 6), (u'arrive', 6), (u'bearing', 6), (u'resemblance', 6), (u'mind', 6), (u'make', 6), (u'order', 6), (u'wonder', 5), (u'marvel', 5), (u'United', 4), (u'causes', 4), (u'awful', 4), (u'nasty', 4), (u'deals', 4), (u'rock', 4), (u'retrieve', 4), (u'born', 4), (u'ball', 4), (u'even', 4), (u'releasing', 4), (u'Republican', 4), (u'Democrat', 4), (u'piece', 4), (u'computers', 4), (u'thing', 4), (u'1935', 4), (u'striking', 4), (u'feelings', 4), (u'telecommunications', 4), (u'given', 4), (u'sports', 4), (u'store', 4), (u'part', 4), (u'spin', 4), (u'engineering', 4), (u'twist', 4), (u'something', 4), (u'sharp', 4), (u'Party', 4), (u'information', 4), (u'malicious', 4), (u'offensive', 4), (u'member', 4), (u'branch', 4), (u'transmit', 4), (u'pianist', 4), (u'star', 4), (u'persons', 4), (u'singer', 4), (u'States', 4), (u'calendar', 2), (u'special', 2), (u'plays', 2), (u'activity', 2), (u'period', 2), (u'negative', 2), (u'occupying', 2), (u'particular', 2), (u'line', 2), (u'Democratic', 2), (u'scrimmage', 2), (u'situation', 2), (u'single', 2), (u'no', 2), (u'separate', 2), (u'football', 2), (u'regular', 2), (u'time', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: all ,core number= 14
+This document belongs to class: informally ,core number= 14
+This document belongs to class: altogether ,core number= 14
+This document belongs to class: entire ,core number= 14
+This document belongs to class: entirely ,core number= 14
+This document belongs to class: often ,core number= 14
+This document belongs to class: ' ,core number= 14
+This document belongs to class: wholly ,core number= 14
+This document belongs to class: full ,core number= 14
+This document belongs to class: degree ,core number= 14
+This document belongs to class: extent ,core number= 14
+This document belongs to class: completely ,core number= 14
+This document belongs to class: whole ,core number= 14
+This document belongs to class: complete ,core number= 14
+	max_core_number 14
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'year', 0.026071668751397263), (u'cerebrate', 0.02014323104522284), (u'think', 0.02014323104522284), (u'cogitate', 0.02014323104522284), (u'IT', 0.02005844724681351), (u'information_technology', 0.020058447246813507), (u'side', 0.019904000714350844), (u'English', 0.019904000714350844), (u'Jerry_Lee_Lewis', 0.018297883866563815), (u'Lewis', 0.018297883866563815), (u'one', 0.01726483914306039), (u'end', 0.01594517295224668), (u'inkiness', 0.01476269180847844), (u'black', 0.014762691808478438), (u'blackness', 0.014762691808478438), (u'whole', 0.012661107268281789), (u'Democrat', 0.011312530167620967), (u'awful', 0.011227499750393066), (u'nasty', 0.011227499750393066), (u'person', 0.010992352250266128), (u'wonder', 0.010687022901083138), (u'marvel', 0.010687022901083138), (u'totally', 0.01063472730402987), (u'all', 0.010634727304029869), (u'altogether', 0.010634727304029869), (u'entirely', 0.010634727304029869), (u'wholly', 0.010634727304029869), (u'completely', 0.010634727304029869), (u'used', 0.009442824011628945), (u'thing', 0.009156536714184479), (u'dislike', 0.008748476381647247), (u'disapproval', 0.008748476381647247), (u'disfavor', 0.008748476381647247), (u'disfavour', 0.008748476381647247), (u'use', 0.00851343576719266), (u'knowledge', 0.007692307692307693), (u'skills', 0.007692307692307693), (u'larn', 0.007692307692307693), (u'negative', 0.007692307692307693), (u'acquire', 0.007692307692307693), (u'gain', 0.007692307692307693), (u'learn', 0.007692307692307693), (u'no', 0.007692307692307693), (u'Republican', 0.007607277275079795), (u'Party', 0.007591498368982447), (u'member', 0.007591498368982447), (u'piece', 0.007151814462559499), (u'group', 0.007102816074769435), (u'inclination', 0.007102816074769435), (u'approval', 0.007102816074769435), (u'withhold', 0.007102816074769435), (u'informally', 0.006980588676362811), (u'entire', 0.006980588676362811), (u'often', 0.006980588676362811), (u"'", 0.006980588676362811), (u'full', 0.006980588676362811), (u'degree', 0.006980588676362811), (u'extent', 0.006980588676362811), (u'complete', 0.006980588676362811), (u'`whole', 0.006980588676362811), (u'`wholly', 0.006980588676362811), (u'even', 0.005924711663265006), (u'malicious', 0.005924711663265006), (u'offensive', 0.005924711663265006), (u'persons', 0.005924711663265006), (u'causes', 0.0056958308864573995), (u'feelings', 0.0056958308864573995), (u'something', 0.0056958308864573995), (u'part', 0.005642461453364207), (u'achromatic', 0.005335512986917443), (u'state', 0.005335512986917443), (u'lightness', 0.005335512986917443), (u'color', 0.005335512986917443), (u'quality', 0.005335512986917443), (u'least', 0.005335512986917443), (u'white', 0.005335512986917443), (u'bearing', 0.005335512986917443), (u'resemblance', 0.005335512986917443), (u'judgments', 0.005104253641016989), (u'decisions', 0.005104253641016989), (u'solution', 0.005104253641016989), (u'power', 0.005104253641016989), (u'inferences', 0.005104253641016989), (u'exercise', 0.005104253641016989), (u'reason', 0.005104253641016989), (u'arrive', 0.005104253641016989), (u'mind', 0.005104253641016989), (u'make', 0.005104253641016989), (u'order', 0.005104253641016989), (u'United', 0.005040913648743663), (u'rock', 0.005040913648743663), (u'born', 0.005040913648743663), (u'1935', 0.005040913648743663), (u'pianist', 0.005040913648743663), (u'star', 0.005040913648743663), (u'singer', 0.005040913648743663), (u'States', 0.005040913648743663), (u'deals', 0.004563028280021825), (u'retrieve', 0.004563028280021825), (u'computers', 0.004563028280021825), (u'telecommunications', 0.004563028280021825), (u'store', 0.004563028280021825), (u'engineering', 0.004563028280021825), (u'information', 0.004563028280021825), (u'branch', 0.004563028280021825), (u'transmit', 0.004563028280021825), (u'ball', 0.004537427788880335), (u'releasing', 0.004537427788880335), (u'striking', 0.004537427788880335), (u'given', 0.004537427788880335), (u'sports', 0.004537427788880335), (u'spin', 0.004537427788880335), (u'twist', 0.004537427788880335), (u'sharp', 0.004537427788880335), (u'Democratic', 0.004358734280872814), (u'special', 0.0037480519913983953), (u'situation', 0.0037480519913983953), (u'calendar', 0.003616081489112288), (u'activity', 0.003616081489112288), (u'period', 0.003616081489112288), (u'occupying', 0.003616081489112288), (u'particular', 0.003616081489112288), (u'regular', 0.003616081489112288), (u'time', 0.003616081489112288), (u'plays', 0.003412676005965718), (u'line', 0.003412676005965718), (u'scrimmage', 0.003412676005965718), (u'football', 0.003412676005965718), (u'separate', 0.003180226118098072), (u'single', 0.0027845524772232835)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.0
+Negativity =  0.0
+Objectivity =  5.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  altogether :  0.25
+posscore of  altogether :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  full :  0.0
+posscore of  full :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  whole :  0.0
+posscore of  whole :  0.0
+negscore of  complete :  0.0
+posscore of  complete :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  think :  0.0
+posscore of  think :  0.0
+negscore of  side :  0.0
+posscore of  side :  0.0
+negscore of  English :  0.0
+posscore of  English :  0.0
+negscore of  year :  0.0
+posscore of  year :  0.0
+negscore of  use :  0.0
+posscore of  use :  0.0
+negscore of  black :  0.375
+posscore of  black :  0.0
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  dislike :  0.0
+posscore of  dislike :  0.0
+negscore of  inclination :  0.0
+posscore of  inclination :  0.375
+negscore of  approval :  0.0
+posscore of  approval :  0.0
+negscore of  disapproval :  0.375
+posscore of  disapproval :  0.125
+negscore of  disfavor :  0.0
+posscore of  disfavor :  0.125
+negscore of  end :  0.0
+posscore of  end :  0.0
+negscore of  disfavour :  0.0
+posscore of  disfavour :  0.125
+negscore of  Lewis :  0.0
+posscore of  Lewis :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  judgments :  0.0
+posscore of  judgments :  0.0
+negscore of  decisions :  0.0
+posscore of  decisions :  0.0
+negscore of  solution :  0.0
+posscore of  solution :  0.0
+negscore of  power :  0.0
+posscore of  power :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  exercise :  0.0
+posscore of  exercise :  0.0
+negscore of  reason :  0.0
+posscore of  reason :  0.0
+negscore of  lightness :  0.5
+posscore of  lightness :  0.375
+negscore of  color :  0.0
+posscore of  color :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  least :  0.0
+posscore of  least :  0.0
+negscore of  white :  0.0
+posscore of  white :  0.0
+negscore of  acquire :  0.0
+posscore of  acquire :  0.125
+negscore of  gain :  0.0
+posscore of  gain :  0.0
+negscore of  learn :  0.0
+posscore of  learn :  0.0
+negscore of  bearing :  0.0
+posscore of  bearing :  0.0
+negscore of  mind :  0.0
+posscore of  mind :  0.125
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  order :  0.0
+posscore of  order :  0.0
+negscore of  wonder :  0.0
+posscore of  wonder :  0.75
+negscore of  marvel :  0.0
+posscore of  marvel :  0.625
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  causes :  0.0
+posscore of  causes :  0.0
+negscore of  deals :  0.0
+posscore of  deals :  0.0
+negscore of  rock :  0.0
+posscore of  rock :  0.0
+negscore of  retrieve :  0.0
+posscore of  retrieve :  0.0
+negscore of  born :  0.0
+posscore of  born :  0.0
+negscore of  ball :  0.0
+posscore of  ball :  0.0
+negscore of  even :  0.0
+posscore of  even :  0.0
+negscore of  releasing :  0.0
+posscore of  releasing :  0.0
+negscore of  Republican :  0.0
+posscore of  Republican :  0.0
+negscore of  piece :  0.0
+posscore of  piece :  0.0
+negscore of  thing :  0.0
+posscore of  thing :  0.0
+negscore of  striking :  0.0
+posscore of  striking :  0.0
+negscore of  feelings :  0.125
+posscore of  feelings :  0.5
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  sports :  0.25
+posscore of  sports :  0.25
+negscore of  store :  0.0
+posscore of  store :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  spin :  0.0
+posscore of  spin :  0.0
+negscore of  engineering :  0.0
+posscore of  engineering :  0.0
+negscore of  twist :  0.0
+posscore of  twist :  0.0
+negscore of  sharp :  0.0
+posscore of  sharp :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  information :  0.0
+posscore of  information :  0.0
+negscore of  offensive :  0.0
+posscore of  offensive :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  branch :  0.0
+posscore of  branch :  0.0
+negscore of  transmit :  0.0
+posscore of  transmit :  0.0
+negscore of  star :  0.0
+posscore of  star :  0.0
+negscore of  persons :  0.0
+posscore of  persons :  0.0
+negscore of  singer :  0.0
+posscore of  singer :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  calendar :  0.0
+posscore of  calendar :  0.0
+negscore of  special :  0.0
+posscore of  special :  0.0
+negscore of  plays :  0.0
+posscore of  plays :  0.0
+negscore of  activity :  0.0
+posscore of  activity :  0.125
+negscore of  period :  0.125
+posscore of  period :  0.125
+negscore of  negative :  0.25
+posscore of  negative :  0.0
+negscore of  occupying :  0.0
+posscore of  occupying :  0.375
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  line :  0.0
+posscore of  line :  0.0
+negscore of  scrimmage :  0.0
+posscore of  scrimmage :  0.0
+negscore of  situation :  0.0
+posscore of  situation :  0.0
+negscore of  single :  0.0
+posscore of  single :  0.0
+negscore of  no :  0.25
+posscore of  no :  0.0
+negscore of  separate :  0.0
+posscore of  separate :  0.0
+negscore of  regular :  0.0
+posscore of  regular :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the tweet
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 118.625000, 117.750000
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 60.093750, 59.312500
+K-Core DFS belief_propagated_posscore: 60.09375
+K-Core DFS belief_propagated_negscore: 59.3125
+Core Number belief_propagated_posscore: 118.625
+Core Number belief_propagated_negscore: 117.75
+tweet:  2
+defaultdict(<type 'list'>, {u'United': [u'Lewis', u'Jerry_Lee_Lewis'], u'judgments': [u'think', u'cogitate', u'cerebrate'], u'informally': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'domestic': [u'dumping'], u'decisions': [u'think', u'cogitate', u'cerebrate'], u'causes': [u'wonder', u'marvel'], u'group': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'knowledge': [u'learn', u'larn', u'acquire'], u'thinking': [u'think'], u'achromatic': [u'black', u'blackness', u'inkiness'], u'express': [u'mean', u'intend'], u'one': [u'think', u'cogitate', u'cerebrate', u'end', u'English', u'side'], u'entire': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'skills': [u'learn', u'larn', u'acquire'], u'solution': [u'think', u'cogitate', u'cerebrate'], u'deals': [u'information_technology', u'IT'], u'activity': [u'year'], u'side': [u'English', u'side'], u'mean': [u'mean', u'intend'], u'retrieve': [u'information_technology', u'IT'], u'often': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'born': [u'Lewis', u'Jerry_Lee_Lewis'], u'ball': [u'English', u'side'], u'convey': [u'mean', u'intend'], u'year': [u'year'], u'intend': [u'mean', u'intend'], u'calendar': [u'year'], u'special': [u'thing'], u'wonder': [u'wonder', u'marvel'], u'even': [u'nasty', u'awful'], u'plays': [u'end'], u'power': [u'think', u'cogitate', u'cerebrate'], u"'": [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'deliberate': [u'think'], u'away': [u'dump'], u'state': [u'black', u'blackness', u'inkiness'], u'inferences': [u'think', u'cogitate', u'cerebrate'], u'Republican': [u'Republican', u'Republican', u'Republican', u'Republican'], u'exercise': [u'think', u'cogitate', u'cerebrate'], u'inclination': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'full': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'degree': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'rock': [u'Lewis', u'Jerry_Lee_Lewis'], u'given': [u'English', u'side'], u'reason': [u'think', u'cogitate', u'cerebrate'], u'extent': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'approval': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'lightness': [u'black', u'blackness', u'inkiness'], u'abroad': [u'dumping'], u'goods': [u'dumping'], u'computers': [u'information_technology', u'IT'], u'thing': [u'one'], u'whole': [u'piece'], u'1935': [u'Lewis', u'Jerry_Lee_Lewis'], u'striking': [u'English', u'side'], u'color': [u'black', u'blackness', u'inkiness'], u'period': [u'year'], u'feelings': [u'wonder', u'marvel'], u'quality': [u'black', u'blackness', u'inkiness'], u'telecommunications': [u'information_technology', u'IT'], u'market': [u'dumping'], u'use': [u'think', u'cogitate', u'cerebrate', u'information_technology', u'IT'], u'negative': [u'no'], u'least': [u'black', u'blackness', u'inkiness'], u'sports': [u'English', u'side'], u'occupying': [u'year'], u'white': [u'black', u'blackness', u'inkiness'], u'store': [u'information_technology', u'IT'], u'selling': [u'dumping'], u'complete': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'releasing': [u'English', u'side'], u'refuse': [u'dump'], u'part': [u'piece', u'year'], u'gain': [u'learn', u'larn', u'acquire'], u'particular': [u'year'], u'line': [u'end'], u'Democratic': [u'Democrat'], u'spin': [u'English', u'side'], u'`whole': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'throw': [u'dump'], u'scrimmage': [u'end'], u'engineering': [u'information_technology', u'IT'], u'situation': [u'thing'], u'arrive': [u'think', u'cogitate', u'cerebrate'], u'bearing': [u'black', u'blackness', u'inkiness'], u'resemblance': [u'black', u'blackness', u'inkiness'], u'mind': [u'think', u'cogitate', u'cerebrate'], u'`wholly': [u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'twist': [u'English', u'side'], u'single': [u'one'], u'something': [u'wonder', u'marvel'], u'sharp': [u'English', u'side'], u'Party': [u'Republican', u'Republican', u'Democrat', u'Republican', u'Republican'], u'information': [u'information_technology', u'IT'], u'end': [u'end'], u'make': [u'think', u'cogitate', u'cerebrate'], u'malicious': [u'nasty', u'awful'], u'offensive': [u'nasty', u'awful'], u'member': [u'Republican', u'Republican', u'Democrat', u'Republican', u'Republican'], u'instance': [u'think'], u'branch': [u'information_technology', u'IT'], u'transmit': [u'information_technology', u'IT'], u'pianist': [u'Lewis', u'Jerry_Lee_Lewis'], u'used': [u'year', u'wholly', u'entirely', u'completely', u'totally', u'all', u'altogether', u'whole'], u'star': [u'Lewis', u'Jerry_Lee_Lewis'], u'separate': [u'piece'], u'price': [u'dumping'], u'football': [u'end'], u'persons': [u'nasty', u'awful'], u'regular': [u'year'], u'singer': [u'Lewis', u'Jerry_Lee_Lewis'], u'withhold': [u'disfavor', u'disfavour', u'dislike', u'disapproval'], u'States': [u'Lewis', u'Jerry_Lee_Lewis'], u'person': [u'disfavor', u'disfavour', u'dislike', u'disapproval', u'one', u'end'], u'time': [u'year'], u'order': [u'think', u'cogitate', u'cerebrate'], u'charged': [u'dumping']})
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('unite.v.01')
+lsynset= Synset('lewis.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('judgment.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('wholly.r.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('all.a.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('raw.n.01')
+ksynset= Synset('informally.r.01')
+lsynset= Synset('whole.n.01')
+ksynset= Synset('domestic.n.01')
+lsynset= Synset('dumping.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.n.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('cogitate.v.01')
+ksynset= Synset('decision.n.01')
+lsynset= Synset('think.v.03')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.01')
+ksynset= Synset('cause.n.01')
+lsynset= Synset('wonder.n.02')
+ksynset= Synset('group.n.01')
+lsynset= Synset('disfavor.n.01')

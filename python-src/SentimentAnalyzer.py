@@ -50,7 +50,7 @@ weight_str_map=defaultdict()
 #########################################################################################################
 
 def SentimentAnalysis_SentiWordNet(text):
-        tokens=text.split()
+        tokens=text.encode("utf-8").split()
 	sumposscore=0.0
 	sumnegscore=0.0
 	sumobjscore=0.0
@@ -92,33 +92,33 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
 	for x in sorted_core_nxg:
 	      xsset = swn.senti_synsets(x[0])
 	      if len(xsset) > 2:
-	     		core_xnegscore = float(xsset[0].neg_score())*10.0
-	      		core_xposscore = float(xsset[0].pos_score())*10.0
+			core_xnegscore = float(xsset[0].neg_score())
+			core_xposscore = float(xsset[0].pos_score())
 	      if core_xnegscore == 0.0:
 			core_xnegscore = 1.0
 	      if core_xposscore == 0.0:
 			core_xposscore = 1.0
-	      core_positive_belief_propagated *= float(core_xposscore)
-	      core_negative_belief_propagated *= float(core_xnegscore)
+	      core_positive_belief_propagated += float(core_xposscore)
+	      core_negative_belief_propagated += float(core_xnegscore)
 	print "Core Number: RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(core_positive_belief_propagated), float(core_negative_belief_propagated))
 	#for k,v in nx.dfs_edges(nxg):
 	for k,v in nx.dfs_edges(kcore_nxg):
 	      ksynset = swn.senti_synsets(k)
 	      vsynset = swn.senti_synsets(v)
 	      if len(ksynset) > 2:
-	     		dfs_knegscore = float(ksynset[0].neg_score())*10.0
-	      		dfs_kposscore = float(ksynset[0].pos_score())*10.0
+			dfs_knegscore = float(ksynset[0].neg_score())
+			dfs_kposscore = float(ksynset[0].pos_score())
 	      if len(vsynset) > 2:
-			dfs_vnegscore = float(vsynset[0].neg_score())*10.0
-			dfs_vposscore = float(vsynset[0].pos_score())*10.0
+			dfs_vnegscore = float(vsynset[0].neg_score())
+			dfs_vposscore = float(vsynset[0].pos_score())
 	      dfs_kposscore_vposscore = float(dfs_kposscore*dfs_vposscore)
 	      dfs_knegscore_vnegscore = float(dfs_knegscore*dfs_vnegscore)
 	      if dfs_kposscore_vposscore == 0.0:
 		dfs_kposscore_vposscore = 1.0
 	      if dfs_knegscore_vnegscore == 0.0:
 		dfs_knegscore_vnegscore = 1.0
-	      dfs_positive_belief_propagated *= float(dfs_kposscore_vposscore)
-	      dfs_negative_belief_propagated *= float(dfs_knegscore_vnegscore)
+	      dfs_positive_belief_propagated += float(dfs_kposscore_vposscore)
+	      dfs_negative_belief_propagated += float(dfs_knegscore_vnegscore)
 	print "K-Core DFS: RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(dfs_positive_belief_propagated),float(dfs_negative_belief_propagated))
 	return (dfs_positive_belief_propagated, dfs_negative_belief_propagated, core_positive_belief_propagated, core_negative_belief_propagated)
 
@@ -198,14 +198,18 @@ def SentimentAnalysis_RGO(text,output):
 	#---------------------------------------------------------------------------------
 	#2.Compute intrinsic merit (either using linear or quadratic overlap)
 	#---------------------------------------------------------------------------------
-	tokenized = nltk.word_tokenize(text)
+	#tokenized = nltk.word_tokenize(text)
+	tokenized = text.encode("utf-8").split()
 	fdist1 = FreqDist(tokenized)
 	stopwords = nltk.corpus.stopwords.words('english')
 	stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
-	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
+	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s',u'\u2026']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
-	freqterms1 = [w.decode("utf-8") for w in fdist1.keys() if w not in stopwords and w not in puncts]
+	try:
+		freqterms1 = [w.decode("utf-8") for w in fdist1.keys() if w not in stopwords and w not in puncts]
+	except UnicodeError:
+		pass
 	
 	current_level = 1
 	nodewithmaxparents = ''

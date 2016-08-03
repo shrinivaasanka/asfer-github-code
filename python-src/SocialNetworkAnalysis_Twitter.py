@@ -118,7 +118,10 @@ class SNA_Twitter:
 		print "========================================="
 		search=self.api.GetStreamFilter(track=[query])
 		for i in search:
-			print "tweet: ",i["text"]
+			try:
+				print "tweet: ",i["text"]
+			except UnicodeError:
+				pass
                         if algorithm=="RGO_Belief_Propagation":
 				outputfile = 'Output-Tweet-RGO-BeliefPropagation-SentimentAnalysis.txt'
 				output = open(outputfile, 'w')
@@ -143,10 +146,11 @@ class SNA_Twitter:
 #tweet_type: 0 for streams, 1 for followers
 tweet_type=0
 snat=SNA_Twitter()
-snat.buildGraphFromTwitterFollowing()
+#snat.buildGraphFromTwitterFollowing()
 if tweet_type:
 	snat.followersTweetsSentimentAnalyzer()
 else:
 	#snat.tweetStreamSentimentAnalyzer("Chennai","RGO_Belief_Propagation")
-	#snat.tweetStreamSentimentAnalyzer("elections","RGO_Belief_Propagation")
-	snat.tweetStreamSentimentAnalyzer("Computer Science","RGO_Belief_Propagation")
+	#snat.tweetStreamSentimentAnalyzer("Republicans","RGO_Belief_Propagation")
+	snat.tweetStreamSentimentAnalyzer("Democrats","RGO_Belief_Propagation")
+	#snat.tweetStreamSentimentAnalyzer("Computer Science","RGO_Belief_Propagation")
