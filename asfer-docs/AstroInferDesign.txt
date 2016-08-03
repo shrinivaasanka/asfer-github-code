@@ -955,6 +955,10 @@ Additional references:
 
 	34.41) EURO-PAR 1995 - Input size in Parallel RAM algorithms - https://books.google.co.in/books?id=pVpjOwUHEigC&pg=PA245&lpg=PA245&dq=size+of+input+in+PRAM&source=bl&ots=uZ9GeONqtg&sig=6YHl4CvNUdFERPe8p192hdB1Kc0&hl=en&sa=X&ved=0ahUKEwiZ3_z20qTOAhVJGJQKHX8bALIQ6AEIOTAG#v=onepage&q=size%20of%20input%20in%20PRAM&f=false - "... Third, inputs are usually measured by their size. We use overall number of array elements ..."
 
+	34.42) Batcher's Bitonic Sort is in NC - https://web.cs.dal.ca/~arc/teaching/CS4125/Lectures/03b-ParallelAnalysis.pptx - also other
+PRAM algorithms are in NC.
+
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
