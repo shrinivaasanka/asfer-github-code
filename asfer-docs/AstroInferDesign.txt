@@ -4703,4 +4703,53 @@ invocation(boost::python C++) invocations of virgo memory system calls.
 6. Paging related OOPS look like an offshoot of set_fs() encompassing the filp_open VFS calls.
 7. In C++ Boost::Python extensions, flag changed for VIRGO memory system calls invocation from python.
 
+--------------------------------------------------------------------------------------------------------------------------
+306. Commits - 3 August 2016
+--------------------------------------------------------------------------------------------------------------------------
+Social Network Analysis with Twitter - Changes to Belief Propagation Potential Computation
+--------------------------------------------------------------------------------------------------------------------------
+1. Exception handling for UnicodeError has been added in SentimentAnalyzer
+2. Belief Propagation Potential computation for the RGO graph constructed has been changed to do plain
+summation of positivity and negativity scores for DFS of K-Core rather than multiplication which heuristically
+appears to predict sentiments better
+3. An example for tweets sentiments analysis for 2 search keywords has been logged and committed in testlogs/
+-------------------------------------------------------------------------------------------
+4. Excerpts for sentiment scores - positive and negative - from RGO graph of few tweets 
+-------------------------------------------------------------------------------------------
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src/testlogs# grep "score:" SocialNetworkAnalysis_Twitter.out1.Republicans.3August2016 
+K-Core DFS belief_propagated_posscore: 6.078125
+K-Core DFS belief_propagated_negscore: 8.140625
+Core Number belief_propagated_posscore: 25.125
+Core Number belief_propagated_negscore: 26.125
+K-Core DFS belief_propagated_posscore: 6.078125
+K-Core DFS belief_propagated_negscore: 8.140625
+Core Number belief_propagated_posscore: 25.125
+Core Number belief_propagated_negscore: 26.125
+K-Core DFS belief_propagated_posscore: 55.09375
+K-Core DFS belief_propagated_negscore: 54.3125
+Core Number belief_propagated_posscore: 92.625
+Core Number belief_propagated_negscore: 93.875
+K-Core DFS belief_propagated_posscore: 60.09375
+K-Core DFS belief_propagated_negscore: 59.3125
+Core Number belief_propagated_posscore: 118.625
+Core Number belief_propagated_negscore: 117.75
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/SourceForge/asfer-code/python-src/testlogs# grep "score:" SocialNetworkAnalysis_Twitter.out2.Democrats.3August2016 
+K-Core DFS belief_propagated_posscore: 34.0
+K-Core DFS belief_propagated_negscore: 30.359375
+Core Number belief_propagated_posscore: 90.25
+Core Number belief_propagated_negscore: 85.125
+K-Core DFS belief_propagated_posscore: 54.0
+K-Core DFS belief_propagated_negscore: 46.734375
+Core Number belief_propagated_posscore: 111.125
+Core Number belief_propagated_negscore: 108.125
+K-Core DFS belief_propagated_posscore: 97.203125
+K-Core DFS belief_propagated_negscore: 91.015625
+Core Number belief_propagated_posscore: 172.125
+Core Number belief_propagated_negscore: 172.125
+K-Core DFS belief_propagated_posscore: 97.203125
+K-Core DFS belief_propagated_negscore: 91.015625
+Core Number belief_propagated_posscore: 178.125
+Core Number belief_propagated_negscore: 178.125
+
+5. Majority Predominant Sentiment indicated by above scores for randomly sampled tweets can be used as one of the Election Approximation and Forecast Technique described in 14.
  
