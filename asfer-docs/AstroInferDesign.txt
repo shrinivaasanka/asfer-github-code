@@ -4756,4 +4756,10 @@ Core Number belief_propagated_posscore: 178.125
 Core Number belief_propagated_negscore: 178.125
 
 5. Majority Predominant Sentiment indicated by above scores for randomly sampled tweets can be used as one of the Election Approximation and Forecast Technique described in 14.
+
+----------------------------------------------------------------------------------------------------------------------
+307. (THEORY) Sentiment Analysis from Recursive Gloss Overlap as a Voting Function in Majority Voting - related to 14
+----------------------------------------------------------------------------------------------------------------------
+As mentioned in 306, Sentiment Analysis scores derived from Recursive Gloss Overlap graph of a text is an indirect voting function - when the
+overall sentiment is negative it is an "against" vote and when positive it is a "for" vote. In this sense, Sentiment Analysis shrouds a Satisfiability problem underneath it. In other words every polarised text is a boolean SAT circuit translated into natural language text which opens whole new vista to look at Sentiment Analysis per se. Infact it is a generalization of a boolean SAT circuit - it is bipolar and whichever polarity wins decides the vote.
  
