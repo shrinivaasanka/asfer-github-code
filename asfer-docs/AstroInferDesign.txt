@@ -2195,6 +2195,7 @@ Reference:
 ----------
 135.18. Circle Packing and Grid Filling - http://11011110.livejournal.com/332331.html - Filling a square with non-overlapping circles of maximum radii which is formulated as Dual of LP relaxation problem for matching where the constraints are that circles do not overlap i.e sum of radii <= distance between radii and objective function maximizes the radii variables.
 135.19. 135.16 is a slight variant of Kepler's Theorem [Proof - [Hales] - https://sites.google.com/site/thalespitt/] - filling a cube with small spheres has maximum density ~74%
+135.20 Maximizing Sum of Radii of Balls - [Eppstein] - http://www.ics.uci.edu/~eppstein/pubs/Epp-CCCG-16-slides.pdf
 
 ------------------------------------------------------------------------------
 (FEATURE- DONE) 136. Commits as on 28,29 January 2015
