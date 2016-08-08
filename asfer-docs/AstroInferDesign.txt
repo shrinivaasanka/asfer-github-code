@@ -4766,4 +4766,18 @@ Core Number belief_propagated_negscore: 178.125
 ----------------------------------------------------------------------------------------------------------------------
 As mentioned in 306, Sentiment Analysis scores derived from Recursive Gloss Overlap graph of a text is an indirect voting function - when the
 overall sentiment is negative it is an "against" vote and when positive it is a "for" vote. In this sense, Sentiment Analysis shrouds a Satisfiability problem underneath it. In other words every polarised text is a boolean SAT circuit translated into natural language text which opens whole new vista to look at Sentiment Analysis per se. Infact it is a generalization of a boolean SAT circuit - it is bipolar and whichever polarity wins decides the vote.
+
+---------------------------------------------------------------------------------------------------------------------------
+308. (FEATURE-DONE) Markov Random Fields (MRF) Belief Propagation - Commits - 8 August 2016
+---------------------------------------------------------------------------------------------------------------------------
+Existing Sentiment Analyzer does belief propagation by computing product of potentials in DFS traversal only.
+New function for Markov Random Fields Belief Propagation has been included which handles the generalized case of belief propagation in a
+graph by factoring it into maximal cliques and finding potentials per clique. These per clique potentials are multiplied and normalized
+with number of cliques to get polarized sentiments scores - positive, negative and objective. Logs for Sentiment Analysis of tweets stream
+with MRF have been committed to testlogs/
+ 
+Reference:
+---------
+308.1 Introduction to Machine Learning - [Ethem Alpaydin] - Graphical Models
+
  
