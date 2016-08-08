@@ -49,6 +49,42 @@ weight_str_map=defaultdict()
 #from RGO graph
 #########################################################################################################
 
+def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
+	#The RGO undirected graph is factored into maximal cliques and
+	#sum potentials of clique nodes are construed as probabilities
+	#which are productized
+	nxg_undirected=nxg.to_undirected(nxg)
+	clique=list(nx.find_cliques(nxg_undirected))
+	clique_potential_product_pos = 1.0 
+	clique_potential_product_neg = 1.0 
+	clique_potential_product_obj = 1.0 
+	for c in clique:
+	      clique_potential_pos=0.0
+	      clique_potential_neg=0.0
+              clique_potential_obj=0.0
+	      print "clique:", c
+	      for v in c:
+                  sset = swn.senti_synsets(v.decode("utf-8"))
+		  if len(sset) > 0:
+		  	pos = float(sset[0].pos_score())
+		  	neg = float(sset[0].neg_score())
+		  	obj = float(sset[0].obj_score()) 
+			if pos == 0.0:
+				pos = 0.00001
+			if neg == 0.0:
+				neg = 0.00001 
+			if obj == 0.0:
+				obj = 0.00001
+		  	clique_potential_pos += pos
+		  	clique_potential_neg += neg
+		  	clique_potential_obj += obj
+	      clique_potential_product_pos *= float(clique_potential_pos)
+	      clique_potential_product_neg *= float(clique_potential_neg)
+	      clique_potential_product_obj *= float(clique_potential_obj)
+	return clique_potential_product_pos/len(clique), clique_potential_product_neg/len(clique), clique_potential_product_obj/len(clique)
+
+
+#function - compute_idf()
 def SentimentAnalysis_SentiWordNet(text):
         tokens=text.encode("utf-8").split()
 	sumposscore=0.0
@@ -95,9 +131,9 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
 			core_xnegscore = float(xsset[0].neg_score())
 			core_xposscore = float(xsset[0].pos_score())
 	      if core_xnegscore == 0.0:
-			core_xnegscore = 1.0
+			core_xnegscore = 0.000001 
 	      if core_xposscore == 0.0:
-			core_xposscore = 1.0
+			core_xposscore = 0.000001 
 	      core_positive_belief_propagated += float(core_xposscore)
 	      core_negative_belief_propagated += float(core_xnegscore)
 	print "Core Number: RGO_sentiment_analysis_belief_propagation: %f, %f" % (float(core_positive_belief_propagated), float(core_negative_belief_propagated))

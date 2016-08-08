@@ -134,6 +134,17 @@ class SNA_Twitter:
                                 print "K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore)
                                 print "Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore)
                                 print "Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore)
+			if algorithm=="RGO_Belief_Propagation_MRF":
+				outputfile = 'Output-Tweet-RGO-BeliefPropagation-SentimentAnalysis.txt'
+				output = open(outputfile, 'w')
+                                nxg=SentimentAnalyzer.SentimentAnalysis_RGO(i["text"],output)
+				posscore,negscore,objscore=SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg)
+                                print "=================================================================================="
+                                print "Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the tweet"
+                                print "=================================================================================="
+                                print "Positivity:",posscore
+                                print "Negativity:",negscore
+                                print "Objectivity:",objscore
                         else:
                                 posscore,negscore,objscore=SentimentAnalyzer.SentimentAnalysis_SentiWordNet(i["text"].encode("utf-8"))
                                 print "=================================================================================="
@@ -152,5 +163,6 @@ if tweet_type:
 else:
 	#snat.tweetStreamSentimentAnalyzer("Chennai","RGO_Belief_Propagation")
 	#snat.tweetStreamSentimentAnalyzer("Republicans","RGO_Belief_Propagation")
-	snat.tweetStreamSentimentAnalyzer("Democrats","RGO_Belief_Propagation")
+	#snat.tweetStreamSentimentAnalyzer("Democrats","RGO_Belief_Propagation")
+	snat.tweetStreamSentimentAnalyzer("Democrats","RGO_Belief_Propagation_MRF")
 	#snat.tweetStreamSentimentAnalyzer("Computer Science","RGO_Belief_Propagation")

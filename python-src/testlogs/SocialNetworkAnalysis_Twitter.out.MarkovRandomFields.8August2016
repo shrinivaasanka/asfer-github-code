@@ -1,0 +1,1338 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+{"created_at": "Thu Mar 27 09:28:02 +0000 2008", "default_profile": true, "description": "Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan\r\nIndependent Open Source Developer, Researcher and Consultant", "favourites_count": 9, "followers_count": 15, "friends_count": 109, "id": 14233931, "lang": "en", "location": "Kumbakonam and Chennai", "name": "Srinivasan Kannan", "profile_background_color": "C0DEED", "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png", "profile_background_tile": false, "profile_image_url": "https://pbs.twimg.com/profile_images/378800000214198948/403e84440c88085d3023e8d3e7a061ac_normal.jpeg", "profile_link_color": "0084B4", "profile_sidebar_fill_color": "DDEEF6", "profile_text_color": "333333", "protected": false, "screen_name": "ka_shrinivaasan", "status": {"created_at": "Wed Jul 27 06:28:50 +0000 2016", "favorited": false, "id": 758187373473570816, "lang": "en", "retweeted": false, "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>", "text": "4,000 Years After It Was 'Lost' Saraswati Could Be Brought Back To Life As Early As This Month! https://t.co/bdwPAq56uV via @indiatimes", "truncated": false, "urls": {"https://t.co/bdwPAq56uV": "http://www.indiatimes.com/news/india/4-000-years-after-it-was-lost-river-saraswati-could-be-brought-back-to-life-as-early-as-this-month-258766.html"}, "user_mentions": [{"id": 191768572, "name": "Indiatimes", "screen_name": "indiatimes"}]}, "statuses_count": 27, "time_zone": "Chennai", "url": "https://t.co/7UOPXrIzri", "utc_offset": 19800}
+=========================================
+tweetStreamSentimentAnalyzer()
+=========================================
+tweet:  Much more than a short-circuit. Democrats just don't care. #wakeupAmerica #tcot #pjnet #RedNationRising https://t.co/UKnCSYqbHb
+2
+defaultdict(<type 'list'>, {u'great': [u'much'], u'member': [u'Democrat'], u'amount': [u'much'], u'extent': [u'much'], u'Party': [u'Democrat'], u'Democratic': [u'Democrat']})
+ksynset= Synset('great.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+Core number (sorted) : [(u'Democrat', 3), (u'much', 3), (u'great', 2), (u'member', 2), (u'amount', 2), (u'extent', 2), (u'Party', 2), (u'Democratic', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: Democrat ,core number= 3
+This document belongs to class: much ,core number= 3
+	max_core_number 3
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'Democrat', 0.2398656735301188), (u'much', 0.2398656735301188), (u'great', 0.08671144215662707), (u'member', 0.08671144215662707), (u'amount', 0.08671144215662707), (u'extent', 0.08671144215662707), (u'Party', 0.08671144215662707), (u'Democratic', 0.08671144215662707)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.75
+Negativity =  0.125
+Objectivity =  4.125
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  much :  0.125
+posscore of  much :  0.125
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  amount :  0.0
+posscore of  amount :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+clique: [u'amount', u'much']
+clique: [u'great', u'much']
+clique: [u'much', u'extent']
+clique: [u'Democrat', u'member']
+clique: [u'Democrat', u'Party']
+clique: [u'Democrat', u'Democratic']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the tweet
+==================================================================================
+Positivity: 8.14010435417e-14
+Negativity: 3.25611988542e-14
+Objectivity: 4.01953125
+tweet:  Margaret Sanger would be delighted.HillBilly supports PP to sell aborted baby parts, How many black babies involved? https://t.co/3xnt784iew
+2
+defaultdict(<type 'list'>, {u'preceded': [u'many'], u'often': [u'many'], u'sequence': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'child': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'number': [u'many'], u'walk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'born': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'`too': [u'many'], u'buy': [u'sell'], u'cease': [u'abort'], u'worn': [u'black'], u'determine': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'year': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Party': [u'Democrat'], u'indefinite': [u'many'], u'clothing': [u'black'], u'yet': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'birth': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'amino': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'`as': [u'many'], u'1': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Democratic': [u'Democrat'], u"'": [u'many'], u'technique': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'aborted': [u'abort'], u'young': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'someone': [u'sell'], u'member': [u'Democrat'], u'genetic': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'parts': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'black': [u'black'], u'provides': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'supports': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'amounting': [u'many'], u'development': [u'abort'], u'used': [u'many'], u'biochemist': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'nouns': [u'many'], u'background': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'mourning': [u'black'], u'instrumental': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'1918': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'part': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'`so': [u'many'], u'extent': [u'much'], u'English': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'quantifier': [u'many'], u'sign': [u'black'], u'count': [u'many'], u'begun': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'great': [u'much'], u'`that': [u'many'], u'die': [u'abort'], u'acids': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'persuading': [u'sell'], u'vocal': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'large': [u'many'], u'amount': [u'much'], u'determined': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'insulin': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'invented': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'activity': [u'sell'], u'organism': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'musical': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'talk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant']})
+ksynset= Synset('predate.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('number.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('bargain.n.02')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('cease.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('wear.v.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('indefinite.a.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('clothing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('abort.v.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('black.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('support.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('amount.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('development.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('noun.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('background.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('mourning.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('part.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('quantifier.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sign.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('count.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('great.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('die.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('carry.v.23')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('large.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+Core number (sorted) : [(u'many', 15), (u'Fred_Sanger', 14), (u'Frederick_Sanger', 14), (u'Sanger', 14), (u'infant', 9), (u'babe', 9), (u'baby', 9), (u'backup', 8), (u'support', 8), (u'provides', 8), (u'musical_accompaniment', 8), (u'supports', 8), (u'background', 8), (u'instrumental', 8), (u'part', 8), (u'accompaniment', 8), (u'parts', 8), (u'vocal', 8), (u'musical', 8), (u'sequence', 6), (u'child', 6), (u'born', 6), (u'determine', 6), (u'year', 6), (u'yet', 6), (u'birth', 6), (u'amino', 6), (u'1', 6), (u'invented', 6), (u'technique', 6), (u'young', 6), (u'genetic', 6), (u'biochemist', 6), (u'1918', 6), (u'English', 6), (u'walk', 6), (u'begun', 6), (u'acids', 6), (u'determined', 6), (u'insulin', 6), (u'organism', 6), (u'talk', 6), (u'abort', 4), (u'sell', 4), (u'black', 4), (u'much', 3), (u'Democrat', 3), (u'preceded', 2), (u'often', 2), (u'Democratic', 2), (u'sign', 2), (u'`too', 2), (u'cease', 2), (u'worn', 2), (u'Party', 2), (u'indefinite', 2), (u'clothing', 2), (u'`as', 2), (u"'", 2), (u'someone', 2), (u'member', 2), (u'amounting', 2), (u'development', 2), (u'extent', 2), (u'used', 2), (u'nouns', 2), (u'number', 2), (u'`so', 2), (u'aborted', 2), (u'buy', 2), (u'mourning', 2), (u'count', 2), (u'great', 2), (u'`that', 2), (u'die', 2), (u'persuading', 2), (u'large', 2), (u'amount', 2), (u'quantifier', 2), (u'activity', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: many ,core number= 15
+This document belongs to class: Fred_Sanger ,core number= 14
+This document belongs to class: Frederick_Sanger ,core number= 14
+This document belongs to class: Sanger ,core number= 14
+This document belongs to class: infant ,core number= 9
+This document belongs to class: babe ,core number= 9
+This document belongs to class: baby ,core number= 9
+This document belongs to class: backup ,core number= 8
+This document belongs to class: support ,core number= 8
+	max_core_number 15
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'many', 0.09290072351990056), (u'Fred_Sanger', 0.03355733235045013), (u'Frederick_Sanger', 0.03355733235045013), (u'Sanger', 0.03355733235045013), (u'abort', 0.029728726468550112), (u'sell', 0.029728726468550112), (u'black', 0.029728726468550112), (u'Democrat', 0.023985817645700076), (u'much', 0.02398581764570007), (u'baby', 0.02398581764570006), (u'infant', 0.023985817645700055), (u'babe', 0.023985817645700055), (u'support', 0.01824290882285004), (u'musical_accompaniment', 0.01824290882285004), (u'accompaniment', 0.01824290882285004), (u'backup', 0.01824290882285004), (u'vocal', 0.009628545588574981), (u'provides', 0.009628545588574981), (u'supports', 0.009628545588574981), (u'background', 0.009628545588574981), (u'part', 0.009628545588574981), (u'parts', 0.009628545588574981), (u'musical', 0.009628545588574981), (u'instrumental', 0.009628545588574981), (u'year', 0.008671394118099973), (u'Party', 0.008671394118099973), (u'yet', 0.008671394118099973), (u'member', 0.008671394118099973), (u'young', 0.008671394118099973), (u'1', 0.008671394118099973), (u'extent', 0.008671394118099973), (u'walk', 0.008671394118099973), (u'birth', 0.008671394118099973), (u'child', 0.008671394118099973), (u'Democratic', 0.008671394118099973), (u'begun', 0.008671394118099973), (u'great', 0.008671394118099973), (u'amount', 0.008671394118099973), (u'talk', 0.008671394118099973), (u'sign', 0.008192818382862474), (u'cease', 0.008192818382862474), (u'clothing', 0.008192818382862474), (u'aborted', 0.008192818382862474), (u'development', 0.008192818382862474), (u'someone', 0.008192818382862474), (u'activity', 0.008192818382862474), (u'buy', 0.008192818382862474), (u'mourning', 0.008192818382862474), (u'die', 0.008192818382862474), (u'persuading', 0.008192818382862474), (u'worn', 0.008192818382862474), (u'sequence', 0.007987714496332112), (u'English', 0.007987714496332112), (u'born', 0.007987714496332112), (u'determine', 0.007987714496332112), (u'amino', 0.007987714496332112), (u'invented', 0.007987714496332112), (u'determined', 0.007987714496332112), (u'technique', 0.007987714496332112), (u'genetic', 0.007987714496332112), (u'biochemist', 0.007987714496332112), (u'organism', 0.007987714496332112), (u'1918', 0.007987714496332112), (u'acids', 0.007987714496332112), (u'insulin', 0.007987714496332112), (u'preceded', 0.0071399517653399636), (u'often', 0.0071399517653399636), (u'used', 0.0071399517653399636), (u'`too', 0.0071399517653399636), (u'indefinite', 0.0071399517653399636), (u"'", 0.0071399517653399636), (u'amounting', 0.0071399517653399636), (u'nouns', 0.0071399517653399636), (u'number', 0.0071399517653399636), (u'`so', 0.0071399517653399636), (u'count', 0.0071399517653399636), (u'`that', 0.0071399517653399636), (u'large', 0.0071399517653399636), (u'`as', 0.0071399517653399636), (u'quantifier', 0.0071399517653399636)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.0
+Negativity =  1.0
+Objectivity =  8.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  baby :  0.0
+posscore of  baby :  0.0
+negscore of  backup :  0.5
+posscore of  backup :  0.0
+negscore of  support :  0.0
+posscore of  support :  0.0
+negscore of  provides :  0.0
+posscore of  provides :  0.0
+negscore of  supports :  0.0
+posscore of  supports :  0.0
+negscore of  background :  0.0
+posscore of  background :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  accompaniment :  0.0
+posscore of  accompaniment :  0.0
+negscore of  parts :  0.0
+posscore of  parts :  0.0
+negscore of  vocal :  0.0
+posscore of  vocal :  0.0
+negscore of  musical :  0.0
+posscore of  musical :  0.0
+negscore of  sequence :  0.0
+posscore of  sequence :  0.0
+negscore of  child :  0.0
+posscore of  child :  0.0
+negscore of  born :  0.0
+posscore of  born :  0.0
+negscore of  determine :  0.0
+posscore of  determine :  0.0
+negscore of  year :  0.0
+posscore of  year :  0.0
+negscore of  yet :  0.0
+posscore of  yet :  0.25
+negscore of  birth :  0.0
+posscore of  birth :  0.0
+negscore of  young :  0.125
+posscore of  young :  0.0
+negscore of  genetic :  0.0
+posscore of  genetic :  0.0
+negscore of  English :  0.0
+posscore of  English :  0.0
+negscore of  walk :  0.0
+posscore of  walk :  0.0
+negscore of  begun :  0.0
+posscore of  begun :  0.0
+negscore of  determined :  0.0
+posscore of  determined :  0.0
+negscore of  talk :  0.125
+posscore of  talk :  0.0
+negscore of  abort :  0.0
+posscore of  abort :  0.0
+negscore of  sell :  0.0
+posscore of  sell :  0.0
+negscore of  black :  0.375
+posscore of  black :  0.0
+negscore of  much :  0.125
+posscore of  much :  0.125
+negscore of  preceded :  0.0
+posscore of  preceded :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  sign :  0.0
+posscore of  sign :  0.0
+negscore of  cease :  0.0
+posscore of  cease :  0.0
+negscore of  worn :  0.25
+posscore of  worn :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  clothing :  0.0
+posscore of  clothing :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  amounting :  0.0
+posscore of  amounting :  0.0
+negscore of  development :  0.0
+posscore of  development :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  number :  0.375
+posscore of  number :  0.0
+negscore of  aborted :  0.625
+posscore of  aborted :  0.0
+negscore of  buy :  0.0
+posscore of  buy :  0.5
+negscore of  mourning :  0.375
+posscore of  mourning :  0.0
+negscore of  count :  0.0
+posscore of  count :  0.0
+negscore of  die :  0.0
+posscore of  die :  0.0
+negscore of  large :  0.0
+posscore of  large :  0.0
+negscore of  amount :  0.0
+posscore of  amount :  0.0
+negscore of  activity :  0.0
+posscore of  activity :  0.125
+clique: [u'infant', u'begun']
+clique: [u'infant', u'child']
+clique: [u'infant', u'young']
+clique: [u'infant', u'walk']
+clique: [u'infant', u'1']
+clique: [u'infant', u'birth']
+clique: [u'infant', u'year']
+clique: [u'infant', u'yet']
+clique: [u'infant', u'talk']
+clique: [u'extent', u'much']
+clique: [u'sequence', u'Fred_Sanger']
+clique: [u'sequence', u'Sanger']
+clique: [u'sequence', u'Frederick_Sanger']
+clique: [u'Fred_Sanger', u'acids']
+clique: [u'Fred_Sanger', u'biochemist']
+clique: [u'Fred_Sanger', u'born']
+clique: [u'Fred_Sanger', u'technique']
+clique: [u'Fred_Sanger', u'1918']
+clique: [u'Fred_Sanger', u'genetic']
+clique: [u'Fred_Sanger', u'determined']
+clique: [u'Fred_Sanger', u'insulin']
+clique: [u'Fred_Sanger', u'determine']
+clique: [u'Fred_Sanger', u'English']
+clique: [u'Fred_Sanger', u'invented']
+clique: [u'Fred_Sanger', u'organism']
+clique: [u'Fred_Sanger', u'amino']
+clique: [u'child', u'baby']
+clique: [u'child', u'babe']
+clique: [u'sign', u'black']
+clique: [u'born', u'Sanger']
+clique: [u'born', u'Frederick_Sanger']
+clique: [u'abort', u'development']
+clique: [u'abort', u'die']
+clique: [u'abort', u'cease']
+clique: [u'abort', u'aborted']
+clique: [u'worn', u'black']
+clique: [u'determine', u'Sanger']
+clique: [u'determine', u'Frederick_Sanger']
+clique: [u'year', u'baby']
+clique: [u'year', u'babe']
+clique: [u'Party', u'Democrat']
+clique: [u'clothing', u'black']
+clique: [u'yet', u'baby']
+clique: [u'yet', u'babe']
+clique: [u'birth', u'baby']
+clique: [u'birth', u'babe']
+clique: [u'amino', u'Sanger']
+clique: [u'amino', u'Frederick_Sanger']
+clique: [u'sell', u'someone']
+clique: [u'sell', u'buy']
+clique: [u'sell', u'persuading']
+clique: [u'sell', u'activity']
+clique: [u'1', u'baby']
+clique: [u'1', u'babe']
+clique: [u'Democratic', u'Democrat']
+clique: [u'backup', u'provides']
+clique: [u'backup', u'parts']
+clique: [u'backup', u'vocal']
+clique: [u'backup', u'instrumental']
+clique: [u'backup', u'part']
+clique: [u'backup', u'background']
+clique: [u'backup', u'supports']
+clique: [u'backup', u'musical']
+clique: [u'begun', u'baby']
+clique: [u'begun', u'babe']
+clique: [u'support', u'provides']
+clique: [u'support', u'parts']
+clique: [u'support', u'vocal']
+clique: [u'support', u'instrumental']
+clique: [u'support', u'part']
+clique: [u'support', u'background']
+clique: [u'support', u'supports']
+clique: [u'support', u'musical']
+clique: [u'technique', u'Sanger']
+clique: [u'technique', u'Frederick_Sanger']
+clique: [u'young', u'baby']
+clique: [u'young', u'babe']
+clique: [u'member', u'Democrat']
+clique: [u'genetic', u'Sanger']
+clique: [u'genetic', u'Frederick_Sanger']
+clique: [u'much', u'amount']
+clique: [u'much', u'great']
+clique: [u'black', u'mourning']
+clique: [u'provides', u'accompaniment']
+clique: [u'provides', u'musical_accompaniment']
+clique: [u'musical_accompaniment', u'parts']
+clique: [u'musical_accompaniment', u'vocal']
+clique: [u'musical_accompaniment', u'instrumental']
+clique: [u'musical_accompaniment', u'part']
+clique: [u'musical_accompaniment', u'background']
+clique: [u'musical_accompaniment', u'supports']
+clique: [u'musical_accompaniment', u'musical']
+clique: [u'many', u'count']
+clique: [u'many', u'preceded']
+clique: [u'many', u'used']
+clique: [u'many', u'often']
+clique: [u'many', u"'"]
+clique: [u'many', u'`that']
+clique: [u'many', u'number']
+clique: [u'many', u'large']
+clique: [u'many', u'`too']
+clique: [u'many', u'`as']
+clique: [u'many', u'`so']
+clique: [u'many', u'nouns']
+clique: [u'many', u'quantifier']
+clique: [u'many', u'indefinite']
+clique: [u'many', u'amounting']
+clique: [u'supports', u'accompaniment']
+clique: [u'babe', u'talk']
+clique: [u'babe', u'walk']
+clique: [u'biochemist', u'Sanger']
+clique: [u'biochemist', u'Frederick_Sanger']
+clique: [u'background', u'accompaniment']
+clique: [u'walk', u'baby']
+clique: [u'1918', u'Sanger']
+clique: [u'1918', u'Frederick_Sanger']
+clique: [u'part', u'accompaniment']
+clique: [u'accompaniment', u'instrumental']
+clique: [u'accompaniment', u'parts']
+clique: [u'accompaniment', u'musical']
+clique: [u'accompaniment', u'vocal']
+clique: [u'English', u'Sanger']
+clique: [u'English', u'Frederick_Sanger']
+clique: [u'baby', u'talk']
+clique: [u'invented', u'Sanger']
+clique: [u'invented', u'Frederick_Sanger']
+clique: [u'Frederick_Sanger', u'determined']
+clique: [u'Frederick_Sanger', u'acids']
+clique: [u'Frederick_Sanger', u'organism']
+clique: [u'Frederick_Sanger', u'insulin']
+clique: [u'acids', u'Sanger']
+clique: [u'determined', u'Sanger']
+clique: [u'insulin', u'Sanger']
+clique: [u'Sanger', u'organism']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the tweet
+==================================================================================
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 3.19147133984e+32
+tweet:  @TWeav_r Libertarian is very different from "the lib. party". They don't own the term any more than the democrats own democracy.
+2
+defaultdict(<type 'list'>, {u'preceded': [u'many'], u'often': [u'many'], u'sequence': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'child': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'number': [u'many'], u'walk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'born': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'`too': [u'many'], u'buy': [u'sell'], u'cease': [u'abort'], u'worn': [u'black'], u'determine': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'year': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Party': [u'Democrat', u'Democrat'], u'indefinite': [u'many'], u'clothing': [u'black'], u'yet': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'birth': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'amino': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'`as': [u'many'], u'1': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Democratic': [u'Democrat', u'Democrat'], u'form': [u'different'], u"'": [u'many'], u'quality': [u'different'], u'technique': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'aborted': [u'abort'], u'young': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'someone': [u'sell'], u'member': [u'Democrat', u'Democrat'], u'genetic': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'parts': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'black': [u'black'], u'provides': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'supports': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'amounting': [u'many'], u'designate': [u'term'], u'development': [u'abort'], u'used': [u'many'], u'formally': [u'term'], u'biochemist': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'degree': [u'different'], u'nature': [u'different'], u'nouns': [u'many'], u'advocate': [u'libertarian'], u'background': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'term': [u'term'], u'mourning': [u'black'], u'instrumental': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'1918': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'part': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'`so': [u'many'], u'extent': [u'much'], u'English': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'quantifier': [u'many'], u'sign': [u'black'], u'name': [u'term'], u'count': [u'many'], u'begun': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'great': [u'much'], u'`that': [u'many'], u'unlike': [u'different'], u'die': [u'abort'], u'libertarianism': [u'libertarian'], u'acids': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'persuading': [u'sell'], u'vocal': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'large': [u'many'], u'amount': [u'much'], u'determined': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'insulin': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'invented': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'activity': [u'sell'], u'organism': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'musical': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'talk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant']})
+ksynset= Synset('predate.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('frequently.r.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('sequence.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('child.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('number.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('walk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('born.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('bargain.n.02')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('cease.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('wear.v.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('year.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('party.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('indefinite.a.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('clothing.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('birth.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('amino.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('one.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('democratic.a.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('form.n.01')
+lsynset= Synset('different.a.01')
+ksynset= Synset('quality.n.01')
+lsynset= Synset('different.a.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('abort.v.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('familial.s.02')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('parts.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('black.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('supply.v.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('support.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('support.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('amount.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('designate.v.01')
+lsynset= Synset('term.n.01')
+ksynset= Synset('development.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('use.v.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('formally.r.01')
+lsynset= Synset('term.n.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('biochemist.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('degree.n.01')
+lsynset= Synset('different.a.01')
+ksynset= Synset('nature.n.01')
+lsynset= Synset('different.a.01')
+ksynset= Synset('noun.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('advocate.n.01')
+lsynset= Synset('libertarian.n.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('background.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('background.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('term.n.01')
+lsynset= Synset('term.n.01')
+ksynset= Synset('mourning.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('instrumental.a.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('part.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('part.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('extent.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('english.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('quantifier.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sign.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('name.n.01')
+lsynset= Synset('term.n.01')
+ksynset= Synset('count.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('get_down.v.07')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('great.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('unlike.a.01')
+lsynset= Synset('different.a.01')
+ksynset= Synset('die.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('libertarianism.n.01')
+lsynset= Synset('libertarian.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('acid.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('carry.v.23')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('vocal_music.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('large.n.01')
+lsynset= Synset('many.a.01')
+ksynset= Synset('sum.n.01')
+lsynset= Synset('much.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('determine.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('insulin.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('invent.v.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('activity.n.01')
+lsynset= Synset('sell.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('organism.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('accompaniment.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('accompaniment.n.02')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('backup.n.01')
+ksynset= Synset('musical.n.01')
+lsynset= Synset('support.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('talk.n.01')
+lsynset= Synset('baby.n.01')
+Core number (sorted) : [(u'many', 15), (u'Frederick_Sanger', 14), (u'Sanger', 14), (u'Fred_Sanger', 14), (u'infant', 9), (u'babe', 9), (u'baby', 9), (u'background', 8), (u'provides', 8), (u'supports', 8), (u'backup', 8), (u'support', 8), (u'instrumental', 8), (u'part', 8), (u'accompaniment', 8), (u'vocal', 8), (u'parts', 8), (u'musical_accompaniment', 8), (u'musical', 8), (u'yet', 6), (u'1', 6), (u'technique', 6), (u'young', 6), (u'birth', 6), (u'sequence', 6), (u'born', 6), (u'begun', 6), (u'year', 6), (u'English', 6), (u'invented', 6), (u'insulin', 6), (u'walk', 6), (u'determine', 6), (u'amino', 6), (u'genetic', 6), (u'1918', 6), (u'child', 6), (u'determined', 6), (u'biochemist', 6), (u'acids', 6), (u'organism', 6), (u'talk', 6), (u'different', 5), (u'black', 4), (u'abort', 4), (u'sell', 4), (u'term', 3), (u'Democrat', 3), (u'much', 3), (u'`too', 2), (u'cease', 2), (u'designate', 2), (u'someone', 2), (u'advocate', 2), (u'aborted', 2), (u'quantifier', 2), (u'name', 2), (u'die', 2), (u'large', 2), (u'`as', 2), (u'activity', 2), (u'preceded', 2), (u'often', 2), (u'sign', 2), (u'worn', 2), (u"'", 2), (u'amounting', 2), (u'degree', 2), (u'nature', 2), (u'mourning', 2), (u'`so', 2), (u'extent', 2), (u'great', 2), (u'libertarianism', 2), (u'persuading', 2), (u'amount', 2), (u'number', 2), (u'indefinite', 2), (u'quality', 2), (u'buy', 2), (u'form', 2), (u'Democratic', 2), (u'count', 2), (u'unlike', 2), (u'libertarian', 2), (u'Party', 2), (u'clothing', 2), (u'`that', 2), (u'member', 2), (u'development', 2), (u'used', 2), (u'formally', 2), (u'nouns', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: many ,core number= 15
+This document belongs to class: Frederick_Sanger ,core number= 14
+This document belongs to class: Sanger ,core number= 14
+This document belongs to class: Fred_Sanger ,core number= 14
+This document belongs to class: infant ,core number= 9
+This document belongs to class: babe ,core number= 9
+This document belongs to class: baby ,core number= 9
+This document belongs to class: background ,core number= 8
+This document belongs to class: provides ,core number= 8
+This document belongs to class: supports ,core number= 8
+This document belongs to class: backup ,core number= 8
+	max_core_number 15
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'many', 0.07992336645677364), (u'different', 0.030515739110537496), (u'Fred_Sanger', 0.028868818198996282), (u'Frederick_Sanger', 0.028868818198996275), (u'Sanger', 0.028868818198996275), (u'abort', 0.025574976375913876), (u'sell', 0.025574976375913872), (u'black', 0.02557497637591387), (u'term', 0.02063421364129025), (u'Democrat', 0.02063421364129025), (u'infant', 0.020634213641290245), (u'much', 0.020634213641290245), (u'babe', 0.020634213641290245), (u'baby', 0.020634213641290245), (u'backup', 0.01569345090666663), (u'support', 0.01569345090666663), (u'accompaniment', 0.01569345090666663), (u'musical_accompaniment', 0.01569345090666663), (u'libertarian', 0.015693450906666625), (u'vocal', 0.008282306804731203), (u'parts', 0.008282306804731203), (u'background', 0.008282306804731202), (u'advocate', 0.008282306804731202), (u'provides', 0.008282306804731202), (u'supports', 0.008282306804731202), (u'libertarianism', 0.008282306804731202), (u'instrumental', 0.008282306804731202), (u'part', 0.008282306804731202), (u'musical', 0.008282306804731202), (u'designate', 0.007458846348960599), (u'name', 0.007458846348960599), (u'extent', 0.007458846348960599), (u'great', 0.007458846348960599), (u'amount', 0.007458846348960599), (u'Democratic', 0.007458846348960599), (u'Party', 0.007458846348960599), (u'member', 0.007458846348960599), (u'formally', 0.007458846348960599), (u'yet', 0.007458846348960596), (u'1', 0.007458846348960596), (u'young', 0.007458846348960596), (u'birth', 0.007458846348960596), (u'begun', 0.007458846348960596), (u'year', 0.007458846348960596), (u'walk', 0.007458846348960596), (u'child', 0.007458846348960596), (u'talk', 0.007458846348960596), (u'cease', 0.007047116121075301), (u'aborted', 0.007047116121075301), (u'die', 0.007047116121075301), (u'development', 0.007047116121075301), (u'someone', 0.007047116121075299), (u'activity', 0.007047116121075299), (u'persuading', 0.007047116121075299), (u'buy', 0.007047116121075299), (u'sign', 0.007047116121075298), (u'worn', 0.007047116121075298), (u'mourning', 0.007047116121075298), (u'clothing', 0.007047116121075298), (u'sequence', 0.0068706603091244515), (u'born', 0.0068706603091244515), (u'English', 0.0068706603091244515), (u'invented', 0.0068706603091244515), (u'insulin', 0.0068706603091244515), (u'determine', 0.0068706603091244515), (u'amino', 0.0068706603091244515), (u'genetic', 0.0068706603091244515), (u'1918', 0.0068706603091244515), (u'determined', 0.0068706603091244515), (u'biochemist', 0.0068706603091244515), (u'acids', 0.0068706603091244515), (u'organism', 0.0068706603091244515), (u'technique', 0.006870660309124451), (u'degree', 0.00680007798434412), (u'nature', 0.00680007798434412), (u'quality', 0.00680007798434412), (u'form', 0.00680007798434412), (u'unlike', 0.00680007798434412), (u'`too', 0.006141309619727635), (u'quantifier', 0.006141309619727635), (u'large', 0.006141309619727635), (u'`as', 0.006141309619727635), (u'preceded', 0.006141309619727635), (u'often', 0.006141309619727635), (u"'", 0.006141309619727635), (u'amounting', 0.006141309619727635), (u'`so', 0.006141309619727635), (u'number', 0.006141309619727635), (u'indefinite', 0.006141309619727635), (u'count', 0.006141309619727635), (u'`that', 0.006141309619727635), (u'used', 0.006141309619727635), (u'nouns', 0.006141309619727635)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.625
+Negativity =  0.375
+Objectivity =  8.0
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  baby :  0.0
+posscore of  baby :  0.0
+negscore of  background :  0.0
+posscore of  background :  0.0
+negscore of  provides :  0.0
+posscore of  provides :  0.0
+negscore of  supports :  0.0
+posscore of  supports :  0.0
+negscore of  backup :  0.5
+posscore of  backup :  0.0
+negscore of  support :  0.0
+posscore of  support :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  accompaniment :  0.0
+posscore of  accompaniment :  0.0
+negscore of  vocal :  0.0
+posscore of  vocal :  0.0
+negscore of  parts :  0.0
+posscore of  parts :  0.0
+negscore of  musical :  0.0
+posscore of  musical :  0.0
+negscore of  yet :  0.0
+posscore of  yet :  0.25
+negscore of  young :  0.125
+posscore of  young :  0.0
+negscore of  birth :  0.0
+posscore of  birth :  0.0
+negscore of  sequence :  0.0
+posscore of  sequence :  0.0
+negscore of  born :  0.0
+posscore of  born :  0.0
+negscore of  begun :  0.0
+posscore of  begun :  0.0
+negscore of  year :  0.0
+posscore of  year :  0.0
+negscore of  English :  0.0
+posscore of  English :  0.0
+negscore of  walk :  0.0
+posscore of  walk :  0.0
+negscore of  determine :  0.0
+posscore of  determine :  0.0
+negscore of  genetic :  0.0
+posscore of  genetic :  0.0
+negscore of  child :  0.0
+posscore of  child :  0.0
+negscore of  determined :  0.0
+posscore of  determined :  0.0
+negscore of  talk :  0.125
+posscore of  talk :  0.0
+negscore of  black :  0.375
+posscore of  black :  0.0
+negscore of  abort :  0.0
+posscore of  abort :  0.0
+negscore of  sell :  0.0
+posscore of  sell :  0.0
+negscore of  term :  0.0
+posscore of  term :  0.0
+negscore of  much :  0.125
+posscore of  much :  0.125
+negscore of  cease :  0.0
+posscore of  cease :  0.0
+negscore of  designate :  0.0
+posscore of  designate :  0.0
+negscore of  advocate :  0.0
+posscore of  advocate :  0.0
+negscore of  aborted :  0.625
+posscore of  aborted :  0.0
+negscore of  name :  0.0
+posscore of  name :  0.0
+negscore of  die :  0.0
+posscore of  die :  0.0
+negscore of  large :  0.0
+posscore of  large :  0.0
+negscore of  activity :  0.0
+posscore of  activity :  0.125
+negscore of  preceded :  0.0
+posscore of  preceded :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  sign :  0.0
+posscore of  sign :  0.0
+negscore of  worn :  0.25
+posscore of  worn :  0.0
+negscore of  amounting :  0.0
+posscore of  amounting :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  nature :  0.0
+posscore of  nature :  0.5
+negscore of  mourning :  0.375
+posscore of  mourning :  0.0
+negscore of  amount :  0.0
+posscore of  amount :  0.0
+negscore of  number :  0.375
+posscore of  number :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  buy :  0.0
+posscore of  buy :  0.5
+negscore of  form :  0.0
+posscore of  form :  0.0
+negscore of  count :  0.0
+posscore of  count :  0.0
+negscore of  Party :  0.0
+posscore of  Party :  0.0
+negscore of  clothing :  0.0
+posscore of  clothing :  0.0
+negscore of  member :  0.0
+posscore of  member :  0.0
+negscore of  development :  0.0
+posscore of  development :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+clique: [u'development', u'abort']
+clique: [u'infant', u'begun']
+clique: [u'infant', u'child']
+clique: [u'infant', u'young']
+clique: [u'infant', u'walk']
+clique: [u'infant', u'1']
+clique: [u'infant', u'birth']
+clique: [u'infant', u'year']
+clique: [u'infant', u'yet']
+clique: [u'infant', u'talk']
+clique: [u'aborted', u'abort']
+clique: [u'sequence', u'Fred_Sanger']
+clique: [u'sequence', u'Sanger']
+clique: [u'sequence', u'Frederick_Sanger']
+clique: [u'Fred_Sanger', u'acids']
+clique: [u'Fred_Sanger', u'biochemist']
+clique: [u'Fred_Sanger', u'born']
+clique: [u'Fred_Sanger', u'technique']
+clique: [u'Fred_Sanger', u'1918']
+clique: [u'Fred_Sanger', u'genetic']
+clique: [u'Fred_Sanger', u'determined']
+clique: [u'Fred_Sanger', u'insulin']
+clique: [u'Fred_Sanger', u'determine']
+clique: [u'Fred_Sanger', u'English']
+clique: [u'Fred_Sanger', u'invented']
+clique: [u'Fred_Sanger', u'organism']
+clique: [u'Fred_Sanger', u'amino']
+clique: [u'child', u'baby']
+clique: [u'child', u'babe']
+clique: [u'abort', u'die']
+clique: [u'abort', u'cease']
+clique: [u'sign', u'black']
+clique: [u'born', u'Sanger']
+clique: [u'born', u'Frederick_Sanger']
+clique: [u'determine', u'Sanger']
+clique: [u'determine', u'Frederick_Sanger']
+clique: [u'buy', u'sell']
+clique: [u'vocal', u'backup']
+clique: [u'vocal', u'support']
+clique: [u'vocal', u'accompaniment']
+clique: [u'vocal', u'musical_accompaniment']
+clique: [u'begun', u'baby']
+clique: [u'begun', u'babe']
+clique: [u'year', u'baby']
+clique: [u'year', u'babe']
+clique: [u'libertarian', u'libertarianism']
+clique: [u'libertarian', u'advocate']
+clique: [u'Party', u'Democrat']
+clique: [u'quality', u'different']
+clique: [u'yet', u'baby']
+clique: [u'yet', u'babe']
+clique: [u'amino', u'Sanger']
+clique: [u'amino', u'Frederick_Sanger']
+clique: [u'sell', u'someone']
+clique: [u'sell', u'persuading']
+clique: [u'sell', u'activity']
+clique: [u'member', u'Democrat']
+clique: [u'different', u'degree']
+clique: [u'different', u'form']
+clique: [u'different', u'unlike']
+clique: [u'different', u'nature']
+clique: [u'Democratic', u'Democrat']
+clique: [u'clothing', u'black']
+clique: [u'support', u'provides']
+clique: [u'support', u'parts']
+clique: [u'support', u'instrumental']
+clique: [u'support', u'part']
+clique: [u'support', u'background']
+clique: [u'support', u'supports']
+clique: [u'support', u'musical']
+clique: [u'technique', u'Sanger']
+clique: [u'technique', u'Frederick_Sanger']
+clique: [u'young', u'baby']
+clique: [u'young', u'babe']
+clique: [u'1', u'baby']
+clique: [u'1', u'babe']
+clique: [u'genetic', u'Sanger']
+clique: [u'genetic', u'Frederick_Sanger']
+clique: [u'much', u'great']
+clique: [u'much', u'amount']
+clique: [u'much', u'extent']
+clique: [u'black', u'worn']
+clique: [u'black', u'mourning']
+clique: [u'provides', u'backup']
+clique: [u'provides', u'accompaniment']
+clique: [u'provides', u'musical_accompaniment']
+clique: [u'musical_accompaniment', u'parts']
+clique: [u'musical_accompaniment', u'instrumental']
+clique: [u'musical_accompaniment', u'part']
+clique: [u'musical_accompaniment', u'background']
+clique: [u'musical_accompaniment', u'supports']
+clique: [u'musical_accompaniment', u'musical']
+clique: [u'many', u'count']
+clique: [u'many', u'preceded']
+clique: [u'many', u'used']
+clique: [u'many', u'often']
+clique: [u'many', u"'"]
+clique: [u'many', u'`that']
+clique: [u'many', u'number']
+clique: [u'many', u'large']
+clique: [u'many', u'`too']
+clique: [u'many', u'`as']
+clique: [u'many', u'`so']
+clique: [u'many', u'nouns']
+clique: [u'many', u'quantifier']
+clique: [u'many', u'indefinite']
+clique: [u'many', u'amounting']
+clique: [u'supports', u'backup']
+clique: [u'supports', u'accompaniment']
+clique: [u'designate', u'term']
+clique: [u'babe', u'birth']
+clique: [u'babe', u'talk']
+clique: [u'babe', u'walk']
+clique: [u'biochemist', u'Sanger']
+clique: [u'biochemist', u'Frederick_Sanger']
+clique: [u'formally', u'term']
+clique: [u'background', u'backup']
+clique: [u'background', u'accompaniment']
+clique: [u'walk', u'baby']
+clique: [u'1918', u'Sanger']
+clique: [u'1918', u'Frederick_Sanger']
+clique: [u'part', u'backup']
+clique: [u'part', u'accompaniment']
+clique: [u'accompaniment', u'instrumental']
+clique: [u'accompaniment', u'parts']
+clique: [u'accompaniment', u'musical']
+clique: [u'birth', u'baby']
+clique: [u'English', u'Sanger']
+clique: [u'English', u'Frederick_Sanger']
+clique: [u'baby', u'talk']
+clique: [u'invented', u'Sanger']
+clique: [u'invented', u'Frederick_Sanger']
+clique: [u'Frederick_Sanger', u'determined']
+clique: [u'Frederick_Sanger', u'acids']
+clique: [u'Frederick_Sanger', u'organism']
+clique: [u'Frederick_Sanger', u'insulin']
+clique: [u'instrumental', u'backup']
+clique: [u'term', u'name']
+clique: [u'acids', u'Sanger']
+clique: [u'parts', u'backup']
+clique: [u'determined', u'Sanger']
+clique: [u'insulin', u'Sanger']
+clique: [u'Sanger', u'organism']
+clique: [u'backup', u'musical']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the tweet
+==================================================================================
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 4.5221925592e+33
+tweet:  2
+defaultdict(<type 'list'>, {u'aborted': [u'abort'], u'office': [u'mayoral'], u'`too': [u'many'], u'cease': [u'abort'], u'brittle': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'yet': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'member': [u'Democrat', u'Democrat', u'Democrat'], u'technique': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'young': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'black': [u'black'], u'designate': [u'term'], u'someone': [u'sell'], u'advocate': [u'libertarian'], u'background': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'birth': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'quantifier': [u'many'], u'term': [u'term'], u'necessary': [u'must'], u'name': [u'term'], u'die': [u'abort'], u'large': [u'many'], u'`as': [u'many'], u'activity': [u'sell'], u'essential': [u'must'], u'preceded': [u'many'], u'often': [u'many'], u'sequence': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'sign': [u'black'], u'born': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'vocal': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'begun': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'year': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Maryland': [u'Baltimore'], u"'": [u'many'], u'mayor': [u'mayoral'], u'provides': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'supports': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'amounting': [u'many'], u'degree': [u'different'], u'nature': [u'different'], u'mourning': [u'black'], u'`so': [u'many'], u'extent': [u'much'], u'English': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'relating': [u'mayoral'], u'strong': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'great': [u'much'], u'libertarianism': [u'libertarian'], u'bivalent': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'persuading': [u'sell'], u'thing': [u'must'], u'amount': [u'much'], u'insulin': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'major': [u'Baltimore'], u'industrial': [u'Baltimore'], u'number': [u'many'], u'walk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'determine': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'indefinite': [u'many'], u'quality': [u'different'], u'seaport': [u'Baltimore'], u'amino': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'city': [u'Baltimore'], u'invented': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'genetic': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'buy': [u'sell'], u'formally': [u'term'], u'form': [u'different'], u'instrumental': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'1918': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'part': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'child': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'Democratic': [u'Democrat', u'Democrat', u'Democrat'], u'count': [u'many'], u'unlike': [u'different'], u'grey': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'worn': [u'black'], u'determined': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'Party': [u'Democrat', u'Democrat', u'Democrat'], u'clothing': [u'black'], u'`that': [u'many'], u'metallic': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'1': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant'], u'parts': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'largest': [u'Baltimore'], u'toxic': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'development': [u'abort'], u'used': [u'many'], u'biochemist': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'nouns': [u'many'], u'center': [u'Baltimore'], u'light': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'acids': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'element': [u'beryllium', u'Be', u'glucinium', u'atomic_number_4'], u'organism': [u'Sanger', u'Frederick_Sanger', u'Fred_Sanger'], u'musical': [u'accompaniment', u'musical_accompaniment', u'backup', u'support'], u'talk': [u'baby', u'babe', u'infant', u'baby', u'babe', u'infant']})
+ksynset= Synset('abort.v.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('office.n.01')
+lsynset= Synset('mayoral.a.01')
+ksynset= Synset('cease.n.01')
+lsynset= Synset('abort.n.01')
+ksynset= Synset('brittle.n.01')
+lsynset= Synset('beryllium.n.01')
+ksynset= Synset('brittle.n.01')
+lsynset= Synset('beryllium.n.01')
+ksynset= Synset('brittle.n.01')
+lsynset= Synset('beryllium.n.01')
+ksynset= Synset('brittle.n.01')
+lsynset= Synset('beryllium.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('yet.r.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('member.n.01')
+lsynset= Synset('democrat.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('technique.n.01')
+lsynset= Synset('sanger.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('young.n.01')
+lsynset= Synset('baby.n.01')
+ksynset= Synset('black.n.01')
+lsynset= Synset('black.n.01')
+ksynset= Synset('designate.v.01')
+lsynset= Synset('term.n.01')
+ksynset= Synset('person.n.01')
+lsynset= Synset('sell.n.01')
