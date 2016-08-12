@@ -4789,4 +4789,21 @@ Reference:
 ---------
 308.1 Introduction to Machine Learning - [Ethem Alpaydin] - Graphical Models
 
+---------------------------------------------------------------------------------------------------------------------------
+309. (FEATURE-DONE) Commits - 12 August 2016 - Boost 1.58.0 upgrade from 1.55.0 - Boost::Python C++ extensions for VIRGO
+---------------------------------------------------------------------------------------------------------------------------
+1.Rebuilt Boost::Python extensions for VIRGO Linux kernel system calls with boost 1.58 upgraded from boost 1.55.
+2.kern.log for miscellaneous VIRGO system calls from both telnet and system call request routes has been compressed and committed to
+testlogs (~300MB).
+Following multiple debug options were tried out for heisencrash resolution (Note to self):
+3./etc/sysctl.conf has been updated with kernel panic tunables with which the mean time between crashes has increased and crash location is
+deep within kernel (VMA paging) - commits for this are in VIRGO linux tree. With these settings following usecase works:
+        virgo_cloud_malloc()
+        virgo_cloud_set()
+        virgo_cloud_get()
+        virgo_cloud_set() overwrite
+        virgo_cloud_get()
+through telnet route.
+4.Debugging VIRGO linux kernel with an Oracle VirtualBox virtual machine installation and debugging the VM with a netconsole port via KGDB was explored, but there are serious issues with VirtualBox initialization in Qt5.
+5.Debugging VIRGO linux kernel with QEMU-KVM installation and debugging the VM with a netconsole port via KGDB is being explored. Reference documentation at: https://www.kernel.org/doc/Documentation/gdb-kernel-debugging.txt
  
