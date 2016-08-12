@@ -967,6 +967,11 @@ Additional references:
 	34.42) Batcher's Bitonic Sort is in NC - https://web.cs.dal.ca/~arc/teaching/CS4125/Lectures/03b-ParallelAnalysis.pptx - also other
 PRAM algorithms are in NC.
 
+	34.43) Brief Overview of Parallel Algorithms, Work-Time Efficiency and NC - [Blelloch] - http://www.cs.cmu.edu/~scandal/html-papers/short/short.html - "... Examples of problems in NC include sorting, finding minimum-cost spanning trees, and finding convex hulls ...". Work-Time Edfficiency is more about optimizing number of processors required (with polylog time) and two algorithms with differing work-time are both theoretically in NC.
+
+	34.44) Sorting n integers is in NC - [BussCookGuptaRamachandran] - www.math.ucsd.edu/~sbuss/ResearchWeb/Boolean2/finalversion.ps
+
+	34.45) PRAM and Circuit Equivalence - [Savage] - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation.pdf - Lemma 8.14.1
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
