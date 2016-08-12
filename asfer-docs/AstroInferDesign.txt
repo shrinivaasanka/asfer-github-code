@@ -259,6 +259,15 @@ In other words, a precise estimate of voter or voting error from table above whi
 which may be more or less than NoiseSensitivity depending on cancellation of other conditional probability terms. This is the error term that
 has to be substituted for each voter decision making error. Because of this delta, NoiseSensitivity (and NoiseStability) mentioned everywhere in this document in P(Good) binomial summation and majority voting circuit is indeed NoiseSensitivity (and NoiseStability) (+ or -) delta. Previous probability coalesces Noise and Error into one expressible quantity - i.e denoisification + derandomization.
 
+When Probability of Bad Decision is 0 across the board for all voters, the Pr(Good) series converges to 100% and previous identity can be equated to zero and NoiseSensity is derived as:
+	NoiseSensitivity = {Pr(f(x)=1, f(x/e)=0)/x in L, x/e not in L}
+                           {Pr(f(x)=0, f(x/e)=1)/x not in L, x/e in L}
+                           - {Pr(f(x)=f(x/e))/x in L, x/e not in L}
+                           - {Pr(f(x)=f(x/e))/x not in L, x/e in L}
+
+Above matrix of 8 scenarios and identity above give somewhat a counterintuitive and startling possibility that NoiseSensitivity of a voter's decision boolean function can be non-zero despite the convergence of Pr(Good) Majority Voting binomial series when some error terms do not cancel out in previous expression. This implies that there are fringe, rarest of rare cases where voting can be perfect despite flawed decision boolean functions.
+
+
 -------------------------------------------------------------------------------------------------
 Hastad Switching Lemma, P(Good) Majority Voting circuit and Election Approximation or Forecasting
 -------------------------------------------------------------------------------------------------
