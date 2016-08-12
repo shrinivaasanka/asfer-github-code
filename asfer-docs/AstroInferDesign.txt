@@ -967,7 +967,7 @@ Additional references:
 	34.42) Batcher's Bitonic Sort is in NC - https://web.cs.dal.ca/~arc/teaching/CS4125/Lectures/03b-ParallelAnalysis.pptx - also other
 PRAM algorithms are in NC.
 
-	34.43) Brief Overview of Parallel Algorithms, Work-Time Efficiency and NC - [Blelloch] - http://www.cs.cmu.edu/~scandal/html-papers/short/short.html - "... Examples of problems in NC include sorting, finding minimum-cost spanning trees, and finding convex hulls ...". Work-Time Edfficiency is more about optimizing number of processors required (with polylog time) and two algorithms with differing work-time are both theoretically in NC.
+	34.43) Brief Overview of Parallel Algorithms, Work-Time Efficiency and NC - [Blelloch] - http://www.cs.cmu.edu/~scandal/html-papers/short/short.html - "... Examples of problems in NC include sorting, finding minimum-cost spanning trees, and finding convex hulls ...". Work-Time Efficiency is more about optimizing number of processors required (with polylog time) and two algorithms with differing work-time are both theoretically in NC.
 
 	34.44) Sorting n integers is in NC - [BussCookGuptaRamachandran] - www.math.ucsd.edu/~sbuss/ResearchWeb/Boolean2/finalversion.ps
 
