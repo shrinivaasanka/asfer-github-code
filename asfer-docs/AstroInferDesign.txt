@@ -4820,3 +4820,17 @@ window are analyzed in frequency domain with a Discrete Fourier Transform. If th
 sinusoids which superimpose to form the original data. In discrete sense, sinusoids partition the data at any time point. Following the
 relation between hash functions and integer partitions in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf ,
 each of n discrete sinusoid in DFT corresponds to a hash function and the time-series sliding window is an amalgamation of n hash functions.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+311. (THEORY) Pr(Good) Majority Voting Circuit, Percolation, PRG choice and Boolean Circuit Composition  - related to 14, 53.12 and 129
+----------------------------------------------------------------------------------------------------------------------------------------
+Even though Percolation circuit is in Noise Stability Regime with zero sensitivity and 100% stability, delta term mentioned in matrix
+of 14 and 53 (second column) need not be zero which could force percolation circuit to be in BPNC. Problem is then derandomizing BPNC. (Open question: Is BPNC in NC/poly?). Thus LHS of Pr(Good) could be in BPNC which coincides with [Applebaum] NC1 PRG based pseudorandom choice described in - https://5d99cf42-a-62cb3a1a-s-sites.googlegroups.com/site/kuja27/LowerBoundsForMajorityVotingPseudorandomChoice.pdf and https://5d99cf42-a-62cb3a1a-s-sites.googlegroups.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC_2014.pdf. Boolean Function Composition is preferred over Oracle results for Majority Voting circuit which is an NC1 circuit with CircuitSAT as inputs for each voter. This infact "Boolean Circuit Composition" corresponding to Boolean Function Composition.
+
+References:
+-----------
+311.1 Mathematical Techniques for Analysis of Boolean Functions - [AnnaBernasconi] - 2.8.2 Boolean Function Composition - www.di.unipi.it/~annab/tesi.ps.gz
+311.2 Properties and Applications of Boolean Function Composition - [AvishayTal] - eccc.hpi-web.de/report/2012/163/download/
+311.3 Boolean Circuit Composition - www.cs.tau.ac.il/~safra/ACT/CCandSpaceB.ppt
+
+ 
