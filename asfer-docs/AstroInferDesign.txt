@@ -4811,4 +4811,12 @@ deep within kernel (VMA paging) - commits for this are in VIRGO linux tree. With
 through telnet route.
 4.Debugging VIRGO linux kernel with an Oracle VirtualBox virtual machine installation and debugging the VM with a netconsole port via KGDB was explored, but there are serious issues with VirtualBox initialization in Qt5.
 5.Debugging VIRGO linux kernel with QEMU-KVM installation and debugging the VM with a netconsole port via KGDB is being explored. Reference documentation at: https://www.kernel.org/doc/Documentation/gdb-kernel-debugging.txt
- 
+
+---------------------------------------------------------------------------------------------------------------------------
+310. (THEORY) DFT of a Sliding Window Fragment of Time Series, Integer Partitions and Hashing
+---------------------------------------------------------------------------------------------------------------------------
+Time Series Data Stream can be viewed through a sliding window of some fixed width moving across the data. Captured data points in such
+window are analyzed in frequency domain with a Discrete Fourier Transform. If there are n frequencies in the window of data,there are n
+sinusoids which superimpose to form the original data. In discrete sense, sinusoids partition the data at any time point. Following the
+relation between hash functions and integer partitions in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf ,
+each of n discrete sinusoid in DFT corresponds to a hash function and the time-series sliding window is an amalgamation of n hash functions.
