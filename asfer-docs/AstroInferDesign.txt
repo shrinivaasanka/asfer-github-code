@@ -5337,3 +5337,14 @@ References:
 314.1 Definition of Pseudorandomness - Simpler Distinguisher - http://people.seas.harvard.edu/~salil/pseudorandomness/prgs.pdf - Page 217 and Proposition 7.8 in Page 218
 314.2 Definition of Pseudorandomness - Counting argument - http://www.cse.iitk.ac.in/users/manindra/survey/complexity25.pdf - Page 3 - Definition 21
 314.3 Lambda-tolerant Randomized Boolean Decision Trees - https://www.math.u-szeged.hu/~hajnal/research/papers/dec_surv.gz - Page 5
+
+------------------------------------------------------------------------------------------
+315. (FEATURE-DONE) NeuronRain AsFer Commits for Virgo Linux - Commits - 25 August 2016
+------------------------------------------------------------------------------------------
+Kernel Panic investigation for boost::python c++ invocations of Virgo System Calls
+------------------------------------------------------------------------------------------
+1.Python code in AsFer that invokes Virgo Linux system calls by boost::python C++ bindings is being investigated further for mystery and random crashes that occur after system call code and driver end code is finished.
+2.kern.log with 3 iterations of virgo_malloc()+virgo_set()+virgo_get() invocations succeeded by panics in random points at kernel has been committed.
+3.Logs also contain the gdb vmlinux debugging showing line numbers within kernel source where panics occur. Prima facie look unrelated directly to virgo system calls and driver code. Debugging through KVM+QEMU is ruled out because of lack of VT-x.
+
+
