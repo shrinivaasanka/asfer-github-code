@@ -5354,3 +5354,36 @@ Kernel Panic investigation for boost::python c++ invocations of Virgo System Cal
 ------------------------------------------------------------------------------------------
 kern.log with panic in FS code after boost::python C++ AsFer-VIRGO Linux system calls invocations
 
+---------------------------------------------------------------------------------------------------------------------------------
+317. (THEORY) Generic Definitions of Majority and Non-majority Choice Errors and some contradictions - related to 14 and 53.14
+---------------------------------------------------------------------------------------------------------------------------------
+Majority Voting Social Choice has usual meaning of aggregation of for and against votes. Non-majority Social Choice can be in two
+flavours:
+	317.1 Pseudorandom Choice - a Pseudorandom Generator chooses a voting function from a set of Voting functions of electorate
+	317.2 Social choice by ranking - set of boolean functions are ranked ascending in their error probabilities and least error boolean function is chosen.
+
+Algorithm for 317.1:
+There are pseudorandom generators in NC(Applebaum PRG, Parallel PRGs etc.,) which choose a boolean function at random. This chosen boolean function can be Percolation boolean function too which is again in non-uniform NC. Thus Non-majority social choice can be done in NC.
+
+If there are n boolean functions in total and probability that a boolean function i with goodness e(i) is chosen is:
+	= x(e(i))/n, where x(e(i)) is the number of boolean functions with goodness e(i)
+When voter boolean functions have unequal error probabilities, the distribution is Poisson Binomial (which is for bernoulli trials with unequal probabilities for each event) and not Binomial or Poisson(which is the limit of Binomial distribution). This fraction is the LHS and in special case can be 1 when all boolean functions are of same goodness (1-error) probability. Thus LHS goodness is conditional probability x(e(i))/n * e(i) and can be 1 when all boolean functions are perfect.
+
+Thus most generic Majority voting case is when:
+	317.3 Voters have unequal decision errors
+	317.4 Set of voter boolean functions is an assorted mix of varied error probabilites ranging from 0 to 1.
+	317.5 Modelled by Poisson Binomial Distribution
+
+In both Majority and Non-majority Choice, error of a boolean function comprises:
+	317.6 Voting Error - Error intrinsic to boolean function in Decision tree evaluation (lambda-tolerant randomized decision trees) mentioned in 314.
+	317.7 Voter Error - Noise Sensitivity of boolean function which has extraneous reasons like correlated flipped bit strings.
+Voting error 317.6 adds one additional scenario to error matrix of 8 possibilities in 14 and 53.14 which is beyond just correlation error.
+
+As mentioned elsewhere in this document and disclaimer earlier, LHS circuit is a lowerbound to RHS circuit for a C-complete class of problems when errors are equal, assuming complete problems exist for class C. When both LHS and RHS have errors, which is the most realistic case, LHS is a BPNC circuit and RHS is a BPEXP circuit with unrestricted depth of exponential sized circuit. This raises a contradiction to already known result as follows: BPP is not known to have complete problems. [Marek Karpinski and Rutger Verbeek - KV87] show that BPEXP is not in BPP and EXP is in BPEXP. If there are BPEXP-complete problems then contradiction is LHS is a BPNC algorithm to RHS BPNEXP-complete problem. But BPNC is in BPP (logdepth, polysize circuit with error can be simulated in polytime with error) and BPEXP is not in BPP. This contradiction is resolved only if there are no BPEXP-complete problems or there are no BPNC/BPNEXP voting functions.
+
+References:
+----------
+317.8 Derandomization Overview - [Kabanets] - http://www.cs.sfu.ca/~kabanets/papers/derand_survey.pdf
+317.9 Unconditional Lowerbounds against advice - [BuhrmanFortnowSanthanam] - http://homepages.inf.ed.ac.uk/rsanthan/Papers/AdviceLowerBoundICALP.pdf
+
+
