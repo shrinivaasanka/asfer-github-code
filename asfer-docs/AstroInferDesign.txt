@@ -5375,7 +5375,7 @@ Thus most generic Majority voting case is when:
 	317.5 Modelled by Poisson Binomial Distribution
 
 In both Majority and Non-majority Choice, error of a boolean function comprises:
-	317.6 Voting Error - Miscrecorded votes, Probabilistic CNFs
+	317.6 Voting Error - Misrecorded votes, Probabilistic CNFs
 	317.7 Voter Error - Noise Sensitivity of boolean function which has extraneous reasons like correlated flipped bit strings and Error intrinsic to boolean function in Decision tree evaluation (lambda-tolerant randomized decision trees) mentioned in 314.
 Randomized decision tree evaluation in 317.7 adds one additional scenario to error matrix of 8 possibilities in 14 and 53.14 which is beyond just correlation error.
 
@@ -5387,4 +5387,35 @@ References:
 317.8 Derandomization Overview - [Kabanets] - http://www.cs.sfu.ca/~kabanets/papers/derand_survey.pdf
 317.9 Unconditional Lowerbounds against advice - [BuhrmanFortnowSanthanam] - http://homepages.inf.ed.ac.uk/rsanthan/Papers/AdviceLowerBoundICALP.pdf
 
+-------------------------------------------------------------------------------------------------------------------------------
+318. (THEORY) Yao's XOR Lemma, Hardness of Pr(Good) Majority Voting Function Circuit and Majority Version of XOR Lemma
+-------------------------------------------------------------------------------------------------------------------------------
+Caution: Majority Hardness Lemma derivation is still experimental with possible errors.
 
+Hardness of a boolean function is defined as how hard computationally it is to compute the function with a circuit of size s:
+	if Pr(C(x)=f(x)) = delta where C(x) computes boolean function f(x), then f(x) delta-hard.
+Majority function is known to have formula of size O(n^5.3) - from Sorting networks of [AjtaiKomlosSzemeredi] and non-constructive proof by[Valiant]. Majority is computable in log-depth and hence in non-uniform NC1.
+
+Hardness Amplification result by [AndrewYao] states that a strongly-hard boolean function can be constructed from mildly-hard boolean function by amplification of hardness using XOR of multiple instances of function on some distribution of inputs. Following derivation develops intuition for amplification in XOR lemma:
+	318.1 Let f be a boolean function with delta-hardness. Therefore there is a circuit C(x) with size s,such that Pr(C(x)=f(x))=delta. XOR lemma states that there is a circuit C1(x) with size s1, such that Pr(C1(x)=f1(x)) tends to 0.5 > delta where f1(x) = f(x1) XOR f(x2) XOR ... XOR f(xk) for some distribution of inputs x1,x2,x3,...xk.
+	318.2 Each f(xi) in XOR function f1 in 318.1, is either flipped or not flipped. Let Zi be the random variable for flip of f(xi) - Zi=0 if there is no flip and Zi=1 if there is a flip using coin toss. Now the probability of correctly computing XOR of f(xi)s is equal to the sum = Probability that none of f(xi)s are flipped + Probability that even number of f(xi) is flipped. Even flips do not alter XOR outcome while odd flips do. This is nothing but Pr[Z1 XOR Z2 XOR Z3 XOR ... Zk = 0] because even flips cause XOR of Zi=1 to zero. If (1-2*delta) is probability of no flip and 2*delta is probability of a flip, for all Zi(s) Pr(XOR is correctly computed) = (1-2*delta)^k + 0.5*(1-(1-2*delta)^k). The second term is halved because probability of even number of flips is required whereas atleast 1 flip implies both (odd+even).
+	318.3 Pr(Good) majority voting boolean function computes composition of Majority function with Voting functions of individual voters. This can be expressed as: Majn(f1,f2,f3,...fn) for n voters. Till now hardness of this composition is not known in literature. Experimentally, following derivation computes hardness of this composition as below.
+	318.4 For simplicity, it is assumed that all voters have same boolean function with hardness delta computable by circuit size s.
+	318.5 Majority function makes error when the inputs are flipped by some correlation. This Probability that Pr(Maj(x) != Maj(y)) for two correlated strings x and y is termed as Noise Sensitivity. This is precisely the probability that a circuit with access to pseudorandom bits incorrectly computes majority function. Then probability that Majority function is correctly computed is 1-NoiseSensitivity(Majn).
+	318.6 Noise Sensitivity of Majority function is O(1/sqrt(n*epsilon)) where epsilon is probability of flip per bit. Therefore epsilon is nothing but probability that a voter boolean function is incorrectly computed and sent as input to Majority function. This implies Pr(f(x) != C(x)) = 1-delta = 1-Pr(f(x)=C(x)) = epsilon.
+	318.7 Probability that Majority function is computed correctly = 1-NoiseSensitivity = 1-[c/sqrt(n*epsilon)] = 1-[c/sqrt(n*(1-delta))] which is the hardness of Majority+VoterFunctions composition.
+	318.8 Above derivation,if error-free,is the most important conclusion derivable for hardness of Pr(Good) majority voting boolean function circuit composition. Hardness of RHS of Pr(Good) Majority Voting circuit is expressed in terms of hardness of individual voter boolean functions.
+	318.9 Therefore from 318.7, Pr(C(Majn(f(x1),f(x2),...,f(n)) = Majn(f(x1),f(x2),...,f(n))] = 1-[c/sqrt(n*(1-delta))] is the probability that how correctly a circuit of size s1 computes Majn+VoterFunction composition.
+	318.10 Hardness is amplified because 1-[c/sqrt(n*(1-delta)] > delta as follows:
+		1-delta > c/sqrt(n*(1-delta))
+		(1-delta)^2 > c/n*(1-delta)
+		(1-delta)^3 > c/n
+		(1-delta) > cuberoot(c/n)
+		1-cuberoot(c/n) > delta
+		In infinite n, above tends to 1 > delta.
+	318.11 When delta is close to zero i.e even for very weak voter function, hardness for Majn+Voter composition is:
+		1-c/sqrt(n)
+	       which is a huge amplification of hardness for very large n.
+	318.12 Previous step implies that Majority+Voter composition is extremely hard to compute concurring with exponential circuit size (PH or EXP-completeness) of Pr(Good) RHS.
+	318.13 Being extremely hard implies that RHS of Pr(Good) is close to an one-way function.
+	318.14 Huge hardness of Pr(Good) RHS also implies that very strong pseudorandom number generators can be costructed from it.
