@@ -5393,29 +5393,36 @@ References:
 Caution: Majority Hardness Lemma derivation is still experimental with possible errors.
 
 Hardness of a boolean function is defined as how hard computationally it is to compute the function with a circuit of size s:
-	if Pr(C(x)=f(x)) = delta where C(x) computes boolean function f(x), then f(x) delta-hard.
+	if Pr(C(x) != f(x)) = delta where C(x) computes boolean function f(x), then f(x) delta-hard.
 Majority function is known to have formula of size O(n^5.3) - from Sorting networks of [AjtaiKomlosSzemeredi] and non-constructive proof by[Valiant]. Majority is computable in log-depth and hence in non-uniform NC1.
 
 Hardness Amplification result by [AndrewYao] states that a strongly-hard boolean function can be constructed from mildly-hard boolean function by amplification of hardness using XOR of multiple instances of function on some distribution of inputs. Following derivation develops intuition for amplification in XOR lemma:
-	318.1 Let f be a boolean function with delta-hardness. Therefore there is a circuit C(x) with size s,such that Pr(C(x)=f(x))=delta. XOR lemma states that there is a circuit C1(x) with size s1, such that Pr(C1(x)=f1(x)) tends to 0.5 > delta where f1(x) = f(x1) XOR f(x2) XOR ... XOR f(xk) for some distribution of inputs x1,x2,x3,...xk.
+	318.1 Let f be a boolean function with delta-hardness. Therefore there is a circuit C(x) with size s,such that Pr(C(x)!=f(x))=delta. XOR lemma states that there is a circuit C1(x) with size s1, such that Pr(C1(x)!=f1(x)) tends to 0.5 > delta where f1(x) = f(x1) XOR f(x2) XOR ... XOR f(xk) for some distribution of inputs x1,x2,x3,...xk.
 	318.2 Each f(xi) in XOR function f1 in 318.1, is either flipped or not flipped. Let Zi be the random variable for flip of f(xi) - Zi=0 if there is no flip and Zi=1 if there is a flip using coin toss. Now the probability of correctly computing XOR of f(xi)s is equal to the sum = Probability that none of f(xi)s are flipped + Probability that even number of f(xi) is flipped. Even flips do not alter XOR outcome while odd flips do. This is nothing but Pr[Z1 XOR Z2 XOR Z3 XOR ... Zk = 0] because even flips cause XOR of Zi=1 to zero. If (1-2*delta) is probability of no flip and 2*delta is probability of a flip, for all Zi(s) Pr(XOR is correctly computed) = (1-2*delta)^k + 0.5*(1-(1-2*delta)^k). The second term is halved because probability of even number of flips is required whereas atleast 1 flip implies both (odd+even).
 	318.3 Pr(Good) majority voting boolean function computes composition of Majority function with Voting functions of individual voters. This can be expressed as: Majn(f1,f2,f3,...fn) for n voters. Till now hardness of this composition is not known in literature. Experimentally, following derivation computes hardness of this composition as below.
 	318.4 For simplicity, it is assumed that all voters have same boolean function with hardness delta computable by circuit size s.
 	318.5 Majority function makes error when the inputs are flipped by some correlation. This Probability that Pr(Maj(x) != Maj(y)) for two correlated strings x and y is termed as Noise Sensitivity. This is precisely the probability that a circuit with access to pseudorandom bits incorrectly computes majority function. Then probability that Majority function is correctly computed is 1-NoiseSensitivity(Majn).
-	318.6 Noise Sensitivity of Majority function is O(1/sqrt(n*epsilon)) where epsilon is probability of flip per bit. Therefore epsilon is nothing but probability that a voter boolean function is incorrectly computed and sent as input to Majority function. This implies Pr(f(x) != C(x)) = 1-delta = 1-Pr(f(x)=C(x)) = epsilon.
-	318.7 Probability that Majority function is computed correctly = 1-NoiseSensitivity = 1-[c/sqrt(n*epsilon)] = 1-[c/sqrt(n*(1-delta))] which is the hardness of Majority+VoterFunctions composition.
+	318.6 Noise Sensitivity of Majority function is O(1/sqrt(n*epsilon)) where epsilon is probability of flip per bit. Therefore epsilon is nothing but probability that a voter boolean function is incorrectly computed and sent as input to Majority function. This implies Pr(f(x) != C(x)) = delta = epsilon = hardness of all voter functions.
+	318.7 Probability that Majority function is computed incorrectly = NoiseSensitivity = [c/sqrt(n*epsilon)] = [c/sqrt(n*delta)] which is the hardness of Majority+VoterFunctions composition.
 	318.8 Above derivation,if error-free,is the most important conclusion derivable for hardness of Pr(Good) majority voting boolean function circuit composition. Hardness of RHS of Pr(Good) Majority Voting circuit is expressed in terms of hardness of individual voter boolean functions.
-	318.9 Therefore from 318.7, Pr(C(Majn(f(x1),f(x2),...,f(n)) = Majn(f(x1),f(x2),...,f(n))] = 1-[c/sqrt(n*(1-delta))] is the probability that how correctly a circuit of size s1 computes Majn+VoterFunction composition.
-	318.10 Hardness is amplified because 1-[c/sqrt(n*(1-delta)] > delta as follows:
-		1-delta > c/sqrt(n*(1-delta))
-		(1-delta)^2 > c/n*(1-delta)
-		(1-delta)^3 > c/n
-		(1-delta) > cuberoot(c/n)
-		1-cuberoot(c/n) > delta
-		In infinite n, above tends to 1 > delta.
-	318.11 When delta is close to zero i.e even for very weak voter function, hardness for Majn+Voter composition is:
-		1-c/sqrt(n)
-	       which is a huge amplification of hardness for very large n.
-	318.12 Previous step implies that Majority+Voter composition is extremely hard to compute concurring with exponential circuit size (PH or EXP-completeness) of Pr(Good) RHS.
-	318.13 Being extremely hard implies that RHS of Pr(Good) is close to an one-way function.
-	318.14 Huge hardness of Pr(Good) RHS also implies that very strong pseudorandom number generators can be costructed from it.
+	318.9 Therefore from 318.7, Pr(C(Majn(f(x1),f(x2),...,f(n)) != Majn(f(x1),f(x2),...,f(n))] = [c/sqrt(n*delta)] is the probability that how incorrectly a circuit of size s1 computes Majn+VoterFunction composition = hardness of majority+voter composition.
+	318.10 Hardness is amplified because [c/sqrt(n*delta)] >= delta as follows:
+		Hardness of Maj+voter composition	c/sqrt(n*delta)
+		-----------------------------------  =  --------------- = constant
+		Hardness of voter function		    delta
+
+		=> c^2/n*delta^3 = constant^2 >> 1 because 0 < delta < 1
+	318.11 318.10 implies that for weakly hard functions (low delta), quantity in numerator (hardness of majority+voter composition) is considerably huge compared to hardness of individual voter functions.
+	318.12 318.10 also implies that Majority+Voter composition is extremely hard to compute concurring with exponential circuit size (PH=DC or EXP-completeness) of Pr(Good) RHS.
+	318.13 Being extremely hard implies that RHS of Pr(Good) could be one-way function. One-way functions are hard to invert defined formally as:
+		Pr(f(f_inverse(y))=f(x)) is almost 0.
+For example inverse for Pr(Good) majority voting function is the one that returns set of all voters who voted for a candidate to win. This implies that any electoral process has to be one-way function hard so that secret balloting is not in jeopardy and finding such inverse for majority has to be hardest. Similarity of definition of one-way function and hardness of boolean functions is obvious. Hardness for majority derived previously is for forward composition direction which itself is high.
+	318.14 Conjecture: Circuit for reverse direction (i.e decomposition of majority to voters who voted in favour) is considerably harder than composition and thus Majority(n)+Voter composition is an one-way function. An intuitive proof of this conjecture: Search for all permutations of voters who voted in favour which is of size O(2^n) - equivalent to solving SAT of Majority function boolean formula to find assignments which is NP-hard. Indices of 1s in the assignment strings are the voter permutations. Next step is to find satisfying assignments to individual voter SATs which is also NP-hard. This completely inverts the Majority+Voter composition and cumulatively is atleast NP-hard. While the forward direction is composition of NC instance to voter SATs bottom-up, inverse is harder because it is completely NP-hard top-down.
+	318.15 Huge hardness of Pr(Good) RHS also implies that very strong pseudorandom number generators can be constructed from it.
+	318.16 Huge hardness of Pr(Good) RHS Majority+Voter composition from conjecture in 318.13 implies FP != FNP and thus P != NP.
+
+References:
+-----------
+318.17 [Impagliazzo-Wigderson] - P=BPP if EXP has 2^Omega(n) size circuits - http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/IW97/proc.pdf - Pr(Good) has exponential sized circuits (by theorem 6.29 of [AroraBarak] mentioned in 129 previously) because of unbounded nature of RHS.
+318.18 [Trevisan] - XOR Lemma Course Notes - http://theory.stanford.edu/~trevisan/cs278-02/notes/lecture12.ps
+318.19 [Goldreich-RaniIzsak] - One-way functions and PRGs - http://www.wisdom.weizmann.ac.il/~oded/PDF/mono-cry.pdf
