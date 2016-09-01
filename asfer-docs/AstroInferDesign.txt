@@ -975,6 +975,10 @@ PRAM algorithms are in NC.
 
 	34.46) Efficient Parallel Computation = NC - [AroraBarak] - http://theory.cs.princeton.edu/complexity/book.pdf - Theorem 6.24 - Simpler version of 34.3
 
+	34.47) Parallel sorting and NC - http://courses.csail.mit.edu/6.854/06/notes/n32-parallel.pdf
+
+	34.48) Parallel sorting in PRAM model - http://www.math.ias.edu/~avi/PUBLICATIONS/MYPAPERS/MW87/MW87.pdf 
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
@@ -5431,3 +5435,20 @@ References:
 318.22 [Goldreich-RaniIzsak] - One-way functions and PRGs - http://www.wisdom.weizmann.ac.il/~oded/PDF/mono-cry.pdf
 318.23 Noise Sensitivity of Majority Function - http://pages.cs.wisc.edu/~dieter/Courses/2008s-CS880/Scribes/lecture16.pdf
 318.24 Definition of One-way functions - https://en.wikipedia.org/wiki/One-way_function
+
+----------------------------------------------------------------------------------------------------------------------------
+319. (THEORY) Integer Partitions, Hash Table Functions and Ordered Bell Numbers - related to 272
+----------------------------------------------------------------------------------------------------------------------------
+Number of hash table functions derived in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf, which sums
+all possible permutations of hash buckets per partition does not consider order of elements with in each bucket. Bell number (named after
+Eric Temple Bell) is the number of all possible partitions of a set (induced by all possible equivalence relations). Each hash
+table is a set of equivalence classes (i.e each bucket is an equivalence class and hash function is the relation), partitioning the set.
+Ordered Bell Number takes into account order of keys in each bucket and gives all possible Ordered Hash Table Functions. This is a stronger
+estimate of number of hash table functions than plain counting from integer partitions which is unordered. Unordered n-th Bell Number is
+given by: sigma_k=0_to_n({n,k}) where {n,k} is the Stirling Number of Second kind computing number of ways of partitioning set of size n
+into subsets of size exactly k.
+
+References:
+-----------
+319.1 Unordered Bell Number - https://en.wikipedia.org/wiki/Bell_number
+319.2 Ordered Bell Number - https://en.wikipedia.org/wiki/Ordered_Bell_number
