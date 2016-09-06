@@ -1,0 +1,44 @@
+snd_seq_midi virgo_queue(O) serio_raw snd_seq_midi_event snd_rawmidi snd_seq kingcobra_main_kernelspace(O) media lpc_ich virgo_kernel_analytics(
+O) drm_kms_helper snd_timer wmi snd_seq_device mac_hid drm snd parport_pc binfmt_misc ppdev lp soundcore shpchp parport video i2c_algo_bit hid_g
+eneric usbhid hid uas(O) ums_realtek(O) usb_storage(O) psmouse ahci libahci sky2
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] CPU: 0 PID: 34 Comm: kswapd0 Tainted: G           O    4.1.5 #15
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] task: f5a0b280 ti: f5b68000 task.ti: f5b68000
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] EIP: 0060:[<c13557c3>] EFLAGS: 00010246 CPU: 0
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] EIP is at __sg_page_iter_next.part.9+0x33/0xa0
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] EAX: f5b69d30 EBX: 6e72656b ECX: 00000000 EDX: 6e72656b
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] ESI: 00000000 EDI: fa1f2a04 EBP: f5b69d1c ESP: f5b69d14
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] CR0: 8005003b CR2: 6e726573 CR3: 01bca000 CR4: 000406f0
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] Stack:
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  f1d1a200 00000000 f5b69d24 c1355845 f5b69d40 f8c406cf 00000000 6e72656b
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  00000000 70736c65 00000001 f5b69d50 fa17391f f1d1a200 00000001 f5b69d74
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  fa173c99 f74bd538 00000000 f5b69d84 00000000 f1d1a200 f1d1a200 fa1f2a04
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010] Call Trace:
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<c1355845>] __sg_page_iter_next+0x15/0x30
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<f8c406cf>] drm_clflush_sg+0x7f/0xb0 [drm]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<fa17391f>] i915_gem_clflush_object+0x5f/0xb0 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<fa173c99>] i915_gem_object_set_to_cpu_domain+0xf9/0x190 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<fa173f2c>] i915_gem_object_put_pages_gtt+0x2c/0x190 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<fa174bae>] ? i915_gem_vma_destroy+0x6e/0xb0 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.664010]  [<fa171ef4>] i915_gem_object_put_pages+0x84/0xf0 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<fa1793c2>] i915_gem_shrink+0x122/0x1d0 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<fa1794be>] i915_gem_shrinker_scan+0x4e/0x90 [i915]
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c1163b58>] shrink_slab+0x1a8/0x370
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c11676cc>] shrink_zone+0x26c/0x280
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c1168427>] kswapd+0x3f7/0x870
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c1168030>] ? mem_cgroup_shrink_node_zone+0x120/0x120
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c10818cb>] kthread+0x9b/0xb0
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c17095c1>] ret_from_kernel_thread+0x21/0x30
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698]  [<c1081830>] ? kthread_create_on_node+0x110/0x110
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698] Code: 03 48 0c 8b 18 c7 40 0c 01 00 00 00 89 48 04 eb 1a 8d b4 26 00 00 00 00 8b 70 08 85 db 89 18 8d 56 ff 89 50 08 74 49 85 d2 74 45 <8b> 53 08 03 53 04 81 c2 ff 0f 00 00 c1 ea 0c 39 ca 77 4a 29 d1
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698] EIP: [<c13557c3>] __sg_page_iter_next.part.9+0x33/0xa0 SS:ESP 0068:f5b69d14
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698] CR2: 000000006e726573
+Sep  2 19:27:26 shrinivaasanka-Inspiron-1545 kernel: [  483.757698] ---[ end trace 8e8db36164a807e3 ]---
+Sep  2 19:27:27 shrinivaasanka-Inspiron-1545 kernel: [  484.832080] usb_fill_bulk_urb(): urb->transfer_buffer = USBC^Z^C 
+--------------------------------------------------------------------------------
+(gdb) l *(0xc13557c3)
+0xc13557c3 is in __sg_page_iter_next (/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/lib/scatterlist.c:422).
+417	in /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/lib/scatterlist.c
+--------------------------------------------------------------------------------
