@@ -5437,7 +5437,7 @@ References:
 318.24 Definition of One-way functions - https://en.wikipedia.org/wiki/One-way_function
 
 ----------------------------------------------------------------------------------------------------------------------------
-319. (THEORY) Integer Partitions, Hash Table Functions and Ordered Bell Numbers - related to 272
+319. (THEORY) Integer Partitions, Multiway Contests, Hash Table Functions and Ordered Bell Numbers - related to 256 and 272
 ----------------------------------------------------------------------------------------------------------------------------
 Number of hash table functions derived in https://sites.google.com/site/kuja27/IntegerPartitionAndHashFunctions_2014.pdf, which sums
 all possible permutations of hash buckets per partition does not consider order of elements with in each bucket. Bell number (named after
@@ -5447,6 +5447,26 @@ Ordered Bell Number takes into account order of keys in each bucket and gives al
 estimate of number of hash table functions than plain counting from integer partitions which is unordered. Unordered n-th Bell Number is
 given by: sigma_k=0_to_n({n,k}) where {n,k} is the Stirling Number of Second kind computing number of ways of partitioning set of size n
 into subsets of size exactly k.
+
+Let there be n keys and size of hash table be m. Let hi(x) mod m be a hash function.
+For each hi
+{
+	For each x < n
+	{
+		Compute hi(x) mod m and append to corresponding chain of buckets in hash table
+	}
+}
+
+Above loops create all possible partitions of set of size n. If just the integer partition is reduced to above hash table chains, sum(mP(lambda(i)) is only an approximation. Also Ordered Bell Number is an approximation as it does not permute each partition within a larger set of slots. Stirling Number of second kind {n,k} is equal to number of partitions of an n-element set into k nonempty subsets.Each partition is permuted within m slots in a separate chained hash table and each such permutation is a configuration of a hash function after all keys are populated. Total number of such functions = sum_k=1_to_m(mP({n,k}) which can be called as Augmented Stirling Number and is greater than Ordered Bell Number:
+	sum_k=1_to_m(mP({n,k})) >= Ordered Bell Number = sum_k=1_to_m({n,k})
+
+In multipartisan voting with more than 2 candidates, above augmented stirling number is also the number of all possible voting patterns with an electorate of size n voting on m candidates - each chain is the set of votes for corresponding candidate. Hash function for each voter chooses a candidate index. Thus Chained Hashing with optional sorting of chains on number of votes is Majority Function generalized. From Arrow, Friedgut-Kalai-Nisan and Gibbard-Satterthwaite theorems elections with more than 3 candidates can be manipulated implying multiway majority function has non-zero noise sensitivity.
+
+Probability that above multiway majority function has an error (i.e chooses wrong outcome) =
+Probability of changing one voting pattern to the other
+
+Each voting pattern can be deemed to be a point vertex on an m-dimensional metric space and edges between these vertices are distances to other
+patterns. If each edge has a probability of occurrence, Probability of flip in voting pattern due to a malpractice is the probability of a path existing between these two voting patterns in this random graph. If each each edge has equal probability, path probabilities vary between p and p^(augmented_stirling_number).
 
 References:
 -----------
