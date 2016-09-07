@@ -5466,12 +5466,18 @@ Probability that above multiway majority function has an error (i.e chooses wron
 Probability of changing one voting pattern to the other
 
 Each voting pattern can be deemed to be a point vertex on an m-dimensional metric space and edges between these vertices are distances to other
-patterns. If each edge has a probability of occurrence, Probability of flip in voting pattern due to a malpractice is the probability of a path existing between these two voting patterns in this random graph. If each each edge has equal probability, path probabilities vary between p and p^(augmented_stirling_number).
+patterns. If each edge has a probability of occurrence, Probability of flip in voting pattern due to a malpractice is the probability of a path existing between these two voting patterns in this random graph. If each each edge has equal probability, path probabilities vary between p and p^(augmented_stirling_number). This assumes that any voting error is a converging random walk on the random graph of point vertices of voting pattern in a metric space. It could be a complete graph too which does not require a random walk.
+
+In a sense the multiway majority hashing previously is a locality sensitive hashing wherein similarity between items is defined as voters voting for same candidate who are chained together in a bucket i.e Probability(two voters x and y voting for same candidate are colocated in a bucket) = 1 and Probability(two voters x and y voting for different candidates are colocated in a bucket) = 0 with strict equalities while the distance function is defined as d(x,y) <= r if x and y vote for same candidate and d(x,y) > r else. From m-balls and n-bins problem bounds, for m >> n, maximum number of balls per bin with high probability could be m/n + theta(sqrt(mlogn/n)) - in terms of votes, this is a rough estimate of maximum votes a candidate can get with high probability in random voting.
 
 References:
 -----------
 319.1 Unordered Bell Number - https://en.wikipedia.org/wiki/Bell_number
 319.2 Ordered Bell Number - https://en.wikipedia.org/wiki/Ordered_Bell_number
+319.3 Mining Massive Data Sets - [UllmanRajaramanLeskovec] - http://infolab.stanford.edu/~ullman/mmds/book.pdf
+319.4 Lowerbounds for Locality Sensitive Hashing - [RyanODonnell] - https://www.cs.cmu.edu/~odonnell/papers/lsh.pdf
+319.5 Theory of Partitions - Bell numbers - [GeorgeEAndrews] - http://plouffe.fr/simon/math/Andrews%20G.E.%20The%20Theory%20of%20Partitions%20(Enc.Math.Appl.%202,%20AW,%201976)(266s).pdf
+319.6 Power of Simple Tabulation Hashing - [PatrascuThorup] - http://arxiv.org/pdf/1011.5200v2.pdf - Lemma 4 - Balls and Bins hashing
 
 --------------------------------------------------------------------------------------------------------------------
 320. (BUG-STABILITY ISSUES) Commits - 6 September 2016
