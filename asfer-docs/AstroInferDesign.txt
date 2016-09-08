@@ -5492,4 +5492,9 @@ VIRGO Linux Kernel Stability Analysis - 2 September 2016 and 6 September 2016
 kern.log(s) for Boost::Python invocation of VIRGO system calls with and without crash on two dates have been committed:
 Logs on 2/9/2016 have a crash as usual in VM paging scatterlist.c.Today's invocation logs show perfect execution of whole end-to-end user/kernel space without any kernel panic much later. Such randomness in behaviour is quite unexplainable unless something lurking beyond the code path intercepts this. Could be a mainline kernel bug in 4.1.5 tree.
 
+--------------------------------------------------------------------------------------------------------------------
+321. (BUG-STABILITY ISSUES) Commits - 8 September 2016
+--------------------------------------------------------------------------------------------------------------------
+Continued kernel panic analysis of boost::python-VIRGO system calls invocations. Similar pattern of crashes in vma paging is observed with a
+successful panic-free invocation in the end.
 
