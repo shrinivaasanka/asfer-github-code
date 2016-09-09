@@ -1,0 +1,58 @@
+(gdb) path
+Executable and object file path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+(gdb) path /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/linux-4.1.5-build
+Executable and object file path: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/linux-4.1.5-build:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+(gdb) x (super_cache_count+0x56/0xa0)
+0xc11b8310 <super_cache_count>:	0x00000000
+(gdb) l (super_cache_count+0x56/0xa0)
+Function "(super_cache_count+0x56/0xa0)" not defined.
+(gdb) l *(0xfa22d1c0)
+(gdb) l c1163a99
+Function "c1163a99" not defined.
+(gdb) l 0xc1163a99
+Function "0xc1163a99" not defined.
+(gdb) l *(0xc1163a99)
+0xc1163a99 is in shrink_slab (/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c:251).
+246	/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c: No such file or directory.
+(gdb) l *(dentry_free+0x44/0x90)
+0xc11cb980 is in dentry_free (/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/fs/dcache.c:308).
+303	/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/fs/dcache.c: No such file or directory.
+(gdb)  freeable = shrinker->count_objects(shrinker, shrinkctl);
+Undefined command: "freeable".  Try "help".
+(gdb)         if (freeable == 0)
+ >                return 0;
+ >
+ >
+ >
+ >Quit
+(gdb) static void dentry_free(struct dentry *dentry)
+Undefined command: "static".  Try "help".
+(gdb) {
+Undefined command: "".  Try "help".
+(gdb)         WARN_ON(!hlist_unhashed(&dentry->d_u.d_alias));
+Undefined command: "WARN_ON".  Try "help".
+(gdb)         if (unlikely(dname_external(dentry))) {
+ >                struct external_name *p = external_name(dentry);
+ >                if (likely(atomic_dec_and_test(&p->u.count))) {
+ >                        call_rcu(&dentry->d_u.d_rcu, __d_free_external);
+ >                        return;
+ >                }
+ >Quit
+----------------------------------------------------------------------------------------------------
+(gdb) path /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/linux-4.1.5-build
+Executable and object file path: /media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/linux-4.1.5-build:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/linux-4.1.5:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+(gdb) x *(drm_gem_vm_close+0x27/0x60)
+No symbol "drm_gem_vm_close" in current context.
+(gdb) l *(drm_gem_vm_close+0x27/0x60)
+No symbol "drm_gem_vm_close" in current context.
+(gdb) l *(0xfa22d1c0)
+(gdb) x *(0xfa22d1c0)
+0x0:	Cannot access memory at address 0x0
+(gdb) l *(shrink_slab+0xe9/0x370)
+0xc11639b0 is in shrink_slab (/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c:379).
+374	/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c: No such file or directory.
+-----------------------------------------------------------------------------------------------------
+Intial analysis shows that all the DRM and GEM related kernel panics originate from Graphics Execution Manager for Intel i915 Tungsten
+graphics driver for GPU while trying to free a dcache entry related to a file inode. It is puzzling as to how Graphics driver interferes 
+with VIRGO Linux system calls. 
+-----------------------------------------------------------------------------------------------------
