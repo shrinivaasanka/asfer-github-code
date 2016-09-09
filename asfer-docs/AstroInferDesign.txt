@@ -5502,3 +5502,8 @@ Logs on 2/9/2016 have a crash as usual in VM paging scatterlist.c.Today's invoca
 Continued kernel panic analysis of boost::python-VIRGO system calls invocations. Similar pattern of crashes in vma paging is observed with a
 successful panic-free invocation in the end.
 
+--------------------------------------------------------------------------------------------------------------------
+322. (BUG-STABILITY ISSUES) Commits - 9 September 2016
+--------------------------------------------------------------------------------------------------------------------
+Boost::python-VIRGO system calls invocation kernel panic analysis showing some problem with i915 graphics driver interfering with
+VIRGO system calls.
