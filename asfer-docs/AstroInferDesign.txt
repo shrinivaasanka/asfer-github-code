@@ -5573,9 +5573,9 @@ Define a(i) and b(i) as concatenated ordered pairs of f(xi) and g(xi):
 	a3 = 5,6	b3 = 6,7
 	a4 = 7,8	b4 = 8,9
 	a5 = 9,10	b5 = 10
-[e.g a2 = 3, 4 where f(a2) = 3 and g(a2) = 4; b3= 6,7 where f(b2) = 4 and g(b2) = 5 and so on. Here complement of an element is the succeeding element in universal set Z=1,2,3,4,5,... ]
+[e.g a2 = 3, 4 where f(a2) = 3 and g(a2) = 4; b3= 6,7 where f(b3) = 6 and g(b3) = 7 and so on. Here complement of an element is the succeeding element in universal set Z=1,2,3,4,5,... ]
 
 Then, 1,2,3,4,5 is a sequence such that:
 	a1a2a3a4a5 = b1b2b3b4b5 = 2,3,4,5,6,7,8,9,10
-But previous is a Post Correspondence Problem and undecidable(question of if turing machine halts on input). Since each a(i) and b(i) are concatenated ordered pair of value of f(x) and its complement g(x), complement function is constructible if such ordered pairs exist for indefinite leength. In essence: Finding sequence numbers = Construction of complement function => Undecidable by Post Correspondence Problem. Above example can be generalized for any function, and its complement ordered pair and thus is an alternative proof of undecidability of Complement Function Existence and Construction.
+But previous is a Post Correspondence Problem and undecidable(question of if turing machine halts on input). Since each a(i) and b(i) are concatenated ordered pair of value of f(x) and its complement g(x), complement function is constructible if such ordered pairs exist for indefinite length. In essence: Finding sequence numbers = Construction of complement function => Undecidable by Post Correspondence Problem. Above example can be generalized for any function, and its complement ordered pair and thus is an alternative proof of undecidability of Complement Function Existence and Construction.
 
