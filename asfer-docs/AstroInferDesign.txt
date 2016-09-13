@@ -5579,12 +5579,19 @@ Define a(i) and b(i) as concatenated ordered pairs of f(xi) and g(xi):
 Then, 1,2,3,4,5 is a sequence such that:
 	a1a2a3a4a5 = b1b2b3b4b5 = 2,3,4,5,6,7,8,9,10
 which can be parenthesised in two ways as:
-	2(34)(56)(78)(910) = (23)(45)(67)(89)10 = 2345678910
+	2(3,4)(5,6)(7,8)(9,10) = (2,3)(4,5)(6,7)(8,9)10 = 2,3,4,5,6,7,8,9,10
 Each parenthesization is a string representation of a possible way to construct a complement function. Ideally, process of complementation has two symmetric directions created by the gaps in the range a function maps a domain to - predecessors and successors - which is captured by the two parenthesizations(i.e f is complement of g and g is complement of f). Each substring within the parentheses is indexed by sequence numbers ai and bi. Thus an order of sequence numbers have to be found for both symmetric directions to get matching concatenated union of complements (universal set).  Both directions have to converge because complementation is symmetric relation. But finding such an order of sequence numbers is a Post Correspondence Problem and undecidable(question of if turing machine halts on input). Since each a(i) and b(i) are concatenated ordered pair of value of f(x) and its complement g(x), complement function is constructible if such ordered pairs exist for indefinite length. In essence: Finding an order of sequence numbers = Construction of complement functions which converge in opposing directions => Undecidable by Post Correspondence Problem. Above example can be generalized for any function, and its complement ordered pair and thus is an alternative proof (with a tighter definition of complementation that complements are bidirectional) of undecidability of Complement Function Existence and Construction. Another example is 2 parenthesizations for prime complementation below - elements succeeding a prime in left and elements preceding a prime in right:
 	f(x) = 2,3,5,7,11,...
 	g(x) = 4,6,8,9,10,12,...
 
-	23(4)5(6)7(8910)11 = (23)4(5)6(7)8910(11) = 234567891011
+	([2,3],4)(5,6)(7,[8,9,10])(11) = ([2,3])(4,5)(6,7)([8,9,10],11) = 2,3,4,5,6,7,8,9,10,11
+
+Generic inductive case:
+-----------------------
+	(f(x1),succ(f(x1))(f(x2),succ(f(x2)).... = (predec(g(x1),g(x1))(predec(g(x2),g(x2)).... = Z
+	(or)
+	concatenation_of(f(xi),g(xi)) = concatenation_of(g(xi),f(xi)) = Z
+where succ() and predec() are successor and predecessor functions respectively in lambda calculus jargon and xi take some integer values. This assumes nothing about the sorted order of f(xi) and g(xi) and each ordered pair is arbitrarily sampled and aggregated. f(x) is known and from this complement g(x) has to be constructed(though g(xi) sampled data points are known, g(x) is not). To construct g(x), ordered pairs for g(xi) have to be sequenced as g(0), g(1), ... which amounts to assigning values to xi which is Post Correspondence Problem and undecidable.
 
 Boolean 0-1 majority special case of Hash chains and Complement Functions:
 --------------------------------------------------------------------------
