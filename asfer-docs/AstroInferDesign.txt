@@ -5574,11 +5574,21 @@ Define a(i) and b(i) as concatenated ordered pairs of f(xi) and g(xi):
 	a3 = 5,6	b3 = 6,7
 	a4 = 7,8	b4 = 8,9
 	a5 = 9,10	b5 = 10
-[e.g a2 = 3, 4 where f(a2) = 3 and g(a2) = 4; b3= 6,7 where f(b3) = 6 and g(b3) = 7 and so on. Here complement of an element is the succeeding element in universal set Z=1,2,3,4,5,... ]
+[e.g a2 = 3, 4 where g(a2) = 3 and f(a2) = 4; b3= 6,7 where f(b3) = 6 and g(b3) = 7 and so on. Here complement of an element is the succeeding element in universal set Z=1,2,3,4,5,... ]
 
 Then, 1,2,3,4,5 is a sequence such that:
 	a1a2a3a4a5 = b1b2b3b4b5 = 2,3,4,5,6,7,8,9,10
-But previous is a Post Correspondence Problem and undecidable(question of if turing machine halts on input). Since each a(i) and b(i) are concatenated ordered pair of value of f(x) and its complement g(x), complement function is constructible if such ordered pairs exist for indefinite length. In essence: Finding sequence numbers = Construction of complement function => Undecidable by Post Correspondence Problem. Above example can be generalized for any function, and its complement ordered pair and thus is an alternative proof of undecidability of Complement Function Existence and Construction.
+which can be parenthesised in two ways as:
+	2(34)(56)(78)(910) = (23)(45)(67)(89)10 = 2345678910
+Each parenthesization is a string representation of a possible way to construct a complement function. Ideally, process of complementation has two symmetric directions created by the gaps in the range a function maps a domain to - predecessors and successors - which is captured by the two parenthesizations(i.e f is complement of g and g is complement of f). Each substring within the parentheses is indexed by sequence numbers ai and bi. Thus an order of sequence numbers have to be found for both symmetric directions to get matching concatenated union of complements (universal set).  Both directions have to converge because complementation is symmetric relation. But finding such an order of sequence numbers is a Post Correspondence Problem and undecidable(question of if turing machine halts on input). Since each a(i) and b(i) are concatenated ordered pair of value of f(x) and its complement g(x), complement function is constructible if such ordered pairs exist for indefinite length. In essence: Finding an order of sequence numbers = Construction of complement functions which converge in opposing directions => Undecidable by Post Correspondence Problem. Above example can be generalized for any function, and its complement ordered pair and thus is an alternative proof (with a tighter definition of complementation that complements are bidirectional) of undecidability of Complement Function Existence and Construction. Another example is 2 parenthesizations for prime complementation below - elements succeeding a prime in left and elements preceding a prime in right:
+	f(x) = 2,3,5,7,11,...
+	g(x) = 4,6,8,9,10,12,...
+
+	23(4)5(6)7(8910)11 = (23)4(5)6(7)8910(11) = 234567891011
+
+Boolean 0-1 majority special case of Hash chains and Complement Functions:
+--------------------------------------------------------------------------
+A hash table of size 2 with 2 chains partitions the set of keys into 2 disjoint sets. Each chain in this hash table is created by 2 functions complement to each other (examples previously described: set of odd and even integers, set of primes and composites). Thus if there exists a hash function h that accepts another function f as input and partitions a universal set into two chained buckets with mutually complementary elements belonging to f and g(complement of f), then it is an indirect way to construct a complement. But undecidability of complement construction by post correspondence precludes this.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 324. (FEATURE-DONE) PAC Learning for Prime Numbers encoded as binary strings - Commits - 12 September 2016
