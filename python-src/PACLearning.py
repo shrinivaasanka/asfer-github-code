@@ -40,22 +40,26 @@ primemappings=open("PACLearning_PrimeBitsMapping.txt","r")
 dataset=json.load(primemappings)
 
 i=0
+number_of_variables=0
+
 for d in xrange(len(dataset)):
-	hypothesis={"x1":1, "notx1":1, "x2":2, "notx2":2, "x3":3, "notx3":3, "x4":4, "notx4":4, "x5":5, "notx5":5,"x6":6,"notx6":6,"x7":7,"notx7":7,"x8":8,"notx8":8,"x9":9,"notx9":9, "x10":10,"notx10":10,"x11":11,"notx11":11,"x12":12,"notx12":12,"x13":13,"notx13":13,"x14":14,"notx14":14}
+	hypothesis={"x1":1, "notx1":1, "x2":2, "notx2":2, "x3":3, "notx3":3, "x4":4, "notx4":4, "x5":5, "notx5":5,"x6":6,"notx6":6,"x7":7,"notx7":7,"x8":8,"notx8":8,"x9":9,"notx9":9, "x10":10,"notx10":10,"x11":11,"notx11":11,"x12":12,"notx12":12,"x13":13,"notx13":13,"x14":14,"notx14":14,"x15":15,"notx15":15,"x16":16,"notx16":16}
 
 	for k,v in dataset[d].items():
 		#print "key=",k,";value=",v
 		if v==True:
 			index=0
-			for i in k:
+			for i in k[len(k):0:-1]+k[0]:
 				if i=="1":	
 					try:
+						#print "removing notx"+str(index+1)
 						hypothesis.pop("notx"+str(index+1))
 					except:
 						pass
 				else:
 					if i=="0":	
 						try:
+							#print "removing x"+str(index+1)
 							hypothesis.pop("x"+str(index+1))
 						except:
 							pass
@@ -68,10 +72,14 @@ for d in xrange(len(dataset)):
 			hypothesis.pop("notx"+str(i+1))
 	
 		
-	print "Boolean conjunction hypothesis approximating the dataset:"
+	print "Boolean conjunction hypothesis approximating the dataset for bit position:", number_of_variables
 	print "========================================================="
 	hypostr=""
 	for k,v in hypothesis.items():
-		hypostr= hypostr + k + " /\ "
+		if (k in hypothesis.keys() and "not"+k in hypothesis.keys()):
+			pass
+		else:
+			hypostr= hypostr + k + " /\ "
 	print hypostr[:-3]
+	number_of_variables += 1
 

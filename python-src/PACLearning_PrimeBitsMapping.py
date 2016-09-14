@@ -26,19 +26,21 @@
 import json
 mappings=[]
 primebit=0
-while primebit < 14:
+while primebit < 16:
 	primes=open("First10000PrimesBinary.txt","r")
 	index=0
 	index_to_primebit_dict={}
 	for p in primes:
 		if len(p) < 17:
-			paddinglen=16-len(p)
+			paddinglen=17-len(p)
 			p1 = "0b"
 			for i in xrange(paddinglen):
 				p1 += "0"
 			for s in p[2:]:
 				p1 += s 
 		p=p1
+		if len(p) < 17:
+			print len(p)
 		strbin=str(bin(index))
 		if p[primebit]=='0':
 			index_to_primebit_dict[strbin[2:]]=True
