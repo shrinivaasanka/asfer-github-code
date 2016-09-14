@@ -5597,6 +5597,36 @@ Generic inductive case:
 	concatenation_of(f(xi),g(xi)) = concatenation_of(g(xi),f(xi)) = Z
 where succ() and predec() are successor and predecessor functions respectively in lambda calculus jargon and xi take some integer values. This assumes nothing about the sorted order of f(xi) and g(xi) and each ordered pair is arbitrarily sampled and aggregated. f(x) is known and from this complement g(x) has to be constructed(though g(xi) sampled data points are known, g(x) is not). To construct g(x), ordered pairs for g(xi) have to be sequenced as g(0), g(1), ... which amounts to assigning values to xi which is Post Correspondence Problem and undecidable.
 
+Two complementation parenthesizations can be drawn as step function where indentation denotes complementary g points to f in example below:
+
+			|
+			| f(1)
+			|
+			---------
+				|
+				| g(1)
+				|
+			---------
+			|
+			| f(0)
+			|
+			---------
+				|
+				| g(0)
+				|
+				|
+			---------
+			|
+			| f(2)
+			---------
+				|
+				| g(2)
+				|
+
+which represent two parenthesization correspondences (sequence on right is staggered by one segment):
+	(f(1),g(1))(f(0),g(0))(f(2),g(2)) = (f(1))(g(1),f(0))(g(0),f(2))(g(2)) = f(1)g(1)f(0)g(0)f(2)g(2)
+Hence x1,x2,x3 take values 1,0,2 for string on left. String on the right despite staggering also takes values 1,0,2 for x1,x2,x3 with only slight change - 1,0,2 is represented as 1-0, 0-2, 2 by coalescence of any two juxtaposed xi. This correspondence is undecidable by PCP. This complementation scheme relaxes the definition of complements in http://arxiv.org/pdf/1106.4102v1.pdf by allowing the pre-image of complementary function segments to be in unsorted order - e.g 1,0,2 is not sorted.
+
 Boolean 0-1 majority special case of Hash chains and Complement Functions:
 --------------------------------------------------------------------------
 A hash table of size 2 with 2 chains partitions the set of keys into 2 disjoint sets. Each chain in this hash table is created by 2 functions complement to each other (examples previously described: set of odd and even integers, set of primes and composites). Thus if there exists a hash function h that accepts another function f as input and partitions a universal set into two chained buckets with mutually complementary elements belonging to f and g(complement of f), then it is an indirect way to construct a complement. But undecidability of complement construction by post correspondence precludes this.
