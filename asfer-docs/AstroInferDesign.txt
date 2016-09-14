@@ -5636,4 +5636,7 @@ A hash table of size 2 with 2 chains partitions the set of keys into 2 disjoint 
 ------------------------------------------------------------------------------------------------------------------------------------
 PAC Learning implementation has been augmented to learn patterns in Prime Numbers encoded as binary strings. For each prime bit a boolean conjunction is learnt.  Separate Mapping code has been written in python-src/PACLearning_PrimeBitsMapping.py which json dumps the mapping of first 10000 prime numbers to corresponding i-th prime bit.  Logs for this have been committed to python-src/testlogs/PACLearning.PrimeBitsMappingConjunctions.out.12September2016
 
-
+------------------------------------------------------------------------------------------------------------------------------------
+325. (FEATURE-DONE) PAC Learning for Prime Numbers - Commits - 14 September 2016
+------------------------------------------------------------------------------------------------------------------------------------
+Some errors corrected in bit positions computation in JSON mappings for PAC learning of Prime Numbers. Logs committed to testlogs/
