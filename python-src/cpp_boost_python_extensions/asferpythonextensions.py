@@ -24,6 +24,6 @@
 #--------------------------------------------------------------------------------------------------------
 
 import sys
-sys.path.insert(0,"/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea23/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/cpp_boost_python_extensions/build/lib.linux-i686-2.7/")
+sys.path.insert(0,"/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/python-src/cpp_boost_python_extensions/build/lib.linux-i686-2.7/")
 import asfer_virgo_pyext
 asfer_virgo_pyext.asfer_virgo_set_kernel_analytics("k1","v1")

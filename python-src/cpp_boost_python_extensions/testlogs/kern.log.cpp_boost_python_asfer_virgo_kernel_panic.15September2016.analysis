@@ -1,0 +1,247 @@
+lient socket 
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.665731] BUG: unable to handle kernel paging request at 6e72656b
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.666297] IP: [<f8eeafa9>] drm_vm_close_locked+0x39/0xb0 [drm]
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.666845] *pdpt = 0000000031857001 *pde = 0000000000000000 
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.667340] Oops: 0000 [#1] SMP 
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.667627] Modules linked in: xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquera
+de_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt rfcomm bnep
+ nf_conntrack_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype nf_conntrack_ipv4 i9
+15 nf_defrag_ipv4 xt_conntrack ip6table_filter ip6_tables nf_conntrack_netbios_ns btusb nf_conntrack_broadcast nf_nat_ftp btbcm nf_nat btintel b
+luetooth nf_conntrack_ftp nf_conntrack snd_hda_codec_idt gpio_ich snd_hda_codec_generic snd_hda_intel dell_wmi iptable_filter sparse_keymap ip_t
+ables x_tables dell_laptop snd_hda_controller snd_hda_codec i8k dcdbas snd_hda_core uvcvideo virgo_cloudexec_mempool(O+) virgo_cloud_mempool_ker
+nelspace(O) coretemp virgo_queue(O) snd_pcm kingcobra_main_kernelspace(O) joydev videobuf2_vmalloc serio_raw videobuf2_memops videobuf2_core snd
+_hwdep virgo_kernel_analytics(O) snd_seq_midi snd_seq_midi_event v4l2_common lpc_ich snd_rawmidi videodev snd_seq media parport_pc wmi snd_timer
+ mac_hid ppdev drm_kms_helper snd_seq_device snd lp parport shpchp binfmt_misc drm video soundcore i2c_algo_bit hid_generic usbhid hid uas(O) um
+s_realtek(O) usb_storage(O) ahci psmouse libahci sky2
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] CPU: 1 PID: 3864 Comm: Xorg Tainted: G           O    4.1.5 #15
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] task: e6c34570 ti: f1a60000 task.ti: f1a60000
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] EIP: 0060:[<f8eeafa9>] EFLAGS: 00213a87 CPU: 1
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] EIP is at drm_vm_close_locked+0x39/0xb0 [drm]
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] EAX: e6c4e4c8 EBX: 6e72656b ECX: 6e72656b EDX: cc124180
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] ESI: f16746d0 EDI: cc124180 EBP: f1a61f2c ESP: f1a61f0c
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] CR0: 8005003b CR2: 6e72656b CR3: 31a78b20 CR4: 000406f0
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] Stack:
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  c11cb9c4 f1a61f14 00000000 00000000 00000008 f1a61f2c cc31dc00 e6c4e434
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  f1a61f40 f8ee5087 cc124180 00000000 00000000 f1a61f50 c1181ed6 cc124180
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  edce4c00 f1a61f84 c118423d fffffbe0 b332b000 c9141368 cc124180 b2f0b000
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344] Call Trace:
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  [<c11cb9c4>] ? dentry_free+0x44/0x90
+Sep 15 13:42:43 shrinivaasanka-Inspiron-1545 kernel: [  729.669344]  [<f8ee5087>] drm_gem_vm_close+0x27/0x60 [drm]
+Sep 15 13:42:43 shrinivaasanka-InspironSep 15 13:43:50 shrinivaasanka-Inspiron-1545 kernel: [    7.353024] random: systemd-udevd urandom read wi
+---------------------------------------------------------------------------------
+Intel i915 driver Graphics Execution Manager (GEM) crashcourse:
+1. http://blog.ffwll.ch/2012/10/i915gem-crashcourse.html
+2. https://01.org/linuxgraphics/blogs/vivijim/2012/i915/gem-crashcourse-daniel-vetter
+3. http://blog.ffwll.ch/2012/11/i915gem-crashcourse-part-3.html (on GEM and libDRM)
+---------------------------------------------------------------------------------
+Direct Rendering Manager (DRM) sysfs debugging:
+echo 0xf > /sys/module/drm/parameters/debug
+enables DRM memory allocation debug messages
+--------------------------------------------------------------------------------
+Panic-free VIRGO malloc(),set() and get():
+-------------------------------------------
+cloud_host(before kstrdup): 127.0.0.1 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066759] get_least_loaded_hostport_from_cloud(): get_host_from_cloud_PRG_mempool() re
+turns host ip: 127.0.0.1 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066763] virgo_malloc() syscall: leastloadedhostport->port=30000
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066765] virgo_malloc() syscall: leastloadedhostport->hostip=127.0.0.1<6>[ 3900.06677
+1] virgo_malloc() syscall: after in4_pton and htons, leastloadedhostport->hostip=127.0.0.1, leastloadedhostport->port=30000, sin.sin_addr.s_addr
+=100007f, sin.sin_port=3075
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066774] virgo_malloc() syscall: size=100, sum_alloc_size=0 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066777] 2. virgo_malloc() syscall: size=100, sum_alloc_size=0, chunk_size==100
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066780] int_to_str(): n=100
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066783] int_to_str(): ret=[100]
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066787] virgo_malloc() syscall: malloc_cmd=virgo_cloud_malloc(100), buf=virgo_cloud_
+malloc(100), tempbuf=virgo_cloud_malloc(100)
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066802] virgo_malloc() syscall: created client kernel socket
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.066899] [UFW AUDIT] IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127
+.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=45318 DF PROTO=TCP SPT=57994 DPT=30000 WINDOW=43690 RES=0x00 SYN URGP=0 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067010] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067014] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067034] virgo_malloc() syscall: sent len=3000; iov.iov_base=virgo_cloud_malloc(100),
+ sent message: virgo_cloud_malloc(100), iovbuf=virgo_cloud_malloc(100) 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067084] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067088] virgocloudexec_mempool_create(): before kernel_accept(); sock=f35ec900 ... 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067100] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067104] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067109] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067113] strip_control_M(): str=virgo_cloud_malloc(100) before strsep
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067116] strip_control_M(): newstr=virgo_cloud_malloc(100) after carriage return newl
+ine strsep
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067119] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov
+_base=virgo_cloud_malloc(100), buffer: virgo_cloud_malloc(100)
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067122] virgo_cloudexec_mempool: print_buffer(): 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067124] vi
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067128] rg
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067132] o_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067135] cl
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067138] ou
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067141] d_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067145] ma
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067148] ll
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067151] oc
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067155] (1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067158] 00
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.067161] )<6>[ 3900.067810] <6>[ 3900.068691] virgo_cloudexec_mempool: print_buffer()
+: 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068694] vi
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068697] rg
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068701] o_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068704] cl
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068707] ou
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068711] d_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068714] se
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068717] t(
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068720] e6
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068724] e8
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068727] db
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068730] 80
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068733] ,k
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068737] ey
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068740] 1:
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068743] va
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068746] lu
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068750] e1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.068753] )<6>[ 3900.070415] o_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070419] cl
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070422] ou
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070425] d_
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070428] ge
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070432] t(
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070435] e6
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070438] e8
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070442] db
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070445] 80
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.070448] )<6>[ 3900.071357] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() le32 
+to cpu virgo_cloud_get(e6e8db80)
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071359] virgocloudexec_mempool_recvfrom(): mempoolFunction : virgo_cloud_get(e6e8db8
+0) 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071377] [drm:drm_ioctl] pid=3862, dev=0xe200, auth=1, I915_GEM_BUSY
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071383] [drm:drm_ioctl] pid=3862, dev=0xe200, auth=1, I915_GEM_BUSY
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071388] [drm:drm_ioctl] pid=3862, dev=0xe200, auth=1, I915_GEM_MADVISE
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071395] [drm:drm_ioctl] pid=3862, dev=0xe200, auth=1, I915_GEM_MADVISE
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071468] [drm:drm_ioctl] pid=3862, dev=0xe200, auth=1, I915_GEM_BUSY
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071597] parse_virgomempool_command: vmargs->mempool_cmd: virgo_cloud_get
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071602] parse_virgomempool_command: vmargs->mempool_args[0]: e6e8db80
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071605] mempool_func(): creating kernel thread and waking up, parameterIsExecutable=
+2
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071608] Creating Kernel Thread for virgo_cloud_get in virgo_cloud_mempool_kernelspac
+e mempool driver module with mempool_args[0]=e6e8db80, mempool_args[1]=(null)
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071613] virgo_cloud_mempool_kernelspace.c:Executing virgo_cloud_mempool on cloud nod
+e, Invoking virgo_cloud_get_kernelspace(), Writing to file opened by Kernel, Kernel Space to User space communication works
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071617] virgo_parse_integer(): *s=e, res=0
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071620] virgo_parse_integer(): *s=6, res=14
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071623] virgo_parse_integer(): *s=e, res=230
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071626] virgo_parse_integer(): *s=8, res=3694
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071628] virgo_parse_integer(): *s=d, res=59112
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071631] virgo_parse_integer(): *s=b, res=945805
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071634] virgo_parse_integer(): *s=8, res=15132891
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071637] virgo_parse_integer(): *s=0, res=242126264
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071641] toKernelAddress(): virgo_parse_integer: ll3=-420947072, (char*)ll3=  (null),
+ (void*)ll3=e6e8db80, strAddress=[key1:value1]
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071644] toKernelAddress(): virgo_parse_integer: data at (char*)ll3=[key1:value1]
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071646] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): data at pt
+r parsed by toKernelAddress() = [key1:value1]
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071651] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): address=e6
+e8db80, data=key1:value1, data with added prefix=virgodata:key1:value1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071654] mempool_func(): virgo mempool kernelspace module returns value virgo_mempool
+_ret=edfd7b60
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071657] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_sendto()
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071659] virgocloudexec_mempool_sendto(): virgo_mempool_ret=virgodata:key1:value1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071662] virgocloudexec_mempool_sendto(): data sent=key1:value1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071665] virgocloudexec_mempool_sendto(): before kernel_sendmsg() for send buffer: key1:value1
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071708] virgocloudexec_mempool_sendto(): kernel_sendmsg() returns ret: 500
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071732] virgocloudexec_mempool_sendto(): sock_release invoked on client socket 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071799] virgo_get() syscall: received message: key1:value1 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071803] virgo_get() syscall: le32_to_cpus(buf): virgo_cloud_get(e6e8db80) 
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071805] virgo_get() system_call: before data_out memcpy()
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071808] virgo_get() system_call: after data_out memcpy()
+Sep 15 14:48:15 shrinivaasanka-Inspiron-1545 kernel: [ 3900.071811] virgo_get() syscall:  data_out=key1:value1<B7><88><95><A2>  u[^N^H<F8>^W<A6><BF><88><95><A2>        <DA>
+------------------------------------------------------------------------------------------------------
+Panic after few iterations in i915 DRM GEM:
+------------------------------------------------------------------------------------------------------
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.361071] Modules linked in: xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquera
+de_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 bnep rfcomm ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt
+ nf_conntrack_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG i915 xt_limit xt_tcpudp xt_addrtype btusb btbcm bti
+ntel nf_conntrack_ipv4 bluetooth nf_defrag_ipv4 xt_conntrack dell_wmi ip6table_filter gpio_ich sparse_keymap ip6_tables nf_conntrack_netbios_ns 
+snd_hda_codec_idt nf_conntrack_broadcast nf_nat_ftp dell_laptop nf_nat snd_hda_codec_generic i8k snd_hda_intel dcdbas nf_conntrack_ftp snd_hda_c
+ontroller binfmt_misc nf_conntrack snd_hda_codec iptable_filter uvcvideo snd_hda_core ip_tables coretemp x_tables virgo_cloudexec_mempool(O+) jo
+ydev videobuf2_vmalloc virgo_cloud_mempool_kernelspace(O) videobuf2_memops serio_raw videobuf2_core virgo_queue(O) snd_pcm v4l2_common videodev 
+snd_hwdep lpc_ich snd_seq_midi media snd_seq_midi_event kingcobra_main_kernelspace(O) wmi snd_rawmidi virgo_kernel_analytics(O) mac_hid snd_seq 
+drm_kms_helper parport_pc drm shpchp ppdev snd_timer lp snd_seq_device snd i2c_algo_bit parport soundcore video hid_generic usbhid hid uas(O) um
+s_realtek(O) usb_storage(O) psmouse ahci libahci sky2
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] CPU: 1 PID: 34 Comm: kswapd0 Tainted: G           O    4.1.5 #15
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] task: f598a5e0 ti: f122c000 task.ti: f122c000
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] EIP: 0060:[<f9046986>] EFLAGS: 00010212 CPU: 1
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] EIP is at i915_gem_obj_is_pinned+0x36/0x70 [i915]
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] EAX: e652bd78 EBX: c1bf69c7 ECX: 20687469 EDX: c6ab3600
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] ESI: c6920578 EDI: e652bd00 EBP: f122ddfc ESP: f122ddf8
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] CR0: 8005003b CR2: 20687481 CR3: 01bca000 CR4: 000406f0
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] Stack:
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  00000001 f122de20 f9047207 e642e400 00000216 e6d4c4e4 01000000 e6d4c514
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  00000000 00000000 f122de98 c1163a99 00000003 00000001 00000001 00000000
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  00000200 00000019 f122df3c 000000b8 00049d22 00000000 00000000 000000d0
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] Call Trace:
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<f9047207>] i915_gem_shrinker_count+0x87/0x120 [i915]
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c1163a99>] shrink_slab+0xe9/0x370
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c11676cc>] shrink_zone+0x26c/0x280
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c1168427>] kswapd+0x3f7/0x870
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c1168030>] ? mem_cgroup_shrink_node_zone+0x120/0x120
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c10818cb>] kthread+0x9b/0xb0
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c17095c1>] ret_from_kernel_thread+0x21/0x30
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943]  [<c1081830>] ? kthread_create_on_node+0x110/0x110
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] Code: 78 83 c0 78 39 c8 8d 51 a4 75 1a eb 40 90 8d b4 26 00 00 00 00 f6 42 7c 0f 75 3a 8b 4a 5c 39 c8 8d 51 a4 74 28 8b 5a 30 8b 4b 74 <8b> 49 18 81 c1 94 43 00 00 39 cb 75 dd 8b 4a 38 85 c9 74 d6 8b
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] EIP: [<f9046986>] i915_gem_obj_is_pinned+0x36/0x70 [i915] SS:ESP 0068:f122ddf8
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] CR2: 0000000020687481
+Sep 15 15:37:51 shrinivaasanka-Inspiron-1545 kernel: [  332.362943] ---[ end trace dbb2ab9da83a19f1 ]---
+Sep 15 15:37:52 shrinivaasanka-Inspiron-1545 kernel: [  333.280125] usb_fill_bulk_urb(): urb->transfer_buffer = USBC,^B 
+-----------------------------------------------------------------------------------------------------------------------------
+kswapd - shrink_slab source in previous kernel panic:
+-----------------------------------------------------------------------------------------------------------------------------
+(gdb) l *(0xc1163a99)
+0xc1163a99 is in shrink_slab (/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c:251).
+246	/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/linux-4.1.5/mm/vmscan.c: No such file or directory.
+(gdb) 
+
+mm/vmscan.c:251 - do_shrink_slab :
+-----------------------------------
+        int nid = shrinkctl->nid;
+        long batch_size = shrinker->batch ? shrinker->batch
+                                          : SHRINK_BATCH;
+
+        freeable = shrinker->count_objects(shrinker, shrinkctl);
+        if (freeable == 0)
+                return 0;
+
+gpu/drm/i915/i915_gem_shrinker.c:213 - i915_gem_shrinker_count :
+----------------------------------------------------------------
+        list_for_each_entry(obj, &dev_priv->mm.bound_list, global_list) {
+                if (!i915_gem_obj_is_pinned(obj) &&
+                    obj->pages_pin_count == num_vma_bound(obj))
+                        count += obj->base.size >> PAGE_SHIFT;
+        }
+
+-----------------------------------------------------------------------------------------------
+Code comments in i915_gem_shrinker():
+-----------------------------------------------------------------------------------------------
+ *
+ * Note that it's not guaranteed that released amount is actually available as
+ * free system memory - the pages might still be in-used to due to other reasons
+ * (like cpu mmaps) or the mm core has reused them before we could grab them.
+ * Therefore code that needs to explicitly shrink buffer objects caches (e.g. to
+ * avoid deadlocks in memory reclaim) must fall back to i915_gem_shrink_all().
+ *
+-----------------------------------------------------------------------------------------------
+Possible sceanario for panic:
+-----------------------------------------------------------------------------------------------
+From comment previously in i915_gem_shrinker(), it is possible that a kmem corruption occurs because of lack of
+synchronization and a race-condition between i915 shrinker and VIRGO malloc's kmalloc when a page still in-use by i915
+is erroneously allocated to VIRGO malloc by kmem and later accesses by i915 driver also. Only a i915_gem_shrink_all() does
+hard eviction of all pages than marking.
+

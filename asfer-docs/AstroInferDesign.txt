@@ -5647,3 +5647,9 @@ PAC Learning implementation has been augmented to learn patterns in Prime Number
 325. (FEATURE-DONE) PAC Learning for Prime Numbers - Commits - 14 September 2016
 ------------------------------------------------------------------------------------------------------------------------------------
 Some errors corrected in bit positions computation in JSON mappings for PAC learning of Prime Numbers. Logs committed to testlogs/
+
+----------------------------------------------------------------------------------------------------------------------------------
+326. (BUG-STABILITY ISSUES) Boost::Python-VIRGO System calls invocations random kernel panics - Commits - 15 September 2016
+----------------------------------------------------------------------------------------------------------------------------------
+Further Kernel Panic analysis in i915 driver for Boost::python-VIRGO system calls invocations.
+
