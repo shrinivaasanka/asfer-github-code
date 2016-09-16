@@ -5672,3 +5672,18 @@ voting algorithm implies that LHS of Pr(Good) summation is 1 (From 317.2 least e
 References:
 -----------
 327.1 Algorithmic Fairness - https://algorithmicfairness.wordpress.com
+
+------------------------------------------------------------------------------------------------------------------------------------
+328. (FEATURE-DONE) Locality Sensitive Hashing Implementation - Nearest Neighbours Search - Commits - 16 September 2016
+------------------------------------------------------------------------------------------------------------------------------------
+1.This commit implements locality sensitive hashing in python by wrapping defaultdict with hashing and distance measures.
+2.Locality Sensitive Hashing is useful for clustering similar strings or text documents into same bucket and is thus an unsupervised
+classifier and an inverted index too.
+3.In this implementation, very basic LSH is done by having replicated hashtables and hashing a document to each of these hashtables with
+a random polynomial hash function which itself is aggregation of random monomials.
+4.For a query string, random hash function is again computed and buckets from all hashtables corresponding to this hash value is returned as
+nearest neighbour set.
+5.Each of these buckets are sieved to find the closest neighbour for that hashtable.
+6.Sorting the nearest neighbours for all hash tables yields a ranking of documents which are in the vicinity of the query string.
+7.The input strings are read from a text file LocalitySensitiveHashing.txt
+8.Logs with hashtable dumps and nearest neighbour rankings are in testlogs/LocalitySensitiveHashing.out.16September2016
