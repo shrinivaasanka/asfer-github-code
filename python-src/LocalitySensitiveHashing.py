@@ -36,9 +36,11 @@ import jellyfish
 import random
 import sys
 import operator
+import pprint
 
 class LSH(object):
 	def __init__(self,size=10,number_of_tables=50,number_of_functions=50):
+		self.datasource="webcrawler"
 		self.hashfunctions=[]
 		for k in range(1,number_of_functions):
 			self.hashfunctions.append("x**" + str(k) + "*" + str(k))
@@ -49,7 +51,7 @@ class LSH(object):
 		self.randomhashfunctions=[]
 		reload(sys)
 		sys.setdefaultencoding("utf8")
-		self.nearest_neighbours={}
+		self.nearest_neighbours=defaultdict(list)
 
 	def add(self,element):
 		for t in range(0,len(self.hashtables)):
@@ -66,10 +68,11 @@ class LSH(object):
 			#print "Nearest Neighbours in hashtable ",t,":",self.hashtables[t][hashcode % self.size]	
 			nearest_neighbour,nearest_distance=self.find_nearest_neighbour(e,self.hashtables[t][hashcode % self.size])
 			print "Nearest Neighbour in hashtable ",t," = ",nearest_neighbour,nearest_distance	
-			self.nearest_neighbours[nearest_distance]=nearest_neighbour
+			self.nearest_neighbours[nearest_distance].append(nearest_neighbour)
                 sorted_nearest_neighbours = sorted(self.nearest_neighbours.items(),key=operator.itemgetter(0), reverse=False)
+		print "#####################################################################"
 		print "Top Nearest Neighbours Ranked for Query - ",e,":"
-		print sorted_nearest_neighbours
+		pprint.pprint(sorted_nearest_neighbours)
 
 	def find_nearest_neighbour(self, e, neighbours):
 		minneighbour=""
@@ -117,9 +120,12 @@ class LSH(object):
 
 if __name__=="__main__":
 	lsh=LSH()
-	crawled=open("LocalitySensitiveHashing.txt","r")
+	if lsh.datasource=="webcrawler":
+		crawled=open("webspider/WebSpider-HTML.out","r")
+	else:
+		crawled=open("LocalitySensitiveHashing.txt","r")
 	for sentence in crawled:
 		lsh.add(sentence)
-	lsh.query_nearest_neighbours("Sentence6 long")
+	lsh.query_nearest_neighbours("Chennai Metropolitan Area Expansion")
 	lsh.dump_contents()
 
