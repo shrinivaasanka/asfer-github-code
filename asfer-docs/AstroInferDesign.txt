@@ -5687,3 +5687,9 @@ nearest neighbour set.
 6.Sorting the nearest neighbours for all hash tables yields a ranking of documents which are in the vicinity of the query string.
 7.The input strings are read from a text file LocalitySensitiveHashing.txt
 8.Logs with hashtable dumps and nearest neighbour rankings are in testlogs/LocalitySensitiveHashing.out.16September2016
+
+------------------------------------------------------------------------------------------------------------------------------------
+329. (FEATURE-DONE) LSH WebCrawler Support - Commits - 19 September 2016
+------------------------------------------------------------------------------------------------------------------------------------
+Locality Sensitive Hashing now accepts scrapy crawled webpages as datasources.
+
