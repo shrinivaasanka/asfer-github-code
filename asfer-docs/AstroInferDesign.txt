@@ -5693,3 +5693,8 @@ nearest neighbour set.
 ------------------------------------------------------------------------------------------------------------------------------------
 Locality Sensitive Hashing now accepts scrapy crawled webpages as datasources.
 
+-----------------------------------------------------------------------------------------------------------------------
+330. (BUG - STABILITY ISSUES) Boost::Python AsFer-VIRGO system calls kernel panics - Commits - 19 September 2016
+-----------------------------------------------------------------------------------------------------------------------
+Boost::python AsFer - VIRGO system call ongoing kernel panic analysis - i915 DRM race condition kernel panic in VM pages freeing
+
