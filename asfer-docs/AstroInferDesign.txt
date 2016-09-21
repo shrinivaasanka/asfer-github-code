@@ -5698,3 +5698,25 @@ Locality Sensitive Hashing now accepts scrapy crawled webpages as datasources.
 -----------------------------------------------------------------------------------------------------------------------
 Boost::python AsFer - VIRGO system call ongoing kernel panic analysis - i915 DRM race condition kernel panic in VM pages freeing
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+331. (FEATURE-DONE) ZeroMQ based Concurrent Request Servicing CLI - Client and Multithreaded Server Implementation
+---------------------------------------------------------------------------------------------------------------------------------------------
+Commits - 21 September 2016
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.NeuronRain already has support for RESTful GUI implemented in Python Tornado and NeuronRain code can be executed by
+filling up HTML form pages.
+2.ZeroMQ has a lowlevel highly performant low latency concurrency framework for servicing heavily concurrent requests.
+3.ZeroMQ is a wrapper socket implementation with special support for Request-Reply, Router-Worker, Pub-Sub design patterns.
+4.Important advantage of ZeroMQ is lack of necessity of lock synchronization (i.e ZeroMQ is lock-free per its documentation)
+for consistency of concurrent transactions
+5.Hence as a CLI alternative to HTTP/REST GUI interface,a C++ client and server have been implemented based on ZeroMQ Request-Reply
+Router-Dealer-Worker sockets pattern to serve concurrent requests.
+6.ZeroMQ client: ./zeromq_client "<neuronrain executable command>"
+7.ZeroMQ server: invokes system() on the executable arg from zeromq client
+8.With this NeuronRain has following interfaces:
+        8.1 telnet client ----------------------------------------------------> NeuronRain VIRGO ports
+        8.2 VIRGO system call clients ----------------------------------------> NeuronRain VIRGO ports
+        8.3 AsFer boost::python VIRGO system call invocations ----------------> NeuronRain VIRGO ports
+        8.4 Tornado GUI RESTful ----------------------------------------------> NeuronRain VIRGO ports
+        8.5 ZeroMQ CLI client/server -----------------------------------------> NeuronRain VIRGO ports
+
