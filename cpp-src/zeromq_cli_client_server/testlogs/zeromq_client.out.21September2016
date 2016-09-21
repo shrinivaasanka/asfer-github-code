@@ -1,0 +1,3 @@
+export LD_LIBRARY_PATH=/home/shrinivaasanka/zeromq-4.1.5/.libs/:$LD_LIBRARY_PATH
+root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/zeromq_cli_client_server# ./zeromq_client ../asfer 2>&1 > testlogs/zeromq_client.out.21September2016
+
