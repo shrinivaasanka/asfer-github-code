@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,18 +10,19 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9789346927, 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch):
-#http://sourceforge.net/users/ka_shrinivaasan
-#https://www.ohloh.net/accounts/ka_shrinivaasan
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
-#--------------------------------------------------------------------------------------------------------
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
+#-----------------------------------------------------------------------------------------------------------------------------------
 
 #An abstraction class that creates an streaming iterable from underlying data which could be
 #from any datasource and stored in any bigdata storage(file, Hadoop-HBase, database etc.,)
@@ -44,19 +45,25 @@ class StreamAbsGen(object):
 		#self.data_storage="hbase"
 		#self.data_storage="cassandra"
 		#self.data_storage="USBWWAN_stream"
+		#self.data_storage="KingCobra"
 		self.data_storage=data_storage
 
 		#Possible datasources:
 		#self.data_source="RZF"
 		#self.data_source="movielens"
 		#self.data_source="USBWWAN"
+		#self.data_source="file"
+		#self.data_source="KingCobra"
 		self.data_source=data_source
+
+		if self.data_storage=="KingCobra":
+			self.inputfile=open("/var/log/kingcobra/REQUEST_REPLY.queue")
 
 		if self.data_storage=="file":
 			self.inputfile=open("StreamingData.txt")
 
 		if self.data_storage=="USBWWAN_stream":
-			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
+			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
 
 		if self.data_storage=="hbase":
 			self.hbase_connection = happybase.Connection(host='localhost',port=9090,transport='buffered')
@@ -97,6 +104,10 @@ class StreamAbsGen(object):
 			print "StreamAbsGen:__init__(): connected to Cassandra"
 		
 	def __iter__(self):
+		if self.data_storage=="KingCobra":
+			for i in self.inputfile:
+				print "StreamAbsGen(file storage): iterator yielding %s" % i
+				yield i
 		if self.data_storage=="hbase":
 			for key,value in self.hbase_table.scan():
 				print "StreamAbsGen(HBase storage): iterator yielding %s" % i
