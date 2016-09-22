@@ -5720,3 +5720,17 @@ Router-Dealer-Worker sockets pattern to serve concurrent requests.
         8.4 Tornado GUI RESTful ----------------------------------------------> NeuronRain VIRGO ports
         8.5 ZeroMQ CLI client/server -----------------------------------------> NeuronRain VIRGO ports
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+332. (FEATURE-DONE) KingCobra VIRGO Linux workqueue and Kafka Publish-Subscribe Backend Message Queue support in Streaming Generator
+-----------------------------------------------------------------------------------------------------------------------------------------
+Commits - 22 September 2016
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.Streaming_AbstractGenerator has been updated to include KingCobra request-reply queue disk persisted store, as
+a data storage option (reads /var/log/kingcobra/REQUEST_REPLY.queue)
+2.NeuronRain backend now has a support for Kafka Pub-Sub Messaging.
+3.New publisher and subscriber for Kafka (with Python Confluent Kafka) have been written to read data from
+Streaming_AbstractGenerator and to publish/subscribe to/from a Kafka Message Broker-Topic. Thus any datasource that
+AsFer may have(file,HBase,Cassandra,Hive etc.,) is abstracted and published to Kafka. This also unites AsFer backend
+and KingCobra disk persistenceinto a single Kafka storage.
+
+
