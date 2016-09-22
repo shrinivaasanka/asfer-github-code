@@ -5672,6 +5672,8 @@ voting algorithm implies that LHS of Pr(Good) summation is 1 (From 317.2 least e
 References:
 -----------
 327.1 Algorithmic Fairness - https://algorithmicfairness.wordpress.com
+327.2 Leader Election Algorithms in Cloud - HBase ZooKeeper - [Mahadev Konar - Yahoo] - http://wiki.apache.org/hadoop/ZooKeeper/ZooKeeperPresentations?action=AttachFile&do=view&target=zookeeper_hbase.pptx
+327.3 Leader Election and Quorum in ElasticSearch - https://www.elastic.co/blog/found-leader-election-in-general - Each node votes for a leader and minimum number of votes required for a leader is Quorum - This is realworld application of Multiway Majority function.
 
 ------------------------------------------------------------------------------------------------------------------------------------
 328. (FEATURE-DONE) Locality Sensitive Hashing Implementation - Nearest Neighbours Search - Commits - 16 September 2016
@@ -5726,11 +5728,15 @@ Router-Dealer-Worker sockets pattern to serve concurrent requests.
 Commits - 22 September 2016
 -----------------------------------------------------------------------------------------------------------------------------------------
 1.Streaming_AbstractGenerator has been updated to include KingCobra request-reply queue disk persisted store, as
-a data storage option (reads /var/log/kingcobra/REQUEST_REPLY.queue)
+a data storage option (reads /var/log/kingcobra/REQUEST_REPLY.queue). Initial design option was to integrate a Kafka client into
+KingCobra kernelspace servicerequest() function which upon receipt of a message from linux kernel workqueue,also publishes it in turn
+to a Kafka Topic. But tight coupling of Kafka C Client into KingCobra is infeasible because of conflicts between userspace include header
+files of Kafka and kernelspace include header files of Linux. This results in compilation errors. Hence it looks sufficient to read the
+persisted KingCobra REQUEST_REPLY.queue by a standalone Kafka python client and publish to Kafka subscribers. This leverages analytics
+by python code on KingCobra queue.
 2.NeuronRain backend now has a support for Kafka Pub-Sub Messaging.
 3.New publisher and subscriber for Kafka (with Python Confluent Kafka) have been written to read data from
 Streaming_AbstractGenerator and to publish/subscribe to/from a Kafka Message Broker-Topic. Thus any datasource that
 AsFer may have(file,HBase,Cassandra,Hive etc.,) is abstracted and published to Kafka. This also unites AsFer backend
-and KingCobra disk persistenceinto a single Kafka storage.
-
+and KingCobra disk persistence into a single Kafka storage.
 
