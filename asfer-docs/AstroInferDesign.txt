@@ -5740,3 +5740,24 @@ Streaming_AbstractGenerator and to publish/subscribe to/from a Kafka Message Bro
 AsFer may have(file,HBase,Cassandra,Hive etc.,) is abstracted and published to Kafka. This also unites AsFer backend
 and KingCobra disk persistence into a single Kafka storage.
 
+-------------------------------------------------------------------------------------------------------------------------------------
+333. (BUG-STABILITY ISSUES) Boost::Python AsFer-VIRGO system call invocations kernel panic ongoing investigation
+-------------------------------------------------------------------------------------------------------------------------------------
+Commits - 23 September 2016
+-------------------------------------------------------------------------------------------------------------------------------------
+Ongoing Boost::Python AsFer-VIRGO system call invocation kernel panic analysis:
+Random crashes remain, but this time no crash logs are printed in kern.log and finally a successful invocation happens. It could be
+same as i915 GEM DRM crash similar to earlier analyses.
+
+Pattern observed is as follows:
+        1. First few invocations fail with virgo_get() though virgo_malloc() and virgo_set() succeed.
+        2. After few failures all virgo calls succeed - virgo_malloc(), virgo_set() and virgo_get() work without any problems.
+        3. Sometimes virgo_parse_integer() logs and few other logs are missing. When all logs are printed, success rate is very high.
+        4. Some failing invocations have NULL parsed addresses. When there are no NULL address parsings, success rate is very high.
+        5. a rare coincidence was observed: Without internet connectivity crashes are very less frequent. (Intel Microcode
+updates playing spoilsport again?).
+        6. There have been panic bugs reported on i915 GEM DRM and recent patches for busy VMA handling to it:
+                6.1 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1492632
+                6.2 https://lists.freedesktop.org/archives/intel-gfx/2016-August/102160.html
+        7. Intel GPU i915 GEM DRM docs - https://01.org/linuxgraphics/gfx-docs/drm/gpu/drm-mm.html
+
