@@ -1,0 +1,878 @@
+-------------------------------------------------------------------------------------------------------------------------
+VIRGO memory system calls fail because of random blocking socket errors -32 and -107 (already known Endpoint not connected
+and Broken pipe errors that occur randomly in kernel socket calls - VIRGO code comments and commits in 2013 mention this)
+-------------------------------------------------------------------------------------------------------------------------
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326537] virgo_malloc() syscall: size=100, sum_alloc_size=0 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326540] 2. virgo_malloc() syscall: size=100, sum_alloc_size=0, chunk_size==100
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326549] virgo_malloc() syscall: malloc_cmd=virgo_cloud_malloc(100), buf=virgo_cloud_malloc(100), tempbuf=virgo_cloud_malloc(100)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326563] virgo_malloc() syscall: created client kernel socket
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326573] virgo_malloc() syscall: sent len=-32; iov.iov_base=virgo_cloud_malloc(100), sent message: virgo_cloud_malloc(100), iovbuf=virgo_cloud_malloc(100) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326578] virgo_malloc() syscall: recv len=-107; received message iovbuf: [virgo_cloud_malloc(100)] 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326581] virgo_malloc() syscall: received iov.iov_base: virgo_cloud_malloc(100) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326585] str_to_addr2(): straddr=[virgo_cloud_malloc(100)], lltovoidptr =   (null)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326588] virgo_malloc() syscall: vtranstable.vtable[4].addr=  (null) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326592] virgo_malloc() syscall: next_vtable_entry=4, vtranstable.vtable[next_vtable_entry].node_id=4, vtranstable.vtable[next_vtable_entry].addr=  (null), vtranstable.vtable[next_vtable_entry].hstprt->hostip=127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326597] virgo_malloc() syscall: le32_to_cpus(buf): virgo_cloud_malloc(100) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326600] virgo_malloc() syscall: size to be allocated = 100, sum_alloc_size = 100 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326602] virgo_malloc() syscall: sum_alloc_size == size, breaking while loop
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326605] virgo_malloc() syscall: returning &(vtranstable.vtable[this_allocation_start_entry]) == c1bd4ed0
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326608] addr_to_virgo_unique_id(): vaddr=c1bd4ed0, uvid=3250409168
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326611] virgo_malloc() system_call: before vuid memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326613] virgo_malloc() system_call: after vuid memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326623] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 1: 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326627] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 2: 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326630] read_virgo_config(): virgo_client.config file being read 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326635] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326645] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326652] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326656] virgo_set() system call: before virgo_unique_id_to_addr()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326659] virgo_unique_id_to_addr(): vaddr=c1bd4ed0, virgo_unique_id=3250409168
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326662] virgo_set() system call: after virgo_unique_id_to_addr(), vaddr=c1bd4ed0
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326665] virgo_set() system call: vuid=3250409168, virgo address to set is vaddr=c1bd4ed0
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326668] virgo_set() system_call: before memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326671] virgo_set() system_call: after memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326674] virgo_set() system call: vuid=3250409168, data to set=key1:value1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326683] virgo_set() system call: vaddr_addr_str=[  (null)]
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326686] virgo_set() system call: 1. virgo_set_cmd=virgo_cloud_set(  (null)virgo_set() system call: 2. virgo_set_cmd=virgo_cloud_set(  (null),,data=key1:value1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326691] virgo_set() system call: 3. virgo_set_cmd=virgo_cloud_set(  (null),key1:value1virgo_set() system call: 4. virgo_set_cmd=virgo_cloud_set(  (null),key1:value1)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326697] virgo_set() system call: tempbuf=virgo_cloud_set(  (null),key1:value1), buf=virgo_cloud_set(  (null),key1:value1), virgo_set_cmd = virgo_cloud_set(  (null),key1:value1)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326700] virgo_set() system call: iov.iov_base=virgo_cloud_set(  (null),key1:value1)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326706] virgo_set() syscall: created client kernel socket
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326709] virgo_set() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base = virgo_cloud_set(  (null),key1:value1)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326713] virgo_set() syscall: sent message: virgo_cloud_set(  (null),key1:value1) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326716] virgo_set() syscall: received message: virgo_cloud_set(  (null),key1:value1) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326719] virgo_set() syscall: le32_to_cpus(buf): virgo_cloud_set(  (null),key1:value1) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326728] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 1: 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326731] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 2: 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326735] read_virgo_config(): virgo_client.config file being read 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326739] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326750] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326756] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326760] virgo_get() system call: before virgo_unique_id_to_addr()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326763] virgo_unique_id_to_addr(): vaddr=c1bd4ed0, virgo_unique_id=3250409168
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326767] virgo_get() system call: vuid=-1044558128, virgo address to retrieve data from is vaddr=c1bd4ed0
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326776] virgo_get() system call: tempbuf=virgo_cloud_get(  (null)), buf=virgo_cloud_get(  (null)), virgo_get_cmd=virgo_cloud_get(  (null))
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326779] virgo_get() system call: iov.iov_base=virgo_cloud_set(  (null),key1:value1)
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326785] virgo_get() syscall: created client kernel socket
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326788] virgo_get() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base=virgo_cloud_get(  (null))
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326792] virgo_get() syscall: sent message: virgo_cloud_get(  (null)) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326795] virgo_get() syscall: received message: virgo_cloud_get(  (null)) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326798] virgo_get() syscall: le32_to_cpus(buf): virgo_cloud_get(  (null)) 
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326800] virgo_get() system_call: before data_out memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326802] virgo_get() system_call: after data_out memcpy()
+Sep 28 17:10:36 shrinivaasanka-Inspiron-1545 kernel: [ 1439.326805] virgo_get() syscall:  data_out=virgo_cloud_get(  (null))��
+
+-----------------------------------------------------------------------------------------------------------------------------
+Panic in i915 GEM DRM after VIRGO system calls invocation from boost::python (despite above kmalloc() not allocating
+from kmem) 
+-----------------------------------------------------------------------------------------------------------------------------
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.078654] EIP is at __sg_page_iter_next.part.9+0x33/0xa0
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.078726] EAX: f3c3bd58 EBX: 6e72656b ECX: 00000000 EDX: 6e72656b
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.078808] ESI: 00000000 EDI: f9f92a04 EBP: f3c3bd44 ESP: f3c3bd3c
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.078887]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.078955] CR0: 80050033 CR2: 6e726573 CR3: 34b368e0 CR4: 000406f0
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079034] Stack:
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079061]  f3323300 00000000 f3c3bd4c c1355845 f3c3bd68 f893d6cf 00000000 6e72656b
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079179]  00000000 70736c65 00000001 f3c3bd78 f9f1391f f3323300 00000001 f3c3bd9c
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079296]  f9f13c99 f779f3a0 00000000 f3c3bdac 00000000 f3323300 f3323300 f9f92a04
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079413] Call Trace:
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079452]  [<c1355845>] __sg_page_iter_next+0x15/0x30
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079540]  [<f893d6cf>] drm_clflush_sg+0x7f/0xb0 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079648]  [<f9f1391f>] i915_gem_clflush_object+0x5f/0xb0 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.079760]  [<f9f13c99>] i915_gem_object_set_to_cpu_domain+0xf9/0x190 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f9f13f2c>] i915_gem_object_put_pages_gtt+0x2c/0x190 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f9f14bae>] ? i915_gem_vma_destroy+0x6e/0xb0 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f9f11ef4>] i915_gem_object_put_pages+0x84/0xf0 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f9f1735b>] i915_gem_free_object+0x12b/0x2c0 [i915]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c119e8f5>] ? kfree+0x115/0x120
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f895847f>] ? drm_vma_node_revoke+0x5f/0x70 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893eddf>] drm_gem_object_free+0x1f/0x30 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893f297>] drm_gem_object_handle_unreference_unlocked+0xf7/0x110 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893f33b>] drm_gem_handle_delete+0x8b/0xd0 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893f910>] ? drm_gem_handle_create+0x40/0x40 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893f92d>] drm_gem_close_ioctl+0x1d/0x30 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f89401cd>] drm_ioctl+0x19d/0x570 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f893f910>] ? drm_gem_handle_create+0x40/0x40 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11f1ad7>] ? fsnotify_clear_marks_by_inode+0x87/0x90
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c119e783>] ? kmem_cache_free+0x1b3/0x1e0
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11cb9c4>] ? dentry_free+0x44/0x90
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11cffb8>] ? evict+0xe8/0x160
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11cb9c4>] ? dentry_free+0x44/0x90
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<f8940030>] ? drm_getmap+0xc0/0xc0 [drm]
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11c8e22>] do_vfs_ioctl+0x322/0x550
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11cc0d0>] ? dput+0x1e0/0x210
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11d4440>] ? mntput+0x20/0x40
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11b7cbd>] ? __fput+0x16d/0x200
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11d1bd2>] ? __fget_light+0x22/0x60
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c11c90b0>] SyS_ioctl+0x60/0x90
+Sep 28 17:10:56 shrinivaasanka-Inspiron-1545 kernel: [ 1459.080009]  [<c170969b>] sysenter_do_call+0x12/0x12
+----------------------------------------------------------------------------------------------------------------------------------------
+Some new panic errors not seen so far occur after VIRGO memory system calls as below which point to a deep
+problem within GPU memory management - GPU goes out-of-memory and triggers panic after VIRGO memory system calls
+are executed even for allocation of 100 bytes from kmem in virgo_malloc(). First crash happens in gnome-terminal
+causing domino effect of OOM panics. Errors point to purging GPU memory. Puzzling how kmalloc() of 100 bytes
+can cause GPU to run out of memory and why it is allocating from GPU memory and not main memory. 
+----------------------------------------------------------------------------------------------------------------------------------------
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926845] rg
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926848] o_
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926851] cl
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926855] ou
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926858] d_
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926862] ge
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926865] t(
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926869] ed
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926872] f6
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926875] 4a
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926879] 00
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  211.926882] )<3>[  212.100585] swap_dup: Bad swap file entry 39991f80
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100593] swap_dup: Bad swap file entry 39991f81
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100597] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100600] swap_dup: Bad swap file entry 39991f83
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100603] swap_dup: Bad swap file entry 39991f84
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100607] swap_dup: Bad swap file entry 39991f85
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100610] swap_dup: Bad swap file entry 39991f86
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100613] swap_dup: Bad swap file entry 39991f87
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.100622] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115608] Purging GPU memory, 12869632 bytes freed, 91443200 bytes still pinned.
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115628] swap_dup: Bad swap file entry 39991f80
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115638] swap_dup: Bad swap file entry 39991f81
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115642] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115645] swap_dup: Bad swap file entry 39991f83
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.115649] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116056] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116060] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116071] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116075] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116078]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116089]  f266ef3c 00000000 00000000 00000000 ee5fd6f3 14788308 f5dc64c0 00200096
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116099]  00000001 01400000 00000000 00200296 c1a4b000 f26dbea0 edc72c30 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116109] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116120]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116127]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116134]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116141]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116147]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116152]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116158]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116165]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116170]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116175]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116181]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116185]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116191]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116194] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203] active_anon:120115 inactive_anon:125739 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203]  active_file:94982 inactive_file:333660 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203]  unevictable:8 dirty:158 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203]  mapped:63878 shmem:23953 pagetables:2347 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116203]  free:35698 free_pcp:551 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116219] DMA free:10148kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon:2172kB active_file:1572kB inactive_file:776kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB dirty:4kB writeback:0kB mapped:304kB shmem:8kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:140kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116224] lowmem_reserve[]: 0 704 2844 2844
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116239] Normal free:54480kB min:3256kB low:4068kB high:4884kB active_anon:116468kB inactive_anon:131352kB active_file:130388kB inactive_file:216596kB unevictable:32kB isolated(anon):0kB isolated(file):0kB present:897016kB managed:722020kB mlocked:32kB dirty:296kB writeback:0kB mapped:43700kB shmem:17492kB slab_reclaimable:41024kB slab_unreclaimable:16876kB kernel_stack:4184kB pagetables:1800kB unstable:0kB bounce:0kB free_pcp:812kB local_pcp:680kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116243] lowmem_reserve[]: 0 0 17126 17126
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116257] HighMem free:78164kB min:512kB low:2984kB high:5460kB active_anon:363980kB inactive_anon:369432kB active_file:247968kB inactive_file:1117268kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:2192132kB managed:2192132kB mlocked:0kB dirty:332kB writeback:0kB mapped:211508kB shmem:78312kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:7448kB unstable:0kB bounce:0kB free_pcp:1392kB local_pcp:720kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116261] lowmem_reserve[]: 0 0 0 0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116268] DMA: 1*4kB (U) 2*8kB (UM) 3*16kB (UEM) 3*32kB (UEM) 2*64kB (EM) 1*128kB (U) 4*256kB (UE) 1*512kB (M) 4*1024kB (UEM) 2*2048kB (UR) 0*4096kB = 10148kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116296] Normal: 11*4kB (UM) 44*8kB (UE) 30*16kB (UE) 13*32kB (UE) 6*64kB (U) 3*128kB (UEM) 7*256kB (UE) 19*512kB (EM) 4*1024kB (UEM) 4*2048kB (UER) 7*4096kB (MR) = 54540kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116323] HighMem: 89*4kB (E) 110*8kB (UE) 115*16kB (UE) 75*32kB (UE) 57*64kB (UE) 66*128kB (EM) 43*256kB (UEM) 31*512kB (UEM) 21*1024kB (EM) 6*2048kB (EM) 0*4096kB = 78244kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116351] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116354] 452585 total pagecache pages
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116357] 1 pages in swap cache
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116361] Swap cache stats: add 14, delete 13, find 0/2
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116363] Free swap  = 3103684kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116366] Total swap = 3103740kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116369] 776285 pages RAM
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116371] 548033 pages HighMem/MovableOnly
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116374] 43768 pages reserved
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116376] 0 pages cma reserved
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116378] [ pid ]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116389] [  235]     0   235     1114      724       6       3        0             0 cgmanager
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116395] [  270]     0   270     1053       50       6       3        0             0 upstart-udev-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116400] [  293]     0   293     1049       52       6       3        0             0 upstart-file-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116405] [  311]   104   311     7898     1211      11       3        0             0 rsyslogd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116411] [  315]     0   315     3405      645       6       3        0         -1000 systemd-udevd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116416] [  316]     0   316      583      388       5       3        0             0 sh
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116421] [  429]   105   429     1615     1040       6       3        0             0 dbus-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116426] [  994]   107   994     1197      751       6       3        0             0 avahi-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116431] [  996]   107   996     1197       68       6       3        0             0 avahi-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116436] [ 1141]     0  1141     1226      402       6       3        0             0 modprobe
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116441] [ 1166]     0  1166     2627     1502       8       3        0             0 cupsd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116445] [ 1332]     0  1332     1712      961       6       3        0             0 bluetoothd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116450] [ 1913]     0  1913     1046       55       6       3        0             0 upstart-socket-
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116456] [ 2532]     0  2532    10286     1861      15       3        0             0 ModemManager
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116461] [ 2590]     7  2590     2408     1162       9       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116466] [ 2591]     7  2591     2408     1197       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116471] [ 2592]     7  2592     2408     1190       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116476] [ 2593]     7  2593     2408     1203       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116481] [ 2594]     7  2594     2408     1194       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116485] [ 2595]     7  2595     2408     1201       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116490] [ 2596]     7  2596     2408     1155       9       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116495] [ 2597]     7  2597     2408     1190       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116500] [ 2598]     7  2598     2408     1191       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116505] [ 2599]     7  2599     2408     1193       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116510] [ 2600]     7  2600     2408     1184       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116514] [ 2601]     7  2601     2408     1191       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116519] [ 2602]     7  2602     2408     1161       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116524] [ 2603]     7  2603     2408     1197       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116529] [ 2604]     7  2604     2408     1157       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116534] [ 2605]     7  2605     2408     1144       8       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116539] [ 2606]     7  2606     2408     1171      10       3        0             0 dbus
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116544] [ 2657]     0  2657     9417     1799      14       3        0             0 polkitd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116549] [ 2658]     0  2658     5766     1893      12       3        0             0 cups-browsed
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116554] [ 2712]     0  2712    20917     3328      22       3        0             0 NetworkManager
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116559] [ 3155]     0  3155      629      480       5       3        0             0 getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116564] [ 3160]     0  3160      629      448       5       3        0             0 getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116569] [ 3162]     0  3162    11642     1650      13       3        0             0 thermald
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116573] [ 3168]     0  3168      629      424       5       3        0             0 getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116578] [ 3171]     0  3171      629      445       5       3        0             0 getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116583] [ 3176]     0  3176      629      436       5       3        0             0 getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116588] [ 3205]     0  3205      566      387       5       3        0             0 acpid
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116592] [ 3223]     0  3223      684       33       5       3        0             0 atd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116597] [ 3224]     0  3224      874      555       6       3        0             0 cron
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116602] [ 3230]   121  3230   166928    19453      66       3        0             0 mongod
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116607] [ 3411]   120  3411   191978   111333     248       3        0             0 mysqld
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116613] [ 3477]     0  3477      974      720       5       3        0             0 systemd-logind
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116618] [ 3484]     0  3484     8101     1418      13       3        0             0 console-kit-dae
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116623] [ 3708]     0  3708    11092     1986      13       3        0             0 lightdm
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116628] [ 3741]     0  3741    25757     5515      48       3        0             0 Xorg
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116633] [ 3744]     0  3744     9370     1623      13       3        0             0 accounts-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116638] [ 3810]     0  3810   258707    39299     103       3        0             0 java
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116643] [ 3998]     0  3998     4811     1616      10       3        0             0 lightdm
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116648] [ 4027]   114  4027     5664      664       9       3        0             0 rtkit-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116653] [ 4174]     0  4174    16784     2155      15       3        0             0 upowerd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116657] [ 4273]   117  4273     9957     3271      15       3        0             0 colord
+ep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116662] [ 4409]  1000  4409     7575     1791      11       3        0             0 gnome-keyring-d
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116667] [ 4419]  1000  4419     1853     1010       8       3        0             0 upstart
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116672] [ 4525]  1000  4525     1566       50       6       3        0             0 upstart-udev-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116677] [ 4539]  1000  4539     1539      898       6       3        0             0 dbus-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116682] [ 4551]  1000  4551    11294     2239      16       3        0             0 window-stack-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116687] [ 4552]  1000  4552     1558      639       7       3        0             0 upstart-event-b
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116692] [ 4581]  1000  4581    11539     1449      12       3        0             0 ibus-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116696] [ 4611]  1000  4611     7199     1310      12       3        0             0 gvfsd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116701] [ 4615]  1000  4615    10889     1025      13       3        0             0 gvfsd-fuse
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116706] [ 4636]  1000  4636     9343     1469      11       3        0             0 ibus-dconf
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116711] [ 4642]  1000  4642    23190     6820      29       3        0             0 ibus-ui-gtk3
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116717] [ 4648]  1000  4648    12982     4229      20       3        0             0 ibus-x11
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116721] [ 4665]  1000  4665     9069     2422      13       3        0             0 at-spi-bus-laun
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116727] [ 4668]  1000  4668     1383      890       7       3        0             0 dbus-daemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116732] [ 4671]  1000  4671     4856     1283       9       3        0             0 at-spi2-registr
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116737] [ 4676]  1000  4676    37500     8453      45       3        0             0 hud-service
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116742] [ 4678]  1000  4678    47775     7795      38       3        0             0 unity-settings-
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116747] [ 4707]  1000  4707     1666      446       8       3        0             0 upstart-file-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116752] [ 4710]  1000  4710     1591      415       6       3        0             0 upstart-dbus-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116757] [ 4711]  1000  4711    22923     3503      24       3        0             0 gnome-session
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116761] [ 4716]  1000  4716     1592      404       6       3        0             0 upstart-dbus-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116766] [ 4718]  1000  4718    25439     7281      31       3        0             0 unity-panel-ser
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116771] [ 4764]  1000  4764    17896     5871      25       3        0             0 bamfdaemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116776] [ 4795]  1000  4795     6345     1716      10       3        0             0 dconf-service
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116782] [ 4800]  1000  4800      989      556       6       3        0             0 syndaemon
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116787] [ 4805]  1000  4805    41361     2325      17       3        0             0 pulseaudio
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116792] [ 4818]  1000  4818     7046     1409      11       3        0             0 ibus-engine-sim
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116797] [ 4881]  1000  4881    59034    17820      70       3        0             0 compiz
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116802] [ 4884]  1000  4884     9943     1853      14       3        0             0 indicator-messa
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116807] [ 4885]  1000  4885     9251     1261      13       3        0             0 indicator-bluet
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116812] [ 4889]  1000  4889    13456     1913      15       3        0             0 indicator-power
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116817] [ 4890]  1000  4890    32861     3623      32       3        0             0 indicator-datet
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116822] [ 4891]  1000  4891    29203     5596      33       3        0             0 indicator-keybo
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116827] [ 4892]  1000  4892    33918     2603      20       3        0             0 indicator-sound
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116832] [ 4901]  1000  4901    16607     5969      28       3        0             0 indicator-print
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116837] [ 4906]  1000  4906    15580     1613      20       3        0             0 indicator-sessi
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116841] [ 4935]  1000  4935    11935     3330      18       3        0             0 indicator-appli
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116846] [ 4958]  1000  4958    27622     4865      31       3        0             0 evolution-sourc
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116851] [ 5036]  1000  5036    26582     7698      33       3        0             0 nm-applet
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116856] [ 5042]  1000  5042    15308     4810      24       3        0             0 unity-fallback-
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116861] [ 5043]  1000  5043    13020     5386      23       3        0             0 polkit-gnome-au
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116866] [ 5045]  1000  5045     1369      679       6       3        0             0 ReadDisplay
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116871] [ 5050]     0  5050     2079      997       8       3        0             0 sudo
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116876] [ 5062]     0  5062    40969     7779      39       3        0             0 MobilePartner.b
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116881] [ 5065]  1000  5065    43682    11628      54       3        0             0 evolution-calen
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116886] [ 5079]  1000  5079     2890     1454       9       3        0             0 gconfd-2
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116891] [ 5083]  1000  5083    11939     2319      15       3        0             0 gvfs-udisks2-vo
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116896] [ 5086]     0  5086    13498     1821      13       3        0             0 udisksd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116900] [ 5107]  1000  5107     7160     1843      12       3        0             0 gvfs-gphoto2-vo
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116905] [ 5112]  1000  5112     6865     1744      10       3        0             0 gvfs-mtp-volume
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116910] [ 5116]  1000  5116    17162     2450      18       3        0             0 gvfs-afc-volume
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116915] [ 5122]  1000  5122    21328     6999      29       3        0             0 notify-osd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116920] [ 5201]  1000  5201    11636     1973      15       3        0             0 gvfsd-trash
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116925] [ 5308]     0  5308      892       41       5       3        0             0 uuidd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116930] [ 5383]  1000  5383    23021     5261      29       3        0             0 telepathy-indic
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116935] [ 5414]  1000  5414    18225     2856      19       3        0             0 mission-control
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116940] [ 5416]   112  5416     2073       75       7       3        0             0 kerneloops
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116945] [ 5429]  1000  5429    28059     8166      34       3        0             0 gnome-terminal-
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116950] [ 5434]  1000  5434    11251     1586      13       3        0             0 zeitgeist-daemo
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116955] [ 5446]  1000  5446    17237     3720      24       3        0             0 zeitgeist-fts
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116960] [ 5447]  1000  5447    20715     5855      28       3        0             0
+ zeitgeist-datah
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116964] [ 5452]  1000  5452     1113      147       6       3        0             0
+ cat
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116969] [ 5456]   123  5456    11910      504      11       3        0             0
+ memcached
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116974] [ 5472]  1000  5472      626      451       5       3        0             0
+ gnome-pty-helpe
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116979] [ 5481]  1000  5481     2061     1423       8       3        0             0
+ bash
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116984] [ 5624]     0  5624      628      418       5       3        0             0
+ HWActivator
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116989] [ 5627]     0  5627      629      453       5       3        0             0
+ getty
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116994] [ 5682]     0  5682    52445     5704      47       3        0             0
+ libvirtd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.116999] [ 5707]  1000  5707     1960      979       7       3        0             0 su
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117003] [ 5864]   125  5864     1474      673       7       3        0             0 dnsmasq
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117008] [ 5865]     0  5865     1467       76       7       3        0             0 dnsmasq
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117012] [ 5882]     0  5882     2059     1484       7       3        0             0 bash
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117018] [ 5909]  1000  5909    25111     6949      31       3        0             0 update-notifier
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117023] [ 5939]  1000  5939    37951    19809      61       3        0             0 update-manager
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117028] [ 5994]  1000  5994    27108     6976      31       3        0             0 thunar
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117033] [ 6000]  1000  6000     2102     1097       8       3        0             0 xfconfd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117038] [ 6007]  1000  6007    14739     3198      18       3        0             0 tumblerd
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117043] [ 6033]     0  6033     3049     1843      11       3        0             0 python
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117047] Out of memory: Kill process 3411 (mysqld) score 73 or sacrifice child
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.117054] Killed process 3411 (mysqld) total-vm:767912kB, anon-rss:434216kB, file-rss:11116kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123303] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123310] swap_dup: Bad swap file entry 39991f83
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123318] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123674] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123678] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123690] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123694] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123697]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123708]  f266ef3c 00000000 00000000 00000000 f26dbe90 f9f2369e 00000000 f26dbe90
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123718]  c10c22d5 00000000 f26dbf14 00200296 c1a4b000 f26dbea0 f1c40ca0 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123728] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123739]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123746]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123790]  [<f9f2369e>] ? i915_gem_shrinker_oom+0x16e/0x1d0 [i915]
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123797]  [<c10c22d5>] ? rcu_oom_notify+0xd5/0x100
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123803]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123809]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123816]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123821]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123826]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123833]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123838]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123844]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123849]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123854]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123859]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123863] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871] active_anon:120115 inactive_anon:125739 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871]  active_file:95007 inactive_file:333660 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871]  unevictable:8 dirty:195 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871]  mapped:63878 shmem:23953 pagetables:2347 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123871]  free:35698 free_pcp:537 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123888] DMA free:10148kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon:2172kB active_file:1572kB inactive_file:776kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB dirty:4kB writeback:0kB mapped:304kB shmem:8kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:140kB unstable:0kB 
+bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123893] lowmem_reserve[]: 0 704 2844 2844
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123908] Normal free:54480kB min:3256kB low:4068kB high:4884kB active_anon:116468kB inactive_anon:131352kB active_file:130388kB inactive_file:216596kB unevictable:32kB isolated(anon):0kB isolated(file):0kB present:897016kB managed:722020kB mlocked:32kB dirty:296kB writeback:0kB mapped:43700kB shmem:17492kB slab_reclaimable:41024kB slab_unreclaimable:16876kB kernel_stack:4184kB pagetables:1800kB unstable:0kB bounce:0kB free_pcp:812kB local_pcp:680kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123912] lowmem_reserve[]: 0 0 17126 17126
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123926] HighMem free:78164kB min:512kB low:2984kB high:5460kB active_anon:363980kB inactive_anon:369432kB active_file:248068kB inactive_file:1117268kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:2192132kB managed:2192132kB mlocked:0kB dirty:480kB writeback:0kB mapped:211508kB shmem:78312kB slab_reclaimable:0kB slab_unreclaimable:0kB kernel_stack:0kB pagetables:7448kB unstable:0kB bounce:0kB free_pcp:1336kB local_pcp:664kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123931] lowmem_reserve[]: 0 0 0 0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123937] DMA: 1*4kB (U) 2*8kB (UM) 3*16kB (UEM) 3*32kB (UEM) 2*64kB (EM) 1*128kB (U) 4*256kB (UE) 1*512kB (M) 4*1024kB (UEM) 2*2048kB (UR) 0*4096kB = 10148kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123965] Normal: 11*4kB (UM) 44*8kB (UE) 30*16kB (UE) 13*32kB (UE) 6*64kB (U) 3*128kB (UEM) 7*256kB (UE) 19*512kB (EM) 4*1024kB (UEM) 4*2048kB (UER) 7*4096kB (MR) = 54540kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.123992] HighMem: 89*4kB (E) 110*8kB (UE) 115*16kB (UE) 75*32kB (UE) 57*64kB (UE) 66*128kB (EM) 43*256kB (UEM) 31*512kB (UEM) 21*1024kB (EM) 6*2048kB (EM) 0*4096kB = 78244kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124060] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124063] 452585 total pagecache pages
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124067] 1 pages in swap cache
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124070] Swap cache stats: add 14, delete 13, find 0/3
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124073] Free swap  = 3103684kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124075] Total swap = 3103740kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124078] 776285 pages RAM
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124081] 548033 pages HighMem/MovableOnly
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124083] 43768 pages reserved
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124085] 0 pages cma reserved
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124088] [ pid ]   uid  tgid total_vm      rss nr_ptes nr_pmds swapents oom_score_adj name
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124100] [  235]     0   235     1114      724       6       3        0             0 cgmanager
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124106] [  270]     0   270     1053       50       6       3        0             0 upstart-udev-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124111] [  293]     0   293     1049       52       6       3        0             0 upstart-file-br
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124116] [  311]   104   311     7898     1211      11       3        0             0 rsyslogd
+..........................
+..........................
+..........................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124781] Out of memory: Kill process 3810 (java) score 25 or sacrifice child
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.124788] Killed process 3810 (java) total-vm:1034828kB, anon-rss:135524kB, file-rss:21672kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136241] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136620] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136625] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136636] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136640] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136644]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136654]  f266ef3c 00000000 00000000 00000000 f26dbe90 f9f2369e 00000000 f26dbe90
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136664]  c10c22d5 00000000 f26dbf14 00200296 c1a4b000 f26dbea0 f11792f0 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136674] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136686]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136692]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136738]  [<f9f2369e>] ? i915_gem_shrinker_oom+0x16e/0x1d0 [i915]
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136745]  [<c10c22d5>] ? rcu_oom_notify+0xd5/0x100
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136751]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136757]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136764]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136769]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136774]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136781]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136786]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136792]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136797]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136802]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136807]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136811] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820] active_anon:85930 inactive_anon:125739 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820]  active_file:95266 inactive_file:333426 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820]  unevictable:8 dirty:195 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820]  mapped:59622 shmem:23953 pagetables:2322 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136820]  free:70020 free_pcp:537 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.136837] DMA free:10148kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon:2172kB active_file:1572kB inactive_file:776kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB dirty:4kB writeback:0kB mapped:304kB shmem:8kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:140kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+.............................
+.............................
+.............................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.137679] Out of memory: Kill process 5939 (update-manager) score 13 or sacrifice child
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.137685] Killed process 5939 (update-manager) total-vm:151804kB, anon-rss:24832kB, file-rss:54404kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.142918] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156710] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156716] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156728] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156731] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156735]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156746]  f266ef3c 00000000 00000000 00000000 f26dbe90 f9f2369e 00000000 f26dbe90
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156756]  c10c22d5 00000000 f26dbf14 00200296 c1a4b000 f26dbea0 f246a5e0 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156766] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156779]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156785]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156831]  [<f9f2369e>] ? i915_gem_shrinker_oom+0x16e/0x1d0 [i915]
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156838]  [<c10c22d5>] ? rcu_oom_notify+0xd5/0x100
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156844]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156851]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156857]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156862]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156868]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156875]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156880]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156886]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156891]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156896]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156901]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156904] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913] active_anon:50649 inactive_anon:125664 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913]  active_file:95296 inactive_file:333371 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913]  unevictable:8 dirty:195 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913]  mapped:49174 shmem:23953 pagetables:1960 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156913]  free:105536 free_pcp:693 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.156930] DMA free:10248kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon:2172kB active_file:1592kB inactive_file:756kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB dirty:4kB writeback:0kB mapped:248kB shmem:8kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:28kB unstable:0kB b:
+.......................................
+.......................................
+.......................................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.157741] Out of memory: Kill process 3230 (mongod) score 12 or sacrifice child
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.157747] Killed process 3230 (mongod) total-vm:667712kB, anon-rss:29504kB, file-rss:4
+8308kB
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.166942] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177455] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177463] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177475] CPU: 0 PID: 5429 Comm: gnome-terminal- Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177478] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177482]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177493]  f266ef3c 00000000 00000000 00000000 f26dbe90 f9f2369e 00000000 f26dbe90
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177503]  c10c22d5 00000000 f26dbf14 00200296 c1a4b000 f26dbea0 f53db8d0 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177513] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177525]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177531]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177576]  [<f9f2369e>] ? i915_gem_shrinker_oom+0x16e/0x1d0 [i915]
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177582]  [<c10c22d5>] ? rcu_oom_notify+0xd5/0x100
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177588]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177595]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177601]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177606]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177611]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177618]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177623]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177628]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177634]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177638]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177644]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177648] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657] active_anon:35896 inactive_anon:53627 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657]  active_file:96273 inactive_file:332386 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657]  unevictable:8 dirty:195 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657]  mapped:37561 shmem:23953 pagetables:1923 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177657]  free:192645 free_pcp:599 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.177673] DMA free:12308kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon:124kB active_file:1592kB inactive_file:756kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB dirty:4kB writeback:0kB mapped:192kB shmem:8kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:28kB unstable:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+:
+.....................................
+.....................................
+.....................................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.298922] IP: [<c1707a07>] down_write+0x17/0x40
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.298996] *pdpt = 0000000001bc7001 *pde = 00000000018001e1 
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.299080] Oops: 0003 [#1] SMP 
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.299132] Modules linked in: xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquera
+de_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 cfg80211 xt_hl ip6t_rt i915 nf_con
+ntrack_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype nf_conntrack_ipv4 nf_defrag
+_ipv4 xt_conntrack ip6table_filter ip6_tables nf_conntrack_netbios_ns nf_conntrack_broadcast nf_nat_ftp nf_nat nf_conntrack_ftp btusb nf_conntra
+ck btbcm btintel uvcvideo dell_wmi bnep iptable_filter gpio_ich sparse_keymap ip_tables snd_hda_codec_idt videobuf2_vmalloc rfcomm videobuf2_mem
+ops snd_hda_codec_generic videobuf2_core snd_hda_intel x_tables bluetooth snd_hda_controller dell_laptop snd_hda_codec i8k v4l2_common videodev 
+dcdbas snd_hda_core coretemp snd_pcm media snd_hwdep snd_seq_midi virgo_cloudexec_mempool(O+) joydev virgo_cloud_mempool_kernelspace(O) snd_seq_
+midi_event snd_rawmidi serio_raw virgo_queue(O) snd_seq lpc_ich kingcobra_main_kernelspace(O) mac_hid wmi snd_timer virgo_kernel_analytics(O) sn
+d_seq_device drm_kms_helper snd drm soundcore parport_pc shpchp i2c_algo_bit ppdev video lp parport binfmt_misc hid_generic usbhid hid uas(O) um
+s_realtek(O) usb_storage(O) psmouse ahci sky2 libahci
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] CPU: 1 PID: 4805 Comm: pulseaudio Tainted: G           O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] task: f5bf38d0 ti: f2622000 task.ti: f2622000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] EIP: 0060:[<c1707a07>] EFLAGS: 00010286 CPU: 1
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] EIP is at down_write+0x17/0x40
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] EAX: c1925267 EBX: c1925267 ECX: c192524b EDX: ffff0001
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] ESI: f323ee40 EDI: c1925267 EBP: f2623ea0 ESP: f2623e9c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] CR0: 80050033 CR2: c1925267 CR3: 01bca000 CR4: 000406f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] Stack:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217]  f33c4b40 f2623eb8 c118258a c192524b f33c4ba0 f33c4b40 ad6f7000 f2623edc
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217]  c117bfc8 00000000 ad600000 00000000 f2623ee8 f33d8a80 00000000 f52da400
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217]  f2623f34 c11853c2 00000000 f52da400 00000000 ffffffff 00000003 f27a1000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.300217] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302166]  [<c118258a>] unlink_file_vma+0x2a/0x50
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302166]  [<c117bfc8>] free_pgtables+0x98/0x110
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302279]  [<c11853c2>] exit_mmap+0x82/0x110
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302308]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302308]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302308]  [<c108dedf>] ? wake_up_state+0xf/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302308]  [<c107336e>] ? zap_other_threads+0x6e/0x80
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.302308]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.312580]  [<c10691c6>] SyS_exit_group+0x16/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.312580]  [<c170969b>] sysenter_do_call+0x12/0x12
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.320583] Code: 30 e2 ff ff 89 d8 f0 ff 00 79 05 e8 94 ad c4 ff 5b 5d c3 90 55 89 e5 53 66 66 66 66 90 89 c3 e8 10 e2 ff ff ba 01 00 ff ff 89 d8 <f0> 0f c1 10 66 85 d2 74 05 e8 77 ad c4 ff 64 a1 8c 41 bb c1 89
+..............................................
+..............................................
+..............................................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390082] Purging GPU memory, 692224 bytes freed, 37568512 bytes still pinned.
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390099] swap_dup: Bad swap file entry 39991f82
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390407] gnome-terminal- invoked oom-killer: gfp_mask=0x0, order=0, oom_score_adj=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390411] gnome-terminal- cpuset=session-c2.scope mems_allowed=0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390423] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G      D    O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390427] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390431]  00000000 00000000 f26dbe40 c17035eb f266eb50 f26dbea0 c1157516 c192a40c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390442]  f266ef3c 00000000 00000000 00000000 f26dbe90 f9f2369e 00000000 f26dbe90
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390453]  c10c22d5 00000000 f26dbf14 00200296 c1a4b000 f26dbea0 f53d8650 00000000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390464] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390477]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390484]  [<c1157516>] dump_header.isra.11+0x76/0x1f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390531]  [<f9f2369e>] ? i915_gem_shrinker_oom+0x16e/0x1d0 [i915]
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390539]  [<c10c22d5>] ? rcu_oom_notify+0xd5/0x100
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390544]  [<c1157ba1>] oom_kill_process+0x191/0x350
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390551]  [<c12c0b4c>] ? security_capable_noaudit+0x1c/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390557]  [<c106f0ba>] ? has_capability_noaudit+0x1a/0x30
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390562]  [<c115800e>] __out_of_memory+0x2ae/0x2e0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390568]  [<c11582aa>] pagefault_out_of_memory+0x9a/0xc0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390575]  [<c1058555>] mm_fault_error+0x85/0x140
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390580]  [<c1058df7>] __do_page_fault+0x467/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390587]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390592]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390597]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390602]  [<c170a81b>] error_code+0x67/0x6c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390606] Mem-Info:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615] active_anon:24261 inactive_anon:37616 isolated_anon:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615]  active_file:96916 inactive_file:331860 isolated_file:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615]  unevictable:8 dirty:232 writeback:0 unstable:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615]  slab_reclaimable:10420 slab_unreclaimable:4286
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615]  mapped:33196 shmem:10493 pagetables:1787 bounce:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390615]  free:220538 free_pcp:394 free_cma:0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390631] DMA free:12284kB min:68kB low:84kB high:100kB active_anon:12kB inactive_anon
+:164kB active_file:1592kB inactive_file:756kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15916kB mlocked:0kB 
+dirty:4kB writeback:0kB mapped:192kB shmem:36kB slab_reclaimable:656kB slab_unreclaimable:268kB kernel_stack:24kB pagetables:28kB unstable:0kB b
+ounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? no
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.390635] lowmem_reserve[]: 0 704 2844 2844
+....................................
+...................................
+.....................................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] CPU: 0 PID: 4975 Comm: gmain Tainted: G      D    O    4.1.5 #15
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] task: f26d38d0 ti: f2702000 task.ti: f2702000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] EIP: 0060:[<c1707a07>] EFLAGS: 00210286 CPU: 0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] EIP is at down_write+0x17/0x40
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] EAX: 0000001c EBX: 0000001c ECX: 00000000 EDX: ffff0001
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] ESI: f323ef00 EDI: 0000001c EBP: f2703d88 ESP: f2703d84
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] CR0: 8005003b CR2: 0000001c CR3: 2d949a40 CR4: 000406f0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Stack:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  f26be3c0 f2703da0 c118258a 00000000 f26be360 f26be3c0 ae600000 f2703dc4
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  c117bfc8 00000000 ae600000 00000000 f2703dd0 f53d2de0 00000000 f536c000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  f2703e1c c11853c2 00000000 f536c000 00000000 ffffffff 00000003 f1e1a000
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Call Trace:
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c118258a>] unlink_file_vma+0x2a/0x50
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c117bfc8>] free_pgtables+0x98/0x110
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c11853c2>] exit_mmap+0x82/0x110
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c10a1476>] ? remove_wait_queue+0x36/0x40
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c108def0>] ? wake_up_state+0x20/0x20
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c11f9e5d>] ? eventfd_read+0x2d/0x60
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c11b673c>] ? rw_verify_area+0x5c/0x150
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c11d1bd2>] ? __fget_light+0x22/0x60
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Code: 30 e2 ff ff 89 d8 f0 ff 00 79 05 e8 94 ad c4 ff 5b 5d c3 90 55 89 e5 53 66 66 66 66 90 89 c3 e8 10 e2 ff ff ba 01 00 ff ff 89 d8 <f0> 0f c1 10 66 85 d2 74 05 e8 77 ad c4 ff 64 a1 8c 41 bb c1 89
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] EIP: [<c1707a07>] down_write+0x17/0x40 SS:ESP 0068:f2703d84
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] CR2: 000000000000001c
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] ---[ end trace 65c6d35f6027f937 ]---
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Fixing recursive fault but reboot is needed!
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.439617] Purging GPU memory, 634880 bytes freed, 37568512 bytes still pinned.
+:
+...................................
+...................................
+...................................
+Sep 28 19:59:12 shrinivaasanka-Inspiron-1545 kernel: [  212.423937] Fixing recursive fault but reboot is needed!
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.439617] Purging GPU memory, 634880 bytes freed, 37568512 bytes still pinned.
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443451]  00000006 00000000 b7209000 f323f040 f26dbda0 c117c8da 00000006 00000000
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443461] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443466]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443472]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443476]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443481]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443485]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443491]  [<c117c8da>] unmap_single_vma+0x5ca/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443497]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443502]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443508]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443512]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443517]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443522]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443527]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443532]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443537]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443542]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443548]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443553]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443557]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443563]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443568]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443573]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443578]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443583]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443589]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443593]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443597] swap_free: Bad swap file entry 380c7f01
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443601] BUG: Bad page map in process gnome-terminal-  pte:c18fe03c00000000 pmd:3323f067
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443605] addr:b7209000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:396
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443612] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:ext4_readpage
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443616] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443620] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+....................................
+....................................
+....................................
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443809] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443813] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443816]  00000000 00000000 f26dbce0 c17035eb f273c060 f26dbd1c c117b13e c192c408
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443826]  f33bea80 c11564b0 c1225ae0 c122a340 00000397 00000000 00000397 f441b49c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443837]  f323f068 f323f05c b720b000 f323f050 f26dbda0 c117c8da f323f068 f323f05c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443848] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443853]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443858]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443863]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443867]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443872]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443877]  [<c117c8da>] unmap_single_vma+0x5ca/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443884]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443888]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443894]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443898]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443903]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443909]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443913]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443918]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443923]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443928]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443934]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443939]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443944]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443949]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443954]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443959]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443964]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443970]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443975]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443980]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443984] BUG: Bad page map in process gnome-terminal-  pte:f3241facc170293c pmd:3323f067
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443988] addr:b720b000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:398
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.443995] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:ext4_readpage
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444039] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444042] Hardware name: Dell Inc. Inspiron 1545  
+..............................................
+..............................................
+...............................................
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444045]  00000000 00000000 f26dbcb8 c17035eb f273c060 f26dbcf4 c117b13e c192c408
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444056]  f33bea80 c11564b0 c1225ae0 c122a340 00000398 00000000 00000398 f441b49c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444067]  c170293c f3241fac c170293c f3241fac f26dbd1c c117c2db c170293c f3241fac
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444078] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444084]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444089]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444094]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444098]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444103]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444108]  [<c170293c>] ? printk+0x17/0x19
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444112]  [<c170293c>] ? printk+0x17/0x19
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444117]  [<c117c2db>] vm_normal_page+0x9b/0xd0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444121]  [<c170293c>] ? printk+0x17/0x19
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444126]  [<c117c712>] unmap_single_vma+0x402/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444130]  [<c170293c>] ? printk+0x17/0x19
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444136]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444141]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444147]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444151]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444156]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444161]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444166]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444171]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444176]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444181]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444186]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444191]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444196]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444201]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444206]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444211]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444216]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444222]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444227]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444232]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444237] BUG: Bad page map in process gnome-terminal-  pte:c18fe03cc1003d73 pmd:3323f067
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444241] addr:b720c000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:399
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444248] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:ext4_readpage
+.........................................
+.........................................
+.........................................
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444290] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444295]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444301]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444305]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444310]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444314]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444320]  [<c1003d73>] ? sys_virgo_set+0x303/0x330
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444324]  [<c1003d73>] ? sys_virgo_set+0x303/0x330
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444329]  [<c117c2db>] vm_normal_page+0x9b/0xd0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444334]  [<c1003d73>] ? sys_virgo_set+0x303/0x330
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444339]  [<c117c712>] unmap_single_vma+0x402/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444343]  [<c1003d73>] ? sys_virgo_set+0x303/0x330
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444348]  [<c170293c>] ? printk+0x17/0x19
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444354]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444358]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444364]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444368]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444373]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444378]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444383]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444388]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444393]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444398]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444403]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444409]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444413]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444419]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444423]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444429]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444434]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444439]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444444]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444448]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444453] BUG: Bad page map in process gnome-terminal-  pte:f323fc74 pmd:3323f067
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444457] addr:b720d000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:39a
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444464] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:ext4_readpage
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444469] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444472] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+.......................................
+.......................................
+.......................................
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444469] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444472] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444475]  00000000 00000000 f26dbce0 c17035eb f273c060 f26dbd1c c117b13e c192c408
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444485]  f33bea80 c11564b0 c1225ae0 c122a340 0000039a 00000000 0000039a f441b49c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444496]  f323fc74 00000000 b720e000 f323f068 f26dbda0 c117c8da f323fc74 00000000
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444507] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444512]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444517]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444522]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444526]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444531]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444536]  [<c117c8da>] unmap_single_vma+0x5ca/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444543]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444547]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444553]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444557]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444562]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444568]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444572]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444577]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444582]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444587]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444592]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444597]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444602]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444607]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444612]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444617]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444622]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444628]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444633]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444637]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444642] swap_free: Bad swap offset entry 018a5b9c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444645] BUG: Bad page map in process gnome-terminal-  pte:f14b7380f324082c pmd:3323f067
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444649] addr:b720e000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:39b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444656] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:ext4_readpage
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.444661] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted:
+..................................................
+..................................................
+..................................................
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447002] addr:b72c6000 vm_flags:00000075 anon_vma:  (null) mapping:f441b49c index:453
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447009] file:libgtk-3.so.0.1400.12 fault:filemap_fault mmap:ext4_file_mmap readpage:
+ext4_readpage
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447014] CPU: 1 PID: 5429 Comm: gnome-terminal- Tainted: G    B D    O    4.1.5 #15
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447017] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447020]  00000000 00000000 f26dbcb8 c17035eb f273c060 f26dbcf4 c117b13e c192c408
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447030]  f33bea80 c11564b0 c1225ae0 c122a340 00000453 00000000 00000453 f441b49c
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447041]  c1bf69c7 0000000a c1bf69c7 0000000a f26dbd1c c117c2db c1bf69c7 0000000a
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447051] Call Trace:
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447056]  [<c17035eb>] dump_stack+0x41/0x52
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447062]  [<c117b13e>] print_bad_pte+0x18e/0x220
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447066]  [<c11564b0>] ? __lock_page_or_retry+0xb0/0xb0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447071]  [<c1225ae0>] ? ext4_dax_fault+0x20/0x20
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447075]  [<c122a340>] ? ext4_readpages+0x50/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447081]  [<c117c2db>] vm_normal_page+0x9b/0xd0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447086]  [<c117c712>] unmap_single_vma+0x402/0x6a0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447092]  [<c117d367>] unmap_vmas+0x47/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447097]  [<c11853af>] exit_mmap+0x6f/0x110
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447103]  [<c1064037>] mmput+0x57/0xf0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447107]  [<c1068a74>] do_exit+0x2a4/0x900
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447112]  [<c10b7fb1>] ? vprintk_default+0x41/0x60
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447117]  [<c10714f7>] ? recalc_sigpending+0x17/0x50
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447122]  [<c1071b0b>] ? dequeue_signal+0x2b/0x180
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447127]  [<c1069147>] do_group_exit+0x37/0xa0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447132]  [<c107434a>] get_signal+0x23a/0x6c0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447137]  [<c108269e>] ? notifier_call_chain+0x4e/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447142]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447148]  [<c10127ce>] do_signal+0x1e/0xa10
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447152]  [<c1157d8d>] ? __out_of_memory+0x2d/0x2e0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447158]  [<c115828a>] ? pagefault_out_of_memory+0x7a/0xc0
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447163]  [<c1058555>] ? mm_fault_error+0x85/0x140
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447168]  [<c1058df7>] ? __do_page_fault+0x467/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447173]  [<c11b689d>] ? vfs_read+0x6d/0x120
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447179]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447184]  [<c101321f>] do_notify_resume+0x5f/0x70
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447188]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447192] swap_free: Bad swap file entry 3809a7ca
+Sep 28 19:59:13 shrinivaasanka-Inspiron-1545 kernel: [  213.447196] BUG: Bad page map in process gnome-terminal-  pte:c134f95cf323f67c pmd:3323f
+067
+

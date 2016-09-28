@@ -91,7 +91,7 @@ void asfer_virgo_set_kernel_analytics(char* key, char* value)
 			//printf("vuid virgo_get() : %s \n",get_data);
 
 			// virgo_free
-			// long free_ret=syscall(363,virgo_unique_id);
+			//long free_ret=syscall(363,virgo_unique_id);
 			break;
 		}
 		case 1:
