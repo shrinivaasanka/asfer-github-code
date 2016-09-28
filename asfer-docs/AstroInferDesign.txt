@@ -5761,3 +5761,11 @@ updates playing spoilsport again?).
                 6.2 https://lists.freedesktop.org/archives/intel-gfx/2016-August/102160.html
         7. Intel GPU i915 GEM DRM docs - https://01.org/linuxgraphics/gfx-docs/drm/gpu/drm-mm.html
 
+-----------------------------------------------------------------------------------------------------------------------------------
+334. (BUG-STABILITY ISSUES) Boost::Python AsFer-VIRGO systemcall/drivers invocations kernel panics - new findings
+-----------------------------------------------------------------------------------------------------------------------------------
+Commits - 28 September 2016
+-----------------------------------------------------------------------------------------------------------------------------------
+Continued analysis of kernel panics after VIRGO systemcalls/drivers code in i915 GPU driver. Has hithertoo unseen strange OOM panic stack dumps in GPU memory after kmalloc() of 100 bytes in virgo_cloud_malloc() and set/get of it. Logs with panic stack dumps and High and Low Watermark
+memory details have been committed to cpp_boost_python_extensions/testlogs/.
+
