@@ -5769,3 +5769,16 @@ Commits - 28 September 2016
 Continued analysis of kernel panics after VIRGO systemcalls/drivers code in i915 GPU driver. Has hithertoo unseen strange OOM panic stack dumps in GPU memory after kmalloc() of 100 bytes in virgo_cloud_malloc() and set/get of it. Logs with panic stack dumps and High and Low Watermark
 memory details have been committed to cpp_boost_python_extensions/testlogs/.
 
+-----------------------------------------------------------------------------------------------------------------------------------
+335. (BUG-STABILITY ISSUES) Boost::Python AsFer-VIRGO systemcall invocations panics - more findings
+-----------------------------------------------------------------------------------------------------------------------------------
+Commits - 29 September 2016
+-----------------------------------------------------------------------------------------------------------------------------------
+Kernel Panic Analysis for Boost::Python AsFer - VIRGO system calls invocations:
+This log contains hitherto unseen crash in python itself deep within kernel (insufficient logs) followed by random -32 and -107
+errors. Finally successful invocations happened. Connections between -32,-107 errors and random panics/freezes were analyzed few years
+ago (Blocking and Non-blocking socket modes). i915 DRM related stacks were not found in kern.log. Random disappearance of
+logs is quite a big travail. Crash within python could be i915 related - cannot be confirmed without logs. Pattern emerging is that
+of: Something wrong going on between CPU and GPU while allocating kernel memory in CPU domain - kmalloc() is likely allocating from
+GPU and not CPU - quite a weird bug and unheard of.
+
