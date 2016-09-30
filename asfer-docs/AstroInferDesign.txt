@@ -5782,3 +5782,8 @@ logs is quite a big travail. Crash within python could be i915 related - cannot 
 of: Something wrong going on between CPU and GPU while allocating kernel memory in CPU domain - kmalloc() is likely allocating from
 GPU and not CPU - quite a weird bug and unheard of.
 
+-----------------------------------------------------------------------------------------------------------------------------------
+336. (BUG-STABILITY ISSUES) VIRGO kernel panics - final findings
+-----------------------------------------------------------------------------------------------------------------------------------
+Further kernel panic investigation in VIRGO - probably the last. Logs with analysis have been committed to cpp_boost_python_extensions/
+testlogs/.
