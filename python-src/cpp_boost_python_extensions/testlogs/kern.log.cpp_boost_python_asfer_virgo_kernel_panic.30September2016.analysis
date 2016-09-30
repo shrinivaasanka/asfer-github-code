@@ -1,0 +1,323 @@
+-----------------------------------------------------------------------------------------------------------------------------
+Boost::Python AsFer - VIRGO system calls invocations - kernel panics in thunar and soft lockup errors - these errors
+were not seen eariler and they are totally unrelated to VIRGO linux systemcalls and drivers code.
+-----------------------------------------------------------------------------------------------------------------------------
+Sep 30 14:38:50 shrinivaasanka-Inspiron-1545 kernel: [ 1486.305775] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<97>         
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [thunar:6965]
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] Modules linked in: arc4 b43 bcma mac80211 ssb xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquerade_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt nf_conntrack_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype nf_conntrack_ipv4 nf_defrag_ipv4 xt_conntrack i915 ip6table_filter ip6_tables nf_conntrack_netbios_ns nf_conntrack_broadcast btusb nf_nat_ftp nf_nat btbcm btintel nf_conntrack_ftp nf_conntrack dell_wmi uvcvideo sparse_keymap rfcomm gpio_ich snd_hda_codec_idt bnep snd_hda_codec_generic bluetooth iptable_filter snd_hda_intel videobuf2_vmalloc dell_laptop snd_hda_controller ip_tables dcdbas videobuf2_memops videobuf2_core virgo_cloudexec_mempool(O+) v4l2_common i8k virgo_cloud_mempool_kernelspace(O) snd_hda_codec x_tables videodev virgo_queue(O) coretemp media snd_hda_core snd_hwdep kingcobra_main_kernelspace(O) snd_pcm joydev serio_raw snd_seq_midi lpc_ich virgo_kernel_analytics(O) snd_seq_midi_event snd_rawmidi snd_seq mac_hid wmi drm_kms_helper parport_pc ppdev snd_seq_device snd_timer lp drm snd soundcore shpchp parport video i2c_algo_bit binfmt_misc hid_generic usbhid hid uas(O) ums_realtek(O) usb_storage(O) psmouse ahci libahci sky2
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] CPU: 0 PID: 6965 Comm: thunar Tainted: G           O    4.1.5 #15
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 12/07/2009
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] task: f16177f0 ti: f1704000 task.ti: f1704000
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] EIP: 0060:[<c1709346>] EFLAGS: 00200206 CPU: 0
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] EIP is at _raw_spin_lock+0x46/0x80
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] EAX: 0000002e EBX: c54e98ac ECX: 000068b4 EDX: 000000c5
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] ESI: 000000eb EDI: 000000eb EBP: f1705ef4 ESP: f1705ee8
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] CR0: 80050033 CR2: b764f3b4 CR3: 07f54ba0 CR4: 000406f0
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] Stack:
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  c54e9680 c54e98ac c54e97bc f1705f24 c16aa33e 00000000 00000000 c54e96dc
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  00000000 00000000 c7fa20c8 00000008 f3a99200 00000000 f3a9921c f1705f30
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  c16aa55b f3a99200 f1705f48 c15fb4dc 00000000 00000000 c7fa20c0 00000008
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] Call Trace:
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c16aa33e>] unix_release_sock+0x6e/0x270
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c16aa55b>] unix_release+0x1b/0x30
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c15fb4dc>] sock_release+0x1c/0x80
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c15fb550>] sock_close+0x10/0x20
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c11b7c1f>] __fput+0xcf/0x200
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c11b7d8d>] ____fput+0xd/0x10
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c1080189>] task_work_run+0x99/0xd0
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c1013213>] do_notify_resume+0x53/0x70
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.100006] Code: f1 38 c1 75 08 5b 5e 5f 5d c3 8d 76 00 0f b6 f9 b9 00 80 00 00 eb 0d 8d b6 00 00 00 00 f3 90 83 e9 01 74 29 0f b6 13 89 f0 31 d0 <a8> fe 75 ee f6 c2 01 74 d1 31 c0 31 c9 88 d0 83 e2 fe 88 d1 83
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.352069] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<98>         
+Sep 30 14:38:52 shrinivaasanka-Inspiron-1545 kernel: [ 1488.352172] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<98>         
+---------------------------------------------------------------------------------------------------------------------------
+Sep 30 14:39:18 shrinivaasanka-Inspiron-1545 kernel: [ 1514.777575] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<B4>         
+Sep 30 14:39:18 shrinivaasanka-Inspiron-1545 kernel: [ 1514.777954] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<B5>         
+Sep 30 14:39:18 shrinivaasanka-Inspiron-1545 kernel: [ 1514.778953] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<B5>         
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] NMI watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [thunar:6965]
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] Modules linked in: arc4 b43 bcma mac80211 ssb xt_CHECKSUM iptable_mangle ipt
+_MASQUERADE nf_nat_masquerade_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 ip6t_REJECT nf_reject_ipv6 nf_log_ipv
+6 xt_hl ip6t_rt nf_conntrack_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype nf_co
+nntrack_ipv4 nf_defrag_ipv4 xt_conntrack i915 ip6table_filter ip6_tables nf_conntrack_netbios_ns nf_conntrack_broadcast btusb nf_nat_ftp nf_nat 
+btbcm btintel nf_conntrack_ftp nf_conntrack dell_wmi uvcvideo sparse_keymap rfcomm gpio_ich snd_hda_codec_idt bnep snd_hda_codec_generic bluetoo
+th iptable_filter snd_hda_intel videobuf2_vmalloc dell_laptop snd_hda_controller ip_tables dcdbas videobuf2_memops videobuf2_core virgo_cloudexe
+c_mempool(O+) v4l2_common i8k virgo_cloud_mempool_kernelspace(O) snd_hda_codec x_tables videodev virgo_queue(O) coretemp media snd_hda_core snd_
+hwdep kingcobra_main_kernelspace(O) snd_pcm joydev serio_raw snd_seq_midi lpc_ich virgo_kernel_analytics(O) snd_seq_midi_event snd_rawmidi snd_s
+eq mac_hid wmi drm_kms_helper parport_pc ppdev snd_seq_device snd_timer lp drm snd soundcore shpchp parport video i2c_algo_bit binfmt_misc hid_g
+eneric usbhid hid uas(O) ums_realtek(O) usb_storage(O) psmouse ahci libahci sky2
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] CPU: 0 PID: 6965 Comm: thunar Tainted: G           O L  4.1.5 #15
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] task: f16177f0 ti: f1704000 task.ti: f1704000
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] EIP: 0060:[<c170933f>] EFLAGS: 00200206 CPU: 0
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] EIP is at _raw_spin_lock+0x3f/0x80
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] EAX: 0000002e EBX: c54e98ac ECX: 00000812 EDX: 000000c5
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] ESI: 000000eb EDI: 000000eb EBP: f1705ef4 ESP: f1705ee8
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] CR0: 80050033 CR2: b764f3b4 CR3: 07f54ba0 CR4: 000406f0
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] Stack:
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  c54e9680 c54e98ac c54e97bc f1705f24 c16aa33e 00000000 00000000 c54e96dc
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  00000000 00000000 c7fa20c8 00000008 f3a99200 00000000 f3a9921c f1705f30
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  c16aa55b f3a99200 f1705f48 c15fb4dc 00000000 00000000 c7fa20c0 00000008
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] Call Trace:
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c16aa33e>] unix_release_sock+0x6e/0x270
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c16aa55b>] unix_release+0x1b/0x30
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c15fb4dc>] sock_release+0x1c/0x80
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c15fb550>] sock_close+0x10/0x20
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c11b7c1f>] __fput+0xcf/0x200
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c11b7d8d>] ____fput+0xd/0x10
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c1080189>] task_work_run+0x99/0xd0
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c1013213>] do_notify_resume+0x53/0x70
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007]  [<c1709857>] work_notifysig+0x26/0x2b
+Sep 30 14:39:20 shrinivaasanka-Inspiron-1545 kernel: [ 1516.100007] Code: 0f c1 03 0f b6 f4 89 f1 38 c1 75 08 5b 5e 5f 5d c3 8d 76 00 0f b6 f9 b:
+--------------------------------------------------------------------------------------------------------------------------
+New panics within kmalloc itself in DRM after Boost::python system calls invocation
+--------------------------------------------------------------------------------------------------------------------------
+Sep 30 17:39:17 shrinivaasanka-Inspiron-1545 kernel: [  251.801525] virgocloudexec_mempool_sendto(): sock_release invoked on client socket 
+Sep 30 17:39:17 shrinivaasanka-Inspiron-1545 kernel: [  251.872215] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<94>^A 
+Sep 30 17:39:17 shrinivaasanka-Inspiron-1545 kernel: [  251.872375] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<94>^A 
+Sep 30 17:39:17 shrinivaasanka-Inspiron-1545 kernel: [  251.872742] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<95>^A 
+Sep 30 17:39:17 shrinivaasanka-Inspiron-1545 kernel: [  251.873732] usb_fill_bulk_urb(): urb->transfer_buffer = USBC<95>^A 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779522] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779528] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779615] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779619] virgocloudexec_mempool_create(): before kernel_accept(); sock=f326a600 ... 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779621] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.779624] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.916227] BUG: unable to handle kernel paging request at 6e72656b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.916327] IP: [<c119f220>] __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.916402] *pdpt = 0000000031fcc001 *pde = 0000000000000000 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.916485] Oops: 0000 [#1] SMP 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.916537] Modules linked in: xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquera
+de_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt nf_conntrac
+k_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype btusb nf_conntrack_ipv4 btbcm nf
+_defrag_ipv4 i915 btintel xt_conntrack ip6table_filter ip6_tables uvcvideo nf_conntrack_netbios_ns dell_wmi nf_conntrack_broadcast videobuf2_vma
+lloc gpio_ich sparse_keymap nf_nat_ftp nf_nat videobuf2_memops videobuf2_core snd_hda_codec_idt nf_conntrack_ftp nf_conntrack v4l2_common snd_hd
+a_codec_generic snd_hda_intel snd_hda_controller dell_laptop videodev snd_hda_codec dcdbas bnep iptable_filter ip_tables x_tables snd_hda_core r
+fcomm i8k snd_hwdep bluetooth snd_pcm media coretemp snd_seq_midi virgo_cloudexec_mempool(O+) snd_seq_midi_event virgo_cloud_mempool_kernelspace
+(O) snd_rawmidi virgo_queue(O) joydev snd_seq serio_raw drm_kms_helper snd_seq_device snd_timer lpc_ich snd kingcobra_main_kernelspace(O) drm ma
+c_hid soundcore virgo_kernel_analytics(O) video wmi shpchp i2c_algo_bit parport_pc ppdev lp parport binfmt_misc uas(O) ums_realtek(O) usb_storag
+e(O) hid_generic usbhid hid psmouse sky2 ahci libahci
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918408] CPU: 1 PID: 5665 Comm: HWActivator Tainted: G           O    4.1.5 #15
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918508] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918622] task: f4129f90 ti: f38ee000 task.ti: f38ee000
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918692] EIP: 0060:[<c119f220>] EFLAGS: 00010202 CPU: 1
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918766] EIP is at __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918822] EAX: 00000000 EBX: 000080d0 ECX: 6e72656b EDX: 00009e70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918903] ESI: c1bbe280 EDI: f5801d80 EBP: f38efad0 ESP: f38efaa4
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.918984]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919055] CR0: 8005003b CR2: 6e72656b CR3: 2dbe9b20 CR4: 000406f0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919136] Stack:
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919165]  f38efae4 c10952e0 f4129fd4 c1528662 f5801d80 0000000f 6e72656b 000080d0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919297]  f3939900 00000004 000000a3 f38efb8c c1528662 f357e600 f357e600 f5dce840
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919427]  64fe9a87 0000002e f357e600 f34aa800 f5dce840 f38efb5c c109589d f500e800
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919557] Call Trace:
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919595]  [<c10952e0>] ? update_curr+0x90/0x1d0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919663]  [<c1528662>] ? usb_hcd_submit_urb+0x2d2/0xa30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919737]  [<c1528662>] usb_hcd_submit_urb+0x2d2/0xa30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919809]  [<c109589d>] ? dequeue_entity+0x16d/0x8b0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.919882]  [<c1096388>] ? dequeue_task_fair+0x3a8/0x990
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529e88>] usb_submit_urb+0x338/0x580
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152a89e>] usb_start_wait_urb+0x4e/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c119f325>] ? __kmalloc+0x185/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529a19>] ? usb_alloc_urb+0x19/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529a19>] ? usb_alloc_urb+0x19/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152aa37>] usb_control_msg+0xa7/0xe0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170839b>] ? schedule_timeout+0x12b/0x220
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c151e075>] hub_port_status+0x75/0x100
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152121f>] hub_activate+0xbf/0x580
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1561add>] ? wakeup_rh+0x3d/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c151eb00>] ? usb_enable_link_state+0x370/0x380
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1521816>] hub_resume+0x26/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529618>] ? hcd_bus_resume+0x1b8/0x260
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<f8b7b1df>] ? uvc_resume+0xf/0x20 [uvcvideo]
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152dc75>] usb_resume_interface.isra.6+0xa5/0x110
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152defc>] usb_resume_both+0x5c/0x100
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee85>] usb_runtime_resume+0x15/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148ac36>] __rpm_callback+0x26/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148acbf>] rpm_callback+0x1f/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148ba49>] rpm_resume+0x419/0x620
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1480800>] ? bus_uevent_store+0x40/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148bc95>] __pm_runtime_resume+0x45/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152e4c9>] usb_autoresume_device+0x19/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1532fdd>] usbdev_open+0xcd/0x200
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1532b70>] ? driver_resume+0x10/0x10
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11ba477>] chrdev_open+0x87/0x1a0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b4408>] do_dentry_open+0x1a8/0x2e0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11ba3f0>] ? cdev_put+0x20/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b45d4>] vfs_open+0x44/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c4344>] do_last+0x354/0x1010
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c12f85af>] ? apparmor_file_alloc_security+0x1f/0x30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c2800>] ? path_init+0x60/0x440
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b7e9d>] ? get_empty_filp+0xbd/0x1c0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c5073>] path_openat+0x73/0x550
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1705426>] ? __schedule+0x3a6/0x930
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10c8d0c>] ? lock_hrtimer_base.isra.15+0x1c/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c66e1>] do_filp_open+0x31/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b59a5>] do_sys_open+0x115/0x220
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c0000>] ? fsnotify_create+0x60/0x60
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b5ad2>] SyS_open+0x22/0x30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170969b>] sysenter_do_call+0x12/0x12
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Code: 0f 84 35 01 00 00 89 75 e4 8b 07 64 8b 50 04 64 03 05 dc 30 bb c1 8b 0
+8 85 c9 89 4d ec 0f 84 68 01 00 00 8b 47 14 8b 4d ec 8b 37 <8b> 1c 01 8d 4a 01 8b 45 ec 64 0f c7 0e 0f 94 c0 84 c0 74 ca 8b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] EIP: [<c119f220>] __kmalloc+0x80/0x240 SS:ESP 0068:f38efaa4
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] CR2: 000000006e72656b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] BUG: unable to handle kernel 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] BUG: unable to handle kernel paging request at 6e72656b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] IP: [<c119f220>] __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] *pdpt = 0000000031fcc001 *pde = 0000000000000000 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Oops: 0000 [#2] SMP 
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Modules linked in: xt_CHECKSUM iptable_mangle ipt_MASQUERADE nf_nat_masquera
+de_ipv4 iptable_nat nf_nat_ipv4 bridge stp llc ebtable_filter ebtables cfg80211 ip6t_REJECT nf_reject_ipv6 nf_log_ipv6 xt_hl ip6t_rt nf_conntrac
+k_ipv6 nf_defrag_ipv6 ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG xt_limit xt_tcpudp xt_addrtype btusb nf_conntrack_ipv4 btbcm nf
+_defrag_ipv4 i915 btintel xt_conntrack ip6table_filter ip6_tables uvcvideo nf_conntrack_netbios_ns dell_wmi nf_conntrack_broadcast videobuf2_vma
+lloc gpio_ich sparse_keymap nf_nat_ftp nf_nat videobuf2_memops videobuf2_core snd_hda_codec_idt nf_conntrack_ftp nf_conntrack v4l2_common snd_hd
+a_codec_generic snd_hda_intel snd_hda_controller dell_laptop videodev snd_hda_codec dcdbas bnep iptable_filter ip_tables x_tables snd_hda_core r
+fcomm i8k snd_hwdep bluetooth snd_pcm media coretemp snd_seq_midi virgo_cloudexec_mempool(O+) snd_seq_midi_event virgo_cloud_mempool_kernelspace
+(O) snd_rawmidi virgo_queue(O) joydev snd_seq serio_raw drm_kms_helper snd_seq_device snd_timer lpc_ich snd kingcobra_main_kernelspace(O) drm ma
+c_hid soundcore virgo_kernel_analytics(O) video wmi shpchp i2c_algo_bit parport_pc ppdev lp parport binfmt_misc uas(O) ums_realtek(O) usb_storage(O) hid_generic usbhid hid psmouse sky2 ahci libahci
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] CPU: 1 PID: 5665 Comm: HWActivator Tainted: G           O    4.1.5 #15
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Hardware name: Dell Inc. Inspiron 1545                   /0J037P, BIOS A14 1
+2/07/2009
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] task: f4129f90 ti: f38ee000 task.ti: f38ee000
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] EIP: 0060:[<c119f220>] EFLAGS: 00010002 CPU: 1
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] EIP is at __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] EAX: 00000000 EBX: 00000020 ECX: 6e72656b EDX: 00009e70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] ESI: c1bbe280 EDI: f5801d80 EBP: f38ef55c ESP: f38ef530
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  DS: 007b ES: 007b FS: 00d8 GS: 00e0 SS: 0068
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] CR0: 8005003b CR2: 6e72656b CR3: 2dbe9b20 CR4: 000406f0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Stack:
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  00000000 00000000 00000000 c13bcef4 f5801d80 00000010 6e72656b 00000020
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  00000001 edf5f000 edf71600 f38ef5dc c13bcef4 00000040 00000008 00000002
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  00000002 f378d800 f95f0720 c1743880 00000001 0000002f c174002f 00000001
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Call Trace:
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bcef4>] ? bit_cursor+0x244/0x590
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bcef4>] bit_cursor+0x244/0x590
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13b6513>] ? get_color+0x23/0x110
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bccb0>] ? bit_putcs+0x400/0x400
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13b8f9f>] fbcon_cursor+0x10f/0x190
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bccb0>] ? bit_putcs+0x400/0x400
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c143e6c7>] hide_cursor+0x27/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c143f892>] vt_console_print+0x392/0x3d0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1350dec>] ? sprintf+0x1c/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c143f500>] ? lf+0x90/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10b5e94>] call_console_drivers.constprop.27+0x94/0xd0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10b7819>] console_unlock+0x469/0x500
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<f910ad77>] ? drm_modeset_lock+0x77/0xf0 [drm]
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10a9035>] ? down_trylock+0x25/0x30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10b7bc6>] vprintk_emit+0x316/0x580
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10b7fb1>] vprintk_default+0x41/0x60
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170293c>] printk+0x17/0x19
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10581d5>] no_context+0x135/0x280
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10583d5>] __bad_area_nosemaphore+0xb5/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13b7b1c>] ? fbcon_clear_margins+0x5c/0x80
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c105864c>] bad_area+0x3c/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058d3c>] __do_page_fault+0x3ac/0x470
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170a81b>] error_code+0x67/0x6c
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c14300d8>] ? n_tty_receive_char_special+0x8a8/0xa90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c119f220>] ? __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bcef4>] ? bit_cursor+0x244/0x590
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bcef4>] bit_cursor+0x244/0x590
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1080720>] ? param_set_long+0x10/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13b6513>] ? get_color+0x23/0x110
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bccb0>] ? bit_putcs+0x400/0x400
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13b8f9f>] fbcon_cursor+0x10f/0x190
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c13bccb0>] ? bit_putcs+0x400/0x400
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c143e6c7>] hide_cursor+0x27/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c144008f>] redraw_screen+0x12f/0x1f0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1440bab>] do_unblank_screen+0x17b/0x1c0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1440bff>] unblank_screen+0xf/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1354318>] bust_spinlocks+0x18/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1016302>] oops_end+0x32/0xf0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058180>] no_context+0xe0/0x280
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1091bfd>] ? __enqueue_entity+0x6d/0x80
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10583d5>] __bad_area_nosemaphore+0xb5/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c105864c>] bad_area+0x3c/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058d3c>] __do_page_fault+0x3ac/0x470
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058e00>] ? __do_page_fault+0x470/0x470
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1058e1a>] do_page_fault+0x1a/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170a81b>] error_code+0x67/0x6c
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c119f220>] ? __kmalloc+0x80/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10952e0>] ? update_curr+0x90/0x1d0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1528662>] ? usb_hcd_submit_urb+0x2d2/0xa30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1528662>] usb_hcd_submit_urb+0x2d2/0xa30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c109589d>] ? dequeue_entity+0x16d/0x8b0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1096388>] ? dequeue_task_fair+0x3a8/0x990
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529e88>] usb_submit_urb+0x338/0x580
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152a89e>] usb_start_wait_urb+0x4e/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c119f325>] ? __kmalloc+0x185/0x240
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529a19>] ? usb_alloc_urb+0x19/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529a19>] ? usb_alloc_urb+0x19/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152aa37>] usb_control_msg+0xa7/0xe0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170839b>] ? schedule_timeout+0x12b/0x220
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c151e075>] hub_port_status+0x75/0x100
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152121f>] hub_activate+0xbf/0x580
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1561add>] ? wakeup_rh+0x3d/0x140
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c151eb00>] ? usb_enable_link_state+0x370/0x380
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1521816>] hub_resume+0x26/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1529618>] ? hcd_bus_resume+0x1b8/0x260
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<f8b7b1df>] ? uvc_resume+0xf/0x20 [uvcvideo]
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152dc75>] usb_resume_interface.isra.6+0xa5/0x110
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee70>] ? usb_runtime_suspend+0x70/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152defc>] usb_resume_both+0x5c/0x100
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152ee85>] usb_runtime_resume+0x15/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148ac36>] __rpm_callback+0x26/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148acbf>] rpm_callback+0x1f/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148ba49>] rpm_resume+0x419/0x620
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1480800>] ? bus_uevent_store+0x40/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c148bc95>] __pm_runtime_resume+0x45/0x70
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c152e4c9>] usb_autoresume_device+0x19/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1532fdd>] usbdev_open+0xcd/0x200
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1532b70>] ? driver_resume+0x10/0x10
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11ba477>] chrdev_open+0x87/0x1a0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b4408>] do_dentry_open+0x1a8/0x2e0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11ba3f0>] ? cdev_put+0x20/0x20
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b45d4>] vfs_open+0x44/0x50
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c4344>] do_last+0x354/0x1010
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c12f85af>] ? apparmor_file_alloc_security+0x1f/0x30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c2800>] ? path_init+0x60/0x440
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b7e9d>] ? get_empty_filp+0xbd/0x1c0
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c5073>] path_openat+0x73/0x550
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c1705426>] ? __schedule+0x3a6/0x930
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c10c8d0c>] ? lock_hrtimer_base.isra.15+0x1c/0x40
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c66e1>] do_filp_open+0x31/0x90
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b59a5>] do_sys_open+0x115/0x220
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11c0000>] ? fsnotify_create+0x60/0x60
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c11b5ad2>] SyS_open+0x22/0x30
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127]  [<c170969b>] sysenter_do_call+0x12/0x12
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] Code: 0f 84 35 01 00 00 89 75 e4 8b 07 64 8b 50 04 64 03 05 dc 30 bb c1 8b 08 85 c9 89 4d ec 0f 84 68 01 00 00 8b 47 14 8b 4d ec 8b 37 <8b> 1c 01 8d 4a 01 8b 45 ec 64 0f c7 0e 0f 94 c0 84 c0 74 ca 8b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] EIP: [<c119f220>] __kmalloc+0x80/0x240 SS:ESP 0068:f38ef530
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] CR2: 000000006e72656b
+Sep 30 17:39:18 shrinivaasanka-Inspiron-1545 kernel: [  252.920127] ---[ end trace 85900b64707a678b ]---
+--------------------------------------------------------------------------------------------------------------------------------
+These random crashes occur in kernel components which are totally unrelated to VIRGO syscalls and drivers code and mostly
+related to i915 drivers. Today's crashes occurred in Thunar and USB drivers codebases after virgo_cloud_xxxx() calls from
+Boost::python system call invocation and telnet cacheing primitives requests. Given the unpredictability of these panics,
+and possibility of a lurking bug within linux kernel 4.1.5 further investigations on reasons behind crashes are stopped.
+These crashes do not point to any inherent problem within VIRGO code added on top of linux kernel 4.1.5. Despite crashes,
+all VIRGO systemcalls and primitives - virgo_malloc, virgo_set and virgo_get - work perfectly reproducibly. For example,
+telnet VIRGO cache primitives are affected by a crash after every malloc,set,get,set,get sequence periodically. Similarly,
+VIRGO system calls - virgo_malloc,virgo_set and virgo_get - work after few -32,-107 errors or a hang followed by a panic somewhere
+else within kernel outside VIRGO code. Probably future kernel versions might resolve these crashes beyond the scope of VIRGO code.
+So the pattern is: works-works-works-crashes-works-works-works-crashes ..... and all crashes so far happen outside VIRGO code
+indicating that nothing untowards transpires within VIRGO.
+------------------
+Possible culprits:
+------------------
+*) Most probable - i915 GPU DRM GEM XServer Compositing/Rendering having race condition with CPU domain cache allocation - sync
+issues between kmalloc() and other components(CPU and GPU). Mutexing on some shared lock used by other components might be
+required within VIRGO - all kmalloc()s are guarded by mutexes. DRM GEM documentation mentions about necessity of explicit
+locking by other applications to prevent lock-order crashes.
+*) -32 and -107 (ENOTCONN, EPIPE errors) problems in sockets - this is more than 3 year old problem observed in blocking
+and non-blocking I/O.
+*) Synchronization within VIRGO code - this is least probable because no concurrent requests are sent
+
