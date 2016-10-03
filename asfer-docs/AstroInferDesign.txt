@@ -23,6 +23,14 @@
 #kashrinivaasan@live.com
 #-----------------------------------------------------------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------------------------------------------
+NeuronRain - Design Objectives
+-----------------------------------------------------------------------------------------------------------
+NeuronRain OS is machine learning, cloud primitives enriched linux-kernel fork-off with applications in Internet-of-Things. AstroInfer is
+the machine learning side of it to learn analytics variables later read as config by linux kernel and any device specific driver.
+NeuronRain has been partitioned into components so that effective decoupling is achieved e.g Linux kernel can be realtime OS for realtime less-latency applications, Message Queuing can be KingCobra or any other standard MQ product. There are IOT operating systems like https://github.com/RIOT-OS/. Linux and IoT - linux on cameras,automobiles etc., - https://lwn.net/Articles/596754/. NeuronRain in itself is not just a product but a framework to build products. Applications can invoke VIRGO cloud memory,clone,filesystem primitives to create new products on NeuronRain Smart-IoT framework.
+ 
+
 Copyright attributions for other open source products dependencies:
 ------------------------------------------------------------------
 1.Maitreya's Dreams - http://www.saravali.de (some bugs were fixed locally in degree computation of textual display mode)
