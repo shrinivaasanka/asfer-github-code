@@ -3769,7 +3769,7 @@ Dream Analysis in http://cogprints.org/5030/1/NRC-48725.pdf (mentioned in 18.8) 
 ------------------------------------------------------------------------------------------------------------
 Throughout this document, ranking of documents which is so far a pure statistical and machine learning problem is viewed from Graph Theory and Lambda Function growth perspective - theory invades what was till now engineering.  Both Regularity Lemma and Ramsey theory elucidate order in large graphs. Regularity Lemma has a notion of density which is defined as:
 	d(V1, V2) = |E(V1, V2)|/|V1||V2|
-where V1 and V2 are subsets of vertices V(G) for a graph G and E(V1,V2) are edges among subsets V1 and V2. Density is a quantitative measure of graph complexity and intrinsic connectedness merit of a text document. Ramsey Number R(a,b) of a graph is the least number such that there always exists a graph of vertex order R(a,b) with a clique of size a and an independent set of size b. Typically associated with "Party problem" where it is required to find minimum number of people to be invited so that a people know each other and b people do not know each other, Ramsey number of ThoughtNet sentiment colorings - e.g bipartisan red-blue colorings for 2 thought hyperedge sentiment polarities - provides a theoretical bound on size of ThoughtNet as such so that order arises in a motley mix of emotionally tagged thoughts - a clique of similar sentimental edges emerges. Similar application of Ramsey number holds good for Recursive Gloss Overlap graph also - a document's graph can have cliques and independent sets with vertex colorings for word sentiments.
+where V1 and V2 are subsets of vertices V(G) for a graph G and E(V1,V2) are edges among subsets V1 and V2. Density is a quantitative measure of graph complexity and intrinsic connectedness merit of a text document. Ramsey Number R(a,b) of a graph is the least number such that there always exists a graph of vertex order R(a,b) with a clique of size a or an independent set of size b. Typically associated with "Party problem" where it is required to find minimum number of people to be invited so that a people know each other or b people do not know each other, Ramsey number of ThoughtNet sentiment colorings - e.g bipartisan red-blue colorings for 2 thought hyperedge sentiment polarities - provides a theoretical bound on size of ThoughtNet as such so that order arises in a motley mix of emotionally tagged thoughts - a clique of similar sentimental edges emerges. Similar application of Ramsey number holds good for Recursive Gloss Overlap graph also - a document's graph can have cliques and independent sets with vertex colorings for word sentiments.
 
 ==========================================================================================================================
 237. (FEATURE-DONE) Commits as on 11 March 2016 - Deep Learning Convolution - Multi Feature Convolution Map Kernel Filters
@@ -5791,7 +5791,27 @@ of: Something wrong going on between CPU and GPU while allocating kernel memory 
 GPU and not CPU - quite a weird bug and unheard of.
 
 -----------------------------------------------------------------------------------------------------------------------------------
-336. (BUG-STABILITY ISSUES) VIRGO kernel panics - final findings
+336. (BUG-STABILITY ISSUES) VIRGO kernel panics - final findings - 30 September 2016
 -----------------------------------------------------------------------------------------------------------------------------------
 Further kernel panic investigation in VIRGO - probably the last. Logs with analysis have been committed to cpp_boost_python_extensions/
 testlogs/.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+337. (THEORY) Ramsey Theorem, Edge Labelling of Voting Graph and Multiway Majority Function - 5 October 2016 - related to 256,272,319
+-----------------------------------------------------------------------------------------------------------------------------------------
+Multiway majority voting can be drawn as a directed graph. There is an edge between vertices v1 and v2 if v1 votes for v2 forming a
+Voting Graph with a weight >= 0.  Realworld example of this is web link graph where incoming links to a webpage are votes to it and
+outgoing links from a webpage are votes for adjacent pages. PageRank is a special case of Multiway Majority Function which ranks the
+candidate webpages by a converging random walk markov chain of transition probabilities, with a rider that all webpages are both voters
+and candidates making it a peer-to-peer majority voting. PageRank is thus a Non-boolean voting function. If web link graph is a tree
+of depth d, it is equivalent to depth-d recursive majority function.  Edge labelling of a graph assigns colors to edges of a graph
+(Edge coloring is a special case of labelling with restriction no two adjacent edges are of same color). Voting graphs can be edge
+labelled where each color of an edge denotes a voter affiliation. Ramsey Number in combinatorics states that there exists a number
+v=RN(r,s) for every graph of order v, there exists a clique of size r or independent set of size s. For any Voting graph Ramsey Theorem
+implies emergence of a clique or an independent set i.e voters who vote among themselves or who do not vote for each other. If the Voting
+graph is complete then Ramsey Theorem implies emergence of monochromatic cliques r (red cliques) or s (blue cliques).
+
+References:
+------------
+337.1 Ramsey Theorem Lecture Notes - http://math.mit.edu/~fox/MAT307-lecture05.pdf
+337.2 Ramsey Theorem - https://en.wikipedia.org/wiki/Ramsey%27s_theorem
