@@ -5837,4 +5837,8 @@ For complement function special case (i.e 2-coloring of the sequences), Schur Th
 
 " ...  for any given positive integers r and k, there is some number N such that if the integers {1, 2, ..., N} are colored, each with one of r different colors, then there are at least k integers in arithmetic progression all of the same color.  ...  "
 
-Van Der Waerden Theorem for 2-colorings of natural numbers is equivalent to complementation disjoint set cover of natural numbers. When this is a prime complementation special case, prime integers are colored in red and composites in blue. Thus Van Der Waerden theorem for prime-composite complementation implies that either set of primes or composites have arithmetic progressions (because of same coloring) of size atleast k (Related: Green-Tao theorem states that primes have arbitrarily many arithmetic progressions).
+Van Der Waerden Theorem for 2-colorings of natural numbers is equivalent to complementation disjoint set cover of natural numbers. When this is a prime complementation special case, prime integers are colored in red and composites in blue. Thus Van Der Waerden theorem for prime-composite complementation implies that either set of primes or composites have arithmetic progressions (because of same coloring) of size atleast k (Related: Green-Tao theorem states that primes have arbitrarily many arithmetic progressions). Upperbound for N in this 2-coloring prime complementation is deriveable from [TimothyGowers] bound as: N <= 2^2^2^2^(k+9) for a family of k sized arithmetic progressions (also called as k-regularity). This implies arbitrarily long monochromatic arithmetic progressions can be found in prime-composite complementation by choosing N and k.
+
+References:
+----------
+338.1 Bound for Van Der Waerden Numbers - https://www.emis.de/journals/INTEGERS/papers/a20int2005/a20int2005.pdf
