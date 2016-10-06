@@ -5815,3 +5815,26 @@ References:
 ------------
 337.1 Ramsey Theorem Lecture Notes - http://math.mit.edu/~fox/MAT307-lecture05.pdf
 337.2 Ramsey Theorem - https://en.wikipedia.org/wiki/Ramsey%27s_theorem
+
+----------------------------------------------------------------------------------------------------------------------------------------
+338. (THEORY) Van Der Waerden Number, Schur and Ramsey Theorems, Coloring of Intgers and Complement Function - Related to 323 - important
+draft updates to http://arxiv.org/pdf/1106.4102.pdf
+----------------------------------------------------------------------------------------------------------------------------------------
+Complement Function over Integer sequences can be defined in terms of 2-colorings of the integers. Described previously in (323) PCP
+undecidability proof of complementation, a function f and its complement g can be construed as 2-colorings of the Disjoint Set Cover Union i.e
+the set of natural numbers - each color is a function - for example f is red and g is blue.
+
+Schur's Theorem for Ramsey coloring of integer sequences states (quoted from http://math.mit.edu/~fox/MAT307-lecture05.pdf):
+
+" ...  Schur's theorem
+Ramsey theory for integers is about finding monochromatic subsets with a certain arithmetic structure. It starts with the following theorem of Schur (1916), which turns out to be an easy application of Ramsey's theorem for graphs.
+
+Theorem 3.
+For any k >= 2 , there is n > 3 such that for any k-coloring of 1,2,3,...,n, there are three integers x, y, z of the same color such that
+x + y = z ...  "
+
+For complement function special case (i.e 2-coloring of the sequences), Schur Theorem implies that there are always integers x,y and z in the image of a function or its complement obeying x+y=z. Van Der Waerden Therem for coloring integers is the variant of Ramsey Theorem for graphs (quoting https://en.wikipedia.org/wiki/Van_der_Waerden%27s_theorem):
+
+" ...  for any given positive integers r and k, there is some number N such that if the integers {1, 2, ..., N} are colored, each with one of r different colors, then there are at least k integers in arithmetic progression all of the same color.  ...  "
+
+Van Der Waerden Theorem for 2-colorings of natural numbers is equivalent to complementation disjoint set cover of natural numbers. When this is a prime complementation special case, prime integers are colored in red and composites in blue. Thus Van Der Waerden theorem for prime-composite complementation implies that either set of primes or composites have arithmetic progressions (because of same coloring) of size atleast k (Related: Green-Tao theorem states that primes have arbitrarily many arithmetic progressions).
