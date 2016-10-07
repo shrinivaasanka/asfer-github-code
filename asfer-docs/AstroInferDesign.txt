@@ -5842,3 +5842,10 @@ Van Der Waerden Theorem for 2-colorings of natural numbers is equivalent to comp
 References:
 ----------
 338.1 Bound for Van Der Waerden Numbers - https://www.emis.de/journals/INTEGERS/papers/a20int2005/a20int2005.pdf
+
+------------------------------------------------------------------------------------------------------------------------------
+339. (FEATURE-DONE) Boyer-Moore Streaming Majority Algorithm - Commits - 7 October 2016
+------------------------------------------------------------------------------------------------------------------------------
+This commit implements Boyer-Moore algorithm for finding Majority element in Streaming Sequences. It uses the Streaming Generator
+Abstraction for input streaming datasource. Logs have been committed to python-src/testlogs/
+
