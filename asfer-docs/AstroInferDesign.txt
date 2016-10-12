@@ -5820,8 +5820,7 @@ References:
 337.2 Ramsey Theorem - https://en.wikipedia.org/wiki/Ramsey%27s_theorem
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-338. (THEORY) Van Der Waerden Number, Schur and Ramsey Theorems, Coloring of Integers and Complement Function - Related to 323 - important
-draft updates to http://arxiv.org/pdf/1106.4102.pdf
+338. (THEORY) Van Der Waerden Number, Schur, Szemeredi and Ramsey Theorems, Coloring of Integers and Complement Function - Related to 323 - important draft updates to http://arxiv.org/pdf/1106.4102.pdf
 ----------------------------------------------------------------------------------------------------------------------------------------
 Complement Function over Integer sequences can be defined in terms of 2-colorings of the integers. Described previously in (323) PCP
 undecidability proof of complementation, a function f and its complement g can be construed as 2-colorings of the Disjoint Set Cover Union i.e
@@ -5847,6 +5846,9 @@ Finding the arithmetic progressions for Van Der Waerden numbers have been formul
 Concept of complement graphs have been studied in Perfect Graph Theorem and has strong resemblance to function complementation. Complement graph H is obtained from a graph G by adding edges to make it complete graph and removing edges in G i.e H has edges which are not in G and vice versa. Function complementation is precisely a sequence corollary of Graph complementation. Perfect Graph Theorem (PGT) states that a graph is perfect if its complement is perfect where perfect graph is one in which all its induced subgraphs have chromatic number (number of colors required to k-color a graph) equal to size of maximum clique. Function complementation can be translated to Graph complementation by defining a relation: There is an edge in F, f(x1)----f(x2) for every f(x1) and f(x2) and there is an edge in G, g(x1)----g(x2) for every g(x1) and g(x2) where f and g are mutual complements. Obviously F and G have a single maximum clique with an independent set without any edge amongst them. Then it follows that order of F and G are their respective Ramsey Numbers.
 
 Any 2 graphs corresponding to 2 functions defined on same set obtained from previous construction are isomorphic. For example if a complete graph of 3 vertices (K3) is constructed from elements 2,3,5 for function f1 where f1 is defined as f1(0)=2, f1(1)=3 and f2(2)=5, the vertices can be numbered by the inverse(f1) as 0,1,2. Similarly for a different function f2 over 2,3,5 K3 obtained can be vertex numbered by the inverse(f2) where f2(0)=5, f2(1)=2 and f3(2)=3 where numbering is 1,2,0. This also implies two graphs for function f and its complement g are not isomorphic.
+
+Szemeredi's Theorem which is the generalization of Van Der Waerden's Theorem states: For any subset A of N of natural density > 0, there are infinitely many arithmetic progressions of size atleast k where natural density is defined as lim {n->infinity} sup |A intersection {1,2,3,...,n}|/n > 0. Green-Tao theorem applies a relative Szemeredi theorem because prime numbers have 0 natural density. Szemeredi's Theorem has been generalized to polynomial progressions where the polynomial progression is defined as [t(i) = t(i-1) + p(i)] in A for some integer valued polynomials p(i). Thus Generalized Szemeredi Theorem for Finding polynomial arithmetic progressions in a subset of natural numbers is closest to finding the complement of a function when set of natural numbers is 2-colored - only a subset of complement set is expressed as polynomials whereas complement function requires, by definition, the complete set to be expressed as polynomials (e.g interpolation polynomials, fourier polynomials).
+
 
 References:
 ----------
