@@ -5867,3 +5867,10 @@ elements of a set of positive integers diverges, then the set contains arbitrari
 This commit implements Boyer-Moore algorithm for finding Majority element in Streaming Sequences. It uses the Streaming Generator
 Abstraction for input streaming datasource. Logs have been committed to python-src/testlogs/
 
+------------------------------------------------------------------------------------------------------------------------------
+340. (FEATURE-DONE) GSpan Graph Substructure Mining Algorithm Implementation - Commits - 13 October 2016 and 14 October 2016
+------------------------------------------------------------------------------------------------------------------------------
+1.Graph Substructure Mining GSpan algorithm implementation with logs in testlogs/
+2.This code requires the Graph vertices to be labelled by unique integers
+3.Integer labelling of vertices makes it easier for DFSCode hashes to be generated uniquely.
+
