@@ -36,10 +36,12 @@ class GSpan(object):
 		self.graph_dataset=graphs
 		self.graph_dataset_dfs=[]
 		self.graph_dataset_graph2dfscodes={}
+		self.dfscodes_minimumsupport={}
 		self.graphset_SLeast={}
 		self.mined_graphs=[]
 		self.Ds=[]
 		self.S=[]
+		self.minsupport=2.8
 
 	def DepthFirstTrees(self):
 		for g in self.graph_dataset:
@@ -81,15 +83,33 @@ class GSpan(object):
 		children=[]
 		sstr=str(s[0])+"-"+str(s[1])
 		for k,v in self.graph_dataset_graph2dfscodes.items():
-			if k.find(sstr) != -1 :
-				children.append(self.DFSCode(v))
+			index=k.find(sstr)
+			if index != -1 and index < len(k):
+				childedges=self.ParseChildren(k[index:])
+				for c in childedges:
+					children.append(c)
 		return children
+
+	def ParseChildren(self,dfscode):
+		children=[]
+		edges=dfscode.split("#")
+		for e in edges:
+			vertices=e.split("-")
+			children.append((int(e[0]),int(e[2])))
+		print "ParseChildren():",children
+		return children
+
+	def DFSCodesMinimumSupport(self):
+		for k,v in self.graph_dataset_graph2dfscodes.items():
+			self.dfscodes_minimumsupport[k]=0.2*len(k)
+		#print "DFSCodesMinimumSupport():",self.dfscodes_minimumsupport
 
 	def GraphSet_Projection(self):
 		self.DepthFirstTrees()
 		self.Graph2DFSCodes()
+		self.DFSCodesMinimumSupport()
 		graphset_SLeast=self.FindSmallestGraphs()
-		self.S=graphset_SLeast
+		#self.S=graphset_SLeast
 		for n in xrange(len(graphset_SLeast)):
 			g=graphset_SLeast[n]	
 			for e in g.edges():
@@ -108,16 +128,20 @@ class GSpan(object):
 
 	def Subgraph_Mining(self,dataset,S,s):
 		print "Subgraph_Mining:",dataset
+		self.iteration += 1
 		self.S.append(s)
 		if s :
 			children=self.FindChildren(s)
 		print "children:",children
 		for n in xrange(len(children)):
-			print "n:",n
-			print "s:",children[n]
-			if self.iteration < 10:
-				self.Subgraph_Mining(self.Ds, self.S, children[n])
-		self.iteration += 1
+			#print "n:",n
+			#print "s:",children[n]
+			#print "support:",self.dfscodes_minimumsupport
+			try:
+				if self.dfscodes_minimumsupport[children[n]] > self.minsupport and self.iteration < 10:
+					self.Subgraph_Mining(self.Ds, self.S, children[n])
+			except:
+				pass
 
 if __name__=="__main__":
 	G1=nx.Graph()
@@ -125,12 +149,17 @@ if __name__=="__main__":
 	G3=nx.Graph()
 	G4=nx.Graph()
 	G5=nx.Graph()
+	G6=nx.Graph()
+	G7=nx.Graph()
+	G8=nx.Graph()
 	G1.add_edges_from([(1,2),(2,3),(2,4),(1,5),(2,5)])
 	G2.add_edges_from([(1,3),(4,3),(5,4),(2,5),(1,5)])
 	G3.add_edges_from([(1,4),(5,3),(5,2),(4,5),(1,2)])
 	G4.add_edges_from([(1,5),(2,3),(4,2),(2,5),(3,2),(1,6)])
 	G5.add_edges_from([(1,4),(2,1),(5,4),(4,1),(4,2),(5,6),(7,1)])
-	dataset=[G1,G2,G3,G4,G5]
+	G6.add_edges_from([(5,6),(7,1)])
+	G7.add_edges_from([(5,4),(7,1)])
+	G8.add_edges_from([(1,4),(5,6),(7,1)])
+	dataset=[G1,G2,G3,G4,G5,G6,G7,G8]
 	gspan=GSpan(dataset)
 	gspan.GraphSet_Projection()	
-			 
