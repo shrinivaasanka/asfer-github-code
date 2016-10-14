@@ -5874,3 +5874,11 @@ Abstraction for input streaming datasource. Logs have been committed to python-s
 2.This code requires the Graph vertices to be labelled by unique integers
 3.Integer labelling of vertices makes it easier for DFSCode hashes to be generated uniquely.
 
+-----------------------------------------------------------------------------------------------------------------------------
+341. (THEORY) Graph Mining Algorithms and Recursive Gloss Overlap Graph for text documents - Document Similarity
+-----------------------------------------------------------------------------------------------------------------------------
+Recursive Gloss Overlap Algorithm implementations in python-src/InterviewAlgorithm and its Spark Cloud Variants generate graphs
+with word labels from Text Documents. GSpan algorithm implemented in (340) mines subgraphs and edges common across graph dataset.
+This allows extraction of common patterns amongst text document graphs and thus is an unsupervised similarity clustering for
+text analytics. GSpan has provisions for assigning minimum support for filtering patterns which amounts to finding prominent
+keywords in recursive gloss overlap graphs.
