@@ -5853,6 +5853,7 @@ In the context of complement function graphs constructed previously, functions a
 
 Szemeredi's Theorem which is the generalization of Van Der Waerden's Theorem states: For any subset A of N of natural density > 0, there are infinitely many arithmetic progressions of size atleast k where natural density is defined as lim {n->infinity} sup |A intersection {1,2,3,...,n}|/n > 0. Green-Tao theorem applies a relative Szemeredi theorem because prime numbers have 0 natural density. Szemeredi's Theorem has been generalized to polynomial progressions where the polynomial progression is defined as [t(i) = t(i-1) + p(i)] in A for some integer valued polynomials p(i). Thus Generalized Szemeredi Theorem for Finding polynomial arithmetic progressions in a subset of natural numbers is closest to finding the complement of a function when set of natural numbers is 2-colored - only a subset of complement set is expressed as polynomials whereas complement function requires, by definition, the complete set to be expressed as polynomials (e.g interpolation polynomials, fourier polynomials).
 
+Roth Estimate for 2-coloring of integer sequences (in references 338.4 and 338.5) is a measure of order or randomness in a colored sequence and hence in a complementation by functions f and g (where each function is a color - e.g f is blue and g is red) over a universal set.
 
 References:
 ----------
@@ -5860,6 +5861,9 @@ References:
 338.2 Exact Ramsey Theory and Van Der Waerden Numbers by SAT-solvers - [OliverKullmann] - https://arxiv.org/pdf/1004.0653v2.pdf
 338.3 Erdos-Turan Conjecture - https://en.wikipedia.org/wiki/Erd%C5%91s_conjecture_on_arithmetic_progressions - If sum of reciprocals of
 elements of a set of positive integers diverges, then the set contains arbitrarily long arithmetic progressions
+338.4 Roth Estimate - http://matwbn.icm.edu.pl/ksiazki/aa/aa9/aa9125.pdf - Consider a two coloring of set of natural numbers N in red and blue. For all arithmetic progressions in the set N let Discrepancy be the difference between number of red and blue colored integers. Maximum of Discrepancy for all arithmetic progressions be Maximum(Discrepancy). Minimum(Maximum(Discrepancy)) for all 2-colorings is the Roth Estimate lowerbounded by N^1/4.
+338.5 Roth Estimate is nearly sharp - Beck, J. Combinatorica (1981) 1: 319. doi:10.1007/BF02579452 - http://link.springer.com/article/10.1007/BF02579452 - Previous Roth Estimate is upperbounded by N^(1/4+epsilon).
+
 
 ------------------------------------------------------------------------------------------------------------------------------
 339. (FEATURE-DONE) Boyer-Moore Streaming Majority Algorithm - Commits - 7 October 2016
