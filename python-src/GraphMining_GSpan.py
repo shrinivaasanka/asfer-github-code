@@ -30,6 +30,9 @@
 import networkx as nx
 import operator
 from collections import defaultdict
+import json
+
+numeric=False
 
 class GSpan(object):
 	def __init__(self,graphs):
@@ -45,7 +48,8 @@ class GSpan(object):
 
 	def DepthFirstTrees(self):
 		for g in self.graph_dataset:
-			dfstree=nx.dfs_tree(g,1)	
+			vertices=g.nodes()
+			dfstree=nx.dfs_tree(g,vertices[0])
 			self.graph_dataset_dfs.append(dfstree)
 
 	def Graph2DFSCodes(self):
@@ -54,7 +58,8 @@ class GSpan(object):
 		print self.graph_dataset_graph2dfscodes
 
 	def DFSCode(self,t):
-		tdfs=nx.dfs_tree(t,1)
+		vertices=t.nodes()
+		tdfs=nx.dfs_tree(t,vertices[0])
 		sorted_edges=sorted(tdfs.edges(),key=operator.itemgetter(0), reverse=False)
 		dfscode=""
 		for s in sorted_edges:
@@ -95,7 +100,10 @@ class GSpan(object):
 		edges=dfscode.split("#")
 		for e in edges:
 			vertices=e.split("-")
-			children.append((int(e[0]),int(e[2])))
+			if numeric:
+				children.append((int(vertices[0]),int(vertices[1])))
+			else:
+				children.append((vertices[0],vertices[1]))
 		print "ParseChildren():",children
 		return children
 
@@ -152,6 +160,11 @@ if __name__=="__main__":
 	G6=nx.Graph()
 	G7=nx.Graph()
 	G8=nx.Graph()
+	G9=nx.Graph()
+	G10=nx.Graph()
+	G11=nx.Graph()
+	G12=nx.Graph()
+	G13=nx.Graph()
 	G1.add_edges_from([(1,2),(2,3),(2,4),(1,5),(2,5)])
 	G2.add_edges_from([(1,3),(4,3),(5,4),(2,5),(1,5)])
 	G3.add_edges_from([(1,4),(5,3),(5,2),(4,5),(1,2)])
@@ -160,6 +173,27 @@ if __name__=="__main__":
 	G6.add_edges_from([(5,6),(7,1)])
 	G7.add_edges_from([(5,4),(7,1)])
 	G8.add_edges_from([(1,4),(5,6),(7,1)])
-	dataset=[G1,G2,G3,G4,G5,G6,G7,G8]
+	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.1")
+	G9edges=json.load(rgof)
+	G9.add_edges_from(G9edges)
+	print "G9edges:",G9.edges()
+	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.2")
+	G10edges=json.load(rgof)
+	G10.add_edges_from(G10edges)
+	print "G10edges:",G10.edges()
+	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.3")
+	G11edges=json.load(rgof)
+	G11.add_edges_from(G11edges)
+	print "G11edges:",G11.edges()
+	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.4")
+	G12edges=json.load(rgof)
+	G12.add_edges_from(G12edges)
+	print "G11edges:",G12.edges()
+	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.5")
+	G13edges=json.load(rgof)
+	G13.add_edges_from(G13edges)
+	print "G13edges:",G13.edges()
+	#dataset=[G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12,G13]
+	dataset=[G12,G13]
 	gspan=GSpan(dataset)
 	gspan.GraphSet_Projection()	
