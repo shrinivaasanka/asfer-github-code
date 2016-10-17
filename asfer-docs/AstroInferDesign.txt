@@ -5882,3 +5882,18 @@ with word labels from Text Documents. GSpan algorithm implemented in (340) mines
 This allows extraction of common patterns amongst text document graphs and thus is an unsupervised similarity clustering for
 text analytics. GSpan has provisions for assigning minimum support for filtering patterns which amounts to finding prominent
 keywords in recursive gloss overlap graphs.
+
+-----------------------------------------------------------------------------------------------------------------------------
+342. (FEATURE-DONE) Graph Mining Recursive Gloss Overlap Graph for text documents - Document Similarity
+-----------------------------------------------------------------------------------------------------------------------------
+Commits - 17 October 2016
+-----------------------------------------------------------------------------------------------------------------------------
+1.Code changes have been done to choose between numeric and word labelling of Graph vertices in GSpan GraphMining implementation.
+2.New file GraphMining_RecursiveGlossOverlap.py has been added to JSON dump the Recursive Gloss Overlap graph of a text document
+3.New directory InterviewAlgorithm/graphmining has been created which contains the numeric and word labelled Recusive Gloss Overlap
+graphs of 5 example text documents in topic class "Chennai Metropolitan Area Expansion"
+4.logs for commong edges mined between two Recursive Gloss Overlap document graphs has been committed in testlogs/
+5.Spidered web text has been updated
+6.GraphMining_RecursiveGlossOverlap.py JSON dumps the RGO edges into a text file and GraphMining_GSpan.py JSON loads them from
+InterviewAlgorithm/graphmining/
+
