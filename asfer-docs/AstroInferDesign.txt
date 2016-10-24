@@ -5859,6 +5859,10 @@ Roth Estimate for 2-coloring of integer sequences (in references 338.4 and 338.5
 	with probability equal to natural density of arithmetic progression in minimax()
 Previous approximation with sampling relates size of complement functions,coloring and arithmetic progressions by Roth estimate.
 
+Complement Graphs F and G constructed previously for function f and its complement g have set of all values of inverse(f) and inverse(g) as the respective vertex labels in their maximum monochromatic cliques. This maps a 2-colored integer sequence with each color representing a function to 2 graphs, mutually complement, each with a maximal monochromatic clique for respective function (f or g) and an independent set of other color. This construction adds one more dimension to the coloring problem: numbering of vertices for either color and subgraph isomorphism. From Van Der Waerden and later newer theorems, this implies numbered vertices in F and G have atleast one monochromatic arithmetic progression.
+
+Another important question is: Can a complement function polynomial be constructed from constituent monochromatic arithmetic progressions (or) Is the complement function polynomial interpolated by Lagrange Theorem or Fourier Analysis a composition of constituent arithmetic progressions? This is answered in reference 338.11 - Interpolation Polynomial for n points can be approximated from low discrepancy arithmetic progressions.
+
 References:
 ----------
 338.1 Bound for Van Der Waerden Numbers - https://www.emis.de/journals/INTEGERS/papers/a20int2005/a20int2005.pdf
@@ -5872,6 +5876,7 @@ elements of a set of positive integers diverges, then the set contains arbitrari
 338.8 Fourier Interpolation of n data points with polynomial of degree m - http://www.muskingum.edu/~rdaquila/m350/fourier-interdn10-1.ppt
 338.9 Fourier Analysis and Szemeredi's Theorem - Roth's Argument - Documenta Mathematica ICM Extra Volume 1998 - http://www.mathunion.org/ICM/ICM1998.1/Main/Fields/Gowers.MAN.ocr.pdf - Fourier Transform of set of integers mod N (for prime N) and deriving the arithmetic progressions of length 3 from inverse Fourier Transform.
 338.10 Hales-Jewett Theorem - [MichelleLee] - http://www.math.uchicago.edu/~may/VIGRE/VIGRE2009/REUPapers/Lee.pdf - generalization of Van Der Waerden Theorem to higher dimensions (n-cubes and n-lines) - any k-coloring of n-dimensional cube (or a matrix of points) has monochromatic line(with fixed coordinates for some dimensions and varying for others)
+338.11 Polynomial Interpolation from Low Discrepancy Arithmetic Progressions - [The Discrepancy Method: Randomness and Complexity - BernardChazelle] - https://books.google.co.in/books?id=dmOPmEh6LdYC&pg=PA338&lpg=PA338&dq=polynomial+interpolation+arithmetic+progression&source=bl&ots=CDNgOUBnua&sig=pxKMQx9ciY7_d4GcOkFwnCrOUEU&hl=en&sa=X&ved=0ahUKEwiSqOv0ovPPAhVMpo8KHZsbA3wQ6AEIPzAE#v=onepage&q=polynomial%20interpolation%20arithmetic%20progression&f=false - Page 338 and Figure 9.4 in Page 342 illustrating the distribution of Fourier Coefficients over a circle in Discrete Fourier Transform of a subset of Z16 (also explained in 338.8).
 
 ------------------------------------------------------------------------------------------------------------------------------
 339. (FEATURE-DONE) Boyer-Moore Streaming Majority Algorithm - Commits - 7 October 2016
