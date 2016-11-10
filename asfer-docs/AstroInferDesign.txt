@@ -5948,3 +5948,22 @@ Some resumed analysis of AsFer-VIRGO boost::python invocations of VIRGO memory s
 The i915 DRM GEM error is highly reproducible pointing something unruly about it. No logical reason can be attributed to this except
 some kernel sync issues.  This further confirms that there is nothing wrong with VIRGO layer of Linux kernel and Linux kernel deep
 within inherently has a chronic problem.
+
+------------------------------------------------------------------------------------------------------------------------------
+345. (THEORY) Polynomial Reconstruction (PR) Problem, Error Correcting Codes and 2-Coloring/Complement Functions - important
+draft updates to http://arxiv.org/pdf/1106.4102.pdf - 10 November 2016
+------------------------------------------------------------------------------------------------------------------------------
+Polynomial Reconstruction Problem states that:
+Given a set of n points (x1,y1),(x2,y2),...,(xn,yn) recover all polynomials p of degree less than k such that pi(xi) != yi
+for maximum of i points in {1,2,3,...,n}. In other words PRP is a curve-fitting interpolation problem and is related to
+Error correcting problems like List Decoding (list of polynomials approximating a message one of which is correct).
+
+2-Coloring scheme algorithms and Complement Function constructions are alternative spectacles to view the Polynomial Reconstruction
+Problem i.e Complement Function and 2-Coloring are special settings of Polynomial Reconstruction with exact curve fitting.
+
+References:
+----------
+345.1 Polynomial Reconstruction and Cryptanalysis - Berlekamp-Welch, Guruswami-Sudan algorithms - https://eprint.iacr.org/2004/217.pdf
+
+
+
