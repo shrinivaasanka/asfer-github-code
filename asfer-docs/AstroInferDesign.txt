@@ -5956,7 +5956,7 @@ draft updates to http://arxiv.org/pdf/1106.4102.pdf - 10 November 2016
 Polynomial Reconstruction Problem states that:
 Given a set of n points (x1,y1),(x2,y2),...,(xn,yn) recover all polynomials p of degree less than k such that pi(xi) != yi
 for maximum of i points in {1,2,3,...,n}. In other words PRP is a curve-fitting interpolation problem and is related to
-Error correcting problems like List Decoding (list of polynomials approximating a message one of which is correct).
+Error correcting problems like List Decoding (list of polynomials approximating a message one of which is correct),Reed-Solomon Codes.
 
 2-Coloring scheme algorithms and Complement Function constructions are alternative spectacles to view the Polynomial Reconstruction
 Problem i.e Complement Function and 2-Coloring are special settings of Polynomial Reconstruction with exact curve fitting.
