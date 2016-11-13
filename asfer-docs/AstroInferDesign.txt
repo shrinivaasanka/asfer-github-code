@@ -5964,6 +5964,7 @@ Problem i.e Complement Function and 2-Coloring are special settings of Polynomia
 References:
 ----------
 345.1 Polynomial Reconstruction and Cryptanalysis - Berlekamp-Welch, Guruswami-Sudan algorithms - https://eprint.iacr.org/2004/217.pdf
+345.2 Hardness of Constructing Multivariate Polynomials over Finite Fields - [ParikshitGopalan,SubhashKhot,RishiSaket] - https://www.cs.nyu.edu/~khot/papers/polynomial.pdf - If there is a polynomial P(X1,X2,...,Xn) such that P(xi) = f(xi) for all points (xi,f(xi)), it can be found by interpolation. This is exact agreement. Can we find a polynomial that agrees on most points? This approximation is proved to be NP-hard.
 
 
 
