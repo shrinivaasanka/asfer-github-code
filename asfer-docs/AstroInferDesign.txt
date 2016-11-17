@@ -5951,7 +5951,7 @@ within inherently has a chronic problem.
 
 ------------------------------------------------------------------------------------------------------------------------------
 345. (THEORY) Polynomial Reconstruction (PR) Problem, Error Correcting Codes and 2-Coloring/Complement Functions - important
-draft updates to http://arxiv.org/pdf/1106.4102.pdf - 10 November 2016
+draft updates to http://arxiv.org/pdf/1106.4102.pdf - 10 November 2016 and 17 November 2016
 ------------------------------------------------------------------------------------------------------------------------------
 Polynomial Reconstruction Problem states that:
 Given a set of n points (x1,y1),(x2,y2),...,(xn,yn) recover all polynomials p of degree less than k such that pi(xi) != yi
@@ -5965,6 +5965,7 @@ References:
 ----------
 345.1 Polynomial Reconstruction and Cryptanalysis - Berlekamp-Welch, Guruswami-Sudan algorithms - https://eprint.iacr.org/2004/217.pdf
 345.2 Hardness of Constructing Multivariate Polynomials over Finite Fields - [ParikshitGopalan,SubhashKhot,RishiSaket] - https://www.cs.nyu.edu/~khot/papers/polynomial.pdf - If there is a polynomial P(X1,X2,...,Xn) such that P(xi) = f(xi) for all points (xi,f(xi)), it can be found by interpolation. This is exact agreement. Can we find a polynomial that agrees on most points? This approximation is proved to be NP-hard.
+345.3 Lagrange Interpolation and Berlekamp-Welch PRP algorithm - [SadhkanRuma] - https://www.academia.edu/2756695/Evaluation_of_Polynomial_Reconstruction_Problem_using_Lagrange_Interpolation_Method?auto=download
 
 
 
