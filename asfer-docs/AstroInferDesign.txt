@@ -292,7 +292,7 @@ Alternatively if subset of voters reveal their votes (1 or 0) in opinion polls t
 
 An interesting parallel to election approximation is to sample fourier spectrum of boolean functions of a complexity class C for each voter.(This seems to be an open problem - http://cstheory.stackexchange.com/questions/17431/the-complexity-of-sampling-approximately-the-fourier-transform-of-a-boolean-fu) . Essentially this implies complexity of approximating a voter's boolean function in complexity class C by sampling the fourier coefficients of its spectrum and hence election forecasting is C-Fourier-Sampling-Hard.
 
-Points (53.1) and (53.2) define a Judge Boolean Function with TQBF example that is EXP-complete. Each voter in RHS of P(Good) has such a TQBF that is input to Majority circuit. 
+Points (53.1) and (53.2) define a Judge Boolean Function with TQBF example that is PSPACE-complete. Each voter in RHS of P(Good) has such a TQBF that is input to Majority circuit. TQBF is also AP-hard where AP is the set of all languages recognized by an alternating turing machine (ATM) with alternating forall and thereexists states, and it is known that PSPACE=AP (http://people.seas.harvard.edu/~salil/cs221/spring10/lec6.pdf).
 
 -----------------------------------------------------------------------------------------------------
 (*IMPORTANT*) Boolean Function Composition (BFC) and Majority+SAT voting circuit
