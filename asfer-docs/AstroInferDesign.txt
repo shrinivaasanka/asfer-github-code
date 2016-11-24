@@ -5969,5 +5969,22 @@ References:
 345.2 Hardness of Constructing Multivariate Polynomials over Finite Fields - [ParikshitGopalan,SubhashKhot,RishiSaket] - https://www.cs.nyu.edu/~khot/papers/polynomial.pdf - If there is a polynomial P(X1,X2,...,Xn) such that P(xi) = f(xi) for all points (xi,f(xi)), it can be found by interpolation. This is exact agreement. Can we find a polynomial that agrees on most points? This approximation is proved to be NP-hard.
 345.3 Lagrange Interpolation and Berlekamp-Welch PRP algorithm - [SadhkanRuma] - https://www.academia.edu/2756695/Evaluation_of_Polynomial_Reconstruction_Problem_using_Lagrange_Interpolation_Method?auto=download
 
-
-
+-----------------------------------------------------------------------------------------------------------------------------
+346. (THEORY) Data written in electronic storage devices (e.g CD/DVD) and 2-Coloring/Complement Functions - important
+draft updates to http://arxiv.org/pdf/1106.4102.pdf - 24 November 2016
+-----------------------------------------------------------------------------------------------------------------------------
+CD/DVD storage devices contain binary data burnt on concentric cylindrical tracks. A radial line from central bull's eye of the circular storage to outer rim crosscuts the data to form a binary string of length n where n is the radius of circular storage. This radial line sweeping the
+complete circle in a scan covers 2^n possible binary strings. In the best case all 2^n words are distinct. Total Number of 1s or 0s in these
+2^n words are in fibonacci sequence:
+	f(n) = 2f(n-1) + 2^(n-1)
+with f(0)=0 and f(1)=1. In 2-coloring parlance, DVD is 2-colored with 1(red) and 0(blue) where maximum number of monochromatic bits is upper
+bounded by:
+	f(n) = 2f(n-1) + 2^(n-1) out of n*2^n possible bits on the storage. Thus any data written to storage ultimately gets translated into
+a 2-coloring complement function scheme.For example, device with 3 concentric tracks has 3*2^3=24 possible bit positions and:
+	f(3) = 2f(2) + 2^2 = 2(2f(1) + 2) + 2^2 = 8 + 4 = 12 maximum possible monochromatic bit positions
+This has some applications of Hales-Jewitt Theorem for multidimensional 2-coloring - storage device always has a monochromatic k-line.(where k is dimension and k-line is a hyperline. 2-line is a square and 3-line is a cube). As a simple example for n=2:
+	00
+	01
+	10
+	11
+are maximum possible distinct binary words swept by a radial scan of the circle and there are f(2)=2f(1) + 2 = 4 monochromatic bits spread across out of 2*2^2=8 possible bits in 4 binary strings. A crucial insight is that any high level data stored has an order in low level 2-coloring or Complement Function scheme (Monochromatic APs etc.,) though high level data is usually alphanumeric and appears random. A conjectural question is: Does the low level 2-coloring binary order imply high level non-binary order and are they functionally related?
