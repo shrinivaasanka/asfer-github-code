@@ -999,6 +999,10 @@ PRAM algorithms are in NC.
 
 	34.51) Timsort and its parallel implementation in Java, Python and Android for parallel merge sort of arrays - https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#parallelSort-int:A- . Timsort exploits order in unsorted lists. Java implementation is based on ForkJoinPool work-stealing pattern (similar to router-worker-dealer pattern in ZeroMQ) and parallelism is equal to number of processors.Cloud Bitonicsort SparkPython implementation in NeuronRain AsFer could be more time efficient than Arrays.parallelSort() in Java 8 as it implements Batcher Sort on Cloud.
 
+	34.52) Comparison of Parallel and Sequential Sorts - https://github.com/darkobozidar/sequential-vs-parallel-sort
+
+	34.53) Trigonometric Functions over Finite Galois Fields (of prime power order) - https://arxiv.org/pdf/1501.07502.pdf - Defines trigonometric functions (hyperbola is also a trigonometic function - class of hyperbolic functions) on discrete objects like a finite field yielding a function on a set of complex points(Gaussian integers). This abstracts and reduces to discretization step of hyperbolic factorization but requires prime power sized finite field.
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
