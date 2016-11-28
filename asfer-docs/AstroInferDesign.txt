@@ -5973,7 +5973,7 @@ References:
 
 -----------------------------------------------------------------------------------------------------------------------------
 346. (THEORY) Data written in electronic storage devices (e.g CD/DVD) and 2-Coloring/Complement Functions - important
-draft updates to http://arxiv.org/pdf/1106.4102.pdf - 24 November 2016
+draft updates to http://arxiv.org/pdf/1106.4102.pdf - 24 November 2016 and 28 November 2016
 -----------------------------------------------------------------------------------------------------------------------------
 CD/DVD storage devices contain binary data burnt on concentric cylindrical tracks. A radial line from central bull's eye of the circular storage to outer rim crosscuts the data to form a binary string of length n where n is the radius of circular storage. This radial line sweeping the
 complete circle in a scan covers 2^n possible binary strings. In the best case all 2^n words are distinct. Total Number of 1s or 0s in these
@@ -5990,3 +5990,7 @@ This has some applications of Hales-Jewitt Theorem for multidimensional 2-colori
 	10
 	11
 are maximum possible distinct binary words swept by a radial scan of the circle and there are f(2)=2f(1) + 2 = 4 monochromatic bits spread across out of 2*2^2=8 possible bits in 4 binary strings. A crucial insight is that any high level data stored has an order in low level 2-coloring or Complement Function scheme (Monochromatic APs etc.,) though high level data is usually alphanumeric and appears random. A conjectural question is: Does the low level 2-coloring binary order imply high level non-binary order and are they functionally related?
+
+The previous question has been answered in 2.10.  There could be \/ shaped gaps in circular arrangement of 2^n binary word radial lines. These gaps could be resolved by recursive application of f(n) for all lengths < n. Let this new function be g(n) defined as:
+	g(n) = f(n) + f(n-1) + f(n-2) + ... + f(1) + f(0)
+Thus g(n) is the tightest bound for number of 1s and 0s.
