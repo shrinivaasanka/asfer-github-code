@@ -5979,18 +5979,17 @@ CD/DVD storage devices contain binary data burnt on concentric cylindrical track
 complete circle in a scan covers 2^n possible binary strings. In the best case all 2^n words are distinct. Total Number of 1s or 0s in these
 2^n words are in fibonacci sequence:
 	f(n) = 2f(n-1) + 2^(n-1)
-with f(0)=0 and f(1)=1. In 2-coloring parlance, DVD is 2-colored with 1(red) and 0(blue) where maximum number of monochromatic bits is upper
+with f(0)=0 and f(1)=1. In 2-coloring parlance, DVD is 2-colored with 1(red) and 0(blue) where number of monochromatic bits is lower
 bounded by:
-	f(n) = 2f(n-1) + 2^(n-1) out of n*2^n possible bits on the storage. Thus any data written to storage ultimately gets translated into
-a 2-coloring complement function scheme.For example, device with 3 concentric tracks has 3*2^3=24 possible bit positions and:
-	f(3) = 2f(2) + 2^2 = 2(2f(1) + 2) + 2^2 = 8 + 4 = 12 maximum possible monochromatic bit positions
+	f(n) = 2f(n-1) + 2^(n-1) out of minimum n*2^n possible bits on the storage. Thus any data written to storage ultimately gets translated into a 2-coloring complement function scheme.For example, device with 3 concentric tracks has 3*2^3=24 minimum possible bit positions and:
+	f(3) = 2f(2) + 2^2 = 2(2f(1) + 2) + 2^2 = 8 + 4 = 12 minimum possible monochromatic bit positions
 This has some applications of Hales-Jewitt Theorem for multidimensional 2-coloring - storage device always has a monochromatic k-line.(where k is dimension and k-line is a hyperline. 2-line is a square and 3-line is a cube). As a simple example for n=2:
 	00
 	01
 	10
 	11
-are maximum possible distinct binary words swept by a radial scan of the circle and there are f(2)=2f(1) + 2 = 4 monochromatic bits spread across out of 2*2^2=8 possible bits in 4 binary strings. A crucial insight is that any high level data stored has an order in low level 2-coloring or Complement Function scheme (Monochromatic APs etc.,) though high level data is usually alphanumeric and appears random. A conjectural question is: Does the low level 2-coloring binary order imply high level non-binary order and are they functionally related?
+are minimum possible distinct binary words swept by a radial scan of the circle and there are f(2)=2f(1) + 2 = 4 monochromatic bits spread across out of 2*2^2=8 possible bits in 4 binary strings. A crucial insight is that any high level data stored has an order in low level 2-coloring or Complement Function scheme (Monochromatic APs etc.,) though high level data is usually alphanumeric and appears random. A conjectural question is: Does the low level 2-coloring binary order imply high level non-binary order and are they functionally related?
 
 The previous question has been answered in 2.10.  There could be \/ shaped gaps in circular arrangement of 2^n binary word radial lines. These gaps could be resolved by recursive application of f(n) for all lengths < n. Let this new function be g(n) defined as:
 	g(n) = f(n) + f(n-1) + f(n-2) + ... + f(1) + f(0)
-Thus g(n) is the tightest bound for number of 1s and 0s.
+Thus g(n) is the tightest bound for number of 1s and 0s. Prefix "minimum" has been added in this bound because repetitions of some binary words in radial line during circular scan have been ignored and hence a lowerbound. Total number of bit positions is k*2*pi*(1+2+3+...+n) = k*2*pi*n(n+1)/2 summing up all concentric tracks for some constant k. Lowerbound g(n) for 1s and 0s implies a unique distribution of all binary word patterns and any number above this lowerbound implies predominance and emergence of a binary pattern.
