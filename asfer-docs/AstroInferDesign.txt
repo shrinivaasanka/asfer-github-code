@@ -2694,12 +2694,18 @@ EventNet path can be guessed. As a counting problem this is #P-complete (set of 
 Another example: set of blind men try to make out an object by touch.
 
 ------------------------------------------------------------------------------------------------------------------
-159. (THEORY) Pattern Grammar
+159. (THEORY) Pattern Grammar and Topological Homeomorphism of Writing Deformations
 ------------------------------------------------------------------------------------------------------------------
 Grammar for patterns like texts, pictures similar to RE,CFG etc., for pattern recognition:
    - example text grammar:  <a> := <o> <operator> <)>
    - example text grammar:  <d> := <o> <operator> <l>
    - example text grammar:  <v> := <\> <operator> </>
+Previous grammar is extensible to any topological shapes. For example, handwriting of 2 individuals are
+homeomorphic deformations.
+
+References:
+-----------
+159.1 Topology and Graphics - https://books.google.co.in/books?id=vCc8DQAAQBAJ&pg=PA263&lpg=PA263&dq=homeomorphism+and+handwriting&source=bl&ots=L_9kNgTcmF&sig=l-PfRL_jjcuF0L-2dJ5rukrC4CM&hl=en&sa=X&ved=0ahUKEwji8bDJ683QAhWBQY8KHQ3qAuEQ6AEIHzAA#v=onepage&q=homeomorphism%20and%20handwriting&f=false
 
 -----------------------------------------------------------------------------------------------------------------
 160. (THEORY) Cognitive Element
