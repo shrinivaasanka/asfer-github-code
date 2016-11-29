@@ -1,0 +1,272 @@
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   18.310620] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics3 = v3
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.394555] reply_to_publisher() : connected kernel client to virgo cloudexec kernel service
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527807] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics1 = v1 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527813] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics2 = v2 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527816] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics3 = v3
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527820] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527823] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527826] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527828] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527831] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527834] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527836] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527840] virgo_queue_init(): use_workqueue=1
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.527843] virgo_queue_init(): use_workqueue=1, virgo_kernel_wq=NULL, creating a kernel workqueue
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.531481] virgoqueue_init(): doing init() of virgocloudexec kernel module
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.531486] virgoqueue_init(): starting virgo cloudexec service kernel thread
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.531489] virgoqueue_init(): invoking read_virgo_config()
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.531532] virgoqueue_read_virgo_config(): virgo_cloud config file being read 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.575851]  virgo_cloud config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.575876] virgoqueue_init(): sock_create() returns error code: 0
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.575883] virgoqueue_init(): kernel_bind() returns error code: 0
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.575892] virgoqueue_init(): kernel_listen() returns error code: 0
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.688061] virgo_cloud_mempool_kernelspace_init(): doing init() of virgo cloud kernel space test module
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.688068] virgo_cloud_mempool_kernelspace_init(): test_str=ef098363, test_ul=4010378083
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891061] virgocloudexec_mempool_init(): doing init() of virgocloudexec_mempool kernel module
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891066] virgocloudexec_mempool_init(): starting virgo cloudexec service kernel thread
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891070] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics1 = v1 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891073] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics2 = v2 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891076] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics3 = v3
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891080] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891083] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891086] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891089] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891092] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891094] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891097] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891100] virgocloudexec_mempool_init(): invoking read_virgo_config()
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891110] read_virgo_config(): virgo_cloud config file being read 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891117] do_virgo_cloud_init(): virgo_cloud config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891129] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud[0] = 127.0.0.1
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891136] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud[1] = 127.0.0.1
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891151] virgocloudexec_mempool_init(): sock_create() returns error code: 0, sock=f352de00
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891157] virgocloudexec_mempool_init(): kernel_bind() returns error code: 0
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891168] virgocloudexec_mempool_init(): kernel_listen() returns error code: 0
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891170] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Nov 29 13:48:20 shrinivaasanka-Inspiron-1545 kernel: [   19.891173] virgocloudexec_mempool_create(): before kernel_accept(); sock=f352de00 ... 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.359869] read_virgo_config(): virgo_client.config file being read 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374481] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374499] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374507] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374519] get_host_from_cloud_PRG_mempool() range mapping for 2 cloud nodes(virgomemorypooling_num_cloud_nodes_client) returns random integer 1, host ip(nodes_ip_addrs_in_cloud): 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374531] virgo_malloc() syscall: leastloadedhostport->port=30000
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374534] virgo_malloc() syscall: leastloadedhostport->hostip=127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374540] virgo_malloc() syscall: after in4_pton and htons, leastloadedhostport->hostip=127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374544] virgo_malloc() syscall: size=100, sum_alloc_size=0 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374547] 2. virgo_malloc() syscall: size=100, sum_alloc_size=0, chunk_size==100
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374557] virgo_malloc() syscall: malloc_cmd=virgo_cloud_malloc(100), buf=virgo_cloud_malloc(100), tempbuf=virgo_cloud_malloc(100)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374577] virgo_malloc() syscall: created client kernel socket
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374589] virgo_malloc() syscall: sent len=-32; iov.iov_base=virgo_cloud_malloc(100), sent message: virgo_cloud_malloc(100), iovbuf=virgo_cloud_malloc(100) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374594] virgo_malloc() syscall: recv len=-107; received message iovbuf: [virgo_cloud_malloc(100)] 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374597] virgo_malloc() syscall: received iov.iov_base: virgo_cloud_malloc(100) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374602] str_to_addr2(): straddr=[virgo_cloud_malloc(100)], lltovoidptr =   (null)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374605] virgo_malloc() syscall: vtranstable.vtable[0].addr=  (null) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374609] virgo_malloc() syscall: next_vtable_entry=0, vtranstable.vtable[next_vtable_entry].node_id=0, vtranstable.vtable[next_vtable_entry].addr=  (null), vtranstable.vtable[next_vtable_entry].hstprt->hostip=127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374614] virgo_malloc() syscall: le32_to_cpus(buf): virgo_cloud_malloc(100) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374617] virgo_malloc() syscall: size to be allocated = 100, sum_alloc_size = 100 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374619] virgo_malloc() syscall: sum_alloc_size == size, breaking while loop
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374623] virgo_malloc() syscall: returning &(vtranstable.vtable[this_allocation_start_entry]) == c1bd4e80
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374626] addr_to_virgo_unique_id(): vaddr=c1bd4e80, uvid=3250409088
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374628] virgo_malloc() system_call: before vuid memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374631] virgo_malloc() system_call: after vuid memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374656] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 1: 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374659] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 2: 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374663] read_virgo_config(): virgo_client.config file being read 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374669] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374680] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374687] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374691] virgo_set() system call: before virgo_unique_id_to_addr()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374695] virgo_unique_id_to_addr(): vaddr=c1bd4e80, virgo_unique_id=3250409088
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374698] virgo_set() system call: after virgo_unique_id_to_addr(), vaddr=c1bd4e80
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374701] virgo_set() system call: vuid=3250409088, virgo address to set is vaddr=c1bd4e80
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374703] virgo_set() system_call: before memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374708] virgo_set() system_call: after memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374711] virgo_set() system call: vuid=3250409088, data to set=key1:value1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374720] virgo_set() system call: vaddr_addr_str=[  (null)]
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374722] virgo_set() system call: 1. virgo_set_cmd=virgo_cloud_set(  (null)virgo_set() system call: 2. virgo_set_cmd=virgo_cloud_set(  (null),,data=key1:value1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374728] virgo_set() system call: 3. virgo_set_cmd=virgo_cloud_set(  (null),key1:value1virgo_set() system call: 4. virgo_set_cmd=virgo_cloud_set(  (null),key1:value1)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374733] virgo_set() system call: tempbuf=virgo_cloud_set(  (null),key1:value1), buf=virgo_cloud_set(  (null),key1:value1), virgo_set_cmd = virgo_cloud_set(  (null),key1:value1)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374737] virgo_set() system call: iov.iov_base=����
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374743] virgo_set() syscall: created client kernel socket
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374747] virgo_set() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base = virgo_cloud_set(  (null),key1:value1)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374751] virgo_set() syscall: sent message: virgo_cloud_set(  (null),key1:value1) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374754] virgo_set() syscall: received message: virgo_cloud_set(  (null),key1:value1) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374757] virgo_set() syscall: le32_to_cpus(buf): virgo_cloud_set(  (null),key1:value1) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374767] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 1: 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374770] virgo kernel service: read_virgo_config(): before reading virgo_client.conf - virgo_cloud ip address - 2: 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374774] read_virgo_config(): virgo_client.config file being read 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374779] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374790] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374799] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374803] virgo_get() system call: before virgo_unique_id_to_addr()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374806] virgo_unique_id_to_addr(): vaddr=c1bd4e80, virgo_unique_id=3250409088
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374810] virgo_get() system call: vuid=-1044558208, virgo address to retrieve data from is vaddr=c1bd4e80
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374819] virgo_get() system call: tempbuf=virgo_cloud_get(  (null)), buf=virgo_cloud_get(  (null)), virgo_get_cmd=virgo_cloud_get(  (null))
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374823] virgo_get() system call: iov.iov_base=virgo_cloud_set(  (null),key1:value1)
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374829] virgo_get() syscall: created client kernel socket
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374832] virgo_get() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base=virgo_cloud_get(  (null))
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374835] virgo_get() syscall: sent message: virgo_cloud_get(  (null)) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374839] virgo_get() syscall: received message: virgo_cloud_get(  (null)) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374841] virgo_get() syscall: le32_to_cpus(buf): virgo_cloud_get(  (null)) 
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374844] virgo_get() system_call: before data_out memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374847] virgo_get() system_call: after data_out memcpy()
+Nov 29 14:02:50 shrinivaasanka-Inspiron-1545 kernel: [  893.374849] virgo_get() syscall:  data_out=virgo_cloud_get(  (null))��
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.475700] virgokernel_analytics_init(): initializing virgo kernel_analytics kernel module 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.475706] virgokernel_analytics_init(): invoking read_virgo_kernel_analytics()
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.475708] virgo kernel_analytics kernel service: read_virgo_kernel_analytics(): virgo_cloud kernel_analytics being read... 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.475742] read_virgo_kernel_analytics(): virgo_cloud kernel_analytics file being read 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.517059] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics1 = v1 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.517067] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics2 = v2 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.517071] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics3 = v3
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   19.840316] reply_to_publisher() : connected kernel client to virgo cloudexec kernel service
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017174] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics1 = v1 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017180] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics2 = v2 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017183] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics3 = v3
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017187] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017190] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017193] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017196] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017198] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017201] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017204] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017208] virgo_queue_init(): use_workqueue=1
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.017211] virgo_queue_init(): use_workqueue=1, virgo_kernel_wq=NULL, creating a kernel workqueue
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.018327] virgoqueue_init(): doing init() of virgocloudexec kernel module
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.018332] virgoqueue_init(): starting virgo cloudexec service kernel thread
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.018335] virgoqueue_init(): invoking read_virgo_config()
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.018369] virgoqueue_read_virgo_config(): virgo_cloud config file being read 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.121028]  virgo_cloud config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.121056] virgoqueue_init(): sock_create() returns error code: 0
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.121063] virgoqueue_init(): kernel_bind() returns error code: 0
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.121073] virgoqueue_init(): kernel_listen() returns error code: 0
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.242116] virgo_cloud_mempool_kernelspace_init(): doing init() of virgo cloud kernel space test module
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.242123] virgo_cloud_mempool_kernelspace_init(): test_str=ef098363, test_ul=4010378083
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327083] virgocloudexec_mempool_init(): doing init() of virgocloudexec_mempool kernel module
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327089] virgocloudexec_mempool_init(): starting virgo cloudexec service kernel thread
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327092] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics1 = v1 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327095] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics2 = v2 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327099] virgocloudexec_mempool_init(): exported kernel_analytics variable: kernel_analytics3 = v3
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327103] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327105] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327108] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327111] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327114] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327116] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327119] virgocloudexec_mempool_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327122] virgocloudexec_mempool_init(): invoking read_virgo_config()
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327131] read_virgo_config(): virgo_cloud config file being read 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327138] do_virgo_cloud_init(): virgo_cloud config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327149] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud[0] = 127.0.0.1
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327156] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud[1] = 127.0.0.1
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327171] virgocloudexec_mempool_init(): sock_create() returns error code: 0, sock=f312e900
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327177] virgocloudexec_mempool_init(): kernel_bind() returns error code: 0
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327187] virgocloudexec_mempool_init(): kernel_listen() returns error code: 0
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327190] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Nov 29 14:04:52 shrinivaasanka-Inspiron-1545 kernel: [   20.327193] virgocloudexec_mempool_create(): before kernel_accept(); sock=f312e900 ... 
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.717472] read_virgo_config(): virgo_client.config file being read 
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733318] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733337] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733344] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733356] get_host_from_cloud_PRG_mempool() range mapping for 2 cloud nodes(virgomemorypooling_num_cloud_nodes_client) returns random integer 1, host ip(nodes_ip_addrs_in_cloud): 127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733369] virgo_malloc() syscall: leastloadedhostport->port=30000
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733372] virgo_malloc() syscall: leastloadedhostport->hostip=127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733377] virgo_malloc() syscall: after in4_pton and htons, leastloadedhostport->hostip=127.0.0.1
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733382] virgo_malloc() syscall: size=100, sum_alloc_size=0 
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733385] 2. virgo_malloc() syscall: size=100, sum_alloc_size=0, chunk_size==100
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733394] virgo_malloc() syscall: malloc_cmd=virgo_cloud_malloc(100), buf=virgo_cloud_malloc(100), tempbuf=virgo_cloud_malloc(100)
+Nov 29 14:13:41 shrinivaasanka-Inspiron-1545 kernel: [  551.733410] virgo_malloc() syscall: created client kernel socket
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733622] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733625] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733688] virgo_malloc() syscall: sent len=3000; iov.iov_base=virgo_cloud_malloc(100), sent message: virgo_cloud_malloc(100), iovbuf=virgo_cloud_malloc(100) 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733717] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733721] virgocloudexec_mempool_create(): before kernel_accept(); sock=f312e900 ... 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733729] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733732] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733736] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733740] strip_control_M(): str=virgo_cloud_malloc(100) before strsep
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733743] strip_control_M(): newstr=virgo_cloud_malloc(100) after carriage return newline strsep
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733746] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov_base=virgo_cloud_malloc(100), buffer: virgo_cloud_malloc(100)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.733750] virgo_cloudexec_mempool: print_buffer(): 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.735224] )<6>[  551.736441] read_virgo_config(): virgo_client.config file being read 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736452] do_virgo_cloud_init(): virgo_client.config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736474] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[0] = 127.0.0.1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736488] tokenize_list_of_ip_addrs(): virgomemorypooling_node_ip_addrs_in_cloud_client[1] = 127.0.0.1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736497] virgo_get() system call: before virgo_unique_id_to_addr()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736505] virgo_unique_id_to_addr(): vaddr=c1bd4e80, virgo_unique_id=3250409088
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736511] virgo_get() system call: vuid=-1044558208, virgo address to retrieve data from is vaddr=c1bd4e80
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736534] virgo_get() system call: tempbuf=virgo_cloud_get(edf60180), buf=virgo_cloud_get(edf60180), virgo_get_cmd=virgo_cloud_get(edf60180)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736541] virgo_get() system call: iov.iov_base=virgo_cloud_set(edf60180,key1:value1)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736554] virgo_get() syscall: created client kernel socket
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736652] virgocloudexec_mempool_create(): after kernel_accept() : error = 0 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736659] virgo_cloudexec_mempool_service(): virgo mempool client thread per request 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736674] virgo_get() syscall: connected kernel client to virgo cloudexec kernel service; iov.iov_base=virgo_cloud_get(edf60180)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736710] virgo_get() syscall: sent message: virgo_cloud_get(edf60180) 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.736744] virgocloudexec_mempool_sendto(): sock_release invoked on client socket 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737617] virgo_cloudexec_mempool_service(): virgo_mempool_ops.virgo_create() 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737623] virgocloudexec_mempool_create(): before kernel_accept(); sock=f312e900 ... 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737634] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_recvfrom()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737637] virgocloudexec_mempool_recvfrom(): before kernel_recvmsg()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737644] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns len: 500
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737648] strip_control_M(): str=virgo_cloud_get(edf60180) before strsep
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737651] strip_control_M(): newstr=virgo_cloud_get(edf60180) after carriage return newline strsep
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737655] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() returns in recv: iov.iov_base=virgo_cloud_get(edf60180), buffer: virgo_cloud_get(edf60180)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737658] virgo_cloudexec_mempool: print_buffer(): 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.737701] )<6>[  551.738535] virgocloudexec_mempool_recvfrom(): kernel_recvmsg() le32 to cpu virgo_cloud_get(edf60180)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738538] virgocloudexec_mempool_recvfrom(): mempoolFunction : virgo_cloud_get(edf60180) 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738860] parse_virgomempool_command: vmargs->mempool_cmd: virgo_cloud_get
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738865] parse_virgomempool_command: vmargs->mempool_args[0]: edf60180
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738871] Creating Kernel Thread for virgo_cloud_get in virgo_cloud_mempool_kernelspace mempool driver module with mempool_args[0]=edf60180, mempool_args[1]=(null)
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738877] virgo_cloud_mempool_kernelspace.c:Executing virgo_cloud_mempool on cloud node, Invoking virgo_cloud_get_kernelspace(), Writing to file opened by Kernel, Kernel Space to User space communication works
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738881] virgo_parse_integer(): *s=e, res=0
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738884] virgo_parse_integer(): *s=d, res=14
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738886] virgo_parse_integer(): *s=f, res=237
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738889] virgo_parse_integer(): *s=6, res=3807
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738892] virgo_parse_integer(): *s=0, res=60918
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738894] virgo_parse_integer(): *s=1, res=974688
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738897] virgo_parse_integer(): *s=8, res=15595009
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738900] virgo_parse_integer(): *s=0, res=249520152
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738904] toKernelAddress(): virgo_parse_integer: ll3=-302644864, (char*)ll3=  (null), (void*)ll3=edf60180, strAddress=[key1:value1]
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738907] toKernelAddress(): virgo_parse_integer: data at (char*)ll3=[key1:value1]
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738910] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): data at ptr parsed by toKernelAddress() = [key1:value1]
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738915] virgo_cloud_mempool_kernelspace.c: virgo_cloud_get_kernelspace(): address=edf60180, data=key1:value1, data with added prefix=virgodata:key1:value1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738918] mempool_func(): virgo mempool kernelspace module returns value virgo_mempool_ret=f2eac720
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738921] virgo_mempool_client_thread(): virgo_mempool_ops.virgo_mempool_sendto()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738924] virgocloudexec_mempool_sendto(): virgo_mempool_ret=virgodata:key1:value1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738927] virgocloudexec_mempool_sendto(): data sent=key1:value1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738930] virgocloudexec_mempool_sendto(): before kernel_sendmsg() for send buffer: key1:value1
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.738999] virgocloudexec_mempool_sendto(): kernel_sendmsg() returns ret: 500
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739028] virgocloudexec_mempool_sendto(): sock_release invoked on client socket 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739111] virgo_get() syscall: received message: key1:value1 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739115] virgo_get() syscall: le32_to_cpus(buf): virgo_cloud_get(edf60180) 
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739118] virgo_get() system_call: before data_out memcpy()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739120] virgo_get() system_call: after data_out memcpy()
+Nov 29 14:13:42 shrinivaasanka-Inspiron-1545 kernel: [  551.739123] virgo_get() syscall:  data_out=key1:value1�w���
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.055687] virgokernel_analytics_init(): initializing virgo kernel_analytics kernel module 
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.055693] virgokernel_analytics_init(): invoking read_virgo_kernel_analytics()
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.055696] virgo kernel_analytics kernel service: read_virgo_kernel_analytics(): virgo_cloud kernel_analytics being read... 
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.055733] read_virgo_kernel_analytics(): virgo_cloud kernel_analytics file being read 
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.239451] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics1 = v1 
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.239459] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics2 = v2 
+Nov 29 14:15:15 shrinivaasanka-Inspiron-1545 kernel: [   21.239463] read_virgo_kernel_analytics_config() parsed analytics variable: kernel_analytics3 = v3
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   21.923144] reply_to_publisher() : connected kernel client to virgo cloudexec kernel service
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354851] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics1 = v1 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354858] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics2 = v2 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354861] virgoqueue_init(): exported kernel_analytics variable: kernel_analytics3 = v3
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354866] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354868] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354871] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354874] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354876] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354879] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354882] virgoqueue_init(): exported kernel_analytics variable: (null) = (null) 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354886] virgo_queue_init(): use_workqueue=1
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354889] virgo_queue_init(): use_workqueue=1, virgo_kernel_wq=NULL, creating a kernel workqueue
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354978] virgoqueue_init(): doing init() of virgocloudexec kernel module
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354983] virgoqueue_init(): starting virgo cloudexec service kernel thread
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.354986] virgoqueue_init(): invoking read_virgo_config()
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.355018] virgoqueue_read_virgo_config(): virgo_cloud config file being read 
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.538041]  virgo_cloud config file string of comma separated IPs : 127.0.0.1,127.0.0.1
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.538071] virgoqueue_init(): sock_create() returns error code: 0
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.538078] virgoqueue_init(): kernel_bind() returns error code: 0
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.538088] virgoqueue_init(): kernel_listen() returns error code: 0
+Nov 29 14:15:16 shrinivaasanka-Inspiron-1545 kernel: [   22.586464] virgo_cloud_mempool_kernelspace_init(): doing init() of virgo 
