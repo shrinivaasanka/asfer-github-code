@@ -5997,3 +5997,14 @@ are minimum possible distinct binary words swept by a radial scan of the circle 
 The previous question has been answered in 2.10.  There could be \/ shaped gaps in circular arrangement of 2^n binary word radial lines. These gaps could be resolved by recursive application of f(n) for all lengths < n. Let this new function be g(n) defined as:
 	g(n) = f(n) + f(n-1) + f(n-2) + ... + f(1) + f(0)
 Thus g(n) is the tightest bound for number of 1s and 0s. Prefix "minimum" has been added in this bound because repetitions of some binary words in radial line during circular scan have been ignored and hence a lowerbound. Total number of bit positions is k*2*pi*(1+2+3+...+n) = k*2*pi*n(n+1)/2 summing up all concentric tracks for some constant k. Lowerbound g(n) for 1s and 0s implies a unique distribution of all binary word patterns and any number above this lowerbound implies predominance and emergence of a binary pattern.
+
+-----------------------------------------------------------------------------------------------------
+348. (FEATURE-DONE) NeuronRain C++-Python System calls invocation - Commits - 29 November 2016
+-----------------------------------------------------------------------------------------------------
+1. Further analysis of NeuronRain AsFer-VIRGO boost::python system calls invocation - there has been
+an erratic -32 and -107 errors
+2. But VIRGO system calls work without problems - malloc,set and get work as expected
+3. There is a later panic outside VIRGO code but logs have not been found.
+4. Logs for this have been added in testlogs/
+5. boost C++ code has been rebuilt.
+
