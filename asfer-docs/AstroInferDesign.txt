@@ -96,6 +96,12 @@ which is the argmax( Pr(a/t,h), Pr(e/t,h), Pr(i/t,h), Pr(o/t,h), Pr(u/t,h)) and 
 
 (2.10) From point 345 and 346, high level language texts like English,French etc., can be thought of as 255-coloring of letter positions where 255 is the size of alphanumeric alphabet (ASCII,Unicode). Each letter in a text "colors" corresponding letter position in text with an alphabet. From Van Der Waerden and other coloring theorems, there are monochromatic arithmetic progressions in letter positions in high level language texts i.e alphabets in APj positions are all same for some APj. This implies there is an order in high level context sensitive natural language grammars and answers in affirmative the conjecture posited in 346.
 
+(2.11) Monochromatic arithmetic progressions in letter positions of natural language texts implies that finite state automata can be learnt to accept such arithmetic progressions in text. For example , text "abaabaabaab..." over alphabets {a,b} has alphabet b in AP positions where AP is 2+3n. Regular language Finite State Automata for this is 2-colored infinite string is:
+			a---b---a---a--->b
+			        |<-------|
+
+(2.12) In terms of vowelless string complexity measure previously, if a 255-colored string is simplified to 2-colored string as "Consonant-Vowel-Consonant-Consonant-Vowel-Consonant-Consonant-Vowel..." replacing consonant and vowels with "Consonant" and "Vowel" notations, english language (and most others) on an average has an arithmetic progression k+3n of vowel positions for some constant k.
+
 3. (FEATURE - THEORY - Pairwise LCS implementation DONE) KMeans, KNN and other clustering and classification algorithms implemented thus far, group similar encoded strings for astronomical (or any other) data. Clustered strings can further be mined for patterns with ordering by applying a Longest Common Substring algorithm within each cluster. This gives a fine grained pattern hidden in the encoded input strings. These longest common substrings can then be translated to a rule similar to class association rule (Frequent item set and GSP algorithms are quite expensive and do not fit well for mining patterns in strings).
 
 4. (FEATURE - DONE) Implementation of String Distance measure using different distance measures (python-src/StringMatch.py) for comparing Encoded Strings in addition to pairwise and Multiple Sequence Alignment.
