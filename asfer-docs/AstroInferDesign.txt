@@ -1009,6 +1009,10 @@ PRAM algorithms are in NC.
 
 	34.53) Trigonometric Functions over Finite Galois Fields (of prime power order) - https://arxiv.org/pdf/1501.07502.pdf - Defines trigonometric functions (hyperbola is also a trigonometic function - class of hyperbolic functions) on discrete objects like a finite field yielding a function on a set of complex points(Gaussian integers). This abstracts and reduces to discretization step of hyperbolic factorization but requires prime power sized finite field.
 
+	34.54) Adaptive Bitonic Sorting - http://epubs.siam.org/doi/abs/10.1137/0218014 - very old paper (1989) on PRAM implementation of bitonic sort - NeuronRain AsFer implements bitonic sorting on Spark Cloud and parallelizes comparators on cloud (34.20) effectively treating cloud as sorting network with cloud communication complexity assumed as constant in average case.
+
+	34.55) Efficient Parallel Sorting - improvement of Cole's Parallel Sort and AKS sorting networks: sorting networks can be implemented in EREW PRAM - [Goodrich] - https://arxiv.org/pdf/1306.3000v1.pdf - [Godel's Lost Letter and P=NP - Richard Lipton - Galactic Sorting Networks - https://rjlipton.wordpress.com/2014/04/24/galactic-sortning-networks/]
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
