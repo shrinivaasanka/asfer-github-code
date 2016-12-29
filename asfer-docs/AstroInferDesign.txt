@@ -6082,7 +6082,9 @@ References:
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 350. (THEORY) Quantum Parallelism, Quantum Interference, Integer Factoring, Periodicity Finding, Polynomial Reconstruction and
-Complement Function/2-Coloring - related to 24,34,323,338 and 345
+Complement Function/2-Coloring - related to 24,34,323,338,345 and 347 - 29 December 2016 - important draft updates to :
+        - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download and
+        - http://arxiv.org/pdf/1106.4102.pdf
 ---------------------------------------------------------------------------------------------------------------------------------------
 Discrete Hyperbolic Factorization draft in 34 claims (disputed because of input size though references exist to prove PRAM=NC equivalence and Bitonic Batcher Sort is in NC) that integers can be factored by NC parallel computation circuit of logdepth and polynomial size (by PRAM or Cloud Bitonic sorting). Similar parallelism is the basis for Quantum Factorization Algorithm of [Shor] - factorization is in BQP and NC is in BQP. Quantum Computation relies on two phenomena:
 	*) Quantum Parallelism in which a function f(x) is computed to get many values of f(x) in parallel
