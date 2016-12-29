@@ -6079,3 +6079,18 @@ References:
 349.1 Feynman Lectures on Physics - [RichardFeynman] - Volume 3 - Chapter 1 and 2
 349.2 Emperor's New Mind - [RogerPenrose] - Chapter 6 - Quantum Magic and Quantum Mystery
 349.3 Quantum Randomness and Logical Independence - https://arxiv.org/pdf/0811.4542v2.pdf - Mutually independent logical propositions cause quantum randomness
+
+---------------------------------------------------------------------------------------------------------------------------------------
+350. (THEORY) Quantum Parallelism, Quantum Interference, Integer Factoring, Periodicity Finding, Polynomial Reconstruction and
+Complement Function/2-Coloring - related to 24,34,323,338 and 345
+---------------------------------------------------------------------------------------------------------------------------------------
+Discrete Hyperbolic Factorization draft in 34 claims (disputed because of input size though references exist to prove PRAM=NC equivalence and Bitonic Batcher Sort is in NC) that integers can be factored by NC parallel computation circuit of logdepth and polynomial size (by PRAM or Cloud Bitonic sorting). Similar parallelism is the basis for Quantum Factorization Algorithm of [Shor] - factorization is in BQP and NC is in BQP. Quantum Computation relies on two phenomena:
+	*) Quantum Parallelism in which a function f(x) is computed to get many values of f(x) in parallel
+	*) Quantum Interference by Hadamard transform where cancellation occurs ( |0> = 1/sqrt(2)*(|0>+|1>) and |1> = 1/sqrt(2)*(|0>-|1>) ) by interference
+
+Period Finding in Quantum Computation finds smallest r such that f(x)=f(x+r) and Shor's factorization internally applies period finding by quantum fourier transform. Ramsey theory of integers and related theorems viz., Van Der Waerden, Szemeredi etc., imply existence of monochromatic arithmetic progressions in 2-coloring of integer sequences where each color is equivalent to a function and its complement. Period finding problem reduces to finding arithmetic progressions in integer sequences by defining a function f(x+iy)=f(x+(i+1)y) for any x in the sequence and some integers y and i. More generically, factoring and period finding are special cases of Hidden Subgroup Problem i.e f(g)=f(hg) for g in G and h in subgroup H of G and hG is a coset of H. In terms of polynomial reconstruction, period finding computes the function f passing through the arithmetic progression points. In Discrete Hyperbolic Factorization of 34, instead of quantum parallelism , classical NC parallelism is applied to k-merge sort and binary search the pixelated hyperbola tiles.
+
+References:
+-----------
+350.1 Quantum Computation Course notes - Order Finding, Fermat's Little Theorem and Simon, Shor Factorization algorithms - [AndrisAmbainis] - http://www.cs.ioc.ee/yik/schools/win2003/ambainis2002-2.ppt
+350.2 Progress on Quantum Algorithms - [PeterShor] - http://www-math.mit.edu/~shor/papers/Progress.pdf
