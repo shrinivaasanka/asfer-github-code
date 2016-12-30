@@ -1617,9 +1617,9 @@ References:
 	69.1 FFT of the two audio files were done by Audacity and frequency domain files were obtained with sampling size of 65536, Hanning Window, Log frequency
 	69.2 FFTs of these two have been committed in music_pattern_mining/. Similarity is observed by peak decibel frequency of ~ 500Hz in both FFTs - Similarity criterion here is the strongest frequency in the sample though there could be others like set of prominent frequencies, amplitudes etc.,. Frequencies with low peaks are neglected as noise.
 
--------------------------------------------------
-70-79 (THEORY - ONGOING) EventNet and Theoretical analysis of Logical Time:
---------------------------------------------------
+------------------------------------------------------------------------------------------------
+70-79 (THEORY - EventNet Implementation DONE) EventNet and Theoretical analysis of Logical Time:
+------------------------------------------------------------------------------------------------
 
 70. In addition to Concept wide hypergraph above, an interesting research could be to create an EventNet or events connected by causation as edge (there is an edge (x,y) if event x causes event y). Each event node in this EventNet is a set of entities that take part in that event and interactions among them.This causation hypergraph if comprehensively constructed could yield insights into apparently unrelated events.This is hypergraph because an event can cause a finite sequence of events one after the other, thereby including all those event vertices. For simplicity,it can be assumed as just a graph. This has some similarities with Feynman Diagrams and Sum-over-histories in theoretical physics.
 
