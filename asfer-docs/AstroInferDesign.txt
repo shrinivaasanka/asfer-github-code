@@ -6097,9 +6097,9 @@ References:
 350.1 Quantum Computation Course notes - Order Finding, Fermat's Little Theorem and Simon, Shor Factorization algorithms - [AndrisAmbainis] - http://www.cs.ioc.ee/yik/schools/win2003/ambainis2002-2.ppt
 350.2 Progress on Quantum Algorithms - [PeterShor] - http://www-math.mit.edu/~shor/papers/Progress.pdf
 
-------------------------------------------------------------------------------------------
-351. (FEATURE-DONE) Recommender Systems Implementation based on ThoughtNet Hypergraph
-------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+351. (FEATURE-DONE) Recommender Systems Implementation based on ThoughtNet Hypergraph - 1 January 2017
+------------------------------------------------------------------------------------------------------
 *) Input to python-src/DeepLearning_ReinforcementLearningRecommenderSystems.py is a set of observations which are user activities
 (shopping cart items, academic articles read by user etc.,) and already built thoughtnet hypergraph history is searched by usual
 evocatives from the input
