@@ -6131,3 +6131,6 @@ user based on present choice and past history.
 *) Items in present shopping cart are looked up in two ways: 1) By classifying with Recursive Gloss Overlap graph and looking up rare classes
 less than a threshold (presently core number 5) and 2) Raw token lookup
 *) Logs for these two lookups based Recommendations generated are committed to testlogs/
+
+An important note: Rationale for Hypergraph based past history is that a meaningful text can be classified on multiple classes vis-a-vis usual
+supervised classifiers which classify text on exactly one class. This is more realistic because text can delve into multiple topics simultaneusly e.g an article on medical imaging (MRI scans) could contain details also on nuclear physics and pattern recognition and can exist in 3 classes simultaneously. There are still impurities in recommendations generated from lookups as gleaned from logs. These are inaccuracies in the way WordNet infers because of small size of the text description about book. Larger the description per shopping cart item, greater is the information connectedness of the WordNet subgraph generated and accuracy of core number based classification.
