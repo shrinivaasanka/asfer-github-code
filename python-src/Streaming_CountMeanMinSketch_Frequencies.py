@@ -82,7 +82,8 @@ for m in xrange(rows):
 
 #inputf=open("StreamingData.txt","r")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("Kafka","Kafka")
 #add and populate sketch
 for i in inputf:
 	for row in xrange(rows):
@@ -92,9 +93,6 @@ for i in inputf:
 	row=0
 print countminsketch
 
-#inputf=open("StreamingData.txt","r")
-#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
 #frequencies of each input - minimum of all hashed cells 
 no_of_elements_estimated=0
 no_of_elements_exact=0

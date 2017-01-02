@@ -33,6 +33,7 @@
 import happybase
 import pyhs2
 from cassandra.cluster import Cluster
+from confluent_kafka import Consumer, KafkaError
 
 class StreamAbsGen(object):
 	def __init__(self,data_storage,data_source):
@@ -102,6 +103,11 @@ class StreamAbsGen(object):
 			self.query='SELECT * FROM stream_data'
 			self.resultrows=self.session.execute(self.query)
 			print "StreamAbsGen:__init__(): connected to Cassandra"
+
+		if self.data_storage=="Kafka":
+		        self.c = Consumer({'bootstrap.servers': '0', 'group.id': 'test-consumer-group', 'default.topic.config': {'auto.offset.reset': 'smallest'}})
+		        self.c.subscribe(['neuronraindata'])
+
 		
 	def __iter__(self):
 		if self.data_storage=="KingCobra":
@@ -130,5 +136,13 @@ class StreamAbsGen(object):
 			for i in self.inputfile:
 				#print "StreamAbsGen(USBWWAN byte stream data): iterator yielding %s" % i
 				yield i
-
-		
+		if self.data_storage=="Kafka":
+			        while True:
+				    print "Polling Kafka topic to receive message ..."
+			            msg = self.c.poll()
+			            if not msg.error() and msg.value():
+			                print('Received message: ' , msg.value().encode("utf-8"))
+					yield msg
+			            else:
+			                print(msg.error())
+			        self.c.close()
