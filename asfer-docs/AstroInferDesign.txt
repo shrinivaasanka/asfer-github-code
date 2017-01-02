@@ -6116,3 +6116,18 @@ Kafka Streaming Platform has been added as a data storage in Streaming Generator
 code for a neuronraindata topic polls for incoming messages in iterator. As an example Streaming CountMeanMinSketch implementation has
 been updated to source streamed data published in Kafka.
 
+-------------------------------------------------------------------------------------------------------------------------------------
+353. (FEATURE-DONE) An example usecase of Recommender Systems for online shopping cart - 2 January 2017
+-------------------------------------------------------------------------------------------------------------------------------------
+*) RecommenderSystems folder has been updated with new text file from an example past shopping cart history items (e.g books from miscellaneous
+topics in Amazon online bookstore)
+*) From the above edges a Hypergraph is created by classifying the shopping cart items into classes and constructing hyperedges across the
+classes (by Recursive Gloss Overlap Graph maximum core number classifier)
+*) Text files for above usecase have .shoppingcart suffixes
+*) Above shopping cart hypergraph has a past history of items chosen by a user from variety of topics.
+*) New input file RecommenderSystems.shoppingcart.input.txt has present items in user's shopping cart and new items have to be recommended to
+user based on present choice and past history.
+*) For this, items in present shopping cart are lookedup in past sales history Hypergraph created previously and recommendations are returned
+*) Items in present shopping cart are looked up in two ways: 1) By classifying with Recursive Gloss Overlap graph and looking up rare classes
+less than a threshold (presently core number 5) and 2) Raw token lookup
+*) Logs for these two lookups based Recommendations generated are committed to testlogs/
