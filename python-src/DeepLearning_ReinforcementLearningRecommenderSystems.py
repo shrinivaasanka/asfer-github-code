@@ -31,6 +31,10 @@
 
 import random
 import ast
+from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
+
+#RecommenderEngineOption="RawTokens"
+RecommenderEngineOption="Classified"
 
 #action policy search implemented - non-trivial RecommenderSystems evocation:
 #This is an example RecommenderSystems storage with hyperedges and multiplanar hypergraph. A practical RecommenderSystems storage could be of billions of #edges based on experiential learning of an individual over a period of lifetime and has to be suitably stored in a medium that mimicks brain.  #Ideally RecommenderSystems has to be in some persistence bigdata storage though it still is just an approximation. Neo4j backend for RecommenderSystems #has been implemented in RecommenderSystems/. RecommenderSystems is kind of Evocation WordNet expanded for thoughts represented as sentences (because #there is no better way to encode thoughts than in a natural language) and classified. Hypergraph encodes the edges as numbers - for example, #"transactions":[1] and "security":[1] implies that a sentence numbered 1 has been pre-classified under transactions and security categories.  #Also "services":[0,1] implies that there are two sentences encoded as 0 and 1 classified in services category with descending order of #evocative potentials - 0 is more evocative than 1.  In an advanced setting the RecommenderSystems stores the lambda function composition parenthesized #equivalent to the sentence and action taken upon evocation is to evaluate the most potent evocative lambda expression.  #On an evocative thought, state of "RecommenderSystems" mind changes with corresponding action associated with that state 
@@ -49,27 +53,43 @@ import ast
 #In this aspect, RecommenderSystems is a qualitative experimental inference model compared to quantitative Neural Networks.
 
 #RecommenderSystems File System Storage - eval()-ed to dict and list
-recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.txt","r")
-recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.txt","r")
+#recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.txt","r")
+#recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.txt","r")
+recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.shoppingcart.txt","r")
+recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart.txt","r")
 
 recommendersystems_edges=ast.literal_eval(recommendersystems_edges_storage.read())
 recommendersystems_hypergraph=ast.literal_eval(recommendersystems_hypergraph_storage.read())
 
-inputf=open("RecommenderSystems.input.txt","r")
+stopwords = [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In',                'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s','1','2','3','4','5','6','7','8','9','0']
+
+
+inputf=open("RecommenderSystems.shoppingcart.input.txt","r")
 reward=0.0
-for obs in inputf.read().split():
-	#Evocatives are returned from RecommenderSystems storage
-	print "==========================================================================================="
-	print "Observation:",obs.lower()
-	try:
-		#It is assumed in present implementation that every thought edge is a state implicitly, and the action
-		#for the state is the "meaning" inferred by recursive lambda evaluation (lambda composition tree evaluation for a natural
-		#language sentence is not implemented separately because its reverse is already done through closure of a RGO graph in other
-		#code in NeuronRain AsFer. Approximately every edge in Recursive Gloss Overlap wordnet subgraph is a lambda function with its
-		#two vertices as operands which gives a more generic lambda graph composition of a text)
-		if recommendersystems_hypergraph[obs.lower()] is not None:
-			for s in recommendersystems_hypergraph[obs.lower()]:
-				print "ThoughtNet based Recommender System (reward) returned(in descending order of evocation potential):", recommendersystems_edges[s] 
-	except:
-		pass
+inputfcontents=inputf.read()
+
+if RecommenderEngineOption=="Classified":
+	classification=RecursiveGlossOverlap_Classify(inputfcontents)
+	print "classification :"
+	print classification
+	for cls, occurrence in classification[0]:
+		 if recommendersystems_hypergraph[cls] is not None and occurrence < 5:
+       	                 for s in recommendersystems_hypergraph[cls]:
+                                print "ThoughtNet based Recommender System (reward) returned(in descending order of evocation potential) for class - ",cls," :", recommendersystems_edges[s]
+else:
+	for obs in inputfcontents.split():
+		#Evocatives are returned from RecommenderSystems storage
+		print "==========================================================================================="
+		print "Observation:",obs.lower()
+		try:
+			#It is assumed in present implementation that every thought edge is a state implicitly, and the action
+			#for the state is the "meaning" inferred by recursive lambda evaluation (lambda composition tree evaluation for a natural
+			#language sentence is not implemented separately because its reverse is already done through closure of a RGO graph in other
+			#code in NeuronRain AsFer. Approximately every edge in Recursive Gloss Overlap wordnet subgraph is a lambda function with its
+			#two vertices as operands which gives a more generic lambda graph composition of a text)
+			if obs.lower() not in stopwords and recommendersystems_hypergraph[obs.lower()] is not None:
+				for s in recommendersystems_hypergraph[obs.lower()]:
+					print "ThoughtNet based Recommender System (reward) returned(in descending order of evocation potential):", recommendersystems_edges[s] 
+		except:
+			pass
 

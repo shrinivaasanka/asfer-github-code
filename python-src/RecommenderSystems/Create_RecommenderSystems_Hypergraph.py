@@ -44,8 +44,10 @@ def nett_sentiment(senti_tuple):
 
 if __name__=="__main__":
 	edge_sentiment_dict=defaultdict()
-	recommendersystems_edges_file=open("RecommenderSystems_Edges.txt","r")
-	recommendersystems_hypergraph_file=open("RecommenderSystems_Hypergraph_Generated.txt","w")
+	#recommendersystems_edges_file=open("RecommenderSystems_Edges.txt","r")
+	recommendersystems_edges_file=open("RecommenderSystems_Edges.shoppingcart.txt","r")
+	#recommendersystems_hypergraph_file=open("RecommenderSystems_Hypergraph_Generated.txt","w")
+	recommendersystems_hypergraph_file=open("RecommenderSystems_Hypergraph_Generated.shoppingcart.txt","w")
 	recommendersystems_hypergraph=defaultdict(list)
 	recommendersystems_hypergraph_sorted=defaultdict(list)
 	edge_number=0
