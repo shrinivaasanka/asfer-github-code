@@ -55,8 +55,10 @@ RecommenderEngineOption="Classified"
 #RecommenderSystems File System Storage - eval()-ed to dict and list
 #recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.txt","r")
 #recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.txt","r")
-recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.shoppingcart.txt","r")
-recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart.txt","r")
+#recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.shoppingcart.txt","r")
+#recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart.txt","r")
+recommendersystems_edges_storage=open("./RecommenderSystems/RecommenderSystems_Edges.shoppingcart2.txt","r")
+recommendersystems_hypergraph_storage=open("./RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart2.txt","r")
 
 recommendersystems_edges=ast.literal_eval(recommendersystems_edges_storage.read())
 recommendersystems_hypergraph=ast.literal_eval(recommendersystems_hypergraph_storage.read())
@@ -64,7 +66,8 @@ recommendersystems_hypergraph=ast.literal_eval(recommendersystems_hypergraph_sto
 stopwords = [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In',                'in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s','1','2','3','4','5','6','7','8','9','0']
 
 
-inputf=open("RecommenderSystems.shoppingcart.input.txt","r")
+#inputf=open("RecommenderSystems.shoppingcart.input.txt","r")
+inputf=open("RecommenderSystems.shoppingcart2.input.txt","r")
 reward=0.0
 inputfcontents=inputf.read()
 
@@ -72,10 +75,17 @@ if RecommenderEngineOption=="Classified":
 	classification=RecursiveGlossOverlap_Classify(inputfcontents)
 	print "classification :"
 	print classification
-	for cls, occurrence in classification[0]:
-		 if recommendersystems_hypergraph[cls] is not None and occurrence < 5:
-       	                 for s in recommendersystems_hypergraph[cls]:
-                                print "ThoughtNet based Recommender System (reward) returned(in descending order of evocation potential) for class - ",cls," :", recommendersystems_edges[s]
+	creamylayer=int(len(classification[0])*0.1)
+	toppercentileclasses=classification[0][:creamylayer]
+	print "top percentile classes:"
+	print toppercentileclasses
+	for cls, occurrence in toppercentileclasses:
+	try:
+		if recommendersystems_hypergraph[cls] is not None and occurrence > 5:
+			for s in recommendersystems_hypergraph[cls]:
+				print "ThoughtNet based Recommender System (reward) returned(in descending order of evocation potential) for class - ",cls," :", recommendersystems_edges[s]
+	except:
+		pass
 else:
 	for obs in inputfcontents.split():
 		#Evocatives are returned from RecommenderSystems storage
