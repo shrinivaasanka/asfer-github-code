@@ -6134,3 +6134,15 @@ less than a threshold (presently core number 5) and 2) Raw token lookup
 
 An important note: Rationale for Hypergraph based past history is that a meaningful text can be classified on multiple classes vis-a-vis usual
 supervised classifiers which classify text on exactly one class. This is more realistic because text can delve into multiple topics simultaneusly e.g an article on medical imaging (MRI scans) could contain details also on nuclear physics and pattern recognition and can exist in 3 classes simultaneously. There are still impurities in recommendations generated from lookups as gleaned from logs. These are inaccuracies in the way WordNet infers because of small size of the text description about book. Larger the description per shopping cart item, greater is the information connectedness of the WordNet subgraph generated and accuracy of core number based classification.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+354. (FEATURE-DONE) More detailed shopping cart example 2 for RGO+ThoughtNet based Recommender System - 3 January 2017
+----------------------------------------------------------------------------------------------------------------------------------------
+*) python-src/DeepLearning_ReinforcementLearningRecommenderSystems.py has been updated to choose top percentile classes of text input
+so that vertices with large core numbers get more weightage.
+*) New shoppingcart2 product reviews text has been added and corresponding Hypergraph history has been created. This example has detailed
+product description with an assorted mix (TV reviews, Washing Machine reviews, Home Theatre reviews etc.,) - python-src/RecommenderSystems/RecommenderSystems_Edges.shoppingcart2.txt,
+python-src/RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart2.txt
+*) New input file python-src/RecommenderSystems.shoppingcart2.input.txt has been added with an example product (TV).
+*) Recommender System chooses relevant TV products from Hypergraph history and displays to user.
+*) Logs have been committed to testlogs/
