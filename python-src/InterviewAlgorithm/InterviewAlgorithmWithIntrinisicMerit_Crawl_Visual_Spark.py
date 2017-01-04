@@ -381,6 +381,13 @@ def InterviewAlgorithm_main(argv1):
 		print nx.stoer_wagner(nxg)
 	except:
 		pass 
+	try:
+		print "=========================================================================================================="
+		print "Alternative Quantitative Intrinsic Merit  - Average Clustering Coefficient"
+		print "=========================================================================================================="
+		print nx.average_clustering(nxg)
+	except:
+		pass
 	#try:
 	#print "=========================================================================================================="
 	#print "Alternative Quantitative Intrinsic Merit  - Junction Tree Width"
