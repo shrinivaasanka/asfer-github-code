@@ -6179,8 +6179,7 @@ x not in L, x/e not in L                |       No error        |      Error    
 -------------------------------------------------------------------------------------------------
 Randomized Decision tree evaluation     |       No error	|	Error			|
 -------------------------------------------------------------------------------------------------
-If LHS is Interview algorithm which is a PSPACE=IP algorithm (by straightforward reduction from polynomial round prover-verifier protocol) or a PSPACE function fitting within "No error" scenarios in matrix above, then an unrestricted depth 100% errorfree RHS EXP circuit could imply,
-EXP=PSPACE. Hence whether such perfect resilient errorfree decision functions in previous "No error" cases can be learnt is an open question.
+If LHS social choice ranking function is Interview algorithm which is a PSPACE=IP algorithm (by straightforward reduction from polynomial round prover-verifier protocol) or a PSPACE function fitting within "No error" scenarios in matrix above, then an unrestricted depth 100% errorfree RHS EXP circuit could imply, EXP=PSPACE. Hence whether such perfect resilient errorfree decision functions in previous "No error" cases can be learnt is an open question.
 
 There are natural processes like Soap Bubble formation known to solve Steiner Tree NP-hard problem efficiently. Soap Bubbles between two
 glass plates are formed and bubbles are connected by line segments of optimum total length which converge at Steiner vertices. Voting is a
@@ -6192,3 +6191,14 @@ References:
 -----------
 355.1 NEXP not in non-uniform ACC - [RyanWilliams] - http://www.cs.cmu.edu/~ryanw/acc-lbs.pdf
 355.2 Soap Bubble Steiner Tree and P=NP - [ScottAaronson] - https://arxiv.org/pdf/quant-ph/0502072v2.pdf
+
+----------------------------------------------------------------------------------------------------------------------------------------
+356. (FEATURE-DONE) PythonSpark+Cython Interview Algorithm cloud implementation update - 4 January 2017 - related to 348
+----------------------------------------------------------------------------------------------------------------------------------------
+PythonSpark+Cython Cloud Implementation of Interview Algorithm has been updated to print average clustering coefficient of the definition
+graph for text. Average clustering coefficient is average(per node clustering coefficient) for all nodes where clustering coefficient of
+a vertex is a ratio of edges to neighbours to all possible edges to neighbours (or) amount of "cliqueness" of each neighbourhood of all
+vertices in a graph. This adds an alternative way for computing intrinsic merit of a document recursive gloss overlap graph mentioned in
+348 (Kleinberg's small world graph and clustering coeffient = 2). Average clustering coefficient supplements the intrinsic merit quantitative
+score in deciding semantic relatedness of a graph. Closer the clustering coefficient is to 2, it is easier to find paths in graph of a text
+and greater the linguistic meaningfulness.
