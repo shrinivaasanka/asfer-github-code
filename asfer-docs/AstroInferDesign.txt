@@ -6148,18 +6148,18 @@ python-src/RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingca
 *) Logs have been committed to testlogs/
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-355. (THEORY) NEXP not in non-uniform ACC, P(Good) majority voting circuit and some contradictions - 4 January 2017 - related to
-all P(Good) majority voting circuit related points in this document (e.g 14,53 etc.,)
+355. (THEORY) NEXP not in non-uniform ACC, P(Good) majority voting circuit and some contradictions - 4 January 2017 and 5 January 2017
+- related to all P(Good) majority voting circuit related points in this document (e.g 14,53 etc.,)
 ---------------------------------------------------------------------------------------------------------------------------------------
 RHS of P(Good) majority voting circuit has exponential size with unrestricted depth in worst case and is in EXP (if depth restricted , RHS is in PH direct-connect uniform circuit). RHS is a boolean function composition of non-uniform NC and individual voter decision functions. Known
 result by [RyanWilliams] limits that NEXP is not in ACC (AC circuits with counter mod[m] gates which output 1 if sum of inputs is a multiple
 of m). Non uniform ACC is contained in TC and AC is contained in ACC (AC in ACC in TC). This makes a contradiction if LHS is 100% efficient
 percolation circuit in non-uniform NC (NC/poly). If P(Good) binomial coefficient series summation converges to 100%, then RHS majority voting circuit is also 100% efficient and LHS=RHS. This implies if RHS has NEXP-complete algorithm/circuit, because of convergence, NEXP is in NC/poly. But NC is in ACC and this implies NEXP has non-uniform ACC circuits - contradicts NEXP does not have non-uniform ACC circuits. This is one
 more counterexample implying some or all of the following:
-	*) There is no 100% efficient RHS majority voting boolean function composition
-	*) There is no 100% efficient LHS boolean function (pseudorandomly chosen boolean function, ranked by social choice function etc.,)
-	*) RHS Majority voting is not in NEXP.
-	*) LHS pseudorandom choice boolean cannot have a non-uniform NC circuit
+       *) There is no 100% efficient RHS majority voting boolean function composition
+       *) There is no 100% efficient LHS boolean function (pseudorandomly chosen boolean function, ranked by social choice function etc.,)
+       *) RHS Majority voting is not in NEXP.
+       *) LHS pseudorandom choice boolean cannot have a non-uniform NC circuit
 Above, "efficiency" implies "No error" cases in scenarios matrix of 53.14 and a ninth error scenario of Randomized Decision Tree Evaluation Error(zero-error decision tree evaluation) mentioned in 314, 317. This adds one more possibility where P(Good) binomial summation for majority voting diverges already mentioned in 53.16.3.1, 256, 265, 275. Ranking by social choice function includes Interview algorithm implemented in Asfer and any other ranking function. Thus there exists a setting where both LHS and RHS fail to converge. It has to be noted that above counterexamples do not rule out the possibility of convergence of LHS and RHS of P(Good) circuit. There could be decision functions which adhere to "no error" cases in 10 possibilities as below:
 -------------------------------------------------------------------------------------------------
         x                               |    f(x) = f(x/e)      |       f(x) != f(x/e) Noise    |
@@ -6174,11 +6174,11 @@ x not in L, x/e in L                    |       Error           |   No error if 
 -------------------------------------------------------------------------------------------------
 x not in L, x/e not in L                |       No error        |      Error                    |
 -------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------
-	x				|			f(x)				|
--------------------------------------------------------------------------------------------------
-Randomized Decision tree evaluation     |       No error	|	Error			|
--------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+       x                                |                       f(x)                           |
+------------------------------------------------------------------------------------------------
+Randomized Decision tree evaluation     |       No error       |       Error                   |
+------------------------------------------------------------------------------------------------
 If LHS social choice ranking function is Interview algorithm which is a PSPACE=IP algorithm (by straightforward reduction from polynomial round prover-verifier protocol) or a PSPACE function fitting within "No error" scenarios in matrix above, then an unrestricted depth 100% errorfree RHS EXP circuit could imply, EXP=PSPACE. Hence whether such perfect resilient errorfree decision functions in previous "No error" cases can be learnt is an open question.
 
 There are natural processes like Soap Bubble formation known to solve Steiner Tree NP-hard problem efficiently. Soap Bubbles between two
@@ -6186,6 +6186,13 @@ glass plates are formed and bubbles are connected by line segments of optimum to
 also a natural process with human element involved. Does human judgement overwhelm algorithmic judgement in decision correctness is also an
 open question. If neural networks are algorithmic equivalents of human reasoning, then each voter decision function could be a TC (threshold) circuit and majority voting could be a composition of NC majority function with TC voter circuit inputs. Thus entire RHS of P(Good) is a huge
 non-uniform TC neural network. Error of majority voting is then equal to error of this majority function + neural network composition i.e majority voting involving humans is BPTC algorithm.
+
+Previous matrix of 10 scenarios basically subdivides the traditional BP* definition which says: For x in L, a BP* turing machine accepts with probability > 2/3 and for x not in L rejects with probability > 2/3. In other words, a BP* algorithm allows false positives and false negatives and thus errs in "judgement" with probability 1/3. All "Error" entries in the previous matrix are :
+	*) (f(x)=f(x/e)) in which case two correlated strings one in L and other not in L are both accepted (false positive) and rejected by f (false negative)
+	*) (f(x) != f(x/e) - Noise sensitivity) in which case two correlated strings in L or not in L are erroneously accepted and rejected by f (false positives and false negatives)
+	*) Previous two are input related while the last scenario with error in decision tree evaluation is internal to the boolean function itself with false positive and negative decision tree evaluation based on pseudorandom advice bits.
+
+This false positive + false negative voter judgement error applies to BPTC NC+neural network circuit composition also described previously. Derandomizing BPTC should give a non-uniform TC circuit for RHS of P(Good) majority voting implying zero-error voting by neural network voters. This non-uniform TC circuit is an alternative way to specify the enormity of RHS earlier described by PH=DC (depth restricted) and EXP (depth unrestricted) classes. Thus these two unbounded circuit models for RHS of P(Good) majority voting are equivalent: non-uniform TC and EXP. But ACC is contained in TC and NEXP is not in non-uniform ACC. This does not rule out the possibility that EXP has non-uniform TC circuits which is a superset of ACC.
 
 References:
 -----------
