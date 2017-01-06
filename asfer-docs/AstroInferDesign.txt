@@ -6212,3 +6212,20 @@ vertices in a graph. This adds an alternative way for computing intrinsic merit 
 348 (Kleinberg's small world graph and clustering coeffient = 2). Average clustering coefficient supplements the intrinsic merit quantitative
 score in deciding semantic relatedness of a graph. Closer the clustering coefficient is to 2, it is easier to find paths in graph of a text
 and greater the linguistic meaningfulness.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+357. (THEORY) P(Good) non-majority versus majority social choices, BPTC and PSPACE classes - related to 317,355 - 6 January 2017
+---------------------------------------------------------------------------------------------------------------------------------------
+Caution: Following tries to prove a major lowerbound result with some assumptions and is subject to errors.
+
+Main motivation for so much emphasis on P(Good) binomial summation convergence is: LHS is non-majority social choice and RHS is majority
+social choice and convergence to 100% on both sides implies LHS and RHS are of equal merit with varying complexit classes giving a lowerbound. In non-majority social choice one of the elements in the population set has to be chosen without voting. If there are n voters and out of them m are of x% goodness, probability of pseudorandom choice to have x% efficiency = m/n. If LHS is an Interview algorithm based social choice,
+choice process is as follows:
+
+foreach(voter)
+{
+	Interview the voter (a PSPACE-complete problem where polynomial number of question-answering reduces to prover-verifier protocol)
+}
+Rank the voters by merit and choose the topmost as non-majority social choice - voting is obviated.
+
+It is interesting to note that web search engines use both non-majority (Ranking by merit) and majority choice (e.g PageRank,Hub-Authority) to rank websites. Above algorithm is polynomial time in number of voters and thus in toto is in PSPACE. RHS majority voting is better approximated by BPTC circuit with threshold neural netwrk circuits for each voter, mentioned previously. It is known that BPP is in PSPACE. Thus LHS interview social choice with error is already accounted for in PSPACE. This equates an error-prone LHS PSPACE-complete problem to an error-prone RHS BPTC problem. BPTC is in BPP (couldn't find reference for this, but looks obvious because every TC circuit with error can be simulated by a polynomial time Turing Machine with error). This implies BPTC is in PSPACE because BPP is in PSPACE. If equal error on both LHS and RHS implies a lowerbound, LHS PSPACE-complete interview non-majority social choice has a BPTC majority social choice circuit and therefore all PSPACE problems are in BPTC. These two directions together imply PSPACE=BPTC. But BPTC is in BPP and BPP is in PSPACE implying PSPACE=BPP. From https://www.cse.buffalo.edu/~regan/papers/ComplexityPoster.jpg, this might imply a collapse of entire Polynomial Hierarchy upto second level and some consequences for NP and coNP.
