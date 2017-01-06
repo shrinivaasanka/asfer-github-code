@@ -6219,7 +6219,7 @@ and greater the linguistic meaningfulness.
 Caution: Following tries to prove a major lowerbound result with some assumptions and is subject to errors.
 
 Main motivation for so much emphasis on P(Good) binomial summation convergence is: LHS is non-majority social choice and RHS is majority
-social choice and convergence to 100% on both sides implies LHS and RHS are of equal merit with varying complexit classes giving a lowerbound. In non-majority social choice one of the elements in the population set has to be chosen without voting. If there are n voters and out of them m are of x% goodness, probability of pseudorandom choice to have x% efficiency = m/n. If LHS is an Interview algorithm based social choice,
+social choice and convergence to 100% on both sides implies LHS and RHS are of equal merit with varying complexity classes giving a lowerbound. In non-majority social choice one of the elements in the population set has to be chosen without voting. If there are n voters and out of them m are of x% goodness, probability of pseudorandom choice to have x% efficiency = m/n. If LHS is an Interview algorithm based social choice,
 choice process is as follows:
 
 foreach(voter)
