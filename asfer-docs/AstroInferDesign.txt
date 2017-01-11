@@ -6266,7 +6266,8 @@ Error in interview circuit which is an NC sorting network with PSPACE-complete v
 False positives + False negatives + False questions = Percentage of wrong answers marked as right + Percentage of right answers marked as wrong + Percentage of wrong questions
 
 For sorting purposes output of TQBF is not a binary 0 or 1 but a binary string with value equal to number of correct answers. Like all
-other boolean functions sensitivity of TQBF phi(q1,a1,q2,a2,q3,a3,...,qn,an) is defined as how flipping of ai affects the output. Formally,
+other boolean functions sensitivity of TQBF phi(q1,a1,q2,a2,q3,a3,...,qn,an) is defined as how flipping of qi and ai affects the output.
+Formally,
 	Sensitivity(TQBF) = Pr(TQBF(X) != TQBF(Xcorrelated)) where Xcorrelated is an interview with erroneous questions and answers.
 
 Thus sensitivity captures the error in interview. It has to be noted that wrong questions also measure the flaw in interview process while wrong answer to a right question is already accounted for by a binary 0. When sensitivity of TQBF is 0, interview is flawless and LHS if P(good) is 1.
@@ -6277,9 +6278,9 @@ Pseudorandom Choice:
 Set of all voter decision functions is partitioned into n sets where each set has goodness xi. Here goodness of a voter decision function f
 is defined as: 1-error(f).
 
-Let number of voter decision functions with goodness xi = m(xi). Thus n = m(x1)+m(x2)+m(x3)+...+m(xn)
+Let number of voter decision functions with goodness xi = m(xi). Thus N = m(x1)+m(x2)+m(x3)+...+m(xn)
 Expected goodness of a PRG choice is:
-	1/n * summation(xi*m(xi)) = (x1*m(x1) + x2*m(x2) + x3*m(x3) + ... + xn*m(xn)) / n
+	1/N * summation(xi*m(xi)) = (x1*m(x1) + x2*m(x2) + x3*m(x3) + ... + xn*m(xn)) / N
 When all voter functions have goodness 1 then PRG choice in LHS of P(good) has goodness 1.
 
 These two non-majority choices are just hypothetical examples of how a social choice can be made without voting. In reality how non-majority
