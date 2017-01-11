@@ -6285,3 +6285,15 @@ When all voter functions have goodness 1 then PRG choice in LHS of P(good) has g
 
 These two non-majority choices are just hypothetical examples of how a social choice can be made without voting. In reality how non-majority
 social choice occurs is quite complex and determined by various factors of society ( economic disparities, ethnicity etc.,)
+
+---------------------------------------------------------------------------------------------------------------------------------
+360. (FEATURE-DONE) Commits - 11 January 2017 - DeepLearning Convolution Networks update
+---------------------------------------------------------------------------------------------------------------------------------
+Some changes done to Convolution computation:
+*) Made sigmoid perceptron optional in final neural network from Maxpooling layer so that weighted sum is printed instead of sigmoid value
+*) This causes the convolution network to be very sensitive to presence of pattern
+*) 2 more example bitmaps have been added with varying degree of pattern prominence (a pronounced X and a thin 1)
+*) With this final neurons from maxpooling layer print values of neurons which quite closely reflect the pattern's magnitude: Huge pattern
+results in big value while small pattern results in small value proportionately.
+*) This can rank the bitmaps in increasing degree of magnitude of pattern presence
+*) Logs for this have been committed to testlogs
