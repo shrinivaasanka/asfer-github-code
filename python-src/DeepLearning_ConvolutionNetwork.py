@@ -47,26 +47,27 @@ import random
 
 class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
+		self.sigmoidPerceptron=False
 	        self.input_bitmap = input_bitmap
 		self.max_pooling_inference = []
-		self.weight=[[[0.05,0.05,0.05,0.05,0.05],
-			      [0.05,0.05,0.05,0.05,0.05],
-			      [0.05,0.05,0.05,0.05,0.05],
-			      [0.05,0.05,0.05,0.05,0.05],
-			      [0.05,0.05,0.05,0.05,0.05],
-			      [0.05,0.05,0.05,0.05,0.05]],
-			     [[0.06,0.06,0.06,0.06,0.06],
-			      [0.06,0.06,0.06,0.06,0.06],
-			      [0.06,0.06,0.06,0.06,0.06],
-			      [0.06,0.06,0.06,0.06,0.06],
-			      [0.06,0.06,0.06,0.06,0.06],
-			      [0.06,0.06,0.06,0.06,0.06]],
-			     [[0.07,0.07,0.07,0.07,0.07],
-			      [0.07,0.07,0.07,0.07,0.07],
-			      [0.07,0.07,0.07,0.07,0.07],
-			      [0.07,0.07,0.07,0.07,0.07],
-			      [0.07,0.07,0.07,0.07,0.07],
-			      [0.07,0.07,0.07,0.07,0.07]]]
+		self.weight=[[[2.05,2.05,2.05,2.05,2.05],
+			      [2.05,2.09,2.09,2.09,2.05],
+			      [2.05,2.09,2.09,2.09,2.05],
+			      [2.05,2.09,2.09,2.09,2.05],
+			      [2.05,2.09,2.09,2.09,2.05],
+			      [2.05,2.05,2.05,2.05,2.05]],
+			     [[2.06,2.06,2.06,2.06,2.06],
+			      [2.06,2.09,2.09,2.09,2.06],
+			      [2.06,2.09,2.09,2.09,2.06],
+			      [2.06,2.09,2.09,2.09,2.06],
+			      [2.06,2.09,2.09,2.09,2.06],
+			      [2.06,2.06,2.06,2.06,2.06]],
+			     [[2.07,2.07,2.07,2.07,2.07],
+			      [2.07,2.09,2.09,2.09,2.07],
+			      [2.07,2.09,2.09,2.09,2.07],
+			      [2.07,2.09,2.09,2.09,2.07],
+			      [2.07,2.09,2.09,2.09,2.07],
+			      [2.07,2.07,2.07,2.07,2.07]]]
 		self.convolution_map=[[[0,0,0,0,0,0,0,0,0,0],
  	      			       [0,0,0,0,0,0,0,0,0,0],
 	     			       [0,0,0,0,0,0,0,0,0,0],
@@ -116,7 +117,7 @@ class DeepLearningConvolution(object):
 
 	def sigmoid(self, perceptron):
 		# 1/(1+e^(-z))
-		return 1/(1+math.exp(-1*perceptron))
+		return float(1.0/(1.0+math.exp(-1.0*perceptron)))
 
 	def receptive_field_window(self,i,j,stride,convolution_map_index):
 		rfw=0.0
@@ -167,8 +168,11 @@ class DeepLearningConvolution(object):
 		for p in xrange(maxpool_map_width):
 			for q in xrange(maxpool_map_width):
 				for convolution_map_index in xrange(3):
-					weighted_sum = weighted_sum + max_pooling_map[convolution_map_index][p][q]*(self.weight[convolution_map_index][p][q]*self.weight[convolution_map_index][p][q])
-		self.max_pooling_inference.append(self.sigmoid(weighted_sum+self.bias))
+					weighted_sum = weighted_sum + max_pooling_map[convolution_map_index][p][q]*(self.weight[convolution_map_index][p][q])
+		if self.sigmoidPerceptron==True:
+			self.max_pooling_inference.append(self.sigmoid(weighted_sum+self.bias))
+		else:
+			self.max_pooling_inference.append((weighted_sum+self.bias))
 		return self.max_pooling_inference
                        
 			
@@ -221,21 +225,59 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
+	#An example input picture bitmap with no patterns
+	input_bitmap4=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[1,1,1,0,0,0,0,0,0,0,0,1,1,1],
+		[0,1,1,0,0,0,0,0,0,0,1,1,1,0],
+		[0,1,1,1,0,0,0,0,0,1,1,1,0,0],
+		[0,0,1,1,1,0,0,1,1,1,1,0,0,0],
+		[0,0,0,1,1,1,1,1,1,1,0,0,0,0],
+		[0,0,0,0,1,1,1,1,1,0,0,0,0,0],
+		[0,0,0,0,0,1,1,1,0,0,0,0,0,0],
+		[0,0,0,0,1,1,1,1,0,0,0,0,0,0],
+		[0,0,0,1,1,1,1,1,1,0,0,0,0,0],
+		[0,0,1,1,1,0,0,1,1,1,0,0,0,0],
+		[0,1,1,1,0,0,0,0,1,1,1,0,0,0],
+		[1,1,1,0,0,0,0,0,0,1,1,1,0,0],
+		[1,1,0,0,0,0,0,0,0,0,1,1,1,0]]
+
+	#An example input picture bitmap with no patterns
+	input_bitmap5=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,1,1,0,0,0,0,0,0],
+		[0,0,0,0,0,1,1,1,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,1,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,1,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,1,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,1,0,0,0,0,0,0],
+		[0,0,0,0,0,1,1,1,1,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+
 	dlc1=DeepLearningConvolution(input_bitmap1)
 	dlc2=DeepLearningConvolution(input_bitmap2)
 	dlc3=DeepLearningConvolution(input_bitmap3)
+	dlc4=DeepLearningConvolution(input_bitmap4)
+	dlc5=DeepLearningConvolution(input_bitmap5)
 
 	#maximum stride is 5
 	convolution_stride=2
 	conv_map1=dlc1.convolution(convolution_stride)
 	conv_map2=dlc2.convolution(convolution_stride)
 	conv_map3=dlc3.convolution(convolution_stride)
+	conv_map4=dlc4.convolution(convolution_stride)
+	conv_map5=dlc5.convolution(convolution_stride)
 
 	#maximum pool sliding window width is 5
 	pool_slidewindow_width=2
 	pool_map1=dlc1.max_pooling(pool_slidewindow_width)
 	pool_map2=dlc2.max_pooling(pool_slidewindow_width)
 	pool_map3=dlc3.max_pooling(pool_slidewindow_width)
+	pool_map4=dlc4.max_pooling(pool_slidewindow_width)
+	pool_map5=dlc5.max_pooling(pool_slidewindow_width)
 
 	print "##########################################"
 	print "Set of Convolution Maps"
@@ -251,6 +293,14 @@ if __name__=="__main__":
 	print "Example 3:"
 	print "###########"
 	pprint.pprint(conv_map3)
+	print "###########"
+	print "Example 4:"
+	print "###########"
+	pprint.pprint(conv_map4)
+	print "###########"
+	print "Example 5:"
+	print "###########"
+	pprint.pprint(conv_map5)
 	print "##########################################"
 	print "Max Pooling Map"
 	print "##########################################"
@@ -265,6 +315,14 @@ if __name__=="__main__":
 	print "Example 3:"
 	print "###########"
 	pprint.pprint(pool_map3)
+	print "###########"
+	print "Example 4:"
+	print "###########"
+	pprint.pprint(pool_map4)
+	print "###########"
+	print "Example 5:"
+	print "###########"
+	pprint.pprint(pool_map5)
 	print "####################################################################################################"
 	print "Final layer that connects all neurons in max pooling map into set of 10 neurons"
 	print "####################################################################################################"
@@ -284,3 +342,11 @@ if __name__=="__main__":
 		print "Example 3:"
 		print "###########"
 		pprint.pprint(dlc3.infer_from_max_pooling(pool_map3,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+		print "###########"
+		print "Example 4:"
+		print "###########"
+		pprint.pprint(dlc4.infer_from_max_pooling(pool_map4,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
+		print "###########"
+		print "Example 5:"
+		print "###########"
+		pprint.pprint(dlc5.infer_from_max_pooling(pool_map5,float(random.randint(1,w+1))/float(w+1),maxpool_map_width))
