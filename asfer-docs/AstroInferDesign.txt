@@ -6314,7 +6314,7 @@ for different patterns
 *) Logs show for all 10 neurons, final neural activation values are close enough for similar patterns and different for different patterns.
 *) Thus Convolution Network which is a recent advance in DeepLearning works quite well to recognize similar image patterns.
 
-In above example , 9th and 10th neurons output following values. Example 11 and 12 are similar patterns - 0 and 0. Example 21 and 22 are similar patterns - 8 and 8. Example 41 and 41 are similar patterns - X and X. Example 51 and 52 are similar patterns - 1 and 1. Neurons reflect this similarities :
+In above example , 9th and 10th neurons output following values. Example 11 and 12 are similar patterns - 0 and 0. Example 21 and 22 are similar patterns - 8 and 8. Example 41 and 42 are similar patterns - X and X. Example 51 and 52 are similar patterns - 1 and 1. Neurons reflect this similarities :
 ###########################################################################################
 Inference from Max Pooling Layer - Neuron  8
 ###########################################################################################
