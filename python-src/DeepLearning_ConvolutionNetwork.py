@@ -257,7 +257,7 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-	#An example input picture bitmap with no patterns
+	#An example input picture bitmap with pattern X inscribed with 1s
 	input_bitmap41=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[1,1,1,0,0,0,0,0,0,0,0,1,1,1],
 		[0,1,1,0,0,0,0,0,0,0,1,1,1,0],
@@ -289,7 +289,7 @@ if __name__=="__main__":
 		[1,1,0,0,0,0,0,0,0,0,0,0,1,1]]
 
 
-	#An example input picture bitmap with no patterns
+	#An example input picture bitmap with pattern 1 inscribed with 1s
 	input_bitmap51=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
