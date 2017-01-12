@@ -6270,7 +6270,7 @@ other boolean functions sensitivity of TQBF phi(q1,a1,q2,a2,q3,a3,...,qn,an) is 
 Formally,
 	Sensitivity(TQBF) = Pr(TQBF(X) != TQBF(Xcorrelated)) where Xcorrelated is an interview with erroneous questions and answers.
 
-Thus sensitivity captures the error in interview. It has to be noted that wrong questions also measure the flaw in interview process while wrong answer to a right question is already accounted for by a binary 0. When sensitivity of TQBF is 0, interview is flawless and LHS if P(good) is 1.
+Thus sensitivity captures the error in interview. It has to be noted that wrong questions also measure the flaw in interview process while wrong answer to a right question is already accounted for by a binary 0. When sensitivity of TQBF is 0, interview is flawless and LHS if P(good) is 1. BKS Majority is least stable conjecture by [Benjamini-Kalai-Schramm] predicts existence of a linear threshold function with stability greater than Majority function of n variables, n odd. Interview Circuit which is a composition of an NC sorting network with PSPACE TQBF interviews of voters, is also a linear threshold function which ouputs candidate above a threshold (i.e sum of correct answers > threshold). If Stability(Interview) > Stability(Majority) then it is a proof of BKS conjecture. For large n, Stability(Majority) = 1-2/pi*(delta). When delta is close to 1, Stability(Majority) tends to 0.35.
 
 --------------------
 Pseudorandom Choice:
