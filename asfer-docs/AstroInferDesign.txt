@@ -6270,7 +6270,7 @@ other boolean functions sensitivity of TQBF phi(q1,a1,q2,a2,q3,a3,...,qn,an) is 
 Formally,
 	Sensitivity(TQBF) = Pr(TQBF(X) != TQBF(Xcorrelated)) where Xcorrelated is an interview with erroneous questions and answers.
 
-Thus sensitivity captures the error in interview. It has to be noted that wrong questions also measure the flaw in interview process while wrong answer to a right question is already accounted for by a binary 0. When sensitivity of TQBF is 0, interview is flawless and LHS if P(good) is 1. BKS Majority is least stable conjecture by [Benjamini-Kalai-Schramm] predicts existence of a linear threshold function with stability greater than Majority function of n variables, n odd. Interview Circuit which is a composition of an NC sorting network with PSPACE TQBF interviews of voters, is also a linear threshold function which ouputs candidate above a threshold (i.e sum of correct answers > threshold). If Stability(Interview) > Stability(Majority) then it is a proof of BKS conjecture. For large n, Stability(Majority) = 1-2/pi*(delta). When delta is close to 1, Stability(Majority) tends to 0.35.
+Thus sensitivity captures the error in interview. It has to be noted that wrong questions also measure the flaw in interview process while wrong answer to a right question is already accounted for by a binary 0. When sensitivity of TQBF is 0, interview is flawless and LHS if P(good) is 1. BKS Majority is least stable conjecture by [Benjamini-Kalai-Schramm] predicts existence of a linear threshold function with stability greater than Majority function of n variables, n odd. Interview Circuit which is a composition of an NC sorting network with PSPACE TQBF interviews of voters, is also a linear threshold function which outputs candidate above a threshold (i.e sum of correct answers > threshold). If Stability(Interview) > Stability(Majority) then it is a proof of BKS conjecture. For large n, Stability(Majority) = 1-2/pi*(delta). When delta is close to 1, Stability(Majority) tends to 0.35.
 
 --------------------
 Pseudorandom Choice:
@@ -6297,3 +6297,98 @@ Some changes done to Convolution computation:
 results in big value while small pattern results in small value proportionately.
 *) This can rank the bitmaps in increasing degree of magnitude of pattern presence
 *) Logs for this have been committed to testlogs
+
+---------------------------------------------------------------------------------------------------------------------------
+361. (FEATURE-DONE) DeepLearning Convolution Network - an example pattern recognition from bitmap images - 12 January 2017
+---------------------------------------------------------------------------------------------------------------------------
+*) Few more bitmap images have been included with same pattern but of different sizes
+*) There are 5 patterns and 9 bitmaps:
+        - Thin X and Boldfaced X
+        - Thin 0 and Boldfaced 0
+        - Thin 8 and Boldfaced 8
+        - No pattern
+        - Thin 1 and Boldfaced 1
+*) Expectation is that Convolution Network final neuron layer must output similar values for same pattern and different values
+for different patterns
+*) pooling_neuron_weight has been reintroduced in final neuron layer of 10 neurons each with a randomly chosen weight.
+*) Logs show for all 10 neurons, final neural activation values are close enough for similar patterns and different for different patterns.
+*) Thus Convolution Network which is a recent advance in DeepLearning works quite well to recognize similar image patterns.
+
+In above example , 9th and 10th neurons output following values. Example 11 and 12 are similar patterns - 0 and 0. Example 21 and 22 are similar patterns - 8 and 8. Example 41 and 41 are similar patterns - X and X. Example 51 and 52 are similar patterns - 1 and 1. Neurons reflect this similarities :
+###########################################################################################
+Inference from Max Pooling Layer - Neuron  8
+###########################################################################################
+Example 11:
+###########
+[27.402311485751664]
+###########
+Example 12:
+###########
+[27.36740767846171]
+###########
+Example 21:
+###########
+[32.15200939997122]
+###########
+Example 22:
+###########
+[30.835940458495205]
+###########
+Example 3:
+###########
+[17.133246549473675]
+###########
+Example 41:
+###########
+[29.367605168715038]
+###########
+Example 42:
+###########
+[27.446193773968886]
+###########
+Example 51:
+###########
+[22.12145242997834]
+###########
+Example 52:
+###########
+[24.17603022706531]
+###########################################################################################
+Inference from Max Pooling Layer - Neuron  9
+###########################################################################################
+Example 11:
+###########
+[24.667080337176497]
+###########
+Example 12:
+###########
+[24.635666910615544]
+###########
+Example 21:
+###########
+[28.941808459974094]
+###########
+Example 22:
+###########
+[27.757346412645685]
+###########
+Example 3:
+###########
+[15.424921894526316]
+###########
+Example 41:
+###########
+[26.435844651843524]
+###########
+Example 42:
+###########
+[24.70657439657199]
+###########
+Example 51:
+###########
+[19.914307186980512]
+###########
+Example 52:
+###########
+[21.763427204358788]
+
