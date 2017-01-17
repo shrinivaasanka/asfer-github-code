@@ -142,7 +142,7 @@ class BackPropagation(object):
 if __name__=="__main__":
 	iter=0
 	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
-	#parameters - initial conditions - input1,input2,input3,hidden1,hidden2,hidden2,expected_output1,expected_output2,expected_output3,weights_array
+	#parameters - initial conditions - input1,input2,input3,hidden1,hidden2,hidden3,expected_output1,expected_output2,expected_output3,weights_array
 	bpnn=BackPropagation(0.046,0.003,0.1,0.8,0.9,0.3,0.09,0.01,0.21,weights)
 	bpnn.compute_neural_network()
 	bpnn.print_layers()
