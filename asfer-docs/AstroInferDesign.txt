@@ -6403,3 +6403,10 @@ to testlogs/.
 *) Logs include a diff notes of how to extend this for arbitrary inputs and accuracy of backpropagation
 which beautifully converges at ~10^-26 error after ~1000000 iterations.
 
+------------------------------------------------------------------------------------------------------
+363. (FEATURE-DONE) Software Analytics with DeepLearning - 18 January 2017
+------------------------------------------------------------------------------------------------------
+*) An example software analytics code based on DeepLearning implementation has been added to
+software_analytics which import BackPropagation,Convolution and RecurrentLSTM to learn models
+from software analytics input variables (CPU%, Memory% and TimeDuration%)
+*) Logs for all 3 models learnt with same input variables have been added to software_analytics/testlogs
