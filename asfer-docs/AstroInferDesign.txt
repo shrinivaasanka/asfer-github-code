@@ -6207,6 +6207,7 @@ References:
 355.3 Constant depth Threshold circuits - http://people.cs.uchicago.edu/~razborov/files/helsinki.pdf
 355.4 Circuit Complexity of Neural networks - https://papers.nips.cc/paper/354-on-the-circuit-complexity-of-neural-networks.pdf
 355.5 Exact Threshold circuits - http://www.cs.au.dk/~arnsfelt/Papers/exactcircuits.pdf
+355.6 Universal Approximation Theorem - [Cybenko] - https://en.wikipedia.org/wiki/Universal_approximation_theorem - Multilayered Perceptrons with single hidden layer and finite inputs can approximate continuous functions [It has to be noted that single layer perceptron cannot compute XOR function and spatial connectedness - from Perceptrons:an introduction to computational geometry by MarvinMinsky-SeymourPapert]. Thus BPTC threshold networks with multiple layers as voter decision functions are good approximators of voting decisions.
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 356. (FEATURE-DONE) PythonSpark+Cython Interview Algorithm cloud implementation update - 4 January 2017 - related to 348
