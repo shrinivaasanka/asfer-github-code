@@ -68,7 +68,7 @@ class PolynomialTextEncoding(object):
 		self.polynomialfit=P.polyfit(self.xaxis,self.yaxis,5)
 		print "Coefficients of fitting polynomial of degree 5:",self.polynomialfit
 		plt.plot(self.xaxis, self.yaxis) 
-		#plt.show()
+		plt.show()
 		return self.yaxis
 
 	def polynomial_jensenshannon_edit_distance(self,str1,str2):
@@ -83,7 +83,7 @@ class PolynomialTextEncoding(object):
 				for i in str2yaxis[len(str1yaxis):]:
 					str1str2_tuple.append((1,i))	
 			
-		#print "str1str2_tuple:",str1str2_tuple
+		print "str1str2_tuple:",str1str2_tuple
 		kld1=kld2=0.0
 	        i=0
 	        for s in str1str2_tuple:
@@ -109,7 +109,7 @@ class PolynomialTextEncoding(object):
 				for i in str2yaxis[len(str1yaxis):]:
 					str1str2_tuple.append((1,i))	
 			
-		#print "str1str2_tuple:",str1str2_tuple
+		print "str1str2_tuple:",str1str2_tuple
 		l2norm=0.0
 		for k,v in str1str2_tuple:
 			l2norm = l2norm + (k-v)*(k-v)
@@ -129,22 +129,32 @@ if __name__=="__main__":
 	str10points=pe.text2polynomial(text10)
 	print "##################################################################################"
 	print "Wagner-Fischer Edit Distance for text1 and text2:",edit_distance(text1,text2)
-	print "Polynomial Encoding Edit Distance (JensenShannon) for text1 and text2:",pe.polynomial_jensenshannon_edit_distance(text1,text2)
-	print "Polynomial Encoding Edit Distance (L2 Norm) for text1 and text2:",pe.polynomial_l2norm_edit_distance(text1,text2)
+	print "Polynomial Encoding Edit Distance (JensenShannon) for text1 and text2:"
+	print pe.polynomial_jensenshannon_edit_distance(text1,text2)
+	print "Polynomial Encoding Edit Distance (L2 Norm) for text1 and text2:"
+	print pe.polynomial_l2norm_edit_distance(text1,text2)
 	print "##################################################################################"
 	print "Wagner-Fischer Edit Distance for text3 and text4:",edit_distance(text3,text4)
-	print "Polynomial Encoding Edit Distance (JensenShannon) for text3 and text4:",pe.polynomial_jensenshannon_edit_distance(text3,text4)
-	print "Polynomial Encoding Edit Distance (L2 Norm) for text3 and text4:",pe.polynomial_l2norm_edit_distance(text3,text4)
+	print "Polynomial Encoding Edit Distance (JensenShannon) for text3 and text4:"
+	print pe.polynomial_jensenshannon_edit_distance(text3,text4)
+	print "Polynomial Encoding Edit Distance (L2 Norm) for text3 and text4:"
+	print pe.polynomial_l2norm_edit_distance(text3,text4)
 	print "##################################################################################"
 	print "Wagner-Fischer Edit Distance for text5 and text6:",edit_distance(text5,text6)
-	print "Polynomial Encoding Edit Distance (JensenShannon) for text5 and text6:",pe.polynomial_jensenshannon_edit_distance(text5,text6)
-	print "Polynomial Encoding Edit Distance (L2 Norm) for text5 and text6:",pe.polynomial_l2norm_edit_distance(text5,text6)
+	print "Polynomial Encoding Edit Distance (JensenShannon) for text5 and text6:"
+	print pe.polynomial_jensenshannon_edit_distance(text5,text6)
+	print "Polynomial Encoding Edit Distance (L2 Norm) for text5 and text6:"
+	print pe.polynomial_l2norm_edit_distance(text5,text6)
 	print "##################################################################################"
 	print "Wagner-Fischer Edit Distance for text7 and text8:",edit_distance(text7,text8)
-	print "Polynomial Encoding Edit Distance (JensenShannon) for text5 and text6:",pe.polynomial_jensenshannon_edit_distance(text7,text8)
-	print "Polynomial Encoding Edit Distance (L2 Norm) for text5 and text6:",pe.polynomial_l2norm_edit_distance(text7,text8)
+	print "Polynomial Encoding Edit Distance (JensenShannon) for text7 and text8:"
+	print pe.polynomial_jensenshannon_edit_distance(text7,text8)
+	print "Polynomial Encoding Edit Distance (L2 Norm) for text7 and text8:"
+	print pe.polynomial_l2norm_edit_distance(text7,text8)
 	print "##################################################################################"
 	print "Wagner-Fischer Edit Distance for text9 and text10:",edit_distance(text9,text10)
-	print "Polynomial Encoding Edit Distance (JensenShannon) for text5 and text6:",pe.polynomial_jensenshannon_edit_distance(text9,text10)
-	print "Polynomial Encoding Edit Distance (L2 Norm) for text5 and text6:",pe.polynomial_l2norm_edit_distance(text9,text10)
+	print "Polynomial Encoding Edit Distance (JensenShannon) for text9 and text10:"
+	print pe.polynomial_jensenshannon_edit_distance(text9,text10)
+	print "Polynomial Encoding Edit Distance (L2 Norm) for text9 and text10:"
+	print pe.polynomial_l2norm_edit_distance(text9,text10)
 	print "##################################################################################"
