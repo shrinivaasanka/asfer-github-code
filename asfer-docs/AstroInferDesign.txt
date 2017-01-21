@@ -6458,3 +6458,57 @@ str1str2_tuple: [(102, 119), (100, 106), (106, 101), (102, 106), (106, 119), (10
 200.743617582
 ##################################################################################
 From above, usual edit distance between 2 strings is less than polynomial distances of JensenShannon and L2 norms. Ordinal values were not normalized by subtracting lowest possible ordinal value of unicode.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+365. (THEORY) BKS conjecture and Stability of Interview TQBF - related to 359 - 21 January 2017
+--------------------------------------------------------------------------------------------------------------------------------------------
+Caution: This derivation is still experimental with possible errors.
+
+Stability of a boolean function is defined as:
+	Stability(f) = Expectation(f(x)*f(y))
+where y is correlated version of x.
+
+Stability of Majority is defined as (From page 120 of AnalysisOfBooleanFunctions - Chapter 5 Majority and Threshold Functions - https://www.cs.cmu.edu/~odonnell/boolean-analysis/)
+	Stability(Majn) = Expectation(Majn(x)*Majn(y))
+where y is correlated version of x.
+
+For infinite n, Stability(Majn) is bounded by 2/pi*arcsin(rho). Similar stability measure can be derived for Interview TQBF threshold function also. Interview as a linear threshold function (LTF) can be defined as:
+	w1*a1 + w2*a2 + ... + wn*an > threshold_cutoff
+were each ai is an answer for a question qi and wi is the weightage associated with it. Berry-Esseen Central Limit Theorem applies for Interview threshold function. CLT implies that a random variable S=X1 + X2 + X3 + ... + Xn which is a sum of random variables Xi(s) converges to Gaussian Normal Distribution. Berry-Esseen CLT generalizes it to S=a1*x1 + a2*x2 + ... + an*xn where sum(ai^2) is normalized and = 1. Thus interview threshold function and Berry-Esseen CLT are structurally similar when weights wi are normalized and sum(wi^2) = 1. This implies interview scores are approximately Gaussian (Intuitively obvious because, bell curve corresponds to large proportion of voters scoring medium while tails correspond to very small percentage scoring very low and very high).
+
+Stability of Interview can be equivalently defined as:
+	Stability(Interview) = Expectation(Interview(x)*Interview(y))
+where y is correlated version of x.
+
+Substituting the threshold definition of interview in Stability:
+	Stability(Interview) = Expectation((w1*a1+w2*a2+...+wn*an)*(z1*b1+z2*b2+...+zn*bn))
+				= Expectation(w1*z1*a1*b1 + w1*z1*a2*b2 + ... + wn*zn*an*bn)
+				= a1*b1*Expectation(w1*z1) + .... + an*bn*Expectation(wn*zn)
+
+Assuming for all ai=bi=a:
+	Stability(Interview) = a^2 * (Expectation(w1*z1) + Expectation(w1*z2) + .... + Expectation(wn*zn))
+
+Expectation(wi*zk) = 0*0*1/4 + 0*1*1/4 + 1*0*1/4 + 1*1*1/4 for 4 possible values of (wi,zk) each with probability 1/4.
+
+=>	Stability(Interview) = a^2 * (n^2 * 0.25) = a^2*n^2/4
+
+	Stability(Interview) = a^2*n^2/4 < 1 => a < 2/n
+
+If Stability(Interview) > Stability(Majority), BKS conjecture is true.
+
+=>	a^2*n^2 / 4 > 1 - 2/pi
+=>	a > 2/n * sqrt(1-2/pi)
+=>	a > 1.2056205488/n [For minimum case of n=2, a > 0.6028102744]
+
+Thus for Stability(Interview) to exceed Stability(Majority) and BKS Conjecture to be true , weight per answer has to be > 1.2056/n approximately. For minimal base case n=2, a > 0.6028.
+
+Stability is alternatively defined as:
+	(+1)*Pr(f(x) = f(y)) + (-1)*Pr(f(x) != f(y))
+which is just expansion of Expectation and there are two two random variables (+1 for f(x)=f(y)) and (-1 for f(x) != f(y))
+=> Stability(f(x)) = 1-2*Pr(f(x) != f(y))
+=> Stability(f(x)) = 1-2*Sensitivity(f(x))
+=> Sensitivity(f(x)) = 0.5-0.5*Stability(f(x))
+
+Sensitivity(Interview) which is the dual of Stability is defined as:
+	Sensitivity(Interview) = 0.5-0.5*Stability(Interview) = 0.5-0.5*a^2*n^2/4
+
