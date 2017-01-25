@@ -6517,3 +6517,13 @@ which is just expansion of Expectation and there are two two random variables (+
 Sensitivity(Interview) which is the dual of Stability is defined as:
 	Sensitivity(Interview) = 0.5-0.5*Stability(Interview) = 0.5-0.5*a^2*n^2/4
 
+------------------------------------------------------------------------------------------------------------------------
+367. (FEATURE-DONE)  Commits - 25 January 2017 - related to 2.9 and 345
+------------------------------------------------------------------------------------------------------------------------
+Berlekamp-Welch Polynomial Reconstruction Decoder Implementation (for Reed-Solomon codes, texts, numerical points etc.,)
+------------------------------------------------------------------------------------------------------------------------
+*) Implements Berlekamp-Welch Polynomial Reconstruction Algorithm for reconstructing data from errors.
+*) System of linear equations has been solved with NumPy/SciPy Linear Algebra solve().
+*) Logs show how well the reconstructed polynomial closely approximates the original polynomial.
+*) Error locator polynomial E is degree 1 and Numerator Q is of degree = number of points thus yielding Q/E=P (reconstructed)
+*) Special case is natural language text with errors and a polynomial can be reconstructed from ordinal values of unicode
