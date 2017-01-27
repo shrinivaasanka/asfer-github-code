@@ -1026,6 +1026,10 @@ PRAM algorithms are in NC.
 
 	34.57) Approximating a function graph by planar pixelation - http://www3.nd.edu/~lnicolae/Pixelations-beam.pdf - this applies advanced topology and geometry for pixelation of any function graph. Presently pixelation of hyperbola graph is done in very simple, primitive way as mentioned in 34.29.
 
+	34.58) Resource Oblivious Sorting on Multicores - [RichardCole-VijayaRamachandran] - https://arxiv.org/pdf/1508.01504v1.pdf - New parallel merge sort algorithm for multicore machines (SPMS - SamplePartitionMergeSort) with parallel execution time in O(logN*loglogN). Multicores are equivalent to Asynchronous PRAMs (each core executes asynchronously) and thus it is an NC sorting algorithm.
+
+	34.59) NC and various categories of PRAMs - https://pdfs.semanticscholar.org/5354/99cf0c2faaaa6df69529605c87b511bd2226.pdf - CRCW PRAM can be simulated by EREW PRAM with polylogarithmic increase in time.
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
