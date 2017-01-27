@@ -29,6 +29,9 @@ import math
 from scipy.linalg import solve
 from numpy.polynomial.polynomial import Polynomial
 
+ordinaldict={'0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'a':10,'b':11,'c':12,'d':13,'e':14,'f':15,'g':16,'h':17,'i':18,'j':19,'k':20,'l':21,'m':22,'n':23,'o':24,'p':25,'q':26,'r':27,'s':28,'t':29,'u':30,'v':31,'w':32,'x':33,'y':34,'z':35}
+alphabetdict={0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'a',11:'b',12:'c',13:'d',14:'e',15:'f',16:'g',17:'h',18:'i',19:'j',20:'k',21:'l',22:'m',23:'n',24:'o',25:'p',26:'q',27:'r',28:'s',29:'t',30:'u',31:'v',32:'w',33:'x',34:'y',35:'z'}
+
 class BerlekampWelch_Decoder(object):
 	def __init__(self,points):
 		self.equationsA=[]
@@ -64,24 +67,36 @@ class BerlekampWelch_Decoder(object):
 		return np.polydiv(q,e)
 
 if __name__=="__main__":
-	textMessage=False
-	text="Th0st0xsjjk0k"
+	textMessage=True
+	#Following is a text with error for "thisissentence" and Berlekamp-Welch algorithm list decodes it with a window for ordinal values
+	#This text was automatically generated from a previous execution of Berlekamp-Welch algorithm
+	#i.e thisissentence ===> thisisseisdmbd ===> [<list of texts which should be approximately "thisissentence">]
+	text="thisisseisdmbd"
+	listdecodedtext=["","",""]
 	points=[]
 	if textMessage==True:
-		cnt=0
+		cnt=1
 		for x in text:
-			points.append((cnt,ord(x)))
+			points.append((cnt,ordinaldict[x]))
 			cnt+=1
 	else:
-		points=[(1,4),(2,3),(3,4),(4,1),(5,1),(6,2),(7,10),(8,11),(9,23),(10,12),(11,15),(12,34),(13,11),(14,24)]
+		points=[(1,4),(2,33),(3,44),(4,17),(5,9),(6,2),(7,10),(8,11),(9,23),(10,12),(11,15),(12,34),(13,11),(14,24),(15,76),(16,21),(17,65)]
 	bw=BerlekampWelch_Decoder(points)
 	poly=bw.gaussian_elimination_and_extract_polynomial()
 	print "polynomial:",poly
 	if textMessage:
+		print "text (in ordinals):", points
 		for x in points:
 			ordinal=int(np.polyval(poly[0],x[0]))
-			if ordinal > 0 and ordinal < 255:
-				print "ordinal values decoded:",chr(ordinal)
+			if ordinal >= 0 and ordinal <= 35:
+				print "point:",x," ------- values decoded:(",x[0],",",ordinal,")"
+				print "ordinal values decoded:",alphabetdict[ordinal]
+				listdecodedtext[0]+=alphabetdict[ordinal+1]
+				listdecodedtext[1]+=alphabetdict[ordinal]
+				listdecodedtext[2]+=alphabetdict[ordinal-1]
+			else:
+				print "ordinal values not decoded:",ordinal
+		print "Decoded text should be most likely one of :",listdecodedtext
 	else:
 		for x in points:
 			print "x:",x," ------- values decoded:(",x[0],",",np.polyval(poly[0],x[0]),")"
