@@ -6522,7 +6522,7 @@ Sensitivity(Interview) which is the dual of Stability is defined as:
 	Sensitivity(Interview) = 0.5-0.5*Stability(Interview) = 0.5-0.5*a^2*n^2/4
 
 ------------------------------------------------------------------------------------------------------------------------
-367. (FEATURE-DONE)  Commits - 25 January 2017 - related to 2.9 and 345
+366. (FEATURE-DONE)  Commits - 25 January 2017 - related to 2.9 and 345
 ------------------------------------------------------------------------------------------------------------------------
 Berlekamp-Welch Polynomial Reconstruction Decoder Implementation (for Reed-Solomon codes, texts, numerical points etc.,)
 ------------------------------------------------------------------------------------------------------------------------
@@ -6531,3 +6531,15 @@ Berlekamp-Welch Polynomial Reconstruction Decoder Implementation (for Reed-Solom
 *) Logs show how well the reconstructed polynomial closely approximates the original polynomial.
 *) Error locator polynomial E is degree 1 and Numerator Q is of degree = number of points thus yielding Q/E=P (reconstructed)
 *) Special case is natural language text with errors and a polynomial can be reconstructed from ordinal values of unicode
+
+------------------------------------------------------------------------------------------------------------------
+367. (FEATURE-DONE) Berlekamp-Welch Algorithm implementation - update for text message decoding - 27 January 2017
+------------------------------------------------------------------------------------------------------------------
+*) Using unicode values for ordinals with ord() and inverting with chr() causes overflow errors in SciPy/NumPy
+Linear Algebra Equation solver (solve()) because evaluating polynomials for large messages creates huge numbers
+*) Hence unicode has been replaced with a simple dictionaries - alphanumeric to numeric values and numeric to
+alphanumeric values.
+*) With above 2 dictionaries an example text message with error (garbled version of "thisissentence") is list
+decoded with a window of possible values for each letter positions.
+*) Logs show an approximate decoding of original message from message with error.
+*) Garbled text with error was created from a previous execution of Berlekamp-Welch algorithm.
