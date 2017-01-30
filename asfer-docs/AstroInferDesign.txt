@@ -6543,3 +6543,50 @@ alphanumeric values.
 decoded with a window of possible values for each letter positions.
 *) Logs show an approximate decoding of original message from message with error.
 *) Garbled text with error was created from a previous execution of Berlekamp-Welch algorithm.
+
+------------------------------------------------------------------------------------------------------------------------
+368. (THEORY) KRW Conjecture, KW relations, Majority Voting Circuit Composition - 30 January 2017 - related to 358
+------------------------------------------------------------------------------------------------------------------------
+Majority Voting Circuit for P(Good) binomial series RHS is a boolean circuit composition of NC Majority voting circuit with
+Voter Decision Functions for each voter variable input to Majority function defined as:
+	 Maj(m) + Voter(n) = Maj(Voter1(x1,x2,...,xn),Voter2(x1,x2,...,xn),...,Voterm(x1,x2,...,xn)).  
+Assumption is Voter Decision Functions can be exactly learnt in Angluin Exact Learning model i.e Voters can have zero errors. 
+KRW Conjecture for boolean formula composition implies Depth(f+g) ~ Depth(f) + Depth(g) for composition f+g of two boolean formulae 
+(fanout 1) f and g. Applying KRW conjecture to Maj(m) + Voter(n) Majority voting composition:
+	Depth(Maj(m) + Voter(n)) ~ Depth(Maj(m)) + Depth(Voter(n))
+where m is the number of voters and n is the number of variables per voter decision function.
+
+KW relations R(f) for a function f imply Depth(f) = CommunicationComplexity(R(f)).
+Karchmer-Wigderson relations for the composition are the following:
+-------------
+R(Maj,Voter):
+-------------
+	Alice: x in Inverse(Maj + Voter)(0)
+	Bob:  y in Inverse(Maj + Voter)(1)
+	Find xi and yi such that x != y
+
+Depth(Maj + Voter) = CommunicationComplexity(R(Maj,Voter))
+Thus Majority voting circuit composition is a KW relation.
+There is an equivalent notion of Universal relation U(n) for KW relation defined as:
+	Alice: x in {0,1}^(n)
+	Bob:  y in {0,1}^(n)
+	Find xi and yi such that x != y
+
+Result in 368.2 prove a lowerbound:
+	Depth(g+U(n)) = CommunicationComplexity(R(g,U(n))) >= log L(g) + n - O(m*logm/n) where L(g) is the formula size of g.
+If g is Majority function and U(n) is individual voter decision function, depth of composition of Majority and Voter circuits is:
+	D(Maj + Voter) = CommunicationComplexity(R(Maj,Voter)) >= log L(Majority) + n - O(m*logm/n)
+But formula size of Majority is O(m^5.3) implying depth of Majority+VoterDecisionFunction composition is:
+	D(Maj + Voter) = CommunicationComplexity(R(Maj,Voter)) >= 5.3*logm  + n - O(m*logm/n)
+Thus depth of Majority voting circuit for P(Good) RHS is lowerbounded by a function of number of voters and number of variables per voter decision function.
+
+368.1 prove a result which is an extension of 355.8:
+If a class C is exactly learnable in polynomial time, DTIME(n^omega(1)) is not in C. In mistake bounded learning model, learner updates the hypothesis in each round based on mistake it makes in labelling a point on hypercube. Mistake bounded learning very closely matches human experiential learning and hence human voting error. If a class C is mistake bounded learnable in time T and mistakes M then, DTIME(n + MT) is not in C yielding a separation. Corollary: If a function in NP is polynomial time exact learnable, there is no polynomial time algorithm for NP. For unbounded number of voters(m) and variables per voter decision function(n), depth of composition is unbounded. Depth Hierarchy Theorem 368.4 immediately applies for functions computable by circuits of various depths of RHS composition. Number of variables per voter and depth of composition are linearly related while Number of voters and depth of composition are logarithmically related.
+
+References:
+----------
+368.1 Exact Learning implies Derandomization (i.e. P=BPP) and Mistake bound learning - [KlivansKothariOliveira] - http://www.cs.princeton.edu/~kothari/ccc13.pdf
+368.2 KRW Conjecture, KW relations and Lowerbound for Depth of Boolean Circuit Composition - [GavinskyMeirWeinsteinWigderson] - https://video.ias.edu/sites/video/files/Meir.pdf
+368.3 Generalization of Spira's Theorem - https://www.cs.utexas.edu/users/panni/spira.pdf - Spira's theorem transforms every circuit of size S  to a circuit of depth O(logS).
+368.4 Depth Hierarchy Theorem - [RossmanServedioTan] - Theorem 1 - https://arxiv.org/pdf/1504.03398v1.pdf - Circuit of depth <= d-1 with size <= 2^(n^(1/6(d-1))) agrees with a function of depth d on at most 0.5 + n^Omega(-1/d) fraction of inputs.
+368.5 Formula size of Majority function - [Valiant] - http://www.sciencedirect.com/science/article/pii/0196677484900166?via%3Dihub
