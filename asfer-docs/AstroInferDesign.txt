@@ -6583,6 +6583,45 @@ Thus depth of Majority voting circuit for P(Good) RHS is lowerbounded by a funct
 368.1 prove a result which is an extension of 355.8:
 If a class C is exactly learnable in polynomial time, DTIME(n^omega(1)) is not in C. In mistake bounded learning model, learner updates the hypothesis in each round based on mistake it makes in labelling a point on hypercube. Mistake bounded learning very closely matches human experiential learning and hence human voting error. If a class C is mistake bounded learnable in time T and mistakes M then, DTIME(n + MT) is not in C yielding a separation. Corollary: If a function in NP is polynomial time exact learnable, there is no polynomial time algorithm for NP. For unbounded number of voters(m) and variables per voter decision function(n), depth of composition is unbounded. Depth Hierarchy Theorem 368.4 immediately applies for functions computable by circuits of various depths of RHS composition. Number of variables per voter and depth of composition are linearly related while Number of voters and depth of composition are logarithmically related.
 
+Exact Learning implies zero error on both sides of P(Good) binomial series. Assuming all boolean function are exactly learnt, a Pseudorandom choice amongst those functions yields 100% perfect choice. Quoting from 358:
+
+	Let number of  voter decision functions with goodness xi = m(xi). Thus N = m(x1)+m(x2)+m(x3)+...+m(xn)
+	Expected goodness of a PRG choice is:
+		1/N * summation(xi*m(xi)) = (x1*m(x1) + x2*m(x2) + x3*m(x3) + ... + xn*m(xn)) / N
+	When all voter functions have goodness 1 then PRG choice in LHS of P(good) has goodness 1.
+
+Similarly, exact learning implies all voter decision functions are 100% perfect with zero-error in LHS. Binomial series converges to 1 on both sides. LHS is a polynomial time algorithm (because there is a PRG in P to make a choice) to RHS majority voting NP problem (assuming the exactly learnt boolean functions are in NP) implying P=NP. But from 368.1, if NP is learnable in polynomial time, NP does not have polynomial time algorithms and therefore P != NP - a contradiction. Thus polynomial time exact learning of an NP boolean function (e.g 3SAT learnt from a truth table) conflicts with P=NP and binomial series convergence.
+
+Usual process of high level human learning vis-a-vis boolean function learning is bottom-up. Atomic concepts are learnt in leaves and complexity is built  from leaf to root by learning new concepts which are functions of subtrees. Recursive Lambda Function Growth algorithm for learning texts described earlier in this document is based on this paradigm but constructs a composition tree top-down (Mind grows lambda functions/circuits). Generalization of Recursive Lambda Function Growth is to learn a graph as opposed to trees. This is already done in Recursive Gloss Overlap special case by merging/removing isomorphic, repetitive subtrees while tree is grown top-down. This is why core number based classifier for the recursive gloss overlap graph works - repeating gloss nodes are connected to already discovered nodes by a new edge thereby converting a tree to graph top-down.
+
+Hypothetical exact learner for 3SAT - NP voter decision functions :
+-------------------------------------------------------------------
+Given a truth table of size n*2^n for n variables with truth values:
+	*) Find a set of binary strings, satisfying truth values 1
+	*) Construct a DNF for complement of the previous set
+	*) Complement the DNF to get CNF for original set
+
+Example - For following truth table, to construct CNF for satisfying assignments {000, 001, 011, 101, 110}:
+	------------------------------------------
+	x1 x2 x3	truthvalue	complement
+	------------------------------------------
+	0  0  0		1		0
+	0  0  1		1		0
+	0  1  0		0		1
+	0  1  1		1		0
+	1  0  0		0		1
+	1  0  1		1		0
+	1  1  0		1		0
+	1  1  1		0		1
+
+DNF for complement set {010,100,111} is:
+	!x1x2!x3 + x1!x2!x3 + x1x2x3
+and the CNF learnt is complement of DNF:
+	(x1 + !x2 + x3)(!x1 + x2 + x3)(!x1 + !x2 + !x3)
+with satisfying assignments {000, 001, 011, 101, 110}
+
+This exact learner requires O(2^n) time which is exponential in number of variables.
+
 References:
 ----------
 368.1 Exact Learning implies Derandomization (i.e. P=BPP) and Mistake bound learning - [KlivansKothariOliveira] - http://www.cs.princeton.edu/~kothari/ccc13.pdf
