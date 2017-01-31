@@ -1,0 +1,83 @@
+cnfclauses: ['(!x1 + !x2 + !x3 + x4) ', ' (x1 + x2 + !x3 + !x4) ', ' (!x1 + x2 + !x3 + x4) ', ' (x1 + !x2 + x3 + !x4) ', ' (x1 + !x2 + x3 + x4)']
+clauseliterals: ['(!x1 ', ' !x2 ', ' !x3 ', ' x4)']
+lstrip: !x1
+lstrip[2:]: 1
+lstrip: !x2
+lstrip[2:]: 2
+lstrip: !x3
+lstrip[2:]: 3
+lstrip: x4
+lstrip[1:]: 4
+clauseliterals: ['(x1 ', ' x2 ', ' !x3 ', ' !x4)']
+lstrip: x1
+lstrip[1:]: 1
+lstrip: x2
+lstrip[1:]: 2
+lstrip: !x3
+lstrip[2:]: 3
+lstrip: !x4
+lstrip[2:]: 4
+clauseliterals: ['(!x1 ', ' x2 ', ' !x3 ', ' x4)']
+lstrip: !x1
+lstrip[2:]: 1
+lstrip: x2
+lstrip[1:]: 2
+lstrip: !x3
+lstrip[2:]: 3
+lstrip: x4
+lstrip[1:]: 4
+clauseliterals: ['(x1 ', ' !x2 ', ' x3 ', ' !x4)']
+lstrip: x1
+lstrip[1:]: 1
+lstrip: !x2
+lstrip[2:]: 2
+lstrip: x3
+lstrip[1:]: 3
+lstrip: !x4
+lstrip[2:]: 4
+clauseliterals: ['(x1 ', ' !x2 ', ' x3 ', ' x4)']
+lstrip: x1
+lstrip[1:]: 1
+lstrip: !x2
+lstrip[2:]: 2
+lstrip: x3
+lstrip[1:]: 3
+lstrip: x4
+lstrip[1:]: 4
+DNF clauses 1: [['1', '1', '1', '0'], ['0', '0', '1', '1'], ['1', '0', '1', '0'], ['0', '1', '0', '1'], ['0', '1', '0', '0']]
+DNF clauses 2: [['1', '1', '1', '0'], ['0', '0', '1', '1'], ['1', '0', '1', '0'], ['0', '1', '0', '1'], ['0', '1', '0', '0']]
+All strings: [['0', '0', '0', '0'], ['0', '0', '0', '1'], ['0', '0', '1', '0'], ['0', '0', '1', '1'], ['0', '1', '0', '0'], ['0', '1', '0', '1'], ['0', '1', '1', '0'], ['0', '1', '1', '1'], ['1', '0', '0', '0'], ['1', '0', '0', '1'], ['1', '0', '1', '0'], ['1', '0', '1', '1'], ['1', '1', '0', '0'], ['1', '1', '0', '1'], ['1', '1', '1', '0'], ['1', '1', '1', '1']]
+CNF SAT: (!x1 + !x2 + !x3 + x4) * (x1 + x2 + !x3 + !x4) * (!x1 + x2 + !x3 + x4) * (x1 + !x2 + x3 + !x4) * (x1 + !x2 + x3 + x4)
+SAT assignments 1: [['0', '0', '0', '0'], ['0', '0', '0', '1'], ['0', '0', '1', '0'], ['0', '1', '1', '0'], ['0', '1', '1', '1'], ['1', '0', '0', '0'], ['1', '0', '0', '1'], ['1', '0', '1', '1'], ['1', '1', '0', '0'], ['1', '1', '0', '1'], ['1', '1', '1', '1']]
+SAT assignments 2: [['0', '0', '0', '0'], ['0', '0', '0', '1'], ['0', '0', '1', '0'], ['0', '1', '1', '0'], ['0', '1', '1', '1'], ['1', '0', '0', '0'], ['1', '0', '0', '1'], ['1', '0', '1', '1'], ['1', '1', '0', '0'], ['1', '1', '0', '1'], ['1', '1', '1', '1']]
+------------------------------------------------------
+Verifying satisfying assignments computed .....
+------------------------------------------------------
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array1) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+Assignment (array2) satisfied: 1
+------------------------------------------------------
+Verifying some non-satisfying assignments .....
+------------------------------------------------------
+Assignment satisfied: 0
+Assignment satisfied: 0
+Assignment satisfied: 0
