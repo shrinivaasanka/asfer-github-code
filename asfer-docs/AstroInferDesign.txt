@@ -6629,3 +6629,16 @@ References:
 368.3 Generalization of Spira's Theorem - https://www.cs.utexas.edu/users/panni/spira.pdf - Spira's theorem transforms every circuit of size S  to a circuit of depth O(logS).
 368.4 Depth Hierarchy Theorem - [RossmanServedioTan] - Theorem 1 - https://arxiv.org/pdf/1504.03398v1.pdf - Circuit of depth <= d-1 with size <= 2^(n^(1/6(d-1))) agrees with a function of depth d on at most 0.5 + n^Omega(-1/d) fraction of inputs.
 368.5 Formula size of Majority function - [Valiant] - http://www.sciencedirect.com/science/article/pii/0196677484900166?via%3Dihub
+
+----------------------------------------------------------------------------------------------------------------
+369. (FEATURE-DONE) An experimental special case k-CNF SAT Solver algorithm implementation - 31 January 2017
+----------------------------------------------------------------------------------------------------------------
+Algorithm:
+----------
+*) Create a k-DNF from k-CNF input by negating literals in all clauses of k-CNF
+*) Binary encode the clauses of k-DNF into set of binary strings of length n where n is number of variables
+*) Compute the complement of the previous binary encoded set from set of 2^n binary strings
+*) These are satisfying assignments
+*) Presently requires all literals in each CNF clause
+*) Implemented for simulation of a Majority Voting with Voter SATs
+
