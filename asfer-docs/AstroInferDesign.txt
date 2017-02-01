@@ -6642,3 +6642,30 @@ Algorithm:
 *) Presently requires all literals in each CNF clause
 *) Implemented for simulation of a Majority Voting with Voter SATs
 
+-------------------------------------------------------------------------------------------------------------------------------
+370. (THEORY) Majority Boolean Function, Sensitivity, Roth's estimate and 2-Coloring/Complement Functions of Sequences -
+1 February 2017 - related to 24,338 - Important draft updates to https://arxiv.org/pdf/1106.4102v1
+-------------------------------------------------------------------------------------------------------------------------------
+Boolean Majority Function finds the majority binary value of input binary string of length n. Any binary string of length n can be
+considered as 2-coloring of bit position integers with corresponding complement functions for each color: f(x) is for 1s colored red and
+g(x) is for 0s colored blue. For example, 1001011 is a 2-colored sequence with red (1) in bit positions 1,4,6,7 and blue (0) in bit positions
+2,3,5. Complement functions for this bit position binary coloring are defined as:
+	f(1)=1
+	f(2)=4
+	f(3)=6
+	f(4)=7
+and
+	g(1)=2
+	g(2)=3
+	g(3)=5
+Natually, arithmetic progressions and monochromatic arithmetic progressions on these bit positions can be defined. Discrepancy is the
+ difference between number of colored integers in an arithmetic progression. Roth's estimate which is the minimum(maximum(discrepancy))
+for all possible colorings (i.e all possible binary strings) is >= N^(1/4+epsilon). For majority function 2-coloring, this estimate is
+the difference between number of 0s and 1s in the input to majority function with probability equal to natural density of min(max()) arithmetic progression.  If majority function outputs 1, |f(x)| > |g(x)| and if 0, |g(x)| > |f(x)|. From this an approximate estimate of number of 1s and 0s in majority function input can be obtained (with probability equal to natural density):
+	|f(x)| = number of 1s = [N + N^(1/4+epsilon)]/2  if majority function outputs 1
+	|g(x)| = number of 0s = [N - N^(1/4+epsilon)]/2  if majority function outputs 1
+and vice versa if majority function outputs 0. For previous example, majority is 1 and :
+	|f(x)| = number of 1s = [7 + 7^0.25]/2 = 4.313288 ~ 4
+	|g(x)| = number of 0s = [7 - 7^0.25]/2 = 2.6867 ~ 3
+Sensitivity of Majority function is number of bits to be flipped to change the outcome which is nothing but the discrepancy (|f(x)| - |g(x)|) wth probability equal to natural density and is lowerbounded by Roth's estimate. Formally, Sensitivity(Majority) > N^(1/4+epsilon). An important special case is when input to majority is a binary string 2-colored by prime-composite complement functions in bit positions i.e prime bit positions are 1 and composite bit positions are 0 and majority function outputs 0 or 1 (Approximate number of primes less than N = pi(N) ~ N/logN from Prime Number Theorem).
+
