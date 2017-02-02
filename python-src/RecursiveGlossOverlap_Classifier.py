@@ -169,8 +169,9 @@ def RecursiveGlossOverlap_Classify(text):
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
-					for yl in ylemmanames:
-						definitiongraphedges[x].append(yl)
+					#for yl in ylemmanames:
+					#	definitiongraphedges[x].append(yl)
+					definitiongraphedges[x].append(ylemmanames[0])
 					definitiongraphedgelabels[x + " - " + ylemmanames[0]].append(" is a subinstance of ")
 					definitiongraphedgelabels[ylemmanames[0] + " - " + x].append(" is a superinstance of ")
 						
