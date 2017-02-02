@@ -29,6 +29,8 @@ import pickle
 import sys
 
 import nltk
+from pywsd.lesk import simple_lesk
+from nltk.wsd import lesk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
 import networkx as nx
@@ -51,6 +53,8 @@ definitiongraphedgelabels=defaultdict(list)
 #from RGO graph
 #########################################################################################################
 
+use_pywsd_lesk=False
+use_nltk_lesk=True
 #function - compute_idf()
 def compute_idf(corpus, keyword):
 	import math
@@ -181,7 +185,12 @@ def RecursiveGlossOverlap_Classify(text):
 		for keyword in freqterms1:
 			#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset() 
 			#disamb_synset = best_matching_synset(set(doc1), wn.synsets(keyword))
-			disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
+			if use_pywsd_lesk:
+				disamb_synset = simple_lesk(" ".join(freqterms1), keyword)
+			if use_nltk_lesk:
+				disamb_synset = lesk(freqterms1, keyword)
+			else:
+				disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
 			prevlevelsynsets = prevlevelsynsets + [disamb_synset]
 			if len(wn.synsets(keyword)) != 0:
 				disamb_synset_def = disamb_synset.definition()
@@ -225,7 +234,7 @@ def RecursiveGlossOverlap_Classify(text):
 	#pos=nx.shell_layout(nxg)
 	#pos=nx.random_layout(nxg)
 	pos=nx.spectral_layout(nxg)
-	#nx.dra	w_graphviz(nxg,prog="neato")
+	#nx.draw_graphviz(nxg,prog="neato")
 	#nx.draw_networkx(nxg)
 	#plt.show()
 	for k,v in definitiongraphedges.iteritems():
@@ -246,7 +255,7 @@ def RecursiveGlossOverlap_Classify(text):
 	max_core_number_class=""
 	for n in sorted_core_nxg:
 		print "This document belongs to class:",n[0],",core number=",n[1]
-		if top_percentile < no_of_classes*0.10:
+		if top_percentile < no_of_classes*0.50:
 			top_percentile+=1
 		else:	
 			break
