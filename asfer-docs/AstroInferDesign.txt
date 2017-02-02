@@ -6672,3 +6672,10 @@ and vice versa if majority function outputs 0. For previous example, majority is
 	|g(x)| = number of 0s = [7 - 7^0.25]/2 = 2.6867 ~ 3
 Sensitivity of Majority function is number of bits to be flipped to change the outcome which is nothing but the discrepancy (|f(x)| - |g(x)|) wth probability equal to natural density and is lowerbounded by Roth's estimate. Formally, Sensitivity(Majority) > N^(1/4+epsilon). An important special case is when input to majority is a binary string 2-colored by prime-composite complement functions in bit positions i.e prime bit positions are 1 and composite bit positions are 0 and majority function outputs 0 or 1 (Approximate number of primes less than N = pi(N) ~ N/logN from Prime Number Theorem).
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+371. (FEATURE-DONE) Reinforcement Learning - ThoughtNet based Recommender Systems Implementation Update - 2 February 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+*) Recursive Gloss Overlap classifier disambiguation has been updated to invoke NLTK lesk algorithm function() with options to
+choose between PyWSD lesk implementation and best_matching_synset() primitive disambiguation native implementation
+*) New usecase shopping cart example with book reviews has been added
+
