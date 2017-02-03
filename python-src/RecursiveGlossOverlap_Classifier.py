@@ -231,17 +231,17 @@ def RecursiveGlossOverlap_Classify(text):
 	print definitiongraphedges
 
 	nxg=nx.DiGraph()
-	#pos=nx.spring_layout(nxg)
+	pos=nx.spring_layout(nxg)
 	#pos=nx.shell_layout(nxg)
 	#pos=nx.random_layout(nxg)
-	pos=nx.spectral_layout(nxg)
+	#pos=nx.spectral_layout(nxg)
 	#nx.draw_graphviz(nxg,prog="neato")
-	#nx.draw_networkx(nxg)
-	#plt.show()
 	for k,v in definitiongraphedges.iteritems():
                 for l in v:
                         nxg.add_edge(k,l)
                         nxg.add_edge(l,k)
+	nx.draw_networkx(nxg)
+	plt.show()
 
 	nxg.remove_edges_from(nxg.selfloop_edges())
 	#print "Core number =",nx.core_number(nxg)
