@@ -6679,3 +6679,9 @@ Sensitivity of Majority function is number of bits to be flipped to change the o
 choose between PyWSD lesk implementation and best_matching_synset() primitive disambiguation native implementation
 *) New usecase shopping cart example with book reviews has been added
 *) Fixed a major bug in RecursiveGlossOverlap Classifier in definition graph construction : Edges for all lemma names of previous level synsets were added which bloated the graph and somewhat skewed core number of the graph. Changed it to create edge only for one lemma name. All other Recursive Gloss Overlap implementations in InterviewAlgorithm/ folder already have this fix. Regenerated the hypergraph for shoppingcart3 example Logs for this have been added to testlogs/
+
+----------------------------------------------------------------------------------------------------------------------------------------
+372. (FEATURE-DONE) Recursive Gloss Overlap classifier update - 3 February 2017
+----------------------------------------------------------------------------------------------------------------------------------------
+Uncommented NetworkX matplotlib graph plotting to get a graph for a sample document definition graph. Logs and PNG file for this classification have been added to testlogs/. Also did some experimentation with various documents and classification based on core number has been reasonably accurate (relevance of unsupervised core number based classification to the document's actual class decreases with core number) and top percentage classes reflect the subject matter of the document. Also best_matching_synset() lesk disambiguation implemented in AsFer and NLTK lesk() functions are faster than PyWSD simple_lesk().
+
