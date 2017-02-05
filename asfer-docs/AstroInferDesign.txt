@@ -6521,8 +6521,8 @@ which is just expansion of Expectation and there are two two random variables (+
 => Stability(f(x)) = 1-2*Sensitivity(f(x))
 => Sensitivity(f(x)) = 0.5-0.5*Stability(f(x))
 
-Sensitivity(Interview) which is the dual of Stability is defined as:
-	Sensitivity(Interview) = 0.5-0.5*Stability(Interview) = 0.5-0.5*a^2*n^2/4
+NoiseSensitivity(Interview) which is the dual of Stability is defined as:
+	NoiseSensitivity(Interview) = 0.5-0.5*Stability(Interview) = 0.5-0.5*a^2*n^2/4
 
 ------------------------------------------------------------------------------------------------------------------------
 366. (FEATURE-DONE)  Commits - 25 January 2017 - related to 2.9 and 345
