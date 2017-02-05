@@ -24,10 +24,15 @@
 #kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
+import numpy as np
 import math
+from scipy.linalg import solve
+from scipy.linalg import lstsq
 
 class SATSolver(object):
 	def __init__(self):
+		self.equationsA=[]
+		self.equationsB=[]
 		self.cnfparsed=[]
 
 	def difference(self, list1, list2):
@@ -38,11 +43,19 @@ class SATSolver(object):
 		return diff
 
 	def satisfy(self, assignment):
-		#print "CNF clause", self.cnfparsed
+		#print "CNF clause:", self.cnfparsed
+		#print "assignment:",assignment
 		cnfval=1
 		for c in self.cnfparsed:
+			varass=[]
+			for l in c:
+				if l[0] != "!":
+					varass.append((l,assignment[int(l[1:])-1]))
+				else:
+					varass.append((l,assignment[int(l[2:])-1]))
+
 			cval=0
-			for l,v in zip(c,assignment):
+			for l,v in varass:
 				#print "v:",int(v)
 				if l[0] == "!":
 					cval = cval + (1-int(v))
@@ -50,9 +63,9 @@ class SATSolver(object):
 					cval = cval + int(v)
 				if cval > 1:
 					cval=1
-				#print "cval:",cval
+			#print "clause value:",cval
 			cnfval = cnfval * cval
-		#print "cnfval:",cnfval
+		#print "cnf value:",cnfval
 		return cnfval
 		
 
@@ -74,7 +87,7 @@ class SATSolver(object):
 		for c in cnfclauses:
 			cnfclause=[]
 			clauseliterals=c.strip().split("+")
-			print "clauseliterals:",clauseliterals
+			#print "clauseliterals:",clauseliterals
 			dnfclause1=[]
 			dnfclause2=[]
 			for i in xrange(n):
@@ -88,18 +101,19 @@ class SATSolver(object):
 					lstrip=lstrip[:len(lstrip)-1]
 				cnfclause.append(lstrip)
 
-				print "lstrip:",lstrip
+				#print "lstrip:",lstrip
 				if lstrip[0] != "!":
-					print "lstrip[1:]:",int(lstrip[1:])
+					#print "lstrip[1:]:",int(lstrip[1:])
 					dnfclause1[int(lstrip[1:])-1] = "0"
 					dnfclause2[int(lstrip[1:])-1] = "0"
 				else:
-					print "lstrip[2:]:",lstrip[2:]
+					#print "lstrip[2:]:",lstrip[2:]
 					dnfclause1[int(lstrip[2:])-1] = "1"
 					dnfclause2[int(lstrip[2:])-1] = "1"
 			dnfclauses1.append(dnfclause1)
 			dnfclauses2.append(dnfclause2)
 			self.cnfparsed.append(cnfclause)
+		print "Parsed CNF clauses:", self.cnfparsed
 		print "DNF clauses 1:",dnfclauses1
 		print "DNF clauses 2:",dnfclauses2
 		print "All strings:",allstrings
@@ -110,25 +124,60 @@ class SATSolver(object):
 		print "SAT assignments 2:",satassignments2
 		return (satassignments1,satassignments2)
 
+	def solve_SAT2(self,cnf,number_of_variables):
+		self.solve_SAT(cnf,number_of_variables)
+		for clause in self.cnfparsed:
+			equation=[]
+			for n in xrange(number_of_variables):
+				equation.append(0)
+			for literal in clause:
+				if literal[0] != "!":
+					equation[int(literal[1:])-1]=1
+				else:
+					equation[int(literal[2:])-1]=0
+			self.equationsA.append(equation)
+		for n in xrange(number_of_variables):
+			self.equationsB.append(1)
+		a = np.array(self.equationsA)
+                b = np.array(self.equationsB)
+                print "a:"
+		print a
+                print "b:"
+		print b
+                #x = solve(a,b)
+                x = lstsq(a,b)
+		print "solve_SAT2(): lstsq(): x:",x[0]
+		a=[]
+		for n in xrange(number_of_variables):
+			a.append(0)
+		cnt=0
+		for e in x[0]:
+			if e > 0.5:
+				a[cnt]=1
+			else:
+				a[cnt]=0
+			cnt+=1
+		print "solve_SAT2():",a
+		return a
+
+
 if __name__=="__main__":
 	satsolver=SATSolver()	
-	cnf="(!x1 + !x2 + !x3 + x4) * (x1 + x2 + !x3 + !x4) * (!x1 + x2 + !x3 + x4) * (x1 + !x2 + x3 + !x4) * (x1 + !x2 + x3 + x4)"
+	#cnf="(!x1 + !x2 + !x3 + x4) * (x1 + x2 + !x3 + !x4) * (!x1 + x2 + !x3 + x4) * (x1 + !x2 + x3 + !x4) * (x1 + !x2 + x3 + x4)"
+	cnf="(x1 + !x4 + !x5) * (!x1 + x3 + x4) * (x2 + !x3 +  !x4) * (x3 + !x4 + !x5) * (!x1 + x4 + !x5)"
 
 	#Parameter1: any k-CNF with all literals in each clause, negations prefixed with !
 	#Parameter2: Number of variables
-	#Returns: a tuple with set of satisfying assignments (missing literals initialized to 0 and 1 respectively, but 
-	#presently both are equal)
-	ass=satsolver.solve_SAT(cnf,4)
-	print "------------------------------------------------------"
-	print "Verifying satisfying assignments computed ....."
-	print "------------------------------------------------------"
-	for a in ass[0]:	
-		print "Assignment (array1) satisfied:",satsolver.satisfy(a)
-	for a in ass[1]:	
-		print "Assignment (array2) satisfied:",satsolver.satisfy(a)
-	print "------------------------------------------------------"
-	print "Verifying some non-satisfying assignments ....."
-	print "------------------------------------------------------"
-	print "Assignment satisfied:",satsolver.satisfy(['0','1','0','0'])
-	print "Assignment satisfied:",satsolver.satisfy(['0','1','0','1'])
-	print "Assignment satisfied:",satsolver.satisfy(['0','0','1','1'])
+	#Solves CNFSAT by a Polynomial Time Approximation scheme:
+	#	- Encode each clause as a linear equation in n variables: missing variables and negated variables are 0, others are 1
+	#	- Solve previous system of equations by least squares algorithm to fit a line
+	#	- Variable value above 0.5 is set to 1 and less than 0.5 is set to 0
+	#	- Rounded of assignment array satisfies the CNFSAT with high probability
+	#Returns: a tuple with set of satisfying assignments
+	#ass=satsolver.solve_SAT(cnf,5)
+	ass2=satsolver.solve_SAT2(cnf,5)
+	print "--------------------------------------------------------------"
+	print "solve_SAT2(): Verifying satisfying assignment computed ....."
+	print "--------------------------------------------------------------"
+	satis=satsolver.satisfy(ass2)
+	print "Assignment satisfied:",satis
