@@ -6685,3 +6685,12 @@ choose between PyWSD lesk implementation and best_matching_synset() primitive di
 ----------------------------------------------------------------------------------------------------------------------------------------
 Uncommented NetworkX matplotlib graph plotting to get a graph for a sample document definition graph. Logs and PNG file for this classification have been added to testlogs/. Also did some experimentation with various documents and classification based on core number has been reasonably accurate (relevance of unsupervised core number based classification to the document's actual class decreases with core number) and top percentage classes reflect the subject matter of the document. Also best_matching_synset() lesk disambiguation implemented in AsFer and NLTK lesk() functions are faster than PyWSD simple_lesk().
 
+----------------------------------------------------------------------------------------------------------
+373. (THEORY and FEATURE-DONE) CNFSAT solver update - polynomial time approximation - 5 February 2017
+----------------------------------------------------------------------------------------------------------
+Solves CNFSAT by a Polynomial Time Approximation scheme:
+       - Encode each clause as a linear equation in n variables: missing variables and negated variables are 0, others are 1
+       - Solve previous system of equations by least squares algorithm to fit a line
+       - Variable value above 0.5 is set to 1 and less than 0.5 is set to 0
+       - Rounded of assignment array satisfies the CNFSAT with high probability
+Essentially each CNF is represented as a matrix A and solved by AX=B where X is the column vector of variables and B is identity column vector
