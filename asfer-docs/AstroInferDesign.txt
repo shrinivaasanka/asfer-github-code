@@ -6694,3 +6694,18 @@ Solves CNFSAT by a Polynomial Time Approximation scheme:
        - Variable value above 0.5 is set to 1 and less than 0.5 is set to 0
        - Rounded of assignment array satisfies the CNFSAT with high probability
 Essentially each CNF is represented as a matrix A and solved by AX=B where X is the column vector of variables and B is identity column vector
+
+------------------------------------------------------------------------------------------------------------
+374. (FEATURE-DONE) Java Spark Streaming - Generic Stream Receiver Implementation - 6 February 2017
+------------------------------------------------------------------------------------------------------------
+Spark Streaming Java implementation to receive generic stream of unstructured text data from any URL and Sockets has been added to
+NeuronRain AsFer java/bigdata_analytics/. It is based on Spart 2.1.0 + Hadoop 2.7 single node cluster. Following are the setup prerequisites:
+
+*) Oracle Java 8 compiler and runtime and PATH set to it
+*) export CLASSPATH=/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.1.0.jar:.:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-library-2.11.8.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-sql_2.11-2.1.0.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-core_2.11-2.1.0.jar:/usr/lib/jvm/java-8-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*) Compiled as: javac SparkGenericStreaming.java
+*) JAR packaging of SparkGenericStreaming*.class :  jar -cvf sparkgenericstreaming.jar *class
+*) Example Spark submit commandline for 2 local threads (2 cores) and data streamed from twitter :
+/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] sparkgenericstreaming.jar "https://twitter.com/search?f=tweets&vertical=news&q=Chennai&src=typd"
+
+Spark Streaming Java implementation complements Streaming Abstract Generator Python native abstraction implemented in AsFer. Advantage of Spark Streaming is it can process realtime streamed data from many supported datasources viz.,Kinesis,Kafka etc., This implementation is generic, customized for arbitrary streaming data.
