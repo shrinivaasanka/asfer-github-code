@@ -6709,3 +6709,18 @@ NeuronRain AsFer java/bigdata_analytics/. It is based on Spart 2.1.0 + Hadoop 2.
 /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] sparkgenericstreaming.jar "https://twitter.com/search?f=tweets&vertical=news&q=Chennai&src=typd"
 
 Spark Streaming Java implementation complements Streaming Abstract Generator Python native abstraction implemented in AsFer. Advantage of Spark Streaming is it can process realtime streamed data from many supported datasources viz.,Kinesis,Kafka etc., This implementation is generic, customized for arbitrary streaming data.
+
+-----------------------------------------------------------------------------------------------------------------------
+375. (FEATURE-DONE) Java Spark Streaming for Generic data - Jsoup ETL integration - 7 February 2017
+-----------------------------------------------------------------------------------------------------------------------
+*) Jsoup HTML parser has been imported into SparkGenericStreaming.java and a very basic Extract-Transform-Load is
+performed on the URL passed in with a special boolean flag to use Jsoup
+*) Jsoup connects to URL and does a RESTful GET of the HTML, extracts text from HTML and stores the text in Spark RDD
+*) receive() is periodically invoked and word count is computed
+*) foreachRDD() is invoked on the DStream to iterate through all words in DStream.
+*) forEach() invokes a lambda function to print the word text
+*) Logs for this have been added to spark_streaming/testlogs/
+
+spark-submit commandline requires additional classpath to jsoup .jar with --jars option as below:
+/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] --jars /home/shrinivaasanka/jsoup/jsoup-1.10.2.jar sparkgenericstreaming.jar "https://twitter.com/search?f=tweets&vertical=news&q=Chennai&src=typd" 2>&1 > testlogs/SparkGenericStreaming.out.7February2017
+
