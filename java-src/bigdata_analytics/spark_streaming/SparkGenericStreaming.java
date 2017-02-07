@@ -27,7 +27,7 @@
 */
 
 /*
-Reference: 
+Reference:
 ----------
 Java Spark Streaming Examples - http://spark.apache.org/docs/latest/streaming-programming-guide.html
 */
@@ -61,11 +61,19 @@ import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 
+import org.jsoup.Jsoup;
+import org.jsoup.helper.Validate;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+
 public final class SparkGenericStreaming extends Receiver<String> {
   private static final Pattern SPACE = Pattern.compile(" ");
   String urlargs = "localhost";
   String host = "localhost";
   static boolean isURLsocket=true;
+  static boolean useJsoup=true;
   int port = 80;
 
   public SparkGenericStreaming(String url) {
@@ -96,36 +104,56 @@ public final class SparkGenericStreaming extends Receiver<String> {
   public void receive() {
 	if (isURLsocket)
 	{
-		URL url = null;
-		HttpURLConnection conn = null;
-		BufferedReader br = null;
-		String input; 
-		while(true)
+		if(useJsoup)
 		{
-			try{
-				url = new URL(urlargs);
-				conn = (HttpURLConnection) url.openConnection();
-				conn.setRequestMethod("GET");
-				//conn.setDoOutput(true);	
-				br = new BufferedReader(new InputStreamReader(conn.getInputStream())); 
-				while((input=br.readLine()) != null)
+			while(true)
+			{
+				try 
 				{
-					//System.out.println("Streaming data received:"+input);
-					store(input);
+					Document doc = 	Jsoup.connect(urlargs).get();
+					String text = doc.body().text();
+					//System.out.println("JSoup ETL: text:"+text);
+					store(text);
 				}
-			} catch (Exception e) {
-				System.out.println("Exception:" + e);
-			} 
+				catch (Exception e)
+				{
+					System.out.println("Exception:" + e);
+				}
+			}
+		}
+		else
+		{
+			URL url = null;
+			HttpURLConnection conn = null;
+			BufferedReader br = null;
+			String input;
+			while(true)
+			{
+				try{
+					url = new URL(urlargs);
+					conn = (HttpURLConnection) url.openConnection();
+					conn.setRequestMethod("GET");
+					//conn.setDoOutput(true);
+					br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+					while((input=br.readLine()) != null)
+					{
+						//System.out.println("Streaming data received:"+input);
+						store(input);
+					}
+				} catch (Exception e) {
+					System.out.println("Exception:" + e);
+				}
+			}
 		}
 	}
 	else
 	{
 		Socket s = null;
 		BufferedReader br = null;
-		String input; 
+		String input;
 		try{
 			s = new Socket(host,port);
-			br = new BufferedReader(new InputStreamReader(s.getInputStream())); 
+			br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 			while(!isStopped() && (input=br.readLine()) != null)
 			{
 				System.out.println("Streaming data received:"+input);
@@ -133,9 +161,9 @@ public final class SparkGenericStreaming extends Receiver<String> {
 			}
 		} catch (Exception e) {
 			System.out.println("Exception:" + e);
-		} 
+		}
 	}
-  }	
+  }
 
   public static void main(String[] args) throws Exception {
     if (args.length > 2) {
@@ -183,7 +211,9 @@ public final class SparkGenericStreaming extends Receiver<String> {
         }
       });
 
-    wordCounts.print();
+    //words.print();
+    //wordCounts.print();
+    wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
     ssc.start();
     ssc.awaitTermination();
   }
