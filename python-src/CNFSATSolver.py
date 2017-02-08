@@ -25,6 +25,7 @@
 #--------------------------------------------------------------------------------------------------------
 
 import numpy as np
+import random
 import math
 from scipy.linalg import solve
 from scipy.linalg import lstsq
@@ -152,7 +153,7 @@ class SATSolver(object):
 			a.append(0)
 		cnt=0
 		for e in x[0]:
-			if e > 0.5:
+			if e >= 0.1:
 				a[cnt]=1
 			else:
 				a[cnt]=0
@@ -160,11 +161,40 @@ class SATSolver(object):
 		print "solve_SAT2():",a
 		return a
 
+	def createRandom3CNF(self,numclauses,numvars):
+		cnf=""
+		clauses=[]
+		for i in xrange(numclauses):
+			randarray=np.random.permutation(numvars)
+			clause= "("
+			negation=random.randint(1,2)
+			if negation==1:
+				clause += "x"+str(randarray[0]+1)
+			else:
+				clause += "!x"+str(randarray[0]+1)
+			clause += " + "
+			negation=random.randint(1,2)
+			if negation==1:
+				clause += "x"+str(randarray[1]+1)
+			else:
+				clause += "!x"+str(randarray[1]+1)
+			clause += " + "
+			negation=random.randint(1,2)
+			if negation==1:
+				clause += "x"+str(randarray[2]+1)
+			else:
+				clause += "!x"+str(randarray[2]+1)
+			clause += ")"
+			clauses.append(clause)
+		cnf=" * ".join(clauses)
+		return cnf
+
+
 
 if __name__=="__main__":
-	satsolver=SATSolver()	
 	#cnf="(!x1 + !x2 + !x3 + x4) * (x1 + x2 + !x3 + !x4) * (!x1 + x2 + !x3 + x4) * (x1 + !x2 + x3 + !x4) * (x1 + !x2 + x3 + x4)"
-	cnf="(x1 + !x4 + !x5) * (!x1 + x3 + x4) * (x2 + !x3 +  !x4) * (x3 + !x4 + !x5) * (!x1 + x4 + !x5)"
+	#cnf="(x1 + !x4 + !x5) * (!x1 + x3 + x4) * (x2 + !x3 +  !x4) * (x3 + !x4 + !x5) * (!x1 + x4 + !x5)"
+
 
 	#Parameter1: any k-CNF with all literals in each clause, negations prefixed with !
 	#Parameter2: Number of variables
@@ -175,9 +205,17 @@ if __name__=="__main__":
 	#	- Rounded of assignment array satisfies the CNFSAT with high probability
 	#Returns: a tuple with set of satisfying assignments
 	#ass=satsolver.solve_SAT(cnf,5)
-	ass2=satsolver.solve_SAT2(cnf,5)
-	print "--------------------------------------------------------------"
-	print "solve_SAT2(): Verifying satisfying assignment computed ....."
-	print "--------------------------------------------------------------"
-	satis=satsolver.satisfy(ass2)
-	print "Assignment satisfied:",satis
+	cnt=0
+	satiscnt=0
+	while(True):
+		satsolver=SATSolver()
+		cnf=satsolver.createRandom3CNF(10,10)
+		ass2=satsolver.solve_SAT2(cnf,10)
+		print "--------------------------------------------------------------"
+		print "solve_SAT2(): Verifying satisfying assignment computed ....."
+		print "--------------------------------------------------------------"
+		satis=satsolver.satisfy(ass2)
+		print "Assignment satisfied:",satis
+		cnt += 1
+		satiscnt += satis
+		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
