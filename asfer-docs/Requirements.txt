@@ -8,7 +8,7 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 7. R-Python (rpy2)
 8. Maitreya's Dreams 7+ (for ephemeris and text client)
 9. Hadoop
-10. Spark and pyspark client
+10. Spark 1.5.1 and pyspark client
 11. Hive and Hive Client(thrift or pyhs2)
 12. Cassandra and Cassandra Cluster client
 13. HBase and HBase client (happybase)
@@ -43,3 +43,5 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 42. Passlib SHA256 encryption library
 43. ZeroMQ
 44. Kafka and Confluent Kafka Python client
+45. Spark 2.1.0 + Hadoop 2.7 for Java Spark Streaming
+46. Jsoup Java HTML parser
