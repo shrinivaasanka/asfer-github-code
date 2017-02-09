@@ -6733,3 +6733,17 @@ References:
 ----------
 376.1 PCP theorem and Hardness of Approximation - http://www.cs.jhu.edu/~scheideler/courses/600.471_S05/lecture_9.pdf
 376.2 PCP theorem and Hardness of Approximation - http://pages.cs.wisc.edu/~dieter/Courses/2008s-CS880/Scribes/lecture17.pdf
+
+---------------------------------------------------------------------------------------------------------------
+377. (FEATURE-DONE) Java Spark Streaming Generic Receiver update - 9 February 2017
+---------------------------------------------------------------------------------------------------------------
+*) Objectified the SparkGenericStreaming more by moving the SparkConf and JavaStreamingContext into
+class private static data.
+*) new method SparkGenericStreamingMain() instantiates the Spark Context and returns the JavaPairDStream<String,Integer> wordCounts object
+*) main() static method instantiates SparkGenericStreaming class and receives wordCounts JavaPairDStream from SparkGenericStreamingMain()
+method
+*) Spark JavaStreamingContext output operations are invoked by start() and print actions by lambda expressions.
+*) SparkConf and JavaStreamingContext variables have to be static because Not Serializable exceptions are thrown otherwise.
+*) sparkgenericstreaming.jar has been repackaged by recompilation.
+
+
