@@ -75,6 +75,8 @@ public final class SparkGenericStreaming extends Receiver<String> {
   static boolean isURLsocket=true;
   static boolean useJsoup=true;
   int port = 80;
+  static SparkConf sparkConf;
+  static JavaStreamingContext ssc;
 
   public SparkGenericStreaming(String url) {
 	super(StorageLevel.MEMORY_AND_DISK_2());
@@ -165,15 +167,16 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	}
   }
 
-  public static void main(String[] args) throws Exception {
+  public JavaPairDStream<String,Integer> SparkGenericStreamingMain(String[] args) throws Exception {
     if (args.length > 2) {
      System.err.println("Usage: SparkGenericStreaming <url> (or) SparkGenericStreaming <host> <port>");
      System.exit(1);
     }
 
     // Create the context with a 5 second batch size
-    SparkConf sparkConf = new SparkConf().setAppName("SparkGenericStreaming");
-    JavaStreamingContext ssc = new JavaStreamingContext(sparkConf, Durations.seconds(5));
+    //SparkConf sparkConf = new SparkConf().setAppName("SparkGenericStreaming");
+    sparkConf = new SparkConf().setAppName("SparkGenericStreaming");
+    ssc = new JavaStreamingContext(sparkConf, Durations.seconds(5));
     ssc.sparkContext().setLogLevel("ERROR");
 
     // Create a JavaReceiverInputDStream on target ip:port and count the
@@ -213,8 +216,21 @@ public final class SparkGenericStreaming extends Receiver<String> {
 
     //words.print();
     //wordCounts.print();
-    wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
-    ssc.start();
-    ssc.awaitTermination();
+    //wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
+    //ssc.start();
+    //ssc.awaitTermination();
+    return wordCounts;
+  }
+  
+  public static void main(String[] args) throws Exception {
+	SparkGenericStreaming sgs;
+	if(SparkGenericStreaming.isURLsocket)
+		sgs = new SparkGenericStreaming(args[0]);
+	else
+		sgs = new SparkGenericStreaming(args[0],Integer.parseInt(args[1]));
+	JavaPairDStream<String,Integer> wordCounts = sgs.SparkGenericStreamingMain(args);
+        wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
+        SparkGenericStreaming.ssc.start();
+        SparkGenericStreaming.ssc.awaitTermination();
   }
 }
