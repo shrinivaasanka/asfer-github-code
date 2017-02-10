@@ -6746,4 +6746,23 @@ method
 *) SparkConf and JavaStreamingContext variables have to be static because Not Serializable exceptions are thrown otherwise.
 *) sparkgenericstreaming.jar has been repackaged by recompilation.
 
+----------------------------------------------------------------------------------------------------------------------------------
+378. (FEATURE-DONE) Spark Streaming Java Update - Java Bean DataFrame(Dataset) creation, Hive Metastore support and persistence of
+DataFrame to Hive and as a Parquet file - 10 February 2017
+----------------------------------------------------------------------------------------------------------------------------------
+*) New JavaSparkSingletonInstance class for singleton Spark Context has been added.
+*) New Java Bean Word.java has been added for creating DataFrame from JavaRDD iterable
+*) DataFrame has been persisted to filesystem as .parquet file in overwrite mode of DataFrameWriter
+*) DataFrame has also been persisted to Hive MetaStore db which Spark supports (Shark SQL) with saveAsTable()
+*) SparkGenericStreaming has been rewritten to do transformations on words JavaRDD iterable with VoidFunction() in
+2-level nested iterations of foreachRDD() and forEach()
+*) map() transformation for each row in JavaRDD throws a null pointer exception and inner call() is never invoked.
+*) This has been remedied by replacing map() with a forEach() and storing the rows in each RDD in an ArrayList
+*) With Hive MetaStore + Shark integration, Streaming_AbstractGenerator.py abstraction now has access to Java Spark Streaming
+because it already supports Hive via thrift and NeuronRain now has ability to analyze any realtime or batch unstructured data.
+*) Primitive ETL to just scrape words in URL text sufficiently tracks trending topics in social media.
+*) Hive metastore db, Spark warehouse data have been committed and Logs for this has been added to testlogs/
+*) sparkgenericstreaming.jar has been repackaged with recompilation
+*) Updated spark-submit commandline: /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] --jars /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar,/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar,/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar sparkgenericstreaming.jar "http://www.facebook.com"
+*) Updated CLASSPATH: export CLASSPATH=/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar:/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.1.0.jar:.:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-library-2.11.8.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-sql_2.11-2.1.0.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-core_2.11-2.1.0.jar:/usr/lib/jvm/java-8-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
