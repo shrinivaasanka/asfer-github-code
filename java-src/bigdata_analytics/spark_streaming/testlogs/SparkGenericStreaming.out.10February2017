@@ -1,0 +1,237 @@
+/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] --jars /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar,/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar,/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar sparkgenericstreaming.jar "http://www.facebook.com" 
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/02/10 17:24:08 INFO SparkContext: Running Spark version 2.1.0
+17/02/10 17:24:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/02/10 17:24:10 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.122.1 instead (on interface virbr0)
+17/02/10 17:24:10 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/02/10 17:24:10 INFO SecurityManager: Changing view acls to: root
+17/02/10 17:24:10 INFO SecurityManager: Changing modify acls to: root
+17/02/10 17:24:10 INFO SecurityManager: Changing view acls groups to: 
+17/02/10 17:24:10 INFO SecurityManager: Changing modify acls groups to: 
+17/02/10 17:24:10 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+17/02/10 17:24:11 INFO Utils: Successfully started service 'sparkDriver' on port 48933.
+17/02/10 17:24:11 INFO SparkEnv: Registering MapOutputTracker
+17/02/10 17:24:11 INFO SparkEnv: Registering BlockManagerMaster
+17/02/10 17:24:11 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/02/10 17:24:11 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/02/10 17:24:11 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-694b35ef-dc09-4b01-aa3d-bd67dab18ca0
+17/02/10 17:24:11 INFO MemoryStore: MemoryStore started with capacity 366.1 MB
+17/02/10 17:24:11 INFO SparkEnv: Registering OutputCommitCoordinator
+17/02/10 17:24:12 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/02/10 17:24:12 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.122.1:4040
+17/02/10 17:24:12 INFO SparkContext: Added JAR file:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar at spark://192.168.122.1:48933/jars/scala-reflect-2.11.8.jar with timestamp 1486727652377
+17/02/10 17:24:12 INFO SparkContext: Added JAR file:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar at spark://192.168.122.1:48933/jars/spark-catalyst_2.11-2.1.0.jar with timestamp 1486727652379
+17/02/10 17:24:12 INFO SparkContext: Added JAR file:/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar at spark://192.168.122.1:48933/jars/jsoup-1.10.2.jar with timestamp 1486727652381
+17/02/10 17:24:12 INFO SparkContext: Added JAR file:/home/shrinivaasanka/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/java-src/bigdata_analytics/spark_streaming/sparkgenericstreaming.jar at spark://192.168.122.1:48933/jars/sparkgenericstreaming.jar with timestamp 1486727652382
+17/02/10 17:24:12 INFO Executor: Starting executor ID driver on host localhost
+17/02/10 17:24:12 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41628.
+17/02/10 17:24:12 INFO NettyBlockTransferService: Server created on 192.168.122.1:41628
+17/02/10 17:24:12 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/02/10 17:24:12 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.122.1, 41628, None)
+17/02/10 17:24:12 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.122.1:41628 with 366.1 MB RAM, BlockManagerId(driver, 192.168.122.1, 41628, None)
+17/02/10 17:24:12 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.122.1, 41628, None)
+17/02/10 17:24:12 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.122.1, 41628, None)
+-------------------------------------------
+Time: 1486727655000 ms
+-------------------------------------------
+
+SparkGenericStreaming Receiver Started
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727660000 ms
+-------------------------------------------
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727665000 ms
+-------------------------------------------
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727670000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727675000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727680000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727685000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727690000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727695000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727700000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727705000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727710000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+மனிதர்களுடன்
+...
+
+^CSparkGenericStreaming Receiver Stopped
+17/02/10 17:25:27 ERROR ReceiverTracker: Deregistered receiver for stream 0: Stopped by driver
+Exception:org.apache.spark.SparkException: Cannot add data as BlockGenerator has not been started or has been stopped
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1486727715000 ms
+-------------------------------------------
+Facebook
+மின்னஞ்சல்
+அல்லது
+மொபைல்
+கடவுச்சொல்
+உள்நுழை
+கணக்கு
+மறந்துவிட்டதா?
+Facebook
+சக
+

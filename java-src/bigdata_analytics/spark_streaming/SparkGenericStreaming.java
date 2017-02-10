@@ -45,6 +45,8 @@ import scala.Tuple2;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.api.java.function.VoidFunction2;
+import org.apache.spark.api.java.function.VoidFunction;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.api.java.StorageLevels;
 import org.apache.spark.streaming.Durations;
@@ -52,6 +54,14 @@ import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
+
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.function.Function;
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.api.java.StorageLevels;
+import org.apache.spark.streaming.Durations;
+import org.apache.spark.streaming.Time;
 
 import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.streaming.Duration;
@@ -66,6 +76,12 @@ import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.Encoder;
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.SparkSession;
+import java.util.ArrayList;
 
 
 public final class SparkGenericStreaming extends Receiver<String> {
@@ -167,7 +183,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	}
   }
 
-  public JavaPairDStream<String,Integer> SparkGenericStreamingMain(String[] args) throws Exception {
+  public JavaDStream<String> SparkGenericStreamingMain(String[] args) throws Exception {
     if (args.length > 2) {
      System.err.println("Usage: SparkGenericStreaming <url> (or) SparkGenericStreaming <host> <port>");
      System.exit(1);
@@ -176,6 +192,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
     // Create the context with a 5 second batch size
     //SparkConf sparkConf = new SparkConf().setAppName("SparkGenericStreaming");
     sparkConf = new SparkConf().setAppName("SparkGenericStreaming");
+    sparkConf.set("spark.driver.allowMultipleContexts","true");
     ssc = new JavaStreamingContext(sparkConf, Durations.seconds(5));
     ssc.sparkContext().setLogLevel("ERROR");
 
@@ -219,18 +236,50 @@ public final class SparkGenericStreaming extends Receiver<String> {
     //wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
     //ssc.start();
     //ssc.awaitTermination();
-    return wordCounts;
+    return words;
   }
-  
+
   public static void main(String[] args) throws Exception {
 	SparkGenericStreaming sgs;
+	ArrayList<Word> wordlist = new ArrayList<Word>();
+	wordlist.clear();
+
 	if(SparkGenericStreaming.isURLsocket)
 		sgs = new SparkGenericStreaming(args[0]);
 	else
 		sgs = new SparkGenericStreaming(args[0],Integer.parseInt(args[1]));
-	JavaPairDStream<String,Integer> wordCounts = sgs.SparkGenericStreamingMain(args);
-        wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
+	JavaDStream<String> words = sgs.SparkGenericStreamingMain(args);
+
+	words.print();
+        //words.foreachRDD(
+	//	x->{ 
+	//		x.collect().stream().forEach(y->System.out.println(y)); 
+	//	}
+	//);
+
+	words.foreachRDD(new VoidFunction2<JavaRDD<String>, Time>() {
+       		@Override
+		public void call(JavaRDD<String> rdd, Time time) {
+			//System.out.println("VoidFunction2.call");
+			SparkSession spark = JavaSparkSingletonInstance.getInstance(rdd.context().getConf());
+			rdd.foreach(new VoidFunction<String>() {
+       				@Override
+       				public void call(String word) {
+					Word w;
+					//System.out.println("Function.call");
+       					w = new Word();
+       					w.setWord(word);
+					wordlist.add(w);
+       				}
+       			});
+			Dataset<Row> wordsdf = spark.createDataFrame(wordlist,Word.class); 
+			wordsdf.write().mode("overwrite").saveAsTable("word");
+			wordsdf.write().mode("overwrite").parquet("word.parquet");
+			wordsdf.printSchema();
+		}
+	});
+        
         SparkGenericStreaming.ssc.start();
-        SparkGenericStreaming.ssc.awaitTermination();
+	SparkGenericStreaming.ssc.awaitTermination();
   }
 }
