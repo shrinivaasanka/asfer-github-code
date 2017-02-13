@@ -6766,3 +6766,16 @@ because it already supports Hive via thrift and NeuronRain now has ability to an
 *) Updated spark-submit commandline: /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] --jars /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar,/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar,/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar sparkgenericstreaming.jar "http://www.facebook.com"
 *) Updated CLASSPATH: export CLASSPATH=/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar:/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.1.0.jar:.:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-library-2.11.8.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-sql_2.11-2.1.0.jar:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-core_2.11-2.1.0.jar:/usr/lib/jvm/java-8-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+379. (THEORY) Machine Translation, Recursive Gloss Overlap Graphs in different Natural Languages and Graph Homomorphisms - 13 February 2017
+- related to 178
+-------------------------------------------------------------------------------------------------------------------------------------------
+Machine Translation is equivalent to graph homomorphism between 2 recursive gloss overlap graphs of a text in 2 natural languages where
+homomorphism f for translation is defined as:
+	if (u,v) is in E(G1) then (f(u),f(v)) is in E(G2)
+for recursive gloss overlap graphs G1 and G2 for languages L1 (e.g. English) and L2 (e.g Tamizh) constructed from respective ontologies.
+In previous definition, u and v are two words in natural language L1 and f(u) and f(v) are two words in natural language L2.
+This relaxes the isomorphism requirement mentioned in 178. Set of all digraphs G such that there is a homomorphism from G to a graph H is
+denoted by L(H). Guessing the set of digraphs G for a digraph H implies finding set of all translations for a text from a set of natural
+languages to another natural language. This guessing problem is known by Dichotomy Conjecture to be either in P or NP-Complete.
+
