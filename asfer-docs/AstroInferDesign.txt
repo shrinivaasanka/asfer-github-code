@@ -6779,3 +6779,8 @@ This relaxes the isomorphism requirement mentioned in 178. Set of all digraphs G
 denoted by L(H). Guessing the set of digraphs G for a digraph H implies finding set of all translations for a text from a set of natural
 languages to another natural language. This guessing problem is known by Dichotomy Conjecture to be either in P or NP-Complete.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+380. (FEATURE-DONE) Approximate SAT solver update - 14 February 2017
+------------------------------------------------------------------------------------------------------------------------------------------
+*) Changed number of variables and clauses to 14 and 14 with some additional debug statements.
+*) After 4000+ iterations ratio of random 3SAT instances satisfied is: ~70%
