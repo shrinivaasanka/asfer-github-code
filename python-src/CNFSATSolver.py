@@ -84,7 +84,7 @@ class SATSolver(object):
 			bini=bini.zfill(n)
 			allstrings.append(list(bini)) 
 
-		print "cnfclauses:",cnfclauses
+		#print "cnfclauses:",cnfclauses
 		for c in cnfclauses:
 			cnfclause=[]
 			clauseliterals=c.strip().split("+")
@@ -114,18 +114,19 @@ class SATSolver(object):
 			dnfclauses1.append(dnfclause1)
 			dnfclauses2.append(dnfclause2)
 			self.cnfparsed.append(cnfclause)
-		print "Parsed CNF clauses:", self.cnfparsed
-		print "DNF clauses 1:",dnfclauses1
-		print "DNF clauses 2:",dnfclauses2
-		print "All strings:",allstrings
+		#print "Parsed CNF clauses:", self.cnfparsed
+		#print "DNF clauses 1:",dnfclauses1
+		#print "DNF clauses 2:",dnfclauses2
+		#print "All strings:",allstrings
 		satassignments1=self.difference(allstrings, dnfclauses1)
 		satassignments2=self.difference(allstrings, dnfclauses2)
-		print "CNF SAT:",cnf
-		print "SAT assignments 1:",satassignments1
-		print "SAT assignments 2:",satassignments2
+		#print "CNF SAT:",cnf
+		#print "SAT assignments 1:",satassignments1
+		#print "SAT assignments 2:",satassignments2
 		return (satassignments1,satassignments2)
 
 	def solve_SAT2(self,cnf,number_of_variables):
+		satass=[]
 		self.solve_SAT(cnf,number_of_variables)
 		for clause in self.cnfparsed:
 			equation=[]
@@ -141,25 +142,22 @@ class SATSolver(object):
 			self.equationsB.append(1)
 		a = np.array(self.equationsA)
                 b = np.array(self.equationsB)
-                print "a:"
+                #print "a:"
 		print a
-                print "b:"
+                #print "b:"
 		print b
                 #x = solve(a,b)
                 x = lstsq(a,b)
 		print "solve_SAT2(): lstsq(): x:",x[0]
-		a=[]
-		for n in xrange(number_of_variables):
-			a.append(0)
 		cnt=0
 		for e in x[0]:
 			if e >= 0.1:
-				a[cnt]=1
+				satass.append(1)
 			else:
-				a[cnt]=0
+				satass.append(0)
 			cnt+=1
-		print "solve_SAT2():",a
-		return a
+		#print "solve_SAT2():",a
+		return satass
 
 	def createRandom3CNF(self,numclauses,numvars):
 		cnf=""
@@ -208,12 +206,16 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	while(True):
-		satsolver=SATSolver()
-		cnf=satsolver.createRandom3CNF(10,10)
-		ass2=satsolver.solve_SAT2(cnf,10)
+		print "--------------------------------------------------------------"
+		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
 		print "solve_SAT2(): Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
+		satsolver=SATSolver()
+		cnf=satsolver.createRandom3CNF(14,14)
+		ass2=satsolver.solve_SAT2(cnf,14)
+		print "Random 3CNF:",cnf
+		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
 		print "Assignment satisfied:",satis
 		cnt += 1
