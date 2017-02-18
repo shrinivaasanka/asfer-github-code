@@ -6784,3 +6784,25 @@ languages to another natural language. This guessing problem is known by Dichoto
 ------------------------------------------------------------------------------------------------------------------------------------------
 *) Changed number of variables and clauses to 14 and 14 with some additional debug statements.
 *) After 4000+ iterations ratio of random 3SAT instances satisfied is: ~70%
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+381. (FEATURE-DONE) Java Spark Streaming with NetCat WebServer update and some analysis on HiveServer2+Spark Integration - 18 February 2017
+--------------------------------------------------------------------------------------------------------------------------------------------
+*) Rewrote SparkGenericStreaming.java mapreduce functions with Spark 2.1.0 + Java 8 lambda functions
+*) Enabled Netcat Socket streaming boolean flag instead of URL socket with Jsoup
+*) With above changes (and no HiveServer2), socket streaming receiver works and Hive saveAsTable()/Parquet file saving works.
+*) HiveServer2 was enabled in Spark Conf by adding hive-site.xml in spark/conf directory. (Two example hive-site.xml(s) have been
+committed to repository.)
+*) Spark 2.1.0 was started with hive-site.xml to connect to HiveServer2 2.1.1. This resulted in 2 out of heapspace errors as documented
+in testlogs/ with exception "Error in instantiating HiveSessionState".
+*) Such OOM errors with HiveServer2 and Spark have been reported earlier in Apache JIRA. Instead of TTransport, FrameTransport was also
+tried which caused "Frame size exceeds maximum frame size" errors. SASL was also disabled in hive-site.xml.
+*) Reason for such OOM errors in HiveServer2 seems to be heavy memory footprint of HiveServer2 and Spark together and CPU usage reaches 100%
+for both cores. Might require a high-end server with large RAM size so that heapspace is set to atleast 8GB. HiveServer2 is known to be
+memory intensive application. Also Spark only supports Hive 1.2.1 and not Hive 2.1.1 which could be the reason.
+*) Increasing Java Heap space in spark config file (spark.executor.memory and spark.driver.memory) also did not have effect.
+*) Setting HADOOP_HEAPSIZE also did not have effect. OOM error occurs while instantiating HiveSessionState and bootstrapping Hive databases
+(get_all_databases). Isolated beeline CLI connection works though with HiveServer2.
+*) Hence presently Spark Streaming works with Spark provided metastore_db Hive Support and Parquet file support.
+*) testlogs/ have stream processing logs for NetCat (NC) webserver.
+
