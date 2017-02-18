@@ -1,0 +1,522 @@
+$nc -lk 8000
+...
+djfkjdk
+3948938
+kndkfjkj
+dlkskdkls
+lskdlkls
+930940394
+30403904
+mdfkkddlfjkjdk
+kdjkfjd  d fd f d fd f d f df
+dfkjdfd f d fd f df
+dfdlflkjkd d f df d fd 
+dlfldl
+dlkflkdl f d f df 
+dfkjdjf d fd f df 
+dsjkdjksjk sd s d s d sd 
+jkjsdkjksjdkjsk  s sdsd sd s
+jjksjdkjskdjkjs   sdsdsdsdsds
+jdkjskdjksjkdsjdkjks s d sd s ds
+kkjsdkjksjkjdkksd s  sd s  d sd s
+kjskdjks
+1
+2
+2
+2
+3
+3
+4
+48748738 343443
+fjdkdkfjkdj d fd f d f
+8394893894 3 4 34 3 4 34 3 4 34 3 43 4 3
+---------------------------------------------------------------------------------------
+root@shrinivaasanka-Inspiron-1545:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/java-src/bigdata_analytics/spark_streaming# /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit --class SparkGenericStreaming --master local[2] --jars /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar,/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar,/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar sparkgenericstreaming.jar localhost 8000 2>&1 > testlogs/SparkGenericStreaming.out.NetCatWebServer.18February2017
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+17/02/18 10:26:12 INFO SparkContext: Running Spark version 2.1.0
+17/02/18 10:26:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/02/18 10:26:13 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.122.1 instead (on interface virbr0)
+17/02/18 10:26:13 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+17/02/18 10:26:14 INFO SecurityManager: Changing view acls to: root
+17/02/18 10:26:14 INFO SecurityManager: Changing modify acls to: root
+17/02/18 10:26:14 INFO SecurityManager: Changing view acls groups to: 
+17/02/18 10:26:14 INFO SecurityManager: Changing modify acls groups to: 
+17/02/18 10:26:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+17/02/18 10:26:15 INFO Utils: Successfully started service 'sparkDriver' on port 35171.
+17/02/18 10:26:15 INFO SparkEnv: Registering MapOutputTracker
+17/02/18 10:26:15 INFO SparkEnv: Registering BlockManagerMaster
+17/02/18 10:26:15 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+17/02/18 10:26:15 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+17/02/18 10:26:15 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e6350ecb-9b5d-4c68-b71f-c395aa488a3e
+17/02/18 10:26:15 INFO MemoryStore: MemoryStore started with capacity 366.1 MB
+17/02/18 10:26:15 INFO SparkEnv: Registering OutputCommitCoordinator
+17/02/18 10:26:15 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/02/18 10:26:16 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.122.1:4040
+17/02/18 10:26:16 INFO SparkContext: Added JAR file:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar at spark://192.168.122.1:35171/jars/scala-reflect-2.11.8.jar with timestamp 1487393776098
+17/02/18 10:26:16 INFO SparkContext: Added JAR file:/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.1.0.jar at spark://192.168.122.1:35171/jars/spark-catalyst_2.11-2.1.0.jar with timestamp 1487393776108
+17/02/18 10:26:16 INFO SparkContext: Added JAR file:/home/shrinivaasanka/jsoup/jsoup-1.10.2.jar at spark://192.168.122.1:35171/jars/jsoup-1.10.2.jar with timestamp 1487393776108
+17/02/18 10:26:16 INFO SparkContext: Added JAR file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/java-src/bigdata_analytics/spark_streaming/sparkgenericstreaming.jar at spark://192.168.122.1:35171/jars/sparkgenericstreaming.jar with timestamp 1487393776108
+17/02/18 10:26:16 INFO Executor: Starting executor ID driver on host localhost
+17/02/18 10:26:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39688.
+17/02/18 10:26:16 INFO NettyBlockTransferService: Server created on 192.168.122.1:39688
+17/02/18 10:26:16 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+17/02/18 10:26:16 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.122.1, 39688, None)
+17/02/18 10:26:16 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.122.1:39688 with 366.1 MB RAM, BlockManagerId(driver, 192.168.122.1, 39688, None)
+17/02/18 10:26:16 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.122.1, 39688, None)
+17/02/18 10:26:16 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.122.1, 39688, None)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+^C17/02/18 10:28:31 ERROR ReceiverTracker: Deregistered receiver for stream 0: Stopped by driver
+-----------------------------------------------------------------------------------------------------
+SparkGenericStreaming Receiver Started
+Streaming data received:dlkskdkls
+Streaming data received:lskdlkls
+Streaming data received:930940394
+Streaming data received:30403904
+Streaming data received:mdfkkddlfjkjdk
+Streaming data received:kdjkfjd  d fd f d fd f d f df
+Streaming data received:dfkjdfd f d fd f df
+Streaming data received:dfdlflkjkd d f df d fd 
+Streaming data received:dlfldl
+Streaming data received:dlkflkdl f d f df 
+Streaming data received:dfkjdjf d fd f df 
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393780000 ms
+-------------------------------------------
+
+forEach lambda:dlkskdkls
+forEach lambda:lskdlkls
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393785000 ms
+-------------------------------------------
+dlkskdkls
+lskdlkls
+
+forEach lambda:930940394
+forEach lambda:30403904
+forEach lambda:mdfkkddlfjkjdk
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393790000 ms
+-------------------------------------------
+930940394
+30403904
+mdfkkddlfjkjdk
+
+forEach lambda:kdjkfjd
+forEach lambda:
+forEach lambda:d
+forEach lambda:fd
+forEach lambda:f
+forEach lambda:d
+forEach lambda:fd
+forEach lambda:f
+forEach lambda:d
+forEach lambda:f
+forEach lambda:df
+forEach lambda:dfkjdfd
+forEach lambda:f
+forEach lambda:d
+forEach lambda:fd
+forEach lambda:f
+forEach lambda:df
+forEach lambda:dfdlflkjkd
+forEach lambda:d
+forEach lambda:f
+forEach lambda:df
+forEach lambda:d
+forEach lambda:fd
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393795000 ms
+-------------------------------------------
+kdjkfjd
+
+d
+fd
+f
+d
+fd
+f
+d
+f
+...
+
+forEach lambda:dlfldl
+forEach lambda:dlkflkdl
+forEach lambda:f
+forEach lambda:d
+forEach lambda:f
+forEach lambda:df
+forEach lambda:dfkjdjf
+forEach lambda:d
+forEach lambda:fd
+forEach lambda:f
+forEach lambda:df
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393800000 ms
+-------------------------------------------
+dlfldl
+dlkflkdl
+f
+d
+f
+df
+dfkjdjf
+d
+fd
+f
+...
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393805000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393810000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393815000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393820000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393825000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393830000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393835000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393840000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393845000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393850000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393855000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393860000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393865000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Streaming data received:dsjkdjksjk sd s d s d sd 
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393870000 ms
+-------------------------------------------
+
+Streaming data received:jkjsdkjksjdkjsk  s sdsd sd s
+forEach lambda:dsjkdjksjk
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:d
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:jkjsdkjksjdkjsk
+forEach lambda:
+forEach lambda:s
+forEach lambda:sdsd
+forEach lambda:sd
+forEach lambda:s
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393875000 ms
+-------------------------------------------
+dsjkdjksjk
+sd
+s
+d
+s
+d
+sd
+jkjsdkjksjdkjsk
+
+s
+...
+
+Streaming data received:jjksjdkjskdjkjs   sdsdsdsdsds
+forEach lambda:jjksjdkjskdjkjs
+forEach lambda:
+forEach lambda:
+forEach lambda:sdsdsdsdsds
+Saving to Hive Table
+Streaming data received:jdkjskdjksjkdsjdkjks s d sd s ds
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393880000 ms
+-------------------------------------------
+jjksjdkjskdjkjs
+
+
+sdsdsdsdsds
+
+Streaming data received:kkjsdkjksjkjdkksd s  sd s  d sd s
+Streaming data received:kjskdjks
+Streaming data received:1
+Streaming data received:2
+forEach lambda:jdkjskdjksjkdsjdkjks
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:ds
+forEach lambda:kkjsdkjksjkjdkksd
+forEach lambda:s
+forEach lambda:
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:kjskdjks
+forEach lambda:1
+Saving to Hive Table
+Streaming data received:2
+Streaming data received:2
+Streaming data received:3
+Saving to Parquet file
+Streaming data received:3
+Streaming data received:4
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393885000 ms
+-------------------------------------------
+jdkjskdjksjkdsjdkjks
+s
+d
+sd
+s
+ds
+kkjsdkjksjkjdkksd
+s
+
+sd
+...
+
+Streaming data received:48748738 343443
+forEach lambda:2
+forEach lambda:2
+forEach lambda:2
+forEach lambda:3
+forEach lambda:3
+forEach lambda:4
+forEach lambda:48748738
+forEach lambda:343443
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393890000 ms
+-------------------------------------------
+2
+2
+2
+3
+3
+4
+48748738
+343443
+
+Streaming data received:fjdkdkfjkdj d fd f d f
+forEach lambda:fjdkdkfjkdj
+forEach lambda:d
+forEach lambda:fd
+forEach lambda:f
+forEach lambda:d
+forEach lambda:f
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393895000 ms
+-------------------------------------------
+fjdkdkfjkdj
+d
+fd
+f
+d
+f
+
+Streaming data received:8394893894 3 4 34 3 4 34 3 4 34 3 43 4 3
+forEach lambda:8394893894
+forEach lambda:3
+forEach lambda:4
+forEach lambda:34
+forEach lambda:3
+forEach lambda:4
+forEach lambda:34
+forEach lambda:3
+forEach lambda:4
+forEach lambda:34
+forEach lambda:3
+forEach lambda:43
+forEach lambda:4
+forEach lambda:3
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393900000 ms
+-------------------------------------------
+8394893894
+3
+4
+34
+3
+4
+34
+3
+4
+34
+...
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393905000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+SparkGenericStreaming Receiver Stopped
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487393910000 ms
+-------------------------------------------
+

@@ -88,7 +88,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
   private static final Pattern SPACE = Pattern.compile(" ");
   String urlargs = "localhost";
   String host = "localhost";
-  static boolean isURLsocket=true;
+  static boolean isURLsocket=false;
   static boolean useJsoup=true;
   int port = 80;
   static SparkConf sparkConf;
@@ -124,20 +124,22 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	{
 		if(useJsoup)
 		{
-			while(true)
-			{
+			//while(true)
+			//{
 				try 
 				{
 					Document doc = 	Jsoup.connect(urlargs).get();
 					String text = doc.body().text();
-					//System.out.println("JSoup ETL: text:"+text);
+					System.out.println("JSoup ETL: text:"+text);
+					//for (String x : Arrays.asList(SPACE.split(text)))
+					//	store(x);
 					store(text);
 				}
 				catch (Exception e)
 				{
 					System.out.println("Exception:" + e);
 				}
-			}
+			//}
 		}
 		else
 		{
@@ -145,13 +147,13 @@ public final class SparkGenericStreaming extends Receiver<String> {
 			HttpURLConnection conn = null;
 			BufferedReader br = null;
 			String input;
-			while(true)
-			{
+			//while(true)
+			//{
 				try{
 					url = new URL(urlargs);
 					conn = (HttpURLConnection) url.openConnection();
 					conn.setRequestMethod("GET");
-					//conn.setDoOutput(true);
+					conn.setDoOutput(true);
 					br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 					while((input=br.readLine()) != null)
 					{
@@ -161,14 +163,14 @@ public final class SparkGenericStreaming extends Receiver<String> {
 				} catch (Exception e) {
 					System.out.println("Exception:" + e);
 				}
-			}
+			//}
 		}
 	}
 	else
 	{
 		Socket s = null;
 		BufferedReader br = null;
-		String input;
+		String input="";
 		try{
 			s = new Socket(host,port);
 			br = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -177,6 +179,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
 				System.out.println("Streaming data received:"+input);
 				store(input);
 			}
+			s.close();
 		} catch (Exception e) {
 			System.out.println("Exception:" + e);
 		}
@@ -212,24 +215,26 @@ public final class SparkGenericStreaming extends Receiver<String> {
     }
 
     JavaDStream<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
-      @Override
+     @Override
       public Iterator<String> call(String x) {
         return Arrays.asList(SPACE.split(x)).iterator();
       }
     });
     
-    JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
-     new PairFunction<String, String, Integer>() {
-        @Override
-        public Tuple2<String, Integer> call(String s) {
-          return new Tuple2<>(s, 1);
-        }
-      }).reduceByKey(new Function2<Integer, Integer, Integer>() {
-        @Override
-        public Integer call(Integer i1, Integer i2) {
-          return i1 + i2;
-        }
-      });
+    //JavaDStream<String> words = lines.flatMap(x->{return Arrays.asList(SPACE.split(x)).iterator();});
+    
+    //JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
+    // new PairFunction<String, String, Integer>() {
+    //    @Override
+    //    public Tuple2<String, Integer> call(String s) {
+    //      return new Tuple2<>(s, 1);
+    //    }
+    //  }).reduceByKey(new Function2<Integer, Integer, Integer>() {
+    //    @Override
+    //    public Integer call(Integer i1, Integer i2) {
+    //      return i1 + i2;
+    //    }
+    //  });
 
     //words.print();
     //wordCounts.print();
@@ -250,35 +255,55 @@ public final class SparkGenericStreaming extends Receiver<String> {
 		sgs = new SparkGenericStreaming(args[0],Integer.parseInt(args[1]));
 	JavaDStream<String> words = sgs.SparkGenericStreamingMain(args);
 
-	words.print();
-        //words.foreachRDD(
-	//	x->{ 
-	//		x.collect().stream().forEach(y->System.out.println(y)); 
-	//	}
-	//);
+        words.foreachRDD(
+		x->{ 
+			x.collect().stream().forEach(
+				y->{ 
+					System.out.println("forEach lambda:"+y);
+					Word w = new Word();
+					w.setWord(y);
+					wordlist.add(w);	
+				}
+			); 
+			SparkSession spark = JavaSparkSingletonInstance.getInstance(x.context().getConf());
+			Dataset<Row> wordsdf = spark.createDataFrame(wordlist,Word.class); 
+			System.out.println("Saving to Hive Table");
+			wordsdf.write().mode("overwrite").saveAsTable("word");
+			System.out.println("Saving to Parquet file");
+			wordsdf.write().mode("overwrite").parquet("word.parquet");
+			wordsdf.printSchema();
+			wordlist.clear();
+		}
+	);
 
+
+	/*
 	words.foreachRDD(new VoidFunction2<JavaRDD<String>, Time>() {
        		@Override
 		public void call(JavaRDD<String> rdd, Time time) {
-			//System.out.println("VoidFunction2.call");
+			System.out.println("VoidFunction2.call");
 			SparkSession spark = JavaSparkSingletonInstance.getInstance(rdd.context().getConf());
 			rdd.foreach(new VoidFunction<String>() {
        				@Override
        				public void call(String word) {
 					Word w;
-					//System.out.println("Function.call");
+					System.out.println("Function.call");
        					w = new Word();
        					w.setWord(word);
 					wordlist.add(w);
        				}
        			});
 			Dataset<Row> wordsdf = spark.createDataFrame(wordlist,Word.class); 
+			System.out.println("Saving to Hive Table");
 			wordsdf.write().mode("overwrite").saveAsTable("word");
+			System.out.println("Saving to Parquet file");
 			wordsdf.write().mode("overwrite").parquet("word.parquet");
 			wordsdf.printSchema();
 		}
 	});
-        
+	*/
+
+	words.print();
         SparkGenericStreaming.ssc.start();
 	SparkGenericStreaming.ssc.awaitTermination();
   }

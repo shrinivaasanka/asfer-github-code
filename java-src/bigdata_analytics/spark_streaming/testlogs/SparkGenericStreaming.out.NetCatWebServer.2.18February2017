@@ -1,0 +1,498 @@
+shrinivaasanka@shrinivaasanka-Inspiron-1545:~$ nc -lk 8000
+jdsjdksjdks
+sdsdsd
+sdsdhjhdsjhd sds d s d sd s d sd s d sd
+sdjsdsdhjd sd s d sd s ds d sd s ds d
+sdshdjdhjsh sd s d s ds
+1278172871 12 121212
+34343  5454 5 4 54 54 5 4
+343434 34 34
+----------------------------------------------------------------------------------------------------------------
+
+SparkGenericStreaming Receiver Started
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395890000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395895000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395900000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395905000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395910000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395915000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395920000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395925000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395930000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395935000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395940000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395945000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395950000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395955000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395960000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395965000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395970000 ms
+-------------------------------------------
+
+Streaming data received:jdsjdksjdks
+forEach lambda:jdsjdksjdks
+Saving to Hive Table
+Streaming data received:sdsdsd
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395975000 ms
+-------------------------------------------
+jdsjdksjdks
+
+Streaming data received:sdsdhjhdsjhd sds d s d sd s d sd s d sd
+forEach lambda:sdsdsd
+forEach lambda:sdsdhjhdsjhd
+forEach lambda:sds
+forEach lambda:d
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395980000 ms
+-------------------------------------------
+sdsdsd
+sdsdhjhdsjhd
+sds
+d
+s
+d
+sd
+s
+d
+sd
+...
+
+Streaming data received:sdjsdsdhjd sd s d sd s ds d sd s ds d
+Streaming data received:sdshdjdhjsh sd s d s ds
+forEach lambda:sdjsdsdhjd
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:ds
+forEach lambda:d
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:ds
+forEach lambda:d
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395985000 ms
+-------------------------------------------
+sdjsdsdhjd
+sd
+s
+d
+sd
+s
+ds
+d
+sd
+s
+...
+
+Streaming data received:1278172871 12 121212
+forEach lambda:sdshdjdhjsh
+forEach lambda:sd
+forEach lambda:s
+forEach lambda:d
+forEach lambda:s
+forEach lambda:ds
+forEach lambda:1278172871
+forEach lambda:12
+forEach lambda:121212
+Saving to Hive Table
+Streaming data received:34343  5454 5 4 54 54 5 4
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395990000 ms
+-------------------------------------------
+sdshdjdhjsh
+sd
+s
+d
+s
+ds
+1278172871
+12
+121212
+
+Streaming data received:343434 34 34
+forEach lambda:34343
+forEach lambda:
+forEach lambda:5454
+forEach lambda:5
+forEach lambda:4
+forEach lambda:54
+forEach lambda:54
+forEach lambda:5
+forEach lambda:4
+forEach lambda:343434
+forEach lambda:34
+forEach lambda:34
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487395995000 ms
+-------------------------------------------
+34343
+
+5454
+5
+4
+54
+54
+5
+4
+343434
+...
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396000000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396005000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396010000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396015000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396020000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396025000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396030000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396035000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396040000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396045000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396050000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396055000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396060000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396065000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396070000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396075000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396080000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396085000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396090000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396095000 ms
+-------------------------------------------
+
+Saving to Hive Table
+Saving to Parquet file
+root
+ |-- word: string (nullable = true)
+
+-------------------------------------------
+Time: 1487396100000 ms
+-------------------------------------------
+
+SparkGenericStreaming Receiver Stopped
