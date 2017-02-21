@@ -6633,6 +6633,8 @@ with satisfying assignments {000, 001, 011, 101, 110}
 
 This exact learner requires O(2^n) time which is exponential in number of variables.
 
+368.6 describes an algorithm (CDNF) to learn any boolean functions in time polynomial in number of variables,its DNF size and CNF size. This together with 368.1 implies a polynomial time learning algorithm for NP and existence of polynomial time learning algorithm for NP(3CNF) indicates NP does not have polynomial time algorithms (and Expoential Time Hypothesis could be true). This coincides with evidences towards divergence of P(Good) series and superpolynomial size circuits for 3SAT implied in 53.16, 256, 265, 275, 355. This is a serious contradiction - exact learning derandomizes both sides of P(Good) circuit. LHS non-majority social choice is zero-error and equals 1 while RHS if NP also converges to 1 and implies a polynomial time algorithm for NP while exact learning forbids polynomial time algorithm for NP. Resolving this impasse amounts to defining what is meant by exactness and zero-error in voting decision and social choice (Perfection commonsensically enshrines zero-error decision making for unbounded number of scenarios i.e variables while exact learning assumes bounded set of variables)
+
 References:
 ----------
 368.1 Exact Learning implies Derandomization (i.e. P=BPP) and Mistake bound learning - [KlivansKothariOliveira] - http://www.cs.princeton.edu/~kothari/ccc13.pdf
@@ -6640,6 +6642,7 @@ References:
 368.3 Generalization of Spira's Theorem - https://www.cs.utexas.edu/users/panni/spira.pdf - Spira's theorem transforms every circuit of size S  to a circuit of depth O(logS).
 368.4 Depth Hierarchy Theorem - [RossmanServedioTan] - Theorem 1 - https://arxiv.org/pdf/1504.03398v1.pdf - Circuit of depth <= d-1 with size <= 2^(n^(1/6(d-1))) agrees with a function of depth d on at most 0.5 + n^Omega(-1/d) fraction of inputs.
 368.5 Formula size of Majority function - [Valiant] - http://www.sciencedirect.com/science/article/pii/0196677484900166?via%3Dihub
+368.6 Exact Learning of Boolean Functions from Monotone Theory - [Nader H. Bshouty] - http://www.cs.technion.ac.il/~bshouty/MyPapers/Exact-Learning-Boolean-Functions-via-the-Monotone-Theory.ps - CDNF algorithm - Section 6 - exactly learns any boolean function in time polynomial in number of variables, size of DNF and CNF with polynomial membership and equivalence(counterexample) queries.
 
 ----------------------------------------------------------------------------------------------------------------
 369. (FEATURE-DONE) An experimental special case k-CNF SAT Solver algorithm implementation - 31 January 2017
