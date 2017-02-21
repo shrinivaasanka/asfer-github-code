@@ -299,8 +299,8 @@ def reduceFunction_BitonicCompare(i, k):
 
 def MergedTiles_BitonicSort():
 	global globalmergedtiles_accum
-	mergedtilesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
-	coordinatesf=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
+	mergedtilesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
+	coordinatesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
 	#mergedtiles=[10, 3, 5, 71, 30, 11, 20, 4, 330, 21, 110, 7, 33, 9, 39, 46]
 	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
 	cnt=1
@@ -335,6 +335,14 @@ def MergedTiles_BitonicSort():
 	print "sorted=",sorted
 	print "globalcoordinates=",globalcoordinates
 	print "sorted globalmergedtiles accumulator version:  = ",globalmergedtiles_accum.value
+	N=sorted[0]
+	print "==========================" 
+	print "Factors of ",N," are:"
+	print "==========================" 
+	idx=0
+	while sorted[idx] == N:
+		print globalcoordinates[idx]
+		idx += 1
         spcon.stop()
 
 if __name__=="__main__":
