@@ -6814,3 +6814,13 @@ memory intensive application. Also Spark only supports Hive 1.2.1 and not Hive 2
 *) Hence presently Spark Streaming works with Spark provided metastore_db Hive Support and Parquet file support.
 *) testlogs/ have stream processing logs for NetCat (NC) webserver.
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+382. (FEATURE-DONE) Spark Version Upgrade for Recursive Gloss Overlap Graph Intrinsic merit and Discrete Hyperbolic Factorization Cloud
+Implementations - 21 February 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+*) Re-executed Interview Algorithm and Factorization Spark Cloud implementations with Spark 2.1.0 and Cython optimization for Recursive
+Gloss Overlap Graph construction
+*) Earlier these were benchmarked with Spark 1.5.x
+*) Added debug statements in python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py and file locations updated. Logs
+committed to python-src/testlogs and python-src/InterviewAlgorithm/testlogs
+
