@@ -6827,3 +6827,27 @@ Gloss Overlap Graph construction
 *) Added debug statements in python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py and file locations updated. Logs
 committed to python-src/testlogs and python-src/InterviewAlgorithm/testlogs
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+383. (THEORY) Recursive Gloss Overlap Graphs, Intrinsic Merit and Korner Graph Entropy - related to 348 - 22 February 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+Graph representation of text and deriving a quantitative intrinsic merit from recursive gloss overlap definition graph by projecting
+WordNet onto the document has been described previously. Spectral Graph Theory qualitatively analyzes the graph in terms of eigenvalues of
+its Laplacian. Quantitative Graph Theory provides various statistical tools to quantify a graph in terms of its complexity. Measuring
+meaningfulness of a text has been translated to the problem finding easy paths between concepts and keywords in the text. This is computational linguistic Symbol Grounding problem of learning from dictionary definitions (refer 216.3). Korner's Graph Entropy defines the entropy of a
+graph G as follows:
+		KE(G) = minimum(I(X,Y))
+where X is a randomly chosen vertex in V(G) and Y is an independent set of G (set of vertices with no edges between them). I(X,Y) is the
+probabilistic mutual information of two random variable X and Y defined as:
+		I(X,Y) = double_summation(p(x,y)log(p(x,y)/p(x)p(y)))
+where p(x) is probability of X=x, p(y) is probability of Y=y and p(x,y) is a joint probability distribution of X=x and Y=y.
+
+An alternative definition of Korner Entropy of a graph G is :
+		KE(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}]
+i.e minimum of summations over product of probability of a randomly chosen vertex v in V(G) and log likelihood probability of v in an independent set Y of G.
+
+Mutual information is the generalization of Shannon information entropy when two dependent random variables are involved. Korner's entropy quantitatively captures the complexity and merit of a graph representation of text quite effectively because mutual information is the amount of knowledge one random variable has about the other. This is quite useful for text meaningfulness - two words with high mutual information are quite likely to be closely related. More precisely, from definitions of Korner Entropy, mutual information of a word vertex and an independent set of word vertices in recursive gloss overlap graph is the "extent of relatedness" between a word and an independent set of words it is part of. When a word is in an independent set of word vertices, there exists no relation among them - no word vertex is in dictionary gloss definition of other word vertices. By summing up log likelihoods for all such vertices, a measure of "meaninglessness" is obtained. Dual of this meaninglessness is meaningfulness (document ranking by meaninglessness is inversion of ranking by meaningfulness) obtained by (-) sign and minimum(). Maximum Korner Entropy is log(|V|) for complete graphs and minimum is zero for empty graphs any document would have entropy merit value between 0 and log|V|. Computing Korner Entropy is NP-hard since finding stable independent sets is NP-hard.
+
+References:
+-----------
+383.1 Korner Entropy - [JaikumarRadhaKrishnan] - http://www.tcs.tifr.res.in/~jaikumar/Papers/EntropyAndCounting.pdf
+383.2 Entropy of Graphs - [MowshowitzDehmer] - www.mdpi.com/1099-4300/14/3/559/pdf
