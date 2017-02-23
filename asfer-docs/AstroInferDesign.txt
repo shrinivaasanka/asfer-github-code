@@ -6851,3 +6851,18 @@ References:
 -----------
 383.1 Korner Entropy - [JaikumarRadhaKrishnan] - http://www.tcs.tifr.res.in/~jaikumar/Papers/EntropyAndCounting.pdf
 383.2 Entropy of Graphs - [MowshowitzDehmer] - www.mdpi.com/1099-4300/14/3/559/pdf
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+384. (THEORY) Neural Tensor Networks Reasoning and Recursive Gloss Overlap merit scoring
+-----------------------------------------------------------------------------------------------------------------------------------------
+Neural Tensor Networks described in 384.1 generalizes a linear neuron into a multidimensional tensor and assigns a score for relation
+between two entities e1 and e2. This is described in the context of an ontology (e.g WordNet) where a relation between two words w1 and w2
+is assigned a score based on various distance measures. Recursive Gloss Overlap graph which is a gloss definition graph has a single relation
+between any two words - w1 "is in dictionary/gloss definition of" w2. Present implementation does not quantify the extent of relatedness
+between two words connected by an edge in Recursive Gloss Overlap graph. This definition graph can be considered as a Neural Tensor Network
+and each edge can be scored as a neural tensor relation between two word vertices. Cumulative sum total score of all edges in this graph is a
+quantitative intrinsic merit measure of the meaningfulness and intrinsic merit. Thus any document's definition graph is a set of tensor neurons which together decide the merit of the text. Together with Korner Entropy complexity measure, Sum of Tensor Neuron scores effectively weight the text.
+
+References:
+----------
+384.1 Neural Tensor Networks - [SocherManningNg] - http://nlp.stanford.edu/pubs/SocherChenManningNg_NIPS2013.pdf
