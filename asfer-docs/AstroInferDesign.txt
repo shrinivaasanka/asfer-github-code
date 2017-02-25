@@ -6853,7 +6853,7 @@ References:
 383.2 Entropy of Graphs - [MowshowitzDehmer] - www.mdpi.com/1099-4300/14/3/559/pdf
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-384. (THEORY) Neural Tensor Networks Reasoning and Recursive Gloss Overlap merit scoring
+384. (THEORY) Neural Tensor Networks Reasoning and Recursive Gloss Overlap merit scoring - 23 February 2017
 -----------------------------------------------------------------------------------------------------------------------------------------
 Neural Tensor Networks described in 384.1 generalizes a linear neuron into a multidimensional tensor and assigns a score for relation
 between two entities e1 and e2. This is described in the context of an ontology (e.g WordNet) where a relation between two words w1 and w2
@@ -6866,3 +6866,52 @@ quantitative intrinsic merit measure of the meaningfulness and intrinsic merit. 
 References:
 ----------
 384.1 Neural Tensor Networks - [SocherManningNg] - http://nlp.stanford.edu/pubs/SocherChenManningNg_NIPS2013.pdf
+
+----------------------------------------------------------------------------------------------------------------------------------------
+385. (THEORY) Recursive Lambda Function Growth, Random Walks on Recursive Gloss Overlap graph and Text Comprehension - 25 February 2017 - related to 46, 47, 216, 230 and 384
+----------------------------------------------------------------------------------------------------------------------------------------
+As mentioned in previous section, two word vertices x1 and x2 are connected by an edge weight determined by tensor neuron (x1 R x2) for some relation R. Human comprehension of text can be approximated by set of compositional lambda functions created from converging random walks or DFS Tree on the recursive gloss overlap graph. For example, following definition graph for a text "Flight landed on runway because
+of fuel shortage" is created from thesaurus/sdictionary/gloss definitions of an ontology:
+
+			flight -------> tyre ------> wheel ---> runway
+			  ^				|
+		          |				V
+			  |			     landing
+			fuel -----> shortage		|
+							V
+						       gear
+
+Example Random walks on previous graph:
+---------------------------------------
+			flight ---> tyre ----> wheel ---> landing ---> gear
+			flight ----> fuel ----> shortage
+If Tensor Neurons are applied for each edge, this graph is a weighted directed graph where weight is determined by Tensor Neuron. If each relation is a lambda function following the Recursive Lambda Function Compositional Growth defined in 216, every random walk can be mapped to a lambda function composition tree. For example, following random walk:
+
+			fuel ----> flight ---> tyre ----> wheel ---> landing ---> gear
+
+is tensor neuron labelled with lambda functions:
+
+			fuel --(requiredby)---> flight----(has)---> tyre ---(has)---> wheel ---(does) ---> landing ---(requires)---> gear
+
+where lambda functions for each edge with word vertices as parameters are:
+	f1 = requiredby(fuel, flight)
+	f2 = has(flight, tyre)
+	f3 = has(tyre, wheel)
+	f4 = does(wheel, landing)
+	f5 = requires(landing, gear)
+
+Composition is done left associative creating following tree recursively:
+	f5(landing,gear)
+	f4(wheel, f5(landing, gear))
+	f3(tyre, f4(wheel, f5(landing, gear)))
+	f2(flight, f3(has, f4(wheel, f5(landing, gear))))
+	f1(fuel, f2(flight, f3(tyre, f4(wheel, f5(landing, gear)))))
+
+Previous composition tree is done for each Markov Chain Random Walk on the Definition Graph. Difference between composition in 216 and previous is: Recursive Lambda Function Compositional Growth is done on a flat sentence in 216, while it is applied to a random walk on definition graph here. Because neuron tensors are equivalent to a lambda function per edge, each function fi can be made to return a relevance merit score which is fed to next layer - in essence each random walk lambda function composition tree is a multilayer tensor neuron. Similar process can be applied to paths in a DFS tree also. Inorder traversal of the composition tree yields an equivalent expanded text of original text (In above example it is "fuel requiredby flight has tyre has wheel does landing requires gear") . Each random walk results in a tree-structured multilayer tensor neuron. Equivalently, each lambda function tensor could return a pictorial meaning and each composition "operates" on the tensor arguments to return a new animated version to next level up the tree (i.e meaning is represented as visuals). Ontology required for this is an ImageNet than a WordNet.
+
+Advantage of Random Walks is it mimicks the randomness of deep learning in human text comprehension. Typical visual comprehension reads a passage atleast once scanning the keywords and inferring grammatical connectives between keywords. After keywords are known, they have to be related to infer meaning. An ontology provides paths between keywords and how they are related. After all edges and paths are known, collective meaning has to be evaluated by traversing the graph. Meaning is accrued over time by traversing the relations between keywords compositionally. This traversal is a random walk on the definition graph. Previous lambda function growth for each random walk on graph builds meaning recursively. Covering time of random walk is the number of steps required to visit all vertices. Mixing time of random walk is the number of steps required to reach stationary distribution (i.e any further random walk is no different from previous walks). These two measures have been widely studied for weighted directed graphs and are good estimators of time required to deep-learn and comprehend a text. Trivial DFS search is quite static and stationary distribution in Mixing time of random walk is the state when a text has been fully understood and any further reading does not add more meaning. Mixing time in undirected graph is proportional to Isoperimetric number or Cheeger's constant. Isoperimetry measures amount of bottleneck in a graph. For directed weighted graph, Conductance is the equivalent isoperimetric measure. When isoperimetry is high, random walk converges quickly implying faster text comprehension.  For a partition of the vertex set of a graph (S, T), conductance of the cut Φ(S,T) = u ∈ S,v ∈ T sum(a(u,v)) / minimum (sum(w ∈ S dw), sum(w ∈ T dw)) where dw = for all (w,z) sum(a(w,z)) and a(s,t) is the weight of an edge i.e tensor neuron lambda function score. PageRank of the Recusive Gloss Overlap graph is converging random walk - PageRank along with Core Number of definition graph is already known to classify texts in unsupervised setting by ranking the vertices.
+
+References:
+-----------
+385.1 Random Walks Survey - http://www.cs.elte.hu/~lovasz/erdos.pdf
+385.2 Random Walks on Weighted Directed Graphs - http://www.cs.yale.edu/homes/spielman/eigs/lect7.pdf
