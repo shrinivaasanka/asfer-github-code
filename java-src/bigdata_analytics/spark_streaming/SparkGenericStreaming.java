@@ -88,7 +88,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
   private static final Pattern SPACE = Pattern.compile(" ");
   String urlargs = "localhost";
   String host = "localhost";
-  static boolean isURLsocket=false;
+  static boolean isURLsocket=true;
   static boolean useJsoup=true;
   int port = 80;
   static SparkConf sparkConf;
@@ -124,8 +124,8 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	{
 		if(useJsoup)
 		{
-			//while(true)
-			//{
+			while(true)
+			{
 				try 
 				{
 					Document doc = 	Jsoup.connect(urlargs).get();
@@ -139,7 +139,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
 				{
 					System.out.println("Exception:" + e);
 				}
-			//}
+			}
 		}
 		else
 		{
