@@ -6915,3 +6915,22 @@ References:
 -----------
 385.1 Random Walks Survey - http://www.cs.elte.hu/~lovasz/erdos.pdf
 385.2 Random Walks on Weighted Directed Graphs - http://www.cs.yale.edu/homes/spielman/eigs/lect7.pdf
+
+----------------------------------------------------------------------------------------------------------
+386. (FEATURE-DONE) Java Spark Generic Streaming and Streaming Abstract Generator Integration - 27 February 2017
+----------------------------------------------------------------------------------------------------------
+*) Enabled URLSocket in Spark Generic Streaming and crawled an example facebook and twitter
+streaming data stored into Parquet files and Spark metastore
+*) Added Spark Streaming Data Source and Parquet Data Storage to Streaming_AbstractGenerator.py
+and updated iterator to read DataFrames from word.parquet Spark Streaming storage.
+*) Spark DataFrames are iterated by accessing word column ordinal and yielded to any application of
+interest.
+*) As an example Streaming HyperLogLogCounter implementation has been updated to read from Spark
+Parquet streaming data storage and cardinality is computed
+*) Example Spark Generic Streaming logs with URLSockets and HyperLogLogCounter with Spark Parquet
+data storage have been added to testlogs in python-src and java-src/bigdata_analytics/spark_streaming/testlogs
+*) Thus an end-to-end Java+Spark+Python streaming ETSL pipeline has been implemented where:
+                - Extract is done by JSoup crawl
+                - Transform is done by Spark RDD transformations
+                - Store is done by Spark Hive and Parquet storage
+                - Load is done by Streaming Abstract Generator iterator/facade pattern
