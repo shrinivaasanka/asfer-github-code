@@ -6934,3 +6934,6 @@ data storage have been added to testlogs in python-src and java-src/bigdata_anal
                 - Transform is done by Spark RDD transformations
                 - Store is done by Spark Hive and Parquet storage
                 - Load is done by Streaming Abstract Generator iterator/facade pattern
+*) Streaming_HyperLogLogCounter.py instantiates SparkSession from pyspark.sql. Usage of SparkSession requires executing this through spark-submit (Usual python <file> commandline doesnot work) as below:
+/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit Streaming_HyperLogLogCounter.py 2>&1 > testlogs/Streaming_HyperLogLogCounter.out.SparkStreaming.27February2017
+
