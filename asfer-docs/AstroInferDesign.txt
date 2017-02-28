@@ -6952,4 +6952,5 @@ Spark Streaming Parquet data have been committed to testlogs/
 Streaming_AbstractGenerator.py and does Markov Random Fields Clique potential sentiment analysis.
 *) Streaming_AbstractGenerator.py Spark Parquet __iter__() clause presently returns word stream which
 can be optionally made to return sentences or phrases of specific length
+*) All python streaming implementations instantiating Streaming_AbstractGenerator.py have to be executed with $SPARK_DIR/bin/spark-submit
 
