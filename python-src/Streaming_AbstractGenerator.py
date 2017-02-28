@@ -118,10 +118,11 @@ class StreamAbsGen(object):
 	def __iter__(self):
 		if self.data_storage=="Spark_Parquet":
 			spark_stream_parquet=self.spark.read.parquet("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/java-src/bigdata_analytics/spark_streaming/word.parquet")
-			spark_stream_parquet_DS=spark_stream_parquet.rdd.map(lambda row: (row.word))
+			#spark_stream_parquet_DS=spark_stream_parquet.rdd.map(lambda row: (row.word))
+			spark_stream_parquet_DS=spark_stream_parquet.rdd.filter(lambda row: row.word not in [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s','1','2','3','4','5','6','7','8','9','0'])
 			for r in spark_stream_parquet_DS.collect():
-				print "StreamiAbsGen(Spark Parquet): iterator yielding %s" % r.encode("utf-8")
-				yield r.encode("utf-8")
+				print "StreamiAbsGen(Spark Parquet): iterator yielding %s" % r.word.encode("UTF-8")
+				yield r.word.encode("UTF-8")
 		if self.data_storage=="KingCobra":
 			for i in self.inputfile:
 				print "StreamAbsGen(file storage): iterator yielding %s" % i

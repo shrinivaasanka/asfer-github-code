@@ -1,5 +1,5 @@
-#--------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,18 +10,19 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9789346927, 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch):
-#http://sourceforge.net/users/ka_shrinivaasan
-#https://www.ohloh.net/accounts/ka_shrinivaasan
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
-#--------------------------------------------------------------------------------------------------------
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
+#---------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------
 #Bloom Filter for Streamed Data:
@@ -58,7 +59,8 @@ for i in xrange(bloomfiltersize):
 
 
 #inputf=open("StreamingData.txt","r")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
 for i in inputf:
 	for k in xrange(no_of_hashfns):
 		bloom_bitset[getHashedLocation(i,k)]=1
@@ -76,7 +78,8 @@ print bloom_bitset
 
 queryoutput=1
 num_queries=0
-inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
 for t in inputf:
 	for k in xrange(no_of_hashfns):
 		queryoutput = queryoutput & bloom_bitset[getHashedLocation(t,k)]
@@ -87,5 +90,5 @@ for t in inputf:
 		print "Element [",t,"] may be member of this set"
 	queryoutput=1
 	num_queries += 1
-	if num_queries > 10:
-		break
+	#if num_queries > 10:
+	#	break

@@ -30,7 +30,8 @@ import Streaming_AbstractGenerator
 
 class BoyerMoore_MajorityVoting(object):
 	def __init__(self):
-		self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("file","file")
+		#self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("file","file")
+		self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
 		self.counter=0
 		self.element=""
 

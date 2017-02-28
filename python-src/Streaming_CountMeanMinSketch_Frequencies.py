@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,8 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
 #http://sourceforge.net/users/ka_shrinivaasan,
@@ -21,7 +22,7 @@
 #Personal website(research): https://sites.google.com/site/kuja27/
 #emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
 #kashrinivaasan@live.com
-#--------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------
 # CountMeanMinSketch Algorithm for Frequencies in Stream
@@ -83,7 +84,8 @@ for m in xrange(rows):
 #inputf=open("StreamingData.txt","r")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("Kafka","Kafka")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("Kafka","Kafka")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
 #add and populate sketch
 for i in inputf:
 	for row in xrange(rows):

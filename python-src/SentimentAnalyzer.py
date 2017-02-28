@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets 
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,14 +11,17 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 from __future__ import division
@@ -270,7 +273,7 @@ def SentimentAnalysis_RGO(text,output):
 	while current_level < 3:
 		#crucial - gather nodes which converge/overlap (have more than 1 parent)
 		if current_level > 1:
-			print current_level
+			#print current_level
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
@@ -381,8 +384,8 @@ def SentimentAnalysis_RGO(text,output):
 			ksynset=wn.synsets(k)
 			lsynset=wn.synsets(l)
 			if ksynset and lsynset:
-				print "ksynset=",ksynset[0]
-				print "lsynset=",lsynset[0]
+				#print "ksynset=",ksynset[0]
+				#print "lsynset=",lsynset[0]
 				hypoksynsets=set([i for i in ksynset[0].closure(lambda n:n.hyponyms())])
 				hyperlsynsets=set([i for i in lsynset[0].closure(lambda n:n.hypernyms())])
 				for m in hypoksynsets:
@@ -400,7 +403,7 @@ def SentimentAnalysis_RGO(text,output):
 	
 	#nx.dra	w_graphviz(nxg,prog="neato")
 	nx.draw_networkx(nxg)
-	plt.show()
+	#plt.show()
 	nxg.remove_edges_from(nxg.selfloop_edges())
 	#print "Core number =",nx.core_number(nxg)
 	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
