@@ -6995,3 +6995,16 @@ Hidden middle Layer:
 [0.07918765738490302, 0.17639329000539292, 0.3059104560477687, 0.06819897810162112, 0.13596389556531566, 0.18092367420130773]
 ###############
 -------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------
+389. (FEATURE-DONE) Convolution Network Final Neuron Layer Integrated with BackPropagation Implementation- 3 March 2017
+-------------------------------------------------------------------------------------------------------------
+*) New python module has been added to repository to invoke BackPropagation algorithm
+implementation in final neuron layer of convolution network.
+*) This creates a multilayer perceptron from maxpooling layer variables as input layer and
+backpropagates for few iterations to do weight updates.
+*) Maxpooling layer is a matrix of 5*5=25 variables. With 25 variable input layer, backpropagation
+is done on 25*25*2=1250 activation edges with weights(25 inputs * 25 hidden + 25 hidden * 25 outputs).
+*) Logs for this have been added to testlogs/
+*) Presently expected output layer has been hardcoded to some constant
+
