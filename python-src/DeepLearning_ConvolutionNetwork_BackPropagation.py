@@ -41,6 +41,8 @@
 ############################################################################################################################
 
 import math
+from PIL import Image
+import numpy
 import pprint
 import random
 import DeepLearning_BackPropagation
@@ -123,7 +125,7 @@ class DeepLearningConvolution(object):
 		rfw=0.0
 		for p in xrange(stride):
 		   for q in xrange(stride):
-			if i+p < 10 and j+q < 10:
+			if i+p < len(self.input_bitmap[0]) and j+q < len(self.input_bitmap[0]):
 			   rfw = rfw + self.input_bitmap[i+p][j+q]*self.weight[convolution_map_index][p][q]
 		return rfw	
 
@@ -169,7 +171,7 @@ class DeepLearningConvolution(object):
 			weights.append([])
 		for convmap in xrange(3):
 			for k in xrange(maxpool_map_width*maxpool_map_width*maxpool_map_width*maxpool_map_width*2):
-				weights[convmap].append(0.001)
+				weights[convmap].append(0.000001)
 		inputlayer=[]
 		hiddenlayer=[]
 		expectedoutput=[]
@@ -216,7 +218,15 @@ class DeepLearningConvolution(object):
 			hiddenlayer=[]
 			expectedoutput=[]
 		return self.max_pooling_inference
-                       
+
+def tobit(img):
+	for i in xrange(len(img[0])):
+		for k in xrange(len(img[0])):
+			if img[i][k] > 100:
+				img[i][k]=1
+			else:
+				img[i][k]=0 
+	return img
 			
 if __name__=="__main__":
 	#An example input picture bitmap with '0' inscribed as set of 1s
@@ -361,163 +371,208 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
+	im1 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg").convert("I")
+	im2 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg").convert("I")
+	im3 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg").convert("I")
+	im4 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_131709.jpg").convert("I")
+	input_image1=tobit(numpy.asarray(im1).tolist())
+	input_image2=tobit(numpy.asarray(im2).tolist())
+	input_image3=tobit(numpy.asarray(im3).tolist())
+	input_image4=tobit(numpy.asarray(im4).tolist())
+	input_image5=tobit(numpy.asarray(im4).tolist())
 
-	dlc11=DeepLearningConvolution(input_bitmap11)
-	dlc12=DeepLearningConvolution(input_bitmap12)
-	dlc21=DeepLearningConvolution(input_bitmap21)
-	dlc22=DeepLearningConvolution(input_bitmap22)
-	dlc3=DeepLearningConvolution(input_bitmap3)
-	dlc41=DeepLearningConvolution(input_bitmap41)
-	dlc42=DeepLearningConvolution(input_bitmap42)
-	dlc51=DeepLearningConvolution(input_bitmap51)
-	dlc52=DeepLearningConvolution(input_bitmap52)
+	dlim1=DeepLearningConvolution(input_image1)
+	dlim2=DeepLearningConvolution(input_image2)
+	dlim3=DeepLearningConvolution(input_image3)
+	dlim4=DeepLearningConvolution(input_image4)
+
+	#dlc11=DeepLearningConvolution(input_bitmap11)
+	#dlc12=DeepLearningConvolution(input_bitmap12)
+	#dlc21=DeepLearningConvolution(input_bitmap21)
+	#dlc22=DeepLearningConvolution(input_bitmap22)
+	#dlc3=DeepLearningConvolution(input_bitmap3)
+	#dlc41=DeepLearningConvolution(input_bitmap41)
+	#dlc42=DeepLearningConvolution(input_bitmap42)
+	#dlc51=DeepLearningConvolution(input_bitmap51)
+	#dlc52=DeepLearningConvolution(input_bitmap52)
 
 	#maximum stride is 5
 	convolution_stride=2
-	conv_map11=dlc11.convolution(convolution_stride)
-	conv_map12=dlc12.convolution(convolution_stride)
-	conv_map21=dlc21.convolution(convolution_stride)
-	conv_map22=dlc22.convolution(convolution_stride)
-	conv_map3=dlc3.convolution(convolution_stride)
-	conv_map41=dlc41.convolution(convolution_stride)
-	conv_map42=dlc42.convolution(convolution_stride)
-	conv_map51=dlc51.convolution(convolution_stride)
-	conv_map52=dlc52.convolution(convolution_stride)
+	conv_dlim1=dlim1.convolution(convolution_stride)
+	conv_dlim2=dlim2.convolution(convolution_stride)
+	conv_dlim3=dlim3.convolution(convolution_stride)
+	conv_dlim4=dlim4.convolution(convolution_stride)
+
+	#conv_map11=dlc11.convolution(convolution_stride)
+	#conv_map12=dlc12.convolution(convolution_stride)
+	#conv_map21=dlc21.convolution(convolution_stride)
+	#conv_map22=dlc22.convolution(convolution_stride)
+	#conv_map3=dlc3.convolution(convolution_stride)
+	#conv_map41=dlc41.convolution(convolution_stride)
+	#conv_map42=dlc42.convolution(convolution_stride)
+	#conv_map51=dlc51.convolution(convolution_stride)
+	#conv_map52=dlc52.convolution(convolution_stride)
 
 	#maximum pool sliding window width is 5
 	pool_slidewindow_width=2
-	pool_map11=dlc11.max_pooling(pool_slidewindow_width)
-	pool_map12=dlc12.max_pooling(pool_slidewindow_width)
-	pool_map21=dlc21.max_pooling(pool_slidewindow_width)
-	pool_map22=dlc22.max_pooling(pool_slidewindow_width)
-	pool_map3=dlc3.max_pooling(pool_slidewindow_width)
-	pool_map41=dlc41.max_pooling(pool_slidewindow_width)
-	pool_map42=dlc42.max_pooling(pool_slidewindow_width)
-	pool_map51=dlc51.max_pooling(pool_slidewindow_width)
-	pool_map52=dlc52.max_pooling(pool_slidewindow_width)
+	pool_dlim1=dlim1.max_pooling(pool_slidewindow_width)
+	pool_dlim2=dlim2.max_pooling(pool_slidewindow_width)
+	pool_dlim3=dlim3.max_pooling(pool_slidewindow_width)
+	pool_dlim4=dlim4.max_pooling(pool_slidewindow_width)
+
+	#pool_map11=dlc11.max_pooling(pool_slidewindow_width)
+	#pool_map12=dlc12.max_pooling(pool_slidewindow_width)
+	#pool_map21=dlc21.max_pooling(pool_slidewindow_width)
+	#pool_map22=dlc22.max_pooling(pool_slidewindow_width)
+	#pool_map3=dlc3.max_pooling(pool_slidewindow_width)
+	#pool_map41=dlc41.max_pooling(pool_slidewindow_width)
+	#pool_map42=dlc42.max_pooling(pool_slidewindow_width)
+	#pool_map51=dlc51.max_pooling(pool_slidewindow_width)
+	#pool_map52=dlc52.max_pooling(pool_slidewindow_width)
 
 	print "##########################################"
 	print "Set of Convolution Maps"
 	print "##########################################"
-	print "Example 11:"
-	print "###########"
-	pprint.pprint(conv_map11)
-	print "###########"
-	print "Example 12:"
-	print "###########"
-	pprint.pprint(conv_map12)
-	print "###########"
-	print "Example 21:"
-	print "###########"
-	pprint.pprint(conv_map21)
-	print "###########"
-	print "Example 22:"
-	print "###########"
-	pprint.pprint(conv_map22)
-	print "###########"
-	print "Example 3:"
-	print "###########"
-	pprint.pprint(conv_map3)
-	print "###########"
-	print "Example 41:"
-	print "###########"
-	pprint.pprint(conv_map41)
-	print "###########"
-	print "Example 42:"
-	print "###########"
-	pprint.pprint(conv_map42)
-	print "###########"
-	print "Example 51:"
-	print "###########"
-	pprint.pprint(conv_map51)
-	print "###########"
-	print "Example 52:"
-	print "###########"
-	pprint.pprint(conv_map52)
+	print conv_dlim1
+	print conv_dlim2
+	print conv_dlim3
+	print conv_dlim4
+
+	#print "Example 11:"
+	#print "###########"
+	#pprint.pprint(conv_map11)
+	#print "###########"
+	#print "Example 12:"
+	#print "###########"
+	#pprint.pprint(conv_map12)
+	#print "###########"
+	#print "Example 21:"
+	#print "###########"
+	#pprint.pprint(conv_map21)
+	#print "###########"
+	#print "Example 22:"
+	#print "###########"
+	#pprint.pprint(conv_map22)
+	#print "###########"
+	#print "Example 3:"
+	#print "###########"
+	#pprint.pprint(conv_map3)
+	#print "###########"
+	#print "Example 41:"
+	#print "###########"
+	#pprint.pprint(conv_map41)
+	#print "###########"
+	#print "Example 42:"
+	#print "###########"
+	#pprint.pprint(conv_map42)
+	#print "###########"
+	#print "Example 51:"
+	#print "###########"
+	#pprint.pprint(conv_map51)
+	#print "###########"
+	#print "Example 52:"
+	#print "###########"
+	#pprint.pprint(conv_map52)
+
 	print "##########################################"
 	print "Max Pooling Map"
 	print "##########################################"
-	print "Example 11:"
-	print "###########"
-	pprint.pprint(pool_map11)
-	print "###########"
-	print "Example 12:"
-	print "###########"
-	pprint.pprint(pool_map12)
-	print "###########"
-	print "Example 21:"
-	print "###########"
-	pprint.pprint(pool_map21)
-	print "###########"
-	print "Example 22:"
-	print "###########"
-	pprint.pprint(pool_map22)
-	print "###########"
-	print "Example 3:"
-	print "###########"
-	pprint.pprint(pool_map3)
-	print "###########"
-	print "Example 41:"
-	print "###########"
-	pprint.pprint(pool_map41)
-	print "###########"
-	print "Example 42:"
-	print "###########"
-	pprint.pprint(pool_map42)
-	print "###########"
-	print "Example 51:"
-	print "###########"
-	pprint.pprint(pool_map51)
-	print "###########"
-	print "Example 52:"
-	print "###########"
-	pprint.pprint(pool_map52)
+	print pool_dlim1
+	print pool_dlim2
+	print pool_dlim3
+	print pool_dlim4
+
+	#print "Example 11:"
+	#print "###########"
+	#pprint.pprint(pool_map11)
+	#print "###########"
+	#print "Example 12:"
+	#print "###########"
+	#pprint.pprint(pool_map12)
+	#print "###########"
+	#print "Example 21:"
+	#print "###########"
+	#pprint.pprint(pool_map21)
+	#print "###########"
+	#print "Example 22:"
+	#print "###########"
+	#pprint.pprint(pool_map22)
+	#print "###########"
+	#print "Example 3:"
+	#print "###########"
+	#pprint.pprint(pool_map3)
+	#print "###########"
+	#print "Example 41:"
+	#print "###########"
+	#pprint.pprint(pool_map41)
+	#print "###########"
+	#print "Example 42:"
+	#print "###########"
+	#pprint.pprint(pool_map42)
+	#print "###########"
+	#print "Example 51:"
+	#print "###########"
+	#pprint.pprint(pool_map51)
+	#print "###########"
+	#print "Example 52:"
+	#print "###########"
+	#pprint.pprint(pool_map52)
+
 	maxpool_map_width=5
 	
 	print "###########################################################################################"
 	print "Final Layer of Inference from Max Pooling Layer - BackPropagation on Max Pooling Layer Neurons"
 	print "###########################################################################################"
-	print "Example 11:"
-	print "###########"
-	dlc11infer=dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 11:",dlc11infer)
-	print "###########"
-	print "Example 12:"
-	print "###########"
-	dlc12infer=dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 12:",dlc12infer)
-	print "###########"
-	print "Example 21:"
-	print "###########"
-	dlc21infer=dlc21.infer_from_max_pooling(pool_map21,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 21:",dlc21infer)
-	print "###########"
-	print "Example 22:"
-	print "###########"
-	dlc22infer=dlc22.infer_from_max_pooling(pool_map22,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 22:",dlc22infer)
-	print "###########"
-	print "Example 3:"
-	print "###########"
-	dlc3infer=dlc3.infer_from_max_pooling(pool_map3,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 3:",dlc3infer)
-	print "###########"
-	print "Example 41:"
-	print "###########"
-	dlc41infer=dlc41.infer_from_max_pooling(pool_map41,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 41:",dlc41infer)
-	print "###########"
-	print "Example 42:"
-	print "###########"
-	dlc42infer=dlc42.infer_from_max_pooling(pool_map42,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 42:",dlc42infer)
-	print "###########"
-	print "Example 51:"
-	print "###########"
-	dlc51infer=dlc51.infer_from_max_pooling(pool_map51,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 51:",dlc51infer)
-	print "###########"
-	print "Example 52:"
-	print "###########"
-	dlc52infer=dlc52.infer_from_max_pooling(pool_map52,maxpool_map_width)
-	print("Inference from Max Pooling Layer - Example 52:",dlc52infer)
+	dlim1infer=dlim1.infer_from_max_pooling(pool_dlim1,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim1infer
+	dlim2infer=dlim2.infer_from_max_pooling(pool_dlim2,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim2infer
+	dlim3infer=dlim3.infer_from_max_pooling(pool_dlim3,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim3infer
+	dlim4infer=dlim4.infer_from_max_pooling(pool_dlim4,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim4infer
+
+	#print "Example 11:"
+	#print "###########"
+	#dlc11infer=dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 11:",dlc11infer)
+	#print "###########"
+	#print "Example 12:"
+	#print "###########"
+	#dlc12infer=dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 12:",dlc12infer)
+	#print "###########"
+	#print "Example 21:"
+	#print "###########"
+	#dlc21infer=dlc21.infer_from_max_pooling(pool_map21,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 21:",dlc21infer)
+	#print "###########"
+	#print "Example 22:"
+	#print "###########"
+	#dlc22infer=dlc22.infer_from_max_pooling(pool_map22,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 22:",dlc22infer)
+	#print "###########"
+	#print "Example 3:"
+	#print "###########"
+	#dlc3infer=dlc3.infer_from_max_pooling(pool_map3,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 3:",dlc3infer)
+	#print "###########"
+	#print "Example 41:"
+	#print "###########"
+	#dlc41infer=dlc41.infer_from_max_pooling(pool_map41,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 41:",dlc41infer)
+	#print "###########"
+	#print "Example 42:"
+	#print "###########"
+	#dlc42infer=dlc42.infer_from_max_pooling(pool_map42,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 42:",dlc42infer)
+	#print "###########"
+	#print "Example 51:"
+	#print "###########"
+	#dlc51infer=dlc51.infer_from_max_pooling(pool_map51,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 51:",dlc51infer)
+	#print "###########"
+	#print "Example 52:"
+	#print "###########"
+	#dlc52infer=dlc52.infer_from_max_pooling(pool_map52,maxpool_map_width)
+	#print("Inference from Max Pooling Layer - Example 52:",dlc52infer)
