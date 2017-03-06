@@ -7062,5 +7062,12 @@ Hermitian Real Symmetric matrices have real eigenvalues which is true for undire
 
 References:
 -----------
-390.1 Complex Analysis - [Lahs Alfors] - Page 213 - Product Development, Riemann Zeta Function and Prime Numbers
+390.1 Complex Analysis - [Lahs Ahlfors] - Page 213 - Product Development, Riemann Zeta Function and Prime Numbers
 390.2 Honeycombs and Sums of Hermitian Matrices - http://www.ams.org/notices/200102/fea-knutson.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------
+391. (FEATURE-DONE) DeepLearning (ConvolutionNetwork-BackPropagation) JPEG files with Python Imaging Library (PILlow)
+---------------------------------------------------------------------------------------------------------------------
+*) Added import of PIL Image library to open any image file and convert into a matrix in Integer mode
+*) This matrix is input to Convolution and BackPropagation code
+*) Logs of Convolution and BackPropagation for sample images have been committed to testlogs/
