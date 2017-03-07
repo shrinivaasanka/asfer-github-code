@@ -171,7 +171,7 @@ class DeepLearningConvolution(object):
 			weights.append([])
 		for convmap in xrange(3):
 			for k in xrange(maxpool_map_width*maxpool_map_width*maxpool_map_width*maxpool_map_width*2):
-				weights[convmap].append(0.000001)
+				weights[convmap].append(0.01)
 		inputlayer=[]
 		hiddenlayer=[]
 		expectedoutput=[]
@@ -182,12 +182,12 @@ class DeepLearningConvolution(object):
 				for q in xrange(maxpool_map_width):
         				inputlayer.append(max_pooling_map[convmap][p][q])
         				hiddenlayer.append(0.1)
-        				expectedoutput.append(0.1)
+					expectedoutput.append(0.1*max_pooling_map[convmap][p][q])
         		bpnn=DeepLearning_BackPropagation.BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights[convmap])
         		bpnn.compute_neural_network()
 			#bpnn.print_layers()
 			iter=0
-		        while iter < 30:
+		        while iter < 100:
                			 for m in xrange(len(inputlayer)):
 		                        for l in xrange(len(inputlayer)):
                 		               bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
@@ -220,12 +220,11 @@ class DeepLearningConvolution(object):
 		return self.max_pooling_inference
 
 def tobit(img):
+	print "Image before tobit():",img
 	for i in xrange(len(img[0])):
 		for k in xrange(len(img[0])):
-			if img[i][k] > 100:
-				img[i][k]=1
-			else:
-				img[i][k]=0 
+			img[i][k]=img[i][k]*0.001
+	print "Image after tobit():",img
 	return img
 			
 if __name__=="__main__":
