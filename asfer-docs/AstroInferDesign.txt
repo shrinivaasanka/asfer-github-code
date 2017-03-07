@@ -7071,3 +7071,11 @@ References:
 *) Added import of PIL Image library to open any image file and convert into a matrix in Integer mode
 *) This matrix is input to Convolution and BackPropagation code
 *) Logs of Convolution and BackPropagation for sample images have been committed to testlogs/
+
+------------------------------------------------------------------------------------------------------------------------------------
+392. (FEATURE-DONE) DeepLearning (ConvolutionNetwork-BackPropagation) tobit() update - 7 March 2017
+------------------------------------------------------------------------------------------------------------------------------------
+*) Updated python-src/DeepLearning_ConvolutionNetwork_BackPropagation.py tobit() function to map each pixel to a decimal value < 1
+*) Increased BackPropagation iteration to 100.
+*) Logs for this have been committed to testlogs/. With this final neurons for max pooling layer are sensitive to changes in image pixels
+
