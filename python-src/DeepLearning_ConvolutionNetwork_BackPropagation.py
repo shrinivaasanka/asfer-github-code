@@ -46,30 +46,31 @@ import numpy
 import pprint
 import random
 import DeepLearning_BackPropagation
+import ImageToBitMatrix 
 
 class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
 		self.sigmoidPerceptron=False
 	        self.input_bitmap = input_bitmap
 		self.max_pooling_inference = []
-		self.weight=[[[0.5,0.5,0.5,0.5,0.5],
-			      [0.5,0.9,0.9,0.9,0.5],
-			      [0.5,0.9,0.9,0.9,0.5],
-			      [0.5,0.9,0.9,0.9,0.5],
-			      [0.5,0.9,0.9,0.9,0.5],
-			      [0.5,0.5,0.5,0.5,0.5]],
-			     [[0.6,0.6,0.6,0.6,0.6],
-			      [0.6,0.9,0.9,0.9,0.6],
-			      [0.6,0.9,0.9,0.9,0.6],
-			      [0.6,0.9,0.9,0.9,0.6],
-			      [0.6,0.9,0.9,0.9,0.6],
-			      [0.6,0.6,0.6,0.6,0.6]],
-			     [[0.7,0.7,0.7,0.7,0.7],
-			      [0.7,0.9,0.9,0.9,0.7],
-			      [0.7,0.9,0.9,0.9,0.7],
-			      [0.7,0.9,0.9,0.9,0.7],
-			      [0.7,0.9,0.9,0.9,0.7],
-			      [0.7,0.7,0.7,0.7,0.7]]]
+		self.weight=[[[0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07],
+			      [0.07,0.07,0.07,0.07,0.07]],
+			     [[0.08,0.08,0.08,0.08,0.08],
+			      [0.08,0.08,0.08,0.08,0.08],
+			      [0.08,0.08,0.08,0.08,0.08],
+			      [0.08,0.08,0.08,0.08,0.08],
+			      [0.08,0.08,0.08,0.08,0.08],
+			      [0.08,0.08,0.08,0.08,0.08]],
+			     [[0.09,0.09,0.09,0.09,0.09],
+			      [0.09,0.09,0.09,0.09,0.09],
+			      [0.09,0.09,0.09,0.09,0.09],
+			      [0.09,0.09,0.09,0.09,0.09],
+			      [0.09,0.09,0.09,0.09,0.09],
+			      [0.09,0.09,0.09,0.09,0.09]]]
 		self.convolution_map=[[[0,0,0,0,0,0,0,0,0,0],
  	      			       [0,0,0,0,0,0,0,0,0,0],
 	     			       [0,0,0,0,0,0,0,0,0,0],
@@ -126,14 +127,16 @@ class DeepLearningConvolution(object):
 		for p in xrange(stride):
 		   for q in xrange(stride):
 			if i+p < len(self.input_bitmap[0]) and j+q < len(self.input_bitmap[0]):
+			   #dynamic_weight=self.weight[convolution_map_index][p][q]*self.input_bitmap[i+p][j+q]*(p+q+1)/(p*q+1)
 			   rfw = rfw + self.input_bitmap[i+p][j+q]*self.weight[convolution_map_index][p][q]
-		return rfw	
+			   #rfw = rfw + self.input_bitmap[i+p][j+q]*dynamic_weight
+		return rfw
 
 	def convolution(self,stride):
 		for convolution_map_index in xrange(3):
 			for i in xrange(10):
 		   		 for j in xrange(10):
-                       			 self.convolution_map[convolution_map_index][i][j] = self.sigmoid(self.bias+self.receptive_field_window(i,j,stride,convolution_map_index))
+					self.convolution_map[convolution_map_index][i][j] = self.bias+self.receptive_field_window(i,j,stride,convolution_map_index)
 			convolution_map_index+=1
 		return self.convolution_map	
 
@@ -187,7 +190,7 @@ class DeepLearningConvolution(object):
         		bpnn.compute_neural_network()
 			#bpnn.print_layers()
 			iter=0
-		        while iter < 100:
+		        while iter < 10:
                			 for m in xrange(len(inputlayer)):
 		                        for l in xrange(len(inputlayer)):
                 		               bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
@@ -219,14 +222,6 @@ class DeepLearningConvolution(object):
 			expectedoutput=[]
 		return self.max_pooling_inference
 
-def tobit(img):
-	print "Image before tobit():",img
-	for i in xrange(len(img[0])):
-		for k in xrange(len(img[0])):
-			img[i][k]=img[i][k]*0.001
-	print "Image after tobit():",img
-	return img
-			
 if __name__=="__main__":
 	#An example input picture bitmap with '0' inscribed as set of 1s
 	input_bitmap11=[[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -370,64 +365,73 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-	im1 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg").convert("I")
-	im2 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg").convert("I")
-	im3 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg").convert("I")
-	im4 = Image.open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_131709.jpg").convert("I")
-	input_image1=tobit(numpy.asarray(im1).tolist())
-	input_image2=tobit(numpy.asarray(im2).tolist())
-	input_image3=tobit(numpy.asarray(im3).tolist())
-	input_image4=tobit(numpy.asarray(im4).tolist())
-	input_image5=tobit(numpy.asarray(im4).tolist())
+	input_image1 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
+	input_image2 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg")
+	input_image3 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg")
+	input_image4 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_131709.jpg")
+	input_image5 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg")
+	input_image6 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+	input_image7 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf2_1.jpg")
+	input_image8 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
 
 	dlim1=DeepLearningConvolution(input_image1)
 	dlim2=DeepLearningConvolution(input_image2)
 	dlim3=DeepLearningConvolution(input_image3)
 	dlim4=DeepLearningConvolution(input_image4)
+	dlim5=DeepLearningConvolution(input_image5)
+	dlim6=DeepLearningConvolution(input_image6)
+	dlim7=DeepLearningConvolution(input_image7)
+	dlim8=DeepLearningConvolution(input_image8)
 
-	#dlc11=DeepLearningConvolution(input_bitmap11)
-	#dlc12=DeepLearningConvolution(input_bitmap12)
-	#dlc21=DeepLearningConvolution(input_bitmap21)
-	#dlc22=DeepLearningConvolution(input_bitmap22)
-	#dlc3=DeepLearningConvolution(input_bitmap3)
-	#dlc41=DeepLearningConvolution(input_bitmap41)
-	#dlc42=DeepLearningConvolution(input_bitmap42)
-	#dlc51=DeepLearningConvolution(input_bitmap51)
-	#dlc52=DeepLearningConvolution(input_bitmap52)
+	dlc11=DeepLearningConvolution(input_bitmap11)
+	dlc12=DeepLearningConvolution(input_bitmap12)
+	dlc21=DeepLearningConvolution(input_bitmap21)
+	dlc22=DeepLearningConvolution(input_bitmap22)
+	dlc3=DeepLearningConvolution(input_bitmap3)
+	dlc41=DeepLearningConvolution(input_bitmap41)
+	dlc42=DeepLearningConvolution(input_bitmap42)
+	dlc51=DeepLearningConvolution(input_bitmap51)
+	dlc52=DeepLearningConvolution(input_bitmap52)
 
-	#maximum stride is 5
-	convolution_stride=2
+	convolution_stride=5
 	conv_dlim1=dlim1.convolution(convolution_stride)
 	conv_dlim2=dlim2.convolution(convolution_stride)
 	conv_dlim3=dlim3.convolution(convolution_stride)
 	conv_dlim4=dlim4.convolution(convolution_stride)
+	conv_dlim5=dlim5.convolution(convolution_stride)
+	conv_dlim6=dlim6.convolution(convolution_stride)
+	conv_dlim7=dlim7.convolution(convolution_stride)
+	conv_dlim8=dlim8.convolution(convolution_stride)
 
-	#conv_map11=dlc11.convolution(convolution_stride)
-	#conv_map12=dlc12.convolution(convolution_stride)
-	#conv_map21=dlc21.convolution(convolution_stride)
-	#conv_map22=dlc22.convolution(convolution_stride)
-	#conv_map3=dlc3.convolution(convolution_stride)
-	#conv_map41=dlc41.convolution(convolution_stride)
-	#conv_map42=dlc42.convolution(convolution_stride)
-	#conv_map51=dlc51.convolution(convolution_stride)
-	#conv_map52=dlc52.convolution(convolution_stride)
+	conv_map11=dlc11.convolution(convolution_stride)
+	conv_map12=dlc12.convolution(convolution_stride)
+	conv_map21=dlc21.convolution(convolution_stride)
+	conv_map22=dlc22.convolution(convolution_stride)
+	conv_map3=dlc3.convolution(convolution_stride)
+	conv_map41=dlc41.convolution(convolution_stride)
+	conv_map42=dlc42.convolution(convolution_stride)
+	conv_map51=dlc51.convolution(convolution_stride)
+	conv_map52=dlc52.convolution(convolution_stride)
 
-	#maximum pool sliding window width is 5
 	pool_slidewindow_width=2
 	pool_dlim1=dlim1.max_pooling(pool_slidewindow_width)
 	pool_dlim2=dlim2.max_pooling(pool_slidewindow_width)
 	pool_dlim3=dlim3.max_pooling(pool_slidewindow_width)
 	pool_dlim4=dlim4.max_pooling(pool_slidewindow_width)
+	pool_dlim5=dlim5.max_pooling(pool_slidewindow_width)
+	pool_dlim6=dlim6.max_pooling(pool_slidewindow_width)
+	pool_dlim7=dlim7.max_pooling(pool_slidewindow_width)
+	pool_dlim8=dlim8.max_pooling(pool_slidewindow_width)
 
-	#pool_map11=dlc11.max_pooling(pool_slidewindow_width)
-	#pool_map12=dlc12.max_pooling(pool_slidewindow_width)
-	#pool_map21=dlc21.max_pooling(pool_slidewindow_width)
-	#pool_map22=dlc22.max_pooling(pool_slidewindow_width)
-	#pool_map3=dlc3.max_pooling(pool_slidewindow_width)
-	#pool_map41=dlc41.max_pooling(pool_slidewindow_width)
-	#pool_map42=dlc42.max_pooling(pool_slidewindow_width)
-	#pool_map51=dlc51.max_pooling(pool_slidewindow_width)
-	#pool_map52=dlc52.max_pooling(pool_slidewindow_width)
+	pool_map11=dlc11.max_pooling(pool_slidewindow_width)
+	pool_map12=dlc12.max_pooling(pool_slidewindow_width)
+	pool_map21=dlc21.max_pooling(pool_slidewindow_width)
+	pool_map22=dlc22.max_pooling(pool_slidewindow_width)
+	pool_map3=dlc3.max_pooling(pool_slidewindow_width)
+	pool_map41=dlc41.max_pooling(pool_slidewindow_width)
+	pool_map42=dlc42.max_pooling(pool_slidewindow_width)
+	pool_map51=dlc51.max_pooling(pool_slidewindow_width)
+	pool_map52=dlc52.max_pooling(pool_slidewindow_width)
 
 	print "##########################################"
 	print "Set of Convolution Maps"
@@ -436,6 +440,10 @@ if __name__=="__main__":
 	print conv_dlim2
 	print conv_dlim3
 	print conv_dlim4
+	print conv_dlim5
+	print conv_dlim6
+	print conv_dlim7
+	print conv_dlim8
 
 	#print "Example 11:"
 	#print "###########"
@@ -480,6 +488,10 @@ if __name__=="__main__":
 	print pool_dlim2
 	print pool_dlim3
 	print pool_dlim4
+	print pool_dlim5
+	print pool_dlim6
+	print pool_dlim7
+	print pool_dlim8
 
 	#print "Example 11:"
 	#print "###########"
@@ -530,48 +542,56 @@ if __name__=="__main__":
 	print "Inference from Max Pooling Layer - Image:",dlim3infer
 	dlim4infer=dlim4.infer_from_max_pooling(pool_dlim4,maxpool_map_width)
 	print "Inference from Max Pooling Layer - Image:",dlim4infer
+	dlim5infer=dlim5.infer_from_max_pooling(pool_dlim5,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim5infer
+	dlim6infer=dlim6.infer_from_max_pooling(pool_dlim6,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim6infer
+	dlim7infer=dlim7.infer_from_max_pooling(pool_dlim7,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim7infer
+	dlim8infer=dlim8.infer_from_max_pooling(pool_dlim8,maxpool_map_width)
+	print "Inference from Max Pooling Layer - Image:",dlim8infer
 
 	#print "Example 11:"
 	#print "###########"
-	#dlc11infer=dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 11:",dlc11infer)
+	dlc11infer=dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 11:",dlc11infer)
 	#print "###########"
 	#print "Example 12:"
 	#print "###########"
-	#dlc12infer=dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 12:",dlc12infer)
+	dlc12infer=dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 12:",dlc12infer)
 	#print "###########"
 	#print "Example 21:"
 	#print "###########"
-	#dlc21infer=dlc21.infer_from_max_pooling(pool_map21,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 21:",dlc21infer)
+	dlc21infer=dlc21.infer_from_max_pooling(pool_map21,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 21:",dlc21infer)
 	#print "###########"
 	#print "Example 22:"
 	#print "###########"
-	#dlc22infer=dlc22.infer_from_max_pooling(pool_map22,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 22:",dlc22infer)
+	dlc22infer=dlc22.infer_from_max_pooling(pool_map22,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 22:",dlc22infer)
 	#print "###########"
 	#print "Example 3:"
 	#print "###########"
-	#dlc3infer=dlc3.infer_from_max_pooling(pool_map3,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 3:",dlc3infer)
+	dlc3infer=dlc3.infer_from_max_pooling(pool_map3,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 3:",dlc3infer)
 	#print "###########"
 	#print "Example 41:"
 	#print "###########"
-	#dlc41infer=dlc41.infer_from_max_pooling(pool_map41,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 41:",dlc41infer)
+	dlc41infer=dlc41.infer_from_max_pooling(pool_map41,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 41:",dlc41infer)
 	#print "###########"
 	#print "Example 42:"
 	#print "###########"
-	#dlc42infer=dlc42.infer_from_max_pooling(pool_map42,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 42:",dlc42infer)
+	dlc42infer=dlc42.infer_from_max_pooling(pool_map42,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 42:",dlc42infer)
 	#print "###########"
 	#print "Example 51:"
 	#print "###########"
-	#dlc51infer=dlc51.infer_from_max_pooling(pool_map51,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 51:",dlc51infer)
+	dlc51infer=dlc51.infer_from_max_pooling(pool_map51,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 51:",dlc51infer)
 	#print "###########"
 	#print "Example 52:"
 	#print "###########"
-	#dlc52infer=dlc52.infer_from_max_pooling(pool_map52,maxpool_map_width)
-	#print("Inference from Max Pooling Layer - Example 52:",dlc52infer)
+	dlc52infer=dlc52.infer_from_max_pooling(pool_map52,maxpool_map_width)
+	print("Inference from Max Pooling Layer - Example 52:",dlc52infer)
