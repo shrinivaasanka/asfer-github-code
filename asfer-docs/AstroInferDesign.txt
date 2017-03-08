@@ -7128,3 +7128,28 @@ Contrasting this with bitmap numerals inscribed in 2 dimensional arrays (with lo
 [Letter X - Font 2] ('Inference from Max Pooling Layer - Example 42:', [0.22669904395788065, 0.26336097548290116, 0.3065443950445386])
 [Number 1 - Font 1] ('Inference from Max Pooling Layer - Example 51:', [0.11935155170571034, 0.12477637373255022, 0.12911872514904305])
 [Number 1 - Font 2] ('Inference from Max Pooling Layer - Example 52:', [0.12675869649313706, 0.12051203261825084, 0.10578392639393523])
+
+---------------------------------------------------------------------------------------------------------------------
+394. (THEORY) Coloring Real Numbers and Complement Functions - 8 March 2017 - related to 323, 338
+---------------------------------------------------------------------------------------------------------------------
+So far equivalence of 2-coloring schemes and integer valued complement functions have been mentioned. Most generic problem in this class
+is to find coloring schemes (or) functions which "complement" real and complex n-dimensional surfaces(i.e sets of values of a function f and
+its complement g create a disjoint set cover of the real/complex planes). Ramsey theory pertains to coloring integer sequences. 394.1 defines
+the problem of coloring the real line as minimum number of colors required to color the real line such that no two points within some specific distance (which in turn is an element of a distance set) are of same color. In Graph theory terms, this reduces to chromatic number of a
+graph where two vertices a and b are adjacent iff distance between a and b on real line is in distance set. This is stricter requirement
+of coloring compared to complementation and complement graphs representation mentioned in 338. For example, following complementation of [1,2]:
+	f(0) = [1.0,1.11]
+		g(0) = [1.12,1.23]
+	f(1) = [1.24,1.30]
+		g(1) = [1.31,1.68]
+	f(2) = [1.69,2.0]
+has colored regions of length [0.11,0.11,0.06,0.37,0.31] and can be 2-colored with f and g. If the distance set is {0.01,0.02} two
+points 1.32 and 1.33 are 0.01 apart but have same color (belong to same function g). Similarly points 1.69 and 1.71 are 0.02 apart but
+have same color f. Thus complementation over reals relaxes the coloring conditions significantly. Coloring real line is a special case of
+complementation with distance set requirement while Coloring integers is equivalent to complementation. Rather, distance set for real
+complementation is of size 1 containing length of largest monochromatic streak - in previous example it is {0.37}.
+
+References:
+----------
+394.1 Coloring Real Line - [EggletonErdosSkilton] - http://ac.els-cdn.com/0095895685900395/1-s2.0-0095895685900395-main.pdf?_tid=3b53ab92-03ec-11e7-870e-00000aab0f01&acdnat=1488970060_784d7a37e58d4662a8e474c62a6c8ae7
+394.2 Coloring Reals - http://webbuild.knu.ac.kr/~trj/HN.pdf
