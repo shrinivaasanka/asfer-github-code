@@ -7111,4 +7111,20 @@ Inference from Max Pooling Layer - Image: [0.08761036574911765, 0.09113121170496
 ('Inference from Max Pooling Layer - Example 42:', [0.22669904395788065, 0.26336097548290116, 0.3065443950445386])
 ('Inference from Max Pooling Layer - Example 51:', [0.11935155170571034, 0.12477637373255022, 0.12911872514904305])
 ('Inference from Max Pooling Layer - Example 52:', [0.12675869649313706, 0.12051203261825084, 0.10578392639393523])
+----------------------------------------------------------
+Previous logs are grep-ed from testlogs/. Handwritten Numeral recognitions (with high noise) are done in following Maxpooling inferences:
+[Number 1 - Font 1] Inference from Max Pooling Layer - Image: [0.07847441088145349, 0.0807616625716103, 0.08303607840796547]
+[Number 1 - Font 2] Inference from Max Pooling Layer - Image: [0.08983732685398557, 0.09365789540391084, 0.09744765711798722]
+[Number 2] Inference from Max Pooling Layer - Image: [0.0903328782140764, 0.09421672093823663, 0.09806798136073994]
+[Number 8] Inference from Max Pooling Layer - Image: [0.08761036574911765, 0.09113121170496671, 0.09462405037074482]
 
+Contrasting this with bitmap numerals inscribed in 2 dimensional arrays (with low noise), similar elements have close enough values:
+[Number 0 - Font 1] ('Inference from Max Pooling Layer - Example 11:', [0.1619896774094416, 0.1615169723530323, 0.15009965578039716])
+[Number 0 - Font 2] ('Inference from Max Pooling Layer - Example 12:', [0.14303879829783814, 0.12068614560924568, 0.07211705852669059])
+[Number 8 - Font 1] ('Inference from Max Pooling Layer - Example 21:', [0.1932801269861012, 0.11587916253160746, -0.007889615456070018])
+[Number 8 - Font 2] ('Inference from Max Pooling Layer - Example 22:', [0.17605214289097237, 0.19326380725531284, 0.2114152778184319])
+[Null pattern] ('Inference from Max Pooling Layer - Example 3:', [0.062097695970929206, 0.062097695970929206, 0.062097695970929206])
+[Letter X - Font 1] [('Inference from Max Pooling Layer - Example 41:', [0.2976324086103368, 0.32891470561393965, 0.34986397693929844])
+[Letter X - Font 2] ('Inference from Max Pooling Layer - Example 42:', [0.22669904395788065, 0.26336097548290116, 0.3065443950445386])
+[Number 1 - Font 1] ('Inference from Max Pooling Layer - Example 51:', [0.11935155170571034, 0.12477637373255022, 0.12911872514904305])
+[Number 1 - Font 2] ('Inference from Max Pooling Layer - Example 52:', [0.12675869649313706, 0.12051203261825084, 0.10578392639393523])
