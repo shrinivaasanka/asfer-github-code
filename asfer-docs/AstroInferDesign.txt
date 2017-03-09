@@ -7153,3 +7153,11 @@ References:
 ----------
 394.1 Coloring Real Line - [EggletonErdosSkilton] - http://ac.els-cdn.com/0095895685900395/1-s2.0-0095895685900395-main.pdf?_tid=3b53ab92-03ec-11e7-870e-00000aab0f01&acdnat=1488970060_784d7a37e58d4662a8e474c62a6c8ae7
 394.2 Coloring Reals - http://webbuild.knu.ac.kr/~trj/HN.pdf
+
+--------------------------------------------------------------------------------------------------------------------------------------
+395. (FEATURE-DONE) Deep Learning Recurrent Neural Network Gated Recurrent Unit (RNN GRU) Implementation - 9 March 2017
+--------------------------------------------------------------------------------------------------------------------------------------
+*) This commit implements Gated Recurrent Unit algorithm (most recent advance in deep learning - published in 2014) which is a
+simplification of RNN LSTM by reducing number of gates (input, cell, forget, output are mapped to cell, reset, update)
+*) Logs for this have been uploaded to testlogs/ showing convergence of gates and state.
+
