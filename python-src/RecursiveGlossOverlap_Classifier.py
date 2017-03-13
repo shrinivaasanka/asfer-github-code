@@ -125,6 +125,125 @@ def get_jaccard_coefficient(refanswer, candidanswer):
 def shingles(phrase):
 	return bigrams(nltk.word_tokenize(phrase))
 
+def RecursiveGlossOverlapGraph(text):
+	definitiongraphedges=defaultdict(list)
+	definitiongraphedgelabels=defaultdict(list)
+
+	#---------------------------------------------------------------------------------
+	#2.Compute intrinsic merit (either using linear or quadratic overlap)
+	#---------------------------------------------------------------------------------
+	tokenized = nltk.word_tokenize(text)
+	fdist1 = FreqDist(tokenized)
+	stopwords = nltk.corpus.stopwords.words('english')
+	stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
+	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
+	#at present tfidf filter is not applied
+	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
+	freqterms1 = [w.decode("utf-8") for w in fdist1.keys() if w not in stopwords and w not in puncts]
+
+	current_level = 1
+	nodewithmaxparents = ''
+	noofparents = 0
+	maxparents = 0
+	relatedness = 0
+	first_convergence_level = 1
+	tokensofthislevel = []
+	convergingterms = []
+	convergingparents = []
+	tokensofprevlevel = []
+	prevlevelsynsets = []
+	commontokens = []
+	vertices = 0
+	edges = 0
+	overlap = 0
+	iter = 0
+	from nltk.corpus import wordnet as wn
+
+	#recurse down to required depth and update intrinsic merit score
+	#relatedness is either sum(overlaps) or sum((overlapping_parents)*(overlaps)^2) also called convergence factor
+	while current_level < 3:
+		#crucial - gather nodes which converge/overlap (have more than 1 parent)
+		if current_level > 1:
+			print current_level
+			for x in freqterms1:
+				for y in parents(x,prevlevelsynsets):
+					ylemmanames=y.lemma_names()
+					#for yl in ylemmanames:
+					#	definitiongraphedges[x].append(yl)
+					definitiongraphedges[x].append(ylemmanames[0])
+					definitiongraphedgelabels[x + " - " + ylemmanames[0]].append(" is a subinstance of ")
+					definitiongraphedgelabels[ylemmanames[0] + " - " + x].append(" is a superinstance of ")
+
+			convergingterms = [w for w in freqterms1 if len(parents(w,prevlevelsynsets)) > 1]
+			for kw in freqterms1:
+				convergingparents = convergingparents + ([w for w in parents(kw, prevlevelsynsets) if len(parents(kw, prevlevelsynsets)) > 1])
+			for kw in freqterms1:
+				noofparents = len(parents(kw, prevlevelsynsets))
+				if noofparents > maxparents:
+					maxparents = noofparents
+					nodewithmaxparents = kw
+		for keyword in freqterms1:
+			#WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
+			#disamb_synset = best_matching_synset(set(doc1), wn.synsets(keyword))
+			if use_pywsd_lesk:
+				disamb_synset = simple_lesk(" ".join(freqterms1), keyword)
+			if use_nltk_lesk:
+				disamb_synset = lesk(freqterms1, keyword)
+			else:
+				disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
+			prevlevelsynsets = prevlevelsynsets + [disamb_synset]
+			if len(wn.synsets(keyword)) != 0:
+				disamb_synset_def = disamb_synset.definition()
+				tokens = nltk.word_tokenize(disamb_synset_def)
+				fdist_tokens = FreqDist(tokens)
+				#at present frequency filter is not applied
+				#if keyword in convergingterms:
+				tokensofthislevel = tokensofthislevel + ([w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
+		listcount = len(tokensofthislevel)
+		setcount = len(set(tokensofthislevel))
+		overlap =  listcount-setcount
+		if overlap > 0 and iter == 0 :
+			first_convergence_level = current_level
+			iter = 1
+		#choose between two relatedness/convergence criteria :-
+		#1) simple linear overlap or 2) zipf distributed quadratic overlap
+		#relatedness = relatedness + len(convergingparents)*overlap
+		relatedness = relatedness + overlap + len(convergingparents)
+		#relatedness = relatedness + ((len(convergingparents)*overlap*overlap) + 1)
+		#find out common tokens of this and previous level so that same token does not get grasped again -
+		#relatedness must be increased since repetition of keywords in two successive levels is a sign of
+		#interrelatedness(a backedge from child-of-one-of-siblings to one-of-siblings). Remove vertices and edges 			#corresponding to common tokens
+		commontokens = set(tokensofthislevel).intersection(set(tokensofprevlevel))
+		tokensofthislevel = set(tokensofthislevel).difference(commontokens)
+		relatedness = relatedness + len(commontokens)
+		#decrease the vertices count to address common tokens removed above - edges should remain same since they
+		#would just point elsewhere
+		vertices = vertices + setcount - len(commontokens)
+		edges = edges + listcount
+		current_level = current_level + 1
+		freqterms1 = set(tokensofthislevel)
+		tokensofprevlevel = tokensofthislevel
+		tokensofthislevel = []
+
+	intrinsic_merit = vertices*edges*relatedness / first_convergence_level
+
+	print definitiongraphedges
+
+	nxg=nx.DiGraph()
+	pos=nx.spring_layout(nxg)
+	#pos=nx.shell_layout(nxg)
+	#pos=nx.random_layout(nxg)
+	#pos=nx.spectral_layout(nxg)
+	#nx.draw_graphviz(nxg,prog="neato")
+	for k,v in definitiongraphedges.iteritems():
+                for l in v:
+                        nxg.add_edge(k,l)
+                        nxg.add_edge(l,k)
+	#nx.draw_networkx(nxg)
+	#plt.show()
+
+	nxg.remove_edges_from(nxg.selfloop_edges())
+	return nxg
 
 def RecursiveGlossOverlap_Classify(text):
 	definitiongraphedges=defaultdict(list)
