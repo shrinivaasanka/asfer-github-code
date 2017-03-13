@@ -7161,3 +7161,16 @@ References:
 simplification of RNN LSTM by reducing number of gates (input, cell, forget, output are mapped to cell, reset, update)
 *) Logs for this have been uploaded to testlogs/ showing convergence of gates and state.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+396. (FEATURE-DONE) Recursive Lambda Function Growth + Tensor Neuron (NTN) Intrinsic Merit - 13 March 2017 - related to 384, 385
+------------------------------------------------------------------------------------------------------------------------------------------
+*) This commit rewrites the Recursive Lambda Function Growth implementation by adding a new lambda function growth
+function.
+*) This new function creates a definition graph with Recursive Gloss Overlap algorithm from a text and computes all pairs shortest paths in the graph
+*) For each such shortest path edges, an AVL lambda function composition balanced tree is grown (i.e every path is a lambda function composition tree).
+*) Tensor Neuron Lambda Function is computed for each subtree root by following relation evaluated on a stack:
+                function(operand1, operand2)
+where operand1, operand2 and function are successively popped from AVL composition tree stack representation
+*) Tensor Neuron triplet (operand1, function, operand2) is evaluated presently as maximum Wu-Palmer similarity of Synsets for cartesian product of operand1 and operand2. But it can be augmented with any arbitrary weighting scheme. Cartesian product of Synsets for 2 entities is the simplest 2-dimensional tensor neuron.
+*) Sum of tensor neuron weights for all random walks composition tree evaluation is printed as merit of the text.
+*) Logs for this have been committed to testlogs
