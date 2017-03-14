@@ -7174,3 +7174,12 @@ where operand1, operand2 and function are successively popped from AVL compositi
 *) Tensor Neuron triplet (operand1, function, operand2) is evaluated presently as maximum Wu-Palmer similarity of Synsets for cartesian product of operand1 and operand2. But it can be augmented with any arbitrary weighting scheme. Cartesian product of Synsets for 2 entities is the simplest 2-dimensional tensor neuron.
 *) Sum of tensor neuron weights for all random walks composition tree evaluation is printed as merit of the text.
 *) Logs for this have been committed to testlogs
+
+----------------------------------------------------------------------------------------------------------------------------------------
+397. (FEATURE-DONE) Korner Entropy Intrinsic Merit for Recursive Gloss Overlap graphs - 14 March 2017 - related to 383
+----------------------------------------------------------------------------------------------------------------------------------------
+*) Implemented  Korner Entropy intrinsic merit for Recursive Gloss Overlap graph.
+*) function korner_entropy() finds maximal independent sets for all vertices and chooses the minimum entropy such that a vertex is in a maximal independent set.
+*) Logs for this have been committed to testlogs/
+
+Previous two intrinsic merit measures - tensor neuron network and korner entropy - sufficiently quantify the complexity of a document's inner purport. Neuron Tensors transform the ontology subgraph of a text into a new kind of multilayered graph perceptron. Infact it generalizes traditional multilayered trellis perceptrons for which backpropagation is applied to find weights per activation edge. There is no known backpropagation algorithm for generic graph of perceptrons. Neuron Tensors per word-word edge are equated to a lambda function and compositional tree of these neurons for any walk on the text-graph is an alternative deep learning technique to backpropagation. Korner Entropy is a measure of disconnectedness (total probability of vertices in independent sets). Presently all pairs shortest paths is used in place of random walks - set of all pairwise path tensor neuron lambda compositions is an upperbound on set of all random walks.
