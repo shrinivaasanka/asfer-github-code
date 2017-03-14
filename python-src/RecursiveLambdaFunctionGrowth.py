@@ -32,6 +32,7 @@ import networkx as nx
 from itertools import product
 import RecursiveGlossOverlap_Classifier
 from nltk.corpus import wordnet as wn
+import math
 
 class RecursiveLambdaFunctionGrowth(object):
 	def __init__(self):
@@ -44,6 +45,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.lambda_expression=[]
 		self.lambda_composition=""
 		self.tensor_intrinsic_merit=0.0
+		self.entropy=10000000000.0
 
 	def get_next_tree_traversal_id(self,x,y):
 		if y-x == 1 or x-y == 1:
@@ -201,7 +203,29 @@ class RecursiveLambdaFunctionGrowth(object):
 			print
 			rw_ct=""
 		print "Tensor Neuron Intrinsic Merit :",self.tensor_intrinsic_merit
+		self.korner_entropy(definitiongraph)
+		print "Korner Entropy Intrinsic Merit :",self.entropy
 
+	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
+	def korner_entropy(self, definitiongraph):
+		nodes=definitiongraph.nodes()
+		stable_sets=[]
+		for v in nodes:
+			stable_sets.append(nx.maximal_independent_set(definitiongraph,[v]))
+		print "korner_entropy(): Stable Independent Sets:",stable_sets
+		entropy=0.0
+		prob_v_in_stableset=0.0
+		for v in nodes:
+			for s in stable_sets:
+				if v in s:
+					prob_v_in_stableset=math.log(0.999999)
+				else:
+					prob_v_in_stableset=math.log(0.000001)
+				entropy += (-1.0) * float(1.0/len(nodes)) * prob_v_in_stableset
+			if entropy < self.entropy:
+				self.entropy = entropy
+			entropy=0.0
+		return self.entropy
 
 if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
