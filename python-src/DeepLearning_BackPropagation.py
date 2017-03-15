@@ -42,7 +42,7 @@ class BackPropagation(object):
 		for k in xrange(len(self.weights)):
 			self.weight_input_neuron_map[k]=neuronindex % len(self.input_layer)
 			neuronindex += 1
-		print "weight_input_neuron_map:",self.weight_input_neuron_map
+		#print "weight_input_neuron_map:",self.weight_input_neuron_map
 		self.bias=0.02
 	
 	def sigmoid(self, input):

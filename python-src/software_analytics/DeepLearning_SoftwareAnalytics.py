@@ -42,62 +42,62 @@
 # 3790 root      20   0    8088   3564   3028 R   0.3  0.1   0:00.17 top
 #    1 root      20   0   24228   4336   3344 S   0.0  0.1   0:04.26 systemd
 ############################################################################################
-# Following 3 DeepLearning models learn from 3 variable inputs - CPU, Memory and TIME+ data
+# Following DeepLearning models learn from 3 variable inputs - CPU, Memory and TIME+ data
 # for each process id row in previous example top display - BackPropagation, RecurrentLSTM
-# and ConvolutionNetwork models learn software analytics neural networks from training data
+# RecurrentGRU and ConvolutionNetwork models learn software analytics neural networks from training data
 # This is very fundamental analytics which is a function of CPU, Memory usages and time duration
 # for each process. 
 ############################################################################################
 
 from DeepLearning_BackPropagation import BackPropagation
 from DeepLearning_LSTMRecurrentNeuralNetwork import LSTMRecurrentNeuralNetwork
-from DeepLearning_ConvolutionNetwork import DeepLearningConvolution
+from DeepLearning_GRURecurrentNeuralNetwork import GRURecurrentNeuralNetwork
+from DeepLearning_ConvolutionNetwork_BackPropagation import DeepLearningConvolution
 import pprint
 import random
 
 if __name__=="__main__":
-	##########################################################################################
-	# BackPropagation
-	##########################################################################################
+	print "##########################################################################################"
+	print "BackPropagation"
+	print "##########################################################################################"
         iter=0
         weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
-        #parameters - initial conditions - input1,input2,input3,hidden1,hidden2,hidden3,expected_output1,expected_output2,expected_output3,weights_array
-        bpnn=BackPropagation(0.026,0.009,2.75/18.0,0.8,0.9,0.3,0.09,0.01,0.21,weights)
+        #parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
+	inputlayer=[0.026,0.009,2.75/18.0]
+	hiddenlayer=[0.8,0.9,0.3]
+	expectedoutput=[0.09,0.01,0.21]
+        bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
         bpnn.compute_neural_network()
         bpnn.print_layers()
         print "Error before Backpropagation:"
         print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-        while iter < 1000:
-                bpnn.backpropagation_pde_update_hidden_to_output(0,9)
-                bpnn.backpropagation_pde_update_hidden_to_output(0,10)
-                bpnn.backpropagation_pde_update_hidden_to_output(0,11)
-                bpnn.backpropagation_pde_update_hidden_to_output(1,12)
-                bpnn.backpropagation_pde_update_hidden_to_output(1,13)
-                bpnn.backpropagation_pde_update_hidden_to_output(1,14)
-                bpnn.backpropagation_pde_update_hidden_to_output(2,15)
-                bpnn.backpropagation_pde_update_hidden_to_output(2,16)
-                bpnn.backpropagation_pde_update_hidden_to_output(2,17)
-                bpnn.backpropagation_pde_update_input_to_hidden(0,0)
-                bpnn.backpropagation_pde_update_input_to_hidden(0,1)
-                bpnn.backpropagation_pde_update_input_to_hidden(0,2)
-                bpnn.backpropagation_pde_update_input_to_hidden(1,3)
-                bpnn.backpropagation_pde_update_input_to_hidden(1,4)
-                bpnn.backpropagation_pde_update_input_to_hidden(1,5)
-                bpnn.backpropagation_pde_update_input_to_hidden(2,6)
-                bpnn.backpropagation_pde_update_input_to_hidden(2,7)
-                bpnn.backpropagation_pde_update_input_to_hidden(2,8)
-                print "Recomputing Neural Network after backpropagation weight update"
-                bpnn.compute_neural_network()
-                print "Error after Backpropagation- iteration :",iter
-                print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-                print "Layers in this iteration:"
-                bpnn.print_layers()
-                print "Weights updated in this iteration:"
-                print bpnn.weights
-                iter=iter+1
-	##################################################################################
-	# LSTM Recurrent Neural Network
-	##################################################################################
+	while iter < 1000:
+               for m in xrange(len(inputlayer)):
+                       for l in xrange(len(inputlayer)):
+                               bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
+
+               for m in xrange(len(inputlayer)):
+                       for l in xrange(len(inputlayer)):
+                               bpnn.backpropagation_pde_update_input_to_hidden(m,len(inputlayer)*m+l)
+
+               print "Recomputing Neural Network after backpropagation weight update"
+               bpnn.compute_neural_network()
+               print "Error after Backpropagation- iteration :",iter
+               print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+               print "Layers in this iteration:"
+               bpnn.print_layers()
+               print "Weights updated in this iteration:"
+               print bpnn.weights
+               iter=iter+1
+        print "Software Analytics - BackPropagation - Error after Backpropagation- iteration :",iter
+	bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+        print "Software Analytics - BackPropagation - Layers in this iteration:"
+	bpnn.print_layers()
+        print "Software Analytics - BackPropagation - Weights updated in this iteration:",bpnn.weights
+	
+	print "##################################################################################"
+	print "LSTM Recurrent Neural Network"
+	print "##################################################################################"
 	cellvars=[0.01,0.2,0.3]
         cellweights=[0.8,0.4,0.1]
         inputvars=[0.026,0.009,2.75/18.0]
@@ -116,10 +116,43 @@ if __name__=="__main__":
                 print "Iteration: ", iteration, " Final LSTM Recurrent Neural Network out value = ", lstmRNN.sum1_output_product1_level3
                 print "####################################################################################################################"
                 iteration += 1
+        print "Software Analytics - LSTM Recurrent Neural Network - Final LSTM Recurrent Neural Network out value = ", lstmRNN.sum1_output_product1_level3
 
-	##################################################################################
-	# Convolution Neural Network
-	##################################################################################
+	print "##################################################################################"
+	print "GRU Recurrent Neural Network"
+	print "##################################################################################"
+	cellvars=[0.01,0.2,0.3]
+        cellweights=[0.8,0.4,0.1]
+        inputvars=[0.026,0.009,2.75/18.0]
+        inputweights_cell=[0.21,0.05,0.7]
+        inputweights_update=[0.1,0.45,0.33]
+        inputweights_reset=[0.4,0.05,0.3]
+        updatevars=[0.02,0.3,0.05]
+        updateweights=[0.1,0.02,0.3]
+        resetvars=[0.01,0.05,0.14]
+        resetweights=[0.04,0.2,0.5]
+
+	GRURNN=GRURecurrentNeuralNetwork(cellvars, cellweights, inputvars, inputweights_cell, inputweights_update, inputweights_reset, updateweights, resetweights)
+        while iteration < 1000:
+                GRURNN.compute_update_input_htprev_gate()
+                GRURNN.compute_reset_input_htprev_gate()
+                GRURNN.compute_cell_htprev_reset_product()
+                GRURNN.compute_update_cell_product()
+                print "####################################################################################################################"
+                iteration += 1
+                print "Iteration:",iteration
+                print "state at time t",GRURNN.ht
+                print "Cellvars:",GRURNN.cellvars
+                print "Update gate:",GRURNN.update_input_htprev
+                print "Reset gate:",GRURNN.reset_input_htprev
+        print "Software Analytics - GRU Recurrent Neural Network - state at time t",GRURNN.ht
+        print "Software Analytics - GRU Recurrent Neural Network - Cellvars:",GRURNN.cellvars
+        print "Software Analytics - GRU Recurrent Neural Network - Update gate:",GRURNN.update_input_htprev
+        print "Software Analytics - GRU Recurrent Neural Network - Reset gate:",GRURNN.reset_input_htprev
+
+	print "##################################################################################"
+	print "Convolution Neural Network + BackPropagation"
+	print "##################################################################################"
 	input_bitmap11=[[0.026,0.009,2.75/18.0,0,0,0,0,0,0,0],
 			[0.023,0.01,0.25/18.0,0,0,0,0,0,0,0],
 			[0.02,0.21,4.5/18.0,0,0,0,0,0,0,0],
@@ -154,14 +187,12 @@ if __name__=="__main__":
 	print "###########"
 	pprint.pprint(pool_map11)
 	print "####################################################################################################"
-	print "Final layer that connects all neurons in max pooling map into set of 10 neurons"
+	print "Final layer that connects all neurons in max pooling map and does backpropagation"
 	print "####################################################################################################"
 	maxpool_map_width=5
-	for w in xrange(10):
-		poolingneuronweight=float(random.randint(1,w+1))/float(w+1)
-		print "###########################################################################################"
-		print "Inference from Max Pooling Layer - Neuron ",w
-		print "###########################################################################################"
-		print "Example 11:"
-		print "###########"
-		pprint.pprint(dlc11.infer_from_max_pooling(pool_map11,poolingneuronweight,maxpool_map_width))
+	print "###########################################################################################"
+	print "Inference from Max Pooling Layer" 
+	print "###########################################################################################"
+	print "Example 11:"
+	print "###########"
+	print "Software Analytics - Convolution Network + BackPropgation - max pooling inference:",dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
