@@ -7183,3 +7183,10 @@ where operand1, operand2 and function are successively popped from AVL compositi
 *) Logs for this have been committed to testlogs/
 
 Previous two intrinsic merit measures - tensor neuron network and korner entropy - sufficiently quantify the complexity of a document's inner purport. Neuron Tensors transform the ontology subgraph of a text into a new kind of multilayered graph perceptron. Infact it generalizes traditional multilayered trellis perceptrons for which backpropagation is applied to find weights per activation edge. There is no known backpropagation algorithm for generic graph of perceptrons. Neuron Tensors per word-word edge are equated to a lambda function and compositional tree of these neurons for any walk on the text-graph is an alternative deep learning technique to backpropagation. Korner Entropy is a measure of disconnectedness (total probability of vertices in independent sets). Presently all pairs shortest paths is used in place of random walks - set of all pairwise path tensor neuron lambda compositions is an upperbound on set of all random walks.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+398. (FEATURE-DONE) Software Analytics update - 15 March 2017
+---------------------------------------------------------------------------------------------------------------------------------------
+*) Software Analytics Deep Learning code has been updated to include all Deep Learning implementations: RNN LSTM, RNN GRU, BackPropagation
+and ConvolutionNetwork+BackPropagation
+*) logs for this have been committed to software_analytics/testlogs/
