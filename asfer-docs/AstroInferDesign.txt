@@ -7190,3 +7190,20 @@ Previous two intrinsic merit measures - tensor neuron network and korner entropy
 *) Software Analytics Deep Learning code has been updated to include all Deep Learning implementations: RNN LSTM, RNN GRU, BackPropagation
 and ConvolutionNetwork+BackPropagation
 *) logs for this have been committed to software_analytics/testlogs/
+
+---------------------------------------------------------------------------------------------------------------------------------------
+399. (USECASE) NeuronRain Usecases - Software (Log) Analytics and VIRGO kernel_analytics config - 16 March 2017
+---------------------------------------------------------------------------------------------------------------------------------------
+Software Analytics Deep Learning implementation in python-src/software_analytics/ sources its input variables - CPU%, Memory%, TimeDuration% for a process from logs. VIRGO kernel_analytics module reads machine learnt config variables from kernel_analytics.conf and exports them kernelwide. An example single layer perceptron usecase is:
+
+	If the CPU% is > 75% and Memory% > 75% and TimeDuration% > 75% then
+		do a kernelwide	overload signal
+	else
+		do nothing
+
+Sigmoid function for this usecase is:
+	sigma(4/9 * x1 + 4/9 * x2 + 4/9 * x3) where x1 = CPU%, x2 = Memory% and x3 = TimeDuration%
+which is 1 when all variables reach 75%.
+
+Spark Streaming Log Analyzer ETLs htop data to .parquet files and Software Analytics code reads it, deep-learns above neural network and writes a key-value variable OverloadSignal=1 to VIRGO kernel_analytics.conf. VIRGO kernel_analytics driver reads it and exports a kernelwide variable kernel_overload=1. Any interested kernel driver takes suitable action based on it (automatic shutdown, reboot, quiesce intensive applications etc.,)
+
