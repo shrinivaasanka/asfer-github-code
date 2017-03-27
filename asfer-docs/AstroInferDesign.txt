@@ -7209,3 +7209,14 @@ Spark Streaming Log Analyzer ETLs htop data to .parquet files and Software Analy
 
 An inverse of this usecase is to find the weights for x1,x2,x3 when system crashes. This requires a gradient descent or backpropagation with multilayered perceptron.
 
+---------------------------------------------------------------------------------------------------------------------------------------
+400. (THEORY) Mechanism Design, Gibbard-Satterthwaite Theorem and Designing a Voting Mechanism - 27 March 2017 - related to 368 and all
+other P(Good) circuit related sections
+---------------------------------------------------------------------------------------------------------------------------------------
+Gibbard-Satterthwaite theorem prevents any Social Choice Function defined on atleast 3 elements from being non-dictatorial. Mechanism Design
+is the reverse game theory which tries to circumvent this limitation and designs a mechanism for required result for social goodness. With respect to P(Good) series and circuit, design of a voting mechanism for arbitrary number of voters which overcomes limitation of Gibbard-Satterthwaite Theorem would imply convergence of P(Good) series. This is related to exact learning of boolean social choice functions with zero-error in 368.6. Open question: Does exact learning of a voter decision function imply a voting mechanism design?
+
+References:
+-----------
+400.1 Mechanism Design, Convicting Innocent, Arrow and GibbardSatterthwaite Theorems - https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-254-game-theory-with-engineering-applications-spring-2010/lecture-notes/MIT6_254S10_lec21.pdf
+
