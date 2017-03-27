@@ -7207,3 +7207,5 @@ which is 1 when all variables reach 75%.
 
 Spark Streaming Log Analyzer ETLs htop data to .parquet files and Software Analytics code reads it, deep-learns above neural network and writes a key-value variable OverloadSignal=1 to VIRGO kernel_analytics.conf. VIRGO kernel_analytics driver reads it and exports a kernelwide variable kernel_overload=1. Any interested kernel driver takes suitable action based on it (automatic shutdown, reboot, quiesce intensive applications etc.,)
 
+An inverse of this usecase is to find the weights for x1,x2,x3 when system crashes. This requires a gradient descent or backpropagation with multilayered perceptron.
+
