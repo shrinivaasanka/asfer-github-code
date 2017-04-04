@@ -7230,3 +7230,16 @@ References:
 400.4 Strategic Voting and Mechanism Design - [VinayakTripathi] - https://www.princeton.edu/~smorris/pdfs/PhD/Tripathi.pdf
 400.5 Condorcet Jury Theorem and OCR - Section 2 - http://math.unipa.it/~grim/Jlamlouisa.PDF
 400.6 Condorcet Jury Theorem graph plots - http://www.statisticalconsultants.co.nz/blog/condorcets-jury-theorem.html
+
+----------------------------------------------------------------------------------------------------------------------------------------
+401. (FEATURE-DONE) Index implementation for NeuronRain AsFer Text and Crawled Web Documents Intrinsic Merit Ranking - 4 April 2017
+----------------------------------------------------------------------------------------------------------------------------------------
+*) This commit adds a Locality Sensitive Hashing based inverted index for scrapy crawled HTML website pages.
+*) It is a derivative of LSH based similarity clustering implemented in python-src/LocalitySensitiveHashing.py
+*) It has to be mentioned here that ThoughtNet is also an inverted index for documents with additional features (i.e it is
+classifier based than raw string similarity)
+*) LSHIndex uses Redis Distributed Key Value Persistent Store as hashtable backend to store index.
+*) LSHIndex is not string to text inverted index, but hashed string to text inverted index (something like a digital fingerprint)
+*) Presently two types of hashes exist: primitive ordinal and MD5 hash
+*) Only one hash table is implemented on Redis with multiple hash functions with random choice.
+*) Presently 50 hash functions with 50 entries hash index has been implemented.
