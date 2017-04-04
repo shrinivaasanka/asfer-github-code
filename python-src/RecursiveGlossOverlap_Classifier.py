@@ -359,8 +359,8 @@ def RecursiveGlossOverlap_Classify(text):
                 for l in v:
                         nxg.add_edge(k,l)
                         nxg.add_edge(l,k)
-	nx.draw_networkx(nxg)
-	plt.show()
+	#nx.draw_networkx(nxg)
+	#plt.show()
 
 	nxg.remove_edges_from(nxg.selfloop_edges())
 	#print "Core number =",nx.core_number(nxg)

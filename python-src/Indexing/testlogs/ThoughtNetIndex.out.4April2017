@@ -1,0 +1,180 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+##############################################################
+Querying ThoughtNet Hypergraph Index for query: Human Development
+##############################################################
+2
+defaultdict(<type 'list'>, {u'unfolding': [u'growth'], u'process': [u'growth'], u'purely': [u'growth'], u'beings': [u'human'], u'individual': [u'growth'], u'human': [u'human'], u'divine': [u'human'], u'gradually': [u'growth'], u'simple': [u'growth'], u'complex': [u'growth'], u'opposed': [u'human'], u'events': [u'growth'], u'biology': [u'growth'], u'form': [u'human'], u'biological': [u'growth'], u'changing': [u'growth'], u'organically': [u'growth'], u'animals': [u'human'], u'level': [u'growth'], u'involved': [u'growth'], u'growing': [u'growth'], u'attributes': [u'human'], u'organism': [u'growth']})
+Core number (sorted) : [(u'growth', 16), (u'human', 6), (u'unfolding', 2), (u'process', 2), (u'purely', 2), (u'beings', 2), (u'individual', 2), (u'divine', 2), (u'gradually', 2), (u'simple', 2), (u'complex', 2), (u'opposed', 2), (u'events', 2), (u'biology', 2), (u'form', 2), (u'biological', 2), (u'changing', 2), (u'organically', 2), (u'animals', 2), (u'level', 2), (u'involved', 2), (u'growing', 2), (u'attributes', 2), (u'organism', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: growth ,core number= 16
+This document belongs to class: human ,core number= 6
+This document belongs to class: unfolding ,core number= 2
+This document belongs to class: process ,core number= 2
+This document belongs to class: purely ,core number= 2
+This document belongs to class: beings ,core number= 2
+This document belongs to class: individual ,core number= 2
+This document belongs to class: divine ,core number= 2
+This document belongs to class: gradually ,core number= 2
+This document belongs to class: simple ,core number= 2
+This document belongs to class: complex ,core number= 2
+This document belongs to class: opposed ,core number= 2
+This document belongs to class: events ,core number= 2
+	max_core_number 16
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'growth', 0.3288327017003411), (u'human', 0.1373886783445582), (u'beings', 0.025712998053684724), (u'divine', 0.025712998053684724), (u'opposed', 0.025712998053684724), (u'form', 0.025712998053684724), (u'animals', 0.025712998053684724), (u'attributes', 0.025712998053684724), (u'unfolding', 0.023718789477061998), (u'process', 0.023718789477061998), (u'purely', 0.023718789477061998), (u'individual', 0.023718789477061998), (u'gradually', 0.023718789477061998), (u'simple', 0.023718789477061998), (u'complex', 0.023718789477061998), (u'events', 0.023718789477061998), (u'biology', 0.023718789477061998), (u'biological', 0.023718789477061998), (u'changing', 0.023718789477061998), (u'organically', 0.023718789477061998), (u'level', 0.023718789477061998), (u'involved', 0.023718789477061998), (u'growing', 0.023718789477061998), (u'organism', 0.023718789477061998)]
+######################################
+searching class: growth
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+To truly advance social progress, we must learn to measure it comprehensively and rigorously. When everyone uses the same vocabulary to describe challenges, it's that much easier to overcome them.
+######################################
+searching class: human
+######################################
+The health dimension is assessed by life expectancy at birth, the education dimension is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. The standard of living dimension is measured by gross national income per capita. The HDI uses the logarithm of income, to reflect the diminishing importance of income with increasing GNI. The scores for the three HDI dimension indices are then aggregated into a composite index using geometric mean. Refer to Technical notes for more details.
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+Initial indications suggest Islamic State could be behind the attack. Erdogan urges international joint fight against terror.  Two explosions rocked Istanbuls Ataturk airport, killing 36 people and wounding 147, Turkeys justice minister Bekir Bozdag said.
+We need an SPI and we need to understand its value in our society because we need to understand how we’re doing in terms of health and education and the quality of our water
+######################################
+searching class: unfolding
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: process
+######################################
+The health dimension is assessed by life expectancy at birth, the education dimension is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. The standard of living dimension is measured by gross national income per capita. The HDI uses the logarithm of income, to reflect the diminishing importance of income with increasing GNI. The scores for the three HDI dimension indices are then aggregated into a composite index using geometric mean. Refer to Technical notes for more details.
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+Bulbs is an open-source Python persistence framework for graph databases and the first piece of a larger Web-development toolkit that will be released in the upcoming weeks
+######################################
+searching class: purely
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: beings
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+######################################
+searching class: individual
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: divine
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+######################################
+searching class: gradually
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: simple
+######################################
+The health dimension is assessed by life expectancy at birth, the education dimension is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. The standard of living dimension is measured by gross national income per capita. The HDI uses the logarithm of income, to reflect the diminishing importance of income with increasing GNI. The scores for the three HDI dimension indices are then aggregated into a composite index using geometric mean. Refer to Technical notes for more details.
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: complex
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+Bulbs is an open-source Python persistence framework for graph databases and the first piece of a larger Web-development toolkit that will be released in the upcoming weeks
+We need an SPI and we need to understand its value in our society because we need to understand how we’re doing in terms of health and education and the quality of our water
+software engineers and developers are backbones of banking and ITES industry
+######################################
+searching class: opposed
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+######################################
+searching class: events
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The 2016 version of the Social Progress Index has improved upon the 2015 version through generous feedback from many observers. It covers an expanded number of countries with 53 indicators.
+######################################
+searching class: biology
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: form
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+Nasa's Mars Curiosity rover has discovered high levels of manganese oxides in Martian rocks. Photo: Nasa. Washington: The National Aeronautics and Space Administration's (NASA) Mars Curiosity rover has discovered high levels of manganese oxides in
+The attack took place at the entrance of the international arrivals area in Terminal 2 of the third-busiest airport in Turkey. Photo: AFP.
+There were blood splatters everywhere. Attackers killed at least 36 at an Istanbul airport
+######################################
+searching class: biological
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: changing
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: organically
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: animals
+######################################
+The health dimension is assessed by life expectancy at birth, the education dimension is measured by mean of years of schooling for adults aged 25 years and more and expected years of schooling for children of school entering age. The standard of living dimension is measured by gross national income per capita. The HDI uses the logarithm of income, to reflect the diminishing importance of income with increasing GNI. The scores for the three HDI dimension indices are then aggregated into a composite index using geometric mean. Refer to Technical notes for more details.
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
+security of online services transactions has come under intense scrutiny
+services industry includes banking, finance etc.,
+######################################
+searching class: level
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+Nasa's Mars Curiosity rover has discovered high levels of manganese oxides in Martian rocks. Photo: Nasa. Washington: The National Aeronautics and Space Administration's (NASA) Mars Curiosity rover has discovered high levels of manganese oxides in
+######################################
+searching class: involved
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: growing
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+######################################
+searching class: attributes
+######################################
+The HDI was created to emphasize that people and their capabilities should be the ultimate criteria for assessing the development of a country, not economic growth alone. The HDI can also be used to question national policy choices, asking how two countries with the same level of GNI per capita can end up with different human development outcomes. These contrasts can stimulate debate about government policy priorities.
+The Human Development Index (HDI) is a summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living. The HDI is the geometric mean of normalized indices for each of the three dimensions.
+The HDI simplifies and captures only part of what human development entails. It does not reflect on inequalities, poverty, human security, empowerment, etc. The HDRO offers the other composite indices as broader proxy on some of the key issues of human development, inequality, gender disparity and human poverty
