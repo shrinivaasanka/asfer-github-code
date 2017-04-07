@@ -7255,3 +7255,15 @@ encodes each edge (= a web crawled HTML document)
 *) file representation of ThoughtNet views the hypergraph as stack vertices interconnected by document id(s) similar to a source code
 versioning system. Having similar view on a graph database doesn't look straightforward
 
+---------------------------------------------------------------------------------------------------------
+403. (FEATURE-DONE) Initial commits for Indexless Hyperball Recursive Web Crawler - 7 April 2017
+---------------------------------------------------------------------------------------------------------
+*) An indexless crawler which tries to find a url matching a query string in a recursive crawl creating a hyperball of certain radius
+*) This is similar to Stanley Milgram, Kleinberg Lattice Small World Experiments and recent Hyperball algorithm for Facebook graph which
+concluded that Facebook has 3.74 degrees of freedom.
+*) Starts with a random url on world wide web.
+*) Success probability depends on average number of hops over large number of queries.
+*) This is a Randomized Monte Carlo Crawler and does a Depth First Search from an epicentre pivot url to start with
+*) Hyperball References:
+        1) http://webgraph.di.unimi.it/docs/it/unimi/dsi/webgraph/algo/HyperBall.html
+        2) Facebook Hyperball - https://arxiv.org/pdf/1308.2144.pdf
