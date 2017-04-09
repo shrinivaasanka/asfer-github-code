@@ -7267,3 +7267,18 @@ concluded that Facebook has 3.74 degrees of freedom.
 *) Hyperball References:
         1) http://webgraph.di.unimi.it/docs/it/unimi/dsi/webgraph/algo/HyperBall.html
         2) Facebook Hyperball - https://arxiv.org/pdf/1308.2144.pdf
+
+------------------------------------------------------------------------------------------------------------------------------
+404. (THEORY) Indexless Web Search, World Wide Web Graph Property Testing, On-demand Indexing - related to 403 - 9 April 2017
+------------------------------------------------------------------------------------------------------------------------------
+Almost all known web search engines rely on a pre-built index created from already crawled WWW graph. Is a pre-built index necessary for
+web search? Can the small world property of world wide web graph (i.e property of graph such that easy short paths exist between any pairs
+of vertices as proved in Stanley Milgram experiment, Kleinberg Lattice), be applied to find a url matching a search query starting from any
+vertex? Facebook graph has almost a billion user vertices and on an average any person is connected to any other within 3.74 path lengths.
+Can this be generalized to world wide web? Traditional book index maps word queries to pages having the words. If entire book is translated
+into a huge definition graph by Recursive Gloss Overlap graph, then instead of looking-up index, starting at a random word vertex, any other
+word should be easily reachable if graph has small world property. This realworld problem is already studied as Graph Property Testing which are algorithms to test if a graph has specific property(clique, colorability, edge and vertex queries etc.,). Hyperball indexless crawler in NeuronRain AsFer is an effort in this line of thought. Such an indexless cralwer can "learn" an index online by repeated queries and build an index from cached results at runtime. Index is not prebuilt but grown ondemand. Assuming internet has such small world degrees of freedom upperbounded by a constant, any query is constant time serviceable in average case complexity.
+
+References:
+-----------
+404.1 Small World Property - [WattsStrogatz] -http://www.nature.com/nature/journal/v393/n6684/full/393440a0.html
