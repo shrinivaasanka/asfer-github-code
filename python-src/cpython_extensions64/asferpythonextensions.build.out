@@ -1,22 +1,35 @@
+# /usr/local/bin/python2.7 setup.py build
 running build
 running build_ext
 building 'asfer_virgo_pyext' extension
-i686-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c asferpythonextensions.c -o build/temp.linux-i686-2.7/asferpythonextensions.o
+creating build
+creating build/temp.linux-x86_64-2.7
+gcc -pthread -m64 -march=x86-64 -fno-strict-aliasing -m64 -march=x86-64 -m64 -march=x86-64 -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/include/python2.7 -c asferpythonextensions.c -o build/temp.linux-x86_64-2.7/asferpythonextensions.o
 asferpythonextensions.c: In function ‘asfer_virgo_set_kernel_analytics’:
-asferpythonextensions.c:78:7: warning: unused variable ‘free_ret’ [-Wunused-variable]
-  long free_ret=syscall(363,virgo_unique_id); 
-       ^
-asferpythonextensions.c:75:7: warning: unused variable ‘get_ret’ [-Wunused-variable]
-  long get_ret=syscall(362,virgo_unique_id,get_data);
-       ^
-asferpythonextensions.c:68:7: warning: unused variable ‘set_ret’ [-Wunused-variable]
-  long set_ret=syscall(361,virgo_unique_id,set_data);
-       ^
-asferpythonextensions.c:57:24: warning: unused variable ‘vaddr’ [-Wunused-variable]
-  struct virgo_address* vaddr;
-                        ^
+asferpythonextensions.c:61:20: warning: unused variable ‘ret’ [-Wunused-variable]
+           long int ret=syscall(548,"virgo_cloud_test_kernelspace");
+                    ^
+asferpythonextensions.c:93:9: warning: unused variable ‘free_ret’ [-Wunused-variable]
+    long free_ret=syscall(552,virgo_unique_id);
+         ^
+asferpythonextensions.c:88:9: warning: unused variable ‘get_ret’ [-Wunused-variable]
+    long get_ret=syscall(551,virgo_unique_id,get_data);
+         ^
+asferpythonextensions.c:83:9: warning: unused variable ‘set_ret’ [-Wunused-variable]
+    long set_ret=syscall(550,virgo_unique_id,set_data);
+         ^
+asferpythonextensions.c: At top level:
+asferpythonextensions.c:136:39: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  {"asfer_virgo_set_kernel_analytics", asfer_virgo_set_kernel_analytics, METH_VARARGS, py_add_doc},
+                                       ^
+asferpythonextensions.c:136:39: note: (near initialization for ‘AsFer_VIRGO_Methods[0].ml_meth’)
 asferpythonextensions.c: In function ‘initasfer_virgo_pyext’:
-asferpythonextensions.c:94:12: warning: variable ‘mod’ set but not used [-Wunused-but-set-variable]
+asferpythonextensions.c:144:12: warning: variable ‘mod’ set but not used [-Wunused-but-set-variable]
   PyObject* mod;
             ^
-i686-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-i686-2.7/asferpythonextensions.o -o build/lib.linux-i686-2.7/asfer_virgo_pyext.so
+asferpythonextensions.c: In function ‘asfer_virgo_set_kernel_analytics’:
+asferpythonextensions.c:128:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+creating build/lib.linux-x86_64-2.7
+gcc -pthread -m64 -march=x86-64 -shared build/temp.linux-x86_64-2.7/asferpythonextensions.o -o build/lib.linux-x86_64-2.7/asfer_virgo_pyext.so
