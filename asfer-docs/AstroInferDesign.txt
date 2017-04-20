@@ -7285,3 +7285,14 @@ word should be easily reachable if graph has small world property. This realworl
 References:
 -----------
 404.1 Small World Property - [WattsStrogatz] -http://www.nature.com/nature/journal/v393/n6684/full/393440a0.html
+
+------------------------------------------------------------------------------------------------------------------------------
+405. (FEATURE-DONE) Commit - NeuronRain AsFer-CPython Extensions VIRGO64 system call invocations - 20 April 2017
+------------------------------------------------------------------------------------------------------------------------------
+*) VIRGO64 system calls are invoked from Python code by CPython extensions.
+*) Separate folder cpython_extensions64/ has been created for 64bit VIRGO kernel
+*) Requires Python 64-bit version
+*) Logs for VIRGO64 memory and filesystem systemcalls-to-drivers have been committed to testlogs
+*) With this Complete Application Layer-SystemCalls-Drivers request routing for python applications deployed on VIRGO64 works.
+
+
