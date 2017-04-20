@@ -1,0 +1,22 @@
+running build
+running build_ext
+building 'asfer_virgo_pyext' extension
+i686-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c asferpythonextensions.c -o build/temp.linux-i686-2.7/asferpythonextensions.o
+asferpythonextensions.c: In function ‘asfer_virgo_set_kernel_analytics’:
+asferpythonextensions.c:78:7: warning: unused variable ‘free_ret’ [-Wunused-variable]
+  long free_ret=syscall(363,virgo_unique_id); 
+       ^
+asferpythonextensions.c:75:7: warning: unused variable ‘get_ret’ [-Wunused-variable]
+  long get_ret=syscall(362,virgo_unique_id,get_data);
+       ^
+asferpythonextensions.c:68:7: warning: unused variable ‘set_ret’ [-Wunused-variable]
+  long set_ret=syscall(361,virgo_unique_id,set_data);
+       ^
+asferpythonextensions.c:57:24: warning: unused variable ‘vaddr’ [-Wunused-variable]
+  struct virgo_address* vaddr;
+                        ^
+asferpythonextensions.c: In function ‘initasfer_virgo_pyext’:
+asferpythonextensions.c:94:12: warning: variable ‘mod’ set but not used [-Wunused-but-set-variable]
+  PyObject* mod;
+            ^
+i686-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-i686-2.7/asferpythonextensions.o -o build/lib.linux-i686-2.7/asfer_virgo_pyext.so
