@@ -7298,4 +7298,13 @@ References:
 *) Logs for VIRGO64 memory and filesystem systemcalls-to-drivers have been committed to testlogs
 *) With this Complete Application Layer-SystemCalls-Drivers request routing for python applications deployed on VIRGO64 works.
 
+----------------------------------------------------------------------------------------------------------------------------------
+406. (FEATURE-DONE) Commits - NeuronRain AsFer Boost C++-Python - VIRGO64 System calls + Drivers invocation - 26 April 2017
+----------------------------------------------------------------------------------------------------------------------------------
+*) VIRGO64 system calls are invoked from C++ by Boost::Python extensions
+*) Kernel Logs for VIRGO KMemCache, Clone and FileSystem Calls Boost::python invocations have been committed to testlogs/
+*) Boost version used is 1.64.0
+*) setup.py has been updated with library_dirs config variable
+*) virgofstest.txt for filesystem calls has been committed to testlogs/
+
 
