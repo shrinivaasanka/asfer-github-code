@@ -7308,4 +7308,9 @@ References:
 *) setup.py has been updated with library_dirs config variable
 *) virgofstest.txt for filesystem calls has been committed to testlogs/
 
-
+----------------------------------------------------------------------------------------------------------------------------------------
+407. (FEATURE-DONE) Commits - 28 April 2017 - NeuronRain AsFer-Boost::Python-C++ - VIRGO64 systemcalls and drivers invocations
+----------------------------------------------------------------------------------------------------------------------------------------
+*) VIRGO64 clone, kmemcache and filesystem system calls were invoked from Python-C++ boost extensions again and reproducibly work
+without kernel panics.
+*) Logs, persisted disk file written by filesystem system calls and rebuilt boost-python C++ extensions have been committed to testlogs/
