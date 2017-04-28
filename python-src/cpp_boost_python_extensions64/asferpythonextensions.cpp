@@ -120,7 +120,7 @@ void asfer_virgo_set_kernel_analytics(char* key, char* value)
 			printf("test_virgo_filesystem.c: data_read = %s\n",data_read);
 
 			/* syscall(367,vfsdesc,"test_virgo_filesystem_29September2015",250,0); */ /* write */
-			syscall(556,vfsdesc,"test_virgo_filesystem_26April2017",250,0); /* write */
+			syscall(556,vfsdesc,"test_virgo_filesystem_28April2017",250,0); /* write */
 
 			/* syscall(365,vfsdesc);  */ /* close */
 			syscall(554,vfsdesc);  /* close */
