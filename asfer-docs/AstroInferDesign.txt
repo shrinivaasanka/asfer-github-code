@@ -7223,6 +7223,10 @@ Condorcet Jury Theorem mentioned in references below, is exactly the P(Good) bin
 
 Corollary: From 129 and 368, depth of Majority voting circuit composition can be unbounded and if all voter social choice functions have same number of variables and number of voters is exponential in number of variables, Majority voting circuit composition with error is in BPEXP than PH. By Condorcet Jury Theorem, if all voters tending to infinity decide correctly with probability > 0.5, then BPEXP derandomizes to EXP => BPEXP=EXP. Non-boolean social choice functions for more than 2 candidates are usually preference profiles per voter (list of ranked candidates per voter) and topranked candidate is voted for by the voter.
 
+Locality Sensitive Hashing accumulates similar voters in a bucket chain. The social choice function is the distance function. Circuit/Algorithm for Multiway contest social choice (generalization of Majority boolean function) is:
+	*) Locality Sensitive Hashing (LSH) for clustering similar voters who vote for same candidate
+	*) Sorting the LSH and find the maximum size cluster (bucket chain)
+
 References:
 -----------
 400.1 Mechanism Design, Convicting Innocent, Arrow and GibbardSatterthwaite Theorems - https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-254-game-theory-with-engineering-applications-spring-2010/lecture-notes/MIT6_254S10_lec21.pdf
@@ -7314,3 +7318,13 @@ References:
 *) VIRGO64 clone, kmemcache and filesystem system calls were invoked from Python-C++ boost extensions again and reproducibly work
 without kernel panics.
 *) Logs, persisted disk file written by filesystem system calls and rebuilt boost-python C++ extensions have been committed to testlogs/
+
+----------------------------------------------------------------------------------------------------------------------------
+408. (THEORY) Condorcet Jury Theorem, Network Voting in WWW Link Graph, Majority Function and Correctness of Ranking
+- 16 May 2017
+----------------------------------------------------------------------------------------------------------------------------
+Let v1, v2 be two vertices being good and bad choices respectively. In link graph all incoming edges to a vertex v1 are
+votes for that vertex. From Condorcet Jury Theorem if all incoming links occur with probability p > 0.5, then probability that v1 is chosen tends to 1 for large indegree. For 2 candidates c1, c2 and voters v1, v2, v3, ... vn, edges (votes) to c1 occur with probability p and edges(votes) to v2 occur with probability 1-p. Thus voting graph is a random bipartite graph and can be generalized to multiple candidates. Candidates Vertex set C={c1, c2, ...,cn} can have more than one indegree and zero outdegree. Voters Vertex set V={v1, v2, ..., vn} can have only one outdegree and zero indegree. If C intersection V != emptyset, then graph is general directed graph and can have cycles. Each voter vertex vy either votes to some other vertex vx or receives vote from vx. vy votes for vx with probability p. vy votes for vertices other than vx with cumulative probability 1-p. Vertices voted by vy are ranked by goodness (i.e goodness(vx) > goodness(others)). If vy votes for vx then vy decides with decision correctness probability p.
+
+More generically, vertex vx receives votes from vertices vy1,vy2,vy3,...,vyn with decision correctness probability p. Vertices vy1,vy2,vy3,...,vyn vote for vertices other than vx with decision correctness probability 1-p. Each vertex in WWW link graph has this 2 level tree structure with varying probability pi. From Condorcet Jury Theorem, hyperlinks to vx from vy1,vy2,...,vyn  are 100% correct group decision if p > 0.5. Equal p for all votes to a vertex is the homogeneous voter assumption of Condorcet Jury Theorem. If the vertices are ranked by some algorithm (HITS Hub-Authority, PageRank etc.,) then correctness of rank is measured by Condorcet Jury Theorem. It is apt to mention here that probability p is different from weights of directed graph edges in PageRank Markov Random Walk iteration (where weight of outgoing edge/vote is decided by the ratio 1/outdegree). For heterogeneous voter assumption, more recent theorems which generalize Condorcet Jury Theorem are required.
+
