@@ -7328,3 +7328,11 @@ votes for that vertex. From Condorcet Jury Theorem if all incoming links occur w
 
 More generically, vertex vx receives votes from vertices vy1,vy2,vy3,...,vyn with decision correctness probability p. Vertices vy1,vy2,vy3,...,vyn vote for vertices other than vx with decision correctness probability 1-p. Each vertex in WWW link graph has this 2 level tree structure with varying probability pi. From Condorcet Jury Theorem, hyperlinks to vx from vy1,vy2,...,vyn  are 100% correct group decision if p > 0.5. Equal p for all votes to a vertex is the homogeneous voter assumption of Condorcet Jury Theorem. If the vertices are ranked by some algorithm (HITS Hub-Authority, PageRank etc.,) then correctness of rank is measured by Condorcet Jury Theorem. It is apt to mention here that probability p is different from weights of directed graph edges in PageRank Markov Random Walk iteration (where weight of outgoing edge/vote is decided by the ratio 1/outdegree). For heterogeneous voter assumption, more recent theorems which generalize Condorcet Jury Theorem are required.
 
+------------------------------------------------------------------------------------------------------------------------
+409. (FEATURE-DONE) Commits - 17 May 2017 - NeuronRain AsFer-VIRGO64 Boost-C++-Python invocations
+------------------------------------------------------------------------------------------------------------------------
+*) Boost Python C++ VIRGO64 system calls were tested repeatedly in a loop
+*) All three system call subsystems - virgo_clone, virgo_kmemcache, virgo_filesystem - work well without any kernel panics
+*) But a strange thing was observed: virgo filesystem system calls were not appending to disk file but when run as
+"strace -f python asferpythonextensions.py" disk file is written to (a coincidence or strace doing something special)
+
