@@ -7344,3 +7344,26 @@ References:
 *) But a strange thing was observed: virgo filesystem system calls were not appending to disk file but when run as
 "strace -f python asferpythonextensions.py" disk file is written to (a coincidence or strace doing something special)
 
+---------------------------------------------------------------------------------------------------------------------------
+410. (THEORY) Objective and Subjective Value Judgement, Text Ranking and Condorcet Jury Theorem - 29 May 2017 - Related to
+384, 385 and all Recursive Lambda Function Growth and Recursive Gloss Overlap algorithms sections in this document
+---------------------------------------------------------------------------------------------------------------------------
+Objective merit or Intrinsic merit of a document is the measure of meaningfulness or information contained in a document. Subjective merit is how the document is perceived - Reality Versus Perception - Both should ideally coincide but do not.
+
+Following are few real-world examples:
+*) Soccer player, Cricket player or a Tennis player is measured intrinsically by number of goals scored, number of runs/wickets or number of grandslams won respectively and not subjectively by extent of votes or fan following to them (incoming edges). Here reality and perception coincide often and an intrinsically best player by records is also most revered. Any deviation is because of human prejudice. Here intrinsic merit precedes social prestige.
+*) Merits of students are judged by examinations (question-answering) and not by majority voting by faculty. Thus question-answering or interview is an algorithm to measure intrinsic merit objectively. Here again best student in terms of marks or grades is also the most favoured. Any deviation is human prejudice. Interview of a document is how relevant it is to a query measured by graph edit distance between recursive gloss overlap graphs of query and text. Here also intrinsic merit precedes social prestige.
+
+Present ranking algorithms are mostly majority voting (perception) oriented which is just half truth. Other half is the reality and there are no known algorithms to objectively judge documents.  Recursive Lambda Function Growth algorithm and its specialization Recursive Gloss Overlap graph are objective intrinsic merit algorithms filling this void and try to map above real-life examples to text document ranking.
+
+But how to measure "number of goals etc.," of a document vis-a-vis the rest? This is where Computational Linguistic Text-to-Graph analysis fits in. Graph representation of a document with various quantitative and qualitative graph complexity measures differentiates and grades the texts by intrinsic complexity. This combines two fields: Computational Linguistics which is founded on Psychoanalysis and Graph Theory. Former pertains to mental picture created by reading a document and latter is how complex that picture is. Recursive Lambda Function Growth envisages an ImageNet which is a graph of related images of entities to create an animated movie representation of a text stored as a subgraph of ImageNet. ImageNet (pictorial WordNet) is not yet available.
+
+Condorcet Jury Theorem formalizes above intuition and bridges two worlds - objective reality and subjective perception. A best performing student by objective examination/interview assessment is also the most voted by infinite faculty if correctness of decision > 0.5 for all faculty voters i.e. Objective Intrinsic Merit = Subjective Perception based Majority Voting Merit.
+
+Crucial Observation is: Merit creates Centrality (Social prestige) and not the opposite - Prestige can not create merit but can only be a measure of merit. Otherwise this is an anachronism - merit does not exist yet but prestige exists and thus prestige preceding merit.
+
+Alternatively, interview of document is simply the rank of the document in terms of intrinsic graph complexity merit of it versus the rest of the text documents. Thus there are 2 aspects of interview:
+*) Ranking text document by intrinsic graph complexity/entropy merit
+*) Relevance of the text to a query - graph edit distance
+
+Here again another question can be raised: Why is a graph representation of text an apt objective intrinsic merit measure? Because, by "Circuits of Mind" and "Mind grows circuits/lambda functions" theories (cited in previous sections), biological neurons are connected as a graph and information from sensory perception is transmitted through these neurons. Threshold TC circuits theoretically formalize neural networks. Better neuroimaging techniques for quantifying the potentials created in brain by cerebral representation of a text could be ideal relevance measures and can be substituted in Tensor Neuron Model of Recursive Lambda Function Growth algorithm.
