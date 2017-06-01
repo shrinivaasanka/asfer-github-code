@@ -7367,3 +7367,16 @@ Alternatively, interview of document is simply the rank of the document in terms
 *) Relevance of the text to a query - graph edit distance
 
 Here again another question can be raised: Why is a graph representation of text an apt objective intrinsic merit measure? Because, by "Circuits of Mind" and "Mind grows circuits/lambda functions" theories (cited in previous sections), biological neurons are connected as a graph and information from sensory perception is transmitted through these neurons. Threshold TC circuits theoretically formalize neural networks. Better neuroimaging techniques for quantifying the potentials created in brain by cerebral representation of a text could be ideal relevance measures and can be substituted in Tensor Neuron Model of Recursive Lambda Function Growth algorithm.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+411. (FEATURE-DONE) AngularJS - Tornado GUI-REST WebService - Commits - 1 June 2017
+----------------------------------------------------------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------------------------------------------
+NeuronRain AngularJS RESTful client for Tornado webserver and others
+-------------------------------------------------------------------------------------------------------------------
+*) AngularJS support has been added to NeuronRain GUI-WebServer with a new webserver_rest_ui/NeuronRain_AngularJS_REST_WebServer.py which reads
+and renders angularjs Model-View-Controller templates
+*) New AngularJS Model, View and Controller script-html templates have been added to angularjs directory
+*) LSHIndex.py has been updated to have commandline arguments for index queries
+*) Hyperball Crawler pivot epicentre url has been changed and an example query "Chennai" was found to be matching within few hops.
+*) NeuronRain_REST_WebServer.py has been updated to print the logs for the script execution to browser console with subprocess POpen() , communicate() and poll() python facilities
