@@ -51,7 +51,7 @@ class Hyperball_Crawler(object):
 					print "url:",url
 					r=requests.get(url)
 					print "hops:",hops
-					soup=BeautifulSoup(r.text)
+					soup=BeautifulSoup(r.text, 'html.parser')
 					extracted_text=soup.get_text()
 					if query in extracted_text:
 						print "Query matches url:",url
@@ -62,6 +62,6 @@ class Hyperball_Crawler(object):
 				continue	
 
 if __name__=="__main__":
-	hypercrawler=Hyperball_Crawler("http://sites.google.com/site/kuja27/")
+	hypercrawler=Hyperball_Crawler("http://www.skyscrapercity.com/forumdisplay.php?f=283")
 	query="Chennai"
 	hypercrawler.crawl(query)

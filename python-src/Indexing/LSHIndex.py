@@ -129,7 +129,8 @@ if __name__=="__main__":
 	crawled=open("../webspider/WebSpider-HTML.out","r")
 	for sentence in crawled:
 		lsh.add(sentence)
-	lsh.query_nearest_neighbours("Chennai Metropolitan Area Expansion")
+	#lsh.query_nearest_neighbours("Chennai Metropolitan Area Expansion")
+	lsh.query_nearest_neighbours(sys.argv[1])
 	lsh.print_index()
 	#lsh.delete_index()
 

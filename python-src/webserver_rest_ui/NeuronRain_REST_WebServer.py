@@ -46,6 +46,7 @@ import oauth2.store.mongodb
 import oauth2.store.redisdb
 import redis
 from passlib.hash import sha256_crypt
+import subprocess
 
 class NeuronRain_REST_BaseHandler(tornado.web.RequestHandler):
     def get_current_user(self):
@@ -79,7 +80,19 @@ class NeuronRain_REST_Algorithms_Handler(NeuronRain_REST_BaseHandler):
 	self.write(script)
 	self.write(" ")
 	self.write(arguments)
-	os.system("python " + script + " " + arguments)
+	#os.system("python " + script + " " + arguments)
+	scriptlist=[script]
+	argumentslist=arguments.split()
+	argumentsdict={}
+	for arg in argumentslist:
+		argumentsdict[arg]=arg
+	pipe = subprocess.PIPE
+	popenargs = ["python", script ,arguments]
+	kwargs={}
+	process = subprocess.Popen(popenargs, 3500, stdin=pipe, stdout=pipe)
+	output, errcode = process.communicate()
+	retcode = process.poll()
+	self.write(output)
 
 class NeuronRain_REST_Auth_Handler(NeuronRain_REST_BaseHandler):
 	def get(self):
