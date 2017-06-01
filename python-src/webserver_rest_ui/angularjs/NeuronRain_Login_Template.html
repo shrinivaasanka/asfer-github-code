@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<p style="text-align:left"><b style="line-height:1.4;color:rgb(102,0,0);background-color:transparent"><font face="arial, sans-serif" size="5">NeuronRain</font><font face="arial, sans-serif" size="5" style="font-size:13.3333330154419px"> - </font><font face="arial, sans-serif" size="2">S</font></b><b style="line-height:1.4;color:rgb(102,0,0);background-color:transparent"><font size="2">ubsystems of a new Machine Learning + Cloud + Queue augmented OS - AngularJS RESTful GUI Authentication:</font></b></p><html><body ng-app="NeuronRainRESTClient" ng-controller="NeuronRainRESTClientController"><form ng-submit="submitForm()">Username: <input type="text" ng-model="form.username">Password: <input type="text" ng-model="form.password"><input type="submit" ngClick="Submit"></form>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+var NeuronRainRESTClient = angular.module('NeuronRainRESTClient', []);
+NeuronRainRESTClient.controller('NeuronRainRESTClientController', function ($scope, $http) {
+	var submitdata = {
+		username: "x",
+		password: "x"
+	};
+	$scope.save = function() {
+		submitdata = $scope.form;
+	};
+	$scope.submitForm = function() {
+                submitdata = $scope.form;
+		console.log("http.post to auth handler");
+		console.log(JSON.stringify(submitdata));
+                $http({
+			method: 'POST',
+			url: '/neuronrain_auth', 
+			data: JSON.stringify(submitdata),
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+		});
+        };
+});
+</script>
+</body></html>
+
