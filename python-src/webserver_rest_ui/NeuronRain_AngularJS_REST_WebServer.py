@@ -61,10 +61,9 @@ class NeuronRain_REST_MainHandler(NeuronRain_REST_BaseHandler):
 	
 class NeuronRain_REST_Algorithms_Handler(NeuronRain_REST_BaseHandler):
     def get(self):
-	print "NeuronRain_REST_Algorithms_Handler.get()"
 	if self.current_user is not None:
 		print "self.current_user:",self.current_user
-		self.render("angularjs/NeuronRain_Template_1.html",errormessage="Wrong Credentials")
+		self.render("angularjs/NeuronRain_Template_1.html")
 	else:
 		self.redirect("/neuronrain_auth")
 
@@ -100,7 +99,6 @@ class NeuronRain_REST_Algorithms_Handler(NeuronRain_REST_BaseHandler):
 
 class NeuronRain_REST_Auth_Handler(NeuronRain_REST_BaseHandler):
 	def get(self):
-		print "NeuronRain_REST_Auth_Handler.get()"
 		self.render("angularjs/NeuronRain_Login_Template.html", errormessage="Invalid Login")
 	
 	def post(self):
@@ -114,8 +112,6 @@ class NeuronRain_REST_Auth_Handler(NeuronRain_REST_BaseHandler):
 		requestparams=json.loads(self.request.body)
 		username=requestparams["username"]
 		password=requestparams["password"]
-		print "username=",username
-		print "password=",password
 		encrypted_password=sha256_crypt.encrypt(password)
 
 		self.set_secure_cookie("neuronrain_user",tornado.escape.json_encode(username))

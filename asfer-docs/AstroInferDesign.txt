@@ -7368,6 +7368,13 @@ Alternatively, interview of document is simply the rank of the document in terms
 
 Here again another question can be raised: Why is a graph representation of text an apt objective intrinsic merit measure? Because, by "Circuits of Mind" and "Mind grows circuits/lambda functions" theories (cited in previous sections), biological neurons are connected as a graph and information from sensory perception is transmitted through these neurons. Threshold TC circuits theoretically formalize neural networks. Better neuroimaging techniques for quantifying the potentials created in brain by cerebral representation of a text could be ideal relevance measures and can be substituted in Tensor Neuron Model of Recursive Lambda Function Growth algorithm.
 
+There is special case of intrinsic merit: For example, reading a story creates a mental picture of it as a graph of events. Objectively judging it could vary from one human to the other making it subjective. But still the absolute objective merit can be defined for such a special case by applying EventNet to this problem - whole set of events are laid out as events with partakers with cause-effect edges amongst them.
+
+References:
+-----------
+410.1 The Meaning of Meaning - http://courses.media.mit.edu/2004spring/mas966/Ogden%20Richards%201923.pdf
+410.2 WordNet and Word2Vec - https://yaledatascience.github.io/2017/03/17/nnnlp.html - In word2vec words from text are represented in a vector space and contextually related words are close enough in proximity on vector space. Word2Vec is a recent neural network model of word relations similar to Neural Tensor Network (NTN). NTN defines a relation between two words as a tensor neuron and thus complete WordNet can be defined as a graph with Tensor Neuron as edge potentials. This is the motivation for invoking Neural Tensor WordNet as an objective intrinsic merit indicator as it approximates human brain neurological text comprehension and visualization.
+
 -----------------------------------------------------------------------------------------------------------------------------------
 411. (FEATURE-DONE) AngularJS - Tornado GUI-REST WebService - Commits - 1 June 2017
 ----------------------------------------------------------------------------------------------------------------------------------- 
