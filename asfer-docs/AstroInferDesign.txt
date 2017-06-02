@@ -7374,6 +7374,7 @@ References:
 -----------
 410.1 The Meaning of Meaning - http://courses.media.mit.edu/2004spring/mas966/Ogden%20Richards%201923.pdf
 410.2 WordNet and Word2Vec - https://yaledatascience.github.io/2017/03/17/nnnlp.html - In word2vec words from text are represented in a vector space and contextually related words are close enough in proximity on vector space. Word2Vec is a recent neural network model of word relations similar to Neural Tensor Network (NTN). NTN defines a relation between two words as a tensor neuron and thus complete WordNet can be defined as a graph with Tensor Neuron as edge potentials. This is the motivation for invoking Neural Tensor WordNet as an objective intrinsic merit indicator as it approximates human brain neurological text comprehension and visualization.
+410.3 Random Walks on WordNet - http://anthology.aclweb.org/N/N15/N15-1165.pdf - Recursive Lambda Function Growth algorithm does something similar to this. It finds all random walks on Recursive Gloss Overlap graph (described in 385) and constructs a lambda function composition tree for each such walk and assigns a Neural Tensor Potential to each edge of these trees.
 
 -----------------------------------------------------------------------------------------------------------------------------------
 411. (FEATURE-DONE) AngularJS - Tornado GUI-REST WebService - Commits - 1 June 2017
