@@ -7345,12 +7345,11 @@ References:
 "strace -f python asferpythonextensions.py" disk file is written to (a coincidence or strace doing something special)
 
 ---------------------------------------------------------------------------------------------------------------------------
-410. (THEORY) Objective and Subjective Value Judgement, Text Ranking and Condorcet Jury Theorem - 29 May 2017 - Related to
-384, 385 and all Recursive Lambda Function Growth and Recursive Gloss Overlap algorithms sections in this document
+410. (THEORY) Objective and Subjective Value Judgement, Text Ranking and Condorcet Jury Theorem - 29 May 2017 and 4 June 2017 - Related to 202, 384, 385 and all Recursive Lambda Function Growth and Recursive Gloss Overlap algorithms sections in this document
 ---------------------------------------------------------------------------------------------------------------------------
 Objective merit or Intrinsic merit of a document is the measure of meaningfulness or information contained in a document. Subjective merit is how the document is perceived - Reality Versus Perception - Both should ideally coincide but do not.
 
-Following are few real-world examples:
+Following are few real-world examples in addition to academic credentials example in 202:
 *) Soccer player, Cricket player or a Tennis player is measured intrinsically by number of goals scored, number of runs/wickets or number of grandslams won respectively and not subjectively by extent of votes or fan following to them (incoming edges). Here reality and perception coincide often and an intrinsically best player by records is also most revered. Any deviation is because of human prejudice. Here intrinsic merit precedes social prestige.
 *) Merits of students are judged by examinations (question-answering) and not by majority voting by faculty. Thus question-answering or interview is an algorithm to measure intrinsic merit objectively. Here again best student in terms of marks or grades is also the most favoured. Any deviation is human prejudice. Interview of a document is how relevant it is to a query measured by graph edit distance between recursive gloss overlap graphs of query and text. Here also intrinsic merit precedes social prestige.
 
@@ -7388,3 +7387,24 @@ and renders angularjs Model-View-Controller templates
 *) LSHIndex.py has been updated to have commandline arguments for index queries
 *) Hyperball Crawler pivot epicentre url has been changed and an example query "Chennai" was found to be matching within few hops.
 *) NeuronRain_REST_WebServer.py has been updated to print the logs for the script execution to browser console with subprocess POpen() , communicate() and poll() python facilities
+
+--------------------------------------------------------------------------------------------------------------------------
+412. (THEORY) Graph Neural Networks, Tensor Neurons and Recursive Lambda Function Growth Intrinsic Merit - 4 June 2017 -
+related to 410
+--------------------------------------------------------------------------------------------------------------------------
+Definition Recursive Gloss Overlap Graph with word-word edges as Neuron Tensor Network relations having potentials was defined previously. Recursive Lambda Function Growth computes all random walks of the definition graph and creates a lambda function composition tree for each such random walk. For each subtree f of the recursive lambda function growth with children w1 and w2 composed potential for f is defined as:
+	p(f(w1,w2)) = p(w1) * p(w2) for some operator *
+
+Rather than mere summation of potentials of edges following minmax criterion extracts the most meaningful random walk:
+*) Minimum Neuron Tensor Potential edge of each random walk is found - path minimum potential
+*) Maximum of all minimum path potentials extracts a random walk lambda composition tree which is the most probable inferred meaning of the document - Max(Min(potentials)) - this makes sense because maximum of minimum potential implies minimum possible neural activation.
+
+Event Related Potentials (ERP) mentioned in 202 are unusual spikes in EEG of brain (N400 dataset) when unrelated words are read. Complement of ERP for related words as dataset could be an ideal estimator for Neuron Tensor relatedness potential between two words in definition graph.
+
+Graph Neural Networks are recent models of neural network which generalize to a graph. In a Graph Neural Network, potential of each vertex is a function of potentials of all adjacent vertices and neuron tensor potentials of incoming edges from them. Neuron Tensor Network edge relations for each word vertices pair of Recursive Gloss Overlap Graph can be mapped to edges of a Graph Neural Network. Thus a text is mapped to not just a graph but to a Graph Neural Network with Tensor Neuron Edges, an ideal choice for human text comprehension simulation. Recursive Gloss Overlap Graph with Neuron Tensor word-word edges combines two concepts into one - Graph Tensor Neuron Network (GTNN).
+
+Data on websites can be classified into 3 categories: 1) text 2) voice 3) images and videos. Intrinsic merit which is a measure of creativity presently focuses only on text. Analyzing the intrinsic merit of voice and visuals is a separate field in itself - Fourier Analysis of Waveforms and Discrete Fourier Transforms.
+
+References:
+-----------
+412.1 Graph Neural Networks -  http://repository.hkbu.edu.hk/cgi/viewcontent.cgi?article=1000&context=vprd_ja
