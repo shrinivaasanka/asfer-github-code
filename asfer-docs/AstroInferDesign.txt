@@ -7389,8 +7389,8 @@ and renders angularjs Model-View-Controller templates
 *) NeuronRain_REST_WebServer.py has been updated to print the logs for the script execution to browser console with subprocess POpen() , communicate() and poll() python facilities
 
 --------------------------------------------------------------------------------------------------------------------------
-412. (THEORY) Graph Neural Networks, Tensor Neurons and Recursive Lambda Function Growth Intrinsic Merit - 4 June 2017 -
-related to 410
+412. (THEORY) Graph Neural Networks, Tensor Neurons and Recursive Lambda Function Growth Intrinsic Merit - 4 June 2017 and
+8 June 2017 - related to 410
 --------------------------------------------------------------------------------------------------------------------------
 Definition Recursive Gloss Overlap Graph with word-word edges as Neuron Tensor Network relations having potentials was defined previously. Recursive Lambda Function Growth computes all random walks of the definition graph and creates a lambda function composition tree for each such random walk. For each subtree f of the recursive lambda function growth with children w1 and w2 composed potential for f is defined as:
 	p(f(w1,w2)) = p(w1) * p(w2) for some operator *
@@ -7404,6 +7404,29 @@ Event Related Potentials (ERP) mentioned in 202 are unusual spikes in EEG of bra
 Graph Neural Networks are recent models of neural network which generalize to a graph. In a Graph Neural Network, potential of each vertex is a function of potentials of all adjacent vertices and neuron tensor potentials of incoming edges from them. Neuron Tensor Network edge relations for each word vertices pair of Recursive Gloss Overlap Graph can be mapped to edges of a Graph Neural Network. Thus a text is mapped to not just a graph but to a Graph Neural Network with Tensor Neuron Edges, an ideal choice for human text comprehension simulation. Recursive Gloss Overlap Graph with Neuron Tensor word-word edges combines two concepts into one - Graph Tensor Neuron Network (GTNN).
 
 Data on websites can be classified into 3 categories: 1) text 2) voice 3) images and videos. Intrinsic merit which is a measure of creativity presently focuses only on text. Analyzing the intrinsic merit of voice and visuals is a separate field in itself - Fourier Analysis of Waveforms and Discrete Fourier Transforms.
+
+Ranking text by Graph Tensor Neuron Network intrinsic merit potential can be done in multiple ways:
+- Rank Vertices and Edges by potential
+- Rank the random walk lambda function composition tree by potential
+and so on.
+
+Example lambda composition tree on a random walk of recursive gloss overlap graph:
+	f1 = requiredby(fuel, flight)
+	f2 = has(flight, tyre)
+	f3 = has(tyre, wheel)
+	f4 = does(wheel, landing)
+	f5 = requires(landing, gear)
+	f1(fuel, f2(flight, f3(tyre, f4(wheel, f5(landing, gear)))))
+
+Previous example random walk lambda composition tree has been constructed in 384 and 385. Potentials for Tensor Neuron Relations have to be predetermined by a dataset if such exists similar to N400 EEG dataset. Tensor Neuron Relations in Recursive Gloss Overlap Definition Graph are grammatical connectives mostly. In this example, "requiredby" is a relation. Cumulative potential of each such random walk lambda composition tree has to be computed.
+
+Difference in Graph Tensor Neuron Network mapping of a text is: Each lambda composition tree is evaluated as a Graph Neural Network - each subtree is evaluated and passed on to higher level - and potential at the root is returned as the merit. Mixing time in markov chain andom walk is the number of steps before stationary distribution is attained. Thus maximum potential returned at the root of (a lambda composition graph tensor neuron network of (any converging stationary random walk of (a recursive gloss overlap definition graph of (a text)))) is a measure of intrinsic merit.
+
+Intuition for Graph Tensor Neuron Network is below:
+*) Random walk on recursive gloss overlap graph simulates randomness in cognitive cerebral text comprehension.
+*) Tensor Neuron relatedness potential between two word vertices in definition graph quantifies relevance and meaningfulness
+*) Lambda composition tree-graph neural network for each random walk on definition graph simulates how meaning is recursively understood bottom-up with randomness involved.
+
 
 References:
 -----------
