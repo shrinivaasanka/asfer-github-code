@@ -7408,6 +7408,7 @@ Data on websites can be classified into 3 categories: 1) text 2) voice 3) images
 Ranking text by Graph Tensor Neuron Network intrinsic merit potential can be done in multiple ways:
 - Rank Vertices and Edges by potential
 - Rank the random walk lambda function composition tree by potential
+- Rank by Korner Entropy of the Graph Tensor Neuron Network and other qualitative and quantitative graph complexity metrics.
 and so on.
 
 Example lambda composition tree on a random walk of recursive gloss overlap graph:
@@ -7431,3 +7432,11 @@ Intuition for Graph Tensor Neuron Network is below:
 References:
 -----------
 412.1 Graph Neural Networks -  http://repository.hkbu.edu.hk/cgi/viewcontent.cgi?article=1000&context=vprd_ja
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+413. (FEATURE-DONE) Recursive Lambda Function Growth - Graph Tensor Neuron Network Implementation - Commits - 9 June 2017
+---------------------------------------------------------------------------------------------------------------------------------------------
+(*) Recursive Lambda Function Growth implementation has been updated to compute Graph Tensor Neuron Network intrinsic merit
+(*) Each lambda function composition tree of a random walk on recursive gloss overlap graph is evaluated as a Graph Neural Network having Tensor Neuron potentials for word-word edges.
+(*) Tensor neuron potential for relation edges in Graph Neural Network has been hardcoded at present and requires a dataset for grammatical
+connective relations similar to EEG dataset for brain spikes in electric potentials.

@@ -34,6 +34,9 @@ import RecursiveGlossOverlap_Classifier
 from nltk.corpus import wordnet as wn
 import math
 
+#Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
+#Recursive Gloss Overlap graph of a text
+
 class RecursiveLambdaFunctionGrowth(object):
 	def __init__(self):
 		self.lambda_comp_tree=AVLTree()
@@ -44,7 +47,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.index_list=[]
 		self.lambda_expression=[]
 		self.lambda_composition=""
-		self.tensor_intrinsic_merit=0.0
+		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		self.entropy=10000000000.0
 
 	def get_next_tree_traversal_id(self,x,y):
@@ -98,11 +101,14 @@ class RecursiveLambdaFunctionGrowth(object):
 		#print self.lambda_expression
 		self.lambda_composition=[]
 		cnt=0
+
+		#recursively evaluate the Graph Tensor Neuron Network for random walk composition tree bottom up as Graph Neural Network
+		#having Tensor Neuron activations for each subtree.
 		while len(self.lambda_expression) > 2 :
 			operand2=self.lambda_expression.pop()
 			function=self.lambda_expression.pop()
 			operand1=self.lambda_expression.pop()
-			self.tensor_intrinsic_merit += self.tensor_neuron_weight(operand1, function, operand2)
+			self.graph_tensor_neuron_network_intrinsic_merit *= self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
 			self.lambda_composition="("+function+"("+operand1+","+operand2+"))" 
 			self.lambda_expression.append(self.lambda_composition)
 			cnt+=1
@@ -155,8 +161,14 @@ class RecursiveLambdaFunctionGrowth(object):
 				pass
 			iteration+=1
 
-	def tensor_neuron_weight(self, e1, r, e2):
-		relation=r
+	def get_tensor_neuron_potential_for_relation(self,r):
+		#Tensor neuron potential for a relation has been hardcoded to 1.0
+		#If a dataset for tensor neuron potential is available, it has to to be looked-up and numeric
+		#potential has to be returned from here.
+		return 1.0
+
+	def subtree_graph_tensor_neuron_network_weight(self, e1, r, e2):
+		relation_tensor_neuron_potential=self.get_tensor_neuron_potential_for_relation(r)
 		if e1[0]=="(":
 			e1_parsed=e1.split("(")
 			#print "operand1:", e1_parsed[1]
@@ -174,11 +186,17 @@ class RecursiveLambdaFunctionGrowth(object):
 			synset_e1 = wn.synsets(e2)
 
 		similarity = 0.0
+		smt=0.0
 		for s1, s2 in product(synset_e1, synset_e1):
 			smt=wn.wup_similarity(s1,s2)
-			if smt > similarity:
-				similarity = smt
-		return similarity
+			print "similarity=",smt
+			if smt > similarity and smt != 1.0:
+				similarity = float(smt)
+
+		if similarity == 0.0:
+			similarity = 1.0
+
+		return similarity * relation_tensor_neuron_potential
 
 	def randomwalk_lambda_function_composition_tree(self,randomwalk):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
@@ -202,7 +220,7 @@ class RecursiveLambdaFunctionGrowth(object):
 				pass
 			print
 			rw_ct=""
-		print "Tensor Neuron Intrinsic Merit :",self.tensor_intrinsic_merit
+		print "Graph Tensor Neuron Network Intrinsic Merit :",self.graph_tensor_neuron_network_intrinsic_merit
 		self.korner_entropy(definitiongraph)
 		print "Korner Entropy Intrinsic Merit :",self.entropy
 
