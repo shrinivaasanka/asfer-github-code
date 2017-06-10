@@ -161,42 +161,63 @@ class RecursiveLambdaFunctionGrowth(object):
 				pass
 			iteration+=1
 
-	def get_tensor_neuron_potential_for_relation(self,r):
-		#Tensor neuron potential for a relation has been hardcoded to 1.0
-		#If a dataset for tensor neuron potential is available, it has to to be looked-up and numeric
-		#potential has to be returned from here.
-		return 1.0
+	def get_tensor_neuron_potential_for_relation(self,synset_vertex,synset_r):
+		smt=0.0
+		similarity=0.0
+		for s1, s2 in product(synset_vertex, synset_r):
+			smt=wn.wup_similarity(s1,s2)
+			#print "similarity=",smt
+			if smt > similarity and smt != 1.0:
+				similarity = float(smt)
+		return similarity
 
 	def subtree_graph_tensor_neuron_network_weight(self, e1, r, e2):
-		relation_tensor_neuron_potential=self.get_tensor_neuron_potential_for_relation(r)
+		#relation_tensor_neuron_potential=self.get_tensor_neuron_potential_for_relation(r)
 		if e1[0]=="(":
 			e1_parsed=e1.split("(")
-			#print "operand1:", e1_parsed[1]
+			print "operand1:", e1_parsed[1]
 			synset_e1 = wn.synsets(e1_parsed[1])
 		else:
 			synset_e1 = wn.synsets(e1)
-			#print "operand1:", e1
+			print "operand1:", e1
 
+		print "Relation: ",r
+		synset_r = wn.synsets(r)
 		if e2[0]=="(":
 			e2_parsed=e2.split("(")
-			#print "operand2:", e2_parsed[1]
+			print "operand2:", e2_parsed[1]
 			synset_e2 = wn.synsets(e2_parsed[1])
 		else:
-			#print "operand2:", e2
-			synset_e1 = wn.synsets(e2)
+			print "operand2:", e2
+			synset_e2 = wn.synsets(e2)
 
-		similarity = 0.0
-		smt=0.0
-		for s1, s2 in product(synset_e1, synset_e1):
-			smt=wn.wup_similarity(s1,s2)
-			print "similarity=",smt
-			if smt > similarity and smt != 1.0:
-				similarity = float(smt)
+		similarity1 = 0.0
+		similarity2 = 0.0
 
-		if similarity == 0.0:
-			similarity = 1.0
+		#Children of each subtree are the Tensor Neuron inputs to the subtree root
+		#Each subtree is evaluated as a graph neural network with weights for
+		#each neural input to the subtree root. WordNet similarity is computed
+		#between each child and subtree root and is presently assumed as Tensor Neuron
+		#relation potential for the lack of better metric to measure word-word EEG potential.
+		#If a dataset for tensor neuron potential
+		#is available, it has to to be looked-up and numeric
+		#potential has to be returned from here.
 
-		return similarity * relation_tensor_neuron_potential
+		similarity1 = self.get_tensor_neuron_potential_for_relation(synset_e1,synset_r)
+		similarity2 = self.get_tensor_neuron_potential_for_relation(synset_e2,synset_r)
+
+		if similarity1 == 0.0:
+			similarity1 = 1.0
+		if similarity2 == 0.0:
+			similarity2 = 1.0
+
+		weight1=0.5
+		weight2=0.5
+		bias=0.1
+
+		#Finally a neuron activation function (simple 1-dimensional tensor) is computed and
+		#returned to the subtree root for next level.
+		return (weight1*similarity1 + weight2*similarity2 + bias)
 
 	def randomwalk_lambda_function_composition_tree(self,randomwalk):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
