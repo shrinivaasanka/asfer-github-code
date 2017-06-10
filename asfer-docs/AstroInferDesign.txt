@@ -7441,3 +7441,23 @@ References:
 (*) Each lambda function composition tree of a random walk on recursive gloss overlap graph is evaluated as a Graph Neural Network having Tensor Neuron potentials for word-word edges.
 (*) Tensor neuron potential for relation edges in Graph Neural Network has been hardcoded at present and requires a dataset for grammatical
 connective relations similar to EEG dataset for brain spikes in electric potentials.
+
+------------------------------------------------------------------------------------------------------------------------------
+414. (FEATURE-DONE) Graph Tensor Neuron Network - implementation update - Commits - 10 June 2017
+------------------------------------------------------------------------------------------------------------------------------
+*) Changed the subtree graph tensor neuron network computation
+
+*) Children of each subtree are the Tensor Neuron inputs to the subtree root
+Each subtree is evaluated as a graph neural network with weights for
+each neural input to the subtree root.
+
+*) WordNet similarity is computed between each child and subtree root and is presently assumed as Tensor Neuron
+relation potential for the lack of better metric to measure word-word EEG potential.
+If a dataset for tensor neuron potential is available, it has to to be looked-up and numeric
+potential has to be returned from here.
+
+*) Finally a neuron activation function (simple 1-dimensional tensor) is computed and returned to the subtree root for next level.
+
+*) logs for the this have been committed to testlogs. Presently graph tensor neuron network intrinsic merit is a very small decimal
+because of the decimal values of similarity and tensor neurons, but quite receptive to small changes.
+
