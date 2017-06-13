@@ -223,10 +223,9 @@ class RecursiveLambdaFunctionGrowth(object):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
 		return randomwalk_lambdacomposition
 
-	def grow_lambda_function3(self):
-		text=open("RecursiveLambdaFunctionGrowth.txt","r")
+	def grow_lambda_function3(self,text):
 		stpairs=[]
-		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text.read())
+		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
 		for a in definitiongraph.nodes():
 			for b in definitiongraph.nodes():
@@ -268,4 +267,5 @@ class RecursiveLambdaFunctionGrowth(object):
 
 if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
-	lambdafn.grow_lambda_function3()
+	text=open("RecursiveLambdaFunctionGrowth.txt","r")
+	lambdafn.grow_lambda_function3(text.read())

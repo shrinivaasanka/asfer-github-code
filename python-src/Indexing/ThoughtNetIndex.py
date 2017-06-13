@@ -29,12 +29,13 @@ import json
 
 class ThoughtNetIndex(object):
 	def __init__(self):
-		self.thoughtnet_hypergraph_storage=open("../ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
-		self.thoughtnet_hypergraph_edges_storage=open("../ThoughtNet/ThoughtNet_Edges.txt","r")
+		self.thoughtnet_hypergraph_storage=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
+		self.thoughtnet_hypergraph_edges_storage=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Edges.txt","r")
 		self.thoughtnet_hypergraph=json.loads(self.thoughtnet_hypergraph_storage.read())
 		self.thoughtnet_hypergraph_edges=json.loads(self.thoughtnet_hypergraph_edges_storage.read())
 
 	def query_index(self,query):
+		query_results=[]
 		print "##############################################################"
 		print "Querying ThoughtNet Hypergraph Index for query:",query
 		print "##############################################################"
@@ -45,6 +46,8 @@ class ThoughtNetIndex(object):
 			print "######################################"
 			for edges in self.thoughtnet_hypergraph[classification[0][k][0]]:
 				print self.thoughtnet_hypergraph_edges[edges].encode('utf-8')
+				query_results.append(self.thoughtnet_hypergraph_edges[edges].encode('utf-8'))
+		return query_results 
 
 if __name__=="__main__":
 	index=ThoughtNetIndex()
