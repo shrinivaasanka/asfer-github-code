@@ -175,20 +175,20 @@ class RecursiveLambdaFunctionGrowth(object):
 		#relation_tensor_neuron_potential=self.get_tensor_neuron_potential_for_relation(r)
 		if e1[0]=="(":
 			e1_parsed=e1.split("(")
-			print "operand1:", e1_parsed[1]
+			#print "operand1:", e1_parsed[1]
 			synset_e1 = wn.synsets(e1_parsed[1])
 		else:
 			synset_e1 = wn.synsets(e1)
-			print "operand1:", e1
+			#print "operand1:", e1
 
 		print "Relation: ",r
 		synset_r = wn.synsets(r)
 		if e2[0]=="(":
 			e2_parsed=e2.split("(")
-			print "operand2:", e2_parsed[1]
+			#print "operand2:", e2_parsed[1]
 			synset_e2 = wn.synsets(e2_parsed[1])
 		else:
-			print "operand2:", e2
+			#print "operand2:", e2
 			synset_e2 = wn.synsets(e2)
 
 		similarity1 = 0.0
@@ -233,9 +233,9 @@ class RecursiveLambdaFunctionGrowth(object):
 		rw_ct=""
 		for k,v in stpairs:
 			try:
-				print "Random Walk between :",k," and ",v,":",apsp[k][v]
+				#print "Random Walk between :",k," and ",v,":",apsp[k][v]
 				rw_ct=self.randomwalk_lambda_function_composition_tree(apsp[k][v])
-				print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
+				#print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
 			except KeyError:
 				pass
 			print
