@@ -7461,3 +7461,13 @@ potential has to be returned from here.
 *) logs for the this have been committed to testlogs. Presently graph tensor neuron network intrinsic merit is a very small decimal
 because of the decimal values of similarity and tensor neurons, but quite receptive to small changes.
 
+------------------------------------------------------------------------------------------------------------------------------------
+415. (FEATURE-DONE) Script for Querying Index (LSH and ThoughtNet) and Ranking the results with Recursive Lambda Function Growth
+- Commits - 13 June 2017
+------------------------------------------------------------------------------------------------------------------------------------
+*) New python script QueryIndexAndRank.py has been committed for retrieving results from Index matching a query and rank them
+*) It queries both Locality Sensitive Hashing and ThoughtNet indices
+*) Functions of classes have been parametrized for invocation across modules
+*) Both LSH and ThoughtNet indices have been recreated
+*) Ranking is done by Recursive Lambda Function Growth algorithm which is a superset of Recursive Gloss Overlap
+*) This script was tested via NeuronRain Tornado RESTful GUI
