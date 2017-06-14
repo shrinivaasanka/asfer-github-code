@@ -6643,6 +6643,9 @@ References:
 368.4 Depth Hierarchy Theorem - [RossmanServedioTan] - Theorem 1 - https://arxiv.org/pdf/1504.03398v1.pdf - Circuit of depth <= d-1 with size <= 2^(n^(1/6(d-1))) agrees with a function of depth d on at most 0.5 + n^Omega(-1/d) fraction of inputs.
 368.5 Formula size of Majority function - [Valiant] - http://www.sciencedirect.com/science/article/pii/0196677484900166?via%3Dihub
 368.6 Exact Learning of Boolean Functions from Monotone Theory - [Nader H. Bshouty] - http://www.cs.technion.ac.il/~bshouty/MyPapers/Exact-Learning-Boolean-Functions-via-the-Monotone-Theory.ps - CDNF algorithm - Section 6 - exactly learns any boolean function in time polynomial in number of variables, size of DNF and CNF with polynomial membership and equivalence(counterexample) queries.
+368.7 BPEXP is believed to collapse to EXP - if P=BPP then BPEXP=EXP (but converse BPEXP=EXP implying P=BPP is not known) - https://www.ime.usp.br/~spschool2016/wp-content/uploads/2016/07/CarboniOliveiraIgor.pdf
+368.8 From [Klivans-Fortnow] result mentioned in 368.1, if class EXP is efficiently PAC learnable with membership queries, BPEXP is not in EXP
+contradicting BPEXP=EXP by homogeneous voter Condorcet Jury Theorem BPEXP circuit derandomization mentioned in 400. BPEXP=EXP implies hence that EXP is not efficiently PAC learnable.
 
 ----------------------------------------------------------------------------------------------------------------
 369. (FEATURE-DONE) An experimental special case k-CNF SAT Solver algorithm implementation - 31 January 2017
