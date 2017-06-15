@@ -7474,3 +7474,10 @@ because of the decimal values of similarity and tensor neurons, but quite recept
 *) Both LSH and ThoughtNet indices have been recreated
 *) Ranking is done by Recursive Lambda Function Growth algorithm which is a superset of Recursive Gloss Overlap
 *) This script was tested via NeuronRain Tornado RESTful GUI
+
+-------------------------------------------------------------------------------------------------------------------------------------
+416. (FEATURE-DONE) Graph Tensor Neuron Network Intrinsic Merit and QueryIndexAndRank update - Commits - 15 June 2017
+-------------------------------------------------------------------------------------------------------------------------------------
+*) Graph Tensor Neuron Network Intrinsic Merit computation has been changed - Intrinsic merits of all random walks are summed up than multiplying to get a tangible merit value
+*) Some bugs fixed and debug prints have been changed
+*) logs have been committed to testlogs/
