@@ -108,7 +108,7 @@ class RecursiveLambdaFunctionGrowth(object):
 			operand2=self.lambda_expression.pop()
 			function=self.lambda_expression.pop()
 			operand1=self.lambda_expression.pop()
-			self.graph_tensor_neuron_network_intrinsic_merit *= self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
+			self.graph_tensor_neuron_network_intrinsic_merit += self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
 			self.lambda_composition="("+function+"("+operand1+","+operand2+"))" 
 			self.lambda_expression.append(self.lambda_composition)
 			cnt+=1
@@ -181,7 +181,7 @@ class RecursiveLambdaFunctionGrowth(object):
 			synset_e1 = wn.synsets(e1)
 			#print "operand1:", e1
 
-		print "Relation: ",r
+		#print "Relation: ",r
 		synset_r = wn.synsets(r)
 		if e2[0]=="(":
 			e2_parsed=e2.split("(")
@@ -238,11 +238,11 @@ class RecursiveLambdaFunctionGrowth(object):
 				#print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
 			except KeyError:
 				pass
-			print
 			rw_ct=""
-		print "Graph Tensor Neuron Network Intrinsic Merit :",self.graph_tensor_neuron_network_intrinsic_merit
+		print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:",self.graph_tensor_neuron_network_intrinsic_merit
 		self.korner_entropy(definitiongraph)
-		print "Korner Entropy Intrinsic Merit :",self.entropy
+		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
+		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):

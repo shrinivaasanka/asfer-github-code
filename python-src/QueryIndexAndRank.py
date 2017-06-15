@@ -30,7 +30,7 @@ from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 import sys
 
 if __name__=="__main__":
-	lshindex=LSHIndex()
+	lshindex=LSHIndex(50,50)
 	thoughtnetindex=ThoughtNetIndex()
 	rlfg=RecursiveLambdaFunctionGrowth()
 	print "#############################################################"
@@ -41,8 +41,9 @@ if __name__=="__main__":
                 lshindex.add(sentence)
 	lshresults=lshindex.query_nearest_neighbours(sys.argv[1])
 	print lshresults
-	for r in lshresults:
-		rlfg.grow_lambda_function3(r)	
+	if lshresults is not None:
+		for r in lshresults:
+			rlfg.grow_lambda_function3(r[0].replace(u'\xa0', ' ').encode('utf-8'))
 	lshindex.delete_index()
 	print "#############################################################"
 	print "QueryAndRank: Querying ThoughtNet Index for - ",sys.argv[1]
@@ -50,4 +51,4 @@ if __name__=="__main__":
 	thoughtnetresults=thoughtnetindex.query_index(sys.argv[1])
 	print thoughtnetresults
 	for r in thoughtnetresults:
-		rlfg.grow_lambda_function3(r)	
+		rlfg.grow_lambda_function3(r.replace(u'\xa0', ' ').encode('utf-8'))

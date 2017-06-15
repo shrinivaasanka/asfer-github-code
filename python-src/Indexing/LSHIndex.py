@@ -70,7 +70,7 @@ class LSHIndex(object):
 			print "Top Nearest Neighbour Ranked for Query - ",e,":"
 			nearest_neighbour=self.find_nearest_neighbour(e,sorted_nearest_neighbours)
 			pprint.pprint(nearest_neighbour)
-			return sorted_nearest_neighbours 
+			return [nearest_neighbour] 
 
 	def find_nearest_neighbour(self, e, neighbours):
 		minneighbour=""
@@ -133,6 +133,6 @@ if __name__=="__main__":
 		lsh.add(sentence)
 	#lsh.query_nearest_neighbours("Chennai Metropolitan Area Expansion")
 	lsh.query_nearest_neighbours(sys.argv[1])
-	lsh.print_index()
+	#lsh.print_index()
 	lsh.delete_index()
 
