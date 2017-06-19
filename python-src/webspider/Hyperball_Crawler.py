@@ -31,11 +31,13 @@
 
 from bs4 import BeautifulSoup
 from collections import deque
+from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 import requests
 
 class Hyperball_Crawler(object):
 	def __init__(self,pivot):
 		self.pivot=pivot
+		self.rlfg=RecursiveLambdaFunctionGrowth()
 
 	def crawl(self,query):
 		deq=deque()
@@ -53,8 +55,10 @@ class Hyperball_Crawler(object):
 					print "hops:",hops
 					soup=BeautifulSoup(r.text, 'html.parser')
 					extracted_text=soup.get_text()
+					#print "Extracted text:",extracted_text
 					if query in extracted_text:
 						print "Query matches url:",url
+						self.rlfg.grow_lambda_function3(extracted_text.replace(u'\xa0', ' ').encode('utf-8'))
 					for link in soup.find_all('a'):
 						deq.append(link.get('href'))	
 				hops += 1	
@@ -62,6 +66,6 @@ class Hyperball_Crawler(object):
 				continue	
 
 if __name__=="__main__":
-	hypercrawler=Hyperball_Crawler("http://www.skyscrapercity.com/forumdisplay.php?f=283")
+	hypercrawler=Hyperball_Crawler("https://twitter.com/search?f=tweets&q=Chennai&src=typd")
 	query="Chennai"
 	hypercrawler.crawl(query)
