@@ -7481,3 +7481,10 @@ because of the decimal values of similarity and tensor neurons, but quite recept
 *) Graph Tensor Neuron Network Intrinsic Merit computation has been changed - Intrinsic merits of all random walks are summed up than multiplying to get a tangible merit value
 *) Some bugs fixed and debug prints have been changed
 *) logs have been committed to testlogs/
+
+-----------------------------------------------------------------------------------------------------------------------------------
+417. (FEATURE-DONE) Hyperball crawler update - Commits - 19 June 2017
+-----------------------------------------------------------------------------------------------------------------------------------
+Integrated Recursive Lambda Function Growth Intrinsic Merit Score(Graph Tensor Neuron Network and Korner Entropy)  into Hyperball crawler.
+
+
