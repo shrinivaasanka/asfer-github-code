@@ -7487,4 +7487,33 @@ because of the decimal values of similarity and tensor neurons, but quite recept
 -----------------------------------------------------------------------------------------------------------------------------------
 Integrated Recursive Lambda Function Growth Intrinsic Merit Score(Graph Tensor Neuron Network and Korner Entropy)  into Hyperball crawler.
 
+----------------------------------------------------------------------------------------------------------------------------------
+418. (THEORY) Thought Experiment of Generic Intrinsic Merit and Condorcet Jury Theorem - 21 June 2017
+----------------------------------------------------------------------------------------------------------------------------------
+Intrinsic merit so far is restricted to text documents. Subjective ranking measures are like mirrors which reflect the real merit of the
+candidate. Each vote in the majority voting is similar to an image of the votee projected on to the voter mirror. Some mirrors reflect well
+while others don't. Efficiency of a voter mirror is equivalent to decision correctness of a voter. Present web ranking algorithms measure votee by the perception mirror images, which is indirect. Intrinsic merit breaks mirror images and relies only on what the votee really is. But then isn't intrinisic merit a mirror image too? It is not because no human perception or image based voting is involved to ascertain merit. Only the graph complexity of the text-graph and its graph neural network is sufficient. Merit is a universal requirement. Examples in 410 and 202 motivate it. Can merit be applied to entities beyond voice, visuals and text? Most probably yes. Intelligence of human beings are ranked by intelligence quotients which is also an intrinsic merit measure (though IQ tests are disputed by psychological studies). Hence judging people by intrinsic merit is beyond just IQ scores. An algorithm to classify people as "Good" and "Bad" could be a breakthrough in machine intelligence. Hypothetical people classifier could be as below:
+(*) Peruse academic records and translate to score
+(*) Peruse work records and translate to score
+(*) Translate awards received to score
+(*) Translate brain imageing data to score (EEG and fMRI)
+(*) Translate IQ or EQ to score
+Above is not a formal algorithm but tries to intuit how it may look like. Human Resource Analytics are done as above
+
+Objective Intrinsic Merit = Vote by an algorithm
+Subjective Ranking = Votes by people translated into rank by an algorithm (present ranking algorithms rely on incoming links or votes to a text which are created by human beings)
+
+Thus Generic Intrinsic Merit removes human element completely while assessing merit (closer to AI).Goodness when it applies to human beings is not just a record based score and usually has moral and ethical elements in it. People classifier based on intrinsic merit has to be intrusive and invasive similar to HR analytics example earlier.
+
+(*)Question: Why should intrinsic merit be judged only in this way?
+(*)Answer: This is not the only possible objective intrinsic merit judgement. There could be other ways too. Disclaimer is intrinsic merit assumes cerebral representation of sensory reception (words, texts, visuals, voices etc.,) and its complexity is the closest to ideal judgement.
+
+(*)Question: Wouldn't cerebral representation vary from person to person and thus be subjective?
+(*)Answer: Yes, but there are standardized event related potential datasets gathered from multiple neuroscience experiments on human subjects. Such ERP data are similar for most brains. Variation in potential occurs because cerebral cortex and its sulci&gyri vary from person to person. It has been found that cortex and complexity of gray matter determine intelligence and grasping ability. Intrinsic merit should therefore be based on best brain potential data.
+
+(*)Question: Isn't perception based ranking enough? Why is such an intrusive objective merit required?
+(*)Answer: Yes and No. Perception majority voting based ranking is accurate only if  all voters have decision correctness probability > 0.5 from Condorcet Jury Theorem. PageRank works well in most cases because incoming edges vote mostly with >50% correctness. This correctness is accumulated by a Markov Chain Random Walk recursively - vote from a good vertex to another vertex implies voted vertex is good (Bonacich Power Centrality) and so on. Initial goodness is based on weight of an edge. Markov iteration stabilizes the goodness. Probability that goodness of stationary Markov distribution > 0.5 can be obtained by a tail bound and should be exponentially meagre.
+
+It was mentioned earlier that Fourier analysis of visuals and voice is the measure of intrinsic merit. Following definition of generic intrinsic merit further strengthens it:
+Generic intrinsic merit of an entity - text, visual or voice - is the complexity of cerebral representation potential as received by sensory perception.  For texts it is the graph complexity measure. For voice and visuals it could ERPs activated on seeing or hearing and based on EEG data.
 
