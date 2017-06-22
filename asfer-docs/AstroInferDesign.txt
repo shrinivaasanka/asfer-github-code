@@ -7512,7 +7512,7 @@ Thus Generic Intrinsic Merit removes human element completely while assessing me
 (*)Answer: Yes, but there are standardized event related potential datasets gathered from multiple neuroscience experiments on human subjects. Such ERP data are similar for most brains. Variation in potential occurs because cerebral cortex and its sulci&gyri vary from person to person. It has been found that cortex and complexity of gray matter determine intelligence and grasping ability. Intrinsic merit should therefore be based on best brain potential data.
 
 (*)Question: Isn't perception based ranking enough? Why is such an intrusive objective merit required?
-(*)Answer: Yes and No. Perception majority voting based ranking is accurate only if  all voters have decision correctness probability > 0.5 from Condorcet Jury Theorem. PageRank works well in most cases because incoming edges vote mostly with >50% correctness. This correctness is accumulated by a Markov Chain Random Walk recursively - vote from a good vertex to another vertex implies voted vertex is good (Bonacich Power Centrality) and so on. Initial goodness is based on weight of an edge. Markov iteration stabilizes the goodness. Probability that goodness of stationary Markov distribution > 0.5 can be obtained by a tail bound and should be exponentially meagre.
+(*)Answer: Yes and No. Perception majority voting based ranking is accurate only if  all voters have decision correctness probability > 0.5 from Condorcet Jury Theorem. PageRank works well in most cases because incoming edges vote mostly with >50% correctness. This correctness is accumulated by a Markov Chain Random Walk recursively - vote from a good vertex to another vertex implies voted vertex is good (Bonacich Power Centrality) and so on. Initial goodness is based on weight of an edge. Markov iteration stabilizes the goodness. Probability that goodness of stationary Markov distribution < 0.5 can be obtained by a tail bound and should be exponentially meagre.
 
 It was mentioned earlier that Fourier analysis of visuals and voice is the measure of intrinsic merit. Following definition of generic intrinsic merit further strengthens it:
 Generic intrinsic merit of an entity - text, visual or voice - is the complexity of cerebral representation potential as received by sensory perception.  For texts it is the graph complexity measure. For voice and visuals it could ERPs activated on seeing or hearing and based on EEG data.
@@ -7520,3 +7520,59 @@ Generic intrinsic merit of an entity - text, visual or voice - is the complexity
 References:
 -----------
 418.1 Event Related Potentials for attractive facial recognition - https://labs.la.utexas.edu/langloislab/research/event-related-potential-erp/418.2 Event Related Potentials - http://cognitrn.psych.indiana.edu/busey/eegseminar/pdfs/Event-Related%2520PotentialsIntro.pdf - ERPs are cortical potentials of interoperating neurons in response to a cognitive stimulus.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+419. (THEORY) Goodness of Link Graph Majority Voting and Complex Plane representation of merit - 22 June 2017 - related to 418
+----------------------------------------------------------------------------------------------------------------------------------------------
+Following is an example link graph in world wide web with weights for each edge:
+	y1 - x1 : 0.25
+	y1 - x2 : 0.25
+	y1 - x3 : 0.25
+	y1 - x4 : 0.25
+implying y1 votes to x1,x2,x3,x4 with weight 0.25 each.
+
+Following is the corresponding initial decision correctness (goodness) graph with goodness for each edge:
+	y1 - x1 : 0.25
+	y1 - x2 : 0.25
+	y1 - x3 : 0.375
+	y1 - x4 : 0.125
+implying y1 votes to x1 with correctness 0.25, x2 with correctness 0.25, x3 with correctness 0.375 and x4 with correctness 0.125.
+
+Markov iteration on the decision correctness graph (similar to random walk on link graph) tends to a stationary distribution after certain number of random walks. Cumulative goodness of voter v1 is defined as:
+	summation(weight(edge) * goodness(edge))
+For previous example cumulative goodness of voter y1 is:
+	0.25*0.25 + 0.375*0.25 + 0.25*0.25 + 0.25*0.25 =
+	1/32 + 3/32 + 2/32 + 2/32 = 0.25
+
+If all votes are 100% correctly decided by y1, correctness graph has 1 for all edge weights. Thus cumulative goodness of y1 is:
+	0.25 * 1 + 0.25 * 1 + 0.25 * 1 + 0.25 * 1 = 1 = 100%
+After markov iteration attains stationary distribution, cumulative goodness of all vertices also becomes stationary. Atleast one incoming vertex y voting to another vertex x having cumulative goodness < 0.5 at the end of markov iteration implies group decision is a failure and does not concur with the real merit of a vertex x.
+
+Following are the votes received by a vertex x1 from voters y1,y2,y3,y4 having respective cumulative goodness:
+	y1 - x1: 0.75
+	y2 - x1: 0.3 (voter with cumulative goodness < 0.5)
+	y3 - x1: 0.8
+	y4 - x1: 0.9
+
+What is the probability in average case that atleast one voting vertex has cumulative goodness < 0.5? Link graph voting is different from normal voting - it is peer to peer and each voter apportions vote to the neighbouring candidates - single voter can vote multiple candidates simultaneously.
+
+Pr[atleast one adjacent vertex y to a candidate vertex x has cumulative goodness < 0.5 after markov iteration] = 1 - Pr[goodness > 0.5]
+
+From Markov inequality tail bound, Pr[cumulative goodness > 0.5] <= mean/0.5
+Pr[cumulative goodness < 0.5] = 1 - Pr[goodness > 0.5] >= 1 - mean/0.5
+where mean is the average cumulative goodness of all vertices in link graph.
+
+When mean is 0.5 (uniform distribution), Pr[cumulative goodness < 0.5] >= 1 - 0.5/0.5 = 0
+For any other values of mean < 0.5, Pr[atleast one adjacent vertex y to a candidate vertex x has cumulative goodness < 0.5 after markov iteration] = 1 - mean/0.5 is always greater than zero.
+
+In discrete random variable case, if goodness takes n discrete values between 0 and 1 then, mean = summation(x*p(x)) where p(x) = 1/n is:
+	n(n+1)/2*n*n = 0.5 + 0.5/n which tends to 0.5 when n tends to infinity.
+Thus mean cumulative goodness is 0.5 in uniform distribution.
+
+Objective and Subjective rankings can be represented on a complex plane with following notation:
+	(intrinsic merit=m) + i(perception=p) = m + ip
+where p is a function of m. Any text,visual or voice can be plotted on complex plane wit previous notation. Ideally m should be equal to p. This creates a special case when m is fixed and p varies for an entity which usually happens with perception based majority voting. Such set of complex numbers with fixed merit and varying perception can be thought of as zeros of a complex valued function. Famous special case is Riemann Zeta Function with merit=0.5 and varying perception imaginary parts.
+
+References:
+-----------
+419.1 Probability and Statistics with Reliability, Queuing and Computer Science Applications - Pages 223-225 - [Kishor Shridharbhai Trivedi-Duke University]
