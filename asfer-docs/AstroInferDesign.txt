@@ -7522,7 +7522,7 @@ References:
 418.1 Event Related Potentials for attractive facial recognition - https://labs.la.utexas.edu/langloislab/research/event-related-potential-erp/418.2 Event Related Potentials - http://cognitrn.psych.indiana.edu/busey/eegseminar/pdfs/Event-Related%2520PotentialsIntro.pdf - ERPs are cortical potentials of interoperating neurons in response to a cognitive stimulus.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-419. (THEORY) Goodness of Link Graph Majority Voting and Complex Plane representation of merit - 22 June 2017 - related to 418
+419. (THEORY) Goodness of Link Graph Majority Voting and Complex Plane representation of merit - 22 June 2017 and 23 June 2017 - related to 418
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Following is an example link graph in world wide web with weights for each edge:
 	y1 - x1 : 0.25
@@ -7572,6 +7572,19 @@ Thus mean cumulative goodness is 0.5 in uniform distribution.
 Objective and Subjective rankings can be represented on a complex plane with following notation:
 	(intrinsic merit=m) + i(perception=p) = m + ip
 where p is a function of m. Any text,visual or voice can be plotted on complex plane in previous notation. Ideally m should be equal to p. This creates a special case when m is fixed and p varies for an entity which usually happens with perception based majority voting. Such set of complex numbers with fixed merit and varying perception can be thought of as zeros of a complex valued function. Famous special case is Riemann Zeta Function with merit=0.5 and varying perception imaginary parts.
+
+Riemann Hypothesis if true implies Re=0.5 for non trivial zeros of Riemann Zeta Function. If a set of complex number rankings as described previously have Re=0.5 or fixed real part and varying imaginary parts equalling non trivial zeros of Riemann Zeta Function, then the rankings impl pattern in prime numbers an unusual connection.
+
+Any k-coloring of a sequence of text and audio-visuals(AVs) denoted by integers is a classifier. 2-coloring or complementation is a special case of such a classifier. Conversely, any classifier is a coloring scheme for sequence of text and audio-visuals(AVs). For example following bit pattern is a 2-coloring/complement function - 0 and 1 are colors and f and g are complement functions illustrated as dotted indentations:
+	1111000011110000111000011100011111100000
+
+	----	----	---    ---   ------		function f:
+	   .....    ----   ----   ---      -----	complement g:
+
+Vapnik-Chervonenkis Shattering or VC Shattering is defined as:
+Let H be a set of sets and C be a set. C is shattered by H if H intersection C = powerset of C = 2^C. Intuitively, H classifies C with labels from the set H. Largest cardinality of C shattered by H is the VC dimension.
+
+2-coloring/complementation is a classifier on real line or integer sequences. 2 colors/binary encodings/complementations create a set H of size equal to powerset of real line of integer sequence. Largest cardinality of real line or integer sequence that can be shattered by H ( H intersection C = 2^C) is infinite. Thus 2-color/complementation classifier of infinite stream of sequences has VC Dimension Infinity.
 
 References:
 -----------
