@@ -6524,7 +6524,7 @@ Thus for Stability(Interview) to exceed Stability(Majority) and BKS Conjecture t
 
 Stability is alternatively defined as:
 	(+1)*Pr(f(x) = f(y)) + (-1)*Pr(f(x) != f(y))
-which is just expansion of Expectation and there are two two random variables (+1 for f(x)=f(y)) and (-1 for f(x) != f(y))
+which is just expansion of Expectation and there are two random variables (+1 for f(x)=f(y)) and (-1 for f(x) != f(y))
 => Stability(f(x)) = 1-2*Pr(f(x) != f(y))
 => Stability(f(x)) = 1-2*Sensitivity(f(x))
 => Sensitivity(f(x)) = 0.5-0.5*Stability(f(x))
@@ -7226,6 +7226,8 @@ Condorcet Jury Theorem mentioned in references below, is exactly the P(Good) bin
 
 Corollary: From 129 and 368, depth of Majority voting circuit composition can be unbounded and if all voter social choice functions have same number of variables and number of voters is exponential in number of variables, Majority voting circuit composition with error is in BPEXP than PH. By Condorcet Jury Theorem, if all voters tending to infinity decide correctly with probability > 0.5, then BPEXP derandomizes to EXP => BPEXP=EXP. Non-boolean social choice functions for more than 2 candidates are usually preference profiles per voter (list of ranked candidates per voter) and topranked candidate is voted for by the voter.
 
+If Majority Voting Circuit is in BPP, which is quite possible if number of voters is polynomial in number of variables and circuit is of polynomial size and because from Adleman's Theorem (and Bennet-Gill Theorem), BPP is in P/poly, BPP derandomizes to P for infinite electorate with decision correctness probability > 0.5 for all voters. Thus homogeneous electorate of high decision correctness (> 0.5) implies both BPEXP=EXP and P=BPP.
+
 Locality Sensitive Hashing accumulates similar voters in a bucket chain. The social choice function is the distance function. Circuit/Algorithm for Multiway contest social choice (generalization of Majority boolean function) is:
 	*) Locality Sensitive Hashing (LSH) for clustering similar voters who vote for same candidate
 	*) Sorting the LSH and find the maximum size cluster (bucket chain)
@@ -7573,7 +7575,7 @@ Objective and Subjective rankings can be represented on a complex plane with fol
 	(intrinsic merit=m) + i(perception=p) = m + ip
 where p is a function of m. Any text,visual or voice can be plotted on complex plane in previous notation. Ideally m should be equal to p. This creates a special case when m is fixed and p varies for an entity which usually happens with perception based majority voting. Such set of complex numbers with fixed merit and varying perception can be thought of as zeros of a complex valued function. Famous special case is Riemann Zeta Function with merit=0.5 and varying perception imaginary parts.
 
-Riemann Hypothesis if true implies Re=0.5 for non trivial zeros of Riemann Zeta Function. If a set of complex number rankings as described previously have Re=0.5 or fixed real part and varying imaginary parts equalling non trivial zeros of Riemann Zeta Function, then the rankings impl pattern in prime numbers an unusual connection.
+Riemann Hypothesis if true implies Re=0.5 for non trivial zeros of Riemann Zeta Function. If a set of complex number rankings as described previously have Re=0.5 or fixed real part and varying imaginary parts equalling non trivial zeros of Riemann Zeta Function, then the rankings show pattern in prime numbers an unusual connection.
 
 Any k-coloring of a sequence of text and audio-visuals(AVs) denoted by integers is a classifier. 2-coloring or complementation is a special case of such a classifier. Conversely, any classifier is a coloring scheme for sequence of text and audio-visuals(AVs). For example following bit pattern is a 2-coloring/complement function - 0 and 1 are colors and f and g are complement functions illustrated as dotted indentations:
 	1111000011110000111000011100011111100000
@@ -7589,3 +7591,29 @@ Let H be a set of sets and C be a set. C is shattered by H if H intersection C =
 References:
 -----------
 419.1 Probability and Statistics with Reliability, Queuing and Computer Science Applications - Pages 223-225 - [Kishor Shridharbhai Trivedi-Duke University]
+
+-----------------------------------------------------------------------------------------------------------------------------
+420. (THEORY) Human Resource Analytics, Interview Algorithm and Intrinsic Merit - related to 359 and 365 - 26 June 2017
+-----------------------------------------------------------------------------------------------------------------------------
+Stability of Interview TQBF circuit which is the theoretical formalism of Interview Algorithm Intrinsic Merit has been analyzed earlier as opposed to stability of Majority Voting. Extending the notion of merit from WWW to humans is the most obvious consequence. Usual interview procedure in industry is to screen resumes, shortlist them and interview for few rounds and make an offer. Does this tradition measure merit flawlessly? No. Error in interview and its stability has been analyzed in 359 and 365. Is there a way to circumvent this error and remove human element completely? Error in interview process applies to examination system in academics too. Real-life interviews and examinations have duration of few hours and rely on question-answering. Can few hours measure years of accrued merit? This question reduced to sampling problem. If merit is a scatter-plot of feature vector points on a metric space V of n-dimensions, a sample is a set of subspaces S which approximate V. Contraction Mapping (and Banach Fixed Point Theorem) maps a space to a subspace and there is always a unique fixed point in this map (f(x)=x for some x in V). An intrinsic merit analyzer can be thought of as a contraction map on the metric space of merit feature vectors of an individual. This contraction map must create a sample subspace in such a way that all merit feature vectors are near-perfectly measured. This involves 2 difficult problems:
+(*) Construct a complete merit metric feature vector space for an individual based on past records( work and academic ).
+(*) Construct a contraction map(s) which contracts this merit vector space into a sample subspace. This contraction map is then translated into an interview TQBF function. Objective Question-Answers (multiple choice) are relatively easy to construct and evaluate than descriptive, subjective question-answers.
+
+Real life interviews typically have following usecase (e.g IT industry) - a slightly modified version of previous TQBF construction:
+(*) suitability for a requirement
+(*) technical discussions (question-answering on programming/projects etc.,)
+(*) experience
+
+From 359 and 365, NoiseSensitivity(InterviewTQBF) which is the dual of Stability is defined as:
+	NoiseSensitivity(InterviewTQBF) = 0.5-0.5*Stability(InterviewTQBF) = 0.5-0.5*a^2*n^2/4
+
+Error in interview is equal to NoiseSensitivity of interview TQBF. What is the probability of interview process failing? By Markov tail bound:
+	Pr[Error in interview process > e ] <= mean/e where mean is the average error or NoiseSensitivity of interview. Therefore:
+	Pr[Error in interview process > e ] <= NoiseSensitivity(InterviewTQBF)/e
+
+While suitability can be easiliy quantified for error and interview TQBF having previous error bound, experience is a new variable in real-life HR analytics. Experience of a candidate is total duration in industry (academics,private initiatives inclusive). Experience itself is indirectly caused by past interviews. For example, a person having 30 years experience from 10 companies was meritorious in past 10 interviews and it is counterintuitive if 11th finds no merit. Thus experience is a function of merit and gradually makes future interviews redundant - an example below:
+	Experience = f(number of job/academic/private hops, intrinsic merit at each previous hop, experience per hop)
+
+References:
+-----------
+420.1 P,NP and examinations - https://terrytao.wordpress.com/2009/08/01/pnp-relativisation-and-multiple-choice-exams/
