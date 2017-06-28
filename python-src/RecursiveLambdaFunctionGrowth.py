@@ -223,6 +223,22 @@ class RecursiveLambdaFunctionGrowth(object):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
 		return randomwalk_lambdacomposition
 
+	def create_summary(self,text,corenumber=3,pathsimilarity=0.8):
+		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+		#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
+		#Hence approximating the transversal with a k-core which is the Graph counterpart of
+		#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
+		kcore=nx.k_core(definitiongraph,corenumber)
+		print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
+		for e in kcore.edges():
+			for s1 in wn.synsets(e[0]):
+				for s2 in wn.synsets(e[1]):
+					if s1.path_similarity(s2) > pathsimilarity:
+						lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
+						for l in lowestcommonhypernyms:
+							for ln in l.lemma_names():
+								print e[0]," and ",e[1]," are ",ln,".",
+
 	def grow_lambda_function3(self,text):
 		stpairs=[]
 		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
@@ -268,4 +284,5 @@ class RecursiveLambdaFunctionGrowth(object):
 if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
 	text=open("RecursiveLambdaFunctionGrowth.txt","r")
-	lambdafn.grow_lambda_function3(text.read())
+	#lambdafn.grow_lambda_function3(text.read())
+	lambdafn.create_summary(text.read())
