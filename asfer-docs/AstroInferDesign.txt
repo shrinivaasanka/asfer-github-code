@@ -7661,7 +7661,7 @@ References:
 420.6 Efficient algorithm for Hypergraph Transversals - http://jgaa.info/accepted/2005/KavvadiasStavropoulos2005.9.2.pdf
 
 ---------------------------------------------------------------------------------------------------------------
-421. (FEATURE-DONE) Text Summarization from Recursive Gloss Overlap Graph Core - Commits - 27 June 2017
+421. (FEATURE-DONE) Text Summarization from Recursive Gloss Overlap Graph Core - Commits - 28 June 2017
 ---------------------------------------------------------------------------------------------------------------
 (*) Added a new function to create a summary from text - This function creates the core of a Recursive Gloss Overlap graph
 with certain core number and writes out a text sentence for each edge in core subgraph obtaining least common ancestor(hypernym) relation
