@@ -5452,7 +5452,12 @@ Algorithm for 317.2:
 	- }
 	- choose the topmost as non-majority social choice
 
-LHS is a PSPACE-complete algorithm and RHS is either BPEXP or EXP algorithm depending on convergence or divergence of CJT circuit in RHS.
+LHS is a PSPACE-complete algorithm and RHS is either BPEXP or EXP algorithm depending on convergence or divergence of Goodness of CJT circuit in RHS. Goodness of LHS is the error probability of topranked boolean voter function.
+
+Above loop can be parallelized and yet it is in PSPACE. Proof of CJT circuit in RHS to be EXP-complete would immediately yield a lowerbound and either EXP is in BPNC or EXP is in PSPACE under equal goodness assumption in LHS and RHS. EXP in PSPACE implies EXP=PSPACE because PSPACE is in EXP. An EXPTIME problem is EXP-Complete if it can solve Exponential Time Bounded Halting Problem (i.e output 1 if a Turing Machine halts after exponential number of steps). Unbounded depth RHS CJT Majority voting composition circuit (Majority+SAT) is in EXPTIME. Following reduction from Majority voting to Bounded Halting Problem is a proof outline for EXP-completeness of CJT circuit:
+	(*) Let there be exponential number of voters (i.e exponential in number of variables)
+	(*) Number of voters = Number of steps in Bounded Halting Problem input Turing Machine = exponential
+	(*) Voting halts when all exponential voters have exercised franchise applying their SAT = EXPTIME Turing Machine Halts after exponential number of steps.
 
 If there are n boolean functions in total and probability that a boolean function i with goodness e(i) is chosen is:
 	= x(e(i))/n, where x(e(i)) is the number of boolean functions with goodness e(i)
@@ -5475,6 +5480,7 @@ References:
 ----------
 317.8 Derandomization Overview - [Kabanets] - http://www.cs.sfu.ca/~kabanets/papers/derand_survey.pdf
 317.9 Unconditional Lowerbounds against advice - [BuhrmanFortnowSanthanam] - http://homepages.inf.ed.ac.uk/rsanthan/Papers/AdviceLowerBoundICALP.pdf
+317.10 EXPTIME-Completeness - [DingZhuDu-KerIKo] - Theory of Computational Complexity - https://books.google.co.in/books?id=KMwOBAAAQBAJ&pg=PT203&redir_esc=y#v=onepage&q&f=false
 
 -------------------------------------------------------------------------------------------------------------------------------
 318. (THEORY) Yao's XOR Lemma, Hardness of Pr(Good) Majority Voting Function Circuit and Majority Version of XOR Lemma
