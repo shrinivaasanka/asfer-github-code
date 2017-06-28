@@ -5433,8 +5433,26 @@ flavours:
 	317.1 Pseudorandom Choice - a Pseudorandom Generator chooses a voting function from a set of Voting functions of electorate
 	317.2 Social choice by ranking - set of boolean functions are ranked ascending in their error probabilities and least error boolean function is chosen.
 
+--------------------
 Algorithm for 317.1:
-There are pseudorandom generators in NC(Applebaum PRG, Parallel PRGs etc.,) which choose a boolean function at random. This chosen boolean function can be Percolation boolean function too which is again in non-uniform NC. Thus Non-majority social choice can be done in NC.
+--------------------
+There are pseudorandom generators in NC(Applebaum PRG, Parallel PRGs etc.,) which choose a boolean function at random. This chosen boolean function can be Percolation boolean function too which is again in non-uniform NC. Thus Non-majority social choice can be done in BPNC as below:
+	- Invoke a PRG in NC or P to obtain pseudorandom bits X.
+	- Choose an element in electorate indexed by X.
+	- Goodness of LHS is equal to the goodness of chosen element.
+
+LHS is BPNC algorithm to RHS BPEXP Condorcet Jury Theorem (CJT) unbounded circuit and if CJT converges to 1 in RHS and Goodness of PRG choice is 1, LHS is a BPNC algorithm to EXP RHS.
+
+--------------------
+Algorithm for 317.2:
+--------------------
+	- foreach(voter)
+	- {
+	- 	Interview the voter boolean function : Rank the voters by merit (error probabilities e.g noise stability)
+	- }
+	- choose the topmost as non-majority social choice
+
+LHS is a PSPACE-complete algorithm and RHS is either BPEXP or EXP algorithm depending on convergence or divergence of CJT circuit in RHS.
 
 If there are n boolean functions in total and probability that a boolean function i with goodness e(i) is chosen is:
 	= x(e(i))/n, where x(e(i)) is the number of boolean functions with goodness e(i)
@@ -6279,7 +6297,7 @@ References:
 
 --------------------------------------------------------------------------------------------------------------------------------------
 359. (THEORY) Non-majority social choices - Interview Ranking Function and Pseudorandom Choice Function - 11 January 2017 - related to
-358 and all other non-majority versus majority voting points
+317, 358 and all other non-majority versus majority voting points
 --------------------------------------------------------------------------------------------------------------------------------------
 Previous sections mentioned about two possible ways of non-majority social choice:
 	*) Parallel interview of voters and ranking based on sorted interview scores
