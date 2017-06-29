@@ -7651,6 +7651,10 @@ Intrinsic merit metric space of feature vector points can be construed as a Hype
 
 Similar notion of transversal hypergraph can be applied to Recursive Gloss Overlap Definition Graph too (considering it as a hypergraph), for text summarization - subset of word vertices which intersect all hyperedges. Hypergraph Transversal Problem is known to be in co-NP.
 
+Like usual text documents, candidate resumes can be represented as either a Recursive Gloss Overlap graph or a ThoughtNet hypergraph:
+*) Graph: Resume text is mapped to a graph by Recursive Gloss Overlap algorithm. Core number based classifier brings out the best in the graph - candidate experience domains in resume that are closely related
+*) Hypergraph: Resumes are stored in ThoughtNet as Hypergraph index. Querying results in similar resumes. ThoughtNet internally invokes Recursive Gloss Overlap core number classifier.
+
 References:
 -----------
 420.1 P,NP and examinations - https://terrytao.wordpress.com/2009/08/01/pnp-relativisation-and-multiple-choice-exams/
@@ -7666,3 +7670,5 @@ References:
 (*) Added a new function to create a summary from text - This function creates the core of a Recursive Gloss Overlap graph
 with certain core number and writes out a text sentence for each edge in core subgraph obtaining least common ancestor(hypernym) relation
 (*) logs for this have been committed to python-src/testlogs
+
+Summarization from k-core(s) of a Recursive Gloss Overlap graph captures the most crucial areas of the text because document belongs to the class/word vertex with high core numbers.
