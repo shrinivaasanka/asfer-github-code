@@ -1,0 +1,88 @@
+root@shrinivaasanka-Inspiron-1545:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src# python RecursiveLambdaFunctionGrowth.py
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+2
+defaultdict(<type 'list'>, {u'United': [u'Security_Service'], u'Madras': [u'Chennai'], u'deck': [u'deuce'], u'Bengal': [u'Chennai'], u'four': [u'deuce'], u'counterclockwise': [u'first_base'], u'counterintelligence': [u'Security_Service'], u'Kingdom': [u'Security_Service'], u'group': [u'include'], u'chosen': [u'option', u'option'], u'environment': [u'sphere'], u'add': [u'include'], u'bases': [u'first_base'], u'Tamil': [u'Chennai', u'Tamil'], u'plate': [u'first_base'], u'government': [u'politics', u'Security_Service'], u'Bay': [u'Chennai'], u'walk': [u'sphere'], u'bigger': [u'inflate'], u'areas': [u'zone', u'zone'], u'exaggerate': [u'inflate'], u'India': [u'Tamil'], u'team': [u'first_base'], u'Dravidian': [u'Tamil'], u'security': [u'Security_Service'], u'set': [u'include'], u'second': [u'second_gear'], u'home': [u'first_base'], u'category': [u'include'], u'since': [u'Tamil'], u'acting': [u'solid'], u'extend': [u'widen', u'widen'], u'Sri': [u'Tamil'], u'cards': [u'deuce'], u'baseball': [u'first_base'], u'put': [u'include'], u'ratio': [u'second_gear'], u'box': [u'second_gear'], u'language': [u'Tamil'], u'study': [u'politics'], u'times': [u'Tamil'], u'amount': [u'sum'], u'whole': [u'sum', u'solid'], u'first': [u'first_base'], u'formerly': [u'Chennai'], u'spoken': [u'Tamil'], u'political': [u'politics'], u'infield': [u'first_base'], u'number': [u'option', u'option'], u'one': [u'deuce', u'option', u'option'], u'motor': [u'second_gear'], u'city': [u'Chennai'], u'August': [u'July'], u'area': [u'widen', u'widen'], u'housing': [u'zone', u'zone'], u'June': [u'July'], u'two': [u'deuce'], u'spots': [u'deuce'], u'call': [u'suggest'], u'vehicle': [u'second_gear'], u'forward': [u'second_gear'], u'scope': [u'widen', u'widen'], u'territory': [u'Security_Service'], u'lowest': [u'second_gear'], u'life': [u'sphere'], u'gear': [u'second_gear'], u'stationed': [u'first_base'], u'month': [u'July'], u'else': [u'include'], u'part': [u'include'], u'particular': [u'sphere'], u'towns': [u'zone', u'zone'], u'prehistoric': [u'Tamil'], u'undiversified': [u'solid'], u'following': [u'July'], u'fielding': [u'first_base'], u'certain': [u'zone', u'zone'], u'mind': [u'suggest'], u'states': [u'politics'], u'player': [u'first_base'], u'single': [u'solid'], u'something': [u'include'], u'regulate': [u'zone', u'zone'], u'counting': [u'first_base'], u'things': [u'option', u'option'], u'make': [u'inflate'], u'responsible': [u'Security_Service'], u'range': [u'widen', u'widen'], u'internal': [u'Security_Service'], u'units': [u'politics'], u'Lanka': [u'Tamil'], u'Nadu': [u'Chennai'], u'preceding': [u'July'], u'southern': [u'Tamil'], u'British': [u'Security_Service'], u'agency': [u'Security_Service'], u'together': [u'solid'], u'position': [u'first_base'], u'playing': [u'deuce']})
+Core number (sorted) : [(u'first_base', 13), (u'Tamil', 11), (u'Security_Service', 10), (u'Chennai', 8), (u'include', 8), (u'second_gear', 8), (u'deuce', 7), (u'zone', 5), (u'July', 5), (u'solid', 5), (u'politics', 5), (u'government', 4), (u'widen', 4), (u'one', 4), (u'sphere', 4), (u'option', 4), (u'sum', 3), (u'whole', 3), (u'inflate', 3), (u'United', 2), (u'Madras', 2), (u'deck', 2), (u'month', 2), (u'four', 2), (u'counterclockwise', 2), (u'towns', 2), (u'Kingdom', 2), (u'group', 2), (u'chosen', 2), (u'environment', 2), (u'add', 2), (u'bases', 2), (u'plate', 2), (u'Bay', 2), (u'Bengal', 2), (u'bigger', 2), (u'areas', 2), (u'exaggerate', 2), (u'India', 2), (u'team', 2), (u'Dravidian', 2), (u'security', 2), (u'set', 2), (u'second', 2), (u'home', 2), (u'category', 2), (u'since', 2), (u'acting', 2), (u'extend', 2), (u'Sri', 2), (u'following', 2), (u'baseball', 2), (u'put', 2), (u'ratio', 2), (u'box', 2), (u'language', 2), (u'study', 2), (u'times', 2), (u'amount', 2), (u'first', 2), (u'formerly', 2), (u'spoken', 2), (u'political', 2), (u'infield', 2), (u'number', 2), (u'motor', 2), (u'city', 2), (u'August', 2), (u'area', 2), (u'housing', 2), (u'June', 2), (u'two', 2), (u'spots', 2), (u'call', 2), (u'vehicle', 2), (u'forward', 2), (u'scope', 2), (u'territory', 2), (u'lowest', 2), (u'life', 2), (u'gear', 2), (u'stationed', 2), (u'else', 2), (u'part', 2), (u'particular', 2), (u'counterintelligence', 2), (u'prehistoric', 2), (u'undiversified', 2), (u'cards', 2), (u'fielding', 2), (u'certain', 2), (u'mind', 2), (u'states', 2), (u'player', 2), (u'single', 2), (u'something', 2), (u'regulate', 2), (u'counting', 2), (u'suggest', 2), (u'make', 2), (u'responsible', 2), (u'range', 2), (u'walk', 2), (u'internal', 2), (u'units', 2), (u'Lanka', 2), (u'Nadu', 2), (u'preceding', 2), (u'southern', 2), (u'British', 2), (u'agency', 2), (u'together', 2), (u'things', 2), (u'position', 2), (u'playing', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: first_base ,core number= 13
+This document belongs to class: Tamil ,core number= 11
+This document belongs to class: Security_Service ,core number= 10
+This document belongs to class: Chennai ,core number= 8
+This document belongs to class: include ,core number= 8
+This document belongs to class: second_gear ,core number= 8
+This document belongs to class: deuce ,core number= 7
+This document belongs to class: zone ,core number= 5
+This document belongs to class: July ,core number= 5
+This document belongs to class: solid ,core number= 5
+This document belongs to class: politics ,core number= 5
+This document belongs to class: government ,core number= 4
+This document belongs to class: widen ,core number= 4
+This document belongs to class: one ,core number= 4
+This document belongs to class: sphere ,core number= 4
+This document belongs to class: option ,core number= 4
+This document belongs to class: sum ,core number= 3
+This document belongs to class: whole ,core number= 3
+This document belongs to class: inflate ,core number= 3
+This document belongs to class: United ,core number= 2
+This document belongs to class: Madras ,core number= 2
+This document belongs to class: deck ,core number= 2
+This document belongs to class: month ,core number= 2
+This document belongs to class: four ,core number= 2
+This document belongs to class: counterclockwise ,core number= 2
+This document belongs to class: towns ,core number= 2
+This document belongs to class: Kingdom ,core number= 2
+This document belongs to class: group ,core number= 2
+This document belongs to class: chosen ,core number= 2
+This document belongs to class: environment ,core number= 2
+This document belongs to class: add ,core number= 2
+This document belongs to class: bases ,core number= 2
+This document belongs to class: plate ,core number= 2
+This document belongs to class: Bay ,core number= 2
+This document belongs to class: Bengal ,core number= 2
+This document belongs to class: bigger ,core number= 2
+This document belongs to class: areas ,core number= 2
+This document belongs to class: exaggerate ,core number= 2
+This document belongs to class: India ,core number= 2
+This document belongs to class: team ,core number= 2
+This document belongs to class: Dravidian ,core number= 2
+This document belongs to class: security ,core number= 2
+This document belongs to class: set ,core number= 2
+This document belongs to class: second ,core number= 2
+This document belongs to class: home ,core number= 2
+This document belongs to class: category ,core number= 2
+This document belongs to class: since ,core number= 2
+This document belongs to class: acting ,core number= 2
+This document belongs to class: extend ,core number= 2
+This document belongs to class: Sri ,core number= 2
+This document belongs to class: following ,core number= 2
+This document belongs to class: baseball ,core number= 2
+This document belongs to class: put ,core number= 2
+This document belongs to class: ratio ,core number= 2
+This document belongs to class: box ,core number= 2
+This document belongs to class: language ,core number= 2
+This document belongs to class: study ,core number= 2
+This document belongs to class: times ,core number= 2
+This document belongs to class: amount ,core number= 2
+	max_core_number 13
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[(u'first_base', 0.056635384022097626), (u'Tamil', 0.046866847968267254), (u'Security_Service', 0.04290614430338358), (u'include', 0.03666049575202071), (u'second_gear', 0.03666049575202071), (u'deuce', 0.030917574591297674), (u'Chennai', 0.03041208891032435), (u'zone', 0.02467556278997457), (u'July', 0.02467556278997457), (u'solid', 0.023230541915451812), (u'politics', 0.022424891892627065), (u'widen', 0.020680585135959186), (u'sphere', 0.020680585135959186), (u'option', 0.01843355098865145), (u'inflate', 0.016685607481943802), (u'suggest', 0.012690629827928424), (u'sum', 0.010140673048435809), (u'whole', 0.009564006782959034), (u'one', 0.008976620731236801), (u'government', 0.008764554531143462), (u'call', 0.006698163346905353), (u'mind', 0.006698163346905353), (u'bigger', 0.006032333737902788), (u'exaggerate', 0.006032333737902788), (u'make', 0.006032333737902788), (u'environment', 0.0056994189334015075), (u'extend', 0.0056994189334015075), (u'area', 0.0056994189334015075), (u'scope', 0.0056994189334015075), (u'life', 0.0056994189334015075), (u'particular', 0.0056994189334015075), (u'range', 0.0056994189334015075), (u'walk', 0.0056994189334015075), (u'amount', 0.005614474263908754), (u'towns', 0.005499670050700739), (u'month', 0.005499670050700739), (u'areas', 0.005499670050700739), (u'following', 0.005499670050700739), (u'August', 0.005499670050700739), (u'housing', 0.005499670050700739), (u'June', 0.005499670050700739), (u'certain', 0.005499670050700739), (u'regulate', 0.005499670050700739), (u'preceding', 0.005499670050700739), (u'acting', 0.005253880345137236), (u'undiversified', 0.005253880345137236), (u'single', 0.005253880345137236), (u'together', 0.005253880345137236), (u'chosen', 0.005221910522723993), (u'number', 0.005221910522723993), (u'things', 0.005221910522723993), (u'group', 0.005200046726649584), (u'add', 0.005200046726649584), (u'set', 0.005200046726649584), (u'second', 0.005200046726649584), (u'category', 0.005200046726649584), (u'put', 0.005200046726649584), (u'ratio', 0.005200046726649584), (u'box', 0.005200046726649584), (u'motor', 0.005200046726649584), (u'vehicle', 0.005200046726649584), (u'forward', 0.005200046726649584), (u'lowest', 0.005200046726649584), (u'gear', 0.005200046726649584), (u'else', 0.005200046726649584), (u'part', 0.005200046726649584), (u'something', 0.005200046726649584), (u'study', 0.005117055431923839), (u'political', 0.005117055431923839), (u'states', 0.005117055431923839), (u'units', 0.005117055431923839), (u'deck', 0.005059058034599766), (u'four', 0.005059058034599766), (u'two', 0.005059058034599766), (u'spots', 0.005059058034599766), (u'cards', 0.005059058034599766), (u'playing', 0.005059058034599766), (u'counterclockwise', 0.0050079804932834605), (u'bases', 0.0050079804932834605), (u'plate', 0.0050079804932834605), (u'team', 0.0050079804932834605), (u'home', 0.0050079804932834605), (u'baseball', 0.0050079804932834605), (u'first', 0.0050079804932834605), (u'infield', 0.0050079804932834605), (u'stationed', 0.0050079804932834605), (u'player', 0.0050079804932834605), (u'fielding', 0.0050079804932834605), (u'counting', 0.0050079804932834605), (u'position', 0.0050079804932834605), (u'Madras', 0.004997104644197597), (u'Bengal', 0.004997104644197597), (u'Bay', 0.004997104644197597), (u'formerly', 0.004997104644197597), (u'city', 0.004997104644197597), (u'Nadu', 0.004997104644197597), (u'United', 0.004951846925306579), (u'Kingdom', 0.004951846925306579), (u'security', 0.004951846925306579), (u'territory', 0.004951846925306579), (u'counterintelligence', 0.004951846925306579), (u'responsible', 0.004951846925306579), (u'internal', 0.004951846925306579), (u'British', 0.004951846925306579), (u'agency', 0.004951846925306579), (u'India', 0.004926017438665761), (u'Dravidian', 0.004926017438665761), (u'since', 0.004926017438665761), (u'Sri', 0.004926017438665761), (u'language', 0.004926017438665761), (u'times', 0.004926017438665761), (u'spoken', 0.004926017438665761), (u'prehistoric', 0.004926017438665761), (u'Lanka', 0.004926017438665761), (u'southern', 0.004926017438665761)]
+Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:
+23
+In July 2012, the CMDA suggested two options to the Government of Tamil Nadu for expanding the area: The first option includes whole of the Chennai district, Gummidipoondi, Ponneri, Uthukottai, Ambattur, Thiruvallur and Poonamallee taluks of the Tiruvallur district, and Tambaram, Sriperumbudur and Chengalpattu taluks of the Kancheepuram district extending up to 4,459 km2 (1,722 sq mi)
+

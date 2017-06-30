@@ -7672,3 +7672,11 @@ with certain core number and writes out a text sentence for each edge in core su
 (*) logs for this have been committed to python-src/testlogs
 
 Summarization from k-core(s) of a Recursive Gloss Overlap graph captures the most crucial areas of the text because document belongs to the class/word vertex with high core numbers.
+
+----------------------------------------------------------------------------------------------------------------------
+422. (FEATURE-DONE) Text Summarization from Recursive Gloss Overlap Graph Core - Commits - 30 June 2017
+----------------------------------------------------------------------------------------------------------------------
+(*) New clause added to classify the text and match the prominent core number word vertices in the text and only add those sentences to summary.
+(*) This is an alternative to k-core subgraph traversal and creating text programmatically. It is based on the heuristic that a summary should
+capture the essence/classes the text belongs to.
+(*) Prominent core number classes are shaved off from the sorted core number list returned by RGO classifier and top percentile is used. Summary is limited in size relative to the original text.

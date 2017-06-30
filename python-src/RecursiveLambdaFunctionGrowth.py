@@ -223,21 +223,38 @@ class RecursiveLambdaFunctionGrowth(object):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
 		return randomwalk_lambdacomposition
 
-	def create_summary(self,text,corenumber=3,pathsimilarity=0.8):
-		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
-		#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
-		#Hence approximating the transversal with a k-core which is the Graph counterpart of
-		#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
-		kcore=nx.k_core(definitiongraph,corenumber)
-		print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
-		for e in kcore.edges():
-			for s1 in wn.synsets(e[0]):
-				for s2 in wn.synsets(e[1]):
-					if s1.path_similarity(s2) > pathsimilarity:
-						lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
-						for l in lowestcommonhypernyms:
-							for ln in l.lemma_names():
-								print e[0]," and ",e[1]," are ",ln,".",
+	def create_summary(self,text,corenumber=3,pathsimilarity=0.8,graphtraversedsummary=False):
+		if graphtraversedsummary==True:
+			definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+			#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
+			#Hence approximating the transversal with a k-core which is the Graph counterpart of
+			#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
+			kcore=nx.k_core(definitiongraph,corenumber)
+			print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
+			for e in kcore.edges():
+				for s1 in wn.synsets(e[0]):
+					for s2 in wn.synsets(e[1]):
+						if s1.path_similarity(s2) > pathsimilarity:
+							lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
+							for l in lowestcommonhypernyms:
+								for ln in l.lemma_names():
+									print e[0]," and ",e[1]," are ",ln,".",
+		else:
+			textsentences=text.split(".")
+			summary=[]
+			definitiongraphclasses=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
+			print "Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:"
+			prominentclasses=int(len(definitiongraphclasses[0])/5)
+			print prominentclasses
+			for c in definitiongraphclasses[0][:prominentclasses]:
+				if len(summary) > len(textsentences) * 0.3:
+					return summary
+				for s in textsentences:
+					if c[0] in s.split():
+						if s not in summary:
+							summary.append(s)
+							print s,
+			return summary
 
 	def grow_lambda_function3(self,text):
 		stpairs=[]
