@@ -5475,6 +5475,20 @@ Randomized decision tree evaluation in 317.7 adds one additional scenario to err
 
 As mentioned elsewhere in this document and disclaimer earlier, LHS circuit is a lowerbound to RHS circuit for a C-complete class of problems when errors are equal, assuming complete problems exist for class C. When both LHS and RHS have errors, which is the most realistic case, LHS is a BPNC circuit and RHS is a BPEXP circuit with unrestricted depth of exponential sized circuit. This raises a contradiction to already known result as follows: BPP is not known to have complete problems. [Marek Karpinski and Rutger Verbeek - KV87] show that BPEXP is not in BPP and EXP is in BPEXP. If there are BPEXP-complete problems then contradiction is LHS is a BPNC algorithm to RHS BPEXP-complete problem. But BPNC is in BPP (logdepth, polysize circuit with error can be simulated in polytime with error) and BPEXP is not in BPP. This contradiction is resolved only if there are no BPEXP-complete problems or there are no BPNC/BPEXP voting functions.
 
+From https://www.math.ucdavis.edu/~greg/zoology/diagram.xml, following chain of inclusions are known:
+	NC in BPNC in RNC in QNC in BQP in DQP in EXP
+	RP in BPP in BQP in DQP in EXP
+
+If LHS is a BPNC or RNC or BPP or RP pseudorandom algorithm to unbounded CJT RHS EXP-complete problem under equal goodness assumption, previous class containments imply a drastic collapse of EXP below:
+	EXP=BPNC (or) EXP=RNC (or) EXP=RP (or) EXP=BPP
+This is rather a serious collapse because the containments include Quantum classes BQP and QNC, implying classical parallelism is equivalent to quantum parallelism . One of the interpretations to Quantum parallelism is "Many Worlds" - computations happen in parallel (states of the wave function) and interfere construnctively or destructively (superposition of wave functions when some state amplitudes cancel out while others reinforce) to curtail some of the worlds. This special case occurs only if all voters have decision correctness probability p=1. For 1 > p > 0.5, RHS CJT circuit goodness converges to 1 for infinite electorate but LHS expected goodness of Pseudorandom social choice is always less than 1, infact tends to 0 as N is infinite as below. Referring to 359:
+	Let number of voter decision functions with goodness xi = m(xi). Thus N = m(x1)+m(x2)+m(x3)+...+m(xn)
+	Expected goodness of a PRG choice is:
+		1/N * summation(xi*m(xi)) = (x1*m(x1) + x2*m(x2) + x3*m(x3) + ... + xn*m(xn)) / N
+	When all voter functions have goodness 1 then PRG choice in LHS of P(good) has goodness 1.
+For p=0.5, RHS goodness is 0.5 and LHS goodness is 0.5 => LHS is in BPNC or RNC or RP or BPP and RHS is BPEXP. If RHS is BPEXP-complete, as mentioned previously, contradicts result of [KV87], implying BPEXP=BPP. For p < 0.5, RHS CJT series goodness tends to 0 while LHS pseudorandom chouce expected goodness is always > 0. Thus only feasible lowerbound looks to be:
+	EXP=BPNC (or) EXP=RNC (or) EXP=RP (or) EXP=BPP
+when goodness p=1 uniformly for all infinite homogeneous electorate.
 
 References:
 ----------
