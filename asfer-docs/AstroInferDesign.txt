@@ -5495,6 +5495,7 @@ References:
 317.8 Derandomization Overview - [Kabanets] - http://www.cs.sfu.ca/~kabanets/papers/derand_survey.pdf
 317.9 Unconditional Lowerbounds against advice - [BuhrmanFortnowSanthanam] - http://homepages.inf.ed.ac.uk/rsanthan/Papers/AdviceLowerBoundICALP.pdf
 317.10 EXPTIME-Completeness - [DingZhuDu-KerIKo] - Theory of Computational Complexity - https://books.google.co.in/books?id=KMwOBAAAQBAJ&pg=PT203&redir_esc=y#v=onepage&q&f=false
+317.11 BPP with advice - http://people.cs.uchicago.edu/~fortnow/papers/advice.pdf - "...It can be shown using a translation argument that BPEXP is not in BPP [KV87], but this translation argument does not extend to showing a lower bound against advice. Since BPP and BPEXP are semantic classes, it is unknown whether for instance BPEXP ⊆ BPP/1 implies BPEXP/1 ⊆ BPP/2.". LHS pseudorandom social choice algorithm is non-uniform because randomly choosing an element from a varying number of electorate requires maximum size of electorate as advice. 
 
 -------------------------------------------------------------------------------------------------------------------------------
 318. (THEORY) Yao's XOR Lemma, Hardness of Pr(Good) Majority Voting Function Circuit and Majority Version of XOR Lemma
