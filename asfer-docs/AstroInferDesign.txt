@@ -7695,3 +7695,16 @@ Summarization from k-core(s) of a Recursive Gloss Overlap graph captures the mos
 (*) This is an alternative to k-core subgraph traversal and creating text programmatically. It is based on the heuristic that a summary should
 capture the essence/classes the text belongs to.
 (*) Prominent core number classes are shaved off from the sorted core number list returned by RGO classifier and top percentile is used. Summary is limited in size relative to the original text.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+423. (THEORY) Dense Subgraph Problem and Mining patterns in Graph Representation of Text - 2 July 2017
+-----------------------------------------------------------------------------------------------------------------------------------
+Recursive Gloss Overlap and Recursive Lambda Function Growth algorithms create graphs from text documents. Unsupervised classification from
+prominent vertices of the definition graph and Text summarization at present depend on finding k-core subgraphs. In general this is an NP hard
+problem to find Dense Subgraphs of a Graph where density of a subgraph S of a graph G is defined as:
+	d(S) = Edges of S / Vertices of S
+There are polynomial time maxflow based algorithms and approximations to find dense subgraphs of a graph. 
+
+References:
+----------
+423.1 Goldberg Algorithm, Charikar Algorithm and k-Cliques Densest Subgraph Algorithm for Dense Subgraph Discovery - people.seas.harvard.edu/~babis/dsd.pdf
