@@ -7702,9 +7702,33 @@ capture the essence/classes the text belongs to.
 Recursive Gloss Overlap and Recursive Lambda Function Growth algorithms create graphs from text documents. Unsupervised classification from
 prominent vertices of the definition graph and Text summarization at present depend on finding k-core subgraphs. In general this is an NP hard
 problem to find Dense Subgraphs of a Graph where density of a subgraph S of a graph G is defined as:
-	d(S) = Edges of S / Vertices of S
+	d(S) = |Edges of S| / |Vertices of S|
 There are polynomial time maxflow based algorithms and approximations to find dense subgraphs of a graph. 
 
 References:
 ----------
 423.1 Goldberg Algorithm, Charikar Algorithm and k-Cliques Densest Subgraph Algorithm for Dense Subgraph Discovery - people.seas.harvard.edu/~babis/dsd.pdf
+
+---------------------------------------------------------------------------------------------------------------------------
+424. (THEORY) Pseudorandom non-majority choice and Bounded Electorate Majority Choice - 3 July 2017 - related to 53.7
+---------------------------------------------------------------------------------------------------------------------------
+Bounded Electorate Majority Choice:
+-----------------------------------
+Odd Electorate with 3 voters is the minimum possible majority voting setting which vouchsafes a clear winner. This is a composition (both formula and circuit) of NC majority voting function with Voter SATs. This composition can be written as a unified formula by substituting the voter SAT formulas in formula for Majority function which has formula of size O(n^5.3). This combined formula can be converted to a 3-CNF by Tseitin transformation. This specific 3 voter example is NP-complete. Similar substitution for infinite electorate majority could be undecidable.
+
+Pseudorandom Non-majority Choice:
+--------------------------------
+Majority social choice has only one level of error probability i.e goodness for each voter while Non-majority pseudorandom social choice invoking a PRG has 2 levels of probabilities - 1) Probability of choosing a voter SAT at random 2) Goodness probability of chosen voter SAT and thus conditional.
+
+Let number of voter decision functions with goodness xi = m(xi). Total number of voters N = m(x1)+m(x2)+m(x3)+...+m(xn)
+Effective goodness of a PRG choice is the mean:
+	1/N * summation(xi*m(xi)) = (x1*m(x1) + x2*m(x2) + x3*m(x3) + ... + xn*m(xn)) / N
+When all voter functions have goodness 1 then PRG choice has effective goodness 1.
+
+Probability of choosing a voter of Goodness xi = m(xi)/N
+Conditional goodness probability of a PRG chosen voter SAT =
+Pr[choosing voter SAT of goodness xi] * Pr[goodness of SAT] = [m(xi)/N]*xi
+
+When m(xi)*xi/N = 1, Goodness of PRG choice is 1. This can happen only if m(xi)*xi = N => m(xi) = N and xi = 1 i.e all voters have equal goodness 1 because smaller values of xi require m(xi) > N , a contradiction. This is a BPP/BPNC/RNC/RP algorithm despite the goodness being 1 because Pseudorandom bits have to be created by a PRG.
+--------------------------------
+When goodness is 1 for both LHS PRG choice and RHS Bounded Electorate Majority Choice, PRG choice is a BPP/BPNC/RNC/RP algorithm to NP-complete Majority Choice for finite voters => NP is in BPP/BPNC/RNC/RP. But BPP is in P/poly. Therefore NP is in P/poly if NP is in BPP. From Karp-Lipton theorem if NP is in P/poly, PH collapses to Sigma(p,2) and NP in P/poly implies AM=MA by [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995)]. This independently leads to a similar bound mentioned earlier for Percolation Boolean Voter Functions for Non-majority social choice which have 100% Noise stability (LHS is a P/poly percolation circuit with 100% goodness while RHS is NP-complete finite electorate).
