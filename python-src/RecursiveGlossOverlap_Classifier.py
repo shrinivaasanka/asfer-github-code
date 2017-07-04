@@ -34,7 +34,7 @@ from nltk.wsd import lesk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
 import networkx as nx
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import Queue
 import operator
 from nltk.corpus import sentiwordnet as swn

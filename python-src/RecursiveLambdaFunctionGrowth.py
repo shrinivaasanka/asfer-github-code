@@ -33,6 +33,7 @@ from itertools import product
 import RecursiveGlossOverlap_Classifier
 from nltk.corpus import wordnet as wn
 import math
+import operator
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -223,7 +224,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		randomwalk_lambdacomposition=self.grow_lambda_function2(randomwalk)
 		return randomwalk_lambdacomposition
 
-	def create_summary(self,text,corenumber=3,pathsimilarity=0.8,graphtraversedsummary=False):
+	def create_summary(self,text,corenumber=3,pathsimilarity=0.8,graphtraversedsummary=False,shortestpath=True):
 		if graphtraversedsummary==True:
 			definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
 			#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
@@ -231,14 +232,53 @@ class RecursiveLambdaFunctionGrowth(object):
 			#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
 			kcore=nx.k_core(definitiongraph,corenumber)
 			print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
-			for e in kcore.edges():
-				for s1 in wn.synsets(e[0]):
-					for s2 in wn.synsets(e[1]):
-						if s1.path_similarity(s2) > pathsimilarity:
-							lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
-							for l in lowestcommonhypernyms:
-								for ln in l.lemma_names():
-									print e[0]," and ",e[1]," are ",ln,".",
+			print "=========================="
+			print "Dense subgraph edges:"
+			print "=========================="
+			print kcore.edges()
+			print "=========================="
+			if shortestpath == False:
+				for e in kcore.edges():
+					for s1 in wn.synsets(e[0]):
+						for s2 in wn.synsets(e[1]):
+								if s1.path_similarity(s2) > pathsimilarity:
+									lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
+									for l in lowestcommonhypernyms:
+										for ln in l.lemma_names():
+											print e[0]," and ",e[1]," are ",ln,".",
+			else:
+				#Following is the slightly modified version of shortest_path_distance() function
+				#in NLTK wordnet - traverses the synset path between 2 synsets instead of distance
+				summary={}
+				intermediates=[]
+				for e in kcore.edges():
+					for s1 in wn.synsets(e[0]):
+						for s2 in wn.synsets(e[1]):
+							s1dict = s1._shortest_hypernym_paths(False)
+							s2dict = s2._shortest_hypernym_paths(False)
+							s2dictkeys=s2dict.keys()
+							for s,d in s1dict.iteritems():
+								if s in s2dictkeys:
+									slemmanames=s.lemma_names()
+									if slemmanames[0] not in intermediates:
+										intermediates.append(slemmanames[0])
+					if len(intermediates) > 3:
+						sentence1=e[0] + " is a " + intermediates[0]
+						summary[sentence1]=self.relevance_to_text(sentence1,text) 
+						for i in xrange(len(intermediates)-2):
+							sentence2= intermediates[i] + " is a " + intermediates[i+1] + "."
+							if sentence2 not in summary:
+								summary[sentence2]=self.relevance_to_text(sentence2,text)
+						sentence3=intermediates[len(intermediates)-1] + " is a " + e[1]
+						summary[sentence3]=self.relevance_to_text(sentence3,text)
+						intermediates=[]
+				sorted_summary=sorted(summary,key=operator.itemgetter(1), reverse=True)
+				print "==================================================================="
+				print "Sorted summary created from k-core dense subgraph of text RGO"
+				print "==================================================================="
+				for s in sorted_summary:
+					print s,
+
 		else:
 			textsentences=text.split(".")
 			summary=[]
@@ -255,6 +295,11 @@ class RecursiveLambdaFunctionGrowth(object):
 							summary.append(s)
 							print s,
 			return summary
+
+	def relevance_to_text(self, sentence, text):
+		sentenceset=set(sentence.split())
+		textset=set(text.split())
+		return len(textset.intersection(sentenceset))
 
 	def grow_lambda_function3(self,text):
 		stpairs=[]
@@ -302,4 +347,4 @@ if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
 	text=open("RecursiveLambdaFunctionGrowth.txt","r")
 	#lambdafn.grow_lambda_function3(text.read())
-	lambdafn.create_summary(text.read())
+	lambdafn.create_summary(text.read(),graphtraversedsummary=True)
