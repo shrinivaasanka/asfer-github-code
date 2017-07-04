@@ -7732,3 +7732,19 @@ Pr[choosing voter SAT of goodness xi] * Pr[goodness of SAT] = [m(xi)/N]*xi
 When m(xi)*xi/N = 1, Goodness of PRG choice is 1. This can happen only if m(xi)*xi = N => m(xi) = N and xi = 1 i.e all voters have equal goodness 1 because smaller values of xi require m(xi) > N , a contradiction. This is a BPP/BPNC/RNC/RP algorithm despite the goodness being 1 because Pseudorandom bits have to be created by a PRG.
 --------------------------------
 When goodness is 1 for both LHS PRG choice and RHS Bounded Electorate Majority Choice, PRG choice is a BPP/BPNC/RNC/RP algorithm to NP-complete Majority Choice for finite voters => NP is in BPP/BPNC/RNC/RP. But BPP is in P/poly. Therefore NP is in P/poly if NP is in BPP. From Karp-Lipton theorem if NP is in P/poly, PH collapses to Sigma(p,2) and NP in P/poly implies AM=MA by [Arvind, Vikraman; Köbler, Johannes; Schöning, Uwe; Schuler, Rainer (1995)]. This independently leads to a similar bound mentioned earlier for Percolation Boolean Voter Functions for Non-majority social choice which have 100% Noise stability (LHS is a P/poly percolation circuit with 100% goodness while RHS is NP-complete finite electorate).
+
+----------------------------------------------------------------------------------------------------------------------
+425. (FEATURE-DONE) Updates to Text Summarization from Dense Subgraph of Recursive Gloss Overlap graph of a Text -
+Commits - 4 July 2017
+----------------------------------------------------------------------------------------------------------------------
+(*) import matplotlib commented in RGO classifier
+(*) New clause added to Text Summarization: This finds the common path between 2 word vertices synsets by inheriting an
+existing WordNet code for shortest wordnet path distance and constructs sentences by a sliding window for each successive
+pair of intermediate vertices in this common path. This creates a deeper profund summary than least_common_hypernyms().Sentences thus created are sorted based on a relevance score to the actual text - size of intersection similar to Lesk WSD. Only top relevant sentences can be chosen as required.
+(*) Logs for this have been committed to testlogs/.
+ 
+It has to be noted that, dense subgraph traversal and writing unguided summary sans training data mimicks human recursive
+comprehension and looks non-conventional for human reading. Presently only hypernym (IS A) relation is used for connectives.
+More comprehensive humane-looking summary can be created by Meronyms (HAS A) and Holonyms(IS PART OF) in WordNet API. ConceptNet 5 which is a better semantic framework for finding relations between concepts could do well in this context. But
+presently there is no python API for ConceptNet5 and data has to be queried as RESTful JSON objects.
+
