@@ -34,6 +34,7 @@ import RecursiveGlossOverlap_Classifier
 from nltk.corpus import wordnet as wn
 import math
 import operator
+import difflib
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -278,28 +279,35 @@ class RecursiveLambdaFunctionGrowth(object):
 				print "==================================================================="
 				for s in sorted_summary:
 					print s,
-
+			return (sorted_summary, len(sorted_summary))
 		else:
 			textsentences=text.split(".")
+			lensummary=0
 			summary=[]
 			definitiongraphclasses=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
 			print "Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:"
-			prominentclasses=int(len(definitiongraphclasses[0])/5)
-			print prominentclasses
+			prominentclasses=int(len(definitiongraphclasses[0])/2)
+			print "Total number of classes:",len(definitiongraphclasses[0])
+			print "Number of prominent classes:",prominentclasses
 			for c in definitiongraphclasses[0][:prominentclasses]:
-				if len(summary) > len(textsentences) * 0.3:
-					return summary
+				if len(summary) > len(textsentences) * 0.5:
+					return (summary,lensummary)
 				for s in textsentences:
 					if c[0] in s.split():
-						if s not in summary:
+						if s not in summary and self.relevance_to_text(s,text) > 0.5:
 							summary.append(s)
+							lensummary += len(s)
 							print s,
-			return summary
+			return (summary,lensummary)
 
 	def relevance_to_text(self, sentence, text):
-		sentenceset=set(sentence.split())
-		textset=set(text.split())
-		return len(textset.intersection(sentenceset))
+		#Ratcliff/Obershelp gestalt string pattern matching 
+		textset=set(text.split("."))
+		relevancescore=0.0
+		for t in textset:
+			rs=difflib.SequenceMatcher(None,sentence,t).ratio()
+			relevancescore=max(rs,relevancescore)
+		return relevancescore 
 
 	def grow_lambda_function3(self,text):
 		stpairs=[]
@@ -347,4 +355,9 @@ if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
 	text=open("RecursiveLambdaFunctionGrowth.txt","r")
 	#lambdafn.grow_lambda_function3(text.read())
-	lambdafn.create_summary(text.read(),graphtraversedsummary=True)
+	textread=text.read()
+	summary=lambdafn.create_summary(textread)
+	print
+	print summary
+	print "=========================================================="
+	print "Ratio of summary to text:", float(summary[1])/float(len(textread))
