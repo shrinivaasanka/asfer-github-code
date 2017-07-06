@@ -1034,6 +1034,8 @@ PRAM algorithms are in NC.
 
 	35.61) PRAM model and precise definition of input size in PRAM models - https://www.cs.fsu.edu/~engelen/courses/HPC-adv-2008/PRAM.pdf - input size is length of sequence n = 2^k ,not number of bits k=logn, and each element in the sequence is a set of bits - input size to a PRAM algorithm is exponential in number of bits and differs from sequential algorithms which have input size in just number of bits.
 
+        35.62) Simulation of Parallel RAMs by Circuits - http://www.cstheory.com/stockmeyer@sbcglobal.net/sv.pdf
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
