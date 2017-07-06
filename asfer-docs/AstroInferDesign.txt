@@ -7736,6 +7736,18 @@ When goodness is 1 for both LHS PRG choice and RHS Bounded Electorate Majority C
 
 NP in P/poly also implies PH is in P/poly. It is not known if this implies PH-complete problems exist (because PH collapsing to second level causes every k-QBFSAT problem in PH to reduce to 2-QBFSAT sigma(p,2) and thus PH-hardness is proved).
 
+PH-completeness proof outline:
+------------------------------
+If NP is in BPP, NP is in P/poly because BPP is in P/poly.
+=> If NP is in P/poly, PH is in Sigma(p,2) from Karp-Lipton-Sipser Collapse Theorem
+=> If NP is in P/poly, PH collapses to P/poly
+=> There are complete problems in each level k of the Polynomial Hierarchy(correspond to a k-depth QBFSAT).
+=> There is a complete problem in Sigma(p,2) corresponding to 2-QBFSAT.
+=> All problems in Sigma(p,2) can be reduced to this Sigma(p,2)-complete 2-QBFSAT problem.
+=> All problems in PH collapse to Sigma(p,2) if NP is in P/poly
+=> All problems in PH can be reduced to this Sigma(p,2)-complete 2-QBFSAT problem.
+=> Sigma(p,2)-complete problem is thus a PH-Complete problem
+
 References:
 -----------
 424.1 Proof of Karp-Lipton-Sipser collapse theorem - PH in P/poly -  http://www.cse.iitm.ac.in/~jayalal/teaching/CS6840/2012/lecture14.pdf
