@@ -7774,3 +7774,24 @@ presently there is no python API for ConceptNet5 and data has to be queried as R
 (*) Changed relevance_to_text() by comparing each sentence chosen by prominent class match to the sentences in text - Ratcliff-Obershelp
 Longest Common Subsequence matching difflib library function is invoked for this similarity. Sentences are chosen also based on relevance_to_text() scoring
 (*) Percentage of summary to the size of the text has been printed as a ratio. Logs have been committed to testlogs/
+
+-------------------------------------------------------------------------------------------------------------------------
+427. (FEATURE-DONE) Updates to Text Summarization - choosing sentences matching class labels - 6 July 2017
+-------------------------------------------------------------------------------------------------------------------------
+(*) Some experimentation on choosing relevant sentences to be added to summary was performed
+(*) relevance_to_text() invocation has been changed as per algorithm below:
+for each prominent dense subgraph k-core class label
+find the synset definition of class label
+for each sentence
+invoke relevance_to_text() similarity function between sentence and the class label definition
+and add to summary if the relevance ratio > 0.41 and if not already in summary
+(*) Ratio 0.41 was arrived at heuristically:
+- For relevance ratio 0.1, summary ratio was 0.65
+- For relevance ratio 0.2, summary ratio was 0.48
+- For relevance ratio 0.3, summary ratio was 0.35
+- For relevance ratio 0.4, summary ratio was 0.21
+- For relevance ratio 0.5, summary ratio was 0.02
+There is a drastic dip in size of summary if relevance threshold is increased beyond 0.4. Because of this 0.41 has been
+hardcoded.
+(*) Logs for this have been added to testlogs/
+(*) Summary generated is human readable - subset chosen from actual text.

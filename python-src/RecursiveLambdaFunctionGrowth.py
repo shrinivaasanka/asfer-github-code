@@ -293,11 +293,13 @@ class RecursiveLambdaFunctionGrowth(object):
 				if len(summary) > len(textsentences) * 0.5:
 					return (summary,lensummary)
 				for s in textsentences:
-					if c[0] in s.split():
-						if s not in summary and self.relevance_to_text(s,text) > 0.5:
-							summary.append(s)
-							lensummary += len(s)
-							print s,
+					classsynsets=wn.synsets(c[0])
+					for classsynset in classsynsets:
+						if self.relevance_to_text(classsynset.definition(), s) > 0.41:
+							if s not in summary:
+								summary.append(s)
+								lensummary += len(s)
+								print s,
 			return (summary,lensummary)
 
 	def relevance_to_text(self, sentence, text):
