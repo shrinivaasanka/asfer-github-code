@@ -7798,3 +7798,15 @@ There is a drastic dip in size of summary if relevance threshold is increased be
 hardcoded.
 (*) Logs for this have been added to testlogs/
 (*) Summary generated is human readable - subset chosen from actual text.
+
+--------------------------------------------------------------------------------------------------------------------
+428. (FEATURE-DONE) ConceptNet 5.4 Python RESTful API implementation - lookup, search and association - 7 July 2017
+--------------------------------------------------------------------------------------------------------------------
+(*) This commit implements the RESTful Python requests HTTP API for querying ConceptNet 5.4 dataset
+(*) Three functions for looking up a concept, searching a concept and finding similar associated concepts have been
+implemented with 3 endpoints (as per the documentation in https://github.com/commonsense/conceptnet5/wiki/API/2349f2bbd1d7fb726b3bbdc14cbeb18f0a40ef18)
+(*) ConceptNet is quite different from WordNet in representation as JSON dictionary as against graph in WordNet.
+(*) ConceptNet 5.4 endpoints have been invoked instead of 5.
+(*) If necessary ConceptNet can replace all WordNet invocations in a later point in time. But such a replacement is non-trivial and would
+probably require almost all Recursive Gloss Overlap related code to be rewrittern from scratch. But that depends on how ConceptNet 5
+weighs against WordNet in measuring semantic meaningfulness.
