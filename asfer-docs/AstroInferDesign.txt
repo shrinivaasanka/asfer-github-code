@@ -7812,7 +7812,7 @@ probably require almost all Recursive Gloss Overlap related code to be rewritten
 weighs against WordNet in measuring semantic meaningfulness.
 
 -----------------------------------------------------------------------------------------------------------------------------------
-429. (THEORY) Contradictions in bounds between finite and infinite electorate - 8 July 2017
+429. (THEORY) Contradictions in bounds between finite and infinite electorate - 8 July 2017 and 10 July 2017
 -----------------------------------------------------------------------------------------------------------------------------------
 Lowerbounds by equating the goodness of Non-majority and Majority social choice thus far mentioned in drafts in this document (subject to errors) are based on following assumptions:
 	(*) There are two possible paths to social choice - Non-majority and Majority
@@ -7821,19 +7821,32 @@ Lowerbounds by equating the goodness of Non-majority and Majority social choice 
 	(*) RHS Majority voting has been assumed to abide by Homegeneous version of Condorcet Jury Theorem convergence and divergence of group decision goodness as a function of individual voter goodness while LHS is either a pseudorandom choice or an interview TQBF algorithm
 	(*) Goodness of either choice majority or non-majority must be equal
 	(*) Either LHS or RHS has to be a complete problem for a complexity class C.
+	(*) Traditional literature on boolean majority functions and circuits assumes that input to majority is readily available which is equivalent to SAT oracle access to Majority function where SAT oracle could belong to any complexity class (2-SAT, 3-SAT, k-QBFSAT, etc.,) => Majority voting is in P^NP,P^PH,P^EXP etc.,
+	(*) Previous Oracle access based proofs have been intentionally circumvented by replacing Oracles with Boolean Function/Circuit compositions which have strong Communication Complexity basis (KW relations and depth of a circuit composition mentioned in 368)
 	(*) Assuming all above, LHS is an algorithm for RHS complete problem (or viceversa) creating a lowerbound.
 	(*) All bounds derived in this draft assuming above do not follow conventional lowerbound techniques e.g Circuit Lower Bounds. Equal goodness assumption implies - "both algorithms solve same problem - one is more efficient than the other".
 	(*) Most importantly drafts in this document are just analyses of various social choice functions, their complexities and contradictions irrespective of attaining lowerbounds.
 
-Possible Lowerbounds described previously for Unbounded and Bounded electorate lead to a contradiction as below:
+Possible Lowerbounds described previously for Unbounded and Bounded electorate lead to contradictions as below:
 (*) In infinite voter case, homogeneous voter CJT circuit in BPP is derandomized to P if CJT converges => P=BPP.
-(*) In finite voter case, NP-complete RHS has BPP algorithm in LHS implying NP in P/poly and collapse of PH => NP in P/poly and PH in P/poly.
+(*) In finite voter case, NP-complete RHS has BPP algorithm in LHS (NP in BPP) implying NP in P/poly and collapse of PH => NP in P/poly and PH in P/poly.
 
-Contradiction occurs when previous two are unified:
-If BPP=P (unbounded CJT) and NP is in BPP (bounded) then NP is in P=BPP => P=NP. This conflicts with the Majority Hardness Lemma (318) and HLMN PARITYSAT counterexample (53.15) but concurs with high percentage of random k-SATs satisified in Approximate CNF SAT solver by least squares (376).
+Contradiction 1 :
+-----------------
+If BPP=P (unbounded CJT) and NP is in BPP (bounded) then NP is in P=BPP => P=NP. This conflicts with P != NP implied by :
+	(*) the Majority Hardness Lemma (318),
+	(*) Polytime learning of NP implying NP does not have polytime algorithms (368) and
+	(*) HLMN PARITYSAT counterexample (53.15)
+but concurs with :
+	(*) high percentage of random k-SATs satisified in Approximate CNF SAT solver by least squares (376).
 
-But can infinite voter CJT circuit be in BPP and thus in P/poly? Infinite voter CJT circuit is of polynomial size if it is polynomial in number of Voter SAT variables and exponential if it is exponential in number of variables. Latter happens only if all voters have dissimilar SAT variables while common variables across voter SATs make it exponential. This is described in example of 53.8. Condorcet Jury Theorem convergence in homogeneous voters case implies all voters are similar (e.g have similar voting SATs) thus ruling out polynomial size case i.e Unbounded CJT circuit can not both be in BPP and converging. This contradiction stems from the assumption - BPP derandomizes to P. LHS could be in RP too. RP is contained in NP. (Can BPP derandomize to NP i.e BPP in NP?). Another assumption is all voters have 3-SAT choice functions. If all voter SATs are 2-SATs (in P), infinite and finite voter cases are not equatable and there is no contradiction. Known result: If NP is in BPP, NP=RP - this applies to bounded voting case above.
+But can infinite voter CJT circuit be in BPP and thus in P/poly? Infinite voter CJT circuit is of polynomial size if it is polynomial in number of Voter SAT variables and exponential if it is exponential in number of variables. Latter happens only if all voters have dissimilar SAT variables while common variables across voter SATs make it exponential. This is described in example of 53.8. Condorcet Jury Theorem convergence in homogeneous voters case implies all voters are similar (e.g have similar voting SATs) thus ruling out polynomial size case i.e Unbounded CJT circuit can not both be in BPP and converging. This contradiction stems from the assumption - BPP derandomizes to P. LHS could be in RP too. RP is contained in NP. (Can BPP derandomize to NP i.e BPP in NP?). Another assumption is all voters have 3-SAT choice functions. If all voter SATs are 2-SATs (in P), infinite and finite voter cases are not equatable and there is no contradiction. Known result: If NP is in BPP, NP=RP - this applies to bounded voting case above. Thus BPP=P possibility is removed by exponential sized CJT circuit and BPEXP=EXP is still possible when CJT converges. Contradiction 1 is avoided.
+
+Contradiction 2 :
+-----------------
+If NP is in BPP and thus in P/poly (irrespective of BPP=P), similar conflicts arise. An assumption made in composition of 3-SAT voters and Majority function for bounded electorate in 424 is resultant composition is also in NP (depth lowerbound for this composition can be obtained by KW relations in 368). This assumption could be false because composition of NP 3-SAT with non-uniform NC1 majority function could be harder than mere NP - because this is equivalent to replacing oracle with a circuit composition in a P^NP algorithm. P with NP oracle adds an additional quantifier and places it in second level of polynomial hierarchy (inclusion in https://www.cse.buffalo.edu/~regan/papers/ComplexityPoster.jpg shows there are problems in Sigma(p,2) /\ Pi(p,2) which also have BPP algorithms and P^NP is contained in Sigma(p,2) /\ Pi(p,2)). Thus a PRG choice and converging bounded electorate voting of equal goodness need not imply NP in BPP. This composition may not be a complete problem. Stricter oracle definition of Majority+SAT composition is NC1(L) where Majority is computable by non-uniform circuits or BWBP with oracle access to gates belonging to a class L. For 3-SAT voter oracles, CJT majority voting circuit is in NC1(NP) (is this contained in P^NP?). Subject to equal goodness, composition equivalent of NC1(NP) is in BPP and not NP is in BPP.
 
 References:
 -----------
 429.1 Definition of Homogenenous Voter - http://www.uni-saarland.de/fak1/fr12/csle/publications/2006-03_condorcet.pdf - "...Now assume that a chamber consists of three homogenous judges. Homogenous means that the decision-making quality of each single judges is described by identical parameters r..." - identical parameters are translatable to identical variables though SAT could be different for each
+429.2 Counting Classes and Fine Structure between NC and L - [Samir Datta , Meena Mahajan , B V Raghavendra Rao , Michael Thomas , Heribert Vollmer] - http://www.imsc.res.in/~meena/papers/fine-struct-nc.pdf - Definition of NC circuits with Oracle gates
