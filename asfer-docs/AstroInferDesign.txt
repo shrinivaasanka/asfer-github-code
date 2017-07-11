@@ -7827,6 +7827,21 @@ Lowerbounds by equating the goodness of Non-majority and Majority social choice 
 	(*) All bounds derived in this draft assuming above do not follow conventional lowerbound techniques e.g Circuit Lower Bounds. Equal goodness assumption implies - "both algorithms solve same problem - one is more efficient than the other".
 	(*) Most importantly drafts in this document are just analyses of various social choice functions, their complexities and contradictions irrespective of attaining lowerbounds.
 
+Equality of Goodness of PRG choice and Majority voting for finite electorate of size 3:
+--------------------------------------------------------------------------------------
+Let x1,x2,x3 be the goodness of 3 voter SATs. PRG choice randomly chooses one of the 3 voters while majority voting is the usual CJT Majority+SAT composition.
+
+Goodness of PRG choice:
+----------------------
+= (x1*m(x1) + x2*m(x2) + x3*m(x3)) / 3
+When all 3 have equal goodness 1, effective goodness is:
+= (1*1 + 1*1 + 1*1)/3 = 1
+
+Goodness of Majority choice:
+----------------------------
+This is the bounded version of CJT binomial series summation. When x1=x2=x3=1:
+= (3C2(1)^2(0)^1 + 3C3(1)^3(0)^0)  = (0 + 1) = 1
+
 Possible Lowerbounds described previously for Unbounded and Bounded electorate lead to contradictions as below:
 (*) In infinite voter case, homogeneous voter CJT circuit in BPP is derandomized to P if CJT converges => P=BPP.
 (*) In finite voter case, NP-complete RHS has BPP algorithm in LHS (NP in BPP) implying NP in P/poly and collapse of PH => NP in P/poly and PH in P/poly.
@@ -7846,7 +7861,18 @@ Contradiction 2 :
 -----------------
 If NP is in BPP and thus in P/poly (irrespective of BPP=P), similar conflicts arise. An assumption made in composition of 3-SAT voters and Majority function for bounded electorate in 424 is resultant composition is also in NP (depth lowerbound for this composition can be obtained by KW relations in 368). This assumption could be false because composition of NP 3-SAT with non-uniform NC1 majority function could be harder than mere NP - because this is equivalent to replacing oracle with a circuit composition in a P^NP algorithm. P with NP oracle adds an additional quantifier and places it in second level of polynomial hierarchy (inclusion in https://www.cse.buffalo.edu/~regan/papers/ComplexityPoster.jpg shows there are problems in Sigma(p,2) /\ Pi(p,2) which also have BPP algorithms and P^NP is contained in Sigma(p,2) /\ Pi(p,2)). Thus a PRG choice and converging bounded electorate voting of equal goodness need not imply NP in BPP. This composition may not be a complete problem. Stricter oracle definition of Majority+SAT composition is NC1(L) where Majority is computable by non-uniform circuits or BWBP with oracle access to gates belonging to a class L. For 3-SAT voter oracles, CJT majority voting circuit is in NC1(NP) (is this contained in P^NP?). Subject to equal goodness, composition equivalent of NC1(NP) is in BPP and not NP is in BPP.
 
+Reference 429.3 suggests there exists a random oracle A relative to which NC^A is in P^A. P having NP oracle access is known as class delta(p,2)=P^NP. This answers if NC1^NP is in P^NP in the affirmative. There is a known delta(p,2)-complete problem mentioned in reference 429.5. If bounded electorate NC1^NP problem is complete for its class, then equal goodness of PRG choice and bounded majority voting implies NC1^NP is in BPP. This in turn implies NP is in BPP (if NC1^NP strictly contains NP) and thus NP is in P/poly again leading to contradiction in the outset.
+
+Replacing oracles with compositions and applying depth lowerbounds for Majority+VoterSAT circuit composition as below for m voters with n variables per voter SAT (from 368):
+	D(Maj + Voter) = CommunicationComplexity(R(Maj,Voter)) >= 5.3*logm  + n - O(m*logm/n)
+does away with the hassles of relativization and directly gives the depth lowerbound of the majority voting circuit composition. Size of this composition is the alternately phrased KRW conjecture in 429.7.
+
 References:
 -----------
 429.1 Definition of Homogenenous Voter - http://www.uni-saarland.de/fak1/fr12/csle/publications/2006-03_condorcet.pdf - "...Now assume that a chamber consists of three homogenous judges. Homogenous means that the decision-making quality of each single judges is described by identical parameters r..." - identical parameters are translatable to identical variables though SAT could be different for each
 429.2 Counting Classes and Fine Structure between NC and L - [Samir Datta , Meena Mahajan , B V Raghavendra Rao , Michael Thomas , Heribert Vollmer] - http://www.imsc.res.in/~meena/papers/fine-struct-nc.pdf - Definition of NC circuits with Oracle gates
+429.3 For a random oracle A, NC^A is strictly contained in P^A - https://complexityzoo.uwaterloo.ca/Complexity_Zoo:N, https://complexityzoo.uwaterloo.ca/Zooref#mil92 - [PeterBroMiltersen]
+429.4 Delta(p,2) - P has NP oracle - https://complexityzoo.uwaterloo.ca/Complexity_Zoo:D#delta2p
+429.5 Delta(p,2) complete problem - https://complexityzoo.uwaterloo.ca/Zooref#kre88 - [Krentel] - Given a Boolean formula, does the lexicographically last satisfying assignment end with 1?
+429.6 Spira theorem - any formula of leaf size s can be transformed into a formula of depth log(s) - https://www.math.ucsd.edu/~sbuss/CourseWeb/Math267_1992WS/wholecourse.pdf
+429.7 Size of a circuit composition - alternative form of KRW conjecture - http://www.math.ias.edu/~avi/PUBLICATIONS/GavinskyMeWeWi2016.pdf - "...This suggests that information complexity may be the “right” tool to study the KRW conjecture.  In particular, since in the setting of KW relations, the information cost is analogous to the formula size, the “correct” way to state the KRW conjecture may be using formula size: L(g*f) ≈ L(g)·L(f)..." - for Majority+VoterSAT composition size is conjectured as O(n^5.3 * s) where s is the size of VoterSAT formula.
