@@ -7904,10 +7904,25 @@ References:
 429.9 NC reducibility - reducing one NC instance to another - https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf - replace NC oracle gates by multiplication of equivalent number of processors and depth
 429.10 Catechism on open problems - Interview of Eric Allender - https://books.google.co.in/books?id=7z3VCgAAQBAJ&pg=PA37&lpg=PA37&dq=NC+reducibility+majority+function&source=bl&ots=WOzlJFRbpt&sig=OmFqckehlrTfyaeTOjscJ423dUk&hl=en&sa=X&ved=0ahUKEwjQ_O-Y1YPVAhVGMI8KHbJCDbAQ6AEIIzAA#v=onepage&q=NC%20reducibility%20majority%20function&f=false - "...Majority function is not complete for NC1 under AC0 many-one reductions..."
 
-------------------------------------------------------------------------------------------------------------------------------------------
-430. (THEORY) Theoretical Formalism for an Electronic Voting Machine based on Locality Sensitive Hashing - 13 July 2017 - related to 319
-------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+430. (THEORY) Theoretical Formalism for an Electronic Voting Machine based on Locality Sensitive Hashing - 13 and 14 July 2017 - related to 265,275,376 and 319
+-----------------------------------------------------------------------------------------------------------------------------------------------
 Locality Sensitive Hashing and their relevance to Multiway Contests have been described in 319. Voters voting for same candidate are clustered together in a bucket chain of tabulation hashing. This is akin to a naive electronic voting machine which increments counters of a candidate for each vote cast for h(im/er). An LSH voting machine queries voter SAT oracles sequentially(or parallelly if there is a parallel LSH implementation), receives the candidate index, finds the candidate index key in LSH and appends the voter id to the bucket chain for the candidate. Sequential version of LSH voting machine is in delta(p,2)=P^NP because LSH is in P and oracle queries are made to voter 3SATs. LSH algorithms usually search for nearest neighbours and find similar items with high probability. For LSH based Electronic Voting Machine this rho parameter as defined in 319 is log(1/p1)/log(1/p2) where p1=Pr(h(x)=h(y)) if x and y had voted for same candidate and p2=Pr(h(x)=h(y)) if x and y had voted for different candidates. Simplest voting machine is an array of candidates and voters increment an array element for a candidate index which is exact and errorfree. But LSH voting generalizes the notion of voting as: "x and y vote for same candidate" is generalized to "x and y are similar or have similar liking". For example, a web search engine lists URL results for a query and all these URLs hash/vote to same query bucket in LSH parlance. Thus notion of exact candidate is replaced by an abstract similarity probability. Definition of rho thus allows error and its bounds are derived in references 430.2 and 430.3.
+
+Non-boolean social choice functions which a voter computes to obtain a candidate index have been described previously. Previous LSH or array of counters based voting machine has following standard operating procedure:
+	(*)  receives voters in a streaming sequence,
+	(*)  each voter solves a non-boolean SAT (which could be in an arbitrary complexity class) having oracle access to it
+	(*)  oracle returns a candidate index and counter is incremented
+	(*)  LSH based voting has a special step - it compares two voters for similarity i.e if their oracle queries return same candidate index hash them to same bucket
+	(*)  Multipartisan SAT Oracle internally has to implement the following:
+		- Iterate through all candidates
+		- Find the maximum number of clauses that can be satisfied by each candidate and quantify it as score which is NP-hard MAXSAT problem.
+		- Sort the scores for the candidates and return the topranked candidate.
+	(*) Sort the LSH by length of buckets
+	(*) MAXSAT has been used in lieu of Exact SAT for grading the candidates based on number of clauses satisfied. Exact SAT would return either 1 or 0 only and doesn't compute percentage of clauses satisfied.
+	(*) Random k-CNF SAT Solver implemented in 276 approximates by solving system of equations by least squares.
+	(*) Boolean Majority function is a special case of multipartisan voting: Restrict the number of candidates to 2 indexed as 0 and 1 and apply LSH.
+	(*) Voter SAT Oracles could be Constrant Satisfaction Problem(CSP) Solvers too which allow reals. This has been described in 265. Approximation of CSPs could be NP-hard if UGC is true.
 
 References:
 ----------
