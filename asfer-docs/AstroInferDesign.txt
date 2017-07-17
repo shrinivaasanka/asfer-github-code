@@ -7903,6 +7903,7 @@ References:
 429.8 Log Depth circuits for Division and Related - [BeameCookHoover] - https://pdfs.semanticscholar.org/29c6/f0ade6de6c926538be6420b61ee9ad71165e.pdf
 429.9 NC reducibility - reducing one NC instance to another - https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf - replace NC oracle gates by multiplication of equivalent number of processors and depth
 429.10 Catechism on open problems - Interview of Eric Allender - https://books.google.co.in/books?id=7z3VCgAAQBAJ&pg=PA37&lpg=PA37&dq=NC+reducibility+majority+function&source=bl&ots=WOzlJFRbpt&sig=OmFqckehlrTfyaeTOjscJ423dUk&hl=en&sa=X&ved=0ahUKEwjQ_O-Y1YPVAhVGMI8KHbJCDbAQ6AEIIzAA#v=onepage&q=NC%20reducibility%20majority%20function&f=false - "...Majority function is not complete for NC1 under AC0 many-one reductions..."
+429.11 Parallel Computation and the NC hierarchy relativized - [Christopher Wilson] - https://link.springer.com/chapter/10.1007/3-540-16486-3_111 - containments of NC classes relative to oracle - "NC^A hierarchy is seen to be in P^A for any oracle A. Also, nondeterministic log-space relative to ... there exists an oracle A, such that NC1^A in NC2^A ... in P^A"
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 430. (THEORY) Theoretical Formalism for an Electronic Voting Machine based on Locality Sensitive Hashing - 13 and 14 July 2017 - related to 265,275,376 and 319
@@ -7922,7 +7923,13 @@ Non-boolean social choice functions which a voter computes to obtain a candidate
 	(*) MAXSAT has been used in lieu of Exact SAT for grading the candidates based on number of clauses satisfied. Exact SAT would return either 1 or 0 only and doesn't compute percentage of clauses satisfied.
 	(*) Random k-CNF SAT Solver implemented in 276 approximates by solving system of equations by least squares.
 	(*) Boolean Majority function is a special case of multipartisan voting: Restrict the number of candidates to 2 indexed as 0 and 1 and apply LSH.
-	(*) Voter SAT Oracles could be Constrant Satisfaction Problem(CSP) Solvers too which allow reals. This has been described in 265. Approximation of CSPs could be NP-hard if UGC is true.
+	(*) Voter SAT Oracles could be Constraint Satisfaction Problem(CSP) Solvers too which allow reals. This has been described in 265. Approximation of CSPs could be NP-hard if UGC is true.
+
+Circuit Value Problem finds if a circuit encoding evaluates to 1 or 0 for an input assignment. This is equivalent to the following prover-verifier protocol:
+	(*) Voter has a Constraint Satisfaction Problem (boolean or real)
+	(*) Candidate has an assignment to the variables of voter CSP (Prover)
+	(*) Voter verifies the assignment to CSP (Verifier)
+This kind of Circuit Value Problem (CVP) formulation has been avoided throughout drafts in document for Majority Voting. This is because, equating goodness and Condorcet Jury Theorem application requires quantifying the decision correctness (or) accuracy of Voter SAT/CSP which is not feasible to compute in CVP. Class PP generalizes BPP by removing bounds on error. From Toda's Theorem, PH is contained in P^PP and P^#P. Goodness in LSH voting is exactly the rho parameter and if each voter SAT oracle in LSH with unbounded error is in PP (extent to which a voter is misclassified in a candidate bucket), LSH voting itself is in P^PP and thus subsumes PH. Another aspect of LSH voting is majority circuit fan-in is replaced by size of buckets.
 
 References:
 ----------
@@ -7931,4 +7938,6 @@ References:
 430.3 Optimal lowerbounds for Locality Sensitive Hashing - [ODonnell] - https://www.cs.cmu.edu/~odonnell/papers/lsh.pdf
 430.4 Reflections on Trusting Trust - Trojan horses in code - program that prints itself - Quines - Godel,Escher,Bach: An Eternal Golden Braid - Fixed Points in Turing Computable Functions - [Ken Thompson] - http://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
 430.5 Problems with Electronic Voting Machines (e.g DRE machines), VVPAT and Trusting source code - [Bruce Schneier] - https://www.schneier.com/blog/archives/2004/11/the_problem_wit.html
-430.6 B-Crptographic counters protocol augmented with Public Key Infrastructure for Incrementing Counters in Tabulation Authority - https://crypto.stanford.edu/pbc/notes/crypto/voting.html - Previous LSH based theoretical voting machine requires such a secure increment protocol for incrementing tabulation hashing buckets. Anonymity requires shuffling the buckets.
+430.6 B-Cryptographic counters protocol augmented with Public Key Infrastructure for Incrementing Counters in Tabulation Authority - https://crypto.stanford.edu/pbc/notes/crypto/voting.html - Previous LSH based theoretical voting machine requires such a secure increment protocol for incrementing tabulation hashing buckets. Anonymity requires shuffling the buckets.
+430.7 PP is as hard as polynomial time hierarchy - [Toda] - http://epubs.siam.org/doi/abs/10.1137/0220053?journalCode=smjcat and [SanjeevArora-BoazBarak] - http://theory.cs.princeton.edu/complexity/book.pdf
+
