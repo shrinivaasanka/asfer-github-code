@@ -7929,3 +7929,6 @@ References:
 430.1 Locality Sensitive Hashing - [Alex Andoni] - http://web.mit.edu/andoni/www/LSH/index.html
 430.2 Lowerbounds for Locality Sensitive Hashing - [MotwaniAssafPanigrahi] - http://theory.stanford.edu/~rinap/papers/lshlb.pdf
 430.3 Optimal lowerbounds for Locality Sensitive Hashing - [ODonnell] - https://www.cs.cmu.edu/~odonnell/papers/lsh.pdf
+430.4 Reflections on Trusting Trust - Trojan horses in code - program that prints itself - Quines - Godel,Escher,Bach: An Eternal Golden Braid - Fixed Points in Turing Computable Functions - [Ken Thompson] - http://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf
+430.5 Problems with Electronic Voting Machines (e.g DRE machines), VVPAT and Trusting source code - [Bruce Schneier] - https://www.schneier.com/blog/archives/2004/11/the_problem_wit.html
+430.6 B-Crptographic counters protocol augmented with Public Key Infrastructure for Incrementing Counters in Tabulation Authority - https://crypto.stanford.edu/pbc/notes/crypto/voting.html - Previous LSH based theoretical voting machine requires such a secure increment protocol for incrementing tabulation hashing buckets. Anonymity requires shuffling the buckets.
