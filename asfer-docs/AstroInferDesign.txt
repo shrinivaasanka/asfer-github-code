@@ -7941,3 +7941,19 @@ References:
 430.6 B-Cryptographic counters protocol augmented with Public Key Infrastructure for Incrementing Counters in Tabulation Authority - https://crypto.stanford.edu/pbc/notes/crypto/voting.html - Previous LSH based theoretical voting machine requires such a secure increment protocol for incrementing tabulation hashing buckets. Anonymity requires shuffling the buckets.
 430.7 PP is as hard as polynomial time hierarchy - [Toda] - http://epubs.siam.org/doi/abs/10.1137/0220053?journalCode=smjcat and [SanjeevArora-BoazBarak] - http://theory.cs.princeton.edu/complexity/book.pdf
 
+----------------------------------------------------------------------------------------------------------------------
+431. (FEATURE-DONE and THEORY) Approximate CNF SAT Solver Update - percentage of clauses satisfied - 18 July 2017
+----------------------------------------------------------------------------------------------------------------------
+(*) This commit prints percentage of clauses satisfied for each random CNF 3SAT formula for both 0 and 1 evaluations
+(*) logs for ~1000 iterations of random 3SAT have been committed to testlogs/
+(*) Interestingly, even failing formula assignments by least squares satisfy more than 75% of clauses of the formula
+(*) Percentage of formulas satisfied by least squares heuristic is ~70%
+(*) This is probably a demonstration of complement form of Lovasz Local Lemma (LLL) for MAXSAT which is:
+if events occur independently with a certain probability, there is a small non-zero probability that none of them will occur
+(*) Dual of LLL for this MAXSAT approximation is:
+if each clauses are satisfied with a certain probability, there is a large probability that all of them are satisfied
+
+References:
+----------
+431.1 Lovasz Local Lemma - https://en.wikipedia.org/wiki/Lovász_local_lemma
+
