@@ -44,9 +44,10 @@ class SATSolver(object):
 		return diff
 
 	def satisfy(self, assignment):
-		#print "CNF clause:", self.cnfparsed
+		print "CNF Formula:", self.cnfparsed
 		#print "assignment:",assignment
 		cnfval=1
+		number_of_clauses_satisfied=0.0
 		for c in self.cnfparsed:
 			varass=[]
 			for l in c:
@@ -64,10 +65,17 @@ class SATSolver(object):
 					cval = cval + int(v)
 				if cval > 1:
 					cval=1
+			if cval == 1:
+				number_of_clauses_satisfied+=1.0
 			#print "clause value:",cval
 			cnfval = cnfval * cval
 		#print "cnf value:",cnfval
-		return cnfval
+		print "Number of clauses satisfied:",number_of_clauses_satisfied
+		print "Number of clauses :",len(self.cnfparsed)
+		percentage_clauses_satisfied=number_of_clauses_satisfied/float(len(self.cnfparsed))*100.0
+		if percentage_clauses_satisfied > 100.0:
+			print "percentage > 100"
+		return (cnfval,percentage_clauses_satisfied)
 		
 
 	def solve_SAT(self,cnf,number_of_variables):
@@ -217,7 +225,8 @@ if __name__=="__main__":
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
-		print "Assignment satisfied:",satis
+		print "Assignment satisfied:",satis[0]
+		print "Percentage of clauses satisfied:",satis[1]
 		cnt += 1
-		satiscnt += satis
+		satiscnt += satis[0]
 		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
