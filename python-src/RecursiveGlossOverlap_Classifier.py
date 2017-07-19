@@ -383,6 +383,12 @@ def RecursiveGlossOverlap_Classify(text):
 			max_core_number=n[1]
 			max_core_number_class=n[0]
 	print "	max_core_number",max_core_number
+
+	print "==================================================================="
+	print "Betweenness Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
+	bc=nx.betweenness_centrality(nxg)
+	print bc
 	
 	print "==================================================================="
 	print "Page Rank of the vertices of RGO Definition Graph"

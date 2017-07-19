@@ -7991,3 +7991,17 @@ Percentage of CNFs satisfied so far: 71.14
 Average Percentage of Clauses per CNF satisfied: 97.505
 
 This coincides with LLL lowerbounds above and far exceeds it because outdegree (common literals) is less and average percentage of CNFs satisfied is 71% after 10000 iterations. It has to be noted that average percentage of clauses satisfied per random CNF is 97% which implies that very few clauses fail per CNF.
+
+---------------------------------------------------------------------------------------------------------------------
+433. (FEATURE-DONE) Approximate CNF SAT Solver update - Commits 1 - 19 July 2017
+---------------------------------------------------------------------------------------------------------------------
+(*) Average percentage of clauses satisfied per CNF is printed at the end of 10000 iterations
+(*) AsFer Design Document updated for Lovasz Local Lemma analysis of least squares CNF SAT solver
+(*) logs for least square assignment of 10000 random CNFs committed to testlogs/
+---------------------------------------------------------------------------------------------------------------------
+434. (FEATURE-DONE) Recursive Gloss Overlap Graph Classifier update - Commits 2 - 19 July 2017
+---------------------------------------------------------------------------------------------------------------------
+(*) printed Betweenness Centrality (BC) of the definition graph of a text
+(*) BC of a node is the ratio of number of (s-t) shortest paths going through the node to all pairs shortest paths and
+thus measures how central a node is to the graph and thus is another basis for classifying a text apart from dense subgraphs. 
+
