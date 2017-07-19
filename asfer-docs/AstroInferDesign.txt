@@ -7957,3 +7957,37 @@ References:
 ----------
 431.1 Lovasz Local Lemma - https://en.wikipedia.org/wiki/Lovász_local_lemma
 
+------------------------------------------------------------------------------------------------------------------------
+432. (THEORY) MAXSAT ranking of text documents, Approximate CNF SAT solver and Lovasz Local Lemma - related to 431 -
+19 July 2017
+------------------------------------------------------------------------------------------------------------------------
+Considering a set of text documents, ranking function r(X,A), is the subjective perception measure of a text X
+with access to a perception oracle A:
+	r(X,A) = subjective rank of X as perceived by an oracle A
+In the context of web link graphs of HTML documents, every adjacent vertex of a node N is the perceiver of N and for two
+adjacent vertices A and B of N:
+	r(X,A) = r(X,B) or r(X,A) != r(X,B)
+Perception ranking of a node need not be decided just by adjacent vertices at the end of random walk markov iterations. For example, there could be vertices which are not adjacent but yet could have indirect unaccounted for perception. An example of this are the readers of a website who do not link to it but yet have a perception. This perception is not reckoned in subjective link graph ranking.
+
+Ranking of texts can be thought of as MAXSAT problem: Each reader of a text has a CNF (subjective) or all readers have fixed CNF (Intrinsic Objective Merit) which they apply on the qualitative and quantitative attributes of a text. CNF for measuring merit conjoins clauses for measuring meaningfulness of the text. Each literal in this CNF is a merit variable e.g Graph complexity measures like Korner Entropy , Graph Tensor Neuron Network Intrinsic Merit, Connectivity etc., Rank of the text is the percentage of clauses satisfied. This CNF based ranking unifies all subcategories of rankings.
+
+Lovasz Local Lemma:
+Let a1,a2,a3,...,an be set of events. If each event occurs with probability < p, and dependency digraph of these events have outdegree at most d, then the probability of non-occurrence of all these events is non-zero:
+	Pr[/\ !ai] > 0 , if ep(d+1) < 1 for e=2.7128...
+
+CNF formula can be translated into a graph where each vertex corresponds to a clause and there is an edge between any 2 clausevertices if they have a common literal (negated or unnegated). In approximate least-square SAT solver, let d+1 be the number of clauses per CNF. Then at most d other clauses can have literal overlap and thus CNF clause dependency graph can have maximum outdegree of d. Each event ai corresponds to not satisfying clause i in CNF.
+
+From LLL, If p < 1/[e(d+1)] is the probability of an event (not satisfying a clause) :
+Probability that clause is satisfied: 1-p > (1-1/[e(d+1)])
+Probability that all of the clauses are satisfied > (1-1/[e(d+1)])^(d+1) (for d+1 clauses)
+Probability that none of the clauses are satisfied < 1-(1-1/[e(d+1)])^(d+1)
+In previous example d+1 = 14 and thus probability that none of the clauses are satisified for any random CNF is:
+= 1-(1-1/[e(14)])^(14)  < ~31.11%
+and probability of all the clauses being satisified for any random CNF is:
+(1-1/[e(14)])^(14)  > ~68.89%
+
+Experimental iterations of SAT solver converge as below (10000 CNFs):
+Percentage of CNFs satisfied so far: 71.14
+Average Percentage of Clauses per CNF satisfied: 97.505
+
+This coincides with LLL lowerbounds above and far exceeds it because outdegree (common literals) is less and average percentage of CNFs satisfied is 71% after 10000 iterations. It has to be noted that average percentage of clauses satisfied per random CNF is 97% which implies that very few clauses fail per CNF.

@@ -213,7 +213,8 @@ if __name__=="__main__":
 	#ass=satsolver.solve_SAT(cnf,5)
 	cnt=0
 	satiscnt=0
-	while(True):
+	average_percentage_of_clauses_satisfied = 0.0
+	while(cnt < 10000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
@@ -227,6 +228,8 @@ if __name__=="__main__":
 		satis=satsolver.satisfy(ass2)
 		print "Assignment satisfied:",satis[0]
 		print "Percentage of clauses satisfied:",satis[1]
+		average_percentage_of_clauses_satisfied += satis[1]
 		cnt += 1
 		satiscnt += satis[0]
 		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
+	print "Average Percentage of Clauses per CNF satisfied:",float(average_percentage_of_clauses_satisfied)/float(cnt)
