@@ -388,10 +388,25 @@ def RecursiveGlossOverlap_Classify(text):
 	print "Betweenness Centrality of Recursive Gloss Overlap graph vertices"
 	print "==================================================================="
 	bc=nx.betweenness_centrality(nxg)
-	print bc
+	sorted_bc=sorted(bc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_bc 
+
+	print "==================================================================="
+	print "Closeness Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
+	cc=nx.closeness_centrality(nxg)
+	sorted_cc=sorted(cc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_cc 
+
+	print "==================================================================="
+	print "Degree Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
+	dc=nx.degree_centrality(nxg)
+	sorted_dc=sorted(dc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_dc 
 	
 	print "==================================================================="
-	print "Page Rank of the vertices of RGO Definition Graph"
+	print "Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)"
 	print "==================================================================="
 	sorted_pagerank_nxg=sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
 	print sorted_pagerank_nxg
