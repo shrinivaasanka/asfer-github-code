@@ -221,8 +221,8 @@ if __name__=="__main__":
 		print "solve_SAT2(): Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver()
-		cnf=satsolver.createRandom3CNF(14,14)
-		ass2=satsolver.solve_SAT2(cnf,14)
+		cnf=satsolver.createRandom3CNF(16,16)
+		ass2=satsolver.solve_SAT2(cnf,16)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
@@ -232,4 +232,4 @@ if __name__=="__main__":
 		cnt += 1
 		satiscnt += satis[0]
 		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
-	print "Average Percentage of Clauses per CNF satisfied:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+		print "Average Percentage of Clauses per CNF satisfied:",float(average_percentage_of_clauses_satisfied)/float(cnt)
