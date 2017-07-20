@@ -8005,3 +8005,16 @@ This coincides with LLL lowerbounds above and far exceeds it because outdegree (
 (*) BC of a node is the ratio of number of (s-t) shortest paths going through the node to all pairs shortest paths and
 thus measures how central a node is to the graph and thus is another basis for classifying a text apart from dense subgraphs. 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+435. (FEATURE-DONE) Recursive Gloss Overlap graph classifier update - 20 July 2017
+--------------------------------------------------------------------------------------------------------------------------------------------
+(*) Following centrality measures for the definition graph have been printed in sorted order and top vertices are compared:
+       1) Betweenness Centrality
+       2) Closeness Centrality
+       3) Degree Centrality
+       4) Eigenvector Centrality (PageRank)
+       5) Core numbers Centrality (k-core dense subgraphs)
+(*) While first 3 centrality measures are reasonably equal in terms of ranking central vertices, PageRank centrality and k-core centrality are
+ slightly different
+(*) But all 5 centrality measures reasonably capture the central purport of the text i.e the text on
+ "Chennai Metropolitan Area Expansion to 8848 sqkm" is classified into "Area" which is the topranked central vertex
