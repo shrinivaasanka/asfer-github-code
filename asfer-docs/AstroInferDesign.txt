@@ -8038,3 +8038,18 @@ Commercially available SAT solvers (exact NP-complete decision tree evaluation b
 this approximate polynomial time SAT solver does not have similar advantage, yet the huge percentage of clauses satisfied in repetitive iterations does seem to have a lurking theoretical reason. Infact this is symmetry breaking solver having a sharp threshold phase transition which tries to translate a system of equations over reals in [0,1] to discrete boolean CNF formulae(value below 0.5 is 0 and above 0.5 is 1). Hardness of Approximation and UGC prohibit polytime approximations unless P=NP. 98% satisfied clauses could imply 100/98=(1 + 0.020408163) approximation where epsilon=0.020408163. This has to be corroborated for millions of clauses and variables in least-squares and requires high performance computing.
 
 Random number generator used in generating random CNF clauses is based on /dev/random and hardware generated entropy. This CNF SAT solver depends on linux randomness to simulate pseudorandomness and create permutations of CNFs. Accuracy of previous convergence figures therefore might depend on if the CNFs are pseudorandom (e.g k-wise independent for k variables - when k increases to infinity independence may have infinitesimal probability).
+
+References:
+-----------
+436.1 Linux Pseudorandom Generator - https://eprint.iacr.org/2012/251.pdf
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+437. (FEATURE-DONE) Approximate SAT Solver update - 24 July 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+(*) Increased number of variables and clauses to (20,20).
+(*) Changed SciPy lstsq() to NumPy lstsq() because NumPy has a faster lstsq() LAPACK implementation as against xGELSS in SciPy
+(*) Logs for 100 random CNFs have been committed to testlogs/ and Percentage CNFs and Clauses satisfied are as below:
+Percentage of CNFs satisfied so far: 58.4158415842
+Average Percentage of Clauses per CNF satisfied: 97.1782178218
+
+

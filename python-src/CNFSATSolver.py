@@ -27,8 +27,10 @@
 import numpy as np
 import random
 import math
-from scipy.linalg import solve
-from scipy.linalg import lstsq
+#from scipy.linalg import solve
+#from scipy.linalg import lstsq
+from numpy.linalg import solve
+from numpy.linalg import lstsq
 
 class SATSolver(object):
 	def __init__(self):
@@ -221,8 +223,8 @@ if __name__=="__main__":
 		print "solve_SAT2(): Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver()
-		cnf=satsolver.createRandom3CNF(16,16)
-		ass2=satsolver.solve_SAT2(cnf,16)
+		cnf=satsolver.createRandom3CNF(20,20)
+		ass2=satsolver.solve_SAT2(cnf,20)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
