@@ -8052,4 +8052,11 @@ References:
 Percentage of CNFs satisfied so far: 58.4158415842
 Average Percentage of Clauses per CNF satisfied: 97.1782178218
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+438. (THEORY) Tight Hamiltonian Cycles and Independent Sets in ThoughtNet Hypergraph for Social Networks - related to 40,222,295,351 and other sections on ThoughtNet - 25 July 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+Theoretical description of ThoughtNet Hypergraph as basis for evocative thought and text analysis is mentioned previously. Hypergraph with 3 vertices per edge (3-uniform) and number of vertices n > n0, and minimum degree > n/2 + epsilon*n is guaranteed to have atleast one tight hamiltonian cycle from [Rodl,Rucinski,Szemeredi] theorem. Tight Hamiltonian Cycles have set of maximum vertex overlapping hyperedges. If complete universal knowledge is represented as 3-uniform ThoughtNet (infinite), this ensures all the concepts in universe are connected in a tight hamiltonian. Social media networks are also generalizable to hypergraphs (though tradition is to model as graphs having network flow). This can be simulated by ThoughtNet index - streamed social media tweets/posts/shares/likes are updated in ThoughtNet (non-planar) and each class stack vertex (e.g genre of people) could be part of multiple hyperedges (e.g events involving people) and each hyperedge can span multiple class stack vertices. Independent sets in this ThoughtNet Hypergraph are set of vertices e.g people who do not directly know each other. Centrality measures (e.g PageRank if there is one for hypergraph) on this hypergraph would elicit the social prestige/perception of individuals. It is worth quantifying how a vertex A is perceived by vertex B with no edge between them. This is a special case of centrality and gossip information flow - ratio of number of shortest paths between two vertices s,t in an independent set / number of all pair shortest paths. This estimates how two unknown vertices indirectly know each other.
 
+Reference:
+-----------
+438.1 Tight Hamiltonian Cycles in 3-uniform Hypergraphs - [Rodl-Rucinski-Szemeredi] theorem - https://web.cs.wpi.edu/~gsarkozy/Cikkek/Rio08.pdf
