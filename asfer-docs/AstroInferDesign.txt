@@ -8066,12 +8066,22 @@ Reference:
 438.2 Bianconi-Barabasi Social Network Model - https://en.wikipedia.org/wiki/Bianconi%E2%80%93Barab%C3%A1si_model - "...In 1999, Albert-László Barabási requested his student Bianconi to investigate evolving networks where nodes have a fitness parameter. Barabási was interested in finding out how Google, a latecomer in the search engine market, became a top player. Google’s toppling of previous top search engines went against Barabási's BA model, which states that first mover has an advantage. In the scale-free network if a node appears first it will be most connected because it had the longest time to attract links. Bianconi's work showed that when fitness parameter is present, the "early bird" is not always the winner.[10] Bianconi and Barabási's research showed that fitness is what creates or breaks the hub. Google's superior PageRank algorithm helped them to beat other top players. Later on Facebook came and dethroned Google as Internet's most linked website. In all these cases fitness mattered which was first showed in Bianconi and Barabási's research. In 2001, Ginestra Bianconi and Albert-László Barabási published the model in the Europhysics Letters.[11] In another paper,[12] substituting fitness for energy, nodes for energy level and links for particles, Bianconi and Barabási was able to map the fitness model with Bose gas...."
 438.3 Experience versus Talent shapes the web - http://www.pnas.org/content/105/37/13724.full - following simplistic theory provides intuition for it:
 	Let M be the natural ability/merit/fitness of a vertex and E be the experience.
+
 	Rate of change of experience of a social profile vertex is proportional to its intrinsic fitness and present experience.
+	Previous assumption is a heuristic on real-life experiences - intrinsic fitness is a constant while experience changes with time.
+	Thus at any time point, experiential learning depends on how naturally meritorious a person is and how much past experience is
+	helpful in increasing experiential learning. (Might have some theoretical basis in Mistake bound in computational learning theory.
+	Following formalises how a boolean function is learnt incrementally from a dataset over time by making mistakes and correcting them)
+
 	dE/dt = kME
 	=> dE = kME.dt
 	=> dE/E = kM.dt
-	=> log E = kMt
-	=> E = e^(kMt)
+	=> log E = kMt + c
+	=> E = e^(kMt+c)
+	=> E = e^c * e^(kMt)
 	=> Experience is exponentially related to talent/merit/fitness
 	=> People with high natural ability amass same experience in less time compared to people with low merit
-
+At time t=0, E = e^c which is equal to natural ability/merit/fitness M of a social profile vertex in Bianconi-Barabasi network model.
+Therefore, E = M*e^(kMt). At t=0, experience equals merit and grows exponentially over time. But how to measure the fitness of a social profile for a human in terms of energy? What is the energy of a human social profile? Low energy syntactically implies low entropy and less chaotic nature of a profile. But real-life social profiles with high entropy do attract huge links. Previous derivation assumes natural talent is defined in terms of numeric quantification of credentials (marks/grades/awards/publications/IQ/achievements) which is insufficient. For human resource analytics, sampling experience at each tenure change (academic/work) gets a snap of experience at that time. Usually experience is measured linearly in time in academics/industries often overlooking merit, but previous equation changes that notion and implies experience exponentially increases with time as a function of intrinsic merit. Also previous differential equation is a very naive definition of experience vs talent - adding more variables could make it reflect reality.
+438.4 Bose-Einstein Condensation in Complex Networks - [Bianconi-Barabasi] - Physical Review Letters - http://barabasi.com/f/91.pdf
+438.5 PAFit - Joint estimation of preferential attachment and node fitness in growing complex networks - [Thong Pham, Paul Sheridan & Hidetoshi Shimodaira] - https://www.nature.com/articles/srep32558 - factors determining node fitness in facebook graph - "...A directed edge in the network represents a post from one user to another user’s wall. One might speculate that the following factors are important for a user to attract posts to his/her wall: a) How much information about his/her life that he/she publicises: his/her birthday, engagement, promotion, etc. b) How influential and/or authoritative his/her own posts are which call for further discussions from other people; and c) how responsive the user is in responding to existing wall posts. We then can hypothesize fitness ηi to be a combination of these three factors averaged over time ..."
