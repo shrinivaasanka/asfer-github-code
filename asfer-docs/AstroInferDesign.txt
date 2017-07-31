@@ -8085,3 +8085,27 @@ At time t=0, E = e^c which is equal to natural ability/merit/fitness M of a soci
 Therefore, E = M*e^(kMt). At t=0, experience equals merit and grows exponentially over time. But how to measure the fitness of a social profile for a human in terms of energy? What is the energy of a human social profile? Low energy syntactically implies low entropy and less chaotic nature of a profile. But real-life social profiles with high entropy do attract huge links. Previous derivation assumes natural talent is defined in terms of numeric quantification of credentials (marks/grades/awards/publications/IQ/achievements) which is insufficient. For human resource analytics, sampling experience at each tenure change (academic/work) gets a snap of experience at that time. Usually experience is measured linearly in time in academics/industries often overlooking merit, but previous equation changes that notion and implies experience exponentially increases with time as a function of intrinsic merit. Also previous differential equation is a very naive definition of experience vs talent - adding more variables could make it reflect reality.
 438.4 Bose-Einstein Condensation in Complex Networks - [Bianconi-Barabasi] - Physical Review Letters - http://barabasi.com/f/91.pdf
 438.5 PAFit - Joint estimation of preferential attachment and node fitness in growing complex networks - [Thong Pham, Paul Sheridan & Hidetoshi Shimodaira] - https://www.nature.com/articles/srep32558 - factors determining node fitness in facebook graph - "...A directed edge in the network represents a post from one user to another user’s wall. One might speculate that the following factors are important for a user to attract posts to his/her wall: a) How much information about his/her life that he/she publicises: his/her birthday, engagement, promotion, etc. b) How influential and/or authoritative his/her own posts are which call for further discussions from other people; and c) how responsive the user is in responding to existing wall posts. We then can hypothesize fitness ηi to be a combination of these three factors averaged over time ..."
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+439. (FEATURE-DONE) Scheduler Analytics for VIRGO Linux Kernel - Commits - 31 July 2017
+---------------------------------------------------------------------------------------------------------------------------------------------
+(*) As mentioned in NeuronRain FAQ at http://neuronrain-documentation.readthedocs.io/en/latest/, analytics driven linux kernel scheduler
+is the ideal application of machine learning within kernel. There are two options to go about:
+(*) First is Application Layer Scheduling Analytics in which a python code for example, learns from linux kernel logs, /proc/<pid>/schedstat
+and /proc/sched data of CFS and exports key-value pairs on how to prioritize processes' nice values in /etc/kernel_analytics.conf. This config file is read by VIRGO Linux kernel_analytics module and exported kernelwide. Existing kernel scheduler code might require slight changes to read these variables periodically and change process priorities.
+(*) Second is Kernel Layer Scheduling Analytics in which kernel has to make upcalls to userspace machine learning functions. This is quite impractical because kernel overhead and latency of scheduling increases and upcalls are usually discouraged for heavy processing. Moreover this adds a theoretical circularity too - upcall is made on the context of present kernel thread and who decides the priority of the upcall? This requires complete kernel level machine learning implementation (e.g Kernel has an independent replicated implementation of String library and does not depend on userspace GCC libraries). Major hurdle to implement machine learning in kernel is the lack of support for C in machine learning as most of the packages are in C++/Java/Python - how would Apache Spark cloud processing fit with in kernel?.
+
+First option is chosen for time being:
+############################################################################################
+#Scheduler Analytics for Linux Kernel:
+#=====================================
+# Following DeepLearning models learn from process perf variables - CPU, Memory, Context switches, Number of Threads and Nice data
+# for each process id retrieved by psutil process iterator - BackPropagation, RecurrentLSTM
+# RecurrentGRU and ConvolutionNetwork models learn software analytics neural networks from psutil process performance info
+# Key value pairs learnt from these can be read by Linux Kernel Scheduler or anything else
+# and suitably acted upon for changing the process priorities dynamically. Any kernel module can make an upcall to this userspace
+# executable and dump the key-value pairs in /etc/kernel_analytics.conf. Presently the implementation is quite primitive and
+# classifies the output layer of neural network into "Highest, Higher, High, Normal, Medium, Low, Lower and Lowest" priority classes
+# in the format: <pid>=<scheduled_priority_class>. Number of iterations has been set to 10 for all deep learning networks.
+############################################################################################
+
