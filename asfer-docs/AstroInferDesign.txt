@@ -8135,3 +8135,11 @@ Previous example is mooted to invoke the striking parallels between buyer versus
 References:
 -----------
 440.1 Algorithmic Game Theory - Chapter 5 - Existence of Flow Markets Equilibrium - Fisher and Eisenberg-Gale Convex Program and Network MaxFlow algorithm - [Tim Roughgarden, Noam Nisan, Eva Tardos, Vijay Vazirani] - http://www.cambridge.org/download_file/909426 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+441. (FEATURE-DONE) Scheduler Analytics update - commits - 1 August 2017
+------------------------------------------------------------------------------------------------------------------------------------------
+(*) Updated AsFer Design Document
+(*) Updated python-src/software_analytics/DeepLearning_SchedulerAnalytics.py to write in /etc/kernel_analytics.conf
+(*) logs committed to testlogs/
+
