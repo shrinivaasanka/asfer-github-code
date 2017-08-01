@@ -8148,3 +8148,10 @@ References:
 (*) Updated python-src/software_analytics/DeepLearning_SchedulerAnalytics.py to write in /etc/kernel_analytics.conf
 (*) logs committed to testlogs/
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+442. (FEATURE-DONE) Graph Density (Regularity Lemma) and Bose-Einstein Fitness implementations - commits - 1 August 2017
+-----------------------------------------------------------------------------------------------------------------------------------------
+(*) New intrinsic merit measures based on graph density (regularity lemma) and Bose-Einstein intrinsic fitness have been added as functions
+and invoked
+(*) logs have been committed to testlogs/
+
