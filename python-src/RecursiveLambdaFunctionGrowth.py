@@ -331,6 +331,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.korner_entropy(definitiongraph)
 		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
+		print "grow_lambda_function3(): Graph Density (Regularity Lemma):",self.density(definitiongraph)
+		print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:",self.bose_einstein_intrinsic_fitness(definitiongraph)
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):
@@ -353,11 +355,27 @@ class RecursiveLambdaFunctionGrowth(object):
 			entropy=0.0
 		return self.entropy
 
+	#Graph Density - Regularity Lemma
+	def density(self, definitiongraph):
+		dty=nx.density(definitiongraph)
+		return dty
+
+	#Bose-Einstein Bianconi intrinsic fitness 
+	def bose_einstein_intrinsic_fitness(self, definitiongraph):
+		#Bose-Einstein fitness presently assumes energy of a document vertex in a link graph to be
+		#the entropy or extent of chaos in the definition graph of document text 
+		#This has to be replaced by a more suitable fitness measure
+		#Bose-Einstein Condensation function value is hardcoded
+		entropy = self.korner_entropy(definitiongraph)
+		becf = 0.3
+		bei_fitness = math.pow(2, -1 * becf * entropy)
+		return bei_fitness
+
 if __name__=="__main__":
 	lambdafn=RecursiveLambdaFunctionGrowth()
 	text=open("RecursiveLambdaFunctionGrowth.txt","r")
-	#lambdafn.grow_lambda_function3(text.read())
 	textread=text.read()
+	lambdafn.grow_lambda_function3(textread)
 	summary=lambdafn.create_summary(textread)
 	print
 	print summary
