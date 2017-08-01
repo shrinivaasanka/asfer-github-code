@@ -65,6 +65,9 @@ def learnt_scheduler_class(deep_learnt_output):
 	else:
 		return "Lowest"	
 
+#############################################################################################
+kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
+
 for proc in psutil.process_iter():
 	print "========================================================================================"
 	print "Process id:", proc.pid
@@ -225,6 +228,8 @@ for proc in psutil.process_iter():
 	print "###########"
 	print "Software Analytics - Convolution Network + BackPropgation - max pooling inference:",dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width)
 	scheduler_class_cnbp=learnt_scheduler_class(dlc11.infer_from_max_pooling(pool_map11,maxpool_map_width))
-	print "Scheduled Classes by Deep Learning - [BackPropagation, LSTM, GRU, Convolution] = ", [scheduler_class_bpnn,scheduler_class_lstm,scheduler_class_gru,scheduler_class_cnbp]
-
-
+	print "Scheduled Classes by Deep Learning for process id ",proc.pid," - [BackPropagation, LSTM, GRU, Convolution] = ", [scheduler_class_bpnn,scheduler_class_lstm,scheduler_class_gru,scheduler_class_cnbp]
+	kernel_analytics_conf.write(str(proc.pid) + "#BackPropagation=" + scheduler_class_bpnn + "\n")
+	kernel_analytics_conf.write(str(proc.pid) + "#LSTM=" + scheduler_class_lstm + "\n")
+	kernel_analytics_conf.write(str(proc.pid) + "#GRU=" + scheduler_class_gru + "\n")
+	kernel_analytics_conf.write(str(proc.pid) + "#Convolution=" + scheduler_class_cnbp + "\n")
