@@ -8086,6 +8086,7 @@ Therefore, E = M*e^(kMt). At t=0, experience equals merit and grows exponentiall
 438.4 Bose-Einstein Condensation in Complex Networks - [Bianconi-Barabasi] - Physical Review Letters - http://barabasi.com/f/91.pdf
 438.5 PAFit - Joint estimation of preferential attachment and node fitness in growing complex networks - [Thong Pham, Paul Sheridan & Hidetoshi Shimodaira] - https://www.nature.com/articles/srep32558 - factors determining node fitness in facebook graph - "...A directed edge in the network represents a post from one user to another user’s wall. One might speculate that the following factors are important for a user to attract posts to his/her wall: a) How much information about his/her life that he/she publicises: his/her birthday, engagement, promotion, etc. b) How influential and/or authoritative his/her own posts are which call for further discussions from other people; and c) how responsive the user is in responding to existing wall posts. We then can hypothesize fitness ηi to be a combination of these three factors averaged over time ..."
 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 439. (FEATURE-DONE) Scheduler Analytics for VIRGO Linux Kernel - Commits - 31 July 2017 and 1 August 2017
 ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -8155,3 +8156,47 @@ References:
 and invoked
 (*) logs have been committed to testlogs/
 
+------------------------------------------------------------------------------------------------------------------------------------------
+443. (THEORY) Mistake bound learning(MB), Experience and Intrinsic merit, Social Network Analytics - 2 August 2017 - related to 368, 438
+------------------------------------------------------------------------------------------------------------------------------------------
+Mistake bound learning, iteratively refines and converges from an initial hypothesis based on mistakes. PAC learning is also a kind of mistake bound learning.  Previously described differential equation relation between experience and intrinsic merit/fitness/natural talent can be theoretically formalised as below:
+
+Let M be the intrinsic merit (correctness) of a boolean function hypothesised in the form of conjunctions and disjunctions. From the derivation
+of experience(E) versus merit(M) as function of time(t):
+	dE/dt = kME
+	=> dE = kME.dt
+	=> dE/E = kM.dt
+	=> log E = kMt + c
+	=> E = e^(kMt+c)
+	=> E = M*e^(kMt)
+
+If dE/dt is replaced by number of mistakes b1 made and corrected per time unit in MB model and E is replaced by total number of mistakes b2 made so far in hypothesis and corrected (experience is function of this in human context), learner's experiential learning converges in time t to some percentage error and number of mistakes done in time t , b2 = t*b1.
+	=> E = M*e^(kMt)
+	=> E = M*e^(kM*b2/b1)
+Previous expression for experience depends both on intrinsic merit and mistakes made which is exactly required in human classification.
+
+Traditionally mistake bounds are used only in learning boolean functions. Generalizing it to any functions and humans creates a generic definition of merit and experience irrespective of the entity involved. Assumption in the previous differential equation is delta increase in experience is proportional to existing experience and merit. Boolean function learning theory does not appear to have the concept of intrinsic merit or how learning accrued so far helps in further learning which is quite essential for classifying humans based on merit+experience in social networks and human resource analytics. In previous expression for mistake bounded experience, number of mistakes made b2 and b1 themselves could be a function of factors like IQ and EQ  e.g b1 = f(IQ,EQ) and b2 = g(IQ,EQ). Then experience becomes:
+	=> E = M*e^(kM*g(IQ,EQ)/f(IQ,EQ))
+If M=h(IQ):
+	=> E = h(IQ)*e^(k*h(IQ)*g(IQ,EQ)/f(IQ,EQ))
+
+It has to be mentioned here f is nothing but the first temporal derivative of g evaluated at time t i.e f = dg/dt.
+	=> E = h(IQ)*e^(k*h(IQ)*g(IQ,EQ)/g'(IQ,EQ))
+
+Alternatively, f and g can be substituted directly if known and integrable:
+	g'(IQ,EQ) = k*h(IQ)*g(IQ,EQ)
+	g'(IQ,EQ) = k*h(IQ)*g(IQ,EQ)
+	log g(IQ,EQ) = k*M*t + c
+	g(IQ,EQ) = h(IQ)*e^(k*h(IQ)*t)
+
+Curiously, function g which depends on EQ has no equivalent in RHS except time duration t and a constant k. This is probably because time is measured in terms of mistakes in the integral above and EQ is function of mistakes. Intrinsic merit function M does not involve EQ because mistakes alone are usually emotive in the context of social profiles (bounded rationality) and merit must be independent of emotions and time. Previous definition of experience can be used as a ranking metric for human social profiles as below for comparison of two humans after evaluating h, g and g' for some time duration subject to disclaimer that follows:
+	g(IQ1,EQ1) = h(IQ1)*e^(k*h(IQ1)*t1)
+	g(IQ2,EQ2) = h(IQ2)*e^(k*h(IQ2)*t2)
+Disclaimer: Previous model of merit based on IQ and EQ are purely presumptive and disputable because of lack of well-defined Bose-Einstein "least energy" counterpart for human profiles.
+
+This model is quite generic and should apply to any computable function including boolean learnt by mistake bounds. For boolean function learning, this model implies total number of mistakes corrected at time t ("experience") depends exponentially on learning time i.e if the mistake bound learning algorithm is polynomial time in number of variables, number of mistakes corrected is exponential in number of variables. For learning 3CNFs polynomial time mistake bound in RHS implies exponential number of mistakes have been corrected (function g) in LHS but an existing result implies if polynomial time learning is possible for 3CNFs there is no polynomial time algorithm for SAT (section 368) (But, isn't correcting exponential number of mistakes in polynomial time a nemesis of SETH?).
+
+References:
+-----------
+443.1 Mistake bound learning - https://www.cs.utexas.edu/~klivans/lec1.ps - In this teacher/learner model, learner iteratively refines hypothesis based on mistakes pointed out by teacher and number of mistakes are polynomially bounded.
+443.2 Learning quickly when irrelevant attributes abound - [Nick Littlestone] - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.130.9013&rep=rep1&type=pdf
