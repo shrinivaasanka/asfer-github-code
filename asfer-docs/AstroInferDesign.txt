@@ -8088,7 +8088,7 @@ Therefore, E = M*e^(kMt). At t=0, experience equals merit and grows exponentiall
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-439. (FEATURE-DONE) Scheduler Analytics for VIRGO Linux Kernel - Commits - 31 July 2017 and 1 August 2017
+439. (FEATURE-DONE) Scheduler Analytics for VIRGO Linux Kernel - Commits - 31 July 2017 and 1,3 August 2017
 ---------------------------------------------------------------------------------------------------------------------------------------------
 (*) As mentioned in NeuronRain FAQ at http://neuronrain-documentation.readthedocs.io/en/latest/, analytics driven linux kernel scheduler
 is the ideal application of machine learning within kernel. There are two options to go about:
@@ -8122,6 +8122,14 @@ First option is chosen for time being because:
 # classifies the output layer of neural network into "Highest, Higher, High, Normal, Medium, Low, Lower and Lowest" priority classes
 # in the format: <pid#deeplearningalgorithm>=<scheduled_priority_class>. Number of iterations has been set to 10 for all deep learning networks.
 ############################################################################################
+
+Following is a simulation of how the key-value pair for repriotization from Scheduler Analytics could affect the kernel scheduler:
+	(*) Linux kernel scheduler has the notion of jiffies - HZ - set of clock ticks - for time slicing processes
+	(*) Each priority class has a red-black binary search tree based queue - deletion is O(1) and insertion is O(logN) after rebalancing such that longest root to leaf path is not more than twice longer than that of least root to leaf path
+	(*) On receipt of repriotization analytics, kernel_analytics exports it kernelwide, scheduler reads this <pid>=<new_priority> key-value pair and removes <pid> from <old_priority> red-black tree and inserts in <new_priority> red-black tree.
+	(*) Thus multiple red-black trees make a trade-off and rebalance periodically with no manual nice interventions - this deletion and insertion is O(logN)
+	(*) Every repriotization is therefore O(logN).
+	(*) In realtime bigdata processing of heavy load, priorities can change quite frequently. For m reprioritizations, scheduler incurs O(m*logN) time. But m can have maximum value equal to total number of processes and thus a multiple of N (number of processes per priority class) and thus effective worstcase cost is O(NlogN)
 
 References:
 -----------
@@ -8157,7 +8165,7 @@ and invoked
 (*) logs have been committed to testlogs/
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-443. (THEORY) Mistake bound learning(MB), Experience and Intrinsic merit, Social Network Analytics - 2 August 2017 - related to 368, 438
+443. (THEORY) Mistake bound learning(MB), Experience and Intrinsic merit, Social Network Analytics - 2,3 August 2017 - related to 368, 438
 ------------------------------------------------------------------------------------------------------------------------------------------
 Mistake bound learning, iteratively refines and converges from an initial hypothesis based on mistakes. PAC learning is also a kind of mistake bound learning.  Previously described differential equation relation between experience and intrinsic merit/fitness/natural talent can be theoretically formalised as below:
 
