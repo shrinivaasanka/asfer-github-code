@@ -8196,7 +8196,12 @@ Disclaimer: Previous model of merit based on IQ and EQ are purely presumptive an
 
 This model is quite generic and should apply to any computable function including boolean learnt by mistake bounds. For boolean function learning, this model implies total number of mistakes corrected at time t ("experience") depends exponentially on learning time i.e if the mistake bound learning algorithm is polynomial time in number of variables, number of mistakes corrected is exponential in number of variables. For learning 3CNFs polynomial time mistake bound in RHS implies exponential number of mistakes have been corrected (function g) in LHS but an existing result implies if polynomial time learning is possible for 3CNFs there is no polynomial time algorithm for SAT (section 368) (But, isn't correcting exponential number of mistakes in polynomial time a nemesis of SETH?).
 
+Mistakes in the social networks context are proportional to bounded rationality of the human social profile vertices of the social network. Bounded rationality in turn arises by inability of a human being to make 100% correct decision because of cognitive, psychological, emotional, time limitations. Decision taken is termed satisfactory than optimal and such suboptimal decision is called satisficing. Thus emotional quotient and bounded rationality are related. Measuring emotional quotient (intelligence+emotions) than intelligence quotient (intelligence alone) in social network profiles is equivalent to quantifying the sentiments of social network tweets/wallposts/likes etc.,
+
+Thus following equivalence is conspicuous: Emotional Quotient (proportional to) Bounded Rationality (proportional to) Sentiment polarity of Social profile data e.g obtained by Sentiwordnet sentiment analysis. This is an approximate estimation of mistake-prone-ness and applies to decision errors of voters in Condorcet Jury Theorem group decision circuit too.
+
 References:
 -----------
 443.1 Mistake bound learning - https://www.cs.utexas.edu/~klivans/lec1.ps - In this teacher/learner model, learner iteratively refines hypothesis based on mistakes pointed out by teacher and number of mistakes are polynomially bounded.
 443.2 Learning quickly when irrelevant attributes abound - [Nick Littlestone] - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.130.9013&rep=rep1&type=pdf
+443.3 Bounded Rationality and Satisficing - https://en.wikipedia.org/wiki/Bounded_rationality
