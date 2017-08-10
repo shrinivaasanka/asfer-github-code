@@ -8213,3 +8213,26 @@ References:
 443.1 Mistake bound learning - https://www.cs.utexas.edu/~klivans/lec1.ps - In this teacher/learner model, learner iteratively refines hypothesis based on mistakes pointed out by teacher and number of mistakes are polynomially bounded.
 443.2 Learning quickly when irrelevant attributes abound - [Nick Littlestone] - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.130.9013&rep=rep1&type=pdf
 443.3 Bounded Rationality and Satisficing - https://en.wikipedia.org/wiki/Bounded_rationality
+
+--------------------------------------------------------------------------------------------------------------------------------------
+444. (FEATURE-DONE) Scheduler Analytics Update - Commits - 10 August 2017
+--------------------------------------------------------------------------------------------------------------------------------------
+(*) There is a problem in defining expected priorities in BackPropagation Neural Network output layer. This is necessary for
+weight update to happen iteratively and to quantify error between expected and actual neural network output
+(*) Output layer of BackPropagation is an indicator of process priority learnt by the perceptron.
+(*) Previously expected priorities were hardcoded. This has been changed as below:
+        (*) Set of processes currently running are clustered and stored in an input JSON file
+        (*) This JSON dictionary has key-value pairs mapping a process class to its apriori expected priority
+        (*) Scheduler Analytics loads this JSON and looks up the expected priority for each process executable by its process class
+        (*) Presently process class is just a substring of the executable name
+        (*) BackPropagation does string match of this process class to executable name and finds the expected priority from JSON dict
+        (*) BackPropagation iteration updates the weights of all 3 layers
+(*) Defining apriori class of a process is subjective and instead of substring of executable, an independent clustering algorithm having a
+suitable distance function can be used to write the JSON classification of processes. For example, unix process groups are numerical classes of
+ processes.
+(*) Previous generation of JSON classes for processes and backpropagation weight update iteration is the first phase of analytics.
+(*) In the second phase, weight-updated BackPropagation Neural Network takes as input runtime process statistics (CPU, Memory and Context Switches)
+to predict the actual priority of a process belonging to the apriori class.
+(*) This is a depth 2 tree evaluation:
+        Static - apriori expected class of a process and BackPropagation iteration
+        Dynamic - fine grained priority of a process within the previous static class by evaluating the multilayer neural network
