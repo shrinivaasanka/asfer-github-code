@@ -8236,3 +8236,6 @@ to predict the actual priority of a process belonging to the apriori class.
 (*) This is a depth 2 tree evaluation:
         Static - apriori expected class of a process and BackPropagation iteration
         Dynamic - fine grained priority of a process within the previous static class by evaluating the multilayer neural network
+
+Presently, input variables are per process CPU percentage, Memory percentage and ratio of involuntary context switches to total context switches. Involuntary context switches are usually number of pre-emptions by the scheduler on time-slice expiry and Voluntary context switches are number of system call and I/O pre-emptions.
+
