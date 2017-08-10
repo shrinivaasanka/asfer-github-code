@@ -45,6 +45,29 @@ import pprint
 import random
 import psutil
 import numpy
+import json
+
+expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
+expected_process_priorities=json.loads(expected_process_priorities_input.read())
+
+def is_prioritizable(proc_name):
+	#print "is_prioritizable(): proc_name:",proc_name
+	for k,v in expected_process_priorities.iteritems():
+		if proc_name.find(k) != -1:
+			prioritizable=True
+			break
+		else:
+			prioritizable=False
+	return prioritizable
+
+def get_expected_priority(output_layer_index,proc_name):
+	print "get_expected_priority(): proc_name:",proc_name
+	for k,v in expected_process_priorities.iteritems():
+		print k,v
+		if proc_name.find(k) != -1:
+			return v*output_layer_index/10.0
+	return 0.1	
+
 
 def learnt_scheduler_class(deep_learnt_output):
 	mean=numpy.mean(deep_learnt_output)
@@ -69,20 +92,38 @@ def learnt_scheduler_class(deep_learnt_output):
 kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
 
 for proc in psutil.process_iter():
+	proc_pid=proc.pid
+	proc_cmdline=proc.cmdline()
+	proc_name=proc.name()
+	proc_name=proc.name()
+	proc_exe=proc.exe()
+	proc_exe=proc.exe()
+
+	if not is_prioritizable(proc_name):
+		continue	
+
 	print "========================================================================================"
-	print "Process id:", proc.pid
+	print "Process id:", proc_pid
+	print "Process cmdline:", proc_cmdline
+	print "Process executable:",proc_exe
+	print "Process name:",proc_name
 	print "========================================================================================"
 	cpu_percent=proc.cpu_percent(interval=1) / psutil.cpu_count()
 	cpu_percent=proc.cpu_percent(interval=None) / psutil.cpu_count()
-	num_ctx_switches=proc.num_ctx_switches()
+	ctxsw=proc.num_ctx_switches()
+	num_ctx_switches=ctxsw[0]+ctxsw[1]
+	num_involuntary_ctx_switches=ctxsw[1]
 	num_threads=proc.num_threads()
+	memory_percent=proc.memory_percent() / psutil.cpu_count()
 	memory_percent=proc.memory_percent() / psutil.cpu_count()
 	
 	#assumes nice ranges from -20 to +20
 	nice=float(proc.nice())/20.0 
 
-	print "Process perf variables: [cpu_percent,num_ctx_switches,num_threads,memory_percent,nice]"
-	print [cpu_percent,num_ctx_switches,num_threads,memory_percent,nice]
+	num_of_pids=len(psutil.pids())
+
+	print "Process perf variables: [cpu_percent,num_involuntary_ctx_switches,num_ctx_switches,num_threads,memory_percent,nice]"
+	print [cpu_percent,num_involuntary_ctx_switches,num_ctx_switches,num_threads,memory_percent,nice]
 	
 	print "##########################################################################################"
 	print "BackPropagation"
@@ -90,9 +131,10 @@ for proc in psutil.process_iter():
         iter=0
         weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
         #parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
-	inputlayer=[cpu_percent,memory_percent,nice]
+	inputlayer=[cpu_percent/100.0,memory_percent/100.0,float(num_involuntary_ctx_switches)/float(num_ctx_switches)]
 	hiddenlayer=[0.8,0.9,0.3]
-	expectedoutput=[0.09,0.01,0.21]
+	expectedoutput=[get_expected_priority(1,proc_name),get_expected_priority(2,proc_name),get_expected_priority(3,proc_name)]
+	print "Expected output layer:",expectedoutput
         bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
         bpnn.compute_neural_network()
         bpnn.print_layers()
