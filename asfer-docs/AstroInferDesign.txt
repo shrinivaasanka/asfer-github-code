@@ -8160,7 +8160,7 @@ subject to:
 	and p(j) is the equilibrium perceived merit of a variable j
 Solving the previous convex program results in an optimal merit vector (set of p(j)'s) and weights of merit variables (x(j)'s) which satisfies both perceiver and perceived.
 
-This equilibrium is closely related to Nash Bargaining Problem which postulates existence of an agreement and disagreement point (a,b) in a set X in R^2 involving two players where a and b are utilities of the two players. Nash function of a point (a,b) is the maximum a*b. In the context of merit equilibrium, the equilibrium point (a,b) is in optimum distance between intrinsic merit and perceived merit and maximizes happiness utility of both perceived and the perceived.
+This equilibrium is closely related to Nash Bargaining Problem which postulates existence of an agreement and disagreement point (a,b) in a set X in R^2 involving two players where a and b are utilities of the two players. Nash function of a point (a,b) is the maximum a*b. In the context of merit equilibrium, the equilibrium point (a,b) is in optimum distance between intrinsic merit and perceived merit and maximizes happiness utility of both perceiver and the perceived.
 
 References:
 -----------
