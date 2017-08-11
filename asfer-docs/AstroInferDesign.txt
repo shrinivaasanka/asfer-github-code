@@ -8181,7 +8181,7 @@ and invoked
 (*) logs have been committed to testlogs/
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-443. (THEORY) Mistake bound learning(MB), Experience and Intrinsic merit, Social Network Analytics - 2,3 August 2017 - related to 368, 438
+443. (THEORY) Mistake bound learning(MB), Experience and Intrinsic merit, Social Network Analytics - 2,3,11 August 2017 - related to 368, 438
 ------------------------------------------------------------------------------------------------------------------------------------------
 Mistake bound learning, iteratively refines and converges from an initial hypothesis based on mistakes. PAC learning is also a kind of mistake bound learning.  Previously described differential equation relation between experience and intrinsic merit/fitness/natural talent can be theoretically formalised as below:
 
@@ -8223,6 +8223,9 @@ This model is quite generic and should apply to any computable function includin
 Mistakes in the social networks context are proportional to bounded rationality of the human social profile vertices of the social network. Bounded rationality in turn arises by inability of a human being to make 100% correct decision because of cognitive, psychological, emotional, time limitations. Decision taken is termed satisfactory than optimal and such suboptimal decision is called satisficing. Thus emotional quotient and bounded rationality are related. Measuring emotional quotient (intelligence+emotions) than intelligence quotient (intelligence alone) in social network profiles is equivalent to quantifying the sentiments of social network tweets/wallposts/likes etc.,
 
 Thus following equivalence is conspicuous: Emotional Quotient (proportional to) Bounded Rationality (proportional to) Sentiment polarity of Social profile data e.g obtained by Sentiwordnet sentiment analysis. This is an approximate estimation of mistake-prone-ness and applies to decision errors of voters in Condorcet Jury Theorem group decision circuit too.
+
+BackPropagation is a mistake bound deep-learning algorithm refining a perceptron by trial and error iterations. Previous differential equation for experiential learning is equivalent to a time-evolving recursive mistake correction tree described below:
+At time x, tree reaches level l(x). Each node in the tree is a corrected mistake and each mistake corrected at level l(x) is subtree root for n corrected mistakes in level l(x+1). Thus each level l(x) of the learning tree is the set of mistakes made at time x. In the language of NC-PRAM  circuit families, each node is a PRAM processor correcting a mistake. After time duration x, this learning tree has 2^x-1 nodes correcting exponential number of mistakes. In NC notation, if number of mistake correcting processors=2^x=n, depth of the circuit is O(logn) equal to learning time x. This is a hypothetical parallel learning algorithm in non-uniform NC. This recursive mistake correction tree is nothing but a translation of differential equation dE/dt=kME. Outdegree of each vertex (number of future mistakes corrected by a PRAM processor) is determined by merit M, and delta increase in learning is number of mistakes corrected at level l(x) after time x = M*2^(l(x)). This should apply to backpropagation weight update iterations because each error term is a mistake. Perceptrons are in TC=AC=NC which is same as previous PRAM recursive learning.
 
 References:
 -----------
