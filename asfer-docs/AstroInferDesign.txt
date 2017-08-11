@@ -8137,7 +8137,8 @@ References:
 439.2 Controlling Kernel Thread Scheduling From Userspace - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.605.3571&rep=rep1&type=pdf
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-440. (THEORY) Social Networks, Money Flow Markets, Pricing Equilibrium, Centrality, Intrinsic versus Perceptive Valuations - 1 August 2017
+440. (THEORY) Social Networks, Money Flow Markets, Pricing Equilibrium, Centrality, Intrinsic versus Perceptive Valuations - 1 August 2017 and
+11 August 2017
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Flow of money in a network of buyers and sellers and pricing have been described in KingCobra design document - https://github.com/shrinivaasanka/kingcobra-github-code/blob/master/KingCobraDesignNotes.txt. Problem of relating intrinsic merit/fitness of an entity to perceptive judgements is essentially reducible to the problem of market equilibrium as below:
 In a flow market digraph,there is a directed edge from a vertex b to vertex s of weight p where b is a buyer, s is a seller and p is the price offered by buyer b for s. There can be multiple b(i) edges incoming for a seller s offering different prices and multiple sellers s(i) can have incoming edges from a buyer b. Problem of determining fair price for seller s amounts to finding objective intrinsic merit/fitness of goods/services of s while incoming buyer edges are perceptive subjective market values (auction). Treating this as a link graph and applying Centrality measures like PageRank could identify most valued seller in terms of market perception. Thus the problem of intrinsic merit versus perception is ubiquitous and is not just restricted to internet(text, audio-visuals). Assuming Bose-Einstein Condensation in Flow Markets, fitness/merit is measured by least energy.Note of caution is the term "least energy" has multiple meanings depending on context and cannot be literally taken as least entropy. In flow markets, least energy seller could be one with best marketing abilities, quality, technical knowhow, qualifications etc.,
@@ -8146,9 +8147,24 @@ In money flow markets, each buyer i is allocated a good/service j of x(ij) units
 
 Previous example is mooted to invoke the striking parallels between buyer versus seller price equilibrium and intrinsic merit versus perception equilibrium - Intrinsic value of a good/service is immutable while buyers' price requirements for same good/service vary; Similarly intrinsic merit of an entity is immutable while perception of an entity is subjective. By replacing price with merit in Convex Program and Maxflow algorithms, equilibrium state between intrinsic merit and perceived merit of a social profile vertex can be found. But still this does not lead to absolute intrinsic merit.
 
+Convex Program for Market Equilibrium is defined as below:
+	Maximize u(ij)^e(i) where buyer i has money e(i) at disposal
+subject to:
+	Total happiness of a customer = Sigma(u(ij)*x(ij)) where u(ij) is the utility buyer i gets from x(ij) units of good j
+
+Following maps a Market to Merit equilibrium:
+Intrinsic merit of a (corresponds to Seller) vertex is defined by a feature vector of merit variables. Buyers are perceivers. Each perceiver has a pre-allocated total perceived merit which is divided amongst the perceived vertices. The Convex Program for Equilibrium between intrinsic merit and perceived merit is:
+	Maximize u(ij)^e(i) where perceiver i has total perceived merit e(i) at disposal and u(ij) is the utility perceiver i gets from merit variable j of a vertex
+subject to:
+	Total happiness of a perceiver = Sigma(u(ij)*x(ij)) where u(ij) is the utility perceiver i gets from x(ij) units of merit variable j of a vertex
+	and p(j) is the equilibrium perceived merit of a variable j
+Solving the previous convex program results in an optimal merit vector (set of p(j)'s) and weights of merit variables (x(j)'s) which satisfies both perceiver and perceived.
+
+This equilibrium is closely related to Nash Bargaining Problem which postulates existence of an agreement and disagreement point (a,b) in a set X in R^2 involving two players where a and b are utilities of the two players. Nash function of a point (a,b) is the maximum a*b. In the context of merit equilibrium, the equilibrium point (a,b) is in optimum distance between intrinsic merit and perceived merit and maximizes happiness utility of both perceived and the perceived.
+
 References:
 -----------
-440.1 Algorithmic Game Theory - Chapter 5 - Existence of Flow Markets Equilibrium - Fisher and Eisenberg-Gale Convex Program and Network MaxFlow algorithm - [Tim Roughgarden, Noam Nisan, Eva Tardos, Vijay Vazirani] - http://www.cambridge.org/download_file/909426 
+440.1 Algorithmic Game Theory - Chapter 5 and Chapter 15 - Existence of Flow Markets Equilibrium and Nash Bargaining Problem - Fisher and Eisenberg-Gale Convex Program and Network MaxFlow algorithm - [Tim Roughgarden, Noam Nisan, Eva Tardos, Vijay Vazirani] - http://www.cambridge.org/download_file/909426
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 441. (FEATURE-DONE) Scheduler Analytics update - commits - 1 August 2017
