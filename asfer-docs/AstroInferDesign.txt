@@ -8156,7 +8156,7 @@ Following maps a Market to Merit equilibrium:
 Intrinsic merit of a (corresponds to Seller) vertex is defined by a feature vector of merit variables. Buyers are perceivers. Each perceiver has a pre-allocated total perceived merit which is divided amongst the perceived vertices. The Convex Program for Equilibrium between intrinsic merit and perceived merit is:
 	Maximize u(ij)^e(i) where perceiver i has total perceived merit e(i) at disposal and u(ij) is the utility perceiver i gets from merit variable j of a vertex
 subject to:
-	Total happiness of a perceiver = Sigma(u(ij)*x(ij)) where u(ij) is the utility perceiver i gets from x(ij) units of merit variable j of a vertex
+	Total happiness of a perceiver = utility of i = Sigma(u(ij)*x(ij)) where u(ij) is the utility perceiver i gets from x(ij) units of merit variable j of a vertex
 	and p(j) is the equilibrium perceived merit of a variable j
 Solving the previous convex program results in an optimal merit vector (set of p(j)'s) and weights of merit variables (x(j)'s) which satisfies both perceiver and perceived.
 
