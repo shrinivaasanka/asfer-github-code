@@ -1,4 +1,4 @@
-NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright and licenses apply per respective codebases below:
+NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright/Copyleft licenses apply per respective codebases below:
 1. Boost C++ and Python libraries 
 2. g++
 3. Python NLTK
@@ -24,7 +24,7 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 23. Python Injector
 24. R
 25. Python Tornado
-26. Linux Kernel Mainline (4.1.5)
+26. Linux Kernel Mainline 32 bit (4.1.5) - for VIRGO
 27. MongoDB and pymongo
 28. Cython
 29. SATURN Program Analyzer
@@ -47,4 +47,6 @@ NeuronRain Depends on Following Opensource C,Python and C++ packages - Copyright
 46. Jsoup Java HTML parser
 47. PILlow Python Imaging Library
 48. ConceptNet 5.4
-
+49. NumPy
+50. SciPy
+51. Linux Kernel Mainline 64 bit (4.10.3) - for VIRGO64
