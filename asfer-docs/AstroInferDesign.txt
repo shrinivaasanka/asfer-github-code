@@ -8165,6 +8165,8 @@ This equilibrium is closely related to Nash Bargaining Problem which postulates 
 References:
 -----------
 440.1 Algorithmic Game Theory - Chapter 5 and Chapter 15 - Existence of Flow Markets Equilibrium and Nash Bargaining Problem - Fisher and Eisenberg-Gale Convex Program and Network MaxFlow algorithm - [Tim Roughgarden, Noam Nisan, Eva Tardos, Vijay Vazirani] - http://www.cambridge.org/download_file/909426
+440.2 New Convex Program for Fisher Market Equilibria - Convex Program Duality, Fisher Markets, and Nash Social Welfare -  [Richard Cole † Nikhil R. Devanur ‡ Vasilis Gkatzelis § Kamal Jain ¶ Tung Mai k Vijay V. Vazirani ∗∗ Sadra Yazdanbod ††] - https://arxiv.org/pdf/1609.06654.pdf - Previous Convex Geometric Mean Program is a Nash Social Welfare Function which is Spending Restricted. This article introduces an improved Convex Program with higher integrality gap. Integrality Gap is the measure of goodness of approximation and is based on Linear Program Relaxation. LP Relaxation waives the 0-1 integer programming to range of reals in [0,1]. Approximate CNFSAT Solver implemented and described earlier in this document is also a relaxation but for system of equations. Integrality Gap of CNF MAXSAT solver found experimentally for few instances is ~100/98 = 1.02 though still it requires further theoretical analysis to upperbound the error.
+440.3 Triangle Inequality based Christofides 1/2-approximation Algorithm for Travelling Salesman Problem - Combinatorial Optimization - [Christos H.Papadimitriou,Kenneth Steiglitz] - Page 416
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 441. (FEATURE-DONE) Scheduler Analytics update - commits - 1 August 2017
