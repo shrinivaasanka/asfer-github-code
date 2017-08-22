@@ -1,7 +1,5 @@
-#-------------------------------------------------------------------------------------------------------------------------------------
-#ASFER - AstroInfer - a classification,inference and predictive modelling software for mining patterns in Massive Data Sets, at present
-#                       specialized for Astronomy DataSets
-# 
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -12,17 +10,19 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-#-----------------------------------------------------------------------------------------------------------------------------------
-#Copyright (C): 
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Independent Open Source Developer, Researcher and Consultant
-#Ph: 9003082186, 9791165980
-#Open Source Products Profile(Krishna iResearch): http://sourceforge.net/users/ka_shrinivaasan
+#--------------------------------------------------------------------------------------------------------
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
-
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
+#---------------------------------------------------------------------------------------------------------
 
 #*****************************************************************************/
 # Copyright attribution for Maitreya text client referred in this file:
@@ -194,7 +194,7 @@ bhavaplanetsdict["Aquarius"]=[]
 bhavaplanetsdict["Pisces"]=[]
 
 #classes=["Storms","Earthquakes","Celestial"]
-classes=["Storms"]
+classes=["Earthquakes"]
 classdatasetfilenames={}
 for cl in classes:
 	classdatasetfilenames[cl]=[]
@@ -208,9 +208,20 @@ for cl in classes:
 #datasetfile=open("./earthquakesFrom1900with8plusmag.txt","r")
 	for datasetfilename in classdatasetfilenames[cl]:
 		datasetfile=open(datasetfilename.strip(),"r")
-		for line in datasetfile:
+		datasetfilelines=datasetfile.read().split("\n")
+		cnt=0
+		for k in datasetfilelines:
+			print cnt
+			cnt += 1
+			print k
+		cnt=0
+		for line in datasetfilelines:
+			print "Celestial Configuration:",cnt 
+			cnt += 1
 			tokens=line.split()
 			print tokens
+			if len(tokens) < 1:
+				break
 			timetokens=tokens[1].split(':')
 			#placelonglat=tokens[len(tokens)-1] + " " + tokens[2] + " " + tokens[3]
 			longdeg=decimaldegreestodms(float(tokens[3]))
@@ -237,19 +248,19 @@ for cl in classes:
 					else:
 						genonames_timezone="0"
 				except:
-					break
+					print "Geonames lookup rate limit exceeded"
 			else:
 				geonames_timezone="5.5"
 		
 			if len(timetokens)==1 :
 				#timezone and longitude/latitude hardcoded at present
-				cmd="cd ~/maitreya-7.0.3/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00:00 "+ geonames_timezone + "\" --location=\"" + placelonglat + "\" --planet-list 2>&1 > ~/KrishnaiResearch_OpenSource/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
+				cmd="cd /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00:00 "+ geonames_timezone + "\" --location=\"" + placelonglat + "\" --planet-list 2>&1 > /home/shrinivaasanka/Krishna_iResearch_OpenSource/SourceForge/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
 			if len(timetokens)==2 :
 				#timezone and longitude/latitude hardcoded at present
-				cmd="cd ~/maitreya-7.0.3/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00 "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > ~/KrishnaiResearch_OpenSource/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
+				cmd="cd /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ ":00 "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > /home/shrinivaasanka/Krishna_iResearch_OpenSource/SourceForge/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
 			else:
 				#timezone and longitude/latitude hardcoded at present
-				cmd="cd ~/maitreya-7.0.3/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ " "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > ~/KrishnaiResearch_OpenSource/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
+				cmd="cd /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/;./maitreya_textclient --date=\""+tokens[0].replace("/","-",3)+" " + tokens[1]+ " "+ geonames_timezone + "\" --location=\""+ placelonglat + "\" --planet-list 2>&1 > /home/shrinivaasanka/Krishna_iResearch_OpenSource/SourceForge/asfer-code/python-src/autogen_classifier_dataset/chartsummary; cd -"
 				
 			print cmd
 			os.system(cmd)
