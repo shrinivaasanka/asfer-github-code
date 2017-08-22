@@ -38,6 +38,23 @@
 
 (*) python SequenceMining,py -  #This class Implements Sequence Mining for encoded strings - at present Apriori GSP algorithm has been #implemented - uses Downward Closure - superset is frequent only if subset is frequent #SourceForge version is specialized for Mining Astronomical Datasets - read from files with .enchoros suffix.  #It predicts pattern in swiss ephermeris encoded astronomical datasets corresponding to weather phenomena.  #GitHub version is generic to all string patterns.
 
+--------------------------------------------------------------------------------------------------------------------
+String encoded celestial datasets can be analyzed in multiple ways as below:
+--------------------------------------------------------------------------------------------------------------------
+(*) Clustering - kMeans and kNN - Unsupervised
+	- by enabling clustering in asfer.conf config file and executing ./asfer C++ binary having suitable asfer.enchoros input files (input files have to be rewritten by respective string encoded outputs from ephemeris script mentioned above in autogen_classifier_dataset/ directory)
+
+(*) NaiveBayesian and DecisionTree Classifiers - Supervised
+	- execute python AsferClassifierPreproc.py to create training data for weather/celestial events
+	- execute ./asfer C++ binary.
+	- This classifies the datasets in multiple categories
+
+(*) BioPython and ClustalOmega sequence alignment mining - uses Third Party opensource packages to extract common subsequences in celestial string encoded data - corresponds to astronomical conjunctions.
+
+(*) Needleman-Wunsch multiple sequence alignment mining - aligns the celestial data strings and extracts common subsequences which correspond to astronomical conjunctions in sky.
+
+(*) Sequence Mining - Apriori GSP
+	- execute python SequenceMining.py - mines common subsequences in celestial string encoded data - correspond to astronomical conjunctions in sky
 
 
 
