@@ -8269,3 +8269,20 @@ to predict the actual priority of a process belonging to the apriori class.
 
 Presently, input variables are per process CPU percentage, Memory percentage and ratio of involuntary context switches to total context switches. Involuntary context switches are usually number of pre-emptions by the scheduler on time-slice expiry and Voluntary context switches are number of system call and I/O pre-emptions.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+445.(FEATURE-DONE) Celestial Pattern Mining Update - specific to NeuronRain Research in SourceForge repositories - recreated Sequence Mined Rules - Commits - 22 August 2017
+------------------------------------------------------------------------------------------------------------------------------------------
+(*) Added a documentation text file asfer-docs/NeuronRain_Research_Celestial_Pattern_Mining.txt describing how astronomical pattern
+mining is done and code involved therein.
+    
+(*) In python-src/autogen_classifier_dataset/MaitreyaToEncHoroClassified.py upgraded Maitreya's Dreams (http://www.saravali.de/)
+ephemeris text client version to 7.1.1
+   
+(*) Created separate string encoded astronomical data files for Earthquakes(USGS 100 year earthquake dataset) and
+Storms(NOAA 100 year HURDAT2 dataset) Datasets from python-src/autogen_classifier_dataset/MaitreyaToEncHoroClassified.py
+(zodiacal does not have ascendant, while ascrelative is rotated string relative to ascendant. Ascendant is defined astronomically as the
+ degree of the zodiac sign rising at the time of an event in eastern horizon)
+    
+(*) Executed python-src/SequenceMining.py on these 2 datasets. The results have been written to python-src/MinedClassAssociationRules.txt
+    
+(*) python-src/autogen_classifier_dataset/asfer_dataset_segregator.sh has updated asfer relative location
