@@ -38,14 +38,19 @@
 
 (*) python SequenceMining,py -  #This class Implements Sequence Mining for encoded strings - at present Apriori GSP algorithm has been #implemented - uses Downward Closure - superset is frequent only if subset is frequent #SourceForge version is specialized for Mining Astronomical Datasets - read from files with .enchoros suffix.  #It predicts pattern in swiss ephermeris encoded astronomical datasets corresponding to weather phenomena.  #GitHub version is generic to all string patterns.
 
+----------------------------------------------------------------------------------------------------------------------
+Prerequisites - Dataset Classification and Preprocessing
+----------------------------------------------------------------------------------------------------------------------
+	- create/add articles on earthquakes and hurricanes as training dataset for NaiveBayesian Classifier
+	- tuples in python-src/autogen_classifier_dataset/AsferClassifierPreproc.py has to be updated to include new articles for creating updated NaiveBayesian training data
+	- training data for NaiveBayesian classifier - words.txt,word-frequency.txt,training-set.txt,topics.txt,test-set.txt - have to be re-created by executing python-src/autogen_classifier_dataset/AsferClassifierPreproc.py
+	- execute python asfer_dataset_segregator.sh - invokes NaiveBayesian classifier to classify datasets into files of names EventClassDataSet_<class>.txt
+	- execute python MaitreyaToEncHoroClassified.py - creates asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative encoded files read from "EventClassDataset_<class>.txt
+	- rename asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative to asfer.enchoros.* input file read by respective implementations
+
 --------------------------------------------------------------------------------------------------------------------
 String encoded celestial datasets can be analyzed in multiple ways as below:
 --------------------------------------------------------------------------------------------------------------------
-Prerequisite:
-	- execute python asfer_dataset_segregator.sh - invokes NaiveBayesian classifier to classify datasets into files of names EventClassDataSet_<class>.txt
-	- execute python MaitreyaToEncHoroClassified.py - creates asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative encoded files read from "EventClassDataset_<class>.txt"
-	- rename asfer.enchoros.<class>.zodiacal and asfer.enchoros.<class>.ascrelative to asfer.enchoros.* input file read by respective implementations below
- 
 (*) Clustering - kMeans and kNN - Unsupervised
 	- by enabling clustering in asfer.conf config file and executing ./asfer C++ binary having suitable asfer.enchoros input files (input files have to be rewritten by respective string encoded outputs from ephemeris script mentioned above in autogen_classifier_dataset/ directory)
 
