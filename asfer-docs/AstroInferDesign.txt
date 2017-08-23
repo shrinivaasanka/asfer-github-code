@@ -8286,3 +8286,14 @@ Storms(NOAA 100 year HURDAT2 dataset) Datasets from python-src/autogen_classifie
 (*) Executed python-src/SequenceMining.py on these 2 datasets. The results have been written to python-src/MinedClassAssociationRules.txt
     
 (*) python-src/autogen_classifier_dataset/asfer_dataset_segregator.sh has updated asfer relative location
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+446. (FEATURE-DONE) Celestial Data Pattern Mining - Updates to autogen_classifier_dataset pre-processing and classification of datasets - 23 August 2017
+-------------------------------------------------------------------------------------------------------------------------------------------
+(*) An 8 year old lurking bug in cpp-src/NaiveBayesClassifier.cpp has been resolved.It was causing a null class to be returned after
+bayesian argmax() computation.
+(*) Lot of new articles on earthquakes and hurricanes have been added as training dataset for NaiveBayesian Classifier.These articles also
+have lot of research information on predicting hurricanes and earthquakes
+(*) python-src/autogen_classifier_dataset/AsferClassifierPreproc.py has been updated to include new articles in training data for NaiveBayesian
+(*) words.txt,word-frequency.txt,training-set.txt,topics.txt,test-set.txt have been re-created by executing python-src/autogen_classifier_dataset/AsferClassifierPreproc.py
+(*) Datasets are classified into python-src/autogen_classifier_dataset/EventClassDataSet_Earthquakes.txt and python-src/autogen_classifier_dataset/EventClassDataSet_Storms.txt by executing asfer_dataset_segregator.sh
