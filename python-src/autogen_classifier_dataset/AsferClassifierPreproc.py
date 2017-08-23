@@ -33,7 +33,8 @@ attrvalues=["Tornadoes","Hurricanes","Typhoon","Cyclone","Tsunami","Earthquakes"
 def filterWordsInArticle(wordsinarticle):
 	filteredwordsinarticle=[]
 	for e in wordsinarticle:
-		if e.find("~") == -1 and e.find(",") == -1 and e.find("&") == -1 and e.find("?") == -1 and e.find("%") == -1 and e.find(">") == -1 and e.find("<") == -1 and e != "-" and e.find("=") == -1 and e.find("[") == -1 and e.find("]") == -1 and e.find(".") == -1 and e.find(":") == -1 and e.find("{") == -1 and e.find("}") == -1 and e.find("(") == -1 and e.find(")") == -1 and e.find("|") == -1 and e.find("\"") == -1 and e in attrvalues:
+		#if e.find("~") == -1 and e.find(",") == -1 and e.find("&") == -1 and e.find("?") == -1 and e.find("%") == -1 and e.find(">") == -1 and e.find("<") == -1 and e != "-" and e.find("=") == -1 and e.find("[") == -1 and e.find("]") == -1 and e.find(".") == -1 and e.find(":") == -1 and e.find("{") == -1 and e.find("}") == -1 and e.find("(") == -1 and e.find(")") == -1 and e.find("|") == -1 and e.find("\"") == -1 and e in attrvalues:
+		if e.find("~") == -1 and e.find(",") == -1 and e.find("&") == -1 and e.find("?") == -1 and e.find("%") == -1 and e.find(">") == -1 and e.find("<") == -1 and e != "-" and e.find("=") == -1 and e.find("[") == -1 and e.find("]") == -1 and e.find(".") == -1 and e.find(":") == -1 and e.find("{") == -1 and e.find("}") == -1 and e.find("(") == -1 and e.find(")") == -1 and e.find("|") == -1 and e.find("\"") == -1:
 			filteredwordsinarticle.append(e)
 	return filteredwordsinarticle 
 
@@ -41,6 +42,7 @@ articlesdataset=open("articlesdataset.txt","r") #contains fullpath to the articl
 articles=[]
 for e in articlesdataset:
 	articles.append(e.strip())
+print articles
 
 words=[]
 articleid=1
@@ -56,7 +58,7 @@ while articleid <= len(articles):
 	setwordsinarticle=set(wordsinarticle)
 	for e in setwordsinarticle:
 		articlewordfrequency[e]=wordsinarticle.count(e)
-	#print "Word frequency for article ", articleid, ":", wordfrequency
+	print "Word frequency for article ", articleid, ":", articlewordfrequency
 	for k,v in articlewordfrequency.items():
 		wordstxt.write(k+"~"+str(articleid)+"~"+str(v)+"\n")
 	articleid=articleid+1
@@ -73,9 +75,10 @@ testsettxt=open("test-set.txt","w")
 topicstxt=open("topics.txt","w")
 
 #following need to be updated based on the article dataset file above- mostly testset might have to be updated
-trainingset=[1,2] #article id(s)
-testset=[3,4,5]
-topics=["Storms~1","Earthquakes~2"]
+trainingset=[1,2,3,4,5,6,7,8,9,10] #article id(s)
+testset=[11,12]
+topics=["Earthquakes~1","Earthquakes~2","Earthquakes~3","Storms~4","Storms~5","Earthquakes~6","Earthquakes~7","Earthquakes~8","Storms~9","Storms~10"]
+
 for e in trainingset:
 	trainingsettxt.write(str(e)+"\n")
 for e in testset:

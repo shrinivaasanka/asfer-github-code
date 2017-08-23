@@ -224,16 +224,21 @@ void NaiveBayesClassifier::doNBMultinomialClassification(std::list<int>& corpus)
 	std::list<int>* trset = readTrainingSet();
 	for(std::list<int>::iterator it = corpus.begin(); it != corpus.end(); it++)
 	{ 
-		//find probability of article being present in all classes - 120 classes
-		for(std::set<comparefunctor>::iterator topic_it = topics.begin(); topic_it != topics.end(); topic_it++)
+		//find probability of article being present in all classes
+		int cnt=0;
+		for(std::set<comparefunctor>::iterator topic_it = topics.begin(); topic_it != topics.end(); topic_it++,cnt++)
 		{
-			//printf("topic = %s \n", topic_it->str);
+			if (cnt==0)
+			{
+				maxtopic = strdup(topic_it->str);
+				cnt++;
+			}
 			std::list<int>* ar_c = getArticlesOfSingleClass(topic_it->str); //a priori probability
-			Pr_c = (double) ar_c->size() / trset->size(); //total no of articles in training set is 9603
+			Pr_c = (double) ar_c->size() / trset->size(); 
 			std::list<tok_occur*>* ar_tokens = getTokensInArticle(*it);
 			for(std::list<tok_occur*>::iterator token_it = ar_tokens->begin(); token_it != ar_tokens->end(); token_it++)
 			{
-				//printf("token = %s \n", (*token_it)->word);
+				printf("token = %s \n", (*token_it)->word);
 				double occurrences = getOccurrences((*token_it)->word, ar_c);
 				double totaloccurrences = getTotalOccurrences(ar_c);
 				double vocabularysize = getVocabularySize();
@@ -243,10 +248,14 @@ void NaiveBayesClassifier::doNBMultinomialClassification(std::list<int>& corpus)
 					productofpr_tigivenc = (double) (productofpr_tigivenc * numerator) / denominator;
 			}
 			Pr_dgivenc = (double) Pr_c * productofpr_tigivenc;
+			printf("topic = %s \n", topic_it->str);
+			printf("maxprobability = %lf\n",maxprobability);
+			printf("Pr_dgivenc = %lf\n",Pr_dgivenc);
 			if(Pr_dgivenc > maxprobability)
 			{
 				maxprobability = Pr_dgivenc;
 				maxtopic = strdup(topic_it->str);					
+				printf("maxtopic = %s \n", maxtopic);
 			}
 			
 			//delete lists
