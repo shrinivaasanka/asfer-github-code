@@ -8297,3 +8297,10 @@ have lot of research information on predicting hurricanes and earthquakes
 (*) python-src/autogen_classifier_dataset/AsferClassifierPreproc.py has been updated to include new articles in training data for NaiveBayesian
 (*) words.txt,word-frequency.txt,training-set.txt,topics.txt,test-set.txt have been re-created by executing python-src/autogen_classifier_dataset/AsferClassifierPreproc.py
 (*) Datasets are classified into python-src/autogen_classifier_dataset/EventClassDataSet_Earthquakes.txt and python-src/autogen_classifier_dataset/EventClassDataSet_Storms.txt by executing asfer_dataset_segregator.sh
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+447. (FEATURE-DONE) Updated Ephemeris Search Script - Commits - 24 August 2017
+---------------------------------------------------------------------------------------------------------------------------------------------
+Updated mined class association rule parsing in python-src/MaitreyaEncHoro_RuleSearch.py
+
+
