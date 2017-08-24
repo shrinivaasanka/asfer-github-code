@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,8 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
 #Ph: 9791499106, 9003082186
 #Krishna iResearch Open Source Products Profiles:
 #http://sourceforge.net/users/ka_shrinivaasan,
@@ -42,6 +43,7 @@ from datetime import date, time, datetime, timedelta
 from collections import defaultdict
 
 useGeonames=True
+SearchOption=2
 max_iterations=100000000
 min_year=0
 min_month=0
@@ -150,39 +152,126 @@ class NextDateTimeTimezoneLonglat:
 			geonames_timezone="5.5"
 		return geonames_timezone
 
+def toString(planetslist):
+	planetsliststring=""
+	return " , ".join(planetslist)
+
+def substring_find(str1,str2):
+        issubstring=False
+        s1=0
+        s2=0
+        beg=-1
+        while s1+len(str2) < len(str1):
+                s2=0
+                while s2 < len(str2):
+                        if str1[s1+s2] == str2[s2]:
+                                if s2 == len(str2)-2:
+                                        issubstring=True
+                                        beg=s1
+                                        break
+                        else:
+                                break
+                        s2=s2+1
+                s1=s1+1
+                if issubstring == True:
+                        break
+        if issubstring==True:
+                return beg
+        else:
+                return -1
+
 
 if __name__=="__main__":
-	rules_file=open("./MinedClassAssociationRules.txt","r")
-	rule_planets_list=[]
-	for rule in rules_file:
-		if rule.find("==============") == -1 and rule.find("Class Association") == -1:
-			rule_planets=rule.strip().split(' ,')
-			rule_planets_stripped=[]
-			for r in rule_planets:
-				rule_planets_stripped.append(r.strip())	
-			rule_planets_list.append(rule_planets_stripped)
-	next=NextDateTimeTimezoneLonglat()
-	sign_planets_dict=defaultdict(list)
+	if SearchOption==1:
+		rules_file=open("./MinedClassAssociationRules.txt","r")
+		rule_planets_list=[]
+		for rule in rules_file:
+			print len(rule.split(","))
+			if len(rule.split(" , ")) > 1:
+				rule_planets=rule.strip().split(' ,')
+				rule_planets_stripped=[]
+				for r in rule_planets:
+					rule_planets_stripped.append(r.strip())	
+				rule_planets_list.append(rule_planets_stripped)
+		next=NextDateTimeTimezoneLonglat()
+		sign_planets_dict=defaultdict(list)
 
-	for date_time_timezone_longlat in next:
-		#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list 
-		#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list 
-		cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
-		print cmd
-		os.system(cmd)
-		print "============================================"
-		chart=open("chartsummary.rulesearch","r")
-		chart.readline()
-		chart.readline()
-		for row in chart:
-			row_tokens=row.split()
-			if row_tokens:
-				sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
-		print "sign_planets_dict=",sign_planets_dict
-		for rule_planets in rule_planets_list:
-			for k,v in sign_planets_dict.iteritems():
-				if (set(rule_planets[:-1]).issubset(set(v))):
-					print "{",date_time_timezone_longlat,"} - There is a Class Association Rule match [",rule_planets[:-1],"] in sign ",k
-				else:
-					print "{",date_time_timezone_longlat,"} - There is no Class Association Rule match [",rule_planets[:-1],"] in sign ",k
-			sign_planets_dict=defaultdict(list)
+		for date_time_timezone_longlat in next:
+			#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list 
+			#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list 
+			#cmd="/media/shrinivaasanka/6944b01d-ff0d-43eb-8699-cca469511742/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+			cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+			print cmd
+			os.system(cmd)
+			print "============================================"
+			chart=open("chartsummary.rulesearch","r")
+			chart.readline()
+			chart.readline()
+			for row in chart:
+				row_tokens=row.split()
+				if row_tokens:
+					sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
+			print "sign_planets_dict=",sign_planets_dict
+			for rule_planets in rule_planets_list:
+				for k,v in sign_planets_dict.iteritems():
+					if (set(rule_planets[:-1]).issubset(set(v))):
+						print "{",date_time_timezone_longlat,"} - There is a Class Association Rule match [",rule_planets[:-1],"] in sign ",k
+					else:
+						print "{",date_time_timezone_longlat,"} - There is no Class Association Rule match [",rule_planets[:-1],"] in sign ",k
+				sign_planets_dict=defaultdict(list)
+	else:
+		#SearchOption=2 - matches cross-cusp border patterns too
+	        rules_file=open("./MinedClassAssociationRules.txt","r")
+                rule_planets_list=[]
+                next=NextDateTimeTimezoneLonglat()
+                for rule in rules_file:
+			print len(rule.split(","))
+			if len(rule.split(" , ")) > 1:
+               			for date_time_timezone_longlat in next:
+                       			#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list
+                       			#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list
+					cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+                       			print "cmd:",cmd
+                       			os.system(cmd)
+                       			print "============================================"
+                       			chart=open("chartsummary.rulesearch","r")
+					sign_planets_dict=defaultdict(list)
+                       			chart.readline()
+                       			chart.readline()
+					encoded_chart=""
+					for row in chart:
+		                                row_tokens=row.split()
+               			                if row_tokens:
+							sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
+					#print sign_planets_dict
+					encoded_chart+=toString(sign_planets_dict["Aries"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Taurus"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Gemini"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Cancer"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Leo"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Virgo"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Libra"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Scorpio"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Sagittarius"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Capricorn"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Aquarius"])
+					encoded_chart+=" , Cusp , "
+					encoded_chart+=toString(sign_planets_dict["Pisces"])
+			        	print "Encoded chart to be searched:",encoded_chart	
+					print "Rule to search:",rule
+					patternindex=substring_find(encoded_chart,rule)
+					print "patternindex:",patternindex
+					if patternindex != -1:
+						print "There is a Class Association Rule match for ",date_time_timezone_longlat," for pattern ",rule 
+					else:
+						print "There is No Class Association Rule match for ",date_time_timezone_longlat," for pattern ",rule 
