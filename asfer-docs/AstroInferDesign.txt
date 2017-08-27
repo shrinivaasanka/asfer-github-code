@@ -8247,6 +8247,7 @@ References:
 	log(dv(t)) = cf*logt
 	f=log(dv(t))/clog(t)
 	Since f=M, E = M*e^(kMt) = log(dv(t)) * e^(klog(dv(t))*t/clogt) / clogt
+443.7 Degree distribution and Intrinsic Fitness - https://www.cs.upc.edu/~CSN/slides/08network_dynamics.pdf - "... Consider f (xi , xj) = (xi*xj)/x*M)^MM where x(M) is the largest value of x in the network. Then the mean degree of a node of fitness x is k(x) = nx/x(M)^2 * integral(0,∞) [yρ(y)dy] = N<x>*x/x(M)^2 ... " - Expected Degree of vertex and Fitness of vertex are thus related - Expectation of Fitness PDF is obtained by integral.
 
 --------------------------------------------------------------------------------------------------------------------------------------
 444. (FEATURE-DONE) Scheduler Analytics Update - Commits - 10 August 2017
