@@ -8309,4 +8309,26 @@ have lot of research information on predicting hurricanes and earthquakes
 ---------------------------------------------------------------------------------------------------------------------------------------------
 Updated mined class association rule parsing in python-src/MaitreyaEncHoro_RuleSearch.py
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+448. (FEATURE-DONE) Approximate CNFSAT Solver update - SciPy Sparse - 28 August 2017
+---------------------------------------------------------------------------------------------------------------------------------------------
+(*) imported scipy.sparse.linalg least squares function lsqr().
+(*) Number of clauses and variables set to 18 each.
+(*) After 673 iterations of Random 3CNFs following satisfied clauses data were observed:
+Percentage of CNFs satisfied so far: 58.7537091988
+Average Percentage of Clauses per CNF satisfied: 97.0161556215
 
+From LLL, If p < 1/[e(d+1)] is the probability of an event (not satisfying a clause) :
+Probability that clause is satisfied: 1-p > (1-1/[e(d+1)])
+Probability that all of the clauses are satisfied > (1-1/[e(d+1)])^(d+1) (for d+1 clauses)
+Probability that some of the clauses are satisfied < 1-(1-1/[e(d+1)])^(d+1)
+
+If all clauses overlap:
+In previous example d+1 = 18 and thus probability that all of the clauses are satisified for any random CNF is :
+(1-1/[e(18)])^(18)  > ~68.96%
+and probability that some but not all of the clauses being satisified for any random CNF is:
+1-(1-1/[e(18)])^(18)  < ~31.043%
+
+If none of the clauses overlap:
+d=0 and probability that all the clauses are satisfied  (1-1/e) > ~63.21%
+and probability that some but not all of the clauses being satisified for any random CNF is  < ~36.79%
