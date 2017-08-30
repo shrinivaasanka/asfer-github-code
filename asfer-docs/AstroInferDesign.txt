@@ -8335,6 +8335,7 @@ and probability that some but not all of the clauses being satisified for any ra
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 449. (THEORY) Analysis of Error Upperbound for Approximate CNFSAT Solver based on Lovasz Local Lemma clause dependency digraph - 29 August 2017
+,30 August 2017
 ---------------------------------------------------------------------------------------------------------------------------------------------
 Probability of a clause being not satisfied from Lovasz Local Lemma:
 	p < 1/(e(d+1))
@@ -8358,73 +8359,125 @@ if q = 1-p:
 	= q^k * (1 + q + q^2 + ... + q^(n-k))  [Geometric series]
 	= q^k (1 - q^(n-k+1)) / (1-q)
 But from LLL, p < 1/e(d+1)
-	q = 1 - p > ed/(ed+1)
+	q = 1 - p > (ed+e-1)/(ed+e) 
 
 Substituting for q:
-	[ed/(ed+1)]^k [1 - [ed/(ed+1)]^(n-k+1)]
+	[(ed+e-1)/(ed+e)]^k [1 - [(ed+e-1)/(ed+e)]^(n-k+1)]
 	---------------------------------------
-		1 - [ed/(ed+1)]
+		1 - [(ed+e-1)/(ed+e)]
 
 #################################################################
 #Probability of atleast k of n clauses being satisfied:		#
-#	[ed]^k [(ed+1)^(n-k+1) - [ed]^(n-k+1)]			#
+#	[ed+e-1]^k [(ed+e)^(n-k+1) - [ed+e-1]^(n-k+1)]		#
 #	---------------------------------------			#
-#		 [(ed+1)^n]					#
+#		 [(ed+e)^n]					#
 #################################################################
 
 if k=n:
-	(ed)^n / (ed+1)^n
+	(ed+e-1)^n / (ed+e)^n
 
-If overlap of variables across the clauses is huge, ed ~ ed+1
+If overlap of variables across the clauses is huge, ed+e-1 ~ ed+e
 Maximum overlap d is (n-1) i.e a clause has common variables across all other clauses
 
 When d is maximum:
 ------------------
-Lt (d -> n-1, n -> infinity) (ed/(ed+1))^n
-	= [(e(n-1)/(e(n-1) + 1)]^n
-	= [(en-e)/(en-e+1)]^n
-	= [(e - e/n)/(e - e/n + 1/n)]^n
-	= [(e)/(e)]^n
-Pr[#SATclauses = n]	= 1 = 100%
+Lt (d -> n-1, n -> infinity) ((ed+e-1)/(ed+e))^n
+	= [((e(n-1)+e-1)/(e(n-1) + e)]^n
+	= [(en-e+e-1)/(en-e+e)]^n
+	= [(en-1)/(en)]^n
+	= [(1-1/ne)]^n
+	= [1 - 0.3678/n]^n 
+For infinite n:
+	= e^(-0.3678)
+Pr[#SATclauses = n]	= 69.22% 
 
 When overlap is absent at d=0:
 ------------------------------
-Pr[#SATclauses = n]	= 0
+Pr[#SATclauses = n]	= (e-1)^n/e^n = (0.6321)^n -> 0 for huge n
 
 When d=1 (minimum overlap):
 ---------------------------
-Pr[#SATclauses = n] = (e)^k ((e+1)^(n-n+1) - e^(n-n+1)) / (e+1)^n
-			= (e/(e+1))^n = (0.73105)^n which tends to 0 when n is huge.
+Pr[#SATclauses = n] = [2e-1]^n / [2e]^n = [1-0.5/e]^n = (0.81606)^n -> 0 for huge n
 
 => When the number of variables overlapping across clauses tends to a huge number almost equal to number of clauses, the system of
-linear equations obtained by relaxing each of the clauses are near perfectly solved by least squares and all clauses are satisfied
-100% in infinity. This plausibly explains the intriguing observation of ~98% clauses being satisfied per random 3CNF. For millions
-of clauses, these iterations should theoretically converge to 100% if the random 3CNFs have high overlap of variables across clauses.
-High overlap of variables across clauses is the most probable occurrence in real world SAT solvers. If the overlap as random variable is
-uniformly distributed:
+linear equations obtained by relaxing each of the clauses are solved by least squares and probability of all clauses being satisfied tends 
+to 69.22%.  High overlap of variables across clauses is the most probable occurrence in real world SAT solvers. If the overlap as random variable is uniformly distributed:
 	Expected value of d = 1/(n-1) * (n-1)n/2 = n/2
 
 For mean overlap of n/2 variables across clauses:
 #################################################################
 #Probability of atleast k of n clauses being satisfied:		#
-#	[en/2]^k [(en/2+1)^(n-k+1) - [en/2]^(n-k+1)]		#
+#	[en/2+e-1]^k [(en/2+e)^(n-k+1) - [en/2+e-1]^(n-k+1)]	#
 #	---------------------------------------			#
-#		 [(en/2+1)^n]					#
+#		 [(en/2+e)^n]					#
 #################################################################
 
 When k=n:
-	[en/2]^n [(en/2+1) - en/2]
-	--------------------------
-	[en/2+1]^n
+	[en/2+e-1]^n 
+	------------
+	[en/2+e]^n
 
-	= [en/2/(en/2+1)]^n
-	= [en/(en+2)]^n
-	= [1/1 + 2/en]^n
-	= [1/(1 + 0.735758882/n)]^n
-Lt (n->infinity) [1/(1 + 0.735758882/n)]^n = [1/(1+0)]^n = 1 = 100%
+	= [1 - 0.7357888/(n+1)]^n > [1 - 0.7357888/n]^n
+	= Lt (n->infinity) [1 - 0.735758882/n)]^n = e^-0.73578882   
+	=> Pr[#SATclauses = n] > 47.91%
 
 => When the number of variables overlapping across clauses are uniformly distributed, Probability of all clauses being satisfied per random
-3CNF tends to 100% when number of clauses tend to infinity.
-=> On the average Approximate least squares SAT solver becomes 100% efficient asymptotically for infinite number of clauses, when number of overlaps of variables across clauses is uniformly distributed.
-=> 97-98% satisfied clauses found in few hundred iterations above for upto 20 clauses and 20 variables should tend asymptotically to 100% for high number of clauses and variables. This implies theoretical upperbound for solver accuracy is 100%.
-=> Caveat: This is an average case analysis of overlaps and best case analysis for number of clauses satisfied. This implies SAT is solvable in polynomial time asymptotically in infinite and contradicts witnesses towards P != NP described earlier in this document.
+3CNF is lowerbounded as 47.91% when number of clauses tend to infinity.
+=> Caveat: This is an average case analysis of overlaps and best case analysis for number of clauses satisfied. This implies SAT is approximately solvable in polynomial time asymptotically in infinite if the overlaps are uniformly distributed. This is almost an 1/2-approximation in average overlap setting, similar to Christofides algorithm for TSP. This is not an abnormal appoximation and it does not outrageously contradict witnesses towards P != NP described earlier in this document.
+
+Correction to Geometric distribution LLL estimate:
+--------------------------------------------------
+Previous bound assumes Pr[#SATclauses >= k] is geoemtric distribution. If k satisfying clauses are chosen from total n clauses in 3CNF, it is a tighter binomial distribution and not geometric.
+
+=> Pr[#SATclauses >= k] = summation(nCl*(1-p)^l*(p)^(n-l)), l=k,k+1,k+2,...,n
+
+If k=n/2, this summation is exactly same as Condorcet Jury Theorem where each clause in the 3CNF is a voter = probability of majority of the clauses are satisfied. Each satisfying clause is +1 vote and each rejecting clause is -1 vote. Condorcet Jury Theorem thus applies directly and Pr[#SATclauses >= k] tends to 1 if p > 1/2 and tends to 0 if p < 1/2. For p=0.5, Pr[#SATclauses >= k] = 0.5. From LLL, p=0.5 implies e*0.5*(d+1) > 1 (or) (d+1) > 2/e. For arbitrary values of k, computing closed form of binomial coefficient sum for Pr[#SATclauses >= k] requires hypergeometric functions.
+
+When k=n:
+---------
+Pr[#SATclauses = n] = (1-p)^n
+From LLL, ep(d+1) > 1 => p > 1/e(d+1) 
+	1-p < 1 - 1/e(d+1)
+	1-p < 1 - 0.36788/(d+1)
+	(1-p)^n < (1 - 0.36788/(d+1))^n 
+
+d=0, no overlaps:
+-----------------
+	Pr[#SATclauses=n] = (1-p)^n < (0.6321)^n which tends to 0 for huge number of clauses n.
+
+d=n-1, maximum overlaps:
+------------------------
+	Pr[#SATclauses=n] = (1-p)^n < (1 - 0.36788/n)^n
+	But Limit(n->infinity) (1 - 0.36788/n)^n = e^(-0.36788) = 0.692200241
+	Pr[#SATclauses=n] < 69.22% for huge n.
+
+d=n/2, expected overlaps in uniform distribution:
+--------------------------------------------------
+	Pr[#SATclauses=n] = (1 - 1/(e(n/2+1)))^n = (1 - 0.735758882/(n+2))^n
+	0.735758882/(n+2) < 0.735758882/n
+	(1 - 0.735758882/(n+2))^n > (1 - 0.735758882/n)^n
+	As n->infinity, (1-0.73578882/(n+2)) > e^(-0.73578882) ~ 47.91%
+	=> Pr[#SATclauses=n] > 47.91%
+
+=> 97-98% satisfied clauses found in few hundred iterations above for upto 20 clauses and 20 variables should tend asymptotically to 69.22% if there are high overlaps, high number of clauses and variables. For average number of overlaps, Pr[#SATclauses=n] > 47.91% and does not rule out convergence to 98%. This can be substituted for k for probability that 98% clauses are satisfied as below: 
+	Pr[#SATclauses >= 0.98n] = summation(nCl*(1-p)^l*(p)^(n-l)), l=k,k+1,k+2,...,n
+This is tail bound for binomial distribution which is defined as:
+	Pr[X >= k] <= e^(-nD(k/n || p)) 
+where relative entropy D(k/n || p) = k/n log (k/np) + (1-k/n)log ((1-k/n)/(1-p))
+But k/n = 0.98n/n = 0.98
+=> D(k/n || p) = k/n log (k/np) + (1-k/n)log ((1-k/n)/(1-p)) = 0.98log(0.98/p) + 0.02log(0.02/(1-p))
+=> Pr[X >= 0.98n] <= e^(-n*(0.98log(0.98/p) + 0.02log(0.02/(1-p)))) 
+From LLL, p < 1/e(d+1). Substituting for p:
+=> Pr[X >= 0.98n] <= e^(-n*(0.98log(0.98e(d+1)) + 0.02log(0.02(ed+e)/(ed+e-1)))) 
+Lt(n->infinity) e^(-n*(0.98log(0.98e(d+1)) + 0.02log(0.02(ed+e)/(ed+e-1)))) = 0
+
+Pr(#SATclauses <= n) <= e^(-(np-n)^2/2pn) by Chernoff bounds. From LLL, p < 1/e(d+1). For average number of overlaps d=n/2, Chernoff bound reduces to:
+Pr(#SATclauses <= n) <= e^(-1/e) ~ 69.22% which coincides with maximum overlaps bound above.
+
+Previous imply approximate CNF SAT solver by solving system of linear equations (= clauses relaxed to reals from binary) is a 0.6922-approximation.
+
+References:
+-----------
+449.1 Sum of Binomial Coefficients - http://web.maths.unsw.edu.au/~mikeh/webpapers/paper87.pdf - "... “For years [before working with
+George E. Andrews in 1973] I had been trying to point out that the rather confused world of binomial coefficient summations is best understood in the language of hypergeometric series identities. Time and again I would find first–rate mathematicians who had never heard of this insight and who would waste considerable time proving some apparently new binomial coefficient summation which almost always turned out to be a special case of one of a handful of classical hypergeometric identities. ...”
+449.2 Binomial Distribution Tail Bounds - https://en.wikipedia.org/wiki/Binomial_distribution#Tail_bounds
