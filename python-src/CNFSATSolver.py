@@ -32,6 +32,7 @@ import math
 #from numpy.linalg import solve
 #from numpy.linalg import lstsq
 from scipy.sparse.linalg import lsqr
+from scipy.sparse.linalg import lsmr
 
 class SATSolver(object):
 	def __init__(self):
@@ -159,7 +160,8 @@ class SATSolver(object):
 		print b
                 #x = solve(a,b)
                 #x = lstsq(a,b)
-                x = lsqr(a,b)
+                #x = lsqr(a,b,atol=0,btol=0,conlim=0)
+                x = lsmr(a,b)
 		print "solve_SAT2(): lstsq(): x:",x[0]
 		cnt=0
 		for e in x[0]:
@@ -218,15 +220,15 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	while(cnt < 10000):
+	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
 		print "solve_SAT2(): Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver()
-		cnf=satsolver.createRandom3CNF(18,18)
-		ass2=satsolver.solve_SAT2(cnf,18)
+		cnf=satsolver.createRandom3CNF(10,10)
+		ass2=satsolver.solve_SAT2(cnf,10)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)

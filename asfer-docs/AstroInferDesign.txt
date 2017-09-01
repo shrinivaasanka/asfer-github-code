@@ -8481,3 +8481,23 @@ References:
 449.1 Sum of Binomial Coefficients - http://web.maths.unsw.edu.au/~mikeh/webpapers/paper87.pdf - "... “For years [before working with
 George E. Andrews in 1973] I had been trying to point out that the rather confused world of binomial coefficient summations is best understood in the language of hypergeometric series identities. Time and again I would find first–rate mathematicians who had never heard of this insight and who would waste considerable time proving some apparently new binomial coefficient summation which almost always turned out to be a special case of one of a handful of classical hypergeometric identities. ...”
 449.2 Binomial Distribution Tail Bounds - https://en.wikipedia.org/wiki/Binomial_distribution#Tail_bounds
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+450.(THEORY) Analysis of Error Upperbound for Approximate CNFSAT Solver based on Lovasz Local Lemma clause dependency digraph - continued - 1 September 2017
+------------------------------------------------------------------------------------------------------------------------------------------------
+(*) Least Squares lsqr() function has been replaced by recent lsmr() least square function mentioned to be faster.
+(*) For 10 variables and 10 clauses for 54068 random 3CNF iterations following were the percentage of satisfied CNFs and clauses satisfied 
+per CNF:
+Percentage of CNFs satisfied so far: 79.6722706172
+Average Percentage of Clauses per CNF satisfied: 97.6276609517
+(*) Again the percentage of clauses satisfied per random 3CNF converges to ~98% after ~54000 random 3CNFs.
+(*) The clauses are created by randomly choosing each literal and its negation independent of any other literal or clause and thus are identically, independently distributed. CNFs can repeat since this is not a permutation.
+(*) Repetitive convergence of number of clauses satisfied per CNF to 98% is mysterious in varied clause-variable combinations. 
+(*) Previous error bound analysis does not assume least squares and is based only on LLL. But Least Squares is about sum of squares of errors minimization i.e Error^2 = |Ax-b|^2 is minimized e.g A'Ax=A'b, partial first derivative of error set to 0. System of equations translated from each 3CNF is overdetermined or underdetermined mostly i.e number of variables and number of clauses are not equal.
+(*) Motivation for least squares for boolean CNF is the relaxation achieved: An example assignment for a literal, 0.88 is inclined towards boolean 1 and 0.02 is inclined towards boolean 0. 
+(*) Convergence to 98% implies probability of average number of clauses satisfied per 3CNF > 0.98n must be almost 0.
+(*) Following Binomial Tail Bound:
+Pr[#SATclauses >= 0.98n] <= e^(-n*(0.98log(0.98e(d+1)) + 0.02log(0.02(ed+e)/(ed+e-1)))) is maximized when there are no overlaps - d=0. 
+Pr[#SATclauses >= 0.98n] <= e^(-n*(0.98log(0.98e) + 0.02log(0.02(e)/(e-1))))
+Pr[#SATclauses >= 0.98n] <= e^(-n*(0.41701 - 0.02999)
+Pr[#SATclauses >= 0.98n] <= e^(-n*0.38701) ~ 0 for large n.
