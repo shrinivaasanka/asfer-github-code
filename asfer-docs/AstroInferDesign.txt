@@ -8501,3 +8501,16 @@ Pr[#SATclauses >= 0.98n] <= e^(-n*(0.98log(0.98e(d+1)) + 0.02log(0.02(ed+e)/(ed+
 Pr[#SATclauses >= 0.98n] <= e^(-n*(0.98log(0.98e) + 0.02log(0.02(e)/(e-1))))
 Pr[#SATclauses >= 0.98n] <= e^(-n*(0.41701 - 0.02999)
 Pr[#SATclauses >= 0.98n] <= e^(-n*0.38701) ~ 0 for large n.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+451.(THEORY) PCP theorem, Hardness of Approximation, Least Squares SAT solver and Semidefinite Programming - related to 450 - 2 September 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+Probabilistically Checkable Proof theorem implies it is NP-hard to find satisfiable instances or 7/8+epsilon satisfiable instance to 3SAT. There are Semidefinite Programming optimization algorithms for MAX3SAT which replace the clauses by an arithmetized polynomial for each literal. Sum of these polynomials or Sum of Squares (SOS) of these polynomials is optimized by Semidefinite decomposition. Positive literal x is replaced by (1-x)/2 and negation !x by (1+x)/2. Literal polynomials within each clause are multiplied. This is a polynomial over reals and is decomposed as XSX' > 0 i.e positive semi-definite. Values of these Sum and Sum of Squares polynomials (F) for an assignment to CNF (a) are equal to number of clauses violating an assignment. Semidefinite Program maximizes/minimizes the difference F(a)-e (thus maximizing or minimizing the number of violating clauses) where e is value of F for assignment a. In this context, the striking 98% convergence for percentage of clauses satisfiedfor multiple clause-variable combinations for least squares/LSMR solver gains importance. It implies 7/8+epsilon=0.98 (or 0.875 + 0.105 = 0.98) satisfiable clauses per CNF if proved for all permutations of variables-clauses-overlaps (and that is a big if) implying P=NP. Atleast a convergence to 0.875 if not 0.98 would suffice.
+
+References:
+-----------
+451.1 PCP and hardness of approximation - algorithm satisfying 7/8+delta clauses - https://cs.stackexchange.com/questions/71040/hardness-of-approximation-of-max-3sat
+451.2 SDP for MAX3SAT - http://www.isa.ewi.tudelft.nl/~heule/publications/sum_of_squares.pdf - Maximum number of clauses violating an assignment and Semidefinite Programming
+
+
+
