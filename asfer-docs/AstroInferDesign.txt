@@ -8512,5 +8512,6 @@ References:
 451.1 PCP and hardness of approximation - algorithm satisfying 7/8+delta clauses - https://cs.stackexchange.com/questions/71040/hardness-of-approximation-of-max-3sat
 451.2 SDP for MAX3SAT - http://www.isa.ewi.tudelft.nl/~heule/publications/sum_of_squares.pdf - Maximum number of clauses violating an assignment and Semidefinite Programming
 451.3 Binary Solutions to System of Linear Equations - https://arxiv.org/pdf/1101.3056.pdf
-
+451.4 Karloff-Zwick 7/8 algorithm for MAX3SAT - http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.51.1351 - A 7/8-approximation algorithm for MAXSAT? - This is randomized polynomial time algorithm and satisfies an expected >= (7/8)n clauses.
+451.5 Inapproximability results - [Johan Hastad] - https://www.nada.kth.se/~johanh/optimalinap.pdf - Assuming P != NP, MAX3SAT can not have polynomial time algorithm satisfying > (7/8)n clauses.
 
