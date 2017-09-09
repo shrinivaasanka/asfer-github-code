@@ -8518,3 +8518,73 @@ References:
 451.5 Inapproximability results - [Johan Hastad] - https://www.nada.kth.se/~johanh/optimalinap.pdf - Assuming P != NP, MAX3SAT can not have polynomial time algorithm satisfying > (7/8)n clauses.
 451.6 Gauss-Jordan Elimination For System of Linear Equations, Origin of Least Squares, Linear Programs for Inequalities - http://www-personal.umich.edu/~murty/LPINFORMStutorial2.pdf - previous CNF SAT Solver has only equalities.
 451.7 Randomized Rounding for LP relaxation - https://en.wikipedia.org/wiki/Randomized_rounding - Randomized Rounding involves 3 steps - formulating a Linear Program for a 3SAT, solving it fractionally and rounding the fraction to nearest integer. Previous CNF SAT Solver maps this rounding process to system of linear equations - formulate each 3SAT as system of linear equations, one equation per clause (AX=B, B is unit vector of all 1s), get fractional values for vector X from Least Squares, Round the fraction to 0 or 1 whichever is nearest.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+452.(THEORY) Approximate CNF 3SAT Solver - Least Squares Error Rounding Analysis - 9 September 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+Notation:
+A' = Transpose of A
+A^-1 = Inverse of A
+E(A) = Expectation of A
+p(A) = probability of A
+
+Rounding in least squares solution to system of equations per CNF 3SAT fails if and only if binary assignment obtained by rounding does not satisfy the CNF while fractional assignment satisfies the system of equations for CNF. Least Square error is minimized by setting first partial derivative of error to zero:
+	AA'x = Ab
+	=> x = (A')^-1*b
+Number of satisfied clauses in least squares is = tr(A(A')^-1*b) because Ax-b is minimized.
+Maximum value of tr(A(A')^-1*b) is the maximum number of satisfied clauses
+if tr(A(A')^-1*b) > 7/8*number_of_clauses, then P=NP by PCP theorem.
+	But, (A')^-1 = (A^-1)'
+	=> A(A')^-1*b = A(A^-1)'*b
+Each matrix A corresponding to a CNF is a random variable - A is a random matrix.
+Expected value of A(A^-1)'*b where random matrix A belongs to some probability distribution = E(A(A^-1)'b)
+	E(A) = sigma(Ap(A))
+	E(A) = E((A')^-1) because inverse of transpose of A has same probability as A and is a bijection.
+	E(A(A^-1)'b) = b*E(A)*E((A^-1)')
+	E(A(A^-1)'b) = b(sigma(Ap(A))^2
+Each random matrix for a random 3CNF has nm entries where n is number of variables and m is number of clauses. Each of nm literals is either a variable or its negation.
+
+Probability of choosing a variable or its negation = 1/(2n) for n variables + n negations.
+Probability of a random matrix A of mn entries = (1/(2n))^nm
+	=> E(A(A^-1)'b) = b(sigma(A(1/2n)^nm)^2 in uniform distribution.
+			= b(1/(2n)^nm * sigma(A))^2 which sums up all 2^nm possible boolean matrices.
+			= b(1/(2n)^mn * [ matrix of 2^(nm-1) for all entries ])^2
+			= b * [ matrix of 2^(mn-1)/(2n)^nm for all entries ]^2
+
+=================================================
+Tighter estimate for probability of a random 3CNF:
+=================================================
+	Per clause 3 literals have to be chosen from 2n literals = 2nC3(1/2n)^3(1/2n)^(2n-3)
+	For m clauses each being independent, Probability of a random 3CNF
+		= (2nC3(1/2n)^3(1/2n)^(2n-3))^m
+=================================================
+	E(A(A^-1)'b) = b * [ matrix of 2^(mn-1)/(2n)^nm for all entries ]^2
+			= b * [ matrix of n*2^(2nm-2)/(2n)^2mn for all entries ]
+			= [ matrix of nm*2^(2nm-2)/(2n)^2mn for all entries ]
+	Trace of this expected matrix is the expected number of clauses that can be satisfied by least squares in uniform distribution:
+			= n*m*m*2^(2nm-2)/(2n)^2mn
+	if number of clauses to be satisfied <= m, n*m*m*2^(2nm-2) <= m*(2n)^2mn
+			=> n*m*2^(2nm-2) <= (2n)^2nm
+	which is obvious because (2n)^(2mn) grows faster.
+			=> n*m*2^2nm <= 4 * 2^2nm * n^2nm
+			=> n*m <= 4 * n^2nm
+	If number of clauses m is polynomial in number of variables n :
+			m = n^k
+			=> n^(k+1) <= 4 * n^2nm
+			=> n^(k-2nm+1) <= 4
+			=> n^(k-2nm+1) <= 4
+=================================================
+Alternatively, following simpler analysis leads to something more concrete:
+	For minimum error x = (A^-1)'b
+	A(A^-1)'b is maximum when A(A^-1)'b = b or A(A^-1)' = I
+	=> A^-1 = (A^-1)'
+	=> A^-1 = (A')^-1
+	=> A = A'
+	=> When A is square symmetric matrix (number of variables = number of clauses)
+	=> Least squares perfectly solves system of equations for CNFSAT if matrix of clauses is symmetric and square i.e error is zero
+Least squares thus solves a subset of NP-complete set of input 3CNFs i.e exactly solves a promise NP problem in deterministic polynomial time.
+
+References:
+-----------
+452.1 Advanced Engineering Mathematics - [Erwin Kreyszig - 8th Edition] - Page 357
+
