@@ -8521,7 +8521,7 @@ References:
 451.7 Randomized Rounding for LP relaxation - https://en.wikipedia.org/wiki/Randomized_rounding - Randomized Rounding involves 3 steps - formulating a Linear Program for a 3SAT, solving it fractionally and rounding the fraction to nearest integer. Previous CNF SAT Solver maps this rounding process to system of linear equations - formulate each 3SAT as system of linear equations, one equation per clause (AX=B, B is unit vector of all 1s), get fractional values for vector X from Least Squares, Round the fraction to 0 or 1 whichever is nearest.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-452.(THEORY) Approximate CNF 3SAT Solver - Least Squares Error Rounding Analysis - 9 September 2017 and 11 September 2017
+452.(THEORY) Approximate CNF 3SAT Solver - Least Squares Error Rounding Analysis - 9 September 2017, 11 September 2017, 14 September 2017
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Notation:
 A' = Transpose of A
@@ -8560,32 +8560,31 @@ Tighter estimate for probability of a random 3CNF:
 	For m clauses each being independent, Probability of a random 3CNF
 		= (2nC3(1/2n)^3(1/2n)^(2n-3))^m
 =================================================
-	E(A(A'A)^-1*A'*b) = b * [ matrix of 2^(mn-1)/(2n)^nm for all entries ]^4
-			= b * [ matrix of n*2^(2nm-2)/(2n)^2mn for all entries ]^2
-			= b * [ matrix of n^3*2^(2nm-2)/(2n)^2mn for all entries ]
-			= [ matrix of m*n^3*2^(2nm-2)/(2n)^2mn for all entries ]
+	E(A(A'A)^-1*A'*b) = b * [ matrix of 2^(mn-1)/(2n)^nm for all entries ]^4  (1,m) * (m*n, n*m, m*n, n*m)
+			= b * [ matrix of n*2^(2nm-2)/(2n)^2mn for all entries ]^2  (1,m) * (m*m, m*m)
+			= b * [ matrix of m*n^2*2^(2nm-2)/(2n)^2mn for all entries ] (1,m) * (m*m) 
+			= [ matrix of m^2*n^2*2^(2nm-2)/(2n)^2mn for all entries ] (1,m)
 	Trace of this expected matrix is the expected number of clauses that can be satisfied by least squares in uniform distribution:
-			= m^2*n^3*2^(2nm-2)/(2n)^2mn
-	if number of clauses to be satisfied <= m, m^2*n^3*2^(2nm-2) <= m*(2n)^2mn
-			=> m*n^3*2^(2nm-2) <= (2n)^2nm
+			= m^3*n^2*2^(2nm-2)/(2n)^2mn
+	if number of clauses to be satisfied <= m, m^3*n^2*2^(2nm-2) <= m*(2n)^2mn
+			=> m^2*n^2*2^(2nm-2) <= (2n)^2nm
 	which is obvious because (2n)^(2mn) grows faster.
-			=> m*n^3*2^2nm <= 4 * 2^2nm * n^2nm
-			=> m*n^3 <= 4 * n^2nm
-	If number of clauses m is polynomial in number of variables n :
-			m = n^k
-			=> n^(k+3) <= 4 * n^2nm
-			=> n^(k-2nm+3) <= 4
-			=> n^(k-2nm+3) <= 4
-	If number of clauses m is exponential in number of variables n :
-			m = 2^n
-			=> 2^n*n^3*2^2nm <= 4 * 2^2nm * n^2nm
-			=> 2^n*n^3 <= 4 * n^2nm (n^n grows faster than 2^n)
+			=> m^2*n^2*2^2nm <= 4 * 2^2nm * n^2nm
+			=> m^2*n^2 <= 4 * n^2nm
+	For all m clauses to be satisfied, this must be an equality:
+			m^2 = 4 * n^2(nm-1)
+	if m=n (number of clauses = number of variables), all clauses are satisfied if:
+			n^2 = 4 * n^(n^2-1)
+			n^2/4 = n^(n^2-1)
+			=> log (n^2/4) = (n^2-1) log(n)
+			=> log (n^2/4)/log(n) = (n^2-1)
+	which is a contradiction because RHS grows faster.
 =================================================
 Alternatively, following simpler analysis leads to something more concrete:
 	For minimum error x = (A'A)^-1*A'*b
 	Ax=A(A'A)^-1*A'*b is maximum when A(A'A)^-1*A'*b = b
 	=> A(A'A)^-1*A' = I
-When A is square symmetric matrix (number of variables = number of clauses) i.e A=A':
+When A is square symmetric matrix (number of variables = number of clauses ) and A=A':
 	=> A(AA)^-1*A = I
 	=> Least squares perfectly solves system of equations for CNFSAT if matrix of clauses is symmetric and square i.e error is zero
 Least squares thus solves a subset of NP-complete set of input 3CNFs i.e exactly solves a promise NP problem in deterministic polynomial time.
