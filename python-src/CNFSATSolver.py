@@ -27,12 +27,16 @@
 import numpy as np
 import random
 import math
+from collections import defaultdict
 #from scipy.linalg import solve
 #from scipy.linalg import lstsq
 #from numpy.linalg import solve
 #from numpy.linalg import lstsq
 from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
+
+variables=defaultdict(int)
+negations=defaultdict(int)
 
 class SATSolver(object):
 	def __init__(self):
@@ -182,25 +186,39 @@ class SATSolver(object):
 			negation=random.randint(1,2)
 			if negation==1:
 				clause += "x"+str(randarray[0]+1)
+				variables[randarray[0]+1] = variables[randarray[0]+1] + 1
 			else:
 				clause += "!x"+str(randarray[0]+1)
+				negations[randarray[0]+1] = negations[randarray[0]+1] + 1
 			clause += " + "
 			negation=random.randint(1,2)
 			if negation==1:
 				clause += "x"+str(randarray[1]+1)
+				variables[randarray[1]+1] = variables[randarray[1]+1] + 1
 			else:
 				clause += "!x"+str(randarray[1]+1)
+				negations[randarray[1]+1] = negations[randarray[1]+1] + 1
 			clause += " + "
 			negation=random.randint(1,2)
 			if negation==1:
 				clause += "x"+str(randarray[2]+1)
+				variables[randarray[2]+1] = variables[randarray[2]+1] + 1
 			else:
 				clause += "!x"+str(randarray[2]+1)
+				negations[randarray[2]+1] = negations[randarray[2]+1] + 1
 			clause += ")"
 			clauses.append(clause)
 		cnf=" * ".join(clauses)
 		return cnf
 
+def prob_dist(freq):
+	prob=[]
+	sumfreq=0
+	for x,y in freq.iteritems():
+		sumfreq=sumfreq + y
+	for i in freq:
+		prob.append(float(i)/float(sumfreq))
+	return prob
 
 
 if __name__=="__main__":
@@ -220,6 +238,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
+	number_of_variables=20
+	number_of_clauses=20
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
@@ -227,8 +247,8 @@ if __name__=="__main__":
 		print "solve_SAT2(): Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver()
-		cnf=satsolver.createRandom3CNF(10,10)
-		ass2=satsolver.solve_SAT2(cnf,10)
+		cnf=satsolver.createRandom3CNF(number_of_clauses,number_of_variables)
+		ass2=satsolver.solve_SAT2(cnf,number_of_variables)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
@@ -239,3 +259,16 @@ if __name__=="__main__":
 		satiscnt += satis[0]
 		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
 		print "Average Percentage of Clauses per CNF satisfied:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+		prob_dist_variables=prob_dist(variables)
+		prob_dist_negations=prob_dist(negations)
+		avg_prob=0.0
+		for x in prob_dist_variables:
+			avg_prob += x
+		for x in prob_dist_negations:
+			avg_prob += x
+		#print "Frequencies of Variables chosen in CNFs so far:",variables
+		print "Probability of Variables chosen in CNFs so far:",prob_dist_variables
+		#print "Frequencies of Negations chosen in CNFs so far:",negations
+		print "Probability of Negations chosen in CNFs so far:",prob_dist_negations
+		print "Average probability of a variable or negation:", avg_prob/float(2.0*number_of_variables)
+		print "Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))

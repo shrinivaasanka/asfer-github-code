@@ -8625,3 +8625,13 @@ literal occurring with probability 1/n.
 References:
 ----------
 453.1 Random matrices - http://www.utstat.toronto.edu/~brunner/oldclass/431s09/readings/RandomMatrices.pdf
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+454. (FEATURE and THEORY) Commits - Approximate SAT solver - 15 September 2017
+--------------------------------------------------------------------------------------------------------------------------------------------
+(*) Some debug statements have been included to print average probability of each literal's occurrence in random 3CNF.
+(*) SATsolver has been re-executed with 20 clauses and 20 variables and probability of occurrence of each literal has been logged.
+(*) This was necessitated to ascertain the pseudorandomness of the clauses and CNFs created.
+(*) Average probability of a literal is less than previous estimate of 1/n = 1/20 = 0.05 for 100% satisfied clauses but still converges to usual 97% for 100 iterations.
+(*) logs committed to testlogs/
+
