@@ -8594,3 +8594,34 @@ References:
 452.1 Advanced Engineering Mathematics - [Erwin Kreyszig - 8th Edition] - Page 357
 452.2 Linear Algebra - [Gilbert Strang] - http://math.mit.edu/~gs/linearalgebra/ila0403.pdf
 452.3 Least Squares Error - [Stephen Boyd] - https://see.stanford.edu/materials/lsoeldsee263/05-ls.pdf
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+453. (THEORY) Random Matrix Analysis of Least Squares Approximate CNFSAT solver - related to 452 - 15 September 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+From previous definition of expected value of random matrix equivalent to a random 3SAT:
+	E(A(A'A)^-1*A'*b) = b*(E(A))^4
+Previous derivation of expected value of a random matrix is further simplified by a different definition of expectation:
+	E(A) = [ matrix of E(x(i,j)) ] i.e each entry of the matrix is evaluated independently.
+Let the probability of each entry x(i,j) of the random matrix = p. Each entry is a literal or its negation and can take 0 or 1 values.
+	E(x(i,j)) = p
+	=> E(A) = [ matrix of p for all entries ]
+	=> b * (E(A))^4 = b*[ matrix of np^2 for all entries ]^2
+			= b*[ matrix of m*n^2*p^4 for all entries ] 
+			= [ matrix of m^2*n^2*p^4 for all entries ]
+	E(A(A'A)^-1*A'*b) = [ matrix of m^2*n^2*p^4 for all entries ]
+	Trace(E(A(A'A)^-1*A'*b)) = m^3*n^2*p^4 which has maximum value equal to number of clauses m
+	=> m^3*n^2*p^4 <= m
+	=> m^2*n^2*p^4 <= 1
+	=> p^4 <= 1/(mn)^2
+	=> p^2 <= 1/(mn)
+	=> p <= 1/sqrt(mn)
+This retrieves the probability distribution of the random 3SAT instances. 
+If all clauses have to be satisfied (ExactSAT), p = 1/sqrt(mn).
+In previous example iterations of the solver, number of clauses = number of variables i.e p = 1/n.
+This differs from the uniform probability assumption 1/(2n) per literal in earlier derivations including the negations too.
+The promise subset of NP solved exactly by least squares is defined by the set of all random 3CNFs created with each 
+literal occurring with probability 1/n.
+
+References:
+----------
+453.1 Random matrices - http://www.utstat.toronto.edu/~brunner/oldclass/431s09/readings/RandomMatrices.pdf
