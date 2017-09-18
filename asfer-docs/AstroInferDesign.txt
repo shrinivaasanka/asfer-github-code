@@ -8622,6 +8622,7 @@ This differs from the uniform probability assumption 1/(2n) per literal in earli
 The promise subset of NP solved exactly by least squares is defined by the set of all random 3CNFs created with each 
 literal occurring with probability 1/n.
 
+
 References:
 ----------
 453.1 Random matrices - http://www.utstat.toronto.edu/~brunner/oldclass/431s09/readings/RandomMatrices.pdf
@@ -8634,4 +8635,19 @@ References:
 (*) This was necessitated to ascertain the pseudorandomness of the clauses and CNFs created.
 (*) Average probability of a literal is less than previous estimate of 1/n = 1/20 = 0.05 for 100% satisfied clauses but still converges to usual 97% for 100 iterations.
 (*) logs committed to testlogs/
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+455. (THEORY) Eigenvalues of Random Matrices, Riemann Zeta Function, MAXSAT ranking of merit, Promise problems and Some additional notes on CNFSAT solver scipy/numpy least squares implementation - 18 September 2017 - related to 24,432
+-------------------------------------------------------------------------------------------------------------------------------------------
+The set of random 3CNFs created by the solver is just a subset of all possible 3CNFs because all least squares API in SciPy require number of variables to be equal to number of clauses, and an exception is thrown at runtime if they are unequal. A better alternative for these API which works for any combination of number of clauses and variables has to be found and substituted in least square invocation (replacing lsqr()/lsmr()). This is a limitation of SciPy/NumPy and not the least squares algorithm. This makes it a Promise SAT solver and not the universal SAT solver for time being. Also for huge number of variables/clauses, both lsqr() and lsmr() functions slow down heavily and it is difficult to test on  low-end personal desktops. The most plausible reason for convergence of MaxSAT to ~98% for almost all executions so far is the promise nature of the problem and only subset of 3CNFs (number of clauses=number of variables) are solved. In above random matrix analysis, if number of variables=number of clauses, probability of choosing a literal (positive or negative) is 1/n which is also uniform if two sets of positive and negated literals each of size n are separately evaluated for probability (E(x(i,j)) = 0*1/n + 1*1/n). This also raises a question: Since promise-SAT instances are NP-complete,does solving promise-NP imply solving NP. Since least squares exactly solves this promise subset (square matrix of equal number of variables and clauses) when probability of choosing a literal is 1/n, percentage of clauses satisfied is ~98% which is close to 100% implying the probability of choosing a literal is slightly less than uniform 1/n. Exact average MaxSAT percentage of least squares solver can be analyzed only if there is a suitable alternative to SciPy/NumPy. Therefore this convergence still does not contradict P!=NP and PCP.
+
+Earlier the problem of intrinsically ranking texts etc., based on merit has been reduced to a MAXSAT problem where each text document etc., satisfies a fixed or variable 3CNFSAT formed from merit variables (e.g textgraph complexity) and merit is ranked by percentage of clauses satisfied. All the quantified outcomes of intrinsic merit algorithms described in this document can be translated to merit variables e.g variable1 = 1 if graph tensor neuron merit > threshold else 0.
+
+Random Matrix representation of random 3SAT instances throws up an unusual window into the realm of Riemann Zeta Functions. It has been known that non-trivial zeros of Riemann Zeta Functions and Eigenvectors of Random Matrices (N*N hermitian matrices) have something in common. This indicates a possibility of a connection between Riemann Zeta Function zeros and eigenvalues of Random Matrices for Random 3CNFs.
+
+References:
+----------
+455.1 Promise Problems - http://www.cs.tau.ac.il/~amnon/Classes/2017-BPP/Lectures/Lecture11.pdf
+455.2 Survey of Promise Problems - [Oded Goldreich] - http://www.wisdom.weizmann.ac.il/~oded/PSX/prpr-r.pdf - there exist BPP-complete promise problems though in general case there are no known BPP-complete problems. This is quite applicable in equating a non-majority social choice and a Condorcet Jury Theorem majority social choice e.g. RHS majority choice with error is promise-BPP-complete and LHS non-majority interview TQBF is social choice is in PSPACE.
+455.3 Gaussian Unitary Ensemble - Random Matrices - http://empslocal.ex.ac.uk/people/staff/mrwatkin//zeta/random.htm
 
