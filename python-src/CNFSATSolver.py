@@ -31,9 +31,10 @@ from collections import defaultdict
 #from scipy.linalg import solve
 #from scipy.linalg import lstsq
 #from numpy.linalg import solve
-#from numpy.linalg import lstsq
-from scipy.sparse.linalg import lsqr
-from scipy.sparse.linalg import lsmr
+from numpy.linalg import lstsq
+#from scipy.sparse.linalg import lsqr
+#from scipy.sparse.linalg import lsmr
+#from scipy.sparse import csr_matrix 
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -141,7 +142,7 @@ class SATSolver(object):
 		#print "SAT assignments 2:",satassignments2
 		return (satassignments1,satassignments2)
 
-	def solve_SAT2(self,cnf,number_of_variables):
+	def solve_SAT2(self,cnf,number_of_variables,number_of_clauses):
 		satass=[]
 		self.solve_SAT(cnf,number_of_variables)
 		for clause in self.cnfparsed:
@@ -154,19 +155,19 @@ class SATSolver(object):
 				else:
 					equation[int(literal[2:])-1]=0
 			self.equationsA.append(equation)
-		for n in xrange(number_of_variables):
+		for n in xrange(number_of_clauses):
 			self.equationsB.append(1)
 		a = np.array(self.equationsA)
                 b = np.array(self.equationsB)
-                #print "a:"
-		print a
-                #print "b:"
-		print b
+		print "a:",a
+		print "b:",b
+                print "a.shape:",a.shape
+                print "b.shape:",b.shape
                 #x = solve(a,b)
-                #x = lstsq(a,b)
-                #x = lsqr(a,b,atol=0,btol=0,conlim=0)
-                x = lsmr(a,b)
-		print "solve_SAT2(): lstsq(): x:",x[0]
+                x = lstsq(a,b)
+                #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+                #x = lsmr(a,b)
+		print "solve_SAT2(): lstsq(): x:",x
 		cnt=0
 		for e in x[0]:
 			if e >= 0.1:
@@ -238,8 +239,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=20
-	number_of_clauses=20
+	number_of_variables=16
+	number_of_clauses=18
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
@@ -248,7 +249,7 @@ if __name__=="__main__":
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver()
 		cnf=satsolver.createRandom3CNF(number_of_clauses,number_of_variables)
-		ass2=satsolver.solve_SAT2(cnf,number_of_variables)
+		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
