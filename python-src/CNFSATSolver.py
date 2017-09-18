@@ -33,7 +33,7 @@ from collections import defaultdict
 #from numpy.linalg import solve
 from numpy.linalg import lstsq
 #from scipy.sparse.linalg import lsqr
-#from scipy.sparse.linalg import lsmr
+from scipy.sparse.linalg import lsmr
 #from scipy.sparse import csr_matrix 
 
 variables=defaultdict(int)
@@ -164,9 +164,9 @@ class SATSolver(object):
                 print "a.shape:",a.shape
                 print "b.shape:",b.shape
                 #x = solve(a,b)
-                x = lstsq(a,b)
+                #x = lstsq(a,b)
                 #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                #x = lsmr(a,b)
+                x = lsmr(a,b)
 		print "solve_SAT2(): lstsq(): x:",x
 		cnt=0
 		for e in x[0]:
@@ -217,8 +217,10 @@ def prob_dist(freq):
 	sumfreq=0
 	for x,y in freq.iteritems():
 		sumfreq=sumfreq + y
-	for i in freq:
-		prob.append(float(i)/float(sumfreq))
+	for x,y in freq.iteritems():
+		print "y=",y
+		print "sumfreq=",sumfreq
+		prob.append(float(y)/float(sumfreq))
 	return prob
 
 
@@ -239,7 +241,7 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=16
+	number_of_variables=15
 	number_of_clauses=18
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
