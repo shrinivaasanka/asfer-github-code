@@ -8659,3 +8659,10 @@ References:
 dimensions in LSMR and LSQR
 (*) Logs for 18*16 clauses-variables random 3CNFs have been committed to testlogs/. MaxSAT percentage is ~96% after 1200 random CNF iterations
 . Per literal probability is too less than 1/sqrt(mn) obtained from random matrix analysis and therefore converges much below 100%.
+-------------------------------------
+(*) Bugs fixed in prob_dist()
+(*) restored lsmr()
+(*) logs for some other clause-variable combinations have been committed to testlogs/. Observed per literal probability is close to random
+ matrix probability of 1/sqrt(mn)
+
+
