@@ -8648,6 +8648,14 @@ Random Matrix representation of random 3SAT instances throws up an unusual windo
 References:
 ----------
 455.1 Promise Problems - http://www.cs.tau.ac.il/~amnon/Classes/2017-BPP/Lectures/Lecture11.pdf
-455.2 Survey of Promise Problems - [Oded Goldreich] - http://www.wisdom.weizmann.ac.il/~oded/PSX/prpr-r.pdf - there exist BPP-complete promise problems though in general case there are no known BPP-complete problems. This is quite applicable in equating a non-majority social choice and a Condorcet Jury Theorem majority social choice e.g. RHS majority choice with error is promise-BPP-complete and LHS non-majority interview TQBF is social choice is in PSPACE.
+455.2 Survey of Promise Problems - [Oded Goldreich] - http://www.wisdom.weizmann.ac.il/~oded/PSX/prpr-r.pdf - there exist BPP-complete promise problems though in general case there are no known BPP-complete problems. This is quite applicable in equating a non-majority social choice and a Condorcet Jury Theorem majority social choice e.g. RHS majority choice with error is promise-BPP-complete and LHS non-majority interview TQBF social choice is in PSPACE.
 455.3 Gaussian Unitary Ensemble - Random Matrices - http://empslocal.ex.ac.uk/people/staff/mrwatkin//zeta/random.htm
 
+---------------------------------------------------------------------------------------------------------------------------------------
+456. (THEORY and FEATURE) CNF3SAT Approximate Solver Update - All possible variable-clause combinations - Commits - 18 September 2017
+---------------------------------------------------------------------------------------------------------------------------------------
+(*) Solve_SAT2() function has been changed to take both number of variables and clauses as parameters
+(*) Bug in EquationsB creation has been fixed so that length of b equals number of clauses. This was causing dimension mismatch and incompatible
+dimensions in LSMR and LSQR
+(*) Logs for 18*16 clauses-variables random 3CNFs have been committed to testlogs/. MaxSAT percentage is ~96% after 1200 random CNF iterations
+. Per literal probability is too less than 1/sqrt(mn) obtained from random matrix analysis and therefore converges much below 100%.
