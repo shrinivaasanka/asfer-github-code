@@ -8665,4 +8665,153 @@ dimensions in LSMR and LSQR
 (*) logs for some other clause-variable combinations have been committed to testlogs/. Observed per literal probability is close to random
  matrix probability of 1/sqrt(mn)
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+457. (THEORY and FEATURE) Inapproximability and Random Matrix Analysis of Least Square Approximate SAT solver - Commits - 19 September 2017
+--------------------------------------------------------------------------------------------------------------------------------------------
+Previous Random Matrix Analysis shows expected number of satisfied clauses = m^3*n^2*p^4 where there are m clauses,n variables and p is the
+probability of choosing a positive or negative literal. For 21 variables and 20 clauses, following are the results after few iterations:
+----------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------
+Iteration : 29
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (20, 21)
+b.shape: (20,)
+solve_SAT2(): lstsq(): x: (array([  5.00000000e-01,   0.00000000e+00,   0.00000000e+00,
+         1.00000000e+00,   3.89920951e-13,   1.00000000e+00,
+         1.00000000e+00,   5.00000000e-01,   7.50000000e-01,
+         1.00000000e+00,   5.00000000e-01,   7.50000000e-01,
+         1.24863661e-13,   0.00000000e+00,   0.00000000e+00,
+         0.00000000e+00,   5.00000000e-01,   5.00000000e-01,
+         1.00000000e+00,   5.00000000e-01,   0.00000000e+00]), 2, 12, 1.870828693386971, 5.2032984761241552e-12, 4.898979485566356, 4.001266321699533, 2.7613402542972292)
+Random 3CNF: (!x11 + !x3 + !x13) * (!x2 + x12 + x11) * (x20 + x11 + !x10) * (!x1 + !x2 + x11) * (x5 + !x10 + x19) * (!x4 + x9 + !x17) * (x4 + !x1 + !x6) * (x5 + x7 + x13) * (x9 + x11 + !x15) * (!x20 + !x19 + x12) * (!x14 + !x9 + x4) * (!x11 + !x6 + x19) * (x10 + !x9 + !x15) * (x7 + !x16 + x5) * (!x7 + x17 + x8) * (!x3 + x1 + x11) * (!x18 + !x7 + !x13) * (x5 + !x21 + x6) * (!x16 + !x9 + !x6) * (x1 + !x6 + x18)
+Assignment computed from least squares: [1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+CNF Formula: [['!x11', '!x3', '!x13'], ['!x2', 'x12', 'x11'], ['x20', 'x11', '!x10'], ['!x1', '!x2', 'x11'], ['x5', '!x10', 'x19'], ['!x4', 'x9', '!x17'], ['x4', '!x1', '!x6'], ['x5', 'x7', 'x13'], ['x9', 'x11', '!x15'], ['!x20', '!x19', 'x12'], ['!x14', '!x9', 'x4'], ['!x11', '!x6', 'x19'], ['x10', '!x9', '!x15'], ['x7', '!x16', 'x5'], ['!x7', 'x17', 'x8'], ['!x3', 'x1', 'x11'], ['!x18', '!x7', '!x13'], ['x5', '!x21', 'x6'], ['!x16', '!x9', '!x6'], ['x1', '!x6', 'x18']]
+Number of clauses satisfied: 20.0
+Number of clauses : 20
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 46.6666666667
+Average Percentage of Clauses per CNF satisfied: 96.0
+y= 46
+sumfreq= 896
+y= 43
+sumfreq= 896
+y= 36
+sumfreq= 896
+y= 46
+sumfreq= 896
+y= 41
+sumfreq= 896
+y= 42
+sumfreq= 896
+y= 48
+sumfreq= 896
+y= 37
+sumfreq= 896
+y= 48
+sumfreq= 896
+y= 39
+sumfreq= 896
+y= 46
+sumfreq= 896
+y= 42
+sumfreq= 896
+y= 42
+sumfreq= 896
+y= 50
+sumfreq= 896
+y= 39
+sumfreq= 896
+y= 33
+sumfreq= 896
+y= 41
+sumfreq= 896
+y= 42
+sumfreq= 896
+y= 44
+sumfreq= 896
+y= 43
+sumfreq= 896
+y= 48
+sumfreq= 896
+y= 40
+sumfreq= 904
+y= 43
+sumfreq= 904
+y= 51
+sumfreq= 904
+y= 36
+sumfreq= 904
+y= 38
+sumfreq= 904
+y= 46
+sumfreq= 904
+y= 44
+sumfreq= 904
+y= 36
+sumfreq= 904
+y= 41
+sumfreq= 904
+y= 45
+sumfreq= 904
+y= 46
+sumfreq= 904
+y= 34
+sumfreq= 904
+y= 46
+sumfreq= 904
+y= 46
+sumfreq= 904
+y= 36
+sumfreq= 904
+y= 42
+sumfreq= 904
+y= 44
+sumfreq= 904
+y= 47
+sumfreq= 904
+y= 51
+sumfreq= 904
+y= 54
+sumfreq= 904
+y= 38
+sumfreq= 904
+Probability of Variables chosen in CNFs so far: [0.05133928571428571, 0.04799107142857143, 0.04017857142857143, 0.05133928571428571, 0.04575892857142857, 0.046875, 0.05357142857142857, 0.041294642857142856, 0.05357142857142857, 0.04352678571428571, 0.05133928571428571, 0.046875, 0.046875, 0.05580357142857143, 0.04352678571428571, 0.036830357142857144, 0.04575892857142857, 0.046875, 0.049107142857142856, 0.04799107142857143, 0.05357142857142857]
+Probability of Negations chosen in CNFs so far: [0.04424778761061947, 0.04756637168141593, 0.05641592920353982, 0.03982300884955752, 0.0420353982300885, 0.05088495575221239, 0.048672566371681415, 0.03982300884955752, 0.04535398230088496, 0.049778761061946904, 0.05088495575221239, 0.03761061946902655, 0.05088495575221239, 0.05088495575221239, 0.03982300884955752, 0.046460176991150445, 0.048672566371681415, 0.051991150442477874, 0.05641592920353982, 0.059734513274336286, 0.0420353982300885]
+Average probability of a variable or negation: 0.047619047619
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0487950036474
+----------------------------------------------------------------------------------------------------------------
+From PCP theorem and [Hastad] inapproximability result based on it, if m^3*n^2*p^4 > 7/8*m then P=NP.
+=> m^2*n^2*p^4 > 7/8
+=> p^4 > 7/(8m^2n^2)
+=> if p > 0.96716821/sqrt(m*n) then P=NP.
+
+In previous iteration, y and sumfreq print the frequencies of literals chosen so far at random (which are almost evenly distributed) and observed average probability of choosing a literal is 0.047619 whereas the required Random Matrix analysis probability for exact SAT is somewhat higher at 0.048795. Substituting the observed probability 0.047619 for 21 variables and 20 clauses:
+	Expected number of clauses satisfied = (20)^3*(21)^2*(0.047619)^4 = 18.1405 clauses or 90.7025%
+implying the MaxSAT for 21 variables and 20 clauses converges to 90.7025% asmptotically ad infinitum.
+
+The inequality m^3*n^2*p^4 > 7/8*m relates hardness and randomness because probability distribution for p is directly related to uniformity and k-wise independence of pseudorandom (number) generator for choosing a literal at random. Presently the randomness depends on linux PRNG. If there exists a pseudorandom number generator corresponding to probability p > 0.96716821/sqrt(m*n) then P=NP.
 

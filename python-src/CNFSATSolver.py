@@ -241,8 +241,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=15
-	number_of_clauses=18
+	number_of_variables=21
+	number_of_clauses=20
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
