@@ -8812,7 +8812,7 @@ From PCP theorem and [Hastad] inapproximability result based on it, if m^3*n^2*p
 
 In previous iteration, y and sumfreq print the frequencies of literals chosen so far at random (which are almost evenly distributed) and observed average probability of choosing a literal is 0.047619 whereas the required Random Matrix analysis probability for exact SAT is somewhat higher at 0.048795. Substituting the observed probability 0.047619 for 21 variables and 20 clauses:
 	Expected number of clauses satisfied = (20)^3*(21)^2*(0.047619)^4 = 18.1405 clauses or 90.7025%
-implying the MaxSAT for 21 variables and 20 clauses converges to 90.7025% asmptotically ad infinitum.
+implying the MaxSAT for 21 variables and 20 clauses converges to 90.7025% asymptotically ad infinitum.
 
 The inequality m^3*n^2*p^4 > 7/8*m relates hardness and randomness because probability distribution for p is directly related to uniformity and k-wise independence of pseudorandom (number) generator for choosing a literal at random. Presently the randomness depends on linux PRNG. If there exists a pseudorandom number generator corresponding to probability p > 0.96716821/sqrt(m*n) then P=NP.
 
