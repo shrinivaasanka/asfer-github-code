@@ -8816,3 +8816,17 @@ implying the MaxSAT for 21 variables and 20 clauses converges to 90.7025% asympt
 
 The inequality m^3*n^2*p^4 > 7/8*m relates hardness and randomness because probability distribution for p is directly related to uniformity and k-wise independence of pseudorandom (number) generator for choosing a literal at random. Presently the randomness depends on linux PRNG. If there exists a pseudorandom number generator corresponding to probability p > 0.96716821/sqrt(m*n) then P=NP.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+458. (THEORY) Intrinsic Merit, Consensus Algorithms, Byzantine Failures and Level Playing Field - 23 September 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+So far Intrinsic merit of a text has been analyzed mostly in the context of connectedness and meaningfulness of it. It assumes a document text-graph (subgraph of an ontology like WordNet) obtained from the Ontology graph is implicitly agreed upon metric to measure merit i.e IM(text) = subgraph of Ontology, for some intrinsic merit algorithm IM. But the problem of "agreeing" by stakeholders on some process is itself a non-trivial Consensus Problem which has been overlooked so far. For example, merit measured by interview/examination question-answering or a competition requires all parties to agree upon the terms, conditions and rules a priori. This is widely studied problem of Agreement or Consensus. Consensus is defined by:
+	* Agreement - all parties must agree on a correct process and its outcome
+	* Validity - if all correct processes receive same input value,they must all output same value
+	* Termination - all processes must eventually decide on an output value 
+There are realworld consensus implementations - Google Chubby Lock Service based on Paxos Consensus Protocol, Bitcoin's Proof-of-work hyperledgering which appends transactions of a node to common log in a distributed timestamp server etc., ensuring all participants agree. As opposed to Majority voting which requires crossing just half-way mark in number of votes(>50%), Consensus requires complete agreement (=100%). Once 100% consensus is achieved on how to measure intrinsic merit, it is accepted as a standard and levels playing field for contestants. Consensus is most required in measuring human intrinsic merit than merit of documents. In other words, majority voting permits each voter to decide on his/her own volition. Each voter can have different decision function(boolean or non-boolean). But Consensus requires all voters to reach an agreement on a standardized decision function. Recursive Gloss Overlap algorithm and its enhancements to measure intrinsic merit from graph of text can be termed as "consensual" because connectedness implies meaningfulness by WordNet distance measures (Resnick, Wu-Palmer, Jiang-Conrath etc.,) and any text can be mapped to a subgraph of an ontology like WordNet and WordNet has been accepted as a consensus peer-reviewed standard.
+
+Consensus can be impeded by presence of malicious nodes which spoof and send spurious votes known as Byzantine generals problem. A known result implies there is a consensus resilient to byzantine failures if number of faulty nodes is not above 33%. 
+
+References:
+----------
+458.1 Consensus Algorithms - https://en.wikipedia.org/wiki/Consensus_(computer_science)
