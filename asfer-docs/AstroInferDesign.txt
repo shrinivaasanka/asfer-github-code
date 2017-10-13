@@ -8831,3 +8831,36 @@ Consensus can be impeded by presence of malicious nodes which spoof and send spu
 References:
 ----------
 458.1 Consensus Algorithms - https://en.wikipedia.org/wiki/Consensus_(computer_science)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+459. (THEORY) Random Matrix Rounding for Least Squares Approximate CNFSAT Solver, Distinguisher for Pseudorandomness, Majority Hardness Lemma
+- related to 318, 457 - 13 October 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+Existence of Pseudorandom generators (PRG) implies P != NP. Proof of this is by contradiction: If there exists a distinguisher which is able to discern perfect randomness from any PRG in polynomial time then existence of PRGs which fool a distinguisher is ruled out i.e Pr[A(x)=1]-Pr[A(G(s))=1] >> epsilon where x is a perfect random string in {0,1}^n , A is a distinguisher and G is a function extending a seed s of length m to n - G:{0,1}^m to {0,1}^n , m < n .
+
+Majority Voting Hardness Lemma is an adaptation of Yao's XOR Lemma for hardness amplification from weak voting functions composed to Majority function (related to KRW Conjecture and Boolean Function Composition). Hardness of a boolean function is the error in approximating the function f by a boolean circuit C defined by probability Pr[f(x) != C(x)]. Majority Hardness Lemma implies hardness of the majority+votingfunction composition amplifies the hardness compared to individually weak voters and inverting this composition (MajorityInverse: finding who voted in favour or against) is extremely hard to approximate by a circuit and thus in average case could be an one-way function composition. Being one-way implies hard-to-distinguish PRGs can be constructed from this composition.
+
+Random Matrix Rounding for Least Squares Approximate CNFSAT Solver in previous sections derives an expected probability of choosing a literal in a CNF for ExactSAT(when all clauses are satisfied). This expected random matrix probability (mentioned as RMLSQR henceforth: 1/sqrt(m*n)) corresponds to some hypothetical pseudorandom generator PRG1.
+
+Probability of choosing a CNF by RMLSQR (there are 3m literals per 3CNF) = (1/[mn])^1.5m
+
+Alternatively,number of all possible random 3CNF SATs of m clauses and n variables = (n * n * n)^m = n^(3m)
+
+Probability of choosing a CNF from all possible n^(3m) random 3SATs in this uniform distribution is = (1/n)^3m
+
+Thus there are two possible probability distributions for choosing a random 3SAT: (1/[mn])^1.5m required by Random Matrix rounding and (1/n)^3m for uniform. Probability distributions and Pseudorandom generators underlying these distributions are directly related.
+
+If m=n(number of clauses and number of variables are equal):
+------------------------------------------------------------
+(1/[nn])^1.5n = (1/n)^3n and thus both RMLSQR and Uniform distributions are same implying similar pseudorandomness in RMLSQR and Uniform and distinguisher is fooled.This is a promise special case described earlier and does not suffice.
+
+If m !=n e.g m >> n (this is most prevalent setting where number of clauses are huge and variables are relatively less):
+------------------------------------------------------------------------------------------------------------------------
+(1/[mn])^1.5m < (1/n)^3m
+(1/m)^1.5m * (1/n)^1.5m < (1/n)^1.5m * (1/n)^1.5m
+(1/m)^1.5m < (1/n)^1.5m
+1/m < 1/n
+=> m > n
+
+When number of clauses m differs from number of variables n, RMLSQR and Uniform distributions are dissimilar implying there are two different
+randomness-es: PRG1 for RMLSQR and PRG2(or perfect randomness) for Uniform. Distinguisher for these two random generators has the probability of success defined by difference of the probability distributions for RMLSQR and Uniform = (1/n)^1.5m * [(1/n)^1.5m - (1/m)^1.5m] i.e when the number of clauses is high compared to number of variables, this difference is significant and distinguisher succeeds with high probability implying PRG1 is not pseudorandom and altogether PRGs may not exist at all. This coincides with > 87.5% of clauses getting satisfied breaking 7/8 barrier in average case and could be synonymous to Karloff-Zwick SDP relaxation algorithm for > 7/8 MAXSAT. This need not contradict majority+voterfunction composition hardness because MajorityInverse is a depth-2 #P-Complete counting problem (first step counts and inverts voter inputs to majority and second step counts and inverts assignments per voter and hardness is a function of sensitivity) and could be beyond P != NP purview (i.e. There could be pseudorandom generators indistinguishable only by an algorithm harder than NP).
