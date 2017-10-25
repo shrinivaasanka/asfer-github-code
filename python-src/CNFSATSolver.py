@@ -242,7 +242,7 @@ if __name__=="__main__":
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
 	number_of_variables=21
-	number_of_clauses=20
+	number_of_clauses=18
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
@@ -273,5 +273,7 @@ if __name__=="__main__":
 		print "Probability of Variables chosen in CNFs so far:",prob_dist_variables
 		#print "Frequencies of Negations chosen in CNFs so far:",negations
 		print "Probability of Negations chosen in CNFs so far:",prob_dist_negations
-		print "Average probability of a variable or negation:", avg_prob/float(2.0*number_of_variables)
+		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
+		print "Observed Average probability of a variable or negation:", observed_avg_prob 
 		print "Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
+		print "Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0

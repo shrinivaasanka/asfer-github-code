@@ -8864,3 +8864,622 @@ If m !=n e.g m >> n (this is most prevalent setting where number of clauses are 
 
 When number of clauses m differs from number of variables n, RMLSQR and Uniform distributions are dissimilar implying there are two different
 randomness-es: PRG1 for RMLSQR and PRG2(or perfect randomness) for Uniform. Distinguisher for these two random generators has the probability of success defined by difference of the probability distributions for RMLSQR and Uniform = (1/n)^1.5m * [(1/n)^1.5m - (1/m)^1.5m] i.e when the number of clauses is high compared to number of variables, this difference is significant and distinguisher succeeds with high probability implying PRG1 is not pseudorandom and altogether PRGs may not exist at all. This coincides with > 87.5% of clauses getting satisfied breaking 7/8 barrier in average case and could be synonymous to Karloff-Zwick SDP relaxation algorithm for > 7/8 MAXSAT. This need not contradict majority+voterfunction composition hardness because MajorityInverse is a depth-2 #P-Complete counting problem (first step counts and inverts voter inputs to majority and second step counts and inverts assignments per voter and hardness is a function of sensitivity) and could be beyond P != NP purview (i.e. There could be pseudorandom generators indistinguishable only by an algorithm harder than NP).
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+460. (THEORY and FEATURE) Random Matrix Rounding for Least Squares Approximate CNFSAT Solver - various clause-variable permutations - numbers, some anomalous - 25 October 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+Following are some random 3SAT iteration MAXSAT percentage numbers for multiple combinations of number of variables and clauses. Observed average probabilities of linux PRNG have some anomalies when substituted in random matrix expected number of satisfied clauses (>100%). Reasons for
+this could be error in estimating linux PRNG probability distribution. Deficiencies of Linux PRNGs - especially randomness extractor from SHA - are already analyzed (random.c) in https://eprint.iacr.org/2005/029.pdf - [BoazBarak-ShaiHalevi]
+ 
+##############################################
+17 variables, 18 clauses - 1066 random 3SATs:
+##############################################
+--------------------------------------------------------------
+Iteration : 1066
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (18, 17)
+b.shape: (18,)
+solve_SAT2(): lstsq(): x: (array([  0.00000000e+00,   1.00000000e+00,   8.00000000e-01,
+         1.00000000e+00,   2.00000000e-01,   1.00000000e+00,
+         1.00000000e+00,   6.66666667e-01,   6.00000000e-01,
+         0.00000000e+00,   0.00000000e+00,  -6.66666667e-01,
+         6.00000000e-01,   1.89190298e-14,   6.66666667e-01,
+         4.00000000e-01,   0.00000000e+00]), 2, 11, 1.653279569018299, 9.190906242470613e-13, 4.690415759823429, 4.19738295792774, 2.625515822335343)
+Random 3CNF: (x3 + !x11 + !x16) * (!x16 + x3 + x5) * (x6 + !x9 + !x4) * (x15 + !x10 + x8) * (!x14 + x2 + !x8) * (!x11 + !x10 + !x3) * (!x9 + x2 + x14) * (!x1 + x3 + !x7) * (x2 + x8 + x12) * (!x8 + !x1 + !x13) * (!x10 + !x8 + x9) * (!x12 + x4 + !x8) * (!x7 + x8 + !x4) * (!x8 + x16 + x9) * (!x12 + !x7 + x15) * (!x1 + x7 + !x14) * (x3 + x9 + !x12) * (!x11 + x13 + x16)
+Assignment computed from least squares: [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0]
+CNF Formula: [['x3', '!x11', '!x16'], ['!x16', 'x3', 'x5'], ['x6', '!x9', '!x4'], ['x15', '!x10', 'x8'], ['!x14', 'x2', '!x8'], ['!x11', '!x10', '!x3'], ['!x9', 'x2', 'x14'], ['!x1', 'x3', '!x7'], ['x2', 'x8', 'x12'], ['!x8', '!x1', '!x13'], ['!x10', '!x8', 'x9'], ['!x12', 'x4', '!x8'], ['!x7', 'x8', '!x4'], ['!x8', 'x16', 'x9'], ['!x12', '!x7', 'x15'], ['!x1', 'x7', '!x14'], ['x3', 'x9', '!x12'], ['!x11', 'x13', 'x16']]
+Number of clauses satisfied: 18.0
+Number of clauses : 18
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 61.0121836926
+Average Percentage of Clauses per CNF satisfied: 97.3341664063
+y= 1675
+sumfreq= 28722
+y= 1683
+sumfreq= 28722
+y= 1716
+sumfreq= 28722
+y= 1750
+sumfreq= 28722
+y= 1699
+sumfreq= 28722
+y= 1690
+sumfreq= 28722
+y= 1697
+sumfreq= 28722
+y= 1662
+sumfreq= 28722
+y= 1732
+sumfreq= 28722
+y= 1740
+sumfreq= 28722
+y= 1687
+sumfreq= 28722
+y= 1669
+sumfreq= 28722
+y= 1677
+sumfreq= 28722
+y= 1662
+sumfreq= 28722
+y= 1664
+sumfreq= 28722
+y= 1660
+sumfreq= 28722
+y= 1659
+sumfreq= 28722
+y= 1716
+sumfreq= 28896
+y= 1782
+sumfreq= 28896
+y= 1660
+sumfreq= 28896
+y= 1714
+sumfreq= 28896
+y= 1704
+sumfreq= 28896
+y= 1716
+sumfreq= 28896
+y= 1721
+sumfreq= 28896
+y= 1688
+sumfreq= 28896
+y= 1679
+sumfreq= 28896
+y= 1653
+sumfreq= 28896
+y= 1662
+sumfreq= 28896
+y= 1686
+sumfreq= 28896
+y= 1702
+sumfreq= 28896
+y= 1673
+sumfreq= 28896
+y= 1735
+sumfreq= 28896
+y= 1678
+sumfreq= 28896
+y= 1727
+sumfreq= 28896
+Probability of Variables chosen in CNFs so far: [0.058317665900703294, 0.05859619803634844, 0.05974514309588469, 0.06092890467237658, 0.059153262307638746, 0.05883991365503795, 0.059083629273727456, 0.057865051180279924, 0.06030220736717499, 0.06058073950282014, 0.05873546410417102, 0.05810876679896943, 0.058387298934614584, 0.057865051180279924, 0.057934684214191214, 0.05779541814636864, 0.057760601629412996]
+Probability of Negations chosen in CNFs so far: [0.059385382059800665, 0.061669435215946845, 0.05744739756367663, 0.05931616832779624, 0.058970099667774084, 0.059385382059800665, 0.05955841638981174, 0.05841638981173865, 0.058104928017718716, 0.057205149501661126, 0.057516611295681065, 0.05834717607973422, 0.058900885935769656, 0.057897286821705425, 0.06004291251384274, 0.0580703211517165, 0.059766057585825025]
+Average probability of a variable or negation: 0.0588235294118
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0571661950475
+
+#############################################
+18 variables, 19 clauses - 137 random 3SATs:
+#############################################
+--------------------------------------------------------------
+Iteration : 137
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0]
+ [0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (19, 18)
+b.shape: (19,)
+solve_SAT2(): lstsq(): x: (array([  6.66666667e-01,   1.00000000e+00,  -1.11111111e-01,
+         3.33333333e-01,   0.00000000e+00,   1.00000000e+00,
+         4.44444445e-01,   1.66666667e+00,   8.93039852e-11,
+         0.00000000e+00,   0.00000000e+00,   6.66666667e-01,
+        -6.66666666e-01,   0.00000000e+00,  -5.55555556e-01,
+         6.66666667e-01,  -8.43769499e-15,   1.00000000e+00]), 2, 13, 2.0816659994661344, 5.027196399901854e-09, 5.2915026221291805, 4.8051011045747947, 2.8609762647129626)
+Random 3CNF: (x4 + x1 + !x7) * (!x3 + x6 + x9) * (x3 + x12 + x7) * (!x13 + !x4 + !x10) * (x12 + x16 + !x6) * (x12 + !x17 + !x14) * (x16 + !x2 + !x17) * (x17 + x18 + !x7) * (x16 + !x2 + x4) * (x6 + !x17 + !x18) * (!x14 + !x5 + !x17) * (x2 + !x14 + x17) * (x6 + x16 + x13) * (!x12 + !x10 + !x7) * (x13 + !x12 + x8) * (x15 + x8 + x3) * (!x3 + !x9 + !x7) * (x6 + !x16 + !x13) * (x18 + !x6 + !x2)
+Assignment computed from least squares: [1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1]
+CNF Formula: [['x4', 'x1', '!x7'], ['!x3', 'x6', 'x9'], ['x3', 'x12', 'x7'], ['!x13', '!x4', '!x10'], ['x12', 'x16', '!x6'], ['x12', '!x17', '!x14'], ['x16', '!x2', '!x17'], ['x17', 'x18', '!x7'], ['x16', '!x2', 'x4'], ['x6', '!x17', '!x18'], ['!x14', '!x5', '!x17'], ['x2', '!x14', 'x17'], ['x6', 'x16', 'x13'], ['!x12', '!x10', '!x7'], ['x13', '!x12', 'x8'], ['x15', 'x8', 'x3'], ['!x3', '!x9', '!x7'], ['x6', '!x16', '!x13'], ['x18', '!x6', '!x2']]
+Number of clauses satisfied: 19.0
+Number of clauses : 19
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 52.8985507246
+Average Percentage of Clauses per CNF satisfied: 96.7581998474
+y= 220
+sumfreq= 3952
+y= 243
+sumfreq= 3952
+y= 252
+sumfreq= 3952
+y= 230
+sumfreq= 3952
+y= 195
+sumfreq= 3952
+y= 203
+sumfreq= 3952
+y= 231
+sumfreq= 3952
+y= 225
+sumfreq= 3952
+y= 224
+sumfreq= 3952
+y= 228
+sumfreq= 3952
+y= 221
+sumfreq= 3952
+y= 224
+sumfreq= 3952
+y= 205
+sumfreq= 3952
+y= 216
+sumfreq= 3952
+y= 199
+sumfreq= 3952
+y= 206
+sumfreq= 3952
+y= 203
+sumfreq= 3952
+y= 227
+sumfreq= 3952
+y= 207
+sumfreq= 3914
+y= 218
+sumfreq= 3914
+y= 214
+sumfreq= 3914
+y= 220
+sumfreq= 3914
+y= 223
+sumfreq= 3914
+y= 204
+sumfreq= 3914
+y= 220
+sumfreq= 3914
+y= 233
+sumfreq= 3914
+y= 203
+sumfreq= 3914
+y= 210
+sumfreq= 3914
+y= 234
+sumfreq= 3914
+y= 208
+sumfreq= 3914
+y= 239
+sumfreq= 3914
+y= 180
+sumfreq= 3914
+y= 205
+sumfreq= 3914
+y= 232
+sumfreq= 3914
+y= 259
+sumfreq= 3914
+y= 205
+sumfreq= 3914
+Probability of Variables chosen in CNFs so far: [0.05566801619433198, 0.06148785425101214, 0.06376518218623482, 0.05819838056680162, 0.049342105263157895, 0.0513663967611336, 0.058451417004048586, 0.056933198380566805, 0.05668016194331984, 0.057692307692307696, 0.05592105263157895, 0.05668016194331984, 0.05187246963562753, 0.05465587044534413, 0.05035425101214575, 0.05212550607287449, 0.0513663967611336, 0.05743927125506073]
+Probability of Negations chosen in CNFs so far: [0.05288707204905468, 0.05569749616760347, 0.054675523760858456, 0.05620848237097598, 0.05697496167603475, 0.052120592743995914, 0.05620848237097598, 0.05952989269289729, 0.051865099642309655, 0.05365355135411344, 0.05978538579458355, 0.05314256515074093, 0.061062851303014816, 0.045988758303525806, 0.052376085845682166, 0.05927439959121104, 0.06617271333673991, 0.052376085845682166]
+Average probability of a variable or negation: 0.0555555555556
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0540738070436
+
+############################################################
+19 variables, 18 clauses - 34 random 3SATs
+############################################################
+--------------------------------------------------------------
+Iteration : 34
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0]
+ [0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (18, 19)
+b.shape: (18,)
+solve_SAT2(): lstsq(): x: (array([  1.00000000e+00,   1.00000000e+00,   1.00000000e+00,
+         1.00000000e+00,   1.00000000e+00,   1.00000000e+00,
+        -3.65332764e-15,   0.00000000e+00,   0.00000000e+00,
+         9.05525654e-15,   1.00000000e+00,   1.00000000e+00,
+         0.00000000e+00,   9.05525654e-15,   0.00000000e+00,
+        -1.00000000e+00,   1.00000000e+00,   3.34888367e-14,
+        -3.65332764e-15]), 2, 12, 1.414213562373095, 2.093877713811129e-13, 4.795831523312719, 3.8125525032467102, 3.1622776601683884)
+Random 3CNF: (x4 + x14 + x10) * (!x2 + !x11 + x5) * (x16 + x2 + x17) * (!x8 + x11 + x7) * (!x5 + x11 + !x14) * (x4 + x18 + !x7) * (x17 + !x6 + !x5) * (!x10 + x18 + x12) * (!x4 + x17 + !x11) * (!x8 + x1 + !x13) * (!x7 + x6 + x18) * (x11 + x19 + !x16) * (!x6 + x2 + !x3) * (!x1 + !x2 + !x8) * (!x13 + !x10 + !x7) * (!x6 + !x10 + x1) * (!x7 + x6 + !x10) * (x3 + !x18 + !x1)
+Assignment computed from least squares: [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0]
+CNF Formula: [['x4', 'x14', 'x10'], ['!x2', '!x11', 'x5'], ['x16', 'x2', 'x17'], ['!x8', 'x11', 'x7'], ['!x5', 'x11', '!x14'], ['x4', 'x18', '!x7'], ['x17', '!x6', '!x5'], ['!x10', 'x18', 'x12'], ['!x4', 'x17', '!x11'], ['!x8', 'x1', '!x13'], ['!x7', 'x6', 'x18'], ['x11', 'x19', '!x16'], ['!x6', 'x2', '!x3'], ['!x1', '!x2', '!x8'], ['!x13', '!x10', '!x7'], ['!x6', '!x10', 'x1'], ['!x7', 'x6', '!x10'], ['x3', '!x18', '!x1']]
+Number of clauses satisfied: 18.0
+Number of clauses : 18
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 80.0
+Average Percentage of Clauses per CNF satisfied: 98.7301587302
+y= 52
+sumfreq= 942
+y= 39
+sumfreq= 942
+y= 46
+sumfreq= 942
+y= 50
+sumfreq= 942
+y= 53
+sumfreq= 942
+y= 43
+sumfreq= 942
+y= 47
+sumfreq= 942
+y= 51
+sumfreq= 942
+y= 57
+sumfreq= 942
+y= 48
+sumfreq= 942
+y= 54
+sumfreq= 942
+y= 49
+sumfreq= 942
+y= 46
+sumfreq= 942
+y= 61
+sumfreq= 942
+y= 54
+sumfreq= 942
+y= 44
+sumfreq= 942
+y= 48
+sumfreq= 942
+y= 49
+sumfreq= 942
+y= 51
+sumfreq= 942
+y= 44
+sumfreq= 948
+y= 42
+sumfreq= 948
+y= 43
+sumfreq= 948
+y= 43
+sumfreq= 948
+y= 61
+sumfreq= 948
+y= 60
+sumfreq= 948
+y= 49
+sumfreq= 948
+y= 60
+sumfreq= 948
+y= 43
+sumfreq= 948
+y= 57
+sumfreq= 948
+y= 47
+sumfreq= 948
+y= 60
+sumfreq= 948
+y= 49
+sumfreq= 948
+y= 41
+sumfreq= 948
+y= 60
+sumfreq= 948
+y= 46
+sumfreq= 948
+y= 53
+sumfreq= 948
+y= 41
+sumfreq= 948
+y= 49
+sumfreq= 948
+Probability of Variables chosen in CNFs so far: [0.055201698513800426, 0.041401273885350316, 0.04883227176220807, 0.05307855626326964, 0.05626326963906582, 0.045647558386411886, 0.049893842887473464, 0.054140127388535034, 0.06050955414012739, 0.050955414012738856, 0.05732484076433121, 0.05201698513800425, 0.04883227176220807, 0.06475583864118896, 0.05732484076433121, 0.04670912951167728, 0.050955414012738856, 0.05201698513800425, 0.054140127388535034]
+Probability of Negations chosen in CNFs so far: [0.046413502109704644, 0.04430379746835443, 0.04535864978902954, 0.04535864978902954, 0.06434599156118144, 0.06329113924050633, 0.05168776371308017, 0.06329113924050633, 0.04535864978902954, 0.060126582278481014, 0.049578059071729956, 0.06329113924050633, 0.05168776371308017, 0.043248945147679324, 0.06329113924050633, 0.04852320675105485, 0.05590717299578059, 0.043248945147679324, 0.05168776371308017]
+Observed Average probability of a variable or negation: 0.0526315789474
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0540738070436
+Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4): 89.7506925208
+
+###########################################################
+16 variables, 15 clauses - 60 random 3SATs
+###########################################################
+--------------------------------------------------------------
+Iteration : 60
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0]
+ [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0]
+ [0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0]
+ [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (15, 16)
+b.shape: (15,)
+solve_SAT2(): lstsq(): x: (array([  0.00000000e+00,   4.00000000e-01,   1.00000000e+00,
+         1.00000000e+00,  -2.00000000e-01,   1.00000000e+00,
+         0.00000000e+00,   6.00000000e-01,   6.00000000e-01,
+         8.00000000e-01,  -2.28234722e-16,   0.00000000e+00,
+         5.00000000e-01,   5.00000000e-01,   1.00000000e+00,
+         0.00000000e+00]), 2, 9, 1.5491933384829675, 1.3065051242742054e-12, 4.242640687119285, 2.7186789946524619, 2.4617067250183342)
+Random 3CNF: (!x8 + x10 + !x11) * (x11 + x3 + !x8) * (!x10 + !x16 + !x1) * (!x8 + x6 + !x4) * (x9 + !x1 + !x10) * (!x5 + !x1 + x6) * (!x6 + x2 + x8) * (x10 + x2 + x5) * (!x1 + !x8 + !x7) * (x3 + !x1 + !x12) * (x14 + !x11 + x13) * (!x1 + x10 + !x2) * (!x13 + x15 + x11) * (x9 + !x1 + x10) * (!x1 + x4 + !x8)
+Assignment computed from least squares: [0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0]
+CNF Formula: [['!x8', 'x10', '!x11'], ['x11', 'x3', '!x8'], ['!x10', '!x16', '!x1'], ['!x8', 'x6', '!x4'], ['x9', '!x1', '!x10'], ['!x5', '!x1', 'x6'], ['!x6', 'x2', 'x8'], ['x10', 'x2', 'x5'], ['!x1', '!x8', '!x7'], ['x3', '!x1', '!x12'], ['x14', '!x11', 'x13'], ['!x1', 'x10', '!x2'], ['!x13', 'x15', 'x11'], ['x9', '!x1', 'x10'], ['!x1', 'x4', '!x8']]
+Number of clauses satisfied: 15.0
+Number of clauses : 15
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 65.5737704918
+Average Percentage of Clauses per CNF satisfied: 97.1584699454
+y= 75
+sumfreq= 1376
+y= 95
+sumfreq= 1376
+y= 77
+sumfreq= 1376
+y= 79
+sumfreq= 1376
+y= 96
+sumfreq= 1376
+y= 89
+sumfreq= 1376
+y= 79
+sumfreq= 1376
+y= 94
+sumfreq= 1376
+y= 86
+sumfreq= 1376
+y= 93
+sumfreq= 1376
+y= 101
+sumfreq= 1376
+y= 91
+sumfreq= 1376
+y= 92
+sumfreq= 1376
+y= 80
+sumfreq= 1376
+y= 77
+sumfreq= 1376
+y= 72
+sumfreq= 1376
+y= 93
+sumfreq= 1369
+y= 82
+sumfreq= 1369
+y= 82
+sumfreq= 1369
+y= 85
+sumfreq= 1369
+y= 84
+sumfreq= 1369
+y= 87
+sumfreq= 1369
+y= 84
+sumfreq= 1369
+y= 71
+sumfreq= 1369
+y= 80
+sumfreq= 1369
+y= 74
+sumfreq= 1369
+y= 90
+sumfreq= 1369
+y= 91
+sumfreq= 1369
+y= 100
+sumfreq= 1369
+y= 100
+sumfreq= 1369
+y= 88
+sumfreq= 1369
+y= 78
+sumfreq= 1369
+Probability of Variables chosen in CNFs so far: [0.05450581395348837, 0.0690406976744186, 0.0559593023255814, 0.057412790697674417, 0.06976744186046512, 0.06468023255813954, 0.057412790697674417, 0.06831395348837209, 0.0625, 0.06758720930232558, 0.07340116279069768, 0.06613372093023256, 0.06686046511627906, 0.05813953488372093, 0.0559593023255814, 0.05232558139534884]
+Probability of Negations chosen in CNFs so far: [0.0679327976625274, 0.05989773557341125, 0.05989773557341125, 0.0620891161431702, 0.061358655953250546, 0.0635500365230095, 0.061358655953250546, 0.05186267348429511, 0.05843681519357195, 0.05405405405405406, 0.06574141709276844, 0.0664718772826881, 0.07304601899196493, 0.07304601899196493, 0.06428049671292914, 0.05697589481373265]
+Observed Average probability of a variable or negation: 0.0625
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0645497224368
+Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4): 87.890625
+
+####################################################
+21 variables, 18 clauses - 6 random 3SATs
+####################################################
+--------------------------------------------------------------
+Iteration : 6
+--------------------------------------------------------------
+solve_SAT2(): Verifying satisfying assignment computed .....
+--------------------------------------------------------------
+a: [[0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0]
+ [0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+ [0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]]
+b: [1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+a.shape: (18, 21)
+b.shape: (18,)
+solve_SAT2(): lstsq(): x: (array([  5.00000000e-01,   1.00000000e+00,   0.00000000e+00,
+         5.00000000e-01,   1.00000000e+00,   0.00000000e+00,
+        -2.63027447e-16,   1.00000000e+00,  -3.67351548e-14,
+         0.00000000e+00,   8.39171896e-12,   9.28077060e-17,
+         0.00000000e+00,  -3.67351548e-14,   0.00000000e+00,
+         2.65906351e-12,   1.00000000e+00,  -2.52681990e-14,
+         5.00000000e-01,   1.00000000e+00,   5.00000000e-01]), 2, 12, 1.7320508075688767, 6.3185165416969518e-11, 4.898979485566356, 3.9602900491395312, 2.4494897427873532)
+Random 3CNF: (x11 + x8 + x16) * (!x12 + x11 + x5) * (!x4 + x17 + x18) * (x5 + !x18 + !x8) * (!x8 + x21 + x1) * (!x9 + !x20 + !x17) * (x4 + !x20 + x19) * (!x6 + x17 + !x12) * (x2 + x7 + !x9) * (x17 + x14 + x9) * (x2 + !x13 + !x6) * (!x13 + !x19 + x20) * (x20 + !x3 + x12) * (x8 + !x20 + !x7) * (!x8 + !x2 + !x7) * (!x2 + !x9 + !x10) * (x5 + !x1 + x11) * (!x13 + x2 + !x11)
+Assignment computed from least squares: [1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]
+CNF Formula: [['x11', 'x8', 'x16'], ['!x12', 'x11', 'x5'], ['!x4', 'x17', 'x18'], ['x5', '!x18', '!x8'], ['!x8', 'x21', 'x1'], ['!x9', '!x20', '!x17'], ['x4', '!x20', 'x19'], ['!x6', 'x17', '!x12'], ['x2', 'x7', '!x9'], ['x17', 'x14', 'x9'], ['x2', '!x13', '!x6'], ['!x13', '!x19', 'x20'], ['x20', '!x3', 'x12'], ['x8', '!x20', '!x7'], ['!x8', '!x2', '!x7'], ['!x2', '!x9', '!x10'], ['x5', '!x1', 'x11'], ['!x13', 'x2', '!x11']]
+Number of clauses satisfied: 18.0
+Number of clauses : 18
+Assignment satisfied: 1
+Percentage of clauses satisfied: 100.0
+Percentage of CNFs satisfied so far: 71.4285714286
+Average Percentage of Clauses per CNF satisfied: 97.619047619
+y= 10
+sumfreq= 184
+y= 9
+sumfreq= 184
+y= 5
+sumfreq= 184
+y= 7
+sumfreq= 184
+y= 10
+sumfreq= 184
+y= 2
+sumfreq= 184
+y= 11
+sumfreq= 184
+y= 5
+sumfreq= 184
+y= 8
+sumfreq= 184
+y= 13
+sumfreq= 184
+y= 14
+sumfreq= 184
+y= 9
+sumfreq= 184
+y= 8
+sumfreq= 184
+y= 10
+sumfreq= 184
+y= 4
+sumfreq= 184
+y= 9
+sumfreq= 184
+y= 11
+sumfreq= 184
+y= 9
+sumfreq= 184
+y= 10
+sumfreq= 184
+y= 9
+sumfreq= 184
+y= 11
+sumfreq= 184
+y= 8
+sumfreq= 194
+y= 14
+sumfreq= 194
+y= 9
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 7
+sumfreq= 194
+y= 10
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 6
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 4
+sumfreq= 194
+y= 6
+sumfreq= 194
+y= 11
+sumfreq= 194
+y= 3
+sumfreq= 194
+y= 8
+sumfreq= 194
+y= 14
+sumfreq= 194
+y= 4
+sumfreq= 194
+y= 13
+sumfreq= 194
+y= 11
+sumfreq= 194
+Probability of Variables chosen in CNFs so far: [0.05434782608695652, 0.04891304347826087, 0.02717391304347826, 0.03804347826086957, 0.05434782608695652, 0.010869565217391304, 0.059782608695652176, 0.02717391304347826, 0.043478260869565216, 0.07065217391304347, 0.07608695652173914, 0.04891304347826087, 0.043478260869565216, 0.05434782608695652, 0.021739130434782608, 0.04891304347826087, 0.059782608695652176, 0.04891304347826087, 0.05434782608695652, 0.04891304347826087, 0.059782608695652176]
+Probability of Negations chosen in CNFs so far: [0.041237113402061855, 0.07216494845360824, 0.04639175257731959, 0.05670103092783505, 0.03608247422680412, 0.05154639175257732, 0.05670103092783505, 0.05670103092783505, 0.05670103092783505, 0.05670103092783505, 0.030927835051546393, 0.05670103092783505, 0.020618556701030927, 0.030927835051546393, 0.05670103092783505, 0.015463917525773196, 0.041237113402061855, 0.07216494845360824, 0.020618556701030927, 0.06701030927835051, 0.05670103092783505]
+Observed Average probability of a variable or negation: 0.047619047619
+Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0514344499874
+Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4): 73.4693877551
+
