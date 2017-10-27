@@ -9483,3 +9483,11 @@ Observed Average probability of a variable or negation: 0.047619047619
 Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)): 0.0514344499874
 Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4): 73.4693877551
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+461. (THEORY) Space-Filling, Random Close Packing, Bin Packing and Voter Decision Functions - 27 October 2017 - related to 135
+----------------------------------------------------------------------------------------------------------------------------------------------
+Parallel PRG and Cellular Automaton Algorithms for randomly filling a space with objects and their relevance to Linear Programming were described earlier. Space Filling is a problem studied in the field of Structural Topology. For example, density of spheres randomly packed into a container is approximately ~63.6% (reference below) which is exactly the problem solved by Parallel PRG and Cellular Automaton Randomized Space filling algorithms. This space filling problem can be formulated as a Voter Constraint Satisfaction Problem. Variant of Space filling is the NP-hard Packing problem where set of items of variable sizes have to be packed into set of bins of same volume by minimizing number of bins whereas Space filling has just one container and items are of similar sizes and random close packing converges to a fixed density percentage. If set of items in a random close packing within a container are equivalent to satisfied clauses (having same number of variables) of a Voter Decision Function, this topology result implies not more than ~63.6% of clauses can be satisfied per candidate(MAXSAT). Each n-sphere can be mapped to a  satisfied clause of n variables (each variable corresponds to a bounded length equal to diameter of n-sphere on a dimension of the n-space).
+
+Reference:
+---------
+461.1 Random Close Packings of Spheres in a Container - Space-filling and Structural Topology - http://www.math.cornell.edu/~connelly/PackingsIII.IV.pdf and http://www-iri.upc.es/people/ros/StructuralTopology/
