@@ -42,7 +42,7 @@ import math
 from datetime import date, time, datetime, timedelta
 from collections import defaultdict
 
-useGeonames=True
+useGeonames=False
 SearchOption=2
 max_iterations=100000000
 min_year=0
@@ -154,7 +154,14 @@ class NextDateTimeTimezoneLonglat:
 
 def toString(planetslist):
 	planetsliststring=""
-	return " , ".join(planetslist)
+	#return " , ".join(planetslist)
+	if len(planetslist) < 1:
+		return "Unoccupied"
+	for p in planetslist:
+		planetsliststring += p
+		planetsliststring += " , "
+	print "toString() planetsliststring=", planetsliststring[:-3]
+	return planetsliststring[:-3]
 
 def substring_find(str1,str2):
         issubstring=False
@@ -243,7 +250,7 @@ if __name__=="__main__":
 		                                row_tokens=row.split()
                			                if row_tokens:
 							sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
-					#print sign_planets_dict
+					print sign_planets_dict
 					encoded_chart+=toString(sign_planets_dict["Aries"])
 					encoded_chart+=" , Cusp , "
 					encoded_chart+=toString(sign_planets_dict["Taurus"])
