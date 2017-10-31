@@ -9503,3 +9503,10 @@ Randomized Algorithm (Parallel PRG or Cellular Automaton) for this space filling
 pack is the limit on density = Total Volume of Spheres (or) Total number of satisfied clauses / Volume of Container. As density increases , number of satisfied clauses increases. In other words, Total number of satisfied clauses = Volume of Container * PackingDensity = V*0.636. What Volume of Container translates to in the context of CNFs is open to interpretation - it might depend on the maximum-minimum range of centroid dimensions.
 
 Filling the space within the container by n-spheres in parallel monte carlo random choice of centroids, simulates many natural parallel processes e.g shaking a container filled with equal sized balls. Parallel PRG and Cellular Automaton algorithms are for these special settings of random close packing (wherein size of the ball is infinitesimally finite) which are BPP/BPNC/RNC randomized algorithms to find a random close pack assignment to the previous kSAT. Each literal in this random close pack SAT is not just a centroid but also covers circular space around it of finite constant radius. Considering the usual example - shaking a container having closely packed balls: Every successive shake of the container creates an assignment to the kSAT. Formulating this kSAT requires prior knowledge of all possible centroid tuples which could be infinite. If shaking is of constant or polynomial time, churning out successive assignments to previous kSAT is surprisingly not hard. Also previous kSAT does not have overlapping literals across clauses.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+463. (FEATURE-DONE) Ephemeris Search Script Update - Celestial Pattern Mining - 31 October 2017
+------------------------------------------------------------------------------------------------------------------------------------------
+Updated Ephemeris Search for Sequence Mined Celestial Configurations - toString() function has been changed to concatenate "Unoccupied"
+for vacant zodiac signs while creating encoded celestial chart.
+
