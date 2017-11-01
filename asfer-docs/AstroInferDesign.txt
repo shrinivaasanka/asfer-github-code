@@ -9510,3 +9510,16 @@ Filling the space within the container by n-spheres in parallel monte carlo rand
 Updated Ephemeris Search for Sequence Mined Celestial Configurations - toString() function has been changed to concatenate "Unoccupied"
 for vacant zodiac signs while creating encoded celestial chart.
 
+-----------------------------------------------------------------------------------------------
+464. (FEATURE-DONE) Ephemeris Search - Sequence Mining of Tropical Monsoon for mid-November 2017 - 1 November 2017
+-----------------------------------------------------------------------------------------------
+(#) Apriori GSP SequenceMining on autogen_classifier_dataset historic Storms data has been executed
+(#) asfer.enchoros.seqmining has been updated from autogen_classifier_dataset
+(#) MinedClassAssociationRules.txt has been rewritten containing almost 2500 celestial planetary patterns
+(#) Ephemeris has been searched for almost 250 top astronomical patterns of these 2500 configurations 
+for mid-November 2017 
+(#) There has been a significant match of most the patterns during this period. Range of search has been
+narrowed to 2 days because exhaustive search for all patterns is intensive.
+(#) This matches to NOAA CPC forecast in http://www.cpc.ncep.noaa.gov/products/JAWF_Monitoring/India/GFS_forecasts.shtml
+
+
