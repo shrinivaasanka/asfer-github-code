@@ -1048,6 +1048,9 @@ PRAM algorithms are in NC.
 
 	34.67) Bitonic Sort Implementation - [Amrutha Mullapudi] - https://www.cse.buffalo.edu//faculty/miller/Courses/CSE633/Mullapudi-Spring-2014-CSE633.pdf - input size is n=2^k and parallel execution time O(logn^2) for Batcher Bitonic Sort - Hyperbolic Pixelated Factorization is in NC because bitonic sort is in NC and is also optimal if O(logn) depth AKS sorting networks are used, because O(n) * O(logn) = O(nlogn) which is serial sorting time lowerbound.
 
+	34.68) PRAMs and Multicore architectures - http://blog.computationalcomplexity.org/2008/04/revenge-of-parallelism.html 
+ 
+	34.69) NC and PRAMs - http://www.cse.iitd.ernet.in/~subodh/courses/CSL860/slides/3pram.pdf
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
