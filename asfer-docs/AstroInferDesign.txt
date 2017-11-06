@@ -9542,4 +9542,7 @@ Chvatal Art Gallery Theorem states for floodlighting an art gallery shaped as n-
 requires pixelation of continuous hyperbolic curve as set of contiguous tiles (array of pixels). This
 computational geometric standard pixelation creates a polygon surrounding hyperbola of 4*(number_of_factors + 1) sides. This is because there are (number_of_factors + 1) pixelated rectangles in the polygon and each rectangle of the polygon has 4 sides. From Chvtal art gallery theorem 4/3 * (number_of_factors + 1) guards are sufficient to cover this polygon. This optimum number of guards is approximately the minimum number of parallel processors (PRAMs) required for tiling (pixelation) pre-processing step. Once these tiles are created in parallel, parallel sorting requires O(logN) time and post-processing binary search is also O(logN) - If there is a parallel binary search algorithm this could be sub-logarithmic. Assumption made previously is each guard has only vertical and horizontal 90 degree visibility.
 
+References:
+----------
+465.1 Chvatal Art Gallery Theorem and Fisk's Proof - https://www.cut-the-knot.org/Curriculum/Combinatorics/Chvatal.shtml
 
