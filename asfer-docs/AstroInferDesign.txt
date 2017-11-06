@@ -9545,4 +9545,5 @@ computational geometric standard pixelation creates a polygon surrounding hyperb
 References:
 ----------
 465.1 Chvatal Art Gallery Theorem and Fisk's Proof - https://www.cut-the-knot.org/Curriculum/Combinatorics/Chvatal.shtml
+465.2 Number of prime factors of an integer - [Srinivasa Ramanujan] - Quarterly Journal of Mathematics, XLVIII, 1917, 76 – 92 - Ramanujan Papers and Notebooks - http://ramanujan.sirinudi.org/Volumes/published/ram35.pdf - number of prime factors are of O(logN/loglogN). This implies number of rectangles (and hence number of PRAMs) in the pixelated hyperbola polygon could be sub-logarithmic in N.
 
