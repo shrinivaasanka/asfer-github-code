@@ -1052,6 +1052,8 @@ PRAM algorithms are in NC.
  
 	34.69) NC and PRAMs - http://www.cse.iitd.ernet.in/~subodh/courses/CSL860/slides/3pram.pdf
 
+	34.70) Geometric Searching, Ray Shooting Queries - [Michael T.Goodrich] - http://www.ics.uci.edu/~goodrich/pubs/42.pdf - Section 42.5 - Ray Shooting is defined as searching a point location in set of line segments by shooting a ray from a point outside the set of line segments. It is an open problem to find an efficient data structure for parallel ray shooting which searches n points in parallel by shooting n light rays. Previous Hyperbolic Factorization can also be rephrased as parallel shooting problem which searches the factor points on the pixelated hyperbolic tile segments in parallel from an external point outside the hyperbola and answers the open question in affirmative.
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
