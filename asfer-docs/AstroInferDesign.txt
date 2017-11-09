@@ -9554,3 +9554,14 @@ References:
 465.2 Number of prime factors of an integer - [Srinivasa Ramanujan] - Quarterly Journal of Mathematics, XLVIII, 1917, 76 – 92 - Ramanujan Papers and Notebooks - http://ramanujan.sirinudi.org/Volumes/published/ram35.pdf - number of prime factors are of O(logN/loglogN). This implies number of rectangles (and hence number of PRAMs) in the pixelated hyperbola polygon could be sub-logarithmic in N.
 465.3 Introduction to Parallel Algorithms - [Joseph JaJa] - Chapter 4 - Searching,Sorting,Merging - Corollary 4.5 - Cole's Pipelined Mergesort and Chapter 6 - Planar Geometry - Lower Envelopes and Visibility polygon - Theorem 6.7 - https://people.ksp.sk/~ppershing/data/skola/JaJa.pdf
 
+------------------------------------------------------------------------------------------------------
+466. (FEATURE-DONE) Support Vector Machines implementation - based on CVXPY - 9 November 2017
+------------------------------------------------------------------------------------------------------
+(*) New Support Vector Machines python implementation is committed to NeuronRain AsFer repository
+(*) This minimizes and objective function 1/2*||w|| subject to constraint ||WX+b|| >= 1 which
+labels a point +1 or -1 on either side of a decision separating hyperplane WX+b for weight vector W
+and bias b (Reference: Machine Learning - Ethem Alpaydin - Chapter 13 - Kernel Machines)
+(*) Optimization is solved by CVXPY DCCP Convex-Concave program
+(*) logs for this have been added to testlogs/
+(*) Present NeuronRain AsFer SVMRetriever.cpp depends on third-party SVMlight opensource software. With
+this new implementation, references to SVMlight are to be phased out.
