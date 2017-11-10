@@ -1058,6 +1058,11 @@ PRAM algorithms are in NC.
 
 	34.72) One dimensional Point Location - https://www.csun.edu/~ctoth/Handbook/chap38.pdf - Section 38.1 - List searching - Tiled hyperbolic line segments are one dimensional intervals and number of intervals are O(logN/loglogN). Searching this list amounts to finding a factor of N.
 
+	34.73) Hoover-Klawe-Pippenger Algorithm for converting arbitray circuit to bounded fanout 2 - [Ogihara-Animesh] - http://www.cs.rochester.edu/u/ogihara/research/DNA/cec.ps.gz
+
+	34.74) PRAM definition of NC - [Kristoffer Arnsfelt Hansen] - https://users-cs.au.dk/arnsfelt/CT08/scribenotes/lecture7.pdf
+
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
