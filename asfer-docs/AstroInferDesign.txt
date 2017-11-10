@@ -9583,6 +9583,10 @@ Distinguisher for these 2 distributions iterates through both sequences of bitst
 
 From PCP [Hastad] inapproximability result and previous Random Matrix analysis for approximate CNFSATSolver, if m^3*n^2*p^4 > 7/8*m then P=NP i.e. if p > 0.96716821/sqrt(m*n) then P=NP. For the previous distinguisher, this requires (mn)^1.5m / (0.96716821)^3m exponential iterations. From condition for P=NP, this number of iterations has to be polynomial for efficient distinguishing of a PRG from perfect random sequence, which is a contradiction.
 
+References:
+-----------
+467.1 Existence of Pseudorandom Generators - [Goldreich-Hugo-Luby] - http://www.wisdom.weizmann.ac.il/~oded/X/gkl.pdf
+
 ---------------------------------------------------------------------------------------------------
 468. (FEATURE-DONE) Support Vector Machines - update - 10 November 2017
 ---------------------------------------------------------------------------------------------------
