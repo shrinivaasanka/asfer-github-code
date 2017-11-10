@@ -34,7 +34,7 @@ class SupportVectorMachines(object):
 	def distance_from_separating_hyperplane(self,no_of_tuple,no_of_weights,tple=None):
 		weights=Variable(no_of_weights,1)
 		if tple==None:
-			tuple=numpy.random.rand(1,no_of_tuple)
+			tuple=numpy.random.rand(no_of_tuple)
 		else:
 			tuple=numpy.array(tple)	
 		print "weights:",weights
@@ -44,7 +44,7 @@ class SupportVectorMachines(object):
 		svm_function = 0.0 
 
 		for i in xrange(no_of_weights):
-			svm_function += weights[i,0]
+			svm_function += abs(weights[i,0])
 
 		objective=Minimize(abs(svm_function)*0.5)
 		print "============================================"
@@ -54,8 +54,8 @@ class SupportVectorMachines(object):
 
 		constraint=0.0
 		constraints=[]
-		for i in xrange(no_of_weights):
-			constraint += weights[i,0]*tuple[0,i] 
+		for i,k in zip(xrange(no_of_weights),xrange(no_of_tuple)):
+			constraint += weights[i,0]*tuple[k] 
 		constraint += bias
 		constraints.append(abs(constraint) >= 1)
 		
@@ -82,9 +82,16 @@ class SupportVectorMachines(object):
 		print "Result:"
 		print "====================================="
 		print result
+		return result
 
 if __name__=="__main__":
 	cvx=SupportVectorMachines()
-	point=[45,3,3,4,4,2,6,2,56,1]
-	#cvx.distance_from_separating_hyperplane(10,10,point)
-	cvx.distance_from_separating_hyperplane(10,10)
+	point1=[4,3,3,4,4,2,6,2,6,1]
+	point2=[-4,-3,-3,-4,-4,-2,-6,-2,-6,-1]
+	res1=cvx.distance_from_separating_hyperplane(len(point1),len(point1),point1)
+	res2=cvx.distance_from_separating_hyperplane(len(point2),len(point2),point2)
+	res3=cvx.distance_from_separating_hyperplane(10,10)
+	print "======================================================="
+	print "distance of Support Vector point1 - ",point1," :",res1
+	print "distance of Support Vector point2  - ",point2," (diametrically 180 degrees from point1, should be equal to distance of point1):",res2
+	print "distance of random point :",res3
