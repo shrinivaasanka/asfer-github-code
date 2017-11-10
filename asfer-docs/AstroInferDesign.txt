@@ -1062,6 +1062,8 @@ PRAM algorithms are in NC.
 
 	34.74) PRAM definition of NC - [Kristoffer Arnsfelt Hansen] - https://users-cs.au.dk/arnsfelt/CT08/scribenotes/lecture7.pdf
 
+	34.75) Factorization, Planar Point Location in parallel, Cascading, Polygon pixelation of hyperbola - [Mikhail Atallah] - https://pdfs.semanticscholar.org/1043/702e1d4cc71be46388cc12cd981ee5ad9cb4.pdf -Section 4.5 - Art Gallery Pixelation of Hyperbola pq=N (described in 465) creates a polygon covering it and Factors of N are points located in the vertices of this polygon: Parallel Planar Point Location algorithms involve Cascading technique to find the factor query points p and q on the faces of this polygon. Cascading algorithms execute in multiple levels of the processor tree per stage and there are logarithmic number of stages - O(logN) parallel time. Cascading derives its nomenclature from relay nature of computation. Node at height h is "woken-up" and computes its subtree only after certain number of stages e.g h. This reduces integer factorization to Parallel Planar Point Location on Polygon.
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
