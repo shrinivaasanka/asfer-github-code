@@ -9583,3 +9583,14 @@ Distinguisher for these 2 distributions iterates through both sequences of bitst
 
 From PCP [Hastad] inapproximability result and previous Random Matrix analysis for approximate CNFSATSolver, if m^3*n^2*p^4 > 7/8*m then P=NP i.e. if p > 0.96716821/sqrt(m*n) then P=NP. For the previous distinguisher, this requires (mn)^1.5m / (0.96716821)^3m exponential iterations. From condition for P=NP, this number of iterations has to be polynomial for efficient distinguishing of a PRG from perfect random sequence, which is a contradiction.
 
+---------------------------------------------------------------------------------------------------
+468. (FEATURE-DONE) Support Vector Machines - update - 10 November 2017
+---------------------------------------------------------------------------------------------------
+(*) Numpy indexing has been changed
+(*) Both random point and parametric point distances have been tested
+(*) DCCP log and Support Vector logs for 2 points and a random point have been committed to testlogs/
+(*) Distances are printed in the matrix result - two diametrically opposite points have equal distances
+(*) Distance matrix is returned from distance_from_separating_hyperplane() function
+(*) The distance minimized is the L1 norm (sum of tuple elements) and not L2 norm
+ (sum of squares of tuple elements)
+
