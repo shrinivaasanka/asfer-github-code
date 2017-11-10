@@ -9558,10 +9558,28 @@ References:
 466. (FEATURE-DONE) Support Vector Machines implementation - based on CVXPY - 9 November 2017
 ------------------------------------------------------------------------------------------------------
 (*) New Support Vector Machines python implementation is committed to NeuronRain AsFer repository
-(*) This minimizes and objective function 1/2*||w|| subject to constraint ||WX+b|| >= 1 which
+(*) This minimizes an objective function 1/2*||w|| subject to constraint ||WX+b|| >= 1 which
 labels a point +1 or -1 on either side of a decision separating hyperplane WX+b for weight vector W
 and bias b (Reference: Machine Learning - Ethem Alpaydin - Chapter 13 - Kernel Machines)
 (*) Optimization is solved by CVXPY DCCP Convex-Concave program
 (*) logs for this have been added to testlogs/
 (*) Present NeuronRain AsFer SVMRetriever.cpp depends on third-party SVMlight opensource software. With
 this new implementation, references to SVMlight are to be phased out.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+467. (THEORY) Random Matrix Rounding for CNFSAT Solver, Blum-Micali PRG, Distinguisher for Pseudorandomness - 10 November 2017 -
+related to 459
+----------------------------------------------------------------------------------------------------------------------------------------------
+Blum-Micali PRG depends on intractability of Discrete Logarithm f(x)=g^x mod p for primes p,g and group element x. Blum-Micali PRG creates
+sequences of (f(x), f^2(x), f^3(x), ...) by composition of f and computes stream of bits by hard-core boolean predicate function b(.) - (b(f(x)), b(f^2(x)), ...) which is sequence of unpredictable pseudorandom bits. In Random Matrix Rounding for CNFSAT solver by least squares, probability of choosing a literal xn  = probability of the bit stream (b(f(x)),b(f^2(x)), ...) corresponding to binary encoding of n.
+
+Probability of choosing a CNF by RMLSQR probability (p=1/sqrt(mn) and there are 3m literals per 3CNF) = (1/[mn])^1.5m
+Probability of choosing a CNF from all possible n^(3m) random 3SATs in uniform distribution is = (1/n)^3m
+
+Inverse of RMLSQR probability = (mn)^1.5m is the expected number of pseudorandom binary strings churned out by PRG before a required 3SAT is found.
+Inverse of uniform probability = n^3m is the expected number of pseudorandom binary strings churned out by PRG before required 3SAT is found.
+
+Distinguisher for these 2 distributions iterates through both sequences of bitstreams and prints "RMLSQR" if match occurs in (mn)^1.5m expected number of iterations else prints "Uniform". This requires exponential time in number of clauses.
+
+From PCP [Hastad] inapproximability result and previous Random Matrix analysis for approximate CNFSATSolver, if m^3*n^2*p^4 > 7/8*m then P=NP i.e. if p > 0.96716821/sqrt(m*n) then P=NP. For the previous distinguisher, this requires (mn)^1.5m / (0.96716821)^3m exponential iterations. From condition for P=NP, this number of iterations has to be polynomial for efficient distinguishing of a PRG from perfect random sequence, which is a contradiction.
+
