@@ -9608,12 +9608,12 @@ References:
 ------------------------------------------------------------------------------------------------------------------------------------
 469. (FEATURE-DONE) Computational Geometric Hyperbolic Factorization - Pixelated Segments Spark Bitonic Sort - 13 November 2017
 ------------------------------------------------------------------------------------------------------------------------------------
-(*) Number to Factorize has been increased to 875 from 147
+(*) Numbers 147,219,251,253 are factorized.
 (*) C++ tiling pre-processing routines have been changed for this and Pixelated Tiles storage text files for bitonic sort have been updated
-(*) Factorization of 16321 is benchmarked on single node cluster on dual core (which is parallel RAM). 
-(*) This is just a representative number on single dual-core CPU and not a cloud parallelism benchmark. 
+(*) Factorization is benchmarked on single node cluster on dual core (which is parallel RAM).
+(*) This is just a representative number on single dual-core CPU and not a cloud parallelism benchmark.
 (*) Each DAGScheduler Spark work item is independent code executable in parallel and benchmark has to be this parallel time per work unit which
-is captured by per task duration in Spark Driver logs below:  
+is captured in per task duration logs below by Spark Driver:
 17/11/13 21:18:22 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 46 ms on localhost (executor driver) (1/2)
 17/11/13 21:18:22 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 47 ms on localhost (executor driver) (2/2)
 17/11/13 21:18:22 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
