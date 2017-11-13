@@ -1,0 +1,406 @@
+bitonic_sort(): merged sorted halves: [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+sorted= [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+globalcoordinates= [1, 21, 21, 49, 49, 7, 147, 147, 3, 3, 3, 3, 7, 73, 73, 147, 2, 2, 145, 2, 144, 5, 5, 29, 29, 5, 24, 16, 16, 9, 8, 24, 18, 18, 6, 6, 6, 143, 2, 2, 3, 4, 4, 4, 3, 3, 4, 8, 71, 12, 36, 47, 9, 36, 12, 142, 13, 13, 11, 11, 2, 70, 141, 2, 3, 3, 140, 3, 46, 34, 14, 7, 139, 2, 27, 14, 10, 10, 69, 19, 5, 7, 4, 4, 4, 5, 138, 45, 22, 68, 3, 137, 2, 6, 6, 3, 136, 2, 33, 16, 67, 135, 4, 4, 8, 3, 3, 5, 134, 5, 9, 14, 26, 44, 66, 133, 7, 132, 18, 65, 4, 3, 3, 4, 6, 43, 11, 131, 32, 21, 10, 130, 129, 5, 12, 25, 9, 64, 3, 3, 42, 128, 7, 127, 4, 31, 15, 63, 126, 8, 41, 13, 62, 6, 3, 5, 125, 17, 20, 24, 5, 124, 61, 30, 123, 4, 3, 122, 40, 60, 121, 120, 3, 4, 59, 39, 23, 29, 119, 4, 118, 117, 58, 38, 3, 116, 115, 3, 28, 57, 114, 113, 37, 3, 56, 112, 55, 111, 110, 3, 36, 109, 54, 108, 53, 107, 2, 35, 106, 52, 105, 104, 51, 103, 102, 101, 50, 100, 49, 99, 98, 48, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 1, 78, 77, 1, 76, 1, 1, 75, 74, 1, 73, 1, 72, 146, None]
+sorted globalmergedtiles accumulator version:  =  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+==========================
+Factors of  147  are:
+==========================
+1
+21
+21
+49
+49
+7
+147
+147
+3
+3
+3
+3
+7
+17/11/13 11:06:36 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+17/11/13 11:06:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/13 11:06:36 INFO MemoryStore: MemoryStore cleared
+17/11/13 11:06:36 INFO BlockManager: BlockManager stopped
+17/11/13 11:06:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/13 11:06:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/13 11:06:36 INFO SparkContext: Successfully stopped SparkContext
+17/11/13 11:06:37 INFO ShutdownHookManager: Shutdown hook called
+17/11/13 11:06:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-7a756285-caf7-47b0-82f8-26a044128693
+17/11/13 11:06:37 INFO ShutdownHookManager: Deleting directory /tmp/spark-7a756285-caf7-47b0-82f8-26a044128693/pyspark-7d5fc06c-da79-4196-932b-d40b365cf817
+
+real	3m40.091s
+user	2m16.616s
+sys	0m17.392s
+-------------------------------------------------------------------------------------------------------
+17/11/13 21:18:22 INFO TaskSchedulerImpl: Adding task set 1791.0 with 2 tasks
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 0.0 in stage 1791.0 (TID 3582, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 1.0 in stage 1791.0 (TID 3583, localhost, executor driver, partition 1, PROCESS_LOCAL, 6310 bytes)
+17/11/13 21:18:22 INFO Executor: Running task 0.0 in stage 1791.0 (TID 3582)
+17/11/13 21:18:22 INFO Executor: Running task 1.0 in stage 1791.0 (TID 3583)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 73 ; tileelement[3]= 74
+17/11/13 21:18:22 INFO PythonRunner: Times: total = 39, boot = -40, init = 79, finish = 0
+17/11/13 21:18:22 INFO Executor: Finished task 1.0 in stage 1791.0 (TID 3583). 1582 bytes result sent to driver
+17/11/13 21:18:22 INFO PythonRunner: Times: total = 39, boot = -35, init = 74, finish = 0
+17/11/13 21:18:22 INFO Executor: Finished task 0.0 in stage 1791.0 (TID 3582). 1539 bytes result sent to driver
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 46 ms on localhost (executor driver) (1/2)
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 47 ms on localhost (executor driver) (2/2)
+17/11/13 21:18:22 INFO TaskSchedulerImpl: Removed TaskSet 1791.0, whose tasks have all completed, from pool 
+17/11/13 21:18:22 INFO DAGScheduler: ResultStage 1791 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.048 s
+17/11/13 21:18:22 INFO DAGScheduler: Job 1791 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.054680 s
+bitonic_compare_false() collected: [(252, 0, 74, 73, True)]
+bitonic_compare_false(): 2. mergedtiles:  [73, 74]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 73, 74)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 74, 73, True)]
+globalmergedtiles_accum:  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 73, 74, 0, None]
+bitonic_compare_false(): mergedtiles= [74, 73]
+bitonic_merge: firsthalf:  [74]
+bitonic_merge: secondhalf:  [73]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+17/11/13 21:18:22 INFO SparkContext: Starting job: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+17/11/13 21:18:22 INFO DAGScheduler: Got job 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 2 output partitions
+17/11/13 21:18:22 INFO DAGScheduler: Final stage: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:18:22 INFO DAGScheduler: Parents of final stage: List()
+17/11/13 21:18:22 INFO DAGScheduler: Missing parents: List()
+17/11/13 21:18:22 INFO DAGScheduler: Submitting ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+17/11/13 21:18:22 INFO MemoryStore: Block broadcast_1792 stored as values in memory (estimated size 4.1 KB, free 366.0 MB)
+17/11/13 21:18:22 INFO MemoryStore: Block broadcast_1792_piece0 stored as bytes in memory (estimated size 2.8 KB, free 366.0 MB)
+17/11/13 21:18:22 INFO BlockManagerInfo: Added broadcast_1792_piece0 in memory on 192.168.122.1:50042 (size: 2.8 KB, free: 366.1 MB)
+17/11/13 21:18:22 INFO SparkContext: Created broadcast 1792 from broadcast at DAGScheduler.scala:996
+17/11/13 21:18:22 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:18:22 INFO TaskSchedulerImpl: Adding task set 1792.0 with 2 tasks
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:18:22 INFO Executor: Running task 0.0 in stage 1792.0 (TID 3584)
+17/11/13 21:18:22 INFO Executor: Running task 1.0 in stage 1792.0 (TID 3585)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+17/11/13 21:18:22 INFO PythonRunner: Times: total = 39, boot = -28, init = 67, finish = 0
+17/11/13 21:18:22 INFO Executor: Finished task 1.0 in stage 1792.0 (TID 3585). 1581 bytes result sent to driver
+17/11/13 21:18:22 INFO PythonRunner: Times: total = 39, boot = -45, init = 84, finish = 0
+17/11/13 21:18:22 INFO Executor: Finished task 0.0 in stage 1792.0 (TID 3584). 1539 bytes result sent to driver
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 46 ms on localhost (executor driver) (1/2)
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 50 ms on localhost (executor driver) (2/2)
+...
+sorted= [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+globalcoordinates= [1, 21, 21, 49, 49, 7, 147, 147, 3, 3, 3, 3, 7, 73, 73, 147, 2, 2, 145, 2, 144, 5, 5, 29, 29, 5, 24, 16, 16, 9, 8, 24, 18, 18, 6, 6, 6, 143, 2, 2, 3, 4, 4, 4, 3, 3, 4, 8, 71, 12, 36, 47, 9, 36, 12, 142, 13, 13, 11, 11, 2, 70, 141, 2, 3, 3, 140, 3, 46, 34, 14, 7, 139, 2, 27, 14, 10, 10, 69, 19, 5, 7, 4, 4, 4, 5, 138, 45, 22, 68, 3, 137, 2, 6, 6, 3, 136, 2, 33, 16, 67, 135, 4, 4, 8, 3, 3, 5, 134, 5, 9, 14, 26, 44, 66, 133, 7, 132, 18, 65, 4, 3, 3, 4, 6, 43, 11, 131, 32, 21, 10, 130, 129, 5, 12, 25, 9, 64, 3, 3, 42, 128, 7, 127, 4, 31, 15, 63, 126, 8, 41, 13, 62, 6, 3, 5, 125, 17, 20, 24, 5, 124, 61, 30, 123, 4, 3, 122, 40, 60, 121, 120, 3, 4, 59, 39, 23, 29, 119, 4, 118, 117, 58, 38, 3, 116, 115, 3, 28, 57, 114, 113, 37, 3, 56, 112, 55, 111, 110, 3, 36, 109, 54, 108, 53, 107, 2, 35, 106, 52, 105, 104, 51, 103, 102, 101, 50, 100, 49, 99, 98, 48, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 1, 78, 77, 1, 76, 1, 1, 75, 74, 1, 73, 1, 72, 146, None]
+sorted globalmergedtiles accumulator version:  =  [147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 147, 146, 146, 146, 146, 146, 146, 146, 145, 145, 145, 145, 145, 145, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 144, 143, 143, 143, 143, 143, 142, 142, 142, 142, 141, 141, 141, 141, 141, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 140, 139, 138, 138, 138, 138, 138, 138, 138, 138, 138, 137, 136, 136, 136, 136, 136, 136, 136, 136, 135, 135, 135, 135, 135, 135, 135, 135, 135, 134, 134, 133, 133, 133, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 132, 131, 130, 130, 130, 130, 130, 130, 129, 129, 129, 129, 128, 128, 128, 128, 128, 128, 127, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 125, 125, 125, 124, 124, 124, 124, 123, 123, 123, 122, 122, 121, 120, 120, 120, 120, 120, 120, 120, 120, 119, 118, 118, 117, 117, 117, 116, 116, 116, 116, 115, 114, 114, 114, 114, 113, 112, 112, 111, 111, 111, 110, 110, 109, 108, 108, 108, 108, 107, 106, 106, 105, 104, 104, 103, 102, 102, 101, 100, 100, 99, 98, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 79, 78, 78, 77, 77, 76, 76, 75, 75, 74, 74, 73, 0, None]
+==========================
+Factors of  147  are:
+==========================
+1
+21
+21
+49
+49
+7
+147
+147
+3
+3
+3
+3
+7
+17/11/13 21:18:22 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+17/11/13 21:18:22 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/13 21:18:23 INFO MemoryStore: MemoryStore cleared
+17/11/13 21:18:23 INFO BlockManager: BlockManager stopped
+17/11/13 21:18:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/13 21:18:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/13 21:18:23 INFO SparkContext: Successfully stopped SparkContext
+17/11/13 21:18:23 INFO ShutdownHookManager: Shutdown hook called
+17/11/13 21:18:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-5bada9fb-2f3b-4d3b-a1f8-6a96b52507ff
+17/11/13 21:18:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-5bada9fb-2f3b-4d3b-a1f8-6a96b52507ff/pyspark-d70bb3f7-83d6-4739-b410-1e2d83a5fb66
+
+real	3m39.539s
+user	2m17.720s
+sys	0m18.532s
+--------------------------------------------------------------------------------------------------------------------------------
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 109 ; tileelement[3]= 110
+17/11/13 21:26:39 INFO PythonRunner: Times: total = 42, boot = -52, init = 94, finish = 0
+17/11/13 21:26:39 INFO PythonRunner: Times: total = 40, boot = -46, init = 86, finish = 0
+17/11/13 21:26:39 INFO Executor: Finished task 0.0 in stage 1791.0 (TID 3582). 1539 bytes result sent to driver
+17/11/13 21:26:39 INFO Executor: Finished task 1.0 in stage 1791.0 (TID 3583). 1582 bytes result sent to driver
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 50 ms on localhost (executor driver) (1/2)
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 49 ms on localhost (executor driver) (2/2)
+17/11/13 21:26:39 INFO TaskSchedulerImpl: Removed TaskSet 1791.0, whose tasks have all completed, from pool 
+17/11/13 21:26:39 INFO DAGScheduler: ResultStage 1791 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.052 s
+17/11/13 21:26:39 INFO DAGScheduler: Job 1791 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.059292 s
+bitonic_compare_false() collected: [(252, 0, 110, 109, True)]
+bitonic_compare_false(): 2. mergedtiles:  [109, 110]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 109, 110)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 110, 109, True)]
+globalmergedtiles_accum:  [219, 219, 219, 219, 219, 219, 219, 219, 219, 218, 218, 218, 218, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 215, 214, 214, 214, 214, 214, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 208, 208, 207, 207, 207, 207, 207, 206, 206, 206, 206, 205, 204, 204, 204, 204, 204, 204, 204, 204, 204, 203, 202, 202, 202, 202, 201, 201, 201, 201, 200, 200, 200, 200, 200, 199, 198, 198, 198, 198, 198, 198, 197, 196, 196, 196, 196, 196, 195, 195, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162, 161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 109, 110, 0, None]
+bitonic_compare_false(): mergedtiles= [110, 109]
+bitonic_merge: firsthalf:  [110]
+bitonic_merge: secondhalf:  [109]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+17/11/13 21:26:39 INFO SparkContext: Starting job: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+17/11/13 21:26:39 INFO DAGScheduler: Got job 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 2 output partitions
+17/11/13 21:26:39 INFO DAGScheduler: Final stage: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:26:39 INFO DAGScheduler: Parents of final stage: List()
+17/11/13 21:26:39 INFO DAGScheduler: Missing parents: List()
+17/11/13 21:26:39 INFO DAGScheduler: Submitting ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+17/11/13 21:26:39 INFO MemoryStore: Block broadcast_1792 stored as values in memory (estimated size 4.1 KB, free 365.7 MB)
+17/11/13 21:26:39 INFO MemoryStore: Block broadcast_1792_piece0 stored as bytes in memory (estimated size 2.8 KB, free 365.7 MB)
+17/11/13 21:26:39 INFO BlockManagerInfo: Added broadcast_1792_piece0 in memory on 192.168.122.1:46094 (size: 2.8 KB, free: 366.0 MB)
+17/11/13 21:26:39 INFO SparkContext: Created broadcast 1792 from broadcast at DAGScheduler.scala:996
+17/11/13 21:26:39 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:26:39 INFO TaskSchedulerImpl: Adding task set 1792.0 with 2 tasks
+17/11/13 21:26:39 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:26:39 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:26:39 INFO Executor: Running task 0.0 in stage 1792.0 (TID 3584)
+17/11/13 21:26:39 INFO Executor: Running task 1.0 in stage 1792.0 (TID 3585)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+17/11/13 21:26:39 INFO PythonRunner: Times: total = 41, boot = -31, init = 72, finish = 0
+17/11/13 21:26:39 INFO Executor: Finished task 0.0 in stage 1792.0 (TID 3584). 1539 bytes result sent to driver
+17/11/13 21:26:39 INFO PythonRunner: Times: total = 41, boot = -40, init = 81, finish = 0
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 48 ms on localhost (executor driver) (1/2)
+17/11/13 21:26:39 INFO Executor: Finished task 1.0 in stage 1792.0 (TID 3585). 1581 bytes result sent to driver
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 49 ms on localhost (executor driver) (2/2)
+17/11/13 21:26:39 INFO TaskSchedulerImpl: Removed TaskSet 1792.0, whose tasks have all completed, from pool 
+17/11/13 21:26:39 INFO DAGScheduler: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.051 s
+17/11/13 21:26:39 INFO DAGScheduler: Job 1792 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.056171 s
+bitonic_compare_false() collected: [(254, 0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(254, 0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(254, 0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [110, 109]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [113, 112, 111, 110]
+bitonic_merge: secondhalf:  [110, 109, 0, None]
+bitonic_merge: firsthalf:  [121, 120, 119, 118, 117, 116, 115, 114]
+bitonic_merge: secondhalf:  [113, 112, 111, 110, 110, 109, 0, None]
+bitonic_merge: firsthalf:  [137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122]
+bitonic_merge: secondhalf:  [121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+bitonic_merge: firsthalf:  [161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138]
+bitonic_merge: secondhalf:  [137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+bitonic_merge: firsthalf:  [190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162]
+bitonic_merge: secondhalf:  [161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+bitonic_merge: firsthalf:  [219, 219, 219, 219, 219, 219, 219, 219, 219, 218, 218, 218, 218, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 215, 214, 214, 214, 214, 214, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 208, 208, 207, 207, 207, 207, 207, 206, 206, 206, 206, 205, 204, 204, 204, 204, 204, 204, 204, 204, 204, 203, 202, 202, 202, 202, 201, 201, 201, 201, 200, 200, 200, 200, 200, 199, 198, 198, 198, 198, 198, 198, 197, 196, 196, 196, 196, 196, 195, 195, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 192, 192, 192, 191, 190]
+bitonic_merge: secondhalf:  [190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162, 161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+bitonic_sort(): merged sorted halves: [219, 219, 219, 219, 219, 219, 219, 219, 219, 218, 218, 218, 218, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 215, 214, 214, 214, 214, 214, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 208, 208, 207, 207, 207, 207, 207, 206, 206, 206, 206, 205, 204, 204, 204, 204, 204, 204, 204, 204, 204, 203, 202, 202, 202, 202, 201, 201, 201, 201, 200, 200, 200, 200, 200, 199, 198, 198, 198, 198, 198, 198, 197, 196, 196, 196, 196, 196, 195, 195, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162, 161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+sorted= [219, 219, 219, 219, 219, 219, 219, 219, 219, 218, 218, 218, 218, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 215, 214, 214, 214, 214, 214, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 208, 208, 207, 207, 207, 207, 207, 206, 206, 206, 206, 205, 204, 204, 204, 204, 204, 204, 204, 204, 204, 203, 202, 202, 202, 202, 201, 201, 201, 201, 200, 200, 200, 200, 200, 199, 198, 198, 198, 198, 198, 198, 197, 196, 196, 196, 196, 196, 195, 195, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162, 161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+globalcoordinates= [3, 3, 3, 3, 3, 219, 73, 73, 219, 2, 2, 109, 109, 2, 2, 2, 217, 216, 3, 3, 3, 4, 107, 2, 215, 71, 4, 2, 2, 3, 2, 214, 2, 2, 2, 106, 213, 212, 70, 3, 3, 3, 4, 4, 2, 105, 2, 2, 211, 210, 209, 69, 104, 3, 2, 3, 3, 2, 208, 2, 103, 4, 4, 2, 207, 3, 3, 3, 68, 206, 2, 2, 102, 205, 204, 67, 203, 2, 3, 3, 2, 101, 4, 4, 202, 100, 201, 2, 2, 200, 3, 3, 66, 2, 99, 4, 4, 199, 198, 65, 197, 98, 2, 3, 3, 196, 4, 97, 2, 4, 195, 3, 64, 194, 3, 193, 2, 96, 192, 2, 191, 63, 3, 3, 4, 95, 190, 189, 1, 94, 3, 188, 62, 93, 4, 187, 186, 61, 185, 92, 3, 184, 183, 91, 4, 182, 60, 3, 90, 181, 180, 3, 179, 59, 4, 4, 178, 177, 88, 219, 3, 176, 87, 175, 4, 174, 3, 86, 173, 172, 171, 85, 3, 3, 170, 84, 169, 168, 83, 3, 167, 166, 165, 82, 3, 164, 81, 163, 162, 80, 161, 2, 160, 79, 159, 158, 157, 78, 156, 155, 77, 154, 153, 76, 152, 75, 151, 150, 149, 74, 148, 73, 147, 146, 145, 72, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 109, 1, 108, 218, None]
+sorted globalmergedtiles accumulator version:  =  [219, 219, 219, 219, 219, 219, 219, 219, 219, 218, 218, 218, 218, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 216, 215, 214, 214, 214, 214, 214, 213, 213, 213, 213, 213, 212, 212, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 208, 208, 207, 207, 207, 207, 207, 206, 206, 206, 206, 205, 204, 204, 204, 204, 204, 204, 204, 204, 204, 203, 202, 202, 202, 202, 201, 201, 201, 201, 200, 200, 200, 200, 200, 199, 198, 198, 198, 198, 198, 198, 197, 196, 196, 196, 196, 196, 195, 195, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 183, 183, 182, 182, 181, 180, 180, 180, 180, 180, 179, 178, 178, 177, 177, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 171, 170, 170, 169, 168, 168, 168, 167, 166, 166, 165, 165, 164, 164, 163, 162, 162, 162, 161, 160, 160, 159, 158, 158, 157, 156, 156, 155, 154, 154, 153, 152, 152, 151, 150, 150, 149, 148, 148, 147, 146, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111, 110, 110, 109, 0, None]
+==========================
+Factors of  219  are:
+==========================
+3
+3
+3
+3
+3
+219
+73
+73
+219
+17/11/13 21:26:39 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+17/11/13 21:26:39 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/13 21:26:39 INFO MemoryStore: MemoryStore cleared
+17/11/13 21:26:39 INFO BlockManager: BlockManager stopped
+17/11/13 21:26:39 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/13 21:26:39 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/13 21:26:39 INFO SparkContext: Successfully stopped SparkContext
+17/11/13 21:26:40 INFO ShutdownHookManager: Shutdown hook called
+17/11/13 21:26:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-eafa424a-e4d7-4f1f-937c-74e8a20e93c2
+17/11/13 21:26:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-eafa424a-e4d7-4f1f-937c-74e8a20e93c2/pyspark-b3a4e4fd-2dec-4df3-a357-6be83e106732
+
+real	3m38.795s
+user	2m16.896s
+sys	0m17.596s
+-----------------------------------------------------------------------------------------------------------------------------------
+17/11/13 21:33:59 INFO Executor: Running task 0.0 in stage 1791.0 (TID 3582)
+17/11/13 21:33:59 INFO Executor: Running task 1.0 in stage 1791.0 (TID 3583)
+17/11/13 21:33:59 INFO PythonRunner: Times: total = 40, boot = -51, init = 91, finish = 0
+17/11/13 21:33:59 INFO Executor: Finished task 0.0 in stage 1791.0 (TID 3582). 1539 bytes result sent to driver
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 126 ; tileelement[3]= 125
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 48 ms on localhost (executor driver) (1/2)
+17/11/13 21:33:59 INFO PythonRunner: Times: total = 42, boot = -48, init = 90, finish = 0
+17/11/13 21:33:59 INFO Executor: Finished task 1.0 in stage 1791.0 (TID 3583). 1582 bytes result sent to driver
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 50 ms on localhost (executor driver) (2/2)
+17/11/13 21:33:59 INFO TaskSchedulerImpl: Removed TaskSet 1791.0, whose tasks have all completed, from pool 
+17/11/13 21:33:59 INFO DAGScheduler: ResultStage 1791 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.052 s
+17/11/13 21:33:59 INFO DAGScheduler: Job 1791 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.059472 s
+bitonic_compare_false() collected: [(252, 0, 126, 125, False)]
+bitonic_compare_false(): 2. mergedtiles:  [126, 125]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 126, 125)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 126, 125, False)]
+bitonic_compare_false(): mergedtiles= [126, 125]
+bitonic_merge: firsthalf:  [126]
+bitonic_merge: secondhalf:  [125]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+17/11/13 21:33:59 INFO SparkContext: Starting job: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+17/11/13 21:33:59 INFO DAGScheduler: Got job 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 2 output partitions
+17/11/13 21:33:59 INFO DAGScheduler: Final stage: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:33:59 INFO DAGScheduler: Parents of final stage: List()
+17/11/13 21:33:59 INFO DAGScheduler: Missing parents: List()
+17/11/13 21:33:59 INFO DAGScheduler: Submitting ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+17/11/13 21:33:59 INFO MemoryStore: Block broadcast_1792 stored as values in memory (estimated size 4.1 KB, free 366.0 MB)
+17/11/13 21:33:59 INFO MemoryStore: Block broadcast_1792_piece0 stored as bytes in memory (estimated size 2.8 KB, free 366.0 MB)
+17/11/13 21:33:59 INFO BlockManagerInfo: Added broadcast_1792_piece0 in memory on 192.168.122.1:51875 (size: 2.8 KB, free: 366.1 MB)
+17/11/13 21:33:59 INFO SparkContext: Created broadcast 1792 from broadcast at DAGScheduler.scala:996
+17/11/13 21:33:59 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:33:59 INFO TaskSchedulerImpl: Adding task set 1792.0 with 2 tasks
+17/11/13 21:33:59 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:33:59 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:33:59 INFO Executor: Running task 0.0 in stage 1792.0 (TID 3584)
+17/11/13 21:33:59 INFO Executor: Running task 1.0 in stage 1792.0 (TID 3585)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+17/11/13 21:33:59 INFO PythonRunner: Times: total = 46, boot = -36, init = 82, finish = 0
+17/11/13 21:33:59 INFO Executor: Finished task 0.0 in stage 1792.0 (TID 3584). 1539 bytes result sent to driver
+17/11/13 21:33:59 INFO PythonRunner: Times: total = 44, boot = -35, init = 79, finish = 0
+17/11/13 21:33:59 INFO Executor: Finished task 1.0 in stage 1792.0 (TID 3585). 1581 bytes result sent to driver
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 55 ms on localhost (executor driver) (1/2)
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 57 ms on localhost (executor driver) (2/2)
+17/11/13 21:33:59 INFO TaskSchedulerImpl: Removed TaskSet 1792.0, whose tasks have all completed, from pool 
+17/11/13 21:33:59 INFO DAGScheduler: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.058 s
+17/11/13 21:33:59 INFO DAGScheduler: Job 1792 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.064370 s
+bitonic_compare_false() collected: [(254, 0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(254, 0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(254, 0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [126, 125]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [129, 128, 127, 126]
+bitonic_merge: secondhalf:  [126, 125, 0, None]
+bitonic_merge: firsthalf:  [137, 136, 135, 134, 133, 132, 131, 130]
+bitonic_merge: secondhalf:  [129, 128, 127, 126, 126, 125, 0, None]
+bitonic_merge: firsthalf:  [153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138]
+bitonic_merge: secondhalf:  [137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+bitonic_merge: firsthalf:  [178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154]
+bitonic_merge: secondhalf:  [153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+bitonic_merge: firsthalf:  [207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 181, 180, 180, 179]
+bitonic_merge: secondhalf:  [178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+bitonic_merge: firsthalf:  [251, 251, 250, 250, 250, 250, 250, 250, 249, 249, 249, 248, 248, 248, 248, 248, 247, 246, 246, 246, 246, 246, 246, 245, 245, 244, 244, 244, 244, 243, 242, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 236, 236, 235, 235, 234, 234, 234, 234, 233, 232, 232, 232, 232, 231, 231, 230, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 223, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 214, 213, 213, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207]
+bitonic_merge: secondhalf:  [207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 181, 180, 180, 179, 178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+bitonic_sort(): merged sorted halves: [251, 251, 250, 250, 250, 250, 250, 250, 249, 249, 249, 248, 248, 248, 248, 248, 247, 246, 246, 246, 246, 246, 246, 245, 245, 244, 244, 244, 244, 243, 242, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 236, 236, 235, 235, 234, 234, 234, 234, 233, 232, 232, 232, 232, 231, 231, 230, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 223, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 214, 213, 213, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 181, 180, 180, 179, 178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+sorted= [251, 251, 250, 250, 250, 250, 250, 250, 249, 249, 249, 248, 248, 248, 248, 248, 247, 246, 246, 246, 246, 246, 246, 245, 245, 244, 244, 244, 244, 243, 242, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 236, 236, 235, 235, 234, 234, 234, 234, 233, 232, 232, 232, 232, 231, 231, 230, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 223, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 214, 213, 213, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 181, 180, 180, 179, 178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+globalcoordinates= [251, 251, 50, 50, 125, 125, 2, 249, 83, 83, 248, 123, 247, 62, 62, 2, 236, 41, 2, 2, 245, 122, 81, 244, 48, 2, 251, 121, 60, 80, 2, 120, 59, 47, 79, 2, 119, 118, 2, 78, 117, 235, 58, 2, 234, 46, 2, 233, 116, 77, 232, 115, 2, 231, 57, 76, 230, 45, 2, 229, 114, 228, 2, 75, 113, 227, 56, 226, 112, 2, 225, 224, 44, 74, 55, 2, 111, 223, 222, 221, 110, 2, 73, 220, 2, 219, 54, 109, 43, 218, 72, 2, 2, 108, 217, 216, 2, 2, 53, 71, 107, 215, 214, 42, 2, 2, 106, 213, 212, 70, 105, 2, 2, 211, 52, 210, 41, 2, 2, 209, 104, 69, 208, 103, 2, 207, 51, 206, 68, 2, 102, 205, 204, 203, 101, 2, 50, 67, 202, 100, 2, 201, 200, 66, 2, 199, 99, 49, 198, 65, 98, 2, 197, 196, 2, 195, 97, 194, 64, 193, 2, 96, 192, 95, 2, 191, 63, 190, 94, 2, 189, 188, 62, 187, 2, 93, 186, 2, 92, 61, 185, 184, 1, 91, 183, 182, 90, 181, 180, 179, 89, 178, 88, 177, 176, 87, 175, 174, 86, 173, 172, 171, 85, 170, 84, 169, 168, 167, 83, 166, 82, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 125, 1, 124, 250, None]
+sorted globalmergedtiles accumulator version:  =  [251, 251, 250, 250, 250, 250, 250, 250, 249, 249, 249, 248, 248, 248, 248, 248, 247, 246, 246, 246, 246, 246, 246, 245, 245, 244, 244, 244, 244, 243, 242, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 236, 236, 235, 235, 234, 234, 234, 234, 233, 232, 232, 232, 232, 231, 231, 230, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 223, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 214, 213, 213, 212, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 181, 180, 180, 179, 178, 178, 177, 176, 176, 175, 174, 174, 173, 172, 172, 171, 170, 170, 169, 168, 168, 167, 166, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 126, 125, 0, None]
+==========================
+Factors of  251  are:
+==========================
+251
+251
+17/11/13 21:33:59 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+17/11/13 21:33:59 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/13 21:33:59 INFO MemoryStore: MemoryStore cleared
+17/11/13 21:33:59 INFO BlockManager: BlockManager stopped
+17/11/13 21:33:59 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/13 21:34:00 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/13 21:34:00 INFO SparkContext: Successfully stopped SparkContext
+17/11/13 21:34:00 INFO ShutdownHookManager: Shutdown hook called
+17/11/13 21:34:00 INFO ShutdownHookManager: Deleting directory /tmp/spark-1feef9ba-d0e9-4489-98c5-adc5b6fabcee
+17/11/13 21:34:00 INFO ShutdownHookManager: Deleting directory /tmp/spark-1feef9ba-d0e9-4489-98c5-adc5b6fabcee/pyspark-72acd1f4-e0e8-4fab-a4a4-18c03402a4eb
+
+real	3m38.622s
+user	2m17.404s
+sys	0m17.580s
+----------------------------------------------------------------------------------------------------------------
+17/11/13 21:40:20 INFO Executor: Running task 0.0 in stage 1791.0 (TID 3582)
+17/11/13 21:40:20 INFO Executor: Running task 1.0 in stage 1791.0 (TID 3583)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 126 ; tileelement[3]= 0
+17/11/13 21:40:20 INFO PythonRunner: Times: total = 40, boot = -55, init = 95, finish = 0
+17/11/13 21:40:20 INFO Executor: Finished task 1.0 in stage 1791.0 (TID 3583). 1582 bytes result sent to driver
+17/11/13 21:40:20 INFO PythonRunner: Times: total = 42, boot = -44, init = 86, finish = 0
+17/11/13 21:40:20 INFO Executor: Finished task 0.0 in stage 1791.0 (TID 3582). 1539 bytes result sent to driver
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 49 ms on localhost (executor driver) (1/2)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 52 ms on localhost (executor driver) (2/2)
+17/11/13 21:40:20 INFO TaskSchedulerImpl: Removed TaskSet 1791.0, whose tasks have all completed, from pool 
+17/11/13 21:40:20 INFO DAGScheduler: ResultStage 1791 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.053 s
+17/11/13 21:40:20 INFO DAGScheduler: Job 1791 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.061791 s
+bitonic_compare_false() collected: [(252, 0, 126, 0, False)]
+bitonic_compare_false(): 2. mergedtiles:  [126, 0]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(252, 0, 126, 0)]
+bitonic_compare_false(): mergedtiles_comparators: [(252, 0, 126, 0, False)]
+bitonic_compare_false(): mergedtiles= [126, 0]
+bitonic_merge: firsthalf:  [126]
+bitonic_merge: secondhalf:  [0]
+bitonic_compare_true(): 1. mergedtiles= [0, None]
+17/11/13 21:40:20 INFO SparkContext: Starting job: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194
+17/11/13 21:40:20 INFO DAGScheduler: Got job 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) with 2 output partitions
+17/11/13 21:40:20 INFO DAGScheduler: Final stage: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:40:20 INFO DAGScheduler: Parents of final stage: List()
+17/11/13 21:40:20 INFO DAGScheduler: Missing parents: List()
+17/11/13 21:40:20 INFO DAGScheduler: Submitting ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194), which has no missing parents
+17/11/13 21:40:20 INFO MemoryStore: Block broadcast_1792 stored as values in memory (estimated size 4.1 KB, free 366.0 MB)
+17/11/13 21:40:20 INFO MemoryStore: Block broadcast_1792_piece0 stored as bytes in memory (estimated size 2.8 KB, free 366.0 MB)
+17/11/13 21:40:20 INFO BlockManagerInfo: Added broadcast_1792_piece0 in memory on 192.168.122.1:52012 (size: 2.8 KB, free: 366.1 MB)
+17/11/13 21:40:20 INFO SparkContext: Created broadcast 1792 from broadcast at DAGScheduler.scala:996
+17/11/13 21:40:20 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 1792 (PythonRDD[3585] at collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194)
+17/11/13 21:40:20 INFO TaskSchedulerImpl: Adding task set 1792.0 with 2 tasks
+17/11/13 21:40:20 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:40:20 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:40:20 INFO Executor: Running task 1.0 in stage 1792.0 (TID 3585)
+17/11/13 21:40:20 INFO Executor: Running task 0.0 in stage 1792.0 (TID 3584)
+Foreach_BitonicCompare_False(): Comparing mergedtiles[i] and mergedtiles[i+midpoint] ...: tileelement[2]= 0 ; tileelement[3]= None
+17/11/13 21:40:20 INFO PythonRunner: Times: total = 41, boot = -31, init = 72, finish = 0
+17/11/13 21:40:20 INFO PythonRunner: Times: total = 41, boot = -38, init = 79, finish = 0
+17/11/13 21:40:20 INFO Executor: Finished task 0.0 in stage 1792.0 (TID 3584). 1539 bytes result sent to driver
+17/11/13 21:40:20 INFO Executor: Finished task 1.0 in stage 1792.0 (TID 3585). 1581 bytes result sent to driver
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 50 ms on localhost (executor driver) (1/2)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 50 ms on localhost (executor driver) (2/2)
+17/11/13 21:40:20 INFO TaskSchedulerImpl: Removed TaskSet 1792.0, whose tasks have all completed, from pool 
+17/11/13 21:40:20 INFO DAGScheduler: ResultStage 1792 (collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194) finished in 0.052 s
+17/11/13 21:40:20 INFO DAGScheduler: Job 1792 finished: collect at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py:194, took 0.058790 s
+bitonic_compare_false() collected: [(254, 0, 0, None, False)]
+bitonic_compare_false(): 2. mergedtiles:  [0, None]
+bitonic_compare_false(): mergedtilesmidpointlist:  [(254, 0, 0, None)]
+bitonic_compare_false(): mergedtiles_comparators: [(254, 0, 0, None, False)]
+bitonic_compare_false(): mergedtiles= [0, None]
+bitonic_merge: firsthalf:  [0]
+bitonic_merge: secondhalf:  [None]
+bitonic_merge: firsthalf:  [126, 0]
+bitonic_merge: secondhalf:  [0, None]
+bitonic_merge: firsthalf:  [129, 128, 127, 127]
+bitonic_merge: secondhalf:  [126, 0, 0, None]
+bitonic_merge: firsthalf:  [137, 136, 135, 134, 133, 132, 131, 130]
+bitonic_merge: secondhalf:  [129, 128, 127, 127, 126, 0, 0, None]
+bitonic_merge: firsthalf:  [153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138]
+bitonic_merge: secondhalf:  [137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+bitonic_merge: firsthalf:  [176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154]
+bitonic_merge: secondhalf:  [153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+bitonic_merge: firsthalf:  [204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 182, 181, 180, 180, 180, 179, 178, 178, 178, 177]
+bitonic_merge: secondhalf:  [176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+bitonic_merge: firsthalf:  [252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 251, 250, 250, 250, 250, 249, 249, 248, 248, 248, 247, 246, 246, 246, 246, 245, 245, 245, 244, 244, 244, 243, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 235, 234, 234, 234, 232, 232, 232, 231, 231, 231, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 224, 223, 222, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 213, 213, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205]
+bitonic_merge: secondhalf:  [204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 182, 181, 180, 180, 180, 179, 178, 178, 178, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+bitonic_sort(): merged sorted halves: [252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 251, 250, 250, 250, 250, 249, 249, 248, 248, 248, 247, 246, 246, 246, 246, 245, 245, 245, 244, 244, 244, 243, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 235, 234, 234, 234, 232, 232, 232, 231, 231, 231, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 224, 223, 222, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 213, 213, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 182, 181, 180, 180, 180, 179, 178, 178, 178, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+sorted= [252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 251, 250, 250, 250, 250, 249, 249, 248, 248, 248, 247, 246, 246, 246, 246, 245, 245, 245, 244, 244, 244, 243, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 235, 234, 234, 234, 232, 232, 232, 231, 231, 231, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 224, 223, 222, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 213, 213, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 182, 181, 180, 180, 180, 179, 178, 178, 178, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+globalcoordinates= [42, 42, 36, 36, 84, 84, 63, 63, 252, 252, 126, 126, 250, 50, 249, 50, 124, 248, 82, 61, 123, 247, 246, 245, 40, 81, 122, 232, 48, 34, 60, 253, 121, 80, 120, 39, 59, 79, 119, 47, 118, 33, 78, 58, 117, 46, 116, 77, 38, 231, 115, 57, 230, 32, 76, 45, 114, 229, 228, 227, 75, 113, 37, 56, 226, 2, 112, 225, 44, 74, 224, 223, 55, 111, 2, 2, 222, 2, 36, 221, 110, 73, 220, 219, 2, 109, 54, 43, 218, 72, 2, 108, 217, 216, 35, 215, 2, 71, 107, 53, 214, 42, 106, 2, 213, 70, 212, 211, 105, 52, 2, 210, 104, 69, 2, 41, 209, 208, 51, 207, 103, 2, 206, 68, 2, 102, 205, 204, 2, 203, 67, 50, 101, 202, 100, 2, 201, 66, 200, 99, 49, 199, 2, 198, 2, 65, 98, 197, 196, 195, 2, 97, 194, 64, 2, 96, 193, 192, 95, 191, 2, 63, 190, 189, 94, 2, 188, 62, 93, 187, 2, 186, 2, 92, 185, 184, 91, 183, 2, 182, 2, 90, 181, 180, 89, 179, 2, 178, 2, 88, 177, 176, 87, 175, 2, 174, 2, 86, 173, 172, 85, 171, 2, 170, 1, 84, 169, 168, 83, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 126, 1, 125, 252, 251, None]
+sorted globalmergedtiles accumulator version:  =  [252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 252, 251, 250, 250, 250, 250, 249, 249, 248, 248, 248, 247, 246, 246, 246, 246, 245, 245, 245, 244, 244, 244, 243, 242, 240, 240, 240, 240, 240, 238, 238, 237, 236, 236, 235, 234, 234, 234, 232, 232, 232, 231, 231, 231, 230, 230, 230, 229, 228, 228, 228, 228, 228, 227, 226, 226, 226, 225, 225, 225, 224, 224, 224, 224, 224, 223, 222, 222, 222, 222, 222, 221, 220, 220, 220, 220, 220, 219, 219, 218, 218, 218, 217, 216, 216, 216, 216, 216, 216, 215, 215, 214, 214, 214, 213, 213, 212, 212, 212, 212, 211, 210, 210, 210, 210, 210, 209, 208, 208, 208, 208, 207, 207, 206, 206, 206, 205, 204, 204, 204, 204, 204, 203, 202, 202, 202, 201, 201, 200, 200, 200, 200, 199, 198, 198, 198, 198, 197, 196, 196, 196, 195, 195, 194, 194, 194, 193, 192, 192, 192, 192, 191, 190, 190, 190, 189, 189, 188, 188, 188, 187, 186, 186, 186, 185, 184, 184, 184, 183, 182, 182, 182, 181, 180, 180, 180, 179, 178, 178, 178, 177, 176, 176, 176, 175, 174, 174, 174, 173, 172, 172, 172, 171, 170, 170, 170, 169, 168, 168, 167, 166, 165, 164, 163, 162, 161, 160, 159, 158, 157, 156, 155, 154, 153, 152, 151, 150, 149, 148, 147, 146, 145, 144, 143, 142, 141, 140, 139, 138, 137, 136, 135, 134, 133, 132, 131, 130, 129, 128, 127, 127, 126, 0, 0, None]
+==========================
+Factors of  252  are:
+==========================
+42
+42
+36
+36
+84
+84
+63
+63
+252
+252
+126
+126
+17/11/13 21:40:20 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+17/11/13 21:40:20 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/11/13 21:40:20 INFO MemoryStore: MemoryStore cleared
+17/11/13 21:40:20 INFO BlockManager: BlockManager stopped
+17/11/13 21:40:20 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/11/13 21:40:21 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/11/13 21:40:21 INFO SparkContext: Successfully stopped SparkContext
+17/11/13 21:40:21 INFO ShutdownHookManager: Shutdown hook called
+17/11/13 21:40:21 INFO ShutdownHookManager: Deleting directory /tmp/spark-1422f6a2-30e6-4fd4-9f37-4639ba801ad4
+17/11/13 21:40:21 INFO ShutdownHookManager: Deleting directory /tmp/spark-1422f6a2-30e6-4fd4-9f37-4639ba801ad4/pyspark-f73926bd-1773-4471-aa3f-e3eb7934f6ae
+
+real	3m38.920s
+user	2m17.732s
+sys	0m17.844s
+

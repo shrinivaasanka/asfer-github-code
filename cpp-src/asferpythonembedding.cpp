@@ -43,7 +43,7 @@ root@shrinivaasanka-Inspiron-1545:/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-
 #include <Python.h>
 #include <stdio.h>
 
-class asferpythonembedding 
+class asferpythonembedding
 {
 	public:
 		void execute_python_script(char *python_file)

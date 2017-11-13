@@ -8,4 +8,4 @@ g++ -g -o DiscreteHyperbolicFactorizationUpperbound_Bitonic DiscreteHyperbolicFa
 
 #NC Parallel - on Spark Cloud
 #/home/shrinivaasanka/www.us.apache.org/dist/spark/spark-1.5.2/spark-1.5.2/bin/spark-submit ../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
-/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py
+#/home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit ../../python-src/DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py

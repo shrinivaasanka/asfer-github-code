@@ -867,7 +867,7 @@ Star Complexity of a Boolean Circuit is the minimum number of AND and OR gates r
 24.39 Circuit Complexity Lowerbound for Explicit Boolean Functions - http://logic.pdmi.ras.ru/~kulikov/papers/2011_3n_lower_bound_mfcs.pdf - 3n  - o(n)
 24.40 Star Complexity of Boolean Function Circuit - [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
 24.41 Random Matrices, RZF zeroes and Quantum Mechanics - https://www.ias.edu/ideas/2013/primes-random-matrices
-24.42 Jones-Sato-Wada-Wiens Theorem - Polynomial of 25-26 variables for Prime Diophantine set - http://www.math.ualberta.ca/~wiens/home%20page/pubs/diophantine.pdf
+24.42 Jones-Sato-Wada-Wiens Theorem - Polynomial of 25 degree-26 variables for Prime Diophantine set - http://www.math.ualberta.ca/~wiens/home%20page/pubs/diophantine.pdf
 24.43 Energy levels of Erbium Nuclei and zeros of Riemann Zeta Function - http://seedmagazine.com/content/article/prime_numbers_get_hitched/
 
 ###############################################################################################################################################
@@ -9604,4 +9604,74 @@ References:
 (*) Distance matrix is returned from distance_from_separating_hyperplane() function
 (*) The distance minimized is the L1 norm (sum of tuple elements) and not L2 norm
  (sum of squares of tuple elements)
+
+------------------------------------------------------------------------------------------------------------------------------------
+469. (FEATURE-DONE) Computational Geometric Hyperbolic Factorization - Pixelated Segments Spark Bitonic Sort - 13 November 2017
+------------------------------------------------------------------------------------------------------------------------------------
+(*) Number to Factorize has been increased to 875 from 147
+(*) C++ tiling pre-processing routines have been changed for this and Pixelated Tiles storage text files for bitonic sort have been updated
+(*) Factorization of 16321 is benchmarked on single node cluster on dual core (which is parallel RAM). 
+(*) This is just a representative number on single dual-core CPU and not a cloud parallelism benchmark. 
+(*) Each DAGScheduler Spark work item is independent code executable in parallel and benchmark has to be this parallel time per work unit which
+is captured by per task duration in Spark Driver logs below:  
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 46 ms on localhost (executor driver) (1/2)
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 47 ms on localhost (executor driver) (2/2)
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:18:22 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 46 ms on localhost (executor driver) (1/2)
+17/11/13 21:18:22 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 50 ms on localhost (executor driver) (2/2)
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 50 ms on localhost (executor driver) (1/2)
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 49 ms on localhost (executor driver) (2/2)
+17/11/13 21:26:39 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:26:39 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 48 ms on localhost (executor driver) (1/2)
+17/11/13 21:26:39 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 49 ms on localhost (executor driver) (2/2)
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 48 ms on localhost (executor driver) (1/2)
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 50 ms on localhost (executor driver) (2/2)
+17/11/13 21:33:59 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:33:59 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 55 ms on localhost (executor driver) (1/2)
+17/11/13 21:33:59 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 57 ms on localhost (executor driver) (2/2)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 1.0 in stage 1791.0 (TID 3583) in 49 ms on localhost (executor driver) (1/2)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 0.0 in stage 1791.0 (TID 3582) in 52 ms on localhost (executor driver) (2/2)
+17/11/13 21:40:20 INFO TaskSetManager: Starting task 0.0 in stage 1792.0 (TID 3584, localhost, executor driver, partition 0, PROCESS_LOCAL, 6281 bytes)
+17/11/13 21:40:20 INFO TaskSetManager: Starting task 1.0 in stage 1792.0 (TID 3585, localhost, executor driver, partition 1, PROCESS_LOCAL, 6309 bytes)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 0.0 in stage 1792.0 (TID 3584) in 50 ms on localhost (executor driver) (1/2)
+17/11/13 21:40:20 INFO TaskSetManager: Finished task 1.0 in stage 1792.0 (TID 3585) in 50 ms on localhost (executor driver) (2/2)
+(*) Bitonic Sort is O(logN*logN) and number of processors required is approximately O(N^2.5) but abides by NC definition. Cole Pipelined Merge Sort which is O(logN) is both in NC and Work-Time Optimal.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+470. (FEATURE-DONE) Support Vector Machines Update - Learn and Classify functions - 13 November 2017
+-------------------------------------------------------------------------------------------------------------------------------------
+(*) Support Vector Machines python implementation has been updated to include two functions :
+	- for learning set of support vectors from a training dataset tuples and store the vectors in a dictionary map of distance-to-vectors.
+	- to classify a tuple by finding its distance with reference to the support vector regions - distance-to-vectors map is sorted and
+	- if there are more than 1 tuples per minimum distance, those have to be reckoned as support vectors 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+471. (THEORY) Jones-Sato-Wada-Wiens Theorem, Complement Functions, Prime-Composite Complementation, Prime Number Theorem, Ulam Spiral, 
+ Ramsey 2-coloring of integers, Unique Factorization - related to 370,390,394 - 13 November 2017
+---------------------------------------------------------------------------------------------------------------------------------------
+Jones-Sato-Wada-Wiens Theorem proves existence of a polynomial in 25 degree-26 variables which has values equal to set of all primes. This relates
+to Prime-Composite Function Complementation - Jones-Sato-Wada-Wiens polynomial is a complement function of set of composites which are
+formalized by unique factorization theorem. This is special case of Matiyasevich-Davis-Robinson-Putnam Theorem which proves any recursively enumerable set accepted by a Turing machine is equivalent to a polynomial accepting the elements of the set. Another closely related problem is: Does there exist a prime between two integers p=xy and
+q=x(y+1). Prime number theorem states and proves number of primes less than N=O(N/logN). 
+
+Number of primes < p=xy:
+	= c1*xy/logxy
+Number of primes < q=(x+1)y:
+	= c1*(x+1)y/log(x+1)y
+
+Number of primes between p=xy and q=(x+1)y :
+	= c1*(x+1)y/log(x+1)y - c1*xy/logxy 
+
+Assuming number of primes between p and q = c1*(x+1)y/log(x+1)y - c1*xy/logxy > 0:
+	(x+1)y/log(x+1)y > xy/logxy 
+After reducing:
+	log(xy) > x(log(x+1) - logx)
+	log(xy) > xlog(x+1/x)
+For large x:
+	log(x+1/x) ~ log 1 = 0
+=> 	log(xy) > 0 
+thus proving the assumption. This estimate of number of primes between two composites thus directly has bearing on discrepancy of this 2-colored (prime-composite) integer sequence where discrepancy is difference between number of elements of 2 colors in monochromatic arithmetic progressions. Ulam Spiral, which is sequence of integers written in concentric spiralling rectangle, has diagonals aligned along points of prime numbers described by polynomials. Rectangle of Ulam Spiral can be written as polynomial x(x+1) or x(x-1). Previous derivation on existence of primes between x(x+1) and x*x implies there is a prime diagonal. Ulam rectangle sequence for x(x+1) or x(x-1) is 1,2,4,6,9,12,16,20,25,30,36,42,... 
 

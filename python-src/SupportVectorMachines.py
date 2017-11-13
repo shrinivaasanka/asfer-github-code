@@ -25,14 +25,44 @@
 #--------------------------------------------------------------------------------------------------------
 
 import math
-from cvxpy import * 
+import cvxpy 
 import numpy
 import dccp
 import cvxopt
+import sys
+from collections import defaultdict
+import operator
+import pprint
 
 class SupportVectorMachines(object):
-	def distance_from_separating_hyperplane(self,no_of_tuple,no_of_weights,tple=None):
-		weights=Variable(no_of_weights,1)
+	def __init__(self,dimensions,bias):
+		self.bias=bias
+		self.dimensions=dimensions
+		self.distvectormap=defaultdict(list)
+
+	def learn_support_vectors_from_dataset(self,training_dataset):
+		print "===================================================================================="
+		print "learn_support_vectors_from_dataset() - Support Vectors Learnt from Training Dataset:"
+		print "===================================================================================="
+		for t in training_dataset:
+			distance=self.distance_from_separating_hyperplane(t)
+			self.distvectormap[distance[0][0]].append(t)
+		self.distvectormap=sorted(self.distvectormap.items(), key=operator.itemgetter(0), reverse=False)
+
+	def classify(self,point,training_dataset):
+		distance_from_dhp=self.distance_from_separating_hyperplane(point)
+		print "================================================="
+		print "classify() - Support Vectors:"
+		print "================================================="
+		for k,v in self.distvectormap:
+			print "distance = ",k," : vector = ",v 
+		print "================================================="
+		print "classify(): distance of ",point," from decision hyperplane = ",distance_from_dhp[0][0]
+
+	def distance_from_separating_hyperplane(self,tple=None):
+		no_of_weights=self.dimensions
+		no_of_tuple=self.dimensions
+		weights=cvxpy.Variable(no_of_weights,1)
 		if tple==None:
 			tuple=numpy.random.rand(no_of_tuple)
 		else:
@@ -40,13 +70,13 @@ class SupportVectorMachines(object):
 		print "weights:",weights
 		print "tuple:",tuple
 
-		bias=10.0
+		bias=self.bias
 		svm_function = 0.0 
 
 		for i in xrange(no_of_weights):
-			svm_function += abs(weights[i,0])
+			svm_function += cvxpy.abs(weights[i,0])
 
-		objective=Minimize(abs(svm_function)*0.5)
+		objective=cvxpy.Minimize(cvxpy.abs(svm_function)*0.5)
 		print "============================================"
 		print "Objective Function"
 		print "============================================"
@@ -57,23 +87,24 @@ class SupportVectorMachines(object):
 		for i,k in zip(xrange(no_of_weights),xrange(no_of_tuple)):
 			constraint += weights[i,0]*tuple[k] 
 		constraint += bias
-		constraints.append(abs(constraint) >= 1)
+		print "constraint:",constraint
+		constraints.append(cvxpy.abs(constraint) >= 1)
 		
 		print "============================================"
 		print "Constraints"
 		print "============================================"
 		print constraints
 
-		problem=Problem(objective,constraints)
+		problem=cvxpy.Problem(objective,constraints)
 		print "====================================="
 		print "Installed Solvers:"
 		print "====================================="
-		print installed_solvers()
+		print cvxpy.installed_solvers()
 		print "Is Problem DCCP:",dccp.is_dccp(problem)
 		print "====================================="
 		print "CVXPY args:"
 		print "====================================="
-		result=problem.solve(solver=SCS,verbose=True,method='dccp')
+		result=problem.solve(solver=cvxpy.SCS,verbose=True,method='dccp')
 		print "====================================="
 		print "Problem value:"
 		print "====================================="
@@ -82,16 +113,30 @@ class SupportVectorMachines(object):
 		print "Result:"
 		print "====================================="
 		print result
-		return result
+		return (result,tuple)
 
 if __name__=="__main__":
-	cvx=SupportVectorMachines()
+	cvx=SupportVectorMachines(10,18.0)
+	point0=[1,1,1,1,1,1,1,1,1,1]
 	point1=[4,3,3,4,4,2,6,2,6,1]
 	point2=[-4,-3,-3,-4,-4,-2,-6,-2,-6,-1]
-	res1=cvx.distance_from_separating_hyperplane(len(point1),len(point1),point1)
-	res2=cvx.distance_from_separating_hyperplane(len(point2),len(point2),point2)
-	res3=cvx.distance_from_separating_hyperplane(10,10)
+	point3=[5,3,5,6,7,3,6,3,6,7]
+	res0=cvx.distance_from_separating_hyperplane(point0)
+	res1=cvx.distance_from_separating_hyperplane(point1)
+	res2=cvx.distance_from_separating_hyperplane(point2)
+	res3=cvx.distance_from_separating_hyperplane(point3)
+	res4=cvx.distance_from_separating_hyperplane()
+	res5=cvx.distance_from_separating_hyperplane()
 	print "======================================================="
-	print "distance of Support Vector point1 - ",point1," :",res1
-	print "distance of Support Vector point2  - ",point2," (diametrically 180 degrees from point1, should be equal to distance of point1):",res2
-	print "distance of random point :",res3
+	print "distance of Support Vector point0 - ",point0," :",res0[0][0]
+	print "distance of Support Vector point1 - ",point1," :",res1[0][0]
+	print "distance of Support Vector point2  - ",point2," (diametrically 180 degrees from point1, should be equal to distance of point1):",res2[0][0]
+	print "distance of Support Vector point3 - ",point3," :",res3[0][0]
+	print "distance of random point :",res4[1],":",res4[0][0]
+	print "distance of random point :",res5[1],":",res5[0][0]
+	point4=res4[1]
+	point5=res5[1]
+	training_dataset=[point0,point1,point2,point3,point4,point5]
+	cvx.learn_support_vectors_from_dataset(training_dataset)
+	point6=eval(sys.argv[1])
+	cvx.classify(point6,training_dataset)

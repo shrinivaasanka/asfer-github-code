@@ -217,7 +217,7 @@ void read_asfer_config()
 	config_map["enableCloudPerfectForwarding"]=false;
 	ifstream config;
 	char line[256];
-	config.open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src/asfer.conf", ifstream::in);
+	config.open("./asfer.conf", ifstream::in);
 	config.getline(line, 256);
 	while(line != NULL && !config.eof())
 	{

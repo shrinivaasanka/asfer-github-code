@@ -307,7 +307,6 @@ def MergedTiles_BitonicSort():
 	#try:
 	mergedtileslist=mergedtilesf.read().split("\n")
 	print mergedtileslist
-	#while cnt <= 16384:
 	while cnt <= 256:
 		print "cnt=",cnt
 		globalmergedtiles[cnt-1]=toint(mergedtileslist[cnt])
@@ -319,7 +318,6 @@ def MergedTiles_BitonicSort():
 	cnt=1
 	#try:
 	coordinateslist=coordinatesf.read().split("\n")
-	#while cnt <= 16384:
 	while cnt <= 256:
 		globalcoordinates.append(toint(coordinateslist[cnt]))
 		cnt+=1
