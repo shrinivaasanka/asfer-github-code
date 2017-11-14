@@ -9682,3 +9682,21 @@ References:
 471.4 Primes are nonnegative values of a polynomial in 10 variables - [Yu.V.Matijasevic - https://logic.pdmi.ras.ru/~yumat/publications/publications.php] - https://link.springer.com/article/10.1007/BF01404106 - [In Russian, Translated to English by Louise Guy and James P. Jones, The University of Calgary, Calgary, Canada]
 471.5 Pell's Equation - https://en.wikipedia.org/wiki/Pell%27s_equation - Diophantine equation for set of nonsquare integers - Discovered first in treatise Brahmasphutasiddhanta of Brahmagupta. This complements set of squared integers.
 471.6 Non-Recursively Enumerable Languages - https://www.seas.upenn.edu/~cit596/notes/dave/relang8.html - powerset of infinite set is NonRecursivelyEnumerable.
+
+------------------------------------------------------------------------------------------------------
+472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
+- 14 November 2017
+------------------------------------------------------------------------------------------------------
+(*) Support Vector Machines implementation has been updated to persist the learnt support vectors to
+ a disk file SupportVectorMachines.txt
+(*) This text file is read in classify()
+(*) Support Vectors Dictionary is JSON dumped and eval()-ed and not JSON loaded because of serialization
+  glitch in defaultdict(list)
+------------------------------------------
+(*) Computational Geometric Hyperbolic Factorization Spark implementation has been benchmarked for
+ 2 more integers of 9 and 10 bits. Some 8 bit numbers were benchmarked earlier.
+(*) Spark logs for these benchmarks have been committed and time duration is calculated as 3 way split
+ of real/user/system by time shell utility
+(*) These benchmark numbers are on dual core single node Spark cluster
+(*) C++/python files for tilings have been updated and pixelated tiles storage text files have been rewritten
+
