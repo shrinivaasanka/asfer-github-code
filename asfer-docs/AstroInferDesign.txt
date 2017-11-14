@@ -9650,12 +9650,9 @@ is captured in per task duration logs below by Spark Driver:
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 471. (THEORY) Jones-Sato-Wada-Wiens Theorem, Complement Functions, Prime-Composite Complementation, Prime Number Theorem, Ulam Spiral, 
- Ramsey 2-coloring of integers, Unique Factorization - related to 370,390,394 - 13 November 2017
+ Ramsey 2-coloring of integers, Hilbert Tenth Problem, Unique Factorization - related to 370,390,394 - 13 November 2017, 14 November 2017
 ---------------------------------------------------------------------------------------------------------------------------------------
-Jones-Sato-Wada-Wiens Theorem proves existence of a polynomial in 25 degree-26 variables which has values equal to set of all primes. This relates
-to Prime-Composite Function Complementation - Jones-Sato-Wada-Wiens polynomial is a complement function of set of composites which are
-formalized by unique factorization theorem. This is special case of Matiyasevich-Davis-Robinson-Putnam Theorem which proves any recursively enumerable set accepted by a Turing machine is equivalent to a polynomial accepting the elements of the set. Another closely related problem is: Does there exist a prime between two integers p=xy and
-q=x(y+1). Prime number theorem states and proves number of primes less than N=O(N/logN). 
+Jones-Sato-Wada-Wiens Theorem proves existence of a polynomial in 25 degree-26 variables which has values equal to set of all primes. This relates to Prime-Composite Function Complementation - Jones-Sato-Wada-Wiens polynomial is a complement function of set of composites which are formalized by unique factorization theorem. This is special case of Matiyasevich-Davis-Robinson-Putnam Theorem which proves any recursively enumerable set accepted by a Turing machine is equivalent to a polynomial accepting the elements of the set. Another closely related problem is: Does there exist a prime between two integers p=xy and q=x(y+1). Prime number theorem states and proves number of primes less than N=O(N/logN).
 
 Number of primes < p=xy:
 	= c1*xy/logxy
@@ -9663,15 +9660,25 @@ Number of primes < q=(x+1)y:
 	= c1*(x+1)y/log(x+1)y
 
 Number of primes between p=xy and q=(x+1)y :
-	= c1*(x+1)y/log(x+1)y - c1*xy/logxy 
+	= c1*(x+1)y/log(x+1)y - c1*xy/logxy
 
 Assuming number of primes between p and q = c1*(x+1)y/log(x+1)y - c1*xy/logxy > 0:
-	(x+1)y/log(x+1)y > xy/logxy 
+	(x+1)y/log(x+1)y > xy/logxy
 After reducing:
 	log(xy) > x(log(x+1) - logx)
 	log(xy) > xlog(x+1/x)
 For large x:
 	log(x+1/x) ~ log 1 = 0
-=> 	log(xy) > 0 
-thus proving the assumption. This estimate of number of primes between two composites thus directly has bearing on discrepancy of this 2-colored (prime-composite) integer sequence where discrepancy is difference between number of elements of 2 colors in monochromatic arithmetic progressions. Ulam Spiral, which is sequence of integers written in concentric spiralling rectangle, has diagonals aligned along points of prime numbers described by polynomials. Rectangle of Ulam Spiral can be written as polynomial x(x+1) or x(x-1). Previous derivation on existence of primes between x(x+1) and x*x implies there is a prime diagonal. Ulam rectangle sequence for x(x+1) or x(x-1) is 1,2,4,6,9,12,16,20,25,30,36,42,... 
+=> 	log(xy) > 0
+thus proving the assumption. This estimate of number of primes between two composites thus directly has bearing on discrepancy of this 2-colored (prime-composite) integer sequence where discrepancy is difference between number of elements of 2 colors in monochromatic arithmetic progressions. Ulam Spiral, which is sequence of integers written in concentric spiralling rectangle, has diagonals aligned along points of prime numbers described by polynomials. Rectangle of Ulam Spiral can be written as polynomial x(x+1) or x(x-1). Previous derivation on existence of primes between x(x+1) and x*x implies there is a prime diagonal. Ulam rectangle sequence for x(x+1) or x(x-1) is 1,2,4,6,9,12,16,20,25,30,36,42,...
 
+Matiyasevich-Davis-Robinson-Putnam theorem implies every recursively enumerable set has a diophantine equation. Complement Function in several variables is nothing but a diophantine equation for the complement set by rewriting a diophantine as function in several variables. Thus concepts of Diophantine sets/equations and Complement functions are synonymous. Decidability of complement functions (https://arxiv.org/abs/1106.4102) is equivalent to decidability of diophantine equations. MRDP theorem requires every recursively enumerable set to have a diophantine equation and therefore to have a function for it. [There exists a set which is not recursively enumerable e.g set of subsets of infinite set]. Undecidability of Function Complementation follows from MRDP theorem because there exists a recursively enumerable set which is not computably recursive and hence has no algorithm (algorithms are computable recursive languages which do not loop and have yes/no halt on all inputs) i.e Undecidability of Hilbert's Tenth Problem applies directly to Undecidability of Function Complementation. In other words set of diophantines has cardinality greater than set of all computable recursive languages and therefore there exists a diophantine function for a complement set which cannot be computed by a Turing machine. This is one more proof of undecidability of complementation and simpler than Post Correspondence Problem based proof described earlier.
+
+References:
+----------
+471.1 Jones-Sato-Wada-Wiens Theorem and Prime valued Polynomial - https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/JonesSatoWadaWiens.pdf - Jones-Sato-Wada-Wiens polynomial generates negative numbers too and its positive values are set of primes.
+471.2 Matijasevic Polynomial - http://primes.utm.edu/glossary/xpage/MatijasevicPoly.html - negative values can be removed by setting squared terms of polynomial to zero and thus only set of all primes is generated which is the complement function of factorization.
+471.3 Hilbert's Tenth Problem and Matiyasevich-Robinson-Davis-Putnam (MRDP) Theorem - https://en.wikipedia.org/wiki/Hilbert%27s_tenth_problem - Hilbert's Tenth Problem poses if there exists an algorithm which generates integer values for unknowns in a multivariate diophantine equation. Hilbert's Tenth Problem was proved undecidable. Converse of this is finding a diophantine equation for a set - MRDP Theorem: Every recursively enumerable set is diophantine.
+471.4 Primes are nonnegative values of a polynomial in 10 variables - [Yu.V.Matijasevic - https://logic.pdmi.ras.ru/~yumat/publications/publications.php] - https://link.springer.com/article/10.1007/BF01404106 - [In Russian, Translated to English by Louise Guy and James P. Jones, The University of Calgary, Calgary, Canada]
+471.5 Pell's Equation - https://en.wikipedia.org/wiki/Pell%27s_equation - Diophantine equation for set of nonsquare integers - Discovered first in treatise Brahmasphutasiddhanta of Brahmagupta. This complements set of squared integers.
+471.6 Non-Recursively Enumerable Languages - https://www.seas.upenn.edu/~cit596/notes/dave/relang8.html - powerset of infinite set is NonRecursivelyEnumerable.
