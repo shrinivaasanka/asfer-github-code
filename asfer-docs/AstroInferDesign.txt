@@ -9699,4 +9699,15 @@ References:
  of real/user/system by time shell utility
 (*) These benchmark numbers are on dual core single node Spark cluster
 (*) C++/python files for tilings have been updated and pixelated tiles storage text files have been rewritten
+------------------------------------------
+Note on Factorization Spark benchmarks
+------------------------------------------
+Following are approximate correlations of the observed numbers to the theoretical polylogarithmic time bound - exponents of logN (=number of bits) increase probably because number of parallel RAMs(cores) do not increase commensurate with the number of bits and is static dual core:
 
+10 bit - real	17m11.931s = 1031.931s (~k*10^x3) ~ (logN)^3.013 (x3=3.013)
+9 bit  - real	7m46.247s  = 466.247s  (~k*9^x2) ~ (logN)^2.796 (x2=2.796)
+8 bit  - real	3m40.091s  = 220.091s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
+8 bit  - real	3m39.539s  = 219.539s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
+8 bit  - real	3m38.795s  = 218.795s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
+8 bit  - real	3m38.622s  = 218.622s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
+8 bit  - real	3m38.920s  = 218.920s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
