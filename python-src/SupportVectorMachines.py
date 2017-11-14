@@ -33,6 +33,7 @@ import sys
 from collections import defaultdict
 import operator
 import pprint
+import json
 
 class SupportVectorMachines(object):
 	def __init__(self,dimensions,bias):
@@ -41,6 +42,7 @@ class SupportVectorMachines(object):
 		self.distvectormap=defaultdict(list)
 
 	def learn_support_vectors_from_dataset(self,training_dataset):
+		supportvectorsf=open("./SupportVectorMachines.txt","w")
 		print "===================================================================================="
 		print "learn_support_vectors_from_dataset() - Support Vectors Learnt from Training Dataset:"
 		print "===================================================================================="
@@ -48,25 +50,28 @@ class SupportVectorMachines(object):
 			distance=self.distance_from_separating_hyperplane(t)
 			self.distvectormap[distance[0][0]].append(t)
 		self.distvectormap=sorted(self.distvectormap.items(), key=operator.itemgetter(0), reverse=False)
+		json.dump(self.distvectormap,supportvectorsf)
 
-	def classify(self,point,training_dataset):
+	def classify(self,point,support_vectors_dataset=None):
+		supportvectors={}
+		if support_vectors_dataset == None:
+			supportvectorsf=open("./SupportVectorMachines.txt","r")
+			supportvectors=eval(supportvectorsf.read())
 		distance_from_dhp=self.distance_from_separating_hyperplane(point)
 		print "================================================="
 		print "classify() - Support Vectors:"
 		print "================================================="
-		for k,v in self.distvectormap:
-			print "distance = ",k," : vector = ",v 
+		print "supportvectors:",supportvectors
+		for sv in supportvectors:
+			print "distance = ",sv[0]," : vector = ",sv[1]
 		print "================================================="
 		print "classify(): distance of ",point," from decision hyperplane = ",distance_from_dhp[0][0]
 
-	def distance_from_separating_hyperplane(self,tple=None):
+	def distance_from_separating_hyperplane(self,tple):
 		no_of_weights=self.dimensions
 		no_of_tuple=self.dimensions
 		weights=cvxpy.Variable(no_of_weights,1)
-		if tple==None:
-			tuple=numpy.random.rand(no_of_tuple)
-		else:
-			tuple=numpy.array(tple)	
+		tuple=numpy.array(tple)	
 		print "weights:",weights
 		print "tuple:",tuple
 
@@ -121,22 +126,19 @@ if __name__=="__main__":
 	point1=[4,3,3,4,4,2,6,2,6,1]
 	point2=[-4,-3,-3,-4,-4,-2,-6,-2,-6,-1]
 	point3=[5,3,5,6,7,3,6,3,6,7]
+	point4=[4,5,6,23,3,4,4,5,56,2]
+	point5=[3,3,6,3,3,4,4,5,6,2]
 	res0=cvx.distance_from_separating_hyperplane(point0)
 	res1=cvx.distance_from_separating_hyperplane(point1)
 	res2=cvx.distance_from_separating_hyperplane(point2)
 	res3=cvx.distance_from_separating_hyperplane(point3)
-	res4=cvx.distance_from_separating_hyperplane()
-	res5=cvx.distance_from_separating_hyperplane()
 	print "======================================================="
 	print "distance of Support Vector point0 - ",point0," :",res0[0][0]
 	print "distance of Support Vector point1 - ",point1," :",res1[0][0]
 	print "distance of Support Vector point2  - ",point2," (diametrically 180 degrees from point1, should be equal to distance of point1):",res2[0][0]
 	print "distance of Support Vector point3 - ",point3," :",res3[0][0]
-	print "distance of random point :",res4[1],":",res4[0][0]
-	print "distance of random point :",res5[1],":",res5[0][0]
-	point4=res4[1]
-	point5=res5[1]
 	training_dataset=[point0,point1,point2,point3,point4,point5]
 	cvx.learn_support_vectors_from_dataset(training_dataset)
 	point6=eval(sys.argv[1])
-	cvx.classify(point6,training_dataset)
+	#cvx.classify(point6,training_dataset)
+	cvx.classify(point6)
