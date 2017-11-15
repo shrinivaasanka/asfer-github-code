@@ -9711,3 +9711,29 @@ Following are approximate correlations of the observed numbers to the theoretica
 8 bit  - real	3m38.795s  = 218.795s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
 8 bit  - real	3m38.622s  = 218.622s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
 8 bit  - real	3m38.920s  = 218.920s  (~k*8^x1) ~ (logN)^2.589 (x1=2.589)
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+473. (THEORY) Computational Geometric Hyperbolic Factorization, Discrete Geometry, Rastering in Graphics/Computational Digital Geometry,
+Bresenham's Line Algorithm adapted for Hyperbolic tiling, Point Location, Ray shooting - 15 November 2017 - related to 34, 465
+-----------------------------------------------------------------------------------------------------------------------------------------
+Finding factors of integer N by creating pixelated polygon for hyperbolic curve xy=N has great visual intuition. Similar algorithms already
+exist in discrete geometry and computer graphics disciplines. Bresenham's Line drawing algorithm is a classic used still in vector graphics
+hich approximates a continuous line on a pixelated digital space. This approximation of continuous curves on digital space is called
+Rastering. Tile segments of hyperbola in preprocessing step of factorization are found by solving for deltay in:
+		xy = N
+		(x+1)(y-deltay) = N
+		xy - x*deltay + y - deltay = N
+		y = deltay * (x+1)
+		deltay = y/(x+1) for deltax=1
+which is similar to Bresenham Line algorithm for finding next point to plot on raster. Tile segment (N/x, N/(x+1)) along y-axis is equal to
+interval (y, y-(y/x+1)) on y-axis.
+
+Art Gallery Pixelated polygon approximating a hyperbola is a Planar Simple Line Graph (PSLG) where each side of the polygon is an edge in
+PSLG. This PSLG has (number_of_factors + 1) rectangular faces which is O(logN/loglogN). Vertices where two adjacent rectangular faces
+meet are the factor points of N. Planar point location has to find these factor points. Geometric Ray Shooting Query for this is : "Find points of vertices where two rectangular faces of polygon meet". This ray shooting can be picturised as a line from origin intersecting the rastered hyperbolic polygon and multiple rays from a common origin are shot in parallel of various (0-90 degrees) angles.  O(logN/loglogN) of these rays pass through the factor vertices. Number of rays required is proportional to length of the hyperbolic curve = O(N). Thus parallel ray shooting is a geometric sieve for factoring   and is an alternative to sorting and binary searching the hyperbolic tile segments.
+
+References:
+----------
+473.1 Bresenham Algorithm for Line Rastering - https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+473.2 Rasterizing curves - http://members.chello.at/easyfilter/bresenham.pdf
+473.3 Efficient Algorithms for Ray Shooting Queries - [Pankaj K.Agarwal] - https://epubs.siam.org/doi/pdf/10.1137/0222051
