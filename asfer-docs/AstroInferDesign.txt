@@ -9718,7 +9718,7 @@ Bresenham's Line Algorithm adapted for Hyperbolic tiling, Point Location, Ray sh
 -----------------------------------------------------------------------------------------------------------------------------------------
 Finding factors of integer N by creating pixelated polygon for hyperbolic curve xy=N has great visual intuition. Similar algorithms already
 exist in discrete geometry and computer graphics disciplines. Bresenham's Line drawing algorithm is a classic used still in vector graphics
-hich approximates a continuous line on a pixelated digital space. This approximation of continuous curves on digital space is called
+which approximates a continuous line on a pixelated digital space. This approximation of continuous curves on digital space is called
 Rastering. Tile segments of hyperbola in preprocessing step of factorization are found by solving for deltay in:
 		xy = N
 		(x+1)(y-deltay) = N
