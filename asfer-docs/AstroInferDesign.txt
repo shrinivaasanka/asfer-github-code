@@ -9714,7 +9714,7 @@ Following are approximate correlations of the observed numbers to the theoretica
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 473. (THEORY) Computational Geometric Hyperbolic Factorization, Discrete Geometry, Rastering in Graphics/Computational Digital Geometry,
-Bresenham's Line Algorithm adapted for Hyperbolic tiling, Point Location, Ray shooting - 15 November 2017 - related to 34, 465
+Bresenham's Line Algorithm adapted for Hyperbolic tiling, Point Location, Ray shooting - 15,16 November 2017 - related to 34, 465
 -----------------------------------------------------------------------------------------------------------------------------------------
 Finding factors of integer N by creating pixelated polygon for hyperbolic curve xy=N has great visual intuition. Similar algorithms already
 exist in discrete geometry and computer graphics disciplines. Bresenham's Line drawing algorithm is a classic used still in vector graphics
@@ -9727,6 +9727,12 @@ Rastering. Tile segments of hyperbola in preprocessing step of factorization are
 		deltay = y/(x+1) for deltax=1
 which is similar to Bresenham Line algorithm for finding next point to plot on raster. Tile segment (N/x, N/(x+1)) along y-axis is equal to
 interval (y, y-(y/x+1)) on y-axis.
+
+Tiling preprocessing phase of factorization embeds a continuous hyperbola in a grid of horizontal and vertical straight lines. Each horizontal
+line corresponds to an integer in y-axis and vertical line to an integer in x-axis. Hyperbolic arc traverses the squares(pixels) of the grid.
+Thus the polygon approximating the continuous hyperbola is the union of all squares(pixels) through which hyperbolic arc passes. Union of
+squares create rectangular faces of the art gallery polygon vertices of which are the locations of the guards. Vertices of these rectangles
+through which hyperbolic arc passes through are the factors.
 
 Art Gallery Pixelated polygon approximating a hyperbola is a Planar Simple Line Graph (PSLG) where each side of the polygon is an edge in
 PSLG. This PSLG has (number_of_factors + 1) rectangular faces which is O(logN/loglogN). Vertices where two adjacent rectangular faces
