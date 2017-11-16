@@ -44,8 +44,11 @@ from bidict import bidict
 import threading
 import memcache
 from collections import namedtuple
+import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
 
 import sys
+
+cpp_tiling=False
 
 #globalmergedtiles=bidict()
 globalmergedtiles={}
@@ -299,31 +302,28 @@ def reduceFunction_BitonicCompare(i, k):
 
 def MergedTiles_BitonicSort():
 	global globalmergedtiles_accum
-	mergedtilesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
-	coordinatesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
-	#mergedtiles=[10, 3, 5, 71, 30, 11, 20, 4, 330, 21, 110, 7, 33, 9, 39, 46]
+
+	if cpp_tiling == True:
+		mergedtilesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
+		coordinatesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
+	else:
+		mergedtilesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.mergedtiles","r")
+		coordinatesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.coordinates","r")
+
 	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
-	cnt=1
-	#try:
+	cnt=0
 	mergedtileslist=mergedtilesf.read().split("\n")
 	print mergedtileslist
-	while cnt <= 512:
-		print "cnt=",cnt
-		globalmergedtiles[cnt-1]=toint(mergedtileslist[cnt])
+	while cnt < len(mergedtileslist):
+		globalmergedtiles[cnt]=toint(mergedtileslist[cnt])
 		cnt+=1
-	#except:
-	#	print "Exception:"
-	#	pass
 
-	cnt=1
-	#try:
+	cnt=0
 	coordinateslist=coordinatesf.read().split("\n")
-	while cnt <= 512:
+	print coordinateslist
+	while cnt < len(coordinateslist):
 		globalcoordinates.append(toint(coordinateslist[cnt]))
 		cnt+=1
-	#except:
-	#	print "Exception:"
-	#	pass
 
 	print "unsorted=",globalmergedtiles
 
@@ -344,5 +344,8 @@ def MergedTiles_BitonicSort():
         spcon.stop()
 
 if __name__=="__main__":
+	number_to_factorize=int(sys.argv[1])
+	if cpp_tiling == False: 
+		DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling.hyperbolic_tiling(number_to_factorize)
 	bitoniccache=memcache.Client(["127.0.0.1:11211"], debug=1)
 	MergedTiles_BitonicSort()
