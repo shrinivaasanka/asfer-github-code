@@ -9744,3 +9744,13 @@ References:
 473.2 Rasterizing curves - http://members.chello.at/easyfilter/bresenham.pdf
 473.3 Efficient Algorithms for Ray Shooting Queries - [Pankaj K.Agarwal] - https://epubs.siam.org/doi/pdf/10.1137/0222051
 473.4 Parallel Planar Point Location - [Richard Cole] - https://ia601408.us.archive.org/33/items/onoptimalparalle00cole/onoptimalparalle00cole.pdf
+
+---------------------------------------------------------------------------------------------------------
+474. (FEATURE-DONE) Computational Geometric Factorization - Tiling Update and benchmark numbers for factoring few integers - 16 November 2017
+---------------------------------------------------------------------------------------------------------
+(*) Existing hyperbolic tiling code depends on C++ code in cpp-src/miscellaneous
+(*) To remove this dependency, python script for tiling the hyperbolic arc with simple pixelation similar to bresenham algorithm has been committed to repository - this script writes two files suffixed .coordinates and .mergedtiles from rounding off the interval [N/x,N/(x+1)] in a function hyperbolic_tiling()
+(*) This function is invoked in DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py before bitonic sort
+(*) DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py is parametrized and accepts number to factorize as commandline argument:
+       #$SPARK_2.1.0_HOME/spark-submit DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.py <number_to_factorize>
+(*) Few more time shell builtin benchmark numbers for factorizing 3-bit, 4-bit, 5-bit, 6-bit , 7-bit integers have been committed in testlogs/
