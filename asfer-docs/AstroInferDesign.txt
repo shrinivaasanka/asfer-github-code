@@ -9746,6 +9746,7 @@ References:
 473.3 Efficient Algorithms for Ray Shooting Queries - [Pankaj K.Agarwal] - https://epubs.siam.org/doi/pdf/10.1137/0222051
 473.4 Parallel Planar Point Location - [Richard Cole] - https://ia601408.us.archive.org/33/items/onoptimalparalle00cole/onoptimalparalle00cole.pdf
 473.5 Parallel Geometric Search - [Albert Chan,Frank Dehne, Andrew Rau-Chaplin] - https://web.cs.dal.ca/~arc/publications/1-16/paper.pdf
+473.6 Parallel Computational Geometry - https://www.cs.princeton.edu/~chazelle/pubs/ParallelCompGeom.pdf - [A.Aggarwal,B.Chazelle,L.Guibas,C.O.Dunlaing,C.Yap] - Section 2 - Definition of NC based on PRAM - Section 5 - Algorithms for line segment intersection, art gallery guards, polygon triangulation, partitioning (kd-trees, quadtrees) are in NC. Factorization by approximating a hyperbola into a pixelated polygon can be rephrased as line segment intersection problem, where sides of the polygons are line segments and their intersecting points contain factor vertices. There are O(logN/loglogN) intersection points in hyperbolic polygon where sides meet. Thus factorization can be solved in NC assuming pixelated hyperbolic polygon already exists.
 
 ---------------------------------------------------------------------------------------------------------
 474. (FEATURE-DONE) Computational Geometric Factorization - Tiling Update and benchmark numbers for factoring few integers - 16 November 2017
