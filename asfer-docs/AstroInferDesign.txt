@@ -9763,15 +9763,14 @@ References:
 (*) Few more time shell builtin benchmark numbers for factorizing 3-bit, 4-bit, 5-bit, 6-bit , 7-bit integers have been committed in testlogs/
 
 --------------------------------------------------------------------------------------------------------
-475. (FEATURE-DONE) Computational Geometric Factorization Update - Spark Accumulators, JSON for Tiling etc.,
+475. (FEATURE-DONE) Computational Geometric Factorization Update - Spark Accumulators, JSON for Tiling etc., - 19 November 2017
 --------------------------------------------------------------------------------------------------------
-    (*) Hyperbolic tiling code in python has been changed to reflect C++ tiling in cpp-src/miscellaneous
-    (*) globalcoordinates global variable has been made Spark Accumulator Mutable global state - globalmergedtiles is already a
-    Spark Accumulator global mutable state
-    (*) bitoniclock acquire/release statements have been added for global variables, but commented for benchmarking
-    (*) New boolean flags for bitonic comparator python style variable swap, for enabling multiple threads for assign have been added
-    (*) merge_sorted_halves() has been invoked as a separate function
-    (*) C++ tiling has been chosen because accuracy of long double in creating tile pixels is better than similar tiling code in python
-    (*) Benchmark numbers for factoring 511 has been added to testlogs/ and are similar to previous numbers
-    (*) .mergedtiles and .coordinates files are loaded/dumped as JSON in python hyperbolic tiling
+(*) Hyperbolic tiling code in python has been changed to reflect C++ tiling in cpp-src/miscellaneous
+(*) globalcoordinates global variable has been made Spark Accumulator Mutable global state - globalmergedtiles is already a Spark Accumulator global mutable state
+(*) bitoniclock acquire/release statements have been added for global variables, but commented for benchmarking
+(*) New boolean flags for bitonic comparator python style variable swap, for enabling multiple threads for assign have been added
+(*) merge_sorted_halves() has been invoked as a separate function
+(*) C++ tiling has been chosen because accuracy of long double in creating tile pixels is better than similar tiling code in python
+(*) Benchmark numbers for factoring 511 has been added to testlogs/ and are similar to previous numbers
+(*) .mergedtiles and .coordinates files are loaded/dumped as JSON in python hyperbolic tiling
 
