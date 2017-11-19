@@ -47,13 +47,17 @@ from collections import namedtuple
 import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
 
 import sys
+import json
 
-cpp_tiling=False
+cpp_tiling=True
+python_style_swap=True
+multithreaded_assign=True
 
 #globalmergedtiles=bidict()
 globalmergedtiles={}
 globalmergedtiles_accum=None
 globalcoordinates=[]
+globalcoordinates_accum=None
 bitoniclock=threading.Lock()
 
 spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
@@ -65,9 +69,20 @@ globalmergedtiles_accum=spcon.accumulator([], VectorAccumulatorParam())
 #Coordinates are also shuffled first few elements of which correspond to number to factor N are
 #the factors found finally. Multithreaded assignment maps to a multicore parallelism.
 def assign_compareexchange_multithreaded(mergedtiles_comparators, midpoint, i):
+	#bitoniclock.acquire()
 	globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
 	globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
-	globalcoordinates[mergedtiles_comparators[i][0]], globalcoordinates[mergedtiles_comparators[i][0]+midpoint] = globalcoordinates[mergedtiles_comparators[i][0] + midpoint], globalcoordinates[mergedtiles_comparators[i][0]]
+	print "before multithreaded assign: mergedtiles_comparators[i][0] = ",mergedtiles_comparators[i][0]
+	print "before multithreaded assign: mergedtiles_comparators[i][0]+midpoint = ",mergedtiles_comparators[i][0]+midpoint
+	print "before multithreaded assign: globalcoordinates_accum.value[mergedtiles_comparators[i][0]] = ",globalcoordinates_accum.value[mergedtiles_comparators[i][0]]
+	print "before multithreaded assign: globalcoordinates_accum.value[[mergedtiles_comparators[i][0]+midpoint] = ",globalcoordinates_accum.value[mergedtiles_comparators[i][0]+midpoint]
+	if python_style_swap == True:
+		globalcoordinates_accum.value[mergedtiles_comparators[i][0]], globalcoordinates_accum.value[mergedtiles_comparators[i][0]+midpoint] = globalcoordinates_accum.value[mergedtiles_comparators[i][0] + midpoint], globalcoordinates_accum.value[mergedtiles_comparators[i][0]]
+	else:
+		temp = globalcoordinates_accum.value[mergedtiles_comparators[i][0]]
+		globalcoordinates_accum.value[mergedtiles_comparators[i][0]] = globalcoordinates_accum.value[mergedtiles_comparators[i][0] + midpoint]
+		globalcoordinates_accum.value[mergedtiles_comparators[i][0]+midpoint] = temp 
+	#bitoniclock.release()
 
 
 def bitonic_sort(spcon, up, mergedtiles, start, end):
@@ -95,7 +110,20 @@ def bitonic_merge(spcon, up, mergedtiles, start, end):
 		secondhalf = bitonic_merge(spcon, up, mergedtiles[int(len(mergedtiles)/2):], start+int(len(mergedtiles)/2), end)
 		print "bitonic_merge: firsthalf: ", firsthalf
 		print "bitonic_merge: secondhalf: ", secondhalf
-		return firsthalf+secondhalf
+		return merge_sorted_halves(up,firsthalf,secondhalf)
+
+def merge_sorted_halves(up,firsthalf,secondhalf):
+	return firsthalf+secondhalf
+	#if up==True:
+	#	if secondhalf[0] >= firsthalf[len(firsthalf)-1]:
+	#		return firsthalf+secondhalf
+	#	else:
+	#		return secondhalf+firsthalf
+	#else:
+	#	if secondhalf[0] >= firsthalf[len(firsthalf)-1]:
+	#		return secondhalf+firsthalf
+	#	else:
+	#		return firsthalf+secondhalf
 
 '''
 #####################################################
@@ -111,7 +139,6 @@ Parallelizes comparator in:
 '''
 
 def bitonic_compare_true(spcon, mergedtiles, start, end):
-	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles,";start=",start,";end=",end
 	midpoint = int(len(mergedtiles)/2)
 	midpointlist=[]
 	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
@@ -132,7 +159,6 @@ def bitonic_compare_true(spcon, mergedtiles, start, end):
 	if k is not None:
 		mergedtiles_comparators=k.collect()
 		print "bitonic_compare_true() collected:",mergedtiles_comparators
-	print "bitonic_compare_true(): mergedtiles: ",mergedtiles
 	print "bitonic_compare_true(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_true(): mergedtiles_comparators:",mergedtiles_comparators
 	
@@ -147,11 +173,15 @@ def bitonic_compare_true(spcon, mergedtiles, start, end):
 
 			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
 			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
-			t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
-			threads.append(t)
-			t.start()
+			if multithreaded_assign == True:
+				t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
+				threads.append(t)
+				t.start()
+			else:
+				assign_compareexchange_multithreaded(mergedtiles_comparators, midpoint, i)
+			
 	
-	print "bitonic_compare_true(): 2. mergedtiles=",mergedtiles
+	print "bitonic_compare_true(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
         #sqlContext=SQLContext(spcon)
         #parents_schema=sqlContext.createDataFrame(k.collect())
@@ -174,7 +204,6 @@ Parallelizes comparator in :
 '''
 
 def bitonic_compare_false(spcon, mergedtiles, start, end):
-	print "bitonic_compare_true(): 1. mergedtiles=",mergedtiles
 	midpoint = int(len(mergedtiles)/2)
 	midpointlist=[]
 	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
@@ -196,7 +225,6 @@ def bitonic_compare_false(spcon, mergedtiles, start, end):
 	if k is not None:
 		mergedtiles_comparators=k.collect()
 		print "bitonic_compare_false() collected:",mergedtiles_comparators
-	print "bitonic_compare_false(): 2. mergedtiles: ",mergedtiles
 	print "bitonic_compare_false(): mergedtilesmidpointlist: ",mergedtilesmidpointlist
 	print "bitonic_compare_false(): mergedtiles_comparators:",mergedtiles_comparators
         
@@ -208,12 +236,15 @@ def bitonic_compare_false(spcon, mergedtiles, start, end):
                         #mergedtiles[mergedtiles_comparators[i][0]+midpoint] = temp
 			mergedtiles[mergedtiles_comparators[i][1]]=mergedtiles_comparators[i][2]
 			mergedtiles[mergedtiles_comparators[i][1] + midpoint]=mergedtiles_comparators[i][3]
-			print "globalmergedtiles_accum: ",globalmergedtiles_accum.value
+			#print "globalmergedtiles_accum: ",globalmergedtiles_accum.value
 			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0]]=mergedtiles_comparators[i][2]
 			#globalmergedtiles_accum.value[mergedtiles_comparators[i][0] + midpoint]=mergedtiles_comparators[i][3]
-			t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
-			threads.append(t)
-			t.start()
+			if multithreaded_assign==True:
+				t=threading.Thread(target=assign_compareexchange_multithreaded, args=(mergedtiles_comparators, midpoint, i))
+				threads.append(t)
+				t.start()
+			else:
+				assign_compareexchange_multithreaded(mergedtiles_comparators, midpoint, i)
 	
 	print "bitonic_compare_false(): mergedtiles=",mergedtiles
 	#bitoniclock.release()
@@ -260,6 +291,7 @@ def mapFunction_BitonicCompare_True(tileelement):
 	print "##################################################################################"
 	print "mapFunction_BitonicCompare(): up=",True
 	tileelement_index=0
+	#bitoniclock.acquire()
 	for k, v in globalmergedtiles.iteritems():
 		if v==tileelement:
 			tileelement_index=k
@@ -268,6 +300,7 @@ def mapFunction_BitonicCompare_True(tileelement):
 		print "Shuffling mergedtiles and coordinates ..."
 		globalmergedtiles[tileelement_index], globalmergedtiles[tileelement_index+midpoint] = globalmergedtiles[tileelement_index+midpoint], globalmergedtiles[tileelement_index]
 		globalcoordinates[tileelement_index], globalcoordinates[tileelement_index+midpoint] = globalcoordinates[tileelement_index+midpoint], globalcoordinates[tileelement_index]
+	#bitoniclock.release()
 	return tileelement_index
 	#return (1,tileelement_index)
 
@@ -275,6 +308,7 @@ def mapFunction_BitonicCompare_False(tileelement):
 	print "##################################################################################"
 	print "mapFunction_BitonicCompare(): up=",False
 	tileelement_index=0
+	#bitoniclock.acquire()
 	for k, v in globalmergedtiles.iteritems():
 		if v==tileelement:
 			tileelement_index=k
@@ -283,6 +317,7 @@ def mapFunction_BitonicCompare_False(tileelement):
 		print "Shuffling mergedtiles and coordinates ..."
 		globalmergedtiles[tileelement_index], globalmergedtiles[tileelement_index+midpoint] = globalmergedtiles[tileelement_index+midpoint], globalmergedtiles[tileelement_index]
 		globalcoordinates[tileelement_index], globalcoordinates[tileelement_index+midpoint] = globalcoordinates[tileelement_index+midpoint], globalcoordinates[tileelement_index]
+	#bitoniclock.release()
 	return tileelement_index
 	#return (1,tileelement_index)
 
@@ -300,47 +335,53 @@ def reduceFunction_BitonicCompare(i, k):
 	#		globalcoordinates[k], globalcoordinates[k+midpoint] = globalcoordinates[k+midpoint], globalcoordinates[k]
 	#sys.stdout.flush()
 
-def MergedTiles_BitonicSort():
+def MergedTiles_BitonicSort(number_to_factorize):
 	global globalmergedtiles_accum
+	global globalcoordinates_accum
+	global globalmergedtiles
+	global globalcoordinates
 
 	if cpp_tiling == True:
 		mergedtilesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
 		coordinatesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
+		cnt=0
+		mergedtileslist=[]
+		coordinateslist=[]
+        	mergedtileslist=mergedtilesf.read().split("\n")
+        	print mergedtileslist
+        	while cnt < len(mergedtileslist):
+               		 globalmergedtiles[cnt]=toint(mergedtileslist[cnt])
+               		 cnt+=1
+
+        	cnt=0
+        	coordinateslist=coordinatesf.read().split("\n")
+        	print coordinateslist
+        	while cnt < len(coordinateslist):
+               		 globalcoordinates.append(toint(coordinateslist[cnt]))
+               		 cnt+=1
 	else:
 		mergedtilesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.mergedtiles","r")
 		coordinatesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.coordinates","r")
+		globalmergedtiles=json.load(mergedtilesf)
+		globalcoordinates=json.load(coordinatesf)
 
 	#spcon = SparkContext("local[2]","Spark_MapReduce_Bitonic")
-	cnt=0
-	mergedtileslist=mergedtilesf.read().split("\n")
-	print mergedtileslist
-	while cnt < len(mergedtileslist):
-		globalmergedtiles[cnt]=toint(mergedtileslist[cnt])
-		cnt+=1
 
-	cnt=0
-	coordinateslist=coordinatesf.read().split("\n")
-	print coordinateslist
-	while cnt < len(coordinateslist):
-		globalcoordinates.append(toint(coordinateslist[cnt]))
-		cnt+=1
 
-	print "unsorted=",globalmergedtiles
+	print "unsorted globalmergedtiles=",globalmergedtiles
+	print "unsorted globalcoordinates=",globalcoordinates
 
 	globalmergedtiles_accum=spcon.accumulator(globalmergedtiles.values(), VectorAccumulatorParam())
-	print "globalmergedtiles_accum: random element = ",globalmergedtiles_accum.value[3]
+	globalcoordinates_accum=spcon.accumulator(globalcoordinates, VectorAccumulatorParam())
 	sorted=bitonic_sort(spcon, False, globalmergedtiles.values(), 0, len(globalmergedtiles.values())-1)
-	print "sorted=",sorted
-	print "globalcoordinates=",globalcoordinates
+	print "sorted globalmergedtiles =",sorted
+	print "sorted globalcoordinates =",globalcoordinates
 	print "sorted globalmergedtiles accumulator version:  = ",globalmergedtiles_accum.value
-	N=sorted[0]
+	print "sorted globalcoordinates accumulator version:  = ",globalcoordinates_accum.value
 	print "==========================" 
-	print "Factors of ",N," are:"
+	print "Factor of ",number_to_factorize," is:"
 	print "==========================" 
-	idx=0
-	while sorted[idx] == N:
-		print globalcoordinates[idx]
-		idx += 1
+	print globalcoordinates_accum.value[0]
         spcon.stop()
 
 if __name__=="__main__":
@@ -348,4 +389,4 @@ if __name__=="__main__":
 	if cpp_tiling == False: 
 		DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling.hyperbolic_tiling(number_to_factorize)
 	bitoniccache=memcache.Client(["127.0.0.1:11211"], debug=1)
-	MergedTiles_BitonicSort()
+	MergedTiles_BitonicSort(number_to_factorize)

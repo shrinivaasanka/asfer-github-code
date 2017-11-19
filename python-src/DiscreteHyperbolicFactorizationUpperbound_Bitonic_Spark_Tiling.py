@@ -25,49 +25,47 @@
 #-----------------------------------------------------------------------------------------------------------
 
 import math
+import json
+
+alltiles={}
+allcoordinates=[]
+next=0
 
 def hyperbolic_tiling(number):
-	tiles=[]
-	coordinates=[]
 	tilesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.mergedtiles","w")
         coordinatesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.coordinates","w")
-
-	x=1
-	y=number
-	while x <= number and y > 0:
-		print "x,y:",x,y
-		coordinates.append(x)
-		tiles.append(y*x)
-		x=x+1
-		y=int(number/(x))
-	print "tiles:",tiles
-	print "coordinates:",coordinates
-	for x in xrange(len(tiles)-1):
-		tileelement=tiles[x]
-		while tileelement > tiles[x+1]:	
-			tilesf.write(str(tileelement))
-			tilesf.write("\n")
-			coordinatesf.write(str(coordinates[x]))
-			coordinatesf.write("\n")
-			tileelement = tileelement - 1
-	tilesf.write(str(tiles[len(tiles)-1]))
-	tilesf.write("\n")
-	coordinatesf.write(str(coordinates[len(tiles)-1]))
-	coordinatesf.write("\n")
 	no_of_bits=int(math.log(number,2) + 1.0) 
 	print "number of bits:",no_of_bits
-	zero_fill=int(math.pow(2,no_of_bits) - number)
-	print zero_fill
-	for z in xrange(zero_fill-1):
-		tilesf.write(str("0"))
-		tilesf.write("\n")
-		coordinatesf.write(str("0"))
-		coordinatesf.write("\n")
-	tilesf.write(str("0"))
-	coordinatesf.write(str("0"))
+	power_of_two=int(math.pow(2,no_of_bits))
+
+	for y in xrange(power_of_two):
+		alltiles[y]=0
+		allcoordinates.append(0)
+
+        xtile_start=float(number/2)
+        xtile_end=float(number)
+        y=1.0
+	PADDING=0.0
+        while y < number:
+                create_tile(number,(xtile_start)-PADDING,y,(xtile_end)+PADDING,y)
+                xtile_end=xtile_start
+                xtile_start=xtile_end-(number/((y+1.0)*(y+2.0)))
+		y += 1
+
+	print "alltiles:",alltiles
+	print "allcoordinates:",allcoordinates
+	json.dump(alltiles,tilesf)
+	json.dump(allcoordinates,coordinatesf)
+
+
+def create_tile(N, xleft, yleft, xright, yright):
+	global next
+	i=0
+        while i <= (xright-xleft):
+                alltiles[next]=int((xleft+i)*yleft)
+                allcoordinates.append(int(yleft))
+                next += 1
+		i += 1
 
 if __name__=="__main__":
-	hyperbolic_tiling(15)
-		
-		
-		
+	hyperbolic_tiling(38)
