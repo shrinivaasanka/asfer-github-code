@@ -9774,3 +9774,44 @@ References:
 (*) Benchmark numbers for factoring 511 has been added to testlogs/ and are similar to previous numbers
 (*) .mergedtiles and .coordinates files are loaded/dumped as JSON in python hyperbolic tiling
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+476. (FEATURE-DONE and THEORY) Computational Geometric Factorization Update - Benchmarks and Tiling - 20 November 2017 - related to 34
+-----------------------------------------------------------------------------------------------------------------------------------------
+(*) Some further changes to Python hyperbolic tiling have been made - tile endpoints have been cast from floating point to integer
+for create_tile()
+(*) C++ tiling in cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.cpp has been parametrized and takes
+as commandline argument the integer to factorize.
+(*) Shell script cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.sh has been changed to pass in the integer to
+factorize to the C++ tiling binary in cpp-src/ and spark-submit for PySpark executable in python-src/ from shell args $*
+(*) This shell script unifies C++ tiling and PySpark factorization
+(*) Known issues: Python tiling still differs from C++ tiling significantly. Changing the hardcoded tile arrays storage in C++ tiling
+to malloc()-ed heap storage causes faulty tiling. There are only optimization issues which do not affect the factorization. Factorization
+works well and more benchmarks were done e.g for integers 723 and 501. Numbers for these and past numbers are charted below
+(*) Following profiling numbers along with previous benchmarks for 8,9,10 bits (14 November 2017) capture the trend in the exponent of logN 
+(*) Gradual increase in exponent of number of bits because of static number of parallel RAMs (cores) is not quite steep from 
+3-bit to 10-bit integers as one might expect. Integers of same bit numbers need almost equal duration to factorize which implies the exponent
+could be a function of logN and not N. Htop shows equal loading of both cores of CPU and consumption is almost 100%+100%.
+(*) Cloud computing is not exactly a parallel RAM but multiple cores are PRAMs having concurrent access to a shared memory. Nodes in
+cloud have local memory processing too. Spark's Global State Variables (Accumulators) which are reflected across all cloud nodes are
+software simulations of Parallel RAMs - same global state is concurrently accessed by CPUs of spark nodes. Present PySpark implementation
+ does the sorting on accumulators. Binary search is not necessary because Maximum elements at the end of the k-merge sorting of globalmergetiles automatically have shuffled coordinates as factors in globalcoordinates accumulator. This shaves of additional O(logN). This optimization 
+is an update to drafts in 34.1 and 34.2:
+         - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.tex/download
+         - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
+
+(*) Following are only representative figures and ideal benchmark requires a Spark cloud preferably on machines of high number multicore CPUs
+ and comparison with existing General Number Field Sieve implementations (which is quasipolynomial-exponential).
+----------------------------------------------------------------
+723 - 10-bit - real    16m30.346s = 990.346s ~ O(logN^2.9956)
+511 - 9-bit - real    7m46.518s = 466.518s ~ O(logN^2.8382)
+511 - 9-bit - real    7m35.642s = 455.642s ~ O(logN^2.7854)
+501 - 9-bit - real    7m36.879s = 456.642s ~ O(logN^2.7864) [shell script - includes time duration for C++ tiling]
+100 - 7-bit - real    2m33.911s = 153.911s ~ O(logN^2.5851)
+123 - 7-bit - real    2m52.704s = 172.704s ~ O(logN^2.6482)
+63 - 6-bit - real    1m17.460s = 77.460s ~ O(logN^2.4243)
+33 - 6-bit - real    0m58.950s = 58.950s ~ O(logN^2.2757)
+14 - 4-bit - real    0m19.927s = 19.927s ~ O(logN^2.1609)
+12 - 4-bit - real    0m19.651s = 19.651s ~ O(logN^2.1609)
+6 - 3-bit - real    0m15.118s = 15.118s ~ O(logN^2.4649)
+
+

@@ -45,6 +45,7 @@ extern "C"
 #include <sys/time.h>
 }
 
+int get_nearest_power_of_two(long double);
 long double factorial(long double);
 long double power_of_x(long double, long double);
 long double sum_of_logs(long double);
@@ -57,7 +58,10 @@ static long double factor=-1.0;
 
 const int PADDING=0;
 
-
+/*
+int *mergedtiles;
+int *coordinates;
+*/
 int mergedtiles[512];
 int coordinates[512];
 /*
@@ -66,28 +70,34 @@ int coordinates[256];
 */
 int next=0;
 
-int main()
+int main(int argc, char *argv[])
 {
 /*
 Textual Function Plotter Code for Computation of Upperbound for Discrete Hyperbolic Factorization with Stirling Formula - using Rectangular Binary or Interpolation Search (10 September 2013) - http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicFactorization_UpperboundDerivedWithStirlingFormula_2013-09-10.pdf/download
 
 Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_updated_rectangular_interpolation_search_and_StirlingFormula_Upperbound.pdf/download
 */
+	long double number_to_factorize = 0.0;
 	long double n = 0.0, i=0.0;
 	long double prevlogsumoflogs=0.0;
 	long double prevsum = 0.0, sum = 0.0, prevsumdiff = 0.0, sumdiff = 0.0, term1 = 0.0;
-	//for(n = 2.0; n <= 5000000.0; n++)
-	for(n = 511.0; n <= 511.0; n++)
+	number_to_factorize=atoi(argv[1]);
+
+	int nearest_power_of_two=get_nearest_power_of_two(number_to_factorize);
+	cout<<"nearest power of two:"<<nearest_power_of_two<<endl;
+	/*
+	mergedtiles=(int*)malloc((nearest_power_of_two)*sizeof(int));
+	coordinates=(int*)malloc((nearest_power_of_two)*sizeof(int));
+	*/
+
+	for(n = number_to_factorize; n <= number_to_factorize; n++)
 	{
 		struct timeval tv_start;
 		gettimeofday(&tv_start,NULL);
-		//term1 = power_of_x(n,sqrt(n)-1)/(factorial(sqrt(n)-1.0)*factorial(sqrt(n))) ;
 		cout<<"=========================================================="<<endl;
-		//cout<<"term1 = "<<term1<<"; log(n^(sqrt(n)-1)/sqrt(n)!(sqrt(n)-1)!)/loglogn = "<<log2l(term1)/log2l(log2l(n))<<endl;
 		cout<<"Factorization begins at: "<<tv_start.tv_sec<<" secs and "<<tv_start.tv_usec<<" microsecs "<<endl;
 		system("date");
 		fflush(stdout);
-		//cout<<"Factorization of n="<<n<<"; Stirling upperbound for sum of logs ---------- ="<<stirling_upperbound(n)<<endl;
 
 		/*
 		Sum of log/n*(n+1) and its Stirling Upperbound	log(n^(n-1)/n!*(n-1)!) and its intriguingly widening gap with log(n)
@@ -98,8 +108,6 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 		double sumoflogs=sum_of_logs(n);
 		cout<<"Factorization of n="<<n<<"; log(N) ="<<log2l(n)<<";(log(N))^3="<<log2l(n)*log2l(n)*log2l(n)<<"; Theoretically derived upperbound == sum of logs which is total binary search time on all discretized tiles (with roundoff for negative values) :"<<sumoflogs<<endl;
 		cout<<"Factorization of n="<<n<<"; Stirling Upperbound (without roundoff for negative values) == "<<stirling_upperbound(n)<<endl;
-		//cout<<"Factorization of n="<<n<<"; sum of logs as single log ----- log2l(n^(n-1)/n!*(n-1)!) ="<<log2l(term1)<<endl;
-		//cout<<"Factorization of n, log2l(n)="<<log2l(n)<<endl;
 		struct timeval tv_end;
 		gettimeofday(&tv_end,NULL);
 		cout<<"Factorization ends at: "<<tv_end.tv_sec<<" secs and "<<tv_end.tv_usec<<" microsecs "<<endl;
@@ -115,16 +123,20 @@ Complete LatexPDF draft version uploaded at: http://sourceforge.net/projects/aca
 		fflush(stdout);
 		cout<<"=========================================================="<<endl;
 	}
-	//binary_search_int(232,2,11,15,11);
-	//cout<<"Binary search for factors of 35 as :["<<factor<<",5]<<"<<endl; 
 
-	for(int mt=0; mt < 512; mt++)
+	for(int mt=0; mt < nearest_power_of_two; mt++)
 	{
 		cout<<"mergedtiles = "<<mergedtiles[mt]<<endl;
 		cout<<"coordinates = "<<coordinates[mt]<<endl;
 	}
 }
 
+int get_nearest_power_of_two(long double n)
+{
+	int logn = log2l(n);
+	int npoftwo = (int)power_of_x(2.0, (long double)(logn + 1.0));
+	return npoftwo;
+} 
 
 long double factorial(long double n)
 {
@@ -150,19 +162,10 @@ long double sum_of_logs(long double n)
 			temp = 0.0; // tile has length 1
 		else
 			temp = log2l(n/(y*(y+1.0)));
-		//cout<<"########"<<endl;
-		//cout<<"tesselation from 1 to N="<<n<<"  ------ discretized tile for log(deltai) at i="<<i<<" : "<<temp<<endl;
-		//cout<<"binary_search_int("<<(int)n<<","<<(int)tile_sum<<","<<(int)i<<","<<(int)(tile_sum+(n/(i*(i+1.0))))<<","<<(int)i<<")"<<endl;
-		//cout<<"tesselation from 1 to N="<<n<<"  ------ discretized tile for log(deltai) at i="<<y<<" ranges from "<<xtile_start<<" to "<<xtile_end<<endl;
 		cout<<"binary_search_int("<<(int)n<<","<<(int)xtile_start<<","<<(int)y<<","<<(int)(xtile_end)<<","<<(int)y<<")"<<endl;
 		factor=binary_search_int((int)n,(int)(xtile_start)-PADDING,(int)y,(int)(xtile_end)+PADDING,(int)y);
-		//cout<<"binary_search_int_arrayless("<<(int)n<<","<<(int)xtile_start<<","<<(int)y<<","<<(int)(xtile_end)<<","<<(int)y<<")"<<endl;
-		//factor=binary_search_int_arrayless((int)n,(int)(xtile_start)-PADDING,(int)y,(int)(xtile_end)+PADDING,(int)y);
-		//cout<<"binary_search_dble("<<n<<","<<xtile_start<<","<<y<<","<<(xtile_end)<<","<<y<<")"<<endl;
-		//factor=binary_search_dble(n,xtile_start,y,xtile_end,y);
 		xtile_end=xtile_start;
 		xtile_start=xtile_end-(n/((y+1.0)*(y+2.0)));
-		//cout<<"########"<<endl;
 		xtile_sum += (n/(y*(y+1.0)));
 		sumoflogs += temp;
 	}
@@ -178,7 +181,6 @@ int binary_search_int_arrayless(int N, int xleft, int yleft, int xright, int yri
 	- Ka.Shrinivaasan 8November2013
 	*/
 
-	//cout<<"(int)((xleft+xright)/2):"<<(int)((xleft+xright)/2)<<"; array[(int)((xright-xleft)/2)]:"<<array[(int)((xright-xleft)/2)]<<endl;
 	
 	if ((xleft+(int)(xright-xleft/2))*yleft == N)
 	{
@@ -189,12 +191,10 @@ int binary_search_int_arrayless(int N, int xleft, int yleft, int xright, int yri
 	{
 		if ((xleft+(int)(floor((xright-xleft)/2)))*yleft > N)
 		{
-			//binary_search_int_arrayless(N, xleft, yleft, xleft+(int)(floor((xright-xleft)/2)), yright);
 			binary_search_int(N, xleft, yleft, xleft+(int)((xright-xleft)/2), yright);
 		}
 		else
 		{
-			//binary_search_int_arrayless(N, xleft+(int)(floor((xright-xleft)/2))+1, yleft, xright, yright);
 			binary_search_int(N, xleft+(int)((xright-xleft)/2)+1, yleft, xright, yright);
 		}
 	}
@@ -203,8 +203,6 @@ int binary_search_int_arrayless(int N, int xleft, int yleft, int xright, int yri
 int binary_search_int(int N, int xleft, int yleft, int xright, int yright)
 {
 	int array[(xright-xleft)+1];
-	//cout<<"binary_search_int(): xleft = "<<xleft<<"; xright = "<<xright<<endl;
-	//cout<<"binary_search_int(): tile searched is [";
 	int i;
 	for(i=0;i <= (xright-xleft); i++)
 	{
@@ -214,12 +212,9 @@ int binary_search_int(int N, int xleft, int yleft, int xright, int yright)
 		coordinates[next]=yleft;
 		//cout<<array[i]<<",";
 	}
-	//cout<<"]"<<endl;
-	//cout<<"sizeof tile:"<<sizeof(array)<<endl;
 	if(i==0 || sizeof(array) == 4)
 		return xright;
 	i=0;
-	//cout<<"(int)((xleft+xright)/2):"<<(int)((xleft+xright)/2)<<"; array[(int)((xright-xleft)/2)]:"<<array[(int)((xright-xleft)/2)]<<endl;
 	if (array[(int)((xright-xleft)/2)] == N)
 	{
 		cout<<"binary_search_int(): N="<<N<<" (a "<<log2l(N)<<" bit number); Factor is "<<xleft+(int)((xright-xleft)/2)<<"; Factor*(yright or yleft)="<<(xleft+((int)((xright-xleft)/2)))<<"*"<<yright<<"="<<(xleft+((int)((xright-xleft)/2)))*yright<<endl;
@@ -238,7 +233,6 @@ int binary_search_int(int N, int xleft, int yleft, int xright, int yright)
 long double binary_search_dble(long double N, long double xleft, long double yleft, long double xright, long double yright)
 {
 	int array[(int)(xright-xleft)+1];
-	//cout<<"binary_search_int(): xleft = "<<xleft<<"; xright = "<<xright<<endl;
 	cout<<"binary_search_dble(): tile searched is [";
 	for(int i=0;i <= ((int)xright-(int)xleft); i++)
 	{
@@ -251,7 +245,6 @@ long double binary_search_dble(long double N, long double xleft, long double yle
 	if(sizeof(array)==4)
 		return xleft;
 
-	//cout<<"(int)((xleft+xright)/2):"<<(int)((xleft+xright)/2)<<"; array[(int)((xright-xleft)/2)]:"<<array[(int)((xright-xleft)/2)]<<endl;
 	if (array[(((int)xright-(int)xleft)/2)] == N)
 	{
 		cout<<"binary_search_dble(): N="<<N<<"; Factor is "<<xleft+((int)xright-(int)xleft)/2<<endl;

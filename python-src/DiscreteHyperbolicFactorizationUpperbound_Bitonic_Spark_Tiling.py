@@ -34,20 +34,23 @@ next=0
 def hyperbolic_tiling(number):
 	tilesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.mergedtiles","w")
         coordinatesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.coordinates","w")
-	no_of_bits=int(math.log(number,2) + 1.0) 
+	no_of_bits=int(math.log(number,2)+1.0) 
 	print "number of bits:",no_of_bits
 	power_of_two=int(math.pow(2,no_of_bits))
 
-	for y in xrange(power_of_two):
-		alltiles[y]=0
+	for z in xrange(power_of_two):
+		alltiles[z]=0
 		allcoordinates.append(0)
 
-        xtile_start=float(number/2)
+	print len(alltiles)
+	print len(allcoordinates)
+
+        xtile_start=float(number/2.0)
         xtile_end=float(number)
         y=1.0
 	PADDING=0.0
         while y < number:
-                create_tile(number,(xtile_start)-PADDING,y,(xtile_end)+PADDING,y)
+                create_tile(int(number),int((xtile_start)-PADDING),int(y),int((xtile_end)+PADDING),int(y))
                 xtile_end=xtile_start
                 xtile_start=xtile_end-(number/((y+1.0)*(y+2.0)))
 		y += 1
@@ -61,11 +64,15 @@ def hyperbolic_tiling(number):
 def create_tile(N, xleft, yleft, xright, yright):
 	global next
 	i=0
-        while i <= (xright-xleft):
+	print "create_tile(): xleft=",xleft,"; yleft=",yleft,"; xright=",xright,"; yright=",yright 
+        while i <= (xright-xleft) and next < N:
                 alltiles[next]=int((xleft+i)*yleft)
-                allcoordinates.append(int(yleft))
+                allcoordinates[next]=int(yleft)
+		print "next=",next
+		print "alltiles[next]=",alltiles[next]
+		print "allcoordinates[next]=",allcoordinates[next]
                 next += 1
 		i += 1
 
 if __name__=="__main__":
-	hyperbolic_tiling(38)
+	hyperbolic_tiling(723)

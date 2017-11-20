@@ -379,9 +379,12 @@ def MergedTiles_BitonicSort(number_to_factorize):
 	print "sorted globalmergedtiles accumulator version:  = ",globalmergedtiles_accum.value
 	print "sorted globalcoordinates accumulator version:  = ",globalcoordinates_accum.value
 	print "==========================" 
-	print "Factor of ",number_to_factorize," is:"
-	print "==========================" 
-	print globalcoordinates_accum.value[0]
+	print "Factors of ",number_to_factorize," are:"
+	print "=========================="
+	x=0
+	while globalmergedtiles_accum.value[x]==number_to_factorize: 
+		print globalcoordinates_accum.value[x]
+		x+=1
         spcon.stop()
 
 if __name__=="__main__":
