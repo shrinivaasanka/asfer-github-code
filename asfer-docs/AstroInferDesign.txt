@@ -9850,6 +9850,7 @@ References:
 477.1 Line segment turn detection - http://fileadmin.cs.lth.se/cs/Personal/Rolf_Karlsson/lect9.pdf - For two line segments, find if there is a left or right turn - line segments are vectors and sign of their cross product determines left or right turn. Assuming a pixelated polygon and
 its sides as input array of line segments, cross product of adjacent pairs of line segment vectors can be computed in parallel and direction of turn can be found.
 477.2 Sweepline algorithms - http://www.ics.uci.edu/~goodrich/pubs/ggb-sweep-j.pdf
+477.3 Rectangle Stabbing - School on Geometric Computing, IIT Delhi (2010) - http://www.cse.iitd.ernet.in/~ssen/geomschool/nandy/TR-RS.pdf - Stabbing number for a set of axis-parallel rectangles is the minimum number of vertical and horizontal lines required such that each line passes through one of the rectangles covering all rectangles. This problem is NP-hard by reduction from set cover. Hyperbolic pixelation is a special case inverse problem of stabbing where a polygon of adjoining axis-parallel rectangles are created such that hyperbolic arc passes through each of them.
 
 
 
