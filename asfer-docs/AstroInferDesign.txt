@@ -9815,4 +9815,35 @@ is an update to drafts in 34.1 and 34.2:
 12 - 4-bit - real    0m19.651s = 19.651s ~ O(logN^2.1609)
 6 - 3-bit - real    0m15.118s = 15.118s ~ O(logN^2.4649)
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+477. (THEORY) Computational Geometric Factorization - Tiling Optimizations - K-Merge Sort is dispensable and Local Tile Search is sufficient
+- 21 November 2017
+----------------------------------------------------------------------------------------------------------------------------------------------
+Finding factor vertices in pixelated hyperbolic polygon is equivalent to geometric search query: "Is there a right turn followed by a
+downturn in the polygon?". These turning points coinciding with hyperbolic arc are factor points. Number of rectangles in pixelated hyperbolic
+polygon = O(logN/loglogN). Each tile along y-axis in the polygon (array of pixels) is of length deltay = N/[x(x+1)]. Maximum number of tiles
+in the pixelation can be derived as:
+	N/x(x+1) = deltay > 1 [each tile should be of length atleast 1]
+	N > x*x + x
+	=> x = (sqrt(1 + 4N) - 1) / 2
+	For large N, sqrt(1 + 4N) ~ sqrt(4N) = 2*sqrt(N)
+	=> x ~ sqrt(N) for large N
+Maximum number of tiles in the pixelation is O(sqrt(N)). If number of processors is O(sqrt(N)), each tile can be assigned to a processor and
+tiling can be done in O(1) parallel time. Number of processors required can be reduced by having O(sqrt(N)/(logN)^c) processors. O(sqrt(N))
+tiles can be created in O((logN)^c) total parallel time i.e in each iteration O(sqrt(N)/(logN)^c) tiles can be created in parallel by as many processors and there are O((logN)^c) iterations. Creating a tile in a processor is defined as assigning the tile interval ordered pair of coordinates (tilestart, tileend) to it where tilestart=(x, y1) and tileend=(x, y2). This tile segment interval is implicitly sorted ascending/descending in one of the axes and therefore can be locally binary searched. This does away with Global K-Merge Sort of the locally sorted tile segments. Because each tile is of length N/x(x+1), |y2-y1| = N/[x(x+1)]. If N exists in a tile segment then there exists a factor point (x,y) in the tile segment such that y1 < y < y2 and xy=N. Binary search per implicitly sorted tile segment is of O(log(N/[x(x+1)]) <= O(logN).
+
+Thus factors can be found just by:
+	477.1 Tiling in parallel requiring O((logN)^c) tile and O(sqrt(N)/(logN)^c) where number of tiles = O(sqrt(N))
+	477.2 Local Binary Search on each sorted tile of O(logN) time
+and no k-merge sort is necessary.
+
+Previous optimization reduces number of PRAMs by orders of (logN)^c but increases exponent of parallel time O((logN)^c). Bitonic K-merge sort is global and least parallel time though number of processors required is huge (yet in NC and work-time optimal). Bitonic K-merge sort doesnot require binary search because factors are in the forefront of the mergesorted and shuffled tile coordinates always.
+
+References:
+-----------
+477.1 Line segment turn detection - http://fileadmin.cs.lth.se/cs/Personal/Rolf_Karlsson/lect9.pdf - For two line segments, find if there is a left or right turn - line segments are vectors and sign of their cross product determines left or right turn. Assuming a pixelated polygon and
+its sides as input array of line segments, cross product of adjacent pairs of line segment vectors can be computed in parallel and direction of turn can be found.
+477.2 Sweepline algorithms - http://www.ics.uci.edu/~goodrich/pubs/ggb-sweep-j.pdf
+
+
 
