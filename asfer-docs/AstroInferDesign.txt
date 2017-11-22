@@ -9852,5 +9852,16 @@ its sides as input array of line segments, cross product of adjacent pairs of li
 477.2 Sweepline algorithms - http://www.ics.uci.edu/~goodrich/pubs/ggb-sweep-j.pdf
 477.3 Rectangle Stabbing - School on Geometric Computing, IIT Delhi (2010) - http://www.cse.iitd.ernet.in/~ssen/geomschool/nandy/TR-RS.pdf - Stabbing number for a set of axis-parallel rectangles is the minimum number of vertical and horizontal lines required such that each line passes through one of the rectangles covering all rectangles. This problem is NP-hard by reduction from set cover. Hyperbolic pixelation is a special case inverse problem of stabbing where a polygon of adjoining axis-parallel rectangles are created such that hyperbolic arc passes through each of them.
 
-
-
+--------------------------------------------------------------------------------------------------------
+479. (FEATURE-DONE and THEORY)  Computational Geometric Factorization and Parallel Tile Search Updates
+- related to 34 and 477 - 22 November 2017
+--------------------------------------------------------------------------------------------------------
+(*) cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.cpp has been revamped and unnecessary code has been removed. Function names have been changed. NUMBER_OF_TILES has been declared as a macro and has to be manually changed and compiled to nearest power of 2 greater than number to factorize. Compilation and PySpark factorization is taken care of by shell script cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.sh
+(*) New Spark python script python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been added to repository. This is the parallel tile search optimization already mentioned in NeuronRain AsFer Design Document. Spark parallelize() distributes the tiles-coordinates array of ordered pairs as RDDs across cloud nodes and node prints the factor point in y-axis if x-axis matches the number to factorize. Spark parallelize() simulates the binary search on a local tile segment per PRAM processor. Presently binary search has not been implemented in tilesearch() function of foreach() Spark Action. This is because map/foreach functions act on a single element argument of a parallelized RDD.
+(*) How Spark parallelizes a sequential datastructure on cloud nodes is equivalent to binary search on an array of length 1 which is a no-op.  Because of this parallize() of Spark has been assumed to be equivalent to a binary search.
+(*) Benchmark numbers for two integers 1011 and 1013 with and without sorting have been committed to testlogs/ and Tiling time durations have also been captured on how well mere tile search optimizes as opposed to sorting.
+(*) As evidenced from python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.22November2017, tiling preprocessing is quite insignificant (<<1 sec) and tile search for 1011 and 1013 requires approximately 20 seconds while bitonic sorting duration for same numbers is ~16minutes (960 seconds) a speedup of almost 50x.
+(*) Benchmarks for Local Tile Search obviate the requirement for k-merge sorting of pixelated hyperbolic tiles, if parallelism is huge.
+(*) Following is the trade-off:
+        - Bitonic K-merge sorting of tiles : binary search is not necessary but a tremendous performance drag and overkill, suitable for low number of PRAMs
+        - Local tile search : binary search is necessary only per processor but requires relatively high number of PRAMs
