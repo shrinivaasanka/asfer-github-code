@@ -9853,7 +9853,7 @@ its sides as input array of line segments, cross product of adjacent pairs of li
 477.3 Rectangle Stabbing - School on Geometric Computing, IIT Delhi (2010) - http://www.cse.iitd.ernet.in/~ssen/geomschool/nandy/TR-RS.pdf - Stabbing number for a set of axis-parallel rectangles is the minimum number of vertical and horizontal lines required such that each line passes through one of the rectangles covering all rectangles. This problem is NP-hard by reduction from set cover. Hyperbolic pixelation is a special case inverse problem of stabbing where a polygon of adjoining axis-parallel rectangles are created such that hyperbolic arc passes through each of them.
 
 --------------------------------------------------------------------------------------------------------
-479. (FEATURE-DONE and THEORY)  Computational Geometric Factorization and Parallel Tile Search Updates
+478. (FEATURE-DONE and THEORY)  Computational Geometric Factorization and Parallel Tile Search Updates
 - related to 34 and 477 - 22 November 2017
 --------------------------------------------------------------------------------------------------------
 (*) cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.cpp has been revamped and unnecessary code has been removed. Function names have been changed. NUMBER_OF_TILES has been declared as a macro and has to be manually changed and compiled to nearest power of 2 greater than number to factorize. Compilation and PySpark factorization is taken care of by shell script cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.sh
@@ -9867,7 +9867,7 @@ its sides as input array of line segments, cross product of adjacent pairs of li
         - Local tile search : binary search is necessary only per processor but requires relatively high number of PRAMs
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-480. (FEATURE-DONE) Computational Geometric Factorization Tiling Optimization - Binary Search for Tile Segments in Spark - 23 November 2017
+479. (FEATURE-DONE) Computational Geometric Factorization Tiling Optimization - Binary Search for Tile Segments in Spark - 23 November 2017
 -------------------------------------------------------------------------------------------------------------------------------------------
 (*) Binary Search has been implemented in Spark Tile Search Optimization by parallizing the set of intervals of pixelated hyperbolic arc.
 (*) By this each tile interval can be binary searched in parallel to find the factor point with no
