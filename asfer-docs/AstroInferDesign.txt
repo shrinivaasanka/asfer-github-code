@@ -9880,11 +9880,22 @@ necessity for global k-merge sorting.
 is sufficient to print the factors
 (*) Following are benchmark numbers for factorizing few reasonably high bit integers. Removing K-Merge sort has significant effect on the
 throughput even for a single node spark cluster on dual core (local[2]):
-Factorization of 12093 (14-bit): real	0m33.108s
-Factorization of 65532 (16-bit): real	0m44.899s
-Factorization of 102349 (17-bit): real	1m5.490s
-Factorization of 934323 (20-bit): real	8m20.017s
-Factorization of 1343231 (21-bit): real	16m34.759s
+Factorization of 12093 (14-bit): real	0m33.108s (single core - local[1]) 
+Factorization of 12093 (14-bit): real	0m29.589s (dual core - local[2])
+
+Factorization of 65532 (16-bit): real	0m44.899s (single core - local[1])
+Factorization of 65532 (16-bit): real	0m39.621s (dual core - local[2])
+
+
+Factorization of 102349 (17-bit): real	1m5.490s (single core - local[1])
+Factorization of 102349 (17-bit): real	0m58.776s (dual core - local[2])
+
+Factorization of 934323 (20-bit): real	8m20.017s (single core - local[1])
+Factorization of 934323 (20-bit): real	7m37.958s (dual core - local[2])
+
+Factorization of 1343231 (21-bit): real	16m34.759s (single core - local[1])
+Factorization of 1343231 (21-bit): real	10m49.218s (dual core - local[2])
+ 
 (*) Above tile binary search numbers beat bitonic k-mergesort of tiles by many orders of magnitude 
 (*) logs containing factors of above integers have been committed to testlogs/
 (*) This optimization thus effectively supersedes mergesort of tiles and is thus a better PySpark implementation of Discrete Hyperbolic Factorization. 

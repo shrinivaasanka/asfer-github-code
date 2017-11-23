@@ -76,7 +76,7 @@ def SearchTiles_and_Factorize(n):
 	global globalmergedtiles
 	global globalcoordinates
 
-	spcon = SparkContext("local[1]","Spark_TileSearch_Optimized")
+	spcon = SparkContext("local[2]","Spark_TileSearch_Optimized")
 
         tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
 
