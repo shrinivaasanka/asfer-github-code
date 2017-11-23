@@ -9899,4 +9899,9 @@ Factorization of 1343231 (21-bit): real	10m49.218s (dual core - local[2])
 (*) Above tile binary search numbers beat bitonic k-mergesort of tiles by many orders of magnitude 
 (*) logs containing factors of above integers have been committed to testlogs/
 (*) This optimization thus effectively supersedes mergesort of tiles and is thus a better PySpark implementation of Discrete Hyperbolic Factorization. 
+----------------------------------------------
+(*) Updated AsFer Design Document - benchmark numbers for both single and dual cores for tile search
+in computational geometric factorization
+(*) Updated python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py for dual cores
+(local[2])
 
