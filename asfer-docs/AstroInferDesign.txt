@@ -9865,3 +9865,27 @@ its sides as input array of line segments, cross product of adjacent pairs of li
 (*) Following is the trade-off:
         - Bitonic K-merge sorting of tiles : binary search is not necessary but a tremendous performance drag and overkill, suitable for low number of PRAMs
         - Local tile search : binary search is necessary only per processor but requires relatively high number of PRAMs
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+480. (FEATURE-DONE) Computational Geometric Factorization Tiling Optimization - Binary Search for Tile Segments in Spark - 23 November 2017
+-------------------------------------------------------------------------------------------------------------------------------------------
+(*) Binary Search has been implemented in Spark Tile Search Optimization by parallizing the set of intervals of pixelated hyperbolic arc.
+(*) By this each tile interval can be binary searched in parallel to find the factor point with no
+necessity for global k-merge sorting.
+(*) Separate pixelation and tile interval file creation C++ source file has been added in cpp-src/miscellaneous
+(*) Arrayless tile creation has been chosen and only intervals are written to a file suffixed as .tileintervals
+(*) Shell script which compiles and executes the tile interval creation file and spark interval binary search script has been added.
+(*) Invoking the shell script as:
+	cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.sh <number_to_factorize)
+is sufficient to print the factors
+(*) Following are benchmark numbers for factorizing few reasonably high bit integers. Removing K-Merge sort has significant effect on the
+throughput even for a single node spark cluster on dual core (local[2]):
+Factorization of 12093 (14-bit): real	0m33.108s
+Factorization of 65532 (16-bit): real	0m44.899s
+Factorization of 102349 (17-bit): real	1m5.490s
+Factorization of 934323 (20-bit): real	8m20.017s
+Factorization of 1343231 (21-bit): real	16m34.759s
+(*) Above tile binary search numbers beat bitonic k-mergesort of tiles by many orders of magnitude 
+(*) logs containing factors of above integers have been committed to testlogs/
+(*) This optimization thus effectively supersedes mergesort of tiles and is thus a better PySpark implementation of Discrete Hyperbolic Factorization. 
+

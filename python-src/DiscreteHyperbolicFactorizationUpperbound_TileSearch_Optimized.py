@@ -44,62 +44,50 @@ class VectorAccumulatorParam(AccumulatorParam):
               val1[i] += val2[i]
          return val1
 
-globalmergedtiles_accum=None
-globalcoordinates_accum=None
 
-globalmergedtiles=[]
-globalcoordinates=[]
-cpp_tiling=True
-
-def tilesearch(tilecoordinatepair):
+def tilesearch(tileintervalstr):
 	global number_to_factorize
-	if str(tilecoordinatepair[0]) == str(number_to_factorize):
-		print "================================================="
-		print "Factor is = ", tilecoordinatepair[1]
-		print "================================================="
+	if(len(tileintervalstr) > 1):
+		tileinterval=eval(tileintervalstr)
+		print "tilesearch(): tileinterval=",tileinterval
+		xleft=tileinterval[0]
+		yleft=tileinterval[1]
+		xright=tileinterval[2]
+		yright=tileinterval[3]
+		binary_search_interval(xleft,yleft,xright,yright)
+
+def binary_search_interval(xl,yl,xr,yr):
+	intervalmidpoint = int((xr-xl)/2)
+	if intervalmidpoint >= 0:
+		factorcandidate=(xl+intervalmidpoint)*yl
+		print "factorcandidate = ",factorcandidate
+		if factorcandidate == number_to_factorize:
+			print "================================================="
+			print "Factor is = ", yl 
+			print "================================================="
+		else:
+			if factorcandidate >  number_to_factorize:
+			        binary_search_interval(xl, yl, xl+int((xr-xl)/2), yr)
+               		else:
+               		        binary_search_interval(xl+int((xr-xl)/2)+1, yl, xr, yr)
+
 
 def SearchTiles_and_Factorize(n): 
 	global globalmergedtiles
 	global globalcoordinates
 
-	spcon = SparkContext("local[2]","Spark_TileSearch_Optimized")
+	spcon = SparkContext("local[1]","Spark_TileSearch_Optimized")
 
-	if cpp_tiling == True:
-                mergedtilesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.mergedtiles","r")
-                coordinatesf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_Bitonic.coordinates","r")
-                cnt=0
-                mergedtileslist=[]
-                coordinateslist=[]
-                mergedtileslist=mergedtilesf.read().split("\n")
-                while cnt < len(mergedtileslist):
-                         globalmergedtiles.append(toint(mergedtileslist[cnt]))
-                         cnt+=1
+        tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
 
-                cnt=0
-                coordinateslist=coordinatesf.read().split("\n")
-                while cnt < len(coordinateslist):
-                         globalcoordinates.append(toint(coordinateslist[cnt]))
-                         cnt+=1
-        else:
-                mergedtilesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.mergedtiles","r")
-                coordinatesf=open("./DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark.coordinates","r")
-                globalmergedtiles=json.load(mergedtilesf)
-                globalcoordinates=json.load(coordinatesf)
+        tileintervalslist=tileintervalsf.read().split("\n")
+	print "tileintervalslist=",tileintervalslist
+        tileintervalslist_accum=spcon.accumulator(tileintervalslist, VectorAccumulatorParam())
 
-	globalmergedtiles_accum=spcon.accumulator(globalmergedtiles, VectorAccumulatorParam())
-        globalcoordinates_accum=spcon.accumulator(globalcoordinates, VectorAccumulatorParam())
-
-	mergedtilescoordinates=zip(globalmergedtiles,globalcoordinates)
-	print "mergedtilescoordinates=",mergedtilescoordinates
-	paralleltilescoordinates=spcon.parallelize(mergedtilescoordinates)
-	factors=paralleltilescoordinates.foreach(tilesearch)
-	#dict_k=dict(k.collect())
-	#factors = sorted(dict_k.items(),key=operator.itemgetter(1), reverse=True)
-	print "SearchTiles_and_Factorize(): factors = ",factors
+	paralleltileintervals=spcon.parallelize(tileintervalslist)
+	paralleltileintervals.foreach(tilesearch)
 
 if __name__=="__main__":
 	number_to_factorize=toint(sys.argv[1])
-	if cpp_tiling==False:
-		DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling.hyperbolic_tiling(number_to_factorize)
 	SearchTiles_and_Factorize(number_to_factorize)
 
