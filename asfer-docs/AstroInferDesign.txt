@@ -9905,3 +9905,19 @@ in computational geometric factorization
 (*) Updated python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py for dual cores
 (local[2])
 
+----------------------------------------------------------------------------------------------------
+480. (FEATURE-DONE) Computation Geometric Factorization - Binary Search for Tiles - Benchmarks
+- 24 November 2017
+----------------------------------------------------------------------------------------------------
+Benchmark numbers for factoring 24 bit integer by Tile BinarySearch Optimization script have been committed to testlogs/ (single node cluster, dual core):
+
+Factorization of 9333123 (24-bit):
+---------------------------------
+real    112m24.101s (Spark duration 12:21 to 14:02 = 101minutes = 6060seconds)
+user    0m0.000s
+sys     0m0.004s
+
+Again binary search of tiles in parallel is way better than k-mergesort of tiles. Largest known numbers
+widely used are 128-bit. Trend for different bits indicates, Spark cloud of few multicore nodes is
+sufficient to factorize 128-bit integers in few minutes. Previous benchmark uses spark-default.conf files
+from python-src/InterviewAlgorithm/ (2GB of heapspace)
