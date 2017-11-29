@@ -34,6 +34,7 @@ from collections import defaultdict
 import operator
 import pprint
 import json
+from numpy import linalg
 
 class SupportVectorMachines(object):
 	def __init__(self,dimensions,bias):
@@ -120,6 +121,31 @@ class SupportVectorMachines(object):
 		print result
 		return (result,tuple)
 
+	def mercer_kernel_dot_product(self,point1,point2,kernel_dimension):
+		#Feature map phi maps a point in a dimension d to a point in dimension d+k: phi(x) = X
+		#Inner Product (Dot) of two vectors in dimension d+k = phi(x)*phi(y)
+		#Mercer Theorem unifies the Feature map and Dot product into a Kernel function defined as series:
+		#K(x,y) = Sigma(eigenvalue(i)*eigenfunction(x)*eigenfunction(y))
+
+		Kn=numpy.random.rand(kernel_dimension,kernel_dimension)
+		eigen=linalg.eig(Kn)
+		print "Eigenvalues:",eigen[0]
+		print "Eigenvectors:",eigen[1]
+		mer_ker=0
+		for d in xrange(kernel_dimension):
+			mer_ker += eigen[0][d].real*self.eigenfunction(eigen[1][d],point1)*self.eigenfunction(eigen[1][d],point2)
+		return mer_ker
+
+	def eigenfunction(self, eigenvector, point):
+		ef = 0
+		print "eigenfunction(): eigenvector = ",eigenvector
+		for x in xrange(len(eigenvector)):
+			print "eigenfunction(): eigenvector[x] = ",eigenvector[x].real
+			ef += eigenvector[x].real*point[x]
+		print "eigenfunction(): ef = ",ef
+		return ef
+ 
+
 if __name__=="__main__":
 	cvx=SupportVectorMachines(10,18.0)
 	point0=[1,1,1,1,1,1,1,1,1,1]
@@ -142,3 +168,4 @@ if __name__=="__main__":
 	point6=eval(sys.argv[1])
 	#cvx.classify(point6,training_dataset)
 	cvx.classify(point6)
+	cvx.mercer_kernel_dot_product(point1,point2,len(point1))
