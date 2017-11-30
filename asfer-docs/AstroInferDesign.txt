@@ -9956,6 +9956,7 @@ References:
 481.1 Efficient Parallel Algorithms and subclasses of NC - [KruskalRudolphSnir] - https://ac.els-cdn.com/030439759090192K/1-s2.0-030439759090192K-main.pdf?_tid=4ba471c8-d35a-11e7-9c39-00000aab0f26&acdnat=1511777222_ae2aa80751a47624aeb524f723e969b0
 481.2 On Parallel Search - Snir's Theorem - https://pdfs.semanticscholar.org/3a58/58e8517f28fa586364daffb34160c437bf78.pdf
 481.3 Point in Polygon (PIP) problem - https://en.wikipedia.org/wiki/Point_in_polygon - queries if a point is inside, outside or on the polygon. Factor points are always within the pixelated hyperbolic polygon.
+481.4 Simulation of BSP and CRCW PRAM in MapReduce - Sorting, Searching, and Simulation in the MapReduce Framework - [Michael T. Goodrich, Nodari Sitchinava, Qin Zhang] - https://arxiv.org/abs/1101.1902 - Theorem 3.2 - CRCW PRAM can be simulated on MapReduce clouds by logarithmic increase in parallel time.
 
 -----------------------------------------------------------------------------------------------------------------------------------
 482. (FEATURE-DONE) Support Vector Machines - Mercer Theorem - Kernel Implementation - 29 November 2017
