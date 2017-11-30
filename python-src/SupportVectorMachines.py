@@ -131,15 +131,20 @@ class SupportVectorMachines(object):
 		eigen=linalg.eig(Kn)
 		print "Eigenvalues:",eigen[0]
 		print "Eigenvectors:",eigen[1]
-		mer_ker=0
+		mer_ker_point1=[]
+		mer_ker_point2=[]
+		mer_ker_dot_product=0
 		for d in xrange(kernel_dimension):
-			mer_ker += eigen[0][d].real*self.eigenfunction(eigen[1][d],point1)*self.eigenfunction(eigen[1][d],point2)
-		return mer_ker
+			print "square root of eigenvalue:",math.sqrt(abs(eigen[0][d].real))
+			mer_ker_point1.append(math.sqrt(abs(eigen[0][d].real))*self.eigenfunction(eigen[1][d],point1))
+			mer_ker_point2.append(math.sqrt(abs(eigen[0][d].real))*self.eigenfunction(eigen[1][d],point2))
+			mer_ker_dot_product += eigen[0][d].real*self.eigenfunction(eigen[1][d],point1)*self.eigenfunction(eigen[1][d],point2)
+		return (mer_ker_point1,mer_ker_point2,mer_ker_dot_product)
 
 	def eigenfunction(self, eigenvector, point):
 		ef = 0
 		print "eigenfunction(): eigenvector = ",eigenvector
-		for x in xrange(len(eigenvector)):
+		for x in xrange(len(point)):
 			print "eigenfunction(): eigenvector[x] = ",eigenvector[x].real
 			ef += eigenvector[x].real*point[x]
 		print "eigenfunction(): ef = ",ef
@@ -168,4 +173,10 @@ if __name__=="__main__":
 	point6=eval(sys.argv[1])
 	#cvx.classify(point6,training_dataset)
 	cvx.classify(point6)
-	cvx.mercer_kernel_dot_product(point1,point2,len(point1))
+	print "======================================================"
+	print "Mercer Kernel: Feature Map and Dot Product of two lifted points"
+	print "======================================================"
+	mercer_kernel=cvx.mercer_kernel_dot_product(point1,point2,20)
+	print "Point ",point1," is mapped to :",mercer_kernel[0]
+	print "Point ",point2," is mapped to :",mercer_kernel[1]
+	print "Dot product of the two points in kernel :",mercer_kernel[2]
