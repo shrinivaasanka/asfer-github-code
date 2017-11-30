@@ -9970,3 +9970,8 @@ d+k = phi(x)*phi(y). Mercer Theorem unifies the Feature map and Dot product into
 K(x,y) as per previous identity (neglecting imaginary parts of Eigenvalues and Eigenvectors)
 (*) logs for this have been added to testlogs/
 
+------------------------------------------------------------------------------------------------------
+483. (FEATURE-DONE) Support Vector Machines - Mercer Kernel Update - 30 November 2017
+------------------------------------------------------------------------------------------------------
+(*) Mercer Kernel Function has been changed to return a tuple of feature mapped points and the dot product
+(*) Feature mapped points in higher dimension are : [....., square_root(eigenvalue[i])*eigenfunction(x[i]),....]
