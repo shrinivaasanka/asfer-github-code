@@ -9652,9 +9652,10 @@ is captured in per task duration logs below by Spark Driver:
 	- if there are more than 1 tuples per minimum distance, those have to be reckoned as support vectors 
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-471. (THEORY) Jones-Sato-Wada-Wiens Theorem, Complement Functions, Prime-Composite Complementation, Prime Number Theorem, Ulam Spiral, 
+471. (THEORY) Jones-Sato-Wada-Wiens Theorem, Complement Functions, Prime-Composite Complementation, Prime Number Theorem, Ulam Spiral,
  Ramsey 2-coloring of integers, Hilbert Tenth Problem, Unique Factorization , Matiyasevich-Robinson-Davis-Putnam Theorem -
-related to 370,390,394 - 13 November 2017, 14 November 2017, 29 November 2017
+related to 370,390,394 - 13 November 2017, 14 November 2017, 29 November 2017, 1 December 2017
+(Draft updates to https://arxiv.org/abs/1106.4102)
 ---------------------------------------------------------------------------------------------------------------------------------------
 Jones-Sato-Wada-Wiens Theorem proves existence of a polynomial in 25 degree-26 variables which has values equal to set of all primes. This relates to Prime-Composite Function Complementation - Jones-Sato-Wada-Wiens polynomial is a complement function of set of composites which are formalized by unique factorization theorem. This is special case of Matiyasevich-Davis-Robinson-Putnam Theorem which proves any recursively enumerable set accepted by a Turing machine is equivalent to a polynomial accepting the elements of the set. Another closely related problem is: Does there exist a prime between two integers p=xy and q=x(y+1). Prime number theorem states and proves number of primes less than N=O(N/logN).
 
@@ -9677,6 +9678,39 @@ For large x:
 thus proving the assumption. This estimate of number of primes between two composites thus directly has bearing on discrepancy of this 2-colored (prime-composite) integer sequence where discrepancy is difference between number of elements of 2 colors in monochromatic arithmetic progressions. Ulam Spiral, which is sequence of integers written in concentric spiralling rectangle, has diagonals aligned along points of prime numbers described by polynomials. Rectangle of Ulam Spiral can be written as polynomial x(x+1) or x(x-1). Previous derivation on existence of primes between x(x+1) and x*x implies there is a prime diagonal. Ulam rectangle sequence for x(x+1) or x(x-1) is 1,2,4,6,9,12,16,20,25,30,36,42,...
 
 Matiyasevich-Davis-Robinson-Putnam theorem implies every recursively enumerable set has a diophantine equation. Complement Function in several variables is nothing but a diophantine equation for the complement set by rewriting a diophantine as function in several variables. Thus concepts of Diophantine sets/equations and Complement functions are synonymous. Decidability of complement functions (https://arxiv.org/abs/1106.4102) is equivalent to decidability of diophantine equations. MRDP theorem requires every recursively enumerable set to have a diophantine equation and therefore to have a function for it. [There exists a set which is not recursively enumerable e.g set of subsets of infinite set]. Undecidability of Function Complementation follows from MRDP theorem because there exists a recursively enumerable set which is not computably recursive and hence has no algorithm (algorithms are computable recursive languages which do not loop and have yes/no halt on all inputs) i.e Undecidability of Hilbert's Tenth Problem applies directly to Undecidability of Function Complementation. In other words set of diophantines has cardinality greater than set of all computable recursive languages and therefore there exists a diophantine function for a complement set which cannot be computed by a Turing machine. This is one more proof of undecidability of complementation and simpler than Post Correspondence Problem based proof described earlier.
+
+Definition:
+----------
+For a set S and subsets A,B of S, if {A,B} is a disjoint set cover of S and if A has a diophantine equation diophantine(A) (expressible as values of polynomial), then diophantine equation for B = diophantine(B), is the complement function of diophantine(A).
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Theorem: Existence of Complement Diophantine Equation or Complement Function is Undecidable when neither of the complementary sets are recursive.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Proof:
+------
+MRDP theorem for Hilbert's tenth problem implies every recursively enumerable set is expressible as values of a diophantine polynomial.
+
+Possibility 1 - Generic - Both complementary sets A and B are recursively enumerable:
+--------------------------------------------------------------------------------------
+If both complementary sets A and B are recursively enumerable, they always have a diophantine polynomial - diophantine(A) and diophantine(B).
+There is a known result which states: if set A and B=S-A are both recursively enumerable, then A is recursive. But there exists a recursively enumerable set B which is not recursive, for some complement A => There is no algorithm for construction of diophantine(B).
+
+Possibility 2 - Special - One of the complementary sets A or B is recursively enumerable and the other is recursive:
+--------------------------------------------------------------------------------------------------------------------
+Both A and B have a diophantine polynomial. If A is recursively enumerable but not recursive, there is a complement B (A=S-B) such that there is no algorithm for construction of diophantine(A).
+
+Possibility 3 - Special - Both complementary sets A and B are recursive:
+------------------------------------------------------------------------
+Both A and B are recursive and recursively enumerable => Both A and B have diophantine polynomials and both diophantine(A) and diophantine(B) can be constructed. There are many examples for this complementation: [Squares,PellEquation],[Composites/UniqueFactorizationDomain,Primes] etc.,
+
+Possibility 4 - Special - Both complementary sets are non recursively enumerable:
+--------------------------------------------------------------------------------
+Obviously both sets A and B are beyond Chomsky hierarchy and there is no algorithm for construction of diophantine(A) and diophantine(B)
+
+Possibility 5 - Special - One of the complementary sets is recursively enumerable and the other is non recursively enumerable:
+-------------------------------------------------------------------------------------------------------------------------------
+One of the sets A is recursively enumerable and thus has a diophantine polynomial. But there exists a complement B=S-A such that A is not recursive => There is no algorithm for construction of diophantine(A)
 
 References:
 ----------
