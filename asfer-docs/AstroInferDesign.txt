@@ -9976,3 +9976,11 @@ K(x,y) as per previous identity (neglecting imaginary parts of Eigenvalues and E
 ------------------------------------------------------------------------------------------------------
 (*) Mercer Kernel Function has been changed to return a tuple of feature mapped points and the dot product
 (*) Feature mapped points in higher dimension are : [....., square_root(eigenvalue[i])*eigenfunction(x[i]),....]
+
+----------------------------------------------------------------------------------------------------
+484. (FEATURE-DONE) Compressed Sensing - Image Sketch implementation - 1 December 2017
+----------------------------------------------------------------------------------------------------
+(*) Sketch B of an image bitmap X is computed by multiplying with a random matrix A: B=AX
+(*) import ImageToBitMatrix from image_pattern_mining/ for mapping an image to a bitmap matrix
+(*) Sketch matrix B contains compressed information of the larger image. Original image can be sensed from this sketch.
+
