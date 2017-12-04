@@ -10021,3 +10021,16 @@ K(x,y) as per previous identity (neglecting imaginary parts of Eigenvalues and E
 (*) import ImageToBitMatrix from image_pattern_mining/ for mapping an image to a bitmap matrix
 (*) Sketch matrix B contains compressed information of the larger image. Original image can be sensed from this sketch.
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+485. (FEATURE-DONE) Compressed Sensing Update - Decompression and Error estimation of recovered image bitmap from sketch - 4 December 2017
+-------------------------------------------------------------------------------------------------------------------------------------------
+(*) Sketch Ax=B of an image bitmap has been persisted to a file CompressedSensing.sketch
+(*) A is a random matrix of dimensions (m,n) m<<n and m is scaled by a sketch ratio variable
+(*) Original image x is recovered from sketch Ax=B by inverting A and multiplying with sketch:
+                Ainverse.Ax = x_recovered
+(*) For non-square only approximate pseudo inverse is computable.
+(*) For inverting non-square matrix A, Moore-Penrose Pseudoinverse function pinv() from NumPy is invoked.
+(*) Error of the recovered image computed by trace (sum of all entries) of the recovered image.
+(*) Logs for multiple sketch ratios (row values:100,200,300,400,50) have been committed to testlogs/ which show an increase in error
+as size of the sketch decreases.
+
