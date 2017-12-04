@@ -29,29 +29,86 @@ from PIL import Image
 import numpy
 import pprint
 import random
-import ImageToBitMatrix 
+import ImageToBitMatrix
+import json
+from scipy.sparse.linalg import lsmr
+from scipy.linalg import pinv
 
 class CompressedSensing(object):
+	def __init__(self):
+		self.image_matrix=[]	
+		self.random_matrix=[]
+		self.sketch_ratio=50
+
 	def sketch(self,image_matrix):
+		#A = (number_of_rows/self.sketch_ratio,number_of_rows)
+		#x = (number_of_rows,number_of_columns)
+		#Ax = B(sketch) = (number_of_rows/self.sketch_ratio,number_of_columns)	
 		number_of_rows=len(image_matrix)
 		number_of_columns=len(image_matrix[0])
-		random_matrix=numpy.random.rand(number_of_columns,1)
+		self.image_matrix=image_matrix
+		self.random_matrix=numpy.random.rand(number_of_rows/self.sketch_ratio,number_of_rows)
 		print "=============================="
 		print "Random Matrix A:"
 		print "=============================="
-		print random_matrix
+		print self.random_matrix
 		print "=============================="
 		print "Image Matrix X:"
 		print "=============================="
 		print image_matrix
-		sketch=numpy.matmul(image_matrix,random_matrix)
+		sketch=numpy.matmul(self.random_matrix,image_matrix)
+		sketchf=open("CompressedSensing.sketch","w")
 		print "=============================="
 		print "Sketch B=AX:"
 		print "=============================="
-		pprint.pprint(sketch)
-		
+		pprint.pprint(sketch.tolist())
+		json.dump(sketch.tolist(),sketchf)
+
+	def approximate_inverse_of_random_matrix(self):
+		#Approximate because a non-square matrix is inverted
+		#Aapproxinv = (number_of_rows,number_of_rows/self.sketch_ratio)
+		#Invokes Moore-Penrose Pseudoinverse function in numpy
+		inverse=pinv(self.random_matrix)	
+		print "approximate_inverse_of_random_matrix():"
+		print inverse
+		return inverse
+
+	def decompress(self):
+		#Ax = B(sketch) = (number_of_rows/self.sketch_ratio,number_of_columns)	
+		#x = Aapproxinv.Ax = recovered approximate image = (number_of_rows,number_of_rows/self.sketch_ratio).(number_of_rows/self.sketch_ratio,number_of_columns)
+		print "=============================="
+		print "Decompression:"
+		print "=============================="
+		sketch=[]
+		sketchf=open("CompressedSensing.sketch","r")
+		sketch=json.load(sketchf)
+
+		approximate_inv_random_matrix=self.approximate_inverse_of_random_matrix()
+		print "================================"
+		print "approximately inverted random matrix:"
+		print "================================"
+		print approximate_inv_random_matrix
+		recoveredimage=numpy.matmul(approximate_inv_random_matrix,sketch)
+		print "================================"
+		print "Recovered Image:"
+		print "================================"
+		print recoveredimage
+
+		print "============================================================="
+		print "Error in decompression: Original Image - Decompressed Image:"
+		print "============================================================="
+		diff=numpy.subtract(self.image_matrix,recoveredimage)
+		error=0.0
+		for r in diff:
+			for c in r:
+				error += c 
+		print "Percentage Error in decompression:",error/[len(diff)*len(diff[0])]
+		print "Size of sketch:(",len(sketch),"*",len(sketch[0]),")"
+		print "Size of Original Image:(",len(self.image_matrix),"*",len(self.image_matrix[0]),")"
+
 
 if __name__=="__main__":
 	input_image8 = ImageToBitMatrix.image_to_bitmatrix("./testlogs/PictureOf8_1.jpg")
 	csensing=CompressedSensing()
 	csensing.sketch(input_image8)
+	csensing.decompress()
