@@ -10037,3 +10037,14 @@ K(x,y) as per previous identity (neglecting imaginary parts of Eigenvalues and E
 (*) Logs for multiple sketch ratios (row values:100,200,300,400,50) have been committed to testlogs/ which show an increase in error
 as size of the sketch decreases.
 
+------------------------------------------------------------------------------------------------------------------------------------------
+486. (THEORY) Computational Geometric Factorization, Tile Search Optimization and Parallel Interval/Segment Search Trees - 5 December 2017
+- related to 34, 481
+------------------------------------------------------------------------------------------------------------------------------------------
+Tile Search optimization for finding factors of an integer described earlier, binary-search set of intervals in parallel for factor point.
+This is the classic segment/interval search tree problem in Computational Geometry. Segments/Intervals are 1-dimensional polygons and represented in a binary search tree. Query point and the containing interval are searched on this binary search tree. Sequential construction of interval/segment search tree needs O(nlogn) time. Searching each tile segment in parallel and searching an interval/segment tree in parallel for factor points are equivalent. There are parallel segment tree construction algorithms on Bulk Synchronous Parallel(BSP) model and as Distributed Segment Trees. Distributed Segment Trees are based on Distributed Hash Tables and insertion/retrieval of a key is based on keyspace partitioning and routing in the network i.e Each node in the network is assigned a subset of segment id(s) in a binary partitioned space. Insertion/Retrieval primitives hop through the network and find the matching node for the segment. Most cloud key-store implementations are distributed hash tables. Example: For inserting n keys in O(logN) time, number of hops has to be O(logN) per key and each key is inserted in parallel in O(1) time. Minimizing number of hops implies maximizing mean degree of a node in the network and is a trade-off.
+
+References:
+-----------
+486.1 Parallel Segment Trees - [AV Gerbessiotis] - https://web.njit.edu/~alexg/pubs/papers/segment.ps.gz
+486.2 Distributed Segment Trees - [Guobin Shen, Changxi Zheng, Wei Pu, and Shipeng Li - Microsoft Research] - http://www.cs.columbia.edu/~cxz/publications/TR-2007-30.pdf
