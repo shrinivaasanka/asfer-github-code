@@ -1,5 +1,5 @@
 #!/bin/bash
-g++ -g -o DiscreteHyperbolicFactorizationUpperbound_Bitonic DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.cpp
+g++ -g -o DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.cpp
 ./DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized $1
 
 #NC Parallel - on Spark Cloud
