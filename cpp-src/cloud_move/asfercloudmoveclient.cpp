@@ -1,31 +1,41 @@
 /*********************************************************************************************************
----------------------------------------------------------------------------------------------------------
-ASFER - Inference Software for Large Datasets - component of iCloud Platform
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
----------------------------------------------------------------------------------------------------------
-Copyright (C):
-Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-Ph: 9791499106, 9003082186
-Krishna iResearch Open Source Products Profiles:
-http://sourceforge.net/users/ka_shrinivaasan
-https://github.com/shrinivaasanka/
-https://www.openhub.net/accounts/ka_shrinivaasan
-Personal website(research): https://sites.google.com/site/kuja27/
-emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
----------------------------------------------------------------------------------------------------------
-*********************************************************************************************************/
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#--------------------------------------------------------------------------------------------------------
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
+#Personal website(research): https://sites.google.com/site/kuja27/
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
+#--------------------------------------------------------------------------------------------------------
+***********************************************************************************************************/
 
 #include "asfercloudmove.h"
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
+#include <boost/uuid/uuid_io.hpp>
+#include <boost/lexical_cast.hpp>
+#include <string>
+#include <iostream>
+#include <utility>
+
+using namespace boost::uuids;
 
 int main()
 {
@@ -40,14 +50,49 @@ int main()
 	//std::cout<<" proxy remote destination "<<cm_dest.get_data().msg<<endl;
 
 	//Protocol Buffer Currency Object
+	std::string move_semantics="std::forward";
 	currency::Currency c1;
 	currency::Currency c2;
-	const char* uuid_and_denom="dssdow9e9wiodowdoiw09iedcnkn:100";
+	std::string uuid_and_denom=create_neuro_uuid_and_denom(100);
 	c1.set_uuid_and_denom(uuid_and_denom);
 	cloudmove<currency::Currency> currency_src(&c1,"localhost");
 	cloudmove<currency::Currency> currency_dest(&c2,"localhost");
-	std::cout<<" source before std::move "<<currency_src.get_data().uuid_and_denom()<<endl;
-	currency_dest = std::move(currency_src);
-	std::cout<<" source after std::move "<<currency_src.get_data().uuid_and_denom()<<endl;
-	std::cout<<" proxy remote destination "<<currency_dest.get_data().uuid_and_denom()<<endl;
+	std::string&& uuid_and_denom2="ff20a894-a2c4-4002-ac39-93d053ea3020:100";
+	if(move_semantics=="std::move")
+	{
+		std::cout<<"currency_src before std::move =  "<<currency_src.get_data().uuid_and_denom()<<endl;
+		currency_dest = std::move(currency_src);
+		std::cout<<"currency_src after std::move ="<<currency_src.get_data().uuid_and_denom()<<endl;
+	}
+	else
+	{
+		std::cout<<"std::forward()-ed rvalue of uuid_and_denom2: "<<std::forward<std::string>(uuid_and_denom2)<<endl;
+		currency::Currency c3;
+		c3.set_uuid_and_denom(std::forward<std::string>(uuid_and_denom2));
+		cloudmove<currency::Currency> currency_src2(&c3,"localhost");
+		std::cout<<"currency_src2 before std::move =  "<<currency_src2.get_data().uuid_and_denom()<<endl;
+		currency_dest=std::move(currency_src2);
+		std::cout<<"currency_src2 after std::move =  "<<currency_src2.get_data().uuid_and_denom()<<endl;
+	}
+	std::cout<<"currency_dest proxy remote destination ="<<currency_dest.get_data().uuid_and_denom()<<endl;
+}
+
+std::string create_neuro_uuid_and_denom(int denomination)
+{
+	//Fictitious Message-As-Currency in AsFer-KingCobra has been named "Neuro".
+	//Does a non-trivial proof-of-work computation and finds a universally unique hash id for each Neuro MAC which has 2 leading "ff"s
+	//from Boost UUID
+	random_generator gen;
+	uuid id=gen();
+	std::string sid=to_string(id);
+	cout<<"sid = "<<sid<<endl;
+	while(sid.substr(0,2) != "ff")
+	{
+		id=gen();
+		sid=to_string(id);
+		cout<<"sid = "<<sid<<endl;
+	}
+	std::string denom_str=std::to_string(denomination);
+	sid.append(":");
+	return sid.append(denom_str);
 }
