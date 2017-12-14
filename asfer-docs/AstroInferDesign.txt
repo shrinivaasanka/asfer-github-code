@@ -10068,3 +10068,17 @@ References:
 ----------
 487.1 Solomon Asch Conformity Experiments and Herd behaviour - Information Diffusion in Social Media - Section 7.1 - http://dmml.asu.edu/smm/SMM.pdf - this is a psychology experiment where set of subjects are swayed by peer opinions and rational independent decision making ceases i.e majority voting can go wrong.
 487.2 Emperor's New Mind - [Roger Penrose] - Inexorable increase in entropy - Page 405
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+488. (FEATURE-DONE) NeuronRain AsFer-KingCobra MAC Electronic Money - Proof-of-Work and Universally Unique ID Hash implementation -
+14 December 2017
+---------------------------------------------------------------------------------------------------------------------------------------------
+(#) Fictitious Message-As-Currency (MAC) in AsFer-KingCobra has been named "Neuro".
+(#) This commit implements a non-trivial proof-of-work computation and finds a universally unique hash id for each Neuro currency
+ which has 2 leading "ff"s - Proof of Work is analogous to reCAPTCHA in websites for filtering out robots
+(#) Unique id is created from Boost UUID random generator and checked in a loop for 2 leading "ff" in stringified hex representation
+(#) Protocol Buffer version has been upgraded to 3.5/15 and currency.proto has been recompiled with protoc
+(#) asfercloudmoveclient.cpp has been updated to make a choice between std::move() and std::forward() move semantics:
+     - std::move() just does =operator overload and moves Neuro currency over network
+     - std::forward() + std::move() first deferences rvalue of && for currency uuid and then does =operator overload to move Neuro currency
+
