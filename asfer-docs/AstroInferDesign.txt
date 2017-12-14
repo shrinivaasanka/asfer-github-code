@@ -10081,4 +10081,5 @@ References:
 (#) asfercloudmoveclient.cpp has been updated to make a choice between std::move() and std::forward() move semantics:
      - std::move() just does =operator overload and moves Neuro currency over network
      - std::forward() + std::move() first deferences rvalue of && for currency uuid and then does =operator overload to move Neuro currency
-
+(#) Limitation: Presently there is no documented way to create an rvalue for non-primitive datatypes. For example std::string can have rvalue
+as literal string "xxxxxx".
