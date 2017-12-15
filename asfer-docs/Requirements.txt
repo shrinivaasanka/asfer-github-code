@@ -1,5 +1,5 @@
 NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copyright/Copyleft licenses apply per respective codebases below:
-1. Boost C++ and Python libraries 
+1. Boost C++ and Python libraries (1.64.0) 
 2. g++
 3. Python NLTK
 4. NetworkX
@@ -8,7 +8,7 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 7. R-Python (rpy2)
 8. Maitreya's Dreams 7+ (for ephemeris and text client)
 9. Hadoop
-10. Spark 1.5.1 and pyspark client
+10. Spark 2.1.x+ and pyspark client
 11. Hive and Hive Client(thrift or pyhs2)
 12. Cassandra and Cassandra Cluster client
 13. HBase and HBase client (happybase)
@@ -17,9 +17,9 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 16. Biopython
 17. ClustalOmega
 18. BeautifulSoup
-19. Google Protocol Buffer libraries
+19. Google Protocol Buffer libraries 3.5 / libprotobuf15
 20. Pig
-21. SVMLight 
+21. SVMLight (there is also a NeuronRain AsFer Support Vector Machines implementation alternative) 
 22. MySQLdb
 23. Python Injector
 24. R
@@ -49,5 +49,5 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 48. ConceptNet 5.4
 49. NumPy
 50. SciPy
-51. Linux Kernel Mainline 64 bit (4.10.3) - for VIRGO64
+51. Linux Kernel Mainline 64 bit (4.13.3) - for VIRGO64
 52. CvxPy
