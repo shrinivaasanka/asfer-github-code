@@ -10083,3 +10083,16 @@ References:
      - std::forward() + std::move() first deferences rvalue of && for currency uuid and then does =operator overload to move Neuro currency
 (#) Limitation: Presently there is no documented way to create an rvalue for non-primitive datatypes. For example std::string can have rvalue
 as literal string "xxxxxx".
+
+------------------------------------------------------------------------------------------------------------------------------------------
+489. (FEATURE-DONE) AsFer-KingCobra Neuro Electronic Currency - Rvalue NonPrimitive Perfect Forward - 18 December 2017
+------------------------------------------------------------------------------------------------------------------------------------------
+(#) New constructor for cloudmove which takes const char* uuid has been defined. This enables
+assigning a string literal rvalue to cloudmove<currency::Currency> objects.
+(#) New move operator= which takes const char* uuid has been defined. This internally instantiates
+a currency::Currency object
+(#) New move operator= which takes cloudmove<T>& lvalue has been defined.
+(#) New value and a clause for move semantics, "nonprimitiveforward" has been defined. This clause
+does std::forward() of an rvalue cloudmove<currency::Currency> and then invokes std::move() of the currency over network.
+(#) This differs from move semantics "std::forward" which is specific to std::string uuid only, and thus solves the generic currency::Currency object rvalue forward and move.
+(#) client and server logs for this network move have been committed to testlogs.
