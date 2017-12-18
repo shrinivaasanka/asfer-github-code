@@ -85,10 +85,18 @@ std::string create_neuro_uuid_and_denom(int);
 template <class T>
 class cloudmove
 {
+	T curr;
 	T* data;
         string remotehostname;
 	bool use_addrinfo=false;
 public:
+	cloudmove(const char* neuro_uuid_denom)
+	{
+		std::string neuro_uuid_denom_str(neuro_uuid_denom);
+	   	curr.set_uuid_and_denom(neuro_uuid_denom);
+	   	data=&curr; 
+	}
+
         cloudmove(T* x, string rhn)
         {
            data=x;
@@ -97,7 +105,7 @@ public:
 
         T& get_data()
         {
-            return *data;
+           return *data;
         } 
 
         /*
@@ -210,6 +218,21 @@ public:
              }
 	}
 
+	T& operator=(const char* neuro_uuid_denom)
+	{
+		std::string neuro_uuid_denom_str(neuro_uuid_denom);
+	   	T curr; 
+	   	curr.set_uuid_and_denom(neuro_uuid_denom);
+	   	data=&curr; 
+	}
+
+	T& operator=(cloudmove<T>& lvalue)
+	{
+		cout<<"invoking T& operator=(cloudmove<T>& lvalue)"<<endl;
+		data=lvalue.data;
+		remotehostname=lvalue.remotehostname;
+	}
+
 	//Cloud Move operator= overloaded - Move client	
 	T& operator=(cloudmove<T>&& rvalue) 
 	{
@@ -288,11 +311,13 @@ public:
 			msg.msg_flags = 0;
 			nr=1;
 	
+			cout<<"invocation of T& operator=(cloudmove<T>&& rvalue): before sendmsg()"<<endl;
 			sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 			connect(sock, (struct sockaddr*)&sin, sizeof(sin));
 			len = sendmsg(sock, &msg, msg.msg_flags);
                 	//rvalue.data->msg="";
 			rvalue.data->set_uuid_and_denom("");
+			cout<<"invocation of T& operator=(cloudmove<T>&& rvalue): after sendmsg()"<<endl;
 		}
         }
 };

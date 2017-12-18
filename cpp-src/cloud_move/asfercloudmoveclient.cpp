@@ -50,7 +50,9 @@ int main()
 	//std::cout<<" proxy remote destination "<<cm_dest.get_data().msg<<endl;
 
 	//Protocol Buffer Currency Object
-	std::string move_semantics="std::forward";
+	//std::string move_semantics="std::move";
+	//std::string move_semantics="std::forward";
+	std::string move_semantics="nonprimitiveforward";
 	currency::Currency c1;
 	currency::Currency c2;
 	std::string uuid_and_denom=create_neuro_uuid_and_denom(100);
@@ -64,7 +66,7 @@ int main()
 		currency_dest = std::move(currency_src);
 		std::cout<<"currency_src after std::move ="<<currency_src.get_data().uuid_and_denom()<<endl;
 	}
-	else
+	else if(move_semantics=="std::forward")
 	{
 		std::cout<<"std::forward()-ed rvalue of uuid_and_denom2: "<<std::forward<std::string>(uuid_and_denom2)<<endl;
 		currency::Currency c3;
@@ -73,6 +75,16 @@ int main()
 		std::cout<<"currency_src2 before std::move =  "<<currency_src2.get_data().uuid_and_denom()<<endl;
 		currency_dest=std::move(currency_src2);
 		std::cout<<"currency_src2 after std::move =  "<<currency_src2.get_data().uuid_and_denom()<<endl;
+	}
+	else
+	{
+		cloudmove<currency::Currency>&& currency_src2="ff20a894-a2c4-4002-ac39-93d053ea3020:100";
+		std::cout<<"nonprimitiveforward: currency_src2 before std::forward =  "<<currency_src2.get_data().uuid_and_denom()<<endl;
+		cloudmove<currency::Currency>&& currency_src3=std::forward<cloudmove<currency::Currency>>(currency_src2);
+		std::cout<<"nonprimitiveforward: before std::move:"<<currency_src3.get_data().uuid_and_denom()<<endl;
+		currency_dest=std::move(currency_src3);
+		//currency_dest=std::move(std::forward<cloudmove<currency::Currency>>(currency_src2));
+		std::cout<<"nonprimitiveforward: currency_src2 after std::move =  "<<currency_src3.get_data().uuid_and_denom()<<endl;
 	}
 	std::cout<<"currency_dest proxy remote destination ="<<currency_dest.get_data().uuid_and_denom()<<endl;
 }
