@@ -10061,6 +10061,8 @@ References:
 486.6 Hardy-Ramanujan Theorem - https://en.wikipedia.org/wiki/Hardy%E2%80%93Ramanujan_theorem
 486.7 Parallel Construction of Segment Trees - https://www.cs.dartmouth.edu/~trdata/reports/TR92-184.pdf - [Peter Su, Scot Drysdale] - Section 4.2 - Analysis of Algorithm S - "...Thus we expect runtime of algorithm S would be between O(logN^2) and O(logN^3) depending on how good our sorting algorithm is..."
 486.8 Parallel Computational Geometry - Parallel Construction of Segment Trees is O(logN) time - Section 5 - Pages 308-309 - [A.Aggarwal,B.Chazelle,L.Guibas,C.O.Dunlaing,C.Yap] - https://www.cs.princeton.edu/~chazelle/pubs/ParallelCompGeom.pdf
+486.9 Small omega - Number distinct prime factors of an integer - https://oeis.org/A001221 - is O(loglogN) from Hardy-Ramanujan and Erdos-Kac Theorems
+486.10 Big omega - Number prime factors of an integer with multiplicity - https://oeis.org/A001222 - is sum of prime powers in unique factorization of n. For quadratfrei(squarefree) integers Big Omega = Small Omega. An optimization in the segment tree search or local binary search in parallel for factor points is it is not necessary to find all factorization points in stabbing query. Segment tree search or local binary search can stop once first factor is found. Other factors are obtained by repetitive application of this algorithm after dividing the integer by factor found in previous step.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 487. (THEORY) Thermodynamics Gas Diffusion Entropy Model of Information Diffusion in Social Networks and Text Graphs - 11 December 2017
