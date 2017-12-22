@@ -10046,10 +10046,31 @@ as size of the sketch decreases.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 486. (THEORY) Computational Geometric Factorization, Tile Search Optimization and Parallel Interval/Segment Search Trees - 5 December 2017
-- related to 34, 481
+ and 22 December 2017 - related to 34, 481
 ------------------------------------------------------------------------------------------------------------------------------------------
 Tile Search optimization for finding factors of an integer described earlier, binary-search set of intervals in parallel for factor point.
 This is the classic segment/interval search tree problem in Computational Geometry. Segments/Intervals are 1-dimensional polygons and represented in a binary search tree. Query point and the containing interval are searched on this binary search tree. Sequential construction of interval/segment search tree needs O(nlogn) time. Searching each tile segment in parallel and searching an interval/segment tree in parallel for factor points are equivalent. There are parallel segment tree construction algorithms on Bulk Synchronous Parallel(BSP) model and as Distributed Segment Trees. Distributed Segment Trees are based on Distributed Hash Tables and insertion/retrieval of a key is based on keyspace partitioning and routing in the network i.e Each node in the network is assigned a subset of segment id(s) in a binary partitioned space. Insertion/Retrieval primitives hop through the network and find the matching node for the segment. Most cloud key-store implementations are distributed hash tables. Example: For inserting n keys in O(logN) time, number of hops has to be O(logN) per key and each key is inserted in parallel in O(1) time. Minimizing number of hops implies maximizing mean degree of a node in the network and is a trade-off.
+
+Unique Prime Factorization of an integer N = p1^k1 * p2^k2 ... * pn*kn
+This can be rewritten as:
+	2^logN = 2^(k1*log(p1) + k2*log(p2) + ... + kn*log(pn))
+=>	logN = (k1*log(p1) + k2*log(p2) + ... + kn*log(pn))
+	SmallOmega(N) = number of distinct prime factors of N = O(loglogN) from Hardy-Ramanujan Theorem
+	BigOmega(N) = number of prime factors including multiplicity = sum of prime powers = k1 + k2 + k3 + ... + kn
+But	k1 + k2 + k3 + ... + kn < (k1*log(p1) + k2*log(p2) + ... + kn*log(pn)) = logN
+=>	BigOmega(N) < logN
+	BigOmega(N) = O(logN) [This is very high upperbound and not tight estimate]
+
+Segment binary search tree representation of pixelated hyperbolic tile segments is described in references below.
+
+Factorization algorithm for N based on Segment Tree Search is:
+	(#) Construct Segment Tree of Pixelated Hyperbolic Segments in Parallel (O(logN) or between O((logN)^2) and O((logN)^3) depending on sorting)
+	(#) Query the Segment Tree for factor points in O(k + logN) where k is the number of segment intervals to be reported having factor point N=pq. It is sufficient to report atleast 1 segment having factor point and thus k=1. Number of segments containing both prime and non-prime factor points is proportional to size of set of all subsets of distinct prime factors and multiplicity (SmallOmega and BigOmega). Geometric intuition for this is: By moving a sweepline across the x-y plane, factor points and segments containing them (which are nothing but all possible size 2 partitions of set of distinct prime factors which correspond to p and q in N=pq, where as Bell Number of this set is number of all possible partitions) are reached in sequence left-to-right sorted ascending. Size of set of all subsets of distinct prime factors = 2^SmallOmega(N) = 2^loglogN = logN. If multiplicity is taken into consideration, from the very high bound above number of sets of subsets can be as high as O(2^logN).
+
+Thus there are 3 Computational Geometric Factorization algorithms described in this draft and all of them are PRAM algorithms and in NC requiring between O((logN)^2) and O((logN)^3) parallel time:
+	(#) K-MergeSort and BinarySearch of Hyperbolic tile segments (mentioned in 34)
+	(#) Local Binary Search in parallel of hyperbolic tiles without K-MergeSort (mentioned in 481 - recent optimization, better than k-mergesort)
+	(#) Segment Tree Representation and Binary Search of hyperbolic tile Segments (uses a classic datastructure, preprocessing is non-trivial and segment tree has to be constructed in parallel)
 
 References:
 -----------
