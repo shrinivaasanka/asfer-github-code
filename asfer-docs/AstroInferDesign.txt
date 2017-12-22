@@ -9739,6 +9739,9 @@ References:
 471.12 Formulas for Primes - https://oeis.org/wiki/Formulas_for_primes#Solutions_to_Diophantine_equations
 471.13 Simplest Diophantine Representation - [Panu Raatikainen] - https://pdfs.semanticscholar.org/cd96/ead1a00b73ecc9cfabf4b9a617907ce9bdd6.pdf - Theorem 4 - This translates to the problem of determining simplest complement diophantine function of complexity measure K such that with respect to a complexity measure (e.g Kolmogorov Complexity and Chaitin incompleteness Theorem) every other diophantine for a complementary set has complexity greater than K. Finding Simplest Complement Diophantine is also undecidable.
 471.14 Waring Problem and Diophantos/Bachet/Lagrange Four Square Theorem for real quarternions - Topics in Algebra - Lemma 7.4.3 and Theorem 7.4.1 - Page 373-377 - [Israel N. Herstein] - Ever positive integer is sum of four squares i.e There is a diophantine polynomial f(a,b,c,d) = a^2 + b^2 + c^2 + d^2 = n in N.
+472.15 Complement Functions, Diophantine Analysis and ABC Conjecture - https://en.wikipedia.org/wiki/Abc_conjecture - ABC Conjecture in number theory is the following:
+Let a + b = c be a mutually coprime integer triple f(a,b,c). Quality q(a,b,c) is defined as = log(c)/log(radical(abc)) where radical(abc) is the product of distinct prime factors of product abc. In most cases q(a,b,c) < 1. ABC conjecture postulates existence of finitely many triples (a,b,c) for which q(a,b,c) > 1. f(a,b,c) : a + b = c is the diophantine equation for the set of coprime triples.
+472.16 Erdos-Straus Diophantine Conjecture - https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture - For any integer n >= 2, there exist integer triples a,b,c which are solutions to diophantine equation : 4/n = 1/a + 1/b + 1/c
 
 ------------------------------------------------------------------------------------------------------
 472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
