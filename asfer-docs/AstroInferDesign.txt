@@ -9658,7 +9658,7 @@ is captured in per task duration logs below by Spark Driver:
 ---------------------------------------------------------------------------------------------------------------------------------------
 471. (THEORY) Jones-Sato-Wada-Wiens Theorem, Complement Functions, Prime-Composite Complementation, Prime Number Theorem, Ulam Spiral,
 Ramsey 2-coloring of integers, Hilbert Tenth Problem, Unique Factorization , Matiyasevich-Robinson-Davis-Putnam Theorem, Riemann Hypothesis - 
-related to 24,370,390,394 - 13 November 2017, 14 November 2017, 29 November 2017,1 December 2017,4 December 2017
+related to 24,370,390,394 - 13 November 2017, 14 November 2017, 29 November 2017,1 December 2017,4 December 2017,23 December 2017
 (Draft updates to https://arxiv.org/abs/1106.4102)
 ---------------------------------------------------------------------------------------------------------------------------------------
 Jones-Sato-Wada-Wiens Theorem proves existence of a polynomial in 25 degree-26 variables which has values equal to set of all primes. This relates to Prime-Composite Function Complementation - Jones-Sato-Wada-Wiens polynomial is a complement function of set of composites which are formalized by unique factorization theorem. This is special case of Matiyasevich-Davis-Robinson-Putnam Theorem which proves any recursively enumerable set accepted by a Turing machine is equivalent to a polynomial accepting the elements of the set. Another closely related problem is: Does there exist a prime between two integers p=xy and q=x(y+1). Prime number theorem states and proves number of primes less than N=O(N/logN).
@@ -9718,6 +9718,20 @@ One of the sets A is recursively enumerable and thus has a diophantine polynomia
 
 Proof in one line: Any set is a complementary set of some other set and thus any complementary set which is recursively enumerable but not recursive has a diophantine equation, and thus undecidable by an algorithm.
 
+Construction of a complement function for complementary set:
+------------------------------------------------------------
+Construction of a complement function is to find a mapping function f defined as:
+	f(0) = a1
+	f(1) = a2
+	f(2) = a3
+	...
+	f(n) = an
+for a1,a2,a3,...,an in Diophantine complementary set, which is equivalent to definition of recursively enumerable total function. This enumeration can be written as a diophantine equation:
+	f(x) - a = 0
+Function f can internally be any mathematical function and can have additional parameters besides x. Finding the enumerated mapping previously is equivalent to solving an arbitrary diophantine f(x) - a = 0 i.e finding solutions to x and a which is Hilbert's Tenth Problem - MRDP theorem proves finding integer solutions to arbitrary Diophantine is undecidable. ArXiv version at https://arxiv.org/abs/1106.4102 mentions some algorithms for constructing a complement e.g Fourier series, Lambda calculus, Polynomial interpolation. Polynomial Reconstruction Problem also provides a polynomial approximation of the set and has origins in Error Correction and List Decoding. These algorithms apply only to recursive sets - complement function mappings are constructible only for recursive sets. This is intuitively obvious because a Turing Machine computing the previous mapping for a recursively enumerable set might loop for ever.
+
+An important example for applicability of function complementation is ABC Conjecture which is defined in references below. Let S be the universal set of all possible integer triples (a,b,c). Set of coprime triples which have quality q(a,b,c) = log(c)/log(radical(abc)) > 1 + epsilon for all epsilon > 0 is the subset A of S. ABC conjecture states that there are only finitely many such triples for every epsilon > 0. Then the set B=S-A is the set of all triples which violate this criterion - sets A and B are complementary. Proving ABC Conjecture is equivalent to proving the violation of this criterion in the complement set B - there are infinite non-coprime triples for each epsilon > 0 which have q(a,b,c) > 1.This converts ABC conjecture from primal finiteness to its dual infiniteness.
+
 References:
 ----------
 471.1 Jones-Sato-Wada-Wiens Theorem and Prime valued Polynomial - https://www.maa.org/sites/default/files/pdf/upload_library/22/Ford/JonesSatoWadaWiens.pdf - Jones-Sato-Wada-Wiens polynomial generates negative numbers too and its positive values are set of primes.
@@ -9739,9 +9753,10 @@ References:
 471.12 Formulas for Primes - https://oeis.org/wiki/Formulas_for_primes#Solutions_to_Diophantine_equations
 471.13 Simplest Diophantine Representation - [Panu Raatikainen] - https://pdfs.semanticscholar.org/cd96/ead1a00b73ecc9cfabf4b9a617907ce9bdd6.pdf - Theorem 4 - This translates to the problem of determining simplest complement diophantine function of complexity measure K such that with respect to a complexity measure (e.g Kolmogorov Complexity and Chaitin incompleteness Theorem) every other diophantine for a complementary set has complexity greater than K. Finding Simplest Complement Diophantine is also undecidable.
 471.14 Waring Problem and Diophantos/Bachet/Lagrange Four Square Theorem for real quarternions - Topics in Algebra - Lemma 7.4.3 and Theorem 7.4.1 - Page 373-377 - [Israel N. Herstein] - Ever positive integer is sum of four squares i.e There is a diophantine polynomial f(a,b,c,d) = a^2 + b^2 + c^2 + d^2 = n in N.
-472.15 Complement Functions, Diophantine Analysis and ABC Conjecture - https://en.wikipedia.org/wiki/Abc_conjecture - ABC Conjecture in number theory is the following:
+471.15 Complement Functions, Diophantine Analysis and ABC Conjecture - https://en.wikipedia.org/wiki/Abc_conjecture - ABC Conjecture in number theory is the following:
 Let a + b = c be a mutually coprime integer triple f(a,b,c). Quality q(a,b,c) is defined as = log(c)/log(radical(abc)) where radical(abc) is the product of distinct prime factors of product abc. In most cases q(a,b,c) < 1. ABC conjecture postulates existence of finitely many triples (a,b,c) for which q(a,b,c) > 1 + epsilon. f(a,b,c) : a + b = c is the diophantine equation for the set of coprime triples.
-472.16 Erdos-Straus Diophantine Conjecture - https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture - For any integer n >= 2, there exist integer triples a,b,c which are solutions to diophantine equation : 4/n = 1/a + 1/b + 1/c
+471.16 Erdos-Straus Diophantine Conjecture - https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture - For any integer n >= 2, there exist integer triples a,b,c which are solutions to diophantine equation : 4/n = 1/a + 1/b + 1/c
+471.17 ABC Conjecture Proof-designate - Interuniversal Teichmuller Theory - [Shinichi Mochizuki] - http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html
 
 ------------------------------------------------------------------------------------------------------
 472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
