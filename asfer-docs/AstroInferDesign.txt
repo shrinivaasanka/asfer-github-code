@@ -9757,6 +9757,7 @@ References:
 Let a + b = c be a mutually coprime integer triple f(a,b,c). Quality q(a,b,c) is defined as = log(c)/log(radical(abc)) where radical(abc) is the product of distinct prime factors of product abc. In most cases q(a,b,c) < 1. ABC conjecture postulates existence of finitely many triples (a,b,c) for which q(a,b,c) > 1 + epsilon. f(a,b,c) : a + b = c is the diophantine equation for the set of coprime triples.
 471.16 Erdos-Straus Diophantine Conjecture - https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture - For any integer n >= 2, there exist integer triples a,b,c which are solutions to diophantine equation : 4/n = 1/a + 1/b + 1/c
 471.17 ABC Conjecture Proof-designate - Interuniversal Teichmuller Theory - [Shinichi Mochizuki] - http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html
+471.18 Exponential Diophantines, Fibonacci and Lucas Sequences, Maximum limit on solvability of Diophantine - Reduction of Unknowns in Diophantine Representations - [SunZhiWei] - http://maths.nju.edu.cn/~zwsun/12d.pdf - "... If we take into account the number of unknowns, then it is natural to ask that for what n there does not exist an algorithm to test (polynomial) Diophantine equations with n unknowns for solvability in integers..." - n=27 or n=11
 
 ------------------------------------------------------------------------------------------------------
 472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
