@@ -10166,3 +10166,15 @@ References:
 490.6 Constructing Diophantine Representation of a Listable Set, Register Machines preferred over Turing Machines - https://books.google.co.in/books?id=GlgLDgAAQBAJ&pg=PA43&lpg=PA43&dq=constructing+diophantine+representations&source=bl&ots=UT5_nW-OUn&sig=vpIkAMBvoNBD1PvqdZ-qmP7QYME&hl=en&sa=X&ved=0ahUKEwjkxKWnsa_YAhVFr48KHcpJCvUQ6AEIPjAC#v=onepage&q=constructing%20diophantine%20representations&f=false - Chapter 2 - Martin Davis and H10 - [Y.Matiyasevich] - Constructing Diophantine representation for a listable complementary set is exactly construction of a complement function.
 490.7 Diophantine Representation, Non-Deterministic Diophantine Machine (NDDM), Complexity class NP, Single Fold Diophantine - [Yuri Matiyasevich, St.Petersburg, Department of Steklov Institute of Mathematics of Russian Academy of Sciences] - https://www.newton.ac.uk/files/seminar/20120111170017302-152989.pdf - Adleman-Manders class D of Diophantines which have total binary length of unknowns <= [binary length of parameter]^k - Open Problem: Is D = NP?
 490.8 DPR theorem and finite-fold diophantine representations - [Yuri Matiyasevich] - ftp://ftp.pdmi.ras.ru/pub/publicat/znsl/v377/p078.pdf - Every effectively enumerable set has single-fold exponential diophantine representation (a diophantine polynomial which has unknowns in exponents and value for unknowns per parameter tuple is unique) of the form: <a1,a2,...> in S <=> There exist y,x1,x2,...,a1,a2,... P(y,x1,x2,...,a1,a2,...) = 4^y + y for a diophantine polynomial P in integer coefficients.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+491. (FEATURE-DONE) All pairs of encoded strings - Sum of Distances - algorithm mentioned in Grafit course notes implemented - 3 January 2018
+----------------------------------------------------------------------------------------------------------------------------------------------
+(#) For pairwise pattern mining, sum of distances between binary encoded strings algorithm mentioned in Grafit course notes has been
+implemented which is better than bruteforce.
+(#) asfer.conf has been updated
+(#) asferencodestr.cpp and asferencodestr.h have been updated for new class member functions (factorial and combinations)
+(#) logs have been committed to testlogs/
+(#) This is only in GitHub (NeuronRain Enterprise) repo which has binary encoded strings. NeuronRain Research repo in SourceForge
+has astronomically encoded unicode strings which requires a variant of this implementation (must be sum of 10 combination terms for each character - each term is per symbol).
+
