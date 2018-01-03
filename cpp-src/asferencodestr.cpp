@@ -1,27 +1,29 @@
 /*********************************************************************************************************
----------------------------------------------------------------------------------------------------------
-ASFER - Inference Software for Large Datasets - component of iCloud Platform
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
----------------------------------------------------------------------------------------------------------
-Copyright (C):
-Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-Ph: 9789346927, 9003082186, 9791165980
-Krishna iResearch Open Source Products Profiles:
-http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
-Personal website(research): https://sites.google.com/site/kuja27/
-ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
----------------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#--------------------------------------------------------------------------------------------------------
+#Copyleft (Copyright+):
+#Srinivasan Kannan
+#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
+#Ph: 9791499106, 9003082186
+#Krishna iResearch Open Source Products Profiles:
+#http://sourceforge.net/users/ka_shrinivaasan,
+#https://github.com/shrinivaasanka,
+#https://www.openhub.net/accounts/ka_shrinivaasan
+#Personal website(research): https://sites.google.com/site/kuja27/
+#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+#kashrinivaasan@live.com
+#---------------------------------------------------------------------------------------------------------
 *********************************************************************************************************/
 
 #include "asferencodestr.h"
@@ -196,31 +198,83 @@ std::string asferencodestr::strcomp(std::string prev, std::string next)
 
 void asferencodestr::pairwiseCompAndExtractPatterns()
 {
-		std::vector<string> enchoro_vec;
+		int MAXENCSTRLEN=28;
+		std::vector<string> encstr_vec;
 		ifstream input;
-		char line[256];
+		char line[500];
 		string encstrpath(asferroot);
 		encstrpath.append("/asfer.enterprise.encstr");
 		input.open(encstrpath.c_str(), ifstream::in);
 		while (!input.eof())
 		{
 			input.getline(line,256);
-			string enchorostr(line);
-			enchoro_vec.push_back(enchorostr);
+			cout<<"line = "<<line<<endl;
+			if(strcmp(line,"") != 0)
+			{
+				string encstr(line);
+				encstr_vec.push_back(encstr);
+			}
+			else
+				break;
 		}
-		
-		for(int i=0;i < enchoro_vec.size();i++)
+
+		for(int i=0;i < encstr_vec.size();i++)
 		{
-			for(int k=0; k < enchoro_vec.size();k++)
+			for(int k=0; k < encstr_vec.size();k++)
 			{
 				cout<<"=================================================="<<endl;
-				cout<<"pair ("<<enchoro_vec[i]<<","<<enchoro_vec[k]<<")"<<endl;
-				string extPat = extractPattern(enchoro_vec[i], enchoro_vec[k]);
+				cout<<"pair ("<<encstr_vec[i]<<","<<encstr_vec[k]<<")"<<endl;
+				string extPat = extractPattern(encstr_vec[i], encstr_vec[k]);
 				cout<<"pair ("<<i<<","<<k<<") has the common pattern:"<<extPat<<endl;
 				cout<<"=================================================="<<endl;
 
 			}
 		}
+
+		cout<<"============================================================================================================================="<<endl;
+		cout<<"For each of the pairs of encoded strings, distance between them is computed (by an algorithm described in Grafit Course Notes - course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt) and sum of these distances is printed"<<endl;
+		cout<<"============================================================================================================================="<<endl;
+		int number_of_ones=0;	
+		long double sum_distance=0.0;
+		long double sum_distance_bit=0.0;
+		for(int i=0;i < MAXENCSTRLEN;i++)
+		{
+			//cout<<"bit index = "<<i<<endl;
+			for(std::vector<string>::iterator it=encstr_vec.begin(); it != encstr_vec.end(); it++)
+			{
+				//cout<<"(*it)[i] = "<<(*it)[i]<<endl;
+				if((*it)[i] == '1')
+				{
+					number_of_ones += 1;
+				}
+				sum_distance_bit = combination(MAXENCSTRLEN,2) - (combination(number_of_ones,2) + combination(MAXENCSTRLEN-number_of_ones,2)); 
+				sum_distance += sum_distance_bit;
+				//cout<<"sum_distance for bit index = "<<sum_distance<<endl;
+				number_of_ones=0;
+			}
+		}
+		cout<<"Sum of pairwise distance = "<<sum_distance<<endl;
+		cout<<"========================================================="<<endl;
+}
+
+long double asferencodestr::combination(int N, int k)
+{
+	long double NCk = factorial((long double)N)/(factorial((long double)k)*factorial((long double)(N-k))); 
+	//cout<<"combination(): NCk = "<<NCk<<endl;
+	return NCk;
+}
+
+long double asferencodestr::factorial(long double n)
+{
+	long double m=1.0;
+	long double fctl=1.0;
+	while(m <= n)
+	{
+		fctl = fctl*m;
+		m=m+1;
+	}
+	//cout<<"factorial(): fctl = "<<fctl<<endl;
+	return fctl;
 }
 
 string asferencodestr::extractPattern(string str1, string str2)

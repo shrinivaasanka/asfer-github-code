@@ -41,4 +41,6 @@ public:
 	void computeWagnerFischerEditDistance();
 	void clusterEncodedHoro(string clusteringAlogrithm);
 	void longestCommonSubstring();
+	long double combination(int N, int k);
+	long double factorial(long double n);
 };

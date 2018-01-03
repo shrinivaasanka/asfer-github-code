@@ -63,7 +63,7 @@ unordered_map<string,bool> config_map;
 
 int main(int argc, char* argv[])
 {
-	string basepath("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea2/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/asfer-github-code/cpp-src");
+	string basepath("/media/ka_shrinivaasan/6944b01d-ff0d-43eb-8699-cca469511742/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src");
 	asferroot=basepath;
 	std::cout<<"AStro inFER - Inference Software for Large Datasets " << std::endl;
 	std::cout<<"-----------------------------------------------------" << std::endl;
