@@ -49,7 +49,7 @@ def tilesearch(tileintervalstr):
 	global number_to_factorize
 	if(len(tileintervalstr) > 1):
 		tileinterval=eval(tileintervalstr)
-		print "tilesearch(): tileinterval=",tileinterval
+		#print "tilesearch(): tileinterval=",tileinterval
 		xleft=tileinterval[0]
 		yleft=tileinterval[1]
 		xright=tileinterval[2]
@@ -60,7 +60,7 @@ def binary_search_interval(xl,yl,xr,yr):
 	intervalmidpoint = int((xr-xl)/2)
 	if intervalmidpoint >= 0:
 		factorcandidate=(xl+intervalmidpoint)*yl
-		print "factorcandidate = ",factorcandidate
+		#print "factorcandidate = ",factorcandidate
 		if factorcandidate == number_to_factorize:
 			print "================================================="
 			print "Factor is = ", yl 
@@ -81,7 +81,7 @@ def SearchTiles_and_Factorize(n):
         tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
 
         tileintervalslist=tileintervalsf.read().split("\n")
-	print "tileintervalslist=",tileintervalslist
+	#print "tileintervalslist=",tileintervalslist
         tileintervalslist_accum=spcon.accumulator(tileintervalslist, VectorAccumulatorParam())
 
 	paralleltileintervals=spcon.parallelize(tileintervalslist)

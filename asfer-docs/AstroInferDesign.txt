@@ -10194,3 +10194,41 @@ to obtain the quadruple (a,b,c,d) such that a^2 + b^2 + c^2 + d^2 = x
 (#) SymPy does not have exponential diophantine support yet which if available could construct an exponential diophantine for almost every
 recursively enumerable set ('almost' because of MRDP theorem - there are diophantine equations for recursively enumerable non-recursive sets and
  undecidable)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+493. (FEATURE-DONE) Computation Geometric Factorization - Binary Search for Tiles - Optimization - Benchmarks - Revised - 4 January 2018
+- related to 480
+----------------------------------------------------------------------------------------------------------------------------------------
+(#) Factorization benchmarks for Tile binary search optimization have been redone on dual core (local[2]) after removing some print statements in python spark code which were CPU intensive.
+(#) Following are the durations for factoring same 24 bit integer factorized previously after removing print statements - an improvement of more than 3X:
+--------------------------------------------------------------
+Factorization of 9333123 (24-bit) - without print statements
+--------------------------------------------------------------
+real	35m56.196s (Spark Duration = 1839.146seconds)
+user	3m2.836s
+sys	4m56.668s
+-----------------------------------------------------------------
+Factorization of 9333123 (24-bit) - with print statements earlier
+-----------------------------------------------------------------
+real    112m24.101s (Spark duration 12:21 to 14:02 = 101minutes = 6060seconds)
+user    0m0.000s
+sys     0m0.004s
+=================================================
+Factors of 9333123 are (excerpt from logs):
+=================================================
+...
+Factor is =  219
+Factor is =  1387
+Factor is =  2243
+Factor is =  4161
+Factor is =  6729
+Factor is =  6729
+Factor is =  42617
+Factor is =  127851
+Factor is =  163739
+Factor is =  491217
+Factor is =  3111041
+Factor is =  9333123
+=================================================
+(#) Compressed Spark log for this factorization has been committed to python-src/testlogs/
+(#) General Number Field Sieve algorithm is sequential, exponential in number of bits and requires O(2^(c(logN)^0.33*(loglogN)^0.67)) where c=1.901883 (for atleast one factor). For 24-bit (=logN) this is approximately k*128 time units for some constant k. But Computational Geometric Factorization Sieve finds all factors in O(logN*logN) time on multicore(PRAMs).
