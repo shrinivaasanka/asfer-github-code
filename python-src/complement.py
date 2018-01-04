@@ -42,10 +42,15 @@
 import math
 import string
 import decimal
+from sympy.solvers.diophantine import diop_general_sum_of_squares
+from sympy.abc import a, b, c, d, e, f
+from collections import defaultdict
+import pprint
 
 #Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf=[]
 cosvalues=[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+complement_diophantine_map=defaultdict()
 
 def getgofx(x):
     u=0
@@ -62,8 +67,22 @@ def getgofx(x):
 
 def toint(primestr):
 	if primestr != '' and not None:
-		print int(decimal.Decimal(primestr))
 		return int(decimal.Decimal(primestr))
+
+def complement_diophantine(enumerableset):
+	print "============================================================================"
+	print "Complement Diophantine Sum of Four Squares Mapping Constructed for enumerable set:",enumerableset
+	print "============================================================================"
+	for e in enumerableset:
+		diophantine_sum_of_squares_solve(e)
+	pprint.pprint(complement_diophantine_map)
+
+def diophantine_sum_of_squares_solve(x):
+	print x
+	if x != '':
+		unknowntuple=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(x))
+		complement_diophantine_map[str(unknowntuple)]=x
+
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
@@ -97,3 +116,5 @@ if __name__=="__main__":
 	for i in range(10):
 		print "g(",i,")=",getgofx(i)
 	IharaIdentity()
+	nonsquares=[2,3,5,6,7,8,9,10,11,12,13,14,15,17,18,19]
+	complement_diophantine(nonsquares)
