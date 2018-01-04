@@ -10180,3 +10180,17 @@ implemented which is better than bruteforce.
 (#) This is only in GitHub (NeuronRain Enterprise) repo which has binary encoded strings. NeuronRain Research repo in SourceForge
 has astronomically encoded unicode strings which requires a variant of this implementation (must be sum of 10 combination terms for each character - each term is per symbol).
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+492. (THEORY and FEATURE-DONE) Complement Function Map Construction - Diophantine Representation - Lagrange's Four Square Theorem SymPy solver
+(Draft updates to: https://arxiv.org/abs/1106.4102) - related to 472 - 4 January 2018
+-----------------------------------------------------------------------------------------------------------------------------------------------
+(#) This commit implements diophantine representation of an enumerable recursive set by Sum of Four squares solver
+in SymPy.
+(#) New function that enumerates each element x of the complement set and applies it as a parameter to Sum of Squares Diophantine solver
+to obtain the quadruple (a,b,c,d) such that a^2 + b^2 + c^2 + d^2 = x
+(#) This is mostly partial recursive function and not necessarily a total recursive function(defined for all possible quadruples).
+(#) logs for this have been committed to testlogs/
+(#) SymPy has other diophantine solvers too which require more than one parameters.
+(#) SymPy does not have exponential diophantine support yet which if available could construct an exponential diophantine for almost every
+recursively enumerable set ('almost' because of MRDP theorem - there are diophantine equations for recursively enumerable non-recursive sets and
+ undecidable)
