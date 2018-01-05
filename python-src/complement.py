@@ -46,11 +46,12 @@ from sympy.solvers.diophantine import diop_general_sum_of_squares
 from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
 import pprint
+import operator
 
 #Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf=[]
 cosvalues=[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
-complement_diophantine_map=defaultdict()
+complement_diophantine_map={}
 
 def getgofx(x):
     u=0
@@ -70,15 +71,25 @@ def toint(primestr):
 		return int(decimal.Decimal(primestr))
 
 def complement_diophantine(enumerableset):
+	global complement_diophantine_map
 	print "============================================================================"
 	print "Complement Diophantine Sum of Four Squares Mapping Constructed for enumerable set:",enumerableset
 	print "============================================================================"
 	for e in enumerableset:
 		diophantine_sum_of_squares_solve(e)
 	pprint.pprint(complement_diophantine_map)
+	complement_diophantine_map_sorted=sorted(complement_diophantine_map.items(),key=operator.itemgetter(0),reverse=True)
+	print "============================================================================"
+	print "Complement Diophantine Sum of Four Squares Mapping (Sorted by unknown tuples):" 
+	print "============================================================================"
+	pprint.pprint(complement_diophantine_map_sorted)
+	complement_diophantine_map_sorted=sorted(complement_diophantine_map.items(),key=operator.itemgetter(1),reverse=True)
+	print "============================================================================"
+	print "Complement Diophantine Sum of Four Squares Mapping (Sorted by parameter):" 
+	print "============================================================================"
+	pprint.pprint(complement_diophantine_map_sorted)
 
 def diophantine_sum_of_squares_solve(x):
-	print x
 	if x != '':
 		unknowntuple=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(x))
 		complement_diophantine_map[str(unknowntuple)]=x
