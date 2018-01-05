@@ -10192,8 +10192,14 @@ to obtain the quadruple (a,b,c,d) such that a^2 + b^2 + c^2 + d^2 = x
 (#) logs for this have been committed to testlogs/
 (#) SymPy has other diophantine solvers too which require more than one parameters.
 (#) SymPy does not have exponential diophantine support yet which if available could construct an exponential diophantine for almost every
-recursively enumerable set ('almost' because of MRDP theorem - there are diophantine equations for recursively enumerable non-recursive sets and
- undecidable)
+recursively enumerable set ('almost' because of MRDP theorem - there are diophantine equations for recursively enumerable non-recursive sets and undecidable)
+
+References:
+-----------
+492.1 Reduction of arbitrary diophantine equation to one in 13 unknowns - [Matijasevic-Robinson] - http://matwbn.icm.edu.pl/ksiazki/aa/aa27/aa27125.pdf - This implies every effectively enumerable complement set can be represented by a diophantine in 13 unknowns.
+492.2 Distinction between Enumerable and Effectively Enumerable - http://faculty.washington.edu/keyt/Effenumerability.pdf - "1) A set is enumerable if, and only if, it is the range of a total or partial function on the natural numbers.  2) A set is effectively enumerable if, and only if, it is the range of a total or partial effectively computable function on the natural numbers.  3) A function ƒ is effectively computable if, and only if, there is a list of instructions giving a step-by-step procedure that will determine in a finite number of steps the value ƒ(n) for any argument n for which ƒ returns a value...." - Effectively enumerable sets are recursive sets created by a partial or total recursive function i.e an algorithm can always find a diophantine representation of the set. From previous result every recursive set can be represented by a diophantine in 13 unknowns. If each unknown has maximum limit l, then there are l^13 possible 13-tuples t(i) of unknowns which is the maximum cardinality of the effectively enumerable set - mapping is enumerated as f(t(0)),f(t(1)),...,f(t(l^13-1)). This kind of complementation has two phases:
+	(*) first 13-tuples are found by a diophantine solver and
+	(*) these tuples are listed as t(0),t(1),t(2),....
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 493. (FEATURE-DONE) Computation Geometric Factorization - Binary Search for Tiles - Optimization - Benchmarks - Revised - 4 January 2018
