@@ -10088,9 +10088,11 @@ Factorization algorithm for N based on Segment Tree Search is:
 	(#) Query the Segment Tree for factor points in O(k + logN) where k is the number of segment intervals to be reported having factor point N=pq. It is sufficient to report atleast 1 segment having factor point and thus k=1. Number of segments containing both prime and non-prime factor points is proportional to size of set of all subsets of distinct prime factors and multiplicity (SmallOmega and BigOmega). Geometric intuition for this is: By moving a sweepline across the x-y plane, factor points and segments containing them (which are nothing but all possible size 2 partitions of set of distinct prime factors which correspond to p and q in N=pq, where as Bell Number of this set is number of all possible partitions) are reached in sequence left-to-right sorted ascending. Size of set of all subsets of distinct prime factors = 2^SmallOmega(N) = 2^loglogN = logN. If multiplicity is taken into consideration, from the very high bound above number of sets of subsets can be as high as O(2^logN).
 
 Thus there are 3 Computational Geometric Factorization algorithms described in this draft and all of them are PRAM algorithms and in NC requiring between O((logN)^2) and O((logN)^3) parallel time:
-	(#) K-MergeSort and BinarySearch of Hyperbolic tile segments (mentioned in 34)
+	(#) K-MergeSort and BinarySearch of Hyperbolic tile segments (mentioned in 34 - requires merge sort of tile intervals/segments)
 	(#) Local Binary Search in parallel of hyperbolic tiles without K-MergeSort (mentioned in 481 - recent optimization, better than k-mergesort)
-	(#) Segment Tree Representation and Binary Search of hyperbolic tile Segments (uses a classic datastructure, preprocessing is non-trivial and segment tree has to be constructed in parallel)
+	(#) Segment Tree Representation and Binary Search of hyperbolic tile Segments (uses a classic datastructure, preprocessing is non-trivial and segment tree has to be constructed in parallel - requires merge sort of tile intervals/segments)
+
+Note: First and Third factorization algorithms are equivalent because both involve sorting of pixelated hyperbolic tile segments. Second algorithm obviates sorting by assumption that each PRAM can locally do a binary search without involving peer PRAM processors. Theoretically all three have similar polylogarithmic (O(logN*logN) at best) runtime upperbounds. Second algorithm is better than First and Third probably because the constant involved in Big-O notation in second algorithm is very small compared to First and Third.
 
 References:
 -----------
