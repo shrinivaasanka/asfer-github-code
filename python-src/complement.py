@@ -52,6 +52,7 @@ import operator
 Lf=[]
 cosvalues=[0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
 complement_diophantine_map={}
+unknown_max_limit=11
 
 def getgofx(x):
     u=0
@@ -70,6 +71,16 @@ def toint(primestr):
 	if primestr != '' and not None:
 		return int(decimal.Decimal(primestr))
 
+def all_possible_unknowns_four_squares():
+	all_possible_unknowns=[]
+	for a in xrange(unknown_max_limit):
+		for b in xrange(unknown_max_limit):
+			for c in xrange(unknown_max_limit):
+				for d in xrange(unknown_max_limit):
+					tuple_set=set([(a,b,c,d)])
+					all_possible_unknowns.append(str(tuple_set))
+	return set(all_possible_unknowns)
+
 def complement_diophantine(enumerableset):
 	global complement_diophantine_map
 	print "============================================================================"
@@ -78,6 +89,20 @@ def complement_diophantine(enumerableset):
 	for e in enumerableset:
 		diophantine_sum_of_squares_solve(e)
 	pprint.pprint(complement_diophantine_map)
+
+	print "==========================================================================="
+	print "Complement Diophantine Map - Unknowns"
+	print "==========================================================================="
+	unknowns=complement_diophantine_map.keys()
+	print unknowns
+	print "==========================================================================="
+	print "Complement Diophantine - all possible unknowns"
+	print "==========================================================================="
+	all_unknowns=all_possible_unknowns_four_squares()
+	partial_function_domain_complement=all_unknowns.difference(set(unknowns))
+	for k in partial_function_domain_complement:
+		complement_diophantine_map[k]=-1
+
 	complement_diophantine_map_sorted=sorted(complement_diophantine_map.items(),key=operator.itemgetter(0),reverse=True)
 	print "============================================================================"
 	print "Complement Diophantine Sum of Four Squares Mapping (Sorted by unknown tuples):" 
