@@ -10243,3 +10243,12 @@ Factor is =  9333123
 =================================================
 (#) Compressed Spark log for this factorization has been committed to python-src/testlogs/
 (#) General Number Field Sieve algorithm is sequential, exponential in number of bits and requires O(2^(c(logN)^0.33*(loglogN)^0.67)) where c=1.901883 (for atleast one factor). For 24-bit (=logN) this is approximately k*128 time units for some constant k. But Computational Geometric Factorization Sieve finds all factors in O(logN*logN) time on multicore(PRAMs).
+
+---------------------------------------------------------------------------------------------------------------------------
+494. (THEORY and FEATURE-DONE) Complement Diophantine Map - Converts a Partial Function to Total Function - 6 January 2018
+---------------------------------------------------------------------------------------------------------------------------
+(#) Sum of Four Squares diophantine solutions are quadruples (a,b,c,d) which form a subset of all possible tuples and thus
+complement function unknows-to-parameter map is partial.
+(#) This is remedied by extending the parameter codomain by adding -1 as additional possible parameter value and mapping all unmapped tuples in domain to -1.  Resultant map is Total defined for all possible unknown tuples.
+(#) logs for this have been committed to testlogs/
+
