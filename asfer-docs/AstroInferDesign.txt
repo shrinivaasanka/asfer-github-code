@@ -1066,6 +1066,8 @@ PRAM algorithms are in NC.
 
 	34.76) Multicores,PRAMs,BSP and NC - [Vijaya Ramachandran] - https://womenintheory.files.wordpress.com/2012/05/vijaya-wit12.pdf
 
+	34.77) Word Size in a PRAM - https://hal.inria.fr/inria-00072448/document - Equation 5 - logN <= w (N is input size and w word size)
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
