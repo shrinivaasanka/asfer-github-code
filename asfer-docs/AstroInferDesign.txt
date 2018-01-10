@@ -10265,3 +10265,33 @@ References:
 ----------
 495.1 Factoring as a service - slides - http://crypto.2013.rump.cr.yp.to/981774ce07e51813fd4466612a78601b.pdf
 495.2 Factoring as a service - https://github.com/eniac/faas - Parallelizing Number Field Seive - Polynomial selection, Sieving, Linear Algebra, Square root - paper - [Luke Valenta, Shaanan Cohney, Alex Liao, Joshua Fried, Satya Bodduluri, Nadia Heninger - University of Pennsylvania] - https://eprint.iacr.org/2015/1000.pdf - "...The current public factorization record, a 768-bit RSA modulus, was reported in 2009 by Kleinjung, Aoki, Franke, Lenstra, Thomé, Bos, Gaudry, Kruppa, Montgomery, Osvik, te Riele, Timofeev, and Zimmermann, and took about 2.5 calendar years and a large academic effort [23],...We experimented with Apache Spark [37] to manage data flow, but Spark was not flexible enough for our needs, and our initial tests suggested that a Spark-based job distribution system was more than twice as slow as the system we were aiming to replace. Ultimately we chose Slurm (Simple Linux Utility for Resource Management) [36] for job distribution..."
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+496. (THEORY and FEATURE-DONE) Computational Geometric Factorization Update - Local Tile Computation and necessity for storage removed -
+10 January 2018 - 30-bit integer dual core single node Spark Cluster benchmark - related to 495
+--------------------------------------------------------------------------------------------------------------------------------------------
+As mentioned in previous section, reading tiles from storage in SparkContext.parallelize() is a serious bottleneck. In this commit, tile interval storage is obviated and each foreach() invokes a function which computes non-persisted tile interval locally and does binary search to print factors. SparkContext.parallelize() takes xrange() as argument. Python xrange() is an optimized implementation of list and returns XRange object.XRange object does not store all the elements in memory and is more like an iterator. A thirty bit integer has been factored and numbers are below:
+---------------------------
+Factorization of 921234437:
+---------------------------
+18/01/10 17:56:56 INFO Utils: /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-9fba8482-8ca1-4022-9bcc-1c285a8e1f58/userFiles-3e4bf574-9b1a-44c5-8b96-3873e96dc6c3/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+Factor is =  1
+Factor is =  17
+Factor is =  19
+Factor is =  59
+Factor is =  323
+Factor is =  1003
+Factor is =  1121
+Factor is =  19057
+Factor is =  48341
+Factor is =  821797
+Factor is =  918479
+Factor is =  2852119
+Factor is =  15614143
+Factor is =  48486023
+Factor is =  54190261
+18/01/10 18:08:51 INFO PythonRunner: Times: total = 714516, boot = 649, init = 23, finish = 713844
+
+Spark Duration: 18:08:51 - 17:56:56 = 535seconds
+
+Spark-Python has RPC and serialization latencies and following numbers could be better if implemented in a different frameworks like Slurm and on a Gigabit ENA cloud. First non-trivial factor above was printed within few seconds and this benchmark is for sieving all factors. Time utility is misleading because it includes all Spark RPC overhead. 

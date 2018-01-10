@@ -25,6 +25,7 @@
 #-----------------------------------------------------------------------------------------------------------
 
 number_to_factorize=0
+persisted_tiles=False
 
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, Row 
@@ -44,6 +45,61 @@ class VectorAccumulatorParam(AccumulatorParam):
               val1[i] += val2[i]
          return val1
 
+####################################################################################################################################
+#long double pixelated_hyperbolic_arc(long double n)
+#{
+#        long double sumoflogs=0.0;
+#        long double temp=0.0;
+#        long double xtile_start=n/2.0;
+#        long double xtile_end=n;
+#        long double xtile_sum=n/2.0;
+#        long double y=1.0;
+#        do
+#        {
+#                if(log2l(n/(y*(y+1.0))) < 0)
+#                        temp = 0.0; // tile has length 1
+#                else
+#                        temp = log2l(n/(y*(y+1.0)));
+#                cout<<"create_tiles("<<(int)n<<","<<(int)xtile_start<<","<<(int)y<<","<<(int)(xtile_end)<<","<<(int)y<<")"<<endl;
+#                factor=create_tiles((int)n,(int)(xtile_start)-PADDING,(int)y,(int)(xtile_end)+PADDING,(int)y);
+#                xtile_end=xtile_start;
+#                xtile_start=xtile_end-(n/((y+1.0)*(y+2.0)));
+#                xtile_sum += (n/(y*(y+1.0)));
+#                sumoflogs += temp;
+#        }
+#        while(y++ < (n));
+#
+#        return sumoflogs;
+#}
+####################################################################################################################################
+# xtile_start = n - y*n/((y+1)*(y+2))
+# xtile_end = xtile_start - n/((y+1)*(y+2)) 
+# interval/segment = (xtile_start,y,xtile_end,y)
+####################################################################################################################################
+
+def tilesearch_nonpersistent(y):
+	global number_to_factorize
+	n = number_to_factorize
+	xtile_start = int(n/y) 
+	xtile_end = int(n/(y+1)) 
+	#print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
+	binary_search_interval_nonpersistent(xtile_start,y,xtile_end,y)
+
+def binary_search_interval_nonpersistent(xl,yl,xr,yr):
+	intervalmidpoint = abs(int((xr-xl)/2))
+	#print "intervalmidpoint = ",intervalmidpoint
+	if intervalmidpoint > 0:
+		factorcandidate=(xl+intervalmidpoint)*yl
+		#print "factorcandidate = ",factorcandidate
+		if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
+			print "================================================="
+			print "Factor is = ", yl 
+			print "================================================="
+		else:
+			if factorcandidate  >  number_to_factorize:
+			        binary_search_interval_nonpersistent(xl, yl, xl+intervalmidpoint, yr)
+               		else:
+               		        binary_search_interval_nonpersistent(xl+intervalmidpoint, yl, xr, yr)
 
 def tilesearch(tileintervalstr):
 	global number_to_factorize
@@ -60,7 +116,7 @@ def binary_search_interval(xl,yl,xr,yr):
 	intervalmidpoint = int((xr-xl)/2)
 	if intervalmidpoint >= 0:
 		factorcandidate=(xl+intervalmidpoint)*yl
-		#print "factorcandidate = ",factorcandidate
+		print "factorcandidate = ",factorcandidate
 		if factorcandidate == number_to_factorize:
 			print "================================================="
 			print "Factor is = ", yl 
@@ -78,14 +134,17 @@ def SearchTiles_and_Factorize(n):
 
 	spcon = SparkContext("local[2]","Spark_TileSearch_Optimized")
 
-        tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
+	if persisted_tiles == True:
+        	tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
 
-        tileintervalslist=tileintervalsf.read().split("\n")
-	#print "tileintervalslist=",tileintervalslist
-        tileintervalslist_accum=spcon.accumulator(tileintervalslist, VectorAccumulatorParam())
+        	tileintervalslist=tileintervalsf.read().split("\n")
+		#print "tileintervalslist=",tileintervalslist
+        	tileintervalslist_accum=spcon.accumulator(tileintervalslist, VectorAccumulatorParam())
 
-	paralleltileintervals=spcon.parallelize(tileintervalslist)
-	paralleltileintervals.foreach(tilesearch)
+		paralleltileintervals=spcon.parallelize(tileintervalslist)
+		paralleltileintervals.foreach(tilesearch)
+	else:
+		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
 
 if __name__=="__main__":
 	number_to_factorize=toint(sys.argv[1])
