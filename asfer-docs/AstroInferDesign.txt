@@ -10498,3 +10498,29 @@ Factor is = 333331479
 18/01/11 13:48:32 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 838426 ms on localhost (executor driver) (1/3)
 
 which is almost 14 minutes ( 13:48:32 - 13:34:34 ). First non-trivial factor was printed within 10 seconds. Time utility prints 40 minutes including overhead for finishing Spark RPC tasks
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+498. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Non-Persistent Tile Segments - 31 bit Single Node Dual Core Spark Benchmarks - Primality Testing - Multiplicative Partition - Factorisatio Numerorum - 12 January 2018 - related to 495
+----------------------------------------------------------------------------------------------------------------------------------------------
+31-bit integer 2147483647 has been factorized by searching non-persisted pixelated hyperbolic tile segments. Only trivial factors are found and is a mersenne prime. This integer is the maximum permissible limit for xrange() and printed by python sys module (sys.maxsize). Similar to integer partition function which is number of ways of splitting an integer as sum of smaller integers, multiplicative partition function f(n) = number of ways of unordered factorizations of n. This function has an upperbound of : a{n} <= n(exp{{log n * logloglog n}/{loglog n}})^{{-1+o(1)}}.
+
+----------------------------------------------------------------------------
+Factorization/Primality of 2147483647
+----------------------------------------------------------------------------
+18/01/12 14:33:12 INFO Utils: /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-169ef9d3-56df-46eb-9b09-d63561491f87/userFiles-9f55cc79-e7cc-46e6-bad7-540f950587b5/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+=================================================
+Factor is =  1
+=================================================
+18/01/12 15:02:57 INFO PythonRunner: Times: total = 1784724, boot = 643, init = 23, finish = 1784058
+----------------------------------------------------------------------------
+Spark Duration 15:02:57 - 14:33:12 = 29 minutes 45 seconds
+
+Spark Logs have been committed to python-src/testlogs/
+
+References:
+----------
+498.1 Multiplicative Partition Function - ON THE OPPENHEIM’S ”FACTORISATIO NUMERORUM” FUNCTION - [FLORIAN LUCA, ANIRBAN MUKHOPADHYAY AND KOTYADA SRINIVAS] - https://arxiv.org/pdf/0807.0986.pdf - "... The function f(n) is related to various partition functions. For example, f(2^n) = p(n), where p(n) is the number of partitions of n. Furthermore, f(p1p2 · · · pk) = Bk, where Bk is the kth Bell number which counts the number of partitions of a set with k elements in nonempty disjoint subsets. In general, f(p1^α1*p2^α2 · · · pk^αk) is the number of partitions of a multiset consisting of αi copies of {i} for each i = 1, . . . , k.  Throughout the paper, we put log x for the natural logarithm of x. We use p and q for prime numbers and O and o for the Landau symbols. ..." 
+498.2 Multiplicative Partition Function - https://oeis.org/A001055
+498.3 Bound for Multiplicative Partition Function - [Canfield-Erdos-Pomerance] - https://www.math.dartmouth.edu/~carlp/PDF/paper39.pdf
+498.4 Eigth Mersenne Prime - 2^31 - 1 = 2147483647 - https://en.wikipedia.org/wiki/2,147,483,647 - this was largest known prime till 1867.
+498.5 M31 - http://primes.utm.edu/curios/page.php/2147483647.html - The first prime that cannot be tested on 32-bit primality-check software.

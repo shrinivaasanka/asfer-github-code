@@ -1,0 +1,81 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+18/01/12 14:33:02 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.122.1 instead (on interface virbr0)
+18/01/12 14:33:02 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+18/01/12 14:33:04 INFO SparkContext: Running Spark version 2.1.0
+18/01/12 14:33:04 WARN SparkContext: Support for Java 7 is deprecated as of Spark 2.0.0
+18/01/12 14:33:05 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/01/12 14:33:06 WARN SparkConf: Detected deprecated memory fraction settings: [spark.shuffle.memoryFraction, spark.storage.memoryFraction]. As of Spark 1.6, execution and storage memory management are unified. All memory fractions used in the old model are now deprecated and no longer read. If you wish to use the old memory management, you may explicitly enable `spark.memory.useLegacyMode` (not recommended).
+18/01/12 14:33:06 INFO SecurityManager: Changing view acls to: root
+18/01/12 14:33:06 INFO SecurityManager: Changing modify acls to: root
+18/01/12 14:33:06 INFO SecurityManager: Changing view acls groups to: 
+18/01/12 14:33:06 INFO SecurityManager: Changing modify acls groups to: 
+18/01/12 14:33:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+18/01/12 14:33:07 INFO Utils: Successfully started service 'sparkDriver' on port 41549.
+18/01/12 14:33:07 INFO SparkEnv: Registering MapOutputTracker
+18/01/12 14:33:07 INFO SparkEnv: Registering BlockManagerMaster
+18/01/12 14:33:07 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/01/12 14:33:07 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/01/12 14:33:07 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d384c9cc-a713-4772-a217-b6da135ac074
+18/01/12 14:33:07 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+18/01/12 14:33:07 INFO SparkEnv: Registering OutputCommitCoordinator
+18/01/12 14:33:08 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/01/12 14:33:08 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.122.1:4040
+18/01/12 14:33:09 INFO SparkContext: Added file file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1515747789472
+18/01/12 14:33:09 INFO Utils: Copying /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-169ef9d3-56df-46eb-9b09-d63561491f87/userFiles-9f55cc79-e7cc-46e6-bad7-540f950587b5/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+18/01/12 14:33:09 INFO Executor: Starting executor ID driver on host localhost
+18/01/12 14:33:09 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58395.
+18/01/12 14:33:09 INFO NettyBlockTransferService: Server created on 192.168.122.1:58395
+18/01/12 14:33:09 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/01/12 14:33:09 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.122.1, 58395, None)
+18/01/12 14:33:09 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.122.1:58395 with 912.3 MB RAM, BlockManagerId(driver, 192.168.122.1, 58395, None)
+18/01/12 14:33:09 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.122.1, 58395, None)
+18/01/12 14:33:09 INFO BlockManager: external shuffle service port = 7337
+18/01/12 14:33:09 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.122.1, 58395, None)
+18/01/12 14:33:10 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1515747789694
+18/01/12 14:33:11 INFO SparkContext: Starting job: foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147
+18/01/12 14:33:11 INFO DAGScheduler: Got job 0 (foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147) with 3 output partitions
+18/01/12 14:33:11 INFO DAGScheduler: Final stage: ResultStage 0 (foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147)
+18/01/12 14:33:11 INFO DAGScheduler: Parents of final stage: List()
+18/01/12 14:33:11 INFO DAGScheduler: Missing parents: List()
+18/01/12 14:33:11 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147), which has no missing parents
+18/01/12 14:33:12 WARN SizeEstimator: Failed to check whether UseCompressedOops is set; assuming yes
+18/01/12 14:33:12 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.4 KB, free 912.3 MB)
+18/01/12 14:33:12 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 912.3 MB)
+18/01/12 14:33:12 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.122.1:58395 (size: 4.1 KB, free: 912.3 MB)
+18/01/12 14:33:12 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:996
+18/01/12 14:33:12 INFO DAGScheduler: Submitting 3 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147)
+18/01/12 14:33:12 INFO TaskSchedulerImpl: Adding task set 0.0 with 3 tasks
+18/01/12 14:33:12 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 6208 bytes)
+18/01/12 14:33:12 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+18/01/12 14:33:12 INFO Executor: Fetching file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1515747789472
+18/01/12 14:33:12 INFO Utils: /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-169ef9d3-56df-46eb-9b09-d63561491f87/userFiles-9f55cc79-e7cc-46e6-bad7-540f950587b5/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+=================================================
+Factor is =  1
+=================================================
+18/01/12 15:02:57 INFO PythonRunner: Times: total = 1784724, boot = 643, init = 23, finish = 1784058
+18/01/12 15:02:57 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1529 bytes result sent to driver
+18/01/12 15:02:57 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 6208 bytes)
+18/01/12 15:02:57 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+18/01/12 15:02:58 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1785275 ms on localhost (executor driver) (1/3)
+18/01/12 15:31:51 INFO PythonRunner: Times: total = 1733450, boot = 14, init = 23, finish = 1733413
+18/01/12 15:31:51 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1602 bytes result sent to driver
+18/01/12 15:31:51 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 6208 bytes)
+18/01/12 15:31:51 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+18/01/12 15:31:51 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1733728 ms on localhost (executor driver) (2/3)
+18/01/12 16:00:57 INFO PythonRunner: Times: total = 1745886, boot = 6, init = 7, finish = 1745873
+18/01/12 16:00:57 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1602 bytes result sent to driver
+18/01/12 16:00:57 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 1746070 ms on localhost (executor driver) (3/3)
+18/01/12 16:00:57 INFO DAGScheduler: ResultStage 0 (foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147) finished in 5264.946 s
+18/01/12 16:00:57 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+18/01/12 16:00:57 INFO DAGScheduler: Job 0 finished: foreach at /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:147, took 5266.043912 s
+18/01/12 16:00:57 INFO SparkContext: Invoking stop() from shutdown hook
+18/01/12 16:00:57 INFO SparkUI: Stopped Spark web UI at http://192.168.122.1:4040
+18/01/12 16:00:58 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/01/12 16:00:58 INFO MemoryStore: MemoryStore cleared
+18/01/12 16:00:58 INFO BlockManager: BlockManager stopped
+18/01/12 16:00:58 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/01/12 16:00:58 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/01/12 16:00:58 INFO SparkContext: Successfully stopped SparkContext
+18/01/12 16:00:58 INFO ShutdownHookManager: Shutdown hook called
+18/01/12 16:00:58 INFO ShutdownHookManager: Deleting directory /tmp/spark-169ef9d3-56df-46eb-9b09-d63561491f87/pyspark-964f5642-8162-4964-96ad-dce54427ed91
+18/01/12 16:00:58 INFO ShutdownHookManager: Deleting directory /tmp/spark-169ef9d3-56df-46eb-9b09-d63561491f87
