@@ -1068,6 +1068,8 @@ PRAM algorithms are in NC.
 
 	34.77) Word Size in a PRAM - https://hal.inria.fr/inria-00072448/document - Equation 5 - logN <= w (N is input size and w word size)
 
+	34.78) Prefix Sum Computation and Parallel Integer Sorting - [Sanguthevar Rajasekaran, Sandeep Sen] - http://www.cse.iitd.ernet.in/~ssen/journals/acta.pdf - "...Specifically, we show that if the word length is sufficiently large, the problem of integer sorting reduces to the problem of prefix sum computation. As a corollary we get an integer sorting algorithm that runs in time O(log n) using n/log n processors with a word length of n^epsilon, for any constant epsilon > 0...."
+
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
