@@ -1,4 +1,4 @@
-/***********************************************************************************************************
+/**********************************************************************************************************
 #-------------------------------------------------------------------------------------------------------
 #NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
@@ -12,21 +12,17 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
-***********************************************************************************************************/
+**********************************************************************************************************/
 
+#ifdef OPENSSL
+#include "asfercloudmove_openssl.h"
+#else
 #include "asfercloudmove.h"
+#endif
 
 int main()
 {
@@ -35,6 +31,8 @@ int main()
         //cloudmove<MessageObject> cm_dest(&msg1, "localhost");
         currency::Currency currency_dest;
 	cloudmove<currency::Currency> cm_dest(&currency_dest, "localhost");	
+	cout<<"before receive_moved()"<<endl;
         cm_dest.receive_moved();
+	cout<<"after receive_moved()"<<endl;
         std::cout<< " cloud destination - received cloud-moved object :" <<cm_dest.get_data().uuid_and_denom() <<endl;
 }

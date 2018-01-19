@@ -1,6 +1,6 @@
 all:
-	g++ -g -w -std=c++14 asfercloudmoveclient.cpp -o asfercloudmoveclient -lprotobuf -lpthread
-	g++ -g -w -std=c++14 asfercloudmoveserver.cpp -o asfercloudmoveserver -lprotobuf -lpthread
+	g++ -DOPENSSL -g -w -std=c++14 asfercloudmoveclient.cpp -o asfercloudmoveclient -lprotobuf -lpthread -lssl -lcrypto
+	g++ -DOPENSSL -g -w -std=c++14 asfercloudmoveserver.cpp -o asfercloudmoveserver -lprotobuf -lpthread -lssl -lcrypto
 clean:
 	rm asfercloudmoveclient asfercloudmoveserver
 
