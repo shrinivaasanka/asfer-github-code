@@ -10527,3 +10527,16 @@ References:
 498.3 Bound for Multiplicative Partition Function - [Canfield-Erdos-Pomerance] - https://www.math.dartmouth.edu/~carlp/PDF/paper39.pdf
 498.4 Eigth Mersenne Prime - 2^31 - 1 = 2147483647 - https://en.wikipedia.org/wiki/2,147,483,647 - this was largest known prime till 1867.
 498.5 M31 - http://primes.utm.edu/curios/page.php/2147483647.html - The first prime that cannot be tested on 32-bit primality-check software.
+
+-------------------------------------------------------------------------------------------------------------------------
+499. (FEATURE-DONE) Secure Neuro Currency Cloud Perfect Forward Move - OpenSSL client and server - 19 January 2018
+-------------------------------------------------------------------------------------------------------------------------
+Neuro Currency Cloud Perfect Forward Move socket code has been openSSL enabled:
+- Makefile updated include -DOPENSSL #ifdef option for compiling SSL client-server headers
+- license headers updated
+- new header asfercloudmove_openssl.h has been added to repository for invoking openSSL client and server functions in opensslclient.h
+and opensslserver.h
+- An example fictitious X.509 cert.pem and key.pem have been created by openssl utility for certificate verification
+- new headers opensslclient.h and opensslserver.h have been added to repository which define openSSL client and server functions (these
+ are reference examples in www.openssl.org Wiki changed for cloud move)
+- logs for SSL cloud_move client and server have been committed to cloud_move/testlogs/
