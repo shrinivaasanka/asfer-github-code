@@ -10557,3 +10557,25 @@ Searching Unsorted lists is the most fundamental open research problem and this 
 . Python dictionaries are hash maps and not hash tables which support collisions. Each digit in query is lookedup for nearest neighbours and if
  there is a match digitmatch is set to True. Logical AND of all digit matches is returned as True/False.
 
+-------------------------------------------------------------------------------------------------------------------------------------
+501. (THEORY) Answer-Questioning (Reversal of Interview) and Recursive Gloss Overlap Dense Subgraph Classification - 21 January 2018
+- related to 412, 420
+-------------------------------------------------------------------------------------------------------------------------------------
+Recursive Gloss Overlap Definition Graph of a text previously has been demonstrated to classify documents in unsupervised manner based on
+dense subgraphs: centrality, k-cores, pageranks etc., Dense subgraphs of text graph extract the essence of an article and highlight the keywords
+which may or may not be present in the document. Keywords not present in the document can be classes of a document because of the recursive
+deep learning of definitions. From the keywords, a question or set of permutations of questions can be constructed which the text answers.
+Relevance of Question depends on the relatedness e.g Tensor Neuron of all possible pairs of keyword class vertices.
+
+Example:
+--------
+If a text graph of an academic research text has been classified in following word vertices of high core numbers
+		[Prime, Factorzation, Theorem, Composites, Diophantine, Polynomials,...]
+in decreasing value of centrality/k-core/pagerank and pairwise Tensor Neuron potentials are ranked as below:
+		Prime-Factorization = 0.34234
+		Theorem-Composites=0.33333
+		Diophantine-polynomials=0.221212
+		... and so on
+then question(s) can be constructed based on previous ranking of Tensor relatedness as:
+		Does this article discuss relation between [Primes] and [Factorization]?
+		....
