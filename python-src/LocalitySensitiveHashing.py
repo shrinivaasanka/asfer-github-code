@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 #Locality Sensitive Hashing Implementation - Nearest Neighbour Search:
 #---------------------------------------------------------------------
@@ -73,6 +65,7 @@ class LSH(object):
 		print "#####################################################################"
 		print "Top Nearest Neighbours Ranked for Query - ",e,":"
 		pprint.pprint(sorted_nearest_neighbours)
+		return sorted_nearest_neighbours
 
 	def find_nearest_neighbour(self, e, neighbours):
 		minneighbour=""

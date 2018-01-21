@@ -1,0 +1,4673 @@
+============================================
+Unsorted N-tuple array
+============================================
+[['#', '#', '#', '#', '2'], ['#', '#', '#', '#', '3'], ['#', '#', '#', '#', '5'], ['#', '#', '#', '#', '7'], ['#', '#', '#', '1', '1'], ['#', '#', '#', '1', '3'], ['#', '#', '#', '1', '7'], ['#', '#', '#', '1', '9'], ['#', '#', '#', '2', '3'], ['#', '#', '#', '2', '9'], ['#', '#', '#', '3', '1'], ['#', '#', '#', '3', '5'], ['#', '#', '#', '3', '7'], ['#', '#', '#', '4', '1'], ['#', '#', '#', '4', '3']]
+============================================
+Digit Hashtables
+============================================
+[<LocalitySensitiveHashing.LSH object at 0xb743cd0c>, <LocalitySensitiveHashing.LSH object at 0xb71e310c>, <LocalitySensitiveHashing.LSH object at 0xb71e30ec>, <LocalitySensitiveHashing.LSH object at 0xb71f714c>, <LocalitySensitiveHashing.LSH object at 0xb6f7a14c>]
+======================================================
+search_number(): n=  99455
+search_number(): padded n =  99455
+digit= 9
+Nearest Neighbour in hashtable  0  =   1e+11
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =   1e+11
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =   1e+11
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =   1e+11
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =   1e+11
+Nearest Neighbour in hashtable  11  =   1e+11
+Nearest Neighbour in hashtable  12  =   1e+11
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =   1e+11
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =  # 1
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =   1e+11
+Nearest Neighbour in hashtable  21  =   1e+11
+Nearest Neighbour in hashtable  22  =  # 1
+Nearest Neighbour in hashtable  23  =   1e+11
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =   1e+11
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =   1e+11
+Nearest Neighbour in hashtable  28  =   1e+11
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =  # 1
+Nearest Neighbour in hashtable  31  =   1e+11
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =   1e+11
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =  # 1
+Nearest Neighbour in hashtable  38  =  # 1
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =   1e+11
+Nearest Neighbour in hashtable  41  =   1e+11
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =   1e+11
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  # 1
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  9 :
+[(1,
+  ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 9
+Nearest Neighbour in hashtable  0  =   1e+11
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =   1e+11
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =   1e+11
+Nearest Neighbour in hashtable  6  =  # 1
+Nearest Neighbour in hashtable  7  =   1e+11
+Nearest Neighbour in hashtable  8  =  # 1
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =   1e+11
+Nearest Neighbour in hashtable  11  =   1e+11
+Nearest Neighbour in hashtable  12  =   1e+11
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =   1e+11
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =   1e+11
+Nearest Neighbour in hashtable  21  =   1e+11
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =   1e+11
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =   1e+11
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =   1e+11
+Nearest Neighbour in hashtable  28  =   1e+11
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =   1e+11
+Nearest Neighbour in hashtable  31  =   1e+11
+Nearest Neighbour in hashtable  32  =  # 1
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =   1e+11
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =   1e+11
+Nearest Neighbour in hashtable  38  =  # 1
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =   1e+11
+Nearest Neighbour in hashtable  41  =   1e+11
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =   1e+11
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =   1e+11
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  9 :
+[(1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 4
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =   1e+11
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =   1e+11
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  # 1
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =   1e+11
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =  # 1
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =  # 1
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =   1e+11
+Nearest Neighbour in hashtable  21  =   1e+11
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =   1e+11
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =   1e+11
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =   1e+11
+Nearest Neighbour in hashtable  28  =  # 1
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =  # 1
+Nearest Neighbour in hashtable  31  =  # 1
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =   1e+11
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =   1e+11
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =  # 1
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =   1e+11
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =  # 1
+Nearest Neighbour in hashtable  47  =  # 1
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  4 :
+[(1,
+  ['#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 5
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =   1e+11
+Nearest Neighbour in hashtable  3  =  # 1
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =  4 1
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  4 1
+Nearest Neighbour in hashtable  8  =  4 1
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =  3 1
+Nearest Neighbour in hashtable  11  =  1 1
+Nearest Neighbour in hashtable  12  =  1 1
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =   1e+11
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =  1 1
+Nearest Neighbour in hashtable  18  =  1 1
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =  3 1
+Nearest Neighbour in hashtable  21  =  3 1
+Nearest Neighbour in hashtable  22  =  # 1
+Nearest Neighbour in hashtable  23  =  # 1
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =  1 1
+Nearest Neighbour in hashtable  26  =  1 1
+Nearest Neighbour in hashtable  27  =  3 1
+Nearest Neighbour in hashtable  28  =  1 1
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =  1 1
+Nearest Neighbour in hashtable  31  =  3 1
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =  1 1
+Nearest Neighbour in hashtable  36  =  1 1
+Nearest Neighbour in hashtable  37  =   1e+11
+Nearest Neighbour in hashtable  38  =  1 1
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =  # 1
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  3 1
+Nearest Neighbour in hashtable  43  =  3 1
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =  3 1
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  1 1
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  5 :
+[(1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1']),
+ (100000000000.0, ['', '', '', '', '', '', '', '', '', '', ''])]
+search_number(): match =  (1, ['#', '#', '#', '4', '4', '4', '#', '3', '1', '1', '#', '1', '1', '#', '3', '3', '#', '#', '#', '1', '1', '3', '1', '#', '1', '3', '#', '1', '1', '1', '#', '#', '#', '3', '3', '#', '3', '1'])
+digit= 5
+Nearest Neighbour in hashtable  0  =  2 1
+Nearest Neighbour in hashtable  1  =  3 1
+Nearest Neighbour in hashtable  2  =  3 1
+Nearest Neighbour in hashtable  3  =  3 1
+Nearest Neighbour in hashtable  4  =  3 1
+Nearest Neighbour in hashtable  5  =  1 1
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  2 1
+Nearest Neighbour in hashtable  8  =  1 1
+Nearest Neighbour in hashtable  9  =  5 0
+Nearest Neighbour in hashtable  10  =  5 0
+Nearest Neighbour in hashtable  11  =  3 1
+Nearest Neighbour in hashtable  12  =  5 0
+Nearest Neighbour in hashtable  13  =  3 1
+Nearest Neighbour in hashtable  14  =  5 0
+Nearest Neighbour in hashtable  15  =  2 1
+Nearest Neighbour in hashtable  16  =  5 0
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =  5 0
+Nearest Neighbour in hashtable  19  =  5 0
+Nearest Neighbour in hashtable  20  =  1 1
+Nearest Neighbour in hashtable  21  =  5 0
+Nearest Neighbour in hashtable  22  =  1 1
+Nearest Neighbour in hashtable  23  =  5 0
+Nearest Neighbour in hashtable  24  =  5 0
+Nearest Neighbour in hashtable  25  =  1 1
+Nearest Neighbour in hashtable  26  =  9 1
+Nearest Neighbour in hashtable  27  =  3 1
+Nearest Neighbour in hashtable  28  =  7 1
+Nearest Neighbour in hashtable  29  =  5 0
+Nearest Neighbour in hashtable  30  =  7 1
+Nearest Neighbour in hashtable  31  =  9 1
+Nearest Neighbour in hashtable  32  =  5 0
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  5 0
+Nearest Neighbour in hashtable  35  =  2 1
+Nearest Neighbour in hashtable  36  =  2 1
+Nearest Neighbour in hashtable  37  =  1 1
+Nearest Neighbour in hashtable  38  =  7 1
+Nearest Neighbour in hashtable  39  =  5 0
+Nearest Neighbour in hashtable  40  =  2 1
+Nearest Neighbour in hashtable  41  =  3 1
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =  2 1
+Nearest Neighbour in hashtable  44  =  5 0
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  2 1
+Nearest Neighbour in hashtable  48  =  5 0
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  5 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2']),
+ (100000000000.0, ['', '', '', '', '', ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 99455 in unsorted array: False
+======================================================
+search_number(): n=  43
+search_number(): padded n =  ###43
+digit= 4
+Nearest Neighbour in hashtable  0  =  1 1
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =  3 1
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  4 0
+Nearest Neighbour in hashtable  5  =  4 0
+Nearest Neighbour in hashtable  6  =  4 0
+Nearest Neighbour in hashtable  7  =  4 0
+Nearest Neighbour in hashtable  8  =  4 0
+Nearest Neighbour in hashtable  9  =  4 0
+Nearest Neighbour in hashtable  10  =  1 1
+Nearest Neighbour in hashtable  11  =  4 0
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  4 0
+Nearest Neighbour in hashtable  15  =  1 1
+Nearest Neighbour in hashtable  16  =  # 1
+Nearest Neighbour in hashtable  17  =  4 0
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  4 0
+Nearest Neighbour in hashtable  20  =  4 0
+Nearest Neighbour in hashtable  21  =  4 0
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =  1 1
+Nearest Neighbour in hashtable  24  =  4 0
+Nearest Neighbour in hashtable  25  =  4 0
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =  4 0
+Nearest Neighbour in hashtable  28  =  1 1
+Nearest Neighbour in hashtable  29  =  4 0
+Nearest Neighbour in hashtable  30  =  1 1
+Nearest Neighbour in hashtable  31  =  1 1
+Nearest Neighbour in hashtable  32  =  1 1
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  4 0
+Nearest Neighbour in hashtable  35  =  1 1
+Nearest Neighbour in hashtable  36  =  4 0
+Nearest Neighbour in hashtable  37  =  4 0
+Nearest Neighbour in hashtable  38  =  4 0
+Nearest Neighbour in hashtable  39  =  4 0
+Nearest Neighbour in hashtable  40  =  3 1
+Nearest Neighbour in hashtable  41  =  3 1
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =  1 1
+Nearest Neighbour in hashtable  44  =  4 0
+Nearest Neighbour in hashtable  45  =  4 0
+Nearest Neighbour in hashtable  46  =  1 1
+Nearest Neighbour in hashtable  47  =  4 0
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  4 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digit= 3
+Nearest Neighbour in hashtable  0  =  3 0
+Nearest Neighbour in hashtable  1  =  3 0
+Nearest Neighbour in hashtable  2  =  3 0
+Nearest Neighbour in hashtable  3  =  3 0
+Nearest Neighbour in hashtable  4  =  3 0
+Nearest Neighbour in hashtable  5  =  3 0
+Nearest Neighbour in hashtable  6  =  7 1
+Nearest Neighbour in hashtable  7  =  5 1
+Nearest Neighbour in hashtable  8  =  5 1
+Nearest Neighbour in hashtable  9  =  3 0
+Nearest Neighbour in hashtable  10  =  9 1
+Nearest Neighbour in hashtable  11  =  3 0
+Nearest Neighbour in hashtable  12  =  3 0
+Nearest Neighbour in hashtable  13  =  3 0
+Nearest Neighbour in hashtable  14  =  3 0
+Nearest Neighbour in hashtable  15  =  3 0
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =  3 0
+Nearest Neighbour in hashtable  19  =  3 0
+Nearest Neighbour in hashtable  20  =  3 0
+Nearest Neighbour in hashtable  21  =  3 0
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =  3 0
+Nearest Neighbour in hashtable  24  =  3 0
+Nearest Neighbour in hashtable  25  =  3 0
+Nearest Neighbour in hashtable  26  =  3 0
+Nearest Neighbour in hashtable  27  =  2 1
+Nearest Neighbour in hashtable  28  =  7 1
+Nearest Neighbour in hashtable  29  =  3 0
+Nearest Neighbour in hashtable  30  =  3 0
+Nearest Neighbour in hashtable  31  =  5 1
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  3 0
+Nearest Neighbour in hashtable  35  =  3 0
+Nearest Neighbour in hashtable  36  =  3 0
+Nearest Neighbour in hashtable  37  =  3 0
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  3 0
+Nearest Neighbour in hashtable  40  =  3 0
+Nearest Neighbour in hashtable  41  =  3 0
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =  3 0
+Nearest Neighbour in hashtable  44  =  3 0
+Nearest Neighbour in hashtable  45  =  3 0
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  3 0
+Nearest Neighbour in hashtable  48  =  5 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5']),
+ (100000000000.0, ['', '', '', '', '', '', '', '', '', '', '', '', ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 43 in unsorted array: True
+======================================================
+search_number(): n=  31
+search_number(): padded n =  ###31
+digit= 3
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =  4 1
+Nearest Neighbour in hashtable  3  =  4 1
+Nearest Neighbour in hashtable  4  =  3 0
+Nearest Neighbour in hashtable  5  =  1 1
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  3 0
+Nearest Neighbour in hashtable  8  =  3 0
+Nearest Neighbour in hashtable  9  =  3 0
+Nearest Neighbour in hashtable  10  =  3 0
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  3 0
+Nearest Neighbour in hashtable  13  =  # 1
+Nearest Neighbour in hashtable  14  =  3 0
+Nearest Neighbour in hashtable  15  =  3 0
+Nearest Neighbour in hashtable  16  =  4 1
+Nearest Neighbour in hashtable  17  =  3 0
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  3 0
+Nearest Neighbour in hashtable  20  =  3 0
+Nearest Neighbour in hashtable  21  =  1 1
+Nearest Neighbour in hashtable  22  =  3 0
+Nearest Neighbour in hashtable  23  =  1 1
+Nearest Neighbour in hashtable  24  =  3 0
+Nearest Neighbour in hashtable  25  =  3 0
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =  # 1
+Nearest Neighbour in hashtable  28  =  # 1
+Nearest Neighbour in hashtable  29  =  3 0
+Nearest Neighbour in hashtable  30  =   1e+11
+Nearest Neighbour in hashtable  31  =  3 0
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  3 0
+Nearest Neighbour in hashtable  35  =  3 0
+Nearest Neighbour in hashtable  36  =  3 0
+Nearest Neighbour in hashtable  37  =  3 0
+Nearest Neighbour in hashtable  38  =  3 0
+Nearest Neighbour in hashtable  39  =  3 0
+Nearest Neighbour in hashtable  40  =  3 0
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  1 1
+Nearest Neighbour in hashtable  43  =  1 1
+Nearest Neighbour in hashtable  44  =  3 0
+Nearest Neighbour in hashtable  45  =  4 1
+Nearest Neighbour in hashtable  46  =  1 1
+Nearest Neighbour in hashtable  47  =  1 1
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digit= 1
+Nearest Neighbour in hashtable  0  =  2 1
+Nearest Neighbour in hashtable  1  =  3 1
+Nearest Neighbour in hashtable  2  =  7 1
+Nearest Neighbour in hashtable  3  =  1 0
+Nearest Neighbour in hashtable  4  =  1 0
+Nearest Neighbour in hashtable  5  =  1 0
+Nearest Neighbour in hashtable  6  =  1 0
+Nearest Neighbour in hashtable  7  =  3 1
+Nearest Neighbour in hashtable  8  =  1 0
+Nearest Neighbour in hashtable  9  =  1 0
+Nearest Neighbour in hashtable  10  =  9 1
+Nearest Neighbour in hashtable  11  =  3 1
+Nearest Neighbour in hashtable  12  =  1 0
+Nearest Neighbour in hashtable  13  =  1 0
+Nearest Neighbour in hashtable  14  =  1 0
+Nearest Neighbour in hashtable  15  =  3 1
+Nearest Neighbour in hashtable  16  =  1 0
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =  2 1
+Nearest Neighbour in hashtable  19  =  1 0
+Nearest Neighbour in hashtable  20  =  9 1
+Nearest Neighbour in hashtable  21  =  5 1
+Nearest Neighbour in hashtable  22  =  9 1
+Nearest Neighbour in hashtable  23  =  1 0
+Nearest Neighbour in hashtable  24  =  1 0
+Nearest Neighbour in hashtable  25  =  5 1
+Nearest Neighbour in hashtable  26  =  9 1
+Nearest Neighbour in hashtable  27  =  3 1
+Nearest Neighbour in hashtable  28  =  1 0
+Nearest Neighbour in hashtable  29  =  1 0
+Nearest Neighbour in hashtable  30  =  1 0
+Nearest Neighbour in hashtable  31  =  5 1
+Nearest Neighbour in hashtable  32  =  3 1
+Nearest Neighbour in hashtable  33  =  9 1
+Nearest Neighbour in hashtable  34  =  1 0
+Nearest Neighbour in hashtable  35  =  9 1
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =  1 0
+Nearest Neighbour in hashtable  38  =  1 0
+Nearest Neighbour in hashtable  39  =  1 0
+Nearest Neighbour in hashtable  40  =  2 1
+Nearest Neighbour in hashtable  41  =  5 1
+Nearest Neighbour in hashtable  42  =  3 1
+Nearest Neighbour in hashtable  43  =  3 1
+Nearest Neighbour in hashtable  44  =  1 0
+Nearest Neighbour in hashtable  45  =  1 0
+Nearest Neighbour in hashtable  46  =  1 0
+Nearest Neighbour in hashtable  47  =   1e+11
+Nearest Neighbour in hashtable  48  =  1 0
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  1 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '2',
+   '3',
+   '7',
+   '3',
+   '9',
+   '3',
+   '3',
+   '2',
+   '9',
+   '5',
+   '9',
+   '5',
+   '9',
+   '3',
+   '5',
+   '3',
+   '9',
+   '9',
+   '2',
+   '5',
+   '3',
+   '3']),
+ (100000000000.0,
+  ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 31 in unsorted array: True
+======================================================
+search_number(): n=  17
+search_number(): padded n =  ###17
+digit= 1
+Nearest Neighbour in hashtable  0  =  1 0
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =  4 1
+Nearest Neighbour in hashtable  3  =  4 1
+Nearest Neighbour in hashtable  4  =  1 0
+Nearest Neighbour in hashtable  5  =  1 0
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  1 0
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  1 0
+Nearest Neighbour in hashtable  10  =  3 1
+Nearest Neighbour in hashtable  11  =  1 0
+Nearest Neighbour in hashtable  12  =  3 1
+Nearest Neighbour in hashtable  13  =  1 0
+Nearest Neighbour in hashtable  14  =  1 0
+Nearest Neighbour in hashtable  15  =   1e+11
+Nearest Neighbour in hashtable  16  =  4 1
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  1 0
+Nearest Neighbour in hashtable  20  =  3 1
+Nearest Neighbour in hashtable  21  =  1 0
+Nearest Neighbour in hashtable  22  =  1 0
+Nearest Neighbour in hashtable  23  =  # 1
+Nearest Neighbour in hashtable  24  =  1 0
+Nearest Neighbour in hashtable  25  =  1 0
+Nearest Neighbour in hashtable  26  =  3 1
+Nearest Neighbour in hashtable  27  =  4 1
+Nearest Neighbour in hashtable  28  =  3 1
+Nearest Neighbour in hashtable  29  =  1 0
+Nearest Neighbour in hashtable  30  =  # 1
+Nearest Neighbour in hashtable  31  =  4 1
+Nearest Neighbour in hashtable  32  =  1 0
+Nearest Neighbour in hashtable  33  =  1 0
+Nearest Neighbour in hashtable  34  =  1 0
+Nearest Neighbour in hashtable  35  =  1 0
+Nearest Neighbour in hashtable  36  =  3 1
+Nearest Neighbour in hashtable  37  =  3 1
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  1 0
+Nearest Neighbour in hashtable  40  =   1e+11
+Nearest Neighbour in hashtable  41  =  1 0
+Nearest Neighbour in hashtable  42  =  # 1
+Nearest Neighbour in hashtable  43  =  1 0
+Nearest Neighbour in hashtable  44  =  1 0
+Nearest Neighbour in hashtable  45  =  1 0
+Nearest Neighbour in hashtable  46  =  # 1
+Nearest Neighbour in hashtable  47  =  1 0
+Nearest Neighbour in hashtable  48  =   1e+11
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  1 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '3',
+   '3',
+   '4',
+   '3',
+   '#',
+   '3',
+   '4',
+   '3',
+   '#',
+   '4',
+   '3',
+   '3',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digit= 7
+Nearest Neighbour in hashtable  0  =  7 0
+Nearest Neighbour in hashtable  1  =  7 0
+Nearest Neighbour in hashtable  2  =  7 0
+Nearest Neighbour in hashtable  3  =  7 0
+Nearest Neighbour in hashtable  4  =  7 0
+Nearest Neighbour in hashtable  5  =  7 0
+Nearest Neighbour in hashtable  6  =  7 0
+Nearest Neighbour in hashtable  7  =  7 0
+Nearest Neighbour in hashtable  8  =  7 0
+Nearest Neighbour in hashtable  9  =  7 0
+Nearest Neighbour in hashtable  10  =  7 0
+Nearest Neighbour in hashtable  11  =  7 0
+Nearest Neighbour in hashtable  12  =  7 0
+Nearest Neighbour in hashtable  13  =  7 0
+Nearest Neighbour in hashtable  14  =  7 0
+Nearest Neighbour in hashtable  15  =  7 0
+Nearest Neighbour in hashtable  16  =  7 0
+Nearest Neighbour in hashtable  17  =  7 0
+Nearest Neighbour in hashtable  18  =  2 1
+Nearest Neighbour in hashtable  19  =  7 0
+Nearest Neighbour in hashtable  20  =  7 0
+Nearest Neighbour in hashtable  21  =  7 0
+Nearest Neighbour in hashtable  22  =  7 0
+Nearest Neighbour in hashtable  23  =  7 0
+Nearest Neighbour in hashtable  24  =  7 0
+Nearest Neighbour in hashtable  25  =  7 0
+Nearest Neighbour in hashtable  26  =  7 0
+Nearest Neighbour in hashtable  27  =  7 0
+Nearest Neighbour in hashtable  28  =  7 0
+Nearest Neighbour in hashtable  29  =  7 0
+Nearest Neighbour in hashtable  30  =  7 0
+Nearest Neighbour in hashtable  31  =  7 0
+Nearest Neighbour in hashtable  32  =  7 0
+Nearest Neighbour in hashtable  33  =  7 0
+Nearest Neighbour in hashtable  34  =  7 0
+Nearest Neighbour in hashtable  35  =  7 0
+Nearest Neighbour in hashtable  36  =  2 1
+Nearest Neighbour in hashtable  37  =  7 0
+Nearest Neighbour in hashtable  38  =  7 0
+Nearest Neighbour in hashtable  39  =  7 0
+Nearest Neighbour in hashtable  40  =  2 1
+Nearest Neighbour in hashtable  41  =  7 0
+Nearest Neighbour in hashtable  42  =  1 1
+Nearest Neighbour in hashtable  43  =  7 0
+Nearest Neighbour in hashtable  44  =  7 0
+Nearest Neighbour in hashtable  45  =  7 0
+Nearest Neighbour in hashtable  46  =  7 0
+Nearest Neighbour in hashtable  47  =  7 0
+Nearest Neighbour in hashtable  48  =  7 0
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  7 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '2',
+   '3',
+   '7',
+   '3',
+   '9',
+   '3',
+   '3',
+   '2',
+   '9',
+   '5',
+   '9',
+   '5',
+   '9',
+   '3',
+   '5',
+   '3',
+   '9',
+   '9',
+   '2',
+   '5',
+   '3',
+   '3',
+   '2',
+   '2',
+   '2',
+   '1']),
+ (100000000000.0,
+  ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 17 in unsorted array: True
+======================================================
+search_number(): n=  3278
+search_number(): padded n =  #3278
+digit= 3
+Nearest Neighbour in hashtable  0  =   1e+11
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =   1e+11
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =   1e+11
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =   1e+11
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =   1e+11
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =   1e+11
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =   1e+11
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =  # 1
+Nearest Neighbour in hashtable  21  =   1e+11
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =   1e+11
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =   1e+11
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =   1e+11
+Nearest Neighbour in hashtable  28  =   1e+11
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =   1e+11
+Nearest Neighbour in hashtable  31  =   1e+11
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =   1e+11
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =   1e+11
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =   1e+11
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  # 1
+Nearest Neighbour in hashtable  43  =   1e+11
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  # 1
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(1,
+  ['#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 2
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =  # 1
+Nearest Neighbour in hashtable  2  =  # 1
+Nearest Neighbour in hashtable  3  =  # 1
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =  # 1
+Nearest Neighbour in hashtable  6  =  # 1
+Nearest Neighbour in hashtable  7  =  # 1
+Nearest Neighbour in hashtable  8  =  # 1
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =  # 1
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =  # 1
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =  # 1
+Nearest Neighbour in hashtable  16  =  # 1
+Nearest Neighbour in hashtable  17  =  # 1
+Nearest Neighbour in hashtable  18  =  # 1
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =  # 1
+Nearest Neighbour in hashtable  21  =  # 1
+Nearest Neighbour in hashtable  22  =  # 1
+Nearest Neighbour in hashtable  23  =  # 1
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =  # 1
+Nearest Neighbour in hashtable  26  =  # 1
+Nearest Neighbour in hashtable  27  =  # 1
+Nearest Neighbour in hashtable  28  =  # 1
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =  # 1
+Nearest Neighbour in hashtable  31  =  # 1
+Nearest Neighbour in hashtable  32  =  # 1
+Nearest Neighbour in hashtable  33  =  # 1
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =  # 1
+Nearest Neighbour in hashtable  36  =  # 1
+Nearest Neighbour in hashtable  37  =  # 1
+Nearest Neighbour in hashtable  38  =  # 1
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =  # 1
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  # 1
+Nearest Neighbour in hashtable  43  =  # 1
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =  # 1
+Nearest Neighbour in hashtable  46  =  # 1
+Nearest Neighbour in hashtable  47  =  # 1
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  2 :
+[(1,
+  ['#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 7
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =  # 1
+Nearest Neighbour in hashtable  2  =  # 1
+Nearest Neighbour in hashtable  3  =  # 1
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =  # 1
+Nearest Neighbour in hashtable  6  =  # 1
+Nearest Neighbour in hashtable  7  =  # 1
+Nearest Neighbour in hashtable  8  =  # 1
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =  # 1
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =  # 1
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =  # 1
+Nearest Neighbour in hashtable  16  =  # 1
+Nearest Neighbour in hashtable  17  =  # 1
+Nearest Neighbour in hashtable  18  =  # 1
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =  # 1
+Nearest Neighbour in hashtable  21  =  # 1
+Nearest Neighbour in hashtable  22  =  # 1
+Nearest Neighbour in hashtable  23  =  # 1
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =  # 1
+Nearest Neighbour in hashtable  26  =  # 1
+Nearest Neighbour in hashtable  27  =  # 1
+Nearest Neighbour in hashtable  28  =  # 1
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =  # 1
+Nearest Neighbour in hashtable  31  =  # 1
+Nearest Neighbour in hashtable  32  =  # 1
+Nearest Neighbour in hashtable  33  =  # 1
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =  # 1
+Nearest Neighbour in hashtable  36  =  # 1
+Nearest Neighbour in hashtable  37  =  # 1
+Nearest Neighbour in hashtable  38  =  # 1
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =  # 1
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  # 1
+Nearest Neighbour in hashtable  43  =  # 1
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =  # 1
+Nearest Neighbour in hashtable  46  =  # 1
+Nearest Neighbour in hashtable  47  =  # 1
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  7 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '3',
+   '3',
+   '4',
+   '3',
+   '#',
+   '3',
+   '4',
+   '3',
+   '#',
+   '4',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'])
+digit= 8
+Nearest Neighbour in hashtable  0  =  1 1
+Nearest Neighbour in hashtable  1  =  3 1
+Nearest Neighbour in hashtable  2  =  1 1
+Nearest Neighbour in hashtable  3  =  3 1
+Nearest Neighbour in hashtable  4  =  2 1
+Nearest Neighbour in hashtable  5  =  3 1
+Nearest Neighbour in hashtable  6  =  2 1
+Nearest Neighbour in hashtable  7  =  5 1
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  2 1
+Nearest Neighbour in hashtable  10  =  5 1
+Nearest Neighbour in hashtable  11  =  9 1
+Nearest Neighbour in hashtable  12  =   1e+11
+Nearest Neighbour in hashtable  13  =  3 1
+Nearest Neighbour in hashtable  14  =  2 1
+Nearest Neighbour in hashtable  15  =  2 1
+Nearest Neighbour in hashtable  16  =  1 1
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =  1 1
+Nearest Neighbour in hashtable  19  =  2 1
+Nearest Neighbour in hashtable  20  =  1 1
+Nearest Neighbour in hashtable  21  =  3 1
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =  1 1
+Nearest Neighbour in hashtable  24  =  2 1
+Nearest Neighbour in hashtable  25  =  2 1
+Nearest Neighbour in hashtable  26  =  3 1
+Nearest Neighbour in hashtable  27  =  2 1
+Nearest Neighbour in hashtable  28  =  2 1
+Nearest Neighbour in hashtable  29  =  2 1
+Nearest Neighbour in hashtable  30  =  5 1
+Nearest Neighbour in hashtable  31  =  5 1
+Nearest Neighbour in hashtable  32  =  1 1
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  2 1
+Nearest Neighbour in hashtable  35  =  5 1
+Nearest Neighbour in hashtable  36  =  3 1
+Nearest Neighbour in hashtable  37  =  3 1
+Nearest Neighbour in hashtable  38  =  3 1
+Nearest Neighbour in hashtable  39  =  2 1
+Nearest Neighbour in hashtable  40  =  3 1
+Nearest Neighbour in hashtable  41  =  3 1
+Nearest Neighbour in hashtable  42  =  3 1
+Nearest Neighbour in hashtable  43  =  5 1
+Nearest Neighbour in hashtable  44  =  2 1
+Nearest Neighbour in hashtable  45  =  3 1
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  3 1
+Nearest Neighbour in hashtable  48  =  5 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  8 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '2',
+   '3',
+   '7',
+   '3',
+   '9',
+   '3',
+   '3',
+   '2',
+   '9',
+   '5',
+   '9',
+   '5',
+   '9',
+   '3',
+   '5',
+   '3',
+   '9',
+   '9',
+   '2',
+   '5',
+   '3',
+   '3',
+   '2',
+   '2',
+   '2',
+   '1',
+   '1',
+   '3',
+   '1',
+   '3',
+   '2',
+   '3',
+   '2',
+   '5',
+   '2',
+   '5',
+   '9',
+   '3',
+   '2',
+   '2',
+   '1',
+   '1',
+   '2',
+   '1',
+   '3',
+   '1',
+   '2',
+   '2',
+   '3',
+   '2',
+   '2',
+   '2',
+   '5',
+   '5',
+   '1',
+   '1',
+   '2',
+   '5',
+   '3',
+   '3',
+   '3',
+   '2',
+   '3',
+   '3',
+   '3',
+   '5',
+   '2',
+   '3',
+   '3',
+   '5']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7'])
+Is Queried integer 3278 in unsorted array: False
+======================================================
+search_number(): n=  333
+search_number(): padded n =  ##333
+digit= 3
+Nearest Neighbour in hashtable  0  =   1e+11
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =  # 1
+Nearest Neighbour in hashtable  3  =   1e+11
+Nearest Neighbour in hashtable  4  =  # 1
+Nearest Neighbour in hashtable  5  =  # 1
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =   1e+11
+Nearest Neighbour in hashtable  8  =   1e+11
+Nearest Neighbour in hashtable  9  =  # 1
+Nearest Neighbour in hashtable  10  =   1e+11
+Nearest Neighbour in hashtable  11  =   1e+11
+Nearest Neighbour in hashtable  12  =  # 1
+Nearest Neighbour in hashtable  13  =  # 1
+Nearest Neighbour in hashtable  14  =  # 1
+Nearest Neighbour in hashtable  15  =  # 1
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  # 1
+Nearest Neighbour in hashtable  20  =  # 1
+Nearest Neighbour in hashtable  21  =   1e+11
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =   1e+11
+Nearest Neighbour in hashtable  24  =  # 1
+Nearest Neighbour in hashtable  25  =   1e+11
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =   1e+11
+Nearest Neighbour in hashtable  28  =   1e+11
+Nearest Neighbour in hashtable  29  =  # 1
+Nearest Neighbour in hashtable  30  =   1e+11
+Nearest Neighbour in hashtable  31  =  # 1
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =   1e+11
+Nearest Neighbour in hashtable  34  =  # 1
+Nearest Neighbour in hashtable  35  =   1e+11
+Nearest Neighbour in hashtable  36  =   1e+11
+Nearest Neighbour in hashtable  37  =  # 1
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  # 1
+Nearest Neighbour in hashtable  40  =   1e+11
+Nearest Neighbour in hashtable  41  =   1e+11
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =   1e+11
+Nearest Neighbour in hashtable  44  =  # 1
+Nearest Neighbour in hashtable  45  =   1e+11
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =   1e+11
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(1,
+  ['#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (1, ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'])
+digit= 3
+Nearest Neighbour in hashtable  0  =  # 1
+Nearest Neighbour in hashtable  1  =   1e+11
+Nearest Neighbour in hashtable  2  =  4 1
+Nearest Neighbour in hashtable  3  =  4 1
+Nearest Neighbour in hashtable  4  =  3 0
+Nearest Neighbour in hashtable  5  =  1 1
+Nearest Neighbour in hashtable  6  =   1e+11
+Nearest Neighbour in hashtable  7  =  3 0
+Nearest Neighbour in hashtable  8  =  3 0
+Nearest Neighbour in hashtable  9  =  3 0
+Nearest Neighbour in hashtable  10  =  3 0
+Nearest Neighbour in hashtable  11  =  # 1
+Nearest Neighbour in hashtable  12  =  3 0
+Nearest Neighbour in hashtable  13  =  # 1
+Nearest Neighbour in hashtable  14  =  3 0
+Nearest Neighbour in hashtable  15  =  3 0
+Nearest Neighbour in hashtable  16  =  4 1
+Nearest Neighbour in hashtable  17  =  3 0
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  3 0
+Nearest Neighbour in hashtable  20  =  3 0
+Nearest Neighbour in hashtable  21  =  1 1
+Nearest Neighbour in hashtable  22  =  3 0
+Nearest Neighbour in hashtable  23  =  1 1
+Nearest Neighbour in hashtable  24  =  3 0
+Nearest Neighbour in hashtable  25  =  3 0
+Nearest Neighbour in hashtable  26  =   1e+11
+Nearest Neighbour in hashtable  27  =  # 1
+Nearest Neighbour in hashtable  28  =  # 1
+Nearest Neighbour in hashtable  29  =  3 0
+Nearest Neighbour in hashtable  30  =   1e+11
+Nearest Neighbour in hashtable  31  =  3 0
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  3 0
+Nearest Neighbour in hashtable  35  =  3 0
+Nearest Neighbour in hashtable  36  =  3 0
+Nearest Neighbour in hashtable  37  =  3 0
+Nearest Neighbour in hashtable  38  =  3 0
+Nearest Neighbour in hashtable  39  =  3 0
+Nearest Neighbour in hashtable  40  =  3 0
+Nearest Neighbour in hashtable  41  =  # 1
+Nearest Neighbour in hashtable  42  =  1 1
+Nearest Neighbour in hashtable  43  =  1 1
+Nearest Neighbour in hashtable  44  =  3 0
+Nearest Neighbour in hashtable  45  =  4 1
+Nearest Neighbour in hashtable  46  =  1 1
+Nearest Neighbour in hashtable  47  =  1 1
+Nearest Neighbour in hashtable  48  =  # 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '3',
+   '3',
+   '4',
+   '3',
+   '#',
+   '3',
+   '4',
+   '3',
+   '#',
+   '4',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digit= 3
+Nearest Neighbour in hashtable  0  =  3 0
+Nearest Neighbour in hashtable  1  =  3 0
+Nearest Neighbour in hashtable  2  =  3 0
+Nearest Neighbour in hashtable  3  =  3 0
+Nearest Neighbour in hashtable  4  =  3 0
+Nearest Neighbour in hashtable  5  =  3 0
+Nearest Neighbour in hashtable  6  =  7 1
+Nearest Neighbour in hashtable  7  =  5 1
+Nearest Neighbour in hashtable  8  =  5 1
+Nearest Neighbour in hashtable  9  =  3 0
+Nearest Neighbour in hashtable  10  =  9 1
+Nearest Neighbour in hashtable  11  =  3 0
+Nearest Neighbour in hashtable  12  =  3 0
+Nearest Neighbour in hashtable  13  =  3 0
+Nearest Neighbour in hashtable  14  =  3 0
+Nearest Neighbour in hashtable  15  =  3 0
+Nearest Neighbour in hashtable  16  =   1e+11
+Nearest Neighbour in hashtable  17  =   1e+11
+Nearest Neighbour in hashtable  18  =  3 0
+Nearest Neighbour in hashtable  19  =  3 0
+Nearest Neighbour in hashtable  20  =  3 0
+Nearest Neighbour in hashtable  21  =  3 0
+Nearest Neighbour in hashtable  22  =   1e+11
+Nearest Neighbour in hashtable  23  =  3 0
+Nearest Neighbour in hashtable  24  =  3 0
+Nearest Neighbour in hashtable  25  =  3 0
+Nearest Neighbour in hashtable  26  =  3 0
+Nearest Neighbour in hashtable  27  =  2 1
+Nearest Neighbour in hashtable  28  =  7 1
+Nearest Neighbour in hashtable  29  =  3 0
+Nearest Neighbour in hashtable  30  =  3 0
+Nearest Neighbour in hashtable  31  =  5 1
+Nearest Neighbour in hashtable  32  =   1e+11
+Nearest Neighbour in hashtable  33  =  1 1
+Nearest Neighbour in hashtable  34  =  3 0
+Nearest Neighbour in hashtable  35  =  3 0
+Nearest Neighbour in hashtable  36  =  3 0
+Nearest Neighbour in hashtable  37  =  3 0
+Nearest Neighbour in hashtable  38  =   1e+11
+Nearest Neighbour in hashtable  39  =  3 0
+Nearest Neighbour in hashtable  40  =  3 0
+Nearest Neighbour in hashtable  41  =  3 0
+Nearest Neighbour in hashtable  42  =   1e+11
+Nearest Neighbour in hashtable  43  =  3 0
+Nearest Neighbour in hashtable  44  =  3 0
+Nearest Neighbour in hashtable  45  =  3 0
+Nearest Neighbour in hashtable  46  =   1e+11
+Nearest Neighbour in hashtable  47  =  3 0
+Nearest Neighbour in hashtable  48  =  5 1
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  3 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '2',
+   '3',
+   '7',
+   '3',
+   '9',
+   '3',
+   '3',
+   '2',
+   '9',
+   '5',
+   '9',
+   '5',
+   '9',
+   '3',
+   '5',
+   '3',
+   '9',
+   '9',
+   '2',
+   '5',
+   '3',
+   '3',
+   '2',
+   '2',
+   '2',
+   '1',
+   '1',
+   '3',
+   '1',
+   '3',
+   '2',
+   '3',
+   '2',
+   '5',
+   '2',
+   '5',
+   '9',
+   '3',
+   '2',
+   '2',
+   '1',
+   '1',
+   '2',
+   '1',
+   '3',
+   '1',
+   '2',
+   '2',
+   '3',
+   '2',
+   '2',
+   '2',
+   '5',
+   '5',
+   '1',
+   '1',
+   '2',
+   '5',
+   '3',
+   '3',
+   '3',
+   '2',
+   '3',
+   '3',
+   '3',
+   '5',
+   '2',
+   '3',
+   '3',
+   '5',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 333 in unsorted array: False
+======================================================
+search_number(): n=  29
+search_number(): padded n =  ###29
+digit= 2
+Nearest Neighbour in hashtable  0  =  2 0
+Nearest Neighbour in hashtable  1  =  2 0
+Nearest Neighbour in hashtable  2  =  2 0
+Nearest Neighbour in hashtable  3  =  2 0
+Nearest Neighbour in hashtable  4  =  2 0
+Nearest Neighbour in hashtable  5  =  2 0
+Nearest Neighbour in hashtable  6  =  2 0
+Nearest Neighbour in hashtable  7  =  2 0
+Nearest Neighbour in hashtable  8  =  2 0
+Nearest Neighbour in hashtable  9  =  2 0
+Nearest Neighbour in hashtable  10  =  2 0
+Nearest Neighbour in hashtable  11  =  2 0
+Nearest Neighbour in hashtable  12  =  2 0
+Nearest Neighbour in hashtable  13  =  2 0
+Nearest Neighbour in hashtable  14  =  2 0
+Nearest Neighbour in hashtable  15  =  2 0
+Nearest Neighbour in hashtable  16  =  2 0
+Nearest Neighbour in hashtable  17  =  2 0
+Nearest Neighbour in hashtable  18  =  2 0
+Nearest Neighbour in hashtable  19  =  2 0
+Nearest Neighbour in hashtable  20  =  2 0
+Nearest Neighbour in hashtable  21  =  2 0
+Nearest Neighbour in hashtable  22  =  2 0
+Nearest Neighbour in hashtable  23  =  2 0
+Nearest Neighbour in hashtable  24  =  2 0
+Nearest Neighbour in hashtable  25  =  2 0
+Nearest Neighbour in hashtable  26  =  2 0
+Nearest Neighbour in hashtable  27  =  2 0
+Nearest Neighbour in hashtable  28  =  2 0
+Nearest Neighbour in hashtable  29  =  2 0
+Nearest Neighbour in hashtable  30  =  2 0
+Nearest Neighbour in hashtable  31  =  2 0
+Nearest Neighbour in hashtable  32  =  2 0
+Nearest Neighbour in hashtable  33  =  2 0
+Nearest Neighbour in hashtable  34  =  2 0
+Nearest Neighbour in hashtable  35  =  2 0
+Nearest Neighbour in hashtable  36  =  2 0
+Nearest Neighbour in hashtable  37  =  2 0
+Nearest Neighbour in hashtable  38  =  2 0
+Nearest Neighbour in hashtable  39  =  2 0
+Nearest Neighbour in hashtable  40  =  2 0
+Nearest Neighbour in hashtable  41  =  2 0
+Nearest Neighbour in hashtable  42  =  2 0
+Nearest Neighbour in hashtable  43  =  2 0
+Nearest Neighbour in hashtable  44  =  2 0
+Nearest Neighbour in hashtable  45  =  2 0
+Nearest Neighbour in hashtable  46  =  2 0
+Nearest Neighbour in hashtable  47  =  2 0
+Nearest Neighbour in hashtable  48  =  2 0
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  2 :
+[(0,
+  ['4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '4',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2',
+   '2']),
+ (1,
+  ['#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '4',
+   '#',
+   '3',
+   '1',
+   '1',
+   '#',
+   '1',
+   '1',
+   '#',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '3',
+   '#',
+   '1',
+   '1',
+   '1',
+   '#',
+   '#',
+   '#',
+   '3',
+   '3',
+   '#',
+   '3',
+   '1',
+   '1',
+   '3',
+   '1',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '3',
+   '3',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#',
+   '4',
+   '4',
+   '3',
+   '3',
+   '4',
+   '3',
+   '#',
+   '3',
+   '4',
+   '3',
+   '#',
+   '4',
+   '3',
+   '3',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '#',
+   '4',
+   '4',
+   '1',
+   '#',
+   '#',
+   '4',
+   '1',
+   '1',
+   '#',
+   '#',
+   '1',
+   '#',
+   '1',
+   '1',
+   '4',
+   '1',
+   '1',
+   '#']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '4', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digit= 9
+Nearest Neighbour in hashtable  0  =   1e+11
+Nearest Neighbour in hashtable  1  =  9 0
+Nearest Neighbour in hashtable  2  =  3 1
+Nearest Neighbour in hashtable  3  =  3 1
+Nearest Neighbour in hashtable  4  =  9 0
+Nearest Neighbour in hashtable  5  =  2 1
+Nearest Neighbour in hashtable  6  =  5 1
+Nearest Neighbour in hashtable  7  =  5 1
+Nearest Neighbour in hashtable  8  =  7 1
+Nearest Neighbour in hashtable  9  =  9 0
+Nearest Neighbour in hashtable  10  =  5 1
+Nearest Neighbour in hashtable  11  =  2 1
+Nearest Neighbour in hashtable  12  =  1 1
+Nearest Neighbour in hashtable  13  =  9 0
+Nearest Neighbour in hashtable  14  =  9 0
+Nearest Neighbour in hashtable  15  =  1 1
+Nearest Neighbour in hashtable  16  =  9 0
+Nearest Neighbour in hashtable  17  =  3 1
+Nearest Neighbour in hashtable  18  =   1e+11
+Nearest Neighbour in hashtable  19  =  9 0
+Nearest Neighbour in hashtable  20  =  7 1
+Nearest Neighbour in hashtable  21  =  2 1
+Nearest Neighbour in hashtable  22  =  9 0
+Nearest Neighbour in hashtable  23  =  9 0
+Nearest Neighbour in hashtable  24  =  9 0
+Nearest Neighbour in hashtable  25  =  9 0
+Nearest Neighbour in hashtable  26  =  9 0
+Nearest Neighbour in hashtable  27  =  9 0
+Nearest Neighbour in hashtable  28  =   1e+11
+Nearest Neighbour in hashtable  29  =  9 0
+Nearest Neighbour in hashtable  30  =  1 1
+Nearest Neighbour in hashtable  31  =  9 0
+Nearest Neighbour in hashtable  32  =  9 0
+Nearest Neighbour in hashtable  33  =  2 1
+Nearest Neighbour in hashtable  34  =  9 0
+Nearest Neighbour in hashtable  35  =  5 1
+Nearest Neighbour in hashtable  36  =  5 1
+Nearest Neighbour in hashtable  37  =  9 0
+Nearest Neighbour in hashtable  38  =  5 1
+Nearest Neighbour in hashtable  39  =  9 0
+Nearest Neighbour in hashtable  40  =  5 1
+Nearest Neighbour in hashtable  41  =   1e+11
+Nearest Neighbour in hashtable  42  =  3 1
+Nearest Neighbour in hashtable  43  =  9 0
+Nearest Neighbour in hashtable  44  =  9 0
+Nearest Neighbour in hashtable  45  =  9 0
+Nearest Neighbour in hashtable  46  =  9 0
+Nearest Neighbour in hashtable  47  =   1e+11
+Nearest Neighbour in hashtable  48  =  9 0
+#####################################################################
+Top Nearest Neighbours Ranked for Query -  9 :
+[(0,
+  ['5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '1',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '7',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '3',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9',
+   '9']),
+ (1,
+  ['2',
+   '3',
+   '3',
+   '3',
+   '3',
+   '1',
+   '2',
+   '1',
+   '3',
+   '3',
+   '2',
+   '1',
+   '1',
+   '1',
+   '9',
+   '3',
+   '7',
+   '7',
+   '9',
+   '2',
+   '2',
+   '1',
+   '7',
+   '2',
+   '3',
+   '2',
+   '2',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '2',
+   '3',
+   '7',
+   '3',
+   '9',
+   '3',
+   '3',
+   '2',
+   '9',
+   '5',
+   '9',
+   '5',
+   '9',
+   '3',
+   '5',
+   '3',
+   '9',
+   '9',
+   '2',
+   '5',
+   '3',
+   '3',
+   '2',
+   '2',
+   '2',
+   '1',
+   '1',
+   '3',
+   '1',
+   '3',
+   '2',
+   '3',
+   '2',
+   '5',
+   '2',
+   '5',
+   '9',
+   '3',
+   '2',
+   '2',
+   '1',
+   '1',
+   '2',
+   '1',
+   '3',
+   '1',
+   '2',
+   '2',
+   '3',
+   '2',
+   '2',
+   '2',
+   '5',
+   '5',
+   '1',
+   '1',
+   '2',
+   '5',
+   '3',
+   '3',
+   '3',
+   '2',
+   '3',
+   '3',
+   '3',
+   '5',
+   '2',
+   '3',
+   '3',
+   '5',
+   '7',
+   '5',
+   '5',
+   '9',
+   '2',
+   '7',
+   '5',
+   '1',
+   '5',
+   '3',
+   '3',
+   '2',
+   '5',
+   '5',
+   '7',
+   '5',
+   '2',
+   '1',
+   '1',
+   '3',
+   '7',
+   '2',
+   '1',
+   '2',
+   '5',
+   '5',
+   '5',
+   '5',
+   '3']),
+ (100000000000.0,
+  ['',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   '',
+   ''])]
+search_number(): match =  (0, ['5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '5', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '7', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '3', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9', '9'])
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+digitmatch=True
+Is Queried integer 29 in unsorted array: True
