@@ -10570,7 +10570,7 @@ Relevance of Question depends on the relatedness e.g Tensor Neuron of all possib
 Example:
 --------
 If a text graph of an academic research text has been classified in following word vertices of high core numbers
-		[Prime, Factorzation, Theorem, Composites, Diophantine, Polynomials,...]
+		[Prime, Factorization, Theorem, Composites, Diophantine, Polynomials,...]
 in decreasing value of centrality/k-core/pagerank and pairwise Tensor Neuron potentials are ranked as below:
 		Prime-Factorization = 0.34234
 		Theorem-Composites=0.33333
