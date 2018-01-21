@@ -10540,3 +10540,20 @@ and opensslserver.h
 - new headers opensslclient.h and opensslserver.h have been added to repository which define openSSL client and server functions (these
  are reference examples in www.openssl.org Wiki changed for cloud move)
 - logs for SSL cloud_move client and server have been committed to cloud_move/testlogs/
+
+----------------------------------------------------------------------------------------------------------------------------
+500. (FEATURE-DONE) Searching Unsorted List of Numbers - Algorithm in GRAFIT Open Learning Implemented - 21 January 2018
+----------------------------------------------------------------------------------------------------------------------------
+An algorithm to search list of numbers better than bruteforce search mentioned in GRAFIT Course Notes:
+https://github.com/shrinivaasanka/Grafit/blob/master/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt
+has been implemented in NeuronRain AsFer.
+
+This lifts one dimensional numbers to multidimensional tuples and creates hashtables for each dimension of tuple. Lookup for a query number is
+lookup of each digit in query in these hash tables in succession. If all hash lookups succeed queried number exists in the unsorted list
+
+This implementation pads each number with "#" so that it is right justified and maximum number of digits is stipulated.
+
+Searching Unsorted lists is the most fundamental open research problem and this implementation uses Locality sensitive hashing as the hash table
+. Python dictionaries are hash maps and not hash tables which support collisions. Each digit in query is lookedup for nearest neighbours and if
+ there is a match digitmatch is set to True. Logical AND of all digit matches is returned as True/False.
+
