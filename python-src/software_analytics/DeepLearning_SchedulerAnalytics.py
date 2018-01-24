@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 ############################################################################################
 #Scheduler Analytics for Linux Kernel:
@@ -46,9 +38,46 @@ import random
 import psutil
 import numpy
 import json
+import pprint
+from dictdiffer import diff
 
 expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
 expected_process_priorities=json.loads(expected_process_priorities_input.read())
+encodedprocessesfile=open("./asfer.enterprise.encstr.scheduleranalytics","w")
+procdict=True
+prevprocessfeatures=None
+processfeatures=None
+processesfeatures=[]
+numproc=0
+
+def process_feature_vector(proc):
+	#process = <pid, processname, executable, memory_info, connections, ioinfo>
+	feature_vector=[]
+	if procdict==False:
+		proc_pid=proc.pid
+		feature_vector.append(proc_pid)
+		proc_cmdline=proc.cmdline()
+		feature_vector.append(proc_cmdline)
+		proc_name=proc.name()
+		proc_name=proc.name()
+		feature_vector.append(proc_name)
+		proc_exe=proc.exe()
+		proc_exe=proc.exe()
+		feature_vector.append(proc_exe)
+		proc_meminfo=proc.memory_full_info()
+		proc_meminfo=proc.memory_full_info()
+		feature_vector.append(proc_meminfo)
+		proc_connections=proc.connections()
+		proc_connections=proc.connections()
+		feature_vector.append(proc_connections)
+		proc_iocounters=proc.io_counters()
+		proc_iocounters=proc.io_counters()
+		feature_vector.append(proc_iocounters)
+	else:
+		proc_dict=proc.as_dict()
+		feature_vector.append(proc_dict)
+	pprint.pprint(feature_vector)
+	return feature_vector
 
 def is_prioritizable(proc_name):
 	#print "is_prioritizable(): proc_name:",proc_name
@@ -92,6 +121,22 @@ def learnt_scheduler_class(deep_learnt_output):
 kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
 
 for proc in psutil.process_iter():
+	print "-------------------------------------------"
+	print "Process Feature Vector:"
+	print "-------------------------------------------"
+	prevprocessfeatures=processfeatures
+	processfeatures=process_feature_vector(proc)
+	processesfeatures.append(processfeatures)
+	numproc += 1
+	if numproc == 50:
+		json.dump(processesfeatures,encodedprocessesfile)
+	if prevprocessfeatures != None:
+		process_distance=list(diff(prevprocessfeatures,prevprocessfeatures))
+		print "Distance between previous and previous processes:",len(process_distance)
+		process_distance=list(diff(processfeatures,processfeatures))
+		print "Distance between present and present processes:",len(process_distance)
+		process_distance=list(diff(prevprocessfeatures,processfeatures))
+		print "Distance between previous and present processes:",len(process_distance)
 	proc_pid=proc.pid
 	proc_cmdline=proc.cmdline()
 	proc_name=proc.name()
