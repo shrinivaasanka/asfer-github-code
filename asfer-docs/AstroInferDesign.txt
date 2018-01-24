@@ -10098,7 +10098,7 @@ Thus there are 3 Computational Geometric Factorization algorithms described in t
 
 Note: First and Third factorization algorithms are equivalent because both involve sorting of pixelated hyperbolic tile segments. Second algorithm obviates sorting by assumption that each PRAM can locally do a binary search without involving peer PRAM processors. Theoretically all three have similar polylogarithmic (O(logN*logN) at best) runtime upperbounds. Second algorithm is better than First and Third probably because the constant involved in Big-O notation in second algorithm is very small compared to First and Third.
 
-An Unsorted Search algorithm has been implemented in NeuronRain (Section 500) to locate a query point on an unsorted array of numbers, by representing the numbers are arrays of hashtables for each digit.This algorithm can find factors in the concatenation of merged pixleated hyperbolic tile segments with no requirement for sorting. But this involves hashtable preprocessing.
+An Unsorted Search algorithm has been implemented in NeuronRain (Section 500) to locate a query point on an unsorted array of numbers, by representing the numbers as arrays of hashtables for each digit.This algorithm can find factors in the concatenation of merged pixleated hyperbolic tile segments with no requirement for sorting. But this involves hashtable preprocessing.
 
 References:
 -----------
