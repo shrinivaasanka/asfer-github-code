@@ -10579,3 +10579,17 @@ in decreasing value of centrality/k-core/pagerank and pairwise Tensor Neuron pot
 then question(s) can be constructed based on previous ranking of Tensor relatedness as:
 		Does this article discuss relation between [Primes] and [Factorization]?
 		....
+
+------------------------------------------------------------------------------------------------------------------------------------------
+502. (FEATURE-DONE) Scheduler Analytics - Interprocess Distance Computation by DictDiffer - 24 January 2018
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Representing OS Process Information as Feature Vectors has been mentioned as Software Scheduler Analytics usecase in
+http://neuronrain-documentation.readthedocs.io/en/latest/
+2. This commit implements a new python function which reads process info as a dictionary from psutils. Psutils has an option to read individual
+process metrics or to read the dictionary in its entirety.
+3. Psutils per-process dictionary has all the basic details pertaining to instantaneous resource consumptions of a process
+4. These per-process features are collated in an array and are json.dump()-ed as strings in asfer.enterprise.encstr.scheduleranalytics file
+which can be used as input by clustering/classification NeuronRain-AsFer C++ implementations.
+5. logs for this have been committed to software_analytics/testlogs/DeepLearning_SchedulerAnalytics.log.24January2018
+6. Distance between two process feature dictionaries/vectors are printed by DictDiffer which has been imported and length of the diff is
+ the distance function between any two processes.
