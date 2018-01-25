@@ -10600,3 +10600,42 @@ which can be used as input by clustering/classification NeuronRain-AsFer C++ imp
 5. logs for this have been committed to software_analytics/testlogs/DeepLearning_SchedulerAnalytics.log.24January2018
 6. Distance between two process feature dictionaries/vectors are printed by DictDiffer which has been imported and length of the diff is
  the distance function between any two processes.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+503. (FEATURE-DONE) Scheduler Analytics - Process kNN classification and K-Means clustering, Process Dict Hashing - 25 January 2018
+(Only in NeuronRain Enterprise - GitHub)
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. python-src/software_analytics/DeepLearning_SchedulerAnalytics.py has been updated to define a getHash() function similar to Streaming_<algorithm>.py implementations, which creates an MD5 hash of process psutils dictionary string. 
+2. This hashing of dictionary is because of huge size of process dictionary storing of which requires few KBs for each process. Computing distance (Levenshtein) of these strings is again memory intensive.
+3. DictDiffer distance implemented in python-src/software_analytics/DeepLearning_SchedulerAnalytics.py is not directly invocable in C++ and diff between process dictionary strings is also huge in KBs.
+4. Succinct representation of process dictionary string - Fingerprinting - is therefore a necessity to optimize space. MD5 binary hash digest of the process dictionary string is written to python-src/software_analytics/asfer.enterprise.encstr.scheduleranalytics prefixed by process name and process id , instead of complete chunk.
+5. cpp-src/asferkNNclustering.cpp and cpp-src/asferkmeansclustering.cpp are updated for EOF check and number of clusters has been increased to 10 in kNN classifier.
+6. asfer binary has been rebuilt and asfer.conf has been updated to do clustering and classification.
+7. process statistics dataset - cpp-src/asfer.enterprise.encstr, cpp-src/asfer.enterprise.encstr.clustered and cpp-src/asfer.enterprise.encstr.kNN have been updated.
+8. asfer kNN classification and KMeans clustering has been executed on this encoded process statistics dataset 
+9. logs have been committed to cpp-src/testlogs/asfer.SchedulerAnalytics.KMeansAndkNNClustering.log.25January2018 (Scheduler Analytics) and cpp-src/testlogs/asfer.SchedulerAnalytics.KMeansAndkNNClustering.log.25January2018 (kNN classification and KMeans clustering) - for 194 processes
+10. logs for clustering and classification imply similar processes flock together - e.g excerpt from KMeans cluster logs show lot of kworkers in same cluster:
+===========
+Cluster 6
+===========
+encoded string [5574:bash:0b1101110111101000111110100011000011111011100001101001000100110011010011011000001110010100101100000110000110001011001100100110000001000011110100010100000000000]
+encoded string [139:kworker/u4:4:0b110011101011001001110101000100001001110110011001001111001100100110110001100111111101011011001010111100000000010110111111011000010101001110100100010010010010001]
+encoded string [145:usb-storage:0b1100001010101110000111110011101100010111011101010000000001100110001100100110110101001101010010100000011011111000100101110101110001001010111101101000111000001]
+encoded string [35:fsnotify_mark:0b1011011110000001111010011000110101011010001100000010010001010100110101111101001111000011100101000111000111001000000101000011000101110101100100101000001101101110]
+encoded string [2769:cups-browsed:0b111001101000000011110010110001001011101111011111011110011110101101001000001100111010100110111011110010101000100111110100110001011010001001110111001100000000100]
+encoded string [5673:bash:0b100000010101001101011100011111101110001010000110100001011110101100000110101101001000011000101110000110100010111010001001101000001101101110101011110101011100011]
+encoded string [49:acpi_thermal_pm:0b1110010100000111110100000010000101111000001000011001001111010111100101000000101110111100100010100101111101000011100000110101011001100011000110100011100001010100]
+encoded string [6220:kworker/u4:1:0b101111110010001100110000001011110011111111000100010101111010011100110101011010101011101000011100101011000110111111110010100011000111101111010101100111001100100]
+encoded string [5977:kworker/0:0:0b1101000010010001011101100100001011011011011101100111100101110000111111011101100101001011010101100000000111001101011011011000001101110000111110110101000110010010]
+encoded string [5905:kworker/u4:0:0b1011011110010010111000111001101101001000001010100100100101001110000111100111001101110100101101000001011101010000010010001101010100110001000111111100100111100010]
+encoded string [2433:kworker/u5:0:0b1100100101100010100101000010001010111010010111110110011110111100001110110110101110010010101001101011111011000101110000001001000110100100010111011110000110000101]
+encoded string [2439:kworker/u5:2:0b111010000111101010101111011010111010110100110000011100011110001101000011001111101100101110100010011010110001010110001010001001000101111011011100101101000001111]
+encoded string [5:kworker/0:0H:0b1000110000100110011111100011111100100001000110011011001000111001011100100110101101110101101100101001110011101110101111111111110111011100001001000100010010011000]
+encoded string [9:migration/0:0b110011010000111101100010000111001100001011111001010100101111001010110110100010110110011100110011011101011011110111110010011011110100100001010010000011001001000]
+encoded string [6300:kworker/0:1:0b110001100110111000000000010000010001110011011000101110111001101001110100000101111100101101000000000110101010100010110010110100001111101011001100011010001110100]
+encoded string [5065:upstart-dbus-bridge:0b1010000111111000000000100111010110100110001100101110101010111001100011000111111110101110100001010011110011100001101001111101101100010101100100100101100011101000]
+===========
+ 
+Reference:
+----------
+503.1 Randomized Algorithms - [Rajeev Motwani, Prabhakar Raghavan] - Pages 168 and 214 - 7.4 Verifying Equality of Strings and 8.4 Hash Tables for string fingerprinting

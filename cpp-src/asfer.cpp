@@ -12,18 +12,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#---------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 *********************************************************************************************************/
 
 using namespace std;
@@ -63,7 +55,7 @@ unordered_map<string,bool> config_map;
 
 int main(int argc, char* argv[])
 {
-	string basepath("/media/ka_shrinivaasan/6944b01d-ff0d-43eb-8699-cca469511742/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src");
+	string basepath("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src");
 	asferroot=basepath;
 	std::cout<<"AStro inFER - Inference Software for Large Datasets " << std::endl;
 	std::cout<<"-----------------------------------------------------" << std::endl;
