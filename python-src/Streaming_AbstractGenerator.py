@@ -50,6 +50,7 @@ class StreamAbsGen(object):
 		#self.data_storage="USBWWAN_stream"
 		#self.data_storage="KingCobra"
 		#self.data_storage="Spark_Parquet"
+		#self.data_storage="AsFer_Encoded_Strings"
 		self.data_storage=data_storage
 
 		#Possible datasources:
@@ -59,12 +60,16 @@ class StreamAbsGen(object):
 		#self.data_source="file"
 		#self.data_source="KingCobra"
 		#self.data_source="Spark_Streaming"
+		#self.data_source="NeuronRain"
 		self.data_source=data_source
 
 		self.spark=SparkSession.builder.getOrCreate()
 
 		if self.data_storage=="KingCobra":
 			self.inputfile=open("/var/log/kingcobra/REQUEST_REPLY.queue")
+
+		if self.data_storage=="AsFer_Encoded_Strings":
+			self.inputfile=open("../cpp-src/asfer.enterprise.encstr")
 
 		if self.data_storage=="file":
 			self.inputfile=open("StreamingData.txt")
@@ -131,6 +136,10 @@ class StreamAbsGen(object):
 			for key,value in self.hbase_table.scan():
 				print "StreamAbsGen(HBase storage): iterator yielding %s" % i
    				yield value['cf:alphanum'] 
+		if self.data_storage=="AsFer_Encoded_Strings":
+			for i in self.inputfile:
+				print "StreamAbsGen(file storage): iterator yielding %s" % i
+				yield i
 		if self.data_storage=="file":
 			for i in self.inputfile:
 				print "StreamAbsGen(file storage): iterator yielding %s" % i

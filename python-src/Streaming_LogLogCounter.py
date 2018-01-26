@@ -59,7 +59,8 @@ for n in xrange(no_of_buckets):
 #inputf=open("StreamingData.txt","r")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("AsFer_Encoded_Strings","NeuronRain")
 for i in inputf:
 	print "######################################"
 	hashstring=getHash(i)
