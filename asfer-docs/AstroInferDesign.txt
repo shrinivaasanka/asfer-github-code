@@ -10639,3 +10639,11 @@ encoded string [5065:upstart-dbus-bridge:0b1010000111111000000000100111010110100
 Reference:
 ----------
 503.1 Randomized Algorithms - [Rajeev Motwani, Prabhakar Raghavan] - Pages 168 and 214 - 7.4 Verifying Equality of Strings and 8.4 Hash Tables for string fingerprinting
+
+------------------------------------------------------------------------------------------------------------------------------------------
+504. (FEATURE-DONE) Streaming Algorithms - Encoded Strings Data Source - 26 January 2018
+(For MD5 hash and other Encoded Strings)
+------------------------------------------------------------------------------------------------------------------------------------------
+1. python-src/Streaming_AbstractGenerator.py iterator has been updated for new data storage "AsFer_Encoded_Strings" and data source "NeuronRain"
+for streaming encoded strings created by NeuronRain AsFer
+2. Streaming algorithm implementations have been updated to stream data from this new datasource and logs have been committed to testlogs/
