@@ -10108,8 +10108,8 @@ Sorting is required only if end points of two adjoined segments are in conflict 
 Splitting each tile segment of length l into two subsegments of length delta and l-delta and binary searching two sets of concatenations of these split tile segments can find factors in O(logN) sequentially with no necessity for PRAMs if concatenation can be done in parallel in O(logN) time. In other words hyperbolic arc bow is broken into two concatenated tile segement sets and these two tile concatenations are searched.
 
 If the quadrant containing hyperbolic arc is partitioned by parallel ray shooting queries from origin, separated by angles proportional to location of factor points, there is no necessity for sorting. Number of primes factors are O(loglogN). Thus kloglogN ray shooting queries from origin pierce the hyperbolic arc bow in parallel. If angular spacing between ray shooting queries are approximately equal, following trigonometric expression gives the angle for each ray:
-	y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN))
-These are only approximate angles. Factors should lie in close proximity of the intersection points of these rays with hyperbolic bow.
+	y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN)), m=1,2,...,kloglogN
+These are only approximate angles. Factors should lie in close proximity of the intersection points of these rays with in hyperbolic bow.
 
 References:
 -----------
