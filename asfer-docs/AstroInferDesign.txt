@@ -10647,3 +10647,12 @@ Reference:
 1. python-src/Streaming_AbstractGenerator.py iterator has been updated for new data storage "AsFer_Encoded_Strings" and data source "NeuronRain"
 for streaming encoded strings created by NeuronRain AsFer
 2. Streaming algorithm implementations have been updated to stream data from this new datasource and logs have been committed to testlogs/
+
+------------------------------------------------------------------------------------------------------------------------------------------
+505. (FEATURE-DONE) Scheduler Analytics - Sequence Mining - 29 January 2018
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Sequence Mining has been executed on Scheduler Analytics process statistics (few processes and max length set to 5).
+2. Candidate initial item set has been changed to alphanumeric
+3. Declared boolean flag for choosing between MD5 hash encoding of process dicts or plain string representation of process dict
+4. updated software_analytics/asfer.enterprise.encstr.scheduleranalytics
+5. Sequence Mined Scheduler Analytics has been committed to testlogs/SequenceMining.log.SchedulerAnalytics.29January2018
