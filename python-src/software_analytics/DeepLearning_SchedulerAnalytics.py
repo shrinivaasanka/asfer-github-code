@@ -50,6 +50,7 @@ prevprocessfeatures=None
 processfeatures=None
 processesfeatures=[]
 numproc=0
+process_md5hash_string=False
 
 def getHash(str):
         h=hashlib.new("ripemd160")
@@ -335,6 +336,10 @@ if __name__=="__main__":
 		hash1=getHash(str(pf))
 		hash2=getHash(str(pf))
 		print "hash1 == hash2:",hash1 == hash2
-		encodedprocessesfile.write(str(pf[0]["pid"])+":"+str(pf[0]["name"])+":"+getHash(str(pf)))
-		encodedprocessesfile.write("\n")
-		
+		if process_md5hash_string == True:
+			encodedprocessesfile.write(str(pf[0]["pid"])+":"+str(pf[0]["name"])+":"+getHash(str(pf)))
+			encodedprocessesfile.write("\n")
+		else:
+			print "process_md5hash_string == False: str(pf[0]) = ",str(pf[0])
+			encodedprocessesfile.write(str(pf[0]))
+			encodedprocessesfile.write("\n")

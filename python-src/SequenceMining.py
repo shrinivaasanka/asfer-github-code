@@ -42,12 +42,13 @@ class SequenceMining(object):
 
 #######################################################################
 	def doAprioriGSPSequenceMining(self):
-		#inputf=open("asfer.enterprise.encstr.seqmining")
-		inputf=open("First10000PrimesBinary.txt")
+		inputf=open("asfer.enterprise.encstr.seqmining")
+		#inputf=open("First10000PrimesBinary.txt")
 		input=inputf.readlines()
 
 		self.candidates[0]=[]
-		self.candidates.append(['0','1'])
+		#self.candidates.append(['0','1'])
+                self.candidates.append(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9'])
 
 		candidate_support={}
 
@@ -59,7 +60,7 @@ class SequenceMining(object):
 					self.F[1].add(cand)	
 
 		length=1
-		maxlength=15
+		maxlength=5
 		print self.candidates
 		print self.F
 
@@ -92,10 +93,10 @@ class SequenceMining(object):
 		print s
 
 		#Print the binary pattern in decimals
-		print "==================================================="
-		print "Pattern in prime binary strings in decimals - in descending order of support"
-		for pattern, support in s:
-			print int(pattern,2),",",
+		#print "==================================================="
+		#print "Pattern in prime binary strings in decimals - in descending order of support"
+		#for pattern, support in s:
+		#	print int(pattern,2),",",
 
 
 if __name__=="__main__":
