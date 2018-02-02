@@ -10100,14 +10100,24 @@ Note: First and Third factorization algorithms are equivalent because both invol
 
 An Unsorted Search algorithm has been implemented in NeuronRain (Section 500) to locate a query point on an unsorted array of numbers, by representing the numbers as arrays of hashtables for each digit.This algorithm can find factors in the concatenation of merged pixleated hyperbolic tile segments with no requirement for sorting. But this involves hashtable preprocessing.
 
+Length of each tile on x-axis can be derived from equating for N:
+	xy = (x+delta)(y-1)
+	delta = x/(y-1) = N/[y(y-1)]
+
+Sum of lengths of all pixelated hyperbolic tiles along x-axis is the series:
+	N/(1*2) + N/(2*3) + N/(3*4) + ...
+But:
+	N/(1*2) + N/(2*3) + N/(3*4) + ... < N/1 + N/2^2 + N/3^2 + ... < N + DefiniteIntegral_2_to_N(dx/x^2) = 1.5N-1
+=> Sum of lengths of all pixelated hyperbolic tiles is upperbounded by 1.5N-1 or O(N)
+
 Some more optimizations:
 ------------------------
-Sorting is required only if end points of two adjoined segments are in conflict (some elements in next tile are greater than last element of the preceding tile). Elements of succeeding tile segment become bigger than last element in preceding tile segment if:
+Sorting is required only if end points of two adjoined segments are in conflict (only some, not all, elements in next tile are greater than last element of the preceding tile). Elements of succeeding tile segment become bigger than last element in preceding tile segment if:
 	(x+1)y < (x + delta)(y-1)
 	=> delta > (y+x)/(y-1)
-Splitting each tile segment of length l into two subsegments of length delta and l-delta and binary searching two sets of concatenations of these split tile segments can find factors in O(logN) sequentially with no necessity for PRAMs if concatenation can be done in parallel in O(logN) time. In other words hyperbolic arc bow is broken into two concatenated tile segement sets and these two tile concatenations are searched.
+Splitting each tile segment of length l into two subsegments of length delta and l-delta and binary searching two sets of concatenations of these split tile segments can find factors in O(logN) sequentially with no necessity for PRAMs if concatenation can be done in sequential in O(logN) time (tree of list concatenations can be done in parallel on PRAMs in O(logN) time, but doing sequential concatenation of lists in sublinear time is an open problem). In other words hyperbolic arc bow is broken into two concatenated tile segement sets and these two tile concatenations are searched.
 
-If the quadrant containing hyperbolic arc is partitioned by parallel ray shooting queries from origin, separated by angles proportional to location of factor points, there is no necessity for sorting. Number of primes factors are O(loglogN). Thus kloglogN ray shooting queries from origin pierce the hyperbolic arc bow in parallel. If angular spacing between ray shooting queries are approximately equal, following trigonometric expression gives the angle for each ray:
+If the quadrant containing hyperbolic arc is partitioned by parallel ray shooting queries from origin, separated by angles proportional to location of factor points, there is no necessity for sorting. Number of primes factors are O(loglogN). Thus kloglogN ray shooting queries from origin pierce the hyperbolic arc bow in parallel. If angular spacing between ray shooting queries are approximately equal, following trigonometric expression gives the approximate prime factor for each ray angle:
 	y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN)), m=1,2,...,kloglogN
 These are only approximate angles. Factors should lie in close proximity of the intersection points of these rays with in hyperbolic bow.
 
