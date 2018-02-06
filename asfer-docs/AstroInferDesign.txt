@@ -10685,3 +10685,55 @@ for streaming encoded strings created by NeuronRain AsFer
 3. Declared boolean flag for choosing between MD5 hash encoding of process dicts or plain string representation of process dict
 4. updated software_analytics/asfer.enterprise.encstr.scheduleranalytics
 5. Sequence Mined Scheduler Analytics has been committed to testlogs/SequenceMining.log.SchedulerAnalytics.29January2018
+
+------------------------------------------------------------------------------------------------------------------------------------------
+506. (THEORY) Computational Geometric Factorization - Feasibility of Sequential Optimization - related to 486 - 6 February 2018
+------------------------------------------------------------------------------------------------------------------------------------------
+Doing away with Parallel RAMs in Computational Geometric Factorization by breaking the hyperbolic arc bow into two sets of tilesegments 
+and searching their concatenations which are implicitly sorted ascending, has problems because concatenation of multiple tile segments may not be sublinear. Concatenating tile segments can be likened to concatenation of multiple strings. Concatenation of two strings can be done
+in O(logN) time by using Rope Strings which are tree representations of strings (logarithmic in length of strings and not in number of
+strings). But concatenation of multiple strings/tiles logarithmic time in number of strings is still open.
+
+Following sequential optimization tries to find feasibility of doing Sequential Factorization without PRAMs and concatenation of tile segments:
+
+number_to_factorize=N
+factor_candidate=N/2
+
+while(factor is not found)
+{
+	1. Find the tile segment/interval containing factor candidate.
+	2. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.
+	3. Binary Search each node in subsegment1 tree for factor points (p,q) (N=pq) - There are 3 possibilities:
+	3.1 All points in this subsegment1 tree node are less than N => Binary Search has to be done on right subsegment1 subtree recursively, factor_candidate is updated
+	3.2 All points in this subsegment1 tree node are greater than N => Search has to be done on left subsegment1 subtree recursively, factor_candidate is updated
+	3.3 N is present in this subsegment1 tree node and factor point N=pq is found
+}
+
+while(factor is not found)
+{
+	4. Find the tile segment/interval containing factor candidate.
+	5. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.
+	6. Binary Search each node in subsegment2 tree for factor points (p,q) (N=pq) - There are 3 possibilities:
+	6.1 All points in this subsegment2 tree node are less than N => Binary Search has to be done on right subsegment2 subtree recursively
+	6.2 All points in this subsegment2 tree node are greater than N => Search has to be done on left subsegment2 subtree recursively
+	6.3 N is present in this subsegment2 tree node and factor point N=pq is found
+}
+
+7.Above algorithm is Depth-2 Two Level Binary Search:
+7.1) First binary search finds the subsegment node in subsegment trees in O(logN)
+7.2) Second binary search searches within subsegment node in O(logN)
+and thus requires O(logN*logN) sequential time.
+
+8. Sets of subsegment1(s) and subsegment2(s) constitute 2 binary search trees of segments, but these two search trees are not physically created. Binary search of tile containing factor candidate dynamically creates treelike traversal.
+
+9. Finding tile segment containing a factor candidate point is non-trivial planar point location problem in general. But Following algorithm finds the interval containing the point in O(1) time specific to hyperbolic pixelated tiling:
+Sum of lengths of k consecutive hyperbolic pixelated tiles = N/(1*2) + N/(2*3) + N/(3*4) + ... + N/(k*(k+1))
+	= N(1/1 - 1/2 + 1/2 - 1/3 + 1/3 - 1/4 + ... + 1/k - 1/(k+1))
+	= N(1 - 1/(k+1))
+	= Nk/(k+1)
+Tile containing point x:
+	Nk/(k+1) < x < N(k+1)/(k+2)
+	k < x/(N-x)
+integer round-off of k is the index of tile interval containing x.
+
+10. Previous sequential optimization of O((logN)^2) though removes PRAMs, proves only that Factorization is in P. Computational geometric factorization by PRAMs is still a better result because it implies Factorization is in NC from PRAM-NC equivalence despite requirement of high number of parallel processors.
