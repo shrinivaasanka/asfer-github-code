@@ -10699,20 +10699,26 @@ Following sequential optimization tries to find feasibility of doing Sequential 
 number_to_factorize=N
 factor_candidate=N/2
 
+---------------------------
+Loop for subsegment1 tree:
+---------------------------
 while(factor is not found)
 {
 	1. Find the tile segment/interval containing factor candidate.
-	2. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.
+	[2. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.]
 	3. Binary Search each node in subsegment1 tree for factor points (p,q) (N=pq) - There are 3 possibilities:
 	3.1 All points in this subsegment1 tree node are less than N => Binary Search has to be done on right subsegment1 subtree recursively, factor_candidate is updated
 	3.2 All points in this subsegment1 tree node are greater than N => Search has to be done on left subsegment1 subtree recursively, factor_candidate is updated
 	3.3 N is present in this subsegment1 tree node and factor point N=pq is found
 }
 
+---------------------------
+Loop for subsegment2 tree:
+---------------------------
 while(factor is not found)
 {
 	4. Find the tile segment/interval containing factor candidate.
-	5. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.
+	[5. Split the candidate tile segment to two subsegments - subsegment1 contains points which are less than previous segment's end point,subsegment2 contains points which are greater than previous segment's end point.]
 	6. Binary Search each node in subsegment2 tree for factor points (p,q) (N=pq) - There are 3 possibilities:
 	6.1 All points in this subsegment2 tree node are less than N => Binary Search has to be done on right subsegment2 subtree recursively
 	6.2 All points in this subsegment2 tree node are greater than N => Search has to be done on left subsegment2 subtree recursively
