@@ -1,0 +1,119 @@
+
+ot@shrinivaasanka-Inspiron-1545:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src# /home/shrinivaasanka/spark-2.1.0-bin-hadoop2.7/bin/spark-submit Streaming_HyperLogLogCounter.py 
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+18/02/08 17:33:48 WARN Utils: Your hostname, shrinivaasanka-Inspiron-1545 resolves to a loopback address: 127.0.1.1; using 192.168.122.1 instead (on interface virbr0)
+18/02/08 17:33:48 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+18/02/08 17:33:50 INFO SparkContext: Running Spark version 2.1.0
+18/02/08 17:33:50 WARN SparkContext: Support for Java 7 is deprecated as of Spark 2.0.0
+18/02/08 17:33:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/02/08 17:33:52 WARN SparkConf: Detected deprecated memory fraction settings: [spark.shuffle.memoryFraction, spark.storage.memoryFraction]. As of Spark 1.6, execution and storage memory management are unified. All memory fractions used in the old model are now deprecated and no longer read. If you wish to use the old memory management, you may explicitly enable `spark.memory.useLegacyMode` (not recommended).
+18/02/08 17:33:52 INFO SecurityManager: Changing view acls to: root
+18/02/08 17:33:52 INFO SecurityManager: Changing modify acls to: root
+18/02/08 17:33:52 INFO SecurityManager: Changing view acls groups to: 
+18/02/08 17:33:52 INFO SecurityManager: Changing modify acls groups to: 
+18/02/08 17:33:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+18/02/08 17:33:53 INFO Utils: Successfully started service 'sparkDriver' on port 40706.
+18/02/08 17:33:53 INFO SparkEnv: Registering MapOutputTracker
+18/02/08 17:33:53 INFO SparkEnv: Registering BlockManagerMaster
+18/02/08 17:33:53 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+18/02/08 17:33:53 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+18/02/08 17:33:53 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-1ea8eb10-886c-427e-b88e-07c9c1bec7b3
+18/02/08 17:33:53 INFO MemoryStore: MemoryStore started with capacity 912.3 MB
+18/02/08 17:33:54 INFO SparkEnv: Registering OutputCommitCoordinator
+18/02/08 17:33:54 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/02/08 17:33:54 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.122.1:4040
+18/02/08 17:33:55 INFO SparkContext: Added file file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/Streaming_HyperLogLogCounter.py at file:/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/Streaming_HyperLogLogCounter.py with timestamp 1518091435720
+18/02/08 17:33:55 INFO Utils: Copying /home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/Streaming_HyperLogLogCounter.py to /tmp/spark-4dca0922-05e7-462a-8f54-e122476ce995/userFiles-d6383543-d8d1-454e-a6a1-be3f67d438d8/Streaming_HyperLogLogCounter.py
+18/02/08 17:33:56 INFO Executor: Starting executor ID driver on host localhost
+18/02/08 17:33:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 47685.
+18/02/08 17:33:56 INFO NettyBlockTransferService: Server created on 192.168.122.1:47685
+18/02/08 17:33:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+18/02/08 17:33:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.122.1, 47685, None)
+18/02/08 17:33:56 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.122.1:47685 with 912.3 MB RAM, BlockManagerId(driver, 192.168.122.1, 47685, None)
+18/02/08 17:33:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.122.1, 47685, None)
+18/02/08 17:33:56 INFO BlockManager: external shuffle service port = 7337
+18/02/08 17:33:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.122.1, 47685, None)
+18/02/08 17:33:57 INFO EventLoggingListener: Logging events to file:///home/shrinivaasanka/SparkEventLogs/local-1518091435932
+socket_streaming_client(): host =  localhost ; post= 64001
+######################################
+fdlfdklf
+
+hash for string [ fdlfdklf
+] : 0b1011100101100011011010110101010100100001000001011111000110110110101000011010001110011101110001011010001011011100010000110100000001001011001000000110110100001000
+k= 8
+bucket= 46
+rank for hashstring [ 101100011011010110101010100100001000001011111000110110110101000011010001110011101110001011010001011011100010000110100000001001011001000000110110100001000 ] : 1
+estimators[bucket] =  1
+######################################
+kdflkd
+
+hash for string [ kdflkd
+] : 0b110111001100111101101011111000100101011010110001111000010000110101110000110101010110001011101100101010010000110010100100001011101111100000110111000000100111111
+k= 8
+bucket= 55
+rank for hashstring [ 01100111101101011111000100101011010110001111000010000110101110000110101010110001011101100101010010000110010100100001011101111100000110111000000100111111 ] : 2
+estimators[bucket] =  2
+######################################
+kdlf
+
+hash for string [ kdlf
+] : 0b1101111000101101101000111001101110100101001010111110110001001101001100011011001100100010000010110111000011111001000000110100011010011000101111101101011110000110
+k= 8
+bucket= 55
+rank for hashstring [ 000101101101000111001101110100101001010111110110001001101001100011011001100100010000010110111000011111001000000110100011010011000101111101101011110000110 ] : 4
+estimators[bucket] =  4
+######################################
+kdlfk
+
+hash for string [ kdlfk
+] : 0b1111010001110110111111100111010111100000000100001100101000000000011110111000111110111011100000111111001100000100011011100000011111110010000100001010101010010101
+k= 8
+bucket= 61
+rank for hashstring [ 001110110111111100111010111100000000100001100101000000000011110111000111110111011100000111111001100000100011011100000011111110010000100001010101010010101 ] : 3
+estimators[bucket] =  3
+######################################
+kldfk
+
+hash for string [ kldfk
+] : 0b1011110101101110100000101000110011010111111100100011000110111011110110011111100001110011111101110010011100101011001110111111010101000010101110001100100110111010
+k= 8
+bucket= 47
+rank for hashstring [ 101101110100000101000110011010111111100100011000110111011110110011111100001110011111101110010011100101011001110111111010101000010101110001100100110111010 ] : 1
+estimators[bucket] =  1
+######################################
+kdlfkl
+
+hash for string [ kdlfkl
+] : 0b11110000011100000101111110100101101101111111010101111110000110001001111011010110000000001101101011000011110110111001110001010100100111101010101001011010011100
+k= 8
+bucket= 60
+rank for hashstring [ 0011100000101111110100101101101111111010101111110000110001001111011010110000000001101101011000011110110111001110001010100100111101010101001011010011100 ] : 3
+estimators[bucket] =  3
+######################################
+kdlfkl;
+
+hash for string [ kdlfkl;
+] : 0b1001100111101111111101100111001010101010010000101110011001010000100000010011000110100111001100011100010100011101110111011011011101111000000001011000100110000001
+k= 8
+bucket= 38
+rank for hashstring [ 111101111111101100111001010101010010000101110011001010000100000010011000110100111001100011100010100011101110111011011011101111000000001011000100110000001 ] : 1
+estimators[bucket] =  1
+######################################
+dkfkl
+
+hash for string [ dkfkl
+] : 0b110111100110111000011010001000100000100000110100011011100111010001001001100101101011100010011101111010010000010000010000011000101111011110011001001000000001111
+k= 8
+bucket= 55
+rank for hashstring [ 00110111000011010001000100000100000110100011011100111010001001001100101101011100010011101111010010000010000010000011000101111011110011001001000000001111 ] : 3
+estimators[bucket] =  4
+######################################
+lkdlfk
+
+hash for string [ lkdlfk
+] : 0b1111001001001001001000011100100010110100100111111101101001011011000100111010000101111010111010011010000010011111011011110011011100111000001100011110111010100010
+k= 8
+bucket= 60
+rank for hashstring [ 001001001001000011100100010110100100111111101101001011011000100111010000101111010111010011010000010011111011011110011011100111000001100011110111010100010 ] : 3
+estimators[bucket] =  3
+

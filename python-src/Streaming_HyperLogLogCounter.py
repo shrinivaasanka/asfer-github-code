@@ -61,7 +61,8 @@ cardinality=[]
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("file","file")
 #inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
-inputf=Streaming_AbstractGenerator.StreamAbsGen("AsFer_Encoded_Strings","NeuronRain")
+#inputf=Streaming_AbstractGenerator.StreamAbsGen("AsFer_Encoded_Strings","NeuronRain")
+inputf=Streaming_AbstractGenerator.StreamAbsGen("Socket_Streaming","localhost")
 for i in inputf:
 	line=line+1
 	if line < 20:

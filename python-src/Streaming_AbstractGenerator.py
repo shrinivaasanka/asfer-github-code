@@ -36,6 +36,7 @@ from cassandra.cluster import Cluster
 from confluent_kafka import Consumer, KafkaError
 from pyspark.sql import SparkSession
 import json
+import socket
 
 class StreamAbsGen(object):
 	def __init__(self,data_storage,data_source):
@@ -118,6 +119,9 @@ class StreamAbsGen(object):
 		if self.data_storage=="Kafka":
 		        self.c = Consumer({'bootstrap.servers': '0', 'group.id': 'test-consumer-group', 'default.topic.config': {'auto.offset.reset': 'smallest'}})
 		        self.c.subscribe(['neuronraindata'])
+		if self.data_storage=="Socket_Streaming":
+			self.streaming_host=self.data_source
+			self.streaming_port=64001
 
 		
 	def __iter__(self):
@@ -168,3 +172,11 @@ class StreamAbsGen(object):
 			            else:
 			                print(msg.error())
 			        self.c.close()
+		if self.data_storage=="Socket_Streaming":
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((self.streaming_host,self.streaming_port))
+			print "socket_streaming_client(): host = ",self.streaming_host,"; post=",self.streaming_port
+			data=""
+			while data != None:
+				data=s.recv(100)
+				yield data
