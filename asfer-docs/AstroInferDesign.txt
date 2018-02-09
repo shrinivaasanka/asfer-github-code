@@ -10762,3 +10762,18 @@ all possible partitions of a set is the Bell number. Vertex corresponding to Col
 6.Example webserver commandline:
         nc -l 64001
         ><data>
+
+----------------------------------------------------------------------------------------------------------------------------------------
+509. (FEATURE-DONE) Scheduler Analytics - Socket Streaming Server - Decorator pattern implementation - 9 February 2018
+----------------------------------------------------------------------------------------------------------------------------------------
+1. New Socket Streaming Server for Scheduler Analytics has been implemented in python-src/software_analytics/SchedulerAnalytics_WebServer.py
+2. This invokes get_stream_data() function in python-src/software_analytics/DeepLearning_SchedulerAnalytics.py
+3. get_stream_data() function is decorated by a Decorator class implemented in a new file python-src/webserver_rest_ui/NeuronRain_Generic_WebServer.py
+4. SocketWebServerDecorator implemented in python-src/webserver_rest_ui/NeuronRain_Generic_WebServer.py is generic and overrides
+ __init__() and __call__() functions. __call__() invokes the decoratee function get_stream_data() specific to Scheduler Analytics.
+5. SocketWebServerDecorator can decorate any other streaming datasource, not just scheduler analytics - decoratee function has to be implemented
+ accordingly.
+6. Logs for Socket Streaming Server have been committed to python-src/software_analytics/testlogs/SchedulerAnalytics_WebServer.log.9February2018 and example Socket Streaming Client HyperLogLogCounter logs are at python-src/testlogs/Streaming_HyperLogLogCounter.log.9February2018
+7. Global configs for socket streaming server host and port (64001) have been set in a new config file python-src/software_analytics/SchedulerAnalytics_Config.py
+8. Known issue: There seems to be a random iterator disconnect because of psutil process_iter() process statistics streaming delay
+
