@@ -1,0 +1,58 @@
+'r+', flags=557058),
+                 popenfile(path='/home/shrinivaasanka/neo4j-community-2.3.2/data/graph.db/neostore.relationshipgroupstore.db.id', fd=136, position=9, mode='r+', flags=557058),
+                 popenfile(path='/home/shrinivaasanka/neo4j-community-2.3.2/data/graph.db/neostore.id', fd=137, position=9, mode='r+', flags=557058),
+                 popenfile(path='/home/shrinivaasanka/neo4j-community-2.3.2/data/graph.db/neostore.transaction.db.0', fd=138, position=2037230, mode='r+', flags=557058)],
+  'pid': 3800,
+  'ppid': 1,
+  'status': 'sleeping',
+  'terminal': None,
+  'threads': [pthread(id=23960, user_time=0.0, system_time=0.0),
+              pthread(id=3800, user_time=0.0, system_time=0.0),
+              pthread(id=3816, user_time=11.9, system_time=0.35),
+              pthread(id=3818, user_time=0.78, system_time=0.04),
+              pthread(id=3819, user_time=3.35, system_time=0.06),
+              pthread(id=3820, user_time=1.78, system_time=0.77),
+              pthread(id=3821, user_time=0.03, system_time=0.0),
+              pthread(id=3822, user_time=0.06, system_time=0.0),
+              pthread(id=3823, user_time=0.04, system_time=0.02),
+              pthread(id=3824, user_time=0.68, system_time=0.01),
+              pthread(id=3825, user_time=0.41, system_time=0.23),
+              pthread(id=3826, user_time=0.04, system_time=0.0),
+              pthread(id=3827, user_time=0.04, system_time=0.0),
+              pthread(id=3835, user_time=0.0, system_time=0.0),
+              pthread(id=3836, user_time=0.0, system_time=0.0),
+              pthread(id=3837, user_time=3.45, system_time=0.04),
+              pthread(id=3838, user_time=3.1, system_time=0.05),
+              pthread(id=3839, user_time=0.0, system_time=0.0),
+              pthread(id=3840, user_time=7.99, system_time=3.8),
+              pthread(id=4377, user_time=0.03, system_time=0.0),
+              pthread(id=4387, user_time=27.62, system_time=17.46),
+              pthread(id=4388, user_time=48.92, system_time=0.29),
+              pthread(id=4426, user_time=0.3, system_time=0.06),
+              pthread(id=4427, user_time=0.32, system_time=0.04),
+              pthread(id=4437, user_time=0.01, system_time=0.0),
+              pthread(id=4438, user_time=0.0, system_time=0.0),
+              pthread(id=4439, user_time=0.0, system_time=0.0),
+              pthread(id=4440, user_time=0.0, system_time=0.0),
+              pthread(id=4442, user_time=0.02, system_time=0.0),
+              pthread(id=4443, user_time=0.09, system_time=0.02),
+              pthread(id=4445, user_time=4.16, system_time=1.98),
+              pthread(id=5172, user_time=0.0, system_time=0.0),
+              pthread(id=5173, user_time=0.0, system_time=0.0),
+              pthread(id=5174, user_time=0.0, system_time=0.0),
+              pthread(id=5175, user_time=0.0, system_time=0.0),
+              pthread(id=5176, user_time=0.01, system_time=0.0),
+              pthread(id=5177, user_time=0.01, system_time=0.0),
+              pthread(id=5181, user_time=0.07, system_time=0.01)],
+  'uids': puids(real=0, effective=0, saved=0),
+  'username': 'root'}]
+SocketWebServerDecorator.__init__():
+Traceback (most recent call last):
+  File "SchedulerAnalytics_WebServer.py", line 19, in <module>
+    from DeepLearning_SchedulerAnalytics import get_stream_data
+  File "/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/DeepLearning_SchedulerAnalytics.py", line 100, in <module>
+    @SocketWebServerDecorator(scheduler_analytics_host,scheduler_analytics_port)
+  File "/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/webserver_rest_ui/NeuronRain_Generic_WebServer.py", line 33, in __call__
+    self.conn.send(str(data[0]))
+socket.error: [Errno 104] Connection reset by peer
+

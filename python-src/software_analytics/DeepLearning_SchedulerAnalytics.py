@@ -41,6 +41,8 @@ import json
 import pprint
 from dictdiffer import diff
 import hashlib
+from NeuronRain_Generic_WebServer import SocketWebServerDecorator
+from SchedulerAnalytics_Config import scheduler_analytics_host,scheduler_analytics_port
 
 expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
 expected_process_priorities=json.loads(expected_process_priorities_input.read())
@@ -51,6 +53,13 @@ processfeatures=None
 processesfeatures=[]
 numproc=0
 process_md5hash_string=False
+
+class ProcessIterator(object):
+        def __iter__(self):
+                self.psutilprocessiter=psutil.process_iter()
+                for process in psutil.process_iter():
+			processfeatures=process_feature_vector(process)
+			yield processfeatures
 
 def getHash(str):
         h=hashlib.new("ripemd160")
@@ -87,6 +96,14 @@ def process_feature_vector(proc):
 		feature_vector.append(proc_dict)
 	pprint.pprint(feature_vector)
 	return feature_vector
+
+@SocketWebServerDecorator(scheduler_analytics_host,scheduler_analytics_port)
+def get_stream_data():
+	print "--------------------------------------------------------------------------------------------------"
+	print "DeepLearning_SchedulerAnalytics.get_stream_data(): Process Iterator Wrapper"
+	print "--------------------------------------------------------------------------------------------------"
+	processiterator=ProcessIterator()
+	return processiterator
 
 def is_prioritizable(proc_name):
 	#print "is_prioritizable(): proc_name:",proc_name
