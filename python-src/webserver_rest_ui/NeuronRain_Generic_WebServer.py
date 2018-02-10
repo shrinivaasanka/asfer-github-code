@@ -29,5 +29,5 @@ class SocketWebServerDecorator(object):
 	def __call__(self,datasourcefunc):
 		dataiterator=datasourcefunc()
 		for data in dataiterator:	
-			print "SocketWebServerDecorator.__init__():" 
+			print "SocketWebServerDecorator.__call__():"
 			self.conn.send(str(data[0]))
