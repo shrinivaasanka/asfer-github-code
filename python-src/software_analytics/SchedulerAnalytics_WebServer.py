@@ -18,4 +18,7 @@
 
 from DeepLearning_SchedulerAnalytics import get_stream_data
 
-get_stream_data()
+try:
+	get_stream_data()
+except Exception as e:
+	print "get_stream_data() exception:",e

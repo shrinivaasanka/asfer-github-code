@@ -21,13 +21,23 @@ import socket
 class SocketWebServerDecorator(object):
 	def __init__(self,host,port):
 		print "SocketWebServerDecorator.__init__():"
-		s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-		s.bind((host,port))
-		s.listen(10)
-		self.conn,self.addr = s.accept()
+		self.s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+		self.s.bind((host,port))
+		self.s.listen(100)
 	
 	def __call__(self,datasourcefunc):
-		dataiterator=datasourcefunc()
-		for data in dataiterator:	
-			print "SocketWebServerDecorator.__call__():"
-			self.conn.send(str(data[0]))
+		self.conn,self.addr = self.s.accept()
+		cnt=1
+		while True:
+			dataiterator=datasourcefunc()
+			try:
+				for data in dataiterator:	
+					print "SocketWebServerDecorator.__call__(): data cnt:",cnt
+					cnt+=1
+					if data is not None:
+						ret=self.conn.send(str(data[0]))
+						print "conn.send() returned :",ret
+					else:
+						print "data is None"
+			except Exception as e:
+				print "__call__() exception:",e

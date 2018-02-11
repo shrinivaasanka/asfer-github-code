@@ -57,9 +57,12 @@ process_md5hash_string=False
 class ProcessIterator(object):
         def __iter__(self):
                 self.psutilprocessiter=psutil.process_iter()
-                for process in psutil.process_iter():
-			processfeatures=process_feature_vector(process)
-			yield processfeatures
+                for process in self.psutilprocessiter:
+			if process is not None:
+				processfeatures=process_feature_vector(process)
+				yield processfeatures
+			else:
+				yield "{No Process from PsUtil Iterator}"
 
 def getHash(str):
         h=hashlib.new("ripemd160")
