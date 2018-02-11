@@ -10777,3 +10777,14 @@ all possible partitions of a set is the Bell number. Vertex corresponding to Col
 7. Global configs for socket streaming server host and port (64001) have been set in a new config file python-src/software_analytics/SchedulerAnalytics_Config.py
 8. Known issue: There seems to be a random iterator disconnect because of psutil process_iter() process statistics streaming delay
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+510. (FEATURE-DONE) Scheduler Analytics Socket Streaming Decorator - Psutil iterator frequent disconnects resolution - 11 February 2018
+-----------------------------------------------------------------------------------------------------------------------------------------
+1. SocketWebServerDecorator frequently and periodically throws "NoneType object not callable" exception.
+2. This exception happens after every 215 or 217 processes (not sure what this magic number is)
+3. Because of this try/except error handling has been added throughout decorator code
+4. Socket listen queue size has been increased to 100
+5. datasourcefunc() is re-called once an exception is thrown in a loop - a palliative cure
+6. After this 215 barrier is breached. Logs for 558 processes streamed by Socket Server Decorator and received by Streaming Abstract
+Generator client have been committed to python-src/software_analytics/testlogs/SchedulerAnalytics_WebServer.log.11February2018 and
+python-src/testlogs/Streaming_HyperLogLogCounter.log.11February2018
