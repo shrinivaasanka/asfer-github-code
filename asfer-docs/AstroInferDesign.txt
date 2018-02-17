@@ -10744,7 +10744,7 @@ integer round-off of k is the index of tile interval containing x.
 
 10. Previous sequential optimization of O((logN)^2) though removes PRAMs, proves only that Factorization is in P. Computational geometric factorization by PRAMs is still a better result because it implies Factorization is in NC from PRAM-NC equivalence despite requirement of high number of parallel processors.
 
-11. For each segment k in loops previously, 2 subsegments of it have following interval enpoints - (xleft,yleft,xright,yright):
+11. For each segment k in loops previously, 2 subsegments of it have following interval endpoints - (xleft,yleft,xright,yright):
 	subsegment1:  (N/(k+2),(k+1),N/(k+2)+delta,(k+1))
 	subsegment2:  (N/(k+2)+delta,(k+1),N/(k+1),(k+1))
 and delta=N/((k+1)(k+2))
