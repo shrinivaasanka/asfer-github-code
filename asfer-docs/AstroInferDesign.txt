@@ -10747,7 +10747,7 @@ integer round-off of k is the index of tile interval containing x.
 11. For each segment k in loops previously, 2 subsegments of it have following interval enpoints - (xleft,yleft,xright,yright):
 	subsegment1:  (N/(k+2),(k+1),N/(k+2)+delta,(k+1))
 	subsegment2:  (N/(k+2)+delta,(k+1),N/(k+1),(k+1))
-and delta=k/(y-1)
+and delta=N/((k+1)(k+2))
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 507. (THEORY) Tournament Graph Election, Coloring, Intrinsic Merit, Partitions and Bell Number - 8 February 2018
