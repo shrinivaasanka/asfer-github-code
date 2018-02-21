@@ -8854,6 +8854,12 @@ implying the MaxSAT for 21 variables and 20 clauses converges to 90.7025% asympt
 
 The inequality m^3*n^2*p^4 > 7/8*m relates hardness and randomness because probability distribution for p is directly related to uniformity and k-wise independence of pseudorandom (number) generator for choosing a literal at random. Presently the randomness depends on linux PRNG. If there exists a pseudorandom number generator corresponding to probability p > 0.96716821/sqrt(m*n) then P=NP.
 
+For a binary valued random variable X, bias(X) is defined as Pr(X=0)-Pr(X=1) <= epsilon. Epsilon biased pseudorandom generators (e-PRG) are functions G:{0,1}^l->{0,1}^n expanding seed of length l to a pseudorandom string of length n and for all subsets Si (which are random variables) of {0,1}^n, bias(Si) <= epsilon. For uniform distributions, bias of all subset random variables is zero excluding the empty set. This is equivalent to: Bias(UniformDistribution)-Bias(e-PRGDistribution) <= epsilon. For random matrix approximate SAT solver probability p, previous condition of probability of choosing a positive or negative literal in a random SAT, p > 0.96716821/sqrt(m*n) for P=NP to hold, differs from the uniform probability distribution 1/2n (assuming n variables and n negations of them). This implies an epsilon biased PRG of bias p-(1-p) = 2p-1 = [1.93433642/sqrt(m*n)] - 1 for all possible values of m and n, must exist for P=NP. PRG described in reference has bias (n-1)/2^l. Equating 2p-1 = (n-1)/2^l and solving for seed length l gives an expression of required seed length l in terms of number of clauses m.
+
+References:
+----------
+457.1 Epsilon biased Pseudo Random Generators - [Advanced Complexity Theory Course Notes - Dieter] - http://pages.cs.wisc.edu/~dieter/Courses/2008s-CS880/Scribes/lecture21.pdf
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
 458. (THEORY) Intrinsic Merit, Consensus Algorithms, Byzantine Failures and Level Playing Field - 23 September 2017
 ----------------------------------------------------------------------------------------------------------------------------------------------
