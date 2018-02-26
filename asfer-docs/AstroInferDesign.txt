@@ -10612,6 +10612,7 @@ References:
 498.3 Bound for Multiplicative Partition Function - [Canfield-Erdos-Pomerance] - https://www.math.dartmouth.edu/~carlp/PDF/paper39.pdf
 498.4 Eigth Mersenne Prime - 2^31 - 1 = 2147483647 - https://en.wikipedia.org/wiki/2,147,483,647 - this was largest known prime till 1867.
 498.5 M31 - http://primes.utm.edu/curios/page.php/2147483647.html - The first prime that cannot be tested on 32-bit primality-check software.
+498.6 Cryptography in NC0 - [Benny Applebaum, Yuval Ishai, Eyal Kushilevitz] - http://www.cs.technion.ac.il/~abenny/pubs/nc0.pdf, Hardness of factoring - [Emanuele Viola] - https://emanueleviola.wordpress.com/2018/02/16/i-believe-pnp/ - One way functions are in NC0 and there are PRGs for which output bit depends only on O(1) bits of seed implying factoring is hard for constant depth. Computational Geometric Factorization doable in O(logN^2) PRAM time in NC2, implies factoring can be made easy by parallelism and polylog depth circuits.
 
 -------------------------------------------------------------------------------------------------------------------------
 499. (FEATURE-DONE) Secure Neuro Currency Cloud Perfect Forward Move - OpenSSL client and server - 19 January 2018
