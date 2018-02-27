@@ -10861,3 +10861,8 @@ and testlogs/CNFSATSolver.18variables18clauses.log.27February2018
  are strikingly equal - a confirmation of the least squares randomized rounding and relaxation SAT solver's accuracy
 5. Logs for 16*16 and 18*18 have few hundreds and thousand plus random 3SAT instances which are solved 100%
 
+----------------------------------------------------------------------------------------------------------
+512. (FEATURE-DONE) ConceptNet5 Update - REST endpoints changed - 27 February 2018
+----------------------------------------------------------------------------------------------------------
+1. ConceptNet5 rest_client.py has been imported which already wraps REST methods and endpoints
+2. REST endpoints for search,lookup and query have been updated for ConceptNet 5.5 which were 5.4 earlier
