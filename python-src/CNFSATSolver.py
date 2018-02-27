@@ -182,7 +182,8 @@ class SATSolver(object):
 		cnf=""
 		clauses=[]
 		for i in xrange(numclauses):
-			randarray=np.random.permutation(numvars)
+			#randarray=np.random.permutation(numvars)
+			randarray=np.random.choice(numvars,3,replace=False)
 			clause= "("
 			negation=random.randint(1,2)
 			if negation==1:
@@ -241,8 +242,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=21
-	number_of_clauses=18
+	number_of_variables=16
+	number_of_clauses=16
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
