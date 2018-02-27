@@ -26,22 +26,22 @@
 
 import requests
 import pprint
+from rest_client import similar_to_concepts
 
 class ConceptNet5Client:
 	def __init__(self):
 		print "Init of ConceptNet Client"
 
 	def query_association(self,concept1,concept2):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/data/5.4/assoc/c/en/"+concept1+"?filter=/c/en/"+concept2).json()
-		#conceptjson=requests.get("http://conceptnet5.media.mit.edu/data/5.4/assoc/c/en/"+concept1).json()
+		conceptjson=requests.get("http://conceptnet5.media.mit.edu/c/en/"+concept1+"?filter=/c/en/"+concept2).json()
 		return conceptjson
 
 	def query_search(self,concept):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/data/5.4/search?end=/c/en/"+concept).json()
+		conceptjson=requests.get("http://conceptnet5.media.mit.edu/search?end=/c/en/"+concept).json()
 		return conceptjson
 
 	def query_lookup(self,concept):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/data/5.4/c/en/"+concept).json()
+		conceptjson=requests.get("http://conceptnet5.media.mit.edu/c/en/"+concept).json()
 		return conceptjson
 
 if __name__=="__main__":
@@ -61,4 +61,3 @@ if __name__=="__main__":
 	print "========================================"
 	conceptjson=conceptnet.query_lookup("chennai")
 	pprint.pprint(conceptjson)
-		
