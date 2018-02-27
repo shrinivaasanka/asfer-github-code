@@ -10848,3 +10848,16 @@ all possible partitions of a set is the Bell number. Vertex corresponding to Col
 6. After this 215 barrier is breached. Logs for 558 processes streamed by Socket Server Decorator and received by Streaming Abstract
 Generator client have been committed to python-src/software_analytics/testlogs/SchedulerAnalytics_WebServer.log.11February2018 and
 python-src/testlogs/Streaming_HyperLogLogCounter.log.11February2018
+
+------------------------------------------------------------------------------------------------------------------------------------------
+511. (FEATURE-DONE) Approximate 3SAT Solver Randomized Rounding Update - NumPy random choice() replacing permutation() - 27 February 2018
+------------------------------------------------------------------------------------------------------------------------------------------
+1. CNFSATSolver.py - function creating random 3SAT instances has been updated to invoke NumPy random choice() instead of
+permutation() without replacement - equivalent to nP3 per clause for n variables.
+2. Logs for 16 variables - 16 clauses and 18 variables - 18 clauses have been committed to testlogs/CNFSATSolver.16variables16clauses.log2.27February2018
+and testlogs/CNFSATSolver.18variables18clauses.log.27February2018
+3. Numpy random choice() is based on Uniform distribution.
+4. It is remarkable to note that observed probability average and Random Matrix probability 1/sqrt(m*n)
+ are strikingly equal - a confirmation of the least squares randomized rounding and relaxation SAT solver's accuracy
+5. Logs for 16*16 and 18*18 have few hundreds and thousand plus random 3SAT instances which are solved 100%
+
