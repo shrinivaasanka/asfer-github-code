@@ -11,21 +11,17 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#---------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
+
+#ConceptNet and WordNet: http://web.media.mit.edu/~havasi/MAS.S60/PNLP10.pdf
 
 import requests
 import pprint
+from Queue import Queue
+from itertools import product
 from rest_client import similar_to_concepts
 
 class ConceptNet5Client:
@@ -44,6 +40,56 @@ class ConceptNet5Client:
 		conceptjson=requests.get("http://conceptnet5.media.mit.edu/c/en/"+concept).json()
 		return conceptjson
 
+	def related(self,concept):
+		conceptjson=requests.get("http://conceptnet5.media.mit.edu/related/c/en/"+concept).json()
+		return conceptjson
+
+	def conceptnet_distance(self,concept1,concept2):
+		related1=self.related(concept1)
+		related2=self.related(concept2)	
+		related1list=[]
+		related2list=[]
+		for e in related1["related"]:
+			if "/en" in e["@id"]:
+				related1list.append(e["@id"])
+		for e in related2["related"]:
+			if "/en" in e["@id"]:
+				related2list.append(e["@id"])
+		print "related1list: ",related1list
+		print "related2list: ",related2list
+		commonancestors=set(related1list).intersection(set(related2list))
+		print "commonancestors: ",commonancestors
+		distance=1
+		q1=Queue()
+		q2=Queue()
+		q1.put(set(related1list))
+		q2.put(set(related2list))
+		path=[]
+		path.append(concept1)
+		path.append(concept2)
+		while len(commonancestors) == 0 and distance < 1000:
+			concept1list=q1.get()
+			concept2list=q2.get()
+			related1list=related2list=[]
+			for c1,c2 in product(concept1list,concept2list):
+				print "c1=",c1,";c2=",c2
+				related1=self.related(c1)
+				related2=self.related(c2) 
+				for e in related1["related"]:
+					if "/en" in e["@id"]:
+						related1list.append(e["@id"])
+				for e in related2["related"]:
+					if "/en" in e["@id"]:
+						related2list.append(e["@id"])
+			print "related1list: ",related1list
+			print "related2list: ",related2list
+			q1.put(set(related1list))
+			q2.put(set(related2list))
+			commonancestors=set(related1list).intersection(set(related2list))
+			distance = distance + 1
+		print "commonancestors: ",commonancestors
+		return 2*distance
+
 if __name__=="__main__":
 	conceptnet = ConceptNet5Client()
 	print "========================================"
@@ -61,3 +107,23 @@ if __name__=="__main__":
 	print "========================================"
 	conceptjson=conceptnet.query_lookup("chennai")
 	pprint.pprint(conceptjson)
+	print "========================================"
+	print "Related Concepts Ranked Descending by Distance Score"
+	print "========================================"
+	similarconcepts=conceptnet.related('chennai')
+	pprint.pprint("Concepts related to Chennai")
+	pprint.pprint(similarconcepts)
+	similarconcepts=conceptnet.related('computer science')
+	pprint.pprint("Concepts related to computer science")
+	pprint.pprint(similarconcepts)
+	print "========================================"
+	print "ConceptNet Distance - Common Ancestor algorithm"
+	print "========================================"
+	distance=conceptnet.conceptnet_distance('chennai','delhi')
+	pprint.pprint(distance)
+	distance=conceptnet.conceptnet_distance('computer science','theory')
+	pprint.pprint(distance)
+	distance=conceptnet.conceptnet_distance('rice','wheat')
+	pprint.pprint(distance)
+	distance=conceptnet.conceptnet_distance('tiger','lion')
+	pprint.pprint(distance)

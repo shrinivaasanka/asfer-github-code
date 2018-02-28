@@ -11,17 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 import numpy as np
@@ -29,9 +21,9 @@ import random
 import math
 from collections import defaultdict
 #from scipy.linalg import solve
-#from scipy.linalg import lstsq
+from scipy.linalg import lstsq
 #from numpy.linalg import solve
-from numpy.linalg import lstsq
+#from numpy.linalg import lstsq
 #from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
 #from scipy.sparse import csr_matrix 
@@ -164,7 +156,7 @@ class SATSolver(object):
                 print "a.shape:",a.shape
                 print "b.shape:",b.shape
                 #x = solve(a,b)
-                #x = lstsq(a,b)
+                #x = lstsq(a,b,lapack_driver='gelsy')
                 #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
                 x = lsmr(a,b)
 		print "solve_SAT2(): lstsq(): x:",x
@@ -219,8 +211,8 @@ def prob_dist(freq):
 	for x,y in freq.iteritems():
 		sumfreq=sumfreq + y
 	for x,y in freq.iteritems():
-		print "y=",y
-		print "sumfreq=",sumfreq
+		#print "y=",y
+		#print "sumfreq=",sumfreq
 		prob.append(float(y)/float(sumfreq))
 	return prob
 
@@ -242,8 +234,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=16
-	number_of_clauses=16
+	number_of_variables=21
+	number_of_clauses=21
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
@@ -261,8 +253,8 @@ if __name__=="__main__":
 		average_percentage_of_clauses_satisfied += satis[1]
 		cnt += 1
 		satiscnt += satis[0]
-		print "Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
-		print "Average Percentage of Clauses per CNF satisfied:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+		print "Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
+		print "*****MAXSAT-APPROXIMATION*****Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
 		prob_dist_variables=prob_dist(variables)
 		prob_dist_negations=prob_dist(negations)
 		avg_prob=0.0
@@ -276,5 +268,5 @@ if __name__=="__main__":
 		print "Probability of Negations chosen in CNFs so far:",prob_dist_negations
 		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
 		print "Observed Average probability of a variable or negation:", observed_avg_prob 
-		print "Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
-		print "Percentage of Clauses satisfied - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
+		print "Observed - Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
