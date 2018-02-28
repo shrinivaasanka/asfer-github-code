@@ -10866,3 +10866,30 @@ and testlogs/CNFSATSolver.18variables18clauses.log.27February2018
 ----------------------------------------------------------------------------------------------------------
 1. ConceptNet5 rest_client.py has been imported which already wraps REST methods and endpoints
 2. REST endpoints for search,lookup and query have been updated for ConceptNet 5.5 which were 5.4 earlier
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+513. (FEATURE-DONE and THEORY) Approximate SAT Solver and ConceptNet REST client updates - 21 variables,21 clauses LSMR and Common Ancestor Distance in ConceptNet5 - 28 February 2018
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Least Square SAT solver has been updated to print more readable debug messages and highlight MAXSAT approximation ratio
+ average for SATs solved thus far
+2.Number of variables and clauses is set to 21,21 and MAXSAT ratio is 98% for 34 random 3SATs
+3.Logs for 21,21 has been committed to testlogs/CNFSATSolver.21variables21clauses.log.28February2018 which shows the observed literal
+probabilities and random matrix 1/sqrt(m*n) literal probability agreeing well.
+4.This is because of uniform unbiased (mostly) choice() when number of clauses = number of variables causing 1/sqrt(m*n) = 1/n
+5.For unequal clauses and variables numbers, an epsilon biased PRG implementation in linux kernel is necessary (random.c might have to be
+ rewritten)
+---------------------
+6.ConceptNet5 client has been updated to include a related() function wrapper which invokes /related REST endpoint for finding similar concepts.
+7.ConceptNet5 finds related concepts by word embeddings implementation of word2vec which maps each word to a vector and similar words/concepts
+are clustered together in this vector space. More precisely, word distances are represented as a word-word 2 dimensional matrix/graph
+and sum of path edge weights between word pair is the distance.
+8.For finding distance between two concepts a common ancestor algorithm has been implemented in new conceptnet_distance() function which recursively invokes related() to deep learn concepts and grows paths between the two concept endpoints. This recursion stops when paths grown from both ends meet i.e when there is a common ancestor (inspired by Savitch and USTCONN in logspace theorems).
+9.Common ancestors are printed in end and distance between the concepts is also printed
+10.Some example conceptnet_distance() invocations have been captured in ConceptNet/testlogs/ConceptNet5Client.log.28February2018
+ 
+References:
+-----------
+513.1 ConceptNet 5.5: An Open Multilingual Graph of General Knowledge - [Robert Speer,Joshua Chin,Catherine Havasi-Luminoso Technologies] - https://arxiv.org/pdf/1612.03975.pdf
+513.2 ConceptNet blog - https://blog.conceptnet.io/
+
+
