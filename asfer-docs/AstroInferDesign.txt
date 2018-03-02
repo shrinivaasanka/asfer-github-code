@@ -10892,4 +10892,16 @@ References:
 513.1 ConceptNet 5.5: An Open Multilingual Graph of General Knowledge - [Robert Speer,Joshua Chin,Catherine Havasi-Luminoso Technologies] - https://arxiv.org/pdf/1612.03975.pdf
 513.2 ConceptNet blog - https://blog.conceptnet.io/
 
+------------------------------------------------------------------------------------------------------------------------------------------
+514. (THEORY) ConceptNet, Graph Tensor Neuron Network Intrinsic Merit, Word2Vec Word Embeddings - 2 March 2018 - related to 412, 513
+------------------------------------------------------------------------------------------------------------------------------------------
+ConceptNet5 /related REST endpoint retrieves concepts similar to a concept and ranks them by word2vec word embedding similarity score. Recursiv
+e Lambda Function Growth algorithm mentioned previously, grows lambda functions for random walks in a text definition graph created by Recursiv
+e Gloss Overlap and word-word similarity/relevance is formalized by Neural Tensor Network. ConceptNet /related word2vec word embedding word-word similarity scores are perfect fit for Neuron Tensor Network entity relation potentials. Per random walk lambda function composition tree composes the neuron tensor potentials of all relations in the random walk. Composition trees are ranked by these composed potentials and Lambda composition tree of maximum potential best approximates the meaning of the Natural Language Text. This implies ConceptNet itself is one huge Graph Tensor Neuron Network Monolith. 
+
+Rationale for creating random walks in text definition graph is: Process of Human Text Comprehension is simulated by connecting concepts in text in various possible random walks of finite lengths, creating a tree of their meaning as lambda function composition and choosing the most rewarding random walk ranked by composed potentials. Most rewarding random walk must contain the word vertices of high core numbers (or centralities/classes of the text) because most number of paths in the graph go through these hub vertices (Section 5.16 in https://tac.nist.gov/publications/2010/participant.papers/CMI_IIT.proceedings.pdf proves this notion for Recursive Gloss Overlap graph in terms of WordNet relations).
+
+References:
+----------
+514.1 Neural Tensor Network - [Socher-Chen-Manning-Ng] - https://nlp.stanford.edu/pubs/SocherChenManningNg_NIPS2013.pdf - Section 3.1 - "...The goal of our approach is to be able to state whether two entities (e1, e2) are in a certain relationship R. For instance, whether the relationship (e1, R, e2) = (Bengal tiger, has part, tail) is true and with what certainty. ... The Neural Tensor Network (NTN) replaces a standard linear neural network layer with a bilinear tensor layer that directly relates the two entity vectors across multiple dimensions. ..."
 
