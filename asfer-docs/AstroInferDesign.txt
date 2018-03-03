@@ -10905,3 +10905,24 @@ References:
 ----------
 514.1 Neural Tensor Network - [Socher-Chen-Manning-Ng] - https://nlp.stanford.edu/pubs/SocherChenManningNg_NIPS2013.pdf - Section 3.1 - "...The goal of our approach is to be able to state whether two entities (e1, e2) are in a certain relationship R. For instance, whether the relationship (e1, R, e2) = (Bengal tiger, has part, tail) is true and with what certainty. ... The Neural Tensor Network (NTN) replaces a standard linear neural network layer with a bilinear tensor layer that directly relates the two entity vectors across multiple dimensions. ..."
 
+-------------------------------------------------------------------------------------------------------
+515. (THEORY and FEATURE-DONE) Recursive Lambda Function Growth - ConceptNet5 support, Per random walk 
+Lambda Function Composition Tree Graph Tensor Neuron Network Intrinsic Merit - 3 March 2018 - related to 514
+-------------------------------------------------------------------------------------------------------
+Recursive Lambda Function Growth implementation has been updated to print per random walk lambda function
+composition tree and its Graph Tensor Neuron Network Intrinsic Merit. Similarity has been made configurable by a flag to choose between 2 Antology Nets - WordNet and ConceptNet. Logs for this have been committed to testlogs/RecursiveLambdaFunctionnGrowth.log.GraphTensorNeuronNetwork.3March2018. Logs show a striking similarity between Maximum Intrinsic Merit Random Walk Composition and Centralities/Classes of the definition graph (excerpts below):
+...
+grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit : (u'(present(etc,(infrastructure(country,(urban(area,(Mumbai(city,largest))))))))', 3.790350877192983)
+...
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: Mumbai ,core number= 12
+This document belongs to class: infrastructure ,core number= 9
+...
+which is an evidence to the fact intrinsic merit peaks for random walks through high core numbered hub word vertices. Another aspect of ConceptNet's relevance to Graph Tensor Neuron Network is the strong resemblance of word2vec word embeddings to Connectomes in Computational Neuroscience (mentioned in references). Connectomes are the wiring diagrams for neurons in brain. Word2Vec clusters similar words of a text in vector space forming a clique. These word cluster cliques are wired together into a text graph. Thus Graph representation of Text and Neuron Cliques and Connectome Information Propagation Among Cliques of Neurons have uncanny similarities. 
+
+References:
+-----------
+515.1 Cliques and Cavities in Human Brain - [Ann Sizemore, Chad Giusti, Ari Kahn, Richard F. Betzel, Danielle S. Bassett] - https://arxiv.org/abs/1608.03520 
+515.2 Algebraic topology and Computational Neuroscience - https://www.technologyreview.com/s/602234/how-the-mathematics-of-algebraic-topology-is-revolutionizing-brain-science/

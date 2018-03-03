@@ -35,6 +35,7 @@ from nltk.corpus import wordnet as wn
 import math
 import operator
 import difflib
+from ConceptNet5Client import ConceptNet5Client
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -51,6 +52,9 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.lambda_composition=""
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		self.entropy=10000000000.0
+		self.conceptnet=ConceptNet5Client()
+		#self.Similarity="ConceptNet"
+		self.Similarity="WordNet"
 
 	def get_next_tree_traversal_id(self,x,y):
 		if y-x == 1 or x-y == 1:
@@ -104,20 +108,23 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.lambda_composition=[]
 		cnt=0
 
+		per_random_walk_graph_tensor_neuron_network_intrinsic_merit = 0 
 		#recursively evaluate the Graph Tensor Neuron Network for random walk composition tree bottom up as Graph Neural Network
 		#having Tensor Neuron activations for each subtree.
 		while len(self.lambda_expression) > 2 :
 			operand2=self.lambda_expression.pop()
 			function=self.lambda_expression.pop()
 			operand1=self.lambda_expression.pop()
-			self.graph_tensor_neuron_network_intrinsic_merit += self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
+			subtree_graph_tensor_neuron_network_wght = self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
+			self.graph_tensor_neuron_network_intrinsic_merit += subtree_graph_tensor_neuron_network_wght
+			per_random_walk_graph_tensor_neuron_network_intrinsic_merit += subtree_graph_tensor_neuron_network_wght
 			self.lambda_composition="("+function+"("+operand1+","+operand2+"))" 
 			self.lambda_expression.append(self.lambda_composition)
 			cnt+=1
 		if len(self.lambda_expression) > 1:
-			return self.lambda_expression[0] + "("+self.lambda_expression[1]+")"
+			return (self.lambda_expression[0] + "("+self.lambda_expression[1]+")", per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
 		else:
-			return self.lambda_expression[0]
+			return (self.lambda_expression[0], per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
 			
 	def grow_lambda_function1(self):
 		text=open("RecursiveLambdaFunctionGrowth.txt","r")
@@ -167,7 +174,12 @@ class RecursiveLambdaFunctionGrowth(object):
 		smt=0.0
 		similarity=0.0
 		for s1, s2 in product(synset_vertex, synset_r):
-			smt=wn.wup_similarity(s1,s2)
+			if self.Similarity=="WordNet":
+				smt=wn.wup_similarity(s1,s2)
+			if self.Similarity=="ConceptNet":
+				s1_lemma_names=s1.lemma_names()
+				s2_lemma_names=s2.lemma_names()
+				smt=self.conceptnet.conceptnet_distance(s1_lemma_names[0], s2_lemma_names[0])
 			#print "similarity=",smt
 			if smt > similarity and smt != 1.0:
 				similarity = float(smt)
@@ -313,6 +325,7 @@ class RecursiveLambdaFunctionGrowth(object):
 
 	def grow_lambda_function3(self,text):
 		stpairs=[]
+		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
 		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
 		for a in definitiongraph.nodes():
@@ -321,9 +334,14 @@ class RecursiveLambdaFunctionGrowth(object):
 		rw_ct=""
 		for k,v in stpairs:
 			try:
-				#print "Random Walk between :",k," and ",v,":",apsp[k][v]
+				print "==================================================================="
+				print "Random Walk between :",k," and ",v,":",apsp[k][v]
 				rw_ct=self.randomwalk_lambda_function_composition_tree(apsp[k][v])
-				#print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
+				print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
+				print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+				print "==================================================================="
+				if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
+					maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=rw_ct
 			except KeyError:
 				pass
 			rw_ct=""
@@ -333,6 +351,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		print "grow_lambda_function3(): Graph Density (Regularity Lemma):",self.density(definitiongraph)
 		print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:",self.bose_einstein_intrinsic_fitness(definitiongraph)
+		print "grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+		print "grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:",RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):
