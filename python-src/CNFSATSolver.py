@@ -26,6 +26,8 @@ from scipy.linalg import lstsq
 #from numpy.linalg import lstsq
 #from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
+from scipy.sparse.linalg import dsolve
+from scipy.sparse import csc_matrix
 #from scipy.sparse import csr_matrix 
 
 variables=defaultdict(int)
@@ -151,14 +153,19 @@ class SATSolver(object):
 			self.equationsB.append(1)
 		a = np.array(self.equationsA)
                 b = np.array(self.equationsB)
-		print "a:",a
-		print "b:",b
-                print "a.shape:",a.shape
-                print "b.shape:",b.shape
+		self.A=a
+		self.B=b
+		#print "a:",a
+		#print "b:",b
+                #print "a.shape:",a.shape
+                #print "b.shape:",b.shape
+
                 #x = solve(a,b)
                 #x = lstsq(a,b,lapack_driver='gelsy')
                 #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                x = lsmr(a,b)
+                x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
+		#x = dsolve.spsolve(csc_matrix(a),b)
+
 		print "solve_SAT2(): lstsq(): x:",x
 		cnt=0
 		for e in x[0]:
@@ -249,12 +256,10 @@ if __name__=="__main__":
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
 		print "Assignment satisfied:",satis[0]
-		print "Percentage of clauses satisfied:",satis[1]
+		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
 		average_percentage_of_clauses_satisfied += satis[1]
 		cnt += 1
 		satiscnt += satis[0]
-		print "Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
-		print "*****MAXSAT-APPROXIMATION*****Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
 		prob_dist_variables=prob_dist(variables)
 		prob_dist_negations=prob_dist(negations)
 		avg_prob=0.0
@@ -263,10 +268,14 @@ if __name__=="__main__":
 		for x in prob_dist_negations:
 			avg_prob += x
 		#print "Frequencies of Variables chosen in CNFs so far:",variables
-		print "Probability of Variables chosen in CNFs so far:",prob_dist_variables
+		print "Moving Average - Probability of Variables chosen in CNFs so far:",prob_dist_variables
 		#print "Frequencies of Negations chosen in CNFs so far:",negations
-		print "Probability of Negations chosen in CNFs so far:",prob_dist_negations
+		print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
 		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
-		print "Observed Average probability of a variable or negation:", observed_avg_prob 
+		print "Observed - Average probability of a variable or negation:", observed_avg_prob 
 		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
 		print "Observed - Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+		print "========================================================================================="
+		print "Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
+		print "*****MAXSAT-APPROXIMATION*****Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+		print "========================================================================================="
