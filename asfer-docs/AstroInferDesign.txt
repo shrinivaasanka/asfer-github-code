@@ -10933,7 +10933,8 @@ References:
 Least Squares LSMR SAT solver implementation has been updated to print LSMR internal calculations. Maximum iterations, conlim, atol, btol parameters have been set to least values for reducing latency. But this reduces MAXSAT accuracy to ~94% which is still above 88% (7/8 approximation). SciPy Sparse dsolve.spsolve() was tried for solving least squares by csc_matrix and there were nan errors.Finally, LSMR looks to be the best of the lot. Logs for few random 3SATs of (21 clauses, 21 variables) have been committed to testlogs/CNFSATSolver.21variables21clauses.log.4March2018. Observed average probability of choosing a literal again agrees quite well to 1/sqrt(m*n) Random Matrix theoretical probability as gleaned from logs.
 
 ----------------------------------------------------------------------------------------------------------------------------------
-517. (THEORY) Majority+Voter Composition Hardness Amplification Lemma - Updated Hardness Bound - related to 318,355 - 5 March 2018
+517. (THEORY) Majority+Voter Composition Hardness Amplification Lemma, Sensitivity Conjecture - Updated Hardness Bound -
+related to 318,355 - 5 March 2018
 ----------------------------------------------------------------------------------------------------------------------------------
 Hardness Amplification for Majority+Voter Composition has been described earlier by adapting XOR Lemma to Majority function as:
 
@@ -10984,3 +10985,9 @@ which is huge amplification for small hardness of voter boolean functions.
 => weak voters are hardened by majority
 => Computing majority by a circuit is increasingly hard as voters become weak (intuitively obvious because if voter circuits err, majority circuit errs, an indirect proof of Margulis-Ruzzo Threshold and Condorcet Jury Theorem).
 
+Sensitivity Conjecture polynomially relates sensitivity and block sensitivity of boolean functions as: s(f) <= bs(f) <= poly(s(f)). So far only Noise Sensitivity has been applied as sensitivity measure throughout for quantifying BP* error in Majority voting because it is a probability measure. But Sensitivity and Block Sensitivity are maximum number of bits and disjoint blocks of bits sensitive to output. Noise sensitivity probability can be written as:
+				for_all_length_e(Number of correlations x/e for which [f(x) != f(x/e)])
+	-------------------------------------------------------------------------------------------------------------------------------
+	for_all_length_e(Number of correlations x/e for which [f(x) == f(x/e)] + Number of correlations x/e for which [f(x) != f(x/e)])
+
+Sensitivity and Block Sensitivity are maximum values of e(which can be number of bits or number of blocks) in summations of numerator and denomainator. Block Sensitivity in Majority+Voter composition implies voter boolean functions are interdependent (correlated majority) and swayed by peer opinions en masse (Herding). Hardness of voter boolean function and majority are indirectly related to sensitivity and block sensitivity thorugh summations in Noise Sensitivity probability.
