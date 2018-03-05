@@ -10991,3 +10991,8 @@ Sensitivity Conjecture polynomially relates sensitivity and block sensitivity of
 	for_all_length_e(Number of correlations x/e for which [f(x) == f(x/e)] + Number of correlations x/e for which [f(x) != f(x/e)])
 
 Sensitivity and Block Sensitivity are maximum values of e(which can be number of bits or number of blocks) in summations of numerator and denominator. Block Sensitivity in Majority+Voter composition implies voter boolean functions are interdependent (correlated majority) and swayed by peer opinions en masse (Herding). Hardness of voter boolean function and majority are indirectly related to sensitivity and block sensitivity through summations in Noise Sensitivity probability.
+
+NOTE: Here hardness of voter boolean function is approximately assumed to equal NoiseSensitivity of Voter Boolean Function and delta=epsilon. To be precise, delta = epsilon +/- error by BP* versus NoiseSensitivity/Stability Scenarios Matrix conventions. This +/- term is ignored. Accounting for this +/- error:
+----------------------------------------------------------------------------------------------------------------------------------------
+=> Hardness Amplification for Majority+Voter Composition <= 1/(delta + or - error)*(1/2-1/3*pi) + 1/pi + 6k*pi*(delta + or - error)^0.5
+----------------------------------------------------------------------------------------------------------------------------------------
