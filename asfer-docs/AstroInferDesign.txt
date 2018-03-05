@@ -10931,3 +10931,56 @@ References:
 516. (FEATURE-DONE) SAT Solver - verbose print and iterations reduced - 4 March 2018
 -----------------------------------------------------------------------------------------------------------------------------------
 Least Squares LSMR SAT solver implementation has been updated to print LSMR internal calculations. Maximum iterations, conlim, atol, btol parameters have been set to least values for reducing latency. But this reduces MAXSAT accuracy to ~94% which is still above 88% (7/8 approximation). SciPy Sparse dsolve.spsolve() was tried for solving least squares by csc_matrix and there were nan errors.Finally, LSMR looks to be the best of the lot. Logs for few random 3SATs of (21 clauses, 21 variables) have been committed to testlogs/CNFSATSolver.21variables21clauses.log.4March2018. Observed average probability of choosing a literal again agrees quite well to 1/sqrt(m*n) Random Matrix theoretical probability as gleaned from logs.
+
+----------------------------------------------------------------------------------------------------------------------------------
+517. (THEORY) Majority+Voter Composition Hardness Amplification Lemma - Updated Hardness Bound - related to 318,355 - 5 March 2018
+----------------------------------------------------------------------------------------------------------------------------------
+Hardness Amplification for Majority+Voter Composition has been described earlier by adapting XOR Lemma to Majority function as:
+
+     Hardness of Maj+voter composition       [c/sqrt(n*delta)] + [sum(column2 error entries)] - [sum(column3 no error entries)]
+    -----------------------------------  =  ----------------------------------------------------------------------------------
+         Hardness of voter function                  				delta
+
+which is based on the sudivided BP* error scenarios matrix mentioned earlier and described again below:
+-------------------------------------------------------------------------------------------------
+        x                               |    f(x) = f(x/e)      |       f(x) != f(x/e) Noise    |
+-------------------------------------------------------------------------------------------------
+x in L, x/e in L                        |       No error        |       Error                   |
+-------------------------------------------------------------------------------------------------
+x in L, x/e not in L                    |       Error           |   No error if f(x)=1,f(x/e)=0 |
+                                        |                       |   else Error                  |
+-------------------------------------------------------------------------------------------------
+x not in L, x/e in L                    |       Error           |   No error if f(x)=0,f(x/e)=1 |
+                                        |                       |   else Error                  |
+-------------------------------------------------------------------------------------------------
+x not in L, x/e not in L                |       No error        |      Error                    |
+-------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+       x                                |                       f(x)                           |
+------------------------------------------------------------------------------------------------
+Randomized Decision tree evaluation     |       No error       |       Error                   |
+------------------------------------------------------------------------------------------------
+This matrix picturises the various false positives and false negative errors possible in majority voting. Language L denotes voting pattern for candidate 0 to win (and its complement is voting pattern for candidate 1). Correlation x/e is the flip in voting pattern. Previous matrix divides BP* errors into 2 dimensions based on 1) whether the voting pattern is valid 2) Noise sensitivity/stability . For example a voting pattern x for candidate 0's win is correlated/flipped to x/e so that candidate 1 wins and input to Majority function f(), but yet majority function treats them with equal outcome - in matrix this error scenario is: x in L, x/e not in L and f(x)=f(x/e). Other scenarios follow this convention. Based on this error matrix, Hardness amplification ratio derived previously can be rewritten as:
+
+ Hardness of Maj+voter composition       [sum(column2 entries)] + [sum(column3 entries)] - [sum(all no error entries)]
+ -----------------------------------  =  ------------------------------------------------------------------------------
+     Hardness of voter function                  				delta
+
+But Stability(f(x)) = Pr(f(x)=f(x/e)) - Pr(f(x) != f(x/e)) from definition of Noise stability => Pr(f(x)=f(y)) = (1+Stability)/2.
+Sum(column2 entries) = Pr(f(x)=f(y)) = (1+Stability)/2.
+Sum(column3 entries) = NoiseSensitivity
+=> Hardness of Maj+Voter composition = (1+Stability)/2 + NoiseSensitivity - [sum(all no error entries)]
+For majority function, Stability = (2/pi)*delta + O((delta)^1.5) and NoiseSensitivity = O(1/sqrt(n*delta))
+=> Hardness of Maj+Voter composition = 1 + (2/pi)*delta + O((delta)^1.5) + O(1/sqrt(n*delta)) - [sum(all no error entries)]
+For large n, previous hardness tends to 1 + (2/pi)*delta + O((delta)^1.5) - [sum(all no error entries)]
+
+From definition of BP*, Probability of No error entries >= 2/3 => Sum(all no error entries) >= 2/3
+=> Hardness of Maj+Voter composition <= [pi + 2*delta + k*pi*(delta)^1.5]/2*pi - 2/3
+=> Hardness Amplification for Majority+Voter Composition <= [3*pi + 6*delta + 6k*pi*(delta)^1.5 - 2] /[6*pi*delta]
+---------------------------------------------------------------------------------------------------------------
+=> Hardness Amplification for Majority+Voter Composition <= 1/delta*(1/2-1/3*pi) + 1/pi + 6k*pi*(delta)^0.5
+---------------------------------------------------------------------------------------------------------------
+which is huge amplification for small hardness of voter boolean functions.
+=> weak voters are hardened by majority
+=> Computing majority by a circuit is increasingly hard as voters become weak (intuitively obvious because if voter circuits err, majority circuit errs, an indirect proof of Margulis-Ruzzo Threshold and Condorcet Jury Theorem).
+
