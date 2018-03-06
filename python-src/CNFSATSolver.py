@@ -28,6 +28,8 @@ from scipy.linalg import lstsq
 from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
 from scipy.sparse import csc_matrix
+from scipy.linalg import pinv
+from numpy import matmul
 #from scipy.sparse import csr_matrix 
 
 variables=defaultdict(int)
@@ -138,6 +140,7 @@ class SATSolver(object):
 
 	def solve_SAT2(self,cnf,number_of_variables,number_of_clauses):
 		satass=[]
+		x=[]
 		self.solve_SAT(cnf,number_of_variables)
 		for clause in self.cnfparsed:
 			equation=[]
@@ -163,13 +166,15 @@ class SATSolver(object):
                 #x = solve(a,b)
                 #x = lstsq(a,b,lapack_driver='gelsy')
                 #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
+                #x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
 		#x = dsolve.spsolve(csc_matrix(a),b)
+		pseudoinverse_a=pinv(a)
+		x.append(matmul(pseudoinverse_a,b))
 
 		print "solve_SAT2(): lstsq(): x:",x
 		cnt=0
 		for e in x[0]:
-			if e >= 0.1:
+			if e >= 0.5:
 				satass.append(1)
 			else:
 				satass.append(0)
