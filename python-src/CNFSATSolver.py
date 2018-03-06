@@ -29,6 +29,7 @@ from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
 from scipy.sparse import csc_matrix
 from scipy.linalg import pinv
+from scipy.linalg import pinv2
 from numpy import matmul
 #from scipy.sparse import csr_matrix 
 
@@ -92,10 +93,10 @@ class SATSolver(object):
 		clauseliterals=[]
 		allstrings=[]
 
-		for i in xrange(int(math.pow(2,n))):
-			bini=bin(i)[2:]
-			bini=bini.zfill(n)
-			allstrings.append(list(bini)) 
+		#for i in xrange(int(math.pow(2,n))):
+		#	bini=bin(i)[2:]
+		#	bini=bini.zfill(n)
+		#	allstrings.append(list(bini)) 
 
 		#print "cnfclauses:",cnfclauses
 		for c in cnfclauses:
@@ -131,12 +132,12 @@ class SATSolver(object):
 		#print "DNF clauses 1:",dnfclauses1
 		#print "DNF clauses 2:",dnfclauses2
 		#print "All strings:",allstrings
-		satassignments1=self.difference(allstrings, dnfclauses1)
-		satassignments2=self.difference(allstrings, dnfclauses2)
+		#satassignments1=self.difference(allstrings, dnfclauses1)
+		#satassignments2=self.difference(allstrings, dnfclauses2)
 		#print "CNF SAT:",cnf
 		#print "SAT assignments 1:",satassignments1
 		#print "SAT assignments 2:",satassignments2
-		return (satassignments1,satassignments2)
+		#return (satassignments1,satassignments2)
 
 	def solve_SAT2(self,cnf,number_of_variables,number_of_clauses):
 		satass=[]
@@ -168,7 +169,8 @@ class SATSolver(object):
                 #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
                 #x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
 		#x = dsolve.spsolve(csc_matrix(a),b)
-		pseudoinverse_a=pinv(a)
+		#pseudoinverse_a=pinv(a)
+		pseudoinverse_a=pinv2(a,check_finite=False)
 		x.append(matmul(pseudoinverse_a,b))
 
 		print "solve_SAT2(): lstsq(): x:",x
@@ -246,8 +248,8 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=21
-	number_of_clauses=21
+	number_of_variables=1000
+	number_of_clauses=1000
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
