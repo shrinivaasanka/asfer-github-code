@@ -22,9 +22,9 @@ import math
 from collections import defaultdict
 #from scipy.linalg import solve
 from scipy.linalg import lstsq
-#from numpy.linalg import solve
+from numpy.linalg import solve
 #from numpy.linalg import lstsq
-#from scipy.sparse.linalg import lsqr
+from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
 from scipy.sparse import csc_matrix
@@ -37,10 +37,11 @@ variables=defaultdict(int)
 negations=defaultdict(int)
 
 class SATSolver(object):
-	def __init__(self):
+	def __init__(self,algorithm):
 		self.equationsA=[]
 		self.equationsB=[]
 		self.cnfparsed=[]
+		self.Algorithm=algorithm
 
 	def difference(self, list1, list2):
 		diff=[]
@@ -164,16 +165,24 @@ class SATSolver(object):
                 #print "a.shape:",a.shape
                 #print "b.shape:",b.shape
 
-                #x = solve(a,b)
-                #x = lstsq(a,b,lapack_driver='gelsy')
-                #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                #x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
-		#x = dsolve.spsolve(csc_matrix(a),b)
-		#pseudoinverse_a=pinv(a)
-		pseudoinverse_a=pinv2(a,check_finite=False)
-		x.append(matmul(pseudoinverse_a,b))
+		x=None
+		if self.Algorithm=="solve()":
+                	x = solve(a,b)
+		if self.Algorithm=="lstsq()":
+                	x = lstsq(a,b,lapack_driver='gelsy')
+		if self.Algorithm=="lsqr()":
+                	x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+		if self.Algorithm=="lsmr()":
+                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
+		if self.Algorithm=="spsolve()":
+			x = dsolve.spsolve(csc_matrix(a),b)
+		if self.Algorithm=="pinv2()":
+			x=[]
+			#pseudoinverse_a=pinv(a)
+			pseudoinverse_a=pinv2(a,check_finite=False)
+			x.append(matmul(pseudoinverse_a,b))
 
-		print "solve_SAT2(): lstsq(): x:",x
+		print "solve_SAT2(): ",self.Algorithm,": x:",x
 		cnt=0
 		for e in x[0]:
 			if e >= 0.5:
@@ -248,15 +257,17 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=1000
-	number_of_clauses=1000
+	number_of_variables=2500
+	number_of_clauses=2500
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
-		print "solve_SAT2(): Verifying satisfying assignment computed ....."
+		print "Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
-		satsolver=SATSolver()
+		#satsolver=SATSolver("lsmr()")
+		satsolver=SATSolver("pinv2()")
+		#satsolver=SATSolver("lstsq()")
 		cnf=satsolver.createRandom3CNF(number_of_clauses,number_of_variables)
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
