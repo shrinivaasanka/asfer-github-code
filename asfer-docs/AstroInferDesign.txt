@@ -11011,3 +11011,21 @@ Approximate CNF SAT Solver has been updated to invoke Moore-Penrose Pseudoinvers
 ----------------------------------------------------------------------------------------------------------------------------------------------
 SAT Solver has been updated to use pinv2() pseudoinverse function which has been documented to be faster. After removing some code causing
 redundant bottleneck, 1000 variables-1000 clauses random SATs have been solved by pinv2() and matrix multiplication to find real assignments which have been rounded. This means solving a million entry matrix (1000*1000). MAXSAT approximation ratio is 97%-98% again. Probability per literal average observed coincides with theoretical value of 1/sqrt(m*n). It has to be noted that Random matrix expectation for solving SAT translated to linear system of equations is an average case solution and is not worst case. This >7/8 approximation could imply AverageP=AverageNP or PromiseP=PromiseNP (for equal number of variables-clauses) if not P=NP. This is the likely reason for observed per literal probability being 97% asymptotically less than theoretical per literal probability 100%.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+520. (THEORY and FEATURE-DONE) SAT Solver Update - 2500 clauses and 2500 variables - LSMR,LSQR and PseudoInverse Benchmarks - related to 518
+- 9 March 2018
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. SAT Solver class has been changed to accept the algorithm as parameter which can be function names for LSMR,LSQR,PseudoInverse,SPSOLVE,
+SOLVE etc.,
+2. 2500 variables and 2500 clauses combination of SAT instances have been benchmarked by invoking LSMR, LSQR and PseudOInverse(pinv2) separately.
+3. LSMR benchmark has 405 random 3SAT instances and is the fastest, LSQR and PseudoInverse(pinv2) benchmarks have only few random 3SAT instances.
+4. LSQR and PseudoInverse(pinv2) are equally slower compared to LSMR by many orders of magnitude.
+5. But approximation ratio for LSMR is 91-92% while LSQR and PseudoInverse trend at 96-97% though for small number of iterations. This probably
+implies an accuracy versus speed tradeoff: LSMR is less accurate but fast while LSQR and PseudoInverse(pinv2) are more accurate but less fast.
+6. Observed probability per literal for all three coincide with random matrix 1/sqrt(m*n) uniform distribution probability per literal
+7. These numbers are only representative figures and number of iterations for LSQR and PseudoInverse(pinv2) are too meagre.
+8. Logs have been committed to:
+  python-src/testlogs/CNFSATSolver.2500clauses2500variables.LSMR.log.9March2018
+  python-src/testlogs/CNFSATSolver.2500clauses2500variables.LSQR.log.9March2018
+  python-src/testlogs/CNFSATSolver.2500clauses2500variables.PseudoInverse.log.9March2018
