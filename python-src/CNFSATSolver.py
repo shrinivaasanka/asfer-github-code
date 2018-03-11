@@ -85,7 +85,7 @@ class SATSolver(object):
 		return (cnfval,percentage_clauses_satisfied)
 		
 
-	def solve_SAT(self,cnf,number_of_variables):
+	def solve_SAT(self,cnf,number_of_variables,number_of_clauses):
 		cnfclauses=cnf.split("*")
 		n=number_of_variables
 
@@ -104,11 +104,11 @@ class SATSolver(object):
 			cnfclause=[]
 			clauseliterals=c.strip().split("+")
 			#print "clauseliterals:",clauseliterals
-			dnfclause1=[]
-			dnfclause2=[]
-			for i in xrange(n):
-				dnfclause1.append("1")
-				dnfclause2.append("0")
+			#dnfclause1=[]
+			#dnfclause2=[]
+			#for i in xrange(n):
+			#	dnfclause1.append("1")
+			#	dnfclause2.append("0")
 			for l in clauseliterals:
 				lstrip=l.strip()
 				if lstrip[0]=="(":
@@ -117,17 +117,17 @@ class SATSolver(object):
 					lstrip=lstrip[:len(lstrip)-1]
 				cnfclause.append(lstrip)
 
-				#print "lstrip:",lstrip
-				if lstrip[0] != "!":
-					#print "lstrip[1:]:",int(lstrip[1:])
-					dnfclause1[int(lstrip[1:])-1] = "0"
-					dnfclause2[int(lstrip[1:])-1] = "0"
-				else:
-					#print "lstrip[2:]:",lstrip[2:]
-					dnfclause1[int(lstrip[2:])-1] = "1"
-					dnfclause2[int(lstrip[2:])-1] = "1"
-			dnfclauses1.append(dnfclause1)
-			dnfclauses2.append(dnfclause2)
+			#	print "lstrip:",lstrip
+			#	if lstrip[0] != "!":
+			#		print "lstrip[1:]:",int(lstrip[1:])
+			#		dnfclause1[int(lstrip[1:])-1] = "0"
+			#		dnfclause2[int(lstrip[1:])-1] = "0"
+			#	else:
+			#		#print "lstrip[2:]:",lstrip[2:]
+			#		dnfclause1[int(lstrip[2:])-1] = "1"
+			#		dnfclause2[int(lstrip[2:])-1] = "1"
+			#dnfclauses1.append(dnfclause1)
+			#dnfclauses2.append(dnfclause2)
 			self.cnfparsed.append(cnfclause)
 		#print "Parsed CNF clauses:", self.cnfparsed
 		#print "DNF clauses 1:",dnfclauses1
@@ -143,7 +143,7 @@ class SATSolver(object):
 	def solve_SAT2(self,cnf,number_of_variables,number_of_clauses):
 		satass=[]
 		x=[]
-		self.solve_SAT(cnf,number_of_variables)
+		self.solve_SAT(cnf,number_of_variables,number_of_clauses)
 		for clause in self.cnfparsed:
 			equation=[]
 			for n in xrange(number_of_variables):
@@ -192,13 +192,30 @@ class SATSolver(object):
 			cnt+=1
 		#print "solve_SAT2():",a
 		return satass
+	
+	def nonuniform_choice(self, numvars, numclauses):
+		randarrayclauses=np.random.choice(numclauses, int(math.sqrt(numclauses)), replace=True)
+		randarrayvars=np.random.choice(numvars, int(math.sqrt(numvars)), replace=True)
+		randclausevarpairs=[]
+		for rc in randarrayclauses:
+			for rv in randarrayvars:
+				randclausevarpairs.append((rc,rv))
+		randclausevarpair1=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+		randclausevarpair2=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+		randclausevarpair3=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+		#print "nonuniform_choice(): random clause = [",randclausevarpair1,",",randclausevarpair2,",",randclausevarpair3,"]"
+		return [randclausevarpair1[1],randclausevarpair2[1],randclausevarpair3[1]]
 
-	def createRandom3CNF(self,numclauses,numvars):
+	def createRandom3CNF(self,distribution,numclauses,numvars):
 		cnf=""
 		clauses=[]
 		for i in xrange(numclauses):
-			#randarray=np.random.permutation(numvars)
-			randarray=np.random.choice(numvars,3,replace=False)
+			randarray=np.random.permutation(numvars)
+			if distribution=="Uniform":
+				randarray=np.random.choice(numvars,3,replace=False)
+			else:
+				if distribution=="Non-Uniform":
+					randarray=self.nonuniform_choice(numvars,numclauses)
 			clause= "("
 			negation=random.randint(1,2)
 			if negation==1:
@@ -257,18 +274,19 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=2500
-	number_of_clauses=2500
+	number_of_variables=1200
+	number_of_clauses=1100
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
 		print "Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
-		#satsolver=SATSolver("lsmr()")
-		satsolver=SATSolver("pinv2()")
+		satsolver=SATSolver("lsmr()")
+		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
-		cnf=satsolver.createRandom3CNF(number_of_clauses,number_of_variables)
+		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
+		cnf=satsolver.createRandom3CNF("Non-Uniform",number_of_clauses,number_of_variables)
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
