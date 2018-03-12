@@ -11040,3 +11040,17 @@ probability = 1/sqrt(m*n) which works for both equal and unequal number of claus
 	1100 variables, 1200 clauses - CNFSATSolver.1100variables1200clauses.NonUniformChoice.log.11March2018
 	1200 variables, 1100 clauses - CNFSATSolver.1200variables1100clauses.NonUniformChoice.log.11March2018
 From logs it is evident non-uniform choice function defined as previously approximately simulates the bias and almost matches theoretical 1/sqrt(m*n) random matrix expected per literal probability. LSMR algorithm has been chosen and MAXSAT approximation ratio is 91-93% for 100 iterations for each of the 3 variable-clause combinations. For equal variable-clause combinations, non-uniform choice function is equivalent to choice() and expected and observed probabilities per literal agree fully. Previous benchmarks have been done to verify the random matrix theory for Satisfiability problem which is a probabilistic average case P?=NP problem mentioned in hardness amplification conflicts previously. There is also a special case conflict with PARITYSAT Hastad-Linial-Mansour-Nisan Theorem circuit size counterexample mentioned in 53.15. Also unequal variable-clause SATs can be simulated by equal variable-clause SATs by setting redundant variables to 0 in disjunction of the literals in clauses or redundant clauses in conjunction to 1. Thus non-uniform choice may not be necessary.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+522. (THEORY and FEATURE-DONE) SAT Solver Update - Non-Uniform Choice - 3200 variables and 3100 clauses and Alpha=4.26 - related to 521 
+- 12 March 2018
+-----------------------------------------------------------------------------------------------------------------------------------------
+SAT Solver has been updated for some aesthetics - literal selection in non-uniform choice has been parametrized: sequential or simultaneous
+ based on how three random literals are chosen per random 3SAT clause - sequentially as 3*nP1 or simultaneously as nP3. But no difference was
+observed between these two choices. Number of variables is set to 3200 and clauses to 3100. LSMR iteration has been increased to 5 and conlim
+reduced to 10. For few random 3SATs, observed MAXSAT approximation ratio average stands at ~95%. This accuracy has been observed to increase proportional to number of LSMR iterations. Commercial SAT solvers solve million variable-clause combinations in few seconds but in exponential time. Two other logs have been committed which solve the notorious Alpha=4.26 Clause/Variable ratio, which is known to be hardest subset of SAT and
+where a phase transition occurs from easy-to-hard. Number of unsatisfiable formulae increase for alpha > 4.26. MAXSAT approximation ratio observed for few random 3SAT instances is ~91% for number of variables 300 and 1000 and alpha=4.26. Observed per literal probability is skewed and substituting it in random matrix MAXSAT approximation ratio m^2*n^2*p^4 shows an anomaly. Another fact is observed per literal probability does not change at all for any number of iterations and stays put and because of this observed MAXSAT ratio converges within few iterations itself.
+
+References:
+-----------
+522.1 SAT Solvers and Phase Transition at Alpha=4.26 [Clause/Variable Ratio] - [Carla P. Gomes, Henry Kautz, Ashish Sabharwal, and Bart Selman] - https://www.cs.cornell.edu/gomes/pdf/2008_gomes_knowledge_satisfiability.pdf

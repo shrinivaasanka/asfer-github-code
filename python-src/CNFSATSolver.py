@@ -141,6 +141,12 @@ class SATSolver(object):
 		#return (satassignments1,satassignments2)
 
 	def solve_SAT2(self,cnf,number_of_variables,number_of_clauses):
+		#Solves CNFSAT by a Polynomial Time Approximation scheme:
+		#	- Encode each clause as a linear equation in n variables: missing variables and negated variables are 0, others are 1
+		#	- Solve previous system of equations by least squares algorithm to fit a line
+		#	- Variable value above 0.5 is set to 1 and less than 0.5 is set to 0
+		#	- Rounded of assignment array satisfies the CNFSAT with high probability
+		#Returns: a tuple with set of satisfying assignments
 		satass=[]
 		x=[]
 		self.solve_SAT(cnf,number_of_variables,number_of_clauses)
@@ -173,7 +179,7 @@ class SATSolver(object):
 		if self.Algorithm=="lsqr()":
                 	x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
 		if self.Algorithm=="lsmr()":
-                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=1,conlim=100,show=True)
+                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
 		if self.Algorithm=="spsolve()":
 			x = dsolve.spsolve(csc_matrix(a),b)
 		if self.Algorithm=="pinv2()":
@@ -193,20 +199,26 @@ class SATSolver(object):
 		#print "solve_SAT2():",a
 		return satass
 	
-	def nonuniform_choice(self, numvars, numclauses):
+	def nonuniform_choice(self, literal_selection, numvars, numclauses):
 		randarrayclauses=np.random.choice(numclauses, int(math.sqrt(numclauses)), replace=True)
 		randarrayvars=np.random.choice(numvars, int(math.sqrt(numvars)), replace=True)
 		randclausevarpairs=[]
 		for rc in randarrayclauses:
 			for rv in randarrayvars:
 				randclausevarpairs.append((rc,rv))
-		randclausevarpair1=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
-		randclausevarpair2=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
-		randclausevarpair3=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
-		#print "nonuniform_choice(): random clause = [",randclausevarpair1,",",randclausevarpair2,",",randclausevarpair3,"]"
-		return [randclausevarpair1[1],randclausevarpair2[1],randclausevarpair3[1]]
+		if literal_selection=="sequential":
+			randclausevarpair1=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+			randclausevarpair2=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+			randclausevarpair3=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+			#print "nonuniform_choice(): random clause = [",randclausevarpair1,",",randclausevarpair2,",",randclausevarpair3,"]"
+			return [randclausevarpair1[1],randclausevarpair2[1],randclausevarpair3[1]]
+		else:
+			if literal_selection=="simultaneous":
+				literals=np.random.choice(len(randarrayclauses)*len(randarrayvars),3,replace=True)
+				#print "nonuniform_choice(): random clause = [",randclausevarpairs[literals[0]][1],",",randclausevarpairs[literals[1]][1],",",randclausevarpairs[literals[2]][1],"]"
+				return [randclausevarpairs[literals[0]][1],randclausevarpairs[literals[1]][1],randclausevarpairs[literals[2]][1]]
 
-	def createRandom3CNF(self,distribution,numclauses,numvars):
+	def createRandom3CNF(self,distribution,literal_selection,numclauses,numvars):
 		cnf=""
 		clauses=[]
 		for i in xrange(numclauses):
@@ -215,7 +227,10 @@ class SATSolver(object):
 				randarray=np.random.choice(numvars,3,replace=False)
 			else:
 				if distribution=="Non-Uniform":
-					randarray=self.nonuniform_choice(numvars,numclauses)
+					if literal_selection=="sequential":
+						randarray=self.nonuniform_choice("sequential",numvars,numclauses)
+					if literal_selection=="simultaneous":
+						randarray=self.nonuniform_choice("simultaneous",numvars,numclauses)
 			clause= "("
 			negation=random.randint(1,2)
 			if negation==1:
@@ -261,38 +276,29 @@ if __name__=="__main__":
 	#cnf="(!x1 + !x2 + !x3 + x4) * (x1 + x2 + !x3 + !x4) * (!x1 + x2 + !x3 + x4) * (x1 + !x2 + x3 + !x4) * (x1 + !x2 + x3 + x4)"
 	#cnf="(x1 + !x4 + !x5) * (!x1 + x3 + x4) * (x2 + !x3 +  !x4) * (x3 + !x4 + !x5) * (!x1 + x4 + !x5)"
 
-
-	#Parameter1: any k-CNF with all literals in each clause, negations prefixed with !
-	#Parameter2: Number of variables
-	#Solves CNFSAT by a Polynomial Time Approximation scheme:
-	#	- Encode each clause as a linear equation in n variables: missing variables and negated variables are 0, others are 1
-	#	- Solve previous system of equations by least squares algorithm to fit a line
-	#	- Variable value above 0.5 is set to 1 and less than 0.5 is set to 0
-	#	- Rounded of assignment array satisfies the CNFSAT with high probability
-	#Returns: a tuple with set of satisfying assignments
-	#ass=satsolver.solve_SAT(cnf,5)
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	number_of_variables=1200
-	number_of_clauses=1100
+	alpha=4.26
+	number_of_variables=1000
+	number_of_clauses=int(number_of_variables*alpha)
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
-		print "Verifying satisfying assignment computed ....."
+		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver("lsmr()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
 		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
-		cnf=satsolver.createRandom3CNF("Non-Uniform",number_of_clauses,number_of_variables)
+		#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
+		cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
 		satis=satsolver.satisfy(ass2)
 		print "Assignment satisfied:",satis[0]
-		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
 		average_percentage_of_clauses_satisfied += satis[1]
 		cnt += 1
 		satiscnt += satis[0]
@@ -308,10 +314,11 @@ if __name__=="__main__":
 		#print "Frequencies of Negations chosen in CNFs so far:",negations
 		print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
 		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
+		print "========================================================================================="
+		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
 		print "Observed - Average probability of a variable or negation:", observed_avg_prob 
 		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
-		print "Observed - Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
-		print "========================================================================================="
-		print "Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
-		print "*****MAXSAT-APPROXIMATION*****Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+		print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+		print "Observed - Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
+		print "Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
 		print "========================================================================================="
