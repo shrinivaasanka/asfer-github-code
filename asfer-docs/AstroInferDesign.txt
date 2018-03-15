@@ -11054,3 +11054,19 @@ where a phase transition occurs from easy-to-hard. Number of unsatisfiable formu
 References:
 -----------
 522.1 SAT Solvers and Phase Transition at Alpha=4.26 [Clause/Variable Ratio] - [Carla P. Gomes, Henry Kautz, Ashish Sabharwal, and Bart Selman] - https://www.cs.cornell.edu/gomes/pdf/2008_gomes_knowledge_satisfiability.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+523. (THEORY and FEATURE-DONE) SAT Solver Update - Non-uniform Choice 2 - 5000 variables and Alpha=4.267 and some intuition - related to 522 
+- 15 March 2018
+-------------------------------------------------------------------------------------------------------------------------------------------
+SAT Solver has been updated for a new nonuniform choice function nonuniform_choice2() which has following algorithm:
+	- Each permutation nPn of length n is elongated to n*n*alpha length array by replicating one of the variables (of largest index)
+	- Literals are chosen from this new array as (n*n*alpha)P1 or (n*n*alpha)P3
+	- This creates a probability of fraction n/(n*n*alpha)=1/(n*alpha) for per literal choice.
+But this implementation was found to be no different from nonuniform_choice() which chooses a submatrix in per literal probability and therefore has been commented at present. MAXSAT approximation ratio observed was 88% for nonuniform_choice2() versus 90% for nonuniform_choice(). 5000 variables and Alpha=4.267 have been solved for few iterations and MAXSAT approximation ration is 90-91%. In all the benchmarks done so far, it has been observed that equal variables-clause combinations almost always converge to ~95% MAXSAT approximation ratio and  Alpha=4.267 almost always converge to ~90-91%. Though these numbers are not conclusive and comprehensive, previous emerging pattern is too striking. 
+
+Here the intuition on how LSMR/LSQR works has to be mooted - Each binary assignment string can be thought of as a step function plotted as binary value versus variables. For example, assignment 001101 is plotted as:
+			----
+			|  | |
+		      ---  ---
+where troughs represent 0s and peaks 1s. LSMR/LSQR finds a set of real valued points on a sinusoidal polynomial which approximates this step function by minimizing sum of distances/errors between troughs-peaks of polynomial and those of step function. By rounding the peaks and troughs of this LSMR polynomial to 1s and 0s thus converts the sinusoid to a step function. Minimizing the sum of squares distance error implies, this polynomial is almost unique(though there can be multiple satisfying assignments) and is able to extract atleast one satisfying assignment.
