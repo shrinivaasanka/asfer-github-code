@@ -11060,13 +11060,48 @@ References:
 - 15 March 2018
 -------------------------------------------------------------------------------------------------------------------------------------------
 SAT Solver has been updated for a new nonuniform choice function nonuniform_choice2() which has following algorithm:
-	- Each permutation nPn of length n is elongated to n*n*alpha length array by replicating one of the variables (of largest index)
-	- Literals are chosen from this new array as (n*n*alpha)P1 or (n*n*alpha)P3
+	- Each permutation nPn of length n is elongated to n*n*alpha length array by replicating a non-variable X of large index (n*n)
+	- Literals are chosen from this new array as (n*n*alpha)P1 or (n*n*alpha)P3 in a while loop till a valid literal which is not equal to n*n is found 
 	- This creates a probability of fraction n/(n*n*alpha)=1/(n*alpha) for per literal choice.
 But this implementation was found to be no different from nonuniform_choice() which chooses a submatrix in per literal probability and therefore has been commented at present. MAXSAT approximation ratio observed was 88% for nonuniform_choice2() versus 90% for nonuniform_choice(). 5000 variables and Alpha=4.267 have been solved for few iterations and MAXSAT approximation ration is 90-91%. In all the benchmarks done so far, it has been observed that equal variables-clause combinations almost always converge to ~95% MAXSAT approximation ratio and  Alpha=4.267 almost always converge to ~90-91%. Though these numbers are not conclusive and comprehensive, previous emerging pattern is too striking. 
 
 Here the intuition on how LSMR/LSQR works has to be mooted - Each binary assignment string can be thought of as a step function plotted as binary value versus variables. For example, assignment 001101 is plotted as:
-			----
+			----  -
 			|  | |
 		      ---  ---
 where troughs represent 0s and peaks 1s. LSMR/LSQR finds a set of real valued points on a sinusoidal polynomial which approximates this step function by minimizing sum of distances/errors between troughs-peaks of polynomial and those of step function. By rounding the peaks and troughs of this LSMR polynomial to 1s and 0s thus converts the sinusoid to a step function. Minimizing the sum of squares distance error implies, this polynomial is almost unique(though there can be multiple satisfying assignments) and is able to extract atleast one satisfying assignment.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+524. (THEORY and FEATURE-DONE) SAT Solver Update - Variables and Alpha as parameters and two Alpha Versus MAXSAT ratio graph plots -
+related to 523 - 16 March 2018
+--------------------------------------------------------------------------------------------------------------------------------------------
+SAT Solver has been updated to accept commandline parameters of number of variables and Alpha (Clause/Variable ratio) as:
+		$python CNFSATSolver.py <number_of_variables> <alpha>
+Some debug prints have been changed. Following sets of SATs were solved and variation of MAXSAT approximation ratio versus Alpha has been
+captured as graph (for nonuniform_choice()):
+-----------------------------------------------------------
+Number of Variables - 600 (after atleast 15 random 3SAT iterations)
+-----------------------------------------------------------
+Alpha 				Observed MAXSAT Approximation Ratio
+-------				-----------------------------------
+1				94.5%
+2				92.7%
+3				91.5%
+4				90.74%
+4.267				90.45%
+5				90.28%
+6				90.25%
+-----------------------------------------------------------
+Number of Variables - 300 (after atleast 15 random 3SAT iterations)
+-----------------------------------------------------------
+Alpha				Observed MAXSAT Approximation Ratio
+------				-----------------------------------
+1				95%
+2				93%
+3				92%
+4				90.6%
+4.267				90.6%
+5				90.49%
+6				90.73%
+
+Logs for an iteration of 5000 variables and Alpha=4.267 has been committed to python-src/testlogs/CNFSATSolver.5000variablesAlpha4.267.log.16March2017 which also has MAXSAT approximation ratio of 90-91%. Gradual nosedive of MAXSAT approximation ratio as Alpha increases is notable and it stabilizes to 90-91% after Alpha >= 4 for both 300 and 600 variables implying phase transition.
