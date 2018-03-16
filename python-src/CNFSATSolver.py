@@ -266,6 +266,43 @@ class SATSolver(object):
 					nuvariables[randarrayvars[literals[2]]] = nuvariables[randarrayvars[literals[2]]] + 1
 					return [randarrayvars[literals[0]],randarrayvars[literals[1]],randarrayvars[literals[2]]]
 
+	def nonuniform_choice3(self,literal_selection,numvars,numclauses):
+		variables=np.random.choice(numvars, numvars, replace=True)
+		constant=float(numclauses)/float(numvars)
+		skewvariable=int(constant*len(variables))
+		extendedvariables=[]
+	        for x in variables:
+                	extendedvariables.append(x)
+        	for x in xrange(int(constant*len(variables))):
+               		extendedvariables.append(skewvariable)
+		#print "variables=",variables
+		#print "extendedvariables =",extendedvariables
+
+        	literal1=np.random.choice(len(extendedvariables),1,replace=True)
+        	#print "variable1=",extendedvariables[literal1[0]]
+        	while extendedvariables[literal1[0]] == skewvariable:
+               		 literal1=np.random.choice(len(extendedvariables),1,replace=True)
+               		 #print "variable1=",extendedvariables[literal1[0]]
+               		 nuvariables[extendedvariables[literal1[0]]] = nuvariables[extendedvariables[literal1[0]]] + 1
+        	nuvariables[extendedvariables[literal1[0]]] = nuvariables[extendedvariables[literal1[0]]] + 1
+
+        	literal2=np.random.choice(len(extendedvariables),1,replace=True)
+        	#print "variable2=",extendedvariables[literal2[0]]
+        	while extendedvariables[literal2[0]] == skewvariable:
+               		 literal2=np.random.choice(len(extendedvariables),1,replace=True)
+               		 #print "variable2=",extendedvariables[literal2[0]]
+               		 nuvariables[extendedvariables[literal2[0]]] = nuvariables[extendedvariables[literal2[0]]] + 1
+        	nuvariables[extendedvariables[literal2[0]]] = nuvariables[extendedvariables[literal2[0]]] + 1
+
+        	literal3=np.random.choice(len(extendedvariables),1,replace=True)
+        	#print "variable3=",extendedvariables[literal3[0]]
+        	while extendedvariables[literal3[0]] == skewvariable:
+               		 literal3=np.random.choice(len(extendedvariables),1,replace=True)
+               		 #print "variable3=",extendedvariables[literal3[0]]
+               		 nuvariables[extendedvariables[literal3[0]]] = nuvariables[extendedvariables[literal3[0]]] + 1
+        	nuvariables[extendedvariables[literal3[0]]] = nuvariables[extendedvariables[literal3[0]]] + 1
+		return [extendedvariables[literal1[0]],extendedvariables[literal2[0]],extendedvariables[literal3[0]]]
+
 	def createRandom3CNF(self,distribution,literal_selection,numclauses,numvars):
 		cnf=""
 		clauses=[]
@@ -276,11 +313,13 @@ class SATSolver(object):
 			else:
 				if distribution=="Non-Uniform":
 					if literal_selection=="sequential":
-						randarray=self.nonuniform_choice("sequential",numvars,numclauses)
+						#randarray=self.nonuniform_choice("sequential",numvars,numclauses)
 						#randarray=self.nonuniform_choice2("sequential",numvars,numclauses)
+						randarray=self.nonuniform_choice3("sequential",numvars,numclauses)
 					if literal_selection=="simultaneous":
-						randarray=self.nonuniform_choice("simultaneous",numvars,numclauses)
+						#randarray=self.nonuniform_choice("simultaneous",numvars,numclauses)
 						#randarray=self.nonuniform_choice2("simultaneous",numvars,numclauses)
+						randarray=self.nonuniform_choice3("simultaneous",numvars,numclauses)
 			clause= "("
 			negation=random.randint(1,2)
 			if negation==1:
@@ -363,7 +402,7 @@ if __name__=="__main__":
 			avg_prob += x
 		for x in prob_dist_negations:
 			avg_prob += x
-		for x in prob_dist_nuvariables:
+		for x in prob_dist_nuvariables[:-1]:
 			avg_nu_prob += x
 		#print "Frequencies of Variables chosen in CNFs so far:",variables
 		#print "Moving Average - Probability of Variables chosen in CNFs so far:",prob_dist_variables
@@ -371,12 +410,19 @@ if __name__=="__main__":
 		#print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
 		#print "Moving Average - Probability of Non-Uniform Choice Variables:",prob_dist_nuvariables
 		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
+		observed_avg_nu_prob = avg_nu_prob/float(2*number_of_variables)
 		print "========================================================================================="
-		print "Observed - Average Probability of a Non-Uniformly chosen literal :",avg_nu_prob/float(number_of_variables)
+		#print "Observed - Unaveraged Probabilities of Non-Uniformly chosen literal (has one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n)  :",prob_dist_nuvariables
+		if number_of_clauses != number_of_variables:
+			print "Observed - Average Probability of Non-Uniformly chosen literal (minus one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n) if m != n)  :",observed_avg_nu_prob
 		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
-		print "Observed - Average probability of a variable or negation:", observed_avg_prob 
+		if number_of_clauses == number_of_variables:
+			print "Observed - Average probability of a variable or negation :", observed_avg_prob 
 		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
-		print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+		if number_of_clauses == number_of_variables:
+			print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+		else:
+			print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob)*100.0
 		print "Observed - Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
 		print "Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
 		print "========================================================================================="
