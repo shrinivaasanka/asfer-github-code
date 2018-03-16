@@ -19,6 +19,7 @@
 import numpy as np
 import random
 import math
+import sys
 from collections import defaultdict
 #from scipy.linalg import solve
 from scipy.linalg import lstsq
@@ -210,9 +211,9 @@ class SATSolver(object):
 			for rv in randarrayvars:
 				randclausevarpairs.append((rc,rv))
 		if literal_selection=="sequential":
-			randclausevarpair1=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
-			randclausevarpair2=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
-			randclausevarpair3=randclausevarpairs[np.random.choice(len(randarrayclauses)*len(randarrayvars),1,replace=True)]
+			randclausevarpair1=randclausevarpairs[np.random.choice(len(randclausevarpairs),1,replace=True)]
+			randclausevarpair2=randclausevarpairs[np.random.choice(len(randclausevarpairs),1,replace=True)]
+			randclausevarpair3=randclausevarpairs[np.random.choice(len(randclausevarpairs),1,replace=True)]
 			#print "sequential: nonuniform_choice(): random clause = [",randclausevarpair1,",",randclausevarpair2,",",randclausevarpair3,"]"
 			nuvariables[randarrayvarpair1[1]] = nuvariables[randarrayvarpair1[1]] + 1
 			nuvariables[randarrayvarpair2[1]] = nuvariables[randarrayvarpair2[1]] + 1
@@ -220,7 +221,7 @@ class SATSolver(object):
 			return [randclausevarpair1[1],randclausevarpair2[1],randclausevarpair3[1]]
 		else:
 			if literal_selection=="simultaneous":
-				literals=np.random.choice(len(randarrayclauses)*len(randarrayvars),3,replace=True)
+				literals=np.random.choice(len(randclausevarpairs),3,replace=True)
 				#print "simultaneous: nonuniform_choice(): random clause = [",randclausevarpairs[literals[0]][1],",",randclausevarpairs[literals[1]][1],",",randclausevarpairs[literals[2]][1],"]"
 				nuvariables[randclausevarpairs[literals[0]][1]] = nuvariables[randclausevarpairs[literals[0]][1]] + 1
 				nuvariables[randclausevarpairs[literals[1]][1]] = nuvariables[randclausevarpairs[literals[1]][1]] + 1
@@ -236,7 +237,7 @@ class SATSolver(object):
 		for v in randarrayvars1:
 			randarrayvars.append(v)
 		for v in xrange(int(alpha*numvars*numvars)):
-			randarrayvars.append(numvars)
+			randarrayvars.append(numvars*2)
 		#print "nonuniform_choice2(): randarrayvars = ",randarrayvars
 		while not valid:
 			if literal_selection=="sequential":
@@ -244,7 +245,7 @@ class SATSolver(object):
 				literal2=np.random.choice(len(randarrayvars),1,replace=True)	
 				literal3=np.random.choice(len(randarrayvars),1,replace=True)	
 				#print "sequential: nonuniform_choice2(): random clause =[",randarrayvars[literal1[0]],",",randarrayvars[literal2[0]],",",randarrayvars[literal3[0]],"]"
-				if randarrayvars[literal1[0]] != numvars and randarrayvars[literal2[0]] != numvars and randarrayvars[literal3[0]] != numvars:
+				if randarrayvars[literal1[0]] != numvars*2 and randarrayvars[literal2[0]] != numvars*2 and randarrayvars[literal3[0]] != numvars*2:
 					#print "valid clause"
 					valid=True
 				if valid:
@@ -256,7 +257,7 @@ class SATSolver(object):
 				if literal_selection=="simultaneous":
 					literals=np.random.choice(len(randarrayvars),3,replace=True)	
 				#print "simultaneous: nonuniform_choice2(): random clause =[",randarrayvars[literals[0]],",",randarrayvars[literals[1]],",",randarrayvars[literals[2]],"]"
-				if randarrayvars[literals[0]] != numvars and randarrayvars[literals[1]] != numvars and randarrayvars[literals[2]] != numvars:
+				if randarrayvars[literals[0]] != numvars*2 and randarrayvars[literals[1]] != numvars*2 and randarrayvars[literals[2]] != numvars*2:
 					#print "valid clause"
 					valid=True
 				if valid:
@@ -328,17 +329,18 @@ if __name__=="__main__":
 	cnt=0
 	satiscnt=0
 	average_percentage_of_clauses_satisfied = 0.0
-	alpha=4.267
-	number_of_variables=5000
+	number_of_variables=int(sys.argv[1])
+	alpha=float(sys.argv[2])
 	number_of_clauses=int(number_of_variables*alpha)
-	#number_of_clauses=300
+	#number_of_clauses=1000
 	while(cnt < 1000000):
 		print "--------------------------------------------------------------"
 		print "Iteration :",cnt
 		print "--------------------------------------------------------------"
-		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Verifying satisfying assignment computed ....."
+		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Alpha = ",float(number_of_clauses)/float(number_of_variables),"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
 		satsolver=SATSolver("lsmr()")
+		#satsolver=SATSolver("solve()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
 		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
@@ -356,17 +358,21 @@ if __name__=="__main__":
 		prob_dist_negations=prob_dist(negations)
 		prob_dist_nuvariables=prob_dist(nuvariables)
 		avg_prob=0.0
+		avg_nu_prob=0.0
 		for x in prob_dist_variables:
 			avg_prob += x
 		for x in prob_dist_negations:
 			avg_prob += x
+		for x in prob_dist_nuvariables:
+			avg_nu_prob += x
 		#print "Frequencies of Variables chosen in CNFs so far:",variables
 		#print "Moving Average - Probability of Variables chosen in CNFs so far:",prob_dist_variables
 		#print "Frequencies of Negations chosen in CNFs so far:",negations
 		#print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
-		print "Moving Average - Probability of Non-Uniform Choice Variables:",prob_dist_nuvariables
+		#print "Moving Average - Probability of Non-Uniform Choice Variables:",prob_dist_nuvariables
 		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
 		print "========================================================================================="
+		print "Observed - Average Probability of a Non-Uniformly chosen literal :",avg_nu_prob/float(number_of_variables)
 		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
 		print "Observed - Average probability of a variable or negation:", observed_avg_prob 
 		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
