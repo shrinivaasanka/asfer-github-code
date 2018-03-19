@@ -11107,3 +11107,18 @@ Alpha				Observed MAXSAT Approximation Ratio
 Logs for an iteration of 5000 variables and Alpha=4.267 has been committed to python-src/testlogs/CNFSATSolver.5000variablesAlpha4.267.log.16March2017 which also has MAXSAT approximation ratio of 90-91%. Gradual nosedive of MAXSAT approximation ratio as Alpha increases is notable and it stabilizes to 90-91% after Alpha >= 4 for both 300 and 600 variables implying phase transition.
 ------------------------------------------------------------------------------------------------
 SAT Solver has been updated for a new nonuniform_choice3() function based on an Epsilon Bias Test Snippet EpsilonBiasNonUniformChoice.py which has been added to repository. This is similar to nonuniform_choice2() but Probabilities of nonuniformly chosen literals are computed separately and updated within the while loops also. Algorithm is similar to nonuniform_choice2() which elongates a permutation by replicating a skew variable. Average probabilities of all variables other than skew variable almost match the random matrix 1/sqrt(m*n) probability. Logs which print these probabilities for 1000 variables and Alpha=1/Alpha=4.267 have been committed to testlogs/CNFSATSolver.1000variablesAlpha1.log.16March2018 and testlogs/CNFSATSolver.1000variablesAlpha4.267.log.16March2018.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+525. (FEATURE-DONE) SAT Solver Update - nonuniform_choice3() updated for constant multiple in expansion of the variables array
+- 19 March 2018 - related to 524
+-----------------------------------------------------------------------------------------------------------------------------------------
+1. CNFSATSolver.py nonuniform_choice3() has been changed to expand the variables array by following relation:
+        n + x = n*sqrt(alpha)
+        x = n*(sqrt(alpha)-1)
+        => array of n variables is expanded to array of size n*(sqrt(alpha)-damp) for alpha = number_of_clauses/number_of_variables
+2. damp variable has been hardcoded to 2 than 1 which approximates theoretical 1/sqrt(m*n) probability well because of round-off.
+3. This expansion creates an approximate nonuniform probability 1/n*sqrt(alpha) per literal excluding replicated skew variable which is
+filtered in the while loops
+4. Example SAT Solver logs for 1000 variables and Alpha=4.267 has been committed to python-src/testlogs/CNFSATSolver.1000variablesAlpha4.267.log.19March2018
+5. MAXSAT Approximation ratio again is 90-91% for 20+ random 3SATs and nonuniform per literal probability almost matches 1/sqrt(m*n)
+(till penultimate decimal)
