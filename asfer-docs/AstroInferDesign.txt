@@ -11133,3 +11133,10 @@ filtered in the while loops
 4. Example SAT Solver logs for 1000 variables and Alpha=4.267 has been committed to python-src/testlogs/CNFSATSolver.1000variablesAlpha4.267.log.19March2018
 5. MAXSAT Approximation ratio again is 90-91% for 20+ random 3SATs and nonuniform per literal probability almost matches 1/sqrt(m*n)
 (till penultimate decimal)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+526. (THEORY) Counterexample in Majority Voting, Timeline Evolution of Belief Propagation, Intrinsic Merit - related to 507 - 20 March 2018
+-------------------------------------------------------------------------------------------------------------------------------------------
+Previous sections described a counterexample in Majority Voting for a question:
+	"Did an artefact exist millenia ago?"
+There are two possible answers: Yes and No which depend on intrinsically determining truth of answer to this question. Both possible answers are belief propagated as trees which evolve over time following a gossip protocol. Root of either of the trees propagates its belief to its children and so on recursively for all other internal nodes. Each edge in either of the trees has a belief potential for "Yes" and "No". Parent node propagates its belief to the children proportional to this potential. If potential is below a threshold, belief propagation stops and trees are pruned.  Thus there are two trees which correspond to two sets of people who believe "Yes" and "No" by potentials percolated from Roots. Only the root node has most authentic direct intrinsic evidence to either Yes or No truth value to the question. Question is: How can intrinsic absolute truth of answer be determined? Does size of the trees imply truth i.e Can Majority Voting determine intrinsic truth value at the root? This problem becomes all the more non-trivial when a chronologically ancient portion of tree (e.g Root is extinct) is not available and only nodes closer to leaves remain. Value of belief potential is a function of intrinsic truth viewed by the roots of either tree.
