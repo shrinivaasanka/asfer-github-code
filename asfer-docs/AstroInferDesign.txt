@@ -11071,6 +11071,17 @@ Here the intuition on how LSMR/LSQR works has to be mooted - Each binary assignm
 		      ---  ---
 where troughs represent 0s and peaks 1s. LSMR/LSQR finds a set of real valued points on a sinusoidal polynomial which approximates this step function by minimizing sum of distances/errors between troughs-peaks of polynomial and those of step function. By rounding the peaks and troughs of this LSMR polynomial to 1s and 0s thus converts the sinusoid to a step function. Minimizing the sum of squares distance error implies, this polynomial is almost unique(though there can be multiple satisfying assignments) and is able to extract atleast one satisfying assignment.
 
+Probability of an LSMR/LSQR real-to-binary round off assignment failing to satisfy a random 3SAT:
+-------------------------------------------------------------------------------------------------
+For each binary variable xi, LSMR/LSQR creates a real value which is rounded off as:
+	xi   -    0  if  xi < 0.5
+	xi   -    1  if  xi > 0.5
+This round off can fail if:
+	xi   -    1  if  xi < 0.5
+	xi   -    0  if  xi > 0.5
+
+Lovasz Local Lemma Analyses described earlier further explain the clause-variable dependency graph(Factor graph) scenarios but only lowerbound the MAXSAT approximation ratio for various values of dependency. But Random Matrix Least Squares Error Partial Derivative Analysis forbids values of assignments which cause such large deviations of real solutions from 0s and 1s to maximum possible extent,by providing a mechanism on how to choose a literal - 1/sqrt(m*n) probability - reverse-engineered a posteriori probability. In other words, real solutions are almost in proximity to 0 or 1 - sinusoid approximates step-function near-perfectly. Any other probability distribution of per literal choice is theoretically inferior.
+
 --------------------------------------------------------------------------------------------------------------------------------------------
 524. (THEORY and FEATURE-DONE) SAT Solver Update - Variables and Alpha as parameters and two Alpha Versus MAXSAT ratio graph plots -
 related to 523 - 16 March 2018
