@@ -10179,7 +10179,7 @@ Some more optimizations:
 Splitting each tile segment of length l into two subsegments of length delta and l-delta and binary searching two sets of concatenations of these split tile segments can find factors in O(logN) sequentially with no necessity for PRAMs if concatenation can be done in sequential in O(logN) time (tree of list concatenations can be done in parallel on PRAMs in O(logN) time, but doing sequential concatenation of lists in sublinear time is an open problem). In other words hyperbolic arc bow is broken into two concatenated tile segement sets and these two tile concatenations are searched.
 
 [#] If the quadrant containing hyperbolic arc is partitioned by parallel ray shooting queries from origin, separated by angles proportional to location of factor points, there is no necessity for sorting. Number of primes factors are O(loglogN). Thus kloglogN ray shooting queries from origin pierce the hyperbolic arc bow in parallel. If angular spacing between ray shooting queries are approximately equal, following trigonometric expression gives the approximate prime factor for each ray angle:
-	y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN)) - 1 , m=1,2,...,kloglogN
+        y(m) = SquareRoot(N/[tan(m*pi/(2*k*loglogN))]) - 1 for m=1,2,3,...,kloglogN
 These are only approximate angles. Factors should lie in close proximity of the intersection points of these rays with in hyperbolic bow.
 
 References:
