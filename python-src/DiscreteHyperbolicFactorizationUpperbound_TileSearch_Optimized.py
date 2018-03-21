@@ -35,6 +35,7 @@ import json
 import threading
 from complement import toint
 import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
+import math
 
 from pyspark.accumulators import AccumulatorParam
 class VectorAccumulatorParam(AccumulatorParam):
@@ -127,6 +128,24 @@ def binary_search_interval(xl,yl,xr,yr):
                		else:
                		        binary_search_interval(xl+int((xr-xl)/2)+1, yl, xr, yr)
 
+def hardy_ramanujan_ray_shooting_queries(n):
+	#Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of factors of N
+	#Approximate Factors are y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN)) - 1 , m=1,2,...,kloglogN
+	k=2.0
+	normal_order_n=int(k*math.log(math.log(n,2),2))
+	print "============================================================================================================="
+	print "Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of ",n," are:"
+	print "============================================================================================================="
+	print "normal_order_n(loglogN) = ",normal_order_n
+	for m in xrange(1,normal_order_n):
+		m_pi=float(m)*math.pi
+		tan_m_pi=math.tan(m_pi/(2.0*normal_order_n))
+		#print "tan_m_pi=",tan_m_pi
+		approximate_factor=float(n)/(tan_m_pi)
+		if approximate_factor > 2:
+			approximate_factor=math.sqrt(approximate_factor) - 1
+			print "approximate_factor(",m,") = ",approximate_factor
+	print "============================================================================================================="
 
 def SearchTiles_and_Factorize(n): 
 	global globalmergedtiles
@@ -144,6 +163,7 @@ def SearchTiles_and_Factorize(n):
 		paralleltileintervals=spcon.parallelize(tileintervalslist)
 		paralleltileintervals.foreach(tilesearch)
 	else:
+		hardy_ramanujan_ray_shooting_queries(n)
 		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
 
 if __name__=="__main__":
