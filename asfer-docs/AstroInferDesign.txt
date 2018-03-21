@@ -11140,3 +11140,18 @@ filtered in the while loops
 Previous sections described a counterexample in Majority Voting for a question:
 	"Did an artefact exist millenia ago?"
 There are two possible answers: Yes and No which depend on intrinsically determining truth of answer to this question. Both possible answers are belief propagated as trees which evolve over time following a gossip protocol. Root of either of the trees propagates its belief to its children and so on recursively for all other internal nodes. Each edge in either of the trees has a belief potential for "Yes" and "No". Parent node propagates its belief to the children proportional to this potential. If potential is below a threshold, belief propagation stops and trees are pruned.  Thus there are two trees which correspond to two sets of people who believe "Yes" and "No" by potentials percolated from Roots. Only the root node has most authentic direct intrinsic evidence to either Yes or No truth value to the question. Question is: How can intrinsic absolute truth of answer be determined? Does size of the trees imply truth i.e Can Majority Voting determine intrinsic truth value at the root? This problem becomes all the more non-trivial when a chronologically ancient portion of tree (e.g Root is extinct) is not available and only nodes closer to leaves remain. Value of belief potential is a function of intrinsic truth viewed by the roots of either tree.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+527. (THEORY and FEATURE-DONE) Hardy-Ramanujan Approximate Ray Shooting Queries for Factors - Optimization in Computational Geometric
+Factorization - 21 March 2018 - related to 486
+--------------------------------------------------------------------------------------------------------------------------------------------
+1. Ray Shooting Queries based on Hardy-Ramanujan Theorem for Normal Order of number of factors of an integer has been implemented as a
+new function.
+2. Each approximate factor is queried by a ray from origin of slope tan(m*pi/(2*k*loglogN)) intersecting hyperbolic arc bow and approximate factors are:
+                sqrt(N/[tan(m*pi/(2*k*loglogN))])-1 for m=1,2,3,...,kloglogN
+3. Two integers have been factorized using local tile search and comparison between approximate factors and actual factors have been logged in:
+        python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.HardyRamanujanRayShootingQueries.log.21March2018
+        python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.HardyRamanujanRayShootingQueries2.log.21March2018
+4. Approximate Ray Shooting could be useful for integers having large value of factor multiplicity BigOmega (sum of prime factor powers)
+5. Constant k has been hardcoded presently and has to be heuristically found.
+6. Approximate Factors are helpful for sieving huge integers and binary search can be localized based on these approximate factors as beacons.It is not necessary to search the entire pixelated hyperbolic arc.
