@@ -11155,3 +11155,16 @@ new function.
 4. Approximate Ray Shooting could be useful for integers having large value of factor multiplicity BigOmega (sum of prime factor powers)
 5. Constant k has been hardcoded presently and has to be heuristically found.
 6. Approximate Factors are helpful for sieving huge integers and binary search can be localized based on these approximate factors as beacons.It is not necessary to search the entire pixelated hyperbolic arc.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+528. (FEATURE-DONE) Unsorted Search Update - Streaming Abstract Generator File Datasource Support, Prefix-Suffix substrings hashtables 
+- 23 March 2018
+----------------------------------------------------------------------------------------------------------------------------------------------
+1. Hardcoded File name in Streaming Abstract Generator has been replaced by a file name variable and file contents are tokenized and
+stripped of leading and trailing whitespaces and yielded.
+2. Padding of '#' in Unsorted Search has been replaced by '0'. Revised Unsorted Search Algorithm in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt has been implemented by creating hash tables for all integer-string prefixes and suffixes (though not for all substrings) than just for single digits.
+3.New function to print contents of all hashtables has been added.
+4.Function create_prefix_suffix_hashtables() initializes prefix and suffix hashtables for strings from Streaming Abstract Generator 
+5.search_number() function has been rewritten to search for all prefixes and suffixes hashtables and match True/False is written
+6.New input file First100Primes.txt has been created. 
+7.Primes and Non-Primes are lookedup and logs has been committed to testlogs/UnsortedSearch.log.23March2018
