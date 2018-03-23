@@ -56,6 +56,7 @@ class LSH(object):
 				#print "sumhash=",sumhash
 				sumhash += ord(c) * (t+1)
 			x=sumhash
+			print "t=",t,"; len(self.randomhashfunctions)=",len(self.randomhashfunctions)
 			hashcode=eval(self.randomhashfunctions[t])
 			#print "Nearest Neighbours in hashtable ",t,":",self.hashtables[t][hashcode % self.size]	
 			nearest_neighbour,nearest_distance=self.find_nearest_neighbour(e,self.hashtables[t][hashcode % self.size])

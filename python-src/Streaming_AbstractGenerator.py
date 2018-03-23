@@ -73,7 +73,7 @@ class StreamAbsGen(object):
 			self.inputfile=open("../cpp-src/asfer.enterprise.encstr")
 
 		if self.data_storage=="file":
-			self.inputfile=open("StreamingData.txt")
+			self.inputfile=open(data_source,"r")
 
 		if self.data_storage=="USBWWAN_stream":
 			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
@@ -146,8 +146,10 @@ class StreamAbsGen(object):
 				yield i
 		if self.data_storage=="file":
 			for i in self.inputfile:
-				print "StreamAbsGen(file storage): iterator yielding %s" % i
-				yield i
+				words=i.split()
+				for word in words:
+					print "StreamAbsGen(file storage): iterator yielding %s" % word.strip() 
+					yield word.strip() 
 		if self.data_storage=="hive":
 		        #Fetch table results
 		        for i in self.hive_cur.fetch():

@@ -17,30 +17,40 @@
 #--------------------------------------------------------------------------------------------------------
 
 from LocalitySensitiveHashing import LSH
+import Streaming_AbstractGenerator
 
 class UnsortedSearch:
-	def __init__(self,numarray):
-		self.maxnumberdigits=5
+	def __init__(self,streamiterator):
+		self.maxnumberdigits=10
 		self.unsortedarray=[]
-		self.digithashtables=[]
-		for n in numarray:
+		self.substringhashtables=[]
+		for n in streamiterator:
 			nstr=str(n)
 			if len(nstr) < self.maxnumberdigits:
 				hashpadding=""
 				for z in xrange(self.maxnumberdigits - len(nstr)):
-					hashpadding += "#"
+					hashpadding += "0"
 			nstr = hashpadding+nstr	
-			ntuple=[]
-			for digit in nstr:
-				ntuple.append(digit)
-			self.unsortedarray.append(ntuple)
+			print "nstr=",nstr
+			self.unsortedarray.append(nstr)
 
-	def create_digit_hashtables(self):
-		for d in xrange(self.maxnumberdigits):
-			digitdict=LSH()
-			for ntuple in self.unsortedarray:
-				digitdict.add(ntuple[d])
-			self.digithashtables.append(digitdict)
+	def create_prefix_suffix_hashtables(self):
+		for prefix in xrange(self.maxnumberdigits):
+			substringdict=LSH()
+			self.substringhashtables.append(substringdict)
+		for prefix in xrange(self.maxnumberdigits):
+			for nstr in self.unsortedarray:
+				self.substringhashtables[prefix].add(nstr[:prefix])
+		for suffix in xrange(self.maxnumberdigits):
+			substringdict=LSH()
+			self.substringhashtables.append(substringdict)
+		for suffix in range(self.maxnumberdigits,self.maxnumberdigits*2):
+			for nstr in self.unsortedarray:
+				self.substringhashtables[suffix-self.maxnumberdigits].add(nstr[(suffix-self.maxnumberdigits):])
+
+	def print_digit_hashtables(self):
+		for substringhashtable in self.substringhashtables:
+			substringhashtable.dump_contents()
 
 	def print_unsorted_ntuples_hash(self):
 		print "============================================"
@@ -58,32 +68,42 @@ class UnsortedSearch:
 		if len(nstr) < self.maxnumberdigits:
 			hashpadding=""
 			for z in xrange(self.maxnumberdigits - len(nstr)):
-				hashpadding += "#"
+				hashpadding += "0"
 			nstr = hashpadding+nstr	
 		print "search_number(): padded n = ",nstr
 		ntuple=[]
 		cnt=0
 		exists=True
-		digitmatch=False
-		for digit in nstr:
-			if digit != "#":
-				print "digit=",digit
-				match=self.digithashtables[cnt].query_nearest_neighbours(digit)
-				print "search_number(): match = ",match[0]
-				for x in match[0][1]:
-					if x == digit:
-						print "digitmatch=True"
-						digitmatch=True
-				exists=exists & digitmatch 
-				digitmatch=False
+		substringmatch=False
+		for prefix in xrange(self.maxnumberdigits):
+			match=self.substringhashtables[prefix].query_nearest_neighbours(nstr[:prefix])
+			print "match=",match
+			for x in match[0][1]:
+				if x == nstr[:prefix]:
+					print "substringmatch=True"
+					substringmatch=True
+			exists=exists & substringmatch 
+			substringmatch=False
+			cnt += 1
+		for suffix in range(self.maxnumberdigits,self.maxnumberdigits*2):
+			match=self.substringhashtables[suffix-self.maxnumberdigits].query_nearest_neighbours(nstr[(suffix-self.maxnumberdigits):])
+			print "match=",match
+			for x in match[0][1]:
+				if x == nstr[(suffix-self.maxnumberdigits):]:
+					print "substringmatch=True"
+					substringmatch=True
+			exists=exists & substringmatch 
+			substringmatch=False
 			cnt += 1
 		return exists 
 
 if __name__=="__main__":
-	primes=[2,3,5,7,11,13,17,19,23,29,31,35,37,41,43]
-	unsorted=UnsortedSearch(primes)
-	unsorted.create_digit_hashtables()
-	unsorted.print_unsorted_ntuples_hash()
+	#primesf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43]
+	primesf=Streaming_AbstractGenerator.StreamAbsGen("file","First100Primes.txt")
+	unsorted=UnsortedSearch(primesf)
+	unsorted.create_prefix_suffix_hashtables()
+	#unsorted.print_unsorted_ntuples_hash()
+	unsorted.print_digit_hashtables()
 	print "======================================================"
 	exists=unsorted.search_number(99455)
 	print "Is Queried integer 99455 in unsorted array:",exists
@@ -105,3 +125,9 @@ if __name__=="__main__":
 	print "======================================================"
 	exists=unsorted.search_number(29)
 	print "Is Queried integer 29 in unsorted array:",exists
+	print "======================================================"
+	exists=unsorted.search_number(327)
+	print "Is Queried integer 327 in unsorted array:",exists
+	print "======================================================"
+	exists=unsorted.search_number(115)
+	print "Is Queried integer 115 in unsorted array:",exists
