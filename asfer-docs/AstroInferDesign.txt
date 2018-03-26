@@ -11181,3 +11181,59 @@ Most obvious application of Pareto Optimality is Pricing or Determining Value of
 References:
 -----------
 529.1 MARA Survey - https://staff.science.uva.nl/u.endriss/MARA/mara-survey.pdf 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+530. (THEORY and FEATURE-DONE)  Recursive Lambda Function Growth - Graph Tensor Neuron Network Intrinsic Merit for Random Walks 
+- Analysis for different text - 26 March 2018
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. Text input for Recursive Lambda Function Growth has been updated
+2. Graph Tensor Neuron Network Intrinsic Merit for Lambda Function Composition of Random Walks of Definition Graph have been captured in
+log testlogs/RecursiveLambdaFunctionGrowth.log.GraphTensorNeuronNetwork.26March2018
+3. Maximum Graph Tensor Neuron Network Intrinsic Merit occurs for Random Walk Composition:
+grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :
+(u'(housing(protective,(certain(zone,(something(target,(part(include,(urban(area,(Chennai(city,formerly))))))))))))', 6.023684210526316)
+4.Top percentile Unsupervised Classes of this text by Dense Subgraph Discovery (Core Numbers) are:
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: arsenic ,core number= 16
+This document belongs to class: Greenwich_Village ,core number= 14
+This document belongs to class: state_of_matter ,core number= 14
+This document belongs to class: order ,core number= 14
+This document belongs to class: include ,core number= 10
+This document belongs to class: part ,core number= 10
+This document belongs to class: exploitation ,core number= 9
+This document belongs to class: area ,core number= 9
+This document belongs to class: three ,core number= 9
+This document belongs to class: collector ,core number= 8
+This document belongs to class: housing ,core number= 8
+This document belongs to class: January ,core number= 8
+This document belongs to class: trey ,core number= 8
+This document belongs to class: Chennai ,core number= 7
+This document belongs to class: urban ,core number= 7
+This document belongs to class: planning ,core number= 6
+This document belongs to class: zone ,core number= 6
+This document belongs to class: free-base ,core number= 6
+This document belongs to class: travel ,core number= 6
+This document belongs to class: one ,core number= 6
+This document belongs to class: target ,core number= 6
+This document belongs to class: something ,core number= 6
+This document belongs to class: republic ,core number= 6
+This document belongs to class: government ,core number= 5
+This document belongs to class: legal_power ,core number= 5
+----------------------------------------------------------------------
+which reasonably coincide with the vertices of the maximum intrinsic merit random walk and capture the Legal/Gubernatorial/Urban planning nature
+of the text though there are WordNet anomalies printing 'arsenic' etc., as classes. These anomalies are caused because usually Urban planning is related to exploitation and Solid Waste Management which in turn are connected to Toxic substances and Pollutants. WordNet contains all these relations.  Some other Net like ConceptNet5 might probably do better which are word2vec based.
+
+Essence:
+--------
+Meaning of a text is approximated as:
+        - Create a Definition Graph Representation of Text from some Ontology
+        - Do random walks/Hamiltonian on the graph to simulate the human text comprehension
+        - Get classes of the text from Recursive Gloss Overlap Unsupervised Classifier
+        - Compute Lambda Composition Trees for all random walks in definition graph
+        - These random walk lambda composition trees are approximations of all possible meanings of the text
+        - Compute Graph Tensor Neuron Network Intrinsic Merit for all random walk lambda composition trees
+        - Lambda Composition Tree of Maximum Graph Tensor Neuron Network Intrinsic Merit is the most likely approximate meaning of the text
+        - This is obvious because this maximum merit tree has Neuron Tensor Network Relations of maximum similarity/truth value and
+these similarities are composed and belief propagated
