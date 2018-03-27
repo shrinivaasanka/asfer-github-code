@@ -11240,3 +11240,64 @@ Meaning of a text is approximated as:
         - Lambda Composition Tree of Maximum Graph Tensor Neuron Network Intrinsic Merit is the most likely approximate meaning of the text
         - This is obvious because this maximum merit tree has Neuron Tensor Network Relations of maximum similarity/truth value and
 these similarities are composed and belief propagated
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+531. (FEATURE-DONE) Recursive Lambda Function Growth - Simple Cycles and Rich Club Coefficient - 27 March 2018
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.Recursive Lambda Function Growth implementation has been updated to loop through cycles in the definition graph of text and to choose
+between Cycles and Random Walks by a boolean flag ClosedPaths.
+2.Closed Paths or Cycles simulate the meaning better and the tree lambda composition obtained from cycle vertices has been experimentally
+found to approximate meaning more closely.
+3.Logs for this has been committed to testlogs/RecursiveLambdaFunctionGrowth.log.GraphTensorNeuronNetwork.27March2018
+4.Rich Club Coefficients of the Definition Graph has been printed for each degree as a measure of connectivity of high degree vertices(rich club):
+Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph: {0: 0.004865591072487624, 1: 0.016526610644257703, 2: 0.018738738738738738, 3: 0.02396259497369959, 4: 0.024154589371980676, 5: 0.023809523809523808, 6: 0.028985507246376812, 7: 0.032679738562091505, 8: 0.022222222222222223, 9: 0.0, 10: 0.0}
+5.Top core number classes from Unsupervised Recursive Gloss Overlap Classifier:
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: incorporate ,core number= 4
+This document belongs to class: environment ,core number= 4
+This document belongs to class: regional ,core number= 4
+This document belongs to class: `in ,core number= 4
+This document belongs to class: component ,core number= 4
+This document belongs to class: exploitation ,core number= 4
+This document belongs to class: useful ,core number= 4
+This document belongs to class: relating ,core number= 4
+This document belongs to class: unit ,core number= 4
+This document belongs to class: particular ,core number= 4
+This document belongs to class: making ,core number= 4
+This document belongs to class: process ,core number= 4
+This document belongs to class: sphere ,core number= 4
+This document belongs to class: something ,core number= 4
+This document belongs to class: goal ,core number= 4
+This document belongs to class: farm ,core number= 4
+This document belongs to class: urbanization ,core number= 4
+This document belongs to class: strategic ,core number= 4
+This document belongs to class: ' ,core number= 4
+This document belongs to class: increase ,core number= 4
+This document belongs to class: comforts ,core number= 4
+This document belongs to class: city ,core number= 4
+This document belongs to class: district ,core number= 4
+This document belongs to class: farming ,core number= 4
+This document belongs to class: urban ,core number= 4
+This document belongs to class: way ,core number= 4
+This document belongs to class: plan ,core number= 4
+This document belongs to class: do ,core number= 4
+This document belongs to class: contain ,core number= 4
+This document belongs to class: see ,core number= 4
+This document belongs to class: state ,core number= 4
+This document belongs to class: region ,core number= 4
+This document belongs to class: proposal ,core number= 4
+This document belongs to class: life ,core number= 4
+This document belongs to class: decisiveness ,core number= 4
+This document belongs to class: lives ,core number= 4
+This document belongs to class: metropolitan ,core number= 4
+-------------------------------------------------------------------------------------------
+coincide reasonably well to the Maximum Merit Cycle as below and the meaning of the text can be inferred from the composition tree of the word chain and the composed tensor potential is printed for this maximum merit cycle:
+-------------------------------------------------------------------------------------------
+Cycle : [u'particular', u'regional', u'region', u'something', u'see', u'make', u'plan', u'goal', u'state', u'city', u'urban', u'area', u'exploitation', u'land', u'farm', u'unit', u'assembly', u'parts', u'environment', u'sphere']
+Cycle Composition Tree for this cycle : (u'particular((region(regional,(see(something,(plan(make,(state(goal,(urban(city,(exploitation(area,(farm(land,(assembly(unit,(environment(parts,sphere)))))))))))))))))))', 7.250082923612336)
+maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit= (u'(regional(particular,(`in(region,(pronounce(way,(see(certain,(add(make,(important(increase,(plan(strategic,(state(goal,(urban(city,(administrative(relating,(unit(agency,(land(farm,(useful(exploitation,(proper(necessitate,(metropolitan(person,(environment(lives,sphere))))))))))))))))))))))))))))))))', 14.322488296017706)
+===================================================================
+grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text: 3804.34147246
+6.NetworkX library has been upgraded to recently released version 2.1
