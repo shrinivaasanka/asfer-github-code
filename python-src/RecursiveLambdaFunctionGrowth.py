@@ -55,6 +55,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.conceptnet=ConceptNet5Client()
 		#self.Similarity="ConceptNet"
 		self.Similarity="WordNet"
+		self.ClosedPaths=True
 
 	def get_next_tree_traversal_id(self,x,y):
 		if y-x == 1 or x-y == 1:
@@ -243,6 +244,8 @@ class RecursiveLambdaFunctionGrowth(object):
 			#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
 			#Hence approximating the transversal with a k-core which is the Graph counterpart of
 			#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
+			richclubcoeff=nx.rich_club_coefficient(definitiongraph.to_undirected())
+			print "Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:",richclubcoeff
 			kcore=nx.k_core(definitiongraph,corenumber)
 			print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
 			print "=========================="
@@ -293,6 +296,9 @@ class RecursiveLambdaFunctionGrowth(object):
 					print s,
 			return (sorted_summary, len(sorted_summary))
 		else:
+			definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+			richclubcoeff=nx.rich_club_coefficient(definitiongraph.to_undirected(),normalized=False)
+			print "Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:",richclubcoeff
 			textsentences=text.split(".")
 			lensummary=0
 			summary=[]
@@ -332,19 +338,40 @@ class RecursiveLambdaFunctionGrowth(object):
 			for b in definitiongraph.nodes():
 				stpairs.append((a,b))
 		rw_ct=""
-		for k,v in stpairs:
-			try:
-				print "==================================================================="
-				print "Random Walk between :",k," and ",v,":",apsp[k][v]
-				rw_ct=self.randomwalk_lambda_function_composition_tree(apsp[k][v])
-				print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
-				print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
-				print "==================================================================="
-				if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
-					maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=rw_ct
-			except KeyError:
-				pass
-			rw_ct=""
+		if self.ClosedPaths==False:
+			for k,v in stpairs:
+				try:
+					print "==================================================================="
+					print "Random Walk between :",k," and ",v,":",apsp[k][v]
+					rw_ct=self.randomwalk_lambda_function_composition_tree(apsp[k][v])
+					print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
+					print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+					print "==================================================================="
+					if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
+						maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=rw_ct
+				except KeyError:
+					pass
+				rw_ct=""
+		if self.ClosedPaths==True:
+			allsimplecycles=nx.simple_cycles(definitiongraph)
+			#allsimplecycles=nx.cycle_basis(definitiongraph)
+			number_of_cycles=0
+			for cycle in allsimplecycles:
+				number_of_cycles += 1
+				if number_of_cycles > 500:
+					break
+				try:
+					print "==================================================================="
+					print "Cycle :",cycle
+					rw_ct=self.randomwalk_lambda_function_composition_tree(cycle)
+					print "Cycle Composition Tree for this cycle :",rw_ct
+					print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+					print "==================================================================="
+					if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
+						maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=rw_ct
+				except KeyError:
+					pass
+				rw_ct=""
 		print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:",self.graph_tensor_neuron_network_intrinsic_merit
 		self.korner_entropy(definitiongraph)
 		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
@@ -359,7 +386,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		nodes=definitiongraph.nodes()
 		stable_sets=[]
 		for v in nodes:
-			stable_sets.append(nx.maximal_independent_set(definitiongraph,[v]))
+			stable_sets.append(nx.maximal_independent_set(definitiongraph.to_undirected(),[v]))
 		print "korner_entropy(): Stable Independent Sets:",stable_sets
 		entropy=0.0
 		prob_v_in_stableset=0.0
