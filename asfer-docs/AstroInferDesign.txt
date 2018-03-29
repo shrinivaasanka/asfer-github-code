@@ -11307,3 +11307,20 @@ maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit= (u'(regiona
 ===================================================================
 grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text: 3804.34147246
 6.NetworkX library has been upgraded to recently released version 2.1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+532. (THEORY-FEATURE-DONE) Least Squares SAT Solver Benchmarks - 1000 variables - Non-uniform choice 3 - different values of Alpha - 29 March 2018 - related to 524
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1. SAT Solver (LSMR) has been benchmarked for 1000 variables and for varying values of Alpha as below. MAXSAT approximation ratio after
+atleast 20 iterations of random 3SAT for nonuniform_choice3() are:
+Alpha = 1 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 94.3032258065
+Alpha = 2 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 92.2115384615
+Alpha = 3 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 91.1458333333
+Alpha = 4.267 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 90.196679346
+Alpha = 5 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 89.7233333333
+Alpha = 6 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 89.8702898551
+Alpha = 7 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far: 89.8266233766
+
+2.As usual for equal variable-clauses MAXSAT ratio is the maximum at 94-95% and decreases for increasing alpha. For Alpha=4.267, MAXSAT ratio is 90-91% similar to previous benchmarks(which were done on nonuniform_choice()).
+
+3.Log excerpts have been captured in testlogs/CNFSATSolver.1000variablesDifferentAlphasBenchmarks.29March2018
