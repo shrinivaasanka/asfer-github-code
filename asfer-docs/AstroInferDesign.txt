@@ -7691,6 +7691,9 @@ Real life interviews typically have following usecase (e.g IT industry) - a slig
 (*) technical discussions (question-answering on programming/projects etc.,)
 (*) experience
 
+Intrinsic Merit of Collection of Humans are measured in economics literature by many indices like GDP,Human Development Index(HDI),Inequality adjusted HDI,Gender Inequality Index,Purchasing Power Parity(PPP) etc.,Human Development Index defined as geometric mean of standard of life,income,education indices is used to rank countries by their development.Intrinsic Merit of sportspersons are measured by Intrinsic Performance Rating(IPR) measures e.g Elo rating in Chess is used to rank players. Translating the previous example, one possible IPR for interview is the following adapted from HDI (not necessarily perfect):
+	IPR(candidate)=geometric_mean(IPR(interview)*IPR(education)*IPR(experience))
+
 From 359 and 365, NoiseSensitivity(InterviewTQBF) which is the dual of Stability is defined as:
 	NoiseSensitivity(InterviewTQBF) = 0.5-0.5*Stability(InterviewTQBF) = 0.5-0.5*a^2*n^2/4
 
@@ -7721,6 +7724,8 @@ References:
 420.4 Davis-Putnam-Logemann-Loveland (DPLL) decision tree solver algorithm for QBF - http://personalpages.manchester.ac.uk/student/joshua.dawes/notes/qbf.pdf
 420.5 Parallel algorithm for Hypergraph Transversals - https://people.mpi-inf.mpg.de/~elbassio/pub/COCOON05.pdf
 420.6 Efficient algorithm for Hypergraph Transversals - http://jgaa.info/accepted/2005/KavvadiasStavropoulos2005.9.2.pdf
+420.7 Compendium of Intrinsic Performance Ratings in Chess - https://www.cse.buffalo.edu/~regan/papers/pdf/Reg12IPRs.pdf
+420.8 Human Development Index (New) - https://poseidon01.ssrn.com/delivery.php?ID=615100008007024087109082112068031068002059093093031010095070006067125121072104018099058027096058051040011088102003094012124014108058062055076070124088071097101123070065059085125012119018080072084029012007002119065081015116009119108104075076102112012027&EXT=pdf
 
 ---------------------------------------------------------------------------------------------------------------
 421. (FEATURE-DONE) Text Summarization from Recursive Gloss Overlap Graph Core - Commits - 28 June 2017
