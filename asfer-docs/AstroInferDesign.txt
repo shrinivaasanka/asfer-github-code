@@ -10625,6 +10625,14 @@ References:
 498.5 M31 - http://primes.utm.edu/curios/page.php/2147483647.html - The first prime that cannot be tested on 32-bit primality-check software.
 498.6 Cryptography in NC0 - [Benny Applebaum, Yuval Ishai, Eyal Kushilevitz] - http://www.cs.technion.ac.il/~abenny/pubs/nc0.pdf, Hardness of factoring - [Emanuele Viola] - https://emanueleviola.wordpress.com/2018/02/16/i-believe-pnp/ - One way functions are in NC0 and there are PRGs for which output bit depends only on O(1) bits of seed implying factoring is hard for constant depth. Computational Geometric Factorization doable in O(logN^2) PRAM time in NC2, implies factoring can be made easy by parallelism and polylog depth circuits.
 498.7 Binary Quadratic Diophantine Equations (BQDE) and BQDE for Factorization - [JC Lagarias] - https://arxiv.org/pdf/math/0611209 - Succinct Certificates for the Solvability of BQDE.
+498.8 Polynomial Time Quantum Algorithm for Solving Pell's Equation - [Hallgren] - http://www.cse.psu.edu/~sjh26/pell.pdf - Integer Solutions to Pell's Equation reduce to Factoring - e.g Solving for x,y for known N in x^2 - Ny^2 = 1 factorizes N by rewriting as: (x^2 - 1) / y^2 = N => ((x+1)/y)((x-1)/y) = N. In this respect, Hallgren's algorithm is equivalent to Shor Quantum Factorization. Computational Geometric Factorization in NC-PRAM or Sequential Optimization in P could therefore imply Pell's equation is solvable by PRAM model and in NC or in P as follows:
+	(x+1)/y = a
+	(x-1)/y = b
+	2/y = a-b for factors a,b of N.
+	y = 2/a-b 
+	=> (x+1) = 2a/(a-b)
+	=> x = 2a/(a-b) - 1
+Historicity of this problem (Brahmagupta's Chakravala) and a polylog approximation based on Newton-Raphson square root recurrence is described in GRAFIT course material https://kuja27.blogspot.in/2018/04/grafit-course-material-newton-raphson.html
 
 -------------------------------------------------------------------------------------------------------------------------
 499. (FEATURE-DONE) Secure Neuro Currency Cloud Perfect Forward Move - OpenSSL client and server - 19 January 2018
