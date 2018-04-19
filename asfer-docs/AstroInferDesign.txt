@@ -11338,3 +11338,14 @@ Alpha = 7 - Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of
 2.As usual for equal variable-clauses MAXSAT ratio is the maximum at 94-95% and decreases for increasing alpha. For Alpha=4.267, MAXSAT ratio is 90-91% similar to previous benchmarks(which were done on nonuniform_choice()).
 
 3.Log excerpts have been captured in testlogs/CNFSATSolver.1000variablesDifferentAlphasBenchmarks.29March2018
+
+----------------------------------------------------------------------------------------------------------------
+533. (THEORY) Packing/Filling/Tiling problems, Complement Functions/Diophantine Equations, Ramsey Coloring, 
+Exact Cover, Matiyasevich-Robinson-Davis-Putnam Theorem  - related to 461,462,490 - 19 April 2018
+----------------------------------------------------------------------------------------------------------------
+As mentioned in previous sections, complement functions are subsets of set of Diophantine Equations defining
+each diophantine set in an exact cover - this generalizes definition of complement functions to exact cover of size greater than 2. Exact Cover is a special scenario of Bin Packing/Space Filling/Tiling plane (e.g Pentominoes tiling of a Chess board, N-Queens Problem etc.,). Complement Diophantine Equations for sets in an exact cover uniquely determine each element in tiling and thus create a bijective map between Diophantines and Tiles(i.e sets in exact cover).
+
+Reference:
+----------
+533.1 Pentominoes Tiling Exact Cover for Chess board - https://en.wikipedia.org/wiki/Exact_cover - Each pentomino tile can be defined by a Diophantine Equation because Exact Cover is NP-complete recursive set, from MRDP theorem. These diophantine equations for tiles are complement functions of the exact cover.
