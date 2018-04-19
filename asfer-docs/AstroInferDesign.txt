@@ -10926,6 +10926,16 @@ References:
 ----------
 514.1 Neural Tensor Network - [Socher-Chen-Manning-Ng] - https://nlp.stanford.edu/pubs/SocherChenManningNg_NIPS2013.pdf - Section 3.1 - "...The goal of our approach is to be able to state whether two entities (e1, e2) are in a certain relationship R. For instance, whether the relationship (e1, R, e2) = (Bengal tiger, has part, tail) is true and with what certainty. ... The Neural Tensor Network (NTN) replaces a standard linear neural network layer with a bilinear tensor layer that directly relates the two entity vectors across multiple dimensions. ..."
 514.2 The Language Instinct - [Steven Pinker] - Chapter 4 - How Language Works - Word Chains and Chomsky
+514.3 Chomsky-Norvig Debate on Algorithmic Versus Statistical Learning - http://daselab.cs.wright.edu/nesy/NeSy13/norvig.pdf - 98% learning models are probabilistic/statistical while 2% are algorithmic. Chomsky's viewpoints:
+	<quote>
+	- Statistical language models have had engineering success, but that is irrelevant to science.
+	- Accurately modeling linguistic facts is just butterfly collecting; what matters in science (and specifically linguistics) is the underlying principles.
+	- Statistical models are incomprehensible; they provide no insight.
+	- Statistical models may provide an accurate simulation of some phenomena, but the simulation is done completely the wrong way; people don't decide what the third word of a sentence should be by consulting a probability table keyed on the previous two words, rather they map from an internal semantic form to a syntactic tree-structure, which is then linearized into words. This is done without any probability or statistics.
+	- Statistical models have been proven incapable of learning language; therefore language must be innate, so why are these statistical modelers wasting their time on the wrong enterprise?
+	<unquote>
+Recursive Gloss Overlap and Recursive Lambda Function Growth are Algorithmic Language Learning Models.
+514.4 Gold's Theorem - www.lps.uci.edu/~johnsonk/Publications/Johnson.GoldsTheorem.pdf and limit on learnability  - language L has infinite elasticity if there exist subsets T1 in T2 in ... ad infinitum such that Ti in Li and T(i+1) not in Li for set of languages Li and Lim Ti = L . Languages of infinite elasticity are not learnable.
 
 -------------------------------------------------------------------------------------------------------
 515. (THEORY and FEATURE-DONE) Recursive Lambda Function Growth - ConceptNet5 support, Per random walk 
