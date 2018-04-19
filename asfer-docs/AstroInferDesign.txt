@@ -11350,3 +11350,4 @@ each diophantine set in an exact cover - this generalizes definition of compleme
 Reference:
 ----------
 533.1 Pentominoes Tiling Exact Cover for Chess board - https://en.wikipedia.org/wiki/Exact_cover - Each pentomino tile can be defined by a Diophantine Equation because Exact Cover is NP-complete recursive set, from MRDP theorem. These diophantine equations for tiles are complement functions of the exact cover.
+533.2 Euclidean Ramsey Theory - http://www.math.ucsd.edu/~ronspubs/pre_Euclidean.pdf - [RL Graham] - Euclidean Ramsey Theory pertains to the coloring/partitioning of euclidean plane E into tiles Ci i.e E = U Ci and there exists set of subsets E' of E such that for every x in E', x is exactly contained in one Ci.  
