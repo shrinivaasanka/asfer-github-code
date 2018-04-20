@@ -114,12 +114,12 @@ def diophantine_sum_of_squares_solve(x):
 
 def diophantine_factorization_pell_equation(D,N):
 	print "=============================================================================="
-	print "Pell Diophantine Equation - Factorization reduces to solving Pell's Equation (for some N)"
+	print "Pell Diophantine Equation - Factorization reduces to solving Pell's Equation (for D=1 and some N)"
 	print "=============================================================================="
 	sol=diop_DN(D,N)
 	soln=sol[0]
 	print "Solution for Pell Equation : x^2 - ",D,"*y^2 = ",N,":"
-	print "(",soln[0]," + sqrt(",N,"))/",soln[1]," * (",soln[0]," - sqrt(",N,"))/",soln[1]," = ",D
+	print "(",soln[0]," + ",soln[1],") * (",soln[0]," - ",soln[1],") = ",N
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
@@ -155,4 +155,4 @@ if __name__=="__main__":
 	#IharaIdentity()
 	nonsquares=[2,3,5,6,7,8,9,10,11,12,13,14,15,17,18,19]
 	complement_diophantine(nonsquares)
-	diophantine_factorization_pell_equation(91,1)
+	diophantine_factorization_pell_equation(1,989295)
