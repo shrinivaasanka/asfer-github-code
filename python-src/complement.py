@@ -11,17 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #-----------------------------------------------------------------------------------------------------------
 
 ################################################################################################
@@ -43,6 +35,7 @@ import math
 import string
 import decimal
 from sympy.solvers.diophantine import diop_general_sum_of_squares
+from sympy.solvers.diophantine import diop_DN
 from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
 import pprint
@@ -119,6 +112,14 @@ def diophantine_sum_of_squares_solve(x):
 		unknowntuple=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(x))
 		complement_diophantine_map[str(unknowntuple)]=x
 
+def diophantine_factorization_pell_equation(D,N):
+	print "=============================================================================="
+	print "Pell Diophantine Equation - Factorization reduces to solving Pell's Equation (for some N)"
+	print "=============================================================================="
+	sol=diop_DN(D,N)
+	soln=sol[0]
+	print "Solution for Pell Equation : x^2 - ",D,"*y^2 = ",N,":"
+	print "(",soln[0]," + sqrt(",N,"))/",soln[1]," * (",soln[0]," - sqrt(",N,"))/",soln[1]," = ",D
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
@@ -151,6 +152,7 @@ if __name__=="__main__":
 
 	for i in range(10):
 		print "g(",i,")=",getgofx(i)
-	IharaIdentity()
+	#IharaIdentity()
 	nonsquares=[2,3,5,6,7,8,9,10,11,12,13,14,15,17,18,19]
 	complement_diophantine(nonsquares)
+	diophantine_factorization_pell_equation(91,1)
