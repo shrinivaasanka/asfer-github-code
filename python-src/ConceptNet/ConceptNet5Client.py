@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 #-------------------------------------------------------------------------------------------------------
 #NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
@@ -18,30 +21,35 @@
 
 #ConceptNet and WordNet: http://web.media.mit.edu/~havasi/MAS.S60/PNLP10.pdf
 
+
 import requests
 import pprint
 from Queue import Queue
 from itertools import product
-from rest_client import similar_to_concepts
+#from rest_client import similar_to_concepts
 
 class ConceptNet5Client:
 	def __init__(self):
 		print "Init of ConceptNet Client"
 
 	def query_association(self,concept1,concept2):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/c/en/"+concept1+"?filter=/c/en/"+concept2).json()
+		conceptjson=requests.get("http://api.conceptnet.io/c/en/"+concept1+"?filter=/c/en/"+concept2).json()
 		return conceptjson
 
 	def query_search(self,concept):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/search?end=/c/en/"+concept).json()
+		conceptjson=requests.get("http://api.conceptnet.io/search?end=/c/en/"+concept).json()
 		return conceptjson
 
 	def query_lookup(self,concept):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/c/en/"+concept).json()
+		conceptjson=requests.get("http://api.conceptnet.io/c/en/"+concept).json()
 		return conceptjson
 
 	def related(self,concept):
-		conceptjson=requests.get("http://conceptnet5.media.mit.edu/related/c/en/"+concept).json()
+		conceptjson=requests.get("http://api.conceptnet.io/related/c/en/"+concept).json()
+		return conceptjson
+
+	def query_emotions(self, emoji):
+		conceptjson=requests.get("http://api.conceptnet.io/c/mul/"+emoji).json()
 		return conceptjson
 
 	def conceptnet_distance(self,concept1,concept2):
@@ -92,6 +100,11 @@ class ConceptNet5Client:
 
 if __name__=="__main__":
 	conceptnet = ConceptNet5Client()
+	print "==================================================="
+	print "ConceptNet Emotions "
+	print "==================================================="
+	conceptjson=conceptnet.query_emotions("😂")
+	pprint.pprint(conceptjson)
 	print "========================================"
 	print "Association"
 	print "========================================"
