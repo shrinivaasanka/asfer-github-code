@@ -11405,3 +11405,10 @@ There is a known theorem which states that if a graph G is disconnected its comp
 References:
 ----------
 536.1 Introduction to Graph Theory - [Douglas B.West] - Perfect Graph Theorem for complement graphs, Ramsey Theorem for Graphs - Pages 226,380
+
+-------------------------------------------------------------------------------------------------------------
+537. (FEATURE-DONE) ConceptNet Client Upgrade to 5.6 - REST endpoints for Emoticons - 23 April 2018
+-------------------------------------------------------------------------------------------------------------
+1. ConceptNet Client has been updated for new REST endpoints in ConceptNet 5.6
+2. Function for querying emotions has been added for new emoji endpoints in ConceptNet 5.6
+3. logs for this have been committed to testlogs/ConceptNet5Client.log.23April2018
