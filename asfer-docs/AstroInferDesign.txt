@@ -11412,3 +11412,20 @@ References:
 1. ConceptNet Client has been updated for new REST endpoints in ConceptNet 5.6
 2. Function for querying emotions has been added for new emoji endpoints in ConceptNet 5.6
 3. logs for this have been committed to testlogs/ConceptNet5Client.log.23April2018
+
+-------------------------------------------------------------------------------------------------------------
+538. (THEORY) Shell Turing Machines, Word2Vec and Intrinsic Merit - 24 April 2018 - related to 42
+-------------------------------------------------------------------------------------------------------------
+Shell Turing Machines described earlier are experimental enhancements to Turing Machine definition which 
+introduces dimension as a parameter in addition to tapes, alphabets, head etc., Adding dimesnsion to Turing
+Machines has immense applications and simulates lot of real world computations which span across multiple
+dimensions. For example a Turing Machine defined in dimension d+1 has more computational power than a machine
+defined in dimension d i.e L(T(d)) is in L(T(d+1)). This is a dimensional hierarchy as opposed to Time and Space
+hierarchies of Turing Machines. This has striking applications in graph representation of texts. Each word 
+vertex in a definition graph G1 can be represented as a vector in a space of dimension d. Word2Vec embeddings 
+(e.g ConceptNet) already implement this by mapping each word to a vector in space of some dimension. 
+Then another definition graph G2 of words defined on a vector space of dimension d+1 can elicit more meaning 
+from text than G1. Recursive Lambda Composition Trees for G1 and G2 are two Turing-equivalent computation models
+ approximating the meaning - G2 approximates better than G1. In other words intrinsic merit computed for G2 is 
+more accurate than G1 for same text. Present algorithms for Recursive Gloss Overlap and Recursive Lambda 
+Function Growth do not affix dimension information for word vertices.
