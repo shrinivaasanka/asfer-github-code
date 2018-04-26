@@ -11431,3 +11431,23 @@ Then another definition graph G2 of words defined on a vector space of dimension
 from text than G1. Recursive Lambda Composition Trees for G1 and G2 are two Turing-equivalent computation models
  approximating the meaning - G2 approximates better than G1. Essentially a Turing Machine/Lambda Function is 
 extracted from natural language text by growing Lambda Function by recursive composition. In other words intrinsic merit computed for G2 is more accurate than G1 for same text. Present algorithms for Recursive Gloss Overlap and Recursive Lambda Function Growth do not affix dimension information for word vertices.
+
+---------------------------------------------------------------------------------------------------------------
+539. (THEORY) Recursive Lambda Function Growth for sentences - related to 530,536 - 26 April 2018
+---------------------------------------------------------------------------------------------------------------
+Recursive Lambda Function Growth algorithm described so far depends on a text graph and walks/cycles in the text
+graph are deemed as sentences of word vertices connected by WordNet/ConceptNet/Ontology relations which are converted to lambda function composition tree. This section explains how to construct a lambda function composition from linear sentences with no text-graph representation.
+
+Approximate algorithm to create a lambda composition tree from sentence:
+-------------------------------------------------------------------------
+*) PoS/NER tag the sentence into Nouns,Verbs,Adjectives,Adverbs,Pronouns etc.,
+*) Make all words tagged as verbs into lambda functions and noun/object for the verb as respective arguments
+for the lambda function. This is a thumbrule because verbs in the sentences are the crux/actions on the nouns and objects.
+*) Most natural languages are self-similar in the sense, the simple sentence template Noun-Pronoun-Adverb-Verb-Adjective-Object is recursively substituted to create large sentences. For example Object in Noun-Verb-Object template can itself be another template of the form Noun-Verb-Object.
+*) Adjectives/Adverbs qualifying nouns/verbs/objects are created as wrapper lambda functions for nouns/verbs/objects.
+*) This algorithm for extracting Lambda functions/Turing Machines from Natural Language Texts is the maximum theoretical limit attainable if Church-Turing Thesis is true. In other words, this algorithm creates Turing machines recognizing Recursively Enumerable sets.
+
+Example sentence: "It rained heavily today"
+The example sentence is PoS tagged as Pronoun-Verb-Adjective-Object. Verb "rained" is marked as lambda function (after normalizing to "rain" if preferred.). Adjective "heavily" qualifying Object "today" is the wrapper function "heavily(today)". "It" is a separate lambda function for pronoun. Verb function "rained" thus accepts "It" and "heavily(today)" as arguments creating the tree:
+	rained(It, heavily(today))
+This algorithm is independent of natural language of the text. Lacuna in this composition from flat sentence is the deep structure - connections/paths between words - is not exploited which is remedied by the random walks/cycle traversal in text-graph and maximum merit composition is chosen.
