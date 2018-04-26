@@ -11433,7 +11433,7 @@ from text than G1. Recursive Lambda Composition Trees for G1 and G2 are two Turi
 extracted from natural language text by growing Lambda Function by recursive composition. In other words intrinsic merit computed for G2 is more accurate than G1 for same text. Present algorithms for Recursive Gloss Overlap and Recursive Lambda Function Growth do not affix dimension information for word vertices.
 
 ---------------------------------------------------------------------------------------------------------------
-539. (THEORY) Recursive Lambda Function Growth for sentences - related to 530,536 - 26 April 2018
+539. (THEORY) Recursive Lambda Function Growth for sentences - related to 385,412,530,536 - 26 April 2018
 ---------------------------------------------------------------------------------------------------------------
 Recursive Lambda Function Growth algorithm described so far depends on a text graph and walks/cycles in the text
 graph are deemed as sentences of word vertices connected by WordNet/ConceptNet/Ontology relations which are converted to lambda function composition tree. This section explains how to construct a lambda function composition from linear sentences with no text-graph representation.
