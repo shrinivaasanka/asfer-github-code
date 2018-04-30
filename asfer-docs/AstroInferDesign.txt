@@ -11220,6 +11220,8 @@ Most obvious application of Pareto Optimality is Pricing or Determining Value of
 
 Traditional Ranking methodology followed is to compute ranking scores per website URL independent of other URLs i.e envy is not accounted for which vitiates fairness. By MARA based ranking, Ranking Fairness is strengthened and Total Cumulative Intrinsic Merit = 1.0, is viewed as Pie/Cake cutting problem and websites are allocated pareto-optimal fractional merit by an envy-free protocol. Thus Sum(rank(url))=1.
 
+An example envy-free cake cutting algorithm is a hash function which distributes the values nearly equally onto the per-key buckets of the hash table - all buckets have equal number of values or resources are equidistributed. Varying the hash functions changes the per-key bucket number of values. Each key is an agent requiring certain number of values in its bucket and Choosing a hash function which satisfies this constraint is a MARA protocol. 
+
 References:
 -----------
 529.1 MARA Survey - https://staff.science.uva.nl/u.endriss/MARA/mara-survey.pdf 
