@@ -36,6 +36,7 @@ import math
 import operator
 import difflib
 from ConceptNet5Client import ConceptNet5Client
+from WordNetPath import path_between
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -329,6 +330,23 @@ class RecursiveLambdaFunctionGrowth(object):
 			relevancescore=max(rs,relevancescore)
 		return relevancescore 
 
+	def instrument_relations(self, rw_words_list):
+		word_list_len=len(rw_words_list)
+		instrumented_rw_words_list=[]
+		if word_list_len==2:
+			path=path_between(rw_words_list[0], rw_words_list[1])
+			for p in path:
+				instrumented_rw_words_list.append(p)
+		else:
+			for n in range(0,word_list_len-2): 
+				path=path_between(rw_words_list[n], rw_words_list[n+1])
+				for p in path:
+					instrumented_rw_words_list.append(p)
+		if len(instrumented_rw_words_list) > 0:
+			return instrumented_rw_words_list
+		else:
+			return rw_words_list
+
 	def grow_lambda_function3(self,text):
 		stpairs=[]
 		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
@@ -343,7 +361,8 @@ class RecursiveLambdaFunctionGrowth(object):
 				try:
 					print "==================================================================="
 					print "Random Walk between :",k," and ",v,":",apsp[k][v]
-					rw_ct=self.randomwalk_lambda_function_composition_tree(apsp[k][v])
+					instrumented_apspkv=self.instrument_relations(apsp[k][v])
+					rw_ct=self.randomwalk_lambda_function_composition_tree(instrumented_apspkv)
 					print "Random Walk Composition Tree for walk between :",k," and ",v,":",rw_ct
 					print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
 					print "==================================================================="
@@ -363,7 +382,9 @@ class RecursiveLambdaFunctionGrowth(object):
 				try:
 					print "==================================================================="
 					print "Cycle :",cycle
-					rw_ct=self.randomwalk_lambda_function_composition_tree(cycle)
+					instrumented_cycle=self.instrument_relations(cycle)
+					print "instrumented_cycle:",instrumented_cycle
+					rw_ct=self.randomwalk_lambda_function_composition_tree(instrumented_cycle)
 					print "Cycle Composition Tree for this cycle :",rw_ct
 					print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
 					print "==================================================================="
