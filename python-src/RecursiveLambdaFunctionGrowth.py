@@ -90,23 +90,18 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.index_tree.foreach(self.build_lambda_comp_tree,0)
 		
 		self.lambda_comp_tree=AVLTree(self.word_dict)
-		#print "==========================================================================="
-		#print "Lambda Composition AVL Tree (inorder traversed) is the original text itself:"
-		#print "==========================================================================="
+		print "==========================================================================="
+		print "Lambda Composition AVL Tree (inorder traversed) is the original text itself:"
+		print "==========================================================================="
 		self.lambda_expression=[]
 		self.lambda_comp_tree.foreach(self.build_lambda_expression, 0)
-		#print
-		#print "==========================================================================="
-		#print "Lambda Composition AVL Tree (inorder traversed):"
-		#print "Every parenthesis has two operands,operated by function outside:"
-		#print "==============================================================="
+		print self.lambda_expression
+		print "==========================================================================="
+		print "Lambda Composition AVL Tree (postorder traversed - Postfix expression):"
+		print "Every parenthesis has two operands,operated by function outside:"
+		print "==============================================================="
 		self.lambda_expression=[]
-		self.lambda_comp_tree.foreach(self.build_lambda_expression, 0)
-		#print
-		#print "=============================================================="
-		#print "Lambda Function Composition Infix Evaluation (parenthesized):"
-		#print "=============================================================="
-		#print self.lambda_expression
+		self.lambda_comp_tree.foreach(self.build_lambda_expression, 1)
 		self.lambda_composition=[]
 		cnt=0
 
@@ -115,8 +110,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		#having Tensor Neuron activations for each subtree.
 		while len(self.lambda_expression) > 2 :
 			operand2=self.lambda_expression.pop()
-			function=self.lambda_expression.pop()
 			operand1=self.lambda_expression.pop()
+			function=self.lambda_expression.pop()
 			subtree_graph_tensor_neuron_network_wght = self.subtree_graph_tensor_neuron_network_weight(operand1, function, operand2)
 			self.graph_tensor_neuron_network_intrinsic_merit += subtree_graph_tensor_neuron_network_wght
 			per_random_walk_graph_tensor_neuron_network_intrinsic_merit += subtree_graph_tensor_neuron_network_wght
