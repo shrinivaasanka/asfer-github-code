@@ -11491,3 +11491,16 @@ grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Int
         https://en.wikipedia.org/wiki/Chennai_metropolitan_area
         http://www.thehindu.com/todays-paper/tp-national/tp-tamilnadu/metropolitan-planning-area-expanded/article22639607.ece
         https://www.newstodaynet.com/index.php/2018/02/06/chennai-to-grow-from-metropolis-to-megapolis/
+
+--------------------------------------------------------------------------------------------------------------
+542. (THEORY and FEATURE-DONE) SAT Solver Update - Parity of the Assignment - 3 May 2018
+--------------------------------------------------------------------------------------------------------------
+1. solve_SAT2() function of CNFSATSolver.py has been changed to compute binary parity (sum of 1s) after rounding
+and real parity (sum of real values for variables before rounding)
+2. Rationale is both the parities should be approximately close enough which is another measure of efficiency
+of MAXSAT approximation. Real parity is nothing but Riemann Sum Discrete Integral of the polynomial through
+real assignment points.
+3. Notion of real parities is non-conventional and is introduced as proprietary NeuronRain SAT Solver feature.
+4. This instance solves 1000 variables and Alpha=1.0 and MAXSAT approximation ratio is ~97%. LSQR solver
+has been invoked instead of LSMR because of absence of LSMR in SciPy 0.9.0
+5. Logs for this have been committed to testlogs/CNFSATSolver.1000variablesAlpha1AssignmentParity.3May2018
