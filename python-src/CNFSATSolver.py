@@ -26,7 +26,7 @@ from scipy.linalg import lstsq
 from numpy.linalg import solve
 #from numpy.linalg import lstsq
 from scipy.sparse.linalg import lsqr
-from scipy.sparse.linalg import lsmr
+#from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
 from scipy.sparse import csc_matrix
 from scipy.linalg import pinv
@@ -194,13 +194,19 @@ class SATSolver(object):
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
 		cnt=0
+		binary_parity=0
+		real_parity=0.0
 		for e in x[0]:
 			if e >= 0.5:
 				satass.append(1)
+				binary_parity += 1
 			else:
 				satass.append(0)
+				binary_parity += 0
+			real_parity += e
 			cnt+=1
-		#print "solve_SAT2():",a
+		print "solve_SAT2(): real_parity = ",real_parity
+		print "solve_SAT2(): binary_parity = ",binary_parity
 		return satass
 	
 	def nonuniform_choice(self, literal_selection, numvars, numclauses):
@@ -379,10 +385,11 @@ if __name__=="__main__":
 		print "--------------------------------------------------------------"
 		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Alpha = ",float(number_of_clauses)/float(number_of_variables),"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
-		satsolver=SATSolver("lsmr()")
+		#satsolver=SATSolver("lsmr()")
 		#satsolver=SATSolver("solve()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
+		satsolver=SATSolver("lsqr()")
 		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
 		#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
 		cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
