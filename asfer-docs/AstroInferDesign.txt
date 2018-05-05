@@ -10947,6 +10947,8 @@ References:
 	<unquote>
 Recursive Gloss Overlap and Recursive Lambda Function Growth are Algorithmic Language Learning Models.
 514.4 Gold's Theorem - www.lps.uci.edu/~johnsonk/Publications/Johnson.GoldsTheorem.pdf and limit on learnability  - language L has infinite elasticity if there exist subsets T1 in T2 in ... ad infinitum such that Ti in Li and T(i+1) not in Li for set of languages Li and Lim Ti = L . Languages of infinite elasticity are not learnable.
+514.5 Power Law Distribution, Scale-Invariance, Small Word Phenomenon in Roget's Thesaurus and WordNet -Section 4.3 -  http://web.mit.edu/cocosci/Papers/03nSteyvers.pdf - Roget's Thesaurus and WordNet follow Pareto's Power Law Distribution i.e P(k) = k^(-e) where P(k) is the probability of vertices having k incoming links and e is the scale exponent. Power Law implies large number of nodes have small incoming links and small number of nodes have high incoming links. Both Roget's Thesaurus and WordNet have scale exponent ~3, high sparsity, very short average distances among words(5.6 and 10.56), single connected component containing almost all words, high local clustering.
+514.6 Pareto's 80/20 rule, Scale-Invariance in phase-transition - Chapter 6: Sixth Link - Linked - [Albert Laszlo Barabazi]
 
 -------------------------------------------------------------------------------------------------------
 515. (THEORY and FEATURE-DONE) Recursive Lambda Function Growth - ConceptNet5 support, Per random walk 
