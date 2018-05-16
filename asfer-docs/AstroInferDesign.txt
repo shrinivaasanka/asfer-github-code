@@ -11508,3 +11508,15 @@ real assignment points.
 4. This instance solves 1000 variables and Alpha=1.0 and MAXSAT approximation ratio is ~97%. LSQR solver
 has been invoked instead of LSMR because of absence of LSMR in SciPy 0.9.0
 5. Logs for this have been committed to testlogs/CNFSATSolver.1000variablesAlpha1AssignmentParity.3May2018
+
+---------------------------------------------------------------------------------------------------------------
+543. (FEATURE-DONE) SAT Solver Update - SciPy Upgrade to 1.1 for restoring LSMR - 1000 clauses and Alpha=1.0
+- 16 May 2018
+---------------------------------------------------------------------------------------------------------------
+1. SciPy has been upgraded to SciPy 1.1 by installing scipy 1.1 wheel file as "easy_install scipy==1.1"
+2. LSMR invocation has been uncommented and invoked restoring status quo ante
+3. Almost 150, 1000 variables and 1000 clauses random SAT instances have been solved and MAXSAT approximation
+ratio is > 94 pegged at 94.5% which coincides with Alpha=1.0 pattern of ~95% for all executions so far.
+4. Logs for this have been committed to testlogs/
+5. Scipy 1.1 has initial guess parameter for x (SAT assignment) for faster convergence which can be utilized in
+future versions of SAT Solver.
