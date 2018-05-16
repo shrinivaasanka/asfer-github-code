@@ -26,7 +26,7 @@ from scipy.linalg import lstsq
 from numpy.linalg import solve
 #from numpy.linalg import lstsq
 from scipy.sparse.linalg import lsqr
-#from scipy.sparse.linalg import lsmr
+from scipy.sparse.linalg import lsmr
 from scipy.sparse.linalg import dsolve
 from scipy.sparse import csc_matrix
 from scipy.linalg import pinv
@@ -389,7 +389,7 @@ if __name__=="__main__":
 		#satsolver=SATSolver("solve()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
-		satsolver=SATSolver("lsqr()")
+		satsolver=SATSolver("lsmr()")
 		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
 		#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
 		cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
