@@ -11520,3 +11520,13 @@ ratio is > 94 pegged at 94.5% which coincides with Alpha=1.0 pattern of ~95% for
 4. Logs for this have been committed to testlogs/
 5. Scipy 1.1 has initial guess parameter for x (SAT assignment) for faster convergence which can be utilized in
 future versions of SAT Solver.
+
+---------------------------------------------------------------------------------------------------------------
+544. (FEATURE-DONE) Computational Geometric Factorization - Spark 2.3 Upgrade - Single Core - 30-bit integer
+- 17 May 2018
+---------------------------------------------------------------------------------------------------------------
+1.Spark has been upgraded to 2.3 (oracle jdk 1.8) and Hyperbolic local tile search optimization for Computational
+Geometric Factorization has been executed for a 30-bit integer on Single Core Processor.
+2.Parallelism wont be perceptible in Single Core. This is just a dependency upgrade.
+3.Logs have been committed to testlogs/
+
