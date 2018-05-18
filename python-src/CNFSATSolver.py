@@ -168,6 +168,10 @@ class SATSolver(object):
 			self.equationsB.append(1)
 		a = np.array(self.equationsA)
                 b = np.array(self.equationsB)
+		init_guess = []
+		for n in xrange(number_of_variables):
+			init_guess.append(0.0001)
+		initial_guess = np.array(init_guess)
 		self.A=a
 		self.B=b
 		#print "a:",a
@@ -183,7 +187,8 @@ class SATSolver(object):
 		if self.Algorithm=="lsqr()":
                 	x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
 		if self.Algorithm=="lsmr()":
-                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
+                	#x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
+                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True,x0=initial_guess)
 		if self.Algorithm=="spsolve()":
 			x = dsolve.spsolve(csc_matrix(a),b)
 		if self.Algorithm=="pinv2()":
@@ -207,7 +212,7 @@ class SATSolver(object):
 			cnt+=1
 		print "solve_SAT2(): real_parity = ",real_parity
 		print "solve_SAT2(): binary_parity = ",binary_parity
-		return satass
+		return (satass,real_parity,binary_parity)
 	
 	def nonuniform_choice(self, literal_selection, numvars, numclauses):
 		randarrayclauses=np.random.choice(numclauses, int(math.sqrt(numclauses)), replace=True)
@@ -396,7 +401,7 @@ if __name__=="__main__":
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
-		satis=satsolver.satisfy(ass2)
+		satis=satsolver.satisfy(ass2[0])
 		print "Assignment satisfied:",satis[0]
 		average_percentage_of_clauses_satisfied += satis[1]
 		cnt += 1
