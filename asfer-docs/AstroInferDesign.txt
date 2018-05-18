@@ -11530,3 +11530,14 @@ Geometric Factorization has been executed for a 30-bit integer on Single Core Pr
 2.Parallelism wont be perceptible in Single Core. This is just a dependency upgrade.
 3.Logs have been committed to testlogs/
 
+-------------------------------------------------------------------------------------------------------------
+545. (FEATURE-DONE) SAT Solver Update - Initial Guess for LSMR - 1000 variables and Alpha=4.267 and 1.0
+- 18 May 2018
+-------------------------------------------------------------------------------------------------------------
+1. SAT Solver has been updated to invoke lsmr() function with an initial guess assignment vector - hardcoded
+to a decimal value < 1 and close to 0 for all variables.
+2. Binary and Real parities (Riemann Discrete Integral Sum) are printed along side the assignment vector for each random SAT
+3. SAT Solver has been executed for 1000 variables - Alpha=1.0 and 1000 variables - Alpha=4.267 for this
+initial guess and logs have been captured in testlogs/CNFSATSolver.1000variablesAlpha1.0.log.initial_guess.18May2018 and testlogs/CNFSATSolver.1000variablesAlpha4.267.log.initial_guess.18May2018
+4. As usual Alpha=1.0 converges to ~95% and Alpha=4.267 to ~90% for 150 and 20 random SAT iterations respectively.
+5. Non-uniform choice probability for Alpha=4.267 is alomst close to theoretical random matrix probability 1/sqrt(m*n)
