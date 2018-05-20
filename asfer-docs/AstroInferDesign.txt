@@ -11541,3 +11541,35 @@ to a decimal value < 1 and close to 0 for all variables.
 initial guess and logs have been captured in testlogs/CNFSATSolver.1000variablesAlpha1.0.log.initial_guess.18May2018 and testlogs/CNFSATSolver.1000variablesAlpha4.267.log.initial_guess.18May2018
 4. As usual Alpha=1.0 converges to ~95% and Alpha=4.267 to ~90% for 150 and 20 random SAT iterations respectively.
 5. Non-uniform choice probability for Alpha=4.267 is alomst close to theoretical random matrix probability 1/sqrt(m*n)
+
+----------------------------------------------------------------------------------------------------------------
+546. (THEORY) Depth-2 Recursive Majority Circuit and a Contradiction - related to 14,319,430 - 20 May 2018
+- Updates to https://sites.google.com/site/kuja27/IndepthAnalysisOfVariantOfMajorityVotingwithZFAOC_2014.pdf
+----------------------------------------------------------------------------------------------------------------
+Depth-2 Recursive Majority Circuit consists of two levels of Majority circuits composed as:
+	Maj(Maj1,Maj2,Maj3,...,Majn)
+for majority functions Maj1,Maj2,...Majn for each constituencies c1,c2,c3,...,cn respectively.This kind of social
+ choice function is followed by most real world democracies. For Multiway Contests binary indices 0,1 for candidates are replaced by large integers. Following is a schematic for hash table representation of depth-2 Majority voting function for 2 candidates:
+
+	c1:	########################################
+		@@@@@@@@@@@@@@@@@@@
+
+	c2:	####################
+		@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+	c3:	################################
+		@@@@@@@@@@@@@@@@@@@@
+		...
+
+for constituencies c1,c2,c3,... and for candidate0 and candidate1. Votes for Candidate0 are collated in bucket marked # and Votes for Candidate1 are collated in bucket marked @ per constituency by a theoretical electronic voting machine using Locality Sensitive Hashing. Winners are: 
+	For c1, Candidate0 (#)
+	For c2, Candidate1 (@)
+	For c3, Candidate0 (#)
+and in 2 of 3 constituencies, Candidate0 wins and therefore attains depth-2 majority. But if the constituency gerrymandering vanishes and votes in all constituencies for Candidate0 and Candidate1 are summed up, Candidate1 wins- Total @(s) outnumber Total #(s). Previous hash table representation of depth-2 Majority function can be translated to depth-2 Majority circuit composition Maj(Maj1,Maj2,...,Majn). In terms of Majority depth-2 composition circuit this can be written as:
+	leaf: Sum(parity(c1,0),parity(c2,0),...) > Sum(parity(c1,1),parity(c2,1),...)
+	depth-1: Sum(parity(c1,0),parity(c2,0),...) < Sum(parity(c1,1),parity(c2,1),...)
+In other words, Total number of 0s > Total number of 1s at leaf of the Majority depth-2 circuit but Total number of 0s < Total number of 1s at depth 1 of the composition. Depth-2 majority is a direct consequence and application of Axiom of Choice in ZF Set Theory which states that there exists a choice function which chooses an element from each set in a set of sets possibly infinite.
+
+References:
+----------
+546.1 Boots and Socks Metaphor for Axiom of Choice - [Bertrand Russell] - https://en.wikipedia.org/wiki/Axiom_of_choice#cite_note-30 - AoC is necessary to choose a sock but not to choose a shoe.
