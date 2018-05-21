@@ -11578,7 +11578,7 @@ References:
 
 --------------------------------------------------------------------------------------------------------------
 547. (FEATURE-DONE) Graph Mining - GSpan Algorithm Implementation Update - for mining patterns in EventNet 
-DOT files
+DOT files - 21 May 2018
 --------------------------------------------------------------------------------------------------------------
 1.GSpan GraphMining implementation has been updated to read EventNet DOT file as input
 2.This enables mining EventNet Event-Partakers Graph for patterns
@@ -11587,3 +11587,14 @@ DOT files
 5.Mining this Economic Network EventNet requires Frequent SubGraph Mining(GSpan)
 6.log for this has been committed to testlogs/GraphMining_GSpan.log.21May2018
 
+---------------------------------------------------------------------------------------------------------------
+548. (FEATURE-DONE) ThoughtNet - Contextual Multi Armed Bandit Evocation - Update - 21 May 2018
+---------------------------------------------------------------------------------------------------------------
+1.Python implementation DeepLearning_ReinforcementLearningThoughtNet.py has been updated to Classify the input
+text by Recursive Gloss Overlap Definition Graph Core Number Classifier and lookup the classes in the ThoughtNet
+Hypergraph
+2.ThoughtNet Hypergraph has been recreated having classes mostly belonging to terrorism, economics, social progress etc.,
+ extracted from chronologically older thought edges.
+3.Input to ThoughtNet Reinforcement Learning has been updated to have recent events/thoughts/stimuli
+4.Logs for the evocation of the new thoughts on the ThoughtNet hypergraph is in ThoughtNet/ThoughtNet_Hypergraph_Generated.txt
+5.Logs show a recent terrorist event evoking an older event of similar class among others.
