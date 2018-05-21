@@ -57,6 +57,8 @@ import ast
 ##############################################################################
 #In this aspect, ThoughtNet is a qualitative experimental inference model compared to quantitative Neural Networks.
 
+from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
+
 #ThoughtNet File System Storage - eval()-ed to dict and list
 thoughtnet_edges_storage=open("./ThoughtNet/ThoughtNet_Edges.txt","r")
 thoughtnet_hypergraph_storage=open("./ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
@@ -65,20 +67,25 @@ thoughtnet_edges=ast.literal_eval(thoughtnet_edges_storage.read())
 thoughtnet_hypergraph=ast.literal_eval(thoughtnet_hypergraph_storage.read())
 
 inputf=open("ReinforcementLearning.input.txt","r")
-reward=0.0
-for obs in inputf.read().split():
+classification=RecursiveGlossOverlap_Classify(inputf.read())
+print "classification :"
+print classification
+creamylayer=int(len(classification[0])*1)
+toppercentileclasses=classification[0][:creamylayer]
+print "top percentile classes:"
+print toppercentileclasses
+print "======================================================================================================="
+print "ThoughtNet Reinforcement Learning - Contextual Multi Armed Bandit Evocation"
+print "======================================================================================================="
+for cls, occurrence in toppercentileclasses:
 	#Evocatives are returned from ThoughtNet storage
 	print "==========================================================================================="
-	print "Observation:",obs.lower()
 	try:
 		#It is assumed in present implementation that every thought edge is a state implicitly, and the action
-		#for the state is the "meaning" inferred by recursive lambda evaluation (lambda composition tree evaluation for a natural
-		#language sentence is not implemented separately because its reverse is already done through closure of a RGO graph in other
-		#code in NeuronRain AsFer. Approximately every edge in Recursive Gloss Overlap wordnet subgraph is a lambda function with its
-		#two vertices as operands which gives a more generic lambda graph composition of a text)
-		if thoughtnet_hypergraph[obs.lower()] is not None:
-			for s in thoughtnet_hypergraph[obs.lower()]:
-				print "evocative thought (reward) returned(in descending order of evocation potential):", thoughtnet_edges[s] 
+		#for the state is the "meaning" inferred by recursive lambda evaluation
+		if thoughtnet_hypergraph[cls] is not None:
+			for s in thoughtnet_hypergraph[cls]:
+				print "evocative thought (reward) returned(in descending order of evocation potential) for class [",cls,"] :", thoughtnet_edges[s] 
 	except:
 		pass
 
