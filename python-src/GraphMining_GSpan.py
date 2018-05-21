@@ -11,17 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 #GSpan Algorithm implementation for mining subgraph patterns in Graph Datasets
@@ -31,6 +23,8 @@ import networkx as nx
 import operator
 from collections import defaultdict
 import json
+from networkx.drawing.nx_pydot import read_dot
+from networkx.classes.function import edges
 
 numeric=False
 
@@ -49,7 +43,7 @@ class GSpan(object):
 	def DepthFirstTrees(self):
 		for g in self.graph_dataset:
 			vertices=g.nodes()
-			dfstree=nx.dfs_tree(g,vertices[0])
+			dfstree=nx.dfs_tree(g)
 			self.graph_dataset_dfs.append(dfstree)
 
 	def Graph2DFSCodes(self):
@@ -59,7 +53,7 @@ class GSpan(object):
 
 	def DFSCode(self,t):
 		vertices=t.nodes()
-		tdfs=nx.dfs_tree(t,vertices[0])
+		tdfs=nx.dfs_tree(t)
 		sorted_edges=sorted(tdfs.edges(),key=operator.itemgetter(0), reverse=False)
 		dfscode=""
 		for s in sorted_edges:
@@ -165,6 +159,7 @@ if __name__=="__main__":
 	G11=nx.Graph()
 	G12=nx.Graph()
 	G13=nx.Graph()
+	G14=nx.Graph(read_dot("../cpp-src/EventNet/EventNet_BoostGL.dot"))
 	G1.add_edges_from([(1,2),(2,3),(2,4),(1,5),(2,5)])
 	G2.add_edges_from([(1,3),(4,3),(5,4),(2,5),(1,5)])
 	G3.add_edges_from([(1,4),(5,3),(5,2),(4,5),(1,2)])
@@ -176,24 +171,25 @@ if __name__=="__main__":
 	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.1")
 	G9edges=json.load(rgof)
 	G9.add_edges_from(G9edges)
-	print "G9edges:",G9.edges()
+	#print "G9edges:",G9.edges()
 	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.2")
 	G10edges=json.load(rgof)
 	G10.add_edges_from(G10edges)
-	print "G10edges:",G10.edges()
+	#print "G10edges:",G10.edges()
 	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.3")
 	G11edges=json.load(rgof)
 	G11.add_edges_from(G11edges)
-	print "G11edges:",G11.edges()
+	#print "G11edges:",G11.edges()
 	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.4")
 	G12edges=json.load(rgof)
 	G12.add_edges_from(G12edges)
-	print "G11edges:",G12.edges()
+	#print "G11edges:",G12.edges()
 	rgof=open("./InterviewAlgorithm/graphmining/RecursiveGlossOverlapGraph.WebSpider-HTML.out.5")
 	G13edges=json.load(rgof)
 	G13.add_edges_from(G13edges)
-	print "G13edges:",G13.edges()
+	#print "G13edges:",G13.edges()
 	#dataset=[G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12,G13]
-	dataset=[G12,G13]
+	print "G14edges:",G14.edges()
+	dataset=[G13,G14]
 	gspan=GSpan(dataset)
 	gspan.GraphSet_Projection()	
