@@ -7991,6 +7991,7 @@ References:
 430.5 Problems with Electronic Voting Machines (e.g DRE machines), VVPAT and Trusting source code - [Bruce Schneier] - https://www.schneier.com/blog/archives/2004/11/the_problem_wit.html
 430.6 B-Cryptographic counters protocol augmented with Public Key Infrastructure for Incrementing Counters in Tabulation Authority - https://crypto.stanford.edu/pbc/notes/crypto/voting.html - Previous LSH based theoretical voting machine requires such a secure increment protocol for incrementing tabulation hashing buckets. Anonymity requires shuffling the buckets.
 430.7 PP is as hard as polynomial time hierarchy - [Toda] - http://epubs.siam.org/doi/abs/10.1137/0220053?journalCode=smjcat and [SanjeevArora-BoazBarak] - http://theory.cs.princeton.edu/complexity/book.pdf
+430.8 Beyond Locality Sensitive Hashing - [Alexandr Andoni,Piotr Indyk, Huy L. Nguy˜ên, Ilya Razenshteyn] - http://www.mit.edu/~andoni/papers/subLSH.pdf - Two level LSH partitioning by hash tables - Outer hashing creates buckets for the hash table and Inner hashing creates hash table for each buckets around a centroid.
 
 ----------------------------------------------------------------------------------------------------------------------
 431. (FEATURE-DONE and THEORY) Approximate CNF SAT Solver Update - percentage of clauses satisfied - 18 July 2017
