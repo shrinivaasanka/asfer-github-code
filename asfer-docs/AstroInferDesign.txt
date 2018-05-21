@@ -11574,3 +11574,15 @@ In other words, Total number of 0s > Total number of 1s at leaf of the Majority 
 References:
 ----------
 546.1 Boots and Socks Metaphor for Axiom of Choice - [Bertrand Russell] - https://en.wikipedia.org/wiki/Axiom_of_choice#cite_note-30 - AoC is necessary to choose a sock but not to choose a shoe.
+
+--------------------------------------------------------------------------------------------------------------
+547. (FEATURE-DONE) Graph Mining - GSpan Algorithm Implementation Update - for mining patterns in EventNet 
+DOT files
+--------------------------------------------------------------------------------------------------------------
+1.GSpan GraphMining implementation has been updated to read EventNet DOT file as input
+2.This enables mining EventNet Event-Partakers Graph for patterns
+3.EventNet has been implemented in NeuronRain AsFer in C++ and Python for persisting general purpose Cloud Event-Actors conversations as Graph.
+4.EventNet is also an Economic Trading Network/Money Flow Market for KingCobra Fictitious Neuro Electronic Currency and Buyer-Seller networks in Neuro Money Flow Markets e.g AsFer-KingCobra Cloud Move of Neuro Currency writes out an EventNet edge in a DOT file from Buyers to Sellers
+5.Mining this Economic Network EventNet requires Frequent SubGraph Mining(GSpan)
+6.log for this has been committed to testlogs/GraphMining_GSpan.log.21May2018
+
