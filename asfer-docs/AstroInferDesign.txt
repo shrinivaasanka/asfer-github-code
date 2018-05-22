@@ -11598,3 +11598,23 @@ Hypergraph
 3.Input to ThoughtNet Reinforcement Learning has been updated to have recent events/thoughts/stimuli
 4.Logs for the evocation of the new thoughts on the ThoughtNet hypergraph is in ThoughtNet/ThoughtNet_Hypergraph_Generated.txt
 5.Logs show a recent terrorist event evoking an older event of similar class among others.
+
+--------------------------------------------------------------------------------------------------------------
+549. (FEATURE-DONE) ThoughtNet Reinforcement Learning - Contextual Multi Armed Bandit Evocation Update
+- 22 May 2018
+--------------------------------------------------------------------------------------------------------------
+1. RecursiveGlossOverlap_Classifier.py has been updated to return both the definition graph NetworkX object
+and Recursive Gloss Overlap Intrinsic Merit
+2. RecursiveLambdaFunctionGrowth.py has been updated to return all intrinsic merits from grow_lambda_function3():
+	2.1 Korner Entropy of Definition Graph
+	2.2 Bose Einstein Intrinsic Fitness
+	2.3 Graph Tensor Neuron Network Instrinsic Merit
+	2.4 Definition Graph Density
+	2.5 Definition Graph Recursive Gloss Overlap Intrinsic Merit
+	2.6 Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit
+3.ThoughtNet/Create_ThoughtNet_Hypergraph.py has been updated to make a choice for merit criterion by choosing between
+sentiment scoring and graph tensor neuron network intrinsic merit for ThoughtNet HyperGraph edges
+4.ThoughtNet/ThoughtNet_Hypergraph_Generated.txt has been recreated based on Graph Tensor Neuron Network Intrinsic Merit and the sorted order of hyperedges for most vertices is different compared to
+sentiment scoring earlier
+5.Logs for previous ThoughtNet creation has been committed to ThoughtNet/testlogs/Create_ThoughtNet_Hypergraph.GraphTensorNeuronNetwork.log.22May2018
+6.Logs for ThoughtNet Contextual Multi Armed Bandit Evocation has been committed to testlogs/DeepLearning_ReinforcementLearningThoughtNet.log.22May2018
