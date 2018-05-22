@@ -243,7 +243,7 @@ def RecursiveGlossOverlapGraph(text):
 	#plt.show()
 
 	nxg.remove_edges_from(nxg.selfloop_edges())
-	return nxg
+	return (nxg, intrinsic_merit)
 
 def RecursiveGlossOverlap_Classify(text):
 	definitiongraphedges=defaultdict(list)

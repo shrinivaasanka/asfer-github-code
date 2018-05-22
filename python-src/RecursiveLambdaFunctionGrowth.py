@@ -345,7 +345,8 @@ class RecursiveLambdaFunctionGrowth(object):
 	def grow_lambda_function3(self,text):
 		stpairs=[]
 		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
-		definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+		definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+		definitiongraph=definitiongraph_merit[0]
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
 		for a in definitiongraph.nodes():
 			for b in definitiongraph.nodes():
@@ -388,14 +389,31 @@ class RecursiveLambdaFunctionGrowth(object):
 				except KeyError:
 					pass
 				rw_ct=""
+		intrinsic_merit_dict={}
 		print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:",self.graph_tensor_neuron_network_intrinsic_merit
+
 		self.korner_entropy(definitiongraph)
 		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
-		self.graph_tensor_neuron_network_intrinsic_merit=1.0
-		print "grow_lambda_function3(): Graph Density (Regularity Lemma):",self.density(definitiongraph)
-		print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:",self.bose_einstein_intrinsic_fitness(definitiongraph)
+
+		density = self.density(definitiongraph)
+		print "grow_lambda_function3(): Graph Density (Regularity Lemma):",density
+
+		bose_einstein_intrinsic_fitness=self.bose_einstein_intrinsic_fitness(definitiongraph)
+		print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:",bose_einstein_intrinsic_fitness
+
 		print "grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+
 		print "grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:",RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
+
+		intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"]=self.graph_tensor_neuron_network_intrinsic_merit
+		intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"]=maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+		intrinsic_merit_dict["korner_entropy"]=self.entropy
+		intrinsic_merit_dict["density"]=self.density
+		intrinsic_merit_dict["bose_einstein_intrinsic_fitness"]=bose_einstein_intrinsic_fitness
+		intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
+
+		self.graph_tensor_neuron_network_intrinsic_merit=1.0
+		return intrinsic_merit_dict 
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):
