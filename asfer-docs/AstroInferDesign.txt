@@ -11619,3 +11619,24 @@ sentiment scoring and graph tensor neuron network intrinsic merit for ThoughtNet
 sentiment scoring earlier
 5.Logs for previous ThoughtNet creation has been committed to ThoughtNet/testlogs/Create_ThoughtNet_Hypergraph.GraphTensorNeuronNetwork.log.22May2018
 6.Logs for ThoughtNet Contextual Multi Armed Bandit Evocation has been committed to testlogs/DeepLearning_ReinforcementLearningThoughtNet.log.22May2018
+
+---------------------------------------------------------------------------------------------------------------
+550. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Single Core - Hardy-Ramanujan Ray Shooting Queries - 23 May 2018
+---------------------------------------------------------------------------------------------------------------
+1. Hard-Ramanujan Approximate Ray Shooting Queries function has been refactored to compute the angle and tangent
+of the ray simply as functions of multiples of N/k*loglogN.
+2. Precisely angle between the rays must be a function of spacing/gap between prime factors of N which is
+at present assumed to be equal.
+3. Cramer's bound for Spacing between primes is O(sqrt(p)*log(p)) assuming Riemann Hypothesis is true while
+ the best known modern bound proved in 1995 and 2001 by [Baker-Harman-Pintz] is p^(0.525) which is unconditional.
+4. Prime number theorem implies prime counting function ~ N/logN. Probability that a prime below N is a prime factor of N is roughly: (loglogN*logN)/N - ratio of Hardy-Ramanujan estimate and Prime Counting Function.
+5. Even with this equal spacing between prime factors, two experimental logs committed herewith show
+previous approximate ray shooting is exact, passing through an exact factor found by tile binary search. Both logs have an exact match for one factor - approximate and exact ray shooting coincide.
+6. By replacing equal spacing by a function of Cramer and Baker-Harman-Pintz Prime Gap estimate might accurately fine tune the location of a factor further.
+
+References:
+-----------
+550.1 Gaps between Consecutive Primes - [Harald Cramer] - http://matwbn.icm.edu.pl/ksiazki/aa/aa2/aa212.pdf
+550.2 Gaps between Integers with Same Prime Factors - [Cochrane-Dressler] - https://pdfs.semanticscholar.org/0dea/870aecd2513323c6f7df6b27fc31660b215c.pdf
+550.3 Gaps between Consecutive Primes - [Baker-Harman-Pintz] - https://academic.oup.com/plms/article-abstract/83/3/532/1479119
+
