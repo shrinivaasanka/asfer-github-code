@@ -129,22 +129,21 @@ def binary_search_interval(xl,yl,xr,yr):
                		        binary_search_interval(xl+int((xr-xl)/2)+1, yl, xr, yr)
 
 def hardy_ramanujan_ray_shooting_queries(n):
-	#Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of factors of N
-	#Approximate Factors are y(m) = SquareRoot(N/(tan(m*pi)/2kloglogN)) - 1 , m=1,2,...,kloglogN
-	k=2.0
+	#Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
+	#Approximate Prime Factors are y(m) = m*N/kloglogN, m=1,2,3,...,kloglogN
+	k=5.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of ",n," are:"
 	print "============================================================================================================="
 	print "normal_order_n(loglogN) = ",normal_order_n
 	for m in xrange(1,normal_order_n):
-		m_pi=float(m)*math.pi
-		tan_m_pi=math.tan(m_pi/(2.0*normal_order_n))
-		#print "tan_m_pi=",tan_m_pi
-		approximate_factor=float(n)/(tan_m_pi)
-		if approximate_factor > 2:
-			approximate_factor=math.sqrt(approximate_factor) - 1
-			print "approximate_factor(",m,") = ",approximate_factor
+		approximate_prime_factor = int(float(m*n)/float(normal_order_n))
+		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		print "####################################################################"
+		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
+		print "tangent of ray shooting query angle :",tan_theta
+		print "####################################################################"
 	print "============================================================================================================="
 
 def SearchTiles_and_Factorize(n): 

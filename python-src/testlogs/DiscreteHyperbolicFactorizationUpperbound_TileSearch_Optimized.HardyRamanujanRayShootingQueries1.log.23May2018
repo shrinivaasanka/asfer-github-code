@@ -1,0 +1,182 @@
+1988-01-01 02:55:22 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+1988-01-01 02:55:22 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+1988-01-01 02:55:23 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+1988-01-01 02:55:24 INFO  SparkContext:54 - Running Spark version 2.3.0
+1988-01-01 02:55:25 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+1988-01-01 02:55:25 INFO  SecurityManager:54 - Changing view acls to: root
+1988-01-01 02:55:25 INFO  SecurityManager:54 - Changing modify acls to: root
+1988-01-01 02:55:25 INFO  SecurityManager:54 - Changing view acls groups to: 
+1988-01-01 02:55:25 INFO  SecurityManager:54 - Changing modify acls groups to: 
+1988-01-01 02:55:25 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+1988-01-01 02:55:25 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: 51:18:93:41:89:e2:6a:c4
+1988-01-01 02:55:25 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 43112.
+1988-01-01 02:55:25 INFO  SparkEnv:54 - Registering MapOutputTracker
+1988-01-01 02:55:25 INFO  SparkEnv:54 - Registering BlockManagerMaster
+1988-01-01 02:55:25 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+1988-01-01 02:55:25 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+1988-01-01 02:55:25 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-e763c185-881d-4f2a-bd44-9bb849cc2def
+1988-01-01 02:55:26 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+1988-01-01 02:55:26 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+1988-01-01 02:55:26 INFO  log:192 - Logging initialized @5840ms
+1988-01-01 02:55:26 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+1988-01-01 02:55:26 INFO  Server:414 - Started @6037ms
+1988-01-01 02:55:26 INFO  AbstractConnector:278 - Started ServerConnector@4c00d8{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+1988-01-01 02:55:26 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3cde21{/jobs,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@698f9d{/jobs/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f71a83{/jobs/job,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10c6b15{/jobs/job/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c1098e{/stages,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f22377{/stages/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@12e81e9{/stages/stage,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@778a3a{/stages/stage/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1a17f54{/stages/pool,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ba026c{/stages/pool/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fab6b{/storage,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16fc028{/storage/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@122594e{/storage/rdd,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f58d64{/storage/rdd/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f52a02{/environment,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@adcd4{/environment/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10917f2{/executors,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@bc331a{/executors/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@73be75{/executors/threadDump,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@9b31d3{/executors/threadDump/json,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1dc1f35{/static,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@80e972{/,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f2fc95{/api,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@c7eef3{/jobs/job/kill,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@169c616{/stages/stage/kill,null,AVAILABLE,@Spark}
+1988-01-01 02:55:26 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+1988-01-01 02:55:27 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 567984327232
+1988-01-01 02:55:27 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-84c30f6a-b4cf-4b24-a993-010ff2be0c1a/userFiles-d04c1cea-0450-4072-86eb-7f3b641b09f5/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+1988-01-01 02:55:27 INFO  Executor:54 - Starting executor ID driver on host localhost
+1988-01-01 02:55:27 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34848.
+1988-01-01 02:55:27 INFO  NettyBlockTransferService:54 - Server created on HCL:34848
+1988-01-01 02:55:27 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+1988-01-01 02:55:27 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 34848, None)
+1988-01-01 02:55:27 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:34848 with 413.9 MB RAM, BlockManagerId(driver, HCL, 34848, None)
+1988-01-01 02:55:27 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 34848, None)
+1988-01-01 02:55:27 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 34848, None)
+1988-01-01 02:55:27 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f1dfef{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  13915  are:
+=============================================================================================================
+normal_order_n(loglogN) =  11
+['__doc__', '__name__', '__package__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+####################################################################
+approximate  1 -th prime factor of  13915 : 1265
+tangent of ray shooting query angle : 0.00869565217391
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  13915 : 2530
+tangent of ray shooting query angle : 0.00217391304348
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  13915 : 3795
+tangent of ray shooting query angle : 0.000966183574879
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  13915 : 5060
+tangent of ray shooting query angle : 0.00054347826087
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  13915 : 6325
+tangent of ray shooting query angle : 0.000347826086957
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  13915 : 7590
+tangent of ray shooting query angle : 0.00024154589372
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  13915 : 8855
+tangent of ray shooting query angle : 0.000177462289264
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  13915 : 10120
+tangent of ray shooting query angle : 0.000135869565217
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  13915 : 11385
+tangent of ray shooting query angle : 0.000107353730542
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  13915 : 12650
+tangent of ray shooting query angle : 8.69565217391e-05
+####################################################################
+=============================================================================================================
+1988-01-01 02:55:29 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167) with 2 output partitions
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167)
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Parents of final stage: List()
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Missing parents: List()
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167), which has no missing parents
+1988-01-01 02:55:29 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+1988-01-01 02:55:29 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 6.5 KB, free 413.9 MB)
+1988-01-01 02:55:29 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 413.9 MB)
+1988-01-01 02:55:29 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:34848 (size: 4.1 KB, free: 413.9 MB)
+1988-01-01 02:55:29 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+1988-01-01 02:55:29 INFO  DAGScheduler:54 - Submitting 2 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167) (first 15 tasks are for partitions Vector(0, 1))
+1988-01-01 02:55:29 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 2 tasks
+1988-01-01 02:55:30 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7838 bytes)
+1988-01-01 02:55:30 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7838 bytes)
+1988-01-01 02:55:30 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+1988-01-01 02:55:30 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+1988-01-01 02:55:30 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 567984327232
+1988-01-01 02:55:30 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-84c30f6a-b4cf-4b24-a993-010ff2be0c1a/userFiles-d04c1cea-0450-4072-86eb-7f3b641b09f5/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+1988-01-01 02:55:30 INFO  PythonRunner:54 - Times: total = 656, boot = 571, init = 32, finish = 53
+1988-01-01 02:55:31 INFO  PythonRunner:54 - Times: total = 664, boot = 573, init = 30, finish = 61
+1988-01-01 02:55:31 INFO  Executor:54 - Finished task 1.0 in stage 0.0 (TID 1). 1310 bytes result sent to driver
+1988-01-01 02:55:31 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1310 bytes result sent to driver
+1988-01-01 02:55:31 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 1134 ms on localhost (executor driver) (1/2)
+1988-01-01 02:55:31 INFO  TaskSetManager:54 - Finished task 1.0 in stage 0.0 (TID 1) in 1079 ms on localhost (executor driver) (2/2)
+1988-01-01 02:55:31 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+1988-01-01 02:55:31 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167) finished in 1.742 s
+1988-01-01 02:55:31 INFO  DAGScheduler:54 - Job 0 finished: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:167, took 1.944121 s
+1988-01-01 02:55:31 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+1988-01-01 02:55:31 INFO  AbstractConnector:318 - Stopped Spark@4c00d8{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+1988-01-01 02:55:31 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+1988-01-01 02:55:31 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+1988-01-01 02:55:31 INFO  MemoryStore:54 - MemoryStore cleared
+1988-01-01 02:55:31 INFO  BlockManager:54 - BlockManager stopped
+1988-01-01 02:55:31 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+1988-01-01 02:55:31 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+1988-01-01 02:55:31 INFO  SparkContext:54 - Successfully stopped SparkContext
+1988-01-01 02:55:31 INFO  ShutdownHookManager:54 - Shutdown hook called
+1988-01-01 02:55:31 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-84c30f6a-b4cf-4b24-a993-010ff2be0c1a
+1988-01-01 02:55:31 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-84c30f6a-b4cf-4b24-a993-010ff2be0c1a/pyspark-0f52d3f4-1639-44da-ab23-1f7cd1e52fb9
+1988-01-01 02:55:31 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-055f18b1-d051-454d-b576-26f94720945d
+=================================================
+Factor is =  1
+=================================================
+=================================================
+Factor is =  5
+=================================================
+=================================================
+Factor is =  11
+=================================================
+=================================================
+Factor is =  23
+=================================================
+=================================================
+Factor is =  55
+=================================================
+=================================================
+Factor is =  115
+=================================================
+=================================================
+Factor is =  121
+=================================================
+=================================================
+Factor is =  253
+=================================================
+=================================================
+Factor is =  605
+=================================================
+=================================================
+Factor is =  1265
+=================================================
+=================================================
+Factor is =  2783
+=================================================
+
