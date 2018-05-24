@@ -1,0 +1,381 @@
+2018-05-24 13:54:44 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+2018-05-24 13:54:44 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-05-24 13:54:45 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-05-24 13:54:47 INFO  SparkContext:54 - Running Spark version 2.3.0
+2018-05-24 13:54:47 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+2018-05-24 13:54:47 INFO  SecurityManager:54 - Changing view acls to: root
+2018-05-24 13:54:47 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-05-24 13:54:47 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-05-24 13:54:47 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-05-24 13:54:47 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-05-24 13:54:47 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: 6b:9e:b1:bf:1f:91:7c:07
+2018-05-24 13:54:47 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 54425.
+2018-05-24 13:54:47 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-05-24 13:54:48 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-05-24 13:54:48 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-05-24 13:54:48 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-05-24 13:54:48 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-3a8c08e2-b852-4f6a-95f6-8f85a373c1f5
+2018-05-24 13:54:48 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-05-24 13:54:48 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-05-24 13:54:48 INFO  log:192 - Logging initialized @5883ms
+2018-05-24 13:54:48 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-05-24 13:54:48 INFO  Server:414 - Started @6080ms
+2018-05-24 13:54:48 INFO  AbstractConnector:278 - Started ServerConnector@4c00d8{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-05-24 13:54:48 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3cde21{/jobs,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@698f9d{/jobs/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f71a83{/jobs/job,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10c6b15{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c1098e{/stages,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f22377{/stages/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@12e81e9{/stages/stage,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@778a3a{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1a17f54{/stages/pool,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ba026c{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fab6b{/storage,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16fc028{/storage/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@122594e{/storage/rdd,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f58d64{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f52a02{/environment,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@adcd4{/environment/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10917f2{/executors,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@bc331a{/executors/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@73be75{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@9b31d3{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1dc1f35{/static,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@80e972{/,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f2fc95{/api,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@c7eef3{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@169c616{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-05-24 13:54:48 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+2018-05-24 13:54:49 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1527150289378
+2018-05-24 13:54:49 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-89502d87-80cb-4043-aef2-0c979494e84e/userFiles-16aced8f-411f-4bdb-a704-d217885cbb19/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-05-24 13:54:49 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-05-24 13:54:49 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 50450.
+2018-05-24 13:54:49 INFO  NettyBlockTransferService:54 - Server created on HCL:50450
+2018-05-24 13:54:49 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-05-24 13:54:49 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 50450, None)
+2018-05-24 13:54:49 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:50450 with 413.9 MB RAM, BlockManagerId(driver, HCL, 50450, None)
+2018-05-24 13:54:49 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 50450, None)
+2018-05-24 13:54:49 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 50450, None)
+2018-05-24 13:54:50 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f1dfef{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  881283  are:
+=============================================================================================================
+normal_order_n(loglogN) =  21
+####################################################################
+approximate  1 -th prime factor of  881283 : 41965
+tangent of ray shooting query angle : 0.000500427235288
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  881283 : 83931
+tangent of ray shooting query angle : 0.000125103827657
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  881283 : 125897
+tangent of ray shooting query angle : 5.56012595376e-05
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  881283 : 167863
+tangent of ray shooting query angle : 3.12755842788e-05
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  881283 : 209829
+tangent of ray shooting query angle : 2.00163262416e-05
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  881283 : 251795
+tangent of ray shooting query angle : 1.39002044748e-05
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  881283 : 293761
+tangent of ray shooting query angle : 1.02123835363e-05
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  881283 : 335726
+tangent of ray shooting query angle : 7.81889606969e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  881283 : 377692
+tangent of ray shooting query angle : 6.17788501239e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  881283 : 419658
+tangent of ray shooting query angle : 5.00408156039e-06
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  881283 : 461624
+tangent of ray shooting query angle : 4.13560101184e-06
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  881283 : 503590
+tangent of ray shooting query angle : 3.47505111871e-06
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  881283 : 545556
+tangent of ray shooting query angle : 2.96098849318e-06
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  881283 : 587522
+tangent of ray shooting query angle : 2.55309588407e-06
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  881283 : 629487
+tangent of ray shooting query angle : 2.22403624906e-06
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  881283 : 671453
+tangent of ray shooting query angle : 1.95471819506e-06
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  881283 : 713419
+tangent of ray shooting query angle : 1.73151416921e-06
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  881283 : 755385
+tangent of ray shooting query angle : 1.54446716387e-06
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  881283 : 797351
+tangent of ray shooting query angle : 1.38616939584e-06
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  881283 : 839317
+tangent of ray shooting query angle : 1.25101740906e-06
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of  881283  are:
+=============================================================================================================
+normal_order_n(loglogN) =  21
+####################################################################
+approximate  1 -th prime factor of  881283 : 14978.4479977
+tangent of ray shooting query angle : 0.00392809299342
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  881283 : 6408.74022008
+tangent of ray shooting query angle : 0.0214570521747
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  881283 : 5262.57388391
+tangent of ray shooting query angle : 0.0318213778393
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  881283 : 5100.44200384
+tangent of ray shooting query angle : 0.0338765960327
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  881283 : 5077.2352106
+tangent of ray shooting query angle : 0.0341869869503
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  881283 : 5073.90742401
+tangent of ray shooting query angle : 0.0342318455948
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  881283 : 5073.43010253
+tangent of ray shooting query angle : 0.0342382871397
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  881283 : 5073.36163525
+tangent of ray shooting query angle : 0.0342392112678
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  881283 : 5073.35181421
+tangent of ray shooting query angle : 0.0342393438291
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  881283 : 5073.35040547
+tangent of ray shooting query angle : 0.0342393628439
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  881283 : 5073.3502034
+tangent of ray shooting query angle : 0.0342393655714
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  881283 : 5073.35017441
+tangent of ray shooting query angle : 0.0342393659627
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  881283 : 5073.35017025
+tangent of ray shooting query angle : 0.0342393660188
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  881283 : 5073.35016966
+tangent of ray shooting query angle : 0.0342393660268
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  881283 : 5073.35016957
+tangent of ray shooting query angle : 0.034239366028
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  881283 : 5073.35016956
+tangent of ray shooting query angle : 0.0342393660282
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  881283 : 5073.35016956
+tangent of ray shooting query angle : 0.0342393660282
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  881283 : 5073.35016956
+tangent of ray shooting query angle : 0.0342393660282
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  881283 : 5073.35016956
+tangent of ray shooting query angle : 0.0342393660282
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  881283 : 5073.35016956
+tangent of ray shooting query angle : 0.0342393660282
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of  881283  are:
+=============================================================================================================
+normal_order_n(loglogN) =  21
+####################################################################
+approximate  1 -th prime factor of  881283 : 4213232.69974
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  881283 : 22167394.7246
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  881283 : 58268196.6137
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  881283 : 114799436.999
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  881283 : 193203097.389
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  881283 : 294508445.534
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  881283 : 419508213.944
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  881283 : 568844380.532
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  881283 : 743055388.548
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  881283 : 942604575.753
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  881283 : 1167898485.52
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  881283 : 1419299295.28
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  881283 : 1697133611.53
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  881283 : 2001698908.32
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  881283 : 2333268374.92
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  881283 : 2692094652.81
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  881283 : 3078412775.05
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  881283 : 3492442518.54
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  881283 : 3934390315.04
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  881283 : 4404450824.24
+####################################################################
+2018-05-24 13:54:51 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203
+2018-05-24 13:54:51 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203) with 2 output partitions
+2018-05-24 13:54:51 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203)
+2018-05-24 13:54:51 INFO  DAGScheduler:54 - Parents of final stage: List()
+2018-05-24 13:54:51 INFO  DAGScheduler:54 - Missing parents: List()
+2018-05-24 13:54:51 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203), which has no missing parents
+2018-05-24 13:54:51 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-05-24 13:54:51 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 6.5 KB, free 413.9 MB)
+2018-05-24 13:54:52 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 413.9 MB)
+2018-05-24 13:54:52 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:50450 (size: 4.1 KB, free: 413.9 MB)
+2018-05-24 13:54:52 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-05-24 13:54:52 INFO  DAGScheduler:54 - Submitting 2 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203) (first 15 tasks are for partitions Vector(0, 1))
+2018-05-24 13:54:52 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 2 tasks
+2018-05-24 13:54:52 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7839 bytes)
+2018-05-24 13:54:52 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7839 bytes)
+2018-05-24 13:54:52 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-05-24 13:54:52 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+2018-05-24 13:54:52 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1527150289378
+2018-05-24 13:54:52 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-89502d87-80cb-4043-aef2-0c979494e84e/userFiles-16aced8f-411f-4bdb-a704-d217885cbb19/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-05-24 13:54:55 INFO  PythonRunner:54 - Times: total = 2483, boot = 578, init = 25, finish = 1880
+2018-05-24 13:54:55 INFO  PythonRunner:54 - Times: total = 2509, boot = 571, init = 42, finish = 1896
+2018-05-24 13:54:55 INFO  Executor:54 - Finished task 1.0 in stage 0.0 (TID 1). 1310 bytes result sent to driver
+2018-05-24 13:54:55 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1310 bytes result sent to driver
+2018-05-24 13:54:55 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 2989 ms on localhost (executor driver) (1/2)
+2018-05-24 13:54:55 INFO  TaskSetManager:54 - Finished task 1.0 in stage 0.0 (TID 1) in 2930 ms on localhost (executor driver) (2/2)
+2018-05-24 13:54:55 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2018-05-24 13:54:55 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203) finished in 3.621 s
+2018-05-24 13:54:55 INFO  DAGScheduler:54 - Job 0 finished: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:203, took 3.816040 s
+2018-05-24 13:54:55 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-05-24 13:54:55 INFO  AbstractConnector:318 - Stopped Spark@4c00d8{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-05-24 13:54:55 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+2018-05-24 13:54:55 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-05-24 13:54:55 INFO  MemoryStore:54 - MemoryStore cleared
+2018-05-24 13:54:55 INFO  BlockManager:54 - BlockManager stopped
+2018-05-24 13:54:55 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-05-24 13:54:55 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-05-24 13:54:55 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-05-24 13:54:55 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-05-24 13:54:55 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-d57e6d08-29e0-48c6-8186-855843dfb57d
+2018-05-24 13:54:55 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-89502d87-80cb-4043-aef2-0c979494e84e
+2018-05-24 13:54:55 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-89502d87-80cb-4043-aef2-0c979494e84e/pyspark-8aca7f6e-a50e-4ba6-9797-ca33c6467b47
+=================================================
+Factor is =  1
+=================================================
+=================================================
+Factor is =  3
+=================================================
+=================================================
+Factor is =  13
+=================================================
+=================================================
+Factor is =  39
+=================================================
+=================================================
+Factor is =  59
+=================================================
+=================================================
+Factor is =  177
+=================================================
+=================================================
+Factor is =  383
+=================================================
+=================================================
+Factor is =  767
+=================================================
+=================================================
+Factor is =  1149
+=================================================
+=================================================
+Factor is =  2301
+=================================================
+=================================================
+Factor is =  4979
+=================================================
+=================================================
+Factor is =  14937
+=================================================
+=================================================
+Factor is =  22597
+=================================================
+=================================================
+Factor is =  67791
+=================================================
+=================================================
+Factor is =  293761
+=================================================

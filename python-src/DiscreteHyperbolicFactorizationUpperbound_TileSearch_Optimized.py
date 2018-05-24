@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 number_to_factorize=0
 persisted_tiles=False
@@ -146,6 +138,54 @@ def hardy_ramanujan_ray_shooting_queries(n):
 		print "####################################################################"
 	print "============================================================================================================="
 
+def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
+	#Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
+	#Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
+	k=5.0
+	normal_order_n=int(k*math.log(math.log(n,2),2))
+	print "============================================================================================================="
+	print "Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
+	print "============================================================================================================="
+	print "normal_order_n(loglogN) = ",normal_order_n
+	approximate_prime_factor=int(n/normal_order_n)
+	for m in xrange(1,normal_order_n):
+		prev_approximate_prime_factor = approximate_prime_factor
+		prev_approximate_prime_factor_log_ratio = float(prev_approximate_prime_factor)/float(math.log(prev_approximate_prime_factor,2))
+		approximate_prime_factor_log_ratio = prev_approximate_prime_factor_log_ratio + int(float(n)/(float(math.log(n,2))*float(normal_order_n)))
+
+		#Approximately solves x/log(x) = y for x by series expansion of log(x)
+		approximate_prime_factor = abs(math.sqrt((2*approximate_prime_factor_log_ratio + 1)*(2*approximate_prime_factor_log_ratio + 1) - 4.0) + (2*approximate_prime_factor_log_ratio + 1))/2.0 
+		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		print "####################################################################"
+		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
+		print "approximate prime factor log ratio - pf/log(pf) :",approximate_prime_factor_log_ratio
+		print "tangent of ray shooting query angle :",tan_theta
+		print "####################################################################"
+	print "============================================================================================================="
+
+def baker_harman_pintz_ray_shooting_queries(n):
+	#Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
+	k=5.0
+	normal_order_n=int(k*math.log(math.log(n,2),2))
+	print "============================================================================================================="
+	print "Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
+	print "============================================================================================================="
+	print "normal_order_n(loglogN) = ",normal_order_n
+	approximate_prime_factor=int(n/normal_order_n)
+	for m in xrange(1,normal_order_n):
+		prime_gaps_sum=0.0
+		prev_prime = approximate_prime_factor
+		for x in xrange(int(float(n)/(float(math.log(n,2)*normal_order_n)))):
+			next_prime = prev_prime + math.pow(prev_prime,0.525)
+			prime_gaps_sum += math.pow(prev_prime,0.525)
+			prev_prime = next_prime
+		approximate_prime_factor = approximate_prime_factor + prime_gaps_sum
+		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		print "####################################################################"
+		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
+		print "tangent of ray shooting query angle :",tan_theta
+		print "####################################################################"
+
 def SearchTiles_and_Factorize(n): 
 	global globalmergedtiles
 	global globalcoordinates
@@ -163,6 +203,8 @@ def SearchTiles_and_Factorize(n):
 		paralleltileintervals.foreach(tilesearch)
 	else:
 		hardy_ramanujan_ray_shooting_queries(n)
+		hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+		baker_harman_pintz_ray_shooting_queries(n)
 		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
 
 if __name__=="__main__":
