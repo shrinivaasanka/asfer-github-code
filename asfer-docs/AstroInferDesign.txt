@@ -11640,3 +11640,26 @@ References:
 550.2 Gaps between Integers with Same Prime Factors - [Cochrane-Dressler] - https://pdfs.semanticscholar.org/0dea/870aecd2513323c6f7df6b27fc31660b215c.pdf
 550.3 Gaps between Consecutive Primes - [Baker-Harman-Pintz] - https://academic.oup.com/plms/article-abstract/83/3/532/1479119
 
+----------------------------------------------------------------------------------------------------------------
+551. (THEORY) Computational Geometric Factorization - Hardy-Ramanujan and Prime Number Theorems, Gap between
+consecutive prime factors of an integer, Ray shooting queries based on these - 24 May 2018
+----------------------------------------------------------------------------------------------------------------
+Fram [Baker-Harman-Pintz] estimate Gap between primes p(n) and p(n+1) is approximately (p(n))^0.525. Combining
+Hardy-Ramanujan and Prime Number Theorem following estimate of number of primes between two prime factors of an
+integer N can be found:
+
+Approximate number of primes between 2 prime factors of N = (Number of primes less than N) / (Number of prime factors of N) ~ N/((logN)*(loglogN))
+
+If pf(n) and pf(n+1) are two consecutive prime factors of N, then from Prime Number Theorem number of primes between pf(n) and pf(n+1) = (pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n))) which is equivalent to Hardy-Ramanujan and Prime Number Theorem estimate N/((logN)*(loglogN))
+
+=> pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n)) = N/((logN)*(loglogN))
+=> pf(n+1)/log(pf(n+1)) = pf(n)/log(pf(n)) + N/((logN)*(loglogN))
+
+Previous relation finds the next prime factor pf(n+1) in terms of pf(n) as a logarithmic ratio. Similar recurrence can be arrived at based on [Baker-Harman-Pintz] estimate too. If p1,p2,p3,...,pm are primes between pf(n) and pf(n+1):
+	p1 = pf(n) + (pf(n))^0.525
+	p2 = p1 + p1^0.525
+	p3 = p2 + p2^0.525
+	...
+	pf(n+1) = pm + pm^0.525
+
+Expanding this recurrence yields a continued nested exponentiation of 0.525 for pf(n+1) in terms of pf(n) which must be equal to Hardy-Ramanujan-Prime Number Theorem estimate N/((logN)*(loglogN)). This estimate for gap between two consecutive prime factors of an integer can be substituted for computing angles for prime factor points ray shooting queries in Computational Geometric Factorization in lieu of equal spacing.
