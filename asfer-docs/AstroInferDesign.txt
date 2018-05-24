@@ -11644,7 +11644,7 @@ References:
 551. (THEORY) Computational Geometric Factorization - Hardy-Ramanujan and Prime Number Theorems, Gap between
 consecutive prime factors of an integer, Ray shooting queries based on these - 24 May 2018
 ----------------------------------------------------------------------------------------------------------------
-Fram [Baker-Harman-Pintz] estimate Gap between primes p(n) and p(n+1) is approximately (p(n))^0.525. Combining
+From [Baker-Harman-Pintz] estimate Gap between primes p(n) and p(n+1) is approximately (p(n))^0.525. Combining
 Hardy-Ramanujan and Prime Number Theorem following estimate of number of primes between two prime factors of an
 integer N can be found:
 
@@ -11663,3 +11663,16 @@ Previous relation finds the next prime factor pf(n+1) in terms of pf(n) as a log
 	pf(n+1) = pm + pm^0.525
 
 Expanding this recurrence yields a continued nested exponentiation of 0.525 for pf(n+1) in terms of pf(n) which must be equal to Hardy-Ramanujan-Prime Number Theorem estimate N/((logN)*(loglogN)). This estimate for gap between two consecutive prime factors of an integer can be substituted for computing angles for prime factor points ray shooting queries in Computational Geometric Factorization in lieu of equal spacing.
+
+-------------------------------------------------------------------------------------------------------------
+552. (FEATURE-DONE) Computational Geometric Factorization - Ray Shooting Queries - Hardy-Ramanujan-Prime Number Theorem and Baker-Harman-Pintz Gap between Prime Numbers - 24 May 2018
+-------------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to include two new
+functions for ray shooting queries - 1) based on Hardy-Ramanujan-Prime Number Theorem estimate for number
+of primes between two prime factors 2) based on Baker-Harman-Pintz Gap between prime numbers.
+2.These two functions are quite nascent and might be refined in next commits.
+3.Two numbers have been factored and all three ray shooting query algorithms print the approximate location of
+factors.
+4.Of the three, Hardy-Ramanujan query is very simple and finds the factor exactly in most executions (logs show an exact match for one factor in both integers).
+Hardy-Ramanujan-Prime Number Theorem and Baker-Harman-Pintz estimates are too skewed. But theoretically latter two estimates are tighter approximations compared to Hardy-Ramanujan ray shooting.
+5.Logs for these two integer factorizations have been committed to testlogs/
