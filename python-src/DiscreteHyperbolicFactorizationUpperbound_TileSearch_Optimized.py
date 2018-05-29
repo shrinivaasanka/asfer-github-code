@@ -147,9 +147,9 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 	print "Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
 	print "============================================================================================================="
 	print "normal_order_n(loglogN) = ",normal_order_n
-	approximate_prime_factor=int(n/normal_order_n)
+	approximate_prime_factor=2
+	prev_approximate_prime_factor = approximate_prime_factor
 	for m in xrange(1,normal_order_n):
-		prev_approximate_prime_factor = approximate_prime_factor
 		prev_approximate_prime_factor_log_ratio = float(prev_approximate_prime_factor)/float(math.log(prev_approximate_prime_factor,2))
 		approximate_prime_factor_log_ratio = prev_approximate_prime_factor_log_ratio + int(float(n)/(float(math.log(n,2))*float(normal_order_n)))
 
@@ -161,26 +161,59 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 		print "approximate prime factor log ratio - pf/log(pf) :",approximate_prime_factor_log_ratio
 		print "tangent of ray shooting query angle :",tan_theta
 		print "####################################################################"
+		prev_approximate_prime_factor = approximate_prime_factor
 	print "============================================================================================================="
 
 def baker_harman_pintz_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
 	k=5.0
+	l=30.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
 	print "============================================================================================================="
 	print "normal_order_n(loglogN) = ",normal_order_n
-	approximate_prime_factor=int(n/normal_order_n)
+	approximate_prime_factor=2
 	for m in xrange(1,normal_order_n):
 		prime_gaps_sum=0.0
 		prev_prime = approximate_prime_factor
-		for x in xrange(int(float(n)/(float(math.log(n,2)*normal_order_n)))):
+		print "approximate number of primes between two prime factors:",int(float(n)/(float(math.log(n,2)*normal_order_n)))
+		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
 			next_prime = prev_prime + math.pow(prev_prime,0.525)
+			#print "next_prime: next_prime = ",next_prime
 			prime_gaps_sum += math.pow(prev_prime,0.525)
 			prev_prime = next_prime
-		approximate_prime_factor = approximate_prime_factor + prime_gaps_sum
+		approximate_prime_factor = int(approximate_prime_factor + prime_gaps_sum)
 		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		if approximate_prime_factor > n:
+			break	
+		print "####################################################################"
+		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
+		print "tangent of ray shooting query angle :",tan_theta
+		print "####################################################################"
+
+def cramer_ray_shooting_queries(n):
+	#Shoots Ray Queries based on Cramer estimate for Gaps between Primes - p^0.5*log(p)
+	k=5.0
+	l=100.0
+	normal_order_n=int(k*math.log(math.log(n,2),2))
+	print "============================================================================================================="
+	print "Cramer Ray Shooting Queries - Approximate Factors of ",n," are:"
+	print "============================================================================================================="
+	print "normal_order_n(loglogN) = ",normal_order_n
+	approximate_prime_factor=2
+	for m in xrange(1,normal_order_n):
+		prime_gaps_sum=0.0
+		prev_prime = approximate_prime_factor
+		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
+			next_prime = prev_prime + math.pow(prev_prime,0.5)*math.log(prev_prime,2)
+			#print "next_prime: next_prime = ",next_prime
+			prime_gaps_sum += math.pow(prev_prime,0.5)*math.log(prev_prime,2)
+			prev_prime = next_prime
+		approximate_prime_factor = int(approximate_prime_factor + prime_gaps_sum)
+		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		if approximate_prime_factor > n:
+			break	
 		print "####################################################################"
 		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
 		print "tangent of ray shooting query angle :",tan_theta
@@ -205,6 +238,7 @@ def SearchTiles_and_Factorize(n):
 		hardy_ramanujan_ray_shooting_queries(n)
 		hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
 		baker_harman_pintz_ray_shooting_queries(n)
+		cramer_ray_shooting_queries(n)
 		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
 
 if __name__=="__main__":
