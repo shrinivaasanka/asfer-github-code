@@ -11699,5 +11699,5 @@ factors. Ray shooting to find a prime factor by Hardy-Ramanujan succeeds with a 
         - Pixelation of O(N/loglogN) sized segment requires Parallel RAM sorting (e.g. Using Cole's Parallel Sort each pixelated segment of length O(N/loglogN) can be sorted in O(log(N/loglogN)) on PRAMs.)
         - Each pixelated segment can be binary searched in log(N/loglogN) time
         - Sequentially this requires O(loglogN)*O(log(N/loglogN)) time for all segments
-        - Total factorization time = O(loglogN) + O(log(N/loglogN)) + O(loglogN)*O(log(N/loglogN)) < O(loglogN) * O(logN)
+        - Total factorization time = O(loglogN) + O(loglogN)*O(log(N/loglogN)) + O(loglogN)*O(log(N/loglogN)) < O(loglogN) * O(logN)
         - This PRAM algorithm does factorization in at most O(loglogN*logN) time compared to O((logN)^2) or O((logN)^3) PRAM time algorithms using segment trees and sorting described earlier.
