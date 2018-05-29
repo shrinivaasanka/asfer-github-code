@@ -11676,3 +11676,28 @@ factors.
 4.Of the three, Hardy-Ramanujan query is very simple and finds the factor exactly in most executions (logs show an exact match for one factor in both integers).
 Hardy-Ramanujan-Prime Number Theorem and Baker-Harman-Pintz estimates are too skewed. But theoretically latter two estimates are tighter approximations compared to Hardy-Ramanujan ray shooting.
 5.Logs for these two integer factorizations have been committed to testlogs/
+
+--------------------------------------------------------------------------------------------------------------
+553. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Ray Shooting Queries and Cramer Prime Gap Updates - 29 May 2018
+--------------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to include a new ray shooting query function for Cramer Prime Gaps (sqrt(p)*log(p))
+2.All Four Ray Shooting Query functions have been executed on two integers and factorization logs have been
+captured in testlogs/ (Single Core - Spark 2.3)
+3.Both logs don't show an exact shoot (but are sufficiently close)
+4.Of the Four, Hardy-Ramanujan ray shooting is still the best and estimates are close to exact factors and sometimes exact.
+5.Baker-Harman-Pintz, Hardy-Ramanujan-PrimeNumberTheorem Ray Shooting functions have been slightly changed for
+initial prime factor, constant for Prime Counting Function normal order etc.,
+----------
+6.Analysis:
+----------
+These ray shooting queries are Monte Carlo algorithms with an error bounded by the spacing between two prime
+factors. Ray shooting to find a prime factor by Hardy-Ramanujan succeeds with a probability loglogN/N which is
+ loglogN/2^logN=loglogN/(2^(2^loglogN)) which is exponentially small. But real benefit of ray shooting queries is in the following factorization algorithm:
+        - Sequentially ray shoot O(loglogN) queries in O(loglogN) time to create beacons
+        - Distance between any two such beacon in the hyperbolic arc bow is O(N/loglogN)
+        - This creates O(loglogN) hyperbolic pixelated segments of length O(N/loglogN)
+        - Pixelation of O(N/loglogN) sized segment requires Parallel RAM sorting (e.g. Using Cole's Parallel Sort each pixelated segment of length O(N/loglogN) can be sorted in O(log(N/loglogN)) on PRAMs.)
+        - Each pixelated segment can be binary searched in log(N/loglogN) time
+        - Sequentially this requires O(loglogN)*O(log(N/loglogN)) time for all segments
+        - Total factorization time = O(loglogN) + O(log(N/loglogN)) + O(loglogN)*O(log(N/loglogN)) < O(loglogN) * O(logN)
+        - This PRAM algorithm does factorization in at most O(loglogN*logN) time compared to O((logN)^2) or O((logN)^3) PRAM time algorithms using segment trees and sorting described earlier.
