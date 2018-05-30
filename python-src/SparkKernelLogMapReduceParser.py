@@ -11,14 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 #Apache Spark RDD MapReduce Transformations script for parsing the most frequent Source IP in 
@@ -29,35 +24,22 @@
 
 from pyspark import SparkContext, SparkConf
 
-def mapFunction(ufwline):
-     for i in ufwline.split():
-             if "SRC" in i:
-                     return (i,1)
+def mapFunction(patternline):
+     for i in patternline.split():
+          return (i,1)
  
 def reduceFunction(value1,value2):
      return value1+value2
 
-def mapFunction2(huaweiline):
-     for i in huaweiline.split():
-	     if "HUAWEI" in i:
-		     return (i,1)
-
-
-spcon=SparkContext() 
-#input=sc.textFile('/var/log/udev')
-input=open('/var/log/udev','r')
-paralleldata=spcon.parallelize(input.readlines())
-ufwlines=paralleldata.filter(lambda ufwline: "HUAWEI" in ufwline)
-k=ufwlines.map(mapFunction2).reduceByKey(reduceFunction)
-print k.collect()
-l=k.map(lambda src: src).reduce(lambda x,y: x if (x[1] > y[1]) else y)
-print l
-
-#/var/log/udev log mined for "HUAWEI"
-input2=spcon.textFile('/var/log/udev')
-huaweilines=input2.filter(lambda huaweiline: "HUAWEI" in huaweiline)
-k=huaweilines.map(mapFunction2).reduceByKey(reduceFunction)
-print k.collect()
-
-
-
+def log_mapreducer(logfilename, pattern):
+	spcon=SparkContext() 
+	input=open(logfilename,'r')
+	paralleldata=spcon.parallelize(input.readlines())
+	patternlines=paralleldata.filter(lambda patternline: pattern in patternline)
+	matches=patternlines.map(mapFunction).reduceByKey(reduceFunction)
+	matches_collected=matches.collect()
+	print "--------------------------------------------------------------"
+	print "log_mapreducer(): pattern [",pattern,"] in [",logfilename,"]"
+	print "--------------------------------------------------------------"
+	print matches_collected
+	return matches_collected

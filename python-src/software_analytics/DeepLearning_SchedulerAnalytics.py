@@ -41,8 +41,7 @@ import json
 import pprint
 from dictdiffer import diff
 import hashlib
-from NeuronRain_Generic_WebServer import SocketWebServerDecorator
-from SchedulerAnalytics_Config import scheduler_analytics_host,scheduler_analytics_port
+from SparkKernelLogMapReduceParser import log_mapreducer
 
 expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
 expected_process_priorities=json.loads(expected_process_priorities_input.read())
@@ -100,14 +99,6 @@ def process_feature_vector(proc):
 	pprint.pprint(feature_vector)
 	return feature_vector
 
-@SocketWebServerDecorator(scheduler_analytics_host,scheduler_analytics_port)
-def get_stream_data():
-	print "--------------------------------------------------------------------------------------------------"
-	print "DeepLearning_SchedulerAnalytics.get_stream_data(): Process Iterator Wrapper"
-	print "--------------------------------------------------------------------------------------------------"
-	processiterator=ProcessIterator()
-	return processiterator
-
 def is_prioritizable(proc_name):
 	#print "is_prioritizable(): proc_name:",proc_name
 	for k,v in expected_process_priorities.iteritems():
@@ -148,6 +139,7 @@ def learnt_scheduler_class(deep_learnt_output):
 
 #############################################################################################
 if __name__=="__main__":
+	log_mapreducer("perf.data.schedscript","sched_stat_runtime")
 	kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
 
 	for proc in psutil.process_iter():

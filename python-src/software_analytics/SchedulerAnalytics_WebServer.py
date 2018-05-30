@@ -16,7 +16,18 @@
 #Personal website(research): https://sites.google.com/site/kuja27/
 #--------------------------------------------------------------------------------------------------------
 
-from DeepLearning_SchedulerAnalytics import get_stream_data
+from NeuronRain_Generic_WebServer import SocketWebServerDecorator
+from SchedulerAnalytics_Config import scheduler_analytics_host,scheduler_analytics_port
+from DeepLearning_SchedulerAnalytics import ProcessIterator
+
+@SocketWebServerDecorator(scheduler_analytics_host,scheduler_analytics_port)
+def get_stream_data():
+        print "--------------------------------------------------------------------------------------------------"
+        print "DeepLearning_SchedulerAnalytics.get_stream_data(): Process Iterator Wrapper"
+        print "--------------------------------------------------------------------------------------------------"
+        processiterator=ProcessIterator()
+        return processiterator
+
 
 try:
 	get_stream_data()
