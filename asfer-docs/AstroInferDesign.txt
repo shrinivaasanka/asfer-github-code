@@ -11702,3 +11702,17 @@ factors. Ray shooting to find a prime factor by Hardy-Ramanujan succeeds with a 
         - Sequentially this requires O(loglogN)*O(log(N/loglogN)) time for all segments
         - Total factorization time = O(loglogN) + O(loglogN)*O(log(N/loglogN)) + O(loglogN)*O(log(N/loglogN)) < O(loglogN) * O(logN)
         - This PRAM algorithm does factorization in at most O(loglogN*logN) time compared to O((logN)^2) or O((logN)^3) PRAM time algorithms using segment trees and sorting described earlier.
+
+--------------------------------------------------------------------------------------------------------------
+554. (FEATURE-DONE) Scheduler Analytics Update - Rewrite of scheduler analytics webserver functionality and Spark log mapreduce of "perf sched script" - 30 May 2018
+--------------------------------------------------------------------------------------------------------------
+1.SparkKernelLogMapReduceParser.py has been rewritten to remove hardcoded filenames and patterns - new function log_mapreducer() has been defined for passing log file name and pattern as arguments.
+2.software_analytics/DeepLearning_SchedulerAnalytics.py and software_analytics/SchedulerAnalytics_WebServer.py h$
+been refactored and get_stream_data() (@Generic Socket Web Server) decorated function has been moved to software$
+3.software_analytics/DeepLearning_SchedulerAnalytics.py invokes log_mapreducer() defined in SparkKernelLogMapRed$
+ for new scheduler performance file perf.data.schedscript and pattern sched_stat_runtime.
+4.New perf.data file has been created from perf utility by "perf sched record" commandline
+5.New perf.data.schedscript has been created from perf.data by "perf sched script" commandline for printing
+scheduler context switches and runtime in nanoseconds
+6.logs for both have been committed to software_analytics/testlogs/DeepLearning_SchedulerAnalytics.log.30May2018 and software_analytics/testlogs/SchedulerAnalytics_WebServer.log.30May2018
+7.Perf utility support has been added for potential clockticks-to-processes dynamic hash table creation later.
