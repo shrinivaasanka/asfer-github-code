@@ -11723,7 +11723,7 @@ scheduler context switches and runtime in nanoseconds
 In the theoretical drafts in this document, relativizing proofs involving oracle access to Voter SAT have been
 neglected in favour of boolean function composition/communication complexity proofs based on composition of 
 Majority and Voter SAT boolean functions. But a recent result has proved BQP^A is not contained in PH^A relative
-to some oracle A. This has direct relation to Condorcet Jury Theorem circuit for Majority Voting having SAT oracle access. P(Good) binomial series (or Condorcet Jury Theorem) equates Non-majority and Majority social choice based on correctness of electoriate group decision vis-a-vis individual decision correctness. This is tantamount to equating goodness of following two algorithms in different complexity classes:
+to some oracle A. This has direct relation to Condorcet Jury Theorem circuit for Majority Voting having SAT oracle access. P(Good) binomial series (or Condorcet Jury Theorem) equates Non-majority and Majority social choice based on correctness of electorate group decision vis-a-vis individual decision correctness. This is tantamount to equating goodness of following two algorithms in different complexity classes:
 	*) LHS: An algorithm having access to PRG making a random choice of a boolean function(voter) - could be in BPP/BQP/RP/BPNC/RNC
 	*) RHS: An algorithm which does majority voting by composing Majority function and Individual voter SATs - could be in PH (DC-uniform) if the number of variables m, per Voter SAT are same for all and size of the electorate is n=2^m - exponential fanin - and depth restricted (unrestricted is in EXP).
 
