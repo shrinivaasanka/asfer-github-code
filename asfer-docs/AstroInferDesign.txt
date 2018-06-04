@@ -11716,3 +11716,35 @@ been refactored and get_stream_data() (@Generic Socket Web Server) decorated fun
 scheduler context switches and runtime in nanoseconds
 6.logs for both have been committed to software_analytics/testlogs/DeepLearning_SchedulerAnalytics.log.30May2018 and software_analytics/testlogs/SchedulerAnalytics_WebServer.log.30May2018
 7.Perf utility support has been added for potential clockticks-to-processes dynamic hash table creation later.
+
+---------------------------------------------------------------------------------------------------------------
+555. (THEORY) Non-majority social choice, Majority social choice - Boolean Composition of Majority+SAT Versus SAT Oracles, Margulis-Russo Threshold , KRW Conjecture, Condorect Jury Theorem and a conflict - 4 June 2018 - related to 129, 317, 355, 358, 400, 429 and all other Majority Voting related sections
+---------------------------------------------------------------------------------------------------------------
+In the theoretical drafts in this document, relativizing proofs involving oracle access to Voter SAT have been
+neglected in favour of boolean function composition/communication complexity proofs based on composition of 
+Majority and Voter SAT boolean functions. But a recent result has proved BQP^A is not contained in PH^A relative
+to some oracle A. This has direct relation to Condorcet Jury Theorem circuit for Majority Voting having SAT oracle access. P(Good) binomial series (or Condorcet Jury Theorem) equates Non-majority and Majority social choice based on correctness of electoriate group decision vis-a-vis individual decision correctness. This is tantamount to equating goodness of following two algorithms in different complexity classes:
+	*) LHS: An algorithm having access to PRG making a random choice of a boolean function(voter) - could be in BPP/BQP/RP/BPNC/RNC
+	*) RHS: An algorithm which does majority voting by composing Majority function and Individual voter SATs - could be in PH (DC-uniform) if the number of variables m, per Voter SAT are same for all and size of the electorate is n=2^m - exponential fanin - and depth restricted (unrestricted is in EXP).
+
+Assuming both LHS and RHS have equal goodness (1-error) of 0.5 (by Margulis-Russo Threshold and Condorcet Jury Theorem), which happens when each individual votes with correctness p=0.5 (homogeneous voters), Oracle version of the previous equality is (for some oracle Voter SAT A which has goodness p=0.5):
+	*) LHS: BPP^A / BQP^A / RNC^A / BPNC^A
+	*) RHS: PH^A / EXP^A / Other larger classes
+
+Caveat: This assumes equal error/goodness implies lowerbounds and there are complete problems for respective classes.
+
+Since goodness/error is equal, if one side of the equality is a C-complete problem, the other side devours class C. E.g:
+	*) if LHS is BQP^A-complete and RHS is PH^A, BQP^A is in PH^A. 
+	*) if RHS is PH^A-complete and LHS is BQP^A, PH^A is in BQP^A - this is in direct conflict with 555.1 which separates BQP and PH relative to some oracle A. 
+
+Resolving this conflict requires:
+	*) ruling out existence of PH^A-complete problems for some Voter SAT oracle A which is closer to proving PH-complete problems do not exist.
+	*) assumption of equal goodnesses of LHS and RHS implying lowerbounds is wrong.
+
+But if LHS is Promise-BPP-Complete which are known to exist and RHS is PH^A, Promise-BPP is in PH^A.
+
+References:
+-----------
+555.1 Oracle Separation of BQP and PH - [AvishayTal-Raz] - https://eccc.weizmann.ac.il/report/2018/107/download
+555.2 Margulis-Russo Threshold for Majority at p=0.5 - [RyanODonnell] - Pages 224-225 - http://www.cs.tau.ac.il/~amnon/Classes/2016-PRG/Analysis-Of-Boolean-Functions.pdf
+555.3 Promise-BPP-Complete problems - [OdedGoldreich] - http://www.wisdom.weizmann.ac.il/~oded/PSX/prpr-r.pdf
