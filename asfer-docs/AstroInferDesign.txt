@@ -11740,7 +11740,7 @@ Since goodness/error is equal, if one side of the equality is a C-complete probl
 Resolving this conflict requires:
 	*) ruling out existence of PH^A-complete problems for some Voter SAT oracle A which is closer to proving PH-complete problems do not exist.
 	*) assumption of equal goodnesses of LHS and RHS implying lowerbounds is wrong.
-	*) Oracle A for which separates (BQP^A is not in PH^A) has goodness > 0.5 or < 0.5 violating Margulis-Russo threshold.
+	*) Oracle A which separates (BQP^A is not in PH^A) has goodness > 0.5 or < 0.5 violating Margulis-Russo threshold.
 
 But if LHS is Promise-BPP-Complete which are known to exist and RHS is PH^A, Promise-BPP is in PH^A.
 
