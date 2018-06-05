@@ -123,7 +123,7 @@ def binary_search_interval(xl,yl,xr,yr):
 def hardy_ramanujan_ray_shooting_queries(n):
 	#Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
 	#Approximate Prime Factors are y(m) = m*N/kloglogN, m=1,2,3,...,kloglogN
-	k=5.0
+	k=6.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -141,7 +141,7 @@ def hardy_ramanujan_ray_shooting_queries(n):
 def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 	#Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
 	#Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
-	k=5.0
+	k=6.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -166,8 +166,8 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 
 def baker_harman_pintz_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
-	k=5.0
-	l=30.0
+	k=6.0
+	l=100.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -194,7 +194,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
 
 def cramer_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Cramer estimate for Gaps between Primes - p^0.5*log(p)
-	k=5.0
+	k=6.0
 	l=100.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
@@ -219,11 +219,39 @@ def cramer_ray_shooting_queries(n):
 		print "tangent of ray shooting query angle :",tan_theta
 		print "####################################################################"
 
+def zhang_ray_shooting_queries(n):
+	#Shoots Ray Queries based on Yitang Zhang estimate for Gaps between infinitely many Twin Primes 
+	#of gap < 7 * 10^7 which is refinement of Goldston-Pintz-Yildirim Sieve
+	k=6.0
+	l=100.0
+	normal_order_n=int(k*math.log(math.log(n,2),2))
+	print "============================================================================================================="
+	print "Zhang Ray Shooting Queries (for large primes) - Approximate Factors of ",n," are:"
+	print "============================================================================================================="
+	print "normal_order_n(loglogN) = ",normal_order_n
+	approximate_prime_factor=2
+	for m in xrange(1,normal_order_n):
+		prime_gaps_sum=0.0
+		prev_prime = approximate_prime_factor
+		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
+			next_prime = prev_prime + 7*10000000 
+			#print "next_prime: next_prime = ",next_prime
+			prime_gaps_sum += 7*10000000 
+			prev_prime = next_prime
+		approximate_prime_factor = int(approximate_prime_factor + prime_gaps_sum)
+		tan_theta = float(n/math.pow(approximate_prime_factor,2))
+		if approximate_prime_factor > n:
+			break	
+		print "####################################################################"
+		print "approximate ",m,"-th prime factor of ",n,":",approximate_prime_factor
+		print "tangent of ray shooting query angle :",tan_theta
+		print "####################################################################"
+
 def SearchTiles_and_Factorize(n): 
 	global globalmergedtiles
 	global globalcoordinates
 
-	spcon = SparkContext("local[2]","Spark_TileSearch_Optimized")
+	spcon = SparkContext("local[4]","Spark_TileSearch_Optimized")
 
 	if persisted_tiles == True:
         	tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
@@ -239,6 +267,7 @@ def SearchTiles_and_Factorize(n):
 		hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
 		baker_harman_pintz_ray_shooting_queries(n)
 		cramer_ray_shooting_queries(n)
+		zhang_ray_shooting_queries(n)
 		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
 
 if __name__=="__main__":
