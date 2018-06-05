@@ -11751,3 +11751,24 @@ References:
 555.1 Oracle Separation of BQP and PH - [AvishayTal-Raz] - https://eccc.weizmann.ac.il/report/2018/107/download
 555.2 Margulis-Russo Threshold for Majority at p=0.5 - [RyanODonnell] - Pages 224-225 - http://www.cs.tau.ac.il/~amnon/Classes/2016-PRG/Analysis-Of-Boolean-Functions.pdf
 555.3 Promise-BPP-Complete problems - [OdedGoldreich] - http://www.wisdom.weizmann.ac.il/~oded/PSX/prpr-r.pdf
+
+--------------------------------------------------------------------------------------------------------------
+556. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Ray Shooting Queries - Yitang Zhang Prime Gap Estimate - 5 June 2018
+--------------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to include a new function
+for ray shooting queries which implements recent breakthrough result in Prime Gap estimation - there are
+infinitely many twin primes separated by gap < 70000000 - by [Yitang Zhang] which refines
+[Goldston-Pintz-Yildirim] Sieve. This might have effect only for finding primes between prime factors of
+large integers and summing up the gap for spacing between any two prime factors.
+2.Constants k and l for multiplying estimation bounds have been changed slightly.
+3.logs for this have been committed to testlogs/ for an 8-digit 26-bit integer.
+4.None of the five ray shooting queries in the bouquet shoot exactly. But Hardy-Ramanujan is still the best and
+Baker-Harman-Pintz estimate is also close enough to actual factors.
+5.Ray Shooting's success rate depends on the number and multiplicity of the prime factors - Integers of large Big Omega and Small Omega would have lot of prime factors taking a point-blank hit. In other words large multiplicative partition (Factorisatio Numerorum) number of an integer is a pre-requisite for exact ray shooting. Finding the values of the constants for estimation functions which are normal orders, is presently done by trial and error.  Correct values for these constants are also crucial for exact shooting.
+6.Another weird observation is the convergence of the Hardy-Ramanujan-PrimeNumberTheorem log ratio (p/log(p), also known as Merit) estimate after some iterations and this converged integer sometimes matches closely with actual factors. This has happened in earlier logs too.
+
+References:
+-----------
+556.1 Bounded Gaps between Primes - [Yitang Zhang] - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.308.998&rep=rep1&type=pdf
+556.2 Goldston-Pintz-Yildirim Sieve - [K.Soundararajan] - https://arxiv.org/pdf/math/0605696.pdf - there are infinitely many twin primes such that lim sup (p(n+1) - pn) / log(pn) ~ 0 - there exist prime tuples which are arbitrarily close apart
+556.3 Primes in Tuples - [Goldston-Pintz-Yildirim] - https://arxiv.org/pdf/math/0508185.pdf 
