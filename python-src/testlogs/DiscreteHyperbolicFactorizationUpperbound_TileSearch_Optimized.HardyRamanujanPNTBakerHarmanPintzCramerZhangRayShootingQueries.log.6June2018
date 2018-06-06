@@ -1,0 +1,438 @@
+2018-06-06 16:55:12 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+2018-06-06 16:55:12 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-06-06 16:55:13 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-06-06 16:55:14 INFO  SparkContext:54 - Running Spark version 2.3.0
+2018-06-06 16:55:14 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+2018-06-06 16:55:14 INFO  SecurityManager:54 - Changing view acls to: root
+2018-06-06 16:55:14 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-06-06 16:55:14 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-06-06 16:55:14 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-06-06 16:55:14 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-06-06 16:55:15 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: dd:d9:a0:d1:ce:cc:eb:56
+2018-06-06 16:55:15 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 48848.
+2018-06-06 16:55:15 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-06-06 16:55:15 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-06-06 16:55:15 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-06-06 16:55:15 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-06-06 16:55:15 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-19e993fa-44ff-4a37-acfa-defffc0c8b6c
+2018-06-06 16:55:15 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-06-06 16:55:15 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-06-06 16:55:16 INFO  log:192 - Logging initialized @5982ms
+2018-06-06 16:55:16 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-06-06 16:55:16 INFO  Server:414 - Started @6181ms
+2018-06-06 16:55:16 INFO  AbstractConnector:278 - Started ServerConnector@18d12a1{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-06-06 16:55:16 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1ec470a{/jobs,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2e475f{/jobs/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10c6b15{/jobs/job,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f22377{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@12e81e9{/stages,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@19a065a{/stages/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@44fede{/stages/stage,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ba026c{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fab6b{/stages/pool,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16fc028{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@122594e{/storage,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f58d64{/storage/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f52a02{/storage/rdd,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@adcd4{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10917f2{/environment,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@bc331a{/environment/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@73be75{/executors,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@9b31d3{/executors/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1dc1f35{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@8bd977{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16e40c5{/static,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3dbc49{/,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@180f91{/api,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1d5286d{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fe2f8{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-06-06 16:55:16 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+2018-06-06 16:55:17 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1528284317068
+2018-06-06 16:55:17 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-97ad52c3-cd07-4ef9-bcdc-a1ac2e643f1e/userFiles-2d58b378-fcab-4d9c-bcee-3650f3c2f217/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-06-06 16:55:17 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-06-06 16:55:17 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 58344.
+2018-06-06 16:55:17 INFO  NettyBlockTransferService:54 - Server created on HCL:58344
+2018-06-06 16:55:17 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-06-06 16:55:17 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 58344, None)
+2018-06-06 16:55:17 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:58344 with 413.9 MB RAM, BlockManagerId(driver, HCL, 58344, None)
+2018-06-06 16:55:17 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 58344, None)
+2018-06-06 16:55:17 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 58344, None)
+2018-06-06 16:55:17 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1b440fd{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  8989281  are:
+=============================================================================================================
+normal_order_n(loglogN) =  27
+####################################################################
+approximate  1 -th prime factor of  8989281 : 332936
+tangent of ray shooting query angle : 8.10967484208e-05
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  8989281 : 665872
+tangent of ray shooting query angle : 2.02741871052e-05
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  8989281 : 998809
+tangent of ray shooting query angle : 9.01073178155e-06
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  8989281 : 1331745
+tangent of ray shooting query angle : 5.06853916441e-06
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  8989281 : 1664681
+tangent of ray shooting query angle : 3.24386603955e-06
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  8989281 : 1997618
+tangent of ray shooting query angle : 2.25268294539e-06
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  8989281 : 2330554
+tangent of ray shooting query angle : 1.65503284147e-06
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  8989281 : 2663490
+tangent of ray shooting query angle : 1.2671347911e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  8989281 : 2996427
+tangent of ray shooting query angle : 1.00119242017e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  8989281 : 3329363
+tangent of ray shooting query angle : 8.10966022726e-07
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  8989281 : 3662299
+tangent of ray shooting query angle : 6.70219963296e-07
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  8989281 : 3995236
+tangent of ray shooting query angle : 5.63170736347e-07
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  8989281 : 4328172
+tangent of ray shooting query angle : 4.79861529735e-07
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  8989281 : 4661108
+tangent of ray shooting query angle : 4.13758210368e-07
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  8989281 : 4994045
+tangent of ray shooting query angle : 3.60429271262e-07
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  8989281 : 5326981
+tangent of ray shooting query angle : 3.1678357884e-07
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  8989281 : 5659917
+tangent of ray shooting query angle : 2.80611090444e-07
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  8989281 : 5992854
+tangent of ray shooting query angle : 2.50298105043e-07
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  8989281 : 6325790
+tangent of ray shooting query angle : 2.24644306318e-07
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  8989281 : 6658726
+tangent of ray shooting query angle : 2.02741505682e-07
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  8989281 : 6991663
+tangent of ray shooting query angle : 1.83892485338e-07
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  8989281 : 7324599
+tangent of ray shooting query angle : 1.67554945073e-07
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  8989281 : 7657535
+tangent of ray shooting query angle : 1.53301701615e-07
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  8989281 : 7990472
+tangent of ray shooting query angle : 1.40792684087e-07
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  8989281 : 8323408
+tangent of ray shooting query angle : 1.29754548047e-07
+####################################################################
+####################################################################
+approximate  26 -th prime factor of  8989281 : 8656344
+tangent of ray shooting query angle : 1.19965382434e-07
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of  8989281  are:
+=============================================================================================================
+normal_order_n(loglogN) =  27
+####################################################################
+approximate  1 -th prime factor of  8989281 : 28828.9999653
+approximate prime factor log ratio - pf/log(pf) : 14414.0
+tangent of ray shooting query angle : 0.0108159781485
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  8989281 : 32716.8050636
+approximate prime factor log ratio - pf/log(pf) : 16357.9025471
+tangent of ray shooting query angle : 0.0083981414221
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  8989281 : 33187.8967522
+approximate prime factor log ratio - pf/log(pf) : 16593.4483911
+tangent of ray shooting query angle : 0.00816141563751
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  8989281 : 33244.6404069
+approximate prime factor log ratio - pf/log(pf) : 16621.8202185
+tangent of ray shooting query angle : 0.00813357877018
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  8989281 : 33251.4705733
+approximate prime factor log ratio - pf/log(pf) : 16625.2353017
+tangent of ray shooting query angle : 0.00813023768539
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  8989281 : 33252.2926449
+approximate prime factor log ratio - pf/log(pf) : 16625.6463375
+tangent of ray shooting query angle : 0.00812983569481
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  8989281 : 33252.3915875
+approximate prime factor log ratio - pf/log(pf) : 16625.6958088
+tangent of ray shooting query angle : 0.00812978731414
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  8989281 : 33252.403496
+approximate prime factor log ratio - pf/log(pf) : 16625.7017631
+tangent of ray shooting query angle : 0.00812978149118
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  8989281 : 33252.4049293
+approximate prime factor log ratio - pf/log(pf) : 16625.7024797
+tangent of ray shooting query angle : 0.00812978079035
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  8989281 : 33252.4051018
+approximate prime factor log ratio - pf/log(pf) : 16625.7025659
+tangent of ray shooting query angle : 0.008129780706
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  8989281 : 33252.4051226
+approximate prime factor log ratio - pf/log(pf) : 16625.7025763
+tangent of ray shooting query angle : 0.00812978069585
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  8989281 : 33252.4051251
+approximate prime factor log ratio - pf/log(pf) : 16625.7025776
+tangent of ray shooting query angle : 0.00812978069462
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069448
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+####################################################################
+approximate  26 -th prime factor of  8989281 : 33252.4051254
+approximate prime factor log ratio - pf/log(pf) : 16625.7025777
+tangent of ray shooting query angle : 0.00812978069446
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of  8989281  are:
+=============================================================================================================
+normal_order_n(loglogN) =  27
+approximate number of primes between two prime factors: 1441296
+=============================================================================================================
+Cramer Ray Shooting Queries - Approximate Factors of  8989281  are:
+=============================================================================================================
+normal_order_n(loglogN) =  27
+=============================================================================================================
+Zhang Ray Shooting Queries (for large primes) - Approximate Factors of  8989281  are:
+=============================================================================================================
+normal_order_n(loglogN) =  27
+2018-06-06 16:55:25 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272
+2018-06-06 16:55:25 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) with 4 output partitions
+2018-06-06 16:55:25 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272)
+2018-06-06 16:55:25 INFO  DAGScheduler:54 - Parents of final stage: List()
+2018-06-06 16:55:25 INFO  DAGScheduler:54 - Missing parents: List()
+2018-06-06 16:55:25 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272), which has no missing parents
+2018-06-06 16:55:26 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-06-06 16:55:26 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 6.5 KB, free 413.9 MB)
+2018-06-06 16:55:26 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 413.9 MB)
+2018-06-06 16:55:26 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:58344 (size: 4.1 KB, free: 413.9 MB)
+2018-06-06 16:55:26 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-06-06 16:55:27 INFO  DAGScheduler:54 - Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+2018-06-06 16:55:27 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 4 tasks
+2018-06-06 16:55:27 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7839 bytes)
+2018-06-06 16:55:27 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7839 bytes)
+2018-06-06 16:55:27 INFO  TaskSetManager:54 - Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 7839 bytes)
+2018-06-06 16:55:27 INFO  TaskSetManager:54 - Starting task 3.0 in stage 0.0 (TID 3, localhost, executor driver, partition 3, PROCESS_LOCAL, 7839 bytes)
+2018-06-06 16:55:27 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+2018-06-06 16:55:27 INFO  Executor:54 - Running task 3.0 in stage 0.0 (TID 3)
+2018-06-06 16:55:27 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-06-06 16:55:27 INFO  Executor:54 - Running task 2.0 in stage 0.0 (TID 2)
+2018-06-06 16:55:27 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1528284317068
+2018-06-06 16:55:27 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-97ad52c3-cd07-4ef9-bcdc-a1ac2e643f1e/userFiles-2d58b378-fcab-4d9c-bcee-3650f3c2f217/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-06-06 16:55:56 INFO  PythonRunner:54 - Times: total = 28069, boot = 733, init = 215, finish = 27121
+2018-06-06 16:55:56 INFO  PythonRunner:54 - Times: total = 28086, boot = 742, init = 132, finish = 27212
+2018-06-06 16:55:56 INFO  PythonRunner:54 - Times: total = 28123, boot = 689, init = 288, finish = 27146
+2018-06-06 16:55:56 INFO  Executor:54 - Finished task 3.0 in stage 0.0 (TID 3). 1310 bytes result sent to driver
+2018-06-06 16:55:56 INFO  Executor:54 - Finished task 1.0 in stage 0.0 (TID 1). 1310 bytes result sent to driver
+2018-06-06 16:55:56 INFO  Executor:54 - Finished task 2.0 in stage 0.0 (TID 2). 1310 bytes result sent to driver
+2018-06-06 16:55:56 INFO  TaskSetManager:54 - Finished task 3.0 in stage 0.0 (TID 3) in 28648 ms on localhost (executor driver) (1/4)
+2018-06-06 16:55:56 INFO  TaskSetManager:54 - Finished task 1.0 in stage 0.0 (TID 1) in 28675 ms on localhost (executor driver) (2/4)
+2018-06-06 16:55:56 INFO  TaskSetManager:54 - Finished task 2.0 in stage 0.0 (TID 2) in 28670 ms on localhost (executor driver) (3/4)
+2018-06-06 16:55:56 INFO  PythonRunner:54 - Times: total = 28250, boot = 745, init = 148, finish = 27357
+2018-06-06 16:55:56 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1353 bytes result sent to driver
+2018-06-06 16:55:56 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 28789 ms on localhost (executor driver) (4/4)
+2018-06-06 16:55:56 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) finished in 30.467 s
+2018-06-06 16:55:56 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2018-06-06 16:55:56 INFO  DAGScheduler:54 - Job 0 finished: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272, took 30.651922 s
+2018-06-06 16:55:56 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-06-06 16:55:56 INFO  AbstractConnector:318 - Stopped Spark@18d12a1{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-06-06 16:55:56 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+2018-06-06 16:55:56 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-06-06 16:55:56 INFO  MemoryStore:54 - MemoryStore cleared
+2018-06-06 16:55:56 INFO  BlockManager:54 - BlockManager stopped
+2018-06-06 16:55:56 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-06-06 16:55:56 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-06-06 16:55:56 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-06-06 16:55:56 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-06-06 16:55:56 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-97ad52c3-cd07-4ef9-bcdc-a1ac2e643f1e
+2018-06-06 16:55:56 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-08b3fc4f-19ef-4587-843d-dd0b380f9212
+2018-06-06 16:55:56 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-97ad52c3-cd07-4ef9-bcdc-a1ac2e643f1e/pyspark-1ebed511-87ce-439f-9d28-aacc4342e0da
+=================================================
+Factor is =  1
+=================================================
+=================================================
+Factor is =  3
+=================================================
+=================================================
+Factor is =  7
+=================================================
+=================================================
+Factor is =  9
+=================================================
+=================================================
+Factor is =  21
+=================================================
+=================================================
+Factor is =  63
+=================================================
+=================================================
+Factor is =  97
+=================================================
+=================================================
+Factor is =  291
+=================================================
+=================================================
+Factor is =  679
+=================================================
+=================================================
+Factor is =  873
+=================================================
+=================================================
+Factor is =  1471
+=================================================
+=================================================
+Factor is =  2037
+=================================================
+=================================================
+Factor is =  4413
+=================================================
+=================================================
+Factor is =  6111
+=================================================
+=================================================
+Factor is =  10297
+=================================================
+=================================================
+Factor is =  13239
+=================================================
+=================================================
+Factor is =  30891
+=================================================
+=================================================
+Factor is =  92673
+=================================================
+=================================================
+Factor is =  142687
+=================================================
+=================================================
+Factor is =  428061
+=================================================
+=================================================
+Factor is =  2996427
+=================================================
+=================================================
+Factor is =  998809
+=================================================
+=================================================
+Factor is =  1284183
+=================================================

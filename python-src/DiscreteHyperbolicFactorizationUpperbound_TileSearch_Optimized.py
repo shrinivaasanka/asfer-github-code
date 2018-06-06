@@ -142,6 +142,7 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 	#Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
 	#Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
 	k=6.0
+	l=100.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -177,8 +178,8 @@ def baker_harman_pintz_ray_shooting_queries(n):
 	for m in xrange(1,normal_order_n):
 		prime_gaps_sum=0.0
 		prev_prime = approximate_prime_factor
-		print "approximate number of primes between two prime factors:",int(float(n)/(float(math.log(n,2)*normal_order_n)))
-		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
+		print "approximate number of primes between two prime factors:",int(l*float(n)/(float(math.log(n,2)*normal_order_n)))
+		for x in xrange(int(l*float(n)/(float(math.log(n,2)*normal_order_n)))):
 			next_prime = prev_prime + math.pow(prev_prime,0.525)
 			#print "next_prime: next_prime = ",next_prime
 			prime_gaps_sum += math.pow(prev_prime,0.525)
@@ -205,7 +206,7 @@ def cramer_ray_shooting_queries(n):
 	for m in xrange(1,normal_order_n):
 		prime_gaps_sum=0.0
 		prev_prime = approximate_prime_factor
-		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
+		for x in xrange(int(l*float(n)/(float(math.log(n,2)*normal_order_n)))):
 			next_prime = prev_prime + math.pow(prev_prime,0.5)*math.log(prev_prime,2)
 			#print "next_prime: next_prime = ",next_prime
 			prime_gaps_sum += math.pow(prev_prime,0.5)*math.log(prev_prime,2)
@@ -233,7 +234,7 @@ def zhang_ray_shooting_queries(n):
 	for m in xrange(1,normal_order_n):
 		prime_gaps_sum=0.0
 		prev_prime = approximate_prime_factor
-		for x in xrange(int(float(n)/(l*float(math.log(n,2)*normal_order_n)))):
+		for x in xrange(int(l*float(n)/(float(math.log(n,2)*normal_order_n)))):
 			next_prime = prev_prime + 7*10000000 
 			#print "next_prime: next_prime = ",next_prime
 			prime_gaps_sum += 7*10000000 
