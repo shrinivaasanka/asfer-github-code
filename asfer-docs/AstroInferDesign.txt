@@ -11774,3 +11774,15 @@ References:
 556.1 Bounded Gaps between Primes - [Yitang Zhang] - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.308.998&rep=rep1&type=pdf
 556.2 Goldston-Pintz-Yildirim Sieve - [K.Soundararajan] - https://arxiv.org/pdf/math/0605696.pdf - there are infinitely many twin primes such that lim sup (p(n+1) - pn) / log(pn) ~ 0 - there exist prime tuples which are arbitrarily close apart
 556.3 Primes in Tuples - [Goldston-Pintz-Yildirim] - https://arxiv.org/pdf/math/0508185.pdf 
+
+-------------------------------------------------------------------------------------------------------------
+557. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Ray shooting queries - correction
+- 6 June 2018
+-------------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to correct the
+number of primes estimate between two factors - constant for prime counting function (merit) O(p/logp) has been
+moved to numerator which was earlier in denominator incorrectly.
+2.Two integers have been factored and logs have been committed to testlogs/. Both show exact ray shoot finding
+factors correctly matching with actual factors. These are on Single Core + Spark 2.3 with local[4]. This
+simulates quadcore on single core and some factors are printed out of order probably because of Spark Driver
+Executor Threads.
