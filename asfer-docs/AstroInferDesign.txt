@@ -11786,3 +11786,20 @@ moved to numerator which was earlier in denominator incorrectly.
 factors correctly matching with actual factors. These are on Single Core + Spark 2.3 with local[4]. This
 simulates quadcore on single core and some factors are printed out of order probably because of Spark Driver
 Executor Threads.
+
+--------------------------------------------------------------------------------------------------------------
+558. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Hardy-Ramanujan-PNT Ray Shooting - Correction - 7 June 2018
+--------------------------------------------------------------------------------------------------------------
+1. Mysterious convergence of merit p/logp has been investigated.
+2. This estimate equates the Prime number theorem merit difference between 2 prime factors and ratio of Prime
+counting function and Hardy-Ramanujan prime factors estimate as below:
+        l*pf(n+1)/log(pf(n+1)) - l*pf(n)/log(pf(n)) = l*N/(logN * k*loglogN)
+3. Earlier the constant multiples k and l were missing in some places which has been rectified.
+4. Even after this, previous ratio converges after lot of iterations for l=10 and k=6. So suitable value of l
+is still elusive.
+5. Two integers with large Omega (usually numbers ending in 5 have lot of factors) have been factored. While
+one integer has exact shoot from Hardy-Ramanujan, the other has close shave, but approximate factors are quite
+in proximity to actual factors.
+6. This establishes utility of ray shooting queries as an Oracle access implementation which can be used both
+by classical P and quantum period-finding BQP (P^A versus BQP^A) Factoring Turing Machines which at most requires
+O(loglogN) queries.
