@@ -142,7 +142,7 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 	#Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
 	#Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
 	k=6.0
-	l=100.0
+	l=10.0
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -151,8 +151,8 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 	approximate_prime_factor=2
 	prev_approximate_prime_factor = approximate_prime_factor
 	for m in xrange(1,normal_order_n):
-		prev_approximate_prime_factor_log_ratio = float(prev_approximate_prime_factor)/float(math.log(prev_approximate_prime_factor,2))
-		approximate_prime_factor_log_ratio = prev_approximate_prime_factor_log_ratio + int(float(n)/(float(math.log(n,2))*float(normal_order_n)))
+		prev_approximate_prime_factor_log_ratio = l*float(prev_approximate_prime_factor)/float(math.log(prev_approximate_prime_factor,2))
+		approximate_prime_factor_log_ratio = prev_approximate_prime_factor_log_ratio + int(l*float(n)/(float(math.log(n,2))*float(normal_order_n)))
 
 		#Approximately solves x/log(x) = y for x by series expansion of log(x)
 		approximate_prime_factor = abs(math.sqrt((2*approximate_prime_factor_log_ratio + 1)*(2*approximate_prime_factor_log_ratio + 1) - 4.0) + (2*approximate_prime_factor_log_ratio + 1))/2.0 
