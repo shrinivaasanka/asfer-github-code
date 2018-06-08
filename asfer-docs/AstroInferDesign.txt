@@ -11803,3 +11803,12 @@ in proximity to actual factors.
 6. This establishes utility of ray shooting queries as an Oracle access implementation which can be used both
 by classical P and quantum period-finding BQP (P^A versus BQP^A) Factoring Turing Machines which at most requires
 O(loglogN) queries.
+
+----------------------------------------------------------------------------------------------------------------
+559. (THEORY and FEATURE-DONE) Computational Geometric Factorization - Ray Shooting Queries - Constant Changes
+- 8 June 2018
+----------------------------------------------------------------------------------------------------------------
+1.Constants in all ray shooting query functions have been changed so that gaps are reduced and possibility
+of exact hit increases. Specifically constant l for Cramer, Baker-Harman-Pintz, Zhang has been made small to
+widen xrange().
+2.2 integers have been factored and approximate factors for all 5 queries are printed after these new constant values. Zhang and Cramer queries were overshooting previously beyond N. None of the queries exactly shoot but are quite close to actual factors.
