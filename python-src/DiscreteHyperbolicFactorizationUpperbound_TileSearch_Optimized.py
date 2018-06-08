@@ -168,7 +168,7 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
 def baker_harman_pintz_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
 	k=6.0
-	l=100.0
+	l=0.001
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -196,7 +196,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
 def cramer_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Cramer estimate for Gaps between Primes - p^0.5*log(p)
 	k=6.0
-	l=100.0
+	l=0.001
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Cramer Ray Shooting Queries - Approximate Factors of ",n," are:"
@@ -224,7 +224,7 @@ def zhang_ray_shooting_queries(n):
 	#Shoots Ray Queries based on Yitang Zhang estimate for Gaps between infinitely many Twin Primes 
 	#of gap < 7 * 10^7 which is refinement of Goldston-Pintz-Yildirim Sieve
 	k=6.0
-	l=100.0
+	l=0.00001
 	normal_order_n=int(k*math.log(math.log(n,2),2))
 	print "============================================================================================================="
 	print "Zhang Ray Shooting Queries (for large primes) - Approximate Factors of ",n," are:"

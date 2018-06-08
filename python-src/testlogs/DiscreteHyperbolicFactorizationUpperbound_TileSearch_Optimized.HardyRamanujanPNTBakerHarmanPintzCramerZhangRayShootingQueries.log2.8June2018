@@ -1,0 +1,604 @@
+2018-06-08 16:31:16 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+2018-06-08 16:31:16 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-06-08 16:31:17 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-06-08 16:31:18 INFO  SparkContext:54 - Running Spark version 2.3.0
+2018-06-08 16:31:19 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+2018-06-08 16:31:19 INFO  SecurityManager:54 - Changing view acls to: root
+2018-06-08 16:31:19 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-06-08 16:31:19 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-06-08 16:31:19 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-06-08 16:31:19 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-06-08 16:31:19 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: df:1c:4d:ba:13:aa:f7:c3
+2018-06-08 16:31:19 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 39573.
+2018-06-08 16:31:19 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-06-08 16:31:19 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-06-08 16:31:19 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-06-08 16:31:19 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-06-08 16:31:19 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-2d434722-66c6-4ca0-898f-17b670dbf5b4
+2018-06-08 16:31:20 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-06-08 16:31:20 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-06-08 16:31:20 INFO  log:192 - Logging initialized @5963ms
+2018-06-08 16:31:20 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-06-08 16:31:20 INFO  Server:414 - Started @6168ms
+2018-06-08 16:31:20 INFO  AbstractConnector:278 - Started ServerConnector@18d12a1{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-06-08 16:31:20 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1ec470a{/jobs,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2e475f{/jobs/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10c6b15{/jobs/job,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f22377{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@12e81e9{/stages,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@19a065a{/stages/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@44fede{/stages/stage,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ba026c{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fab6b{/stages/pool,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16fc028{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@122594e{/storage,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f58d64{/storage/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f52a02{/storage/rdd,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@adcd4{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10917f2{/environment,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@bc331a{/environment/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@73be75{/executors,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@9b31d3{/executors/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1dc1f35{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@8bd977{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16e40c5{/static,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3dbc49{/,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@180f91{/api,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1d5286d{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@11fe2f8{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-06-08 16:31:20 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+2018-06-08 16:31:21 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1528455681455
+2018-06-08 16:31:21 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-4d6ab935-790c-4243-9e46-0a0b05e3dd7b/userFiles-9015d8c1-1bdb-43ca-8749-c0234aac0e9e/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-06-08 16:31:21 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-06-08 16:31:21 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38873.
+2018-06-08 16:31:21 INFO  NettyBlockTransferService:54 - Server created on HCL:38873
+2018-06-08 16:31:21 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-06-08 16:31:21 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 38873, None)
+2018-06-08 16:31:21 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:38873 with 413.9 MB RAM, BlockManagerId(driver, HCL, 38873, None)
+2018-06-08 16:31:21 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 38873, None)
+2018-06-08 16:31:21 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 38873, None)
+2018-06-08 16:31:22 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1b440fd{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  999912765  are:
+=============================================================================================================
+normal_order_n(loglogN) =  29
+####################################################################
+approximate  1 -th prime factor of  999912765 : 34479750
+tangent of ray shooting query angle : 8.4107339627e-07
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999912765 : 68959501
+tangent of ray shooting query angle : 2.10268342969e-07
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999912765 : 103439251
+tangent of ray shooting query angle : 9.34525977786e-08
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999912765 : 137919002
+tangent of ray shooting query angle : 5.25670857423e-08
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999912765 : 172398752
+tangent of ray shooting query angle : 3.36429350702e-08
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999912765 : 206878503
+tangent of ray shooting query angle : 2.33631492188e-08
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999912765 : 241358253
+tangent of ray shooting query angle : 1.71647627625e-08
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999912765 : 275838004
+tangent of ray shooting query angle : 1.31417714356e-08
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999912765 : 310317754
+tangent of ray shooting query angle : 1.03836219085e-08
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999912765 : 344797505
+tangent of ray shooting query angle : 8.41073371877e-09
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999912765 : 379277255
+tangent of ray shooting query angle : 6.95101962061e-09
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999912765 : 413757006
+tangent of ray shooting query angle : 5.8407873047e-09
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999912765 : 448236756
+tangent of ray shooting query angle : 4.97676552517e-09
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999912765 : 482716507
+tangent of ray shooting query angle : 4.29119067284e-09
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999912765 : 517196257
+tangent of ray shooting query angle : 3.73810388224e-09
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999912765 : 551676008
+tangent of ray shooting query angle : 3.28544285889e-09
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999912765 : 586155758
+tangent of ray shooting query angle : 2.91028848897e-09
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999912765 : 620635509
+tangent of ray shooting query angle : 2.59590546876e-09
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999912765 : 655115259
+tangent of ray shooting query angle : 2.32984313895e-09
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999912765 : 689595010
+tangent of ray shooting query angle : 2.10268342969e-09
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999912765 : 724074760
+tangent of ray shooting query angle : 1.90719585723e-09
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999912765 : 758554511
+tangent of ray shooting query angle : 1.73775490057e-09
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999912765 : 793034261
+tangent of ray shooting query angle : 1.5899307617e-09
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999912765 : 827514012
+tangent of ray shooting query angle : 1.46019682617e-09
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  999912765 : 861993762
+tangent of ray shooting query angle : 1.34571739656e-09
+####################################################################
+####################################################################
+approximate  26 -th prime factor of  999912765 : 896473513
+tangent of ray shooting query angle : 1.24419137852e-09
+####################################################################
+####################################################################
+approximate  27 -th prime factor of  999912765 : 930953263
+tangent of ray shooting query angle : 1.15373576513e-09
+####################################################################
+####################################################################
+approximate  28 -th prime factor of  999912765 : 965433014
+tangent of ray shooting query angle : 1.07279766821e-09
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of  999912765  are:
+=============================================================================================================
+normal_order_n(loglogN) =  29
+####################################################################
+approximate  1 -th prime factor of  999912765 : 23065557.0
+approximate prime factor log ratio - pf/log(pf) : 11532778.0
+tangent of ray shooting query angle : 1.8794648996e-06
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999912765 : 41925923.1462
+approximate prime factor log ratio - pf/log(pf) : 20962961.0731
+tangent of ray shooting query angle : 5.68848798167e-07
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999912765 : 56180608.4186
+approximate prime factor log ratio - pf/log(pf) : 28090303.7093
+tangent of ray shooting query angle : 3.16802964111e-07
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999912765 : 66711841.7261
+approximate prime factor log ratio - pf/log(pf) : 33355920.363
+tangent of ray shooting query angle : 2.24675776712e-07
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999912765 : 74399219.8807
+approximate prime factor log ratio - pf/log(pf) : 37199609.4403
+tangent of ray shooting query angle : 1.80644752003e-07
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999912765 : 79970051.7813
+approximate prime factor log ratio - pf/log(pf) : 39985025.3906
+tangent of ray shooting query angle : 1.56353410273e-07
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999912765 : 83988218.6569
+approximate prime factor log ratio - pf/log(pf) : 41994108.8285
+tangent of ray shooting query angle : 1.41750752228e-07
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999912765 : 86877421.006
+approximate prime factor log ratio - pf/log(pf) : 43438710.003
+tangent of ray shooting query angle : 1.32479375509e-07
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999912765 : 88950430.2042
+approximate prime factor log ratio - pf/log(pf) : 44475214.6021
+tangent of ray shooting query angle : 1.26376407911e-07
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999912765 : 90435623.6846
+approximate prime factor log ratio - pf/log(pf) : 45217811.3423
+tangent of ray shooting query angle : 1.22259618598e-07
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999912765 : 91498582.9232
+approximate prime factor log ratio - pf/log(pf) : 45749290.9616
+tangent of ray shooting query angle : 1.19435484771e-07
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999912765 : 92258795.3483
+approximate prime factor log ratio - pf/log(pf) : 46129397.1742
+tangent of ray shooting query angle : 1.17475297489e-07
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999912765 : 92802209.1218
+approximate prime factor log ratio - pf/log(pf) : 46401104.0609
+tangent of ray shooting query angle : 1.1610354587e-07
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999912765 : 93190510.145
+approximate prime factor log ratio - pf/log(pf) : 46595254.5725
+tangent of ray shooting query angle : 1.15138014065e-07
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999912765 : 93467902.4303
+approximate prime factor log ratio - pf/log(pf) : 46733950.7151
+tangent of ray shooting query angle : 1.14455619298e-07
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999912765 : 93666028.0003
+approximate prime factor log ratio - pf/log(pf) : 46833013.5002
+tangent of ray shooting query angle : 1.13971930555e-07
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999912765 : 93807519.3658
+approximate prime factor log ratio - pf/log(pf) : 46903759.1829
+tangent of ray shooting query angle : 1.13628378512e-07
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999912765 : 93908556.0104
+approximate prime factor log ratio - pf/log(pf) : 46954277.5052
+tangent of ray shooting query angle : 1.13384003461e-07
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999912765 : 93980699.8192
+approximate prime factor log ratio - pf/log(pf) : 46990349.4096
+tangent of ray shooting query angle : 1.13209992963e-07
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999912765 : 94032210.6624
+approximate prime factor log ratio - pf/log(pf) : 47016104.8312
+tangent of ray shooting query angle : 1.13085994071e-07
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999912765 : 94068988.2793
+approximate prime factor log ratio - pf/log(pf) : 47034493.6396
+tangent of ray shooting query angle : 1.12997586182e-07
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999912765 : 94095246.0616
+approximate prime factor log ratio - pf/log(pf) : 47047622.5308
+tangent of ray shooting query angle : 1.12934529818e-07
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999912765 : 94113992.7704
+approximate prime factor log ratio - pf/log(pf) : 47056995.8852
+tangent of ray shooting query angle : 1.12889543099e-07
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999912765 : 94127376.7939
+approximate prime factor log ratio - pf/log(pf) : 47063687.897
+tangent of ray shooting query angle : 1.12857441729e-07
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  999912765 : 94136932.0987
+approximate prime factor log ratio - pf/log(pf) : 47068465.5494
+tangent of ray shooting query angle : 1.12834531857e-07
+####################################################################
+####################################################################
+approximate  26 -th prime factor of  999912765 : 94143753.9097
+approximate prime factor log ratio - pf/log(pf) : 47071876.4549
+tangent of ray shooting query angle : 1.12818180098e-07
+####################################################################
+####################################################################
+approximate  27 -th prime factor of  999912765 : 94148624.1779
+approximate prime factor log ratio - pf/log(pf) : 47074311.589
+tangent of ray shooting query angle : 1.12806508328e-07
+####################################################################
+####################################################################
+approximate  28 -th prime factor of  999912765 : 94152101.178
+approximate prime factor log ratio - pf/log(pf) : 47076050.089
+tangent of ray shooting query angle : 1.12798176681e-07
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of  999912765  are:
+=============================================================================================================
+normal_order_n(loglogN) =  29
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  1 -th prime factor of  999912765 : 582126
+tangent of ray shooting query angle : 0.00295072080407
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  2 -th prime factor of  999912765 : 2504722
+tangent of ray shooting query angle : 0.000159383387106
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  3 -th prime factor of  999912765 : 5881911
+tangent of ray shooting query angle : 2.89018215331e-05
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  4 -th prime factor of  999912765 : 10779051
+tangent of ray shooting query angle : 8.60599440042e-06
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  5 -th prime factor of  999912765 : 17243569
+tangent of ray shooting query angle : 3.36285230928e-06
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  6 -th prime factor of  999912765 : 25313053
+tangent of ray shooting query angle : 1.56053335505e-06
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  7 -th prime factor of  999912765 : 35018795
+tangent of ray shooting query angle : 8.15379365798e-07
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  8 -th prime factor of  999912765 : 46387683
+tangent of ray shooting query angle : 4.64682964528e-07
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  9 -th prime factor of  999912765 : 59443342
+tangent of ray shooting query angle : 2.82979957045e-07
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  10 -th prime factor of  999912765 : 74206874
+tangent of ray shooting query angle : 1.81582436172e-07
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  11 -th prime factor of  999912765 : 90697369
+tangent of ray shooting query angle : 1.2155497398e-07
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  12 -th prime factor of  999912765 : 108932274
+tangent of ray shooting query angle : 8.42653391584e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  13 -th prime factor of  999912765 : 128927667
+tangent of ray shooting query angle : 6.01547414746e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  14 -th prime factor of  999912765 : 150698465
+tangent of ray shooting query angle : 4.40295711424e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  15 -th prime factor of  999912765 : 174258590
+tangent of ray shooting query angle : 3.29286344853e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  16 -th prime factor of  999912765 : 199621099
+tangent of ray shooting query angle : 2.50928059559e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  17 -th prime factor of  999912765 : 226798290
+tangent of ray shooting query angle : 1.94393867912e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  18 -th prime factor of  999912765 : 255801792
+tangent of ray shooting query angle : 1.52811116029e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  19 -th prime factor of  999912765 : 286642635
+tangent of ray shooting query angle : 1.21697186428e-08
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  20 -th prime factor of  999912765 : 319331315
+tangent of ray shooting query angle : 9.80571110266e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  21 -th prime factor of  999912765 : 353877842
+tangent of ray shooting query angle : 7.98464059145e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  22 -th prime factor of  999912765 : 390291789
+tangent of ray shooting query angle : 6.56422234829e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  23 -th prime factor of  999912765 : 428582329
+tangent of ray shooting query angle : 5.44369258143e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  24 -th prime factor of  999912765 : 468758268
+tangent of ray shooting query angle : 4.55055356455e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  25 -th prime factor of  999912765 : 510828076
+tangent of ray shooting query angle : 3.83188613087e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  26 -th prime factor of  999912765 : 554799912
+tangent of ray shooting query angle : 3.24854842955e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  27 -th prime factor of  999912765 : 600681650
+tangent of ray shooting query angle : 2.77123517335e-09
+####################################################################
+approximate number of primes between two prime factors: 1153
+####################################################################
+approximate  28 -th prime factor of  999912765 : 648480895
+tangent of ray shooting query angle : 2.37775849029e-09
+####################################################################
+=============================================================================================================
+Cramer Ray Shooting Queries - Approximate Factors of  999912765  are:
+=============================================================================================================
+normal_order_n(loglogN) =  29
+####################################################################
+approximate  1 -th prime factor of  999912765 : 191310165
+tangent of ray shooting query angle : 2.73203349867e-08
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999912765 : 925241752
+tangent of ray shooting query angle : 1.16802373516e-09
+####################################################################
+=============================================================================================================
+Zhang Ray Shooting Queries (for large primes) - Approximate Factors of  999912765  are:
+=============================================================================================================
+normal_order_n(loglogN) =  29
+####################################################################
+approximate  1 -th prime factor of  999912765 : 770000002
+tangent of ray shooting query angle : 1.68647792175e-09
+####################################################################
+2018-06-08 16:31:24 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272
+2018-06-08 16:31:24 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) with 4 output partitions
+2018-06-08 16:31:24 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272)
+2018-06-08 16:31:24 INFO  DAGScheduler:54 - Parents of final stage: List()
+2018-06-08 16:31:24 INFO  DAGScheduler:54 - Missing parents: List()
+2018-06-08 16:31:24 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272), which has no missing parents
+2018-06-08 16:31:24 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-06-08 16:31:24 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 6.5 KB, free 413.9 MB)
+2018-06-08 16:31:25 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 413.9 MB)
+2018-06-08 16:31:25 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:38873 (size: 4.1 KB, free: 413.9 MB)
+2018-06-08 16:31:25 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-06-08 16:31:25 INFO  DAGScheduler:54 - Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+2018-06-08 16:31:25 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 4 tasks
+2018-06-08 16:31:25 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7839 bytes)
+2018-06-08 16:31:25 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7839 bytes)
+2018-06-08 16:31:25 INFO  TaskSetManager:54 - Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 7839 bytes)
+2018-06-08 16:31:25 INFO  TaskSetManager:54 - Starting task 3.0 in stage 0.0 (TID 3, localhost, executor driver, partition 3, PROCESS_LOCAL, 7839 bytes)
+2018-06-08 16:31:25 INFO  Executor:54 - Running task 2.0 in stage 0.0 (TID 2)
+2018-06-08 16:31:25 INFO  Executor:54 - Running task 3.0 in stage 0.0 (TID 3)
+2018-06-08 16:31:25 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+2018-06-08 16:31:25 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-06-08 16:31:25 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1528455681455
+2018-06-08 16:31:25 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-4d6ab935-790c-4243-9e46-0a0b05e3dd7b/userFiles-9015d8c1-1bdb-43ca-8749-c0234aac0e9e/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+Traceback (most recent call last):
+  File "/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 276, in <module>
+    SearchTiles_and_Factorize(number_to_factorize)
+  File "/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 272, in SearchTiles_and_Factorize
+    spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/rdd.py", line 797, in foreach
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/rdd.py", line 1056, in count
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/rdd.py", line 1047, in sum
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/rdd.py", line 921, in fold
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/rdd.py", line 824, in collect
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1158, in __call__
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 908, in send_command
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/py4j-0.10.6-src.zip/py4j/java_gateway.py", line 1055, in send_command
+  File "/usr/lib/python2.7/socket.py", line 447, in readline
+    data = self._sock.recv(self._rbufsize)
+  File "/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 234, in signal_handler
+KeyboardInterrupt
+2018-06-08 17:10:17 INFO  TaskSchedulerImpl:54 - Cancelling stage 0
+2018-06-08 17:10:17 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-06-08 17:10:17 INFO  Executor:54 - Executor is trying to kill task 0.0 in stage 0.0 (TID 0), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  Executor:54 - Executor is trying to kill task 1.0 in stage 0.0 (TID 1), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  Executor:54 - Executor is trying to kill task 2.0 in stage 0.0 (TID 2), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  Executor:54 - Executor is trying to kill task 3.0 in stage 0.0 (TID 3), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  TaskSchedulerImpl:54 - Stage 0 was cancelled
+2018-06-08 17:10:17 INFO  AbstractConnector:318 - Stopped Spark@18d12a1{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-06-08 17:10:17 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) failed in 2332.919 s due to Job 0 cancelled as part of cancellation of all jobs
+2018-06-08 17:10:17 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+2018-06-08 17:10:17 INFO  DAGScheduler:54 - Job 0 failed: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272, took 2333.238161 s
+2018-06-08 17:10:17 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-06-08 17:10:17 INFO  Executor:54 - Executor killed task 1.0 in stage 0.0 (TID 1), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  Executor:54 - Executor killed task 2.0 in stage 0.0 (TID 2), reason: Stage cancelled
+2018-06-08 17:10:17 INFO  MemoryStore:54 - MemoryStore cleared
+2018-06-08 17:10:17 INFO  BlockManager:54 - BlockManager stopped
+2018-06-08 17:10:17 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-06-08 17:10:17 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-06-08 17:10:17 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-06-08 17:10:17 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-06-08 17:10:17 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-d2db6d80-325b-4dd7-8235-1653adf6aa35
+Exception in thread Thread-1 (most likely raised during interpreter shutdown):
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/threading.py", line 551, in __bootstrap_inner
+  File "/usr/lib/python2.7/threading.py", line 504, in run
+  File "/usr/lib/python2.7/SocketServer.py", line 230, in serve_forever
+  File "/usr/lib/python2.7/threading.py", line 388, in set
+  File "/usr/lib/python2.7/threading.py", line 295, in notifyAll
+<type 'exceptions.TypeError'>: 'NoneType' object is not callable
+2018-06-08 17:10:17 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-4d6ab935-790c-4243-9e46-0a0b05e3dd7b
+2018-06-08 17:10:17 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-4d6ab935-790c-4243-9e46-0a0b05e3dd7b/pyspark-8cce6c4d-2257-498b-ae41-0af192e5d3cf
+=================================================
+Factor is =  1
+=================================================
+=================================================
+Factor is =  3
+=================================================
+=================================================
+Factor is =  5
+=================================================
+=================================================
+Factor is =  15
+=================================================
+=================================================
+Factor is =  271
+=================================================
+=================================================
+Factor is =  813
+=================================================
+=================================================
+Factor is =  1355
+=================================================
+=================================================
+Factor is =  4065
+=================================================
+=================================================
+Factor is =  245981
+=================================================
+=================================================
+Factor is =  737943
+=================================================
+=================================================
+Factor is =  1229905
+=================================================
+=================================================
+Factor is =  3689715
+=================================================
+=================================================
+Factor is =  66660851
+=================================================
+=================================================
+Factor is =  333304255
+=================================================
+=================================================
+Factor is =  199982553
+=================================================
+
