@@ -279,8 +279,9 @@ class SATSolver(object):
 
 	def nonuniform_choice3(self,literal_selection,numvars,numclauses):
 		variables=np.random.choice(numvars, numvars, replace=True)
-		damp=2
-		constant=math.sqrt(float(numclauses)/float(numvars))-damp
+		alpha=float(numclauses)/float(numvars)
+		damp=1.09
+		constant=math.sqrt(alpha)-damp
 		skewvariable=int(constant*len(variables))
 		extendedvariables=[]
 	        for x in variables:
