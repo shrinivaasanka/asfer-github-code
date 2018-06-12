@@ -11814,3 +11814,19 @@ O(loglogN) queries.
 of exact hit increases. Specifically constant l for Cramer, Baker-Harman-Pintz, Zhang has been made small to
 widen xrange().
 2.2 integers have been factored and approximate factors for all 5 queries are printed after these new constant values. Zhang and Cramer queries were overshooting previously beyond N. None of the queries exactly shoot but are quite close to actual factors.
+
+----------------------------------------------------------------------------------------------------------
+560. (THEORY and FEATURE-DONE) SAT Solver Update - nonuniform_choice3() damp - 2000 variables and Alpha=4.267
+- 12 June 2018
+----------------------------------------------------------------------------------------------------------
+1.CNFSATSolver.py - damp variable in nonuniform_choice3() function has been fine tuned to match the
+theoretical probability of 1/sqrt(m*n) - observed probability almost matches with theoretical
+2.random 3SAT instances for Number of variables=100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500 and 2000 for alpha=4.267
+have been solved and observed probability closely matches the random matrix probability
+3.Logs for 2000 variables and Alpha=4.267 have been committed to
+ testlogs/CNFSATSolver.2000clausesAlpha4.267.log.12June2018.
+4.Observed MAXSAT approximation ratio for first few iterations hovers around 90-91-92% for all previous
+variable combinations.
+5.Theoretically, if damp variable is perfectly tuned to create required bias in nonuniform choice, then MAXSAT
+ratio observed for unequal variable-clause combinations should also be in the range of 94-95% if not 100%.
+
