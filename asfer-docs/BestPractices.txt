@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------------------
+Coding Conventions and Best Practices followed in NeuronRain Architecture and Development
+-------------------------------------------------------------------------------------------
+There are no strict standard conventions or practices followed in NeuronRain commits but following are
+some guiding principles:
+1.Every source file has copyleft header and attributions.
+2.Presently there are no Continuous Integration/Unit testing framework. But every code change is tested manually 
+and logs are captured suffixing timestamps in separate testlogs/ folder within C/C++/Java/Python source directories.
+3.Development model followed is somewhat similar to Agile (but only a Single person team) and small incremental changes are frequent compared to rare big feature additions/changes especially in Python/MachineLearning code. 
+4.Code documentation - comments are profusely littered wherever necessary. NeuronRain FAQ simulates an enduser and asks questions on h(is/er) behalf and answers them.
+5.Architectural choices are more important than implementation - no complicated overengineering - Occam's Razor. 
+6.VIRGO32 and VIRGO64 linux kernel base mainline PPA versions are not frequently updated having reached minimum stability.
+7.Benchmarks on Single/Multicore/Clusters are committed for salient Cloud implemented features (Factorization, Intrinsic Merit/Fitness, VIRGO system calls-drivers etc.,)
+8.Code Reviews are Self-Reviews only based on QE/QA.
+9.To err is human - erroneous commits are corrected as and when found. Bug Tracking is minimal.
+10.NeuronRain architecure and development has two worlds - userspace(AsFer) cloud/machine learning and kernelspace(VIRGO/KingCobra/USBmd) cloud/Embedded/IoT/Drones/Robotics - connected by kernel_analytics.conf and live reading of remote sockets for analytics variables from kernel_analytics module. AsFer has more activity compared to others.
+11.No strict deadlines/releases but repositories are tagged periodically.
