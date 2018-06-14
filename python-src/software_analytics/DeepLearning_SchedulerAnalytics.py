@@ -42,6 +42,7 @@ import pprint
 from dictdiffer import diff
 import hashlib
 from SparkKernelLogMapReduceParser import log_mapreducer
+from ImageToBitMatrix import image_to_bitmatrix
 
 expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
 expected_process_priorities=json.loads(expected_process_priorities_input.read())
@@ -343,7 +344,68 @@ if __name__=="__main__":
 		kernel_analytics_conf.write(str(proc.pid) + "#LSTM=" + scheduler_class_lstm + "\n")
 		kernel_analytics_conf.write(str(proc.pid) + "#GRU=" + scheduler_class_gru + "\n")
 		kernel_analytics_conf.write(str(proc.pid) + "#Convolution=" + scheduler_class_cnbp + "\n")
-	
+
+	#Pictorial Performance Pattern Mining by Convolution Network:
+	#------------------------------------------------------------
+	#Input to this Convolution Network is an image bitmap matrix obtained from some standard graphic
+	#performance analyzers - runqueuelat, BPF/bcc-tools, perf etc., Following example image is created
+	#by "perf timechart" on perf.data which captures the state,timeslice etc., information of list of
+	#processes in scheduler at any instant in the form of a gantt chart. Backpropagation-Convolution is
+	#then applied to this performance snapshot and convolution, maxpooling, final neuron layers are
+	#computed as usual. This convolution is iterated periodically for stream of performance snapshot bitmaps.
+	#Advantages of mining graphic images of performances captured periodically are:
+	#	- number of dimensions of a performance snapshot image is 2 while psutils creates 1 dimensional 
+	#	array stream of data per process id.
+	#	- 2 dimensional performance snapshots are system wide and capture all process id(s) at a time
+	#	and not process id specific. 
+	#	- Recent advanced performance analyzers like BPF/bcc-tools provide a histogram equivalent of
+	#	timechart in perf (runqueuelat) which is also an image bitmap. So support for graphic performance
+	#	data analytics is futuristic.
+	#	- Processing stream of performance snapshot image bitmaps by convolution to extract patterns is
+	#	more universal/holistic than applying convolution to stream of process structure data
+	#	- Specifically if remaining_clockticks-to-processes dynamic hash tables are available as 
+	#	stream of histogram images, applying convolution on this stream creates frequent recurring
+	#	patterns of queueing in OS Scheduler 
+
+	print "###########################################################"
+	print "Convolution on 2 dimensional graphic performance data stream"
+	print "############################################################" 
+
+	input_bitmap12=image_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/perf.timechart.jpeg")
+	dlc12=DeepLearningConvolution(input_bitmap12)
+
+	#maximum stride is 5
+	convolution_stride=2
+	conv_map12=dlc12.convolution(convolution_stride)
+
+	#maximum pool sliding window width is 5
+	pool_slidewindow_width=2
+	pool_map12=dlc12.max_pooling(pool_slidewindow_width)
+
+	print "##########################################"
+	print "Set of Convolution Maps"
+	print "##########################################"
+	print "Example 12:"
+	print "###########"
+	pprint.pprint(conv_map12)
+	print "##########################################"
+	print "Max Pooling Map"
+	print "##########################################"
+	print "Example 12:"
+	print "###########"
+	pprint.pprint(pool_map12)
+	print "####################################################################################################"
+	print "Final layer that connects all neurons in max pooling map and does backpropagation"
+	print "####################################################################################################"
+	maxpool_map_width=5
+	print "###########################################################################################"
+	print "Inference from Max Pooling Layer" 
+	print "###########################################################################################"
+	print "Example 12:"
+	print "###########"
+	print "Software Analytics - Convolution Network + BackPropgation - max pooling inference:",dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width)
+	scheduler_class_cnbp=learnt_scheduler_class(dlc12.infer_from_max_pooling(pool_map12,maxpool_map_width))
+
 	for pf in processesfeatures:
 		hash1=getHash(str(pf))
 		hash2=getHash(str(pf))
