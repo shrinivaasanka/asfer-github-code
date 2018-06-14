@@ -11831,3 +11831,32 @@ variable combinations.
 5.Theoretically, if damp variable is perfectly tuned to create required bias in nonuniform choice, then MAXSAT
 ratio observed for unequal variable-clause combinations should also be in the range of 94-95% if not 100%.
 
+---------------------------------------------------------------------------------------------------------------
+561. (FEATURE-DONE) Scheduler Analytics Update - New Convolution Network for analyzing stream of 2-dimensional graphics performance image data - 14 June 2018
+---------------------------------------------------------------------------------------------------------------
+Pictorial Performance Pattern Mining by Convolution Network:
+---------------------------------------------------------------------------------------------------------------
+Input to this Convolution Network is an image bitmap matrix obtained from some standard graphic
+performance analyzers - runqueuelat, BPF/bcc-tools, perf etc., Following example image is created
+by "perf timechart" on perf.data which captures the state,timeslice etc., information of list of
+processes in scheduler at any instant in the form of a gantt chart. Backpropagation-Convolution is
+then applied to this performance snapshot and convolution, maxpooling, final neuron layers are
+computed as usual. This convolution is iterated periodically for stream of performance snapshot bitmaps.
+Advantages of mining graphic images of performances captured periodically are:
+       - number of dimensions of a performance snapshot image is 2 while psutils creates 1 dimensional
+       array stream of data per process id.
+       - 2 dimensional performance snapshots are system wide and capture all process id(s) at a time
+       and not process id specific.
+       - Recent advanced performance analyzers like BPF/bcc-tools provide a histogram equivalent of
+       timechart in perf (runqueuelat) which is also an image bitmap. So support for graphic performance
+       data analytics is futuristic.
+       - Processing stream of performance snapshot image bitmaps by convolution to extract patterns is
+       more universal/holistic than applying convolution to stream of process structure data
+       - Specifically if remaining_clockticks-to-processes dynamic hash tables are available as
+       stream of histogram images, applying convolution on this stream creates frequent recurring
+       patterns of queueing in OS Scheduler (Described in GRAFIT course material:
+                - https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt,
+                - https://gitlab.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt
+	)
+
+NOTE on linux kernel versions: All the NeuronRain commits being done (in SourceForge and GitHub) for the past 2 months since April 2018 are based on executions/tests on linux kernel 3.x.x + Single Core. Berkeley Packet Filtering(BPF)/bcc-tools performance analyzer which includes runqlat is recent addition to mainstream linux kernel from version 4.x.x onwards. Commits prior to April 2018 were done on a linux kernel 4.13.3 + Dual Core development environment which was sabotaged by a probable severe Cybercrime in first week of April 2018 causing catastrophic damage to partitions and hardware failure too making recovery impossible. This incident caused total destruction of all dev and build setups necessitating full checkouts from GitHub and SourceForge repositories and continued development on another base linux kernel of lesser version which does not support BPF/bcc-tools. Previous provision for graphic performance data pattern recognition is mainly targeted towards supporting BPF/bcc-tools in future.
