@@ -33,6 +33,8 @@ from scipy.linalg import pinv
 from scipy.linalg import pinv2
 from numpy import matmul
 #from scipy.sparse import csr_matrix 
+from numpy import polyfit
+from scipy.optimize import lsq_linear
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -170,7 +172,7 @@ class SATSolver(object):
                 b = np.array(self.equationsB)
 		init_guess = []
 		for n in xrange(number_of_variables):
-			init_guess.append(0.0001)
+			init_guess.append(0.00000000001)
 		initial_guess = np.array(init_guess)
 		self.A=a
 		self.B=b
@@ -188,7 +190,7 @@ class SATSolver(object):
                 	x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
 		if self.Algorithm=="lsmr()":
                 	#x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
-                	x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True,x0=initial_guess)
+                	x = lsmr(a,b,damp=0.00001,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 		if self.Algorithm=="spsolve()":
 			x = dsolve.spsolve(csc_matrix(a),b)
 		if self.Algorithm=="pinv2()":
@@ -196,6 +198,8 @@ class SATSolver(object):
 			#pseudoinverse_a=pinv(a)
 			pseudoinverse_a=pinv2(a,check_finite=False)
 			x.append(matmul(pseudoinverse_a,b))
+		if self.Algorithm=="lsq_linear()":
+			x = lsq_linear(a,b,lsq_solver='exact')
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
 		cnt=0
@@ -391,11 +395,12 @@ if __name__=="__main__":
 		print "--------------------------------------------------------------"
 		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Alpha = ",float(number_of_clauses)/float(number_of_variables),"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
-		#satsolver=SATSolver("lsmr()")
+		satsolver=SATSolver("lsmr()")
 		#satsolver=SATSolver("solve()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
-		satsolver=SATSolver("lsmr()")
+		#satsolver=SATSolver("lsqr()")
+		#satsolver=SATSolver("lsq_linear()")
 		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
 		#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
 		cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
