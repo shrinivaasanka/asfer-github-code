@@ -11913,3 +11913,17 @@ References:
 562.7 Quantum Karatsuba Integer Multiplication - https://arxiv.org/pdf/1706.03419.pdf
 562.8 Quantum Multiplication Modulo N Gate Example - https://www.math.ksu.edu/reu/sumar/QuantumAlgorithms.pdf - Depth of multiplication gates is polylogarithmic in N.
 562.9 Log Depth Circuits for Division and Related Problems - [BeameCookHoover] - https://pdfs.semanticscholar.org/29c6/f0ade6de6c926538be6420b61ee9ad71165e.pdf
+
+-----------------------------------------------------------------------------------------------------------
+563. (THEORY and FEATURE-DONE) Random 3SAT Approximate LSQR/LSMR Solver update - Increase in Accuracy
+- 19 June 2018
+-----------------------------------------------------------------------------------------------------------
+1.CNFSATSolver.py has been updated to increase the accuracy of least squares approximation of SAT assignments
+by setting atol=btol=conlim=0 as prescribed by SciPy documentation in :
+https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.sparse.linalg.lsmr.html
+Also set the damp to a low value close to zero to solve the 3SAT as regularized least squares problem which is
+a generalization of least squares.
+2.Random 3SAT instances of 1000 variables and Alpha=1.0 have been solved and MAXSAT approximation ratio for this
+converge to ~97% for few iterationsA
+3.This increase in accuracy slows down LSMR. But by better least squares optimization which is parallelizable on cloud viz., LSRN - http://web.stanford.edu/group/SOL/software/lsrn/ which is recent parallel algorithm for
+solving least squares (LSRN paper - http://web.stanford.edu/group/SOL/papers/lsrn-sisc-2014.pdf) this slow down can be remedied. Invoking LSRN instead of LSMR implies SAT Solver can be executed on cloud.
