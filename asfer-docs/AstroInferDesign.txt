@@ -11939,3 +11939,25 @@ a generalization of least squares.
 converge to ~97% for few iterationsA
 3.This increase in accuracy slows down LSMR. But by better least squares optimization which is parallelizable on cloud viz., LSRN - http://web.stanford.edu/group/SOL/software/lsrn/ which is recent parallel algorithm for
 solving least squares (LSRN paper - http://web.stanford.edu/group/SOL/papers/lsrn-sisc-2014.pdf) this slow down can be remedied. Invoking LSRN instead of LSMR implies SAT Solver can be executed on cloud.
+
+-------------------------------------------------------------------------------------------------------------
+564. (THEORY and FEATURE-DONE) SAT Solver Update - Randomized Rounding and other linear system of equation solvers - 21 June 2018
+-------------------------------------------------------------------------------------------------------------
+1.SAT Solver has been updated to include a special if condition to check if Alpha=1 and directly invoke
+linear system of equations solvers instead of least squares regression solvers. Various system of equations
+solvers like minres,cg,solve and their variants in ScipPy were tried for number_of_clauses==number_of_variables
+ and minres was found to be the best equalling lsmr's accuracy. But they have been commented and lsmr() is
+invoked with no regularization damp for Alpha=1
+2.Randomized Rounding of the fractional real assignments computed from least squares has been refined. Earlier
+the rounding threshold was set to 0.5 which has been generalized to the midpoint of the assignment array ((min + max)/2)
+3. This midpoint computation is important because it finds the halfway inflexion point of the polynomial traversing the real assignment points. This polynomial is approximated to a step function of 1s and 0s based on whether the assignment for a variable is above or below half-way mark.
+4. Polynomial through the fractional assignment points is sinusoidal and it crosses this midpoint in as many places as there are 0-to-1 and 1-to-0 inflexions.
+5. Another randomized rounding scheme is also implemented by computing a pseudorandom fraction between 0 and 1 as
+threshold. Midpoint threshold is quite accourate and is mostly 0.5 which is on the expected lines, while values
+other than 0.5 are caused because of negative values to some variables in least squares. This follows the usual
+randomized rounding convention (e.g for Set Cover).
+6. Few Random SAT instances of 1000 variables and Alpha=1 have been computed and MAXSAT approximation ratio has been found to be 97-98% which is captured in logs. In some other executions, this ratio touched even 98.5%
+7. Accuracy of randomized rounding threshold is crucial to maximizing MAXSAT ratio.
+8. Quantum HHL algorithm solves system of equations Ax=B in logarithmic time while previous classical solvers
+are polynomial in clauses-variables. Theoretically this SAT Solver invoking HHL on a quantum computer should be
+able to solve SAT NP-Complete problem approximately in logtime and thus in BQ-P (or BQ-NC).
