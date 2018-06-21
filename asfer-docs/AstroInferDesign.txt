@@ -11875,6 +11875,17 @@ for a Turing Machine M(x) in BQP. Since NC is contained in QNC, PRAMs in NC Fact
 Computational Geometric Factorization involves both Parallel and Sequential phases - Pixelating hyperbolic arc bow and k-mergesorting/segment-tree them requires parallel RAMs whereas binary search of k-mergesorted/segment-tree tiles can be done by sequential binary search with no necessity for PRAMs. If each PRAM is replaced by a Quantum Gate, computational geometric factorization can be done in QNC instead of NC which is contained in BQP. Following algorithm maps the mergesort and search of hyperbolic tiles as below and does away with sorting and searching.
 
 ---------------------------------------------------------------------------------
+Pixelated Hyperbolic arc bow as superposition of quantum state pixels
+---------------------------------------------------------------------------------
+Set of pixel coordinates in pixelated hyperbolic arc bow can be construed as superposed pixel quantum states each of some amplitude:
+	|(p,q)> = B1|(x1,y1)> + B2|(x2,y2)| + ... + Bn|(xO(N),yO(N))>
+for complex amplitudes Bi of O(N) coordinate states in pixelated hyperbolic arc. This superposition implies all the coordinates of hyperbolic arc simultaneously have certain probability of being the factor of N. Factorization reduces to maximizing probability of decoherence of this superposition to correct classical factor state |(xl,yl)> i.e xl*yl=N.
+
+Number of distinct prime factors of N = kloglogN for some constant k from Hardy-Ramanujan Theorem. Set of all factors = Set of all multiplicative partitions of N. Average Probability of a coordinate in pixelated hyperbolic arc to be the factor of N = O((Multiplicative Partition Number of N) / N). But square of complex amplitude Bi^2 is the classical probability of a pixel coordinate state |(xi,yi)>. Each state |(xi,yi)> is created by a quantum toffoli multiplication gate and requires 2*logN qubits. Amplitude Bi for each state |(xi,yi)> can be defined as the complex number function of coordinate:
+	Bi = f(xi,yi) + i*g(xi,yi)
+Classical probability of being a factor of N = Bi^2 which is 1 for factor points. Solving Bi^2 = 1, yields f and g. 
+
+---------------------------------------------------------------------------------
 Quantum NC equivalent of Classical PRAM-NC Computational Geometric Factorization:
 ---------------------------------------------------------------------------------
 	- Input to the quantum NC circuit is the equation for hyperbola, xy=N
@@ -11913,6 +11924,7 @@ References:
 562.7 Quantum Karatsuba Integer Multiplication - https://arxiv.org/pdf/1706.03419.pdf
 562.8 Quantum Multiplication Modulo N Gate Example - https://www.math.ksu.edu/reu/sumar/QuantumAlgorithms.pdf - Depth of multiplication gates is polylogarithmic in N.
 562.9 Log Depth Circuits for Division and Related Problems - [BeameCookHoover] - https://pdfs.semanticscholar.org/29c6/f0ade6de6c926538be6420b61ee9ad71165e.pdf
+562.10 Quantum Machine Learning - HHL Algorithm - https://www.scottaaronson.com/papers/qml.pdf - HHL solves system of linear equations Ax=B in quantum logarithmic time. Quantum RAM loads the classical amplitudes of all states - Quoted excerpts - "...If the HHL algorithm could be adapted to the case where (say) a single bi is 1 and all the others are 0, then it would contradict the impossibility of an exponential speedup for black-box quantum search, which was proved by Bennett, Bernstein, Brassard, and Vazirani...". This is relevant in the context of pixel state superposition above i.e if exactly one Bi corresponding to a factor point is made to 1 and all others are 0, factorization immediately follows. HHL algorithm fits well in the context of least squares SAT solver also which maps 3SAT clauses to system of linear equations and finds assignments approximately by solving random matrix equation, Ax=B.
 
 -----------------------------------------------------------------------------------------------------------
 563. (THEORY and FEATURE-DONE) Random 3SAT Approximate LSQR/LSMR Solver update - Increase in Accuracy
