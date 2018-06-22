@@ -11885,6 +11885,11 @@ Number of distinct prime factors of N = kloglogN for some constant k from Hardy-
 	Bi = f(xi,yi) + i*g(xi,yi)
 Classical probability of being a factor of N = Bi^2 which is 1 for factor points. Solving Bi^2 = 1, yields f and g. 
 
+Classical probability ( (modulus(Bi))^2 ) of pixel coordinate state |(xi,yi)> - assumed to be normalized so that
+Sum(Bi^2) = 1 - can be defined as below:
+        (modulus(Bi))^2 = f(xi,yi)^2 + g(xi,yi)^2 = floor(1 - abs(xi*yi/N - 1))
+which is 1 only if xi*yi = N, the factor point, and is 0 if xi*yi/N > 1 or xi*yi/N < 1 , the non-factor points on pixelated hyperbolic arc bow, because floor() makes the enclosing fraction to 0.
+
 ---------------------------------------------------------------------------------
 Quantum NC equivalent of Classical PRAM-NC Computational Geometric Factorization:
 ---------------------------------------------------------------------------------
