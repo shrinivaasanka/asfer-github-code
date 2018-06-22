@@ -29,8 +29,8 @@ import json
 
 class ThoughtNetIndex(object):
 	def __init__(self):
-		self.thoughtnet_hypergraph_storage=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
-		self.thoughtnet_hypergraph_edges_storage=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Edges.txt","r")
+		self.thoughtnet_hypergraph_storage=open("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Hypergraph_Generated.txt","r")
+		self.thoughtnet_hypergraph_edges_storage=open("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/ThoughtNet/ThoughtNet_Edges.txt","r")
 		self.thoughtnet_hypergraph=json.loads(self.thoughtnet_hypergraph_storage.read())
 		self.thoughtnet_hypergraph_edges=json.loads(self.thoughtnet_hypergraph_edges_storage.read())
 

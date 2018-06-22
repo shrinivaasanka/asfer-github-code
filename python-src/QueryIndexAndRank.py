@@ -28,22 +28,29 @@ from LSHIndex import LSHIndex
 from ThoughtNetIndex import ThoughtNetIndex
 from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 import sys
+from pprint import pprint
+import operator
+import json
 
 if __name__=="__main__":
+	lsh_intrinsic_merit_ranking={}
+	thoughtnet_intrinsic_merit_ranking={}
 	lshindex=LSHIndex(50,50)
 	thoughtnetindex=ThoughtNetIndex()
 	rlfg=RecursiveLambdaFunctionGrowth()
 	print "#############################################################"
 	print "QueryAndRank: Querying Locality Sensitive Hashing Index for - ",sys.argv[1]
 	print "#############################################################"
-        crawled=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/webspider/WebSpider-HTML.out","r")
+        crawled=open("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/webspider/WebSpider-HTML.out","r")
         for sentence in crawled:
                 lshindex.add(sentence)
 	lshresults=lshindex.query_nearest_neighbours(sys.argv[1])
 	print lshresults
 	if lshresults is not None:
 		for r in lshresults:
-			rlfg.grow_lambda_function3(r[0].replace(u'\xa0', ' ').encode('utf-8'))
+			intrinsic_merit_dict=rlfg.grow_lambda_function3(r[0].replace(u'\xa0', ' ').encode('utf-8'))
+			print intrinsic_merit_dict
+			lsh_intrinsic_merit_ranking[float(json.dumps(intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"]))]=r
 	lshindex.delete_index()
 	print "#############################################################"
 	print "QueryAndRank: Querying ThoughtNet Index for - ",sys.argv[1]
@@ -51,4 +58,17 @@ if __name__=="__main__":
 	thoughtnetresults=thoughtnetindex.query_index(sys.argv[1])
 	print thoughtnetresults
 	for r in thoughtnetresults:
-		rlfg.grow_lambda_function3(r.replace(u'\xa0', ' ').encode('utf-8'))
+		intrinsic_merit_dict=rlfg.grow_lambda_function3(r.replace(u'\xa0', ' ').encode('utf-8'))
+		print intrinsic_merit_dict
+		thoughtnet_intrinsic_merit_ranking[float(json.dumps(intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"]))]=r
+	sorted_lsh_intrinsic_merit_ranking=sorted(lsh_intrinsic_merit_ranking.items(),key=operator.itemgetter(0), reverse=True)
+	sorted_thoughtnet_intrinsic_merit_ranking=sorted(thoughtnet_intrinsic_merit_ranking.items(),key=operator.itemgetter(0), reverse=True)
+	print "==========================================================================="
+	print "LSH Intrinsic Merit Ranking" 
+	print "==========================================================================="
+	pprint(sorted_lsh_intrinsic_merit_ranking)
+	print "==========================================================================="
+	print "ThoughtNet Intrinsic Merit Ranking" 
+	print "==========================================================================="
+	pprint(sorted_thoughtnet_intrinsic_merit_ranking)
+
