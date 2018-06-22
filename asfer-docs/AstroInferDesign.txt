@@ -11976,3 +11976,24 @@ dictionaries have been created for LSH and ThoughtNet index rankings and are sor
 2.Locations of ThoughtNet Hypergraph have been updated in Indexing/
 3.Logs for the ranking have been captured in testlogs/QueryIndexAndRank.log.22June2018
 
+---------------------------------------------------------------------------------------------------------------
+566. (THEORY) Exact Learning of Boolean Functions(e.g absolute CNF) and Intrinisic Merit - 22 June 2018
+- related to 529
+---------------------------------------------------------------------------------------------------------------
+Intrinsic Merit problem has been defined as MAXSAT problem earlier assuming there exists an absolute universal
+CNF which accepts merit variable values from texts/AVs. Merit variables in this universal CNF are boolean
+ based on threshold: if a merit value > threshold, merit variable is 1 and 0 otherwise. For example if graph
+tensor neuron network intrinsic merit of a text exceeds a threshold, corresponding variable "intrinsic_merit"
+in universal CNF is set to 1. Texts/AVs are ranked by descending order of percentage of clauses satisfied in this
+universal CNF which is MAXSAT problem. Problem is how to learn this universal CNF if it exists. There are 
+approximate learning algorithms like PAC learning which can learn a concept class approximately correctly
+with a bounded error. Traditional exact learning model uses halving algorithm based on membership and 
+equivalence queries to gradually shrink the concept class to 1 element. Number of queries required are log|C|.
+Membership queries ask an oracle if x is in C and equivalence queries ask an oracle if f(x)=h(x). This halving
+algorithm is analogous to interval halving proof of Bolzano-Weierstrass Theorem which states that every infinite sequence has a convergent monotone subsequence. Applying this halving procedure to set of all texts and AVs couldexactly learn a universal CNF in logarithmic number of Angluin model membership and counterexample/equivalence 
+queries.
+
+References:
+-----------
+566.1 Oracles and Queries That Are Sufficient for Exact Learning - [Nader H. Bshouty, Richard Cleve, Ricard Gavaldah, Sampath Kannan and Christino Tamon] - https://ac.els-cdn.com/S002200009690032X/1-s2.0-S002200009690032X-main.pdf?_tid=735940ad-7047-40d2-a9a7-2575422672c3&acdnat=1529665709_798fd8cba3f740826f4c3ce299cdb6c1
+566.2 Bolzano-Weierstrass theorem and its application to MARA - https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem
