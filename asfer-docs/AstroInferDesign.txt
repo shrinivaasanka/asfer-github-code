@@ -11966,3 +11966,13 @@ randomized rounding convention (e.g for Set Cover).
 8. Quantum HHL algorithm solves system of equations Ax=B in logarithmic time while previous classical solvers
 are polynomial in clauses-variables. Theoretically this SAT Solver invoking HHL on a quantum computer should be
 able to solve SAT NP-Complete problem approximately in logtime and thus in BQ-P (or BQ-NC).
+
+-----------------------------------------------------------------------------------------------------------
+565. (FEATURE-DONE) Query Index and Ranking - Sorting by merit - 22 June 2018
+-----------------------------------------------------------------------------------------------------------
+1.QueryIndexAndRank.py has been changed to sort the results queried from LSH and ThoughtNet indices by
+descending order of Graph Tensor Neuron Network Intrinsic Merit. Earlier sorting was missing. Two
+dictionaries have been created for LSH and ThoughtNet index rankings and are sorted descending.
+2.Locations of ThoughtNet Hypergraph have been updated in Indexing/
+3.Logs for the ranking have been captured in testlogs/QueryIndexAndRank.log.22June2018
+
