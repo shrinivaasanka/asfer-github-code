@@ -10844,6 +10844,8 @@ integer round-off of k is the index of tile interval containing x.
 	subsegment2:  (N/(k+2)+delta,(k+1),N/(k+1),(k+1))
 and delta=N/((k+1)(k+2))
 
+CAVEAT: Two factor points (x1,y1) and (x2,y2) can equal by x1*y1=x2*y2 but these two points are located in different subsegments of different tiles because points within subsegment1 or subsegment2 of a tile segment have same y-coordinates. Previous inequality applies only to a binary search segment tree comprised of subsegment2(s) of all segments by implicit geometric spatial sortedness i.e end of subsegment2 in previous segment is less than start of subsegment2 in next segment. Set of subsegment1(s) need not be implicitly sorted and thus can not be searched by a segment tree constructed sequentially. This renders previous optimization feasible only to a subset of integers. Algorithms for Parallel RAM construction of segment tree described previously are therefore necessary to find factor points in polylogarithmic time and thus in NC and all these algorithms require parallel k-mergesort. This sequential algorithm has been mentioned only as an optimization.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 507. (THEORY) Tournament Graph Election, Coloring, Intrinsic Merit, Partitions and Bell Number - 8 February 2018
 ---------------------------------------------------------------------------------------------------------------------------------------------
