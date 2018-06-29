@@ -12001,3 +12001,21 @@ References:
 -----------
 566.1 Oracles and Queries That Are Sufficient for Exact Learning - [Nader H. Bshouty, Richard Cleve, Ricard Gavaldah, Sampath Kannan and Christino Tamon] - https://ac.els-cdn.com/S002200009690032X/1-s2.0-S002200009690032X-main.pdf?_tid=735940ad-7047-40d2-a9a7-2575422672c3&acdnat=1529665709_798fd8cba3f740826f4c3ce299cdb6c1
 566.2 Bolzano-Weierstrass theorem and its application to MARA - https://en.wikipedia.org/wiki/Bolzano%E2%80%93Weierstrass_theorem
+
+--------------------------------------------------------------------------------------------------------------
+567. (FEATURE-DONE) Streaming Analytics - Facebook Graph API - Python 3.4 and facebook-sdk - 29 June 2018
+--------------------------------------------------------------------------------------------------------------
+1.Similar to Streaming_<datasource>.py for LinkedIn and Twitter, Streaming_FacebookData.py has been added to
+NeuronRain AsFer repositories in SourceForge,GitHub and GitLab.
+2.This imports facebook-sdk for python 3.4. This is the first python implementation on python 3.4.
+3.This upgrade to python 3.4 from python 2.7 is necessitated because:
+        3.1 facebook-sdk on python 2.7 requires python 2.7.9
+        3.2 But importing facebook-sdk on Python 2.7.9 raises errors related to _ssl and _hashlib (md5,sha etc.,)
+which are not by default supported by python 2.7.9
+        3.3 Enabling SSL flags in Modules/Setup.dist for python 2.7.9 non-system builds also does not resolve this error and ssl is not built along with python
+        3.4 Facebook sdk supports only python 3.4 and 3.7 in 3.x
+        3.5 Python3.4 has been installed from a non standard PPA
+        3.6 VirtualEnv, EasyInstall3, PIP also do not solve the above SSL import issue
+        3.7 In python3.4 too, lot of facebook-sdk dependencies have to be git-cloned,built and installed (requests, idna, certifi, chardet etc.,) for facebook import to work
+4. Example temporary access token has been created from from https://developers.facebook.com/tools/explorer/
+5. Simple name and id REST query has been done using requests and logs committed to testlogs/
