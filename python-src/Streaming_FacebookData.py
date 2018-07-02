@@ -22,13 +22,27 @@ import requests
 
 def facebook_graph():
 	token="EAACvK6dFKs8BAJ2jNabZBci3HQUmjwd8tZAeekltnBmQtS9eV2GBDVbiNTM4Y2y2krUFp6xJOSlAdzxrjsuLsTsQcB9RawdFdT0gzpfZBJuZCyJmvZAtBATk3xxL8eSPplt8M3mzXXdB3OyCuqIavrsAPto847d0ZD"
-	#user="X"
+	user=sys.argv[1]
 
 	graph=facebook.GraphAPI(access_token=token,version=3.0)
-	#profile=graph.get_object(user)
-	#posts = graph.get_connections(profile['id'], 'posts')
-	search_results=graph.request("me", {"fields":"name"})
-	print(search_results)
+	profile=graph.get_object(user)
+	print("====================")
+	print("Posts:")
+	print("====================")
+	posts = graph.get_connections(profile['id'], 'posts')
+	print(posts)
+	Fields=graph.request(user, {"fields":"name"})
+	print("====================")
+	print("Fields:")
+	print("====================")
+	print(Fields)
+	print("====================")
+	print("Connections:")
+	print("====================")
+	friends = graph.get_connections(id=user, connection_name='friends')
+	print(friends['summary'])
+	for f in friends['data']:
+		print(f)
 
 if __name__=="__main__":
 	facebook_graph()
