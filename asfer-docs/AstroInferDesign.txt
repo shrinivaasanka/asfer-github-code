@@ -12019,3 +12019,11 @@ which are not by default supported by python 2.7.9
         3.7 In python3.4 too, lot of facebook-sdk dependencies have to be git-cloned,built and installed (requests, idna, certifi, chardet etc.,) for facebook import to work
 4. Example temporary access token has been created from from https://developers.facebook.com/tools/explorer/
 5. Simple name and id REST query has been done using requests and logs committed to testlogs/
+
+------------------------------------------------------------------------------------------------------------
+568. (FEATURE-DONE) Streaming Analytics - Facebook Graph - 2 July 2018
+------------------------------------------------------------------------------------------------------------
+1.Streaming_FacebookData.py has been parametrized to accept user name as commandline argument
+        $python3.4 Streaming_FacebookData.py <facebook_user>
+2.Wall Posts and Friends of a user are obtained by facebook-sdk REST
+3.Friends generator object is iterated and printed
