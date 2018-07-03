@@ -43,6 +43,7 @@ from numpy import matmul
 #from scipy.sparse import csr_matrix 
 from numpy import polyfit
 from scipy.optimize import lsq_linear
+from scipy.fftpack import fft
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -439,6 +440,9 @@ if __name__=="__main__":
 		satis=satsolver.satisfy(ass2[0])
 		print "Assignment satisfied:",satis[0]
 		average_percentage_of_clauses_satisfied += satis[1]
+
+		print "Discrete Fourier Transform of the real assignment:",fft(ass2[0])
+
 		cnt += 1
 		satiscnt += satis[0]
 		prob_dist_variables=prob_dist(variables)
