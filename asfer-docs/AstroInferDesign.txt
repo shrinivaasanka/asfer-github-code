@@ -12027,3 +12027,38 @@ which are not by default supported by python 2.7.9
         $python3.4 Streaming_FacebookData.py <facebook_user>
 2.Wall Posts and Friends of a user are obtained by facebook-sdk REST
 3.Friends generator object is iterated and printed
+
+-------------------------------------------------------------------------------------------------------
+569. (THEORY and FEATURE) SAT Solver - Discrete Fourier Transform (FFT) of the real assignment,
+Parseval/Plancherel Theorems, Semidefinite Programming Approximation and Least Squares - 3 July 2018
+-------------------------------------------------------------------------------------------------------
+1. SAT Solver has been updated to compute Fast Fourier Transform of the real assignment points for each
+random 3SAT.
+2. Discrete Fourier Transform of set of points is:
+        X(N) = Sum(x(n) * e^(2*pi*n*k/N)), k=0,1,2,...,N-1
+X(i) are frequencies and x(i) are discrete points in real assignment vector computed from Least Squares
+3. Mapping the real assignment points to frequency domain enables finding periodicity within the real assignments and
+applying Parseval/Plancherel Theorems (https://en.wikipedia.org/wiki/Discrete_Fourier_transform)
+4. Parseval Theorem equates the inner product of two vectors to inner product of Fourier Transform Frequencies.
+5. Inner product of two assignment vectors (exact binary and real approximate - for values of variables)
+is a measure of distance between the exact (if known) and approximate assignments
+6. Least Square Approximation solves the system of linear equations AX = B for random 3SAT while Semidefinite
+Programming (SDP) solves the Convex Optimization Problem:
+                maximize/minimize: Double_Summation(a(i,k)*xi * yk)
+                Subject to Constraints: Double_Summation(cl*xi*yk) < bl
+7. In other words, SDP solves:
+                maximize/minimize: A*X
+                Subject to Constraints: C*X < B
+                X is a Positive Semidefinite Gramian Matrix having entries from inner product space of vectors
+                (or v*X*v^T is non-zero for real vectors v)
+8. [Goemans-Williamson] MAXCUT Approximation algorithm - http://www-math.mit.edu/~goemans/PAPERS/maxcut-jacm.pdf -Journal of the Association for Computing Machinery,vol. 42, No.6, November1995 - solves
+MAXCUT in ~88% by SDP.
+9. Any symmetric matrix can be approximated to nearest positive semidefinite matrix (e.g cov_nearest - http://www.statsmodels.org/dev/generated/statsmodels.stats.correlation_tools.cov_nearest.html)
+10. There is an SDP variation of least squares, Semidefinite Least Squares, which solves the convex program:
+                minimize: |X-C|^2
+                Subject to: AX=B for positive semidefinite matrix X.
+which is similar to least squares solution for variable vector X. X is positive semidefinite because for any real
+vector v and some assignment to X, v*X*vT is positive or zero. Minimizing |X-C|^2 for some binary assignment C
+finds closest approximation of X to binary step function characterized by C. (Example: https://ljk.imag.fr/membres/Jerome.Malick/Talks/08-louvain.pdf)
+11.logs for 2000 variables and alpha=1 have been committed to testlogs/ which show usual MAXSAT approximation
+ratio convergence to >= 97%
