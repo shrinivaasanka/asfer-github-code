@@ -12058,7 +12058,7 @@ MAXCUT in ~88% by SDP.
                 minimize: |X-C|^2
                 Subject to: AX=B for positive semidefinite matrix X.
 which is similar to least squares solution for variable vector X. X is positive semidefinite because for any real
-vector v and some assignment to X, v*X*vT is positive or zero. Minimizing |X-C|^2 for some binary assignment C
+vector v and some assignment to X, v*X*vT is positive. Minimizing |X-C|^2 for some binary assignment C
 finds closest approximation of X to binary step function characterized by C. (Example: https://ljk.imag.fr/membres/Jerome.Malick/Talks/08-louvain.pdf)
 11.logs for 2000 variables and alpha=1 have been committed to testlogs/ which show usual MAXSAT approximation
 ratio convergence to >= 97%
