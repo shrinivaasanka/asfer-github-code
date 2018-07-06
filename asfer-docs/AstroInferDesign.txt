@@ -12063,3 +12063,34 @@ vector v and some assignment to X, v*X*vT is positive. Minimizing |X-C|^2 for so
 finds closest approximation of X to binary step function characterized by C. (Example: https://ljk.imag.fr/membres/Jerome.Malick/Talks/08-louvain.pdf)
 11.logs for 2000 variables and alpha=1 have been committed to testlogs/ which show usual MAXSAT approximation
 ratio convergence to >= 97%
+
+--------------------------------------------------------------------------------------------------------------
+570. (THEORY and FEATURE) Computational Geometric Factorization, Ray Shooting Query Oracles, ABC Conjecture
+- related to 486, 527, 550, 558 and all other sections on factorization - 6 July 2018
+--------------------------------------------------------------------------------------------------------------
+ABC Conjecture implies there exist finite number of coprime integer triples a,b,c as solutions to diophantine 
+equation c=a+b constrained by:
+			log(c)
+	quality =	------		< 1 + epsilon for all epsilon > 0
+			log(rad(abc)) 
+radical(N) or rad(N) is the product of distinct prime factors of N (square-free).
+
+Gap between numbers c and a having same prime factors has been conjectured in reference 570.1 as: 
+c - a > C(epsilon)a^(0.5-epsilon) which is derived from ABC Conjecture. This is contrasted against the observed
+convergence of merit difference in Hardy-Ramanujan-PrimeNumberTheorem ray shooting query oracle:
+        l*pf(n+1)/log(pf(n+1)) - l*pf(n)/log(pf(n)) = l*N/(logN * k*loglogN)
+which is the approximate gap between merit of n-th and (n+1)st prime factors pf(n) and pf(n+1) of an integer N.
+An example factorization and ray shooting query log has been committed which shows actual and ray shooting estimates of factors in 4 of 5 algorithms (Hardy-Ramanujan, Hardy-Ramanujan-PNT, Cramer, Baker-Harman-Pintz) which are in close agreement (off by small distance for most factors) and Hardy-Ramanujan-PNT estimate converges. If c=N1 and a=N2 are two integers having same prime factors, previous Hardy-Ramanujan-PNT ray shooting estimate of gap between prime factors for N1 and N2 is:
+        l1*pf(n+1)/log(pf(n+1)) - l1*pf(n)/log(pf(n)) = l1*N1/(logN1 * k1*loglogN1)
+        l2*pf(n+1)/log(pf(n+1)) - l2*pf(n)/log(pf(n)) = l2*N2/(logN2 * k2*loglogN2)
+rewriting N1 and N2 in terms of merit difference of prime factors:
+        (pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n)))*logN1*k1*loglogN1 = N1 = pf1^s1 * pf2^s2 * ... * pfn^sn
+        (pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n)))*logN2*k2*loglogN2 = N2 = pf1^t1 * pf2^t2 * ... * pfn^tn
+	=> N1 - N2 = c - a > C(epsilon)*N2^(0.5-epsilon) if ABC conjecture is true
+=> (pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n)))*(logN1*k1*loglogN1 - logN2*k2*loglogN2) = N1 - N2 > C(epsilon)*N2^(0.5-epsilon)
+=> (pf(n+1)/log(pf(n+1)) - pf(n)/log(pf(n))) > C(epsilon)*N2^(0.5-epsilon)/(logN1*k1*loglogN1 - logN2*k2*loglogN2)
+which is the approximate lower bound on number of primes between two prime factors of N1 and N2 having same prime factors if ABC conjecture is true.
+
+References:
+-----------
+570.1 Gaps between integers having same prime factors - [Cochrane-Dressler] - http://www.ams.org/journals/mcom/1999-68-225/S0025-5718-99-01024-8/S0025-5718-99-01024-8.pdf - Conjecture 2 and Theorem 1 - "...Conjecture 2. For any epsilon > 0 there exists a constant C(epsilon) such that if a<c are positive integers having the same prime factors, then c − a ≥ C(epsilon)(a^(0.5-epsilon))..." and "...Theorem 1. The abc conjecture implies Conjecture 2...."  

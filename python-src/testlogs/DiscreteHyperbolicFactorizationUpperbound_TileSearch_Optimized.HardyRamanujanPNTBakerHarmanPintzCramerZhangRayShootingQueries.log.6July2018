@@ -1,0 +1,729 @@
+2018-07-06 13:03:52 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1; using 192.168.1.117 instead (on interface usb0)
+2018-07-06 13:03:52 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-07-06 13:03:53 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-07-06 13:03:55 INFO  SparkContext:54 - Running Spark version 2.3.0
+2018-07-06 13:03:55 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+2018-07-06 13:03:55 INFO  SecurityManager:54 - Changing view acls to: root
+2018-07-06 13:03:55 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-07-06 13:03:55 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-07-06 13:03:55 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-07-06 13:03:55 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-07-06 13:03:56 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 42355.
+2018-07-06 13:03:56 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-07-06 13:03:56 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-07-06 13:03:56 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-07-06 13:03:56 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-07-06 13:03:56 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-0f26162d-e291-414a-9a91-5297f36972fa
+2018-07-06 13:03:56 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-07-06 13:03:56 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-07-06 13:03:56 INFO  log:192 - Logging initialized @5955ms
+2018-07-06 13:03:56 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-07-06 13:03:56 INFO  Server:414 - Started @6166ms
+2018-07-06 13:03:56 INFO  AbstractConnector:278 - Started ServerConnector@150a481{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-07-06 13:03:56 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@151f130{/jobs,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@af7c67{/jobs/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@b88152{/jobs/job,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@351f35{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1681190{/stages,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@150b67e{/stages/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1b95fbb{/stages/stage,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@a1f907{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@12221ef{/stages/pool,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@13fb210{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f40557{/storage,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@4ca36f{/storage/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@69c310{/storage/rdd,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@fa4bff{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1f33a4a{/environment,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@67be40{/environment/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@f69cdf{/executors,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@13864d{/executors/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@eec9af{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c0fd0c{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@102818f{/static,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@83b5d7{/,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c01aa{/api,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@16d2a95{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1971b4d{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-07-06 13:03:56 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://192.168.1.117:4040
+2018-07-06 13:03:57 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1530862437549
+2018-07-06 13:03:57 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-b77f0237-2e29-441f-852b-ecf46958828f/userFiles-d956020e-de56-498b-b617-e69ab34e16a1/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-07-06 13:03:57 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-07-06 13:03:57 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43729.
+2018-07-06 13:03:57 INFO  NettyBlockTransferService:54 - Server created on 192.168.1.117:43729
+2018-07-06 13:03:57 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-07-06 13:03:57 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, 192.168.1.117, 43729, None)
+2018-07-06 13:03:57 INFO  BlockManagerMasterEndpoint:54 - Registering block manager 192.168.1.117:43729 with 413.9 MB RAM, BlockManagerId(driver, 192.168.1.117, 43729, None)
+2018-07-06 13:03:57 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, 192.168.1.117, 43729, None)
+2018-07-06 13:03:57 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, 192.168.1.117, 43729, None)
+2018-07-06 13:03:58 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@baec58{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  2989899  are:
+=============================================================================================================
+normal_order_n(loglogN) =  26
+####################################################################
+approximate  1 -th prime factor of  2989899 : 114996
+tangent of ray shooting query angle : 0.000226095047548
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  2989899 : 229992
+tangent of ray shooting query angle : 5.65237618871e-05
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  2989899 : 344988
+tangent of ray shooting query angle : 2.51216719498e-05
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  2989899 : 459984
+tangent of ray shooting query angle : 1.41309404718e-05
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  2989899 : 574980
+tangent of ray shooting query angle : 9.04380190193e-06
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  2989899 : 689976
+tangent of ray shooting query angle : 6.28041798745e-06
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  2989899 : 804972
+tangent of ray shooting query angle : 4.61418464384e-06
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  2989899 : 919968
+tangent of ray shooting query angle : 3.53273511794e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  2989899 : 1034965
+tangent of ray shooting query angle : 2.79129148932e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  2989899 : 1149961
+tangent of ray shooting query angle : 2.26094654326e-06
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  2989899 : 1264957
+tangent of ray shooting query angle : 1.86855115763e-06
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  2989899 : 1379953
+tangent of ray shooting query angle : 1.57010222127e-06
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  2989899 : 1494949
+tangent of ray shooting query angle : 1.33783872822e-06
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  2989899 : 1609945
+tangent of ray shooting query angle : 1.15354472794e-06
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  2989899 : 1724941
+tangent of ray shooting query angle : 1.00486571289e-06
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  2989899 : 1839937
+tangent of ray shooting query angle : 8.83182819471e-07
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  2989899 : 1954933
+tangent of ray shooting query angle : 7.82335004295e-07
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  2989899 : 2069930
+tangent of ray shooting query angle : 6.97822872331e-07
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  2989899 : 2184926
+tangent of ray shooting query angle : 6.26300924184e-07
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  2989899 : 2299922
+tangent of ray shooting query angle : 5.65236635816e-07
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  2989899 : 2414918
+tangent of ray shooting query angle : 5.12686333449e-07
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  2989899 : 2529914
+tangent of ray shooting query angle : 4.67137789409e-07
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  2989899 : 2644910
+tangent of ray shooting query angle : 4.27400199652e-07
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  2989899 : 2759906
+tangent of ray shooting query angle : 3.92525555318e-07
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  2989899 : 2874902
+tangent of ray shooting query angle : 3.61751572753e-07
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of  2989899  are:
+=============================================================================================================
+normal_order_n(loglogN) =  26
+####################################################################
+approximate  1 -th prime factor of  2989899 : 106954.999991
+approximate prime factor log ratio - pf/log(pf) : 53477.0
+tangent of ray shooting query angle : 0.000261369155054
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  2989899 : 234953.877719
+approximate prime factor log ratio - pf/log(pf) : 117476.438862
+tangent of ray shooting query angle : 5.41615748447e-05
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  2989899 : 370286.415746
+approximate prime factor log ratio - pf/log(pf) : 185142.707874
+tangent of ray shooting query angle : 2.18062485608e-05
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  2989899 : 507261.814663
+approximate prime factor log ratio - pf/log(pf) : 253630.407333
+tangent of ray shooting query angle : 1.16196267024e-05
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  2989899 : 642216.692521
+approximate prime factor log ratio - pf/log(pf) : 321107.846261
+tangent of ray shooting query angle : 7.2492543657e-06
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  2989899 : 772676.320358
+approximate prime factor log ratio - pf/log(pf) : 386337.660179
+tangent of ray shooting query angle : 5.00796531193e-06
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  2989899 : 896992.595311
+approximate prime factor log ratio - pf/log(pf) : 448495.797656
+tangent of ray shooting query angle : 3.71602649677e-06
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  2989899 : 1014125.66552
+approximate prime factor log ratio - pf/log(pf) : 507062.332762
+tangent of ray shooting query angle : 2.90718701338e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  2989899 : 1123490.35776
+approximate prime factor log ratio - pf/log(pf) : 561744.678881
+tangent of ray shooting query angle : 2.36874231851e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  2989899 : 1224840.53061
+approximate prime factor log ratio - pf/log(pf) : 612419.765304
+tangent of ray shooting query angle : 1.99295466671e-06
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  2989899 : 1318179.52653
+approximate prime factor log ratio - pf/log(pf) : 659089.263266
+tangent of ray shooting query angle : 1.72070885565e-06
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  2989899 : 1403690.25007
+approximate prime factor log ratio - pf/log(pf) : 701844.625034
+tangent of ray shooting query angle : 1.51744846704e-06
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  2989899 : 1481680.64939
+approximate prime factor log ratio - pf/log(pf) : 740839.824695
+tangent of ray shooting query angle : 1.36190652236e-06
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  2989899 : 1552541.50022
+approximate prime factor log ratio - pf/log(pf) : 776270.25011
+tangent of ray shooting query angle : 1.24042377615e-06
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  2989899 : 1616714.05851
+approximate prime factor log ratio - pf/log(pf) : 808356.529253
+tangent of ray shooting query angle : 1.1439053423e-06
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  2989899 : 1674665.61171
+approximate prime factor log ratio - pf/log(pf) : 837332.305854
+tangent of ray shooting query angle : 1.06610581719e-06
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  2989899 : 1726871.31548
+approximate prime factor log ratio - pf/log(pf) : 863435.15774
+tangent of ray shooting query angle : 1.00262046889e-06
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  2989899 : 1773800.99366
+approximate prime factor log ratio - pf/log(pf) : 886899.996832
+tangent of ray shooting query angle : 9.50269368556e-07
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  2989899 : 1815909.8223
+approximate prime factor log ratio - pf/log(pf) : 907954.411149
+tangent of ray shooting query angle : 9.06709074893e-07
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  2989899 : 1853632.02222
+approximate prime factor log ratio - pf/log(pf) : 926815.511112
+tangent of ray shooting query angle : 8.70180748695e-07
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  2989899 : 1887376.8554
+approximate prime factor log ratio - pf/log(pf) : 943687.9277
+tangent of ray shooting query angle : 8.39342603766e-07
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  2989899 : 1917526.36186
+approximate prime factor log ratio - pf/log(pf) : 958762.680928
+tangent of ray shooting query angle : 8.13155926078e-07
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  2989899 : 1944434.39116
+approximate prime factor log ratio - pf/log(pf) : 972216.695579
+tangent of ray shooting query angle : 7.90805953653e-07
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  2989899 : 1968426.57779
+approximate prime factor log ratio - pf/log(pf) : 984212.788895
+tangent of ray shooting query angle : 7.71645943374e-07
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  2989899 : 1989800.98751
+approximate prime factor log ratio - pf/log(pf) : 994899.993753
+tangent of ray shooting query angle : 7.55156967517e-07
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of  2989899  are:
+=============================================================================================================
+normal_order_n(loglogN) =  26
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  1 -th prime factor of  2989899 : 14
+tangent of ray shooting query angle : 15254.5867347
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  2 -th prime factor of  2989899 : 39
+tangent of ray shooting query angle : 1965.74556213
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  3 -th prime factor of  2989899 : 79
+tangent of ray shooting query angle : 479.073706137
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  4 -th prime factor of  2989899 : 134
+tangent of ray shooting query angle : 166.51253063
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  5 -th prime factor of  2989899 : 206
+tangent of ray shooting query angle : 70.4566641531
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  6 -th prime factor of  2989899 : 294
+tangent of ray shooting query angle : 34.5908996252
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  7 -th prime factor of  2989899 : 399
+tangent of ray shooting query angle : 18.7806546441
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  8 -th prime factor of  2989899 : 522
+tangent of ray shooting query angle : 10.9727506936
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  9 -th prime factor of  2989899 : 662
+tangent of ray shooting query angle : 6.82245278886
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  10 -th prime factor of  2989899 : 820
+tangent of ray shooting query angle : 4.446607674
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  11 -th prime factor of  2989899 : 996
+tangent of ray shooting query angle : 3.01396247641
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  12 -th prime factor of  2989899 : 1190
+tangent of ray shooting query angle : 2.11136148577
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  13 -th prime factor of  2989899 : 1403
+tangent of ray shooting query angle : 1.51894194753
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  14 -th prime factor of  2989899 : 1634
+tangent of ray shooting query angle : 1.11983081369
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  15 -th prime factor of  2989899 : 1884
+tangent of ray shooting query angle : 0.842354152298
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  16 -th prime factor of  2989899 : 2153
+tangent of ray shooting query angle : 0.645012985909
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  17 -th prime factor of  2989899 : 2441
+tangent of ray shooting query angle : 0.501788794829
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  18 -th prime factor of  2989899 : 2748
+tangent of ray shooting query angle : 0.395934240384
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  19 -th prime factor of  2989899 : 3075
+tangent of ray shooting query angle : 0.316203212374
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  20 -th prime factor of  2989899 : 3421
+tangent of ray shooting query angle : 0.255476153999
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  21 -th prime factor of  2989899 : 3787
+tangent of ray shooting query angle : 0.208480724539
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  22 -th prime factor of  2989899 : 4172
+tangent of ray shooting query angle : 0.171778148898
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  23 -th prime factor of  2989899 : 4577
+tangent of ray shooting query angle : 0.142723238978
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  24 -th prime factor of  2989899 : 5002
+tangent of ray shooting query angle : 0.119500340607
+####################################################################
+approximate number of primes between two prime factors: 5
+####################################################################
+approximate  25 -th prime factor of  2989899 : 5447
+tangent of ray shooting query angle : 0.100772438407
+####################################################################
+=============================================================================================================
+Cramer Ray Shooting Queries - Approximate Factors of  2989899  are:
+=============================================================================================================
+normal_order_n(loglogN) =  26
+####################################################################
+approximate  1 -th prime factor of  2989899 : 53
+tangent of ray shooting query angle : 1064.3997864
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  2989899 : 542
+tangent of ray shooting query angle : 10.1778945003
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  2989899 : 2157
+tangent of ray shooting query angle : 0.642622944477
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  2989899 : 5507
+tangent of ray shooting query angle : 0.0985885240598
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  2989899 : 11070
+tangent of ray shooting query angle : 0.0243983960165
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  2989899 : 19232
+tangent of ray shooting query angle : 0.00808365215541
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  2989899 : 30315
+tangent of ray shooting query angle : 0.00325342929424
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  2989899 : 44595
+tangent of ray shooting query angle : 0.00150343335563
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  2989899 : 62314
+tangent of ray shooting query angle : 0.000769990306829
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  2989899 : 83687
+tangent of ray shooting query angle : 0.000426914119574
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  2989899 : 108908
+tangent of ray shooting query angle : 0.000252079165571
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  2989899 : 138155
+tangent of ray shooting query angle : 0.000156647440613
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  2989899 : 171589
+tangent of ray shooting query angle : 0.00010154946307
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  2989899 : 209362
+tangent of ray shooting query angle : 6.82120027887e-05
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  2989899 : 251613
+tangent of ray shooting query angle : 4.72270008017e-05
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  2989899 : 298473
+tangent of ray shooting query angle : 3.35618905207e-05
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  2989899 : 350065
+tangent of ray shooting query angle : 2.43982757173e-05
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  2989899 : 406506
+tangent of ray shooting query angle : 1.80935005379e-05
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  2989899 : 467906
+tangent of ray shooting query angle : 1.36564962401e-05
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  2989899 : 534369
+tangent of ray shooting query angle : 1.04706587673e-05
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  2989899 : 605995
+tangent of ray shooting query angle : 8.1417626237e-06
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  2989899 : 682879
+tangent of ray shooting query angle : 6.41163813112e-06
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  2989899 : 765112
+tangent of ray shooting query angle : 5.10747783934e-06
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  2989899 : 852782
+tangent of ray shooting query angle : 4.11131230448e-06
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  2989899 : 945972
+tangent of ray shooting query angle : 3.34118062451e-06
+####################################################################
+=============================================================================================================
+Zhang Ray Shooting Queries (for large primes) - Approximate Factors of  2989899  are:
+=============================================================================================================
+normal_order_n(loglogN) =  26
+####################################################################
+approximate  1 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+####################################################################
+approximate  25 -th prime factor of  2989899 : 2
+tangent of ray shooting query angle : 747474.75
+####################################################################
+2018-07-06 13:03:59 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272
+2018-07-06 13:03:59 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) with 4 output partitions
+2018-07-06 13:03:59 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272)
+2018-07-06 13:03:59 INFO  DAGScheduler:54 - Parents of final stage: List()
+2018-07-06 13:03:59 INFO  DAGScheduler:54 - Missing parents: List()
+2018-07-06 13:03:59 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272), which has no missing parents
+2018-07-06 13:03:59 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-07-06 13:04:00 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 6.5 KB, free 413.9 MB)
+2018-07-06 13:04:00 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.1 KB, free 413.9 MB)
+2018-07-06 13:04:00 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on 192.168.1.117:43729 (size: 4.1 KB, free: 413.9 MB)
+2018-07-06 13:04:00 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-07-06 13:04:00 INFO  DAGScheduler:54 - Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+2018-07-06 13:04:00 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 4 tasks
+2018-07-06 13:04:00 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7839 bytes)
+2018-07-06 13:04:00 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7839 bytes)
+2018-07-06 13:04:00 INFO  TaskSetManager:54 - Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 7839 bytes)
+2018-07-06 13:04:00 INFO  TaskSetManager:54 - Starting task 3.0 in stage 0.0 (TID 3, localhost, executor driver, partition 3, PROCESS_LOCAL, 7839 bytes)
+2018-07-06 13:04:00 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-07-06 13:04:00 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+2018-07-06 13:04:00 INFO  Executor:54 - Running task 2.0 in stage 0.0 (TID 2)
+2018-07-06 13:04:00 INFO  Executor:54 - Running task 3.0 in stage 0.0 (TID 3)
+2018-07-06 13:04:00 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1530862437549
+2018-07-06 13:04:00 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-b77f0237-2e29-441f-852b-ecf46958828f/userFiles-d956020e-de56-498b-b617-e69ab34e16a1/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-07-06 13:04:07 INFO  PythonRunner:54 - Times: total = 6867, boot = 618, init = 33, finish = 6216
+2018-07-06 13:04:07 INFO  PythonRunner:54 - Times: total = 6879, boot = 604, init = 54, finish = 6221
+2018-07-06 13:04:07 INFO  PythonRunner:54 - Times: total = 6888, boot = 620, init = 56, finish = 6212
+2018-07-06 13:04:07 INFO  PythonRunner:54 - Times: total = 6942, boot = 611, init = 38, finish = 6293
+2018-07-06 13:04:07 INFO  Executor:54 - Finished task 2.0 in stage 0.0 (TID 2). 1310 bytes result sent to driver
+2018-07-06 13:04:07 INFO  Executor:54 - Finished task 1.0 in stage 0.0 (TID 1). 1353 bytes result sent to driver
+2018-07-06 13:04:07 INFO  Executor:54 - Finished task 3.0 in stage 0.0 (TID 3). 1310 bytes result sent to driver
+2018-07-06 13:04:07 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1310 bytes result sent to driver
+2018-07-06 13:04:07 INFO  TaskSetManager:54 - Finished task 2.0 in stage 0.0 (TID 2) in 7370 ms on localhost (executor driver) (1/4)
+2018-07-06 13:04:07 INFO  TaskSetManager:54 - Finished task 3.0 in stage 0.0 (TID 3) in 7381 ms on localhost (executor driver) (2/4)
+2018-07-06 13:04:07 INFO  TaskSetManager:54 - Finished task 1.0 in stage 0.0 (TID 1) in 7394 ms on localhost (executor driver) (3/4)
+2018-07-06 13:04:07 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 7463 ms on localhost (executor driver) (4/4)
+2018-07-06 13:04:07 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2018-07-06 13:04:07 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272) finished in 8.087 s
+2018-07-06 13:04:07 INFO  DAGScheduler:54 - Job 0 finished: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:272, took 8.280072 s
+2018-07-06 13:04:07 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-07-06 13:04:08 INFO  AbstractConnector:318 - Stopped Spark@150a481{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-07-06 13:04:08 INFO  SparkUI:54 - Stopped Spark web UI at http://192.168.1.117:4040
+2018-07-06 13:04:08 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-07-06 13:04:08 INFO  MemoryStore:54 - MemoryStore cleared
+2018-07-06 13:04:08 INFO  BlockManager:54 - BlockManager stopped
+2018-07-06 13:04:08 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-07-06 13:04:08 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-07-06 13:04:08 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-07-06 13:04:08 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-07-06 13:04:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-b77f0237-2e29-441f-852b-ecf46958828f
+2018-07-06 13:04:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-e1118fc0-4751-4a19-bb27-ff8ff6c5701e
+2018-07-06 13:04:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-b77f0237-2e29-441f-852b-ecf46958828f/pyspark-9dfd1aa8-35d6-4e15-b358-586ca198281f
+=================================================
+Factor is =  1
+=================================================
+=================================================
+Factor is =  3
+=================================================
+=================================================
+Factor is =  9
+=================================================
+=================================================
+Factor is =  11
+=================================================
+=================================================
+Factor is =  27
+=================================================
+=================================================
+Factor is =  33
+=================================================
+=================================================
+Factor is =  99
+=================================================
+=================================================
+Factor is =  297
+=================================================
+=================================================
+Factor is =  10067
+=================================================
+=================================================
+Factor is =  30201
+=================================================
+=================================================
+Factor is =  90603
+=================================================
+=================================================
+Factor is =  110737
+=================================================
+=================================================
+Factor is =  996633
+=================================================
+=================================================
+Factor is =  271809
+=================================================
+=================================================
+Factor is =  332211
+=================================================
+
