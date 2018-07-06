@@ -12094,3 +12094,9 @@ which is the approximate lower bound on number of primes between two prime facto
 References:
 -----------
 570.1 Gaps between integers having same prime factors - [Cochrane-Dressler] - http://www.ams.org/journals/mcom/1999-68-225/S0025-5718-99-01024-8/S0025-5718-99-01024-8.pdf - Conjecture 2 and Theorem 1 - "...Conjecture 2. For any epsilon > 0 there exists a constant C(epsilon) such that if a<c are positive integers having the same prime factors, then c − a ≥ C(epsilon)(a^(0.5-epsilon))..." and "...Theorem 1. The abc conjecture implies Conjecture 2...."  
+
+-------------------------------------------------------------------------------------------------------------
+571. (FEATURE) Streaming Facebook Analytics - Exhaustively print all wall posts of a user - 6 July 2018
+-------------------------------------------------------------------------------------------------------------
+1. Loop has been added to Streaming_FacebookData.py for printing all pages of user wall posts in json
+2. logs for this have been committed to testlogs/Streaming_FacebookData.log.6July2018
