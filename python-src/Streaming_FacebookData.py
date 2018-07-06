@@ -30,7 +30,14 @@ def facebook_graph():
 	print("Posts:")
 	print("====================")
 	posts = graph.get_connections(profile['id'], 'posts')
-	print(posts)
+	breaking=False
+	while posts is not None and not breaking:
+		try:
+			print(posts)
+			posts=requests.get(posts['paging']['next']).json()
+		except KeyError:
+			print("All posts exhausted")
+			breaking=True
 	Fields=graph.request(user, {"fields":"name"})
 	print("====================")
 	print("Fields:")
