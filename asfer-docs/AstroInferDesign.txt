@@ -12100,3 +12100,29 @@ References:
 -------------------------------------------------------------------------------------------------------------
 1. Loop has been added to Streaming_FacebookData.py for printing all pages of user wall posts in json
 2. logs for this have been committed to testlogs/Streaming_FacebookData.log.6July2018
+
+-------------------------------------------------------------------------------------------------------------
+572. (THEORY) Merit Versus Fame, an example definition of Intrinsic Fitness/Merit in social networks, some
+contradictions - 9 July 2018
+-------------------------------------------------------------------------------------------------------------
+Intrinsic Merit-Versus-Fame/Image discrepancy is a well-studied problem in social networks and is the leitmotif of Intrinsic/Absolute Choice versus Majority voting theoretical complexities discussed at length in many sections of this draft. The populist engineering facet of this includes various definitions of intrinsic merit and fame in different disciplines(sports,science etc.,). Bianconi-Barabasi Bose-Einstein condensation phenomenon in social networks occurs when links (particles) accrue in some prominent fittest hub vertices (least energy levels). Defining what least energy implies in social networks is still an open problem. An example definition of Intrinsic Merit function for Bianconi-Barabasi least energy social network profile is described:
+
+Most link-attractive social profiles fall into three disjoint categories:
+	-  Wealthy: Affluent/Businesses/Political (W), 
+	-  Educative: Oratory/Academic/Science/Research (E),
+	-  Valorous: Media/Entertainment/Sportspersons/Heroics (V)
+
+Log-Normal Fitness Attachment (LNFA) Function of previous three, f(W,E,V) = g(W)*h(E)*l(V) formed by multiplication of individual merits in three categories. When a social profile has overlaps with 2 or all 3 of these categories, its ability to attract link increases manifold implying protean all-round nature of profile. E.g Superheroes in fiction/history were versatile and had two or all three. Log Normal distribution is a sum of these random variables and tends to Gaussian by Central Limit Theorem. It remains to define merits in individual categories:
+	-  Wealth: Income, Gravity Model based on GDP
+	-  Education: Publications, Citations, Degrees, Awards
+	-  Valour: Elo Rating, IPR 
+Metrics like HDI and SPI already incorporate mixture of these variables. 
+
+References:
+-----------
+572.1 The quantitative measure and statistical distribution of fame - [Ramirez-Hagen] - https://arxiv.org/pdf/1804.09196.pdf - Fame is measured by Google Hits, Google News references, Wikipedia edits, Wikipedia views.
+572.2 How Famous is a Scientist - Famous to those who know us - [James P. Bagrow, Hern´an D. Rozenfeld, Erik M. Bollt, and Daniel ben-Avraham ] - http://people.clarkson.edu/~dbenavra/paper/118.pdf - Fame increases near-exponentially with achievement/merit i.e Fame = c(Achievement)^(epsilon). Achievement or Intrinsic merit in science is defined as number of publications.
+573.3 Untangling Performance from Success - [Burcu Yucesoy and Albert-László Barabási] - http://barabasi.com/f/908.pdf - defines a least square fit of wikipedia references to a tennis player versus a function of his/her ATP rank, Tournament value, number of matches, rank of the best opponent, Career length. - "...For example, only $. million of Roger Federer’s $. million reported  income was from tournament prizes [], the rest came from endorsements tied to the public recognition of the athlete. Yet, Novak Djokovic, who was better ranked than Federer during , received over $. million prize money but only $ million via endorsements, about a third of Federer’s purse ..."
+573.4 Chess Players' Fame Versus Their Merit - [M.V. Simkin and V.P. Roychowdhury] - https://arxiv.org/pdf/1505.00055.pdf -  defines a linear and exponential fit of Fame versus Elo IPR score of a Chess player. - "...This suggests that fame grows exponentially with Elo rating rather than linearly. ..."
+574.5 Only 15 Minutes? The Social Stratification of Fame in Printed Media - [Arnout van de Rijt, Eran Shor, Charles Ward, and Steven Skiena] -  http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.888.1629&rep=rep1&type=pdf - "...  We measure a person’s fame as the number of appearances of that person’s name in newspaper records. More precisely, for every day, we count the number of distinct newspaper articles in which a name appeared ..."
+574.6 Log Normal Fitness Attachment - [Shilpa Ghadgea, Timothy Killingback, Bala Sundaram and Duc A. Tran] - https://www.cs.umb.edu/~duc/www/research/publications/papers/ijpeds10.pdf - "...we consider it reasonable that in many complex networks each node will have associated to it a quantity, which represents the property of the node to attract links, and this quantity will be formed multiplicatively from a number of factors...."
