@@ -12118,6 +12118,15 @@ Log-Normal Fitness Attachment (LNFA) Function of previous three, f(W,E,V) = g(W)
 	-  Valour: Elo Rating, IPR 
 Metrics like HDI and SPI already incorporate mixture of these variables. 
 
+Log Normal summation of these three quantities therefore is factor causing links to gravitate towards a vertex thereby relating to least energy as:
+	Energy of a Social Profile Vertex ~ 1/(logW + logE + logV) 
+=> When the log normal sum of merit random variables tends to maximum/infinity, energy of a vertex is at its nadir. On a side note, these three quantities are interdependent:
+	- Education causes Wealth i.e W is a function of E mostly though there are exceptions
+	- Valour causes Wealth i.e W is a function of V mostly though there are exceptions
+
+In references below, it is surmised that Fame increases linearly or exponentially with merit. The two contrarian cases when 1) Fame occurs with no merit 2) Merit does not cause Fame, complement this educated guess and is equivalent to group decision correctness probability (p) defined by Condorcet Jury Theorem and Margulis-Russo Threshold when majority function has a sharp transition at p=0.5. For majority to decide correctly (or) for Fame to coincide with merit p has to be atleast 0.5. Margulis-Russo Formula equates derivative of expected value of boolean function for bias p to the Ratio of Sum of Influences of individual variables (voters) and Standard Deviation. In simple terms, this theoretical bound implies Fame or Majority Voting opinion depends on how influential the voters are (i.e how flipping individual preference affects group decision outcome). For majority voting function, this first derivative of Pr[MajorityDecision(N) == Good] or influence is O(sqrt(number_of_voters)) at p=0.5. Both of the previous contrary scenarios occur when bias p < 0.5 which is obvious because the group is prejudiced because all its constituents are prejudiced. Therefore probability of this bias being less than 0.5 has to be quantified:
+Probability of per voter bias p < 0.5 for all N voters = (0.5)^N because random variable for p has two values(p >= 0.5 and p < 0.5 both equally probable) and voting is uncorrelated which is exponentially meagre though not impossible. This implies previous Fame-Merit mismatch error occurs with (0.5)^N probability and is infact a converse of Margulis-Russo.
+
 References:
 -----------
 572.1 The quantitative measure and statistical distribution of fame - [Ramirez-Hagen] - https://arxiv.org/pdf/1804.09196.pdf - Fame is measured by Google Hits, Google News references, Wikipedia edits, Wikipedia views.
@@ -12126,3 +12135,4 @@ References:
 573.4 Chess Players' Fame Versus Their Merit - [M.V. Simkin and V.P. Roychowdhury] - https://arxiv.org/pdf/1505.00055.pdf -  defines a linear and exponential fit of Fame versus Elo IPR score of a Chess player. - "...This suggests that fame grows exponentially with Elo rating rather than linearly. ..."
 574.5 Only 15 Minutes? The Social Stratification of Fame in Printed Media - [Arnout van de Rijt, Eran Shor, Charles Ward, and Steven Skiena] -  http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.888.1629&rep=rep1&type=pdf - "...  We measure a person’s fame as the number of appearances of that person’s name in newspaper records. More precisely, for every day, we count the number of distinct newspaper articles in which a name appeared ..."
 574.6 Log Normal Fitness Attachment - [Shilpa Ghadgea, Timothy Killingback, Bala Sundaram and Duc A. Tran] - https://www.cs.umb.edu/~duc/www/research/publications/papers/ijpeds10.pdf - "...we consider it reasonable that in many complex networks each node will have associated to it a quantity, which represents the property of the node to attract links, and this quantity will be formed multiplicatively from a number of factors...."
+574.7 p-biased boolean functions analysis, Margulis-Russo Formula - http://www.cs.tau.ac.il/~amnon/Classes/2016-PRG/Analysis-Of-Boolean-Functions.pdf - Section 8.4 - Equation 8.8 - Page 225 - Example 8.49 and Question 8.23 (Condorcet Jury Theorem)
