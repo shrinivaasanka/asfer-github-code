@@ -35,6 +35,12 @@ def facebook_graph():
 		try:
 			print(posts)
 			posts=requests.get(posts['paging']['next']).json()
+			for p in posts['data']:
+				comments=graph.get_connections(id=p['id'],connection_name='comments')
+				print("===================")
+				print("Comments")
+				print("===================")
+				print(comments)
 		except KeyError:
 			print("All posts exhausted")
 			breaking=True
