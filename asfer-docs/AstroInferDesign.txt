@@ -12141,3 +12141,14 @@ References:
 573. (FEATURE) Streaming Facebook Analytics - Comments - 10 July 2018
 --------------------------------------------------------------------------------------------------
 For each wall post, comments object is retrieved by requests and printed
+
+---------------------------------------------------------------------------------------------------------------
+574. (FEATURE) DeepLearning - Reinforcement Learning - Recommender Systems - Recursive Lambda Function Growth Merit - 12 July 2018
+---------------------------------------------------------------------------------------------------------------
+1.RecommenderSystems/Create_RecommenderSystems_Hypergraph.py has been changed similar to ThoughtNet/ to rank the
+hypergraph edges by both Sentiment and Graph Tensor Neuron Network Intrinsic Merit
+2.RecommenderSystems/RecommenderSystems_Hypergraph_Generated.shoppingcart3.txt has been recreated and rankings for hyperedges through hypergraph stack vertices is different from sentiment scoring
+3.DeepLearning_ReinforcementLearningRecommenderSystems.py has been changed to remove creamy layer computation for
+classes and all classes are lookedup in hypergraph
+4.Logs for these have been committed to RecommenderSystems/testlogs/Create_RecommenderSystems_Hypergraph.GraphTensorNeuronNetworkMerit.log.12July2018 and testlogs/DeepLearning_ReinforcementLearningRecommenderSystems.shoppingcart3.log.12July2018
+5.Example input is a book on quantum physics and is lookedup in Recommender Systems Hypergraph and matches return lot of books on quantum mechanics and physics
