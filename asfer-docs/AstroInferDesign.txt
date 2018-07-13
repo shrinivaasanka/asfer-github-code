@@ -12152,3 +12152,33 @@ hypergraph edges by both Sentiment and Graph Tensor Neuron Network Intrinsic Mer
 classes and all classes are lookedup in hypergraph
 4.Logs for these have been committed to RecommenderSystems/testlogs/Create_RecommenderSystems_Hypergraph.GraphTensorNeuronNetworkMerit.log.12July2018 and testlogs/DeepLearning_ReinforcementLearningRecommenderSystems.shoppingcart3.log.12July2018
 5.Example input is a book on quantum physics and is lookedup in Recommender Systems Hypergraph and matches return lot of books on quantum mechanics and physics
+
+---------------------------------------------------------------------------------------------------------------
+575. (THEORY) Computational Geometric Factorization and Parallel Construction of Wavelet Trees - 13 July 2018
+- related to 34, 486
+---------------------------------------------------------------------------------------------------------------
+Classical algorithm for Computational Geometric Factorization described earlier is based on storing the pixelatedhyperbolic tile segments in parallelly constructed Interval Trees/Segment Trees and doing stabbing query for factor point N=(p,q) or by k-mergesort of locally sorted tile segments and doing binary search which are O(logN*logN) parallel time. Wavelet Trees are recently gaining prominence as succinct binary search tree data structure for bigdata algorithms like string search, indexing etc., Wavelet Trees are binary search trees having following traits:
+	(*) Prerequisite is a set of symbols (alphabets) and sequence of symbols (string)
+	(*) Alphabets are divided into two equal sized sets encoded as 0 and 1 
+	(*) At root full string is encoded as 0-1 bitmap by previous set encoding for symbols
+	(*) Left subtree contains first half of the parent alphabets and Right subtree the second half and encoded as 0-1 by dividing into two sets again
+	(*) Previous subdivision of alphabets in each node is recursed encoded as 0 and 1 till single element per node is reached at leaves. 
+	(*) Wavelet trees have two operators: rank(c,S,i) and select(c,S,j)
+	(*) rank(c,S,i) queries number of occurrences of symbol c in string sequence S till position i. 
+	(*) select(c,S,j) queries position of j-th occurrence of symbol c in string sequence S.
+	(*) Both rank() and select() are logarithmic time operations traversing the tree from root to leaf.
+
+Binary Search for Factor points N=(p,q) on hyperbolic tile segments can be mapped to wavelet tree:
+	(*) Set of all segments of length N/x(x+1) of y-axis endpoints (N/x, N/(x+1)) are concatenated into
+a single String sequence in ascending order of y-axis unsorted
+	(*) Each element of this unsorted concatenated string is an integer some of which could be factor points
+	(*) Alphabets of this string are integers in the vicinity of N in the interval [N-epsilon,N+epsilon] and size of this alphabet is 2*epsilon << N 
+	(*) select(N,S,j) queries index k of j-th occurrence of N in this concatenated string which is nothing but a factor point N=(k,N/k) and maximum of value of j = number of factors of N. This selection finds factor in logarithmic time.
+	(*) But previous algorithm requires Wavelet Tree construction on PRAMs or Multicores to be in NC and there have been many parallel algorithms for wavelet tree construction mentioned in references.
+
+References:
+-----------
+575.1 Parellel Construction of Wavelet Trees on Multicore Architectures - [Sepulveda · Erick Elejalde · Leo Ferres · Diego Seco] - https://arxiv.org/pdf/1610.05994.pdf
+575.2 Parallel lightweight wavelet tree, suffix array and FM-Index construction - [Labeit et al] - https://people.csail.mit.edu/jshun/JDA2017.pdf
+575.3 Wavelet Trees for All - [Navarro] - https://www.dcc.uchile.cl/~gnavarro/ps/cpm12.pdf
+575.4 Improved Parallel Construction of Wavelet Trees and Rank/Select - [Julian Shun] - https://arxiv.org/pdf/1610.03524.pdf
