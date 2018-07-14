@@ -12182,3 +12182,5 @@ References:
 575.2 Parallel lightweight wavelet tree, suffix array and FM-Index construction - [Labeit et al] - https://people.csail.mit.edu/jshun/JDA2017.pdf
 575.3 Wavelet Trees for All - [Navarro] - https://www.dcc.uchile.cl/~gnavarro/ps/cpm12.pdf
 575.4 Improved Parallel Construction of Wavelet Trees and Rank/Select - [Julian Shun] - https://arxiv.org/pdf/1610.03524.pdf
+575.5 Wavelet Trees and RRR Succinct Data Structure for O(1) rank() - http://alexbowe.com/wavelet-trees/ - Each node in Wavelet Tree invokes RRR for O(1) rank computation per node
+575.6 RRR - Succinct Indexable Dictionaries with Applications to Encoding k-ary Trees, Prefix Sums and Multisets - [Rajeev Raman, Venkatesh Raman, S. Srinivasa Rao] - https://arxiv.org/pdf/0705.0552.pdf - Succinct Data Structure for computing rank() and select() of a bitmap in O(1) time. Bitmap is divided into blocks and sets of blocks(superblocks). For each block, rank is computed and stored in a class-offset two level lookup dictionary where class is the rank of the block and offset is index into set of permutations for that block. Superblocks add the ranks of the blocks. 
