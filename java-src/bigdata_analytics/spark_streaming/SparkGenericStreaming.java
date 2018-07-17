@@ -41,6 +41,9 @@ import java.util.Iterator;
 import java.util.regex.Pattern;
 
 import scala.Tuple2;
+import javafx.util.Pair;
+import java.sql.Timestamp;
+import java.lang.Long;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.FlatMapFunction;
@@ -78,8 +81,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
+//import org.apache.spark.sql.Encoder;
+//import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.SparkSession;
 import java.util.ArrayList;
 
@@ -186,7 +189,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	}
   }
 
-  public JavaDStream<String> SparkGenericStreamingMain(String[] args) throws Exception {
+  public JavaPairDStream<String,Integer> SparkGenericStreamingMain(String[] args) throws Exception {
     if (args.length > 2) {
      System.err.println("Usage: SparkGenericStreaming <url> (or) SparkGenericStreaming <host> <port>");
      System.exit(1);
@@ -223,45 +226,48 @@ public final class SparkGenericStreaming extends Receiver<String> {
     
     //JavaDStream<String> words = lines.flatMap(x->{return Arrays.asList(SPACE.split(x)).iterator();});
     
-    //JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
-    // new PairFunction<String, String, Integer>() {
-    //    @Override
-    //    public Tuple2<String, Integer> call(String s) {
-    //      return new Tuple2<>(s, 1);
-    //    }
-    //  }).reduceByKey(new Function2<Integer, Integer, Integer>() {
-    //    @Override
-    //    public Integer call(Integer i1, Integer i2) {
-    //      return i1 + i2;
-    //    }
-    //  });
+    JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
+     new PairFunction<String, String, Integer>() {
+        @Override
+        public Tuple2<String, Integer> call(String s) {
+          return new Tuple2<>(s, 1);
+        }
+      }).reduceByKey(new Function2<Integer, Integer, Integer>() {
+        @Override
+        public Integer call(Integer i1, Integer i2) {
+          return i1 + i2;
+        }
+    });
 
     //words.print();
     //wordCounts.print();
     //wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
     //ssc.start();
     //ssc.awaitTermination();
-    return words;
+    return wordCounts;
   }
 
   public static void main(String[] args) throws Exception {
 	SparkGenericStreaming sgs;
-	ArrayList<Word> wordlist = new ArrayList<Word>();
+	ArrayList<Word> wordlist = new ArrayList<>();
 	wordlist.clear();
 
 	if(SparkGenericStreaming.isURLsocket)
 		sgs = new SparkGenericStreaming(args[0]);
 	else
 		sgs = new SparkGenericStreaming(args[0],Integer.parseInt(args[1]));
-	JavaDStream<String> words = sgs.SparkGenericStreamingMain(args);
+	JavaPairDStream<String,Integer> wordCounts = sgs.SparkGenericStreamingMain(args);
 
-        words.foreachRDD(
+        wordCounts.foreachRDD(
 		x->{ 
 			x.collect().stream().forEach(
 				y->{ 
-					System.out.println("forEach lambda:"+y);
+					//System.out.println("forEach lambda:"+y);
 					Word w = new Word();
-					w.setWord(y);
+					w.setWord(y._1());
+					w.setCount(y._2());
+					Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+					w.setTime(timestamp.getTime());
 					wordlist.add(w);	
 				}
 			); 
@@ -271,7 +277,10 @@ public final class SparkGenericStreaming extends Receiver<String> {
 			wordsdf.write().mode("overwrite").saveAsTable("word");
 			System.out.println("Saving to Parquet file");
 			wordsdf.write().mode("overwrite").parquet("word.parquet");
+			System.out.println("DataFrame Schema:");
 			wordsdf.printSchema();
+			System.out.println("DataFrame:");
+			wordsdf.show();
 			wordlist.clear();
 		}
 	);
@@ -290,7 +299,6 @@ public final class SparkGenericStreaming extends Receiver<String> {
 					System.out.println("Function.call");
        					w = new Word();
        					w.setWord(word);
-					wordlist.add(w);
        				}
        			});
 			Dataset<Row> wordsdf = spark.createDataFrame(wordlist,Word.class); 
@@ -303,7 +311,7 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	});
 	*/
 
-	words.print();
+	wordCounts.print();
         SparkGenericStreaming.ssc.start();
 	SparkGenericStreaming.ssc.awaitTermination();
   }

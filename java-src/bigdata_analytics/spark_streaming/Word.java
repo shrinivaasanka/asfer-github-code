@@ -31,14 +31,36 @@ import java.io.*;
 
 public class Word implements Serializable {
 	String word;
+	Integer count;
+	Long timestamp;
 
 	public void setWord(String w)
 	{
 		word=w;
 	}
 
+	public void setCount(Integer c)
+	{
+		count=c;
+	}
+
 	public String getWord()
 	{
 		return word;
+	}
+
+	public Integer getCount()
+	{
+		return count;
+	}
+
+	public void setTime(long t)
+	{
+		timestamp=t;
+	}
+
+	public Long getTime()
+	{
+		return timestamp;
 	}
 }
