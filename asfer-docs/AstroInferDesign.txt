@@ -12185,3 +12185,21 @@ References:
 575.4 Improved Parallel Construction of Wavelet Trees and Rank/Select - [Julian Shun] - https://arxiv.org/pdf/1610.03524.pdf
 575.5 Wavelet Trees and RRR Succinct Data Structure for O(1) rank() - http://alexbowe.com/wavelet-trees/ - Each node in Wavelet Tree invokes RRR for O(1) rank computation per node
 575.6 RRR - Succinct Indexable Dictionaries with Applications to Encoding k-ary Trees, Prefix Sums and Multisets - [Rajeev Raman, Venkatesh Raman, S. Srinivasa Rao] - https://arxiv.org/pdf/0705.0552.pdf - Succinct Data Structure for computing rank() and select() of a bitmap in O(1) time. Bitmap is divided into blocks and sets of blocks(superblocks). For each block, rank is computed and stored in a class-offset two level lookup dictionary where class is the rank of the block and offset is index into set of permutations for that block. Superblocks add the ranks of the blocks. 
+
+----------------------------------------------------------------------------------------------------------------
+576. (FEATURE) Spark Streaming - Java 1.8 - Spark Java Upgrade to 2.3 and Some Structured Streaming 
+Enhancements - 17 July 2018
+----------------------------------------------------------------------------------------------------------------
+1. Spark Generic Streaming Java Implementation has been compiled on Spark 2.3 upgraded from Spark 2.1 and sparkgenericstreaming.jar has been repackaged 
+2. JavaPairDStream code which was commented earlier has been uncommented to return Word Count instead of Words
+3. Structured Streaming usecase example in https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html for website advertisement analytics has been implemented by computing timestamp of each word occurrence along with its count
+4. Word.java has been changed for doing get/set of Time,Count and Word
+5. DataFrame schema has been changed to Word, Count and Timestamp instead of just Word.
+6. This Structured Streaming DataFrame prints periodically changing tables of word occurrences, frequencies and timestamp as a tabular column.
+7. JavaPairDStream still does not have Java Pair support but only scala.Tuple2.
+
+8. Commandline for spark-submit has been changed for jsoup: /home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/bin/spark-submit --jars /home/kashrinivaasan/jdk1.8.0_171/lib/jsoup-1.11.3.jar --class SparkGenericStreaming --master local[2] sparkgenericstreaming.jar  "https://twitter.com/search?f=tweets&vertical=news&q=Chennai&src=typd"
+
+9. CLASSPATH for spark 2.3 has been changed as for catalyst, scala-reflect: /home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.3.0.jar:.:/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/scala-library-2.11.8.jar:/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/spark-sql_2.11-2.3.0.jar:/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/spark-core_2.11-2.3.0.jar:/home/kashrinivaasan/jdk1.8.0_171/lib/jsoup-1.11.3.jar:/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.3.0.jar:/home/kashrinivaasan/spark-2.3.0-bin-hadoop2.7/jars/scala-reflect-2.11.8.jar:/home/kashrinivaasan/jdk1.8.0_171/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+10. Example logs for streamed news analysis has been committed to testlogs/
