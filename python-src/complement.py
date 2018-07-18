@@ -38,8 +38,11 @@ from sympy.solvers.diophantine import diop_general_sum_of_squares
 from sympy.solvers.diophantine import diop_DN
 from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
+import DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized
 import pprint
 import operator
+import json
+import ast
 
 #Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf=[]
@@ -113,13 +116,35 @@ def diophantine_sum_of_squares_solve(x):
 		complement_diophantine_map[str(unknowntuple)]=x
 
 def diophantine_factorization_pell_equation(D,N):
-	print "=============================================================================="
-	print "Pell Diophantine Equation - Factorization reduces to solving Pell's Equation (for D=1 and some N)"
-	print "=============================================================================="
-	sol=diop_DN(D,N)
-	soln=sol[0]
-	print "Solution for Pell Equation : x^2 - ",D,"*y^2 = ",N,":"
-	print "(",soln[0]," + ",soln[1],") * (",soln[0]," - ",soln[1],") = ",N
+	if D==1 and N >= 1:
+		print "=============================================================================="
+		print "Pell Diophantine Equation - (exponential time) Factorization by solving Pell's Equation (for D=1 and some N)"
+		print "=============================================================================="
+		sol=diop_DN(D,N)
+		soln=sol[0]
+		print "Solution for Pell Equation : x^2 - ",D,"*y^2 = ",N,":"
+		print "(",soln[0]," + ",soln[1],") * (",soln[0]," - ",soln[1],") = ",N
+	if D==1 and N==-1:
+		#Invocation of factorization is commented because of Spark Accumulator broadcast issue which
+		#probably requires single Spark Context across complementation and factoring. Presently
+		#factors are persisted to a json file and read offline by complementation
+		#DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize(N)
+		factorsfile=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
+		factors=json.load(factorsfile)
+		number_to_factorize=0
+		for k,v in factors.iteritems():
+			number_to_factorize=k
+			factorslist=v	
+		print "=============================================================================="
+		print "Pell Diophantine Equation - (polynomial time) PRAM-NC Factorization solving Pell's Equation (for D=1 and N=",number_to_factorize,")"
+		print "=============================================================================="
+		for f in factorslist:
+			p=f
+			q=int(number_to_factorize)/p
+			x=(p+q)/2
+			y=(p-q)/2
+			print "Solution for Pell Equation : x^2 - ",D,"*y^2 = ",number_to_factorize,":"
+			print "x=",x,"; y=",y
 
 def IharaIdentity():
 	#Imaginary(s) = b = arccos(float(q+1.0)/float(2.0*sqrt(q)))/float(log(q)) for prime q
@@ -156,3 +181,4 @@ if __name__=="__main__":
 	nonsquares=[2,3,5,6,7,8,9,10,11,12,13,14,15,17,18,19]
 	complement_diophantine(nonsquares)
 	diophantine_factorization_pell_equation(1,989295)
+	diophantine_factorization_pell_equation(1,-1)

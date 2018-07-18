@@ -25,9 +25,12 @@ import operator
 import sys
 import json
 import threading
-from complement import toint
 import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
 import math
+import decimal
+
+factors_accum=None
+factors_of_n=[]
 
 from pyspark.accumulators import AccumulatorParam
 class VectorAccumulatorParam(AccumulatorParam):
@@ -37,6 +40,15 @@ class VectorAccumulatorParam(AccumulatorParam):
          for i in range(len(val1)):
               val1[i] += val2[i]
          return val1
+
+class FactorsAccumulatorParam(AccumulatorParam):
+     def zero(self, value):
+         return [0.0] * len(value)
+     def addInPlace(self, val1, val2):
+	 print "val1 =",val1,"; val2 = ",val2
+	 factors_of_n=val1
+         factors_of_n.append(val2)
+         return factors_of_n 
 
 ####################################################################################################################################
 #long double pixelated_hyperbolic_arc(long double n)
@@ -70,6 +82,10 @@ class VectorAccumulatorParam(AccumulatorParam):
 # interval/segment = (xtile_start,y,xtile_end,y)
 ####################################################################################################################################
 
+def toint(primestr):
+        if primestr != '' and not None:
+                return int(decimal.Decimal(primestr))
+
 def tilesearch_nonpersistent(y):
 	global number_to_factorize
 	n = number_to_factorize
@@ -79,6 +95,7 @@ def tilesearch_nonpersistent(y):
 	binary_search_interval_nonpersistent(xtile_start,y,xtile_end,y)
 
 def binary_search_interval_nonpersistent(xl,yl,xr,yr):
+	global factors_accum
 	intervalmidpoint = abs(int((xr-xl)/2))
 	#print "intervalmidpoint = ",intervalmidpoint
 	if intervalmidpoint > 0:
@@ -88,6 +105,7 @@ def binary_search_interval_nonpersistent(xl,yl,xr,yr):
 			print "================================================="
 			print "Factor is = ", yl 
 			print "================================================="
+			factors_accum.add(yl)
 		else:
 			if factorcandidate  >  number_to_factorize:
 			        binary_search_interval_nonpersistent(xl, yl, xl+intervalmidpoint, yr)
@@ -251,6 +269,7 @@ def zhang_ray_shooting_queries(n):
 def SearchTiles_and_Factorize(n): 
 	global globalmergedtiles
 	global globalcoordinates
+	global factors_accum 
 
 	spcon = SparkContext("local[4]","Spark_TileSearch_Optimized")
 
@@ -259,19 +278,29 @@ def SearchTiles_and_Factorize(n):
 
         	tileintervalslist=tileintervalsf.read().split("\n")
 		#print "tileintervalslist=",tileintervalslist
-        	tileintervalslist_accum=spcon.accumulator(tileintervalslist, VectorAccumulatorParam())
-
+        	tileintervalslist_accum=spcon.accumulator(tilesintervalslist, VectorAccumulatorParam())
 		paralleltileintervals=spcon.parallelize(tileintervalslist)
 		paralleltileintervals.foreach(tilesearch)
 	else:
+		factorsfile=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors","w")
 		hardy_ramanujan_ray_shooting_queries(n)
 		hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
 		baker_harman_pintz_ray_shooting_queries(n)
 		cramer_ray_shooting_queries(n)
 		zhang_ray_shooting_queries(n)
+        	factors_accum=spcon.accumulator(factors_of_n, FactorsAccumulatorParam())
 		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
+		print "factors_accum.value = ", factors_accum.value
+		factors=[]
+		factordict={}
+		for f in factors_accum.value:
+			factors += f
+		factordict[n]=factors
+		json.dump(factordict,factorsfile)
+		return factors
 
 if __name__=="__main__":
 	number_to_factorize=toint(sys.argv[1])
-	SearchTiles_and_Factorize(number_to_factorize)
+	factors=SearchTiles_and_Factorize(number_to_factorize)
+	print "factors of ",number_to_factorize,"=",factors
 
