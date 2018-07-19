@@ -27,6 +27,8 @@ import pprint
 from Queue import Queue
 from itertools import product
 #from rest_client import similar_to_concepts
+import networkx as nx
+from networkx.algorithms.shortest_paths.generic import shortest_path
 
 class ConceptNet5Client:
 	def __init__(self):
@@ -52,7 +54,16 @@ class ConceptNet5Client:
 		conceptjson=requests.get("http://api.conceptnet.io/c/mul/"+emoji).json()
 		return conceptjson
 
-	def conceptnet_distance(self,concept1,concept2):
+	def conceptnet_path(self,concept1,concept2):
+		conceptjson=requests.get("http://api.conceptnet.io/query?node=/c/en/"+concept1+"&other=/c/en/"+concept2).json()
+		return conceptjson
+
+	def conceptnet_least_common_ancestor_distance(self,concept1,concept2):
+		pprint.pprint("=======================================================")
+		pprint.pprint("Distance and Path between:"+concept1+" and "+concept2)
+		pprint.pprint("=======================================================")
+		nxg=nx.DiGraph()
+		edges=[]
 		related1=self.related(concept1)
 		related2=self.related(concept2)	
 		related1list=[]
@@ -60,43 +71,47 @@ class ConceptNet5Client:
 		for e in related1["related"]:
 			if "/en" in e["@id"]:
 				related1list.append(e["@id"])
+				edges.append((concept1,e["@id"]))
 		for e in related2["related"]:
 			if "/en" in e["@id"]:
 				related2list.append(e["@id"])
-		print "related1list: ",related1list
-		print "related2list: ",related2list
+				edges.append((e["@id"],concept2))
+		#print "related1list: ",related1list
+		#print "related2list: ",related2list
 		commonancestors=set(related1list).intersection(set(related2list))
-		print "commonancestors: ",commonancestors
+		#print "commonancestors: ",commonancestors
 		distance=1
 		q1=Queue()
 		q2=Queue()
 		q1.put(set(related1list))
 		q2.put(set(related2list))
-		path=[]
-		path.append(concept1)
-		path.append(concept2)
 		while len(commonancestors) == 0 and distance < 1000:
 			concept1list=q1.get()
 			concept2list=q2.get()
 			related1list=related2list=[]
-			for c1,c2 in product(concept1list,concept2list):
-				print "c1=",c1,";c2=",c2
+			for c1 in concept1list:
 				related1=self.related(c1)
-				related2=self.related(c2) 
 				for e in related1["related"]:
 					if "/en" in e["@id"]:
 						related1list.append(e["@id"])
+						edges.append((c1,e["@id"]))
+			for c2 in concept2list:
+				related2=self.related(c2) 
 				for e in related2["related"]:
 					if "/en" in e["@id"]:
 						related2list.append(e["@id"])
-			print "related1list: ",related1list
-			print "related2list: ",related2list
+						edges.append((e["@id"],c2))
+			#print "related1list: ",related1list
+			#print "related2list: ",related2list
 			q1.put(set(related1list))
 			q2.put(set(related2list))
 			commonancestors=set(related1list).intersection(set(related2list))
 			distance = distance + 1
-		print "commonancestors: ",commonancestors
-		return 2*distance
+		#print "commonancestors: ",commonancestors
+		#print "edges:",edges
+		for k,v in edges:
+                       	nxg.add_edge(k,v)
+		return nxg
 
 if __name__=="__main__":
 	conceptnet = ConceptNet5Client()
@@ -132,11 +147,33 @@ if __name__=="__main__":
 	print "========================================"
 	print "ConceptNet Distance - Common Ancestor algorithm"
 	print "========================================"
-	distance=conceptnet.conceptnet_distance('chennai','delhi')
-	pprint.pprint(distance)
-	distance=conceptnet.conceptnet_distance('computer science','theory')
-	pprint.pprint(distance)
-	distance=conceptnet.conceptnet_distance('rice','wheat')
-	pprint.pprint(distance)
-	distance=conceptnet.conceptnet_distance('tiger','lion')
-	pprint.pprint(distance)
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('chennai','delhi')
+	sp=shortest_path(distance,'chennai','delhi')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('fructify','fruitful')
+	sp=shortest_path(distance,'fructify','fruitful')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('medicine','chemical')
+	sp=shortest_path(distance,'medicine','chemical')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('tree','forest')
+	sp=shortest_path(distance,'tree','forest')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('upbraid','anathema')
+	sp=shortest_path(distance,'upbraid','anathema')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
+	print "========================================="
+	print "ConceptNet Path - relations connecting two concepts"
+	print "========================================="
+	path=conceptnet.conceptnet_path('medicine','chemical')
+	pprint.pprint(path)
