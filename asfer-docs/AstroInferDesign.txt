@@ -12217,3 +12217,18 @@ class which appends a factor to already existing accumulator value globally
 4. Logs for these have been committed to testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.JSONPersistence.18July2018 and testlogs/complement.PellEquation.SolvedByPRAMNCFactoring.18July2018
 5. Ray Shooting Oracle shows some exact and close ray shooting of factors. For simple Hardy-Ramanujan ray shooting factorization requires only O(loglogN) + O(log(N/loglogN)*log(N/loglogN)) + O(log(N/loglogN)) time to find a factor because prime factors are O(loglogN) and distance between any two prime factors is O(N/loglogN).
 6. Hyperbolic arc bow for this x-axis distance is sufficient to locate a factor. K-mergesort/Segment-tree of this subset is O(log(N/loglogN)*log(N/loglogN)) and binary search is O(log(N/loglogN)).
+
+----------------------------------------------------------------------------------------------------------
+578. (FEATURE) ConceptNet 5.6 Client Update - Common Ancestor Algorithm rewrite for path between concepts
+- 19 July 2018
+----------------------------------------------------------------------------------------------------------
+1. ConceptNet 5.6 provides a REST endpoint /query for finding connections between two concepts which has been
+wrapped by a new function conceptnet_path()
+2. Common Ancestor Algorithm for finding distance betwen two concepts has been rewritten to create a NetworkX
+subgraph from the edges connecting two concepts. Function conceptnet_distance() has been renamed to conceptnet_least_common_ancestor_distance()
+3. Loop iterating over cartesian product has been split into 2 loops which grow from two opposite directions
+(concept1, --- ) and (--- ,concept2) and intersect at common ancestors.
+4. Edges recursively seen by /related REST query are collected in a list and a NetworkX DiGraph is created from
+it which has all paths between concept1 and concept2
+5. Shortest path on this subgraph yields the shortest distance and path between concept1 and concept2 and thus passes via the least common ancestor between two concepts
+6. Logs for this have been captured in testlogs/ConceptNet5Client.log.19July2018 which show conceptnet_least_common_ancestor_distance() computes deeper paths than /query
