@@ -50,6 +50,7 @@ negations=defaultdict(int)
 
 nuvariables=defaultdict(int)
 rounding_threshold="Static"
+#rounding_threshold="Randomized"
 
 class SATSolver(object):
 	def __init__(self,algorithm):
@@ -65,7 +66,7 @@ class SATSolver(object):
 				diff.append(l1)
 		return diff
 
-	def satisfy(self, assignment):
+	def satisfy(self, assignment, fractional_assignment):
 		#print "CNF Formula:", self.cnfparsed
 		#print "assignment:",assignment
 		cnfval=1
@@ -202,7 +203,7 @@ class SATSolver(object):
 			#x = cgs(a,b) 
 			#x = bicgstab(a,b)
                 	#x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                	x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True)
+                	x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 		else:
 			if self.Algorithm=="solve()":
                 		x = solve(a,b)
@@ -212,7 +213,7 @@ class SATSolver(object):
                 		x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
 			if self.Algorithm=="lsmr()":
                 		#x = lsmr(a,b,atol=0.1,btol=0.1,maxiter=5,conlim=10,show=True)
-                		x = lsmr(a,b,damp=0.00001,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+                		x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 			if self.Algorithm=="spsolve()":
 				x = dsolve.spsolve(csc_matrix(a),b)
 			if self.Algorithm=="pinv2()":
@@ -246,7 +247,7 @@ class SATSolver(object):
 			cnt+=1
 		print "solve_SAT2(): real_parity = ",real_parity
 		print "solve_SAT2(): binary_parity = ",binary_parity
-		return (satass,real_parity,binary_parity)
+		return (satass,real_parity,binary_parity,x[0])
 	
 	def nonuniform_choice(self, literal_selection, numvars, numclauses):
 		randarrayclauses=np.random.choice(numclauses, int(math.sqrt(numclauses)), replace=True)
@@ -356,7 +357,7 @@ class SATSolver(object):
 		for i in xrange(numclauses):
 			randarray=np.random.permutation(numvars)
 			if distribution=="Uniform":
-				randarray=np.random.choice(numvars,3,replace=False)
+				randarray=np.random.choice(numvars,3,replace=True)
 			else:
 				if distribution=="Non-Uniform":
 					if literal_selection=="sequential":
@@ -431,13 +432,16 @@ if __name__=="__main__":
 		#satsolver=SATSolver("lstsq()")
 		#satsolver=SATSolver("lsqr()")
 		#satsolver=SATSolver("lsq_linear()")
-		#cnf=satsolver.createRandom3CNF("Uniform",number_of_clauses,number_of_variables)
-		#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
-		cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
+		cnf=None
+		if number_of_clauses==number_of_variables:
+			cnf=satsolver.createRandom3CNF("Uniform","simultaneous",number_of_clauses,number_of_variables)
+		else:
+			#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
+			cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
 		print "Random 3CNF:",cnf
 		print "Assignment computed from least squares:",ass2
-		satis=satsolver.satisfy(ass2[0])
+		satis=satsolver.satisfy(ass2[0],ass2[3])
 		print "Assignment satisfied:",satis[0]
 		average_percentage_of_clauses_satisfied += satis[1]
 
