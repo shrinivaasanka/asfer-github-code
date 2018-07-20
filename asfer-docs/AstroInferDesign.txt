@@ -12235,3 +12235,13 @@ subgraph from the edges connecting two concepts. Function conceptnet_distance() 
 it which has all paths between concept1 and concept2
 5. Shortest path on this subgraph yields the shortest distance and path between concept1 and concept2 and thus passes via the least common ancestor between two concepts
 6. Logs for this have been captured in testlogs/ConceptNet5Client.log.19July2018 which show conceptnet_least_common_ancestor_distance() computes deeper paths than /query
+
+-------------------------------------------------------------------------------------------------------------
+579. (THEORY and FEATURE) SAT Solver Update - some refactoring, and replace=True - 20 July 2018
+-------------------------------------------------------------------------------------------------------------
+1.CNFSATSolver.py has been refactored for invoking Uniform and Non-uniform choice based on Variables==Clauses
+ or Variables != Clauses and lsmr() invocation has been changed to remove regularized LSQR
+2.replace=False has been set to replace=True in np.random.choice() for Uniform choice of random 3SAT variables
+(and everywhere else). For very long time replace was set to False
+3.logs for this have been committed to testlogs/CNFSATSolver.2000VariablesAlpha1.0.log.20July2018 and
+MAXSAT approximation ratio for few iterations ranges from ~95% to ~99% (logs for 98.25% have not been committed)
