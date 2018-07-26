@@ -12245,3 +12245,37 @@ it which has all paths between concept1 and concept2
 (and everywhere else). For very long time replace was set to False
 3.logs for this have been committed to testlogs/CNFSATSolver.2000VariablesAlpha1.0.log.20July2018 and
 MAXSAT approximation ratio for few iterations ranges from ~95% to ~99% (logs for 98.25% have not been committed)
+
+-------------------------------------------------------------------------------------------------------------
+580. (THEORY) Random Matrix Least Square SAT Solver, kSAT Sharp Threshold and Friedgut Theorem, ThoughtNet 
+Hypergraph as k-SAT problem, TextGraph and Social Network Property Testing - 26 July 2018 - related to 453
+-------------------------------------------------------------------------------------------------------------
+Margulis-Russo Threshold and Condorcet Jury Theorem in the context of Sharp Threshold of Majority Function have
+been extensively described earlier. Random Matrix Least Squares SAT Solver has been analyzed and distribution for
+choosing a literal has been derived as 1/sqrt(m*n). Similar to Majority Function Sharp Thresholds exist for
+kSAT formulae from Friedgut's Theorem which is stated as:
+	The satisfiability property for random k-CNF has a sharp threshold, i.e. there exists p' such that for any epsilon > 0, 
+	µp(A) → ( 1 if p ≤ (1 − epsilon)p', 0 if p ≥ (1 + epsilon)p' )
+	where p' = alpha(n)*n/N.
+probability of choosing a clause p is (M=Number of clauses in a random kSAT)/(N=All possible clauses in a random kSAT). Number of all possible clauses in a random kSAT = N = nCk*2^k and alpha = M/n (n is number of variables) => p = (alpha*n)/N.
+
+Probability of choosing a random 3SAT clause in Random Matrix SAT Solver p = [1/sqrt(mn)]^3 = 1/((mn)^1.5). From Friedgut's Theorem number of satisfied clauses increase if p <= (1-epsilon)p'. This leads to inequality:
+	1/(mn)^1.5 <= ((1-epsilon)alpha(n)*n)/N
+	=> 1/(mn)^1.5 <= [((1-epsilon)alpha(n)*n)*6*(n-3)!]/(8*n!) from N = nC3*2^3
+	Simplifying reduces to:
+	1/(mn)^1.5 <= [((1-epsilon)alpha(n))*0.75*]/((n-1)(n-2)) from N = nC3*2^3
+
+But mn=alpha(n)*n^2 substituting which reduces the previous inequality to:
+	[(n-1)(n-2)/(n^3*(1-epsilon)*0.75)]^0.4 <= alpha(n)
+
+Example - For n=10 and alpha(n)=4.267 previous inequality becomes:
+	0.39165/(1-epsilon)^0.4 <= alpha(n)
+	=> epsilon <= 0.6154
+implying a sharp thresold to increased number of satisfied clauses.
+
+Related note: Sharp Thresholds in k-SAT have some applications in graph representation of texts e.g Definition graphs, ThoughtNet Hypergraph. Any random k-SAT formula can be represented as a hypergraph (Factor graph) of variables as vertices and clauses as hyperedges. ThoughtNet hypergraph is a Factor graph for some k-SAT and extracting the k-SAT from ThoughtNet translates the Contextual Multi Armed Bandit ThoughtNet to a random kSAT instance. Graph representation of texts can be queried for various properties e.g number of matchings, triangles, connected components which extract pattern in the meaning of text. For example, Margulis-Russo threshold is a graph property threshold of atleast n(n-1)/2 random edges between n vertices in a random graph where each edge is created with probability p. Similar threshold holds for Social Network Random graphs.
+
+References:
+-----------
+580.1 Thresholds in Random Graphs and k-SAT - [Emmanuel Abbe] - https://pdfs.semanticscholar.org/d862/14a9e02c3749ca92515b592f2fdb38710b45.pdf - Proof of Margulis-Russo Threshold (Lemma 2), Sharp Threshold of k-SAT and Friedgut Theorem (Section 6 - Theorem 7) 
+580.2 Hunting for Sharp Thresholds - [Ehud Friedgut] - http://www.ma.huji.ac.il/~ehudf/docs/survey.ps - "...Much like water that freezes abruptly as its temperature drops below zero the structure of the random graph quickly changes from a primordial soup of small tree-like connected components to a graph in which the giant component, one of linear size, captures a constant proportion of the vertices...." - Erdos-Renyi edge probability threshold in random graphs has close resemblance to Bose-Einstein condensation in networks. 
