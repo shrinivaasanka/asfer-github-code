@@ -12283,4 +12283,31 @@ Related note: Sharp Thresholds in k-SAT have some applications in graph represen
 References:
 -----------
 580.1 Thresholds in Random Graphs and k-SAT - [Emmanuel Abbe] - https://pdfs.semanticscholar.org/d862/14a9e02c3749ca92515b592f2fdb38710b45.pdf - Proof of Margulis-Russo Threshold (Lemma 2), Sharp Threshold of k-SAT and Friedgut Theorem (Section 6 - Theorem 7) 
-580.2 Hunting for Sharp Thresholds - [Ehud Friedgut] - http://www.ma.huji.ac.il/~ehudf/docs/survey.ps - "...Much like water that freezes abruptly as its temperature drops below zero the structure of the random graph quickly changes from a primordial soup of small tree-like connected components to a graph in which the giant component, one of linear size, captures a constant proportion of the vertices...." - Erdos-Renyi edge probability threshold in random graphs has close resemblance to Bose-Einstein condensation in networks. 
+580.2 Hunting for Sharp Thresholds - [Ehud Friedgut] - http://www.ma.huji.ac.il/~ehudf/docs/survey.ps - "...Much like water that freezes abruptly as its temperature drops below zero the structure of the random graph quickly changes from a primordial soup of small tree-like connected components to a graph in which the giant component, one of linear size, captures a constant proportion of the vertices...." - Erdos-Renyi edge probability threshold in random graphs has close resemblance to Bose-Einstein condensation in networks.
+
+---------------------------------------------------------------------------------------------------------------
+581. (THEORY) Rice Theorem, Complement Diophantines, Program Analysis, SAT Solver and Undecidability of 
+Non-trivial properties of Turing Machines - 30 July 2018 - related to 166, 471
+--------------------------------------------------------------------------------------------------------------- 
+Draft updates to:
+-----------------
+1. Decidability of Complement Functions (2011) - Section on Rice Theorem - https://arxiv.org/abs/1106.4102v1
+-------------------------------
+Rice Theorem implies every non-trivial property of Turing Machines are undecidable. Non-trivial property is defined as below.
+
+For a non-trivial subset S of recursively enumerable languages which is a non-empty proper subset of all recursively enumerable languages RE(trivial subsets are empty-set and RE):
+	581.1 Turing Machine M which accepts a language in S
+	581.2 Turing Machine M' which accepts a language in complement of S (RE \ S) 
+
+Previous proofs of undecidability of complement diophantines by Post Correspondence Problem and MRDP theorem are devoted only to the question of existence of a complement function. Since all languages in RE are diophantine, languages which are recursively enumerable but not recursive do not have accept/reject halting Turing Machine to decide diophantine polynomial representation. But Rice Theorem applies in a different setting: Once the set S and its complement RE \ S are known, it is undecidable if an arbitrary Turing Machine M accepts a language in S or RE \ S. In terms of equivalence of RE and Diophantine Equations, it is undecidable if an arbitrary Diophantine Equation represents a set in S or its complement in RE \ S i.e. Given a (complement) diophantine D and 2 complementary sets in RE (disjoint set cover of RE) it is undecidable to decide which set in S or RE \ S are values of diophantine D which is the converse direction of existence of complement diophantine. 
+
+--------------------------------------------------------------------------------------------------------------
+PhD Thesis Proposal (2011) - Sections on Program Comprehension - https://sites.google.com/site/kuja27/PhDThesisProposal.pdf - Theoretical Answers to some questions in it:
+--------------------------------------------------------------------------------------------------------------
+For the same reason, Comprehending a Program behaviour is a non-trivial property X which asks "Does the Code do X?". Translating Code to Boolean Formula and applying a SAT Solver (as done in SATURN Program Analyzer) is also a non-trivial property: "Does the Code Satisfy the 3SAT?". Similarly automated debug analytics of code is undecidable too. Software solutions to these are only approximations.
+
+References:
+----------
+581.3 Rice Theorem applications in Programming - http://ai.cs.unibas.ch/_files/teaching/fs16/theo/slides/theory-d08.pdf - Every question on comprehending Programs is undecidable
+581.4 Mortality Problem/Halting Problem Undecidability Proof of Rice Theorem - http://people.seas.harvard.edu/~cs125/fall14/lec17.pdf 
+581.5 Approximate Program Analysis - https://cs.au.dk/~amoeller/spa/1%20-%20TIP.pdf - Exact Program Analysis is undecidable
