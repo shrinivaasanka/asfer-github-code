@@ -9837,6 +9837,7 @@ Let a + b = c be a mutually coprime integer triple f(a,b,c). Quality q(a,b,c) is
 471.17 ABC Conjecture Proof-designate - Interuniversal Teichmuller Theory - [Shinichi Mochizuki] - http://www.kurims.kyoto-u.ac.jp/~motizuki/top-english.html
 471.18 Exponential Diophantines, Fibonacci and Lucas Sequences, Maximum limit on solvability of Diophantine - Reduction of Unknowns in Diophantine Representations - [SunZhiWei] - http://maths.nju.edu.cn/~zwsun/12d.pdf - "... If we take into account the number of unknowns, then it is natural to ask that for what n there does not exist an algorithm to test (polynomial) Diophantine equations with n unknowns for solvability in integers..." - n=27 or n=11
 471.19 Diophantine Equation Representation of Fibonacci Series - [James P.Jones] - https://www.fq.math.ca/Scanned/13-1/jones.pdf 
+471.20 Vandermonde Matrix and Polynomial Interpolation - https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/05Interpolation/vandermonde/
 
 ------------------------------------------------------------------------------------------------------
 472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
@@ -12142,6 +12143,7 @@ References:
 572.11 Achievement of a Nobel Laureate defined in terms of Fame - https://www.tandfonline.com/doi/full/10.1080/13504851.2016.1200176
 572.12 Fame Versus Merit in Economic Networks - CPI(Corruption Perception Index)/Global Integrity Versus Real Gross Domestic Product - https://arxiv.org/pdf/0705.0161.pdf, https://arxiv.org/pdf/0710.1995.pdf - CPI(Transparency International) which ranks perceived corruption (not absolute) in countries based on various surveys (WEF etc.,) is the counterpart of Fame/Reputation ranking for countries similar to WWW/Social Networks. GDP has been accepted as intrinsic standard to measure wealth of a nation. These articles describe a power law distribution between CPI and Foreign Direct Investment/GDP.
 572.13 Methodology of TI Corruption Perception Index - https://www.stt.lt/documents/soc_tyrimai/KSI_methodology_2007.pdf - Density Function for each Normalized Variable - Matching Percentiles and Beta Transformation - Samples, Perception and Reality - an example of Fame/Infamy correlating to Merit/Demerit.
+572.14 Strength of Weak Ties - [Mark Granovetter] - https://www.cs.cmu.edu/~jure/pub/papers/granovetter73ties.pdf - Social Networks have clusters of strong ties among themseleves (Cliques) and Strength of weak tie between individuals in two separate groups determines diffusion of influence.
 
 --------------------------------------------------------------------------------------------------
 573. (FEATURE) Streaming Facebook Analytics - Comments - 10 July 2018
@@ -12311,3 +12313,28 @@ References:
 581.3 Rice Theorem applications in Programming - http://ai.cs.unibas.ch/_files/teaching/fs16/theo/slides/theory-d08.pdf - Every question on comprehending Programs is undecidable
 581.4 Mortality Problem/Halting Problem Undecidability Proof of Rice Theorem - http://people.seas.harvard.edu/~cs125/fall14/lec17.pdf 
 581.5 Approximate Program Analysis - https://cs.au.dk/~amoeller/spa/1%20-%20TIP.pdf - Exact Program Analysis is undecidable
+
+---------------------------------------------------------------------------------------------------------------
+582. (THEORY) Cloud, Autonomous Vehicles, EventNet Logical Clock, Relativity, Lorentz Transform, Lamport's Clock
+ - related to 70-86 - 2 August 2018
+---------------------------------------------------------------------------------------------------------------
+Cloud of autonomus vehicles(e.g drones) in a wireless network are mostly not stationary and each node has a velocity. This relative motion between nodes of a cloud fits in the realm of relativistic time dilation. Lorentz Transform for between a stationary and a moving observer with respect to a frame of reference is derived as below:
+		
+			x1
+			|  \ 
+			|	\
+			V	     \
+			x2 -----------> x3
+
+Node x1 in vehicle cloud transmits an information with speed of light c (which is fixed for all observers by Maxwell Equations as 3 * 10^5 km/s) as electromagnetic signal, which is received by both x2 and x3. x2 is stationary and x3 is moving with velocity v. Each node has its own clock t(xi). For x2, information from x1 reaches in t(x2)*c and for x3 information from x1 reaches in t(x3)*c. By this time x3 has travelled t(x3)*v distance from x2. This leads to Lorentz transform below:
+		(t(x2)*c)^2 + (t(x3)*v)^2 = (t(x3)*c)^2
+		(t(x2)*c)^2 = (t(x3)*c)^2 - (t(x3)*v)^2
+		=> (t(x2)*c)^2 = t(x3)^2*(c^2 - v^2)
+		=> t(x2)^2 = t(x3)^2*(1 - (v/c)^2)
+		=> t(x2) = t(x3)*sqrt(1 - (v/c)^2)
+		i.e clock of vehicle x3 slows down compared to x2's clock as x3 moves faster. 
+Though autonomus vehicles could have speed less than light, if event timestamps are in nanoseconds (C++ provides nanosecond resolution in std::chrono::duration_cast<std::chrono::nanoseconds>), relativistic time dilation could be non-trivial. Lamport's Logical Clock has the causation protocol (s,r):
+		sender(s) - transmits timestamp to receiver
+		receiver(r) - finds maximum of local timestamp and received timestamp and increments by 1
+which is valid only for stationary nodes in cloud and has to be augmented by previous relativistic time dilation transform for moving nodes in cloud. 
+
