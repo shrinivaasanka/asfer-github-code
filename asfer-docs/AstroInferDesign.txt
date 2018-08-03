@@ -12316,9 +12316,9 @@ References:
 
 ---------------------------------------------------------------------------------------------------------------
 582. (THEORY) Cloud, Autonomous Vehicles, EventNet Logical Clock, Relativity, Lorentz Transform, Lamport's Clock
- - related to 70-86 - 2 August 2018
+ - related to 70-86 - 2 August 2018, 3 August 2018
 ---------------------------------------------------------------------------------------------------------------
-Cloud of autonomus vehicles(e.g drones) in a wireless network are mostly not stationary and each node has a velocity. This relative motion between nodes of a cloud fits in the realm of relativistic time dilation. Lorentz Transform for between a stationary and a moving observer with respect to a frame of reference is derived as below:
+Cloud of autonomus vehicles(e.g drones) in a wireless network are mostly not stationary and each node has a velocity. This relative motion between nodes of a cloud fits in the realm of relativistic time dilation. Lorentz Transform for a stationary and a moving observer with respect to a frame of reference is derived as below:
 		
 			x1
 			|  \ 
@@ -12338,3 +12338,9 @@ Though autonomus vehicles could have speed less than light, if event timestamps 
 		receiver(r) - finds maximum of local timestamp and received timestamp and increments by 1
 which is valid only for stationary nodes in cloud and has to be augmented by previous relativistic time dilation transform for moving nodes in cloud. 
 
+Previous time dilation is because of Special Relativity where as General Relativity predicts clocks in objects closer to a heavier mass tick slower. This causes onboard clocks in GPS satellites to tick faster than those on earth slowed down by its mass and corrections are applied. Drones using GPS navigation are directly affected by this. EventNet is a partial ordered directed acyclic graph (infinite) and causality in EventNet Logical Clock (for wireless clouds) is defined by light cone i.e an expanding circular region travelled by light plotted against arrow of time - two events P and Q are causally related if Q is in past lightcone or future lightcone of P and viceversa. 
+
+References:
+----------
+582.1 On the Relativistic Structure of Logical Time in Distributed Systems - https://www.vs.inf.ethz.ch/publ/papers/relativistic_time.pdf - Section 5 - Minkowski Spacetime of (n-1) space and 1 time dimensions and Light Cone Causality - Time is a partial order and not linear - Causal ordering between two spacetime points U and V
+e82.2 Atomic Clocks, Satellite GPS and Special/General Relativity - http://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html
