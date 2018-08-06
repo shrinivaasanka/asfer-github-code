@@ -11,17 +11,9 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
 
 from __future__ import division
@@ -38,10 +30,14 @@ import operator
 from nltk.corpus import sentiwordnet as swn
 from nltk.book import *
 from nltk.corpus import stopwords
+from empath import Empath
+import operator
 
 definitiongraphedges=defaultdict(list)
 definitiongraphedgelabels=defaultdict(list)
 weight_str_map=defaultdict()
+lexicon=Empath()
+SentimentScoringAlgorithm="Empath"
 
 #########################################################################################################
 #Related to publications:
@@ -56,6 +52,7 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
 	#The RGO undirected graph is factored into maximal cliques and
 	#sum potentials of clique nodes are construed as probabilities
 	#which are productized
+	empath=[]
 	nxg_undirected=nxg.to_undirected(nxg)
 	clique=list(nx.find_cliques(nxg_undirected))
 	clique_potential_product_pos = 1.0 
@@ -67,27 +64,36 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
               clique_potential_obj=0.0
 	      print "clique:", c
 	      for v in c:
-                  sset = swn.senti_synsets(v.decode("utf-8"))
-		  if len(sset) > 0:
-		  	pos = float(sset[0].pos_score())
-		  	neg = float(sset[0].neg_score())
-		  	obj = float(sset[0].obj_score()) 
-			if pos == 0.0:
-				pos = 0.00001
-			if neg == 0.0:
-				neg = 0.00001 
+		  if SentimentScoringAlgorithm=="Empath":
+			pos = 0.0001
+			neg = 0.0001
+			empath_dict = lexicon.analyze(v.decode("utf-8")) 
+			empath_list=sorted(empath_dict.items(),key=operator.itemgetter(1), reverse=True)
+			#print "empath_dict:",empath_dict
+			obj = empath_list[0][1]
 			if obj == 0.0:
 				obj = 0.00001
-		  	clique_potential_pos += pos
-		  	clique_potential_neg += neg
-		  	clique_potential_obj += obj
+		  else:
+                  	sset = swn.senti_synsets(v.decode("utf-8"))
+		  	if len(sset) > 0:
+		  		pos = float(sset[0].pos_score())
+		  		neg = float(sset[0].neg_score())
+		  		obj = float(sset[0].obj_score()) 
+				if pos == 0.0:
+					pos = 0.00001
+				if neg == 0.0:
+					neg = 0.00001 
+				if obj == 0.0:
+					obj = 0.00001
+		  clique_potential_pos += pos
+		  clique_potential_neg += neg
+		  clique_potential_obj += obj
 	      clique_potential_product_pos *= float(clique_potential_pos)
 	      clique_potential_product_neg *= float(clique_potential_neg)
 	      clique_potential_product_obj *= float(clique_potential_obj)
 	return clique_potential_product_pos/len(clique), clique_potential_product_neg/len(clique), clique_potential_product_obj/len(clique)
 
 
-#function - compute_idf()
 def SentimentAnalysis_SentiWordNet(text):
         tokens=text.encode("utf-8").split()
 	sumposscore=0.0

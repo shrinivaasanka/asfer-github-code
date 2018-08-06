@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 
 from bintrees import AVLTree
@@ -37,6 +29,7 @@ import operator
 import difflib
 from ConceptNet5Client import ConceptNet5Client
 from WordNetPath import path_between
+import SentimentAnalyzer
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -292,7 +285,8 @@ class RecursiveLambdaFunctionGrowth(object):
 					print s,
 			return (sorted_summary, len(sorted_summary))
 		else:
-			definitiongraph=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+			definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+			definitiongraph=definitiongraph_merit[0]
 			richclubcoeff=nx.rich_club_coefficient(definitiongraph.to_undirected(),normalized=False)
 			print "Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:",richclubcoeff
 			textsentences=text.split(".")
@@ -347,6 +341,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
 		definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
 		definitiongraph=definitiongraph_merit[0]
+		sentiment=SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(definitiongraph)
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
 		for a in definitiongraph.nodes():
 			for b in definitiongraph.nodes():
@@ -411,8 +406,10 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict["density"]=self.density
 		intrinsic_merit_dict["bose_einstein_intrinsic_fitness"]=bose_einstein_intrinsic_fitness
 		intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
+		intrinsic_merit_dict["empath_sentiment"]=sentiment
 
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
+		print "intrinsic_merit_dict:",intrinsic_merit_dict
 		return intrinsic_merit_dict 
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
