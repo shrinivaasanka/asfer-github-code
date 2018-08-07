@@ -12365,3 +12365,18 @@ References:
 583.1. Analyzing Right Wing YouTube Channels - [Raphael Ottoni,Evandro Cunha,Gabriel Magno,Pedro Bernardina,
 Wagner Meira Jr.,Virgilio Almeida,Berkman Klein] - https://arxiv.org/pdf/1804.04096.pdf
 583.2. Empath - http://empath.stanford.edu/
+
+------------------------------------------------------------------------------------------------------------
+584. (FEATURE) Latent Semantic Analysis/Indexing (LSA/LSI) Implementation - 7 August 2018
+------------------------------------------------------------------------------------------------------------
+1. Latent Semantic Analysis/Indexing has been implemented as python class in LatentSemanticAnalysis.py
+2. This reads list of filenames from LatentSemanticAnalysis.txt and converts into term-document matrix
+by invoking Pandas DataFrame and ScikitLearn Vector libraries
+3. Pandas DataFrame is converted to NumPy array and Singular Value Decomposition (SVD) is done on
+term-document matrix to arrive at UEV^T decomposition.
+4. Documents are represented by U and terms by V. E is matrix of singular values.
+5. Cosine similarity of pairs of documents in U is computed for all pairs of documents and printed in log:
+testlogs/LatentSemanticAnalysis.log.7August2018
+6. This class is multipurpose and can be used for variety of applications including Program Analysis.
+7. Corpus for this execution is list of python files and similarity between python code is evidenced by
+cosine similarity
