@@ -12380,3 +12380,24 @@ testlogs/LatentSemanticAnalysis.log.7August2018
 6. This class is multipurpose and can be used for variety of applications including Program Analysis.
 7. Corpus for this execution is list of python files and similarity between python code is evidenced by
 cosine similarity
+
+---------------------------------------------------------------------------------------------------------------
+585. (FEATURE) SAT Solver - CVXOPT LAPACK gels() least squares - 9 August 2018
+---------------------------------------------------------------------------------------------------------------
+1. SAT Solver has been changed to invoke LAPACK gels() least squares from CVXOPT
+2. For this NumPy array is cast to CVXOPT real matrix object
+3. CVXOPT gels() works only if the matrix is full-rank (number of linearly independent rows is equal to number of rows and similarly for columns) and throws ArithmeticError exception otherwise
+4. Approximately 1040 random 3SAT instances for 10 variables - 10 clauses have been executed and MAXSAT
+approximation ratio converges to ~97%. For larger values of variables, finding full rank matrix needs lot of
+iterations but still for 20 variables - 20 clauses similar convergence to ~96% was observed.
+5. Support for CVXOPT is crucial because of wide range of functionalities (including Convex programs, SDPs) present in CVXOPT
+6. logs for this have been committed to testlogs/CNFSATSolver.10variablesAlpha1.0.CVXOPT.log.9August2018
+
+-------------------------------------------------------------------------------------------------------
+586. (FEATURE) Latent Semantic Analysis - Low Rank Approximation - 9 August 2018
+-------------------------------------------------------------------------------------------------------
+1. New function for computing low rank approximation of term-document matrix has been included
+2. For SVD of td = UEV^T, few least singular values (square root of eigen values of td) are set to zero
+(hardcoded to 10, because matrix_rank() computation is quite slow for large term-document matrices)
+3. Low rank approximation of td is computed from matrix product of U * rankreduced(E) * V^T
+4. logs for this have been committed to testlogs/LatentSemanticAnalysis.log.9August2018
