@@ -44,6 +44,8 @@ from numpy import matmul
 from numpy import polyfit
 from scipy.optimize import lsq_linear
 from scipy.fftpack import fft
+from cvxopt import matrix
+from cvxopt.lapack import gels
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -191,6 +193,8 @@ class SATSolver(object):
 		#print "b:",b
                 #print "a.shape:",a.shape
                 #print "b.shape:",b.shape
+		matrixa=matrix(a,tc='d')
+		matrixb=matrix(b,tc='d')
 
 		x=None
 		if number_of_variables == number_of_clauses:
@@ -203,7 +207,13 @@ class SATSolver(object):
 			#x = cgs(a,b) 
 			#x = bicgstab(a,b)
                 	#x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-                	x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+			try:
+				x = gels(matrixa,matrixb)
+				x = [matrixb]
+			except:
+				print "Matrix is not full rank"
+				return None 
+                	#x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 		else:
 			if self.Algorithm=="solve()":
                 		x = solve(a,b)
@@ -223,8 +233,17 @@ class SATSolver(object):
 				x.append(matmul(pseudoinverse_a,b))
 			if self.Algorithm=="lsq_linear()":
 				x = lsq_linear(a,b,lsq_solver='exact')
+			if self.Algorithm=="lapack()":
+				try:
+					x = gels(matrixa,matrixb)
+					x = [matrixb]
+				except:
+					print "Matrix is not full rank"
+					return None 
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
+		if x is None:
+			return None
 		cnt=0
 		binary_parity=0
 		real_parity=0.0
@@ -426,7 +445,8 @@ if __name__=="__main__":
 		print "--------------------------------------------------------------"
 		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Alpha = ",float(number_of_clauses)/float(number_of_variables),"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
-		satsolver=SATSolver("lsmr()")
+		satsolver=SATSolver("lapack()")
+		#satsolver=SATSolver("lsmr()")
 		#satsolver=SATSolver("solve()")
 		#satsolver=SATSolver("pinv2()")
 		#satsolver=SATSolver("lstsq()")
@@ -439,46 +459,47 @@ if __name__=="__main__":
 			#cnf=satsolver.createRandom3CNF("Non-Uniform","sequential",number_of_clauses,number_of_variables)
 			cnf=satsolver.createRandom3CNF("Non-Uniform","simultaneous",number_of_clauses,number_of_variables)
 		ass2=satsolver.solve_SAT2(cnf,number_of_variables,number_of_clauses)
-		print "Random 3CNF:",cnf
-		print "Assignment computed from least squares:",ass2
-		satis=satsolver.satisfy(ass2[0],ass2[3])
-		print "Assignment satisfied:",satis[0]
-		average_percentage_of_clauses_satisfied += satis[1]
+		if ass2 is not None:
+			cnt += 1
+			print "Random 3CNF:",cnf
+			print "Assignment computed from least squares:",ass2
+			satis=satsolver.satisfy(ass2[0],ass2[3])
+			print "Assignment satisfied:",satis[0]
+			average_percentage_of_clauses_satisfied += satis[1]
 
-		print "Discrete Fourier Transform of the real assignment:",fft(ass2[0])
+			print "Discrete Fourier Transform of the real assignment:",fft(ass2[0])
 
-		cnt += 1
-		satiscnt += satis[0]
-		prob_dist_variables=prob_dist(variables)
-		prob_dist_negations=prob_dist(negations)
-		prob_dist_nuvariables=prob_dist(nuvariables)
-		avg_prob=0.0
-		avg_nu_prob=0.0
-		for x in prob_dist_variables:
-			avg_prob += x
-		for x in prob_dist_negations:
-			avg_prob += x
-		for x in prob_dist_nuvariables[:-1]:
-			avg_nu_prob += x
-		#print "Frequencies of Variables chosen in CNFs so far:",variables
-		#print "Moving Average - Probability of Variables chosen in CNFs so far:",prob_dist_variables
-		#print "Frequencies of Negations chosen in CNFs so far:",negations
-		#print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
-		#print "Moving Average - Probability of Non-Uniform Choice Variables:",prob_dist_nuvariables
-		observed_avg_prob = avg_prob/float(2.0*number_of_variables)
-		observed_avg_nu_prob = avg_nu_prob/float(2*number_of_variables)
-		print "========================================================================================="
-		#print "Observed - Unaveraged Probabilities of Non-Uniformly chosen literal (has one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n)  :",prob_dist_nuvariables
-		if number_of_clauses != number_of_variables:
-			print "Observed - Average Probability of Non-Uniformly chosen literal (minus one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n) if m != n)  :",observed_avg_nu_prob
-		print "Percentage of clauses satisfied in this random 3SAT:",satis[1]
-		if number_of_clauses == number_of_variables:
-			print "Observed - Average probability of a variable or negation :", observed_avg_prob 
-		print "Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
-		if number_of_clauses == number_of_variables:
-			print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
-		else:
-			print "Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob)*100.0
-		print "Observed - Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
-		print "Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
-		print "========================================================================================="
+			satiscnt += satis[0]
+			prob_dist_variables=prob_dist(variables)
+			prob_dist_negations=prob_dist(negations)
+			prob_dist_nuvariables=prob_dist(nuvariables)
+			avg_prob=0.0
+			avg_nu_prob=0.0
+			for x in prob_dist_variables:
+				avg_prob += x
+			for x in prob_dist_negations:
+				avg_prob += x
+			for x in prob_dist_nuvariables[:-1]:
+				avg_nu_prob += x
+			#print "Frequencies of Variables chosen in CNFs so far:",variables
+			#print "Moving Average - Probability of Variables chosen in CNFs so far:",prob_dist_variables
+			#print "Frequencies of Negations chosen in CNFs so far:",negations
+			#print "Moving Average - Probability of Negations chosen in CNFs so far:",prob_dist_negations
+			#print "Moving Average - Probability of Non-Uniform Choice Variables:",prob_dist_nuvariables
+			observed_avg_prob = avg_prob/float(2.0*number_of_variables)
+			observed_avg_nu_prob = avg_nu_prob/float(2*number_of_variables)
+			print "========================================================================================="
+			#print "Observed - Unaveraged Probabilities of Non-Uniformly chosen literal (has one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n)  :",prob_dist_nuvariables
+			if number_of_clauses != number_of_variables:
+				print "Iteration:",cnt,": Observed - Average Probability of Non-Uniformly chosen literal (minus one heavily skewed variable, all other probabilities should almost match random matrix probability 1/sqrt(m*n) if m != n)  :",observed_avg_nu_prob
+			print "Iteration:",cnt,": Percentage of clauses satisfied in this random 3SAT:",satis[1]
+			if number_of_clauses == number_of_variables:
+				print "Iteration:",cnt,": Observed - Average probability of a variable or negation :", observed_avg_prob 
+			print "Iteration:",cnt,": Theoretical - Probability per literal from Random Matrix Analysis of Least Squared (1/sqrt(mn)):",1.0/math.sqrt(float(number_of_variables)*float(number_of_clauses))
+			if number_of_clauses == number_of_variables:
+				print "Iteration:",cnt,": Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_prob*observed_avg_prob*observed_avg_prob*observed_avg_prob)*100.0
+			else:
+				print "Iteration:",cnt,": Theoretical - MAXSAT-APPROXIMATION Ratio - Observed Average Probability substituted in Random Matrix Analysis of Least Squared (m^2*n^2*p^4):",float(number_of_variables*number_of_variables)*float(number_of_clauses*number_of_clauses)*float(observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob*observed_avg_nu_prob)*100.0
+			print "Iteration:",cnt,": Observed - Moving Average Percentage of CNFs satisfied so far:",(float(satiscnt)/float(cnt))*100
+			print "Iteration:",cnt,": Observed - MAXSAT-APPROXIMATION Ratio - Moving Average Percentage of Clauses per CNF satisfied so far:",float(average_percentage_of_clauses_satisfied)/float(cnt)
+			print "========================================================================================="

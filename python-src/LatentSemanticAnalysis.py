@@ -20,6 +20,9 @@ import numpy as np
 import ast
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
+import operator
+from collections import defaultdict
+from numpy.linalg import matrix_rank
 
 class LSA(object):
 	def __init__(self,corpus):
@@ -58,10 +61,28 @@ class LSA(object):
 			similarity += x[0]*x[1]	
 		return similarity	
 
+	def low_rank_approximation(self):
+		singular=self.svd[1]
+		singularlist=singular.tolist()
+		U=self.svd[0]
+		V=self.svd[2]
+		#lowrank=int(matrix_rank(self.tdmatrix))
+		reducedrank=10
+		print "singularlist:",singularlist
+		for s in xrange(len(singularlist[reducedrank:])):
+			singularlist[reducedrank + s] = 0.0
+		singular=np.asarray(singularlist)
+		sigma = np.zeros((len(singularlist),self.svd[2].shape[0]))
+		for e in xrange(len(singularlist)):
+			sigma[e][e] = singular[e]
+		self.lra = np.dot(U, np.dot(sigma, V))
+		print "low rank approximation:",self.lra
+
 if __name__=="__main__":
 	tdfile=open("LatentSemanticAnalysis.txt","r")
 	lsa=LSA(tdfile.read())
 	lsa.create_tdmatrix()
 	lsa.compute_svd()
 	lsa.similarity()
+	lsa.low_rank_approximation()
 
