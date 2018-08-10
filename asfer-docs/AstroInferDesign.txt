@@ -12432,7 +12432,7 @@ ImageGraph Merit as Tensor Products:
 	(*) the tensor product for two frame ImageGraphs in the Video (which are connected causally by ImageNet) as E(F1) * E(F2) yields a semantic similarity measure between successive chronologically causative frames. e.g edges (birthday, congregation) in E(F1) and (cake, serving) in E(F2) are mapped to edge (birthday-cake, congregation-serving) in the product graph.
 	(*) EventNet Causality of ImageGraphs in a Video is represented by an adjacency matrix defined as:
 		(*) EventNet matrix EN for a video of N image frames has N rows and N columns
-		(*) entry EN(i,j) = tensor product of Event ImageGraph for frame i and Event ImageGraph for frame j 
+		(*) entry EN(i,j) = tensor product of Event ImageGraph for frame i and Event ImageGraph for frame j if there is an ImageNet path between ImageGraphs for Frame i and j, else, 0
 	(*) This EventNet adjacency matrix represents a graph of causality between frames in the video. 
 
 References:
