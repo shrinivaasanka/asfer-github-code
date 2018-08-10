@@ -12423,6 +12423,20 @@ ImageNet-EventNet ImageGraph Algorithm:
 	(*) If Audio is also annotated by a Speech Recognition algorithm to text, it catalyses in deciphering causation amongst sets of frames (by creating AudioGraph per set of frames from WordNet and connecting AudioGraphs by WordNet distances and this creates an audio tensor). 
 	(*) Once these tensors for video and audio are created, merit is computed by how causally connected these tensors are from standard Graph complexity measures already defined for TextGraphs.
 
+------------------------------------------
+ImageGraph Merit as Tensor Products:
+------------------------------------------
+	(*) Two causally related (having ImageNet path between their vertices) ImageGraphs E(F1) and E(F2) for frames F1 and F2 can be multiplied by Tensor Product which is a cartesian/kronecker product of two adjacency matrices of each ImageGraph per frame - resulting tensor product graph has:
+		(*) ImageNet vertex gh for g in V(E(F1)) and h in V(E(F2)) 
+		(*) ImageNet edge (a,b)-(c,d) iff edge (a,c) in E(F1) and (b,d) in E(F2)
+	(*) the tensor product for two frame ImageGraphs in the Video (which are connected causally by ImageNet) as E(F1) * E(F2) yields a semantic similarity measure between successive chronologically causative frames. e.g edges (birthday, congregation) in E(F1) and (cake, serving) in E(F2) are mapped to edge (birthday-cake, congregation-serving) in the product graph.
+	(*) EventNet Causality of ImageGraphs in a Video is represented by an adjacency matrix defined as:
+		(*) EventNet matrix EN for a video of N image frames has N rows and N columns
+		(*) entry EN(i,j) = tensor product of Event ImageGraph for frame i and Event ImageGraph for frame j 
+	(*) This EventNet adjacency matrix represents a graph of causality between frames in the video. 
+
 References:
 -----------
 587.1 ImageNet Large Scale Visual Recognition Challenge - [Olga Russakovsky* · Jia Deng* · Hao Su · Jonathan Krause · Sanjeev Satheesh · Sean Ma · Zhiheng Huang · Andrej Karpathy · Aditya Khosla · Michael Bernstein · Alexander C. Berg · Li Fei-Fei] - https://arxiv.org/pdf/1409.0575.pdf
+587.2 Zig-Zag Product - [Reingold, O.; Vadhan, S.; Wigderson, A. (2000)], "Entropy waves, the zig-zag graph product, and new constant-degree expanders and extractors", Proc. 41st IEEE Symposium on Foundations of Computer Science (FOCS), pp. 3–13 - https://arxiv.org/abs/math/0406038 - Graph product of large graph G and small graph H in which each vertex in G is replaced by copy of H. In ImageGraph EventNet Tensor above, each vertex in EventNet G is replaced by ImageGraph of Frame Event.
+587.3 Tensor Product of Graphs - https://en.wikipedia.org/wiki/Tensor_product_of_graphs
