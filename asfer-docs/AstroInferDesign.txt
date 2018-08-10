@@ -12422,3 +12422,7 @@ ImageNet-EventNet ImageGraph Algorithm:
 	(*) Previous algorithm converts a Video into a Graph of Graphs (or) Tensor which is a matrix having matriix entries. Size of this video tensor is O(number_of_frames).
 	(*) If Audio is also annotated by a Speech Recognition algorithm to text, it catalyses in deciphering causation amongst sets of frames (by creating AudioGraph per set of frames from WordNet and connecting AudioGraphs by WordNet distances and this creates an audio tensor). 
 	(*) Once these tensors for video and audio are created, merit is computed by how causally connected these tensors are from standard Graph complexity measures already defined for TextGraphs.
+
+References:
+-----------
+587.1 ImageNet Large Scale Visual Recognition Challenge - [Olga Russakovsky* · Jia Deng* · Hao Su · Jonathan Krause · Sanjeev Satheesh · Sean Ma · Zhiheng Huang · Andrej Karpathy · Aditya Khosla · Michael Bernstein · Alexander C. Berg · Li Fei-Fei] - https://arxiv.org/pdf/1409.0575.pdf
