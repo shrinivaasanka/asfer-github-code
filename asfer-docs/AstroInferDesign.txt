@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Software for Mining Large Datasets
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,17 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------
 NeuronRain - Design Objectives
@@ -12401,3 +12394,31 @@ iterations but still for 20 variables - 20 clauses similar convergence to ~96% w
 (hardcoded to 10, because matrix_rank() computation is quite slow for large term-document matrices)
 3. Low rank approximation of td is computed from matrix product of U * rankreduced(E) * V^T
 4. logs for this have been committed to testlogs/LatentSemanticAnalysis.log.9August2018
+
+-------------------------------------------------------------------------------------------------------
+587. (THEORY) ImageNet, EventNet and Recursive Lambda Function Growth and Merit of Large Scale Visuals 
+ - ImageGraph Algorithm - related to 249,410 - 10 August 2018
+-------------------------------------------------------------------------------------------------------
+ImageNet is the pictorial WordNet and has received lot of attention in Computer Vision and Large Scale
+Visual Recognition (LSVR) from Images/Videos. Deciding merit of a Video intrinsically with no reputation rankings
+has been an open problem (in Fame versus Merit). Recursive Lambda Function Growth algorithm which generalizes
+Recursive Gloss Overlap for text-graph creation has been so far restricted only to text analysis. ImageNet
+has been applied for Object recognition/tracking based on Convolution Networks in Video datasets (e.g VID). 
+This section describes an algorithm to map a video to ImageNet graph of visuals and infer merit from this 
+image-graph:
+----------------------------------------------
+ImageNet-EventNet ImageGraph Algorithm:
+----------------------------------------------
+	(*) Every Video is set of frames of Images continuously played out in time. 
+	(*) Some image frames in the past causally relate to some frames in future in the Video.
+	(*) For each image frame:
+	{
+		(*) Each frame is recognized by a standard LSVR algorithm (e.g ConvNet) and objects are annotated by bounding boxes.
+		(*) Each bounded recognized object in a frame is lookedup in ImageNet and an ImageGraph is constructed per frame by computing ImageNet path between every pair of recongized objects , similar to WordNet Path s-t connectivity algorithm mentioned earlier for TextGraphs. 
+	}
+	(*) Previous loop creates a huge set of ImageGraphs for frames in Video.
+	(*) Following EventNet convention, every frame is an Event vertex of set of actors (partakers) in EventNet. Causation between two Event ImageGraphs for chronologically ordered frames F1 and F2 (E(F1) and E(F2)) is determined by causal similarity of the graphs E(F1) and E(F2) i.e if there exist ImageNet paths from vertices of E(F1) to vertices of E(F2) then F1 "causes" F2.
+	(*) Example: If frame F1 has recognized visual ImageGraph of a birthday party and F2 has recognized visual ImageGraph of cake-cutting, and if there exists an ImageNet path "birthday - celebration - cake - cutting " ,then E(F1) causes E(F2).
+	(*) Previous algorithm converts a Video into a Graph of Graphs (or) Tensor which is a matrix having matriix entries. Size of this video tensor is O(number_of_frames).
+	(*) If Audio is also annotated by a Speech Recognition algorithm to text, it catalyses in deciphering causation amongst sets of frames (by creating AudioGraph per set of frames from WordNet and connecting AudioGraphs by WordNet distances and this creates an audio tensor). 
+	(*) Once these tensors for video and audio are created, merit is computed by how causally connected these tensors are from standard Graph complexity measures already defined for TextGraphs.
