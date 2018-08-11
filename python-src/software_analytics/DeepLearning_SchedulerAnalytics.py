@@ -371,7 +371,8 @@ if __name__=="__main__":
 	print "Convolution on 2 dimensional graphic performance data stream"
 	print "############################################################" 
 
-	input_bitmap12=image_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/perf.timechart.jpeg")
+	#input_bitmap12=image_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/perf.timechart.jpeg")
+	input_bitmap12=image_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/perf.flamegraph.jpeg")
 	dlc12=DeepLearningConvolution(input_bitmap12)
 
 	#maximum stride is 5
