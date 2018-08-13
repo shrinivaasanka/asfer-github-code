@@ -12414,7 +12414,8 @@ ImageNet-EventNet ImageGraph Algorithm:
 	(*) For each image frame:
 	{
 		(*) Each frame is recognized by a standard LSVR algorithm (e.g ConvNet) and objects are annotated by bounding boxes.
-		(*) Each bounded recognized object in a frame is lookedup in ImageNet and an ImageGraph is constructed per frame by computing ImageNet path between every pair of recongized objects , similar to WordNet Path s-t connectivity algorithm mentioned earlier for TextGraphs. 
+		(*) Each bounded recognized object in a frame is lookedup in ImageNet and an ImageGraph is constructed per frame by computing ImageNet path between every pair of recognized objects and unifying the paths to create an ImageGraph for the frame, similar to WordNet Path s-t connectivity algorithm mentioned earlier for TextGraphs. 
+		(*) Merit of Video in human judgement is more than mere connectedness of information conveyed - it also depends on visual appeal e.g object attributes like Angle, Resolution, Lighting, Texture, Aesthetics etc., Edge weights in frame ImageGraph has to reckon these factors.
 	}
 	(*) Previous loop creates a huge set of ImageGraphs for frames in Video.
 	(*) Following EventNet convention, every frame is an Event vertex of set of actors (partakers) in EventNet. Causation between two Event ImageGraphs for chronologically ordered frames F1 and F2 (E(F1) and E(F2)) is determined by causal similarity of the graphs E(F1) and E(F2) i.e if there exist ImageNet paths from vertices of E(F1) to vertices of E(F2) then F1 "causes" F2.
