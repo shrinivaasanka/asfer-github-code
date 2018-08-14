@@ -12451,3 +12451,25 @@ References:
 587.3 Tensor Product of Graphs - https://en.wikipedia.org/wiki/Tensor_product_of_graphs
 587.4 ImageNet publications - http://image-net.org/about-publication
 587.5 ImageNet VID dataset - https://www.kaggle.com/c/imagenet-object-detection-from-video-challenge
+
+---------------------------------------------------------------------------------------------------------------
+588. (THEORY) Analyzing Youtube Videos, Ranking Movies and ImageGraph Tensor Products Algorithm for 
+Merit of Large Scale Visuals - 14 August 2018 - related to 587
+---------------------------------------------------------------------------------------------------------------
+Analyzing Videos in public domain and Ranking Movies based on merit as opposed to usual human review/reputation 
+based rankings is one of the hardest Large Scale Visual Recognition Challenge. Algorithm for Mapping Video or Movie to EventNet Graph of frame ImageGraphs and representing EventNet edge weights as Tensor Products has been described earlier.  This algorithm just elicits the graph complexity of visual information contained in the Video overlooking sentimental polarities and psychological impact. Language Inquiry and Word Count (LIWC) is a dictionary of human voted words categorized by their human psychological emotions. Classifying the objects in Video or Movie of human viewership therefore demands emotional categories of words. Following changes are made to previous algorithm for quantifying emotions:
+	(*) Emotions are mostly verbal and Speech Recognition annotated AudioGraph of Video or Movie Dialogue Transcript are created per frame/scene by union of WordNet paths for all pairs of words in Transcript per frame/scene
+	(*) Word Vertices of Each ImageGraph and AudioGraph per frame in Video or Movie are also annotated by the psychological polarity of the Word Vertex in LWIC 
+	(*) Weight of every edge (a,b)-(c,d) (or) (ab)-(cd) in tensor product of AudioGraphs and ImageGraphs for frames F1 and F2, E(F1)*E(F2) (i.e (a,c) in E(F1) and (b,d) in E(F2)) is the ordered pair of inverse distance similarity and LIWC majority LIWC polarity = (1/(dist(a,b)*dist(c,d)), majority_LIWC_polarity_of(a,b,c,d)) for ImageNet distance dist between two vertices in different ImageGraphs or AudioGraphs E(F1) and E(F2).
+	(*) Merit of the Video or Movie in toto is the ordered pair = (Tensor Rank of the AudioGraph and ImageGraph EventNet Tensors, Sorted list of top percentile LIWC polarity of edge weights in ImageGraph and AudioGraph Tensor Products) 
+	(*) Computing Tensor Rank is NP-Complete for Finite Fields and NP-hard for Rationals.
+	(*) Previous Merit captures both the complexity and emotional content of the Large Scale Visual.
+	(*) Tensor Rank is the generalization of Matrix Rank (number of linearly independent rows) = Dimension of Tensor = Minimum number of Tensors Ti to linearly express Tensor T = Sigma(Ti) 
+	(*) Most algorithms for Video analysis are caption and statistics based whereas the previous algorithm is a graph theoretic formulation of a machine learning computer vision problem.
+	(*) There are recent other alternatives to LIWC e.g Empath.
+
+References:
+----------
+588.1 Language Inquiry and Word Count - LIWC - http://liwc.wpengine.com/wp-content/uploads/2015/11/LIWC2015_LanguageManual.pdf
+588.2 Exploring Tensor Rank - http://www.its.caltech.edu/~matilde/WeitzMa10Abstract.pdf
+588.3 Tensor Rank is NP-Complete - [Hastad] - http://www.nada.kth.se/~johanh/tensorrank.pdf 
