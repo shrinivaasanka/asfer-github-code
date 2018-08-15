@@ -12454,7 +12454,7 @@ References:
 
 ---------------------------------------------------------------------------------------------------------------
 588. (THEORY) Analyzing Youtube Videos, Ranking Movies and ImageGraph Tensor Products Algorithm for 
-Merit of Large Scale Visuals - 14 August 2018 - related to 587
+Merit of Large Scale Visuals - 14 August 2018, 15 August 2018 - related to 587
 ---------------------------------------------------------------------------------------------------------------
 Analyzing Videos in public domain and Ranking Movies based on merit as opposed to usual human review/reputation 
 based rankings is one of the hardest Large Scale Visual Recognition Challenge. Algorithm for Mapping Video or Movie to EventNet Graph of frame ImageGraphs and representing EventNet edge weights as Tensor Products has been described earlier.  This algorithm just elicits the graph complexity of visual information contained in the Video overlooking sentimental polarities and psychological impact. Language Inquiry and Word Count (LIWC) is a dictionary of human voted words categorized by their human psychological emotions. Classifying the objects in Video or Movie of human viewership therefore demands emotional categories of words. Following changes are made to previous algorithm for quantifying emotions:
@@ -12467,7 +12467,12 @@ based rankings is one of the hardest Large Scale Visual Recognition Challenge. A
 	(*) Tensor Rank is the generalization of Matrix Rank (number of linearly independent rows) = Dimension of Tensor = Minimum number of Tensors Ti to linearly express Tensor T = Sigma(Ti) 
 	(*) Most algorithms for Video analysis are caption and statistics based whereas the previous algorithm is a graph theoretic formulation of a machine learning computer vision problem.
 	(*) There are recent other alternatives to LIWC e.g Empath.
-
+	(*) Intuition for choice of Tensor Rank as Merit of Large Scale Visuals:
+		(*) Tensor Rank of EventNet is the number of Independent n-rows/n-columns of Events in the Video
+		where n-columns and n-rows are hypercubes considering Tensor as multidimensional array
+		(*) Increased Tensor Rank implies the Events in the Video are more disconnected/independent
+		while decreased Tensor Rank implies the Events are more connected/dependent
+		(*) Therefore Video of Low Tensor Rank is heavily connected.
 References:
 ----------
 588.1 Language Inquiry and Word Count - LIWC - http://liwc.wpengine.com/wp-content/uploads/2015/11/LIWC2015_LanguageManual.pdf
