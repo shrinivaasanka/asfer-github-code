@@ -12479,3 +12479,16 @@ References:
 588.2 Exploring Tensor Rank - http://www.its.caltech.edu/~matilde/WeitzMa10Abstract.pdf
 588.3 Tensor Rank is NP-Complete - [Hastad] - http://www.nada.kth.se/~johanh/tensorrank.pdf 
 588.4 Computational Complexity of Tensor Problems - https://www.stat.uchicago.edu/~lekheng/meetings/agtd/hillar13.pdf
+
+------------------------------------------------------------------------------------------------------------
+589. (THEORY and FEATURE) SAT Solver - CVXOPT - gesv() least squares - 16 August 2018 - related to 424
+------------------------------------------------------------------------------------------------------------
+1. CNFSATSolver.py has been changed to import gesv, getrs, sysv functions for least squares in cvxopt
+2. Each of these were tried for 10 variables and 10 clauses combinations and gesv() has the highest accuracy
+observed so far (~99% to 100%) in any of the least squares algorithms.
+3. logs for 500 random 3SAT instances have been committed to testlogs/CNFSATSolver.10variablesAlpha1.0.CVXOPT.log.16August2018
+4. Caveat: Though the number of variables/clauses are less which could cause repetitive choice of same 3SAT similar randomness did not attain 99% accuracy for other least squares algorithms earlier for similar variable-clause combination.
+5. gesv() also throws ArithmeticError for non full-rank matrices and logs for gesv() are filtered-out random 3SAT instances which are full rank. This leaves some random 3SAT instances unsolved.
+6. try...except has been changed to print exception stacktrace for ArithmeticError
+
+CVXOPT gesv() has breached the accuracy barrier to large extent from 95-97% to > 99% coinciding with Random Matrix Analysis for 3SAT. But problem is with high number of variables and clauses which do not churn out full rank matrices for 3SAT and lot of instances are left out. So the average is only for full-rank random 3SATs. If this implies P=NP, Polynomial Hierarchy PH collapses to P implying existence of PH-complete problems.
