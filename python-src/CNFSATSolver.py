@@ -45,7 +45,7 @@ from numpy import polyfit
 from scipy.optimize import lsq_linear
 from scipy.fftpack import fft
 from cvxopt import matrix
-from cvxopt.lapack import gels
+from cvxopt.lapack import gels,sysv,gesv,getrs
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -208,10 +208,13 @@ class SATSolver(object):
 			#x = bicgstab(a,b)
                 	#x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
 			try:
-				x = gels(matrixa,matrixb)
+				x = gesv(matrixa,matrixb)
+				#x = gels(matrixa,matrixb)
+				#x = sysv(matrixa,matrixb)
+				#x = getrs(matrixa,matrixb)
 				x = [matrixb]
 			except:
-				print "Matrix is not full rank"
+				print "Exception:",sys.exc_info()
 				return None 
                 	#x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 		else:
@@ -235,10 +238,13 @@ class SATSolver(object):
 				x = lsq_linear(a,b,lsq_solver='exact')
 			if self.Algorithm=="lapack()":
 				try:
-					x = gels(matrixa,matrixb)
+					x = gesv(matrixa,matrixb)
+					#x = gels(matrixa,matrixb)
+					#x = sysv(matrixa,matrixb)
+					#x = getrs(matrixa,matrixb)
 					x = [matrixb]
 				except:
-					print "Matrix is not full rank"
+					print "Exception:",sys.exc_info()
 					return None 
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
