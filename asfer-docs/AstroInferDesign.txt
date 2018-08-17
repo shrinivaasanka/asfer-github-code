@@ -12088,6 +12088,7 @@ which is the approximate lower bound on number of primes between two prime facto
 References:
 -----------
 570.1 Gaps between integers having same prime factors - [Cochrane-Dressler] - http://www.ams.org/journals/mcom/1999-68-225/S0025-5718-99-01024-8/S0025-5718-99-01024-8.pdf - Conjecture 2 and Theorem 1 - "...Conjecture 2. For any epsilon > 0 there exists a constant C(epsilon) such that if a<c are positive integers having the same prime factors, then c − a ≥ C(epsilon)(a^(0.5-epsilon))..." and "...Theorem 1. The abc conjecture implies Conjecture 2...."  
+570.2 Pillai's Conjecture and ABC Conjecture - [Subbayya Sivasankaranarayana Pillai] - https://webusers.imj-prg.fr/~michel.waldschmidt/articles/pdf/abcEnVI.pdf - Difference of consecutive perfect powers tends to infinity - Pillai’s conjecture as a consequence of the abc Conjecture : if x^p != y^q, then |x^p - y^q| >= c(e)*max{x^p , y^q}^(k-e) with k = 1 - 1/p - 1/q· Factoring Perfect powers is special case of factorization and in previous ray shooting algorithm N1=x^p and N2=x^q and both N1 and N2 have same prime factors. 
 
 -------------------------------------------------------------------------------------------------------------
 571. (FEATURE) Streaming Facebook Analytics - Exhaustively print all wall posts of a user - 6 July 2018
