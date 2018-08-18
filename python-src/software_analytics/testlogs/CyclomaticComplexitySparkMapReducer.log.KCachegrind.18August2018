@@ -1,0 +1,541 @@
+2018-08-18 16:01:02 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+2018-08-18 16:01:02 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-08-18 16:01:03 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-08-18 16:01:05 INFO  SparkContext:54 - Running Spark version 2.3.1
+2018-08-18 16:01:05 INFO  SparkContext:54 - Submitted application: CyclomaticComplexitySparkMapReducer.py
+2018-08-18 16:01:05 INFO  SecurityManager:54 - Changing view acls to: root
+2018-08-18 16:01:05 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-08-18 16:01:05 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-08-18 16:01:05 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-08-18 16:01:05 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-08-18 16:01:05 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: 4a:54:d1:82:3e:9d:e3:3b
+2018-08-18 16:01:05 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 40430.
+2018-08-18 16:01:06 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-08-18 16:01:06 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-08-18 16:01:06 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-08-18 16:01:06 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-08-18 16:01:06 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-fff2727c-25b4-4be3-aaf9-2cc102e09df2
+2018-08-18 16:01:06 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-08-18 16:01:06 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-08-18 16:01:06 INFO  log:192 - Logging initialized @5589ms
+2018-08-18 16:01:06 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-08-18 16:01:06 INFO  Server:414 - Started @5810ms
+2018-08-18 16:01:06 INFO  AbstractConnector:278 - Started ServerConnector@279cb9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-08-18 16:01:06 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1fece0{/jobs,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@10b1803{/jobs/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1d6071d{/jobs/job,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c370e0{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@65a61b{/stages,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@148b7a5{/stages/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2e95cc{/stages/stage,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@195e339{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1d78b32{/stages/pool,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@42d3ae{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@14aed65{/storage,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@18040de{/storage/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@99d787{/storage/rdd,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ccbb19{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@ef5e60{/environment,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1786993{/environment/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@117a054{/executors,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@68cddc{/executors/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2886f{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@e8444d{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@174384{/static,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1c6db57{/,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@673bd0{/api,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@2c7c6e{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@e46633{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-08-18 16:01:06 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+2018-08-18 16:01:07 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py with timestamp 1534588267614
+2018-08-18 16:01:07 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py to /tmp/spark-63b9cb7c-1d85-4b88-a01c-bdba78994ae1/userFiles-f3966a4e-98ed-4444-b39b-749a2fbd3793/CyclomaticComplexitySparkMapReducer.py
+2018-08-18 16:01:07 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-08-18 16:01:07 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 48444.
+2018-08-18 16:01:07 INFO  NettyBlockTransferService:54 - Server created on HCL:48444
+2018-08-18 16:01:07 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-08-18 16:01:07 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 48444, None)
+2018-08-18 16:01:07 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:48444 with 413.9 MB RAM, BlockManagerId(driver, HCL, 48444, None)
+2018-08-18 16:01:07 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 48444, None)
+2018-08-18 16:01:07 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 48444, None)
+2018-08-18 16:01:08 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@18ca858{/metrics/json,null,AVAILABLE,@Spark}
+2018-08-18 16:01:09 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Registering RDD 2 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49)
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Got job 0 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) with 1 output partitions
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Final stage: ResultStage 1 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50)
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 0)
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 0)
+2018-08-18 16:01:09 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49), which has no missing parents
+2018-08-18 16:01:10 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-08-18 16:01:10 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:10 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:10 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:10 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:10 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 0 (PairwiseRDD[2] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:10 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 1 tasks
+2018-08-18 16:01:10 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 16182 bytes)
+2018-08-18 16:01:10 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-08-18 16:01:10 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py with timestamp 1534588267614
+2018-08-18 16:01:10 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py has been previously copied to /tmp/spark-63b9cb7c-1d85-4b88-a01c-bdba78994ae1/userFiles-f3966a4e-98ed-4444-b39b-749a2fbd3793/CyclomaticComplexitySparkMapReducer.py
+2018-08-18 16:01:12 INFO  PythonRunner:54 - Times: total = 714, boot = 638, init = 71, finish = 5
+2018-08-18 16:01:12 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1515 bytes result sent to driver
+2018-08-18 16:01:12 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 1681 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - ShuffleMapStage 0 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) finished in 2.363 s
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - waiting: Set(ResultStage 1)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting ResultStage 1 (PythonRDD[5] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50), which has no missing parents
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_1 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  BlockManagerInfo:54 - Added broadcast_1_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:12 INFO  SparkContext:54 - Created broadcast 1 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 1 (PythonRDD[5] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Adding task set 1.0 with 1 tasks
+2018-08-18 16:01:12 INFO  TaskSetManager:54 - Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, ANY, 7649 bytes)
+2018-08-18 16:01:12 INFO  Executor:54 - Running task 0.0 in stage 1.0 (TID 1)
+2018-08-18 16:01:12 INFO  ShuffleBlockFetcherIterator:54 - Getting 1 non-empty blocks out of 1 blocks
+2018-08-18 16:01:12 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 20 ms
+2018-08-18 16:01:12 INFO  PythonRunner:54 - Times: total = 44, boot = -779, init = 822, finish = 1
+2018-08-18 16:01:12 INFO  Executor:54 - Finished task 0.0 in stage 1.0 (TID 1). 3584 bytes result sent to driver
+2018-08-18 16:01:12 INFO  TaskSetManager:54 - Finished task 0.0 in stage 1.0 (TID 1) in 178 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - ResultStage 1 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) finished in 0.229 s
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Job 0 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50, took 2.908227 s
+2018-08-18 16:01:12 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Registering RDD 7 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Got job 1 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) with 1 output partitions
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Final stage: ResultStage 3 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 2)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 2)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 2 (PairwiseRDD[7] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53), which has no missing parents
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_2 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  BlockManagerInfo:54 - Added broadcast_2_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:12 INFO  SparkContext:54 - Created broadcast 2 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 2 (PairwiseRDD[7] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Adding task set 2.0 with 1 tasks
+2018-08-18 16:01:12 INFO  TaskSetManager:54 - Starting task 0.0 in stage 2.0 (TID 2, localhost, executor driver, partition 0, PROCESS_LOCAL, 16182 bytes)
+2018-08-18 16:01:12 INFO  Executor:54 - Running task 0.0 in stage 2.0 (TID 2)
+2018-08-18 16:01:12 INFO  BlockManagerInfo:54 - Removed broadcast_1_piece0 on HCL:48444 in memory (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:12 INFO  PythonRunner:54 - Times: total = 53, boot = -306, init = 356, finish = 3
+2018-08-18 16:01:12 INFO  Executor:54 - Finished task 0.0 in stage 2.0 (TID 2). 1472 bytes result sent to driver
+2018-08-18 16:01:12 INFO  TaskSetManager:54 - Finished task 0.0 in stage 2.0 (TID 2) in 139 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - ShuffleMapStage 2 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) finished in 0.256 s
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - waiting: Set(ResultStage 3)
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Removed TaskSet 2.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting ResultStage 3 (PythonRDD[10] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54), which has no missing parents
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_3 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  MemoryStore:54 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:12 INFO  BlockManagerInfo:54 - Added broadcast_3_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:12 INFO  SparkContext:54 - Created broadcast 3 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:12 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 3 (PythonRDD[10] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:12 INFO  TaskSchedulerImpl:54 - Adding task set 3.0 with 1 tasks
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Starting task 0.0 in stage 3.0 (TID 3, localhost, executor driver, partition 0, ANY, 7649 bytes)
+2018-08-18 16:01:13 INFO  Executor:54 - Running task 0.0 in stage 3.0 (TID 3)
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Getting 1 non-empty blocks out of 1 blocks
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 3 ms
+2018-08-18 16:01:13 INFO  PythonRunner:54 - Times: total = 42, boot = -102, init = 143, finish = 1
+2018-08-18 16:01:13 INFO  Executor:54 - Finished task 0.0 in stage 3.0 (TID 3). 3460 bytes result sent to driver
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Finished task 0.0 in stage 3.0 (TID 3) in 111 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - ResultStage 3 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) finished in 0.157 s
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Removed TaskSet 3.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Job 1 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54, took 0.440658 s
+Edges + Vertices: [('"dg_cfg_node{p_io{\\"#11\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#392\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#430\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#5\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#352\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#230\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#128\\"}}"', 3), ('"dg_cfg_node{p_io{\\"#48\\"}}"', 2), ('"dg_cfg_node{p_lnext{\\"s#12\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#64\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#287\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#13\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#372\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#32\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#318\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#17\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#324\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#303\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#12\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#101\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#346\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#20\\"}}"', 2), ('node', 1), ('"dg_cfg_node{p_bi{\\"#1\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#42\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#340\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#2\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#249\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#424\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#75\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#222\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#9\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#0\\"}}"', 3), ('"dg_cfg_node{p_so{\\"s#4\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#169\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#54\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#238\\"}}"', 2), ('"dg_lab_node{p_so{\\"s#17\\"},nexit}"', 2), ('"dg_cfg_node{p_so{\\"s#8\\"}}"', 3), ('"dg_lab_node{p_bi{\\"#270\\"},nlooph{\\"s#12\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#157\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#138\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#187\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#26\\"}}"', 2), ('"dg_cfg_node{p_lnext{\\"s#4\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#118\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#113\\"}}"', 2), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 2), ('"dg_cfg_node{p_so{\\"s#1\\"}}"', 2), ('"dg_cfg_node{p_bi{\\"#270\\"}}"', 3), ('"dg_cfg_node{p_io{\\"#170\\"}}"', 2), ('"dg_lab_node{p_bi{\\"#128\\"},nlooph{\\"s#4\\"}}"', 2)]
+Vertices: [('"dg_cfg_node{p_io{\\"#11\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#392\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#430\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#5\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#352\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#230\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#128\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#48\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#64\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#287\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#13\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#372\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#32\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#318\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#324\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#303\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#2\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#101\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#346\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#20\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#1\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#42\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#238\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#12\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#249\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#75\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#0\\"}}"', 2), ('"dg_cfg_node{p_so{\\"s#9\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#222\\"}}"', 1), ('"dg_lab_node{p_so{\\"s#17\\"},nexit}"', 1), ('"dg_cfg_node{p_so{\\"s#4\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#169\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#54\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#340\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#424\\"}}"', 1), ('"dg_cfg_node{p_so{\\"s#8\\"}}"', 2), ('"dg_lab_node{p_bi{\\"#270\\"},nlooph{\\"s#12\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#157\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#138\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#187\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#26\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#118\\"}}"', 1), ('"dg_cfg_node{p_io{\\"#113\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 1), ('"dg_cfg_node{p_so{\\"s#1\\"}}"', 1), ('"dg_cfg_node{p_bi{\\"#270\\"}}"', 2), ('"dg_cfg_node{p_io{\\"#170\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#128\\"},nlooph{\\"s#4\\"}}"', 1)]
+Cyclomatic Complexity: E-V+2 =  42
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 84
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 81
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 91
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 52
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 97
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 77
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 55
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 58
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 96
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 54
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 53
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 56
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 66
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 100
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 87
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 57
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 62
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 61
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 83
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 51
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 94
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 60
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 82
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 90
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 70
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 98
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 74
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 92
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 95
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 69
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 59
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 99
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 80
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Removed broadcast_2_piece0 on HCL:48444 in memory (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 79
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 71
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 78
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 67
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 68
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 76
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 85
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 63
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 64
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 75
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 88
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 93
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 89
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 65
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 72
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 73
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Removed broadcast_3_piece0 on HCL:48444 in memory (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 86
+2018-08-18 16:01:13 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Registering RDD 13 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Got job 2 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) with 1 output partitions
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Final stage: ResultStage 5 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 4)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 4)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 4 (PairwiseRDD[13] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49), which has no missing parents
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_4 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_4_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Added broadcast_4_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  SparkContext:54 - Created broadcast 4 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 4 (PairwiseRDD[13] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Adding task set 4.0 with 1 tasks
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Starting task 0.0 in stage 4.0 (TID 4, localhost, executor driver, partition 0, PROCESS_LOCAL, 10134 bytes)
+2018-08-18 16:01:13 INFO  Executor:54 - Running task 0.0 in stage 4.0 (TID 4)
+2018-08-18 16:01:13 INFO  PythonRunner:54 - Times: total = 47, boot = -195, init = 240, finish = 2
+2018-08-18 16:01:13 INFO  Executor:54 - Finished task 0.0 in stage 4.0 (TID 4). 1429 bytes result sent to driver
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Finished task 0.0 in stage 4.0 (TID 4) in 105 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - ShuffleMapStage 4 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) finished in 0.153 s
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - waiting: Set(ResultStage 5)
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Removed TaskSet 4.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting ResultStage 5 (PythonRDD[16] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50), which has no missing parents
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_5 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_5_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Added broadcast_5_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  SparkContext:54 - Created broadcast 5 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 5 (PythonRDD[16] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Adding task set 5.0 with 1 tasks
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Starting task 0.0 in stage 5.0 (TID 5, localhost, executor driver, partition 0, ANY, 7649 bytes)
+2018-08-18 16:01:13 INFO  Executor:54 - Running task 0.0 in stage 5.0 (TID 5)
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Getting 1 non-empty blocks out of 1 blocks
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+2018-08-18 16:01:13 INFO  PythonRunner:54 - Times: total = 42, boot = -94, init = 136, finish = 0
+2018-08-18 16:01:13 INFO  Executor:54 - Finished task 0.0 in stage 5.0 (TID 5). 2056 bytes result sent to driver
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Finished task 0.0 in stage 5.0 (TID 5) in 98 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - ResultStage 5 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) finished in 0.132 s
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Removed TaskSet 5.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Job 2 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50, took 0.319431 s
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 140
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 145
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 143
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 146
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 101
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 150
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 123
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 136
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 131
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 102
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 116
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 134
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 141
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 111
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 115
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 109
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 139
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 133
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 119
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Removed broadcast_5_piece0 on HCL:48444 in memory (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 103
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 124
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Removed broadcast_4_piece0 on HCL:48444 in memory (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 121
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 142
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 118
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 149
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 117
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 128
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 147
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 104
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 108
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 144
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 120
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 125
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 113
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 137
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 110
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 114
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 106
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 127
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 126
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 148
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 135
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 107
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 112
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 138
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 105
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 132
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 122
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 129
+2018-08-18 16:01:13 INFO  ContextCleaner:54 - Cleaned accumulator 130
+2018-08-18 16:01:13 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Registering RDD 18 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Got job 3 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) with 1 output partitions
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Final stage: ResultStage 7 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 6)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 6)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 6 (PairwiseRDD[18] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53), which has no missing parents
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_6 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_6_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Added broadcast_6_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  SparkContext:54 - Created broadcast 6 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 6 (PairwiseRDD[18] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Adding task set 6.0 with 1 tasks
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Starting task 0.0 in stage 6.0 (TID 6, localhost, executor driver, partition 0, PROCESS_LOCAL, 10134 bytes)
+2018-08-18 16:01:13 INFO  Executor:54 - Running task 0.0 in stage 6.0 (TID 6)
+2018-08-18 16:01:13 INFO  PythonRunner:54 - Times: total = 41, boot = -178, init = 218, finish = 1
+2018-08-18 16:01:13 INFO  Executor:54 - Finished task 0.0 in stage 6.0 (TID 6). 1429 bytes result sent to driver
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Finished task 0.0 in stage 6.0 (TID 6) in 114 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - ShuffleMapStage 6 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) finished in 0.146 s
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Removed TaskSet 6.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - waiting: Set(ResultStage 7)
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting ResultStage 7 (PythonRDD[21] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54), which has no missing parents
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_7 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  MemoryStore:54 - Block broadcast_7_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:13 INFO  BlockManagerInfo:54 - Added broadcast_7_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:13 INFO  SparkContext:54 - Created broadcast 7 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:13 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 7 (PythonRDD[21] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:13 INFO  TaskSchedulerImpl:54 - Adding task set 7.0 with 1 tasks
+2018-08-18 16:01:13 INFO  TaskSetManager:54 - Starting task 0.0 in stage 7.0 (TID 7, localhost, executor driver, partition 0, ANY, 7649 bytes)
+2018-08-18 16:01:13 INFO  Executor:54 - Running task 0.0 in stage 7.0 (TID 7)
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Getting 1 non-empty blocks out of 1 blocks
+2018-08-18 16:01:13 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+2018-08-18 16:01:14 INFO  PythonRunner:54 - Times: total = 40, boot = -81, init = 121, finish = 0
+2018-08-18 16:01:14 INFO  Executor:54 - Finished task 0.0 in stage 7.0 (TID 7). 2007 bytes result sent to driver
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Finished task 0.0 in stage 7.0 (TID 7) in 86 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - ResultStage 7 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) finished in 0.130 s
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Removed TaskSet 7.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Job 3 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54, took 0.294511 s
+Edges + Vertices: [('node', 1), ('"dg_memory_node{p_bi{\\"#26\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#1\\"}}"', 3), ('"dg_memory_node{p_bi{\\"#3\\"}}"', 2), ('"dg_memory_node{p_so{\\"s#4\\"}}"', 3), ('"dg_memory_node{p_bi{\\"#46\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#59\\"}}"', 2), ('"dg_memory_node{p_so{\\"s#7\\"}}"', 1), ('"dg_memory_node{p_so{\\"s#2\\"}}"', 2), ('"dg_lab_node{p_so{\\"s#7\\"},nexit}"', 2), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 2), ('"dg_memory_node{p_so{\\"s#0\\"}}"', 3)]
+Vertices: [('"dg_memory_node{p_bi{\\"#26\\"}}"', 1), ('"dg_memory_node{p_bi{\\"#1\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#3\\"}}"', 1), ('"dg_memory_node{p_so{\\"s#4\\"}}"', 2), ('"dg_memory_node{p_bi{\\"#46\\"}}"', 1), ('"dg_lab_node{p_so{\\"s#7\\"},nexit}"', 1), ('"dg_memory_node{p_so{\\"s#2\\"}}"', 1), ('"dg_memory_node{p_bi{\\"#59\\"}}"', 1), ('"dg_lab_node{p_bi{\\"#1\\"},nentry}"', 1), ('"dg_memory_node{p_so{\\"s#0\\"}}"', 2)]
+Cyclomatic Complexity: E-V+2 =  6
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Removed broadcast_6_piece0 on HCL:48444 in memory (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 177
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 176
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 162
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 157
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 196
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 192
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 191
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 158
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 184
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 174
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 181
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 167
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 156
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 182
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 185
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 198
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 178
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Removed broadcast_7_piece0 on HCL:48444 in memory (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 160
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 173
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 151
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 186
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 171
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 183
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 155
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 188
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 170
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 161
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 195
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 175
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 200
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 189
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 154
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 159
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 172
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 197
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 193
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 168
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 169
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 179
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 165
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 163
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 187
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 152
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 180
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 153
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 199
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 164
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 190
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 194
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 166
+2018-08-18 16:01:14 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Registering RDD 24 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Got job 4 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) with 1 output partitions
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Final stage: ResultStage 9 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 8)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 8)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 8 (PairwiseRDD[24] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49), which has no missing parents
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_8 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_8_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Added broadcast_8_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  SparkContext:54 - Created broadcast 8 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 8 (PairwiseRDD[24] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Adding task set 8.0 with 1 tasks
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Starting task 0.0 in stage 8.0 (TID 8, localhost, executor driver, partition 0, PROCESS_LOCAL, 10603 bytes)
+2018-08-18 16:01:14 INFO  Executor:54 - Running task 0.0 in stage 8.0 (TID 8)
+2018-08-18 16:01:14 INFO  PythonRunner:54 - Times: total = 39, boot = -149, init = 187, finish = 1
+2018-08-18 16:01:14 INFO  Executor:54 - Finished task 0.0 in stage 8.0 (TID 8). 1300 bytes result sent to driver
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Finished task 0.0 in stage 8.0 (TID 8) in 69 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - ShuffleMapStage 8 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:49) finished in 0.103 s
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Removed TaskSet 8.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - waiting: Set(ResultStage 9)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting ResultStage 9 (PythonRDD[27] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50), which has no missing parents
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_9 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_9_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Added broadcast_9_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  SparkContext:54 - Created broadcast 9 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 9 (PythonRDD[27] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Adding task set 9.0 with 1 tasks
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Starting task 0.0 in stage 9.0 (TID 9, localhost, executor driver, partition 0, PROCESS_LOCAL, 7649 bytes)
+2018-08-18 16:01:14 INFO  Executor:54 - Running task 0.0 in stage 9.0 (TID 9)
+2018-08-18 16:01:14 INFO  ShuffleBlockFetcherIterator:54 - Getting 0 non-empty blocks out of 1 blocks
+2018-08-18 16:01:14 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+2018-08-18 16:01:14 INFO  PythonRunner:54 - Times: total = 42, boot = -40, init = 82, finish = 0
+2018-08-18 16:01:14 INFO  Executor:54 - Finished task 0.0 in stage 9.0 (TID 9). 1536 bytes result sent to driver
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Finished task 0.0 in stage 9.0 (TID 9) in 90 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - ResultStage 9 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50) finished in 0.152 s
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Removed TaskSet 9.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Job 4 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:50, took 0.276226 s
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 212
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 235
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 209
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 206
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 222
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 245
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 216
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 233
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 242
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 232
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 227
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 221
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 210
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 229
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 211
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 218
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 231
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 215
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 240
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 213
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 230
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 220
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 237
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 228
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 223
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 205
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 214
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 234
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 248
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 225
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 241
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 204
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 208
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 217
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 201
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 224
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 236
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 219
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 207
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 247
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 202
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Removed broadcast_8_piece0 on HCL:48444 in memory (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  SparkContext:54 - Starting job: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Removed broadcast_9_piece0 on HCL:48444 in memory (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 243
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 238
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 226
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 250
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Registering RDD 29 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Got job 5 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) with 1 output partitions
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Final stage: ResultStage 11 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Parents of final stage: List(ShuffleMapStage 10)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Missing parents: List(ShuffleMapStage 10)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 10 (PairwiseRDD[29] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53), which has no missing parents
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 239
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 246
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 203
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 244
+2018-08-18 16:01:14 INFO  ContextCleaner:54 - Cleaned accumulator 249
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_10 stored as values in memory (estimated size 8.6 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_10_piece0 stored as bytes in memory (estimated size 5.5 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Added broadcast_10_piece0 in memory on HCL:48444 (size: 5.5 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  SparkContext:54 - Created broadcast 10 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ShuffleMapStage 10 (PairwiseRDD[29] at reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Adding task set 10.0 with 1 tasks
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Starting task 0.0 in stage 10.0 (TID 10, localhost, executor driver, partition 0, PROCESS_LOCAL, 10603 bytes)
+2018-08-18 16:01:14 INFO  Executor:54 - Running task 0.0 in stage 10.0 (TID 10)
+2018-08-18 16:01:14 INFO  PythonRunner:54 - Times: total = 42, boot = -138, init = 178, finish = 2
+2018-08-18 16:01:14 INFO  Executor:54 - Finished task 0.0 in stage 10.0 (TID 10). 1472 bytes result sent to driver
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Finished task 0.0 in stage 10.0 (TID 10) in 102 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - ShuffleMapStage 10 (reduceByKey at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:53) finished in 0.137 s
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Removed TaskSet 10.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - looking for newly runnable stages
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - running: Set()
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - waiting: Set(ResultStage 11)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - failed: Set()
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting ResultStage 11 (PythonRDD[32] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54), which has no missing parents
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_11 stored as values in memory (estimated size 6.7 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  MemoryStore:54 - Block broadcast_11_piece0 stored as bytes in memory (estimated size 4.2 KB, free 413.9 MB)
+2018-08-18 16:01:14 INFO  BlockManagerInfo:54 - Added broadcast_11_piece0 in memory on HCL:48444 (size: 4.2 KB, free: 413.9 MB)
+2018-08-18 16:01:14 INFO  SparkContext:54 - Created broadcast 11 from broadcast at DAGScheduler.scala:1039
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 11 (PythonRDD[32] at collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) (first 15 tasks are for partitions Vector(0))
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Adding task set 11.0 with 1 tasks
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Starting task 0.0 in stage 11.0 (TID 11, localhost, executor driver, partition 0, ANY, 7649 bytes)
+2018-08-18 16:01:14 INFO  Executor:54 - Running task 0.0 in stage 11.0 (TID 11)
+2018-08-18 16:01:14 INFO  ShuffleBlockFetcherIterator:54 - Getting 1 non-empty blocks out of 1 blocks
+2018-08-18 16:01:14 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+2018-08-18 16:01:14 INFO  PythonRunner:54 - Times: total = 46, boot = -72, init = 117, finish = 1
+2018-08-18 16:01:14 INFO  Executor:54 - Finished task 0.0 in stage 11.0 (TID 11). 1941 bytes result sent to driver
+2018-08-18 16:01:14 INFO  TaskSetManager:54 - Finished task 0.0 in stage 11.0 (TID 11) in 96 ms on localhost (executor driver) (1/1)
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - ResultStage 11 (collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54) finished in 0.137 s
+2018-08-18 16:01:14 INFO  TaskSchedulerImpl:54 - Removed TaskSet 11.0, whose tasks have all completed, from pool 
+2018-08-18 16:01:14 INFO  DAGScheduler:54 - Job 5 finished: collect at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py:54, took 0.298579 s
+Edges + Vertices: []
+Vertices: [('Fa37cddc', 1), ('Fa3cf3ec', 1), ('Fa3d2024', 1), ('Fa23e6d4', 3), ('Fa410124', 1), ('Fa470a14', 1), ('Fa3d028c', 1), ('Fa1a610c', 1), ('Fa23dcd4', 1), ('Fa2abddc', 1), ('Fa2ace5c', 1), ('Fa3cda24', 1), ('F9ffa4ac', 1), ('F9d95c8c', 1), ('Fa2ac584', 1), ('Fa3cc444', 2), ('Fa484e74', 1), ('Fa3cbafc', 3), ('Fa47ce3c', 1), ('Fa47c5e4', 1)]
+Cyclomatic Complexity: E-V+2 =  38
+2018-08-18 16:01:14 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-08-18 16:01:15 INFO  AbstractConnector:318 - Stopped Spark@279cb9{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-08-18 16:01:15 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+2018-08-18 16:01:15 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-08-18 16:01:15 INFO  MemoryStore:54 - MemoryStore cleared
+2018-08-18 16:01:15 INFO  BlockManager:54 - BlockManager stopped
+2018-08-18 16:01:15 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-08-18 16:01:15 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-08-18 16:01:15 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-08-18 16:01:15 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-08-18 16:01:15 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-63b9cb7c-1d85-4b88-a01c-bdba78994ae1
+2018-08-18 16:01:15 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-85cea85c-777d-4464-afb8-8e45d6d3a90f
+2018-08-18 16:01:15 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-63b9cb7c-1d85-4b88-a01c-bdba78994ae1/pyspark-4496e195-3513-44ea-95ae-faa979cfce37
