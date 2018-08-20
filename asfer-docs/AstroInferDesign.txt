@@ -12512,3 +12512,15 @@ suffixed by process id.
 6. CyclomaticComplexitySparkMapReducer.py has been updated for doing Spark wordcount of both SATURN and Valgrind/Callgrind/KCachegrind DOT Control Flow Graph / call graph files and print Cyclomatic Complexity.
 7. This leverages on already implemented Convolution Net Deep Learning of Graphic Performance Patterns by Perf and FlameGraph.
 8. Essentially Program Behaviour Analysis in userspace+kernelspace reduces to Graph Mining of these DOT graphs.
+
+-------------------------------------------------------------------------------------------------------------
+591. (FEATURE) Program Analysis + Software Analytics - Graph Mining of Call graph and CFG DOT files 
+- 20 August 2018
+-------------------------------------------------------------------------------------------------------------
+1.GraphMining_GSpan.py has been changed to check for an error condition of number of vertices per edge
+2.New function graph_mining() has been included in software_analytics/CyclomaticComplexitySparkMapReducer.py for
+invocation of Graph Mining GSpan implementation to print frequent subgraph patterns in SATURN CFG and Valgrind/Callgrind/KCachegrind graph DOT files
+3.logs for this have been committed to software_analytics/testlogs/CyclomaticComplexitySparkMapReducer.log.GraphMining.20August2018
+4.This formally unifies the two ends: Program Analysis and Software Analytics (Deep Learning and Graph Mining)
+5.Frequent Subgraphs in DOT files of Call graph and Control Flow Graph(CFG) extract static patterns in underlying software running on a system while the FlameGraph/Perf Graphics DeepLearning Analytics extract runtime patterns
+6.Theoretically, if SAT for a Program is created by SATURN, Least Square SAT Solver in NeuronRain could be model checker for the Program
