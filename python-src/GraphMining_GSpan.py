@@ -94,10 +94,12 @@ class GSpan(object):
 		edges=dfscode.split("#")
 		for e in edges:
 			vertices=e.split("-")
-			if numeric:
-				children.append((int(vertices[0]),int(vertices[1])))
-			else:
-				children.append((vertices[0],vertices[1]))
+			print "ParseChildren(): vertices:",vertices
+			if len(vertices) > 1:
+				if numeric:
+					children.append((int(vertices[0]),int(vertices[1])))
+				else:
+					children.append((vertices[0],vertices[1]))
 		print "ParseChildren():",children
 		return children
 

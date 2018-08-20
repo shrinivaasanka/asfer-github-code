@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 #Apache Spark RDD MapReduce Transformations script for parsing the number of edges and vertices 
 #in SATURN generated .dot graph files for program control flow. Cyclomatic Complexity which is a 
@@ -31,6 +23,9 @@
 #Example pyspark RDD mapreduce code at: http://www.mccarroll.net/blog/pyspark2/
 
 from pyspark import SparkContext, SparkConf
+from GraphMining_GSpan import GSpan
+import networkx as nx
+from networkx.drawing.nx_pydot import read_dot
 
 def reduceFunction(value1,value2):
      return value1+value2
@@ -39,10 +34,19 @@ def mapFunction(line):
      for i in line.split():
 	   return (i,1)
 
+def graph_mining(dotfiles):
+	dataset=[]
+	for dotf in dotfiles:
+		dotnx=nx.Graph(read_dot(dotf))
+		dataset.append(dotnx)
+	gsp=GSpan(dataset)
+	gsp.GraphSet_Projection()	
+
+
 if __name__=="__main__":
 	spcon=SparkContext() 
-	input_saturn_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot']
-	for dot_file in input_saturn_dot_files:
+	input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot']
+	for dot_file in input_dot_files:
 		input=open(dot_file,'r')
 		paralleldata=spcon.parallelize(input.readlines())
 		node_edge_lines=paralleldata.filter(lambda nodeedge: "node" in nodeedge)
@@ -57,3 +61,4 @@ if __name__=="__main__":
 		print "Cyclomatic Complexity: E-V+2 = ",abs(len(edgesplusvertices)-2*len(vertices)+2)
 		#l=k.map(lambda src: src).reduce(lambda x,y: x if (x[1] > y[1]) else y)
 		#print l
+	graph_mining(input_dot_files)
