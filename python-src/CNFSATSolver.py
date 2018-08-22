@@ -46,6 +46,7 @@ from scipy.optimize import lsq_linear
 from scipy.fftpack import fft
 from cvxopt import matrix
 from cvxopt.lapack import gels,sysv,gesv,getrs
+from l1regls import l1regls
 
 variables=defaultdict(int)
 negations=defaultdict(int)
@@ -198,25 +199,35 @@ class SATSolver(object):
 
 		x=None
 		if number_of_variables == number_of_clauses:
-			#x = np.dot(np.linalg.inv(a),b)
-			#x = gmres(a,b) 
-			#x = lgmres(a,b) 
-			#x = minres(a,b) 
-			#x = bicg(a,b) 
-			#x = cg(a,b) 
-			#x = cgs(a,b) 
-			#x = bicgstab(a,b)
-                	#x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-			try:
-				x = gesv(matrixa,matrixb)
-				#x = gels(matrixa,matrixb)
-				#x = sysv(matrixa,matrixb)
-				#x = getrs(matrixa,matrixb)
-				x = [matrixb]
-			except:
-				print "Exception:",sys.exc_info()
-				return None 
-                	#x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+			if self.Algorithm=="lsqr()":
+				#x = np.dot(np.linalg.inv(a),b)
+				#x = gmres(a,b) 
+				#x = lgmres(a,b) 
+				#x = minres(a,b) 
+				#x = bicg(a,b) 
+				#x = cg(a,b) 
+				#x = cgs(a,b) 
+				#x = bicgstab(a,b)
+                		x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+			if self.Algorithm=="lapack()":
+				try:
+					x = gesv(matrixa,matrixb)
+					#x = gels(matrixa,matrixb)
+					#x = sysv(matrixa,matrixb)
+					#x = getrs(matrixa,matrixb)
+					x = [matrixb]
+				except:
+					print "Exception:",sys.exc_info()
+					return None 
+			if self.Algorithm=="l1regls()":
+				l1x = l1regls(matrixa,matrixb)
+				ass=[]
+				x=[]
+				for n in l1x:
+					ass.append(n)
+				x.append(ass)
+			if self.Algorithm=="lsmr()":
+                		x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
 		else:
 			if self.Algorithm=="solve()":
                 		x = solve(a,b)
@@ -238,14 +249,21 @@ class SATSolver(object):
 				x = lsq_linear(a,b,lsq_solver='exact')
 			if self.Algorithm=="lapack()":
 				try:
-					x = gesv(matrixa,matrixb)
-					#x = gels(matrixa,matrixb)
+					#x = gesv(matrixa,matrixb)
+					x = gels(matrixa,matrixb)
 					#x = sysv(matrixa,matrixb)
 					#x = getrs(matrixa,matrixb)
 					x = [matrixb]
 				except:
 					print "Exception:",sys.exc_info()
 					return None 
+			if self.Algorithm=="l1regls()":
+				l1x = l1regls(matrixa,matrixb)
+				ass=[]
+				x=[]
+				for n in l1x:
+					ass.append(n)
+				x.append(ass)
 
 		print "solve_SAT2(): ",self.Algorithm,": x:",x
 		if x is None:
@@ -451,6 +469,7 @@ if __name__=="__main__":
 		print "--------------------------------------------------------------"
 		print "Number of variables = ",number_of_variables,"; Number of clauses = ",number_of_clauses,"; Alpha = ",float(number_of_clauses)/float(number_of_variables),"; Verifying satisfying assignment computed ....."
 		print "--------------------------------------------------------------"
+		#satsolver=SATSolver("l1regls()")
 		satsolver=SATSolver("lapack()")
 		#satsolver=SATSolver("lsmr()")
 		#satsolver=SATSolver("solve()")
