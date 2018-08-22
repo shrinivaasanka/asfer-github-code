@@ -12524,3 +12524,25 @@ invocation of Graph Mining GSpan implementation to print frequent subgraph patte
 4.This formally unifies the two ends: Program Analysis and Software Analytics (Deep Learning and Graph Mining)
 5.Frequent Subgraphs in DOT files of Call graph and Control Flow Graph(CFG) extract static patterns in underlying software running on a system while the FlameGraph/Perf Graphics DeepLearning Analytics extract runtime patterns
 6.Theoretically, if SAT for a Program is created by SATURN, Least Square SAT Solver in NeuronRain could be model checker for the Program
+
+-------------------------------------------------------------------------------------------------------------
+592. (THEORY and FEATURE) SAT Solver - CVXOPT - L1-norm Regularized Least Squares Quadratic Program l1regls() 
+and gesv() - 22 August 2018
+-------------------------------------------------------------------------------------------------------------
+1.This commit includes a special SAT Solver in CVXOPT documentation example l1regls() [https://cvxopt.org/examples/mlbook/l1regls.html] which solves the L1-norm regularized Least Squares Quadratic Program(QP):
+        minimize error |AX-B|^2 + L1Norm(|X|)
+which is the most accurate Least Square Solution. Geometric intuition and preference of L1 norm for least squares is depicted in Q&A: https://www.quora.com/Why-is-L1-regularization-better-than-L2-regularization-provided-that-all-Norms-are-equivalent
+
+2. In the context of SAT, previous minimization implies, the polynomial approximating the binary assignment
+heaviside step function is as close as possible to satisfying each clause (because B is unit vector of 1s for
+each clause) and sum of real fractional assignments (real parity) is minimum. This can be visualized as a
+sinusoidal string pulled on both directions and string settles at an equilibrium curvature which minimizes the
+QP above.
+
+3. Prerequisite l1regls from https://cvxopt.org/_downloads/l1regls.py has to be downloaded and PYTHONPATH must be set to it.
+
+4. CNFSATSolver.py has been refactored with if clauses for the least square algorithm invoked. For equal variable-clause "lapack()" invokes gesv() and for unequal variable-clause gels() is invoked
+
+5. Few 1000 variables * 1000 clauses random 3SAT instances have been solved for l1regls() with MAXSAT approximation ratio 96%-97%
+
+6. CVXOPT gesv() has been tested again for 10 variables * 10 clauses and similar MAXSAT approximation ratio of 99%-100% has been observed.  gesv() throws ArithmeticError if A is singular (not invertible, determinant 0) while gels() throws ArithmeticError if A is not full-rank - gesv() is exact solver and gels() is least square solver. (NumPy solve() internally uses lapack gesv). So the logs filter out singular random 3SAT matrices.
