@@ -30,6 +30,7 @@ import difflib
 from ConceptNet5Client import ConceptNet5Client
 from WordNetPath import path_between
 import SentimentAnalyzer
+from networkx.drawing.nx_pydot import write_dot
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -408,6 +409,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
 		intrinsic_merit_dict["empath_sentiment"]=sentiment
 
+		write_dot(definitiongraph,"RecursiveLambdaFunctionGrowth.dot")
+
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		print "intrinsic_merit_dict:",intrinsic_merit_dict
 		return intrinsic_merit_dict 
@@ -435,7 +438,7 @@ class RecursiveLambdaFunctionGrowth(object):
 
 	#Graph Density - Regularity Lemma
 	def density(self, definitiongraph):
-		dty=nx.density(definitiongraph)
+		dty=nx.classes.function.density(definitiongraph)
 		return dty
 
 	#Bose-Einstein Bianconi intrinsic fitness 
