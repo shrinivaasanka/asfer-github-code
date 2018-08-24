@@ -12551,3 +12551,13 @@ QP above.
 5. Few 1000 variables * 1000 clauses random 3SAT instances have been solved for l1regls() with MAXSAT approximation ratio 96%-97%
 
 6. CVXOPT gesv() has been tested again for 10 variables * 10 clauses and similar MAXSAT approximation ratio of 99%-100% has been observed.  gesv() throws ArithmeticError if A is singular (not invertible, determinant 0) while gels() throws ArithmeticError if A is not full-rank - gesv() is exact solver and gels() is least square solver. (NumPy solve() internally uses lapack gesv). So the logs filter out singular random 3SAT matrices.
+
+---------------------------------------------------------------------------------------------------------------
+593. (FEATURE) Audio/Music Pattern Mining - Audio to Time Series - 24 August 2018
+---------------------------------------------------------------------------------------------------------------
+1.Similar to image_pattern_mining/ImageToBitMatrix.py, new file AudioToBitMatrix.py has been committed to
+repository for converting an audio file (e.g MP3, .wav) to time series array
+2.AudioToBitMatrix.py imports librosa (audioread) Python library which returns waveform time series floating point array and sampling rate.
+3.audio-to-bitmatrix function has optional arguments to specify if the time series is binary or float (defaults to float) and duration of the timeseries (defaults to full)
+4.Binary time series invokes bin() on each time series point
+5.An example audio MP3 file has been converted to time series and logs have been committed to testlogs/AudioToBitMatrix.log.24August2018
