@@ -10166,6 +10166,10 @@ Thus there are 3 Computational Geometric Factorization algorithms described in t
 
 Note: First and Third factorization algorithms are equivalent because both involve sorting of pixelated hyperbolic tile segments. Second algorithm obviates sorting by assumption that each PRAM can locally do a binary search without involving peer PRAM processors. Theoretically all three have similar polylogarithmic (O(logN*logN) at best) runtime upperbounds. Second algorithm is better than First and Third probably because the constant involved in Big-O notation in second algorithm is very small compared to First and Third.
 
+It is apt to mention the resemblance of K-MergeSort of Hyperbolic Tile segments and Burrows-Wheeler Transform (BWT) of a string. Burrows-Wheeler Transform sorts all rotation permutations of a string, extracts the last index fr
+om each sorted permutation, concatenates them into a transformed string which has co-located substrings. This co-location of similar substrings is invertible and useful for compression and indexes. K-MergeSort Computational Geometric Factorization merges and sorts concatenated tile segment strings, resulting in a sorted string which has
+colocated similar factor points.
+
 An Unsorted Search algorithm has been implemented in NeuronRain (Section 500) to locate a query point on an unsorted array of numbers, by representing the numbers as arrays of hashtables for each digit.This algorithm can find factors in the concatenation of merged pixelated hyperbolic tile segments with no requirement for sorting. But this involves hashtable preprocessing.
 
 Length of each tile on x-axis can be derived from equating for N:
