@@ -12,6 +12,7 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 6.VIRGO32 and VIRGO64 linux kernel base mainline PPA versions are not frequently updated having reached minimum stability.
 7.Benchmarks on Single/Multicore/Clusters are committed for salient Cloud implemented features (Factorization, Intrinsic Merit/Fitness, VIRGO system calls-drivers etc.,)
 8.Code Reviews are Self-Reviews only based on QE/QA.
-9.To err is human - erroneous commits are corrected as and when found. Bug Tracking is minimal.
+9.To err is human - erroneous commits are corrected as and when found. Bug Tracking is minimal.(e.g AsFer GitHub issues page - https://github.com/shrinivaasanka/asfer-github-code/issues?q=is%3Aissue+is%3Aclosed). 
 10.NeuronRain architecure and development has two worlds - userspace(AsFer) cloud/machine learning and kernelspace(VIRGO/KingCobra/USBmd) cloud/Embedded/IoT/Drones/Robotics - connected by kernel_analytics.conf and live reading of remote sockets for analytics variables from kernel_analytics module. AsFer has more activity compared to others.
 11.No strict deadlines/releases but repositories are tagged periodically.
+12.Bug Reports/Pull Requests are encouraged but resolution depends on feasibility and time availability.
