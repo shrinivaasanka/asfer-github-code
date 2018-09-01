@@ -10782,9 +10782,9 @@ for streaming encoded strings created by NeuronRain AsFer
 4. updated software_analytics/asfer.enterprise.encstr.scheduleranalytics
 5. Sequence Mined Scheduler Analytics has been committed to testlogs/SequenceMining.log.SchedulerAnalytics.29January2018
 
-------------------------------------------------------------------------------------------------------------------------------------------
-506. (THEORY) Computational Geometric Factorization - Feasibility of Sequential Optimization - related to 486 - 6 February 2018
-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+506. (THEORY) Computational Geometric Factorization - Feasibility of Sequential Optimization - related to 486 - 6 February 2018, 1 September 2018
+-------------------------------------------------------------------------------------------------------------------------------------------------
 Doing away with Parallel RAMs in Computational Geometric Factorization by breaking the hyperbolic arc bow into two sets of tilesegments 
 and searching their concatenations which are implicitly sorted ascending, has problems because concatenation of multiple tile segments may not be sublinear. Concatenating tile segments can be likened to concatenation of multiple strings. Concatenation of two strings can be done
 in O(logN) time by using Rope Strings which are tree representations of strings (logarithmic in length of strings and not in number of
@@ -10845,7 +10845,17 @@ integer round-off of k is the index of tile interval containing x.
 	subsegment2:  (N/(k+2)+delta,(k+1),N/(k+1),(k+1))
 and delta=N/((k+1)(k+2))
 
-CAVEAT: Two factor points (x1,y1) and (x2,y2) can equal by x1*y1=x2*y2 but these two points are located in different subsegments of different tiles because points within subsegment1 or subsegment2 of a tile segment have same y-coordinates. Previous inequality applies only to a binary search segment tree comprised of subsegment2(s) of all segments by implicit geometric spatial sortedness i.e end of subsegment2 in previous segment is less than start of subsegment2 in next segment. Set of subsegment1(s) need not be implicitly sorted and thus can not be searched by a segment tree constructed sequentially. This renders previous optimization feasible only to a subset of integers. Algorithms for Parallel RAM construction of segment tree described previously are therefore necessary to find factor points in polylogarithmic time and thus in NC and all these algorithms require parallel k-mergesort. This sequential algorithm has been mentioned only as an optimization.
+12. CAVEAT: Two factor points (x1,y1) and (x2,y2) can equal by x1*y1=x2*y2 but these two points are located in different subsegments of different tiles because points within subsegment1 or subsegment2 of a tile segment have same y-coordinates. Previous inequality applies only to a binary search segment tree comprised of subsegment2(s) of all segments by implicit geometric spatial sortedness i.e end of subsegment2 in previous segment is less than start of subsegment2 in next segment. Set of subsegment1(s) need not be implicitly sorted and thus can not be searched by a segment tree constructed sequentially. This renders previous optimization feasible only to a subset of integers. Algorithms for Parallel RAM construction of segment tree described previously are therefore necessary to find factor points in polylogarithmic time and thus in NC and all these algorithms require parallel k-mergesort. This sequential algorithm has been mentioned only as an optimization.
+
+--------------------------------------
+13. Tile Summation and Wavelet trees:
+--------------------------------------
+Sum of lengths of first n tile segments of pixelated hyperbolic curve derived previously:
+	N/[1*2] + N/[2*3] + ... + N/[n*(n+1)] = Nn/(n+1)
+which can be equated to sum of distances between first m prime factors by Hardy-Ramanujan Theorem:
+	Nn/(n+1) = mN/kloglogN
+
+=> n = m/(kloglogN - m) = number of tiles till m-th prime factor. Sum of lengths (N/x(x+1) each) of these n tiles (=O(loglogN)) till m-th prime factor finds approximate m-th prime factor. Constructing wavelet tree for concatenated unsorted string of tile segments of epsilon radius around approximate factors and doing select(N) on the wavelet string finds atleast one factor location. Geometric intuition: Tile summations are hyperbolic pixel polygons and if vertices of this polygon - endpoints of concatenation - coincide with factor points on x-y axis grid, factors are found. Accuracy depends on precision of tile summation and this is only an optimization.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 507. (THEORY) Tournament Graph Election, Coloring, Intrinsic Merit, Partitions and Bell Number - 8 February 2018
