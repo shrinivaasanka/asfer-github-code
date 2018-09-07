@@ -18,6 +18,8 @@
 
 import librosa
 import numpy
+import matplotlib.pyplot as plt
+import numpy as np 
 
 def audio_to_bitmatrix(audio,dur=None,binary=False):
 	bitmap=[]
@@ -37,6 +39,17 @@ def audio_to_bitmatrix(audio,dur=None,binary=False):
 	print "audio_to_bitmatrix() for - ",audio,":",bitmap
 	return bitmap
 
+def audio_features(signal_bitmap):
+	print "################################################"
+	print "Histogram/Probability Distribution of the audio signal"
+	print "################################################"
+	hist, bin = np.histogram(signal_bitmap,density=True)
+	print "hist:",hist
+	print "bin:",bin
+	#plt.hist(signal_bitmap, color='r', range=(0, 0.2), alpha=0.5, bins=20)
+	#plt.show()
+
 if __name__=="__main__":
 	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
 	print "Bitmap:",bm
+	audio_features(bm)
