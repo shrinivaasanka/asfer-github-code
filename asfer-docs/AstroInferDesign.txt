@@ -12592,3 +12592,14 @@ as Head and all other literals are negative. Horn3SAT is P-complete and is solve
 References:
 ----------
 594.1 Unit Propagation Horn3SAT Solver - https://en.wikipedia.org/wiki/Unit_propagation
+
+------------------------------------------------------------------------------------------------------------
+595. (FEATURE) Music/Audio Pattern Mining - Histogram and Probability Distribution Function extraction (PDF)
+- 7 September 2018
+------------------------------------------------------------------------------------------------------------
+1.New function audio_features() has been added for analyzing features in audio/music signal
+2.Considering audio as time series there are 2 standard ways to extract probability distribution from
+time series: 1) Histogram 2) Bandt and Pompe - [Andres M. Kowalski,Maria Teresa Martin,Angelo Plastino and George Judge] - www.mdpi.com/1099-4300/14/10/1829/pdf
+3.audio_features() invokes histogram() function and extracts PDF from NumPy by setting density=True
+4.Comparing two music signals amounts to finding Jensen-Shannon Divergence of two probability distributions
+5.Histogram for an example audio signal is printed in testlogs/AudioToBitMatrix.log.7September2018
