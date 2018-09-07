@@ -3066,7 +3066,10 @@ http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/par
 ----------------------------------------------------------------------------------------------
 178. (THEORY) Approximate Machine Translation with Recursive Gloss Overlap Definition Graph
 ----------------------------------------------------------------------------------------------
-For natural language X (=English) an RGO graph can be constructed (based on algorithms in http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). This definition graph is a subgraph of WordNet-English. Each vertex is a word from English dictionary. New RGO graph for language Y is constructed from RGO(X) by mapping each vertex in RGO(X) to corresponding word in language Y. RGO(X) and RGO(Y) are isomorphic graphs. Sentences in language Y can be constructed with lamda composition closure on the RGO(Y) graph implemented already. This is an approximation for machine translation between two natural languages.
+For natural language X (=English) an RGO graph can be constructed (based on algorithms in http://arxiv.org/abs/1006.4458 and http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf). This definition graph is a subgraph of WordNet-English. Each vertex is a word from English dictionary. New RGO graph for language Y is constructed from RGO(X) by mapping each vertex in RGO(X) to corresponding word in language Y. RGO(X) and RGO(Y) are isomorphic graphs. Sentences in language Y can be constructed with lamda composition closure on the RGO(Y) graph implemented already. This is an approximation for machine translation between two natural languages. I
+n the converse direction, text graphs of 2 texts in 2 different natural languages can be verified for Graph Isomo
+rphism. Isomorphic text graphs in two natural languages prima facie indicate the texts are similarly organized an
+d have same meaning.
 
 -------------------------------------------------------------------------------------------------------
 179. (FEATURE - DONE) Web Spider Implementation with Scrapy Framework - Commits as on 16 November 2015
@@ -12585,3 +12588,7 @@ repository for converting an audio file (e.g MP3, .wav) to time series array
 ---------------------------------------------------------------------------------------------------------------
 Horn3SAT is the special case of 3SAT in which each clause is Horn clause having single positive literal known
 as Head and all other literals are negative. Horn3SAT is P-complete and is solved by unit propagation algorithm in polynomial time. Unit propagation algorithm has 2 repetitive phases: *) Remove all unit clauses having single literal *) Remove negated literal in all clauses. Horn3SAT can be solved by Least Squares Approximate Solver by creating random Horn3SAT matrix similar to random 3SAT matrix. This random Horn3SAT matrix is very sparse and has only one 1 per row for head literal and all other columns are 0s. Since Horn3SAT is P-complete, there exists a deterministic (and possibly parallel because P-completeness implies NC) algorithm to solve it one of which is unit propagation. Solution to this Horn3SAT random matrix Linear system of equations for equal variable-clause is deterministic polynomial time (gesv() solver can be applied for non-singular instances) while unequal variable-clauses are least squares solvable by algorithms - lsmr/gels/lsqr etc., Cloud algorithms like lsrn can solve Horn3SAT random matrix instance in NC if number of parallel processors are logdepth and polynomial size.
+
+References:
+----------
+594.1 Unit Propagation Horn3SAT Solver - https://en.wikipedia.org/wiki/Unit_propagation
