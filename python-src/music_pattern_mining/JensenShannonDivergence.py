@@ -31,6 +31,8 @@
 #probability distributions - a correlation coefficient. Smoothed by weighted average of KL Divergence in both directions.
 
 import math
+from AudioToBitMatrix import audio_to_bitmatrix
+from AudioToBitMatrix import audio_features
 
 dataset1=[]
 dataset2=[]
@@ -40,32 +42,32 @@ sumtotaldataset2=0.0
 def summation(dataset):
 	s=0.0
 	for n in dataset:
+		print "n:",n
 		s+= -1*float(n)
 	return s
 
-def normalize(tuple):
-	global dataset1
-	global dataset2
-	global sumtotaldataset1
-	global sumtotaldataset2
-	return (float(tuple[0])/float(sumtotaldataset1), float(tuple[1])/float(sumtotaldataset2))	
 
-if __name__=="__main__":
+def jensen_shannon_divergence(dataset1,dataset2):
 	#f1=open("FFT_classical_1_19July2016_trimmed.txt")
 	#f2=open("FFT_classical_2_20July2016_trimmed.txt")
-	f1=open("FFT_classical_1_20July2016_trimmed.txt")
-	f2=open("FFT_classical_2_19July2016_trimmed.txt")
+	#f1=open(audio1)
+	#f2=open(audio2)
 	i=0
 	kld1=0.0
 	kld2=0.0
-	dataset1=f1.read().split()
-	dataset2=f2.read().split()
+	#dataset1=f1.read().split()
+	#dataset2=f2.read().split()
+	print "dataset1:",dataset1
+	print "dataset2:",dataset2
 	sumtotaldataset1=summation(dataset1)
 	sumtotaldataset2=summation(dataset2)
 	print "sumtotaldataset1 = ",sumtotaldataset1,", sumtotaldataset2 = ",sumtotaldataset2
 	unnormalized_dists=zip(dataset1,dataset2)
-	normalized_dists=map(normalize, unnormalized_dists)
-	#print normalized_dists
+	normalized_dists=[]
+	for tuple in unnormalized_dists:
+		ntuple=(float(tuple[0])/float(sumtotaldataset1), float(tuple[1])/float(sumtotaldataset2))	
+		normalized_dists.append(tuple)
+	print normalized_dists
 	for s in normalized_dists:
 		#print "[p[",i,"],q[",i,"]) = [",s[0],",",s[1],"]"
 		kld1=kld1 + -1*float(s[0])*math.log((-1*float(s[0]))/(-1*float(s[1])))
@@ -77,3 +79,10 @@ if __name__=="__main__":
 		i+=1
 	print "Jensen-Shannon Distance [ 0.5 * KL(P,Q) + 0.5 * KL(Q,P) ]:", 0.5*kld1 + 0.5*kld2
 
+if __name__=="__main__":
+	bm1=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
+	#bm2=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
+	bm2=audio_to_bitmatrix("/media/Krishna_iResearch_/AIRChennai_2018-08-24-153737.mp3",dur=10)
+        hist1=audio_features(bm1)
+        hist2=audio_features(bm2)
+	jensen_shannon_divergence(hist1[0],hist2[0])

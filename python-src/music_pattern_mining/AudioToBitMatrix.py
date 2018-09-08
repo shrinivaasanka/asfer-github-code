@@ -36,7 +36,7 @@ def audio_to_bitmatrix(audio,dur=None,binary=False):
 		for r in input_audio_array:
 			bitmap.append(bin(r))
 		
-	print "audio_to_bitmatrix() for - ",audio,":",bitmap
+	#print "audio_to_bitmatrix() for - ",audio,":",bitmap
 	return bitmap
 
 def audio_features(signal_bitmap):
@@ -48,6 +48,7 @@ def audio_features(signal_bitmap):
 	print "bin:",bin
 	#plt.hist(signal_bitmap, color='r', range=(0, 0.2), alpha=0.5, bins=20)
 	#plt.show()
+	return (hist,bin)
 
 if __name__=="__main__":
 	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
