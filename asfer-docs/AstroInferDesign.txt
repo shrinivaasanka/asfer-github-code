@@ -12603,3 +12603,13 @@ time series: 1) Histogram 2) Bandt and Pompe - [Andres M. Kowalski,Maria Teresa 
 3.audio_features() invokes histogram() function and extracts PDF from NumPy by setting density=True
 4.Comparing two music signals amounts to finding Jensen-Shannon Divergence of two probability distributions
 5.Histogram for an example audio signal is printed in testlogs/AudioToBitMatrix.log.7September2018
+
+-------------------------------------------------------------------------------------------------------------
+596. (FEATURE) Music/Audio Pattern Mining - Jensen-Shannon Divergence of Probability Distributions of two 
+audio signals - 8 September 2018
+-------------------------------------------------------------------------------------------------------------
+1.audio_features() in AudioToBitMatrix.py returns the probability histogram and bins in a tuple
+2.JensenShannonDivergence.py has been rewritten to compute normalization inline (normalize() function has been
+removed), import audio functions from AudioToBitMatrix.py and compute probability histograms for two
+different audio files.
+3.logs for Jensen-Shannon Divergence distance between two audio files have been committed to testlogs/JensenShannonDivergence.log.8September2018 (For same audio, distance is zero)
