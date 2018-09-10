@@ -16,3 +16,6 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 10.NeuronRain architecure and development has two worlds - userspace(AsFer) cloud/machine learning and kernelspace(VIRGO/KingCobra/USBmd) cloud/Embedded/IoT/Drones/Robotics - connected by kernel_analytics.conf and live reading of remote sockets for analytics variables from kernel_analytics module. AsFer has more activity compared to others.
 11.No strict deadlines/releases but repositories are tagged periodically.
 12.Bug Reports/Pull Requests are encouraged but resolution depends on feasibility and time availability.
+13.Each NeuronRain repository has a design document updated periodically for commits and related technical notes.Though "git log" is sufficient, design document delves into theoretical aspects of the implementation which are related to publications and draft publications of the author.
+14.In essence any good software relies on the basic thumbrule: concept feature --- design/algorithm for feature --- choice of software for implementation of the algorithm --- how much value this new feature adds to existing implementation .
+15.Any software is the result of immense human effort. NeuronRain is more of an academic research product. Dependency OSS licenses are strictly respected and periodically updated in Requirements.txt. 
