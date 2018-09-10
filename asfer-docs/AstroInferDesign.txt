@@ -12593,6 +12593,7 @@ as Head and all other literals are negative. Horn3SAT is P-complete and is solve
 References:
 ----------
 594.1 Unit Propagation Horn3SAT Solver - https://en.wikipedia.org/wiki/Unit_propagation
+594.2 Binary Least Squares and SAT Solver - http://www.mirlab.org/conference_papers/International_Conference/ICASSP%202011/pdfs/0003780.pdf - Binary Least Squares Solution to AX=B for boolean X is NP-Hard - Semidefinite Relaxation of Least Squares - Gaussian Randomization for obtaining binary values for X from feasible Semidefinite solution - Section 3 - Page 3782
 
 ------------------------------------------------------------------------------------------------------------
 595. (FEATURE) Music/Audio Pattern Mining - Histogram and Probability Distribution Function extraction (PDF)
