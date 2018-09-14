@@ -12629,7 +12629,7 @@ If epsilon radius is O((logN)^l) around an approximate factor, probability of no
 	distance between periphery of 2 epsilon radius circles surrounding an approximate factor
 	----------------------------------------------------------------------------------------
 			N/kloglogN
-=	(m+1)/[kloglogN - m - 1] - m/[klogloN - m] - 2q(logN)^l
+=	(m+1)/[kloglogN - m - 1] - m/[kloglogN - m] - 2q(logN)^l
 
 =	(kloglogN)^2 - 2q(logN)^l * kloglogN
 	--------------------------------------	for constants k and q and m-th prime factor.
