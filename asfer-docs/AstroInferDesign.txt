@@ -12616,3 +12616,26 @@ audio signals - 8 September 2018
 removed), import audio functions from AudioToBitMatrix.py and compute probability histograms for two
 different audio files.
 3.logs for Jensen-Shannon Divergence distance between two audio files have been committed to testlogs/JensenShannonDivergence.log.8September2018 (For same audio, distance is zero)
+
+--------------------------------------------------------------------------------------------------------------
+597. (THEORY) Computational Geometric Sequential Factorization Optimization by Wavelet Trees, Tile Summation 
+Ray Shooting Queries and Error Probability - related to 506, 575 - 14 September 2018
+--------------------------------------------------------------------------------------------------------------
+Sequential Factorization Optimization by Tile Summation Ray Shooting Queries and searching the epsilon radius
+in the vicinity of approximate factors described earlier have the following error probability in failing to
+find a factor:
+
+If epsilon radius is O((logN)^l) around an approximate factor, probability of not finding a factor =
+	distance between periphery of 2 epsilon radius circles surrounding an approximate factor
+	----------------------------------------------------------------------------------------
+			N/kloglogN
+=	(m+1)/[kloglogN - m - 1] - m/[klogloN - m] - 2q(logN)^l
+
+=	(kloglogN)^2 - 2q(logN)^l * kloglogN
+	--------------------------------------	for constants k and q and m-th prime factor.
+	N(kloglogN - m - 1)(kloglogN - m)
+
+For very low error probability, numerator tends to 0:
+	(kloglogN) = 2q(logN)^l
+	log(kloglogN) = l*(log(2q*logN)
+	=> l = O(logloglogN/loglogN)
