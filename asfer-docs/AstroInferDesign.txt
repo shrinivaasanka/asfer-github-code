@@ -12622,7 +12622,7 @@ different audio files.
 
 --------------------------------------------------------------------------------------------------------------
 597. (THEORY) Computational Geometric Sequential Factorization Optimization by Wavelet Trees, Tile Summation 
-Ray Shooting Queries and Error Probability - related to 506, 575 - 14 September 2018
+Ray Shooting Queries and Error Probability - related to 506, 575 - 14 September 2018, 15 September 2018
 --------------------------------------------------------------------------------------------------------------
 Sequential Factorization Optimization by Tile Summation Ray Shooting Queries and searching the epsilon radius
 in the vicinity of approximate factors described earlier have the following error probability in failing to
@@ -12632,13 +12632,16 @@ If epsilon radius is O((logN)^l) around an approximate factor, probability of no
 	distance between periphery of 2 epsilon radius circles surrounding an approximate factor
 	----------------------------------------------------------------------------------------
 			N/kloglogN
-=	(m+1)/[kloglogN - m - 1] - m/[kloglogN - m] - 2q(logN)^l
+=	{(m+1)/[kloglogN - m - 1] - m/[kloglogN - m] - 2q(logN)^l} / [N/kloglogN]
 
-=	(kloglogN)^2 - 2q(logN)^l * kloglogN
-	--------------------------------------	for constants k and q and m-th prime factor.
-	N(kloglogN - m - 1)(kloglogN - m)
+=	(kloglogN) - 2q(logN)^l * (kloglogN - m - 1) * (kloglogN - m)
+	--------------------------------------------------------------	
+	(kloglogN - m - 1)(kloglogN - m) * [N/kloglogN]
+
+for constants k and q and m-th prime factor.
 
 For very low error probability, numerator tends to 0:
-	(kloglogN) = 2q(logN)^l
-	log(kloglogN) = l*(log(2q*logN)
+	(kloglogN) = 2q(logN)^l * (kloglogN - m - 1) * (kloglogN - m)
+	(kloglogN)/[2q*(kloglogN - m - 1) * (kloglogN - m)] = (logN)^l
+	log{(kloglogN)/[2q*(kloglogN - m - 1) * (kloglogN - m)]}/log(logN) = l
 	=> l = O(logloglogN/loglogN)
