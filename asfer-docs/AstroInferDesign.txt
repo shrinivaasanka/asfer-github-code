@@ -12623,7 +12623,8 @@ different audio files.
 
 --------------------------------------------------------------------------------------------------------------
 597. (THEORY) Computational Geometric Sequential Factorization Optimization by Wavelet Trees, Tile Summation 
-Ray Shooting Queries and Error Probability - related to 506, 575 - 14 September 2018, 15 September 2018
+Ray Shooting Queries and Error Probability - related to 506, 575 - 14 September 2018, 15 September 2018,
+16 September 2018
 --------------------------------------------------------------------------------------------------------------
 Sequential Factorization Optimization by Tile Summation Ray Shooting Queries and searching the epsilon radius
 in the vicinity of approximate factors described earlier have the following error probability in failing to
@@ -12633,16 +12634,17 @@ If epsilon radius is O((logN)^l) around an approximate factor, probability of no
 	distance between periphery of 2 epsilon radius circles surrounding an approximate factor
 	----------------------------------------------------------------------------------------
 			N/kloglogN
-=	{(m+1)/[kloglogN - m - 1] - m/[kloglogN - m] - 2q(logN)^l} / [N/kloglogN]
 
-=	(kloglogN) - 2q(logN)^l * (kloglogN - m - 1) * (kloglogN - m)
-	--------------------------------------------------------------	
-	(kloglogN - m - 1)(kloglogN - m) * [N/kloglogN]
+	= [N(m+1) - Nm] / kloglogN - 2q(logN)^l 
+	---------------------------------------
+			N/kloglogN  
 
-for constants k and q and m-th prime factor.
+	= N/kloglogN - 2q(logN)^l
+	--------------------------
+		N/kloglogN
 
-For very low error probability, numerator tends to 0:
-	(kloglogN) = 2q(logN)^l * (kloglogN - m - 1) * (kloglogN - m)
-	(kloglogN)/[2q*(kloglogN - m - 1) * (kloglogN - m)] = (logN)^l
-	log{(kloglogN)/[2q*(kloglogN - m - 1) * (kloglogN - m)]}/log(logN) = l
-	=> l = O(logloglogN/loglogN)
+For low error probability, numerator tends to 0:
+	N/kloglogN = 2q(logN)^l
+	=> l = log(N/2kqloglogN)/loglogN = O(log(N/loglogN)/loglogN) which is exponential.
+ 
+For constant l, probability of error is non-trivial. This epsilon radius vicinity search applies to other ray shooting algorithms too (by replacing Hardy-Ramanujan estimate with the corresponding ray shooting algorithm and equating to tile summation). Advantage of tile summation is it always results in an integral value and coincides with some factor point on xy-plane. 
