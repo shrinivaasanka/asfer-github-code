@@ -12648,3 +12648,26 @@ For low error probability, numerator tends to 0:
 	=> l = log(N/2kqloglogN)/loglogN = O(log(N/loglogN)/loglogN) which is exponential.
  
 For constant l, probability of error is non-trivial. This epsilon radius vicinity search applies to other ray shooting algorithms too (by replacing Hardy-Ramanujan estimate with the corresponding ray shooting algorithm and equating to tile summation). Advantage of tile summation is it always results in an integral value and coincides with some factor point on xy-plane. 
+
+----------------------------------------------------------------------------------------------------------------
+598. (THEORY) Hastad Switching Lemma, Least Squares Approximate SAT Solver, Random Restrictions, CNFSAT
+to DNFSAT - 18 September 2018
+----------------------------------------------------------------------------------------------------------------
+Least Squares Approximation by Random 3SAT matrix analysis previous has so far solved almost 99%-100% clauses
+(observed) excluding singular random 3SAT matrix instances. This implies binary assignments to some variables 
+are not right by randomized rounding of real assignments, falsifying some of the clauses. Hastad Switching Lemma
+implies setting values to alpha fraction of variables (restriction) in a CNF(or DNF) formula and evaluating the restricted formula by switching it to DNF(or CNF) and computing its decision tree abides by the inequality:
+	Pr[DTdepth(f/alpha) > d] <= (10*alpha*w)^d
+for s = sigma*n <= n/5, d >= 0, w is formula width. Least Squares Approximation thus can be construed as restriction generator by following algorithm:
+	(*) Solve a random 3SAT matrix by Least Squares (e.g gesv()) 
+	(*) Variables in all satisfied clauses in least squares solution form a random restriction - set variables
+	(*) Variables in all unsatisfied clauses in least squares solution (excluding variables in satisfied clauses) are made unset variables 
+	(*) Switch the restricted CNF3SAT to a DNF3SAT in unset variables
+	(*) DNF3SAT is solvable in polynomial time (linear)
+
+References:
+-----------
+598.1 Hastad Switching Lemma - [Johan Hastad] - PhD Thesis - Chapter 4 - Lemma 4.1 - "Let G be an AND of ORs all of size <= t and rho a random restriction from R(p). Then the probability that G/rho cannot be written as an OR of ANDs all of size < s is bounded by alpha^s where alpha is the unique positive root to the equation:
+	(1 + 4p/(1+p)*(1/alpha))^t = (1 + 2p/(1+p)*(1/alpha))^t + 1" and Stronger Switching Lemma - Lemma 4.2 - "Let G = /\ Gi where Gi are ORs of fanin <= t. Let F be an arbitrary function and p, a random restriction in R(p).Then Pr[min(G) >= s/Fp = 1] <= (alpha)^s" - https://www.nada.kth.se/~johanh/thesis.pdf
+598.2 Hastad Switching Lemma - [Vikraman Arvind] - JRF Course Notes - Complexity 2 - August-December 2010 - Institute of Mathematical Sciences, Chennai.
+598.3 Hastad Switching Lemma - Course Notes - [Jonathan Katz] - Corollary 3 - "Let f:{0,1}^n - {0,1} be computed by a DNF formula (resp. CNF formula) of width at most w. Let alpha be a random s-restriction with s <= n/5. Then f/alpha can be computed by a CNF formula (resp. DNF formula) of width w except with probability at most (10sw/n)^w => Pr[DT(f/alpha) >= s] < (10sw/n)^w (or) Pr[DTdepth(f/alpha) > d] <= (10*sigma*w)^d for s=sigma*n <= n/5 and d>= 0." - http://www.cs.umd.edu/~jkatz/complexity/f05/switching-lemma.pdf
