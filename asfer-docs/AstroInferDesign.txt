@@ -12653,7 +12653,7 @@ For constant l, probability of error is non-trivial. This epsilon radius vicinit
 598. (THEORY) Hastad Switching Lemma, Least Squares Approximate SAT Solver, Random Restrictions, CNFSAT
 to DNFSAT - 18 September 2018
 ----------------------------------------------------------------------------------------------------------------
-Least Squares Approximation by Random 3SAT matrix analysis previous has so far solved almost 99%-100% clauses
+Least Squares Approximation by Random 3SAT matrix analysis previously has so far solved almost 99%-100% clauses
 (observed) excluding singular random 3SAT matrix instances. This implies binary assignments to some variables 
 are not right by randomized rounding of real assignments, falsifying some of the clauses. Hastad Switching Lemma
 implies setting values to alpha fraction of variables (restriction) in a CNF(or DNF) formula and evaluating the restricted formula by switching it to DNF(or CNF) and computing its decision tree abides by the inequality:
