@@ -12215,7 +12215,9 @@ References:
 575.11 Functional Approach to Data Structures and their use in Multi-dimensional Searching - [Bernard Chazelle] -
  https://www.cs.princeton.edu/~chazelle/pubs/FunctionalDataStructures.pdf - Data structure which inspired wavelet
  tree in geometric search - M-Structures (Mergesort-Structures)
-
+575.12 Space Efficient Data Analysis Queries on Grids - [Gonzalo Navarro, Yakov Nekrich, Luís M.S. Russo] - https://ac.els-cdn.com/S0304397512010742/1-s2.0-S0304397512010742-main.pdf?_tid=fa66c1a6-518d-4fd1-b6f3-59720d2736fa&acdnat=1537341599_ebf10ba8401e952f49aa06f5168192ba - Space efficient representation of point-sets on 2-dimensional grid
+575.13 Succinct Orthogonal Range Search Structures on a Grid with Applications to Text Indexing - [Prosenjit Bose, Meng He, Anil Maheshwari, and Pat Morin] - https://pdfs.semanticscholar.org/3d28/169f7c1524cf87c9215b61d536939ae5841a.pdf - Orthogonal range reporting of points in a rectangle - "Lemma 8. Let N be a set of points from the universe M = [1..n]×[1..n], where n = |N|. N can be represented using n lg n + o(n lg n) bits to support orthogonal range reporting in O(k lg n/ lg lg n) time, where k is the size of the output....". This implies each hyperbolic point in rectangle of width N/logN in http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download containing pixelated hyperbolic point-sets can be reported in sub-logarithmic time (k=1) independent of other rectangles thereby obviating k-mergesort of the tile segments (or mimicking it). 
+  
 ----------------------------------------------------------------------------------------------------------------
 576. (FEATURE) Spark Streaming - Java 1.8 - Spark Java Upgrade to 2.3 and Some Structured Streaming 
 Enhancements - 17 July 2018
