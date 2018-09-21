@@ -76,7 +76,7 @@ class StreamAbsGen(object):
 			self.inputfile=open(data_source,"r")
 
 		if self.data_storage=="USBWWAN_stream":
-			self.inputfile=open("/media/shrinivaasanka/0fc4d8a2-1c74-42b8-8099-9ef78d8c8ea24/home/kashrinivaasan/KrishnaiResearch_OpenSource/GitHub/usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
+			self.inputfile=open("../../usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
 
 		if self.data_storage=="hbase":
 			self.hbase_connection = happybase.Connection(host='localhost',port=9090,transport='buffered')
@@ -126,7 +126,7 @@ class StreamAbsGen(object):
 		
 	def __iter__(self):
 		if self.data_storage=="Spark_Parquet":
-			spark_stream_parquet=self.spark.read.parquet("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/java-src/bigdata_analytics/spark_streaming/word.parquet")
+			spark_stream_parquet=self.spark.read.parquet("../java-src/bigdata_analytics/spark_streaming/word.parquet")
 			#spark_stream_parquet_DS=spark_stream_parquet.rdd.map(lambda row: (row.word))
 			spark_stream_parquet_DS=spark_stream_parquet.rdd.filter(lambda row: row.word not in [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s','1','2','3','4','5','6','7','8','9','0'])
 			for r in spark_stream_parquet_DS.collect():
