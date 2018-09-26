@@ -12734,9 +12734,19 @@ An algebraic subset of Z^2 for hyperbolic variety is defined as (N is number to 
 	V(S) = { (x1,y1) in Z^2 | x1*y1 - N = 0 }
 which is the point-set on the hyperbolic tile segments (equivalent to previous definition based on principal ideals).
 
+-------------------------------------------------------------------------------------------
+Computational Geometric Hyperbolic tile segments pixelation as Variety over Finite Fields:
+-------------------------------------------------------------------------------------------
+Algebraic Varieties are defined as set of zeros of polynomial equations. If K is a Field and N is a positive integer, an affine N-Space over K is defined as:
+	A^N(K) = {(a1,a2,...,aN)| a1,a2,...,aN in K}
+A subset of affine N-Space is an affine Algebraic Variety over K defined as:
+	X(K) = {a in A^N(K)| f1(a) = 0,f2(a) = 0,...,fr(a)=0}
+if there are polynomials f1,f2,...,fr having coefficients from K[T1,T2,...,Tn]. In Computational Geometric Factorization, Hyperbolic tile segment pixelation is an affine Algebraic Variety defined over a finite field or Galois Field K of order p^n >> N (p^n is a prime power) satisfying polynomial x1*y1 - N = 0 for (x1,y1) in affine 2-Space A^2(K). Counting number of elements in finite algebraic variety is non-trivial problem - in the context of geometric factorization, this is tantamount to finding number of points in hyperbolic tile segments.
+
 References:
 -----------
 601.1 Algebraic Geometry - Chapters 1 and 2 - [JS Milne] - https://www.jmilne.org/math/CourseNotes/AG.pdf 
 601.2 Principal Ideal - https://en.wikipedia.org/wiki/Ideal_(ring_theory)
 601.3 Topics in Algebra - [Israel N. Herstein] - Pages 143-144 - Euclidean Rings
 601.4 Value of Riemann Zeta Function at s=2 - https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function - pi^2/6=1.6449...
+601.5 Counting Points of Varieties over Finite Fields - [Sudhir Ghorpade, IIT Bombay, Mumbai] - http://www.math.iitb.ac.in/~srg/Talks/IRCCAwardLecture_Ghorpade_29Aug2012.pdf
