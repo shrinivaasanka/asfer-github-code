@@ -12754,3 +12754,15 @@ References:
 601.3 Topics in Algebra - [Israel N. Herstein] - Pages 143-144 - Euclidean Rings
 601.4 Value of Riemann Zeta Function at s=2 - https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function - pi^2/6=1.6449...
 601.5 Counting Points of Varieties over Finite Fields - [Sudhir Ghorpade, IIT Bombay, Mumbai] - http://www.math.iitb.ac.in/~srg/Talks/IRCCAwardLecture_Ghorpade_29Aug2012.pdf
+
+----------------------------------------------------------------------------------------------------------
+602. (THEORY) Software Analytics - GraphFrames - GraphX - Parallel Graph Algorithms for CallGraph/CFG/SATURN Graph DOT files - 27 September 2018
+----------------------------------------------------------------------------------------------------------
+1.NeuronRain till now has a native implementation of parallelized graph processing (e.g definition graph growth
+implementation in InterviewAlgorithm/ for texts) and sequential NetworkX Graph objects
+2.Spark has parallel graph library GraphX and a separate repository GraphFrames which internally wraps GraphX
+(http://graphframes.github.io/api/python/graphframes.html)
+3.This commit introduces an option to choose GraphFrames in analyzing Software Analytics CallGraph/CFG/SATURN DOT files in CyclomaticComplexitySparkMapReducer.py and invokes few parallel algorithm functions for indegrees, strongly connected components, triangle counting.
+4.Number of strongly connected components, degrees, triangles in CallGraph/CFG/SATURN graphs are cyclomatic measures of code complexity (both static and dynamic)
+5.logs for GraphFrames is committed to testlogs/CyclomaticComplexitySparkMapReducer.log.GraphXFrames.27September2018
+6.GraphFrames can be applied not just to Program Analysis DOT files but to any other source (TextGraph, Social Networks etc.,)`
