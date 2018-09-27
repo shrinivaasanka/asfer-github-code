@@ -12766,3 +12766,4 @@ implementation in InterviewAlgorithm/ for texts) and sequential NetworkX Graph o
 4.Number of strongly connected components, degrees, triangles in CallGraph/CFG/SATURN graphs are cyclomatic measures of code complexity (both static and dynamic)
 5.logs for GraphFrames is committed to testlogs/CyclomaticComplexitySparkMapReducer.log.GraphXFrames.27September2018
 6.GraphFrames can be applied not just to Program Analysis DOT files but to any other source (TextGraph, Social Networks etc.,)`
+7.Spark Commandline for GraphFrames package: /media/Ubuntu2/spark-2.3.1-bin-hadoop2.7/bin/spark-submit --packages graphframes:graphframes:0.6.0-spark2.3-s_2.11 CyclomaticComplexitySparkMapReducer.py
