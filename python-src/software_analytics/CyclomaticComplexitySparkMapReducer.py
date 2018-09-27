@@ -26,6 +26,11 @@ from pyspark import SparkContext, SparkConf
 from GraphMining_GSpan import GSpan
 import networkx as nx
 from networkx.drawing.nx_pydot import read_dot
+from networkx.classes.function import edges
+from graphframes import *
+from pyspark.sql import SQLContext, Row
+
+GraphXFrames=True
 
 def reduceFunction(value1,value2):
      return value1+value2
@@ -42,23 +47,45 @@ def graph_mining(dotfiles):
 	gsp=GSpan(dataset)
 	gsp.GraphSet_Projection()	
 
-
 if __name__=="__main__":
 	spcon=SparkContext() 
+	sqlcon=SQLContext(spcon)
 	input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot']
-	for dot_file in input_dot_files:
-		input=open(dot_file,'r')
-		paralleldata=spcon.parallelize(input.readlines())
-		node_edge_lines=paralleldata.filter(lambda nodeedge: "node" in nodeedge)
-		k1=node_edge_lines.map(mapFunction).reduceByKey(reduceFunction)
-		edgesplusvertices=k1.collect()
-
-		edge_lines=paralleldata.filter(lambda nodeedge: "->" in nodeedge)
-		k2=edge_lines.map(mapFunction).reduceByKey(reduceFunction)
-		vertices=k2.collect()
-		print "Edges + Vertices:",edgesplusvertices
-		print "Vertices:",vertices
-		print "Cyclomatic Complexity: E-V+2 = ",abs(len(edgesplusvertices)-2*len(vertices)+2)
-		#l=k.map(lambda src: src).reduce(lambda x,y: x if (x[1] > y[1]) else y)
-		#print l
+	if GraphXFrames == True:
+		for dot_file in input_dot_files:
+			nxg=nx.Graph(read_dot(dot_file))
+			nxgnodes=[[]]
+			nxgedges=[[]]
+			cnt=0
+			for n in nxg.nodes():
+				cnt += 1
+				nxgnodes[0].append((str(cnt),str(n),str(n)))
+			for e in nxg.edges():	
+				nxgedges[0].append((str(e[0]),str(e[1]),"causes"))
+			print "nxgnodes:",nxgnodes
+			print "nxgedges:",nxgedges
+			ndf=sqlcon.createDataFrame(nxgnodes,["id","name","label"])
+			vdf=sqlcon.createDataFrame(nxgedges,["src","dst","relationship"])
+			print "ndf:",ndf
+			print "vdf:",vdf
+			gf=GraphFrame(ndf,vdf)
+			print "Indegrees:",gf.inDegrees.show()
+			print "Strongly Connected Components:",gf.stronglyConnectedComponents(1)
+			print "Triangle count:",gf.triangleCount()
+	else:
+		for dot_file in input_dot_files:
+			input=open(dot_file,'r')
+			paralleldata=spcon.parallelize(input.readlines())
+			node_edge_lines=paralleldata.filter(lambda nodeedge: "node" in nodeedge)
+			k1=node_edge_lines.map(mapFunction).reduceByKey(reduceFunction)
+			edgesplusvertices=k1.collect()
+	
+			edge_lines=paralleldata.filter(lambda nodeedge: "->" in nodeedge)
+			k2=edge_lines.map(mapFunction).reduceByKey(reduceFunction)
+			vertices=k2.collect()
+			print "Edges + Vertices:",edgesplusvertices
+			print "Vertices:",vertices
+			print "Cyclomatic Complexity: E-V+2 = ",abs(len(edgesplusvertices)-2*len(vertices)+2)
+			#l=k.map(lambda src: src).reduce(lambda x,y: x if (x[1] > y[1]) else y)
+			#print l
 	graph_mining(input_dot_files)
