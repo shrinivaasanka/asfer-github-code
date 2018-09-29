@@ -1077,6 +1077,14 @@ PRAM algorithms are in NC.
 
         34.85) Parallel Point in Planar Subdivision - Design and Analysis of Parallel Algorithms - [Selim Akl] - https://dl.acm.org/citation.cfm?id=63471 - Section 11.2.2 - Point in Planar Subdivision
 
+	34.86) Alternatives to Parallel RAM - QSM - http://theory.stanford.edu/~matias/papers/qsm.pdf - [Philip b.Gibbons, Yossi Matias, Vijaya Ramachandran] -  Parallel RAM algorithms lay stress on sharing memory by processing elements while Bridging models like QSM, LogP and BSP (Bulk Synchronous Parallel) rely on Message Passing between processors having local non-shared memory and communicating with peer elements within finite number of messages (h-relation). Each computation is termed a superstep constrained by barrier synchronization amongst the processors performing local computation. 
+
+	34.87) Communication Efficient Parallel Sorting - [Michael T.Goodrich] - https://www.ics.uci.edu/~goodrich/pubs/parsort-pre.pdf - Parallel Sorting on BSP instead of PRAMs - footnote 1 - page 247: PRAM is a BSP model having h-relation = 1 and therefore BSP is in NC by this PRAM simulation.
+
+	34.88) PRAM and Bulk Synchronous Parallel - http://www.cse.iitd.ernet.in/~subodh/courses/COL730/pdfslides/6pram.pdf - Schematic diagram for Barrier Synchronization Superstep
+
+	34.89) Bridging model for Parallel Computation - [Leslie G.Valiant] - "... that even the most general model, the CRCW PRAM, can be simulated optimally on the BSP model given sufficient slack if g is regarded as a constant..." - slack is the ratio of number of virtual processors (v=plogp) to physical processors (p) = plogp/p and g is the ratio of total computation performed by all local nodes per second to total number of data words delivered per second.
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
