@@ -1083,7 +1083,7 @@ PRAM algorithms are in NC.
 
 	34.88) PRAM and Bulk Synchronous Parallel - http://www.cse.iitd.ernet.in/~subodh/courses/COL730/pdfslides/6pram.pdf - Schematic diagram for Barrier Synchronization Superstep
 
-	34.89) Bridging model for Parallel Computation - [Leslie G.Valiant] - "... that even the most general model, the CRCW PRAM, can be simulated optimally on the BSP model given sufficient slack if g is regarded as a constant..." - slack is the ratio of number of virtual processors (v=plogp) to physical processors (p) = plogp/p and g is the ratio of total computation performed by all local nodes per second to total number of data words delivered per second.
+	34.89) Bridging model for Parallel Computation - http://web.mit.edu/6.976/www/handout/valiant2.pdf - [Leslie G.Valiant] - "... that even the most general model, the CRCW PRAM, can be simulated optimally on the BSP model given sufficient slack if g is regarded as a constant..." - slack is the ratio of number of virtual processors (v=plogp) to physical processors (p) = plogp/p and g is the ratio of total computation performed by all local nodes per second to total number of data words delivered per second.
 
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
