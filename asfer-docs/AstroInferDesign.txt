@@ -12775,3 +12775,22 @@ implementation in InterviewAlgorithm/ for texts) and sequential NetworkX Graph o
 5.logs for GraphFrames is committed to testlogs/CyclomaticComplexitySparkMapReducer.log.GraphXFrames.27September2018
 6.GraphFrames can be applied not just to Program Analysis DOT files but to any other source (TextGraph, Social Networks etc.,)`
 7.Spark Commandline for GraphFrames package: /media/Ubuntu2/spark-2.3.1-bin-hadoop2.7/bin/spark-submit --packages graphframes:graphframes:0.6.0-spark2.3-s_2.11 CyclomaticComplexitySparkMapReducer.py
+
+-------------------------------------------------------------------------------------------------------------
+603. (THEORY and FEATURE) ImageGraph creation from an Image - Keras-Theano - related to 587 and 588 -
+EventNet Tensor Products Algorithm for Merit of Large Scale Visuals - 30 September 2018
+-------------------------------------------------------------------------------------------------------------
+1.This commit introduces a primitive but crucial implementation of EventNet Tensor Products Algorithm 
+for Large Scale Visuals which creates a text graph from information gained from processing of a visual (.jpg).
+2.Keras is a framework for Computer Vision which supports pre-trained ImageNet datasets (VGG, ResNet) annotated
+to ImageNet vertices by Convolution Neural Networks.ImageNet presently has 14 million vertices.
+3.Keras has support for TensorFlow, Theano, CNTK backends. A python implementation which imports Keras and sets
+the backend to Theano and predicts objects in an image from ImageNet has been committed to image_pattern_mining/ImageNet/ImageGraph_Keras_Theano.py
+4.This script loads an image in keras-theano, converts it to an image array, expands its dimensions and predicts the objects in the image by ResNet50 pre-trained ImageNet dataset. 
+5.Predictions for objects in image are decoded into array of tuples of the form (id, imagenet_vertex, probability).
+6.An example prediction for few images is described in : https://www.pyimagesearch.com/2016/08/10/imagenet-classification-with-python-and-keras/ along with probabilities for objects annotated.
+7.These predicted ImageNet vertices are concatenated into a text and passed on to RecursiveGlossOverlap_Classifier.py which creates a Text Graph - ImageGraph - by invoking RecursiveGlossOverlapGraph() on this text.
+8.This algorithm essentially maps an Image to a TextGraph. Presently only still images are supported - extending to Video is straightforward by getting all frames in a video and computing ImageGraphs for all frames and Tensor Products of the causally related ImageGraphs.
+9.logs for few images (one of which is courtesy: https://www.aazp.in/live-streaming/ - WhiteTiger_1.jpg) have been committed to image_pattern_mining/ImageNet/testlogs/
+10.Graphs printed in logs show fairly reasonable inference of prominent entities in image. 
+ 
