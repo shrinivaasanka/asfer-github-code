@@ -1,0 +1,21 @@
+root@HCL:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/image_pattern_mining/ImageNet# /usr/bin/python ImageGraph_Keras_Theano.py 
+Using Theano backend.
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Warming up PyWSD (takes ~10 secs)... took 55.8578329086 secs.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Predictions: [[(u'n03598930', u'jigsaw_puzzle', 0.28068042), (u'n09246464', u'cliff', 0.091493085), (u'n03160309', u'dam', 0.03216653), (u'n03000134', u'chainlink_fence', 0.029503737), (u'n02894605', u'breakwater', 0.028875355)]]
+2
+defaultdict(<type 'list'>, {u'obstruct': [u'dam'], u'prevent': [u'breakwater'], u'fence': [u'chainlink_fence'], u'puzzle': [u'jigsaw_puzzle'], u'pieces': [u'jigsaw_puzzle'], u'high': [u'cliff'], u'wires': [u'chainlink_fence'], u'cut': [u'jigsaw_puzzle'], u'pattern': [u'chainlink_fence'], u'away': [u'breakwater'], u'extends': [u'breakwater'], u'beach': [u'breakwater'], u'reassemble': [u'jigsaw_puzzle'], u'picture': [u'jigsaw_puzzle'], u'protective': [u'breakwater'], u'dam': [u'dam'], u'requires': [u'jigsaw_puzzle'], u'water': [u'breakwater'], u'base': [u'jigsaw_puzzle'], u'mounted': [u'jigsaw_puzzle'], u'structure': [u'breakwater'], u'steel': [u'chainlink_fence'], u'stone': [u'breakwater'], u'washing': [u'breakwater'], u'interlocking': [u'jigsaw_puzzle'], u'stiff': [u'jigsaw_puzzle'], u'woven': [u'chainlink_fence'], u'diamond': [u'chainlink_fence'], u'face': [u'cliff'], u'concrete': [u'breakwater'], u'shore': [u'breakwater'], u'rock': [u'cliff'], u'steep': [u'cliff']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x10caa0cc>, 334125.0)

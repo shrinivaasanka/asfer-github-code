@@ -1,0 +1,44 @@
+root@HCL:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/image_pattern_mining# /usr/bin/python Keras_ImageNet.py 
+Using Theano backend.
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Warming up PyWSD (takes ~10 secs)... took 39.1704089642 secs.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Predictions: [[(u'n07695742', u'pretzel', 0.16046587), (u'n04127249', u'safety_pin', 0.09996262), (u'n03532672', u'hook', 0.09580041), (u'n02951585', u'can_opener', 0.090221345), (u'n03627232', u'knot', 0.08160193)]]
+2
+defaultdict(<type 'list'>, {u'catch': [u'hook'], u'salted': [u'pretzel'], u'pin': [u'safety_pin'], u'point': [u'safety_pin'], u'hook': [u'hook'], u'shape': [u'pretzel'], u'cans': [u'can_opener'], u'open': [u'can_opener'], u'tie': [u'knot'], u'form': [u'safety_pin'], u'loose': [u'pretzel'], u'cutting': [u'can_opener'], u'stick': [u'safety_pin'], u'knot': [u'pretzel', u'knot'], u'device': [u'can_opener'], u'glazed': [u'pretzel'], u'clasp': [u'safety_pin'], u'cracker': [u'pretzel'], u'guard': [u'safety_pin'], u'fasten': [u'knot'], u'typically': [u'pretzel'], u'user': [u'safety_pin']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x192677cc>, 305778.0)
+root@HCL:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/image_pattern_mining# vi Keras_ImageNet.py 
+root@HCL:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/image_pattern_mining# /usr/bin/python Keras_ImageNet.py 
+Using Theano backend.
+WARNING (theano.tensor.blas): Using NumPy C-API based implementation for BLAS functions.
+Warming up PyWSD (takes ~10 secs)... took 28.720156908 secs.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Predictions: [[(u'n04136333', u'sarong', 0.8608001), (u'n03045698', u'cloak', 0.028209323), (u'n04325704', u'stole', 0.021883372), (u'n03450230', u'gown', 0.018061025), (u'n03866082', u'overskirt', 0.010404942)]]
+2
+defaultdict(<type 'list'>, {u'brightly': [u'sarong'], u'gown': [u'gown'], u'Pacific': [u'sarong'], u'another': [u'overskirt'], u'skirt': [u'sarong', u'overskirt'], u'outer': [u'overskirt'], u'fabric': [u'sarong'], u'dress': [u'gown'], u'cloak': [u'cloak'], u'wrapped': [u'sarong'], u'consisting': [u'sarong'], u'body': [u'sarong'], u'shoulders': [u'stole'], u'men': [u'sarong'], u'around': [u'sarong'], u'loose': [u'sarong'], u'South': [u'sarong'], u'women': [u'stole', u'sarong'], u'wide': [u'stole'], u'colored': [u'sarong'], u'cover': [u'cloak'], u'worn': [u'stole', u'sarong', u'overskirt'], u'scarf': [u'stole']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x17dffd0c>, 350427.0)
+----------------------------------------------------------------------------------------
