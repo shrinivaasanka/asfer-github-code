@@ -12793,4 +12793,13 @@ the backend to Theano and predicts objects in an image from ImageNet has been co
 8.This algorithm essentially maps an Image to a TextGraph. Presently only still images are supported - extending to Video is straightforward by getting all frames in a video and computing ImageGraphs for all frames and Tensor Products of the causally related ImageGraphs.
 9.logs for few images (one of which is courtesy: https://www.aazp.in/live-streaming/ - WhiteTiger_1.jpg) have been committed to image_pattern_mining/ImageNet/testlogs/
 10.Graphs printed in logs show fairly reasonable inference of prominent entities in image. 
- 
+
+-------------------------------------------------------------------------------------------------------------
+604. (FEATURE) Music Pattern Mining - Onset of Notes Detection - 1 October 2018 - related to 67,68,69
+-------------------------------------------------------------------------------------------------------------
+1. audio_features() function in AudioToBitMatrix.py has been updated to compute notes onset from audio signal
+2. Notes Onset Detection involves finding peaks in onset strength of the signal time series.
+3. Extracting notes from signal converts the music time series to a string from a language of notes alphabets.
+4. Most algorithms for audio analysis are time-series (fft,statistics etc.,) based. Considering music as a Formal language opens new vistas into theoretical analysis of music. For example, finding a deterministic finite state automaton for sequence of notes in a music signal is measure of complexity in music. 
+5. Not just automata, variety of string complexity measures (e.g Kolmogorov complexity - MDL) can effectively
+describe music notes strings. 
