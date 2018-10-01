@@ -37,20 +37,28 @@ def audio_to_bitmatrix(audio,dur=None,binary=False):
 			bitmap.append(bin(r))
 		
 	#print "audio_to_bitmatrix() for - ",audio,":",bitmap
-	return bitmap
+	return (bitmap,waveform,srate)
 
 def audio_features(signal_bitmap):
 	print "################################################"
 	print "Histogram/Probability Distribution of the audio signal"
 	print "################################################"
-	hist, bin = np.histogram(signal_bitmap,density=True)
+	hist, bin = np.histogram(signal_bitmap[0],density=True)
 	print "hist:",hist
 	print "bin:",bin
 	#plt.hist(signal_bitmap, color='r', range=(0, 0.2), alpha=0.5, bins=20)
 	#plt.show()
-	return (hist,bin)
+	print "#################################################"
+	print "Note Onset Detection"
+	print "#################################################"
+	onstrength=librosa.onset.onset_strength(signal_bitmap[1],sr=signal_bitmap[2])
+	times=librosa.frames_to_time(np.arange(len(onstrength)), sr=signal_bitmap[2])	
+	onset_frames=librosa.onset.onset_detect(onset_envelope=onstrength,sr=signal_bitmap[2])
+	print "Notes onsets occur at:",onset_frames
+	return (hist,bin,times,onstrength,onset_frames)
 
 if __name__=="__main__":
 	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
-	print "Bitmap:",bm
-	audio_features(bm)
+	print "Bitmap:",bm[0]
+	features=audio_features(bm)
+	print "Features:",features
