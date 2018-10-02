@@ -12821,10 +12821,10 @@ educated guess of approximate location of factor points by applying number theor
 algorithm for multisearch:
 	(*) Sequentially shoot ray queries for O(loglogN) approximate prime factors with average spacing O(N/loglogN) between rays shot from origin. This is O(loglogN) sequential time (assuming Hardy-Ramanujan estimate)
 	(*) Locate the segments (pixel array polygons) containing each of the approximate factors by Parallel Planar Point Location. This returns O(loglogN) segments in O((logN)^2*loglogN) parallel time. With high probability a segment containing approximate factor might also contain exact factor:
-		(*) Each tile segment is of variable length N/[x(x+1)] but spacing between prime factors is equalkN/loglogN for some constant k
-		(*) Error occurs if  N/[x(x+1)] < kN/loglogN (or) loglogN < k(x(x+1)) 
-		(*) Solving for x in x^2 + x - (k/loglogN) < 0:
-			x < -0.5 + 0.5*sqrt(1 + 4k/loglogN) which is ~= -0.5 + 0.5 for large N and thus negligible.
+                (*) Each tile segment is of variable length N/[x(x+1)] but spacing between prime factors is equalkN/loglogN for some constant k
+                (*) Error occurs if  N/[x(x+1)] < kN/loglogN (or) loglogN < k(x(x+1))
+                (*) Solving for x in x^2 + x - (loglogN/k) > 0:
+                        x > -0.5 + 0.5*sqrt(1 + 4loglogN/k)
 	(*) Each O(loglogN) segment(polygon) can be binary searched in O(logN*loglogN) sequential time. 
 	(*) Total Parallel and Sequential time of previous 3 steps = O(loglogN + (logN)^2*loglogN + logN*loglogN)
 	(*) This is just another sequential optimization which makes some parallel computation sequential. 
