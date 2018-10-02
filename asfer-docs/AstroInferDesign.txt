@@ -12803,3 +12803,33 @@ the backend to Theano and predicts objects in an image from ImageNet has been co
 4. Most algorithms for audio analysis are time-series (fft,statistics etc.,) based. Considering music as a Formal language opens new vistas into theoretical analysis of music. For example, finding a deterministic finite state automaton for sequence of notes in a music signal is measure of complexity in music. 
 5. Not just automata, variety of string complexity measures (e.g Kolmogorov complexity - MDL) can effectively
 describe music notes strings. 
+
+-------------------------------------------------------------------------------------------------------------
+605. (THEORY) Computational Geometric Factorization, Parallel Planar Point Location, Ray Shooting Queries,
+Multisearch, PRAM and BSP models - 2 October 2018 - related to 34, 575, 597
+-------------------------------------------------------------------------------------------------------------
+Factorization by Computational Geometric algorithms - k-mergesort, segment trees, wavelet trees, ray shooting
+queries - described earlier implement a generic idiom of Planar Point Location which locates factor points 
+inside some of the polygons in the planar subdivision created by the hyperbolic pixel array segments. Planar
+Point Location is a special problem in Multisearch which is defined as: Given a set of query points and set of
+line segments in 2D plane, multisearch returns the line segments containing the query points which is exactly
+what is required in factorization. There are lot of parallel planar point location algorithms for PRAM and BSP
+model and thus in NC (references in 34). After locating a pixel array polygon by parallel planar point location, factor can be found by binary search of the segment polygon containing the factor because each hyperbolic segment is implicitly sorted - one of the ordinate axes is constant and other increases i.e each tile is an arithmetic progression. Parallel Planar Point Location algorithm in reference 34.83 can locate a polygon containing factor point in O((logN)^2) PRAM time with additional O(logN) sequential time for binary search to locate the factor within polygon. 
+
+Ray shooting query algorithms described earlier reduce the necessity of parallelism to great extent by making an
+educated guess of approximate location of factor points by applying number theory results and search their circular vicinity for exact factors by k-mergesort, segment trees or wavelet trees. Probability of error in ray shooting has been derived earlier. Planar Point Location and Ray Shooting queries can be combined into one by following
+algorithm for multisearch:
+	(*) Sequentially shoot ray queries for O(loglogN) approximate prime factors with average spacing O(N/loglogN) between rays shot from origin. This is O(loglogN) sequential time (assuming Hardy-Ramanujan estimate)
+	(*) Locate the segments (pixel array polygons) containing each of the approximate factors by Parallel Planar Point Location. This returns O(loglogN) segments in O((logN)^2*loglogN) parallel time. With high probability a segment containing approximate factor might also contain exact factor:
+		(*) Each tile segment is of variable length N/[x(x+1)] but spacing between prime factors is equalkN/loglogN for some constant k
+		(*) Error occurs if  N/[x(x+1)] < kN/loglogN (or) loglogN < k(x(x+1)) 
+		(*) Solving for x in x^2 + x - (k/loglogN) < 0:
+			x < -0.5 + 0.5*sqrt(1 + 4k/loglogN) which is ~= -0.5 + 0.5 for large N and thus negligible.
+	(*) Each O(loglogN) segment(polygon) can be binary searched in O(logN*loglogN) sequential time. 
+	(*) Total Parallel and Sequential time of previous 3 steps = O(loglogN + (logN)^2*loglogN + logN*loglogN)
+	(*) This is just another sequential optimization which makes some parallel computation sequential. 
+
+References:
+-----------
+605.1 Truly efficient parallel algorithms: 1-optimal multisearch for an extension of the BSP model - [Armin Baumker, Wolfgang Dittrich, Friedhelm Meyer auf der Heide] - Elsevier Theoretical Computer Science - https://core.ac.uk/download/pdf/81931675.pdf - Parallel Planar Point Location by Multisearch in BSP* model - Section 1.1.
+605.2 Communication Effcient Deterministic Parallel Algorithms for Planar Point Location and 2d Voronoi Diagram - [Mohamadou Diallo , Afonso Ferreira and Andrew Rau-Chaplin] - Section 2 - Hyperbolic pixelation is in a sense a Voronoi tessellation in which factor points are ensconced by the pixel array polygons. 
