@@ -12855,3 +12855,17 @@ References:
 -----------
 605.1 Truly efficient parallel algorithms: 1-optimal multisearch for an extension of the BSP model - [Armin Baumker, Wolfgang Dittrich, Friedhelm Meyer auf der Heide] - Elsevier Theoretical Computer Science - https://core.ac.uk/download/pdf/81931675.pdf - Parallel Planar Point Location by Multisearch in BSP* model - Section 1.1.
 605.2 Communication Effcient Deterministic Parallel Algorithms for Planar Point Location and 2d Voronoi Diagram - [Mohamadou Diallo , Afonso Ferreira and Andrew Rau-Chaplin] - Section 2 - Hyperbolic pixelation is in a sense a Voronoi tessellation in which factor points are ensconced by the pixel array polygons. 
+
+--------------------------------------------------------------------------------------------------------------
+606. (THEORY and FEATURE) VideoGraph EventNet Tensor Product Merit for Large Scale Visuals - 3 October 2018
+--------------------------------------------------------------------------------------------------------------
+1. Two new functions have been committed to ImageGraph_Keras_Theano.py for reading a Video file, extracting
+frames from the video upto certain number and extract object information by Keras-Theano ImageNet predictions
+for each frame.
+2. imagenet_videograph() function depends on OpenCV 3.4.3 (cv2) Python for reading Videos and writing Frame
+JPEG files suffixed by unique id. Each frame is mapped to a TextGraph - ImageGraph - by imagenet_imagegraph()
+3. videograph_eventnet_tensor_product() function computes tensor products of pairs of Frame ImageGraphs and
+returns an EventNet Tensor from NetworkX. 
+4. logs, an example Video (MP4) and 2 sample extracted frames (JPEG) for EventNet Tensor representation of
+a video have been committed to testlogs/ImageGraph_Keras_Theano.log.3October2018 
+5. From this EventNet Tensor any kind of intrinsic merit can be computed - e.g previously described ImageNet based inverse weights, Graph Edit Distance between two Frame ImageGraphs, Tensor Rank for connectedness etc.,
