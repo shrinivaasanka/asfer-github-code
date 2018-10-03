@@ -12806,7 +12806,7 @@ describe music notes strings.
 
 -------------------------------------------------------------------------------------------------------------
 605. (THEORY) Computational Geometric Factorization, Parallel Planar Point Location, Ray Shooting Queries,
-Multisearch, PRAM and BSP models - 2 October 2018 - related to 34, 575, 597
+Multisearch, PRAM and BSP models - 2 October 2018 - related to 34, 506, 575, 597
 -------------------------------------------------------------------------------------------------------------
 Factorization by Computational Geometric algorithms - k-mergesort, segment trees, wavelet trees, ray shooting
 queries - described earlier implement a generic idiom of Planar Point Location which locates factor points 
@@ -12828,6 +12828,28 @@ algorithm for multisearch:
 	(*) Each O(loglogN) segment(polygon) can be binary searched in O(logN*loglogN) sequential time. 
 	(*) Total Parallel and Sequential time of previous 3 steps = O(loglogN + (logN)^2*loglogN + logN*loglogN)
 	(*) This is just another sequential optimization which makes some parallel computation sequential. 
+
+------------------------------------------------------------------------------------------------------------
+An average case sequential optimization for removing parallelism in Computational Geometric Factorization:
+------------------------------------------------------------------------------------------------------------
+(*) Average number of tiles between two approximate prime factors m and (m+1) found by ray shooting:
+		= (m+1)/[kloglogN - m - 1] - m/[kloglogN - m]
+because number of tiles till m-th prime factor = n = m/[kloglogN - m] for m=1,2,3,...,kloglogN
+(*) Polygon (hyperbolic tile segment) containing the ray shot approximate factor can be found by equation in 2-level binary search sequential optimization described previously - Tile containing approximate factor point x can be expressed by inequality:
+	Nk/(k+1) < x < N(k+1)/(k+2)
+	k < x/(N-x)
+integer round-off of k is the index of tile interval containing x. This a simple sequential planar point location identity in elementary arithmetic with no necessity for PRAMs or BSP.
+(*) Each consecutive tile in N/kloglogN spacing between approximate factors can be found by tiling equation N/[x(x+1)] - subtract y coordinate by N/[x(x+1)] and increment x coordinate by 1 or vice versa - and each of these tiles in N/kloglogN spacing can be individually binary searched in O(logN).
+(*) Thus total average sequential time to sweep binary search tiles in N/kloglogN spacing between 2 consecutive approximate factors found by ray shooting:
+	= O([(m+1)/[kloglogN - m - 1] - m/[kloglogN - m]] * logN)
+(*) Maximum number of tiles in N/kloglogN spacing occurs by setting m=kloglogN - 2 (because of geometric intuition of hyperbolic tiling, most tiles occur within an interval in topmost or rightmost extreme of hyperbolic arc which contains kloglogN-th factor on either axes):
+	= O([(kloglogN - 2 + 1)/[kloglogN - kloglogN + 2 - 1] - (kloglogN - 2)/[kloglogN - kloglogN + 2]])
+	= O(kloglogN - 1 - (kloglogN - 2)/2)
+	= O(kloglogN)
+=> Maximum time to binary search tiles in N/kloglogN spacing = O(loglogN * logN)
+=> Each of O(loglogN) spacings between approximate factors can be searched in: 
+	O(loglogN*loglogN*logN)
+average case sequential time with no necessity for parallel processing.
 
 References:
 -----------
