@@ -1,0 +1,23 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Predictions: [[(u'n06359193', u'web_site', 0.988729), (u'n07565083', u'menu', 0.00303883), (u'n03857828', u'oscilloscope', 0.0026712161), (u'n04238763', u'slide_rule', 0.0006091145), (u'n04152593', u'screen', 0.0004903761)]]
+2
+defaultdict(<type 'list'>, {u'Web': [u'web_site'], u'series': [u'web_site'], u'computer': [u'web_site', u'slide_rule'], u'images': [u'oscilloscope'], u'electronic': [u'oscilloscope'], u'analog': [u'slide_rule'], u'web': [u'web_site'], u'rapid': [u'slide_rule'], u'instrument': [u'slide_rule'], u'things': [u'menu'], u'handheld': [u'slide_rule'], u'equipment': [u'oscilloscope'], u'electrical': [u'oscilloscope'], u'calculations': [u'slide_rule'], u'internet': [u'web_site'], u'World': [u'web_site'], u'consisting': [u'slide_rule'], u'Wide': [u'web_site'], u'used': [u'slide_rule'], u'provides': [u'oscilloscope'], u'quantities': [u'oscilloscope'], u'screen': [u'screen'], u'maintains': [u'web_site'], u'pocket': [u'slide_rule'], u'viewing': [u'screen'], u'connected': [u'web_site'], u'varying': [u'oscilloscope'], u'pages': [u'web_site'], u'visual': [u'oscilloscope'], u'project': [u'screen'], u'replaced': [u'slide_rule'], u'agenda': [u'menu'], u'calculators': [u'slide_rule'], u'onto': [u'screen']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x1232a94c>, 1576206.0)
+Predictions: [[(u'n06359193', u'web_site', 0.9889974), (u'n07565083', u'menu', 0.0033299304), (u'n03857828', u'oscilloscope', 0.002524063), (u'n04238763', u'slide_rule', 0.00066362595), (u'n04152593', u'screen', 0.00038281144)]]
+2
+defaultdict(<type 'list'>, {u'Web': [u'web_site'], u'series': [u'web_site'], u'computer': [u'web_site', u'slide_rule'], u'images': [u'oscilloscope'], u'electronic': [u'oscilloscope'], u'analog': [u'slide_rule'], u'web': [u'web_site'], u'rapid': [u'slide_rule'], u'instrument': [u'slide_rule'], u'things': [u'menu'], u'handheld': [u'slide_rule'], u'equipment': [u'oscilloscope'], u'electrical': [u'oscilloscope'], u'calculations': [u'slide_rule'], u'internet': [u'web_site'], u'World': [u'web_site'], u'consisting': [u'slide_rule'], u'Wide': [u'web_site'], u'used': [u'slide_rule'], u'provides': [u'oscilloscope'], u'quantities': [u'oscilloscope'], u'screen': [u'screen'], u'maintains': [u'web_site'], u'pocket': [u'slide_rule'], u'viewing': [u'screen'], u'connected': [u'web_site'], u'varying': [u'oscilloscope'], u'pages': [u'web_site'], u'visual': [u'oscilloscope'], u'project': [u'screen'], u'replaced': [u'slide_rule'], u'agenda': [u'menu'], u'calculators': [u'slide_rule'], u'onto': [u'screen']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x35b9fa0c>, 1576206.0)
+VideoGraph: [(<networkx.classes.digraph.DiGraph object at 0x1232a94c>, 1576206.0), (<networkx.classes.digraph.DiGraph object at 0x35b9fa0c>, 1576206.0)]
+Videograph EventNet Tensor Product Matrix: [[<networkx.classes.graph.Graph object at 0x16b6a20c>, <networkx.classes.graph.Graph object at 0x16cbdf8c>], [<networkx.classes.graph.Graph object at 0x3836186c>, <networkx.classes.graph.Graph object at 0x35493c8c>]]

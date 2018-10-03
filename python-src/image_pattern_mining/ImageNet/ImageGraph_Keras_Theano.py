@@ -23,9 +23,10 @@ from keras.applications.imagenet_utils import decode_predictions
 from keras.applications.imagenet_utils import preprocess_input
 from keras.applications import ResNet50 
 from keras import backend
-#import cv2 
+import cv2 
 import numpy as np
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
+import networkx as nx
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -42,8 +43,33 @@ def imagenet_imagegraph(imagefile):
 		image_to_text += pred[1]
 	imagegraph=RecursiveGlossOverlapGraph(image_to_text)
 	print "ImageGraph:",imagegraph
+	return imagegraph
+
+def imagenet_videograph(videofile, maxframes):
+	vid = cv2.VideoCapture(videofile)
+	videograph=[]
+	cnt=0
+	while True and cnt < maxframes:
+		ret, frame = vid.read()
+		cv2.imwrite("Frame_%d.jpg"%cnt,frame)
+		videograph.append(imagenet_imagegraph("Frame_%d.jpg"%cnt))
+		cnt += 1
+	print "VideoGraph:", videograph
+	return videograph
+
+def videograph_eventnet_tensor_product(videograph):
+	vg_en_tn_prdct=[]
+	for v1 in videograph:
+		vg_en_tn_prdct_row=[]
+		for v2 in videograph:
+			vg_en_tn_prdct_row.append(nx.tensor_product(v1[0].to_undirected(),v2[0].to_undirected()))
+		vg_en_tn_prdct.append(vg_en_tn_prdct_row)
+	print "Videograph EventNet Tensor Product Matrix:",vg_en_tn_prdct
+	return vg_en_tn_prdct
 
 if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
-	imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
+	#imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
+	imgnet_vg=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
+	vg_en_tn_prdct=videograph_eventnet_tensor_product(imgnet_vg)
