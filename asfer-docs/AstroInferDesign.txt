@@ -12869,3 +12869,20 @@ returns an EventNet Tensor from NetworkX.
 4. logs, an example Video (MP4) and 2 sample extracted frames (JPEG) for EventNet Tensor representation of
 a video have been committed to testlogs/ImageGraph_Keras_Theano.log.3October2018 
 5. From this EventNet Tensor any kind of intrinsic merit can be computed - e.g previously described ImageNet based inverse weights, Graph Edit Distance between two Frame ImageGraphs, Tensor Rank for connectedness etc.,
+
+------------------------------------------------------------------------------------------------------------
+607. (THEORY and FEATURE) Video EventNet Tensor Products - Inverse Distance Merit of Large Scale Visuals
+- 4 October 2018
+------------------------------------------------------------------------------------------------------------
+1.New function inverse_distance_intrinsic_merit() has been included in ImageGraph_Keras_Theano.py. It
+iterates through each tensor product entry of Video EventNet Tensor Products matrix and for every edge
+(a,b)-(c,d) in tensor product computes inverse wordnet distance (which is basis for ImageNet):
+        1/dist(a,b)*1/dist(c,d)
+and populates a weights matrix per tensor product graph.
+2.Each tensor product in EventNet Tensor corresponds to causality between any 2 frames in the video.
+3.An example merit computation log has been committed to testlogs/ImageGraph_Keras_Theano.log.4October2018
+which shows merits for 4 tensor products (2 frames * 2 frames).
+4.Lot of weights in merit matrix in logs have huge values implying high causality between two frame events.
+5.EventNet Tensor Product Algorithm is computationally intensive. Each ImageGraph per frame encodes relationship
+between objects (actors) in the frame event.
+6.Size of the EventNet Tensor is O(number_of_frames * number_of_frames * average_number_of_actors_per_frame * average_number_of_actors_per_frame) and memory intensive too.
