@@ -27,6 +27,7 @@ import cv2
 import numpy as np
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
 import networkx as nx
+from WordNetPath import path_between
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -67,9 +68,33 @@ def videograph_eventnet_tensor_product(videograph):
 	print "Videograph EventNet Tensor Product Matrix:",vg_en_tn_prdct
 	return vg_en_tn_prdct
 
+def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
+	vg_en_tn_prdct_inverse_distance_video_weights=[]
+	for row in vg_en_tn_prdct:
+		for tensorproduct in row:
+			tpedges=tensorproduct.edges()
+			tpnodes=tensorproduct.nodes()
+			print "Edges:",tpedges
+			print "Nodes:",tpnodes
+			vg_en_tn_prdct_inverse_distance_image_weights=[]
+			for tpedge in tpedges:	
+				path1=path_between(tpedge[0][0],tpedge[0][1])
+				path2=path_between(tpedge[1][0],tpedge[1][1])
+				distance1=len(path1)
+				distance2=len(path2)
+				if distance1 == 0:
+					distance1 = 0.00001
+				if distance2 == 0:
+					distance2 = 0.00001
+				vg_en_tn_prdct_inverse_distance_image_weights.append((1/float(distance1)) * (1/float(distance2)))
+			vg_en_tn_prdct_inverse_distance_video_weights.append(vg_en_tn_prdct_inverse_distance_image_weights)
+	print "Inverse Distance Merit of the Video:", vg_en_tn_prdct_inverse_distance_video_weights
+	return vg_en_tn_prdct_inverse_distance_video_weights
+
 if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
 	#imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
 	imgnet_vg=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
 	vg_en_tn_prdct=videograph_eventnet_tensor_product(imgnet_vg)
+	video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct)
