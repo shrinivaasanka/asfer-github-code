@@ -28,6 +28,7 @@ import numpy as np
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
 import networkx as nx
 from WordNetPath import path_between
+from empath import Empath
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -52,8 +53,8 @@ def imagenet_videograph(videofile, maxframes):
 	cnt=0
 	while True and cnt < maxframes:
 		ret, frame = vid.read()
-		cv2.imwrite("Frame_%d.jpg"%cnt,frame)
-		videograph.append(imagenet_imagegraph("Frame_%d.jpg"%cnt))
+		cv2.imwrite(videofile+"Frame_%d.jpg"%cnt,frame)
+		videograph.append(imagenet_imagegraph(videofile+"Frame_%d.jpg"%cnt))
 		cnt += 1
 	print "VideoGraph:", videograph
 	return videograph
@@ -91,10 +92,35 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
 	print "Inverse Distance Merit of the Video:", vg_en_tn_prdct_inverse_distance_video_weights
 	return vg_en_tn_prdct_inverse_distance_video_weights
 
+def large_scale_visual_sentiment(vg_en_tn_prdct):
+	lexicon=Empath()
+	vg_en_tn_prdct_sentiments=[]
+	for row in vg_en_tn_prdct:
+		for tensorproduct in row:
+			tpedges=tensorproduct.edges()
+			tpnodes=tensorproduct.nodes()
+			print "Edges:",tpedges
+			print "Nodes:",tpnodes
+			for tpedge in tpedges:	
+				sentiment00=lexicon.analyze((tpedge[0][0]).decode("utf-8"))
+				vg_en_tn_prdct_sentiments += sentiment00
+				sentiment01=lexicon.analyze((tpedge[0][1]).decode("utf-8"))
+				vg_en_tn_prdct_sentiments += sentiment01
+				sentiment10=lexicon.analyze((tpedge[1][0]).decode("utf-8"))
+				vg_en_tn_prdct_sentiments += sentiment10
+				sentiment11=lexicon.analyze((tpedge[1][1]).decode("utf-8"))
+				vg_en_tn_prdct_sentiments += sentiment11
+	print "Sentiment Analysis of the Video:", set(vg_en_tn_prdct_sentiments)
+	return set(vg_en_tn_prdct_sentiments)
+
 if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
 	#imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
-	imgnet_vg=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
-	vg_en_tn_prdct=videograph_eventnet_tensor_product(imgnet_vg)
-	video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct)
+	imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
+	imgnet_vg1=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
+	imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
+	vg_en_tn_prdct1=videograph_eventnet_tensor_product(imgnet_vg1)
+	video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct1)
+	vg_en_tn_prdct2=videograph_eventnet_tensor_product(imgnet_vg2)
+	emotional_merit=large_scale_visual_sentiment(vg_en_tn_prdct2)
