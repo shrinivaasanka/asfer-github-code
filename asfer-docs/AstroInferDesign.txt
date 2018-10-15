@@ -12888,3 +12888,22 @@ which shows merits for 4 tensor products (2 frames * 2 frames).
 5.EventNet Tensor Product Algorithm is computationally intensive. Each ImageGraph per frame encodes relationship
 between objects (actors) in the frame event.
 6.Size of the EventNet Tensor is O(number_of_frames * number_of_frames * average_number_of_actors_per_frame * average_number_of_actors_per_frame) and memory intensive too.
+
+------------------------------------------------------------------------------------------------------------
+608. (THEORY and FEATURE) Video EventNet Tensor Products - Emotional Merit of Large Scale Visuals 
+- 15 October 2018
+------------------------------------------------------------------------------------------------------------
+1. EventNet Tensor Product representation of a Large Scale Visual just infers the connectedness of the
+information in the video with no emotional or sentiment scoring.
+2. To redress this, new function has been included in ImageGraph_Keras_Theano.py to lookup the edges of
+tensor product graph in empath and aggregate the sentiments of the vertices as a tuple which is qualitative emotive merit of the video.
+3. Two new example visuals have been added: ExampleImage_1.jpg and ExampleVideo_2.mp4 in addition to earlier
+ExampleVideo_1.mp4 and images.
+4. Keras has mistook ExampleImage_1.jpg to be a theatre audience which is indeed a classroom photo and annotated
+it accordingly (probably because seating and ambience are similar in both). Also Empath has misjudged the alumni website content in ExampleVideo_2.mp4 to large extent excluding "college" as emotional annotation. Logs have been committed to testlogs/ImageGraph_Keras_Theano.log.15October2018 
+5. These Photo and Videos are courtesy (and related to self):  
+(*) ExampleVideo_1.mp4 - https://www.cmi.ac.in/people/fac-profile.php?id=shrinivas - Chennai Mathematical Institute - Research Scholar website - 2010-11
+(*) ExampleImage_1.jpg - http://www.angelfire.com/id/95cse/album.html - PSG College of Technology - 1995-99 CSE batch alumni website album - Classroom Photo (class1.jpg)
+(*) ExampleVideo_2.mp4 - https://alumni.psgtech.ac.in/profile/view/srinivasan-kannan-1 - PSG College of Technology Official Alumni website 
+6. Frames captured by OpenCV2 are prefixed by the Video file name.
+7. THEANO_FLAGS have been set as: declare -x THEANO_FLAGS="cxx=/usr/bin/g++-6"
