@@ -12919,8 +12919,9 @@ Previous videos were proof-of-concept implementations for utility of EventNet Te
 
 -------------------------------------------------------------------------------------------------------------
 610. (THEORY) Summary of Large Scale Visuals and EventNet Subgraphs - related to 158,423 - 19 October 2018
+and 20 October 2018
 -------------------------------------------------------------------------------------------------------------
 Guessing/Discovering a Larger EventNet causality Graph from Subgraphs of EventNet has been mentioned earlier.
 An opposite of it is to summarize a huge EventNet Graph into a small summary EventNet subgraph without much
 loss of causality information. Text Summarization is text analysis application of Graph Summarization which has been earlier described and implemented by Recursive Lambda Function Growth algorithm. Realworld application of 
-Graph Summary is Video Summarization by EventNet Tensor Products representation e.g a movie or a youtube video is a small duration summary (minutes or hours) of real life events (and their causalities) enacted by set of people over many years - this involves sampling an EventNet Tensor Product Graph of a Video at relevant vertices and induce a summary subgraph on it which preserves meaning. Similar to Text Summarization, Video Summary could also be approximated by choosing dense subgraphs (or high core number vertices) of Video EventNet Tensor Products. 
+Graph Summary is Video Summarization by EventNet Tensor Products representation e.g a movie or a youtube video is a small duration summary (minutes or hours) of real life events (and their causalities) enacted by set of people over many years - this involves sampling an EventNet Tensor Product Graph of a Video at relevant vertices and induce a summary subgraph on it which preserves meaning. Similar to Text Summarization, Video Summary could also be approximated by choosing dense subgraphs (or high core number vertices) of Video EventNet Tensor Products. Topological Sort of Dense Subgraph of Video EventNet Tensor Product Graph gives a flattened summary of the video by some ordering (a gist of important frames).
