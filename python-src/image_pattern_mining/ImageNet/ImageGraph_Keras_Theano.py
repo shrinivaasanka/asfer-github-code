@@ -29,6 +29,8 @@ from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
 import networkx as nx
 from WordNetPath import path_between
 from empath import Empath
+from collections import defaultdict
+import operator
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -94,7 +96,7 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
 
 def large_scale_visual_sentiment(vg_en_tn_prdct):
 	lexicon=Empath()
-	vg_en_tn_prdct_sentiments=[]
+	vg_en_tn_prdct_sentiments=defaultdict(int)
 	for row in vg_en_tn_prdct:
 		for tensorproduct in row:
 			tpedges=tensorproduct.edges()
@@ -103,24 +105,40 @@ def large_scale_visual_sentiment(vg_en_tn_prdct):
 			print "Nodes:",tpnodes
 			for tpedge in tpedges:	
 				sentiment00=lexicon.analyze((tpedge[0][0]).decode("utf-8"))
-				vg_en_tn_prdct_sentiments += sentiment00
+				for k,v in sentiment00.iteritems():
+					vg_en_tn_prdct_sentiments[k] = vg_en_tn_prdct_sentiments[k] + v
 				sentiment01=lexicon.analyze((tpedge[0][1]).decode("utf-8"))
-				vg_en_tn_prdct_sentiments += sentiment01
+				for k,v in sentiment01.iteritems():	
+					vg_en_tn_prdct_sentiments[k] = vg_en_tn_prdct_sentiments[k] + v
 				sentiment10=lexicon.analyze((tpedge[1][0]).decode("utf-8"))
-				vg_en_tn_prdct_sentiments += sentiment10
+				for k,v in sentiment10.iteritems():
+					vg_en_tn_prdct_sentiments[k] = vg_en_tn_prdct_sentiments[k] + v
 				sentiment11=lexicon.analyze((tpedge[1][1]).decode("utf-8"))
-				vg_en_tn_prdct_sentiments += sentiment11
-	print "Sentiment Analysis of the Video:", set(vg_en_tn_prdct_sentiments)
-	return set(vg_en_tn_prdct_sentiments)
+				for k,v in sentiment11.iteritems():
+					vg_en_tn_prdct_sentiments[k] = vg_en_tn_prdct_sentiments[k] + v
+	print "Sentiment Analysis of the Video:", sorted(vg_en_tn_prdct_sentiments.items(), key=operator.itemgetter(0), reverse=True)
+	return vg_en_tn_prdct_sentiments
+
+def core_topological_sort(vg_en_tn_prdct):
+	video_core=nx.k_core(vg_en_tn_prdct.to_undirected())
+	topsorted_video_core=nx.topological_sort(video_core)	
+	print "Topological Sorted Core Summary of the Video:",topsorted_video_core
+	return topsorted_video_core
 
 if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
 	#imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
-	imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
-	imgnet_vg1=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
-	imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
-	vg_en_tn_prdct1=videograph_eventnet_tensor_product(imgnet_vg1)
-	video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct1)
-	vg_en_tn_prdct2=videograph_eventnet_tensor_product(imgnet_vg2)
-	emotional_merit=large_scale_visual_sentiment(vg_en_tn_prdct2)
+	#imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
+	#imgnet_vg1=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
+	#imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
+	#vg_en_tn_prdct1=videograph_eventnet_tensor_product(imgnet_vg1)
+	#video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct1)
+	#vg_en_tn_prdct2=videograph_eventnet_tensor_product(imgnet_vg2)
+	#emotional_merit=large_scale_visual_sentiment(vg_en_tn_prdct2)
+	imgnet_vg3=imagenet_videograph("testlogs/ExampleVideo_3.mp4",2)
+	vg_en_tn_prdct3=videograph_eventnet_tensor_product(imgnet_vg3)
+	video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
+	emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
+	topsortedcore=core_topological_sort(vg_en_tn_prdct3)
+	
