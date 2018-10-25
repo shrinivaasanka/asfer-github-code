@@ -12925,3 +12925,22 @@ Guessing/Discovering a Larger EventNet causality Graph from Subgraphs of EventNe
 An opposite of it is to summarize a huge EventNet Graph into a small summary EventNet subgraph without much
 loss of causality information. Text Summarization is text analysis application of Graph Summarization which has been earlier described and implemented by Recursive Lambda Function Growth algorithm. Realworld application of 
 Graph Summary is Video Summarization by EventNet Tensor Products representation e.g a movie or a youtube video is a small duration summary (minutes or hours) of real life events (and their causalities) enacted by set of people over many years - this involves sampling an EventNet Tensor Product Graph of a Video at relevant vertices and induce a summary subgraph on it which preserves meaning. Similar to Text Summarization, Video Summary could also be approximated by choosing dense subgraphs (or high core number vertices) of Video EventNet Tensor Products. Topological Sort of Dense Subgraph of Video EventNet Tensor Product Graph gives a flattened summary of the video by some ordering (a gist of important frames).
+
+------------------------------------------------------------------------------------------------------------
+611. (THEORY and FEATURE) Video Emotions Hashmap, Video Core Topological Sort Summary - 25 October 2018
+- related to 611
+------------------------------------------------------------------------------------------------------------
+(*) Empath emotions of the Video EventNet Tensor Products Graph have been aggregated in a hashmap. This facilitates quantitative emotional scoring of the video. Hashmap correlates the empath emotion and its cumulative score. 
+(*) Core (Main core) of the Video EventNet Tensor Product Graph has been computed and is sorted topologically for creating some ordering for the summary. 
+(*) New example MP4 video has been created from 6 JPEG photos (in which I am present) and google search related to self (ExampleVideo_3.mp4) : 
+	Frame 1 - Self - Mahabalipuram, Chennai - 2012 (Copyright: Self)
+	Frame 2 - Self - photo (Copyright: Self)
+	Frame 3 - Self - VISA photo (Copyright: Self)
+	Frame 4 - Self - Family photo (Copyright: Self)
+	Frame 5 - Self - IEC Sun Microsystems - Bengaluru - 2004 (Copyright: Ex-Colleagues at Sun Microsystems) 
+	Frame 6 - Self - IEC Sun Microsystems - Bengaluru - 2000 (Copyright: Sun Microsystems/Oracle)
+	Frame 7 and 8 - Google Search of Self
+(*) Previous recording is a mix of photos of varied genre. Sentiment hashmap for this video prints (excerpts):
+Sentiment Analysis of the Video: [('work', 1484.0), ('toy', 424.0), ('tool', 848.0), ('technology', 3180.0), ('social_media', 1060.0), ('shopping', 424.0), ('science', 1060.0), ('restaurant', 848.0), ('reading', 424.0), ('programming', 2544.0), ('play', 424.0), ('phone', 1696.0), ('office', 1060.0), ('negative_emotion', 0.0), ('musical', 424.0), ('music', 424.0), ('messaging', 1272.0), ('meeting', 424.0), ('internet', 2968.0), ('hiking', 424.0), ('furniture', 212.0),  ('dance', 212.0),  ('computer', 5088.0), ...]. This is a remarkable inference of the Video content by Keras-Theano ImageNet giving high weightage to office and technology as emotional annotations.
+(*) Logs for this have been committed to testlogs/ImageGraph_Keras_Theano.log.25October2018
+
