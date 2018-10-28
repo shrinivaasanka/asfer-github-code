@@ -12945,3 +12945,14 @@ Graph Summary is Video Summarization by EventNet Tensor Products representation 
 Sentiment Analysis of the Video: [('work', 1484.0), ('toy', 424.0), ('tool', 848.0), ('technology', 3180.0), ('social_media', 1060.0), ('shopping', 424.0), ('science', 1060.0), ('restaurant', 848.0), ('reading', 424.0), ('programming', 2544.0), ('play', 424.0), ('phone', 1696.0), ('office', 1060.0), ('negative_emotion', 0.0), ('musical', 424.0), ('music', 424.0), ('messaging', 1272.0), ('meeting', 424.0), ('internet', 2968.0), ('hiking', 424.0), ('furniture', 212.0),  ('dance', 212.0),  ('computer', 5088.0), ...]. This is a remarkable inference of the Video content by Keras-Theano ImageNet giving high weightage to office and technology as emotional annotations.
 (*) Logs for this have been committed to testlogs/ImageGraph_Keras_Theano.log.25October2018
 
+------------------------------------------------------------------------------------------------------------
+612. (FEATURE) Video EventNet Core Topological Sort Summary - Bugfixes - 28 October 2018 
+------------------------------------------------------------------------------------------------------------
+(*) Some errors in inverse distance merit computation of the Video EventNet Tensor have been corrected which
+was earlier a 2-dimensional tensor and has been made 3-dimensional in this commit.
+(*) Core Summary of the Video has also been changed to compute maximum merit for each tensor product inverse
+distance merit vector and apply a threshold filter for the distance merit.
+(*) Three dimensional EventNet Tensor is mapped to NetworkX Graph after previous threshold filter.
+(*) Only causal frames above inverse distance threshold are included in the NetworkX graph and main core is computed on this graph 
+(*) self loops and parallel edges are removed and topological sorting is performed on main core.
+(*) logs for this have been committed to testlogs/ImageGraph_Keras_Theano.log.28October2018
