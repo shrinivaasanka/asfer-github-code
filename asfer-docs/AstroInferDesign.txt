@@ -10891,6 +10891,12 @@ Tournament Graph of n vertices has n(n-1)/2 edges (complete). Each vertex of the
 Each edge (v1,v2) is the contest between vertices v1 and v2. Each edge of the tournament graph is progressively colored by the color of winning vertex of the edge endpoints. Thus at the end of the tournament, n(n-1)/2 edges are partitioned into n monochromatic sets of edges. Number of
 all possible partitions of a set is the Bell number. Vertex corresponding to Color of the biggest part in this edge set partition is the final winner. Any partition which has unequal parts has biggest part. Thus number of partitions of edges having atleast one biggest part = BellNumber - 1 because there is exactly one partition of n(n-1)/2 edges into n sets of equal size (n-1)/2. Tournament Graph Election is an alternative social choice function and does not involve Majority voting. Win in contest between two vertices of an edge can be defined as the vertex having greater Intrinsic Merit (In social networks this is the standard Intrinsic Fitness of a vertex). This formalizes the intrinsic merit usecases mentioned in NeuronRain Documentation and FAQ in http://neuronrain-documentation.readthedocs.io/en/latest/ . One additional usecase where majority voting falters and Intrinsic Merit is a necessity is the indispensability of experimental evidences in exact sciences. For example, in archaeology/history/mythology, "an artefact existed few millenia ago" is quite presumptive hypothesis which cannot be proved by mere majority voting in contemporary era. In tournaments involving knock-out(s), each elimination removes (n-1) edges and n/2 rounds decides winner.
 
+References:
+-----------
+507.1 Tournament Trees - Minimum Comparison Selection - [Don Knuth] - The Art of Computer Programming - Volume 3
+- Page 207-209 - Section 5.3.3 - Kislitsyn Theorem - In a knockout tournament tree of n players, minimum number o
+f comparisons required to find second best player is n - 2 + ceil(logn). For first best player minimum number of comparisons required is n - 1.   
+
 ------------------------------------------------------------------------------------------------------------------------
 508. (FEATURE-DONE) Streaming Analytics Abstract Generator Update - Socket Streaming Datasource Added - 8 February 2018
 ------------------------------------------------------------------------------------------------------------------------
