@@ -74,6 +74,7 @@ def videograph_eventnet_tensor_product(videograph):
 def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
 	vg_en_tn_prdct_inverse_distance_video_weights=[]
 	for row in vg_en_tn_prdct:
+		vg_en_tn_prdct_inverse_distance_image_row_weights=[]
 		for tensorproduct in row:
 			tpedges=tensorproduct.edges()
 			tpnodes=tensorproduct.nodes()
@@ -90,7 +91,8 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
 				if distance2 == 0:
 					distance2 = 0.00001
 				vg_en_tn_prdct_inverse_distance_image_weights.append((1/float(distance1)) * (1/float(distance2)))
-			vg_en_tn_prdct_inverse_distance_video_weights.append(vg_en_tn_prdct_inverse_distance_image_weights)
+			vg_en_tn_prdct_inverse_distance_image_row_weights.append(vg_en_tn_prdct_inverse_distance_image_weights)
+		vg_en_tn_prdct_inverse_distance_video_weights.append(vg_en_tn_prdct_inverse_distance_image_row_weights)
 	print "Inverse Distance Merit of the Video:", vg_en_tn_prdct_inverse_distance_video_weights
 	return vg_en_tn_prdct_inverse_distance_video_weights
 
@@ -119,10 +121,22 @@ def large_scale_visual_sentiment(vg_en_tn_prdct):
 	print "Sentiment Analysis of the Video:", sorted(vg_en_tn_prdct_sentiments.items(), key=operator.itemgetter(0), reverse=True)
 	return vg_en_tn_prdct_sentiments
 
-def core_topological_sort(vg_en_tn_prdct):
-	video_core=nx.k_core(vg_en_tn_prdct.to_undirected())
+def core_topological_sort(vg_en_tn_prdct,threshold=1):
+	invdistmerit=inverse_distance_intrinsic_merit(vg_en_tn_prdct)
+	vg_en_tn_prdct_nxg=nx.DiGraph()
+	rowframe=0
+	columnframe=0
+	for row in invdistmerit:
+		for column in row:
+			print "column:",column
+			if max(column) > threshold: 
+				vg_en_tn_prdct_nxg.add_edge(rowframe, columnframe)	
+			columnframe = columnframe + 1
+		rowframe = rowframe + 1
+	vg_en_tn_prdct_nxg.remove_edges_from(nx.selfloop_edges(vg_en_tn_prdct_nxg))
+	video_core=nx.k_core(vg_en_tn_prdct_nxg.to_undirected())
 	topsorted_video_core=nx.topological_sort(video_core)	
-	print "Topological Sorted Core Summary of the Video:",topsorted_video_core
+	print "Topological Sorted Core Summary of the Video - Edges:",topsorted_video_core
 	return topsorted_video_core
 
 if __name__=="__main__":
@@ -136,9 +150,11 @@ if __name__=="__main__":
 	#video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct1)
 	#vg_en_tn_prdct2=videograph_eventnet_tensor_product(imgnet_vg2)
 	#emotional_merit=large_scale_visual_sentiment(vg_en_tn_prdct2)
-	imgnet_vg3=imagenet_videograph("testlogs/ExampleVideo_3.mp4",2)
-	vg_en_tn_prdct3=videograph_eventnet_tensor_product(imgnet_vg3)
-	video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
-	emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
-	topsortedcore=core_topological_sort(vg_en_tn_prdct3)
-	
+	#imgnet_vg3=imagenet_videograph("testlogs/ExampleVideo_3.mp4",2)
+	#vg_en_tn_prdct3=videograph_eventnet_tensor_product(imgnet_vg3)
+	#video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
+	#emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
+	#topsortedcore=core_topological_sort(vg_en_tn_prdct3)
+	imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2)
+	vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
+	topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
