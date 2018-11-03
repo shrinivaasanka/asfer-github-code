@@ -12613,6 +12613,10 @@ QP above.
 
 6. CVXOPT gesv() has been tested again for 10 variables * 10 clauses and similar MAXSAT approximation ratio of 99%-100% has been observed.  gesv() throws ArithmeticError if A is singular (not invertible, determinant 0) while gels() throws ArithmeticError if A is not full-rank - gesv() is exact solver and gels() is least square solver. (NumPy solve() internally uses lapack gesv). So the logs filter out singular random 3SAT matrices.
 
+References:
+-----------
+592.1 Advanced Engineering Mathematics - Tenth Edition - [Erwin Kreyszig] - https://www.safaribooksonline.com/library/view/advanced-engineering-mathematics/9780470458365/Chapter006.html#ch006-sec003 - Many Unit Heavyside step function and Laplace Transforms. Randomized Rounding of real assignments creates a many unit Heavyside step function.
+
 ---------------------------------------------------------------------------------------------------------------
 593. (FEATURE) Audio/Music Pattern Mining - Audio to Time Series - 24 August 2018
 ---------------------------------------------------------------------------------------------------------------
