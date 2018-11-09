@@ -12975,3 +12975,25 @@ distance merit vector and apply a threshold filter for the distance merit.
 (*) Only causal frames above inverse distance threshold are included in the NetworkX graph and main core is computed on this graph 
 (*) self loops and parallel edges are removed and topological sorting is performed on main core.
 (*) logs for this have been committed to testlogs/ImageGraph_Keras_Theano.log.28October2018
+
+----------------------------------------------------------------------------------------------------------
+613. (FEATURE) People Analytics - HR Analytics Implementation and Least Energy Intrinsic Merit of a 
+social profile - 9 November 2018 - related to 443, 572
+----------------------------------------------------------------------------------------------------------
+(*) People Analytics is the generalized version of HR Analytics for analyzing any social profile vertex.
+(*) This commit adds SocialNetworkAnalysis_PeopleAnalytics.py python implementation to repository which
+at present analyzes LinkedIn profiles and computes:
+	(*) Graph Tensor Neuron Network Intrinsic Merit of the profile text with no field parsing - this treats
+the social profile as an en masse text with no delineations and applies Recursive Lambda Function Growth algorithm to create lambda function composition tree of the resume text. Core classification and Centrality measures throw some interesting insights:
+		(*) Core number 4 identifies the class of the social profile 
+		(*) Maximum merit random walk of the lambda composition tree approximately guesses the purport
+of the text in the social profile
+		(*) Betweenness and Closeness Centralities estimate the top-ranked classes accurately compared to Degree and PageRank Centralities
+	(*) Log Normal Fitness of the social profile after parsing the total work experience and academic
+stints of the profile - for linkedin this inverse log normal least energy fitness is 1/(logE + logV) with no Wealth estimates - Wealth is caused by E(Education) and V(Work/Valour) as far as professional profiles are concerned. Lowest Value of Least Energy Fitness implies Highest Fitness. Parsing is done by parse_profile() function which implements a switch design pattern - stint polymorphs from work to academic tenures.
+	(*) Log Normal Experiential Intrinsic Fitness of the social profile (by applying mistake bound learning differential equation for recursive mistake correction tree described earlier) - log normalized because of huge exponents
+(*) Because of limitations due to Updated LinkedIn Scraping Policy (https://www.forbes.com/sites/forbestechcouncil/2017/09/20/linkedin-vs-hiq-ruling-casts-a-long-shadow-over-the-tech-industry/#19f535f35e6c), this is only implemented as a non-crawled example for LinkedIn profile of self: https://www.linkedin.com/comm/in/srinivasan-kannan-608a671 (pdf and text version of pdf by pdf2txt)
+(*) datetime python package is used to compute timedelta(s) and a regex matcher isdaterange() function has been implemented for parsing date ranges in the profile:
+	(*) Work Experience Date Ranges have the Regex: <Month> <Year> - <Month> <Year>
+	(*) Academic Date Ranges have the Regex: <Year> - <Year> and months are implicit
+(*) This implementation does not assume a Web Crawler and Social Profile Datasource and only requires a file input (datasource, file type and file name are passed in as arguments to parse_profile()) - optionally, crawled social profiles can be invoked as file arguments to parse_profile(). Presently only linkedin datasource, text file types are supported. PDF parsing has been implemented by PyPDF2 but there are IndirectObject related errors.
