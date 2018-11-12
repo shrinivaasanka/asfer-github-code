@@ -59,6 +59,10 @@ class HRAnalytics(object):
 			print "Work Experience:",self.work_experience
 			print "Academics:",self.academics	
 			return profile_text
+		else:
+			self.file=open(social_profile,"r")
+			profile_text=self.file.read()
+			return profile_text
 
 	def isdaterange(self,l):
 		months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -127,7 +131,8 @@ class HRAnalytics(object):
 if __name__=="__main__":
 	hranal=HRAnalytics()
 	#hranal.parse_profile("linkedin","pdf","testlogs/ProfileLinkedIn_KSrinivasan.pdf")
-	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	#hranal.least_energy_intrinsic_merit()
+	#hranal.experiential_intrinsic_merit()
+	profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
 	hranal.rlfg_intrinsic_merit(profile_text)
-	hranal.least_energy_intrinsic_merit()
-	hranal.experiential_intrinsic_merit()
