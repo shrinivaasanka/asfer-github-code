@@ -13015,3 +13015,14 @@ for various intrinsic merit measure it prints.
 4. RecursiveLambdaFunctionGrowth.dot file has been recreated.
 5. logs for this have been committed to testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.12November2018
 6. Textual analysis of a CV is quite open-ended and unstructured - Nonetheless the classification by TextGraph core numbers gives reasonable estimate of crucial aspects in the resume
+
+--------------------------------------------------------------------------------------------------------------
+615. (THEORY) Hash Table Chaining, Locality Sensitive Hashing and Frequently occurring patterns - 13 November
+2018 - related to all sections on LSH partitions, Majority Voting, Theoretical EVMs, Streaming, 
+Audio-Visual Pattern Mining, Bigdata Analytics
+--------------------------------------------------------------------------------------------------------------
+Locality Sensitive Hashing is a collision-supportive hash chaining which as described earlier has multitude
+of applications in clustering similar elements of a set which can be votes for candidates(EVMs which colocate votes for a candidate in same bucket), bigdata or audio-visual spectrogram-histogram representation. Essentially, every chained hash table or LSH partition of a set is a histogram of probability distribution when viewed pictorially - e.g audio signals represented as series of animated histograms. Assuming dataset is a stream of these LSH partitions, problem is to decipher patterns underlying these histograms. There are LSH algorithms like Nilsimsa hash, Minhash etc., which find similarities of two sets (texts for example in Nilsimsa) by Jaccard, Hamming and other distance coefficients. If each element in the stream of histograms/LSH partition/Chained Hashtable are considered as set of buckets, comparing two such histograms is tantamount to computing similarity of 2 consecutive sets of buckets by some hash metric e.g Minhash. It is worthwhile to mention that this histogram (set of buckets) pattern is ubiquitous across any algorithm doing an LSH partition or hash table bucket chaining. In the People Analytics example previously, LSH partition of People and Professional Profiles splits them into buckets of similar traits. 
+
+Example:
+If profiles are represented as TextGraphs as in previous implementation of HR Analytics, edges between vertices of the textgraph encodes the temporal information because most social profiles contain chronologically ordered timline history of events - similarity measure for any two profiles could be the temporal cause-effect similarity between two profiles and thus Social Profile TextGraph is an EventNet too.
