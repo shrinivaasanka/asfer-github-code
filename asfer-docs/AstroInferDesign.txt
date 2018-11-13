@@ -9858,6 +9858,8 @@ Let a + b = c be a mutually coprime integer triple f(a,b,c). Quality q(a,b,c) is
 471.18 Exponential Diophantines, Fibonacci and Lucas Sequences, Maximum limit on solvability of Diophantine - Reduction of Unknowns in Diophantine Representations - [SunZhiWei] - http://maths.nju.edu.cn/~zwsun/12d.pdf - "... If we take into account the number of unknowns, then it is natural to ask that for what n there does not exist an algorithm to test (polynomial) Diophantine equations with n unknowns for solvability in integers..." - n=27 or n=11
 471.19 Diophantine Equation Representation of Fibonacci Series - [James P.Jones] - https://www.fq.math.ca/Scanned/13-1/jones.pdf 
 471.20 Vandermonde Matrix and Polynomial Interpolation - https://ece.uwaterloo.ca/~dwharder/NumericalAnalysis/05Interpolation/vandermonde/
+471.21 Number of zeroes of Riemann Zeta Function - [Norman Levinson - Hugh L.Montgomery] - https://projecteuclid.org/download/pdf_1/euclid.acta/1485889821
+471.22 Diophantine Representation of Riemann Zeta Function - Davis-Matiyasevich-Robinson Theorem and Matiyasevich(1993) Theorem - "...Theorem 2 (Davis, Matiyasevich, and Robinson). The Riemann hypothesis is equivalent to the assertion (for n = 1, 2, 3, . . .) that (Sum(k≤δ(n) [1/k − n^2/2])^2 < 36n^3 ..." and "...Matiyasevich essentially takes advantage of the fact that the Riemann hypothesis implies that for n ≥ 600, |ψ(n) − n| < n^1/2*(logn)^2.  Since ψ(n) = log(lcm(1, 2, . . . , n)),..." - http://web.stanford.edu/~anayebi/projects/RH_Diophantine.pdf
 
 ------------------------------------------------------------------------------------------------------
 472. (FEATURE-DONE) Support Vector Machines Update and Discrete Hyperbolic Factorization Spark Benchmarks
