@@ -13026,3 +13026,16 @@ of applications in clustering similar elements of a set which can be votes for c
 
 Example:
 If profiles are represented as TextGraphs as in previous implementation of HR Analytics, edges between vertices of the textgraph encodes the temporal information because most social profiles contain chronologically ordered timeline history of events - similarity measure for any two profiles could be the temporal cause-effect similarity between two profiles and thus Social Profile TextGraph is an EventNet too.
+
+----------------------------------------------------------------------------------------------------------------
+616. (FEATURE) Software Analytics - Cyclomatic Complexity - Rewrite for merging two clauses - 14 November 2018
+----------------------------------------------------------------------------------------------------------------
+1. CyclomaticComplexitySparkMapReducer.py has been changed to merge True and False clauses for GraphFrames
+2. Cyclomatic Complexity (Zeroth Betti Number) has been computed from GraphFrames stronglyConnectedComponents()
+as per definition of Cyclomatic Number in Topological Graph Theory
+3. Cyclomatic Complexity (First Betti Number) has been computed as E-V+[Zeroth Betti Number]
+4. New callgrind and kcachegrind DOT files for execution of command "ls" have been committed and included for
+Cyclomatic Complexity and Call graph GSpan mining:
+        callgrind.ls.out.3104
+        kcachegrind_callgraph_ls.dot
+5. logs for this have been committed to CyclomaticComplexitySparkMapReducer.log.GraphXFrames.14November2018
