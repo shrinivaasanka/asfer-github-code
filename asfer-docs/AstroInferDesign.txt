@@ -13039,3 +13039,15 @@ Cyclomatic Complexity and Call graph GSpan mining:
         callgrind.ls.out.3104
         kcachegrind_callgraph_ls.dot
 5. logs for this have been committed to CyclomaticComplexitySparkMapReducer.log.GraphXFrames.14November2018
+
+---------------------------------------------------------------------------------------------------------------
+617. (THEORY) Beatty Sequences and Complement Diophantines - related to all sections on Complementary Sets
+,Ramsey 2-coloring and their Diophantine/Function representations - 16 November 2018 - draft updates to 
+https://arxiv.org/pdf/1106.4102v1
+---------------------------------------------------------------------------------------------------------------
+Complement Functions have been defined for arbitrary complementary sets (Integers/Rationals/Reals) in https://arxiv.org/pdf/1106.4102v1 and their relevance to Ramsey Coloring of Sequences and decidability of Diophantine representation of complementary sets (MRDP Theorem) have been expounded in detail earlier. Special Case of Complementary Sets of Integers is a well-studied problem and a classic result due to Beatty defines 2 complementary sets of integers based on solutions to equation 1/a + 1/b = 1 for irrationals a and b. Thus terminologies - Complement Functions, Complement Diophantines, Ramsey 2-Coloring of Sequences and Beatty Complementary Sequences - are synonymous with respect to set of Integers Z. Notion of Complementation generalizes it to any sets Boolean, Integer, Real or Rational. Integer and Real Complementation have solvable algorithms in the form of Diophantine equations subject to MRDP theorem and Tarski/Sturm, but complementation over rationals is open problem for the direction N to Q - mapping Q to N is straightforward. 
+
+References:
+-----------
+617.1 Beatty functions and Complementary Sets - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.514.2119&rep=rep1&type=pdf - "...Let U be a subset of Z. We call two non-empty sets A, B complementary with respect to U if A ∩ B = ∅ and A ∪ B = U. A classical result of 1926 due to S.  Beatty [1] states that if α and β are positive irrational numbers with 1/α + 1/β = 1, then {floor(nα)} and {floor(nβ)} (n ∈ N) are complementary with respect to N, where floor(x) denotes the greatest integer function of real x. This result has since then been generalized by a number of authors, see e.g., [2], [4], [5], [6] and [7]. ..."
+617.2 Diophantine Equations over Rationals and Reals - Section 3.1 - http://wwwmayr.in.tum.de/konferenzen/Jass07/courses/1/Sadovnikov/Sadovnikov_Paper.pdf - Solving in Q(multiplication by integers), Solving in R (Tarski and Sturm methods)
