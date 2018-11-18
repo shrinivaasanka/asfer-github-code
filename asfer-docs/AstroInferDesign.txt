@@ -13042,12 +13042,27 @@ Cyclomatic Complexity and Call graph GSpan mining:
 
 ---------------------------------------------------------------------------------------------------------------
 617. (THEORY) Beatty Sequences and Complement Diophantines - related to all sections on Complementary Sets
-,Ramsey 2-coloring and their Diophantine/Function representations - 16 November 2018 - draft updates to 
+,Ramsey 2-coloring and their Diophantine/Function representations - 16 November 2018, 18 November 2018 - draft updates to 
 https://arxiv.org/pdf/1106.4102v1
 ---------------------------------------------------------------------------------------------------------------
 Complement Functions have been defined for arbitrary complementary sets (Integers/Rationals/Reals) in https://arxiv.org/pdf/1106.4102v1 and their relevance to Ramsey Coloring of Sequences and decidability of Diophantine representation of complementary sets (MRDP Theorem) have been expounded in detail earlier. Special Case of Complementary Sets of Integers is a well-studied problem and a classic result due to Beatty defines 2 complementary sets of integers based on solutions to equation 1/a + 1/b = 1 for irrationals a and b. Thus terminologies - Complement Functions, Complement Diophantines, Ramsey 2-Coloring of Sequences and Beatty Complementary Sequences - are synonymous with respect to set of Integers Z. Notion of Complementation generalizes it to any sets Boolean, Integer, Real or Rational. Integer and Real Complementation have solvable algorithms in the form of Diophantine equations subject to MRDP theorem and Tarski/Sturm, but complementation over rationals is open problem for the direction N to Q - mapping Q to N is straightforward. 
+
+ABC Conjecture and Complement Diophantines:
+-------------------------------------------
+ABC conjecture states there are finite coprime triples a,b,c such that a+b=c and quality(q)=log(c)/log(rad(abc)) > 1 + epsilon for every epsilon > 0. Though there are infinitely many coprime triples a,b,c (a+b=c) having quality > 1, this conjecture predicts there are only finite number of coprime triples cluttered between every real value of epsilon. Complementary version of ABC conjecture is defined as:
+	(*) T = set of all coprime triples (a,b,a+b=c)
+	(*) Q1 = set of all coprime triples of quality > 1
+	(*) Q0 = set of all coprime triples of quality < 1
+	(*) Q0 U Q1 = T and Q0 /\ Q1 = Empty i.e sets Q0 and Q1 are complementary infinite sets (creates Beatty sequences equivalent for triples).
+	(*) Complementary Sets Version of ABC Conjecture: Infinite set of triples Q1 is the disjoint set cover or exact cover of finite sets of triples of quality 1+epsilon for every real epsilon.
+	(*) Previous complementary sets can be picturised as:
+		(*) T is a Rubik's cube in which each ordinate is a coprime triple (a,b,c) 
+		(*) Q0 and Q1 partition T into two disjoint sets of qualities less than 1 and greater than 1.
+		(*) Q1 is the 3 dimensional half-space of Cube tiled by finite sets of triples of quality 1+epsilon for every real epsilon. As mentioned earlier, Pentominoes tiling is an exact cover problem for 2 dimensions.
 
 References:
 -----------
 617.1 Beatty functions and Complementary Sets - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.514.2119&rep=rep1&type=pdf - "...Let U be a subset of Z. We call two non-empty sets A, B complementary with respect to U if A ∩ B = ∅ and A ∪ B = U. A classical result of 1926 due to S.  Beatty [1] states that if α and β are positive irrational numbers with 1/α + 1/β = 1, then {floor(nα)} and {floor(nβ)} (n ∈ N) are complementary with respect to N, where floor(x) denotes the greatest integer function of real x. This result has since then been generalized by a number of authors, see e.g., [2], [4], [5], [6] and [7]. ..."
 617.2 Diophantine Equations over Rationals and Reals - Section 3.1 - http://wwwmayr.in.tum.de/konferenzen/Jass07/courses/1/Sadovnikov/Sadovnikov_Paper.pdf - Solving in Q(multiplication by integers), Solving in R (Tarski and Sturm methods)
+617.3 Three Dimensional Visualization of ABC Conjecture - http://www.lactamme.polytechnique.fr/images/CABC.21.20.1.M.D/display.html - visual intuition of the finite sets of coprime triples for every real epsilon > 0 for quality > 1 + epsilon.
+617.4 Fraenkel Conjecture for exact cover decomposition of Z - https://core.ac.uk/download/pdf/82382652.pdf
