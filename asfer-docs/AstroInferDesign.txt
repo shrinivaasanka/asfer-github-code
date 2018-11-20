@@ -13066,3 +13066,29 @@ References:
 617.2 Diophantine Equations over Rationals and Reals - Section 3.1 - http://wwwmayr.in.tum.de/konferenzen/Jass07/courses/1/Sadovnikov/Sadovnikov_Paper.pdf - Solving in Q(multiplication by integers), Solving in R (Tarski and Sturm methods)
 617.3 Three Dimensional Visualization of ABC Conjecture - http://www.lactamme.polytechnique.fr/images/CABC.21.20.1.M.D/display.html - visual intuition of the finite sets of coprime triples for every real epsilon > 0 for quality > 1 + epsilon.
 617.4 Fraenkel Conjecture for exact cover decomposition of Z - https://core.ac.uk/download/pdf/82382652.pdf
+
+-----------------------------------------------------------------------------------------------------------------
+618. (FEATURE) People Analytics - Experiential Intrinsic Merit - LinkedIn Profile Connections - 20 November 2018
+- related to 443
+-----------------------------------------------------------------------------------------------------------------
+1.SocialNetworkAnalysis_PeopleAnalytics.py has been changed to parse connections of a linkedin profile
+2.Number of connections of a profile is then used to compute experiential intrinsic merit based on degree of
+a vertex as:
+    E = M*e^(kMt) = log(dv(t)) * e^(klog(dv(t))*t/clogt) / clogt for evolving degree dv(t)
+3.This identity is derived from exponential relation between Fame (Degree) and Merit (Intrinsic fitness) of a
+social profile - in https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/First-to-Market-is-not-Everything-an-Analysis-of-Preferential-Attachment-with-Fitness.pdf (described earlier)
+4.Previous relation is anachronistic in the sense merit is defined in terms of fame when it has to be other way around. Function for experiential_intrinsic_merit() takes number of connections as a parameter and branches off into two clauses for least enery log normal merit if degree is 0 and degree based merit for degree > 0.
+5.Example LinkedIn Profile Connections (committed in pdf and txt) have been analyzed for previous degree based
+experiential merit and Recursive Lambda Function Growth merit. Example linkedin Connection pdf and text file have been committed to:
+	ConnectionsLinkedIn_KSrinivasan.pdf
+	ConnectionsLinkedIn_KSrinivasan.txt
+6.Definition TextGraph of connections (.txt) extracts essence of the aura surrounding a social profile.
+7.Dense subgraph (core) of this connections textgraph is a clustering coefficient measure i.e how well the neighbours of a vertex have semantic connections among themselves. 
+8.Though social profiles are prone to Sybil links for artificially bumping up popularity, previous analysis is
+based on the assumption that humans do not link to another human unless they are trusted/befriended.
+9.logs for this have been committed to:
+	SocialNetworkAnalysis_PeopleAnalytics.log.20November2018 (degree experiential merit)
+	SocialNetworkAnalysis_PeopleAnalytics.log2.20November2018 (recursive lambda function growth merit)
+10.Recursive Lambda Function Growth merit logs have been truncated because of following recursion depth error in bintrees AVL Tree:
+	RuntimeError: maximum recursion depth exceeded
+but the logs show few erratic cycles having "missiles" which are inferred from random walk paths printed in the logs. Also Names of the connections have not been filtered which misleads the WordNet. Previous error impedes full analysis based on core number. But there are some relevant cycles related to "head hunter","Ph.D","dissertation","entrepreneur","engineer","managers","information_technology" etc., giving a glimpse of the social circle's nature.
