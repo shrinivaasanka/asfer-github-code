@@ -120,13 +120,30 @@ class HRAnalytics(object):
 		self.log_normal_least_energy_intrinsic_merit = 1.0/float(math.log(self.total_work_experience) + math.log(self.total_academics)) 
 		print "Inverse Log Normal Least Energy Intrinsic Merit (low values imply high merit):",self.log_normal_least_energy_intrinsic_merit
 
-	def experiential_intrinsic_merit(self):
-		#E = M*e^(kMt)		
-		M=self.log_normal_least_energy_intrinsic_merit
-		t=self.total_work_experience
-		k=1
-		self.experiential_intrinsic_merit=math.log(M) + float(k*M*t)
-		print "Log Normal Experiential Intrinsic Merit:",self.experiential_intrinsic_merit	
+	def experiential_intrinsic_merit(self,degree=0):
+		#E = M*e^(kMt) = log(dv(t)) * e^(klog(dv(t))*t/clogt) / clogt for evolving degree dv(t)
+		#after time t
+		if degree==0:
+			M=self.log_normal_least_energy_intrinsic_merit
+			t=self.total_work_experience
+			k=1
+			self.experiential_intrinsic_merit=math.log(M) + float(k*M*t)
+			print "Log Normal Experiential Intrinsic Merit:",self.experiential_intrinsic_merit	
+		else:
+			logdegree=math.log(degree)
+			tdelta=float(self.total_work_experience + self.total_academics)/1000000.0
+			numer=logdegree*tdelta
+			print "tdelta:",tdelta
+			denom=math.log(tdelta)
+			self.experiential_intrinsic_merit=logdegree * math.exp(numer/denom) / denom
+			print "Experiential Intrinsic Merit:",self.experiential_intrinsic_merit	
+
+	def parse_connections(self, connections):
+		connections_tok=connections.split()
+		number_of_connections=connections_tok[connections_tok.index("Connections") - 2]
+		print "number of connections:", number_of_connections
+		print "connections:", connections_tok
+		return int(number_of_connections)
 
 if __name__=="__main__":
 	hranal=HRAnalytics()
@@ -134,5 +151,11 @@ if __name__=="__main__":
 	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.least_energy_intrinsic_merit()
 	#hranal.experiential_intrinsic_merit()
-	profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
+	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
+	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	#hranal.rlfg_intrinsic_merit(profile_text)
+	number_of_connections=hranal.parse_connections(profile_text)
+	hranal.least_energy_intrinsic_merit()
+	hranal.experiential_intrinsic_merit(number_of_connections)
+	profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	hranal.rlfg_intrinsic_merit(profile_text)

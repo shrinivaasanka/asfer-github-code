@@ -1,0 +1,78 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Pro\\xef\\xac\\x81le'",), <traceback object at 0x30401284>)
+(<type 'exceptions.IndexError'>, IndexError('list index out of range',), <traceback object at 0x304012ac>)
+(<type 'exceptions.IndexError'>, IndexError('list index out of range',), <traceback object at 0x30401284>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'https://sites.google.com/site/kuja27/'",), <traceback object at 0x304012ac>)
+Profile
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Experience'",), <traceback object at 0x30401284>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Architect'",), <traceback object at 0x304012ac>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Home'",), <traceback object at 0x30401284>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Jobs'",), <traceback object at 0x304012ac>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Network'",), <traceback object at 0x30401284>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Pro\\xef\\xac\\x81le'",), <traceback object at 0x304012ac>)
+startdate: 2015-04-01 00:00:00
+enddate: 2015-09-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Consultant'",), <traceback object at 0x304012ac>)
+startdate: 2014-06-01 00:00:00
+enddate: 2014-07-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Consultant'",), <traceback object at 0x304012ac>)
+startdate: 2014-02-01 00:00:00
+enddate: 2014-02-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Consultant'",), <traceback object at 0x30401324>)
+startdate: 2013-10-01 00:00:00
+enddate: 2013-12-01 00:00:00
+startdate: 2011-07-01 00:00:00
+enddate: 2013-01-01 00:00:00
+startdate: 2010-08-01 00:00:00
+enddate: 2011-08-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Consultant'",), <traceback object at 0x30401374>)
+startdate: 2011-01-01 00:00:00
+enddate: 2011-03-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'M.Sc'",), <traceback object at 0x30401374>)
+startdate: 2008-08-01 00:00:00
+enddate: 2010-07-01 00:00:00
+startdate: 2006-03-01 00:00:00
+enddate: 2008-07-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Verizon'",), <traceback object at 0x304013ec>)
+startdate: 2005-07-01 00:00:00
+enddate: 2005-08-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Member'",), <traceback object at 0x304013ec>)
+startdate: 2000-02-01 00:00:00
+enddate: 2005-07-01 00:00:00
+startdate: 1999-07-01 00:00:00
+enddate: 2000-01-01 00:00:00
+Education
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Education'",), <traceback object at 0x30401464>)
+startdate: 2010-01-01 00:00:00
+enddate: 2011-01-01 00:00:00
+startdate: 2008-01-01 00:00:00
+enddate: 2010-01-01 00:00:00
+startdate: 1995-01-01 00:00:00
+enddate: 1999-01-01 00:00:00
+startdate: 1988-01-01 00:00:00
+enddate: 1992-01-01 00:00:00
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Skills'",), <traceback object at 0x3040148c>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Recommendations'",), <traceback object at 0x304014dc>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Accomplishments'",), <traceback object at 0x304014dc>)
+(<type 'exceptions.ValueError'>, ValueError("invalid literal for int() with base 10: 'Contact'",), <traceback object at 0x30401464>)
+Work Experience: ['Apr 2015 - Sep 2015', 'Jun 2014 - Jul 2014', 'Feb 2014 - Feb 2014', 'Oct 2013 - Dec 2013', 'Jul 2011 - Jan 2013', 'Aug 2010 - Aug 2011', 'Jan 2011 - Mar 2011', 'Aug 2008 - Jul 2010', 'Mar 2006 - Jul 2008', 'Jul 2005 - Aug 2005', 'Feb 2000 - Jul 2005', 'Jul 1999 - Jan 2000']
+Academics: ['2010 - 2011', '2008 - 2010', '1995 - 1999', '1988 - 1992']
+number of connections: 366
+connections: ['Working', 'on', 'Private', 'Open', 'Source', 'Architecture,', 'Research', 'And', 'Development', 'initiative', 'Srinivasan', 'Kannan', 'Chennai', 'Mathematical', 'Institute', 'Chennai,', 'Tamil', 'Nadu,', 'India', '\xc2\xb7\xc2\xa0366', 'EDIT', 'PROFILE', 'Srinivasan,', 'update', 'your', 'pro\xef\xac\x81le', 'to', 'get', 'noticed', 'Get', 'news', 'and', 'insights', 'in', 'your', 'feed!', 'Get', 'updates', 'from', 'industry', 'experts.', 'Start', 'by', 'following', '5', 'people', 'you', 'like.', 'FOLLOW', 'PEOPLE', 'Pro\xef\xac\x81le', '9', 'Your', 'pro\xef\xac\x81le', 'views', '366', 'Your', 'Connections', 'https://sites.google.com/site/kuja27/', 'Experience', 'Free', 'Open', 'Course', 'Material', 'GRAFIT', 'Open', 'Learning,', 'Chennai', 'and', 'Kumbakonam', 'May', '2010', '-', 'Present', 'See', 'description', 'Founder,', 'Open', 'Source', 'Architect', 'and', 'Developer', 'Krishna', 'iResearch', '(parallel,self-started,non-funded,not-for-pro\xef\xac\x81t,opensource', 'research', 'initiative),', 'Chennai', 'and', 'Kumbakonam', 'May', '2003', '-', 'Present', 'Open', 'in', 'app', 'See', 'description', 'Architect', 'Home', 'Jobs', 'Network', 'Pro\xef\xac\x81le', 'Search', 'for', 'people', 'CusDelight-CloudEnablers-Corestack,', 'Chennai', 'Apr', '2015', '-', 'Sep', '2015', 'Consultant', '-', 'Fulltime', 'Clockwork', 'Interviews', '-', 'PiQube', 'Jun', '2014', '-', 'Jul', '2014', 'Consultant', 'Clockwork', 'Interviews', '-', 'PiQube,', 'In-Of\xef\xac\x81ce-', 'Chennai', 'Feb', '2014', '-', 'Feb', '2014', 'Consultant', '-', 'parttime', '-', 'nonpro\xef\xac\x81t', 'Clockwork', 'Interviews', '-', 'PiQube,', 'Kumbakonam', 'Oct', '2013', '-', 'Dec', '2013', 'Senior', 'Lead', 'Software', 'Architect', 'Global', 'Analytics', 'Jul', '2011', '-', 'Jan', '2013', 'Junior', 'research', 'fellow', 'Chennai', 'Mathematical', 'Institute', 'Aug', '2010', '-', 'Aug', '2011', 'Consultant', 'Global', 'Analytics', 'Jan', '2011', '-', 'Mar', '2011', 'M.Sc', 'Chennai', 'Mathematical', 'Institute', 'Aug', '2008', '-', 'Jul', '2010', 'See', 'description', 'senior', 'engg', 'specialist', 'webMethods', '(now', 'Software', 'AG)', 'Mar', '2006', '-', 'Jul', '2008', 'System', 'analyst', 'Verizon', 'Jul', '2005', '-', 'Aug', '2005', 'Member-Tech', 'Staff', 'Sun', 'Microsystems', '(now', 'Oracle)', 'Feb', '2000', '-', 'Jul', '2005', 'associate', 'software', 'enggr', 'BaaN', 'Infosystems', '(Hyderabad)', 'Jul', '1999', '-', 'Jan', '2000', 'Education', 'Chennai', 'Mathematical', 'Institute', 'Open', 'in', 'app', '(Ph.D),', 'Theoretical', 'Computer', 'Science', '2010', '-', '2011', 'See', 'description', 'Chennai', 'Mathematical', 'Institute', 'M.Sc,', 'Theoretical', 'Computer', 'Science', '2008', '-', '2010', 'See', 'description', 'PSG', 'College', 'of', 'Technology', 'Bachelor', 'of', 'Engineering', '(BE),', 'Computer', 'Science', 'and', 'Engineering', '1995', '-', '1999', 'Dakshina', 'Bharat', 'Hindi', 'Prachar', 'Sabha', 'B.A,', 'Hindi', '1988', '-', '1992', 'Skills', 'Recommendations', 'Accomplishments', 'Contact', 'Open', 'in', 'app']
+Total work experience timedeltas: 428716800.0
+Total academics: 347155200.0
+Inverse Log Normal Least Energy Intrinsic Merit (low values imply high merit): 0.025289827992
+tdelta: 775.872
+Experiential Intrinsic Merit: 7.18500794112e+298
