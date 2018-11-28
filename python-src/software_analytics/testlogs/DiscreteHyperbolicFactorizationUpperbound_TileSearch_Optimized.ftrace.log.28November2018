@@ -1,0 +1,921 @@
+2018-11-28 11:14:09 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1, but we couldn't find any external IP address!
+2018-11-28 11:14:09 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-11-28 11:14:11 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-11-28 11:14:13 INFO  SparkContext:54 - Running Spark version 2.3.1
+2018-11-28 11:14:13 INFO  SparkContext:54 - Submitted application: Spark_TileSearch_Optimized
+2018-11-28 11:14:13 INFO  SecurityManager:54 - Changing view acls to: root
+2018-11-28 11:14:13 INFO  SecurityManager:54 - Changing modify acls to: root
+2018-11-28 11:14:13 INFO  SecurityManager:54 - Changing view acls groups to: 
+2018-11-28 11:14:13 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2018-11-28 11:14:13 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+2018-11-28 11:14:14 WARN  MacAddressUtil:136 - Failed to find a usable hardware address from the network interfaces; using random bytes: bf:fd:96:33:d2:7a:de:8a
+2018-11-28 11:14:14 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 55660.
+2018-11-28 11:14:14 INFO  SparkEnv:54 - Registering MapOutputTracker
+2018-11-28 11:14:14 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2018-11-28 11:14:14 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2018-11-28 11:14:14 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2018-11-28 11:14:14 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-b1a72e6f-688c-44c2-ad91-05d89dc61190
+2018-11-28 11:14:14 INFO  MemoryStore:54 - MemoryStore started with capacity 413.9 MB
+2018-11-28 11:14:14 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+2018-11-28 11:14:14 INFO  log:192 - Logging initialized @7413ms
+2018-11-28 11:14:14 INFO  Server:346 - jetty-9.3.z-SNAPSHOT
+2018-11-28 11:14:14 INFO  Server:414 - Started @7677ms
+2018-11-28 11:14:15 INFO  AbstractConnector:278 - Started ServerConnector@10d7fe7{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-11-28 11:14:15 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1835e15{/jobs,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@d168b0{/jobs/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1a8b331{/jobs/job,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@134d840{/jobs/job/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@dbf7e{/stages,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@8abbb5{/stages/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@4b0a1f{/stages/stage,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1efda64{/stages/stage/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1ac2df4{/stages/pool,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@134885b{/stages/pool/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1838510{/storage,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@32583e{/storage/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@3b1c41{/storage/rdd,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@13e290d{/storage/rdd/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@549a3f{/environment,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@65c4a3{/environment/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@fe14ba{/executors,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@9036e9{/executors/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@99c7a6{/executors/threadDump,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1d5c4a{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1edc37{/static,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1be22e3{/,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1308f{/api,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@163e32e{/jobs/job/kill,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@65bd58{/stages/stage/kill,null,AVAILABLE,@Spark}
+2018-11-28 11:14:15 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://HCL:4040
+2018-11-28 11:14:16 INFO  SparkContext:54 - Added file file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py at file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1543383856151
+2018-11-28 11:14:16 INFO  Utils:54 - Copying /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py to /tmp/spark-b2c8738b-4dc4-4130-b1ab-b6c726e1b4db/userFiles-d988e804-72e5-40f4-b3c0-4d40ff529dae/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-11-28 11:14:16 INFO  Executor:54 - Starting executor ID driver on host localhost
+2018-11-28 11:14:16 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 41348.
+2018-11-28 11:14:16 INFO  NettyBlockTransferService:54 - Server created on HCL:41348
+2018-11-28 11:14:16 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2018-11-28 11:14:16 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, HCL, 41348, None)
+2018-11-28 11:14:16 INFO  BlockManagerMasterEndpoint:54 - Registering block manager HCL:41348 with 413.9 MB RAM, BlockManagerId(driver, HCL, 41348, None)
+2018-11-28 11:14:16 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, HCL, 41348, None)
+2018-11-28 11:14:16 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, HCL, 41348, None)
+2018-11-28 11:14:17 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1ea66d1{/metrics/json,null,AVAILABLE,@Spark}
+=============================================================================================================
+Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of  999999  are:
+=============================================================================================================
+normal_order_n(loglogN) =  25
+####################################################################
+approximate  1 -th prime factor of  999999 : 39999
+tangent of ray shooting query angle : 0.000625030626141
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999999 : 79999
+tangent of ray shooting query angle : 0.000156253750069
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999999 : 119999
+tangent of ray shooting query angle : 6.94455324207e-05
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999999 : 159999
+tangent of ray shooting query angle : 3.90629492228e-05
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999999 : 199999
+tangent of ray shooting query angle : 2.50002250016e-05
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999999 : 239999
+tangent of ray shooting query angle : 1.73612384267e-05
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999999 : 279999
+tangent of ray shooting query angle : 1.2755180394e-05
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999999 : 319999
+tangent of ray shooting query angle : 9.76567626976e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999999 : 359999
+tangent of ray shooting query angle : 7.71608453374e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999999 : 399999
+tangent of ray shooting query angle : 6.25002500009e-06
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999999 : 439999
+tangent of ray shooting query angle : 5.16530756955e-06
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999999 : 479999
+tangent of ray shooting query angle : 4.34029152203e-06
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999999 : 519999
+tangent of ray shooting query angle : 3.69823537781e-06
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999999 : 559999
+tangent of ray shooting query angle : 3.18878370993e-06
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999999 : 599999
+tangent of ray shooting query angle : 2.77778425927e-06
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999999 : 639999
+tangent of ray shooting query angle : 2.441411438e-06
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999999 : 679999
+tangent of ray shooting query angle : 2.16263395584e-06
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999999 : 719999
+tangent of ray shooting query angle : 1.92901577504e-06
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999999 : 759999
+tangent of ray shooting query angle : 1.73130476382e-06
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999999 : 799999
+tangent of ray shooting query angle : 1.56250234375e-06
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999999 : 839999
+tangent of ray shooting query angle : 1.41723551723e-06
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999999 : 879999
+tangent of ray shooting query angle : 1.29132395755e-06
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999999 : 919999
+tangent of ray shooting query angle : 1.1814758671e-06
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999999 : 959999
+tangent of ray shooting query angle : 1.08507061994e-06
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of  999999  are:
+=============================================================================================================
+normal_order_n(loglogN) =  25
+####################################################################
+approximate  1 -th prime factor of  999999 : 40176.9999751
+approximate prime factor log ratio - pf/log(pf) : 20088.0
+tangent of ray shooting query angle : 0.000619504629515
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999999 : 92676.2754995
+approximate prime factor log ratio - pf/log(pf) : 46337.6377551
+tangent of ray shooting query angle : 0.000116429336321
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999999 : 152472.475476
+approximate prime factor log ratio - pf/log(pf) : 76235.7377415
+tangent of ray shooting query angle : 4.3014676689e-05
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999999 : 217243.283111
+approximate prime factor log ratio - pf/log(pf) : 108621.141558
+tangent of ray shooting query angle : 2.11888238587e-05
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999999 : 285208.770228
+approximate prime factor log ratio - pf/log(pf) : 142603.885116
+tangent of ray shooting query angle : 1.22934509751e-05
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999999 : 354908.150983
+approximate prime factor log ratio - pf/log(pf) : 177453.575493
+tangent of ray shooting query angle : 7.93903320474e-06
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999999 : 425130.753852
+approximate prime factor log ratio - pf/log(pf) : 212564.876927
+tangent of ray shooting query angle : 5.53292164546e-06
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999999 : 494881.947607
+approximate prime factor log ratio - pf/log(pf) : 247440.473805
+tangent of ray shooting query angle : 4.08315947179e-06
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999999 : 563358.594081
+approximate prime factor log ratio - pf/log(pf) : 281678.797041
+tangent of ray shooting query angle : 3.15086443295e-06
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999999 : 629927.219517
+approximate prime factor log ratio - pf/log(pf) : 314963.109759
+tangent of ray shooting query angle : 2.52010604426e-06
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999999 : 694103.178279
+approximate prime factor log ratio - pf/log(pf) : 347051.08914
+tangent of ray shooting query angle : 2.07563745827e-06
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999999 : 755530.62856
+approximate prime factor log ratio - pf/log(pf) : 377764.814281
+tangent of ray shooting query angle : 1.75184394248e-06
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999999 : 813963.569324
+approximate prime factor log ratio - pf/log(pf) : 406981.284662
+tangent of ray shooting query angle : 1.5093488584e-06
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999999 : 869248.236799
+approximate prime factor log ratio - pf/log(pf) : 434623.6184
+tangent of ray shooting query angle : 1.32346337971e-06
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999999 : 921307.084289
+approximate prime factor log ratio - pf/log(pf) : 460653.042145
+tangent of ray shooting query angle : 1.1781232979e-06
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999999 : 970124.467295
+approximate prime factor log ratio - pf/log(pf) : 485061.733648
+tangent of ray shooting query angle : 1.06253843772e-06
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999999 : 1015734.06283
+approximate prime factor log ratio - pf/log(pf) : 507866.531415
+tangent of ray shooting query angle : 9.69258307487e-07
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999999 : 1058207.9787
+approximate prime factor log ratio - pf/log(pf) : 529103.48935
+tangent of ray shooting query angle : 8.93012426564e-07
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999999 : 1097647.45697
+approximate prime factor log ratio - pf/log(pf) : 548823.228485
+tangent of ray shooting query angle : 8.29991824551e-07
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999999 : 1134175.04317
+approximate prime factor log ratio - pf/log(pf) : 567087.021586
+tangent of ray shooting query angle : 7.77390792265e-07
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999999 : 1167928.07547
+approximate prime factor log ratio - pf/log(pf) : 583963.537734
+tangent of ray shooting query angle : 7.33107004201e-07
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999999 : 1199053.34195
+approximate prime factor log ratio - pf/log(pf) : 599526.170974
+tangent of ray shooting query angle : 6.9554071584e-07
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999999 : 1227702.75651
+approximate prime factor log ratio - pf/log(pf) : 613850.878255
+tangent of ray shooting query angle : 6.63457493756e-07
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999999 : 1254029.91131
+approximate prime factor log ratio - pf/log(pf) : 627014.455657
+tangent of ray shooting query angle : 6.35892605424e-07
+####################################################################
+=============================================================================================================
+=============================================================================================================
+Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of  999999  are:
+=============================================================================================================
+normal_order_n(loglogN) =  25
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  1 -th prime factor of  999999 : 5
+tangent of ray shooting query angle : 39999.96
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  2 -th prime factor of  999999 : 10
+tangent of ray shooting query angle : 9999.99
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  3 -th prime factor of  999999 : 17
+tangent of ray shooting query angle : 3460.20415225
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  4 -th prime factor of  999999 : 26
+tangent of ray shooting query angle : 1479.28846154
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  5 -th prime factor of  999999 : 37
+tangent of ray shooting query angle : 730.459459459
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  6 -th prime factor of  999999 : 50
+tangent of ray shooting query angle : 399.9996
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  7 -th prime factor of  999999 : 66
+tangent of ray shooting query angle : 229.568181818
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  8 -th prime factor of  999999 : 84
+tangent of ray shooting query angle : 141.723214286
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  9 -th prime factor of  999999 : 105
+tangent of ray shooting query angle : 90.7028571429
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  10 -th prime factor of  999999 : 128
+tangent of ray shooting query angle : 61.0350952148
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  11 -th prime factor of  999999 : 154
+tangent of ray shooting query angle : 42.1655844156
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  12 -th prime factor of  999999 : 182
+tangent of ray shooting query angle : 30.1895604396
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  13 -th prime factor of  999999 : 213
+tangent of ray shooting query angle : 22.0414600278
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  14 -th prime factor of  999999 : 247
+tangent of ray shooting query angle : 16.3910078841
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  15 -th prime factor of  999999 : 283
+tangent of ray shooting query angle : 12.4860967174
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  16 -th prime factor of  999999 : 322
+tangent of ray shooting query angle : 9.6446799892
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  17 -th prime factor of  999999 : 364
+tangent of ray shooting query angle : 7.54739010989
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  18 -th prime factor of  999999 : 408
+tangent of ray shooting query angle : 6.00729887543
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  19 -th prime factor of  999999 : 455
+tangent of ray shooting query angle : 4.83032967033
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  20 -th prime factor of  999999 : 505
+tangent of ray shooting query angle : 3.92118027644
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  21 -th prime factor of  999999 : 558
+tangent of ray shooting query angle : 3.21167186958
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  22 -th prime factor of  999999 : 614
+tangent of ray shooting query angle : 2.6525453851
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  23 -th prime factor of  999999 : 672
+tangent of ray shooting query angle : 2.21442522321
+####################################################################
+approximate number of primes between two prime factors: 2
+####################################################################
+approximate  24 -th prime factor of  999999 : 733
+tangent of ray shooting query angle : 1.86119388262
+####################################################################
+=============================================================================================================
+Cramer Ray Shooting Queries - Approximate Factors of  999999  are:
+=============================================================================================================
+normal_order_n(loglogN) =  25
+####################################################################
+approximate  1 -th prime factor of  999999 : 6
+tangent of ray shooting query angle : 27777.75
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999999 : 25
+tangent of ray shooting query angle : 1599.9984
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999999 : 87
+tangent of ray shooting query angle : 132.117717004
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999999 : 234
+tangent of ray shooting query angle : 18.2628205128
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999999 : 513
+tangent of ray shooting query angle : 3.79983584693
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999999 : 970
+tangent of ray shooting query angle : 1.06281113827
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999999 : 1648
+tangent of ray shooting query angle : 0.368201158804
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999999 : 2584
+tangent of ray shooting query angle : 0.149766453958
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999999 : 3813
+tangent of ray shooting query angle : 0.0687805992296
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999999 : 5367
+tangent of ray shooting query angle : 0.0347165352141
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999999 : 7273
+tangent of ray shooting query angle : 0.0189048132062
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999999 : 9558
+tangent of ray shooting query angle : 0.0109462537963
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999999 : 12247
+tangent of ray shooting query angle : 0.0066671485242
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999999 : 15361
+tangent of ray shooting query angle : 0.00423799643839
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999999 : 18922
+tangent of ray shooting query angle : 0.00279296497447
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999999 : 22949
+tangent of ray shooting query angle : 0.00189876856779
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999999 : 27461
+tangent of ray shooting query angle : 0.00132607128059
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999999 : 32475
+tangent of ray shooting query angle : 0.000948202827899
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999999 : 38008
+tangent of ray shooting query angle : 0.000692228587753
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999999 : 44075
+tangent of ray shooting query angle : 0.000514772008858
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999999 : 50691
+tangent of ray shooting query angle : 0.000389168650253
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999999 : 57871
+tangent of ray shooting query angle : 0.000298591604013
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999999 : 65628
+tangent of ray shooting query angle : 0.00023217808609
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999999 : 73975
+tangent of ray shooting query angle : 0.000182738315843
+####################################################################
+=============================================================================================================
+Zhang Ray Shooting Queries (for large primes) - Approximate Factors of  999999  are:
+=============================================================================================================
+normal_order_n(loglogN) =  25
+####################################################################
+approximate  1 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  2 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  3 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  4 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  5 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  6 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  7 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  8 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  9 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  10 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  11 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  12 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  13 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  14 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  15 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  16 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  17 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  18 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  19 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  20 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  21 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  22 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  23 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+####################################################################
+approximate  24 -th prime factor of  999999 : 2
+tangent of ray shooting query angle : 249999.75
+####################################################################
+2018-11-28 11:14:18 INFO  SparkContext:54 - Starting job: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292
+2018-11-28 11:14:18 INFO  DAGScheduler:54 - Got job 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292) with 4 output partitions
+2018-11-28 11:14:18 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292)
+2018-11-28 11:14:18 INFO  DAGScheduler:54 - Parents of final stage: List()
+2018-11-28 11:14:18 INFO  DAGScheduler:54 - Missing parents: List()
+2018-11-28 11:14:18 INFO  DAGScheduler:54 - Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292), which has no missing parents
+2018-11-28 11:14:19 WARN  SizeEstimator:66 - Failed to check whether UseCompressedOops is set; assuming yes
+2018-11-28 11:14:19 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 8.1 KB, free 413.9 MB)
+2018-11-28 11:14:19 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.0 KB, free 413.9 MB)
+2018-11-28 11:14:19 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on HCL:41348 (size: 5.0 KB, free: 413.9 MB)
+2018-11-28 11:14:19 INFO  SparkContext:54 - Created broadcast 0 from broadcast at DAGScheduler.scala:1039
+2018-11-28 11:14:19 INFO  DAGScheduler:54 - Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+2018-11-28 11:14:19 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 4 tasks
+2018-11-28 11:14:19 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7839 bytes)
+2018-11-28 11:14:19 INFO  TaskSetManager:54 - Starting task 1.0 in stage 0.0 (TID 1, localhost, executor driver, partition 1, PROCESS_LOCAL, 7839 bytes)
+2018-11-28 11:14:19 INFO  TaskSetManager:54 - Starting task 2.0 in stage 0.0 (TID 2, localhost, executor driver, partition 2, PROCESS_LOCAL, 7839 bytes)
+2018-11-28 11:14:19 INFO  TaskSetManager:54 - Starting task 3.0 in stage 0.0 (TID 3, localhost, executor driver, partition 3, PROCESS_LOCAL, 7839 bytes)
+2018-11-28 11:14:19 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+2018-11-28 11:14:19 INFO  Executor:54 - Running task 2.0 in stage 0.0 (TID 2)
+2018-11-28 11:14:19 INFO  Executor:54 - Running task 3.0 in stage 0.0 (TID 3)
+2018-11-28 11:14:19 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2018-11-28 11:14:19 INFO  Executor:54 - Fetching file:/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py with timestamp 1543383856151
+2018-11-28 11:14:19 INFO  Utils:54 - /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been previously copied to /tmp/spark-b2c8738b-4dc4-4130-b1ab-b6c726e1b4db/userFiles-d988e804-72e5-40f4-b3c0-4d40ff529dae/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py
+2018-11-28 11:14:24 INFO  PythonRunner:54 - Times: total = 4275, boot = 1087, init = 71, finish = 3117
+2018-11-28 11:14:24 INFO  PythonRunner:54 - Times: total = 4270, boot = 1052, init = 117, finish = 3101
+2018-11-28 11:14:24 INFO  PythonRunner:54 - Times: total = 4285, boot = 1023, init = 135, finish = 3127
+2018-11-28 11:14:24 INFO  Executor:54 - Finished task 2.0 in stage 0.0 (TID 2). 1344 bytes result sent to driver
+2018-11-28 11:14:24 INFO  Executor:54 - Finished task 1.0 in stage 0.0 (TID 1). 1350 bytes result sent to driver
+2018-11-28 11:14:24 INFO  Executor:54 - Finished task 3.0 in stage 0.0 (TID 3). 1387 bytes result sent to driver
+2018-11-28 11:14:24 INFO  TaskSetManager:54 - Finished task 2.0 in stage 0.0 (TID 2) in 4934 ms on localhost (executor driver) (1/4)
+2018-11-28 11:14:24 INFO  TaskSetManager:54 - Finished task 1.0 in stage 0.0 (TID 1) in 5005 ms on localhost (executor driver) (2/4)
+2018-11-28 11:14:24 INFO  TaskSetManager:54 - Finished task 3.0 in stage 0.0 (TID 3) in 4987 ms on localhost (executor driver) (3/4)
+val1 = [] ; val2 =  []
+val1 = [[]] ; val2 =  [333333]
+val1 = [[], [333333]] ; val2 =  []
+2018-11-28 11:14:24 INFO  PythonRunner:54 - Times: total = 4587, boot = 1115, init = 51, finish = 3421
+2018-11-28 11:14:24 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1520 bytes result sent to driver
+2018-11-28 11:14:24 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 5166 ms on localhost (executor driver) (4/4)
+val1 = [[], [333333], []] ; val2 =  [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923, 90909, 111111, 142857]
+2018-11-28 11:14:24 INFO  DAGScheduler:54 - ResultStage 0 (foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292) finished in 5.963 s
+2018-11-28 11:14:24 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2018-11-28 11:14:24 INFO  DAGScheduler:54 - Job 0 finished: foreach at /media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/../DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:292, took 6.241901 s
+factors_accum.value =  [[], [333333], [], [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923, 90909, 111111, 142857]]
+factors of  999999 = [333333, 1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923, 90909, 111111, 142857]
+2018-11-28 11:14:24 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+2018-11-28 11:14:25 INFO  AbstractConnector:318 - Stopped Spark@10d7fe7{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2018-11-28 11:14:25 INFO  SparkUI:54 - Stopped Spark web UI at http://HCL:4040
+2018-11-28 11:14:25 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+2018-11-28 11:14:25 INFO  MemoryStore:54 - MemoryStore cleared
+2018-11-28 11:14:25 INFO  BlockManager:54 - BlockManager stopped
+2018-11-28 11:14:25 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+2018-11-28 11:14:25 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+2018-11-28 11:14:25 INFO  SparkContext:54 - Successfully stopped SparkContext
+2018-11-28 11:14:25 INFO  ShutdownHookManager:54 - Shutdown hook called
+2018-11-28 11:14:25 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-7a7ae392-a2bd-44ef-8e34-2aba01a1034e
+2018-11-28 11:14:25 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-b2c8738b-4dc4-4130-b1ab-b6c726e1b4db
+2018-11-28 11:14:25 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-b2c8738b-4dc4-4130-b1ab-b6c726e1b4db/pyspark-e64f6633-f58e-4d71-a337-3ac8a5b880e1
+=================================================
+Factor is =  1
+=================================================
+val1 = [] ; val2 =  1
+=================================================
+Factor is =  3
+=================================================
+val1 = [1] ; val2 =  3
+=================================================
+Factor is =  7
+=================================================
+val1 = [1, 3] ; val2 =  7
+=================================================
+Factor is =  9
+=================================================
+val1 = [1, 3, 7] ; val2 =  9
+=================================================
+Factor is =  11
+=================================================
+val1 = [1, 3, 7, 9] ; val2 =  11
+=================================================
+Factor is =  13
+=================================================
+val1 = [1, 3, 7, 9, 11] ; val2 =  13
+=================================================
+Factor is =  21
+=================================================
+val1 = [1, 3, 7, 9, 11, 13] ; val2 =  21
+=================================================
+Factor is =  27
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21] ; val2 =  27
+=================================================
+Factor is =  33
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27] ; val2 =  33
+=================================================
+Factor is =  37
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33] ; val2 =  37
+=================================================
+Factor is =  39
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37] ; val2 =  39
+=================================================
+Factor is =  63
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39] ; val2 =  63
+=================================================
+Factor is =  77
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63] ; val2 =  77
+=================================================
+Factor is =  91
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77] ; val2 =  91
+=================================================
+Factor is =  99
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91] ; val2 =  99
+=================================================
+Factor is =  111
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99] ; val2 =  111
+=================================================
+Factor is =  117
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111] ; val2 =  117
+=================================================
+Factor is =  143
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117] ; val2 =  143
+=================================================
+Factor is =  189
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143] ; val2 =  189
+=================================================
+Factor is =  231
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189] ; val2 =  231
+=================================================
+Factor is =  259
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231] ; val2 =  259
+=================================================
+Factor is =  273
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259] ; val2 =  273
+=================================================
+Factor is =  297
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273] ; val2 =  297
+=================================================
+Factor is =  333
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297] ; val2 =  333
+=================================================
+Factor is =  351
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333] ; val2 =  351
+=================================================
+Factor is =  407
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351] ; val2 =  407
+=================================================
+Factor is =  429
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407] ; val2 =  429
+=================================================
+Factor is =  481
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429] ; val2 =  481
+=================================================
+Factor is =  693
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481] ; val2 =  693
+=================================================
+Factor is =  777
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693] ; val2 =  777
+=================================================
+Factor is =  819
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777] ; val2 =  819
+=================================================
+Factor is =  999
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819] ; val2 =  999
+=================================================
+Factor is =  1001
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999] ; val2 =  1001
+=================================================
+Factor is =  1221
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001] ; val2 =  1221
+=================================================
+Factor is =  1287
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221] ; val2 =  1287
+=================================================
+Factor is =  1443
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287] ; val2 =  1443
+=================================================
+Factor is =  2079
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443] ; val2 =  2079
+=================================================
+Factor is =  2331
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079] ; val2 =  2331
+=================================================
+Factor is =  2457
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331] ; val2 =  2457
+=================================================
+Factor is =  2849
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457] ; val2 =  2849
+=================================================
+Factor is =  3003
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849] ; val2 =  3003
+=================================================
+Factor is =  3367
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003] ; val2 =  3367
+=================================================
+Factor is =  3663
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367] ; val2 =  3663
+=================================================
+Factor is =  3861
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663] ; val2 =  3861
+=================================================
+Factor is =  4329
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861] ; val2 =  4329
+=================================================
+Factor is =  5291
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329] ; val2 =  5291
+=================================================
+Factor is =  6993
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291] ; val2 =  6993
+=================================================
+Factor is =  8547
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993] ; val2 =  8547
+=================================================
+Factor is =  9009
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547] ; val2 =  9009
+=================================================
+Factor is =  10101
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009] ; val2 =  10101
+=================================================
+Factor is =  10989
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101] ; val2 =  10989
+=================================================
+Factor is =  12987
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989] ; val2 =  12987
+=================================================
+Factor is =  15873
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987] ; val2 =  15873
+=================================================
+Factor is =  25641
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873] ; val2 =  25641
+=================================================
+Factor is =  27027
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641] ; val2 =  27027
+=================================================
+Factor is =  30303
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027] ; val2 =  30303
+=================================================
+Factor is =  37037
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303] ; val2 =  37037
+=================================================
+Factor is =  47619
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037] ; val2 =  47619
+=================================================
+Factor is =  333333
+=================================================
+val1 = [] ; val2 =  333333
+=================================================
+Factor is =  76923
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619] ; val2 =  76923
+=================================================
+Factor is =  90909
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923] ; val2 =  90909
+=================================================
+Factor is =  111111
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923, 90909] ; val2 =  111111
+=================================================
+Factor is =  142857
+=================================================
+val1 = [1, 3, 7, 9, 11, 13, 21, 27, 33, 37, 39, 63, 77, 91, 99, 111, 117, 143, 189, 231, 259, 273, 297, 333, 351, 407, 429, 481, 693, 777, 819, 999, 1001, 1221, 1287, 1443, 2079, 2331, 2457, 2849, 3003, 3367, 3663, 3861, 4329, 5291, 6993, 8547, 9009, 10101, 10989, 12987, 15873, 25641, 27027, 30303, 37037, 47619, 76923, 90909, 111111] ; val2 =  142857
+

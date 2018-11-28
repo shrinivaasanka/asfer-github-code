@@ -29,6 +29,8 @@ from networkx.drawing.nx_pydot import read_dot
 from networkx.classes.function import edges
 from graphframes import *
 from pyspark.sql import SQLContext, Row
+from networkx.drawing.nx_pydot import write_dot
+import operator
 
 def reduceFunction(value1,value2):
      return value1+value2
@@ -36,6 +38,24 @@ def reduceFunction(value1,value2):
 def mapFunction(line):
      for i in line.split():
 	   return (i,1)
+
+def ftrace_callgraph_dot(ftracefile):
+        callgraph=nx.DiGraph()
+        ftracef=open(ftracefile)
+        for l in ftracef:
+                ltok=l.split(":")
+                callgraphedge=ltok[1]
+                callgraphedgetok=callgraphedge.split("<-")
+                callgraph.add_edge(callgraphedgetok[1], callgraphedgetok[0])
+        write_dot(callgraph,"CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot")
+        sorted_pagerank_nxg=sorted(nx.pagerank(callgraph).items(),key=operator.itemgetter(1), reverse=True)
+        print "Most active kernel code - PageRank of call graph:",sorted_pagerank_nxg
+        sorted_degreecentral_nxg=sorted(nx.degree_centrality(callgraph).items(),key=operator.itemgetter(1), reverse=True)
+        print "Most active kernel code - Degree centrality of call graph:",sorted_degreecentral_nxg
+	print "Simple Cycles in call graph:"
+	for cycle in nx.simple_cycles(callgraph):
+		print "Cycle:",cycle
+	print "Longest Path (callstack) in call graph:",nx.dag_longest_path(callgraph)
 
 def graph_mining(dotfiles):
 	dataset=[]
@@ -49,7 +69,8 @@ if __name__=="__main__":
 	spcon=SparkContext() 
 	sqlcon=SQLContext(spcon)
 	#input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot']
-	input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot']
+	ftrace_callgraph_dot("ftrace.DiscreteHyperbolicFactorization_TileSearch_Optimized.log")
+	input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot','CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot']
 	for dot_file in input_dot_files:
 		nxg=nx.Graph(read_dot(dot_file))
 		nxgnodes=[[]]
