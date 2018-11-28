@@ -13096,3 +13096,32 @@ based on the assumption that humans do not link to another human unless they are
 10.Recursive Lambda Function Growth merit logs have been truncated because of following recursion depth error in bintrees AVL Tree:
 	RuntimeError: maximum recursion depth exceeded
 but the logs show few erratic cycles having "missiles" which are inferred from random walk paths printed in the logs. Also Names of the connections have not been filtered which misleads the WordNet. Previous error impedes full analysis based on core number. But there are some relevant cycles related to "head hunter","Ph.D","dissertation","entrepreneur","engineer","managers","information_technology" etc., giving a glimpse of the social circle's nature.
+
+----------------------------------------------------------------------------------------------------------------
+619. (THEORY and FEATURE) Software Analytics - Cyclomatic Complexity - FTrace call graphs - 28 November 2018
+- related to 581
+----------------------------------------------------------------------------------------------------------------
+1. FTrace kernel function call graph shell script (asfer_ftrace.sh) already in USBmd and USBmd64 have been included as part of AsFer Cyclomatic Software Analytics for analyzing what happens in kernel within while executing a userspace code.
+2. Example ftrace.log for Computational Geometric Factorization has been recorded in ftrace.DiscreteHyperbolicFactorization_TileSearch_Optimized.log 
+3. DOT graph creation function for parsing ftrace call graph log has been added in CyclomaticComplexitySparkMapReducer.py
+4. FTrace call graph DOT file is written to CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot
+5. logs for Cyclomatic Analysis of kernel callgraph for previous factorization example have been committed to:
+	testlogs/CyclomaticComplexitySparkMapReducer.log.FTrace.28November2018
+	testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors
+	testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.ftrace.log.28November2018
+6. PageRank, Degree Centrality, Cycles and Longest Path of Call graph are printed.
+7. Least pageranked kernel functions are:
+	... ('unix_release\n', 0.0006824636787772093), ('nf_ct_get_tuple\n', 0.0006824636787772093), ('insert_work\n', 0.0006824636787772093), ('wake_up_worker\n', 0.0006824636787772093), ('__tcp_push_pending_frames\n', 0.0006824636787772093), ('bictcp_cong_avoid\n', 0.0006824636787772093), ('fsnotify_clear_marks_by_inode\n', 0.0006824636787772093), ('tcp_timewait_state_process\n', 0.0006824636787772093), ('ktime_get\n', 0.0006824636787772093), ('free_page_and_swap_cache\n', 0.0006824636787772093), ('update_page_reclaim_stat\n', 0.0006824636787772093), ('__cond_resched\n', 0.0006824636787772093), ('unlink_anon_vmas\n', 0.0006824636787772093), ('timer_interrupt\n', 0.0006824636787772093), ('inet_put_port\n', 0.0006824636787772093), ('update_process_times\n', 0.0006824636787772093), ('tcp_v4_send_ack\n', 0.0006824636787772093), ('ext4_get_inode_loc\n', 0.0006824636787772093), ('enable_8259A_irq\n', 0.0006824636787772093), ('__pagevec_free\n', 0.0006824636787772093), ('getnstimeofday\n', 0.0006824636787772093), ('dequeue_task\n', 0.0006824636787772093), ('__jbd2_journal_file_buffer\n', 0.0006824636787772093), ('fuse_prepare_release\n', 0.0006824636787772093), ('tcp_established_options\n', 0.0006824636787772093), ('fuse_release_common\n', 0.0006824636787772093) 
+...
+which are top level invocations closest to userspace arising out of TCP traffic in Spark Executor Driver (TCP in kernel: http://vger.kernel.org/~davem/tcp_output.html)
+8. It is worthy to note lot of ----exit() kernel functions related to VMA paging (e.g.do_exit()) which release virtual memory pages (possibly by GC) and TCP (tcp_write_xmit(), tcp_transmit_skb(), etc.,) having high degree centrality showing heavy TCP traffic.
+
+Comparing call graphs by Graph Isomorphism or Graph Non-Isomorphism deduces code similarities. This is somewhat counterintuitive surprise to Program Equivalence Problem which is undecidable implying isomorphism detection is only an approximation. Program Equivalence essentially asks if two Turing machines accept same language (equivalent).
+
+References:
+-----------
+619.1 Program Equivalence Problem is Undecidable - [Nancy Lynch] - Mapping Reduction to/from Halting Problem - https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/lecture-notes/MIT6_045JS11_lec09.pdf - two Turing machines M1 and M2 are contrived and hypothetical Turing Machine M compares the M1 and M2. Reduction: M halts on x <=> <M1,M2> are not equivalent (EQ'). M1 always rejects while M2 accepts if M accepts x else rejects. There are two possibilities:
+	(*) M1 rejects and M2 accepts (because M accepts x => M1 != M2)
+	(*) M1 rejects and M2 rejects (because M rejects x => M1 == M2)
+	(*) But LHS is undecidable Mortality problem => M1 and M2 are not equivalent is undecidable
+	(*) Complement of the previous is hence undecidable
