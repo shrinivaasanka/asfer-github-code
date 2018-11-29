@@ -12410,6 +12410,7 @@ References:
 582.1 On the Relativistic Structure of Logical Time in Distributed Systems - https://www.vs.inf.ethz.ch/publ/papers/relativistic_time.pdf - Section 5 - Minkowski Spacetime of (n-1) space and 1 time dimensions and Light Cone Causality - Time is a partial order and not linear - Causal ordering between two spacetime points U and V
 582.2 Atomic Clocks, Satellite GPS and Special/General Relativity - http://www.astronomy.ohio-state.edu/~pogge/Ast162/Unit5/gps.html
 582.3 Feynman's Lectures on Physics - [Richard Feynman] - Volume 1 - Chapter 15 - Lorentz Transformation and Special Relativity
+582.4 CAP Theorem,Spanner Database,TrueTime clock - [Breuer] - https://storage.googleapis.com/pub-tools-public-publication-data/pdf/45855.pdf - Spanner achieves almost all three (Consistency, Availability, Partition Tolerance) - "...The short answer is “no” technically, but “yes” in effect and its users can and do assume CA.  The purist answer is “no” because partitions can happen and in fact have happened at Google, and during (some) partitions, Spanner chooses C and forfeits A. It is technically a CP system. We explore the impact of partitions below..."
 
 -----------------------------------------------------------------------------------------------------------
 583. (FEATURE) *) Sentiment Analyzer - Empath word embeddings - multipolar sentiment analysis
