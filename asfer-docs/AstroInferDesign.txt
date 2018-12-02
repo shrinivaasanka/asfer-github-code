@@ -13132,3 +13132,31 @@ References:
 	(*) M1 rejects and M2 rejects (because M rejects x => M1 == M2)
 	(*) But LHS is undecidable Mortality problem => M1 and M2 are not equivalent is undecidable
 	(*) Complement of the previous is hence undecidable
+
+----------------------------------------------------------------------------------------------------------------
+620. (THEORY) Space Filling, Separate Chaining Hash Tables, Theoretical EVMs, Timeout, Balls-and-Bins, Linear
+ Programming, Program Analysis, Cellular Automata - 30 November 2018, 1 December 2018, 2 December 2018 - related to 135, 615
+----------------------------------------------------------------------------------------------------------------
+Space Filling has been defined in terms of Linear Program in https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf and its cellular automaton algorithm version has been described earlier. This linear program with constraint that every variable is non-zero:
+		x1 + x2 + ... + xn = N, for all xi > 0
+is isomorphic to an LSH set partition, Integer Partition or Separate Chaining hash table partition of n parts of a set of N items. In most scenarios this is a restricted partition. Separate Chaining and Balls-Bins problems are equivalent if buckets are filled at random. Following are some of the probability estimates for Balls-and-Bins problem:
+620.1 Average number of balls in a bin = n/b (n balls and b bins)
+620.2 Number of balls to toss till a bin contains a ball:
+	probability of ball/item landing in a bin/bucket q=1/b, p=1-q
+	Number of tosses till success is Bernoulli trial geometric distribution
+	For success after kth ball toss, bernoulli probability: p^(k-1)q
+	Since k is a random variable, E(k) = Sum over k*p^(k-1)q = b
+620.3 Number of balls tossed till every bin has a ball:
+	Total number of bins = b
+	Number of balls n is partitioned as n1 + n2 + n3 + ... + nk = N for each stage of tossing.
+	After ith stage, number of bins having atleast one ball = i-1
+	Number of remaining buckets = b-i+1
+	Probability of a toss landing in remaining buckets in ith stage = (b-i+1)/b
+	Each ni is a random variable of probability = b/(b-i+1)
+	Sum of E(ni) < O(blnb) before every bin has a ball.
+Balls and Bins have histogram representation and previous bounds apply to histogram patterns too. In the context of theoretical EVMs if every voter votes perfectly at random with no prejudice to a candidate, number of
+voters required  for every candidate to have atleast 1 vote = O(blnb) for b candidates. Course material in (https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt) describe a separate chaining hashtable timeout based OS scheduler pattern and similar bounds apply - Number of processes required for atleast one process per timeout value = O(blnb). Previous linear program version of separate chaining if solved by Balls-and-Bins has similar bounds - O(n*ln(n)) for solving LP of n variables.
+
+References:
+-----------
+620.4 Introduction to Algorithms - [Cormen-Leiserson-Rivest-Stein] - Coupon Collector Problem/Balls and Bins Problem - Page 134 (5.4.2), Page 1201 (C.4) 
