@@ -337,10 +337,10 @@ class RecursiveLambdaFunctionGrowth(object):
 		else:
 			return rw_words_list
 
-	def grow_lambda_function3(self,text):
+	def grow_lambda_function3(self,text,level=3):
 		stpairs=[]
 		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
-		definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+		definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text,level)
 		definitiongraph=definitiongraph_merit[0]
 		sentiment=SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(definitiongraph)
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
@@ -404,7 +404,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"]=self.graph_tensor_neuron_network_intrinsic_merit
 		intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"]=maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
 		intrinsic_merit_dict["korner_entropy"]=self.entropy
-		intrinsic_merit_dict["density"]=self.density
+		intrinsic_merit_dict["density"]=density
 		intrinsic_merit_dict["bose_einstein_intrinsic_fitness"]=bose_einstein_intrinsic_fitness
 		intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
 		intrinsic_merit_dict["empath_sentiment"]=sentiment

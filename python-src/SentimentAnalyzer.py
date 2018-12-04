@@ -91,7 +91,10 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
 	      clique_potential_product_pos *= float(clique_potential_pos)
 	      clique_potential_product_neg *= float(clique_potential_neg)
 	      clique_potential_product_obj *= float(clique_potential_obj)
-	return clique_potential_product_pos/len(clique), clique_potential_product_neg/len(clique), clique_potential_product_obj/len(clique)
+	lenclique=len(clique)
+	if lenclique == 0:
+		lenclique = 1
+	return clique_potential_product_pos/lenclique, clique_potential_product_neg/lenclique, clique_potential_product_obj/lenclique
 
 
 def SentimentAnalysis_SentiWordNet(text):

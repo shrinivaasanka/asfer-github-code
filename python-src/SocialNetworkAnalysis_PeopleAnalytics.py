@@ -22,6 +22,7 @@ from datetime import datetime
 import sys
 import math
 
+
 class HRAnalytics(object):
 	def __init__(self):
 		self.profile_text=[]
@@ -112,7 +113,7 @@ class HRAnalytics(object):
 			
 	def rlfg_intrinsic_merit(self, profile_contents):
 		rlfg=RecursiveLambdaFunctionGrowth()
-		rlfg.grow_lambda_function3(profile_contents)
+		rlfg.grow_lambda_function3(profile_contents,2)
 
 	def least_energy_intrinsic_merit(self):
 		print "Total work experience timedeltas:", self.total_work_experience

@@ -40,9 +40,11 @@ import operator
 from nltk.corpus import sentiwordnet as swn
 from nltk.book import *
 from nltk.corpus import stopwords
+from PyDictionary import PyDictionary
 
 definitiongraphedges=defaultdict(list)
 definitiongraphedgelabels=defaultdict(list)
+dictionary=PyDictionary()
 
 reload(sys)
 sys.setdefaultencoding("utf8")
@@ -128,7 +130,15 @@ def get_jaccard_coefficient(refanswer, candidanswer):
 def shingles(phrase):
 	return bigrams(nltk.word_tokenize(phrase))
 
-def RecursiveGlossOverlapGraph(text):
+def nondictionaryword(w):
+	mean=dictionary.meaning(w)
+	#print mean
+	if mean is not None and len(mean) > 0:
+		return False
+	else:
+		return True
+
+def RecursiveGlossOverlapGraph(text,level=3):
 	definitiongraphedges=defaultdict(list)
 	definitiongraphedgelabels=defaultdict(list)
 
@@ -142,7 +152,7 @@ def RecursiveGlossOverlapGraph(text):
 	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
-	freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts]
+	freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts and not nondictionaryword(w)]
 
 	current_level = 1
 	nodewithmaxparents = ''
@@ -164,7 +174,7 @@ def RecursiveGlossOverlapGraph(text):
 
 	#recurse down to required depth and update intrinsic merit score
 	#relatedness is either sum(overlaps) or sum((overlapping_parents)*(overlaps)^2) also called convergence factor
-	while current_level < 3:
+	while current_level < level:
 		#crucial - gather nodes which converge/overlap (have more than 1 parent)
 		if current_level > 1:
 			print current_level
