@@ -13160,3 +13160,12 @@ voters required  for every candidate to have atleast 1 vote = O(blnb) for b cand
 References:
 -----------
 620.4 Introduction to Algorithms - [Cormen-Leiserson-Rivest-Stein] - Coupon Collector Problem/Balls and Bins Problem - Page 134 (5.4.2), Page 1201 (C.4) 
+
+---------------------------------------------------------------------------------------------------------------
+621. (FEATURE) Social Network Analysis - People Analytics - Dictionary filter for names - 4 December 2018
+---------------------------------------------------------------------------------------------------------------
+1.RecursiveGlossOverlap_Classifier.py has been changed to define a new function nondictionaryword() for filtering nondictionary words. This is necessary for parsing text of Social Profiles which contain names in SocialNetworkAnalysis_PeopleAnalytics.py. Finding names in text is an open AI problem which comes under the purview of Named Entity Recognition (NER) which often requires CRF or Neural Network Training models.
+2.As an alternative to statistical learning, if a word in text is not in a language Dictionary it is assumed to have exited any semantic network (WordNet for English etc.,) which could be names of people, places etc., But there are some exceptions to this and countably few names are in language dictionaries and encyclopedia.
+3.Function nondictionaryword() looksup a word in PyDictionary which is based on WordNet, Google Translation, Thesaurus.com and returns true or false based on language dictionary. If for a word lookup null meaning is returned, it is outside Semantic Network and nondictionaryword() returns true.
+4.Depth of the Recursive Gloss Overlap recursion has been parametrized in RecursiveGlossOverlap_Classifier.py and RecursiveLambdaFunctionGrowth.py and invoked in SocialNetworkAnalysis_PeopleAnalytics.py for depth 2.
+5.WordNet and ConceptNet consist of network of concepts than textual words. PyDictionary has additional support for other datasources - Google Translation and Thesaurus - specific to language words.
