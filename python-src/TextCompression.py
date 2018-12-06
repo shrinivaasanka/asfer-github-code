@@ -1,5 +1,5 @@
-#------------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,18 +10,13 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-#---------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#--------------------------------------------------------------------------------------------------------
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
-#---------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
+import WordSubstringProbabilities
 
 vowels = ['A','E','I','O','U','a','e','i','o','u']
 
@@ -75,6 +70,10 @@ def HiddenMarkovModel_MLE(comp):
 
 	#Prior probabilites for "at", "et", "it", "ot", "ut" suffixes
 	Probabilities_suffixes={"at":0.3, "et":0.2, "it":0.1, "ot":0.2, "ut":0.2, "as":0.1, "es":0.2, "is":0.4, "os":0.2, "us":0.1}
+	prefixsuffixprob=WordSubstringProbabilities.wordprefixsuffixprobdist()
+	#Probabilities_prefixes=prefixsuffixprob[0]
+	#Probabilities_suffixes=prefixsuffixprob[1]
+	#print "prefixsuffixprob=",prefixsuffixprob
 
 	maxk1=""
 	maxv1=-1.0
@@ -85,7 +84,7 @@ def HiddenMarkovModel_MLE(comp):
 		if maxv1 < v1:
 			maxv1 = v1
 			maxk1 = k1	
-			maxvowel = maxk1[len(maxk1)-1]
+			#maxvowel = maxk1[len(maxk1)-1]
 
 	for k2,v2 in Probabilities_suffixes.items():
 		if maxv2 < v2:
@@ -100,7 +99,8 @@ def HiddenMarkovModel_MLE(comp):
 	#and has to be read from disk storage
 	for k3,v3 in Probabilities_prefixes.items():
 		for k4,v4 in Probabilities_suffixes.items():
-			if k3[len(k3)-1] == k4[0]:
+			#print "k3=",k3,"; k4=",k4
+			if len(k3) > 0 and len(k4) > 0 and (k3[len(k3)-1] == k4[0]):
 				likelydict[k3[:-1]+k3[len(k3)-1]+k4[1:]] = v3 * v4 
 
 	for k5, v5 in Probabilities_suffixes.items():
