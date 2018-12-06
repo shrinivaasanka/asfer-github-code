@@ -13172,3 +13172,13 @@ References:
 3.Function nondictionaryword() looksup a word in PyDictionary which is based on WordNet, Google Translation, Thesaurus.com and returns true or false based on language dictionary. If for a word lookup null meaning is returned, it is outside Semantic Network and nondictionaryword() returns true.
 4.Depth of the Recursive Gloss Overlap recursion has been parametrized in RecursiveGlossOverlap_Classifier.py and RecursiveLambdaFunctionGrowth.py and invoked in SocialNetworkAnalysis_PeopleAnalytics.py for depth 2.
 5.WordNet and ConceptNet consist of network of concepts than textual words. PyDictionary has additional support for other datasources - Google Translation and Thesaurus - specific to language words.
+
+---------------------------------------------------------------------------------------------------------------
+622. (THEORY and FEATURE) Text (De)Compression by HMM on Vowelless texts - Prefix and Suffix Probabilities from English Dictionary - 6 December 2018
+---------------------------------------------------------------------------------------------------------------
+1.Python implementation for Decompressing vowelless compressed text TextCompression.py has been updated to invoke Prefixes and Suffixes probability priors computed from English Dictionary instead of hardcoded priors.
+2.New source file WordSubstringProbabilities.py for computing word prefixes and suffixes probabilities by FreqDist has been committed which parses English Wordlist from Dictionary.txt into two probability distribution dictionaries for prefixes and suffixes.
+3.Function wordprefixsuffixprobdist() in WordSubstringProbabilities.py called in TextCompression.py has been  nominal because of computationally intensive Maximum Likelyhood Estimator in Hidden Markov Model (likelydict) and hardcoded priors are used.
+4.Logs for this commit have been committed to WordSubstringProbabilities.log.6December2018 and TextCompression.log.6December2018.gz
+5.compressedtext.txt and decompressedtext.txt have been updated
+6.MLE likelydict is O(prefixes*suffixes) = O(number_of_words^2*length_of_longest_word^2) is costly one time disk read and might require some memcache-ing during initialization.
