@@ -13205,3 +13205,13 @@ Intuition for Shell Turing Machines defined in https://5d99cf42-a-62cb3a1a-s-sit
 Turing Machines Td1 and Td2 find the lexicographically longest tuple (word) in languages L(Td1) and L(Td2). Tuples in L(Td1) and L(Td2) are of the form [x1,x2,x3,...,xd1] and [x1,x2,x3,...,xd2] respectively. Though both Td1 and Td2 are computationally similar, words in L(Td1) and L(Td2) belong to two different vector spaces of dimensions d1 and d2 therefore returning different results of lengths d1 and d2. This implies Turing degrees of Td1 and Td2 are different and the two machines solve varied difficulties.
 
 In this sense, Shell Turing Machines generalize the notion of word embeddings of natural languages (e.g Word2Vec) in a vector space to any formal language - Regular, Context-Free, Context-Sensitive or Natural, Recursive, Recursively Enumerable - and formal languages become algebraic sets (similarity to VP and VNP is intriguing). MRDP Theorem implies Goedel's First Incompleteness Theorem. MRDP Theorem implies there are recursively enumerable sets having Diophantine representation but not recursive (there are no halting accept/reject Turing machines and therefore H10 is undecidable for set of integers). For Shell Turing Machines, MRDP theorem applies too but there is an additional fine structure (Dimension hieararchy partial order) introduced by vector space dimensions similar to Turing Degrees. Another relevant question arises: How Shell Turing Machines map to Diophantine representations i.e What is the relation between (number of unknowns, degree) of a diophantine equation of an RE set to the vector space dimension of Shell Turing Machine accepting it.
+
+-------------------------------------------------------------------------------------------------------------
+625. (THEORY) Recursive Lambda Function Growth - TextGraph Machine Translation - 10 December 2018 - related
+to 178
+-------------------------------------------------------------------------------------------------------------
+1. RecursiveLambdaFunctionGrowth python implementation has a new function to do machine translation of Text
+Graph english word vertices to another natural language. It uses PyDictionary Google Translate REST API service internally.
+2. An example Text Graph from Recursive Lambda Function Growth has been translated from English to Kannada (an Indian language).
+3. This is just a primitive implementation without sentences creation which can be done through usual graph traversal or random walks. 
+4. Logs have been committed to testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.10December2018 
