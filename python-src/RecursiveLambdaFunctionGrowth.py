@@ -31,6 +31,7 @@ from ConceptNet5Client import ConceptNet5Client
 from WordNetPath import path_between
 import SentimentAnalyzer
 from networkx.drawing.nx_pydot import write_dot
+from PyDictionary import PyDictionary
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -51,6 +52,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		#self.Similarity="ConceptNet"
 		self.Similarity="WordNet"
 		self.ClosedPaths=True
+		self.dictionary=PyDictionary()
 
 	def get_next_tree_traversal_id(self,x,y):
 		if y-x == 1 or x-y == 1:
@@ -388,6 +390,9 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict={}
 		print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:",self.graph_tensor_neuron_network_intrinsic_merit
 
+		print "grow_lambda_function3(): Machine Translation Example - English to Kannada:"
+		self.machine_translation(definitiongraph, "kn")
+
 		self.korner_entropy(definitiongraph)
 		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
 
@@ -414,6 +419,18 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		print "intrinsic_merit_dict:",intrinsic_merit_dict
 		return intrinsic_merit_dict 
+
+	def machine_translation(self, definitiongraph, languagecode):
+		nodes=definitiongraph.nodes()
+		edges=definitiongraph.edges()
+		translationgraph=nx.DiGraph()
+		for k, v in edges:
+			ktrans=self.dictionary.translate(k,languagecode)
+			vtrans=self.dictionary.translate(v,languagecode)
+			print "k=",k,",v=",v,",ktrans=",ktrans,",vtrans=",vtrans
+			translationgraph.add_edge(ktrans, vtrans)
+			translationgraph.add_edge(vtrans, ktrans)
+		print "TextGraph Translated to ",languagecode,":",translationgraph		
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):
