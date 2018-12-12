@@ -1093,6 +1093,10 @@ PRAM algorithms are in NC.
 
 	34.93) Improved Sorting Networks - [R.L. (Scot) Drysdale, Frank H. Young] - https://search.proquest.com/openview/3d400dff715e308df20e8812113844d7/1?pq-origsite=gscholar&cbl=666313 - SIAM Journal of Computing Volume 4, Number 3, 1975
 
+	34.94) Definition of Sorting Networks - Runtime of Sorting Networks is its depth and there exists an O(logN) depth Sorting Network - https://courses.engr.illinois.edu/cs573/fa2012/lec/lec/19_sortnet.pdf - implies sorting networks is in NC.
+
+	34.95) Ajtai-Komlos-Szemeredi (AKS) Sorting Network - Proof of existence of O(logN) depth Sorting Network - https://www.cl.cam.ac.uk/teaching/1415/AdvAlgo/lec2_ann.pdf - Sorting Networks are graphs consisting of input and comparator wires. Input wires are connected by comparator at specific points. Inputs traversing this graph while finding a comparator are swapped if top wire has greater value than bottom wire. This process propagates till the output is reached. Output gates contain sorted integers. Logdepth sorting networks are constructed by Bipartite Expander Graphs - approximate halvers - which split the inputs into two sets of smallest and largest in two halves of the wires (bitonic). This implies computational geometric sorting networks of O(logN) time for sorting the hyperbolic tile segments and finding the factors by binary search but constant in O(logN) is notoriously huge.
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
