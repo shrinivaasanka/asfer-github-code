@@ -13230,6 +13230,20 @@ Set of Recursively Enumerable Languages can be written as disjoint union/exact c
 	RE = RE(d1) U RE(d2) U RE(d3) ... U RE(dn)
 Since each dimension corresponds to a Turing Degree (measure of unsolvability), Partial Order Semi Lattice of all Shell Turing Machines has a Lowest Upper Bound dimension - There exists a maximal dimension Turing Machine dm accepting some RE(dm) language. Shell Turing Machines are most befitting in formalizing Computational Physics problems e.g Quantum and Relativistic Physics, String Theory/M-Theory, Branes, Multiverses.
 
+An adaptation of Halting Problem to Shell Turing Machines
+----------------------------------------------------------
+Undecidability of Halting Problem is proved by following gadget (oversimplified):
+Turing Machine M' accepts an encoding of another Turing Machine M and an input x - M'(M,x). 
+		M' rejects and halts if M accepts and halts on x
+		M' accepts and halts if M rejects and halts on x
+Turing Machine M'' accepts if M' rejects and rejects if M' accepts which detects M has halted either way - M''(M'(M,x))
+
+Contradiction is established by changing the Turing machine encoding to M' from M as M'(M',x):
+		M' rejects and halts if M' accepts and halts on x
+		M' accepts and halts if M' rejects and halts on x
+which is crucial to undecidability of halting. Previous encoding has no dimensional information. If M' and M are
+Shell Turing Machines of varied dimensions d1 and d2, Halting Problem is rephrased as - M''(M'[d1](M[d2],x[d2])) - Turing Machine M' defined in space of dimension d1 accepts encoding of Turing Machine M and an input x defined in space of dimension d2 (d1 > d2)
+
 References:
 ----------
 624.1 Turing Jump, Priority Method of Emil Post, Injury - https://en.wikipedia.org/wiki/Turing_degree#Post's_problem_and_the_priority_method - Turing jump of a Turing Machine X is the set X' of Turing machines which halt by having oracle access to X or in other words, X' is set of harder problems than X. Priority method is applied to prove existence or otherwise of intermediate degrees between two turing machines of different jumps e.g Turing Degree 0 (halting problem) and Turing Degree 0' (problems having oracle access to halting problem). Priority method tabulates requirements Ae and Be for an oracle  machine e where Ae stipulates e does not compute 0' from X and Be implies non-oracle machine e does not compute X. Dimensional Hierarchy of unsolvability follows from Turing Jump.
