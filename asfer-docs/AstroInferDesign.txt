@@ -13226,6 +13226,10 @@ Shell Turing Machine defined on a vector space of dimension d (Turing Jump), fol
 	This (d+x) is bigger (d+x) than the biggest(d)
 Vector Space for a Shell Turing Machine can be any arbitrary topological space in real analysis e.g Baire Space, Cantor Space (sets homeomorphic to Cantor Set Fractal obtained by removing midsegment of a line indefinitely)
 
+Set of Recursively Enumerable Languages can be written as disjoint union/exact cover of recursively enumerable languages of Shell Turing Machines embedded in vector spaces of all possible dimensions:
+	RE = RE(d1) U RE(d2) U RE(d3) ... U RE(dn)
+Since each dimension corresponds to a Turing Degree (measure of unsolvability), Partial Order Semi Lattice of all Shell Turing Machines has a Lowest Upper Bound dimension - There exists a maximal dimension Turing Machine dm accepting some RE(dm) language. Shell Turing Machines are most befitting in formalizing Computational Physics problems e.g Quantum and Relativistic Physics, String Theory/M-Theory, Branes, Multiverses.
+
 References:
 ----------
 624.1 Turing Jump, Priority Method of Emil Post, Injury - https://en.wikipedia.org/wiki/Turing_degree#Post's_problem_and_the_priority_method - Turing jump of a Turing Machine X is the set X' of Turing machines which halt by having oracle access to X or in other words, X' is set of harder problems than X. Priority method is applied to prove existence or otherwise of intermediate degrees between two turing machines of different jumps e.g Turing Degree 0 (halting problem) and Turing Degree 0' (problems having oracle access to halting problem). Priority method tabulates requirements Ae and Be for an oracle  machine e where Ae stipulates e does not compute 0' from X and Be implies non-oracle machine e does not compute X. Dimensional Hierarchy of unsolvability follows from Turing Jump.
