@@ -13247,6 +13247,7 @@ Shell Turing Machines of varied dimensions d1 and d2, Halting Problem is rephras
 References:
 ----------
 624.1 Turing Jump, Priority Method of Emil Post, Injury - https://en.wikipedia.org/wiki/Turing_degree#Post's_problem_and_the_priority_method - Turing jump of a Turing Machine X is the set X' of Turing machines which halt by having oracle access to X or in other words, X' is set of harder problems than X. Priority method is applied to prove existence or otherwise of intermediate degrees between two turing machines of different jumps e.g Turing Degree 0 (halting problem) and Turing Degree 0' (problems having oracle access to halting problem). Priority method tabulates requirements Ae and Be for an oracle  machine e where Ae stipulates e does not compute 0' from X and Be implies non-oracle machine e does not compute X. Dimensional Hierarchy of unsolvability follows from Turing Jump.
+624.2 Embedding Turing Machines on Hilbert Space - https://mathoverflow.net/questions/313343/embedding-turing-machine - Counts Functions (for languages of Turing Machines) by number of states and searches for the Turing Machines for these languages - This is the opposite direction of Shell Turing Machine definition which has an intrinsic dimensional parameter in addition to state.
 
 -------------------------------------------------------------------------------------------------------------
 625. (THEORY) Recursive Lambda Function Growth - TextGraph Machine Translation - 10 December 2018 - related
