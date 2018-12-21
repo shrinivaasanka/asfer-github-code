@@ -13258,3 +13258,43 @@ Graph english word vertices to another natural language. It uses PyDictionary Go
 2. An example Text Graph from Recursive Lambda Function Growth has been translated from English to Kannada (an Indian language).
 3. This is just a primitive implementation without sentences creation which can be done through usual graph traversal or random walks. 
 4. Logs have been committed to testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.10December2018 
+
+-------------------------------------------------------------------------------------------------------------
+626. (THEORY) Partial Ordered Rankings, Intrinsic Merit Vectors, Galois Connections and ThoughtNet - related
+to all sections expanding https://tac.nist.gov//publications/2010/participant.papers/CMI_IIT.proceedings.pdf
+and https://arxiv.org/abs/1006.4458 and ThoughtNet - 21 December 2018
+-------------------------------------------------------------------------------------------------------------
+Search Engines usually rank results as linear total order. Alternatively for each query ranked set of results
+can be a partial order and not necessarily total. This has been mentioned as a passing reference in ArXiv and
+NIST TAC articles previously. Traditionally Intrinsic Merit/Fitness is a scalar quantity which can be vectorized
+based on feature dimensions. Consequently, two URLs may not be comparable by a total ordering < relation. Following example intrinsic merit vector partial ordered rankings of websites intuit this:
+
+(1) Subset partial ordered ranking - set of subsets ordered by containment:
+	[1,2,3,4]
+	|	\
+	[1,2,3] [2,3,4]
+	|	 |
+	[1,2]	[2,3]
+
+(2) Less Than or Equal To Ranking - Each tuple has elements of value less than or equal to elements of predecessor tuple:
+	[1,2,3,4]	[2,3,2,5]
+	|			|
+	[1,1,2,3] ----- [2,2,3,4]
+	|
+	[1,1,1,2]
+
+Search Results for any two different queries thus create two partial ordered tuple sets of rankings. Galois 
+connections define maps F and G between elements of two posets A and B subject to conditions:
+	a in A, b in B
+	F(a)=c in B, G(b)=d in A
+	F(a) <= b if and only if a <= G(b)
+Previous Galois Connections provide an alternative spectacle to perceive ThoughtNet - ThoughtNet as defined
+elsewhere earlier is a hypergraph of sentence hyperedges on evocative hypervertices motivated by Psycho-and-Neurolinguistics. Search engine queries can be construed as evocatives returning results evoked by the query
+and thus search engine results are hyperedges of a ThoughtNet (Internet itself as a ThoughtNet) and queries are evocative hypervertices - same search result URL can appear in more than two queries creating the hyperedge across these query hypervertices.Previous partial ordered rankings of search results bring an additional application of Galois connections amongst search result posets - if URLs a,b,c,d are such that a=c and b=d aforementioned Galois connections are equivalent to hyperedges between ranked search query result posets in ThoughtNet and evocative hypervertices are search queries => ThoughtNet is a giant transitive Galois Connection which is different from Contextual Multi Armed Bandit formulation of ThoughtNet earlier. Various results and theorems applicable to ThoughtNet Hypergraphs (and its stripped down version of Survival Index Timeout pattern) have been mentioned in:
+https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt
+
+References:
+-----------
+626.1 Galois Connections - https://en.wikipedia.org/wiki/Galois_connection
+
+
