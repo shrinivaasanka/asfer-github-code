@@ -3389,6 +3389,7 @@ References:
 202.20 Align,Disambiguate,Walk distance measures - http://wwwusers.di.uniroma1.it/~navigli/pubs/ACL_2013_Pilehvar_Jurgens_Navigli.pdf
 202.21 Coh Metrix - Analysis of Text on Cohesion and Language - https://www.ncbi.nlm.nih.gov/pubmed/15354684 - quantifies text for meaningfulness, relatedness and readability
 202.22 Homophily in Networks - [Duncan J.watts] - Pages 152-153 - https://arxiv.org/pdf/cond-mat/0205383.pdf - This result implies in a social network where each vertex is a tuple of more than one dimension, and similarity between any two tuples s and j is defined as distance to an adjacent node j of s which is close to t, and any message from sender s reaches receiver t in minimum length of intermediaries - optimal when number of dimensions are 2 or 3 - Kleinberg condition is special case of this.
+202.23 Six Degrees - [Duncan J.Watts] - Triadic closure of Anatole Rapoport - Clustering Coefficient - Page 58
 
 --------------------------------------------------------------------------------------------------------------------
 203. Apache Spark MapReduce Parallel Computation of Interview Algorithm Recursive Gloss Overlap Graph Construction
