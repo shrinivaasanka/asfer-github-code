@@ -13244,6 +13244,35 @@ Contradiction is established by changing the Turing machine encoding to M' from 
 which is crucial to undecidability of halting. Previous encoding has no dimensional information. If M' and M are
 Shell Turing Machines of varied dimensions d1 and d2, Halting Problem is rephrased as - M''(M'[d1](M[d2],x[d2])) - Turing Machine M' defined in space of dimension d1 accepts encoding of Turing Machine M and an input x defined in space of dimension d2 (d1 > d2)
 
+Following diagonalization proof of halting problem undecidability extends to Shell Turing Machines:
+---------------------------------------------------------------------------------------------------
+Let f(x,i) be a function defined as:
+	f(x,i) = 1 if Turing Machine x halts on input i, 0 if Turing Machine x does not halt on input i.
+Let g(y) be another function defined as:
+	g(y) = 0 if f(y,y)=0, else undefined (if f(y,y)=1)
+
+Diagonalization is an infinite two dimensional matrix D defined as:
+	D(x,y)  = 1 if Turing Machine x halts on input y, 0  if Turing Machine x does not halt on y
+Proof is by showing function f(x,i) is partial and not total (not defined for all inputs) and thus not recursive but recursively enumerable.
+
+Nothing prevents asking what is g(g):
+	g(g) = if f(g,g)=0 then 0, else undefined (if f(g,g) = 1)
+
+=> f(g,g) = 1 if Machine g halts on encoding of g, 0 if Machine g does not halt on encoding of g (Diagonal of the Diagonalization Matrix D)
+
+But from previous definition of g(g):
+	g(g) = if f(g,g)=0 (if Machine g does not halt on g) then g(g) halts returning 0 and
+		if f(g,g)=1 (if Machine g halts on g) then g(g) is undefined
+which is a contradiction.
+
+The fact that there exists atleast one Turing Machine g whose halting is not decidable makes f(x,i) partial and not a total recursive function and therefore Halting problem is undecidable. It has to be noted that function g has oracle access to Halting problem function f(x,i) thus defining a Turing jump (0'). But Recursively Enumerable set has been previously expressed as disjoint union of languages of Shell Turing Machines defined on all possible vector spaces. This implies there are Shell Turing Machines which are not recursive (but represented by a Diophantine equation). Implications of this for problems in Quantum computation and Relativistic Physics defined for example on Hilbert Spaces are huge - There are Shell Turing Machines defined on certain vector spaces which are not recursive (or) there are no physics experiments for verifying truths of physical realities represented by these Hilbert Machines. 
+
+Problem of relevance to Shell Turing Machines is: What happens to halting problem if functions f and g are defined on two different vector spaces of unequal dimensions. If f(x,i) is embedded on a Hilbert space S1 which contains all other vector spaces and g(y) on another Hilbert space S2 (S1 contains S2), truth value of a logical statement in two quantifiers:
+
+For all Shell Turing Machines x defined in Hilbert space S(d) of dimension d, there exists input i defined in S(d) such that x halts on i (True or False)
+
+has to be exported to f(x,i) defined on Hilbert space S1 containing S(d)
+	
 References:
 ----------
 624.1 Turing Jump, Priority Method of Emil Post, Injury - https://en.wikipedia.org/wiki/Turing_degree#Post's_problem_and_the_priority_method - Turing jump of a Turing Machine X is the set X' of Turing machines which halt by having oracle access to X or in other words, X' is set of harder problems than X. Priority method is applied to prove existence or otherwise of intermediate degrees between two turing machines of different jumps e.g Turing Degree 0 (halting problem) and Turing Degree 0' (problems having oracle access to halting problem). Priority method tabulates requirements Ae and Be for an oracle  machine e where Ae stipulates e does not compute 0' from X and Be implies non-oracle machine e does not compute X. Dimensional Hierarchy of unsolvability follows from Turing Jump.
@@ -13253,6 +13282,7 @@ References:
 624.5 Hilbert Machines - Turing Machines in Complex Inner Product Spaces and Applications to Quantum Computation - http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.36.73&rep=rep1&type=pdf - has close resemblance to definition of Shell Turing Machines. Linear Machines are conventional Turing Machines defined over input vector space, output vector space and a state vector space. Concrete Hilbert Machines are Linear Machines defined over a Hilbert Complex Vector Space and a linear Complex Operator - Theorem 8 - Any finite automata can be represented in a finite dimensional Hilbert Space by a Hilbert Machine - Examples of Hilbert Machines - Quantum Computation: Input and Output to a Quantum Computer are represented by vectors on Hilbert Space and computation (state transition) is performed by Unitary Operator H on Hilbert Spaces (Operator HH*=H*H=I, H* is infinite dimensional conjugate transpose of H) - Expected Value of State(at time t) = e^(-iHt). Shell Turing Machines go beyond just embedding a Turing Machine in vector space - As the name "Shell" suggests inspired by Unix shells, truths of logical statements in lower dimensional vector spaces are allowed to be exported to higher dimensions.
 624.6 The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory - [Brian Greene] 
 624.7 Turing Degrees of Diophantine Sets - Computably Enumerable Turing Degrees - Hilbert Tenth Problem - Sixth Asian Logic Conference - https://books.google.co.in/books?id=7IbVCgAAQBAJ&pg=PA152&lpg=PA152&dq=diophantine+equations+turing+degree&source=bl&ots=q9HomH3o-9&sig=rHKb81u6mifJvOX_-kjKv4YRdUY&hl=en&sa=X&ved=2ahUKEwjMpLvsur3fAhVNeisKHd_MA-U4ChDoATABegQIBRAB#v=onepage&q=diophantine%20equations%20turing%20degree&f=false
+624.8 Degrees of Unsolvability: Tutorial - https://pdfs.semanticscholar.org/acae/fe1907be68d357700f0690519251fc948fdb.pdf - Mass Problems, Muchnik Degrees, Turing Degrees
 
 -------------------------------------------------------------------------------------------------------------
 625. (THEORY) Recursive Lambda Function Growth - TextGraph Machine Translation - 10 December 2018 - related
