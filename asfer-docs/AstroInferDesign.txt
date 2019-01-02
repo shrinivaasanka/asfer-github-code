@@ -11806,7 +11806,8 @@ Since goodness/error is equal, if one side of the equality is a C-complete probl
 	*) if RHS is PH^A-complete and LHS is BQP^A, PH^A is in BQP^A
 
 Resolving this conflict requires:
-	*) ruling out existence of PH^A-complete problems for some Voter SAT oracle A which is closer to proving PH-complete problems do not exist.
+	*) LHS and RHS have different Oracles (Pseudorandom Oracle A1 for LHS and SAT Oracle A2 for all voters in RHS) - but in real-world voting nothing prohibits all voters from making a random choice and thus there is always a possibility electorate votes at random (Therefore Both Oracles are Pseudorandom Generators and A1=A2. This is exactly Balls-and-Bins problem described in sections on theoretical EVMs based on LSH and separate chaining hashtables elsewhere in this draft).
+	*) ruling out existence of BPQ^A-complete problems for Voter SAT oracle A separating PH and BPQ.
 	*) assumption of equal goodnesses of LHS and RHS implying lowerbounds is wrong.
 	*) Oracle A which separates (BQP^A is not in PH^A) has goodness > 0.5 or < 0.5 violating Margulis-Russo threshold.
 
