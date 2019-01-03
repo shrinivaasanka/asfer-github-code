@@ -1,0 +1,510 @@
+#####################################################################################################
+Compression by vowel removal:
+wcompcomp =  Rm gts frvr plsd wth hm wh lstns t r rds Rmyn dly. H s ndd th trnl Vshn, th Lrd f prsrvtn. Rm s th prmrdl Lrd, clrly plcd bfr th ys th pwrfl Lrd rmvng th sns nd th grt-rmd, wh hs bd n wtrs f th cn f mlk Ssh th srpnt-gd frmng hs cch s sd t b Lkshmn.
+
+Compression ratio =  27.1468144044 %
+Decompression using PyEnchant Spellcheck suggest() function:
+R_m_ ['Room', 'Romp']
+compsubstrings:  ['R', 'm', '']
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= R_m_ ; maxlikely= 
+g_ts ['gets', 'guts', 'Gates', 'Ghats']
+compsubstrings:  ['g', 'ts']
+compwordregex: ^g[a-zA-Z]ts$
+likelydict for  g_ts : {'ghts': 1.722608373599304e-05}
+matchinglikelydict= {'ghts': 1.722608373599304e-05}
+maxlikelyretprob= 1.7226083736e-05 ; maxlikelyret =  ghts
+{'ghts': 1.722608373599304e-05}
+comp= g_ts ; maxlikely= ghts
+f_r_v_r ['froward', 'firework']
+compsubstrings:  ['f', 'r', 'v', 'r']
+compwordregex: ^f[a-zA-Z]r[a-zA-Z]v[a-zA-Z]r$
+likelydict for  f_r_v_r : {'forever': 4.30652093399826e-06}
+matchinglikelydict= {'forever': 4.30652093399826e-06}
+maxlikelyretprob= 4.306520934e-06 ; maxlikelyret =  forever
+{'forever': 4.30652093399826e-06}
+comp= f_r_v_r ; maxlikely= forever
+pl__s_d ['pleased', 'plussed']
+compsubstrings:  ['pl', '', 's', 'd']
+compwordregex: ^pl[a-zA-Z][a-zA-Z]s[a-zA-Z]d$
+likelydict for  pl__s_d : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= pl__s_d ; maxlikely= 
+w_th ['with', 'wrath', 'Wyeth']
+compsubstrings:  ['w', 'th']
+compwordregex: ^w[a-zA-Z]th$
+likelydict for  w_th : {'wath': 4.30652093399826e-06, 'with': 2.15326046699913e-05}
+matchinglikelydict= {'wath': 4.30652093399826e-06, 'with': 2.15326046699913e-05}
+maxlikelyretprob= 2.153260467e-05 ; maxlikelyret =  with
+{'wath': 4.30652093399826e-06, 'with': 2.15326046699913e-05}
+comp= w_th ; maxlikely= with
+h_m ['hem', 'him', 'ham', 'hum', "h'm", 'HM', 'Hom', 'Ham']
+compsubstrings:  ['h', 'm']
+compwordregex: ^h[a-zA-Z]m$
+likelydict for  h_m : {'ham': 2.5839125603989562e-05, 'hem': 1.722608373599304e-05, 'hom': 8.61304186799652e-06, 'him': 1.722608373599304e-05, 'hum': 1.2919562801994781e-05}
+matchinglikelydict= {'ham': 2.5839125603989562e-05, 'hem': 1.722608373599304e-05, 'hom': 8.61304186799652e-06, 'him': 1.722608373599304e-05, 'hum': 1.2919562801994781e-05}
+maxlikelyretprob= 2.5839125604e-05 ; maxlikelyret =  ham
+{'ham': 2.5839125603989562e-05, 'hem': 1.722608373599304e-05, 'hom': 8.61304186799652e-06, 'him': 1.722608373599304e-05, 'hum': 1.2919562801994781e-05}
+comp= h_m ; maxlikely= ham
+wh_ ['who', 'why', 'WHO', 'whiz']
+compsubstrings:  ['wh', '']
+compwordregex: ^wh[a-zA-Z]$
+likelydict for  wh_ : {'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+matchinglikelydict= {'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+maxlikelyretprob= 8.613041868e-06 ; maxlikelyret =  who
+{'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+comp= wh_ ; maxlikely= who
+l_st_ns ['lustiness', 'lucidness']
+compsubstrings:  ['l', 'st', 'ns']
+compwordregex: ^l[a-zA-Z]st[a-zA-Z]ns$
+likelydict for  l_st_ns : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= l_st_ns ; maxlikely= 
+t_ ['t', 'ts', 'ti', 'tn', 'tr', 'to', 'th']
+compsubstrings:  ['t', '']
+compwordregex: ^t[a-zA-Z]$
+likelydict for  t_ : {'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+matchinglikelydict= {'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+maxlikelyretprob= 0.00505585557651 ; maxlikelyret =  te
+{'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+comp= t_ ; maxlikely= te
+_r ['r', 'tr', 'or', 'gr', 'pr', 'hr', 'yr', 'fr', 'Er', 'Sr', 'Ir', 'Ar', 'Lr', 'Cr', 'Dr']
+compsubstrings:  ['', 'r']
+compwordregex: ^[a-zA-Z]r$
+likelydict for  _r : {'pr': 1.2919562801994781e-05, 'fr': 4.30652093399826e-06, 'gr': 4.30652093399826e-06, 'rr': 3.875868840598434e-05, 'sr': 8.61304186799652e-06, 'ir': 0.00037466732125784863, 'tr': 4.30652093399826e-06, 'ur': 0.0005555412004857755, 'kr': 8.61304186799652e-06, 'ar': 0.0013005693220674746, 'lr': 4.30652093399826e-06, 'wr': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'mr': 4.30652093399826e-06, 'cr': 1.2919562801994781e-05, 'yr': 1.2919562801994781e-05, 'dr': 1.2919562801994781e-05, 'or': 0.0014082323454174311, 'zr': 4.30652093399826e-06, 'er': 0.00851399188651456}
+matchinglikelydict= {'pr': 1.2919562801994781e-05, 'fr': 4.30652093399826e-06, 'gr': 4.30652093399826e-06, 'rr': 3.875868840598434e-05, 'sr': 8.61304186799652e-06, 'ir': 0.00037466732125784863, 'tr': 4.30652093399826e-06, 'ur': 0.0005555412004857755, 'kr': 8.61304186799652e-06, 'ar': 0.0013005693220674746, 'lr': 4.30652093399826e-06, 'wr': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'mr': 4.30652093399826e-06, 'cr': 1.2919562801994781e-05, 'yr': 1.2919562801994781e-05, 'dr': 1.2919562801994781e-05, 'or': 0.0014082323454174311, 'zr': 4.30652093399826e-06, 'er': 0.00851399188651456}
+maxlikelyretprob= 0.00851399188651 ; maxlikelyret =  er
+{'pr': 1.2919562801994781e-05, 'fr': 4.30652093399826e-06, 'gr': 4.30652093399826e-06, 'rr': 3.875868840598434e-05, 'sr': 8.61304186799652e-06, 'ir': 0.00037466732125784863, 'tr': 4.30652093399826e-06, 'ur': 0.0005555412004857755, 'kr': 8.61304186799652e-06, 'ar': 0.0013005693220674746, 'lr': 4.30652093399826e-06, 'wr': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'mr': 4.30652093399826e-06, 'cr': 1.2919562801994781e-05, 'yr': 1.2919562801994781e-05, 'dr': 1.2919562801994781e-05, 'or': 0.0014082323454174311, 'zr': 4.30652093399826e-06, 'er': 0.00851399188651456}
+comp= _r ; maxlikely= er
+r__ds ['reads', 'grids']
+compsubstrings:  ['r', '', 'ds']
+compwordregex: ^r[a-zA-Z][a-zA-Z]ds$
+likelydict for  r__ds : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= r__ds ; maxlikely= 
+R_m_y_n_ ['Tremayne', 'Ruminant']
+compsubstrings:  ['R', 'm', 'y', 'n', '']
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]y[a-zA-Z]n[a-zA-Z]$
+likelydict for  R_m_y_n_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= R_m_y_n_ ; maxlikely= 
+d__ly. ['Dulcy', 'dully']
+compsubstrings:  ['d', '', 'ly.']
+compwordregex: ^d[a-zA-Z][a-zA-Z]ly.$
+likelydict for  d__ly. : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= d__ly. ; maxlikely= 
+H_ ['H', 'He', 'Hi', 'Ha', 'Ho', 'Hg', 'Hy', 'Hf', 'Hz', 'HS', 'HI', 'HR', 'HM', 'HP', 'HF']
+compsubstrings:  ['H', '']
+compwordregex: ^H[a-zA-Z]$
+likelydict for  H_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= H_ ; maxlikely= 
+_s ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As']
+compsubstrings:  ['', 's']
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+matchinglikelydict= {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+maxlikelyretprob= 0.0027992386071 ; maxlikelyret =  us
+{'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+comp= _s ; maxlikely= us
+_nd__d ['tended', 'bended']
+compsubstrings:  ['', 'nd', '', 'd']
+compwordregex: ^[a-zA-Z]nd[a-zA-Z][a-zA-Z]d$
+likelydict for  _nd__d : {'indled': 4.30652093399826e-06, 'undred': 4.30652093399826e-06, 'andard': 3.014564653798782e-05, 'indred': 8.61304186799652e-06, 'indeed': 4.30652093399826e-06}
+matchinglikelydict= {'indled': 4.30652093399826e-06, 'undred': 4.30652093399826e-06, 'andard': 3.014564653798782e-05, 'indred': 8.61304186799652e-06, 'indeed': 4.30652093399826e-06}
+maxlikelyretprob= 3.0145646538e-05 ; maxlikelyret =  andard
+{'indled': 4.30652093399826e-06, 'undred': 4.30652093399826e-06, 'andard': 3.014564653798782e-05, 'indred': 8.61304186799652e-06, 'indeed': 4.30652093399826e-06}
+comp= _nd__d ; maxlikely= andard
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+_t_rn_l ['drawnly', 'triennial']
+compsubstrings:  ['', 't', 'rn', 'l']
+compwordregex: ^[a-zA-Z]t[a-zA-Z]rn[a-zA-Z]l$
+likelydict for  _t_rn_l : {'aternal': 1.2919562801994781e-05, 'xternal': 4.30652093399826e-06, 'nternal': 8.61304186799652e-06, 'eternal': 8.61304186799652e-06, 'cturnal': 4.30652093399826e-06}
+matchinglikelydict= {'aternal': 1.2919562801994781e-05, 'xternal': 4.30652093399826e-06, 'nternal': 8.61304186799652e-06, 'eternal': 8.61304186799652e-06, 'cturnal': 4.30652093399826e-06}
+maxlikelyretprob= 1.2919562802e-05 ; maxlikelyret =  aternal
+{'aternal': 1.2919562801994781e-05, 'xternal': 4.30652093399826e-06, 'nternal': 8.61304186799652e-06, 'eternal': 8.61304186799652e-06, 'cturnal': 4.30652093399826e-06}
+comp= _t_rn_l ; maxlikely= aternal
+V_shn_, ['Vishnu', 'Version']
+compsubstrings:  ['V', 'shn', ',']
+compwordregex: ^V[a-zA-Z]shn[a-zA-Z],$
+likelydict for  V_shn_, : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= V_shn_, ; maxlikely= 
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+L_rd ['Lord', 'Lard', 'Lurid', 'Laredo']
+compsubstrings:  ['L', 'rd']
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= L_rd ; maxlikely= 
+_f ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf']
+compsubstrings:  ['', 'f']
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+matchinglikelydict= {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+maxlikelyretprob= 0.00040911948873 ; maxlikelyret =  ff
+{'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+comp= _f ; maxlikely= ff
+pr_s_rv_t__n. ['privateness', 'prizefighting']
+compsubstrings:  ['pr', 's', 'rv', 't', '', 'n.']
+compwordregex: ^pr[a-zA-Z]s[a-zA-Z]rv[a-zA-Z]t[a-zA-Z][a-zA-Z]n.$
+likelydict for  pr_s_rv_t__n. : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= pr_s_rv_t__n. ; maxlikely= 
+R_m_ ['Room', 'Romp']
+compsubstrings:  ['R', 'm', '']
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= R_m_ ; maxlikely= 
+_s ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As']
+compsubstrings:  ['', 's']
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+matchinglikelydict= {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+maxlikelyretprob= 0.0027992386071 ; maxlikelyret =  us
+{'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+comp= _s ; maxlikely= us
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+pr_m_rd__l ['premarital', 'primordial']
+compsubstrings:  ['pr', 'm', 'rd', '', 'l']
+compwordregex: ^pr[a-zA-Z]m[a-zA-Z]rd[a-zA-Z][a-zA-Z]l$
+likelydict for  pr_m_rd__l : {'primordial': 4.30652093399826e-06}
+matchinglikelydict= {'primordial': 4.30652093399826e-06}
+maxlikelyretprob= 4.306520934e-06 ; maxlikelyret =  primordial
+{'primordial': 4.30652093399826e-06}
+comp= pr_m_rd__l ; maxlikely= primordial
+L_rd, ['Lurid', 'Laredo']
+compsubstrings:  ['L', 'rd,']
+compwordregex: ^L[a-zA-Z]rd,$
+likelydict for  L_rd, : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= L_rd, ; maxlikely= 
+cl__rly ['clearly', 'Clairol', 'clarify']
+compsubstrings:  ['cl', '', 'rly']
+compwordregex: ^cl[a-zA-Z][a-zA-Z]rly$
+likelydict for  cl__rly : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= cl__rly ; maxlikely= 
+pl_c_d ['placard', 'plugged']
+compsubstrings:  ['pl', 'c', 'd']
+compwordregex: ^pl[a-zA-Z]c[a-zA-Z]d$
+likelydict for  pl_c_d : {'placed': 8.61304186799652e-06, 'placid': 4.30652093399826e-06}
+matchinglikelydict= {'placed': 8.61304186799652e-06, 'placid': 4.30652093399826e-06}
+maxlikelyretprob= 8.613041868e-06 ; maxlikelyret =  placed
+{'placed': 8.61304186799652e-06, 'placid': 4.30652093399826e-06}
+comp= pl_c_d ; maxlikely= placed
+b_f_r_ ['before', 'bufferer']
+compsubstrings:  ['b', 'f', 'r', '']
+compwordregex: ^b[a-zA-Z]f[a-zA-Z]r[a-zA-Z]$
+likelydict for  b_f_r_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= b_f_r_ ; maxlikely= 
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+_y_s []
+compsubstrings:  ['', 'y', 's']
+compwordregex: ^[a-zA-Z]y[a-zA-Z]s$
+likelydict for  _y_s : {'byss': 4.30652093399826e-06}
+matchinglikelydict= {'byss': 4.30652093399826e-06}
+maxlikelyretprob= 4.306520934e-06 ; maxlikelyret =  byss
+{'byss': 4.30652093399826e-06}
+comp= _y_s ; maxlikely= byss
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+p_w_rf_l ['preflight', 'profligate']
+compsubstrings:  ['p', 'w', 'rf', 'l']
+compwordregex: ^p[a-zA-Z]w[a-zA-Z]rf[a-zA-Z]l$
+likelydict for  p_w_rf_l : {'powerful': 4.30652093399826e-06}
+matchinglikelydict= {'powerful': 4.30652093399826e-06}
+maxlikelyretprob= 4.306520934e-06 ; maxlikelyret =  powerful
+{'powerful': 4.30652093399826e-06}
+comp= p_w_rf_l ; maxlikely= powerful
+L_rd ['Lord', 'Lard', 'Lurid', 'Laredo']
+compsubstrings:  ['L', 'rd']
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= L_rd ; maxlikely= 
+r_m_v_ng ['vinegary', 'Winograd']
+compsubstrings:  ['r', 'm', 'v', 'ng']
+compwordregex: ^r[a-zA-Z]m[a-zA-Z]v[a-zA-Z]ng$
+likelydict for  r_m_v_ng : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= r_m_v_ng ; maxlikely= 
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+s_ns ['sens', 'sins', 'sans', 'sons', 'suns', 'sinus', 'sanes']
+compsubstrings:  ['s', 'ns']
+compwordregex: ^s[a-zA-Z]ns$
+likelydict for  s_ns : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= s_ns ; maxlikely= 
+_nd ['end', 'ind', 'and', 'Ind', 'Nd', 'ND', '2nd', 'fund']
+compsubstrings:  ['', 'nd']
+compwordregex: ^[a-zA-Z]nd$
+likelydict for  _nd : {'and': 0.0006072194516937547, 'end': 0.00027561733977588866, 'hnd': 8.61304186799652e-06, 'ond': 0.00013780866988794433, 'cnd': 4.30652093399826e-06, 'und': 0.00039619992592783995, 'ind': 0.00015934127455793562}
+matchinglikelydict= {'and': 0.0006072194516937547, 'end': 0.00027561733977588866, 'hnd': 8.61304186799652e-06, 'ond': 0.00013780866988794433, 'cnd': 4.30652093399826e-06, 'und': 0.00039619992592783995, 'ind': 0.00015934127455793562}
+maxlikelyretprob= 0.000607219451694 ; maxlikelyret =  and
+{'and': 0.0006072194516937547, 'end': 0.00027561733977588866, 'hnd': 8.61304186799652e-06, 'ond': 0.00013780866988794433, 'cnd': 4.30652093399826e-06, 'und': 0.00039619992592783995, 'ind': 0.00015934127455793562}
+comp= _nd ; maxlikely= and
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+gr__t-_rm_d, ['great-_rm_d,', 'greet-_rm_d,', 'crematorium', 'nonmigratory']
+compsubstrings:  ['gr', '', 't-', 'rm', 'd,']
+compwordregex: ^gr[a-zA-Z][a-zA-Z]t-[a-zA-Z]rm[a-zA-Z]d,$
+likelydict for  gr__t-_rm_d, : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= gr__t-_rm_d, ; maxlikely= 
+wh_ ['who', 'why', 'WHO', 'whiz']
+compsubstrings:  ['wh', '']
+compwordregex: ^wh[a-zA-Z]$
+likelydict for  wh_ : {'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+matchinglikelydict= {'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+maxlikelyretprob= 8.613041868e-06 ; maxlikelyret =  who
+{'who': 8.61304186799652e-06, 'why': 4.30652093399826e-06}
+comp= wh_ ; maxlikely= who
+h_s ['hes', 'his', 'has', 'hrs', 'hos', "h's", 'HS', "H's", 'Hus']
+compsubstrings:  ['h', 's']
+compwordregex: ^h[a-zA-Z]s$
+likelydict for  h_s : {'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+matchinglikelydict= {'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+maxlikelyretprob= 3.0145646538e-05 ; maxlikelyret =  hes
+{'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+comp= h_s ; maxlikely= hes
+_b_d_ []
+compsubstrings:  ['', 'b', 'd', '']
+compwordregex: ^[a-zA-Z]b[a-zA-Z]d[a-zA-Z]$
+likelydict for  _b_d_ : {'ibody': 4.30652093399826e-06, 'sbody': 4.30652093399826e-06, 'ebody': 4.30652093399826e-06, 'ibido': 4.30652093399826e-06, 'mbada': 4.30652093399826e-06, 'mbody': 4.30652093399826e-06, 'rbide': 4.30652093399826e-06, 'ebode': 4.30652093399826e-06, 'abide': 4.30652093399826e-06, 'rbade': 4.30652093399826e-06, 'ybody': 1.722608373599304e-05, 'obody': 4.30652093399826e-06}
+matchinglikelydict= {'ibody': 4.30652093399826e-06, 'sbody': 4.30652093399826e-06, 'ebody': 4.30652093399826e-06, 'ibido': 4.30652093399826e-06, 'mbada': 4.30652093399826e-06, 'mbody': 4.30652093399826e-06, 'rbide': 4.30652093399826e-06, 'ebode': 4.30652093399826e-06, 'abide': 4.30652093399826e-06, 'rbade': 4.30652093399826e-06, 'ybody': 1.722608373599304e-05, 'obody': 4.30652093399826e-06}
+maxlikelyretprob= 1.7226083736e-05 ; maxlikelyret =  ybody
+{'ibody': 4.30652093399826e-06, 'sbody': 4.30652093399826e-06, 'ebody': 4.30652093399826e-06, 'ibido': 4.30652093399826e-06, 'mbada': 4.30652093399826e-06, 'mbody': 4.30652093399826e-06, 'rbide': 4.30652093399826e-06, 'ebode': 4.30652093399826e-06, 'abide': 4.30652093399826e-06, 'rbade': 4.30652093399826e-06, 'ybody': 1.722608373599304e-05, 'obody': 4.30652093399826e-06}
+comp= _b_d_ ; maxlikely= ybody
+_n ['n', 'en', 'in', 'an', 'tn', 'on', 'kn', 'Sn', 'In', 'Rn', 'Mn', 'Zn']
+compsubstrings:  ['', 'n']
+compwordregex: ^[a-zA-Z]n$
+likelydict for  _n : {'on': 0.00529702074881786, 'zn': 4.30652093399826e-06, 'en': 0.0018431909597512554, 'nn': 2.5839125603989562e-05, 'ln': 1.2919562801994781e-05, 'wn': 0.00046079773993781386, 'bn': 4.30652093399826e-06, 'mn': 4.30652093399826e-05, 'an': 0.0027518668768248883, 'un': 0.00018948692109592346, 'hn': 2.15326046699913e-05, 'sn': 8.61304186799652e-06, 'in': 0.001623558392117344, 'gn': 0.0001291956280199478, 'rn': 0.0005727672842217686}
+matchinglikelydict= {'on': 0.00529702074881786, 'zn': 4.30652093399826e-06, 'en': 0.0018431909597512554, 'nn': 2.5839125603989562e-05, 'ln': 1.2919562801994781e-05, 'wn': 0.00046079773993781386, 'bn': 4.30652093399826e-06, 'mn': 4.30652093399826e-05, 'an': 0.0027518668768248883, 'un': 0.00018948692109592346, 'hn': 2.15326046699913e-05, 'sn': 8.61304186799652e-06, 'in': 0.001623558392117344, 'gn': 0.0001291956280199478, 'rn': 0.0005727672842217686}
+maxlikelyretprob= 0.00529702074882 ; maxlikelyret =  on
+{'on': 0.00529702074881786, 'zn': 4.30652093399826e-06, 'en': 0.0018431909597512554, 'nn': 2.5839125603989562e-05, 'ln': 1.2919562801994781e-05, 'wn': 0.00046079773993781386, 'bn': 4.30652093399826e-06, 'mn': 4.30652093399826e-05, 'an': 0.0027518668768248883, 'un': 0.00018948692109592346, 'hn': 2.15326046699913e-05, 'sn': 8.61304186799652e-06, 'in': 0.001623558392117344, 'gn': 0.0001291956280199478, 'rn': 0.0005727672842217686}
+comp= _n ; maxlikely= on
+w_t_rs ['waitress', 'Teresa']
+compsubstrings:  ['w', 't', 'rs']
+compwordregex: ^w[a-zA-Z]t[a-zA-Z]rs$
+likelydict for  w_t_rs : {'waters': 8.61304186799652e-06}
+matchinglikelydict= {'waters': 8.61304186799652e-06}
+maxlikelyretprob= 8.613041868e-06 ; maxlikelyret =  waters
+{'waters': 8.61304186799652e-06}
+comp= w_t_rs ; maxlikely= waters
+_f ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf']
+compsubstrings:  ['', 'f']
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+matchinglikelydict= {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+maxlikelyretprob= 0.00040911948873 ; maxlikelyret =  ff
+{'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+comp= _f ; maxlikely= ff
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+_c__n []
+compsubstrings:  ['', 'c', '', 'n']
+compwordregex: ^[a-zA-Z]c[a-zA-Z][a-zA-Z]n$
+likelydict for  _c__n : {'acron': 4.30652093399826e-06, 'ucian': 4.30652093399826e-06, 'lcyon': 4.30652093399826e-06, 'ician': 6.029129307597564e-05, 'scern': 4.30652093399826e-06, 'ocain': 4.30652093399826e-06, 'icean': 4.30652093399826e-06, 'pcorn': 4.30652093399826e-06, 'uchin': 4.30652093399826e-06, 'ccoon': 4.30652093399826e-06, 'ichen': 4.30652093399826e-06, 'tchen': 1.2919562801994781e-05, 'ncien': 4.30652093399826e-06, 'tcorn': 4.30652093399826e-06, 'ocoon': 4.30652093399826e-06, 'eckon': 4.30652093399826e-06, 'actin': 4.30652093399826e-06, 'scorn': 4.30652093399826e-06, 'ecian': 8.61304186799652e-06, 'acean': 8.61304186799652e-06, 'scion': 4.30652093399826e-06, 'acken': 1.2919562801994781e-05, 'acoon': 4.30652093399826e-06, 'rchin': 4.30652093399826e-06, 'ncern': 8.61304186799652e-06, 'acorn': 4.30652093399826e-06, 'icken': 3.875868840598434e-05, 'rcorn': 4.30652093399826e-06, 'ectin': 4.30652093399826e-06, 'rcian': 4.30652093399826e-06, 'icron': 8.61304186799652e-06, 'ocsin': 4.30652093399826e-06, 'ocean': 4.30652093399826e-06, 'icion': 4.30652093399826e-06, 'ycoon': 4.30652093399826e-06, 'icorn': 8.61304186799652e-06}
+matchinglikelydict= {'acron': 4.30652093399826e-06, 'ucian': 4.30652093399826e-06, 'lcyon': 4.30652093399826e-06, 'ician': 6.029129307597564e-05, 'scern': 4.30652093399826e-06, 'ocain': 4.30652093399826e-06, 'icean': 4.30652093399826e-06, 'pcorn': 4.30652093399826e-06, 'uchin': 4.30652093399826e-06, 'ccoon': 4.30652093399826e-06, 'ichen': 4.30652093399826e-06, 'tchen': 1.2919562801994781e-05, 'ncien': 4.30652093399826e-06, 'tcorn': 4.30652093399826e-06, 'ocoon': 4.30652093399826e-06, 'eckon': 4.30652093399826e-06, 'actin': 4.30652093399826e-06, 'scorn': 4.30652093399826e-06, 'ecian': 8.61304186799652e-06, 'acean': 8.61304186799652e-06, 'scion': 4.30652093399826e-06, 'acken': 1.2919562801994781e-05, 'acoon': 4.30652093399826e-06, 'rchin': 4.30652093399826e-06, 'ncern': 8.61304186799652e-06, 'acorn': 4.30652093399826e-06, 'icken': 3.875868840598434e-05, 'rcorn': 4.30652093399826e-06, 'ectin': 4.30652093399826e-06, 'rcian': 4.30652093399826e-06, 'icron': 8.61304186799652e-06, 'ocsin': 4.30652093399826e-06, 'ocean': 4.30652093399826e-06, 'icion': 4.30652093399826e-06, 'ycoon': 4.30652093399826e-06, 'icorn': 8.61304186799652e-06}
+maxlikelyretprob= 6.0291293076e-05 ; maxlikelyret =  ician
+{'acron': 4.30652093399826e-06, 'ucian': 4.30652093399826e-06, 'lcyon': 4.30652093399826e-06, 'ician': 6.029129307597564e-05, 'scern': 4.30652093399826e-06, 'ocain': 4.30652093399826e-06, 'icean': 4.30652093399826e-06, 'pcorn': 4.30652093399826e-06, 'uchin': 4.30652093399826e-06, 'ccoon': 4.30652093399826e-06, 'ichen': 4.30652093399826e-06, 'tchen': 1.2919562801994781e-05, 'ncien': 4.30652093399826e-06, 'tcorn': 4.30652093399826e-06, 'ocoon': 4.30652093399826e-06, 'eckon': 4.30652093399826e-06, 'actin': 4.30652093399826e-06, 'scorn': 4.30652093399826e-06, 'ecian': 8.61304186799652e-06, 'acean': 8.61304186799652e-06, 'scion': 4.30652093399826e-06, 'acken': 1.2919562801994781e-05, 'acoon': 4.30652093399826e-06, 'rchin': 4.30652093399826e-06, 'ncern': 8.61304186799652e-06, 'acorn': 4.30652093399826e-06, 'icken': 3.875868840598434e-05, 'rcorn': 4.30652093399826e-06, 'ectin': 4.30652093399826e-06, 'rcian': 4.30652093399826e-06, 'icron': 8.61304186799652e-06, 'ocsin': 4.30652093399826e-06, 'ocean': 4.30652093399826e-06, 'icion': 4.30652093399826e-06, 'ycoon': 4.30652093399826e-06, 'icorn': 8.61304186799652e-06}
+comp= _c__n ; maxlikely= ician
+_f ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf']
+compsubstrings:  ['', 'f']
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+matchinglikelydict= {'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+maxlikelyretprob= 0.00040911948873 ; maxlikelyret =  ff
+{'lf': 0.00015934127455793562, 'mf': 1.722608373599304e-05, 'vf': 4.30652093399826e-06, 'af': 7.321085587797042e-05, 'of': 0.0001421151908219426, 'ef': 9.904998148195999e-05, 'cf': 8.61304186799652e-06, 'nf': 4.30652093399826e-06, 'rf': 4.7371730273980865e-05, 'ff': 0.0004091194887298347, 'uf': 4.30652093399826e-06, 'hf': 2.5839125603989562e-05, 'sf': 8.61304186799652e-06, 'if': 4.30652093399826e-05}
+comp= _f ; maxlikely= ff
+m_lk ['milk', 'Milka', 'Milken']
+compsubstrings:  ['m', 'lk']
+compwordregex: ^m[a-zA-Z]lk$
+likelydict for  m_lk : {'milk': 5.1678251207979124e-05}
+matchinglikelydict= {'milk': 5.1678251207979124e-05}
+maxlikelyretprob= 5.1678251208e-05 ; maxlikelyret =  milk
+{'milk': 5.1678251207979124e-05}
+comp= m_lk ; maxlikely= milk
+S_sh_ ['Sasha', 'Sushi']
+compsubstrings:  ['S', 'sh', '']
+compwordregex: ^S[a-zA-Z]sh[a-zA-Z]$
+likelydict for  S_sh_ : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= S_sh_ ; maxlikely= 
+th_ ['th', 'the', 'tho', 'thy', 'Th', 'ACTH']
+compsubstrings:  ['th', '']
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+matchinglikelydict= {'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+maxlikelyretprob= 0.000167954316426 ; maxlikelyret =  thy
+{'thy': 0.00016795431642593214, 'ths': 8.61304186799652e-06, 'tho': 4.30652093399826e-06, 'thm': 3.445216747198608e-05, 'the': 0.00010335650241595825, 'tha': 8.61304186799652e-06}
+comp= th_ ; maxlikely= thy
+s_rp_nt-g_d ['discrepant-g_d', 'prepends-g_d', 'discrepant', 'appendectomy']
+compsubstrings:  ['s', 'rp', 'nt-g', 'd']
+compwordregex: ^s[a-zA-Z]rp[a-zA-Z]nt-g[a-zA-Z]d$
+likelydict for  s_rp_nt-g_d : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= s_rp_nt-g_d ; maxlikely= 
+f_rm_ng ['framing', 'fireman']
+compsubstrings:  ['f', 'rm', 'ng']
+compwordregex: ^f[a-zA-Z]rm[a-zA-Z]ng$
+likelydict for  f_rm_ng : {'forming': 8.61304186799652e-06}
+matchinglikelydict= {'forming': 8.61304186799652e-06}
+maxlikelyretprob= 8.613041868e-06 ; maxlikelyret =  forming
+{'forming': 8.61304186799652e-06}
+comp= f_rm_ng ; maxlikely= forming
+h_s ['hes', 'his', 'has', 'hrs', 'hos', "h's", 'HS', "H's", 'Hus']
+compsubstrings:  ['h', 's']
+compwordregex: ^h[a-zA-Z]s$
+likelydict for  h_s : {'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+matchinglikelydict= {'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+maxlikelyretprob= 3.0145646538e-05 ; maxlikelyret =  hes
+{'his': 1.722608373599304e-05, 'hes': 3.014564653798782e-05, 'hms': 1.2919562801994781e-05, 'hts': 1.722608373599304e-05, 'hos': 1.2919562801994781e-05, 'hus': 3.014564653798782e-05, 'has': 4.30652093399826e-06}
+comp= h_s ; maxlikely= hes
+c__ch ['cache', 'coach']
+compsubstrings:  ['c', '', 'ch']
+compwordregex: ^c[a-zA-Z][a-zA-Z]ch$
+likelydict for  c__ch : {'chach': 4.30652093399826e-06, 'coach': 1.2919562801994781e-05, 'corch': 4.30652093399826e-06, 'czech': 4.30652093399826e-06, 'couch': 4.30652093399826e-06, 'conch': 4.30652093399826e-06, 'cinch': 4.30652093399826e-06, 'catch': 8.61304186799652e-06, 'cotch': 4.30652093399826e-05}
+matchinglikelydict= {'chach': 4.30652093399826e-06, 'coach': 1.2919562801994781e-05, 'corch': 4.30652093399826e-06, 'czech': 4.30652093399826e-06, 'couch': 4.30652093399826e-06, 'conch': 4.30652093399826e-06, 'cinch': 4.30652093399826e-06, 'catch': 8.61304186799652e-06, 'cotch': 4.30652093399826e-05}
+maxlikelyretprob= 4.306520934e-05 ; maxlikelyret =  cotch
+{'chach': 4.30652093399826e-06, 'coach': 1.2919562801994781e-05, 'corch': 4.30652093399826e-06, 'czech': 4.30652093399826e-06, 'couch': 4.30652093399826e-06, 'conch': 4.30652093399826e-06, 'cinch': 4.30652093399826e-06, 'catch': 8.61304186799652e-06, 'cotch': 4.30652093399826e-05}
+comp= c__ch ; maxlikely= cotch
+_s ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As']
+compsubstrings:  ['', 's']
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+matchinglikelydict= {'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+maxlikelyretprob= 0.0027992386071 ; maxlikelyret =  us
+{'gs': 0.00012488910708594955, 'is': 0.0008139324565256712, 'as': 0.00021101952576591475, 'vs': 4.30652093399826e-06, 'cs': 0.0003660542793898521, 'es': 0.0005641542423537721, 'ps': 0.00011627606521795302, 'rs': 0.00023255213043590605, 'ts': 0.0001722608373599304, 'ls': 4.30652093399826e-05, 'ns': 0.00013780866988794433, 'fs': 8.61304186799652e-06, 'hs': 2.15326046699913e-05, 'ws': 3.875868840598434e-05, 'bs': 2.5839125603989562e-05, 'ys': 4.30652093399826e-05, 'ds': 0.00013780866988794433, 'ss': 0.0016450909967873353, 'us': 0.002799238607098869, 'ks': 6.029129307597564e-05, 'ms': 7.751737681196868e-05, 'os': 9.474346054796173e-05}
+comp= _s ; maxlikely= us
+s__d ['soda', 'SIDS']
+compsubstrings:  ['s', '', 'd']
+compwordregex: ^s[a-zA-Z][a-zA-Z]d$
+likelydict for  s__d : {'soid': 8.61304186799652e-06, 'shed': 0.0001291956280199478, 'sled': 8.61304186799652e-06, 'seed': 3.014564653798782e-05, 'shod': 1.722608373599304e-05, 'sard': 8.61304186799652e-06, 'skid': 8.61304186799652e-06, 'seud': 4.30652093399826e-06, 'send': 8.61304186799652e-06, 'ssed': 7.751737681196868e-05, 'scid': 4.30652093399826e-06, 'shad': 4.30652093399826e-06, 'sped': 4.30652093399826e-06, 'sold': 1.722608373599304e-05, 'surd': 8.61304186799652e-06, 'stud': 4.30652093399826e-06, 'sted': 6.890433494397216e-05, 'spud': 4.30652093399826e-06, 'sedd': 4.30652093399826e-06, 'said': 8.61304186799652e-06, 'spid': 4.30652093399826e-06, 'scud': 4.30652093399826e-06, 'sand': 1.722608373599304e-05}
+matchinglikelydict= {'soid': 8.61304186799652e-06, 'shed': 0.0001291956280199478, 'sled': 8.61304186799652e-06, 'seed': 3.014564653798782e-05, 'shod': 1.722608373599304e-05, 'sard': 8.61304186799652e-06, 'skid': 8.61304186799652e-06, 'seud': 4.30652093399826e-06, 'send': 8.61304186799652e-06, 'ssed': 7.751737681196868e-05, 'scid': 4.30652093399826e-06, 'shad': 4.30652093399826e-06, 'sped': 4.30652093399826e-06, 'sold': 1.722608373599304e-05, 'surd': 8.61304186799652e-06, 'stud': 4.30652093399826e-06, 'sted': 6.890433494397216e-05, 'spud': 4.30652093399826e-06, 'sedd': 4.30652093399826e-06, 'said': 8.61304186799652e-06, 'spid': 4.30652093399826e-06, 'scud': 4.30652093399826e-06, 'sand': 1.722608373599304e-05}
+maxlikelyretprob= 0.00012919562802 ; maxlikelyret =  shed
+{'soid': 8.61304186799652e-06, 'shed': 0.0001291956280199478, 'sled': 8.61304186799652e-06, 'seed': 3.014564653798782e-05, 'shod': 1.722608373599304e-05, 'sard': 8.61304186799652e-06, 'skid': 8.61304186799652e-06, 'seud': 4.30652093399826e-06, 'send': 8.61304186799652e-06, 'ssed': 7.751737681196868e-05, 'scid': 4.30652093399826e-06, 'shad': 4.30652093399826e-06, 'sped': 4.30652093399826e-06, 'sold': 1.722608373599304e-05, 'surd': 8.61304186799652e-06, 'stud': 4.30652093399826e-06, 'sted': 6.890433494397216e-05, 'spud': 4.30652093399826e-06, 'sedd': 4.30652093399826e-06, 'said': 8.61304186799652e-06, 'spid': 4.30652093399826e-06, 'scud': 4.30652093399826e-06, 'sand': 1.722608373599304e-05}
+comp= s__d ; maxlikely= shed
+t_ ['t', 'ts', 'ti', 'tn', 'tr', 'to', 'th']
+compsubstrings:  ['t', '']
+compwordregex: ^t[a-zA-Z]$
+likelydict for  t_ : {'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+matchinglikelydict= {'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+maxlikelyretprob= 0.00505585557651 ; maxlikelyret =  te
+{'tz': 5.598477214197738e-05, 'ty': 0.0019551605040352103, 'tv': 8.61304186799652e-06, 'tt': 6.45978140099739e-05, 'tu': 1.722608373599304e-05, 'tr': 4.30652093399826e-06, 'ts': 0.0001722608373599304, 'to': 0.0003488281956538591, 'tl': 8.61304186799652e-06, 'tm': 4.30652093399826e-06, 'th': 0.0010034193776215946, 'ti': 9.904998148195999e-05, 'td': 4.30652093399826e-06, 'te': 0.005055855576513958, 'tb': 8.61304186799652e-06, 'tc': 8.61304186799652e-06, 'ta': 0.0002885369025778834}
+comp= t_ ; maxlikely= te
+b_ ['b', 'be', 'bi', 'bl', 'bu', 'by', 'bf', 'bk', 'B']
+compsubstrings:  ['b', '']
+compwordregex: ^b[a-zA-Z]$
+likelydict for  b_ : {'bd': 4.30652093399826e-06, 'be': 0.0002368586513699043, 'ba': 6.890433494397216e-05, 'bb': 1.2919562801994781e-05, 'bc': 2.5839125603989562e-05, 'bl': 4.30652093399826e-06, 'bm': 8.61304186799652e-06, 'bn': 4.30652093399826e-06, 'bo': 7.751737681196868e-05, 'bh': 4.30652093399826e-06, 'bi': 3.014564653798782e-05, 'bk': 4.30652093399826e-06, 'bt': 2.5839125603989562e-05, 'bu': 8.61304186799652e-06, 'bp': 4.30652093399826e-06, 'bq': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'bs': 2.5839125603989562e-05, 'by': 0.00023255213043590605}
+matchinglikelydict= {'bd': 4.30652093399826e-06, 'be': 0.0002368586513699043, 'ba': 6.890433494397216e-05, 'bb': 1.2919562801994781e-05, 'bc': 2.5839125603989562e-05, 'bl': 4.30652093399826e-06, 'bm': 8.61304186799652e-06, 'bn': 4.30652093399826e-06, 'bo': 7.751737681196868e-05, 'bh': 4.30652093399826e-06, 'bi': 3.014564653798782e-05, 'bk': 4.30652093399826e-06, 'bt': 2.5839125603989562e-05, 'bu': 8.61304186799652e-06, 'bp': 4.30652093399826e-06, 'bq': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'bs': 2.5839125603989562e-05, 'by': 0.00023255213043590605}
+maxlikelyretprob= 0.00023685865137 ; maxlikelyret =  be
+{'bd': 4.30652093399826e-06, 'be': 0.0002368586513699043, 'ba': 6.890433494397216e-05, 'bb': 1.2919562801994781e-05, 'bc': 2.5839125603989562e-05, 'bl': 4.30652093399826e-06, 'bm': 8.61304186799652e-06, 'bn': 4.30652093399826e-06, 'bo': 7.751737681196868e-05, 'bh': 4.30652093399826e-06, 'bi': 3.014564653798782e-05, 'bk': 4.30652093399826e-06, 'bt': 2.5839125603989562e-05, 'bu': 8.61304186799652e-06, 'bp': 4.30652093399826e-06, 'bq': 4.30652093399826e-06, 'br': 8.61304186799652e-06, 'bs': 2.5839125603989562e-05, 'by': 0.00023255213043590605}
+comp= b_ ; maxlikely= be
+L_kshm_n_. ['Lakshmi', 'Scotchmen']
+compsubstrings:  ['L', 'kshm', 'n', '.']
+compwordregex: ^L[a-zA-Z]kshm[a-zA-Z]n[a-zA-Z].$
+likelydict for  L_kshm_n_. : {}
+matchinglikelydict= {}
+maxlikelyretprob= -1.0 ; maxlikelyret =  
+{}
+comp= L_kshm_n_. ; maxlikely= 
