@@ -13338,4 +13338,25 @@ References:
 -----------
 626.1 Galois Connections - https://en.wikipedia.org/wiki/Galois_connection
 
+---------------------------------------------------------------------------------------------------------------
+627. (FEATURE) Vowelless Text (De)Compression - simplified likelydict MLE for HMM - 3 January 2019
+---------------------------------------------------------------------------------------------------------------
+1. TextCompression.py has been classified to new class VowellessText and all functions have been made its members.
+2. One time Likelyhood Dictionary computation of prefixes,suffixes and substrings has been shifted to WordSubstringProbabilities.py - wordlikelydict() and wordprefixsuffixsubstringsprobdist()
+3. All precomputed prefix and suffix priors are initialized in TextCompression.py __init__()
+4. Costly loop in HiddenMarkovModel_MLE() of TextCompression.py has been done away with and instead wordlikelydict() has been changed to choose between costly exhaustive search and substringsdict list comprehension.
+5. Hardcoded priors for HMM have been removed and replaced by previous likelihood computation.
+6. Logs for this have been committed to testlogs/TextCompression.log.3January2019
+7. likelydict is created on demand once per compressed word than earlier heavy initialization for all possible likelihoods.
+8. Regular Expressions are used in list comprehension for matching strings - "_" are treated as alphabets in lower or upper case.
+9. For Exhaustive Search. following line is crucial which computes the conditional probability of a prefix for a suffix:
+		likelydict[k3[:-1]+k3[len(k3)-1]+k4[1:]] = v3 * v4
+10. The else clause, generalizes it and applies precomputed frequency probabilities of concatenated substrings circumventing the following conditional probability:
+		likelydict[substring1 + substring2 + ... + substringN] = Pr(substring1) * Pr(substring2) * ... * Pr(substringN)
+by:
+		likelydict[substring1 + substring2 + ... + substringN] = Pr(substring1 + substring2 + ... + substringN)
+11. Both should be almost equal if substring random variables are independent and identically distributed.
+12. An example English text from https://www.valmikiramayan.net/utf8/yuddha/sarga128/yuddha_128_frame.htm - Verse 120 has been compressed and decompressed.
+13. Decompressed text has almost more than 50% accuracy and most priors are equal misleading the decipherment.
+14. Previous HMM based probabilistic decompression can be compared to List decoding Berlekamp-Welch implementation which maps text to a polynomial 
 
