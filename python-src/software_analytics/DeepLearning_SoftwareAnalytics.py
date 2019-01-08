@@ -55,45 +55,61 @@ from DeepLearning_GRURecurrentNeuralNetwork import GRURecurrentNeuralNetwork
 from DeepLearning_ConvolutionNetwork_BackPropagation import DeepLearningConvolution
 import pprint
 import random
+import psutil
 
 if __name__=="__main__":
 	print "##########################################################################################"
 	print "BackPropagation"
 	print "##########################################################################################"
-        iter=0
-        weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
         #parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
-	inputlayer=[0.026,0.009,2.75/18.0]
-	hiddenlayer=[0.8,0.9,0.3]
-	expectedoutput=[0.09,0.01,0.21]
-        bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
-        bpnn.compute_neural_network()
-        bpnn.print_layers()
-        print "Error before Backpropagation:"
-        print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-	while iter < 1000:
-               for m in xrange(len(inputlayer)):
-                       for l in xrange(len(inputlayer)):
-                               bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
+	sample=0
+	while sample < 2:
+		cpu_percent=psutil.cpu_percent()/10000.0
+		cpu_percent=psutil.cpu_percent()/10000.0
+		virtmem=psutil.virtual_memory()
+		virtmem=psutil.virtual_memory()
+		memory_percent=virtmem.percent/10000.0
+		diskusage=psutil.disk_usage("/media/")
+		diskusage=psutil.disk_usage("/media/")
+		disk_percent=diskusage.percent/10000.0
+	
+		print "Process perf variables: [cpu_percent,memory_percent,disk_percent]"
+		print [cpu_percent,memory_percent,disk_percent]
+		iter=0
+		weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
+		#parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
+		inputlayer=[cpu_percent,memory_percent,disk_percent]
+		hiddenlayer=[0.8,0.9,0.3]
+		expectedoutput=[0.999999,0.999999,0.999999]
+        	bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
+        	bpnn.compute_neural_network()
+        	bpnn.print_layers()
+        	print "Error before Backpropagation:"
+        	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+		while iter < 10000:
+               		for m in xrange(len(inputlayer)):
+                       		for l in xrange(len(inputlayer)):
+                               		bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
 
-               for m in xrange(len(inputlayer)):
-                       for l in xrange(len(inputlayer)):
-                               bpnn.backpropagation_pde_update_input_to_hidden(m,len(inputlayer)*m+l)
+               		for m in xrange(len(inputlayer)):
+                       		for l in xrange(len(inputlayer)):
+                               		bpnn.backpropagation_pde_update_input_to_hidden(m,len(inputlayer)*m+l)
 
-               print "Recomputing Neural Network after backpropagation weight update"
-               bpnn.compute_neural_network()
-               print "Error after Backpropagation- iteration :",iter
-               print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-               print "Layers in this iteration:"
-               bpnn.print_layers()
-               print "Weights updated in this iteration:"
-               print bpnn.weights
-               iter=iter+1
-        print "Software Analytics - BackPropagation - Error after Backpropagation- iteration :",iter
-	bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-        print "Software Analytics - BackPropagation - Layers in this iteration:"
-	bpnn.print_layers()
-        print "Software Analytics - BackPropagation - Weights updated in this iteration:",bpnn.weights
+               		print "Recomputing Neural Network after backpropagation weight update"
+               		bpnn.compute_neural_network()
+               		print "Error after Backpropagation- iteration :",iter
+               		print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+               		print "Layers in this iteration:"
+               		bpnn.print_layers()
+               		print "Weights updated in this iteration:"
+              		print bpnn.weights
+               		iter=iter+1
+        	print "Software Analytics - BackPropagation - Error after Backpropagation- iteration :",iter
+		bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
+        	print "Software Analytics - BackPropagation - Layers in this iteration:"
+		bpnn.print_layers()
+        	print "Software Analytics - BackPropagation - Weights updated in this iteration:",bpnn.weights
+		sample += 1
 	
 	print "##################################################################################"
 	print "LSTM Recurrent Neural Network"
