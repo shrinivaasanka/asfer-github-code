@@ -13281,6 +13281,16 @@ For all Shell Turing Machines x defined in Hilbert space S(d) of dimension d, th
 has to be exported to f(x,i) defined on Hilbert space S1 containing S(d)
 
 This lifting/export of logical statements between Hilbert Spaces of 2 different dimensions is accomplished by Linear Transformations between Hilbert Spaces. Section 4.2 of Reference 624.5 describes some example definitions of logical formulas (conjunctive normal form) in Hilbert Spaces. Conjunctive Clauses of the formulas are represented as vectors of a Hilbert Space. It is not necessary that all transformations are possible. Computational Physics example: Assuming logical statements inside a blackhole singularity are defined in some Hilbert Space, existence of all possible linear transformations implies information (truths of logical formulas) oozes out of the blackhole space into observable space (e.g Hawking Radiation, Blackholes are not Black, Blackhole information paradox)
+
+Traditional results on homomorphisms between Vector Spaces apply to Shell Turing Machines defined on any two vector spaces one of which is a subspace of the other: 
+	(*) If T is a homomorphism defined from vectorspace U to vectorspace V of kernel W, then V is isomorphic to U/W. Conversely, if U is a vectorspace and W is a subspace of U, then there is a homomorphism of U onto U/W.
+	(*) If U is a vectorspace defined over field F, and W is a subspace of V then V/W is a quotient vectorspace over F if for v1, v2 in V and v1 + W in V/W, v2 + W in V/W:
+	(v1 + W) + (v2 + W) = (v1+v2) + W
+		(and)
+	For a in F, a(v1 + W) = av1 + W
+
+If Shell Turing Machines S1(U) and S2(W) are defined over vector spaces V and W and W is subspace of V and there is a homomorphism T(defined by relation "bigger than") from V to V/W, previous example oxymoron sentence - "This is bigger than the biggest" - is logically defined in quotient space V/W in first order logic quantifiers as (annotated by square parentheses]:
+	This is [There exists v1 in V] bigger than [T(v1,identity + w1):v1 > identity + w1] the biggest [there exists w1 in W such that for all w in W, w1 > w]
 	
 References:
 ----------
@@ -13296,6 +13306,7 @@ References:
 624.10 Geometry of Interaction and Linear Logic - [Girard] - https://en.wikipedia.org/wiki/Geometry_of_interaction - Proofs are represented as Networks of Logical Statement implications than trees in Sequent Calculus. This has some resemblance to Implication Graph Convex Hulls defined in http://sourceforge.net/projects/acadpdrafts/files/ImplicationGraphsPGoodEquationAndPNotEqualToNPQuestion_excerpts.pdf/download, https://sites.google.com/site/kuja27/NotesOnConceptHypergraphHMM_and_ImplicationGraphConvexHulls_2013-12-30.pdf?attredirects=0&d=1, https://sites.google.com/site/kuja27/ImplicationRandomGraphConvexHullsAndPerfectVoterProblem_2014-01-11.pdf?attredirects=0&d=1
 624.11 Searle's Chinese Room Argument, Turing Test and AI - https://en.wikipedia.org/wiki/Chinese_room - Turing test differentiates a human from a machine by question-answering (e.g reCAPTCHA). If there is a machine translation turing machine translating English to Chinese, it does not necessarily imply machine understands English and Chinese(strong AI), but only simulates it (weak AI) - Human equivalent of a Turing machine in a room can exactly mimick Turing Machine by executing the translation algorithm churning out Chinese from English with no knowledge of English or Chinese whatsoever. Chinese room example demarcates measure of difficulties of two sets - understandability/consciousness and simulatability - and thus a Turing jump - human has oracle access to a translation turing machine.
 624.12 Definability of Logical Formulas - http://www.math.wisc.edu/~msoskova/talks/MadisonColloquium.pdf
+624.13 Topics in Algebra - [Israel N.Herstein] - Chapter 4 - Vector Spaces and Modules - Page 174 - Theorem 4.1.1 and Lemma 4.1.2 - Quotient Spaces
 
 -------------------------------------------------------------------------------------------------------------
 625. (THEORY) Recursive Lambda Function Growth - TextGraph Machine Translation - 10 December 2018 - related
