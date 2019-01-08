@@ -13378,3 +13378,17 @@ by:
 13. Decompressed text has almost more than 50% accuracy and most priors are equal misleading the decipherment.
 14. Previous HMM based probabilistic decompression can be compared to List decoding Berlekamp-Welch implementation which maps text to a polynomial 
 
+---------------------------------------------------------------------------------------------------------------
+628. (FEATURE) Software Analytics - Hardcoded inputlayer replaced by Psutils - 8 January 2019 - Usecase
+in 399 implemented
+---------------------------------------------------------------------------------------------------------------
+1.DeepLearning_SoftwareAnalytics.py in software_analytics/ has been updated and hardcoded process statistics
+for input layer of BackPropagation have been replaced by Psutil systemwide load percentages
+2.This implements the usecase for software analytics mentioned earlier and finds the weights for
+input layer, hidden layer and output layer of BackPropagation multilayered perceptron.
+3.Psutil provides cpu_percentage(), memory_percentage() and disk_usage() functions fields from which have been used as input layer of the perceptron.
+4.Sampling loop has been limited to 2 but it can be any number. For each value of instantaneous system load (cpu, memory, disk IO) backpropagation iterates for sometime (limited to 10000) and finds the weights.
+5.For any two successive load values of input layer at two time points t and t+delta, the weights of the perceptron fluctuate and should theoretically stabilize for significant number of load samples (which is presently 2)
+6.Output layer has been set to a high value of 99% implying heavily thrashed system and input percentage values are divided by 10000 instead of 100 for probabilities to prevent overflow errors (NaN and Inf).
+7.Logs have been committed to testlogs/DeepLearning_SoftwareAnalytics.log.8January2019
+
