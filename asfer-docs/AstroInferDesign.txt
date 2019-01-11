@@ -13155,6 +13155,7 @@ References:
 	(*) M1 rejects and M2 rejects (because M rejects x => M1 == M2)
 	(*) But LHS is undecidable Mortality problem => M1 and M2 are not equivalent is undecidable
 	(*) Complement of the previous is hence undecidable
+619.2 Call Graphs for Multilingual Software Analysis - [Anne Marie Bogar, Damian Lyons, David Baird] - https://arxiv.org/pdf/1808.01213.pdf - NeuronRain Call Graphs are dynamic and multilingual - KCachegrind for userspace C/C++/Java and SATURN/FTrace for kernelspace C code.
 
 ----------------------------------------------------------------------------------------------------------------
 620. (THEORY) Space Filling, Separate Chaining Hash Tables, Theoretical EVMs, Timeout, Balls-and-Bins, Linear
