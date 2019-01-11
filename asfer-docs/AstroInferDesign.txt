@@ -12388,7 +12388,8 @@ References:
 581.8 Bliss - Graph Isomorphism Detector - http://www.tcs.hut.fi/Software/bliss/
 581.9 Program Analysis - Analysis of Control Statements - expected and variance of execution times and laplace transforms - Appendix E - Probability and Statistics, Queueing, Reliability and Computer Science - [Kishore Shridharbhai Trivedi, Duke University]
 581.10 Program Analysis - JRF self-study - 2008 Course Notes - [Madhavan Mukund, CMI and Sriram Rajamani, Microsoft Research] - Pointer Analysis - Andersen and Steensgaard algorithms creating points-to graphs - https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/pointer.pdf - Graph Mining algorithms can be applied to points-to graphs (static)
-581.11 Comparing Call Graphs - [Lohtak] - https://plg.uwaterloo.ca/~olhotak/pubs/paste07.pdf 
+581.11 Comparing Call Graphs - [Lohtak] - https://plg.uwaterloo.ca/~olhotak/pubs/paste07.pdf
+581.12 Principles of Program Analysis - [Flemming Nielsen-Hanne Riis Nielsen-Chris Hankin] - https://books.google.co.in/books?id=YseqCAAAQBAJ&printsec=frontcover&dq=nielsen+nielsen+hankin&hl=en&sa=X&ved=0ahUKEwiki_-gsOXfAhUPeysKHWpmA1gQ6AEIKjAA#v=onepage&q&f=false - Interprocedural Analysis - Section 2.5.4 Call Strings as Context and Examples 2.33 and 2.37 - function call stacks or paths in dynamic call graphs can be formalized as unbounded call strings which are defined by concatenation of values of transfer functions for each entry and exit(return) of functions invoked along a path in call graph.
 
 ---------------------------------------------------------------------------------------------------------------
 582. (THEORY) Cloud, Autonomous Vehicles, EventNet Logical Clock, Relativity, Lorentz Transform, Lamport's Clock
