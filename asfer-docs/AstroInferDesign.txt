@@ -13424,5 +13424,14 @@ References:
 629.1 Diophantine Equations - Survey - [V Srinivas, Tata Institute of Fundamental Research] - https://www.currentscience.ac.in/Downloads/article_id_059_12_0589_0594_0.pdf
 629.2 Exploring Number Theory via Diophantine Equations - https://www.csbsju.edu/Documents/Math/Sunil-CC-2009-B1.pdf - Gaussian Intgers, Pythagorean Triples
 629.3 Fermat's Last Theorem - [Amir D.Aczel] - Shimura-Taniyama Conjecture: Elliptic Curves are Modular Forms and proof of Fermat's Last Theorem by [Andrew Wiles]
-629.4 Algebraic Complexity - [Arora-Barak] - Blub-Shub-Smale Model - http://theory.cs.princeton.edu/complexity/algebraicchap.pdf
+629.4 Algebraic Complexity - [Arora-Barak] - Blum-Shub-Smale Model - http://theory.cs.princeton.edu/complexity/algebraicchap.pdf
 
+---------------------------------------------------------------------------------------------------------
+630. (THEORY and FEATURE) Music Pattern Mining - Audio to Notes - Intrinsic Merit of Music - 12 January 2019 - related to all sections on Intrinsic Merit and Fame - related to 67,68,69,593
+---------------------------------------------------------------------------------------------------------
+1. Implementations in NeuronRain on Intrinsic Merit Versus Fame previously have so far concentrated only on Merit of Text (TextGraphs), Large Scale Visuals (Videos and Images - LSVR) and People (Interview/Examination/Contest based merit, Analytics of Social Network Profile Vertices). Merit of Audio or Complexity of Music has been defined theoretically earlier as a minimum size DFA or Turing Machine accepting musical notes as language which is a minimum description length measure similar to Kolmogorov complexity.
+2.To this effect music_pattern_mining/AudioToBitMatrix.py has been changed to include a new function which converts an audio waveform to frequency domain by FFT. These frequencies are in turn mapped to a string of musical notes over octave alphabet - C,D,E,F,G,A,B,C (12 including fine divisions of notes denoted by #) - librosa API are invoked.
+3.Essentially by mapping music to huge strings over octave alphabets the problem of music mining is made easier and all algorithms implemented for string mining in NeuronRain apply to music as well.
+4.Since music is often related to creative genius, complexity of string of notes is an approximation of merit.
+5.String of musical notes differ from usual text strings because of an inherent periodicity in music (self-similar fractal-like ascending and descending sequence of notes)
+6.logs for an example audio to notes string has been committed to python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.AudioToNotes.12January2019
