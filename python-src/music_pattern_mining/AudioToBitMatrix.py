@@ -57,8 +57,21 @@ def audio_features(signal_bitmap):
 	print "Notes onsets occur at:",onset_frames
 	return (hist,bin,times,onstrength,onset_frames)
 
+def audio_to_notes(audio,dur=None):
+	print "###################################################"
+	print "Audio to Notes"
+	print "###################################################"
+	if dur is not None:
+		waveform,srate=librosa.load(audio,duration=dur)
+	freq=np.abs(librosa.stft(waveform))
+	print "Frequencies:",freq
+	notes=librosa.hz_to_note(freq)
+	print "Notes:",notes
+	return notes
+
 if __name__=="__main__":
 	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
 	print "Bitmap:",bm[0]
 	features=audio_features(bm)
 	print "Features:",features
+	notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
