@@ -13427,7 +13427,7 @@ References:
 629.4 Algebraic Complexity - [Arora-Barak] - Blum-Shub-Smale Model - http://theory.cs.princeton.edu/complexity/algebraicchap.pdf
 
 ---------------------------------------------------------------------------------------------------------
-630. (THEORY and FEATURE) Music Pattern Mining - Audio to Notes - Intrinsic Merit of Music - 12 January 2019 - related to all sections on Intrinsic Merit and Fame - related to 67,68,69,593
+630. (THEORY and FEATURE) Music Pattern Mining - Audio to Notes - Intrinsic Merit of Music - 12 January 2019, 21 January 2019 - related to all sections on Intrinsic Merit and Fame - related to 67,68,69,593
 ---------------------------------------------------------------------------------------------------------
 1. Implementations in NeuronRain on Intrinsic Merit Versus Fame previously have so far concentrated only on Merit of Text (TextGraphs), Large Scale Visuals (Videos and Images - LSVR) and People (Interview/Examination/Contest based merit, Analytics of Social Network Profile Vertices). Merit of Audio or Complexity of Music has been defined theoretically earlier as a minimum size DFA or Turing Machine accepting musical notes as language which is a minimum description length measure similar to Kolmogorov complexity.
 2.To this effect music_pattern_mining/AudioToBitMatrix.py has been changed to include a new function which converts an audio waveform to frequency domain by FFT. These frequencies are in turn mapped to a string of musical notes over octave alphabet - C,D,E,F,G,A,B,C (12 including fine divisions of notes denoted by #) - librosa API are invoked.
@@ -13435,3 +13435,6 @@ References:
 4.Since music is often related to creative genius, complexity of string of notes is an approximation of merit.
 5.String of musical notes differ from usual text strings because of an inherent periodicity in music (self-similar fractal-like ascending and descending sequence of notes)
 6.logs for an example audio to notes string has been committed to python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.AudioToNotes.12January2019
+7.State machine diagrams for Minimum Turing Machine or DFA accepting languages of strings of octave notes
+are directed graphs possibly having lots of cycles implying inherent periodicity in music. All directed graph complexity measures and algorithms therefore could quantify merit of audio or music.
+8.Emphasis is laid more on music patterns than audio patterns because audio is simply some textual content extractable by speech recognition and spelt out in flat notes of similar frequency mostly without modulation excluding emotives.
