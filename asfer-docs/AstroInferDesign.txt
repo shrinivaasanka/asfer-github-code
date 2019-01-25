@@ -13056,7 +13056,7 @@ If profiles are represented as TextGraphs as in previous implementation of HR An
 
 References:
 ----------
-615. PACELC Theorem extension of CAP - [Daniel Abadi] - http://cs-www.cs.yale.edu/homes/dna/papers/abadi-pacelc.pdf
+615.1 PACELC Theorem extension of CAP - [Daniel Abadi] - http://cs-www.cs.yale.edu/homes/dna/papers/abadi-pacelc.pdf
 
 ----------------------------------------------------------------------------------------------------------------
 616. (FEATURE) Software Analytics - Cyclomatic Complexity - Rewrite for merging two clauses - 14 November 2018
@@ -13186,7 +13186,8 @@ voters required  for every candidate to have atleast 1 vote = O(blnb) for b cand
 
 References:
 -----------
-620.4 Introduction to Algorithms - [Cormen-Leiserson-Rivest-Stein] - Coupon Collector Problem/Balls and Bins Problem - Page 134 (5.4.2), Page 1201 (C.4) 
+620.4 Introduction to Algorithms - [Cormen-Leiserson-Rivest-Stein] - Coupon Collector Problem/Balls and Bins Problem - Page 134 (5.4.2), Page 1201 (C.4)
+620.5 Analysis of Electronic Voting System - John Hopkins Paper - [TADAYOSHI KOHNO, ADAM STUBBLEFIELD, AVIEL D. RUBIN,DAN S. WALLACH] - https://homes.cs.washington.edu/~yoshi/papers/eVoting/vote.pdf - Analyzes C++ Source Code of Diebold AccuVote EVM and stresses VVPAT. Vulnerabilities include unencrypted ballot definition file tamper, Safety of Protective Counter storing number of votes polled, Party Affiliation tamper etc., - "...On a potentially much larger scale, if the voting terminals download the ballot definition over a network connection, then an adversary could tamper with the ballot definition file en-route from the back-end server to the voting terminal; of course, additional poll-worker procedures could be put in place to check the contents of the file after downloading, but we prefer a technological solution. With respect to modifying the file as it is sent over a network, we point out that the adversary need not be an election insider; the adversary could, for example, be someone working at the local ISP. If the adversary knows the structure of the ballot definition, then the adversary can intercept and modify the ballot definition while it is being transmitted. Even if the adversary does not know the precise structure of the ballot definition, many of the fields inside are easy to identify and change, including the candidates’ names, which appear as plain ASCII text...". In the context of theoretical EVMs on cloud defined previously based on LSH/Separate chaining, these encryption prerequisites are relevant in addition to CAP theorem limitations and PACELC theorem consistency versus speed trade-off. Per-candidate vote counters are replaced by hash table buckets which have to be secured. History preserving VVPAT audit trails require linking voters to votes which is obviously evident from per-candidate vote buckets. Frequent item set mining (e.g FPGrowth) of EVM buckets could point to malicious and suspicious voting patterns which is not feasible in counter increment.
 
 ---------------------------------------------------------------------------------------------------------------
 621. (FEATURE) Social Network Analysis - People Analytics - Dictionary filter for names - 4 December 2018
