@@ -13162,7 +13162,7 @@ References:
 
 ----------------------------------------------------------------------------------------------------------------
 620. (THEORY) Space Filling, Separate Chaining Hash Tables, Theoretical EVMs, Timeout, Balls-and-Bins, Linear
- Programming, Program Analysis, Cellular Automata - 30 November 2018, 1 December 2018, 2 December 2018 - related to 135, 615
+ Programming, Program Analysis, Cellular Automata, Majority Hardness Amplification Lemma - 30 November 2018, 1 December 2018, 2 December 2018, 28 January 2019 - related to 135, 517, 615
 ----------------------------------------------------------------------------------------------------------------
 Space Filling has been defined in terms of Linear Program in https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf and its cellular automaton algorithm version has been described earlier. This linear program with constraint that every variable is non-zero:
 		x1 + x2 + ... + xn = N, for all xi > 0
@@ -13183,6 +13183,11 @@ is isomorphic to an LSH set partition, Integer Partition or Separate Chaining ha
 	Sum of E(ni) < O(blnb) before every bin has a ball.
 Balls and Bins have histogram representation and previous bounds apply to histogram patterns too. In the context of theoretical EVMs if every voter votes perfectly at random with no prejudice to a candidate, number of
 voters required  for every candidate to have atleast 1 vote = O(blnb) for b candidates. Course material in (https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt) describe a separate chaining hashtable timeout based OS scheduler pattern and similar bounds apply - Number of processes required for atleast one process per timeout value = O(blnb). Previous linear program version of separate chaining if solved by Balls-and-Bins has similar bounds - O(n*ln(n)) for solving LP of n variables.
+
+To ensure secrecy of balloting, every vote appended to a candidate bucket in Theoretical Separate Chaining EVM has to be mapped to a unique one time randomly generated numeric id obfuscating the voter identity (and each bucket is encrypted). Mining patterns in this anonymous dictionary elicits only voting patterns and not voter patterns. Majority version of hardness amplification lemma described earlier envisages a MajorityInverse() function which inverts Majority+VoterSAT Boolean function composition for 2 candidates and obtains voters voting for a candidate and per voter SAT assignments top-down. Hardness of this MajorityInverse() is crucial to prove amplification. Theoretical EVM for 2 candidates is exactly separate chaining/LSH version of Majority gate of binary inputs 0 and 1 and Majority() and MajorityInverse() are defined as: 
+	- Majority(): candidate of maximum sized voters bucket
+	- MajorityInverse(): voters bucket for a candidate
+Intriguingly, MajorityInverse() is palpably easier in this separate chaining/LSH version of majority gate but previous anonymizer rules out easy inversion.
 
 References:
 -----------
