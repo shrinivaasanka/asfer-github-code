@@ -1,5 +1,5 @@
-#---------------------------------------------------------------------------------------------------------
-#ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -10,18 +10,11 @@
 #GNU General Public License for more details.
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-#---------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#--------------------------------------------------------------------------------------------------------
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
-#---------------------------------------------------------------------------------------------------------
-
+#--------------------------------------------------------------------------------------------------------
 
 import math
 import sys
@@ -56,9 +49,13 @@ class Entro:
 		
 		mdl=1.0
 		for k,v in probdict.items():
+			print "v=",v,"; occurdict[k]=",occurdict[k]
 			if v != 0.0:
-				mdl  = mdl * (math.pow(v,occurdict[k]))
-		return -1 * math.log(mdl) 
+				proboccur=math.pow(v,occurdict[k])
+				if mdl * proboccur > 0.0:
+					mdl  = mdl * proboccur
+		print "mdl:",abs(mdl)
+		return -1 * math.log(abs(mdl)) 
 
 	def entropy(self, text):
 		occurdict={}
@@ -86,9 +83,7 @@ class Entro:
 		return entropy
 
 
-
-
-print sys.argv[1]
-e=Entro()
-entr = e.entropy(sys.argv[1])
-print "Entropy of text [",sys.argv[1],"]= " + str(entr) 
+if __name__=="__main__":
+	e=Entro()
+	entr = e.entropy(sys.argv[1])
+	print "Entropy of text [",sys.argv[1],"]= " + str(entr) 

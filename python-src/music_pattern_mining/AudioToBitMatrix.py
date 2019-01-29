@@ -20,6 +20,7 @@ import librosa
 import numpy
 import matplotlib.pyplot as plt
 import numpy as np 
+from MinimumDescLength import minimum_descriptive_complexity
 
 def audio_to_bitmatrix(audio,dur=None,binary=False):
 	bitmap=[]
@@ -69,9 +70,17 @@ def audio_to_notes(audio,dur=None):
 	print "Notes:",notes
 	return notes
 
+def audio_merit(notes):
+	entropy_merit=minimum_descriptive_complexity("".join(notes))
+	print "Merit of Audio - Minimum Descriptive Length and Entropy:",entropy_merit
+
 if __name__=="__main__":
-	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
+	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
+	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
 	print "Bitmap:",bm[0]
 	features=audio_features(bm)
 	print "Features:",features
-	notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
+	#notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
+	notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	merit=audio_merit(notes[0])
