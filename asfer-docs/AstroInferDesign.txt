@@ -13464,3 +13464,31 @@ and Bi^2 is the classical probability of a state |(xi,yi)>. QNC contains polynom
 		Bi^2 = (a+ib)^2 = (a^2 - b^2) + i(2ab) = 1
 		implying b=0 and |a| = 1
 Zero imaginary part in previous sceanario implies a possibility of decoherence from quantum toffoli gates in QNC to PRAMs in NC. No cloning theorem implies quantum state cannot be replicated. But since NC is contained in QNC, every PRAM algorithm in NC can be translated to a quantum algorithm in QNC. For example any two toffoli multiplication gates in QNC algorithm for two PRAMs in NC algorithm (e.g for previous factorization problem allowing decoherence), must have different state superposition vectors v1 and v2 such that v1 has some factor state amplitude Bi(v1) and v2 has other factor state amplitude Bk(v2) of classical probabilities 1: Bi(v1)^2 = Bk(v2)^2 = 1 which does not violate No cloning theorem.
+
+-------------------------------------------------------------------------------------------------------
+632. (FEATURE and THEORY) Intrinsic Merit of Music, Exact Learning of DFAs, Minimum Description Length
+Merit - 29 January 2019 - related to all sections on Intrinsic Merit and Fame - related to 67,68,69,593,
+630
+-------------------------------------------------------------------------------------------------------
+1. New function audio_merit() has been defined in AudioToBitMatrix.py which invokes minimum_descriptive_complexity() to compute MDL for string of octave notes for a musical clip.
+2.Source files MinimumDescLength.py and Entropy.py have been changed to include __main__ and rewritten
+to define member function minimum_descriptive_complexity() and some other error checks for floating point overflow.
+3.An example musical MP4 clip excerpt of JS Bach has been analyzed. This masterpiece is featured in Douglas Hofstadter's Godel-Escher-Bach:An Eternal Golden Braid for its self-similar strange loops of notes (a mandelbrot fractal set)
+4.This implementation thus is a culmination of 4 classes of intrinsic merits on Internet and WWW - Text, Video, Audio and People - defined in this draft.
+5. Following are intrinsic merit implementations in this draft which expand on publications http://arxiv.org/abs/1006.4458, http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.pdf and http://arxiv.org/abs/1106.4102 (Complement Diophantines are intrinsic merit measures too because text obtained by word concatenations can be represented by word diophantine equations and can be Ramsey 255-colored by alphabet locations thereby creating arithmetic progressions):
+	5.1.Textual merit is analyzed by Recursive Gloss Overlap and Recursive Lambda Function Growth algorithms - Graph Tensor Neuron Network Merit. 
+	5.2 People Merit is analyzed by a mixture model of Intrinsic(Academic/Work/Interview/Contest/Examinations) and Experiential Mistake Bound Merit by a recursive mistake correction tree differential equation. 
+	5.3 Video Merit is analyzed by EventNet/ImageNet Tensor Products Algorithm. 
+	5.4 Audio Merit is defined theoretically as complexity of exact learning of DFAs on strings of notes and their minimization in [Dana Angluin] L* Algorithm Model and implemented by a less intensive Minimum Description Length merit on string of notes in this commit. Implementation of L* could be exponential and there are PAC learning approximate DFA learning algorithms.
+6.Previous algorithms for 4 classes of intrinsic merit are theoretical approximations based on algorithmic graph theory, causality and logical time in clouds, learning theory and connectomes with no invocation of statistical tool and by no means the only way to analyze merit but one of them.
+
+References:
+-----------
+632.1 Hilbert Tenth Problem: What was done and What is to be done - [Yuri Matiyasevich] - https://books.google.co.in/books?id=qWYbCAAAQBAJ&pg=PA11&lpg=PA11&dq=word+concatenation+diophantine&source=bl&ots=zQDO7Jy-kK&sig=ACfU3U1CeZ4WvshXDu62TEIOmb0bofrcbg&hl=en&sa=X&ved=2ahUKEwjItsyO5JLgAhUSfSsKHZ-NAx8Q6AEwAnoECAQQAQ#v=onepage&q=word%20concatenation%20diophantine&f=false - "...Under this representation of matrices, concatenation words corresponds to matrix multiplication and thus can be easily expressed by a system of diophantine equations ..."
+632.2 The Musical Offering - JS Bach - https://en.wikipedia.org/wiki/The_Musical_Offering
+632.3 Godel Escher Bach: An Eternal Golden Braid - [Hofstadter] - Endlessly rising canon - "...In this canon, Bach has given us our first example of the notion of Strange Loops. The
+"Strange Loop" phenomenon occurs whenever, by moving upwards (or downwards)
+through the levels of some hierarchical system, we unexpectedly find ourselves right
+back where we started..."
+632.3 Exact Learning of DFA - Angluin's L* Algorithm - teacher/learner model of membership and equivalence queries - http://www.cs.ox.ac.uk/james.worrell/DFA-learning.pdf
+
