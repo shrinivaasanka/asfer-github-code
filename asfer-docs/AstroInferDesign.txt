@@ -1104,6 +1104,10 @@ PRAM algorithms are in NC.
 
 	34.98) Parallel Planar Point Location - [Atallah-Goodrich-Cole] - Purdue e-Pubs - https://pdfs.semanticscholar.org/f80e/bfe40dfbfad40659ff82e80cb632a3feeeb8.pdf?_ga=2.211071314.671597020.1548674481-1949614478.1548674481 - Section 4.2 - Factorization is a planar point location problem - Hyperbolic arc pixelation creates juxtaposed rectangular polygons of tile segments each of them internally sorted. Factorization N=pq amounts to finding the polygon (segment) containing the point N which is O(logN) in CREW PRAM time. Binary Searching this implicitly sorted polygon yields the factor point (p,q) and additional O(logN) time.Tiles are computed by the relation delta = N/[x(x+1)]
 
+	34.99) Optimal Bounds for Decision Problems on the CRCW PRAM - [Beame-Hastad] - https://homes.cs.washington.edu/~beame/papers/crcwparity.pdf - "...Optimal Q(logn/log logn) lower bounds on the time for CRCW PRAMS with polynomially bounded numbers of processors or memory cells to compute parity and a number of related problems are proven..." - Corollary 4.2 - these lowerbounds apply to all sorting problems on CRCW PRAMs and to k-mergesort/segment tree of hyperbolic segments in computational geometric factorization. 
+
+	34.100) BSP versus PRAM - Survey - https://web.njit.edu/~alexg/courses/cis668/Fall2000/handsub5.pdf
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
