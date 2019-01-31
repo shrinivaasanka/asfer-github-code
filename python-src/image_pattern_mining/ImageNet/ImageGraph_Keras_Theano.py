@@ -31,6 +31,7 @@ from WordNetPath import path_between
 from empath import Empath
 from collections import defaultdict
 import operator
+from scipy.spatial import ConvexHull
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -121,6 +122,14 @@ def large_scale_visual_sentiment(vg_en_tn_prdct):
 	print "Sentiment Analysis of the Video:", sorted(vg_en_tn_prdct_sentiments.items(), key=operator.itemgetter(0), reverse=True)
 	return vg_en_tn_prdct_sentiments
 
+def convex_hull(imagefile):
+	im1=image.load_img(imagefile,target_size=(224,224))
+	im1array=image.img_to_array(im1)
+	hull=ConvexHull(im1array[0])
+	print "Convex Hull vertices:",hull.vertices
+	print "Convex Hull area:",hull.area
+	return (hull.vertices, hull.area)
+
 def core_topological_sort(vg_en_tn_prdct,threshold=1):
 	invdistmerit=inverse_distance_intrinsic_merit(vg_en_tn_prdct)
 	vg_en_tn_prdct_nxg=nx.DiGraph()
@@ -142,7 +151,8 @@ def core_topological_sort(vg_en_tn_prdct,threshold=1):
 if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
-	#imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
+	#imgnet_im1=imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
+	convex_hull("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
 	#imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
 	#imgnet_vg1=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
 	#imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
@@ -155,6 +165,6 @@ if __name__=="__main__":
 	#video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
 	#emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct3)
-	imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2)
-	vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
-	topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
+	#imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2)
+	#vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
+	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
