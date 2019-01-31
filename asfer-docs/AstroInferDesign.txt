@@ -13498,3 +13498,13 @@ through the levels of some hierarchical system, we unexpectedly find ourselves r
 back where we started..."
 632.3 Exact Learning of DFA - Angluin's L* Algorithm - teacher/learner model of membership and equivalence queries - http://www.cs.ox.ac.uk/james.worrell/DFA-learning.pdf
 
+---------------------------------------------------------------------------------------------------------
+633. (THEORY and FEATURE) GIS and Urban Planning Analytics, Convex Hull - 31 January 2019
+---------------------------------------------------------------------------------------------------------
+1. ImageGraph_KerasTheano.py has been changed to include a new function for finding convex hull of set of
+points/pixels in an image
+2. QHull ConvexHull() function from SciPy Spatial library - https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.ConvexHull.html - has been invoked in the new convex_hull() function defined for this purpose.
+3. An example demographic GIS satellite image of Chennai Megapolis (Population density of Urban Agglomeration) from SEDAC website - http://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/ - has been analyzed to draw a convex hull around thickly populated regions and convex hull vertices are printed in terms of some area units (not sqkm or sqmiles).
+4. OpenCV2 provides api for convex hull too - https://docs.opencv.org/2.4/doc/tutorials/imgproc/shapedescriptors/hull/hull.html
+5. Convex Hull analytics of GIS imagery is helpful for Urban planners and sustainable development.
+
