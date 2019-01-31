@@ -8330,6 +8330,8 @@ For example, Probability distribution for merit/least energy/fitness can be defi
 	Sigma(Pr(M=mi)) = (m1 + m2 + m3 + ... mn) / |M| = 1
 Continuous Probability distribution is the polynomial passing through above merit weight points.
 
+In generic sense, previous recursive mistake correction tree need not be a binary tree but a graph: At any time point t, number of mistakes corrected by a social profile vertex thus far forms an evolving triangular region of experience E, and each corrected mistake vertex in this triangle causes some mistake to be corrected in a future trapezoidal region dE in time interval (t,t+dt) adjoining this triangle E weighted by intrinsic merit M. This intuitively captures the equation E = M*e^(kMt) (dE/dt = kME) and the paradigm "experience = learning from mistakes"
+
 References:
 -----------
 443.1 Mistake bound learning - https://www.cs.utexas.edu/~klivans/lec1.ps - In this teacher/learner model, learner iteratively refines hypothesis based on mistakes pointed out by teacher and number of mistakes are polynomially bounded.
