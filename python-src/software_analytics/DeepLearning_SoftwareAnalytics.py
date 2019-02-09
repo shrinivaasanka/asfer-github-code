@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 ############################################################################################
 #top - 14:30:25 up  1:43,  1 user,  load average: 0.13, 0.61, 0.71
@@ -63,7 +55,12 @@ if __name__=="__main__":
 	print "##########################################################################################"
         #parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
 	sample=0
-	while sample < 2:
+	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
+	inputlayer=[0.01,0.01,0.01]
+	hiddenlayer=[0.8,0.9,0.3]
+	expectedoutput=[0.999999,0.999999,0.999999]
+        bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
+	while sample < 25:
 		cpu_percent=psutil.cpu_percent()/10000.0
 		cpu_percent=psutil.cpu_percent()/10000.0
 		virtmem=psutil.virtual_memory()
@@ -76,17 +73,14 @@ if __name__=="__main__":
 		print "Process perf variables: [cpu_percent,memory_percent,disk_percent]"
 		print [cpu_percent,memory_percent,disk_percent]
 		iter=0
-		weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
 		#parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
-		inputlayer=[cpu_percent,memory_percent,disk_percent]
-		hiddenlayer=[0.8,0.9,0.3]
-		expectedoutput=[0.999999,0.999999,0.999999]
-        	bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
+		bpnn.input_layer=[cpu_percent,memory_percent,disk_percent]
+
         	bpnn.compute_neural_network()
         	bpnn.print_layers()
         	print "Error before Backpropagation:"
         	print bpnn.output_error(bpnn.output_layer,bpnn.expected_output_layer)
-		while iter < 10000:
+		while iter < 10:
                		for m in xrange(len(inputlayer)):
                        		for l in xrange(len(inputlayer)):
                                		bpnn.backpropagation_pde_update_hidden_to_output(m,len(weights)/2 + len(inputlayer)*m + l)
@@ -124,7 +118,7 @@ if __name__=="__main__":
         outputweights=[0.11,0.445,0.24]
         iteration = 0
         lstmRNN=LSTMRecurrentNeuralNetwork(cellvars, cellweights, inputvars, inputweights, forgetvars, forgetweights, outputvars, outputweights)
-        while iteration < 100:
+        while iteration < 10:
                 lstmRNN.compute_cell_input_product1_level1()
                 lstmRNN.compute_forget_feedback_product2_level1()
                 lstmRNN.compute_product1_product2_sum1_level2()
@@ -149,7 +143,7 @@ if __name__=="__main__":
         resetweights=[0.04,0.2,0.5]
 
 	GRURNN=GRURecurrentNeuralNetwork(cellvars, cellweights, inputvars, inputweights_cell, inputweights_update, inputweights_reset, updateweights, resetweights)
-        while iteration < 1000:
+        while iteration < 10:
                 GRURNN.compute_update_input_htprev_gate()
                 GRURNN.compute_reset_input_htprev_gate()
                 GRURNN.compute_cell_htprev_reset_product()

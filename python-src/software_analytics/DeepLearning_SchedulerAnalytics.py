@@ -142,7 +142,11 @@ def learnt_scheduler_class(deep_learnt_output):
 if __name__=="__main__":
 	log_mapreducer("perf.data.schedscript","sched_stat_runtime")
 	kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
-
+	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
+	hiddenlayer=[0.8,0.9,0.3]
+	inputlayer=[0.01,0.01,0.01]
+	expectedoutput=[0.1,0.1,0.1]
+	bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
 	for proc in psutil.process_iter():
 		print "-------------------------------------------"
 		print "Process Feature Vector:"
@@ -151,7 +155,7 @@ if __name__=="__main__":
 		processfeatures=process_feature_vector(proc)
 		processesfeatures.append(processfeatures)
 		numproc += 1
-		if numproc == 5:
+		if numproc == 2:
 			exit
 		#	json.dump(processesfeatures,encodedprocessesfile)
 		if prevprocessfeatures != None:
@@ -198,13 +202,13 @@ if __name__=="__main__":
 		print "BackPropagation"
 		print "##########################################################################################"
 		iter=0
-		weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
+		
 		#parameters - initial conditions - inputlayer,hiddenlayer,expectedoutput,weights_array
-		inputlayer=[cpu_percent/100.0,memory_percent/100.0,float(num_involuntary_ctx_switches)/float(num_ctx_switches)]
-		hiddenlayer=[0.8,0.9,0.3]
-		expectedoutput=[get_expected_priority(1,proc_name),get_expected_priority(2,proc_name),get_expected_priority(3,proc_name)]
-		print "Expected output layer:",expectedoutput
-		bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
+		bpnn.input_layer=[cpu_percent/100.0,memory_percent/100.0,float(num_involuntary_ctx_switches)/float(num_ctx_switches)]
+
+		bpnn.expected_output_layer=[get_expected_priority(1,proc_name),get_expected_priority(2,proc_name),get_expected_priority(3,proc_name)]
+		print "Expected output layer:",bpnn.expected_output_layer
+		#bpnn=BackPropagation(inputlayer,hiddenlayer,expectedoutput,weights)
 		bpnn.compute_neural_network()
 		bpnn.print_layers()
 		print "Error before Backpropagation:"
