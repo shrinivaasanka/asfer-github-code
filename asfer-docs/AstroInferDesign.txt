@@ -13508,3 +13508,15 @@ points/pixels in an image
 4. OpenCV2 provides api for convex hull too - https://docs.opencv.org/2.4/doc/tutorials/imgproc/shapedescriptors/hull/hull.html
 5. Convex Hull analytics of GIS imagery is helpful for Urban planners and sustainable development.
 
+---------------------------------------------------------------------------------------------------------
+634. (FEATURE) Software Analytics and Scheduler Analytics - Backpropagation correction - 9 February 2019
+---------------------------------------------------------------------------------------------------------
+1.DeepLearning_SchedulerAnalytics.py and DeepLearning_SoftwareAnalytics.py have been updated for
+correction to a serious bug in BackPropagation computation.
+2.Earlier, BackPropagation Neural Network (BPNN) object for Software and Scheduler Analytics was getting created for every input training dataset element erroneously.
+3.This has been remedied by instantiating BackPropagation class only once outside the loop and updating only the input layer and/or expected output layer for each element in input dataset iteration.
+4.Iterations have been curtailed for concise logs.
+5.By this change, weights are updated for every psutil per process proc object (Scheduler Analytics) or systemwide process statistics info (Software Analytics) thus learning weights of the multilayer perceptron from system performance.
+6.logs for this have been committed to testlogs/DeepLearning_SchedulerAnalytics.log.9February2019 and testlogs/DeepLearning_SoftwareAnalytics.log.9January2019 (Timestamped wrongly - must be read DeepLearning_SoftwareAnalytics.log.9February2019)
+7.After sufficiently large number of input training data, hopefully this BPNN would be able to predict outputs from input per-process and systemwide performance statistics data e.g 99% load average.
+
