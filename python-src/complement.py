@@ -43,6 +43,8 @@ import pprint
 import operator
 import json
 import ast
+from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
+from networkx.algorithms.approximation.ramsey import ramsey_R2
 
 #Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf=[]
@@ -110,6 +112,11 @@ def complement_diophantine(enumerableset):
 	print "============================================================================"
 	pprint.pprint(complement_diophantine_map_sorted)
 
+def ramsey_text_coloring(text):
+	textgraph=RecursiveGlossOverlapGraph(text)
+	print "Ramsey coloring of text graph - (maxclique, maxindependentset):",ramsey_R2(textgraph[0])
+	
+
 def diophantine_sum_of_squares_solve(x):
 	if x != '':
 		unknowntuple=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(x))
@@ -168,6 +175,8 @@ def IharaIdentity():
 			primesbinf.write("\n")
 
 if __name__=="__main__":
+	textfile=open("RecursiveLambdaFunctionGrowth.txt","r")
+	ramsey_text_coloring(textfile.read())
 	primesf=open("First10000Primes.txt","r")
 	for line in primesf:
 		primes=line.split(" ")
