@@ -13531,8 +13531,12 @@ number of text graph - related to 2,617,630,632 and all sections on Fame and Mer
 4.Ramsey coloring R(r,s) of graphs is equivalent of Van Der Waerden sequence coloring which defines emergence of monochromatic cliques r or independent sets s (also known as Friends and Strangers theorem).
 5.By definition of complementation in generic sense, k-coloring partitions a set into k disjoint subsets which can be represented by some diophantine (e.g Beatty functions) - Complementation is a size 2 partition.
 5.In this commit, Ramsey R2 function is invoked from NetworkX API on textgraphs of natural language texts and maxclique-maxindependentset pairs are computed.
-7.This is a less intensive intrinsic merit measure for a text and Van Der Waerden number computation has no mention in python libraries presently and is daunting too - SAT solvers are used to compute maxcliques in some algorithms.
+7.This is a less intensive intrinsic merit measure for a text and Van Der Waerden number computation has no mention in python libraries presently and is daunting too - SAT solvers are used to compute Van Der Waerden Numbers in some algorithms.
 8.Following this reasoning, strings of octave alphabets in music can be construed as 12-coloring (and more including majors and minors) of music as sequence and indicates inevitable emergence of order from chaos.
+
+References:
+-----------
+635.1 SAT Solver for Van Der Waerden number 1132 = V(2,6) - https://www.cs.umd.edu/~gasarch/TOPICS/vdw/1132.pdf
 
 -------------------------------------------------------------------------------------------------------
 636. (THEORY) Computational Geometric Factorization - Parallel Planar Point Location of factors in Monotone Subdivision formed by Hyperbolic Arc Pixel Polygons with no necessity for Ray Shooting Queries
