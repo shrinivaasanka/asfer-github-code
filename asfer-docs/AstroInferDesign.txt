@@ -13549,4 +13549,5 @@ References:
 636.1 Parallel Planar Point Location for Monotone Subdivisions - https://www.csun.edu/~ctoth/Handbook/chap46.pdf - Table 46.5.1 - Parallel Point location in monotone subdivision by EREW PRAM in O(log n) time, O(n) parallel work - Reference [TV91] in 636.2
 636.2 Parallel transitive closure and point location in planar structures - Lemma 4.8 - [Tamassia-Vitter] - http://www.ittc.ku.edu/~jsv/Papers/TaV91.transclosure.ps.gz
 636.3 Computational Geometry - [Preparata-Shamos] - Point Location - Section 2.2 - https://books.google.co.in/books?id=_p3eBwAAQBAJ&printsec=frontcover#v=onepage&q=point%20location&f=false
+636.4 Point Location in Successive Convex Hulls - [Greenlaw-Hoover-Ruzzo] - List of P-Complete Parallel RAM Problems - A.9.5 - https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf - Given a point on 2D Plane, is the point in k-th remaining convex hull after finding and removing convex hulls repetitively? - Previous monotone chain of hyperbolic pixel array polygons are successive convex hulls containing respective tile segment points
 
