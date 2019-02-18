@@ -13547,6 +13547,8 @@ In previous sections on computational geometric factorization, various parallel 
 
 Arithmetic Progression of points as product of ordinates within each Hyperbolic pixel array polygon brings Ramsey/Van Der Waerden coloring of sequences into the realm of factorization - by k-mergesort the tile segement polygons are unified into single totally ordered integer sequence of length N*N/(N+1). If each airthmetic progression polygon is colored uniquely, the sorted sequence is a union of set of k-colored arithmetic progressions of some minimum length (or) N*N/(N+1) = VanDerWaerden(k, minimum length of a segment)
 
+In all sections related to factorization in this draft, factoring only one integer at a time has been the focus. Geometric intuition of hyperbolic tile/polygon segmentation allows storing segments or polygons for hyperbolic curves of multiple integers in same datastructure which could be segment tree, wavelet tree, or point location tree. For example two rectified hyperbolic polygons/segments for xy=N1 and xy=N2 for factoring N1 and N2 can be stored in single search tree which can be queried for factor points of N1 and N2 independently. This optimization saves lot of parallel tree construction time and space. 
+
 References:
 ----------
 636.1 Parallel Planar Point Location for Monotone Subdivisions - https://www.csun.edu/~ctoth/Handbook/chap46.pdf - Table 46.5.1 - Parallel Point location in monotone subdivision by EREW PRAM in O(log n) time, O(n) parallel work - Reference [TV91] in 636.2
