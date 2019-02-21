@@ -12571,12 +12571,15 @@ based rankings is one of the hardest Large Scale Visual Recognition Challenge. A
 		(*) Increased Tensor Rank implies the Events in the Video are more disconnected/independent
 		while decreased Tensor Rank implies the Events are more connected/dependent
 		(*) Therefore Video of Low Tensor Rank is heavily connected.
+	(*) Though applied to Video EventNet, tensor rank has wider philosophical ramifications because EventNet formalizes flow of time logically and has weird implication - EventNet Logical Time Tensor can be written as linear sum of independent tensors and therefore Time tensor essentially is a linear function of finer time subdivision tensors.
+
 References:
 ----------
 588.1 Language Inquiry and Word Count - LIWC - http://liwc.wpengine.com/wp-content/uploads/2015/11/LIWC2015_LanguageManual.pdf
 588.2 Exploring Tensor Rank - http://www.its.caltech.edu/~matilde/WeitzMa10Abstract.pdf
 588.3 Tensor Rank is NP-Complete - [Hastad] - http://www.nada.kth.se/~johanh/tensorrank.pdf 
 588.4 Computational Complexity of Tensor Problems - https://www.stat.uchicago.edu/~lekheng/meetings/agtd/hillar13.pdf
+588.5 Tensor Rank as Measure of its Complexity - http://web.math.unifi.it/users/ottavian/colloquium_kias.pdf
 
 ------------------------------------------------------------------------------------------------------------
 589. (THEORY and FEATURE) SAT Solver - CVXOPT - gesv() least squares - 16 August 2018 - related to 424
