@@ -13585,3 +13585,23 @@ flight plan dynamically restricted by ordinates convex hull. Convex Hull for a t
 References:
 ----------
 637.1 GIS and Drones - https://www.itu.int/en/ITU-D/Regional-Presence/AsiaPacific/SiteAssets/Pages/Events/2018/Drones-in-agriculture/asptraining/A_Session1_Intro-to-Drones-RS-GIS.pdf - GIS Image Classification, Rasters and Layers
+
+--------------------------------------------------------------------------------------------------------
+638.(FEATURE) Software Analytics - Scheduler Analytics - /etc/sysctl.conf kernel.sched_* optional
+clause - 25 February 2019
+--------------------------------------------------------------------------------------------------------
+1.DeepLearning_SchedulerAnalytics.py has been changed to include new clause for writing sysctl.conf kernel.sched_* variables instead of scheduler classes within learnt_scheduler_class() based on output layer of BackPropagation Neural Network(BPNN)
+2.These variables are documented in:
+	2.1 https://www.kernel.org/doc/Documentation/scheduler/
+	2.2 https://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.taskscheduler.html
+3.Different values of kernel.sched_* are returned based on numpy mean of output layer of BPNN. For example:
+["kernel.sched_latency_ns=9000000",
+ "kernel.sched_migration_cost_ns=100000",
+ "kernel.sched_wakeup_granularity_ns=2000000",
+ "kernel.rr_timeslice_ms=10",
+ "sched_rt_runtime_us=990000",
+ "sched_nr_migrate=12",
+ "sched_time_avg_ms=100"]
+which increase CPU affinity of a process, its timeslice quantum and reduce cost of CPU loadbalancing and migration if it is CPU-intensive.
+
+
