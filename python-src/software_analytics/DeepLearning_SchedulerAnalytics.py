@@ -118,6 +118,24 @@ def get_expected_priority(output_layer_index,proc_name):
 			return v*output_layer_index/10.0
 	return 0.1	
 
+def sched_debug_runqueue(iterations=10):
+	print "-------------------"
+	print "Scheduler Runqueue"
+	print "-------------------"
+	iter=0
+	while iter < iterations:
+		print "----------------------------------------------------"
+		print "            task   PID         tree-key  switches  prio     exec-runtime         sum-exec        sum-sleep"
+		print "----------------------------------------------------"
+		scheddebug=open("/proc/sched_debug","r")
+		lines=scheddebug.readlines()
+		lines.reverse()
+		for line in lines:
+			if "tree-key" in line:
+				break
+			print line
+		iter += 1
+				
 
 def learnt_scheduler_class(deep_learnt_output, sysctl=False):	
 	mean=numpy.mean(deep_learnt_output)
@@ -127,65 +145,65 @@ def learnt_scheduler_class(deep_learnt_output, sysctl=False):
 				"kernel.sched_migration_cost_ns=100000",
 				"kernel.sched_wakeup_granularity_ns=2000000",
 				"kernel.rr_timeslice_ms=10",
-				"sched_rt_runtime_us=990000",
-				"sched_nr_migrate=12",
-				"sched_time_avg_ms=100"]
+				"kernel.sched_rt_runtime_us=990000",
+				"kernel.sched_nr_migrate=12",
+				"kernel.sched_time_avg_ms=100"]
 		elif mean > 0.8:
 			return 	["kernel.sched_latency_ns=8000000",
 				"kernel.sched_migration_cost_ns=90000",
 				"kernel.sched_wakeup_granularity_ns=1800000",
 				"kernel.rr_timeslice_ms=9",
-				"sched_rt_runtime_us=890000",
-				"sched_nr_migrate=11",
-				"sched_time_avg_ms=90"]
+				"kernel.sched_rt_runtime_us=890000",
+				"kernel.sched_nr_migrate=11",
+				"kernel.sched_time_avg_ms=90"]
 		elif mean > 0.7:
 			return 	["kernel.sched_latency_ns=7000000",
 				"kernel.sched_migration_cost_ns=80000",
 				"kernel.sched_wakeup_granularity_ns=1700000",
 				"kernel.rr_timeslice_ms=8",
-				"sched_rt_runtime_us=790000",
-				"sched_nr_migrate=10",
-				"sched_time_avg_ms=80"]
+				"kernel.sched_rt_runtime_us=790000",
+				"kernel.sched_nr_migrate=10",
+				"kernel.sched_time_avg_ms=80"]
 		elif mean > 0.5:
 			return 	["kernel.sched_latency_ns=6000000",
 				"kernel.sched_migration_cost_ns=70000",
 				"kernel.sched_wakeup_granularity_ns=1600000",
 				"kernel.rr_timeslice_ms=7",
-				"sched_rt_runtime_us=690000",
-				"sched_nr_migrate=9",
-				"sched_time_avg_ms=70"]
+				"kernel.sched_rt_runtime_us=690000",
+				"kernel.sched_nr_migrate=9",
+				"kernel.sched_time_avg_ms=70"]
 		elif mean > 0.4:
 			return 	["kernel.sched_latency_ns=5000000",
 				"kernel.sched_migration_cost_ns=60000",
 				"kernel.sched_wakeup_granularity_ns=1500000",
 				"kernel.rr_timeslice_ms=6",
-				"sched_rt_runtime_us=590000",
-				"sched_nr_migrate=8",
-				"sched_time_avg_ms=60"]
+				"kernel.sched_rt_runtime_us=590000",
+				"kernel.sched_nr_migrate=8",
+				"kernel.sched_time_avg_ms=60"]
 		elif mean > 0.3:
 			return 	["kernel.sched_latency_ns=4000000",
 				"kernel.sched_migration_cost_ns=50000",
 				"kernel.sched_wakeup_granularity_ns=1400000",
 				"kernel.rr_timeslice_ms=5",
-				"sched_rt_runtime_us=490000",
-				"sched_nr_migrate=7",
-				"sched_time_avg_ms=50"]
+				"kernel.sched_rt_runtime_us=490000",
+				"kernel.sched_nr_migrate=7",
+				"kernel.sched_time_avg_ms=50"]
 		elif mean > 0.1:
 			return 	["kernel.sched_latency_ns=3000000",
 				"kernel.sched_migration_cost_ns=40000",
 				"kernel.sched_wakeup_granularity_ns=1200000",
 				"kernel.rr_timeslice_ms=4",
-				"sched_rt_runtime_us=390000",
-				"sched_nr_migrate=6",
-				"sched_time_avg_ms=40"]
+				"kernel.sched_rt_runtime_us=390000",
+				"kernel.sched_nr_migrate=6",
+				"kernel.sched_time_avg_ms=40"]
 		else:
 			return 	["kernel.sched_latency_ns=2000000",
 				"kernel.sched_migration_cost_ns=30000",
 				"kernel.sched_wakeup_granularity_ns=1100000",
 				"kernel.rr_timeslice_ms=3",
-				"sched_rt_runtime_us=290000",
-				"sched_nr_migrate=5",
-				"sched_time_avg_ms=30"]
+				"kernel.sched_rt_runtime_us=290000",
+				"kernel.sched_nr_migrate=5",
+				"kernel.sched_time_avg_ms=30"]
 	else:
 		if mean > 0.9:
 			return "Highest"
@@ -206,6 +224,7 @@ def learnt_scheduler_class(deep_learnt_output, sysctl=False):
 
 #############################################################################################
 if __name__=="__main__":
+	sched_debug_runqueue()
 	log_mapreducer("perf.data.schedscript","sched_stat_runtime")
 	kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
 	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
