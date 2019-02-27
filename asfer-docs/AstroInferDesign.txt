@@ -12389,6 +12389,8 @@ PhD Thesis Proposal (2011) - Sections on Program Comprehension - https://sites.g
 --------------------------------------------------------------------------------------------------------------
 For the same reason, Comprehending a Program behaviour is a non-trivial property X which asks "Does the Code do X?". Translating Code to Boolean Formula and applying a SAT Solver (as done in SATURN Program Analyzer) is also a non-trivial property: "Does the Code Satisfy the 3SAT?". Similarly automated debug analytics of code is undecidable too. Software solutions to these are only approximations.
 
+A circular timerwheel hashmap of dynamic sets of timeout clockticks to queues of processes - Survival Index Timeout - has been applied to OS Scheduler in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt which estimates a non-trivial undecidable property approximately - Worst Case Execution Time of a process.
+
 Licensing Violation is a great problem in Open Source Software (advertently or inadvertently) and Software Similarity Detection provides solutions to identify similar source codes. Mostly available Similarity Detectors parse function and variable names in two source trees and compare similarity but rarely compare the control flow graphs.But Frequent Subgraph Mining of SATURN Control Flow Graphs (static) and Valgrind/Callgrind/KCachegrind Call Graphs (dynamic) in NeuronRain AsFer takes it further solving similarity detection holistically. Third-party Graph Isomorphism Detectors can also be applied on these compiletime and runtime graphs. NeuronRain AsFer also provides indexing of source code and pairwise similarity by Latent Semantic Analysis. 
 
 References:
@@ -12403,6 +12405,7 @@ References:
 581.10 Program Analysis - JRF self-study - 2008 Course Notes - [Madhavan Mukund, CMI and Sriram Rajamani, Microsoft Research] - Pointer Analysis - Andersen and Steensgaard algorithms creating points-to graphs - https://www.cs.cmu.edu/~aldrich/courses/15-819O-13sp/resources/pointer.pdf - Graph Mining algorithms can be applied to points-to graphs (static)
 581.11 Comparing Call Graphs - [Lohtak] - https://plg.uwaterloo.ca/~olhotak/pubs/paste07.pdf
 581.12 Principles of Program Analysis - [Flemming Nielsen-Hanne Riis Nielsen-Chris Hankin] - https://books.google.co.in/books?id=YseqCAAAQBAJ&printsec=frontcover&dq=nielsen+nielsen+hankin&hl=en&sa=X&ved=0ahUKEwiki_-gsOXfAhUPeysKHWpmA1gQ6AEIKjAA#v=onepage&q&f=false - Interprocedural Analysis - Section 2.5.4 Call Strings as Context and Examples 2.33 and 2.37 - function call stacks or paths in dynamic call graphs can be formalized as unbounded call strings which are defined by concatenation of values of transfer functions for each entry and exit(return) of functions invoked along a path in call graph.
+581.13 Survey of Tools for estimation of Worst Case Execution Time of a program - Fig. 5 Bound Calculation - CFG, Path based, IPET, Transformation rules, Structure based - http://moss.csc.ncsu.edu/~mueller/ftp/pub/mueller/papers/1257.pdf
 
 ---------------------------------------------------------------------------------------------------------------
 582. (THEORY) Cloud, Autonomous Vehicles, EventNet Logical Clock, Relativity, Lorentz Transform, Lamport's Clock
