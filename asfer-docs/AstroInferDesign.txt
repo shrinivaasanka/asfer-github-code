@@ -13607,4 +13607,23 @@ clause - 25 February 2019
  "sched_time_avg_ms=100"]
 which increase CPU affinity of a process, its timeslice quantum and reduce cost of CPU loadbalancing and migration if it is CPU-intensive.
 
+-------------------------------------------------------------------------------------------------------
+639.(FEATURE) Software Analytics - Scheduler Analytics - /proc/sched_debug support - 27 February 2019
+-------------------------------------------------------------------------------------------------------
+1.Missing kernel prefix for some of the /etc/sysctl.conf variables have been included in return array.
+2./proc/sched_debug support has been included by defining a new function to read /proc/sched_debug and
+print the red-black tree of the Complete Fair Scheduler (CFS) [https://elixir.bootlin.com/linux/v3.2/source/kernel/sched_fair.c] runqueue for user defined iterations in a loop - reads the /proc/sched_debug periodically, reverses the list of lines to print the tail.
+3./proc/sched_debug is a convenient alternative to BCC tools runqlat
+4.Kernel CFS chooses the root of the red-black tree which has least virtual runtime to schedule it to run on CPU thereby prioritizing and fairly treating starved processes.
+5.Tree Key field is the virtual runtime of the process id - Example below prints runqueue at any instant for a CPU:
+
+runnable tasks:
+            task   PID         tree-key  switches  prio     exec-runtime         sum-exec        sum-sleep
+----------------------------------------------------------------------------------------------------------
+        metacity  2709   2070924.605059   1155243   120   2070924.605059    104482.007672  13723394.606366 /autogroup-149
+  unity-2d-panel  2724   2070927.500112    232355   120   2070927.500112     58204.926440  14229127.111319 /autogroup-149
+  gnome-terminal  3049   2070927.622210     59498   120   2070927.622210     22064.526687  14285212.740904 /autogroup-149
+R            cat  7834    612871.102038         1   120    612871.102038         2.269097         0.000000 /autogroup-153
+
+6.Logs for this have been committed to testlogs/DeepLearning_SchedulerAnalytics.log.27February2019
 
