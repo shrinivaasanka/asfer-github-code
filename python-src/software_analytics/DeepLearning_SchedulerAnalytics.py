@@ -43,6 +43,7 @@ from dictdiffer import diff
 import hashlib
 from SparkKernelLogMapReduceParser import log_mapreducer
 from ImageToBitMatrix import image_to_bitmatrix
+import Streaming_AbstractGenerator
 
 expected_process_priorities_input=open("DeepLearning_SchedulerAnalytics.input","r")
 expected_process_priorities=json.loads(expected_process_priorities_input.read())
@@ -97,7 +98,7 @@ def process_feature_vector(proc):
 	else:
 		proc_dict=proc.as_dict()
 		feature_vector.append(proc_dict)
-	pprint.pprint(feature_vector)
+	#pprint.pprint(feature_vector)
 	return feature_vector
 
 def is_prioritizable(proc_name):
@@ -118,25 +119,27 @@ def get_expected_priority(output_layer_index,proc_name):
 			return v*output_layer_index/10.0
 	return 0.1	
 
-def sched_debug_runqueue(iterations=10):
+def sched_debug_runqueue():
 	print "-------------------"
 	print "Scheduler Runqueue"
 	print "-------------------"
 	iter=0
-	while iter < iterations:
-		print "----------------------------------------------------"
-		print "            task   PID         tree-key  switches  prio     exec-runtime         sum-exec        sum-sleep"
-		print "----------------------------------------------------"
-		scheddebug=open("/proc/sched_debug","r")
-		lines=scheddebug.readlines()
-		lines.reverse()
-		for line in lines:
-			if "tree-key" in line:
-				break
-			print line
+	runqueuedict={}
+	#print "----------------------------------------------------"
+	runqueuedict[iter]=["task","PID","tree-key","switches","prio","exec-runtime","sum-exec","sum-sleep"]
+	#print "----------------------------------------------------"
+	scheddebug=open("/proc/sched_debug","r")
+	lines=scheddebug.readlines()
+	lines.reverse()
+	for line in lines:
+		if "tree-key" in line or "---------" in line:
+			break
+		linefields=line.split()
+		if len(linefields) > 0:
+			runqueuedict[str(iter)]=linefields
 		iter += 1
+	return runqueuedict
 				
-
 def learnt_scheduler_class(deep_learnt_output, sysctl=False):	
 	mean=numpy.mean(deep_learnt_output)
 	if sysctl==True:
@@ -224,8 +227,14 @@ def learnt_scheduler_class(deep_learnt_output, sysctl=False):
 
 #############################################################################################
 if __name__=="__main__":
-	sched_debug_runqueue()
-	log_mapreducer("perf.data.schedscript","sched_stat_runtime")
+	schedrunqstream=Streaming_AbstractGenerator.StreamAbsGen("OperatingSystem","SchedulerRunQueue")
+	runqcnt=0
+	for runq in schedrunqstream:
+		if runqcnt > 10:
+			break
+		print "Scheduler Runqueue Stream:",runq
+		runqcnt+=1
+	#log_mapreducer("perf.data.schedscript","sched_stat_runtime")
 	kernel_analytics_conf=open("/etc/kernel_analytics.conf","w")
 	weights=[0.01,0.023,0.056,0.043,0.099,0.088,0.033,0.021,0.12,0.23,0.34,0.45,0,11,0.56,0.77,0.21,0.88,0.92]
 	hiddenlayer=[0.8,0.9,0.3]
@@ -501,11 +510,11 @@ if __name__=="__main__":
 	for pf in processesfeatures:
 		hash1=getHash(str(pf))
 		hash2=getHash(str(pf))
-		print "hash1 == hash2:",hash1 == hash2
+		#print "hash1 == hash2:",hash1 == hash2
 		if process_md5hash_string == True:
 			encodedprocessesfile.write(str(pf[0]["pid"])+":"+str(pf[0]["name"])+":"+getHash(str(pf)))
 			encodedprocessesfile.write("\n")
 		else:
-			print "process_md5hash_string == False: str(pf[0]) = ",str(pf[0])
+			#print "process_md5hash_string == False: str(pf[0]) = ",str(pf[0])
 			encodedprocessesfile.write(str(pf[0]))
 			encodedprocessesfile.write("\n")

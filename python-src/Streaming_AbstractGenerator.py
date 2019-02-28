@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 #An abstraction class that creates an streaming iterable from underlying data which could be
 #from any datasource and stored in any bigdata storage(file, Hadoop-HBase, database etc.,)
@@ -37,6 +29,8 @@ from confluent_kafka import Consumer, KafkaError
 from pyspark.sql import SparkSession
 import json
 import socket
+from DeepLearning_SchedulerAnalytics import sched_debug_runqueue
+from pandas import DataFrame
 
 class StreamAbsGen(object):
 	def __init__(self,data_storage,data_source):
@@ -122,8 +116,9 @@ class StreamAbsGen(object):
 		if self.data_storage=="Socket_Streaming":
 			self.streaming_host=self.data_source
 			self.streaming_port=64001
-
-		
+		if self.data_storage=="OperatingSystem":
+			self.streaming_host="localhost"
+	
 	def __iter__(self):
 		if self.data_storage=="Spark_Parquet":
 			spark_stream_parquet=self.spark.read.parquet("../java-src/bigdata_analytics/spark_streaming/word.parquet")
@@ -182,3 +177,9 @@ class StreamAbsGen(object):
 			while data != None:
 				data=s.recv(100)
 				yield data
+		if self.data_storage=="OperatingSystem" and self.data_source=="SchedulerRunQueue":
+			while True:
+				schedrunqueue=sched_debug_runqueue()
+				#df=DataFrame(data=schedrunqueue)
+				#yield df
+				yield schedrunqueue
