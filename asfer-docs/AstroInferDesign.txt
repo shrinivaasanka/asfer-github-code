@@ -13627,3 +13627,16 @@ R            cat  7834    612871.102038         1   120    612871.102038        
 
 6.Logs for this have been committed to testlogs/DeepLearning_SchedulerAnalytics.log.27February2019
 
+--------------------------------------------------------------------------------------------------------
+640.(FEATUE) Software Analytics - Streaming Analytics + Scheduler Analytics - /proc/sched_debug -
+28 February 2019
+--------------------------------------------------------------------------------------------------------
+1.DeepLearning_SchedulerAnalytics.py - sched_debug_runqueue() has been changed to return a dictionary
+of process runqueue and loop has been removed
+2.Streaming Analytics support has been provided for Operating System performance statistics (e.g runqueue) by adding new data_storage "OperatingSystem" and data_source "SchedulerRunQueue" to Streaming_AbstractGenerator.py
+3.New clause for previous Scheduler Analytics streaming has been added in __iter__() which invokes
+sched_debug_runqueue() in a loop and yields the scheduler runqueue dictionaries.
+4.This integrates Streaming and Software Analytics seamlessly and any Streaming or other machine learning algorithm can process Operating System Stats Dictionary Stream like a bigdata source. 
+5.DeepLearning_SchedulerAnalytics.py imports this Streaming Abstract Generator by "OperatingSystem" and "SchedulerRunQueue" parameters and reads the scheduler stats as input stream.
+6.In future, any operating system data source other than scheduler runqueue can be plugged into Streaming Abstract Generator iterable and fulfils the foremost requirement for real time software streaming analytics.
+
