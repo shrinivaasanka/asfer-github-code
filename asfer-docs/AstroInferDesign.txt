@@ -13641,6 +13641,10 @@ sched_debug_runqueue() in a loop and yields the scheduler runqueue dictionaries.
 5.DeepLearning_SchedulerAnalytics.py imports this Streaming Abstract Generator by "OperatingSystem" and "SchedulerRunQueue" parameters and reads the scheduler stats as input stream.
 6.In future, any operating system data source other than scheduler runqueue can be plugged into Streaming Abstract Generator iterable and fulfils the foremost requirement for real time software streaming analytics.
 
+References:
+-----------
+640.1 Load Averages - /proc/loadavg versus /proc/sched_debug - http://www.brendangregg.com/blog/2017-08-08/linux-load-averages.html - Linux load averages include uninterrutible IO tasks too apart from CPU load.
+
 --------------------------------------------------------------------------------------------------------
 641.(THEORY) Word Diophantine Equations, Intrinsic Merit defined by Word Equations - 4 March 2019 -
 related to 635 and all sections on Merit and Complement Diophantines
@@ -13657,5 +13661,5 @@ References:
 ------------
 641.1 Word Equations, Fibonacci Numbers, and Hilbert’s Tenth Problem - [Yuri Matiyasevich] - Steklov Institute of Mathematics at Saint-Petersburg, 27 Fontanka, Saint-Petersburg, 191023, Russia - URL: http://logic.pdmi.ras.ru/~yumat - https://logic.pdmi.ras.ru/~yumat/talks/turku2006/FibonacciWordsAbstract.pdf.gz - "...Every word X = χn χn−1 . . . χ1 in the alphabet B can be viewed as the number x = χn un + χn−1 un−1 + · · · + χ1 u1 (1) written in positional system with weights of digits being the Fibonacci numbers u1 = 1, u2 = 1, u3 = 2, u4 = 3, u5 = 5, . . . (rather than traditional 1, 2,
 4, 8, 16, . . . )...."
-641.2 Collected words of Richard J.Buchi - https://books.google.co.in/books?id=9BfvAAAAMAAJ&q=inauthor:%22J.+Richard+B%C3%BCchi%22&dq=inauthor:%22J.+Richard+B%C3%BCchi%22&hl=en&sa=X&ved=0ahUKEwio19KMhejgAhXEfXAKHW6tB7oQ6AEIKjAA - Every existential formula in concatenation is Diophantine
+641.2 Collected works of Richard J.Buchi - https://books.google.co.in/books?id=9BfvAAAAMAAJ&q=inauthor:%22J.+Richard+B%C3%BCchi%22&dq=inauthor:%22J.+Richard+B%C3%BCchi%22&hl=en&sa=X&ved=0ahUKEwio19KMhejgAhXEfXAKHW6tB7oQ6AEIKjAA - Every existential formula in concatenation is Diophantine
 
