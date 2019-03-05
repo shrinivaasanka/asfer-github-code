@@ -13663,3 +13663,14 @@ References:
 4, 8, 16, . . . )...."
 641.2 Collected works of Richard J.Buchi - https://books.google.co.in/books?id=9BfvAAAAMAAJ&q=inauthor:%22J.+Richard+B%C3%BCchi%22&dq=inauthor:%22J.+Richard+B%C3%BCchi%22&hl=en&sa=X&ved=0ahUKEwio19KMhejgAhXEfXAKHW6tB7oQ6AEIKjAA - Every existential formula in concatenation is Diophantine
 
+-------------------------------------------------------------------------------------------------------
+642. (FEATURE) Merit of Audio/Music - Music Synthesizer from Random samples and State Machine - 5 March 2019
+-------------------------------------------------------------------------------------------------------
+1.New function notes_to_audio() has been implemented in music_pattern_mining/AudioToBitMatrix.py
+2.It creates a .wav file from random Scipy array or traverses a finite state machine to create a stream of notes in CDEFGABC notation which are translated to integer array of frequencies in hertz
+3.Scipy.io.wavefile.write() is invoked to write out this ndarray to a .wav file of sampling rate 44100
+4.Finite state machine has been implemented simply in a dictionary and supports quasi-non-determinism (array of possible previous states)
+5.Two .wav files automaton_synthesized_music.wav and notes_synthesized_music.wav are written for the two clauses: automaton or notes array
+6.logs for synthesizer have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.5March2019
+7.It is pertinent to mention here that Stanford Music Information Retrieval at https://musicinformationretrieval.com/genre_recognition.html does a statistical genre recognition of music as opposed to automata theoretic analysis in NeuronRain
+8.State machine has been hardcoded presently which have to be read from file and literal_eval()-ed.
