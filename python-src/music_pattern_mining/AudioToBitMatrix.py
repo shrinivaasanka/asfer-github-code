@@ -21,6 +21,9 @@ import numpy
 import matplotlib.pyplot as plt
 import numpy as np 
 from MinimumDescLength import minimum_descriptive_complexity
+from scipy.io.wavfile import write
+
+states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
 def audio_to_bitmatrix(audio,dur=None,binary=False):
 	bitmap=[]
@@ -70,17 +73,55 @@ def audio_to_notes(audio,dur=None):
 	print "Notes:",notes
 	return notes
 
+def notes_to_audio(automaton=None,maxsamplesize=44100):
+	print "###################################################"
+	print "Notes to Audio"
+	print "###################################################"
+	if automaton == None:
+		npnotes=np.random.uniform(10,100,44100)
+		scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
+		print "Notes :",scalednpnotes
+		print "Size of scaled notes:",len(scalednpnotes)
+		write("notes_synthesized_music.wav",maxsamplesize,scalednpnotes)
+	if automaton != None:
+		dfanotes=[librosa.note_to_hz(states2notes_machine['s1-s2'])]
+		prevstates=['s1']
+		iter=0
+		while iter < maxsamplesize-1:
+			possibletransitions=[]
+			#print "prevstate:",prevstate
+			#if 'fs' in prevstate:
+			#	break
+			for k,v in states2notes_machine.iteritems():
+				statetransition=k.split("-")
+				if statetransition[0] in prevstates:
+					possibletransitions.append(states2notes_machine[k])
+					prevstates.append(statetransition[1])
+			for note in possibletransitions:
+				hertz=librosa.note_to_hz(note)
+				#print "Hertz:",hertz
+				dfanotes.append(int(hertz))
+				#break
+			iter += 1
+		npnotes=np.array(dfanotes)
+		scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
+		print "Notes :",scalednpnotes
+		print "Size of scaled dfanotes:",len(scalednpnotes)
+		write("automaton_synthesized_music.wav",maxsamplesize,scalednpnotes)
+
 def audio_merit(notes):
 	entropy_merit=minimum_descriptive_complexity("".join(notes))
 	print "Merit of Audio - Minimum Descriptive Length and Entropy:",entropy_merit
 
 if __name__=="__main__":
-	bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
-	print "Bitmap:",bm[0]
-	features=audio_features(bm)
-	print "Features:",features
+	#print "Bitmap:",bm[0]
+	#features=audio_features(bm)
+	#print "Features:",features
 	#notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
-	notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
-	merit=audio_merit(notes[0])
+	#notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	#merit=audio_merit(notes[0])
+	notes_to_audio()
+	notes_to_audio(automaton=states2notes_machine)
