@@ -13674,3 +13674,13 @@ References:
 6.logs for synthesizer have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.5March2019
 7.It is pertinent to mention here that Stanford Music Information Retrieval at https://musicinformationretrieval.com/genre_recognition.html does a statistical genre recognition of music as opposed to automata theoretic analysis in NeuronRain
 8.State machine has been hardcoded presently which have to be read from file and literal_eval()-ed.
+
+--------------------------------------------------------------------------------------------------------
+643. (FEATURE) Merit of Audio/Music - Music Synthesizer - Music from mathematical functions - 6 March 2019
+--------------------------------------------------------------------------------------------------------
+1.New clause has been added to notes_to_audio() for synthesizing music from values of any mathematical function 
+2.Function expression string is eval()-ed in a lambda function and applied to a list of range values of variable x by map() and a wave file function_synthesized_music.wav is written to.
+3.Error in prevstates has been corrected by prevprevstates and resetting prevstates for each state transition for an alphabet.
+4.Logs for this have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.6March2019
+5.The wave files do not play any human palatable music and are representative only.
+6.Infact learning the right DFA (or in general a mathematical function) for language of music is the exact opposite of the previous and is measure of merit.
