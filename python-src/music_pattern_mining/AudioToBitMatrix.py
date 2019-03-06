@@ -73,30 +73,54 @@ def audio_to_notes(audio,dur=None):
 	print "Notes:",notes
 	return notes
 
-def notes_to_audio(automaton=None,maxsamplesize=44100):
-	print "###################################################"
-	print "Notes to Audio"
-	print "###################################################"
-	if automaton == None:
+def notes_to_audio(automaton=None,function=None,deterministic=True,maxsamplesize=44100):
+	if function != None:
+		print "###################################################"
+		print "Function to Audio"
+		print "###################################################"
+		print "Function:",function
+		#Example:
+		#>>> map(lambda x: eval('x*x+x+1'),range(1,10))
+		#[3, 7, 13, 21, 31, 43, 57, 73, 91]
+		notes=map(lambda x: eval(function),range(0,44100))
+		npnotes=np.asarray(notes)
+		#scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
+		scalednpnotes=npnotes
+		print "Notes :",scalednpnotes
+		print "Size of scaled notes:",len(scalednpnotes)
+		write("function_synthesized_music.wav",maxsamplesize,scalednpnotes)
+		return
+	if function == None and automaton == None:
+		print "###################################################"
+		print "Notes to Audio"
+		print "###################################################"
 		npnotes=np.random.uniform(10,100,44100)
 		scalednpnotes=np.int16(npnotes/np.max(npnotes)*32767)
 		print "Notes :",scalednpnotes
 		print "Size of scaled notes:",len(scalednpnotes)
 		write("notes_synthesized_music.wav",maxsamplesize,scalednpnotes)
+		return
 	if automaton != None:
+		print "###################################################"
+		print "Automaton to Audio"
+		print "###################################################"
 		dfanotes=[librosa.note_to_hz(states2notes_machine['s1-s2'])]
 		prevstates=['s1']
 		iter=0
 		while iter < maxsamplesize-1:
 			possibletransitions=[]
+			prevprevstates=prevstates
+			prevstates=[]
 			#print "prevstate:",prevstate
 			#if 'fs' in prevstate:
 			#	break
 			for k,v in states2notes_machine.iteritems():
 				statetransition=k.split("-")
-				if statetransition[0] in prevstates:
+				if statetransition[0] in prevprevstates:
 					possibletransitions.append(states2notes_machine[k])
 					prevstates.append(statetransition[1])
+					if deterministic:
+						break
 			for note in possibletransitions:
 				hertz=librosa.note_to_hz(note)
 				#print "Hertz:",hertz
@@ -108,6 +132,7 @@ def notes_to_audio(automaton=None,maxsamplesize=44100):
 		print "Notes :",scalednpnotes
 		print "Size of scaled dfanotes:",len(scalednpnotes)
 		write("automaton_synthesized_music.wav",maxsamplesize,scalednpnotes)
+		return
 
 def audio_merit(notes):
 	entropy_merit=minimum_descriptive_complexity("".join(notes))
@@ -125,3 +150,4 @@ if __name__=="__main__":
 	#merit=audio_merit(notes[0])
 	notes_to_audio()
 	notes_to_audio(automaton=states2notes_machine)
+	notes_to_audio(function='(x*x+x+1) % 32767')
