@@ -13684,3 +13684,16 @@ References:
 4.Logs for this have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.6March2019
 5.The wave files do not play any human palatable music and are representative only.
 6.Infact learning the right DFA (or in general a mathematical function) for language of music is the exact opposite of the previous and is measure of merit.
+
+-------------------------------------------------------------------------------------------------------
+644. (FEATURE) Intrinsic Merit of Audio/Music - Mel Frequency Cepstral Coefficients - 11 March 2019
+-------------------------------------------------------------------------------------------------------
+1.New function for Mel Frequency Cepstral Coefficients (MFCCs) of a music audio clip (invokes librosa) has been added in this commit. 
+2.MFCCs are kind of spectra of spectra of an audio waveform and have been widely used for speech recognition and music genre identification.
+3.logs for example MFCCs of a music file are committed to testlogs/AudioToBitMatrix.log.MFCC.11March2019
+
+References:
+-----------
+644.1 Stanford MIR - https://musicinformationretrieval.com/mfcc.html
+644.2 MFCCs for Music Modelling - http://musicweb.ucsd.edu/~sdubnov/CATbox/Reader/logan00mel.pdf
+644.3 Music Emotion Recognition (MER): The combined evidence of MFCC and residual phase - [NJ Nalini , S Palanivel] - Dept of Computer Science and Engineering, Annamalai University, Tamil Nadu 608002, India - https://www.sciencedirect.com/science/article/pii/S1110866515000419
