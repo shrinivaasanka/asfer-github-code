@@ -13479,6 +13479,14 @@ and Bi^2 is the classical probability of a state |(xi,yi)>. QNC contains polynom
 		implying b=0 and |a| = 1
 Zero imaginary part in previous sceanario implies a possibility of decoherence from quantum toffoli gates in QNC to PRAMs in NC. No cloning theorem implies quantum state cannot be replicated. But since NC is contained in QNC, every PRAM algorithm in NC can be translated to a quantum algorithm in QNC. For example any two toffoli multiplication gates in QNC algorithm for two PRAMs in NC algorithm (e.g for previous factorization problem allowing decoherence), must have different state superposition vectors v1 and v2 such that v1 has some factor state amplitude Bi(v1) and v2 has other factor state amplitude Bk(v2) of classical probabilities 1: Bi(v1)^2 = Bk(v2)^2 = 1 which does not violate No cloning theorem.
 
+Even if classical probability Bi^2 of some factor state Bi=|(xi,yi)> is not 1 but close to 1 in previous superposition of factor/product states, implying amplitudes of other factor states are non-zero, QNC factorization collapses to a classical BPNC factorization (e.g. a randomized PRAM factorization algorithm) despite no derandomization to NC. Derandomizing BPNC to NC has been mentioned previously in references 53.12.1 and 53.12.4 (Hitting Set Generators) which does not rule out possibility of a complete collapse of QNC all the way upto NC via BPNC.
+
+References:
+-----------
+631.1 Wave Function Collapse and Various Interpretations of QM - https://en.wikipedia.org/wiki/Wave_function_collapse - Quantum Decoherence is one of the ways to interpret collapse of wave function to a classical state
+631.2 Computational Meaning of Quantum Gates and Measurement Gates - https://www.fi.muni.cz/usr/gruska/quantum10f/qc1004.pdf - [Bernstein-Vazirani] Theorem implies for universal quantum gates it is sufficient to have real amplitudes
+631.3 Measurement Principles of Quantum Gates - http://www-inst.eecs.berkeley.edu/~cs191/sp12/notes/chap1&2.pdf - Measurement by Phases
+
 -------------------------------------------------------------------------------------------------------
 632. (FEATURE and THEORY) Intrinsic Merit of Music, Exact Learning of DFAs, Minimum Description Length
 Merit - 29 January 2019 - related to all sections on Intrinsic Merit and Fame - related to 67,68,69,593,
