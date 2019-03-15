@@ -13705,3 +13705,23 @@ References:
 644.1 Stanford MIR - https://musicinformationretrieval.com/mfcc.html
 644.2 MFCCs for Music Modelling - http://musicweb.ucsd.edu/~sdubnov/CATbox/Reader/logan00mel.pdf
 644.3 Music Emotion Recognition (MER): The combined evidence of MFCC and residual phase - [NJ Nalini , S Palanivel] - Dept of Computer Science and Engineering, Annamalai University, Tamil Nadu 608002, India - https://www.sciencedirect.com/science/article/pii/S1110866515000419
+
+--------------------------------------------------------------------------------------------------------
+645. (THEORY) Comparing Partitions - Related to 620 and all sections on Majority Voting, Theoretical EVMs, Separate Chaining Hashtable/LSH Set Partitions, Integer Partitions, Complementary Sets and Diophantines, Streaming Histogram/Dictionary Analytics, People Analytics, Software Analytics, Business Analytics - 15 March 2019
+--------------------------------------------------------------------------------------------------------
+Previous sections deeply delve into the ubiquitous isomorphism between integer/set partitions and set partitions, particularly those induced by hash table separate chaining buckets. A Theoretical EVM has been formulated having separate chaining partition as basis which is an encrypted set partition of electorate into candidate buckets. Drawing analytic inferences from stream of set partitions has been hitherto a far less researched bigdata topic and applies to whole gamut of theory and analytics - For example:
+	(*) Business Analytics - Customer base intelligence is often represented as dynamic stream of histogram set partitions or probability distributions of product influences. Hashtable separate chaining can be picturised as histogram of buckets of hashed items
+	(*) People Analytics - Stream of voting patterns in Theoretical EVMs are dynamically changing set partitions of electorate - vote shares in Psephology
+	(*) Scheduler Queuing Analytics in Operating Systems - an example hashtable based timeout is described in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt - finding patterns in stream of scheduler timeout hashtable queues
+	(*) Music Spectrograms are streams of Histograms
+	(*) Theoretically set partitions are complementary sets or exact cover of a universal set.
+
+Comparing any two set partitions thus far has few standard measures (rooted in comparing two cluster partitions created by supervised or unsupervised classifiers) like Rand Index (RI), Adjusted Rand Index etc., (ARI) which compute distance between partitions as ratio of agreements to disagreements by measuring overlaps. For a stream of set partitions (which could be any of the above), Rand Index or Adjusted Rand Index between two consecutive partitions in the stream themselves create another stream of scalar indices which are easier to interpret. In people analytics or business analytics example above, highly fluctuating stream of rand indices for voting or customer histogram patterns is a measure of disarray in voting and consumers and points to a state of flux whereas a periodic or steady state of stream of rand indices indicates voters and consumers have limited options or are content with status quo. Similarly a chaotic stream of rand indices for Scheduler implies a heavily thrashed system.
+
+Theoretically, rand indices define distance metric between two complementary sets and therefore diophantines (e.g beatty functions for size two partition) defined on them - in other words, diophantines are embedded in a metric space by rand index distance metric (similar to Reproducing Kernel Hilbert Space of Functions mentioned in 624.14).
+
+References:
+-----------
+645.1 Comparing Partitions - Journal of Classification 2:193-218 (1985) - Springer-Verlag New York Inc. 
+- [Lawrence Hubert ,The University of California, Santa Barbara - Phipps Arabie, University of Illinois at Champaign] - https://link.springer.com/article/10.1007/BF01908075
+645.2 Adjusted Rand Index - https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index
