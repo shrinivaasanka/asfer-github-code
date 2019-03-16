@@ -13731,7 +13731,7 @@ References:
 ---------------------------------------------------------------------------------------------------------
 Increasing sequences which partition set of natural integers are known as complementary sequences and equations which define both of them are complementary equations. This definition of complementary equations differs technically from complement functions which are diophantine equation representations of either a set or its complement and not both at once. OEIS sequences b(n)=A005228 and a(n)=A030124 are complementary and both are defined simultaneously by complementary equation b(n) = a(n − 1) + b(n − 1)
 
-Spectra of numbers are integers sequences and defined in terms of rounding off set of real multiples to nearest integers. For example:
+Spectra of numbers are integer sequences and defined in terms of rounding off set of real multiples to nearest integers. For example:
 	If r is a positive real number, spectra of r = S(r) = { [r],[2r],[3r],...} and [x] is the nearest
 integer <= x.
 
@@ -13741,4 +13741,6 @@ References:
 ----------
 646.1 Complementary Equations - Example 3 - [Journal of Integer Sequences, Vol. 10 (2007),Clark Kimberling,Department of Mathematics,University of Evansville,1800 Lincoln Avenue,Evansville, IN 47722,USA] - https://cs.uwaterloo.ca/journals/JIS/VOL10/Kimberling/kimberling26.pdf
 646.2 Complementarity in Philosophy - Dualism - Taichi - Yin-Yang (Dark-Bright) - https://en.wikipedia.org/wiki/Yin_and_yang
+646.3 OEIS - Hofstadter Sequence - https://oeis.org/A005228
+646.4 OEIS - Complement of Hofstadter Sequence - https://oeis.org/A030124
 
