@@ -13725,3 +13725,20 @@ References:
 645.1 Comparing Partitions - Journal of Classification 2:193-218 (1985) - Springer-Verlag New York Inc. 
 - [Lawrence Hubert ,The University of California, Santa Barbara - Phipps Arabie, University of Illinois at Champaign] - https://link.springer.com/article/10.1007/BF01908075
 645.2 Adjusted Rand Index - https://en.wikipedia.org/wiki/Rand_index#Adjusted_Rand_index
+
+---------------------------------------------------------------------------------------------------------
+646. (THEORY) Complementary Equations, Spectra of Numbers, Complementary Integer Sequences - related to 645 and all sections on Complement Functions, Complementary Sets and Diophantines - 16 March 2019
+---------------------------------------------------------------------------------------------------------
+Increasing sequences which partition set of natural integers are known as complementary sequences and equations which define both of them are complementary equations. This definition of complementary equations differs technically from complement functions which are diophantine equation representations of either a set or its complement and not both at once. OEIS sequences b(n)=A005228 and a(n)=A030124 are complementary and both are defined simultaneously by complementary equation b(n) = a(n − 1) + b(n − 1)
+
+Spectra of numbers are integers sequences and defined in terms of rounding off set of real multiples to nearest integers. For example:
+	If r is a positive real number, spectra of r = S(r) = { [r],[2r],[3r],...} and [x] is the nearest
+integer <= x.
+
+There are some special qualities of Spectra of integers - e.g. Spectra of any three real numbers S[r1],S[r2],S[r3] have some pairs which have infinitely many elements in common and thus cannot be complementary and thus is a prima facie condition for feasibility of complementation.
+
+References:
+----------
+646.1 Complementary Equations - Example 3 - [Journal of Integer Sequences, Vol. 10 (2007),Clark Kimberling,Department of Mathematics,University of Evansville,1800 Lincoln Avenue,Evansville, IN 47722,USA] - https://cs.uwaterloo.ca/journals/JIS/VOL10/Kimberling/kimberling26.pdf
+646.2 Complementarity in Philosophy - Dualism - Taichi - Yin-Yang (Dark-Bright) - https://en.wikipedia.org/wiki/Yin_and_yang
+
