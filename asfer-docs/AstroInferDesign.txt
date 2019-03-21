@@ -13749,3 +13749,18 @@ References:
 646.4 OEIS - Complement of Hofstadter Sequence - https://oeis.org/A030124
 646.5 Spectra of Integers - [Graham-Lin-Lin] - https://www.jstor.org/stable/2689998?seq=1#page_scan_tab_contents
 
+---------------------------------------------------------------------------------------------------------
+647. (THEORY and FEATURE) Bounded Error Factorization (Approximate Factors), Ray Shooting Queries, Transition from Quantum to Classical Computation, Derandomization - related to 597,631 - 21 March 2019
+---------------------------------------------------------------------------------------------------------
+In Computational Geometric Factorization algorithms described previously, Approximate Factors are found by prime factor estimation involving various number theoretic results which narrow down the location of exact factor to large extent. By searching a circular radius vicinity surrounding an approximate factor, probability of finding a factor is amplified. Error probability of not finding an exact factor by ray queries has been derived previously as:
+
+	N/kloglogN - 2q(logN)^l
+	--------------------------
+		N/kloglogN
+
+for integer-to-factorize N and constants k,q and l. This error probability though exponential can be brought down to a desired bound by suitable choice of radius and values for constants k,q and l or by precision tile summation ray shooting. Shor's BQP factoring algorithm can be made a PP classical probabilitstic polytime algorithm by [Adleman-DeMarrais-Huang] theorem - BQP in PP. By invocation of Ray Shooting Oracles as subroutines in this PP factoring algorithm, PP is error-bounded to a BPP or BPNC algorithm (by doing ray shooting queries on parallel RAMs). Derandomization of BPP to P has known Hitting Set Generator algorithms. BPNC derandomization has some restrictions - only derandomizing BPNC1 is known. But this could be sufficient because classical PRAM computational geometric factorization is achievable by Parallel Planar Point Location NC1 algorithms of O(logN) parallel time. This pipelined derandomization of BQP through BQP-PP-BPP(or BPNC)-P(or NC) points to prima facie feasibility of wave function superposition collapse (a quantum universal gate) to some classical eigenstate (PRAM).
+
+References:
+-----------
+647.1 Nisan's PRG and Derandomization of BPNC1 - [Periklis Papakonstantinou] - Section 3.4 - "...We consider logspace machines without a stack, and we parametrize on the number of passes over the random tape. This defines a hierarchy of classes between LogSpace and BP∗LogSpace ⊇ BPNC1 [Nis93b]. Therefore a full derandomization of this hierarchy derandomizes BPNC1 ..." - Section 3.4.1 - http://papakonstantinou.org/periklis/pdfs/phd_thesis.pdf - "...Observe that a PRG that fools logspace machines with two-way access over the input, also fools NC1 circuits. The classical PRG of Nisan [Nis92] is shown to fool logspace machines that make r(n) = 1 pass over the random or pseudorandom input. Using a simple analysis, we show that for every k > 0 there exists k' such that for seeds of length log^k'(n) the original Nisan’s PRG is also secure against logspace machines with r(n) = log^k(n) passes..."
+647.2 Simplified Derandomization of BPP by Hitting Set Generator - [Goldreich-Vadhan-Wigderson] - http://www.wisdom.weizmann.ac.il/~oded/COL/gvw.pdf
