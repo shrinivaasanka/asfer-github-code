@@ -13764,3 +13764,22 @@ References:
 -----------
 647.1 Nisan's PRG and Derandomization of BPNC1 - [Periklis Papakonstantinou] - Section 3.4 - "...We consider logspace machines without a stack, and we parametrize on the number of passes over the random tape. This defines a hierarchy of classes between LogSpace and BP∗LogSpace ⊇ BPNC1 [Nis93b]. Therefore a full derandomization of this hierarchy derandomizes BPNC1 ..." - Section 3.4.1 - http://papakonstantinou.org/periklis/pdfs/phd_thesis.pdf - "...Observe that a PRG that fools logspace machines with two-way access over the input, also fools NC1 circuits. The classical PRG of Nisan [Nis92] is shown to fool logspace machines that make r(n) = 1 pass over the random or pseudorandom input. Using a simple analysis, we show that for every k > 0 there exists k' such that for seeds of length log^k'(n) the original Nisan’s PRG is also secure against logspace machines with r(n) = log^k(n) passes..."
 647.2 Simplified Derandomization of BPP by Hitting Set Generator - [Goldreich-Vadhan-Wigderson] - http://www.wisdom.weizmann.ac.il/~oded/COL/gvw.pdf
+
+-------------------------------------------------------------------------------------------------------
+648. (THEORY) Voting in Knot Theory, Gordion Knot, One-Way Functions, Hardness Amplification Lemma for Majority + VoterSAT Boolean Function Composition, Separate Chaining or LSH Partition based Theoretical EVMs - related to 318, 517, 620 - 21 MArch 2019
+-------------------------------------------------------------------------------------------------------
+Knot theoretic formulation of One-Way-Functions (as a Gordion Knot) has been mentioned in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt. Previous sections describe a hard-to-invert MajorityInverse() function which extracts the identity of the voters who voted for or against a candidate (for simplicity binary 0 or 1). Majority function can be formulated as a knot polynomial by following example procedure:
+	(*) Electorate are points on a straightline string 
+	(*) Each voter has a decision function or VoterSAT of arbitrary complexity class
+	(*) Knot on this string of voters maps each voter to a point on locus of a knot polynomial in
+3 dimensional space. This mapping obfuscates the identity of the voter and vouchsafes secrecy.
+	(*) Knot polynomial is defined on 3 variable axes - Voters, Candidates, VoterSATs
+	(*) Each point on the knot is a tuple (obfuscated_voter_id, obfuscated_VoterSAT, candidate_id) denoting an anonymous vote in ballot
+	(*) MajorityInverse() for this Knot ballot is defined as:
+		MajorityInverse(obfuscated_voter_id, obfuscated_VoterSAT, candidate_id) = voter_id
+	(*) Previous example in 3-dimensions is only for illustrative purposes (Obfuscated VoterSAT in the vote tuple may not be necessary) and knot ballot polynomial can be embedded in arbitrary topological space other than R^3.
+	(*) Hardness of previous knot version of MajorityInverse() depends on difficulty in unravelling the knot (to retrieve voter who voted for a candidate) so that secret ballot is not compromised.
+
+	(*) Thus a Gordion Knot Ballot is hard-to-invert MajorityInverse() function.
+
+
