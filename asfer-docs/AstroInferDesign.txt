@@ -2346,6 +2346,7 @@ Reference:
 135.19. 135.16 is a slight variant of Kepler's Theorem [Proof - [Hales] - https://sites.google.com/site/thalespitt/] - filling a cube with small spheres has maximum density ~74%
 135.20 Maximizing Sum of Radii of Balls - [Eppstein] - http://www.ics.uci.edu/~eppstein/pubs/Epp-CCCG-16-slides.pdf
 135.21 Thue's Theorem For packing of discs on 2D - http://www.math.stonybrook.edu/~tony/whatsnew/dec00/paper.html - Circle packing in 2-dimension has maximum density (Pi/[2*sqrt(3)] ~ 90.69%) when circles are arranged in hexagonal lattice. The LP formulation in https://5d99cf42-a-62cb3a1a-s-sites.googlegroups.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf and Cellular Automaton Algorithm Version above for Optimum Space Filling of a 2D plane by Monte-Carlo Parallel Random process are RNC algorithmic solutions to Thue'e theorem (e.g natural process of Rain tiles earth in parallel by droplets of small radii and ultimately whole plane is covered, difference being allowance of circle overlaps) maximizing the variable points on plane having value 1.
+135.22 Circle Packing Theorem and Planarity - [Koebe-Andreev-Thurston] - Graph is planar if and only if it is K5,K3,3 minor-free and is an intersection graph which has edges drawn between centroids of every pair of tangential closely packed coins of varied radii as vertices (https://gitlab.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt).Previous Linear Programming and Cellular Automaton algorithms for space filling by circular solids and drops of fluids are random circle packings of 2-D space which are not necessarily close. Random Close Packing is described in 461.
 
 ------------------------------------------------------------------------------
 (FEATURE- DONE) 136. Commits as on 28,29 January 2015
@@ -6232,6 +6233,7 @@ References:
 349.1 Feynman Lectures on Physics - [RichardFeynman] - Volume 3 - Chapter 1 and 2
 349.2 Emperor's New Mind - [RogerPenrose] - Chapter 6 - Quantum Magic and Quantum Mystery
 349.3 Quantum Randomness and Logical Independence - https://arxiv.org/pdf/0811.4542v2.pdf - Mutually independent logical propositions cause quantum randomness
+349.4 Elitzur-Vaidman Bomb tester - https://en.wikipedia.org/wiki/Elitzur%E2%80%93Vaidman_bomb_tester - Detecting if bomb inside a box has detonated or not by quantum superposition - Constructive and Destructive self-interference - Previous thought experiment replaces the bomb in the box by a bigdata source which has to be predicted. Difference is one of the observers (detectors) is within the box and other is outside.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 350. (THEORY) Quantum Parallelism, Quantum Interference, Integer Factoring, Periodicity Finding, Polynomial Reconstruction and
@@ -13779,7 +13781,6 @@ Knot theoretic formulation of One-Way-Functions (as a Gordion Knot) has been men
 		MajorityInverse(obfuscated_voter_id, obfuscated_VoterSAT, candidate_id) = voter_id
 	(*) Previous example in 3-dimensions is only for illustrative purposes (Obfuscated VoterSAT in the vote tuple may not be necessary) and knot ballot polynomial can be embedded in arbitrary topological space other than R^3.
 	(*) Hardness of previous knot version of MajorityInverse() depends on difficulty in unravelling the knot (to retrieve voter who voted for a candidate) so that secret ballot is not compromised.
-
 	(*) Thus a Gordion Knot Ballot is hard-to-invert MajorityInverse() function.
-
+	(*) Number of votes for a candidate is determined by the number of points on the knot polynomial intersecting the 2-dimensional plane for a candidate axis point.
 
