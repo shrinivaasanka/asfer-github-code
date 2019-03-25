@@ -13784,3 +13784,21 @@ Knot theoretic formulation of One-Way-Functions (as a Gordion Knot) has been men
 	(*) Thus a Gordion Knot Ballot is hard-to-invert MajorityInverse() function.
 	(*) Number of votes for a candidate is determined by the number of points on the knot polynomial intersecting the 2-dimensional plane for a candidate axis point.
 
+--------------------------------------------------------------------------------------------------------
+649. (THEORY) Planar Graph Theoretic Circle Packing, Space Filling/Grid Filling and CSP/Linear Programming - related to 135 - 25 March 2019
+--------------------------------------------------------------------------------------------------------
+Previous algorithms for packing/filling space by circular solids/fluids were based on solving Linear Program and Cellular Automata by a Parallel Pseudorandom Generator. In this section a random graph theoretic circle packing algorithm is described:
+
+Circle Packing problem is defined as filling a grid with non-overlapping circles of maximum possible radii. In other words, sum of radii of the non-overlapping tangential circles are maximized by a constraint satisfaction problem(CSP) or LP. Rectangular grid is mapped to a linear program x11 + x12 + ... + xmn for each ordinate x(ij) of the grid. Points on the grid are randomly filled by a Parallel Pseudorandom Generator and these points are centroids of circles of arbitrary radius which intersect the grid. All grid ordinates intersected by or within the circles are set to 1. Circle Packing Theorem implies this set of tangential circles draw a planar intersection graph or coin graph. Conversely for every planar graph, a set of tangential circles can be demarcated which are solutions to a CSP/LP. This version of circle packing has an added parallel randomness ingredient and therefore is a Parallel Random Graph Circle Packing:
+	while (there are unfilled grid ordinates)
+	{
+		(*) Centroids of tangential circles (which are vertices of random intersection graph) are chosen by a PRG in parallel
+		(*) edges are created at random amongst centroid verticess which simulate tangential circles and have length equal to sum of radii of two tangential circles
+		(*) any overlap of circles is avoided by shrinking the sum of radii as necessary.
+ 		(*) all ordinate variables within random tangential circles are set to 1. 
+		(*) Grid ordinates are stored in a hashmap and an ordinate is removed from map after being set to 1. 
+		(*) At any instant, Parallel PRG choooses only from remaining ordinates in the hashmap which is exhausted when grid is completely filled by circles.
+	}
+
+Previous Parallel Random Graph Circle Packing is in BPNC/RNC and indirectly probabilistically solves the constraint satisfaction problem for sum of radii in parallel and is an online algorithm ( whereas sequential CSP/LP solution guarantees that the tangential osculating circles have maximum radius possible apriori).
+
