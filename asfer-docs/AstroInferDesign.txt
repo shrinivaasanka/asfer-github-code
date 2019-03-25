@@ -13802,3 +13802,8 @@ Circle Packing problem is defined as filling a grid with non-overlapping circles
 
 Previous Parallel Random Graph Circle Packing is in BPNC/RNC and indirectly probabilistically solves the constraint satisfaction problem for sum of radii in parallel and is an online algorithm ( whereas sequential CSP/LP solution guarantees that the tangential osculating circles have maximum radius possible apriori).
 
+References:
+-----------
+649.1 Cicle Packing Survey - Apollonian Gasket - Computational Effort in finding radii - Figure 2 - Packing and Simplicial Complexes -  Discrete Riemann Mapping Theorem - Maximal Packing - http://www.math.utk.edu/~kens/Notices_article.pdf - Previous algorithm for Circle Triangulation Packing in Apollonian Gasket is a greedy algorithm where maximum possible radii are chosen initially which are fractally reduced
+649.2 Descartes Circle Theorem - https://en.wikipedia.org/wiki/Descartes%27_theorem - Every four kissing quadratic circles satisfy the quadratic equation - (b1 + b2 + b3 + b4)^2 = 2(b1^2 + b2^2 + b3^2 + b4^2) where bi are bends or curvatures (radii) of the four circles. Quite useful in previous randomized parallel algorithm in finding the radius of inscribed fourth circle.
+
