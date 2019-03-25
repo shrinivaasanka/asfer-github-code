@@ -13806,4 +13806,4 @@ References:
 -----------
 649.1 Cicle Packing Survey - Apollonian Gasket - Computational Effort in finding radii - Figure 2 - Packing and Simplicial Complexes -  Discrete Riemann Mapping Theorem - Maximal Packing - http://www.math.utk.edu/~kens/Notices_article.pdf - Previous algorithm for Circle Triangulation Packing in Apollonian Gasket is a greedy algorithm where maximum possible radii are chosen initially which are fractally reduced
 649.2 Descartes Circle Theorem - https://en.wikipedia.org/wiki/Descartes%27_theorem - Every four kissing quadratic circles satisfy the quadratic equation - (b1 + b2 + b3 + b4)^2 = 2(b1^2 + b2^2 + b3^2 + b4^2) where bi are bends or curvatures (radii) of the four circles. Quite useful in previous randomized parallel algorithm in finding the radius of inscribed fourth circle.
-
+649.3 An example Constraint Satisfaction Problem for unequal Circle Packing in rectangle by 0-1 Integer Linear Programming - Integer Programming Formulations for Approximate Packing Circles in a Rectangular Container - https://www.hindawi.com/journals/mpe/2014/317697/
