@@ -29,8 +29,9 @@ from confluent_kafka import Consumer, KafkaError
 from pyspark.sql import SparkSession
 import json
 import socket
-from DeepLearning_SchedulerAnalytics import sched_debug_runqueue
 from pandas import DataFrame
+from pyspark import SparkContext, SparkConf
+import ast
 
 class StreamAbsGen(object):
 	def __init__(self,data_storage,data_source):
@@ -57,8 +58,6 @@ class StreamAbsGen(object):
 		#self.data_source="Spark_Streaming"
 		#self.data_source="NeuronRain"
 		self.data_source=data_source
-
-		self.spark=SparkSession.builder.getOrCreate()
 
 		if self.data_storage=="KingCobra":
 			self.inputfile=open("/var/log/kingcobra/REQUEST_REPLY.queue")
@@ -118,9 +117,17 @@ class StreamAbsGen(object):
 			self.streaming_port=64001
 		if self.data_storage=="OperatingSystem":
 			self.streaming_host="localhost"
-	
+		if self.data_storage=="TextHistogramPartition":
+			self.partition_stream=[]
+			for ds in data_source:
+				self.partition_stream.append(open(ds,"r"))
+		if self.data_storage=="DictionaryHistogramPartition":
+			self.partition_stream=open(data_source,"r")
+			
+				
 	def __iter__(self):
 		if self.data_storage=="Spark_Parquet":
+			self.spark=SparkSession.builder.getOrCreate()
 			spark_stream_parquet=self.spark.read.parquet("../java-src/bigdata_analytics/spark_streaming/word.parquet")
 			#spark_stream_parquet_DS=spark_stream_parquet.rdd.map(lambda row: (row.word))
 			spark_stream_parquet_DS=spark_stream_parquet.rdd.filter(lambda row: row.word not in [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s','1','2','3','4','5','6','7','8','9','0'])
@@ -178,8 +185,22 @@ class StreamAbsGen(object):
 				data=s.recv(100)
 				yield data
 		if self.data_storage=="OperatingSystem" and self.data_source=="SchedulerRunQueue":
+			from DeepLearning_SchedulerAnalytics import sched_debug_runqueue
 			while True:
 				schedrunqueue=sched_debug_runqueue()
 				#df=DataFrame(data=schedrunqueue)
 				#yield df
 				yield schedrunqueue
+		if self.data_storage=="TextHistogramPartition":
+			self.sc = SparkContext()
+			for ps in self.partition_stream:
+				partition_stream_DS=self.sc.parallelize(ps.readlines()).flatMap(lambda line: line.split(" ")).map(lambda word: (word,[1])).reduceByKey(lambda v1,v2: v1+v2).groupByKey().mapValues(list)
+				partition=partition_stream_DS.collect()
+				print "partition:",partition
+				if partition[0] is not '':
+					print "StreamAbsGen(Spark Parquet): iterator yielding labelled partition: %s" % partition
+					yield partition	
+		if self.data_storage=="DictionaryHistogramPartition":
+			dict_stream=ast.literal_eval(self.partition_stream.read())
+			for d in dict_stream:
+				yield d
