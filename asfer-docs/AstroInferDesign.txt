@@ -13807,3 +13807,19 @@ References:
 649.1 Cicle Packing Survey - Apollonian Gasket - Computational Effort in finding radii - Figure 2 - Packing and Simplicial Complexes -  Discrete Riemann Mapping Theorem - Maximal Packing - http://www.math.utk.edu/~kens/Notices_article.pdf - Previous algorithm for Circle Triangulation Packing in Apollonian Gasket is a greedy algorithm where maximum possible radii are chosen initially which are fractally reduced
 649.2 Descartes Circle Theorem - https://en.wikipedia.org/wiki/Descartes%27_theorem - Every four kissing quadratic circles satisfy the quadratic equation - (b1 + b2 + b3 + b4)^2 = 2(b1^2 + b2^2 + b3^2 + b4^2) where bi are bends or curvatures (radii) of the four circles. Quite useful in previous randomized parallel algorithm in finding the radius of inscribed fourth circle.
 649.3 An example Constraint Satisfaction Problem for unequal Circle Packing in rectangle by 0-1 Integer Linear Programming - Integer Programming Formulations for Approximate Packing Circles in a Rectangular Container - https://www.hindawi.com/journals/mpe/2014/317697/
+
+--------------------------------------------------------------------------------------------------------
+650. (THEORY and FEATURE) Streaming Set Partition (Histogram) Analytics - 28 March 2019
+--------------------------------------------------------------------------------------------------------
+1.New Python implementation for multipurpose analytics of streamed set partitions (histograms) has been committed - Streaming_SetPartitionAnalytics.py
+2.Two new bigdata sources have been defined in Streaming_AbstractGenerator.py - "TextHistogramPartition" and "DictionaryHistogramPartition" which respectively:
+	(*) Map a list of textfiles to list of histograms by finding word frequency in the text and yield partition datastructure as iterable which is a dictionary of words to buckets in histograms (occurrences are mapped to array of 1s e.g occurence 5 for word "word" is mapped to binned bucket ('word',[1,1,1,1,1]))
+	(*) Read a text file - Streaming_SetPartitionAnalytics.txt - containing list of dictionaries, literal_eval() it and yield the elements as iterable
+3.TextHistogramPartition is a fancy datasource which facilitates an alternative measure of streaming text analytics and text similarity
+4.DictionaryHistogramPartition is the conventional datasource for succinctly representing a set partition which could be anything ranging from LSH partition, Exact Cover, Balls-Bins, Separate Chained Hashtables, Electronic Voting Machines based on LSH and Separate Chaining, Business Intelligence Histograms, SMS voting histograms, Music Spectrograms etc.,.
+5.adjusted_rand_index() in Streaming_SetPartitionAnalytics.py instantiates both these datasource iterators and computes Adjusted Rand Index for two consecutive partitions in the stream by SciKitLearn adjusted_rand_score()
+6.Because of the fact that every set partition is set of class labels in some classifier, various other clustering performance measures - mutual information, silhouette etc., (https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation) could compare partitions too.
+7.tocluster() in Streaming_SetPartitionAnalytics.py maps a partition to an array of labelled elements in scikitlearn format
+8.An example streaming set partition analytics for linux kernel logs (TextHistogramPartition) and list of dictionaries (DictionaryHistogramPartition) is committed to Streaming_SetPartitionAnalytics.log.28March2019 which show how Adjusted Rand Index works for similar and dissimilar partitions.
+9.For circumventing sklearn exception two compared partitions are truncated to minimum size of the two
+
