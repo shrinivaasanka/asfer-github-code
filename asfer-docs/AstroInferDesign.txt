@@ -13785,7 +13785,7 @@ Knot theoretic formulation of One-Way-Functions (as a Gordion Knot) has been men
 	(*) Number of votes for a candidate is determined by the number of points on the knot polynomial intersecting the 2-dimensional plane for a candidate axis point.
 
 --------------------------------------------------------------------------------------------------------
-649. (THEORY) Planar Graph Theoretic Circle Packing, Space Filling/Grid Filling and CSP/Linear Programming - related to 135 - 25 March 2019
+649. (THEORY) Planar Graph Theoretic Circle Packing, Space Filling/Grid Filling, CSP/Linear Programming, Tile Cover and LSH/Separate Chaining Partitions - related to 135 - 25 March 2019, 1 April 2019
 --------------------------------------------------------------------------------------------------------
 Previous algorithms for packing/filling space by circular solids/fluids were based on solving Linear Program and Cellular Automata by a Parallel Pseudorandom Generator. In this section a random graph theoretic circle packing algorithm is described:
 
@@ -13801,6 +13801,8 @@ Circle Packing problem is defined as filling a grid with non-overlapping circles
 	}
 
 Previous Parallel Random Graph Circle Packing is in BPNC/RNC and indirectly probabilistically solves the constraint satisfaction problem for sum of radii in parallel and is an online algorithm ( whereas sequential CSP/LP solution guarantees that the tangential osculating circles have maximum radius possible apriori).
+
+Circle Packing is also an exact cover set partition of 2-D space (e.g infinite number of circles in Apollonian Gasket). Set partition and space filling (by Circle packing, Tile cover etc.,) have an isomorphism. Separate Chaining Hashtable and LSH partitions are isomorphic to exact tile cover of a rectangular 2-D region and there exists a connection to factorization if Number of elements of a set S is composite and size of every bucket in set partition of S is composite i.e every bucket in histogram is mapped to a rectangular tile in tile cover of S plotted as a rectangle. Size of every bucket can be written as sum of four squares by Lagrange Four Squares Theorem and thus every set in a set partition can be mapped to 4 juxtaposed squares which reduces Balls-Bins/Set partition problems to Tile Packing.
 
 References:
 -----------
