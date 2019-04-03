@@ -21,6 +21,19 @@ import math
 import random
 import Streaming_AbstractGenerator
 from sklearn.metrics.cluster import adjusted_rand_score
+from sympy.solvers.diophantine import diop_general_sum_of_squares
+from sympy.abc import a, b, c, d, e, f
+from complement import toint
+
+def setpartition_to_tilecover(histogram_partition):
+	squaretiles_cover=[]
+	for hp in histogram_partition:
+		tiles=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(hp))
+		print "square tiles for partition ",hp,":",tiles
+		for t in list(tiles)[0]:
+			squaretiles_cover.append(t*t)
+	print "Lagrange Four Square Tiles Cover reduction of Set Partition ",histogram_partition,":",squaretiles_cover
+	return squaretiles_cover
 
 def tocluster(histogram,datasource):
 	cluster=[]
@@ -71,4 +84,5 @@ def adjusted_rand_index():
 
 if __name__=="__main__":
 	ari=adjusted_rand_index()
+	setpartition_to_tilecover([11,12,13,14,15])
 
