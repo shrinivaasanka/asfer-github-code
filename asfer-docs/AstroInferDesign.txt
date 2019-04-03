@@ -13848,3 +13848,9 @@ References:
 -----------
 651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
 
+--------------------------------------------------------------------------------------------------------
+652. (FEATURE) Histogram-Set Partition Analytics - Adjusted Mutual Information - 3 April 2019
+--------------------------------------------------------------------------------------------------------
+1.adjusted_mutual_info_score() from sklearn.metrics has been invoked in adjusted_rand_index() for comparing two set partitions.
+2.Logs in testlogs/Streaming_SetPartitionAnalytics.log2.3April2019 show the difference between two measures - adjusted rand index and adjusted mutual information
+
