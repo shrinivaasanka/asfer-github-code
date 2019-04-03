@@ -21,6 +21,7 @@ import math
 import random
 import Streaming_AbstractGenerator
 from sklearn.metrics.cluster import adjusted_rand_score
+from sklearn.metrics import adjusted_mutual_info_score
 from sympy.solvers.diophantine import diop_general_sum_of_squares
 from sympy.abc import a, b, c, d, e, f
 from complement import toint
@@ -67,6 +68,8 @@ def adjusted_rand_index():
 		truncatedlen=int(min(len(histograms[prev]),len(histograms[n]))*0.9)
 		ari=adjusted_rand_score(tocluster(histograms[prev],"Text")[:truncatedlen],tocluster(histograms[n],"Text")[:truncatedlen])
 		print "Adjusted Rand Index(truncated):",ari
+		ami=adjusted_mutual_info_score(tocluster(histograms[prev],"Text")[:truncatedlen],tocluster(histograms[n],"Text")[:truncatedlen])
+		print "Adjusted Mutual Info Index(truncated):",ami
 		prev=n
 	#################################################################
 	histograms=[]
@@ -78,7 +81,9 @@ def adjusted_rand_index():
 	for n in range(1,len(histograms)):
 		truncatedlen=int(min(len(histograms[prev]),len(histograms[n]))*0.9)
 		ari=adjusted_rand_score(tocluster(histograms[prev],"Dict")[:truncatedlen],tocluster(histograms[n],"Dict")[:truncatedlen])
-		print "Adjusted Rand Index:",ari
+		print "Adjusted Rand Index (truncated):",ari
+		ami=adjusted_mutual_info_score(tocluster(histograms[prev],"Dict")[:truncatedlen],tocluster(histograms[n],"Dict")[:truncatedlen])
+		print "Adjusted Mutual Info Index (truncated):",ami
 		prev=n
 
 
