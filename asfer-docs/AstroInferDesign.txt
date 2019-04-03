@@ -13825,3 +13825,26 @@ References:
 8.An example streaming set partition analytics for linux kernel logs (TextHistogramPartition) and list of dictionaries (DictionaryHistogramPartition) is committed to Streaming_SetPartitionAnalytics.log.28March2019 which show how Adjusted Rand Index works for similar and dissimilar partitions.
 9.For circumventing sklearn exception two compared partitions are truncated to minimum size of the two
 
+--------------------------------------------------------------------------------------------------------
+651. (THEORY and FEATURE) Reduction from Set Partition to Exact Square Tiles Cover of Rectangular Region,
+Lagrange Four Square Theorem, Complementary Sets, Computational Geometric Factorization, Space Filling, Tile Cover, Packing, Set Partition/Histogram Analytics, LSH Partitions, Separate Chaining Hashtables - 3 April 2019 - related to 649 and 650
+--------------------------------------------------------------------------------------------------------
+1.Python implementation for Set Partition Analytics (Streaming_SetPartitionAnalytics.py) has been updated for a new function which reduces a histogram set partition to exact square tiles cover of rectangular region which has area equal to number of elements in the histogram.
+2.Function setpartition_to_tilecover() loops through histogram buckets (set partition) and maps each bucket size to sum of four squares by Lagrange Four Square Theorem essentially mapping each 1-dimensional bucket to 4 2-dimensional square tiles.
+3.Collection of these sets of 4 square tiles covers the rectangular region of area equal to number of elements partitioned by histogram/LSH/Separate Chaining.
+4.Example logs in testlogs/Streaming_SetPartitionAnalytics.log.3April2019 demonstrate reduction of histogram buckets [11,12,13,14,15] of total number of 65 elements to tile cover of rectangular region which has composite area 13*5=65:
+square tiles for partition  11 : set([(0, 1, 1, 3)])
+square tiles for partition  12 : set([(1, 1, 1, 3)])
+square tiles for partition  13 : set([(1, 2, 2, 2)])
+square tiles for partition  14 : set([(0, 1, 2, 3)])
+square tiles for partition  15 : set([(1, 1, 2, 3)])
+Lagrange Four Square Tiles Cover reduction of Set Partition  [11, 12, 13, 14, 15] : [0, 1, 1, 9, 1, 1, 1, 9, 1, 4, 4, 4, 0, 1, 4, 9, 1, 1, 4, 9]
+5.This reduction indirectly solves factorization problem (complexity depends on sum of four squares) geometrically by following square tiles cover algorithm:
+	5.1 Number to factorize N is partitioned arbitrarily by some integer partition and is isomorphic to a histogram
+	5.2 Square tiles are obtained from partition by previous Lagrange Four Square reduction 
+	5.3 Square tiles are geometrically juxtaposed/arranged to create a tiled rectangle sides of which are factors of N
+
+References:
+-----------
+651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
+
