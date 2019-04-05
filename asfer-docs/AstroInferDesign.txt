@@ -13849,6 +13849,8 @@ References:
 651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
 651.2 Alternative partition distance measures - https://arxiv.org/pdf/1106.4579.pdf
 651.3 Clustering for set partitioning - k-set partitioning and centroid clustering are equivalent - https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/OPT2015_paper_32.pdf
+651.4 Sage Set Partitions Implementation - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition.html#sage.combinat.set_partition.SetPartition
+651.5 Sage Ordered Set Partitions Implementation - complement of a partition - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition_ordered.html
 
 --------------------------------------------------------------------------------------------------------
 652. (FEATURE) Histogram-Set Partition Analytics - Adjusted Mutual Information - 3 April 2019
