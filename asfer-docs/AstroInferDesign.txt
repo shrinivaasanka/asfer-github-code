@@ -13844,6 +13844,8 @@ Lagrange Four Square Tiles Cover reduction of Set Partition  [11, 12, 13, 14, 15
 	5.2 Square tiles are obtained from partition by previous Lagrange Four Square reduction 
 	5.3 Square tiles are geometrically juxtaposed/arranged to create a tiled rectangle sides of which are factors of N
 
+If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previous sections on various parallel RAM algorithms for factoring (e.g Parallel Planar Point Location), geometric arrangement of square tiles in a rectangle is of polylogarithmic PRAM time - find factors which are sides of rectangle, successively tile the rectangle by choosing largest square remaining. Many randomized algorithms are available for finding Lagrange Sum of squares.
+
 References:
 -----------
 651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
@@ -13851,6 +13853,7 @@ References:
 651.3 Clustering for set partitioning - k-set partitioning and centroid clustering are equivalent - https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/OPT2015_paper_32.pdf
 651.4 Sage Set Partitions Implementation - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition.html#sage.combinat.set_partition.SetPartition
 651.5 Sage Ordered Set Partitions Implementation - complement of a partition - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition_ordered.html
+651.6 Jacobi Sum of Four Squares Theorem - https://en.wikipedia.org/wiki/Jacobi%27s_four-square_theorem - "...The number of ways to represent n as the sum of four squares is eight times the sum of the divisors of n if n is odd and 24 times the sum of the odd divisors of n if n is even ..."
 
 --------------------------------------------------------------------------------------------------------
 652. (FEATURE) Histogram-Set Partition Analytics - Adjusted Mutual Information - 3 April 2019
