@@ -13843,7 +13843,7 @@ Lagrange Four Square Tiles Cover reduction of Set Partition  [11, 12, 13, 14, 15
 	5.1 Number to factorize N is partitioned arbitrarily by some integer partition and is isomorphic to a histogram
 	5.2 Square tiles are obtained from partition by previous Lagrange Four Square reduction 
 	5.3 Square tiles are geometrically juxtaposed/arranged to create a tiled rectangle sides of which are factors of N
-	5.4 Finding an arrangment of tiles on a rectangular region can be formulated as a non-linear (quadratic) convex-concave optimization problem. If x1,x2,x3,...,xn are sides of square tiles:
+	5.4 Finding an arrangement of tiles on a rectangular region can be formulated as a non-linear (quadratic) convex-concave optimization problem. If x1,x2,x3,...,xn are sides of square tiles:
 	N = area of rectangle = sum of areas of square tiles = x1^2 + x2^2 + x3^2 + ... + xn^2
 	= product of sum of sides of peripheral tiles
 	= (c1*x1 + c2*x2 + ... + cn*xn)*(d1*x1 + d2*x2 + ... + dn*xn) for ci = 0 or 1, di = 0 or 1
