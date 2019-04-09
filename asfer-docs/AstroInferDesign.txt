@@ -13850,7 +13850,9 @@ Lagrange Four Square Tiles Cover reduction of Set Partition  [11, 12, 13, 14, 15
 	5.5 Solving N = x1^2 + x2^2 + x3^2 + ... + xn^2 = (c1*x1 + c2*x2 + ... + ck*xk + cn*xn)*((1-c1)*x1 + (1-c2)*x2 + ... + ck*xk + (1-cn)*xn) by Integer Programming for binary ci amounts to factorizing N (because tiles of the sides have to be mutually exclusive save corner tile)
 	5.6 The corner square tile is common to both sides and ck = dk for exactly one square tile xk.
 	
-If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previous sections on various parallel RAM algorithms for factoring (e.g Parallel Planar Point Location), geometric arrangement of square tiles in a rectangle is of polylogarithmic PRAM time - find factors which are sides of rectangle, successively tile the rectangle by choosing largest square remaining. Many randomized algorithms are available for finding Lagrange Sum of squares.
+If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previous sections on various parallel RAM polylogarithmic time algorithms for factoring (e.g Parallel Planar Point Location), geometric arrangement of square tiles in a rectangle is of polynomial time - find factors which are sides of rectangle, successively tile the rectangle by choosing largest square remaining. Many randomized algorithms are available for finding Lagrange Sum of squares. If the factors of N = p*q are known in polylogarithmic time finding the tile arrangement is by solving two linear programs:
+	c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
+	(1-c1)*x1 + (1-c2)*x2 + ... + ck*xk + ... + (1-cn)*xn = q
 
 References:
 -----------
