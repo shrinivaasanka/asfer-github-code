@@ -13847,7 +13847,7 @@ Lagrange Four Square Tiles Cover reduction of Set Partition  [11, 12, 13, 14, 15
 	N = area of rectangle = sum of areas of square tiles = x1^2 + x2^2 + x3^2 + ... + xn^2
 	= product of sum of sides of peripheral tiles
 	= (c1*x1 + c2*x2 + ... + cn*xn)*(d1*x1 + d2*x2 + ... + dn*xn) for ci = 0 or 1, di = 0 or 1
-	5.5 Solving N = x1^2 + x2^2 + x3^2 + ... + xn^2 = (c1*x1 + c2*x2 + ... + cn*xn)*(d1*x1 + d2*x2 + ... + dn*xn) by Integer Programming for binary ci and di amounts to factorizing N
+	5.5 Solving N = x1^2 + x2^2 + x3^2 + ... + xn^2 = (c1*x1 + c2*x2 + ... + ck*xk + cn*xn)*((1-c1)*x1 + (1-c2)*x2 + ... + ck*xk + (1-cn)*xn) by Integer Programming for binary ci amounts to factorizing N (because tiles of the sides have to be mutually exclusive save corner tile)
 	5.6 The corner square tile is common to both sides and ck = dk for exactly one square tile xk.
 	
 If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previous sections on various parallel RAM algorithms for factoring (e.g Parallel Planar Point Location), geometric arrangement of square tiles in a rectangle is of polylogarithmic PRAM time - find factors which are sides of rectangle, successively tile the rectangle by choosing largest square remaining. Many randomized algorithms are available for finding Lagrange Sum of squares.
