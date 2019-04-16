@@ -28,9 +28,11 @@ import threading
 import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
 import math
 import decimal
+from time import gmtime,strftime
 
 factors_accum=None
 factors_of_n=[]
+spcon=None
 
 from pyspark.accumulators import AccumulatorParam
 class VectorAccumulatorParam(AccumulatorParam):
@@ -103,7 +105,7 @@ def binary_search_interval_nonpersistent(xl,yl,xr,yr):
 		#print "factorcandidate = ",factorcandidate
 		if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
 			print "================================================="
-			print "Factor is = ", yl 
+			print "Factor is = ", yl ,"(at ", strftime("%a, %d %b %Y %H:%M:%S GMT",gmtime()),")"
 			print "================================================="
 			factors_accum.add(yl)
 		else:
@@ -193,11 +195,11 @@ def baker_harman_pintz_ray_shooting_queries(n):
 	print "============================================================================================================="
 	print "normal_order_n(loglogN) = ",normal_order_n
 	approximate_prime_factor=2
-	for m in xrange(1,normal_order_n):
+	for m in spcon.range(1,normal_order_n).collect():
 		prime_gaps_sum=0.0
 		prev_prime = approximate_prime_factor
 		print "approximate number of primes between two prime factors:",int(l*float(n)/(float(math.log(n,2)*normal_order_n)))
-		for x in xrange(int(l*float(n)/(float(math.log(n,2)*normal_order_n)))):
+		for x in spcon.range(int(l*float(n)/(float(math.log(n,2)*normal_order_n)))).collect():
 			next_prime = prev_prime + math.pow(prev_prime,0.525)
 			#print "next_prime: next_prime = ",next_prime
 			prime_gaps_sum += math.pow(prev_prime,0.525)
@@ -270,6 +272,7 @@ def SearchTiles_and_Factorize(n):
 	global globalmergedtiles
 	global globalcoordinates
 	global factors_accum 
+	global spcon
 
 	spcon = SparkContext("local[4]","Spark_TileSearch_Optimized")
 
@@ -289,7 +292,8 @@ def SearchTiles_and_Factorize(n):
 		cramer_ray_shooting_queries(n)
 		zhang_ray_shooting_queries(n)
         	factors_accum=spcon.accumulator(factors_of_n, FactorsAccumulatorParam())
-		spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
+		#spcon.parallelize(xrange(1,n)).foreach(tilesearch_nonpersistent)
+		spcon.parallelize(spcon.range(1,n).collect()).foreach(tilesearch_nonpersistent)
 		print "factors_accum.value = ", factors_accum.value
 		factors=[]
 		factordict={}
