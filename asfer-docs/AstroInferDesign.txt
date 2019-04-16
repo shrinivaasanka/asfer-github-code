@@ -13869,3 +13869,13 @@ References:
 1.adjusted_mutual_info_score() from sklearn.metrics has been invoked in adjusted_rand_index() for comparing two set partitions.
 2.Logs in testlogs/Streaming_SetPartitionAnalytics.log2.3April2019 show the difference between two measures - adjusted rand index and adjusted mutual information
 
+--------------------------------------------------------------------------------------------------------
+653. (FEATURE and THEORY) Computational Geometric Factorization - Tile Search - Spark 2.4 -SparkContext
+range() - 16 April 2019
+--------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been changed to replace xrange() by Spark Context range() function in Spark 2.4.
+2.Python xrange() is sequential and local while Spark range() is resilient distributed dataset which can be computed on cloud in parallel
+3.Some ray query functions have also been transitioned to Spark Context range().
+4.An example integer is factorized and logs in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.16April2019 show some accurate ray shooting by Hardy-Ramanujan approximate factoring and exact factors.
+5.Spark 2.4 has Barrier Synchronization feature (mentioned experimental) which is BSP model (like Pregel) than PRAM - https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.BarrierTaskContext.get
+6.Greenwich Mean Time (gmtime()) is printed after every factor is found for duration analysis of finding all factors.
