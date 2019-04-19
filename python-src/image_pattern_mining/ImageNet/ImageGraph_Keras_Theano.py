@@ -50,17 +50,34 @@ def imagenet_imagegraph(imagefile):
 	print "ImageGraph:",imagegraph
 	return imagegraph
 
-def imagenet_videograph(videofile, maxframes):
+def imagenet_videograph(videofile, maxframes, write_eventnet=False):
 	vid = cv2.VideoCapture(videofile)
 	videograph=[]
 	cnt=0
+	if write_eventnet:
+		vertices_file=open("Video_EventNetVertices.txt","a")
 	while True and cnt < maxframes:
 		ret, frame = vid.read()
 		cv2.imwrite(videofile+"Frame_%d.jpg"%cnt,frame)
-		videograph.append(imagenet_imagegraph(videofile+"Frame_%d.jpg"%cnt))
+		imgnet_imggraph=imagenet_imagegraph(videofile+"Frame_%d.jpg"%cnt)
+		videograph.append(imgnet_imggraph)
+		if write_eventnet:
+			vertices_file.write("frame"+str(cnt)+" - "+ event_participants(imgnet_imggraph[0].nodes())+ " - " + event_interactions(imgnet_imggraph[0].edges()) + "\n")
 		cnt += 1
 	print "VideoGraph:", videograph
 	return videograph
+
+def event_participants(nodes):
+	nodes_list=""
+	for n in nodes:
+		nodes_list = str(n) + " , "
+	return nodes_list[:-3]
+
+def event_interactions(edges):
+	edges_list=""
+	for e in edges:
+		edges_list = str(e) + "#"
+	return edges_list[:-1]
 
 def videograph_eventnet_tensor_product(videograph):
 	vg_en_tn_prdct=[]
@@ -72,11 +89,17 @@ def videograph_eventnet_tensor_product(videograph):
 	print "Videograph EventNet Tensor Product Matrix:",vg_en_tn_prdct
 	return vg_en_tn_prdct
 
-def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
+def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
 	vg_en_tn_prdct_inverse_distance_video_weights=[]
+	rowframe = 0
+	columnframe = 0
+	if write_eventnet:
+		edges_file=open("Video_EventNetEdges.txt","a")
 	for row in vg_en_tn_prdct:
 		vg_en_tn_prdct_inverse_distance_image_row_weights=[]
+		rowframe += 1
 		for tensorproduct in row:
+			columnframe += 1
 			tpedges=tensorproduct.edges()
 			tpnodes=tensorproduct.nodes()
 			print "Edges:",tpedges
@@ -87,6 +110,8 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct):
 				path2=path_between(tpedge[1][0],tpedge[1][1])
 				distance1=len(path1)
 				distance2=len(path2)
+				if distance1 != 0 and distance2 != 0:
+					edges_file.write("("+str(rowframe)+","+str(columnframe)+") \n")					
 				if distance1 == 0:
 					distance1 = 0.00001
 				if distance2 == 0:
@@ -152,7 +177,7 @@ if __name__=="__main__":
 	#imagenet_imagegraph("../testlogs/PictureOf8_1.jpg")
 	#imagenet_imagegraph("../testlogs/Chennai_Mahabalipuram_DSC00388.jpg")
 	#imgnet_im1=imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
-	convex_hull("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
+	#convex_hull("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
 	#imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
 	#imgnet_vg1=imagenet_videograph("testlogs/ExampleVideo_1.mp4",2)
 	#imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
@@ -165,6 +190,7 @@ if __name__=="__main__":
 	#video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
 	#emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct3)
-	#imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2)
-	#vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
+	imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2,write_eventnet=True)
+	vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
+	video_merit4=inverse_distance_intrinsic_merit(vg_en_tn_prdct4,write_eventnet=True)
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
