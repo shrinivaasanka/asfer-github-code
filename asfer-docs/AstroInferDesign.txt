@@ -13879,3 +13879,20 @@ range() - 16 April 2019
 4.An example integer is factorized and logs in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.16April2019 show some accurate ray shooting by Hardy-Ramanujan approximate factoring and exact factors.
 5.Spark 2.4 has Barrier Synchronization feature (mentioned experimental) which is BSP model (like Pregel) than PRAM - https://spark.apache.org/docs/latest/api/python/pyspark.html#pyspark.BarrierTaskContext.get
 6.Greenwich Mean Time (gmtime()) is printed after every factor is found for duration analysis of finding all factors.
+
+------------------------------------------------------------------------------------------------------
+654. (THEORY and FEATURE) EventNet creation from Video, Actor Model, PetriNets, Video EventNet Tensor Products Intrinsic Merit - 19 April 2019 - related to all sections on Causality-Logical Time and Merit
+------------------------------------------------------------------------------------------------------
+1.ImageNet Keras-Theano Python implementation has been changed to write EventNet Vertices and Edges 
+files from causally related frame events of the video which can be read by GraphViz or NeuronRain EventNet Python implementation
+2.EventNet differs from traditional PetriNet in following respects:
+	2.1 PetriNets have vertices having tokens called "Places" while EventNet has vertices having "actors" or "participants" in an event (Actor-Event Model)
+	2.2 PetriNets have transitions which move the tokens from Place-a to Place-b while EventNet has directed edges which connect a causing event vertex to an effect event vertex which is akin to flow of tokens.
+	2.3 EventNet is an Actor Model where actors interact in an event, modify local states and send messages to other actors.
+3.Video EventNet vertices and edges are written to Video_EventNetEdges.txt and Video_EventNetVertices.txt
+
+References:
+-----------
+654.1 Actor Model - https://en.wikipedia.org/wiki/Actor_model
+654.2 PetriNets - https://www.techfak.uni-bielefeld.de/~mchen/BioPNML/Intro/pnfaq.html
+
