@@ -13568,7 +13568,7 @@ In previous sections on computational geometric factorization, various parallel 
 
 Arithmetic Progression of points as product of ordinates within each Hyperbolic pixel array polygon brings Ramsey/Van Der Waerden coloring of sequences into the realm of factorization - by k-mergesort the tile segement polygons are unified into single totally ordered integer sequence of length N*N/(N+1). If each arithmetic progression polygon is colored uniquely, the sorted sequence is a union of set of k-colored arithmetic progressions of some minimum length (or) N*N/(N+1) = VanDerWaerden(k, minimum length of a segment)
 
-In all sections related to factorization in this draft, factoring only one integer at a time has been the focus. Geometric intuition of hyperbolic tile/polygon segmentation allows storing segments or polygons for hyperbolic curves of multiple integers in same datastructure which could be segment tree, wavelet tree, or point location tree. For example two rectified hyperbolic polygons/segments for xy=N1 and xy=N2 for factoring N1 and N2 can be stored in single search tree which can be queried for factor points of N1 and N2 independently. This optimization saves lot of parallel tree construction time and space. 
+In all sections related to factorization in this draft, factoring only one integer at a time has been the focus. Geometric intuition of hyperbolic tile/polygon segmentation allows storing segments or polygons for hyperbolic curves of multiple integers in same datastructure which could be segment tree, wavelet tree, or point location tree. For example two rectified hyperbolic polygons/segments for xy=N1 and xy=N2 for factoring N1 and N2 can be stored in single search tree which can be queried for factor points of N1 and N2 independently. This optimization saves lot of parallel tree construction time and space.
 
 References:
 ----------
@@ -13854,6 +13854,8 @@ If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previ
 	c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
 	(1-c1)*x1 + (1-c2)*x2 + ... + ck*xk + ... + (1-cn)*xn = q
 
+Point location by parallel construction of wavelet trees has been described in previous sections,which consider the set of points of a geometric variety (e.g points on rectified hyperbolic arc) on the plane as a string of points represented as a wavelet tree. Point Location by Parallel Wavelet Tree construction is more obvious than Parallel Point Location by Kirkpatrick Triangulation, Planar subdivision, Bridge Separator Trees etc.,. The string of points formed from rectified hyperbolic arc are concatenated straightline segments each of which is an arithmetic progression. Query select(B, N, i) returns the position p of the i-th occurrence of N in concatenated hyperbolic line segments string B from which i-th factors of N=(p, N/p) are obtained.
+
 References:
 -----------
 651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
@@ -13862,6 +13864,7 @@ References:
 651.4 Sage Set Partitions Implementation - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition.html#sage.combinat.set_partition.SetPartition
 651.5 Sage Ordered Set Partitions Implementation - complement of a partition - http://doc.sagemath.org/html/en/reference/combinat/sage/combinat/set_partition_ordered.html
 651.6 Jacobi Sum of Four Squares Theorem - https://en.wikipedia.org/wiki/Jacobi%27s_four-square_theorem - "...The number of ways to represent n as the sum of four squares is eight times the sum of the divisors of n if n is odd and 24 times the sum of the odd divisors of n if n is even ..."
+651.7 Succinct and Implicit Data Structures for Computational Geometry - [Meng He,Faculty of Computer Science, Dalhousie University, Halifax, NS, B3H 4R2, Canada,mhe@cs.dal.ca] - Figure 1 - "A wavelet tree constructed for the string 35841484 over an alphabet of size 8.This is also a wavelet tree constructed for the following point set on an 8 by 8 grid:{1, 3}, {2, 5}, {3, 8}, {4, 4}, {5, 1}, {6, 4}, {7, 8}, {8, 4}" and Section 3 - Planar Point Location - https://web.cs.dal.ca/~mhe/publications/ianfest66_succinctgeometry.pdf
 
 --------------------------------------------------------------------------------------------------------
 652. (FEATURE) Histogram-Set Partition Analytics - Adjusted Mutual Information - 3 April 2019
