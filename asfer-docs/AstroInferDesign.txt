@@ -13902,3 +13902,12 @@ References:
 654.1 Actor Model - https://en.wikipedia.org/wiki/Actor_model
 654.2 PetriNets - https://www.techfak.uni-bielefeld.de/~mchen/BioPNML/Intro/pnfaq.html
 
+--------------------------------------------------------------------------------------------------------
+655. (THEORY and FEATURE-BUGFIX) EventNet creation from Video - bug resolutions, corrections to EventNet vertices and edges text files - 21 April 2019
+--------------------------------------------------------------------------------------------------------
+1.ImageNet Keras Theano Python Implementation had some bugs in creating EventNet vertices and edges text
+files which have been resolved in this commit.
+2.Frame prevfix has been included in EventNet edges text file.
+3.Extracting EventNet from video facilitates computing usual dense subgraph complexity measures for Video
+similar to TextGraphs - e.g k-core, cycles, strongly connected components, algebraic connectivity etc.,
+
