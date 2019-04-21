@@ -70,13 +70,13 @@ def imagenet_videograph(videofile, maxframes, write_eventnet=False):
 def event_participants(nodes):
 	nodes_list=""
 	for n in nodes:
-		nodes_list = str(n) + " , "
+		nodes_list = nodes_list + str(n) + " , "
 	return nodes_list[:-3]
 
 def event_interactions(edges):
 	edges_list=""
 	for e in edges:
-		edges_list = str(e) + "#"
+		edges_list = edges_list + str(e) + "#"
 	return edges_list[:-1]
 
 def videograph_eventnet_tensor_product(videograph):
@@ -92,12 +92,12 @@ def videograph_eventnet_tensor_product(videograph):
 def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
 	vg_en_tn_prdct_inverse_distance_video_weights=[]
 	rowframe = 0
-	columnframe = 0
 	if write_eventnet:
 		edges_file=open("Video_EventNetEdges.txt","a")
 	for row in vg_en_tn_prdct:
 		vg_en_tn_prdct_inverse_distance_image_row_weights=[]
 		rowframe += 1
+		columnframe = 0
 		for tensorproduct in row:
 			columnframe += 1
 			tpedges=tensorproduct.edges()
@@ -111,7 +111,7 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
 				distance1=len(path1)
 				distance2=len(path2)
 				if distance1 != 0 and distance2 != 0:
-					edges_file.write("("+str(rowframe)+","+str(columnframe)+") \n")					
+					edges_file.write("(frame"+str(rowframe)+", frame"+str(columnframe)+") \n")					
 				if distance1 == 0:
 					distance1 = 0.00001
 				if distance2 == 0:
