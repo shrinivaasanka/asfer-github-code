@@ -12577,6 +12577,7 @@ based rankings is one of the hardest Large Scale Visual Recognition Challenge. A
 		while decreased Tensor Rank implies the Events are more connected/dependent
 		(*) Therefore Video of Low Tensor Rank is heavily connected.
 	(*) Though applied to Video EventNet, tensor rank has wider philosophical ramifications because EventNet formalizes flow of time logically and has weird implication - EventNet Logical Time Tensor can be written as linear sum of independent tensors and therefore Time tensor essentially is a linear function of finer time subdivision tensors.
+	(*) An important difference between Videos and Theoretical EventNet is: Event vertices and participants/actors within an Event vertex can be created in parallel independent of other event vertices in theoretical eventnet (and causality edges between event vertices could be established later in parallel too) while a video (youtube, movie etc.,) is always a serialized set of frames (events) though it could depict concurrent events - video is non-parallel unless more than one video source is simultaneously streamed. EventNet can be formally defined by some Process calculi.
 
 References:
 ----------
@@ -12585,6 +12586,8 @@ References:
 588.3 Tensor Rank is NP-Complete - [Hastad] - http://www.nada.kth.se/~johanh/tensorrank.pdf 
 588.4 Computational Complexity of Tensor Problems - https://www.stat.uchicago.edu/~lekheng/meetings/agtd/hillar13.pdf
 588.5 Tensor Rank as Measure of its Complexity - http://web.math.unifi.it/users/ottavian/colloquium_kias.pdf
+588.6 Process Calculi - https://en.wikipedia.org/wiki/Process_calculus
+588.7 Actor Model and Process Calculi - https://en.wikipedia.org/wiki/Actor_model_and_process_calculi_history
 
 ------------------------------------------------------------------------------------------------------------
 589. (THEORY and FEATURE) SAT Solver - CVXOPT - gesv() least squares - 16 August 2018 - related to 424
