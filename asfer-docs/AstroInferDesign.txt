@@ -13911,3 +13911,20 @@ files which have been resolved in this commit.
 3.Extracting EventNet from video facilitates computing usual dense subgraph complexity measures for Video
 similar to TextGraphs - e.g k-core, cycles, strongly connected components, algebraic connectivity etc.,
 
+--------------------------------------------------------------------------------------------------------
+656. (FEATURE) Medical Imageing Analytics - ElectroCardioGram (ECG), EventNet from Video - 23 April 2019
+--------------------------------------------------------------------------------------------------------
+1.Extracting patterns in medical imagery (ECG, MRI, Echo Cardio Gram Scans etc.,) is one of the most obvious analytics that can be performed on a Medical Image dataset which has widespread requirement in healthcare.
+2.ImageNet Keras-Theano Python implementation has been augmented with a medical_imageing() function which takes an image source (presently ECG) and thresholds the image to retrieve contours from it by CV2 findContours().
+3.Image Contours are prominent features in an image which are more pronounced and distinguish it from other images.
+4.Two example ECG images (Normal and Infarction) are compared by creating contours (i.e extract the ECG waveform from image) and computing the hausdorff distance between the two image contours:
+5.Example comparison from logs in testlogs/ImageGraph_Keras_Theano.log.MedicalImageing.23April2019:
+Distance between Normal ECG and Normal ECG: (0.0, 0, 0)
+Distance between Normal ECG and Infarction ECG: (1741.9586677071302, 0, 0)
+6.EventNet edges and vertices numbering in text files Video_EventNetEdges.txt and Video_EventNetVertices.txt has been corrected.
+
+References:
+-----------
+656,1 Medical Imageing Analysis - https://www.pyimagesearch.com/2018/12/03/deep-learning-and-medical-image-analysis-with-keras/
+656.2 ECG Library - https://ecglibrary.com/ecghome.php
+
