@@ -32,6 +32,16 @@ from empath import Empath
 from collections import defaultdict
 import operator
 from scipy.spatial import ConvexHull
+from scipy.spatial.distance import directed_hausdorff
+
+def medical_imageing(image_source,imagefile):
+	if image_source=="ECG":
+		img = cv2.imread(imagefile)
+		gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+		_, thresh=cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+		_, contours, hierarchy=cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
+		print contours
+		return contours
 
 def imagenet_imagegraph(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
@@ -53,10 +63,10 @@ def imagenet_imagegraph(imagefile):
 def imagenet_videograph(videofile, maxframes, write_eventnet=False):
 	vid = cv2.VideoCapture(videofile)
 	videograph=[]
-	cnt=0
+	cnt=1
 	if write_eventnet:
 		vertices_file=open("Video_EventNetVertices.txt","a")
-	while True and cnt < maxframes:
+	while True and cnt <= maxframes:
 		ret, frame = vid.read()
 		cv2.imwrite(videofile+"Frame_%d.jpg"%cnt,frame)
 		imgnet_imggraph=imagenet_imagegraph(videofile+"Frame_%d.jpg"%cnt)
@@ -193,4 +203,8 @@ if __name__=="__main__":
 	imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2,write_eventnet=True)
 	vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
 	video_merit4=inverse_distance_intrinsic_merit(vg_en_tn_prdct4,write_eventnet=True)
+	waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
+	waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
+	print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
+	print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
