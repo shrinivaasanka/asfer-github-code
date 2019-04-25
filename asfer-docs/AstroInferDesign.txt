@@ -13954,3 +13954,14 @@ Previous partition tree of depth-2 (i.e a tree whose nodes are set partitions) g
 
 Whole depth-2 majority voting democratic process rests on the correctness of Axiom of Choice which avers: For a collection X of subsets, there always exists a choice function f such that for every set A in X, f(A) is an element of A. In previous example, at Depth-1, maximum() is the choice function applied across the board for all segment set partitions for choosing the winning candidate per segment (ruling out ties). It is readily obvious that each segment is a cluster of partitions and empirically distance between majority of EVM partitions of same segment (partition rank, rand index, mutual info) should not be abnormally high and reflects trend per segment.
 
+By Berry-Esseen Central Limit Theorem, if vote for each candidate (ckpq) is a random variable, normalized sum of the votes for all candidates or average number of votes per candidate tends to normal distribution. In other words, every part in each of the EVM partitions previously is a random variable which are summed up. This implies distances between any two EVM partitions (which is the function of distance between individual parts in two voting partitions) also tend to distance between two normal distributions (i.e almost a constant on the average). Most importantly, columnwise sum of parts leading to per segment partition in Depth-1 is also an averaged normal distribution.
+
+Ramanujan's Congruences for EVM partitions imply, for certain size of electorate (5k + 4, 7k + 5, 11k + 6) number of possible voting patterns (partition number or number of possible partitions) abides by following congruences:
+	p(5k + 4) mod 5 = 0
+	p(7k + 5) mod 7 = 0
+	p(11k + 6) mod 11 = 0
+
+References:
+-----------
+657.1 Ramanujan Congruences - https://en.wikipedia.org/wiki/Ramanujan%27s_congruences
+
