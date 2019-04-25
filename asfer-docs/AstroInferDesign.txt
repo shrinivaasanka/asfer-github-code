@@ -13928,3 +13928,29 @@ References:
 656,1 Medical Imageing Analysis - https://www.pyimagesearch.com/2018/12/03/deep-learning-and-medical-image-analysis-with-keras/
 656.2 ECG Library - https://ecglibrary.com/ecghome.php
 
+---------------------------------------------------------------------------------------------------------
+657. (THEORY) Depth-2 Majority Function, Theoretical EVMs, Set Partitions, People Analytics, Axiom of Choice - related to 546,490 and all sections on majority voting - 25 April 2019
+---------------------------------------------------------------------------------------------------------
+It has been mentioned in earlier sections on set partitions that every theoretical majority voting partitions the population into subsets or buckets indexed by the candidate voted for. Most realworld democracies follow the depth-2 majority voting division convention below:
+					(Depth-0)
+				 Winning affiliation
+					/\
+					||
+	(Depth-1) {Segment1	     Segment2 	....		    SegmentP}
+			/\		/\				/\
+			||		||				||
+(Depth-2) {EVM11 EVM12 ... EVM1N}  {EVM21 EVM22 ... EVM2N} 	{EVMP1 EVMP2 ... EVMPN}
+
+and each EVM is defined by the hiearachy of partitions( candidates per segment might vary as n(1),n(2),...,n(P)) - votes per candidate k in q-th EVM of p-th segment (EVMpq) is denoted by ckpq :
+
+	EVM11 = c111 + c211 + c311 + ... + cn(1)11 
+	EVM12 = c112 + c212 + c312 + ... + cn(1)12
+	...
+	EVM21 = c121 + c221 + c321 + ... + cn(2)21
+	...
+	EVMP1 = c1P1 + c2P1 + c3P1 + ... + cn(P)P1
+	...
+Previous partition tree of depth-2 (i.e a tree whose nodes are set partitions) generalizes depth-2 boolean majority function to non-boolean setting and is an arithmetic circuit. At Depth-2 EVM set partitions per segment are summed up partwise (because all partitions within a segment should have equal number of parts which is the number of candidates per segment) and passed on to Depth-1 - in previous per segment partition identities summing vertically columnwise yields Depth-1 partition per segment. At Depth-1 index for candidate of maximum part/bucket size in segmentwise partition sum is computed and passed on to Depth-0. At Depth-0, single set partition is created which contains buckets per affiliation of the candidates. Maximum size part in Depth-0 set partition is the winning affiliation.
+
+Whole depth-2 majority voting democratic process rests on the correctness of Axiom of Choice which avers: For a collection X of subsets, there always exists a choice function f such that for every set A in X, f(A) is an element of A. In previous example, at Depth-1, maximum() is the choice function applied across the board for all segment set partitions for choosing the winning candidate per segment (ruling out ties). It is readily obvious that each segment is a cluster of partitions and empirically distance between majority of EVM partitions of same segment (partition rank, rand index, mutual info) should not be abnormally high and reflects trend per segment.
+
