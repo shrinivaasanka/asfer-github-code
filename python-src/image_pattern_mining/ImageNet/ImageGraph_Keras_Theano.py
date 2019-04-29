@@ -33,6 +33,7 @@ from collections import defaultdict
 import operator
 from scipy.spatial import ConvexHull
 from scipy.spatial.distance import directed_hausdorff
+import networkx as nx
 
 def medical_imageing(image_source,imagefile):
 	if image_source=="ECG":
@@ -65,7 +66,7 @@ def imagenet_videograph(videofile, maxframes, write_eventnet=False):
 	videograph=[]
 	cnt=1
 	if write_eventnet:
-		vertices_file=open("Video_EventNetVertices.txt","a")
+		vertices_file=open("Video_EventNetVertices.txt","w")
 	while True and cnt <= maxframes:
 		ret, frame = vid.read()
 		cv2.imwrite(videofile+"Frame_%d.jpg"%cnt,frame)
@@ -100,10 +101,11 @@ def videograph_eventnet_tensor_product(videograph):
 	return vg_en_tn_prdct
 
 def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
-	vg_en_tn_prdct_inverse_distance_video_weights=[]
+	vg_en_tn_prdct_inverse_distance_video_weights=[]	
+	video_eventnet_graph=nx.DiGraph()
 	rowframe = 0
 	if write_eventnet:
-		edges_file=open("Video_EventNetEdges.txt","a")
+		edges_file=open("Video_EventNetEdges.txt","w")
 	for row in vg_en_tn_prdct:
 		vg_en_tn_prdct_inverse_distance_image_row_weights=[]
 		rowframe += 1
@@ -121,7 +123,9 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
 				distance1=len(path1)
 				distance2=len(path2)
 				if distance1 != 0 and distance2 != 0:
-					edges_file.write("(frame"+str(rowframe)+", frame"+str(columnframe)+") \n")					
+					edges_file.write("(frame"+str(rowframe)+", frame"+str(columnframe)+") \n")
+					video_eventnet_graph.add_edge("frame"+str(rowframe), "frame"+str(columnframe))
+									
 				if distance1 == 0:
 					distance1 = 0.00001
 				if distance2 == 0:
@@ -130,7 +134,10 @@ def inverse_distance_intrinsic_merit(vg_en_tn_prdct,write_eventnet=False):
 			vg_en_tn_prdct_inverse_distance_image_row_weights.append(vg_en_tn_prdct_inverse_distance_image_weights)
 		vg_en_tn_prdct_inverse_distance_video_weights.append(vg_en_tn_prdct_inverse_distance_image_row_weights)
 	print "Inverse Distance Merit of the Video:", vg_en_tn_prdct_inverse_distance_video_weights
-	return vg_en_tn_prdct_inverse_distance_video_weights
+	print "Video EventNet Causality Graph - Nodes:",video_eventnet_graph.nodes()
+	print "Video EventNet Causality Graph - Edges:",video_eventnet_graph.edges()
+	print "Video EventNet Causality Graph - Connectivity:",nx.is_connected(video_eventnet_graph.to_undirected())
+	return (vg_en_tn_prdct_inverse_distance_video_weights,video_eventnet_graph)
 
 def large_scale_visual_sentiment(vg_en_tn_prdct):
 	lexicon=Empath()
@@ -170,7 +177,7 @@ def core_topological_sort(vg_en_tn_prdct,threshold=1):
 	vg_en_tn_prdct_nxg=nx.DiGraph()
 	rowframe=0
 	columnframe=0
-	for row in invdistmerit:
+	for row in invdistmerit[0]:
 		for column in row:
 			print "column:",column
 			if max(column) > threshold: 
@@ -200,11 +207,14 @@ if __name__=="__main__":
 	#video_merit3=inverse_distance_intrinsic_merit(vg_en_tn_prdct3)
 	#emotional_merit3=large_scale_visual_sentiment(vg_en_tn_prdct3)
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct3)
-	imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2,write_eventnet=True)
-	vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
-	video_merit4=inverse_distance_intrinsic_merit(vg_en_tn_prdct4,write_eventnet=True)
-	waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
-	waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
-	print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
-	print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
+	#imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2,write_eventnet=True)
+	#vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
+	#video_merit4=inverse_distance_intrinsic_merit(vg_en_tn_prdct4,write_eventnet=True)
+	imgnet_vg5=imagenet_videograph("testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4",2,write_eventnet=True)
+	vg_en_tn_prdct5=videograph_eventnet_tensor_product(imgnet_vg5)
+	video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
+	#waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
+	#waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
+	#print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
+	#print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
