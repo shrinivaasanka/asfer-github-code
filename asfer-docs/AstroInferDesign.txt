@@ -13966,3 +13966,15 @@ References:
 657.1 Ramanujan Congruences - https://en.wikipedia.org/wiki/Ramanujan%27s_congruences
 657.2 Distance measures between partitions - Hamming Distance, Maximum Matching Distance, Variation of Information - https://pdfs.semanticscholar.org/d8a2/936cc4bcb8bda106e3b307104c3ee824b4a8.pdf
 
+-------------------------------------------------------------------------------------------------------
+658. (THEORY and FEATURE) Video EventNet Causality Graph Complexity Measures, Graph Minors, Merit of
+Large Scale Visuals - 29 April 2019
+-------------------------------------------------------------------------------------------------------
+1.This commit invokes networkx Graph API and creates NetworkX EventNet causality graph object for an example video. Connectivity of the Video EventNet is printed.
+2.Example video in matrovska format which records the facebook profile of the author https://www.facebook.com/shrinivaasan.ka (containing NeuronRain commits twitter feeds) is comverted to mp4 by ffmpeg:
+ffmpeg -i ExampleVideo_Facebook_GRAFIT_29April2019.mkv -strict experimental ExampleVideo_Facebook_GRAFIT_29April2019.mp4
+3.Usually most videos have set of frames which are consecutive and closely related. These frames create straightline linear paths of vertices of degree 2 in the EventNet Graph underneath it.
+4.These straightline paths can be coalesced or edge-contracted to single vertex forming Graph Minors of EventNet.
+5.Connectivity of a Video is a necessary but not sufficient condition for merit.
+6.Rationale for Video EventNet Connectivity as Merit Measure: Video of disconnected underlying EventNet causality has scattered non-coherent information which is not appealing to viewer.
+
