@@ -13978,3 +13978,11 @@ ffmpeg -i ExampleVideo_Facebook_GRAFIT_29April2019.mkv -strict experimental Exam
 5.Connectivity of a Video is a necessary but not sufficient condition for merit.
 6.Rationale for Video EventNet Connectivity as Merit Measure: Video of disconnected underlying EventNet causality has scattered non-coherent information which is not appealing to viewer.
 
+--------------------------------------------------------------------------------------------------------
+659. (FEATURE) Music Pattern Mining - Music Synthesis by Automaton - Read from textfile - 30 April 2019
+--------------------------------------------------------------------------------------------------------
+1.Hardcoded states2notes DFA has been removed and DFA is read from a textfile NotesStateMachine.txt and
+ast.literal_eval()-ed to a dictionary.
+2.Scaling of notes have been commented and note values are magnified (multiplied by 1000). Waveform timeseries can be visually analyzed by loading .wav file to a player and displaying waveform oscilloscope in visual effects.
+3.Logs for this have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.30April2019
+
