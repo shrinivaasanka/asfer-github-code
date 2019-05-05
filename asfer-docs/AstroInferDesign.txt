@@ -13986,3 +13986,31 @@ ast.literal_eval()-ed to a dictionary.
 2.Scaling of notes have been commented and note values are magnified (multiplied by 1000). Waveform timeseries can be visually analyzed by loading .wav file to a player and displaying waveform oscilloscope in visual effects.
 3.Logs for this have been committed to testlogs/AudioToBitMatrix.log.MusicSynthesizer.30April2019
 
+------------------------------------------------------------------------------------------------------------------------
+660. (THEORY and FEATURE) DeepLearning Convolution BackPropagation - handwriting recognition - utility function - 5 May 2019
+- related to 159 
+------------------------------------------------------------------------------------------------------------------------
+1.DeepLearning_ConvolutionNetwork_BackPropagation.py has been changed to define a new utility function handwriting_recognition() which
+loads two images of handwritings by CV2, thresholds them, finds contours of the two images and approximates the contours by Douglas-Peucker Polynomial (DP) and computes the hausdorff distance between the two DP approximate polynomials of the handwritten images.
+2.testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.5May2019 shows how 2 pairs of handwritten digits fare against hausdorff istance measure - 2 pictures of handwritten digit 1 (similar), 2 pictures of handwritten digits 1 and 8 (dissimilar)
+3.Logs show DP polynomials of contours of 1 and 1 are close enough while DP polynomials of contours of 1 and 8 are far apart:
+#############################################
+Handwriting Recognition
+#############################################
+[[[1279  719]]]
+[[[1276  719]]
+
+ [[1279  719]]]
+Distance between DP polynomials approximating two handwriting contours: (3.0, 0, 0)
+[[[1279  719]]]
+[[[  0 564]]]
+Distance between DP polynomials approximating two handwriting contours: (1288.3578695378083, 0, 0)
+
+4.Though image Contours and DP approximation are not traditional deep learning, previous contouring and DP approximation could as well be performed on convolution layers and maxpooling map layers of the two images as against images themselves.
+5.Function handwriting_recognition() is supervised learner and takes two arguments - training (labelled) and test (unlabelled) images - and compares the unlabelled image to training image (printed or handwritten)
+6.In the topological sense, each approximate DP polynomial for handwriting contours of same alphabet or digit are equivalent homeomorphic deformations in R^2. Handwritings of same person for similar text create a cluster of deformations which are close enough and create outliers for different persons.
+
+References:
+-----------
+660.1 Ramer-Douglas-Peucker Curve Decimation Algorithm - approxPolyDP() - https://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html
+
