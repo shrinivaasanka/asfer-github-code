@@ -47,6 +47,27 @@ import pprint
 import random
 import DeepLearning_BackPropagation
 import ImageToBitMatrix 
+import cv2
+from scipy.spatial.distance import directed_hausdorff
+
+def handwriting_recognition(imagefile1,imagefile2):
+               img1 = cv2.imread(imagefile1,0)
+               ret,thresh1=cv2.threshold(img1,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+               contours1,hierarchy1=cv2.findContours(thresh1,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
+               #contours1=cv2.findContours(thresh1,1,2)
+               epsilon1 = 0.1*cv2.arcLength(contours1[0],True)
+               #epsilon1=0.2
+               approx1 = cv2.approxPolyDP(contours1[0],epsilon1,True)
+               print approx1
+               img2 = cv2.imread(imagefile2,0)
+               ret,thresh2=cv2.threshold(img2,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+               contours2,hierarchy2=cv2.findContours(thresh2,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
+               #contours2=cv2.findContours(thresh2,1,2)
+               epsilon2 = 0.1*cv2.arcLength(contours2[0],True)
+               #epsilon2=0.2
+               approx2 = cv2.approxPolyDP(contours2[0],epsilon2,True)
+               print approx2
+               print "Distance between DP polynomials approximating two handwriting contours:", directed_hausdorff(approx1[0],approx2[0])
 
 class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
@@ -365,14 +386,14 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
-	input_image1 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
-	input_image2 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg")
-	input_image3 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg")
-	input_image4 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_131709.jpg")
-	input_image5 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg")
-	input_image6 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
-	input_image7 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf2_1.jpg")
-	input_image8 = ImageToBitMatrix.image_to_bitmatrix("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+	input_image1 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
+	input_image2 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg")
+	input_image3 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg")
+	input_image4 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_131709.jpg")
+	input_image5 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg")
+	input_image6 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+	input_image7 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf2_1.jpg")
+	input_image8 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
 
 	dlim1=DeepLearningConvolution(input_image1)
 	dlim2=DeepLearningConvolution(input_image2)
@@ -432,6 +453,12 @@ if __name__=="__main__":
 	pool_map42=dlc42.max_pooling(pool_slidewindow_width)
 	pool_map51=dlc51.max_pooling(pool_slidewindow_width)
 	pool_map52=dlc52.max_pooling(pool_slidewindow_width)
+
+	print "#############################################"
+	print "Handwriting Recognition"
+	print "#############################################"
+	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
 
 	print "##########################################"
 	print "Set of Convolution Maps"
