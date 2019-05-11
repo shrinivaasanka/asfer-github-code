@@ -14021,3 +14021,31 @@ References:
 660.1 Ramer-Douglas-Peucker Curve Decimation Algorithm - approxPolyDP() - https://docs.opencv.org/2.4/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html
 660.2 Coffee Mug is homeomorphic to Donut Torus - Graphic illustration - https://en.wikipedia.org/wiki/Homeomorphism
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+661.(THEORY and FEATURE) Music Pattern Mining - Weighted Automaton Learning from Music - 11 May 2019 - related to all sections on
+Intrinsic Merit of Music
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1.Previous sections described ascertaining merit of music by various analyses of waveforms e.g MFCC, learning DFA from music notes. Apart from these there are standard measures viz., zero crossings, chroma which quantify genre or merit of music (https://librosa.github.io/librosa/feature.html).
+2.Of these learning a deterministic finite automaton from strings of music notes is a qualitative intrinsic merit measure of music which does not involve any statistical processing.
+3.Learning DFA is a computational learning theoretic problem (PAC Learning, Angluin Model etc.,). Weighted Deterministic Finite State Automata are generalizations of DFA in which state transitions have an associated numeric weightage in addition to alphabets from a language.
+4.For example, weighted DFA below has the weighted transitions:
+	(state1, a, state2) - transition from state1 to state2 on symbol a of weight 1
+	(state2, 2b, state3) - transition from state2 to state3 on symbol b of weight 2
+5.Weighted automata are apt formalisms to represent music notes strings as DFA because notes have subdivisions - sharp and flat - which can be likened to weightage for state transitions (https://en.wikipedia.org/wiki/Musical_note - CDEFGABC - ascending and descending graphic).
+6.For example string of music notes - "CD(sharp)DEEGAF(flat)F(sharp)" - and its accepting weighted music automaton could be:
+	state1, C, state2
+	state2, Dsharp, state3
+	...
+	state10, Fflat, state5
+	state6, Fsharp, state2
+	...
+where sharp and flat are weights for the transition symbol.
+7.Scikit Learn SPLearn (scikit-splearn) provides a weighted automaton learning framework based on Spectral Theory.
+8.This commit implements a Music Weighted Automaton python code in MusicWeightedAutomaton.py which accepts a set of training string of music notes and fits them to a weighted automaton using scikit-splearn. It makes predictions later based on training data.
+9.Learnt weighted automaton for music notes string is drawn as DOT graph file by graphviz in MusicWeightedAutomaton.gv and is rendered to a pdf - MusicWeightedAutomaton.gv.pdf
+10.Weighting the transition in music notes has an another advantage: Some portions of the music waveform are more impressive and catchy which makes them to be listened again - https://en.wikipedia.org/wiki/Earworm - and transitions for these could have heavy weights.
+11.Alphabets in sample music notes strings for scikit-splearn are numeric encoded as - A:0,B:1,C:2,D:3,E:4,F:5,G:6
+
+References:
+-----------
+661.1 Weighted Automata Theory - https://perso.telecom-paristech.fr/jsaka/CONF/Files/IWAT.pdf
