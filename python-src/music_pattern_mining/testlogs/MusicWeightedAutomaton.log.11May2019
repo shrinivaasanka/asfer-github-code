@@ -1,0 +1,35 @@
+Spectral(full_svd_calculation=False, lcolumns=10, lrows=10, mode_quiet=False,
+         partial=True, rank=5, smooth_method='trigram', sparse=True,
+         version='classic')
+[[-1  2  3  3  4  5  5  5  6  1]
+ [ 3  4  5  5  6  6  0  0  1  2]
+ [ 2  2  2  3  3  3  0  0  0  1]
+ [-1 -1 -1 -1  6  6  6  0  1  2]
+ [ 2  3  3  3  5  5  5  5 -1 -1]]
+[[-1  2  3  3  4  5  5  5  6  1]
+ [ 3  4  5  5  6  6  0  0  1  2]
+ [ 2  2  2  3  3  3  0  0  0  1]
+ [-1 -1 -1 -1  6  6  6  0  1  2]
+ [ 2  3  3  3  5  5  5  5 -1 -1]]
+sample_instance:
+[[-1  2  3  3  4  5  5  5  6  1]
+ [ 3  4  5  5  6  6  0  0  1  2]
+ [ 2  2  2  3  3  3  0  0  0  1]
+ [-1 -1 -1 -1  6  6  6  0  1  2]
+ [ 2  3  3  3  5  5  5  5 -1 -1]]
+nbL:
+10
+Start Hankel matrix computation
+End of Hankel matrix computation
+Start Building Automaton from Hankel matrix
+End of Automaton computation
+Initial automaton:
+[ 1.09437484e-17 -1.11022302e-16  1.28369537e-16 -2.12281165e-01
+  7.02617040e-02]
+Learnt automaton:
+[6.66666667e-003 1.36478979e-105 2.07798765e-027 3.71664152e-054
+ 1.82498872e-085]
+[6.66666667e-003 1.36478979e-105 2.07798765e-027 3.71664152e-054
+ 1.82498872e-085]
+Automaton Graph DOT file creation:
+Opening "MusicWeightedAutomaton.gv.pdf" with Document Viewer  (application/pdf)
