@@ -14049,3 +14049,12 @@ where sharp and flat are weights for the transition symbol.
 References:
 -----------
 661.1 Weighted Automata Theory - https://perso.telecom-paristech.fr/jsaka/CONF/Files/IWAT.pdf
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+662. (FEATURE) Intrinsic Merit of Music - Learning Weighted Automata from Music - Example - 14 May 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.MusicWeightedAutomaton.py has been updated to define a new function audio_notes_to_samples() to read a music clip of certain duration by librosa, convert the waveform to notes, create notes string samples from them and return samples as word frequency dictionary and numeric encoded sample notes strings
+2.SplearnArray is instantiated from encoded notes strings of variable size equal to number of columns in the notes matrix
+3.Weighted automaton is learnt from these Sample dictionary and numeric encoded notes strings
+4.automaton graph drawn in MusicWeightedAutomaton.gv.pdf shows a condensed weighted automata for an example music clip
+5.Logs for this are committed to testlogs/MusicWeightedAutomaton.log.14May2019
