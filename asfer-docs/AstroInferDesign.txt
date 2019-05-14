@@ -12578,6 +12578,7 @@ based rankings is one of the hardest Large Scale Visual Recognition Challenge. A
 		(*) Therefore Video of Low Tensor Rank is heavily connected.
 	(*) Though applied to Video EventNet, tensor rank has wider philosophical ramifications because EventNet formalizes flow of time logically and has weird implication - EventNet Logical Time Tensor can be written as linear sum of independent tensors and therefore Time tensor essentially is a linear function of finer time subdivision tensors.
 	(*) An important difference between Videos and Theoretical EventNet is: Event vertices and participants/actors within an Event vertex can be created in parallel independent of other event vertices in theoretical eventnet (and causality edges between event vertices could be established later in parallel too) while a video (youtube, movie etc.,) is always a serialized set of frames (events) though it could depict concurrent events - video is non-parallel unless more than one video source is simultaneously streamed. EventNet can be formally defined by some Process calculi.
+	(*) Usually Like-ing Versus Merit of Videos has the following conflict: Videos or movies which induce viewers to repetitively watch them, garner huge popular support which is not necessarily a reflection of their merit. Music/Audio has an equivalent of this phenomenon known as "Earworm"
 
 References:
 ----------
