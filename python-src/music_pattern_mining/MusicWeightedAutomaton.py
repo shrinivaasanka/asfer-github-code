@@ -20,6 +20,9 @@ from splearn import Spectral
 from splearn.datasets.data_sample import SplearnArray
 from graphviz import Source
 from splearn.automaton import Automaton
+import librosa
+import numpy as np
+from collections import defaultdict
 
 def music_weighted_automaton(sample=None,splarray=None,rows=10,columns=10):
     sp = Spectral()
@@ -46,10 +49,37 @@ def music_weighted_automaton(sample=None,splarray=None,rows=10,columns=10):
     src=Source(dot)
     src.render("MusicWeightedAutomaton.gv",view=True)
 
+def audio_to_notes_samples(audio,dur=None):
+    encodedict={'A':0,'B':1,'C':2,'D':3,'E':4,'F':5,'G':6}
+    if dur is not None:
+       waveform,srate=librosa.load(audio,duration=dur)
+    freq=np.abs(librosa.stft(waveform))
+    notes=librosa.hz_to_note(freq)
+    notestrings=[]
+    notesencodedarray=[]
+    notestringsdict=defaultdict(int)
+    for r in notes:
+        notestring=""
+        notesencoded=[]
+        for c in r:
+            notestring = notestring + c[0]
+            notesencoded.append(encodedict[c[0]])
+        notestrings.append(notestring) 
+        notesencodedarray.append(notesencoded)
+    for n in notestrings:
+        notestringsdict[n] += 1
+    return (notestringsdict, notesencodedarray) 
+
 if __name__=="__main__":
-    sample={'cddefffgb':10,'deffggaabc':9,'cccdddaaab':8,'gggabc':3,'cdddffff':5}
+    sample, notesencoded=audio_to_notes_samples("./testlogs/JSBach_Musicological_Offering.mp4",10)
+    print("Samples:")
+    print(sample)
+    print("Splarray:")
+    print(notesencoded)
+    #sample={'cddefffgb':10,'deffggaabc':9,'cccdddaaab':8,'gggabc':3,'cdddffff':5}
     pref={}
     suff={}
     fact={}
-    splarray=SplearnArray([[-1,2,3,3,4,5,5,5,6,1],[3,4,5,5,6,6,0,0,1,2],[2,2,2,3,3,3,0,0,0,1],[-1,-1,-1,-1,6,6,6,0,1,2],[2,3,3,3,5,5,5,5,-1,-1]],10,10,sample,pref,suff,fact)
-    music_weighted_automaton(sample,splarray,10,10)
+    #splarray=SplearnArray([[-1,2,3,3,4,5,5,5,6,1],[3,4,5,5,6,6,0,0,1,2],[2,2,2,3,3,3,0,0,0,1],[-1,-1,-1,-1,6,6,6,0,1,2],[2,3,3,3,5,5,5,5,-1,-1]],10,10,sample,pref,suff,fact)
+    splarray=SplearnArray(notesencoded,len(notesencoded[0]),len(notesencoded[0]),sample,pref,suff,fact)
+    music_weighted_automaton(sample,splarray,len(notesencoded[0]),len(notesencoded[0]))
