@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------------------------------
-#ASFER - Inference software for large datasets (part of iCloudOS)
+#NEURONRAIN ASFER - Software for Mining Large Datasets
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -11,16 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyright (C):
-#Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
-#Ph: 9789346927, 9003082186, 9791165980
-#Krishna iResearch Open Source Products Profiles: 
-#http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
-
 
 #CRF - mixture of HMM and Maximum Entropy Markov Models(Logistic Regression)
 
@@ -31,7 +25,10 @@
 
 import pprint
 import math
-
+from scipy.stats import skewnorm
+import matplotlib.pyplot as plt
+import numpy as np
+fig, ax = plt.subplots(1,1)
 
 states=['noun','verb','object','adjective','conjunction']
 
@@ -46,17 +43,44 @@ transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.5, 'object':0.2, 'adject
 			 }
 
 #Observation Probabilities in a State
-emission_probabilities={ 'noun':{'PoSTagging':0.7, 'is':0.1, 'used':0.0, 'to':0.1, 'annotate':0.1, 'complex':0.0, 'sentences':0.0, 'with':0.0,'PoS':0.0},
-			 'verb':{'PoSTagging':0.1, 'is':0.3, 'used':0.2, 'to':0.0, 'annotate':0.3, 'complex':0.0, 'sentences':0.1, 'with':0.0,'PoS':0.0},
-			 'object':{'PoSTagging':0.1, 'is':0.1, 'used':0.2, 'to':0.1, 'annotate':0.1, 'complex':0.0, 'sentences':0.4, 'with':0.0,'PoS':0.0},
-			 'adjective':{'PoSTagging':0.1, 'is':0.1, 'used':0.1, 'to':0.0, 'annotate':0.0, 'complex':0.5, 'sentences':0.1, 'with':0.1,'PoS':0.0},
-			 'conjunction':{'PoSTagging':0.0, 'is':0.1, 'used':0.0, 'to':0.5, 'annotate':0.0, 'complex':0.0, 'sentences':0.0, 'with':0.4,'PoS':0.0}
-		       } 
+#emission_probabilities={ 'noun':{'PoSTagging':0.7, 'is':0.1, 'used':0.0, 'to':0.1, 'annotate':0.1, 'complex':0.0, 'sentences':0.0, 'with':0.0,'PoS':0.0},
+#			 'verb':{'PoSTagging':0.1, 'is':0.3, 'used':0.2, 'to':0.0, 'annotate':0.3, 'complex':0.0, 'sentences':0.1, 'with':0.0,'PoS':0.0},
+#			 'object':{'PoSTagging':0.1, 'is':0.1, 'used':0.2, 'to':0.1, 'annotate':0.1, 'complex':0.0, 'sentences':0.4, 'with':0.0,'PoS':0.0},
+#			 'adjective':{'PoSTagging':0.1, 'is':0.1, 'used':0.1, 'to':0.0, 'annotate':0.0, 'complex':0.5, 'sentences':0.1, 'with':0.1,'PoS':0.0},
+#			 'conjunction':{'PoSTagging':0.0, 'is':0.1, 'used':0.0, 'to':0.5, 'annotate':0.0, 'complex':0.0, 'sentences':0.0, 'with':0.4,'PoS':0.0}
+#			} 
 
 #Part of Speech Tagging - Named Entity Recognition
-observations=['PoSTagging', 'is', 'used', 'to', 'annotate', 'complex', 'sentences', 'with','PoS'] 
+#observations=['PoSTagging', 'is', 'used', 'to', 'annotate', 'complex', 'sentences', 'with','PoS'] 
 #observations=['Python','is','interpreted']
 
+obs_file=open("NamedEntityRecognition_HMMViterbi_CRF.observations","r")
+observations=obs_file.read().split()
+
+emission_probabilities={}
+cnt=1
+
+for s in states:
+	emissionsdict={}
+	obs_cnt=1
+	for o in observations:
+		#ax.plot(x, norm.pdf(x),'r-', lw=5, alpha=0.6, label='norm pdf')
+		#print "emissiondict[o] = ",float(obs_cnt+cnt)/float(len(states) + len(observations))
+		emissionsdict[o]=skewnorm.pdf(obs_cnt*0.1,cnt)
+		#plt.show()
+		obs_cnt += 1
+	emission_probabilities[s]=emissionsdict
+	cnt+=1
+
+for s in states:
+	emissiondict=emission_probabilities[s]
+	sumprob = 0.0
+	for k,v in emissiondict.iteritems():
+		sumprob += v
+	for k,v in emissiondict.iteritems():
+		emissiondict[k] = float(v)/float(sumprob)
+
+print "Emission Probabilities:",emission_probabilities
 Viterbi=[{}]
 Viterbi_path={}
 
@@ -99,9 +123,11 @@ print "PoS tagging with CRF"
 print "============================"
 
 #Above equation is computed for finding hidden state label 
-observations=['PoSTagging', 'is', 'used', 'to', 'annotate', 'complex', 'sentences', 'with','PoS'] 
-PoS_CRF_states=['noun','verb','?','conjunction','?','verb','object','?','object'] 
+#observations=['PoSTagging', 'is', 'used', 'to', 'annotate', 'complex', 'sentences', 'with','PoS'] 
+#PoS_CRF_states=['noun','verb','?','conjunction','?','verb','object','?','object'] 
 
+poscrffile=open("NamedEntityRecognition_HMMViterbi_CRF.states","r")
+PoS_CRF_states=poscrffile.read().split()
 PoS_probabilities={}
 
 weight=0.01
