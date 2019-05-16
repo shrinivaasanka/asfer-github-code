@@ -14061,3 +14061,14 @@ References:
 3.Weighted automaton is learnt from these Sample dictionary and numeric encoded notes strings
 4.automaton graph drawn in MusicWeightedAutomaton.gv.pdf shows a condensed weighted automata for an example music clip
 5.Logs for this are committed to testlogs/MusicWeightedAutomaton.log.14May2019
+
+------------------------------------------------------------------------------------------------------------------------------------------
+663. (FEATURE) Named Entity Recognition - Conditional Random Fields - Update - 16 May 2019
+------------------------------------------------------------------------------------------------------------------------------------------
+1.NamedEntityRecognition_HMMViterbi_CRF.py has been changed to removed hardcoded PoS tagged sentences and instead to read states and observations from two files: NamedEntityRecognition_HMMViterbi_CRF.states and NamedEntityRecognition_HMMViterbi_CRF.observations which have the semi-PoS tagged sentence PoS states and sentence word observations respectively.
+2.Emission Probabilities for each state are computed by a skew normal distribution which moves the mean from left to right of the sentence as states progress.
+3.This skew normal distribution gives more weightage to respective state than others while each state is observed.
+4.An example log in testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.16May2019 shows the skewing of probability weights from left to right of the sentence 
+5.For example, Name-Verb-Object PoS tag is weighted as : First 1/3 of sentence has more weightage for emission probabilities of "Name",second 1/3 of sentence has more weightage for emission probabilities of "Verb" and third 1/3 of sentence has more weightage for emission probabilities of "Object"
+
+	
