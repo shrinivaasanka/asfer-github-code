@@ -79,21 +79,22 @@ import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
-//import org.apache.spark.sql.Encoder;
-//import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.*;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.streaming.StreamingQuery;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
 public final class SparkGenericStreaming extends Receiver<String> {
   private static final Pattern SPACE = Pattern.compile(" ");
   String urlargs = "localhost";
   String host = "localhost";
-  static boolean isURLsocket=true;
+  static boolean isURLsocket=false;
   static boolean useJsoup=true;
-  int port = 80;
+  static boolean windowed=true;
+  int port = 8080;
   static SparkConf sparkConf;
   static JavaStreamingContext ssc;
 
@@ -171,20 +172,23 @@ public final class SparkGenericStreaming extends Receiver<String> {
 	}
 	else
 	{
-		Socket s = null;
-		BufferedReader br = null;
-		String input="";
-		try{
-			s = new Socket(host,port);
-			br = new BufferedReader(new InputStreamReader(s.getInputStream()));
-			while(!isStopped() && (input=br.readLine()) != null)
-			{
-				System.out.println("Streaming data received:"+input);
-				store(input);
+		if(!windowed)
+		{
+			Socket s = null;
+			BufferedReader br = null;
+			String input="";
+			try{
+				s = new Socket(host,port);
+				br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+				while(!isStopped() && (input=br.readLine()) != null)
+				{
+					System.out.println("Streaming data received:"+input);
+					store(input);
+				}
+				s.close();
+			} catch (Exception e) {
+				System.out.println("Exception:" + e);
 			}
-			s.close();
-		} catch (Exception e) {
-			System.out.println("Exception:" + e);
 		}
 	}
   }
@@ -207,44 +211,91 @@ public final class SparkGenericStreaming extends Receiver<String> {
     // Note that no duplication in storage level only for running locally.
     // Replication necessary in distributed scenario for fault tolerance.
     
-    JavaReceiverInputDStream<String> lines;
+    JavaReceiverInputDStream<String> lines = null;
     if(SparkGenericStreaming.isURLsocket)
     {
 	lines = ssc.receiverStream(new SparkGenericStreaming(args[0]));
     }
     else
     {
-	lines = ssc.receiverStream(new SparkGenericStreaming(args[0], Integer.parseInt(args[1])));
+		if(SparkGenericStreaming.windowed)
+		{
+			int windowSize = 5;
+			int slideSize = 5;
+			String windowDuration = windowSize + " seconds";
+			String slideDuration = slideSize + " seconds";
+			SparkSession session = SparkSession
+							.builder()
+							.appName("SparkGenericStreamingWindowed")
+							.getOrCreate();
+			Dataset<Row> rows = session.readStream()
+							.format("socket")
+							.option("host",host)
+							.option("port",port)
+							.option("includeTimeStamp",true)
+							.load();
+			Dataset<Row> words = rows.as(Encoders.tuple(Encoders.STRING(),Encoders.TIMESTAMP())).flatMap((FlatMapFunction<Tuple2<String,Timestamp>,Tuple2<String,Timestamp>>) t-> {
+			List<Tuple2<String,Timestamp>> result = new ArrayList<>();
+			for(String word: t._1.split(" ")) {
+				result.add(new Tuple2<>(word,t._2));
+			}
+			return result.iterator();
+			},
+			Encoders.tuple(Encoders.STRING(), Encoders.TIMESTAMP())
+			).toDF("word","timestamp");
+
+			Dataset<Row> windowedCounts = words.groupBy(functions.window(words.col("timestamp"),windowDuration,slideDuration), words.col("word")).count().orderBy("window");
+			StreamingQuery query = windowedCounts.writeStream()
+							.outputMode("complete")
+							.format("console")
+							.option("truncate","false")
+							.start();
+			try
+			{
+				query.awaitTermination();
+			}
+			catch(Exception e){
+				System.out.println("Exception " + e);
+			}
+
+		}
+		/*lines = ssc.receiverStream(new SparkGenericStreaming(args[0], Integer.parseInt(args[1])));*/
+		return null;
     }
 
-    JavaDStream<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
-     @Override
-      public Iterator<String> call(String x) {
-        return Arrays.asList(SPACE.split(x)).iterator();
-      }
-    });
-    
-    //JavaDStream<String> words = lines.flatMap(x->{return Arrays.asList(SPACE.split(x)).iterator();});
-    
-    JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
-     new PairFunction<String, String, Integer>() {
-        @Override
-        public Tuple2<String, Integer> call(String s) {
-          return new Tuple2<>(s, 1);
-        }
-      }).reduceByKey(new Function2<Integer, Integer, Integer>() {
-        @Override
-        public Integer call(Integer i1, Integer i2) {
-          return i1 + i2;
-        }
-    });
+    if(SparkGenericStreaming.isURLsocket)
+    {
+    	JavaDStream<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
+     	@Override
+      	public Iterator<String> call(String x) {
+        	return Arrays.asList(SPACE.split(x)).iterator();
+      	}
+    	});
 
-    //words.print();
-    //wordCounts.print();
-    //wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
-    //ssc.start();
-    //ssc.awaitTermination();
-    return wordCounts;
+    
+    	//JavaDStream<String> words = lines.flatMap(x->{return Arrays.asList(SPACE.split(x)).iterator();});
+    
+    	JavaPairDStream<String, Integer> wordCounts = words.mapToPair(
+     	new PairFunction<String, String, Integer>() {
+        	@Override
+        	public Tuple2<String, Integer> call(String s) {
+          	return new Tuple2<>(s, 1);
+        	}
+      		}).reduceByKey(new Function2<Integer, Integer, Integer>() {
+        	@Override
+        	public Integer call(Integer i1, Integer i2) {
+          	return i1 + i2;
+        	}
+    	});
+
+    	//words.print();
+    	//wordCounts.print();
+    	//wordCounts.foreachRDD(x->{ x.collect().stream().forEach(y->System.out.println(y)); });
+    	//ssc.start();
+    	//ssc.awaitTermination();
+    	return wordCounts;
+     }
+     return null;
   }
 
   public static void main(String[] args) throws Exception {
@@ -315,4 +366,4 @@ public final class SparkGenericStreaming extends Receiver<String> {
         SparkGenericStreaming.ssc.start();
 	SparkGenericStreaming.ssc.awaitTermination();
   }
-}
+}	
