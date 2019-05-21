@@ -14071,4 +14071,25 @@ References:
 4.An example log in testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.16May2019 shows the skewing of probability weights from left to right of the sentence 
 5.For example, Name-Verb-Object PoS tag is weighted as : First 1/3 of sentence has more weightage for emission probabilities of "Name",second 1/3 of sentence has more weightage for emission probabilities of "Verb" and third 1/3 of sentence has more weightage for emission probabilities of "Object"
 
+-------------------------------------------------------------------------------------------------------
+664. (FEATURE) Spark 2.4 Structured Streaming - Windowed Stream - 21 May 2019
+-------------------------------------------------------------------------------------------------------
+1.SparkGenericStreaming.java in java-src/bigdata_analytics/spark_streaming has been changed to do windowed structured stream if URL socket is false i.e data is read from plain socket stream.
+2.New boolean flag "windowed" has been added to the java class as static member based on which Windowed streaming spark code is executed.
+3.Windowed streaming spark code fragment uses readStream()/writeStream() facility in Spark to read data written over socket.
+4.Netcat utility creates the socket server in port 8080.
+5.Java lambda functions in FlatMapFunction tokenize the incoming stream of lines to words and organize them as word-timestamp rows dataset.
+6.Next groupBy() parses word-timestamp dataset from previous lambda invocation and creates structured stream of tables of columns slidingwindow_timestamp-word-count.
+7.Logs in testlogs/SparkGenericStreaming.log.21May2019 show dataframe tables for both urlsocket=false(windowed=true) and urlsocket=true boolean option settings.
+8.CLASSPATH for compilation of SparkGenericStreaming.java (javac SparkGenericStreaming.java) has been updated to:
+CLASSPATH=/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.4.0.jar:.:/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/scala-library-2.11.12.jar:/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/spark-sql_2.11-2.4.0.jar:/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/spark-core_2.11-2.4.0.jar:/media/Ubuntu2/jdk1.8.0_171/lib/jsoup-1.11.3.jar:/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/spark-catalyst_2.11-2.4.0.jar:/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/scala-reflect-2.11.12.jar:/media/Ubuntu2/jdk1.8.0_171/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+9.sparkgenericstreaming.jar is packaged as bin/jar cvf sparkgenericstreaming.jar *.class
+10.SparkGenericStreaming is executed as:
+/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/bin/spark-submit --jars /media/Ubuntu2/jdk1.8.0_171/lib/jsoup-1.11.3.jar --class SparkGenericStreaming --master local[2] sparkgenericstreaming.jar  "https://twitter.com/search?f=tweets&vertical=news&q=Chennai&src=typd"
+
+/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/bin/spark-submit --jars /media/Ubuntu2/jdk1.8.0_171/lib/jsoup-1.11.3.jar --class SparkGenericStreaming --master local[2] sparkgenericstreaming.jar  "localhost" "8080" 
+
+for URLSocket and Windowed streaming respectively
+11.Reference: Spark Structured Streaming Example in https://github.com/apache/spark/blob/v2.4.3/examples/src/main/java/org/apache/spark/examples/sql/streaming/JavaStructuredNetworkWordCountWindowed.java
+
 	
