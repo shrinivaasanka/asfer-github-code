@@ -30,16 +30,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 fig, ax = plt.subplots(1,1)
 
-states=['noun','verb','object','adjective','conjunction']
+states=["noun","conjunction","verb","adjective","object"]
 
 start_probabilities={'noun':0.3, 'verb':0.2, 'object':0.2, 'adjective':0.1, 'conjunction':0.2}
 
 #State Transition Probabilities
-transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.5, 'object':0.2, 'adjective':0.2, 'conjunction':0.1},
-			   'verb':{'noun':0.0, 'verb':0.0, 'object':0.6, 'adjective':0.0, 'conjunction':0.4},
+transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.2, 'object':0.2, 'adjective':0.2, 'conjunction':0.4},
+			   'verb':{'noun':0.1, 'verb':0.0, 'object':0.3, 'adjective':0.4, 'conjunction':0.2},
 			   'object':{'noun':0.0, 'verb':0.2, 'object':0.0, 'adjective':0.1, 'conjunction':0.7},
-			   'adjective':{'noun':0.6, 'verb':0.2, 'object':0.2, 'adjective':0.0, 'conjunction':0.0},
-			   'conjunction':{'noun':0.5, 'verb':0.4, 'object':0.1, 'adjective':0.1, 'conjunction':0.0}
+			   'adjective':{'noun':0.2, 'verb':0.2, 'object':0.4, 'adjective':0.0, 'conjunction':0.2},
+			   'conjunction':{'noun':0.2, 'verb':0.4, 'object':0.1, 'adjective':0.1, 'conjunction':0.2}
 			 }
 
 #Observation Probabilities in a State
@@ -58,19 +58,26 @@ obs_file=open("NamedEntityRecognition_HMMViterbi_CRF.observations","r")
 observations=obs_file.read().split()
 
 emission_probabilities={}
-cnt=1
+cnt=len(states)
 
 for s in states:
 	emissionsdict={}
-	obs_cnt=1
+	x = np.linspace(skewnorm.ppf(0.01,5,cnt*0.5,1),skewnorm.ppf(0.99,5,cnt*0.5,1),len(observations))
+	sknormpdf = skewnorm.pdf(x,5,cnt*0.5,1)
+	sknormpdf_weighted=[]
+	for p,q in zip(sknormpdf,x):
+		sknormpdf_weighted.append(p*q*0.01)
+	print "skewnorm pdf weighted:",sknormpdf_weighted
+	ax.plot(x, skewnorm.pdf(x,5,cnt*0.5,1),'r-', lw=5, alpha=0.6, label='skewnorm pdf')
+	obs_cnt=0
 	for o in observations:
-		#ax.plot(x, norm.pdf(x),'r-', lw=5, alpha=0.6, label='norm pdf')
 		#print "emissiondict[o] = ",float(obs_cnt+cnt)/float(len(states) + len(observations))
-		emissionsdict[o]=skewnorm.pdf(obs_cnt*0.1,cnt)
-		#plt.show()
+		#sknorm=skewnorm(cnt)
+		emissionsdict[o]=sknormpdf_weighted[obs_cnt]
 		obs_cnt += 1
 	emission_probabilities[s]=emissionsdict
-	cnt+=1
+	cnt=(cnt-1)
+plt.show()
 
 for s in states:
 	emissiondict=emission_probabilities[s]
