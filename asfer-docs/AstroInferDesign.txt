@@ -14092,4 +14092,12 @@ CLASSPATH=/media/Ubuntu2/spark-2.4.0-bin-hadoop2.7/jars/spark-streaming_2.11-2.4
 for URLSocket and Windowed streaming respectively
 11.Reference: Spark Structured Streaming Example in https://github.com/apache/spark/blob/v2.4.3/examples/src/main/java/org/apache/spark/examples/sql/streaming/JavaStructuredNetworkWordCountWindowed.java
 
-	
+--------------------------------------------------------------------------------------------------------------------------------------------
+665. (FEATURE) Named Entity Recognition - Conditional Random Fields - Skew Normal Distribution Update - 29 May 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.Miscellaneous changes in NamedEntityRecognition_HMMViterbi_CRF.py for corrections to skew normal distribution which shifts mean of the distribution for each part of speech to the right by some constant multiples.
+2.Skew normal distribution mean shift for each state (part of speech) is shown in NamedEntityRecognition_HMMViterbi_CRF.29May2019.png
+3.Motivation for skew normal distribution mean shift from left to right for emission probabilities is: For some part of speech state, successive word observations in the sentence receive more weightage corresponding to the peak value at mean i.e one word in the sentence peaks at mean and is more likely candidate observation emitted for respective Part of Speech state.
+4.In this example 5 words in the sentence peak for 5 part of speech states.
+5.logs for this commit have been committed to testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.29May2019 
+
