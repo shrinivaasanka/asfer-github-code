@@ -14103,3 +14103,20 @@ for URLSocket and Windowed streaming respectively
 4.In this example 5 words in the sentence peak for 5 part of speech states.
 5.logs for this commit have been committed to testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.29May2019 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+666. (THEORY) Approximation of Majority Voting, Streaming majority, Forecasts, Bertrand Ballot Theorem, Theoretical EVMs, Set Partitions - 4 June 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+Bertrand Ballot Theorem states: In a majority voting involving 2 candidates A and B receiving p and q votes respectively of total electorate p+q,probability of candidate A always being ahead of candidate B in counting of votes is (p-q)/(p+q). Approximation of Majority voting has important applications in psephological forecast (pre-poll and post-poll surveys) which samples electorate to predict the winner. In pure complexity theoretic perspective, as has been mentioned earlier, boolean majority gate can be alternatively represented by a set partition of 2 candidate buckets indexed 0 and 1 and maximum size candidate bucket index is the output of set partition boolean majority gate. It is also worth mentioning here that approximating a majority gate of n inputs by a much smaller gate of m inputs (m << n) is the complexity theoretic equivalent of forecasting a real-world majority voting of 2 candidates by sampling m voters from an electorate of size n. It is obvious that process of counting of votes creates instantaneous snapshots of the electorate set partition and any m sized (less than n) voter set partition snapshot is equivalent to a sampling of total electorate. In terms of set partition definition of majority gate, both buckets of voter set partition 0 and 1 grow over time and at any instant the set partition of total size m is a sampling of n voters.Votes for 2 candidates 1 and 0 can be drawn as timeseries polynomial curves (votes versus time) and intersection points of 2 curves are trend reversals contributing to the probability (p-q)/(p+q). Complexity theoretic majority gate assumes all the inputs at the leaves are immediately available which is not possible in approximation in which only m of n votes are known. Majority approximation gate predicts output of majority gate of n inputs by a majority gate of m inputs for m << n with some error probability. By Bertrand Ballot Theorem probability that a majority approximation gate of m inputs (snapshot at some time point) has the same output as an exact majority gate of n inputs is (p-q)/(p+q) for total electorate p+q=n and p voters for 0 or 1 and q voters for 1 or 0. If m=a+b for a voters for 0 or 1 and b voters for 1 or 0 in the sample approximation, sample betrand probability is assumed to be proportional to bertrand probability of total electorate:
+	(p-q)/(p+q) = k*(a-b)/(a+b)
+	(p-q)/n = k*(a-b)/m
+	(p-q) = n*k*(a-b)/m
+which extrapolates the sample to the entire electorate.
+
+References:
+-----------
+666.1 Bertrand Ballot Theorem - https://en.wikipedia.org/wiki/Bertrand%27s_ballot_theorem
+
+
+
+
+
