@@ -17,7 +17,7 @@
 #--------------------------------------------------------------------------------------------------------
 
 import PyPDF2
-from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+#from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 from datetime import datetime
 import sys
 import math
@@ -32,15 +32,16 @@ class HRAnalytics(object):
 		self.total_academics=0
 
 	def parse_profile(self, datasource, type, social_profile):
+                profile_text=""
 		if type=="pdf":
 			self.file=open(social_profile,"rb")
 			file_reader=PyPDF2.PdfFileReader(self.file)
 			num_pages=file_reader.numPages
 			for p in xrange(num_pages):
 				page_object=file_reader.getPage(p)
-				page_contents=page_object.getContents()
-				for c in page_contents:
-					print c.getObject()
+				page_contents=page_object.extractText()
+                                profile_text += page_contents
+                        return profile_text 
 		if datasource=="linkedin" and type=="text":
 			self.file=open(social_profile,"r")
 			profile_text=self.file.read()
@@ -148,15 +149,16 @@ class HRAnalytics(object):
 
 if __name__=="__main__":
 	hranal=HRAnalytics()
-	#hranal.parse_profile("linkedin","pdf","testlogs/ProfileLinkedIn_KSrinivasan.pdf")
+	profile_text=hranal.parse_profile("linkedin","pdf","testlogs/CV.pdf")
+        print profile_text
 	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.least_energy_intrinsic_merit()
 	#hranal.experiential_intrinsic_merit()
 	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
-	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
-	number_of_connections=hranal.parse_connections(profile_text)
-	hranal.least_energy_intrinsic_merit()
-	hranal.experiential_intrinsic_merit(number_of_connections)
-	profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
-	hranal.rlfg_intrinsic_merit(profile_text)
+	#number_of_connections=hranal.parse_connections(profile_text)
+	#hranal.least_energy_intrinsic_merit()
+	#hranal.experiential_intrinsic_merit(number_of_connections)
+	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
+	#hranal.rlfg_intrinsic_merit(profile_text)
