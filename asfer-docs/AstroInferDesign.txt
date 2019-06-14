@@ -14131,6 +14131,52 @@ Traceback (most recent call last):
     from wn.reader import parse_wordnet_ic_line
   File "/usr/local/lib/python2.7/dist-packages/wn/reader.py", line 22
     offset, lexname_index, pos, n_lemmas, *the_rest = columns_str.split()
-                                          ^
+                                          
 SyntaxError: invalid syntax
 5.LinkedIn PDF Profile has been updated by linkedin pdf export
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+668. (THEORY) Computational Geometric Factorization - Average case Sequential Optimization, Stirling Approximation of Gamma Function, 
+Sum of binary search times of each tile and some observations - related to 605 - 14 June 2019
+-----------------------------------------------------------------------------------------------------------------------------------------
+(*) Average number of tiles between two approximate prime factors m and (m+1) found by tile summation ray shooting:
+		= (m+1)/[kloglogN - m - 1] - m/[kloglogN - m]
+because number of tiles till m-th prime factor = n = m/[kloglogN - m] for m=1,2,3,...,kloglogN
+(*) Thus total average sequential time to sweep binary search tiles in N/kloglogN spacing between 2 consecutive approximate factors found by ray shooting:
+	= O([(m+1)/[kloglogN - m - 1] - m/[kloglogN - m]] * logN)
+(*) Maximum number of tiles in N/kloglogN spacing occurs by minimizing denominator and setting m=kloglogN - 2:
+	= O([(kloglogN - 2 + 1)/[kloglogN - kloglogN + 2 - 1] - (kloglogN - 2)/[kloglogN - kloglogN + 2]])
+	= O(kloglogN - 1 - (kloglogN - 2)/2)
+	= O(kloglogN)
+=> Maximum time to binary search tiles in N/kloglogN spacing = O(loglogN * logN)
+=> Each of O(loglogN) spacings between approximate factors can be searched in: 
+	O((loglogN)^2*logN)
+average case sequential time with no necessity for parallel processing.
+(*) If each tile segment arithmetic progression is searched individually and sequentially, sum of binary search times for first k adjacent tile segments is:
+	log N/(1*2) + log N/(2*3) + log N/(3*4) + ... + log N/(k*(k+1))
+which can be written as:
+	log N - (log 1 + log 2) +
+	log N - (log 2 + log 3) +
+	...
+	log N - (log k + log (k+1))
+by logarithmic identities and becomes:
+	k log N - (log 1 + log (k+1) + 2 log k!)
+But Gamma function is:
+	Gamma(x+1) = x!
+and by Striling approximation:
+	log k! ~= log Gamma(k+1) = (k+0.5)*log k - k -1 + 0.5*log 2*pi
+Substituting in the summation:
+Total time for binary searching k adjacent tile segment arithmetic progressions = k log N - log (k+1) - (2k + 1)log k + 2(k+1) + log (2*pi)
+
+A variant approximation of this search time summation has been described in section 5 of http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
+
+if k is O(loglogN) from previous derivation of maximum number of tiles between 2 approximate prime factors, in average case atleast one factor can be found in average time:
+	loglogN * log N - log (loglogN + 1) - (2loglogN + 1)logloglogN + 2(loglogN+1) + log (2*pi)
+	<= O(logN * loglogN)
+
+References:
+----------
+668.1 Stirling Approximation of Factorial and Gamma Function - https://en.wikipedia.org/wiki/Stirling%27s_approximation#Stirling's_formula_for_the_gamma_function
+
+
+
