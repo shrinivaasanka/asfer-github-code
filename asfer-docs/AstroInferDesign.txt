@@ -14163,7 +14163,7 @@ by logarithmic identities and becomes:
 	k log N - (log 1 + log (k+1) + 2 log k!)
 But Gamma function is:
 	Gamma(x+1) = x!
-and by Striling approximation:
+and by Stirling approximation:
 	log k! ~= log Gamma(k+1) = (k+0.5)*log k - k -1 + 0.5*log 2*pi
 Substituting in the summation:
 Total time for binary searching k adjacent tile segment arithmetic progressions = k log N - log (k+1) - (2k + 1)log k + 2(k+1) + log (2*pi)
