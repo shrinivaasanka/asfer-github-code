@@ -23,6 +23,7 @@ import numpy as np
 from MinimumDescLength import minimum_descriptive_complexity
 from scipy.io.wavfile import write
 import ast
+from sklearn.preprocessing import scale
 
 #states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -146,7 +147,12 @@ def mel_frequency_cepstral_coefficients(audiofile,dur=10):
 	print "###################################################"
 	waveform,srate=librosa.load(audiofile,duration=dur)
 	mfccs=librosa.feature.mfcc(waveform,sr=srate)
-	print mfccs
+	mfccs=scale(mfccs,axis=1)
+	print "mfccs:",mfccs
+	print "mfccs shape:",mfccs.shape
+	print "mfccs mean:",mfccs.mean(axis=1)
+	print "mfccs variance:",mfccs.var(axis=1)
+	print "zero crossing rate:",librosa.feature.zero_crossing_rate(waveform)
 	return mfccs
 
 def audio_merit(notes):
@@ -154,7 +160,7 @@ def audio_merit(notes):
 	print "Merit of Audio - Minimum Descriptive Length and Entropy:",entropy_merit
 
 if __name__=="__main__":
-	#bm=mel_frequency_cepstral_coefficients("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
@@ -164,6 +170,6 @@ if __name__=="__main__":
 	#notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
 	#notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
 	#merit=audio_merit(notes[0])
-	notes_to_audio()
-	notes_to_audio(automaton=True)
-	notes_to_audio(function='(x*x+x+1) % 32767')
+	#notes_to_audio()
+	#notes_to_audio(automaton=True)
+	#notes_to_audio(function='(x*x+x+1) % 32767')
