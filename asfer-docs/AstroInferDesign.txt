@@ -14186,3 +14186,27 @@ By Van Der Waerden theorem, for any positive integers r and k there is number N 
 one of the r different colors then there are atleast k integers in arithmetic progression whose elements are of same color. Computational
 Geometric Factorization is based on rectification of hyperbolic curve into straightline or rectangular polygonal tile segments (of dimensions 1 * length_of_segment) and reducing the factorization problem to parallel RAM planar point location of factor points (product of ordinates) in this rectified polygon. Each hyperbolic tile segment obtained by rectification are construed to be arrays of products of ordinates or arrays of ordered pair of ordinates in x-axis and y-axis. Unsorted Concatenation of these tile segments of ordered pair of ordinates has the x-axis or y-axis sorted ascending from 1 to N (or sqrt(N) to N). Since arrays of product or ordered pair of ordinates in each tile segment have one of the ordinates constant, each tile segment array is an arithmetic progression of ordinate products elements of which are colored monochromatically. Factor point location by parallel RAM sorting based on product of ordinates of ordered pairs in tile segments sorts the product of ordinates but shuffles the x-axis ordinate in ordered pair notation which was strictly ascending in unsorted concatenation. Sorted concatenation of tile segments of product of ordinates is the union of subsets of elements in each monochromatic arithmetic progression and creates a (pseudo)random coloring of sorted sequence of integers in the range {N-delta,N+delta}. In other words rectification of hyperbolic curve just inverts the Van Der Waerden theorem - instead of finding monochromatic arithmetic progressions in a colored sequence, it forms a mergesorted sequence from monochromatic arithmetic progressions in tile segments. Since rectification of hyperbolic curve for every integer creates unique set of tile segments, previous inverse of Van Der Waerden coloring is also unique.
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+670. (THEORY) Computational Geometric NC-PRAM Factorization, Tile Summation Ray Shooting Queries and Gamma approximation, Iterated addition for sum of tile segment lengths - 27 June 2019 - related to 506, 668
+---------------------------------------------------------------------------------------------------------------------------------------------
+Tile summation ray shooting queries:
+------------------------------------
+Sum of lengths of first n tile segments of pixelated hyperbolic curve derived previously:
+	N/[1*2] + N/[2*3] + ... + N/[n*(n+1)] = Nn/(n+1)
+which can be equated to sum of distances between first m prime factors by Hardy-Ramanujan Theorem:
+	Nn/(n+1) = mN/kloglogN
+
+=> n = m/(kloglogN - m) = number of tiles till m-th prime factor. 
+
+Gamma approximated tile summation ray shooting queries:
+-------------------------------------------------------
+Alternatively, sum of lengths of tiles obtained approximately from sum of binary search times by Gamma function previously can be equated to Hardy-Ramanujan normal order estimate:
+	2^(n log N - log (n+1) - (2n + 1)log n + 2(n+1) + log (2*pi)) = mN/kloglogN
+	(or) (n log N - log (n+1) - (2n + 1)log n + 2(n+1) + log (2*pi)) = log(mN/kloglogN)
+and solved for number of tiles n that have to be summed till m-th prime factor. Total Binary Search time has been raised to exponent to get approximate total length searched. Solving logarithmic equation previously might require some logarithmic series approximation resulting in a cubic equation or higher degree in n depending on number of terms chosen from logarithmic series. 
+
+An important fact ignored so far is the summing of tile lengths while doing ray shooting queries which has to be parallelized too. But tile summation is an iterated addition of O(N) logN bit integers (tile lengths are rounded off) which is in NC1. Thus Computational Geometric NC-PRAM planar point location factorization invoking tile summation ray shooting query oracles is in NC again. It can be noted that most other ray shooting query algorithms do not have this iterated addition of tile lengths requirement.
+
+References:
+----------
+670.1 Iterated addition of n n-bit integers is in NC1 - Theorem 8.9 - https://courses.cs.washington.edu/courses/cse532/08sp/lect08.pdf
