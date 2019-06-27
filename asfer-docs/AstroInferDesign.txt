@@ -14210,3 +14210,16 @@ An important fact ignored so far is the summing of tile lengths while doing ray 
 References:
 ----------
 670.1 Iterated addition of n n-bit integers is in NC1 - Theorem 8.9 - https://courses.cs.washington.edu/courses/cse532/08sp/lect08.pdf
+
+------------------------------------------------------------------------------------------------------------------------------------------
+671. (THEORY and FEATURE) Intrinsic Merit of Music - MFCC analysis and zero crossing rate - 27 June 2019
+------------------------------------------------------------------------------------------------------------------------------------------
+1.AudioToBitMatrix.py MFCC function has been updated to scale MFCCs by sklearn and print mean and variance of MFCCs of an audio/music waveform
+2.zero crossing rate of waveform is also printed which is measure of modulations in music.
+3.One of the ways to measure Music merit and Music Genre or Emotion Classification is by clustering music waveforms by distance similarity of MFCCs.
+4.MFCC similarity can be used as recommender system where a listener is recommended music of similar MFCCs based on historic listening habits.
+5.MFCCs of music waveform drawn as images (e.g by librosa.display.specshow()) can be compared for similarities.
+
+Reference:
+----------
+671.1 Music Information Retrieval and MFCCs - https://musicinformationretrieval.com/mfcc.html
