@@ -29,7 +29,7 @@ import pickle
 import sys
 
 import nltk
-from pywsd.lesk import simple_lesk
+#from pywsd.lesk import simple_lesk
 from nltk.wsd import lesk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn

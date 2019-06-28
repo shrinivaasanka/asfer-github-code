@@ -17,10 +17,11 @@
 #--------------------------------------------------------------------------------------------------------
 
 import PyPDF2
-#from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 from datetime import datetime
 import sys
 import math
+from sympy.combinatorics.partitions import IntegerPartition
 
 
 class HRAnalytics(object):
@@ -30,6 +31,8 @@ class HRAnalytics(object):
 		self.academics=[]
 		self.total_work_experience=0
 		self.total_academics=0
+		self.timedeltas=[]
+		self.stinthistogram=None
 
 	def parse_profile(self, datasource, type, social_profile):
                 profile_text=""
@@ -60,6 +63,8 @@ class HRAnalytics(object):
 					stints.append(l.strip())
 			print "Work Experience:",self.work_experience
 			print "Academics:",self.academics	
+			#self.stinthistogram=IntegerPartition(self.timedeltas)
+			print "Stint Histogram - Integer Partition - :",self.timedeltas
 			return profile_text
 		else:
 			self.file=open(social_profile,"r")
@@ -69,6 +74,7 @@ class HRAnalytics(object):
 	def isdaterange(self,l):
 		months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 		monthdict={'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+		tdelta=0
 		try:
 			ltok=l.split("-")
 			starttok=[]
@@ -94,6 +100,7 @@ class HRAnalytics(object):
 					print "startdate:",startdate
 					print "enddate:",enddate
 					tdelta=startdate-enddate
+					self.timedeltas.append(int(abs(tdelta.total_seconds())))
 					self.total_work_experience += abs(tdelta.total_seconds())
 					return True
 			if len(starttok) == 1:
@@ -103,6 +110,7 @@ class HRAnalytics(object):
 					startdate=datetime(startyear,1,1)
 					enddate=datetime(endyear,1,1)
 					tdelta=startdate-enddate
+					self.timedeltas.append(int(abs(tdelta.total_seconds())))
 					self.total_academics += abs(tdelta.total_seconds())
 					print "startdate:",startdate
 					print "enddate:",enddate
@@ -149,16 +157,16 @@ class HRAnalytics(object):
 
 if __name__=="__main__":
 	hranal=HRAnalytics()
-	profile_text=hranal.parse_profile("linkedin","pdf","testlogs/CV.pdf")
-        print profile_text
+	#profile_text=hranal.parse_profile("linkedin","pdf","testlogs/CV.pdf")
+        #print profile_text
 	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.least_energy_intrinsic_merit()
 	#hranal.experiential_intrinsic_merit()
 	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
-	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
-	#number_of_connections=hranal.parse_connections(profile_text)
-	#hranal.least_energy_intrinsic_merit()
-	#hranal.experiential_intrinsic_merit(number_of_connections)
+	number_of_connections=hranal.parse_connections(profile_text)
+	hranal.least_energy_intrinsic_merit()
+	hranal.experiential_intrinsic_merit(number_of_connections)
 	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
