@@ -14223,3 +14223,19 @@ References:
 Reference:
 ----------
 671.1 Music Information Retrieval and MFCCs - https://musicinformationretrieval.com/mfcc.html
+
+------------------------------------------------------------------------------------------------------------------------------------------
+672. (FEATURE and THEORY) Intrinsic Merit of People/Professional Profiles - People Analytics - Tenure Histogram - 28 June 2019
+------------------------------------------------------------------------------------------------------------------------------------------
+1.People Analytics implementation has been updated to print Work and Academic Tenure stints as array (histogram or integer partition)
+2.This essentially makes tenures as a set partition analytics problem because job and academic stint time durations can be picturized as
+histograms.
+3.Tenures represented as Set Partitions can be quantified by set partition measure of partition rank:
+	Length of largest part in  partition - Number of parts in partition 
+4.In the context of People Analytics, previous rank measure is quite applicable practically as attrition metric because:
+	4.1 High partition rank implies the professional profile has spent large duration in an organization or number of tenure switches are less (number of parts)
+	4.2 Low Partition rank implies the professional profile has low duration per organization or high number of tenure switches
+5.Tenure Partition can be printed as Ferrer or Young Diagram and size of Durfee Square of this tenure partition is also a measure of average time spent per organization and thus an attrition metric
+6.Recursive Lambda Function Growth wordnet error has been resolved (pywsd is not used) and import uncommented.
+7.logs for this have been committed to testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.28June2019
+
