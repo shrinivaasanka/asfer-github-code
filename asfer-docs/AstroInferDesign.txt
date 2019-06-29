@@ -14239,3 +14239,9 @@ histograms.
 6.Recursive Lambda Function Growth wordnet error has been resolved (pywsd is not used) and import uncommented.
 7.logs for this have been committed to testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.28June2019
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+673. (FEATURE) People Analytics - Partition Rank Attrition Metric of Tenure Histogram - 29 June 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.People Analytics implementation has been updated to compute partition rank described previously (Crank of a Partition - Freeman Dyson - https://en.wikipedia.org/wiki/Crank_of_a_partition) of tenure histogram set partition of a person's professional and academic profile.
+2.Recursive Lambda Function Growth algorithm has been applied to text of the profile again.Closeness and Betweenness Centralities rankings are quite relevant than other Centrality measures.
+3.Logs for this have been committed to testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.29June2019
