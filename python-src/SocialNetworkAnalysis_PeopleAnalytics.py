@@ -64,7 +64,8 @@ class HRAnalytics(object):
 			print "Work Experience:",self.work_experience
 			print "Academics:",self.academics	
 			#self.stinthistogram=IntegerPartition(self.timedeltas)
-			print "Stint Histogram - Integer Partition - :",self.timedeltas
+			print "Tenure Histogram - Integer Partition - :",self.timedeltas
+			print "Tenure Histogram - Partition Rank:",max(self.timedeltas) - len(self.timedeltas)
 			return profile_text
 		else:
 			self.file=open(social_profile,"r")
@@ -164,7 +165,7 @@ if __name__=="__main__":
 	#hranal.experiential_intrinsic_merit()
 	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
 	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
-	#hranal.rlfg_intrinsic_merit(profile_text)
+	hranal.rlfg_intrinsic_merit(profile_text)
 	number_of_connections=hranal.parse_connections(profile_text)
 	hranal.least_energy_intrinsic_merit()
 	hranal.experiential_intrinsic_merit(number_of_connections)
