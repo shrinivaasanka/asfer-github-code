@@ -14245,3 +14245,25 @@ histograms.
 1.People Analytics implementation has been updated to compute partition rank described previously (Crank of a Partition - Freeman Dyson - https://en.wikipedia.org/wiki/Crank_of_a_partition) of tenure histogram set partition of a person's professional and academic profile.
 2.Recursive Lambda Function Growth algorithm has been applied to text of the profile again.Closeness and Betweenness Centralities rankings are quite relevant than other Centrality measures.
 3.Logs for this have been committed to testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.29June2019
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+674. (FEATURE) People Analytics - Rank Correlation based Attrition Model of Tenure Histogram - 1 July 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. People Analytics implementation has been updated to include a function to compute Correlation Coefficients of Statistical Dependence between vectors of Tenure Histograms.
+2. Tenure Histogram is deemed as a set of vectors of the form (organization/designation, income, duration) which captures the crucial factors of a tenure
+3. New function tenure_partition_rank_correlation() has been implemented to compute rank correlations between each pair of variables of a tenure:
+	3.1 Designations versus Remunerations
+	3.2 Designations versus Durations
+	3.3 Remunerations versus Durations
+4.An example tenure histogram vectors of previous format has been analyzed (presently not parsed from profiles) for Kendall-Tau Rank correlation coefficient and logs are in testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.1July2019
+5.Previous correlations can be interpreted as below:
+	5.1 Designations versus Remunerations - If positive or high, professional profile has increasing career graph along with increasing remunerations (expected). If negative or low, professional profile has increasing career graph vis-a-vis reduced remunerations (not expected - implies profile preferred more challenging roles than remuneration) and vice-versa (not expected - implies profile preferred better remuneration than designations)
+	5.2 Designations versus Durations - If positive or high, profile has increasing career graph vis-a-vis durations of tenure (expected). If negative or low profile has increasing career graph vis-a-vis decreasing durations per tenure (not quite expected - increased designations  were not appealing to profile and person decided to leave) and vice-versa (not quite expected - decreasing responsibilities of the role were preferred by the profile which decided to stay longer) 
+	5.3 Remunerations versus Durations - If positive or high, profile has increasing emoluments versus increasing durations per tenure (expected). If negative or low profile has increasing remunerations against decreasing durations per tenure (not quite expected - profile was more inclined to salary) and vice-versa (not quite expected - profile stayed longer per tenure despite decreasing benefits). 
+6. Previous interpretations facilitate inferences (in parentheses) of why attritions could have happened.
+7. From logs following positive and negative correlations are found and can be interpreted based on (5):
+	Kendall Tau Rank Correlations - Designations and Remunerations: tau= 0.7142857142857143 , pvalue= 0.0301587301587
+	Kendall Tau Rank Correlations - Designations and Durations: tau= -0.09759000729485331 , pvalue= 0.7612636496364197
+	Kendall Tau Rank Correlations - Durations and Remunerations: tau= -0.19518001458970663 , pvalue= 0.5434238636256696
+
+
