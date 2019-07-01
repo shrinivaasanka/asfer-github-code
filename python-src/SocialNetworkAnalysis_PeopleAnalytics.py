@@ -22,6 +22,7 @@ from datetime import datetime
 import sys
 import math
 from sympy.combinatorics.partitions import IntegerPartition
+from scipy import stats
 
 
 class HRAnalytics(object):
@@ -71,6 +72,14 @@ class HRAnalytics(object):
 			self.file=open(social_profile,"r")
 			profile_text=self.file.read()
 			return profile_text
+
+	def tenure_partition_rank_correlation(self,designations, remunerations, durations):
+		tau1, pvalue1 = stats.kendalltau(designations, remunerations)
+		tau2, pvalue2 = stats.kendalltau(designations, durations)
+		tau3, pvalue3 = stats.kendalltau(remunerations, durations)
+		print "Kendall Tau Rank Correlations - Designations and Remunerations: tau=",tau1,", pvalue=",pvalue1
+		print "Kendall Tau Rank Correlations - Designations and Durations: tau=",tau2,", pvalue=",pvalue2
+		print "Kendall Tau Rank Correlations - Durations and Remunerations: tau=",tau3,", pvalue=",pvalue3
 
 	def isdaterange(self,l):
 		months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -165,9 +174,13 @@ if __name__=="__main__":
 	#hranal.experiential_intrinsic_merit()
 	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
 	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
-	hranal.rlfg_intrinsic_merit(profile_text)
+	#hranal.rlfg_intrinsic_merit(profile_text)
 	number_of_connections=hranal.parse_connections(profile_text)
 	hranal.least_energy_intrinsic_merit()
 	hranal.experiential_intrinsic_merit(number_of_connections)
+	designations=[1,2,3,4,5,6,7]
+	remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
+	durations=[0.7,5,0.1,2,3,2,0.5]
+	hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
 	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
