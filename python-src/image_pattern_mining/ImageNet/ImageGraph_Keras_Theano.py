@@ -164,6 +164,30 @@ def large_scale_visual_sentiment(vg_en_tn_prdct):
 	print "Sentiment Analysis of the Video:", sorted(vg_en_tn_prdct_sentiments.items(), key=operator.itemgetter(0), reverse=True)
 	return vg_en_tn_prdct_sentiments
 
+def analyze_remotesensing_RGB_patches(imagefile):
+        im1=cv2.imread(imagefile)
+        b,g,r=cv2.split(im1)
+        imagefiletoks1=imagefile.split(".")
+        imagefiletoks2=imagefiletoks1[0].split("/")
+        #Split remotesensing satellite image to Red,Green and Blue Channels
+        cv2.imwrite("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_blue.jpg",b)
+        cv2.imwrite("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_green.jpg",g)
+        cv2.imwrite("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_red.jpg",r)
+        im1_blue=cv2.imread("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_blue.jpg")
+        im1_green=cv2.imread("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_green.jpg")
+        im1_red=cv2.imread("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_red.jpg")
+        im1_blue_hist=np.histogram(im1_blue.flatten())
+        im1_green_hist=np.histogram(im1_green.flatten())
+        im1_red_hist=np.histogram(im1_red.flatten())
+        #Compute percentage of 255 (white) pixel values bucket in the RGB channel histogram:
+        #Size of 255 (white) bucket in image ndarray histogram / Sum of sizes of all buckets in image ndarray histogram
+        im1_blue_white=float(im1_blue_hist[0][len(im1_blue_hist[0])-1])/float(sum(im1_blue_hist[0]))
+        im1_green_white=float(im1_green_hist[0][len(im1_green_hist[0])-1])/float(sum(im1_green_hist[0]))
+        im1_red_white=float(im1_red_hist[0][len(im1_red_hist[0])-1])/float(sum(im1_red_hist[0]))
+        print "Percentage of Water bodies (Blue) - an estimate of groundwater:",im1_blue_white
+        print "Percentage of Vegetation or Greenery (Green) - an estimate of groundwater:",im1_green_white
+        print "Percentage of Built Land (Red):",im1_red_white
+
 def convex_hull(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
 	im1array=image.img_to_array(im1)
@@ -210,11 +234,15 @@ if __name__=="__main__":
 	#imgnet_vg4=imagenet_videograph("testlogs/ExampleVideo_4.mp4",2,write_eventnet=True)
 	#vg_en_tn_prdct4=videograph_eventnet_tensor_product(imgnet_vg4)
 	#video_merit4=inverse_distance_intrinsic_merit(vg_en_tn_prdct4,write_eventnet=True)
-	imgnet_vg5=imagenet_videograph("testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4",2,write_eventnet=True)
-	vg_en_tn_prdct5=videograph_eventnet_tensor_product(imgnet_vg5)
-	video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
+	#imgnet_vg5=imagenet_videograph("testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4",2,write_eventnet=True)
+	#vg_en_tn_prdct5=videograph_eventnet_tensor_product(imgnet_vg5)
+	#video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
 	#waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
 	#waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
 	#print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
 	#print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
+        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-8.jpg")
+        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-11.jpg")
+        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
+        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
