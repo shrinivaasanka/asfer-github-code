@@ -14268,4 +14268,29 @@ histograms.
 	Kendall Tau Rank Correlations - Designations and Durations: tau= -0.09759000729485331 , pvalue= 0.7612636496364197
 	Kendall Tau Rank Correlations - Durations and Remunerations: tau= -0.19518001458970663 , pvalue= 0.5434238636256696
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+675. (FEATURE) Urban Planning Analytics - Analysis of Remote Sensing GIS Imagery of Urban Sprawls - 3 July 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Analyzing Builtup land, Water bodies etc., of an urban sprawl is crucial for urban planners and is an apt application of image analysis. Urban sprawl is defined as expanse of urbanization in suburbs and is not measured by governance limits. For example rankings of metropolitan areas in India is: https://en.wikipedia.org/wiki/List_of_metropolitan_areas_in_India ("...
+Rank	Metropolitan area	State/Territory	Population
+Area
+(in km2/sq mi)
+1	Central National Capital Region	Delhi, Haryana, Uttar Pradesh	25,735,000 (2016)[3]	2,163 (835)[3]
+2	Mumbai Metropolitan Region	Maharashtra	20,800,000 (2005)[4]	4,354 (1,681)[5]
+3	Kolkata metropolitan area	West Bengal	14,720,000 (2001)[6]	1,851 (715)[7]
+4	Chennai metropolitan area	Tamil Nadu	13,300,253 (2011)	1,189 (459)...")
+which is measure of urbanization.
 
+2.Convex Hull based on Scipy Spatial for urban sprawls has already been implemented in ImageGraph_Keras_Theano.py for GIS images from SEDAC (http://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/) which is also invoked in Drone Online Shopping Delivery NeuronRain usecase
+3.A Machine Learning (Random Forests) and entropy based analysis of Chennai Urban Sprawl - https://www.mdpi.com/1099-4300/19/4/163/pdf - studies the growth of built area and dwindling of water bodies from 1991 to 2016 and predicts scenario for 2027. Images referred to in this article are drawn from various Remote Sensing satellite sources (LandSat, ISRO-Bhuvan Geo Platform - https://bhuvan.nrsc.gov.in/bhuvan_links.php etc.,) and are great references for Chennai Urban Sprawl Land Usage,Water bodies,Greenery etc.,.
+4.Images from https://www.mdpi.com/1099-4300/19/4/163/pdf have been extracted and are analyzed for Red, Green and Blue Channels in this commit. New python function analyze_remotesensing_RGB_patches() has been implemented for this which invokes OpenCV2 split() of the image to Red,Green,Blue channels.
+5.Rationale for Red-Green-Blue Channel split of Urban Sprawl is most of the images are color coded in Red, Green and Blue for Built Area, Greenery and Water bodies respectively and splitting to respective color channels layers the image.
+6.Each color channel - Red. Green and Blue - is a NumPy ndarray which is flattened and histograms are computed for each color channel.
+7.Color channel images are written to JPG files of respective suffixes and read again to compute Numpy histogram
+8.Each color channgel image is grayscale only and percentage of white pixels of value 255 is the sum total size of respective color patch in image.
+9.Scikit Learn Image has extract_patches_2d() function - https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.image.extract_patches_2d.html - which can segment an image to patches or clusters of similar features. But a native implementation of patch extraction has been preferred for color coded GIS Remote Sensing images.
+10.Ratio of white pixels to total number of pixels is computed from color channel image histograms as:
+Size of 255 (white) bucket in image ndarray histogram / Sum of sizes of all buckets in image ndarray histogram
+11.Images extracted from https://www.mdpi.com/1099-4300/19/4/163 and their color channel images have been committed to ImageNet/testlogs/RemoteSensingGIS/
+12.Logs for this are committed to testlogs/ImageGraph_Keras_Theano.log.RemoteSensingGIS.3July2019 which print the percentage of water bodies (blue), built area (red) and greenery (green) inferred from color channels
+13.Alternatively, image ndarray itself could have been mapped to histograms and ratio of respective pixel color value buckets could have been computed. But exact color value for each color coding is not known and color channels grayscale the images and just number of white pixels (255) have to be found.
