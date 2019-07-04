@@ -1,0 +1,29 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+X: [173. 160. 177. ... 242. 241. 239.]
+y: [1 4 1 4 5 2 5 2 1 3 1 1 3 1]
+X.shape: (2107392,)
+y.shape: (14,)
+newX.shape: (150528, 14)
+newy.shape: (14,)
+X_train: [[ 75.  13.  13. ... 242. 239. 241.]
+ [115.  12.  13. ... 239. 241. 242.]
+ [177.  10.  13. ... 239. 241. 242.]
+ ...
+ [173.  93.  13. ... 242. 239. 241.]
+ [  5.  12.  15. ... 241. 242. 239.]
+ [ 85.   9.  13. ... 242. 239. 241.]]
+y_train: [5 1 1 1 2 1 1 4 1 5 3]
+random_forest_image_classification() by train_test_split(): [5 1 1]
+random_forest_image_classification() for training and test images: [1 1]

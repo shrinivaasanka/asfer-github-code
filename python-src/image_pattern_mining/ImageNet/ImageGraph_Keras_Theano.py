@@ -34,6 +34,11 @@ import operator
 from scipy.spatial import ConvexHull
 from scipy.spatial.distance import directed_hausdorff
 import networkx as nx
+import scipy.io
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.utils import shuffle
 
 def medical_imageing(image_source,imagefile):
 	if image_source=="ECG":
@@ -188,6 +193,41 @@ def analyze_remotesensing_RGB_patches(imagefile):
         print "Percentage of Vegetation or Greenery (Green) - an estimate of groundwater:",im1_green_white
         print "Percentage of Built Land (Red):",im1_red_white
 
+def random_forest_image_classification(train_images,test_images, train_labels):
+        train_data_X=[]
+        test_data_X=[]
+        train_data_y=train_labels
+        for t in train_images:
+	    im=image.load_img(t,target_size=(224,224))
+	    imarray=image.img_to_array(im)
+            train_data_X = train_data_X + imarray.flatten().tolist()
+        rfc=RandomForestClassifier() 
+        X=np.asarray(train_data_X)
+        y=np.asarray(train_data_y)
+        print "X:",X
+        print "y:",y
+        print "X.shape:",X.shape
+        print "y.shape:",y.shape
+        newX=X.reshape(X.shape[0]/len(train_labels),len(train_labels))
+        newy=y.flatten()
+        print "newX.shape:",newX.shape
+        print "newy.shape:",newy.shape
+        X_train,X_test,y_train,y_test=train_test_split(newX.T,newy,test_size=0.2,random_state=10)
+        print "X_train:",X_train
+        print "y_train:",y_train
+        rfc.fit(X_train,y_train)
+        pred=rfc.predict(X_test)
+        print "random_forest_image_classification() by train_test_split():",pred
+        for t in test_images:
+	    im=image.load_img(t,target_size=(224,224))
+	    imarray=image.img_to_array(im)
+            test_data_X = test_data_X + imarray.flatten().tolist()
+        X=np.asarray(test_data_X)
+        newX=X.reshape(X.shape[0]/len(test_images),len(test_images))
+        X_test=newX.T
+        pred=rfc.predict(X_test)
+        print "random_forest_image_classification() for training and test images:",pred
+
 def convex_hull(imagefile):
 	im1=image.load_img(imagefile,target_size=(224,224))
 	im1array=image.img_to_array(im1)
@@ -242,7 +282,11 @@ if __name__=="__main__":
 	#print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
 	#print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
 	#topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
-        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-8.jpg")
-        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-11.jpg")
-        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
-        analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+        #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-8.jpg")
+        #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-11.jpg")
+        #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
+        #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+        train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
+        test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
+        train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
+        random_forest_image_classification(train_images,test_images,train_labels)
