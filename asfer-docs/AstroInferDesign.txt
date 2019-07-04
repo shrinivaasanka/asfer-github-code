@@ -14294,3 +14294,15 @@ Size of 255 (white) bucket in image ndarray histogram / Sum of sizes of all buck
 11.Images extracted from https://www.mdpi.com/1099-4300/19/4/163 and their color channel images have been committed to ImageNet/testlogs/RemoteSensingGIS/
 12.Logs for this are committed to testlogs/ImageGraph_Keras_Theano.log.RemoteSensingGIS.3July2019 which print the percentage of water bodies (blue), built area (red) and greenery (green) inferred from color channels
 13.Alternatively, image ndarray itself could have been mapped to histograms and ratio of respective pixel color value buckets could have been computed. But exact color value for each color coding is not known and color channels grayscale the images and just number of white pixels (255) have to be found.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+676. (FEATURE) Image Analytics - ImageNet Keras-Theano - Random Forest Classification wrapper for images - 4 July 2019
+------------------------------------------------------------------------------------------------------------------------------------------
+1.New wrapper function has been implemented which invokes scikit learn Random Forests - https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier.predict to classify set of test images based on
+training images and training labels.
+2.This wrapper function random_forest_image_classification() pre-processes the training and test images by loading to CV2 and flattening the
+image ndarray and then reshaping and transposing it so that scikit learn accepts.
+3.First the random forest classifier which is a forest of lot of decision trees which vote to decide the class label of a sample, is trained by fit() for training images and then test images are labelled by predict()
+4.Logs for this are committed to ImageGraph_Keras_Theano.log.RandomForests.4July2019
+5.Scikit learn provides train_test_split function which divides set of samples into training and test images based on which fit() and predict() are invoked.
+6.Alternative version without training and test split also follows the above as in logs.
