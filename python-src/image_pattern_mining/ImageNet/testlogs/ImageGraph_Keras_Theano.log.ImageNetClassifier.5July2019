@@ -1,0 +1,137 @@
+root@ksrinivasan-Acer-One-14-Z422:/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/image_pattern_mining/ImageNet# python ImageGraph_Keras_Theano.py 
+Using Theano backend.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+X: [173. 160. 177. ... 242. 241. 239.]
+y: [1 4 1 4 5 2 5 2 1 3 1 1 3 1]
+X.shape: (2107392,)
+y.shape: (14,)
+newX.shape: (150528, 14)
+newy.shape: (14,)
+X_train: [[ 75.  13.  13. ... 242. 239. 241.]
+ [115.  12.  13. ... 239. 241. 242.]
+ [177.  10.  13. ... 239. 241. 242.]
+ ...
+ [173.  93.  13. ... 242. 239. 241.]
+ [  5.  12.  15. ... 241. 242. 239.]
+ [ 85.   9.  13. ... 242. 239. 241.]]
+y_train: [5 1 1 1 2 1 1 4 1 5 3]
+/usr/local/lib/python2.7/dist-packages/sklearn/ensemble/forest.py:246: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
+  "10 in version 0.20 to 100 in 0.22.", FutureWarning)
+random_forest_image_classification() by train_test_split(): [1 1 1]
+random_forest_image_classification() for training and test images: [1 1]
+Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+102858752/102853048 [==============================] - 307s 3us/step
+102866944/102853048 [==============================] - 307s 3us/step
+/usr/local/lib/python2.7/dist-packages/keras/utils/conv_utils.py:82: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  return np.copy(kernel[slices])
+Downloading data from https://storage.googleapis.com/download.tensorflow.org/data/imagenet_class_index.json
+40960/35363 [==================================] - 0s 2us/step
+49152/35363 [=========================================] - 0s 1us/step
+Predictions: [[(u'n06359193', u'web_site', 0.9964041), (u'n07565083', u'menu', 0.0012194205), (u'n04152593', u'screen', 0.0006496422), (u'n03782006', u'monitor', 0.00061958143), (u'n03832673', u'notebook', 0.0006067719)]]
+/usr/local/lib/python2.7/dist-packages/PyDictionary/utils.py:5: UserWarning: No parser was explicitly specified, so I'm using the best available HTML parser for this system ("html5lib"). This usually isn't a problem, but if you run this code on another system, or in a different virtual environment, it may use a different parser and behave differently.
+
+The code that caused this warning is on line 5 of the file /usr/local/lib/python2.7/dist-packages/PyDictionary/utils.py. To get rid of this warning, pass the additional argument 'features="html5lib"' to the BeautifulSoup constructor.
+
+  return BeautifulSoup(requests.get(url).text)
+Error: The Following Error occured: list index out of range
+2
+defaultdict(<type 'list'>, {u'compact': [u'notebook'], u'signals': [u'monitor'], u'television': [u'monitor'], u'portable': [u'notebook'], u'takes': [u'monitor'], u'things': [u'menu'], u'screen': [u'screen', u'monitor'], u'onto': [u'screen'], u'produced': [u'monitor'], u'small': [u'notebook'], u'viewing': [u'screen'], u'computer': [u'notebook', u'monitor'], u'displays': [u'monitor'], u'agenda': [u'menu'], u'device': [u'monitor'], u'project': [u'screen'], u'display': [u'monitor'], u'monitor': [u'monitor']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x7f2789f79310>, 253638.0)
+2
+defaultdict(<type 'list'>, {u'Web': [u'web_site'], u'portable': [u'notebook'], u'series': [u'web_site'], u'produced': [u'monitor'], u'computer': [u'web_site', u'notebook', u'monitor'], u'displays': [u'monitor'], u'compact': [u'notebook'], u'web': [u'web_site'], u'monitor': [u'monitor'], u'things': [u'menu'], u'signals': [u'monitor'], u'internet': [u'web_site'], u'World': [u'web_site'], u'Wide': [u'web_site'], u'screen': [u'screen', u'monitor'], u'maintains': [u'web_site'], u'viewing': [u'screen'], u'connected': [u'web_site'], u'device': [u'monitor'], u'pages': [u'web_site'], u'takes': [u'monitor'], u'television': [u'monitor'], u'project': [u'screen'], u'agenda': [u'menu'], u'small': [u'notebook'], u'onto': [u'screen'], u'display': [u'monitor']})
+Core number (sorted) : [(u'Web', 2), (u'portable', 2), (u'series', 2), (u'produced', 2), (u'computer', 2), (u'displays', 2), (u'compact', 2), (u'web', 2), (u'monitor', 2), (u'web_site', 2), (u'menu', 2), (u'signals', 2), (u'internet', 2), (u'World', 2), (u'Wide', 2), (u'screen', 2), (u'maintains', 2), (u'viewing', 2), (u'notebook', 2), (u'connected', 2), (u'device', 2), (u'pages', 2), (u'takes', 2), (u'television', 2), (u'project', 2), (u'agenda', 2), (u'things', 2), (u'small', 2), (u'onto', 2), (u'display', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: Web ,core number= 2
+This document belongs to class: portable ,core number= 2
+This document belongs to class: series ,core number= 2
+This document belongs to class: produced ,core number= 2
+This document belongs to class: computer ,core number= 2
+This document belongs to class: displays ,core number= 2
+This document belongs to class: compact ,core number= 2
+This document belongs to class: web ,core number= 2
+This document belongs to class: monitor ,core number= 2
+This document belongs to class: web_site ,core number= 2
+This document belongs to class: menu ,core number= 2
+This document belongs to class: signals ,core number= 2
+This document belongs to class: internet ,core number= 2
+This document belongs to class: World ,core number= 2
+This document belongs to class: Wide ,core number= 2
+This document belongs to class: screen ,core number= 2
+	max_core_number 2
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'monitor', 0.5270935960591133), (u'computer', 0.5123152709359606), (u'web_site', 0.46551724137931033), (u'screen', 0.17733990147783252), (u'notebook', 0.17733990147783252), (u'menu', 0.0024630541871921183), (u'Web', 0.0), (u'portable', 0.0), (u'series', 0.0), (u'produced', 0.0), (u'displays', 0.0), (u'compact', 0.0), (u'web', 0.0), (u'signals', 0.0), (u'internet', 0.0), (u'World', 0.0), (u'Wide', 0.0), (u'maintains', 0.0), (u'viewing', 0.0), (u'connected', 0.0), (u'device', 0.0), (u'pages', 0.0), (u'takes', 0.0), (u'television', 0.0), (u'project', 0.0), (u'agenda', 0.0), (u'things', 0.0), (u'small', 0.0), (u'onto', 0.0), (u'display', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'computer', 0.4482758620689655), (u'monitor', 0.42382445141065833), (u'web_site', 0.3950905902980713), (u'notebook', 0.3283147158814959), (u'screen', 0.31500465983224607), (u'produced', 0.2913793103448276), (u'displays', 0.2913793103448276), (u'signals', 0.2913793103448276), (u'device', 0.2913793103448276), (u'takes', 0.2913793103448276), (u'television', 0.2913793103448276), (u'display', 0.2913793103448276), (u'Web', 0.277504105090312), (u'series', 0.277504105090312), (u'web', 0.277504105090312), (u'internet', 0.277504105090312), (u'World', 0.277504105090312), (u'Wide', 0.277504105090312), (u'maintains', 0.277504105090312), (u'connected', 0.277504105090312), (u'pages', 0.277504105090312), (u'portable', 0.24281609195402298), (u'compact', 0.24281609195402298), (u'small', 0.24281609195402298), (u'viewing', 0.23545802856147685), (u'project', 0.23545802856147685), (u'onto', 0.23545802856147685), (u'menu', 0.06896551724137931), (u'agenda', 0.04597701149425287), (u'things', 0.04597701149425287)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'web_site', 0.6896551724137931), (u'monitor', 0.6206896551724138), (u'screen', 0.27586206896551724), (u'notebook', 0.27586206896551724), (u'computer', 0.20689655172413793), (u'menu', 0.13793103448275862), (u'Web', 0.06896551724137931), (u'portable', 0.06896551724137931), (u'series', 0.06896551724137931), (u'produced', 0.06896551724137931), (u'displays', 0.06896551724137931), (u'compact', 0.06896551724137931), (u'web', 0.06896551724137931), (u'signals', 0.06896551724137931), (u'internet', 0.06896551724137931), (u'World', 0.06896551724137931), (u'Wide', 0.06896551724137931), (u'maintains', 0.06896551724137931), (u'viewing', 0.06896551724137931), (u'connected', 0.06896551724137931), (u'device', 0.06896551724137931), (u'pages', 0.06896551724137931), (u'takes', 0.06896551724137931), (u'television', 0.06896551724137931), (u'project', 0.06896551724137931), (u'agenda', 0.06896551724137931), (u'things', 0.06896551724137931), (u'small', 0.06896551724137931), (u'onto', 0.06896551724137931), (u'display', 0.06896551724137931)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[(u'web_site', 0.16134354046037802), (u'monitor', 0.14245651015262054), (u'screen', 0.06811161226721642), (u'notebook', 0.06751323891114108), (u'menu', 0.04864904433959551), (u'computer', 0.046513717939565394), (u'agenda', 0.025675477830202246), (u'things', 0.025675477830202246), (u'viewing', 0.019474125189931017), (u'project', 0.019474125189931017), (u'onto', 0.019474125189931017), (u'portable', 0.019346138217473375), (u'compact', 0.019346138217473375), (u'small', 0.019346138217473375), (u'Web', 0.018713765996110663), (u'series', 0.018713765996110663), (u'web', 0.018713765996110663), (u'internet', 0.018713765996110663), (u'World', 0.018713765996110663), (u'Wide', 0.018713765996110663), (u'maintains', 0.018713765996110663), (u'connected', 0.018713765996110663), (u'pages', 0.018713765996110663), (u'produced', 0.018453813725981358), (u'displays', 0.018453813725981358), (u'signals', 0.018453813725981358), (u'device', 0.018453813725981358), (u'takes', 0.018453813725981358), (u'television', 0.018453813725981358), (u'display', 0.018453813725981358)]
+Unsupervised Image Classes: ([(u'Web', 2), (u'portable', 2), (u'series', 2), (u'produced', 2), (u'computer', 2), (u'displays', 2), (u'compact', 2), (u'web', 2), (u'monitor', 2), (u'web_site', 2), (u'menu', 2), (u'signals', 2), (u'internet', 2), (u'World', 2), (u'Wide', 2), (u'screen', 2), (u'maintains', 2), (u'viewing', 2), (u'notebook', 2), (u'connected', 2), (u'device', 2), (u'pages', 2), (u'takes', 2), (u'television', 2), (u'project', 2), (u'agenda', 2), (u'things', 2), (u'small', 2), (u'onto', 2), (u'display', 2)], [(u'web_site', 0.16134354046037802), (u'monitor', 0.14245651015262054), (u'screen', 0.06811161226721642), (u'notebook', 0.06751323891114108), (u'menu', 0.04864904433959551), (u'computer', 0.046513717939565394), (u'agenda', 0.025675477830202246), (u'things', 0.025675477830202246), (u'viewing', 0.019474125189931017), (u'project', 0.019474125189931017), (u'onto', 0.019474125189931017), (u'portable', 0.019346138217473375), (u'compact', 0.019346138217473375), (u'small', 0.019346138217473375), (u'Web', 0.018713765996110663), (u'series', 0.018713765996110663), (u'web', 0.018713765996110663), (u'internet', 0.018713765996110663), (u'World', 0.018713765996110663), (u'Wide', 0.018713765996110663), (u'maintains', 0.018713765996110663), (u'connected', 0.018713765996110663), (u'pages', 0.018713765996110663), (u'produced', 0.018453813725981358), (u'displays', 0.018453813725981358), (u'signals', 0.018453813725981358), (u'device', 0.018453813725981358), (u'takes', 0.018453813725981358), (u'television', 0.018453813725981358), (u'display', 0.018453813725981358)])
+Predictions: [[(u'n03598930', u'jigsaw_puzzle', 0.33936077), (u'n03160309', u'dam', 0.068047725), (u'n09246464', u'cliff', 0.045928977), (u'n04376876', u'syringe', 0.045398023), (u'n03000134', u'chainlink_fence', 0.027218131)]]
+Error: The Following Error occured: list index out of range
+Error: The Following Error occured: list index out of range
+2
+defaultdict(<type 'list'>, {u'body': [u'syringe'], u'obstruct': [u'dam'], u'dam': [u'dam'], u'irrigate': [u'syringe'], u'face': [u'cliff'], u'high': [u'cliff'], u'spray': [u'syringe'], u'part': [u'syringe'], u'rock': [u'cliff'], u'syringe': [u'syringe'], u'steep': [u'cliff']})
+ImageGraph: (<networkx.classes.digraph.DiGraph object at 0x7f279380ecd0>, 19747.0)
+2
+defaultdict(<type 'list'>, {u'obstruct': [u'dam'], u'fence': [u'chainlink_fence'], u'puzzle': [u'jigsaw_puzzle'], u'pieces': [u'jigsaw_puzzle'], u'high': [u'cliff'], u'diamond': [u'chainlink_fence'], u'syringe': [u'syringe'], u'cut': [u'jigsaw_puzzle'], u'pattern': [u'chainlink_fence'], u'irrigate': [u'syringe'], u'reassemble': [u'jigsaw_puzzle'], u'body': [u'syringe'], u'picture': [u'jigsaw_puzzle'], u'wires': [u'chainlink_fence'], u'dam': [u'dam'], u'woven': [u'chainlink_fence'], u'spray': [u'syringe'], u'base': [u'jigsaw_puzzle'], u'mounted': [u'jigsaw_puzzle'], u'steel': [u'chainlink_fence'], u'interlocking': [u'jigsaw_puzzle'], u'stiff': [u'jigsaw_puzzle'], u'steep': [u'cliff'], u'face': [u'cliff'], u'part': [u'syringe'], u'rock': [u'cliff'], u'requires': [u'jigsaw_puzzle']})
+Core number (sorted) : [(u'obstruct', 2), (u'fence', 2), (u'puzzle', 2), (u'pieces', 2), (u'high', 2), (u'diamond', 2), (u'syringe', 2), (u'cut', 2), (u'pattern', 2), (u'irrigate', 2), (u'reassemble', 2), (u'body', 2), (u'picture', 2), (u'wires', 2), (u'dam', 2), (u'woven', 2), (u'spray', 2), (u'base', 2), (u'mounted', 2), (u'cliff', 2), (u'steel', 2), (u'interlocking', 2), (u'stiff', 2), (u'steep', 2), (u'chainlink_fence', 2), (u'face', 2), (u'part', 2), (u'rock', 2), (u'jigsaw_puzzle', 2), (u'requires', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: obstruct ,core number= 2
+This document belongs to class: fence ,core number= 2
+This document belongs to class: puzzle ,core number= 2
+This document belongs to class: pieces ,core number= 2
+This document belongs to class: high ,core number= 2
+This document belongs to class: diamond ,core number= 2
+This document belongs to class: syringe ,core number= 2
+This document belongs to class: cut ,core number= 2
+This document belongs to class: pattern ,core number= 2
+This document belongs to class: irrigate ,core number= 2
+This document belongs to class: reassemble ,core number= 2
+This document belongs to class: body ,core number= 2
+This document belongs to class: picture ,core number= 2
+This document belongs to class: wires ,core number= 2
+This document belongs to class: dam ,core number= 2
+This document belongs to class: woven ,core number= 2
+	max_core_number 2
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'jigsaw_puzzle', 0.11083743842364532), (u'chainlink_fence', 0.03694581280788178), (u'syringe', 0.014778325123152709), (u'cliff', 0.014778325123152709), (u'obstruct', 0.0), (u'fence', 0.0), (u'puzzle', 0.0), (u'pieces', 0.0), (u'high', 0.0), (u'diamond', 0.0), (u'cut', 0.0), (u'pattern', 0.0), (u'irrigate', 0.0), (u'reassemble', 0.0), (u'body', 0.0), (u'picture', 0.0), (u'wires', 0.0), (u'dam', 0.0), (u'woven', 0.0), (u'spray', 0.0), (u'base', 0.0), (u'mounted', 0.0), (u'steel', 0.0), (u'interlocking', 0.0), (u'stiff', 0.0), (u'steep', 0.0), (u'face', 0.0), (u'part', 0.0), (u'rock', 0.0), (u'requires', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'jigsaw_puzzle', 0.3448275862068966), (u'chainlink_fence', 0.20689655172413793), (u'puzzle', 0.18148820326678766), (u'pieces', 0.18148820326678766), (u'cut', 0.18148820326678766), (u'reassemble', 0.18148820326678766), (u'picture', 0.18148820326678766), (u'base', 0.18148820326678766), (u'mounted', 0.18148820326678766), (u'interlocking', 0.18148820326678766), (u'stiff', 0.18148820326678766), (u'requires', 0.18148820326678766), (u'syringe', 0.13793103448275862), (u'cliff', 0.13793103448275862), (u'fence', 0.1128526645768025), (u'diamond', 0.1128526645768025), (u'pattern', 0.1128526645768025), (u'wires', 0.1128526645768025), (u'woven', 0.1128526645768025), (u'steel', 0.1128526645768025), (u'high', 0.07881773399014778), (u'irrigate', 0.07881773399014778), (u'body', 0.07881773399014778), (u'spray', 0.07881773399014778), (u'steep', 0.07881773399014778), (u'face', 0.07881773399014778), (u'part', 0.07881773399014778), (u'rock', 0.07881773399014778), (u'obstruct', 0.034482758620689655), (u'dam', 0.034482758620689655)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[(u'jigsaw_puzzle', 0.6896551724137931), (u'chainlink_fence', 0.41379310344827586), (u'syringe', 0.27586206896551724), (u'cliff', 0.27586206896551724), (u'obstruct', 0.06896551724137931), (u'fence', 0.06896551724137931), (u'puzzle', 0.06896551724137931), (u'pieces', 0.06896551724137931), (u'high', 0.06896551724137931), (u'diamond', 0.06896551724137931), (u'cut', 0.06896551724137931), (u'pattern', 0.06896551724137931), (u'irrigate', 0.06896551724137931), (u'reassemble', 0.06896551724137931), (u'body', 0.06896551724137931), (u'picture', 0.06896551724137931), (u'wires', 0.06896551724137931), (u'dam', 0.06896551724137931), (u'woven', 0.06896551724137931), (u'spray', 0.06896551724137931), (u'base', 0.06896551724137931), (u'mounted', 0.06896551724137931), (u'steel', 0.06896551724137931), (u'interlocking', 0.06896551724137931), (u'stiff', 0.06896551724137931), (u'steep', 0.06896551724137931), (u'face', 0.06896551724137931), (u'part', 0.06896551724137931), (u'rock', 0.06896551724137931), (u'requires', 0.06896551724137931)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[(u'jigsaw_puzzle', 0.17116814413542766), (u'chainlink_fence', 0.10990822822338575), (u'syringe', 0.07927827026736478), (u'cliff', 0.07927827026736478), (u'obstruct', 0.03333333333333333), (u'dam', 0.03333333333333333), (u'high', 0.021847099099825473), (u'irrigate', 0.021847099099825473), (u'body', 0.021847099099825473), (u'spray', 0.021847099099825473), (u'steep', 0.021847099099825473), (u'face', 0.021847099099825473), (u'part', 0.021847099099825473), (u'rock', 0.021847099099825473), (u'fence', 0.020570850851657933), (u'wires', 0.020570850851657933), (u'pattern', 0.020570850851657933), (u'diamond', 0.020570850851657933), (u'steel', 0.020570850851657933), (u'woven', 0.020570850851657933), (u'puzzle', 0.01954985225312391), (u'pieces', 0.01954985225312391), (u'cut', 0.01954985225312391), (u'reassemble', 0.01954985225312391), (u'picture', 0.01954985225312391), (u'requires', 0.01954985225312391), (u'base', 0.01954985225312391), (u'mounted', 0.01954985225312391), (u'interlocking', 0.01954985225312391), (u'stiff', 0.01954985225312391)]
+Unsupervised Image Classes: ([(u'obstruct', 2), (u'fence', 2), (u'puzzle', 2), (u'pieces', 2), (u'high', 2), (u'diamond', 2), (u'syringe', 2), (u'cut', 2), (u'pattern', 2), (u'irrigate', 2), (u'reassemble', 2), (u'body', 2), (u'picture', 2), (u'wires', 2), (u'dam', 2), (u'woven', 2), (u'spray', 2), (u'base', 2), (u'mounted', 2), (u'cliff', 2), (u'steel', 2), (u'interlocking', 2), (u'stiff', 2), (u'steep', 2), (u'chainlink_fence', 2), (u'face', 2), (u'part', 2), (u'rock', 2), (u'jigsaw_puzzle', 2), (u'requires', 2)], [(u'jigsaw_puzzle', 0.17116814413542766), (u'chainlink_fence', 0.10990822822338575), (u'syringe', 0.07927827026736478), (u'cliff', 0.07927827026736478), (u'obstruct', 0.03333333333333333), (u'dam', 0.03333333333333333), (u'high', 0.021847099099825473), (u'irrigate', 0.021847099099825473), (u'body', 0.021847099099825473), (u'spray', 0.021847099099825473), (u'steep', 0.021847099099825473), (u'face', 0.021847099099825473), (u'part', 0.021847099099825473), (u'rock', 0.021847099099825473), (u'fence', 0.020570850851657933), (u'wires', 0.020570850851657933), (u'pattern', 0.020570850851657933), (u'diamond', 0.020570850851657933), (u'steel', 0.020570850851657933), (u'woven', 0.020570850851657933), (u'puzzle', 0.01954985225312391), (u'pieces', 0.01954985225312391), (u'cut', 0.01954985225312391), (u'reassemble', 0.01954985225312391), (u'picture', 0.01954985225312391), (u'requires', 0.01954985225312391), (u'base', 0.01954985225312391), (u'mounted', 0.01954985225312391), (u'interlocking', 0.01954985225312391), (u'stiff', 0.01954985225312391)])

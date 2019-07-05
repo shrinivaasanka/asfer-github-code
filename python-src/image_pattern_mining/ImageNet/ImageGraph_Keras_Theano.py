@@ -26,6 +26,7 @@ from keras import backend
 import cv2 
 import numpy as np
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
+from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
 import networkx as nx
 from WordNetPath import path_between
 from empath import Empath
@@ -64,7 +65,9 @@ def imagenet_imagegraph(imagefile):
 		image_to_text += pred[1]
 	imagegraph=RecursiveGlossOverlapGraph(image_to_text)
 	print "ImageGraph:",imagegraph
-	return imagegraph
+	imageclasses=RecursiveGlossOverlap_Classify(image_to_text)
+	print "Unsupervised Image Classes:",imageclasses
+	return (imagegraph,imageclasses)
 
 def imagenet_videograph(videofile, maxframes, write_eventnet=False):
 	vid = cv2.VideoCapture(videofile)
@@ -290,3 +293,5 @@ if __name__=="__main__":
         test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
         train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
         random_forest_image_classification(train_images,test_images,train_labels)
+        for im in test_images:
+            imagenet_imagegraph(im)
