@@ -14306,3 +14306,11 @@ image ndarray and then reshaping and transposing it so that scikit learn accepts
 4.Logs for this are committed to ImageGraph_Keras_Theano.log.RandomForests.4July2019
 5.Scikit learn provides train_test_split function which divides set of samples into training and test images based on which fit() and predict() are invoked.
 6.Alternative version without training and test split also follows the above as in logs.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+677. (FEATURE) Image Analytics - ImageNet Keras-Theano - Unsupervised Recursive Gloss Overlap classifier based on ImageNet - 5 July 2019
+-------------------------------------------------------------------------------------------------------------------------------------------
+1.As opposed to Random Forest classifier implemented earlier based on scikit learn, NeuronRain unsupervised graph theoretic Recursive Gloss Overlap classifier has been applied for some test images
+2.Recursive Gloss Overlap classify() function has been invoked from imagenet_imagegraph() which was earlier only creating text graph from Keras
+ predictions text for the image.
+3.Example Dense subgraph (core number) classifications for these images in the logs at testlogs/ImageGraph_Keras_Theano.log.ImageNetClassifier.5July2019 are reasonably accurate and classify the images better. No training labelled data are required.
