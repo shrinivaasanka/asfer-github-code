@@ -14338,6 +14338,8 @@ Since sensitivity conjecture (block sensitivity <= poly(sensitivity)) has been p
    Hardness of voter function                  delta
 
 which upperbounds the maximum hardness amplification of Majority+VoterSAT composition almost as twice of sensitivity of majority function.
+
+NOTE: Throughout all sections on Majority Voting + VoterSAT boolean composition and its hardness amplification, Sensitivity measures have been assumed as main contributors to hardness because by definition a hard boolean function is not 100% correctly computable by a circuit and sensitivity to input correlation (flipped bits) is the major factor preventing the correct computation by circuit. There could be other factors intrinsic to boolean function itself too apart from sensitivity measures which prevent a circuit from being perfect characterized by (+/-) error term above - randomized decision tree evaluation being one of them.
 	
 References:
 -----------
