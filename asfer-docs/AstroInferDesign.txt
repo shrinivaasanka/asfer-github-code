@@ -14344,3 +14344,40 @@ References:
 678.1 Smooth Boolean functions are easy - [Parikshit Gopalan,Noam Nisan,Rocco A.Servedio,Kunal Talwar,Avi Wigderson] - Lemma 15 - http://www.math.ias.edu/~avi/PUBLICATIONS/GopalanNSTW.pdf
 678.2 Proof of Sensitivity Conjecture - [Huang] - http://www.mathcs.emory.edu/~hhuan30/papers/sensitivity_1.pdf
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+679. (FEATURE and THEORY) Fraud Analytics - Principal Component Analysis and KMeans++ clustering of an example Credit Card Transactions
+Dataset - 8 July 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit implements a rudimentary primitive fraud analytics Python class
+2.Fraud Analytics in the context of NeuronRain has already been implemented to some extent in USBmd as wireless LAN traffic analytics and ftrace based analysis which is a low level intrusion fraud analytics
+3.To broaden the purview new file FraudAnalytics.py has been added to AstroInfer repositories and a basic fraud analysis function for credit card data set from https://www.kaggle.com/mlg-ulb/creditcardfraud/downloads/creditcardfraud.zip/3 has been implemented - creditcard_fraud_analytics()
+4.Traditional algorithm to analyze frauds is to find the outliers in a dataset which are deviations from the normal.
+5.This function applies kmeans++ clustering from scikit learn to classify the previous kaggle creditcard transactions dataset into two clusters 0 (normal) and 1 (potential fraud).
+6.Kaggle dataset is in CSV format and first 500 rows of it are read by python CSV reader and a NumPy ndarrays are created from it which splits 
+the transactions into 150 rows training set and 350 rows test set.
+7.Columns of the CSV file are Time, 28 columns which obfuscate the identity of the cardholder, Amount, label 0 or 1 (normal or fraud) which are real transactions happened in 2013 and each column is considered as a dimension for tranasaction vector
+8.Classifying high dimensional data has variety of clustering algorithms including kmeans++ (https://scikit-learn.org/stable/modules/clustering.html)
+9.To simiplify high dimensional data, convention followed is to apply Principal component Analysis to reduce the number of dimensions and then do clustering. e.g https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html, https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py
+10.Therefore previous credit card transactions vectors are clustered by fit() of the train dataset followed by predict() for test dataset.
+11.Both predictions- with and without PCA - have been printed for 350 rows test dataset (0 - normal,1 - fraud):
+kmeans estimator pred() labels: [1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+kmeans estimator pca pred() labels: [1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+12.Another alternative is to consider the dataset as multiple concurrent timeseries and plot the curves per cardholder identity. Spikes in timeseries are outliers which could be potentially fraudulent.
