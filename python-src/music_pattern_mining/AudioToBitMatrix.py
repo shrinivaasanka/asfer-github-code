@@ -24,6 +24,8 @@ from MinimumDescLength import minimum_descriptive_complexity
 from scipy.io.wavfile import write
 import ast
 from sklearn.preprocessing import scale
+import speech_recognition as spreg
+from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth 
 
 #states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -44,6 +46,16 @@ def audio_to_bitmatrix(audio,dur=None,binary=False):
 		
 	#print "audio_to_bitmatrix() for - ",audio,":",bitmap
 	return (bitmap,waveform,srate)
+
+def speechrecognition_audiograph(audiofile):
+        recog=spreg.Recognizer()
+        with spreg.AudioFile(audiofile) as audiosource:
+            audiodata=recog.record(audiosource)
+        recogspeech=recog.recognize_sphinx(audiodata)
+        print "Recognized Speech:",recogspeech
+        print "Graph Tensor Neuron Network Merit of Recognized Speech:"
+        rlfg=RecursiveLambdaFunctionGrowth()
+        rlfg.grow_lambda_function3(recogspeech)
 
 def audio_features(signal_bitmap):
 	print "################################################"
@@ -161,6 +173,7 @@ def audio_merit(notes):
 
 if __name__=="__main__":
 	bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+        speechrecognition_audiograph("testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
 	#bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DFT_multimedia_HilbertRadioAddress.mp3.mpga",dur=10)
