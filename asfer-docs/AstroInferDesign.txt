@@ -14383,3 +14383,16 @@ kmeans estimator pca pred() labels: [1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
  0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 12.Another alternative is to consider the dataset as multiple concurrent timeseries and plot the curves per cardholder identity. Spikes in timeseries are outliers which could be potentially fraudulent.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+680. (FEATURE) Intrinsic Merit of Audio - Speech Recognition Integration and Graph Tensor Neuron Merit of the recognized speech text -
+9 July 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.AudioToBitMatrix python implementation has been updated to include a new function which reads an audio WAV file of human speech and invokes speech recognizer (PocketSphinx) on the audio to get speech text and finds the Recursive Lambda Function Growth intrinsic merit of the speech
+text
+2.Audio merit is split into two - Speech and Music
+3.An example speech audio file (voice of author - K.Srinivasan - explains the 6 types of intrinsic merit analytics implemented in NeuronRain AstroInfer - text,video,speech,music,people-experiential-intrinsic, people-attrition or HR analytics) is used for speech recognition - music_pattern_mining/testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav
+4.Prerequisite packages to be installed are Python SpeechRecognition, PocketSphinx, Swig, ALSA development library, PulseAudio development library
+5.PocketSphinx recognized speech text is printed (though not accurate) and Recursive Lambda Function Growth grow_lambda_function3() is invoked on recognized speech text to create textgraph, grow lambda functions from textgraph random walks or cycles and print various merit quantities
+6.This assumes Speech Recognizer is accurate to large extent.
+
