@@ -14396,3 +14396,15 @@ text
 5.PocketSphinx recognized speech text is printed (though not accurate) and Recursive Lambda Function Growth grow_lambda_function3() is invoked on recognized speech text to create textgraph, grow lambda functions from textgraph random walks or cycles and print various merit quantities
 6.This assumes Speech Recognizer is accurate to large extent.
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+681. (THEORY and FEATURE) Intrinsic Merit of Music - MFCC Earth Mover Distance similarity based Music Recommender - 12 July 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.Mel Frequency Cepstral Coefficients of a music waveform are concise measures of music genre and have been included in AudioToBitMatrix implementation
+2.Music Similarity Measure based on MFCC spectral signatures is described in http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.13.8524&rep=rep1&type=pdf which clusters music files based on earth mover distance between MFCCs of any two music files
+3.Earth Mover Distance also known as Wasserstein distance is a function in SciPy - https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html
+4.Earth Mover Distance is the amount of work required to transform one distribution (set partition or histogram) to another distribution (another set partition or histogram) and thus is distance measure between two set partitions.
+5.A miniature music recommender systems has been implemented based on MFCC earth mover distance which analyzes pair of music files for MFCCs and finds the earth mover similarity between the mean of MFCCs of two music files.
+6.Pairwise earth mover distances (EMD) are sorted by values of similarity (low EMD values imply high similarity)
+7.3 music files have been pairwise analyzed for MFCC EMD similarity for example (2 files of Bach Sonata and 1 file of Veena Instrumental - S.Balachander's Amritavarshini - respective copyrights attributed) 
+8.Though number of files analyzed is small, Bach Sonata files have high EMD similarities compared to Bach and Veena Instrumental suggesting a clustering of oriental and western classical music in terms of spectral analysis.
+
