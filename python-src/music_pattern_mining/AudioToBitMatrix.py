@@ -165,7 +165,7 @@ def mel_frequency_cepstral_coefficients(audiofile,dur=10):
 	print "mfccs mean:",mfccs.mean(axis=1)
 	print "mfccs variance:",mfccs.var(axis=1)
 	print "zero crossing rate:",librosa.feature.zero_crossing_rate(waveform)
-	return mfccs
+	return (mfccs,mfccs.shape,mfccs.mean(axis=1),mfccs.var(axis=1))
 
 def audio_merit(notes):
 	entropy_merit=minimum_descriptive_complexity("".join(notes))
