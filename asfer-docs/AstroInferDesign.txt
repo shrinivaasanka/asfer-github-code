@@ -14409,7 +14409,7 @@ text
 8.Though number of files analyzed is small, Bach Sonata files have high EMD similarities compared to Bach and Veena Instrumental suggesting a clustering of oriental and western classical music in terms of spectral analysis.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-682. (THEORY) KRW Conjecture, Majority + VoterSAT Boolean Function Composition, BKS Conjecture, Computing any function by Parity - 12 July 2019, 17 July 2019, 18 July 2019, 19 July 2019 - related to 365, 368 and all sections on Majority Voting
+682. (THEORY) KRW Conjecture, Majority + VoterSAT Boolean Function Composition, BKS Conjecture, Computing any function by Parity - 12 July 2019, 17 July 2019, 18 July 2019, 19 July 2019, 22 July 2019 - related to 365, 368 and all sections on Majority Voting
 -----------------------------------------------------------------------------------------------------------------------------------------
 Boolean function composition of Majority and any Voter boolean function and its relevance to KRW Conjecture (Depth(f+g) ~= Depth(f) + Depth(g) or FormulaSize(f+g) ~= FormulaSize(f) * FormulaSize(g)) and Communication Complexity - KW Relations - which is an open problem - have been described in detail earlier and an inequality below for lower bound on depth of circuit computing Majority+VoterSAT composition has been derived assuming KRW conjecture:
 	D(Maj + Voter) = CommunicationComplexity(R(Maj,Voter)) >= 5.3*logm  + n - O(m*logm/n)
@@ -14427,6 +14427,9 @@ It is known that set of languages of Turing Machine deciding an input in time(t)
 	tlogt = m^5.3 * FormulaSize(VoterSAT)
 	(or) t^t = 2^(m^5.3 * FormulaSize(VoterSAT))
 
+PTF can encode a CNF MAX k-SAT - Example:
+(x1 V !x3 V x4) /\ (x2 V x3 V x5) /\ (x1 V !x2 V x3) can be encoded as 3-sparse PTF (x1)(1-x3)(x4) + (x2)(x3)(x5) + (x1)(1-x2)(x3) >= k
+
 References:
 -----------
 682.1 KRW Conjecture results survey - [OrMeir] - https://simons.berkeley.edu/sites/default/files/docs/10492/presentation.pdf
@@ -14437,4 +14440,5 @@ References:
 682.6 Linear and Polynomial Threshold Functions - http://www.contrib.andrew.cmu.edu/~ryanod/ - Page 114-116 - Chapter 5 - Chow's Theorem 5.1 and Theorem 5.8, Threshold of Parities Circuit (depth 2 comprising parity gates in layer 1 and threshold gate at layer 2) computing a Polynomial Threshold Function
 682.7 Perceptrons - [Minsky-Papert] - (1972:232): "... a universal computer could be built entirely out of linear threshold modules. This does not in any sense reduce the theory of computation and programming to the theory of perceptrons."
 682.8 Circuit Complexity Lecture Notes - http://www.cs.umd.edu/~jkatz/complexity/f05/lecture4.pdf - Section 1.2 - "Theorem 1 If t(n) ≥ n, then time(t) ⊆ size(tlog t)...."
-682.9 Satisfiability and Derandomization for Small Polynomial Threshold Circuits - CircuitSAT for circuits of PTF gates - https://eccc.weizmann.ac.il/report/2018/115/download/ - s-sparse PTFs having s monomials can encode MAXSAT of s clauses - Previous Boolean Composition of Majority and VoterSAT can alternatively be stated as a Circuit Composition of Majority and Voter PTF circuits.
+682.9 Satisfiability and Derandomization for Small Polynomial Threshold Circuits - CircuitSAT for circuits of PTF gates - https://eccc.weizmann.ac.il/report/2018/115/download/ - s-sparse PTFs having s monomials can encode MAXSAT of s clauses - Previous Boolean Composition of Majority and VoterSAT can alternatively be stated as a Circuit Composition of Majority and Voter PTF circuits - section 1.4 - "...for fixed sparsity s, much more expressive. For example, the polynomial p(x1, . . . , xn) = Qn i=1(xi ⊕1) = Qn i=1(1−xi) has sparsity 1 by our definition, but sparsity 2^n by the usual definition. Sakai, Seto, Tamaki and Teruyama [SSTT16] recently reported a faster-than-brute-force algorithm for MAX-kSAT for any constant k with arbitrary weights (which implies a satisfiability algorithm for degree-k PTFs)..."
+682.10 Bounded Depth Circuits with Weighted Symmetric Gates: Satisfiability, Lower Bounds and Compression - [Sakai-Seto-Tamaki-Teruyama] - https://pdfs.semanticscholar.org/084f/27ca498158992b5e5a5a61dbaf4161503b5c.pdf
