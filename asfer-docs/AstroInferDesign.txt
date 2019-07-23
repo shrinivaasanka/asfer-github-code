@@ -14442,3 +14442,23 @@ References:
 682.8 Circuit Complexity Lecture Notes - http://www.cs.umd.edu/~jkatz/complexity/f05/lecture4.pdf - Section 1.2 - "Theorem 1 If t(n) ≥ n, then time(t) ⊆ size(tlog t)...."
 682.9 Satisfiability and Derandomization for Small Polynomial Threshold Circuits - CircuitSAT for circuits of PTF gates - https://eccc.weizmann.ac.il/report/2018/115/download/ - s-sparse PTFs having s monomials can encode MAXSAT of s clauses - Previous Boolean Composition of Majority and VoterSAT can alternatively be stated as a Circuit Composition of Majority and Voter PTF circuits - section 1.4 - "...for fixed sparsity s, much more expressive. For example, the polynomial p(x1, . . . , xn) = Qn i=1(xi ⊕1) = Qn i=1(1−xi) has sparsity 1 by our definition, but sparsity 2^n by the usual definition. Sakai, Seto, Tamaki and Teruyama [SSTT16] recently reported a faster-than-brute-force algorithm for MAX-kSAT for any constant k with arbitrary weights (which implies a satisfiability algorithm for degree-k PTFs)..."
 682.10 Bounded Depth Circuits with Weighted Symmetric Gates: Satisfiability, Lower Bounds and Compression - [Sakai-Seto-Tamaki-Teruyama] - https://pdfs.semanticscholar.org/084f/27ca498158992b5e5a5a61dbaf4161503b5c.pdf
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+683.Proof of KRW Conjecture for Majority+VoterSAT/VoterPTF composition - related to 682 - 23 July 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+Caution: This section is experimental and subject to errors
+
+Previously a reduction from CNF MAX-k-SAT to PTFSAT was described with an example. Any Voter SAT can be encoded as a Polynomial Threshold Function g and any Polynomial Threshold Function can be computed by a Threshold-of-Parities circuit of depth 2 described in previous section:
+	g = threshold + parity
+If Majority function is denoted by f, Majority + VoterSAT/VoterPTF composition can be written in terms of parity as:
+	f + g = f + threshold + parity
+But composition is associative and therefore:
+	(f + threshold) + parity = f + (threshold + parity)
+But composition (f + threshold) previously can be any function h:
+	(f + threshold) + parity = h + parity
+which is composition of some function and parity and KRW conjecture for composing any function and parity has been already proved ([Hastad],[Andreev],[Dinur]) and thus KRW Conjecture for Majority + VoterSAT/VoterPTF composition is proved immediately because previous breakdown of any function as threshold of parities reduces Majority + VoterSAT/VoterPTF composition to composition of any function to parity. 
+
+For a general case of composing any function f to another function g, applying previous threshold of parities representation to both f and g:
+	f + g = (threshold + parity) + (threshold + parity)
+and applying associativity of composition:
+	f + g = (threshold + parity + threshold) + parity
