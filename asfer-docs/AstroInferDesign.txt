@@ -14444,7 +14444,7 @@ References:
 682.10 Bounded Depth Circuits with Weighted Symmetric Gates: Satisfiability, Lower Bounds and Compression - [Sakai-Seto-Tamaki-Teruyama] - https://pdfs.semanticscholar.org/084f/27ca498158992b5e5a5a61dbaf4161503b5c.pdf
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-683.Proof of KRW Conjecture for Majority+VoterSAT/VoterPTF composition - related to 682 - 23 July 2019
+683.(THEORY) Proof of KRW Conjecture for Majority+VoterSAT/VoterPTF composition - related to 682 - 23 July 2019
 --------------------------------------------------------------------------------------------------------------------------------------------
 Caution: This section is experimental and subject to errors
 
@@ -14462,3 +14462,13 @@ For a general case of composing any function f to another function g, applying p
 	f + g = (threshold + parity) + (threshold + parity)
 and applying associativity of composition:
 	f + g = (threshold + parity + threshold) + parity
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+684. (FEATURE) Urban Planning/GIS Image Analytics - scikit learn extract_patches_2d() integration - 25 July 2019
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. Scikit Learn extract_patches_2d() has been invoked in a wrapper function analyze_remotesensing_2d_patches() for patches analysis of
+Remote Sensing Imagery
+2. Patch ndarrays are flattened and pixel histogram is computed for each patch of an image
+3. Maximum pixel bucket in the patch histogram is an indicator of class of the patch.
+4. This is in addition to RGB patch analysis function implemented earlier for Red-Green-Blue channel classification of an image
+5. Logs of extract_patches_2d() and the patch histograms for 2 example remote sensing images are at ImageNet/testlogs/ImageGraph_Keras_Theano.log.RemoteSensingGIS.25July2019
