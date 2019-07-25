@@ -40,6 +40,7 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
+from sklearn.feature_extraction.image import extract_patches_2d
 
 def medical_imageing(image_source,imagefile):
 	if image_source=="ECG":
@@ -196,6 +197,15 @@ def analyze_remotesensing_RGB_patches(imagefile):
         print "Percentage of Vegetation or Greenery (Green) - an estimate of groundwater:",im1_green_white
         print "Percentage of Built Land (Red):",im1_red_white
 
+def analyze_remotesensing_2d_patches(imagefile,patch_size=(20,20),max_patches=10):
+        img=cv2.imread(imagefile)
+        randstate=np.random.RandomState(0)
+        patches=extract_patches_2d(img,patch_size,max_patches,randstate)
+        print "analyze_remotesensing_2d_patches(): patches=",patches
+        for p in patches:
+            img_hist=np.histogram(patches.flatten())
+            print "Patch histogram :",imagefile,":",img_hist
+
 def random_forest_image_classification(train_images,test_images, train_labels):
         train_data_X=[]
         test_data_X=[]
@@ -289,6 +299,8 @@ if __name__=="__main__":
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-11.jpg")
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+        analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
+        analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
         train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
         test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
         train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
