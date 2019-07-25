@@ -14427,6 +14427,9 @@ It is known that set of languages of Turing Machine deciding an input in time(t)
 	tlogt = m^5.3 * FormulaSize(VoterSAT)
 	(or) t^t = 2^(m^5.3 * FormulaSize(VoterSAT))
 
+if t=O(FormulaSize(VoterSAT)):
+logt = k*m^5.3 (or) t = 2^(k*m^5.3) for some constant k which is an EXPTIME Turing Machine (i.e exponential in number of voters) for Majority Voting Circuit Composition, implying unbounded depth.
+
 PTF can encode a CNF MAX k-SAT - Example:
 (x1 V !x3 V x4) /\ (x2 V x3 V x5) /\ (x1 V !x2 V x3) can be encoded as 3-sparse PTF (x1)(1-x3)(x4) + (x2)(x3)(x5) + (x1)(1-x2)(x3) >= k
 
