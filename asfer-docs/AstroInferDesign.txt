@@ -14477,3 +14477,36 @@ Remote Sensing Imagery
 3. Maximum pixel bucket in the patch histogram is an indicator of class of the patch.
 4. This is in addition to RGB patch analysis function implemented earlier for Red-Green-Blue channel classification of an image
 5. Logs of extract_patches_2d() and the patch histograms for 2 example remote sensing images are at ImageNet/testlogs/ImageGraph_Keras_Theano.log.RemoteSensingGIS.25July2019
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+685. (FEATURE) People Analytics - Kaggle LinkedIn Dataset Analysis - 26 July 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1. This commit introduces a new function in People Analytics implementation - linkedin_dataset_tenure_analytics() - which parses Kaggle LinkedIn dataset from https://www.kaggle.com/killbot/linkedin and computes various correlation coefficients between column attributes.
+2. Following are the People Analytics field attributes in LinkedIn obfuscated dataset which has almost 15000 rows:
+['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers'] which include average variables for tenure, positions or designations per tenure, number of previous tenures, tenure lengths etc.,
+3.Pairwise kendall-tau Correlation coefficients of 3 important variables are computed:
+	- average number of positions per previous tenure
+	- average length of a position
+	- average length of previous tenures
+4.Some preprocessing of the linkedin CSV dataset was required to cast the type to integer
+5.VectorAssembler is instantiated to create necessary subset projections of the linkedin dataset columns
+6.5 important columns of the Spark CSV dataframe are sliced by list comprehension to 5 arrays for (ethnic, emotional, physical and racial fields are ignored):
+	- average number of positions per previous tenure
+	- average length of a position
+	- average length of previous tenures
+	- number of previous tenures
+	- tenure length 
+and mapped to a Pandas DataFrame which supports correlation matrix for all datatypes
+7.Pandas correlation matrix is printed for these 5 fields:
+				avg_n_pos_per_prev_tenure  avg_pos_len  avg_prev_tenure_len  n_prev_tenures  tenure_len
+avg_n_pos_per_prev_tenure                   1.000000     0.804373             0.836112        0.836637    0.832915
+avg_pos_len                                 0.804373     1.000000             0.983461        0.978873    0.993264
+avg_prev_tenure_len                         0.836112     0.983461             1.000000        0.968333    0.975659
+n_prev_tenures                              0.836637     0.978873             0.968333        1.000000    0.981673
+tenure_len                                  0.832915     0.993264             0.975659        0.981673    1.000000
+
+8.In addition to basic designation(position),remuneration, tenure duration correlations implemented earlier previous variables provide fine grained pattern analysis.
+9,From previous correlation matrix, an obvious negative or low correlation is:
+	 avg_n_pos_per_prev_tenure - versus - (avg_prev_tenure_len, n_prev_tenures, tenure_len)
+implying increased average number of designations(positions) in previous tenures implies low average previous tenure lengths, low number of previous tenures and low tenure length which (exluding low number of previous tenures) is against what intuition suggests.
+
