@@ -23,7 +23,13 @@ import sys
 import math
 from sympy.combinatorics.partitions import IntegerPartition
 from scipy import stats
-
+from pyspark.sql import SparkSession
+from pyspark.sql import DataFrameStatFunctions as dfsfunc
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.stat import Correlation 
+from pyspark.sql.types import IntegerType
+import pandas
+import numpy as np
 
 class HRAnalytics(object):
 	def __init__(self):
@@ -80,6 +86,31 @@ class HRAnalytics(object):
 		print "Kendall Tau Rank Correlations - Designations and Remunerations: tau=",tau1,", pvalue=",pvalue1
 		print "Kendall Tau Rank Correlations - Designations and Durations: tau=",tau2,", pvalue=",pvalue2
 		print "Kendall Tau Rank Correlations - Durations and Remunerations: tau=",tau3,", pvalue=",pvalue3
+
+        def linkedin_dataset_tenure_analytics(self,linkedindata):
+                spsess=SparkSession.builder.master("local[4]").appName("People Analytics").getOrCreate()
+                df=spsess.read.format("csv").option("header","true").load(linkedindata)
+                #tenures=sorted(df.groupBy(['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']).agg(['c_name']).collect())
+                variables=['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']
+                for v in variables:
+                    df=df.withColumn(v,df[v].cast(IntegerType()))
+                assembler=VectorAssembler(inputCols=variables,outputCol="TenureCorrelations")
+                tenuredf=assembler.transform(df)
+                avg_n_pos_per_prev_tenure=[x.avg_n_pos_per_prev_tenure for x in tenuredf.select(tenuredf.avg_n_pos_per_prev_tenure).orderBy(tenuredf.avg_n_pos_per_prev_tenure).collect()]
+                avg_pos_len=[x.avg_pos_len for x in tenuredf.select(tenuredf.avg_pos_len).orderBy(tenuredf.avg_pos_len).collect()]
+                avg_prev_tenure_len=[x.avg_prev_tenure_len for x in tenuredf.select(tenuredf.avg_prev_tenure_len).orderBy(tenuredf.avg_prev_tenure_len).collect()]
+                n_prev_tenures=[x.n_prev_tenures for x in tenuredf.select(tenuredf.n_prev_tenures).orderBy(tenuredf.n_prev_tenures).collect()]
+                tenure_len=[x.tenure_len for x in tenuredf.select(tenuredf.tenure_len).orderBy(tenuredf.tenure_len).collect()]
+		tau1, pvalue1 = stats.kendalltau(avg_n_pos_per_prev_tenure, avg_pos_len)
+		tau2, pvalue2 = stats.kendalltau(avg_n_pos_per_prev_tenure, avg_prev_tenure_len)
+		tau3, pvalue3 = stats.kendalltau(avg_prev_tenure_len, avg_pos_len)
+                print "linkedin_dataset_tenure_analytics(): tau1  = ",tau1,", pvalue1 = ",pvalue1
+                print "linkedin_dataset_tenure_analytics(): tau2  = ",tau2,", pvalue2 = ",pvalue2
+                print "linkedin_dataset_tenure_analytics(): tau3  = ",tau3,", pvalue3 = ",pvalue3
+                tenurearray=np.array([avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len])
+                	
+pandasDF=pandas.DataFrame(tenurearray.T,columns=['avg_n_pos_per_prev_tenure','avg_pos_len','avg_prev_tenure_len','n_prev_tenures','tenure_len'])
+                print "linkedin_dataset_tenure_analytics(): pandas correlation coefficient = ",pandasDF.corr()
 
 	def isdaterange(self,l):
 		months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -182,5 +213,6 @@ if __name__=="__main__":
 	remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
 	durations=[0.7,5,0.1,2,3,2,0.5]
 	hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
+        hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
 	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
