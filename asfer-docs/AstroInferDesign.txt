@@ -14533,3 +14533,15 @@ degree_experiential_merits                      0.116707     0.112341  ...      
 
 5.Previous matrix shows highly negative or low correlation between first 3 tenure variables and degree experiential merits and a medium correlation between first 3 variables and lognormal_experiential_merits.
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+687. (THEORY) Approximate Polynomials and Approximate Degree of Boolean Functions, Dual Polynomials, Hardness Amplification, KRW Conjecture, Boolean Composition of Majority and VoterSAT/VoterPTF, Communication Complexity, Linear Program Primal/Dual - related to 365, 368, 682 - 
+27 July 2019
+-------------------------------------------------------------------------------------------------------------------------------------------- 
+From 682.13, the approximate degree of a Boolean function f : {−1, 1}^n → {−1, 1}, denoted deg g(f), is the least degree of a real polynomial p such that |p(x) − f(x)| ≤ 1/3 for all x ∈ {−1, 1}^n. Existence of approximate polynomials implies that the function is easy. Therefore non-existence of approximate polynomials implies the function is hard. Fact that f can be approximated by a real polynomial is equivalent to feasibility of a Linear Program on Fourier coefficients. Feasibility of dual of this linear program on Fourier Coefficients implies the primal boolean function is hard to approximate by a real polynomial and thus is an alternative way to prove hardness of boolean functions and their compositions especially block-compositions and is quite relevant to Majority+VoterSAT composition and KRW-Communication Complexity based size and depth lowerbounds of it previously derived based on Sensitivity measures. Approximate degree of t-threshold functions is sqrt(t(n-t)) and approximate degree of Majority or Parity is Theta(n). From [Nisan-Szegedy], approxdegree(f) <= degree(f) <= DecisionTree(f) < 1296*degree(f)^8. From [Sherstov] theorem, approxdegree(Majority + VoterSAT) = approxdegree(Majority) * approxdegree(VoterSAT) <= DecisionTree(Majority)*DecisionTree(VoterSAT).
+
+References:
+-----------
+687.1 Dual Polynomial for OR function - [Robert Spalek, Google, Inc.] - http://www.ucw.cz/~robert/papers/dualor.pdf
+687.2 Degree of Polynomials Approximating Symmetric Boolean Functions - [Ramamohan Paturi] - https://cseweb.ucsd.edu/~paturi/myPapers/pubs/Paturi_1992_stoc.pdf
+687.3 Approximate degree of composition of boolean functions - Theorem 8 - [Sherstov] - The Polynomial Method Strikes Back:
+Tight Quantum Query Bounds via Dual Polynomials - [Mark Bun Princeton University mbun@cs.princeton.edu, Robin Kothari Microsoft Research robin.kothari@microsoft.com,Justin Thaler Georgetown University justin.thaler@georgetown.edu] - https://arxiv.org/pdf/1710.09079.pdf
