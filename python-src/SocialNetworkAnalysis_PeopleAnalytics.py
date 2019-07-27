@@ -101,15 +101,47 @@ class HRAnalytics(object):
                 avg_prev_tenure_len=[x.avg_prev_tenure_len for x in tenuredf.select(tenuredf.avg_prev_tenure_len).orderBy(tenuredf.avg_prev_tenure_len).collect()]
                 n_prev_tenures=[x.n_prev_tenures for x in tenuredf.select(tenuredf.n_prev_tenures).orderBy(tenuredf.n_prev_tenures).collect()]
                 tenure_len=[x.tenure_len for x in tenuredf.select(tenuredf.tenure_len).orderBy(tenuredf.tenure_len).collect()]
+                n_followers=[x.n_followers for x in tenuredf.select(tenuredf.n_followers).orderBy(tenuredf.n_followers).collect()]
 		tau1, pvalue1 = stats.kendalltau(avg_n_pos_per_prev_tenure, avg_pos_len)
 		tau2, pvalue2 = stats.kendalltau(avg_n_pos_per_prev_tenure, avg_prev_tenure_len)
 		tau3, pvalue3 = stats.kendalltau(avg_prev_tenure_len, avg_pos_len)
                 print "linkedin_dataset_tenure_analytics(): tau1  = ",tau1,", pvalue1 = ",pvalue1
                 print "linkedin_dataset_tenure_analytics(): tau2  = ",tau2,", pvalue2 = ",pvalue2
                 print "linkedin_dataset_tenure_analytics(): tau3  = ",tau3,", pvalue3 = ",pvalue3
-                tenurearray=np.array([avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len])
-                	
-pandasDF=pandas.DataFrame(tenurearray.T,columns=['avg_n_pos_per_prev_tenure','avg_pos_len','avg_prev_tenure_len','n_prev_tenures','tenure_len'])
+                linkedin_lognormal_experiential_merits=[]
+                linkedin_degree_experiential_merits=[]
+                print "###########################################################################"
+                for n in xrange(df.count()):
+                    experience = abs(avg_n_pos_per_prev_tenure[n] * avg_pos_len[n] * n_prev_tenures[n] + tenure_len[n])
+                    print "Experience computed from LinkedIn Dataset:",experience
+                    print "n_followers = ",n_followers[n]
+                    if experience > 0:
+                        k=1.0
+		        M=1.0/float(math.log(experience))
+		        t=experience
+                        lognormal_experiential_intrinsic_merit=math.log(M) + float(k*M*t)
+		        print "LinkedIn DataSet - Log Normal Experiential Intrinsic Merit for this profile:",lognormal_experiential_intrinsic_merit
+                        linkedin_lognormal_experiential_merits.append(lognormal_experiential_intrinsic_merit)
+                    else:
+                        linkedin_lognormal_experiential_merits.append(0)
+                    if abs(n_followers[n]) > 0:
+		        logdegree=math.log(abs(n_followers[n]))
+		        tdelta=float(experience)
+		        numer=logdegree*tdelta/100000.0
+		        print "tdelta:",tdelta
+		        denom=abs(math.log(tdelta))
+                        print "numer",numer
+                        print "denom:",denom
+                        try:
+		            degree_experiential_intrinsic_merit=logdegree * math.exp(float(numer)/float(denom)) / denom
+                        except:
+		            degree_experiential_intrinsic_merit=0.0
+		        print "LinkedIn DataSet - Degree Experiential Intrinsic Merit for this profile:",degree_experiential_intrinsic_merit
+                        linkedin_degree_experiential_merits.append(degree_experiential_intrinsic_merit)
+                    else:
+                        linkedin_degree_experiential_merits.append(0)
+                tenurearray=np.array([avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len,linkedin_lognormal_experiential_merits,linkedin_degree_experiential_merits])
+                pandasDF=pandas.DataFrame(tenurearray.T,columns=['avg_n_pos_per_prev_tenure','avg_pos_len','avg_prev_tenure_len','n_prev_tenures','tenure_len','lognormal_experiential_merits','degree_experiential_merits'])
                 print "linkedin_dataset_tenure_analytics(): pandas correlation coefficient = ",pandasDF.corr()
 
 	def isdaterange(self,l):
