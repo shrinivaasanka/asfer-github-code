@@ -14511,3 +14511,25 @@ tenure_len                                  0.832915     0.993264             0.
 	 avg_n_pos_per_prev_tenure - versus - (avg_prev_tenure_len, n_prev_tenures, tenure_len)
 implying increased average number of designations(positions) in previous tenures implies low average previous tenure lengths, low number of previous tenures and low tenure length which (exluding low number of previous tenures) is against what intuition suggests.
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+686. (FEATURE) People Analytics - Kaggle LinkedIn DataSet - Experiential and Degree Intrinsic Merit - 27 July 2019
+-------------------------------------------------------------------------------------------------------------------------------------------
+1.In continuation to previous commit for linkedin dataset analytics, this commit implements computation of lognormal experiential intrinsic merit and degree based experiential intrinsic merit for all profiles in linkedin dataset.
+2.Pandas DataFrame has been expanded to include two new columns - lognormal_experiential_merits and degree_experiential_merits - and correlation matrix is computed for this 7 rows * 7 columns.
+3.Experience of the n-th profile is derived from dataset columns as:
+	  experience = avg_n_pos_per_prev_tenure[n] * avg_pos_len[n] * n_prev_tenures[n] + tenure_len[n]
+4.Correlation coefficients for all pairs of 7 variables from logs:
+
+linkedin_dataset_tenure_analytics(): pandas correlation coefficient =                                 avg_n_pos_per_prev_tenure  avg_pos_len  ...  lognormal_experiential_merits  degree_experiential_merits
+avg_n_pos_per_prev_tenure                       1.000000     0.804373  ...                       0.687246                    0.116707
+avg_pos_len                                     0.804373     1.000000  ...                       0.566021                    0.112341
+avg_prev_tenure_len                             0.836112     0.983461  ...                       0.673678                    0.156701
+n_prev_tenures                                  0.836637     0.978873  ...                       0.553288                    0.058373
+tenure_len                                      0.832915     0.993264  ...                       0.532364                    0.076770
+lognormal_experiential_merits                   0.687246     0.566021  ...                       1.000000                    0.426055
+degree_experiential_merits                      0.116707     0.112341  ...                       0.426055                    1.000000
+
+[7 rows x 7 columns]
+
+5.Previous matrix shows highly negative or low correlation between first 3 tenure variables and degree experiential merits and a medium correlation between first 3 variables and lognormal_experiential_merits.
+
