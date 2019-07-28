@@ -20,6 +20,7 @@ import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn import metrics
+import pandas
 
 class FraudAnalytics(object):
     def __init__(self,csvfile):
@@ -66,6 +67,8 @@ class FraudAnalytics(object):
         print "kmeans estimator pca pred() labels:",kmeanspred
         #print "kmeans estimator inertia:",kmeans_estimator.inertia_
         print "kmeans estimator pca cluster centers:",kmeans_estimator.cluster_centers_
+        pandasDF=pandas.DataFrame(transactions_np)
+        print "Pandas DataFrame Correlation Matrix for Dataset:",pandasDF.corr()
 
 if __name__=="__main__":
     fa=FraudAnalytics("./creditcard.csv")
