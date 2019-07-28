@@ -14545,3 +14545,24 @@ References:
 687.2 Degree of Polynomials Approximating Symmetric Boolean Functions - [Ramamohan Paturi] - https://cseweb.ucsd.edu/~paturi/myPapers/pubs/Paturi_1992_stoc.pdf
 687.3 Approximate degree of composition of boolean functions - Theorem 8 - [Sherstov] - The Polynomial Method Strikes Back:
 Tight Quantum Query Bounds via Dual Polynomials - [Mark Bun Princeton University mbun@cs.princeton.edu, Robin Kothari Microsoft Research robin.kothari@microsoft.com,Justin Thaler Georgetown University justin.thaler@georgetown.edu] - https://arxiv.org/pdf/1710.09079.pdf
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+688. (THEORY) Approximate Polynomials and Approximate Degree of Boolean Functions, Algebraic Circuits and KRW Conjecture for Boolean
+composition of Majority and VoterSAT/VoterPTF - related to 365, 368, 682, 687 - 28 July 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+Approximate Polynomial for Majority exists from 687.2 and has approximate degree theta(n) and therefore has n roots from Fundamental Theorem of Algebra. This approximate polynomial for Majority can be written as factorized product (assuming reducibile polynomials over field of reals):
+	Product(x-xi) i=1,2,3,...,n
+
+Previous product for approximate polynomial for majority can be expressed by an Algebraic/Arithmetic Circuit of depth-2 having 2n leaves (2 leaves per factor) and n intermediate minus gates in depth-1. Root is a multiplication gate of fanin n:
+							* (multiplication operator - Root)
+
+				-	-	-	-	-	... - (minus operators - Depth 1)
+
+			     x    x1  x   x2  x   x3  x   x4  x   x5	  x   xn (operands - Depth 2)
+
+Similarly if there exists an approximate polynomial (assuming reducible over field of reals) for an arbitrary VoterSAT/VoterPTF arithmetic circuit of approximate degree d it can be factorized and represented by an Algebraic/Arithmetic circuit of depth-2 having 2d leaves, d intermediate minus gates at depth-1 and multiplication gate at root. Since both arithmetic circuits for Majority and VoterSAT/VoterPTF have fanout 1, both can be termed arithmetic formulas. Thus approximate polynomials for Majority and VoterSAT/VoterPTF have arithmetic circuits of size O(approxdegree). Block Composing Majority arithmetic formula and VoterSAT/VoterPTF arithmetic formula is fairly straightforward in this special setting and ArithmeticFormulaSize(approxpoly(Majority)+approxpoly(VoterSAT)) = ArithmeticFormulaSize(approxpoly(Majority)) * ArithmeticFormulaSize(approxpoly(VoterSAT)) = O(n*d). This is an approximate version of KRW conjecture and O(n*d) could be Theta(n*d) because factorization lowerbounds the number of arithmetic gates. Over field of reals, every irreducible polynomial has degree 1 or 2 at most. Previous algebraic circuit assumes degree 1 irreducibility. For degree 2, instead of factors of the form (x-xi), factors are ax^2 + bx + c which require arithmetic subcircuits as below increasing depth by 1 and size multiplies by 4:
+						+
+
+					*	*	*
+
+				  a   x   x   b   x   c    1
