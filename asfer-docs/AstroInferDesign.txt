@@ -14572,3 +14572,13 @@ References:
 688.1 Algebraic Circuits - [Sanjeev Arora-Boaz Barak] - https://theory.cs.princeton.edu/complexity/book.pdf - Section 14.1 and Example 14.3 (Arithmetic circuits for determinants)
 688.2 Fundamental Theorem of Algebra - https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra - "... every non-zero, single-variable, degree n polynomial with complex coefficients has, counted with multiplicity, exactly n complex roots..."
 688.3 Irreducible polynomials over reals have degree 1 or 2 - https://en.wikipedia.org/wiki/Irreducible_polynomial
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+689. (FEATURE) Fraud Analytics - Credit Card Dataset - Pandas DataFrame Correlation Coefficient Matrix - 28 July 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.Fraud Analytics implementation has been updated to instantiate Pandas DataFrame from credit card dataset and print Pandas
+Correlation matrix for all the columns.
+2.Columns V1-V28 are Obfuscated Names of the cardholders which are numeric unique id(s)
+3.Correlation between unique identities/names and amount drawn is a behavioural pattern and any deviation is an alarm (most swipes are periodic and personality oriented).
+4.Correlation matrix logs are committed to testlogs/FraudAnalytics.log.28July2019
+5.Correlation between Timestamp and Amount drawn is also measure of fraud.
