@@ -28,45 +28,72 @@
 # and perform Time Series Analysis - AutoRegressiveMovingAverage - ARMA - on these streamed data
 #X(t) = sigma_p_t-1(w1(i) * X(i)) + sigma_q_t-1(s(i) * w2(i)) where w1(i) and w2(i) are regression weights and s(i) are moving averages
 
-import ystockquote
 from pprint import pprint
 import random
 import rpy2.robjects as robj
 import atexit
-from Streaming_TimeSeriesData import compute_mean, moving_averages, autoregression, ARMA, ARIMA
 
 cnt=0
 
-if __name__=="__main__":
-	cnt = 0
-	time_series_data=[]
-        historic_data=[{'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}, {'Adj Close':100},{'Adj Close':102},{'Adj Close':132},{'Adj Close':123},{'Adj Close':114}]
-	#for k,v in ystockquote.get_historical_prices('GOOG', '2010-01-01', '2016-06-25').items():
-	for v in historic_data:
-		#print v['High']
-		print(v['Adj Close'])
-		time_series_data.append(float(v['Adj Close']))
-		cnt += 1
+def compute_mean(timeseries):
+	sum=0
+	for i in timeseries:
+		sum += i
+	return float(sum/len(timeseries))
 
-	#ARMA
-        time_series_data_arma=ARMA(time_series_data,2)
+def moving_averages(timeseries, window):
+	cnt=0
+	mov_avg=0.0
+	error_term=0.0
+	mean=0.0
+	while cnt+window < len(timeseries) :	
+		error_term = (float(random.randint(1,100))) / 10000.0
+		mean=compute_mean(timeseries[cnt:cnt+window])
+		cnt+=1
+		mov_avg += mean * error_term 
+	return mov_avg
 
-        #ARIMA
-        time_series_data_arima=ARIMA(time_series_data,5,3)
+def autoregression(timeseries):
+	cnt=0
+	autoreg=0.0
+	weight=0.0
+	while cnt < len(timeseries):
+		weight = (float(random.randint(1,100))) / 10000.0
+		autoreg += weight * float(timeseries[cnt])
+		cnt+=1
+	return autoreg
 
-	y_axs = time_series_data_arima
-	x_axs = []
-	for i in xrange(len(time_series_data_arima)):
-		x_axs.append(i)	 
+def autoregression_factored(timeseries,d):
+	cnt=0
+	autoreg=0.0
+	weight=0.0
+        lag=int(float(len(timeseries))/float(d) + 1)
+	while cnt < len(timeseries)-lag:
+		weight = (float(random.randint(1,100))) / 10000.0
+		autoreg += weight * float(timeseries[cnt])
+		cnt+=1
+        print "lag:",lag
+        print "timeseries:",timeseries
+        print timeseries[len(timeseries)-lag]
+        autoreg = autoreg * timeseries[len(timeseries)-lag]
+	return autoreg
 
-	x = robj.FloatVector(x_axs)
-	y = robj.FloatVector(y_axs)
-	dataframe = robj.DataFrame({"x":x,"y":y})
-	curvefn = robj.r['approxfun']
-	plotfn = robj.r['plot']
-	curvedata = curvefn(dataframe)
-	print(curvedata)
+def ARMA(timeseries,q):
+    projection_iteration=0
+    time_series_data=timeseries
+    while projection_iteration < 1000:
+          arma=autoregression(time_series_data[:q]) + moving_averages(time_series_data[:q], 5)
+          print("Iteration:",projection_iteration," - ARMA projection: ", arma)
+          time_series_data.append(arma)
+          projection_iteration +=1
+    return time_series_data
 
-	pdffn = robj.r['pdf']
-	pdffn("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DJIA_ARIMA_Time_Series.pdf")
-	plotfn(curvedata, 0, len(time_series_data_arima))
+def ARIMA(timeseries,q,d):
+    projection_iteration=0
+    time_series_data=timeseries
+    while projection_iteration < 1000:
+          arma=autoregression_factored(time_series_data[:q],d) + moving_averages(time_series_data[:q], 5)
+          print("Iteration:",projection_iteration," - ARIMA projection: ", arma)
+          time_series_data.append(arma)
+          projection_iteration +=1
+    return time_series_data
