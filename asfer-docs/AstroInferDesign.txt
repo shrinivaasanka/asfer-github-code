@@ -14586,3 +14586,13 @@ Correlation matrix for all the columns.
 3.Correlation between unique identities/names and amount drawn is a behavioural pattern and any deviation is an alarm (most swipes are periodic and personality oriented).
 4.Correlation matrix logs are committed to testlogs/FraudAnalytics.log.28July2019
 5.Correlation between Timestamp and Amount drawn is also measure of fraud.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+690. (FEATURE) Time Series Analysis - ARIMA implementation - 1 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.Time Series implementation has been made to a new python source file containing time series algorithms implementations for ARMA and ARIMA - Streaming_TimeSeriesData.py
+2.Auto Regressive Integrated Moving Averages (ARIMA) has been implemented as a function ARIMA in Streaming_TimeSeriesData.py and factoring has been implemented for a parameter lag in autoregression_factored()
+3.ARIMA differs from ARMA in factoring the autoregression polynomial into two factor polynomials one which is dependent on a lag operator.
+4.Because Yahoo finance and Google Finance stock data are no longer available, ystockquote does not work and throws urllib exception and hence a hardcoded array of timeseries stock close data has been used.
+5.ARMA and ARIMA functions from Streaming_TimeSeriesData.py are invoked in Streaming_StockMarketData.py.
+6.Logs for ARIMA and R+rpy2 graphics plot have been committed to DJIA_ARIMA_Time_Series.pdf and testlogs/Streaming_StockMarketData.ARIMATimeSeries.log.1August2019
