@@ -14548,7 +14548,7 @@ Tight Quantum Query Bounds via Dual Polynomials - [Mark Bun Princeton University
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 688. (THEORY) Approximate Polynomials and Approximate Degree of Boolean Functions, Algebraic Circuits and KRW Conjecture for Boolean
-composition of Majority and VoterSAT/VoterPTF - related to 365, 368, 682, 687 - 28 July 2019
+composition of Majority and VoterSAT/VoterPTF - related to 365, 368, 682, 687 - 28 July 2019, 1 August 2019
 ----------------------------------------------------------------------------------------------------------------------------------------------
 Approximate Polynomial for Majority exists from 687.2 and has approximate degree theta(n) and therefore has n roots from Fundamental Theorem of Algebra. This approximate polynomial for Majority can be written as factorized product (assuming reducibile polynomials over field of reals):
 	Product(x-xi) i=1,2,3,...,n
@@ -14567,11 +14567,15 @@ Similarly if there exists an approximate polynomial (assuming reducible over fie
 
 				  a   x   x   b   x   c    1
 
+An already known result in reference 688.4 implies intersection of set of polynomials computed by non-uniform arithmetic circuits of polynomial size and set of polynomials of constant degree is equal to intersection of set of polynomials computed by nonuniform arithmetic circuits of polynomial size and logN*logN depth and set of polynomials of constant degree for all fields F. This implies each of the arithmetic circuit for approximate univariate polynomial over field of reals of a boolean function is a logN * logN depth circuit. Assuming degree 1 irreducible factors throughout previously for approximate real polynomials of both functions f and g, an estimate of depth lowerbound of the block composition of f and g can be arrived at:
+	Depth(f + g) ~= Depth(f) + Depth(g) ~ 2*logN*logN
+
 References:
 -----------
 688.1 Algebraic Circuits - [Sanjeev Arora-Boaz Barak] - https://theory.cs.princeton.edu/complexity/book.pdf - Section 14.1 and Example 14.3 (Arithmetic circuits for determinants)
 688.2 Fundamental Theorem of Algebra - https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra - "... every non-zero, single-variable, degree n polynomial with complex coefficients has, counted with multiplicity, exactly n complex roots..."
 688.3 Irreducible polynomials over reals have degree 1 or 2 - https://en.wikipedia.org/wiki/Irreducible_polynomial
+688.4 Arithmetic Circuits versus Boolean Circuits - [Joachim von zur Gathen† - Gadiel Seroussi‡] - Section 2 - https://www.sciencedirect.com/science/article/pii/089054019190078G
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 689. (FEATURE) Fraud Analytics - Credit Card Dataset - Pandas DataFrame Correlation Coefficient Matrix - 28 July 2019
