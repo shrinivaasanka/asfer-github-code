@@ -14596,3 +14596,20 @@ Correlation matrix for all the columns.
 4.Because Yahoo finance and Google Finance stock data are no longer available, ystockquote does not work and throws urllib exception and hence a hardcoded array of timeseries stock close data has been used.
 5.ARMA and ARIMA functions from Streaming_TimeSeriesData.py are invoked in Streaming_StockMarketData.py.
 6.Logs for ARIMA and R+rpy2 graphics plot have been committed to DJIA_ARIMA_Time_Series.pdf and testlogs/Streaming_StockMarketData.ARIMATimeSeries.log.1August2019
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+691. (FEATURE) Time Series Analysis - ARMA and ARIMA implementations - Rewrite - 2 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1. ARMA and ARIMA related functions in Streaming_TimeSeriesData.py have been rewritten based on ARMA and ARIMA polynomials in https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average
+2. Projection iterations have been removed and instead are done in the invoking source file e.g Streaming_StockMarketData.py for randomly chosen regression weights
+3. ARMA polynomial is computed as:
+    arma=timeseries[len(timeseries)-1] - autoregression(time_series_data[pprime:]) - moving_averages(time_series_data[q:], 5)
+which subtracts the autoregression and moving averages from the latest timeseries point. ARMA parameters pprime and q are sliced to be as distant from the latest timeseries point
+4. ARIMA polynomial is computed as:
+    arima=autoregression_factored(time_series_data[len(time_series_data)-d:],p) - moving_averages(time_series_data[q:], 5)
+which computes autoregression_factored differently as:
+5.Lag operator for lag d is applied to slice the timeseries data from latest point t to d as t-d and autoregression_factored() is invoked to compute regressions from slice t-d-p to t-d 
+6.Finally the autoregression is subtracted from latest timeseries point Xt and moving averages is added to it
+7.Logs for rewrite are available for few iterations at testlogs/Streaming_StockMarketData.ARIMATimeSeries.log.2August2019 
+8.R+rpy2 function plots have been commented
+
