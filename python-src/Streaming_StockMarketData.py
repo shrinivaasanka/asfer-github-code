@@ -44,29 +44,30 @@ if __name__=="__main__":
 	#for k,v in ystockquote.get_historical_prices('GOOG', '2010-01-01', '2016-06-25').items():
 	for v in historic_data:
 		#print v['High']
-		print(v['Adj Close'])
 		time_series_data.append(float(v['Adj Close']))
 		cnt += 1
+       
+        projection_iterations=0
+        while projection_iterations < 100:
+	    #ARMA
+            time_series_data_arma=ARMA(time_series_data,2,1)
+            #ARIMA
+            time_series_data_arima=ARIMA(time_series_data,2,5,2)
+            projection_iterations += 1
 
-	#ARMA
-        time_series_data_arma=ARMA(time_series_data,2)
+	#y_axs = time_series_data_arima
+	#x_axs = []
+	#for i in xrange(len(time_series_data_arima)):
+	#	x_axs.append(i)	 
 
-        #ARIMA
-        time_series_data_arima=ARIMA(time_series_data,5,3)
+	#x = robj.FloatVector(x_axs)
+	#y = robj.FloatVector(y_axs)
+	#dataframe = robj.DataFrame({"x":x,"y":y})
+	#curvefn = robj.r['approxfun']
+	#plotfn = robj.r['plot']
+	#curvedata = curvefn(dataframe)
+	#print(curvedata)
 
-	y_axs = time_series_data_arima
-	x_axs = []
-	for i in xrange(len(time_series_data_arima)):
-		x_axs.append(i)	 
-
-	x = robj.FloatVector(x_axs)
-	y = robj.FloatVector(y_axs)
-	dataframe = robj.DataFrame({"x":x,"y":y})
-	curvefn = robj.r['approxfun']
-	plotfn = robj.r['plot']
-	curvedata = curvefn(dataframe)
-	print(curvedata)
-
-	pdffn = robj.r['pdf']
-	pdffn("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DJIA_ARIMA_Time_Series.pdf")
-	plotfn(curvedata, 0, len(time_series_data_arima))
+	#pdffn = robj.r['pdf']
+	#pdffn("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/DJIA_ARIMA_Time_Series.pdf")
+	#plotfn(curvedata, 0, len(time_series_data_arima))

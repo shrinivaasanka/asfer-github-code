@@ -54,46 +54,35 @@ def moving_averages(timeseries, window):
 	return mov_avg
 
 def autoregression(timeseries):
-	cnt=0
+	cnt=len(timeseries) - 1
 	autoreg=0.0
 	weight=0.0
-	while cnt < len(timeseries):
+	while cnt > 0:
 		weight = (float(random.randint(1,100))) / 10000.0
 		autoreg += weight * float(timeseries[cnt])
-		cnt+=1
+		cnt-=1
 	return autoreg
 
-def autoregression_factored(timeseries,d):
-	cnt=0
+def autoregression_factored(timeseries,p,d):
+	cnt=p
 	autoreg=0.0
 	weight=0.0
-        lag=int(float(len(timeseries))/float(d) + 1)
-	while cnt < len(timeseries)-lag:
+	while cnt > 0:
 		weight = (float(random.randint(1,100))) / 10000.0
+                print "cnt=",cnt,",timeseries=",timeseries
 		autoreg += weight * float(timeseries[cnt])
-		cnt+=1
-        print "lag:",lag
-        print "timeseries:",timeseries
-        print timeseries[len(timeseries)-lag]
-        autoreg = autoreg * timeseries[len(timeseries)-lag]
+		cnt-=1
+        autoreg = timeseries[len(timeseries)-d] - autoreg
 	return autoreg
 
-def ARMA(timeseries,q):
-    projection_iteration=0
+def ARMA(timeseries,pprime,q):
     time_series_data=timeseries
-    while projection_iteration < 1000:
-          arma=autoregression(time_series_data[:q]) + moving_averages(time_series_data[:q], 5)
-          print("Iteration:",projection_iteration," - ARMA projection: ", arma)
-          time_series_data.append(arma)
-          projection_iteration +=1
+    arma=timeseries[len(timeseries)-1] - autoregression(time_series_data[pprime:]) - moving_averages(time_series_data[q:], 5)
+    print("ARMA projection: ", arma)
     return time_series_data
 
-def ARIMA(timeseries,q,d):
-    projection_iteration=0
+def ARIMA(timeseries,p,d,q):
     time_series_data=timeseries
-    while projection_iteration < 1000:
-          arma=autoregression_factored(time_series_data[:q],d) + moving_averages(time_series_data[:q], 5)
-          print("Iteration:",projection_iteration," - ARIMA projection: ", arma)
-          time_series_data.append(arma)
-          projection_iteration +=1
+    arima=autoregression_factored(time_series_data[len(time_series_data)-d:],p,d) - moving_averages(time_series_data[q:], 5)
+    print("ARIMA projection: ", arima)
     return time_series_data
