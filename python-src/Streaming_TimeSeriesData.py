@@ -90,7 +90,7 @@ def autoregression_factored(timeseries,p,d):
 def ARMA(timeseries,pprime,q):
     time_series_data=timeseries
     arma=timeseries[len(timeseries)-1] - autoregression(time_series_data[pprime:]) - moving_averages(time_series_data[q:], 5)
-    print("ARMA projection: ", arma)
+    print("ARMA projection: ", abs(arma))
     return time_series_data
 
 def ARIMA(timeseries,p,d,q):

@@ -21,6 +21,7 @@ from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn import metrics
 import pandas
+from Streaming_TimeSeriesData import compute_mean, moving_averages, autoregression, ARMA, ARIMA
 
 class FraudAnalytics(object):
     def __init__(self,csvfile):
@@ -69,6 +70,19 @@ class FraudAnalytics(object):
         print "kmeans estimator pca cluster centers:",kmeans_estimator.cluster_centers_
         pandasDF=pandas.DataFrame(transactions_np)
         print "Pandas DataFrame Correlation Matrix for Dataset:",pandasDF.corr()
+        print pandasDF.columns
+        Amounts_timeseries=pandasDF[29].tolist()
+        print "Amounts timeseries:",Amounts_timeseries
+        projection_iterations=0
+        while projection_iterations < 100:
+            print "============================================================"
+            #ARMA
+            AmountsTS_arma=ARMA(Amounts_timeseries,2,1)
+            #ARIMA
+            AmountsTS_arima=ARIMA(Amounts_timeseries,2,2,2)
+            projection_iterations += 1
+            print "============================================================"
+
 
 if __name__=="__main__":
     fa=FraudAnalytics("./creditcard.csv")
