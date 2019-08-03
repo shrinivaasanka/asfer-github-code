@@ -11,18 +11,10 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
-#-----------------------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
 #Get historical stock quotes by looking up ticker symbol for date range - uses ystockquote pypi package
 # and perform Time Series Analysis - AutoRegressiveMovingAverage - ARMA - on these streamed data
@@ -49,11 +41,13 @@ if __name__=="__main__":
        
         projection_iterations=0
         while projection_iterations < 100:
+            print "============================================================"
 	    #ARMA
             time_series_data_arma=ARMA(time_series_data,2,1)
             #ARIMA
-            time_series_data_arima=ARIMA(time_series_data,2,5,2)
+            time_series_data_arima=ARIMA(time_series_data,2,2,2)
             projection_iterations += 1
+            print "============================================================"
 
 	#y_axs = time_series_data_arima
 	#x_axs = []
