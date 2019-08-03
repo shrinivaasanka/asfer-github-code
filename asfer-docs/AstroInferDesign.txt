@@ -14625,3 +14625,10 @@ lag factor in ARIMA polynomial
 4. Example logs for Stock quotes timeseries data is at Streaming_StockMarketData.ARIMATimeSeries.log.3August2019 which has comparative projections of rewritten ARMA and ARIMA functions.
 5. ARIMA has been invoked by parameters (2,2,2)
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+693. (FEATURE) Time Series Analysis and Fraud Analytics - Credit Card Transactions Dataset - 3 August 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.FraudAnalytics.py has been updated to import TimeSeries ARMA and ARIMA functions from Streaming_TimeSeriesData.py and compute ARMA and ARIMA polynomials on amounts withdrawn timeseries in credit card transactions dataset.
+2.Logs for these projections are at testlogs/FraudAnalytics.log.3August2019
+3.Though timeseries is a perfect fit for analyzing credit card amounts withdrawn as timeseries, projection curves for ARMA and ARIMA in logs are skewed widely for multiple iterations of random weights in autoregression and moving averages but values of ARMA and ARIMA are uniformly same almost.
+
