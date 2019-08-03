@@ -14615,3 +14615,13 @@ which computes autoregression_factored differently as:
 7.Logs for rewrite are available for few iterations at testlogs/Streaming_StockMarketData.ARIMATimeSeries.log.2August2019 
 8.R+rpy2 function plots have been commented
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+692. (FEATURE) Time Series Analysis - ARMA and ARIMA implementations - Rewrite 2 - 3 August 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. ARMA and ARIMA functions in Streaming_TimeSeriesData.py have been again refactored to implement lag operator and binomial expansion of
+lag factor in ARIMA polynomial
+2. autoregression_factored() has been rewritten to invoke a new function lag_factor_binomial_expansion() which in turn expands the factor power term in ARIMA polynomial by binomial series expansion of (1-L)^d.
+3. lag_factor_binomial_expansion() loop invokes functions binomial_term() which computes the numerator and denominator factorial of each binomial term and lag() function for each binomial term.
+4. Example logs for Stock quotes timeseries data is at Streaming_StockMarketData.ARIMATimeSeries.log.3August2019 which has comparative projections of rewritten ARMA and ARIMA functions.
+5. ARIMA has been invoked by parameters (2,2,2)
+
