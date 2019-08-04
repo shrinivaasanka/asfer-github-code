@@ -14654,4 +14654,12 @@ References:
 -----------
 694.1 India’s GDP Mis-estimation: Likelihood, Magnitudes, Mechanisms, and Implications - [Arvind Subramanian] - Working Paper - https://growthlab.cid.harvard.edu/files/growthlab/files/2019-06-cid-wp-354.pdf - "...We divide the sample into two periods, pre-and post-2011. For each period we estimate the following cross-country regression: 𝐺𝐷𝑃 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 = 𝛽0 + 𝛽1𝐶𝑟𝑒𝑑𝑖𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽2𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽3𝐸𝑥𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 +𝛽4𝐼𝑚𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽5𝐼𝑛𝑑𝑖𝑎 + 𝜀� ..."
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+695. (FEATURE) Gradient Ascent and Descent - Rewrite - 4 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.PerceptronAndGradient.py has been rewritten for computing Gradient Ascent and Descent for arbitrary number of variables.
+2.Earlier loop for partial derivative delta computation for just 2 variables has been generalized for any number of variables 
+3.Gradient Ascent has also been added based on computed value of weight updated perceptron (+ instead of -)
+4.Logs for Ascent and Descent are at testlogs/PerceptronAndGradient.log.4August2019
+5.Hardcoded variable,weights,bias,rho,output values have been removed and made as arguments.
 
