@@ -14632,3 +14632,26 @@ lag factor in ARIMA polynomial
 2.Logs for these projections are at testlogs/FraudAnalytics.log.3August2019
 3.Though timeseries is a perfect fit for analyzing credit card amounts withdrawn as timeseries, projection curves for ARMA and ARIMA in logs are skewed widely for multiple iterations of random weights in autoregression and moving averages but values of ARMA and ARIMA are uniformly same almost.
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+694. (FEATURE) Linear and Logistic Regressions - Rewrite - 4 August 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.LinearAndLogisticRegression.py has been rewritten to accept arbitrary number of weights and variables for computing Linear and Logistic
+Regressions.
+2.Linear And Logistic Regressions are estimators of Intrinsic Economic Merit of Nations in Economic Networks. Thus far following classes of intrinsic merit have been researched and implemented in NeuronRain:
+	1. Text
+	2. Audio - Speech
+	3. Audio - Music
+	4. Visuals - Images
+	5. Visuals - Videos
+	6. People - Experiential Intrinsic Merit
+	7. People - Log Normal Least Energy Merit - Education/Wealth/Valour e.g Sports IPR (Elo ratings in Chess, Player rankings in sports)
+	8. People - HR Analytics - Attrition model
+and Economic merit of nations is the 9th class of intrinsic merit applicable to Economic Networks. Regression is one amongst the set of econometric techniques for ascertaining growth of economies:
+	9. Nations - GDP, HDI etc.,
+3. Logs for the previous are at testlogs/LinearAndLogisticRegression.log.4August2019
+
+References:
+-----------
+694.1 India’s GDP Mis-estimation: Likelihood, Magnitudes, Mechanisms, and Implications - [Arvind Subramanian] - Working Paper - https://growthlab.cid.harvard.edu/files/growthlab/files/2019-06-cid-wp-354.pdf - "...We divide the sample into two periods, pre-and post-2011. For each period we estimate the following cross-country regression: 𝐺𝐷𝑃 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 = 𝛽0 + 𝛽1𝐶𝑟𝑒𝑑𝑖𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽2𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽3𝐸𝑥𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 +𝛽4𝐼𝑚𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽5𝐼𝑛𝑑𝑖𝑎 + 𝜀� ..."
+
+
