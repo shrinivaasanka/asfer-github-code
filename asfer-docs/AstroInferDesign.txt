@@ -14633,7 +14633,7 @@ lag factor in ARIMA polynomial
 3.Though timeseries is a perfect fit for analyzing credit card amounts withdrawn as timeseries, projection curves for ARMA and ARIMA in logs are skewed widely for multiple iterations of random weights in autoregression and moving averages but values of ARMA and ARIMA are uniformly same almost.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-694. (FEATURE) Linear and Logistic Regressions - Rewrite - 4 August 2019
+694. (FEATURE) Linear and Logistic Regressions - Rewrite - 4 August 2019, 6 August 2019
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1.LinearAndLogisticRegression.py has been rewritten to accept arbitrary number of weights and variables for computing Linear and Logistic
 Regressions.
@@ -14644,7 +14644,7 @@ Regressions.
 	4. Visuals - Images
 	5. Visuals - Videos
 	6. People - Experiential Intrinsic Merit
-	7. People - Log Normal Least Energy Merit - Education/Wealth/Valour e.g Sports IPR (Elo ratings in Chess, Player rankings in sports)
+	7. People - Log Normal Least Energy Merit - Education/Wealth/Valour e.g Rankings of Universities based on various factors including research output, Rankings of Students based on examinations/contests, Sports IPR (Elo ratings in Chess, Player rankings in sports)
 	8. People - HR Analytics - Attrition model
 and Economic merit of nations is the 9th class of intrinsic merit applicable to Economic Networks. Regression is one amongst the set of econometric techniques for ascertaining growth of economies:
 	9. Nations - GDP, HDI etc.,
