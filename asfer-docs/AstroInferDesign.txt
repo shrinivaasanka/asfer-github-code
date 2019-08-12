@@ -14689,3 +14689,19 @@ transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.3, 'object':0.2, 'adject
 	7.6 verb follows conjunction more often (e.g infinitives)
 8.Previous heuristics are minimal and could be replaced by more sophisticated probability distribution learnt from a training dataset once and loaded everytime.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+697. (THEORY-FEATURE) Named Entity Recognition and Text Graph Algorithms in NeuronRain AstroInfer - a non-statistical alternative - 12 August 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+TextGraph algorithms in NeuronRain are two-fold:
+	697.1 Recursive Gloss Overlap - Project WordNet to a Subgraph by traversing the Synsets recursively
+	697.2 Recursive Lambda Function Growth - Project WordNet to a Subgraph by traversing the Synsets recursively, learn AVL tree based Graph Tensor Neural Network and Lambda expressions from cycles and random walks of the WordNet subgraph - this is the maximum attainable theoretical limit of learning a formal language (Turing Machine or a lambda function) from natural language
+
+Usual Named Entity Recognition algorithms are prior probabilities and Conditional Random Fields-HMM based which relies heavily on statistics ignoring linguistic deep structure. Instead if missing Part-of-Speech tags could be inferred from a textgraph representation of a partially PoS annotated text, no language PoS priors are required. Following algorithm explores this alternative:
+	697.3 Partial PoS annoted text is mapped to a text graph by previous algorithms and each word vertex in the partial annotated text is labelled by either a part of speech or ? for missing PoS tag.
+	697.4 Resultant text graph thus has mixture of word vertices which have either PoS known (labelled by a PoS name) or PoS unknown (labelled by ?)
+	697.5 WordNet has support for list of all possible PoS tags for a word vertex
+	697.6 It is then a problem of inferring most probable disambiguating PoS tag for a word vertex. 
+	697.7 Set of all wordnet paths between a PoS annotated word vertex and an adjacent PoS unannotated word vertex provide set of sequences
+of PoS tags for the paths.'
+	697.8 For example phrase "can be called as a function" annotated as "conjunction conjunction verb conjunction conjunction ?" and unannotated "function" has three possible wordnet PoS tags which have to be disambiguated - Noun, Verb and Object and set of wordnet paths between "as-a" and "function" could be - {"connective","entity","work"},{"article","entity","event"},{"one","entity","happening"} having PoS sequences as {noun,noun,verb}, {noun,noun,noun} and {noun,noun,noun} if function has lemma synsets "work","event" or "happening"
+	697.9.Of the three possible paths PoS "noun" for "function" wins by majority voting of 2 to 1 because 2 paths have a penultimate vertices which imply "function" is a noun.
