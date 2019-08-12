@@ -14663,3 +14663,29 @@ References:
 4.Logs for Ascent and Descent are at testlogs/PerceptronAndGradient.log.4August2019
 5.Hardcoded variable,weights,bias,rho,output values have been removed and made as arguments.
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+696. (FEATURE) Named Entity Recognition (NER)-HMM-Viterbi-CRF - Rewrite - 12 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.Named Entity Recognition by Conditional Random Fields Hidden Markov Model has been updated significantly for resolving some errors in Viterbi computation
+2.Prior Emission Probabilities computation by skew normal distribution has been updated to renormalize by dividing the skewnorm probability by sum of probabilities
+3.New part of speech "adverb" has been included in transition probabilities,emission probabilities and states
+4.weighted sknorm has been done away with and replaced by previous renormalized skewnorm distribution
+5.Error in argmax() computation has been corrected - label and maximum are reset in the loop
+6.logs for this rewrite have been committed to testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.12August2019
+7.Transition probabilities are updated as below:
+transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.3, 'object':0.2, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.3},
+                          'verb':{'noun':0.1, 'verb':0.0, 'object':0.4, 'adjective':0.2, 'adverb':0.1,'conjunction':0.3},
+                          'object':{'noun':0.0, 'verb':0.1, 'object':0.4, 'adjective':0.1, 'adverb':0.1,'conjunction':0.3},
+                          'adjective':{'noun':0.4, 'verb':0.2, 'object':0.2, 'adjective':0.0, 'adverb':0.1, 'conjunction':0.1},
+                          'adverb':{'noun':0.1, 'verb':0.4, 'object':0.1, 'adjective':0.0, 'adverb':0.1, 'conjunction':0.3},
+                          'conjunction':{'noun':0.2, 'verb':0.4, 'object':0.1, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.1}
+                         } 
+7.It has to be mentioned here that previous state transition probabilities priors are hardcoded heuristics and based on the following rationale:
+	7.1 verb follows nouns more often
+	7.2 object follows verb more often
+	7.3 object follows object more often
+	7.4 noun follows adjective more often
+	7.5 verb follows adverb more often
+	7.6 verb follows conjunction more often (e.g infinitives)
+8.Previous heuristics are minimal and could be replaced by more sophisticated probability distribution learnt from a training dataset once and loaded everytime.
+
