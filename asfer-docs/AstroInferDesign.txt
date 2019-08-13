@@ -14705,3 +14705,23 @@ Usual Named Entity Recognition algorithms are prior probabilities and Conditiona
 of PoS tags for the paths.'
 	697.8 For example phrase "can be called as a function" annotated as "conjunction conjunction verb conjunction conjunction ?" and unannotated "function" has three possible wordnet PoS tags which have to be disambiguated - Noun, Verb and Object and set of wordnet paths between "as-a" and "function" could be - {"connective","entity","work"},{"article","entity","event"},{"one","entity","happening"} having PoS sequences as {noun,noun,verb}, {noun,noun,noun} and {noun,noun,noun} if function has lemma synsets "work","event" or "happening"
 	697.9.Of the three possible paths PoS "noun" for "function" wins by majority voting of 2 to 1 because 2 paths have a penultimate vertices which imply "function" is a noun.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+698. (FEATURE) GIS Remote Sensing Image Analytics - Image Segmentation - 13 August 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.New function image_segmentation() has been defined in ImageGraph_Keras_Theano.py which segments an image into similar regions or patches
+2.As opposed to RGB patches and extract_patches_2d() of scikit learn, segmentation of an image is generic and segments/patches of arbitrary irregular shapes and containing similar pixels can be extracted
+3.Example code in OpenCV2 documentation - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_watershed/py_watershed.html - has been used as reference 
+4.This example filters the image into foreground and background by:
+	4.1 applying OTSU threshold filter
+	4.2 morphological opening for removal of noise
+	4.3 Background - Dilation to increase object boundary to background and demarcate background accurately
+	4.4 Foreground - Distance transform and then thresholding is applied to demarcate the foreground 
+	4.5 Markers - Connected components are found from foreground of 4.4
+	4.6 Watershed - watershed segmentation algorithm is applied on the marked image to find segments.
+5.Watershed algorithm works by considering an image as topographic surface of valleys and dams between valleys. Valleys in image are filled with water till no two adjacent valleys merge creating "dams" or segments bounding the valleys.
+6.Watershed segmentation is graphically illustrated in http://www.cmm.mines-paristech.fr/~beucher/wtshed.html
+7.EventNet Tensor Products Merit algorithm for visuals described earlier depends on bounding box segmentation which are squares. Instead segmentation could be the way to go if ImageNet and Keras support it.
+8.Two segmented satellite images of Chennai Metropolitan Area Urban Sprawl are committed at:
+	8.1 testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15_segmented.jpg
+	8.2 testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13_segmented.jpg
