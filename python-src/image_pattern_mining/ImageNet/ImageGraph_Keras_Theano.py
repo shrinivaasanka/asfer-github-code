@@ -206,6 +206,26 @@ def analyze_remotesensing_2d_patches(imagefile,patch_size=(20,20),max_patches=10
             img_hist=np.histogram(patches.flatten())
             print "Patch histogram :",imagefile,":",img_hist
 
+def image_segmentation(imagefile):
+        img = cv2.imread(imagefile)
+        gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+        ret,thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+        kernel = np.ones((3,3),np.uint8)
+        opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN, kernel, iterations = 2)
+        sure_bg = cv2.dilate(opening,kernel,iterations=3)
+        dist_transform = cv2.distanceTransform(opening,cv2.DIST_L2,5)
+        ret, sure_fg = cv2.threshold(dist_transform,0.7*dist_transform.max(),255,0)
+        sure_fg = np.uint8(sure_fg)
+        unknown = cv2.subtract(sure_bg,sure_fg)
+        ret, markers = cv2.connectedComponents(sure_fg)
+        markers += 1
+        markers[unknown==255] = 0
+        markers = cv2.watershed(img,markers)
+        img[markers == -1] = [255,0,0]
+        imagefiletoks1=imagefile.split(".")
+        imagefiletoks2=imagefiletoks1[0].split("/")
+        cv2.imwrite("testlogs/RemoteSensingGIS/"+imagefiletoks2[2]+"_segmented.jpg",img)
+
 def random_forest_image_classification(train_images,test_images, train_labels):
         train_data_X=[]
         test_data_X=[]
@@ -299,11 +319,13 @@ if __name__=="__main__":
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-7-Image-11.jpg")
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
         #analyze_remotesensing_RGB_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
-        analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
-        analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
-        train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
-        test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
-        train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
-        random_forest_image_classification(train_images,test_images,train_labels)
-        for im in test_images:
-            imagenet_imagegraph(im)
+        #analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
+        #analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+        image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
+        image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+        #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
+        #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
+        #train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
+        #random_forest_image_classification(train_images,test_images,train_labels)
+        #for im in test_images:
+        #    imagenet_imagegraph(im)
