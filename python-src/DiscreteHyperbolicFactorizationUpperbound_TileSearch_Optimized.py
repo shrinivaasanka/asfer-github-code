@@ -20,7 +20,7 @@ number_to_factorize=0
 persisted_tiles=False
 
 from pyspark import SparkContext, SparkConf
-from pyspark.sql import SQLContext, Row 
+from pyspark.sql import SQLContext, Row, SparkSession 
 import operator
 import sys
 import json
@@ -47,7 +47,7 @@ class FactorsAccumulatorParam(AccumulatorParam):
      def zero(self, value):
          return [0.0] * len(value)
      def addInPlace(self, val1, val2):
-	 print "val1 =",val1,"; val2 = ",val2
+	 #print "val1 =",val1,"; val2 = ",val2
 	 factors_of_n=val1
          factors_of_n.append(val2)
          return factors_of_n 
@@ -274,7 +274,7 @@ def SearchTiles_and_Factorize(n):
 	global factors_accum 
 	global spcon
 
-	spcon = SparkContext("local[4]","Spark_TileSearch_Optimized")
+	spcon = SparkSession.builder.master("local[4]").appName("Spark Factorization").getOrCreate().sparkContext
 
 	if persisted_tiles == True:
         	tileintervalsf=open("/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals","r")
