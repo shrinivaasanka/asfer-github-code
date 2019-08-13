@@ -14725,3 +14725,10 @@ of PoS tags for the paths.'
 8.Two segmented satellite images of Chennai Metropolitan Area Urban Sprawl are committed at:
 	8.1 testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15_segmented.jpg
 	8.2 testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13_segmented.jpg
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+699.(THEORY-FEATURE) Computational Geometric Factorization - Tile Search Optimization - Spark 2.4.3 and QuadCore benchmarks - 13 August 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This is the first genuine benchmark of Computational Geometric Factorization on Spark 2.4.3 and QuadCore. Earlier execution on local[4] was a simulation of 4 spark executor threads on single core
+2.SparkContext has been replaced by Spark context of SparkSession
+3.logs for factorization are at testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.13August2019 which have some notable estimates of approximate factors by Hardy-Ramanujan (1 exact factor ray query), Baker-Harman-Pintz and Cramer ray shooting queries 
