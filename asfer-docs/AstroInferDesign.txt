@@ -13253,8 +13253,7 @@ References:
 623.4 Arithmetization of 3SAT - Randomized Algorithms - [Rajeev Motwani - Prabhakar Raghavan] - Page 177 (Section 7.7) - 3SAT can be arithmetized to a multilinear diophantine polynomial by replacing each clause of the form (x1 V x2 V x3) to (1-(1-x1)(1-x2)(1-x3)) which can be solved for integer or real solutions. Number of unknowns in diophantine equals number of variables of 3SAT. This reduction implies diophantine class D is in NP. Real solutions to this SAT diophantine (e.g by Tarski method) is another kind of relaxation similar to least squares approximate MAXSAT Solver. But an added advantage is there exists a universal diophantine equation in 9 unknowns for any 3SAT diophantine though number of variables in 3SAT could be unlimited.
 
 ----------------------------------------------------------------------------------------------------------------
-624. (THEORY) Shell Turing Machines, MRDP Theorem, Turing Degrees, Embedding Formal Languages in Vector Space
-- 10 December 2018 - related to 538
+624. (THEORY) Shell Turing Machines, MRDP Theorem, Category Theory, Diophantine Equations, Turing Degrees, Embedding Formal Languages in Vector Space - 10 December 2018, 21 August 2019 - related to 538
 ----------------------------------------------------------------------------------------------------------------
 Intuition for Shell Turing Machines defined in https://5d99cf42-a-62cb3a1a-s-sites.googlegroups.com/site/kuja27/UndecidabilityOfFewNonTrivialQuestions.pdf has been explained in NeuronRain FAQ https://neuronrain-documentation.readthedocs.io/en/latest/ . Dimension of a Shell Turing Machine parallels Turing Degree of a Turing Machine which is a measure of unsolvability of a set. Every Shell Turing Machine is defined on a vector space and all Shell Turing machines of similar dimension create an equivalence class. Partial Order Semi-Lattice is induced by this vector space dimensional hierarchy of Shell Turing Machines. Following example Shell Turing Machines defined over two different vector spaces of dimensions d1 and d2 motivate solvability hierarchy:
 
@@ -13328,6 +13327,14 @@ Traditional results on homomorphisms between Vector Spaces apply to Shell Turing
 
 If Shell Turing Machines S1(U) and S2(W) are defined over vector spaces V and W and W is subspace of V and there is a homomorphism T(defined by relation "bigger than") from V to V/W, previous example oxymoron sentence - "This is bigger than the biggest" - is logically defined in quotient space V/W in first order logic quantifiers as (annotated by square parentheses]:
 	This is [There exists v1 in V] bigger than [T(v1,identity + w1):v1 > identity + w1] the biggest [there exists w1 in W such that for all w in W, w1 > w]
+
+Shell Turing Machines can be defined in terms of Category Theory too:
+---------------------------------------------------------------------
+Category Theory of [Eilenberg-MacLane] abstracts whole of mathematics into following:
+	(*) Category C is a Set of Objects associated with a topological space
+	(*) Every Category has set of morphisms f:a-b defined on objects a,b in Category C - morphisms are maps between objects on topological spaces - every morphism f:a-b on objects a,b in topological spaces can be a Shell Turing Machine defined on topological spaces of a and b 
+	(*) Functors F are maps between two Categories C1 and C2 - for each object x in C1, F(x) is in C2 and for each morphism f:a-b in C1
+morphism, F(f):F(a)-F(b) is in C2 - every functor F can be a Shell Turing Machine defined on topological spaces of F(a) and F(b)
 	
 References:
 ----------
@@ -14760,5 +14767,5 @@ EventNet Tensor Products defined and implemented in NeuronRain and applied as in
 
 References:
 ----------
-701.1 Category Theory - https://en.wikipedia.org/wiki/Category_theory
-701.2 Tensor Products as Functors - https://en.wikipedia.org/wiki/Functor - "... Tensor products: If C denotes the category of vector spaces over a fixed field, with linear maps as morphisms, then the tensor product {\displaystyle V\otimes W} V\otimes W defines a functor C × C → C which is covariant in both arguments.[7] ..."
+701.8 Category Theory - https://en.wikipedia.org/wiki/Category_theory
+701.9 Tensor Products as Functors - https://en.wikipedia.org/wiki/Functor - "... Tensor products: If C denotes the category of vector spaces over a fixed field, with linear maps as morphisms, then the tensor product {\displaystyle V\otimes W} V\otimes W defines a functor C × C → C which is covariant in both arguments.[7] ..."
