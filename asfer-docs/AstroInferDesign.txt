@@ -14769,3 +14769,19 @@ References:
 ----------
 701.8 Category Theory - https://en.wikipedia.org/wiki/Category_theory
 701.9 Tensor Products as Functors - https://en.wikipedia.org/wiki/Functor - "... Tensor products: If C denotes the category of vector spaces over a fixed field, with linear maps as morphisms, then the tensor product {\displaystyle V\otimes W} V\otimes W defines a functor C × C → C which is covariant in both arguments.[7] ..."
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+702.(THEORY-FEATURE) Non-statistical Ontology Semantic Paths based Named Entity Recognition - related to 697 - 22 August 2019
+-------------------------------------------------------------------------------------------------------------------------------------------
+1.A non-statistical WordNet Paths based Named Entity Recognition alternative was theoretically described earlier which exploits linguistic deep structure.
+2.This alternative has been implemented in NamedEntityRecognition_HMMViterbi_CRF.py which works as below:
+	2.1 find the semantic path between a PoS annotated word and unannotated adjacent word in an ontology e.g WordNet - path_between() from WordNetPath.py has been invoked (instead the text graph path between the words is also sufficient)
+	2.2 for each vertex in the path find all possible PoS tags from WordNet Synsets which is a 2 dimensional list - Words * Set-of-PoS-per-Word
+	2.3 find the cartesian product of the 2 dimensional list from 2.2 which enumerates all possible PoS paths between annotated and unannotated words - itertools product computes cartesian product of lists for all possible PoS paths which is a trellis
+	2.4 aggregate the penultimate vertices in PoS paths
+	2.5 find the majority PoS tag Synset of 2.4 which is the most likely PoS of the unannotated word
+3.Logs in testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.22August2019 demonstrate previous PoS paths majority voting for NER of an unannotated vertex.
+4.Some paths between annotated and unannotated words drew blank because path_between() did not find a path
+5.In some respects, previous algorithm resembles a transformer which is an attention model neural network scoring a sequence pipeline in transduction - it maps a sequence of words to sequence of PoS and attention context (important annotated words influencing an unannotated word) is provided by the PoS paths between PoS annotated and unannotated words in the word sequence.
+
+
