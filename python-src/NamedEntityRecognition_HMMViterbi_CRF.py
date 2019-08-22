@@ -28,6 +28,13 @@ import math
 from scipy.stats import skewnorm
 import matplotlib.pyplot as plt
 import numpy as np
+from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
+from WordNetPath import path_between
+from nltk.corpus import wordnet as wn
+import networkx as nx
+from itertools import product
+from collections import Counter
+
 fig, ax = plt.subplots(1,1)
 
 states=["noun","conjunction","verb","adjective","adverb","object"]
@@ -158,3 +165,32 @@ for t in zip(missing_PoS, prev_PoS_tag):
 			#maximum = feature[s]
 			label=s
 	print " \"",t[0],"\" PoS tagged using CRF as: ",label
+
+#####################################################################################################################################
+# Non-statistical Ontology Semantic Paths based Named Entity Recognition
+#####################################################################################################################################
+nertg=RecursiveGlossOverlapGraph("".join(observations))
+print "nertg=",nertg
+obs_states=zip(observations, PoS_CRF_states)
+os=0
+for obs_state in obs_states:
+	print obs_state
+	if obs_state[1] == "?":
+		pos_trellis=[]
+		path=path_between(obs_states[os-1][0],obs_states[os][0])
+		print "path=",path
+		for v in path:
+			pos_trellis.append(wn.synsets(v))
+		print "PoS Trellis=",pos_trellis
+		pos_trellis_cartesian_paths=product(*pos_trellis)
+		print "PoS Trellis Cartesian Paths - All possible PoS Paths between PoS annotated and unannotated words - ",obs_states[os-1][0]," and ",obs_states[os][0],":"
+		penultimate_pos=[]
+		for path in pos_trellis_cartesian_paths:
+			print path
+			if len(path) > 0:
+				penultimate_pos.append(path[len(path)-1])
+		print "Penultimate PoS of Pos Trellis:",penultimate_pos
+		print "Majority PoS of Penultimate PoS in Pos Trellis:",Counter(penultimate_pos).most_common()
+	os+=1
+
+
