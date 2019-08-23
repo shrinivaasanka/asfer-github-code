@@ -21,7 +21,7 @@
 
 #ConceptNet and WordNet: http://web.media.mit.edu/~havasi/MAS.S60/PNLP10.pdf
 
-
+import nltk
 import requests
 import pprint
 from Queue import Queue
@@ -29,6 +29,8 @@ from itertools import product
 #from rest_client import similar_to_concepts
 import networkx as nx
 from networkx.algorithms.shortest_paths.generic import shortest_path
+from nltk.book import *
+import matplotlib.pyplot as plt
 
 class ConceptNet5Client:
 	def __init__(self):
@@ -57,6 +59,23 @@ class ConceptNet5Client:
 	def conceptnet_path(self,concept1,concept2):
 		conceptjson=requests.get("http://api.conceptnet.io/query?node=/c/en/"+concept1+"&other=/c/en/"+concept2).json()
 		return conceptjson
+        
+        def conceptnet_textgraph(self, text):
+                tokenized = nltk.word_tokenize(text)
+                fdist = FreqDist(tokenized)
+                stopwords = nltk.corpus.stopwords.words('english')
+                stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
+                puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
+                freqterms = [w.decode("utf-8","ignore") for w in fdist.keys() if w not in stopwords and w not in puncts]
+                conceptnettg=nx.DiGraph()
+                for w1 in freqterms:
+                    for w2 in freqterms:
+                        if w1 != w2:
+                            cn_distance=self.conceptnet_least_common_ancestor_distance(w1,w2)
+                            for cn_edge in cn_distance.edges():
+                                conceptnettg.add_edge(cn_edge[0],cn_edge[1])
+                nx.draw_networkx(conceptnettg)
+                plt.show()
 
 	def conceptnet_least_common_ancestor_distance(self,concept1,concept2):
 		pprint.pprint("=======================================================")
@@ -64,28 +83,29 @@ class ConceptNet5Client:
 		pprint.pprint("=======================================================")
 		nxg=nx.DiGraph()
 		edges=[]
-		related1=self.related(concept1)
-		related2=self.related(concept2)	
-		related1list=[]
-		related2list=[]
-		for e in related1["related"]:
-			if "/en" in e["@id"]:
+                try:
+		    related1=self.related(concept1)
+		    related2=self.related(concept2)	
+		    related1list=[]
+		    related2list=[]
+		    for e in related1["related"]:
+		    	if "/en" in e["@id"]:
 				related1list.append(e["@id"])
 				edges.append((concept1,e["@id"]))
-		for e in related2["related"]:
+		    for e in related2["related"]:
 			if "/en" in e["@id"]:
 				related2list.append(e["@id"])
 				edges.append((e["@id"],concept2))
-		#print "related1list: ",related1list
-		#print "related2list: ",related2list
-		commonancestors=set(related1list).intersection(set(related2list))
-		#print "commonancestors: ",commonancestors
-		distance=1
-		q1=Queue()
-		q2=Queue()
-		q1.put(set(related1list))
-		q2.put(set(related2list))
-		while len(commonancestors) == 0 and distance < 1000:
+		    print "related1list: ",related1list
+		    print "related2list: ",related2list
+		    commonancestors=set(related1list).intersection(set(related2list))
+		    print "commonancestors: ",commonancestors
+		    distance=1
+		    q1=Queue()
+		    q2=Queue()
+		    q1.put(set(related1list))
+		    q2.put(set(related2list))
+		    while len(commonancestors) == 0 and distance < 1000:
 			concept1list=q1.get()
 			concept2list=q2.get()
 			related1list=related2list=[]
@@ -107,14 +127,20 @@ class ConceptNet5Client:
 			q2.put(set(related2list))
 			commonancestors=set(related1list).intersection(set(related2list))
 			distance = distance + 1
-		#print "commonancestors: ",commonancestors
-		#print "edges:",edges
+		        print "commonancestors: ",commonancestors
+                except Exception as e:
+                        print "Exception:",e
+		print "edges:",edges
 		for k,v in edges:
-                       	nxg.add_edge(k,v)
+                     	nxg.add_edge(k,v)
 		return nxg
 
 if __name__=="__main__":
 	conceptnet = ConceptNet5Client()
+        print "=========================================="
+        print "ConceptNet Text Graph"
+        print "=========================================="
+        conceptnet.conceptnet_textgraph("Madras Day is a festival organized to commemorate the founding of the city of Madras (now Chennai) in Tamil Nadu, India")
 	print "==================================================="
 	print "ConceptNet Emotions "
 	print "==================================================="
