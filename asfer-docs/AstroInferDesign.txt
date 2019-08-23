@@ -14784,4 +14784,12 @@ References:
 4.Some paths between annotated and unannotated words drew blank because path_between() did not find a path
 5.In some respects, previous algorithm resembles a transformer which is an attention model neural network scoring a sequence pipeline in transduction - it maps a sequence of words to sequence of PoS and attention context (important annotated words influencing an unannotated word) is provided by the PoS paths between PoS annotated and unannotated words in the word sequence.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------
+703.(FEATURE) Text Graph of a natural languge text from ConceptNet 5.7 - implementation - 23 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.NeuronRain text graph implementations so far rely only on WordNet for deciphering intrinsic deep structure merit of a text.
+2.This commit implements ConceptNet 5.7 text graph alternative which was long pending.
+3.New function conceptnet_text_graph() invokes least_common_ancestor graph creating function and aggregates edges from paths between all pairs of words.
+4.ConceptNet5.7 Text Graph has been plotted by matplotlib at testlogs/ConceptNet5.7.TextGraph.23August2019
+5.Logs for ConceptNet text graph creation are at testlogs/ConceptNet5Client.log.23August2019
+6.Quality of Paths in ConceptNet is an open problem e.g https://arxiv.org/abs/1902.07831 
