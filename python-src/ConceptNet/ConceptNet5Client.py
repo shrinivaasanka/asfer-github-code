@@ -31,6 +31,7 @@ import networkx as nx
 from networkx.algorithms.shortest_paths.generic import shortest_path
 from nltk.book import *
 import matplotlib.pyplot as plt
+import operator
 
 class ConceptNet5Client:
 	def __init__(self):
@@ -71,11 +72,62 @@ class ConceptNet5Client:
                 for w1 in freqterms:
                     for w2 in freqterms:
                         if w1 != w2:
-                            cn_distance=self.conceptnet_least_common_ancestor_distance(w1,w2)
-                            for cn_edge in cn_distance.edges():
-                                conceptnettg.add_edge(cn_edge[0],cn_edge[1])
+                            cn_distance=self.conceptnet_least_common_ancestor_distance(w1.lower(),w2.lower())
+	                    cn_sp=shortest_path(cn_distance,w1.lower(),w2.lower())
+			    print "conceptnet path:",cn_sp
+                            #for cn_edge in cn_distance.edges():
+                            #    conceptnettg.add_edge(cn_edge[0],cn_edge[1])
+                            conceptnettg.add_path(cn_sp)
                 nx.draw_networkx(conceptnettg)
                 plt.show()
+                conceptnettg.remove_edges_from(conceptnettg.selfloop_edges())
+        	sorted_core_nxg=sorted(nx.core_number(conceptnettg).items(),key=operator.itemgetter(1), reverse=True)
+        	print "Core number (sorted) :",sorted_core_nxg
+        	print "============================================================================================================="
+        	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of ConceptNet)"
+        	print "============================================================================================================="
+        	no_of_classes=len(nx.core_number(conceptnettg))
+        	top_percentile=0
+        	max_core_number=0
+        	max_core_number_class=""
+        	for n in sorted_core_nxg:
+               		if top_percentile < no_of_classes*0.50:
+        			top_percentile+=1
+        		else:
+        			break
+        		if n[1] > max_core_number:
+        			max_core_number=n[1]
+        			max_core_number_class=n[0]
+        	print "	max_core_number",max_core_number
+        
+        	print "==================================================================="
+        	print "Betweenness Centrality of Recursive Gloss Overlap graph vertices"
+        	print "==================================================================="
+        	bc=nx.betweenness_centrality(conceptnettg)
+        	sorted_bc=sorted(bc.items(),key=operator.itemgetter(1),reverse=True)
+        	print sorted_bc
+        
+        	print "==================================================================="
+        	print "Closeness Centrality of Recursive Gloss Overlap graph vertices"
+        	print "==================================================================="
+        	cc=nx.closeness_centrality(conceptnettg)
+        	sorted_cc=sorted(cc.items(),key=operator.itemgetter(1),reverse=True)
+        	print sorted_cc
+        
+        	print "==================================================================="
+        	print "Degree Centrality of Recursive Gloss Overlap graph vertices"
+        	print "==================================================================="
+        	dc=nx.degree_centrality(conceptnettg)
+        	sorted_dc=sorted(dc.items(),key=operator.itemgetter(1),reverse=True)
+        	print sorted_dc
+        
+        	print "==================================================================="
+        	print "Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)"
+        	print "==================================================================="
+        	sorted_pagerank_nxg=sorted(nx.pagerank(conceptnettg).items(),key=operator.itemgetter(1),reverse=True)
+        	print sorted_pagerank_nxg
+        	return (sorted_core_nxg, sorted_pagerank_nxg)
+
 
 	def conceptnet_least_common_ancestor_distance(self,concept1,concept2):
 		pprint.pprint("=======================================================")
@@ -96,10 +148,10 @@ class ConceptNet5Client:
 			if "/en" in e["@id"]:
 				related2list.append(e["@id"])
 				edges.append((e["@id"],concept2))
-		    print "related1list: ",related1list
-		    print "related2list: ",related2list
+		    #print "related1list: ",related1list
+		    #print "related2list: ",related2list
 		    commonancestors=set(related1list).intersection(set(related2list))
-		    print "commonancestors: ",commonancestors
+		    #print "commonancestors: ",commonancestors
 		    distance=1
 		    q1=Queue()
 		    q2=Queue()
@@ -127,10 +179,10 @@ class ConceptNet5Client:
 			q2.put(set(related2list))
 			commonancestors=set(related1list).intersection(set(related2list))
 			distance = distance + 1
-		        print "commonancestors: ",commonancestors
+		        #print "commonancestors: ",commonancestors
                 except Exception as e:
                         print "Exception:",e
-		print "edges:",edges
+		#print "edges:",edges
 		for k,v in edges:
                      	nxg.add_edge(k,v)
 		return nxg
@@ -140,7 +192,8 @@ if __name__=="__main__":
         print "=========================================="
         print "ConceptNet Text Graph"
         print "=========================================="
-        conceptnet.conceptnet_textgraph("Madras Day is a festival organized to commemorate the founding of the city of Madras (now Chennai) in Tamil Nadu, India")
+        #conceptnet.conceptnet_textgraph("Madras Day is a festival organized to commemorate the founding of the city of Madras (now Chennai) in Tamil Nadu, India")
+        conceptnet.conceptnet_textgraph("The Chennai Metropolitan Area is the fourth most populous metropolitan area in India")
 	print "==================================================="
 	print "ConceptNet Emotions "
 	print "==================================================="
@@ -173,6 +226,11 @@ if __name__=="__main__":
 	print "========================================"
 	print "ConceptNet Distance - Common Ancestor algorithm"
 	print "========================================"
+	distance=conceptnet.conceptnet_least_common_ancestor_distance('chennai','metropolitan')
+	sp=shortest_path(distance,'chennai','metropolitan')
+	pprint.pprint("Distance:"+str(len(sp)))
+	pprint.pprint("Shortest Path:")
+	pprint.pprint(sp)
 	distance=conceptnet.conceptnet_least_common_ancestor_distance('chennai','delhi')
 	sp=shortest_path(distance,'chennai','delhi')
 	pprint.pprint("Distance:"+str(len(sp)))
