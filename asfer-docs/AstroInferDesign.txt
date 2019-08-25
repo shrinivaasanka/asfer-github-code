@@ -14793,3 +14793,12 @@ References:
 4.ConceptNet5.7 Text Graph has been plotted by matplotlib at testlogs/ConceptNet5.7.TextGraph.23August2019
 5.Logs for ConceptNet text graph creation are at testlogs/ConceptNet5Client.log.23August2019
 6.Quality of Paths in ConceptNet is an open problem e.g https://arxiv.org/abs/1902.07831 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+704.(FEATURE) ConceptNet 5.7 Text Graph - shortest path filter - 25 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------
+1.ConceptNet 5.7 Text Graph implementation has been updated to find shortest paths from least common ancestor graph for each pair of
+words in the text and merge the shortest paths to create the graph by NetworkX add_path()
+2.This filtering improves the path quality to some extent.
+3.Centrality measures and Dense Subgraph Classification (Core Numbers) are printed.
+4.logs for this commit are at testlogs/ConceptNet5Client.log.25August2019
