@@ -14802,3 +14802,15 @@ words in the text and merge the shortest paths to create the graph by NetworkX a
 2.This filtering improves the path quality to some extent.
 3.Centrality measures and Dense Subgraph Classification (Core Numbers) are printed.
 4.logs for this commit are at testlogs/ConceptNet5Client.log.25August2019
+
+--------------------------------------------------------------------------------------------------------------------------------------
+705.(FEATURE) ConceptNet 5.7 Text Graph - additional Graph Complexity Intrinsic Merit measures - 31 August 2019
+--------------------------------------------------------------------------------------------------------------------------------------
+1.ConceptNet 5.7 Text Graph implementation has been updated to print a comprehensive dictionary of graph complexity intrinsic merit
+measures of the ConceptNet text graph similar to WordNet text graph in RecursiveLambdaFunctionGrowth implementation
+2.grow_lambda_function3() in RecursiveLambdaFunctionGrowth python implementation has been changed to accept a textgraph as argument in the absence of a text and directly grow lambda functions from argument textgraph without creating it.
+3.Text is read from a file ConceptNet5Client.txt and passed on as conceptnet textgraph function argument.
+4.logs for this commit are at testlogs/ConceptNet5Client.log.31August2019
+5.Special concept vertex '/c/en/\xb0_c' is in all the paths found by least common ancestor algorithm and therefore the graph has a hub-spoke star structure always. This node has been filtered by a new function remove_noise() to avoid star graphs. To increase path quality more vertices might be added whenever deemed necessary in remove_noise()
+6.Exception handling for non-existent paths has been included.
+7.Resulting filtered textgraph has been drawn in testlogs/ConceptNet5Client5.7.TextGraph.31August2019.png and is more like a sunflower (set of subsets of vertices having pairwise intersection forming petals).
