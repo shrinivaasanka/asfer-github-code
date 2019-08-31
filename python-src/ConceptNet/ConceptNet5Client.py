@@ -32,9 +32,12 @@ from networkx.algorithms.shortest_paths.generic import shortest_path
 from nltk.book import *
 import matplotlib.pyplot as plt
 import operator
+import SentimentAnalyzer
+import RecursiveLambdaFunctionGrowth
 
 class ConceptNet5Client:
 	def __init__(self):
+		self.ClosedPaths=True
 		print "Init of ConceptNet Client"
 
 	def query_association(self,concept1,concept2):
@@ -60,7 +63,13 @@ class ConceptNet5Client:
 	def conceptnet_path(self,concept1,concept2):
 		conceptjson=requests.get("http://api.conceptnet.io/query?node=/c/en/"+concept1+"&other=/c/en/"+concept2).json()
 		return conceptjson
-        
+
+        def remove_noise(self,cn_sp):
+                print "remove_noise(): cn_sp=",cn_sp
+                print "remove_noise(): type(cn_sp)=",type(cn_sp)
+                cn_sp.remove(u'/c/en/\xb0_c')
+                return cn_sp
+
         def conceptnet_textgraph(self, text):
                 tokenized = nltk.word_tokenize(text)
                 fdist = FreqDist(tokenized)
@@ -73,11 +82,16 @@ class ConceptNet5Client:
                     for w2 in freqterms:
                         if w1 != w2:
                             cn_distance=self.conceptnet_least_common_ancestor_distance(w1.lower(),w2.lower())
-	                    cn_sp=shortest_path(cn_distance,w1.lower(),w2.lower())
-			    print "conceptnet path:",cn_sp
-                            #for cn_edge in cn_distance.edges():
-                            #    conceptnettg.add_edge(cn_edge[0],cn_edge[1])
-                            conceptnettg.add_path(cn_sp)
+                            try:
+	                        cn_sp=shortest_path(cn_distance,w1.lower(),w2.lower())
+			        print "conceptnet path:",cn_sp
+				cn_sp=self.remove_noise(cn_sp)
+				print "conceptnet path filtered:",cn_sp
+                                #for cn_edge in cn_distance.edges():
+                                #    conceptnettg.add_edge(cn_edge[0],cn_edge[1])
+                                conceptnettg.add_path(cn_sp)
+                            except Exception as e:
+                                print "exception:",e
                 nx.draw_networkx(conceptnettg)
                 plt.show()
                 conceptnettg.remove_edges_from(conceptnettg.selfloop_edges())
@@ -126,8 +140,10 @@ class ConceptNet5Client:
         	print "==================================================================="
         	sorted_pagerank_nxg=sorted(nx.pagerank(conceptnettg).items(),key=operator.itemgetter(1),reverse=True)
         	print sorted_pagerank_nxg
-        	return (sorted_core_nxg, sorted_pagerank_nxg)
 
+                rflg=RecursiveLambdaFunctionGrowth.RecursiveLambdaFunctionGrowth()
+                intrinsic_merit_dict=rflg.grow_lambda_function3(textgraph=conceptnettg)
+                return intrinsic_merit_dict
 
 	def conceptnet_least_common_ancestor_distance(self,concept1,concept2):
 		pprint.pprint("=======================================================")
@@ -193,7 +209,9 @@ if __name__=="__main__":
         print "ConceptNet Text Graph"
         print "=========================================="
         #conceptnet.conceptnet_textgraph("Madras Day is a festival organized to commemorate the founding of the city of Madras (now Chennai) in Tamil Nadu, India")
-        conceptnet.conceptnet_textgraph("The Chennai Metropolitan Area is the fourth most populous metropolitan area in India")
+        text=open("ConceptNet5Client.txt","r")
+        textread=text.read()
+        conceptnet.conceptnet_textgraph(textread)
 	print "==================================================="
 	print "ConceptNet Emotions "
 	print "==================================================="

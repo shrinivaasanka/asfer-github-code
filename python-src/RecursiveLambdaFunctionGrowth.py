@@ -339,11 +339,14 @@ class RecursiveLambdaFunctionGrowth(object):
 		else:
 			return rw_words_list
 
-	def grow_lambda_function3(self,text,level=3):
+	def grow_lambda_function3(self,text="None",level=3,textgraph=None):
 		stpairs=[]
 		maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=("",0.0)
-		definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text,level)
-		definitiongraph=definitiongraph_merit[0]
+                if textgraph==None:
+		    definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text,level)
+		    definitiongraph=definitiongraph_merit[0]
+                else:
+                    definitiongraph=textgraph
 		sentiment=SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(definitiongraph)
 		apsp=nx.all_pairs_shortest_path(definitiongraph)
 		for a in definitiongraph.nodes():
@@ -402,7 +405,7 @@ class RecursiveLambdaFunctionGrowth(object):
 		bose_einstein_intrinsic_fitness=self.bose_einstein_intrinsic_fitness(definitiongraph)
 		print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:",bose_einstein_intrinsic_fitness
 
-		print "grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+                print "grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :",maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
 
 		print "grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:",RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
 
@@ -411,7 +414,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict["korner_entropy"]=self.entropy
 		intrinsic_merit_dict["density"]=density
 		intrinsic_merit_dict["bose_einstein_intrinsic_fitness"]=bose_einstein_intrinsic_fitness
-		intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
+                if textgraph==None:
+		    intrinsic_merit_dict["recursive_gloss_overlap_intrinsic_merit"]=definitiongraph_merit[1]
 		intrinsic_merit_dict["empath_sentiment"]=sentiment
 
 		write_dot(definitiongraph,"RecursiveLambdaFunctionGrowth.dot")
