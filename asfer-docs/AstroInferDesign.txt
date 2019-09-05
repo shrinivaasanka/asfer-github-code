@@ -14814,3 +14814,18 @@ measures of the ConceptNet text graph similar to WordNet text graph in Recursive
 5.Special concept vertex '/c/en/\xb0_c' is in all the paths found by least common ancestor algorithm and therefore the graph has a hub-spoke star structure always. This node has been filtered by a new function remove_noise() to avoid star graphs. To increase path quality more vertices might be added whenever deemed necessary in remove_noise()
 6.Exception handling for non-existent paths has been included.
 7.Resulting filtered textgraph has been drawn in testlogs/ConceptNet5Client5.7.TextGraph.31August2019.png and is more like a sunflower (set of subsets of vertices having pairwise intersection forming petals).
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+706.(FEATURE) Recursive Lambda Function Growth - Machine Translation - updated implementation - 5 September 2019
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.machine_translation() function in RecursiveLambdaFunctionGrowth.py has been changed to create a summary text in the destination language
+similar to create_summary()
+2.As done in create_summary() summary translated text in target language is either created by traversing the textgraph or without traversing the textgraph
+3.Presently translation creates only simple sentences. Complex sentences could be created in next iteration by compounding two neighbouring sentences.
+4.Goslate and googletrans python libraries have been imported for translation because of frequent Invalid Word errors in PyDictionary()
+5.Clauses specific to Goslate, googletrans and PyDictionary have been created along with exception handlers
+6.Caveat is rate limitations of Google Translate REST API underlying all previous three translate libraries which might or might not work depending on load and requested time point.
+7.If there are exceptions, source language edges are populated in translation text graph
+8.logs for previous commit are at testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.5September2019 - because of Google translate REST API ratelimit translation textgraph could not be created
+9.nondictionaryword() filter has been commented in RecursiveGlossOverlap Classifier because of slowdown.
+
