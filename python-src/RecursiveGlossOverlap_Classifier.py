@@ -152,7 +152,8 @@ def RecursiveGlossOverlapGraph(text,level=3):
 	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
-	freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts and not nondictionaryword(w)]
+	#freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts and not nondictionaryword(w)]
+	freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts]
 
 	current_level = 1
 	nodewithmaxparents = ''

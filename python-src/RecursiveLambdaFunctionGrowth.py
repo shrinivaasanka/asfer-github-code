@@ -27,11 +27,13 @@ from nltk.corpus import wordnet as wn
 import math
 import operator
 import difflib
-from ConceptNet5Client import ConceptNet5Client
+import ConceptNet5Client
 from WordNetPath import path_between
 import SentimentAnalyzer
 from networkx.drawing.nx_pydot import write_dot
 from PyDictionary import PyDictionary
+from googletrans import Translator
+import goslate
 
 #Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 #Recursive Gloss Overlap graph of a text
@@ -48,11 +50,16 @@ class RecursiveLambdaFunctionGrowth(object):
 		self.lambda_composition=""
 		self.graph_tensor_neuron_network_intrinsic_merit=1.0
 		self.entropy=10000000000.0
-		self.conceptnet=ConceptNet5Client()
+		self.conceptnet=ConceptNet5Client.ConceptNet5Client()
 		#self.Similarity="ConceptNet"
 		self.Similarity="WordNet"
 		self.ClosedPaths=True
 		self.dictionary=PyDictionary()
+                self.goslatetranslator=goslate.Goslate()
+                self.googletranslator=Translator()
+                #self.machinetranslator="googletrans"
+                self.machinetranslator="pydictionary"
+                #self.machinetranslator="goslate"
 
 	def get_next_tree_traversal_id(self,x,y):
 		if y-x == 1 or x-y == 1:
@@ -393,8 +400,8 @@ class RecursiveLambdaFunctionGrowth(object):
 		intrinsic_merit_dict={}
 		print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:",self.graph_tensor_neuron_network_intrinsic_merit
 
-		print "grow_lambda_function3(): Machine Translation Example - English to Kannada:"
-		self.machine_translation(definitiongraph, "kn")
+		print "grow_lambda_function3(): Machine Translation Example :"
+		self.machine_translation(3, definitiongraph, "hi", 0.9, True, True)
 
 		self.korner_entropy(definitiongraph)
 		print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:",self.entropy
@@ -424,17 +431,126 @@ class RecursiveLambdaFunctionGrowth(object):
 		print "intrinsic_merit_dict:",intrinsic_merit_dict
 		return intrinsic_merit_dict 
 
-	def machine_translation(self, definitiongraph, languagecode):
+	def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8, graphtraversedsummary=False, shortestpath=False):
 		nodes=definitiongraph.nodes()
 		edges=definitiongraph.edges()
 		translationgraph=nx.DiGraph()
 		for k, v in edges:
-			ktrans=self.dictionary.translate(k,languagecode)
-			vtrans=self.dictionary.translate(v,languagecode)
-			print "k=",k,",v=",v,",ktrans=",ktrans,",vtrans=",vtrans
-			translationgraph.add_edge(ktrans, vtrans)
-			translationgraph.add_edge(vtrans, ktrans)
-		print "TextGraph Translated to ",languagecode,":",translationgraph		
+			print "k=",k,",v=",v
+                        if self.machinetranslator=="pydictionary":
+                            try:
+			        ktrans=self.dictionary.translate(k,languagecode)
+			        vtrans=self.dictionary.translate(v,languagecode)
+			        print "ktrans=",ktrans,",vtrans=",vtrans
+			        translationgraph.add_edge(ktrans, vtrans)
+			        translationgraph.add_edge(vtrans, ktrans)
+                            except Exception as e:
+                                print "Exception:",e
+                                translationgraph.add_edge(k, v)
+                                translationgraph.add_edge(v, k)
+                        if self.machinetranslator=="goslate":
+                            try:
+			       ktrans=self.goslatetranslator.translate(k,languagecode)
+			       print "ktrans=",ktrans
+			       vtrans=self.goslatetranslator.translate(v,languagecode)
+			       print "vtrans=",vtrans
+			       translationgraph.add_edge(ktrans, vtrans)
+			       translationgraph.add_edge(vtrans, ktrans)
+                            except Exception as e:
+                               print "Exception:",e
+			       translationgraph.add_edge(k, v)
+			       translationgraph.add_edge(v, k)
+                        if self.machinetranslator=="googletrans":
+                            try:
+			       ktrans=self.googletranslator.translate(k,languagecode)
+			       print "ktrans=",ktrans
+			       vtrans=self.googletranslator.translate(v,languagecode)
+			       print "vtrans=",vtrans
+			       translationgraph.add_edge(ktrans.text, vtrans.text)
+			       translationgraph.add_edge(vtrans.text, ktrans.text)
+                            except Exception as e:
+                               print "Exception:",e
+			       translationgraph.add_edge(k, v)
+			       translationgraph.add_edge(v, k)
+		print "TextGraph Translated to ",languagecode,":",translationgraph
+		definitiongraph=translationgraph
+                definitiongraph.remove_edges_from(definitiongraph.selfloop_edges())
+		if graphtraversedsummary==True:
+			#This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
+			#Hence approximating the transversal with a k-core which is the Graph counterpart of
+			#Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
+			kcore=nx.k_core(definitiongraph,corenumber)
+			print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
+			print "=========================="
+			print "Dense subgraph edges:"
+			print "=========================="
+			print kcore.edges()
+			print "=========================="
+			if shortestpath == False:
+				for e in kcore.edges():
+					for s1 in wn.synsets(e[0]):
+						for s2 in wn.synsets(e[1]):
+								if s1.path_similarity(s2) > pathsimilarity:
+									lowestcommonhypernyms=s1.lowest_common_hypernyms(s2)
+									for l in lowestcommonhypernyms:
+										for ln in l.lemma_names():
+											print e[0]," ",	self.dictionary.translate("and",languagecode)," ",e[1]," ",self.dictionary.translate("are",languagecode)," ",ln,".",
+			else:
+				#Following is the slightly modified version of shortest_path_distance() function
+				#in NLTK wordnet - traverses the synset path between 2 synsets instead of distance
+				summary={}
+				intermediates=[]
+				for e in kcore.edges():
+					for s1 in wn.synsets(e[0]):
+						for s2 in wn.synsets(e[1]):
+							s1dict = s1._shortest_hypernym_paths(False)
+							s2dict = s2._shortest_hypernym_paths(False)
+							s2dictkeys=s2dict.keys()
+							for s,d in s1dict.iteritems():
+								if s in s2dictkeys:
+									slemmanames=s.lemma_names()
+									if slemmanames[0] not in intermediates:
+										intermediates.append(slemmanames[0])
+					if len(intermediates) > 3:
+						sentence1=e[0] + " is a " + intermediates[0]
+						summary[sentence1]=self.relevance_to_text(sentence1,text) 
+						for i in xrange(len(intermediates)-2):
+							sentence2= intermediates[i] + " " + 		self.dictionary.translate("is",languagecode)+" "+self.dictionary.translate("a",languagecode)+" "+ intermediates[i+1] + "."
+							if sentence2 not in summary:
+								summary[sentence2]=self.relevance_to_text(sentence2,text)
+						sentence3=intermediates[len(intermediates)-1] + " " + 		self.dictionary.translate("is",languagecode)+" "+self.dictionary.translate("a",languagecode)+" " + e[1]
+						summary[sentence3]=self.relevance_to_text(sentence3,text)
+						intermediates=[]
+				sorted_summary=sorted(summary,key=operator.itemgetter(1), reverse=True)
+				print "==================================================================="
+				print "Sorted summary created from k-core dense subgraph of text RGO"
+				print "==================================================================="
+				for s in sorted_summary:
+					print s,
+			        return (sorted_summary, len(sorted_summary))
+		else:
+			definitiongraph_merit=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(text)
+			definitiongraph=definitiongraph_merit[0]
+			textsentences=text.split(".")
+			lensummary=0
+			summary=[]
+			definitiongraphclasses=RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
+			print "Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:"
+			prominentclasses=int(len(definitiongraphclasses[0])/2)
+			print "Total number of classes:",len(definitiongraphclasses[0])
+			print "Number of prominent classes:",prominentclasses
+			for c in definitiongraphclasses[0][:prominentclasses]:
+				if len(summary) > len(textsentences) * 0.5:
+					return (summary,lensummary)
+				for s in textsentences:
+					classsynsets=wn.synsets(c[0])
+					for classsynset in classsynsets:
+						if self.relevance_to_text(classsynset.definition(), s) > 0.41:
+							if s not in summary:
+								summary.append(s)
+								lensummary += len(s)
+								print s,
+			return (summary,lensummary)		
 
 	#KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
 	def korner_entropy(self, definitiongraph):
