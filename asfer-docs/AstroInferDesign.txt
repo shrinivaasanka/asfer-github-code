@@ -14829,3 +14829,20 @@ similar to create_summary()
 8.logs for previous commit are at testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.5September2019 - because of Google translate REST API ratelimit translation textgraph could not be created
 9.nondictionaryword() filter has been commented in RecursiveGlossOverlap Classifier because of slowdown.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+707.(FEATURE) Recursive Lambda Function Growth - Machine Translation - simplified - 6 September 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.machine_translation() function in RecursiveLambdaFunctionGrowth.py has been simplified to remove unnecessary arguments and clauses and do the graph traversal and create summary in target language from it by default. This is because relevance_to_text() function which chooses sentences from text based on some distance measure to create summary is not necessary during translation
+2.3 clauses for choice of translator - googletrans, goslate, PyDictionary - have been simplified to translate the connectives "and" and "are" to respective target language.
+3.3 logs of translation for Hindi, Kannada and Telugu have been committed to testlogs:
+	testlogs/RecursiveLambdaFunctionGrowth.log.Telugu.MachineTranslation.6September2019
+	testlogs/RecursiveLambdaFunctionGrowth.log.Kannada.MachineTranslation.6September2019
+	testlogs/RecursiveLambdaFunctionGrowth.log.Hindi.MachineTranslation.6September2019
+4.Previous logs have some intermittent errors because of Google translate API ratelimit.
+5.ConceptNet is an alternative to Google Translate which is a multilingual ontology.
+5.Translated text printed has some weird words not relevant to the text subject because of encoding/decoding problems of the language fonts.
+6.Normal english language summary of the text - from create_summary() - is also printed
+7.Usual machine translations are rule based and recently transformers (sequence attention neural network) are gaining traction.Main motivation of NeuronRain is to implement an alternative, non-statistical, formal languages theory based framework for analyzing texts exploiting deep linguistic structure in them 
+8.This formal languages focussed approach to measure merit of texts - NER, translation, extracting lambda expression from a text etc., is superior to inferring a neural network from text because text is approximated to a Turing machine indirectly by recursively grown lambda expressions which has strong cognitive psychology basis - Grounded Cognition - "phrasal structures are embedded recursively" 
+9.As far as machine translation is concerned, instead of sequence transducers, text graph of one language is mapped to text graph of another language bijectively thus preserving deep structure and meaning irrespective of language - minimizes "lost in translation".
+
