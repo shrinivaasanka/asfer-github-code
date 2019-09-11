@@ -17,19 +17,14 @@
 #--------------------------------------------------------------------------------------------------------
 
 import PyPDF2
-from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 from datetime import datetime
 import sys
 import math
 from sympy.combinatorics.partitions import IntegerPartition
 from scipy import stats
-from pyspark.sql import SparkSession
-from pyspark.sql import DataFrameStatFunctions as dfsfunc
-from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.stat import Correlation 
-from pyspark.sql.types import IntegerType
 import pandas
 import numpy as np
+import json
 
 class HRAnalytics(object):
 	def __init__(self):
@@ -87,7 +82,20 @@ class HRAnalytics(object):
 		print "Kendall Tau Rank Correlations - Designations and Durations: tau=",tau2,", pvalue=",pvalue2
 		print "Kendall Tau Rank Correlations - Durations and Remunerations: tau=",tau3,", pvalue=",pvalue3
 
+        def pipldotcom_analytics(self,first_name=None,last_name=None,email=None):
+                from piplapis.search import SearchAPIRequest
+                request = SearchAPIRequest(email=email, first_name=first_name, last_name=last_name, api_key='20307is19nx0tu0mar4zt987')
+                response = request.send()
+                print "pipldotcom_analytics(): JSON response for query (",first_name,",",last_name,",",email,"):"
+                jsonloads = json.loads(response.to_json())
+                print json.dumps(jsonloads,indent=5,sort_keys=True)
+
         def linkedin_dataset_tenure_analytics(self,linkedindata):
+                from pyspark.sql import SparkSession
+                from pyspark.sql import DataFrameStatFunctions as dfsfunc
+                from pyspark.ml.feature import VectorAssembler
+                from pyspark.ml.stat import Correlation 
+                from pyspark.sql.types import IntegerType
                 spsess=SparkSession.builder.master("local[4]").appName("People Analytics").getOrCreate()
                 df=spsess.read.format("csv").option("header","true").load(linkedindata)
                 #tenures=sorted(df.groupBy(['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']).agg(['c_name']).collect())
@@ -194,6 +202,7 @@ class HRAnalytics(object):
 			return False
 			
 	def rlfg_intrinsic_merit(self, profile_contents):
+                from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 		rlfg=RecursiveLambdaFunctionGrowth()
 		rlfg.grow_lambda_function3(profile_contents,2)
 
@@ -236,15 +245,18 @@ if __name__=="__main__":
 	#hranal.least_energy_intrinsic_merit()
 	#hranal.experiential_intrinsic_merit()
 	#profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
-	profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+	#profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
-	number_of_connections=hranal.parse_connections(profile_text)
-	hranal.least_energy_intrinsic_merit()
-	hranal.experiential_intrinsic_merit(number_of_connections)
-	designations=[1,2,3,4,5,6,7]
-	remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
-	durations=[0.7,5,0.1,2,3,2,0.5]
-	hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
-        hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
+	#number_of_connections=hranal.parse_connections(profile_text)
+	#hranal.least_energy_intrinsic_merit()
+	#hranal.experiential_intrinsic_merit(number_of_connections)
+	#designations=[1,2,3,4,5,6,7]
+	#remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
+	#durations=[0.7,5,0.1,2,3,2,0.5]
+	#hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
+        #hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
 	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
+        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
+        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
+        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
