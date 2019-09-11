@@ -14846,3 +14846,16 @@ similar to create_summary()
 8.This formal languages focussed approach to measure merit of texts - NER, translation, extracting lambda expression from a text etc., is superior to inferring a neural network from text because text is approximated to a Turing machine indirectly by recursively grown lambda expressions which has strong cognitive psychology basis - Grounded Cognition - "phrasal structures are embedded recursively" 
 9.As far as machine translation is concerned, instead of sequence transducers, text graph of one language is mapped to text graph of another language bijectively thus preserving deep structure and meaning irrespective of language - minimizes "lost in translation".
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+708. (FEATURE) Social Network Analysis - People Analytics - PIPL.com python API integration - Syllable based name clustering - 11 September 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.PIPL.com (people dot com) is a people search engine which tries to unqiuely identify a person based on name, email etc.,
+2.PIPL.com python API have been imported in SocialNetworkAnalysis_PeopleAnalytics.py and invoked in a newly defined function pipldotcom_analytics() which has query parameters: first name, last name and email
+3.pipldotcom_analytics() has been invoked on 3 example emails and names and JSON response is printed in logs at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.11September2019 which contains identities, photos, followers and relationships sourced from multiple social networks (linkedin, twitter, facebook, google, outlook etc.,)
+4.Example email queries are: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com for the name of the author - "Srinivasan Kannan"
+5.Previous query is a perfect example of multiple english name spellings and online identities author has for the single Hindi/Tamizh/Sanskrit name of the author "Sri-Ni-Va-San": Shrinivas Kannan, Srinivasan Kannan, Shrinivaasan Kannan (Shrinivaasan Ka)
+6.This multiple name spelling problem arises in English because of multiple alphabets per syllable (hyphenated previously) and could easily cause identity confusion while in Tamizh, Hindi and Sanskrit name syllables have single vowel+consonant compound alphabets
+7.Finding and clustering similarly named people and proving their uniqueness is a challenge in BigData because of spelling conflicts in English for similarly pronounced names.
+8.Syllable based (acoustic) linguistic clustering of names by hyphenation previously as opposed to edit distance based clustering is thus a good model to classify similar names of different spellings.
+9.Apart from Syllables, the 3 name spellings in previous example have same meaning which requires a Name ontology (NameNet) for semantically relating names of same meaning.
+10. Names are non-dictionary words and creating a NameNet could be exhaustive and daunting.
