@@ -14865,3 +14865,26 @@ similar to create_summary()
 References:
 ----------
 708.1 Word Hy-phen-a-tion by Com-put-er - [Liang - Ph.D Dissertation] - http://www.tug.org/docs/liang/liang-thesis.pdf - describes some difficult hyphenations and syllable boundaries in typesetting 
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+709. (FEATURE) Social Network Analysis - People Analytics - Contextual Name Parsing - 14 September 2019
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.Name Parsing is an open problem and there are many tools already available (IBM Name Parser, Python Human Name Parser,...) 
+2.In the context of People Analytics, it is often required to find the first name, second name, middle name, surname, last name etc., from full names in a BigData set and there are cultural barriers e.g some countries have convention of <second name> <first name> and others have <first name> <second name> and <second name> is initial,surname or name of the parent/spouse.
+3.Because of cultural barriers across nations parsing first name or second name in the absence of some context (e.g. an ID card) is difficult and prone to error.
+4.New function nameparser() has been defined in SocialNetworkAnalysis_PeopleAnalytics.py which accepts full name, a regular expression and an ID contextual text as arguments.
+5.nameparser() searches for the regular expression pattern and the tokenized full name in the ID contextual text and tries to infer First Name and Second Name.
+6.An example name parsing for the author and failure of Python Human Name Parser has been demonstrated - Some past forum mails of the author from https://marc.info/?a=104547613400001&r=1&w=2 and https://marc.info/?l=apache-modules&m=105610024116012 sent from official mail id: Kannan.Srinivasan@Sun.COM have wrong first (Kannan) and last (Srinivasan) names while final salutation in the emails contain the name per Indian convention as "K.Srinivasan" and Python Human Name parser fails to parse the names correctly in the absence of this context.
+7.NeuronRain nameparser() defined in this commit is passed the email texts as contexts and the nameparser() searches for places in the emails containing the tokens of the full name by regular expression pattern. 
+8.Following lines define two named regex patterns which are searched in the email ID contexts mentioned in (6) as per Indian Cultural Convention of Second Name or Initial followed by First Name:
+hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+).(?P<first_name>\w+)",emailcontext_text)
+hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+) (?P<first_name>\w+)",emailcontext_text)
+9.nameparser() returns the regex groupdicts for the matched named-parentheses
+10.nameparser() has been made generic to suit all kinds of regular expressions for names and ID contexts and can be invoked for any social or professional network names. ID Context could be text from any source (e.g emails, texts, ID card texts) and regex pattern argument must comply with the ID context - if Context argument is an ID card text having Name, Address and Parent Names, UniqueID etc., regex pattern must accordingly follow e.g "Parent Name:(?P<parent_name>\w+)"
+11.Logs for this commit are at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.14September2019 and email ID contexts at testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/
+
+References:
+----------
+709.1 Python nameparser - https://nameparser.readthedocs.io/en/latest/
+709.2 NameAPI - https://www.nameapi.org/en/demos/name-parser/ - REST API which supports culture specifics
+709.3 IBM Name Parser - https://www.ibm.com/support/knowledgecenter/en/SSEV5M_5.0.0/com.ibm.iis.gnm.parsingnames.doc/topics/gnr_np_con_parsingnamesusingnameparser.html
