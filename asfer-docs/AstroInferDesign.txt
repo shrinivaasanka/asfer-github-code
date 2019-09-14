@@ -14849,7 +14849,7 @@ similar to create_summary()
 9.As far as machine translation is concerned, instead of sequence transducers, text graph of one language is mapped to text graph of another language bijectively thus preserving deep structure and meaning irrespective of language - minimizes "lost in translation".
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-708. (FEATURE) Social Network Analysis - People Analytics - PIPL.com python API integration - Syllable based name clustering - 11 September 2019
+708. (FEATURE) Social Network Analysis - People Analytics - PIPL.com python API integration - Syllable based name clustering - 11 September 2019 and 14 September 2019
 ----------------------------------------------------------------------------------------------------------------------------------------------
 1.PIPL.com (people dot com) is a people search engine which tries to unqiuely identify a person based on name, email etc.,
 2.PIPL.com python API have been imported in SocialNetworkAnalysis_PeopleAnalytics.py and invoked in a newly defined function pipldotcom_analytics() which has query parameters: first name, last name and email
@@ -14861,3 +14861,7 @@ similar to create_summary()
 8.Syllable based (acoustic) linguistic clustering of names by hyphenation previously as opposed to edit distance based clustering is thus a good model to classify similar names of different spellings.
 9.Apart from Syllables, the 3 name spellings in previous example have same meaning which requires a Name ontology (NameNet) for semantically relating names of same meaning.
 10. Names are non-dictionary words and creating a NameNet could be exhaustive and daunting.
+
+References:
+----------
+708.1 Word Hy-phen-a-tion by Com-put-er - [Liang - Ph.D Dissertation] - http://www.tug.org/docs/liang/liang-thesis.pdf - describes some difficult hyphenations and syllable boundaries in typesetting 
