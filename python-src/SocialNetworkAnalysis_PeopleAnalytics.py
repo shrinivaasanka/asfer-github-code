@@ -25,6 +25,8 @@ from scipy import stats
 import pandas
 import numpy as np
 import json
+import nameparser
+import re
 
 class HRAnalytics(object):
 	def __init__(self):
@@ -81,6 +83,24 @@ class HRAnalytics(object):
 		print "Kendall Tau Rank Correlations - Designations and Remunerations: tau=",tau1,", pvalue=",pvalue1
 		print "Kendall Tau Rank Correlations - Designations and Durations: tau=",tau2,", pvalue=",pvalue2
 		print "Kendall Tau Rank Correlations - Durations and Remunerations: tau=",tau3,", pvalue=",pvalue3
+
+        def nameparser(self,full_name,pattern,context):
+                name=nameparser.HumanName(full_name)
+                print "HumanName Parser - parsed name (wrong):",repr(name)
+                nametokenized=full_name.split(" ")
+                print "nametokenized = ",nametokenized
+                contexttokenized=context.splitlines()
+                for n in nametokenized:
+                    for m in contexttokenized:
+                        if n in m:
+                            print "NeuronRain Human Name Parsing by Context - nameparser(): name substring - ",n," - found in context = ",m
+                            regex=re.search(pattern,m)
+                            if regex is None:
+                                continue 
+                            regexgroupdict=regex.groupdict()
+                            for k,v in regexgroupdict.iteritems():
+                                print "NeuronRain Human Name Parsing by Context - nameparser():",k,":",v
+                            return regexgroupdict
 
         def pipldotcom_analytics(self,first_name=None,last_name=None,email=None):
                 from piplapis.search import SearchAPIRequest
@@ -257,6 +277,14 @@ if __name__=="__main__":
         #hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
 	#profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
 	#hranal.rlfg_intrinsic_merit(profile_text)
-        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
-        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
-        hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
+        #hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
+        #hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
+        #hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
+        emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
+        for emailcontext in emailcontexts:
+            ecf=open(emailcontext)
+            emailcontext_text=ecf.read()
+            print "============================================================================="
+            hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+).(?P<first_name>\w+)",emailcontext_text)
+            print "============================================================================="
+            hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+) (?P<first_name>\w+)",emailcontext_text)
