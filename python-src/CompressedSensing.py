@@ -33,6 +33,8 @@ import ImageToBitMatrix
 import json
 from scipy.sparse.linalg import lsmr
 from scipy.linalg import pinv
+from hyphen import Hyphenator
+from TextCompression import VowellessText
 
 class CompressedSensing(object):
 	def __init__(self):
@@ -106,9 +108,19 @@ class CompressedSensing(object):
 		print "Size of sketch:(",len(sketch),"*",len(sketch[0]),")"
 		print "Size of Original Image:(",len(self.image_matrix),"*",len(self.image_matrix[0]),")"
 
+        def syllable_boundary_text_compression(self,text):
+                hyph_en=Hyphenator("en_US")
+                syllables=hyph_en.syllables(unicode(text))
+                syll_comp_text=[]
+                vtext=VowellessText()
+                for s in syllables:
+                    syll_comp_text.append(vtext.removevowels(s))
+                print "Vowelless Syllable Vector Compression for text - ",text,":",(syllables,"-".join(syll_comp_text))
+                return (syllables,"-".join(syll_comp_text))
 
 if __name__=="__main__":
-	input_image8 = ImageToBitMatrix.image_to_bitmatrix("./testlogs/PictureOf8_1.jpg")
+	#input_image8 = ImageToBitMatrix.image_to_bitmatrix("./testlogs/PictureOf8_1.jpg")
 	csensing=CompressedSensing()
-	csensing.sketch(input_image8)
-	csensing.decompress()
+	#csensing.sketch(input_image8)
+	#csensing.decompress()
+        sylltxt=csensing.syllable_boundary_text_compression("Beautiful")
