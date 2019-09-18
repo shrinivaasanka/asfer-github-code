@@ -14901,3 +14901,25 @@ References:
 7.Syllable space embedding for similarity of names in NeuronRain is different from Phonetic Match Rating algorithm (https://en.wikipedia.org/wiki/Match_rating_approach) which also removes vowels but does not consider syllable boundaries or hyphenations.
 8.CompressedSensing Python implementation has been changed to include a new function syllable_boundary_text_compression() which invokes PyHyphen python hyphenator and gets syllable vector of a string and compressed syllable vector by removevowels() in TextCompression implementation. 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+711. (FEATURE) Social Network Analysis - People Analytics - Contextual Name Parsing and Syllable Vector Compression of Strings 
+- 18 September 2019
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.Regex Pattern Matching in nameparser() has been changed to ignore case by flag re.IGNORECASE
+2.Few more ID context texts are being regex matched in nameparser() which are parsed texts and OCRs (by pdftotext and gocr) from pdf and image IDs of the author uploaded in https://sourceforge.net/projects/acadpdrafts/files/?source=navbar - Public Distribution System ID card linked to Unique Aadhaar IDs and Permanent Account Number (PAN) which is Aadhaar linked - https://sourceforge.net/projects/acadpdrafts/files/NewRationCard2.pdf/download, https://sourceforge.net/projects/acadpdrafts/files/NewRationCard1.pdf/download and https://sourceforge.net/projects/acadpdrafts/files/PAN.jpg/download
+3.These three ID cards are examples of Both Indian convention of Second name followed by First name and International standard of First name followed by Second name. https://sourceforge.net/projects/acadpdrafts/files/NewRationCard2.pdf/download, https://sourceforge.net/projects/acadpdrafts/files/NewRationCard1.pdf/download have Unique IDs linked to both formats but in different languages - Srinivasan Kannan கண்ணன சீனிவாசன
+4.nameparser() is invoked on previous three ID contexts for full name "Kannan Srinivasan" and first and second names are printed
+5.syllable_boundary_text_compression() from CompressedSensing implementation is invoked for 3 different spellings of same name "Shrinivaasan, Shrinivas, Srinivasan" and syllable vectors (and their vowelless versions) are printed:
+==============================================================================
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Shrinivaasan : ([u'Shrini', u'vaasan'], u'Shr_n_-v__s_n')
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Shrinivas : ([u'Shrini', u'vas'], u'Shr_n_-v_s')
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Srinivasan : ([u'Srini', u'vasan'], u'Sr_n_-v_s_n')
+======================================================================
+6.Distance between these syllable vectors has to be phonetic by finding syllable-wise audio similarity - every syllable is an audio waveform and two names are compared by syllable distances between vectors of waveforms e.g ["Shrini","vas"] and ["Srini","vasan"]. This has been omitted presently because syllable-to-audio tools are required.
+7.Comparison to Match Rating Codex from JellyFish is also printed:
+Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]: [u'SHRVSN', u'SHRNVS', u'SRNVSN']
+8.logs for this commit and previous are at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.18September2019
+
