@@ -14888,3 +14888,16 @@ References:
 709.1 Python nameparser - https://nameparser.readthedocs.io/en/latest/
 709.2 NameAPI - https://www.nameapi.org/en/demos/name-parser/ - REST API which supports culture specifics
 709.3 IBM Name Parser - https://www.ibm.com/support/knowledgecenter/en/SSEV5M_5.0.0/com.ibm.iis.gnm.parsingnames.doc/topics/gnr_np_con_parsingnamesusingnameparser.html
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+710. (THEORY and FEATURE) Compressed Sensing for Texts - Syllable Vector Vowelless Text Compression - 18 September 2019 - Related to 2, 708
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Compressed Sensing which is mostly restricted to digital signal and image processing, reconstructs original signal from lossy signal with high probability.(https://en.wikipedia.org/wiki/Compressed_sensing)
+2.Vowelless Text Compression which compresses english texts by stripping vowels also creates a lossy compressed signal from which actual text has to be recovered with high probability and thus is a Text Compressed Sensing.
+3.Existing Vowelless Text Compression implementation in neuronRain relies on Hidden Markov Model estimation to infer maximum likely missing vowels.
+4.Syllables of a string in any language are phonetic divisions in the string.
+5.Syllable boundary name clustering for clustering similar Names differing in spellings mentioned previously maps each string to a vector of syllables which is audio/linguistic representation of the string
+6.Thus every n-syllable string irrespective of languages can be represented in an n-dimensional syllable space as a syllable vector and distance between two strings is the L2 norm in this syllable space - each syllable is phonetically represented than by a script. This is an alternative word2vec embedding model and is a better distance measure than levenshtein edit distance because of language script independence - 2 strings of different natural languages can be compared by phonetic syllable distance.
+7.Syllable space embedding for similarity of names in NeuronRain is different from Phonetic Match Rating algorithm (https://en.wikipedia.org/wiki/Match_rating_approach) which also removes vowels but does not consider syllable boundaries or hyphenations.
+8.CompressedSensing Python implementation has been changed to include a new function syllable_boundary_text_compression() which invokes PyHyphen python hyphenator and gets syllable vector of a string and compressed syllable vector by removevowels() in TextCompression implementation. 
+
