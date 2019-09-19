@@ -14179,12 +14179,12 @@ But Gamma function is:
 and by Stirling approximation:
 	log k! ~= log Gamma(k+1) = (k+0.5)*log k - k -1 + 0.5*log 2*pi
 Substituting in the summation:
-Total time for binary searching k adjacent tile segment arithmetic progressions = k log N - log (k+1) - (2k + 1)log k + 2(k+1) + log (2*pi)
+Total time for binary searching k adjacent tile segment arithmetic progressions = k log N - log (k+1) - (2k + 1)log k + 2(k+1) - log (2*pi)
 
 A variant approximation of this search time summation has been described in section 5 of http://sourceforge.net/projects/acadpdrafts/files/DiscreteHyperbolicPolylogarithmicSieveForIntegerFactorization_PRAM_TileMergeAndSearch_And_Stirling_Upperbound_updateddraft.pdf/download
 
 if k is O(loglogN) from previous derivation of maximum number of tiles between 2 approximate prime factors, in average case atleast one factor can be found in average time:
-	loglogN * log N - log (loglogN + 1) - (2loglogN + 1)logloglogN + 2(loglogN+1) + log (2*pi)
+	loglogN * log N - log (loglogN + 1) - (2loglogN + 1)logloglogN + 2(loglogN+1) - log (2*pi)
 	<= O(logN * loglogN)
 
 References:
@@ -14923,3 +14923,20 @@ Vowelless Syllable Vector Compression for text -  Srinivasan : ([u'Srini', u'vas
 Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]: [u'SHRVSN', u'SHRNVS', u'SRNVSN']
 8.logs for this commit and previous are at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.18September2019
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+712. (THEORY) Computational Geometric Factorization - Gamma Approximation of Sum of Binary Search times - Summation for first sqrt(N) tiles and why non-average case sequential factorization is difficult - related to 668 - 19 September 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+For sane binary search length of the tile must be > 1 => N/(k^2 + k) > 1 (or) k^2 + k < N
+=> k^2 + k - N < 0
+=> solving the quadratic, k = -1 + sqrt(1 + 4N) / 2
+=> k = -0.5 +/- 0.5*sqrt(1 + 4N)
+For large N, k < 0.5*sqrt(4N) (or) k < sqrt(N)
+
+Total time for binary searching k=sqrt(N) adjacent tile segment arithmetic progressions by gamma approximation = sqrt(N)log N - log (sqrt(N)+1) - (2sqrt(N) + 1)log(sqrt(N)) + 2(sqrt(N)+1) - log (2*pi)
+= sqrt(N)logN + 2sqrt(N) + 2 - log(sqrt(N)+1) - 2sqrt(N)log(sqrt(N)) - log(sqrt(N)) - log(2*pi)
+<= sqrt(N)logN + 2sqrt(N) + 2 - log(sqrt(N)) - 2sqrt(N)log(sqrt(N)) - log(sqrt(N)) -log(2*pi)
+<= 2sqrt(N)log(sqrt(N)) + 2sqrt(N) + 2 - log(sqrt(N)) - 2sqrt(N)log(sqrt(N)) - log(sqrt(N)) - log(2*pi)
+<= 2sqrt(N) + 2 - 2log(sqrt(N)) - log(2*pi)
+<= 2*(sqrt(N) - log(sqrt(N)) + 1) - log(2*pi)
+<= 2*(sqrt(N) - log(sqrt(N)))
+which is exponential in logN still shaving off only a logarithm from squareroot of N. This necessitates finding approximate factors close to actual factors in average case sequential optimization previously implying factorization (finding atleast one factor) is in average-P which is an average lowerbound for all possible integers and different from P. Therefore deterministic factorization to find one factor or all factors requires NC (PRAM or BSP) parallelism - NeuronRain Spark Factorization which is both a PRAM (multicore) and BSP(cloud) model finds all factors. It has to be noted previous average case sequential time is for finding atleast one factor.
