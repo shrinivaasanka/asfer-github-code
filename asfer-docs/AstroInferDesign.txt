@@ -14753,7 +14753,7 @@ References:
 700.1 Covering a set by arithmetic progressions is NP-complete - [Lenwood Heath - Virginia Tech] - https://vtechworks.lib.vt.edu/bitstream/handle/10919/19566/TR-89-25.pdf?sequence=3&isAllowed=y
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 654  - 21 August 2019
+701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 588, 654  - 21 August 2019, 22 September 2019
 --------------------------------------------------------------------------------------------------------------------------------------------
 Category Theory of [Eilenberg-MacLane] abstracts whole of mathematics into following:
 	701.1 Category C is a Set of Objects
@@ -14766,6 +14766,8 @@ EventNet Tensor Products defined and implemented in NeuronRain and applied as in
 	701.5 Set of Actors in an Event Category are Objects of the Category
 	701.6 Every intra-event interaction between any two actor objects a,b of an event category E is a Morphism - f:a-b
 	701.7 Every inter-event causation between two Event Categories E1 and E2 (E1 causes E2) is a Functor - for each actor object x in E1, F(x) is in E2 and for each morphism f:a-b in E1, morphism F(f):F(a)-F(b) is in E2
+
+As mentioned in previous sections on EventNet Tensor Product merit of Large Scale Visuals, EventNet Tensor formalizes logical time and causation. Rank of a Tensor T is the minimum number of Simple Tensors that sum to T where Simple Tensors are factorizable products of tensors. This implies Logical Time Tensor can be written as sum of products of Tensors implying seemingly linear 1-dimensional time is decomposable to tensor components basis. This has implications for physical sciences and experiments involving spacetime - Time could be multidimensional and any spatial object can be projected to any of the time tensor component axes similar to space. From previous Category Theory definition, EventNet Causality Functor Graph can also be written as sum of products of Tensors.
 
 References:
 ----------
