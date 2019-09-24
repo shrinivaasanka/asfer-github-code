@@ -19,14 +19,17 @@
 import sys
 import math
 import random
-import Streaming_AbstractGenerator
 from sklearn.metrics.cluster import adjusted_rand_score
 from sklearn.metrics import adjusted_mutual_info_score
 from sympy.solvers.diophantine import diop_general_sum_of_squares
 from sympy.abc import a, b, c, d, e, f
-from complement import toint
+from collections import defaultdict
+import hashlib
+
+Voting_Machine_dict=defaultdict(list)
 
 def setpartition_to_tilecover(histogram_partition):
+        from complement import toint
 	squaretiles_cover=[]
 	for hp in histogram_partition:
 		tiles=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(hp))
@@ -50,7 +53,18 @@ def tocluster(histogram,datasource):
 	print "cluster:",cluster
 	return cluster
 
+def electronic_voting_machine(unique_id, voted_for):
+        uniqueidf=open(unique_id)
+        publicuniqueid=uniqueidf.read()
+        h=hashlib.new("ripemd160")
+        h.update(publicuniqueid)
+        publicuniqueidhex=h.hexdigest()
+        print "publicuniqueidhex:",publicuniqueidhex
+        Voting_Machine_dict[voted_for].append(publicuniqueidhex)
+        print "Voting_Machine_dict:",Voting_Machine_dict
+        
 def adjusted_rand_index():
+        import Streaming_AbstractGenerator
 	#The text file is updated by a stream of data
 	#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 	#inputf=Streaming_AbstractGenerator.StreamAbsGen("file","StreamingData.txt")
@@ -88,6 +102,7 @@ def adjusted_rand_index():
 
 
 if __name__=="__main__":
-	ari=adjusted_rand_index()
-	setpartition_to_tilecover([11,12,13,14,15])
+	#ari=adjusted_rand_index()
+	#setpartition_to_tilecover([11,12,13,14,15])
+        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
 
