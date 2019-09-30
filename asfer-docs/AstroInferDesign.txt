@@ -13882,6 +13882,11 @@ If Factorization is doable in PRAMs (and therefore in Nick's Class) as per previ
 
 Point location by parallel construction of wavelet trees has been described in previous sections,which consider the set of points of a geometric variety (e.g points on rectified hyperbolic arc) on the plane as a string of points represented as a wavelet tree. Point Location by Parallel Wavelet Tree construction is more obvious than Parallel Point Location by Kirkpatrick Triangulation, Planar subdivision, Bridge Separator Trees etc.,. The string of points formed from rectified hyperbolic arc are concatenated straightline segments each of which is an arithmetic progression. Query select(B, N, i) returns the position p of the i-th occurrence of N in concatenated hyperbolic line segments string B from which i-th factors of N=(p, N/p) are obtained.
 
+Previous reduction from set partition to tile cover by Lagrange Four Square Theorem is restricted to tiling 2-dimensional space. It can be generalized to filling/tiling arbitrary dimensional space by Chinese Remainder Theorem as follows:
+	(*) Chinese Remainder Theorem states that there is a ring isomorphism between x mod N and (x mod n1, x mod n2, ..., x mod nk) for pairwise coprime integers n1,n2,...,nk and N = n1*n2*n3*...*nk (or) x mod N <=> (x mod n1, x mod n2, ..., x mod nk) which is an isomorphism between ring of integers mod N and direct product space of rings of integers modulo nk
+	(*) By Chinese Remainder Theorem, there is a bucket of size x < N (so that x mod N = x) of the set partition which can be mapped isomorphically to a k-dimensional hypercube of sides (x mod n1, x mod n2, ..., x mod nk) modulo an integer N=n1*n2*...*nk (requires solving for x).
+	(*) This Chinese Remaindering Reduction reduces 1-dimensional set partition to tiling arbitrary dimensional space
+	
 References:
 -----------
 651.1 Wang Tiling - https://en.wikipedia.org/wiki/Wang_tile - Previous Lagrangian Tiling can be contrasted to Wang Tiles which is about feasibility of tiling a 2-D plane by multicolored square tiles by matching colors of adjacent tiles.
