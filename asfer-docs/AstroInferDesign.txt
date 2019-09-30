@@ -16,6 +16,11 @@
 #Personal website(research): https://sites.google.com/site/kuja27/
 #--------------------------------------------------------------------------------------------------------
 
+Document Licensed by:
+##############################################################################################################################################
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+##############################################################################################################################################
+
 -----------------------------------------------------------------------------------------------------------
 NeuronRain - Design Objectives
 -----------------------------------------------------------------------------------------------------------
@@ -14964,3 +14969,17 @@ Voter Received Encrypted Paper Audit Trail (VREPAT) Theoretical Voting Machine b
 		(*) Reduces malpractices because of no crowding, each voter independently votes, polling happens at doorstep at time of choosing which is unpredictable and unique demographic/geographic identity is electronically verified by drone navigation to unique address minimizing bogus voting (no voter is denied voting because it could not have been already cast in h(is|er) name - GPS drone navigation is an additional geographic uniqueness). 
 	(*) This commit defines a new minimal voting function electronic_voting_machine() in Streaming_SetPartitionAnalytics.py which accepts voted_for, example voter id card contexts of the author from testlogs/Streaming_SetPartitionAnalytics_EVM/ (no text parsing is done) and makes ripemd160 hash digests from them. EVM is a dictionary set partition object mapping candidate voted_for to list of voters' public uniqueid hash digests - does not use counters and private id authentication. 
 	(*) Complexity theoretically, drone voting is reducible to Motion planning (A-Star algorithm) and travelling salesman problem (TSP) because drone has to efficiently navigate the voter vertices spread across geographically (e.g hamiltonian) and thus NP-complete.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+714. (THEORY and FEATURE) Topological Handwriting Recognition - Product Homotopies - Related to 159,660 - 30 September 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+Pattern grammars for shape description for handwriting recognition previously as homeomorphic deformations in R^2 preserving genus (also defined by knots - https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt) have an alternative topological definition in terms of Product of Path Homotopy classes: Two paths f and f' are homotopic if they have same initial and final points x0 and x1 and there is a continuous map F:I * I ---> X for some topology space X such that F(s,0) = f(s) and F(s,1) = f'(s); F(0,t) = x0 and F(1,t) = x1. If f is a path in X from x0 to x1 of homotopy F and g is a path from x1 to x2 of homotopy G, product homotopy F*G by pasting lemma is the set of all continuous paths from x0 to x2 via x1. An example of product homotopy is handwritten digit '8' which has a pattern grammar:
+	<8> := <o> pasted on <o>
+Set of closed paths (all possible ways of writing 'o' - initial and end points are same) for <o> form a path homotopy F and product homotopy F*F defines all possible ways of writing '8' by pasting together endpoints of two handwriting homotopies F and F (also referred to as path composition). Similarly every handwritten alphabet can be defined as product of homotopies by pasting together path initial-end points. For example letter 'p' has pattern grammar: 
+	<p> := <|> pasted to the left of <o>
+In other words homotopy is a continous deformation of a path having end points fixed. It has to be noted that previous homotopy definition does not distinguish handwritings of two humans - it just recognizes any written alphanumeric as a product homotopy. Distinguishing two humans requires fine definition of homotopies within thresholds (e.g handwritings of same person hardly deviate from thresholds and some paths do not exist in handwriting homotopy of one person but do in other person's). This topological information of handwritings can complement traditional neural network based recognitions. 
+
+References:
+-----------
+714.1 Topology - [James R.Munkres] - Second Edition - Page 108 - Theorem 18.3 - Pasting Lemma - Pages 322-326 - Path Homotopy and Product Homotopy - Figures 51.1, 51.5
+714.2 Path Homotopy and Path composition - https://en.wikipedia.org/wiki/Path_(topology)#Homotopy_of_paths
