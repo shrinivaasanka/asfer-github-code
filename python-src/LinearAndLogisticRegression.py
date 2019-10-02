@@ -23,6 +23,7 @@
 
 import rpy2.robjects as robj
 import math
+from numpy import array 
 
 def LinearRegression(bias,weights,variables):
         regressed = bias
@@ -44,10 +45,31 @@ def LogisticRegression(bias,weights,variables):
 	print "Logistic Regression for weights ",weights," and variables ",variables,": ",regressed
         return regressed
 
+def EconomicMerit(NationFitnesses,distances):
+    print "GDPFitnesses:",NationFitnesses
+    print "distances:",distances
+    linkprobabilities=[]
+    gravitymodel=[]
+    xindx=0
+    for z1 in NationFitnesses:
+        yindx=0
+        for z2 in NationFitnesses:
+           #print "xindx:",xindx,", yindx:",yindx
+           #print "distance:",distances[xindx][yindx]
+           linkprobabilities.append((float(z1*z2))/(1.0+float(z1*z2))) 
+           gravitymodel.append(float(z1*z2)/float(distances[xindx][yindx]))
+           yindx+=1
+        xindx+=1
+    print "Trade Link probabilities between Nations in Economic Networks based on per nation GDP Fitness e.g ITN :",linkprobabilities
+    print "Volume of Trade predicted between Nations in Economic Networks based on per nation GDP Fitness e.g ITN :",gravitymodel
+    return (linkprobabilities,gravitymodel)
+
 if __name__=="__main__":
     weights=[2.0,1.0,2.3,3.2,5.0]
     bias=0.03
     variables=[1.0,2.0,5.0,7.0,8.0]
+    GDPFitnesses=[2.3,2.1,4.1,5.2,6.1]
+    distances=[[1,2,4,4,6],[1,1,4,4,6],[1,2,5,4,6],[1,5,4,4,6],[1,2,5,5,6]]
     print "##################"
     print "Linear Regression:"
     print "##################"
@@ -56,3 +78,4 @@ if __name__=="__main__":
     print "Logistic Regression:"
     print "##################"
     LogisticRegression(bias,weights,variables)
+    EconomicMerit(GDPFitnesses,distances)
