@@ -14994,6 +14994,12 @@ References:
 -------------------------------------------------------------------------------------------------------------------------------------------
 Previous section defined Handwriting recognition topologically by Product Homotopies. Face Recognition and Handwriting recognition are crucial for unique identification of a human in people analytics. Extending Product Homotopies to Face Recognition is not straightforward because facial features are not continuous functions which can be unified by pasting lemma. Possible solution is to segment the image by either bounding boxes or watershed algorithm and find contours of facial features which are piecemeal discontinuous curves (approximable by Douglas-Peucker polynomial). Each bounding box or segment containing only continuous curves have to be unified by pasting lemma which define product homotopies of continuous deformations in 3-dimensions whereas handwriting homotopies are deformations in 2D. Example: set of images of all possible postures, expressions and facial distortions of a human face can be equated to union of product homotopies of continuous contour curves in bounding boxes or segments in the image - Contours of Eyes, Nose, Mouth and Ears of a face cannot be a single continuous curve and can be in separate segments or bounding boxes of an image each defined by a product homotopy of continuous contours. Union of product homotopies for Eyes, Nose, Mouth, Ears and any other feature recognizes a face including all possible facial deformations.
 
+Example Shape Grammar for Face Recognition - Union of Product Homotopies (each <feature> defines a product homotopy for one continuous segment of facial feature contour deformations):
+						 <Hair>
+					  <Ear><Eye><Eye><Ear>
+						 <Nose>
+						 <Mouth>
+				
 -------------------------------------------------------------------------------------------------------------------------------------------
 716. (THEORY and FEATURE) Economic Intrinsic Merit - Gravity Model of Volume of Trade and GDP as fitness measure - 2 October 2019
 -------------------------------------------------------------------------------------------------------------------------------------------
