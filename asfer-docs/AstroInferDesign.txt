@@ -14341,8 +14341,7 @@ image ndarray and then reshaping and transposing it so that scikit learn accepts
 3.Example Dense subgraph (core number) classifications for these images in the logs at testlogs/ImageGraph_Keras_Theano.log.ImageNetClassifier.5July2019 are reasonably accurate and classify the images better. No training labelled data are required.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-678. (THEORY) Majority Hardness Amplification Lemma, Noise Sensitivity, Sensitivity, Block Sensitivity - 6 July 2019 - related to
-517 
+678. (THEORY) Majority Hardness Amplification Lemma, Noise Sensitivity, Sensitivity, Block Sensitivity, Condorcet Jury Theorem  - 6 July 2019, 6 October 2019 - related to 517 
 -----------------------------------------------------------------------------------------------------------------------------------------
 Hardness of a boolean function has been defined previously as how hard computationally it is to compute the function with a circuit of size s:
 	if Pr(C(x) != f(x)) = delta where C(x) computes boolean function f(x), then f(x) delta-hard.
@@ -14364,12 +14363,16 @@ Since sensitivity conjecture (block sensitivity <= poly(sensitivity)) has been p
 
 which upperbounds the maximum hardness amplification of Majority+VoterSAT composition almost as twice of sensitivity of majority function.
 
+Recent versions of Condorcet Jury Theorem by [Black] and [Ladha] lay emphasis on correlated voting in which voters are not independent but are statistically dependent and swayed by peer opinions en masse (this is the most prevalent "Herding" phenomenon in real world voting and in social networks), and from [Ladha] performance of majority voting decreases as correlation increases. In boolean majority function this herding correlation of bits is formalized by Block sensitivity and flipping a contiguous block of bit positions (contiguous set of voters flip their decisions) changes the outcome of the majority function. From [Ladha] more block sensitive (more correlated voters) majority function is less effective it is and towards less goodness it tends to.
+
 NOTE: Throughout all sections on Majority Voting + VoterSAT boolean composition and its hardness amplification, Sensitivity measures have been assumed as main contributors to hardness because by definition a hard boolean function is not 100% correctly computable by a circuit and sensitivity to input correlation (flipped bits) is the major factor preventing the correct computation by circuit. There could be other factors intrinsic to boolean function itself too apart from sensitivity measures which prevent a circuit from being perfect characterized by (+/-) error term above - randomized decision tree evaluation being one of them.
 	
 References:
 -----------
 678.1 Smooth Boolean functions are easy - [Parikshit Gopalan,Noam Nisan,Rocco A.Servedio,Kunal Talwar,Avi Wigderson] - Lemma 15 - http://www.math.ias.edu/~avi/PUBLICATIONS/GopalanNSTW.pdf
 678.2 Proof of Sensitivity Conjecture - [Huang] - http://www.mathcs.emory.edu/~hhuan30/papers/sensitivity_1.pdf
+678.3 Journal of Economic Behavior & Organization Volume 26, Issue 3, May 1995, Pages 353-372, Information pooling through majority-rule voting: Condorcet's jury theorem with correlated votes - [Krishna K Ladha] - https://www.sciencedirect.com/science/article/pii/016726819400068P - "...Does majority-rule voting steer an imperfectly informed assembly of people towards the full-information outcome? Condorcet's jury theorem provides an affirmative answer under certain conditions. A key condition is that the votes be statistically independent; however, it is unrealistic, and hence, unacceptable. This paper generalizes the jury theorem to certain general models of correlated voting, viz., normal, hypergeometric and Polya distributions. The paper proves that the effectiveness of majority-rule voting decreases as the correlation between votes increases. Potential applications are indicated...."
+678.4 The Theory of Committees and Elections. Cambridge University Press - [Duncan Black] - https://www.springer.com/gp/book/9780792381105
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 679. (FEATURE and THEORY) Fraud Analytics - Principal Component Analysis and KMeans++ clustering of an example Credit Card Transactions
