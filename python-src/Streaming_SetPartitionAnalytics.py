@@ -25,8 +25,12 @@ from sympy.solvers.diophantine import diop_general_sum_of_squares
 from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
 import hashlib
+from passlib.hash import sha256_crypt
+from threading import BoundedSemaphore
 
 Voting_Machine_dict=defaultdict(list)
+Voted=[]
+maxvoters=1
 
 def setpartition_to_tilecover(histogram_partition):
         from complement import toint
@@ -54,14 +58,22 @@ def tocluster(histogram,datasource):
 	return cluster
 
 def electronic_voting_machine(unique_id, voted_for):
+        semaphorelock=BoundedSemaphore(value=maxvoters)
+        semaphorelock.acquire()
         uniqueidf=open(unique_id)
+        publicuniqueidhex=""
         publicuniqueid=uniqueidf.read()
-        h=hashlib.new("ripemd160")
-        h.update(publicuniqueid)
-        publicuniqueidhex=h.hexdigest()
-        print "publicuniqueidhex:",publicuniqueidhex
-        Voting_Machine_dict[voted_for].append(publicuniqueidhex)
-        print "Voting_Machine_dict:",Voting_Machine_dict
+        if publicuniqueid not in Voted:
+            h=hashlib.new("ripemd160")
+            h.update(publicuniqueid)
+            publicuniqueidhex=h.hexdigest()
+            print "publicuniqueidhex:",publicuniqueidhex
+            Voting_Machine_dict[voted_for].append(sha256_crypt.encrypt(publicuniqueidhex))
+            Voted.append(publicuniqueid)
+            print "Voting_Machine_dict:",Voting_Machine_dict
+        else:
+            print "Voter Already Voted"
+        semaphorelock.release()
         
 def adjusted_rand_index():
         import Streaming_AbstractGenerator
@@ -104,5 +116,9 @@ def adjusted_rand_index():
 if __name__=="__main__":
 	#ari=adjusted_rand_index()
 	#setpartition_to_tilecover([11,12,13,14,15])
+        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
         electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
 
