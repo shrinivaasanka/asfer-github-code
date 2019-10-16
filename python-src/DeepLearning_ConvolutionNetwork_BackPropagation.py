@@ -49,6 +49,8 @@ import DeepLearning_BackPropagation
 import ImageToBitMatrix 
 import cv2
 from scipy.spatial.distance import directed_hausdorff
+import matplotlib.pylab as plt
+from matplotlib.backends.backend_pdf import PdfPages
 
 def handwriting_recognition(imagefile1,imagefile2):
                img1 = cv2.imread(imagefile1,0)
@@ -68,6 +70,33 @@ def handwriting_recognition(imagefile1,imagefile2):
                approx2 = cv2.approxPolyDP(contours2[0],epsilon2,True)
                print approx2
                print "Distance between DP polynomials approximating two handwriting contours:", directed_hausdorff(approx1[0],approx2[0])
+               print "contours1:",contours1
+               print "contours1:",contours2
+               pdf=PdfPages("testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf")
+               fig1=plt.figure(dpi=100)
+               for cont in contours1:
+                    xaxis=[]
+                    yaxis=[]
+                    curve=cont
+                    for point in curve:
+                        xaxis.append(point[0][0])
+                        yaxis.append(point[0][1])
+                    ax=fig1.add_subplot(111)
+                    ax.plot(xaxis,yaxis,rasterized=True)
+               plt.show()
+               pdf.savefig(fig1)
+               fig2=plt.figure(dpi=100)
+               for cont in contours2:
+                    xaxis=[]
+                    yaxis=[]
+                    curve=cont
+                    for point in curve:
+                        xaxis.append(point[0][0])
+                        yaxis.append(point[0][1])
+                    ax=fig2.add_subplot(111)
+                    ax.plot(xaxis,yaxis,rasterized=True)
+               plt.show()
+               pdf.savefig(fig2)
 
 class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
@@ -386,6 +415,12 @@ if __name__=="__main__":
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 		[0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
+        print "#############################################"
+	print "Handwriting Recognition"
+	print "#############################################"
+	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+
 	input_image1 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
 	input_image2 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg")
 	input_image3 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141152.jpg")
@@ -394,7 +429,7 @@ if __name__=="__main__":
 	input_image6 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
 	input_image7 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf2_1.jpg")
 	input_image8 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-
+	
 	dlim1=DeepLearningConvolution(input_image1)
 	dlim2=DeepLearningConvolution(input_image2)
 	dlim3=DeepLearningConvolution(input_image3)
@@ -454,11 +489,6 @@ if __name__=="__main__":
 	pool_map51=dlc51.max_pooling(pool_slidewindow_width)
 	pool_map52=dlc52.max_pooling(pool_slidewindow_width)
 
-	print "#############################################"
-	print "Handwriting Recognition"
-	print "#############################################"
-	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
-	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
 
 	print "##########################################"
 	print "Set of Convolution Maps"
