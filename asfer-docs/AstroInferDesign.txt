@@ -15058,3 +15058,22 @@ As a special example complement of Axiom of Choice for depth-2 majoriy boolean c
 
 Complement Diophantines throughout this draft focus mainly on sets or sequences of Integers (Z) because MRDP theorem and Rayleigh-Beatty  sequences theorem are limited to Z while complementation over Rationals(Q) is open problem and complementation over Reals (R) is solvable by Tarski/Sturm decidability.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+720. (THEORY and FEATURE) People Analytics - Handwriting Recognition - Contour Homotopies - Matplotlib Rasterization - 16 October 2019 - related to 714 and 715
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit updates handwriting_recognition() in DeepLearning_ConvolutionNetwork_BackPropagation.py to additionally raster the contours extracted from the handwritten alphanumeric.
+2.Rasterization presently invokes matplotlib plot() having parameter rasterized=True and presets dots-per-inch parameter to 100 in figure() for restricting number of pixels.
+3.Contours from each recognized written alphanumeric are looped and plotted by matplotlib plot() setting rasterized=True.
+4.There are better alternatives to this primitive rastering - rasterio (https://rasterio.readthedocs.io/en/stable/) and wavelet-rasterization (https://github.com/ufoym/wavelet-rasterization/) and desired rasterization is similar to illustrations in https://github.com/ufoym/wavelet-rasterization which is a coarse rectification required for hyperbolic arc in Computational Geometric Factorization (But there is a windows DLL build dependency). Matplotlib dots-per-inch and rasterized=True creates fine grained rasterized curves.
+5.Each contour is approximable by a Bezier-like curve (https://en.wikipedia.org/wiki/B%C3%A9zier_curve) which is an instance of homotopy because bezier curves have endpoints/control points unchanged and intermediate points on curve are puppet-animated (most applicable in Graphics). 
+6.Handwriting can be simulated by a Bezier curve having unchanged endpoints or control points which is a homotopic continuous deformation.
+7.Original handwriting is reconstructible by homotopy and pasting lemma - by pasting together polynomials for individual contours.
+8.Logs and images for this commit are at testlogs/ (handwritten 1(style 1) and 1(style 2), 1 and 8 are contour-rasterized and compared):
+DeepLearning_ConvolutionNetwork_BackPropagation.log.tar.xz
+DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies_1_1.jpg
+DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies_1_2.jpg
+DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies_8_1.jpg
+DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf
+9.Every contour can be fit to a bezier polynomial and two alphanumerics have to be verified if they are homotopic (has a dependency on topology libraries). This is non-trivial because every homotopically "similar" contour in two alphanumerics have to be pairwise compared
+and number of contours per alphanumeric could be in hundreds.
+
