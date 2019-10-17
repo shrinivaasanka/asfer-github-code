@@ -51,6 +51,9 @@ import cv2
 from scipy.spatial.distance import directed_hausdorff
 import matplotlib.pylab as plt
 from matplotlib.backends.backend_pdf import PdfPages
+from scipy.interpolate import splprep,splev
+
+TopologicalRecognition=True
 
 def handwriting_recognition(imagefile1,imagefile2):
                img1 = cv2.imread(imagefile1,0)
@@ -60,7 +63,6 @@ def handwriting_recognition(imagefile1,imagefile2):
                epsilon1 = 0.1*cv2.arcLength(contours1[0],True)
                #epsilon1=0.2
                approx1 = cv2.approxPolyDP(contours1[0],epsilon1,True)
-               print approx1
                img2 = cv2.imread(imagefile2,0)
                ret,thresh2=cv2.threshold(img2,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
                contours2,hierarchy2=cv2.findContours(thresh2,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
@@ -68,21 +70,30 @@ def handwriting_recognition(imagefile1,imagefile2):
                epsilon2 = 0.1*cv2.arcLength(contours2[0],True)
                #epsilon2=0.2
                approx2 = cv2.approxPolyDP(contours2[0],epsilon2,True)
-               print approx2
                print "Distance between DP polynomials approximating two handwriting contours:", directed_hausdorff(approx1[0],approx2[0])
-               print "contours1:",contours1
-               print "contours1:",contours2
+               #print "contours1:",contours1
+               #print "contours1:",contours2
                pdf=PdfPages("testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf")
+               contour1polys=[]
+               contour2polys=[]
                fig1=plt.figure(dpi=100)
                for cont in contours1:
                     xaxis=[]
                     yaxis=[]
                     curve=cont
+                    #print curve
                     for point in curve:
                         xaxis.append(point[0][0])
                         yaxis.append(point[0][1])
                     ax=fig1.add_subplot(111)
                     ax.plot(xaxis,yaxis,rasterized=True)
+                    points=numpy.stack((xaxis,yaxis),axis=-1)
+                    #print "points:",points.shape[0]
+                    try:
+                        if points.shape[0] > 3:
+                             contour1polys.append(splprep(points.T, k=points.shape[0]-1))
+                    except Exception as e:
+                        continue
                plt.show()
                pdf.savefig(fig1)
                fig2=plt.figure(dpi=100)
@@ -95,8 +106,18 @@ def handwriting_recognition(imagefile1,imagefile2):
                         yaxis.append(point[0][1])
                     ax=fig2.add_subplot(111)
                     ax.plot(xaxis,yaxis,rasterized=True)
+                    points=numpy.stack((xaxis,yaxis),axis=-1)
+                    #print "points:",points
+                    try:
+                        if points.shape[0] > 3:
+                             contour2polys.append(splprep(points.T, k=points.shape[0]-1))
+                    except Exception as e:
+                        continue
                plt.show()
                pdf.savefig(fig2)
+               pdf.close()
+               print "contour1polys:",contour1polys
+               print "contour2polys:",contour2polys
 
 class DeepLearningConvolution(object):
 	def __init__(self,input_bitmap):
@@ -418,8 +439,10 @@ if __name__=="__main__":
         print "#############################################"
 	print "Handwriting Recognition"
 	print "#############################################"
-	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
-	handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+        if TopologicalRecognition == True:
+	    handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+	    handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+            exit()
 
 	input_image1 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
 	input_image2 = ImageToBitMatrix.image_to_bitmatrix("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141144.jpg")
