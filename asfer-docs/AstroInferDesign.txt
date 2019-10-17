@@ -15077,3 +15077,19 @@ DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf
 9.Every contour can be fit to a bezier polynomial and two alphanumerics have to be verified if they are homotopic (has a dependency on topology libraries). This is non-trivial because every homotopically "similar" contour in two alphanumerics have to be pairwise compared
 and number of contours per alphanumeric could be in hundreds.
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+721. (THEORY and FEATURE) People Analytics - Handwriting Recognition - Inner Product Space of Contour Interpolated Polynomials - 17 October 2019 - related to 714,715,720
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.In continuation of the previous commit for drawing rasterized contour curves, handwriting contours are interpolated by SciPy.interpolate splprep()
+2.Points on contour curves are stack()-ed to 2 dimensional arrays and contours having more than 3 points are interpolated by spline polynomials of degree less than number of points per contour.
+3.PdfPages "pdf damaged" error in DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf has been resolved by PdfPages close() which flushes the buffer.
+4.splprep (https://docs.scipy.org/doc/scipy-1.2.1/reference/generated/scipy.interpolate.splprep.html) creates B-Spline curves which are exact but less smooth as opposed to Bezier curves which are smoother, depend on control points and are approximate fit (passes through most of the points).
+5.Boolean flag TopologicalRecognition=True/False has been introduced in __main__ to choose topological handwriting recognition instead of Convolution Neural Network Pattern Recognition.
+6.Logs and Pdf images for contour polynomials are at:
+testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.17October2019
+testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf
+7.By defining an inner product space of contour polynomials <f,g>=DefiniteIntegral(f(x)g(x)dx), distance function is obtained for verifying if 2 contours belonging to different handwritten alphanumerics are "similar" or "orthogonal" (polynomials f and g are orthogonal if <f,g>=0). This is an algebraic but less topological similarity.
+
+References:
+-----------
+721.1 Orthogonal Polynomials - https://www.math.tamu.edu/~yvorobet/MATH304-503/Lect4-04web.pdf
