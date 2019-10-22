@@ -15093,3 +15093,21 @@ testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.Raster.Homotopies.pdf
 References:
 -----------
 721.1 Orthogonal Polynomials - https://www.math.tamu.edu/~yvorobet/MATH304-503/Lect4-04web.pdf
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+722. (THEORY and FEATURE) Update - Drone Electronic Voting Machine NeuronRainApps Usecase - 22 October 2019 - related to 713
+---------------------------------------------------------------------------------------------------------------------------------------------
+722.1 ROS Drone Navigation Algorithms which depend on Google Maps for GPS geolocation have been cited as references in NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/ - Distance is computed by geodesic geometric equations (Bearing). Following are quoted excerpts from https://journalofbigdata.springeropen.com/articles/10.1186/s40537-019-0214-3:
+	722.1.1 "...In the experiment that we did, the average of positional deviation of landing position between the actual landing position and the desired landing position in the flight tests of flying from start to goal is 1.1125 m and for the tests that use the algorithm which uses course-over-ground, the positional deviation has average of 2.39 m...."
+	722.1.2 "...The recent developments of drone for sprayer pesticide applications and used for delivering items, for example the Amazon Prime Air, where Amazon used an octocopter to deliver items with weighs less than 5 lb or around 2.3 kg..."
+722.2 Commercially experimented drone online shopping grocery delivery mechanisms have payload of few kilograms. 
+722.3 Drone Electronic Voting Machine has an accompanied Point-of-Voting handheld device for smartcard voter id authentication. 
+722.4 Drone navigates to an address by Google maps from a voter list (powered by ROS or linux kernel PXRC drivers). 
+722.5 Once drone lands on doorstep, Voter authenticates in the Point-of-Voting machine with in drone by voter id smartcard. 
+722.6 Ballot is displayed in a touchscreen of the drone. At the end of the voting drone Point-of-Voting device issues a VREPAT encrypted receipt of the vote and retreats. 
+722.7 Drone EVM does not have payload like autonomous delivery - thus lightweight. 
+722.8 Landing deviation has to be specified upfront as config parameter.
+
+References:
+-----------
+722.9 UAV Theory, Design and Applications - [AR Jha] - https://content.taylorfrancis.com/books/download?dac=C2014-0-36678-5&isbn=9781498715430&format=googlePreviewPdf
