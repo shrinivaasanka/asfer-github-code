@@ -14774,7 +14774,7 @@ References:
 700.1 Covering a set by arithmetic progressions is NP-complete - [Lenwood Heath - Virginia Tech] - https://vtechworks.lib.vt.edu/bitstream/handle/10919/19566/TR-89-25.pdf?sequence=3&isAllowed=y
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 588, 654  - 21 August 2019, 22 September 2019
+701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 588, 654  - 21 August 2019, 22 September 2019, 29 October 2019
 --------------------------------------------------------------------------------------------------------------------------------------------
 Category Theory of [Eilenberg-MacLane] abstracts whole of mathematics into following:
 	701.1 Category C is a Set of Objects
@@ -14789,6 +14789,10 @@ EventNet Tensor Products defined and implemented in NeuronRain and applied as in
 	701.7 Every inter-event causation between two Event Categories E1 and E2 (E1 causes E2) is a Functor - for each actor object x in E1, F(x) is in E2 and for each morphism f:a-b in E1, morphism F(f):F(a)-F(b) is in E2
 
 As mentioned in previous sections on EventNet Tensor Product merit of Large Scale Visuals, EventNet Tensor formalizes logical time and causation. Rank of a Tensor T is the minimum number of Simple Tensors that sum to T where Simple Tensors are factorizable products of tensors. This implies Logical Time Tensor can be written as sum of products of Tensors implying seemingly linear 1-dimensional time is decomposable to tensor components basis. This has implications for physical sciences and experiments involving spacetime - Time could be multidimensional and any spatial object can be projected to any of the time tensor component axes similar to space. From previous Category Theory definition, EventNet Causality Functor Graph can also be written as sum of products of Tensors. Tensor Decomposition of Video EventNet Tensor yields component videos i.e video can be split into linearly independent component videos.
+
+Another theoretical implication of EventNet is the possibility of retrocausality - effect causing the cause and arrow of time can be bidirectional. EventNet DAG can be partitioned into past, present and future disjoint subgraph components by 2 cuts/vertex separators. To preclude the possibility of retrocausality/time reversal, EventNet must be a directed acyclic graph devoid of loops and backedges (edges of right to left if Events flow left to right). If logical time is unidirectional (retrocausality is false) following "future" functions f1 and f2 defined on EventNet graph partition components (past,present,future) must be hard to invert implying one-way functions, Pseudorandom Generators and P != NP (left inverse does not exist for EventNet category):
+	f1(past) = present
+	f2(present) = future
 
 References:
 ----------
