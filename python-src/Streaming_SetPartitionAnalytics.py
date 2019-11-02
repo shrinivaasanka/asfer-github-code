@@ -19,21 +19,22 @@
 import sys
 import math
 import random
-from sklearn.metrics.cluster import adjusted_rand_score
-from sklearn.metrics import adjusted_mutual_info_score
-from sympy.solvers.diophantine import diop_general_sum_of_squares
-from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
 import hashlib
 from passlib.hash import sha256_crypt
 from threading import BoundedSemaphore
+import json
 
-Voting_Machine_dict=defaultdict(list)
+Voting_Machine1_dict=defaultdict(list)
+Voting_Machine2_dict=defaultdict(list)
 Voted=[]
+evm_histograms={}
 maxvoters=1
 
 def setpartition_to_tilecover(histogram_partition):
         from complement import toint
+	from sympy.solvers.diophantine import diop_general_sum_of_squares
+	from sympy.abc import a, b, c, d, e, f
 	squaretiles_cover=[]
 	for hp in histogram_partition:
 		tiles=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(hp))
@@ -57,7 +58,7 @@ def tocluster(histogram,datasource):
 	print "cluster:",cluster
 	return cluster
 
-def electronic_voting_machine(unique_id, voted_for):
+def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for):
         semaphorelock=BoundedSemaphore(value=maxvoters)
         semaphorelock.acquire()
         uniqueidf=open(unique_id)
@@ -74,9 +75,28 @@ def electronic_voting_machine(unique_id, voted_for):
         else:
             print "Voter Already Voted"
         semaphorelock.release()
-        
+
+def electronic_voting_analytics(Voting_Machine_dicts):
+        import Streaming_AbstractGenerator
+	evmsf=open("testlogs/Streaming_SetPartitionAnalytics.EVMs.json","w")
+	evmid=0
+	for evm in Voting_Machine_dicts:
+		evm_histogram={}
+		for k,v in evm.iteritems():
+			#Bucket length is the counter
+			evm_histogram[k]=len(v)
+		evm_histograms[evmid]=evm_histogram
+		evmid += 1
+	json.dump(evm_histograms,evmsf)
+	evmsf.close()
+	evmstream=Streaming_AbstractGenerator.StreamAbsGen("DictionaryHistogramPartition","testlogs/Streaming_SetPartitionAnalytics.EVMs.json")
+	for evm in evmstream:
+		print "evm:",evm
+			
 def adjusted_rand_index():
         import Streaming_AbstractGenerator
+	from sklearn.metrics.cluster import adjusted_rand_score
+	from sklearn.metrics import adjusted_mutual_info_score
 	#The text file is updated by a stream of data
 	#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
 	#inputf=Streaming_AbstractGenerator.StreamAbsGen("file","StreamingData.txt")
@@ -116,9 +136,13 @@ def adjusted_rand_index():
 if __name__=="__main__":
 	#ari=adjusted_rand_index()
 	#setpartition_to_tilecover([11,12,13,14,15])
-        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine("testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-
+        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
+        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
+	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict])

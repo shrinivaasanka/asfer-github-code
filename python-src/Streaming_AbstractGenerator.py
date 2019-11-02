@@ -22,14 +22,9 @@
 #initially the streamed data is populated in storage and streamed later through this generator
 #abstracting the source and storage.
 
-import happybase
-import pyhs2
-from cassandra.cluster import Cluster
-from confluent_kafka import Consumer, KafkaError
 from pyspark.sql import SparkSession
 import json
 import socket
-from pandas import DataFrame
 from pyspark import SparkContext, SparkConf
 import ast
 
@@ -72,11 +67,13 @@ class StreamAbsGen(object):
 			self.inputfile=open("../../usb-md-github-code/usb_wwan_modified/testlogs/kern.log.print_buffer_byte")
 
 		if self.data_storage=="hbase":
+			import happybase
 			self.hbase_connection = happybase.Connection(host='localhost',port=9090,transport='buffered')
 			self.hbase_table = self.hbase_connection.table('stream_data')
 			print "StreamAbsGen:__init__():connected to HBase table"
 	
 		if self.data_storage=="hive":	
+			import pyhs2
 			#pyhs2 client - requires SASL
 			self.hive_conn=pyhs2.connect(host='localhost',
        	        		    port=10000,
@@ -97,6 +94,7 @@ class StreamAbsGen(object):
 			print "StreamAbsGen:__init__():connected to Hive table"
 
 		if self.data_storage=="cassandra":
+			from cassandra.cluster import Cluster
 			self.cl=Cluster()
 			self.session = self.cl.connect('cassandrakeyspace')
 			inputf=open('movielens_stream2.data')
@@ -110,6 +108,7 @@ class StreamAbsGen(object):
 			print "StreamAbsGen:__init__(): connected to Cassandra"
 
 		if self.data_storage=="Kafka":
+			from confluent_kafka import Consumer, KafkaError
 		        self.c = Consumer({'bootstrap.servers': '0', 'group.id': 'test-consumer-group', 'default.topic.config': {'auto.offset.reset': 'smallest'}})
 		        self.c.subscribe(['neuronraindata'])
 		if self.data_storage=="Socket_Streaming":
@@ -122,7 +121,7 @@ class StreamAbsGen(object):
 			for ds in data_source:
 				self.partition_stream.append(open(ds,"r"))
 		if self.data_storage=="DictionaryHistogramPartition":
-			self.partition_stream=open(data_source,"r")
+			self.partition_stream=open(data_source)
 			
 				
 	def __iter__(self):
@@ -186,6 +185,7 @@ class StreamAbsGen(object):
 				yield data
 		if self.data_storage=="OperatingSystem" and self.data_source=="SchedulerRunQueue":
 			from DeepLearning_SchedulerAnalytics import sched_debug_runqueue
+			from pandas import DataFrame
 			while True:
 				schedrunqueue=sched_debug_runqueue()
 				#df=DataFrame(data=schedrunqueue)
@@ -201,6 +201,7 @@ class StreamAbsGen(object):
 					print "StreamAbsGen(Spark Parquet): iterator yielding labelled partition: %s" % partition
 					yield partition	
 		if self.data_storage=="DictionaryHistogramPartition":
-			dict_stream=ast.literal_eval(self.partition_stream.read())
-			for d in dict_stream:
-				yield d
+			#dict_stream=ast.literal_eval(dicttext)
+			dict_stream=json.load(self.partition_stream)
+			for k,v in dict_stream.iteritems():
+				yield (k,v)

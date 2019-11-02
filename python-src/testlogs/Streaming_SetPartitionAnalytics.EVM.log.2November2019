@@ -1,0 +1,19 @@
+2019-11-02 15:55:28 WARN  Utils:66 - Your hostname, HCL resolves to a loopback address: 127.0.1.1; using 192.168.1.173 instead (on interface wlan0)
+2019-11-02 15:55:28 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2019-11-02 15:55:30 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+publicuniqueidhex: d731e10ba2af8ce068d849249cd1425fa46bd10b
+Voting_Machine_dict: defaultdict(<type 'list'>, {'NOTA': ['$5$rounds=535000$5sElQ/C2E2QpyQtd$Nd8nN3k0RRAPVKu8nVpukKUNs.5jdQaJVHrizKt9fu5']})
+Voter Already Voted
+Voter Already Voted
+publicuniqueidhex: 8af5627efba38ec2b12aa294ec310a8c554c954b
+Voting_Machine_dict: defaultdict(<type 'list'>, {'CandidateA': ['$5$rounds=535000$2qdCRKX7HDAUOw9t$lfD81Q0u1Ywk4Ok4E4zMVAW5UApoz1qkgaGlQjwXSH2']})
+Voter Already Voted
+Voter Already Voted
+publicuniqueidhex: 02f208fe0d21e5b716cc821b29ba9ab4f3219446
+Voting_Machine_dict: defaultdict(<type 'list'>, {'CandidateB': ['$5$rounds=535000$4ST5g0/JsQI8m/qx$C/6a1kRZdR0F9nQKwOmbUT8.p8KtcD74nGHMJ9zYlZ8'], 'CandidateA': ['$5$rounds=535000$2qdCRKX7HDAUOw9t$lfD81Q0u1Ywk4Ok4E4zMVAW5UApoz1qkgaGlQjwXSH2']})
+Voter Already Voted
+Voter Already Voted
+evm: (u'1', {u'CandidateB': 1, u'CandidateA': 1})
+evm: (u'0', {u'NOTA': 1})
+2019-11-02 15:55:40 INFO  ShutdownHookManager:54 - Shutdown hook called
+2019-11-02 15:55:40 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-bfd129f3-acfc-4f6b-be40-9badb6390886
