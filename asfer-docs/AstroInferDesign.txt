@@ -15115,3 +15115,23 @@ References:
 References:
 -----------
 722.9 UAV Theory, Design and Applications - [AR Jha] - https://content.taylorfrancis.com/books/download?dac=C2014-0-36678-5&isbn=9781498715430&format=googlePreviewPdf
+
+--------------------------------------------------------------------------------------------------------
+723. (THEORY) Update 2 - Drone Electronic Voting Machine - Voting Analytics - Set Partition Distance Measures - 2 November 2019 - related to 722
+--------------------------------------------------------------------------------------------------------
+723.1 Drone Electronic Voting machine partial implementation (depends on drone navigation) in NeuronRain is an obfuscated set partition of electorate (voters identity per candidate bucket is encrypted)
+723.2 Analytics inferences can be drawn from a stream of previous encrypted set partition EVMs without compromising voter privacy.
+723.3 Variety of distance measures are available for comparing set partitions:
+	723.3.1 Earth Mover Distance or Wasserstein Distance (OpenCV2 and SciPy) - which is amount of work necessary to move a mass of one shape to another - shape is a multidimensional object and two set partition EVMs are of different shapes - https://docs.opencv.org/2.4/modules/imgproc/doc/histograms.html?highlight=emd#cv.CalcEMD2 and https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wasserstein_distance.html - EMD2 in OpenCV2 is a sophisticated version of EMD for comparing two visuals by mapping images to histogram probability distributions while EMD in SciPy is wasserstein distance
+	723.3.2 OpenCV2 provides many other measures for comparing image histograms - https://docs.opencv.org/2.4/modules/imgproc/doc/histograms.html - cvCompareHist() by Correlation, Chi-Square, Intersection,Bhattacharyya,Hellinger distance measures
+
+--------------------------------------------------------------------------------------------------------
+724. (FEATURE) Update 3 - Drone Electronic Voting Machine - JSON persistence of EVMs - Datasource for Voting Analytics - 2 November 2019 - related to 723
+--------------------------------------------------------------------------------------------------------
+724.1 electronic_voting_machine() function in Streaming_SetPartitionAnalytics.py has been updated to accept 3 arguments - voting machine set-partition obfuscated dictionary, unique id context and candidate voted for - for removing hardcoded voting dictionary and being generic across polling stations.
+724.2 Voting machine dictionaries are iterated and mapped to histograms of Candidate to Votes Counter (size of bucket)
+724.3 Voting machine dictionaries are JSON dumped to a file testlogs/Streaming_SetPartitionAnalytics.EVMs.json - this JSON persistence is only for analytics purposes and voting machine dictionary is still an in-memory object per drone EVM supposed to be passed on from an already navigated Drone python code which is lacking.
+724.4 This JSON file can be read as a stream by Streaming Abstract Generator Dictionary datasource -Streaming_AbstractGenerator.StreamAbsGen("DictionaryHistogramPartition","testlogs/Streaming_SetPartitionAnalytics.EVMs.json") and any histogram analytics function can be invoked on the stream.
+724.5 electronic_voting_machine() is invoked 9 times for 2 voting machines, 3 voter id contexts and 3 candidates and electronic_voting_analytics() function which implements the previous JSON persistence is invoked after - logs at testlogs/Streaming_SetPartitionAnalytics.EVM.log.2November2019
+724.6 Streaming_AbstractGenerator.py "DictionaryHistogramPartition" __iter__() clause has been updated to do JSON load() of dictionaries instead of AST literal_eval() and yield the dictionaries as stream.
+
