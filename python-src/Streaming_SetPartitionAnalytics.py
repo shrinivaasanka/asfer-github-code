@@ -24,11 +24,14 @@ import hashlib
 from passlib.hash import sha256_crypt
 from threading import BoundedSemaphore
 import json
+import random
 
 Voting_Machine1_dict=defaultdict(list)
 Voting_Machine2_dict=defaultdict(list)
+Voting_Machine3_dict=defaultdict(list)
+
 Voted=[]
-evm_histograms={}
+evm_histograms=[]
 maxvoters=1
 
 def setpartition_to_tilecover(histogram_partition):
@@ -78,6 +81,12 @@ def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for):
 
 def electronic_voting_analytics(Voting_Machine_dicts):
         import Streaming_AbstractGenerator
+	from scipy.stats import wasserstein_distance
+	from sklearn.metrics.cluster import adjusted_rand_score
+	from sklearn.metrics import adjusted_mutual_info_score
+	#from cv2 import CalcEMD2
+	#from cv2 import compareHist
+
 	evmsf=open("testlogs/Streaming_SetPartitionAnalytics.EVMs.json","w")
 	evmid=0
 	for evm in Voting_Machine_dicts:
@@ -85,14 +94,29 @@ def electronic_voting_analytics(Voting_Machine_dicts):
 		for k,v in evm.iteritems():
 			#Bucket length is the counter
 			evm_histogram[k]=len(v)
-		evm_histograms[evmid]=evm_histogram
+		#if len(evm_histogram) > 0:
+		evm_histograms.append(evm_histogram)
 		evmid += 1
 	json.dump(evm_histograms,evmsf)
 	evmsf.close()
 	evmstream=Streaming_AbstractGenerator.StreamAbsGen("DictionaryHistogramPartition","testlogs/Streaming_SetPartitionAnalytics.EVMs.json")
-	for evm in evmstream:
-		print "evm:",evm
-			
+	prev={}
+	for n1 in evmstream:
+		try:
+			if len(n1.values()) == len(prev.values()):
+				ari=adjusted_rand_score(n1.values(),prev.values())
+				print "Adjusted Rand Index between histograms ",n1.values()," and ",prev.values(),":",ari
+				ami=adjusted_mutual_info_score(n1.values(),prev.values())
+				print "Adjusted Mutual Information Index between histograms ",n1.values()," and ",prev.values(),":",ami
+			emd=0
+			if len(n1.values()) > 0 and len(prev.values()) > 0:
+				emd=wasserstein_distance(n1.values(),prev.values())
+			print "Earth Mover Distance between histograms ",n1.values()," and ",prev.values()," - Wasserstein :",emd
+			prev=n1
+		except Exception as e:
+			print "Exception - EMD error or Shape mismatch in sklearn computation of ARI and AMI:",e
+			continue
+						
 def adjusted_rand_index():
         import Streaming_AbstractGenerator
 	from sklearn.metrics.cluster import adjusted_rand_score
@@ -136,13 +160,15 @@ def adjusted_rand_index():
 if __name__=="__main__":
 	#ari=adjusted_rand_index()
 	#setpartition_to_tilecover([11,12,13,14,15])
-        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine(Voting_Machine1_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","NOTA")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","CandidateA")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
-        electronic_voting_machine(Voting_Machine2_dict,"testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf","CandidateB")
-	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict])
+	candidates=["NOTA","CandidateA","CandidateB"]
+	idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
+	voteridx = 0
+	for voter in xrange(10):
+		electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)])
+		electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)])	
+		electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)])
+		voteridx += 1
+	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])

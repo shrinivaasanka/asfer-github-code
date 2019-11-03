@@ -203,5 +203,5 @@ class StreamAbsGen(object):
 		if self.data_storage=="DictionaryHistogramPartition":
 			#dict_stream=ast.literal_eval(dicttext)
 			dict_stream=json.load(self.partition_stream)
-			for k,v in dict_stream.iteritems():
-				yield (k,v)
+			for dic in dict_stream:
+				yield dic
