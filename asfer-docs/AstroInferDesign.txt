@@ -13908,6 +13908,8 @@ References:
 651.8 Simple,Fast and Lightweight Parallel Wavelet Tree Construction - [Fischer-Kurpicz-Lobel] - https://arxiv.org/pdf/1702.07578.pdf - Comparison to Domain Decomposition Parallel Wavelet Tree Construction and Variant of Wavelet Tree (Wavelet Matrix) - In the context of Computational Geometric Parallel Planar Point Location, size of the alphabet for wavelet tree is very small in the range [N-delta, N+delta] because hyperbolic tile segments have product of ordinates which are more or less equal to N. 
 651.9 Planar Point Location - Algorithms - https://cw.fel.cvut.cz/b181/_media/courses/cg/lectures/02-pointloc.pdf
 651.10 Segment Trees and Point Location Query - http://www.cs.umd.edu/class/fall2016/cmsc754/Lects/cmsc754-fall16-lects.pdf
+651.11 Rouche-Capelli Theorem for Underdetermined system of equations - https://en.wikipedia.org/wiki/Underdetermined_system#Solutions_of_underdetermined_systems, https://en.wikipedia.org/wiki/Rouch%C3%A9%E2%80%93Capelli_theorem
+651.12 Parallel Complexity of Gaussian Elimination by Partial Pivoting - https://algo.ing.unimo.it/people/mauro/strict.ps
 
 --------------------------------------------------------------------------------------------------------
 652. (FEATURE) Histogram-Set Partition Analytics - Adjusted Mutual Information - 3 April 2019
