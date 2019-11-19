@@ -15200,4 +15200,4 @@ histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter
 6.logs for this commit are at testlogs/Streaming_SetPartitionAnalytics.log.19November2019
 7.An example Lagranges Four Square reduction for integer 18 and its random partition=[4,10,4]:
 		18 <=> [4,10,4] <=> [1+1+1+1]+[1+4+4+1]+[1+1+1+1] 
-		18 <=> 2*9 <=> Solutions for previous tile arrangement system of equations for the rectangle periphery: [1+1]*[4+4+1]
+		18 <=> 2*9 <=> Solutions for previous tile arrangement system of equations for the rectangle periphery: [1+1]*[2+2+1+1+1+1+1]
