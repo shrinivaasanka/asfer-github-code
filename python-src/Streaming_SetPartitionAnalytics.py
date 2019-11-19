@@ -25,6 +25,13 @@ from passlib.hash import sha256_crypt
 from threading import BoundedSemaphore
 import json
 import random
+import numpy as np
+from scipy.sparse.linalg import lsqr
+from scipy.sparse.linalg import lsmr
+from numpy.linalg import solve
+from sympy.combinatorics.partitions import Partition
+from sympy.functions.combinatorial.numbers import nT
+import subprocess
 
 Voting_Machine1_dict=defaultdict(list)
 Voting_Machine2_dict=defaultdict(list)
@@ -34,7 +41,7 @@ Voted=[]
 evm_histograms=[]
 maxvoters=1
 
-def setpartition_to_tilecover(histogram_partition):
+def setpartition_to_tilecover(histogram_partition,number_to_factorize):
         from complement import toint
 	from sympy.solvers.diophantine import diop_general_sum_of_squares
 	from sympy.abc import a, b, c, d, e, f
@@ -43,8 +50,62 @@ def setpartition_to_tilecover(histogram_partition):
 		tiles=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(hp))
 		print "square tiles for partition ",hp,":",tiles
 		for t in list(tiles)[0]:
-			squaretiles_cover.append(t*t)
+			squaretiles_cover.append((t,t*t))
 	print "Lagrange Four Square Tiles Cover reduction of Set Partition ",histogram_partition,":",squaretiles_cover
+	subprocess.call(["/home/ksrinivasan/spark-2.4.3-bin-hadoop2.7/bin/spark-submit", "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py" , number_to_factorize], shell=False)
+	factorsfile=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
+	factors=json.load(factorsfile)
+	number_to_factorize=0
+	factorslist=[]
+	for k,v in factors.iteritems():
+		number_to_factorize=k
+		factorslist=v
+	#c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
+	#d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
+	#solve AX=B:
+	#X = [c1 c2 ... cn] - unknowns (boolean include or exclude)
+	#A = [[x1 x2 ... xn]  - knowns (sides of the square tiles)
+	#     permutation_of[x1 x2 ... xn]]
+	#B = [p q] - factors
+	equationsA=[]
+	equationsB=[]
+	equation=[]
+	init_guess = []
+	for n in xrange(len(squaretiles_cover)):
+		init_guess.append(0.00000000001)
+	initial_guess = np.array(init_guess)
+	for sqtc in squaretiles_cover:
+		equation.append(sqtc[0])
+	equationsA.append(equation)
+	equation.reverse()
+	equationsA.append(equation)
+	print "factorslist:",factorslist
+	equationsB.append(factorslist[1])
+	equationsB.append(int(number_to_factorize)/factorslist[1])
+	a=np.array(equationsA)
+	b=np.array(equationsB)
+        #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+        x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+	print "x=",x
+	#roundedx=map(round,x[0])
+	roundedx=[]
+	for t in x[0]:
+		if t > 0.5:
+			roundedx.append(1)
+		else:
+			roundedx.append(0)
+	cnt=0
+	side1=""
+	side2=""
+	for t in roundedx:
+		print "t=",t,"; cnt=",cnt
+		if t > 0:
+			side1 += str(squaretiles_cover[cnt][0]) + "+"
+		else:
+			side2 += str(squaretiles_cover[cnt][0]) + "+"
+		cnt+=1
+	print "Rectangle periphery - side1:",side1[:-1]
+	print "Rectangle periphery - side2:",side2[:-1]
 	return squaretiles_cover
 
 def tocluster(histogram,datasource):
@@ -159,16 +220,22 @@ def adjusted_rand_index():
 
 if __name__=="__main__":
 	#ari=adjusted_rand_index()
-	#setpartition_to_tilecover([11,12,13,14,15])
-	candidates=["NOTA","CandidateA","CandidateB"]
-	idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
-	voteridx = 0
-	for voter in xrange(10):
-		electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
-candidates[int(random.random()*100)%len(candidates)])
-		electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
-candidates[int(random.random()*100)%len(candidates)])	
-		electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
-candidates[int(random.random()*100)%len(candidates)])
-		voteridx += 1
-	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])
+	set1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]
+	number_of_partitions=nT(len(set1))
+        processes_partitions=Partition(set1)
+	randp=processes_partitions + random.randint(1,number_of_partitions)
+        print "Random Partition:",randp
+	histogram=map(len,randp)
+	setpartition_to_tilecover(histogram,str(sum(histogram)))
+	#candidates=["NOTA","CandidateA","CandidateB"]
+	#idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
+	#voteridx = 0
+	#for voter in xrange(10):
+	#	electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
+#candidates[int(random.random()*100)%len(candidates)])
+	#	electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
+#candidates[int(random.random()*100)%len(candidates)])	
+	#	electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
+#candidates[int(random.random()*100)%len(candidates)])
+	#	voteridx += 1
+	#electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])
