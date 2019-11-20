@@ -15205,3 +15205,7 @@ histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter
 	c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p 
 	d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
 equates factors of N=(p,q) to Linear Sum of sides of lagrangian square tiles (1-dimensional) for the length and breadth of rectangular periphery. Both of the earlier MCP equations are NP-Hard (Strongly or Weakly depending on encoding) which involves finding the integer vector [c1,c2,c3,...,cn]. Equivalently, tile cover of the rectangle is the linear sum of lagrangian squares (coins are 2-dimensional lagrangian tiles themselves) and is a 2-dimensional Money Changing Problem which is again NP-Hard. Product of the equations is a Quadratic Program which is also NP-Hard. Solution vector [c1,c2,c3,...,cn] is the set of number of tiles for each lagrangian tile square.MCP solves the tile arrangement in exact non-deterministic polynomial time while LSMR least squares is a deterministic polynomial time approximation. An example greedy algorithm for minimum coins change problem is described in GRAFIT course material repository: https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt
+
+References:
+-----------
+728.1 Coin Problem, Frobenius Problem, Postage Stamp Problem - What This Country Needs is an 18c Piece - https://cs.uwaterloo.ca/~shallit/Papers/change2.pdf
