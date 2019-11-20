@@ -15182,7 +15182,7 @@ References:
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 728. (THEORY and FEATURE) Set Partition to Tile Cover Reduction by Computational Geometric Factorization - Least Squares Approximate Solution
-for the underdetermined linear equations - related to 651 - 19 November 2019
+for the underdetermined linear equations, Exact Money Changing Problem(MCP) Solution, Quadratic Programs - related to 651 - 19 November 2019, 20 November 2019
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1.A random set is partitioned by SymPy set partition API and a partition of the set is chosen at random. Random set partition is mapped to a
 histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter for number to factorize has been added in setpartition_to_tilecover().
@@ -15201,3 +15201,7 @@ histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter
 7.An example Lagranges Four Square reduction for integer 18 and its random partition=[4,10,4]:
 		18 <=> [4,10,4] <=> [1+1+1+1]+[1+4+4+1]+[1+1+1+1] 
 		18 <=> 2*9 <=> Solutions for previous tile arrangement system of equations for the rectangle periphery: [1+1]*[2+2+1+1+1+1+1]
+8.Each of the two linear equations can be interpreted as instance of Money Changing Problem(MCP) or Coin Problem. Sides of the square tiles are coins and following linear system:
+	c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p 
+	d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
+equates factors of N=(p,q) to Linear Sum of sides of lagrangian square tiles (1-dimensional) for the length and breadth of rectangular periphery. Both of the earlier MCP equations are NP-Hard (Strongly or Weakly depending on encoding) which involves finding the integer vector [c1,c2,c3,...,cn]. Equivalently, tile cover of the rectangle is the linear sum of lagrangian squares (coins are 2-dimensional lagrangian tiles themselves) and is a 2-dimensional Money Changing Problem which is again NP-Hard. Product of the equations is a Quadratic Program which is also NP-Hard. Solution vector [c1,c2,c3,...,cn] is the set of number of tiles for each lagrangian tile square.MCP solves the tile arrangement in exact non-deterministic polynomial time while LSMR least squares is a deterministic polynomial time approximation. An example greedy algorithm for minimum coins change problem is described in GRAFIT course material repository: https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt
