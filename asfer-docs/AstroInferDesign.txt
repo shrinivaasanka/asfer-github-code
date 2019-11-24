@@ -2912,17 +2912,25 @@ Currency object has been implemented with Google Protocol Buffers - in cloud_mov
 Protocol Buffer compilation after change to currency object:
 protoc -I=src_dir/ --cpp_out=out_dir/ src_dir/currency.proto
 
-------------------------------------------------------------------------------------------
-166. (THEORY) Related to 65 - Debug Analytics (as part of Software Analytics)
-------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+166. (THEORY) Debug Analytics,Software Analytics,Automated Debugging - 24 November 2019 - related 65, 581
+----------------------------------------------------------------------------------------------------------
 Debugging software is painful process with repetitive labour - For example kernel and device driver development has the following lifecycle:
 1. Writing the kernel patch code for some deep kernel panics.
 2. Kernel incremental or full build.
 3. Test the patch.
-(1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton without cycles or with least number of cycles and cycles of least length.
+(1),(2) and (3) are sometimes frustratingly repetitive. If the debugging is represented as a state machine automaton, the cycles in automaton are the time consuming phases. Thus Debug Analytics can be defined as the problem to find the most efficient debug state machine automaton without cycles or with least number of cycles and cycles of least length. 
+Delta debugging algorithm bisects the code changes between two successive commits recursively and isolates the code snippet causing the regression in unit testing. Example: If revision r+1 has the patch set [p1,p2,p3,p4,p5] over revision r, delta debugging creates delta subsets [p1,p2],[p3],[p4,p5] and applies the deltas incrementally over r as paths in a binary search tree by union() and minus() primitives based on unit test pass or fail - for instance the path:
+	 r+[p1,p2] - pass, r+[p1,p2] union [p3] - pass , r + [p1,p2,p3] union [p4,p5] - fail
+isolates [p4,p5] delta as point of failure. minus() primitive is applied to [p1,p2,p3,p4,p5] and [p4,p5] are segregated to fail state in bisection. Program state reachability graphs are obtained by a fixed point of variables as vertices and edges amongst them are deduced from pointer analysis. These program states between two consecutive revision states create a stream of Program state graphs which is a Streaming Common Subgraph Mining problem. Correlating the common subgraphs in the program state graph stream and corresponding unit test pass-fail binary stream for sequence of patch revisions yields insights into the regression causing state subgraph:
+	... Graph(r)-Graph(r+delta) ...
+	... Pass-Fail ...
+Debug Analytics goes further beyond isolating the buggy code and asks for minimum state debug automaton if any which resolves the bug.
 
 References:
 166.1 Learning Finite State Machines - https://www.cs.upc.edu/~bballe/other/phdthesis.pdf
+166.2 Delta Debugging - Why Programs Fail - https://www.st.cs.uni-saarland.de/dd/ - Bisection in Git/SVN/Hg
+166.3 Beautiful Code - [Oram-Wilson] - Chapter 28 - Beautiful Debugging by Andreas Zeller - DDD and Eclipse plugins for Delta Debugging algorithm - Code example 28.1 - computing common subgraphs between program state graphs - Fig 28.2 - Program State of GNU C Compiler - Example of regression between gdb 4.16 and gdb 4.17 for DDD
 
 ------------------------------------------------------------------------------------------
 167. (THEORY) Prestige based ranking and Condorcet Elections
