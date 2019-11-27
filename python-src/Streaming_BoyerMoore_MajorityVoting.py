@@ -11,32 +11,41 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #--------------------------------------------------------------------------------------------------------
-#Copyleft (Copyright+):
-#Srinivasan Kannan
-#(also known as: Shrinivaasan Kannan, Shrinivas Kannan)
-#Ph: 9791499106, 9003082186
-#Krishna iResearch Open Source Products Profiles:
-#http://sourceforge.net/users/ka_shrinivaasan,
-#https://github.com/shrinivaasanka,
-#https://www.openhub.net/accounts/ka_shrinivaasan
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
 #Personal website(research): https://sites.google.com/site/kuja27/
-#emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
-#kashrinivaasan@live.com
 #--------------------------------------------------------------------------------------------------------
-
 #This class implements Streaming Majority Algorithm of Boyer-Moore for streaming sequence.
 
 import Streaming_AbstractGenerator
 
 class BoyerMoore_MajorityVoting(object):
-	def __init__(self):
+	def __init__(self,datasource,datastorage):
 		#self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("file","file")
-		self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
+                #self.inputstream = Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
+                self.datasource = datasource
+                self.datastorage = datastorage
+		self.inputstream = Streaming_AbstractGenerator.StreamAbsGen(datasource,datastorage)
 		self.counter=0
 		self.element=""
 
 	def majority_voting(self):
-		for e in self.inputstream:	
+                if self.datasource == "DictionaryHistogramPartition":
+                    for evm in self.inputstream:
+		        self.counter=0
+		        self.element=""
+                        for k,v in evm.iteritems():
+			    if self.counter==0:
+			        self.element=(k,v)
+			        self.counter=1
+			    else:
+				if (k,v) == self.element:
+				    self.counter += 1
+				else:
+				    self.counter -= 1
+		        print "Majority Element in Stream:",self.element
+                else:
+		    for e in self.inputstream:	
 			if self.counter==0:
 				self.element=e
 				self.counter=1
@@ -45,8 +54,8 @@ class BoyerMoore_MajorityVoting(object):
 					self.counter += 1
 				else:
 					self.counter -= 1
-		print "Majority Element in Stream:",self.element
+		    print "Majority Element in Stream:",self.element
 
 if __name__=="__main__":
-	bm=BoyerMoore_MajorityVoting()
+	bm=BoyerMoore_MajorityVoting("DictionaryHistogramPartition","testlogs/Streaming_SetPartitionAnalytics.EVMs.json")
 	bm.majority_voting()
