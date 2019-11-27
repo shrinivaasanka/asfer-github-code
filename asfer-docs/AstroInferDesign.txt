@@ -2913,7 +2913,7 @@ Protocol Buffer compilation after change to currency object:
 protoc -I=src_dir/ --cpp_out=out_dir/ src_dir/currency.proto
 
 ----------------------------------------------------------------------------------------------------------
-166. (THEORY) Debug Analytics,Software Analytics,Automated Debugging - 24 November 2019 - related 65, 581
+166. (THEORY) Debug Analytics,Software Analytics,Automated Debugging - 24 November 2019 - related to 65, 581
 ----------------------------------------------------------------------------------------------------------
 Debugging software is painful process with repetitive labour - For example kernel and device driver development has the following lifecycle:
 1. Writing the kernel patch code for some deep kernel panics.
@@ -15219,3 +15219,10 @@ equates factors of N=(p,q) to Linear Sum of sides of lagrangian square tiles (1-
 References:
 -----------
 728.1 Coin Problem, Frobenius Problem, Postage Stamp Problem - What This Country Needs is an 18c Piece - https://cs.uwaterloo.ca/~shallit/Papers/change2.pdf
+
+--------------------------------------------------------------------------------------------------------------------------
+729. (THEORY and FEATURE) Drone Electronic Voting Machine - Streaming Boyer-Moore Majority voting - 27 November 2019
+--------------------------------------------------------------------------------------------------------------------------
+1.This commit updates already existing streaming majority implementation of Boyer-Moore algorithm to accept arbitrary datasources (majority_voting() in Streaming_BoyerMoore_MajorityVoting.py)
+2.Drone electronic voting machine JSON persistence datastorage written by Streaming SetPartitionAnalytics electronic_voting_analytics() function (Streaming_SetPartitionAnalytics.py) is passed on to Boyer-Moore function as DictionaryHistogramPartition datasource.
+3.Persisted EVMs are looped through and majority candidate bucket per EVM is printed.
