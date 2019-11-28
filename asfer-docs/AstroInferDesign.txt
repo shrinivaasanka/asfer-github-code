@@ -15226,3 +15226,13 @@ References:
 1.This commit updates already existing streaming majority implementation of Boyer-Moore algorithm to accept arbitrary datasources (majority_voting() in Streaming_BoyerMoore_MajorityVoting.py)
 2.Drone electronic voting machine JSON persistence datastorage written by Streaming SetPartitionAnalytics electronic_voting_analytics() function (Streaming_SetPartitionAnalytics.py) is passed on to Boyer-Moore function as DictionaryHistogramPartition datasource.
 3.Persisted EVMs are looped through and majority candidate bucket per EVM is printed.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+730. (THEORY and FEATURE) Drone Electronic Voting Machine - Streaming Voting Analytics - Bertrand Ballot Theorem - Approximation of Majority Voting, Streaming majority, Forecasts, Theoretical EVMs, Set Partitions - related to 666 - 28 November 2019
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit implements the Betrand Ballot Theorem - probability p-q/p+q that one of the candidate might win of two rival candidates getting p and q votes respectively during the process of counting - as a live election analytics measure within electronic_voting_machine() function of Streaming_SetPartitionAnalytics.py
+2.It assumes live counting of voting - votes are immediately counted after they are cast - is allowed as against deferred counting convention usually followed in elections because secrecy might be compromised.
+3.But this measure is also useful for post-poll analytics during the process of counting itself for extrapolating the result - before election is called.
+4.Random Majority voting is simulated on 3 fictitious candidates and probabilistic trend is printed while voting is underway.
+5.logs are at testlogs/Streaming_SetPartitionAnalytics.EVM.log.28November2019
+6.This measure applies only to binary election of 2 candidates - EVM dictionary is sorted and votes of top 2 rivals are compared dynamically (after each vote is cast), to print the Bertrand probability.
