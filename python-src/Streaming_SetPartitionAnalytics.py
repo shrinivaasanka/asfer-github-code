@@ -32,6 +32,7 @@ from numpy.linalg import solve
 from sympy.combinatorics.partitions import Partition
 from sympy.functions.combinatorial.numbers import nT
 import subprocess
+import operator
 
 Voting_Machine1_dict=defaultdict(list)
 Voting_Machine2_dict=defaultdict(list)
@@ -122,7 +123,7 @@ def tocluster(histogram,datasource):
 	print "cluster:",cluster
 	return cluster
 
-def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for):
+def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for,Streaming_Analytics_Bertrand=False):
         semaphorelock=BoundedSemaphore(value=maxvoters)
         semaphorelock.acquire()
         uniqueidf=open(unique_id)
@@ -138,6 +139,16 @@ def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for):
             print "Voting_Machine_dict:",Voting_Machine_dict
         else:
             print "Voter Already Voted"
+        if Streaming_Analytics_Bertrand==True:
+            sortedEVM=sorted(Voting_Machine_dict.items(),key=operator.itemgetter(1),reverse=True) 
+            print "sortedEVM:",sortedEVM
+            if len(sortedEVM) > 1:
+                p=len(sortedEVM[0][1])
+                q=len(sortedEVM[1][1])
+                tempp=p
+                p=max(p,q)
+                q=min(tempp,q)
+                print "Probability of ",sortedEVM[0][0]," winning over nearest rival ",sortedEVM[1][0],":",abs(float(p-q)/float(p+q))
         semaphorelock.release()
 
 def electronic_voting_analytics(Voting_Machine_dicts):
@@ -227,15 +238,15 @@ if __name__=="__main__":
         print "Random Partition:",randp
 	histogram=map(len,randp)
 	setpartition_to_tilecover(histogram,str(sum(histogram)))
-	#candidates=["NOTA","CandidateA","CandidateB"]
-	#idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
-	#voteridx = 0
-	#for voter in xrange(10):
-	#	electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
-#candidates[int(random.random()*100)%len(candidates)])
-	#	electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
-#candidates[int(random.random()*100)%len(candidates)])	
-	#	electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
-#candidates[int(random.random()*100)%len(candidates)])
-	#	voteridx += 1
-	#electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])
+	candidates=["NOTA","CandidateA","CandidateB"]
+	idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
+	voteridx = 0
+	for voter in xrange(10):
+		electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)
+		electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)	
+		electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)
+		voteridx += 1
+	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])
