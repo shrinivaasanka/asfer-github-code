@@ -37,12 +37,14 @@
 import os
 import sys
 import getopt
-import geonames
 import math
 from datetime import date, time, datetime, timedelta
 from collections import defaultdict
 
 useGeonames=False
+if useGeonames:
+	import geonames
+MaitreyasDreams_Version="8.0"
 SearchOption=2
 max_iterations=100000000
 min_year=0
@@ -187,6 +189,12 @@ def substring_find(str1,str2):
         else:
                 return -1
 
+def prune_rule(rule):
+    rule_toks=rule.split(",")
+    print "rule_toks:",rule_toks
+    pruned_rule_toks=[planet.strip()[:3] for planet in rule_toks]
+    print "pruned_rule_toks:",pruned_rule_toks
+    return " , ".join(pruned_rule_toks)
 
 if __name__=="__main__":
 	if SearchOption==1:
@@ -207,7 +215,11 @@ if __name__=="__main__":
 			#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list 
 			#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list 
 			#cmd="/media/shrinivaasanka/6944b01d-ff0d-43eb-8699-cca469511742/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
-			cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+			if MaitreyasDreams_Version == "8.0":
+				#cmd="/home/shrinivaasanka/maitreya8-8.0/src/jyotish/maitreya8t "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+				cmd="/usr/bin/maitreya8t "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+			else:
+				cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
 			print cmd
 			os.system(cmd)
 			print "============================================"
@@ -237,7 +249,11 @@ if __name__=="__main__":
                			for date_time_timezone_longlat in next:
                        			#Example commandline1: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient --date="1851-06-25 00:00:00 5.5" --location="x 94:48:0 28:0:0" --planet-list
                        			#Example commandline2: /home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient  --date="2015-11-26 10:0:0 5.5"  --location=" x 80:0:0 13:0:0 " --planet-list
-					cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+					if MaitreyasDreams_Version == "8.0":
+						#cmd="/media/ka_shrinivaasan/6944b01d-ff0d-43eb-8699-cca469511742/home/shrinivaasanka/maitreya8-8.0/src/jyotish/maitreya8t "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+						cmd="/usr/bin/maitreya8t "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
+					else:
+						cmd="/home/shrinivaasanka/Maitreya7_GitHub/martin-pe/maitreya7/releases/download/v7.1.1/maitreya-7.1.1/src/jyotish/maitreya_textclient "+ date_time_timezone_longlat + " 2>&1 > chartsummary.rulesearch"
                        			print "cmd:",cmd
                        			os.system(cmd)
                        			print "============================================"
@@ -248,35 +264,37 @@ if __name__=="__main__":
 					encoded_chart=""
 					for row in chart:
 		                                row_tokens=row.split()
+                                                print "chart row:",row_tokens
                			                if row_tokens:
-							sign_planets_dict[row_tokens[3].strip()].append(row_tokens[0].strip())
-					print sign_planets_dict
-					encoded_chart+=toString(sign_planets_dict["Aries"])
+							sign_planets_dict[row_tokens[2].strip()].append(row_tokens[0].strip())
+                                        print "signs_planets_dict:",sign_planets_dict
+					encoded_chart+=toString(sign_planets_dict["Ari"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Taurus"])
+					encoded_chart+=toString(sign_planets_dict["Tau"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Gemini"])
+					encoded_chart+=toString(sign_planets_dict["Gem"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Cancer"])
+					encoded_chart+=toString(sign_planets_dict["Can"])
 					encoded_chart+=" , Cusp , "
 					encoded_chart+=toString(sign_planets_dict["Leo"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Virgo"])
+					encoded_chart+=toString(sign_planets_dict["Vir"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Libra"])
+					encoded_chart+=toString(sign_planets_dict["Lib"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Scorpio"])
+					encoded_chart+=toString(sign_planets_dict["Sco"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Sagittarius"])
+					encoded_chart+=toString(sign_planets_dict["Sag"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Capricorn"])
+					encoded_chart+=toString(sign_planets_dict["Cap"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Aquarius"])
+					encoded_chart+=toString(sign_planets_dict["Aqu"])
 					encoded_chart+=" , Cusp , "
-					encoded_chart+=toString(sign_planets_dict["Pisces"])
+					encoded_chart+=toString(sign_planets_dict["Pis"])
 			        	print "Encoded chart to be searched:",encoded_chart	
-					print "Rule to search:",rule
-					patternindex=substring_find(encoded_chart,rule)
+                                        pruned_rule=prune_rule(rule)
+					print "Rule to search:",pruned_rule
+					patternindex=substring_find(encoded_chart,pruned_rule)
 					print "patternindex:",patternindex
 					if patternindex != -1:
 						print "There is a Class Association Rule match for ",date_time_timezone_longlat," for pattern ",rule 

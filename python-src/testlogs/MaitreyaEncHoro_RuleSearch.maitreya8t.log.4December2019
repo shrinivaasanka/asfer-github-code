@@ -1,0 +1,2287 @@
+Gtk-Message: 15:22:23.116: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:23.285: Failed to load module "canberra-gtk-module"
+[('--min_year', '2019'), ('--min_month', '12'), ('--min_days', '26'), ('--min_hours', '10'), ('--min_minutes', '10'), ('--min_seconds', '10'), ('--min_long', '77'), ('--min_lat', '7'), ('--max_year', '2019'), ('--max_month', '12'), ('--max_days', '26'), ('--max_hours', '10'), ('--max_minutes', '10'), ('--max_seconds', '10'), ('--max_long', '78'), ('--max_lat', '10')]
+[]
+--min_year
+2019
+--min_month
+12
+--min_days
+26
+--min_hours
+10
+--min_minutes
+10
+--min_seconds
+10
+--min_long
+77
+--min_lat
+7
+--max_year
+2019
+--max_month
+12
+--max_days
+26
+--max_hours
+10
+--max_minutes
+10
+--max_seconds
+10
+--max_long
+78
+--max_lat
+10
+1
+1
+1
+3
+__iter__: 77 78
+next_datetime:  2019-12-27 10:10:10
+77.0 7.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Gtk-Message: 15:22:23.612: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:23.782: Failed to load module "canberra-gtk-module"
+Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , UnoccGtk-Message: 15:22:23.949: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:24.117: Failed to load module "canberra-gtk-module"
+upied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun Gtk-Message: 15:22:24.287: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:24.456: Failed to load module "canberra-gtk-module"
+, Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['MerGtk-Message: 15:22:24.625: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:24.796: Failed to load module "canberra-gtk-module"
+cury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 7.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 7:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , Gtk-Message: 15:22:24.965: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:25.133: Failed to load module "canberra-gtk-module"
+
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10Gtk-Message: 15:22:25.301: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:25.469: Failed to load module "canberra-gtk-module"
+ 5.5"  --location=" x 77:0:0 8:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_dGtk-Message: 15:22:25.638: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:25.806: Failed to load module "canberra-gtk-module"
+atetime:  2019-12-27 10:10:10
+77.0 8.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10Gtk-Message: 15:22:25.997: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:26.165: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:26.334: Failed to load module "canberra-gtk-module"
+ 5.5"  --location=" x 77:0:0 8:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 8.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 8:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+==========Gtk-Message: 15:22:26.502: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:26.671: Failed to load module "canberra-gtk-module"
+==================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xbGtk-Message: 15:22:26.840: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:27.017: Failed to load module "canberra-gtk-module"
+3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'SagGtk-Message: 15:22:27.186: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:27.356: Failed to load module "canberra-gtk-module"
+', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'CGtk-Message: 15:22:27.525: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:27.693: Failed to load module "canberra-gtk-module"
+an', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.0 9.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Gtk-Message: 15:22:27.862: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:28.025: Failed to load module "canberra-gtk-module"
+Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb037\xe2\x80\xb213\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:0:0 9:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+Gtk-Message: 15:22:28.190: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:28.354: Failed to load module "canberra-gtk-module"
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart Gtk-Message: 15:22:28.517: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:28.681: Failed to load module "canberra-gtk-module"
+row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: Gtk-Message: 15:22:28.846: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:29.009: Failed to load module "canberra-gtk-module"
+['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', Gtk-Message: 15:22:29.173: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:29.337: Failed to load module "canberra-gtk-module"
+'14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 7.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 7:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xGtk-Message: 15:22:29.501: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:29.664: Failed to load module "canberra-gtk-module"
+c2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_Gtk-Message: 15:22:29.828: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:29.994: Failed to load module "canberra-gtk-module"
+dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['SGtk-Message: 15:22:30.158: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:30.353: Failed to load module "canberra-gtk-module"
+un', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+signs_planets_dict: defaultdict(<type 'list'>, {})
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: -1
+There is No Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', Gtk-Message: 15:22:30.516: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:30.698: Failed to load module "canberra-gtk-module"
+'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 8.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 8:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'MoolaGtk-Message: 15:22:30.862: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:31.026: Failed to load module "canberra-gtk-module"
+']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chartGtk-Message: 15:22:31.190: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:31.354: Failed to load module "canberra-gtk-module"
+ row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: Gtk-Message: 15:22:31.520: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:31.684: Failed to load module "canberra-gtk-module"
+['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['RahGtk-Message: 15:22:31.848: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:32.037: Failed to load module "canberra-gtk-module"
+', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.1 9.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xGtk-Message: 15:22:32.202: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:32.366: Failed to load module "canberra-gtk-module"
+c2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb027\xe2\x80\xb224\xe2\x80\xb3', 'Aqu', 'Aqu', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:1:0 9:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xbGtk-Message: 15:22:32.530: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:32.694: Failed to load module "canberra-gtk-module"
+017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict:Gtk-Message: 15:22:32.858: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:33.022: Failed to load module "canberra-gtk-module"
+ defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', Gtk-Message: 15:22:33.186: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:33.378: Failed to load module "canberra-gtk-module"
+'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toStrGtk-Message: 15:22:33.542: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:33.706: Failed to load module "canberra-gtk-module"
+ing() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 7.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 7:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , KetGtk-Message: 15:22:33.870: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:34.033: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:34.196: Failed to load module "canberra-gtk-module"
+
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+signs_planets_dict: defaultdict(<type 'list'>, {})
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: -1
+There is No Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row:Gtk-Message: 15:22:34.360: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:34.477: Failed to load module "canberra-gtk-module"
+ ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+signs_planets_dict: defaultdict(<type 'list'>, {})
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: -1
+There is No Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --locatiGtk-Message: 15:22:34.680: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:34.842: Failed to load module "canberra-gtk-module"
+on=" x 77:2:0 8:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+signs_planets_dict: defaultdict(<type 'list'>, {})
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: -1
+There is No Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:7:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 8.8
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:8:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': [Gtk-Message: 15:22:35.006: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:35.169: Failed to load module "canberra-gtk-module"
+'Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 8:8:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.0
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:0:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.1
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:1:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= RaGtk-Message: 15:22:35.334: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:35.498: Failed to load module "canberra-gtk-module"
+h
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:1:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.2
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:2:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:2:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.3
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:3:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , SaGtk-Message: 15:22:35.663: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:35.826: Failed to load module "canberra-gtk-module"
+t , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:3:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.4
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:4:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:4:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.5
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:5:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart toGtk-Message: 15:22:36.012: Failed to load module "canberra-gtk-module"
+Gtk-Message: 15:22:36.176: Failed to load module "canberra-gtk-module"
+ be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:5:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.6
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:6:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Mar , Cusp , Sun , Moo , Mer , Jup , Sat , Ket , Cusp , Ven , Cusp , Asc , Cusp , Unoccupied
+rule_toks: ['Mercury ', ' Jupiter ', '\n']
+pruned_rule_toks: ['Mer', 'Jup', '']
+Rule to search: Mer , Jup , 
+patternindex: 158
+There is a Class Association Rule match for   --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:6:0 " --planet-list  for pattern  Mercury , Jupiter ,
+
+next_datetime:  2019-12-27 10:10:10
+77.2 9.7
+cmd: /usr/bin/maitreya8t  --date="2019-12-27 10:10:10 5.5"  --location=" x 77:2:0 9:7:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '11\xc2\xb012\xe2\x80\xb228\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Moo', '25\xc2\xb041\xe2\x80\xb202\xe2\x80\xb3', 'Sag', 'Sco', 'P.Shadha']
+chart row: ['Mar', '01\xc2\xb010\xe2\x80\xb227\xe2\x80\xb3', 'Sco', 'Can', 'Visakha']
+chart row: ['Mer', '03\xc2\xb005\xe2\x80\xb221\xe2\x80\xb3', 'Sag', 'Ari', 'Moola']
+chart row: ['Jup', '11\xc2\xb028\xe2\x80\xb246\xe2\x80\xb3', 'Sag', 'Can', 'Moola']
+chart row: ['Ven', '14\xc2\xb039\xe2\x80\xb224\xe2\x80\xb3', 'Cap', 'Tau', 'Sravana']
+chart row: ['Sat', '26\xc2\xb043\xe2\x80\xb234\xe2\x80\xb3', 'Sag', 'Sag', 'U.Shadha']
+chart row: ['Rah', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Gem', 'Aqu', 'Ardra']
+chart row: ['Ket', '14\xc2\xb020\xe2\x80\xb242\xe2\x80\xb3', 'Sag', 'Leo', 'P.Shadha']
+chart row: ['Asc', '13\xc2\xb017\xe2\x80\xb228\xe2\x80\xb3', 'Aqu', 'Cap', 'Satabisha']
+chart row: []
+signs_planets_dict: defaultdict(<type 'list'>, {'Aqu': ['Asc'], 'Sco': ['Mar'], 'Cap': ['Ven'], 'Sag': ['Sun', 'Moo', 'Mer', 'Jup', 'Sat', 'Ket'], 'Gem': ['Rah']})
+toString() planetsliststring= Rah
+toString() planetsliststring= Mar
+toString() planetsliststring= Sun , Moo , Mer , Jup , Sat , Ket
+toString() planetsliststring= Ven
+toString() planetsliststring= Asc
+Encoded chart to be searched: Unoccupied , Cusp , Unoccupied , Cusp , Rah , Cusp , Unoccupied , Cusp , Unocc
