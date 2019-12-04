@@ -15236,3 +15236,15 @@ References:
 4.Random Majority voting is simulated on 3 fictitious candidates and probabilistic trend is printed while voting is underway.
 5.logs are at testlogs/Streaming_SetPartitionAnalytics.EVM.log.28November2019
 6.This measure applies only to binary election of 2 candidates - EVM dictionary is sorted and votes of top 2 rivals are compared dynamically (after each vote is cast), to print the Bertrand probability.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+731. (FEATURE) Astronomical Pattern Mining - Rule Search Script update for Maitreya Swiss Ephemeris text client maitreya8t - 4 December 2019
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.python-src/MaitreyaEncHoro_RuleSearch.py has been changed for updated chart summary table of maitreya swiss ephemeris text client which
+truncates the names of signs and planets to first 3 alphabets.
+2.New function prune_rule() has been defined to prune the class association rules to be matched from python-src/MinedClassAssociationRules.txt(which contains already learnt rules from SequenceMining.py for various weather datasets)
+3.SearchOption=2 has been updated for redefined signs-planets defaultdict to populate truncated names.
+4.Encoded chart concatenation has been changed for lookup of truncated names
+5.Maitreya Text Client commandline has been changed to 64-bit deb package install /usr/bin/maitreya8t - text client is not built from Maitreya Dreams source.
+6.An example celestial 2-body pattern "Mercury,Jupiter" is searched on 26/12/2019 when a rare 7 planet conjunction of Sun,Moon,Mercury,Jupiter,Saturn,Nodal Points,Pluto (8 planets including nodal axis) occurs. This 7+1 body planetary system in Sagittarius-Gemini is significant in the context of heightened correlation of weather events that might befall (seismic,oceanic and atmospheric).
+7.logs for class association rule match are in python-src/testlogs/MaitreyaEncHoro_RuleSearch.maitreya8t.log.4December2019
