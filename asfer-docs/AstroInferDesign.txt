@@ -14791,7 +14791,7 @@ References:
 700.1 Covering a set by arithmetic progressions is NP-complete - [Lenwood Heath - Virginia Tech] - https://vtechworks.lib.vt.edu/bitstream/handle/10919/19566/TR-89-25.pdf?sequence=3&isAllowed=y
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 588, 654  - 21 August 2019, 22 September 2019, 29 October 2019
+701.(THEORY) Category Theory formulation of EventNet - Objects, Morphisms, Functors - related to 582, 588, 654  - 21 August 2019, 22 September 2019, 29 October 2019,6 December 2019
 --------------------------------------------------------------------------------------------------------------------------------------------
 Category Theory of [Eilenberg-MacLane] abstracts whole of mathematics into following:
 	701.1 Category C is a Set of Objects
@@ -14815,6 +14815,8 @@ References:
 ----------
 701.8 Category Theory - https://en.wikipedia.org/wiki/Category_theory
 701.9 Tensor Products as Functors - https://en.wikipedia.org/wiki/Functor - "... Tensor products: If C denotes the category of vector spaces over a fixed field, with linear maps as morphisms, then the tensor product {\displaystyle V\otimes W} V\otimes W defines a functor C × C → C which is covariant in both arguments.[7] ..."
+701.10 Tensor Decomposition in Python - Tensorly and Tensorlab - https://medium.com/yadb/tensor-factorization-for-graph-analysis-in-python-590df44c9f6c - Graphic illustrations of Non-Negative Canonical Polyadic Decomposition (NCPD) of a 3-way tensor to sum of products of multiple rank-1 tensors - Figure 1 (3-way tensor) decomposed as Figure 2 (sum of products of rank-1 tensors) - "...The rank of a tensor T, denoted rank(T), is defined as the smallest number of rank-one tensors that generate T as their sum..."
+701.11 Tensor Decomposition and its applications - [Tamara G. Kolda and Brett W. Bader] - https://epubs.siam.org/doi/abs/10.1137/07070111X?journalCode=siread - "...A tensor is a multidimensional or N-way array. Decompositions of higher-order tensors (i.e., N-way arrays with N >= 3) have applications in psycho-metrics, chemometrics, signal processing, numerical linear algebra, computer vision, numerical analysis, data mining, neuroscience, graph analysis, and elsewhere ... "
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 702.(THEORY-FEATURE) Non-statistical Ontology Semantic Paths based Named Entity Recognition - related to 697 - 22 August 2019
