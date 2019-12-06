@@ -15192,7 +15192,7 @@ References:
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 728. (THEORY and FEATURE) Set Partition to Tile Cover Reduction by Computational Geometric Factorization - Least Squares Approximate Solution
-for the underdetermined linear equations, Exact Money Changing Problem(MCP) Solution, Quadratic Programs - related to 651 - 19 November 2019, 20 November 2019
+for the underdetermined linear equations, Exact Money Changing Problem(MCP) Solution, Quadratic Programs, Pell Equation, Shell Turing Machines(Category of Topological Spaces) - related to 577,624,651 - 19 November 2019, 20 November 2019,6 December 2019
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1.A random set is partitioned by SymPy set partition API and a partition of the set is chosen at random. Random set partition is mapped to a
 histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter for number to factorize has been added in setpartition_to_tilecover().
@@ -15215,6 +15215,10 @@ histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter
 	c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p 
 	d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
 equates factors of N=(p,q) to Linear Sum of sides of lagrangian square tiles (1-dimensional) for the length and breadth of rectangular periphery. Both of the earlier MCP equations are NP-Hard (Strongly or Weakly depending on encoding) which involves finding the integer vector [c1,c2,c3,...,cn]. Equivalently, tile cover of the rectangle is the linear sum of lagrangian squares (coins are 2-dimensional lagrangian tiles themselves) and is a 2-dimensional Money Changing Problem which is again NP-Hard. Product of the equations is a Quadratic Program which is also NP-Hard. Solution vector [c1,c2,c3,...,cn] is the set of number of tiles for each lagrangian tile square.MCP solves the tile arrangement in exact non-deterministic polynomial time while LSMR least squares is a deterministic polynomial time approximation. An example greedy algorithm for minimum coins change problem is described in GRAFIT course material repository: https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt
+9. Lagrangian Four Square reduction of a set partition to sum of squares can be equated to Pell Equation written in terms of factors of N=pq:
+	integer or set partition of N = pq = n1^2 + n2^2 + n3^2 + ... + nk^2 = x^2 - y^2 = for x=(p+q)/2 and y=(p-q/2)
+which in effect shatters or demolishes an one-dimensional set to a set of k 2-dimensional square tiles and equates the sum of squares to difference of two squares.
+10. Shell Turing Machines defined in this draft can be formalized by Category Theory: Category S has various topological spaces of arbitrary dimensions as objects and morphisms are Conduit Turing Machines amongst these object spaces which act as linear transformations between one space to the other. Lagrangian set partition to tile cover reduction is an instance of such a Category of Topological Spaces (TOP) - For objects S1 and S2 in S, set partition defined in an one dimensional space S1 is lifted to a 2 dimensional space of square tiles S2 by Lagrange Four Square Conduit Turing Machine Morphism between object spaces S1 and S2. Application of Shell Turing Machines to previous reduction is unusual (NeuronRain Documentation,FAQ and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/ mentions some references on TOP). Thus Shell Turing Machines (Category of Topological Spaces) perform a kind of kernel lifting - Lagrangian Tiling Conduit Turing Machines are the kernels
 
 References:
 -----------
