@@ -15254,3 +15254,19 @@ truncates the names of signs and planets to first 3 alphabets.
 5.Maitreya Text Client commandline has been changed to 64-bit deb package install /usr/bin/maitreya8t - text client is not built from Maitreya Dreams source.
 6.An example celestial 2-body pattern "Mercury,Jupiter" is searched on 26/12/2019 when a rare 7 planet conjunction of Sun,Moon,Mercury,Jupiter,Saturn,Nodal Points,Pluto (8 planets including nodal axis) occurs. This 7+1 body planetary system in Sagittarius-Gemini is significant in the context of heightened correlation of weather events that might befall (seismic,oceanic and atmospheric).
 7.logs for class association rule match are in python-src/testlogs/MaitreyaEncHoro_RuleSearch.maitreya8t.log.4December2019
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+732. (FEATURE and THEORY) Merit of Large Scale Visuals - Tensor Rank intrinsic merit of EventNet of a video - 7 December 2019 - related to 588
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit upgrades ImageGraph_Keras_Theano.py to Python 3.6 from Python 2.7 and computes Tensor Rank of EventNet of a video by tensorly python library (tensorly requires Python 3) - autopep8 and 2to3 tools have been used for upgrade. Python 3.6 is many orders of magnitude faster than Python 2.7 and EventNet Tensor Product and Tensor Rank is computationally intensive which needs faster Python.
+2.Following dependent files have been upgraded to Python 3.6 by two tools - autopep8 and 2to3 - which correct formatting issues to comply with PEP8 and convert a file written in python 2.7 to python 3.6 (Python 2.7 versions have been committed having .2.7 suffix):
+	2.1 RecursiveGlossOverlap_Classifier.py 
+	2.2 WordNetPath.py
+	2.3 ImageGraph_Keras_Theano.py
+3.Note: all python 2.7 source files in NeuronRain can be upgraded to Python 3.6 in two simple steps for better performance:
+	3.1 Execute autopep8 on the file for PEP8
+	3.2 Execute 2to3-2.7 on PEP8 formatted file
+4.ImageGraph_Keras_Theano.py - videograph_eventnet_tensor_product() has been modified for preprocessing (slicing 100*100 square) the tensor product of video EventNet and tensorly non_negative_parafac() is invoked which decomposes the video EventNet tensor.
+5.logs have been committed to testlogs/ImageGraph_Keras_Theano.log.TensorRank1Decomposition.7December2019
+6.Video EventNet Tensor is printed for debug purposes
+7.Rank-1 tensor factors from non_negative_parafac() of Video EventNet Tensor are also printed
