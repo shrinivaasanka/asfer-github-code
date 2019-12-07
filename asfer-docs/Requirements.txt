@@ -57,7 +57,7 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 54. Python transaction 2.1.2
 55. OpenSSL development libraries for C++
 56. DictDiffer - https://github.com/inveniosoftware/dictdiffer
-57. Python 2.7.x, 3.4, 3.7
+57. Python 2.7.x, 3.4, 3.6, 3.7
 58. Facebook SDK for Python 3.4
 59. Empath (https://arxiv.org/pdf/1602.06979.pdf)
 60. Scikit-Learn
@@ -73,8 +73,8 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 70. PyPDF2
 71. FTrace (for kernel functions call graphs)
 72. PyDictionary
-73. Optional - Not tested - DronecodeSDK (Python - only for usecases in NeuronRainApps/Drones)
-74. Optional - Not tested - Helicamera Drones (Hardware e.g PX4 MAVLink Hexacopters - only for usecases in NeuronRainApps/Drones)
+73. Optional - Not tested - DronecodeSDK (Python - only for usecases in NeuronRainApps/Drones and Autonomous Drone Electronic Voting Machines)
+74. Optional - Not tested - Helicamera Drones (Hardware e.g PX4 MAVLink Hexacopters - only for usecases in NeuronRainApps/Drones and Autonomous Drone Electronic Voting Machines)
 75. AudioRead
 76. Scikit-SPLearn - http://dev.pages.lis-lab.fr/scikit-splearn/index.html
 77. Python SpeechRecognition
@@ -88,3 +88,8 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 85. PIPL.com Python API (requires API key)
 86. Python Human Name Parser
 87. PyHyphen - for syllables in strings
+88. TensorLy - for Video EventNet Tensor Decomposition to Rank-x tensors
+89. autopep8 - for PEP8 python coding convention - https://pypi.org/project/autopep8/ 
+90. 2to3 - for upgrading python 2.x to 3.x - https://docs.python.org/2/library/2to3.html
+91. CVXOPT - Convex Program for Market Equilibrium - KingCobra-AstroInfer Neuro cryptocurrency and transactional cloud move
+92. Linux Kernel Mainline 64 bit (5.1.4) - for VIRGO64 PXRC Drone Telemetry
