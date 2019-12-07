@@ -1,0 +1,381 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+('Predictions:', [[('n06359193', 'web_site', 0.9750698), ('n07565083', 'menu', 0.0108547155), ('n03857828', 'oscilloscope', 0.003915516), ('n03291819', 'envelope', 0.0012593449), ('n04238763', 'slide_rule', 0.0012113553)]])
+2
+defaultdict(<class 'list'>, {'images': ['oscilloscope'], 'rapid': ['slide_rule'], 'analog': ['slide_rule'], 'containing': ['envelope'], 'gas': ['envelope'], 'bag': ['envelope'], 'maintains': ['web_site'], 'handheld': ['slide_rule'], 'balloon': ['envelope'], 'internet': ['web_site'], 'World': ['web_site'], 'things': ['menu'], 'consisting': ['slide_rule'], 'used': ['slide_rule'], 'instrument': ['slide_rule'], 'equipment': ['oscilloscope'], 'quantities': ['oscilloscope'], 'computer': ['web_site', 'slide_rule'], 'calculations': ['slide_rule'], 'electronic': ['oscilloscope'], 'electrical': ['oscilloscope'], 'connected': ['web_site'], 'series': ['web_site'], 'Wide': ['web_site'], 'calculators': ['slide_rule'], 'Web': ['web_site'], 'pages': ['web_site'], 'agenda': ['menu'], 'pocket': ['slide_rule'], 'web': ['web_site'], 'visual': ['oscilloscope'], 'varying': ['oscilloscope'], 'replaced': ['slide_rule'], 'provides': ['oscilloscope']})
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7ffb89b9afd0>, 1743282.0))
+2
+defaultdict(<class 'list'>, {'images': ['oscilloscope'], 'rapid': ['slide_rule'], 'analog': ['slide_rule'], 'containing': ['envelope'], 'gas': ['envelope'], 'bag': ['envelope'], 'maintains': ['web_site'], 'handheld': ['slide_rule'], 'balloon': ['envelope'], 'internet': ['web_site'], 'World': ['web_site'], 'things': ['menu'], 'consisting': ['slide_rule'], 'used': ['slide_rule'], 'instrument': ['slide_rule'], 'equipment': ['oscilloscope'], 'quantities': ['oscilloscope'], 'computer': ['web_site', 'slide_rule'], 'calculations': ['slide_rule'], 'electronic': ['oscilloscope'], 'electrical': ['oscilloscope'], 'connected': ['web_site'], 'series': ['web_site'], 'Wide': ['web_site'], 'calculators': ['slide_rule'], 'Web': ['web_site'], 'pages': ['web_site'], 'agenda': ['menu'], 'pocket': ['slide_rule'], 'web': ['web_site'], 'visual': ['oscilloscope'], 'varying': ['oscilloscope'], 'replaced': ['slide_rule'], 'provides': ['oscilloscope']})
+Core number (sorted) : [('images', 2), ('oscilloscope', 2), ('rapid', 2), ('slide_rule', 2), ('analog', 2), ('containing', 2), ('envelope', 2), ('gas', 2), ('bag', 2), ('maintains', 2), ('web_site', 2), ('handheld', 2), ('balloon', 2), ('internet', 2), ('World', 2), ('things', 2), ('menu', 2), ('consisting', 2), ('used', 2), ('instrument', 2), ('equipment', 2), ('quantities', 2), ('computer', 2), ('calculations', 2), ('electronic', 2), ('electrical', 2), ('connected', 2), ('series', 2), ('Wide', 2), ('calculators', 2), ('Web', 2), ('pages', 2), ('agenda', 2), ('pocket', 2), ('web', 2), ('visual', 2), ('varying', 2), ('replaced', 2), ('provides', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: images ,core number= 2
+This document belongs to class: oscilloscope ,core number= 2
+This document belongs to class: rapid ,core number= 2
+This document belongs to class: slide_rule ,core number= 2
+This document belongs to class: analog ,core number= 2
+This document belongs to class: containing ,core number= 2
+This document belongs to class: envelope ,core number= 2
+This document belongs to class: gas ,core number= 2
+This document belongs to class: bag ,core number= 2
+This document belongs to class: maintains ,core number= 2
+This document belongs to class: web_site ,core number= 2
+This document belongs to class: handheld ,core number= 2
+This document belongs to class: balloon ,core number= 2
+This document belongs to class: internet ,core number= 2
+This document belongs to class: World ,core number= 2
+This document belongs to class: things ,core number= 2
+This document belongs to class: menu ,core number= 2
+This document belongs to class: consisting ,core number= 2
+This document belongs to class: used ,core number= 2
+This document belongs to class: instrument ,core number= 2
+This document belongs to class: equipment ,core number= 2
+	max_core_number 2
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('slide_rule', 0.22048364153627312), ('web_site', 0.20483641536273117), ('computer', 0.15647226173541964), ('oscilloscope', 0.03982930298719772), ('envelope', 0.008534850640113799), ('menu', 0.001422475106685633), ('images', 0.0), ('rapid', 0.0), ('analog', 0.0), ('containing', 0.0), ('gas', 0.0), ('bag', 0.0), ('maintains', 0.0), ('handheld', 0.0), ('balloon', 0.0), ('internet', 0.0), ('World', 0.0), ('things', 0.0), ('consisting', 0.0), ('used', 0.0), ('instrument', 0.0), ('equipment', 0.0), ('quantities', 0.0), ('calculations', 0.0), ('electronic', 0.0), ('electrical', 0.0), ('connected', 0.0), ('series', 0.0), ('Wide', 0.0), ('calculators', 0.0), ('Web', 0.0), ('pages', 0.0), ('agenda', 0.0), ('pocket', 0.0), ('web', 0.0), ('visual', 0.0), ('varying', 0.0), ('replaced', 0.0), ('provides', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('slide_rule', 0.29013157894736846), ('computer', 0.29013157894736846), ('web_site', 0.27631578947368424), ('oscilloscope', 0.21052631578947367), ('rapid', 0.19342105263157897), ('analog', 0.19342105263157897), ('handheld', 0.19342105263157897), ('consisting', 0.19342105263157897), ('used', 0.19342105263157897), ('instrument', 0.19342105263157897), ('calculations', 0.19342105263157897), ('calculators', 0.19342105263157897), ('pocket', 0.19342105263157897), ('replaced', 0.19342105263157897), ('maintains', 0.1871816638370119), ('internet', 0.1871816638370119), ('World', 0.1871816638370119), ('connected', 0.1871816638370119), ('series', 0.1871816638370119), ('Wide', 0.1871816638370119), ('Web', 0.1871816638370119), ('pages', 0.1871816638370119), ('web', 0.1871816638370119), ('images', 0.11228070175438595), ('equipment', 0.11228070175438595), ('quantities', 0.11228070175438595), ('electronic', 0.11228070175438595), ('electrical', 0.11228070175438595), ('visual', 0.11228070175438595), ('varying', 0.11228070175438595), ('provides', 0.11228070175438595), ('envelope', 0.10526315789473684), ('containing', 0.06015037593984962), ('gas', 0.06015037593984962), ('bag', 0.06015037593984962), ('balloon', 0.06015037593984962), ('menu', 0.05263157894736842), ('things', 0.03508771929824561), ('agenda', 0.03508771929824561)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('slide_rule', 0.5789473684210527), ('web_site', 0.5263157894736842), ('oscilloscope', 0.42105263157894735), ('envelope', 0.21052631578947367), ('menu', 0.10526315789473684), ('computer', 0.10526315789473684), ('images', 0.05263157894736842), ('rapid', 0.05263157894736842), ('analog', 0.05263157894736842), ('containing', 0.05263157894736842), ('gas', 0.05263157894736842), ('bag', 0.05263157894736842), ('maintains', 0.05263157894736842), ('handheld', 0.05263157894736842), ('balloon', 0.05263157894736842), ('internet', 0.05263157894736842), ('World', 0.05263157894736842), ('things', 0.05263157894736842), ('consisting', 0.05263157894736842), ('used', 0.05263157894736842), ('instrument', 0.05263157894736842), ('equipment', 0.05263157894736842), ('quantities', 0.05263157894736842), ('calculations', 0.05263157894736842), ('electronic', 0.05263157894736842), ('electrical', 0.05263157894736842), ('connected', 0.05263157894736842), ('series', 0.05263157894736842), ('Wide', 0.05263157894736842), ('calculators', 0.05263157894736842), ('Web', 0.05263157894736842), ('pages', 0.05263157894736842), ('agenda', 0.05263157894736842), ('pocket', 0.05263157894736842), ('web', 0.05263157894736842), ('visual', 0.05263157894736842), ('varying', 0.05263157894736842), ('replaced', 0.05263157894736842), ('provides', 0.05263157894736842)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('slide_rule', 0.137639049790262), ('web_site', 0.12570669234772708), ('oscilloscope', 0.10811023875166816), ('envelope', 0.060984974117015305), ('menu', 0.037422341799688855), ('computer', 0.025166002155002146), ('things', 0.01975036756169403), ('agenda', 0.01975036756169403), ('containing', 0.01680503852202823), ('gas', 0.01680503852202823), ('bag', 0.01680503852202823), ('balloon', 0.01680503852202823), ('images', 0.015332374002195327), ('equipment', 0.015332374002195327), ('quantities', 0.015332374002195327), ('electronic', 0.015332374002195327), ('electrical', 0.015332374002195327), ('visual', 0.015332374002195327), ('varying', 0.015332374002195327), ('provides', 0.015332374002195327), ('maintains', 0.014530740201987113), ('internet', 0.014530740201987113), ('World', 0.014530740201987113), ('connected', 0.014530740201987113), ('series', 0.014530740201987113), ('Wide', 0.014530740201987113), ('Web', 0.014530740201987113), ('pages', 0.014530740201987113), ('web', 0.014530740201987113), ('rapid', 0.01448141579916888), ('analog', 0.01448141579916888), ('handheld', 0.01448141579916888), ('consisting', 0.01448141579916888), ('used', 0.01448141579916888), ('instrument', 0.01448141579916888), ('calculations', 0.01448141579916888), ('calculators', 0.01448141579916888), ('pocket', 0.01448141579916888), ('replaced', 0.01448141579916888)]
+('Unsupervised Image Classes:', ([('images', 2), ('oscilloscope', 2), ('rapid', 2), ('slide_rule', 2), ('analog', 2), ('containing', 2), ('envelope', 2), ('gas', 2), ('bag', 2), ('maintains', 2), ('web_site', 2), ('handheld', 2), ('balloon', 2), ('internet', 2), ('World', 2), ('things', 2), ('menu', 2), ('consisting', 2), ('used', 2), ('instrument', 2), ('equipment', 2), ('quantities', 2), ('computer', 2), ('calculations', 2), ('electronic', 2), ('electrical', 2), ('connected', 2), ('series', 2), ('Wide', 2), ('calculators', 2), ('Web', 2), ('pages', 2), ('agenda', 2), ('pocket', 2), ('web', 2), ('visual', 2), ('varying', 2), ('replaced', 2), ('provides', 2)], [('slide_rule', 0.137639049790262), ('web_site', 0.12570669234772708), ('oscilloscope', 0.10811023875166816), ('envelope', 0.060984974117015305), ('menu', 0.037422341799688855), ('computer', 0.025166002155002146), ('things', 0.01975036756169403), ('agenda', 0.01975036756169403), ('containing', 0.01680503852202823), ('gas', 0.01680503852202823), ('bag', 0.01680503852202823), ('balloon', 0.01680503852202823), ('images', 0.015332374002195327), ('equipment', 0.015332374002195327), ('quantities', 0.015332374002195327), ('electronic', 0.015332374002195327), ('electrical', 0.015332374002195327), ('visual', 0.015332374002195327), ('varying', 0.015332374002195327), ('provides', 0.015332374002195327), ('maintains', 0.014530740201987113), ('internet', 0.014530740201987113), ('World', 0.014530740201987113), ('connected', 0.014530740201987113), ('series', 0.014530740201987113), ('Wide', 0.014530740201987113), ('Web', 0.014530740201987113), ('pages', 0.014530740201987113), ('web', 0.014530740201987113), ('rapid', 0.01448141579916888), ('analog', 0.01448141579916888), ('handheld', 0.01448141579916888), ('consisting', 0.01448141579916888), ('used', 0.01448141579916888), ('instrument', 0.01448141579916888), ('calculations', 0.01448141579916888), ('calculators', 0.01448141579916888), ('pocket', 0.01448141579916888), ('replaced', 0.01448141579916888)]))
+('Predictions:', [[('n06359193', 'web_site', 0.9784778), ('n07565083', 'menu', 0.0110063795), ('n03857828', 'oscilloscope', 0.002875847), ('n03291819', 'envelope', 0.0010545466), ('n06785654', 'crossword_puzzle', 0.000957087)]])
+2
+defaultdict(<class 'list'>, {'images': ['oscilloscope'], 'containing': ['envelope'], 'gas': ['envelope'], 'bag': ['envelope'], 'corresponding': ['crossword_puzzle'], 'maintains': ['web_site'], 'balloon': ['envelope'], 'internet': ['web_site'], 'World': ['web_site'], 'things': ['menu'], 'numbered': ['crossword_puzzle'], 'written': ['crossword_puzzle'], 'squares': ['crossword_puzzle'], 'equipment': ['oscilloscope'], 'quantities': ['oscilloscope'], 'clues': ['crossword_puzzle'], 'puzzle': ['crossword_puzzle'], 'found': ['crossword_puzzle'], 'computer': ['web_site'], 'electronic': ['oscilloscope'], 'electrical': ['oscilloscope'], 'connected': ['web_site'], 'series': ['web_site'], 'Wide': ['web_site'], 'Web': ['web_site'], 'pages': ['web_site'], 'agenda': ['menu'], 'web': ['web_site'], 'visual': ['oscilloscope'], 'varying': ['oscilloscope'], 'provides': ['oscilloscope'], 'words': ['crossword_puzzle']})
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7ffb97967390>, 596403.0))
+2
+defaultdict(<class 'list'>, {'images': ['oscilloscope'], 'containing': ['envelope'], 'gas': ['envelope'], 'bag': ['envelope'], 'corresponding': ['crossword_puzzle'], 'maintains': ['web_site'], 'balloon': ['envelope'], 'internet': ['web_site'], 'World': ['web_site'], 'things': ['menu'], 'numbered': ['crossword_puzzle'], 'written': ['crossword_puzzle'], 'squares': ['crossword_puzzle'], 'equipment': ['oscilloscope'], 'quantities': ['oscilloscope'], 'clues': ['crossword_puzzle'], 'puzzle': ['crossword_puzzle'], 'found': ['crossword_puzzle'], 'computer': ['web_site'], 'electronic': ['oscilloscope'], 'electrical': ['oscilloscope'], 'connected': ['web_site'], 'series': ['web_site'], 'Wide': ['web_site'], 'Web': ['web_site'], 'pages': ['web_site'], 'agenda': ['menu'], 'web': ['web_site'], 'visual': ['oscilloscope'], 'varying': ['oscilloscope'], 'provides': ['oscilloscope'], 'words': ['crossword_puzzle']})
+Core number (sorted) : [('images', 2), ('oscilloscope', 2), ('containing', 2), ('envelope', 2), ('gas', 2), ('bag', 2), ('corresponding', 2), ('crossword_puzzle', 2), ('maintains', 2), ('web_site', 2), ('balloon', 2), ('internet', 2), ('World', 2), ('things', 2), ('menu', 2), ('numbered', 2), ('written', 2), ('squares', 2), ('equipment', 2), ('quantities', 2), ('clues', 2), ('puzzle', 2), ('found', 2), ('computer', 2), ('electronic', 2), ('electrical', 2), ('connected', 2), ('series', 2), ('Wide', 2), ('Web', 2), ('pages', 2), ('agenda', 2), ('web', 2), ('visual', 2), ('varying', 2), ('provides', 2), ('words', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: images ,core number= 2
+This document belongs to class: oscilloscope ,core number= 2
+This document belongs to class: containing ,core number= 2
+This document belongs to class: envelope ,core number= 2
+This document belongs to class: gas ,core number= 2
+This document belongs to class: bag ,core number= 2
+This document belongs to class: corresponding ,core number= 2
+This document belongs to class: crossword_puzzle ,core number= 2
+This document belongs to class: maintains ,core number= 2
+This document belongs to class: web_site ,core number= 2
+This document belongs to class: balloon ,core number= 2
+This document belongs to class: internet ,core number= 2
+This document belongs to class: World ,core number= 2
+This document belongs to class: things ,core number= 2
+This document belongs to class: menu ,core number= 2
+This document belongs to class: numbered ,core number= 2
+This document belongs to class: written ,core number= 2
+This document belongs to class: squares ,core number= 2
+This document belongs to class: equipment ,core number= 2
+This document belongs to class: quantities ,core number= 2
+	max_core_number 2
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('web_site', 0.07142857142857142), ('oscilloscope', 0.044444444444444446), ('crossword_puzzle', 0.044444444444444446), ('envelope', 0.009523809523809525), ('menu', 0.0015873015873015873), ('images', 0.0), ('containing', 0.0), ('gas', 0.0), ('bag', 0.0), ('corresponding', 0.0), ('maintains', 0.0), ('balloon', 0.0), ('internet', 0.0), ('World', 0.0), ('things', 0.0), ('numbered', 0.0), ('written', 0.0), ('squares', 0.0), ('equipment', 0.0), ('quantities', 0.0), ('clues', 0.0), ('puzzle', 0.0), ('found', 0.0), ('computer', 0.0), ('electronic', 0.0), ('electrical', 0.0), ('connected', 0.0), ('series', 0.0), ('Wide', 0.0), ('Web', 0.0), ('pages', 0.0), ('agenda', 0.0), ('web', 0.0), ('visual', 0.0), ('varying', 0.0), ('provides', 0.0), ('words', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('web_site', 0.2777777777777778), ('oscilloscope', 0.2222222222222222), ('crossword_puzzle', 0.2222222222222222), ('maintains', 0.14619883040935672), ('internet', 0.14619883040935672), ('World', 0.14619883040935672), ('computer', 0.14619883040935672), ('connected', 0.14619883040935672), ('series', 0.14619883040935672), ('Wide', 0.14619883040935672), ('Web', 0.14619883040935672), ('pages', 0.14619883040935672), ('web', 0.14619883040935672), ('images', 0.11851851851851851), ('corresponding', 0.11851851851851851), ('numbered', 0.11851851851851851), ('written', 0.11851851851851851), ('squares', 0.11851851851851851), ('equipment', 0.11851851851851851), ('quantities', 0.11851851851851851), ('clues', 0.11851851851851851), ('puzzle', 0.11851851851851851), ('found', 0.11851851851851851), ('electronic', 0.11851851851851851), ('electrical', 0.11851851851851851), ('visual', 0.11851851851851851), ('varying', 0.11851851851851851), ('provides', 0.11851851851851851), ('words', 0.11851851851851851), ('envelope', 0.1111111111111111), ('containing', 0.06349206349206349), ('gas', 0.06349206349206349), ('bag', 0.06349206349206349), ('balloon', 0.06349206349206349), ('menu', 0.05555555555555555), ('things', 0.037037037037037035), ('agenda', 0.037037037037037035)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('web_site', 0.5555555555555556), ('oscilloscope', 0.4444444444444444), ('crossword_puzzle', 0.4444444444444444), ('envelope', 0.2222222222222222), ('menu', 0.1111111111111111), ('images', 0.05555555555555555), ('containing', 0.05555555555555555), ('gas', 0.05555555555555555), ('bag', 0.05555555555555555), ('corresponding', 0.05555555555555555), ('maintains', 0.05555555555555555), ('balloon', 0.05555555555555555), ('internet', 0.05555555555555555), ('World', 0.05555555555555555), ('things', 0.05555555555555555), ('numbered', 0.05555555555555555), ('written', 0.05555555555555555), ('squares', 0.05555555555555555), ('equipment', 0.05555555555555555), ('quantities', 0.05555555555555555), ('clues', 0.05555555555555555), ('puzzle', 0.05555555555555555), ('found', 0.05555555555555555), ('computer', 0.05555555555555555), ('electronic', 0.05555555555555555), ('electrical', 0.05555555555555555), ('connected', 0.05555555555555555), ('series', 0.05555555555555555), ('Wide', 0.05555555555555555), ('Web', 0.05555555555555555), ('pages', 0.05555555555555555), ('agenda', 0.05555555555555555), ('web', 0.05555555555555555), ('visual', 0.05555555555555555), ('varying', 0.05555555555555555), ('provides', 0.05555555555555555), ('words', 0.05555555555555555)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('web_site', 0.13878498173142784), ('oscilloscope', 0.11394988068600545), ('crossword_puzzle', 0.11394988068600545), ('envelope', 0.06427967859516065), ('menu', 0.03944457754973823), ('things', 0.020818251765671425), ('agenda', 0.020818251765671425), ('containing', 0.017713864134993627), ('gas', 0.017713864134993627), ('bag', 0.017713864134993627), ('balloon', 0.017713864134993627), ('images', 0.01616167031965473), ('corresponding', 0.01616167031965473), ('numbered', 0.01616167031965473), ('written', 0.01616167031965473), ('squares', 0.01616167031965473), ('equipment', 0.01616167031965473), ('quantities', 0.01616167031965473), ('clues', 0.01616167031965473), ('puzzle', 0.01616167031965473), ('found', 0.01616167031965473), ('electronic', 0.01616167031965473), ('electrical', 0.01616167031965473), ('visual', 0.01616167031965473), ('varying', 0.01616167031965473), ('provides', 0.01616167031965473), ('words', 0.01616167031965473), ('maintains', 0.015851231556586954), ('internet', 0.015851231556586954), ('World', 0.015851231556586954), ('computer', 0.015851231556586954), ('connected', 0.015851231556586954), ('series', 0.015851231556586954), ('Wide', 0.015851231556586954), ('Web', 0.015851231556586954), ('pages', 0.015851231556586954), ('web', 0.015851231556586954)]
+('Unsupervised Image Classes:', ([('images', 2), ('oscilloscope', 2), ('containing', 2), ('envelope', 2), ('gas', 2), ('bag', 2), ('corresponding', 2), ('crossword_puzzle', 2), ('maintains', 2), ('web_site', 2), ('balloon', 2), ('internet', 2), ('World', 2), ('things', 2), ('menu', 2), ('numbered', 2), ('written', 2), ('squares', 2), ('equipment', 2), ('quantities', 2), ('clues', 2), ('puzzle', 2), ('found', 2), ('computer', 2), ('electronic', 2), ('electrical', 2), ('connected', 2), ('series', 2), ('Wide', 2), ('Web', 2), ('pages', 2), ('agenda', 2), ('web', 2), ('visual', 2), ('varying', 2), ('provides', 2), ('words', 2)], [('web_site', 0.13878498173142784), ('oscilloscope', 0.11394988068600545), ('crossword_puzzle', 0.11394988068600545), ('envelope', 0.06427967859516065), ('menu', 0.03944457754973823), ('things', 0.020818251765671425), ('agenda', 0.020818251765671425), ('containing', 0.017713864134993627), ('gas', 0.017713864134993627), ('bag', 0.017713864134993627), ('balloon', 0.017713864134993627), ('images', 0.01616167031965473), ('corresponding', 0.01616167031965473), ('numbered', 0.01616167031965473), ('written', 0.01616167031965473), ('squares', 0.01616167031965473), ('equipment', 0.01616167031965473), ('quantities', 0.01616167031965473), ('clues', 0.01616167031965473), ('puzzle', 0.01616167031965473), ('found', 0.01616167031965473), ('electronic', 0.01616167031965473), ('electrical', 0.01616167031965473), ('visual', 0.01616167031965473), ('varying', 0.01616167031965473), ('provides', 0.01616167031965473), ('words', 0.01616167031965473), ('maintains', 0.015851231556586954), ('internet', 0.015851231556586954), ('World', 0.015851231556586954), ('computer', 0.015851231556586954), ('connected', 0.015851231556586954), ('series', 0.015851231556586954), ('Wide', 0.015851231556586954), ('Web', 0.015851231556586954), ('pages', 0.015851231556586954), ('web', 0.015851231556586954)]))
+('VideoGraph:', [(<networkx.classes.digraph.DiGraph object at 0x7ffb89b9afd0>, 1743282.0), (<networkx.classes.digraph.DiGraph object at 0x7ffb97967390>, 596403.0)])
+('Videograph EventNet Tensor Product Matrix:', [[array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]]), array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])], [array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]]), array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])]])
+reconstruction error=0.979738913664566
+reconstruction error=0.976539606391984, variation=0.003199307272581997.
+reconstruction error=0.9753129725438291, variation=0.0012266338481549122.
+reconstruction error=0.9747563226646578, variation=0.000556649879171256.
+reconstruction error=0.9744979377051023, variation=0.0002583849595555465.
+reconstruction error=0.9743821584437697, variation=0.00011577926133254923.
+reconstruction error=0.9743283137273584, variation=5.384471641134425e-05.
+reconstruction error=0.9743001687342409, variation=2.8144993117540373e-05.
+reconstruction error=0.9742828425298619, variation=1.73262043789979e-05.
+reconstruction error=0.9742703523399433, variation=1.2490189918556993e-05.
+reconstruction error=0.9742602475082808, variation=1.0104831662527403e-05.
+reconstruction error=0.9742514832343989, variation=8.764273881856077e-06.
+reconstruction error=0.9742435899622635, variation=7.89327213546187e-06.
+reconstruction error=0.9742363426405204, variation=7.247321743064639e-06.
+reconstruction error=0.9742296243972686, variation=6.718243251824241e-06.
+reconstruction error=0.9742233680825441, variation=6.256314724506495e-06.
+reconstruction error=0.9742175302306552, variation=5.837851888901291e-06.
+reconstruction error=0.974212079077833, variation=5.451152822133487e-06.
+reconstruction error=0.9742069889049066, variation=5.090172926380809e-06.
+reconstruction error=0.97420223731723, variation=4.751587676654623e-06.
+reconstruction error=0.9741978039225762, variation=4.433394653835521e-06.
+reconstruction error=0.9741936696860976, variation=4.134236478603448e-06.
+reconstruction error=0.974189816616458, variation=3.853069639569995e-06.
+reconstruction error=0.9741862276140876, variation=3.5890023704077123e-06.
+reconstruction error=0.9741828863978425, variation=3.3412162451229577e-06.
+reconstruction error=0.9741797774683332, variation=3.10892950927677e-06.
+reconstruction error=0.9741768860871023, variation=2.8913812308850595e-06.
+reconstruction error=0.974174198261403, variation=2.687825699343449e-06.
+reconstruction error=0.9741717007296933, variation=2.4975317096664895e-06.
+reconstruction error=0.9741693809456918, variation=2.3197840014477222e-06.
+reconstruction error=0.9741672270602273, variation=2.153885464539762e-06.
+reconstruction error=0.9741652279007964, variation=1.999159430887687e-06.
+reconstruction error=0.9741633729490714, variation=1.8549517249999425e-06.
+reconstruction error=0.9741616523167287, variation=1.720632342716577e-06.
+reconstruction error=0.9741600567200146, variation=1.5955967140879324e-06.
+reconstruction error=0.9741585774534437, variation=1.4792665709029151e-06.
+reconstruction error=0.9741572063630004, variation=1.3710904432917559e-06.
+reconstruction error=0.9741559358191627, variation=1.2705438376947598e-06.
+reconstruction error=0.974154758690023, variation=1.1771291397177919e-06.
+reconstruction error=0.9741536683147368, variation=1.0903752861723959e-06.
+reconstruction error=0.9741526584774882, variation=1.0098372486000429e-06.
+reconstruction error=0.9741517233821214, variation=9.350953668052497e-07.
+converged in 41 iterations.
+['__abstractmethods__', '__class__', '__contains__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '__weakref__', '_abc_cache', '_abc_negative_cache', '_abc_negative_cache_version', '_abc_registry', 'factors', 'get', 'items', 'keys', 'rank', 'shape', 'values', 'weights']
+('Tensor Decomposition of Video EventNet Tensor Product(measure of connectedness of video):', [array([[0.82061306],
+       [0.82061306]]), array([[0.83634138],
+       [0.5947648 ]]), array([[2.65984190e-01],
+       [1.26654079e+00],
+       [3.87999947e-01],
+       [1.69441301e+00],
+       [3.87999947e-01],
+       [2.12011100e-01],
+       [3.93195171e-01],
+       [5.12367921e-01],
+       [1.61289271e-01],
+       [9.09205914e-01],
+       [9.96284867e-01],
+       [3.37278118e-01],
+       [1.61289271e-01],
+       [2.39843925e-01],
+       [3.49088181e-01],
+       [1.26815582e-01],
+       [1.46030426e-01],
+       [3.28671739e-01],
+       [3.42458851e-01],
+       [3.42458851e-01],
+       [2.52197078e-01],
+       [2.52197078e-01],
+       [5.43062898e-01],
+       [3.37278118e-01],
+       [2.65984190e-01],
+       [2.65984190e-01],
+       [2.93138601e-01],
+       [2.93138601e-01],
+       [2.93138601e-01],
+       [3.37278118e-01],
+       [2.93138601e-01],
+       [2.39843925e-01],
+       [1.35421961e-01],
+       [3.42458851e-01],
+       [2.98319335e-01],
+       [2.65984190e-01],
+       [2.52197078e-01],
+       [4.16970847e-01],
+       [5.10355120e-01],
+       [4.31825996e-01],
+       [7.29699076e-01],
+       [5.02966680e-01],
+       [9.82034569e-01],
+       [3.56845598e-01],
+       [3.67313373e-01],
+       [2.96039111e-01],
+       [4.01687444e-01],
+       [2.78453671e-01],
+       [2.87501615e-01],
+       [7.68032065e-01],
+       [3.36749637e-01],
+       [1.28438501e-01],
+       [2.38432028e-01],
+       [2.38432028e-01],
+       [8.87146687e-02],
+       [2.04622800e-01],
+       [4.52374929e-01],
+       [3.56845598e-01],
+       [3.56845598e-01],
+       [2.85704913e-01],
+       [3.34774500e-01],
+       [6.27896115e-01],
+       [4.52374929e-01],
+       [3.34774500e-01],
+       [3.34774500e-01],
+       [2.87501615e-01],
+       [2.87501615e-01],
+       [2.87501615e-01],
+       [3.36749637e-01],
+       [2.87501615e-01],
+       [3.33961359e-01],
+       [1.84244000e-01],
+       [4.52374929e-01],
+       [2.38432028e-01],
+       [2.22794072e-01],
+       [2.22794072e-01],
+       [2.93934756e-01],
+       [2.22794072e-01],
+       [1.52416939e-18],
+       [5.89204208e-18],
+       [7.60057478e-18],
+       [4.24744454e-18],
+       [2.08313555e-18],
+       [3.59568886e-18],
+       [1.11245545e-17],
+       [1.05458027e-17],
+       [7.08327944e-18],
+       [1.28900962e-18],
+       [3.87526493e-18],
+       [5.77642420e-18],
+       [4.50343848e-19],
+       [7.44909407e-18],
+       [8.43652368e-18],
+       [2.06803777e-18],
+       [3.07534401e-18],
+       [7.85540150e-18],
+       [1.08201377e-17],
+       [5.31115127e-19],
+       [5.25851091e-18],
+       [6.79162029e-18]]), array([[6.65295444e-02],
+       [2.80847239e-01],
+       [9.13918241e-02],
+       [3.70638830e-01],
+       [9.13918241e-02],
+       [4.96223229e-02],
+       [8.75039197e-02],
+       [1.11566971e-01],
+       [3.54190325e-02],
+       [1.98574342e-01],
+       [2.21245116e-01],
+       [7.71885337e-02],
+       [3.54190325e-02],
+       [5.23261575e-02],
+       [7.59279318e-02],
+       [2.83643571e-02],
+       [3.25252522e-02],
+       [7.57000959e-02],
+       [8.18939722e-02],
+       [8.18939722e-02],
+       [6.03356681e-02],
+       [6.03356681e-02],
+       [1.22464715e-01],
+       [7.71885337e-02],
+       [6.65295444e-02],
+       [6.65295444e-02],
+       [6.41581590e-02],
+       [6.41581590e-02],
+       [6.41581590e-02],
+       [7.71885337e-02],
+       [6.41581590e-02],
+       [5.23261575e-02],
+       [2.98527949e-02],
+       [8.18939722e-02],
+       [6.88635975e-02],
+       [6.65295444e-02],
+       [6.03356681e-02],
+       [1.14637703e-01],
+       [1.47904477e-01],
+       [1.50488342e-01],
+       [2.27847233e-01],
+       [1.76541006e-01],
+       [3.23252983e-01],
+       [1.25357060e-01],
+       [1.23290016e-01],
+       [1.03117771e-01],
+       [1.38359788e-01],
+       [9.73112982e-02],
+       [1.00032367e-01],
+       [2.67819842e-01],
+       [1.18286855e-01],
+       [4.47122666e-02],
+       [8.28488136e-02],
+       [8.28488136e-02],
+       [3.10777655e-02],
+       [7.08100621e-02],
+       [1.58013635e-01],
+       [1.25357060e-01],
+       [1.25357060e-01],
+       [9.93043962e-02],
+       [1.16487949e-01],
+       [2.18676313e-01],
+       [1.58013635e-01],
+       [1.16487949e-01],
+       [1.16487949e-01],
+       [1.00032367e-01],
+       [1.00032367e-01],
+       [1.00032367e-01],
+       [1.18286855e-01],
+       [1.00032367e-01],
+       [1.15505388e-01],
+       [6.37343399e-02],
+       [1.58013635e-01],
+       [8.28488136e-02],
+       [7.71182611e-02],
+       [7.71182611e-02],
+       [1.03170925e-01],
+       [7.71182611e-02],
+       [2.52240521e-18],
+       [1.98343473e-17],
+       [6.75722000e-18],
+       [4.30190758e-18],
+       [3.45712605e-18],
+       [4.28490095e-18],
+       [1.26234504e-18],
+       [1.38118240e-17],
+       [1.14856069e-17],
+       [1.79240422e-17],
+       [3.18011212e-18],
+       [8.07184629e-18],
+       [1.79160646e-17],
+       [6.01554194e-18],
+       [1.68089623e-17],
+       [3.00232056e-18],
+       [1.79309907e-17],
+       [1.04216112e-17],
+       [3.32061870e-18],
+       [9.05590820e-18],
+       [1.68541868e-17],
+       [1.53034537e-17]])])

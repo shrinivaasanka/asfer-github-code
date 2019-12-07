@@ -39,8 +39,8 @@ def path_between(w1,w2):
 		dist_dict2 = synset2._shortest_hypernym_paths(False)
 		inf = float('inf')
 		path_distance = inf
-		synset1_path=list(dist_dict1.keys())
-		synset2_path=list(dist_dict2.keys())
+		synset1_path=dist_dict1.keys()
+		synset2_path=dist_dict2.keys()
 		kcnt=lcnt=0
 		for k in synset1_path:
 			kcnt += 1
@@ -54,7 +54,7 @@ def path_between(w1,w2):
 		for p in path:
 			plemmanames = p.lemma_names()
 			path_lemmas.append(plemmanames[0])
-		print(path_lemmas)
+		print path_lemmas
 	except:	
 		pass
 	return path_lemmas

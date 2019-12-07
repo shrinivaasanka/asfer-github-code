@@ -24,7 +24,7 @@
 #kashrinivaasan@live.com
 #-----------------------------------------------------------------------------------------------------------------------------------
 
-
+from __future__ import division
 import pickle
 import sys
 
@@ -35,7 +35,7 @@ from collections import defaultdict
 from nltk.corpus import wordnet as wn
 import networkx as nx
 #import matplotlib.pyplot as plt
-import queue
+import Queue
 import operator
 from nltk.corpus import sentiwordnet as swn
 from nltk.book import *
@@ -46,8 +46,8 @@ definitiongraphedges=defaultdict(list)
 definitiongraphedgelabels=defaultdict(list)
 dictionary=PyDictionary()
 
-#reload(sys)
-#sys.setdefaultencoding("utf8")
+reload(sys)
+sys.setdefaultencoding("utf8")
 
 #########################################################################################################
 #Related to publications:
@@ -148,13 +148,12 @@ def RecursiveGlossOverlapGraph(text,level=3):
 	tokenized = nltk.word_tokenize(text)
 	fdist1 = FreqDist(tokenized)
 	stopwords = nltk.corpus.stopwords.words('english')
-	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
+	stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
+	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
 	#freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts and not nondictionaryword(w)]
-	#freqterms1 = [w.decode("utf-8","ignore") for w in list(fdist1.keys()) if w not in stopwords and w not in puncts]
-	freqterms1 = [w for w in list(fdist1.keys()) if w not in stopwords and w not in puncts]
+	freqterms1 = [w.decode("utf-8","ignore") for w in fdist1.keys() if w not in stopwords and w not in puncts]
 
 	current_level = 1
 	nodewithmaxparents = ''
@@ -179,7 +178,7 @@ def RecursiveGlossOverlapGraph(text,level=3):
 	while current_level < level:
 		#crucial - gather nodes which converge/overlap (have more than 1 parent)
 		if current_level > 1:
-			print(current_level)
+			print current_level
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
@@ -213,7 +212,7 @@ def RecursiveGlossOverlapGraph(text,level=3):
 				fdist_tokens = FreqDist(tokens)
 				#at present frequency filter is not applied
 				#if keyword in convergingterms:
-				tokensofthislevel = tokensofthislevel + ([w for w in list(fdist_tokens.keys()) if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
+				tokensofthislevel = tokensofthislevel + ([w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
 		listcount = len(tokensofthislevel)
 		setcount = len(set(tokensofthislevel))
 		overlap =  listcount-setcount
@@ -242,7 +241,7 @@ def RecursiveGlossOverlapGraph(text,level=3):
 
 	intrinsic_merit = vertices*edges*relatedness / first_convergence_level
 
-	print(definitiongraphedges)
+	print definitiongraphedges
 
 	nxg=nx.DiGraph()
 	pos=nx.spring_layout(nxg)
@@ -250,14 +249,14 @@ def RecursiveGlossOverlapGraph(text,level=3):
 	#pos=nx.random_layout(nxg)
 	#pos=nx.spectral_layout(nxg)
 	#nx.draw_graphviz(nxg,prog="neato")
-	for k,v in definitiongraphedges.items():
+	for k,v in definitiongraphedges.iteritems():
                 for l in v:
                         nxg.add_edge(k,l)
                         nxg.add_edge(l,k)
 	#nx.draw_networkx(nxg)
 	#plt.show()
 
-	#nxg.remove_edges_from(nxg.selfloop_edges())
+	nxg.remove_edges_from(nxg.selfloop_edges())
 	return (nxg, intrinsic_merit)
 
 def RecursiveGlossOverlap_Classify(text):
@@ -270,12 +269,11 @@ def RecursiveGlossOverlap_Classify(text):
 	tokenized = nltk.word_tokenize(text)
 	fdist1 = FreqDist(tokenized)
 	stopwords = nltk.corpus.stopwords.words('english')
-	stopwords = stopwords + [' ','or','and','who','he','she','whom','well','is','was','were','are','there','where','when','may', 'The', 'the', 'In','in','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-	puncts = [' ','.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';','\'s']
+	stopwords = stopwords + [u' ',u'or',u'and',u'who',u'he',u'she',u'whom',u'well',u'is',u'was',u'were',u'are',u'there',u'where',u'when',u'may', u'The', u'the', u'In',u'in',u'A',u'B',u'C',u'D',u'E',u'F',u'G',u'H',u'I',u'J',u'K',u'L',u'M',u'N',u'O',u'P',u'Q',u'R',u'S',u'T',u'U',u'V',u'W',u'X',u'Y',u'Z']
+	puncts = [u' ',u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&', u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';',u'\'s']
 	#at present tfidf filter is not applied
 	#freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
-	#freqterms1 = [w.decode("utf-8") for w in list(fdist1.keys()) if w not in stopwords and w not in puncts]
-	freqterms1 = [w for w in list(fdist1.keys()) if w not in stopwords and w not in puncts]
+	freqterms1 = [w.decode("utf-8") for w in fdist1.keys() if w not in stopwords and w not in puncts]
 	
 	current_level = 1
 	nodewithmaxparents = ''
@@ -300,7 +298,7 @@ def RecursiveGlossOverlap_Classify(text):
 	while current_level < 3:
 		#crucial - gather nodes which converge/overlap (have more than 1 parent)
 		if current_level > 1:
-			print(current_level)
+			print current_level
 			for x in freqterms1:
 				for y in parents(x,prevlevelsynsets):
 					ylemmanames=y.lemma_names()
@@ -334,7 +332,7 @@ def RecursiveGlossOverlap_Classify(text):
 				fdist_tokens = FreqDist(tokens)
 				#at present frequency filter is not applied
 				#if keyword in convergingterms:
-				tokensofthislevel = tokensofthislevel + ([w for w in list(fdist_tokens.keys()) if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
+				tokensofthislevel = tokensofthislevel + ([w for w in fdist_tokens.keys() if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
 		listcount = len(tokensofthislevel)
 		setcount = len(set(tokensofthislevel))
 		overlap =  listcount-setcount
@@ -363,7 +361,7 @@ def RecursiveGlossOverlap_Classify(text):
 	
 	intrinsic_merit = vertices*edges*relatedness / first_convergence_level
 
-	print(definitiongraphedges)
+	print definitiongraphedges
 
 	nxg=nx.DiGraph()
 	pos=nx.spring_layout(nxg)
@@ -371,26 +369,26 @@ def RecursiveGlossOverlap_Classify(text):
 	#pos=nx.random_layout(nxg)
 	#pos=nx.spectral_layout(nxg)
 	#nx.draw_graphviz(nxg,prog="neato")
-	for k,v in definitiongraphedges.items():
+	for k,v in definitiongraphedges.iteritems():
                 for l in v:
                         nxg.add_edge(k,l)
                         nxg.add_edge(l,k)
 	#nx.draw_networkx(nxg)
 	#plt.show()
 
-	#nxg.remove_edges_from(nxg.selfloop_edges())
+	nxg.remove_edges_from(nxg.selfloop_edges())
 	#print "Core number =",nx.core_number(nxg)
-	sorted_core_nxg=sorted(list(nx.core_number(nxg).items()),key=operator.itemgetter(1), reverse=True)
-	print("Core number (sorted) :",sorted_core_nxg)
-	print("=============================================================================================================")
-	print("Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)")
-	print("=============================================================================================================")
+	sorted_core_nxg=sorted(nx.core_number(nxg).items(),key=operator.itemgetter(1), reverse=True)
+	print "Core number (sorted) :",sorted_core_nxg
+	print "============================================================================================================="
+	print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+	print "============================================================================================================="
 	no_of_classes=len(nx.core_number(nxg))
 	top_percentile=0
 	max_core_number=0
 	max_core_number_class=""
 	for n in sorted_core_nxg:
-		print("This document belongs to class:",n[0],",core number=",n[1])
+		print "This document belongs to class:",n[0],",core number=",n[1]
 		if top_percentile < no_of_classes*0.50:
 			top_percentile+=1
 		else:	
@@ -398,34 +396,34 @@ def RecursiveGlossOverlap_Classify(text):
 		if n[1] > max_core_number:
 			max_core_number=n[1]
 			max_core_number_class=n[0]
-	print("	max_core_number",max_core_number)
+	print "	max_core_number",max_core_number
 
-	print("===================================================================")
-	print("Betweenness Centrality of Recursive Gloss Overlap graph vertices")
-	print("===================================================================")
+	print "==================================================================="
+	print "Betweenness Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
 	bc=nx.betweenness_centrality(nxg)
-	sorted_bc=sorted(list(bc.items()),key=operator.itemgetter(1),reverse=True)
-	print(sorted_bc) 
+	sorted_bc=sorted(bc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_bc 
 
-	print("===================================================================")
-	print("Closeness Centrality of Recursive Gloss Overlap graph vertices")
-	print("===================================================================")
+	print "==================================================================="
+	print "Closeness Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
 	cc=nx.closeness_centrality(nxg)
-	sorted_cc=sorted(list(cc.items()),key=operator.itemgetter(1),reverse=True)
-	print(sorted_cc) 
+	sorted_cc=sorted(cc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_cc 
 
-	print("===================================================================")
-	print("Degree Centrality of Recursive Gloss Overlap graph vertices")
-	print("===================================================================")
+	print "==================================================================="
+	print "Degree Centrality of Recursive Gloss Overlap graph vertices"
+	print "==================================================================="
 	dc=nx.degree_centrality(nxg)
-	sorted_dc=sorted(list(dc.items()),key=operator.itemgetter(1),reverse=True)
-	print(sorted_dc) 
+	sorted_dc=sorted(dc.items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_dc 
 	
-	print("===================================================================")
-	print("Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)")
-	print("===================================================================")
-	sorted_pagerank_nxg=sorted(list(nx.pagerank(nxg).items()),key=operator.itemgetter(1),reverse=True)
-	print(sorted_pagerank_nxg)
+	print "==================================================================="
+	print "Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)"
+	print "==================================================================="
+	sorted_pagerank_nxg=sorted(nx.pagerank(nxg).items(),key=operator.itemgetter(1),reverse=True)
+	print sorted_pagerank_nxg
 	return (sorted_core_nxg, sorted_pagerank_nxg)
 
 if __name__=="__main__":
@@ -437,5 +435,5 @@ if __name__=="__main__":
 	file1 = open(corpus[0])
 	text = file1.read()
 	classified=RecursiveGlossOverlap_Classify(text)
-	print("__main__(): This text belongs to classes:", classified)
+	print "__main__(): This text belongs to classes:", classified
 
