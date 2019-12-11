@@ -15270,3 +15270,36 @@ truncates the names of signs and planets to first 3 alphabets.
 5.logs have been committed to testlogs/ImageGraph_Keras_Theano.log.TensorRank1Decomposition.7December2019
 6.Video EventNet Tensor is printed for debug purposes
 7.Rank-1 tensor factors from non_negative_parafac() of Video EventNet Tensor are also printed
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+733. (FEATURE and THEORY) Computational Geometric Factorization - Quadcore Python 3.6 Upgrade Benchmarks - 11 December 2019 - related to all
+sections of Factorization
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit upgrades Spark Python Computational Geometric Factorization implementation DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py from Python 2.7 to Python 3.6 for performance and availing the better range() utility in Python 3.x which breaches the maximum range barrier limitation in Python 2.7. Python 3.6 range() is a rewrite and supports huge integers (of hundreds of digits).
+2.Following Spark Python environment variables have been set to Python 3.6m binary for PySpark upgrade to Python 3.6:
+	SPARK_PYTHON=/usr/bin/python3.6m
+	SPARK_DRIVER_PYTHON=/usr/bin/python3.6m
+3.Large Integer 999999999999999999 (60 bits) has been factorized which is by far the largest integer factorized in Spark BSP-NC-PRAM model. Larger integers throw a Spark Python error in PySpark context.py (File "spark-2.4.3-bin-hadoop2.7/python/lib/pyspark.zip/pyspark/context.py", line 501, in parallelize, OverflowError: Python int too large to convert to C ssize_t):
+	if isinstance(c, xrange):
+            size = len(c)
+because of len() failure for larger integers
+[
+Error can also be produced from commandline:
+>>> x=range(9999999999999999999)
+>>> len(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OverflowError: Python int too large to convert to C ssize_t
+>>> x=range(999999999999999999)
+>>> len(x)
+999999999999999999
+]
+4.Previous error requires Spark rewrite of context.py parallelize() to:
+	range().stop - range().start 
+replacing len() specific to Python 3.x range()
+5.Python 2.7 Spark Factorization implementation has been upgraded to Python 3.6 by autopep8 followed by 2to3-2.7 utilities. Python 2.7 version has been marked as DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py.2.7
+6.Spark Python version is printed by sys.version:
+	Spark Python version: 3.6.8 (default, Oct  7 2019, 12:59:55) 
+	[GCC 8.3.0]
+7.First few factors of 999999999999999999 are printed to testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.6Upgrade.11December2019. Timestamp of each factor is printed.
+8.Ray shooting queries excluding Hardy-Ramanujan and some imports have been commented.
