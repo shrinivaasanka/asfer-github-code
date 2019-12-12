@@ -117,7 +117,7 @@ def event_interactions(edges):
     return edges_list[:-1]
 
 
-def videograph_eventnet_tensor_product(videograph):
+def videograph_eventnet_tensor_product(videograph,squareslice=100):
     vg_en_tn_prdct = []
     for v1 in videograph:
         vg_en_tn_prdct_row = []
@@ -126,7 +126,7 @@ def videograph_eventnet_tensor_product(videograph):
                     v1[0].to_undirected(),
                     v2[0].to_undirected()))
             nxadjmatslice=nxadjacency_matrix
-            nxadjmatslice=nxadjmatslice[0:100,0:100]
+            nxadjmatslice=nxadjmatslice[0:squareslice,0:squareslice]
             nxadjmatslice=np.array(nxadjmatslice.toarray(),order='F').astype(np.float64)
             vg_en_tn_prdct_row.append(nxadjmatslice)
         vg_en_tn_prdct.append(vg_en_tn_prdct_row)
