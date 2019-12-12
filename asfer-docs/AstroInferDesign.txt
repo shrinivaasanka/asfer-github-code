@@ -15306,3 +15306,13 @@ replacing len() specific to Python 3.x range()
 	[GCC 8.3.0]
 7.First few factors of 999999999999999999 are printed to testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.6Upgrade.11December2019. Timestamp of each factor is printed.
 8.Ray shooting queries excluding Hardy-Ramanujan and some imports have been commented.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+734. (FEATURE) Merit of Large Scale Visuals - Video EventNet Tensor Decomposition to Rank-1 Tensors on Python 3.7.5 - slicing - 12 December 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.ImageNet_Keras_Theano.py videograph_eventnet_tensor_product() has been changed to accept side of square slice per frame as an argument which is by default 100*100 pixels.
+2.Square slicing per frame is necessary when elements of video tensor product matrix are of unequal rectangular dimensions and tensorly stipulates equal dimensions.
+3.Usual videos have frames of equal dimensions but the example montage video footage in NeuronRain has unequal frame sizes and minimum frame sides have to be found which are then used to slice each frame. 
+4.Since a video can have arbitrarily large number of frames in millions, finding the minimum sides of the frame rectangles could be daunting.
+5.Instead of finding minimum frame sides, square slicing has been made default and configurable by user in function argument "squareslice" which is by default 100.
+6.Python 3.6.8 for TensorLy has been upgraded to Python 3.7.5 which is the fastest python distribution.
