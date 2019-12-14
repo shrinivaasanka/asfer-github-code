@@ -15316,3 +15316,15 @@ replacing len() specific to Python 3.x range()
 4.Since a video can have arbitrarily large number of frames in millions, finding the minimum sides of the frame rectangles could be daunting.
 5.Instead of finding minimum frame sides, square slicing has been made default and configurable by user in function argument "squareslice" which is by default 100.
 6.Python 3.6.8 for TensorLy has been upgraded to Python 3.7.5 which is the fastest python distribution.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+735. (THEORY and FEATURE) Complement Diophantines - Least Squares Vandermonde Polynomial Fit Learning - related to all sections on 
+Complement Diophantines - Python 3.7.5 upgrade - 14 December 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1. complement.py complement diophantine learner has been updated to learn a degree 5 interpolated polynomial for a complementary set (non-squares)
+2. polyfit() from numeric python has been invoked on a complementary set of non-squares (https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html) which is a least squares solution solver for Vandermonde coefficient matrix
+3. polyfit() least square interpolation is an alternative to Lagrangian polynomial interpolation (https://en.wikipedia.org/wiki/Lagrange_polynomial) mentioned in arXiv version (https://arxiv.org/abs/1106.4102v1, https://scholar.google.com/citations?user=eLZY7CIAAAAJ&hl=en).
+4. complement.py has been upgraded to Python 3.7.5 from Python 2.7 by autopep8 and 2to3 utilities. Python 2.7 version has been suffixed as .2.7
+5. polyfit() least square interpolation is guaranteed to be unique - https://en.wikipedia.org/wiki/Polynomial_interpolation
+6. logs for polyfit() are committed to testlogs/complement.PolyFitPython3.7.5.14December2019
+7. Least Squares and Lagrangian interpolations are total functions while Lagrange Four Square Theorem complement map is a partial function (not all domain tuples are mapped to a point in complementary set)
