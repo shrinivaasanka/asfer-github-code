@@ -113,8 +113,8 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
         #print "factorcandidate = ",factorcandidate
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
             print("=================================================")
-            print("Factor is = ", yl, "(at ", strftime(
-                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")")
+            print(("Factor is = ", yl, "(at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             print("=================================================")
             factors_accum.add(yl)
         else:
@@ -142,10 +142,10 @@ def binary_search_interval(xl, yl, xr, yr):
     intervalmidpoint = int((xr-xl)/2)
     if intervalmidpoint >= 0:
         factorcandidate = (xl+intervalmidpoint)*yl
-        print("factorcandidate = ", factorcandidate)
+        print(("factorcandidate = ", factorcandidate))
         if factorcandidate == number_to_factorize:
             print("=================================================")
-            print("Factor is = ", yl)
+            print(("Factor is = ", yl))
             print("=================================================")
         else:
             if factorcandidate > number_to_factorize:
@@ -160,15 +160,16 @@ def hardy_ramanujan_ray_shooting_queries(n):
     k = 6.0
     normal_order_n = int(k*math.log(math.log(n, 2), 2))
     print("=============================================================================================================")
-    print("Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of ", n, " are:")
+    print(("Hardy-Ramanujan Ray Shooting Queries - Approximate Factors of ", n, " are:"))
     print("=============================================================================================================")
-    print("normal_order_n(loglogN) = ", normal_order_n)
+    print(("normal_order_n(loglogN) = ", normal_order_n))
     for m in range(1, normal_order_n):
         approximate_prime_factor = int(float(m*n)/float(normal_order_n))
         tan_theta = float(n/math.pow(approximate_prime_factor, 2))
         print("####################################################################")
-        print("approximate ", m, "-th prime factor of ", n, ":", approximate_prime_factor)
-        print("tangent of ray shooting query angle :", tan_theta)
+        print(("approximate ", m, "-th prime factor of ",
+              n, ":", approximate_prime_factor))
+        print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
     print("=============================================================================================================")
 
@@ -180,9 +181,9 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
     l = 10.0
     normal_order_n = int(k*math.log(math.log(n, 2), 2))
     print("=============================================================================================================")
-    print("Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ", n, " are:")
+    print(("Hardy-Ramanujan-Prime Number Theorem Ray Shooting Queries - Approximate Factors of ", n, " are:"))
     print("=============================================================================================================")
-    print("normal_order_n(loglogN) = ", normal_order_n)
+    print(("normal_order_n(loglogN) = ", normal_order_n))
     approximate_prime_factor = 2
     prev_approximate_prime_factor = approximate_prime_factor
     for m in range(1, normal_order_n):
@@ -197,9 +198,11 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
             2*approximate_prime_factor_log_ratio + 1) - 4.0) + (2*approximate_prime_factor_log_ratio + 1))/2.0
         tan_theta = float(n/math.pow(approximate_prime_factor, 2))
         print("####################################################################")
-        print("approximate ", m, "-th prime factor of ", n, ":", approximate_prime_factor)
-        print("approximate prime factor log ratio - pf/log(pf) :", approximate_prime_factor_log_ratio)
-        print("tangent of ray shooting query angle :", tan_theta)
+        print(("approximate ", m, "-th prime factor of ",
+              n, ":", approximate_prime_factor))
+        print(("approximate prime factor log ratio - pf/log(pf) :",
+              approximate_prime_factor_log_ratio))
+        print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
         prev_approximate_prime_factor = approximate_prime_factor
     print("=============================================================================================================")
@@ -211,17 +214,17 @@ def baker_harman_pintz_ray_shooting_queries(n):
     l = 0.001
     normal_order_n = int(k*math.log(math.log(n, 2), 2))
     print("=============================================================================================================")
-    print("Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ", n, " are:")
+    print(("Baker-Harman-Pintz Theorem Ray Shooting Queries - Approximate Factors of ", n, " are:"))
     print("=============================================================================================================")
-    print("normal_order_n(loglogN) = ", normal_order_n)
+    print(("normal_order_n(loglogN) = ", normal_order_n))
     approximate_prime_factor = 2
-    #for m in spcon.range(1, normal_order_n).collect():
+    # for m in spcon.range(1, normal_order_n).collect():
     for m in range(1, normal_order_n):
         prime_gaps_sum = 0.0
         prev_prime = approximate_prime_factor
-        print("approximate number of primes between two prime factors:", int(
-            l*float(n)/(float(math.log(n, 2)*normal_order_n))))
-        #for x in spcon.range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))).collect():
+        print(("approximate number of primes between two prime factors:", int(
+            l*float(n)/(float(math.log(n, 2)*normal_order_n)))))
+        # for x in spcon.range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))).collect():
         for x in range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))):
             next_prime = prev_prime + math.pow(prev_prime, 0.525)
             #print "next_prime: next_prime = ",next_prime
@@ -233,8 +236,9 @@ def baker_harman_pintz_ray_shooting_queries(n):
         if approximate_prime_factor > n:
             break
         print("####################################################################")
-        print("approximate ", m, "-th prime factor of ", n, ":", approximate_prime_factor)
-        print("tangent of ray shooting query angle :", tan_theta)
+        print(("approximate ", m, "-th prime factor of ",
+              n, ":", approximate_prime_factor))
+        print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
 
@@ -244,9 +248,9 @@ def cramer_ray_shooting_queries(n):
     l = 0.001
     normal_order_n = int(k*math.log(math.log(n, 2), 2))
     print("=============================================================================================================")
-    print("Cramer Ray Shooting Queries - Approximate Factors of ", n, " are:")
+    print(("Cramer Ray Shooting Queries - Approximate Factors of ", n, " are:"))
     print("=============================================================================================================")
-    print("normal_order_n(loglogN) = ", normal_order_n)
+    print(("normal_order_n(loglogN) = ", normal_order_n))
     approximate_prime_factor = 2
     for m in range(1, normal_order_n):
         prime_gaps_sum = 0.0
@@ -263,8 +267,9 @@ def cramer_ray_shooting_queries(n):
         if approximate_prime_factor > n:
             break
         print("####################################################################")
-        print("approximate ", m, "-th prime factor of ", n, ":", approximate_prime_factor)
-        print("tangent of ray shooting query angle :", tan_theta)
+        print(("approximate ", m, "-th prime factor of ",
+              n, ":", approximate_prime_factor))
+        print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
 
@@ -275,9 +280,9 @@ def zhang_ray_shooting_queries(n):
     l = 0.00001
     normal_order_n = int(k*math.log(math.log(n, 2), 2))
     print("=============================================================================================================")
-    print("Zhang Ray Shooting Queries (for large primes) - Approximate Factors of ", n, " are:")
+    print(("Zhang Ray Shooting Queries (for large primes) - Approximate Factors of ", n, " are:"))
     print("=============================================================================================================")
-    print("normal_order_n(loglogN) = ", normal_order_n)
+    print(("normal_order_n(loglogN) = ", normal_order_n))
     approximate_prime_factor = 2
     for m in range(1, normal_order_n):
         prime_gaps_sum = 0.0
@@ -293,8 +298,9 @@ def zhang_ray_shooting_queries(n):
         if approximate_prime_factor > n:
             break
         print("####################################################################")
-        print("approximate ", m, "-th prime factor of ", n, ":", approximate_prime_factor)
-        print("tangent of ray shooting query angle :", tan_theta)
+        print(("approximate ", m, "-th prime factor of ",
+              n, ":", approximate_prime_factor))
+        print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
 
@@ -321,19 +327,27 @@ def SearchTiles_and_Factorize(n):
         factorsfile = open(
             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
         hardy_ramanujan_ray_shooting_queries(n)
-        #hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
-        #baker_harman_pintz_ray_shooting_queries(n)
-        #cramer_ray_shooting_queries(n)
-        #zhang_ray_shooting_queries(n)
+        # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+        # baker_harman_pintz_ray_shooting_queries(n)
+        # cramer_ray_shooting_queries(n)
+        # zhang_ray_shooting_queries(n)
         factors_accum = spcon.accumulator(
             factors_of_n, FactorsAccumulatorParam())
-        #spcon.parallelize(spcon.range(1, n).collect()).foreach(
+        # spcon.parallelize(spcon.range(1, n).collect()).foreach(
         #    tilesearch_nonpersistent)
-        tiles=range(1,n)
-        print("len(tiles):",len(tiles))
-        spcon.parallelize(tiles).foreach(
-            tilesearch_nonpersistent)
-        print("factors_accum.value = ", factors_accum.value)
+        normal_order_n = int(math.pow(math.log(n, 2),50))
+        tiles_start = 1
+        tiles_end = int(n/normal_order_n)
+        for x in range(normal_order_n):
+            print("tiles_start:", tiles_start)
+            print("tiles_end:", tiles_end)
+            tiles = range(tiles_start, tiles_end)
+            print(("len(tiles):", len(tiles)))
+            spcon.parallelize(tiles).foreach(
+                tilesearch_nonpersistent)
+            tiles_start = tiles_end
+            tiles_end += int(n/normal_order_n)
+        print(("factors_accum.value = ", factors_accum.value))
         factors = []
         factordict = {}
         for f in factors_accum.value:
@@ -345,7 +359,9 @@ def SearchTiles_and_Factorize(n):
 
 if __name__ == "__main__":
     number_to_factorize = toint(sys.argv[1])
-    print("Spark Python version:",sys.version)
-    print("factors of ", number_to_factorize, "(",math.log(number_to_factorize,2)," bits integer) are:")
+    print(("Spark Python version:", sys.version))
+    print(("factors of ", number_to_factorize, "(", math.log(
+        number_to_factorize, 2), " bits integer) are:"))
     factors = SearchTiles_and_Factorize(number_to_factorize)
-    print("factors of ", number_to_factorize, "(",math.log(number_to_factorize,2)," bits integer) =", factors)
+    print(("factors of ", number_to_factorize, "(", math.log(
+        number_to_factorize, 2), " bits integer) =", factors))
