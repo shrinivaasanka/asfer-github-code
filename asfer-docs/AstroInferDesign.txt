@@ -15332,3 +15332,99 @@ Complement Diophantines - Python 3.7.5 upgrade - 14 December 2019
 5. polyfit() least square interpolation is guaranteed to be unique - https://en.wikipedia.org/wiki/Polynomial_interpolation
 6. logs for polyfit() are committed to testlogs/complement.PolyFitPython3.7.5.14December2019
 7. Least Squares and Lagrangian interpolations are total functions while Lagrange Four Square Theorem complement map is a partial function (not all domain tuples are mapped to a point in complementary set)
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+736. (THEORY and FEATURE) Computational Geometric PRAM-NC-BSP Factorization - Python 3.7.5 upgrade - Spark Quadcore benchmarks - 512 bit integer - related to 477,481 and all other sections on Factorization - 18 December 2019
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.Computational Geometric Factorization Python-Spark implementation has been upgraded to Python 3.7.5 and following local tile search algorithm mentioned in 477 and 481 has been implemented which obviates parallel sorting and completely removes the maximum integer barrier altogether:
+
+while(iterations <= O((logN)^k))
+{
+	*) Assign N/(logN)^k tiles to N/(logN)^k PRAMs in parallel (O(1) parallel time because each interval tile in a global shared memory array can be accessed by PRAM id as index)
+	*) Binary Search tile in each PRAM for factors (O(logN) parallel time which can be reduced to O(logN/logp) by parallel binary search from Snir's Theorem)
+}
+
+2.Number of PRAMs (multicores) is 4 and constant k in (logN)^k has been set to 50 which, though not commensurate, is hardcoded for demonstrative reasons. Previous algorithm is work optimal NC because PRAM time * iterations = Sequential time
+3.Spark context parallelize() has been refactored to following loop which circumvents the Spark context ssize_t exception in pyspark context.py parallelize() - maximum value of len() is limited to 64 bits per slice by suitable choice of exponent k:
+        normal_order_n = int(math.pow(math.log(n, 2),50))
+        tiles_start = 1
+        tiles_end = int(n/normal_order_n)
+        for x in range(normal_order_n):
+            print("tiles_start:", tiles_start)
+            print("tiles_end:", tiles_end)
+            tiles = range(tiles_start, tiles_end)
+            print(("len(tiles):", len(tiles)))
+            spcon.parallelize(tiles).foreach(
+                tilesearch_nonpersistent)
+            tiles_start = tiles_end
+            tiles_end += int(n/normal_order_n)
+Previous loop of (logN)^k iterations slices the Python 3.7.5 range() into multiples of N/(logN)^k and individually parallelizes each slice to RDDs.
+4.Because Python 3.7.5 range() is unlimited, maximum number factorizable is arbitrary for all practical purposes - previous benchmark for 60 bits has been bettered and a huge integer of 512 bits which is ecommerce-grade - 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 - has been factorized to print all factors on single node cluster of 4 multicores. This is the largest integer factorized thus far. Smoothness of this integer (high omega and large number of small prime factors) causes easy factorization.
+5.logs at testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.512bits.18December2019 print a truncated list of factors of 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999  with in few seconds:
+=================================================
+('Factor is = ', 3, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 9, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 11, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 23, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 33, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 69, '(at ', 'Wed, 18 Dec 2019 05:28:26 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 207, '(at ', 'Wed, 18 Dec 2019 05:28:27 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 239, '(at ', 'Wed, 18 Dec 2019 05:28:27 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 253, '(at ', 'Wed, 18 Dec 2019 05:28:27 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 463, '(at ', 'Wed, 18 Dec 2019 05:28:28 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 759, '(at ', 'Wed, 18 Dec 2019 05:28:28 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 2277, '(at ', 'Wed, 18 Dec 2019 05:28:32 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 4167, '(at ', 'Wed, 18 Dec 2019 05:28:37 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 4649, '(at ', 'Wed, 18 Dec 2019 05:28:39 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 5237, '(at ', 'Wed, 18 Dec 2019 05:28:40 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 5497, '(at ', 'Wed, 18 Dec 2019 05:28:41 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 7887, '(at ', 'Wed, 18 Dec 2019 05:28:47 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 8349, '(at ', 'Wed, 18 Dec 2019 05:28:48 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 13947, '(at ', 'Wed, 18 Dec 2019 05:29:02 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 16491, '(at ', 'Wed, 18 Dec 2019 05:29:09 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 21649, '(at ', 'Wed, 18 Dec 2019 05:29:22 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 23661, '(at ', 'Wed, 18 Dec 2019 05:29:28 GMT', ')')
+=================================================
+[...truncated...]
