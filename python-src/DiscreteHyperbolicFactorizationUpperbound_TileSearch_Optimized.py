@@ -98,14 +98,15 @@ def toint(primestr):
 def tilesearch_nonpersistent(y):
     global number_to_factorize
     n = number_to_factorize
-    xtile_start = int(n/y)
-    xtile_end = int(n/(y+1))
+    xtile_start = int(float(n)/float(y))
+    xtile_end = int(float(n)/float(y+1))
     #print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
     binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y)
 
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr):
     global factors_accum
+    sys.setrecursionlimit(3000)
     intervalmidpoint = abs(int((xr-xl)/2))
     #print "intervalmidpoint = ",intervalmidpoint
     if intervalmidpoint > 0:
@@ -326,7 +327,7 @@ def SearchTiles_and_Factorize(n):
     else:
         factorsfile = open(
             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
-        hardy_ramanujan_ray_shooting_queries(n)
+        # hardy_ramanujan_ray_shooting_queries(n)
         # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
         # baker_harman_pintz_ray_shooting_queries(n)
         # cramer_ray_shooting_queries(n)
@@ -335,14 +336,14 @@ def SearchTiles_and_Factorize(n):
             factors_of_n, FactorsAccumulatorParam())
         # spcon.parallelize(spcon.range(1, n).collect()).foreach(
         #    tilesearch_nonpersistent)
-        normal_order_n = int(math.pow(math.log(n, 2),50))
+        normal_order_n = int(math.pow(math.log(n, 2),100))
         tiles_start = 1
         tiles_end = int(n/normal_order_n)
         for x in range(normal_order_n):
-            print("tiles_start:", tiles_start)
-            print("tiles_end:", tiles_end)
+            #print("tiles_start:", tiles_start)
+            #print("tiles_end:", tiles_end)
             tiles = range(tiles_start, tiles_end)
-            print(("len(tiles):", len(tiles)))
+            #print(("len(tiles):", len(tiles)))
             spcon.parallelize(tiles).foreach(
                 tilesearch_nonpersistent)
             tiles_start = tiles_end
