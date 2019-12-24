@@ -28,6 +28,8 @@ import sys
 import operator
 from pyspark import SparkContext, SparkConf
 import sys
+from decimal import Decimal
+import numpy as np
 number_to_factorize = 0
 persisted_tiles = False
 
@@ -98,16 +100,16 @@ def toint(primestr):
 def tilesearch_nonpersistent(y):
     global number_to_factorize
     n = number_to_factorize
-    xtile_start = int(float(n)/float(y))
-    xtile_end = int(float(n)/float(y+1))
+    xtile_start = int(Decimal(n)/Decimal(y))
+    xtile_end = int(Decimal(n)/Decimal(y+1))
     #print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
     binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y)
 
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr):
     global factors_accum
-    sys.setrecursionlimit(3000)
-    intervalmidpoint = abs(int((xr-xl)/2))
+    sys.setrecursionlimit(10000)
+    intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
     #print "intervalmidpoint = ",intervalmidpoint
     if intervalmidpoint > 0:
         factorcandidate = (xl+intervalmidpoint)*yl
@@ -305,7 +307,7 @@ def zhang_ray_shooting_queries(n):
         print("####################################################################")
 
 
-def SearchTiles_and_Factorize(n):
+def SearchTiles_and_Factorize(n,k):
     global globalmergedtiles
     global globalcoordinates
     global factors_accum
@@ -327,19 +329,19 @@ def SearchTiles_and_Factorize(n):
     else:
         factorsfile = open(
             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
-        # hardy_ramanujan_ray_shooting_queries(n)
-        # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
-        # baker_harman_pintz_ray_shooting_queries(n)
-        # cramer_ray_shooting_queries(n)
-        # zhang_ray_shooting_queries(n)
+        #hardy_ramanujan_ray_shooting_queries(n)
+        #hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+        #baker_harman_pintz_ray_shooting_queries(n)
+        #cramer_ray_shooting_queries(n)
+        #zhang_ray_shooting_queries(n)
         factors_accum = spcon.accumulator(
             factors_of_n, FactorsAccumulatorParam())
         # spcon.parallelize(spcon.range(1, n).collect()).foreach(
         #    tilesearch_nonpersistent)
-        normal_order_n = int(math.pow(math.log(n, 2),100))
+        normal_order_n = (math.log(n, 2) ** k)
         tiles_start = 1
-        tiles_end = int(n/normal_order_n)
-        for x in range(normal_order_n):
+        tiles_end = int(Decimal(n)/Decimal(normal_order_n))
+        for x in range(int(normal_order_n)):
             #print("tiles_start:", tiles_start)
             #print("tiles_end:", tiles_end)
             tiles = range(tiles_start, tiles_end)
@@ -363,6 +365,6 @@ if __name__ == "__main__":
     print(("Spark Python version:", sys.version))
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) are:"))
-    factors = SearchTiles_and_Factorize(number_to_factorize)
+    factors = SearchTiles_and_Factorize(number_to_factorize,100)
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) =", factors))
