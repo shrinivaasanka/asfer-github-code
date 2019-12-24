@@ -15460,3 +15460,76 @@ References:
 "...It will be important to pay attention to input size. As always, the input size can either be described by n, the cardinality of the input (the quantity counting the number of "things"), or by N, the bitsize (the quantity measuring the number of bits needed to write everything down). When we talk about polylogarithmic time and polynomial number of processors, unless specified otherwise, we will be referring to polynomials of n AND N. In the non-uniform setting, we'll assume that we're presented with a PRAM that for fixed n, N, runs in time t(n, N) with p(n, N) processors...." - In Computational Geometric Factorization NC definition, O((logX)^k) is a polynomial t(N) and O(X/(logX)^k) PRAMs is a polynomial p(n,N) where N=logX and n=X.
 737.7 Definition of PRAM - Definition 2.2.1 - [RAYMOND GREENLAW,H. JAMES HOOVER,WALTER L. RUZZO - OXFORD UNIVERSITY PRESS 1995] - https://homes.cs.washington.edu/~ruzzo/papers/limits.pdf
 737.8 Poster: Easy PRAM-based High-performance Parallel Programming with ICE - [Ghanim-Rajeev-Vishkin] - https://www.researchgate.net/publication/310824244_POSTER_Easy_PRAM-based_High-Performance_Parallel_Programming_with_ICE - input size to Pointer jumping algorithm
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+738. (THEORY and FEATURE) Computational Geometric NC-PRAM-BSP Factorization - Python 3.7.5 Single node cluster quadcore benchmarks - 1067 bits integer - some factcheck references on NC-PRAM equivalence and input size - 24 December 2019 - related to all sections on Factorization
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1.In continuation of previous benchmarks on 1000 bits integer another hard non-smooth random 1067 bits integer of randomly mixed digits - 939483849839493438483989489384983948938843984983984983984938948348938499384928830928380289389283982983928398249748378478378738478738748729839289389289382983982983928938298398298328938298398239274873874873874928338298938298392893298392893829839289382983928398298392839289382983928748738758374837483737481349384833499384979   - has been factorized on single node cluster of quadcores and first few factors - mostly primes - are printed from 18th second onwards: 
+=================================================
+('Factor is = ', 11, '(at ', 'Tue, 24 Dec 2019 08:21:47 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 17, '(at ', 'Tue, 24 Dec 2019 08:21:47 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 47, '(at ', 'Tue, 24 Dec 2019 08:21:49 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 51, '(at ', 'Tue, 24 Dec 2019 08:21:49 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 141, '(at ', 'Tue, 24 Dec 2019 08:21:53 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 187, '(at ', 'Tue, 24 Dec 2019 08:21:55 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 289, '(at ', 'Tue, 24 Dec 2019 08:22:00 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 311, '(at ', 'Tue, 24 Dec 2019 08:22:01 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 517, '(at ', 'Tue, 24 Dec 2019 08:22:11 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 561, '(at ', 'Tue, 24 Dec 2019 08:22:13 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 799, '(at ', 'Tue, 24 Dec 2019 08:22:24 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 867, '(at ', 'Tue, 24 Dec 2019 08:22:27 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 3179, '(at ', 'Tue, 24 Dec 2019 08:24:16 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 3421, '(at ', 'Tue, 24 Dec 2019 08:24:27 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 5287, '(at ', 'Tue, 24 Dec 2019 08:25:54 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 8789, '(at ', 'Tue, 24 Dec 2019 08:28:37 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 9537, '(at ', 'Tue, 24 Dec 2019 08:29:12 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 10263, '(at ', 'Tue, 24 Dec 2019 08:29:46 GMT', ')')
+=================================================
+=================================================
+('Factor is = ', 13583, '(at ', 'Tue, 24 Dec 2019 08:32:20 GMT', ')')
+=================================================
+[....truncated....]
+2.float() cast has been changed to Decimal() for highest precision and remove overflow errors for tile segments and interval midpoint computations
+3.Recursion limit has been increased to 10000
+4.Exponentiation by math.pow() for normal order computation in local search optimization has been replaced by faster ** exponentiation operator of Python.
+5.Exponent k in local search loop - (logN)^k (iterations) * N/(logN)^k (PRAMs) - has been parametrized in SearchTiles_and_Factorize() function which simulates non-uniform NC circuit of (logN)^k depth and N/(logN)^k circuit elements.
+
+References:
+-----------
+738.6 Sorting,Searching,Merging - [Joseph JaJa] - https://people.ksp.sk/~ppershing/data/skola/JaJa.pdf - Chapter 4 - Pages 159-160 - Algorithm 4.3 - Simple Merge Sort - " ... input: an array X of order n where n=2^l ...", Corollary 4.2 - CREW PRAM model - "... Sorting a sequence of n elements can optimally be done in O(logn*loglogn) ... " - previous local search does away with parallel sorting
+738.7 PARALLEL TRANSITIVE CLOSURE AND POINT LOCATION IN PLANAR STRUCTURES - [ROBERTO TAMASSIA AND JEFFREY S. VITTER] - "... Abstract. Parallel algorithms for several graph and geometric problems are presented, including transitive closure and topological sorting in planar st-graphs, preprocessing planar subdivisions for point location queries, and construction of visibility representations and drawings of planar graphs.
+Most of these algorithms achieve optimal O(log n) running time using n/log n processors in the EREW PRAM model, n being the number of vertices...." - number of processors required by this planar point location algorithm is poly(n,logn) and time is poly(logn) by reference 737.6 and ANSV problem for mergesort in reference 34.15 - all PRAM models are mutually reducible to other - previous local search planar point location factorization requires O((logN)^k) parallel time and N/(logN)^k PRAM processors and thus work optimal - number of vertices in rasterized hyperbolic arc bow planar simple line graph is approximately 3*N + 1 if every juxtaposed tile segment is construed as a rectangular polygon face of dimensions 1 * segment_length; polygon arithmetic progression segment located in polylog time is binary searched.
