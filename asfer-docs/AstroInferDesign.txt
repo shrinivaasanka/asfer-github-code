@@ -15462,7 +15462,7 @@ References:
 737.8 Poster: Easy PRAM-based High-performance Parallel Programming with ICE - [Ghanim-Rajeev-Vishkin] - https://www.researchgate.net/publication/310824244_POSTER_Easy_PRAM-based_High-Performance_Parallel_Programming_with_ICE - input size to Pointer jumping algorithm
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-738. (THEORY and FEATURE) Computational Geometric NC-PRAM-BSP Factorization - Python 3.7.5 Single node cluster quadcore benchmarks - 1067 bits integer - some factcheck references on NC-PRAM equivalence and input size - 24 December 2019 - related to all sections on Factorization
+738. (THEORY and FEATURE) Computational Geometric NC-PRAM-BSP Factorization - Python 3.7.5 Single node cluster quadcore benchmarks - 1067 bits integer - some factcheck references on NC-PRAM equivalence and input size - 24 December 2019,31 December 2019 - related to all sections on Factorization
 -----------------------------------------------------------------------------------------------------------------------------------------------
 1.In continuation of previous benchmarks on 1000 bits integer another hard non-smooth random 1067 bits integer of randomly mixed digits - 939483849839493438483989489384983948938843984983984983984938948348938499384928830928380289389283982983928398249748378478378738478738748729839289389289382983982983928938298398298328938298398239274873874873874928338298938298392893298392893829839289382983928398298392839289382983928748738758374837483737481349384833499384979   - has been factorized on single node cluster of quadcores and first few factors - mostly primes - are printed from 18th second onwards: 
 =================================================
@@ -15527,6 +15527,16 @@ References:
 3.Recursion limit has been increased to 10000
 4.Exponentiation by math.pow() for normal order computation in local search optimization has been replaced by faster ** exponentiation operator of Python.
 5.Exponent k in local search loop - (logN)^k (iterations) * N/(logN)^k (PRAMs) - has been parametrized in SearchTiles_and_Factorize() function which simulates non-uniform NC circuit of (logN)^k depth and N/(logN)^k circuit elements.
+
+Optimization:
+-------------
+Finding all factors by searching through every rasterized tile segment for hyperbola xy=N could be optimized by stopping after first factor p is found and re-rasterizing a new hyperbolic arc for xy=N/p. Following loop formalizes it (reduction in cost might depend on which is easier - parallel planar point location or rasterization - this optimization creates an array of hyperbolic arc bows equal to number of factors):
+	for_all_factors_of_N
+	{
+		Rasterize hyperbola xy=N
+		PRAM-BSP-NC Planar Point locate and Search the rasterized hyperbolic planar straight line graph till first factor p is found
+		N=N/p
+	}
 
 References:
 -----------
