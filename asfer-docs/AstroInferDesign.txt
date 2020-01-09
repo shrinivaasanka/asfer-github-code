@@ -15580,3 +15580,80 @@ References:
 740.1 Random Walks on Expander Graphs and Spectral Graph Theory - [Spielman] - http://www.cs.yale.edu/homes/spielman/561/2012/lect11-12.pdf - Section 11.5 - "...Our pseudo-random generator will use a random walk on an expander graph whose vertex set is {0, 1}^r. The expander graph will be d-regular, for some constant d. Let A be the adjacency matrix of the graph, and let its eigenvalues be d = µ1 > µ2 ≥ · · · ≥ µn. One property that we will require of the expander graph is that |µi|/d ≤ 1/10, (11.1) for all i. ... such graphs exist with d = 400. Degree 400 seems sort of big, but we will see that it is reasonable for our application...." - Degree 400 Money Trail EventNet could potentially be a high edge expander and random walks on it might be pseudorandom.
 740.2 A. Lubotzky, R. Phillips, and P. Sarnak. Ramanujan graphs. Combinatorica, 8(3):261–277, 1988.
 740.3 G. A. Margulis. Explicit group theoretical constructions of combinatorial schemes and their application to the design of expanders and concentrators. Problems of Information Transmission, 24(1):39–46, July 1988.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+741. (THEORY and FEATURE) Computational Geometric NC-PRAM-BSP Factorization - Spark 2.4.3 + Python 3.7.5 benchmarks - 1213 and 1243 bits integers factorized, Hyperbolic Rasterization graphics example, Multidimensional hyperplanar point location, Integer Diophantines, Multiplicative partitions and sundry resolutions - related to all sections on factorization - 9 January 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+(*) New function hyperbolic_arc_rasterization() has been defined which sequentially rasterizes the hyperbolic arc and creates a graphic image
+of how hyperbola looks like post-rasterization. A related schematic diagram for rasterization has already been committed to GRAFIT course material (https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt) on Geometric search of a point on hyperplanes separating halfspaces by multidimensional Hyperplanar point location which widens the scope of factorization to arbitrary algebraic curves (e.g diophantines) for integer solutions, not limited to hyperbolae - example: uvwxyz=N is a multiplicative partition problem solvable by rasterizing on Z^6 hyperplane point location - (u,v,w,x,y,z)
+(*) Hyperbolic arc rasterized tile segments are plotted by matplotlib and example logs-images for a small integer are committed to testlogs/ - DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Rasterization.9January2020.png and DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.RasterizationGraphics.log.9January2020
+(*) matplotlib rasterization graphics is enabled by a boolean flag passed on by commandline sys.argv arguments
+(*) Depth of the non-uniform NC circuit which was hardcoded earlier has been parametrized as commandline argument
+(*) Normal order loop has been changed because of overflow errors for large exponents
+(*) Huge 1213 bits non-smooth hard integer of random digits 
+99999999999928918219821828128918928918281939787878773273872837129818280829189289178718738718732378278467475452652773628381712918298198298182918928198298192891892718278178261627167261726716721627162761762617271267617261762716726172671627167267162761726716271626715365365636635157612126716725162561526516256152613389132311132838292323233433434123212839289382832983291
+has been factorized by a depth 58 NC circuit (PRAM time O((logN)^58) and first few factors are printed as ordered pairs (requires division because of or clause and division has been cast to Decimal() because of overflow errors) in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.1213bits_and_1243bits.9January2020 from 51st second onwards:
+('factors of ', 99999999999928918219821828128918928918281939787878773273872837129818280829189289178718738718732378278467475452652773628381712918298198298182918928198298192891892718278178261627167261726716721627162761762617271267617261762716726172671627167267162761726716271626715365365636635157612126716725162561526516256152613389132311132838292323233433434123212839289382832983291, '(', 1212.5037546338863, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 19622815
+=================================================
+('Factors are: (', 3, ',', Decimal('3.333333333330963940660727604E+364'), ') (at ', 'Thu, 09 Jan 2020 12:06:26 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 7, ',', Decimal('1.428571428570413117426026116E+364'), ') (at ', 'Thu, 09 Jan 2020 12:06:26 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 21, ',', Decimal('4.761904761901377058086753720E+363'), ') (at ', 'Thu, 09 Jan 2020 12:06:27 GMT', ')')
+=================================================
+
+(*) Another large 1243 bits integer of all 9s (smooth, easy) has been factorized and first few factors are printed from 18 seconds onwards:
+('factors of ', 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999, '(', 1242.4011074878736, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 488
+=================================================
+('Factors are: (', 3, ',', Decimal('3.333333333333333333333333333E+373'), ') (at ', 'Thu, 09 Jan 2020 12:10:55 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 9, ',', Decimal('1.111111111111111111111111111E+373'), ') (at ', 'Thu, 09 Jan 2020 12:10:56 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 33, ',', Decimal('3.030303030303030303030303030E+372'), ') (at ', 'Thu, 09 Jan 2020 12:10:57 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 99, ',', Decimal('1.010101010101010101010101010E+372'), ') (at ', 'Thu, 09 Jan 2020 12:11:02 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 103, ',', Decimal('9.708737864077669902912621359E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:02 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 121, ',', Decimal('8.264462809917355371900826446E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:03 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 363, ',', Decimal('2.754820936639118457300275482E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:20 GMT', ')')
+=================================================
+tiles_start: 488
+tiles_end: 976
+=================================================
+('Factors are: (', 759, ',', Decimal('1.317523056653491436100131752E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:47 GMT', ')')
+=================================================
+tiles_start: 976
+tiles_end: 1464
+=================================================
+('Factors are: (', 1133, ',', Decimal('8.826125330979699911738746690E+370'), ') (at ', 'Thu, 09 Jan 2020 12:12:13 GMT', ')')
+=================================================
+tiles_start: 1464
+tiles_end: 1952
+tiles_start: 1952
+tiles_end: 2440
+=================================================
+('Factors are: (', 2277, ',', Decimal('4.391743522178304787000439174E+370'), ') (at ', 'Thu, 09 Jan 2020 12:13:30 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 2369, ',', Decimal('4.221190375685943436048965808E+370'), ') (at ', 'Thu, 09 Jan 2020 12:13:37 GMT', ')')
+=================================================
+tiles_start: 2440
+tiles_end: 2928
+=================================================
+('Factors are: (', 2783, ',', Decimal('3.593244699964067553000359324E+370'), ') (at ', 'Thu, 09 Jan 2020 12:14:04 GMT', ')')
+=================================================
+
