@@ -133,7 +133,18 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
         #print "factorcandidate = ",factorcandidate
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
             print("=================================================")
-            print(("Factors are: (", yl, ",", Decimal(number_to_factorize)/Decimal(yl), ") (at ", strftime(
+            print("xl + intervalmidpoint = ",xl + intervalmidpoint)
+            print("xl = ",xl)
+            print("yl = ",yl)
+            factorcriterion1=((xl + intervalmidpoint)*yl == number_to_factorize)
+            print("Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize = ",factorcriterion1)
+            factorcriterion2=(xl*yl == number_to_factorize)
+            print("Factor point verification: xl*yl == number_to_factorize = ",factorcriterion2)
+            if factorcriterion1 == True:
+                print(("Factors are: (", yl, ",", (xl+intervalmidpoint) , ") (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            if factorcriterion2 == True:
+                print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             print("=================================================")
             factors_accum.add(yl)
