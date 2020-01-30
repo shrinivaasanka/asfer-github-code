@@ -15714,3 +15714,13 @@ References:
 -----------
 743.1 Chaos - [James Gleick] - Mandelbrot-Julia sets, Fractals, Koch curves, Lorenz attractors, Feigenbaum universality - Period Doubling, Yorke's Period Three Theorem
 743.2 Feigenbaum constants - First and Second - https://en.wikipedia.org/wiki/Feigenbaum_constants
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+744. (THEORY and FEATURE) Chaotic Pseudorandom Generator - Python 3.7.5 upgrade, Computational Geometric Factorization - 30 January 2020 -
+related to all sections on Pseudorandom Generators, Chaos and Factorization
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit upgrades Chaos Pseudorandom Generator implementation to Python 3.7.5 by autopep8 followed by 2to3, which is the defacto NeuronRain recommended python version for performance reasons.
+2.Both Logistic and Lehmer-Palmore PRGs have been tested on Python 3.7.5 + R-py2 combine and logs are committed to testlogs/ChaosAttractor.Python3.7.5Upgrade.30January2020
+3.GRAFIT course material on Geometric search of BigData in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt describe a Randomized NC factorization algorithm based on Parallel Chaotic Pseudorandom Generator and Central Limit Theorem based Space filling Linear Program mentioned in drafts - https://sites.google.com/site/kuja27/ChaoticPRG.pdf and https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf . 
+4.Exact PRAM-NC-BSP computational geometric factorization algorithm implemented on Spark in NeuronRain AstroInfer is the derandomized version of Randomized NC Bernoulli trials factorization algorithm in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt which has the success probability of finding atleast one prime factor pr(m) = (1 - sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)))^(m-1)*(sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)) after m trials for square embedded hyperbolic arc. Expected number of trials E(m) before atleast one factor is found = sum_x=1-to-N(x*pr(x))
+5.Thus NeuronRain Theory drafts define 3 different Nick's class Computational Geometric Integer factorization algorithms - Randomized NC, Quantum NC, Exact NC - which transition from a randomized, cohered quantum state to classical exact decohered state.
