@@ -22,7 +22,7 @@ import WordSubstringProbabilities
 class VowellessText:
     def __init__(self):
         self.vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
-        print("#####################################################################################################")
+        print "#####################################################################################################"
         # This is only a sample MLE using Forward probabilities.
         # Implementing for all words requires precomputed constant read-only hashtable of approximately
         # 500000 substring-probabilites entries or more.
@@ -43,13 +43,13 @@ class VowellessText:
         maxk2 = ""
         maxv2 = -1.0
 
-        for k1, v1 in list(self.Probabilities_prefixes.items()):
+        for k1, v1 in self.Probabilities_prefixes.items():
             if maxv1 < v1:
                 maxv1 = v1
                 maxk1 = k1
                 #maxvowel = maxk1[len(maxk1)-1]
 
-        for k2, v2 in list(self.Probabilities_suffixes.items()):
+        for k2, v2 in self.Probabilities_suffixes.items():
             if maxv2 < v2:
                 maxv2 = v2
                 maxk2 = k2
@@ -89,7 +89,7 @@ class VowellessText:
         #	maxlikelyprob = probability
         #	maxlikely=x
         maxlikely = self.HiddenMarkovModel_MLE(comp)
-        print("comp=", comp, "; maxlikely=", maxlikely)
+        print "comp=", comp, "; maxlikely=", maxlikely
         return maxlikely
 
 # def prob(x,comp):
@@ -113,7 +113,7 @@ class VowellessText:
         # For loop that matches a compressed word to likely candidate words by left-to-right substring comparison
         # between compressed word's substrings and the dictionary entries and populates a matching word dictionary
         compsubstrings = comp.split("_")
-        print("compsubstrings: ", compsubstrings)
+        print "compsubstrings: ", compsubstrings
 
         # start=0
         # i=0
@@ -152,16 +152,16 @@ class VowellessText:
 
         # Returns the word with maximum likelihood probability
         # Word returned depends on the HMM priors in the hashtable
-        print("matchinglikelydict=", self.matchinglikelydict)
+        print "matchinglikelydict=", self.matchinglikelydict
         maxlikelyretprob = -1.0
         maxlikelyret = ""
-        for k7, v7 in list(self.matchinglikelydict.items()):
+        for k7, v7 in self.matchinglikelydict.items():
             if maxlikelyretprob < v7:
                 maxlikelyret = k7
                 maxlikelyretprob = v7
 
-        print("maxlikelyretprob=", maxlikelyretprob, "; maxlikelyret = ", maxlikelyret)
-        print(self.matchinglikelydict)
+        print "maxlikelyretprob=", maxlikelyretprob, "; maxlikelyret = ", maxlikelyret
+        print self.matchinglikelydict
         return maxlikelyret
 
     def prob(self, x, comp):
@@ -169,7 +169,7 @@ class VowellessText:
         # two pointers in the suggested word and compressed word get incremented
         # and 1 is returned if the compressed word's alphabets are contained in
         # suggested word preserving order from left to right
-        print("==============================================")
+        print "=============================================="
         setx = set(x)
         setcomp = set(comp)
         # if setcomp.issubset(setx):
@@ -179,15 +179,15 @@ class VowellessText:
         if len(setdiffconso) == 0 and len(x) > len(comp):
             xptr = 0
             compptr = 0
-            print("x=", x, "; comp=", comp)
+            print "x=", x, "; comp=", comp
             while xptr < len(x) and compptr < len(comp):
                 while xptr < len(x) and comp[compptr] != x[xptr]:
-                    print("x[xptr]=", x[xptr], "; comp[compptr]=", comp[compptr])
+                    print "x[xptr]=", x[xptr], "; comp[compptr]=", comp[compptr]
                     xptr = xptr+1
                 compptr = compptr+1
             # Both pointers should have reached the end of the respective words
             if xptr == len(x) and compptr == len(comp):
-                print("x = ", x, ";comp = ", comp, "; return 1")
+                print "x = ", x, ";comp = ", comp, "; return 1"
                 return 1.0
             else:
                 return 0.0
@@ -207,7 +207,7 @@ if __name__ == "__main__":
 
     wcompcomp = ""
     # Compression
-    print("Compression by vowel removal:")
+    print "Compression by vowel removal:"
     for i in f:
         wcomp = vowellesstxt.removevowels(i)
         # remove _ in compressed word
@@ -216,23 +216,23 @@ if __name__ == "__main__":
                 wcompcomp = wcompcomp + k
             else:
                 compbits = compbits+1
-        print("wcompcomp = ", wcompcomp)
+        print "wcompcomp = ", wcompcomp
         origfilesize = origfilesize + len(i)
         compfilesize = compfilesize + len(wcompcomp)
         for n in wcomp:
             fcomp.write(n)
-        print("Compression ratio = ", 100 * \
-            (origfilesize-compfilesize-0.125*compbits)/origfilesize, "%")
+        print "Compression ratio = ", 100 * \
+            (origfilesize-compfilesize-0.125*compbits)/origfilesize, "%"
     fcomp.close()
 
     fcomp = open("compressedtext.txt", "r")
     fcompstr = fcomp.read()
 
     # Decompression
-    print("Decompression using PyEnchant Spellcheck suggest() function:")
+    print "Decompression using PyEnchant Spellcheck suggest() function:"
     for i in fcompstr.split():
         suggestions = d.suggest(i)
-        print(i, suggestions)
+        print i, suggestions
         # midpoint=len(suggestions)
         # maximumlikelihoodword=vowellesstxt.compute_maximumlikelihood(i,suggestions)
         maximumlikelihoodword = vowellesstxt.compute_maximumlikelihood(i)

@@ -1,0 +1,242 @@
+==============================================================================
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'Kannan' 
+	middle: '' 
+	last: 'Srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['Kannan', 'Srinivasan']
+contexttokenized =  ['17/07/2017', '', 'ெவளிேய', 'English', '1967 ( அல்ல', '', 'Proﬁle - Public Distribution System', '', 'என் விவரம்', ') 1800-425-5901', '', 'உண ப் ெபா ள் வழங்கல் மற் ம்', '', 'ெபா', '', 'கர்ேவார் பா காப் த்', '', 'ைறயின் அதிகாரப் ர்வ இைணயதளம், தமிழ் நா', '', 'அர', '', 'விநிேயாகத் திட்டம்', '', 'கப்', 'தன்ைம', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'G.O ஆவணங்கள்', 'அைமப்', 'பணி விவரம்', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'அறிக்ைககள்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'NFSA அறிக்ைககள்', 'NFSA விற்பைன பரிவர்த்தைன அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', '', 'என் விவரம்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '1/3', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'ஸ்மார்ட் கார்', 'மாற்றம் New', '', 'விவர', '', 'ஸ்மார்ட் கார்', 'ெசயலாக்கம் New', 'ம்ப தைலவர்', 'ைகப்படம் New', 'ம்ப உ ப்பினர்கள்', '', 'ம்ப உ ப்பினர்கள்', '#', '', 'ெபயர்', '', 'வய', '', 'பிறந்த ேததி', '', '1', '', 'சீனிவாசன் கண்ணன்', '', '79', '', '19-Oct-1937', '', '2', '', 'கண்ணன் அலேம', '', '76', '', '12-May-1941', '', 'தாய்', '', '3', '', 'கண்ணன் சீனிவாசன்', '', '40', '', '19-May-1977', '', 'மகன்', '', 'உற', '', 'ெசயல்', '', 'ம்ப தைலவர்', '', 'ஆதார் எண்கள்', 'உரிைம வழங்கல்', '', 'தன்ைம', '', 'பரிவர்த்தைனகள்', '', 'தன்ைம', 'நியாய', 'ைறகள்விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'க விவரம்', 'த்', 'பணி விவரம்', 'கவரி', '', 'அட்', 'ைட பிறழ்', 'அமலாக்', 'கம் கள்', 'ைற தீர்க் ம் வழி ைற', '', 'உரிமம்', 'கா காணிப்', 'த்தல் அைமப்', 'ஆய் விட்', 'மற் க்', 'ம் ெ', 'கண்', 'கர்ேவார் பா காப்', 'மற்ற இைணப் கள்', '', 'அைமப்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', 'ச கப் பகிர்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '2/3', '', '', '17/07/2017', '', '1967 ( அல்ல', '', 'Proﬁle - Public Distribution System', '', ') 1800-425-5901', '', 'support@tnpds.com', '', 'பதிப் ரிைம © 2017 உண', '', 'ெபா ள் வழங்கல் மற் ம்', '', 'கர்ேவார் பா காப்', '', 'ைற , தமிழ்நா', '', 'அர', '', 'இயக்கம்', 'Live Chat', 'Top', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '3/3', '', '']
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'kannan' 
+	middle: '' 
+	last: 'srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['kannan', 'srinivasan']
+contexttokenized =  ['17/07/2017', '', 'ெவளிேய', 'english', '1967 ( அல்ல', '', 'proﬁle - public distribution system', '', 'என் விவரம்', ') 1800-425-5901', '', 'உண ப் ெபா ள் வழங்கல் மற் ம்', '', 'ெபா', '', 'கர்ேவார் பா காப் த்', '', 'ைறயின் அதிகாரப் ர்வ இைணயதளம், தமிழ் நா', '', 'அர', '', 'விநிேயாகத் திட்டம்', '', 'கப்', 'தன்ைம', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'g.o ஆவணங்கள்', 'அைமப்', 'பணி விவரம்', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'அறிக்ைககள்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'nfsa அறிக்ைககள்', 'nfsa விற்பைன பரிவர்த்தைன அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', '', 'என் விவரம்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '1/3', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'ஸ்மார்ட் கார்', 'மாற்றம் new', '', 'விவர', '', 'ஸ்மார்ட் கார்', 'ெசயலாக்கம் new', 'ம்ப தைலவர்', 'ைகப்படம் new', 'ம்ப உ ப்பினர்கள்', '', 'ம்ப உ ப்பினர்கள்', '#', '', 'ெபயர்', '', 'வய', '', 'பிறந்த ேததி', '', '1', '', 'சீனிவாசன் கண்ணன்', '', '79', '', '19-oct-1937', '', '2', '', 'கண்ணன் அலேம', '', '76', '', '12-may-1941', '', 'தாய்', '', '3', '', 'கண்ணன் சீனிவாசன்', '', '40', '', '19-may-1977', '', 'மகன்', '', 'உற', '', 'ெசயல்', '', 'ம்ப தைலவர்', '', 'ஆதார் எண்கள்', 'உரிைம வழங்கல்', '', 'தன்ைம', '', 'பரிவர்த்தைனகள்', '', 'தன்ைம', 'நியாய', 'ைறகள்விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'க விவரம்', 'த்', 'பணி விவரம்', 'கவரி', '', 'அட்', 'ைட பிறழ்', 'அமலாக்', 'கம் கள்', 'ைற தீர்க் ம் வழி ைற', '', 'உரிமம்', 'கா காணிப்', 'த்தல் அைமப்', 'ஆய் விட்', 'மற் க்', 'ம் ெ', 'கண்', 'கர்ேவார் பா காப்', 'மற்ற இைணப் கள்', '', 'அைமப்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', 'ச கப் பகிர்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '2/3', '', '', '17/07/2017', '', '1967 ( அல்ல', '', 'proﬁle - public distribution system', '', ') 1800-425-5901', '', 'support@tnpds.com', '', 'பதிப் ரிைம © 2017 உண', '', 'ெபா ள் வழங்கல் மற் ம்', '', 'கர்ேவார் பா காப்', '', 'ைற , தமிழ்நா', '', 'அர', '', 'இயக்கம்', 'live chat', 'top', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '3/3', '', '']
+==============================================================================
+==============================================================================
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'Kannan' 
+	middle: '' 
+	last: 'Srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['Kannan', 'Srinivasan']
+contexttokenized =  ['17/07/2017', '', 'ெவளிேய', 'English', '1967 ( அல்ல', '', 'Proﬁle - Public Distribution System', '', 'என் விவரம்', ') 1800-425-5901', '', 'உண ப் ெபா ள் வழங்கல் மற் ம்', '', 'ெபா', '', 'கர்ேவார் பா காப் த்', '', 'ைறயின் அதிகாரப் ர்வ இைணயதளம், தமிழ் நா', '', 'அர', '', 'விநிேயாகத் திட்டம்', '', 'கப்', 'தன்ைம', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'G.O ஆவணங்கள்', 'அைமப்', 'பணி விவரம்', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'அறிக்ைககள்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'NFSA அறிக்ைககள்', 'NFSA விற்பைன பரிவர்த்தைன அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', '', 'என் விவரம்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '1/6', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'ஸ்மார்ட் கார்', 'மாற்றம் New', '', 'விவர', '', 'ஸ்மார்ட் கார்', 'ெசயலாக்கம் New', 'ம்ப தைலவர்', 'ைகப்படம் New', 'ம்ப உ ப்பினர்கள்', 'ஆதார் எண்கள்', '', 'ஸ்மார்ட் கார்', 'ஸ்மார்ட் கார்', '', 'விவர மாற்றம்', 'விவரங்கள்', '', 'ம்ப அட்ைட எண் 18G0180449', 'என்எப்எஸ்எ அட்ைட வைக NPHH', 'ஸ்மார்ட் கார்', '', 'எண் (UFC) 333314565811', '', 'கைட றியீ 19DD024PN', 'ம்ப தைலவர் ைகப்படம் *', '', 'உரிைம வழங்கல்', 'பரிவர்த்தைனகள்', 'ைறகள்', 'க த்', 'கவரி', 'அட்ைட பிறழ் கள்', 'உரிமம் விட் க்ெகா த்தல்', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '2/6', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'பதிேவற்றம்', 'பி ப்', 'தாங்கள் 10 KB க் ள் உள்ள jpeg, jpg, png ேகாப்ைப பதிேவற்றம் ெசய்யலாம்', 'ம்ப தைலவர் விவரங்கள்', 'ம்ப தைலவர் ேதர் * Kannan Srinivasan', 'ெபயர் Kannan Srinivasan', 'ெபயர் * சீனிவாசன் கண்ணன்', 'ஆதார் எண் 953301029767', 'தந்ைத / கணவர் ெபயர் Srinivasan', 'தந்ைத / கணவர் ெபயர் * சீனிவாசன்', 'பாலினம் Male', 'பிறந்த ேததி * 19-Oct-1937', 'தி த்த', 'ம்ப உ ப்பினர்களின் விபரங்கள்', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', 'உ ப்பினைர ேசர்க்க', '', '3/6', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'ெபரியவர்கள் - 3', 'வ.எண்', '', 'ழந்ைதகள் - 0 ெமாத்த', '', 'ெபயர்', '', 'ெபயர்', '', '1', '', 'Srinivasan Kannan கண்ணன் சீனிவாசன்', '', '2', '', 'Alamelu Kannan கண்ணன் அலேம', '', 'ம்ப அள', '', '-3', '', 'பாலினம்', '', 'பிறந்த', 'ேததி', '', 'M', '', '19May1977', '', 'Son', '', '772717942542', '', 'F', '', '12May1941', '', 'Mother', '', '880237813337', '', 'உற', '', 'ஆதார் எண்', '', 'ெசயல்', '', 'றிப் :', '1. தங்கள ஸ்மார்ட் அட்ைட இைணக்கப்பட் ள்ள நியாய விைலக் கைடயின் POS சாதனம்', 'லம் திதாக ேசர்க்கப்பட்ட உ ப்பினரின் ஆதார் ஸ்ேகன் ெசய்யப்ப வைத உ திப்ப த்த ம்', '2. நீங்கள்', 'ம்பத்தில் இ ந் ஒ உ ப்பினைர நீக்க ேவண் ெமன்றால் தய ெசய் அட்ைட', 'ேமலாண்ைம லம் ேகாரிக்ைக ெசய்ய ம்.', 'கவரி விவரம்', 'கவரி வரி 1 *', '172', '172', 'கவரி வரி 2', 'காந்திய கள் சாைல', 'காந்திய கள் சாைல', 'கவரி வரி 3', 'ம்பேகாணம்', 'ம்பேகாணம்', 'மாவட்டம் *', 'Thanjavur', 'தஞ்சா ர்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '4/6', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'வட்டம் *', 'Kumbakonam (Tk)', 'ம்பேகாணம் (வ)', 'கிராமம் *', 'Kumbakonam', 'ம்பேகாணம்', 'அஞ்சல் றியீ *', '612001', 'தி த்த', 'ஒப் க்ெகாள்', '', 'தல்', '', 'ம்ப தைலவர் என்ற ைறயில் ேமேல ெசய்யப்பட்ட தி த்தம் / மாற்றம் அைனத் ம் எனக்', 'ெதரிந்தவைரயில் உண்ைமெயன சான் அளிக்கிேறன். இதில், ஏேத ம் தவ கள்', 'கண்டறியப்பட்டால் என் ைடய', 'ம்ப அட்ைட இரத் ெசய்யப்ப ம் என்பைத அறிந்', 'ெகாண்ேடன்.', 'ரத்', '', 'ெசய்ய', '', 'ஒப் த க்காக சமர்ப்பிக்க', '', 'தன்ைம', '', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'பணி விவரம்', '', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '5/6', '', '', '17/07/2017', '', 'Proﬁle - Public Distribution System', '', 'மற்ற இைணப் கள்', '', 'அைமப்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', 'ச கப் பகிர்', '', '1967 ( அல்ல', '', ') 1800-425-5901', '', 'support@tnpds.com', '', 'பதிப் ரிைம © 2017 உண', '', 'ெபா ள் வழங்கல் மற் ம்', '', 'கர்ேவார் பா காப்', '', 'ைற , தமிழ்நா', '', 'அர', '', 'இயக்கம்', 'Live Chat', 'Top', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '6/6', '', '', '']
+NeuronRain Human Name Parsing by Context - nameparser(): name substring -  Kannan  - found in context =  ம்ப தைலவர் ேதர் * Kannan Srinivasan
+NeuronRain Human Name Parsing by Context - nameparser(): second_name : ப
+NeuronRain Human Name Parsing by Context - nameparser(): first_name : த
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'kannan' 
+	middle: '' 
+	last: 'srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['kannan', 'srinivasan']
+contexttokenized =  ['17/07/2017', '', 'ெவளிேய', 'english', '1967 ( அல்ல', '', 'proﬁle - public distribution system', '', 'என் விவரம்', ') 1800-425-5901', '', 'உண ப் ெபா ள் வழங்கல் மற் ம்', '', 'ெபா', '', 'கர்ேவார் பா காப் த்', '', 'ைறயின் அதிகாரப் ர்வ இைணயதளம், தமிழ் நா', '', 'அர', '', 'விநிேயாகத் திட்டம்', '', 'கப்', 'தன்ைம', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'g.o ஆவணங்கள்', 'அைமப்', 'பணி விவரம்', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'அறிக்ைககள்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'nfsa அறிக்ைககள்', 'nfsa விற்பைன பரிவர்த்தைன அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', '', 'என் விவரம்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '1/6', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'ஸ்மார்ட் கார்', 'மாற்றம் new', '', 'விவர', '', 'ஸ்மார்ட் கார்', 'ெசயலாக்கம் new', 'ம்ப தைலவர்', 'ைகப்படம் new', 'ம்ப உ ப்பினர்கள்', 'ஆதார் எண்கள்', '', 'ஸ்மார்ட் கார்', 'ஸ்மார்ட் கார்', '', 'விவர மாற்றம்', 'விவரங்கள்', '', 'ம்ப அட்ைட எண் 18g0180449', 'என்எப்எஸ்எ அட்ைட வைக nphh', 'ஸ்மார்ட் கார்', '', 'எண் (ufc) 333314565811', '', 'கைட றியீ 19dd024pn', 'ம்ப தைலவர் ைகப்படம் *', '', 'உரிைம வழங்கல்', 'பரிவர்த்தைனகள்', 'ைறகள்', 'க த்', 'கவரி', 'அட்ைட பிறழ் கள்', 'உரிமம் விட் க்ெகா த்தல்', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '2/6', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'பதிேவற்றம்', 'பி ப்', 'தாங்கள் 10 kb க் ள் உள்ள jpeg, jpg, png ேகாப்ைப பதிேவற்றம் ெசய்யலாம்', 'ம்ப தைலவர் விவரங்கள்', 'ம்ப தைலவர் ேதர் * kannan srinivasan', 'ெபயர் kannan srinivasan', 'ெபயர் * சீனிவாசன் கண்ணன்', 'ஆதார் எண் 953301029767', 'தந்ைத / கணவர் ெபயர் srinivasan', 'தந்ைத / கணவர் ெபயர் * சீனிவாசன்', 'பாலினம் male', 'பிறந்த ேததி * 19-oct-1937', 'தி த்த', 'ம்ப உ ப்பினர்களின் விபரங்கள்', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', 'உ ப்பினைர ேசர்க்க', '', '3/6', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'ெபரியவர்கள் - 3', 'வ.எண்', '', 'ழந்ைதகள் - 0 ெமாத்த', '', 'ெபயர்', '', 'ெபயர்', '', '1', '', 'srinivasan kannan கண்ணன் சீனிவாசன்', '', '2', '', 'alamelu kannan கண்ணன் அலேம', '', 'ம்ப அள', '', '-3', '', 'பாலினம்', '', 'பிறந்த', 'ேததி', '', 'm', '', '19may1977', '', 'son', '', '772717942542', '', 'f', '', '12may1941', '', 'mother', '', '880237813337', '', 'உற', '', 'ஆதார் எண்', '', 'ெசயல்', '', 'றிப் :', '1. தங்கள ஸ்மார்ட் அட்ைட இைணக்கப்பட் ள்ள நியாய விைலக் கைடயின் pos சாதனம்', 'லம் திதாக ேசர்க்கப்பட்ட உ ப்பினரின் ஆதார் ஸ்ேகன் ெசய்யப்ப வைத உ திப்ப த்த ம்', '2. நீங்கள்', 'ம்பத்தில் இ ந் ஒ உ ப்பினைர நீக்க ேவண் ெமன்றால் தய ெசய் அட்ைட', 'ேமலாண்ைம லம் ேகாரிக்ைக ெசய்ய ம்.', 'கவரி விவரம்', 'கவரி வரி 1 *', '172', '172', 'கவரி வரி 2', 'காந்திய கள் சாைல', 'காந்திய கள் சாைல', 'கவரி வரி 3', 'ம்பேகாணம்', 'ம்பேகாணம்', 'மாவட்டம் *', 'thanjavur', 'தஞ்சா ர்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '4/6', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'வட்டம் *', 'kumbakonam (tk)', 'ம்பேகாணம் (வ)', 'கிராமம் *', 'kumbakonam', 'ம்பேகாணம்', 'அஞ்சல் றியீ *', '612001', 'தி த்த', 'ஒப் க்ெகாள்', '', 'தல்', '', 'ம்ப தைலவர் என்ற ைறயில் ேமேல ெசய்யப்பட்ட தி த்தம் / மாற்றம் அைனத் ம் எனக்', 'ெதரிந்தவைரயில் உண்ைமெயன சான் அளிக்கிேறன். இதில், ஏேத ம் தவ கள்', 'கண்டறியப்பட்டால் என் ைடய', 'ம்ப அட்ைட இரத் ெசய்யப்ப ம் என்பைத அறிந்', 'ெகாண்ேடன்.', 'ரத்', '', 'ெசய்ய', '', 'ஒப் த க்காக சமர்ப்பிக்க', '', 'தன்ைம', '', 'தன்ைம', 'நியாய விைலக் கைடகள்', 'ம்ப அட்ைடகள்', 'விவரம்', 'பணி விவரம்', '', 'அமலாக்கம்', 'ைற தீர்க் ம் வழி ைற', 'ஆய் மற் ம் கண்காணிப் அைமப்', 'கர்ேவார் பா காப்', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '5/6', '', '', '17/07/2017', '', 'proﬁle - public distribution system', '', 'மற்ற இைணப் கள்', '', 'அைமப்', 'ெபா விநிேயாகத் திட்ட அறிக்ைககள்', 'ேகள்விகள்', 'ெதாடர் க்', 'ச கப் பகிர்', '', '1967 ( அல்ல', '', ') 1800-425-5901', '', 'support@tnpds.com', '', 'பதிப் ரிைம © 2017 உண', '', 'ெபா ள் வழங்கல் மற் ம்', '', 'கர்ேவார் பா காப்', '', 'ைற , தமிழ்நா', '', 'அர', '', 'இயக்கம்', 'live chat', 'top', '', 'https://www.tnpds.gov.in/pages/proﬁle.xhtml', '', '6/6', '', '', '']
+NeuronRain Human Name Parsing by Context - nameparser(): name substring -  kannan  - found in context =  ம்ப தைலவர் ேதர் * kannan srinivasan
+NeuronRain Human Name Parsing by Context - nameparser(): second_name : ப
+NeuronRain Human Name Parsing by Context - nameparser(): first_name : த
+==============================================================================
+==============================================================================
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'Kannan' 
+	middle: '' 
+	last: 'Srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['Kannan', 'Srinivasan']
+contexttokenized =  ['______L___  ?______  Aovps2844F(  _    _____   ______', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '_   --  -', '___  lpERmANENTAccouNTNumBEi   _3 ,_,_ ,_?', '', '', '_ / N A m E', '  KANNAN SRINIVASAN', '', '', '', '', 'Fbnm_ /,A,HER,s,AmE           l', '', ' KANNAM SRINIVAsAN', "' 'l,                           l", "''_", '', '__ / _ n T E o F B _ _ H', '_   1 9', '- o 5- 1 g 7 7', '_m /s_GNATuRE                ,_!___', "__'--_            '", "'    ,                 __ _ ( _ _ t", ",  _ _  '____ ??__m   c      ,,     c   , o  t", 'l______Omm_!S! n\'_\'O n\'Om_e!\'X__PUe_\' Pe\'"_O__}']
+HumanName Parser - parsed name (wrong): <HumanName : [
+	title: '' 
+	first: 'kannan' 
+	middle: '' 
+	last: 'srinivasan' 
+	suffix: ''
+	nickname: ''
+]>
+nametokenized =  ['kannan', 'srinivasan']
+contexttokenized =  ['______l___  ?______  aovps2844f(  _    _____   ______', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '_   --  -', '___  lpermanentaccountnumbei   _3 ,_,_ ,_?', '', '', '_ / n a m e', '  kannan srinivasan', '', '', '', '', 'fbnm_ /,a,her,s,ame           l', '', ' kannam srinivasan', "' 'l,                           l", "''_", '', '__ / _ n t e o f b _ _ h', '_   1 9', '- o 5- 1 g 7 7', '_m /s_gnature                ,_!___', "__'--_            '", "'    ,                 __ _ ( _ _ t", ",  _ _  '____ ??__m   c      ,,     c   , o  t", 'l______omm_!s! n\'_\'o n\'om_e!\'x__pue_\' pe\'"_o__}']
+NeuronRain Human Name Parsing by Context - nameparser(): name substring -  kannan  - found in context =    kannan srinivasan
+NeuronRain Human Name Parsing by Context - nameparser(): second_name : kannan
+NeuronRain Human Name Parsing by Context - nameparser(): first_name : srinivasan
+==============================================================================
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Shrinivaasan : (['Shrini', 'vaasan'], 'Shr_n_-v__s_n')
+Alphabet vectorspace embedding of text: [['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n']]
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Shrinivas : (['Shrini', 'vas'], 'Shr_n_-v_s')
+Alphabet vectorspace embedding of text: [['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's']]
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Srinivasan : (['Srini', 'vasan'], 'Sr_n_-v_s_n')
+Alphabet vectorspace embedding of text: [['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n']]
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  K.Srinivasan
+(
+alsoknownas
+:
+SrinivasanKannan;Ka:Shrinivaasan;ShrinivasKannan
+)
+(
+ResearchWebsite
+:
+https
+:
+==sites:google:com=site=kuja
+27
+=
+)
+AboutMyself
+WorkedforvariousITmajorsandstartupsfrom1999anddidDoctoralresearchintheoreticalcom-
+putersciencetill2011.Presentlyworkingonanon-fundedandnot-for-pro˝topensourceinitiative
+andpursuingindependentuna˚liatedacademicresearch.
+Academics
+
+B.A(Hindi)-PraveenUttarardh-DakshinBharatHindiPracharSabha-Chennai-1988-1992
+
+B.E(ComputerScience)-PSGCollegeofTechnology,Coimbatore-1995-99-GoldMedalistfor
+Pro˝ciency
+
+MSc(ComputerScience)-ChennaiMathematicalInstitute(CMI),Chennai-2008-10
+
+JuniorResearchFellow(PhD-ComputerScience)-CMI,Chennai-Incomplete-2010-11
+Work
+
+AssociateSoftwareEngineer-BaaNInfosystems(nowSSAGlobal),Hyderabad-1999-2000
+
+MemberTechSta˙-iPlanet(SunMicrosystems-NetscapeAlliance),Bangalore-2000-2002
+
+MemberTechSta˙-SunMicrosystems(nowOracle)-Bangalore-2002-2005
+
+SystemAnalyst-Verizon-Chennai-2005
+
+SeniorSoftwareEngineer-webMethods-Bangalore-2006-2007
+
+EngineeringSpecialist-webMethods(nowSoftwareAG)-Bangalore-2007-2008
+
+ConsultantandArchitect-GlobalAnalytics(nowGAINcredit)-Chennai-2011-2013
+
+Consultant-PiQubeAnalytics(ClockworkInterviews)-Chennai-2013-2014
+
+Architect-Cusdelight-CloudEnablers-Chennai-2015
+1
+ResearchPublications-CMI/IMSc/IIT,Chennai
+
+DecidabilityofComplementation-2011-
+http://arxiv.org/abs/1106.4102
+
+AlgorithmsforIntrinsicMerit-2010-
+http://arxiv.org/abs/1006.4458
+
+NISTTAC2010versionofAlgorithmsforIntrinsicMerit-
+http://www.nist.gov/tac/publications/2010/participant.papers/CMI_IIT.proceedings.
+pdf
+ResearchPro˝les
+
+GoogleScholar-
+https://scholar.google.co.in/citations?user=eLZY7CIAAAAJ&hl=en
+
+DBLP-
+http://dblp.dagstuhl.de/pers/hd/s/Shrinivaasan:Ka=
+
+arXiv-ORCID-
+https://orcid.org/0000-0003-1822-4697
+
+MicrosoftAcademic-
+https://academic.microsoft.com/search?q=ka%20shrinivaasan&f=
+&orderBy=0&skip=0&take=10
+
+Researchgate-
+https://www.researchgate.net/profile/Srinivasan_Kannan5
+
+SemanticScholar-
+https://www.semanticscholar.org/author/Ka.-Shrinivaasan/1861803
+AlumniPro˝les
+
+CMIAlumni-2008-10-
+https://www.cmi.ac.in/people/alumni-profile.php?id=shrinivas
+
+CMIJRF-2010-11-
+http://www.cmi.ac.in/people/fac-profile.php?id=shrinivas
+
+PSGTech-1995-99-
+http://alumni.psgtech.ac.in/profile/view/srinivasan-kannan-1
+PublicationDrafts-UnguidedandUnreviewed-2012-present
+Independentacademicresearchpublicationdraftsexpandedonpreviouspublications-
+https://
+sites.google.com/site/kuja27/
+OpenSourceInitiative-KrishnaiResearch-2003-present
+Presentlyworkingindividuallyonresearchanddevelopmentofnon-commercial,non-fundedopen
+sourcecopyleftdual-licensedinitiative(noteamorsponsorinvolved)-cloud,bigdataanalyticsand
+machinelearningaugmentednewLinuxKernelfork-o˙
+:
+NeuronRainResearch
+-
+http://sourceforge.net/users/ka_shrinivaasan
+NeuronRainGreen
+-
+https://github.com/shrinivaasanka/
+KrishnaiResearchGitHubOrganization
+-
+https://github.com/Krishna-iResearch
+NeuronRainGreen
+(
+Replicated
+)
+-
+https://gitlab.com/shrinivaasanka/
+NeuronRainDocumentation;FAQandLicensing
+-
+http://neuronrain-documentation.readthedocs.
+io/en/latest/
+Previousrepositoriesincludeanopenlearningfreecourseware(
+https://github.com/shrinivaasanka/
+Grafit/tree/master/course_material
+)replicatedinSourceForge,GitLabandimplementationsof
+publicationsanddraftsin
+https://sites.google.com/site/kuja27/
+.
+DetailedCV
+Detailsonworkandacademics-
+https://sites.google.com/site/kuja27/CV_of_SrinivasanKannan_
+alias_KaShrinivaasan_alias_ShrinivasKannan.pdf
+,
+https://sites.google.com/site/kuja27/
+BITSPilaniAV.pdf
+ContactAddress
+172,GandhiAdigalSalai,
+Kumbakonam-612001
+Ph:9791499106
+ka:shrinivaasan
+@
+gmail:com;shrinivas:kannan
+@
+gmail:com;kashrinivaasan
+@
+live:com
+DomainofWork-DevelopmentandArchitecture
+Middleware(Web,Application,Messagingetc.,),MachineLearning,BigdataAnalytics,LinuxKer-
+nel,Cloud(LinuxKernelspaceRPC,Hadoop,Spark,CloudOSes),C/C++/Java/Python.
+Research-TheoryandEngineering
+ComputationalNumberTheoryAlgorithms,ComputationalGeometry,ComputationalLinguistics
+andNaturalLanguageProcessing,ComputationalEconomics,AlgorithmsforMassiveDatasets
+andMachineLearning,FameandIntrinsicFitness/Merit,ComputationalComplexityofMajority
+Voting,Satis˝abilityandrelated,Pseudorandomness,ProgramAnalysis.
+ : ([], '')
+Alphabet vectorspace embedding of text: [['K', '.', 'S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '\n', '(', '\n', 'a', 'l', 's', 'o', 'k', 'n', 'o', 'w', 'n', 'a', 's', '\n', ':', '\n', 'S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', 'K', 'a', 'n', 'n', 'a', 'n', ';', 'K', 'a', ':', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', ';', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'K', 'a', 'n', 'n', 'a', 'n', '\n', ')', '\n', '(', '\n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'W', 'e', 'b', 's', 'i', 't', 'e', '\n', ':', '\n', 'h', 't', 't', 'p', 's', '\n', ':', '\n', '=', '=', 's', 'i', 't', 'e', 's', ':', 'g', 'o', 'o', 'g', 'l', 'e', ':', 'c', 'o', 'm', '=', 's', 'i', 't', 'e', '=', 'k', 'u', 'j', 'a', '\n', '2', '7', '\n', '=', '\n', ')', '\n', 'A', 'b', 'o', 'u', 't', 'M', 'y', 's', 'e', 'l', 'f', '\n', 'W', 'o', 'r', 'k', 'e', 'd', 'f', 'o', 'r', 'v', 'a', 'r', 'i', 'o', 'u', 's', 'I', 'T', 'm', 'a', 'j', 'o', 'r', 's', 'a', 'n', 'd', 's', 't', 'a', 'r', 't', 'u', 'p', 's', 'f', 'r', 'o', 'm', '1', '9', '9', '9', 'a', 'n', 'd', 'd', 'i', 'd', 'D', 'o', 'c', 't', 'o', 'r', 'a', 'l', 'r', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'i', 'n', 't', 'h', 'e', 'o', 'r', 'e', 't', 'i', 'c', 'a', 'l', 'c', 'o', 'm', '-', '\n', 'p', 'u', 't', 'e', 'r', 's', 'c', 'i', 'e', 'n', 'c', 'e', 't', 'i', 'l', 'l', '2', '0', '1', '1', '.', 'P', 'r', 'e', 's', 'e', 'n', 't', 'l', 'y', 'w', 'o', 'r', 'k', 'i', 'n', 'g', 'o', 'n', 'a', 'n', 'o', 'n', '-', 'f', 'u', 'n', 'd', 'e', 'd', 'a', 'n', 'd', 'n', 'o', 't', '-', 'f', 'o', 'r', '-', 'p', 'r', 'o', '˝', 't', 'o', 'p', 'e', 'n', 's', 'o', 'u', 'r', 'c', 'e', 'i', 'n', 'i', 't', 'i', 'a', 't', 'i', 'v', 'e', '\n', 'a', 'n', 'd', 'p', 'u', 'r', 's', 'u', 'i', 'n', 'g', 'i', 'n', 'd', 'e', 'p', 'e', 'n', 'd', 'e', 'n', 't', 'u', 'n', 'a', '˚', 'l', 'i', 'a', 't', 'e', 'd', 'a', 'c', 'a', 'd', 'e', 'm', 'i', 'c', 'r', 'e', 's', 'e', 'a', 'r', 'c', 'h', '.', '\n', 'A', 'c', 'a', 'd', 'e', 'm', 'i', 'c', 's', '\n', '\n', 'B', '.', 'A', '(', 'H', 'i', 'n', 'd', 'i', ')', '-', 'P', 'r', 'a', 'v', 'e', 'e', 'n', 'U', 't', 't', 'a', 'r', 'a', 'r', 'd', 'h', '-', 'D', 'a', 'k', 's', 'h', 'i', 'n', 'B', 'h', 'a', 'r', 'a', 't', 'H', 'i', 'n', 'd', 'i', 'P', 'r', 'a', 'c', 'h', 'a', 'r', 'S', 'a', 'b', 'h', 'a', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '1', '9', '8', '8', '-', '1', '9', '9', '2', '\n', '\n', 'B', '.', 'E', '(', 'C', 'o', 'm', 'p', 'u', 't', 'e', 'r', 'S', 'c', 'i', 'e', 'n', 'c', 'e', ')', '-', 'P', 'S', 'G', 'C', 'o', 'l', 'l', 'e', 'g', 'e', 'o', 'f', 'T', 'e', 'c', 'h', 'n', 'o', 'l', 'o', 'g', 'y', ',', 'C', 'o', 'i', 'm', 'b', 'a', 't', 'o', 'r', 'e', '-', '1', '9', '9', '5', '-', '9', '9', '-', 'G', 'o', 'l', 'd', 'M', 'e', 'd', 'a', 'l', 'i', 's', 't', 'f', 'o', 'r', '\n', 'P', 'r', 'o', '˝', 'c', 'i', 'e', 'n', 'c', 'y', '\n', '\n', 'M', 'S', 'c', '(', 'C', 'o', 'm', 'p', 'u', 't', 'e', 'r', 'S', 'c', 'i', 'e', 'n', 'c', 'e', ')', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', 'M', 'a', 't', 'h', 'e', 'm', 'a', 't', 'i', 'c', 'a', 'l', 'I', 'n', 's', 't', 'i', 't', 'u', 't', 'e', '(', 'C', 'M', 'I', ')', ',', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '2', '0', '0', '8', '-', '1', '0', '\n', '\n', 'J', 'u', 'n', 'i', 'o', 'r', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'F', 'e', 'l', 'l', 'o', 'w', '(', 'P', 'h', 'D', '-', 'C', 'o', 'm', 'p', 'u', 't', 'e', 'r', 'S', 'c', 'i', 'e', 'n', 'c', 'e', ')', '-', 'C', 'M', 'I', ',', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', 'I', 'n', 'c', 'o', 'm', 'p', 'l', 'e', 't', 'e', '-', '2', '0', '1', '0', '-', '1', '1', '\n', 'W', 'o', 'r', 'k', '\n', '\n', 'A', 's', 's', 'o', 'c', 'i', 'a', 't', 'e', 'S', 'o', 'f', 't', 'w', 'a', 'r', 'e', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '-', 'B', 'a', 'a', 'N', 'I', 'n', 'f', 'o', 's', 'y', 's', 't', 'e', 'm', 's', '(', 'n', 'o', 'w', 'S', 'S', 'A', 'G', 'l', 'o', 'b', 'a', 'l', ')', ',', 'H', 'y', 'd', 'e', 'r', 'a', 'b', 'a', 'd', '-', '1', '9', '9', '9', '-', '2', '0', '0', '0', '\n', '\n', 'M', 'e', 'm', 'b', 'e', 'r', 'T', 'e', 'c', 'h', 'S', 't', 'a', '˙', '-', 'i', 'P', 'l', 'a', 'n', 'e', 't', '(', 'S', 'u', 'n', 'M', 'i', 'c', 'r', 'o', 's', 'y', 's', 't', 'e', 'm', 's', '-', 'N', 'e', 't', 's', 'c', 'a', 'p', 'e', 'A', 'l', 'l', 'i', 'a', 'n', 'c', 'e', ')', ',', 'B', 'a', 'n', 'g', 'a', 'l', 'o', 'r', 'e', '-', '2', '0', '0', '0', '-', '2', '0', '0', '2', '\n', '\n', 'M', 'e', 'm', 'b', 'e', 'r', 'T', 'e', 'c', 'h', 'S', 't', 'a', '˙', '-', 'S', 'u', 'n', 'M', 'i', 'c', 'r', 'o', 's', 'y', 's', 't', 'e', 'm', 's', '(', 'n', 'o', 'w', 'O', 'r', 'a', 'c', 'l', 'e', ')', '-', 'B', 'a', 'n', 'g', 'a', 'l', 'o', 'r', 'e', '-', '2', '0', '0', '2', '-', '2', '0', '0', '5', '\n', '\n', 'S', 'y', 's', 't', 'e', 'm', 'A', 'n', 'a', 'l', 'y', 's', 't', '-', 'V', 'e', 'r', 'i', 'z', 'o', 'n', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '2', '0', '0', '5', '\n', '\n', 'S', 'e', 'n', 'i', 'o', 'r', 'S', 'o', 'f', 't', 'w', 'a', 'r', 'e', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '-', 'w', 'e', 'b', 'M', 'e', 't', 'h', 'o', 'd', 's', '-', 'B', 'a', 'n', 'g', 'a', 'l', 'o', 'r', 'e', '-', '2', '0', '0', '6', '-', '2', '0', '0', '7', '\n', '\n', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', 'i', 'n', 'g', 'S', 'p', 'e', 'c', 'i', 'a', 'l', 'i', 's', 't', '-', 'w', 'e', 'b', 'M', 'e', 't', 'h', 'o', 'd', 's', '(', 'n', 'o', 'w', 'S', 'o', 'f', 't', 'w', 'a', 'r', 'e', 'A', 'G', ')', '-', 'B', 'a', 'n', 'g', 'a', 'l', 'o', 'r', 'e', '-', '2', '0', '0', '7', '-', '2', '0', '0', '8', '\n', '\n', 'C', 'o', 'n', 's', 'u', 'l', 't', 'a', 'n', 't', 'a', 'n', 'd', 'A', 'r', 'c', 'h', 'i', 't', 'e', 'c', 't', '-', 'G', 'l', 'o', 'b', 'a', 'l', 'A', 'n', 'a', 'l', 'y', 't', 'i', 'c', 's', '(', 'n', 'o', 'w', 'G', 'A', 'I', 'N', 'c', 'r', 'e', 'd', 'i', 't', ')', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '2', '0', '1', '1', '-', '2', '0', '1', '3', '\n', '\n', 'C', 'o', 'n', 's', 'u', 'l', 't', 'a', 'n', 't', '-', 'P', 'i', 'Q', 'u', 'b', 'e', 'A', 'n', 'a', 'l', 'y', 't', 'i', 'c', 's', '(', 'C', 'l', 'o', 'c', 'k', 'w', 'o', 'r', 'k', 'I', 'n', 't', 'e', 'r', 'v', 'i', 'e', 'w', 's', ')', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '2', '0', '1', '3', '-', '2', '0', '1', '4', '\n', '\n', 'A', 'r', 'c', 'h', 'i', 't', 'e', 'c', 't', '-', 'C', 'u', 's', 'd', 'e', 'l', 'i', 'g', 'h', 't', '-', 'C', 'l', 'o', 'u', 'd', 'E', 'n', 'a', 'b', 'l', 'e', 'r', 's', '-', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '-', '2', '0', '1', '5', '\n', '1', '\n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'P', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's', '-', 'C', 'M', 'I', '/', 'I', 'M', 'S', 'c', '/', 'I', 'I', 'T', ',', 'C', 'h', 'e', 'n', 'n', 'a', 'i', '\n', '\n', 'D', 'e', 'c', 'i', 'd', 'a', 'b', 'i', 'l', 'i', 't', 'y', 'o', 'f', 'C', 'o', 'm', 'p', 'l', 'e', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', '-', '2', '0', '1', '1', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'a', 'r', 'x', 'i', 'v', '.', 'o', 'r', 'g', '/', 'a', 'b', 's', '/', '1', '1', '0', '6', '.', '4', '1', '0', '2', '\n', '\n', 'A', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 's', 'f', 'o', 'r', 'I', 'n', 't', 'r', 'i', 'n', 's', 'i', 'c', 'M', 'e', 'r', 'i', 't', '-', '2', '0', '1', '0', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'a', 'r', 'x', 'i', 'v', '.', 'o', 'r', 'g', '/', 'a', 'b', 's', '/', '1', '0', '0', '6', '.', '4', '4', '5', '8', '\n', '\n', 'N', 'I', 'S', 'T', 'T', 'A', 'C', '2', '0', '1', '0', 'v', 'e', 'r', 's', 'i', 'o', 'n', 'o', 'f', 'A', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 's', 'f', 'o', 'r', 'I', 'n', 't', 'r', 'i', 'n', 's', 'i', 'c', 'M', 'e', 'r', 'i', 't', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'w', 'w', 'w', '.', 'n', 'i', 's', 't', '.', 'g', 'o', 'v', '/', 't', 'a', 'c', '/', 'p', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's', '/', '2', '0', '1', '0', '/', 'p', 'a', 'r', 't', 'i', 'c', 'i', 'p', 'a', 'n', 't', '.', 'p', 'a', 'p', 'e', 'r', 's', '/', 'C', 'M', 'I', '_', 'I', 'I', 'T', '.', 'p', 'r', 'o', 'c', 'e', 'e', 'd', 'i', 'n', 'g', 's', '.', '\n', 'p', 'd', 'f', '\n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'P', 'r', 'o', '˝', 'l', 'e', 's', '\n', '\n', 'G', 'o', 'o', 'g', 'l', 'e', 'S', 'c', 'h', 'o', 'l', 'a', 'r', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 's', 'c', 'h', 'o', 'l', 'a', 'r', '.', 'g', 'o', 'o', 'g', 'l', 'e', '.', 'c', 'o', '.', 'i', 'n', '/', 'c', 'i', 't', 'a', 't', 'i', 'o', 'n', 's', '?', 'u', 's', 'e', 'r', '=', 'e', 'L', 'Z', 'Y', '7', 'C', 'I', 'A', 'A', 'A', 'A', 'J', '&', 'h', 'l', '=', 'e', 'n', '\n', '\n', 'D', 'B', 'L', 'P', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'd', 'b', 'l', 'p', '.', 'd', 'a', 'g', 's', 't', 'u', 'h', 'l', '.', 'd', 'e', '/', 'p', 'e', 'r', 's', '/', 'h', 'd', '/', 's', '/', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', ':', 'K', 'a', '=', '\n', '\n', 'a', 'r', 'X', 'i', 'v', '-', 'O', 'R', 'C', 'I', 'D', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'o', 'r', 'c', 'i', 'd', '.', 'o', 'r', 'g', '/', '0', '0', '0', '0', '-', '0', '0', '0', '3', '-', '1', '8', '2', '2', '-', '4', '6', '9', '7', '\n', '\n', 'M', 'i', 'c', 'r', 'o', 's', 'o', 'f', 't', 'A', 'c', 'a', 'd', 'e', 'm', 'i', 'c', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'a', 'c', 'a', 'd', 'e', 'm', 'i', 'c', '.', 'm', 'i', 'c', 'r', 'o', 's', 'o', 'f', 't', '.', 'c', 'o', 'm', '/', 's', 'e', 'a', 'r', 'c', 'h', '?', 'q', '=', 'k', 'a', '%', '2', '0', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '&', 'f', '=', '\n', '&', 'o', 'r', 'd', 'e', 'r', 'B', 'y', '=', '0', '&', 's', 'k', 'i', 'p', '=', '0', '&', 't', 'a', 'k', 'e', '=', '1', '0', '\n', '\n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'g', 'a', 't', 'e', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'w', 'w', 'w', '.', 'r', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'g', 'a', 't', 'e', '.', 'n', 'e', 't', '/', 'p', 'r', 'o', 'f', 'i', 'l', 'e', '/', 'S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '_', 'K', 'a', 'n', 'n', 'a', 'n', '5', '\n', '\n', 'S', 'e', 'm', 'a', 'n', 't', 'i', 'c', 'S', 'c', 'h', 'o', 'l', 'a', 'r', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'w', 'w', 'w', '.', 's', 'e', 'm', 'a', 'n', 't', 'i', 'c', 's', 'c', 'h', 'o', 'l', 'a', 'r', '.', 'o', 'r', 'g', '/', 'a', 'u', 't', 'h', 'o', 'r', '/', 'K', 'a', '.', '-', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '/', '1', '8', '6', '1', '8', '0', '3', '\n', 'A', 'l', 'u', 'm', 'n', 'i', 'P', 'r', 'o', '˝', 'l', 'e', 's', '\n', '\n', 'C', 'M', 'I', 'A', 'l', 'u', 'm', 'n', 'i', '-', '2', '0', '0', '8', '-', '1', '0', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'w', 'w', 'w', '.', 'c', 'm', 'i', '.', 'a', 'c', '.', 'i', 'n', '/', 'p', 'e', 'o', 'p', 'l', 'e', '/', 'a', 'l', 'u', 'm', 'n', 'i', '-', 'p', 'r', 'o', 'f', 'i', 'l', 'e', '.', 'p', 'h', 'p', '?', 'i', 'd', '=', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '\n', '\n', 'C', 'M', 'I', 'J', 'R', 'F', '-', '2', '0', '1', '0', '-', '1', '1', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'w', 'w', 'w', '.', 'c', 'm', 'i', '.', 'a', 'c', '.', 'i', 'n', '/', 'p', 'e', 'o', 'p', 'l', 'e', '/', 'f', 'a', 'c', '-', 'p', 'r', 'o', 'f', 'i', 'l', 'e', '.', 'p', 'h', 'p', '?', 'i', 'd', '=', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '\n', '\n', 'P', 'S', 'G', 'T', 'e', 'c', 'h', '-', '1', '9', '9', '5', '-', '9', '9', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'a', 'l', 'u', 'm', 'n', 'i', '.', 'p', 's', 'g', 't', 'e', 'c', 'h', '.', 'a', 'c', '.', 'i', 'n', '/', 'p', 'r', 'o', 'f', 'i', 'l', 'e', '/', 'v', 'i', 'e', 'w', '/', 's', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '-', 'k', 'a', 'n', 'n', 'a', 'n', '-', '1', '\n', 'P', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 'D', 'r', 'a', 'f', 't', 's', '-', 'U', 'n', 'g', 'u', 'i', 'd', 'e', 'd', 'a', 'n', 'd', 'U', 'n', 'r', 'e', 'v', 'i', 'e', 'w', 'e', 'd', '-', '2', '0', '1', '2', '-', 'p', 'r', 'e', 's', 'e', 'n', 't', '\n', 'I', 'n', 'd', 'e', 'p', 'e', 'n', 'd', 'e', 'n', 't', 'a', 'c', 'a', 'd', 'e', 'm', 'i', 'c', 'r', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'p', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 'd', 'r', 'a', 'f', 't', 's', 'e', 'x', 'p', 'a', 'n', 'd', 'e', 'd', 'o', 'n', 'p', 'r', 'e', 'v', 'i', 'o', 'u', 's', 'p', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', '\n', 's', 'i', 't', 'e', 's', '.', 'g', 'o', 'o', 'g', 'l', 'e', '.', 'c', 'o', 'm', '/', 's', 'i', 't', 'e', '/', 'k', 'u', 'j', 'a', '2', '7', '/', '\n', 'O', 'p', 'e', 'n', 'S', 'o', 'u', 'r', 'c', 'e', 'I', 'n', 'i', 't', 'i', 'a', 't', 'i', 'v', 'e', '-', 'K', 'r', 'i', 's', 'h', 'n', 'a', 'i', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', '-', '2', '0', '0', '3', '-', 'p', 'r', 'e', 's', 'e', 'n', 't', '\n', 'P', 'r', 'e', 's', 'e', 'n', 't', 'l', 'y', 'w', 'o', 'r', 'k', 'i', 'n', 'g', 'i', 'n', 'd', 'i', 'v', 'i', 'd', 'u', 'a', 'l', 'l', 'y', 'o', 'n', 'r', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'a', 'n', 'd', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'm', 'e', 'n', 't', 'o', 'f', 'n', 'o', 'n', '-', 'c', 'o', 'm', 'm', 'e', 'r', 'c', 'i', 'a', 'l', ',', 'n', 'o', 'n', '-', 'f', 'u', 'n', 'd', 'e', 'd', 'o', 'p', 'e', 'n', '\n', 's', 'o', 'u', 'r', 'c', 'e', 'c', 'o', 'p', 'y', 'l', 'e', 'f', 't', 'd', 'u', 'a', 'l', '-', 'l', 'i', 'c', 'e', 'n', 's', 'e', 'd', 'i', 'n', 'i', 't', 'i', 'a', 't', 'i', 'v', 'e', '(', 'n', 'o', 't', 'e', 'a', 'm', 'o', 'r', 's', 'p', 'o', 'n', 's', 'o', 'r', 'i', 'n', 'v', 'o', 'l', 'v', 'e', 'd', ')', '-', 'c', 'l', 'o', 'u', 'd', ',', 'b', 'i', 'g', 'd', 'a', 't', 'a', 'a', 'n', 'a', 'l', 'y', 't', 'i', 'c', 's', 'a', 'n', 'd', '\n', 'm', 'a', 'c', 'h', 'i', 'n', 'e', 'l', 'e', 'a', 'r', 'n', 'i', 'n', 'g', 'a', 'u', 'g', 'm', 'e', 'n', 't', 'e', 'd', 'n', 'e', 'w', 'L', 'i', 'n', 'u', 'x', 'K', 'e', 'r', 'n', 'e', 'l', 'f', 'o', 'r', 'k', '-', 'o', '˙', '\n', ':', '\n', 'N', 'e', 'u', 'r', 'o', 'n', 'R', 'a', 'i', 'n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', '\n', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 's', 'o', 'u', 'r', 'c', 'e', 'f', 'o', 'r', 'g', 'e', '.', 'n', 'e', 't', '/', 'u', 's', 'e', 'r', 's', '/', 'k', 'a', '_', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '\n', 'N', 'e', 'u', 'r', 'o', 'n', 'R', 'a', 'i', 'n', 'G', 'r', 'e', 'e', 'n', '\n', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'g', 'i', 't', 'h', 'u', 'b', '.', 'c', 'o', 'm', '/', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', 'k', 'a', '/', '\n', 'K', 'r', 'i', 's', 'h', 'n', 'a', 'i', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', 'G', 'i', 't', 'H', 'u', 'b', 'O', 'r', 'g', 'a', 'n', 'i', 'z', 'a', 't', 'i', 'o', 'n', '\n', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'g', 'i', 't', 'h', 'u', 'b', '.', 'c', 'o', 'm', '/', 'K', 'r', 'i', 's', 'h', 'n', 'a', '-', 'i', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', '\n', 'N', 'e', 'u', 'r', 'o', 'n', 'R', 'a', 'i', 'n', 'G', 'r', 'e', 'e', 'n', '\n', '(', '\n', 'R', 'e', 'p', 'l', 'i', 'c', 'a', 't', 'e', 'd', '\n', ')', '\n', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'g', 'i', 't', 'l', 'a', 'b', '.', 'c', 'o', 'm', '/', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', 'k', 'a', '/', '\n', 'N', 'e', 'u', 'r', 'o', 'n', 'R', 'a', 'i', 'n', 'D', 'o', 'c', 'u', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', ';', 'F', 'A', 'Q', 'a', 'n', 'd', 'L', 'i', 'c', 'e', 'n', 's', 'i', 'n', 'g', '\n', '-', '\n', 'h', 't', 't', 'p', ':', '/', '/', 'n', 'e', 'u', 'r', 'o', 'n', 'r', 'a', 'i', 'n', '-', 'd', 'o', 'c', 'u', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', '.', 'r', 'e', 'a', 'd', 't', 'h', 'e', 'd', 'o', 'c', 's', '.', '\n', 'i', 'o', '/', 'e', 'n', '/', 'l', 'a', 't', 'e', 's', 't', '/', '\n', 'P', 'r', 'e', 'v', 'i', 'o', 'u', 's', 'r', 'e', 'p', 'o', 's', 'i', 't', 'o', 'r', 'i', 'e', 's', 'i', 'n', 'c', 'l', 'u', 'd', 'e', 'a', 'n', 'o', 'p', 'e', 'n', 'l', 'e', 'a', 'r', 'n', 'i', 'n', 'g', 'f', 'r', 'e', 'e', 'c', 'o', 'u', 'r', 's', 'e', 'w', 'a', 'r', 'e', '(', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 'g', 'i', 't', 'h', 'u', 'b', '.', 'c', 'o', 'm', '/', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', 'k', 'a', '/', '\n', 'G', 'r', 'a', 'f', 'i', 't', '/', 't', 'r', 'e', 'e', '/', 'm', 'a', 's', 't', 'e', 'r', '/', 'c', 'o', 'u', 'r', 's', 'e', '_', 'm', 'a', 't', 'e', 'r', 'i', 'a', 'l', '\n', ')', 'r', 'e', 'p', 'l', 'i', 'c', 'a', 't', 'e', 'd', 'i', 'n', 'S', 'o', 'u', 'r', 'c', 'e', 'F', 'o', 'r', 'g', 'e', ',', 'G', 'i', 't', 'L', 'a', 'b', 'a', 'n', 'd', 'i', 'm', 'p', 'l', 'e', 'm', 'e', 'n', 't', 'a', 't', 'i', 'o', 'n', 's', 'o', 'f', '\n', 'p', 'u', 'b', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's', 'a', 'n', 'd', 'd', 'r', 'a', 'f', 't', 's', 'i', 'n', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 's', 'i', 't', 'e', 's', '.', 'g', 'o', 'o', 'g', 'l', 'e', '.', 'c', 'o', 'm', '/', 's', 'i', 't', 'e', '/', 'k', 'u', 'j', 'a', '2', '7', '/', '\n', '.', '\n', 'D', 'e', 't', 'a', 'i', 'l', 'e', 'd', 'C', 'V', '\n', 'D', 'e', 't', 'a', 'i', 'l', 's', 'o', 'n', 'w', 'o', 'r', 'k', 'a', 'n', 'd', 'a', 'c', 'a', 'd', 'e', 'm', 'i', 'c', 's', '-', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 's', 'i', 't', 'e', 's', '.', 'g', 'o', 'o', 'g', 'l', 'e', '.', 'c', 'o', 'm', '/', 's', 'i', 't', 'e', '/', 'k', 'u', 'j', 'a', '2', '7', '/', 'C', 'V', '_', 'o', 'f', '_', 'S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', 'K', 'a', 'n', 'n', 'a', 'n', '_', '\n', 'a', 'l', 'i', 'a', 's', '_', 'K', 'a', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '_', 'a', 'l', 'i', 'a', 's', '_', 'S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'K', 'a', 'n', 'n', 'a', 'n', '.', 'p', 'd', 'f', '\n', ',', '\n', 'h', 't', 't', 'p', 's', ':', '/', '/', 's', 'i', 't', 'e', 's', '.', 'g', 'o', 'o', 'g', 'l', 'e', '.', 'c', 'o', 'm', '/', 's', 'i', 't', 'e', '/', 'k', 'u', 'j', 'a', '2', '7', '/', '\n', 'B', 'I', 'T', 'S', 'P', 'i', 'l', 'a', 'n', 'i', 'A', 'V', '.', 'p', 'd', 'f', '\n', 'C', 'o', 'n', 't', 'a', 'c', 't', 'A', 'd', 'd', 'r', 'e', 's', 's', '\n', '1', '7', '2', ',', 'G', 'a', 'n', 'd', 'h', 'i', 'A', 'd', 'i', 'g', 'a', 'l', 'S', 'a', 'l', 'a', 'i', ',', '\n', 'K', 'u', 'm', 'b', 'a', 'k', 'o', 'n', 'a', 'm', '-', '6', '1', '2', '0', '0', '1', '\n', 'P', 'h', ':', '9', '7', '9', '1', '4', '9', '9', '1', '0', '6', '\n', 'k', 'a', ':', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '\n', '@', '\n', 'g', 'm', 'a', 'i', 'l', ':', 'c', 'o', 'm', ';', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', ':', 'k', 'a', 'n', 'n', 'a', 'n', '\n', '@', '\n', 'g', 'm', 'a', 'i', 'l', ':', 'c', 'o', 'm', ';', 'k', 'a', 's', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n', '\n', '@', '\n', 'l', 'i', 'v', 'e', ':', 'c', 'o', 'm', '\n', 'D', 'o', 'm', 'a', 'i', 'n', 'o', 'f', 'W', 'o', 'r', 'k', '-', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'm', 'e', 'n', 't', 'a', 'n', 'd', 'A', 'r', 'c', 'h', 'i', 't', 'e', 'c', 't', 'u', 'r', 'e', '\n', 'M', 'i', 'd', 'd', 'l', 'e', 'w', 'a', 'r', 'e', '(', 'W', 'e', 'b', ',', 'A', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', ',', 'M', 'e', 's', 's', 'a', 'g', 'i', 'n', 'g', 'e', 't', 'c', '.', ',', ')', ',', 'M', 'a', 'c', 'h', 'i', 'n', 'e', 'L', 'e', 'a', 'r', 'n', 'i', 'n', 'g', ',', 'B', 'i', 'g', 'd', 'a', 't', 'a', 'A', 'n', 'a', 'l', 'y', 't', 'i', 'c', 's', ',', 'L', 'i', 'n', 'u', 'x', 'K', 'e', 'r', '-', '\n', 'n', 'e', 'l', ',', 'C', 'l', 'o', 'u', 'd', '(', 'L', 'i', 'n', 'u', 'x', 'K', 'e', 'r', 'n', 'e', 'l', 's', 'p', 'a', 'c', 'e', 'R', 'P', 'C', ',', 'H', 'a', 'd', 'o', 'o', 'p', ',', 'S', 'p', 'a', 'r', 'k', ',', 'C', 'l', 'o', 'u', 'd', 'O', 'S', 'e', 's', ')', ',', 'C', '/', 'C', '+', '+', '/', 'J', 'a', 'v', 'a', '/', 'P', 'y', 't', 'h', 'o', 'n', '.', '\n', 'R', 'e', 's', 'e', 'a', 'r', 'c', 'h', '-', 'T', 'h', 'e', 'o', 'r', 'y', 'a', 'n', 'd', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', 'i', 'n', 'g', '\n', 'C', 'o', 'm', 'p', 'u', 't', 'a', 't', 'i', 'o', 'n', 'a', 'l', 'N', 'u', 'm', 'b', 'e', 'r', 'T', 'h', 'e', 'o', 'r', 'y', 'A', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 's', ',', 'C', 'o', 'm', 'p', 'u', 't', 'a', 't', 'i', 'o', 'n', 'a', 'l', 'G', 'e', 'o', 'm', 'e', 't', 'r', 'y', ',', 'C', 'o', 'm', 'p', 'u', 't', 'a', 't', 'i', 'o', 'n', 'a', 'l', 'L', 'i', 'n', 'g', 'u', 'i', 's', 't', 'i', 'c', 's', '\n', 'a', 'n', 'd', 'N', 'a', 't', 'u', 'r', 'a', 'l', 'L', 'a', 'n', 'g', 'u', 'a', 'g', 'e', 'P', 'r', 'o', 'c', 'e', 's', 's', 'i', 'n', 'g', ',', 'C', 'o', 'm', 'p', 'u', 't', 'a', 't', 'i', 'o', 'n', 'a', 'l', 'E', 'c', 'o', 'n', 'o', 'm', 'i', 'c', 's', ',', 'A', 'l', 'g', 'o', 'r', 'i', 't', 'h', 'm', 's', 'f', 'o', 'r', 'M', 'a', 's', 's', 'i', 'v', 'e', 'D', 'a', 't', 'a', 's', 'e', 't', 's', '\n', 'a', 'n', 'd', 'M', 'a', 'c', 'h', 'i', 'n', 'e', 'L', 'e', 'a', 'r', 'n', 'i', 'n', 'g', ',', 'F', 'a', 'm', 'e', 'a', 'n', 'd', 'I', 'n', 't', 'r', 'i', 'n', 's', 'i', 'c', 'F', 'i', 't', 'n', 'e', 's', 's', '/', 'M', 'e', 'r', 'i', 't', ',', 'C', 'o', 'm', 'p', 'u', 't', 'a', 't', 'i', 'o', 'n', 'a', 'l', 'C', 'o', 'm', 'p', 'l', 'e', 'x', 'i', 't', 'y', 'o', 'f', 'M', 'a', 'j', 'o', 'r', 'i', 't', 'y', '\n', 'V', 'o', 't', 'i', 'n', 'g', ',', 'S', 'a', 't', 'i', 's', '˝', 'a', 'b', 'i', 'l', 'i', 't', 'y', 'a', 'n', 'd', 'r', 'e', 'l', 'a', 't', 'e', 'd', ',', 'P', 's', 'e', 'u', 'd', 'o', 'r', 'a', 'n', 'd', 'o', 'm', 'n', 'e', 's', 's', ',', 'P', 'r', 'o', 'g', 'r', 'a', 'm', 'A', 'n', 'a', 'l', 'y', 's', 'i', 's', '.', '\n']]
+======================================================================
+Match Rating Codex 
+======================================================================
+Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]: ['SHRVSN', 'SHRNVS', 'SRNVSN']
