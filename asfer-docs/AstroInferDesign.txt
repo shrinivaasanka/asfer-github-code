@@ -15774,3 +15774,23 @@ Alphabet vectorspace embedding of text: [['T', 'h', 'i', 's'], ['s', 'e', 'n', '
 7.Leaky Bucket Analyzer thus is a universal tool for mining any stream of text,audio,video,people data and most apt for wireless network stream, stream of celestial bodies configurations, climate change datastream (e.g http://climate.nasa.gov data stream on surface temperature, melting polar ice sheets, carbon emission, ocean currents and acidity), economic datasets having lot of outlier spikes. 
 8.Streaming_LeakyBucket.py has been implemented on Python 3.7.5 and Streaming_AbstractGenerator.py has been upgraded to Python 3.7.5
 9.Logs for dictionary time series example are at testlogs/Streaming_LeakyBucket.log.12February2020
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+749. (THEORY and FEATURE) PAC Learning - Python 3.7.5 upgrade, Riemann Hypothesis, Patterns in Primes, class HNc and Algebraic Circuits - 21 February 2020 - related to 24,629 and all sections on Complement diophantines, Complementary Sets and Equations, Prime-Composite complementation and Patterns in Primes
+----------------------------------------------------------------------------------------------------------------------------------------------
+1. PACLearning.py PAC learning implementation has been refactored and upgraded to Python 3.7.5. Binary encoded and bits mapped UTM Primes dataset has been PAC Learnt again for per-prime-bit-position boolean disjunctions of first 10000 primes (16 disjunctions for each bit of 16-bits prime integer). New refactored PACLearning() function accepts a generic datasource and a hypothesis dictionary as arguments.
+2. Example logs for this PAC learning are at testlogs/PACLearning.PrimeBitsMappingConjunctions.Python3.7.5.21February2020 which are different from Python 2.7 approximate learning.
+3. Prime pattern References in Section 24 (24.31, 24.32, 24.33) mention a prima facie pattern in juxtaposed primes especially their avoidance of same digit ending. PAC learnt hypothesis in testlogs/PACLearning.PrimeBitsMappingConjunctions.Python3.7.5.21February2020 show an intriguing avoidance pattern in 14th,15th and 16th bits for first 10000 primes though approximate.
+4. Prime counting function (number of primes <= N) can be written in terms of non-trivial zeros of Riemann Zeta Function. Riemann Hypothesis (RH) conjectures all non-trivial zeros of Riemann Zeta Function are along critical line Re(z)=0.5. Riemann Zeta Function is just a rephrased version of Sieve of Eratosthenes and is expanded by Euler product.
+5. From Section 629, Riemann Zeta Function has an algebraic computation tree circuit in HNc:
+	"... Riemann Zeta Function can be represented as a disjunctive clauses or non-uniform Hilbert Nullstellensatz algebraic circuit in 
+	0-1-HNc (0 if s is a non-trivial zero else 1) of product polynomials having complex roots (non-trivial zeros): 
+	RZF=product_of(1/[1-prime(k)^(-s)]) for all primes 2,3,5,7,..."
+6.Approximate binary digit hypothesis disjunctions for primes dataset learnt by PAC and exact learning by Euler-Fourier polynomial imply pattern in spacings between consecutive primes and thus are indirect boolean prime counting functions.
+7.Riemann Zeta Function has diophantine equation representation and thus in RE by MRDP theorem. Recent result of MIP*=RE implies a quantum multiparty interactive prover-classical verifier algorithm for diophantine and algebraic circuit versions of Riemann Zeta Function. It is notable and coincidental that distribution of Gaussian Unitary Ensemble eigenvalues in quantum world are identical to spacings of non-trivial zeros of RZF.
+
+References:
+----------
+749.1 Prime Obsession - Bernhard Riemann and the Greatest Unsolved Problem in Mathematics - [John Derbyshire] - Chapters 18,19,21 - Pages 292,299,309,328 - Montgomery-Odlyzko law, Euler product, Sieve of Eratosthenes, Function J(x) in terms of Prime counting function Pi(x) and Riemann Zeta Function in terms of J(x) - Equations 19.1,19.6,21.1 - " ... 1/s log(RZF(s)) = Integral(J(x) x^(-s-1) dx) ..."
+749.2 MIP*=RE - https://arxiv.org/abs/2001.04383
+
