@@ -1,0 +1,2235 @@
+=======================================================================================================================================
+Syllable Boundary = False
+=======================================================================================================================================
+#####################################################################################################
+Compression by vowel removal:
+('wcomp:', 'R_m_ g_ts f_r_v_r pl__s_d w_th h_m wh_ l_st_ns t_ _r r__ds R_m_y_n_ d__ly. H_ _s _nd__d th_ _t_rn_l V_shn_, th_ L_rd _f pr_s_rv_t__n. R_m_ _s th_ pr_m_rd__l L_rd, cl__rly pl_c_d b_f_r_ th_ _y_s th_ p_w_rf_l L_rd r_m_v_ng th_ s_ns _nd th_ gr__t-_rm_d, wh_ h_s _b_d_ _n w_t_rs _f th_ _c__n _f m_lk S_sh_ th_ s_rp_nt-g_d f_rm_ng h_s c__ch _s s__d t_ b_ L_kshm_n_.\n')
+('wcompcomp = ', 'Rm gts frvr plsd wth hm wh lstns t r rds Rmyn dly. H s ndd th trnl Vshn, th Lrd f prsrvtn. Rm s th prmrdl Lrd, clrly plcd bfr th ys th pwrfl Lrd rmvng th sns nd th grt-rmd, wh hs bd n wtrs f th cn f mlk Ssh th srpnt-gd frmng hs cch s sd t b Lkshmn.\n')
+('Compression ratio = ', 27.14681440443213, '%')
+Decompression using Hidden Markov Model or PyEnchant Spellcheck suggest() function:
+('R_m_', [])
+('comp=', 'R_m_', '; maxlikely=', '')
+('compsubstrings: ', ['R', 'm', ''])
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_m_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('g_ts', ['gets', 'gits', 'guts', 'gusts'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('x=', 'gusts', '; comp=', 'g_ts')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('x[xptr]=', 'u', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('x[xptr]=', 't', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('comp=', 'g_ts', '; maxlikely=', 'gets')
+('compsubstrings: ', ['g', 'ts'])
+compwordregex: ^g[a-zA-Z]ts$
+likelydict for  g_ts : {'ghts': 1.7238184302047466e-05}
+('matchinglikelydict=', {'ghts': 1.7238184302047466e-05})
+('maxlikelyretprob=', 1.7238184302047466e-05, '; maxlikelyret = ', 'ghts')
+{'ghts': 1.7238184302047466e-05}
+('comp=', 'g_ts', '; maxlikely=', 'ghts')
+maximumlikelihoodword - PyEnchant : gets
+maximumlikelihoodword - HMM : ghts
+('f_r_v_r', [])
+('comp=', 'f_r_v_r', '; maxlikely=', '')
+('compsubstrings: ', ['f', 'r', 'v', 'r'])
+compwordregex: ^f[a-zA-Z]r[a-zA-Z]v[a-zA-Z]r$
+likelydict for  f_r_v_r : {'forever': 4.309546075511867e-06}
+('matchinglikelydict=', {'forever': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511867e-06, '; maxlikelyret = ', 'forever')
+{'forever': 4.309546075511867e-06}
+('comp=', 'f_r_v_r', '; maxlikely=', 'forever')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : forever
+('pl__s_d', [])
+('comp=', 'pl__s_d', '; maxlikely=', '')
+('compsubstrings: ', ['pl', '', 's', 'd'])
+compwordregex: ^pl[a-zA-Z][a-zA-Z]s[a-zA-Z]d$
+likelydict for  pl__s_d : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'pl__s_d', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('w_th', ['with'])
+==============================================
+[]
+('comp=', 'w_th', '; maxlikely=', 'with')
+('compsubstrings: ', ['w', 'th'])
+compwordregex: ^w[a-zA-Z]th$
+likelydict for  w_th : {'with': 2.154773037755933e-05, 'wath': 4.309546075511867e-06}
+('matchinglikelydict=', {'with': 2.154773037755933e-05, 'wath': 4.309546075511867e-06})
+('maxlikelyretprob=', 2.154773037755933e-05, '; maxlikelyret = ', 'with')
+{'with': 2.154773037755933e-05, 'wath': 4.309546075511867e-06}
+('comp=', 'w_th', '; maxlikely=', 'with')
+maximumlikelihoodword - PyEnchant : with
+maximumlikelihoodword - HMM : with
+('h_m', ['hem', 'him', 'ham', 'hum', 'hmm', "h'm"])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+["'"]
+('comp=', 'h_m', '; maxlikely=', 'hem')
+('compsubstrings: ', ['h', 'm'])
+compwordregex: ^h[a-zA-Z]m$
+likelydict for  h_m : {'hem': 1.7238184302047466e-05, 'hum': 1.29286382265356e-05, 'him': 1.7238184302047466e-05, 'ham': 2.58572764530712e-05, 'hom': 8.619092151023733e-06}
+('matchinglikelydict=', {'hem': 1.7238184302047466e-05, 'hum': 1.29286382265356e-05, 'him': 1.7238184302047466e-05, 'ham': 2.58572764530712e-05, 'hom': 8.619092151023733e-06})
+('maxlikelyretprob=', 2.58572764530712e-05, '; maxlikelyret = ', 'ham')
+{'hem': 1.7238184302047466e-05, 'hum': 1.29286382265356e-05, 'him': 1.7238184302047466e-05, 'ham': 2.58572764530712e-05, 'hom': 8.619092151023733e-06}
+('comp=', 'h_m', '; maxlikely=', 'ham')
+maximumlikelihoodword - PyEnchant : hem
+maximumlikelihoodword - HMM : ham
+('wh_', ['who', 'why'])
+==============================================
+[]
+==============================================
+['y']
+('comp=', 'wh_', '; maxlikely=', 'who')
+('compsubstrings: ', ['wh', ''])
+compwordregex: ^wh[a-zA-Z]$
+likelydict for  wh_ : {'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06}
+('matchinglikelydict=', {'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'who')
+{'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06}
+('comp=', 'wh_', '; maxlikely=', 'who')
+maximumlikelihoodword - PyEnchant : who
+maximumlikelihoodword - HMM : who
+('l_st_ns', [])
+('comp=', 'l_st_ns', '; maxlikely=', '')
+('compsubstrings: ', ['l', 'st', 'ns'])
+compwordregex: ^l[a-zA-Z]st[a-zA-Z]ns$
+likelydict for  l_st_ns : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'l_st_ns', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('t_', ['t', 'ts', 'ti', 'ta', 'tn', 'tr', 'to', 'tb'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['n']
+==============================================
+['r']
+==============================================
+[]
+==============================================
+['b']
+('comp=', 't_', '; maxlikely=', 't')
+('compsubstrings: ', ['t', ''])
+compwordregex: ^t[a-zA-Z]$
+likelydict for  t_ : {'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931}
+('matchinglikelydict=', {'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931})
+('maxlikelyretprob=', 0.005059407092650931, '; maxlikelyret = ', 'te')
+{'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931}
+('comp=', 't_', '; maxlikely=', 'te')
+maximumlikelihoodword - PyEnchant : t
+maximumlikelihoodword - HMM : te
+('_r', ['r', 'er', 'tr', 'or', 'gr', 'pr', 'hr', 'yr', 'fr', 'Er', 'Sr', 'Ir', 'Ar', 'Lr', 'Cr'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['t']
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['p']
+==============================================
+['h']
+==============================================
+['y']
+==============================================
+['f']
+==============================================
+[]
+==============================================
+['S']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['L']
+==============================================
+['C']
+('comp=', '_r', '; maxlikely=', 'r')
+('compsubstrings: ', ['', 'r'])
+compwordregex: ^[a-zA-Z]r$
+likelydict for  _r : {'ur': 0.0005559314437410308, 'dr': 1.29286382265356e-05, 'lr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'ar': 0.0013014829148045837, 'kr': 8.619092151023733e-06, 'pr': 1.29286382265356e-05, 'or': 0.0014092215666923803, 'mr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'fr': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'zr': 4.309546075511867e-06, 'cr': 1.29286382265356e-05, 'sr': 8.619092151023733e-06, 'rr': 3.87859146796068e-05, 'gr': 4.309546075511867e-06, 'br': 8.619092151023733e-06, 'tr': 4.309546075511867e-06}
+('matchinglikelydict=', {'ur': 0.0005559314437410308, 'dr': 1.29286382265356e-05, 'lr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'ar': 0.0013014829148045837, 'kr': 8.619092151023733e-06, 'pr': 1.29286382265356e-05, 'or': 0.0014092215666923803, 'mr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'fr': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'zr': 4.309546075511867e-06, 'cr': 1.29286382265356e-05, 'sr': 8.619092151023733e-06, 'rr': 3.87859146796068e-05, 'gr': 4.309546075511867e-06, 'br': 8.619092151023733e-06, 'tr': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.00851997259128696, '; maxlikelyret = ', 'er')
+{'ur': 0.0005559314437410308, 'dr': 1.29286382265356e-05, 'lr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'ar': 0.0013014829148045837, 'kr': 8.619092151023733e-06, 'pr': 1.29286382265356e-05, 'or': 0.0014092215666923803, 'mr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'fr': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'zr': 4.309546075511867e-06, 'cr': 1.29286382265356e-05, 'sr': 8.619092151023733e-06, 'rr': 3.87859146796068e-05, 'gr': 4.309546075511867e-06, 'br': 8.619092151023733e-06, 'tr': 4.309546075511867e-06}
+('comp=', '_r', '; maxlikely=', 'er')
+maximumlikelihoodword - PyEnchant : r
+maximumlikelihoodword - HMM : er
+('r__ds', [])
+('comp=', 'r__ds', '; maxlikely=', '')
+('compsubstrings: ', ['r', '', 'ds'])
+compwordregex: ^r[a-zA-Z][a-zA-Z]ds$
+likelydict for  r__ds : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'r__ds', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('R_m_y_n_', [])
+('comp=', 'R_m_y_n_', '; maxlikely=', '')
+('compsubstrings: ', ['R', 'm', 'y', 'n', ''])
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]y[a-zA-Z]n[a-zA-Z]$
+likelydict for  R_m_y_n_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_m_y_n_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('d__ly.', [])
+('comp=', 'd__ly.', '; maxlikely=', '')
+('compsubstrings: ', ['d', '', 'ly.'])
+compwordregex: ^d[a-zA-Z][a-zA-Z]ly.$
+likelydict for  d__ly. : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'd__ly.', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('H_', ['H', 'He', 'Ha', 'Ho', 'Hg', 'Hf', 'Hz', 'HS', 'HI', 'HR', 'HT', 'HM', 'HP', 'HF'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['f']
+==============================================
+['z']
+==============================================
+['S']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['T']
+==============================================
+['M']
+==============================================
+['P']
+==============================================
+['F']
+('comp=', 'H_', '; maxlikely=', 'H')
+('compsubstrings: ', ['H', ''])
+compwordregex: ^H[a-zA-Z]$
+likelydict for  H_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'H_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : H
+maximumlikelihoodword - HMM : 
+('_s', ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['r']
+==============================================
+['t']
+==============================================
+['l']
+==============================================
+['c']
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['m']
+==============================================
+['v']
+==============================================
+['k']
+==============================================
+[]
+==============================================
+[]
+('comp=', '_s', '; maxlikely=', 's')
+('compsubstrings: ', ['', 's'])
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('matchinglikelydict=', {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133})
+('maxlikelyretprob=', 0.0028012049490827133, '; maxlikelyret = ', 'us')
+{'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('comp=', '_s', '; maxlikely=', 'us')
+maximumlikelihoodword - PyEnchant : s
+maximumlikelihoodword - HMM : us
+('_nd__d', [])
+('comp=', '_nd__d', '; maxlikely=', '')
+('compsubstrings: ', ['', 'nd', '', 'd'])
+compwordregex: ^[a-zA-Z]nd[a-zA-Z][a-zA-Z]d$
+likelydict for  _nd__d : {'indred': 8.619092151023733e-06, 'undred': 4.309546075511867e-06, 'indled': 4.309546075511867e-06, 'indeed': 4.309546075511867e-06, 'andard': 3.0166822528583065e-05}
+('matchinglikelydict=', {'indred': 8.619092151023733e-06, 'undred': 4.309546075511867e-06, 'indled': 4.309546075511867e-06, 'indeed': 4.309546075511867e-06, 'andard': 3.0166822528583065e-05})
+('maxlikelyretprob=', 3.0166822528583065e-05, '; maxlikelyret = ', 'andard')
+{'indred': 8.619092151023733e-06, 'undred': 4.309546075511867e-06, 'indled': 4.309546075511867e-06, 'indeed': 4.309546075511867e-06, 'andard': 3.0166822528583065e-05}
+('comp=', '_nd__d', '; maxlikely=', 'andard')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : andard
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('_t_rn_l', [])
+('comp=', '_t_rn_l', '; maxlikely=', '')
+('compsubstrings: ', ['', 't', 'rn', 'l'])
+compwordregex: ^[a-zA-Z]t[a-zA-Z]rn[a-zA-Z]l$
+likelydict for  _t_rn_l : {'eternal': 8.619092151023733e-06, 'nternal': 8.619092151023733e-06, 'cturnal': 4.309546075511867e-06, 'aternal': 1.29286382265356e-05, 'xternal': 4.309546075511867e-06}
+('matchinglikelydict=', {'eternal': 8.619092151023733e-06, 'nternal': 8.619092151023733e-06, 'cturnal': 4.309546075511867e-06, 'aternal': 1.29286382265356e-05, 'xternal': 4.309546075511867e-06})
+('maxlikelyretprob=', 1.29286382265356e-05, '; maxlikelyret = ', 'aternal')
+{'eternal': 8.619092151023733e-06, 'nternal': 8.619092151023733e-06, 'cturnal': 4.309546075511867e-06, 'aternal': 1.29286382265356e-05, 'xternal': 4.309546075511867e-06}
+('comp=', '_t_rn_l', '; maxlikely=', 'aternal')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : aternal
+('V_shn_,', [])
+('comp=', 'V_shn_,', '; maxlikely=', '')
+('compsubstrings: ', ['V', 'shn', ','])
+compwordregex: ^V[a-zA-Z]shn[a-zA-Z],$
+likelydict for  V_shn_, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'V_shn_,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('L_rd', ['Lord', 'Lard'])
+==============================================
+[]
+==============================================
+[]
+('comp=', 'L_rd', '; maxlikely=', 'Lord')
+('compsubstrings: ', ['L', 'rd'])
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : Lord
+maximumlikelihoodword - HMM : 
+('_f', ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['c']
+==============================================
+['p']
+==============================================
+['h']
+==============================================
+['b']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['C']
+==============================================
+['H']
+('comp=', '_f', '; maxlikely=', 'f')
+('compsubstrings: ', ['', 'f'])
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('matchinglikelydict=', {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05})
+('maxlikelyretprob=', 0.0004094068771736273, '; maxlikelyret = ', 'ff')
+{'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('comp=', '_f', '; maxlikely=', 'ff')
+maximumlikelihoodword - PyEnchant : f
+maximumlikelihoodword - HMM : ff
+('pr_s_rv_t__n.', [])
+('comp=', 'pr_s_rv_t__n.', '; maxlikely=', '')
+('compsubstrings: ', ['pr', 's', 'rv', 't', '', 'n.'])
+compwordregex: ^pr[a-zA-Z]s[a-zA-Z]rv[a-zA-Z]t[a-zA-Z][a-zA-Z]n.$
+likelydict for  pr_s_rv_t__n. : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'pr_s_rv_t__n.', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('R_m_', [])
+('comp=', 'R_m_', '; maxlikely=', '')
+('compsubstrings: ', ['R', 'm', ''])
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_m_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('_s', ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['r']
+==============================================
+['t']
+==============================================
+['l']
+==============================================
+['c']
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['m']
+==============================================
+['v']
+==============================================
+['k']
+==============================================
+[]
+==============================================
+[]
+('comp=', '_s', '; maxlikely=', 's')
+('compsubstrings: ', ['', 's'])
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('matchinglikelydict=', {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133})
+('maxlikelyretprob=', 0.0028012049490827133, '; maxlikelyret = ', 'us')
+{'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('comp=', '_s', '; maxlikely=', 'us')
+maximumlikelihoodword - PyEnchant : s
+maximumlikelihoodword - HMM : us
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('pr_m_rd__l', [])
+('comp=', 'pr_m_rd__l', '; maxlikely=', '')
+('compsubstrings: ', ['pr', 'm', 'rd', '', 'l'])
+compwordregex: ^pr[a-zA-Z]m[a-zA-Z]rd[a-zA-Z][a-zA-Z]l$
+likelydict for  pr_m_rd__l : {'primordial': 4.309546075511867e-06}
+('matchinglikelydict=', {'primordial': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511867e-06, '; maxlikelyret = ', 'primordial')
+{'primordial': 4.309546075511867e-06}
+('comp=', 'pr_m_rd__l', '; maxlikely=', 'primordial')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : primordial
+('L_rd,', [])
+('comp=', 'L_rd,', '; maxlikely=', '')
+('compsubstrings: ', ['L', 'rd,'])
+compwordregex: ^L[a-zA-Z]rd,$
+likelydict for  L_rd, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('cl__rly', ['clearly'])
+==============================================
+[]
+('comp=', 'cl__rly', '; maxlikely=', 'clearly')
+('compsubstrings: ', ['cl', '', 'rly'])
+compwordregex: ^cl[a-zA-Z][a-zA-Z]rly$
+likelydict for  cl__rly : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'cl__rly', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : clearly
+maximumlikelihoodword - HMM : 
+('pl_c_d', [])
+('comp=', 'pl_c_d', '; maxlikely=', '')
+('compsubstrings: ', ['pl', 'c', 'd'])
+compwordregex: ^pl[a-zA-Z]c[a-zA-Z]d$
+likelydict for  pl_c_d : {'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06}
+('matchinglikelydict=', {'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'placed')
+{'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06}
+('comp=', 'pl_c_d', '; maxlikely=', 'placed')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : placed
+('b_f_r_', [])
+('comp=', 'b_f_r_', '; maxlikely=', '')
+('compsubstrings: ', ['b', 'f', 'r', ''])
+compwordregex: ^b[a-zA-Z]f[a-zA-Z]r[a-zA-Z]$
+likelydict for  b_f_r_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'b_f_r_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('_y_s', [])
+('comp=', '_y_s', '; maxlikely=', '')
+('compsubstrings: ', ['', 'y', 's'])
+compwordregex: ^[a-zA-Z]y[a-zA-Z]s$
+likelydict for  _y_s : {'byss': 4.309546075511867e-06}
+('matchinglikelydict=', {'byss': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511867e-06, '; maxlikelyret = ', 'byss')
+{'byss': 4.309546075511867e-06}
+('comp=', '_y_s', '; maxlikely=', 'byss')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : byss
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('p_w_rf_l', [])
+('comp=', 'p_w_rf_l', '; maxlikely=', '')
+('compsubstrings: ', ['p', 'w', 'rf', 'l'])
+compwordregex: ^p[a-zA-Z]w[a-zA-Z]rf[a-zA-Z]l$
+likelydict for  p_w_rf_l : {'powerful': 4.309546075511867e-06}
+('matchinglikelydict=', {'powerful': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511867e-06, '; maxlikelyret = ', 'powerful')
+{'powerful': 4.309546075511867e-06}
+('comp=', 'p_w_rf_l', '; maxlikely=', 'powerful')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : powerful
+('L_rd', ['Lord', 'Lard'])
+==============================================
+[]
+==============================================
+[]
+('comp=', 'L_rd', '; maxlikely=', 'Lord')
+('compsubstrings: ', ['L', 'rd'])
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : Lord
+maximumlikelihoodword - HMM : 
+('r_m_v_ng', [])
+('comp=', 'r_m_v_ng', '; maxlikely=', '')
+('compsubstrings: ', ['r', 'm', 'v', 'ng'])
+compwordregex: ^r[a-zA-Z]m[a-zA-Z]v[a-zA-Z]ng$
+likelydict for  r_m_v_ng : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'r_m_v_ng', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('s_ns', ['sens', 'sins', 'sans', 'sons', 'suns'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('comp=', 's_ns', '; maxlikely=', 'sens')
+('compsubstrings: ', ['s', 'ns'])
+compwordregex: ^s[a-zA-Z]ns$
+likelydict for  s_ns : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 's_ns', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : sens
+maximumlikelihoodword - HMM : 
+('_nd', ['end', 'ind', 'and', 'Ind', 'Nd'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['N']
+('comp=', '_nd', '; maxlikely=', 'end')
+('compsubstrings: ', ['', 'nd'])
+compwordregex: ^[a-zA-Z]nd$
+likelydict for  _nd : {'end': 0.00027581094883275946, 'ond': 0.00013790547441637973, 'und': 0.0003964782389470917, 'cnd': 4.309546075511867e-06, 'hnd': 8.619092151023733e-06, 'ind': 0.00015945320479393904, 'and': 0.0006076459966471732}
+('matchinglikelydict=', {'end': 0.00027581094883275946, 'ond': 0.00013790547441637973, 'und': 0.0003964782389470917, 'cnd': 4.309546075511867e-06, 'hnd': 8.619092151023733e-06, 'ind': 0.00015945320479393904, 'and': 0.0006076459966471732})
+('maxlikelyretprob=', 0.0006076459966471732, '; maxlikelyret = ', 'and')
+{'end': 0.00027581094883275946, 'ond': 0.00013790547441637973, 'und': 0.0003964782389470917, 'cnd': 4.309546075511867e-06, 'hnd': 8.619092151023733e-06, 'ind': 0.00015945320479393904, 'and': 0.0006076459966471732}
+('comp=', '_nd', '; maxlikely=', 'and')
+maximumlikelihoodword - PyEnchant : end
+maximumlikelihoodword - HMM : and
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('gr__t-_rm_d,', [])
+('comp=', 'gr__t-_rm_d,', '; maxlikely=', '')
+('compsubstrings: ', ['gr', '', 't-', 'rm', 'd,'])
+compwordregex: ^gr[a-zA-Z][a-zA-Z]t-[a-zA-Z]rm[a-zA-Z]d,$
+likelydict for  gr__t-_rm_d, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'gr__t-_rm_d,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('wh_', ['who', 'why'])
+==============================================
+[]
+==============================================
+['y']
+('comp=', 'wh_', '; maxlikely=', 'who')
+('compsubstrings: ', ['wh', ''])
+compwordregex: ^wh[a-zA-Z]$
+likelydict for  wh_ : {'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06}
+('matchinglikelydict=', {'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'who')
+{'why': 4.309546075511867e-06, 'who': 8.619092151023733e-06}
+('comp=', 'wh_', '; maxlikely=', 'who')
+maximumlikelihoodword - PyEnchant : who
+maximumlikelihoodword - HMM : who
+('h_s', ['hes', 'his', 'has', 'hrs', 'hos', 'HHS'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['r']
+==============================================
+[]
+==============================================
+['H', 'S']
+('comp=', 'h_s', '; maxlikely=', 'hes')
+('compsubstrings: ', ['h', 's'])
+compwordregex: ^h[a-zA-Z]s$
+likelydict for  h_s : {'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05}
+('matchinglikelydict=', {'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05})
+('maxlikelyretprob=', 3.0166822528583065e-05, '; maxlikelyret = ', 'hus')
+{'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05}
+('comp=', 'h_s', '; maxlikely=', 'hus')
+maximumlikelihoodword - PyEnchant : hes
+maximumlikelihoodword - HMM : hus
+('_b_d_', [])
+('comp=', '_b_d_', '; maxlikely=', '')
+('compsubstrings: ', ['', 'b', 'd', ''])
+compwordregex: ^[a-zA-Z]b[a-zA-Z]d[a-zA-Z]$
+likelydict for  _b_d_ : {'mbody': 4.309546075511867e-06, 'ebode': 4.309546075511867e-06, 'ibido': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'obody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06}
+('matchinglikelydict=', {'mbody': 4.309546075511867e-06, 'ebode': 4.309546075511867e-06, 'ibido': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'obody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06})
+('maxlikelyretprob=', 1.7238184302047466e-05, '; maxlikelyret = ', 'ybody')
+{'mbody': 4.309546075511867e-06, 'ebode': 4.309546075511867e-06, 'ibido': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'obody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06}
+('comp=', '_b_d_', '; maxlikely=', 'ybody')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : ybody
+('_n', ['n', 'en', 'in', 'an', 'tn', 'on', 'kn', 'Sn', 'In', 'Rn', 'Ln', 'Mn', 'Zn'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['t']
+==============================================
+[]
+==============================================
+['k']
+==============================================
+['S']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['L']
+==============================================
+['M']
+==============================================
+['Z']
+('comp=', '_n', '; maxlikely=', 'n')
+('compsubstrings: ', ['', 'n'])
+compwordregex: ^[a-zA-Z]n$
+likelydict for  _n : {'on': 0.005300741672879595, 'in': 0.0016246988704679737, 'hn': 2.154773037755933e-05, 'rn': 0.0005731696280430783, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'en': 0.0018444857203190788, 'un': 0.0001896200273225221, 'gn': 0.000129286382265356, 'an': 0.0027537999422520827, 'ln': 1.29286382265356e-05, 'nn': 2.58572764530712e-05, 'mn': 4.309546075511866e-05, 'sn': 8.619092151023733e-06, 'bn': 4.309546075511867e-06}
+('matchinglikelydict=', {'on': 0.005300741672879595, 'in': 0.0016246988704679737, 'hn': 2.154773037755933e-05, 'rn': 0.0005731696280430783, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'en': 0.0018444857203190788, 'un': 0.0001896200273225221, 'gn': 0.000129286382265356, 'an': 0.0027537999422520827, 'ln': 1.29286382265356e-05, 'nn': 2.58572764530712e-05, 'mn': 4.309546075511866e-05, 'sn': 8.619092151023733e-06, 'bn': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.005300741672879595, '; maxlikelyret = ', 'on')
+{'on': 0.005300741672879595, 'in': 0.0016246988704679737, 'hn': 2.154773037755933e-05, 'rn': 0.0005731696280430783, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'en': 0.0018444857203190788, 'un': 0.0001896200273225221, 'gn': 0.000129286382265356, 'an': 0.0027537999422520827, 'ln': 1.29286382265356e-05, 'nn': 2.58572764530712e-05, 'mn': 4.309546075511866e-05, 'sn': 8.619092151023733e-06, 'bn': 4.309546075511867e-06}
+('comp=', '_n', '; maxlikely=', 'on')
+maximumlikelihoodword - PyEnchant : n
+maximumlikelihoodword - HMM : on
+('w_t_rs', [])
+('comp=', 'w_t_rs', '; maxlikely=', '')
+('compsubstrings: ', ['w', 't', 'rs'])
+compwordregex: ^w[a-zA-Z]t[a-zA-Z]rs$
+likelydict for  w_t_rs : {'waters': 8.619092151023733e-06}
+('matchinglikelydict=', {'waters': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'waters')
+{'waters': 8.619092151023733e-06}
+('comp=', 'w_t_rs', '; maxlikely=', 'waters')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : waters
+('_f', ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['c']
+==============================================
+['p']
+==============================================
+['h']
+==============================================
+['b']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['C']
+==============================================
+['H']
+('comp=', '_f', '; maxlikely=', 'f')
+('compsubstrings: ', ['', 'f'])
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('matchinglikelydict=', {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05})
+('maxlikelyretprob=', 0.0004094068771736273, '; maxlikelyret = ', 'ff')
+{'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('comp=', '_f', '; maxlikely=', 'ff')
+maximumlikelihoodword - PyEnchant : f
+maximumlikelihoodword - HMM : ff
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('_c__n', [])
+('comp=', '_c__n', '; maxlikely=', '')
+('compsubstrings: ', ['', 'c', '', 'n'])
+compwordregex: ^[a-zA-Z]c[a-zA-Z][a-zA-Z]n$
+likelydict for  _c__n : {'icean': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'ichen': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ician': 6.033364505716613e-05, 'ocsin': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ccoon': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'scion': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'icorn': 8.619092151023733e-06, 'ncern': 8.619092151023733e-06, 'ycoon': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ocain': 4.309546075511867e-06, 'rcorn': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'acoon': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'icron': 8.619092151023733e-06, 'eckon': 4.309546075511867e-06, 'icken': 3.87859146796068e-05, 'rchin': 4.309546075511867e-06, 'ectin': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'actin': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'acorn': 4.309546075511867e-06}
+('matchinglikelydict=', {'icean': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'ichen': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ician': 6.033364505716613e-05, 'ocsin': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ccoon': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'scion': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'icorn': 8.619092151023733e-06, 'ncern': 8.619092151023733e-06, 'ycoon': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ocain': 4.309546075511867e-06, 'rcorn': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'acoon': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'icron': 8.619092151023733e-06, 'eckon': 4.309546075511867e-06, 'icken': 3.87859146796068e-05, 'rchin': 4.309546075511867e-06, 'ectin': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'actin': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'acorn': 4.309546075511867e-06})
+('maxlikelyretprob=', 6.033364505716613e-05, '; maxlikelyret = ', 'ician')
+{'icean': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'ichen': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ician': 6.033364505716613e-05, 'ocsin': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ccoon': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'scion': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'icorn': 8.619092151023733e-06, 'ncern': 8.619092151023733e-06, 'ycoon': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ocain': 4.309546075511867e-06, 'rcorn': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'acoon': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'icron': 8.619092151023733e-06, 'eckon': 4.309546075511867e-06, 'icken': 3.87859146796068e-05, 'rchin': 4.309546075511867e-06, 'ectin': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'actin': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'acorn': 4.309546075511867e-06}
+('comp=', '_c__n', '; maxlikely=', 'ician')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : ician
+('_f', ['f', 'sf', 'if', 'of', 'cf', 'pf', 'hf', 'bf', 'ff', 'Rf', 'Cf', 'Hf'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['c']
+==============================================
+['p']
+==============================================
+['h']
+==============================================
+['b']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['C']
+==============================================
+['H']
+('comp=', '_f', '; maxlikely=', 'f')
+('compsubstrings: ', ['', 'f'])
+compwordregex: ^[a-zA-Z]f$
+likelydict for  _f : {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('matchinglikelydict=', {'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05})
+('maxlikelyretprob=', 0.0004094068771736273, '; maxlikelyret = ', 'ff')
+{'cf': 8.619092151023733e-06, 'lf': 0.00015945320479393904, 'ef': 9.911955973677292e-05, 'if': 4.309546075511866e-05, 'mf': 1.7238184302047466e-05, 'nf': 4.309546075511867e-06, 'vf': 4.309546075511867e-06, 'af': 7.326228328370173e-05, 'of': 0.00014221502049189158, 'uf': 4.309546075511867e-06, 'sf': 8.619092151023733e-06, 'rf': 4.740500683063053e-05, 'ff': 0.0004094068771736273, 'hf': 2.58572764530712e-05}
+('comp=', '_f', '; maxlikely=', 'ff')
+maximumlikelihoodword - PyEnchant : f
+maximumlikelihoodword - HMM : ff
+('m_lk', ['milk'])
+==============================================
+[]
+('comp=', 'm_lk', '; maxlikely=', 'milk')
+('compsubstrings: ', ['m', 'lk'])
+compwordregex: ^m[a-zA-Z]lk$
+likelydict for  m_lk : {'milk': 5.17145529061424e-05}
+('matchinglikelydict=', {'milk': 5.17145529061424e-05})
+('maxlikelyretprob=', 5.17145529061424e-05, '; maxlikelyret = ', 'milk')
+{'milk': 5.17145529061424e-05}
+('comp=', 'm_lk', '; maxlikely=', 'milk')
+maximumlikelihoodword - PyEnchant : milk
+maximumlikelihoodword - HMM : milk
+('S_sh_', [])
+('comp=', 'S_sh_', '; maxlikely=', '')
+('compsubstrings: ', ['S', 'sh', ''])
+compwordregex: ^S[a-zA-Z]sh[a-zA-Z]$
+likelydict for  S_sh_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'S_sh_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('th_', ['the', 'tho', 'thy', 'Th'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['T']
+('comp=', 'th_', '; maxlikely=', 'the')
+('compsubstrings: ', ['th', ''])
+compwordregex: ^th[a-zA-Z]$
+likelydict for  th_ : {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('matchinglikelydict=', {'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001680722969449628, '; maxlikelyret = ', 'thy')
+{'thy': 0.0001680722969449628, 'tha': 8.619092151023733e-06, 'the': 0.0001034291058122848, 'tho': 4.309546075511867e-06, 'ths': 8.619092151023733e-06, 'thm': 3.447636860409493e-05}
+('comp=', 'th_', '; maxlikely=', 'thy')
+maximumlikelihoodword - PyEnchant : the
+maximumlikelihoodword - HMM : thy
+('s_rp_nt-g_d', [])
+('comp=', 's_rp_nt-g_d', '; maxlikely=', '')
+('compsubstrings: ', ['s', 'rp', 'nt-g', 'd'])
+compwordregex: ^s[a-zA-Z]rp[a-zA-Z]nt-g[a-zA-Z]d$
+likelydict for  s_rp_nt-g_d : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 's_rp_nt-g_d', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('f_rm_ng', [])
+('comp=', 'f_rm_ng', '; maxlikely=', '')
+('compsubstrings: ', ['f', 'rm', 'ng'])
+compwordregex: ^f[a-zA-Z]rm[a-zA-Z]ng$
+likelydict for  f_rm_ng : {'forming': 8.619092151023733e-06}
+('matchinglikelydict=', {'forming': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'forming')
+{'forming': 8.619092151023733e-06}
+('comp=', 'f_rm_ng', '; maxlikely=', 'forming')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : forming
+('h_s', ['hes', 'his', 'has', 'hrs', 'hos', 'HHS'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['r']
+==============================================
+[]
+==============================================
+['H', 'S']
+('comp=', 'h_s', '; maxlikely=', 'hes')
+('compsubstrings: ', ['h', 's'])
+compwordregex: ^h[a-zA-Z]s$
+likelydict for  h_s : {'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05}
+('matchinglikelydict=', {'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05})
+('maxlikelyretprob=', 3.0166822528583065e-05, '; maxlikelyret = ', 'hus')
+{'has': 4.309546075511867e-06, 'hus': 3.0166822528583065e-05, 'his': 1.7238184302047466e-05, 'hos': 1.29286382265356e-05, 'hes': 3.0166822528583065e-05, 'hts': 1.7238184302047466e-05, 'hms': 1.29286382265356e-05}
+('comp=', 'h_s', '; maxlikely=', 'hus')
+maximumlikelihoodword - PyEnchant : hes
+maximumlikelihoodword - HMM : hus
+('c__ch', [])
+('comp=', 'c__ch', '; maxlikely=', '')
+('compsubstrings: ', ['c', '', 'ch'])
+compwordregex: ^c[a-zA-Z][a-zA-Z]ch$
+likelydict for  c__ch : {'conch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06, 'couch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'cinch': 4.309546075511867e-06, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'corch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06}
+('matchinglikelydict=', {'conch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06, 'couch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'cinch': 4.309546075511867e-06, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'corch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511866e-05, '; maxlikelyret = ', 'cotch')
+{'conch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06, 'couch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'cinch': 4.309546075511867e-06, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'corch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06}
+('comp=', 'c__ch', '; maxlikely=', 'cotch')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : cotch
+('_s', ['s', 'es', 'is', 'as', 'rs', 'ts', 'ls', 'cs', 'us', 'gs', 'ms', 'vs', 'ks', 'Es', 'As'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['r']
+==============================================
+['t']
+==============================================
+['l']
+==============================================
+['c']
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['m']
+==============================================
+['v']
+==============================================
+['k']
+==============================================
+[]
+==============================================
+[]
+('comp=', '_s', '; maxlikely=', 's')
+('compsubstrings: ', ['', 's'])
+compwordregex: ^[a-zA-Z]s$
+likelydict for  _s : {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('matchinglikelydict=', {'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133})
+('maxlikelyretprob=', 0.0028012049490827133, '; maxlikelyret = ', 'us')
+{'ds': 0.00013790547441637973, 'ls': 4.309546075511866e-05, 'cs': 0.00036631141641850864, 'ps': 0.0001163577440388204, 'es': 0.0005645505358920545, 'is': 0.0008145042082717427, 'as': 0.00021116775770008145, 'ks': 6.033364505716613e-05, 'ys': 4.309546075511866e-05, 'gs': 0.00012497683618984412, 'bs': 2.58572764530712e-05, 'fs': 8.619092151023733e-06, 'ts': 0.00017238184302047465, 'vs': 4.309546075511867e-06, 'ss': 0.001646246600845533, 'rs': 0.0002327154880776408, 'hs': 2.154773037755933e-05, 'ws': 3.87859146796068e-05, 'ns': 0.00013790547441637973, 'os': 9.481001366126106e-05, 'ms': 7.75718293592136e-05, 'us': 0.0028012049490827133}
+('comp=', '_s', '; maxlikely=', 'us')
+maximumlikelihoodword - PyEnchant : s
+maximumlikelihoodword - HMM : us
+('s__d', [])
+('comp=', 's__d', '; maxlikely=', '')
+('compsubstrings: ', ['s', '', 'd'])
+compwordregex: ^s[a-zA-Z][a-zA-Z]d$
+likelydict for  s__d : {'sled': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'sard': 8.619092151023733e-06, 'surd': 8.619092151023733e-06, 'shad': 4.309546075511867e-06, 'spid': 4.309546075511867e-06, 'ssed': 7.75718293592136e-05, 'shed': 0.000129286382265356, 'scud': 4.309546075511867e-06, 'scid': 4.309546075511867e-06, 'skid': 8.619092151023733e-06, 'sedd': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'sand': 1.7238184302047466e-05, 'sold': 1.7238184302047466e-05, 'seed': 3.0166822528583065e-05, 'send': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'sped': 4.309546075511867e-06, 'spud': 4.309546075511867e-06}
+('matchinglikelydict=', {'sled': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'sard': 8.619092151023733e-06, 'surd': 8.619092151023733e-06, 'shad': 4.309546075511867e-06, 'spid': 4.309546075511867e-06, 'ssed': 7.75718293592136e-05, 'shed': 0.000129286382265356, 'scud': 4.309546075511867e-06, 'scid': 4.309546075511867e-06, 'skid': 8.619092151023733e-06, 'sedd': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'sand': 1.7238184302047466e-05, 'sold': 1.7238184302047466e-05, 'seed': 3.0166822528583065e-05, 'send': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'sped': 4.309546075511867e-06, 'spud': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.000129286382265356, '; maxlikelyret = ', 'shed')
+{'sled': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'sard': 8.619092151023733e-06, 'surd': 8.619092151023733e-06, 'shad': 4.309546075511867e-06, 'spid': 4.309546075511867e-06, 'ssed': 7.75718293592136e-05, 'shed': 0.000129286382265356, 'scud': 4.309546075511867e-06, 'scid': 4.309546075511867e-06, 'skid': 8.619092151023733e-06, 'sedd': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'sand': 1.7238184302047466e-05, 'sold': 1.7238184302047466e-05, 'seed': 3.0166822528583065e-05, 'send': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'sped': 4.309546075511867e-06, 'spud': 4.309546075511867e-06}
+('comp=', 's__d', '; maxlikely=', 'shed')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : shed
+('t_', ['t', 'ts', 'ti', 'ta', 'tn', 'tr', 'to', 'tb'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['n']
+==============================================
+['r']
+==============================================
+[]
+==============================================
+['b']
+('comp=', 't_', '; maxlikely=', 't')
+('compsubstrings: ', ['t', ''])
+compwordregex: ^t[a-zA-Z]$
+likelydict for  t_ : {'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931}
+('matchinglikelydict=', {'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931})
+('maxlikelyretprob=', 0.005059407092650931, '; maxlikelyret = ', 'te')
+{'th': 0.001004124235594265, 'tt': 6.4643191132678e-05, 'td': 4.309546075511867e-06, 'tz': 5.6024098981654264e-05, 'tl': 8.619092151023733e-06, 'tb': 8.619092151023733e-06, 'ta': 0.00028873958705929504, 'ti': 9.911955973677292e-05, 'tm': 4.309546075511867e-06, 'tr': 4.309546075511867e-06, 'ty': 0.0019565339182823875, 'tc': 8.619092151023733e-06, 'tv': 8.619092151023733e-06, 'tu': 1.7238184302047466e-05, 'to': 0.0003490732321164612, 'ts': 0.00017238184302047465, 'te': 0.005059407092650931}
+('comp=', 't_', '; maxlikely=', 'te')
+maximumlikelihoodword - PyEnchant : t
+maximumlikelihoodword - HMM : te
+('b_', ['b', 'be', 'bi', 'bl', 'bu', 'by', 'bf', 'bk'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['l']
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['f']
+==============================================
+['k']
+('comp=', 'b_', '; maxlikely=', 'b')
+('compsubstrings: ', ['b', ''])
+compwordregex: ^b[a-zA-Z]$
+likelydict for  b_ : {'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'bm': 8.619092151023733e-06, 'bi': 3.0166822528583065e-05, 'bd': 4.309546075511867e-06, 'bh': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'bs': 2.58572764530712e-05, 'be': 0.00023702503415315264, 'bt': 2.58572764530712e-05, 'bk': 4.309546075511867e-06, 'bo': 7.75718293592136e-05, 'ba': 6.895273720818987e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bn': 4.309546075511867e-06, 'bl': 4.309546075511867e-06}
+('matchinglikelydict=', {'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'bm': 8.619092151023733e-06, 'bi': 3.0166822528583065e-05, 'bd': 4.309546075511867e-06, 'bh': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'bs': 2.58572764530712e-05, 'be': 0.00023702503415315264, 'bt': 2.58572764530712e-05, 'bk': 4.309546075511867e-06, 'bo': 7.75718293592136e-05, 'ba': 6.895273720818987e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bn': 4.309546075511867e-06, 'bl': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.00023702503415315264, '; maxlikelyret = ', 'be')
+{'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'bm': 8.619092151023733e-06, 'bi': 3.0166822528583065e-05, 'bd': 4.309546075511867e-06, 'bh': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'bs': 2.58572764530712e-05, 'be': 0.00023702503415315264, 'bt': 2.58572764530712e-05, 'bk': 4.309546075511867e-06, 'bo': 7.75718293592136e-05, 'ba': 6.895273720818987e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bn': 4.309546075511867e-06, 'bl': 4.309546075511867e-06}
+('comp=', 'b_', '; maxlikely=', 'be')
+maximumlikelihoodword - PyEnchant : b
+maximumlikelihoodword - HMM : be
+('L_kshm_n_.', [])
+('comp=', 'L_kshm_n_.', '; maxlikely=', '')
+('compsubstrings: ', ['L', 'kshm', 'n', '.'])
+compwordregex: ^L[a-zA-Z]kshm[a-zA-Z]n[a-zA-Z].$
+likelydict for  L_kshm_n_. : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_kshm_n_.', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+=======================================================================================================================================
+Syllable Boundary = True
+=======================================================================================================================================
+#####################################################################################################
+Compression by vowel removal:
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  Rama gets forever pleased with him who listens to or reads Ramayana daily. He is indeed the eternal Vishnu, the Lord of preservation. Rama is the primordial Lord, clearly placed before the eyes the powerful Lord removing the sins and the great-armed, who has abode on waters of the ocean of milk Sesha the serpent-god forming his couch is said to be Lakshmana.
+ : (['Rama', 'gets', 'for', 'ever', 'pleased', 'with', 'lis', 'tens', 'reads', 'Ra', 'mayana', 'dai', 'ly.', 'in', 'deed', 'eter', 'nal', 'Vish', 'nu,', 'Lord', 'preser', 'va', 'tion.', 'Rama', 'pri', 'mor', 'dial', 'Lord,', 'clearly', 'placed', 'be', 'fore', 'eyes', 'pow', 'er', 'ful', 'Lord', 're', 'mov', 'ing', 'sins', 'great', '-', 'armed,', 'abode', 'wa', 'ters', 'ocean', 'milk', 'Se', 'sha', 'ser', 'pent', '-', 'god', 'form', 'ing', 'couch', 'said', 'Lak', 'sh', 'mana.\n'], 'R_m_-g_ts-f_r-_v_r-pl__s_d-w_th-l_s-t_ns-r__ds-R_-m_y_n_-d__-ly.-_n-d__d-_t_r-n_l-V_sh-n_,-L_rd-pr_s_r-v_-t__n.-R_m_-pr_-m_r-d__l-L_rd,-cl__rly-pl_c_d-b_-f_r_-_y_s-p_w-_r-f_l-L_rd-r_-m_v-_ng-s_ns-gr__t---_rm_d,-_b_d_-w_-t_rs-_c__n-m_lk-S_-sh_-s_r-p_nt---g_d-f_rm-_ng-c__ch-s__d-L_k-sh-m_n_.\n')
+Alphabet vectorspace embedding of text: [['R', 'a', 'm', 'a'], ['g', 'e', 't', 's'], ['f', 'o', 'r', 'e', 'v', 'e', 'r'], ['p', 'l', 'e', 'a', 's', 'e', 'd'], ['w', 'i', 't', 'h'], ['h', 'i', 'm'], ['w', 'h', 'o'], ['l', 'i', 's', 't', 'e', 'n', 's'], ['t', 'o'], ['o', 'r'], ['r', 'e', 'a', 'd', 's'], ['R', 'a', 'm', 'a', 'y', 'a', 'n', 'a'], ['d', 'a', 'i', 'l', 'y', '.'], ['H', 'e'], ['i', 's'], ['i', 'n', 'd', 'e', 'e', 'd'], ['t', 'h', 'e'], ['e', 't', 'e', 'r', 'n', 'a', 'l'], ['V', 'i', 's', 'h', 'n', 'u', ','], ['t', 'h', 'e'], ['L', 'o', 'r', 'd'], ['o', 'f'], ['p', 'r', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', '.'], ['R', 'a', 'm', 'a'], ['i', 's'], ['t', 'h', 'e'], ['p', 'r', 'i', 'm', 'o', 'r', 'd', 'i', 'a', 'l'], ['L', 'o', 'r', 'd', ','], ['c', 'l', 'e', 'a', 'r', 'l', 'y'], ['p', 'l', 'a', 'c', 'e', 'd'], ['b', 'e', 'f', 'o', 'r', 'e'], ['t', 'h', 'e'], ['e', 'y', 'e', 's'], ['t', 'h', 'e'], ['p', 'o', 'w', 'e', 'r', 'f', 'u', 'l'], ['L', 'o', 'r', 'd'], ['r', 'e', 'm', 'o', 'v', 'i', 'n', 'g'], ['t', 'h', 'e'], ['s', 'i', 'n', 's'], ['a', 'n', 'd'], ['t', 'h', 'e'], ['g', 'r', 'e', 'a', 't', '-', 'a', 'r', 'm', 'e', 'd', ','], ['w', 'h', 'o'], ['h', 'a', 's'], ['a', 'b', 'o', 'd', 'e'], ['o', 'n'], ['w', 'a', 't', 'e', 'r', 's'], ['o', 'f'], ['t', 'h', 'e'], ['o', 'c', 'e', 'a', 'n'], ['o', 'f'], ['m', 'i', 'l', 'k'], ['S', 'e', 's', 'h', 'a'], ['t', 'h', 'e'], ['s', 'e', 'r', 'p', 'e', 'n', 't', '-', 'g', 'o', 'd'], ['f', 'o', 'r', 'm', 'i', 'n', 'g'], ['h', 'i', 's'], ['c', 'o', 'u', 'c', 'h'], ['i', 's'], ['s', 'a', 'i', 'd'], ['t', 'o'], ['b', 'e'], ['L', 'a', 'k', 's', 'h', 'm', 'a', 'n', 'a', '.', '\n']]
+('wcomp:', 'R_m_ g_ts f_r _v_r pl__s_d w_th l_s t_ns r__ds R_ m_y_n_ d__ ly. _n d__d _t_r n_l V_sh n_, L_rd pr_s_r v_ t__n. R_m_ pr_ m_r d__l L_rd, cl__rly pl_c_d b_ f_r_ _y_s p_w _r f_l L_rd r_ m_v _ng s_ns gr__t   _rm_d, _b_d_ w_ t_rs _c__n m_lk S_ sh_ s_r p_nt   g_d f_rm _ng c__ch s__d L_k sh m_n_.\n')
+('wcompcomp = ', 'Rm gts fr vr plsd wth ls tns rds R myn d ly. n dd tr nl Vsh n, Lrd prsr v tn. Rm pr mr dl Lrd, clrly plcd b fr ys pw r fl Lrd r mv ng sns grt   rmd, bd w trs cn mlk S sh sr pnt   gd frm ng cch sd Lk sh mn.\n')
+('Compression ratio = ', 39.99307479224377, '%')
+Decompression using Hidden Markov Model or PyEnchant Spellcheck suggest() function:
+('R_m_', [])
+('comp=', 'R_m_', '; maxlikely=', '')
+('compsubstrings: ', ['R', 'm', ''])
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_m_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('g_ts', ['gets', 'gits', 'guts', 'gusts'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('x=', 'gusts', '; comp=', 'g_ts')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('x[xptr]=', 'u', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('x[xptr]=', 't', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('comp=', 'g_ts', '; maxlikely=', 'gets')
+('compsubstrings: ', ['g', 'ts'])
+compwordregex: ^g[a-zA-Z]ts$
+likelydict for  g_ts : {'ghts': 1.7238184302047466e-05}
+('matchinglikelydict=', {'ghts': 1.7238184302047466e-05})
+('maxlikelyretprob=', 1.7238184302047466e-05, '; maxlikelyret = ', 'ghts')
+{'ghts': 1.7238184302047466e-05}
+('comp=', 'g_ts', '; maxlikely=', 'ghts')
+maximumlikelihoodword - PyEnchant : gets
+maximumlikelihoodword - HMM : ghts
+('f_r', ['fr', 'fer', 'fir', 'far', 'for', 'fur'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('comp=', 'f_r', '; maxlikely=', 'fr')
+('compsubstrings: ', ['f', 'r'])
+compwordregex: ^f[a-zA-Z]r$
+likelydict for  f_r : {'fur': 8.619092151023733e-06, 'for': 2.154773037755933e-05, 'fir': 8.619092151023733e-06, 'fer': 0.000129286382265356, 'far': 3.0166822528583065e-05}
+('matchinglikelydict=', {'fur': 8.619092151023733e-06, 'for': 2.154773037755933e-05, 'fir': 8.619092151023733e-06, 'fer': 0.000129286382265356, 'far': 3.0166822528583065e-05})
+('maxlikelyretprob=', 0.000129286382265356, '; maxlikelyret = ', 'fer')
+{'fur': 8.619092151023733e-06, 'for': 2.154773037755933e-05, 'fir': 8.619092151023733e-06, 'fer': 0.000129286382265356, 'far': 3.0166822528583065e-05}
+('comp=', 'f_r', '; maxlikely=', 'fer')
+maximumlikelihoodword - PyEnchant : fr
+maximumlikelihoodword - HMM : fer
+('_v_r', [])
+('comp=', '_v_r', '; maxlikely=', '')
+('compsubstrings: ', ['', 'v', 'r'])
+compwordregex: ^[a-zA-Z]v[a-zA-Z]r$
+likelydict for  _v_r : {'ever': 0.00011204819796330853, 'rvor': 4.309546075511867e-06, 'iver': 8.188137543472546e-05, 'lver': 6.895273720818987e-05, 'avor': 2.154773037755933e-05, 'over': 0.00017669138909598653, 'rver': 2.154773037755933e-05, 'uver': 8.619092151023733e-06, 'ivar': 4.309546075511867e-06, 'ovar': 4.309546075511867e-06, 'aver': 6.4643191132678e-05}
+('matchinglikelydict=', {'ever': 0.00011204819796330853, 'rvor': 4.309546075511867e-06, 'iver': 8.188137543472546e-05, 'lver': 6.895273720818987e-05, 'avor': 2.154773037755933e-05, 'over': 0.00017669138909598653, 'rver': 2.154773037755933e-05, 'uver': 8.619092151023733e-06, 'ivar': 4.309546075511867e-06, 'ovar': 4.309546075511867e-06, 'aver': 6.4643191132678e-05})
+('maxlikelyretprob=', 0.00017669138909598653, '; maxlikelyret = ', 'over')
+{'ever': 0.00011204819796330853, 'rvor': 4.309546075511867e-06, 'iver': 8.188137543472546e-05, 'lver': 6.895273720818987e-05, 'avor': 2.154773037755933e-05, 'over': 0.00017669138909598653, 'rver': 2.154773037755933e-05, 'uver': 8.619092151023733e-06, 'ivar': 4.309546075511867e-06, 'ovar': 4.309546075511867e-06, 'aver': 6.4643191132678e-05}
+('comp=', '_v_r', '; maxlikely=', 'over')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : over
+('pl__s_d', [])
+('comp=', 'pl__s_d', '; maxlikely=', '')
+('compsubstrings: ', ['pl', '', 's', 'd'])
+compwordregex: ^pl[a-zA-Z][a-zA-Z]s[a-zA-Z]d$
+likelydict for  pl__s_d : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'pl__s_d', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('w_th', ['with'])
+==============================================
+[]
+('comp=', 'w_th', '; maxlikely=', 'with')
+('compsubstrings: ', ['w', 'th'])
+compwordregex: ^w[a-zA-Z]th$
+likelydict for  w_th : {'wath': 4.309546075511867e-06, 'with': 2.154773037755933e-05}
+('matchinglikelydict=', {'wath': 4.309546075511867e-06, 'with': 2.154773037755933e-05})
+('maxlikelyretprob=', 2.154773037755933e-05, '; maxlikelyret = ', 'with')
+{'wath': 4.309546075511867e-06, 'with': 2.154773037755933e-05}
+('comp=', 'w_th', '; maxlikely=', 'with')
+maximumlikelihoodword - PyEnchant : with
+maximumlikelihoodword - HMM : with
+('l_s', ['ls', 'lbs'])
+==============================================
+[]
+==============================================
+['b']
+('comp=', 'l_s', '; maxlikely=', 'ls')
+('compsubstrings: ', ['l', 's'])
+compwordregex: ^l[a-zA-Z]s$
+likelydict for  l_s : {'las': 1.29286382265356e-05, 'lus': 0.00010773865188779666, 'lis': 5.17145529061424e-05, 'lts': 4.309546075511867e-06, 'les': 6.4643191132678e-05, 'lms': 4.309546075511867e-06}
+('matchinglikelydict=', {'las': 1.29286382265356e-05, 'lus': 0.00010773865188779666, 'lis': 5.17145529061424e-05, 'lts': 4.309546075511867e-06, 'les': 6.4643191132678e-05, 'lms': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.00010773865188779666, '; maxlikelyret = ', 'lus')
+{'las': 1.29286382265356e-05, 'lus': 0.00010773865188779666, 'lis': 5.17145529061424e-05, 'lts': 4.309546075511867e-06, 'les': 6.4643191132678e-05, 'lms': 4.309546075511867e-06}
+('comp=', 'l_s', '; maxlikely=', 'lus')
+maximumlikelihoodword - PyEnchant : ls
+maximumlikelihoodword - HMM : lus
+('t_ns', ['tens', 'tins', 'tans', 'tons', 'tuns', 'towns'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['w']
+('comp=', 't_ns', '; maxlikely=', 'tens')
+('compsubstrings: ', ['t', 'ns'])
+compwordregex: ^t[a-zA-Z]ns$
+likelydict for  t_ns : {'tins': 8.619092151023733e-06}
+('matchinglikelydict=', {'tins': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'tins')
+{'tins': 8.619092151023733e-06}
+('comp=', 't_ns', '; maxlikely=', 'tins')
+maximumlikelihoodword - PyEnchant : tens
+maximumlikelihoodword - HMM : tins
+('r__ds', [])
+('comp=', 'r__ds', '; maxlikely=', '')
+('compsubstrings: ', ['r', '', 'ds'])
+compwordregex: ^r[a-zA-Z][a-zA-Z]ds$
+likelydict for  r__ds : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'r__ds', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('R_', ['R', 'Re', 'Ra', 'Rn', 'Rd', 'Ru', 'Rh', 'Rb', 'Ry', 'Rf', 'RI', 'RN', 'RR', 'RC', 'RD'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['n']
+==============================================
+['d']
+==============================================
+[]
+==============================================
+['h']
+==============================================
+['b']
+==============================================
+['y']
+==============================================
+['f']
+==============================================
+[]
+==============================================
+['N']
+==============================================
+[]
+==============================================
+['C']
+==============================================
+['D']
+('comp=', 'R_', '; maxlikely=', 'R')
+('compsubstrings: ', ['R', ''])
+compwordregex: ^R[a-zA-Z]$
+likelydict for  R_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : R
+maximumlikelihoodword - HMM : 
+('m_y_n_', [])
+('comp=', 'm_y_n_', '; maxlikely=', '')
+('compsubstrings: ', ['m', 'y', 'n', ''])
+compwordregex: ^m[a-zA-Z]y[a-zA-Z]n[a-zA-Z]$
+likelydict for  m_y_n_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'm_y_n_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('d__', [])
+('comp=', 'd__', '; maxlikely=', '')
+('compsubstrings: ', ['d', '', ''])
+compwordregex: ^d[a-zA-Z][a-zA-Z]$
+likelydict for  d__ : {'dem': 1.29286382265356e-05, 'dau': 4.309546075511867e-06, 'doe': 8.619092151023733e-06, 'die': 5.17145529061424e-05, 'dly': 0.0001680722969449628, 'dew': 2.154773037755933e-05, 'doo': 2.154773037755933e-05, 'deo': 3.447636860409493e-05, 'dad': 8.619092151023733e-06, 'das': 4.309546075511867e-06, 'dix': 8.619092151023733e-06, 'dra': 8.619092151023733e-06, 'dth': 1.29286382265356e-05, 'dma': 4.309546075511867e-06, 'dal': 7.326228328370173e-05, 'did': 2.154773037755933e-05, 'dsm': 4.309546075511867e-06, 'dso': 4.309546075511867e-06, 'dir': 4.309546075511867e-06, 'dti': 4.309546075511867e-06, 'dio': 3.87859146796068e-05, 'dos': 2.154773037755933e-05, 'dig': 8.619092151023733e-06, 'dge': 0.00024133458022866452, 'dna': 8.619092151023733e-06, 'dat': 1.29286382265356e-05, 'dds': 8.619092151023733e-06, 'dog': 7.326228328370173e-05, 'dle': 0.0003447636860409493, 'dam': 3.87859146796068e-05, 'deb': 4.309546075511867e-06, 'dst': 8.619092151023733e-06, 'dbs': 4.309546075511867e-06, 'don': 6.895273720818987e-05, 'dsc': 4.309546075511867e-06, 'dun': 4.309546075511867e-06, 'dia': 1.7238184302047466e-05, 'dfc': 4.309546075511867e-06, 'dan': 2.58572764530712e-05, 'dro': 4.309546075511867e-06, 'ddy': 7.75718293592136e-05, 'dye': 8.619092151023733e-06, 'dot': 1.29286382265356e-05, 'dry': 0.00010773865188779666, 'ded': 0.0004352641536266985, 'doh': 8.619092151023733e-06, 'der': 0.0008231233004227665, 'due': 3.447636860409493e-05, 'dis': 4.309546075511867e-06, 'dit': 5.17145529061424e-05, 'dha': 4.309546075511867e-06, 'dee': 2.154773037755933e-05, 'dor': 6.033364505716613e-05, 'din': 1.29286382265356e-05, 'ddt': 4.309546075511867e-06, 'dpa': 4.309546075511867e-06, 'duo': 4.309546075511867e-06, 'dre': 8.619092151023733e-06, 'dom': 5.6024098981654264e-05, 'dil': 4.309546075511867e-06, 'ddo': 4.309546075511867e-06, 'des': 3.87859146796068e-05, 'det': 1.29286382265356e-05, 'dip': 8.619092151023733e-06, 'dim': 4.309546075511867e-06, 'day': 0.00020254866554905772, 'dgy': 2.154773037755933e-05, 'dhu': 4.309546075511867e-06, 'dfm': 4.309546075511867e-06, 'dji': 4.309546075511867e-06, 'dud': 4.309546075511867e-06, 'dab': 4.309546075511867e-06, 'dii': 4.309546075511867e-06, 'dah': 8.619092151023733e-06, 'dum': 3.87859146796068e-05, 'dar': 3.0166822528583065e-05, 'dae': 4.309546075511867e-06, 'daw': 8.619092151023733e-06, 'dic': 5.17145529061424e-05, 'diy': 4.309546075511867e-06, 'dze': 4.309546075511867e-06, 'dby': 4.309546075511867e-06, 'dka': 4.309546075511867e-06, 'def': 4.309546075511867e-06, 'dox': 2.58572764530712e-05, 'dow': 5.17145529061424e-05, 'dex': 1.29286382265356e-05, 'del': 3.87859146796068e-05, 'dss': 4.309546075511867e-06, 'dol': 4.309546075511867e-06, 'dpp': 4.309546075511867e-06, 'dlp': 4.309546075511867e-06, 'den': 0.0002715014027572476, 'dus': 1.7238184302047466e-05, 'dea': 4.309546075511867e-06}
+('matchinglikelydict=', {'dem': 1.29286382265356e-05, 'dau': 4.309546075511867e-06, 'doe': 8.619092151023733e-06, 'die': 5.17145529061424e-05, 'dly': 0.0001680722969449628, 'dew': 2.154773037755933e-05, 'doo': 2.154773037755933e-05, 'deo': 3.447636860409493e-05, 'dad': 8.619092151023733e-06, 'das': 4.309546075511867e-06, 'dix': 8.619092151023733e-06, 'dra': 8.619092151023733e-06, 'dth': 1.29286382265356e-05, 'dma': 4.309546075511867e-06, 'dal': 7.326228328370173e-05, 'did': 2.154773037755933e-05, 'dsm': 4.309546075511867e-06, 'dso': 4.309546075511867e-06, 'dir': 4.309546075511867e-06, 'dti': 4.309546075511867e-06, 'dio': 3.87859146796068e-05, 'dos': 2.154773037755933e-05, 'dig': 8.619092151023733e-06, 'dge': 0.00024133458022866452, 'dna': 8.619092151023733e-06, 'dat': 1.29286382265356e-05, 'dds': 8.619092151023733e-06, 'dog': 7.326228328370173e-05, 'dle': 0.0003447636860409493, 'dam': 3.87859146796068e-05, 'deb': 4.309546075511867e-06, 'dst': 8.619092151023733e-06, 'dbs': 4.309546075511867e-06, 'don': 6.895273720818987e-05, 'dsc': 4.309546075511867e-06, 'dun': 4.309546075511867e-06, 'dia': 1.7238184302047466e-05, 'dfc': 4.309546075511867e-06, 'dan': 2.58572764530712e-05, 'dro': 4.309546075511867e-06, 'ddy': 7.75718293592136e-05, 'dye': 8.619092151023733e-06, 'dot': 1.29286382265356e-05, 'dry': 0.00010773865188779666, 'ded': 0.0004352641536266985, 'doh': 8.619092151023733e-06, 'der': 0.0008231233004227665, 'due': 3.447636860409493e-05, 'dis': 4.309546075511867e-06, 'dit': 5.17145529061424e-05, 'dha': 4.309546075511867e-06, 'dee': 2.154773037755933e-05, 'dor': 6.033364505716613e-05, 'din': 1.29286382265356e-05, 'ddt': 4.309546075511867e-06, 'dpa': 4.309546075511867e-06, 'duo': 4.309546075511867e-06, 'dre': 8.619092151023733e-06, 'dom': 5.6024098981654264e-05, 'dil': 4.309546075511867e-06, 'ddo': 4.309546075511867e-06, 'des': 3.87859146796068e-05, 'det': 1.29286382265356e-05, 'dip': 8.619092151023733e-06, 'dim': 4.309546075511867e-06, 'day': 0.00020254866554905772, 'dgy': 2.154773037755933e-05, 'dhu': 4.309546075511867e-06, 'dfm': 4.309546075511867e-06, 'dji': 4.309546075511867e-06, 'dud': 4.309546075511867e-06, 'dab': 4.309546075511867e-06, 'dii': 4.309546075511867e-06, 'dah': 8.619092151023733e-06, 'dum': 3.87859146796068e-05, 'dar': 3.0166822528583065e-05, 'dae': 4.309546075511867e-06, 'daw': 8.619092151023733e-06, 'dic': 5.17145529061424e-05, 'diy': 4.309546075511867e-06, 'dze': 4.309546075511867e-06, 'dby': 4.309546075511867e-06, 'dka': 4.309546075511867e-06, 'def': 4.309546075511867e-06, 'dox': 2.58572764530712e-05, 'dow': 5.17145529061424e-05, 'dex': 1.29286382265356e-05, 'del': 3.87859146796068e-05, 'dss': 4.309546075511867e-06, 'dol': 4.309546075511867e-06, 'dpp': 4.309546075511867e-06, 'dlp': 4.309546075511867e-06, 'den': 0.0002715014027572476, 'dus': 1.7238184302047466e-05, 'dea': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.0008231233004227665, '; maxlikelyret = ', 'der')
+{'dem': 1.29286382265356e-05, 'dau': 4.309546075511867e-06, 'doe': 8.619092151023733e-06, 'die': 5.17145529061424e-05, 'dly': 0.0001680722969449628, 'dew': 2.154773037755933e-05, 'doo': 2.154773037755933e-05, 'deo': 3.447636860409493e-05, 'dad': 8.619092151023733e-06, 'das': 4.309546075511867e-06, 'dix': 8.619092151023733e-06, 'dra': 8.619092151023733e-06, 'dth': 1.29286382265356e-05, 'dma': 4.309546075511867e-06, 'dal': 7.326228328370173e-05, 'did': 2.154773037755933e-05, 'dsm': 4.309546075511867e-06, 'dso': 4.309546075511867e-06, 'dir': 4.309546075511867e-06, 'dti': 4.309546075511867e-06, 'dio': 3.87859146796068e-05, 'dos': 2.154773037755933e-05, 'dig': 8.619092151023733e-06, 'dge': 0.00024133458022866452, 'dna': 8.619092151023733e-06, 'dat': 1.29286382265356e-05, 'dds': 8.619092151023733e-06, 'dog': 7.326228328370173e-05, 'dle': 0.0003447636860409493, 'dam': 3.87859146796068e-05, 'deb': 4.309546075511867e-06, 'dst': 8.619092151023733e-06, 'dbs': 4.309546075511867e-06, 'don': 6.895273720818987e-05, 'dsc': 4.309546075511867e-06, 'dun': 4.309546075511867e-06, 'dia': 1.7238184302047466e-05, 'dfc': 4.309546075511867e-06, 'dan': 2.58572764530712e-05, 'dro': 4.309546075511867e-06, 'ddy': 7.75718293592136e-05, 'dye': 8.619092151023733e-06, 'dot': 1.29286382265356e-05, 'dry': 0.00010773865188779666, 'ded': 0.0004352641536266985, 'doh': 8.619092151023733e-06, 'der': 0.0008231233004227665, 'due': 3.447636860409493e-05, 'dis': 4.309546075511867e-06, 'dit': 5.17145529061424e-05, 'dha': 4.309546075511867e-06, 'dee': 2.154773037755933e-05, 'dor': 6.033364505716613e-05, 'din': 1.29286382265356e-05, 'ddt': 4.309546075511867e-06, 'dpa': 4.309546075511867e-06, 'duo': 4.309546075511867e-06, 'dre': 8.619092151023733e-06, 'dom': 5.6024098981654264e-05, 'dil': 4.309546075511867e-06, 'ddo': 4.309546075511867e-06, 'des': 3.87859146796068e-05, 'det': 1.29286382265356e-05, 'dip': 8.619092151023733e-06, 'dim': 4.309546075511867e-06, 'day': 0.00020254866554905772, 'dgy': 2.154773037755933e-05, 'dhu': 4.309546075511867e-06, 'dfm': 4.309546075511867e-06, 'dji': 4.309546075511867e-06, 'dud': 4.309546075511867e-06, 'dab': 4.309546075511867e-06, 'dii': 4.309546075511867e-06, 'dah': 8.619092151023733e-06, 'dum': 3.87859146796068e-05, 'dar': 3.0166822528583065e-05, 'dae': 4.309546075511867e-06, 'daw': 8.619092151023733e-06, 'dic': 5.17145529061424e-05, 'diy': 4.309546075511867e-06, 'dze': 4.309546075511867e-06, 'dby': 4.309546075511867e-06, 'dka': 4.309546075511867e-06, 'def': 4.309546075511867e-06, 'dox': 2.58572764530712e-05, 'dow': 5.17145529061424e-05, 'dex': 1.29286382265356e-05, 'del': 3.87859146796068e-05, 'dss': 4.309546075511867e-06, 'dol': 4.309546075511867e-06, 'dpp': 4.309546075511867e-06, 'dlp': 4.309546075511867e-06, 'den': 0.0002715014027572476, 'dus': 1.7238184302047466e-05, 'dea': 4.309546075511867e-06}
+('comp=', 'd__', '; maxlikely=', 'der')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : der
+('ly.', ['l', 'y', 'lye', 'sly', 'lay', 'ply', 'fly', 'ls', 'la', 'lo', 'll', 'lg', 'my', 'lb', 'by'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+['p']
+==============================================
+['f']
+==============================================
+['s']
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['m']
+==============================================
+['b']
+==============================================
+['b']
+('comp=', 'ly.', '; maxlikely=', 'l')
+('compsubstrings: ', ['ly.'])
+compwordregex: ^ly.$
+likelydict for  ly. : {'lyx': 4.309546075511867e-06, 'ly2': 4.740500683063053e-05, 'ly3': 8.619092151023733e-06, 'lye': 4.309546075511867e-06, 'ly-': 4.309546075511867e-06, 'lyp': 4.309546075511867e-06, 'ly1': 4.740500683063053e-05}
+('matchinglikelydict=', {'lyx': 4.309546075511867e-06, 'ly2': 4.740500683063053e-05, 'ly3': 8.619092151023733e-06, 'lye': 4.309546075511867e-06, 'ly-': 4.309546075511867e-06, 'lyp': 4.309546075511867e-06, 'ly1': 4.740500683063053e-05})
+('maxlikelyretprob=', 4.740500683063053e-05, '; maxlikelyret = ', 'ly2')
+{'lyx': 4.309546075511867e-06, 'ly2': 4.740500683063053e-05, 'ly3': 8.619092151023733e-06, 'lye': 4.309546075511867e-06, 'ly-': 4.309546075511867e-06, 'lyp': 4.309546075511867e-06, 'ly1': 4.740500683063053e-05}
+('comp=', 'ly.', '; maxlikely=', 'ly2')
+maximumlikelihoodword - PyEnchant : l
+maximumlikelihoodword - HMM : ly2
+('_n', ['n', 'en', 'in', 'an', 'tn', 'on', 'kn', 'Sn', 'In', 'Rn', 'Ln', 'Mn', 'Zn'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['t']
+==============================================
+[]
+==============================================
+['k']
+==============================================
+['S']
+==============================================
+[]
+==============================================
+['R']
+==============================================
+['L']
+==============================================
+['M']
+==============================================
+['Z']
+('comp=', '_n', '; maxlikely=', 'n')
+('compsubstrings: ', ['', 'n'])
+compwordregex: ^[a-zA-Z]n$
+likelydict for  _n : {'hn': 2.154773037755933e-05, 'gn': 0.000129286382265356, 'rn': 0.0005731696280430783, 'mn': 4.309546075511866e-05, 'in': 0.0016246988704679737, 'sn': 8.619092151023733e-06, 'en': 0.0018444857203190788, 'bn': 4.309546075511867e-06, 'ln': 1.29286382265356e-05, 'on': 0.005300741672879595, 'un': 0.0001896200273225221, 'nn': 2.58572764530712e-05, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'an': 0.0027537999422520827}
+('matchinglikelydict=', {'hn': 2.154773037755933e-05, 'gn': 0.000129286382265356, 'rn': 0.0005731696280430783, 'mn': 4.309546075511866e-05, 'in': 0.0016246988704679737, 'sn': 8.619092151023733e-06, 'en': 0.0018444857203190788, 'bn': 4.309546075511867e-06, 'ln': 1.29286382265356e-05, 'on': 0.005300741672879595, 'un': 0.0001896200273225221, 'nn': 2.58572764530712e-05, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'an': 0.0027537999422520827})
+('maxlikelyretprob=', 0.005300741672879595, '; maxlikelyret = ', 'on')
+{'hn': 2.154773037755933e-05, 'gn': 0.000129286382265356, 'rn': 0.0005731696280430783, 'mn': 4.309546075511866e-05, 'in': 0.0016246988704679737, 'sn': 8.619092151023733e-06, 'en': 0.0018444857203190788, 'bn': 4.309546075511867e-06, 'ln': 1.29286382265356e-05, 'on': 0.005300741672879595, 'un': 0.0001896200273225221, 'nn': 2.58572764530712e-05, 'zn': 4.309546075511867e-06, 'wn': 0.0004611214300797697, 'an': 0.0027537999422520827}
+('comp=', '_n', '; maxlikely=', 'on')
+maximumlikelihoodword - PyEnchant : n
+maximumlikelihoodword - HMM : on
+('d__d', [])
+('comp=', 'd__d', '; maxlikely=', '')
+('compsubstrings: ', ['d', '', 'd'])
+compwordregex: ^d[a-zA-Z][a-zA-Z]d$
+likelydict for  d__d : {'dded': 8.619092151023733e-06, 'dfod': 4.309546075511867e-06, 'dred': 1.29286382265356e-05, 'dard': 3.0166822528583065e-05, 'dbed': 4.309546075511867e-06, 'dled': 4.309546075511867e-06, 'dged': 3.0166822528583065e-05, 'deed': 2.58572764530712e-05, 'dead': 7.326228328370173e-05, 'died': 2.154773037755933e-05, 'dend': 4.309546075511867e-06}
+('matchinglikelydict=', {'dded': 8.619092151023733e-06, 'dfod': 4.309546075511867e-06, 'dred': 1.29286382265356e-05, 'dard': 3.0166822528583065e-05, 'dbed': 4.309546075511867e-06, 'dled': 4.309546075511867e-06, 'dged': 3.0166822528583065e-05, 'deed': 2.58572764530712e-05, 'dead': 7.326228328370173e-05, 'died': 2.154773037755933e-05, 'dend': 4.309546075511867e-06})
+('maxlikelyretprob=', 7.326228328370173e-05, '; maxlikelyret = ', 'dead')
+{'dded': 8.619092151023733e-06, 'dfod': 4.309546075511867e-06, 'dred': 1.29286382265356e-05, 'dard': 3.0166822528583065e-05, 'dbed': 4.309546075511867e-06, 'dled': 4.309546075511867e-06, 'dged': 3.0166822528583065e-05, 'deed': 2.58572764530712e-05, 'dead': 7.326228328370173e-05, 'died': 2.154773037755933e-05, 'dend': 4.309546075511867e-06}
+('comp=', 'd__d', '; maxlikely=', 'dead')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : dead
+('_t_r', [])
+('comp=', '_t_r', '; maxlikely=', '')
+('compsubstrings: ', ['', 't', 'r'])
+compwordregex: ^[a-zA-Z]t[a-zA-Z]r$
+likelydict for  _t_r : {'rtar': 1.7238184302047466e-05, 'ltar': 4.309546075511867e-06, 'atar': 4.309546075511867e-06, 'tter': 0.0003016682252858306, 'ctar': 4.309546075511867e-06, 'cter': 1.29286382265356e-05, 'itor': 7.326228328370173e-05, 'itar': 1.29286382265356e-05, 'otor': 3.447636860409493e-05, 'star': 3.87859146796068e-05, 'ntor': 1.7238184302047466e-05, 'oter': 3.87859146796068e-05, 'lter': 8.188137543472546e-05, 'ator': 0.0002542632184552001, 'hter': 6.895273720818987e-05, 'ster': 0.0005817887201941019, 'pter': 5.17145529061424e-05, 'btor': 4.309546075511867e-06, 'atur': 4.309546075511867e-06, 'ttor': 4.309546075511867e-06, 'stir': 4.309546075511867e-06, 'etor': 8.619092151023733e-06, 'ptor': 1.7238184302047466e-05, 'atyr': 4.309546075511867e-06, 'iter': 0.0001034291058122848, 'wter': 4.309546075511867e-06, 'ttar': 4.309546075511867e-06, 'rter': 7.75718293592136e-05, 'rtyr': 4.309546075511867e-06, 'ctor': 0.00017669138909598653, 'xter': 4.309546075511867e-06, 'ater': 0.000193929573398034, 'utor': 1.7238184302047466e-05, 'stor': 3.447636860409493e-05, 'nter': 0.0001508341126429153, 'yter': 4.309546075511867e-06, 'fter': 6.4643191132678e-05, 'uter': 5.6024098981654264e-05, 'eter': 0.0002068582116245696}
+('matchinglikelydict=', {'rtar': 1.7238184302047466e-05, 'ltar': 4.309546075511867e-06, 'atar': 4.309546075511867e-06, 'tter': 0.0003016682252858306, 'ctar': 4.309546075511867e-06, 'cter': 1.29286382265356e-05, 'itor': 7.326228328370173e-05, 'itar': 1.29286382265356e-05, 'otor': 3.447636860409493e-05, 'star': 3.87859146796068e-05, 'ntor': 1.7238184302047466e-05, 'oter': 3.87859146796068e-05, 'lter': 8.188137543472546e-05, 'ator': 0.0002542632184552001, 'hter': 6.895273720818987e-05, 'ster': 0.0005817887201941019, 'pter': 5.17145529061424e-05, 'btor': 4.309546075511867e-06, 'atur': 4.309546075511867e-06, 'ttor': 4.309546075511867e-06, 'stir': 4.309546075511867e-06, 'etor': 8.619092151023733e-06, 'ptor': 1.7238184302047466e-05, 'atyr': 4.309546075511867e-06, 'iter': 0.0001034291058122848, 'wter': 4.309546075511867e-06, 'ttar': 4.309546075511867e-06, 'rter': 7.75718293592136e-05, 'rtyr': 4.309546075511867e-06, 'ctor': 0.00017669138909598653, 'xter': 4.309546075511867e-06, 'ater': 0.000193929573398034, 'utor': 1.7238184302047466e-05, 'stor': 3.447636860409493e-05, 'nter': 0.0001508341126429153, 'yter': 4.309546075511867e-06, 'fter': 6.4643191132678e-05, 'uter': 5.6024098981654264e-05, 'eter': 0.0002068582116245696})
+('maxlikelyretprob=', 0.0005817887201941019, '; maxlikelyret = ', 'ster')
+{'rtar': 1.7238184302047466e-05, 'ltar': 4.309546075511867e-06, 'atar': 4.309546075511867e-06, 'tter': 0.0003016682252858306, 'ctar': 4.309546075511867e-06, 'cter': 1.29286382265356e-05, 'itor': 7.326228328370173e-05, 'itar': 1.29286382265356e-05, 'otor': 3.447636860409493e-05, 'star': 3.87859146796068e-05, 'ntor': 1.7238184302047466e-05, 'oter': 3.87859146796068e-05, 'lter': 8.188137543472546e-05, 'ator': 0.0002542632184552001, 'hter': 6.895273720818987e-05, 'ster': 0.0005817887201941019, 'pter': 5.17145529061424e-05, 'btor': 4.309546075511867e-06, 'atur': 4.309546075511867e-06, 'ttor': 4.309546075511867e-06, 'stir': 4.309546075511867e-06, 'etor': 8.619092151023733e-06, 'ptor': 1.7238184302047466e-05, 'atyr': 4.309546075511867e-06, 'iter': 0.0001034291058122848, 'wter': 4.309546075511867e-06, 'ttar': 4.309546075511867e-06, 'rter': 7.75718293592136e-05, 'rtyr': 4.309546075511867e-06, 'ctor': 0.00017669138909598653, 'xter': 4.309546075511867e-06, 'ater': 0.000193929573398034, 'utor': 1.7238184302047466e-05, 'stor': 3.447636860409493e-05, 'nter': 0.0001508341126429153, 'yter': 4.309546075511867e-06, 'fter': 6.4643191132678e-05, 'uter': 5.6024098981654264e-05, 'eter': 0.0002068582116245696}
+('comp=', '_t_r', '; maxlikely=', 'ster')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : ster
+('n_l', ['nil'])
+==============================================
+[]
+('comp=', 'n_l', '; maxlikely=', 'nil')
+('compsubstrings: ', ['n', 'l'])
+compwordregex: ^n[a-zA-Z]l$
+likelydict for  n_l : {'nyl': 8.619092151023733e-06, 'nil': 4.309546075511867e-06, 'nel': 0.0001163577440388204, 'ndl': 4.309546075511867e-06, 'nal': 0.0006378128191757562, 'nol': 8.619092151023733e-06, 'nul': 4.309546075511867e-06}
+('matchinglikelydict=', {'nyl': 8.619092151023733e-06, 'nil': 4.309546075511867e-06, 'nel': 0.0001163577440388204, 'ndl': 4.309546075511867e-06, 'nal': 0.0006378128191757562, 'nol': 8.619092151023733e-06, 'nul': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.0006378128191757562, '; maxlikelyret = ', 'nal')
+{'nyl': 8.619092151023733e-06, 'nil': 4.309546075511867e-06, 'nel': 0.0001163577440388204, 'ndl': 4.309546075511867e-06, 'nal': 0.0006378128191757562, 'nol': 8.619092151023733e-06, 'nul': 4.309546075511867e-06}
+('comp=', 'n_l', '; maxlikely=', 'nal')
+maximumlikelihoodword - PyEnchant : nil
+maximumlikelihoodword - HMM : nal
+('V_sh', ['Shiv'])
+==============================================
+['v', 'S']
+('comp=', 'V_sh', '; maxlikely=', 'Shiv')
+('compsubstrings: ', ['V', 'sh'])
+compwordregex: ^V[a-zA-Z]sh$
+likelydict for  V_sh : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'V_sh', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : Shiv
+maximumlikelihoodword - HMM : 
+('n_,', [])
+('comp=', 'n_,', '; maxlikely=', '')
+('compsubstrings: ', ['n', ','])
+compwordregex: ^n[a-zA-Z],$
+likelydict for  n_, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'n_,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('L_rd', ['Lord', 'Lard'])
+==============================================
+[]
+==============================================
+[]
+('comp=', 'L_rd', '; maxlikely=', 'Lord')
+('compsubstrings: ', ['L', 'rd'])
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : Lord
+maximumlikelihoodword - HMM : 
+('pr_s_r', [])
+('comp=', 'pr_s_r', '; maxlikely=', '')
+('compsubstrings: ', ['pr', 's', 'r'])
+compwordregex: ^pr[a-zA-Z]s[a-zA-Z]r$
+likelydict for  pr_s_r : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'pr_s_r', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('v_', ['v', 'vs', 'vi', 'vb', 'V'])
+==============================================
+[]
+==============================================
+['s']
+==============================================
+[]
+==============================================
+['b']
+==============================================
+['V']
+('comp=', 'v_', '; maxlikely=', 'v')
+('compsubstrings: ', ['v', ''])
+compwordregex: ^v[a-zA-Z]$
+likelydict for  v_ : {'vy': 0.00021978684985110518, 'vp': 4.309546075511867e-06, 've': 0.0021116775770008145, 'vf': 4.309546075511867e-06, 'vd': 8.619092151023733e-06, 'vs': 4.309546075511867e-06, 'vo': 2.58572764530712e-05, 'vc': 8.619092151023733e-06, 'va': 7.326228328370173e-05}
+('matchinglikelydict=', {'vy': 0.00021978684985110518, 'vp': 4.309546075511867e-06, 've': 0.0021116775770008145, 'vf': 4.309546075511867e-06, 'vd': 8.619092151023733e-06, 'vs': 4.309546075511867e-06, 'vo': 2.58572764530712e-05, 'vc': 8.619092151023733e-06, 'va': 7.326228328370173e-05})
+('maxlikelyretprob=', 0.0021116775770008145, '; maxlikelyret = ', 've')
+{'vy': 0.00021978684985110518, 'vp': 4.309546075511867e-06, 've': 0.0021116775770008145, 'vf': 4.309546075511867e-06, 'vd': 8.619092151023733e-06, 'vs': 4.309546075511867e-06, 'vo': 2.58572764530712e-05, 'vc': 8.619092151023733e-06, 'va': 7.326228328370173e-05}
+('comp=', 'v_', '; maxlikely=', 've')
+maximumlikelihoodword - PyEnchant : v
+maximumlikelihoodword - HMM : ve
+('t__n.', [])
+('comp=', 't__n.', '; maxlikely=', '')
+('compsubstrings: ', ['t', '', 'n.'])
+compwordregex: ^t[a-zA-Z][a-zA-Z]n.$
+likelydict for  t__n. : {'tband': 8.619092151023733e-06, 'tten1': 4.309546075511867e-06, 'ttent': 8.619092151023733e-06, 'teens': 4.309546075511867e-06, 'thane': 1.7238184302047466e-05, 'tting': 0.00010773865188779666, 'teeny': 4.309546075511867e-06, 'terne': 4.309546075511867e-06, 'tient': 3.447636860409493e-05, 'trine': 8.619092151023733e-06, 'tions': 4.309546075511867e-06, 'trino': 4.309546075511867e-06, 'trant': 1.29286382265356e-05, 'tern2': 4.309546075511867e-06, 'trung': 2.154773037755933e-05, 'ttony': 4.309546075511867e-06, 'tmint': 4.309546075511867e-06, 'ttune': 4.309546075511867e-06, 'tten2': 4.309546075511867e-06, 'think': 1.29286382265356e-05, 'tland': 3.0166822528583065e-05, 'taunt': 4.309546075511867e-06, 'tound': 4.309546075511867e-06, 'tbone': 4.309546075511867e-06, 'tning': 4.309546075511867e-06, 'tain1': 4.309546075511867e-06, 'toon1': 4.309546075511867e-06, 'thank': 4.309546075511867e-06, 'toing': 4.309546075511867e-06, 'tuent': 4.309546075511867e-06, 'ttins': 4.309546075511867e-06, 'thing': 6.033364505716613e-05, 'trank': 4.309546075511867e-06, 'tain2': 4.309546075511867e-06, 'tinny': 4.309546075511867e-06, 'toon2': 4.309546075511867e-06, 'trone': 4.309546075511867e-06, 'thine': 4.309546075511867e-06, 'tawny': 1.29286382265356e-05, 'twine': 2.154773037755933e-05, 'tpone': 4.309546075511867e-06, 'tern1': 4.309546075511867e-06, 'tline': 2.154773037755933e-05, 'twang': 4.309546075511867e-06, 'trunk': 1.7238184302047466e-05, 'tunny': 4.309546075511867e-06, 'tonne': 8.619092151023733e-06, 'thene': 8.619092151023733e-06, 'ttend': 4.309546075511867e-06, 'trend': 4.309546075511867e-06, 'tring': 3.447636860409493e-05, 'tenna': 4.309546075511867e-06, 'taint': 4.309546075511867e-06, 'tiens': 4.309546075511867e-06, 'tling': 2.154773037755933e-05, 'twing': 4.309546075511867e-06, 'tying': 8.619092151023733e-06, 'tsina': 4.309546075511867e-06, 'thand': 1.29286382265356e-05, 'trong': 2.154773037755933e-05, 'turne': 4.309546075511867e-06, 'tment': 9.911955973677292e-05, 'thong': 8.619092151023733e-06}
+('matchinglikelydict=', {'tband': 8.619092151023733e-06, 'tten1': 4.309546075511867e-06, 'ttent': 8.619092151023733e-06, 'teens': 4.309546075511867e-06, 'thane': 1.7238184302047466e-05, 'tting': 0.00010773865188779666, 'teeny': 4.309546075511867e-06, 'terne': 4.309546075511867e-06, 'tient': 3.447636860409493e-05, 'trine': 8.619092151023733e-06, 'tions': 4.309546075511867e-06, 'trino': 4.309546075511867e-06, 'trant': 1.29286382265356e-05, 'tern2': 4.309546075511867e-06, 'trung': 2.154773037755933e-05, 'ttony': 4.309546075511867e-06, 'tmint': 4.309546075511867e-06, 'ttune': 4.309546075511867e-06, 'tten2': 4.309546075511867e-06, 'think': 1.29286382265356e-05, 'tland': 3.0166822528583065e-05, 'taunt': 4.309546075511867e-06, 'tound': 4.309546075511867e-06, 'tbone': 4.309546075511867e-06, 'tning': 4.309546075511867e-06, 'tain1': 4.309546075511867e-06, 'toon1': 4.309546075511867e-06, 'thank': 4.309546075511867e-06, 'toing': 4.309546075511867e-06, 'tuent': 4.309546075511867e-06, 'ttins': 4.309546075511867e-06, 'thing': 6.033364505716613e-05, 'trank': 4.309546075511867e-06, 'tain2': 4.309546075511867e-06, 'tinny': 4.309546075511867e-06, 'toon2': 4.309546075511867e-06, 'trone': 4.309546075511867e-06, 'thine': 4.309546075511867e-06, 'tawny': 1.29286382265356e-05, 'twine': 2.154773037755933e-05, 'tpone': 4.309546075511867e-06, 'tern1': 4.309546075511867e-06, 'tline': 2.154773037755933e-05, 'twang': 4.309546075511867e-06, 'trunk': 1.7238184302047466e-05, 'tunny': 4.309546075511867e-06, 'tonne': 8.619092151023733e-06, 'thene': 8.619092151023733e-06, 'ttend': 4.309546075511867e-06, 'trend': 4.309546075511867e-06, 'tring': 3.447636860409493e-05, 'tenna': 4.309546075511867e-06, 'taint': 4.309546075511867e-06, 'tiens': 4.309546075511867e-06, 'tling': 2.154773037755933e-05, 'twing': 4.309546075511867e-06, 'tying': 8.619092151023733e-06, 'tsina': 4.309546075511867e-06, 'thand': 1.29286382265356e-05, 'trong': 2.154773037755933e-05, 'turne': 4.309546075511867e-06, 'tment': 9.911955973677292e-05, 'thong': 8.619092151023733e-06})
+('maxlikelyretprob=', 0.00010773865188779666, '; maxlikelyret = ', 'tting')
+{'tband': 8.619092151023733e-06, 'tten1': 4.309546075511867e-06, 'ttent': 8.619092151023733e-06, 'teens': 4.309546075511867e-06, 'thane': 1.7238184302047466e-05, 'tting': 0.00010773865188779666, 'teeny': 4.309546075511867e-06, 'terne': 4.309546075511867e-06, 'tient': 3.447636860409493e-05, 'trine': 8.619092151023733e-06, 'tions': 4.309546075511867e-06, 'trino': 4.309546075511867e-06, 'trant': 1.29286382265356e-05, 'tern2': 4.309546075511867e-06, 'trung': 2.154773037755933e-05, 'ttony': 4.309546075511867e-06, 'tmint': 4.309546075511867e-06, 'ttune': 4.309546075511867e-06, 'tten2': 4.309546075511867e-06, 'think': 1.29286382265356e-05, 'tland': 3.0166822528583065e-05, 'taunt': 4.309546075511867e-06, 'tound': 4.309546075511867e-06, 'tbone': 4.309546075511867e-06, 'tning': 4.309546075511867e-06, 'tain1': 4.309546075511867e-06, 'toon1': 4.309546075511867e-06, 'thank': 4.309546075511867e-06, 'toing': 4.309546075511867e-06, 'tuent': 4.309546075511867e-06, 'ttins': 4.309546075511867e-06, 'thing': 6.033364505716613e-05, 'trank': 4.309546075511867e-06, 'tain2': 4.309546075511867e-06, 'tinny': 4.309546075511867e-06, 'toon2': 4.309546075511867e-06, 'trone': 4.309546075511867e-06, 'thine': 4.309546075511867e-06, 'tawny': 1.29286382265356e-05, 'twine': 2.154773037755933e-05, 'tpone': 4.309546075511867e-06, 'tern1': 4.309546075511867e-06, 'tline': 2.154773037755933e-05, 'twang': 4.309546075511867e-06, 'trunk': 1.7238184302047466e-05, 'tunny': 4.309546075511867e-06, 'tonne': 8.619092151023733e-06, 'thene': 8.619092151023733e-06, 'ttend': 4.309546075511867e-06, 'trend': 4.309546075511867e-06, 'tring': 3.447636860409493e-05, 'tenna': 4.309546075511867e-06, 'taint': 4.309546075511867e-06, 'tiens': 4.309546075511867e-06, 'tling': 2.154773037755933e-05, 'twing': 4.309546075511867e-06, 'tying': 8.619092151023733e-06, 'tsina': 4.309546075511867e-06, 'thand': 1.29286382265356e-05, 'trong': 2.154773037755933e-05, 'turne': 4.309546075511867e-06, 'tment': 9.911955973677292e-05, 'thong': 8.619092151023733e-06}
+('comp=', 't__n.', '; maxlikely=', 'tting')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : tting
+('R_m_', [])
+('comp=', 'R_m_', '; maxlikely=', '')
+('compsubstrings: ', ['R', 'm', ''])
+compwordregex: ^R[a-zA-Z]m[a-zA-Z]$
+likelydict for  R_m_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'R_m_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('pr_', ['pr', 'pro', 'pry'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+('comp=', 'pr_', '; maxlikely=', 'pr')
+('compsubstrings: ', ['pr', ''])
+compwordregex: ^pr[a-zA-Z]$
+likelydict for  pr_ : {'pro': 3.0166822528583065e-05, 'pra': 8.619092151023733e-06, 'pry': 8.619092151023733e-06}
+('matchinglikelydict=', {'pro': 3.0166822528583065e-05, 'pra': 8.619092151023733e-06, 'pry': 8.619092151023733e-06})
+('maxlikelyretprob=', 3.0166822528583065e-05, '; maxlikelyret = ', 'pro')
+{'pro': 3.0166822528583065e-05, 'pra': 8.619092151023733e-06, 'pry': 8.619092151023733e-06}
+('comp=', 'pr_', '; maxlikely=', 'pro')
+maximumlikelihoodword - PyEnchant : pr
+maximumlikelihoodword - HMM : pro
+('m_r', ['mar', 'mgr', 'mfr', 'Mr'])
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['f']
+==============================================
+['M']
+('comp=', 'm_r', '; maxlikely=', 'mar')
+('compsubstrings: ', ['m', 'r'])
+compwordregex: ^m[a-zA-Z]r$
+likelydict for  m_r : {'mer': 0.00024995367237968825, 'mir': 8.619092151023733e-06, 'mor': 3.447636860409493e-05, 'mur': 1.7238184302047466e-05, 'mar': 1.7238184302047466e-05}
+('matchinglikelydict=', {'mer': 0.00024995367237968825, 'mir': 8.619092151023733e-06, 'mor': 3.447636860409493e-05, 'mur': 1.7238184302047466e-05, 'mar': 1.7238184302047466e-05})
+('maxlikelyretprob=', 0.00024995367237968825, '; maxlikelyret = ', 'mer')
+{'mer': 0.00024995367237968825, 'mir': 8.619092151023733e-06, 'mor': 3.447636860409493e-05, 'mur': 1.7238184302047466e-05, 'mar': 1.7238184302047466e-05}
+('comp=', 'm_r', '; maxlikely=', 'mer')
+maximumlikelihoodword - PyEnchant : mar
+maximumlikelihoodword - HMM : mer
+('d__l', [])
+('comp=', 'd__l', '; maxlikely=', '')
+('compsubstrings: ', ['d', '', 'l'])
+compwordregex: ^d[a-zA-Z][a-zA-Z]l$
+likelydict for  d__l : {'dawl': 4.309546075511867e-06, 'dhal': 4.309546075511867e-06, 'dill': 4.309546075511867e-06, 'dful': 2.58572764530712e-05, 'dual': 2.58572764530712e-05, 'dsel': 4.309546075511867e-06, 'duel': 4.309546075511867e-06, 'dial': 4.309546075511866e-05, 'doll': 4.309546075511867e-06, 'dall': 4.309546075511867e-06, 'deal': 8.619092151023733e-06, 'dgel': 4.309546075511867e-06, 'dyll': 4.309546075511867e-06, 'dril': 4.309546075511867e-06, 'dral': 4.309546075511867e-06, 'dull': 4.309546075511867e-06, 'drel': 1.29286382265356e-05, 'dell': 4.309546075511867e-06}
+('matchinglikelydict=', {'dawl': 4.309546075511867e-06, 'dhal': 4.309546075511867e-06, 'dill': 4.309546075511867e-06, 'dful': 2.58572764530712e-05, 'dual': 2.58572764530712e-05, 'dsel': 4.309546075511867e-06, 'duel': 4.309546075511867e-06, 'dial': 4.309546075511866e-05, 'doll': 4.309546075511867e-06, 'dall': 4.309546075511867e-06, 'deal': 8.619092151023733e-06, 'dgel': 4.309546075511867e-06, 'dyll': 4.309546075511867e-06, 'dril': 4.309546075511867e-06, 'dral': 4.309546075511867e-06, 'dull': 4.309546075511867e-06, 'drel': 1.29286382265356e-05, 'dell': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511866e-05, '; maxlikelyret = ', 'dial')
+{'dawl': 4.309546075511867e-06, 'dhal': 4.309546075511867e-06, 'dill': 4.309546075511867e-06, 'dful': 2.58572764530712e-05, 'dual': 2.58572764530712e-05, 'dsel': 4.309546075511867e-06, 'duel': 4.309546075511867e-06, 'dial': 4.309546075511866e-05, 'doll': 4.309546075511867e-06, 'dall': 4.309546075511867e-06, 'deal': 8.619092151023733e-06, 'dgel': 4.309546075511867e-06, 'dyll': 4.309546075511867e-06, 'dril': 4.309546075511867e-06, 'dral': 4.309546075511867e-06, 'dull': 4.309546075511867e-06, 'drel': 1.29286382265356e-05, 'dell': 4.309546075511867e-06}
+('comp=', 'd__l', '; maxlikely=', 'dial')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : dial
+('L_rd,', [])
+('comp=', 'L_rd,', '; maxlikely=', '')
+('compsubstrings: ', ['L', 'rd,'])
+compwordregex: ^L[a-zA-Z]rd,$
+likelydict for  L_rd, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('cl__rly', ['clearly'])
+==============================================
+[]
+('comp=', 'cl__rly', '; maxlikely=', 'clearly')
+('compsubstrings: ', ['cl', '', 'rly'])
+compwordregex: ^cl[a-zA-Z][a-zA-Z]rly$
+likelydict for  cl__rly : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'cl__rly', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : clearly
+maximumlikelihoodword - HMM : 
+('pl_c_d', [])
+('comp=', 'pl_c_d', '; maxlikely=', '')
+('compsubstrings: ', ['pl', 'c', 'd'])
+compwordregex: ^pl[a-zA-Z]c[a-zA-Z]d$
+likelydict for  pl_c_d : {'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06}
+('matchinglikelydict=', {'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'placed')
+{'placed': 8.619092151023733e-06, 'placid': 4.309546075511867e-06}
+('comp=', 'pl_c_d', '; maxlikely=', 'placed')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : placed
+('b_', ['b', 'be', 'bi', 'bl', 'bu', 'by', 'bf', 'bk'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['l']
+==============================================
+[]
+==============================================
+['y']
+==============================================
+['f']
+==============================================
+['k']
+('comp=', 'b_', '; maxlikely=', 'b')
+('compsubstrings: ', ['b', ''])
+compwordregex: ^b[a-zA-Z]$
+likelydict for  b_ : {'bi': 3.0166822528583065e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bm': 8.619092151023733e-06, 'bt': 2.58572764530712e-05, 'bs': 2.58572764530712e-05, 'bn': 4.309546075511867e-06, 'be': 0.00023702503415315264, 'bk': 4.309546075511867e-06, 'bl': 4.309546075511867e-06, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bo': 7.75718293592136e-05, 'bd': 4.309546075511867e-06, 'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'ba': 6.895273720818987e-05, 'bh': 4.309546075511867e-06}
+('matchinglikelydict=', {'bi': 3.0166822528583065e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bm': 8.619092151023733e-06, 'bt': 2.58572764530712e-05, 'bs': 2.58572764530712e-05, 'bn': 4.309546075511867e-06, 'be': 0.00023702503415315264, 'bk': 4.309546075511867e-06, 'bl': 4.309546075511867e-06, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bo': 7.75718293592136e-05, 'bd': 4.309546075511867e-06, 'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'ba': 6.895273720818987e-05, 'bh': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.00023702503415315264, '; maxlikelyret = ', 'be')
+{'bi': 3.0166822528583065e-05, 'bb': 1.29286382265356e-05, 'br': 8.619092151023733e-06, 'bm': 8.619092151023733e-06, 'bt': 2.58572764530712e-05, 'bs': 2.58572764530712e-05, 'bn': 4.309546075511867e-06, 'be': 0.00023702503415315264, 'bk': 4.309546075511867e-06, 'bl': 4.309546075511867e-06, 'bp': 4.309546075511867e-06, 'bq': 4.309546075511867e-06, 'by': 0.0002327154880776408, 'bo': 7.75718293592136e-05, 'bd': 4.309546075511867e-06, 'bu': 8.619092151023733e-06, 'bc': 2.58572764530712e-05, 'ba': 6.895273720818987e-05, 'bh': 4.309546075511867e-06}
+('comp=', 'b_', '; maxlikely=', 'be')
+maximumlikelihoodword - PyEnchant : b
+maximumlikelihoodword - HMM : be
+('f_r_', [])
+('comp=', 'f_r_', '; maxlikely=', '')
+('compsubstrings: ', ['f', 'r', ''])
+compwordregex: ^f[a-zA-Z]r[a-zA-Z]$
+likelydict for  f_r_ : {'firm': 1.7238184302047466e-05, 'fury': 4.309546075511867e-06, 'farm': 8.619092151023733e-06, 'fork': 1.7238184302047466e-05, 'fart': 4.309546075511867e-06, 'fern': 8.619092151023733e-06, 'fere': 4.309546075511867e-06, 'fari': 8.619092151023733e-06, 'form': 9.481001366126106e-05, 'furl': 8.619092151023733e-06, 'fore': 4.309546075511866e-05, 'fure': 4.309546075511867e-06, 'fire': 8.619092151023733e-05, 'fort': 2.58572764530712e-05, 'ford': 2.58572764530712e-05, 'fare': 3.447636860409493e-05}
+('matchinglikelydict=', {'firm': 1.7238184302047466e-05, 'fury': 4.309546075511867e-06, 'farm': 8.619092151023733e-06, 'fork': 1.7238184302047466e-05, 'fart': 4.309546075511867e-06, 'fern': 8.619092151023733e-06, 'fere': 4.309546075511867e-06, 'fari': 8.619092151023733e-06, 'form': 9.481001366126106e-05, 'furl': 8.619092151023733e-06, 'fore': 4.309546075511866e-05, 'fure': 4.309546075511867e-06, 'fire': 8.619092151023733e-05, 'fort': 2.58572764530712e-05, 'ford': 2.58572764530712e-05, 'fare': 3.447636860409493e-05})
+('maxlikelyretprob=', 9.481001366126106e-05, '; maxlikelyret = ', 'form')
+{'firm': 1.7238184302047466e-05, 'fury': 4.309546075511867e-06, 'farm': 8.619092151023733e-06, 'fork': 1.7238184302047466e-05, 'fart': 4.309546075511867e-06, 'fern': 8.619092151023733e-06, 'fere': 4.309546075511867e-06, 'fari': 8.619092151023733e-06, 'form': 9.481001366126106e-05, 'furl': 8.619092151023733e-06, 'fore': 4.309546075511866e-05, 'fure': 4.309546075511867e-06, 'fire': 8.619092151023733e-05, 'fort': 2.58572764530712e-05, 'ford': 2.58572764530712e-05, 'fare': 3.447636860409493e-05}
+('comp=', 'f_r_', '; maxlikely=', 'form')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : form
+('_y_s', [])
+('comp=', '_y_s', '; maxlikely=', '')
+('compsubstrings: ', ['', 'y', 's'])
+compwordregex: ^[a-zA-Z]y[a-zA-Z]s$
+likelydict for  _y_s : {'byss': 4.309546075511867e-06}
+('matchinglikelydict=', {'byss': 4.309546075511867e-06})
+('maxlikelyretprob=', 4.309546075511867e-06, '; maxlikelyret = ', 'byss')
+{'byss': 4.309546075511867e-06}
+('comp=', '_y_s', '; maxlikely=', 'byss')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : byss
+('p_w', ['pew', 'paw', 'pow', 'PW'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['P', 'W']
+('comp=', 'p_w', '; maxlikely=', 'pew')
+('compsubstrings: ', ['p', 'w'])
+compwordregex: ^p[a-zA-Z]w$
+likelydict for  p_w : {'pow': 8.619092151023733e-06, 'paw': 2.58572764530712e-05, 'pew': 8.619092151023733e-06}
+('matchinglikelydict=', {'pow': 8.619092151023733e-06, 'paw': 2.58572764530712e-05, 'pew': 8.619092151023733e-06})
+('maxlikelyretprob=', 2.58572764530712e-05, '; maxlikelyret = ', 'paw')
+{'pow': 8.619092151023733e-06, 'paw': 2.58572764530712e-05, 'pew': 8.619092151023733e-06}
+('comp=', 'p_w', '; maxlikely=', 'paw')
+maximumlikelihoodword - PyEnchant : pew
+maximumlikelihoodword - HMM : paw
+('_r', ['r', 'er', 'tr', 'or', 'gr', 'pr', 'hr', 'yr', 'fr', 'Er', 'Sr', 'Ir', 'Ar', 'Lr', 'Cr'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['t']
+==============================================
+[]
+==============================================
+['g']
+==============================================
+['p']
+==============================================
+['h']
+==============================================
+['y']
+==============================================
+['f']
+==============================================
+[]
+==============================================
+['S']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['L']
+==============================================
+['C']
+('comp=', '_r', '; maxlikely=', 'r')
+('compsubstrings: ', ['', 'r'])
+compwordregex: ^[a-zA-Z]r$
+likelydict for  _r : {'tr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'br': 8.619092151023733e-06, 'dr': 1.29286382265356e-05, 'ur': 0.0005559314437410308, 'or': 0.0014092215666923803, 'sr': 8.619092151023733e-06, 'fr': 4.309546075511867e-06, 'gr': 4.309546075511867e-06, 'mr': 4.309546075511867e-06, 'kr': 8.619092151023733e-06, 'cr': 1.29286382265356e-05, 'wr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'ar': 0.0013014829148045837, 'zr': 4.309546075511867e-06, 'pr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'lr': 4.309546075511867e-06, 'rr': 3.87859146796068e-05}
+('matchinglikelydict=', {'tr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'br': 8.619092151023733e-06, 'dr': 1.29286382265356e-05, 'ur': 0.0005559314437410308, 'or': 0.0014092215666923803, 'sr': 8.619092151023733e-06, 'fr': 4.309546075511867e-06, 'gr': 4.309546075511867e-06, 'mr': 4.309546075511867e-06, 'kr': 8.619092151023733e-06, 'cr': 1.29286382265356e-05, 'wr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'ar': 0.0013014829148045837, 'zr': 4.309546075511867e-06, 'pr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'lr': 4.309546075511867e-06, 'rr': 3.87859146796068e-05})
+('maxlikelyretprob=', 0.00851997259128696, '; maxlikelyret = ', 'er')
+{'tr': 4.309546075511867e-06, 'ir': 0.0003749305085695324, 'br': 8.619092151023733e-06, 'dr': 1.29286382265356e-05, 'ur': 0.0005559314437410308, 'or': 0.0014092215666923803, 'sr': 8.619092151023733e-06, 'fr': 4.309546075511867e-06, 'gr': 4.309546075511867e-06, 'mr': 4.309546075511867e-06, 'kr': 8.619092151023733e-06, 'cr': 1.29286382265356e-05, 'wr': 4.309546075511867e-06, 'yr': 1.29286382265356e-05, 'ar': 0.0013014829148045837, 'zr': 4.309546075511867e-06, 'pr': 1.29286382265356e-05, 'er': 0.00851997259128696, 'lr': 4.309546075511867e-06, 'rr': 3.87859146796068e-05}
+('comp=', '_r', '; maxlikely=', 'er')
+maximumlikelihoodword - PyEnchant : r
+maximumlikelihoodword - HMM : er
+('f_l', ['fl', 'fol'])
+==============================================
+[]
+==============================================
+[]
+('comp=', 'f_l', '; maxlikely=', 'fl')
+('compsubstrings: ', ['f', 'l'])
+compwordregex: ^f[a-zA-Z]l$
+likelydict for  f_l : {'ful': 0.0005300741672879596, 'fal': 4.309546075511867e-06, 'fil': 4.309546075511867e-06}
+('matchinglikelydict=', {'ful': 0.0005300741672879596, 'fal': 4.309546075511867e-06, 'fil': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.0005300741672879596, '; maxlikelyret = ', 'ful')
+{'ful': 0.0005300741672879596, 'fal': 4.309546075511867e-06, 'fil': 4.309546075511867e-06}
+('comp=', 'f_l', '; maxlikely=', 'ful')
+maximumlikelihoodword - PyEnchant : fl
+maximumlikelihoodword - HMM : ful
+('L_rd', ['Lord', 'Lard'])
+==============================================
+[]
+==============================================
+[]
+('comp=', 'L_rd', '; maxlikely=', 'Lord')
+('compsubstrings: ', ['L', 'rd'])
+compwordregex: ^L[a-zA-Z]rd$
+likelydict for  L_rd : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_rd', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : Lord
+maximumlikelihoodword - HMM : 
+('r_', ['r', 're', 'rs', 'rt', 'rd', 'rm', 'R'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['s']
+==============================================
+['t']
+==============================================
+['d']
+==============================================
+['m']
+==============================================
+['R']
+('comp=', 'r_', '; maxlikely=', 'r')
+('compsubstrings: ', ['r', ''])
+compwordregex: ^r[a-zA-Z]$
+likelydict for  r_ : {'rh': 1.7238184302047466e-05, 'rn': 0.0005731696280430783, 'ra': 0.00035338277819197306, 'rm': 0.00043095460755118665, 'rk': 0.00045250233792874594, 'rf': 4.740500683063053e-05, 'ri': 5.6024098981654264e-05, 'rg': 2.154773037755933e-05, 'rd': 0.0013704356520127736, 'rs': 0.0002327154880776408, 'rp': 5.6024098981654264e-05, 'ro': 0.00017238184302047465, 'rc': 2.154773037755933e-05, 'rl': 0.000129286382265356, 'rv': 8.619092151023733e-06, 'rt': 0.0007929564778941834, 'rb': 0.00011204819796330853, 're': 0.002258202143568218, 'ru': 2.154773037755933e-05, 'ry': 0.002715014027572476, 'rr': 3.87859146796068e-05}
+('matchinglikelydict=', {'rh': 1.7238184302047466e-05, 'rn': 0.0005731696280430783, 'ra': 0.00035338277819197306, 'rm': 0.00043095460755118665, 'rk': 0.00045250233792874594, 'rf': 4.740500683063053e-05, 'ri': 5.6024098981654264e-05, 'rg': 2.154773037755933e-05, 'rd': 0.0013704356520127736, 'rs': 0.0002327154880776408, 'rp': 5.6024098981654264e-05, 'ro': 0.00017238184302047465, 'rc': 2.154773037755933e-05, 'rl': 0.000129286382265356, 'rv': 8.619092151023733e-06, 'rt': 0.0007929564778941834, 'rb': 0.00011204819796330853, 're': 0.002258202143568218, 'ru': 2.154773037755933e-05, 'ry': 0.002715014027572476, 'rr': 3.87859146796068e-05})
+('maxlikelyretprob=', 0.002715014027572476, '; maxlikelyret = ', 'ry')
+{'rh': 1.7238184302047466e-05, 'rn': 0.0005731696280430783, 'ra': 0.00035338277819197306, 'rm': 0.00043095460755118665, 'rk': 0.00045250233792874594, 'rf': 4.740500683063053e-05, 'ri': 5.6024098981654264e-05, 'rg': 2.154773037755933e-05, 'rd': 0.0013704356520127736, 'rs': 0.0002327154880776408, 'rp': 5.6024098981654264e-05, 'ro': 0.00017238184302047465, 'rc': 2.154773037755933e-05, 'rl': 0.000129286382265356, 'rv': 8.619092151023733e-06, 'rt': 0.0007929564778941834, 'rb': 0.00011204819796330853, 're': 0.002258202143568218, 'ru': 2.154773037755933e-05, 'ry': 0.002715014027572476, 'rr': 3.87859146796068e-05}
+('comp=', 'r_', '; maxlikely=', 'ry')
+maximumlikelihoodword - PyEnchant : r
+maximumlikelihoodword - HMM : ry
+('m_v', ['MTV'])
+==============================================
+['T', 'M', 'V']
+('comp=', 'm_v', '; maxlikely=', 'MTV')
+('compsubstrings: ', ['m', 'v'])
+compwordregex: ^m[a-zA-Z]v$
+likelydict for  m_v : {'mev': 8.619092151023733e-06}
+('matchinglikelydict=', {'mev': 8.619092151023733e-06})
+('maxlikelyretprob=', 8.619092151023733e-06, '; maxlikelyret = ', 'mev')
+{'mev': 8.619092151023733e-06}
+('comp=', 'm_v', '; maxlikely=', 'mev')
+maximumlikelihoodword - PyEnchant : MTV
+maximumlikelihoodword - HMM : mev
+('_ng', ['Eng', 'gang'])
+==============================================
+[]
+==============================================
+[]
+('x=', 'gang', '; comp=', '_ng')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('x[xptr]=', 'a', '; comp[compptr]=', '_')
+('x[xptr]=', 'n', '; comp[compptr]=', '_')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('comp=', '_ng', '; maxlikely=', 'Eng')
+('compsubstrings: ', ['', 'ng'])
+compwordregex: ^[a-zA-Z]ng$
+likelydict for  _ng : {'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289}
+('matchinglikelydict=', {'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289})
+('maxlikelyretprob=', 0.0039906396659239885, '; maxlikelyret = ', 'ing')
+{'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289}
+('comp=', '_ng', '; maxlikely=', 'ing')
+maximumlikelihoodword - PyEnchant : Eng
+maximumlikelihoodword - HMM : ing
+('s_ns', ['sens', 'sins', 'sans', 'sons', 'suns'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('comp=', 's_ns', '; maxlikely=', 'sens')
+('compsubstrings: ', ['s', 'ns'])
+compwordregex: ^s[a-zA-Z]ns$
+likelydict for  s_ns : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 's_ns', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : sens
+maximumlikelihoodword - HMM : 
+('gr__t', [])
+('comp=', 'gr__t', '; maxlikely=', '')
+('compsubstrings: ', ['gr', '', 't'])
+compwordregex: ^gr[a-zA-Z][a-zA-Z]t$
+likelydict for  gr__t : {'groat': 4.309546075511867e-06, 'grunt': 4.309546075511867e-06, 'grist': 4.309546075511867e-06, 'graft': 1.29286382265356e-05, 'grant': 3.447636860409493e-05, 'grout': 4.309546075511867e-06, 'great': 3.0166822528583065e-05}
+('matchinglikelydict=', {'groat': 4.309546075511867e-06, 'grunt': 4.309546075511867e-06, 'grist': 4.309546075511867e-06, 'graft': 1.29286382265356e-05, 'grant': 3.447636860409493e-05, 'grout': 4.309546075511867e-06, 'great': 3.0166822528583065e-05})
+('maxlikelyretprob=', 3.447636860409493e-05, '; maxlikelyret = ', 'grant')
+{'groat': 4.309546075511867e-06, 'grunt': 4.309546075511867e-06, 'grist': 4.309546075511867e-06, 'graft': 1.29286382265356e-05, 'grant': 3.447636860409493e-05, 'grout': 4.309546075511867e-06, 'great': 3.0166822528583065e-05}
+('comp=', 'gr__t', '; maxlikely=', 'grant')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : grant
+('_rm_d,', [])
+('comp=', '_rm_d,', '; maxlikely=', '')
+('compsubstrings: ', ['', 'rm', 'd,'])
+compwordregex: ^[a-zA-Z]rm[a-zA-Z]d,$
+likelydict for  _rm_d, : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', '_rm_d,', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('_b_d_', [])
+('comp=', '_b_d_', '; maxlikely=', '')
+('compsubstrings: ', ['', 'b', 'd', ''])
+compwordregex: ^[a-zA-Z]b[a-zA-Z]d[a-zA-Z]$
+likelydict for  _b_d_ : {'ebode': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'mbody': 4.309546075511867e-06, 'obody': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'ibido': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06}
+('matchinglikelydict=', {'ebode': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'mbody': 4.309546075511867e-06, 'obody': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'ibido': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06})
+('maxlikelyretprob=', 1.7238184302047466e-05, '; maxlikelyret = ', 'ybody')
+{'ebode': 4.309546075511867e-06, 'abide': 4.309546075511867e-06, 'mbody': 4.309546075511867e-06, 'obody': 4.309546075511867e-06, 'ebody': 4.309546075511867e-06, 'mbada': 4.309546075511867e-06, 'ybody': 1.7238184302047466e-05, 'ibido': 4.309546075511867e-06, 'rbide': 4.309546075511867e-06, 'sbody': 4.309546075511867e-06, 'ibody': 4.309546075511867e-06, 'rbade': 4.309546075511867e-06}
+('comp=', '_b_d_', '; maxlikely=', 'ybody')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : ybody
+('w_', ['w', 'we', 'wt', 'wk'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['t']
+==============================================
+['k']
+('comp=', 'w_', '; maxlikely=', 'w')
+('compsubstrings: ', ['w', ''])
+compwordregex: ^w[a-zA-Z]$
+likelydict for  w_ : {'wb': 4.309546075511867e-06, 'ws': 3.87859146796068e-05, 'wo': 8.619092151023733e-06, 'wk': 2.154773037755933e-05, 'wt': 2.154773037755933e-05, 'wp': 8.619092151023733e-06, 'wd': 1.7238184302047466e-05, 'wc': 4.309546075511867e-06, 'wy': 3.447636860409493e-05, 'wi': 1.29286382265356e-05, 'we': 2.154773037755933e-05, 'wl': 0.00014652456656740346, 'wn': 0.0004611214300797697, 'wa': 8.619092151023733e-06, 'wh': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'wm': 4.309546075511867e-06}
+('matchinglikelydict=', {'wb': 4.309546075511867e-06, 'ws': 3.87859146796068e-05, 'wo': 8.619092151023733e-06, 'wk': 2.154773037755933e-05, 'wt': 2.154773037755933e-05, 'wp': 8.619092151023733e-06, 'wd': 1.7238184302047466e-05, 'wc': 4.309546075511867e-06, 'wy': 3.447636860409493e-05, 'wi': 1.29286382265356e-05, 'we': 2.154773037755933e-05, 'wl': 0.00014652456656740346, 'wn': 0.0004611214300797697, 'wa': 8.619092151023733e-06, 'wh': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'wm': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.0004611214300797697, '; maxlikelyret = ', 'wn')
+{'wb': 4.309546075511867e-06, 'ws': 3.87859146796068e-05, 'wo': 8.619092151023733e-06, 'wk': 2.154773037755933e-05, 'wt': 2.154773037755933e-05, 'wp': 8.619092151023733e-06, 'wd': 1.7238184302047466e-05, 'wc': 4.309546075511867e-06, 'wy': 3.447636860409493e-05, 'wi': 1.29286382265356e-05, 'we': 2.154773037755933e-05, 'wl': 0.00014652456656740346, 'wn': 0.0004611214300797697, 'wa': 8.619092151023733e-06, 'wh': 4.309546075511867e-06, 'wr': 4.309546075511867e-06, 'wm': 4.309546075511867e-06}
+('comp=', 'w_', '; maxlikely=', 'wn')
+maximumlikelihoodword - PyEnchant : w
+maximumlikelihoodword - HMM : wn
+('t_rs', ['tars', 'tors', 'tasers'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('x=', 'tasers', '; comp=', 't_rs')
+('x[xptr]=', 't', '; comp[compptr]=', '_')
+('x[xptr]=', 'a', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('x[xptr]=', 'e', '; comp[compptr]=', '_')
+('x[xptr]=', 'r', '; comp[compptr]=', '_')
+('x[xptr]=', 's', '; comp[compptr]=', '_')
+('comp=', 't_rs', '; maxlikely=', 'tars')
+('compsubstrings: ', ['t', 'rs'])
+compwordregex: ^t[a-zA-Z]rs$
+likelydict for  t_rs : {'tars': 4.309546075511867e-06, 'ters': 3.447636860409493e-05}
+('matchinglikelydict=', {'tars': 4.309546075511867e-06, 'ters': 3.447636860409493e-05})
+('maxlikelyretprob=', 3.447636860409493e-05, '; maxlikelyret = ', 'ters')
+{'tars': 4.309546075511867e-06, 'ters': 3.447636860409493e-05}
+('comp=', 't_rs', '; maxlikely=', 'ters')
+maximumlikelihoodword - PyEnchant : tars
+maximumlikelihoodword - HMM : ters
+('_c__n', [])
+('comp=', '_c__n', '; maxlikely=', '')
+('compsubstrings: ', ['', 'c', '', 'n'])
+compwordregex: ^[a-zA-Z]c[a-zA-Z][a-zA-Z]n$
+likelydict for  _c__n : {'actin': 4.309546075511867e-06, 'rchin': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'ectin': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'eckon': 4.309546075511867e-06, 'icorn': 8.619092151023733e-06, 'ccoon': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'acorn': 4.309546075511867e-06, 'ocsin': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'scion': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocain': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ycoon': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ncern': 8.619092151023733e-06, 'icken': 3.87859146796068e-05, 'rcorn': 4.309546075511867e-06, 'icron': 8.619092151023733e-06, 'ician': 6.033364505716613e-05, 'acoon': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'icean': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ichen': 4.309546075511867e-06}
+('matchinglikelydict=', {'actin': 4.309546075511867e-06, 'rchin': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'ectin': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'eckon': 4.309546075511867e-06, 'icorn': 8.619092151023733e-06, 'ccoon': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'acorn': 4.309546075511867e-06, 'ocsin': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'scion': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocain': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ycoon': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ncern': 8.619092151023733e-06, 'icken': 3.87859146796068e-05, 'rcorn': 4.309546075511867e-06, 'icron': 8.619092151023733e-06, 'ician': 6.033364505716613e-05, 'acoon': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'icean': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ichen': 4.309546075511867e-06})
+('maxlikelyretprob=', 6.033364505716613e-05, '; maxlikelyret = ', 'ician')
+{'actin': 4.309546075511867e-06, 'rchin': 4.309546075511867e-06, 'icion': 4.309546075511867e-06, 'lcyon': 4.309546075511867e-06, 'acean': 8.619092151023733e-06, 'ectin': 4.309546075511867e-06, 'tchen': 1.29286382265356e-05, 'eckon': 4.309546075511867e-06, 'icorn': 8.619092151023733e-06, 'ccoon': 4.309546075511867e-06, 'acken': 1.29286382265356e-05, 'acorn': 4.309546075511867e-06, 'ocsin': 4.309546075511867e-06, 'scorn': 4.309546075511867e-06, 'scion': 4.309546075511867e-06, 'ncien': 4.309546075511867e-06, 'ocain': 4.309546075511867e-06, 'ocean': 4.309546075511867e-06, 'ycoon': 4.309546075511867e-06, 'ucian': 4.309546075511867e-06, 'pcorn': 4.309546075511867e-06, 'scern': 4.309546075511867e-06, 'acron': 4.309546075511867e-06, 'ocoon': 4.309546075511867e-06, 'ncern': 8.619092151023733e-06, 'icken': 3.87859146796068e-05, 'rcorn': 4.309546075511867e-06, 'icron': 8.619092151023733e-06, 'ician': 6.033364505716613e-05, 'acoon': 4.309546075511867e-06, 'tcorn': 4.309546075511867e-06, 'uchin': 4.309546075511867e-06, 'icean': 4.309546075511867e-06, 'rcian': 4.309546075511867e-06, 'ecian': 8.619092151023733e-06, 'ichen': 4.309546075511867e-06}
+('comp=', '_c__n', '; maxlikely=', 'ician')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : ician
+('m_lk', ['milk'])
+==============================================
+[]
+('comp=', 'm_lk', '; maxlikely=', 'milk')
+('compsubstrings: ', ['m', 'lk'])
+compwordregex: ^m[a-zA-Z]lk$
+likelydict for  m_lk : {'milk': 5.17145529061424e-05}
+('matchinglikelydict=', {'milk': 5.17145529061424e-05})
+('maxlikelyretprob=', 5.17145529061424e-05, '; maxlikelyret = ', 'milk')
+{'milk': 5.17145529061424e-05}
+('comp=', 'm_lk', '; maxlikely=', 'milk')
+maximumlikelihoodword - PyEnchant : milk
+maximumlikelihoodword - HMM : milk
+('S_', ['S', 'Se', 'Si', 'Sn', 'Sr', 'St', 'Sc', 'Sm', 'Sp', 'Sb', 'SE', 'SS', 'SA', 'ST', 'SO'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['n']
+==============================================
+['r']
+==============================================
+['t']
+==============================================
+['c']
+==============================================
+['m']
+==============================================
+['p']
+==============================================
+['b']
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['T']
+==============================================
+[]
+('comp=', 'S_', '; maxlikely=', 'S')
+('compsubstrings: ', ['S', ''])
+compwordregex: ^S[a-zA-Z]$
+likelydict for  S_ : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'S_', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : S
+maximumlikelihoodword - HMM : 
+('sh_', ['sh', 'she', 'shh', 'shy'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+['y']
+('comp=', 'sh_', '; maxlikely=', 'sh')
+('compsubstrings: ', ['sh', ''])
+compwordregex: ^sh[a-zA-Z]$
+likelydict for  sh_ : {'shi': 8.619092151023733e-06, 'she': 4.309546075511867e-06, 'sha': 8.619092151023733e-06, 'shy': 5.6024098981654264e-05}
+('matchinglikelydict=', {'shi': 8.619092151023733e-06, 'she': 4.309546075511867e-06, 'sha': 8.619092151023733e-06, 'shy': 5.6024098981654264e-05})
+('maxlikelyretprob=', 5.6024098981654264e-05, '; maxlikelyret = ', 'shy')
+{'shi': 8.619092151023733e-06, 'she': 4.309546075511867e-06, 'sha': 8.619092151023733e-06, 'shy': 5.6024098981654264e-05}
+('comp=', 'sh_', '; maxlikely=', 'shy')
+maximumlikelihoodword - PyEnchant : sh
+maximumlikelihoodword - HMM : shy
+('s_r', ['sir', 'Sr'])
+==============================================
+[]
+==============================================
+['S']
+('comp=', 's_r', '; maxlikely=', 'sir')
+('compsubstrings: ', ['s', 'r'])
+compwordregex: ^s[a-zA-Z]r$
+likelydict for  s_r : {'sor': 7.75718293592136e-05, 'ser': 0.0001551436587184272, 'sir': 4.309546075511867e-06, 'ssr': 4.309546075511867e-06, 'sar': 3.447636860409493e-05}
+('matchinglikelydict=', {'sor': 7.75718293592136e-05, 'ser': 0.0001551436587184272, 'sir': 4.309546075511867e-06, 'ssr': 4.309546075511867e-06, 'sar': 3.447636860409493e-05})
+('maxlikelyretprob=', 0.0001551436587184272, '; maxlikelyret = ', 'ser')
+{'sor': 7.75718293592136e-05, 'ser': 0.0001551436587184272, 'sir': 4.309546075511867e-06, 'ssr': 4.309546075511867e-06, 'sar': 3.447636860409493e-05}
+('comp=', 's_r', '; maxlikely=', 'ser')
+maximumlikelihoodword - PyEnchant : sir
+maximumlikelihoodword - HMM : ser
+('p_nt', ['pent', 'pint', 'pant', 'punt'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('comp=', 'p_nt', '; maxlikely=', 'pent')
+('compsubstrings: ', ['p', 'nt'])
+compwordregex: ^p[a-zA-Z]nt$
+likelydict for  p_nt : {'pant': 2.154773037755933e-05, 'pint': 8.619092151023733e-06, 'pent': 1.29286382265356e-05}
+('matchinglikelydict=', {'pant': 2.154773037755933e-05, 'pint': 8.619092151023733e-06, 'pent': 1.29286382265356e-05})
+('maxlikelyretprob=', 2.154773037755933e-05, '; maxlikelyret = ', 'pant')
+{'pant': 2.154773037755933e-05, 'pint': 8.619092151023733e-06, 'pent': 1.29286382265356e-05}
+('comp=', 'p_nt', '; maxlikely=', 'pant')
+maximumlikelihoodword - PyEnchant : pent
+maximumlikelihoodword - HMM : pant
+('g_d', ['gad', 'god', 'Gd'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+['G']
+('comp=', 'g_d', '; maxlikely=', 'gad')
+('compsubstrings: ', ['g', 'd'])
+compwordregex: ^g[a-zA-Z]d$
+likelydict for  g_d : {'gad': 4.309546075511867e-06, 'ged': 0.00012497683618984412, 'god': 8.619092151023733e-06, 'gid': 1.29286382265356e-05}
+('matchinglikelydict=', {'gad': 4.309546075511867e-06, 'ged': 0.00012497683618984412, 'god': 8.619092151023733e-06, 'gid': 1.29286382265356e-05})
+('maxlikelyretprob=', 0.00012497683618984412, '; maxlikelyret = ', 'ged')
+{'gad': 4.309546075511867e-06, 'ged': 0.00012497683618984412, 'god': 8.619092151023733e-06, 'gid': 1.29286382265356e-05}
+('comp=', 'g_d', '; maxlikely=', 'ged')
+maximumlikelihoodword - PyEnchant : gad
+maximumlikelihoodword - HMM : ged
+('f_rm', ['firm', 'farm', 'form'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('comp=', 'f_rm', '; maxlikely=', 'firm')
+('compsubstrings: ', ['f', 'rm'])
+compwordregex: ^f[a-zA-Z]rm$
+likelydict for  f_rm : {'firm': 1.7238184302047466e-05, 'farm': 8.619092151023733e-06, 'form': 9.481001366126106e-05}
+('matchinglikelydict=', {'firm': 1.7238184302047466e-05, 'farm': 8.619092151023733e-06, 'form': 9.481001366126106e-05})
+('maxlikelyretprob=', 9.481001366126106e-05, '; maxlikelyret = ', 'form')
+{'firm': 1.7238184302047466e-05, 'farm': 8.619092151023733e-06, 'form': 9.481001366126106e-05}
+('comp=', 'f_rm', '; maxlikely=', 'form')
+maximumlikelihoodword - PyEnchant : firm
+maximumlikelihoodword - HMM : form
+('_ng', ['Eng', 'gang'])
+==============================================
+[]
+==============================================
+[]
+('x=', 'gang', '; comp=', '_ng')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('x[xptr]=', 'a', '; comp[compptr]=', '_')
+('x[xptr]=', 'n', '; comp[compptr]=', '_')
+('x[xptr]=', 'g', '; comp[compptr]=', '_')
+('comp=', '_ng', '; maxlikely=', 'Eng')
+('compsubstrings: ', ['', 'ng'])
+compwordregex: ^[a-zA-Z]ng$
+likelydict for  _ng : {'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289}
+('matchinglikelydict=', {'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289})
+('maxlikelyretprob=', 0.0039906396659239885, '; maxlikelyret = ', 'ing')
+{'ung': 0.00013359592834086785, 'ing': 0.0039906396659239885, 'eng': 4.309546075511867e-06, 'ang': 9.481001366126106e-05, 'ong': 0.0002284059420021289}
+('comp=', '_ng', '; maxlikely=', 'ing')
+maximumlikelihoodword - PyEnchant : Eng
+maximumlikelihoodword - HMM : ing
+('c__ch', [])
+('comp=', 'c__ch', '; maxlikely=', '')
+('compsubstrings: ', ['c', '', 'ch'])
+compwordregex: ^c[a-zA-Z][a-zA-Z]ch$
+likelydict for  c__ch : {'cinch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'conch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06, 'couch': 4.309546075511867e-06, 'corch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06}
+('matchinglikelydict=', {'cinch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'conch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06, 'couch': 4.309546075511867e-06, 'corch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06})
+('maxlikelyretprob=', 4.309546075511866e-05, '; maxlikelyret = ', 'cotch')
+{'cinch': 4.309546075511867e-06, 'coach': 1.29286382265356e-05, 'chach': 4.309546075511867e-06, 'cotch': 4.309546075511866e-05, 'conch': 4.309546075511867e-06, 'czech': 4.309546075511867e-06, 'couch': 4.309546075511867e-06, 'corch': 4.309546075511867e-06, 'catch': 8.619092151023733e-06}
+('comp=', 'c__ch', '; maxlikely=', 'cotch')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : cotch
+('s__d', [])
+('comp=', 's__d', '; maxlikely=', '')
+('compsubstrings: ', ['s', '', 'd'])
+compwordregex: ^s[a-zA-Z][a-zA-Z]d$
+likelydict for  s__d : {'sedd': 4.309546075511867e-06, 'surd': 8.619092151023733e-06, 'ssed': 7.75718293592136e-05, 'seed': 3.0166822528583065e-05, 'sard': 8.619092151023733e-06, 'spid': 4.309546075511867e-06, 'send': 8.619092151023733e-06, 'skid': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'scid': 4.309546075511867e-06, 'sled': 8.619092151023733e-06, 'sold': 1.7238184302047466e-05, 'shed': 0.000129286382265356, 'spud': 4.309546075511867e-06, 'sand': 1.7238184302047466e-05, 'shad': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sped': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'scud': 4.309546075511867e-06}
+('matchinglikelydict=', {'sedd': 4.309546075511867e-06, 'surd': 8.619092151023733e-06, 'ssed': 7.75718293592136e-05, 'seed': 3.0166822528583065e-05, 'sard': 8.619092151023733e-06, 'spid': 4.309546075511867e-06, 'send': 8.619092151023733e-06, 'skid': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'scid': 4.309546075511867e-06, 'sled': 8.619092151023733e-06, 'sold': 1.7238184302047466e-05, 'shed': 0.000129286382265356, 'spud': 4.309546075511867e-06, 'sand': 1.7238184302047466e-05, 'shad': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sped': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'scud': 4.309546075511867e-06})
+('maxlikelyretprob=', 0.000129286382265356, '; maxlikelyret = ', 'shed')
+{'sedd': 4.309546075511867e-06, 'surd': 8.619092151023733e-06, 'ssed': 7.75718293592136e-05, 'seed': 3.0166822528583065e-05, 'sard': 8.619092151023733e-06, 'spid': 4.309546075511867e-06, 'send': 8.619092151023733e-06, 'skid': 8.619092151023733e-06, 'said': 8.619092151023733e-06, 'seud': 4.309546075511867e-06, 'soid': 8.619092151023733e-06, 'scid': 4.309546075511867e-06, 'sled': 8.619092151023733e-06, 'sold': 1.7238184302047466e-05, 'shed': 0.000129286382265356, 'spud': 4.309546075511867e-06, 'sand': 1.7238184302047466e-05, 'shad': 4.309546075511867e-06, 'shod': 1.7238184302047466e-05, 'stud': 4.309546075511867e-06, 'sped': 4.309546075511867e-06, 'sted': 6.895273720818987e-05, 'scud': 4.309546075511867e-06}
+('comp=', 's__d', '; maxlikely=', 'shed')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : shed
+('L_k', ['Look'])
+==============================================
+[]
+('x=', 'Look', '; comp=', 'L_k')
+('x[xptr]=', 'L', '; comp[compptr]=', '_')
+('x[xptr]=', 'o', '; comp[compptr]=', '_')
+('x[xptr]=', 'o', '; comp[compptr]=', '_')
+('x[xptr]=', 'k', '; comp[compptr]=', '_')
+('comp=', 'L_k', '; maxlikely=', '')
+('compsubstrings: ', ['L', 'k'])
+compwordregex: ^L[a-zA-Z]k$
+likelydict for  L_k : {}
+('matchinglikelydict=', {})
+('maxlikelyretprob=', -1.0, '; maxlikelyret = ', '')
+{}
+('comp=', 'L_k', '; maxlikely=', '')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : 
+('sh', ['ah', 's', 'h', 'she', 'ssh', 'ash', 'sch', 'shh', 'shy', 'eh', 'st', 'so', 'oh', 'ch', 'uh'])
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+==============================================
+[]
+('x=', 'she', '; comp=', 'sh')
+('x[xptr]=', 's', '; comp[compptr]=', 'h')
+==============================================
+[]
+('x=', 'ssh', '; comp=', 'sh')
+('x[xptr]=', 's', '; comp[compptr]=', 'h')
+('x[xptr]=', 's', '; comp[compptr]=', 'h')
+==============================================
+[]
+('x=', 'ash', '; comp=', 'sh')
+('x[xptr]=', 'a', '; comp[compptr]=', 's')
+('x[xptr]=', 's', '; comp[compptr]=', 'h')
+==============================================
+['c']
+==============================================
+[]
+('x=', 'shh', '; comp=', 'sh')
+('x[xptr]=', 's', '; comp[compptr]=', 'h')
+==============================================
+['y']
+==============================================
+[]
+==============================================
+['t']
+==============================================
+[]
+==============================================
+[]
+==============================================
+['c']
+==============================================
+[]
+('comp=', 'sh', '; maxlikely=', 'ah')
+('compsubstrings: ', ['sh'])
+compwordregex: ^sh$
+likelydict for  sh : {'sh': 0.0012713160922760006}
+('matchinglikelydict=', {'sh': 0.0012713160922760006})
+('maxlikelyretprob=', 0.0012713160922760006, '; maxlikelyret = ', 'sh')
+{'sh': 0.0012713160922760006}
+('comp=', 'sh', '; maxlikely=', 'sh')
+maximumlikelihoodword - PyEnchant : ah
+maximumlikelihoodword - HMM : sh
+('m_n_.', [])
+('comp=', 'm_n_.', '; maxlikely=', '')
+('compsubstrings: ', ['m', 'n', '.'])
+compwordregex: ^m[a-zA-Z]n[a-zA-Z].$
+likelydict for  m_n_. : {'manna': 4.309546075511867e-06, 'manly': 2.58572764530712e-05, 'mine1': 4.309546075511867e-06, 'minid': 4.309546075511867e-06, 'manté': 4.309546075511867e-06, 'mune2': 4.309546075511867e-06, 'manic': 1.29286382265356e-05, 'monym': 4.309546075511867e-06, 'mini-': 8.619092151023733e-06, 'mando': 4.309546075511867e-06, 'manky': 4.309546075511867e-06, 'mange': 8.619092151023733e-06, 'mint2': 4.309546075511867e-06, 'manse': 4.309546075511867e-06, 'menon': 8.619092151023733e-06, 'miner': 4.309546075511867e-06, 'minor': 4.309546075511867e-06, 'minim': 4.309546075511867e-06, 'mends': 4.309546075511867e-06, 'mence': 8.619092151023733e-06, 'ments': 8.619092151023733e-06, 'manry': 4.309546075511867e-06, 'money': 2.154773037755933e-05, 'mince': 8.619092151023733e-06, 'mingy': 4.309546075511867e-06, 'mense': 4.309546075511867e-06, 'mened': 4.309546075511867e-06, 'mango': 4.309546075511867e-06, 'manac': 4.309546075511867e-06, 'munch': 4.309546075511867e-06, 'mine2': 4.309546075511867e-06, 'minus': 1.29286382265356e-05, 'monic': 1.29286382265356e-05, 'minee': 4.309546075511867e-06, 'mante': 4.309546075511867e-06, 'menal': 4.309546075511867e-06, 'monde': 4.309546075511867e-06, 'minum': 4.309546075511867e-06, 'monly': 4.309546075511867e-06, 'manor': 4.309546075511867e-06, 'mento': 1.29286382265356e-05, 'moner': 8.619092151023733e-06, 'monia': 8.619092151023733e-06, 'mangy': 4.309546075511867e-06, 'ment.': 4.309546075511867e-06, 'menta': 4.309546075511867e-06, 'mono-': 4.309546075511867e-06, 'mune1': 4.309546075511867e-06, 'manay': 4.309546075511867e-06, 'menco': 4.309546075511867e-06, 'mingo': 4.309546075511867e-06, 'mano-': 8.619092151023733e-06, 'month': 1.29286382265356e-05, 'mance': 8.619092151023733e-06, 'mania': 3.447636860409493e-05, 'minal': 3.447636860409493e-05, 'monad': 4.309546075511867e-06, 'munal': 4.309546075511867e-06, 'mint1': 4.309546075511867e-06, 'minar': 4.309546075511867e-06, 'mined': 8.619092151023733e-06, 'mancy': 8.619092151023733e-06}
+('matchinglikelydict=', {'manna': 4.309546075511867e-06, 'manly': 2.58572764530712e-05, 'mine1': 4.309546075511867e-06, 'minid': 4.309546075511867e-06, 'manté': 4.309546075511867e-06, 'mune2': 4.309546075511867e-06, 'manic': 1.29286382265356e-05, 'monym': 4.309546075511867e-06, 'mini-': 8.619092151023733e-06, 'mando': 4.309546075511867e-06, 'manky': 4.309546075511867e-06, 'mange': 8.619092151023733e-06, 'mint2': 4.309546075511867e-06, 'manse': 4.309546075511867e-06, 'menon': 8.619092151023733e-06, 'miner': 4.309546075511867e-06, 'minor': 4.309546075511867e-06, 'minim': 4.309546075511867e-06, 'mends': 4.309546075511867e-06, 'mence': 8.619092151023733e-06, 'ments': 8.619092151023733e-06, 'manry': 4.309546075511867e-06, 'money': 2.154773037755933e-05, 'mince': 8.619092151023733e-06, 'mingy': 4.309546075511867e-06, 'mense': 4.309546075511867e-06, 'mened': 4.309546075511867e-06, 'mango': 4.309546075511867e-06, 'manac': 4.309546075511867e-06, 'munch': 4.309546075511867e-06, 'mine2': 4.309546075511867e-06, 'minus': 1.29286382265356e-05, 'monic': 1.29286382265356e-05, 'minee': 4.309546075511867e-06, 'mante': 4.309546075511867e-06, 'menal': 4.309546075511867e-06, 'monde': 4.309546075511867e-06, 'minum': 4.309546075511867e-06, 'monly': 4.309546075511867e-06, 'manor': 4.309546075511867e-06, 'mento': 1.29286382265356e-05, 'moner': 8.619092151023733e-06, 'monia': 8.619092151023733e-06, 'mangy': 4.309546075511867e-06, 'ment.': 4.309546075511867e-06, 'menta': 4.309546075511867e-06, 'mono-': 4.309546075511867e-06, 'mune1': 4.309546075511867e-06, 'manay': 4.309546075511867e-06, 'menco': 4.309546075511867e-06, 'mingo': 4.309546075511867e-06, 'mano-': 8.619092151023733e-06, 'month': 1.29286382265356e-05, 'mance': 8.619092151023733e-06, 'mania': 3.447636860409493e-05, 'minal': 3.447636860409493e-05, 'monad': 4.309546075511867e-06, 'munal': 4.309546075511867e-06, 'mint1': 4.309546075511867e-06, 'minar': 4.309546075511867e-06, 'mined': 8.619092151023733e-06, 'mancy': 8.619092151023733e-06})
+('maxlikelyretprob=', 3.447636860409493e-05, '; maxlikelyret = ', 'mania')
+{'manna': 4.309546075511867e-06, 'manly': 2.58572764530712e-05, 'mine1': 4.309546075511867e-06, 'minid': 4.309546075511867e-06, 'manté': 4.309546075511867e-06, 'mune2': 4.309546075511867e-06, 'manic': 1.29286382265356e-05, 'monym': 4.309546075511867e-06, 'mini-': 8.619092151023733e-06, 'mando': 4.309546075511867e-06, 'manky': 4.309546075511867e-06, 'mange': 8.619092151023733e-06, 'mint2': 4.309546075511867e-06, 'manse': 4.309546075511867e-06, 'menon': 8.619092151023733e-06, 'miner': 4.309546075511867e-06, 'minor': 4.309546075511867e-06, 'minim': 4.309546075511867e-06, 'mends': 4.309546075511867e-06, 'mence': 8.619092151023733e-06, 'ments': 8.619092151023733e-06, 'manry': 4.309546075511867e-06, 'money': 2.154773037755933e-05, 'mince': 8.619092151023733e-06, 'mingy': 4.309546075511867e-06, 'mense': 4.309546075511867e-06, 'mened': 4.309546075511867e-06, 'mango': 4.309546075511867e-06, 'manac': 4.309546075511867e-06, 'munch': 4.309546075511867e-06, 'mine2': 4.309546075511867e-06, 'minus': 1.29286382265356e-05, 'monic': 1.29286382265356e-05, 'minee': 4.309546075511867e-06, 'mante': 4.309546075511867e-06, 'menal': 4.309546075511867e-06, 'monde': 4.309546075511867e-06, 'minum': 4.309546075511867e-06, 'monly': 4.309546075511867e-06, 'manor': 4.309546075511867e-06, 'mento': 1.29286382265356e-05, 'moner': 8.619092151023733e-06, 'monia': 8.619092151023733e-06, 'mangy': 4.309546075511867e-06, 'ment.': 4.309546075511867e-06, 'menta': 4.309546075511867e-06, 'mono-': 4.309546075511867e-06, 'mune1': 4.309546075511867e-06, 'manay': 4.309546075511867e-06, 'menco': 4.309546075511867e-06, 'mingo': 4.309546075511867e-06, 'mano-': 8.619092151023733e-06, 'month': 1.29286382265356e-05, 'mance': 8.619092151023733e-06, 'mania': 3.447636860409493e-05, 'minal': 3.447636860409493e-05, 'monad': 4.309546075511867e-06, 'munal': 4.309546075511867e-06, 'mint1': 4.309546075511867e-06, 'minar': 4.309546075511867e-06, 'mined': 8.619092151023733e-06, 'mancy': 8.619092151023733e-06}
+('comp=', 'm_n_.', '; maxlikely=', 'mania')
+maximumlikelihoodword - PyEnchant : 
+maximumlikelihoodword - HMM : mania
