@@ -15796,3 +15796,25 @@ References:
 	- Multiparty interactive quantum prover finds all non-trivial zeros of RZF
 	- classical verifier checks real part of all non-trivial zeroes for Re(z)=0.5 and finds a counter-example for disproof or a lack of it for proof of Riemann Hypothesis. 
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+750. (THEORY and FEATURE) Text Compression, Compressed Sensing, Syllable boundaries decompression implementation - Python 3.7.5 upgrade and refactoring - 28 February 2020, 29 February 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.TextCompression.py vowelless text compression-decompression implementation has been upgraded to Python 3.7.5 by autopep8 and 2to3 utilities
+2.Syllable boundaries text compression function from CompressedSensing.py has been imported to optionally choose between syllable boundary compression of text and earlier vowelless compression (which strips vowels across the board) by a boolean flag syllable_boundary
+3.Earlier commented code for PyEnchant spelling suggestions has been uncommented to choose between PyEnchant maximum likelihood (prob() function) and Hidden Markov Model maximum likelihood (HiddenMarkovModel_MLE() function) estimators based on if suggestions is not-None and None respectively.
+4.Both PyEnchant and HMM computed maximum likelihood words are printed to logs.
+5.Logs at testlogs/TextCompression.log.28February2020 contain PyEnchant and Hidden Markov Model maximum likelihood estimations per decompressed string for both vowel compressed and syllable boundary compressed words
+6.decompressedtext.txt contains the newly introduced approximate syllable boundary decompressed text:
+
+ghts fer over  with lus tins    der ly2 on dead ster nal     ve tting  pro mer dial   placed be form byss paw er ful  ry mev ing  grant  ybody wn ters ician milk  shy ser pant ged form ing cotch shed  sh mania
+
+for exact text:
+Rama gets forever pleased with him who listens to or reads Ramayana daily. He is indeed the eternal Vishnu, the Lord of preservation. Rama is the primordial Lord, clearly placed before the eyes the powerful Lord removing the sins and the great-armed, who has abode on waters of the ocean of milk Sesha the serpent-god forming his couch is said to be Lakshmana.
+
+7. It is worth observing how the words "primordial", "removing","serpent" and "powerful" have been syllable decompressed - "pro mer dial", "ry mev ing", "ser pant", "paw er ful" - to homophones (phonetically equivalent but linguistically different)
+8.Advantage of syllable boundaries is their language and script independence, dependence on phonetics alone, fine-graining of words to syllables for better accuracy in phonetic decompression.
+9.Embedding a text on syllable vector space as opposed to traditional flat one-dimension thus blurs linguistic boundaries and useful for similar name clustering.
+
+References:
+-----------
+750.1 Phonetic Match Rating Algorithm - for similar name clustering in airlines - https://ia801704.us.archive.org/2/items/accessingindivid00moor/accessingindivid00moor.pdf
