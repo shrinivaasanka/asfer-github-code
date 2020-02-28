@@ -15796,8 +15796,10 @@ References:
 	- Multiparty interactive quantum prover finds all non-trivial zeros of RZF
 	- classical verifier checks real part of all non-trivial zeroes for Re(z)=0.5 and finds a counter-example for disproof or a lack of it for proof of Riemann Hypothesis. 
 
+[Intermediary sections 750-781 are scattered in other NeuronRain repositories - USBmd,VIRGO,KingCobra,GRAFIT,Krishna_iResearch_DoxygenDocs]
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
-750. (THEORY and FEATURE) Text Compression, Compressed Sensing, Syllable boundaries decompression implementation - Python 3.7.5 upgrade and refactoring - 28 February 2020, 29 February 2020
+782. (THEORY and FEATURE) Text Compression, Compressed Sensing, Syllable boundaries decompression implementation - Python 3.7.5 upgrade and refactoring - 28 February 2020, 29 February 2020
 ----------------------------------------------------------------------------------------------------------------------------------------------
 1.TextCompression.py vowelless text compression-decompression implementation has been upgraded to Python 3.7.5 by autopep8 and 2to3 utilities
 2.Syllable boundaries text compression function from CompressedSensing.py has been imported to optionally choose between syllable boundary compression of text and earlier vowelless compression (which strips vowels across the board) by a boolean flag syllable_boundary
@@ -15817,4 +15819,4 @@ Rama gets forever pleased with him who listens to or reads Ramayana daily. He is
 
 References:
 -----------
-750.1 Phonetic Match Rating Algorithm - for similar name clustering in airlines - https://ia801704.us.archive.org/2/items/accessingindivid00moor/accessingindivid00moor.pdf
+782.1 Phonetic Match Rating Algorithm - for similar name clustering in airlines - https://ia801704.us.archive.org/2/items/accessingindivid00moor/accessingindivid00moor.pdf
