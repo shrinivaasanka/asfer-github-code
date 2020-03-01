@@ -15820,3 +15820,17 @@ Rama gets forever pleased with him who listens to or reads Ramayana daily. He is
 References:
 -----------
 782.1 Phonetic Match Rating Algorithm - for similar name clustering in airlines - https://ia801704.us.archive.org/2/items/accessingindivid00moor/accessingindivid00moor.pdf
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+783. (THEORY) Phonetic Syllable Boundaries Compression and Approximate Decompression - error bounds and success amplification - 1 March 2020
+- related to all sections on Text Compression, Compressed Sensing and People Analytics - Similar name match
+---------------------------------------------------------------------------------------------------------------------------------------------
+Approximate Syllable Boundaries Decompression in earlier example can be phonetically matched for further error correction and accuracy. Example decompression of "powerful" to "paw er ful" demonstrates approximate phonetic match which requires lookup of per word audio dictionary to spell out a matching word (e.g Interactive Voice Response). By finding the best phonetic match of "paw er ful" in a syllable audio dictionary (which is a map of collated-syllable-audio-of-words to words), "paw er ful" is further decoded to "powerful" thus amplifying success. Phonetic match therefore involves an audio waveform distance function of two words different from string edit distance text similarity (e.g waveforms of "paw er ful" and "powerful" are in proximity). This audio-to-words dictionary is static containing as many words in language and requires initialization only once. Another prerequisite is a syllables-to-audio dictionary for lookup of every syllable in approximately decompressed word and splice their audio waveforms (e.g waveforms of syllables "paw","er","ful" are lookedup and collated to obtain "paw er ful") which is then lookedup in audio-to-words dictionary (e.g waveform for "paw"+"er"+"ful" is lookedup to retrieve "powerful").
+
+Number of vowels per english word (approximate) = length_of_the_word / 3 (because on the average every third letter of a word is a vowel)
+Number of vowels per english word syllable (approximate) = 1
+Number of syllables per english word = length_of_the_word / 3
+
+Probability of erroneous decompression per english word syllable = 4/5 = choice of wrong vowel in a,e,i,o,u
+Probability of wrong decompression of a word  = (0.8)^(l/3) (l = length_of_the_word)
+Probability of successful phonetic decompression increases therefore with increasing length of the word. 
