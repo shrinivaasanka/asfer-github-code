@@ -1,0 +1,252 @@
+#-------------------------------------------------------------------------------------------------------
+#NEURONRAIN ASFER - Software for Mining Large Datasets
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#--------------------------------------------------------------------------------------------------------
+#K.Srinivasan
+#NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
+#Personal website(research): https://sites.google.com/site/kuja27/
+#--------------------------------------------------------------------------------------------------------
+
+import sys
+import math
+import random
+from collections import defaultdict
+import hashlib
+from passlib.hash import sha256_crypt
+from threading import BoundedSemaphore
+import json
+import random
+import numpy as np
+from scipy.sparse.linalg import lsqr
+from scipy.sparse.linalg import lsmr
+from numpy.linalg import solve
+from sympy.combinatorics.partitions import Partition
+from sympy.functions.combinatorial.numbers import nT
+import subprocess
+import operator
+
+Voting_Machine1_dict=defaultdict(list)
+Voting_Machine2_dict=defaultdict(list)
+Voting_Machine3_dict=defaultdict(list)
+
+Voted=[]
+evm_histograms=[]
+maxvoters=1
+
+def setpartition_to_tilecover(histogram_partition,number_to_factorize):
+        from complement import toint
+	from sympy.solvers.diophantine import diop_general_sum_of_squares
+	from sympy.abc import a, b, c, d, e, f
+	squaretiles_cover=[]
+	for hp in histogram_partition:
+		tiles=diop_general_sum_of_squares(a**2 + b**2 + c**2 + d**2 - toint(hp))
+		print "square tiles for partition ",hp,":",tiles
+		for t in list(tiles)[0]:
+			squaretiles_cover.append((t,t*t))
+	print "Lagrange Four Square Tiles Cover reduction of Set Partition ",histogram_partition,":",squaretiles_cover
+	subprocess.call(["/home/ksrinivasan/spark-2.4.3-bin-hadoop2.7/bin/spark-submit", "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py" , number_to_factorize], shell=False)
+	factorsfile=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
+	factors=json.load(factorsfile)
+	number_to_factorize=0
+	factorslist=[]
+	for k,v in factors.iteritems():
+		number_to_factorize=k
+		factorslist=v
+	#c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
+	#d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
+	#solve AX=B:
+	#X = [c1 c2 ... cn] - unknowns (boolean include or exclude)
+	#A = [[x1 x2 ... xn]  - knowns (sides of the square tiles)
+	#     permutation_of[x1 x2 ... xn]]
+	#B = [p q] - factors
+	equationsA=[]
+	equationsB=[]
+	equation=[]
+	init_guess = []
+	for n in xrange(len(squaretiles_cover)):
+		init_guess.append(0.00000000001)
+	initial_guess = np.array(init_guess)
+	for sqtc in squaretiles_cover:
+		equation.append(sqtc[0])
+	equationsA.append(equation)
+	equation.reverse()
+	equationsA.append(equation)
+	print "factorslist:",factorslist
+	equationsB.append(factorslist[1])
+	equationsB.append(int(number_to_factorize)/factorslist[1])
+	a=np.array(equationsA)
+	b=np.array(equationsB)
+        #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+        x = lsmr(a,b,atol=0,btol=0,conlim=0,show=True,x0=initial_guess)
+	print "x=",x
+	#roundedx=map(round,x[0])
+	roundedx=[]
+	for t in x[0]:
+		if t > 0.5:
+			roundedx.append(1)
+		else:
+			roundedx.append(0)
+	cnt=0
+	side1=""
+	side2=""
+	for t in roundedx:
+		print "t=",t,"; cnt=",cnt
+		if t > 0:
+			side1 += str(squaretiles_cover[cnt][0]) + "+"
+		else:
+			side2 += str(squaretiles_cover[cnt][0]) + "+"
+		cnt+=1
+	print "Rectangle periphery - side1:",side1[:-1]
+	print "Rectangle periphery - side2:",side2[:-1]
+	return squaretiles_cover
+
+def tocluster(histogram,datasource):
+	cluster=[]
+	if datasource=="Text":
+		for tupl in histogram:
+			for x in tupl[1][0]:
+				cluster.append(tupl[0])
+	if datasource=="Dict":
+		print "histogram:",histogram
+		for k,v in histogram.iteritems():
+			for x in v:
+				cluster.append(k)
+	print "cluster:",cluster
+	return cluster
+
+def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for,Streaming_Analytics_Bertrand=False):
+        semaphorelock=BoundedSemaphore(value=maxvoters)
+        semaphorelock.acquire()
+        uniqueidf=open(unique_id)
+        publicuniqueidhex=""
+        publicuniqueid=uniqueidf.read()
+        if publicuniqueid not in Voted:
+            h=hashlib.new("ripemd160")
+            h.update(publicuniqueid)
+            publicuniqueidhex=h.hexdigest()
+            print "publicuniqueidhex:",publicuniqueidhex
+            Voting_Machine_dict[voted_for].insert(sha256_crypt.encrypt(publicuniqueidhex),random.randint(len(Voting_Machine_dict)-1))
+	    Voted.insert(publicuniqueid,random.randint(len(Voted)-1))
+            print "Voting_Machine_dict:",Voting_Machine_dict
+        else:
+            print "Voter Already Voted"
+        if Streaming_Analytics_Bertrand==True:
+            sortedEVM=sorted(Voting_Machine_dict.items(),key=operator.itemgetter(1),reverse=True) 
+            print "sortedEVM:",sortedEVM
+            if len(sortedEVM) > 1:
+                p=len(sortedEVM[0][1])
+                q=len(sortedEVM[1][1])
+                tempp=p
+                p=max(p,q)
+                q=min(tempp,q)
+                print "Probability of ",sortedEVM[0][0]," winning over nearest rival ",sortedEVM[1][0],":",abs(float(p-q)/float(p+q))
+        semaphorelock.release()
+
+def electronic_voting_analytics(Voting_Machine_dicts):
+        import Streaming_AbstractGenerator
+	from scipy.stats import wasserstein_distance
+	from sklearn.metrics.cluster import adjusted_rand_score
+	from sklearn.metrics import adjusted_mutual_info_score
+	#from cv2 import CalcEMD2
+	#from cv2 import compareHist
+
+	evmsf=open("testlogs/Streaming_SetPartitionAnalytics.EVMs.json","w")
+	evmid=0
+	for evm in Voting_Machine_dicts:
+		evm_histogram={}
+		for k,v in evm.iteritems():
+			#Bucket length is the counter
+			evm_histogram[k]=len(v)
+		#if len(evm_histogram) > 0:
+		evm_histograms.append(evm_histogram)
+		evmid += 1
+	json.dump(evm_histograms,evmsf)
+	evmsf.close()
+	evmstream=Streaming_AbstractGenerator.StreamAbsGen("DictionaryHistogramPartition","testlogs/Streaming_SetPartitionAnalytics.EVMs.json")
+	prev={}
+	for n1 in evmstream:
+		try:
+			if len(n1.values()) == len(prev.values()):
+				ari=adjusted_rand_score(n1.values(),prev.values())
+				print "Adjusted Rand Index between histograms ",n1.values()," and ",prev.values(),":",ari
+				ami=adjusted_mutual_info_score(n1.values(),prev.values())
+				print "Adjusted Mutual Information Index between histograms ",n1.values()," and ",prev.values(),":",ami
+			emd=0
+			if len(n1.values()) > 0 and len(prev.values()) > 0:
+				emd=wasserstein_distance(n1.values(),prev.values())
+			print "Earth Mover Distance between histograms ",n1.values()," and ",prev.values()," - Wasserstein :",emd
+			prev=n1
+		except Exception as e:
+			print "Exception - EMD error or Shape mismatch in sklearn computation of ARI and AMI:",e
+			continue
+						
+def adjusted_rand_index():
+        import Streaming_AbstractGenerator
+	from sklearn.metrics.cluster import adjusted_rand_score
+	from sklearn.metrics import adjusted_mutual_info_score
+	#The text file is updated by a stream of data
+	#inputf=Streaming_AbstractGenerator.StreamAbsGen("USBWWAN_stream","USBWWAN")
+	#inputf=Streaming_AbstractGenerator.StreamAbsGen("file","StreamingData.txt")
+	#inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
+	#inputf=Streaming_AbstractGenerator.StreamAbsGen("AsFer_Encoded_Strings","NeuronRain")
+	#inputf=Streaming_AbstractGenerator.StreamAbsGen("Socket_Streaming","localhost")
+	inputf1=Streaming_AbstractGenerator.StreamAbsGen("TextHistogramPartition",["/var/log/kern.log","/var/log/syslog","/var/log/ufw.log","/var/log/dmesg","/var/log/kern.log"])
+	histograms=[]
+	for p in inputf1:
+		histograms.append(p)
+	ari=adjusted_rand_score(tocluster(histograms[0],"Text")[:20000],tocluster(histograms[1],"Text")[:20000])
+	print "Adjusted Rand Index of first two histogram set partitions(truncated):",ari
+	prev=0
+	for n in range(1,len(histograms)):
+		truncatedlen=int(min(len(histograms[prev]),len(histograms[n]))*0.9)
+		ari=adjusted_rand_score(tocluster(histograms[prev],"Text")[:truncatedlen],tocluster(histograms[n],"Text")[:truncatedlen])
+		print "Adjusted Rand Index(truncated):",ari
+		ami=adjusted_mutual_info_score(tocluster(histograms[prev],"Text")[:truncatedlen],tocluster(histograms[n],"Text")[:truncatedlen])
+		print "Adjusted Mutual Info Index(truncated):",ami
+		prev=n
+	#################################################################
+	histograms=[]
+	inputf2=Streaming_AbstractGenerator.StreamAbsGen("DictionaryHistogramPartition","Streaming_SetPartitionAnalytics.txt")
+	for p in inputf2:
+		histograms.append(p)
+	prev=0
+	print "histograms:",histograms
+	for n in range(1,len(histograms)):
+		truncatedlen=int(min(len(histograms[prev]),len(histograms[n]))*0.9)
+		ari=adjusted_rand_score(tocluster(histograms[prev],"Dict")[:truncatedlen],tocluster(histograms[n],"Dict")[:truncatedlen])
+		print "Adjusted Rand Index (truncated):",ari
+		ami=adjusted_mutual_info_score(tocluster(histograms[prev],"Dict")[:truncatedlen],tocluster(histograms[n],"Dict")[:truncatedlen])
+		print "Adjusted Mutual Info Index (truncated):",ami
+		prev=n
+
+
+if __name__=="__main__":
+	#ari=adjusted_rand_index()
+	set1=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46]
+	number_of_partitions=nT(len(set1))
+        processes_partitions=Partition(set1)
+	randp=processes_partitions + random.randint(1,number_of_partitions)
+        print "Random Partition:",randp
+	histogram=map(len,randp)
+	setpartition_to_tilecover(histogram,str(sum(histogram)))
+	candidates=["NOTA","CandidateA","CandidateB"]
+	idcontexts=["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg","testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
+	voteridx = 0
+	for voter in xrange(10):
+		electronic_voting_machine(Voting_Machine1_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)
+		electronic_voting_machine(Voting_Machine2_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)	
+		electronic_voting_machine(Voting_Machine3_dict,idcontexts[voteridx%len(idcontexts)], \
+candidates[int(random.random()*100)%len(candidates)],Streaming_Analytics_Bertrand=True)
+		voteridx += 1
+	electronic_voting_analytics([Voting_Machine1_dict,Voting_Machine2_dict,Voting_Machine3_dict])

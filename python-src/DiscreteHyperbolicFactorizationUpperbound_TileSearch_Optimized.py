@@ -22,6 +22,8 @@ from pyspark.accumulators import AccumulatorParam
 import decimal
 import math
 #from . import DiscreteHyperbolicFactorizationUpperbound_Bitonic_Spark_Tiling
+import matplotlib.pylab as plt
+from matplotlib.backends.backend_pdf import PdfPages
 import threading
 import json
 import sys
@@ -32,7 +34,7 @@ from decimal import Decimal
 import numpy as np
 number_to_factorize = 0
 persisted_tiles = False
-
+HyperbolicRasterizationGraphicsEnabled = "True"
 
 factors_accum = None
 factors_of_n = []
@@ -105,6 +107,21 @@ def tilesearch_nonpersistent(y):
     #print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
     binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y)
 
+def hyperbolic_arc_rasterization(n):
+    fig = plt.figure(dpi=100)
+    for y in range(1,n):
+        xtile_start = int(Decimal(n)/Decimal(y))
+        xtile_end = int(Decimal(n)/Decimal(y+1))
+        xaxis = []
+        yaxis = []
+        for x in np.linspace(xtile_start, xtile_end, num=1000):
+            xaxis.append(xtile_start+x)
+        for n in np.linspace(xtile_start, xtile_end, num=1000):
+            yaxis.append(y)
+        ax = fig.add_subplot(111)
+        ax.plot(xaxis, yaxis, 'r-', rasterized=True, lw=5, alpha=0.6,
+                label='rasterized hyperbolic arc bow')
+    plt.show()
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr):
     global factors_accum
@@ -116,7 +133,18 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
         #print "factorcandidate = ",factorcandidate
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
             print("=================================================")
-            print(("Factor is = ", yl, "(at ", strftime(
+            print("xl + intervalmidpoint = ",xl + intervalmidpoint)
+            print("xl = ",xl)
+            print("yl = ",yl)
+            factorcriterion1=((xl + intervalmidpoint)*yl == number_to_factorize)
+            print("Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize = ",factorcriterion1)
+            factorcriterion2=(xl*yl == number_to_factorize)
+            print("Factor point verification: xl*yl == number_to_factorize = ",factorcriterion2)
+            if factorcriterion1 == True:
+                print(("Factors are: (", yl, ",", (xl+intervalmidpoint) , ") (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            if factorcriterion2 == True:
+                print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             print("=================================================")
             factors_accum.add(yl)
@@ -171,7 +199,7 @@ def hardy_ramanujan_ray_shooting_queries(n):
         tan_theta = float(n/math.pow(approximate_prime_factor, 2))
         print("####################################################################")
         print(("approximate ", m, "-th prime factor of ",
-              n, ":", approximate_prime_factor))
+               n, ":", approximate_prime_factor))
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
     print("=============================================================================================================")
@@ -202,9 +230,9 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
         tan_theta = float(n/math.pow(approximate_prime_factor, 2))
         print("####################################################################")
         print(("approximate ", m, "-th prime factor of ",
-              n, ":", approximate_prime_factor))
+               n, ":", approximate_prime_factor))
         print(("approximate prime factor log ratio - pf/log(pf) :",
-              approximate_prime_factor_log_ratio))
+               approximate_prime_factor_log_ratio))
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
         prev_approximate_prime_factor = approximate_prime_factor
@@ -240,7 +268,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
             break
         print("####################################################################")
         print(("approximate ", m, "-th prime factor of ",
-              n, ":", approximate_prime_factor))
+               n, ":", approximate_prime_factor))
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
@@ -271,7 +299,7 @@ def cramer_ray_shooting_queries(n):
             break
         print("####################################################################")
         print(("approximate ", m, "-th prime factor of ",
-              n, ":", approximate_prime_factor))
+               n, ":", approximate_prime_factor))
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
@@ -302,12 +330,12 @@ def zhang_ray_shooting_queries(n):
             break
         print("####################################################################")
         print(("approximate ", m, "-th prime factor of ",
-              n, ":", approximate_prime_factor))
+               n, ":", approximate_prime_factor))
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
 
-def SearchTiles_and_Factorize(n,k):
+def SearchTiles_and_Factorize(n, k):
     global globalmergedtiles
     global globalcoordinates
     global factors_accum
@@ -329,27 +357,28 @@ def SearchTiles_and_Factorize(n,k):
     else:
         factorsfile = open(
             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
-        #hardy_ramanujan_ray_shooting_queries(n)
-        #hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
-        #baker_harman_pintz_ray_shooting_queries(n)
-        #cramer_ray_shooting_queries(n)
-        #zhang_ray_shooting_queries(n)
+        # hardy_ramanujan_ray_shooting_queries(n)
+        # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+        # baker_harman_pintz_ray_shooting_queries(n)
+        # cramer_ray_shooting_queries(n)
+        # zhang_ray_shooting_queries(n)
         factors_accum = spcon.accumulator(
             factors_of_n, FactorsAccumulatorParam())
         # spcon.parallelize(spcon.range(1, n).collect()).foreach(
         #    tilesearch_nonpersistent)
         normal_order_n = (math.log(n, 2) ** k)
         tiles_start = 1
-        tiles_end = int(Decimal(n)/Decimal(normal_order_n))
-        for x in range(int(normal_order_n)):
-            #print("tiles_start:", tiles_start)
-            #print("tiles_end:", tiles_end)
-            tiles = range(tiles_start, tiles_end)
+        tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
+        for x in range(int(Decimal(normal_order_n) * Decimal(normal_order_n))):
+            print("tiles_start:", tiles_start)
+            print("tiles_end:", tiles_end)
+            tiles = list(range(tiles_start, tiles_end))
             #print(("len(tiles):", len(tiles)))
             spcon.parallelize(tiles).foreach(
                 tilesearch_nonpersistent)
             tiles_start = tiles_end
-            tiles_end += int(n/normal_order_n)
+            tiles_end += int(Decimal(n)/(Decimal(normal_order_n) * Decimal(normal_order_n)))
+        plt.show()
         print(("factors_accum.value = ", factors_accum.value))
         factors = []
         factordict = {}
@@ -365,6 +394,9 @@ if __name__ == "__main__":
     print(("Spark Python version:", sys.version))
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) are:"))
-    factors = SearchTiles_and_Factorize(number_to_factorize,100)
+    HyperbolicRasterizationGraphicsEnabled=sys.argv[3]
+    if HyperbolicRasterizationGraphicsEnabled=="True":
+        hyperbolic_arc_rasterization(number_to_factorize)
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]))
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) =", factors))
