@@ -15203,7 +15203,7 @@ Glut of any entity diminishes perceived importance and dearth increases it. Dema
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 728. (THEORY and FEATURE) Set Partition to Tile Cover Reduction by Computational Geometric Factorization - Least Squares Approximate Solution
-for the underdetermined linear equations, Exact Money Changing Problem(MCP) Solution, Quadratic Programs, Pell Equation, Shell Turing Machines(Category of Topological Spaces) - related to 577,624,651 - 19 November 2019, 20 November 2019,6 December 2019
+for the underdetermined linear equations, Exact Money Changing Problem(MCP) Solution, Quadratic Programs, Pell Equation, Shell Turing Machines(Category of Topological Spaces) - related to 577,624,651 - 19 November 2019, 20 November 2019,6 December 2019, 24 January 2020, 26 January 2020, 27 January 2020
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1.A random set is partitioned by SymPy set partition API and a partition of the set is chosen at random. Random set partition is mapped to a
 histogram by map(len,) and setpartition_to_tilecover() is invoked. New parameter for number to factorize has been added in setpartition_to_tilecover().
@@ -15230,6 +15230,18 @@ equates factors of N=(p,q) to Linear Sum of sides of lagrangian square tiles (1-
 	integer or set partition of N = pq = n1^2 + n2^2 + n3^2 + ... + nk^2 = x^2 - y^2 = for x=(p+q)/2 and y=(p-q/2)
 which in effect shatters or demolishes an one-dimensional set to a set of k 2-dimensional square tiles and equates the sum of squares to difference of two squares.
 10. Shell Turing Machines defined in this draft can be formalized by Category Theory: Category S has various topological spaces of arbitrary dimensions as objects and morphisms are Conduit Turing Machines amongst these object spaces which act as linear transformations between one space to the other. Lagrangian set partition to tile cover reduction is an instance of such a Category of Topological Spaces (TOP) - For objects S1 and S2 in S, set partition defined in an one dimensional space S1 is lifted to a 2 dimensional space of square tiles S2 by Lagrange Four Square Conduit Turing Machine Morphism between object spaces S1 and S2. Application of Shell Turing Machines to previous reduction is unusual (NeuronRain Documentation,FAQ and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/ mentions some references on TOP). Thus Shell Turing Machines (Category of Topological Spaces) perform a kind of kernel lifting - Lagrangian Tiling Conduit Turing Machines are the kernels
+11. Nomenclature "Shell Turing Machines" is thus a universal mathematical abstraction which connects vector space embedding of alphabets and states transitions of Turing Machine and transformation of truth values of logical statements between spaces in many fields of STEM:
+	11.1 Hilbert Space Quantum Computation Machines - States and Alphabets of Quantum Turing Machine are embedded in a Hilbert Space (Section 624)
+	11.2 Linear Machines of Category theory - [Eilenberg-Maclane] - Categories (Objects,Morphisms,Functors) are embedded in a vector space (Conceptual graph of NeuronRain theory drafts - http://neuronrain-documentation.readthedocs.io/en/latest/)
+	11.3 Kernel Lifting in Support Vector Machines - dataset in smaller dimensional space S1 is lifted to a higher dimensional space S2 by a kernel (e.g Mercer polynomial kernel - https://github.com/shrinivaasanka/Grafit/blob/master/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt) and decision hyperplane classifier is found in S2
+	11.4 Set Partition to Lagrange Tile Cover reduction - lifts an one dimensional set partition to a 2 dimensional square tile cover of a rectangle by Lagrange Four Square Theorem (sides of rectangle are found by Computational Geometric Factorization)
+	11.5 Word Embedding of datasets in Machine Learning
+	11.6 Reproducing Kernel Hilbert Space (RKHS) - functions (Turing machines) are embedded on a metric space and distance is defined between functions (Section 624).
+	11.7 Category of Topological Spaces - TOP - abstracts all the previous embeddings and lifting by defining topological spaces (e.g datasets embedded on vector space) as objects of category and morphisms amongst them. Morphisms between topological spaces are Conduit Turing Machines formalized by any of the previous computation models which lift data and truth values of logical statements between spaces - Linear Machines, RKHS, linear transformations, kernels, Lagranges four squares theorem, Word embedding. Examples:
+		11.7.1 TOP category T has two space objects S1 and S2. Conduit Turing Machine morphisms are defined between S1 and S2. Logical statement Biggest() which finds maximum of points in a toplogical space thus has two truth values in S1 and S2 - Biggest(S1) and Biggest(S2) - which might have to be teleported between spaces. 
+		11.7.2 Another Good software engineering example of such lifting is the Unix Shell Category where object shells are arbitrarily created and environment variables are privy to a shell object unless otherwise communicated explicitly by EXPORT which acts as a Conduit Turing Machine Morphism between object shells. Outermost shell is the Root and a tree hierarchy of recursively created subshells forms a nested category of shell objects - S1 and S2 are two shell objects in this Shell Category theoretically embedded in some topological space, and EXPORT morphism EXPORT: S1 <=> S2 is a Conduit Turing Machine which exports environment variables of S1 embedded in space X and S2 embedded in space Y bijectively between S1 and S2 except Outermost shell which is unidirectional (because nothing needs to be lifted out of outermost Shell but only to subshells). Cutting across operating systems, such a Shell mechanism and EXPORT morphism has been universally implemented not just limited to Unix - any computation in STEM (Science-Technology-Engineering-Mathematics) is on some OS which has shell TOP category implementation.
+		11.7.3 Shell Turing Machines Category of Topological Spaces can be formulated as a space filling problem - Category of hierarchically nested topological space shells are embedded in and cover the outermost n-dimensional Shell topological space (Outermost n-sphere) and EXPORT morphisms are defined amongst these shell spaces. For 3-dimensions, this is akin to filling an Outermost spherical bubble container shell by smaller nested spherical shell bubbles which is a 3-dimensional variant of Apollonian Gasket.
+	11.8 Turing Degree is the equivalence class of Turing machines solving sets of similar difficulty. Turing Jump A' of A is the set of Turing machines which halt having oracle access to A or set of problems harder than A. Previous Conduit Turing Machine morphisms in TOP abstraction define a Turing Jump between topological spaces of different Turing degree difficulties e.g Conduit Turing Machine Morphism might have an oracle access to a Turing machine defined in a domain topological space of lower Turing Degree lifting to a range topological space of higher Turing Degree. Every computation in STEM can be abstracted as Category of Topological Spaces and Turing Degree Hieararchy can be defined on them e.g Computational Physics problems in Relativity, Quantum mechanics and String theory involving theoretical abstractions for microcosm and macrocosm.
 
 References:
 -----------
@@ -15558,3 +15570,270 @@ Most of these algorithms achieve optimal O(log n) running time using n/log n pro
 (*) Vandermonde interpolation polynomial is guaranteed to be unique for set of points to be interpolated. This set of points could be strings sourced from multiple identification traits of a person which can be Rabin fingerprinted by a polynomial over GF(2) modulo an irreducible polynomial over GF(2). This set of fingerprinted data points are then interpolated by a Vandermonde unique polynomial to ID a voter.
 (*) Sports Analytics and Intrinsic Performance Rankings have been mentioned in GRAFIT course material as a BigData usecase (https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt) - e.g ATP,WTA,NBA,ICC. Academic Rankings (rankings of researchers and universities - USA today,Times Higher Education) could leverage from Sports Rankings e.g Number of experimentally verified papers of an author in relativity and quantum mechanics with no dependency on number of citations is a measure of intrinsic research quality
 (*) Evidence usecase for BKS conjecture: Everyone agrees on denomination of a currency bill or coin - $100 is universally accepted consensually as equal to $100 discounting devaluation and other economic phenomena. If this fact is formulated as an LTF or PTF - value(x) = x - could evidence the truth of BKS conjecture implying consensus is stabler than majority function.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+740. (THEORY and FEATURE) People Analytics - Drone Electronic Voting Machine - Python 3.7.5 upgrade and Paper ballot shuffle simulation, PRAM Breadth First and Depth First Search, Set Partition Analytics, Money Trail Economic EventNet Graph Random Walk, Expander Graphs, Cheeger's Constant, Random Closed Packing, Space Filling, Pseudorandomness Extractors and Generators, Birthday Paradox, Unique Identification, Ramsey coloring, Computational Chaos, Voting analytics - 7 January 2020,12 January 2020,13 January 2020 - related to 22,135,230,338,461,739
+-----------------------------------------------------------------------------------------------------------------------------------------------
+(*) Drone Electronic Voting Machine implementation in Streaming_SetPartitionAnalytics.py - electronic_voting_machine() - has been updated to simulate random shuffle of paper ballots in boxes to ensure disorder - votes appended to bucket per candidate are shuffled after each vote - every new vote is randomly inserted into obfuscated encrypted bucket of votes per candidate which simulates a shuffle (shuffle is essentially a permutation group Sn) while an exact shuffle has to enumerate the permutation group (O(n!)) and choose one element - every shuffle of a candidate bucket is also a reduction from space filling and random closed packing
+(*) Drone EVM implementation has been upgraded to Python 3.7.5 by autopep8 and 2to3 utilities and 2.7 version has been separately committed with eponymous suffix - random.randint() has been invoked to get an index to insert a new vote somewhere in the candidate bucket 
+(*) Traditional incremental counters coalesce votes of multiple voters into one integer which prohibits forensic examination of individual votes if there is a dispute. Votes per candidate bucket thus isolates each anonymous encrypted vote but subverts chronological ordering.
+(*) Serial number unique id(s) of paper currencies were envisaged earlier as non-digital one time passwords for authenticating a voter. Rationale for choice of currencies is the unpredictable pseudorandom flow of paper currency unique id(s) in economy which creates a huge EventNet Money Trail Graph (edges are labelled by flow of uniquely ID-ed currencies between buyers and sellers) which is non-digital and thus insulated from electronic sabotage. Money Trail EventNet Graph is a high entropy randomness source and could serve as a psueodrandomness generator and extractor e.g topological sort or random walk of a subgraph of money trail EventNet is a random concatenation of unique id(s)
+(*) If Money Trail EventNet Graph is an edge expander, it could be a gadget for Pseudorandom Number Generator. Edge expander graphs are defined with Cheeger's constant for minimum high edge boundary per vertex subset:
+	minimum(|boundary(S)|/|S|), 1 < |S| < n/2
+where boundary(S) of a subset S of vertices of G (V(G)) is:
+	boundary(S) = { (u,v) | u in S, v in V(G) \ S}
+Random walks on an expander graph are conventionally applied to Pseudorandom Generators e.g. Margulis [Mar88] and Lubotzky, Phillips and Sarnak [LPS88]
+(*) Locating an encrypted vote in a candidate bucket of votes (if bucket is a linked list) could be done in sublinear time by Parallel RAM Breadth First Search and Depth First Search of the linked list line graph - GRAFIT course material in  https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt mention usefulness of parallel RAM sublinear linked list search in the context of Survival Index Timeout OS Scheduler version of Process IDs Set Partition in OS Kernels
+(*) Limitations of unique identification are best explained by birthday paradox - GRAFIT course material in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/ComputerScienceMiscellaneous/ComputerScienceMiscellaneous_CourseNotes.txt have a Q and A on birthday paradox probability of collision of unique IDs in a population.
+(*) An expander graph simulation of Economic Network by Neuro Cryptocurrency in NeuronRain which is Boost UUID, Protocol Buffer, Perfect-Forward and Object Move based, theoretically could source pseudorandom bits.
+
+Paper ballots and Drone EVM - comparison and contrast:
+-----------------------------------------------------
+Previous concept implementation of Drone EVM in NeuronRain has separate buckets for candidates which are independently shuffled to simulate paper ballots whereas real world paper ballot votes are sealed and cast in single ballot box bucket without candidate delineation. Instead if Drone EVM is implemented such that all encrypted votes are in a single shuffled list (or) linked list bucket (which is how paper ballots work), reduction is necessary which shatters/classifies the shuffled list/linked list of votes to a set partition of buckets of per-candidate lists/linked lists of votes. Example: 
+	every node of the list/linked list of anonymous votes has the fields <candidate_id>:<encrypted_vote>. 
+Usually this reduction happens post-poll in paper ballot counts. This sort of exact pseudorandom shuffle simulation of paper ballot box of assorted votes democratizes further and is a non-trivial monochromatic balls-bins problem in Drone EVM - every anonymous vote is colored by candidate index - single list (or) linked list line graph of votes of previous format has to be set/graph-partitioned to candidate buckets of multiple lists/line graphs (or) a multichromatic set has to be partitioned to monochromatic candidate bucket subsets - an O(N) labelled classifier. Sequence of N votes for k candidates is thus Ramsey k-colored and order emerges inevitably by Van Der Waerden Theorem - there exist numbers N,k,r such that if shuffled sequence of N votes are colored by k candidates, there is a monchromatic arithmetic progression of length atleast r (in other words, r voters who had voted for same candidate are equally spaced out which presents an insight into voting pattern).
+
+Conflict between pseudorandomness and arithmetic progressions in Ramsey coloring of votes - Orderly Disorder:
+-------------------------------------------------------------------------------------------------------------
+Previous simulation of pseudorandom paper ballot shuffle in Drone EVM gives rise to a multichromatic sequence of votes colored by candidate indices. But yet monochromatic arithmetic progression order emerges from pseudorandom disorder irrespective of number of colors (candidates) and voting chronology which is a contradiction. This "orderly disorder" oxymoron paradox should apply universally to any pseudorandomly shuffled multichromatic set not just limited to shuffled voting sequences. This limitation implies a prerequisite for indistinguishability of pseudorandom generators (PRG) from true randomness - PRGs should create pseudorandomly shuffled multicolored sequences of Ramsey number R(N,k,r) of high N,k and low r - Sequence of N elements, k-colored having an arithmetic progression of length atleast r - which lessens the probability of emergence of arithmetic progression periodicities. On a related note, Period Three Theorem of Chaos theory (www.its.caltech.edu/~matilde/LiYorke.pdf) implies sequences of periodicity 3 can have larger periodicities.
+
+References:
+-----------
+740.1 Random Walks on Expander Graphs and Spectral Graph Theory - [Spielman] - http://www.cs.yale.edu/homes/spielman/561/2012/lect11-12.pdf - Section 11.5 - "...Our pseudo-random generator will use a random walk on an expander graph whose vertex set is {0, 1}^r. The expander graph will be d-regular, for some constant d. Let A be the adjacency matrix of the graph, and let its eigenvalues be d = µ1 > µ2 ≥ · · · ≥ µn. One property that we will require of the expander graph is that |µi|/d ≤ 1/10, (11.1) for all i. ... such graphs exist with d = 400. Degree 400 seems sort of big, but we will see that it is reasonable for our application...." - Degree 400 Money Trail EventNet could potentially be a high edge expander and random walks on it might be pseudorandom.
+740.2 A. Lubotzky, R. Phillips, and P. Sarnak. Ramanujan graphs. Combinatorica, 8(3):261–277, 1988.
+740.3 G. A. Margulis. Explicit group theoretical constructions of combinatorial schemes and their application to the design of expanders and concentrators. Problems of Information Transmission, 24(1):39–46, July 1988.
+740.4 Hardy-Ramanujan-Rademacher estimation of partition function,Bell numbers of set partitions - [Donald Knuth] - http://www.cs.utsa.edu/~wagner/knuth/fasc3b.pdf 
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+741. (THEORY and FEATURE) Computational Geometric NC-PRAM-BSP Factorization - Spark 2.4.3 + Python 3.7.5 benchmarks - 1213 and 1243 bits integers factorized, Hyperbolic Rasterization graphics example, Multidimensional hyperplanar point location, Integer Diophantines, Multiplicative partitions and sundry resolutions - related to all sections on factorization - 9 January 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+(*) New function hyperbolic_arc_rasterization() has been defined which sequentially rasterizes the hyperbolic arc and creates a graphic image
+of how hyperbola looks like post-rasterization. A related schematic diagram for rasterization has already been committed to GRAFIT course material (https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt) on Geometric search of a point on hyperplanes separating halfspaces by multidimensional Hyperplanar point location which widens the scope of factorization to arbitrary algebraic curves (e.g diophantines) for integer solutions, not limited to hyperbolae - example: uvwxyz=N is a multiplicative partition problem solvable by rasterizing on Z^6 hyperplane point location - (u,v,w,x,y,z)
+(*) Hyperbolic arc rasterized tile segments are plotted by matplotlib and example logs-images for a small integer are committed to testlogs/ - DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Rasterization.9January2020.png and DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.RasterizationGraphics.log.9January2020
+(*) matplotlib rasterization graphics is enabled by a boolean flag passed on by commandline sys.argv arguments
+(*) Depth of the non-uniform NC circuit which was hardcoded earlier has been parametrized as commandline argument
+(*) Normal order loop has been changed because of overflow errors for large exponents
+(*) Huge 1213 bits non-smooth hard integer of random digits 
+99999999999928918219821828128918928918281939787878773273872837129818280829189289178718738718732378278467475452652773628381712918298198298182918928198298192891892718278178261627167261726716721627162761762617271267617261762716726172671627167267162761726716271626715365365636635157612126716725162561526516256152613389132311132838292323233433434123212839289382832983291
+has been factorized by a depth 58 NC circuit (PRAM time O((logN)^58) and first few factors are printed as ordered pairs (requires division because of or clause and division has been cast to Decimal() because of overflow errors) in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.1213bits_and_1243bits.9January2020 from 51st second onwards:
+('factors of ', 99999999999928918219821828128918928918281939787878773273872837129818280829189289178718738718732378278467475452652773628381712918298198298182918928198298192891892718278178261627167261726716721627162761762617271267617261762716726172671627167267162761726716271626715365365636635157612126716725162561526516256152613389132311132838292323233433434123212839289382832983291, '(', 1212.5037546338863, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 19622815
+=================================================
+('Factors are: (', 3, ',', Decimal('3.333333333330963940660727604E+364'), ') (at ', 'Thu, 09 Jan 2020 12:06:26 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 7, ',', Decimal('1.428571428570413117426026116E+364'), ') (at ', 'Thu, 09 Jan 2020 12:06:26 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 21, ',', Decimal('4.761904761901377058086753720E+363'), ') (at ', 'Thu, 09 Jan 2020 12:06:27 GMT', ')')
+=================================================
+
+(*) Another large 1243 bits integer of all 9s (smooth, easy) has been factorized and first few factors are printed from 18 seconds onwards:
+('factors of ', 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999, '(', 1242.4011074878736, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 488
+=================================================
+('Factors are: (', 3, ',', Decimal('3.333333333333333333333333333E+373'), ') (at ', 'Thu, 09 Jan 2020 12:10:55 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 9, ',', Decimal('1.111111111111111111111111111E+373'), ') (at ', 'Thu, 09 Jan 2020 12:10:56 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 33, ',', Decimal('3.030303030303030303030303030E+372'), ') (at ', 'Thu, 09 Jan 2020 12:10:57 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 99, ',', Decimal('1.010101010101010101010101010E+372'), ') (at ', 'Thu, 09 Jan 2020 12:11:02 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 103, ',', Decimal('9.708737864077669902912621359E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:02 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 121, ',', Decimal('8.264462809917355371900826446E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:03 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 363, ',', Decimal('2.754820936639118457300275482E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:20 GMT', ')')
+=================================================
+tiles_start: 488
+tiles_end: 976
+=================================================
+('Factors are: (', 759, ',', Decimal('1.317523056653491436100131752E+371'), ') (at ', 'Thu, 09 Jan 2020 12:11:47 GMT', ')')
+=================================================
+tiles_start: 976
+tiles_end: 1464
+=================================================
+('Factors are: (', 1133, ',', Decimal('8.826125330979699911738746690E+370'), ') (at ', 'Thu, 09 Jan 2020 12:12:13 GMT', ')')
+=================================================
+tiles_start: 1464
+tiles_end: 1952
+tiles_start: 1952
+tiles_end: 2440
+=================================================
+('Factors are: (', 2277, ',', Decimal('4.391743522178304787000439174E+370'), ') (at ', 'Thu, 09 Jan 2020 12:13:30 GMT', ')')
+=================================================
+=================================================
+('Factors are: (', 2369, ',', Decimal('4.221190375685943436048965808E+370'), ') (at ', 'Thu, 09 Jan 2020 12:13:37 GMT', ')')
+=================================================
+tiles_start: 2440
+tiles_end: 2928
+=================================================
+('Factors are: (', 2783, ',', Decimal('3.593244699964067553000359324E+370'), ') (at ', 'Thu, 09 Jan 2020 12:14:04 GMT', ')')
+=================================================
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+742. (THEORY and FEATURE) Computational Geometric Factorization - Quadcore Python 3.7.5 + Spark 2.4.3 benchmarks - 1024 bits integers - 11 January 2020 - related to all sections on Factorization
+-----------------------------------------------------------------------------------------------------------------------------------------------
+(*) Few 1024 bits hard random integers of mixed digits have been factorized and logs have been captured in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.1024bits.11January2020 - all the integers are factorized from 28 seconds onwards - logs have been truncated and only first few factors are printed. Integers factorized are:
+	- 99999999029309203902939293232903920930293092039029302302382983927382382637627636263623823928328938981982819289839274878478374792392893829839289382983982938298392893829839829732739729839289382938293828392893828398293928372939289382983928839289382983928938298392893829839283982938239829389283982938298398293823
+	- 99999999029309203902939293232903920930293092039029302302382983927382382637627636263623823928328938981982819289839274878478374792392893829839289382983982938298392893829839829732739729839289382938293828392893828828083782872939289382983928839289382983928938298392893829839283982938239829389283982938298398293823
+	- 99999999029309203902939293232903920930293092039029302302382983927382382637627636263623823928328938981982819289839274883838888888888833333838838923928998238298392893829839829732739729839289382938293828392893828828083782872939289382983928839289382983928938298392893829839283982938239829389283982938298398293823
+	- 99999999029309203902939293232903920930293092039029302302382983927382382637627636263623823928328938981982819289839274883838888888888833333838838923928998238211111111111111111111111111111111111118293828392893828828083782872939289382983928839289382983928938298392893829839283982938239829389283982938298398293823
+	- 99999999029309203902939293232903920930293092039029388888999922222222188882777777777777772277778938981982819289839274883838888888888833333838838923928998238211111111111111111111111111111111111118293828392893828828083782872939289382983928839289382983928938298392893829839283982938239829389283982938298398293833
+
+(*) DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been changed to print debug statements for verifying correctness of factorization - or clause "if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:" is true if point located in pixel arithmetic progression array polygon of the rasterized hyperbola equals the number to factorize N in two cases:
+	(*) ordinate product xl*yl equals number to factorize N 
+		(and/or)
+	(*) ordinate product (xl + intervalmidpoint)*yl equals number to factorize N
+(*) Truth values of both the above scenarios are printed and verified factor ordered pairs are printed accordingly. Decimal division has been reverted because of misleading mantissa-exponent notation
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+743. (THEORY and FEATURE) Chaos Pseudorandom Generators - implementation update - Logistic and Lehmer-Palmore PRGs - 21 January 2020 - related to 318, 740 and all sections on Intrinsic Merit, Majority Voting, Ramsey coloring, Hardness Amplification, One-Way Functions, Chaos, Pseudorandomness and draft Randomized NC Chaos PRG defined in https://sites.google.com/site/kuja27/ChaoticPRG.pdf
+-----------------------------------------------------------------------------------------------------------------------------------------------
+(*) Logistic Equation Chaos PRG implementation in ChaosAttractor.py has been updated to also compute Lehmer-Palmore PRG by a function argument. An if clause has been introduced to choose between parabola attractor rx(1-x) and Lehmer-Palmore PRG (Bx mod M)
+(*) ChaosAttractor.py Lorenz Attractor code has been refactored and made a function of parameters: ChaosPRG(algorithm="Logistic",seqlen=100,radix=10,initialcondition=0.7,prime=104729) which respectively choose the algorithm ("Logistic" equation or "Lehmer-Palmore" prime modulus PRGs), length of pseudorandom sequence, radix (k for "Logistic" and B for "Lehmer-Palmore"), initial condition for sensitive dependence and a Large prime modulus
+(*) R cor() correlation function has been invoked by R+rpy2 to print a correlation between pseudorandom sequence and a sample DJIA stock  quotes dataset.
+(*) ChaosPRG() function can be optionally invoked in NeuronRain wherever pseudorandomness is necessary - e.g Pseudorandom shuffle simulation of paper ballot in Drone Electronic Voting Machine, Pseudorandom Shuffle of 2-colored (0 and 1) leaves in a boolean majority voting circuit which gives rise to monochromatic arithmetic progression order from pseudorandom chaotic shuffled votes disorder by Ramsey theory (Van Der Waerden numbers), Economic merit - Models for Econometric Datasets
+(*) Section 318 states a Majority version of XOR Hardness Amplification Lemma and points 318.15 to 318.19 define hardness of inverting boolean majority + voter SAT composition which might imply existence of an one way function (a #P-complete counting problem). Emergence of arithmetic progression order from binary colored voter leaves of Boolean Majority Circuit stipulates a prima facie indistinguishability condition between a good PRG and true randomness - Good pseudorandom shuffle must minimize probability of emergence of monochromatic arithmetic progressions in the leaves of boolean majority circuit.
+(*) Probability of monochromatic arithmetic progressions in any pseudorandom bichromatic sequence of length N (including shuffled 2-colored voter leaves of boolean majority circuit) is inversely proportional to Van Der Waerden number VDW(N,2,r) - N elements in sequence(voters), 2 colors (candidates 0 and 1), arithmetic progression of length >= r (voters who chose same candidate are equally spread out in the shuffled bichromatic votes string).
+(*) Chaos implies disorder from order (Period Three Theorem implies any sequence of period 3 can have larger periods while Feigenbaum sequences define self-referential recursive universality order in Chaos) and monochromatic arithmetic progressions in Pseudorandom multichromatic sequences imply order from disorder - these are two mutually conflicting trends in diametrically opposite directions.
+(*) logs testlogs/ChaosAttractor.LehmerPalmorePRG.log.21January2020 and testlogs/ChaosAttractor.LogisticEquationPRG.log.21January2020 print a correlation between DJIA data and two chaotic PRGs - Logistic and Lehmer-Palmore. Opposing correlation signs between Logistic and Lehmer-Palmore PRGs and DJIA sample is an indicator of extent of chaos and pattern in economic data:
+	Logistic: correlation coefficient of pseudorandom and DJIA sequences is: -0.00173395205970038
+	Lehmer-Palmore: correlation coefficient of pseudorandom and DJIA sequences is: 0.00648048041159691
+(*) Equilibrium point where the aforementioned Orderly Disorder (Ramsey) and Disorderly Order (Chaos) coincide might be of independent area of research.
+
+References:
+-----------
+743.1 Chaos - [James Gleick] - Mandelbrot-Julia sets, Fractals, Koch curves, Lorenz attractors, Feigenbaum universality - Period Doubling, Yorke's Period Three Theorem
+743.2 Feigenbaum constants - First and Second - https://en.wikipedia.org/wiki/Feigenbaum_constants
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+744. (THEORY and FEATURE) Chaotic Pseudorandom Generator - Python 3.7.5 upgrade, Computational Geometric Factorization - 30 January 2020 -
+related to all sections on Pseudorandom Generators, Chaos and Factorization
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit upgrades Chaos Pseudorandom Generator implementation to Python 3.7.5 by autopep8 followed by 2to3, which is the defacto NeuronRain recommended python version for performance reasons.
+2.Both Logistic and Lehmer-Palmore PRGs have been tested on Python 3.7.5 + R-py2 combine and logs are committed to testlogs/ChaosAttractor.Python3.7.5Upgrade.30January2020
+3.GRAFIT course material on Geometric search of BigData in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt describe a Randomized NC factorization algorithm based on Parallel Chaotic Pseudorandom Generator and Central Limit Theorem based Space filling Linear Program mentioned in drafts - https://sites.google.com/site/kuja27/ChaoticPRG.pdf and https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf . 
+4.Exact PRAM-NC-BSP computational geometric factorization algorithm implemented on Spark in NeuronRain AstroInfer is the derandomized version of Randomized NC Bernoulli trials factorization algorithm in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt which has the success probability of finding atleast one prime factor pr(m) = (1 - sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)))^(m-1)*(sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)) after m trials for square embedded hyperbolic arc. Expected number of trials E(m) before atleast one factor is found = sum_x=1-to-N(x*pr(x))
+5.Thus NeuronRain Theory drafts define 3 different Nick's class Computational Geometric Integer factorization algorithms - Randomized NC, Quantum NC, Exact NC - which transition from a randomized, cohered quantum state to classical exact decohered state.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+745. (THEORY and FEATURE) Compressed Sensing - Alphabet-Syllable vectorspace embedding - Python 3.7.5 upgrade - update - 4 February 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. Function syllable_boundary_text_compression(self, text, vectorspace_embedding=True) in CompressedSensing python implementation has been updated to parametrically choose alphabet vectorspace embedding of words in text described in GRAFIT course material on Geometric Search - https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt - words of text are embedded in |A|^m vectorspace (|A| is the size of natural language alphabet and m is the longest word in text). For English, this is a space of 26^m.
+2.Words are python tokenized to vectors and concatenated to an array creating a vectorspace embedding words in the text document.
+3.Return value is a tuple which includes or excludes the word embedding of text depending on vectorspace_embedding boolean flag
+4.CompressedSensing.py has been upgraded to Python 3.7.5 by autopep8 and 2to3 utilities. Python 2.7 version is separately committed.
+5.An Example sentence is syllable hyphenated (PyHyphen), vowel stripped-compressed and embedded as:
+#####################################################################################################
+Vowelless Syllable Vector Compression for text -  This sentence is alphabet-syllable vector space embedded  : (['This', 'sen', 'tence', 'al', 'pha', 'bet', '-', 'syl', 'la', 'ble', 'vec', 'tor', 'space', 'em', 'bed', 'ded'], 'Th_s-s_n-t_nc_-_l-ph_-b_t---syl-l_-bl_-v_c-t_r-sp_c_-_m-b_d-d_d')
+Alphabet vectorspace embedding of text: [['T', 'h', 'i', 's'], ['s', 'e', 'n', 't', 'e', 'n', 'c', 'e'], ['i', 's'], ['a', 'l', 'p', 'h', 'a', 'b', 'e', 't', '-', 's', 'y', 'l', 'l', 'a', 'b', 'l', 'e'], ['v', 'e', 'c', 't', 'o', 'r'], ['s', 'p', 'a', 'c', 'e'], ['e', 'm', 'b', 'e', 'd', 'd', 'e', 'd'], []]
+6.This kind of embedding is unconventional because it lifts an one dimensional text to an m-dimensional vectorspace nullifying the meaning of the word whereas traditional word embeddings reduce dimensionality and map words in higher dimensional space to real vectorspace of lower dimensions. Following the linguistic philosophy of "word is characterized by company it keeps" by [Firth] (Studies in Linguistic Analysis - http://cs.brown.edu/courses/csci2952d/readings/lecture1-firth.pdf), alphabet embedding above could be a framework for assessing colocated words by euclidean distance e.g "vector" and "space" are colocated in previous example and are closer in meaning (e.g WordNet distance) but have high euclidean distance. This kind of alphabet embedding is quite relevant to similar name clustering where same name is spelt differently ("What is in a name" is a non-trivial question to answer).
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+746. (THEORY and FEATURE) Social Network Analysis - People Analytics - Alphabet-Syllable vectorspace embedding - Python 3.7.5 upgrade - Name clustering - 4 February 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.SocialNetworkAnalysis_PeopleAnalytics.py and its dependencies have been upgraded to Python 3.7.5 (CompressedSensing.py,TextCompression.py,WordSubstringProbabilities.py) by autopep8 and 2to3 utilities. Python 2.7 versions have been separately committed.
+2.Example Professional Profile (of the author) has been updated in testlogs/CV.pdf and testlogs/CV.tex which is parsed for text and previously updated syllable_boundary_text_compression() function of CompressedSensing.py is invoked on profile text for alphabet vectorspace embedding of words.
+3.Logs for this commit are in testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.Python3.7.5UpgradeWordEmbedding.4February2020 which demonstrate 3 alphabet vectorspace embeddings of same first name of the author spelt differently having low mutual euclidean distance.
+4.Syllable embedding instead of alphabet embedding of words causes linguistic boundaries to vanish which has been mentioned in an earlier code commit - transliterating text of one script lacking compound alphabets to another script bestowed with compound alphabets helps in natural language text compression.
+5.Match Rating algorithm NYSIIS (https://en.wikipedia.org/wiki/New_York_State_Identification_and_Intelligence_System) which is better than Soundex codes is an example of efficient Similar Name Search. Linguistically similar names are intersections of heterographs (different spellings and meanings) and synonyms (different spellings and same meaning) - Homophones - https://en.wikipedia.org/wiki/Homophone
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+747. (THEORY and FEATURE) Computational Geometric Spark NC-PRAM-BSP Factorization Benchmarks - 2014 bits, 2037 bits, 2050 bits integers - Quadcore Spark 2.4.3 + Python 3.7.5 - 5 February 2020
+-----------------------------------------------------------------------------------------------------------------------------------------------
+1.Computational Geometric Factorization Spark NC-PRAM-BSP implementation has been benchmarked on 3 2000+ bits integers both smooth and hard and factorization logs have been captured in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.7.5Upgrade.2000plusbits.5February2020
+2.Following are the 2000+ bits integers benchmarked:
+	2.1 2014 bits smooth integer (heuristically integers having lot of 9s are easy to factorize) - all 9s - 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+(first few factors are 3,9,13,33,... found from 18 seconds onwards)
+	2.2 2037 bits less smooth integer - mixed digits,most 9s - 12891720999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999987108279
+(first few factors are 3,9,11,27,33,... found from 18 seconds onwards)
+	2.3 2050 bits hard integer (heuristically integers having lot of 7s are hard to factorize) - mixed digits,most 7s - 163335395099872743147480777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777614442382677905034630297
+(first few factors are 7,9,11,21,27,... found from 204 seconds onwards - unusually high duration compared to previous 2000+ bits integers implies hardness)
+3. Previous 2000plus bits integers are the largest factorized by NeuronRain AstroInfer Spark NC-PRAM-BSP implementation.
+4. Depth of the non-uniform circuits are 182,184 and 184 respectively for 2014 bits, 2037 bits and 2050 bits integers. PRAM time O(logN)^k) for 2050 bits factorization circuit of depth 184 therefore is O(2050^184) and number of PRAMs required are O(2^2050/2050^184) = O(2^2050/2^2025) = O(2^25) = 33554432 which is high number of multicores but plausible in a geographically distributed BSP cloud.
+5. Increasing depth slows down the PRAM time but reduces the parallel RAMs. Notwithstanding this theoretically prohibitive parallelism factors of 2050 bits hard integer were found in quadcore in few minutes.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+748. (THEORY and FEATURE) Leaky Bucket Timeseries Analyzer Implementation - Python 3.7.5 - 12 February 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit implements Leaky Bucket Timeseries Analyzer Algorithm mentioned in GRAFIT course material https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt for generic timeseries analytics. 
+2.Streaming_LeakyBucket.py instantiates Streaming Abstract Generator buffer incoming stream (example Dictionary.txt file data source is analyzed as timeseries) for generic data source and data storage of specified buffer size.
+3.leaky_bucket_timeseries_analyzer() iterates through buffer incoming stream and in a loop populates a deque object till it reaches maximum size . Elements exceeding max size are overflown and printed. Deque simulates a leaky bucket - incoming elements fill the bucket from front end (insert() at index 0) and outgoing elements leak through other end.
+4.Separate thread outgoing_stream_thread() independently scans the leaky bucket buffer and pops the elements from the deque. It busy waits if the leaky bucket deque is empty and continues to pop after buffer is refilled.
+5.Synchronization is by a binary semaphore guarding the deque in main thread and outgoing stream thread.
+6.Theoretical overtone of leaky bucket is its ability to flag outliers by overflows and peaks in timeseries are often the abnormalities in stream causing overflow. For example excessive network traffic corresponds to peaks in timeseries data and frequent overflows in leaky bucket as buffer fills faster than leakage.
+7.Leaky Bucket Analyzer thus is a universal tool for mining any stream of text,audio,video,people data and most apt for wireless network stream, stream of celestial bodies configurations, climate change datastream (e.g http://climate.nasa.gov data stream on surface temperature, melting polar ice sheets, carbon emission, ocean currents and acidity), economic datasets having lot of outlier spikes. 
+8.Streaming_LeakyBucket.py has been implemented on Python 3.7.5 and Streaming_AbstractGenerator.py has been upgraded to Python 3.7.5
+9.Logs for dictionary time series example are at testlogs/Streaming_LeakyBucket.log.12February2020
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+749. (THEORY and FEATURE) PAC Learning - Python 3.7.5 upgrade, Riemann Hypothesis, Patterns in Primes, class HNc and Algebraic Circuits - 21 February 2020, 22 February 2020 - related to 24,629 and all sections on Complement diophantines, Complementary Sets and Equations, Prime-Composite complementation and Patterns in Primes
+----------------------------------------------------------------------------------------------------------------------------------------------
+1. PACLearning.py PAC learning implementation has been refactored and upgraded to Python 3.7.5. Binary encoded and bits mapped UTM Primes dataset has been PAC Learnt again for per-prime-bit-position boolean disjunctions of first 10000 primes (16 disjunctions for each bit of 16-bits prime integer). New refactored PACLearning() function accepts a generic datasource and a hypothesis dictionary as arguments.
+2. Example logs for this PAC learning are at testlogs/PACLearning.PrimeBitsMappingConjunctions.Python3.7.5.21February2020 which are different from Python 2.7 approximate learning.
+3. Prime pattern References in Section 24 (24.31, 24.32, 24.33) mention a prima facie pattern in juxtaposed primes especially their avoidance of same digit ending. PAC learnt hypothesis in testlogs/PACLearning.PrimeBitsMappingConjunctions.Python3.7.5.21February2020 show an intriguing avoidance pattern in 14th,15th and 16th bits for first 10000 primes though approximate.
+4. Prime counting function (number of primes <= N) can be written in terms of non-trivial zeros of Riemann Zeta Function. Riemann Hypothesis (RH) conjectures all non-trivial zeros of Riemann Zeta Function are along critical line Re(z)=0.5. Riemann Zeta Function is just a rephrased version of Sieve of Eratosthenes and is expanded by Euler product.
+5. From Section 629, Riemann Zeta Function has an algebraic computation tree circuit in HNc:
+	"... Riemann Zeta Function can be represented as a disjunctive clauses or non-uniform Hilbert Nullstellensatz algebraic circuit in 
+	0-1-HNc (0 if s is a non-trivial zero else 1) of product polynomials having complex roots (non-trivial zeros): 
+	RZF=product_of(1/[1-prime(k)^(-s)]) for all primes 2,3,5,7,..."
+6.Approximate binary digit hypothesis disjunctions for primes dataset learnt by PAC and exact learning by Euler-Fourier polynomial imply pattern in spacings between consecutive primes and thus are indirect boolean prime counting functions. Both Euler-Fourier polynomial and PAC learnt disjunctive clauses are mapping functions between integer n and i-th bit of n-th prime - f(n,i): n <=> i-th bit of n-th prime
+7.Riemann Zeta Function has diophantine equation representation and thus in RE by MRDP theorem. Recent result of MIP*=RE implies a quantum multiparty interactive prover-classical verifier algorithm for diophantine and algebraic circuit versions of Riemann Zeta Function. It is notable and coincidental that distribution of Gaussian Unitary Ensemble eigenvalues in quantum world are identical to spacings of non-trivial zeros of RZF.
+
+References:
+----------
+749.1 Prime Obsession - Bernhard Riemann and the Greatest Unsolved Problem in Mathematics - [John Derbyshire] - Chapters 18,19,21 - Pages 292,299,309,328 - Montgomery-Odlyzko law, Euler product, Sieve of Eratosthenes, Function J(x) in terms of Prime counting function Pi(x) and Riemann Zeta Function in terms of J(x) - Equations 19.1,19.6,21.1 - " ... 1/s log(RZF(s)) = Integral(J(x) x^(-s-1) dx) ..."
+749.2 MIP*=RE - https://arxiv.org/abs/2001.04383 - this result implies quantum computers could decide halting problem which is in RE. Diophantine representation of RZF is in Adleman-Manders class D and is in RE by MRDP theorem. MIP*=RE implies Riemann Zeta Function (RZF) and Riemann Hypothesis has a quantum verification algorithm which halts despite infinite number of non-trivial zeros of RZF. Similar to computerized proof of Four color theorem this could be a machine generated proof or disproof of Riemann Hypothesis - An example quantum algorithm for proving or disproving Riemann hypothesis in MIP*=RE:
+	- Multiparty interactive quantum prover finds all non-trivial zeros of RZF
+	- classical verifier checks real part of all non-trivial zeroes for Re(z)=0.5 and finds a counter-example for disproof or a lack of it for proof of Riemann Hypothesis. 
+
+[Intermediary sections 750-781 are scattered in other NeuronRain repositories - Acadpdrafts,USBmd,VIRGO,KingCobra,GRAFIT,Krishna_iResearch_DoxygenDocs]
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+782. (THEORY and FEATURE) Text Compression, Compressed Sensing, Syllable boundaries decompression implementation - Python 3.7.5 upgrade and refactoring - 28 February 2020, 29 February 2020
+----------------------------------------------------------------------------------------------------------------------------------------------
+1.TextCompression.py vowelless text compression-decompression implementation has been upgraded to Python 3.7.5 by autopep8 and 2to3 utilities
+2.Syllable boundaries text compression function from CompressedSensing.py has been imported to optionally choose between syllable boundary compression of text and earlier vowelless compression (which strips vowels across the board) by a boolean flag syllable_boundary
+3.Earlier commented code for PyEnchant spelling suggestions has been uncommented to choose between PyEnchant maximum likelihood (prob() function) and Hidden Markov Model maximum likelihood (HiddenMarkovModel_MLE() function) estimators based on if suggestions is not-None and None respectively.
+4.Both PyEnchant and HMM computed maximum likelihood words are printed to logs.
+5.Logs at testlogs/TextCompression.log.28February2020 contain PyEnchant and Hidden Markov Model maximum likelihood estimations per decompressed string for both vowel compressed and syllable boundary compressed words
+6.decompressedtext.txt contains the newly introduced approximate syllable boundary decompressed text:
+
+ghts fer over  with lus tins    der ly2 on dead ster nal     ve tting  pro mer dial   placed be form byss paw er ful  ry mev ing  grant  ybody wn ters ician milk  shy ser pant ged form ing cotch shed  sh mania
+
+for exact text:
+Rama gets forever pleased with him who listens to or reads Ramayana daily. He is indeed the eternal Vishnu, the Lord of preservation. Rama is the primordial Lord, clearly placed before the eyes the powerful Lord removing the sins and the great-armed, who has abode on waters of the ocean of milk Sesha the serpent-god forming his couch is said to be Lakshmana.
+
+7. It is worth observing how the words "primordial", "removing","serpent" and "powerful" have been syllable decompressed - "pro mer dial", "ry mev ing", "ser pant", "paw er ful" - to homophones (phonetically equivalent but linguistically different)
+8.Advantage of syllable boundaries is their language and script independence, dependence on phonetics alone, fine-graining of words to syllables for better accuracy in phonetic decompression.
+9.Embedding a text on syllable vector space as opposed to traditional flat one-dimension thus blurs linguistic boundaries and useful for similar name clustering.
+
+References:
+-----------
+782.1 Phonetic Match Rating Algorithm - for similar name clustering in airlines - https://ia801704.us.archive.org/2/items/accessingindivid00moor/accessingindivid00moor.pdf
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+783. (THEORY) Phonetic Syllable Boundaries Compression and Approximate Decompression - error bounds and success amplification - 1 March 2020
+- related to all sections on Text Compression, Compressed Sensing and People Analytics - Similar name match
+---------------------------------------------------------------------------------------------------------------------------------------------
+Approximate Syllable Boundaries Decompression in earlier example can be phonetically matched for further error correction and accuracy. Example decompression of "powerful" to "paw er ful" demonstrates approximate phonetic match which requires lookup of per word audio dictionary to spell out a matching word (e.g Interactive Voice Response). By finding the best phonetic match of "paw er ful" in a syllable audio dictionary (which is a map of collated-syllable-audio-of-words to words), "paw er ful" is further decoded to "powerful" thus amplifying success. Phonetic match therefore involves an audio waveform distance function of two words different from string edit distance text similarity (e.g waveforms of "paw er ful" and "powerful" are in proximity). This audio-to-words dictionary is static containing as many words in language and requires initialization only once. Another prerequisite is a syllables-to-audio dictionary for lookup of every syllable in approximately decompressed word and splice their audio waveforms (e.g waveforms of syllables "paw","er","ful" are lookedup and collated to obtain "paw er ful") which is then lookedup in audio-to-words dictionary (e.g waveform for "paw"+"er"+"ful" is lookedup to retrieve "powerful").
+
+Number of vowels per english word (approximate) = length_of_the_word / 3 (because on the average every third letter of a word is a vowel)
+Number of vowels per english word syllable (approximate) = 1
+Number of syllables per english word = length_of_the_word / 3
+
+Probability of erroneous decompression per english word syllable = 4/5 = choice of wrong vowel in a,e,i,o,u
+Probability of wrong decompression of a word  = (0.8)^(l/3) (l = length_of_the_word)
+Probability of successful phonetic decompression increases therefore with increasing length of the word. 
+
+[Intermediary sections 784-791 are scattered in other NeuronRain repositories - Acadpdrafts,USBmd,VIRGO,KingCobra,GRAFIT,Krishna_iResearch_DoxygenDocs]
