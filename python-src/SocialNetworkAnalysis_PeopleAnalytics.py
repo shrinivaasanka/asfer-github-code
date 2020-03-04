@@ -249,9 +249,24 @@ class HRAnalytics(object):
             return False
 
     def rlfg_intrinsic_merit(self, profile_contents):
-        from .RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+        from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+        from RecursiveGlossOverlap_Classifier import nondictionaryword
+        dictionary=open("Dictionary.txt")
+        dictwords=[]
+        for d in dictionary.readlines():
+            dictword=d.split(" ")[0]
+            if dictword:
+                dictwords.append(dictword)
+        #print("profile_contents:",profile_contents)
+        filteredprofilecontents=[]
+        for p in profile_contents.split():
+            #print("p:",p)
+            if p in dictwords:
+                filteredprofilecontents.append(p)
         rlfg = RecursiveLambdaFunctionGrowth()
-        rlfg.grow_lambda_function3(profile_contents, 2)
+        filteredprofiletext=" ".join(list(set(filteredprofilecontents))[:50])
+        print("filteredprofilecontents:",filteredprofilecontents)
+        rlfg.grow_lambda_function3(text=filteredprofiletext)
 
     def least_energy_intrinsic_merit(self):
         print("Total work experience timedeltas:", self.total_work_experience)
@@ -292,7 +307,7 @@ class HRAnalytics(object):
 
 if __name__ == "__main__":
     hranal = HRAnalytics()
-    profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
+    #profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     #print profile_text
     # profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
     # hranal.least_energy_intrinsic_merit()
@@ -308,8 +323,9 @@ if __name__ == "__main__":
     # durations=[0.7,5,0.1,2,3,2,0.5]
     #hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
     # hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
-    # profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
-    # hranal.rlfg_intrinsic_merit(profile_text)
+    profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
+    #profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
+    hranal.rlfg_intrinsic_merit(profile_text)
     # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
     # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
     # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')

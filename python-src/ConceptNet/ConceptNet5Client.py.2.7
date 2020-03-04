@@ -72,8 +72,8 @@ class ConceptNet5Client:
         return conceptjson
 
     def remove_noise(self, cn_sp):
-        print(("remove_noise(): cn_sp=", cn_sp))
-        print(("remove_noise(): type(cn_sp)=", type(cn_sp)))
+        print("remove_noise(): cn_sp=", cn_sp)
+        print("remove_noise(): type(cn_sp)=", type(cn_sp))
         cn_sp.remove('/c/en/\xb0_c')
         return cn_sp
 
@@ -96,20 +96,20 @@ class ConceptNet5Client:
                     try:
                         cn_sp = shortest_path(
                             cn_distance, w1.lower(), w2.lower())
-                        print(("conceptnet path:", cn_sp))
+                        print("conceptnet path:", cn_sp)
                         cn_sp = self.remove_noise(cn_sp)
-                        print(("conceptnet path filtered:", cn_sp))
+                        print("conceptnet path filtered:", cn_sp)
                         # for cn_edge in cn_distance.edges():
                         #    conceptnettg.add_edge(cn_edge[0],cn_edge[1])
                         conceptnettg.add_path(cn_sp)
                     except Exception as e:
-                        print(("exception:", e))
+                        print("exception:", e)
         nx.draw_networkx(conceptnettg)
         plt.show()
         conceptnettg.remove_edges_from(conceptnettg.selfloop_edges())
         sorted_core_nxg = sorted(list(nx.core_number(
             conceptnettg).items()), key=operator.itemgetter(1), reverse=True)
-        print(("Core number (sorted) :", sorted_core_nxg))
+        print("Core number (sorted) :", sorted_core_nxg)
         print("=============================================================================================================")
         print("Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of ConceptNet)")
         print("=============================================================================================================")
@@ -125,7 +125,7 @@ class ConceptNet5Client:
             if n[1] > max_core_number:
                 max_core_number = n[1]
                 max_core_number_class = n[0]
-        print(("	max_core_number", max_core_number))
+        print("	max_core_number", max_core_number)
 
         print("===================================================================")
         print("Betweenness Centrality of Recursive Gloss Overlap graph vertices")
@@ -218,7 +218,7 @@ class ConceptNet5Client:
                 distance = distance + 1
                 #print "commonancestors: ",commonancestors
         except Exception as e:
-            print(("Exception:", e))
+            print("Exception:", e)
         #print "edges:",edges
         for k, v in edges:
             nxg.add_edge(k, v)

@@ -65,7 +65,7 @@ class RecursiveLambdaFunctionGrowth(object):
     def get_next_tree_traversal_id(self, x, y):
         if y-x == 1 or x-y == 1:
             return 1
-        print("x,y:", x, y)
+        print "x,y:", x, y
         self.index_list.append((x+y)/2)
         self.get_next_tree_traversal_id(x, (x+y)/2)
         self.get_next_tree_traversal_id((x+y)/2, y)
@@ -94,16 +94,16 @@ class RecursiveLambdaFunctionGrowth(object):
         self.index_tree.foreach(self.build_lambda_comp_tree, 0)
 
         self.lambda_comp_tree = AVLTree(self.word_dict)
-        print("===========================================================================")
-        print("Lambda Composition AVL Tree (inorder traversed) is the original text itself:")
-        print("===========================================================================")
+        print "==========================================================================="
+        print "Lambda Composition AVL Tree (inorder traversed) is the original text itself:"
+        print "==========================================================================="
         self.lambda_expression = []
         self.lambda_comp_tree.foreach(self.build_lambda_expression, 0)
-        print(self.lambda_expression)
-        print("===========================================================================")
-        print("Lambda Composition AVL Tree (postorder traversed - Postfix expression):")
-        print("Every parenthesis has two operands,operated by function outside:")
-        print("===============================================================")
+        print self.lambda_expression
+        print "==========================================================================="
+        print "Lambda Composition AVL Tree (postorder traversed - Postfix expression):"
+        print "Every parenthesis has two operands,operated by function outside:"
+        print "==============================================================="
         self.lambda_expression = []
         self.lambda_comp_tree.foreach(self.build_lambda_expression, 1)
         self.lambda_composition = []
@@ -140,7 +140,7 @@ class RecursiveLambdaFunctionGrowth(object):
             index_dict[cnt-1] = len(word_list)/cnt
 
         index_tree = AVLTree(index_dict)
-        print("Index AVL Tree:", repr(index_tree))
+        print "Index AVL Tree:", repr(index_tree)
         # index_tree.foreach(print_node,1)
 
         try:
@@ -153,22 +153,22 @@ class RecursiveLambdaFunctionGrowth(object):
             pass
 
         self.lambda_comp_tree = AVLTree(word_dict)
-        print("Lambda Composition AVL Tree:")
+        print "Lambda Composition AVL Tree:"
         self.lambda_comp_tree.foreach(print_node)
         iteration = 0
         while iteration < len(word_list):
             k = self.lambda_comp_tree.get(iteration)
-            print("k:", k)
+            print "k:", k
             try:
                 prev = self.lambda_comp_tree.prev_key(iteration)
                 prevk = self.lambda_comp_tree.get(prev)
-                print("prevk:", prevk)
+                print "prevk:", prevk
             except:
                 pass
             try:
                 succ = self.lambda_comp_tree.succ_key(iteration)
                 succk = self.lambda_comp_tree.get(succ)
-                print("succk:", succk)
+                print "succk:", succk
             except:
                 pass
             iteration += 1
@@ -185,7 +185,7 @@ class RecursiveLambdaFunctionGrowth(object):
                 smt = self.conceptnet.conceptnet_distance(
                     s1_lemma_names[0], s2_lemma_names[0])
             #print "similarity=",smt
-            if smt is not None and smt > similarity and smt != 1.0:
+            if smt > similarity and smt != 1.0:
                 similarity = float(smt)
         return similarity
 
@@ -253,14 +253,14 @@ class RecursiveLambdaFunctionGrowth(object):
             # Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
             richclubcoeff = nx.rich_club_coefficient(
                 definitiongraph.to_undirected())
-            print("Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff)
+            print "Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff
             kcore = nx.k_core(definitiongraph, corenumber)
-            print("Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:")
-            print("==========================")
-            print("Dense subgraph edges:")
-            print("==========================")
-            print(kcore.edges())
-            print("==========================")
+            print "Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
+            print "=========================="
+            print "Dense subgraph edges:"
+            print "=========================="
+            print kcore.edges()
+            print "=========================="
             if shortestpath == False:
                 for e in kcore.edges():
                     for s1 in wn.synsets(e[0]):
@@ -270,7 +270,7 @@ class RecursiveLambdaFunctionGrowth(object):
                                     s2)
                                 for l in lowestcommonhypernyms:
                                     for ln in l.lemma_names():
-                                        print(e[0], " and ", e[1], " are ", ln, ".", end=' ')
+                                        print e[0], " and ", e[1], " are ", ln, ".",
             else:
                 # Following is the slightly modified version of shortest_path_distance() function
                 # in NLTK wordnet - traverses the synset path between 2 synsets instead of distance
@@ -281,8 +281,8 @@ class RecursiveLambdaFunctionGrowth(object):
                         for s2 in wn.synsets(e[1]):
                             s1dict = s1._shortest_hypernym_paths(False)
                             s2dict = s2._shortest_hypernym_paths(False)
-                            s2dictkeys = list(s2dict.keys())
-                            for s, d in s1dict.items():
+                            s2dictkeys = s2dict.keys()
+                            for s, d in s1dict.iteritems():
                                 if s in s2dictkeys:
                                     slemmanames = s.lemma_names()
                                     if slemmanames[0] not in intermediates:
@@ -291,7 +291,7 @@ class RecursiveLambdaFunctionGrowth(object):
                         sentence1 = e[0] + " is a " + intermediates[0]
                         summary[sentence1] = self.relevance_to_text(
                             sentence1, text)
-                        for i in range(len(intermediates)-2):
+                        for i in xrange(len(intermediates)-2):
                             sentence2 = intermediates[i] + \
                                 " is a " + intermediates[i+1] + "."
                             if sentence2 not in summary:
@@ -304,11 +304,11 @@ class RecursiveLambdaFunctionGrowth(object):
                         intermediates = []
                 sorted_summary = sorted(
                     summary, key=operator.itemgetter(1), reverse=True)
-                print("===================================================================")
-                print("Sorted summary created from k-core dense subgraph of text RGO")
-                print("===================================================================")
+                print "==================================================================="
+                print "Sorted summary created from k-core dense subgraph of text RGO"
+                print "==================================================================="
                 for s in sorted_summary:
-                    print(s, end=' ')
+                    print s,
             return (sorted_summary, len(sorted_summary))
         else:
             definitiongraph_merit = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlapGraph(
@@ -316,16 +316,16 @@ class RecursiveLambdaFunctionGrowth(object):
             definitiongraph = definitiongraph_merit[0]
             richclubcoeff = nx.rich_club_coefficient(
                 definitiongraph.to_undirected(), normalized=False)
-            print("Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff)
+            print "Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff
             textsentences = text.split(".")
             lensummary = 0
             summary = []
             definitiongraphclasses = RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(
                 text)
-            print("Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:")
+            print "Text Summarized based on the Recursive Gloss Overlap graph classes the text belongs to:"
             prominentclasses = int(len(definitiongraphclasses[0])/2)
-            print("Total number of classes:", len(definitiongraphclasses[0]))
-            print("Number of prominent classes:", prominentclasses)
+            print "Total number of classes:", len(definitiongraphclasses[0])
+            print "Number of prominent classes:", prominentclasses
             for c in definitiongraphclasses[0][:prominentclasses]:
                 if len(summary) > len(textsentences) * 0.5:
                     return (summary, lensummary)
@@ -336,7 +336,7 @@ class RecursiveLambdaFunctionGrowth(object):
                             if s not in summary:
                                 summary.append(s)
                                 lensummary += len(s)
-                                print(s, end=' ')
+                                print s,
             return (summary, lensummary)
 
     def relevance_to_text(self, sentence, text):
@@ -385,14 +385,14 @@ class RecursiveLambdaFunctionGrowth(object):
         if self.ClosedPaths == False:
             for k, v in stpairs:
                 try:
-                    print("===================================================================")
-                    print("Random Walk between :", k, " and ", v, ":", apsp[k][v])
+                    print "==================================================================="
+                    print "Random Walk between :", k, " and ", v, ":", apsp[k][v]
                     instrumented_apspkv = self.instrument_relations(apsp[k][v])
                     rw_ct = self.randomwalk_lambda_function_composition_tree(
                         instrumented_apspkv)
-                    print("Random Walk Composition Tree for walk between :", k, " and ", v, ":", rw_ct)
-                    print("maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
-                    print("===================================================================")
+                    print "Random Walk Composition Tree for walk between :", k, " and ", v, ":", rw_ct
+                    print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+                    print "==================================================================="
                     if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
                         maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit = rw_ct
                 except KeyError:
@@ -407,39 +407,39 @@ class RecursiveLambdaFunctionGrowth(object):
                 if number_of_cycles > 500:
                     break
                 try:
-                    print("===================================================================")
-                    print("Cycle :", cycle)
+                    print "==================================================================="
+                    print "Cycle :", cycle
                     instrumented_cycle = self.instrument_relations(cycle)
-                    print("instrumented_cycle:", instrumented_cycle)
+                    print "instrumented_cycle:", instrumented_cycle
                     rw_ct = self.randomwalk_lambda_function_composition_tree(
                         instrumented_cycle)
-                    print("Cycle Composition Tree for this cycle :", rw_ct)
-                    print("maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
-                    print("===================================================================")
+                    print "Cycle Composition Tree for this cycle :", rw_ct
+                    print "maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit=", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
+                    print "==================================================================="
                     if rw_ct[1] > maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit[1]:
                         maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit = rw_ct
                 except KeyError:
                     pass
                 rw_ct = ""
         intrinsic_merit_dict = {}
-        print("grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:", self.graph_tensor_neuron_network_intrinsic_merit)
+        print "grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:", self.graph_tensor_neuron_network_intrinsic_merit
 
-        print("grow_lambda_function3(): Machine Translation Example :")
-        #self.machine_translation(3, definitiongraph, "te", 0.8)
+        print "grow_lambda_function3(): Machine Translation Example :"
+        self.machine_translation(3, definitiongraph, "te", 0.8)
 
         self.korner_entropy(definitiongraph)
-        print("grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:", self.entropy)
+        print "grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:", self.entropy
 
         density = self.density(definitiongraph)
-        print("grow_lambda_function3(): Graph Density (Regularity Lemma):", density)
+        print "grow_lambda_function3(): Graph Density (Regularity Lemma):", density
 
         bose_einstein_intrinsic_fitness = self.bose_einstein_intrinsic_fitness(
             definitiongraph)
-        print("grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:", bose_einstein_intrinsic_fitness)
+        print "grow_lambda_function3(): Bose-Einstein Intrinsic Fitness:", bose_einstein_intrinsic_fitness
 
-        print("grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit)
+        print "grow_lambda_function3(): Maximum Per Random Walk Graph Tensor Neuron Network Intrinsic Merit :", maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
 
-        print("grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:", RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text))
+        print "grow_lambda_function3(): Recursive Gloss Overlap Classifier classes for text:", RecursiveGlossOverlap_Classifier.RecursiveGlossOverlap_Classify(text)
 
         intrinsic_merit_dict["graph_tensor_neuron_network_intrinsic_merit"] = self.graph_tensor_neuron_network_intrinsic_merit
         intrinsic_merit_dict["maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit"] = maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit
@@ -453,7 +453,7 @@ class RecursiveLambdaFunctionGrowth(object):
         write_dot(definitiongraph, "RecursiveLambdaFunctionGrowth.dot")
 
         self.graph_tensor_neuron_network_intrinsic_merit = 1.0
-        print("intrinsic_merit_dict:", intrinsic_merit_dict)
+        print "intrinsic_merit_dict:", intrinsic_merit_dict
         return intrinsic_merit_dict
 
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
@@ -461,56 +461,56 @@ class RecursiveLambdaFunctionGrowth(object):
         edges = definitiongraph.edges()
         translationgraph = nx.DiGraph()
         for k, v in edges:
-            print("k=", k, ",v=", v)
+            print "k=", k, ",v=", v
             if self.machinetranslator == "pydictionary":
                 try:
                     ktrans = self.dictionary.translate(k, languagecode)
                     vtrans = self.dictionary.translate(v, languagecode)
-                    print("ktrans=", ktrans, ",vtrans=", vtrans)
+                    print "ktrans=", ktrans, ",vtrans=", vtrans
                     translationgraph.add_edge(ktrans, vtrans)
                     translationgraph.add_edge(vtrans, ktrans)
                 except Exception as e:
-                    print("Exception:", e)
+                    print "Exception:", e
                     translationgraph.add_edge(k, v)
                     translationgraph.add_edge(v, k)
             if self.machinetranslator == "goslate":
                 try:
                     ktrans = self.goslatetranslator.translate(k, languagecode)
-                    print("ktrans=", ktrans)
+                    print "ktrans=", ktrans
                     vtrans = self.goslatetranslator.translate(v, languagecode)
-                    print("vtrans=", vtrans)
+                    print "vtrans=", vtrans
                     translationgraph.add_edge(ktrans, vtrans)
                     translationgraph.add_edge(vtrans, ktrans)
                 except Exception as e:
-                    print("Exception:", e)
+                    print "Exception:", e
                     translationgraph.add_edge(k, v)
                     translationgraph.add_edge(v, k)
             if self.machinetranslator == "googletrans":
                 try:
                     ktrans = self.googletranslator.translate(k, languagecode)
-                    print("ktrans=", ktrans)
+                    print "ktrans=", ktrans
                     vtrans = self.googletranslator.translate(v, languagecode)
-                    print("vtrans=", vtrans)
+                    print "vtrans=", vtrans
                     translationgraph.add_edge(ktrans.text, vtrans.text)
                     translationgraph.add_edge(vtrans.text, ktrans.text)
                 except Exception as e:
-                    print("Exception:", e)
+                    print "Exception:", e
                     translationgraph.add_edge(k, v)
                     translationgraph.add_edge(v, k)
-        print("TextGraph Translated to ", languagecode, ":", translationgraph)
+        print "TextGraph Translated to ", languagecode, ":", translationgraph
         definitiongraph = translationgraph
-        definitiongraph.remove_edges_from(nx.selfloop_edges(definitiongraph))
+        definitiongraph.remove_edges_from(definitiongraph.selfloop_edges())
         translatedtext = []
         # This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
         # Hence approximating the transversal with a k-core which is the Graph counterpart of
         # Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
         kcore = nx.k_core(definitiongraph, corenumber)
-        print("Text Translated by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:")
-        print("==========================")
-        print("Dense subgraph edges:")
-        print("==========================")
-        print(kcore.edges())
-        print("==========================")
+        print "Text Translated by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:"
+        print "=========================="
+        print "Dense subgraph edges:"
+        print "=========================="
+        print kcore.edges()
+        print "=========================="
         transand = "and"
         transare = "are"
         if self.machinetranslator == "pydictionary":
@@ -518,7 +518,7 @@ class RecursiveLambdaFunctionGrowth(object):
                 transand = self.dictionary.translate("and", languagecode)
                 transare = self.dictionary.translate("are", languagecode)
             except Exception as ex:
-                print(ex)
+                print ex
         if self.machinetranslator == "goslate":
             try:
                 transand = self.goslatetranslator.translate(
@@ -526,13 +526,13 @@ class RecursiveLambdaFunctionGrowth(object):
                 transare = self.goslatetranslator.translate(
                     "are", languagecode)
             except Exception as ex:
-                print(ex)
+                print ex
         if self.machinetranslator == "googletrans":
             try:
                 transand = self.googletranslator.translate("and", languagecode)
                 transare = self.googletranslator.translate("are", languagecode)
             except Exception as ex:
-                print(ex)
+                print ex
         for e in kcore.edges():
             for s1 in wn.synsets(e[0]):
                 for s2 in wn.synsets(e[1]):
@@ -542,7 +542,7 @@ class RecursiveLambdaFunctionGrowth(object):
                             for ln in l.lemma_names():
                                 translatedtext.append(
                                     e[0] + " " + transand + " " + e[1]+" " + transare + " "+ln+".")
-        print("Translated text by target language text graph traversal:", translatedtext)
+        print "Translated text by target language text graph traversal:", translatedtext
         return translatedtext
 
     # KornerEntropy(G) = minimum [- sum_v_in_V(G) {1/|V(G)| * log(Pr[v in Y])}] for each independent set Y
@@ -550,12 +550,9 @@ class RecursiveLambdaFunctionGrowth(object):
         nodes = definitiongraph.nodes()
         stable_sets = []
         for v in nodes:
-            try:
-                stable_sets.append(nx.maximal_independent_set(
+            stable_sets.append(nx.maximal_independent_set(
                 definitiongraph.to_undirected(), [v]))
-            except:
-                continue
-        print("korner_entropy(): Stable Independent Sets:", stable_sets)
+        print "korner_entropy(): Stable Independent Sets:", stable_sets
         entropy = 0.0
         prob_v_in_stableset = 0.0
         for v in nodes:
@@ -594,7 +591,7 @@ if __name__ == "__main__":
     lambdafn.grow_lambda_function3(textread)
     summary = lambdafn.create_summary(
         textread, graphtraversedsummary=True, shortestpath=True)
-    print()
-    print(summary)
-    print("==========================================================")
-    print("Ratio of summary to text:", float(summary[1])/float(len(textread)))
+    print
+    print summary
+    print "=========================================================="
+    print "Ratio of summary to text:", float(summary[1])/float(len(textread))

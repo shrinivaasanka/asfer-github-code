@@ -16,7 +16,7 @@
 # Personal website(research): https://sites.google.com/site/kuja27/
 # --------------------------------------------------------------------------------------------------------
 
-
+from __future__ import division
 import pickle
 import sys
 
@@ -25,7 +25,7 @@ from collections import defaultdict
 from nltk.corpus import wordnet as wn
 import networkx as nx
 import matplotlib.pyplot as plt
-import queue
+import Queue
 import operator
 from nltk.corpus import sentiwordnet as swn
 from nltk.book import *
@@ -63,14 +63,13 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
         clique_potential_pos = 0.0
         clique_potential_neg = 0.0
         clique_potential_obj = 0.0
-        print("clique:", c)
+        print "clique:", c
         for v in c:
             if SentimentScoringAlgorithm == "Empath":
                 pos = 0.0001
                 neg = 0.0001
-                empath_dict = lexicon.analyze(v)
-                #empath_dict = lexicon.analyze(v.decode("utf-8"))
-                empath_list = sorted(list(empath_dict.items()),
+                empath_dict = lexicon.analyze(v.decode("utf-8"))
+                empath_list = sorted(empath_dict.items(),
                                      key=operator.itemgetter(1), reverse=True)
                 #print "empath_dict:",empath_dict
                 obj = empath_list[0][1]
@@ -142,8 +141,8 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
     core_negative_belief_propagated = 1.0
     core_xnegscore = core_xposscore = 1.0
     dfs_knegscore = dfs_kposscore = dfs_vposscore = dfs_vnegscore = 1.0
-    sorted_core_nxg = sorted(list(nx.core_number(
-        nxg).items()), key=operator.itemgetter(1), reverse=True)
+    sorted_core_nxg = sorted(nx.core_number(
+        nxg).items(), key=operator.itemgetter(1), reverse=True)
     kcore_nxg = nx.k_core(nxg, 6, nx.core_number(nxg))
     for x in sorted_core_nxg:
         xsset = swn.senti_synsets(x[0])
@@ -156,8 +155,8 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
             core_xposscore = 0.000001
         core_positive_belief_propagated += float(core_xposscore)
         core_negative_belief_propagated += float(core_xnegscore)
-    print("Core Number: RGO_sentiment_analysis_belief_propagation: %f, %f" % (
-        float(core_positive_belief_propagated), float(core_negative_belief_propagated)))
+    print "Core Number: RGO_sentiment_analysis_belief_propagation: %f, %f" % (
+        float(core_positive_belief_propagated), float(core_negative_belief_propagated))
     # for k,v in nx.dfs_edges(nxg):
     for k, v in nx.dfs_edges(kcore_nxg):
         ksynset = swn.senti_synsets(k)
@@ -176,8 +175,8 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
             dfs_knegscore_vnegscore = 1.0
         dfs_positive_belief_propagated += float(dfs_kposscore_vposscore)
         dfs_negative_belief_propagated += float(dfs_knegscore_vnegscore)
-    print("K-Core DFS: RGO_sentiment_analysis_belief_propagation: %f, %f" % (
-        float(dfs_positive_belief_propagated), float(dfs_negative_belief_propagated)))
+    print "K-Core DFS: RGO_sentiment_analysis_belief_propagation: %f, %f" % (
+        float(dfs_positive_belief_propagated), float(dfs_negative_belief_propagated))
     return (dfs_positive_belief_propagated, dfs_negative_belief_propagated, core_positive_belief_propagated, core_negative_belief_propagated)
 
 
@@ -270,14 +269,14 @@ def SentimentAnalysis_RGO(text, output):
     tokenized = text.encode("utf-8").split()
     fdist1 = FreqDist(tokenized)
     stopwords = nltk.corpus.stopwords.words('english')
-    stopwords = stopwords + [' ', 'or', 'and', 'who', 'he', 'she', 'whom', 'well', 'is', 'was', 'were', 'are', 'there', 'where', 'when', 'may', 'The', 'the',
-                             'In', 'in', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    puncts = [' ', '.', '"', ',', '{', '}', '+', '-', '*', '/', '%', '&',
-              '(', ')', '[', ']', '=', '@', '#', ':', '|', ';', '\'s', '\u2026']
+    stopwords = stopwords + [u' ', u'or', u'and', u'who', u'he', u'she', u'whom', u'well', u'is', u'was', u'were', u'are', u'there', u'where', u'when', u'may', u'The', u'the',
+                             u'In', u'in', u'A', u'B', u'C', u'D', u'E', u'F', u'G', u'H', u'I', u'J', u'K', u'L', u'M', u'N', u'O', u'P', u'Q', u'R', u'S', u'T', u'U', u'V', u'W', u'X', u'Y', u'Z']
+    puncts = [u' ', u'.', u'"', u',', u'{', u'}', u'+', u'-', u'*', u'/', u'%', u'&',
+              u'(', ')', u'[', u']', u'=', u'@', u'#', u':', u'|', u';', u'\'s', u'\u2026']
     # at present tfidf filter is not applied
     #freqterms1 = [w for w in fdist1.keys() if w not in stopwords and w not in puncts and (fdist1.freq(w) * compute_idf(corpus, w))]
     try:
-        freqterms1 = [w.decode("utf-8") for w in list(fdist1.keys())
+        freqterms1 = [w.decode("utf-8") for w in fdist1.keys()
                       if w not in stopwords and w not in puncts]
     except UnicodeError:
         pass
@@ -355,8 +354,8 @@ def SentimentAnalysis_RGO(text, output):
                 # at present frequency filter is not applied
                 # if keyword in convergingterms:
                 tokensofthislevel = tokensofthislevel + \
-                    ([w for w in list(fdist_tokens.keys(
-                    )) if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
+                    ([w for w in fdist_tokens.keys(
+                    ) if w not in stopwords and w not in puncts and fdist_tokens.freq(w)])
         output.write('At level:\n')
         output.write(str(current_level))
         output.write('\n')
@@ -411,7 +410,7 @@ def SentimentAnalysis_RGO(text, output):
     output.write(nodewithmaxparents)
     output.write('\n')
 
-    print(definitiongraphedges)
+    print definitiongraphedges
 
     nxg = nx.DiGraph()
     # pos=nx.spring_layout(nxg)
@@ -419,7 +418,7 @@ def SentimentAnalysis_RGO(text, output):
     # pos=nx.random_layout(nxg)
     # weight_str_map={}
     pos = nx.spectral_layout(nxg)
-    for k, v in definitiongraphedges.items():
+    for k, v in definitiongraphedges.iteritems():
         for l in v:
             nxg.add_edge(k, l)
             nxg.add_edge(l, k)
@@ -452,30 +451,30 @@ def SentimentAnalysis_RGO(text, output):
     # plt.show()
     nxg.remove_edges_from(nxg.selfloop_edges())
     #print "Core number =",nx.core_number(nxg)
-    sorted_core_nxg = sorted(list(nx.core_number(
-        nxg).items()), key=operator.itemgetter(1), reverse=True)
-    print("Core number (sorted) :", sorted_core_nxg)
-    print("=============================================================================================================")
-    print("Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)")
-    print("=============================================================================================================")
+    sorted_core_nxg = sorted(nx.core_number(
+        nxg).items(), key=operator.itemgetter(1), reverse=True)
+    print "Core number (sorted) :", sorted_core_nxg
+    print "============================================================================================================="
+    print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+    print "============================================================================================================="
     no_of_classes = len(nx.core_number(nxg))
     top_percentile = 0
     max_core_number = 0
     for n in sorted_core_nxg:
-        print("This document belongs to class:", n[0], ",core number=", n[1])
+        print "This document belongs to class:", n[0], ",core number=", n[1]
         if top_percentile < no_of_classes*0.10:
             top_percentile += 1
         else:
             break
         if n[1] > max_core_number:
             max_core_number = n[1]
-    print("	max_core_number", max_core_number)
+    print "	max_core_number", max_core_number
 
-    print("===================================================================")
-    print("Page Rank of the vertices of RGO Definition Graph")
-    print("===================================================================")
-    print(sorted(list(nx.pagerank(nxg).items()),
-                 key=operator.itemgetter(1), reverse=True))
+    print "==================================================================="
+    print "Page Rank of the vertices of RGO Definition Graph"
+    print "==================================================================="
+    print sorted(nx.pagerank(nxg).items(),
+                 key=operator.itemgetter(1), reverse=True)
 
     #print "================================================================================"
     #print "A primitive text generated from traversal of the k-core closure of RGO Definition Graph"
@@ -495,24 +494,24 @@ def SentimentAnalysis_RGO(text, output):
 
     #print composition_lambda(nxg)
 
-    print("==============================================================================")
-    print("Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text")
-    print("==============================================================================")
+    print "=============================================================================="
+    print "Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text"
+    print "=============================================================================="
     pos, neg, obj = SentimentAnalysis_SentiWordNet(text)
-    print("Positivity = ", pos)
-    print("Negativity = ", neg)
-    print("Objectivity = ", obj)
+    print "Positivity = ", pos
+    print "Negativity = ", neg
+    print "Objectivity = ", obj
 
-    print("==========================================================================================================")
-    print("Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text")
-    print("==========================================================================================================")
+    print "=========================================================================================================="
+    print "Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text"
+    print "=========================================================================================================="
     for x in sorted_core_nxg:
         xsset = swn.senti_synsets(x[0])
         if len(xsset) > 2:
             xnegscore = xsset[0].neg_score()
             xposscore = xsset[0].pos_score()
-            print("negscore of ", x[0], ": ", xnegscore)
-            print("posscore of ", x[0], ": ", xposscore)
+            print "negscore of ", x[0], ": ", xnegscore
+            print "posscore of ", x[0], ": ", xposscore
 
     return nxg
 
@@ -530,16 +529,16 @@ if __name__ == "__main__":
     file1 = open(files[0])
     text = file1.read()
     nxg = SentimentAnalysis_RGO(text, output)
-    print("==========================================================================================================")
-    print("Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the text")
-    print("==========================================================================================================")
+    print "=========================================================================================================="
+    print "Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the text"
+    print "=========================================================================================================="
     dfs_belief_propagated_posscore, dfs_belief_propagated_negscore, core_belief_propagated_posscore, core_belief_propagated_negscore = SentimentAnalysis_RGO_Belief_Propagation(
         nxg)
-    print("DFS belief_propagated_posscore:", float(
-        dfs_belief_propagated_posscore))
-    print("DFS belief_propagated_negscore:", float(
-        dfs_belief_propagated_negscore))
-    print("Core Number belief_propagated_posscore:", float(
-        core_belief_propagated_posscore))
-    print("Core Number belief_propagated_negscore:", float(
-        core_belief_propagated_negscore))
+    print "DFS belief_propagated_posscore:", float(
+        dfs_belief_propagated_posscore)
+    print "DFS belief_propagated_negscore:", float(
+        dfs_belief_propagated_negscore)
+    print "Core Number belief_propagated_posscore:", float(
+        core_belief_propagated_posscore)
+    print "Core Number belief_propagated_negscore:", float(
+        core_belief_propagated_negscore)
