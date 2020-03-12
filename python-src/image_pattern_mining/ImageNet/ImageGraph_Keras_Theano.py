@@ -293,18 +293,25 @@ def image_segmentation(imagefile):
         dist_transform, 0.7 * dist_transform.max(), 255, 0)
     sure_fg = np.uint8(sure_fg)
     unknown = cv2.subtract(sure_bg, sure_fg)
-    ret, markers = cv2.connectedComponents(sure_fg)
+    ret, markers = cv2.connectedComponents(sure_fg,connectivity=8)
+    ret, labels, stats, centroids = cv2.connectedComponentsWithStatsWithAlgorithm(sure_fg,connectivity=8,ltype=2,ccltype=cv2.CCL_GRANA)
+    print("image connected components - ret:",ret)
+    print("image connected components - labels:",labels)
+    print("image connected components - stats:",stats)
+    print("image connected components - centroids:",centroids)
     markers += 1
     markers[unknown == 255] = 0
     markers = cv2.watershed(img, markers)
     img[markers == -1] = [255, 0, 0]
+    print("image connected components - markers:",markers)
     imagefiletoks1 = imagefile.split(".")
     imagefiletoks2 = imagefiletoks1[0].split("/")
     cv2.imwrite(
         "testlogs/RemoteSensingGIS/" +
-        imagefiletoks2[2] +
+        imagefiletoks2[len(imagefiletoks2)-1] +
         "_segmented.jpg",
         img)
+    return (ret,markers,labels,stats,centroids)
 
 
 def random_forest_image_classification(
@@ -409,6 +416,7 @@ if __name__ == "__main__":
     # analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+    image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
     #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
     #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
     # train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
