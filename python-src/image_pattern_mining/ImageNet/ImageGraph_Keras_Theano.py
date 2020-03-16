@@ -40,6 +40,7 @@ from keras import backend
 from keras.applications.imagenet_utils import preprocess_input
 from keras.applications.imagenet_utils import decode_predictions
 from keras.preprocessing import image
+from networkx.drawing.nx_pydot import write_dot
 import os
 os.environ['KERAS_BACKEND'] = 'theano'
 
@@ -311,7 +312,35 @@ def image_segmentation(imagefile):
         imagefiletoks2[len(imagefiletoks2)-1] +
         "_segmented.jpg",
         img)
-    return (ret,markers,labels,stats,centroids)
+    imgdual = cv2.imread(imagefile)
+    rect=(0,0,imgdual.shape[1],imgdual.shape[0])
+    print("rect:",rect)
+    subdiv=cv2.Subdiv2D(rect)
+    print("subdiv:",subdiv)
+    for cent in centroids:
+        print("centroid:",cent)
+        subdiv.insert(tuple(cent))
+    triangles=subdiv.getTriangleList()
+    print("image Delaunay triangles:",triangles)
+    facets=subdiv.getVoronoiFacetList([])
+    print("image Voronoi Facets:",facets)
+    facegraph=nx.Graph()
+    prevpoint=""
+    for facet in facets:
+        firstvertex=True
+        for point in facet:
+            if firstvertex:
+                prevpoint=str(point[0]) + "#" + str(point[1])
+                firstpoint=str(point[0]) + "#" + str(point[1])
+                firstvertex=False
+            point=str(point[0]) + "#" + str(point[1])
+            facegraph.add_edge(point, prevpoint)
+            prevpoint=point
+        facegraph.add_edge(firstpoint, prevpoint)
+    nx.draw_networkx(facegraph)
+    plt.show()
+    write_dot(facegraph,"ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
+    return (ret,markers,labels,stats,centroids,facets,triangles)
 
 
 def random_forest_image_classification(
@@ -386,9 +415,9 @@ if __name__ == "__main__":
     # imgnet_im1=imagenet_imagegraph("testlogs/WhiteTiger_1.jpg")
     # convex_hull("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
     # imagenet_imagegraph("testlogs/ExampleImage_1.jpg")
-    imgnet_vg1 = imagenet_videograph("testlogs/ExampleVideo_1.mp4", 2)
+    # imgnet_vg1 = imagenet_videograph("testlogs/ExampleVideo_1.mp4", 2)
     # imgnet_vg2=imagenet_videograph("testlogs/ExampleVideo_2.mp4",2)
-    vg_en_tn_prdct1 = videograph_eventnet_tensor_product(imgnet_vg1)
+    # vg_en_tn_prdct1 = videograph_eventnet_tensor_product(imgnet_vg1)
     # video_merit=inverse_distance_intrinsic_merit(vg_en_tn_prdct1)
     # vg_en_tn_prdct2=videograph_eventnet_tensor_product(imgnet_vg2)
     # emotional_merit=large_scale_visual_sentiment(vg_en_tn_prdct2)
@@ -415,8 +444,10 @@ if __name__ == "__main__":
     # analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
     # analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
-    # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+    image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
+    imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
+    vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
     #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
     #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
     # train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]

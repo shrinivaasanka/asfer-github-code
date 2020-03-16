@@ -1,0 +1,422 @@
+python3.7m ImageGraph_Keras_Theano.py 
+Using Theano backend.
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+image connected components - ret: 4
+image connected components - labels: [[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+image connected components - stats: [[      0       0    1200    1219 1460786]
+ [    728     362      65     108    2011]
+ [    728     549       1       1       1]
+ [    729     551       2       2       2]]
+image connected components - centroids: [[599.26756007 609.26465478]
+ [768.15067131 416.84236698]
+ [728.         549.        ]
+ [729.5        551.5       ]]
+image connected components - markers: [[-1 -1 -1 ... -1 -1 -1]
+ [-1  1  1 ...  1  1 -1]
+ [-1  1  1 ...  1  1 -1]
+ ...
+ [-1  1  1 ...  1  1 -1]
+ [-1  1  1 ...  1  1 -1]
+ [-1 -1 -1 ... -1 -1 -1]]
+rect: (0, 0, 1200, 1219)
+subdiv: <Subdiv2D 0x7f021982efd0>
+centroid: [599.26756007 609.26465478]
+centroid: [768.15067131 416.84236698]
+centroid: [728. 549.]
+centroid: [729.5 551.5]
+image Delaunay triangles: [[729.5     551.5     599.2676  609.26465 728.      549.     ]
+ [599.2676  609.26465 768.1507  416.84238 728.      549.     ]
+ [768.1507  416.84238 729.5     551.5     728.      549.     ]]
+image Voronoi Facets: ([array([[  667.3571 ,   587.08575],
+       [ 1453.7631 ,  2360.0654 ],
+       [-4289.9077 ,  1230.7037 ],
+       [-1579.5311 , -1473.3215 ],
+       [  597.12463,   437.061  ]], dtype=float32), array([[ 2317.3264 ,   934.379  ],
+       [  809.74054,   501.65567],
+       [  597.12463,   437.061  ],
+       [-1579.5311 , -1473.3215 ],
+       [ 1488.9647 , -4806.4297 ]], dtype=float32), array([[809.74054, 501.65567],
+       [667.3571 , 587.08575],
+       [597.12463, 437.061  ]], dtype=float32), array([[1453.7631 , 2360.0654 ],
+       [ 667.3571 ,  587.08575],
+       [ 809.74054,  501.65567],
+       [2317.3264 ,  934.379  ],
+       [2638.3262 , 2638.3262 ]], dtype=float32)], array([[599.2676 , 609.26465],
+       [768.1507 , 416.84238],
+       [728.     , 549.     ],
+       [729.5    , 551.5    ]], dtype=float32))
+image connected components - ret: 2
+image connected components - labels: [[0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]]
+image connected components - stats: [[     0      0   1024    768 754231]
+ [   182    245    223    310  32201]]
+image connected components - centroids: [[521.88385123 382.47275304]
+ [268.28325207 407.56079004]]
+image connected components - markers: [[-1 -1 -1 ... -1 -1 -1]
+ [-1  1  1 ...  1  1 -1]
+ [-1  1  1 ...  1  1 -1]
+ ...
+ [-1  1  1 ...  1  1 -1]
+ [-1  1  1 ...  1  1 -1]
+ [-1 -1 -1 ... -1 -1 -1]]
+rect: (0, 0, 1024, 768)
+subdiv: <Subdiv2D 0x7f02195ccad0>
+centroid: [521.88385123 382.47275304]
+centroid: [268.28325207 407.56079004]
+image Delaunay triangles: ()
+image Voronoi Facets: ([array([[  532.0819 ,  1779.8491 ],
+       [   83.18188, -2757.8176 ],
+       [ 1183.0216 , -3902.0435 ],
+       [ 2080.2627 ,  2080.2627 ]], dtype=float32), array([[  532.0819 ,  1779.8491 ],
+       [-4152.345  ,  1308.1726 ],
+       [   83.18188, -2757.8176 ]], dtype=float32)], array([[521.88385, 382.47275],
+       [268.28326, 407.5608 ]], dtype=float32))
+('Predictions:', [[('n06359193', 'web_site', 0.949197), ('n04152593', 'screen', 0.018279472), ('n03782006', 'monitor', 0.009434112), ('n03832673', 'notebook', 0.0074752057), ('n03180011', 'desktop_computer', 0.006654073)]])
+2
+defaultdict(<class 'list'>, {'personal': ['desktop_computer'], 'series': ['web_site'], 'display': ['monitor'], 'project': ['screen'], 'computer': ['web_site', 'monitor', 'notebook', 'desktop_computer'], 'enough': ['desktop_computer'], 'monitor': ['monitor'], 'Web': ['web_site'], 'viewing': ['screen'], 'conveniently': ['desktop_computer'], 'internet': ['web_site'], 'web': ['web_site'], 'signals': ['monitor'], 'device': ['monitor'], 'produced': ['monitor'], 'individual': ['desktop_computer'], 'Wide': ['web_site'], 'pages': ['web_site'], 'portable': ['notebook'], 'onto': ['screen'], 'World': ['web_site'], 'connected': ['web_site'], 'screen': ['screen', 'monitor'], 'fit': ['desktop_computer'], 'takes': ['monitor'], 'television': ['monitor'], 'workspace': ['desktop_computer'], 'compact': ['notebook'], 'displays': ['monitor'], 'maintains': ['web_site'], 'small': ['notebook', 'desktop_computer']})
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f01e23c3d90>, 1720278.0))
+2
+defaultdict(<class 'list'>, {'personal': ['desktop_computer'], 'series': ['web_site'], 'display': ['monitor'], 'project': ['screen'], 'computer': ['web_site', 'monitor', 'notebook', 'desktop_computer'], 'enough': ['desktop_computer'], 'monitor': ['monitor'], 'Web': ['web_site'], 'viewing': ['screen'], 'conveniently': ['desktop_computer'], 'internet': ['web_site'], 'web': ['web_site'], 'signals': ['monitor'], 'device': ['monitor'], 'produced': ['monitor'], 'individual': ['desktop_computer'], 'Wide': ['web_site'], 'pages': ['web_site'], 'portable': ['notebook'], 'onto': ['screen'], 'World': ['web_site'], 'connected': ['web_site'], 'screen': ['screen', 'monitor'], 'fit': ['desktop_computer'], 'takes': ['monitor'], 'television': ['monitor'], 'workspace': ['desktop_computer'], 'compact': ['notebook'], 'displays': ['monitor'], 'maintains': ['web_site'], 'small': ['notebook', 'desktop_computer']})
+('definitiongraph networkx edges:', OutEdgeView([('personal', 'desktop_computer'), ('desktop_computer', 'personal'), ('desktop_computer', 'computer'), ('desktop_computer', 'enough'), ('desktop_computer', 'conveniently'), ('desktop_computer', 'individual'), ('desktop_computer', 'fit'), ('desktop_computer', 'workspace'), ('desktop_computer', 'small'), ('series', 'web_site'), ('web_site', 'series'), ('web_site', 'computer'), ('web_site', 'Web'), ('web_site', 'internet'), ('web_site', 'web'), ('web_site', 'Wide'), ('web_site', 'pages'), ('web_site', 'World'), ('web_site', 'connected'), ('web_site', 'maintains'), ('display', 'monitor'), ('monitor', 'display'), ('monitor', 'computer'), ('monitor', 'monitor'), ('monitor', 'signals'), ('monitor', 'device'), ('monitor', 'produced'), ('monitor', 'screen'), ('monitor', 'takes'), ('monitor', 'television'), ('monitor', 'displays'), ('project', 'screen'), ('screen', 'project'), ('screen', 'viewing'), ('screen', 'onto'), ('screen', 'screen'), ('screen', 'monitor'), ('computer', 'web_site'), ('computer', 'monitor'), ('computer', 'notebook'), ('computer', 'desktop_computer'), ('notebook', 'computer'), ('notebook', 'portable'), ('notebook', 'compact'), ('notebook', 'small'), ('enough', 'desktop_computer'), ('Web', 'web_site'), ('viewing', 'screen'), ('conveniently', 'desktop_computer'), ('internet', 'web_site'), ('web', 'web_site'), ('signals', 'monitor'), ('device', 'monitor'), ('produced', 'monitor'), ('individual', 'desktop_computer'), ('Wide', 'web_site'), ('pages', 'web_site'), ('portable', 'notebook'), ('onto', 'screen'), ('World', 'web_site'), ('connected', 'web_site'), ('fit', 'desktop_computer'), ('takes', 'monitor'), ('television', 'monitor'), ('workspace', 'desktop_computer'), ('compact', 'notebook'), ('displays', 'monitor'), ('maintains', 'web_site'), ('small', 'notebook'), ('small', 'desktop_computer')]))
+('Core number (sorted) :', [('desktop_computer', 4), ('computer', 4), ('notebook', 4), ('small', 4), ('personal', 2), ('series', 2), ('web_site', 2), ('display', 2), ('monitor', 2), ('project', 2), ('screen', 2), ('enough', 2), ('Web', 2), ('viewing', 2), ('conveniently', 2), ('internet', 2), ('web', 2), ('signals', 2), ('device', 2), ('produced', 2), ('individual', 2), ('Wide', 2), ('pages', 2), ('portable', 2), ('onto', 2), ('World', 2), ('connected', 2), ('fit', 2), ('takes', 2), ('television', 2), ('workspace', 2), ('compact', 2), ('displays', 2), ('maintains', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'desktop_computer', ',core number=', 4)
+('This document belongs to class:', 'computer', ',core number=', 4)
+('This document belongs to class:', 'notebook', ',core number=', 4)
+('This document belongs to class:', 'small', ',core number=', 4)
+('This document belongs to class:', 'personal', ',core number=', 2)
+('This document belongs to class:', 'series', ',core number=', 2)
+('This document belongs to class:', 'web_site', ',core number=', 2)
+('This document belongs to class:', 'display', ',core number=', 2)
+('This document belongs to class:', 'monitor', ',core number=', 2)
+('This document belongs to class:', 'project', ',core number=', 2)
+('This document belongs to class:', 'screen', ',core number=', 2)
+('This document belongs to class:', 'enough', ',core number=', 2)
+('This document belongs to class:', 'Web', ',core number=', 2)
+('This document belongs to class:', 'viewing', ',core number=', 2)
+('This document belongs to class:', 'conveniently', ',core number=', 2)
+('This document belongs to class:', 'internet', ',core number=', 2)
+('This document belongs to class:', 'web', ',core number=', 2)
+('This document belongs to class:', 'signals', ',core number=', 2)
+('\tmax_core_number', 4)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('computer', 0.7054924242424243), ('monitor', 0.5511363636363636), ('web_site', 0.4772727272727273), ('desktop_computer', 0.35700757575757575), ('screen', 0.17613636363636365), ('notebook', 0.14109848484848486), ('small', 0.019886363636363636), ('personal', 0.0), ('series', 0.0), ('display', 0.0), ('project', 0.0), ('enough', 0.0), ('Web', 0.0), ('viewing', 0.0), ('conveniently', 0.0), ('internet', 0.0), ('web', 0.0), ('signals', 0.0), ('device', 0.0), ('produced', 0.0), ('individual', 0.0), ('Wide', 0.0), ('pages', 0.0), ('portable', 0.0), ('onto', 0.0), ('World', 0.0), ('connected', 0.0), ('fit', 0.0), ('takes', 0.0), ('television', 0.0), ('workspace', 0.0), ('compact', 0.0), ('displays', 0.0), ('maintains', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('computer', 0.5076923076923077), ('monitor', 0.44), ('web_site', 0.4177215189873418), ('desktop_computer', 0.39759036144578314), ('notebook', 0.3626373626373626), ('screen', 0.32673267326732675), ('display', 0.308411214953271), ('signals', 0.308411214953271), ('device', 0.308411214953271), ('produced', 0.308411214953271), ('takes', 0.308411214953271), ('television', 0.308411214953271), ('displays', 0.308411214953271), ('small', 0.30275229357798167), ('series', 0.2972972972972973), ('Web', 0.2972972972972973), ('internet', 0.2972972972972973), ('web', 0.2972972972972973), ('Wide', 0.2972972972972973), ('pages', 0.2972972972972973), ('World', 0.2972972972972973), ('connected', 0.2972972972972973), ('maintains', 0.2972972972972973), ('personal', 0.28695652173913044), ('enough', 0.28695652173913044), ('conveniently', 0.28695652173913044), ('individual', 0.28695652173913044), ('fit', 0.28695652173913044), ('workspace', 0.28695652173913044), ('portable', 0.2682926829268293), ('compact', 0.2682926829268293), ('project', 0.24812030075187969), ('viewing', 0.24812030075187969), ('onto', 0.24812030075187969)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('web_site', 0.6060606060606061), ('monitor', 0.5454545454545454), ('desktop_computer', 0.48484848484848486), ('screen', 0.24242424242424243), ('computer', 0.24242424242424243), ('notebook', 0.24242424242424243), ('small', 0.12121212121212122), ('personal', 0.06060606060606061), ('series', 0.06060606060606061), ('display', 0.06060606060606061), ('project', 0.06060606060606061), ('enough', 0.06060606060606061), ('Web', 0.06060606060606061), ('viewing', 0.06060606060606061), ('conveniently', 0.06060606060606061), ('internet', 0.06060606060606061), ('web', 0.06060606060606061), ('signals', 0.06060606060606061), ('device', 0.06060606060606061), ('produced', 0.06060606060606061), ('individual', 0.06060606060606061), ('Wide', 0.06060606060606061), ('pages', 0.06060606060606061), ('portable', 0.06060606060606061), ('onto', 0.06060606060606061), ('World', 0.06060606060606061), ('connected', 0.06060606060606061), ('fit', 0.06060606060606061), ('takes', 0.06060606060606061), ('television', 0.06060606060606061), ('workspace', 0.06060606060606061), ('compact', 0.06060606060606061), ('displays', 0.06060606060606061), ('maintains', 0.06060606060606061)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('web_site', 0.1399943637404055), ('monitor', 0.12359655846419652), ('desktop_computer', 0.10760366549894232), ('screen', 0.059665466348456854), ('notebook', 0.05369189537978786), ('computer', 0.05082518504563133), ('small', 0.027253415207801102), ('project', 0.01709104096984327), ('viewing', 0.01709104096984327), ('onto', 0.01709104096984327), ('series', 0.016310895608029157), ('Web', 0.016310895608029157), ('internet', 0.016310895608029157), ('web', 0.016310895608029157), ('Wide', 0.016310895608029157), ('pages', 0.016310895608029157), ('World', 0.016310895608029157), ('connected', 0.016310895608029157), ('maintains', 0.016310895608029157), ('display', 0.016084403641565787), ('signals', 0.016084403641565787), ('device', 0.016084403641565787), ('produced', 0.016084403641565787), ('takes', 0.016084403641565787), ('television', 0.016084403641565787), ('displays', 0.016084403641565787), ('personal', 0.015844270403664717), ('enough', 0.015844270403664717), ('conveniently', 0.015844270403664717), ('individual', 0.015844270403664717), ('fit', 0.015844270403664717), ('workspace', 0.015844270403664717), ('portable', 0.015820909510018737), ('compact', 0.015820909510018737)]
+('Unsupervised Image Classes:', ([('desktop_computer', 4), ('computer', 4), ('notebook', 4), ('small', 4), ('personal', 2), ('series', 2), ('web_site', 2), ('display', 2), ('monitor', 2), ('project', 2), ('screen', 2), ('enough', 2), ('Web', 2), ('viewing', 2), ('conveniently', 2), ('internet', 2), ('web', 2), ('signals', 2), ('device', 2), ('produced', 2), ('individual', 2), ('Wide', 2), ('pages', 2), ('portable', 2), ('onto', 2), ('World', 2), ('connected', 2), ('fit', 2), ('takes', 2), ('television', 2), ('workspace', 2), ('compact', 2), ('displays', 2), ('maintains', 2)], [('web_site', 0.1399943637404055), ('monitor', 0.12359655846419652), ('desktop_computer', 0.10760366549894232), ('screen', 0.059665466348456854), ('notebook', 0.05369189537978786), ('computer', 0.05082518504563133), ('small', 0.027253415207801102), ('project', 0.01709104096984327), ('viewing', 0.01709104096984327), ('onto', 0.01709104096984327), ('series', 0.016310895608029157), ('Web', 0.016310895608029157), ('internet', 0.016310895608029157), ('web', 0.016310895608029157), ('Wide', 0.016310895608029157), ('pages', 0.016310895608029157), ('World', 0.016310895608029157), ('connected', 0.016310895608029157), ('maintains', 0.016310895608029157), ('display', 0.016084403641565787), ('signals', 0.016084403641565787), ('device', 0.016084403641565787), ('produced', 0.016084403641565787), ('takes', 0.016084403641565787), ('television', 0.016084403641565787), ('displays', 0.016084403641565787), ('personal', 0.015844270403664717), ('enough', 0.015844270403664717), ('conveniently', 0.015844270403664717), ('individual', 0.015844270403664717), ('fit', 0.015844270403664717), ('workspace', 0.015844270403664717), ('portable', 0.015820909510018737), ('compact', 0.015820909510018737)]))
+('Predictions:', [[('n06359193', 'web_site', 0.96620727), ('n04152593', 'screen', 0.012546269), ('n03782006', 'monitor', 0.00631147), ('n03832673', 'notebook', 0.0042827455), ('n03180011', 'desktop_computer', 0.0040793857)]])
+2
+defaultdict(<class 'list'>, {'personal': ['desktop_computer'], 'series': ['web_site'], 'display': ['monitor'], 'project': ['screen'], 'computer': ['web_site', 'monitor', 'notebook', 'desktop_computer'], 'enough': ['desktop_computer'], 'monitor': ['monitor'], 'Web': ['web_site'], 'viewing': ['screen'], 'conveniently': ['desktop_computer'], 'internet': ['web_site'], 'web': ['web_site'], 'signals': ['monitor'], 'device': ['monitor'], 'produced': ['monitor'], 'individual': ['desktop_computer'], 'Wide': ['web_site'], 'pages': ['web_site'], 'portable': ['notebook'], 'onto': ['screen'], 'World': ['web_site'], 'connected': ['web_site'], 'screen': ['screen', 'monitor'], 'fit': ['desktop_computer'], 'takes': ['monitor'], 'television': ['monitor'], 'workspace': ['desktop_computer'], 'compact': ['notebook'], 'displays': ['monitor'], 'maintains': ['web_site'], 'small': ['notebook', 'desktop_computer']})
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f01e052d190>, 1720278.0))
+2
+defaultdict(<class 'list'>, {'personal': ['desktop_computer'], 'series': ['web_site'], 'display': ['monitor'], 'project': ['screen'], 'computer': ['web_site', 'monitor', 'notebook', 'desktop_computer'], 'enough': ['desktop_computer'], 'monitor': ['monitor'], 'Web': ['web_site'], 'viewing': ['screen'], 'conveniently': ['desktop_computer'], 'internet': ['web_site'], 'web': ['web_site'], 'signals': ['monitor'], 'device': ['monitor'], 'produced': ['monitor'], 'individual': ['desktop_computer'], 'Wide': ['web_site'], 'pages': ['web_site'], 'portable': ['notebook'], 'onto': ['screen'], 'World': ['web_site'], 'connected': ['web_site'], 'screen': ['screen', 'monitor'], 'fit': ['desktop_computer'], 'takes': ['monitor'], 'television': ['monitor'], 'workspace': ['desktop_computer'], 'compact': ['notebook'], 'displays': ['monitor'], 'maintains': ['web_site'], 'small': ['notebook', 'desktop_computer']})
+('definitiongraph networkx edges:', OutEdgeView([('personal', 'desktop_computer'), ('desktop_computer', 'personal'), ('desktop_computer', 'computer'), ('desktop_computer', 'enough'), ('desktop_computer', 'conveniently'), ('desktop_computer', 'individual'), ('desktop_computer', 'fit'), ('desktop_computer', 'workspace'), ('desktop_computer', 'small'), ('series', 'web_site'), ('web_site', 'series'), ('web_site', 'computer'), ('web_site', 'Web'), ('web_site', 'internet'), ('web_site', 'web'), ('web_site', 'Wide'), ('web_site', 'pages'), ('web_site', 'World'), ('web_site', 'connected'), ('web_site', 'maintains'), ('display', 'monitor'), ('monitor', 'display'), ('monitor', 'computer'), ('monitor', 'monitor'), ('monitor', 'signals'), ('monitor', 'device'), ('monitor', 'produced'), ('monitor', 'screen'), ('monitor', 'takes'), ('monitor', 'television'), ('monitor', 'displays'), ('project', 'screen'), ('screen', 'project'), ('screen', 'viewing'), ('screen', 'onto'), ('screen', 'screen'), ('screen', 'monitor'), ('computer', 'web_site'), ('computer', 'monitor'), ('computer', 'notebook'), ('computer', 'desktop_computer'), ('notebook', 'computer'), ('notebook', 'portable'), ('notebook', 'compact'), ('notebook', 'small'), ('enough', 'desktop_computer'), ('Web', 'web_site'), ('viewing', 'screen'), ('conveniently', 'desktop_computer'), ('internet', 'web_site'), ('web', 'web_site'), ('signals', 'monitor'), ('device', 'monitor'), ('produced', 'monitor'), ('individual', 'desktop_computer'), ('Wide', 'web_site'), ('pages', 'web_site'), ('portable', 'notebook'), ('onto', 'screen'), ('World', 'web_site'), ('connected', 'web_site'), ('fit', 'desktop_computer'), ('takes', 'monitor'), ('television', 'monitor'), ('workspace', 'desktop_computer'), ('compact', 'notebook'), ('displays', 'monitor'), ('maintains', 'web_site'), ('small', 'notebook'), ('small', 'desktop_computer')]))
+('Core number (sorted) :', [('desktop_computer', 4), ('computer', 4), ('notebook', 4), ('small', 4), ('personal', 2), ('series', 2), ('web_site', 2), ('display', 2), ('monitor', 2), ('project', 2), ('screen', 2), ('enough', 2), ('Web', 2), ('viewing', 2), ('conveniently', 2), ('internet', 2), ('web', 2), ('signals', 2), ('device', 2), ('produced', 2), ('individual', 2), ('Wide', 2), ('pages', 2), ('portable', 2), ('onto', 2), ('World', 2), ('connected', 2), ('fit', 2), ('takes', 2), ('television', 2), ('workspace', 2), ('compact', 2), ('displays', 2), ('maintains', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'desktop_computer', ',core number=', 4)
+('This document belongs to class:', 'computer', ',core number=', 4)
+('This document belongs to class:', 'notebook', ',core number=', 4)
+('This document belongs to class:', 'small', ',core number=', 4)
+('This document belongs to class:', 'personal', ',core number=', 2)
+('This document belongs to class:', 'series', ',core number=', 2)
+('This document belongs to class:', 'web_site', ',core number=', 2)
+('This document belongs to class:', 'display', ',core number=', 2)
+('This document belongs to class:', 'monitor', ',core number=', 2)
+('This document belongs to class:', 'project', ',core number=', 2)
+('This document belongs to class:', 'screen', ',core number=', 2)
+('This document belongs to class:', 'enough', ',core number=', 2)
+('This document belongs to class:', 'Web', ',core number=', 2)
+('This document belongs to class:', 'viewing', ',core number=', 2)
+('This document belongs to class:', 'conveniently', ',core number=', 2)
+('This document belongs to class:', 'internet', ',core number=', 2)
+('This document belongs to class:', 'web', ',core number=', 2)
+('This document belongs to class:', 'signals', ',core number=', 2)
+('\tmax_core_number', 4)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('computer', 0.7054924242424243), ('monitor', 0.5511363636363636), ('web_site', 0.4772727272727273), ('desktop_computer', 0.35700757575757575), ('screen', 0.17613636363636365), ('notebook', 0.14109848484848486), ('small', 0.019886363636363636), ('personal', 0.0), ('series', 0.0), ('display', 0.0), ('project', 0.0), ('enough', 0.0), ('Web', 0.0), ('viewing', 0.0), ('conveniently', 0.0), ('internet', 0.0), ('web', 0.0), ('signals', 0.0), ('device', 0.0), ('produced', 0.0), ('individual', 0.0), ('Wide', 0.0), ('pages', 0.0), ('portable', 0.0), ('onto', 0.0), ('World', 0.0), ('connected', 0.0), ('fit', 0.0), ('takes', 0.0), ('television', 0.0), ('workspace', 0.0), ('compact', 0.0), ('displays', 0.0), ('maintains', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('computer', 0.5076923076923077), ('monitor', 0.44), ('web_site', 0.4177215189873418), ('desktop_computer', 0.39759036144578314), ('notebook', 0.3626373626373626), ('screen', 0.32673267326732675), ('display', 0.308411214953271), ('signals', 0.308411214953271), ('device', 0.308411214953271), ('produced', 0.308411214953271), ('takes', 0.308411214953271), ('television', 0.308411214953271), ('displays', 0.308411214953271), ('small', 0.30275229357798167), ('series', 0.2972972972972973), ('Web', 0.2972972972972973), ('internet', 0.2972972972972973), ('web', 0.2972972972972973), ('Wide', 0.2972972972972973), ('pages', 0.2972972972972973), ('World', 0.2972972972972973), ('connected', 0.2972972972972973), ('maintains', 0.2972972972972973), ('personal', 0.28695652173913044), ('enough', 0.28695652173913044), ('conveniently', 0.28695652173913044), ('individual', 0.28695652173913044), ('fit', 0.28695652173913044), ('workspace', 0.28695652173913044), ('portable', 0.2682926829268293), ('compact', 0.2682926829268293), ('project', 0.24812030075187969), ('viewing', 0.24812030075187969), ('onto', 0.24812030075187969)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('web_site', 0.6060606060606061), ('monitor', 0.5454545454545454), ('desktop_computer', 0.48484848484848486), ('screen', 0.24242424242424243), ('computer', 0.24242424242424243), ('notebook', 0.24242424242424243), ('small', 0.12121212121212122), ('personal', 0.06060606060606061), ('series', 0.06060606060606061), ('display', 0.06060606060606061), ('project', 0.06060606060606061), ('enough', 0.06060606060606061), ('Web', 0.06060606060606061), ('viewing', 0.06060606060606061), ('conveniently', 0.06060606060606061), ('internet', 0.06060606060606061), ('web', 0.06060606060606061), ('signals', 0.06060606060606061), ('device', 0.06060606060606061), ('produced', 0.06060606060606061), ('individual', 0.06060606060606061), ('Wide', 0.06060606060606061), ('pages', 0.06060606060606061), ('portable', 0.06060606060606061), ('onto', 0.06060606060606061), ('World', 0.06060606060606061), ('connected', 0.06060606060606061), ('fit', 0.06060606060606061), ('takes', 0.06060606060606061), ('television', 0.06060606060606061), ('workspace', 0.06060606060606061), ('compact', 0.06060606060606061), ('displays', 0.06060606060606061), ('maintains', 0.06060606060606061)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('web_site', 0.1399943637404055), ('monitor', 0.12359655846419652), ('desktop_computer', 0.10760366549894232), ('screen', 0.059665466348456854), ('notebook', 0.05369189537978786), ('computer', 0.05082518504563133), ('small', 0.027253415207801102), ('project', 0.01709104096984327), ('viewing', 0.01709104096984327), ('onto', 0.01709104096984327), ('series', 0.016310895608029157), ('Web', 0.016310895608029157), ('internet', 0.016310895608029157), ('web', 0.016310895608029157), ('Wide', 0.016310895608029157), ('pages', 0.016310895608029157), ('World', 0.016310895608029157), ('connected', 0.016310895608029157), ('maintains', 0.016310895608029157), ('display', 0.016084403641565787), ('signals', 0.016084403641565787), ('device', 0.016084403641565787), ('produced', 0.016084403641565787), ('takes', 0.016084403641565787), ('television', 0.016084403641565787), ('displays', 0.016084403641565787), ('personal', 0.015844270403664717), ('enough', 0.015844270403664717), ('conveniently', 0.015844270403664717), ('individual', 0.015844270403664717), ('fit', 0.015844270403664717), ('workspace', 0.015844270403664717), ('portable', 0.015820909510018737), ('compact', 0.015820909510018737)]
+('Unsupervised Image Classes:', ([('desktop_computer', 4), ('computer', 4), ('notebook', 4), ('small', 4), ('personal', 2), ('series', 2), ('web_site', 2), ('display', 2), ('monitor', 2), ('project', 2), ('screen', 2), ('enough', 2), ('Web', 2), ('viewing', 2), ('conveniently', 2), ('internet', 2), ('web', 2), ('signals', 2), ('device', 2), ('produced', 2), ('individual', 2), ('Wide', 2), ('pages', 2), ('portable', 2), ('onto', 2), ('World', 2), ('connected', 2), ('fit', 2), ('takes', 2), ('television', 2), ('workspace', 2), ('compact', 2), ('displays', 2), ('maintains', 2)], [('web_site', 0.1399943637404055), ('monitor', 0.12359655846419652), ('desktop_computer', 0.10760366549894232), ('screen', 0.059665466348456854), ('notebook', 0.05369189537978786), ('computer', 0.05082518504563133), ('small', 0.027253415207801102), ('project', 0.01709104096984327), ('viewing', 0.01709104096984327), ('onto', 0.01709104096984327), ('series', 0.016310895608029157), ('Web', 0.016310895608029157), ('internet', 0.016310895608029157), ('web', 0.016310895608029157), ('Wide', 0.016310895608029157), ('pages', 0.016310895608029157), ('World', 0.016310895608029157), ('connected', 0.016310895608029157), ('maintains', 0.016310895608029157), ('display', 0.016084403641565787), ('signals', 0.016084403641565787), ('device', 0.016084403641565787), ('produced', 0.016084403641565787), ('takes', 0.016084403641565787), ('television', 0.016084403641565787), ('displays', 0.016084403641565787), ('personal', 0.015844270403664717), ('enough', 0.015844270403664717), ('conveniently', 0.015844270403664717), ('individual', 0.015844270403664717), ('fit', 0.015844270403664717), ('workspace', 0.015844270403664717), ('portable', 0.015820909510018737), ('compact', 0.015820909510018737)]))
+('VideoGraph:', [(<networkx.classes.digraph.DiGraph object at 0x7f01e23c3d90>, 1720278.0), (<networkx.classes.digraph.DiGraph object at 0x7f01e052d190>, 1720278.0)])
+('Videograph EventNet Tensor Product Matrix:', [[array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]]), array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])], [array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]]), array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])]])
+reconstruction error=0.9469901737432902
+reconstruction error=0.9469901737432902, variation=0.0.
+converged in 1 iterations.
+['__abstractmethods__', '__class__', '__contains__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '__weakref__', '_abc_impl', 'factors', 'get', 'items', 'keys', 'rank', 'shape', 'values', 'weights']
+('Tensor Decomposition of Video EventNet Tensor Product(measure of connectedness of video):', [array([[5.1155349],
+       [5.1155349]]), array([[0.70710678],
+       [0.70710678]]), array([[3.30233981e-02],
+       [1.25529514e-01],
+       [4.10305767e-02],
+       [1.55966638e-01],
+       [1.27122901e-01],
+       [4.83223319e-01],
+       [6.31820067e-02],
+       [2.40169306e-01],
+       [2.23589789e-01],
+       [8.51966263e-02],
+       [3.30233981e-02],
+       [4.10305767e-02],
+       [6.31820067e-02],
+       [3.30233981e-02],
+       [4.10305767e-02],
+       [4.10305767e-02],
+       [1.27122901e-01],
+       [1.27122901e-01],
+       [1.27122901e-01],
+       [3.30233981e-02],
+       [4.10305767e-02],
+       [4.10305767e-02],
+       [2.24129132e-02],
+       [6.31820067e-02],
+       [4.10305767e-02],
+       [4.10305767e-02],
+       [3.30233981e-02],
+       [1.27122901e-01],
+       [1.27122901e-01],
+       [3.30233981e-02],
+       [2.24129132e-02],
+       [1.27122901e-01],
+       [4.10305767e-02],
+       [5.54363113e-02],
+       [3.37962424e-02],
+       [1.28467273e-01],
+       [4.19908125e-02],
+       [1.59616714e-01],
+       [1.30097950e-01],
+       [4.94532161e-01],
+       [6.46606509e-02],
+       [2.45789972e-01],
+       [2.28822446e-01],
+       [8.71904771e-02],
+       [3.37962424e-02],
+       [4.19908125e-02],
+       [6.46606509e-02],
+       [3.37962424e-02],
+       [4.19908125e-02],
+       [4.19908125e-02],
+       [1.30097950e-01],
+       [1.30097950e-01],
+       [1.30097950e-01],
+       [3.37962424e-02],
+       [4.19908125e-02],
+       [4.19908125e-02],
+       [2.29374411e-02],
+       [6.46606509e-02],
+       [4.19908125e-02],
+       [4.19908125e-02],
+       [3.37962424e-02],
+       [1.30097950e-01],
+       [1.30097950e-01],
+       [3.37962424e-02],
+       [2.29374411e-02],
+       [1.30097950e-01],
+       [4.19908125e-02],
+       [5.67336835e-02],
+       [2.77555756e-17],
+       [6.93889390e-18],
+       [1.38777878e-17],
+       [3.46944695e-18],
+       [2.77555756e-17],
+       [2.77555756e-17],
+       [4.16333634e-17],
+       [0.00000000e+00],
+       [1.38777878e-17],
+       [1.38777878e-17],
+       [3.46944695e-18],
+       [4.16333634e-17],
+       [2.77555756e-17],
+       [1.38777878e-17],
+       [6.93889390e-18],
+       [6.93889390e-18],
+       [5.55111512e-17],
+       [5.55111512e-17],
+       [2.77555756e-17],
+       [6.93889390e-18],
+       [2.08166817e-17],
+       [1.38777878e-17],
+       [0.00000000e+00],
+       [1.38777878e-17],
+       [2.77555756e-17],
+       [6.93889390e-18],
+       [2.08166817e-17],
+       [2.77555756e-17],
+       [2.77555756e-17],
+       [3.46944695e-18],
+       [4.16333634e-17],
+       [2.77555756e-17]]), array([[3.21603216e-02],
+       [1.22248762e-01],
+       [3.99582301e-02],
+       [1.51890402e-01],
+       [1.23800506e-01],
+       [4.70594131e-01],
+       [6.15307258e-02],
+       [2.33892409e-01],
+       [2.17746202e-01],
+       [8.29699866e-02],
+       [3.21603216e-02],
+       [3.99582301e-02],
+       [6.15307258e-02],
+       [3.21603216e-02],
+       [3.99582301e-02],
+       [3.99582301e-02],
+       [1.23800506e-01],
+       [1.23800506e-01],
+       [1.23800506e-01],
+       [3.21603216e-02],
+       [3.99582301e-02],
+       [3.99582301e-02],
+       [2.18271449e-02],
+       [6.15307258e-02],
+       [3.99582301e-02],
+       [3.99582301e-02],
+       [3.21603216e-02],
+       [1.23800506e-01],
+       [1.23800506e-01],
+       [3.21603216e-02],
+       [2.18271449e-02],
+       [1.23800506e-01],
+       [3.99582301e-02],
+       [5.39874665e-02],
+       [3.14248871e-02],
+       [1.19453207e-01],
+       [3.90444750e-02],
+       [1.48417009e-01],
+       [1.20969466e-01],
+       [4.59832698e-01],
+       [6.01236560e-02],
+       [2.28543813e-01],
+       [2.12766835e-01],
+       [8.10726490e-02],
+       [3.14248871e-02],
+       [3.90444750e-02],
+       [6.01236560e-02],
+       [3.14248871e-02],
+       [3.90444750e-02],
+       [3.90444750e-02],
+       [1.20969466e-01],
+       [1.20969466e-01],
+       [1.20969466e-01],
+       [3.14248871e-02],
+       [3.90444750e-02],
+       [3.90444750e-02],
+       [2.13280071e-02],
+       [6.01236560e-02],
+       [3.90444750e-02],
+       [3.90444750e-02],
+       [3.14248871e-02],
+       [1.20969466e-01],
+       [1.20969466e-01],
+       [3.14248871e-02],
+       [2.13280071e-02],
+       [1.20969466e-01],
+       [3.90444750e-02],
+       [5.27528942e-02],
+       [0.00000000e+00],
+       [1.38777878e-17],
+       [0.00000000e+00],
+       [4.16333634e-17],
+       [2.77555756e-17],
+       [2.77555756e-17],
+       [3.46944695e-18],
+       [1.38777878e-17],
+       [2.77555756e-17],
+       [2.77555756e-17],
+       [3.46944695e-18],
+       [2.77555756e-17],
+       [0.00000000e+00],
+       [2.08166817e-17],
+       [6.93889390e-18],
+       [0.00000000e+00],
+       [1.73472348e-18],
+       [1.38777878e-17],
+       [0.00000000e+00],
+       [2.77555756e-17],
+       [3.46944695e-18],
+       [1.38777878e-17],
+       [1.38777878e-17],
+       [6.93889390e-18],
+       [2.77555756e-17],
+       [0.00000000e+00],
+       [0.00000000e+00],
+       [2.77555756e-17],
+       [3.46944695e-18],
+       [0.00000000e+00],
+       [1.38777878e-17],
+       [2.77555756e-17]])])
+
