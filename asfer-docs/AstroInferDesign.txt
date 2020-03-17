@@ -15896,3 +15896,7 @@ subdivision.
 	13.1 Factors of an Integer (already found) are centroids of segments located on hyperbolic arc
 	13.2 Voronoi diagrams subdivide 2D plane and find faces comprising every factor centroid
 	13.3 Planar Point Location on Voronoi 2D planar subdivision locates the polygon face containing a factor point. Advantage of Rasterized hyperbolic arc: every polygon face is an axis-parallel arithmetic progression enabling binary search within faces.
+
+References:
+----------
+810.1 Multi Agent Graph Coloring - [Blum-Rosenschein] - https://www.aaai.org/Papers/AAAI/2008/AAAI08-004.pdf - "...Multiple agents hold disjoint autonomous subgraphs of a global graph, and every color used by the agents in coloring the graph has associated cost. In this multiagent graph color- ing scenario, we seek a minimum legal coloring of the global graph’s vertices such that the coloring is also Pareto efficient, socially fair, and individual rational ... Every node corresponds to an agent, and each agent tries to determine its color so that neighbors do not have the same color." - Socially Fair Coloring of FaceGraphs of Urban Sprawls could involve Four categories or agents
