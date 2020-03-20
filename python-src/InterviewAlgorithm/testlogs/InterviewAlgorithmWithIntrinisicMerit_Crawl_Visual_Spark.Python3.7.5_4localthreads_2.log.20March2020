@@ -1,0 +1,32 @@
+Core number (sorted) : [('something', 2), ('proposal', 2), ('Tamil', 2), ('Chennai', 2), ('course', 2), ('planning', 2), ('unit', 2), ('density', 2), ('particular', 2), ('area', 2), ('city', 2), ('purpose', 2), ('formerly', 2), ('geographical', 2), ('plan', 2), ('indefinite', 2), ('act', 2), ('bishop', 2), ('metropolitan', 2), ('distinguished', 2), ('definite', 2), ('territory', 2), ('population', 2), ('given', 2), ('amount', 2), ('Nadu', 2), ('inhabit', 2), ('Eastern', 2), ('state', 2), ('usually', 2), ('expand', 2), ('serving', 2), ('action', 2), ('Madras', 2), ('Bay', 2), ('patriarch', 2), ('special', 2), ('Orthodox', 2), ('position', 2), ('assumption', 2), ('western', 2), ('archbishop', 2), ('Christianity', 2), ('proposed', 2), ('culture', 2), ('region', 2), ('program', 2), ('size', 2), ('formulating', 2), ('boundary', 2), ('equivalent', 2), ('Church', 2), ('people', 2), ('per', 2), ('title', 2), ('Bengal', 2), ('geography', 2), ('None', 0), ('one', 0), ('extend', 0), ('directions', 0)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: something ,core number= 2
+This document belongs to class: proposal ,core number= 2
+This document belongs to class: Tamil ,core number= 2
+This document belongs to class: Chennai ,core number= 2
+This document belongs to class: course ,core number= 2
+This document belongs to class: planning ,core number= 2
+This document belongs to class: unit ,core number= 2
+This document belongs to class: density ,core number= 2
+max_core_number 2
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('area', 0.10886361905742628), ('metropolitan', 0.10510183395916665), ('Chennai', 0.0652196872100505), ('planning', 0.05724325786022727), ('proposal', 0.04129039916058081), ('density', 0.04129039916058081), ('population', 0.03636765140447962), ('usually', 0.018686765053925948), ('people', 0.017451092989593447), ('something', 0.011378789098743692), ('unit', 0.011378789098743692), ('plan', 0.011378789098743692), ('amount', 0.011378789098743692), ('assumption', 0.011378789098743692), ('proposed', 0.011378789098743692), ('size', 0.011378789098743692), ('per', 0.011378789098743692), ('course', 0.01071408665292509), ('act', 0.01071408665292509), ('definite', 0.01071408665292509), ('action', 0.01071408665292509), ('program', 0.01071408665292509), ('formulating', 0.01071408665292509), ('expand', 0.010545644419129445), ('Tamil', 0.010524171668405488), ('city', 0.010524171668405488), ('formerly', 0.010524171668405488), ('Nadu', 0.010524171668405488), ('Madras', 0.010524171668405488), ('Bay', 0.010524171668405488), ('Bengal', 0.010524171668405488), ('territory', 0.010332689754038097), ('inhabit', 0.010332689754038097), ('state', 0.010332689754038097), ('bishop', 0.010049384207106486), ('given', 0.010049384207106486), ('Eastern', 0.010049384207106486), ('patriarch', 0.010049384207106486), ('Orthodox', 0.010049384207106486), ('position', 0.010049384207106486), ('western', 0.010049384207106486), ('archbishop', 0.010049384207106486), ('Christianity', 0.010049384207106486), ('equivalent', 0.010049384207106486), ('Church', 0.010049384207106486), ('title', 0.010049384207106486), ('particular', 0.009722569902222018), ('purpose', 0.009722569902222018), ('geographical', 0.009722569902222018), ('indefinite', 0.009722569902222018), ('distinguished', 0.009722569902222018), ('serving', 0.009722569902222018), ('special', 0.009722569902222018), ('culture', 0.009722569902222018), ('region', 0.009722569902222018), ('boundary', 0.009722569902222018), ('geography', 0.009722569902222018), ('None', 0.0026041666666666674), ('one', 0.0026041666666666674), ('extend', 0.0026041666666666674), ('directions', 0.0026041666666666674)]
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem
+==========================================================================================================
+0
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut
+==========================================================================================================
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner
+==========================================================================================================
+==========================================================================================================
+Alternative Quantitative Intrinsic Merit  - Average Clustering Coefficient
+==========================================================================================================
+0.0
+

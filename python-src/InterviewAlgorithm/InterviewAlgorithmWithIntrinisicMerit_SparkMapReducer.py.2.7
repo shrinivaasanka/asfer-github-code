@@ -37,7 +37,7 @@
 
 # Example pyspark RDD mapreduce code at: http://www.mccarroll.net/blog/pyspark2/
 
-
+from __future__ import division
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext, Row
 import operator
@@ -54,7 +54,7 @@ import threading
 
 import hashlib
 import json
-from pymemcache.client import base
+import memcache
 
 # This caches gloss tokens at each recursion level and thus serially accessed at each recursion depth - safe to be declared as module global
 # Required for loopless Map step
@@ -67,48 +67,26 @@ graphcachelocal = defaultdict(lambda: "Novalue")
 rgo_object = namedtuple("rgo_object", "tokensatthislevel")
 picklelock = threading.Lock()
 
-picklecache = base.Client(("127.0.0.1",11211))
-
 
 def asfer_pickle_string_dump(s, picklef):
-    #picklelock.acquire()
-    print("asfer_pickle_string_dump(): picklef.write():", s)
+    print "asfer_pickle_string_dump(): picklef.write():", s
     picklef.write(s)
-    #picklecache.set(picklef,s)
-    #picklelock.release()
 
 
 def asfer_pickle_string_load(picklef):
-    #picklelock.acquire()
     keyword = picklef.read()
-    #keyword = picklecache.get(picklef)
-    print("asfer_pickle_string_load(): picklef.readlines():", keyword)
-    #picklelock.release()
+    print "asfer_pickle_string_load(): picklef.readlines():", keyword
     return keyword
 
 
 def asfer_pickle_dump(prevlevelsynsets, picklef):
-    #picklelock.acquire()
-    concat=""
     for s in prevlevelsynsets:
         picklef.write(repr(s)+",")
-        #concat = repr(s).strip() + ","
-    #print("concat:",concat)
-    #if len(concat) > 0:
-    #    try:
-    #        todump=str(picklecache.get(picklef)) + concat
-    #        picklecache.set(picklef,todump)
-    #    except:
-    #        print("Exception - todump:",todump)
-    #picklelock.release()
 
 
 def asfer_pickle_load(picklef):
-    #picklelock.acquire()
     line = picklef.readline()
-    #line = str(picklecache.get(picklef))
     synsets = []
-    print("asfer_pickle_load() - line:",line)
     stringsynsets = line.split(",")
     for s in stringsynsets:
         s_synset_tokens = s.split("'")
@@ -120,7 +98,6 @@ def asfer_pickle_load(picklef):
             #print "s_synsets:",s_synsets
             synsets.append(s_synsets[0])
     #print "asfer_pickle_load(): synsets=",synsets
-    #picklelock.release()
     return synsets
 
 # Map function without loop
@@ -129,7 +106,7 @@ def asfer_pickle_load(picklef):
 def mapFunction2(keyword):
     cached_mapped_object = graphcachelocal[keyword]
     if cached_mapped_object != "Novalue":
-        print("mapFunction2: returning from graphcachelocal")
+        print "mapFunction2: returning from graphcachelocal"
         return (1, cached_mapped_object)
     else:
         prevlevelsynsets = []
@@ -152,9 +129,8 @@ def mapFunction2(keyword):
                 w for w in tokens if w not in stopwords and w not in puncts]
             # mapped_object=rgo_object(fdist_tokens.keys(),prevlevelsynsets)
             mapped_object = rgo_object(fdist_tokens)
-        picklef = open("RecursiveGlossOverlap_MapReduce_Persisted.txt", "a")
+        picklef = open("RecursiveGlossOverlap_MapReduce_Persisted.txt", "ab")
         asfer_pickle_dump(prevlevelsynsets, picklef)
-        #asfer_pickle_dump(prevlevelsynsets, "RecursiveGlossOverlap_MapReduce_Persisted.txt")
         graphcachelocal[keyword] = mapped_object
         return (1, mapped_object)
 
@@ -170,7 +146,7 @@ def mapFunction(freqterms1):
     puncts = [' ', '.', '"', ',', '{', '}', '+', '-', '*', '/', '%',
               '&', '(', ')', '[', ']', '=', '@', '#', ':', '|', ';', '\'s']
     mapped_object = ()
-    print("mapFunction(): freqterms1:", freqterms1)
+    print "mapFunction(): freqterms1:", freqterms1
     for keyword in [freqterms1]:
         # WSD - invokes Lesk's algorithm adapted to recursive gloss overlap- best_matching_synset()
         disamb_synset = best_matching_synset(freqterms1, wn.synsets(keyword))
@@ -187,10 +163,9 @@ def mapFunction(freqterms1):
     #print "mapFunction(): prevlevelsynsets=",prevlevelsynsets
     # picklef=open("RecursiveGlossOverlap_MapReduce_Persisted.txt","r")
     # prevlevelsynsets_earlier=asfer_pickle_load(picklef)
-    picklef = open("RecursiveGlossOverlap_MapReduce_Persisted.txt", "a")
+    picklef = open("RecursiveGlossOverlap_MapReduce_Persisted.txt", "ab")
     # asfer_pickle_dump(prevlevelsynsets+prevlevelsynsets_earlier,picklef)
     asfer_pickle_dump(prevlevelsynsets, picklef)
-    #asfer_pickle_dump(prevlevelsynsets, "RecursiveGlossOverlap_MapReduce_Persisted.txt")
     return (1, mapped_object)
 
 
@@ -212,7 +187,7 @@ def reduceFunction(mapped_object1, mapped_object2):
     if not mapped_object2:
         reduced_rgo_object = rgo_object(mapped_object1.tokensatthislevel)
         return reduced_rgo_object
-    print("reduceFunction():returns : ", reduced_rgo_object)
+    print "reduceFunction():returns : ", reduced_rgo_object
     return reduced_rgo_object
 
 #function - best_matching_synset()
@@ -232,15 +207,15 @@ def best_matching_synset(doc_tokens, synsets):
 
 def Spark_MapReduce(level, wordsatthislevel, graphcache):
     freqterms1_local = wordsatthislevel
-    md5hash = hashlib.md5(",".join(wordsatthislevel).encode("utf-8")).hexdigest()
+    md5hash = hashlib.md5(",".join(wordsatthislevel)).hexdigest()
     #md5hash = ",".join(wordsatthislevel)
     cachevalue = graphcache.get(md5hash)
     if cachevalue:
-        print("Spark_MapReduce(): hash = ", md5hash, "; returning from cache")
+        print "Spark_MapReduce(): hash = ", md5hash, "; returning from cache"
         return cachevalue
     else:
-        spcon = SparkContext("local[4]", "Spark_MapReduce")
-        print("Spark_MapReduce(): wordsatthislevel:", wordsatthislevel)
+        spcon = SparkContext("local[2]", "Spark_MapReduce")
+        print "Spark_MapReduce(): wordsatthislevel:", wordsatthislevel
         paralleldata = spcon.parallelize(wordsatthislevel).cache()
         #k=paralleldata.map(lambda wordsatthislevel: mapFunction(wordsatthislevel)).reduceByKey(reduceFunction)
         k = paralleldata.map(mapFunction2).reduceByKey(reduceFunction)
@@ -261,7 +236,7 @@ def Spark_MapReduce(level, wordsatthislevel, graphcache):
         #print "Spark_MapReduce() - SparkSQL DataFrame query results:"
         #print dict_query_results[1]
         graphcache.set(md5hash, dict_query_results[1])
-        print("graphcache_mapreduce updated:", graphcache)
+        print "graphcache_mapreduce updated:", graphcache
         spcon.stop()
         return dict_query_results[1]
 
@@ -283,28 +258,27 @@ def mapFunction_Parents(prevleveltokens):
     picklef_keyword = open(
         "RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt", "r")
     keyword = asfer_pickle_string_load(picklef_keyword)
-    #keyword = asfer_pickle_string_load("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt")
     picklef_keyword.close()
     parents = []
-    print("mapFunction_Parents(): keyword:", keyword, "; prevleveltokens:", prevleveltokens)
+    print "mapFunction_Parents(): keyword:", keyword, "; prevleveltokens:", prevleveltokens
     for prevleveltoken in [prevleveltokens]:
         syn = best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
         # syns=wn.synsets(prevleveltoken)
         # syn=syns[0]
         if type(syn) is nltk.corpus.reader.wordnet.Synset:
             syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-            print("mapFunction_Parents(): keyword=", keyword, "; syndef_tokens=", syndef_tokens)
+            print "mapFunction_Parents(): keyword=", keyword, "; syndef_tokens=", syndef_tokens
             if keyword in syndef_tokens:
-                print("mapFunction_Parents(): adding to parents: syn = ", syn, "; keyword: ", keyword, " in syndef_tokens=", syndef_tokens)
+                print "mapFunction_Parents(): adding to parents: syn = ", syn, "; keyword: ", keyword, " in syndef_tokens=", syndef_tokens
                 parents = parents + [prevleveltoken]
-    print("mapFunction_Parents(): returns=", parents)
+    print "mapFunction_Parents(): returns=", parents
     # picklelock.release()
     return (1, parents)
 
 
 def reduceFunction_Parents(parents1, parents2):
     reduced_parents = parents1 + parents2
-    print("reduceFunction_Parents(): returns=", reduced_parents)
+    print "reduceFunction_Parents(): returns=", reduced_parents
     if len(reduced_parents) == 0:
         return ["None"]
     else:
@@ -314,7 +288,7 @@ def reduceFunction_Parents(parents1, parents2):
 def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
     # tokensofprevlevelkeyword=tokensofprevlevel
     # tokensofprevlevelkeyword.append(keyword)
-    md5hashparents = hashlib.md5(keyword.encode("utf-8")).hexdigest()
+    md5hashparents = hashlib.md5(keyword).hexdigest()
 
     #md5hashparents = keyword
     md5hashparents = md5hashparents + "$parents"
@@ -322,15 +296,14 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
     picklef_keyword = open(
         "RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt", "w")
     asfer_pickle_string_dump(keyword, picklef_keyword)
-    #asfer_pickle_string_dump(keyword, "RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt")
     picklef_keyword.close()
     cachevalue = graphcache.get(md5hashparents)
     if cachevalue:
-        print("Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache")
+        print "Spark_MapReduce_Parents(): hash = ", md5hashparents, "; returning from cache"
         return cachevalue
     else:
         # picklelock.acquire()
-        spcon = SparkContext("local[4]", "Spark_MapReduce_Parents")
+        spcon = SparkContext("local[2]", "Spark_MapReduce_Parents")
         # picklef_keyword=open("RecursiveGlossOverlap_MapReduce_Parents_Persisted.txt","w")
         # asfer_pickle_string_dump(keyword,picklef_keyword)
         # picklef_keyword.close()
@@ -349,7 +322,7 @@ def Spark_MapReduce_Parents(keyword, tokensofprevlevel, graphcache):
         # picklelock.release()
         graphcache.set(md5hashparents, dict_query_results[1])
         spcon.stop()
-        print("graphcache_mapreduce_parents updated:", graphcache)
+        print "graphcache_mapreduce_parents updated:", graphcache
         return dict_query_results[1]
 
 

@@ -23,7 +23,7 @@
 # kashrinivaasan@live.com
 # --------------------------------------------------------------------------------------------------------
 
-
+from __future__ import division
 import pickle
 import sys
 
@@ -44,7 +44,7 @@ def hash_graph(edges):
 
 def create_all_subgraphs(edges, size_edges):
     all_subgraphs = []
-    for i in range(size_edges):
+    for i in xrange(size_edges):
         all_subgraphs += itertools.combinations(edges, i)
     return all_subgraphs
 
@@ -54,8 +54,8 @@ def tree_width(nxg, i):
     junction_tree = nx.Graph()
     max_junction_tree_node = junction_tree
     all_subgraphs = create_all_subgraphs(nxg.edges(), i)
-    print("All subgraphs:", all_subgraphs)
-    print("============================================")
+    print "All subgraphs:", all_subgraphs
+    print "============================================"
     for k0 in all_subgraphs:
         for k1 in all_subgraphs:
             hash_graph_k0 = hash_graph(k0)
@@ -68,9 +68,9 @@ def tree_width(nxg, i):
                 if len(k1) < maxsize:
                     max_junction_tree_node = k1
                     maxsize = len(k1)
-    print("============================================")
-    print("Junction Tree (with subgraphs of size less than", i, ") :")
+    print "============================================"
+    print "Junction Tree (with subgraphs of size less than", i, ") :"
     nx.draw_networkx(junction_tree)
     plt.show()
-    print("============================================")
-    print("Junction Tree Width for subgraphs of size less than ", i, " - size of largest node set:", maxsize)
+    print "============================================"
+    print "Junction Tree Width for subgraphs of size less than ", i, " - size of largest node set:", maxsize

@@ -23,7 +23,7 @@
 # kashrinivaasan@live.com
 # --------------------------------------------------------------------------------------------------------
 
-
+from __future__ import division
 import sys
 import pickle
 
@@ -35,10 +35,10 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
 import networkx as nx
 import matplotlib.pyplot as plt
-import queue
+import Queue
 import operator
-import TreeWidth
-from pymemcache.client import base 
+#import TreeWidth
+import memcache
 import InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer
 
 parents_computation_spark = True
@@ -78,16 +78,16 @@ def compute_idf(corpus, keyword):
 
 def parents(keyword, prevlevelsynsets):
     parents = []
-    print("parents(): prevlevelsynsets:", prevlevelsynsets)
+    print "parents(): prevlevelsynsets:", prevlevelsynsets
     for syn in prevlevelsynsets:
-        print("type(syn):", type(syn))
+        print "type(syn):", type(syn)
         if type(syn) is nltk.corpus.reader.wordnet.Synset:
             syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-            print("parents(): syndef_tokens:", syndef_tokens)
+            print "parents(): syndef_tokens:", syndef_tokens
             if keyword in syndef_tokens:
-                print("parents(): keyword :", keyword, " in syndef, adding to parents:")
+                print "parents(): keyword :", keyword, " in syndef, adding to parents:"
                 parents = parents + [syn]
-    print("parents(): returning parents:", parents)
+    print "parents(): returning parents:", parents
     return parents
 
 # parents (at level i-1) of a given vertex at level i
@@ -96,19 +96,19 @@ def parents(keyword, prevlevelsynsets):
 
 def parents_tokens(keyword, prevleveltokens):
     parents = []
-    print("parents_tokens(): prevleveltokens:", prevleveltokens)
+    print "parents_tokens(): prevleveltokens:", prevleveltokens
     for prevleveltoken in prevleveltokens:
        #syn=best_matching_synset(prevleveltokens, wn.synsets(prevleveltoken))
         syns = wn.synsets(prevleveltoken)
         syn = syns[0]
-        print("type(syn):", type(syn))
+        print "type(syn):", type(syn)
         if type(syn) is nltk.corpus.reader.wordnet.Synset:
             syndef_tokens = set(nltk.word_tokenize(syn.definition()))
-            print("parents_tokens(): syndef_tokens:", syndef_tokens)
+            print "parents_tokens(): syndef_tokens:", syndef_tokens
             if keyword in syndef_tokens:
-                print("parents_tokens(): keyword :", keyword, " in syndef, adding to parents:")
+                print "parents_tokens(): keyword :", keyword, " in syndef, adding to parents:"
                 parents = parents + [syn]
-    print("parents_tokens(): returning parents:", parents)
+    print "parents_tokens(): returning parents:", parents
     return parents
 
 #function - best_matching_synset()
@@ -143,7 +143,7 @@ def get_context(query, documents):
 
 
 def filter_none_vertices(nxg):
-    for e in list(nx.edges(nxg)):
+    for e in nx.edges(nxg):
         if e[0] == "None" or e[1] == "None":
             nxg.remove_edge(e[0], e[1])
     # nxg.remove_vertex("None")
@@ -172,7 +172,7 @@ def InterviewAlgorithm_main(argv1):
     # ----------------------------------------------
     # 2.Initialize MemCached Client
     # ----------------------------------------------
-    graphcache = base.Client(("127.0.0.1",11211))
+    graphcache = memcache.Client(["127.0.0.1:11211"], debug=1)
     InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.flushCache(
         graphcache)
 
@@ -189,8 +189,7 @@ def InterviewAlgorithm_main(argv1):
         output = open(outputfile, 'w')
         file1 = open(filestr)
         raw1 = file1.read()
-        doc1 = nltk.word_tokenize(raw1)
-        #doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
+        doc1 = nltk.word_tokenize(raw1.decode("utf-8"))
         #fdist1 = FreqDist(doc1)
         stopwords = nltk.corpus.stopwords.words('english')
         stopwords = stopwords + [' ', 'or', 'and', 'who', 'he', 'she', 'whom', 'well', 'is', 'was', 'were', 'are', 'there', 'where', 'when', 'may', 'The',
@@ -222,7 +221,7 @@ def InterviewAlgorithm_main(argv1):
         while current_level < 3:
             # crucial - gather nodes which converge/overlap (have more than 1 parent)
             if current_level > 1:
-                print(current_level)
+                print current_level
                 prevlevelsynsets_tokens = []
                 for s in prevlevelsynsets:
                     s_lemma = s.lemma_names()
@@ -258,17 +257,15 @@ def InterviewAlgorithm_main(argv1):
                     'converging terms(terms with more than 1 parent):\n ')
                 output.write('converging parents :\n')
 
-            print("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=", freqterms1)
+            print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:freqterms1=", freqterms1
             tokensofthislevel = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.Spark_MapReduce(
                 current_level, freqterms1, graphcache).tokensatthislevel
-            print("InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:", tokensofthislevel)
+            print "InterviewAlgorithmWithIntrinisicMerit_Crawl_Visual_Spark.py:tokensofthislevel:", tokensofthislevel
             picklef = open(
                 "RecursiveGlossOverlap_MapReduce_Persisted.txt", "r")
             prevlevelsynsets = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(
                 picklef)
-            #prevlevelsynsets = InterviewAlgorithmWithIntrinisicMerit_SparkMapReducer.asfer_pickle_load(
-            #    "RecursiveGlossOverlap_MapReduce_Persisted.txt")
-            print("prevlevelsynsets:", prevlevelsynsets)
+            print "prevlevelsynsets:", prevlevelsynsets
             picklef = open(
                 "RecursiveGlossOverlap_MapReduce_Persisted.txt", "w")
             picklef.seek(0)
@@ -328,19 +325,19 @@ def InterviewAlgorithm_main(argv1):
         output.write(nodewithmaxparents)
         output.write('\n')
 
-    print(definitiongraphedges)
+    print definitiongraphedges
 
     nxg = nx.DiGraph()
     pos = nx.spectral_layout(nxg)
-    for k, v in definitiongraphedges.items():
+    for k, v in definitiongraphedges.iteritems():
         for l in v:
             nxg.add_edge(k, l)
             nxg.add_edge(l, k)
             ksynset = wn.synsets(k)
             lsynset = wn.synsets(l)
             if ksynset and lsynset:
-                print("ksynset=", ksynset[0])
-                print("lsynset=", lsynset[0])
+                print "ksynset=", ksynset[0]
+                print "lsynset=", lsynset[0]
                 hypoksynsets = set(
                     [i for i in ksynset[0].closure(lambda n:n.hyponyms())])
                 hyperlsynsets = set(
@@ -369,59 +366,59 @@ def InterviewAlgorithm_main(argv1):
     except:
         pass
     plt.show()
-    nxg.remove_edges_from(nx.selfloop_edges(nxg))
+    nxg.remove_edges_from(nxg.selfloop_edges())
     #print "Core number =",nx.core_number(nxg)
-    sorted_core_nxg = sorted(list(nx.core_number(
-        nxg).items()), key=operator.itemgetter(1), reverse=True)
-    print("Core number (sorted) :", sorted_core_nxg)
-    print("=============================================================================================================")
-    print("Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)")
-    print("=============================================================================================================")
+    sorted_core_nxg = sorted(nx.core_number(
+        nxg).items(), key=operator.itemgetter(1), reverse=True)
+    print "Core number (sorted) :", sorted_core_nxg
+    print "============================================================================================================="
+    print "Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)"
+    print "============================================================================================================="
     no_of_classes = len(nx.core_number(nxg))
     top_percentile = 0
     max_core_number = 0
     for n in sorted_core_nxg:
-        print("This document belongs to class:", n[0], ",core number=", n[1])
+        print "This document belongs to class:", n[0], ",core number=", n[1]
         if top_percentile < no_of_classes*0.10:
             top_percentile += 1
         else:
             break
         if n[1] > max_core_number:
             max_core_number = n[1]
-    print("max_core_number", max_core_number)
+    print "max_core_number", max_core_number
 
-    print("===================================================================")
-    print("Page Rank of the vertices of RGO Definition Graph")
-    print("===================================================================")
-    print(sorted(list(nx.pagerank(nxg).items()),
-                 key=operator.itemgetter(1), reverse=True))
+    print "==================================================================="
+    print "Page Rank of the vertices of RGO Definition Graph"
+    print "==================================================================="
+    print sorted(nx.pagerank(nxg).items(),
+                 key=operator.itemgetter(1), reverse=True)
 
     try:
-        print("==========================================================================================================")
-        print("Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem")
-        print("==========================================================================================================")
-        print(nx.node_connectivity(nxg))
+        print "=========================================================================================================="
+        print "Alternative Quantitative Intrinsic Merit  - connectivity of RGO Definition Graph - Mengers Theorem"
+        print "=========================================================================================================="
+        print nx.node_connectivity(nxg)
     except:
         pass
     try:
-        print("==========================================================================================================")
-        print("Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut")
-        print("==========================================================================================================")
-        print(nx.minimum_edge_cut(nxg))
+        print "=========================================================================================================="
+        print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Minimum Edge Cut"
+        print "=========================================================================================================="
+        print nx.minimum_edge_cut(nxg)
     except:
         pass
     try:
-        print("==========================================================================================================")
-        print("Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner")
-        print("==========================================================================================================")
-        print(nx.stoer_wagner(nxg))
+        print "=========================================================================================================="
+        print "Alternative Quantitative Intrinsic Merit  - Maxflow-Mincut of RGO Definition Graph - Stoer-Wagner"
+        print "=========================================================================================================="
+        print nx.stoer_wagner(nxg)
     except:
         pass
     try:
-        print("==========================================================================================================")
-        print("Alternative Quantitative Intrinsic Merit  - Average Clustering Coefficient")
-        print("==========================================================================================================")
-        print(nx.average_clustering(nxg))
+        print "=========================================================================================================="
+        print "Alternative Quantitative Intrinsic Merit  - Average Clustering Coefficient"
+        print "=========================================================================================================="
+        print nx.average_clustering(nxg)
     except:
         pass
     # try:
