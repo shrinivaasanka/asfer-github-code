@@ -15901,3 +15901,21 @@ subdivision.
 References:
 ----------
 810.1 Multi Agent Graph Coloring - [Blum-Rosenschein] - https://www.aaai.org/Papers/AAAI/2008/AAAI08-004.pdf - "...Multiple agents hold disjoint autonomous subgraphs of a global graph, and every color used by the agents in coloring the graph has associated cost. In this multiagent graph color- ing scenario, we seek a minimum legal coloring of the global graph’s vertices such that the coloring is also Pareto efficient, socially fair, and individual rational ... Every node corresponds to an agent, and each agent tries to determine its color so that neighbors do not have the same color." - Socially Fair Coloring of FaceGraphs of Urban Sprawls could involve Four colors (categories or agents) - Manufacturing-IT-ITES,Residential,Commercial,Greenery - which compete to grab their pie (subgraph) of Urban sprawl. Pareto optimal 4-coloring of Urban sprawl FaceGraph finds an efficient resource allocation.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+811. (THEORY and FEATURE) Interview Algorithm - Spark Recursive Gloss Overlap Implementation - Python 3.7.5 upgrade and Quadcore Benchmarks
+- 20 March 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Spark Recursive Gloss Overlap MapReduce implementation in python-src/InterviewAlgorithm has been upgraded to Python 3.7.5 and benchmarked
+on Quadcore. 
+2.Earlier implementation on Python 2.7 and Dual core was slower because of local[2] which has been upgraded to local[4] for quadcores.
+3.Memcache python client has been changed to pymemcache for Python 3.7.5 and pymemcache API changes have been incorporated.
+4.Spark Python Recursive Gloss Overlap sources have been compiled to C by Cython3 (upgraded from Cython2) - following are commandline alternatives to setup.py and .so(s):
+	cython3 <Python3.7.5_file.py> -o <Cython3_file.c>
+	gcc -I<include_Python3.7_headers> <Cython3_file.c> -o <Cython3_executable> -lpython3.7m
+5.Unicode encode() for Python 3 strings has been invoked wherever necessary
+6.Pickle file is opened in 'a' and not 'ab' because of Python 3 bytes type conflict
+7.Python 2.7 versions still depend on memcache python client, have .2.7 extension and Cython 2 .so(s) remain intact.
+8.Replacement of Flat file pickle in MapReduce by memcache get/set was tried but the code for it has been left commented because of huge number of connection reset errors within memcache. This is despite lockdown of pages in memcache.conf and parallel connections set to 1024. In-memoy cache of Synsets in Spark mapreduce could reduce latency further and might be uncommented later.
+9.2 sentences in small one liner file have been mapped to 2 textgraphs and timestamped textgraph plot images and logs are at InterviewAlgorithm/testlogs/
+	
