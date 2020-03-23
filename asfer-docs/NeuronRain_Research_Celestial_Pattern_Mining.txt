@@ -66,5 +66,7 @@ String encoded celestial datasets can be analyzed in multiple ways as below:
 (*) Sequence Mining - Apriori GSP
 	- execute python SequenceMining.py - mines common subsequences in celestial string encoded data - correspond to astronomical conjunctions in sky
 
+(*) Spark PrefixSpan Sequence Mining
+	- Spark Cloud implementation - PrefixSpan mining of encoded Astronomical datasets - https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/code/Spark_PrefixSpan.py (in SourceForge, GitLab Grafit repositories as well)
 
 
