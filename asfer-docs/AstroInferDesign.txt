@@ -15733,6 +15733,12 @@ related to all sections on Pseudorandom Generators, Chaos and Factorization
 4.Exact PRAM-NC-BSP computational geometric factorization algorithm implemented on Spark in NeuronRain AstroInfer is the derandomized version of Randomized NC Bernoulli trials factorization algorithm in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/LinuxKernelAndCloud/BigdataAnalyticsCloud_CourseNotes.txt which has the success probability of finding atleast one prime factor pr(m) = (1 - sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)))^(m-1)*(sqrt(2N)/(N*sqrt(2) - sqrt(2) - sqrt(N)) after m trials for square embedded hyperbolic arc. Expected number of trials E(m) before atleast one factor is found = sum_x=1-to-N(x*pr(x))
 5.Thus NeuronRain Theory drafts define 3 different Nick's class Computational Geometric Integer factorization algorithms - Randomized NC, Quantum NC, Exact NC - which transition from a randomized, cohered quantum state to classical exact decohered state.
 
+References:
+----------
+744.1 Chaos - [James Gleick] - Pages 22,61,79 - Chaotic behaviour and non-linear modelling of epidemics - Period doubling in Measles,Rubella,Polio - Logistic equation
+744.2 Simple mathematical models with very complicated dynamics - [Nature 261 459-67, 1976 - Robert May] - http://abel.harvard.edu/archive/118r_spring_05/docs/may.pdf - Logistic equation X(t+1) = a*X(t)*(1-X(t)) - Equations 3,4 - Figure 4 on Period doubling and Chaos after a > 3.57 - References 7,8,9,10,11,28 thereof on impact of Chaos on epidemiology,economics,social sciences.
+744.3 CORD-19 - COVID-19 dataset - https://registry.opendata.aws/cord-19/, https://pages.semanticscholar.org/coronavirus-research 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 745. (THEORY and FEATURE) Compressed Sensing - Alphabet-Syllable vectorspace embedding - Python 3.7.5 upgrade - update - 4 February 2020
 ---------------------------------------------------------------------------------------------------------------------------------------------
