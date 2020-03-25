@@ -251,6 +251,7 @@ class RecursiveLambdaFunctionGrowth(object):
             # This has to be replaced by a Hypergraph Transversal but NetworkX does not have Hypergraphs yet.
             # Hence approximating the transversal with a k-core which is the Graph counterpart of
             # Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
+            definitiongraph.remove_edges_from(nx.selfloop_edges(definitiongraph))
             richclubcoeff = nx.rich_club_coefficient(
                 definitiongraph.to_undirected())
             print("Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff)
@@ -425,7 +426,7 @@ class RecursiveLambdaFunctionGrowth(object):
         print("grow_lambda_function3(): Graph Tensor Neuron Network Intrinsic Merit for this text:", self.graph_tensor_neuron_network_intrinsic_merit)
 
         print("grow_lambda_function3(): Machine Translation Example :")
-        #self.machine_translation(3, definitiongraph, "te", 0.8)
+        self.machine_translation(3, definitiongraph, "te", 0.8)
 
         self.korner_entropy(definitiongraph)
         print("grow_lambda_function3(): Korner Entropy Intrinsic Merit for this text:", self.entropy)
@@ -536,12 +537,15 @@ class RecursiveLambdaFunctionGrowth(object):
         for e in kcore.edges():
             for s1 in wn.synsets(e[0]):
                 for s2 in wn.synsets(e[1]):
-                    if s1.path_similarity(s2) > pathsimilarity:
-                        lowestcommonhypernyms = s1.lowest_common_hypernyms(s2)
+                    try:
+                        if s1 is not None and s2 is not None and s1.path_similarity(s2) > pathsimilarity:
+                             lowestcommonhypernyms = s1.lowest_common_hypernyms(s2)
                         for l in lowestcommonhypernyms:
                             for ln in l.lemma_names():
                                 translatedtext.append(
                                     e[0] + " " + transand + " " + e[1]+" " + transare + " "+ln+".")
+                    except:
+                        print("Exception: path_similarity")
         print("Translated text by target language text graph traversal:", translatedtext)
         return translatedtext
 
