@@ -15925,4 +15925,43 @@ on Quadcore.
 7.Python 2.7 versions still depend on memcache python client, have .2.7 extension and Cython 2 .so(s) remain intact.
 8.Replacement of Flat file pickle in MapReduce by memcache get/set was tried but the code for it has been left commented because of huge number of connection reset errors within memcache. This is despite lockdown of pages in memcache.conf and parallel connections set to 1024. In-memoy cache of Synsets in Spark mapreduce could reduce latency further and might be uncommented later.
 9.2 sentences in small one liner file have been mapped to 2 textgraphs and timestamped textgraph plot images and logs are at InterviewAlgorithm/testlogs/
-	
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+812. (THEORY and FEATURE) People Analytics - Human Resource Analytics - Recursive Lambda Function Growth Intrinsic Merit of Name-filtered Profile - corrections, Chaotic Hidden Markov Model of Tenures/Attrition, Martingales - related to 418,420,613 - 25 March 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+812.1.Recursive Lamda Function Growth Intrinsic Merit of a profile text has been benchmarked again on Python 3.7.5 upgraded implementation because of some misleading graph cores created in Python 2.7 by proper nouns (cities,organization names,institution names). Exceptions for word hyphenator maximum word length have been handled. Logs are at python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.25March2020 
+812.2.An example profile text (testlogs/CV.tex) of the author has been analyzed and dense subgraph analysis of its textgraph has been executed. Most of the proper nouns have been filtered from profile text but for few ambiguities (e.g "Sun","Global" are in dictionary but they were old first names of organizations author worked for and "Green" is name of NeuronRain repositories, "Gold medalist" is mistook for "Golf medalist") 
+812.3.By and large top percentile core numbers of the profile textgraph reasonably reflect the stature of the profile and name filtering increases relevance of the dense subgraphs. Though anything can be written on a CV, an id verified profile content is a trustworthy measure of merit (Trusted Social Network Connections of professional profile in organizations worked vouch for authenticity despite being fame based citations) and facilitates autonomous recruitment if Merit Lowerbounds Fame:
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'senior', ',core number=', 4)
+('This document belongs to class:', 'architect', ',core number=', 4)
+('This document belongs to class:', 'college', ',core number=', 4)
+...
+('This document belongs to class:', 'group', ',core number=', 2)
+('This document belongs to class:', 'swarm', ',core number=', 2)
+('This document belongs to class:', 'belongs', ',core number=', 2)
+('This document belongs to class:', 'Green', ',core number=', 2)
+('This document belongs to class:', 'golf', ',core number=', 2)
+('This document belongs to class:', 'medalist', ',core number=', 2)
+('This document belongs to class:', 'essential', ',core number=', 2)
+('This document belongs to class:', 'kernel', ',core number=', 2)
+...
+('This document belongs to class:', 'technical_school', ',core number=', 2)
+('This document belongs to class:', 'semantic', ',core number=', 2)
+...
+('This document belongs to class:', 'expert', ',core number=', 2)
+('This document belongs to class:', 'adviser', ',core number=', 2)
+
+812.4.Predictability of Tenure transitions of a profile can be effectively expressed as Chaotic Hidden Markov Model which is a combination of Verhulst Logistic and Hidden Markov Model. Verhulst-Pearl-Reed Logistic defines present observation X(n+1) in terms of previous X(n): X(n+1) = Lambda*X(n)*(1-X(n)). Hidden Markov Model on similar lines defines state transition probabilities and observations in each state. For this example profile, state transitions are organizations (including academic tenures and opensource initiative of the author) - in a gist left-to-right in chronological order (spanning 25 years - 1995-2020):
+------------------------------------------------------------------------------------------------------------------------------------------
+States: PSG - BaaN/SSA - Sun/Oracle - Krishna-iResearch - Verizon - webMethods/SoftwareAG - CMI/IIT/IMSc - GlobalAnalytics/GAIN - ClockWork - CloudEnablers - Unaffiliated private research
+Observations: Could be any parameter - academic or work, opensource contribution, tenure duration, city, remuneration, designation in each organization, proven research, domain
+------------------------------------------------------------------------------------------------------------------------------------------
+
+812.5.Both Verhulst Law and Hidden Markov Model assume observation on present state depends only on observation on previous state and not cumulatively conditioned on all previous states or tenure switch is decided only by present independent of history (which would have otherwise been a Martingale sequence - E(Xi/X0,X1,X2,...,X(i-1)) = X(i-1) - expected observation in a state conditioned on all past states is the previous state observation - if each random variable Xi signifies one of the aforementioned observed parameters in an academic/work tenure state i). Chaotic Hidden Markov Model which is a merger based on this common fact underlying Chaos and HMM adds one more dimension to predictability of a profile or lack of it depending on value of Lambda.
+
+References:
+-----------
+812.6 Randomized Algorithms - [Prabhakar Raghavan-Rajeev Motwani] - Page 85 - Martingales
