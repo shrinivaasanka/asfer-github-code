@@ -15966,3 +15966,11 @@ Observations: Could be any parameter - academic or work, opensource contribution
 References:
 -----------
 812.6 Randomized Algorithms - [Prabhakar Raghavan-Rajeev Motwani] - Page 85 - Martingales
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+813. (FEATURE) Recursive Lambda Function Growth - corrections for machine translation - 25 March 2020
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.RecursiveLambdaFunctionGrowth.py implementation has been changed to uncomment machine_translation(). But yet because of REST ratelimit
+English-Telegu translation is marred by "too many requests" exceptions. Exception handling and error checks have been added in machine_translation() for NoneType and ratelimit exceptions. Alternative could be local lookup of English-Telegu dictionary from flat file.
+2.Self loop edges have been removed because of exceptions in rich club coefficient computation for the textgraph.
+3.A news article on Chennai Urban Sprawl expansion has been mapped to textgraph and merit measures are printed to logs testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.25March2020. Telegu font decoding errors have created a Roman script graph. Proper noun filtering could further fine tune the objective meaning of the news article textgraph.
