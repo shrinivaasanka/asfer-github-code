@@ -53,12 +53,17 @@ class VectorAccumulatorParam(AccumulatorParam):
 
 class FactorsAccumulatorParam(AccumulatorParam):
     def zero(self, value):
-        return [0.0] * len(value)
+        #return [0.0] * len(value)
+        return []
 
     def addInPlace(self, val1, val2):
-        #print "val1 =",val1,"; val2 = ",val2
+        #print("val1 =",val1,"; val2 = ",val2)
         factors_of_n = val1
-        factors_of_n.append(val2)
+        if type(val2) == list:
+            factors_of_n = val1 + val2
+        else:
+            factors_of_n.append(val2)
+        #print("factors_of_n:",factors_of_n)
         return factors_of_n
 
 ####################################################################################################################################
@@ -147,6 +152,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
                 print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             print("=================================================")
+            factors_accum.add(xl)
             factors_accum.add(yl)
         else:
             if factorcandidate > number_to_factorize:
@@ -383,8 +389,8 @@ def SearchTiles_and_Factorize(n, k):
         factors = []
         factordict = {}
         for f in factors_accum.value:
-            factors += f
-        factordict[n] = factors
+            factors.append(f)
+        factordict[n] = list(set(factors))
         json.dump(factordict, factorsfile)
         return factors
 

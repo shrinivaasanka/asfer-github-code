@@ -57,7 +57,7 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize):
     print(("Lagrange Four Square Tiles Cover reduction of Set Partition ",
            histogram_partition, ":", squaretiles_cover))
     subprocess.call(["/home/ksrinivasan/spark-2.4.3-bin-hadoop2.7/bin/spark-submit",
-                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize], shell=False)
+                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
     factorsfile = open(
         "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
     factors = json.load(factorsfile)
@@ -86,8 +86,9 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize):
     equation.reverse()
     equationsA.append(equation)
     print(("factorslist:", factorslist))
-    equationsB.append(factorslist[1])
-    equationsB.append(int(number_to_factorize)/factorslist[1])
+    if len(factorslist) > 0:
+        equationsB.append(factorslist[1])
+        equationsB.append(int(number_to_factorize)/factorslist[1])
     a = np.array(equationsA)
     b = np.array(equationsB)
     #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
@@ -265,15 +266,14 @@ def adjusted_rand_index():
 
 
 if __name__ == "__main__":
-    # ari=adjusted_rand_index()
-    set1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
-            24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
+    #ari=adjusted_rand_index()
+    set1=set(range(random.randint(1,int(sys.argv[1]))))
     number_of_partitions = nT(len(set1))
     processes_partitions = Partition(set1)
     randp = processes_partitions + random.randint(1, number_of_partitions)
     print(("Random Partition:", randp))
     histogram = list(map(len, randp))
-    #setpartition_to_tilecover(histogram, str(sum(histogram)))
+    setpartition_to_tilecover(histogram, str(sum(histogram)))
     candidates = ["NOTA", "CandidateA", "CandidateB"]
     idcontexts = ["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt",
                   "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg", "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
