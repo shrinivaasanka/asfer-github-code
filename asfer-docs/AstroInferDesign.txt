@@ -15974,3 +15974,19 @@ References:
 English-Telegu translation is marred by "too many requests" exceptions. Exception handling and error checks have been added in machine_translation() for NoneType and ratelimit exceptions. Alternative could be local lookup of English-Telegu dictionary from flat file.
 2.Self loop edges have been removed because of exceptions in rich club coefficient computation for the textgraph.
 3.A news article on Chennai Urban Sprawl expansion has been mapped to textgraph and merit measures are printed to logs testlogs/RecursiveLambdaFunctionGrowth.log.MachineTranslation.25March2020. Telegu font decoding errors have created a Roman script graph. Proper noun filtering could further fine tune the objective meaning of the news article textgraph.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+814. (THEORY and FEATURE) Computational Geometric Factorization and Set Partition to Lagrange Four Square Theorem Square Tile Cover Reduction - Randomization - 26 March 2020 - related to 651, 728 and all sections on Set partitions, Shell Turing Machines, Kernel Lifting and Factorization
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been changed to handle exceptions in Factor Spark Accumulator
+object by stripping off zero-es in zero() function.
+2.Streaming_SetPartitionAnalytics.py has been changed for subprocess invocation commandline of factorization. Error handling for size of
+arrays has been done.
+3.Hardcoded set has been removed and Set to be partitioned is instantiated by range() and maximum size of the set is sent by commandline sys.argv. Size of the set to partition is randomly chosen between 1 and maxsize and factorized to get the sides of the rectangle. Lagrangian Four Square Theorem Square Tile Cover reduction for the tile cover of factorized random set rectangle is printed. 
+4.This reduction has following phases:
+	4.1 Partition a set of random size in SymPy - random histogram
+	4.2 Factorize the size of the set of random size by Computational Geometry - sides of the rectangle
+	4.3 Reduce each part of the random partition to sum of four squares by Lagrange Four Square Theorem - kernel lifting from 1 dimensional partition to 2 dimensional rectangle partition.
+	4.4 Concatenate each of four square tiles per part of the random partition into single set of square tiles.
+	4.5 Tile the rectangle by square tiles.
+	4.6 Number of square tiles per tile cover of rectangle = 4 * number_of_parts_in_partition 
