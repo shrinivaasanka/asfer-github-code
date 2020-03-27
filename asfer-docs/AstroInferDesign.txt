@@ -7824,6 +7824,7 @@ There are polynomial time maxflow based algorithms and approximations to find de
 References:
 ----------
 423.1 Goldberg Algorithm, Charikar Algorithm and k-Cliques Densest Subgraph Algorithm for Dense Subgraph Discovery - people.seas.harvard.edu/~babis/dsd.pdf
+423.2 Network Structure and Minimum Degree - [Social Networks - Seidman] - https://ucilnica.fri.uni-lj.si/pluginfile.php/1212/course/section/1202/Seidman%20-%20Network%20structure%20and%20minimum%20degree%2C%201983.pdf - k-cores as measure of connectedness in a network G which are maximal connected subgraphs of G whose vertices have degree atleast k.
 
 ---------------------------------------------------------------------------------------------------------------------------
 424. (THEORY) Pseudorandom non-majority choice and Bounded Electorate Majority Choice - 3 July 2017 - related to 53.7
