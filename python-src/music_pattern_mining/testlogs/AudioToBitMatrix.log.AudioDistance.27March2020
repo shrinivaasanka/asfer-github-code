@@ -1,0 +1,25 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+('waveform1:', array([ 0.00065866, -0.00178921, -0.00150374, ...,  0.00717363,
+        0.00164227, -0.00198354], dtype=float32))
+('waveform2:', array([ 0.00065866, -0.00178921, -0.00150374, ...,  0.00717363,
+        0.00164227, -0.00198354], dtype=float32))
+Hausdorff Distance similarity between two audio waveforms: (0.0, 0, 0)
+Earth Mover Distance similarity between two audio waveforms: 0.0
+('waveform1:', array([ 0.00065866, -0.00178921, -0.00150374, ...,  0.00717363,
+        0.00164227, -0.00198354], dtype=float32))
+('waveform2:', array([-0.73689854, -1.0800318 , -0.9519966 , ...,  1.0072163 ,
+        0.9793835 ,  1.0524241 ], dtype=float32))
+Hausdorff Distance similarity between two audio waveforms: (227.81598207067208, 0, 0)
+Earth Mover Distance similarity between two audio waveforms: 0.3542389005259928
