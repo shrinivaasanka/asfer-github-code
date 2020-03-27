@@ -15992,3 +15992,14 @@ arrays has been done.
 	4.4 Concatenate each of four square tiles per part of the random partition into single set of square tiles.
 	4.5 Tile the rectangle by square tiles.
 	4.6 Number of square tiles per tile cover of rectangle = 4 * number_of_parts_in_partition 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+815. (THEORY and FEATURE) Waveform Distance of Audios, Acoustic Distance of Strings, Name Similarity, Music Clustering - Python 3.7.5 -
+27 March 2020 - related to 783 and all sections on People Analytics, Compressed Sensing, Intrinsic Merit, Syllable embedding of strings, Hyphenation and Music Pattern Mining
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.NeuronRain AstroInfer already has a Music Recommender Systems implementation based on EMD similarities of Mel Frequency Cepstral Coefficients but not based on waveforms.
+2.Usual Levenshtein Edit Distance is an alphabet based similarity measure while some problems in Name similarity require sophisticated acoustic matching algorithms (e.g NYSIIS, Soundex, Phonetic Match Rating)
+3.This commit implements audio_distance() function for 2 audios (whether music or speech waveforms) which extracts waveform arrays of two audio(s) and compares them by Hausdorff distance and Earth Mover Distance which are more quantitative distance measures than edit distance.
+4.Such a generic waveform phonetic distance between audios of two text strings is an alternative to Levenshtein Edit Distance. But it requires two human voice audio recordings which spells out the text of two strings (as in IVRs)
+5.Syllables are language and script independent phonemes and previous audio_distance() by waveform match theoretically captures syllable phonetics better than edit distance and suits name similarity. Audio waveform match might perform better by spelling out Syllable hyphenated texts than plain texts. Syllable boundary word hyphenation has been implemented earlier for People Analytics and requires syllable to human voice audio transforms.
+6.AudioToBitMatrix.py has been upgraded to Python 3.7.5. Logs for the change are at python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.AudioDistance.27March2020 which compare two similar and different pairs of audio clips of same duration.
