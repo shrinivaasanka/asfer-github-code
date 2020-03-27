@@ -15907,6 +15907,7 @@ subdivision.
 	13.1 Factors of an Integer (already found) are centroids of segments located on hyperbolic arc
 	13.2 Voronoi diagrams subdivide 2D plane and find faces comprising every factor centroid
 	13.3 Planar Point Location on Voronoi 2D planar subdivision locates the polygon face containing a factor point. Advantage of Rasterized hyperbolic arc: every polygon face is an axis-parallel arithmetic progression enabling binary search within faces.
+14.Urban Sprawls are real counterparts of Social networks in virtual world - WWW, dynamic and undergo rapid expansion by preferential attachment - Good example of such an expansion is Chennai Urban Sprawl which is 8848 sqkm an eightfold expansion in 50 years from 1189 sqkms in 1970s. It is imperative that resource allocation is in tandem and keeps pace with urbanization and none of the four categories are found wanting. Graph theoretically, Subgraphs of FaceGraph of an Urban Sprawl by Voronoi Diagrams of segment centroids could be fairly allocated to categories by Multi Agent Graph Coloring. Expanding Urban sprawl grows the FaceGraph dynamically and new segments of various categories (and faces) are added in the periphery of the city. Multi Agent Four coloring of Urban sprawl FaceGraph therefore cannot be static and must be recomputed to catch up with this expanding dynamic facegraph. High Edge Expander facegraph of an urban sprawl has least Cheeger constant (low bottlenecks, high regularity and low eigenvalues) and high connectivity. 
 
 References:
 ----------
