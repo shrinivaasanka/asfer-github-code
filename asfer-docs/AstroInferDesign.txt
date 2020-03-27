@@ -15046,6 +15046,10 @@ Example Shape Grammar for Face Recognition - Union of Product Homotopies (each <
 a popular model of binary networks where the connection probability pij is assumed to be a function of the values of some ‘fitness’ characterizing each vertex. Indeed, the variables ~z∗ can be treated as fitness parameters [6, 37] which control the probability of forming a link. A very interesting correlation between a fitness parameter of a country (assigned by the model) and the GDP of the same country was found [37]. This relation is replicated here in Fig. 2, where the rescaled GDP of each country (gi ≡ GDPi/sum(GDPi)) is compared to the value of the fitness parameter z∗i obtained by solving eq.(5). The red line is a linear fit of the type zi = √a · gi...."
 3. This commit defines a new function EconomicMerit() in LinearAndLogisticRegression.py which computes trade link probabilities and gravity model between countries based on GDP as intrinsic fitness measure and distances between countries. Reference 694.1 defines GDP fitness as a linear regression dependent on macroeconomic variables.
 
+References:
+----------
+716.1 Another Fitness Model of GDP - Fitness-dependent topological properties of the World Trade Web - https://arxiv.org/pdf/cond-mat/0403051.pdf
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 717. (THEORY) Cognitive Element in the context of Category theory, Factorization and Set Partitions - related to 160 - 4 October 2019
 ------------------------------------------------------------------------------------------------------------------------------------------
