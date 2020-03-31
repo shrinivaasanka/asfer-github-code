@@ -16009,3 +16009,65 @@ arrays has been done.
 4.Such a generic waveform phonetic distance between audios of two text strings is an alternative to Levenshtein Edit Distance. But it requires two human voice audio recordings which spells out the text of two strings (as in IVRs)
 5.Syllables are language and script independent phonemes and previous audio_distance() by waveform match theoretically captures syllable phonetics better than edit distance and suits name similarity. Audio waveform match might perform better by spelling out Syllable hyphenated texts than plain texts. Syllable boundary word hyphenation has been implemented earlier for People Analytics and requires syllable to human voice audio transforms.
 6.AudioToBitMatrix.py has been upgraded to Python 3.7.5. Logs for the change are at python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.AudioDistance.27March2020 which compare two similar and different pairs of audio clips of same duration.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+816. (THEORY and FEATURE) People Analytics - Human Resource Analytics - Chaotic Hidden Markov Model of Tenures/Attrition - implementation - 
+related to 812 - 31 March 2020
+--------------------------------------------------------------------------------------------------------------------------------------------- 
+1.Chaotic Hidden Markov Model of Tenures/Attritions based on Verhulst actuarial logistic has been implemented in a new source file SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py (Python 3.7.5) and SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py.2.7 (Python 2.7)
+2.Similar to other Hidden Markov Models for CRF and TextCompression, this implementation is a Python class accepting states(institutions and organizations),observations(including but not limited to domain-designations-remunerations-cities),emission probabilities(probability of an observation in a state),state transition probabilities(probability of switchovers between orgs) and Lambda (constant for Verhulst Logistic)
+3.chaotic_HMM_viterbi() function computes the HMM Viterbi algorithm as usual but with a difference in following line of code:
+(probability, state) = max((Viterbi[x-1][t]*self.Lambda*self.transition_probabilities[t][y]*(1-self.transition_probabilities[t][y])*self.emission_probabilities[y][self.observations[x]], t) for t in self.states)
+which computes the argmax of transition to a state and observation in transitioned state by Verhulst logistic format Lambda*x*(1-x)
+4.Probabilities dictionaries have been hardcoded presently in __main__ for invoking Chaotic HMM Viterbi (Lambda=3.7).
+5.Example profile of author (overall history of 25 years including academics and work) has been mapped to state transition and observation probabilities (in chronological order - ["Graduation", "AssociateSoftwareEngineer", "MemberTechStaff", "Founder-Architect", "SystemAnalyst", "Specialist", "PostGraduation-ResearchScholar", "Consultant-Architect", "Consultant", "Architect"]) and Viterbi computed is as below which accurately captures the career switches. Still this model considers parallel Tenures as sequential - FOSS initiative of author (Krishna iResearch) from 2003-present has duration of 17 years thus far. Non-major (below 18 years age) graduation in Hindi and schooling have been excluded which increase number of states and observations to 12 from 10 and history to 38 years:
+============================
+Chaotic HMM Viterbi computation
+============================
+[{'BaaN-SSAGlobal': 0.0,
+	...
+  'PSGTech': 1.0,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.3330000000000001,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'SunMicrosystems-Oracle': 0.11088900000000004,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Krishna-iResearch': 0.036926037000000016,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Verizon': 0.012296370321000007,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'webMethods-SoftwareAG': 0.004094691316893003},
+	...
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'CMI-IIT-IMSc': 0.0013635322085253701,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'GlobalAnalytics': 0.0004540562254389483,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Clockwork-PiQube': 0.0001512007230711698,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'CloudEnablers': 5.034984078269955e-05,
+	...
+  'webMethods-SoftwareAG': 0.0}]
