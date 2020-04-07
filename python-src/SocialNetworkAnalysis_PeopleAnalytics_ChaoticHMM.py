@@ -31,6 +31,7 @@ from nltk.corpus import wordnet as wn
 import networkx as nx
 from itertools import product
 from collections import Counter
+import json
 
 fig, ax = plt.subplots(1, 1)
 
@@ -82,11 +83,14 @@ class ChaoticHMM(object):
 
 
 if __name__ == "__main__":
-    states = ["PSGTech", "BaaN-SSAGlobal", "SunMicrosystems-Oracle", "Krishna-iResearch", "Verizon",
-              "webMethods-SoftwareAG", "CMI-IIT-IMSc", "GlobalAnalytics", "Clockwork-PiQube", "CloudEnablers"]
+    chaotichmmf=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
+    chaotichmmjson=json.loads(chaotichmmf.read())
+    print("chaotichmmjson:",chaotichmmjson)
+    #states = ["PSGTech", "BaaN-SSAGlobal", "SunMicrosystems-Oracle", "Krishna-iResearch", "Verizon",
+    #          "webMethods-SoftwareAG", "CMI-IIT-IMSc", "GlobalAnalytics", "Clockwork-PiQube", "CloudEnablers"]
     #start_probabilities={'noun':0.3, 'verb':0.2, 'object':0.2, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.2}
-    start_probabilities = {"PSGTech": 1.0, "BaaN-SSAGlobal": 1.0, "SunMicrosystems-Oracle": 1.0, "Krishna-iResearch": 0.0, "Verizon": 0.0,
-                           "webMethods-SoftwareAG": 0.0, "CMI-IIT-IMSc": 0.0, "GlobalAnalytics": 0.0, "Clockwork-PiQube": 0.0, "CloudEnablers": 0.0}
+    #start_probabilities = {"PSGTech": 1.0, "BaaN-SSAGlobal": 1.0, "SunMicrosystems-Oracle": 1.0, "Krishna-iResearch": 0.0, "Verizon": 0.0,
+    #                       "webMethods-SoftwareAG": 0.0, "CMI-IIT-IMSc": 0.0, "GlobalAnalytics": 0.0, "Clockwork-PiQube": 0.0, "CloudEnablers": 0.0}
     # transition_probabilities={ 'noun':{'noun':0.0, 'verb':0.3, 'object':0.2, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.3},
     #		   'verb':{'noun':0.1, 'verb':0.0, 'object':0.4, 'adjective':0.2, 'adverb':0.1,'conjunction':0.3},
     #		   'object':{'noun':0.0, 'verb':0.1, 'object':0.4, 'adjective':0.1, 'adverb':0.1,'conjunction':0.3},
@@ -94,19 +98,19 @@ if __name__ == "__main__":
     #		   'adverb':{'noun':0.1, 'verb':0.4, 'object':0.1, 'adjective':0.0, 'adverb':0.1, 'conjunction':0.3},
     #		   'conjunction':{'noun':0.2, 'verb':0.4, 'object':0.1, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.1}
     #		 }
-    transition_probabilities = {"PSGTech": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "BaaN-SSAGlobal": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "SunMicrosystems-Oracle": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "Krishna-iResearch": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "Verizon": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "webMethods-SoftwareAG": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "CMI-IIT-IMSc": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "GlobalAnalytics": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "Clockwork-PiQube": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
-                                "CloudEnablers": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1}}
+    #transition_probabilities = {"PSGTech": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "BaaN-SSAGlobal": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "SunMicrosystems-Oracle": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "Krishna-iResearch": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "Verizon": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "webMethods-SoftwareAG": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "CMI-IIT-IMSc": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "GlobalAnalytics": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "Clockwork-PiQube": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1},
+    #                            "CloudEnablers": {"PSGTech": 0.1, "BaaN-SSAGlobal": 0.1, "SunMicrosystems-Oracle": 0.1, "Krishna-iResearch": 0.1, "Verizon": 0.1, "webMethods-SoftwareAG": 0.1, "CMI-IIT-IMSc": 0.1, "GlobalAnalytics": 0.1, "Clockwork-PiQube": 0.1, "CloudEnablers": 0.1}}
     # observations=obs_file.read().split()
-    observations = ["Graduation", "AssociateSoftwareEngineer", "MemberTechStaff", "Founder-Architect", "SystemAnalyst",
-                    "Specialist", "PostGraduation-ResearchScholar", "Consultant-Architect", "Consultant", "Architect"]
+    #observations = ["Graduation", "AssociateSoftwareEngineer", "MemberTechStaff", "Founder-Architect", "SystemAnalyst",
+    #                "Specialist", "PostGraduation-ResearchScholar", "Consultant-Architect", "Consultant", "Architect"]
     # emission_probabilities={ 'noun':{'noun':0.0, 'verb':0.3, 'object':0.2, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.3},
     #		   'verb':{'noun':0.1, 'verb':0.0, 'object':0.4, 'adjective':0.2, 'adverb':0.1,'conjunction':0.3},
     #		   'object':{'noun':0.0, 'verb':0.1, 'object':0.4, 'adjective':0.1, 'adverb':0.1,'conjunction':0.3},
@@ -114,16 +118,16 @@ if __name__ == "__main__":
     #		   'adverb':{'noun':0.1, 'verb':0.4, 'object':0.1, 'adjective':0.0, 'adverb':0.1, 'conjunction':0.3},
     #		   'conjunction':{'noun':0.2, 'verb':0.4, 'object':0.1, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.1}
     #		 }
-    emission_probabilities = {"PSGTech": {"Graduation": 1.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "BaaN-SSAGlobal": {"Graduation": 0.0, "AssociateSoftwareEngineer": 1.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "SunMicrosystems-Oracle": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 1.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "Krishna-iResearch": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 1.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "Verizon": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 1.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "webMethods-SoftwareAG": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 1.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "CMI-IIT-IMSc": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 1.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
-                              "GlobalAnalytics": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 1.0, "Consultant": 0.0, "Architect": 0.0},
-                              "Clockwork-PiQube": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 1.0, "Architect": 0.0},
-                              "CloudEnablers": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 1.0}}
-    chaotichmm = ChaoticHMM(3.7, states, start_probabilities,
-                            transition_probabilities, emission_probabilities, observations)
+    #emission_probabilities = {"PSGTech": {"Graduation": 1.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "BaaN-SSAGlobal": {"Graduation": 0.0, "AssociateSoftwareEngineer": 1.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "SunMicrosystems-Oracle": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 1.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "Krishna-iResearch": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 1.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "Verizon": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 1.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "webMethods-SoftwareAG": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 1.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "CMI-IIT-IMSc": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 1.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "GlobalAnalytics": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 1.0, "Consultant": 0.0, "Architect": 0.0},
+    #                          "Clockwork-PiQube": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 1.0, "Architect": 0.0},
+    #                          "CloudEnablers": {"Graduation": 0.0, "AssociateSoftwareEngineer": 0.0, "MemberTechStaff": 0.0, "Founder-Architect": 0.0, "SystemAnalyst": 0.0, "Specialist": 0.0, "PostGraduation-ResearchScholar": 0.0, "Consultant-Architect": 0.0, "Consultant": 0.0, "Architect": 1.0}}
+    chaotichmm = ChaoticHMM(3.7, chaotichmmjson["states"], chaotichmmjson["start_probabilities"],
+                            chaotichmmjson["transition_probabilities"], chaotichmmjson["emission_probabilities"], chaotichmmjson["observations"])
     chaotichmm.chaotic_HMM_viterbi()
