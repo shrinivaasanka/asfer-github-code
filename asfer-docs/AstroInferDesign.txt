@@ -16074,3 +16074,80 @@ Chaotic HMM Viterbi computation
   'CloudEnablers': 5.034984078269955e-05,
 	...
   'webMethods-SoftwareAG': 0.0}]
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+817. (THEORY and FEATURE) People Analytics - Talent Analytics - Chaotic Hidden Markov Model of Parallel Tenures/Attritions and JSON persistence - Weighted Automata model of Tenures - Tensor Decomposition of EventNet Logical Time - related to 661,701,812 - 8 April 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py has been updated to remove hardcoded state transition and emission probabilities (from linkedin profile of author) and to read them from a JSON persistence SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json by json.loads()
+2.SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json has been made comprehensive to merge and serialize parallel academic and work tenures - there are multiple parallel academic and work tenures in the example profile making it increasingly difficult to fathom tenure durations because time is parallelized amongst multiple tenures. Parallel tenures are metrics for ability of a profile to multitask. Tensor decomposition of EventNet Causality Logical clock is worth mentioning here which componentizes time - each linear component of time tensor could correspond to a parallel tenure empirically.
+3.Parallel tenures are presently simulated by probability distributions - earlier sequential viterbi has been recomputed for parallel tenures  which has multiple non-zero probability states per chronological layer of viterbi trellis and largest probability per layer points to the most prominent state at a time point. Optimal choice of probabilities in JSON are reflected in viterbi and following is an example for parallel tenure traversal from logs testlogs/SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.log.8April2020 simulating parallelism:
+
+============================
+Chaotic HMM Viterbi computation
+============================
+[{'BaaN-SSAGlobal': 0.0,
+	...
+  'Schooling': 0.1,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'DBHPS': 0.036223000000000005,
+  'PSGTech': 0.0333,
+  'Schooling': 0.0333,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'DBHPS': 0.012062259000000004,
+	...
+  'PSGTech': 0.013121057290000003,
+  'Schooling': 0.012062259000000004,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.004369312077570002,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'SunMicrosystems-Oracle': 0.001454980921830811,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Krishna-iResearch': 0.00048450864696966017,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Verizon': 0.00016134137944089685,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'webMethods-SoftwareAG': 5.3726679353818657e-05},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 1.7890984224821618e-05,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'GlobalAnalytics': 5.9576977468656e-06,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'Clockwork-PiQube': 1.983913349706245e-06,
+	...
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+	...
+  'CloudEnablers': 6.606431454521795e-07,
+	...
+  'webMethods-SoftwareAG': 0.0}]
+
+4. Tenure transitions could also be formalized by weighted automata which has been already implemented in NeuronRain AstroInfer to measure complexity of music notes:
+	(tenure1, a, tenure2) - transition from state tenure1 to state tenure2 on symbol a of weight 1
+	(tenure2, 2b, tenure3) - transition from state tenure2 to state tenure3 on symbol b of weight 2
+Symbols inducing tenure transitions could be any observation (remuneration,designation,location,...) augmented by weight which simulates importance of observation.
+5. Complexity of Chaotic HMM and Weighted Automata for tenure transitions of a profile measures unpredictability and merit which is any of the following - parallel tenures, cyclical tenures, academic-work transitions, individual contributions - (corporate and personal initiatives(FOSS)),....
