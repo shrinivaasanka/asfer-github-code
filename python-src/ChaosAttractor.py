@@ -33,22 +33,30 @@ def plotGraph(x):
 # Chaotic PRG implementation - Verhulste's Logistic equation and Lehmer-Palmore Pseudorandom generator
 
 
-def ChaosPRG(algorithm="Logistic", seqlen=100, radix=10, initialcondition=0.7, prime=104729):
+def ChaosPRG(algorithm="Logistic", seqlen=100, radix=10, initialcondition=0.7, prime=104729, seed=complex(1+0j)):
     x = initialcondition
     k = radix
+    zed = 0+0j
     chaos_seq = []
     print("ChaosPRG() algorithm:", algorithm)
     while True:
+        if algorithm == "Mandelbrot":
+            zed = zed * zed + seed 
         if algorithm == "Logistic":
             xnext = k*x*(1-x)
+            print("x: ", x, ", xnext: ", xnext)
         if algorithm == "Lehmer-Palmore":
             xnext = (k * x) % prime
-        print("x: ", x, ", xnext: ", xnext)
+            print("x: ", x, ", xnext: ", xnext)
         # plotGraph(xnext)
-        chaos_seq.append(float(x)*100000)
-        x = xnext
+        if algorithm == "Mandelbrot":
+            chaos_seq.append(zed)
+        else:
+            chaos_seq.append(float(x)*100000)
+            x = xnext
         if len(chaos_seq) == seqlen:
             break
+    print("chaos_seq:",chaos_seq)
     return chaos_seq
 
 
@@ -64,15 +72,21 @@ if __name__ == "__main__":
         chaosx1 = robj.FloatVector(
             ChaosPRG("Logistic", 19449, 3.8, 0.7, 104729))
         chaosx2 = robj.FloatVector(ChaosPRG("Lehmer-Palmore",19449,3.8,0.7,104729))
+        chaosx4 = ChaosPRG("Mandelbrot",19449,3.8,0.7,104729,complex(0.3+0.3j))
+        chaosx4 = robj.FloatVector([abs(x) for x in chaosx4])
     if correlation_flag == "linear":
         chaosx3 = robj.FloatVector(range(19449))
     print("Chaotic PRG sequence - Logistic:", chaosx1)
     print("Chaotic PRG sequence - Lehmer-Palmore:", chaosx2)
+    print("Chaotic PRG sequence - Mandelbrot:", chaosx4)
     inputstreamy = robj.FloatVector(input_seq[0:19449])
     corfn = robj.r['cor']
     ret1 = corfn(chaosx1, inputstreamy)
     ret2 = corfn(chaosx2, inputstreamy)
+    ret3 = corfn(chaosx4, inputstreamy)
     print("correlation coefficient of pseudorandom (Logistic) and DJIA sequences is:", (ret1.r_repr(
     )))
     print("correlation coefficient of pseudorandom (Lehmer-Palmore) and DJIA sequences is:", (ret2.r_repr(
+    )))
+    print("correlation coefficient of pseudorandom (Mandelbrot) and DJIA sequences is:", (ret3.r_repr(
     )))
