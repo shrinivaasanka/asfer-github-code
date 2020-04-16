@@ -16173,3 +16173,18 @@ References:
 -----------
 818.1 Chaotic Cryptographic Hash Functions - Merkle-Damgard Construction and Chaotic Network automata - https://ui.adsabs.harvard.edu/abs/2017JPhCS.936a2058M/abstract - "Chaos theory has been used to develop several cryptographic methods relying on the pseudo-random properties extracted from simple nonlinear systems such as cellular automata ... Following the Merkle and Damgård model of construction, a portion of the message is entered as the initial condition of the network automata, so that the rest parts of messages are iteratively entered to perturb the system ..."
 818.2 Merkle-Damgard Construction - initialization vector (IV) and iterated hashing - https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+819. (THEORY and FEATURE) Chaotic Pseudorandom Generator - 1D Binary Cellular Automaton - Multicolored Space Filling - implementation - 16 April 2020 - related to 135, 752, 818 and all sections on Monochromatic and Multichromatic Space filling, Chaos, Computational Geometric Planar Point Location Search, Pseudorandomness, Linear Programs/CSP, LSH/Separate Chaining, Circle Packing in NeuronRain Unified Theory Drafts
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.New function grow_cellular_automaton() has been defined in ChaosAttractor.py which grows an one dimensional binary cellular automaton.
+2.ChaosPRG() function accepts four algorithm options - "Logistic","Lehmer-Palmore","Mandelbrot" and "Cellular Automaton".
+3.grow_cellular_automaton() function accepts a binary string of 0s and 1s as initialization vector and a random Lambda fraction. 
+4.Following simple growth rule has been implemented:
+	4.1 Automaton is grown by scanning the two binary digit neighbours of a bit location for four possibilities - 00,10,01,11
+	4.2 For each possible neighbourhood, bit location in next generation is updated depending on random value of lambda to 0 or 1 
+	4.3 This simulates Conway's Birth-Survival-Death Game of Life Cellular Automaton approximately and 2-dimensional tableau of binary strings grown in parallel thus captures space filling complexity of natural processes including random fluid flow, rainfall, randomly strewn solids, ... 
+	4.4 Cellular Automaton Space Filling Algorithm in 135 , a refinement of LP version in https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0 describes a Parallel PRG based 2-dimensional Cellular Automaton which monochromatically fills a 2-D plane in parallel
+	4.5 Each generation row of 1D binary Cellular Automaton is a Pseudorandom bit sequence
+5.States (colors) of the squares in this implementation are binary - 1 or 0 which could be generalized to arbitrary coloring alphabet by defining/reading new growth rules within grow_cellular_automaton() making it a multichromatic space filling.
+6.R correlations of the Cellular Automaton PRG to a stock quote dataset are printed in testlogs/ChaosAttractor.CellularAutomaton.log.16April2020. 
