@@ -40,6 +40,12 @@ class HRAnalytics(object):
         self.total_academics = 0
         self.timedeltas = []
         self.stinthistogram = None
+        self.avg_n_pos_per_prev_tenure = 0
+        self.avg_pos_len = 0
+        self.avg_prev_tenure_len = 0 
+        self.n_prev_tenures = 0 
+        self.tenure_len = 0 
+        self.n_followers = 0 
 
     def parse_profile(self, datasource, type, social_profile):
         profile_text = ""
@@ -68,6 +74,13 @@ class HRAnalytics(object):
                     stints = self.academics
                 if self.isdaterange(l):
                     stints.append(l.strip())
+            self.avg_n_pos_per_prev_tenure = 1 
+            self.avg_pos_len = float(sum(self.timedeltas))/float(len(self.timedeltas))
+            self.avg_prev_tenure_len = float(sum(self.timedeltas[:-1]))/float(len(self.timedeltas[:-1])) 
+            self.n_prev_tenures = len(self.timedeltas)-1 
+            self.tenure_len = self.timedeltas[-1:]
+            self.n_followers = self.parse_connections(profile_text)
+            print("Tenure statistics - avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len,n_followers:",[self.avg_n_pos_per_prev_tenure,self.avg_pos_len,self.avg_prev_tenure_len,self.n_prev_tenures,self.tenure_len,self.n_followers])
             print("Work Experience:", self.work_experience)
             print("Academics:", self.academics)
             # self.stinthistogram=IntegerPartition(self.timedeltas)
@@ -312,8 +325,8 @@ if __name__ == "__main__":
     # profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
-    profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
-    # profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+    # profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
+    profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
     # hranal.rlfg_intrinsic_merit(profile_text)
     # number_of_connections=hranal.parse_connections(profile_text)
     # hranal.least_energy_intrinsic_merit()
