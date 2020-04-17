@@ -16175,7 +16175,7 @@ References:
 818.2 Merkle-Damgard Construction - initialization vector (IV) and iterated hashing - https://en.wikipedia.org/wiki/Merkle%E2%80%93Damg%C3%A5rd_construction 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-819. (THEORY and FEATURE) Chaotic Pseudorandom Generator - 1D Binary Cellular Automaton - Multicolored Space Filling - implementation - 16 April 2020 - related to 135, 752, 818 and all sections on Monochromatic and Multichromatic Space filling, Chaos, Computational Geometric Planar Point Location Search, Pseudorandomness, Linear Programs/CSP, LSH/Separate Chaining, Circle Packing in NeuronRain Unified Theory Drafts
+819. (THEORY and FEATURE) Chaotic Pseudorandom Generator - 1D Binary Cellular Automaton - Multicolored Space Filling - implementation - 16 April 2020,17 April 2020 - related to 135, 752, 818 and all sections on Monochromatic and Multichromatic Space filling, Chaos, Computational Geometric Planar Point Location Search, Pseudorandomness, Linear Programs/CSP, LSH/Separate Chaining, Circle Packing in NeuronRain Unified Theory Drafts
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1.New function grow_cellular_automaton() has been defined in ChaosAttractor.py which grows an one dimensional binary cellular automaton.
 2.ChaosPRG() function accepts four algorithm options - "Logistic","Lehmer-Palmore","Mandelbrot" and "Cellular Automaton".
@@ -16186,7 +16186,10 @@ References:
 	4.3 This simulates Conway's Birth-Survival-Death Game of Life Cellular Automaton approximately and 2-dimensional tableau of binary strings grown in parallel thus captures space filling complexity of natural processes including random fluid flow, rainfall, randomly strewn solids, ... 
 	4.4 Cellular Automaton Space Filling Algorithm in 135 , a refinement of LP version in https://sites.google.com/site/kuja27/Analysis%20of%20a%20Randomized%20Space%20Filling%20Algorithm%20and%20its%20Linear%20Program%20Formulation.pdf?attredirects=0 describes a Parallel PRG based 2-dimensional Cellular Automaton which monochromatically fills a 2-D plane in parallel
 	4.5 Each generation row of 1D binary Cellular Automaton is a Pseudorandom bit sequence
-5.States (colors) of the squares in this implementation are binary - 1 or 0 which could be generalized to arbitrary coloring alphabet by defining/reading new growth rules within grow_cellular_automaton() making it a multichromatic space filling.
+5.States (colors) of the squares in this implementation are binary - 1 or 0 which could be generalized to arbitrary coloring alphabet by defining/reading new growth rules within grow_cellular_automaton() making it a multichromatic space filling. An example rule for 2-dimensional multicolored cellular automata could be Four color theorem - cell and its 8 neighbours are 4-colorable facets; neighbouring faces avoid same color and for successive generations coloring violations might have to be readjusted - Example:
+			1 2 3
+			3 4 1
+			1 2 3
 6.R correlations of the Cellular Automaton PRG to a stock quote dataset are printed in testlogs/ChaosAttractor.CellularAutomaton.log.16April2020. 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
