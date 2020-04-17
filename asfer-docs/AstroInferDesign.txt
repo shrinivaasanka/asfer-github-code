@@ -16188,3 +16188,20 @@ References:
 	4.5 Each generation row of 1D binary Cellular Automaton is a Pseudorandom bit sequence
 5.States (colors) of the squares in this implementation are binary - 1 or 0 which could be generalized to arbitrary coloring alphabet by defining/reading new growth rules within grow_cellular_automaton() making it a multichromatic space filling.
 6.R correlations of the Cellular Automaton PRG to a stock quote dataset are printed in testlogs/ChaosAttractor.CellularAutomaton.log.16April2020. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+820. (THEORY and FEATURE) People Analytics - LinkedIn Dataset Analysis - Tenure statistics - 17 April 2020 - related to 817
+--------------------------------------------------------------------------------------------------------------------------------------------- 
+1.LinkedIn profile parser function parse_profile() in SocialNetworkAnalysis_PeopleAnalytics.py has been updated to compute following
+tenure statistics for each linkedin text profile for being compliant to Kaggle linkedin CSV dataset (https://www.kaggle.com/killbot/linkedin) 
+which has these fields. Ethnic and physical feature fields have been excluded:
+            self.avg_n_pos_per_prev_tenure = 1 
+            self.avg_pos_len = float(sum(self.timedeltas))/float(len(self.timedeltas))
+            self.avg_prev_tenure_len = float(sum(self.timedeltas[:-1]))/float(len(self.timedeltas[:-1])) 
+            self.n_prev_tenures = len(self.timedeltas)-1 
+            self.tenure_len = self.timedeltas[-1:]
+            self.n_followers = self.parse_connections(profile_text)
+2.Previous statistics compute average number of positions per previous tenure (which has been assumed to be 1), average length of positions(computed from tenure timedeltas histogram), average previous tenure length (computed by neglecting present tenure), number of previous tenures, tenure length (only present tenure), number of followers (connections)
+3.Each of these tenure variables could be either analyzed as moving average timeseries (kind of martingale because it captures past history) or observations read from JSON in Weighted Automata - Chaotic Hidden Markov Model of Tenures (SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py) - JSON file based on these variables could be dynamically written per linkedin profile and Viterbi is computed. 
+4.Logs for example linkedin profile of author (https://www.linkedin.com/comm/in/srinivasan-kannan-608a671) are at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.17April2020  
+5.Video resumes could also be analytics datasources apart from usual social network data in PDF and TXT because of their greater authenticity (Alumni,Quora,Facebook,Twitter,Google,Repositories profile montage Video resumes of author in python-src/image_pattern_mining - ExampleVideo_1.mp4, ExampleVideo_4.mp4, ExampleVideo_2.mp4, ExampleVideo_Facebook_GRAFIT_29April2019.mp4, ExampleVideo_3.mp4, ExampleVideo_GoogleScholar_Search.mp4) . 
