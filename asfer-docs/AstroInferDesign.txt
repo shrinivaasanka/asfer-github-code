@@ -16209,3 +16209,31 @@ which has these fields. Ethnic and physical feature fields have been excluded:
 3.Each of these tenure variables could be either analyzed as moving average timeseries (kind of martingale because it captures past history) or observations read from JSON in Weighted Automata - Chaotic Hidden Markov Model of Tenures (SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py) - JSON file based on these variables could be dynamically written per linkedin profile and Viterbi is computed. 
 4.Logs for example linkedin profile of author (https://www.linkedin.com/comm/in/srinivasan-kannan-608a671) are at testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.17April2020  
 5.Video resumes could also be analytics datasources apart from usual social network data in PDF and TXT because of their greater authenticity (Alumni,Quora,Facebook,Twitter,Google,Repositories profile montage Video resumes of author in python-src/image_pattern_mining - ExampleVideo_1.mp4, ExampleVideo_4.mp4, ExampleVideo_2.mp4, ExampleVideo_Facebook_GRAFIT_29April2019.mp4, ExampleVideo_3.mp4, ExampleVideo_GoogleScholar_Search.mp4) . 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+865. (THEORY and FEATURE) NeuronRainApps - NeuronRain usecases - Drone Autonomous Online Shopping Delivery Implementation - MAVSDK + JMAVSIM simulation for PX4 - 1 September 2020 - related to 637,675,713
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. OnlineShoppingDelivery Python 3.7.5 implementation in NeuronRainApps/Drones has been changed to import MAVSDK Mission Plan classes and
+dronecode_sdk imports have been commented (Example: https://github.com/mavlink/MAVSDK-Python/blob/master/examples/mission.py).
+2. Following GIS analytics variables are read by socket streaming datasource in Streaming Abstract Generator from a webserver listening on port 64001 (netcat -l 64001) and are parsed as key-value pairs (these variables have also been committed to python-src/NeuronRainApps/Drones/OnlineShoppingDelivery.GISvars.txt) delimited by end marker:
+	longitude=47.397825620791895
+	latitude=8.5450092830163281
+	relative_altitude_m=1
+	speed_m_s=1
+	is_fly_through = True
+	gimbal_pitch_deg = nan
+	gimbal_yaw_deg = nan
+	camera_action = none
+	loiter_time_s = nan
+	camera_photo_interval_s = nan
+	end
+3. In this commit only first four variables for navigation are being read from socket stream while rest are assumed to have default values. 
+4. Code changes for MissionPlan specific to MAVSDK mission-upload, start-mission and arm-takeoff-take_photo have been committed. To simulate a hamiltonian cycle, drone.mission.set_return_to_launch_after_mission(True) has been invoked.
+5. awaits for mission progress and observe_is_in_air have been commented.
+6. GIS navigation analytics variables read over socket stream are filtered for convex-hull boundaries and mission items are appended accordingly to Mission plan. Every mission item is a delivery point.
+7. JMAVSIM and PX4 SITL Logs, Netcat logs for streaming analytics variables and MP4 video of the simulated flight of a drone have been committed as hereunder:
+	 python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_Drone_JMAVSIM_Flight_Simulation.log1.1September2020
+	 python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_Drone_JMAVSIM_Flight_Simulation.log2.1September2020
+	 python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_PX4_Drone_JMAVSIM_Flight_Simulation2.mp4
+8. Video python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_PX4_Drone_JMAVSIM_Flight_Simulation2.mp4 shows the imaginary multirotor drone in JMAVSIM PX4 SITL making a vertical takeoff, drawing an aerial cycle based on longitude-latitude-altitude of mission item delivery points before comeback to origin by vertical landing.
+
