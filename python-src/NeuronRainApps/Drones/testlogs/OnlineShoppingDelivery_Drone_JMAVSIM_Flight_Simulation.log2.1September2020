@@ -1,0 +1,7 @@
+#Socket streaming of GIS analytics variables by a webserver listening at port 64001 - read by OnlineShoppingDelivery MAVSDK client
+#nc -l 64001
+longitude=47.397825620791895
+latitude=8.5450092830163281
+relative_altitude_m=1
+speed_m_s=1
+end

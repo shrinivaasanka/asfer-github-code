@@ -1,0 +1,560 @@
+INFO  [simulator] Simulator connected on TCP port 4560.
+Init MAVLink
+INFO  [commander] LED: open /dev/led0 failed (22)
+INFO  [commander] Mission #3 loaded, 9 WPs, curr: 0
+INFO  [init] Mixer: etc/mixers/quad_w.main.mix on /dev/pwm_output0
+INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550
+INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030
+INFO  [logger] logger started (mode=all)
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_27_25.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_27_25.ulg
+INFO  [mavlink] MAVLink only on localhost (set param MAV_BROADCAST = 1 to enable network)
+INFO  [px4] Startup script returned successfully
+pxh> INFO  [ecl/EKF] 2564000: EKF aligned, (baro hgt, IMU buf: 18, OBS buf: 14)
+INFO  [ecl/EKF] 2564000: reset position to last known position
+INFO  [ecl/EKF] 2564000: reset velocity to zero
+INFO  [ecl/EKF] 9884000: GPS checks passed
+INFO  [ecl/EKF] 14416000: reset position to GPS
+INFO  [ecl/EKF] 14416000: reset velocity to GPS
+INFO  [ecl/EKF] 14416000: starting GPS fusion
+WARN  [navigator] Distance between waypoints too far: 5335133 meters, 900 max.
+WARN  [navigator] Distance between waypoints too far: 5335133 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [mavlink] partner IP: 127.0.0.1
+INFO  [commander] Armed by external command
+WARN  [navigator] Distance between waypoints too far: 5335133 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 8289835
+WARN  [navigator] Distance between waypoints too far: 5335133 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_31_29.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_31_29.ulg
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Data link regained
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 1937776
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 5335133 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_32_36.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_32_36.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2888773
+WARN  [navigator] Distance between waypoints too far: 5271317 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_34_17.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_34_17.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2134675
+WARN  [navigator] Distance between waypoints too far: 3480898 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_36_48.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_36_48.ulg
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Data link regained
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2260024
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 3480898 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_38_42.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_38_42.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2141478
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 40 ms (sender: 190)
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_42_35.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_42_35.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+ERROR [mavlink] [timesync] Time jump detected. Resetting time synchroniser.
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 31799651
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/14_57_54.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/14_57_54.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+ERROR [mavlink] [timesync] Time jump detected. Resetting time synchroniser.
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 3238682
+INFO  [commander] Data link regained
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_09_58.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_09_58.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 5764294
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_14_35.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_14_35.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4771474
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 24 ms (sender: 190)
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_18_37.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_18_37.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 3745622
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_21_49.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_21_49.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 3233616
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 23509 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_23_47.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_23_47.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2460219
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 16 ms (sender: 190)
+WARN  [navigator] Distance between waypoints too far: 104807 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_28_33.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_28_33.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2564678
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 68 ms (sender: 190)
+WARN  [navigator] Distance between waypoints too far: 104807 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_34_49.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_34_49.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2247799
+INFO  [commander] Data link regained
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 84 ms (sender: 190)
+WARN  [navigator] Distance between waypoints too far: 82196 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/15_42_28.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/15_42_28.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+ERROR [mavlink] [timesync] Time jump detected. Resetting time synchroniser.
+javax.media.j3d.BadTransformException: non-congruent transform above ViewPlatform
+	at javax.media.j3d.TransformGroupRetained.setTransform(TransformGroupRetained.java:151)
+	at javax.media.j3d.TransformGroup.setTransform(TransformGroup.java:136)
+	at me.drton.jmavsim.Visualizer3D.updateVisualizer(Visualizer3D.java:750)
+	at me.drton.jmavsim.Visualizer3D$UpdateBehavior.processStimulus(Visualizer3D.java:1380)
+	at javax.media.j3d.BehaviorScheduler.doWork(BehaviorScheduler.java:188)
+	at javax.media.j3d.J3dThread.run(J3dThread.java:271)
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 8809986
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_09_39.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_09_39.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4797499
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 56022 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_14_01.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_14_01.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2000101
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 234318 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_15_51.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_15_51.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2372288
+INFO  [commander] Data link regained
+WARN  [navigator] Distance between waypoints too far: 234318 meters, 900 max.
+WARN  [navigator] mission check failed
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_17_58.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_17_58.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [commander] Takeoff detected
+WARN  [commander] Connection to ground station lost
+WARN  [commander] Failsafe enabled: No manual control stick input
+INFO  [commander] Failsafe mode activated
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 499 m (10 m above destination)
+INFO  [commander] Failsafe mode deactivated
+INFO  [navigator] RTL: return at 499 m (10 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 2090082
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_19_46.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_19_46.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4779875
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_22_50.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_22_50.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4788994
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_27_51.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_27_51.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4785655
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+WARN  [mavlink] [timesync] RTT too high for timesync: 100 ms (sender: 190)
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_33_06.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_33_06.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+ERROR [mavlink] [timesync] Time jump detected. Resetting time synchroniser.
+INFO  [commander] Takeoff detected
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (30 m above destination)
+INFO  [navigator] RTL: return at 519 m (30 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4793989
+WARN  [commander] Connection to ground station lost
+INFO  [commander] Data link regained
+INFO  [commander] Armed by external command
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./log/2020-09-04/16_37_48.ulg
+INFO  [logger] Opened full log file: ./log/2020-09-04/16_37_48.ulg
+INFO  [navigator] Using minimum takeoff altitude: 2.50 m
+INFO  [navigator] Takeoff to 25.0 meters above home.
+INFO  [commander] Takeoff detected
+ERROR [mavlink] [timesync] Time jump detected. Resetting time synchroniser.
+INFO  [commander] Returning to launch
+INFO  [navigator] RTL HOME activated
+INFO  [navigator] RTL: landing at home position.
+INFO  [navigator] RTL: climb to 519 m (31 m above destination)
+INFO  [navigator] RTL: return at 519 m (31 m above destination)
+INFO  [navigator] RTL: land at destination
+INFO  [commander] Landing detected
+INFO  [commander] Disarmed by landing
+INFO  [logger] closed logfile, bytes written: 4786921
+WARN  [commander] Connection to ground station lost
+
