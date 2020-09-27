@@ -16237,3 +16237,31 @@ dronecode_sdk imports have been commented (Example: https://github.com/mavlink/M
 	 python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_PX4_Drone_JMAVSIM_Flight_Simulation2.mp4
 8. Video python-src/NeuronRainApps/Drones/testlogs/OnlineShoppingDelivery_PX4_Drone_JMAVSIM_Flight_Simulation2.mp4 shows the imaginary multirotor drone in JMAVSIM PX4 SITL making a vertical takeoff, drawing an aerial cycle based on longitude-latitude-altitude of mission item delivery points before comeback to origin by vertical landing.
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+867. (THEORY and FEATURE) OpenCV Image Contours and Segmentation for Drone Obstacle Avoidance and Motion Planning - related to 866 and all sections on Large Scale Visual Recognition, GIS analytics and Drone Navigation - 12 September 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This code change implements a new function image_segmentation_contours() in ImageGraph_Keras_Theano.py which is exactly similar to contouring code in handwriting_recognition() (DeepLearning_ConvolutionNetwork_BackPropagation.py) for topological handwriting recognition (Product Homotopy) but without distance computation for two imagefiles and finds contour interpolation polynomials for single image. 
+2.image_segmentation_contours() has been implemented as a subroutine which is invoked by image_segmentation() and could be used by any other NeuronRain computer vision and Large Scale Visual Recognition analytics code.
+3.image_segmentation() earlier had only a computational geometric segmentation of an image for finding component segments and their centroids (GRANA), Delaunay Triangulation and Facegraphs.
+4.A-Star motion planning implementation in NeuronRain (Section 866 of NeuronRain Theory Drafts) assumes a graph adjacency matrix and heuristic array signifying estimated cost of obstacle per vertex.
+5.Contour detection for GIS imagery is a tool for obstacle avoidance in drone navigation and motion planning. For example, extracting contour  points and its interpolated polynomials from a Road network GIS imagery of a terrain is useful for drawing a Contour graph vertices of which are contour points connected by contour polynomials. Adjacency matrix of such a contour graph could be used in A-Star implementation for Drone navigation. 
+6. It is worth observing that 3D-navigation of drones on the edges of road (rail or other transport) network graphs (assuming sufficient vehicle clearance heights greater than grade separators and interchanges for drone altitude) is always obstacle-free because of zero collision (on the contrary driverless vehicles on 2D road networks have non-trivial obstacle avoidance challenge - an optional obstacle avoidance could be to do a VerticalTakeOffLanding (VTOL) for circumventing every obstacle adding a third dimension to surface transport vehicle).
+7. An example Road network map from Google Maps has been contour-recognized and following logs and image files illustrate the contour polynomials inferred from road network - by both image_segmentation() and image_segmentation_contours() :
+	testlogs/ImageGraph_Keras_Theano.log.ContourSegmentation.26September2020
+	testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg
+	testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000_contours_segmented.png
+	testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000_segmented.jpg
+	testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap.pdf
+	testlogs/VoronoiFaceGraph_GoogleMaps_RoadMap_1_26September2020.png
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+868. (THEORY and FEATURE) OpenCV Image Contours and Segmentation for Medical Imageing - Magnetic Resonance Imageing (MRI and fMRI) - related 
+to 656, 681, 867, 815 and all sections on Large Scale Visual Recognition, Medical Imageing and Intrinsic Merit of Music - 26 September 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Functional MRI datasets (OpenNeuro - https://openneuro.org/public/datasets - earlier OpenFMRI) contain huge volumes of experimental functional MRI data for analyzing connectomes in brain and impact of music on humans (e.g https://openneuro.org/datasets/ds000171/versions/00001)
+2.Machine Learning has been extensively applied to analyze fMRI data - [Frontiers in Psychology - https://www.researchgate.net/publication/51563375_Functional_Data_Analysis_in_Brain_Imaging_Studies] - by means of which merit of music waveforms could be quantitatively compared for music clustering. NeuronRain already implements automata theoretic and mel-frequency merit measures for music.
+3.This code change adds a clause for MRI in medical_imageing() in ImageGraph_Keras_Theano.py and invokes medical_segmentation_contours() to find contours of an example MRI image of brain for different activities.
+4.Actual MRI and contour segmented images are at:
+	testlogs/ImageGraph_Keras_Theano.MedicalImageing.MRIContours.26September2020.png
+	testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg
+5.Logs for 867 - testlogs/ImageGraph_Keras_Theano.log.ContourSegmentation.26September2020 - have computation of contours for example MRI medical image (testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg) as well.
