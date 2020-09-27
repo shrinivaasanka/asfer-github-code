@@ -42,6 +42,8 @@ from keras.applications.imagenet_utils import decode_predictions
 from keras.preprocessing import image
 from networkx.drawing.nx_pydot import write_dot
 import os
+from scipy.interpolate import splprep, splev
+import numpy
 os.environ['KERAS_BACKEND'] = 'theano'
 
 
@@ -53,6 +55,10 @@ def medical_imageing(image_source, imagefile):
             gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
         _, contours, hierarchy = cv2.findContours(
             thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+        print(contours)
+        return contours
+    if image_source == "MRI":
+        contours = image_segmentation_contours(imagefile)
         print(contours)
         return contours
 
@@ -118,25 +124,26 @@ def event_interactions(edges):
     return edges_list[:-1]
 
 
-def videograph_eventnet_tensor_product(videograph,squareslice=100):
+def videograph_eventnet_tensor_product(videograph, squareslice=100):
     vg_en_tn_prdct = []
     for v1 in videograph:
         vg_en_tn_prdct_row = []
         for v2 in videograph:
-            nxadjacency_matrix=nx.adjacency_matrix(nx.tensor_product(
-                    v1[0].to_undirected(),
-                    v2[0].to_undirected()))
-            nxadjmatslice=nxadjacency_matrix
-            nxadjmatslice=nxadjmatslice[0:squareslice,0:squareslice]
-            nxadjmatslice=np.array(nxadjmatslice.toarray(),order='F').astype(np.float64)
+            nxadjacency_matrix = nx.adjacency_matrix(nx.tensor_product(
+                v1[0].to_undirected(),
+                v2[0].to_undirected()))
+            nxadjmatslice = nxadjacency_matrix
+            nxadjmatslice = nxadjmatslice[0:squareslice, 0:squareslice]
+            nxadjmatslice = np.array(
+                nxadjmatslice.toarray(), order='F').astype(np.float64)
             vg_en_tn_prdct_row.append(nxadjmatslice)
         vg_en_tn_prdct.append(vg_en_tn_prdct_row)
     print(("Videograph EventNet Tensor Product Matrix:", vg_en_tn_prdct))
-    vg_en_tn_prdct_np = np.asarray(vg_en_tn_prdct,order='F')
+    vg_en_tn_prdct_np = np.asarray(vg_en_tn_prdct, order='F')
     tensor = tly.tensor(vg_en_tn_prdct_np)
     factors = non_negative_parafac(
         tensor, rank=1, verbose=1)
-    print(dir(factors))
+    print((dir(factors)))
     print(("Tensor Decomposition of Video EventNet Tensor Product(measure of connectedness of video):", factors.factors))
     return vg_en_tn_prdct
 
@@ -281,7 +288,42 @@ def analyze_remotesensing_2d_patches(
         print(("Patch histogram :", imagefile, ":", img_hist))
 
 
+def image_segmentation_contours(imagefile1):
+    img1 = cv2.imread(imagefile1, 0)
+    ret, thresh1 = cv2.threshold(
+        img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+    contours1, hierarchy1 = cv2.findContours(
+        thresh1, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+    #print("contours:",contours1)
+    # contours1=cv2.findContours(thresh1,1,2)
+    epsilon1 = 0.1*cv2.arcLength(contours1[0], True)
+    # epsilon1=0.2
+    approx1 = cv2.approxPolyDP(contours1[0], epsilon1, True)
+    contour1polys = []
+    fig1 = plt.figure(dpi=100)
+    for cont in contours1:
+        xaxis = []
+        yaxis = []
+        curve = cont
+        for point in curve:
+            xaxis.append(point[0][0])
+            yaxis.append(point[0][1])
+        ax = fig1.add_subplot(111)
+        ax.plot(xaxis, yaxis, rasterized=True)
+        points = numpy.stack((xaxis, yaxis), axis=-1)
+        #print("points:",points.shape[0])
+        try:
+            if points.shape[0] > 3:
+                contour1polys.append(splprep(points.T, k=points.shape[0]-1))
+        except Exception as e:
+            continue
+    plt.show()
+    print(("contour1polys:", contour1polys))
+    return contour1polys
+
+
 def image_segmentation(imagefile):
+    image_segmentation_contours(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(
@@ -294,17 +336,18 @@ def image_segmentation(imagefile):
         dist_transform, 0.7 * dist_transform.max(), 255, 0)
     sure_fg = np.uint8(sure_fg)
     unknown = cv2.subtract(sure_bg, sure_fg)
-    ret, markers = cv2.connectedComponents(sure_fg,connectivity=8)
-    ret, labels, stats, centroids = cv2.connectedComponentsWithStatsWithAlgorithm(sure_fg,connectivity=8,ltype=2,ccltype=cv2.CCL_GRANA)
-    print("image connected components - ret:",ret)
-    print("image connected components - labels:",labels)
-    print("image connected components - stats:",stats)
-    print("image connected components - centroids:",centroids)
+    ret, markers = cv2.connectedComponents(sure_fg, connectivity=8)
+    ret, labels, stats, centroids = cv2.connectedComponentsWithStatsWithAlgorithm(
+        sure_fg, connectivity=8, ltype=2, ccltype=cv2.CCL_GRANA)
+    print(("image connected components - ret:", ret))
+    print(("image connected components - labels:", labels))
+    print(("image connected components - stats:", stats))
+    print(("image connected components - centroids:", centroids))
     markers += 1
     markers[unknown == 255] = 0
     markers = cv2.watershed(img, markers)
     img[markers == -1] = [255, 0, 0]
-    print("image connected components - markers:",markers)
+    print(("image connected components - markers:", markers))
     imagefiletoks1 = imagefile.split(".")
     imagefiletoks2 = imagefiletoks1[0].split("/")
     cv2.imwrite(
@@ -313,34 +356,34 @@ def image_segmentation(imagefile):
         "_segmented.jpg",
         img)
     imgdual = cv2.imread(imagefile)
-    rect=(0,0,imgdual.shape[1],imgdual.shape[0])
-    print("rect:",rect)
-    subdiv=cv2.Subdiv2D(rect)
-    print("subdiv:",subdiv)
+    rect = (0, 0, imgdual.shape[1], imgdual.shape[0])
+    print(("rect:", rect))
+    subdiv = cv2.Subdiv2D(rect)
+    print(("subdiv:", subdiv))
     for cent in centroids:
-        print("centroid:",cent)
+        print(("centroid:", cent))
         subdiv.insert(tuple(cent))
-    triangles=subdiv.getTriangleList()
-    print("image Delaunay triangles:",triangles)
-    facets=subdiv.getVoronoiFacetList([])
-    print("image Voronoi Facets:",facets)
-    facegraph=nx.Graph()
-    prevpoint=""
+    triangles = subdiv.getTriangleList()
+    print(("image Delaunay triangles:", triangles))
+    facets = subdiv.getVoronoiFacetList([])
+    print(("image Voronoi Facets:", facets))
+    facegraph = nx.Graph()
+    prevpoint = ""
     for facet in facets:
-        firstvertex=True
+        firstvertex = True
         for point in facet:
             if firstvertex:
-                prevpoint=str(point[0]) + "#" + str(point[1])
-                firstpoint=str(point[0]) + "#" + str(point[1])
-                firstvertex=False
-            point=str(point[0]) + "#" + str(point[1])
+                prevpoint = str(point[0]) + "#" + str(point[1])
+                firstpoint = str(point[0]) + "#" + str(point[1])
+                firstvertex = False
+            point = str(point[0]) + "#" + str(point[1])
             facegraph.add_edge(point, prevpoint)
-            prevpoint=point
+            prevpoint = point
         facegraph.add_edge(firstpoint, prevpoint)
     nx.draw_networkx(facegraph)
     plt.show()
-    write_dot(facegraph,"ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
-    return (ret,markers,labels,stats,centroids,facets,triangles)
+    write_dot(facegraph, "ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
+    return (ret, markers, labels, stats, centroids, facets, triangles)
 
 
 def random_forest_image_classification(
@@ -434,6 +477,7 @@ if __name__ == "__main__":
     # video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
     # waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
     # waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
+    waveform3=medical_imageing("MRI","testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg")
     #print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
     #print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
     # topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
@@ -444,10 +488,12 @@ if __name__ == "__main__":
     # analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
     # analyze_remotesensing_2d_patches("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
-    image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
-    image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
-    imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
-    vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
+    # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+    # image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
+    image_segmentation(
+        "testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg")
+    #imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
+    #vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
     #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
     #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
     # train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
