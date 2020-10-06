@@ -16267,15 +16267,19 @@ to 656, 681, 867, 815 and all sections on Large Scale Visual Recognition, Medica
 5.Logs for 867 - testlogs/ImageGraph_Keras_Theano.log.ContourSegmentation.26September2020 - have computation of contours for example MRI medical image (testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg) as well.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-869. (THEORY and FEATURE) Drone Obstacle Avoidance by 3D Navigation on Airspace defined by Road Geometry - related to 582, 867 and all sections on Motion Planning, GIS Analytics, Logical clocks, Large Scale Visuals Recognition - 2 October 2020
+869. (THEORY and FEATURE) Drone Obstacle Avoidance by 3D Navigation on Airspace defined by Road Geometry - related to 582, 867 and all sections on Motion Planning, GIS Analytics, Logical clocks, Large Scale Visuals Recognition, Drone Swarms - 2 October 2020, 6 October 2020
 -------------------------------------------------------------------------------------------------------------------------------------------- 
 1. 3D Navigation of Drones along road network graph airspace (which is theoretically free of natural obstacles) mentioned in 867 requires a webservice which churns out array of GPS ordinates of a road geometry from origin to destination.
 2. Google Roads webservice - https://developers.google.com/maps/documentation/roads/overview - returns array of snapped GPS ordinate points best fit to a road geometric course between origin and destination.
 3. Previous array of GPS ordinates could be looped to create mission items which can be populated to a mission plan and uploaded which is theoretically an obstacle free mission sticking to airspace strip along the road geometry.
-4. Obstacle avoidance in 3D (4D including time reckoning relativity) thus reduces to finding optimal altitude along the airspace on road geometry
+4. Obstacle avoidance in 3D (4D including time reckoning relativity for Drone Swarms) thus reduces to finding optimal altitude along the airspace on road geometry
 5. Road geometry airspace poses mostly man-made obstacles (flyovers etc.,) and drone altitude must be recomputed for each obstacle (requires interchange/grade-separators structure recognition and their height inference by OpenCV contouring and sensors) or a maximum altitude for drone mission items is set which is greater than all possible man-made structures on a road strip.
+6. Groups of Drones (Drone Swarms) and Obstacle avoidance amongst them has increasing applications in combat and tactical ops.  
 
 References:
 ----------
 869.1 Google Roads Geometry REST API - https://developers.google.com/maps/documentation/roads/snap - returns an array of GPS points and place id(s) best fit to an approximate road trajectory between origin and destination
 869.2 Lane detection for autonomous surface transport vehicles in OpenCV - https://campushippo.com/lessons/detect-highway-lane-lines-with-opencv-and-python-21438a3e2 
+869.3 Drone Swarms - DARPA - https://www.theverge.com/2019/8/9/20799148/darpa-drones-robots-swarm-military-test
+869.4 SwarmLab - Obstacle Avoidance Simulation of Drone Swarms in MATLAB - Olfeti-Saber and Vaserhelyi Obstacle avoidance algorithms - https://arxiv.org/pdf/2005.02769.pdf
+869.5 Decentralized 3D Collision Avoidance for Multiple UAVs in Outdoor Environment -  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6308403/
