@@ -16284,3 +16284,20 @@ References:
 869.3 Drone Swarms - DARPA - https://www.theverge.com/2019/8/9/20799148/darpa-drones-robots-swarm-military-test
 869.4 SwarmLab - Obstacle Avoidance Simulation of Drone Swarms in MATLAB - Olfeti-Saber and Vaserhelyi Obstacle avoidance algorithms - https://arxiv.org/pdf/2005.02769.pdf
 869.5 Decentralized 3D Collision Avoidance for Multiple UAVs in Outdoor Environment -  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6308403/
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+872. (THEORY and FEATURE) Fibonaccian Search - alternative to binary search - related to all sections on Computational Geometric Planar
+Point Location Factorization, Geometric Search of BigData, Arithmetic Progressions and Ramsey coloring - 31 October 2020
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. Binary Search could be costly in some architectures because of division by 2. Fibonaccian search based on Fibonacci series avoids 
+division and depends only on addition and subtraction. Note: Fibonaccian search is different from Fibonacci search to locate maximum of
+a unimodal function.
+2. Binary search is central to Computational Geometric Factorization to locate a factor point within a segment/interval/pixel-array-polygon which is a sorted arithmetic progression of ordinate products.
+3. Fibonaccian search optimization to replace Binary search in planar point location could significantly reduce constant involved in O(logN)
+search. 
+4. Both Binary search and Fibonaccian search are O(logN) while the search tree of the latter makes the difference - Left subtree of Fibonacci search is 1.618 (Golden ratio) times more skewed than Right subtree.
+5. In terms of runtime efficiency Fibonaccian search lies between Binary Search and Interpolation search (which is O(loglogN) and assumes elements are within a known range)
+
+References:
+----------
+872.1 Fibonaccian search - Section 6.2.1 - Searching an ordered table - Page 418 - Algorithm F - The Art of Computer Programming - Volume 3 - [Donald Knuth]
