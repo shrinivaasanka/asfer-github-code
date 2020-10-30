@@ -1,0 +1,222 @@
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('i = ', 5)
+('p = ', 3)
+('q = ', 2)
+query < iterable[i-1]
+('i = ', 3)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 2)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 1)
+('p = ', 1)
+('q = ', 0)
+query < iterable[i-1]
+('queried point does not exist:', 0)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('i = ', 5)
+('p = ', 3)
+('q = ', 2)
+query < iterable[i-1]
+('i = ', 3)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 2)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('queried point exists:', 1)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('i = ', 5)
+('p = ', 3)
+('q = ', 2)
+query < iterable[i-1]
+('i = ', 3)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('queried point exists:', 2)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('i = ', 5)
+('p = ', 3)
+('q = ', 2)
+query < iterable[i-1]
+('queried point exists:', 3)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('i = ', 5)
+('p = ', 3)
+('q = ', 2)
+query < iterable[i-1]
+query > iterable[i-1]
+('queried point exists:', 4)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+('queried point exists:', 5)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+query > iterable[i-1]
+('i = ', 7)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 6)
+('p = ', 1)
+('q = ', 0)
+query < iterable[i-1]
+('queried point does not exist:', 6)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+query > iterable[i-1]
+('i = ', 7)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('queried point exists:', 7)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+query > iterable[i-1]
+('i = ', 7)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+query > iterable[i-1]
+('queried point does not exist:', 8)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query < iterable[i-1]
+query > iterable[i-1]
+('queried point exists:', 9)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+('queried point exists:', 10)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 10)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 9)
+('p = ', 1)
+('q = ', 0)
+query < iterable[i-1]
+('queried point does not exist:', 11)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 10)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+('queried point exists:', 12)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('i = ', 10)
+('p = ', 1)
+('q = ', 1)
+query < iterable[i-1]
+query > iterable[i-1]
+('queried point does not exist:', 13)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query < iterable[i-1]
+('queried point exists:', 14)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('queried point exists:', 15)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query > iterable[i-1]
+('i = ', 12)
+('p = ', 1)
+('q = ', 0)
+query < iterable[i-1]
+('queried point does not exist:', 16)
+('fibonacci series:', [0, 1, 1, 2, 3, 5, 8])
+('i = ', 8)
+('p = ', 5)
+('q = ', 3)
+query > iterable[i-1]
+('i = ', 11)
+('p = ', 2)
+('q = ', 1)
+query > iterable[i-1]
+('i = ', 12)
+('p = ', 1)
+('q = ', 0)
+query < iterable[i-1]
+('queried point does not exist:', 17)
