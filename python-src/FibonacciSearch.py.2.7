@@ -29,7 +29,7 @@ def fibonacci(maxelement):
         fibkminus2 = fibkminus1
         fibkminus1 = fibk
         fibk = fibkminus2 + fibkminus1
-    print(("fibonacci series:", fibseries))
+    print("fibonacci series:", fibseries)
     return fibseries
 
 
@@ -40,14 +40,14 @@ def fibsearch(iterable, query):
     q = fibseries[len(fibseries)-3]
     exit = False
     while not exit:
-        print(("i = ", i))
-        print(("p = ", p))
-        print(("q = ", q))
+        print("i = ", i)
+        print("p = ", p)
+        print("q = ", q)
         try:
             if query < iterable[i-1]:
                 print("query < iterable[i-1]")
                 if q == 0:
-                    print(("queried point does not exist:", query))
+                    print("queried point does not exist:", query)
                     exit = True
                 else:
                     i = (i - q)
@@ -57,7 +57,7 @@ def fibsearch(iterable, query):
             if query > iterable[i-1]:
                 print("query > iterable[i-1]")
                 if p == 1:
-                    print(("queried point does not exist:", query))
+                    print("queried point does not exist:", query)
                     exit = True
                 else:
                     i = i + q
@@ -65,13 +65,13 @@ def fibsearch(iterable, query):
                     p = (tempp - q)
                     q = (q - p)
             if query == iterable[i-1]:
-                print(("queried point exists:", iterable[i-1]))
+                print("queried point exists:", iterable[i-1])
                 exit = True
         except:
-            print(("queried point does not exist:", query))
+            print("queried point does not exist:", query)
             break
 
 
 if __name__ == "__main__":
-    for x in range(18):
+    for x in xrange(18):
         fibsearch([1, 2, 3, 4, 5, 7, 9, 10, 12, 14, 15, 18], x)
