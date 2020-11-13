@@ -120,14 +120,19 @@ class HRAnalytics(object):
                         print("NeuronRain Human Name Parsing by Context - nameparser():", k, ":", v)
                     return regexgroupdict
 
-    def pipldotcom_analytics(self, first_name=None, last_name=None, email=None):
-        from piplapis.search import SearchAPIRequest
-        request = SearchAPIRequest(email=email, first_name=first_name,
+    def pipldotcom_analytics(self, first_name=None, last_name=None, email=None, loadfromjson=True):
+        if not loadfromjson:
+            from piplapis.search import SearchAPIRequest
+            request = SearchAPIRequest(email=email, first_name=first_name,
                                    last_name=last_name, api_key='20307is19nx0tu0mar4zt987')
-        response = request.send()
-        print("pipldotcom_analytics(): JSON response for query (", first_name, ",", last_name, ",", email, "):")
-        jsonloads = json.loads(response.to_json())
+            response = request.send()
+            print("pipldotcom_analytics(): JSON response for query (", first_name, ",", last_name, ",", email, "):")
+            jsonloads = json.loads(response.to_json())
+        else:
+            pipljsonf = open("testlogs/SocialNetworkAnalysis_PeopleAnalytics.json")
+            jsonloads = json.loads(pipljsonf.read())
         print(json.dumps(jsonloads, indent=5, sort_keys=True))
+        return jsonloads
 
     def linkedin_dataset_tenure_analytics(self, linkedindata):
         from pyspark.sql import SparkSession
@@ -338,11 +343,11 @@ if __name__ == "__main__":
     # hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
     #profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
     #profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
-    hranal.rlfg_intrinsic_merit(profile_text)
-    # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
-    # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
-    # hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
-    # emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
+    #hranal.rlfg_intrinsic_merit(profile_text)
+    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
+    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
+    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
+    #emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
     # for emailcontext in emailcontexts:
     #    ecf=open(emailcontext)
     #    emailcontext_text=ecf.read()
