@@ -16310,3 +16310,14 @@ References:
 from Computational geometric factorization which is already Python 3 compatible.
 2. Python 2.7 version of Fibonaccian search has been separately committed.
 3. After this upgrade NeuronRain supports all three versions of Python 3 - Python 3.7.5, Python 3.8.5 and Python 3.9.0
+
+------------------------------------------------------------------------------------------------------------------------------------------
+874. (THEORY and FEATURE) People Analytics - People Profiles as Tensors - related to 752 and all sections on Embedding in vectorspace, Social
+Network Analytics, Psephology/Election analytics, Majority Voting, Intrinsic merit of People profiles - 13 November 2020
+------------------------------------------------------------------------------------------------------------------------------------------ 
+1.python-src/SocialNetworkAnalysis_PeopleAnalytics.py has been changed to optionally choose between REST API calls to PIPL.com and reading
+a json file of people profile from any datasource including PIPL.com by boolean parameter loadfromjson in function pipldotcom_analytics() which reads People data in JSON from testlogs/SocialNetworkAnalysis_PeopleAnalytics.json 
+2.JSON objects are multidimensional which could be construed as points on a vectorspace. TensorFlow supports reading JSON format of Tensors as Protobufs (Read JSON string and return a Protobuf Tensor - https://www.tensorflow.org/api_docs/python/tf/io/decode_json_example).
+3.Mapping people profiles onto Tensor points on vectorspace opens up possibility of whole gamut of Computational geometric People analytics - for example closest pair and clusters of people could be found and profiles could be iteratively ranked to get similarities. 
+4.Clustering of people profiles is crucial in analyzing voting patterns. 
+5.On a related note, NeuronRain implements a Set partition Electronic Voting Machine and every candidate bucket is a cluster of voters - Distance similarity (or Swing between consecutive polls) between any two Set Partition EVMs is measurable by Earth mover distance (Wasserstein distance).
