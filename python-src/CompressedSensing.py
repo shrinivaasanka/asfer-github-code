@@ -34,6 +34,7 @@ from scipy.sparse.linalg import lsmr
 from scipy.linalg import pinv
 from hyphen import Hyphenator
 from TextCompression import VowellessText
+from math import sqrt
 
 
 class CompressedSensing(object):
@@ -131,6 +132,32 @@ class CompressedSensing(object):
             return (syllables, alphabet_vectorspace_embedding,"-".join(syll_comp_text))
         else:
             return (syllables, "-".join(syll_comp_text))
+
+    def alphabet_vectorspace_embedding_distance(self, embedding1, embedding2):
+        len1=len(embedding1)
+        len2=len(embedding2)
+        leftjustified=embedding1
+        if len1 > len2:
+            leftjustified=embedding2
+        else:
+            leftjustified=embedding1
+        for n in range(abs(len1-len2)):
+            leftjustified.append('#')
+        if len1 > len2:
+            embedding2=leftjustified
+        else:
+            embedding1=leftjustified
+        print("leftjustified:",leftjustified)
+        print("embedding1:",embedding1)
+        print("embedding2:",embedding2)
+        distance=0
+        for ordpair in zip(embedding1,embedding2):
+            diff = abs(ord(ordpair[0]) - ord(ordpair[1]))
+            distance += diff * diff
+        distance = sqrt(distance)
+        print("Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance)
+        print("Normalized Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance/len(embedding1))
+        return distance
 
 if __name__ == "__main__":
     #input_image8 = ImageToBitMatrix.image_to_bitmatrix("./testlogs/PictureOf8_1.jpg")

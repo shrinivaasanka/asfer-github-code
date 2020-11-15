@@ -332,7 +332,7 @@ if __name__ == "__main__":
     # hranal.experiential_intrinsic_merit()
     # profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
     profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
-    # hranal.rlfg_intrinsic_merit(profile_text)
+    hranal.rlfg_intrinsic_merit(profile_text)
     # number_of_connections=hranal.parse_connections(profile_text)
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit(number_of_connections)
@@ -347,14 +347,14 @@ if __name__ == "__main__":
     hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
     hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
     hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
-    #emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
-    # for emailcontext in emailcontexts:
-    #    ecf=open(emailcontext)
-    #    emailcontext_text=ecf.read()
-    #    print "============================================================================="
-    #    hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+).(?P<first_name>\w+)",emailcontext_text)
-    #    print "============================================================================="
-    #    hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+) (?P<first_name>\w+)",emailcontext_text)
+    emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
+    for emailcontext in emailcontexts:
+        ecf=open(emailcontext)
+        emailcontext_text=ecf.read()
+        print("=============================================================================")
+        hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+).(?P<first_name>\w+)",emailcontext_text)
+        print("=============================================================================")
+        hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+) (?P<first_name>\w+)",emailcontext_text)
     idcontexts = ["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing6.txt",
                   "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing7.txt", "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing8.txt"]
     for idcontext in idcontexts:
@@ -382,3 +382,8 @@ if __name__ == "__main__":
     mr3 = match_rating_codex(str("Srinivasan"))
     print("Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]:", [
         mr1, mr2, mr3])
+    avedistance1 = csensing.alphabet_vectorspace_embedding_distance(['p','q','r','s','t'],['p','q','r','s','z'])
+    avedistance2 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','h','r','i','n','i','v','a','a','s','a','n'])
+    avedistance3 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','r','i','n','i','v','a','s','a','n'])
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','a','s','a','n'],['S','r','i','n','i','v','a','s','a','n'])
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['R','a','s','a'],['R','a','j','a'])
