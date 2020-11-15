@@ -16321,3 +16321,35 @@ a json file of people profile from any datasource including PIPL.com by boolean 
 3.Mapping people profiles onto Tensor points on vectorspace opens up possibility of whole gamut of Computational geometric People analytics - for example closest pair and clusters of people could be found and profiles could be iteratively ranked to get similarities. 
 4.Clustering of people profiles is crucial in analyzing voting patterns. 
 5.On a related note, NeuronRain implements a Set partition Electronic Voting Machine and every candidate bucket is a cluster of voters - Distance similarity (or Swing between consecutive polls) between any two Set Partition EVMs is measurable by Earth mover distance (Wasserstein distance).
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+875. (THEORY and FEATURE) People Analytics - Alphabet Vectorspace Embedding Distance implementation - related to 752,874 and all sections on
+Embedding in vectorspace, Compressed Sensing, Social Network Analytics, Meaning Representation, Intrinsic Merit of People Profiles/HR Analytics - 15 November 2020
+-------------------------------------------------------------------------------------------------------------------------------------------
+1. CompressedSensing.py has been changed to implement a new function alphabet_vectorspace_embedding_distance(self, embedding1, embedding2) which finds the euclidean distance between two string vector points (1-dimensional Tensor) embedded in alphabet space.
+2. It uses the ord() builtin to compute ordinal values of the ascii or unicode strings. 
+3. alphabet_vectorspace_embedding_distance() is invoked from python-src/SocialNetworkAnalysis_PeopleAnalytics.py to compare two different name spellings in English of a Sanskrit name. 
+4. Strings of different lengths are left justified and padded by "#" fill before distance computation.
+5. Distance computed is normalized - divided by length of the strings compared. 
+6. Logs python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.15November2020 show distance similarities amongst different name spellings in English of Sanskrit name which can be contrasted against Phonetic match rating and NYSIS Flight manifest name similarity algorithms as below:
+embedding1: ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#', '#', '#']
+embedding2: ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n']
+Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#', '#', '#']  and  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n'] : 127.251719045363
+Normalized Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#', '#', '#']  and  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n'] : 10.604309920446918
+leftjustified: ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#']
+embedding1: ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#']
+embedding2: ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n']
+Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#']  and  ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n'] : 84.34453153583817
+Normalized Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's', '#']  and  ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n'] : 8.434453153583817
+leftjustified: ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '#', '#']
+embedding1: ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n']
+embedding2: ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '#', '#']
+Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n']  and  ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '#', '#'] : 103.24243313676794
+Normalized Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n']  and  ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n', '#', '#'] : 8.603536094730662
+7.Invocation of Recursive Lambda Function Growth Meaning Representation of a Professional Profile and Email context name parsing have been uncommented. Because of unfiltered proper nouns of organizations, few lambda functions are misleading.
+8.Two phonetically different name spellings "Rasa" and "Raja" of same name (in Tamizh and Sanskrit respectively) are compared for euclidean distance similarity.
+9.Syllable Hyphenation of name strings adds one more dimension and would create a 2-dimensional tensor embedding and distance between two 2D tensors could be more accurate e.g:
+	"Srinivasan" - [[S,r,i,n,i],[v,a,s,a,n]]
+	"Shrinivas" - [[S,h,r,i,n,i],[v,a,s]]
+	"Shrinivaasan" - [[S,h,r,i,n,i],[v,a,a,s,a,n]]
+10.For arbitrary dimensional people data as JSON tensors which include name,work experience,connections,academics etc., distance computation between Person1 and Person2 requires expanding dimensions of smaller tensor and computing the norm of Person1 - Person2 (Stackoverflow question - https://stackoverflow.com/questions/55196194/how-to-calculate-the-euclidean-distance-between-a-2-d-tensor-and-a-3-d-tensor)
