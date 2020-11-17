@@ -16353,3 +16353,18 @@ Normalized Alphabet Vectorspace Embedding Distance between  ['S', 'h', 'r', 'i',
 	"Shrinivas" - [[S,h,r,i,n,i],[v,a,s]]
 	"Shrinivaasan" - [[S,h,r,i,n,i],[v,a,a,s,a,n]]
 10.For arbitrary dimensional people data as JSON tensors which include name,work experience,connections,academics etc., distance computation between Person1 and Person2 requires expanding dimensions of smaller tensor and computing the norm of Person1 - Person2 (Stackoverflow question - https://stackoverflow.com/questions/55196194/how-to-calculate-the-euclidean-distance-between-a-2-d-tensor-and-a-3-d-tensor)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+876. (THEORY and FEATURE) People Analytics - People profiles as Tensors - Chaotic Hidden Markov Model of Tenure Transitions - TensorFlow
+integration for conversion of People profile data to Tensors - 17 November 2020 - related to 365,400,572,875 and all sections on Intrinsic merit of People, BKS Conjecture, Condorcet Jury Theorem, Margulis-Ruzzo Threshold, Berry-Esseen Central Limit Theorem  and Stability of Interview formalized by LTF/TQBF/PTF
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit invokes TensorFlow convert_to_tensor() function for converting any People profile data encoded as any Python object including JSON to a Tensor.
+2.python-src/SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py which models tenure transitions of People profiles by Chaotic Hidden Markov Model Viterbi Trellis,now imports TensorFlow and TensorFlow I/O.
+3.SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json Tenure Transition is read and the fields are converted to Tensors by convert_to_json() TensorFlow API e.g tenure organizations - academic and work - are encoded as TF tensor below:
+	piplprofiletensor - states: tf.Tensor(
+	[b'Schooling' b'DBHPS' b'PSGTech' b'BaaN-SSAGlobal'
+	 b'SunMicrosystems-Oracle' b'Krishna-iResearch' b'Verizon'
+  	 b'webMethods-SoftwareAG' b'CMI-IIT-IMSc' b'GlobalAnalytics'
+	 b'Clockwork-PiQube' b'CloudEnablers'], shape=(12,), dtype=string)
+4.TensorFlow function decode_as_json() might also be invoked but there are occassional JSON parsing errors.
+5.Objective of NeuronRain People Analytics is to automate, do away with or minimize human errors in talent recruitment through machine learning models. Stability and Noise Sensitivity criterion of an interview TQBF/LTF/PTF derived earlier theoretically stipulates when a talent recruitment system by Question-Answering is better than majority voting and thus has enormous HR analytics ramifications. Goodness of majority voting - when group decision converges to good outcome for p-biased voters - is limited by Margulis-Ruzzo Threshold/Condorcet-Black-Ladha Jury Theorems for p-biased boolean functions. Combining the two, Stability criterion for interview TQBF (which is in IP=PSPACE) outclassing majority decision and Margulis-Ruzzo/CJT threshold for majority decision converging to 100% are thus inversely related - if Questions-Answers are improperly weighted (a <= 1.2056205488/n) for every possible LTF, Interview process is subverted and becomes unstable making BKS Conjecture False.
