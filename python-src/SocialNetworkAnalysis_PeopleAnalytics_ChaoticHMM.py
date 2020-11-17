@@ -32,6 +32,8 @@ import networkx as nx
 from itertools import product
 from collections import Counter
 import json
+import tensorflow as tf
+import tensorflow_io as tfio
 
 fig, ax = plt.subplots(1, 1)
 
@@ -86,6 +88,12 @@ if __name__ == "__main__":
     chaotichmmf=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
     chaotichmmjson=json.loads(chaotichmmf.read())
     print("chaotichmmjson:",chaotichmmjson)
+    piplprofile=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
+    piplprofilejson=json.load(piplprofile)
+    print("piplprofilejson:",piplprofilejson)
+    #piplprofiletensor=tf.io.decode_json_example(piplprofilejson["states"])
+    piplprofiletensor_states=tf.convert_to_tensor(piplprofilejson["states"])
+    print("piplprofiletensor - states:",piplprofiletensor_states)
     #states = ["PSGTech", "BaaN-SSAGlobal", "SunMicrosystems-Oracle", "Krishna-iResearch", "Verizon",
     #          "webMethods-SoftwareAG", "CMI-IIT-IMSc", "GlobalAnalytics", "Clockwork-PiQube", "CloudEnablers"]
     #start_probabilities={'noun':0.3, 'verb':0.2, 'object':0.2, 'adjective':0.1, 'adverb':0.1, 'conjunction':0.2}
