@@ -44,7 +44,8 @@ from networkx.drawing.nx_pydot import write_dot
 import os
 from scipy.interpolate import splprep, splev
 import numpy
-os.environ['KERAS_BACKEND'] = 'theano'
+#os.environ['KERAS_BACKEND'] = 'theano'
+os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 
 def medical_imageing(image_source, imagefile):
@@ -492,8 +493,8 @@ if __name__ == "__main__":
     # image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
     image_segmentation(
         "testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg")
-    #imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
-    #vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
+    imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
+    vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
     #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
     #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
     # train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
