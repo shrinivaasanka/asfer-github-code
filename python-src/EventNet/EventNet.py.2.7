@@ -1,5 +1,5 @@
-# -------------------------------------------------------------------------------------------------------
-# NEURONRAIN ASFER - Software for Mining Large Datasets
+# ------------------------------------------------------------------------------------------------------------
+# ASFER - a ruleminer which gets rules specific to a query and executes them (component of iCloud Platform)
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -10,11 +10,17 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# --------------------------------------------------------------------------------------------------------
-# K.Srinivasan
-# NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
+#
+# ---------------------------------------------------------------------------------------------------------
+# Copyright (C):
+# Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+# Ph: 9789346927, 9003082186, 9791165980
+# Krishna iResearch Open Source Products Profiles:
+# http://sourceforge.net/users/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan
 # Personal website(research): https://sites.google.com/site/kuja27/
-# --------------------------------------------------------------------------------------------------------
+# ZODIAC DATASOFT: https://github.com/shrinivaasanka/ZodiacDatasoft
+# emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com, kashrinivaasan@live.com
+# ---------------------------------------------------------------------------------------------------------
 
 ######################################################################
 # EventNet - a cloudwide event ordering with unique id implementation
@@ -54,12 +60,8 @@ def intraevent_totensor(intraeventedges):
     edges = intraeventedges.split("#")
     nxg = nx.Graph()
     for edge in edges:
-        edgestrip=edge.strip()
-        edgevertices=edgestrip[1:-1].split(',')
-        nxg.add_edge(edgevertices[0],edgevertices[1])
-    nxgtensor=tf.convert_to_tensor(nx.adjacency_matrix(nxg).todense())
-    print(nxgtensor)
-    return nxgtensor 
+        nxg.add_edge(eval(edge))
+    return tf.Tensor(nx.adjacency_matrix(nxg))
 
 
 def EventNet_Tensor_Parser():
@@ -70,37 +72,33 @@ def EventNet_Tensor_Parser():
     gr2 = Digraph(engine="neato")
 
     for vertex in vertices_file:
-        print(vertex)
+        print vertex
         tokens = vertex.split('-')
-        print(tokens)
+        print tokens
         gr1.add_nodes([tokens[0].strip()])
         gr2.node(tokens[0], "Event "+tokens[0]+" Partakers -" +
                  tokens[1] + "- IntraEventConversations:"+tokens[2])
-        eventsdict[tokens[0].strip()] = intraevent_totensor(tokens[2])
+        eventsdict[tokens[0]] = intraevent_totensor(tokens[2])
 
-    EventNet_Tensor=nx.Graph()
     for edge in edges_file:
-        print(edge)
+        print edge
         tokens = edge.split(',')
-        print(tokens)
+        print tokens
         edge_tuple = (tokens[0].strip(), tokens[1].strip())
         gr1.add_edge((tokens[0].strip(), tokens[1].strip()))
         # gr1.add_edge(edge_tuple)
         gr2.edge(tokens[0], tokens[1])
-        EventNet_Tensor.add_edge(eventsdict[tokens[0].strip()],eventsdict[tokens[1].strip()])
-    EventNet_Tensor_tf=tf.convert_to_tensor(nx.to_scipy_sparse_matrix(EventNet_Tensor).todense())
-    print("EventNet Tensor - TensorFlow:")
-    print(EventNet_Tensor_tf)
+
     dot = write(gr1)
     gvv = gv.readstring(dot)
     gv.layout(gvv, 'dot')
     gv.render(gvv, 'png', 'EventNet.gv.png')
     gr2.render("EventNet.graphviz")
-    print("############################################")
-    print("Topological sorting of the graph:")
-    print("############################################")
+    print "############################################"
+    print "Topological sorting of the graph:"
+    print "############################################"
     sortedgr1 = topological_sorting(gr1)
-    print(sortedgr1)
+    print sortedgr1
 
     toposortedevents = open("EventNetOrdering.txt", "w")
     index = 1
