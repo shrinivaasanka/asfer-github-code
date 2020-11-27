@@ -16380,3 +16380,50 @@ supported by NeuronRain Large Scale Visual Analytics. An example GoogleScholar a
 878. (FEATURE) EventNet Python Parser - Events as Tensorflow Tensors - 20 November 2020 - related to 701 and all sections on EventNet Logical Clock, Video EventNet Tensor Products algorithm for Merit of Large Scale Visuals and Category Theory
 --------------------------------------------------------------------------------------------------------------------------------------------
 This commit refactors EventNet/EventNet.py to define EventNet_Tensor_Parser() function which parses the EventNet Vertices and Edges text files and instantiates TensorFlow Tensor objects for each intraevent conversations (edges amongst actors in an event) and a holistic EventNet TensorFlow Tensor for interevent causality. EventNet abstraction helps analyzing Videos - each Frame is an Event, actor objects within a Frame event category interact by morphisms (intraevent) and Causality between Frames (interevent) is defined by edges or Functors between two Frame Event categories. More than anything else, EventNet conceptualizes a multidimensional logical time Tensor and postulates that time tensor could be decomposed to components. EventNet example has been redrawn by GraphViz and testlogs/EventNet.Tensor.log.20November2020 capture the EventNet Tensor instantiated as TensorFlow tf.Tensor() objects.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1123. (THEORY and FEATURE) People Analytics - Alphabet Vectorspace Embedding - Earth Mover Distance between String Syllable Tensors - related to 752,874,875 and all sections on Embedding in vectorspace, Compressed Sensing, Social Network Analytics, Meaning Representation, Intrinsic Merit of People Profiles/HR Analytics, Set Partition and Histogram analytics  - 27 November 2020
+--------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit augments CompressedSensing.py - alphabet_vectospace_embedding_distance() function to optionally compute syllable vector earth mover distance between two phonetic syllable hyphenated string 2D tensors (encoded by ordinal integers) by syllable_tensor_distance boolean flag
+2.Lot of options were tried for computing distance norm between two 2D tensors having arbitrary number of rows and columns of unequal lengths - TensorFlow, sklearn, SciPy directed_hausdorff, wasserstein_distance and cdist, OpenCV2 EMD - and OpenCV2 EMD has been chosen because of its implicit dimension expansion, support for unequal rows and columns between two 2D tensors (which is very much necessary for comparing two strings of unequal number of syllables of arbitray length) and ability to measure syllables as histograms - syllables partition a string to histogram buckets and distance between two strings is the amount of work necessary to move one string syllable histogram to another (2D analogue of Edit Distance) which is captured by Earth Mover Distance of OpenCV. 
+3.Function tosig() translates a syllable hyphenation of string to OpenCV.EMD() format.
+4.Logs at python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.27November2020  compute EMD between following string syllable hyphenations:
+ csensing.alphabet_vectorspace_embedding_distance([['n','o'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
+ csensing.alphabet_vectorspace_embedding_distance([['t','e','r'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
+ csensing.alphabet_vectorspace_embedding_distance([['S','h','r','i'],['n','i'],['v','a','a'],['s','a','n']],[['S','r','i'],['n','i'],['v','a','s','a','n']],True)
+5.Following are the respective EMDs computed for string syllable hyphenations(encoded by ordinals):
+ordembedding1: [[110, 111], [109, 105], [110, 97, 108]]
+ordembedding2: [[115, 101], [109, 105], [110, 97, 108]]
+Earth Mover Distance between two String syllable tensors: (0.006666666828095913, None, array([[110.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  5., 101.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0., 109.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0., 105.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0., 110.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,  97.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0., 108.]], dtype=float32))
+ordembedding1: [[116, 101, 114], [109, 105], [110, 97, 108]]
+ordembedding2: [[115, 101], [109, 105], [110, 97, 108]]
+Earth Mover Distance between two String syllable tensors: (0.0, None, array([[115.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0., 101.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0., 109.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0., 105.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0., 110.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,  97.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0., 108.]], dtype=float32))
+ordembedding1: [[83, 104, 114, 105], [110, 105], [118, 97, 97], [115, 97, 110]]
+ordembedding2: [[83, 114, 105], [110, 105], [118, 97, 115, 97, 110]]
+Earth Mover Distance between two String syllable tensors: (0.3320339024066925, None, array([[ 83.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0., 104.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   9., 105.,   0.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   1.,   0.,   0.,   0.,   0.,   0.,   0.,   0., 104.],
+       [  0.,   0.,   0., 110.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0., 105.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0., 118.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,  97.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,   0.,  97.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,   0.,  11.,   0.,   0.],
+       [  0.,   0.,   0.,   0.,   0.,   0.,   0.,   7.,  97.,   6.]],
+      dtype=float32))
+
