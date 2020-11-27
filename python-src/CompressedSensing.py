@@ -35,6 +35,13 @@ from scipy.linalg import pinv
 from hyphen import Hyphenator
 from TextCompression import VowellessText
 from math import sqrt
+from scipy.stats import wasserstein_distance
+from scipy.spatial.distance import cdist
+from sklearn.metrics.cluster import adjusted_rand_score
+from sklearn.metrics import adjusted_mutual_info_score
+import numpy as np
+from cv2 import *
+import tensorflow as tf
 
 
 class CompressedSensing(object):
@@ -133,31 +140,89 @@ class CompressedSensing(object):
         else:
             return (syllables, "-".join(syll_comp_text))
 
-    def alphabet_vectorspace_embedding_distance(self, embedding1, embedding2):
-        len1=len(embedding1)
-        len2=len(embedding2)
-        leftjustified=embedding1
-        if len1 > len2:
-            leftjustified=embedding2
+    def tosig(self,array):
+        lenarray=0
+        for row in array:
+            lenarray+=len(row)
+        sig=np.empty((lenarray,3), dtype=np.float32)
+        #print("sig:",sig)
+        rowcnt=0
+        colcnt=0
+        cnt=0
+        #print("array:",array)
+        for a in array:
+            #print("a:",a)
+            for b in a:
+                #print("b:",b)
+                sig[cnt]=np.array([b,rowcnt,colcnt])
+                colcnt+=1
+                cnt+=1
+            colcnt=0
+            rowcnt+=1
+        return sig
+
+    def alphabet_vectorspace_embedding_distance(self, embedding1, embedding2, syllable_tensor_distance=False):
+        if syllable_tensor_distance is True:
+            distance=0
+            ordembedding1=[]
+            ordembedding2=[]
+            for row in embedding1:
+                ordrow=[]
+                for col in row:
+                    ordrow.append(ord(col))
+                ordembedding1.append(ordrow)
+            for row in embedding2:
+                ordrow=[]
+                for col in row:
+                    ordrow.append(ord(col))
+                ordembedding2.append(ordrow)
+            print("ordembedding1:",ordembedding1)
+            print("ordembedding2:",ordembedding2)
+            ordembedding1sig=self.tosig(ordembedding1)
+            ordembedding2sig=self.tosig(ordembedding2)
+            distance_emd=cv2.EMD(ordembedding1sig,ordembedding2sig,cv2.DIST_L2)
+            print("Earth Mover Distance between two String syllable tensors:",distance_emd)
+            #distance=cdist(ordembedding1np,ordembedding2np,'cityblock')
+            #distance=wasserstein_distance(ordembedding1,ordembedding2)
+            #distance_ami=adjusted_mutual_info_score(ordembedding1,ordembedding2)
+            #distance_ari=adjusted_rand_score(ordembedding1np,ordembedding2np)
+            #ordembedding1tf=tf.constant(ordembedding1)
+            #ordembedding2tf=tf.constant(ordembedding2)
+            #tensordistance=tf.norm(ordembedding1tf - ordembedding2tf)
+            #print("String syllable tensor distance:",tensordistance)
+            #ordembedding164=cv.fromarray(ordembedding1np)
+            #ordembedding132=cv.CreateMat(ordembedding164.rows,ordembedding164.cols,cv.CV32_FC1)
+            #cv.Convert(ordembedding164,ordembedding132)
+            #ordembedding264=cv.fromarray(ordembedding2np)
+            #ordembedding232=cv.CreateMat(ordembedding264.rows,ordembedding264.cols,cv.CV32_FC1)
+            #cv.Convert(ordembedding264,ordembedding232)
+            #distance_emd=cv.CalcEMD2(ordembedding132,ordembedding232,cv.CV_DIST_L2)
+            return distance_emd
         else:
+            len1=len(embedding1)
+            len2=len(embedding2)
             leftjustified=embedding1
-        for n in range(abs(len1-len2)):
-            leftjustified.append('#')
-        if len1 > len2:
-            embedding2=leftjustified
-        else:
-            embedding1=leftjustified
-        print("leftjustified:",leftjustified)
-        print("embedding1:",embedding1)
-        print("embedding2:",embedding2)
-        distance=0
-        for ordpair in zip(embedding1,embedding2):
-            diff = abs(ord(ordpair[0]) - ord(ordpair[1]))
-            distance += diff * diff
-        distance = sqrt(distance)
-        print("Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance)
-        print("Normalized Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance/len(embedding1))
-        return distance
+            if len1 > len2:
+              leftjustified=embedding2
+            else:
+              leftjustified=embedding1
+            for n in range(abs(len1-len2)):
+              leftjustified.append('#')
+            if len1 > len2:
+              embedding2=leftjustified
+            else:
+              embedding1=leftjustified
+            print("leftjustified:",leftjustified)
+            print("embedding1:",embedding1)
+            print("embedding2:",embedding2)
+            distance=0
+            for ordpair in zip(embedding1,embedding2):
+              diff = abs(ord(ordpair[0]) - ord(ordpair[1]))
+              distance += diff * diff
+              distance = sqrt(distance)
+              print("Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance)
+              print("Normalized Alphabet Vectorspace Embedding Distance between ",embedding1," and ",embedding2,":",distance/len(embedding1))
+              return distance
 
 if __name__ == "__main__":
     #input_image8 = ImageToBitMatrix.image_to_bitmatrix("./testlogs/PictureOf8_1.jpg")

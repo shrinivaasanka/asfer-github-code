@@ -325,12 +325,21 @@ class HRAnalytics(object):
 
 if __name__ == "__main__":
     hranal = HRAnalytics()
+    csensing = CompressedSensing()
     #profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     #print profile_text
     # profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
     # profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
+    avedistance1 = csensing.alphabet_vectorspace_embedding_distance(['p','q','r','s','t'],['p','q','r','s','z'])
+    avedistance2 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','h','r','i','n','i','v','a','a','s','a','n'])
+    avedistance3 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','r','i','n','i','v','a','s','a','n'])
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','a','s','a','n'],['S','r','i','n','i','v','a','s','a','n'])
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['R','a','s','a'],['R','a','j','a'])
+    avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['n','o'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
+    avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['t','e','r'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance([['S','h','r','i'],['n','i'],['v','a','a'],['s','a','n']],[['S','r','i'],['n','i'],['v','a','s','a','n']],True)
     profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
     hranal.rlfg_intrinsic_merit(profile_text)
     # number_of_connections=hranal.parse_connections(profile_text)
@@ -366,7 +375,6 @@ if __name__ == "__main__":
         hranal.nameparser(
             "kannan srinivasan", r"(?P<second_name>\w+) (?P<first_name>\w+)", idcontext_text.lower())
         print("==============================================================================")
-    csensing = CompressedSensing()
     try:
         syllvector1 = csensing.syllable_boundary_text_compression("Shrinivaasan")
         syllvector2 = csensing.syllable_boundary_text_compression("Shrinivas")
@@ -382,8 +390,3 @@ if __name__ == "__main__":
     mr3 = match_rating_codex(str("Srinivasan"))
     print("Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]:", [
         mr1, mr2, mr3])
-    avedistance1 = csensing.alphabet_vectorspace_embedding_distance(['p','q','r','s','t'],['p','q','r','s','z'])
-    avedistance2 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','h','r','i','n','i','v','a','a','s','a','n'])
-    avedistance3 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','r','i','n','i','v','a','s','a','n'])
-    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','a','s','a','n'],['S','r','i','n','i','v','a','s','a','n'])
-    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['R','a','s','a'],['R','a','j','a'])
