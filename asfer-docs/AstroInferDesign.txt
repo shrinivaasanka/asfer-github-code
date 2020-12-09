@@ -16427,3 +16427,20 @@ Earth Mover Distance between two String syllable tensors: (0.3320339024066925, N
        [  0.,   0.,   0.,   0.,   0.,   0.,   0.,   7.,  97.,   6.]],
       dtype=float32))
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+1124. (THEORY and FEATURE) Graph Search and Analytics - NetworkX Graph Edit Distance - related to 753, 829, 1123 and all sections on
+TextGraph algorithms for Meaning Representation, Social Network Analytics, Distance and Similarity measures for Text/Audio/Video/People, 
+Frequent Subgraph mining, Inexact Graph Matching, Program Analysis - 9 December 2020
+-----------------------------------------------------------------------------------------------------------------------------------------
+1.GraphMining_GSpan Python implementation has been upgraded to Python 3.7 by autopep8 and 2to3-3.7 utilities.
+2.New function GraphEditDistance() has been defined in GSpan class which takes two NetworkX Graph objects as arguments and computes
+ exact Graph Edit Distance (NP-Hard) by graph_edit_distance() and approximations by optimize_edit_paths() and optimize_graph_edit_distance()
+NetworkX APIs.
+3.Logs in python-src/testlogs/GraphMining_GSpan.GraphEditDistance.log.9December2020 capture the GSpan Graph mining for some example TextGraphs (Recursive Gloss Overlap algorithm) and Graph Edit Distance for two example numeric labelled graphs.
+4.GraphEditDistance() could be invoked from any Graph analytics implementation in NeuronRain for Similar Graph clustering viz., Social network graphs, FaceGraphs (Delaunay triangles and Voronoi facets) of Segmented images(Pattern recognition, GIS, Urban Sprawls), TextGraphs, Economic networks, Program Slice Graphs, FTrace kernel callgraphs, Userspace Valgrind/KCacheGrind/Callgrind callgraphs, Control Flow Graphs et al.
+5.Graph Edit Distance for Audios (Speech) assumes a hypothetical AudioNet similar to ImageNet dataset or Speech-to-Text engine for eliciting graph structure in speech though Music as a graph is vague to define, but NeuronRain music pattern mining learns a weighted automata from musical clips which are directed graphs of state transitions labelled by heptatonic western classical notes (CDEFGABC).
+6.Classical Indian music has 72 fundamental notes patterns and many derivatives from them.
+
+References:
+----------
+1124.1 An Exact Graph Edit Distance algorithm for Pattern Recognition Problems - https://hal.archives-ouvertes.fr/hal-01168816
