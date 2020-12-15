@@ -27,7 +27,6 @@ from GraphMining_GSpan import GSpan
 import networkx as nx
 from networkx.drawing.nx_pydot import read_dot
 from networkx.classes.function import edges
-from graphframes import *
 from pyspark.sql import SQLContext, Row
 from networkx.drawing.nx_pydot import write_dot
 import operator
@@ -63,14 +62,17 @@ def graph_mining(dotfiles):
 		dotnx=nx.Graph(read_dot(dotf))
 		dataset.append(dotnx)
 	gsp=GSpan(dataset)
-	gsp.GraphSet_Projection()	
+	gsp.GraphSet_Projection()
+	for dotf in dotfiles:
+		dotnx=nx.Graph(read_dot(dotf))
+		dataset.append(dotnx)
+        for dot1 in dataset:
+            for dot2 in dataset:
+                print("=================================")
+                gsp.GraphEditDistance(dot1,dot2)
 
-if __name__=="__main__":
-	spcon=SparkContext() 
-	sqlcon=SQLContext(spcon)
-	#input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot']
-	ftrace_callgraph_dot("ftrace.DiscreteHyperbolicFactorization_TileSearch_Optimized.log")
-	input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot','CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot']
+def cyclomatic_complexity(dotfiles):
+        from graphframes import *
 	for dot_file in input_dot_files:
 		nxg=nx.Graph(read_dot(dot_file))
 		nxgnodes=[[]]
@@ -98,4 +100,13 @@ if __name__=="__main__":
 		if zeroth_betti_number is None:
 			zeroth_betti_number=0
 		print "Cyclomatic Complexity: First Betti Number = E-V + <Zeroth-Betti-Number> = ", len(nxgedges) - len(nxgnodes) + zeroth_betti_number 
+
+if __name__=="__main__":
+	spcon=SparkContext() 
+	sqlcon=SQLContext(spcon)
+	#input_dot_files=['/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/cfg_read_virgo_kernel_analytics_config.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/virgo64-linux-github-code/linux-kernel-extensions/drivers/virgo/saturn_program_analysis/saturn_program_analysis_trees/memory_skbuff_h_skb_header_pointer_cfg.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/software_analytics/kcachegrind_callgraph_ls.dot']
+	ftrace_callgraph_dot("ftrace.DiscreteHyperbolicFactorization_TileSearch_Optimized.log")
+	#input_dot_files=['./kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','./kcachegrind_callgraph_ls.dot','CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot']
+	input_dot_files=['./kcachegrind_callgraph_DiscreteHyperbolicFactorization_TileSearch_Optimized.dot','CyclomaticComplexitySparkMapReducer.ftrace_callgraph.dot']
+        #cyclomatic_complexity(input_dot_files)
 	graph_mining(input_dot_files)

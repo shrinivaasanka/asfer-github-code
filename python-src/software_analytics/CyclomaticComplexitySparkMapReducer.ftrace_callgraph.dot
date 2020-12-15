@@ -313,7 +313,6 @@ wake_up_process
 ;
 " set_page_dirty ";
 " mem_cgroup_update_page_stat ";
-" free_inode_nonrcu ";
 ext4_free_inode
 ;
 netif_skb_features
@@ -353,6 +352,7 @@ nf_iterate
 do_notify_parent
 ;
 " bh_lru_install ";
+" ksize ";
 " memcg_check_events ";
 " smp_call_function_single ";
 ext4_read_inode_bitmap
@@ -461,6 +461,7 @@ proc_flush_task
 kzfree
 ;
 " jbd2_journal_invalidatepage ";
+" free_inode_nonrcu ";
 " mem_cgroup_get_reclaim_stat_from_page ";
 anon_vma_chain_free
 ;
@@ -711,8 +712,6 @@ destroy_inode
 ;
 " jbd2_journal_start ";
 ip_send_reply
-;
-hrtick_update
 ;
 " dequeue_task_fair ";
 " inet_twsk_put ";
@@ -1017,7 +1016,8 @@ __kmalloc_track_caller
 task_function_call
 ;
 " __find_get_block ";
-" ksize ";
+hrtick_update
+;
 __rcu_pending
 ;
 " rcu_irq_enter ";
@@ -2413,8 +2413,6 @@ ip_send_reply
  -> " _raw_spin_lock ";
 ip_send_reply
  -> " ip_push_pending_frames ";
-hrtick_update
- -> " hrtick_start_fair ";
 "mem_cgroup_del_lru_list.part.41\n" -> " lookup_page_cgroup ";
 iput_final
  -> " evict ";
@@ -2842,6 +2840,8 @@ __kmalloc_track_caller
  -> " _cond_resched ";
 task_function_call
  -> " smp_call_function_single ";
+hrtick_update
+ -> " hrtick_start_fair ";
 __rcu_pending
  -> " check_cpu_stall.isra.35 ";
 path_put
