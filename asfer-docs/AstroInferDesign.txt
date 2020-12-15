@@ -16444,3 +16444,13 @@ NetworkX APIs.
 References:
 ----------
 1124.1 An Exact Graph Edit Distance algorithm for Pattern Recognition Problems - https://hal.archives-ouvertes.fr/hal-01168816
+
+------------------------------------------------------------------------------------------------------------------------------------------
+1125. (THEORY and FEATURE) Software Analytics - Cyclomatic Complexity Program Analyzer - Graph Edit Distance - related to 581,1124 and all
+sections on Program Analysis, Software Analytics, Graph Edit Distance, Inexact Graph Matching - 15 December 2020
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Cyclomatic Complexity Program Analyzer Spark implementation python-src/software_analytics/CyclomaticComplexitySparkMapReducer.py has
+been refactored and new function cyclomatic_complexity() has been defined for Cyclomatic Analysis of FTrace callgraph by GraphFrames.
+2. Function graph_mining() now invokes GraphEditDistance() from GraphMining_GSpan for each pair of callgraph NetworkX objects instantiated
+from DOT files in addition to GSPAN algorithm for frequent subgraph mining.
+3. Finding code similarity by Graph Edit Distance between callgraphs is dynamic program analysis (Inexact matching) which is more comprehensive profiling than Graph Isomorphism (Exact Matching) 
