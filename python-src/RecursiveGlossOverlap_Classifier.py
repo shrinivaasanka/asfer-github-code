@@ -30,6 +30,7 @@ import sys
 
 import nltk
 #from pywsd.lesk import simple_lesk
+#from pywsd.lesk import extended_lesk
 from nltk.wsd import lesk
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
@@ -59,7 +60,7 @@ dictionary = PyDictionary()
 #########################################################################################################
 
 use_pywsd_lesk = False
-use_nltk_lesk = True
+use_nltk_lesk = False
 #function - compute_idf()
 
 
