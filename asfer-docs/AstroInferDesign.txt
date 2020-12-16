@@ -16454,3 +16454,48 @@ been refactored and new function cyclomatic_complexity() has been defined for Cy
 2. Function graph_mining() now invokes GraphEditDistance() from GraphMining_GSpan for each pair of callgraph NetworkX objects instantiated
 from DOT files in addition to GSPAN algorithm for frequent subgraph mining.
 3. Finding code similarity by Graph Edit Distance between callgraphs is dynamic program analysis (Inexact matching) which is more comprehensive profiling than Graph Isomorphism (Exact Matching) 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+1126. (THEORY and FEATURE) People Analytics - Word Sense Disambiguation changed to NeuronRain implementation - related to 876,1123 and 
+all sections on Embedding in vectorspace, Compressed Sensing, Social Network Analytics, Meaning Representation, Intrinsic Merit of People 
+Profiles/HR Analytics, Set Partition and Histogram analytics - 16 December 2020
+------------------------------------------------------------------------------------------------------------------------------------------
+1. Recursive Lambda Function Growth Meaning Representation was inferring some misleading lambda functions related to the proper noun
+dictionary-filtered profile contents - Word "Architect" was incorrectly disambiguated to civil engineering and produced lemmas - "slab",
+"home_plate", "base_ball" et al.
+2. This was perhaps because of deficiencies of NLTK lesk implementation. Changing to PyWSD significantly slows down and there are WordNet
+errors within PyWSD. This has necessitated reverting to NeuronRain Lesk Word Sense Disambiguation function best_matching_synset() and 
+both NLTK and PyWSD disambiguation have been disabled. 
+3. NeuronRain WSD best_matching_synset() has extracted quite accurate synset lemmas which have been used to create TextGraph and Graph Tensor Neural Network Lambda functions are grown from Random walks and Cycles on this new TextGraph - TextGraph for best_matching_synset() is much different from those of NLTK/PyWSD Lesk functions.
+4. New TextGraph has been written to DOT file RecursiveLambdaFunctionGrowth.dot
+5. Logs testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.16December2020 print following Dense subgraph classes (which give high weightage to durations) and intrinsic merit parameters while Betweenness,Closeness,Degree,PageRank centralities rank the profile highly in class "Software":   
+...
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'April', ',core number=', 6)
+('This document belongs to class:', 'March', ',core number=', 6)
+('This document belongs to class:', 'May', ',core number=', 6)
+('This document belongs to class:', 'month', ',core number=', 6)
+('This document belongs to class:', 'preceding', ',core number=', 6)
+('This document belongs to class:', 'following', ',core number=', 6)
+('This document belongs to class:', 'architect', ',core number=', 4)
+('This document belongs to class:', 'search', ',core number=', 4)
+('This document belongs to class:', 'Hindi', ',core number=', 4)
+('This document belongs to class:', 'institute', ',core number=', 4)
+('This document belongs to class:', 'education', ',core number=', 4)
+('This document belongs to class:', 'experience', ',core number=', 4)
+('This document belongs to class:', 'software', ',core number=', 4)
+('This document belongs to class:', 'science', ',core number=', 4)
+('This document belongs to class:', 'activities', ',core number=', 4)
+('This document belongs to class:', 'Tamil', ',core number=', 4)
+('This document belongs to class:', 'skill', ',core number=', 4)
+('This document belongs to class:', 'knowledge', ',core number=', 4)
+('This document belongs to class:', 'something', ',core number=', 4)
+('This document belongs to class:', 'India', ',core number=', 4)
+('This document belongs to class:', 'written', ',core number=', 4)
+('This document belongs to class:', 'language', ',core number=', 4)
+('This document belongs to class:', 'spoken', ',core number=', 4)
+('This document belongs to class:', 'someone', ',core number=', 4)
+...
+intrinsic_merit_dict: {'graph_tensor_neuron_network_intrinsic_merit': 1011.984847256428, 'maximum_per_random_walk_graph_tensor_neuron_network_intrinsic_merit': ('(experience(content,(education(skill,(cognition(ability,(cognition(ability,(psychological_feature(cognition,(activity(event,(act(education,(skill(education,(act(activity,(psychological_feature(institute,(abstraction(event,(organization(group,(social_group(institute,(organization(association,(abstraction(association,(group(science,(abstraction(knowledge_domain,(cognition(abstraction,(psychological_feature(content,(discipline(social_group,psychological_feature))))))))))))))))))))))))))))))))))))))))', 16.89555722055722), 'korner_entropy': 0.7184074850146093, 'density': 0.007855421686746989, 'bose_einstein_intrinsic_fitness': 0.8612343424751857, 'recursive_gloss_overlap_intrinsic_merit': 856492032.0, 'empath_sentiment': (0.0, 0.0, 1.8548942433184686e-296)}
