@@ -39,6 +39,8 @@ class HRAnalytics(object):
         self.total_work_experience = 0
         self.total_academics = 0
         self.timedeltas = []
+        self.tenures = []
+        self.domainspecificdict = {"domain":"InformationTechnology","opensource_sloc":1}
         self.stinthistogram = None
         self.avg_n_pos_per_prev_tenure = 0
         self.avg_pos_len = 0
@@ -47,9 +49,9 @@ class HRAnalytics(object):
         self.tenure_len = 0 
         self.n_followers = 0 
 
-    def parse_profile(self, datasource, type, social_profile):
+    def parse_profile(self, datasource, filetype, social_profile, domainspecificdict=None):
         profile_text = ""
-        if type == "pdf":
+        if filetype == "pdf":
             self.file = open(social_profile, "rb")
             file_reader = PyPDF2.PdfFileReader(self.file)
             num_pages = file_reader.numPages
@@ -58,32 +60,34 @@ class HRAnalytics(object):
                 page_contents = page_object.extractText()
                 profile_text += page_contents
             return profile_text
-        if datasource == "linkedin" and type == "text":
+        if datasource == "linkedin" and filetype == "text":
             self.file = open(social_profile, "r")
             profile_text = self.file.read()
-            stints = []
             self.file = open(social_profile, "r")
             for l in self.file.readlines():
                 ltok = l.split()
                 #print "ltok:",ltok
                 if "Experience" in ltok:
                     print("Profile")
-                    stints = self.work_experience
+                    self.tenures = self.work_experience
                 if "Education" in ltok:
                     print("Education")
-                    stints = self.academics
+                    self.tenures = self.academics
                 if self.isdaterange(l):
-                    stints.append(l.strip())
+                    self.tenures.append(l.strip())
             self.avg_n_pos_per_prev_tenure = 1 
             self.avg_pos_len = float(sum(self.timedeltas))/float(len(self.timedeltas))
             self.avg_prev_tenure_len = float(sum(self.timedeltas[:-1]))/float(len(self.timedeltas[:-1])) 
             self.n_prev_tenures = len(self.timedeltas)-1 
             self.tenure_len = self.timedeltas[-1:]
             self.n_followers = self.parse_connections(profile_text)
+            if domainspecificdict is not None:
+                 self.domainspecificdict=domainspecificdict
             print("Tenure statistics - avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len,n_followers:",[self.avg_n_pos_per_prev_tenure,self.avg_pos_len,self.avg_prev_tenure_len,self.n_prev_tenures,self.tenure_len,self.n_followers])
             print("Work Experience:", self.work_experience)
             print("Academics:", self.academics)
             # self.stinthistogram=IntegerPartition(self.timedeltas)
+            print("Tenures:",self.work_experience + self.academics)
             print("Tenure Histogram - Integer Partition - :", self.timedeltas)
             print("Tenure Histogram - Partition Rank:", max(
                 self.timedeltas) - len(self.timedeltas))
@@ -248,6 +252,8 @@ class HRAnalytics(object):
                     tdelta = startdate-enddate
                     self.timedeltas.append(int(abs(tdelta.total_seconds())))
                     self.total_work_experience += abs(tdelta.total_seconds())
+                    if self.domainspecificdict["domain"] == "InformationTechnology":
+                        self.total_work_experience += self.domainspecificdict["opensource_sloc"]
                     return True
             if len(starttok) == 1:
                 if (int(starttok[0]) and int(endtok[0])) or end == "Present":
@@ -328,10 +334,10 @@ if __name__ == "__main__":
     csensing = CompressedSensing()
     #profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
     #print profile_text
-    # profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
+    profile_text1=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt",{"domain":"InformationTechnology","opensource_sloc":100000})
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
-    # profile_text=hranal.parse_profile("none","tex","testlogs/CV.tex")
+    profile_text2=hranal.parse_profile("none","tex","testlogs/CV.tex",{"domain":"InformationTechnology","opensource_sloc":100000})
     avedistance1 = csensing.alphabet_vectorspace_embedding_distance(['p','q','r','s','t'],['p','q','r','s','z'])
     avedistance2 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','h','r','i','n','i','v','a','a','s','a','n'])
     avedistance3 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','r','i','n','i','v','a','s','a','n'])
@@ -340,8 +346,7 @@ if __name__ == "__main__":
     avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['n','o'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
     avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['t','e','r'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
     avedistance4 = csensing.alphabet_vectorspace_embedding_distance([['S','h','r','i'],['n','i'],['v','a','a'],['s','a','n']],[['S','r','i'],['n','i'],['v','a','s','a','n']],True)
-    profile_text=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt")
-    hranal.rlfg_intrinsic_merit(profile_text)
+    hranal.rlfg_intrinsic_merit(profile_text2)
     # number_of_connections=hranal.parse_connections(profile_text)
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit(number_of_connections)
@@ -349,7 +354,7 @@ if __name__ == "__main__":
     # remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
     # durations=[0.7,5,0.1,2,3,2,0.5]
     #hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
-    # hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
+    hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
     #profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
     #profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
     #hranal.rlfg_intrinsic_merit(profile_text)
