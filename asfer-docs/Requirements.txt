@@ -4,13 +4,13 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 1. Boost C++ and Python libraries (1.64.0) 
 2. g++
 3. Python NLTK
-4. NetworkX 2.1
+4. NetworkX 2.5
 5. Matplotlib
 6. Scrapy
 7. R-Python (rpy2)
 8. Maitreya's Dreams 8 (for ephemeris and text client)
 9. Hadoop
-10. Spark 2.4.3 and pyspark client
+10. Spark 2.4.3, Spark 3.0.1 and pyspark client
 11. Hive and Hive Client(thrift or pyhs2)
 12. Cassandra and Cassandra Cluster client
 13. HBase and HBase client (happybase)
@@ -68,7 +68,7 @@ NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copy
 65. Valgrind/Callgrind/KCachegrind
 66. GraphFrames/GraphX Spark Package - https://graphframes.github.io/
 67. Theano
-68. Keras (Theano backend)
+68. Keras (Theano and TensorFlow backends)
 69. OpenCV 3.4.3 - opencv-python - cv2
 70. PyPDF2
 71. FTrace (for kernel functions call graphs)
