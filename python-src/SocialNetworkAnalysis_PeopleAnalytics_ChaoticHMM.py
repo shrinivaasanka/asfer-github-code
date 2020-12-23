@@ -47,6 +47,53 @@ class ChaoticHMM(object):
         self.transition_probabilities = transition_probs
         self.observations = observ
         self.emission_probabilities = emission_probs
+        self.career_transition_score = 0
+        self.designations={}
+        self.designations["academic"]={"Schooling":1,"Graduation":2,"PostGraduation":3,"PostGraduation-ResearchScholar":4}
+        self.designations["startup"]={"Founder-Architect":7}
+        self.designations["business"]={'CEO':10,'CTO':9,'CFO':8}
+        self.designations["work"]={"AssociateSoftwareEngineer":1, "MemberTechStaff":2, "SystemAnalyst":3, "Specialist":4, "Consultant-Architect":6, "Consultant":5, "Architect":6}
+        self.career_statemachine={'academic-academic':2,'work-work':1,'startup-startup':2,'academic-work':1,'work-academic':2,'academic-startup':3,'startup-academic':3,'work-startup':3,'startup-work':1,'academic-business':5,'business-business':6}
+
+    def career_transition_analytics(self):
+        prev_obs=self.observations[0]
+        for n in range(1,len(self.observations)-1):
+            obs=self.observations[n]
+            career_transition=""
+            if prev_obs in self.designations["academic"].keys():
+                career_transition+="academic-"
+                self.career_transition_score += self.designations["academic"][prev_obs]
+            if prev_obs in self.designations["startup"].keys():
+                career_transition+="startup-"
+                self.career_transition_score += self.designations["startup"][prev_obs]
+            if prev_obs in self.designations["work"].keys():
+                career_transition+="work-"
+                self.career_transition_score += self.designations["work"][prev_obs]
+            if prev_obs in self.designations["business"].keys():
+                career_transition+="business-"
+                self.career_transition_score += self.designations["business"][prev_obs]
+            if obs in self.designations["academic"].keys():
+                career_transition+="academic"
+                self.career_transition_score += self.career_statemachine[career_transition]
+            if obs in self.designations["startup"].keys():
+                career_transition+="startup"
+                self.career_transition_score += self.career_statemachine[career_transition]
+            if obs in self.designations["work"].keys():
+                career_transition+="work"
+                self.career_transition_score += self.career_statemachine[career_transition]
+            if obs in self.designations["business"].keys():
+                career_transition+="business"
+                self.career_transition_score += self.career_statemachine[career_transition]
+            prev_obs = obs
+        if prev_obs in self.designations["academic"].keys():
+            self.career_transition_score += self.designations["academic"][prev_obs]
+        if prev_obs in self.designations["startup"].keys():
+            self.career_transition_score += self.designations["startup"][prev_obs]
+        if prev_obs in self.designations["work"].keys():
+            self.career_transition_score += self.designations["work"][prev_obs]
+        if prev_obs in self.designations["business"].keys():
+            self.career_transition_score += self.designations["business"][prev_obs]
+        print("career_transition_analytics(): career transition score of the profile = ",self.career_transition_score)
 
     def chaotic_HMM_viterbi(self):
         Viterbi = [{}]
@@ -139,3 +186,4 @@ if __name__ == "__main__":
     chaotichmm = ChaoticHMM(3.7, chaotichmmjson["states"], chaotichmmjson["start_probabilities"],
                             chaotichmmjson["transition_probabilities"], chaotichmmjson["emission_probabilities"], chaotichmmjson["observations"])
     chaotichmm.chaotic_HMM_viterbi()
+    chaotichmm.career_transition_analytics()
