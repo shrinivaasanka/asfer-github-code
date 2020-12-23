@@ -16531,7 +16531,7 @@ of the Chaotic Hidden Markov Model,classifies them into states and looksup the s
 	self.career_statemachine={'academic-academic':2,'work-work':1,'startup-startup':2,'academic-work':1,'work-academic':2,'academic-start
 up':3,'startup-academic':3,'work-startup':3,'startup-work':1,'academic-business':5,'business-business':6} 
 4.Previous career state machine presently has 4 classes of designations for states - academic, work, startup (which includes own initiatives of a profile) and business (corporate designations) - and transitions among them are weighted by integers in ascending order of importance and risk aversion. E.g Transition work-work is weighted as 1 which is considered secure while business-business is weighted as 6 because of high risk. 
-5.Designations (Observations in HMM) are classified into 4 classes above - academic,startup,business,startup - and weighted by increased paygrades/power/independence/authority/experience/totempole:
+5.Designations (Observations in HMM) are classified into 4 classes above - academic,startup,business,work - and weighted by increased paygrades/power/independence/authority/experience/totempole:
 	self.designations["academic"]={"Schooling":1,"Graduation":2,"PostGraduation":3,"PostGraduation-ResearchScholar":4}
         self.designations["startup"]={"Founder-Architect":7}
         self.designations["business"]={'CEO':10,'CTO':9,'CFO':8}
