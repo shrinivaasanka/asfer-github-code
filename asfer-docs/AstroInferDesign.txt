@@ -16511,3 +16511,32 @@ intrinsic_merit_dict: {'graph_tensor_neuron_network_intrinsic_merit': 1011.98484
 5.Total experience of a profile is weighted by opensource_sloc value (which is at present just a linear addition function but could be any other) for least energy intrinsic merit of a profile which is the single largest crucial parameter more important than mere tenure duration for automatic recruitment in Information Technology domain and more intrinsic than Majority Voting (which suffers from limitations of Condorcet Jury Theorem) and manual processes of Interview (which is subject to BKS Conjecture and human error).
 6.If Novelty Detection measures (e.g Patents) and SLOC measures per proprietary and opensource products of organizations are accumulated and weighted it could further augment the previous merit statistic.
 7.Spark Version has been upgraded to 3.0.1 (based on Hadoop 3.2) for LinkedIn Dataset Analytics.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1128. (THEORY and FEATURE) People Analytics - HR and Talent Analytics - Chaotic Hidden Markov Model - Career Transition Score of a Profile -
+Weighted Automaton of Career Transition - related to 753, 1127 and all sections on People Analytics, Intrinsic Merit Versus Fame Equilibrium, BKS Conjecture, Stability of Interview LTF/PTF - 23 December 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. This commit implements an important and most fundamental merit measure for People profiles - Career Transition Score - which quantifies and grades the career tenure switchovers of a Professional profile by traversing designations/paygrades in a Career Transition Weighted Automaton State Machine.
+2. Section 753 attributes following qualities to career transition ranked by incentivizing choices made:
+	" ...
+	(*) transition from industry to academics is considered nobler than industry-to-industry.
+	(*) transition from academics to industry is majority choice 
+	(*) transition from low remuneration to high is a majority choice 
+	(*) transition from high remuneration to low is rare
+	(*) transition from employment to entrepreneur is rare and considered less risk-averse
+	(*) transition from low designation to high is majority choice
+	... "
+3.SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py defines a new function career_transition_analytics() which traverses the Observations
+of the Chaotic Hidden Markov Model,classifies them into states and looksup the state transitions in a predefined Weighted Automaton defined by a dictionary:
+	self.career_statemachine={'academic-academic':2,'work-work':1,'startup-startup':2,'academic-work':1,'work-academic':2,'academic-start
+up':3,'startup-academic':3,'work-startup':3,'startup-work':1,'academic-business':5,'business-business':6} 
+4.Previous career state machine presently has 4 classes of designations for states - academic, work, startup (which includes own initiatives of a profile) and business (corporate designations) - and transitions among them are weighted by integers in ascending order of importance and risk aversion. E.g Transition work-work is weighted as 1 which is considered secure while business-business is weighted as 6 because of high risk. 
+5.Designations (Observations in HMM) are classified into 4 classes above - academic,startup,business,startup - and weighted by increased paygrades/power/independence/authority/experience/totempole:
+	self.designations["academic"]={"Schooling":1,"Graduation":2,"PostGraduation":3,"PostGraduation-ResearchScholar":4}
+        self.designations["startup"]={"Founder-Architect":7}
+        self.designations["business"]={'CEO':10,'CTO':9,'CFO':8}
+        self.designations["work"]={"AssociateSoftwareEngineer":1, "MemberTechStaff":2, "SystemAnalyst":3, "Specialist":4, "Consultant-Archite
+ct":6, "Consultant":5, "Architect":6}
+6.More predefined designations, classes of designations and state transitions could be added to previous dictionaries which might be optionally read from a persisted NoSQL datastore.
+7.Observations of Career Chaotic Hidden Markov Model are traversed and weights per state transition and corresponding observation are summed to get a Career Transition Score of a profile which intrinsically rates merit of a profile based on predefined weights. 
+8.Industry has been divided into startup (for MSMEs, private initiatives) and business (for management profiles of Corporates, Bellwether, Blue Chips, Big Fishes) for weighting the risk.
