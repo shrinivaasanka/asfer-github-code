@@ -16540,3 +16540,14 @@ ct":6, "Consultant":5, "Architect":6}
 6.More predefined designations, classes of designations and state transitions could be added to previous dictionaries which might be optionally read from a persisted NoSQL datastore.
 7.Observations of Career Chaotic Hidden Markov Model are traversed and weights per state transition and corresponding observation are summed to get a Career Transition Score of a profile which intrinsically rates merit of a profile based on predefined weights. 
 8.Industry has been divided into startup (for MSMEs, private initiatives) and business (for management profiles of Corporates, Bellwether, Blue Chips, Big Fishes) for weighting the risk.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1130. (THEORY and FEATURE) People Analytics - HR and Talent Analytics - Chaotic Hidden Markov Model - Career Polynomial of a Profile and 
+Inner Product Space Distance Similarity between 2 people profiles - related to 753,1127,1128,1129 and all sections on People Analytics, Intrinsic Merit Versus Fame Equilibrium, BKS Conjecture, Stability of Interview LTF/PTF - 30 December 2020
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.This commit implements 3 new functions in python-src/SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.py - career_polynomial_inner_product_distance(),normalize(),second() - and polynomial fit of weighted HMM observations (designations) in career_transition_analytics()
+2.career_polynomial_inner_product_distance() takes two arrays of points on a polynomial (of same size sampled on similar time points which could be numeric values for designations,remunerations or durations), polyfit()-s the points to two polynomials and computes inner product of the two polynomials which is the clustering similarity measure for two people profiles.
+3.second() is a  utility function for getting the second element in an array of ordered tuples. Usual cast of array of ordered tuple to dict() and invoking values() on them returns unique values and not a multiset of repetitive values which is redressed by second(). 
+4.Utility Function normalize() divides a numeric array by maximum element which might be necessary for comparing trends in remunerations,designations and durations of two talent profiles.
+5.Apart from these, weighted observations (designations) within Chaotic HMM are as well fitted to a polynomial in career_transition_analytics()
+6.All polynomials are of degree 5 and logs testlogs/SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.log.30December2020 demonstrate the inner product distance measures and fitted career polynomials through few example inputs.
