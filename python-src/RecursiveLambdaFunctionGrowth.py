@@ -34,6 +34,7 @@ from networkx.drawing.nx_pydot import write_dot
 from PyDictionary import PyDictionary
 from googletrans import Translator
 import goslate
+from Transformers_PerceptronAndGradient import LinearPerceptronGradient
 
 # Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 # Recursive Gloss Overlap graph of a text
@@ -457,10 +458,35 @@ class RecursiveLambdaFunctionGrowth(object):
         print("intrinsic_merit_dict:", intrinsic_merit_dict)
         return intrinsic_merit_dict
 
+    def rlfg_transformers_attention_model(self,definitiongraph,query_weights,key_weights,value_weights,variables):
+        degreedict=definitiongraph.degree()
+        attention=[]
+        rho=0.1
+        bias=0.8
+        for v1 in definitiongraph.nodes():
+            attrow=[]
+            for v2 in definitiongraph.nodes():
+                if v1 != v2:
+                    attrow.append(1.0/float(degreedict[v1]))
+            attention.append(attrow)
+        print("Attention from Definition Graph:",attention)
+        attentionslice=[row[0:len(query_weights)] for row in attention[0:len(query_weights)]]
+        print("Attention slice from Definition Graph:",attentionslice)
+        for row in range(len(query_weights)):
+            query_weights[row]=LinearPerceptronGradient(attentionslice[row],query_weights[row],rho,bias,variables)
+        print("Learnt Query Weights:",query_weights)
+        for row in range(len(key_weights)):
+            key_weights[row]=LinearPerceptronGradient(attentionslice[row],key_weights[row],rho,bias,variables)
+        print("Learnt Key Weights:",key_weights)
+        for row in range(len(value_weights)):
+            value_weights[row]=LinearPerceptronGradient(attentionslice[row],value_weights[row],rho,bias,variables)
+        print("Learnt Values Weights:",value_weights)
+
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
         nodes = definitiongraph.nodes()
         edges = definitiongraph.edges()
         translationgraph = nx.DiGraph()
+        self.rlfg_transformers_attention_model(definitiongraph,[[1,2,3],[0.1,0.3,0.5],[3,4,5]],[[4,5,6],[0.1,0.3,0.5],[3,4,5]],[[7,8,9],[0.1,0.3,0.5],[3,4,5]],[[0.1,0.3,0.5],[0.1,0.1,0.1],[0.2,0.3,0.5]])
         for k, v in edges:
             print("k=", k, ",v=", v)
             if self.machinetranslator == "pydictionary":

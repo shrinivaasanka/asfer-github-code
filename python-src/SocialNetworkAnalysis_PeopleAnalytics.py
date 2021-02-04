@@ -29,6 +29,7 @@ import nameparser
 import re
 from CompressedSensing import CompressedSensing
 from jellyfish import match_rating_codex
+from nltk.metrics.distance import edit_distance
 
 
 class HRAnalytics(object):
@@ -40,14 +41,15 @@ class HRAnalytics(object):
         self.total_academics = 0
         self.timedeltas = []
         self.tenures = []
-        self.domainspecificdict = {"domain":"InformationTechnology","opensource_sloc":1}
+        self.domainspecificdict = {
+            "domain": "InformationTechnology", "opensource_sloc": 1}
         self.stinthistogram = None
         self.avg_n_pos_per_prev_tenure = 0
         self.avg_pos_len = 0
-        self.avg_prev_tenure_len = 0 
-        self.n_prev_tenures = 0 
-        self.tenure_len = 0 
-        self.n_followers = 0 
+        self.avg_prev_tenure_len = 0
+        self.n_prev_tenures = 0
+        self.tenure_len = 0
+        self.n_followers = 0
 
     def parse_profile(self, datasource, filetype, social_profile, domainspecificdict=None):
         profile_text = ""
@@ -66,7 +68,7 @@ class HRAnalytics(object):
             self.file = open(social_profile, "r")
             for l in self.file.readlines():
                 ltok = l.split()
-                #print "ltok:",ltok
+                # print "ltok:",ltok
                 if "Experience" in ltok:
                     print("Profile")
                     self.tenures = self.work_experience
@@ -75,19 +77,22 @@ class HRAnalytics(object):
                     self.tenures = self.academics
                 if self.isdaterange(l):
                     self.tenures.append(l.strip())
-            self.avg_n_pos_per_prev_tenure = 1 
-            self.avg_pos_len = float(sum(self.timedeltas))/float(len(self.timedeltas))
-            self.avg_prev_tenure_len = float(sum(self.timedeltas[:-1]))/float(len(self.timedeltas[:-1])) 
-            self.n_prev_tenures = len(self.timedeltas)-1 
+            self.avg_n_pos_per_prev_tenure = 1
+            self.avg_pos_len = float(
+                sum(self.timedeltas))/float(len(self.timedeltas))
+            self.avg_prev_tenure_len = float(
+                sum(self.timedeltas[:-1]))/float(len(self.timedeltas[:-1]))
+            self.n_prev_tenures = len(self.timedeltas)-1
             self.tenure_len = self.timedeltas[-1:]
             self.n_followers = self.parse_connections(profile_text)
             if domainspecificdict is not None:
-                 self.domainspecificdict=domainspecificdict
-            print("Tenure statistics - avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len,n_followers:",[self.avg_n_pos_per_prev_tenure,self.avg_pos_len,self.avg_prev_tenure_len,self.n_prev_tenures,self.tenure_len,self.n_followers])
+                 self.domainspecificdict = domainspecificdict
+            print("Tenure statistics - avg_n_pos_per_prev_tenure,avg_pos_len,avg_prev_tenure_len,n_prev_tenures,tenure_len,n_followers:",
+                  [self.avg_n_pos_per_prev_tenure, self.avg_pos_len, self.avg_prev_tenure_len, self.n_prev_tenures, self.tenure_len, self.n_followers])
             print("Work Experience:", self.work_experience)
             print("Academics:", self.academics)
             # self.stinthistogram=IntegerPartition(self.timedeltas)
-            print("Tenures:",self.work_experience + self.academics)
+            print("Tenures:", self.work_experience + self.academics)
             print("Tenure Histogram - Integer Partition - :", self.timedeltas)
             print("Tenure Histogram - Partition Rank:", max(
                 self.timedeltas) - len(self.timedeltas))
@@ -101,9 +106,12 @@ class HRAnalytics(object):
         tau1, pvalue1 = stats.kendalltau(designations, remunerations)
         tau2, pvalue2 = stats.kendalltau(designations, durations)
         tau3, pvalue3 = stats.kendalltau(remunerations, durations)
-        print("Kendall Tau Rank Correlations - Designations and Remunerations: tau=", tau1, ", pvalue=", pvalue1)
-        print("Kendall Tau Rank Correlations - Designations and Durations: tau=", tau2, ", pvalue=", pvalue2)
-        print("Kendall Tau Rank Correlations - Durations and Remunerations: tau=", tau3, ", pvalue=", pvalue3)
+        print("Kendall Tau Rank Correlations - Designations and Remunerations: tau=",
+              tau1, ", pvalue=", pvalue1)
+        print("Kendall Tau Rank Correlations - Designations and Durations: tau=",
+              tau2, ", pvalue=", pvalue2)
+        print("Kendall Tau Rank Correlations - Durations and Remunerations: tau=",
+              tau3, ", pvalue=", pvalue3)
 
     def nameparser(self, full_name, pattern, context):
         name = nameparser.HumanName(full_name)
@@ -115,13 +123,15 @@ class HRAnalytics(object):
         for n in nametokenized:
             for m in contexttokenized:
                 if n in m:
-                    print("NeuronRain Human Name Parsing by Context - nameparser(): name substring - ", n, " - found in context = ", m)
+                    print("NeuronRain Human Name Parsing by Context - nameparser(): name substring - ",
+                          n, " - found in context = ", m)
                     regex = re.search(pattern, m, flags=re.IGNORECASE)
                     if regex is None:
                         continue
                     regexgroupdict = regex.groupdict()
                     for k, v in regexgroupdict.items():
-                        print("NeuronRain Human Name Parsing by Context - nameparser():", k, ":", v)
+                        print(
+                            "NeuronRain Human Name Parsing by Context - nameparser():", k, ":", v)
                     return regexgroupdict
 
     def pipldotcom_analytics(self, first_name=None, last_name=None, email=None, loadfromjson=True):
@@ -130,10 +140,12 @@ class HRAnalytics(object):
             request = SearchAPIRequest(email=email, first_name=first_name,
                                    last_name=last_name, api_key='20307is19nx0tu0mar4zt987')
             response = request.send()
-            print("pipldotcom_analytics(): JSON response for query (", first_name, ",", last_name, ",", email, "):")
+            print("pipldotcom_analytics(): JSON response for query (",
+                  first_name, ",", last_name, ",", email, "):")
             jsonloads = json.loads(response.to_json())
         else:
-            pipljsonf = open("testlogs/SocialNetworkAnalysis_PeopleAnalytics.json")
+            pipljsonf = open(
+                "testlogs/SocialNetworkAnalysis_PeopleAnalytics.json")
             jsonloads = json.loads(pipljsonf.read())
         print(json.dumps(jsonloads, indent=5, sort_keys=True))
         return jsonloads
@@ -148,7 +160,7 @@ class HRAnalytics(object):
             "local[4]").appName("People Analytics").getOrCreate()
         df = spsess.read.format("csv").option(
             "header", "true").load(linkedindata)
-        #tenures=sorted(df.groupBy(['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']).agg(['c_name']).collect())
+        # tenures=sorted(df.groupBy(['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality', 'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']).agg(['c_name']).collect())
         variables = ['avg_n_pos_per_prev_tenure', 'avg_pos_len', 'avg_prev_tenure_len', 'c_name', 'm_urn', 'n_pos', 'n_prev_tenures', 'tenure_len', 'age', 'beauty', 'beauty_female', 'beauty_male', 'blur', 'blur_gaussian', 'blur_motion', 'emo_anger', 'emo_disgust', 'emo_fear', 'emo_happiness', 'emo_neutral', 'emo_sadness', 'emo_surprise', 'ethnicity', 'face_quality',
                      'gender', 'glass', 'head_pitch', 'head_roll', 'head_yaw', 'img', 'mouth_close', 'mouth_mask', 'mouth_open', 'mouth_other', 'skin_acne', 'skin_dark_circle', 'skin_health', 'skin_stain', 'smile', 'african', 'celtic_english', 'east_asian', 'european', 'greek', 'hispanic', 'jewish', 'muslim', 'nationality', 'nordic', 'south_asian', 'n_followers']
         for v in variables:
@@ -173,9 +185,12 @@ class HRAnalytics(object):
         tau2, pvalue2 = stats.kendalltau(
             avg_n_pos_per_prev_tenure, avg_prev_tenure_len)
         tau3, pvalue3 = stats.kendalltau(avg_prev_tenure_len, avg_pos_len)
-        print("linkedin_dataset_tenure_analytics(): tau1  = ", tau1, ", pvalue1 = ", pvalue1)
-        print("linkedin_dataset_tenure_analytics(): tau2  = ", tau2, ", pvalue2 = ", pvalue2)
-        print("linkedin_dataset_tenure_analytics(): tau3  = ", tau3, ", pvalue3 = ", pvalue3)
+        print("linkedin_dataset_tenure_analytics(): tau1  = ",
+              tau1, ", pvalue1 = ", pvalue1)
+        print("linkedin_dataset_tenure_analytics(): tau2  = ",
+              tau2, ", pvalue2 = ", pvalue2)
+        print("linkedin_dataset_tenure_analytics(): tau3  = ",
+              tau3, ", pvalue3 = ", pvalue3)
         linkedin_lognormal_experiential_merits = []
         linkedin_degree_experiential_merits = []
         print("###########################################################################")
@@ -190,7 +205,8 @@ class HRAnalytics(object):
                 t = experience
                 lognormal_experiential_intrinsic_merit = math.log(
                     M) + float(k*M*t)
-                print("LinkedIn DataSet - Log Normal Experiential Intrinsic Merit for this profile:", lognormal_experiential_intrinsic_merit)
+                print("LinkedIn DataSet - Log Normal Experiential Intrinsic Merit for this profile:",
+                      lognormal_experiential_intrinsic_merit)
                 linkedin_lognormal_experiential_merits.append(
                     lognormal_experiential_intrinsic_merit)
             else:
@@ -208,7 +224,8 @@ class HRAnalytics(object):
                         math.exp(float(numer)/float(denom)) / denom
                 except:
                     degree_experiential_intrinsic_merit = 0.0
-                print("LinkedIn DataSet - Degree Experiential Intrinsic Merit for this profile:", degree_experiential_intrinsic_merit)
+                print("LinkedIn DataSet - Degree Experiential Intrinsic Merit for this profile:",
+                      degree_experiential_intrinsic_merit)
                 linkedin_degree_experiential_merits.append(
                     degree_experiential_intrinsic_merit)
             else:
@@ -275,21 +292,21 @@ class HRAnalytics(object):
     def rlfg_intrinsic_merit(self, profile_contents):
         from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
         from RecursiveGlossOverlap_Classifier import nondictionaryword
-        dictionary=open("Dictionary.txt")
-        dictwords=[]
+        dictionary = open("Dictionary.txt")
+        dictwords = []
         for d in dictionary.readlines():
-            dictword=d.split(" ")[0]
+            dictword = d.split(" ")[0]
             if dictword:
                 dictwords.append(dictword)
-        #print("profile_contents:",profile_contents)
-        filteredprofilecontents=[]
+        # print("profile_contents:",profile_contents)
+        filteredprofilecontents = []
         for p in profile_contents.split():
-            #print("p:",p)
+            # print("p:",p)
             if p in dictwords:
                 filteredprofilecontents.append(p)
         rlfg = RecursiveLambdaFunctionGrowth()
-        filteredprofiletext=" ".join(list(set(filteredprofilecontents))[:50])
-        print("filteredprofilecontents:",filteredprofilecontents)
+        filteredprofiletext = " ".join(list(set(filteredprofilecontents))[:50])
+        print("filteredprofilecontents:", filteredprofilecontents)
         rlfg.grow_lambda_function3(text=filteredprofiletext)
 
     def least_energy_intrinsic_merit(self):
@@ -298,7 +315,8 @@ class HRAnalytics(object):
         self.log_normal_least_energy_intrinsic_merit = 1.0 / \
             float(math.log(self.total_work_experience) +
                   math.log(self.total_academics))
-        print("Inverse Log Normal Least Energy Intrinsic Merit (low values imply high merit):", self.log_normal_least_energy_intrinsic_merit)
+        print("Inverse Log Normal Least Energy Intrinsic Merit (low values imply high merit):",
+              self.log_normal_least_energy_intrinsic_merit)
 
     def experiential_intrinsic_merit(self, degree=0):
         # E = M*e^(kMt) = log(dv(t)) * e^(klog(dv(t))*t/clogt) / clogt for evolving degree dv(t)
@@ -308,7 +326,8 @@ class HRAnalytics(object):
             t = self.total_work_experience
             k = 1
             self.experiential_intrinsic_merit = math.log(M) + float(k*M*t)
-            print("Log Normal Experiential Intrinsic Merit:", self.experiential_intrinsic_merit)
+            print("Log Normal Experiential Intrinsic Merit:",
+                  self.experiential_intrinsic_merit)
         else:
             logdegree = math.log(degree)
             tdelta = float(self.total_work_experience +
@@ -318,7 +337,8 @@ class HRAnalytics(object):
             denom = math.log(tdelta)
             self.experiential_intrinsic_merit = logdegree * \
                 math.exp(numer/denom) / denom
-            print("Experiential Intrinsic Merit:", self.experiential_intrinsic_merit)
+            print("Experiential Intrinsic Merit:",
+                  self.experiential_intrinsic_merit)
 
     def parse_connections(self, connections):
         connections_tok = connections.split()
@@ -332,20 +352,33 @@ class HRAnalytics(object):
 if __name__ == "__main__":
     hranal = HRAnalytics()
     csensing = CompressedSensing()
-    #profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
-    #print profile_text
-    profile_text1=hranal.parse_profile("linkedin","text","testlogs/ProfileLinkedIn_KSrinivasan.txt",{"domain":"InformationTechnology","opensource_sloc":100000})
+    # profile_text = hranal.parse_profile("linkedin", "pdf", "testlogs/CV.pdf")
+    # print profile_text
+    profile_text1 = hranal.parse_profile("linkedin", "text", "testlogs/ProfileLinkedIn_KSrinivasan.txt", {
+                                         "domain": "InformationTechnology", "opensource_sloc": 100000})
     # hranal.least_energy_intrinsic_merit()
     # hranal.experiential_intrinsic_merit()
-    profile_text2=hranal.parse_profile("none","tex","testlogs/CV.tex",{"domain":"InformationTechnology","opensource_sloc":100000})
-    avedistance1 = csensing.alphabet_vectorspace_embedding_distance(['p','q','r','s','t'],['p','q','r','s','z'])
-    avedistance2 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','h','r','i','n','i','v','a','a','s','a','n'])
-    avedistance3 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','s'],['S','r','i','n','i','v','a','s','a','n'])
-    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['S','h','r','i','n','i','v','a','a','s','a','n'],['S','r','i','n','i','v','a','s','a','n'])
-    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(['R','a','s','a'],['R','a','j','a'])
-    avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['n','o'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
-    avedistance5 = csensing.alphabet_vectorspace_embedding_distance([['t','e','r'], ['m','i'],['n','a','l']], [['s','e'], ['m','i'],['n','a','l']],True)
-    avedistance4 = csensing.alphabet_vectorspace_embedding_distance([['S','h','r','i'],['n','i'],['v','a','a'],['s','a','n']],[['S','r','i'],['n','i'],['v','a','s','a','n']],True)
+    profile_text2 = hranal.parse_profile(
+        "none", "tex", "testlogs/CV.tex", {"domain": "InformationTechnology", "opensource_sloc": 100000})
+    avedistance1 = csensing.alphabet_vectorspace_embedding_distance(
+        ['p', 'q', 'r', 's', 't'], ['p', 'q', 'r', 's', 'z'])
+    avedistance2 = csensing.alphabet_vectorspace_embedding_distance(
+        ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's'], ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n'])
+    avedistance3 = csensing.alphabet_vectorspace_embedding_distance(
+        ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 's'], ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n'])
+    avedistance4 = csensing.alphabet_vectorspace_embedding_distance(
+        ['S', 'h', 'r', 'i', 'n', 'i', 'v', 'a', 'a', 's', 'a', 'n'], ['S', 'r', 'i', 'n', 'i', 'v', 'a', 's', 'a', 'n'])
+    avedistance5 = csensing.alphabet_vectorspace_embedding_distance(
+        ['R', 'a', 's', 'a'], ['R', 'a', 'j', 'a'])
+    avedistance6 = csensing.alphabet_vectorspace_embedding_distance(
+        [['n', 'o'], ['m', 'i'], ['n', 'a', 'l']], [['s', 'e'], ['m', 'i'], ['n', 'a', 'l']], True)
+    avedistance7 = csensing.alphabet_vectorspace_embedding_distance(
+        [['t', 'e', 'r'], ['m', 'i'], ['n', 'a', 'l']], [['s', 'e'], ['m', 'i'], ['n', 'a', 'l']], True)
+    avedistance8 = csensing.alphabet_vectorspace_embedding_distance([['S', 'h', 'r', 'i'], ['n', 'i'], [
+                                                                    'v', 'a', 'a'], ['s', 'a', 'n']], [['S', 'r', 'i'], ['n', 'i'], ['v', 'a', 's', 'a', 'n']], True)
+    avedistance9 = csensing.alphabet_vectorspace_embedding_distance(
+        [['a'], ['b'], ['c'], ['d'], ['e'], ['p']], [['f'], ['g'], ['d'], ['h'], ['k'], ['l']], True)
+    print("Edit Distance between two Strings:", edit_distance("abcdep", "fgdhkl"))
     hranal.rlfg_intrinsic_merit(profile_text2)
     # number_of_connections=hranal.parse_connections(profile_text)
     # hranal.least_energy_intrinsic_merit()
@@ -353,45 +386,55 @@ if __name__ == "__main__":
     # designations=[1,2,3,4,5,6,7]
     # remunerations=[100000,700000,1000000,1300000,200000,1400000,2500000]
     # durations=[0.7,5,0.1,2,3,2,0.5]
-    #hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
+    # hranal.tenure_partition_rank_correlation(designations, remunerations, durations)
     hranal.linkedin_dataset_tenure_analytics("linkedin_data.csv")
-    #profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
-    #profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
-    #hranal.rlfg_intrinsic_merit(profile_text)
-    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='ka.shrinivaasan@gmail.com')
-    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='shrinivas.kannan@gmail.com')
-    hranal.pipldotcom_analytics(first_name=u'Srinivasan',last_name=u'Kannan',email='kashrinivaasan@live.com')
-    emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt","testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
+    # profile_text=hranal.parse_profile("none","text","testlogs/ConnectionsLinkedIn_KSrinivasan.txt")
+    # profile_text=hranal.parse_profile("none","pdf","testlogs/ConnectionsLinkedIn_KSrinivasan.pdf")
+    # hranal.rlfg_intrinsic_merit(profile_text)
+    hranal.pipldotcom_analytics(
+        first_name=u'Srinivasan', last_name=u'Kannan', email='ka.shrinivaasan@gmail.com')
+    hranal.pipldotcom_analytics(
+        first_name=u'Srinivasan', last_name=u'Kannan', email='shrinivas.kannan@gmail.com')
+    hranal.pipldotcom_analytics(
+        first_name=u'Srinivasan', last_name=u'Kannan', email='kashrinivaasan@live.com')
+    emailcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing1.txt", "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing2.txt",
+        "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing3.txt", "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing4.txt", "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing5.txt"]
     for emailcontext in emailcontexts:
         ecf=open(emailcontext)
         emailcontext_text=ecf.read()
-        print("=============================================================================")
-        hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+).(?P<first_name>\w+)",emailcontext_text)
-        print("=============================================================================")
-        hranal.nameparser("Kannan Srinivasan",r"(?P<second_name>\w+) (?P<first_name>\w+)",emailcontext_text)
-    idcontexts = ["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing6.txt",
+        print(
+            "=============================================================================")
+        hranal.nameparser(
+            "Kannan Srinivasan", r"(?P<second_name>\w+).(?P<first_name>\w+)", emailcontext_text)
+        print(
+            "=============================================================================")
+        hranal.nameparser(
+            "Kannan Srinivasan", r"(?P<second_name>\w+) (?P<first_name>\w+)", emailcontext_text)
+    idcontexts=["testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing6.txt",
                   "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing7.txt", "testlogs/SocialNetworkAnalysis_PeopleAnalytics_NameParsing/SocialNetworkAnalysis_PeopleAnalytics_NameParsing8.txt"]
     for idcontext in idcontexts:
-        idf = open(idcontext)
-        idcontext_text = idf.read()
-        print("==============================================================================")
+        idf=open(idcontext)
+        idcontext_text=idf.read()
+        print(
+            "==============================================================================")
         hranal.nameparser(
             "Kannan Srinivasan", r"(?P<second_name>\w+) (?P<first_name>\w+)", idcontext_text)
         hranal.nameparser(
             "kannan srinivasan", r"(?P<second_name>\w+) (?P<first_name>\w+)", idcontext_text.lower())
-        print("==============================================================================")
+        print(
+            "==============================================================================")
     try:
-        syllvector1 = csensing.syllable_boundary_text_compression("Shrinivaasan")
-        syllvector2 = csensing.syllable_boundary_text_compression("Shrinivas")
-        syllvector3 = csensing.syllable_boundary_text_compression("Srinivasan")
-        syllvector4 = csensing.syllable_boundary_text_compression(profile_text)
+        syllvector1=csensing.syllable_boundary_text_compression("Shrinivaasan")
+        syllvector2=csensing.syllable_boundary_text_compression("Shrinivas")
+        syllvector3=csensing.syllable_boundary_text_compression("Srinivasan")
+        syllvector4=csensing.syllable_boundary_text_compression(profile_text)
     except:
         print("Exception: word length exceeded")
     print("======================================================================")
     print("Match Rating Codex ")
     print("======================================================================")
-    mr1 = match_rating_codex(str("Shrinivaasan"))
-    mr2 = match_rating_codex(str("Shrinivas"))
-    mr3 = match_rating_codex(str("Srinivasan"))
+    mr1=match_rating_codex(str("Shrinivaasan"))
+    mr2=match_rating_codex(str("Shrinivas"))
+    mr3=match_rating_codex(str("Srinivasan"))
     print("Match ratings for same name of differing spellings - [Shrinivaasan,Shrinivas,Srinivasan]:", [
         mr1, mr2, mr3])
