@@ -16551,3 +16551,34 @@ Inner Product Space Distance Similarity between 2 people profiles - related to 7
 4.Utility Function normalize() divides a numeric array by maximum element which might be necessary for comparing trends in remunerations,designations and durations of two talent profiles.
 5.Apart from these, weighted observations (designations) within Chaotic HMM are as well fitted to a polynomial in career_transition_analytics()
 6.All polynomials are of degree 5 and logs testlogs/SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.log.30December2020 demonstrate the inner product distance measures and fitted career polynomials through few example inputs.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1132. (THEORY and FEATURE) People Analytics - Alphabet Vectorspace Embedding - Earth Mover Distance between String Syllable Tensors - related to 752,874,875,1123 and all sections on Embedding in vectorspace, Compressed Sensing, Social Network Analytics, Meaning Representation, Intrinsic Merit of People Profiles/HR Analytics, Set Partition and Histogram analytics - 5 February 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. SocialNetworkAnalysis_PeopleAnalytics.py implementation has been updated to compare Earth Mover Distance and Wagner-Fischer Edit distance.
+2. Few debug print()s have been added to print EMD and Edit distance measures for 2 strings. EMD computes the Earth Mover Distance between
+ histograms of 2 strings.
+3. Each string histogram has single alphabet buckets which reduces Edit Distance to Earth Mover Distance and subquadratic Earth Mover Distance
+computation (e.g LC-ACT linear complexity approximation of EMD has high accuracy close to 100% depending on iterations) implies SETH is False.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1133. (THEORY and FEATURE) Recursive Lambda Function Growth - Transformer Attention Model - related to 697,1131 and all sections on Intrinsic Merit of Texts, Embedding in vectorspace, Machine Translation, Named Entity Recognition and Meaning Representation - 5 February 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.Transformers attention model implementation in NeuronRain could be used for Named Entity Recognition and Machine Translation.
+2.Attention of a word vertex wi to word vertex wj in text graph from Recursive Gloss Overlap and Recursive Lambda Function Growth algorithms is heuristically inverse-proportional to degree of the vertex wj - extent to which meaning of the word vertex wj depends on wi.
+3.Transformer attention model learns Query weights (Q), Key weights (K), Value weights (V) for embedding xi for word i defined by:
+	Qi = xi * qi
+	Ki = xi * ki
+	Vi = xi * vi
+	Attention(Q,K,V) = softmax(Q * K^T/sqrt(d^k))*V, d^k = dimension of Keys vector
+	a(i,j) = attention of word i to word j = qi * kj
+	softmax(xi) = e^xi/Sigma(e^xj) which normalizes sum to 1
+4.Every word vertex of the text graph could be embedded in a vectorspace by word2vec and from previous transformer attention model:
+	attention of word vertex wi to word vertex wj in text graph = a(wi,wj) = proportional to (1/degree(wj)) = qi * kj
+5.New function rlfg_transformers_attention_model() has been implemented in RecursiveLambdaFunctionGrowth.py which computes degree of every word vertex in a text definition graph, derives degree attention matrix from them and learns Query weights, Key weights and Value weights from degree based attentions of the word vertices of text graph by Gradient Descent.
+6.Product of learnt query and key weights yields the exact attention values between word vertices wi and wj.
+7.Transformer Gradient Descent implementation in NeuronRain GRAFIT has been imported and invoked.
+8.Logs for 1132 and 1133 in xz format have been committed:
+	- python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.5February2021.xz
+	- python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log2.5February2021.xz
+9.Debug statements and correction to for loops have been introduced in GRAFIT/course_material/NeuronRain/LinuxKernelAndCloud/code/Transformers_PerceptronAndGradient.py
