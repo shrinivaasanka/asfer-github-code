@@ -481,6 +481,18 @@ class RecursiveLambdaFunctionGrowth(object):
         for row in range(len(value_weights)):
             value_weights[row]=LinearPerceptronGradient(attentionslice[row],value_weights[row],rho,bias,variables)
         print("Learnt Values Weights:",value_weights)
+        row=0
+        for v1 in definitiongraph.nodes():
+            column=0
+            for v2 in definitiongraph.nodes():
+                try:
+                    print("Query weight for textgraph edge (",v1,",",v2,"):",query_weights[row][column])
+                    print("Key weight for textgraph edge (",v1,",",v2,"):",key_weights[row][column])
+                    print("Value weight for textgraph edge (",v1,",",v2,"):",value_weights[row][column])
+                except:
+                    continue
+                column+=1
+            row+=1
 
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
         nodes = definitiongraph.nodes()

@@ -269,10 +269,8 @@ def RecursiveGlossOverlapGraph(text, level=3):
 
     intrinsic_merit = vertices*edges*relatedness / first_convergence_level
 
-    print(definitiongraphedges)
-
     nxg = nx.DiGraph()
-    pos = nx.spring_layout(nxg)
+    #pos = nx.spring_layout(nxg)
     # pos=nx.shell_layout(nxg)
     # pos=nx.random_layout(nxg)
     # pos=nx.spectral_layout(nxg)
@@ -285,7 +283,9 @@ def RecursiveGlossOverlapGraph(text, level=3):
     # plt.show()
 
     # nxg.remove_edges_from(nxg.selfloop_edges())
-    return (nxg, intrinsic_merit)
+    print("RecursiveGlossOverlapGraph(): textgraph = ",nxg.edges())
+    ret=(nxg, intrinsic_merit)
+    return ret
 
 
 def RecursiveGlossOverlap_Classify(text):
