@@ -16582,3 +16582,16 @@ computation (e.g LC-ACT linear complexity approximation of EMD has high accuracy
 	- python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log.5February2021.xz
 	- python-src/testlogs/SocialNetworkAnalysis_PeopleAnalytics.log2.5February2021.xz
 9.Debug statements and correction to for loops have been introduced in GRAFIT/course_material/NeuronRain/LinuxKernelAndCloud/code/Transformers_PerceptronAndGradient.py
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1134. (THEORY and FEATURE) Named Entity Recognition - Transformers Attention Model - related to 697,1131,1133 and all sections on Named Entity Recognition - 9 February 2021,11 February 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. NamedEntityRecognition_HMMViterbi_CRF.py has been updated to invoke rlfg_transformers_attention_model() from Recursive Lambda Function
+Growth python implementation for the textgraph of the observation text based on degree attention per word vertex defined earlier.
+2. Perceptron learnt Query,Key and Value weights are printed in Recursive Lambda Function Growth rlfg_transformers_attention_model() routine.
+3. Adjacency matrix for textgraph is instantiated by Numeric Python ones() function initialized to all 1s and cast to python list.
+4. Textgraph edges (wi,wj) between word vertex wi to word vertex wj of maximum query,key,value weights could be high contributors to meaning of word vertex wj.
+5. Test Logs for this code change are:
+	python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.11February2021
+	python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.9February2021
+        (merged and compressed in python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.11February2021.xz)
