@@ -16595,3 +16595,57 @@ Growth python implementation for the textgraph of the observation text based on 
 	python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.11February2021
 	python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.9February2021
         (merged and compressed in python-src/testlogs/NamedEntityRecognition_HMMViterbi_CRF.log.11February2021.xz)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1135. (THEORY and FEATURE) SETH is 100% False - Draft Proof - related to 752 and all sections on Earth Mover Distance, Edit Distance,
+BigData and String analytics, String complexity measures, Merit of Large Scale Visuals - 11 March 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1135.1.LC-ACT (Algorithm 3) in IBM Research paper on LC-RWMD has 2 nested loops (for and argmin) for variables p (size of histogram1) and q (size of histogram2) as quoted below:
+	Algorithm 3 Approximate Computation of ICT
+	1: function ACT(p, q, C, k)
+	2: t = 0 ⊲ initialize transportation cost t
+	3: for i = 1 . . . , hp do ⊲ iterate the indices of p
+	4: 	s = argmink (Ci,[1...hq]) ⊲ find top-k smallest
+	5: 	l = 1 ⊲ initialize l
+	6: 	while l < k do
+	7: 		r = min(pi , qs[l]) ⊲ size of max. transfer
+	8: 		pi = pi − r ⊲ move r units of pi to qs[l]
+	9: 		t = t + r · Ci,j ⊲ update cost
+	10: 		l = l + 1 ⊲ increment l
+	11: 	end while
+	12: 	if pi != 0 then ⊲ if pi still has some mass
+	13: 		t = t + pi · Ci,s[k] ⊲ move the rest to qs[k]
+	14: 	end if
+	15: end for
+	16: return t ⊲ return transportation cost t
+	17: end function
+1135.2.Bottom left constant size quadrant rectangle of Edit distance memoization table hence computes edit distances of constant size substring histograms of 1-alphabet buckets. Example edit distance table from https://web.stanford.edu/class/cs124/lec/med.pdf is quoted below:
+	N 9 8 9 10 11 12 11 10 9 8
+	O 8 7 8 9 10 11 10 9 8 9
+	I 7 6 7 8 9 10 9 8 9 10
+	T 6 5 6 7 8 9 8 9 10 11
+	N 5 4 5 6 7 8 9 10 11 10
+	E 4 3 4 5 6 7 8 9 10 9
+	T 3 4 5 6 7 8 7 8 9 8
+	N 2 3 4 5 6 7 8 7 8 7
+	I 1 2 3 4 5 6 7 6 7 8
+	# 0 1 2 3 4 5 6 7 8 9
+	  # E X E C U T I O N
+1135.3 In previous example, constant quadrant could be the bottom left 4*4 square fragment of the table computed by LC-ACT in linear time while the rest of the table adheres to conventional quadratic recurrence:
+	T 3 4 5 6 
+        N 2 3 4 5
+        I 1 2 3 4
+        # 0 1 2 3
+          # E X E	 
+1135.4.Algorithm 3 for LC-ACT has histogram sizes p,q and iterations k as arguments. Therefore Algorithm 3 runs in predefined constant linear time for constant size quadrant of edit distance table - Iterations variable k could be appropriately predetermined for constants p and q of histogram sizes - For 100% accuracy iterations depend on string histogram sizes p and q. Each pi and qs have sizes <= 1 because string histograms have buckets of 1 alphabet.
+1135.5.Thus a fraction of edit distance dynamic programming is performed in linear time. This reduces the exponent of quadratic time edit distance computation from 2 to 1.99999... or less asymptotically depending on constant size quadrant which implies edit distance is subquadratic and SETH is false.
+1135.6.Constant size quadrant fraction of edit distance dynamic programming table of sides x and y has maximum distance computation d(x,y) in top right corner of the constant quadrant for 2 string histograms of lengths x and y equivalent to edit distance between 2 strings of lengths x and y - this assumes LC-ACT distances for string histograms are directly proportional to integral edit distances between strings of those histograms. In previous example fragment d(#INT,#EXE) = 6 for x=4 and y=4.
+1135.7.Thus x and y are the maximum constant values for 2 nested loops of string histograms of size p and q (x=p, y=q).
+1135.8.Constant number of iterations k in LC-ACT could be found once in initialization phase for constant values p=x and q=y and used as constant upperbound for all computations of distances within the constant sized quadrant rectangle.
+1135.9.LC-ACT depends only on lengths p,q of string histograms and iterations k.
+1135.10.Edit distance table grows from bottom left to top right. Therefore LC-ACT optimization works only for a constant sized rectangle in bottom left of the table, where constant length substring distances are computed.
+
+References:
+-----------
+1135.11 LC-RWMD and LC-ACT - Algorithm 3 - http://proceedings.mlr.press/v97/atasu19a/atasu19a.pdf 
+1135.12 Edit Distance Dynamic Program Memoization - https://web.stanford.edu/class/cs124/lec/med.pdf
