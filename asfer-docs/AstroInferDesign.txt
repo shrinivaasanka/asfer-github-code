@@ -16598,7 +16598,7 @@ Growth python implementation for the textgraph of the observation text based on 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1135. (THEORY and FEATURE) SETH is 100% False - Draft Proof - related to 752 and all sections on Earth Mover Distance, Edit Distance,
-BigData and String analytics, String complexity measures, Merit of Large Scale Visuals - 11 March 2021
+BigData and String analytics, String complexity measures, Histogram analytics, Merit of Large Scale Visuals - 11 March 2021,12 March 2021
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1135.1.LC-ACT (Algorithm 3) in IBM Research paper on LC-RWMD has 2 nested loops (for and argmin) for variables p (size of histogram1) and q (size of histogram2) as quoted below:
 	Algorithm 3 Approximate Computation of ICT
@@ -16644,8 +16644,11 @@ BigData and String analytics, String complexity measures, Merit of Large Scale V
 1135.8.Constant number of iterations k in LC-ACT could be found once in initialization phase for constant values p=x and q=y and used as constant upperbound for all computations of distances within the constant sized quadrant rectangle.
 1135.9.LC-ACT depends only on lengths p,q of string histograms and iterations k.
 1135.10.Edit distance table grows from bottom left to top right. Therefore LC-ACT optimization works only for a constant sized rectangle in bottom left of the table, where constant length substring distances are computed.
+1135.11 For string histograms, each bucket has only one alphabet and number of iterations (k) required is only 1 from LC-ACT algorithm 3 earlier (lines 7 to 10) because r <= 1 which is a major runtime reduction - at most one alphabet could be moved from bin of p to bin of q.
+1135.12 Complexity of data parallel LC-ACT implementation (Table 3 of 1135.14) is O(vhm + nhk) where v = size of vocabulary, h = average size of the string histograms, m = dimension of the coordinates, n = number of string histograms, k = iterations.
+1135.13 For Edit distance - Earth mover distance reduction, n = 1 (for distance between pair of string histograms), m = 1 (because each bin has only one alphabet) and k = 1 (because only one alphabet is moved) which implies the Complexity of LC-ACT edit distance computation is O(vh + h) which is linear in average size of the string histograms (or) linear in average length of the strings if size of the vocabulary v is constant (ASCII or Unicode) and thus subquadratic implying SETH is false and previous constant quadrant optimization could be unnecessary on the average.
 
 References:
 -----------
-1135.11 LC-RWMD and LC-ACT - Algorithm 3 - http://proceedings.mlr.press/v97/atasu19a/atasu19a.pdf 
-1135.12 Edit Distance Dynamic Program Memoization - https://web.stanford.edu/class/cs124/lec/med.pdf
+1135.14 LC-RWMD and LC-ACT - Algorithm 3 - http://proceedings.mlr.press/v97/atasu19a/atasu19a.pdf 
+1135.15 Edit Distance Dynamic Program Memoization - https://web.stanford.edu/class/cs124/lec/med.pdf
