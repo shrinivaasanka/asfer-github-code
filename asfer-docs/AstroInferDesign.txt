@@ -16652,3 +16652,21 @@ References:
 -----------
 1135.14 LC-RWMD and LC-ACT - Algorithm 3 - http://proceedings.mlr.press/v97/atasu19a/atasu19a.pdf 
 1135.15 Edit Distance Dynamic Program Memoization - https://web.stanford.edu/class/cs124/lec/med.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1136. (THEORY and FEATURE) SETH is 100% False - Draft Proof - alternative Edit distance-Earth mover distance reduction - related to 752,1135 and all sections on Earth Mover Distance, Edit Distance, BigData and String analytics, String complexity measures, Histogram analytics, Merit of Large Scale Visuals, Embedding of Strings in Syllable vector space - 24 March 2021 
+-------------------------------------------------------------------------------------------------------------------------------------------
+1136.1 As alternative to 1 alphabets per bin, every String histogram has buckets containing ASCII or Unicode numeric values of alphabet as numeric weights. This makes string histograms more similar to traditional histograms having bins of numeric weights e.g. Image Pixel Histograms of Large Scale Visuals.
+1136.2 LC-ACT is thus readily applicable to string histograms of numeric weights. Direct proportionality assumption between edit distance values and earth mover distance values stated earlier in 1135 has to be proved.
+1136.3 For same strings both edit distance and earth mover distance are zero. For dissimilar strings edit distance inserts alphabets, deletes alphabets and updates alphabets while previous numeric weights string histogram for earth mover distance depends on r and C(i,j) - r and C(i,j) increase with widening numeric weights (differing alphabets) - Edit distance counts only insertions, deletions and substitutions while EMD generalizes edit distance.
+1136.4 Because there is not much literature on relation between edit distance and earth mover distance (except L1-embeddings which exist for all classes of distance metrics) following equation in 1136.5 has been contrived for proving proportionality between former and latter inspired by edit distance dynamic programming recurrence:
+	Edit distance =	minimum(d(i-1,j-1),d(i-1,j) + delete(ai),d(i,j-1) + insert(bj),d(i-1,j-1) + substitute(ai,bj))
+1136.5 Earth Mover Distance = w1*Sum(unicode values of inserted alphabets) - w2*Sum(unicode values of deleted alphabets) + w3*Sum(difference between unicode values of substituted alphabets)
+1136.6 Previous linear program sums unicode values of inserted alphabets in string histogram bins, subtracts unicode values of deleted alphabets in string histogram bins, sums the difference between unicode values of substituted alphabets in string histogram bins by assigning appropriate weights which is same as lines 7-10 of LC-ACT data parallel algorithm earlier.
+1136.7 Instead of 1s for counting insertions, deletions and substitutions, unicode value weights of the string histogram bins are used which maps edit distance to earth mover distance - iterated summation of r (=difference between weights of bins in 2 histograms) * C(i,j) (=cost).
+1136.8 Replacing unicode weights by 1s reverts EMD to Edit distance. Number of iterations of LC-ACT is upperbounded by total number of alphabet encodings e.g. 256 for ASCII, 512 for Unicode - for numeric string histograms which is again constant and thus linear time and accuracy is 100%.
+1136.9 An example computation of LC-ACT algorithm - lines 7-10:
+For pi = 3 (unicode weight) and qs = 1 (unicode weight), r = min(3,1) = 1. If C(i,j) is 1 uniformly throughout:
+pi - r = 3 - 1 = 2 (iteration 1), t = 1
+pi - r = 2 - 1 = 1 (iteration 2), t = 2
+1136.10 Edit distance to Earth mover distance reduction could be useful as well for (*) computing distance between syllable hyphenated natural language strings in which each string is a histogram of bins containing syllables  (*) and stream of Survival Index WCET OS Scheduler Histograms in which timeslice bins are process id strings.
