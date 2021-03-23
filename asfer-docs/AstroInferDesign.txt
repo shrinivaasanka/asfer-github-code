@@ -16670,3 +16670,7 @@ For pi = 3 (unicode weight) and qs = 1 (unicode weight), r = min(3,1) = 1. If C(
 pi - r = 3 - 1 = 2 (iteration 1), t = 1
 pi - r = 2 - 1 = 1 (iteration 2), t = 2
 1136.10 Edit distance to Earth mover distance reduction could be useful as well for (*) computing distance between syllable hyphenated natural language strings in which each string is a histogram of bins containing syllables  (*) and stream of Survival Index WCET OS Scheduler Histograms in which timeslice bins are process id strings.
+
+References:
+----------
+1136.11 High Dimensional EMD - [Andoni-Indyk-Krauthgamer] - http://www.cs.columbia.edu/~andoni/papers/emd-hd.pdf - "...Since many metrics (e.g., variants of edit distance [MS00, CM07, OR05, CK06]) can be embedded with bounded distortion into L1 with small integer coordinates, our result implies that EMD over s-subsets of such metrics can be embedded into L1 as well...."
