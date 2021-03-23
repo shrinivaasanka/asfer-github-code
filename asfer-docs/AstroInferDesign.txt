@@ -16674,3 +16674,4 @@ pi - r = 2 - 1 = 1 (iteration 2), t = 2
 References:
 ----------
 1136.11 High Dimensional EMD - [Andoni-Indyk-Krauthgamer] - http://www.cs.columbia.edu/~andoni/papers/emd-hd.pdf - "...Since many metrics (e.g., variants of edit distance [MS00, CM07, OR05, CK06]) can be embedded with bounded distortion into L1 with small integer coordinates, our result implies that EMD over s-subsets of such metrics can be embedded into L1 as well...."
+1136.12 Linear sketch for EMD - https://people.cs.umass.edu/~mcgregor/papers/13-approx1.pdf - "...Example 1. Suppose A = {2, 3, 10} and B = {3, 4, 8} and note that EMD(A, B) = 4. Then x = (0, 1, 2, 2, 2, 2, 2, 2, 2) and y = (0, 0, 1, 2, 2, 2, 2, 3, 3) and |x − y|1 = 4 as required ..."
