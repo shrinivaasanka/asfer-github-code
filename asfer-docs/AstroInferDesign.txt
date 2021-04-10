@@ -16654,7 +16654,7 @@ References:
 1135.15 Edit Distance Dynamic Program Memoization - https://web.stanford.edu/class/cs124/lec/med.pdf
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-1136. (THEORY and FEATURE) SETH is 100% False - Draft Proof - alternative Edit distance-Earth mover distance reduction - related to 752,1135 and all sections on Earth Mover Distance, Edit Distance, BigData and String analytics, String complexity measures, Histogram analytics, Merit of Large Scale Visuals, Embedding of Strings in Syllable vector space - 24 March 2021 
+1136. (THEORY and FEATURE) SETH is 100% False - Draft Proof - alternative Edit distance-Earth mover distance reduction - related to 752,1135 and all sections on Earth Mover Distance, Edit Distance, BigData and String analytics, String complexity measures, Histogram analytics, Merit of Large Scale Visuals, Embedding of Strings in Syllable vector space - 24 March 2021, 11 April 2021
 -------------------------------------------------------------------------------------------------------------------------------------------
 1136.1 As alternative to 1 alphabets per bin, every String histogram has buckets containing ASCII or Unicode numeric values of alphabet as numeric weights. This makes string histograms more similar to traditional histograms having bins of numeric weights e.g. Image Pixel Histograms of Large Scale Visuals.
 1136.2 LC-ACT is thus readily applicable to string histograms of numeric weights. Direct proportionality assumption between edit distance values and earth mover distance values stated earlier in 1135 has to be proved.
@@ -16675,6 +16675,7 @@ References:
 ----------
 1136.11 High Dimensional EMD - [Andoni-Indyk-Krauthgamer] - http://www.cs.columbia.edu/~andoni/papers/emd-hd.pdf - "...Since many metrics (e.g., variants of edit distance [MS00, CM07, OR05, CK06]) can be embedded with bounded distortion into L1 with small integer coordinates, our result implies that EMD over s-subsets of such metrics can be embedded into L1 as well...."
 1136.12 Linear sketch for EMD - https://people.cs.umass.edu/~mcgregor/papers/13-approx1.pdf - "...Example 1. Suppose A = {2, 3, 10} and B = {3, 4, 8} and note that EMD(A, B) = 4. Then x = (0, 1, 2, 2, 2, 2, 2, 2, 2) and y = (0, 0, 1, 2, 2, 2, 2, 3, 3) and |x − y|1 = 4 as required ..."
+1136.13 Embeddings of non-norms (Earth Mover Distance and Edit Distance) to norms(L1),Distortion,Non-embeddability - https://simons.berkeley.edu/sites/default/files/docs/516/andonislides2.pdf 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 1137. (THEORY and FEATURE) Intrinsic Merit Versus Majority Voting, P=BPP ("Maybe" tends to "Exists") in the context of Condorcet Jury Theorem and its derivatives, Margulis-Russo Threshold for boolean majority, Histogram analytics, Set Partition Theoretical Electronic Voting Machines, Edit distance to Earth Mover Distance reduction, Boolean function composition, KRW Conjecture, Communication complexity, Hardness amplification, Bounded Rationality, Gibbard-Satterthwaite Theorem - related to 400,572,688,1136 and all sections on complexity theoretic aspects of Majority Voting and Intrinsic merit - 31 March 2021
