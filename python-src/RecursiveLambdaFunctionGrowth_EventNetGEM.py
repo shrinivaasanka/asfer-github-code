@@ -376,16 +376,20 @@ class RecursiveLambdaFunctionGrowth_EventNetGEM(object):
             top_core_words.append(w[0])
         print("rlfg_eventnet_graphical_event_model(): top core number words = ",top_core_words)
         apsp = nx.all_pairs_shortest_path(definitiongraph)
-        print("rlfg_eventnet_graphical_event_model():",apsp)
+        cnt=0
         for p in apsp:
+            if cnt > 100:
+                break
+            cnt+=1
             for k,path in p[1].items():
-                for word in path:
-                    wordsynsets = wn.synsets(word)
-                    #print("wordsynsets:",wordsynsets)
-                    for synset in wordsynsets:
-                        #print("pos:",synset.pos())
-                        if synset.pos() == "v" and word in top_core_words:
-                            if path not in verbpaths:
+                if path not in verbpaths:
+                    for word in path:
+                        wordsynsets = wn.synsets(word)
+                        #print("wordsynsets:",wordsynsets)
+                        for synset in wordsynsets:
+                            #print("pos:",synset.pos())
+                            if synset.pos() == "v" and word in top_core_words:
+                                #print("verbpath:",path)
                                 verbpaths.append(path)
         print("=============================================================================================")
         print("Following paths in textgraph containing verbs approximately infer event causality - who does what to whom:")
@@ -493,7 +497,8 @@ class RecursiveLambdaFunctionGrowth_EventNetGEM(object):
             attrow=[]
             for v2 in definitiongraph.nodes():
                 if v1 != v2:
-                    attrow.append(1.0/float(degreedict[v1]))
+                    if degreedict[v1] > 0:
+                        attrow.append(1.0/float(degreedict[v1]))
             attention.append(attrow)
         print("Attention from Definition Graph:",attention)
         attentionslice=[row[0:len(query_weights)] for row in attention[0:len(query_weights)]]
