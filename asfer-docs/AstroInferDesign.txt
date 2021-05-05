@@ -1115,6 +1115,8 @@ PRAM algorithms are in NC.
 
 	34.100) BSP versus PRAM - Survey - https://web.njit.edu/~alexg/courses/cis668/Fall2000/handsub5.pdf
 
+        34.101) Multipoint Planar Point Location - Algorithmic Motion Planning and Related Geometric Problems on Parallel Machines - [Suneeta Ramaswami] - Section 5.1 - https://repository.upenn.edu/cgi/viewcontent.cgi?article=1271&context=cis_reports - Parallel Multipoint planar point location on rasterized hyperbolic arc bow finds multiple factor points spread across multiple pixel array polygons
+
 35. (THEORY) Above Discrete Hyperbolic Factorization can be used as a numerical dataset analysis technique. Discrete Hyperbolic Factorization uses only elementary geometric principles which can be fortified into an algebraic geometry result, because of strong connection between geometry (hyperbola) and algebra (unique factorization theorem) for integer rings - excluding Kummer's theorem for counterexamples when Unique Factorization is violated(e.g (sqrt(5)+1)(sqrt(5)-1)/4 = 2*3 = 6).
 
 ########################################################################################################################
