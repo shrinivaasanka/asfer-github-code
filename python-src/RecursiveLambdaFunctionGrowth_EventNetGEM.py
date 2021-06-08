@@ -378,7 +378,7 @@ class RecursiveLambdaFunctionGrowth_EventNetGEM(object):
         apsp = nx.all_pairs_shortest_path(definitiongraph)
         cnt=0
         for p in apsp:
-            if cnt > 100:
+            if cnt > 10:
                 break
             cnt+=1
             for k,path in p[1].items():
