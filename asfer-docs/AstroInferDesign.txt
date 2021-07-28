@@ -16784,3 +16784,7 @@ and each of the vertices are labelled as S,I and R. Sum of the values of random 
 	"... if k is O(loglogN) from previous derivation of maximum number of tiles between 2 approximate prime factors, in average case atleast one factor can be found in average time:
 	loglogN * log N - log (loglogN + 1) - (2loglogN + 1)logloglogN + 2(loglogN+1) - log (2*pi)
         <= O(logN * loglogN) ..."
+
+References:
+----------
+1154.1 Simulation of Boolean composition by Oracle Turing machines - [Ingo Wegener] - https://eccc.weizmann.ac.il/resources/pdf/cobf.pdf - Section 9.4 - "... Each Boolean function fn ∈ Bn can be computed by a Turing machine in n steps without working tape ..." - The simulation of circuits by Turing machines with oracle - Theorem 4.1 - "... Proof : The oracle an is an encoding of an optimal circuit Sn for fn ∈ Bn . We number the inputs and gates of Sn by 1 n+cn .  A gate is encoded by its number, its type and the numbers of its direct predecessors. The encoding of a gate has length O(log cn) , the encoding an of Sn has length O(cn log cn) , hence log |an| = O(log cn) .  The Turing machine can now simulate the circuit given in the oracle ..."
