@@ -1,0 +1,306 @@
+21/08/01 14:26:04 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/jars/spark-unsafe_2.12-3.0.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+21/08/01 14:26:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+21/08/01 14:26:09 INFO SparkContext: Running Spark version 3.0.1
+21/08/01 14:26:09 INFO ResourceUtils: ==============================================================
+21/08/01 14:26:09 INFO ResourceUtils: Resources for spark.driver:
+
+21/08/01 14:26:09 INFO ResourceUtils: ==============================================================
+21/08/01 14:26:09 INFO SparkContext: Submitted application: Spark Factorization
+21/08/01 14:26:09 INFO SecurityManager: Changing view acls to: root
+21/08/01 14:26:09 INFO SecurityManager: Changing modify acls to: root
+21/08/01 14:26:09 INFO SecurityManager: Changing view acls groups to: 
+21/08/01 14:26:09 INFO SecurityManager: Changing modify acls groups to: 
+21/08/01 14:26:09 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+21/08/01 14:26:10 WARN MacAddressUtil: Failed to find a usable hardware address from the network interfaces; using random bytes: ff:33:99:cb:da:45:c1:91
+21/08/01 14:26:10 INFO Utils: Successfully started service 'sparkDriver' on port 46579.
+21/08/01 14:26:10 INFO SparkEnv: Registering MapOutputTracker
+21/08/01 14:26:10 INFO SparkEnv: Registering BlockManagerMaster
+21/08/01 14:26:10 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+21/08/01 14:26:10 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+21/08/01 14:26:10 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+21/08/01 14:26:10 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-10dc1fa7-4845-423d-84c9-df4d1b3cd1f4
+21/08/01 14:26:10 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+21/08/01 14:26:10 INFO SparkEnv: Registering OutputCommitCoordinator
+21/08/01 14:26:11 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+21/08/01 14:26:11 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://172.27.224.1:4040
+21/08/01 14:26:11 INFO Executor: Starting executor ID driver on host 172.27.224.1
+21/08/01 14:26:11 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37315.
+21/08/01 14:26:11 INFO NettyBlockTransferService: Server created on 172.27.224.1:37315
+21/08/01 14:26:11 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+21/08/01 14:26:11 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.27.224.1, 37315, None)
+21/08/01 14:26:11 INFO BlockManagerMasterEndpoint: Registering block manager 172.27.224.1:37315 with 434.4 MiB RAM, BlockManagerId(driver, 172.27.224.1, 37315, None)
+21/08/01 14:26:11 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.27.224.1, 37315, None)
+21/08/01 14:26:11 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.27.224.1, 37315, None)
+21/08/01 14:26:13 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/spark-warehouse/').
+21/08/01 14:26:13 INFO SharedState: Warehouse path is 'file:/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/spark-warehouse/'.
+21/08/01 14:26:15 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:26:15 INFO DAGScheduler: Got job 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:26:15 INFO DAGScheduler: Final stage: ResultStage 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:26:15 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:26:15 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:26:15 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:26:15 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 9.2 KiB, free 434.4 MiB)
+21/08/01 14:26:16 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.4 MiB)
+21/08/01 14:26:16 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:26:16 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:26:16 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:26:16 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks
+21/08/01 14:26:16 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13278 bytes)
+21/08/01 14:26:16 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:26:16 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:26:16 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15170 bytes)
+21/08/01 14:26:16 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+21/08/01 14:26:16 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+21/08/01 14:26:16 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+21/08/01 14:26:16 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+=================================================
+xl + intervalmidpoint =  2697842541216035185432808338470989073402400047023264107340229269787866637601577354010118414252201599848039607021358280570876352864141293768358173232213582273960527502858719619015346129382257623900346232377984803956298643165950275154546834624432208118944251490691239009966744937829204607099860154614264854678185335419631118545643287220359425581112390340890340834746858842039565408895108227636504087758829313059384798602204625650409431786727498666142528171557636504095522870269787931251786011192577457636432508903409444920352819072087939015643244385336613595167812016611129966731672093106473347876233588281773967450517857
+xl =  2697842541216035185432808338470989073402400047023264107340229269787866637601577354010118414252201599848039607021358280570876352864141293768358173232213582273960527502858719619015346129382257623900346232377984803956298643165950275154546834624432208118944251490691239009966744937829204607099860154614264854678185335419631118545643287220359425581112390340890340834746858842039565408895108227636504087758829313059384798602204625650409431786727498666142528171557636504095522870269787931251786011192577457636432508903409444920352819072087939015643244385336613595167812016611129966731672093106473347876233588281773967450517849
+yl =  83
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 83, ',', 2697842541216035185432808338470989073402400047023264107340229269787866637601577354010118414252201599848039607021358280570876352864141293768358173232213582273960527502858719619015346129382257623900346232377984803956298643165950275154546834624432208118944251490691239009966744937829204607099860154614264854678185335419631118545643287220359425581112390340890340834746858842039565408895108227636504087758829313059384798602204625650409431786727498666142528171557636504095522870269787931251786011192577457636432508903409444920352819072087939015643244385336613595167812016611129966731672093106473347876233588281773967450517857, ') (at ', 'Sun, 01 Aug 2021 08:56:30 GMT', ')')
+=================================================
+=================================================
+xl + intervalmidpoint =  136787373806310886005450880936525408119975078743390910757018344161510648088534465719511196324332762851183437619286950083923480322372466330344366755206919565509299806192592381416172100634531082946688294005725558172494066819043294341983742989510001999922035964402793425673329156896654845686798040826502127634874393915595224703291626658087863361779064385029870671523512085454663365264687833166664532244338932794092204205243117855213184385032609889608936981209092137959638606128523151065301306615139846660857604299928517977024608419659926046608667858266914433963914720451266821770756740212484598578941593052771679473667063
+xl =  136787373806310886005450880936525408119975078743390910757018344161510648088534465719511196324332762851183437619286950083923480322372466330344366755206919565509299806192592381416172100634531082946688294005725558172494066819043294341983742989510001999922035964402793425673329156896654845686798040826502127634874393915595224703291626658087863361779064385029870671523512085454663365264687833166664532244338932794092204205243117855213184385032609889608936981209092137959638606128523151065301306615139846660857604299928517977024608419659926046608667858266914433963914720451266821770756740212484598578941593052771679473667061
+yl =  1637
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 1637, ',', 136787373806310886005450880936525408119975078743390910757018344161510648088534465719511196324332762851183437619286950083923480322372466330344366755206919565509299806192592381416172100634531082946688294005725558172494066819043294341983742989510001999922035964402793425673329156896654845686798040826502127634874393915595224703291626658087863361779064385029870671523512085454663365264687833166664532244338932794092204205243117855213184385032609889608936981209092137959638606128523151065301306615139846660857604299928517977024608419659926046608667858266914433963914720451266821770756740212484598578941593052771679473667063, ') (at ', 'Sun, 01 Aug 2021 08:59:49 GMT', ')')
+=================================================
+21/08/01 14:30:40 INFO PythonRunner: Times: total = 264035, boot = 1684, init = 56, finish = 262295
+21/08/01 14:30:40 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2121 bytes result sent to driver
+21/08/01 14:30:40 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 264709 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:30:41 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 49489
+21/08/01 14:30:41 INFO PythonRunner: Times: total = 264850, boot = 1643, init = 64, finish = 263143
+21/08/01 14:30:41 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1590 bytes result sent to driver
+21/08/01 14:30:41 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 265197 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:30:42 INFO PythonRunner: Times: total = 265379, boot = 1656, init = 46, finish = 263677
+21/08/01 14:30:42 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1590 bytes result sent to driver
+21/08/01 14:30:42 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 265713 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:31:43 INFO PythonRunner: Times: total = 326761, boot = 1663, init = 45, finish = 325053
+21/08/01 14:31:43 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 1590 bytes result sent to driver
+21/08/01 14:31:43 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 327108 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:31:43 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+21/08/01 14:31:43 INFO DAGScheduler: ResultStage 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 327.737 s
+21/08/01 14:31:43 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:31:43 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+21/08/01 14:31:43 INFO DAGScheduler: Job 0 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 327.870016 s
+21/08/01 14:31:43 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:31:43 INFO DAGScheduler: Got job 1 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:31:43 INFO DAGScheduler: Final stage: ResultStage 1 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:31:43 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:31:43 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:31:43 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[3] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:31:43 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 9.2 KiB, free 434.4 MiB)
+21/08/01 14:31:43 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.4 MiB)
+21/08/01 14:31:43 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:31:43 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:31:43 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 1 (PythonRDD[3] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:31:43 INFO TaskSchedulerImpl: Adding task set 1.0 with 4 tasks
+21/08/01 14:31:43 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 4, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:31:43 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 5, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:31:43 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 6, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:31:43 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 7, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:31:43 INFO Executor: Running task 0.0 in stage 1.0 (TID 4)
+21/08/01 14:31:43 INFO Executor: Running task 2.0 in stage 1.0 (TID 6)
+21/08/01 14:31:43 INFO Executor: Running task 3.0 in stage 1.0 (TID 7)
+21/08/01 14:31:43 INFO Executor: Running task 1.0 in stage 1.0 (TID 5)
+21/08/01 14:35:59 INFO PythonRunner: Times: total = 255486, boot = -62159, init = 62172, finish = 255473
+21/08/01 14:35:59 INFO Executor: Finished task 2.0 in stage 1.0 (TID 6). 1547 bytes result sent to driver
+21/08/01 14:35:59 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 6) in 255546 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:36:00 INFO PythonRunner: Times: total = 256866, boot = -61646, init = 61714, finish = 256798
+21/08/01 14:36:00 INFO Executor: Finished task 1.0 in stage 1.0 (TID 5). 1547 bytes result sent to driver
+21/08/01 14:36:00 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 5) in 256942 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:36:01 INFO PythonRunner: Times: total = 258108, boot = -62931, init = 62938, finish = 258101
+21/08/01 14:36:01 INFO Executor: Finished task 0.0 in stage 1.0 (TID 4). 1547 bytes result sent to driver
+21/08/01 14:36:01 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 4) in 258140 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:37:01 INFO PythonRunner: Times: total = 318039, boot = -259, init = 304, finish = 317994
+21/08/01 14:37:01 INFO Executor: Finished task 3.0 in stage 1.0 (TID 7). 1547 bytes result sent to driver
+21/08/01 14:37:01 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 7) in 318098 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:37:01 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+21/08/01 14:37:01 INFO DAGScheduler: ResultStage 1 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 318.142 s
+21/08/01 14:37:01 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:37:01 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+21/08/01 14:37:01 INFO DAGScheduler: Job 1 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 318.161389 s
+21/08/01 14:37:01 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:37:01 INFO DAGScheduler: Got job 2 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:37:01 INFO DAGScheduler: Final stage: ResultStage 2 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:37:01 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:37:01 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:37:01 INFO DAGScheduler: Submitting ResultStage 2 (PythonRDD[5] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:37:01 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 9.2 KiB, free 434.4 MiB)
+21/08/01 14:37:01 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.4 MiB)
+21/08/01 14:37:01 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:37:01 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:37:01 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 2 (PythonRDD[5] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:37:01 INFO TaskSchedulerImpl: Adding task set 2.0 with 4 tasks
+21/08/01 14:37:01 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 8, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:37:01 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 9, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:37:01 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 10, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:37:01 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 11, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:37:01 INFO Executor: Running task 0.0 in stage 2.0 (TID 8)
+21/08/01 14:37:02 INFO Executor: Running task 1.0 in stage 2.0 (TID 9)
+21/08/01 14:37:02 INFO Executor: Running task 3.0 in stage 2.0 (TID 11)
+21/08/01 14:37:02 INFO Executor: Running task 2.0 in stage 2.0 (TID 10)
+21/08/01 14:41:21 INFO PythonRunner: Times: total = 259567, boot = -209, init = 232, finish = 259544
+21/08/01 14:41:21 INFO Executor: Finished task 1.0 in stage 2.0 (TID 9). 1547 bytes result sent to driver
+21/08/01 14:41:21 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 9) in 259639 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:41:22 INFO PythonRunner: Times: total = 260198, boot = -62725, init = 62734, finish = 260189
+21/08/01 14:41:22 INFO Executor: Finished task 0.0 in stage 2.0 (TID 8). 1547 bytes result sent to driver
+21/08/01 14:41:22 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 8) in 260234 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:41:25 INFO PythonRunner: Times: total = 263077, boot = -61376, init = 61391, finish = 263062
+21/08/01 14:41:25 INFO Executor: Finished task 2.0 in stage 2.0 (TID 10). 1547 bytes result sent to driver
+21/08/01 14:41:25 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 10) in 263142 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:42:22 INFO PythonRunner: Times: total = 320797, boot = -60171, init = 60201, finish = 320767
+21/08/01 14:42:22 INFO Executor: Finished task 3.0 in stage 2.0 (TID 11). 1547 bytes result sent to driver
+21/08/01 14:42:22 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 11) in 320856 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:42:22 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+21/08/01 14:42:22 INFO DAGScheduler: ResultStage 2 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 320.892 s
+21/08/01 14:42:22 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:42:22 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+21/08/01 14:42:22 INFO DAGScheduler: Job 2 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 320.903857 s
+21/08/01 14:42:22 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:42:22 INFO DAGScheduler: Got job 3 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:42:22 INFO DAGScheduler: Final stage: ResultStage 3 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:42:22 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:42:22 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:42:22 INFO DAGScheduler: Submitting ResultStage 3 (PythonRDD[7] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:42:22 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 9.2 KiB, free 434.3 MiB)
+21/08/01 14:42:22 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.3 MiB)
+21/08/01 14:42:22 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:42:22 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:42:22 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 3 (PythonRDD[7] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:42:22 INFO TaskSchedulerImpl: Adding task set 3.0 with 4 tasks
+21/08/01 14:42:23 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 12, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:42:23 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 13, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:42:23 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 14, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:42:23 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 15, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:42:23 INFO Executor: Running task 0.0 in stage 3.0 (TID 12)
+21/08/01 14:42:23 INFO Executor: Running task 1.0 in stage 3.0 (TID 13)
+21/08/01 14:42:23 INFO Executor: Running task 2.0 in stage 3.0 (TID 14)
+21/08/01 14:42:23 INFO Executor: Running task 3.0 in stage 3.0 (TID 15)
+21/08/01 14:46:37 INFO PythonRunner: Times: total = 254417, boot = -60803, init = 60840, finish = 254380
+21/08/01 14:46:37 INFO Executor: Finished task 0.0 in stage 3.0 (TID 12). 1547 bytes result sent to driver
+21/08/01 14:46:37 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 12) in 254469 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:46:37 INFO PythonRunner: Times: total = 254749, boot = -57908, init = 57945, finish = 254712
+21/08/01 14:46:37 INFO Executor: Finished task 2.0 in stage 3.0 (TID 14). 1547 bytes result sent to driver
+21/08/01 14:46:37 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 14) in 254810 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:46:37 INFO PythonRunner: Times: total = 254891, boot = -61367, init = 61372, finish = 254886
+21/08/01 14:46:37 INFO Executor: Finished task 1.0 in stage 3.0 (TID 13). 1547 bytes result sent to driver
+21/08/01 14:46:37 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 13) in 254919 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:47:39 INFO PythonRunner: Times: total = 316429, boot = -197, init = 224, finish = 316402
+21/08/01 14:47:39 INFO Executor: Finished task 3.0 in stage 3.0 (TID 15). 1547 bytes result sent to driver
+21/08/01 14:47:39 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 15) in 316482 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:47:39 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+21/08/01 14:47:39 INFO DAGScheduler: ResultStage 3 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 316.512 s
+21/08/01 14:47:39 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:47:39 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+21/08/01 14:47:39 INFO DAGScheduler: Job 3 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 316.525316 s
+21/08/01 14:47:39 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:47:39 INFO DAGScheduler: Got job 4 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:47:39 INFO DAGScheduler: Final stage: ResultStage 4 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:47:39 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:47:39 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:47:39 INFO DAGScheduler: Submitting ResultStage 4 (PythonRDD[9] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:47:39 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 9.2 KiB, free 434.3 MiB)
+21/08/01 14:47:39 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.3 MiB)
+21/08/01 14:47:39 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:47:39 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:47:39 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 4 (PythonRDD[9] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:47:39 INFO TaskSchedulerImpl: Adding task set 4.0 with 4 tasks
+21/08/01 14:47:39 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 16, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:47:39 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 17, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:47:39 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 18, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:47:39 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 19, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:47:39 INFO Executor: Running task 0.0 in stage 4.0 (TID 16)
+21/08/01 14:47:39 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 172.27.224.1:37315 in memory (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:47:39 INFO Executor: Running task 1.0 in stage 4.0 (TID 17)
+21/08/01 14:47:39 INFO Executor: Running task 2.0 in stage 4.0 (TID 18)
+21/08/01 14:47:39 INFO Executor: Running task 3.0 in stage 4.0 (TID 19)
+21/08/01 14:47:39 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 172.27.224.1:37315 in memory (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:47:39 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 172.27.224.1:37315 in memory (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:51:59 INFO PythonRunner: Times: total = 259453, boot = -231, init = 303, finish = 259381
+21/08/01 14:51:59 INFO Executor: Finished task 2.0 in stage 4.0 (TID 18). 1547 bytes result sent to driver
+21/08/01 14:51:59 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 18) in 259542 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:52:00 INFO PythonRunner: Times: total = 260831, boot = -61873, init = 61899, finish = 260805
+21/08/01 14:52:00 INFO Executor: Finished task 1.0 in stage 4.0 (TID 17). 1547 bytes result sent to driver
+21/08/01 14:52:00 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 17) in 260874 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:52:01 INFO PythonRunner: Times: total = 261431, boot = -62185, init = 62214, finish = 261402
+21/08/01 14:52:01 INFO Executor: Finished task 0.0 in stage 4.0 (TID 16). 1547 bytes result sent to driver
+21/08/01 14:52:01 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 16) in 261458 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:53:00 INFO PythonRunner: Times: total = 320374, boot = -61826, init = 61853, finish = 320347
+21/08/01 14:53:00 INFO Executor: Finished task 3.0 in stage 4.0 (TID 19). 1547 bytes result sent to driver
+21/08/01 14:53:00 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 19) in 320487 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:53:00 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+21/08/01 14:53:00 INFO DAGScheduler: ResultStage 4 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 320.527 s
+21/08/01 14:53:00 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:53:00 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+21/08/01 14:53:00 INFO DAGScheduler: Job 4 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 320.537928 s
+21/08/01 14:53:00 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:53:00 INFO DAGScheduler: Got job 5 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:53:00 INFO DAGScheduler: Final stage: ResultStage 5 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:53:00 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:53:00 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:53:00 INFO DAGScheduler: Submitting ResultStage 5 (PythonRDD[11] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:53:00 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 9.2 KiB, free 434.4 MiB)
+21/08/01 14:53:00 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.4 MiB)
+21/08/01 14:53:00 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:53:00 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:53:00 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 5 (PythonRDD[11] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:53:00 INFO TaskSchedulerImpl: Adding task set 5.0 with 4 tasks
+21/08/01 14:53:00 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 20, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:53:00 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 21, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:53:00 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 22, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:53:00 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 23, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:53:00 INFO Executor: Running task 0.0 in stage 5.0 (TID 20)
+21/08/01 14:53:00 INFO Executor: Running task 1.0 in stage 5.0 (TID 21)
+21/08/01 14:53:00 INFO Executor: Running task 3.0 in stage 5.0 (TID 23)
+21/08/01 14:53:00 INFO Executor: Running task 2.0 in stage 5.0 (TID 22)
+21/08/01 14:56:12 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 172.27.224.1:37315 in memory (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:56:12 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.27.224.1:37315 in memory (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:58:03 INFO PythonRunner: Times: total = 297648, boot = -59751, init = 59761, finish = 297638
+21/08/01 14:58:03 INFO PythonRunner: Times: total = 297253, boot = -59173, init = 59205, finish = 297221
+21/08/01 14:58:03 INFO PythonRunner: Times: total = 297258, boot = -61076, init = 61081, finish = 297253
+21/08/01 14:58:05 INFO Executor: Finished task 1.0 in stage 5.0 (TID 21). 1590 bytes result sent to driver
+21/08/01 14:58:05 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 21) in 305521 ms on 172.27.224.1 (executor driver) (1/4)
+21/08/01 14:58:05 INFO Executor: Finished task 2.0 in stage 5.0 (TID 22). 1590 bytes result sent to driver
+21/08/01 14:58:05 INFO Executor: Finished task 0.0 in stage 5.0 (TID 20). 1590 bytes result sent to driver
+21/08/01 14:58:05 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 22) in 305522 ms on 172.27.224.1 (executor driver) (2/4)
+21/08/01 14:58:05 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 20) in 305527 ms on 172.27.224.1 (executor driver) (3/4)
+21/08/01 14:58:07 INFO AsyncEventQueue: Process of event SparkListenerExecutorMetricsUpdate(driver,WrappedArray(),Map((-1,-1) -> org.apache.spark.executor.ExecutorMetrics@5da31d20)) by listener AppStatusListener took 1.825578195s.
+21/08/01 14:58:49 INFO PythonRunner: Times: total = 349004, boot = -139, init = 152, finish = 348991
+21/08/01 14:58:49 INFO Executor: Finished task 3.0 in stage 5.0 (TID 23). 1590 bytes result sent to driver
+21/08/01 14:58:49 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 23) in 349031 ms on 172.27.224.1 (executor driver) (4/4)
+21/08/01 14:58:49 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+21/08/01 14:58:49 INFO DAGScheduler: ResultStage 5 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) finished in 349.058 s
+21/08/01 14:58:49 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+21/08/01 14:58:49 INFO TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+21/08/01 14:58:49 INFO DAGScheduler: Job 5 finished: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383, took 339.945055 s
+21/08/01 14:58:52 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383
+21/08/01 14:58:52 INFO DAGScheduler: Got job 6 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) with 4 output partitions
+21/08/01 14:58:52 INFO DAGScheduler: Final stage: ResultStage 6 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383)
+21/08/01 14:58:52 INFO DAGScheduler: Parents of final stage: List()
+21/08/01 14:58:52 INFO DAGScheduler: Missing parents: List()
+21/08/01 14:58:52 INFO DAGScheduler: Submitting ResultStage 6 (PythonRDD[13] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383), which has no missing parents
+21/08/01 14:58:52 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 9.2 KiB, free 434.4 MiB)
+21/08/01 14:58:53 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 5.6 KiB, free 434.4 MiB)
+21/08/01 14:58:53 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 172.27.224.1:37315 (size: 5.6 KiB, free: 434.4 MiB)
+21/08/01 14:58:53 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1223
+21/08/01 14:58:53 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 6 (PythonRDD[13] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:383) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+21/08/01 14:58:53 INFO TaskSchedulerImpl: Adding task set 6.0 with 4 tasks
+21/08/01 14:58:53 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 24, 172.27.224.1, executor driver, partition 0, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:58:53 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 25, 172.27.224.1, executor driver, partition 1, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:58:53 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 26, 172.27.224.1, executor driver, partition 2, PROCESS_LOCAL, 13533 bytes)
+21/08/01 14:58:53 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 27, 172.27.224.1, executor driver, partition 3, PROCESS_LOCAL, 15173 bytes)
+21/08/01 14:58:53 INFO Executor: Running task 0.0 in stage 6.0 (TID 24)
+21/08/01 14:58:53 INFO Executor: Running task 1.0 in stage 6.0 (TID 25)
+21/08/01 14:58:53 INFO Executor: Running task 3.0 in stage 6.0 (TID 27)
+21/08/01 14:58:53 INFO Executor: Running task 2.0 in stage 6.0 (TID 26)
