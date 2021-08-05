@@ -16810,6 +16810,7 @@ Factor point verification: xl*yl == number_to_factorize =  False
 References:
 -----------
 1155.6 Dynamic Planar Orthogonal Point Location in Sublogarithmic Time - [Timothy M. Chan, Konstantinos Tsakalidis] - https://drops.dagstuhl.de/opus/volltexte/2018/8738/pdf/LIPIcs-SoCG-2018-25.pdf - "...We study a longstanding problem in computational geometry: dynamic 2-d orthogonal point location, i.e., vertical ray shooting among n horizontal line segments. We present a data structure achieving O(log n/loglog n) optimal expected query time and O((log n)^(1/2+ε)) update time (amortized) in the word-RAM model for any constant ε > 0, under the assumption that the x-coordinates are integers bounded polynomially in n ..." - For rasterized and rectified hyperbolic arc, number of horizontal line segments which have to be 2D planar factor-point located <= sqrt(n) and x-coordinates <= sqrt(n).
+1155.7 Apache Giraph - Open Source Counterpart of Google Pregel - Bulk Synchronous Parallel (BSP) Computation - http://giraph.apache.org/intro.html
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1156. (THEORY and FEATURE) Majority Voting by NC^BQP Oracle Turing Machine, Derandomization of BQP, Integer Factorization in BQP,QNC and PRAM-NC-BSP - 4 August 2021,5 August 2021 - related to 1152,1154 and all sections on Majority Voting, Communication complexity, KRW Conjecture, Boolean Function Composition and Integer Factorization
