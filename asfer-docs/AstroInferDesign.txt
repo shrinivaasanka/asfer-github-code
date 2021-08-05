@@ -16807,6 +16807,10 @@ Factor point verification: xl*yl == number_to_factorize =  False
 1155.4 Theoretical number of multicores required for NC-PRAM-BSP O((logN)^k) time planar point location factorization circuit is O(N/(logN)k). PRAM time O((logN)^k) for 2061 bits factorization circuit of depth 186 therefore is O(2061^186) and number of PRAMs required are O(2^2061/2061^186) = O(2^2061/2^2048) = O(2^13) = multiples of 8192 which is quite usual on clouds. 
 1155.5 Exponentiation operator ** has been replaced by math.pow() in factorization implementation. 
 
+References:
+-----------
+1155.6 Dynamic Planar Orthogonal Point Location in Sublogarithmic Time - [Timothy M. Chan, Konstantinos Tsakalidis] - https://drops.dagstuhl.de/opus/volltexte/2018/8738/pdf/LIPIcs-SoCG-2018-25.pdf - "...We study a longstanding problem in computational geometry: dynamic 2-d orthogonal point location, i.e., vertical ray shooting among n horizontal line segments. We present a data structure achieving O(log n/loglog n) optimal expected query time and O((log n)^(1/2+ε)) update time (amortized) in the word-RAM model for any constant ε > 0, under the assumption that the x-coordinates are integers bounded polynomially in n ..." - For rasterized and rectified hyperbolic arc, number of horizontal line segments which have to be 2D planar factor-point located <= sqrt(n) and x-coordinates <= sqrt(n).
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1156. (THEORY and FEATURE) Majority Voting by NC^BQP Oracle Turing Machine, Derandomization of BQP, Integer Factorization in BQP,QNC and PRAM-NC-BSP - 4 August 2021,5 August 2021 - related to 1152,1154 and all sections on Majority Voting, Communication complexity, KRW Conjecture, Boolean Function Composition and Integer Factorization
 ---------------------------------------------------------------------------------------------------------------------------------------------
