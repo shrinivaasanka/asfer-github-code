@@ -372,7 +372,7 @@ def SearchTiles_and_Factorize(n, k):
             factors_of_n, FactorsAccumulatorParam())
         # spcon.parallelize(spcon.range(1, n).collect()).foreach(
         #    tilesearch_nonpersistent)
-        normal_order_n = (math.pow(math.log(n, 2),k))
+        normal_order_n = (Decimal(math.log(n,2)) ** k)
         tiles_start = 1
         tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
         for x in range(int(Decimal(normal_order_n) * Decimal(normal_order_n))):
