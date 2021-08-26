@@ -130,7 +130,7 @@ def hyperbolic_arc_rasterization(n):
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr):
     global factors_accum
-    sys.setrecursionlimit(20000)
+    sys.setrecursionlimit(30000)
     intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
     #print "intervalmidpoint = ",intervalmidpoint
     if intervalmidpoint > 0:
