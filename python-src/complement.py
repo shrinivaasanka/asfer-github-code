@@ -41,8 +41,8 @@
 import math
 import string
 import decimal
-from sympy.solvers.diophantine import diop_general_sum_of_squares
-from sympy.solvers.diophantine import diop_DN
+from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
+from sympy.solvers.diophantine.diophantine import diop_DN
 from sympy.abc import a, b, c, d, e, f
 from collections import defaultdict
 import pprint

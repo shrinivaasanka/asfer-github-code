@@ -45,7 +45,7 @@ maxvoters = 1
 
 def setpartition_to_tilecover(histogram_partition, number_to_factorize):
     from complement import toint
-    from sympy.solvers.diophantine import diop_general_sum_of_squares
+    from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
     from sympy.abc import a, b, c, d, e, f
     squaretiles_cover = []
     for hp in histogram_partition:
@@ -54,9 +54,9 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize):
         print(("square tiles for partition ", hp, ":", tiles))
         for t in list(tiles)[0]:
             squaretiles_cover.append((t, t*t))
-    print(("Lagrange Four Square Tiles Cover reduction of Set Partition ",
+    print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize,",",
            histogram_partition, ":", squaretiles_cover))
-    subprocess.call(["/home/ksrinivasan/spark-2.4.3-bin-hadoop2.7/bin/spark-submit",
+    subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
                      "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
     factorsfile = open(
         "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
@@ -83,36 +83,48 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize):
     for sqtc in squaretiles_cover:
         equation.append(sqtc[0])
     equationsA.append(equation)
+    cornertile=equation[0]
     equation.reverse()
+    equation[0]=cornertile
     equationsA.append(equation)
     print(("factorslist:", factorslist))
     if len(factorslist) > 0:
         equationsB.append(factorslist[1])
         equationsB.append(int(number_to_factorize)/factorslist[1])
-    a = np.array(equationsA)
-    b = np.array(equationsB)
+    a = np.array(equationsA).astype(float)
+    b = np.array(equationsB).astype(float)
     #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
     x = lsmr(a, b, atol=0, btol=0, conlim=0, show=True, x0=initial_guess)
     print(("x=", x))
     # roundedx=map(round,x[0])
     roundedx = []
     for t in x[0]:
-        if t > 0.5:
-            roundedx.append(1)
-        else:
-            roundedx.append(0)
+        roundedx.append(round(t))
+    print(("Randomized rounding:",roundedx))
     cnt = 0
     side1 = ""
     side2 = ""
     for t in roundedx:
         print(("t=", t, "; cnt=", cnt))
         if t > 0:
-            side1 += str(squaretiles_cover[cnt][0]) + "+"
+            side1 += str(t*equationsA[0][cnt]) + "+"
         else:
-            side2 += str(squaretiles_cover[cnt][0]) + "+"
+            side2 += str(equationsA[0][cnt]) + "+"
         cnt += 1
-    print(("Rectangle periphery - side1:", side1[:-1]))
-    print(("Rectangle periphery - side2:", side2[:-1]))
+    print(("1.Rectangle periphery - side1:", side1[:-1]))
+    print(("1.Rectangle periphery - side2:", side2[:-1]))
+    cnt=0
+    side1 = ""
+    side2 = ""
+    for t in roundedx:
+        print(("t=", t, "; cnt=", cnt))
+        if t > 0:
+            side1 += str(t*equationsA[1][cnt]) + "+"
+        else:
+            side2 += str(equationsA[1][cnt]) + "+"
+        cnt += 1
+    print(("2.Rectangle periphery - side1:", side1[:-1]))
+    print(("2.Rectangle periphery - side2:", side2[:-1]))
     return squaretiles_cover
 
 
