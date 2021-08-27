@@ -16883,7 +16883,7 @@ Factor point verification: xl*yl == number_to_factorize =  False
 1159. (THEORY and FEATURE) Computational Geometric Factorization - Python 3.9.0 + Spark 3.0.1 - 20437 bits integer benchmarks, Equidepth
 and Equiheight histograms, Partition distance and SETH, Comparison and Merit of Large Scale Visuals, Urban Sprawl GIS Analytics, CoronaVirus 
 2019 GIS Geospatial usecase - related to 1158 and all sections on Set Partition and Histogram analytics, Integer Factorization, SETH - 
-25,26 August 2021
+25,26,27 August 2021
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1159.1 Huge integer of 20437 bits size has been factorized by DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py in 15 minutes (1 huge and 1 small factors) on quadcore single node Spark cluster after increasing recursion limit and nonuniform circuit depth to 1426. [Special Number Field Sieve Factorization of 1199 bits mersenne number 2^1199 - 1 in 2014 holds the record for largest integer factorized which required 7500 CPU years spent in sieving and linear algebra.]:
 =================================================
@@ -16899,7 +16899,7 @@ Factor point verification: xl*yl == number_to_factorize =  False
 	#####					#####
 	########				#####	
 	## 					#####
-1159.4 Linear time partition distance of histograms if reducible to edit distance of string histograms implies SETH is false. Partition distance or histogram distance has been traditionally used to compare images for similarity by treating every image as histogram of pixels. 
+1159.4 Linear time partition distance of histograms if reducible to edit distance of string histograms implies SETH is false. Partition distance or histogram distance has been traditionally used to compare images for similarity by treating every image as histogram of pixels. Closely resembling partitions are crucial for image analytics, face recognition in specific because pixel histograms of visuals of humans might have only small variations as facial features differ slightly though facegraph segmentation of human faces abide by similar Topological Product Homotopy shape grammar (Section 715 - Contour deformations by Product Homotopy for facial feature grammar). Linear time partition distance for closely resembling histograms of human face visuals imply linear time face recognition. 
 1159.5 Histogram Partition distance between two images could be a CoronaVirus 2019 analytics tool: 
 	1159.5.1 Digital watermarking Overlay of COVID19 hotspot GIS geospatial imagery (JHU, ARCGIS, ESRI) on 6-colored SEDAC urban sprawl population estimator (GPW-4 - http://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/) which color encodes urban sprawls by increasing population density estimated by convex hull polygons drawn around colored segments, and percentage of overlay is the similarity.
 	1159.5.2 Instead of convex hull polygons, overlay the Voronoi facegraphs of the Urban sprawl SEDAC imagery and COVID19 hotspot GIS imagery and find similarity by graph edit distance (GED) between the facegraphs of two GIS images.
