@@ -16914,3 +16914,15 @@ References:
 1159.10 CoronaVirus 2019 GIS map - https://coronavirus.jhu.edu/map.html 
 1159.11 Factorization of 1061 bits integer by Number Field Sieve - https://eprint.iacr.org/2012/444.pdf
 1159.12 Integer Factorization Records - https://en.wikipedia.org/wiki/Integer_factorization_records
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1160. (THEORY and FEATURE) Set Partition Analytics - Set Partition to Lagrangian Sum of Squares tile cover reduction - Python 3.9.0 upgrade
+ and some code changes - 27 August 2021 - related to all sections on Set Partitions and Histogram analytics, Space filling by tile cover, Integer Factorization by Equidepth histograms, Drone Set Partition Electronic Voting Machines, Diophantines and Complement Functions
+---------------------------------------------------------------------------------------------------------------------------------------------
+1160.1 Streaming_SetPartitionAnalytics.py implementation has been upgraded to Python 3.9.0 and package imports have been changed to suit Python 3.9.0 (SymPy Diophantine SOS solvers)
+1160.2 Subprocess call to computational geometric factorization has been upgraded to Spark 3.0.1 
+1160.3 NumPy ndarray has been cast to float by astype()
+1160.4 Randomized rounding after LSMR least square AX=B solver approximation has been changed to Python round()
+1160.5 Rectangular Periphery - Sides of Square tiles - approximated from LSMR rounding are computed from equationsA matrix to preserve order.
+1160.6 complement.py has been upgraded to python 3.9.0 and imports of SymPy Diophantine Sum of Squares (SOS) solver have been changed.
+1160.7 testlogs/Streaming_SetPartitionAnalytics.Python3.9Upgrade.log.27August2021 and DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors contain the logs for this update. 
