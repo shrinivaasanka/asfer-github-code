@@ -16926,3 +16926,75 @@ References:
 1160.5 Rectangular Periphery - Sides of Square tiles - approximated from LSMR rounding are computed from equationsA matrix to preserve order.
 1160.6 complement.py has been upgraded to python 3.9.0 and imports of SymPy Diophantine Sum of Squares (SOS) solver have been changed.
 1160.7 testlogs/Streaming_SetPartitionAnalytics.Python3.9Upgrade.log.27August2021 and DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors contain the logs for this update. 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1161. (THEORY and FEATURE) Set Partition Analytics - Set Partition to Lagrangian Sun of Squares tile cover reduction - Integer Linear
+Programming Exact Solution - 29,30 August 2021 - related to all sections on Set Partitions and Histogram analytics, Space filling by tile cover, Integer Factorization by Equidepth histograms, Drone Set Partition Electronic Voting Machines, Integer Linear Programming
+---------------------------------------------------------------------------------------------------------------------------------------------
+1161.1 Streaming_SetPartitionAnalytics.py has been updated to compute exact Integer Linear Programming solution for sides of the rectangle to
+which a set partition is reduced, by CVXOPT GLPK ilp() mixed integer linear programming function.
+1161.2 ILP function has been imported from CVXOPT GLPK module.
+1161.3 setpartition_to_tilecover() function has been changed to take additional argument "solution" which defaults to "ILP".
+1161.4 Two linear programs in equationsA matrix are made different by random permutation.
+1161.5 Error condition has been handled while populating equationsB matrix.
+1161.6 New if-else clause has been introduced which chooses between exact CVXOPT Integer Linear Programming solution (NP-Hard) and approximate least squares solutions including LSMR (polynomial time)
+1161.7 cvxopt.glpk.ilp() function is invoked by suitably passing arguments C,G,H,A,B,I which are interpreted as below:
+	1161.7.1 C - constraints matrix which is all 1s for variables (number of tiles per square tile side)
+	1161.7.2 G - mask matrix which has 1 row per variable and each row has one 1 at the variable index
+	1161.7.3 H - Array of all 0s which has size equal to number of variables
+	1161.7.4 A - EquationsA matrix
+	1161.7.5 B - EquationsB matrix
+	1161.7.6 I - Array of variable indices 
+1161.8 Sides of the rectangle are printed as addition of sides of square tiles computed by CVXOPT GLPK ILP Simplex which are exact for ILP and approximate for Least squares. 
+1161.9 As an example following is a reduction from Set partition to Rectangular region by NeuronRain computational geometric factorization - Factors 7 and 77 of 539 (Rectangular periphery) are expressed in terms of sides of square tiles from Lagrange sum of squares of a set partition by CVXOPT GLPK ILP simplex:
+
+('factorslist:', [1, 7, 11, 77, 49, 539])
+('a=', array([[ 7., 10., 13., 14.,  0.,  1.,  1.,  1.,  0.,  1.,  1.,  1.,  0.,
+         1.,  1.,  1.,  0.,  0.,  0.,  1.,  0.,  0.,  1.,  1.,  0.,  1.,
+         1.,  1.,  0.,  0.,  0.,  1.,  0.,  0.,  0.,  1.,  0.,  0.,  1.,
+         1.,  0.,  1.,  1.,  1.,  0.,  0.,  0.,  1.,  0.,  0.,  1.,  1.],
+       [ 1.,  0.,  1.,  0.,  1.,  0.,  1.,  0.,  0., 14.,  1.,  0.,  0.,
+         0.,  1.,  0.,  0.,  0.,  1.,  0.,  0.,  0.,  0.,  1.,  0.,  0.,
+         1.,  0.,  1.,  1.,  7.,  0.,  1.,  0.,  1.,  1.,  1.,  1.,  0.,
+         1.,  1.,  1.,  1., 10.,  1.,  1., 13.,  0.,  1.,  0.,  1.,  1.]]))
+('b=', array([ 7., 77.]))
+...
+GLPK Integer Optimizer, v4.65
+54 rows, 52 columns, 110 non-zeros
+52 integer variables, none of which are binary
+Preprocessing...
+2 rows, 40 columns, 54 non-zeros
+40 integer variables, one of which is binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  1.400e+01  ratio =  1.400e+01
+GM: min|aij| =  3.178e-01  max|aij| =  3.146e+00  ratio =  9.899e+00
+EQ: min|aij| =  1.010e-01  max|aij| =  1.000e+00  ratio =  9.899e+00
+2N: min|aij| =  6.250e-02  max|aij| =  1.000e+00  ratio =  1.600e+01
+Constructing initial basis...
+Size of triangular part is 2
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.65
+2 rows, 40 columns, 54 non-zeros
+*     0: obj =   8.400000000e+01 inf =   0.000e+00 (16)
+*     4: obj =   5.802197802e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+Long-step dual simplex will be used
++     4: mip =     not found yet >=              -inf        (1; 0)
++    13: >>>>>   8.000000000e+00 >=   7.000000000e+00  12.5% (8; 0)
++    61: >>>>>   7.000000000e+00 >=   7.000000000e+00   0.0% (2; 19)
++    61: mip =   7.000000000e+00 >=     tree is empty   0.0% (0; 37)
+INTEGER OPTIMAL SOLUTION FOUND
+('status = ', 'optimal', ' : x = ', <52x1 matrix, tc='d'>)
+...
+('(Approximate if least squares is invoked) Rectangle periphery - ', '0+0+0+0+0+0+1.00000000000000+0+0+4.00000000000000+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+2.00000000000000+0+0+0+0+0+0+0+0+', ' - side1:', 7.00000000000000)
+('(Approximate if least squares is invoked) Rectangle periphery - ', '0+0+0+0+0+0+1.00000000000000+0+0+56.0000000000000+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+20.0000000000000+0+0+0+0+0+0+0+0+', ' - side2:', 77.0000000000000)
+
+1161.10 Logs testlogs/Streaming_SetPartitionAnalytics.Python3.9Upgrade.ILP.log.30August2021 and testlogs/Streaming_SetPartitionAnalytics.Python3.9Upgrade.log.29August2021 respectively compute exact CVXOPT GLPK ILP and approximate LSMR solutions.
+1161.11 Previous CVXOPT GLPK ILP can be written as:
+		optimize c1 + c2 + c3 + ... + cn
+		subject to:
+			c1*x1 + c2*x2 + ... + ck*xk + ... + cn*xn = p
+    			d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
+			c1 >= 0, c2 >= 0, ..., cn >= 0
+
