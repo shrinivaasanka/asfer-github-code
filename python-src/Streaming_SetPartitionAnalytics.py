@@ -33,6 +33,8 @@ from sympy.combinatorics.partitions import Partition
 from sympy.functions.combinatorial.numbers import nT
 import subprocess
 import operator
+import cvxopt
+from cvxopt.glpk import ilp
 
 Voting_Machine1_dict = defaultdict(list)
 Voting_Machine2_dict = defaultdict(list)
@@ -43,7 +45,7 @@ evm_histograms = []
 maxvoters = 1
 
 
-def setpartition_to_tilecover(histogram_partition, number_to_factorize):
+def setpartition_to_tilecover(histogram_partition, number_to_factorize, solution="ILP"):
     from complement import toint
     from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
     from sympy.abc import a, b, c, d, e, f
@@ -83,48 +85,72 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize):
     for sqtc in squaretiles_cover:
         equation.append(sqtc[0])
     equationsA.append(equation)
-    cornertile=equation[0]
-    equation.reverse()
-    equation[0]=cornertile
-    equationsA.append(equation)
+    permutedequation=np.random.permutation(equation)
+    equationsA.append(permutedequation)
     print(("factorslist:", factorslist))
     if len(factorslist) > 0:
-        equationsB.append(factorslist[1])
-        equationsB.append(int(number_to_factorize)/factorslist[1])
+        for factor in factorslist:
+            if factor != 1 and factor != number_to_factorize:
+                equationsB.append(factor)
+                equationsB.append(int(number_to_factorize)/factor)
+                break
     a = np.array(equationsA).astype(float)
-    b = np.array(equationsB).astype(float)
-    #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
-    x = lsmr(a, b, atol=0, btol=0, conlim=0, show=True, x0=initial_guess)
-    print(("x=", x))
-    # roundedx=map(round,x[0])
-    roundedx = []
-    for t in x[0]:
-        roundedx.append(round(t))
-    print(("Randomized rounding:",roundedx))
+    b = np.array(equationsB[:2]).astype(float)
+    y=[]
+    for n in equationsA[0]:
+        y.append(1)
+    print(("a=", a))
+    print(("b=", b))
+    if solution=="ILP":
+        C = cvxopt.matrix(y,tc='d')
+        cnt=0
+        h=[]
+        g=[]
+        for v in equationsA[0]:
+            row = np.zeros(len(equationsA[0])).tolist()
+            row[cnt]=1
+            g.append(row)
+            h.append(0)
+            cnt+=1
+        H = cvxopt.matrix(h,tc='d')
+        G = cvxopt.matrix(g,tc='d') 
+        B = cvxopt.matrix(b,tc='d')
+        A = cvxopt.matrix(a,tc='d')
+        I = set(range(len(y)))
+        print("C=",C)
+        print("G=",G)
+        print("H=",H)
+        print("A=",A)
+        print("B=",B)
+        print("I=",I)
+        (status,x) = cvxopt.glpk.ilp(C,-G.T,-H,A,B,I=I)
+        print(("status = ",status," : x = ",x))
+        roundedx = x
+        if x is None:
+            return []
+    else:
+        #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
+        x = lsmr(a, b, atol=0, btol=0, conlim=0, show=True, x0=initial_guess)
+        #x = solve(a,b)
+        print(("x=", x))
+        roundedx = []
+        for t in x[0]:
+           roundedx.append(abs(round(t)))
+        print(("Randomized rounding:",roundedx))
     cnt = 0
-    side1 = ""
-    side2 = ""
+    side1 = 0 
+    side2 = 0 
+    side1str = ""
+    side2str = ""
     for t in roundedx:
         print(("t=", t, "; cnt=", cnt))
-        if t > 0:
-            side1 += str(t*equationsA[0][cnt]) + "+"
-        else:
-            side2 += str(equationsA[0][cnt]) + "+"
+        side1 += (t*equationsA[0][cnt]) 
+        side1str += str(t*equationsA[0][cnt]) + "+"
+        side2 += (t*equationsA[1][cnt]) 
+        side2str += str(t*equationsA[1][cnt]) + "+"
         cnt += 1
-    print(("1.Rectangle periphery - side1:", side1[:-1]))
-    print(("1.Rectangle periphery - side2:", side2[:-1]))
-    cnt=0
-    side1 = ""
-    side2 = ""
-    for t in roundedx:
-        print(("t=", t, "; cnt=", cnt))
-        if t > 0:
-            side1 += str(t*equationsA[1][cnt]) + "+"
-        else:
-            side2 += str(equationsA[1][cnt]) + "+"
-        cnt += 1
-    print(("2.Rectangle periphery - side1:", side1[:-1]))
-    print(("2.Rectangle periphery - side2:", side2[:-1]))
+    print(("(Approximate if least squares is invoked) Rectangle periphery - ",side1str," - side1:", side1))
+    print(("(Approximate if least squares is invoked) Rectangle periphery - ",side2str," - side2:", side2))
     return squaretiles_cover
 
 
