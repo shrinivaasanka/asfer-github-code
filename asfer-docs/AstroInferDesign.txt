@@ -16998,3 +16998,16 @@ INTEGER OPTIMAL SOLUTION FOUND
     			d1*x1 + d2*x2 + ... + dk*xk + ... + dn*xn = q
 			c1 >= 0, c2 >= 0, ..., cn >= 0
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+1162. (THEORY and FEATURE) Merit of Large Scale Visuals - GIS and Urban Sprawl Analytics, CoronaVirus 2019 Analyzer, Histogram Partition
+Distance Similarity of images - implementation - related to 1159 and all sections on GIS and Urban Sprawl Analytics, Earth Mover Distance, 
+CoronaVirus 2019 Analyzer, Large Scale Visual Recognition, Social Network Analytics - 3,4 September 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1162.1 In this update new function histogram_partition_distance_similarity() has been defined which computes histogram partition distance
+ similarity between pixel histograms of two images which is by default Earth Mover Distance though other partition distances could be defined as clauses later (e.g SymPy Partition distance).
+1162.2 By CoronaVirus 2019 analyzer usecase mentioned in 1159, following GIS images of Population Density and COVID19 hotspots are compared for histogram Earth Mover Distance similarity (from SEDAC,GHSL and JHU datasources) and their Voronoi facegraphs are computed from image_segmentation() - color coding has been ignored, images might have to be converted to grayscale:
+	1162.2.1 SEDAC GPW4 Population Density GIS for India - SEDAC_PopulationDensity_India_2021-09-04-10-49-24_segmented.jpg - https://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/
+	1162.2.2 SEDAC COVID19 Hotspots GIS - SEDAC_COVID19_Hotspots_GIS_2021-09-04-10-51-29_segmented.jpg - https://sedac.ciesin.columbia.edu/mapping/popest/covid-19/ and https://ghsl.jrc.ec.europa.eu/visualisation.php (Global Human Settlements Layer) 
+	1162.2.3 JHU COVID19 Hotspots GIS - JHU_COVID19_Hotspots_GIS_2021-09-04-11-02-11_segmented.jpg - https://coronavirus.jhu.edu/map.html 1162.3 image_segmentation() has been changed to write the Facets Graph of each segmented image in labelled DOT files in testlogs/RemoteSensingGIS/ which could be separately read and instantiated as FaceGraph by NeuronRain Graph Analytics (GraphMining_GSpan.py) per segmented image.
+1162.4 Logs for this update are at testlogs/ImageGraph_Keras_Theano.HistogramDistance.log.4September2021 
+1162.5 tosig() function used for preprocessing in CompressedSensing.py alphabet vector space embedding EMD has been changed as tosig3d() for transforming 3 Dimensional Keras image pixel ndarray to two dimensional OpenCV2 UMat format. 
