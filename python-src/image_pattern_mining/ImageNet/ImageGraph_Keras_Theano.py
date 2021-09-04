@@ -44,6 +44,7 @@ from networkx.drawing.nx_pydot import write_dot
 import os
 from scipy.interpolate import splprep, splev
 import numpy
+from sympy.combinatorics.partitions import Partition
 #os.environ['KERAS_BACKEND'] = 'theano'
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 
@@ -63,6 +64,35 @@ def medical_imageing(image_source, imagefile):
         print(contours)
         return contours
 
+def tosig3d(array):
+    lenarray=0
+    for row in array[0]:
+        lenarray+=len(row)
+    sig=np.empty((lenarray,3), dtype=np.float32)
+    #print("sig:",sig)
+    rowcnt=0
+    colcnt=0
+    cnt=0
+    #print("array:",array)
+    for a in array[0]:
+        #print("a:",a)
+        for b in a:
+           #print("b:",b)
+           sig[cnt]=np.array([b,rowcnt,colcnt])
+           colcnt+=1
+           cnt+=1
+        colcnt=0
+        rowcnt+=1
+    return sig
+
+def histogram_partition_distance_similarity(imagefile1,imagefile2,type="EMD"):
+    im1 = image.load_img(imagefile1, target_size=(224, 224))
+    im1array = image.img_to_array(im1)
+    im2 = image.load_img(imagefile2, target_size=(224, 224))
+    im2array = image.img_to_array(im2)
+    if type == "EMD":
+        distance_emd=cv2.EMD(tosig3d(im1array),tosig3d(im2array),cv2.DIST_L2)
+        print(("EMD Histogram distance similarity between images - " + imagefile1 + " and " + imagefile2 +" :",distance_emd))
 
 def imagenet_imagegraph(imagefile):
     im1 = image.load_img(imagefile, target_size=(224, 224))
@@ -383,7 +413,7 @@ def image_segmentation(imagefile):
         facegraph.add_edge(firstpoint, prevpoint)
     nx.draw_networkx(facegraph)
     plt.show()
-    write_dot(facegraph, "ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
+    write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
     return (ret, markers, labels, stats, centroids, facets, triangles)
 
 
@@ -478,7 +508,13 @@ if __name__ == "__main__":
     # video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
     # waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
     # waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
-    waveform3=medical_imageing("MRI","testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg")
+    histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg","testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
+    histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/SEDAC_COVID19_Hotspots_GIS_2021-09-04-10-51-29.jpeg")
+    histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/JHU_COVID19_Hotspots_GIS_2021-09-04-11-02-11.jpeg")
+    image_segmentation("testlogs/RemoteSensingGIS/JHU_COVID19_Hotspots_GIS_2021-09-04-11-02-11.jpeg")
+    image_segmentation("testlogs/RemoteSensingGIS/SEDAC_COVID19_Hotspots_GIS_2021-09-04-10-51-29.jpeg")
+    image_segmentation("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg")
+    #waveform3=medical_imageing("MRI","testlogs/medical_imageing/MRI_fpsyg-01-00035-000.jpg")
     #print "Distance between Normal ECG and Normal ECG:",directed_hausdorff(waveform1[0][0],waveform1[0][0])
     #print "Distance between Normal ECG and Infarction ECG:",directed_hausdorff(waveform1[0][0],waveform2[0][0])
     # topsortedcore=core_topological_sort(vg_en_tn_prdct4,1000)
@@ -491,10 +527,10 @@ if __name__ == "__main__":
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-9-Image-13.jpg")
     # image_segmentation("testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     # image_segmentation("testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg")
-    image_segmentation(
-        "testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg")
-    imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
-    vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
+    #image_segmentation(
+    #    "testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg")
+    #imgnet_vg6 = imagenet_videograph("testlogs/ExampleVideo_GoogleScholar_Search.mp4", 2)
+    #vg_en_tn_prdct6 = videograph_eventnet_tensor_product(imgnet_vg6)
     #train_images=['testlogs/ExampleImage_1.jpg','testlogs/ExampleVideo_4.mp4Frame_1.jpg','testlogs/ExampleVideo_1.mp4Frame_0.jpg','testlogs/ExampleVideo_4.mp4Frame_2.jpg', 'testlogs/ExampleVideo_1.mp4Frame_1.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_1.jpg', 'testlogs/ExampleVideo_2.mp4Frame_0.jpg',  'testlogs/ExampleVideo_Facebook_GRAFIT_29April2019.mp4Frame_2.jpg', 'testlogs/ExampleVideo_2.mp4Frame_1.jpg',  'testlogs/Frame_0.jpg' ,'testlogs/ExampleVideo_3.mp4Frame_0.jpg',  'testlogs/Frame_1.jpg', 'testlogs/ExampleVideo_3.mp4Frame_1.jpg','testlogs/SEDAC_GIS_ChennaiMetropolitanArea.jpg']
     #test_images=['testlogs/ExampleVideo_4.mp4Frame_0.jpg',  'testlogs/WhiteTiger_1.jpg']
     # train_labels=[1,4,1,4,5,2,5,2,1,3,1,1,3,1]
