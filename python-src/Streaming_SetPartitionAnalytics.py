@@ -44,6 +44,20 @@ Voted = []
 evm_histograms = []
 maxvoters = 1
 
+def complementary_set_partition(partition, depth=1):
+    maxlen = -1
+    for part in partition:
+        if maxlen < len(part):
+            maxlen = len(part)
+    equidepthlen = maxlen + depth
+    complementarypartition=[]
+    equidepthpartition=[]
+    for part in partition:
+        complementarypartition.append(np.zeros(equidepthlen - len(part)))
+        equidepthpartition.append(list(part) + np.zeros(equidepthlen - len(part)).tolist())
+    print("complementary partition of ", partition, ":",complementarypartition)
+    print('equidepth partition:',equidepthpartition)
+    return complementarypartition
 
 def setpartition_to_tilecover(histogram_partition, number_to_factorize, solution="ILP"):
     from complement import toint
@@ -310,6 +324,7 @@ if __name__ == "__main__":
     processes_partitions = Partition(set1)
     randp = processes_partitions + random.randint(1, number_of_partitions)
     print(("Random Partition:", randp))
+    complementary_set_partition(randp, 5)
     histogram = list(map(len, randp))
     setpartition_to_tilecover(histogram, str(sum(histogram)))
     candidates = ["NOTA", "CandidateA", "CandidateB"]
