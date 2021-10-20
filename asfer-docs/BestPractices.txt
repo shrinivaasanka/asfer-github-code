@@ -6,7 +6,7 @@ some guiding principles:
 1.NeuronRain repositories are spread across SourceForge(https://sourceforge.net/u/userid-769929/),GitHub(https://github.com/shrinivaasanka/) and GitLab(https://gitlab.com/shrinivaasanka/) - though they do not differ much at present, NeuronRain SourceForge focuses on Astronomical Datasets, NeuronRain GitHub is for Generic Datasets and Clouds and NeuronRain GitLab is intended for Drone Development. Every source file has copyleft header and attributions.
 2.Presently there are no Continuous Integration/Unit testing framework. But every code change is tested manually 
 and logs are captured suffixing timestamps in separate testlogs/ folder within C/C++/Java/Python source directories.
-3.Development model followed is somewhat similar to Agile (but only a Single person team - K.Srinivasan - https://sites.google.com/site/kuja27/) and small incremental changes are frequent compared to rare big feature additions/changes especially in Python/MachineLearning code. 
+3.Development model followed is somewhat similar to Agile (but only a Single person team - K.Srinivasan - https://sites.google.com/site/kuja27/ - Deleted and Mirrored at https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/tree/master/kuja27_website_mirrored) and small incremental changes are frequent compared to rare big feature additions/changes especially in Python/MachineLearning code. 
 4.Code documentation - comments are profusely littered wherever necessary. NeuronRain FAQ simulates an enduser and asks questions on h(is/er) behalf and answers them.
 5.Architectural choices are more important than implementation - no complicated overengineering - Occam's Razor. 
 6.VIRGO32 and VIRGO64 linux kernel base mainline PPA versions are not frequently updated having reached minimum stability.
@@ -27,4 +27,4 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 	18.3 SourceForge - https://sourceforge.net/u/userid-769929/Krishna_iResearch_DoxygenDocs/ci/master/tree/ 
 19.OpenHub Source Code Analyzer Profile - https://www.openhub.net/accounts/ka_shrinivaasan, https://www.openhub.net/accounts/ka_shrinivaasan/positions
 20.NeuronRain commits twitter handle - https://twitter.com/neuronrain_comm
-21.Author's website - https://sites.google.com/site/kuja27/
+21.Author's website - https://sites.google.com/site/kuja27/ - Deleted and Mirrored at https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/tree/master/kuja27_website_mirrored
