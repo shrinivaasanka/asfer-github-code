@@ -350,11 +350,11 @@ def image_segmentation_contours(imagefile1):
             continue
     plt.show()
     print(("contour1polys:", contour1polys))
-    return contour1polys
+    return (contours1,contour1polys)
 
 
 def image_segmentation(imagefile):
-    image_segmentation_contours(imagefile)
+    contours = image_segmentation_contours(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(
@@ -414,7 +414,7 @@ def image_segmentation(imagefile):
     nx.draw_networkx(facegraph)
     plt.show()
     write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
-    return (ret, markers, labels, stats, centroids, facets, triangles)
+    return (ret, markers, labels, stats, centroids, facets, triangles, contours)
 
 
 def random_forest_image_classification(
