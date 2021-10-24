@@ -17062,3 +17062,25 @@ Majority Voting
 1166.1 Streaming_SetPartitionAnalytics.py has been updated to define a new function complementary_set_partition() as per NeuronRain definition of complement set partitions (Example described in Section 864 - item 60) - each partition and its complement split an equidepth partition.
 1166.2 This function iterates through parts of a partition and pads each part by zeros (numpy zero fill) to create a complementary set partition union of which together form an equidepth partition. Depth of the equidepth partition is a configurable parameter to complementary_set_partition()
 1166.3 Complement and Equidepth partitions for a random partition are printed. Logs for this commit are at testlogs/Streaming_SetPartitionAnalytics.Python3.9Upgrade.Complement.20October2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1167. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights Urban Area and Population Estimation - implementation - 
+24 October 2021 - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry,
+R Ricker Population Estimator implementation, SEDAC GPW4 PopEst, Social Network Analytics
+---------------------------------------------------------------------------------------------------------------------------------------------
+1167.1 Because of importance of GIS geospatial imagery for Urban Sprawl Analytics, new source file GISUrbanSprawlAnalytics.py has been added
+to NeuronRain repositories which defines function urban_sprawl_from_segments() for reading an urban sprawl GIS image and segment it by
+contours and compute convex hulls around contour polynomial points. 
+1167.2 NASA VIIRS 2016 imagery for India NightLights python-src/image_pattern_mining/ImageNet/testlogs/NightLights_13nasa-india-2016.jpg is contour segmented by ImageGraph_Keras_Theano.py image_segmentation() and contours of 1825 urban areas in the subcontinent are read by previous function.
+1167.3 Convex Hulls of 1825 urban areas are found by OpenCV2 convexHull(). Circumference of 1825 urban sprawls is computed from cv.arcLength() of the urban area segment contour polynomials and approximate urban sprawl area is derived from circumference as a circular region:
+	Area = 3.1428 * (Circumference/2*3.1428)^2
+1167.4 Segmented Contours of 1825 urban sprawls are written as JPEG image file python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_segmented.jpg which are fairly accurate in demarcating urban areas and new insights of urban areas emerge - formation of megalopolises in TN,MH,Gangetic Plain and lopsided growth in certain pockets. 
+1167.5 Imagery and Logs for this implementation are at:
+	Logs - ImageNet/testlogs/GISUrbanSprawlAnalytics.log.24October2021
+	NASA VIIRS NightLights - India 2016 - ImageNet/testlogs/NightLights_13nasa-india-2016.jpg (Copyright: https://earthobservatory.nasa.gov/features/NightLights) 
+	FaceGraph of NightLights - ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	DOT file for FaceGraph - ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	1825 Contour segmented urban sprawls of India - ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contours_segmented.pdf
+	1825 Convex Hull segmented urban sprawls of India - ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hulls_segmented.pdf
+	NASA VIIRS NightLights India 2016 image layered by 1825 urban sprawl Contour segments -  ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_segmented.jpg
+1167.6 ImageGraph_Keras_Theano.py has been updated for return value tuples of contour segments.
