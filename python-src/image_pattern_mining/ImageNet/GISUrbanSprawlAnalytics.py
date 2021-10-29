@@ -49,20 +49,27 @@ from sympy.combinatorics.partitions import Partition
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 
-def urban_sprawl_from_segments(segment):
+def urban_sprawl_from_segments(image,segment):
+    img=cv2.imread(image)
     UrbanSprawlAreas=[]
     print(("Number of segments - Number of Urban areas:",len(segment[7][0])))
     fig1 = plt.figure(dpi=100)
+    cityid=0
     for n in range(len(segment[7][0]) - 1):
         #print(("Urban Area:",segment[7][0][n]))
         circumference = cv2.arcLength(segment[7][0][n],True)
         convexhull = cv2.convexHull(segment[7][0][n])
+        contourarea = cv2.contourArea(segment[7][0][n])
+        cv2.drawContours(img,segment[7][0][n],-1,(0,255,0),2)
+        x,y,w,h = cv2.boundingRect(segment[7][0][n])
         #print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
         radius = circumference/6.28
-        area=3.14*radius*radius
-        print(("Approximate area of Urban Sprawl:", area))
-        UrbanSprawlAreas.append((area,convexhull,circumference))
+        circulararea=3.14*radius*radius
+        print(("Approximate circular area of Urban Sprawl:", circulararea))
+        print(("Contour Area of Urban Sprawl:", contourarea))
+        cv2.putText(img,str(cityid),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),1,cv2.LINE_AA)
+        UrbanSprawlAreas.append((contourarea,cityid,circulararea,convexhull,circumference))
         curve = convexhull 
         xaxis = []
         yaxis = []
@@ -71,11 +78,15 @@ def urban_sprawl_from_segments(segment):
             yaxis.append(point[0][1])
         ax = fig1.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
-    print(UrbanSprawlAreas)
+        cityid += 1
+    print("Rankings of Urban Areas - sorted contour areas:")
+    print(sorted(UrbanSprawlAreas))
     plt.show()
+    cv2.imwrite("testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg",img)
+    cv2.waitKey()
     return (UrbanSprawlAreas)
 
 
 if __name__ == "__main__":
     seg=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
-    urban_sprawl_from_segments(seg)
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg)
