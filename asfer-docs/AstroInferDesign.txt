@@ -17084,3 +17084,19 @@ contours and compute convex hulls around contour polynomial points.
 	1825 Convex Hull segmented urban sprawls of India - ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hulls_segmented.pdf
 	NASA VIIRS NightLights India 2016 image layered by 1825 urban sprawl Contour segments -  ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_segmented.jpg
 1167.6 ImageGraph_Keras_Theano.py has been updated for return value tuples of contour segments.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1168. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights Urban Area Rankings - 29 October 2021 - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4
+Population Estimations, Social Network Analytics, Space filling by Curves, Circle packing, Chaos and Mandelbrot sets
+---------------------------------------------------------------------------------------------------------------------------------------------
+1168.1 GISUrbanSprawlAnalytics.py has been updated to compute area of every Urban Area in contour segmented NASA VIIRS NightLights 2016 imagery by cv2.contourArea() in addition to circular area approximation, draw bounding box rectangle around each of 1825 Urban area sprawls by cv2.boundingRect(), write an id string for every urban area bounding box by cv2.putText() and sort the list of tuples of contour areas of cities which is printed as rankings of Urban areas.
+1168.2 Contours of 1825 urban areas have been imprinted on VIIRS NightLight image along with their numeric id(s) through which lookup can be made on the sorted urban area ranking list of tuples. Contour id labelled image is written to testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg 
+1168.3 Following are the affected logs and images:
+	FaceGraph of NightLights -  testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	1825 Contour segmented urban sprawls of India - testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contours_segmented.pdf
+	1825 Convex Hull segmented urban sprawls of India -    testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hulls_segmented.pdf
+	Python Keras and OpenCV2 Logs - testlogs/GISUrbanSprawlAnalytics.log.29October2021
+	NASA VIIRS India 2016 image layered by 1825 City id labelled Contours - testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg
+1168.4 Contours of Urban areas which are in close proximity are highly likely to merge in future.
+1168.5 Contour curves fill a 2-dimensional space - either as polynomials or unequal circles. Parallels can be drawn between Fractal geometry (Koch curves which are known to be space filling - https://en.wikipedia.org/wiki/Space-filling_curve) of coastlines which are Mandelbrot sets and Contour curve geometry of urban areas - https://en.wikipedia.org/wiki/Coastline_paradox.
+1168.6 Population of urban sprawls can be estimated by product of population density and contour area.
