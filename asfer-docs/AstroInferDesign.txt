@@ -17100,3 +17100,41 @@ Population Estimations, Social Network Analytics, Space filling by Curves, Circl
 1168.4 Contours of Urban areas which are in close proximity are highly likely to merge in future.
 1168.5 Contour curves fill a 2-dimensional space - either as polynomials or unequal circles. Parallels can be drawn between Fractal geometry (Koch curves which are known to be space filling - https://en.wikipedia.org/wiki/Space-filling_curve) of coastlines which are Mandelbrot sets and Contour curve geometry of urban areas - https://en.wikipedia.org/wiki/Coastline_paradox.
 1168.6 Population of urban sprawls can be estimated by product of population density and contour area.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1169. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS Nights 2012 and 2016 Distance Similarity and Urban Area Rankings - related
+to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry - 5 November 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1169.1 GISUrbanSprawlAnalytics.py has been updated to compute histogram set partition distance similarity (Earth Mover Distance) measure
+between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 and 2016 - as below:
+	('EMD Histogram distance similarity between images - testlogs/NightLights_13nasa-india-2016.jpg and testlogs/NightLights_13nasa-india-2012.jpg :', (0.053227465599775314, None, array([[36.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0., 34.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0., 37., ...,  0.,  0.,  0.],
+       ...,
+       [ 0.,  0.,  0., ..., 25.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  1., 19.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  6., 34.]], dtype=float32)))
+1169.2 Following are excerpts of logs which show more than doubling of Urban area NightLight circles between 2012 and 2016 implying an impressive urban boom and doubling of electricity consumption between 2012 and 2016 (but not in proportionate correlation to GDP growth):
+	2016: ('Number of segments - Number of Urban areas:', 1914)
+	2012: ('Number of segments - Number of Urban areas:', 835)
+1169.3 2D surface of a nation is sparsely packed by closed urban area contour polynomials of arbitrary shapes. Though equal circle packing of 2D surface has been widely studied, unequal circle packing and its generic version - polynomial packing - find less or no mention. 
+1169.4 Following are some of Unequal Circle Packing (within a Circle or Square container) algorithms and there are no published algorithms for packing arbitrary polynomial curves within a 2D surface though Voronoi Diagram Tessellations could approximate contour polynomials by polygons:
+	1169.4.1 Packing Unequal Circles into a Square Container by Partitioning Narrow Action Spaces and Circle Items - https://arxiv.org/abs/1701.00541
+	1169.4.2 Packing unequal circles using formulation space search - https://www.sciencedirect.com/science/article/abs/pii/S0305054812002663?via%3Dihub
+	1169.4.3 Packing different-sized circles into a rectangular container - https://www.sciencedirect.com/science/article/abs/pii/037722179500032L
+1169.5 Following are the logs,contour segment, convexhull segment, contour labelled image files generated from 2012 and 2016 VIIRS imagery for this commit:
+	testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg
+	testlogs/NightLights_13nasa-india-2016.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contours_segmented.pdf
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hulls_segmented.pdf
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_segmented.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.5November2021
+	testlogs/NightLights_13nasa-india-2012-contourlabelled.jpg
+	testlogs/NightLights_13nasa-india-2012.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_contours_segmented.pdf
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_convex_hulls_segmented.pdf
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_segmented.jpg
