@@ -48,8 +48,10 @@ from sympy.combinatorics.partitions import Partition
 #os.environ['KERAS_BACKEND'] = 'theano'
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
+from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 
 def urban_sprawl_from_segments(image,segment):
+    print(("Image:",image))
     img=cv2.imread(image)
     UrbanSprawlAreas=[]
     print(("Number of segments - Number of Urban areas:",len(segment[7][0])))
@@ -82,11 +84,16 @@ def urban_sprawl_from_segments(image,segment):
     print("Rankings of Urban Areas - sorted contour areas:")
     print(sorted(UrbanSprawlAreas))
     plt.show()
-    cv2.imwrite("testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg",img)
+    imagetok1=image.split(".")
+    imagetok2=imagetok1[0].split("/")
+    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
     return (UrbanSprawlAreas)
 
 
 if __name__ == "__main__":
-    seg=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg)
+    seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
+    seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
+    histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)

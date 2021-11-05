@@ -325,8 +325,8 @@ def image_segmentation_contours(imagefile1):
         img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
     contours1, hierarchy1 = cv2.findContours(
         thresh1, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    #print("contours:",contours1)
-    # contours1=cv2.findContours(thresh1,1,2)
+    print("contours:",contours1)
+    #contours1=cv2.findContours(thresh1,1,2)
     epsilon1 = 0.1*cv2.arcLength(contours1[0], True)
     # epsilon1=0.2
     approx1 = cv2.approxPolyDP(contours1[0], epsilon1, True)
