@@ -17102,8 +17102,7 @@ Population Estimations, Social Network Analytics, Space filling by Curves, Circl
 1168.6 Population of urban sprawls can be estimated by product of population density and contour area.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-1169. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS Nights 2012 and 2016 Distance Similarity and Urban Area Rankings - related
-to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry - 5 November 2021
+1169. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights 2012 and 2016 Distance Similarity and Urban Area Rankings - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Four color theorem, Linear Programming - 5,6 November 2021
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1169.1 GISUrbanSprawlAnalytics.py has been updated to compute histogram set partition distance similarity (Earth Mover Distance) measure
 between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 and 2016 - as below:
@@ -17114,7 +17113,7 @@ between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 
        [ 0.,  0.,  0., ..., 25.,  0.,  0.],
        [ 0.,  0.,  0., ...,  1., 19.,  0.],
        [ 0.,  0.,  0., ...,  0.,  6., 34.]], dtype=float32)))
-1169.2 Following are excerpts of logs which show more than doubling of Urban area NightLight circles between 2012 and 2016 implying an impressive urban boom and doubling of electricity consumption between 2012 and 2016 (but not in proportionate correlation to GDP growth):
+1169.2 Following are excerpts of logs which show more than doubling of Urban area NightLight circles between 2012 and 2016 implying an impressive urban boom of 20-25% growth per annum and doubling of electricity consumption between 2012 and 2016 (but not in proportionate correlation to GDP growth):
 	2016: ('Number of segments - Number of Urban areas:', 1914)
 	2012: ('Number of segments - Number of Urban areas:', 835)
 1169.3 2D surface of a nation is sparsely packed by closed urban area contour polynomials of arbitrary shapes. Though equal circle packing of 2D surface has been widely studied, unequal circle packing and its generic version - polynomial packing - find less or no mention. 
@@ -17138,3 +17137,6 @@ between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 
 	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_contours_segmented.pdf
 	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_convex_hulls_segmented.pdf
 	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_segmented.jpg
+1169.6 Urbanization percentage which is the ratio of sum of contour areas of urban sprawls in VIIRS imagery to total area of nation might have a heuristic limit of 67% going by Greenery standards of 33%. Sparse Polynomial packing of urban sprawl contour closed polynomials could hence be written as a linear program:
+	a(c1) + a(c2) + a(c3) + ... + a(cn) <= 0.67*A
+for areas of urban sprawl contours a(c1),a(c2),a(c3),...,a(cn) and total area of nation A. Sum of urban sprawl contour areas combines 3 of the 4 colors of urban sprawl facegraph (Residential,Commercial,Manufacturing-IT-ITES) excluding Greenery.
