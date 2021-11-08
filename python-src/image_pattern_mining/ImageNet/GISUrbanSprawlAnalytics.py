@@ -92,8 +92,11 @@ def urban_sprawl_from_segments(image,segment):
 
 
 if __name__ == "__main__":
-    seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
-    seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
-    histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
+    #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
+    #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
+    seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
+    #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
+    histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
+    #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
+    #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2021.jpg",seg3)
