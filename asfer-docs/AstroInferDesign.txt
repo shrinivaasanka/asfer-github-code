@@ -17140,3 +17140,21 @@ between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 
 1169.6 Urbanization percentage which is the ratio of sum of contour areas of urban sprawls in VIIRS imagery to total area of nation might have a heuristic limit of 67% going by Greenery standards of 33%. Sparse Polynomial packing of urban sprawl contour closed polynomials could hence be written as a linear program:
 	a(c1) + a(c2) + a(c3) + ... + a(cn) <= 0.67*A
 for areas of urban sprawl contours a(c1),a(c2),a(c3),...,a(cn) and total area of nation A. Sum of urban sprawl contour areas combines 3 of the 4 colors of urban sprawl facegraph (Residential,Commercial,Manufacturing-IT-ITES) excluding Greenery.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1170. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights 2021 Urban Area Rankings - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Four color theorem, Linear Programming, Economic Merit, Computational Economics - 7,8 November 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1170.1 In continuation of Urban sprawl contour analytics of NASA VIIRS NightLights 2012 and 2016 imagery earlier, latest NASA VIIRS imagery
+of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli061nrt-Daily-Nighttime-lights has been analyzed by GISUrbanSprawlAnalytics.py for EMD similarity and Growth of Urbanization in India between 2016 and 2021.
+1170.2 Previous image of India NightLights has been manually captured in file NightLights_13nasa-india-2021.jpg from resourcewatch.org and is not a NASA released composited and filtered image. It contains some cloud formations and lighting could be slightly exaggerated because of Deepavali fireworks on 04 November 2021 and later. Mismatch in image sizes, additional graphics could have contributed to exaggeration. 
+1170.3 Following are some excerpts of logs on Indian Urban area statistics in 2021 in comparison to 2016:
+	2021:	('Number of segments - Number of Urban areas:', 7335)
+	2016 to 2021:	('EMD Histogram distance similarity between images - testlogs/NightLights_13nasa-india-2016.jpg and testlogs/NightLights_13nasa-india-2021.jpg :', (0.031924109905958176, None, array([[36.,  0.,  0., ...,  0.,  0.,  0.],
+1170.4 Number of Urban area circles have roughly quadrupled from 2016 to 2021 and multiplied 8 times from 2012 - 835 to 1914 (2012-2016),1914 to 7335 (2016-2021) - Exaggeration by Deepavali lights could be minimal because only luminosity might have been boosted per urban area and festival may not have created so many new contours. 
+1170.5 EMD similarity between 2012 and 2016 is 5% while EMD similarity between 2016 and 2021 is 3% perhaps pointing at 95% and 97% dissimilarity respectively (approximate doubling(s) in urbanization between 2012-2016 and 2016-2021).
+1170.6 Previous analytics measures prima facie might hint at spectacular annual urban growth and increase in electricity consumption of 20-25% out of sync with GDP growth (which was negative in some quarters and grew on the average by 5-8% during 2012-2021 - agriculture contributes 70% to GDP of India and glaring Urban-Rural divide could be pulling down the numbers)
+1170.7 Following are the logs, contour id labelled and segmented image files (compressed in .gz file) for this commit:
+	ImageNet/testlogs/GISUrbanSprawlAnalytics.log.8November2021
+	ImageNet/testlogs/NightLights_13nasa-india-2021-contourlabelled.jpg
+	ImageNet/testlogs/NightLights_13nasa-india-2021.jpg
+	ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2021_analytics.tar.gz
