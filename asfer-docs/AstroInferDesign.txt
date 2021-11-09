@@ -17143,7 +17143,7 @@ between NASA NightLights Contour Segmented Urban Sprawl imagery of India - 2012 
 for areas of urban sprawl contours a(c1),a(c2),a(c3),...,a(cn) and total area of nation A. Sum of urban sprawl contour areas combines 3 of the 4 colors of urban sprawl facegraph (Residential,Commercial,Manufacturing-IT-ITES) excluding Greenery.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
-1170. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights 2021 Urban Area Rankings - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Four color theorem, Linear Programming, Economic Merit, Computational Economics - 7,8 November 2021
+1170. (THEORY and FEATURE) GIS Urban Sprawl Analytics - NASA VIIRS NightLights 2021 Urban Area Rankings - related to all sections on Merit of Large Scale Visuals, GIS and Urban Sprawl Analytics, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Four color theorem, Linear Programming, Economic Merit, Computational Economics - 7,8 November 2021
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1170.1 In continuation of Urban sprawl contour analytics of NASA VIIRS NightLights 2012 and 2016 imagery earlier, latest NASA VIIRS imagery
 of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli061nrt-Daily-Nighttime-lights has been analyzed by GISUrbanSprawlAnalytics.py for EMD similarity and Growth of Urbanization in India between 2016 and 2021.
@@ -17159,3 +17159,47 @@ of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli06
 	ImageNet/testlogs/NightLights_13nasa-india-2021-contourlabelled.jpg
 	ImageNet/testlogs/NightLights_13nasa-india-2021.jpg
 	ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2021_analytics.tar.gz
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1171. (THEORY and FEATURE) GDP estimation from GIS Urban Sprawl Analytics - related to 694,1170 and all sections on GIS and Urban Sprawl Analytics, Merit of Large Scale Visuals, EventNet and Graphical Event Models-Causal Event Models, Computational Economics, Economic Merit, Four Color Theorem, Multiple Agent Resource Allocation, Logistic Regression, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Linear Programming - 9 November 2021
+--------------------------------------------------------------------------------------------------------------------------------------------
+1171.1 From 694.1: India’s GDP is estimated by a logistic regression based on parameters including electricity growth - [Arvind Subramanian] - https://growthlab.cid.harvard.edu/files/growthlab/files/2019-06-cid-wp-354.pdf - "...We divide the sample into two periods, pre-and post-2011. For each period we estimate the following cross-country regression: 𝐺𝐷𝑃 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 = 𝛽0 + 𝛽1𝐶𝑟𝑒𝑑𝑖𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽2𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽3𝐸𝑥𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 +𝛽4𝐼𝑚𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽5𝐼𝑛𝑑𝑖𝑎 + 𝜀� ..."
+1171.2 Similarly, Rural-Urban GDP of India could be estimated by Logistic Regressions from Urban Sprawl Analytics of NASA VIIRS NightLights imagery which quantifies urban growth in terms of electricity consumption growth.
+1171.3 Logit1: Total GDP growth of nation could be written as logistic regression on Rural GDP growth and Urban GDP growth:
+	----------------------------------------------------------------------------------------------------------
+	Total GDP Growth = a1*UrbanGDPGrowth + a2*RuralGDPGrowth + constant, a1 and a2 are weightages for Rural and Urban GDP
+	----------------------------------------------------------------------------------------------------------
+1171.4 As farm output contributes 70% to India's GDP, a2=0.7 and a1=0.3. For an example total GDP growth of 5% per annum and constant=0, substituting in Logit1:
+	5% = 0.3*UrbanGDPGrowth + 0.7*RuralGDPGrowth
+1171.5 From VIIRS Urban Sprawl Analytics earlier, India's Urban growth could be 25% annually in the past decade. Substituting in Logit1:
+	5% = 0.3*25% + 0.7*RuralGDPGrowth
+	=> 5% - 7.5% = 0.7*RuralGDPGrowth
+	=> -2.5%/0.7 = RuralGDPGrowth = -3.5%
+	=> Or Indian Agricultural sector shrunk (grew negatively) by 3.5% in past decade
+1171.6 Logit2 - Alternatively, another logistic regression could be derived from Four coloring of Urban sprawl facegraphs which segment region to Residential (R),Commercial (C),Manufacturing-IT-ITES (M),Greenery-Agriculture-Waterbodies (A) which can be written as logistic regression on growth of each sector:
+	----------------------------------------------------------------------------------------------------------
+	Total GDP Growth = a1*M + a2*R + a3*C + a4*A + constant and weightages a1,a2,a3,a4 are defined as:
+	----------------------------------------------------------------------------------------------------------
+	a1 = weightage for M - Growth in manufacturing-IT-ITES industries
+	a2 = weightage for R - Growth in residential areas
+	a3 = weightage for C - Growth in commercial areas
+	a4 = weightage for A - Growth in farming
+1171.7 Weightage for Greenery(A) a4 = 0.7 which is same as Logit1. Weightages a1,a2,a3 for remaining 3 colors could be 0.1 each because growth in residential,commercial and industry are highly interconnected while growth in farming affects residential and commercial activities mostly and manufacturing industry is less connected to Greenery-farming
+1171.8 Intersegment Growth Event Dependencies in Four colored urban sprawl growth in 1171.7 could be picturised by a Graphical Event Model (GEM)-Causal Event Model (CEM) below by double-sided arrows and one-sided arrows:
+
+	Manufacturing-IT-ITES<----------- 		
+		/\			|
+		|			|--------------------
+	        |					    | 
+	        \/					    V
+	Residential <--------------------------------> Commercial
+		/\				            /\	
+		|					     |
+		|--------------- Farm ------------------------
+				
+1171.9 On substitution for a1-a2-a3=0.1, a4=0.7 and constant=0, Logit2: Total GDP Growth = 0.1*M + 0.1*R + 0.1*C + 0.7*A. For Total annual GDP growth of 5% and Urban growth of 25% per annum (constituted by 3 colors - Manufacturing-IT-ITES,Residential,Commercial):
+	Logit2: 5% = 0.1*25 + 0.1*25 + 0.1*25 + 0.7*A
+		=> 5% - 7.5% = 0.7*A
+		=> -2.5%/0.7 = A = -3.5%
+		=> Or Indian Agricultural sector shrunk (grew negatively) by 3.5% in past decade
+1171.10 Previous numbers are demonstrative only and could depend on accuracy of images, but hint at an unequivocal trend reasonably of farm sector contraction dragging GDP down.
