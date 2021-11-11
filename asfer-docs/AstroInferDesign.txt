@@ -17203,3 +17203,29 @@ of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli06
 		=> -2.5%/0.7 = A = -3.5%
 		=> Or Indian Agricultural sector shrunk (grew negatively) by 3.5% in past decade
 1171.10 Previous numbers are demonstrative only and could depend on accuracy of images, but hint at an unequivocal trend reasonably of farm sector contraction dragging GDP down.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1172. (THEORY and FEATURE) GIS Weather Analytics and Image grayscale inversion - implementation - related to 445,446,463,1165,1171 and all sections on GIS and Urban Sprawl Analytics, Mining patterns from Astronomical Datasets for correlating celestial-terrestrial events, Machine Learning solutions to N-Body problem, Merit of Large Scale Visuals, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Drone Obstacle Avoidance, Autonomous Online Shopping Delivery - 11 November 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1172.1 Weather Forecast is an indispensable element of Urban planning, Disaster Response, Agriculture Warning Systems among others. Finding weather obstacle segments - clouds and winds - from Weather GIS imagery is essential for safe navigation of autonomous aerial vehicles. Study of Orderly Disorder in Long term weather forecast gave birth to Deterministic Chaos theory (Lorenz attractors - https://en.wikipedia.org/wiki/Edward_Norton_Lorenz) 
+1172.2 Because of separate modelling involved in predicting weather vagaries, new source file GISWeatherAnalytics.py has been created and two functions weather_GIS_analytics() and invert_image() have been defined.
+1172.3 Function weather_GIS_analytics() reads a Weather GIS image and computes contour and convex hull segments from it quite similar to Urban sprawl contours but computed contour polynomials are for aerial weather phenomena instead of terrains viz., cloud, wind - which is passed as parameter to weather_GIS_analytics().
+1172.4 An example Low pressure trough satellite image testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg over Bay of Bengal from https://www.windy.com/-Satellite-satellite?satellite,20.448,79.387,5 (unedited,unfiltered and uncomposited) has been segmented and cloud contours from it are ranked by their convex hull area and circumference. Cloud contours are labelled by integers.
+1172.5 Function invert_image() inverts a thresholded image to its grayscale complement. Image inversion is particularly necessary in four color segmentation of an urban sprawl facegraph e.g. NASA VIIRS NightLights urban areas. Inverted VIIRS NightLights image indicates non-urban areas - Unlit, Rural, Underdeveloped areas and Greenery. 
+1172.6 Previous windy.com image has been inverted in grayscale and printed to testlogs/Windy_WeatherGIS_2021-11-11-13-07-51-inverted.jpg 
+1172.7 NOAA HURDAT2 Hurricane and USGS Earthquake datasets have been Sequence Mined earlier to correlate gravitational effects of celestial n-body choreographies from astronomical ephemeris datasets (NASA JPL Ephemeris) and terrestial extreme weather events. GISWeatherAnalytics supplements this Celestial-Terrestrial weather event pattern analytics.
+1172.8 GIS Weather imagery could as well be a timeseries stream of images read from Streaming_AbstractGenerator Facade and yielded to GISWeatherAnalytics.py for live weather analytics - movement and velocity of cloud and wind contours, number and area of cloud-wind contours, altitude of clouds, gradual strengthening of low pressure troughs to Cyclones-Hurricanes among others. 
+1172.9 Image files,DOT and Logs for this commit are at:
+	testlogs/GISWeatherAnalytics.log.11November2021
+	testlogs/RemoteSensingGIS/Windy_WeatherGIS_2021-11-11-13-07-51_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/Windy_WeatherGIS_2021-11-11-13-07-51_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/Windy_WeatherGIS_2021-11-11-13-07-51_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/Windy_WeatherGIS_2021-11-11-13-07-51_convex_hull_segmented.jpg
+	testlogs/RemoteSensingGIS/Windy_WeatherGIS_2021-11-11-13-07-51_segmented.jpg
+	testlogs/Windy_WeatherGIS_2021-11-11-13-07-51-contourlabelled.jpg
+	testlogs/Windy_WeatherGIS_2021-11-11-13-07-51-inverted.jpg
+	testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg
+1172.10 Various Reference Weather GIS Datasources:
+	1172.10.1 NOAA CPC Joint Agriculture Weather Facility - https://www.cpc.ncep.noaa.gov/products/JAWF_Monitoring/India/index.shtml - 2 weeks red-orange-yellow-green alert forecast
+	1172.10.2 https://www.windy.com/-Satellite-satellite?satellite,20.448,79.387,5 - Color satellite imagery and lot of layers for cloud,wind,rain,waves,air quality each of which could be a Drone obstacle avoidance parameter
+	1172.10.2 IMD - INSAT - https://mausam.imd.gov.in/imd_latest/contents/satellite.php - monochromatic weather satellite imagery
