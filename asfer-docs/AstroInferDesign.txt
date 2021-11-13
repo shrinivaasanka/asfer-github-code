@@ -17161,7 +17161,7 @@ of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli06
 	ImageNet/testlogs/RemoteSensingGIS/NightLights_13nasa-india-2021_analytics.tar.gz
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-1171. (THEORY and FEATURE) GDP estimation from GIS Urban Sprawl Analytics - related to 694,1170 and all sections on GIS and Urban Sprawl Analytics, Merit of Large Scale Visuals, EventNet and Graphical Event Models-Causal Event Models, Computational Economics, Economic Merit, Four Color Theorem, Multiple Agent Resource Allocation, Linear and Logistic Regression, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Linear Programming - 9 November 2021,12 November 2021
+1171. (THEORY and FEATURE) GDP estimation from GIS Urban Sprawl Analytics - related to 694,1170 and all sections on GIS and Urban Sprawl Analytics, Merit of Large Scale Visuals, EventNet and Graphical Event Models-Causal Event Models, Computational Economics, Economic Merit, Four Color Theorem, Multiple Agent Resource Allocation, Linear and Logistic Regression, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Linear Programming - 9 November 2021,12 November 2021,13 November 2021
 --------------------------------------------------------------------------------------------------------------------------------------------
 1171.1 From 694.1: India’s GDP is estimated by a logistic regression based on parameters including electricity growth - [Arvind Subramanian] - https://growthlab.cid.harvard.edu/files/growthlab/files/2019-06-cid-wp-354.pdf - "...We divide the sample into two periods, pre-and post-2011. For each period we estimate the following cross-country regression: 𝐺𝐷𝑃 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 = 𝛽0 + 𝛽1𝐶𝑟𝑒𝑑𝑖𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽2𝐸𝑙𝑒𝑐𝑡𝑟𝑖𝑐𝑖𝑡𝑦 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽3𝐸𝑥𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 +𝛽4𝐼𝑚𝑝𝑜𝑟𝑡 𝐺𝑟𝑜𝑤𝑡ℎ𝑖 + 𝛽5𝐼𝑛𝑑𝑖𝑎 + 𝜀� ..."
 1171.2 Similarly, Rural-Urban GDP of India could be estimated by Logistic Regressions from Urban Sprawl Analytics of NASA VIIRS NightLights imagery which quantifies urban growth in terms of electricity consumption growth.
@@ -17209,6 +17209,27 @@ of India dated 6 November 2021 from https://resourcewatch.org/data/explore/cli06
 Logit3: Total GDP Growth = a1*𝛽1*CreditGrowth + a1*𝛽2*ElectricityGrowth +  a1*𝛽3*ExportGrowth + a1*𝛽4*ImportGrowth + a2*ResidentialGrowth + a3*CommercialGrowth + a4*AgricultureGrowth + constant 
 ----------------------------------------------------------------------------------------------------------
 Of these, ElectricityGrowth could be estimated by NASA VIIRS Urban Areas NightLights imagery. ResidentialGrowth and CommercialGrowth are proportional to ElectricityGrowth.
+1171.13 Infrastructure Growth (Air-Road-Rail-Sea Transport Infrastructure Growth, Cement and Steel Consumption Growth, Water supply Growth) is another crucial variable which could be incorporated in Logit3 as additional Manufacturing-IT-ITES and Agriculture sector parameter to make a comprehensive Logit4:
+----------------------------------------------------------------------------------------------------------
+Logit4: Total GDP Growth = a1*𝛽1*CreditGrowth + a1*𝛽2*ElectricityGrowth +  a1*𝛽3*ExportGrowth + a1*𝛽4*ImportGrowth + a2*ResidentialGrowth + a3*CommercialGrowth + a4*AgricultureGrowth + a5*CementGrowth + a6*SteelGrowth + a7*TransportInfrastructureGrowth + a8*WaterSupplyGrowth + constant 
+----------------------------------------------------------------------------------------------------------
+1171.14 Based on Logit4, Graphical Event Model-Causal Event Model earlier for 4-colored (M,R,C,A) GDP intersegment growth event causal dependencies could be expanded to following well-connected GEM-CEM (Vertices are labelled by 4 colors. Credit vertex is 2-colored for both Manufacturing and Agriculture sectors). Finer subdivision can be obtained by adding more vertices in supply chain:
+
+	   ---------------------------------------------------------------------------
+	   |				       |				     |
+	   -----------	Cement&Steel (M) --- Exports (M) ----- Credit (M & A) ---- Imports (M)
+           |			|	       |		  |
+	   |        		|	       |		  |
+	   |			|	       |		  |
+	Transport(M) ---- Commercial(C) --- Electricity (M) -------------  Residential (R) 
+ 	   |			|		|		  |	         |	
+ 	   |			|		|		  |	         |
+	   | 			|		|	 	  |	         |
+	   |---------- 	Agriculture (A) ---------------------------		 |
+				|						 |
+				|						 |
+			    Water (A) --------------------------------------------
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1172. (THEORY and FEATURE) GIS Weather Analytics and Image grayscale inversion - implementation - related to 445,446,463,1165,1171 and all sections on GIS and Urban Sprawl Analytics, Mining patterns from Astronomical Datasets for correlating celestial-terrestrial events, Machine Learning solutions to N-Body problem, Merit of Large Scale Visuals, Space filling by Curves, Unequal Circle and Polynomial packing, Chaos and Mandelbrot sets, Computational Geometry, Drone Obstacle Avoidance, Autonomous Online Shopping Delivery - 11 November 2021
