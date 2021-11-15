@@ -22,15 +22,13 @@
 # initially the streamed data is populated in storage and streamed later through this generator
 # abstracting the source and storage.
 
-from pyspark.sql import SparkSession
 import json
 import socket
-from pyspark import SparkContext, SparkConf
 import ast
 
 
 class StreamAbsGen(object):
-    def __init__(self, data_storage, data_source):
+    def __init__(self, data_storage, data_source, bucket_name="bucket1"):
         # For Apache Cassandra, HBase and Hive, code from HivePythonClient.py for HiveServer2,
         # HBasePythonClient.py and CassandraPythonClient.py has been #replicated in __iter__().
 
@@ -54,6 +52,13 @@ class StreamAbsGen(object):
         # self.data_source="Spark_Streaming"
         # self.data_source="NeuronRain"
         self.data_source = data_source
+        self.bucket_name = bucket_name
+
+        if self.data_storage == "MongoDB":
+            import pymongo
+            self.mongodbclient = pymongo.MongoClient("localhost",27017)
+            self.mongodb = self.mongodbclient.neuronraingis
+            print("MongoDB database:",self.mongodb.name)
 
         if self.data_storage == "KingCobra":
             self.inputfile = open("/var/log/kingcobra/REQUEST_REPLY.queue")
@@ -129,7 +134,17 @@ class StreamAbsGen(object):
             self.partition_stream = open(data_source)
 
     def __iter__(self):
+        if self.data_storage == "MongoDB" and self.data_source == "GISAndVisualStreaming":
+            import gridfs
+            self.mongofsbucket = gridfs.GridFSBucket(self.mongodb,bucket_name=self.bucket_name) 
+            bucketfiles=self.mongofsbucket.find()
+            for img in bucketfiles:
+                print("yielding img:",img)
+                yield img
+
         if self.data_storage == "Spark_Parquet":
+            from pyspark.sql import SparkSession
+            from pyspark import SparkContext, SparkConf
             self.spark = SparkSession.builder.getOrCreate()
             spark_stream_parquet = self.spark.read.parquet(
                 "../java-src/bigdata_analytics/spark_streaming/word.parquet")

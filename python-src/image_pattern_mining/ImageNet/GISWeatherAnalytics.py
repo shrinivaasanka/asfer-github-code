@@ -49,6 +49,12 @@ from sympy.combinatorics.partitions import Partition
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
+import Streaming_AbstractGenerator
+import base64
+import io
+import imageio
+from PIL import Image
+import codecs
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -98,5 +104,15 @@ def weather_GIS_analytics(image,segment,phenomenon="Cloud"):
 
 
 if __name__ == "__main__":
-    seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
-    weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
+    #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
+    #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
+    gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
+    for imgmdb in gisstream: 
+        #imgbase64 = codecs.encode(imgmdb.read(),"base64")
+        #imgstr = imgbase64.decode("utf-8")
+        imgdata = imgmdb.read()
+        #print("GIS img bytes:",imgdata)
+        pilimg = Image.open(io.BytesIO(imgdata))
+        pilimg.save("testlogs/GISAndVisualStreamNoSQLStore.jpg")
+        seg=image_segmentation("testlogs/GISAndVisualStreamNoSQLStore.jpg")
+        weather_GIS_analytics("testlogs/GISAndVisualStreamNoSQLStore.jpg",seg)
