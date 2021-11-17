@@ -13493,8 +13493,17 @@ Riemann Hypothesis can be written as an infinite Disjunctive Normal Form SAT in 
 	product_of(1 - k^-s) = \/ (1 - xk), xk = 1/k^s
 	=> k^s = k^(a+ib) = k^a*k^ib = k^a * (e^[ib * logk])
 	=> k^a (cos(blogk) + isin(blogk))
-	=> RZFSAT = \/(1 - k^-s) = \/(1-k^a*cos(blogk)-k^a*isin(blogk)) and a=0.5 if Riemann Hypothesis is true.
-Proving Riemann Hypothesis is equivalent to proving all satisfying assignments (nontrivial zeros -infinite of them) for RZFSAT earlier have a=0.5.
+	=> k^-s = k^-a (cos(blogk) - isin(blogk))
+	=> RZFSAT = \/(1 - k^-s) = \/(1-k^-a*cos(blogk)+k^-a*isin(blogk)) and a=0.5 if Riemann Hypothesis is true.
+Proving Riemann Hypothesis is equivalent to proving all satisfying assignments (nontrivial zeros -infinite of them) for RZFSAT earlier have a=0.5. Instead of considering infinite product earlier, finite number of monomials per prime could be multiplied i.e iteratively add prime monomial clauses to RZFSAT for each consecutive prime and find s=a+ib from assignment xk=p+iq by equating:
+	p = k^-a*cos(blogk)
+	q = -k^-a*sin(blogk) 
+	tan^-1(-p/q)/logk = b
+	log[cos(tan^-1(-p/q)logk)/p]/logk = a
+	
+Compute infinite series of values of a for every clause of consecutive prime monomial incrementally added to RZFSAT ad infinitum:
+	a1,a2,a3,....
+Previous infinite series should converge to 0.5 if Riemann Hypothesis is true which can be verified by series convergence tests. For finite RZFSAT this series may or may not converge to 0.5.
 
 References:
 -----------
