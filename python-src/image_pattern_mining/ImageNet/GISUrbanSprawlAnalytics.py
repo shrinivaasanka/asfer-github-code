@@ -61,17 +61,26 @@ def urban_sprawl_from_segments(image,segment):
         #print(("Urban Area:",segment[7][0][n]))
         circumference = cv2.arcLength(segment[7][0][n],True)
         convexhull = cv2.convexHull(segment[7][0][n])
+        #convexhull = ConvexHull(segment[7][0][n])
         contourarea = cv2.contourArea(segment[7][0][n])
         cv2.drawContours(img,segment[7][0][n],-1,(0,255,0),2)
         x,y,w,h = cv2.boundingRect(segment[7][0][n])
-        #print(("Convex Hull of Urban Area:" , convexhull))
+        print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
-        radius = circumference/6.28
+        (cx,cy),radius=cv2.minEnclosingCircle(segment[7][0][n])
+        center=(int(cx),int(cy))
+        radius=int(radius)
+        cv2.circle(img,center,radius,(0,255,0),2)
         circulararea=3.14*radius*radius
         print(("Approximate circular area of Urban Sprawl:", circulararea))
         print(("Contour Area of Urban Sprawl:", contourarea))
-        cv2.putText(img,str(cityid),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,255,255),1,cv2.LINE_AA)
-        UrbanSprawlAreas.append((contourarea,cityid,circulararea,convexhull,circumference))
+        moments=cv2.moments(segment[7][0][n])
+        if moments['m00'] != 0:
+            centroidx = int(moments['m10']/moments['m00'])
+            centroidy = int(moments['m01']/moments['m00'])
+            print(('Centroid of the Urban Sprawl:',(centroidx,centroidy)))
+        cv2.putText(img,str(cityid)+"-"+str(contourarea),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,0.3,(255,255,255),1,cv2.LINE_AA)
+        UrbanSprawlAreas.append((circulararea,contourarea,radius,circumference,cityid,convexhull))
         curve = convexhull 
         xaxis = []
         yaxis = []
@@ -94,9 +103,10 @@ def urban_sprawl_from_segments(image,segment):
 if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
-    seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
+    #seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
+    seg4=image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg")
     #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
-    histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
+    #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2021.jpg",seg3)
+    urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
