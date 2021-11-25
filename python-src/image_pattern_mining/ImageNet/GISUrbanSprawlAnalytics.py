@@ -50,9 +50,10 @@ os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 
-def urban_sprawl_from_segments(image,segment):
+def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtocontourarearatio=0):
     print(("Image:",image))
     img=cv2.imread(image)
+    imagearea=img.shape[0]*img.shape[1]
     UrbanSprawlAreas=[]
     print(("Number of segments - Number of Urban areas:",len(segment[7][0])))
     fig1 = plt.figure(dpi=100)
@@ -74,13 +75,22 @@ def urban_sprawl_from_segments(image,segment):
         circulararea=3.14*radius*radius
         print(("Approximate circular area of Urban Sprawl:", circulararea))
         print(("Contour Area of Urban Sprawl:", contourarea))
+        contourratio=float(contourarea)/float(imagearea)
+        print(("Ratio of urban sprawl contour area to image area:",contourratio))
+        urbansprawlsqkmarea=contourarea*sqkmtocontourarearatio
+        print(("Square Kilometer Area of Urban Sprawl:", urbansprawlsqkmarea))
+        population_from_area=6.22*urbansprawlsqkmarea*urbansprawlsqkmarea
+        population_from_density=population_density*urbansprawlsqkmarea
+        print(("Population of Urban Sprawl (from density):", population_from_density))
+        print(("Population of Urban Sprawl (from area):",population_from_area))
         moments=cv2.moments(segment[7][0][n])
         if moments['m00'] != 0:
             centroidx = int(moments['m10']/moments['m00'])
             centroidy = int(moments['m01']/moments['m00'])
             print(('Centroid of the Urban Sprawl:',(centroidx,centroidy)))
-        cv2.putText(img,str(cityid)+"-"+str(contourarea),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,0.3,(255,255,255),1,cv2.LINE_AA)
-        UrbanSprawlAreas.append((circulararea,contourarea,radius,circumference,cityid,convexhull))
+        if contourratio > 0.0:
+            cv2.putText(img,str(cityid),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,0.3,(255,0,0),1,cv2.LINE_AA)
+            UrbanSprawlAreas.append((circulararea,contourarea,urbansprawlsqkmarea,contourratio,radius,circumference,cityid,convexhull,population_from_density,population_from_area))
         curve = convexhull 
         xaxis = []
         yaxis = []
@@ -104,9 +114,11 @@ if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
     #seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
-    seg4=image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg")
+    #seg4=image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg")
     #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
     #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
-    urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
+    #urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
+    seg5=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg")
+    urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg",seg5,5000,266.0/854.0)
