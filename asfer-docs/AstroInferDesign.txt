@@ -17330,3 +17330,50 @@ related to all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visu
 		1174.8.4.1 In 1901 - 600000 - https://images.squarespace-cdn.com/content/v1/5c51647131d4df43a0f16f93/1549035005953-62UEYZMX3KUGQI3YM7B7/WALCITYOF1000TANKSImage71copyrightOoze01.jpg
 		1174.8.4.2 Before expansion of boundaries - 2018 - (*) 11564000 - Demographia 2021 Rankings of World Urban Sprawls - http://demographia.com/db-worldua.pdf and (*) 13,300,253 - https://en.wikipedia.org/wiki/Chennai_metropolitan_area
 		1174.8.4.3 After expansion of boundaries - 2018 - 16458272 - https://portfolio.cept.ac.in/assets/projects/visuals/2018/4656/mobile_visual_20181204181501_portfolio6.jpg
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1175. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Population Estimator from Urban Sprawl Contours - usecase study of few urban sprawls - related to 1174 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 21,22,23,24,25,26 November 2021
+-------------------------------------------------------------------------------------------------------------------------------------------- 
+1175.1 GISUrbanSprawlAnalytics.py has been updated to analyze NASA SEDAC GPW 4.11 Population Estimation 2020 imagery (revised from 2015 SEDAC GPW 4 estimates) for Southern India which has brought to light emergence of some new countermagnet urban sprawls between 2015 and 2020 (e.g Hosur UA as competitor to Bengaluru UA of almost equal area and density, Tirupur UA as countermagnet to Coimbatore UA, Amalgamation of Puducherry-Cuddalore as one huge urban sprawl of few million population).
+1175.2 SEDAC GPW 4.11 Population Count 2020 image testlogs/SEDAC_GPW4-11_PopulationEstimate2020.jpeg has been downloaded and photoshopped by GNU Image Manipulation Program (GIMP) selection editor to remove non-urban low density area pixels by selecting only high population density urban areas. Few noise pixels along periphery of Urban Areas have been erased. Edited image has been written to testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg
+1175.3 Urban sprawl contour polynomials are closed curves sparsely packed on a 2D surface and by Jordan Curve Theorem any closed curve divides a planar region into interior and exterior half-plane regions. Simply connected regions do not have holes while multiply connected regions do. Thus unequal sparse packing of urban sprawl contours (as holes) on a 2D surface of a nation is multiply-connected. 
+1175.4 As there is no algorithm for packing arbitrary closed curves on a 2D surface, Voronoi tessellation diagram is the closest approximation of each urban sprawl closed curve contour by a polygon. By Weirstrass theorem, every function can be approximated by a series summation of polynomials within a bounded error and thus every Voronoi diagram polygon approximates an urban sprawl contour polynomial:
+		|f(x) - l(x)| < epsilon
+		f(x) = Urban sprawl contour polynomial
+		l(x) = series summation of line equations for sides of Voronoi diagram polygon 
+1175.5 Earlier edited image testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg has been contour and convex-hull segmented by GISUrbanSprawlAnalytics.py and minimum enclosing circles have been drawn around them.
+1175.6 Estimating populations of Urban Areas requires conversion of Contour area to square kilometer area. Rough legend could be circumference_of_earth / length_of_GIS_imagery.
+1175.7 Function urban_sprawl_from_segments() from GISUrbanSprawlAnalytics.py has been updated to pass on average population density as argument so as to compute population by formula contour_area_in_squarekilometers * population_density. 
+1175.8 Contour area to Square kilometer area conversion has been made configurable by passing ratio of contour area to square kilometer area as argument to urban_sprawl_from_segments(), because ratio depends on image size and requires prior knowledge from a training data of contour area and its corresponding square kilometer area E.g. Ratio of contour area 854.0 and corresponding square kilometer area of 266.0 for cityid 1356 (Kumbakonam UA) in SEDAC_GPW4-11_PopulationEstimate2020_edited-contourlabelled.jpg has been used as reference heuristic multiplicand for population density of 5000 per square kilometer area. 
+1175.9 Ratio of contour area of urban sprawl to total area of GIS image (height * width) has been computed which is an alternative ranking measure for urban areas.
+1175.10 putText() has been changed for font color, size and area append has been removed for better clarity of cityid displayed. City id(s) are displayed only for urban sprawls of non-zero contour area.
+1175.11 Urban Sprawl network of southern India has undergone a metamorphosis from 2015 to 2020 based on SEDAC GPW 4.11 mapping and thus exemplifies preferential attachment in this real social network vis-a-vis virtual social networks such as Facebook and Twitter.
+1175.12 GIS References - Human settlement and Climate:
+	1175.12.1 GHSL - European union - Visual analytics - https://ghsl.jrc.ec.europa.eu/visualisation.php
+	1175.12.2 WorldPop - https://apps.worldpop.org/woprVision/
+	1175.12.3 Facebook Research HRSL - High Resolution Settlement Layer - which is the most recent addition and said to be accurate - https://research.fb.com/downloads/high-resolution-settlement-layer-hrsl/
+	1175.12.4 ECMWF CliMetLab - Python package and GIS Dataset for Global Climate analytics - https://climetlab.readthedocs.io/en/latest/
+	1175.12.5 UrbanSprawl - Python package for Urban Sprawl analytics - https://github.com/lgervasoni/urbansprawl 
+	1175.12.6 NASA SEDAC GPW 4.11 - https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download
+1175.13 It can be observed that cities of huge urban sprawls have proportionately high population density (which is the real equivalent of average degree in virtual social networks) and Urban GDP is proportional to population density:
+	estimated population = population_density * urbanarea
+	=> population_density = constant * urbanarea
+	=> estimated population = constant * (urbanarea)^2
+which can be used as an alternative heuristic estimate in the absence of population density data. This heuristic has been implemented in GISUrbanSprawlAnalytics.py for constant value 6.22 (from training data of cityid 1356 for population of 440000 and 266 square kilometer area: 6.22 = 440000 / (266)^2)
+1175.14 Following are the logs and GIS images contour and convexhull segmented by this code change:
+	testlogs/GISUrbanSprawlAnalytics.log.22November2021
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationEstimate2020_edited_FaceGraph.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationEstimate2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationEstimate2020_edited_contour_segmented.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationEstimate2020_edited_convex_hull_segmented.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationEstimate2020_edited_segmented.jpg
+	testlogs/SEDAC_GPW4-11_PopulationEstimate2020.jpeg
+	testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited-contourlabelled.jpg
+	testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg
+1175.15 Theory References:
+	1175.15.1 Theory and Problems of Complex Variables - [Murray Speigel] - Schaum Series - Page 94-97 - Jordan Curve Theorem and Connected Regions 
+	1175.15.2 Approximation by polynomials - [Burkill] - TIFR Lectures 1959 - Weirstrass Theorem - http://www.math.tifr.res.in/~publ/ln/tifr16.pdf
+1175.16 Urban Sprawl Social Network could be formalized as a 2D tensor (each vertex of a graph is a graph) where each of the urban sprawl contour of various areas are vertices and every urban sprawl vertex is a social network graph in itself with role of average degree being played by population density. Urban sprawl vertices are interconnected by transportation graph having rural areas of lesser density as intermediary vertices. Urban sprawl network 2D tensor thus has two dimensional nesting of edges and vertices:
+	1175.16.1 Intra urban sprawl social network - every urban sprawl vertex is in itself a social network having people as its vertices and population density as its average degree (average number of people who might be in contact per person per unit area e.g in a suburban public transportation network). In Cellular Automaton Graph model for spread of memes/pandemics/cybercrimes/opinions average degree per person is a multiple of 8.
+	1175.16.2 Inter urban sprawl social network - Urban sprawl vertices are connected by transportation graph among cities,towns and metropolitan agglomerations. Transportation network between urban sprawls is the lifeline of intermediary rural regions as they depend on and gravitate towards nearest urban sprawls to make a living eventually devoured by nearest urban sprawl.
+1175.17 Urban Sprawl Analytics thus automates urban planning, land usage statistics, multiple agent resource allocation(MARA) and has zero-error because of its completely algorithmic approach (bounding urban sprawls by watershed segmentation, convex hull, minimum enclosing circle, Voronoi diagram tessellation algorithms on VIIRS NightLights and other gridded population GIS imagery) with nil human intervention assuming algorithmic fairness. 
