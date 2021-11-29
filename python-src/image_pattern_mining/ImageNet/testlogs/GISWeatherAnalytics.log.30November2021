@@ -1,0 +1,100 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Chennai - Detailed status: overcast clouds
+Chennai - Wind: {'speed': 4.87, 'deg': 86, 'gust': 6.64}
+Chennai - Humidity: 84
+Chennai - Temperature: {'temp': 25.96, 'temp_max': 25.96, 'temp_min': 25.96, 'feels_like': 25.96, 'temp_kf': None}
+Chennai - Rain: {}
+Chennai - Heat index: None
+Chennai - Clouds: 100
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  0 : moderate rain
+(13.0827, 80.2707) - Humidity - Forecast - Day  0 : 79
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  0 : 1
+(13.0827, 80.2707) - Rain - Forecast - Day  0 : {'all': 19.04}
+(13.0827, 80.2707) - Temperature - Forecast - Day  0 : {'day': 300.54, 'min': 297.79, 'max': 300.73, 'night': 299.1, 'eve': 299.96, 'morn': 298.23, 'feels_like_day': 303.66, 'feels_like_night': 299.1, 'feels_like_eve': 302.56, 'feels_like_morn': 299.04}
+(13.0827, 80.2707) - Clouds - Forecast - Day  0 : 100
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  1 : moderate rain
+(13.0827, 80.2707) - Humidity - Forecast - Day  1 : 78
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  1 : 1
+(13.0827, 80.2707) - Rain - Forecast - Day  1 : {'all': 21.04}
+(13.0827, 80.2707) - Temperature - Forecast - Day  1 : {'day': 300.67, 'min': 298.42, 'max': 300.78, 'night': 298.62, 'eve': 299.95, 'morn': 298.51, 'feels_like_day': 303.84, 'feels_like_night': 299.39, 'feels_like_eve': 302.45, 'feels_like_morn': 299.35}
+(13.0827, 80.2707) - Clouds - Forecast - Day  1 : 72
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  2 : moderate rain
+(13.0827, 80.2707) - Humidity - Forecast - Day  2 : 79
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  2 : 0.87
+(13.0827, 80.2707) - Rain - Forecast - Day  2 : {'all': 16.29}
+(13.0827, 80.2707) - Temperature - Forecast - Day  2 : {'day': 299.8, 'min': 297.72, 'max': 300.77, 'night': 298.98, 'eve': 300, 'morn': 297.95, 'feels_like_day': 299.8, 'feels_like_night': 299.66, 'feels_like_eve': 302.31, 'feels_like_morn': 298.73}
+(13.0827, 80.2707) - Clouds - Forecast - Day  2 : 100
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  3 : overcast clouds
+(13.0827, 80.2707) - Humidity - Forecast - Day  3 : 66
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  3 : 0
+(13.0827, 80.2707) - Rain - Forecast - Day  3 : {}
+(13.0827, 80.2707) - Temperature - Forecast - Day  3 : {'day': 300.73, 'min': 298.11, 'max': 300.86, 'night': 298.47, 'eve': 299.29, 'morn': 298.37, 'feels_like_day': 302.59, 'feels_like_night': 299.02, 'feels_like_eve': 299.29, 'feels_like_morn': 298.93}
+(13.0827, 80.2707) - Clouds - Forecast - Day  3 : 90
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  4 : overcast clouds
+(13.0827, 80.2707) - Humidity - Forecast - Day  4 : 71
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  4 : 0.06
+(13.0827, 80.2707) - Rain - Forecast - Day  4 : {}
+(13.0827, 80.2707) - Temperature - Forecast - Day  4 : {'day': 299.48, 'min': 296.69, 'max': 300.2, 'night': 298.37, 'eve': 299.17, 'morn': 296.69, 'feels_like_day': 299.48, 'feels_like_night': 298.88, 'feels_like_eve': 299.17, 'feels_like_morn': 297.29}
+(13.0827, 80.2707) - Clouds - Forecast - Day  4 : 100
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  5 : moderate rain
+(13.0827, 80.2707) - Humidity - Forecast - Day  5 : 68
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  5 : 0.98
+(13.0827, 80.2707) - Rain - Forecast - Day  5 : {'all': 5.38}
+(13.0827, 80.2707) - Temperature - Forecast - Day  5 : {'day': 302.29, 'min': 297.21, 'max': 302.79, 'night': 299.23, 'eve': 300.59, 'morn': 297.21, 'feels_like_day': 305.81, 'feels_like_night': 299.23, 'feels_like_eve': 303.89, 'feels_like_morn': 297.92}
+(13.0827, 80.2707) - Clouds - Forecast - Day  5 : 72
+===========================================
+(13.0827, 80.2707) - Detailed status - Forecast - Day  6 : light rain
+(13.0827, 80.2707) - Humidity - Forecast - Day  6 : 70
+(13.0827, 80.2707) - Precipitation probability - Forecast - Day  6 : 0.85
+(13.0827, 80.2707) - Rain - Forecast - Day  6 : {'all': 9.02}
+(13.0827, 80.2707) - Temperature - Forecast - Day  6 : {'day': 301.37, 'min': 298.2, 'max': 301.68, 'night': 299.6, 'eve': 300.23, 'morn': 298.2, 'feels_like_day': 304.25, 'feels_like_night': 299.6, 'feels_like_eve': 302.78, 'feels_like_morn': 298.98}
+(13.0827, 80.2707) - Clouds - Forecast - Day  6 : 87
+===========================================
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+flatten (Flatten)            (None, 441)               0         
+_________________________________________________________________
+dense (Dense)                (None, 64)                28288     
+_________________________________________________________________
+dense_1 (Dense)              (None, 4)                 260       
+=================================================================
+Total params: 28,548
+Trainable params: 28,548
+Non-trainable params: 0
+_________________________________________________________________
+None
+1/1 [==============================] - ETA: 0s - loss: 0.3710 - accuracy: 1.00001/1 [==============================] - 0s 956us/step - loss: 0.3710 - accuracy: 1.0000
+HURDAT2 Hurricane Pandas Dataframe:       bassin  number  year     name  ...   lon knots category  pressure
+0         AL       1  1851  unnamed  ... -94.8  80.0        1       NaN
+1         AL       1  1851  unnamed  ... -95.4  80.0        1       NaN
+2         AL       1  1851  unnamed  ... -96.0  80.0        1       NaN
+3         AL       1  1851  unnamed  ... -96.5  80.0        1       NaN
+4         AL       1  1851  unnamed  ... -96.8  80.0        1       NaN
+...      ...     ...   ...      ...  ...   ...   ...      ...       ...
+50906     AL      16  2018    oscar  ... -19.6  55.0        1     960.0
+50907     AL      16  2018    oscar  ... -17.1  50.0        1     964.0
+50908     AL      16  2018    oscar  ... -14.5  45.0        1     968.0
+50909     AL      16  2018    oscar  ... -12.1  40.0        1     973.0
+50910     AL      16  2018    oscar  ...  -9.1  40.0        1     977.0
+
+[50911 rows x 12 columns]

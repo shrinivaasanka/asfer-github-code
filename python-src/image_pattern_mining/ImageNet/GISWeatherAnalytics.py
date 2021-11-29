@@ -55,6 +55,14 @@ import io
 import imageio
 from PIL import Image
 import codecs
+#import metview as mv
+from pyowm import OWM
+from pyowm.utils import config
+from pyowm.utils import timestamps
+from datetime import date
+import climetlab
+from tensorflow.keras.layers import Input, Dense, Flatten
+from tensorflow.keras.models import Sequential
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -62,6 +70,67 @@ def invert_image(image):
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
     invimg=cv2.bitwise_not(thresh)
     return invimg
+
+def climate_analytics(datasource,date="",time=""):
+    if datasource == "high-low":
+        highlow = climetlab.load_dataset("high-low")
+        for field, label in highlow.fields():
+            climetlab.plot_map(field, width=256, title=highlow.title(label))
+        (x_train, y_train, f_train), (x_test, y_test, f_test) = highlow.load_data(test_size=0.3, fields=True)
+        model = Sequential()
+        model.add(Input(shape=x_train[0].shape))
+        model.add(Flatten())
+        model.add(Dense(64, activation="sigmoid"))
+        model.add(Dense(4, activation="softmax"))
+        model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+        print(model.summary())
+        h = model.fit(x_train, y_train, epochs=100, verbose=0)
+        model.evaluate(x_test, y_test)
+        predicted = model.predict(x_test)
+        for p, f in zip(predicted, f_test):
+            climetlab.plot_map(f, width=256, title=highlow.title(p))
+    if datasource == "ecmwf-mars":
+        source=climetlab.load_source("mars", param=["2t", "msl"], levtype="sfc", area=[50, -50, 20, 50], grid=[1, 1], date=date)
+        for s in source:
+             climetlab.plot_map(s)
+        return source
+    if datasource == "noaa-hurricane":
+        hurricanedata = climetlab.load_dataset("hurricane-database",bassin="atlantic")
+        hurricanedf=hurricanedata.to_pandas()
+        print("HURDAT2 Hurricane Pandas Dataframe:",hurricanedf)
+        climetlab.plot_map(hurricanedf)
+        return hurricanedf
+    if datasource == "ecmwf-copernicus-era5":
+        source = climetlab.load_source("cds", "reanalysis-era5-single-levels", variable=["2t", "msl"], product_type="reanalysis", area=[50, -50, 20, 50], date=date, time=time)
+        for s in source:
+            climetlab.plot_map(s)
+        return source
+
+def weather_forecast(location=None,longitude=None,latitude=None):
+    owm = OWM('8d44d36bbc4d944fee0b5af20ea9be95')
+    mgr = owm.weather_manager()
+
+    if location is not None:
+        observation = mgr.weather_at_place(location)
+        w = observation.weather
+        print(location + " - Detailed status:",w.detailed_status)         # 'clouds'
+        print(location + " - Wind:",w.wind())                  # {'speed': 4.6, 'deg': 330}
+        print(location + " - Humidity:",w.humidity)                # 87
+        print(location + " - Temperature:",w.temperature('celsius'))  # {'temp_max': 10.5, 'temp': 9.7, 'temp_min': 9.0}
+        print(location + " - Rain:",w.rain)                    # {}
+        print(location + " - Heat index:",w.heat_index)              # None
+        print(location + " - Clouds:",w.clouds)                  # 75
+        print("===========================================")
+    else:
+        one_call = mgr.one_call(latitude, longitude)
+        for n in range(7):
+            print(str((latitude,longitude)) + " - Detailed status - Forecast - Day ",n,":",one_call.forecast_daily[n].detailed_status)
+            print(str((latitude,longitude)) + " - Humidity - Forecast - Day ",n,":",one_call.forecast_daily[n].humidity)
+            print(str((latitude,longitude)) + " - Precipitation probability - Forecast - Day ",n,":",one_call.forecast_daily[n].precipitation_probability)
+            print(str((latitude,longitude)) + " - Rain - Forecast - Day ",n,":",one_call.forecast_daily[n].rain)
+            print(str((latitude,longitude)) + " - Temperature - Forecast - Day ",n,":",one_call.forecast_daily[n].temp)
+            print(str((latitude,longitude)) + " - Clouds - Forecast - Day ",n,":",one_call.forecast_daily[n].clouds)
+            print("===========================================")
 
 def weather_GIS_analytics(image,segment,phenomenon="Cloud"):
     print(("Image:",image))
@@ -104,15 +173,21 @@ def weather_GIS_analytics(image,segment,phenomenon="Cloud"):
 
 
 if __name__ == "__main__":
+    weather_forecast("Chennai")
+    weather_forecast(longitude=80.2707,latitude=13.0827)
+    #climate_analytics("ecmwf-copernicus-era5",date="2021-11-29",time="12:00")
+    #climate_analytics("ecmwf-mars",date="2021-11-29")
+    climate_analytics("high-low")
+    climate_analytics("noaa-hurricane")
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
-    gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
-    for imgmdb in gisstream: 
-        #imgbase64 = codecs.encode(imgmdb.read(),"base64")
-        #imgstr = imgbase64.decode("utf-8")
-        imgdata = imgmdb.read()
-        #print("GIS img bytes:",imgdata)
-        pilimg = Image.open(io.BytesIO(imgdata))
-        pilimg.save("testlogs/GISAndVisualStreamNoSQLStore.jpg")
-        seg=image_segmentation("testlogs/GISAndVisualStreamNoSQLStore.jpg")
-        weather_GIS_analytics("testlogs/GISAndVisualStreamNoSQLStore.jpg",seg)
+    #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
+    #for imgmdb in gisstream: 
+    #    #imgbase64 = codecs.encode(imgmdb.read(),"base64")
+    #    #imgstr = imgbase64.decode("utf-8")
+    #    imgdata = imgmdb.read()
+    #    #print("GIS img bytes:",imgdata)
+    #    pilimg = Image.open(io.BytesIO(imgdata))
+    #    pilimg.save("testlogs/GISAndVisualStreamNoSQLStore.jpg")
+    #    seg=image_segmentation("testlogs/GISAndVisualStreamNoSQLStore.jpg")
+    #    weather_GIS_analytics("testlogs/GISAndVisualStreamNoSQLStore.jpg",seg)
