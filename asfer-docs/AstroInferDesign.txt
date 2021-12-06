@@ -17360,6 +17360,7 @@ related to all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visu
 	1175.12.5 UrbanSprawl - Python package for Urban Sprawl analytics - https://github.com/lgervasoni/urbansprawl 
 	1175.12.6 NASA SEDAC GPW 4.11 - https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download
 	1175.12.7 NASA SEDAC GPW 4.11 Population Density - https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11 - contains most recent sprawl of urban areas which are either missing from or smaller in https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/maps/services and could be more accurate e.g Chennai metro area sprawl has significantly expanded to west in SEDAC GPW 4.11 Population Density matching the NASA VIIRS NightLights minimum circle contour segmentation in 1174.8.3 - Night lights are often proportional to density.
+        1175.12.8 Urban Extents from VIIRS and MODIS for the Continental U.S. Using Machine Learning Methods, v1 (2015) - https://sedac.ciesin.columbia.edu/data/set/urbanspatial-urban-extents-viirs-modis-us-2015/maps/services - Neural network model
 1175.13 It can be observed that cities of huge urban sprawls have proportionately high population density (which is the real equivalent of average degree in virtual social networks) and Urban GDP is proportional to population density:
 	estimated population = population_density * urbanarea
 	=> population_density = constant * urbanarea
