@@ -17427,3 +17427,26 @@ on Fair division, Merit of Large Scale Visuals, Computational Geometry, Intrinsi
 1178.4 Storing large scale visuals in MongoDB GridFS is not straightforward and requires additional shape metadata. Function streaming_upload() also inserts the shape information per image and returns a tuple of image fileid, shape fileid and image name which are inturn used in streaming_download() to get the image and shape as strings. Image string is a flattened ndarray which is reshape()-d by shape information eval()-ed from shape fileid string.
 1178.5 This client for large scale visuals can be plugged into NeuronRain backend/MongoDB_DBClient.py for text data which uses find()-insert_one() pair and Streaming_AbstractGenerator.py facade optionally.
 1178.6 An example invocation of GISMongoDBGridFSStreamingClient.py uploads a contour labelled NASA SEDAC GPW 4.11 Urban Sprawl GIS image ../image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited-contourlabelled.jpg to GridFS and downloads it to testlogs/GISMongoDBGridFSStreamingClient_ExampleImage.jpeg and the logs are at testlogs/GISMongoDBGridFSStreamingClient.log.6December2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1179. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Urban Sprawl Extent from NASA SEDAC 2020 GPW 4.11 Population Density by contour, convex hull segmentation and minimum enclosing circles - related to 1174,1175 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 8 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1179.1 Estimation on Urban Sprawls of Southern India (which has since been chosen because of heavy urbanisation) from NASA SEDAC GPW 4.11 Population count 2020 imagery https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download in 1175 was based on population count which has been revised in Population density 2020 imagery https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11 to include latest urban area boundaries and new urban sprawls.
+1179.2 SEDAC GPW 4.11 Population Density 2020 image SEDAC_GPW4-11_PopulationDensity2020.jpeg has been GIMP photoshopped to remove non-urban area pixels and edited image is stored in SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg
+1179.3 SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg has been contour and convex hull segmented and minimum enclosing circles are drawn around urban sprawls.
+1179.4 Urban sprawl ranking are updated accordingly and written to logs testlogs/GISUrbanSprawlAnalytics.log.8December2021. 
+1179.5 Similar to https://sedac.ciesin.columbia.edu/data/set/urbanspatial-urban-extents-viirs-modis-us-2015/maps/services urban extent learner which uses sophisticated machine learning methods of Random forests, Gradient boost machine, Ensemble and neural networks for US cities based on NASA MODIS and VIIRS mentioned in 1175.12.8, following simple Neural network (perceptron) could be defined for learning urban sprawls based on SEDAC color coding and night lights (which is per se statistical while Urban sprawl extent estimation in NeuronRain is Computational geometric and polynomial packing based):
+	1179.5.1 For pixel value p, weight a and bias b, if a*p + b > threshold_brightness add pixel to urban area.
+1179.6 Following are the affected logs and convexhull-contour segmented image files for SEDAC GPW 4.11 Population Density 2020:
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_contour_segmented.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_convex_hull_segmented.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_segmented.jpg
+	testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+	testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg
+
+References:
+----------
+1179.7 Mapping Urban Extent at Large Spatial Scales Using Machine Learning Methods with VIIRS Nighttime Light and MODIS Daytime NDVI Data
+ - https://www.mdpi.com/2072-4292/11/10/1247/htm
