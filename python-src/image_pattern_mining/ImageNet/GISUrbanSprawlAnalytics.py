@@ -49,6 +49,29 @@ from sympy.combinatorics.partitions import Partition
 os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
+import random
+
+def draw_voronoi_tessellation(img,centroids):
+    rect = (0, 0, img.shape[1], img.shape[0])
+    print(("rect:", rect))
+    subdiv = cv2.Subdiv2D(rect)
+    print(("subdiv:", subdiv))
+    for cent in centroids:
+        print(("centroid:", cent))
+        subdiv.insert(tuple(cent))
+    triangles = subdiv.getTriangleList()
+    print(("image Delaunay triangles:", triangles))
+    facets = subdiv.getVoronoiFacetList([])
+    print(("image Voronoi Facets:", facets))
+    for n in range(len(facets)):
+        for f in facets[n]:
+            fnp=np.array(f)
+            print("facet:",fnp)
+            try:
+                #cv2.fillConvexPoly(img,fnp,(random.randint(0,255),random.randint(0,255),random.randint(0,255)),cv2.LINE_AA,0)
+                cv2.polylines(img,np.int32([fnp]),True,(0,0,0),1,cv2.LINE_AA,0)
+            except:
+                continue
 
 def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtocontourarearatio=0):
     print(("Image:",image))
@@ -58,6 +81,7 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
     print(("Number of segments - Number of Urban areas:",len(segment[7][0])))
     fig1 = plt.figure(dpi=100)
     cityid=0
+    centroids=[]
     for n in range(len(segment[7][0]) - 1):
         #print(("Urban Area:",segment[7][0][n]))
         circumference = cv2.arcLength(segment[7][0][n],True)
@@ -70,6 +94,7 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
         print(("Circumference of Urban Area:",circumference))
         (cx,cy),radius=cv2.minEnclosingCircle(segment[7][0][n])
         center=(int(cx),int(cy))
+        centroids.append(center)
         radius=int(radius)
         cv2.circle(img,center,radius,(0,255,0),2)
         circulararea=3.14*radius*radius
@@ -100,6 +125,7 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
         ax = fig1.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
         cityid += 1
+    draw_voronoi_tessellation(img,centroids)
     print("Rankings of Urban Areas - sorted contour areas:")
     print(sorted(UrbanSprawlAreas))
     plt.show()

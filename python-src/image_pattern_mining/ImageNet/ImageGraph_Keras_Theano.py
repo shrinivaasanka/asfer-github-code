@@ -400,17 +400,22 @@ def image_segmentation(imagefile):
     print(("image Voronoi Facets:", facets))
     facegraph = nx.Graph()
     prevpoint = ""
-    for facet in facets:
-        firstvertex = True
-        for point in facet:
-            if firstvertex:
-                prevpoint = str(point[0]) + "#" + str(point[1])
-                firstpoint = str(point[0]) + "#" + str(point[1])
-                firstvertex = False
-            point = str(point[0]) + "#" + str(point[1])
-            facegraph.add_edge(point, prevpoint)
-            prevpoint = point
-        facegraph.add_edge(firstpoint, prevpoint)
+    for n in range(0,len(facets)-1):
+        for facet in facets[n]:
+            for point in facet:
+                try:
+                    print("point:",point)
+                    firstvertex = True
+                    if firstvertex:
+                       prevpoint = str(point[0]) + "#" + str(point[1])
+                       firstpoint = str(point[0]) + "#" + str(point[1])
+                       firstvertex = False
+                    point = str(point[0]) + "#" + str(point[1])
+                    facegraph.add_edge(point, prevpoint)
+                    prevpoint = point
+                except:
+                    pass 
+            facegraph.add_edge(firstpoint, prevpoint)
     nx.draw_networkx(facegraph)
     plt.show()
     write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
