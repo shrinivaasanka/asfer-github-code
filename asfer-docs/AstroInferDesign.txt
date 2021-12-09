@@ -17450,3 +17450,19 @@ References:
 ----------
 1179.7 Mapping Urban Extent at Large Spatial Scales Using Machine Learning Methods with VIIRS Nighttime Light and MODIS Daytime NDVI Data
  - https://www.mdpi.com/2072-4292/11/10/1247/htm
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1180. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Voronoi Tessellation Diagram implementation engulfing urban sprawl contours - related to 1174,1175,1179 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 9 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1180.1 GISUrbanSprawlAnalytics.py has been updated to implement function draw_voronoi_tessellation() to draw Voronoi polygons surrounding contour polynomials of urban sprawl extents thus approximating them by a polygonal packing of 2D surface.
+1180.2 Facets from Voronoi 2D planar subdivision are enumerated and polygons are drawn by OpenCV2 polylines().
+1180.3 Centroid of each polygon in tessellation is the centre of minimum enclosing circle around the urban sprawl contour polynomials. 
+1180.4 Voronoi diagram has been written as a layer on SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg.
+1180.5 Big urban areas are covered by multiple Voronoi polygons. Asymmetry in areas of the polygons is a measure of skewed development and every polygon is a mix of urban area and rural hinterland depending on it as nearest economic fulcrum for livelihood.
+1180.6 Sustainable urban development therefore is to strive for almost equally sized Voronoi polygons. Area of Voronoi polygon around an urban contour is thus susceptible to expansion and future urbanization.
+1180.7 python-src/image_pattern_mining/ImageNet/ImageGraph_Keras_Theano.py has been changed to revamp the for loops adding edges to facegraph of Voronoi tessellation 2D subdivision.
+1180.8 Logs and contour-convexhull segmented images for this update:
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	python-src/image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.9December2021
