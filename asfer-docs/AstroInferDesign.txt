@@ -17467,3 +17467,13 @@ References:
 	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
 	python-src/image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
 	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.9December2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1181. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Correction to FaceGraph Plot - Dual of Voronoi Diagram - Centrality Measures of Urban Sprawl Facegraph - related to 1180 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 10 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1181.1 ImageGraph_Keras_Theano.py has been updated to change the way facegraph is plotted - instead of centroids from cv2.connectedComponentsWithStatsWithAlgorithm(), centroids of the contours are now being used for plotting the facegraph which is the dual of Voronoi Diagram ensconcing the contour polynomials. Contour centroids are comprehensive and numerous compared to cv2.connectedComponentsWithStatsWithAlgorithm() and must be more suitable for urban sprawl analytics. 
+1181.2 GISUrbanSprawlAnalytics.py has been executed for this enhancement to compute a detailed facegraph of urban area contours and its Degree,Betweenness,Closeness and PageRank centrality measures for urban vertices which are essential ranking metrics.
+1181.3 Following are the affected logs, Facegraph DOT and JPEG image files for this change:
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/GISUrbanSprawlAnalytics.log.10December2021
