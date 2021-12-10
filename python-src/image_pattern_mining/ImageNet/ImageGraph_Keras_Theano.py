@@ -391,7 +391,11 @@ def image_segmentation(imagefile):
     print(("rect:", rect))
     subdiv = cv2.Subdiv2D(rect)
     print(("subdiv:", subdiv))
-    for cent in centroids:
+    contourcentroids=[]
+    for n in range(len(contours[0])-1): 
+        (cx,cy),radius=cv2.minEnclosingCircle(contours[0][n])
+        contourcentroids.append((int(cx),int(cy)))
+    for cent in contourcentroids:
         print(("centroid:", cent))
         subdiv.insert(tuple(cent))
     triangles = subdiv.getTriangleList()
@@ -419,7 +423,7 @@ def image_segmentation(imagefile):
     nx.draw_networkx(facegraph)
     plt.show()
     write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
-    return (ret, markers, labels, stats, centroids, facets, triangles, contours)
+    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph)
 
 
 def random_forest_image_classification(

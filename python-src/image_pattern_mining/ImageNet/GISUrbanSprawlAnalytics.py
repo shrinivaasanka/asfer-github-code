@@ -133,6 +133,11 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
     imagetok2=imagetok1[0].split("/")
     cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
+    facegraph=segment[8] 
+    print("Betweenness centrality of urban sprawl facegraph:",nx.betweenness_centrality(facegraph))
+    print("Degree centrality of urban sprawl facegraph:",nx.degree_centrality(facegraph))
+    print("Closeness centrality of urban sprawl facegraph:",nx.closeness_centrality(facegraph))
+    print("PageRank of urban sprawl facegraph:",nx.pagerank(facegraph))
     return (UrbanSprawlAreas)
 
 
