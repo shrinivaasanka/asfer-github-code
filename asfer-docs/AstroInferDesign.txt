@@ -17477,3 +17477,14 @@ References:
 	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
 	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
 	testlogs/GISUrbanSprawlAnalytics.log.10December2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1182. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Delaunay Triangulation plot - related to 1181 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Aerial transportation graph for Drone navigation, Autonomous Online Shopping Delivery and Drone Electronic Voting Machine, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 12 December 2021
+--------------------------------------------------------------------------------------------------------------------------------------------- 
+1182.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been changed to define Function draw_delaunay_triangulation() to add Delaunay triangulation plot in testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+1182.2 Delaunay triangulation is the dual of Voronoi diagram and quite crucial urban sprawl analytics tool as it approximates transportation graph (aerial and surface) between prominent urban contour centroids and thus could be a Hamiltonian (traverse each vertex once) or Eulerian circuit (traverse each edge once - https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.eulerian_circuit.html#networkx.algorithms.euler.eulerian_circuit) estimator tool for autonomous drone delivery of services (Drone EVM, Drone online shopping delivery) so as to visit each edge connecting cities or each city vertex once.
+1182.3 Delaunay triangulation plot has been added as layer to testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg by 8-connected lines of cv2.line() while Voronoi diagram has been plotted by antialiased cv2.line().
+1182.4 Logs and affected image files for this update are: 
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	python-src/image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.12December2021
