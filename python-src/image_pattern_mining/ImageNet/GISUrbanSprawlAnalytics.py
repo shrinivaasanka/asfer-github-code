@@ -51,6 +51,15 @@ from ImageGraph_Keras_Theano import image_segmentation
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 import random
 
+def draw_delaunay_triangulation(img,triangles):
+    for triangle in triangles:
+        point1 = (triangle[0], triangle[1])
+        point2 = (triangle[2], triangle[3])
+        point3 = (triangle[4], triangle[5])
+        cv2.line(img, point1, point2, (0,255,0), 1, cv2.LINE_8,0)
+        cv2.line(img, point2, point3, (0,255,0), 1, cv2.LINE_8,0)
+        cv2.line(img, point3, point1, (0,255,0), 1, cv2.LINE_8,0)
+
 def draw_voronoi_tessellation(img,centroids):
     rect = (0, 0, img.shape[1], img.shape[0])
     print(("rect:", rect))
@@ -126,6 +135,7 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
         ax.plot(xaxis, yaxis, rasterized=True)
         cityid += 1
     draw_voronoi_tessellation(img,centroids)
+    draw_delaunay_triangulation(img,segment[6])
     print("Rankings of Urban Areas - sorted contour areas:")
     print(sorted(UrbanSprawlAreas))
     plt.show()
