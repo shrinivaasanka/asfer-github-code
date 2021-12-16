@@ -17493,3 +17493,34 @@ References:
 ----------
 1182.5 Mapping Urban Land Cover: A Novel Machine Learning Approach Using Landsat and Nighttime Lights - Hexagonal Tessellation of India, USA and Mexico - https://gps.ucsd.edu/_files/faculty/hanson/hanson_research_RSOE_021517.pdf
 1182.6 Building(s and) cities: Delineating urban areas with a machine learning algorithm - DBSCAN clustering - https://www.sciencedirect.com/science/article/pii/S0094119019300944 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1183. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Distance similarity of Voronoi Tessellations and Measuring Urban Expansion - related to 1182 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Machine Learning models of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of  diffusion of opinions/memes/cybercrimes/pandemics, Community Detection in Social Networks, Multiple Agent Resource Allocation, Earth Mover Distance, Graph Edit Distance - 16 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1183.1 Average Degree of Transportation graph vertices or its approximation by Delaunay triangulation increases with the economic importance and urban expanse of a city sprawl contour - Centroids of Large urban area contours have high transport connectivity and high degree.
+1183.2 Urban sprawl expansion is quantifiable by distance between two Voronoi tessellations of geospatial imagery at two time points separated by some duration.
+1183.3 Voronoi tessellations at two time points differ when new urban area contours (and Voronoi polygons containing them) emerge and existing urban area contours (and Voronoi polygons containing them) expand.
+1183.4 Voronoi tessellation is a visual clustering algorithm (each polygon is a cluster) and Earth mover distance (EMD) can measure distance between Voronoi tessellation clusters of two GIS images separated by time interval which is directly proportional to expansion of urban sprawls.
+1183.5 While EMD between two Voronoi tessellation clustering would consider the area of each Voronoi polygon, Graph edit distance between two Voronoi facegraphs would estimate newly added edges and vertices and cannot account for change in area of each face.
+1183.6 As against Square and Hexagonal tessellated cellular automata grids which respectively are of 8 and 6 neighbours, Voronoi facegraph allows faces of arbitrary number of neighbours.
+1183.7 Spread of memes/fads/opinions/pandemic in a social network of urban sprawls could be better simulated on their Voronoi facegraphs than Cellular automaton graph which is of average degree 8 or multiples of it.
+1183.8 GISUrbanSprawlAnalytics.py has been updated to compute Approximate Graph Edit Distance (NetworkX implementation) between Voronoi facegraphs of two NASA VIIRS Nighttime Lights images of India (2012 and 2016) separated by 4 years but commented because of slow approximation of GED. Exact Graph Edit Distance wrapper in NeuronRain (GraphEditDistance() - GraphMining_GSpan.py) is NP-Hard and slower for huge graphs which is as well commented. Both Voronoi Facegraph and its dual Delaunay triangulation graph have been overlaid and plotted to NightLights_13nasa-india-2012-contourlabelled.jpg and NightLights_13nasa-india-2016-contourlabelled.jpg
+1183.9 As a stopgap and timesaving alternative to costly Graph Edit Distance similarity of facegraphs, community structure of 2 facegraphs (how clustered urban sprawls are) is detected by modularity matrix of all vertices and Wasserstein Earth mover distance of modularity between two urban sprawl facegraphs is computed as distance similarity or growth of urban sprawl communities over a period of time. Infact, Modularity captures the notion of communities better than Graph Edit Distance.
+1183.10 Community structure distance - increase in modularity between 2012 and 2016 NASA VIIRS imagery is printed to logs testlogs/GISUrbanSprawlAnalytics.log.15December2021 - excerpts:
+	Increase in Community structure - Wasserstein EMD of modularity: 0.0006727360452344568
+1183.11 Following are the affected logs and contour-convexhull segmented images for NASA VIIRS 2012 and 2016 images:
+	testlogs/NightLights_13nasa-india-2012-contourlabelled.jpg
+	testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/GISUrbanSprawlAnalytics.log.15December2021
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_convex_hull_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hull_segmented.jpg
+
+References:
+----------
+1183.12  [Zeina Abu-Aisheh, Romain Raveaux, Jean-Yves Ramel, Patrick  Martineau] - An Exact Graph Edit Distance Algorithm for Solving Pattern Recognition Problems. 4th International Conference on Pattern Recognition Applications and Methods 2015, Jan 2015,Lisbon, Portugal. 2015, https://hal.archives-ouvertes.fr/hal-01168816
