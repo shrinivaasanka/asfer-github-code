@@ -50,6 +50,8 @@ os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 import random
+from GraphMining_GSpan import GSpan
+from scipy.stats import wasserstein_distance 
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
@@ -163,5 +165,24 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
     #seg5=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg")
     #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg",seg5,5000,266.0/854.0)
-    seg6=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg")
-    urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg",seg6,5000,266.0/854.0)
+    #seg6=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg")
+    #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg",seg6,5000,266.0/854.0)
+    seg7=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg7,5000,266.0/854.0)
+    seg8=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
+    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg8,5000,266.0/854.0)
+    modularityseg7=nx.modularity_matrix(seg7[8])
+    modularityseg8=nx.modularity_matrix(seg8[8])
+    modularityseg7=modularityseg7.flatten().tolist()
+    modularityseg8=modularityseg8.flatten().tolist()
+    modemd=wasserstein_distance(modularityseg7[0],modularityseg8[0])
+    print("Increase in Community structure - Wasserstein EMD of modularity:",modemd)
+    #minged=10000000000000000
+    #iteration=0
+    #for ged in nx.optimize_graph_edit_distance(seg7[8],seg8[8]):
+    #    if ged < minged:
+    #        minged=ged
+    #        print("Optimized Graph edit distance - iteration ",iteration,":",minged)
+    #        iteration+=1
+    #graphmining=GSpan([])
+    #graphmining.GraphEditDistance(seg7[8],seg8[8])
