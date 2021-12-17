@@ -52,6 +52,8 @@ from ImageGraph_Keras_Theano import histogram_partition_distance_similarity
 import random
 from GraphMining_GSpan import GSpan
 from scipy.stats import wasserstein_distance 
+from shapely.geometry import Polygon
+from scipy import stats
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
@@ -93,12 +95,27 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
     fig1 = plt.figure(dpi=100)
     cityid=0
     centroids=[]
+    voronoifacets=segment[5]
+    voronoifacetareas=[]
+    contourareas=[]
+    #print("voronoi facets:",voronoifacets)
+    for n in range(len(voronoifacets)-1):
+        for facet in voronoifacets[n]:
+            polygon=[]
+            for point in facet:
+               #print("facet point:",point)
+               polygon.append(tuple(point.tolist()))
+            print(("Voronoi Facet (containing the urban sprawl) polygon:",polygon))
+            voronoifacet = Polygon(polygon)
+            print(("Voronoi Facet (containing the urban sprawl) Area:",voronoifacet.area))
+            voronoifacetareas.append(voronoifacet.area)
     for n in range(len(segment[7][0]) - 1):
         #print(("Urban Area:",segment[7][0][n]))
         circumference = cv2.arcLength(segment[7][0][n],True)
         convexhull = cv2.convexHull(segment[7][0][n])
         #convexhull = ConvexHull(segment[7][0][n])
         contourarea = cv2.contourArea(segment[7][0][n])
+        contourareas.append(contourarea)
         cv2.drawContours(img,segment[7][0][n],-1,(0,255,0),2)
         x,y,w,h = cv2.boundingRect(segment[7][0][n])
         print(("Convex Hull of Urban Area:" , convexhull))
@@ -146,6 +163,11 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
     cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
     facegraph=segment[8] 
+    print("Number of Vororoi Facets:",len(voronoifacetareas))
+    print("Number of Contours:",len(contourareas))
+    minsize=min(len(contourareas),len(voronoifacetareas))
+    tau,pvalue = stats.kendalltau(sorted(contourareas[:minsize]),sorted(voronoifacetareas[:minsize]))
+    print("(Correlation,PValue) between Contour areas and Voronoi polygon areas of Urban sprawls:",(tau,pvalue))
     print("Betweenness centrality of urban sprawl facegraph:",nx.betweenness_centrality(facegraph))
     print("Degree centrality of urban sprawl facegraph:",nx.degree_centrality(facegraph))
     print("Closeness centrality of urban sprawl facegraph:",nx.closeness_centrality(facegraph))
