@@ -17281,6 +17281,7 @@ Logit4: Total GDP Growth = a1*𝛽1*CreditGrowth + a1*𝛽2*ElectricityGrowth + 
 	1172.10.1 NOAA CPC Joint Agriculture Weather Facility - https://www.cpc.ncep.noaa.gov/products/JAWF_Monitoring/India/index.shtml - 2 weeks red-orange-yellow-green alert forecast
 	1172.10.2 https://www.windy.com/-Satellite-satellite?satellite,20.448,79.387,5 - Color satellite imagery and lot of layers for cloud,wind,rain,waves,air quality each of which could be a Drone obstacle avoidance parameter
 	1172.10.2 IMD - INSAT - https://mausam.imd.gov.in/imd_latest/contents/satellite.php - monochromatic weather satellite imagery
+1172.11 Voronoi Tessellations and Their Application to Climate and Global Modeling - Centroidal Voronoi Tessellation - Centroids and Generators of cells coincide  - https://www.osti.gov/servlets/purl/1090872
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1173. (THEORY and FEATURE) Large Scale Visuals Streaming NoSQL Datastore (MongoDB-GridFS) support in Streaming_AbstractGenerator Facade - related to 1 and all sections on BigData NoSQL backend, Streaming analytics, Merit of Large Scale Visuals, Compressed Sensing, GIS Urban Planning Analytics, GIS Weather Analytics, Drone Imagery Analytics, Online shopping delivery, Obstacle avoidance - 15 November 2021
@@ -17361,6 +17362,7 @@ related to all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visu
 	1175.12.6 NASA SEDAC GPW 4.11 - https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/data-download
 	1175.12.7 NASA SEDAC GPW 4.11 Population Density - https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11 - contains most recent sprawl of urban areas which are either missing from or smaller in https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-count-rev11/maps/services and could be more accurate e.g Chennai metro area sprawl has significantly expanded to west in SEDAC GPW 4.11 Population Density matching the NASA VIIRS NightLights minimum circle contour segmentation in 1174.8.3 - Night lights are often proportional to density.
         1175.12.8 Urban Extents from VIIRS and MODIS for the Continental U.S. Using Machine Learning Methods, v1 (2015) - https://sedac.ciesin.columbia.edu/data/set/urbanspatial-urban-extents-viirs-modis-us-2015/maps/services - Neural network model
+	1175.12.9 GMIS and HBASE - https://sedac.ciesin.columbia.edu/mapping/gmis-hbase/explore-view/#
 1175.13 It can be observed that cities of huge urban sprawls have proportionately high population density (which is the real equivalent of average degree in virtual social networks) and Urban GDP is proportional to population density:
 	estimated population = population_density * urbanarea
 	=> population_density = constant * urbanarea
@@ -17450,3 +17452,101 @@ References:
 ----------
 1179.7 Mapping Urban Extent at Large Spatial Scales Using Machine Learning Methods with VIIRS Nighttime Light and MODIS Daytime NDVI Data
  - https://www.mdpi.com/2072-4292/11/10/1247/htm
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1180. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Voronoi Tessellation Diagram implementation engulfing urban sprawl contours - related to 1174,1175,1179 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 9 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1180.1 GISUrbanSprawlAnalytics.py has been updated to implement function draw_voronoi_tessellation() to draw Voronoi polygons surrounding contour polynomials of urban sprawl extents thus approximating them by a polygonal packing of 2D surface.
+1180.2 Facets from Voronoi 2D planar subdivision are enumerated and polygons are drawn by OpenCV2 polylines().
+1180.3 Centroid of each polygon in tessellation is the centre of minimum enclosing circle around the urban sprawl contour polynomials. 
+1180.4 Voronoi diagram has been written as a layer on SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg.
+1180.5 Big urban areas are covered by multiple Voronoi polygons. Asymmetry in areas of the polygons is a measure of skewed development and every polygon is a mix of urban area and rural hinterland depending on it as nearest economic fulcrum for livelihood.
+1180.6 Sustainable urban development therefore is to strive for almost equally sized Voronoi polygons. Area of Voronoi polygon around an urban contour is thus susceptible to expansion and future urbanization.
+1180.7 python-src/image_pattern_mining/ImageNet/ImageGraph_Keras_Theano.py has been changed to revamp the for loops adding edges to facegraph of Voronoi tessellation 2D subdivision.
+1180.8 Logs and contour-convexhull segmented images for this update:
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	python-src/image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.9December2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1181. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Correction to FaceGraph Plot - Centrality Measures of Urban Sprawl Facegraph - related to 1180 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 10 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1181.1 ImageGraph_Keras_Theano.py has been updated to change the way facegraph is plotted - instead of centroids from cv2.connectedComponentsWithStatsWithAlgorithm(), centroids of the contours are now being used for plotting the facegraph ensconcing the contour polynomials. Contour centroids are comprehensive and numerous compared to cv2.connectedComponentsWithStatsWithAlgorithm() and must be more suitable for urban sprawl analytics. 
+1181.2 GISUrbanSprawlAnalytics.py has been executed for this enhancement to compute a detailed facegraph of urban area contours and its Degree,Betweenness,Closeness and PageRank centrality measures for urban vertices which are essential ranking metrics.
+1181.3 Following are the affected logs, Facegraph DOT and JPEG image files for this change:
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/GISUrbanSprawlAnalytics.log.10December2021
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1182. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Delaunay Triangulation plot - related to 1181 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Neural Network Model of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Aerial transportation graph for Drone navigation, Autonomous Online Shopping Delivery and Drone Electronic Voting Machine, Cellular Automaton Graph model of diffusion of opinions/memes/cybercrimes/pandemics, Multiple Agent Resource Allocation - 12 December 2021
+--------------------------------------------------------------------------------------------------------------------------------------------- 
+1182.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been changed to define Function draw_delaunay_triangulation() to add Delaunay triangulation plot in testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+1182.2 Delaunay triangulation is the dual of Voronoi diagram and quite crucial urban sprawl analytics tool as it approximates transportation graph (aerial and surface) between prominent urban contour centroids and thus could be a Hamiltonian (traverse each vertex once) or Eulerian circuit (traverse each edge once - https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.euler.eulerian_circuit.html#networkx.algorithms.euler.eulerian_circuit) estimator tool for autonomous drone delivery of services (Drone EVM, Drone online shopping delivery) so as to visit each edge connecting cities or each city vertex once.
+1182.3 Delaunay triangulation plot has been added as layer to testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg by 8-connected lines of cv2.line() while Voronoi diagram has been plotted by antialiased cv2.line().
+1182.4 Logs and affected image files for this update are: 
+	python-src/image_pattern_mining/ImageNet/testlogs/RemoteSensingGIS/SEDAC_GPW4-11_PopulationDensity2020_edited_FaceGraph.jpeg
+	python-src/image_pattern_mining/ImageNet/testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited-contourlabelled.jpg
+	python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.12December2021
+
+References:
+----------
+1182.5 Mapping Urban Land Cover: A Novel Machine Learning Approach Using Landsat and Nighttime Lights - Hexagonal Tessellation of India, USA and Mexico - https://gps.ucsd.edu/_files/faculty/hanson/hanson_research_RSOE_021517.pdf
+1182.6 Building(s and) cities: Delineating urban areas with a machine learning algorithm - DBSCAN clustering - https://www.sciencedirect.com/science/article/pii/S0094119019300944 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1183. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Distance similarity of Voronoi Tessellations and Measuring Urban Expansion - related to 1182 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker and SEDAC GPW4 Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Machine Learning models of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of  diffusion of opinions/memes/cybercrimes/pandemics, Community Detection in Social Networks, Multiple Agent Resource Allocation, Earth Mover Distance, Graph Edit Distance - 16 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1183.1 Average Degree of Transportation graph vertices or its approximation by Delaunay triangulation increases with the economic importance and urban expanse of a city sprawl contour - Centroids of Large urban area contours have high transport connectivity and high degree.
+1183.2 Urban sprawl expansion is quantifiable by distance between two Voronoi tessellations of geospatial imagery at two time points separated by some duration.
+1183.3 Voronoi tessellations at two time points differ when new urban area contours (and Voronoi polygons containing them) emerge and existing urban area contours (and Voronoi polygons containing them) expand.
+1183.4 Voronoi tessellation is a visual clustering algorithm (each polygon is a cluster) and Earth mover distance (EMD) can measure distance between Voronoi tessellation clusters of two GIS images separated by time interval which is directly proportional to expansion of urban sprawls.
+1183.5 While EMD between two Voronoi tessellation clustering would consider the area of each Voronoi polygon, Graph edit distance between two Voronoi facegraphs would estimate newly added edges and vertices and cannot account for change in area of each face.
+1183.6 As against Square and Hexagonal tessellated cellular automata grids which respectively are of 8 and 6 neighbours, Voronoi facegraph allows faces of arbitrary number of neighbours.
+1183.7 Spread of memes/fads/opinions/pandemic in a social network of urban sprawls could be better simulated on their Voronoi facegraphs than Cellular automaton graph which is of average degree 8 or multiples of it.
+1183.8 GISUrbanSprawlAnalytics.py has been updated to compute Approximate Graph Edit Distance (NetworkX implementation) between Voronoi facegraphs of two NASA VIIRS Nighttime Lights images of India (2012 and 2016) separated by 4 years but commented because of slow approximation of GED. Exact Graph Edit Distance wrapper in NeuronRain (GraphEditDistance() - GraphMining_GSpan.py) is NP-Hard and slower for huge graphs which is as well commented. Both Voronoi Facegraph and its dual Delaunay triangulation graph have been overlaid and plotted to NightLights_13nasa-india-2012-contourlabelled.jpg and NightLights_13nasa-india-2016-contourlabelled.jpg
+1183.9 As a stopgap and timesaving alternative to costly Graph Edit Distance similarity of facegraphs, community structure of 2 facegraphs (how clustered urban sprawls are) is detected by modularity matrix of all vertices and Wasserstein Earth mover distance of modularity between two urban sprawl facegraphs is computed as distance similarity or growth of urban sprawl communities over a period of time. Infact, Modularity captures the notion of communities better than Graph Edit Distance.
+1183.10 Community structure distance - increase in modularity between 2012 and 2016 NASA VIIRS imagery is printed to logs testlogs/GISUrbanSprawlAnalytics.log.15December2021 - excerpts:
+	Increase in Community structure - Wasserstein EMD of modularity: 0.0006727360452344568
+1183.11 Following are the affected logs and contour-convexhull segmented images for NASA VIIRS 2012 and 2016 images:
+	testlogs/NightLights_13nasa-india-2012-contourlabelled.jpg
+	testlogs/NightLights_13nasa-india-2016-contourlabelled.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/GISUrbanSprawlAnalytics.log.15December2021
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_convex_hull_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hull_segmented.jpg
+
+References:
+----------
+1183.12  [Zeina Abu-Aisheh, Romain Raveaux, Jean-Yves Ramel, Patrick  Martineau] - An Exact Graph Edit Distance Algorithm for Solving Pattern Recognition Problems. 4th International Conference on Pattern Recognition Applications and Methods 2015, Jan 2015,Lisbon, Portugal. 2015, https://hal.archives-ouvertes.fr/hal-01168816
+1183.13 Multiple articles on Community detection in various types of social networks - https://www.sciencedirect.com/topics/computer-science/community-detection#:~:text=Community%20detection%2C%20also%20called%20graph,Lancichinetti%20and%20Fortunato%2C%202009).
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1184. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Computation of Urbanization Correlation from Voronoi Polygons and Urban Sprawl Contours - related to 1183 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Computational Geometry, Intrinsic Merit Rankings, R Ricker, NASA Suomi NPP VIIRS and SEDAC GPW4 imagery Convex Hull Population Estimations, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing (Sparse), Polygonal packing (Close), Computational Geometry, Four color theorem, Economic Merit, Computational Economics, Machine Learning models of Urban Extent, Approximation of functions by polynomials, Weirstrass Theorem, Jordan Curve Theorem, Cellular Automaton Graph model of  diffusion of opinions/memes/cybercrimes/pandemics, Community Detection in Social Networks, Multiple Agent Resource Allocation, Earth Mover Distance, Graph Edit Distance - 17 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1184.1 Ratio of Voronoi Tessellation Polygon area to the Urban sprawl contour polynomial area contained in polygon is an estimate of Rural-Urban Land use and disparity.
+1184.2 Area of Voronoi Facet Polygon combines Rural and Urban sprawls (Close polygonal packing - as Voronoi Tessellation is a partition of total surface area) while Area of Contour is specific to more populous urban sprawl subset (Sparse polynomial packing) of the outer Voronoi polygon.
+1184.3 GISUrbanSprawlAnalytics.py has been updated to compute area of each of the Voronoi Tessellation Facet polygon by Shapely Polygon() and Correlation-PValue of the sorted arrays of Voronoi polygon areas and Contour polynomial areas of urban sprawls is found by Kendall-Tau Correlation Coefficient and there are some striking facts emerging from it.
+1184.4 Following are excepts of logs from testlogs/GISUrbanSprawlAnalytics.log.17December2021 Correlation-PValues of sorted arrays of Areas for VoronoiFacets-Contours of NASA VIIRS India Urban Sprawls from NightLights 2012 and 2016:
+	1184.4.1 VIIRS NightLights 2012 - (Correlation,PValue) between Contour areas and Voronoi polygon areas of Urban sprawls: (0.9089575693287888, 4.4992471056554334e-294) implying 90% correlation between areas of Voronoi polygons (Rural+Urban) and Contours (Urban)
+	1184.4.2 VIIRS NightLights 2016 - (Correlation,PValue) between Contour areas and Voronoi polygon areas of Urban sprawls: (0.8049119202576946, 0.0) implying 80% correlation between areas of Voronoi polygons (Rural+Urban) and Contours (Urban)
+1184.5 Downward trend of correlation from 90% to 80% (2012 to 2016) perhaps is an indicator of rising disparity between areas of Voronoi polygons (Rural + Urban) and Contours (Urban) contained in them or there is a growing mismatch between Urban sprawls and Rural areas. Previous deduction is just one angle of interpreting the anamoly while there could be many. Number of India urban sprawl contours have doubled from 834 in 2012 to 1912 in 2016 creating new Voronoi Facets which could have caused the decline in correlation. Some urban sprawls could have expanded faster than others occupying more space within outer Voronoi polygons making inroads into rural suburbs skewing the correlation.
+1184.6 Following are contour-convexhull segmented images and logs affected:
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2012_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/NightLights_13nasa-india-2016_convex_hull_segmented.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.17December2021
+1184.7 Urban sprawl contours and Voronoi polygon facets containing them could be a variant of Hub-Spokes model - Every urban sprawl contour is a Hub and its periperal rural regions within Voronoi polygon are spokes depending on and connected to urban hub contour centroid. Hub-spokes together constitute a community.
+
+References:
+----------
+1184.8 Shoelace Formula and Green Theorem - https://en.wikipedia.org/wiki/Shoelace_formula - Calculating area of polygon
+1184.9 HITS algorithm - Hubs,Authorities and Communities - [Kleinberg] - http://cs.brown.edu/memex/ACM_HypertextTestbed/papers/10.html
