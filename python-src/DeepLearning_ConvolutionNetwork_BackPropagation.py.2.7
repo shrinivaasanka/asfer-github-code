@@ -11,10 +11,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # --------------------------------------------------------------------------------------------------------
-# K.Srinivasan
-# NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
-# Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
-# --------------------------------------------------------------------------------------------------------
+# Copyleft (Copyright+):
+# Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+# Ph: 9791499106, 9003082186
+# Krishna iResearch Open Source Products Profiles:
+# http://sourceforge.net/users/ka_shrinivaasan,
+# https://github.com/shrinivaasanka,
+# https://www.openhub.net/accounts/ka_shrinivaasan
+# Personal website(research): https://sites.google.com/site/kuja27/
+# emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+# kashrinivaasan@live.com
+# -----------------------------------------------------------------------------------------------------------------------------------
 
 ############################################################################################################################
 # Convolution Networks for Deep Learning:
@@ -35,18 +42,16 @@
 
 import math
 from PIL import Image
-import numpy as np
+import numpy
 import pprint
 import random
-import DeepLearning_BackPropagation
+from . import DeepLearning_BackPropagation
 import ImageToBitMatrix
 import cv2
 from scipy.spatial.distance import directed_hausdorff
 import matplotlib.pylab as plt
 from matplotlib.backends.backend_pdf import PdfPages
 from scipy.interpolate import splprep, splev
-import networkx as nx
-from networkx.drawing.nx_pydot import write_dot
 
 TopologicalRecognition = True
 
@@ -84,82 +89,23 @@ def draw_voronoi_tessellation(img, centroids):
             except:
                 continue
 
-def face_recognition_image_segmentation_contours(imagefile1):
-    img1 = cv2.imread(imagefile1, 0)
+
+def face_recognition(imagefile):
+    img = cv2.imread(imagefile, 0)
     ret, thresh1 = cv2.threshold(
-        img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
-    contours1, hierarchy1 = cv2.findContours(
+        img, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+    contours, hierarchy = cv2.findContours(
         thresh1, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    print("contours:",contours1)
-    #contours1=cv2.findContours(thresh1,1,2)
-    epsilon1 = 0.1*cv2.arcLength(contours1[0], True)
-    # epsilon1=0.2
-    approx1 = cv2.approxPolyDP(contours1[0], epsilon1, True)
-    contour1polys = []
-    fig1 = plt.figure(dpi=100)
-    for cont in contours1:
-        xaxis = []
-        yaxis = []
-        curve = cont
-        for point in curve:
-            xaxis.append(point[0][0])
-            yaxis.append(point[0][1])
-        ax = fig1.add_subplot(111)
-        ax.plot(xaxis, yaxis, rasterized=True)
-        points = np.stack((xaxis, yaxis), axis=-1)
-        #print("points:",points.shape[0])
-        try:
-            if points.shape[0] > 3:
-                contour1polys.append(splprep(points.T, k=points.shape[0]-1))
-        except Exception as e:
-            continue
-    plt.show()
-    print(("contour1polys:", contour1polys))
-    return (contours1,contour1polys)
-
-
-def face_recognition_image_segmentation(imagefile):
-    contours = face_recognition_image_segmentation_contours(imagefile)
-    img = cv2.imread(imagefile)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    ret, thresh = cv2.threshold(
-        gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    kernel = np.ones((3, 3), np.uint8)
-    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)
-    sure_bg = cv2.dilate(opening, kernel, iterations=3)
-    dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 5)
-    ret, sure_fg = cv2.threshold(
-        dist_transform, 0.7 * dist_transform.max(), 255, 0)
-    sure_fg = np.uint8(sure_fg)
-    unknown = cv2.subtract(sure_bg, sure_fg)
-    ret, markers = cv2.connectedComponents(sure_fg, connectivity=8)
-    ret, labels, stats, centroids = cv2.connectedComponentsWithStatsWithAlgorithm(
-        sure_fg, connectivity=8, ltype=2, ccltype=cv2.CCL_GRANA)
-    print(("image connected components - ret:", ret))
-    print(("image connected components - labels:", labels))
-    print(("image connected components - stats:", stats))
-    print(("image connected components - centroids:", centroids))
-    markers += 1
-    markers[unknown == 255] = 0
-    markers = cv2.watershed(img, markers)
-    img[markers == -1] = [255, 0, 0]
-    print(("image connected components - markers:", markers))
-    imagefiletoks1 = imagefile.split(".")
-    imagefiletoks2 = imagefiletoks1[0].split("/")
-    cv2.imwrite(
-        "testlogs/" +
-        imagefiletoks2[len(imagefiletoks2)-1] +
-        "_segmented.jpg",
-        img)
-    imgdual = cv2.imread(imagefile)
-    rect = (0, 0, imgdual.shape[1], imgdual.shape[0])
+    epsilon = 0.1*cv2.arcLength(contours[0], True)
+    approx = cv2.approxPolyDP(contours[0], epsilon, True)
+    rect = (0, 0, img.shape[1], img.shape[0])
     print(("rect:", rect))
     subdiv = cv2.Subdiv2D(rect)
     print(("subdiv:", subdiv))
-    contourcentroids=[]
-    for n in range(len(contours[0])-1): 
-        (cx,cy),radius=cv2.minEnclosingCircle(contours[0][n])
-        contourcentroids.append((int(cx),int(cy)))
+    contourcentroids = []
+    for n in range(len(contours[0])-1):
+        (cx, cy), radius = cv2.minEnclosingCircle(contours[0][n])
+        contourcentroids.append((int(cx), int(cy)))
     for cent in contourcentroids:
         print(("centroid:", cent))
         subdiv.insert(tuple(cent))
@@ -169,31 +115,31 @@ def face_recognition_image_segmentation(imagefile):
     print(("image Voronoi Facets:", facets))
     facegraph = nx.Graph()
     prevpoint = ""
-    for n in range(0,len(facets)-1):
+    for n in range(0, len(facets)-1):
         for facet in facets[n]:
             for point in facet:
                 try:
-                    print("point:",point)
+                    print(("point:", point))
                     firstvertex = True
                     if firstvertex:
-                       prevpoint = str(point[0]) + "#" + str(point[1])
-                       firstpoint = str(point[0]) + "#" + str(point[1])
-                       firstvertex = False
+                        prevpoint = str(point[0]) + "#" + str(point[1])
+                        firstpoint = str(point[0]) + "#" + str(point[1])
+                        firstvertex = False
                     point = str(point[0]) + "#" + str(point[1])
                     facegraph.add_edge(point, prevpoint)
                     prevpoint = point
                 except:
-                    pass 
+                    pass
             facegraph.add_edge(firstpoint, prevpoint)
-    nx.draw_networkx(facegraph)
-    draw_voronoi_tessellation(img,contourcentroids)
-    draw_delaunay_triangulation(img,triangles)
+    draw_voronoi_tessellation(img, contourcentroids)
+    draw_delaunay_triangulation(img, triangles)
     plt.show()
-    imagetok=imagefile.split(".")
-    write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
-    cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
+    imagetok1 = imagefile.split(".")
+    imagetok2 = imagetok1[0].split("/")
+    cv2.imwrite("testlogs/"+imagetok2[1]+"-tessellated.jpg", img)
     cv2.waitKey()
-    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph)
+    return facegraph
+
 
 def handwriting_recognition(imagefile1, imagefile2):
     img1 = cv2.imread(imagefile1, 0)
@@ -214,8 +160,8 @@ def handwriting_recognition(imagefile1, imagefile2):
     epsilon2 = 0.1*cv2.arcLength(contours2[0], True)
     # epsilon2=0.2
     approx2 = cv2.approxPolyDP(contours2[0], epsilon2, True)
-    print(("Distance between DP polynomials approximating two handwriting contours:",
-          directed_hausdorff(approx1[0], approx2[0])))
+    print("Distance between DP polynomials approximating two handwriting contours:",
+          directed_hausdorff(approx1[0], approx2[0]))
     #print "contours1:",contours1
     #print "contours1:",contours2
     pdf = PdfPages(
@@ -233,7 +179,7 @@ def handwriting_recognition(imagefile1, imagefile2):
             yaxis.append(point[0][1])
         ax = fig1.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
-        points = np.stack((xaxis, yaxis), axis=-1)
+        points = numpy.stack((xaxis, yaxis), axis=-1)
         #print "points:",points.shape[0]
         try:
             if points.shape[0] > 3:
@@ -252,7 +198,7 @@ def handwriting_recognition(imagefile1, imagefile2):
             yaxis.append(point[0][1])
         ax = fig2.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
-        points = np.stack((xaxis, yaxis), axis=-1)
+        points = numpy.stack((xaxis, yaxis), axis=-1)
         #print "points:",points
         try:
             if points.shape[0] > 3:
@@ -262,8 +208,8 @@ def handwriting_recognition(imagefile1, imagefile2):
     plt.show()
     pdf.savefig(fig2)
     pdf.close()
-    print(("contour1polys:", contour1polys))
-    print(("contour2polys:", contour2polys))
+    print("contour1polys:", contour1polys)
+    print("contour2polys:", contour2polys)
 
 
 class DeepLearningConvolution(object):
@@ -596,10 +542,10 @@ if __name__ == "__main__":
     print("Handwriting Recognition")
     print("#############################################")
     if TopologicalRecognition == True:
-        # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
-        # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-        face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
-        face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
+            # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+            # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+        face_recognition("testlogs/IMG_20160610_071455.jpg")
+        face_recognition("testlogs/IMG_20160610_071603.jpg")
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
@@ -780,21 +726,21 @@ if __name__ == "__main__":
     print("Final Layer of Inference from Max Pooling Layer - BackPropagation on Max Pooling Layer Neurons")
     print("###########################################################################################")
     dlim1infer = dlim1.infer_from_max_pooling(pool_dlim1, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim1infer))
+    print("Inference from Max Pooling Layer - Image:", dlim1infer)
     dlim2infer = dlim2.infer_from_max_pooling(pool_dlim2, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim2infer))
+    print("Inference from Max Pooling Layer - Image:", dlim2infer)
     dlim3infer = dlim3.infer_from_max_pooling(pool_dlim3, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim3infer))
+    print("Inference from Max Pooling Layer - Image:", dlim3infer)
     dlim4infer = dlim4.infer_from_max_pooling(pool_dlim4, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim4infer))
+    print("Inference from Max Pooling Layer - Image:", dlim4infer)
     dlim5infer = dlim5.infer_from_max_pooling(pool_dlim5, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim5infer))
+    print("Inference from Max Pooling Layer - Image:", dlim5infer)
     dlim6infer = dlim6.infer_from_max_pooling(pool_dlim6, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim6infer))
+    print("Inference from Max Pooling Layer - Image:", dlim6infer)
     dlim7infer = dlim7.infer_from_max_pooling(pool_dlim7, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim7infer))
+    print("Inference from Max Pooling Layer - Image:", dlim7infer)
     dlim8infer = dlim8.infer_from_max_pooling(pool_dlim8, maxpool_map_width)
-    print(("Inference from Max Pooling Layer - Image:", dlim8infer))
+    print("Inference from Max Pooling Layer - Image:", dlim8infer)
 
     #print "Example 11:"
     # print "###########"

@@ -11,10 +11,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # --------------------------------------------------------------------------------------------------------
-# K.Srinivasan
-# NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
-# Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
-# --------------------------------------------------------------------------------------------------------
+# Copyleft (Copyright+):
+# Srinivasan Kannan (alias) Ka.Shrinivaasan (alias) Shrinivas Kannan
+# Ph: 9791499106, 9003082186
+# Krishna iResearch Open Source Products Profiles:
+# http://sourceforge.net/users/ka_shrinivaasan,
+# https://github.com/shrinivaasanka,
+# https://www.openhub.net/accounts/ka_shrinivaasan
+# Personal website(research): https://sites.google.com/site/kuja27/
+# emails: ka.shrinivaasan@gmail.com, shrinivas.kannan@gmail.com,
+# kashrinivaasan@live.com
+# -----------------------------------------------------------------------------------------------------------------------------------
 
 # Backpropagation on a Multilayered Neural Network example - Reference: http://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/
 
@@ -26,14 +33,14 @@ class BackPropagation(object):
         self.input_layer = inlayer
         self.hidden_layer = hiddenlayer
         self.output_layer = []
-        for i in range(len(expectedoutlayer)):
+        for i in xrange(len(expectedoutlayer)):
             self.output_layer.append(0.0)
         self.expected_output_layer = expectedoutlayer
         self.weights = wgts
         # self.weight_input_neuron_map={0:0,1:1,2:2,3:0,4:1,5:2,6:0,7:1,8:2,9:0,10:1,11:2,12:0,13:1,14:2,15:0,16:1,17:2}
         self.weight_input_neuron_map = {}
         neuronindex = 0
-        for k in range(len(self.weights)):
+        for k in xrange(len(self.weights)):
             self.weight_input_neuron_map[k] = neuronindex % len(
                 self.input_layer)
             neuronindex += 1
@@ -73,24 +80,24 @@ class BackPropagation(object):
 
     def doeError_doeOutput_all(self, index):
         dE_dO = 0.0
-        for i in range(len(self.input_layer)):
+        for i in xrange(len(self.input_layer)):
             dE_dO += ((self.doeError_doeOutput(i) * self.doeOutput_doeInput(i)
                        * self.output_layer[i]) / self.hidden_layer[0])
         return dE_dO
 
     def compute_neural_network(self):
-        for i in range(len(self.input_layer)):
+        for i in xrange(len(self.input_layer)):
             hidden_layer = 0.0
-            for k in range(len(self.input_layer)):
+            for k in xrange(len(self.input_layer)):
                 hidden_layer += self.input_layer[k] * \
                     self.weights[i*len(self.input_layer)+k]
             hidden_layer += self.bias
             self.hidden_layer[i] = hidden_layer
 
         i = j = 0
-        for i in range(len(self.hidden_layer)):
+        for i in xrange(len(self.hidden_layer)):
             output_layer = 0.0
-            for k in range(len(self.hidden_layer)-1):
+            for k in xrange(len(self.hidden_layer)-1):
                 output_layer += self.hidden_layer[k]*self.weights[len(
                     self.weights)/2 + i*len(self.input_layer)+k]
             output_layer += self.input_layer[len(self.hidden_layer)-1]*self.weights[len(
@@ -98,22 +105,22 @@ class BackPropagation(object):
             self.output_layer[i] = output_layer
 
     def print_layers(self):
-        print("###############")
-        print("Input Layer:")
-        print("###############")
-        print(self.input_layer)
-        print("###############")
-        print("Hidden middle Layer:")
-        print("###############")
-        print(self.hidden_layer)
-        print("###############")
-        print("Output Layer:")
-        print("###############")
-        print(self.output_layer)
+        print "###############"
+        print "Input Layer:"
+        print "###############"
+        print self.input_layer
+        print "###############"
+        print "Hidden middle Layer:"
+        print "###############"
+        print self.hidden_layer
+        print "###############"
+        print "Output Layer:"
+        print "###############"
+        print self.output_layer
 
     def output_error(self, output_layer, expected_output_layer):
         sum_of_squared_error = 0.0
-        for i in range(len(output_layer)):
+        for i in xrange(len(output_layer)):
             sum_of_squared_error = sum_of_squared_error + \
                 (output_layer[i]-expected_output_layer[i]) * \
                 (output_layer[i]-expected_output_layer[i])
@@ -153,25 +160,25 @@ if __name__ == "__main__":
     bpnn = BackPropagation(inputlayer, hiddenlayer, expectedoutput, weights)
     bpnn.compute_neural_network()
     bpnn.print_layers()
-    print("Error before Backpropagation:")
-    print(bpnn.output_error(bpnn.output_layer, bpnn.expected_output_layer))
+    print "Error before Backpropagation:"
+    print bpnn.output_error(bpnn.output_layer, bpnn.expected_output_layer)
     while iter < 100000:
-        for m in range(len(inputlayer)):
-            for l in range(len(inputlayer)):
+        for m in xrange(len(inputlayer)):
+            for l in xrange(len(inputlayer)):
                 bpnn.backpropagation_pde_update_hidden_to_output(
                     m, len(weights)/2 + len(inputlayer)*m + l)
 
-        for m in range(len(inputlayer)):
-            for l in range(len(inputlayer)):
+        for m in xrange(len(inputlayer)):
+            for l in xrange(len(inputlayer)):
                 bpnn.backpropagation_pde_update_input_to_hidden(
                     m, len(inputlayer)*m+l)
 
-        print("Recomputing Neural Network after backpropagation weight update")
+        print "Recomputing Neural Network after backpropagation weight update"
         bpnn.compute_neural_network()
-        print("Error after Backpropagation- iteration :", iter)
-        print(bpnn.output_error(bpnn.output_layer, bpnn.expected_output_layer))
-        print("Layers in this iteration:")
+        print "Error after Backpropagation- iteration :", iter
+        print bpnn.output_error(bpnn.output_layer, bpnn.expected_output_layer)
+        print "Layers in this iteration:"
         bpnn.print_layers()
-        print("Weights updated in this iteration:")
-        print(bpnn.weights)
+        print "Weights updated in this iteration:"
+        print bpnn.weights
         iter = iter+1
