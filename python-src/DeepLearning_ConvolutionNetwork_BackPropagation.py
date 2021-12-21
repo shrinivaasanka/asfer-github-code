@@ -47,6 +47,10 @@ from matplotlib.backends.backend_pdf import PdfPages
 from scipy.interpolate import splprep, splev
 import networkx as nx
 from networkx.drawing.nx_pydot import write_dot
+from shapely.geometry import Polygon
+from scipy.stats import wasserstein_distance
+from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
+from GraphMining_GSpan import GSpan
 
 TopologicalRecognition = True
 
@@ -59,7 +63,6 @@ def draw_delaunay_triangulation(img, triangles):
         cv2.line(img, point1, point2, (0, 255, 0), 1, cv2.LINE_8, 0)
         cv2.line(img, point2, point3, (0, 255, 0), 1, cv2.LINE_8, 0)
         cv2.line(img, point3, point1, (0, 255, 0), 1, cv2.LINE_8, 0)
-
 
 def draw_voronoi_tessellation(img, centroids):
     rect = (0, 0, img.shape[1], img.shape[0])
@@ -78,9 +81,8 @@ def draw_voronoi_tessellation(img, centroids):
             fnp = np.array(f)
             print(("facet:", fnp))
             try:
-                # cv2.fillConvexPoly(img,fnp,(random.randint(0,255),random.randint(0,255),random.randint(0,255)),cv2.LINE_AA,0)
-                cv2.polylines(img, np.int32([fnp]),
-                              True, (0, 0, 0), 1, cv2.LINE_AA, 0)
+                #cv2.fillConvexPoly(img,fnp,(random.randint(0,255),random.randint(0,255),random.randint(0,255)),cv2.LINE_AA,0)
+                cv2.polylines(img, np.int32([fnp]), True, (0, 0, 0), 1, cv2.LINE_AA, 0)
             except:
                 continue
 
@@ -158,8 +160,13 @@ def face_recognition_image_segmentation(imagefile):
     print(("subdiv:", subdiv))
     contourcentroids=[]
     for n in range(len(contours[0])-1): 
-        (cx,cy),radius=cv2.minEnclosingCircle(contours[0][n])
-        contourcentroids.append((int(cx),int(cy)))
+        moments=cv2.moments(contours[0][n])
+        if moments['m00'] != 0:
+            centroidx = int(moments['m10']/moments['m00'])
+            centroidy = int(moments['m01']/moments['m00'])
+        else:
+            (centroidx,centroidy),radius=cv2.minEnclosingCircle(contours[0][n])
+        contourcentroids.append((int(centroidx),int(centroidy)))
     for cent in contourcentroids:
         print(("centroid:", cent))
         subdiv.insert(tuple(cent))
@@ -185,6 +192,16 @@ def face_recognition_image_segmentation(imagefile):
                 except:
                     pass 
             facegraph.add_edge(firstpoint, prevpoint)
+    voronoifacetareas=[]
+    for n in range(len(facets)-1):
+        for facet in facets[n]:
+            polygon=[]
+            for point in facet:
+               polygon.append(tuple(point.tolist()))
+            print(("Voronoi Facet polygon:",polygon))
+            voronoifacet = Polygon(polygon)
+            print(("Voronoi Facet Area:",voronoifacet.area))
+            voronoifacetareas.append(voronoifacet.area)
     nx.draw_networkx(facegraph)
     draw_voronoi_tessellation(img,contourcentroids)
     draw_delaunay_triangulation(img,triangles)
@@ -193,7 +210,7 @@ def face_recognition_image_segmentation(imagefile):
     write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
     cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
     cv2.waitKey()
-    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph)
+    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas))
 
 def handwriting_recognition(imagefile1, imagefile2):
     img1 = cv2.imread(imagefile1, 0)
@@ -593,13 +610,31 @@ if __name__ == "__main__":
                       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
     print("#############################################")
-    print("Handwriting Recognition")
+    print("Topological Handwriting and Face Recognition")
     print("#############################################")
     if TopologicalRecognition == True:
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-        face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
-        face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
+        image1=face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
+        image2=face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
+        imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
+        print("EMD Similarity between Voronoi Facet Areas of the images:",imageEMDsimilarity1)
+        epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
+        approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
+        epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
+        approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
+        imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
+        print(("Hausdorff Distance between DP polynomials approximating two facial image contours:", imageContourDPsimilarity))
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg")
+        #minged=10000000000000000
+        #iteration=0
+        #for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
+        #    if ged < minged:
+        #        minged=ged
+        #        print("Optimized Graph edit distance - iteration ",iteration,":",minged)
+        #        iteration+=1
+        #graphmining=GSpan([])
+        #graphmining.GraphEditDistance(image1[8],image2[8])
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
