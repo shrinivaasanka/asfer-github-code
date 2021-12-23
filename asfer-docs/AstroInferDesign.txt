@@ -17585,10 +17585,71 @@ References:
 1186.4 Hausdorff distance between Douglas-Peucker contour polynomials of the two images are computed which is another similarity metric.
 1186.5 Histogram Partition Distance (EMD) similarity (cv2.EMD()) of the two images in toto is computed (histogram_partition_distance_similarity()). These three distance similarities help identify people more often if faces in two images are heavily similar (and not arbitrary images of same person) and could assist in landmark based facial recognition. OpenCV Voronoi Tessellation is done in 2D and 3D Voronoi Tessellation could be a better choice for modelling arbitrarily oriented images of same person - changes in facial features and emotional face orientations happen in 3D and not in 2D.
 1186.6 Finally Approximate and Exact Graph Edit Distance similarity computation between Voronoi Facegraphs of the two images has been introduced but left commented because of NP-Hardness.
-1187.7 Logs and tessellated images for this update are (compared images: testlogs/IMG_20160610_071455.jpg and testlogs/IMG_20160610_071603.jpg):
+1186.7 Logs and tessellated images for this update are (compared images: testlogs/IMG_20160610_071455.jpg and testlogs/IMG_20160610_071603.jpg):
 	testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.22December2021
 	testlogs/IMG_20160610_071455-tessellated.jpg
 	testlogs/IMG_20160610_071455_FaceRecognition_Segmentation_FaceGraph.dot
 	testlogs/IMG_20160610_071603-tessellated.jpg
 	testlogs/IMG_20160610_071603_FaceRecognition_Segmentation_FaceGraph.dot
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+1187. (THEORY and FEATURE) People Analytics - Merit of Large Scale Visuals - Topological Face Recognition - Voronoi diagram and Delaunay Triangulation of Facial images from centroids computed by Dlib face landmarks detection and Voronoi FaceGraph Isomorphism-Subgraph Isomorphism Similarity -  related to 159,660,714,715,720,1185,1186 and all sections on Topological Face and Handwriting Recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth Mover Distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph Matching,Graph similarity,Image Search - 23 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1187.1 DeepLearning_ConvolutionNetwork_BackPropagation.py has been updated to import dlib face landmarks detection and draw Voronoi and Delaunay triangulation facegraphs from face landmark centroids instead of contour centroids which aligns the Voronoi faces symmetrically centered around face landmarks. Dlib face landmarks detection finds standard of 68 points of five features of Human face Shape Grammar - Ear, Nose, 2 Eyes, Mouth.
+1187.2 DeepLearning_ConvolutionNetwork_BackPropagation.py has been updated to import netrd Graph Distance and NetworkX Graph Isomorphism implementations. Netrd implements extensive distance similarity measures for comparing two Graphs. Image FaceGraph Voronoi Planar Subdivision is populated either from contour centroids or face landmark centroids depending on boolean flag fromlandmarks which defaults to True.
+1187.3 Image Voronoi FaceGraph similarity computations between 2 images have been segregated to a new function facegraph_similarity_metrics() which computes Voronoi FaceGraph Facet areas EMD, Hausdorff distance between facial image contour polynomials, Whether 2 facegraphs are isomorphic or not, Whether 2 facegraphs are subgraph isomorphic or not, Netrd Jaccard distance between 2 facegraphs, Netrd Jensen-Shannon Degree Divergence between 2 facegraphs and Graph Edit Distance between 2 facegraphs (commented).
+1187.4 Three facial images testlogs/IMG_20160610_071455.jpg,testlogs/IMG_20160610_071603.jpg and testlogs/KSrinivasan_2003.jpg of author are compared pairwise for similarity. While first two images dated 2016 are heavily similar, last image dated 2003 has noticeable differences separated by 13 years. 
+1187.5 Histogram partition distance and Voronoi FaceGraph similarities are computed pairwise for 3 images earlier. While two heavily resembling images testlogs/IMG_20160610_071455.jpg and testlogs/IMG_20160610_071603.jpg are Voronoi FaceGraph Isomorphic and Subgraph Isomorphic, image pairs (testlogs/IMG_20160610_071603.jpg and testlogs/KSrinivasan_2003.jpg) and (testlogs/IMG_20160610_071455.jpg and testlogs/KSrinivasan_2003.jpg) are less similar and are not Voronoi FaceGraph isomorphic but Subgraph isomorphic. Thus Graph Isomorphism and Subgraph Isomorphism of Voronoi FaceGraphs act as distinguishers of facial features - Percentage of Voronoi FaceGraph Isomorphism-Subgraph Isomorphism wanes as images become increasingly dissimilar (Voronoi facegraphs of images are more likely to be subgraph-isomorphic than isomorphic for same person). Graph Isomorphism similarity earlier is an unusual application in Topological Face Recognition for measuring homeomorphic facial deformations (or conjecturally, Voronoi Graph-Subgraph Isomorphism implies Topological Homeomorphism). 
+1187.6 Dlib uses iBUG 300W training dataset /tmp/shape_predictor_68_face_landmarks.dat for learning face landmarks which can be downloaded from https://github.com/italojs/facial-landmarks-recognition/blob/master/shape_predictor_68_face_landmarks.dat. Earlier implementation of Face recognition is Graph theoretic differing from usual computer vision algorithms focussing on machine learning models for face recognition. Graph similarity, Graph matching and Exact-Subgraph-Approximate Graph Isomorphism are related concepts for mining patterns in graphs. Percentage of isomorphism between image Voronoi facegraphs could be an intrinsic merit ranking metric for an image search engine.
+1187.7 Following are the log excerpts:
+('EMD Histogram distance similarity between images - testlogs/IMG_20160610_071455.jpg and testlogs/IMG_20160610_071603.jpg :', (0.029700525104999542, None, array([[203.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0., 222.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0., 190., ...,   0.,   0.,   0.],
+       ...,
+       [  0.,   0.,   0., ..., 242.,   0.,   0.],
+       [  0.,   0.,   0., ...,   0., 251.,   0.],
+       [  0.,   0.,   0., ...,   0.,   0., 232.]], dtype=float32)))
+('EMD Histogram distance similarity between images - testlogs/IMG_20160610_071603.jpg and testlogs/KSrinivasan_2003.jpg :', (0.010611597448587418, None, array([[210.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0., 229.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0., 210., ...,   0.,   0.,   0.],
+       ...,
+       [  0.,   0.,   0., ..., 244.,   0.,   0.],
+       [  0.,   0.,   0., ...,   3., 247.,   0.],
+       [  0.,   0.,   0., ...,   0.,   0., 235.]], dtype=float32)))
+('EMD Histogram distance similarity between images - testlogs/IMG_20160610_071455.jpg and testlogs/KSrinivasan_2003.jpg :', (0.013819809071719646, None, array([[203.,   0.,   0., ...,   0.,   0.,   0.],
+       [  0., 222.,   0., ...,   0.,   0.,   0.],
+       [  0.,   0., 190., ...,   0.,   0.,   0.],
+       ...,
+       [  0.,   0.,   0., ..., 242.,   0.,   0.],
+       [  0.,   0.,   0., ...,   1., 247.,   3.],
+       [  0.,   0.,   0., ...,   0.,   0., 232.]], dtype=float32)))
+====================================================
+EMD Similarity between Voronoi Facet Areas of the images: 51952.31409460765
+('Hausdorff Distance between DP polynomials approximating two facial image contours:', (99.36297097007517, 0, 0))
+('Voronoi FaceGraphs of two facial images are isomporphic - (True or False):', True)
+('Jaccard distance between Voronoi Facegraphs of two facial images:', 1.0)
+('Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:', 0)
+('Voronoi FaceGraphs of two facial images are subgraph isomporphic - (True or False):', True)
+====================================================
+EMD Similarity between Voronoi Facet Areas of the images: 566002.5197416454
+('Hausdorff Distance between DP polynomials approximating two facial image contours:', (1261.1621624517602, 0, 0))
+('Voronoi FaceGraphs of two facial images are isomporphic - (True or False):', False)
+('Jaccard distance between Voronoi Facegraphs of two facial images:', 1.0)
+('Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:', 0)
+('Voronoi FaceGraphs of two facial images are subgraph isomporphic - (True or False):', True)
+====================================================
+EMD Similarity between Voronoi Facet Areas of the images: 556108.7037362487
+('Hausdorff Distance between DP polynomials approximating two facial image contours:', (1336.449400463781, 0, 0))
+('Voronoi FaceGraphs of two facial images are isomporphic - (True or False):', False)
+('Jaccard distance between Voronoi Facegraphs of two facial images:', 1.0)
+('Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:', 0)
+('Voronoi FaceGraphs of two facial images are subgraph isomporphic - (True or False):', True)
+
+1187.8 References:
+------------------
+1187.8.1 Dlib and Mediapipe Face landmark detection - https://towardsdatascience.com/face-landmark-detection-using-python-1964cb620837
+1187.8.2 Graph Matching Survey - Graph Matching: Theoretical Foundations, Algorithms, and Applications - https://www.ai.rug.nl/ki2/literature/graphmatch-bunke.pdf
+1187.8.3 Algorithms for Subgraph matching and Graph similarity - https://www.cs.cmu.edu/~jingx/docs/DBreport.pdf  
+1187.8.4 Netrd Graph Distance measures - https://netrd.readthedocs.io/en/latest/distance.html#
+1187.8.5 Approximate Graph Isomorphism - [V. Arvind , Johannes Kobler , Sebastian Kuhnert , Yadu Vasudev] - Institute of Mathematical Sciences, Chennai - https://www.imsc.res.in/~yadu/approx-gi-full.pdf - alpha-approximation of Graph Isomorphism
+1187.8.6 VF2 Graph Isomorphism algorithm - NetworkX - https://networkx.org/documentation/stable/reference/algorithms/isomorphism.vf2.html
