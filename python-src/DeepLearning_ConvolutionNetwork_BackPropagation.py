@@ -51,6 +51,9 @@ from shapely.geometry import Polygon
 from scipy.stats import wasserstein_distance
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 from GraphMining_GSpan import GSpan
+import dlib
+import netrd
+from networkx.algorithms import isomorphism
 
 TopologicalRecognition = True
 
@@ -120,7 +123,7 @@ def face_recognition_image_segmentation_contours(imagefile1):
     return (contours1,contour1polys)
 
 
-def face_recognition_image_segmentation(imagefile):
+def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     contours = face_recognition_image_segmentation_contours(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -167,9 +170,24 @@ def face_recognition_image_segmentation(imagefile):
         else:
             (centroidx,centroidy),radius=cv2.minEnclosingCircle(contours[0][n])
         contourcentroids.append((int(centroidx),int(centroidy)))
-    for cent in contourcentroids:
-        print(("centroid:", cent))
-        subdiv.insert(tuple(cent))
+    detector = dlib.get_frontal_face_detector()
+    predictor = dlib.shape_predictor("/tmp/shape_predictor_68_face_landmarks.dat")
+    rects = detector(gray,1)
+    for rect in rects:
+        shape = predictor(gray, rect)
+        shape_np = np.zeros((68,2), dtype="int")
+        for i in range(0,68):
+            shape_np[i] = (shape.part(i).x,shape.part(i).y)
+        shape = shape_np
+    landmarkcentroids=[]
+    if fromlandmarks:
+        for landmark in shape:
+            subdiv.insert(tuple(landmark))
+            landmarkcentroids.append(landmark)
+    else:
+       for cent in contourcentroids:
+           print(("centroid:", cent))
+           subdiv.insert(tuple(cent))
     triangles = subdiv.getTriangleList()
     print(("image Delaunay triangles:", triangles))
     facets = subdiv.getVoronoiFacetList([])
@@ -203,14 +221,49 @@ def face_recognition_image_segmentation(imagefile):
             print(("Voronoi Facet Area:",voronoifacet.area))
             voronoifacetareas.append(voronoifacet.area)
     nx.draw_networkx(facegraph)
-    draw_voronoi_tessellation(img,contourcentroids)
-    draw_delaunay_triangulation(img,triangles)
+    if fromlandmarks:
+        draw_voronoi_tessellation(img,landmarkcentroids)
+        draw_delaunay_triangulation(img,triangles)
+    else:
+        draw_voronoi_tessellation(img,contourcentroids)
+        draw_delaunay_triangulation(img,triangles)
     plt.show()
     imagetok=imagefile.split(".")
     write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
     cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
     cv2.waitKey()
     return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas))
+
+def facegraph_similarity_metrics(image1,image2):
+    print("====================================================")
+    imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
+    print("EMD Similarity between Voronoi Facet Areas of the images:",imageEMDsimilarity1)
+    epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
+    approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
+    epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
+    approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
+    imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
+    print(("Hausdorff Distance between DP polynomials approximating two facial image contours:", imageContourDPsimilarity))
+    isisomorphic = nx.is_isomorphic(image1[8],image2[8])
+    print(("Voronoi FaceGraphs of two facial images are isomporphic - (True or False):",isisomorphic))
+    jaccard = netrd.distance.JaccardDistance()
+    jaccarddistance = jaccard.dist(image1[8],image2[8])
+    print(("Jaccard distance between Voronoi Facegraphs of two facial images:",jaccarddistance))
+    jsd = netrd.distance.DegreeDivergence()
+    jsddistance = jsd.dist(image1[8],image2[8])
+    print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:",jsddistance))
+    gm=isomorphism.GraphMatcher(image1[8],image2[8])
+    issubgraphisomorphic=gm.subgraph_is_isomorphic()
+    print(("Voronoi FaceGraphs of two facial images are subgraph isomporphic - (True or False):",issubgraphisomorphic))
+    #minged=10000000000000000
+    #iteration=0
+    #for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
+    #    if ged < minged:
+    #        minged=ged
+    #        print("Optimized Graph edit distance - iteration ",iteration,":",minged)
+    #        iteration+=1
+    #graphmining=GSpan([])
+    #graphmining.GraphEditDistance(image1[8],image2[8])
 
 def handwriting_recognition(imagefile1, imagefile2):
     img1 = cv2.imread(imagefile1, 0)
@@ -617,24 +670,13 @@ if __name__ == "__main__":
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
         image1=face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
         image2=face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
-        imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
-        print("EMD Similarity between Voronoi Facet Areas of the images:",imageEMDsimilarity1)
-        epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
-        approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
-        epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
-        approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
-        imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
-        print(("Hausdorff Distance between DP polynomials approximating two facial image contours:", imageContourDPsimilarity))
+        image3=face_recognition_image_segmentation("testlogs/KSrinivasan_2003.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg")
-        #minged=10000000000000000
-        #iteration=0
-        #for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
-        #    if ged < minged:
-        #        minged=ged
-        #        print("Optimized Graph edit distance - iteration ",iteration,":",minged)
-        #        iteration+=1
-        #graphmining=GSpan([])
-        #graphmining.GraphEditDistance(image1[8],image2[8])
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg")
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg")
+        facegraph_similarity_metrics(image1,image2)
+        facegraph_similarity_metrics(image1,image3)
+        facegraph_similarity_metrics(image2,image3)
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
