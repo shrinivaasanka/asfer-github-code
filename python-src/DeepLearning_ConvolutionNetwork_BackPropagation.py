@@ -234,7 +234,7 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     cv2.waitKey()
     return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas))
 
-def facegraph_similarity_metrics(image1,image2):
+def facegraph_similarity_metrics(image1,image2,isomorphism_iterations=15):
     print("====================================================")
     imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
     print("EMD Similarity between Voronoi Facet Areas of the images:",imageEMDsimilarity1)
@@ -245,7 +245,7 @@ def facegraph_similarity_metrics(image1,image2):
     imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
     print(("Hausdorff Distance between DP polynomials approximating two facial image contours:", imageContourDPsimilarity))
     isisomorphic = nx.is_isomorphic(image1[8],image2[8])
-    print(("Voronoi FaceGraphs of two facial images are isomporphic - (True or False):",isisomorphic))
+    print(("Voronoi FaceGraphs of two facial images are isomorphic - (True or False):",isisomorphic))
     jaccard = netrd.distance.JaccardDistance()
     jaccarddistance = jaccard.dist(image1[8],image2[8])
     print(("Jaccard distance between Voronoi Facegraphs of two facial images:",jaccarddistance))
@@ -254,7 +254,26 @@ def facegraph_similarity_metrics(image1,image2):
     print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:",jsddistance))
     gm=isomorphism.GraphMatcher(image1[8],image2[8])
     issubgraphisomorphic=gm.subgraph_is_isomorphic()
-    print(("Voronoi FaceGraphs of two facial images are subgraph isomporphic - (True or False):",issubgraphisomorphic))
+    print(("Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):",issubgraphisomorphic))
+    cnt=0
+    for sgiso_vf2 in gm.subgraph_isomorphisms_iter():
+        print("VF2 subgraph isomorphisms between two Voronoi facegraphs:",sgiso_vf2)
+        cnt+=1
+        if cnt > isomorphism_iterations:
+            break
+    cnt=0
+    ismags=isomorphism.ISMAGS(image1[8],image2[8])
+    for sgiso_ismags_asymmetric in ismags.isomorphisms_iter(symmetry=False):
+        print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - without symmetry:",sgiso_ismags_asymmetric)
+        cnt+=1
+        if cnt > isomorphism_iterations:
+            break
+    #cnt=0
+    #for sgiso_ISMAGS_symmetric in ismags.isomorphisms_iter(symmetry=True):
+    #    print("ISMAGS subgraph isomorphisms between two Voronoi facegraphs - with symmetry:",sgiso_ismags_symmetric)
+    #    cnt+=1
+    #    if cnt > isomorphism_iterations:
+    #        break
     #minged=10000000000000000
     #iteration=0
     #for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
