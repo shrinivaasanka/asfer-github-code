@@ -17653,3 +17653,20 @@ EMD Similarity between Voronoi Facet Areas of the images: 556108.7037362487
 1187.8.4 Netrd Graph Distance measures - https://netrd.readthedocs.io/en/latest/distance.html#
 1187.8.5 Approximate Graph Isomorphism - [V. Arvind , Johannes Kobler , Sebastian Kuhnert , Yadu Vasudev] - Institute of Mathematical Sciences, Chennai - https://www.imsc.res.in/~yadu/approx-gi-full.pdf - alpha-approximation of Graph Isomorphism
 1187.8.6 VF2 Graph Isomorphism algorithm - NetworkX - https://networkx.org/documentation/stable/reference/algorithms/isomorphism.vf2.html
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1188. (THEORY and FEATURE) People Analytics - Merit of Large Scale Visuals - Topological Face Recognition - Voronoi FaceGraph Isomorphism-Subgraph Isomorphism Similarity - VF2 and ISMAGS Isomorphic Subgraphs iteration - related to 159,660,714,715,720,1185,1186,1187 and all sections on Topological Face and Handwriting Recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth Mover Distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph Matching,Graph similarity,Image Search - 24 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1188.1 DeepLearning_ConvolutionNetwork_BackPropagation.py has been updated (facegraph_similarity_metrics()) to compute isomorphic subgraphs of Voronoi Diagram Facegraphs obtained from 2 facial images by two algorithms - VF2 and ISMAGS
+1188.2 Number of iterations of isomorphic subgraphs has been set to 15 as default which is configurable function parameter. ISMAGS algorithm prints different subgraphs for symmetry=False and symmetry=True. 
+1188.3 ISMAGS symmetry=True clause has been commented due to slowdown. Percentage similarity between two images could be derived from the number and size of isomorphic subgraphs. Example function for image similarity between two images = number of isomorphic Voronoi subgraphs of size > constant
+1188.4 Contour segmented and Facegraph images of the 3 JPG files have been added to repository:
+	testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.24December2021
+	testlogs/IMG_20160610_071455_FaceGraph.jpg
+	testlogs/IMG_20160610_071455_contour_segmented.jpg
+	testlogs/IMG_20160610_071603_FaceGraph.jpg
+	testlogs/IMG_20160610_071603_contour_segmented.jpg
+	testlogs/KSrinivasan_2003_FaceGraph.jpg
+	testlogs/KSrinivasan_2003_contour_segmented.jpg
+and logs are at testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.24December2021 
+1188.5 It is obvious to note that contours of facial images themselves are landmark detectors to some extent as contours mostly straddle facial features. Accuracy of contour based face landmark detection could be increased by changing pixel color contrast of the binary inverted images.
