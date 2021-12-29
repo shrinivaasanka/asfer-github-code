@@ -17717,7 +17717,7 @@ and logs are at testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.24D
 				if subgraph isomorphism percentage similarity is high:
 					Images are "likely to be similar" and might belong to same person
 			   }
-			   else if Wasserstain EMD between Voronoi facet areas of the images are low:
+			   else if Wasserstein EMD between Voronoi facet areas of the images are low:
 			   {
 				if subgraph isomorphism percentage similarity is low:
 					Images are "likely to be similar" and might belong to same person
@@ -17725,9 +17725,13 @@ and logs are at testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.24D
 					Images are "highly likely to be similar" and might belong to same person
 			   }	
 		 }
-		 else if Voronoi facegraphs of two images are neither fully isomorphic not subgraph isomorphic:
+		 else if Voronoi facegraphs of two images are neither fully isomorphic nor subgraph isomorphic:
 		 {
 			Images are "extremely likely to be dissimilar" and might belong to different persons
 		 }
 1189.7 In the examples earlier testlogs/ExamplePortrait1.jpg and testlogs/IMG_20171112_180837.jpg are subgraph isomorphic (and percentage similarity is high and EMD of Voronoi Facet areas is also high which are mutually in conflict) though former is a faminine watercolor art and thus a False positive. 
 1189.8 Previous Graph theoretic and topological face recognition is an unsupervised classifier while conventional face recognizers are mostly supervised depending on training data. Rather, Machine learning training models could be formulated from Voronoi facet areas of face images as training priors.
+
+References:
+----------
+1189.9 Graph Homeomorphism - Topological Graph Theory - https://en.wikipedia.org/wiki/Homeomorphism_(graph_theory) - isomorphism between a subdivision (expansion) of a Graph G1 to another subdivision (expansion) of a Graph G2 - precisely same as Topological Homeomorphism.
