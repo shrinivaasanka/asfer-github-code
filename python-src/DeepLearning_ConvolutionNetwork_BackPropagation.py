@@ -234,55 +234,66 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     cv2.waitKey()
     return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas))
 
-def facegraph_similarity_metrics(image1,image2,isomorphism_iterations=15):
+def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism_iterations=25,ismagssymmetry=False,GED=False):
     print("====================================================")
     imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
-    print("EMD Similarity between Voronoi Facet Areas of the images:",imageEMDsimilarity1)
+    print("EMD Similarity between Voronoi Facet Areas of the images - ",image1name," and ",image2name,":",imageEMDsimilarity1)
     epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
     approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
     epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
     approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
     imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
-    print(("Hausdorff Distance between DP polynomials approximating two facial image contours:", imageContourDPsimilarity))
+    print(("Hausdorff Distance between DP polynomials approximating two facial image contours - ",image1name," and ",image2name,":", imageContourDPsimilarity))
     isisomorphic = nx.is_isomorphic(image1[8],image2[8])
     print(("Voronoi FaceGraphs of two facial images are isomorphic - (True or False):",isisomorphic))
+    if isisomorphic:
+        print(("Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ",image1name," and ",image2name,": 100.0"))
     jaccard = netrd.distance.JaccardDistance()
     jaccarddistance = jaccard.dist(image1[8],image2[8])
-    print(("Jaccard distance between Voronoi Facegraphs of two facial images:",jaccarddistance))
+    print(("Jaccard distance between Voronoi Facegraphs of two facial images - ",image1name," and ",image2name,":",jaccarddistance))
     jsd = netrd.distance.DegreeDivergence()
     jsddistance = jsd.dist(image1[8],image2[8])
-    print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images:",jsddistance))
+    print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images - ",image1name," and ",image2name,":",jsddistance))
     gm=isomorphism.GraphMatcher(image1[8],image2[8])
     issubgraphisomorphic=gm.subgraph_is_isomorphic()
     print(("Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):",issubgraphisomorphic))
     cnt=0
     for sgiso_vf2 in gm.subgraph_isomorphisms_iter():
         print("VF2 subgraph isomorphisms between two Voronoi facegraphs:",sgiso_vf2)
+        print("VF2 subgraph isomorphisms between two Voronoi facegraphs - percentage similarity - ",image1name," and ",image2name,":",100.0*float(len(sgiso_vf2))/float(len(image1[8].nodes())))
+        print("VF2 subgraph isomorphisms between two Voronoi facegraphs - percentage similarity - ",image2name," and ",image1name,":",100.0*float(len(sgiso_vf2))/float(len(image2[8].nodes())))
         cnt+=1
         if cnt > isomorphism_iterations:
             break
-    cnt=0
-    ismags=isomorphism.ISMAGS(image1[8],image2[8])
-    for sgiso_ismags_asymmetric in ismags.isomorphisms_iter(symmetry=False):
-        print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - without symmetry:",sgiso_ismags_asymmetric)
-        cnt+=1
-        if cnt > isomorphism_iterations:
-            break
-    #cnt=0
-    #for sgiso_ISMAGS_symmetric in ismags.isomorphisms_iter(symmetry=True):
-    #    print("ISMAGS subgraph isomorphisms between two Voronoi facegraphs - with symmetry:",sgiso_ismags_symmetric)
-    #    cnt+=1
-    #    if cnt > isomorphism_iterations:
-    #        break
-    #minged=10000000000000000
-    #iteration=0
-    #for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
-    #    if ged < minged:
-    #        minged=ged
-    #        print("Optimized Graph edit distance - iteration ",iteration,":",minged)
-    #        iteration+=1
-    #graphmining=GSpan([])
-    #graphmining.GraphEditDistance(image1[8],image2[8])
+    if not ismagssymmetry:
+        cnt=0
+        ismags=isomorphism.ISMAGS(image1[8],image2[8])
+        for sgiso_ismags_asymmetric in ismags.isomorphisms_iter(symmetry=False):
+           print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - without symmetry:",sgiso_ismags_asymmetric)
+           print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - without symmetry - percentage similarity - ",image1name," and ",image2name,":",100.0*float(len(sgiso_ismags_asymmetric))/float(len(image1[8].nodes())))
+           print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - without symmetry - percentage similarity - ",image2name," and ",image1name,":",100.0*float(len(sgiso_ismags_asymmetric))/float(len(image2[8].nodes())))
+           cnt+=1
+           if cnt > isomorphism_iterations:
+              break
+    else:
+        cnt=0
+        for sgiso_ISMAGS_symmetric in ismags.isomorphisms_iter(symmetry=True):
+           print("ISMAGS subgraph isomorphisms between two Voronoi facegraphs - with symmetry:",sgiso_ismags_symmetric)
+           print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - with symmetry - percentage similarity - ",image1name," and ",image2name,":",100.0*float(len(sgiso_ismags_symmetric))/float(len(image1[8].nodes())))
+           print("ISMAGS subgraph isomorphism between two Voronoi facegraphs - with symmetry - percentage similarity - ",image2name," and ",image1name,":",100.0*float(len(sgiso_ismags_symmetric))/float(len(image2[8].nodes())))
+           cnt+=1
+           if cnt > isomorphism_iterations:
+              break
+    if GED:
+        minged=10000000000000000
+        iteration=0
+        for ged in nx.optimize_graph_edit_distance(image1[8],image2[8]):
+          if ged < minged:
+              minged=ged
+              print("Optimized Graph edit distance - iteration ",iteration,":",minged)
+              iteration+=1
+        graphmining=GSpan([])
+        graphmining.GraphEditDistance(image1[8],image2[8])
 
 def handwriting_recognition(imagefile1, imagefile2):
     img1 = cv2.imread(imagefile1, 0)
@@ -690,12 +701,20 @@ if __name__ == "__main__":
         image1=face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
         image2=face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
         image3=face_recognition_image_segmentation("testlogs/KSrinivasan_2003.jpg")
+        image4=face_recognition_image_segmentation("testlogs/IMG_20171112_180837.jpg")
+        image5=face_recognition_image_segmentation("testlogs/ExamplePortrait1.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg")
-        facegraph_similarity_metrics(image1,image2)
-        facegraph_similarity_metrics(image1,image3)
-        facegraph_similarity_metrics(image2,image3)
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg")
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg")
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/ExamplePortrait1.jpg")
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg",image1,image2)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg",image1,image3)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg",image2,image3)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg",image1,image4)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg",image2,image4)
+        facegraph_similarity_metrics("testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg",image4,image5)
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
