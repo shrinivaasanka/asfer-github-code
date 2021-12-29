@@ -17670,3 +17670,64 @@ EMD Similarity between Voronoi Facet Areas of the images: 556108.7037362487
 	testlogs/KSrinivasan_2003_contour_segmented.jpg
 and logs are at testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.24December2021 
 1188.5 It is obvious to note that contours of facial images themselves are landmark detectors to some extent as contours mostly straddle facial features. Accuracy of contour based face landmark detection could be increased by changing pixel color contrast of the binary inverted images.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1189. (THEORY and FEATURE) People Analytics - Merit of Large Scale Visuals - Topological and Graph Theoretic Face Recognition - Voronoi FaceGraph Isomorphism Similarity - Percentage similarity and arbitrary visuals analyzed - related to 159,660,714,715,720,1185,1186,1187,1188 and all sections on Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search - 29 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1189.1 DeepLearning_ConvolutionNetwork_BackPropagation.py has been updated to analyze more visuals for unique person identification across arbitrary images. 
+1189.2 facegraph_similarity_metrics() has been changed to increase number of default isomorphism iterations to 25. ISMAGS symmetry and Graph Edit Distance have been made function parameters set to default False and their respective clauses have been uncommented.
+1189.3 Subgraph Isomorphism Percentage similarity between two facial visuals are computed for VF2 and ISMAGS clauses by ratio of number of vertices in the isomorphic Voronoi subgraphs and total nuumber of vertices in Voronoi Facegraphs. If two visuals are Fully Isomorphic percentage similarity is set to 100. Both directions of the percentage ratio (denominator changes for size of image Facegraphs of image1 and image2 while numerator - size of isomorphic subgraph - stays same) are printed and the minimum of the two is considered as subgraph similarity.
+1189.4 Two more visuals have been compared - testlogs/IMG_20171112_180837.jpg and testlogs/ExamplePortrait1.jpg - former a visual of author (2017) and the latter being a portrait drawn by author (1990). Following are pairwise similarity computations by facegraph_similarity_metrics():
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg",image1,image2)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg",image1,image3)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg",image2,image3)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg",image1,image4)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg",image2,image4)
+        facegraph_similarity_metrics("testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg",image4,image5)
+1189.5 Excerpts of the logs at testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.29December2021 reveal an important finding - Visuals of a person separated by small time durations are Fully Isomorphic. Three facial images testlogs/IMG_20160610_071455.jpg, testlogs/IMG_20160610_071603.jpg and testlogs/IMG_20171112_180837.jpg of the author separated by 1.5 years are fully isomorphic while all these three images are only subgraph isomorphic to 13 years older image testlogs/KSrinivasan_2003.jpg. This points to change in facial features over a period of 14+ years affecting Voronoi facegraph and isomorphism:
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071455.jpg', ' and ', 'testlogs/IMG_20160610_071603.jpg', ': 100.0')
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071455.jpg', ' and ', 'testlogs/IMG_20171112_180837.jpg', ': 100.0')
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071603.jpg', ' and ', 'testlogs/IMG_20171112_180837.jpg', ': 100.0')
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+	('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+	('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+1189.6 Following could be a thumbrule decision tree for face recognition by isomorphism (Earth mover distance between Voronoi Facegraphs of the images is attached high priority in the tree) where leaves are graded by probabilities - extremely likely,highly likely and likely:
+		If Voronoi facegraphs of two images are Fully isomorphic:
+		{	
+			   /* There are less chances of False positives and False negatives - Face recognition is almost certain.*/
+			   Images are "extremely likely to be similar" and might belong to same person. 
+		}
+		else if Voronoi facegraphs of two images are not Fully isomorphic but less stringent subgraph isomorphic:
+		{
+			   /* high chances of false positives and false negatives depending on decision tree branch */ 
+			   /* and percentage probability for "likely" and "highly likely" */
+			   if Wasserstein EMD between Voronoi facet areas of the images are high:
+			   {
+				if subgraph isomorphism percentage similarity is low:
+					Images are "highly likely to be dissimilar" and might belong to different persons
+				if subgraph isomorphism percentage similarity is high:
+					Images are "likely to be similar" and might belong to same person
+			   }
+			   else if Wasserstain EMD between Voronoi facet areas of the images are low:
+			   {
+				if subgraph isomorphism percentage similarity is low:
+					Images are "likely to be similar" and might belong to same person
+				if subgraph isomorphism percentage similarity is high:
+					Images are "highly likely to be similar" and might belong to same person
+			   }	
+		 }
+		 else if Voronoi facegraphs of two images are neither fully isomorphic not subgraph isomorphic:
+		 {
+			Images are "extremely likely to be dissimilar" and might belong to different persons
+		 }
+1189.7 In the examples earlier testlogs/ExamplePortrait1.jpg and testlogs/IMG_20171112_180837.jpg are subgraph isomorphic (and percentage similarity is high and EMD of Voronoi Facet areas is also high which are mutually in conflict) though former is a faminine watercolor art and thus a False positive. 
+1189.8 Previous Graph theoretic and topological face recognition is an unsupervised classifier while conventional face recognizers are mostly supervised depending on training data. Rather, Machine learning training models could be formulated from Voronoi facet areas of face images as training priors.
