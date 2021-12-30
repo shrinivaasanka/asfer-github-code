@@ -59,13 +59,21 @@ TopologicalRecognition = True
 
 
 def draw_delaunay_triangulation(img, triangles):
+    delaunay_graph=nx.Graph()
     for triangle in triangles:
         point1 = (triangle[0], triangle[1])
         point2 = (triangle[2], triangle[3])
         point3 = (triangle[4], triangle[5])
+        point1str = str(triangle[0]) + "#" + str(triangle[1])
+        point2str = str(triangle[2]) + "#" + str(triangle[3])
+        point3str = str(triangle[4]) + "#" + str(triangle[5])
+        delaunay_graph.add_edge(point1str,point2str)
+        delaunay_graph.add_edge(point2str,point3str)
+        delaunay_graph.add_edge(point3str,point1str)
         cv2.line(img, point1, point2, (0, 255, 0), 1, cv2.LINE_8, 0)
         cv2.line(img, point2, point3, (0, 255, 0), 1, cv2.LINE_8, 0)
         cv2.line(img, point3, point1, (0, 255, 0), 1, cv2.LINE_8, 0)
+    return delaunay_graph
 
 def draw_voronoi_tessellation(img, centroids):
     rect = (0, 0, img.shape[1], img.shape[0])
@@ -210,6 +218,8 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
                 except:
                     pass 
             facegraph.add_edge(firstpoint, prevpoint)
+    euler_characteristic=len(facegraph.nodes()) - len(facegraph.edges()) + len(facets)
+    print(("Euler characteristic of the Voronoi facegraph:",euler_characteristic))
     voronoifacetareas=[]
     for n in range(len(facets)-1):
         for facet in facets[n]:
@@ -223,16 +233,16 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     nx.draw_networkx(facegraph)
     if fromlandmarks:
         draw_voronoi_tessellation(img,landmarkcentroids)
-        draw_delaunay_triangulation(img,triangles)
+        delaunaymesh=draw_delaunay_triangulation(img,triangles)
     else:
         draw_voronoi_tessellation(img,contourcentroids)
-        draw_delaunay_triangulation(img,triangles)
+        delaunaymesh=draw_delaunay_triangulation(img,triangles)
     plt.show()
     imagetok=imagefile.split(".")
     write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
     cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
     cv2.waitKey()
-    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas))
+    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas), delaunaymesh)
 
 def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism_iterations=25,ismagssymmetry=False,GED=False):
     print("====================================================")
@@ -244,10 +254,14 @@ def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism
     approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
     imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
     print(("Hausdorff Distance between DP polynomials approximating two facial image contours - ",image1name," and ",image2name,":", imageContourDPsimilarity))
-    isisomorphic = nx.is_isomorphic(image1[8],image2[8])
-    print(("Voronoi FaceGraphs of two facial images are isomorphic - (True or False):",isisomorphic))
-    if isisomorphic:
+    isVoronoiisomorphic = nx.is_isomorphic(image1[8],image2[8])
+    print(("Voronoi FaceGraphs of two facial images are isomorphic - (True or False):",isVoronoiisomorphic))
+    isDelaunayisomorphic = nx.is_isomorphic(image1[10],image2[10])
+    print(("Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):",isDelaunayisomorphic))
+    if isVoronoiisomorphic:
         print(("Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ",image1name," and ",image2name,": 100.0"))
+    if isDelaunayisomorphic:
+        print(("Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - percentage similarity - ",image1name," and ",image2name,": 100.0"))
     jaccard = netrd.distance.JaccardDistance()
     jaccarddistance = jaccard.dist(image1[8],image2[8])
     print(("Jaccard distance between Voronoi Facegraphs of two facial images - ",image1name," and ",image2name,":",jaccarddistance))
@@ -255,8 +269,8 @@ def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism
     jsddistance = jsd.dist(image1[8],image2[8])
     print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images - ",image1name," and ",image2name,":",jsddistance))
     gm=isomorphism.GraphMatcher(image1[8],image2[8])
-    issubgraphisomorphic=gm.subgraph_is_isomorphic()
-    print(("Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):",issubgraphisomorphic))
+    isVoronoisubgraphisomorphic=gm.subgraph_is_isomorphic()
+    print(("Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):",isVoronoisubgraphisomorphic))
     cnt=0
     for sgiso_vf2 in gm.subgraph_isomorphisms_iter():
         print("VF2 subgraph isomorphisms between two Voronoi facegraphs:",sgiso_vf2)
