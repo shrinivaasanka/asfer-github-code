@@ -17737,3 +17737,37 @@ References:
 1189.9 Graph Homeomorphism - Topological Graph Theory - https://en.wikipedia.org/wiki/Homeomorphism_(graph_theory) - isomorphism between a subdivision (expansion) of a Graph G1 to another subdivision (expansion) of a Graph G2 - precisely same as Topological Homeomorphism.
 1189.10 Within-Ensemble Graph Distances - netrd - https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.2019.0744
 1189.11 Euler Characteristic invariant - V-E+F - https://en.wikipedia.org/wiki/Euler_characteristic - 3D Voronoi Tessellations of Human Faces are Topological 3-dimensional CW Complexes (Polyhedra - Convex or non-Convex) and determining the Euler characteristic for human face 3D Voronoi tessellation might be useful as face recognition measure. Graph Isomorphism of Delaunay Triangulation Graphs vis-a-vis Voronoi facegraphs of human facial images is another face recognizer.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1190. (THEORY and FEATURE) People Analytics - Merit of Large Scale Visuals - Topological and Graph Theoretic Face Recognition - Delaunay Triangulation Mesh isomorphism and Euler Characteristic - related to 159,660,714,715,720,1185,1186,1187,1188,1189 and all sections on Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search - 30 December 2021
+---------------------------------------------------------------------------------------------------------------------------------------------
+1190.1 DeepLearning_ConvolutionNetwork_BackPropagation.py has been changed to compute NetworkX Delaunay triangulation mesh graph dual of Voronoi Facegraph in draw_delaunay_triangulation(). Return values have been changed in some functions and new boolean clauses for Voronoi and Delaunay mesh(s) have been introduced.
+1190.2 Euler characteristic of a facial image 2D Voronoi tessellation facegraph is printed to testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.30December2021 (V-E+F) which is 2 for all images. This characteristic might vary for 3D Voronoi tessellation non-planar polyhedron mesh of a facial image:
+('Euler characteristic of the Voronoi facegraph:', 2)
+('Euler characteristic of the Voronoi facegraph:', 2)
+('Euler characteristic of the Voronoi facegraph:', 2)
+('Euler characteristic of the Voronoi facegraph:', 2)
+('Euler characteristic of the Voronoi facegraph:', 2)
+1190.3 Graph isomorphism of Delaunay triangulation mesh(s) for pairs of facial images is printed in testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.30December2021 and contrary to intuition Delaunay triangulation dual mesh(s) which are localized to facial feature deformations are not isomorphic for none of the 6 pairs when Voronoi facegraphs are isomorphic for 3 pairs of face visuals separated by small time duration - Voronoi facegraphs may be best suited for face recognition by isomorphism: 
+-------------------------
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071455.jpg', ' and ', 'testlogs/IMG_20160610_071603.jpg', ': 100.0')
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071455.jpg', ' and ', 'testlogs/IMG_20171112_180837.jpg', ': 100.0')
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', True)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are isomorphic - percentage similarity - ', 'testlogs/IMG_20160610_071603.jpg', ' and ', 'testlogs/IMG_20171112_180837.jpg', ': 100.0')
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
+('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
+('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
