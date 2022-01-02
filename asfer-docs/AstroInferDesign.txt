@@ -17789,3 +17789,11 @@ have been added to repositories:
 	ftrace.pwd.log
 	pwd.ftrace_callgraph.dot
 1192.7 Isomorphism iterations and ISMGAS symmetry have been made configurable arguments and set to default 25 and False respectively. CyclomaticComplexitySparkMapReducer.py has been upgraded to Python 3.7.5 + Spark 3.0.1 by autopep8 and 2to3 utilities. Python 2.7 version of CyclomaticComplexitySparkMapReducer.py has been renamed to CyclomaticComplexitySparkMapReducer.py.2.7.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1193. (THEORY and FEATURE) Software Analytics - Approximate Graph Isomorphism Similarity of Code Callgraphs and Control Flow Graphs - Spark 3.0.1 + Python 3.7.5 - related to 1192,1191,581,619,770,906,911,771 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools - 2 January 2022
+---------------------------------------------------------------------------------------------------------------------------------------------
+1193.1 CyclomaticComplexitySparkMapReducer.py - graph_matching() has been updated to invoke faster_could_be_isomorphic() for guesstimate of approximate isomorphism between two callgraphs or control flow graphs which is faster than fast_could_be_isomorphic() and exact but only presumptive.
+1193.2 Approximate isomorphism has been made configurable by boolean flag approximateisomorphic. 
+1193.3 Two FTrace callgraph DOT files for pwd and find and two SATURN VIRGO linux kernel callgraph DOT files are matched for approximate isomorphism which turn out to be both False.
+1193.4 Results are printed to logs testlogs/CyclomaticComplexitySparkMapReducer.log2.Python3.7.5.Isomorphism.2January2022  
