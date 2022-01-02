@@ -66,10 +66,14 @@ def ftrace_callgraph_dot(ftracefile):
         callgraph))
 
 
-def graph_matching(dotfile1, dotfile2, isomorphism_iterations=25,ismagssymmetry=False):
-    print(("======== Matching Callgraphs:",dot1," and ",dot2))
+def graph_matching(dotfile1, dotfile2, isomorphism_iterations=25,ismagssymmetry=False,approximateisomorphic=False):
+    print(("======== Matching Callgraphs:",dotfile1," and ",dotfile2))
     dotnx1 = nx.Graph(read_dot(dotfile1))
     dotnx2 = nx.Graph(read_dot(dotfile2))
+    if approximateisomorphic:
+        fastercouldbeisomorphic = nx.faster_could_be_isomorphic(dotnx1, dotnx2)
+        print(("Callgraphs of two executables could be isomorphic - (True or False):", fastercouldbeisomorphic))
+        return
     isisomorphic = nx.is_isomorphic(dotnx1, dotnx2)
     print(("Callgraphs of two executables are isomorphic - (True or False):", isisomorphic))
     if isisomorphic:
@@ -79,10 +83,10 @@ def graph_matching(dotfile1, dotfile2, isomorphism_iterations=25,ismagssymmetry=
     print(("Callgraphs of two executables are subgraph isomorphic - (True or False):", issubgraphisomorphic))
     cnt = 0
     for sgiso_vf2 in gm.subgraph_isomorphisms_iter():
-        print(("VF2 subgraph isomorphisms between two Voronoi facegraphs:", sgiso_vf2))
-        print(("VF2 subgraph isomorphisms between two Voronoi facegraphs - percentage similarities - 1:",
+        print(("VF2 subgraph isomorphisms between two callgraphs:", sgiso_vf2))
+        print(("VF2 subgraph isomorphisms between two callgraphs - percentage similarities - 1:",
               100.0*float(len(sgiso_vf2))/float(len(dotnx1.nodes()))))
-        print(("VF2 subgraph isomorphisms between two Voronoi facegraphs - percentage similarities - 2:",
+        print(("VF2 subgraph isomorphisms between two callgraphs - percentage similarities - 2:",
               100.0*float(len(sgiso_vf2))/float(len(dotnx2.nodes()))))
         cnt += 1
         if cnt > isomorphism_iterations:
@@ -156,6 +160,8 @@ if __name__ == "__main__":
     #ftrace_callgraph_dot("ftrace.find.log")
     #cyclomatic_complexity(input_dot_files)
     #graph_mining(input_dot_files)
-    for dot1 in input_dot_files[:4]:
-        for dot2 in input_dot_files[:4]:
-            graph_matching(dot1, dot2)
+    #for dot1 in input_dot_files[:4]:
+    #    for dot2 in input_dot_files[:4]:
+    #        graph_matching(dot1, dot2)
+    graph_matching(input_dot_files[0],input_dot_files[1],approximateisomorphic=True)
+    graph_matching(input_dot_files[6],input_dot_files[7],approximateisomorphic=True)
