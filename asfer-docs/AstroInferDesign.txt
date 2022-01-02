@@ -12411,15 +12411,6 @@ For a non-trivial subset S of recursively enumerable languages which is a non-em
 
 Previous proofs of undecidability of complement diophantines by Post Correspondence Problem and MRDP theorem are devoted only to the question of existence of a complement function. Since all languages in RE are diophantine, languages which are recursively enumerable but not recursive do not have accept/reject halting Turing Machine to decide diophantine polynomial representation. But Rice Theorem applies in a different setting: Once the set S and its complement RE \ S are known, it is undecidable if an arbitrary Turing Machine M accepts a language in S or RE \ S. In terms of equivalence of RE and Diophantine Equations, it is undecidable if an arbitrary Diophantine Equation represents a set in S or its complement in RE \ S i.e. Given a (complement) diophantine D and 2 complementary sets in RE (disjoint set cover of RE) it is undecidable to decide which set in S or RE \ S are values of diophantine D which is the converse direction of existence of complement diophantine. 
 
---------------------------------------------------------------------------------------------------------------
-PhD Thesis Proposal (2011) - Sections on Program Comprehension - https://sites.google.com/site/kuja27/PhDThesisProposal.pdf - Theoretical Answers to some questions in it:
---------------------------------------------------------------------------------------------------------------
-For the same reason, Comprehending a Program behaviour is a non-trivial property X which asks "Does the Code do X?". Translating Code to Boolean Formula and applying a SAT Solver (as done in SATURN Program Analyzer) is also a non-trivial property: "Does the Code Satisfy the 3SAT?". Similarly automated debug analytics of code is undecidable too. Software solutions to these are only approximations.
-
-A circular timerwheel hashmap of dynamic sets of timeout clockticks to queues of processes - Survival Index Timeout - has been applied to OS Scheduler in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt which estimates a non-trivial undecidable property approximately - Worst Case Execution Time of a process.
-
-Licensing Violation is a great problem in Open Source Software (advertently or inadvertently) and Software Similarity Detection provides solutions to identify similar source codes. Mostly available Similarity Detectors parse function and variable names in two source trees and compare similarity but rarely compare the control flow graphs.But Frequent Subgraph Mining of SATURN Control Flow Graphs (static) and Valgrind/Callgrind/KCachegrind Call Graphs (dynamic) in NeuronRain AsFer takes it further solving similarity detection holistically. Third-party Graph Isomorphism Detectors can also be applied on these compiletime and runtime graphs. NeuronRain AsFer also provides indexing of source code and pairwise similarity by Latent Semantic Analysis. 
-
 References:
 ----------
 581.3 Rice Theorem applications in Programming - http://ai.cs.unibas.ch/_files/teaching/fs16/theo/slides/theory-d08.pdf - Every question on comprehending Programs is undecidable
@@ -12433,6 +12424,15 @@ References:
 581.11 Comparing Call Graphs - [Lohtak] - https://plg.uwaterloo.ca/~olhotak/pubs/paste07.pdf
 581.12 Principles of Program Analysis - [Flemming Nielsen-Hanne Riis Nielsen-Chris Hankin] - https://books.google.co.in/books?id=YseqCAAAQBAJ&printsec=frontcover&dq=nielsen+nielsen+hankin&hl=en&sa=X&ved=0ahUKEwiki_-gsOXfAhUPeysKHWpmA1gQ6AEIKjAA#v=onepage&q&f=false - Interprocedural Analysis - Section 2.5.4 Call Strings as Context and Examples 2.33 and 2.37 - function call stacks or paths in dynamic call graphs can be formalized as unbounded call strings which are defined by concatenation of values of transfer functions for each entry and exit(return) of functions invoked along a path in call graph.
 581.13 Survey of Tools for estimation of Worst Case Execution Time of a program - Fig. 5 Bound Calculation - CFG, Path based, IPET, Transformation rules, Structure based - http://moss.csc.ncsu.edu/~mueller/ftp/pub/mueller/papers/1257.pdf
+
+--------------------------------------------------------------------------------------------------------------
+1191. (THEORY and FEATURE) PhD Thesis Proposal (2011) - Sections on Program Comprehension - https://sites.google.com/site/kuja27/PhDThesisProposal.pdf - Theoretical Answers to some questions in it:
+--------------------------------------------------------------------------------------------------------------
+For the same reason, Comprehending a Program behaviour is a non-trivial property X which asks "Does the Code do X?". Translating Code to Boolean Formula and applying a SAT Solver (as done in SATURN Program Analyzer) is also a non-trivial property: "Does the Code Satisfy the 3SAT?". Similarly automated debug analytics of code is undecidable too. Software solutions to these are only approximations.
+
+A circular timerwheel hashmap of dynamic sets of timeout clockticks to queues of processes - Survival Index Timeout - has been applied to OS Scheduler in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/NeuronRain/AdvancedComputerScienceAndMachineLearning/AdvancedComputerScienceAndMachineLearning.txt which estimates a non-trivial undecidable property approximately - Worst Case Execution Time of a process.
+
+Licensing Violation is a great problem in Open Source Software (advertently or inadvertently) and Software Similarity Detection provides solutions to identify similar source codes. Mostly available Similarity Detectors parse function and variable names in two source trees and compare similarity but rarely compare the control flow graphs.But Frequent Subgraph Mining of SATURN Control Flow Graphs (static) and Valgrind/Callgrind/KCachegrind Call Graphs (dynamic) in NeuronRain AsFer takes it further solving similarity detection holistically. Third-party Graph Isomorphism Detectors can also be applied on these compiletime and runtime graphs. NeuronRain AsFer also provides indexing of source code and pairwise similarity by Latent Semantic Analysis. 
 
 ---------------------------------------------------------------------------------------------------------------
 582. (THEORY) Cloud, Autonomous Vehicles, EventNet Logical Clock, Relativity, Lorentz Transform, Lamport's Clock
@@ -17771,3 +17771,21 @@ References:
 ('Voronoi FaceGraphs of two facial images are isomorphic - (True or False):', False)
 ('Delaunay Triangulation Mesh Graphs of two facial images are isomorphic - (True or False):', False)
 ('Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):', True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1192. (THEORY and FEATURE) Software Analytics - Graph Isomorphism Similarity of Code Callgraphs and Control Flow Graphs - Spark 3.0.1 + Python 3.7.5 - related to 1191,619,770,906,911,771 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools - 2 January 2022
+---------------------------------------------------------------------------------------------------------------------------------------------
+1192.1 Updated CyclomaticComplexitySparkMapReducer.py software analytics python implementation to define new function graph_matching() which finds Graph Isomorphisms between 2 control flow graphs or callgraphs of executables by VF2 and ISMAGS isomorphism implementations of NetworkX.
+1192.2 Few pairs of SATURN VIRGO linux kernel DOT files, FTrace kernelspace callgraph DOT files, KCacheGrind userspace callgraph DOT files are compared by graph_matching() which internally instantiates NetworkX Graphs from DOT files.
+1192.3 Isomorphisms (Full and Subgraph) are printed to logs testlogs/CyclomaticComplexitySparkMapReducer.log.Python3.7.5.Isomorphism.2January2022 and provide hints to kernelspace and userspace code most invoked by different program executables. Percentage similarities are printed in both directions of Graph matching (G1 -> G2 and G2 -> G1). Callgraphs are matched pairwise and only similar executables are fully isomorphic and subgraph isomorphic while dissimilar executables are not. Matching has been restricted to few pairs only as Graph isomorphism is computationally intensive and its lowerbound complexity is not yet proved.
+1192.4 Graph Isomorphisms are tools to find similarity of codebases belonging to different repositories which is a pointer to frequently common algorithms and design patterns across implementations. Graph Isomorphism Detectors are used in anti-plagiarism tools and analyzing malicious code invocations (if Callgraphs-ControlFlowGraphs in two computers running similar executable are not isomorphic something could be brewing - one of them could be infected).
+1192.5 Previous code change implements an item specified in https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/blob/master/kuja27_website_mirrored/site/kuja27/PhDThesisProposal.pdf on isomorphism of Program Control Flow Graphs (SATURN-FTrace-Valgrind-Callgrind-KCacheGrind) and Slice Dependency Graphs.
+1192.6 FTrace logs and DOT files of kernelspace callgraphs for "find" and "pwd" executables created by asfer_ftrace.sh and parsed to DOT by:
+	ftrace_callgraph_dot("ftrace.pwd.log")
+	ftrace_callgraph_dot("ftrace.find.log")
+have been added to repositories:
+	find.ftrace_callgraph.dot
+	ftrace.find.log
+	ftrace.pwd.log
+	pwd.ftrace_callgraph.dot
+1192.7 Isomorphism iterations and ISMGAS symmetry have been made configurable arguments and set to default 25 and False respectively. CyclomaticComplexitySparkMapReducer.py has been upgraded to Python 3.7.5 + Spark 3.0.1 by autopep8 and 2to3 utilities. Python 2.7 version of CyclomaticComplexitySparkMapReducer.py has been renamed to CyclomaticComplexitySparkMapReducer.py.2.7.
