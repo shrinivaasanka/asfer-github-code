@@ -1,0 +1,2293 @@
+strict digraph  {
+rb_simple_write
+;
+" mutex_unlock ";
+vfs_write
+;
+" __fsnotify_parent ";
+" fsnotify ";
+" __sb_end_write ";
+entry_SYSCALL_64_after_hwframe
+;
+" do_syscall_64 ";
+do_syscall_64
+;
+" __x64_sys_dup2 ";
+__x64_sys_dup2
+;
+" ksys_dup3 ";
+ksys_dup3
+;
+" _raw_spin_lock ";
+" expand_files.part.11 ";
+" do_dup2 ";
+do_dup2
+;
+" _raw_spin_unlock ";
+" filp_close ";
+filp_close
+;
+" dnotify_flush ";
+" locks_remove_posix ";
+" fput ";
+fput
+;
+" fput_many ";
+fput_many
+;
+" task_work_add ";
+task_work_add
+;
+" kick_process ";
+" exit_to_usermode_loop ";
+exit_to_usermode_loop
+;
+" task_work_run ";
+task_work_run
+;
+" _raw_spin_lock_irq ";
+" _raw_spin_unlock_irq ";
+" ____fput ";
+____fput
+;
+" __fput ";
+__fput
+;
+" locks_remove_file ";
+" ima_file_free ";
+trace_array_put
+;
+" mutex_lock ";
+" module_put ";
+" put_pid ";
+" __mnt_drop_write ";
+" dput ";
+dput
+;
+" dput.part.34 ";
+"dput.part.34\n";
+" __rcu_read_lock ";
+" __rcu_read_unlock ";
+" mntput ";
+mntput
+;
+" mntput_no_expire ";
+mntput_no_expire
+;
+" security_file_free ";
+security_file_free
+;
+" apparmor_file_free_security ";
+" kmem_cache_free ";
+" call_rcu ";
+call_rcu
+;
+" __call_rcu.constprop.59 ";
+"__call_rcu.constprop.59\n";
+" rcu_segcblist_enqueue ";
+" mem_cgroup_handle_over_high ";
+" blkcg_maybe_throttle_current ";
+" __x64_sys_fcntl ";
+__x64_sys_fcntl
+;
+" __fdget_raw ";
+__fdget_raw
+;
+" __fget_light ";
+" security_file_fcntl ";
+" do_fcntl ";
+do_fcntl
+;
+" get_close_on_exec ";
+get_close_on_exec
+;
+" __x64_sys_close ";
+__x64_sys_close
+;
+" __close_fd ";
+__close_fd
+;
+" __x64_sys_newstat ";
+__do_sys_newstat
+;
+" vfs_statx ";
+vfs_statx
+;
+" user_path_at_empty ";
+user_path_at_empty
+;
+" getname_flags ";
+getname_flags
+;
+" kmem_cache_alloc ";
+kmem_cache_alloc
+;
+" should_failslab ";
+strncpy_from_user
+;
+" __check_object_size ";
+__check_object_size
+;
+" check_stack_object ";
+" __virt_addr_valid ";
+" __check_heap_object ";
+" filename_lookup.part.61 ";
+"filename_lookup.part.61\n";
+" path_lookupat.isra.45 ";
+"path_lookupat.isra.45\n";
+" path_init ";
+path_init
+;
+" link_path_walk.part.42 ";
+"link_path_walk.part.42\n";
+" inode_permission ";
+inode_permission
+;
+" generic_permission ";
+generic_permission
+;
+" get_cached_acl_rcu ";
+" in_group_p ";
+" security_inode_permission ";
+" walk_component ";
+" complete_walk ";
+complete_walk
+;
+" unlazy_walk ";
+unlazy_walk
+;
+" legitimize_links ";
+" legitimize_path.isra.38 ";
+"legitimize_path.isra.38\n";
+" __legitimize_mnt ";
+" terminate_walk ";
+terminate_walk
+;
+" restore_nameidata ";
+" putname ";
+putname
+;
+" vfs_getattr ";
+vfs_getattr
+;
+" security_inode_getattr ";
+security_inode_getattr
+;
+" apparmor_inode_getattr ";
+apparmor_inode_getattr
+;
+" common_perm_cond ";
+common_perm_cond
+;
+" common_perm ";
+" vfs_getattr_nosec ";
+vfs_getattr_nosec
+;
+" ext4_getattr ";
+ext4_getattr
+;
+" generic_fillattr ";
+" path_put ";
+path_put
+;
+" cp_new_stat ";
+cp_new_stat
+;
+" from_kuid_munged ";
+from_kuid_munged
+;
+" map_id_up ";
+" from_kgid_munged ";
+from_kgid_munged
+;
+" set_root ";
+" nd_jump_root ";
+walk_component
+;
+" lookup_fast ";
+lookup_fast
+;
+" __d_lookup_rcu ";
+" __follow_mount_rcu.isra.35.part.36 ";
+"__follow_mount_rcu.isra.35.part.36\n";
+" __lookup_mnt ";
+" ext4_file_getattr ";
+ext4_file_getattr
+;
+" __ia32_sys_geteuid ";
+__ia32_sys_geteuid
+;
+" __ia32_sys_getegid ";
+__ia32_sys_getegid
+;
+" __ia32_sys_getuid ";
+__ia32_sys_getuid
+;
+" __ia32_sys_getgid ";
+__ia32_sys_getgid
+;
+" __x64_sys_access ";
+__x64_sys_access
+;
+" do_faccessat ";
+do_faccessat
+;
+" prepare_creds ";
+prepare_creds
+;
+" security_prepare_creds ";
+security_prepare_creds
+;
+" __kmalloc ";
+__kmalloc
+;
+" kmalloc_slab ";
+" apparmor_cred_prepare ";
+" make_kuid ";
+make_kuid
+;
+" map_id_range_down ";
+" override_creds ";
+" path_noexec ";
+" revert_creds ";
+" __put_cred ";
+__put_cred
+;
+apic_timer_interrupt
+;
+" smp_apic_timer_interrupt ";
+smp_apic_timer_interrupt
+;
+" irq_enter ";
+irq_enter
+;
+" rcu_irq_enter ";
+" hrtimer_interrupt ";
+hrtimer_interrupt
+;
+" _raw_spin_lock_irqsave ";
+" ktime_get_update_offsets_now ";
+" __hrtimer_run_queues ";
+__hrtimer_run_queues
+;
+" __remove_hrtimer ";
+" _raw_spin_unlock_irqrestore ";
+" tick_sched_timer ";
+tick_sched_timer
+;
+" ktime_get ";
+" tick_sched_do_timer ";
+tick_sched_do_timer
+;
+" tick_do_update_jiffies64.part.16 ";
+"tick_do_update_jiffies64.part.16\n";
+" do_timer ";
+do_timer
+;
+" calc_global_load ";
+" update_wall_time ";
+update_wall_time
+;
+" timekeeping_advance ";
+timekeeping_advance
+;
+" ntp_tick_length ";
+" timekeeping_update ";
+timekeeping_update
+;
+" ntp_get_next_leap ";
+" update_vsyscall ";
+" raw_notifier_call_chain ";
+raw_notifier_call_chain
+;
+" notifier_call_chain ";
+notifier_call_chain
+;
+" pvclock_gtod_notify ";
+" update_fast_timekeeper ";
+" tick_sched_handle ";
+tick_sched_handle
+;
+" update_process_times ";
+update_process_times
+;
+" account_process_tick ";
+account_process_tick
+;
+" account_user_time ";
+account_user_time
+;
+" cpuacct_account_field ";
+cpuacct_account_field
+;
+" __cgroup_account_cputime_field ";
+__cgroup_account_cputime_field
+;
+" cgroup_base_stat_cputime_account_end.isra.7 ";
+"cgroup_base_stat_cputime_account_end.isra.7\n";
+" cgroup_rstat_updated ";
+" acct_account_cputime ";
+acct_account_cputime
+;
+" __acct_update_integrals ";
+" run_local_timers ";
+run_local_timers
+;
+" hrtimer_run_queues ";
+" raise_softirq ";
+" rcu_sched_clock_irq ";
+rcu_sched_clock_irq
+;
+" scheduler_tick ";
+scheduler_tick
+;
+" update_rq_clock ";
+" task_tick_fair ";
+task_tick_fair
+;
+" update_curr ";
+update_curr
+;
+" update_min_vruntime ";
+" cpuacct_charge ";
+cpuacct_charge
+;
+" __cgroup_account_cputime ";
+__cgroup_account_cputime
+;
+" __update_load_avg_se ";
+__update_load_avg_se
+;
+" __accumulate_pelt_segments ";
+" __update_load_avg_cfs_rq ";
+__update_load_avg_cfs_rq
+;
+" update_cfs_group ";
+" hrtimer_active ";
+update_cfs_group
+;
+" reweight_entity ";
+reweight_entity
+;
+" account_entity_dequeue ";
+" account_entity_enqueue ";
+" dbs_update_util_handler ";
+irq_work_queue
+;
+" arch_irq_work_raise ";
+arch_irq_work_raise
+;
+" apic_send_IPI_self ";
+apic_send_IPI_self
+;
+" __default_send_IPI_shortcut ";
+" native_apic_wait_icr_idle ";
+" cpu_load_update_active ";
+cpu_load_update_active
+;
+" tick_nohz_tick_stopped ";
+" cpu_load_update ";
+" calc_global_load_tick ";
+" trigger_load_balance ";
+trigger_load_balance
+;
+" nohz_balance_exit_idle ";
+" run_posix_cpu_timers ";
+" profile_tick ";
+" hrtimer_forward ";
+" enqueue_hrtimer ";
+" __hrtimer_get_next_event ";
+__hrtimer_get_next_event
+;
+" __hrtimer_next_event_base ";
+" tick_program_event ";
+tick_program_event
+;
+" clockevents_program_event ";
+clockevents_program_event
+;
+" lapic_next_event ";
+" irq_exit ";
+irq_exit
+;
+" ksoftirqd_running ";
+" __do_softirq ";
+irq_work_interrupt
+;
+" smp_irq_work_interrupt ";
+smp_irq_work_interrupt
+;
+irq_work_run_list
+;
+" dbs_irq_work ";
+dbs_irq_work
+;
+" queue_work_on ";
+queue_work_on
+;
+" __queue_work ";
+__queue_work
+;
+" get_work_pool ";
+" insert_work ";
+insert_work
+;
+" get_pwq.isra.27 ";
+" wake_up_process ";
+wake_up_process
+;
+" try_to_wake_up ";
+try_to_wake_up
+;
+" ttwu_do_activate ";
+ttwu_do_activate
+;
+" activate_task ";
+activate_task
+;
+" psi_task_change ";
+psi_task_change
+;
+" record_times ";
+" enqueue_task_fair ";
+enqueue_task_fair
+;
+" enqueue_entity ";
+enqueue_entity
+;
+update_load_avg
+;
+" place_entity ";
+" __enqueue_entity ";
+" hrtick_update ";
+" wq_worker_waking_up ";
+wq_worker_waking_up
+;
+" kthread_data ";
+" ttwu_do_wakeup ";
+ttwu_do_wakeup
+;
+" check_preempt_curr ";
+check_preempt_curr
+;
+" check_preempt_wakeup ";
+check_preempt_wakeup
+;
+" wakeup_preempt_entity.isra.75 ";
+" set_next_buddy ";
+" resched_curr ";
+" ttwu_stat ";
+" idle_cpu ";
+" rcu_irq_exit ";
+__do_softirq
+;
+" run_timer_softirq ";
+run_timer_softirq
+;
+" rcu_core ";
+rcu_core
+;
+" rcu_preempt_deferred_qs ";
+" note_gp_changes ";
+" rcu_accelerate_cbs ";
+rcu_accelerate_cbs
+;
+" rcu_segcblist_pend_cbs ";
+" rcu_segcblist_accelerate ";
+" rcu_report_qs_rnp ";
+rcu_report_qs_rnp
+;
+" rcu_jiffies_till_stall_check ";
+" rcu_segcblist_ready_cbs ";
+prepare_exit_to_usermode
+;
+" schedule ";
+__schedule
+;
+" rcu_note_context_switch ";
+rcu_note_context_switch
+;
+" pick_next_task_fair ";
+pick_next_task_fair
+;
+" check_cfs_rq_runtime ";
+" pick_next_entity ";
+pick_next_entity
+;
+" clear_buddies ";
+" put_prev_entity ";
+put_prev_entity
+;
+" set_next_entity ";
+" finish_task_switch ";
+finish_task_switch
+;
+" __x64_sys_rt_sigprocmask ";
+__x64_sys_rt_sigprocmask
+;
+" sigprocmask ";
+sigprocmask
+;
+" __set_current_blocked ";
+__set_current_blocked
+;
+" __set_task_blocked ";
+__set_task_blocked
+;
+" recalc_sigpending ";
+recalc_sigpending
+;
+" recalc_sigpending_tsk ";
+" __x64_sys_clone ";
+__x64_sys_clone
+;
+" _do_fork ";
+_do_fork
+;
+" copy_process.part.36 ";
+"copy_process.part.36\n";
+" tsk_fork_get_node ";
+" kmem_cache_alloc_node ";
+kmem_cache_alloc_node
+;
+" __slab_alloc.isra.79 ";
+"__slab_alloc.isra.79\n";
+" ___slab_alloc ";
+" arch_dup_task_struct ";
+arch_dup_task_struct
+;
+" fpu__copy ";
+" get_random_u64 ";
+" account_kernel_stack ";
+account_kernel_stack
+;
+" mod_zone_page_state ";
+" copy_creds ";
+copy_creds
+;
+" key_put ";
+" __delayacct_tsk_init ";
+__delayacct_tsk_init
+;
+" acct_clear_integrals ";
+" cgroup_fork ";
+" sched_fork ";
+sched_fork
+;
+" __sched_fork ";
+__sched_fork
+;
+" init_dl_task_timer ";
+init_dl_task_timer
+;
+" hrtimer_init ";
+hrtimer_init
+;
+" __hrtimer_init ";
+" init_dl_inactive_task_timer ";
+init_dl_inactive_task_timer
+;
+" __dl_clear_params ";
+" init_numa_balancing ";
+init_numa_balancing
+;
+" __msecs_to_jiffies ";
+" init_entity_runnable_average ";
+" set_task_rq_fair ";
+" task_fork_fair ";
+task_fork_fair
+;
+place_entity
+;
+" sched_slice.isra.73 ";
+"sched_slice.isra.73\n";
+" __calc_delta ";
+perf_event_init_task
+;
+" __mutex_init ";
+" audit_alloc ";
+" security_task_alloc ";
+security_task_alloc
+;
+" apparmor_task_alloc ";
+" copy_semundo ";
+" dup_fd ";
+dup_fd
+;
+" __init_waitqueue_head ";
+" alloc_fdtable ";
+alloc_fdtable
+;
+" kmem_cache_alloc_trace ";
+kmem_cache_alloc_trace
+;
+" kvmalloc_node ";
+kvmalloc_node
+;
+" __kmalloc_node ";
+__kmalloc_node
+;
+" copy_fd_bitmaps ";
+" copy_fs_struct ";
+copy_fs_struct
+;
+" path_get ";
+path_get
+;
+" mntget ";
+" tty_audit_fork ";
+" sched_autogroup_fork ";
+sched_autogroup_fork
+;
+" __lock_task_sighand ";
+__lock_task_sighand
+;
+" mm_init ";
+mm_init
+;
+" __init_rwsem ";
+" pgd_alloc ";
+pgd_alloc
+;
+" __get_free_pages ";
+__get_free_pages
+;
+" alloc_pages_current ";
+alloc_pages_current
+;
+" get_task_policy.part.35 ";
+" policy_nodemask ";
+" policy_node ";
+" __alloc_pages_nodemask ";
+__alloc_pages_nodemask
+;
+" should_fail_alloc_page ";
+" get_page_from_freelist ";
+get_page_from_freelist
+;
+" __zone_watermark_ok ";
+" __mod_zone_page_state ";
+" __inc_numa_state ";
+" prep_new_page ";
+prep_new_page
+;
+" kernel_poison_pages ";
+" page_poisoning_enabled ";
+" preallocate_pmds.constprop.23 ";
+" uprobe_start_dup_mmap ";
+" down_write_killable ";
+" uprobe_dup_mmap ";
+" down_write ";
+" get_mm_exe_file ";
+get_mm_exe_file
+;
+" vm_area_dup ";
+vm_area_dup
+;
+" vma_dup_policy ";
+" dup_userfaultfd ";
+" anon_vma_fork ";
+" vma_interval_tree_insert_after ";
+" up_write ";
+" __vma_link_rb ";
+__vma_link_rb
+;
+" vma_compute_subtree_gap ";
+" copy_page_range ";
+" security_vm_enough_memory_mm ";
+security_vm_enough_memory_mm
+;
+" cap_vm_enough_memory ";
+cap_vm_enough_memory
+;
+" cap_capable ";
+" __vm_enough_memory ";
+anon_vma_fork
+;
+" anon_vma_clone ";
+anon_vma_clone
+;
+" anon_vma_interval_tree_insert ";
+__rb_insert_augmented
+;
+" __anon_vma_interval_tree_augment_rotate ";
+" vma_interval_tree_augment_rotate ";
+copy_page_range
+;
+" __pud_alloc ";
+__pud_alloc
+;
+" get_zeroed_page ";
+get_zeroed_page
+;
+" __pmd_alloc ";
+__pmd_alloc
+;
+" copy_pte_range.isra.85 ";
+"copy_pte_range.isra.85\n";
+" __pte_alloc ";
+__pte_alloc
+;
+" pte_alloc_one ";
+pte_alloc_one
+;
+" inc_zone_page_state ";
+" _vm_normal_page ";
+" vma_gap_callbacks_rotate ";
+vma_gap_callbacks_rotate
+;
+" track_pfn_copy ";
+" ldt_dup_context ";
+ldt_dup_context
+;
+" flush_tlb_mm_range ";
+flush_tlb_mm_range
+;
+" flush_tlb_func_common.constprop.9 ";
+"flush_tlb_func_common.constprop.9\n";
+" native_flush_tlb ";
+" dup_userfaultfd_complete ";
+" uprobe_end_dup_mmap ";
+" try_module_get ";
+" copy_namespaces ";
+copy_namespaces
+;
+" copy_thread_tls ";
+" alloc_pid ";
+alloc_pid
+;
+" user_disable_single_step ";
+" clear_all_latency_tracing ";
+" __percpu_down_read ";
+" cgroup_can_fork ";
+cgroup_can_fork
+;
+" pids_can_fork ";
+" ktime_get_with_offset ";
+" _raw_write_lock_irq ";
+" klp_copy_process ";
+" get_seccomp_filter ";
+" attach_pid ";
+" _raw_write_unlock_irq ";
+" proc_fork_connector ";
+" cgroup_post_fork ";
+cgroup_post_fork
+;
+" css_set_move_task ";
+css_set_move_task
+;
+" cgroup_move_task ";
+cgroup_move_task
+;
+" task_rq_lock ";
+task_rq_lock
+;
+" cpuset_fork ";
+" cpu_cgroup_fork ";
+cpu_cgroup_fork
+;
+" sched_change_group ";
+sched_change_group
+;
+" task_wants_autogroup ";
+" task_change_group_fair ";
+task_change_group_fair
+;
+" freezer_fork ";
+"percpu_up_read.constprop.38\n";
+" __percpu_up_read ";
+__percpu_up_read
+;
+" rcuwait_wake_up ";
+rcuwait_wake_up
+;
+" uprobe_copy_process ";
+" get_task_pid ";
+get_task_pid
+;
+" pid_vnr ";
+" wake_up_new_task ";
+wake_up_new_task
+;
+" select_task_rq_fair ";
+select_task_rq_fair
+;
+" __task_rq_lock ";
+__task_rq_lock
+;
+" post_init_entity_util_avg ";
+post_init_entity_util_avg
+;
+" attach_entity_cfs_rq ";
+attach_entity_cfs_rq
+;
+" attach_entity_load_avg ";
+" propagate_entity_cfs_rq.isra.93 ";
+"propagate_entity_cfs_rq.isra.93\n";
+resched_curr
+;
+" native_smp_send_reschedule ";
+native_smp_send_reschedule
+;
+" default_send_IPI_single ";
+default_send_IPI_single
+;
+" flat_send_IPI_mask ";
+flat_send_IPI_mask
+;
+" _flat_send_IPI_mask ";
+_flat_send_IPI_mask
+;
+" __default_send_IPI_dest_field ";
+do_page_fault
+;
+" __do_page_fault ";
+__do_page_fault
+;
+" down_read_trylock ";
+" find_vma ";
+find_vma
+;
+" vmacache_find ";
+" vmacache_update ";
+" handle_mm_fault ";
+handle_mm_fault
+;
+" mem_cgroup_from_task ";
+" __handle_mm_fault ";
+__handle_mm_fault
+;
+" pmd_devmap_trans_unstable ";
+" do_wp_page ";
+do_wp_page
+;
+" reuse_swap_page ";
+reuse_swap_page
+;
+" page_trans_huge_mapcount ";
+" unlock_page ";
+" wp_page_copy ";
+wp_page_copy
+;
+" alloc_pages_vma ";
+alloc_pages_vma
+;
+" __get_vma_policy ";
+" get_vma_policy.part.39 ";
+"get_vma_policy.part.39\n";
+" mem_cgroup_try_charge_delay ";
+mem_cgroup_try_charge_delay
+;
+" mem_cgroup_try_charge ";
+mem_cgroup_try_charge
+;
+" get_mem_cgroup_from_mm ";
+get_mem_cgroup_from_mm
+;
+" try_charge ";
+" mem_cgroup_throttle_swaprate ";
+mem_cgroup_throttle_swaprate
+;
+" kthread_blkcg ";
+" ptep_clear_flush ";
+ptep_clear_flush
+;
+" native_flush_tlb_one_user ";
+" page_add_new_anon_rmap ";
+page_add_new_anon_rmap
+;
+" __mod_node_page_state ";
+" __page_set_anon_rmap ";
+" mem_cgroup_commit_charge ";
+mem_cgroup_commit_charge
+;
+" mem_cgroup_charge_statistics ";
+" memcg_check_events ";
+" lru_cache_add_active_or_unevictable ";
+lru_cache_add_active_or_unevictable
+;
+" __lru_cache_add ";
+" page_remove_rmap ";
+" up_read ";
+" account_system_time ";
+account_system_time
+;
+" account_system_index_time ";
+account_system_index_time
+;
+" kick_ilb ";
+kick_ilb
+;
+page_remove_rmap
+;
+" __dec_node_page_state ";
+__dec_node_page_state
+;
+" __dec_node_state ";
+" __put_page ";
+__put_page
+;
+" __page_cache_release ";
+__page_cache_release
+;
+" mem_cgroup_page_lruvec ";
+" mem_cgroup_update_lru_size ";
+" mem_cgroup_uncharge ";
+mem_cgroup_uncharge
+;
+" uncharge_page ";
+" uncharge_batch ";
+uncharge_batch
+;
+" free_unref_page ";
+free_unref_page
+;
+" free_pcp_prepare ";
+free_pcp_prepare
+;
+" free_unref_page_prepare.part.73 ";
+" free_unref_page_commit ";
+" sync_mm_rss ";
+" page_move_anon_rmap ";
+" page_cpupid_xchg_last ";
+" ptep_set_access_flags ";
+" __x64_sys_rt_sigaction ";
+__x64_sys_rt_sigaction
+;
+" do_sigaction ";
+do_sigaction
+;
+" sigaction_compat_abi ";
+" __x64_sys_wait4 ";
+__do_sys_wait4
+;
+" kernel_wait4 ";
+kernel_wait4
+;
+" do_wait ";
+do_wait
+;
+" add_wait_queue ";
+add_wait_queue
+;
+" _raw_read_lock ";
+" wait_consider_task ";
+" _raw_read_unlock ";
+" deactivate_task ";
+deactivate_task
+;
+" dequeue_task_fair ";
+dequeue_task_fair
+;
+" dequeue_entity ";
+dequeue_entity
+;
+" pick_next_task_idle ";
+pick_next_task_idle
+;
+" put_prev_task_fair ";
+put_prev_task_fair
+;
+rb_simple_write
+ -> " mutex_unlock ";
+vfs_write
+ -> " __fsnotify_parent ";
+vfs_write
+ -> " fsnotify ";
+vfs_write
+ -> " __sb_end_write ";
+entry_SYSCALL_64_after_hwframe
+ -> " do_syscall_64 ";
+do_syscall_64
+ -> " __x64_sys_dup2 ";
+do_syscall_64
+ -> " exit_to_usermode_loop ";
+do_syscall_64
+ -> " __x64_sys_fcntl ";
+do_syscall_64
+ -> " __x64_sys_close ";
+do_syscall_64
+ -> " __x64_sys_newstat ";
+do_syscall_64
+ -> " __ia32_sys_geteuid ";
+do_syscall_64
+ -> " __ia32_sys_getegid ";
+do_syscall_64
+ -> " __ia32_sys_getuid ";
+do_syscall_64
+ -> " __ia32_sys_getgid ";
+do_syscall_64
+ -> " __x64_sys_access ";
+do_syscall_64
+ -> " __x64_sys_rt_sigprocmask ";
+do_syscall_64
+ -> " __x64_sys_clone ";
+do_syscall_64
+ -> " __x64_sys_rt_sigaction ";
+do_syscall_64
+ -> " __x64_sys_wait4 ";
+__x64_sys_dup2
+ -> " ksys_dup3 ";
+ksys_dup3
+ -> " _raw_spin_lock ";
+ksys_dup3
+ -> " expand_files.part.11 ";
+ksys_dup3
+ -> " do_dup2 ";
+do_dup2
+ -> " _raw_spin_unlock ";
+do_dup2
+ -> " filp_close ";
+filp_close
+ -> " dnotify_flush ";
+filp_close
+ -> " locks_remove_posix ";
+filp_close
+ -> " fput ";
+fput
+ -> " fput_many ";
+fput_many
+ -> " task_work_add ";
+task_work_add
+ -> " kick_process ";
+exit_to_usermode_loop
+ -> " task_work_run ";
+exit_to_usermode_loop
+ -> " mem_cgroup_handle_over_high ";
+exit_to_usermode_loop
+ -> " blkcg_maybe_throttle_current ";
+exit_to_usermode_loop
+ -> " schedule ";
+task_work_run
+ -> " _raw_spin_lock_irq ";
+task_work_run
+ -> " _raw_spin_unlock_irq ";
+task_work_run
+ -> " ____fput ";
+____fput
+ -> " __fput ";
+__fput
+ -> " __fsnotify_parent ";
+__fput
+ -> " fsnotify ";
+__fput
+ -> " locks_remove_file ";
+__fput
+ -> " ima_file_free ";
+__fput
+ -> " module_put ";
+__fput
+ -> " put_pid ";
+__fput
+ -> " __mnt_drop_write ";
+__fput
+ -> " dput ";
+__fput
+ -> " mntput ";
+__fput
+ -> " security_file_free ";
+__fput
+ -> " call_rcu ";
+trace_array_put
+ -> " mutex_lock ";
+trace_array_put
+ -> " mutex_unlock ";
+dput
+ -> " dput.part.34 ";
+"dput.part.34\n" -> " __rcu_read_lock ";
+"dput.part.34\n" -> " __rcu_read_unlock ";
+mntput
+ -> " mntput_no_expire ";
+mntput_no_expire
+ -> " __rcu_read_lock ";
+mntput_no_expire
+ -> " __rcu_read_unlock ";
+security_file_free
+ -> " apparmor_file_free_security ";
+security_file_free
+ -> " kmem_cache_free ";
+call_rcu
+ -> " __call_rcu.constprop.59 ";
+"__call_rcu.constprop.59\n" -> " rcu_segcblist_enqueue ";
+__x64_sys_fcntl
+ -> " __fdget_raw ";
+__x64_sys_fcntl
+ -> " security_file_fcntl ";
+__x64_sys_fcntl
+ -> " do_fcntl ";
+__fdget_raw
+ -> " __fget_light ";
+do_fcntl
+ -> " get_close_on_exec ";
+get_close_on_exec
+ -> " __rcu_read_lock ";
+get_close_on_exec
+ -> " __rcu_read_unlock ";
+__x64_sys_close
+ -> " __close_fd ";
+__close_fd
+ -> " _raw_spin_lock ";
+__close_fd
+ -> " _raw_spin_unlock ";
+__close_fd
+ -> " filp_close ";
+__do_sys_newstat
+ -> " vfs_statx ";
+__do_sys_newstat
+ -> " cp_new_stat ";
+vfs_statx
+ -> " user_path_at_empty ";
+vfs_statx
+ -> " vfs_getattr ";
+vfs_statx
+ -> " path_put ";
+user_path_at_empty
+ -> " getname_flags ";
+user_path_at_empty
+ -> " filename_lookup.part.61 ";
+getname_flags
+ -> " kmem_cache_alloc ";
+kmem_cache_alloc
+ -> " should_failslab ";
+kmem_cache_alloc
+ -> " __slab_alloc.isra.79 ";
+strncpy_from_user
+ -> " __check_object_size ";
+__check_object_size
+ -> " check_stack_object ";
+__check_object_size
+ -> " __virt_addr_valid ";
+__check_object_size
+ -> " __check_heap_object ";
+"filename_lookup.part.61\n" -> " path_lookupat.isra.45 ";
+"filename_lookup.part.61\n" -> " restore_nameidata ";
+"filename_lookup.part.61\n" -> " putname ";
+"path_lookupat.isra.45\n" -> " path_init ";
+"path_lookupat.isra.45\n" -> " link_path_walk.part.42 ";
+"path_lookupat.isra.45\n" -> " walk_component ";
+"path_lookupat.isra.45\n" -> " complete_walk ";
+"path_lookupat.isra.45\n" -> " terminate_walk ";
+path_init
+ -> " __rcu_read_lock ";
+path_init
+ -> " set_root ";
+path_init
+ -> " nd_jump_root ";
+"link_path_walk.part.42\n" -> " inode_permission ";
+"link_path_walk.part.42\n" -> " walk_component ";
+inode_permission
+ -> " generic_permission ";
+inode_permission
+ -> " security_inode_permission ";
+generic_permission
+ -> " get_cached_acl_rcu ";
+generic_permission
+ -> " in_group_p ";
+complete_walk
+ -> " unlazy_walk ";
+unlazy_walk
+ -> " legitimize_links ";
+unlazy_walk
+ -> " legitimize_path.isra.38 ";
+unlazy_walk
+ -> " __rcu_read_unlock ";
+"legitimize_path.isra.38\n" -> " __legitimize_mnt ";
+terminate_walk
+ -> " dput ";
+terminate_walk
+ -> " mntput ";
+terminate_walk
+ -> " __rcu_read_unlock ";
+putname
+ -> " kmem_cache_free ";
+vfs_getattr
+ -> " security_inode_getattr ";
+vfs_getattr
+ -> " vfs_getattr_nosec ";
+security_inode_getattr
+ -> " apparmor_inode_getattr ";
+apparmor_inode_getattr
+ -> " common_perm_cond ";
+common_perm_cond
+ -> " common_perm ";
+vfs_getattr_nosec
+ -> " ext4_getattr ";
+vfs_getattr_nosec
+ -> " ext4_file_getattr ";
+ext4_getattr
+ -> " generic_fillattr ";
+path_put
+ -> " dput ";
+path_put
+ -> " mntput ";
+cp_new_stat
+ -> " from_kuid_munged ";
+cp_new_stat
+ -> " from_kgid_munged ";
+from_kuid_munged
+ -> " map_id_up ";
+from_kgid_munged
+ -> " map_id_up ";
+walk_component
+ -> " lookup_fast ";
+lookup_fast
+ -> " __d_lookup_rcu ";
+lookup_fast
+ -> " __follow_mount_rcu.isra.35.part.36 ";
+"__follow_mount_rcu.isra.35.part.36\n" -> " __lookup_mnt ";
+ext4_file_getattr
+ -> " ext4_getattr ";
+__ia32_sys_geteuid
+ -> " from_kuid_munged ";
+__ia32_sys_getegid
+ -> " from_kgid_munged ";
+__ia32_sys_getuid
+ -> " from_kuid_munged ";
+__ia32_sys_getgid
+ -> " from_kgid_munged ";
+__x64_sys_access
+ -> " do_faccessat ";
+do_faccessat
+ -> " prepare_creds ";
+do_faccessat
+ -> " make_kuid ";
+do_faccessat
+ -> " override_creds ";
+do_faccessat
+ -> " user_path_at_empty ";
+do_faccessat
+ -> " path_noexec ";
+do_faccessat
+ -> " inode_permission ";
+do_faccessat
+ -> " path_put ";
+do_faccessat
+ -> " revert_creds ";
+do_faccessat
+ -> " __put_cred ";
+prepare_creds
+ -> " kmem_cache_alloc ";
+prepare_creds
+ -> " security_prepare_creds ";
+security_prepare_creds
+ -> " __kmalloc ";
+security_prepare_creds
+ -> " apparmor_cred_prepare ";
+__kmalloc
+ -> " kmalloc_slab ";
+__kmalloc
+ -> " should_failslab ";
+make_kuid
+ -> " map_id_range_down ";
+__put_cred
+ -> " call_rcu ";
+apic_timer_interrupt
+ -> " smp_apic_timer_interrupt ";
+smp_apic_timer_interrupt
+ -> " irq_enter ";
+smp_apic_timer_interrupt
+ -> " hrtimer_interrupt ";
+smp_apic_timer_interrupt
+ -> " irq_exit ";
+irq_enter
+ -> " rcu_irq_enter ";
+hrtimer_interrupt
+ -> " _raw_spin_lock_irqsave ";
+hrtimer_interrupt
+ -> " ktime_get_update_offsets_now ";
+hrtimer_interrupt
+ -> " __hrtimer_run_queues ";
+hrtimer_interrupt
+ -> " __hrtimer_get_next_event ";
+hrtimer_interrupt
+ -> " _raw_spin_unlock_irqrestore ";
+hrtimer_interrupt
+ -> " tick_program_event ";
+__hrtimer_run_queues
+ -> " __remove_hrtimer ";
+__hrtimer_run_queues
+ -> " _raw_spin_unlock_irqrestore ";
+__hrtimer_run_queues
+ -> " tick_sched_timer ";
+__hrtimer_run_queues
+ -> " _raw_spin_lock_irq ";
+__hrtimer_run_queues
+ -> " enqueue_hrtimer ";
+tick_sched_timer
+ -> " ktime_get ";
+tick_sched_timer
+ -> " tick_sched_do_timer ";
+tick_sched_timer
+ -> " tick_sched_handle ";
+tick_sched_timer
+ -> " hrtimer_forward ";
+tick_sched_do_timer
+ -> " tick_do_update_jiffies64.part.16 ";
+"tick_do_update_jiffies64.part.16\n" -> " _raw_spin_lock ";
+"tick_do_update_jiffies64.part.16\n" -> " do_timer ";
+"tick_do_update_jiffies64.part.16\n" -> " _raw_spin_unlock ";
+"tick_do_update_jiffies64.part.16\n" -> " update_wall_time ";
+do_timer
+ -> " calc_global_load ";
+update_wall_time
+ -> " timekeeping_advance ";
+timekeeping_advance
+ -> " _raw_spin_lock_irqsave ";
+timekeeping_advance
+ -> " ntp_tick_length ";
+timekeeping_advance
+ -> " timekeeping_update ";
+timekeeping_advance
+ -> " _raw_spin_unlock_irqrestore ";
+timekeeping_update
+ -> " ntp_get_next_leap ";
+timekeeping_update
+ -> " update_vsyscall ";
+timekeeping_update
+ -> " raw_notifier_call_chain ";
+timekeeping_update
+ -> " update_fast_timekeeper ";
+raw_notifier_call_chain
+ -> " notifier_call_chain ";
+notifier_call_chain
+ -> " pvclock_gtod_notify ";
+tick_sched_handle
+ -> " update_process_times ";
+tick_sched_handle
+ -> " profile_tick ";
+update_process_times
+ -> " account_process_tick ";
+update_process_times
+ -> " run_local_timers ";
+update_process_times
+ -> " rcu_sched_clock_irq ";
+update_process_times
+ -> " scheduler_tick ";
+update_process_times
+ -> " run_posix_cpu_timers ";
+account_process_tick
+ -> " account_user_time ";
+account_process_tick
+ -> " account_system_time ";
+account_user_time
+ -> " cpuacct_account_field ";
+account_user_time
+ -> " __rcu_read_lock ";
+account_user_time
+ -> " __cgroup_account_cputime_field ";
+account_user_time
+ -> " __rcu_read_unlock ";
+account_user_time
+ -> " acct_account_cputime ";
+cpuacct_account_field
+ -> " __rcu_read_lock ";
+cpuacct_account_field
+ -> " __rcu_read_unlock ";
+__cgroup_account_cputime_field
+ -> " cgroup_base_stat_cputime_account_end.isra.7 ";
+"cgroup_base_stat_cputime_account_end.isra.7\n" -> " cgroup_rstat_updated ";
+acct_account_cputime
+ -> " __acct_update_integrals ";
+run_local_timers
+ -> " hrtimer_run_queues ";
+run_local_timers
+ -> " raise_softirq ";
+rcu_sched_clock_irq
+ -> " raise_softirq ";
+rcu_sched_clock_irq
+ -> " rcu_segcblist_ready_cbs ";
+scheduler_tick
+ -> " _raw_spin_lock ";
+scheduler_tick
+ -> " update_rq_clock ";
+scheduler_tick
+ -> " task_tick_fair ";
+scheduler_tick
+ -> " cpu_load_update_active ";
+scheduler_tick
+ -> " calc_global_load_tick ";
+scheduler_tick
+ -> " _raw_spin_unlock ";
+scheduler_tick
+ -> " trigger_load_balance ";
+task_tick_fair
+ -> " update_curr ";
+task_tick_fair
+ -> " __update_load_avg_se ";
+task_tick_fair
+ -> " __update_load_avg_cfs_rq ";
+task_tick_fair
+ -> " update_cfs_group ";
+task_tick_fair
+ -> " hrtimer_active ";
+task_tick_fair
+ -> " dbs_update_util_handler ";
+update_curr
+ -> " update_min_vruntime ";
+update_curr
+ -> " cpuacct_charge ";
+update_curr
+ -> " __rcu_read_lock ";
+update_curr
+ -> " __cgroup_account_cputime ";
+update_curr
+ -> " __rcu_read_unlock ";
+update_curr
+ -> " __calc_delta ";
+cpuacct_charge
+ -> " __rcu_read_lock ";
+cpuacct_charge
+ -> " __rcu_read_unlock ";
+__cgroup_account_cputime
+ -> " cgroup_base_stat_cputime_account_end.isra.7 ";
+__update_load_avg_se
+ -> " __accumulate_pelt_segments ";
+__update_load_avg_cfs_rq
+ -> " __accumulate_pelt_segments ";
+update_cfs_group
+ -> " reweight_entity ";
+reweight_entity
+ -> " update_curr ";
+reweight_entity
+ -> " account_entity_dequeue ";
+reweight_entity
+ -> " account_entity_enqueue ";
+irq_work_queue
+ -> " arch_irq_work_raise ";
+arch_irq_work_raise
+ -> " apic_send_IPI_self ";
+arch_irq_work_raise
+ -> " native_apic_wait_icr_idle ";
+apic_send_IPI_self
+ -> " __default_send_IPI_shortcut ";
+cpu_load_update_active
+ -> " tick_nohz_tick_stopped ";
+cpu_load_update_active
+ -> " cpu_load_update ";
+trigger_load_balance
+ -> " nohz_balance_exit_idle ";
+trigger_load_balance
+ -> " __rcu_read_lock ";
+trigger_load_balance
+ -> " __rcu_read_unlock ";
+trigger_load_balance
+ -> " kick_ilb ";
+__hrtimer_get_next_event
+ -> " __hrtimer_next_event_base ";
+tick_program_event
+ -> " clockevents_program_event ";
+clockevents_program_event
+ -> " ktime_get ";
+clockevents_program_event
+ -> " lapic_next_event ";
+irq_exit
+ -> " ksoftirqd_running ";
+irq_exit
+ -> " __do_softirq ";
+irq_exit
+ -> " idle_cpu ";
+irq_exit
+ -> " rcu_irq_exit ";
+irq_work_interrupt
+ -> " smp_irq_work_interrupt ";
+smp_irq_work_interrupt
+ -> " irq_enter ";
+smp_irq_work_interrupt
+ -> " irq_exit ";
+irq_work_run_list
+ -> " dbs_irq_work ";
+dbs_irq_work
+ -> " queue_work_on ";
+queue_work_on
+ -> " __queue_work ";
+__queue_work
+ -> " get_work_pool ";
+__queue_work
+ -> " _raw_spin_lock ";
+__queue_work
+ -> " insert_work ";
+__queue_work
+ -> " _raw_spin_unlock ";
+insert_work
+ -> " get_pwq.isra.27 ";
+insert_work
+ -> " wake_up_process ";
+wake_up_process
+ -> " try_to_wake_up ";
+try_to_wake_up
+ -> " _raw_spin_lock_irqsave ";
+try_to_wake_up
+ -> " _raw_spin_lock ";
+try_to_wake_up
+ -> " update_rq_clock ";
+try_to_wake_up
+ -> " ttwu_do_activate ";
+try_to_wake_up
+ -> " _raw_spin_unlock ";
+try_to_wake_up
+ -> " ttwu_stat ";
+try_to_wake_up
+ -> " _raw_spin_unlock_irqrestore ";
+ttwu_do_activate
+ -> " activate_task ";
+ttwu_do_activate
+ -> " wq_worker_waking_up ";
+ttwu_do_activate
+ -> " ttwu_do_wakeup ";
+activate_task
+ -> " psi_task_change ";
+activate_task
+ -> " enqueue_task_fair ";
+psi_task_change
+ -> " record_times ";
+enqueue_task_fair
+ -> " enqueue_entity ";
+enqueue_task_fair
+ -> " hrtick_update ";
+enqueue_entity
+ -> " update_curr ";
+enqueue_entity
+ -> " update_cfs_group ";
+enqueue_entity
+ -> " account_entity_enqueue ";
+enqueue_entity
+ -> " place_entity ";
+enqueue_entity
+ -> " __enqueue_entity ";
+update_load_avg
+ -> " __update_load_avg_se ";
+update_load_avg
+ -> " __update_load_avg_cfs_rq ";
+wq_worker_waking_up
+ -> " kthread_data ";
+ttwu_do_wakeup
+ -> " check_preempt_curr ";
+check_preempt_curr
+ -> " check_preempt_wakeup ";
+check_preempt_curr
+ -> " resched_curr ";
+check_preempt_wakeup
+ -> " update_curr ";
+check_preempt_wakeup
+ -> " wakeup_preempt_entity.isra.75 ";
+check_preempt_wakeup
+ -> " set_next_buddy ";
+check_preempt_wakeup
+ -> " resched_curr ";
+__do_softirq
+ -> " run_timer_softirq ";
+__do_softirq
+ -> " rcu_core ";
+run_timer_softirq
+ -> " _raw_spin_lock_irq ";
+run_timer_softirq
+ -> " _raw_spin_unlock_irq ";
+rcu_core
+ -> " rcu_preempt_deferred_qs ";
+rcu_core
+ -> " note_gp_changes ";
+rcu_core
+ -> " _raw_spin_lock_irqsave ";
+rcu_core
+ -> " rcu_accelerate_cbs ";
+rcu_core
+ -> " rcu_report_qs_rnp ";
+rcu_core
+ -> " rcu_jiffies_till_stall_check ";
+rcu_core
+ -> " rcu_segcblist_ready_cbs ";
+rcu_accelerate_cbs
+ -> " rcu_segcblist_pend_cbs ";
+rcu_accelerate_cbs
+ -> " rcu_segcblist_accelerate ";
+rcu_report_qs_rnp
+ -> " _raw_spin_unlock_irqrestore ";
+prepare_exit_to_usermode
+ -> " exit_to_usermode_loop ";
+__schedule
+ -> " rcu_note_context_switch ";
+__schedule
+ -> " _raw_spin_lock ";
+__schedule
+ -> " update_rq_clock ";
+__schedule
+ -> " pick_next_task_fair ";
+__schedule
+ -> " finish_task_switch ";
+__schedule
+ -> " _raw_spin_unlock_irq ";
+__schedule
+ -> " deactivate_task ";
+__schedule
+ -> " pick_next_task_idle ";
+rcu_note_context_switch
+ -> " rcu_preempt_deferred_qs ";
+pick_next_task_fair
+ -> " update_curr ";
+pick_next_task_fair
+ -> " check_cfs_rq_runtime ";
+pick_next_task_fair
+ -> " pick_next_entity ";
+pick_next_task_fair
+ -> " put_prev_entity ";
+pick_next_task_fair
+ -> " set_next_entity ";
+pick_next_task_fair
+ -> " __rcu_read_lock ";
+pick_next_task_fair
+ -> " __msecs_to_jiffies ";
+pick_next_task_fair
+ -> " __rcu_read_unlock ";
+pick_next_entity
+ -> " wakeup_preempt_entity.isra.75 ";
+pick_next_entity
+ -> " clear_buddies ";
+put_prev_entity
+ -> " update_curr ";
+put_prev_entity
+ -> " check_cfs_rq_runtime ";
+put_prev_entity
+ -> " __enqueue_entity ";
+finish_task_switch
+ -> " _raw_spin_unlock_irq ";
+__x64_sys_rt_sigprocmask
+ -> " sigprocmask ";
+sigprocmask
+ -> " __set_current_blocked ";
+__set_current_blocked
+ -> " _raw_spin_lock_irq ";
+__set_current_blocked
+ -> " __set_task_blocked ";
+__set_current_blocked
+ -> " _raw_spin_unlock_irq ";
+__set_task_blocked
+ -> " recalc_sigpending ";
+recalc_sigpending
+ -> " recalc_sigpending_tsk ";
+__x64_sys_clone
+ -> " _do_fork ";
+_do_fork
+ -> " copy_process.part.36 ";
+_do_fork
+ -> " get_task_pid ";
+_do_fork
+ -> " pid_vnr ";
+_do_fork
+ -> " wake_up_new_task ";
+_do_fork
+ -> " put_pid ";
+"copy_process.part.36\n" -> " _raw_spin_lock_irq ";
+"copy_process.part.36\n" -> " recalc_sigpending ";
+"copy_process.part.36\n" -> " _raw_spin_unlock_irq ";
+"copy_process.part.36\n" -> " tsk_fork_get_node ";
+"copy_process.part.36\n" -> " kmem_cache_alloc_node ";
+"copy_process.part.36\n" -> " arch_dup_task_struct ";
+"copy_process.part.36\n" -> " get_random_u64 ";
+"copy_process.part.36\n" -> " account_kernel_stack ";
+"copy_process.part.36\n" -> " copy_creds ";
+"copy_process.part.36\n" -> " __delayacct_tsk_init ";
+"copy_process.part.36\n" -> " acct_clear_integrals ";
+"copy_process.part.36\n" -> " cgroup_fork ";
+"copy_process.part.36\n" -> " sched_fork ";
+"copy_process.part.36\n" -> " audit_alloc ";
+"copy_process.part.36\n" -> " security_task_alloc ";
+"copy_process.part.36\n" -> " copy_semundo ";
+"copy_process.part.36\n" -> " dup_fd ";
+"copy_process.part.36\n" -> " copy_fs_struct ";
+"copy_process.part.36\n" -> " kmem_cache_alloc ";
+"copy_process.part.36\n" -> " __init_waitqueue_head ";
+"copy_process.part.36\n" -> " hrtimer_init ";
+"copy_process.part.36\n" -> " _raw_spin_lock ";
+"copy_process.part.36\n" -> " _raw_spin_unlock ";
+"copy_process.part.36\n" -> " tty_audit_fork ";
+"copy_process.part.36\n" -> " sched_autogroup_fork ";
+"copy_process.part.36\n" -> " __mutex_init ";
+"copy_process.part.36\n" -> " mm_init ";
+"copy_process.part.36\n" -> " uprobe_start_dup_mmap ";
+"copy_process.part.36\n" -> " down_write_killable ";
+"copy_process.part.36\n" -> " uprobe_dup_mmap ";
+"copy_process.part.36\n" -> " down_write ";
+"copy_process.part.36\n" -> " get_mm_exe_file ";
+"copy_process.part.36\n" -> " vm_area_dup ";
+"copy_process.part.36\n" -> " vma_dup_policy ";
+"copy_process.part.36\n" -> " dup_userfaultfd ";
+"copy_process.part.36\n" -> " anon_vma_fork ";
+"copy_process.part.36\n" -> " vma_interval_tree_insert_after ";
+"copy_process.part.36\n" -> " up_write ";
+"copy_process.part.36\n" -> " __vma_link_rb ";
+"copy_process.part.36\n" -> " copy_page_range ";
+"copy_process.part.36\n" -> " security_vm_enough_memory_mm ";
+"copy_process.part.36\n" -> " ldt_dup_context ";
+"copy_process.part.36\n" -> " flush_tlb_mm_range ";
+"copy_process.part.36\n" -> " dup_userfaultfd_complete ";
+"copy_process.part.36\n" -> " uprobe_end_dup_mmap ";
+"copy_process.part.36\n" -> " try_module_get ";
+"copy_process.part.36\n" -> " copy_namespaces ";
+"copy_process.part.36\n" -> " copy_thread_tls ";
+"copy_process.part.36\n" -> " alloc_pid ";
+"copy_process.part.36\n" -> " user_disable_single_step ";
+"copy_process.part.36\n" -> " clear_all_latency_tracing ";
+"copy_process.part.36\n" -> " __percpu_down_read ";
+"copy_process.part.36\n" -> " cgroup_can_fork ";
+"copy_process.part.36\n" -> " ktime_get ";
+"copy_process.part.36\n" -> " ktime_get_with_offset ";
+"copy_process.part.36\n" -> " _raw_write_lock_irq ";
+"copy_process.part.36\n" -> " klp_copy_process ";
+"copy_process.part.36\n" -> " get_seccomp_filter ";
+"copy_process.part.36\n" -> " attach_pid ";
+"copy_process.part.36\n" -> " _raw_write_unlock_irq ";
+"copy_process.part.36\n" -> " proc_fork_connector ";
+"copy_process.part.36\n" -> " cgroup_post_fork ";
+"copy_process.part.36\n" -> " uprobe_copy_process ";
+kmem_cache_alloc_node
+ -> " should_failslab ";
+kmem_cache_alloc_node
+ -> " __slab_alloc.isra.79 ";
+"__slab_alloc.isra.79\n" -> " ___slab_alloc ";
+arch_dup_task_struct
+ -> " fpu__copy ";
+account_kernel_stack
+ -> " mod_zone_page_state ";
+copy_creds
+ -> " prepare_creds ";
+copy_creds
+ -> " key_put ";
+__delayacct_tsk_init
+ -> " kmem_cache_alloc ";
+sched_fork
+ -> " __sched_fork ";
+sched_fork
+ -> " init_entity_runnable_average ";
+sched_fork
+ -> " _raw_spin_lock_irqsave ";
+sched_fork
+ -> " set_task_rq_fair ";
+sched_fork
+ -> " task_fork_fair ";
+sched_fork
+ -> " _raw_spin_unlock_irqrestore ";
+__sched_fork
+ -> " init_dl_task_timer ";
+__sched_fork
+ -> " init_dl_inactive_task_timer ";
+__sched_fork
+ -> " __dl_clear_params ";
+__sched_fork
+ -> " init_numa_balancing ";
+init_dl_task_timer
+ -> " hrtimer_init ";
+hrtimer_init
+ -> " __hrtimer_init ";
+init_dl_inactive_task_timer
+ -> " hrtimer_init ";
+init_numa_balancing
+ -> " __msecs_to_jiffies ";
+task_fork_fair
+ -> " _raw_spin_lock ";
+task_fork_fair
+ -> " update_rq_clock ";
+task_fork_fair
+ -> " update_curr ";
+task_fork_fair
+ -> " place_entity ";
+task_fork_fair
+ -> " _raw_spin_unlock ";
+place_entity
+ -> " sched_slice.isra.73 ";
+"sched_slice.isra.73\n" -> " __calc_delta ";
+perf_event_init_task
+ -> " __mutex_init ";
+security_task_alloc
+ -> " __kmalloc ";
+security_task_alloc
+ -> " apparmor_task_alloc ";
+dup_fd
+ -> " kmem_cache_alloc ";
+dup_fd
+ -> " __init_waitqueue_head ";
+dup_fd
+ -> " _raw_spin_lock ";
+dup_fd
+ -> " _raw_spin_unlock ";
+dup_fd
+ -> " alloc_fdtable ";
+dup_fd
+ -> " copy_fd_bitmaps ";
+alloc_fdtable
+ -> " kmem_cache_alloc_trace ";
+alloc_fdtable
+ -> " kvmalloc_node ";
+kmem_cache_alloc_trace
+ -> " should_failslab ";
+kvmalloc_node
+ -> " __kmalloc_node ";
+__kmalloc_node
+ -> " kmalloc_slab ";
+__kmalloc_node
+ -> " should_failslab ";
+copy_fs_struct
+ -> " kmem_cache_alloc ";
+copy_fs_struct
+ -> " _raw_spin_lock ";
+copy_fs_struct
+ -> " path_get ";
+copy_fs_struct
+ -> " _raw_spin_unlock ";
+path_get
+ -> " mntget ";
+sched_autogroup_fork
+ -> " __lock_task_sighand ";
+sched_autogroup_fork
+ -> " _raw_spin_unlock_irqrestore ";
+__lock_task_sighand
+ -> " __rcu_read_lock ";
+__lock_task_sighand
+ -> " _raw_spin_lock_irqsave ";
+__lock_task_sighand
+ -> " __rcu_read_unlock ";
+mm_init
+ -> " __init_rwsem ";
+mm_init
+ -> " pgd_alloc ";
+mm_init
+ -> " __mutex_init ";
+pgd_alloc
+ -> " __get_free_pages ";
+pgd_alloc
+ -> " preallocate_pmds.constprop.23 ";
+pgd_alloc
+ -> " _raw_spin_lock ";
+pgd_alloc
+ -> " _raw_spin_unlock ";
+__get_free_pages
+ -> " alloc_pages_current ";
+alloc_pages_current
+ -> " get_task_policy.part.35 ";
+alloc_pages_current
+ -> " policy_nodemask ";
+alloc_pages_current
+ -> " policy_node ";
+alloc_pages_current
+ -> " __alloc_pages_nodemask ";
+__alloc_pages_nodemask
+ -> " should_fail_alloc_page ";
+__alloc_pages_nodemask
+ -> " get_page_from_freelist ";
+get_page_from_freelist
+ -> " __zone_watermark_ok ";
+get_page_from_freelist
+ -> " _raw_spin_lock_irqsave ";
+get_page_from_freelist
+ -> " _raw_spin_unlock ";
+get_page_from_freelist
+ -> " __mod_zone_page_state ";
+get_page_from_freelist
+ -> " __inc_numa_state ";
+get_page_from_freelist
+ -> " prep_new_page ";
+prep_new_page
+ -> " kernel_poison_pages ";
+prep_new_page
+ -> " page_poisoning_enabled ";
+get_mm_exe_file
+ -> " __rcu_read_lock ";
+get_mm_exe_file
+ -> " __rcu_read_unlock ";
+vm_area_dup
+ -> " kmem_cache_alloc ";
+__vma_link_rb
+ -> " vma_compute_subtree_gap ";
+security_vm_enough_memory_mm
+ -> " cap_vm_enough_memory ";
+security_vm_enough_memory_mm
+ -> " __vm_enough_memory ";
+cap_vm_enough_memory
+ -> " cap_capable ";
+anon_vma_fork
+ -> " anon_vma_clone ";
+anon_vma_fork
+ -> " kmem_cache_alloc ";
+anon_vma_fork
+ -> " down_write ";
+anon_vma_fork
+ -> " anon_vma_interval_tree_insert ";
+anon_vma_fork
+ -> " up_write ";
+anon_vma_clone
+ -> " kmem_cache_alloc ";
+anon_vma_clone
+ -> " down_write ";
+anon_vma_clone
+ -> " anon_vma_interval_tree_insert ";
+anon_vma_clone
+ -> " up_write ";
+__rb_insert_augmented
+ -> " __anon_vma_interval_tree_augment_rotate ";
+__rb_insert_augmented
+ -> " vma_interval_tree_augment_rotate ";
+__rb_insert_augmented
+ -> " vma_gap_callbacks_rotate ";
+copy_page_range
+ -> " __pud_alloc ";
+copy_page_range
+ -> " __pmd_alloc ";
+copy_page_range
+ -> " copy_pte_range.isra.85 ";
+copy_page_range
+ -> " track_pfn_copy ";
+__pud_alloc
+ -> " get_zeroed_page ";
+__pud_alloc
+ -> " _raw_spin_lock ";
+__pud_alloc
+ -> " _raw_spin_unlock ";
+get_zeroed_page
+ -> " __get_free_pages ";
+__pmd_alloc
+ -> " alloc_pages_current ";
+__pmd_alloc
+ -> " _raw_spin_lock ";
+__pmd_alloc
+ -> " _raw_spin_unlock ";
+"copy_pte_range.isra.85\n" -> " __pte_alloc ";
+"copy_pte_range.isra.85\n" -> " _raw_spin_lock ";
+"copy_pte_range.isra.85\n" -> " _vm_normal_page ";
+"copy_pte_range.isra.85\n" -> " _raw_spin_unlock ";
+__pte_alloc
+ -> " pte_alloc_one ";
+__pte_alloc
+ -> " _raw_spin_lock ";
+__pte_alloc
+ -> " _raw_spin_unlock ";
+pte_alloc_one
+ -> " alloc_pages_current ";
+pte_alloc_one
+ -> " inc_zone_page_state ";
+vma_gap_callbacks_rotate
+ -> " vma_compute_subtree_gap ";
+ldt_dup_context
+ -> " mutex_lock ";
+ldt_dup_context
+ -> " mutex_unlock ";
+flush_tlb_mm_range
+ -> " flush_tlb_func_common.constprop.9 ";
+"flush_tlb_func_common.constprop.9\n" -> " native_flush_tlb ";
+"flush_tlb_func_common.constprop.9\n" -> " native_flush_tlb_one_user ";
+copy_namespaces
+ -> " __rcu_read_lock ";
+copy_namespaces
+ -> " __rcu_read_unlock ";
+alloc_pid
+ -> " kmem_cache_alloc ";
+alloc_pid
+ -> " _raw_spin_lock_irq ";
+alloc_pid
+ -> " _raw_spin_unlock_irq ";
+cgroup_can_fork
+ -> " pids_can_fork ";
+cgroup_post_fork
+ -> " _raw_spin_lock_irq ";
+cgroup_post_fork
+ -> " css_set_move_task ";
+cgroup_post_fork
+ -> " _raw_spin_unlock_irq ";
+cgroup_post_fork
+ -> " cpuset_fork ";
+cgroup_post_fork
+ -> " cpu_cgroup_fork ";
+cgroup_post_fork
+ -> " freezer_fork ";
+css_set_move_task
+ -> " cgroup_move_task ";
+cgroup_move_task
+ -> " task_rq_lock ";
+cgroup_move_task
+ -> " _raw_spin_unlock ";
+cgroup_move_task
+ -> " _raw_spin_unlock_irqrestore ";
+task_rq_lock
+ -> " _raw_spin_lock_irqsave ";
+task_rq_lock
+ -> " _raw_spin_lock ";
+cpu_cgroup_fork
+ -> " task_rq_lock ";
+cpu_cgroup_fork
+ -> " update_rq_clock ";
+cpu_cgroup_fork
+ -> " sched_change_group ";
+cpu_cgroup_fork
+ -> " _raw_spin_unlock ";
+cpu_cgroup_fork
+ -> " _raw_spin_unlock_irqrestore ";
+sched_change_group
+ -> " task_wants_autogroup ";
+sched_change_group
+ -> " task_change_group_fair ";
+task_change_group_fair
+ -> " set_task_rq_fair ";
+"percpu_up_read.constprop.38\n" -> " __percpu_up_read ";
+__percpu_up_read
+ -> " rcuwait_wake_up ";
+rcuwait_wake_up
+ -> " __rcu_read_lock ";
+rcuwait_wake_up
+ -> " __rcu_read_unlock ";
+get_task_pid
+ -> " __rcu_read_lock ";
+get_task_pid
+ -> " __rcu_read_unlock ";
+wake_up_new_task
+ -> " _raw_spin_lock_irqsave ";
+wake_up_new_task
+ -> " select_task_rq_fair ";
+wake_up_new_task
+ -> " set_task_rq_fair ";
+wake_up_new_task
+ -> " __task_rq_lock ";
+wake_up_new_task
+ -> " update_rq_clock ";
+wake_up_new_task
+ -> " post_init_entity_util_avg ";
+wake_up_new_task
+ -> " activate_task ";
+wake_up_new_task
+ -> " check_preempt_curr ";
+wake_up_new_task
+ -> " _raw_spin_unlock ";
+wake_up_new_task
+ -> " _raw_spin_unlock_irqrestore ";
+select_task_rq_fair
+ -> " __rcu_read_lock ";
+select_task_rq_fair
+ -> " __rcu_read_unlock ";
+__task_rq_lock
+ -> " _raw_spin_lock ";
+post_init_entity_util_avg
+ -> " attach_entity_cfs_rq ";
+attach_entity_cfs_rq
+ -> " attach_entity_load_avg ";
+attach_entity_cfs_rq
+ -> " propagate_entity_cfs_rq.isra.93 ";
+"propagate_entity_cfs_rq.isra.93\n" -> " __update_load_avg_se ";
+"propagate_entity_cfs_rq.isra.93\n" -> " __update_load_avg_cfs_rq ";
+"propagate_entity_cfs_rq.isra.93\n" -> " dbs_update_util_handler ";
+resched_curr
+ -> " native_smp_send_reschedule ";
+native_smp_send_reschedule
+ -> " default_send_IPI_single ";
+default_send_IPI_single
+ -> " flat_send_IPI_mask ";
+flat_send_IPI_mask
+ -> " _flat_send_IPI_mask ";
+_flat_send_IPI_mask
+ -> " __default_send_IPI_dest_field ";
+do_page_fault
+ -> " __do_page_fault ";
+__do_page_fault
+ -> " down_read_trylock ";
+__do_page_fault
+ -> " find_vma ";
+__do_page_fault
+ -> " handle_mm_fault ";
+__do_page_fault
+ -> " up_read ";
+find_vma
+ -> " vmacache_find ";
+find_vma
+ -> " vmacache_update ";
+handle_mm_fault
+ -> " __rcu_read_lock ";
+handle_mm_fault
+ -> " mem_cgroup_from_task ";
+handle_mm_fault
+ -> " __rcu_read_unlock ";
+handle_mm_fault
+ -> " __handle_mm_fault ";
+handle_mm_fault
+ -> " sync_mm_rss ";
+__handle_mm_fault
+ -> " pmd_devmap_trans_unstable ";
+__handle_mm_fault
+ -> " _raw_spin_lock ";
+__handle_mm_fault
+ -> " do_wp_page ";
+do_wp_page
+ -> " _vm_normal_page ";
+do_wp_page
+ -> " reuse_swap_page ";
+do_wp_page
+ -> " unlock_page ";
+do_wp_page
+ -> " _raw_spin_unlock ";
+do_wp_page
+ -> " wp_page_copy ";
+do_wp_page
+ -> " page_move_anon_rmap ";
+do_wp_page
+ -> " page_cpupid_xchg_last ";
+do_wp_page
+ -> " ptep_set_access_flags ";
+reuse_swap_page
+ -> " page_trans_huge_mapcount ";
+wp_page_copy
+ -> " alloc_pages_vma ";
+wp_page_copy
+ -> " mem_cgroup_try_charge_delay ";
+wp_page_copy
+ -> " _raw_spin_lock ";
+wp_page_copy
+ -> " ptep_clear_flush ";
+wp_page_copy
+ -> " page_add_new_anon_rmap ";
+wp_page_copy
+ -> " mem_cgroup_commit_charge ";
+wp_page_copy
+ -> " lru_cache_add_active_or_unevictable ";
+wp_page_copy
+ -> " page_remove_rmap ";
+wp_page_copy
+ -> " _raw_spin_unlock ";
+wp_page_copy
+ -> " __put_page ";
+alloc_pages_vma
+ -> " __get_vma_policy ";
+alloc_pages_vma
+ -> " get_vma_policy.part.39 ";
+alloc_pages_vma
+ -> " policy_nodemask ";
+alloc_pages_vma
+ -> " policy_node ";
+alloc_pages_vma
+ -> " __alloc_pages_nodemask ";
+"get_vma_policy.part.39\n" -> " get_task_policy.part.35 ";
+mem_cgroup_try_charge_delay
+ -> " mem_cgroup_try_charge ";
+mem_cgroup_try_charge_delay
+ -> " mem_cgroup_throttle_swaprate ";
+mem_cgroup_try_charge
+ -> " get_mem_cgroup_from_mm ";
+mem_cgroup_try_charge
+ -> " try_charge ";
+get_mem_cgroup_from_mm
+ -> " __rcu_read_lock ";
+get_mem_cgroup_from_mm
+ -> " __rcu_read_unlock ";
+mem_cgroup_throttle_swaprate
+ -> " __rcu_read_lock ";
+mem_cgroup_throttle_swaprate
+ -> " kthread_blkcg ";
+mem_cgroup_throttle_swaprate
+ -> " __rcu_read_unlock ";
+ptep_clear_flush
+ -> " flush_tlb_mm_range ";
+page_add_new_anon_rmap
+ -> " __mod_node_page_state ";
+page_add_new_anon_rmap
+ -> " __page_set_anon_rmap ";
+mem_cgroup_commit_charge
+ -> " mem_cgroup_charge_statistics ";
+mem_cgroup_commit_charge
+ -> " memcg_check_events ";
+lru_cache_add_active_or_unevictable
+ -> " __lru_cache_add ";
+account_system_time
+ -> " account_system_index_time ";
+account_system_index_time
+ -> " cpuacct_account_field ";
+account_system_index_time
+ -> " __rcu_read_lock ";
+account_system_index_time
+ -> " __cgroup_account_cputime_field ";
+account_system_index_time
+ -> " __rcu_read_unlock ";
+account_system_index_time
+ -> " acct_account_cputime ";
+kick_ilb
+ -> " idle_cpu ";
+kick_ilb
+ -> " native_smp_send_reschedule ";
+page_remove_rmap
+ -> " __dec_node_page_state ";
+__dec_node_page_state
+ -> " __dec_node_state ";
+__put_page
+ -> " __page_cache_release ";
+__put_page
+ -> " free_unref_page ";
+__page_cache_release
+ -> " _raw_spin_lock_irqsave ";
+__page_cache_release
+ -> " mem_cgroup_page_lruvec ";
+__page_cache_release
+ -> " __mod_node_page_state ";
+__page_cache_release
+ -> " __mod_zone_page_state ";
+__page_cache_release
+ -> " mem_cgroup_update_lru_size ";
+__page_cache_release
+ -> " _raw_spin_unlock_irqrestore ";
+__page_cache_release
+ -> " mem_cgroup_uncharge ";
+mem_cgroup_uncharge
+ -> " uncharge_page ";
+mem_cgroup_uncharge
+ -> " uncharge_batch ";
+uncharge_batch
+ -> " memcg_check_events ";
+free_unref_page
+ -> " free_pcp_prepare ";
+free_unref_page
+ -> " free_unref_page_prepare.part.73 ";
+free_unref_page
+ -> " free_unref_page_commit ";
+free_pcp_prepare
+ -> " kernel_poison_pages ";
+__x64_sys_rt_sigaction
+ -> " do_sigaction ";
+do_sigaction
+ -> " _raw_spin_lock_irq ";
+do_sigaction
+ -> " sigaction_compat_abi ";
+do_sigaction
+ -> " _raw_spin_unlock_irq ";
+__do_sys_wait4
+ -> " kernel_wait4 ";
+kernel_wait4
+ -> " do_wait ";
+do_wait
+ -> " add_wait_queue ";
+do_wait
+ -> " _raw_read_lock ";
+do_wait
+ -> " wait_consider_task ";
+do_wait
+ -> " _raw_read_unlock ";
+do_wait
+ -> " schedule ";
+add_wait_queue
+ -> " _raw_spin_lock_irqsave ";
+add_wait_queue
+ -> " _raw_spin_unlock_irqrestore ";
+deactivate_task
+ -> " psi_task_change ";
+deactivate_task
+ -> " dequeue_task_fair ";
+dequeue_task_fair
+ -> " dequeue_entity ";
+dequeue_task_fair
+ -> " hrtick_update ";
+dequeue_entity
+ -> " update_curr ";
+dequeue_entity
+ -> " clear_buddies ";
+dequeue_entity
+ -> " account_entity_dequeue ";
+dequeue_entity
+ -> " update_cfs_group ";
+dequeue_entity
+ -> " update_min_vruntime ";
+pick_next_task_idle
+ -> " put_prev_task_fair ";
+put_prev_task_fair
+ -> " put_prev_entity ";
+}
