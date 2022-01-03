@@ -17790,6 +17790,10 @@ have been added to repositories:
 	pwd.ftrace_callgraph.dot
 1192.7 Isomorphism iterations and ISMGAS symmetry have been made configurable arguments and set to default 25 and False respectively. CyclomaticComplexitySparkMapReducer.py has been upgraded to Python 3.7.5 + Spark 3.0.1 by autopep8 and 2to3 utilities. Python 2.7 version of CyclomaticComplexitySparkMapReducer.py has been renamed to CyclomaticComplexitySparkMapReducer.py.2.7.
 
+References:
+-----------
+1192.8 Degree Sequence of a Graph - https://en.wikipedia.org/wiki/Degree_(graph_theory)#Degree_sequence - Graph realization problem tries to find a simple graph for a degree sequence solved by Erdos-Gallai theorem or Havel-Hakimi algorithm. Isomorphic graphs have same degree sequence while converse is not true.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1193. (THEORY and FEATURE) Software Analytics - Approximate Graph Isomorphism Similarity of Code Callgraphs and Control Flow Graphs - Spark 3.0.1 + Python 3.7.5 - related to 1192,1191,581,619,770,906,911,771 and all sections on Program Analysis, AsFer-USBmd-VIRGO-KingCobra FTrace kernel callgraph analysis - Valgrind-Callgrind-KCacheGrind-Flamegraph userspace callgraph analysis, SATURN control flow analysis of VIRGO linux kernel, Software Analytics, Pandemic model of Botnet-Defense adversarial Game theoretic security, Cybercrime analytics, Anti-Malware,Anti-Ransomware,Anti-Theft and Anti-Plagiarism tools - 2 January 2022
 ---------------------------------------------------------------------------------------------------------------------------------------------
