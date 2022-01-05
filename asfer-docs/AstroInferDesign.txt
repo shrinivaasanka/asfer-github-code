@@ -17819,4 +17819,5 @@ References:
 References:
 ----------
 1194.8 DBSCAN - A density-based algorithm for discovering clusters in large spatial databases with noise (1996) - https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.121.9220 - [Martin Ester , Hans-Peter Kriegel , Jörg Sander , Xiaowei Xu]
-1194.9 DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN - https://www.ccs.neu.edu/home/vip/teach/DMcourse/2_cluster_EM_mixt/notes_slides/revisitofrevisitDBSCAN.pdf
+1194.9 DBSCAN Revisited: Mis-Claim, Un-Fixability, and Approximation - https://dl.acm.org/doi/10.1145/2723372.2737792 - "...In this paper, we prove that for d ≥ 3, the DBSCAN problem requires Ω(n^4/3) time to solve, unless very significant breakthroughs---ones widely believed to be impossible---could be made in theoretical computer science...."
+1194.10 DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN - https://www.ccs.neu.edu/home/vip/teach/DMcourse/2_cluster_EM_mixt/notes_slides/revisitofrevisitDBSCAN.pdf
