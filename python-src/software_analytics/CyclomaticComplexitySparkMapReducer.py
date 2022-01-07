@@ -32,6 +32,7 @@ from networkx.drawing.nx_pydot import write_dot
 import operator
 from graphframes import *
 from networkx.algorithms import isomorphism
+from scipy.stats import wasserstein_distance
 
 def reduceFunction(value1, value2):
     return value1+value2
@@ -70,6 +71,15 @@ def graph_matching(dotfile1, dotfile2, isomorphism_iterations=25,ismagssymmetry=
     print(("======== Matching Callgraphs:",dotfile1," and ",dotfile2))
     dotnx1 = nx.Graph(read_dot(dotfile1))
     dotnx2 = nx.Graph(read_dot(dotfile2))
+    degreeseq1 = sorted(dict(dotnx1.degree()).values())
+    degreeseq2 = sorted(dict(dotnx2.degree()).values())
+    degreeseq1.reverse()
+    degreeseq2.reverse()
+    print("Degree sequence of callgraph1:",degreeseq1)
+    print("Degree sequence of callgraph2:",degreeseq2)
+    if nx.is_graphical(degreeseq1) and nx.is_graphical(degreeseq2):
+        degreeseqsimilarity=wasserstein_distance(degreeseq1,degreeseq2)
+    print("Degree Sequence Earth Mover Distance Similarity of two Callgraphs:",degreeseqsimilarity)
     if approximateisomorphic:
         fastercouldbeisomorphic = nx.faster_could_be_isomorphic(dotnx1, dotnx2)
         print(("Callgraphs of two executables could be isomorphic - (True or False):", fastercouldbeisomorphic))
@@ -165,3 +175,4 @@ if __name__ == "__main__":
     #        graph_matching(dot1, dot2)
     graph_matching(input_dot_files[0],input_dot_files[1],approximateisomorphic=True)
     graph_matching(input_dot_files[6],input_dot_files[7],approximateisomorphic=True)
+    graph_matching(input_dot_files[7],input_dot_files[7],approximateisomorphic=True)
