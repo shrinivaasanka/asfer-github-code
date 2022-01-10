@@ -30,6 +30,7 @@ from scipy.stats import wasserstein_distance
 #from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 import sys
 import random
+import MinimumDescLength
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -250,10 +251,8 @@ def mel_frequency_cepstral_coefficients(audiofile, dur=10):
 
 
 def audio_merit(notes):
-    from MinimumDescLength import minimum_descriptive_complexity
-    entropy_merit = minimum_descriptive_complexity("".join(notes))
-    print(("Merit of Audio - Minimum Descriptive Length and Entropy:", entropy_merit))
-
+    mdl_entropy_merit = MinimumDescLength.minimum_descriptive_complexity("".join(notes))
+    print(("Merit of Audio - Minimum Descriptive Length and Entropy:", mdl_entropy_merit))
 
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
@@ -268,9 +267,11 @@ if __name__ == "__main__":
     # features=audio_features(bm)
     # print "Features:",features
     # notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
-    # notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=20)
-    # notes2 = audio_to_notes("testlogs/054-SBC-Aanandhamridhakarshini.mp4", dur=20)
-    # notes3 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=20)
+    notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=10)
+    notes2 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=10)
+    mdl1 = audio_merit(notes1[0])
+    mdl2 = audio_merit(notes2[0])
+    MinimumDescLength.normalized_compression_distance("".join(notes1[0]),"".join(notes2[0]))
     # merit=audio_merit(notes[0])
     # notes_to_audio()
     # notes_to_audio(automaton=True)
@@ -278,5 +279,5 @@ if __name__ == "__main__":
     #notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
     #notes_to_audio(function='5*(x*x-x) % 32767')
     #notes_to_audio(function='(300*math.sin(3*x) + 200*math.sin(2*x) + 100*math.sin(x))',fractal=False)
-    notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
+    #notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
