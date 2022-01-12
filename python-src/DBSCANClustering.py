@@ -37,7 +37,7 @@ from networkx.algorithms import isomorphism
 from collections import defaultdict
 
 class DBSCAN(object):
-    def __init__(self,imagefile,threshold=200,epsilon=3,minpoints=10):
+    def __init__(self,imagefile,threshold=200,epsilon=2,minpoints=5):
         self.imagefile=imagefile
         self.img = cv2.imread(imagefile,0)
         #cv2.threshold(self.img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
@@ -50,21 +50,34 @@ class DBSCAN(object):
         self.undefined=0
         self.clusterlabel=1
 
-    def find_neighbours(self,img,row,col,threshold,epsilon,minpoints):
+    def find_neighbours(self,img,row,col,threshold,epsilon,minpoints,neuralnetwork=False,thresholdfunction="lambda x: x"):
         neighbours=[]
-        for r in range(row-epsilon,row+epsilon):
-            for c in range(col-epsilon,col+epsilon):
-                if r > 0 and c > 0 and r < len(img)-1 and c < len(img[0])-1:
-                     if img[r][c] < threshold:
-                         neighbours.append((r, c))
-        #print("neighbours of (",row,",",col,")",neighbours)
-        return neighbours
+        if not neuralnetwork:
+            for r in range(row-epsilon,row+epsilon):
+                 for c in range(col-epsilon,col+epsilon):
+                     if r > 0 and c > 0 and r < len(img)-1 and c < len(img[0])-1:
+                          if img[r][c] < threshold:
+                              neighbours.append((r, c))
+            #print("neighbours of (",row,",",col,")",neighbours)
+            return neighbours
+        else:
+            evaledthresholdfunction=eval(thresholdfunction)
+            for r in range(row-epsilon,row+epsilon):
+                 for c in range(col-epsilon,col+epsilon):
+                     if r > 0 and c > 0 and r < len(img)-1 and c < len(img[0])-1:
+                         evaledthreshold=evaledthresholdfunction(img[r][c])
+                         #print("evaledthreshold:",evaledthreshold)
+                         if evaledthreshold > threshold:
+                             neighbours.append((r,c))
+            #print("neighbours of (",row,",",col,")",neighbours)
+            return neighbours
 
     def clustering(self):
         for row in range(len(self.img)-1):
             for col in range(len(self.img)-1):
                 if self.dbscandict[(row,col)]!=self.undefined:
                     continue
+                #neighbours = self.find_neighbours(self.img,row,col,self.threshold,self.epsilon,self.minpoints,neuralnetwork=True,thresholdfunction="lambda x: x")
                 neighbours = self.find_neighbours(self.img,row,col,self.threshold,self.epsilon,self.minpoints)
                 if len(neighbours) < self.minpoints:
                     self.dbscandict[(row,col)]=self.noise
@@ -80,28 +93,43 @@ class DBSCAN(object):
                     if self.dbscandict[s]!=self.undefined:
                         continue
                     self.dbscandict[s]=self.clusterlabel
+                    #s_neighbours=self.find_neighbours(self.img,s[0],s[1],self.threshold,self.epsilon,self.minpoints,neuralnetwork=True,thresholdfunction="lambda x: x")
                     s_neighbours=self.find_neighbours(self.img,s[0],s[1],self.threshold,self.epsilon,self.minpoints)
                     if len(s_neighbours) >= self.minpoints:
                         seedpoints = seedpoints + s_neighbours
                     #seedpoints.remove(s)
-        print("DBSCAN cluster labelling of pixels:",self.dbscandict)
+        #print("DBSCAN cluster labelling of pixels:",self.dbscandict)
 
-    def write_clustered_image(self):
-        number_of_clusters=len(set(self.dbscandict.values()))
-        print("number of DBSCAN density clusters:",number_of_clusters)
-        print("size of image:",self.img.shape[0] * self.img.shape[1])
-        print("size of dbscandict:",len(self.dbscandict.items()))
-        dbscanimg = cv2.imread(self.imagefile)
-        for k,v in self.dbscandict.items():
-            cluster=self.dbscandict[k]
-            dbscanimg[k[0],k[1]]=(cluster*2,cluster*3,cluster)
-        imagefiletoks = self.imagefile.split(".")
-        cv2.imshow(imagefiletoks[0]+"_dbscanclustered.jpg",dbscanimg)
-        cv2.imwrite(imagefiletoks[0]+"_dbscanclustered.jpg",dbscanimg)
-        cv2.waitKey()
+    def write_clustered_image(self,neuralnetwork=False,fraction=1):
+        if not neuralnetwork:
+            number_of_clusters=len(set(self.dbscandict.values()))
+            print("number of DBSCAN density clusters:",number_of_clusters)
+            print("size of image:",self.img.shape[0] * self.img.shape[1])
+            print("size of dbscandict:",len(self.dbscandict.items()))
+            dbscanimg = cv2.imread(self.imagefile)
+            for k,v in self.dbscandict.items():
+              cluster=self.dbscandict[k]
+              dbscanimg[k[0],k[1]]=(cluster*2,cluster*3,cluster)
+            imagefiletoks = self.imagefile.split(".")
+            #cv2.imshow(imagefiletoks[0]+"_dbscanclustered.jpg",dbscanimg)
+            cv2.imwrite(imagefiletoks[0]+"_dbscanclustered.jpg",dbscanimg)
+            #cv2.waitKey()
+        else:
+            epsilon=int(min(self.img.shape[0],self.img.shape[1])*fraction)
+            neighbours=self.find_neighbours(self.img,int(self.img.shape[0]/2),int(self.img.shape[1]/2),200,epsilon,200,neuralnetwork=True,thresholdfunction="lambda x: 2*x")
+            dbscanimg = cv2.imread(self.imagefile)
+            for pixel in neighbours:
+                dbscanimg[pixel[0],pixel[1]]=(255,255,255)
+            imagefiletoks = self.imagefile.split(".")
+            #cv2.imshow(imagefiletoks[0]+"_neuralnetworkclustered.jpg",dbscanimg)
+            cv2.imwrite(imagefiletoks[0]+"_neuralnetworkclustered.jpg",dbscanimg)
+            #cv2.waitKey()
 
 if __name__=="__main__":
-    dbscan=DBSCAN("image_pattern_mining/ImageNet/testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
-    dbscan.clustering()
-    dbscan.write_clustered_image()
+    dbscan1=DBSCAN("image_pattern_mining/ImageNet/testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
+    dbscan1.clustering()
+    dbscan1.write_clustered_image(neuralnetwork=False)
+    dbscan1.write_clustered_image(neuralnetwork=True)
+    dbscan2=DBSCAN("image_pattern_mining/ImageNet/testlogs/HRSL_World_NightTimeStreets.jpg")
+    dbscan2.write_clustered_image(neuralnetwork=True,fraction=0.25)
 
