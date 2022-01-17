@@ -54,6 +54,7 @@ from GraphMining_GSpan import GSpan
 import dlib
 import netrd
 from networkx.algorithms import isomorphism
+from pyvis.network import Network
 
 TopologicalRecognition = True
 
@@ -237,8 +238,11 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     else:
         draw_voronoi_tessellation(img,contourcentroids)
         delaunaymesh=draw_delaunay_triangulation(img,triangles)
-    plt.show()
+    network=Network("1000px","1000px")
+    network.from_nx(delaunaymesh)
     imagetok=imagefile.split(".")
+    network.show(imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.html")
+    plt.show()
     write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
     cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
     cv2.waitKey()
@@ -254,6 +258,8 @@ def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism
     approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
     imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
     print(("Hausdorff Distance between DP polynomials approximating two facial image contours - ",image1name," and ",image2name,":", imageContourDPsimilarity))
+    fastercouldbeisomorphic = nx.faster_could_be_isomorphic(image1[8],image2[8])
+    print(("Voronoi FaceGraphs of two facial images are approximate isomorphic - (True or False):",fastercouldbeisomorphic))
     isVoronoiisomorphic = nx.is_isomorphic(image1[8],image2[8])
     print(("Voronoi FaceGraphs of two facial images are isomorphic - (True or False):",isVoronoiisomorphic))
     isDelaunayisomorphic = nx.is_isomorphic(image1[10],image2[10])
@@ -268,6 +274,8 @@ def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism
     jsd = netrd.distance.DegreeDivergence()
     jsddistance = jsd.dist(image1[8],image2[8])
     print(("Jensen-Shannon Degree Divergence distance between Voronoi Facegraphs of two facial images - ",image1name," and ",image2name,":",jsddistance))
+    if isomorphism_iterations==0:
+        return
     gm=isomorphism.GraphMatcher(image1[8],image2[8])
     isVoronoisubgraphisomorphic=gm.subgraph_is_isomorphic()
     print(("Voronoi FaceGraphs of two facial images are subgraph isomorphic - (True or False):",isVoronoisubgraphisomorphic))
@@ -717,18 +725,30 @@ if __name__ == "__main__":
         image3=face_recognition_image_segmentation("testlogs/KSrinivasan_2003.jpg")
         image4=face_recognition_image_segmentation("testlogs/IMG_20171112_180837.jpg")
         image5=face_recognition_image_segmentation("testlogs/ExamplePortrait1.jpg")
+        image6=face_recognition_image_segmentation("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
+        image7=face_recognition_image_segmentation("testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg")
         histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/ExamplePortrait1.jpg")
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
+        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
+        histogram_partition_distance_similarity("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/IMG_20171112_180837.jpg")
+        histogram_partition_distance_similarity("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/KSrinivasan_2003.jpg")
+        histogram_partition_distance_similarity("testlogs/KSrinivasan_2003.jpg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg")
         facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg",image1,image2)
         facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg",image1,image3)
         facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg",image2,image3)
         facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg",image1,image4)
         facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg",image2,image4)
         facegraph_similarity_metrics("testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg",image4,image5)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg",image1,image6)
+        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg",image2,image6)
+        facegraph_similarity_metrics("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/IMG_20171112_180837.jpg",image6,image4)
+        facegraph_similarity_metrics("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/KSrinivasan_2003.jpg",image6,image3,isomorphism_iterations=0)
+        facegraph_similarity_metrics("testlogs/KSrinivasan_2003.jpg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg",image3,image7,isomorphism_iterations=0)
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
