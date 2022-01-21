@@ -104,7 +104,7 @@ def face_recognition_image_segmentation_contours(imagefile1):
         img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
     contours1, hierarchy1 = cv2.findContours(
         thresh1, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    print("contours:",contours1)
+    #print("contours:",contours1)
     #contours1=cv2.findContours(thresh1,1,2)
     epsilon1 = 0.1*cv2.arcLength(contours1[0], True)
     # epsilon1=0.2
@@ -128,7 +128,7 @@ def face_recognition_image_segmentation_contours(imagefile1):
         except Exception as e:
             continue
     plt.show()
-    print(("contour1polys:", contour1polys))
+    #print(("contour1polys:", contour1polys))
     return (contours1,contour1polys)
 
 
@@ -182,6 +182,7 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("/tmp/shape_predictor_68_face_landmarks.dat")
     rects = detector(gray,1)
+    shape = []
     for rect in rects:
         shape = predictor(gray, rect)
         shape_np = np.zeros((68,2), dtype="int")
@@ -197,17 +198,21 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
        for cent in contourcentroids:
            print(("centroid:", cent))
            subdiv.insert(tuple(cent))
+    if len(landmarkcentroids) == 0:
+       for cent in contourcentroids:
+           print(("centroid:", cent))
+           subdiv.insert(tuple(cent))
     triangles = subdiv.getTriangleList()
-    print(("image Delaunay triangles:", triangles))
+    #print(("image Delaunay triangles:", triangles))
     facets = subdiv.getVoronoiFacetList([])
-    print(("image Voronoi Facets:", facets))
+    #print(("image Voronoi Facets:", facets))
     facegraph = nx.Graph()
     prevpoint = ""
     for n in range(0,len(facets)-1):
         for facet in facets[n]:
             for point in facet:
                 try:
-                    print("point:",point)
+                    #print("point:",point)
                     firstvertex = True
                     if firstvertex:
                        prevpoint = str(point[0]) + "#" + str(point[1])
@@ -227,7 +232,7 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
             polygon=[]
             for point in facet:
                polygon.append(tuple(point.tolist()))
-            print(("Voronoi Facet polygon:",polygon))
+            #print(("Voronoi Facet polygon:",polygon))
             voronoifacet = Polygon(polygon)
             print(("Voronoi Facet Area:",voronoifacet.area))
             voronoifacetareas.append(voronoifacet.area)
@@ -250,8 +255,11 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
 
 def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism_iterations=25,ismagssymmetry=False,GED=False):
     print("====================================================")
-    imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
-    print("EMD Similarity between Voronoi Facet Areas of the images - ",image1name," and ",image2name,":",imageEMDsimilarity1)
+    try:
+        imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
+        print("EMD Similarity between Voronoi Facet Areas of the images - ",image1name," and ",image2name,":",imageEMDsimilarity1)
+    except:
+        print("EMD Similarity exception")
     epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
     approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
     epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
@@ -720,35 +728,19 @@ if __name__ == "__main__":
     if TopologicalRecognition == True:
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-        image1=face_recognition_image_segmentation("testlogs/IMG_20160610_071455.jpg")
-        image2=face_recognition_image_segmentation("testlogs/IMG_20160610_071603.jpg")
-        image3=face_recognition_image_segmentation("testlogs/KSrinivasan_2003.jpg")
-        image4=face_recognition_image_segmentation("testlogs/IMG_20171112_180837.jpg")
-        image5=face_recognition_image_segmentation("testlogs/ExamplePortrait1.jpg")
-        image6=face_recognition_image_segmentation("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
-        image7=face_recognition_image_segmentation("testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/ExamplePortrait1.jpg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071455.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
-        histogram_partition_distance_similarity("testlogs/IMG_20160610_071603.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg")
-        histogram_partition_distance_similarity("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/IMG_20171112_180837.jpg")
-        histogram_partition_distance_similarity("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/KSrinivasan_2003.jpg")
-        histogram_partition_distance_similarity("testlogs/KSrinivasan_2003.jpg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg")
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg",image1,image2)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/KSrinivasan_2003.jpg",image1,image3)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg",image2,image3)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20171112_180837.jpg",image1,image4)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/IMG_20171112_180837.jpg",image2,image4)
-        facegraph_similarity_metrics("testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg",image4,image5)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071455.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg",image1,image6)
-        facegraph_similarity_metrics("testlogs/IMG_20160610_071603.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg",image2,image6)
-        facegraph_similarity_metrics("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/IMG_20171112_180837.jpg",image6,image4)
-        facegraph_similarity_metrics("testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/KSrinivasan_2003.jpg",image6,image3,isomorphism_iterations=0)
-        facegraph_similarity_metrics("testlogs/KSrinivasan_2003.jpg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg",image3,image7,isomorphism_iterations=0)
+        images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
+        for img1 in images:
+            for img2 in images:
+                print("========",img1,"====",img2,"=============")
+                histogram_partition_distance_similarity(img1,img2)
+        cvimages=[]
+        for img in images:
+            cvimg=face_recognition_image_segmentation(img)
+            cvimages.append(cvimg)
+        for x in range(len(images)-1):
+            for y in range(len(images)-1):
+                print("========",images[x],"====",images[y],"=============")
+                facegraph_similarity_metrics(images[x],images[y],cvimages[x],cvimages[y],isomorphism_iterations=0)
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
