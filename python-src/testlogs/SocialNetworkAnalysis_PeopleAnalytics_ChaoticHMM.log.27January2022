@@ -1,0 +1,196 @@
+chaotichmmjson: {'states': ['Schooling', 'DBHPS', 'PSGTech', 'BaaN-SSAGlobal', 'SunMicrosystems-Oracle', 'Krishna-iResearch', 'Verizon', 'webMethods-SoftwareAG', 'CMI-IIT-IMSc', 'GlobalAnalytics', 'Clockwork-PiQube', 'CloudEnablers'], 'start_probabilities': {'Schooling': 1.0, 'DBHPS': 0.0, 'PSGTech': 0.0, 'BaaN-SSAGlobal': 0.0, 'SunMicrosystems-Oracle': 0.0, 'Krishna-iResearch': 0.0, 'Verizon': 0.0, 'webMethods-SoftwareAG': 0.0, 'CMI-IIT-IMSc': 0.0, 'GlobalAnalytics': 0.0, 'Clockwork-PiQube': 0.0, 'CloudEnablers': 0.0}, 'transition_probabilities': {'Schooling': {'Schooling': 0.1, 'DBHPS': 0.11, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'DBHPS': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.11, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'PSGTech': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'BaaN-SSAGlobal': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'SunMicrosystems-Oracle': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Krishna-iResearch': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Verizon': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'webMethods-SoftwareAG': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'CMI-IIT-IMSc': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'GlobalAnalytics': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Clockwork-PiQube': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'CloudEnablers': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}}, 'observations': ['Schooling', 'Graduation', 'Graduation', 'AssociateSoftwareEngineer', 'MemberTechStaff', 'Founder-Architect', 'SystemAnalyst', 'Specialist', 'PostGraduation-ResearchScholar', 'Consultant-Architect', 'Consultant', 'Architect'], 'emission_probabilities': {'Schooling': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'DBHPS': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'PSGTech': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'BaaN-SSAGlobal': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 1.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'SunMicrosystems-Oracle': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 1.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Krishna-iResearch': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 1.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Verizon': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 1.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'webMethods-SoftwareAG': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 1.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'CMI-IIT-IMSc': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 1.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'GlobalAnalytics': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 1.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Clockwork-PiQube': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 1.0, 'Architect': 0.0}, 'CloudEnablers': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 1.0}}, 'designations': {'academic': {'Schooling': 1, 'Graduation': 2, 'PostGraduation': 3, 'PostGraduation-ResearchScholar': 4}, 'startup': {'Founder-Architect': 7}, 'business': {'CEO': 10, 'CTO': 9, 'CFO': 8}, 'work': {'AssociateSoftwareEngineer': 1, 'MemberTechStaff': 2, 'SystemAnalyst': 3, 'Specialist': 4, 'Consultant-Architect': 6, 'Consultant': 5, 'Architect': 6}}, 'career_statemachine': {'academic-academic': 2, 'work-work': 1, 'startup-startup': 2, 'academic-work': 1, 'work-academic': 2, 'academic-startup': 3, 'startup-academic': 3, 'work-startup': 3, 'startup-work': 1, 'academic-business': 5, 'business-business': 6}}
+piplprofilejson: {'states': ['Schooling', 'DBHPS', 'PSGTech', 'BaaN-SSAGlobal', 'SunMicrosystems-Oracle', 'Krishna-iResearch', 'Verizon', 'webMethods-SoftwareAG', 'CMI-IIT-IMSc', 'GlobalAnalytics', 'Clockwork-PiQube', 'CloudEnablers'], 'start_probabilities': {'Schooling': 1.0, 'DBHPS': 0.0, 'PSGTech': 0.0, 'BaaN-SSAGlobal': 0.0, 'SunMicrosystems-Oracle': 0.0, 'Krishna-iResearch': 0.0, 'Verizon': 0.0, 'webMethods-SoftwareAG': 0.0, 'CMI-IIT-IMSc': 0.0, 'GlobalAnalytics': 0.0, 'Clockwork-PiQube': 0.0, 'CloudEnablers': 0.0}, 'transition_probabilities': {'Schooling': {'Schooling': 0.1, 'DBHPS': 0.11, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'DBHPS': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.11, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'PSGTech': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'BaaN-SSAGlobal': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'SunMicrosystems-Oracle': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Krishna-iResearch': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Verizon': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'webMethods-SoftwareAG': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'CMI-IIT-IMSc': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'GlobalAnalytics': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'Clockwork-PiQube': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}, 'CloudEnablers': {'Schooling': 0.1, 'DBHPS': 0.1, 'PSGTech': 0.1, 'BaaN-SSAGlobal': 0.1, 'SunMicrosystems-Oracle': 0.1, 'Krishna-iResearch': 0.1, 'Verizon': 0.1, 'webMethods-SoftwareAG': 0.1, 'CMI-IIT-IMSc': 0.1, 'GlobalAnalytics': 0.1, 'Clockwork-PiQube': 0.1, 'CloudEnablers': 0.1}}, 'observations': ['Schooling', 'Graduation', 'Graduation', 'AssociateSoftwareEngineer', 'MemberTechStaff', 'Founder-Architect', 'SystemAnalyst', 'Specialist', 'PostGraduation-ResearchScholar', 'Consultant-Architect', 'Consultant', 'Architect'], 'emission_probabilities': {'Schooling': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'DBHPS': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'PSGTech': {'Schooling': 0.1, 'Graduation': 1.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'BaaN-SSAGlobal': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 1.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'SunMicrosystems-Oracle': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 1.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Krishna-iResearch': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 1.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Verizon': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 1.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'webMethods-SoftwareAG': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 1.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'CMI-IIT-IMSc': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 1.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 0.0}, 'GlobalAnalytics': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 1.0, 'Consultant': 0.0, 'Architect': 0.0}, 'Clockwork-PiQube': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 1.0, 'Architect': 0.0}, 'CloudEnablers': {'Schooling': 0.1, 'Graduation': 0.0, 'AssociateSoftwareEngineer': 0.0, 'MemberTechStaff': 0.0, 'Founder-Architect': 0.0, 'SystemAnalyst': 0.0, 'Specialist': 0.0, 'PostGraduation-ResearchScholar': 0.0, 'Consultant-Architect': 0.0, 'Consultant': 0.0, 'Architect': 1.0}}, 'designations': {'academic': {'Schooling': 1, 'Graduation': 2, 'PostGraduation': 3, 'PostGraduation-ResearchScholar': 4}, 'startup': {'Founder-Architect': 7}, 'business': {'CEO': 10, 'CTO': 9, 'CFO': 8}, 'work': {'AssociateSoftwareEngineer': 1, 'MemberTechStaff': 2, 'SystemAnalyst': 3, 'Specialist': 4, 'Consultant-Architect': 6, 'Consultant': 5, 'Architect': 6}}, 'career_statemachine': {'academic-academic': 2, 'work-work': 1, 'startup-startup': 2, 'academic-work': 1, 'work-academic': 2, 'academic-startup': 3, 'startup-academic': 3, 'work-startup': 3, 'startup-work': 1, 'academic-business': 5, 'business-business': 6}}
+piplprofiletensor - states: tf.Tensor(
+[b'Schooling' b'DBHPS' b'PSGTech' b'BaaN-SSAGlobal'
+ b'SunMicrosystems-Oracle' b'Krishna-iResearch' b'Verizon'
+ b'webMethods-SoftwareAG' b'CMI-IIT-IMSc' b'GlobalAnalytics'
+ b'Clockwork-PiQube' b'CloudEnablers'], shape=(12,), dtype=string)
+Viterbi initialised to:
+[{'Schooling': 0.1, 'DBHPS': 0.0, 'PSGTech': 0.0, 'BaaN-SSAGlobal': 0.0, 'SunMicrosystems-Oracle': 0.0, 'Krishna-iResearch': 0.0, 'Verizon': 0.0, 'webMethods-SoftwareAG': 0.0, 'CMI-IIT-IMSc': 0.0, 'GlobalAnalytics': 0.0, 'Clockwork-PiQube': 0.0, 'CloudEnablers': 0.0}]
+12
+============================
+Chaotic HMM Viterbi computation
+============================
+[{'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.1,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.04895,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.045000000000000005,
+  'Schooling': 0.045000000000000005,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.022027500000000005,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.023961025,
+  'Schooling': 0.022027500000000002,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.01078246125,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0048521075625,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.002183448403125,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0009825517814062502,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0004421483016328126},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.00019896673573476567,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 8.953503108064456e-05,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 4.029076398629005e-05,
+  'CloudEnablers': 0.0,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0},
+ {'BaaN-SSAGlobal': 0.0,
+  'CMI-IIT-IMSc': 0.0,
+  'Clockwork-PiQube': 0.0,
+  'CloudEnablers': 1.8130843793830523e-05,
+  'DBHPS': 0.0,
+  'GlobalAnalytics': 0.0,
+  'Krishna-iResearch': 0.0,
+  'PSGTech': 0.0,
+  'Schooling': 0.0,
+  'SunMicrosystems-Oracle': 0.0,
+  'Verizon': 0.0,
+  'webMethods-SoftwareAG': 0.0}]
+============================
+Chaotic HMM Viterbi Trellis computation
+============================
+['Schooling',
+ 'DBHPS',
+ 'PSGTech',
+ 'BaaN-SSAGlobal',
+ 'SunMicrosystems-Oracle',
+ 'Krishna-iResearch',
+ 'Verizon',
+ 'webMethods-SoftwareAG',
+ 'CMI-IIT-IMSc',
+ 'GlobalAnalytics',
+ 'Clockwork-PiQube',
+ 'CloudEnablers']
+career_transition_analytics(): career transition score of the profile =  52
+career_transition_analytics(): career_polynomial_points: [('Schooling', 1), ('Graduation', 2), ('Graduation', 2), ('AssociateSoftwareEngineer', 1), ('MemberTechStaff', 2), ('Founder-Architect', 7), ('SystemAnalyst', 3), ('Specialist', 4), ('PostGraduation-ResearchScholar', 4), ('Consultant-Architect', 6), ('Consultant', 5), ('Architect', 6)]
+career_transition_analytics(): career polynomial - based on weighted designations (HMM observations): [ 4.71342383e-05  1.07123269e-03 -4.13024476e-02  3.27548677e-01
+ -2.90552585e-01  1.29411765e+00]
+========================================================
+Career Polynomial Inner Product Distance - Remunerations
+========================================================
+career_polynomial_inner_product_distance(): career_polynomial1 =  [-0.00733333  0.11318182 -0.58484848  1.12136364 -0.45690909  0.04779221]
+career_polynomial_inner_product_distance(): career_polynomial2 =  [-8.48809524e-03  1.27935931e-01 -6.48147835e-01  1.25996234e+00
+ -6.93851082e-01 -3.83426098e-05]
+career_polynomial_inner_product_distance(): ip_distance =  1.3606502857142857
+========================================================
+Career Polynomial Inner Product Distance - Designations
+========================================================
+career_polynomial_inner_product_distance(): career_polynomial1 =  [ 2.63041517e-18 -4.17918682e-17  2.19432671e-16 -4.16069211e-16
+  1.42857143e-01  1.42857143e-01]
+career_polynomial_inner_product_distance(): career_polynomial2 =  [ 0.03452381 -0.39880952  1.57738095 -2.5297619   1.60238095  0.28571429]
+career_polynomial_inner_product_distance(): ip_distance =  2.122448979591837
+========================================================
+Career Polynomial Inner Product Distance - Durations
+========================================================
+career_polynomial_inner_product_distance(): career_polynomial1 =  [ 0.02191667 -0.35170455  1.99170455 -4.65799242  3.80410606  0.14742424]
+career_polynomial_inner_product_distance(): career_polynomial2 =  [ 0.01654762 -0.25027056  1.29550866 -2.56661255  1.2145671   1.00064935]
+career_polynomial_inner_product_distance(): ip_distance =  1.3737142857142857
