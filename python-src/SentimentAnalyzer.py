@@ -72,10 +72,10 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
                 #empath_dict = lexicon.analyze(v.decode("utf-8"))
                 empath_list = sorted(list(empath_dict.items()),
                                      key=operator.itemgetter(1), reverse=True)
-                #print "empath_dict:",empath_dict
+                #print("empath_list:",empath_list)
                 obj = empath_list[0][1]
                 if obj == 0.0:
-                    obj = 0.00001
+                    obj = 0.1
             else:
                 sset = swn.senti_synsets(v.decode("utf-8"))
                 if len(sset) > 0:
@@ -83,21 +83,22 @@ def SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg):
                     neg = float(sset[0].neg_score())
                     obj = float(sset[0].obj_score())
                     if pos == 0.0:
-                        pos = 0.00001
+                        pos = 0.1
                     if neg == 0.0:
-                        neg = 0.00001
+                        neg = 0.1
                     if obj == 0.0:
-                        obj = 0.00001
+                        obj = 0.1
             clique_potential_pos += pos
             clique_potential_neg += neg
             clique_potential_obj += obj
-        clique_potential_product_pos *= float(clique_potential_pos)
-        clique_potential_product_neg *= float(clique_potential_neg)
-        clique_potential_product_obj *= float(clique_potential_obj)
-    lenclique = len(clique)
-    if lenclique == 0:
-        lenclique = 1
-    return clique_potential_product_pos/lenclique, clique_potential_product_neg/lenclique, clique_potential_product_obj/lenclique
+        clique_potential_product_pos *= 2*float(clique_potential_pos)
+        clique_potential_product_neg *= 2*float(clique_potential_neg)
+        clique_potential_product_obj *= 2*float(clique_potential_obj)
+    #lenclique = len(clique)
+    #if lenclique == 0:
+    #    lenclique = 1.0
+    #return float(clique_potential_product_pos/lenclique), float(clique_potential_product_neg/lenclique), float(clique_potential_product_obj/lenclique)
+    return float(clique_potential_product_pos), float(clique_potential_product_neg), float(clique_potential_product_obj)
 
 
 def SentimentAnalysis_SentiWordNet(text):
@@ -106,7 +107,7 @@ def SentimentAnalysis_SentiWordNet(text):
     sumnegscore = 0.0
     sumobjscore = 0.0
     for t in tokens:
-        sset = swn.senti_synsets(t.decode("utf-8"))
+        sset = list(swn.senti_synsets(t.decode("utf-8")))
         if len(sset) > 0:
             negscore = sset[0].neg_score()
             posscore = sset[0].pos_score()
@@ -146,7 +147,7 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
         nxg).items()), key=operator.itemgetter(1), reverse=True)
     kcore_nxg = nx.k_core(nxg, 6, nx.core_number(nxg))
     for x in sorted_core_nxg:
-        xsset = swn.senti_synsets(x[0])
+        xsset = list(swn.senti_synsets(x[0]))
         if len(xsset) > 2:
             core_xnegscore = float(xsset[0].neg_score())
             core_xposscore = float(xsset[0].pos_score())
@@ -160,8 +161,8 @@ def SentimentAnalysis_RGO_Belief_Propagation(nxg):
         float(core_positive_belief_propagated), float(core_negative_belief_propagated)))
     # for k,v in nx.dfs_edges(nxg):
     for k, v in nx.dfs_edges(kcore_nxg):
-        ksynset = swn.senti_synsets(k)
-        vsynset = swn.senti_synsets(v)
+        ksynset = list(swn.senti_synsets(k))
+        vsynset = list(swn.senti_synsets(v))
         if len(ksynset) > 2:
             dfs_knegscore = float(ksynset[0].neg_score())
             dfs_kposscore = float(ksynset[0].pos_score())
@@ -450,7 +451,7 @@ def SentimentAnalysis_RGO(text, output):
     # nx.dra	w_graphviz(nxg,prog="neato")
     nx.draw_networkx(nxg)
     # plt.show()
-    nxg.remove_edges_from(nxg.selfloop_edges())
+    nxg.remove_edges_from(nx.selfloop_edges(nxg))
     #print "Core number =",nx.core_number(nxg)
     sorted_core_nxg = sorted(list(nx.core_number(
         nxg).items()), key=operator.itemgetter(1), reverse=True)
@@ -507,7 +508,7 @@ def SentimentAnalysis_RGO(text, output):
     print("Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text")
     print("==========================================================================================================")
     for x in sorted_core_nxg:
-        xsset = swn.senti_synsets(x[0])
+        xsset = list(swn.senti_synsets(x[0]))
         if len(xsset) > 2:
             xnegscore = xsset[0].neg_score()
             xposscore = xsset[0].pos_score()
@@ -543,3 +544,10 @@ if __name__ == "__main__":
         core_belief_propagated_posscore))
     print("Core Number belief_propagated_negscore:", float(
         core_belief_propagated_negscore))
+    print("==========================================================================================================")
+    print("Sentiment Analysis (Markov Random Fields Belief Propagation of Sentiment in the RGO graph) of the text")
+    print("==========================================================================================================")
+    RGO_MRF_positivity,RGO_MRF_negativity,RGO_MRF_objectivity=SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg)
+    print("RGO Markov Random Fields - Empath positivity:",RGO_MRF_positivity)
+    print("RGO Markov Random Fields - Empath negativity:",RGO_MRF_negativity)
+    print("RGO Markov Random Fields - Empath objectivity:",RGO_MRF_objectivity)

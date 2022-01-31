@@ -1,0 +1,402 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+defaultdict(<class 'list'>, {'specification': ['any', 'whatever', 'whatsoever'], 'April': ['May'], 'divorce': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'track': ['seek'], 'following': ['May'], 'currently': ['expense', 'disbursal', 'disbursement'], 'must': ['qualification', 'making'], 'berths': ['lower_berth', 'lower'], 'life': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'services': ['expense', 'disbursal', 'disbursement'], 'stored': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'specific': ['seek'], 'movement': ['seek'], 'disk': ['seek'], 'attribute': ['qualification', 'making'], 'Bay': ['Mobile', 'Mobile_River'], 'procedures': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'woman': ['bride'], 'Mobile': ['Mobile', 'Mobile_River'], 'rules': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'benefit': ['good'], 'one': ['any', 'whatever', 'whatsoever'], 'something': ['qualification', 'making'], 'gain': ['income'], 'without': ['any', 'whatever', 'whatsoever'], 'earned': ['income'], 'expert': ['adviser', 'advisor', 'consultant'], 'data': ['seek'], 'voluntarily': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'expenditures': ['expense', 'disbursal', 'disbursement'], 'flows': ['Mobile', 'Mobile_River'], 'programs': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'person': ['qualification', 'making'], 'deductible': ['expense', 'disbursal', 'disbursement'], 'associated': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'pertaining': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'paid': ['expense', 'disbursal', 'disbursement'], 'met': ['qualification', 'making'], 'gives': ['adviser', 'advisor', 'consultant'], 'unearned': ['income'], 'joined': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'Alabama': ['Mobile', 'Mobile_River'], 'married': ['bride', 'marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'tax': ['expense', 'disbursal', 'disbursement'], 'amounts': ['expense', 'disbursal', 'disbursement'], 'goods': ['expense', 'disbursal', 'disbursement'], 'preceding': ['May'], 'period': ['income'], 'state': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'southwestern': ['Mobile', 'Mobile_River'], 'capital': ['expense', 'disbursal', 'disbursement'], 'given': ['income'], 'read/write': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package', 'seek'], 'accruing': ['income'], 'science': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'month': ['May'], 'time': ['income'], 'two': ['lower_berth', 'lower'], 'system': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'operation': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'memory': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'recently': ['bride'], 'complied': ['qualification', 'making'], 'head': ['seek'], 'fits': ['qualification', 'making'], 'financial': ['income'], 'advice': ['adviser', 'advisor', 'consultant'], 'June': ['May'], 'couple': ['marriage', 'matrimony', 'union', 'spousal_relationship', 'wedlock'], 'opposed': ['expense', 'disbursal', 'disbursement'], 'computer': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'written': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'documentation': ['software', 'software_program', 'computer_software', 'software_system', 'software_package', 'package'], 'river': ['Mobile', 'Mobile_River'], 'lower': ['lower_berth', 'lower'], 'every': ['any', 'whatever', 'whatsoever']})
+Core number (sorted) : [('stored', 12), ('software', 12), ('software_program', 12), ('computer_software', 12), ('software_system', 12), ('software_package', 12), ('package', 12), ('procedures', 12), ('rules', 12), ('programs', 12), ('associated', 12), ('pertaining', 12), ('read/write', 12), ('science', 12), ('system', 12), ('operation', 12), ('memory', 12), ('computer', 12), ('written', 12), ('documentation', 12), ('divorce', 10), ('marriage', 10), ('matrimony', 10), ('union', 10), ('spousal_relationship', 10), ('wedlock', 10), ('life', 10), ('voluntarily', 10), ('joined', 10), ('married', 10), ('state', 10), ('couple', 10), ('specification', 6), ('any', 6), ('whatever', 6), ('whatsoever', 6), ('currently', 6), ('expense', 6), ('disbursal', 6), ('disbursement', 6), ('services', 6), ('one', 6), ('without', 6), ('expert', 6), ('adviser', 6), ('advisor', 6), ('consultant', 6), ('expenditures', 6), ('deductible', 6), ('paid', 6), ('gives', 6), ('tax', 6), ('amounts', 6), ('goods', 6), ('capital', 6), ('advice', 6), ('opposed', 6), ('every', 6), ('must', 4), ('qualification', 4), ('making', 4), ('berths', 4), ('lower_berth', 4), ('lower', 4), ('attribute', 4), ('Bay', 4), ('Mobile', 4), ('Mobile_River', 4), ('something', 4), ('flows', 4), ('person', 4), ('met', 4), ('Alabama', 4), ('southwestern', 4), ('two', 4), ('complied', 4), ('fits', 4), ('river', 4), ('April', 2), ('May', 2), ('track', 2), ('seek', 2), ('following', 2), ('specific', 2), ('movement', 2), ('disk', 2), ('woman', 2), ('bride', 2), ('benefit', 2), ('good', 2), ('gain', 2), ('income', 2), ('earned', 2), ('data', 2), ('unearned', 2), ('preceding', 2), ('period', 2), ('given', 2), ('accruing', 2), ('month', 2), ('time', 2), ('recently', 2), ('head', 2), ('financial', 2), ('June', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: stored ,core number= 12
+This document belongs to class: software ,core number= 12
+This document belongs to class: software_program ,core number= 12
+This document belongs to class: computer_software ,core number= 12
+This document belongs to class: software_system ,core number= 12
+This document belongs to class: software_package ,core number= 12
+This document belongs to class: package ,core number= 12
+This document belongs to class: procedures ,core number= 12
+This document belongs to class: rules ,core number= 12
+This document belongs to class: programs ,core number= 12
+This document belongs to class: associated ,core number= 12
+This document belongs to class: pertaining ,core number= 12
+	max_core_number 12
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('income', 0.040158459884157595), ('May', 0.027029324015436996), ('seek', 0.02624639524153428), ('qualification', 0.020464756081076688), ('making', 0.020464756081076688), ('expense', 0.019735359643925546), ('disbursal', 0.019735359643925546), ('disbursement', 0.019735359643925546), ('Mobile', 0.017421602833226156), ('Mobile_River', 0.017421602833226156), ('software', 0.016218865587153596), ('software_program', 0.016218865587153596), ('computer_software', 0.016218865587153596), ('software_system', 0.016218865587153596), ('software_package', 0.016218865587153596), ('package', 0.016218865587153596), ('marriage', 0.011927454338497283), ('matrimony', 0.011927454338497283), ('union', 0.011927454338497283), ('spousal_relationship', 0.011927454338497283), ('wedlock', 0.011927454338497283), ('married', 0.011682907941064948), ('lower_berth', 0.011246200607902783), ('lower', 0.011246200607902783), ('any', 0.010982602398111807), ('whatever', 0.010982602398111807), ('whatsoever', 0.010982602398111807), ('bride', 0.010634721319091316), ('read/write', 0.010522865646243914), ('benefit', 0.009523809523809525), ('good', 0.009523809523809525), ('expert', 0.009523809523809525), ('adviser', 0.009523809523809525), ('advisor', 0.009523809523809525), ('consultant', 0.009523809523809525), ('gives', 0.009523809523809525), ('advice', 0.009523809523809525), ('divorce', 0.00866982079130686), ('life', 0.00866982079130686), ('voluntarily', 0.00866982079130686), ('joined', 0.00866982079130686), ('state', 0.00866982079130686), ('couple', 0.00866982079130686), ('specification', 0.008429714868082807), ('one', 0.008429714868082807), ('without', 0.008429714868082807), ('every', 0.008429714868082807), ('two', 0.007801418439716267), ('berths', 0.007801418439716266), ('stored', 0.00733596861189504), ('procedures', 0.00733596861189504), ('rules', 0.00733596861189504), ('programs', 0.00733596861189504), ('associated', 0.00733596861189504), ('pertaining', 0.00733596861189504), ('science', 0.00733596861189504), ('system', 0.00733596861189504), ('operation', 0.00733596861189504), ('memory', 0.00733596861189504), ('computer', 0.00733596861189504), ('written', 0.00733596861189504), ('documentation', 0.00733596861189504), ('currently', 0.00646034448777472), ('services', 0.00646034448777472), ('expenditures', 0.00646034448777472), ('deductible', 0.00646034448777472), ('paid', 0.00646034448777472), ('tax', 0.00646034448777472), ('amounts', 0.00646034448777472), ('goods', 0.00646034448777472), ('capital', 0.00646034448777472), ('opposed', 0.00646034448777472), ('must', 0.006397824793161765), ('attribute', 0.006397824793161765), ('something', 0.006397824793161765), ('person', 0.006397824793161765), ('met', 0.006397824793161765), ('complied', 0.006397824793161765), ('fits', 0.006397824793161765), ('Bay', 0.006364692200042872), ('flows', 0.006364692200042872), ('Alabama', 0.006364692200042872), ('southwestern', 0.006364692200042872), ('river', 0.006364692200042872), ('April', 0.0060227066254840336), ('following', 0.0060227066254840336), ('preceding', 0.0060227066254840336), ('month', 0.0060227066254840336), ('June', 0.0060227066254840336), ('gain', 0.00569447822876602), ('earned', 0.00569447822876602), ('unearned', 0.00569447822876602), ('period', 0.00569447822876602), ('given', 0.00569447822876602), ('accruing', 0.00569447822876602), ('time', 0.00569447822876602), ('financial', 0.00569447822876602), ('track', 0.004615468462920303), ('specific', 0.004615468462920303), ('movement', 0.004615468462920303), ('disk', 0.004615468462920303), ('data', 0.004615468462920303), ('head', 0.004615468462920303), ('woman', 0.0044416585783295165), ('recently', 0.0044416585783295165)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  0.5
+Negativity =  0.125
+Objectivity =  12.375
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  package :  0.0
+posscore of  package :  0.0
+negscore of  procedures :  0.0
+posscore of  procedures :  0.0
+negscore of  rules :  0.0
+posscore of  rules :  0.25
+negscore of  programs :  0.0
+posscore of  programs :  0.0
+negscore of  associated :  0.0
+posscore of  associated :  0.0
+negscore of  system :  0.0
+posscore of  system :  0.0
+negscore of  operation :  0.0
+posscore of  operation :  0.0
+negscore of  memory :  0.0
+posscore of  memory :  0.0
+negscore of  written :  0.0
+posscore of  written :  0.0
+negscore of  documentation :  0.0
+posscore of  documentation :  0.0
+negscore of  divorce :  0.0
+posscore of  divorce :  0.0
+negscore of  marriage :  0.0
+posscore of  marriage :  0.0
+negscore of  union :  0.0
+posscore of  union :  0.0
+negscore of  life :  0.0
+posscore of  life :  0.0
+negscore of  joined :  0.0
+posscore of  joined :  0.0
+negscore of  married :  0.0
+posscore of  married :  0.0
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  couple :  0.125
+posscore of  couple :  0.0
+negscore of  specification :  0.0
+posscore of  specification :  0.0
+negscore of  expense :  0.0
+posscore of  expense :  0.0
+negscore of  services :  0.0
+posscore of  services :  0.0
+negscore of  one :  0.0
+posscore of  one :  0.0
+negscore of  expert :  0.0
+posscore of  expert :  0.0
+negscore of  expenditures :  0.0
+posscore of  expenditures :  0.0
+negscore of  deductible :  0.0
+posscore of  deductible :  0.0
+negscore of  paid :  0.0
+posscore of  paid :  0.0
+negscore of  gives :  0.0
+posscore of  gives :  0.0
+negscore of  tax :  0.0
+posscore of  tax :  0.0
+negscore of  amounts :  0.0
+posscore of  amounts :  0.0
+negscore of  goods :  0.0
+posscore of  goods :  0.5
+negscore of  capital :  0.0
+posscore of  capital :  0.0
+negscore of  opposed :  0.0
+posscore of  opposed :  0.0
+negscore of  must :  0.0
+posscore of  must :  0.375
+negscore of  qualification :  0.0
+posscore of  qualification :  0.0
+negscore of  making :  0.0
+posscore of  making :  0.0
+negscore of  berths :  0.0
+posscore of  berths :  0.0
+negscore of  lower :  0.125
+posscore of  lower :  0.0
+negscore of  attribute :  0.0
+posscore of  attribute :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  Mobile :  0.0
+posscore of  Mobile :  0.0
+negscore of  flows :  0.0
+posscore of  flows :  0.0
+negscore of  person :  0.0
+posscore of  person :  0.0
+negscore of  met :  0.0
+posscore of  met :  0.0
+negscore of  Alabama :  0.0
+posscore of  Alabama :  0.0
+negscore of  southwestern :  0.0
+posscore of  southwestern :  0.0
+negscore of  two :  0.0
+posscore of  two :  0.0
+negscore of  fits :  0.5
+posscore of  fits :  0.0
+negscore of  track :  0.0
+posscore of  track :  0.0
+negscore of  seek :  0.0
+posscore of  seek :  0.0
+negscore of  following :  0.0
+posscore of  following :  0.0
+negscore of  specific :  0.0
+posscore of  specific :  0.0
+negscore of  movement :  0.125
+posscore of  movement :  0.0
+negscore of  disk :  0.0
+posscore of  disk :  0.0
+negscore of  woman :  0.0
+posscore of  woman :  0.0
+negscore of  bride :  0.0
+posscore of  bride :  0.0
+negscore of  benefit :  0.0
+posscore of  benefit :  0.0
+negscore of  good :  0.0
+posscore of  good :  0.5
+negscore of  gain :  0.0
+posscore of  gain :  0.0
+negscore of  earned :  0.0
+posscore of  earned :  0.0
+negscore of  preceding :  0.0
+posscore of  preceding :  0.0
+negscore of  period :  0.125
+posscore of  period :  0.125
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  time :  0.0
+posscore of  time :  0.0
+negscore of  head :  0.0
+posscore of  head :  0.0
+==========================================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the text
+==========================================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 8.750094, 9.875088
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 53.062500, 54.000000
+DFS belief_propagated_posscore: 53.0625
+DFS belief_propagated_negscore: 54.0
+Core Number belief_propagated_posscore: 8.750093999999974
+Core Number belief_propagated_negscore: 9.875087999999995
+==========================================================================================================
+Sentiment Analysis (Markov Random Fields Belief Propagation of Sentiment in the RGO graph) of the text
+==========================================================================================================
+clique: ['specification', 'any']
+clique: ['specification', 'whatever']
+clique: ['specification', 'whatsoever']
+clique: ['whatsoever', 'every']
+clique: ['whatsoever', 'one']
+clique: ['whatsoever', 'without']
+clique: ['whatever', 'every']
+clique: ['whatever', 'one']
+clique: ['whatever', 'without']
+clique: ['April', 'May']
+clique: ['expense', 'currently']
+clique: ['expense', 'capital']
+clique: ['expense', 'opposed']
+clique: ['expense', 'expenditures']
+clique: ['expense', 'services']
+clique: ['expense', 'tax']
+clique: ['expense', 'amounts']
+clique: ['expense', 'deductible']
+clique: ['expense', 'goods']
+clique: ['expense', 'paid']
+clique: ['divorce', 'wedlock']
+clique: ['divorce', 'marriage']
+clique: ['divorce', 'union']
+clique: ['divorce', 'spousal_relationship']
+clique: ['divorce', 'matrimony']
+clique: ['income', 'period']
+clique: ['income', 'given']
+clique: ['income', 'unearned']
+clique: ['income', 'gain']
+clique: ['income', 'accruing']
+clique: ['income', 'earned']
+clique: ['income', 'time']
+clique: ['income', 'financial']
+clique: ['matrimony', 'couple']
+clique: ['matrimony', 'state']
+clique: ['matrimony', 'joined']
+clique: ['matrimony', 'life']
+clique: ['matrimony', 'married']
+clique: ['matrimony', 'voluntarily']
+clique: ['track', 'seek']
+clique: ['following', 'May']
+clique: ['currently', 'disbursement']
+clique: ['currently', 'disbursal']
+clique: ['must', 'qualification']
+clique: ['must', 'making']
+clique: ['life', 'union']
+clique: ['life', 'wedlock']
+clique: ['life', 'spousal_relationship']
+clique: ['life', 'marriage']
+clique: ['berths', 'lower', 'lower_berth']
+clique: ['advisor', 'advice']
+clique: ['advisor', 'gives']
+clique: ['advisor', 'expert']
+clique: ['services', 'disbursement']
+clique: ['services', 'disbursal']
+clique: ['specific', 'seek']
+clique: ['movement', 'seek']
+clique: ['disk', 'seek']
+clique: ['adviser', 'advice']
+clique: ['adviser', 'gives']
+clique: ['adviser', 'expert']
+clique: ['attribute', 'qualification']
+clique: ['attribute', 'making']
+clique: ['Bay', 'Mobile', 'Mobile_River']
+clique: ['woman', 'bride']
+clique: ['Mobile', 'Mobile_River', 'southwestern']
+clique: ['Mobile', 'Mobile_River', 'flows']
+clique: ['Mobile', 'Mobile_River', 'Alabama']
+clique: ['Mobile', 'Mobile_River', 'river']
+clique: ['benefit', 'good']
+clique: ['spousal_relationship', 'couple']
+clique: ['spousal_relationship', 'state']
+clique: ['spousal_relationship', 'joined']
+clique: ['spousal_relationship', 'married']
+clique: ['spousal_relationship', 'voluntarily']
+clique: ['one', 'any']
+clique: ['something', 'qualification']
+clique: ['something', 'making']
+clique: ['without', 'any']
+clique: ['expert', 'consultant']
+clique: ['data', 'seek']
+clique: ['voluntarily', 'union']
+clique: ['voluntarily', 'wedlock']
+clique: ['voluntarily', 'marriage']
+clique: ['lower_berth', 'lower', 'two']
+clique: ['expenditures', 'disbursement']
+clique: ['expenditures', 'disbursal']
+clique: ['person', 'qualification']
+clique: ['person', 'making']
+clique: ['deductible', 'disbursement']
+clique: ['deductible', 'disbursal']
+clique: ['making', 'fits']
+clique: ['making', 'complied']
+clique: ['making', 'met']
+clique: ['paid', 'disbursement']
+clique: ['paid', 'disbursal']
+clique: ['met', 'qualification']
+clique: ['wedlock', 'couple']
+clique: ['wedlock', 'married']
+clique: ['wedlock', 'state']
+clique: ['wedlock', 'joined']
+clique: ['gives', 'consultant']
+clique: ['package', 'system']
+clique: ['package', 'operation']
+clique: ['package', 'memory']
+clique: ['package', 'procedures']
+clique: ['package', 'computer']
+clique: ['package', 'rules']
+clique: ['package', 'written']
+clique: ['package', 'programs']
+clique: ['package', 'read/write']
+clique: ['package', 'documentation']
+clique: ['package', 'science']
+clique: ['package', 'associated']
+clique: ['package', 'stored']
+clique: ['package', 'pertaining']
+clique: ['joined', 'union']
+clique: ['joined', 'marriage']
+clique: ['bride', 'married']
+clique: ['bride', 'recently']
+clique: ['married', 'union']
+clique: ['married', 'marriage']
+clique: ['tax', 'disbursement']
+clique: ['tax', 'disbursal']
+clique: ['amounts', 'disbursement']
+clique: ['amounts', 'disbursal']
+clique: ['May', 'June']
+clique: ['May', 'month']
+clique: ['May', 'preceding']
+clique: ['goods', 'disbursement']
+clique: ['goods', 'disbursal']
+clique: ['software_system', 'system']
+clique: ['software_system', 'operation']
+clique: ['software_system', 'memory']
+clique: ['software_system', 'procedures']
+clique: ['software_system', 'computer']
+clique: ['software_system', 'rules']
+clique: ['software_system', 'written']
+clique: ['software_system', 'programs']
+clique: ['software_system', 'read/write']
+clique: ['software_system', 'documentation']
+clique: ['software_system', 'science']
+clique: ['software_system', 'associated']
+clique: ['software_system', 'stored']
+clique: ['software_system', 'pertaining']
+clique: ['state', 'union']
+clique: ['state', 'marriage']
+clique: ['disbursement', 'capital']
+clique: ['disbursement', 'opposed']
+clique: ['capital', 'disbursal']
+clique: ['marriage', 'couple']
+clique: ['software_package', 'system']
+clique: ['software_package', 'operation']
+clique: ['software_package', 'memory']
+clique: ['software_package', 'procedures']
+clique: ['software_package', 'computer']
+clique: ['software_package', 'rules']
+clique: ['software_package', 'written']
+clique: ['software_package', 'programs']
+clique: ['software_package', 'read/write']
+clique: ['software_package', 'documentation']
+clique: ['software_package', 'science']
+clique: ['software_package', 'associated']
+clique: ['software_package', 'stored']
+clique: ['software_package', 'pertaining']
+clique: ['complied', 'qualification']
+clique: ['union', 'couple']
+clique: ['head', 'seek']
+clique: ['computer_software', 'system']
+clique: ['computer_software', 'operation']
+clique: ['computer_software', 'memory']
+clique: ['computer_software', 'procedures']
+clique: ['computer_software', 'computer']
+clique: ['computer_software', 'rules']
+clique: ['computer_software', 'written']
+clique: ['computer_software', 'programs']
+clique: ['computer_software', 'read/write']
+clique: ['computer_software', 'documentation']
+clique: ['computer_software', 'science']
+clique: ['computer_software', 'associated']
+clique: ['computer_software', 'stored']
+clique: ['computer_software', 'pertaining']
+clique: ['qualification', 'fits']
+clique: ['software', 'system']
+clique: ['software', 'operation']
+clique: ['software', 'memory']
+clique: ['software', 'procedures']
+clique: ['software', 'computer']
+clique: ['software', 'rules']
+clique: ['software', 'written']
+clique: ['software', 'programs']
+clique: ['software', 'read/write']
+clique: ['software', 'documentation']
+clique: ['software', 'science']
+clique: ['software', 'associated']
+clique: ['software', 'stored']
+clique: ['software', 'pertaining']
+clique: ['any', 'every']
+clique: ['advice', 'consultant']
+clique: ['opposed', 'disbursal']
+clique: ['seek', 'read/write']
+clique: ['software_program', 'system']
+clique: ['software_program', 'operation']
+clique: ['software_program', 'memory']
+clique: ['software_program', 'procedures']
+clique: ['software_program', 'computer']
+clique: ['software_program', 'rules']
+clique: ['software_program', 'written']
+clique: ['software_program', 'programs']
+clique: ['software_program', 'read/write']
+clique: ['software_program', 'documentation']
+clique: ['software_program', 'science']
+clique: ['software_program', 'associated']
+clique: ['software_program', 'stored']
+clique: ['software_program', 'pertaining']
+RGO Markov Random Fields - Empath positivity: 0.0
+RGO Markov Random Fields - Empath negativity: 0.0
+RGO Markov Random Fields - Empath objectivity: 1478.6871718142365
