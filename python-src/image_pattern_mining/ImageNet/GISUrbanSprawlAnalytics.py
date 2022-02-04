@@ -117,6 +117,17 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
         contourarea = cv2.contourArea(segment[7][0][n])
         contourareas.append(contourarea)
         cv2.drawContours(img,segment[7][0][n],-1,(0,255,0),2)
+        print("Contour boundary point:",segment[7][0][n][0])
+        pop_dens=0
+        try:
+            contourcolor = img[segment[7][0][n][0][0][0],segment[7][0][n][0][0][1]]
+            print("Contour color:",contourcolor)
+            averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
+            pop_dens = (averageBGR/255) * 100000
+        except:
+            pop_dens = population_density
+        if population_density == -1:
+            population_density = pop_dens
         x,y,w,h = cv2.boundingRect(segment[7][0][n])
         print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
@@ -189,16 +200,16 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg",seg5,5000,266.0/854.0)
     #seg6=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg")
     #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg",seg6,5000,266.0/854.0)
-    seg7=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg7,5000,266.0/854.0)
-    seg8=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
-    urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg8,5000,266.0/854.0)
-    modularityseg7=nx.modularity_matrix(seg7[8])
-    modularityseg8=nx.modularity_matrix(seg8[8])
-    modularityseg7=modularityseg7.flatten().tolist()
-    modularityseg8=modularityseg8.flatten().tolist()
-    modemd=wasserstein_distance(modularityseg7[0],modularityseg8[0])
-    print("Increase in Community structure - Wasserstein EMD of modularity:",modemd)
+    #seg7=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
+    #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg7,5000,266.0/854.0)
+    #seg8=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
+    #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg8,5000,266.0/854.0)
+    #modularityseg7=nx.modularity_matrix(seg7[8])
+    #modularityseg8=nx.modularity_matrix(seg8[8])
+    #modularityseg7=modularityseg7.flatten().tolist()
+    #modularityseg8=modularityseg8.flatten().tolist()
+    #modemd=wasserstein_distance(modularityseg7[0],modularityseg8[0])
+    #print("Increase in Community structure - Wasserstein EMD of modularity:",modemd)
     #minged=10000000000000000
     #iteration=0
     #for ged in nx.optimize_graph_edit_distance(seg7[8],seg8[8]):
@@ -208,3 +219,5 @@ if __name__ == "__main__":
     #        iteration+=1
     #graphmining=GSpan([])
     #graphmining.GraphEditDistance(seg7[8],seg8[8])
+    seg9=image_segmentation("testlogs/HRSL_World_NightTimeStreets.jpg")
+    urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,266.0/854.0)
