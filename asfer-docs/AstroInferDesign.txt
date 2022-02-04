@@ -17994,3 +17994,32 @@ References:
 1206.10 Gale-Shapley Stable Marriage Algorithm - https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm
 1206.11 Reciprocal Recommender Systems: Analysis of State-of-Art Literature, Challenges and Opportunities towards Social Recommendation - https://arxiv.org/pdf/2007.16120v2.pdf - "...In other words, a vital requirement in any RRS is that both users should reciprocate, i.e. both of them should indicate positive feedback on the suggestion to connect with each other in order to deem the matching recommendation as successful. This requisite adds an additional layer of complexity in RRS with respect to the majority of conventional RS, the latter of which typically only seek satisfying the end user preferences. RRS are popular in dating [112], recruitment [11], online learning environments [120], and social media platforms [61, 107] where reciprocity can yield better matchings between people [109]..."
 1206.12 Reciprocal Recommender Systems - https://indiaai.gov.in/article/how-matchmaking-matrimonial-platforms-are-leveraging-reciprocal-recommender-systems-at-its-core
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1211. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Population Density computation from Contour Pixel color coding - 4 February 2022 -
+related to 1174,1175,1179,1194 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption
+---------------------------------------------------------------------------------------------------------------------------------------------
+1211.1 GISUrbanSprawlAnalytics.py has been updated to compute Population of an urban sprawl contour extent from pixel color coding of the contour and points within the contour. Earlier population density was assumed to be a constant throughout the GIS visual which has been rectified in this code change.
+1211.2 There are standard methodologies to find population density from GIS GeoTIFF which project the map pixel coordinates to longitude-latitude by GDAL Geo transformations and lookup the population density of a longitude-latitude from a GIS map service which is multiplied by contour area to get the population density. But the issue with GDAL is it is quite heavy to install and dependency requirements are huge causing C++ compile errors (GDAL is implemented in C++ and there are GLIBC version mismatch errors) and has been abandoned in favour of a simpler alternative.
+1211.3 Simpler alternative implemented in this commit: 
+	1211.3.1 Find the Blue-Green-Red color of a pixel in contour boundary of an urban sprawl
+	1211.3.2 Average of BGR color is divided by 255 to get the ratio of pixel intensity - AverageBGR/255
+	1211.3.3 Average BGR color pixel intensity ratio is multiplied by highest population density of an urban sprawl in the world to get approximate estimate of population density of an urban sprawl contour (e.g Barcelona,Spain and Los Angeles,The US are the densest in world) - 100000 per square kilometre (Assumption: Pixel colors graded from 0 to 255 map from lowest population density to highest population density range which is the convention followed by GHSL,SEDAC,HRSL)
+1211.4 Function urban_sprawl_from_segments() is invoked for Meta-Facebook High Resolution Settlement Layer World Nighttime Streets image - testlogs/HRSL_World_NightTimeStreets.jpg - by setting population density as -1 a flag implying population density is internally computed. 
+1211.5 Following are the logs, facegraph DOT file and convex hull-contour-segment-facegraph images created - Logs testlogs/GISUrbanSprawlAnalytics.log.4February2022 print the contour boundary point chosen for pixel color computation and the approximate populations of urban sprawl contour areas(not necessarily close to actual populations because area of a pixel may not be 1 square km exactly as contour area to square km conversion is computed by a heuristic training data in 1175, but quite useful for rankings by proportionality):
+	testlogs/GISUrbanSprawlAnalytics.log.4February2022
+	testlogs/HRSL_World_NightTimeStreets-contourlabelled.jpg
+	testlogs/RemoteSensingGIS/HRSL_World_NightTimeStreets_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/HRSL_World_NightTimeStreets_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/HRSL_World_NightTimeStreets_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/HRSL_World_NightTimeStreets_convex_hull_segmented.jpg
+	testlogs/RemoteSensingGIS/HRSL_World_NightTimeStreets_segmented.jpg
+
+References:
+----------
+1211.6 The curse of urban sprawl: how cities grow, and why this has to change - https://www.theguardian.com/cities/2016/jul/12/urban-sprawl-how-cities-grow-change-sustainability-urban-age
+1211.7 High Resolution Settlement Layer - [Samapriya Roy] - Google Earth Engine model - https://samapriya.github.io/awesome-gee-community-datasets/projects/hrsl/
+1211.8 HRSL Data for Good Visualizations - mWater Portal - https://dataforgood.facebook.com/dfg/tools/high-resolution-population-density-maps
+1211.9 What Density Doesn’t Tell Us About Sprawl - https://www.accessmagazine.org/fall-2010/density-doesnt-tell-us-sprawl/ - Population Density rankings may not translate to urban sprawl rankings
+1211.10 OSGEO GDAL Python bindings - https://gdal.org/python/index.html
+1211.11 Map Projection in GDAL - pixel from long-lat - https://stackoverflow.com/questions/58623254/find-pixel-coordinates-from-lat-long-point-in-geotiff-using-python-and-gdal
