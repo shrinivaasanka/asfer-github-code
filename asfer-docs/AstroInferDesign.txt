@@ -17949,6 +17949,7 @@ References:
 1204.9 Average Sensitivity (expected probability of certain number of hamming neighbours of boolean cube) and Noise Sensitivity of Boolean PTFs - [Ilias Diakonikolas, Prasad Raghavendra, Rocco A. Servedio, Li-Yang Tan] - https://arxiv.org/pdf/0909.5011.pdf
 1204.10 Peres Theorem - Lecture 19: Noise sensitivity of Linear Threshold Functions - [Ryan O'Donnell] - https://www.cs.cmu.edu/~odonnell/boolean-analysis/lecture19.pdf
 1204.11 The Limitations of the GRE in Predicting Success in Biomedical Graduate School - https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0166742 - Correlation between GRE Scores and Success in Research career is quite low
+1204.12 Change in mobility - https://kzaremba.shinyapps.io/Dystansowanie/?fbclid=IwAR0WoEn5H2RXJ2WzyjWCqoevRcqK-n6_B1I1ItE7hOOEF0qDj34FZB5byqM - Data for Good - estimation of facebook users' mobility anonymously gathered from users who have geolocation enabled.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1205. (THEORY and FEATURE) Computational Geometric Factorization - Matplotlib plot of benchmarks - 300 integers from 100 to 400 and 20 integers from 500 to 520 - related to 1159 and all sections on Computational Geometric Factorization, Neural network learning of Factors by SAC=TC=NC=AC equivalence, Planar Point Location - 30 January 2022
@@ -18023,4 +18024,4 @@ References:
 1211.9 What Density Doesn’t Tell Us About Sprawl - https://www.accessmagazine.org/fall-2010/density-doesnt-tell-us-sprawl/ - Population Density rankings may not translate to urban sprawl rankings
 1211.10 OSGEO GDAL Python bindings - https://gdal.org/python/index.html
 1211.11 Map Projection in GDAL - pixel from long-lat - https://stackoverflow.com/questions/58623254/find-pixel-coordinates-from-lat-long-point-in-geotiff-using-python-and-gdal
-1211.12 HRSL legend in testlogs/HRSL_World_NightTimeStreets.jpg dt.11/01/2022 for population counts: 7 pixel colors for population ranges 0-1,1-50,50-100,100-250,250-1000,100-2500 and 2500-27057 and map scale 1:147914382
+1211.12 HRSL legend in testlogs/HRSL_World_NightTimeStreets.jpg dt.11/01/2022 for population counts: 7 pixel colors for population ranges 0-1,1-50,50-100,100-250,250-1000,1000-2500 and 2500-27057 and map scale 1:147914382
