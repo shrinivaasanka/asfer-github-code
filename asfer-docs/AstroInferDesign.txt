@@ -18025,3 +18025,47 @@ References:
 1211.10 OSGEO GDAL Python bindings - https://gdal.org/python/index.html
 1211.11 Map Projection in GDAL - pixel from long-lat - https://stackoverflow.com/questions/58623254/find-pixel-coordinates-from-lat-long-point-in-geotiff-using-python-and-gdal
 1211.12 HRSL legend in testlogs/HRSL_World_NightTimeStreets.jpg dt.11/01/2022 for population counts: 7 pixel colors for population ranges 0-1,1-50,50-100,100-250,250-1000,1000-2500 and 2500-27057 and map scale 1:147914382
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1212. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Population count computation from HRSL Map Legend - 7 February 2022 - related to 1174,1175,1179,1194,1211 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption, Jordan Curve Theorem, Weirstrass Theorem
+---------------------------------------------------------------------------------------------------------------------------------------------
+1212.1 GISUrbanSprawlAnalytics.py has been updated to compute population count from a Legend Dictionary through additional argument "legend" to urban_sprawl_from_segments() which is a dictionary of average RGB pixel colors to population range strings of the form "<minimum>-<maximum>"
+1212.2 If no legend dictionary is available,population density computation defaults to proportional density based on pixel color having 100000 as maximum. It is upto the invoking function to suitably populate the legend dictionary and mapscale for contour area to square kilometer conversion. An example legend dict for Meta High Resolution Settlement Layer Map testlogs/HRSL_World_NightTimeStreets.jpg has been passed on to urban_sprawl_from_segments() as mapping of RGB averages for color gradings - Yellow1,Yellow2,Yellow3,Orange1,Orange2,Orange3,Red1 - to population ranges. Mapscale could be either set to HRSL legend ratio of 1:147914382 or NeuronRain heuristic of 266.0/854.0 for urban sprawl contour area to square kilometre conversion:
+	legend={235/3:"0-1",245/3:"1-50",255/3:"50-100",362/3:"100-250",372/3:"250-1000",382/3:"1000-2500",510/3:"2500-27057"}
+	mapscale=147914382
+    	#mapscale=266.0/854.0
+    	urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
+1212.3 urban_sprawl_from_legends() iterates through legend dictionary to find matching color range for an average RGB value of contour boundary pixel - it is not a key lookup in exact sense, but a range query for color range which contains the average RGB value e.g an average RGB value of 300/3 would be matched by 255/3 - 362/3 bracket.
+1212.4 Use of mapscale from HRSL (mapscale=147914382) as multiplicand magnifies the urban sprawl area and population values thus facilitating better ranking. 
+1212.5 Excerpts of logs from testlogs/GISUrbanSprawlAnalytics.log.7February2022 for area and population estimates of few urban sprawl contours:
+('Circumference of Urban Area:', 30.485281229019165)
+('Approximate circular area of Urban Sprawl:', 78.5)
+('Contour Area of Urban Sprawl:', 60.0)
+('Ratio of urban sprawl contour area to image area:', 6.96301247771836e-05)
+('Square Kilometer Area of Urban Sprawl:', 8874862920.0)
+('Population of Urban Sprawl (from density):', 8874862920.0)
+('Population of Urban Sprawl (from area):', 4.8990705329947954e+20)
+('Centroid of the Urban Sprawl:', (413, 43))
+Contour boundary point: [[387  40]]
+Contour color: [255 255 255]
+('Convex Hull of Urban Area:', array([[[388,  40]],
+
+       [[395,  46]],
+
+       [[396,  50]],
+
+       [[396,  56]],
+
+       [[387,  56]],
+
+       [[387,  40]]], dtype=int32))
+('Circumference of Urban Area:', 69.79898953437805)
+('Approximate circular area of Urban Sprawl:', 254.34)
+('Contour Area of Urban Sprawl:', 21.0)
+('Ratio of urban sprawl contour area to image area:', 2.437054367201426e-05)
+('Square Kilometer Area of Urban Sprawl:', 3106202022.0)
+('Population of Urban Sprawl (from density):', 3106202022.0)
+('Population of Urban Sprawl (from area):', 6.0013614029186245e+19)
+('Centroid of the Urban Sprawl:', (391, 48))
+Contour boundary point: [[369  40]]
+Contour color: [255 255 255]
