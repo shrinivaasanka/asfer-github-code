@@ -86,7 +86,7 @@ def draw_voronoi_tessellation(img,centroids):
             except:
                 continue
 
-def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtocontourarearatio=0):
+def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtocontourarearatio=0,legend=None):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
@@ -123,7 +123,15 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
             contourcolor = img[segment[7][0][n][0][0][0],segment[7][0][n][0][0][1]]
             print("Contour color:",contourcolor)
             averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
-            pop_dens = (averageBGR/255) * 100000
+            if legend is None:
+                pop_dens = (averageBGR/255) * 100000
+            else:
+                prevcolor=0
+                for color,populationrange in legend.items():
+                    populationrangetoks=populationrange.split("-")
+                    if averageBGR > prevcolor and averageBGR <= color:
+                        pop_dens = int(populationrangetoks[1])
+                    prevcolor=color
         except:
             pop_dens = population_density
         if population_density == -1:
@@ -220,4 +228,8 @@ if __name__ == "__main__":
     #graphmining=GSpan([])
     #graphmining.GraphEditDistance(seg7[8],seg8[8])
     seg9=image_segmentation("testlogs/HRSL_World_NightTimeStreets.jpg")
-    urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,266.0/854.0)
+    #legend={235/3:"0-1",245/3:"1-50",255/3:"50-100",362/3:"100-250",372/3:"250-1000",382/3:"1000-2500",510/3:"2500-27057"}
+    legend={510/3:"0-1",382/3:"1-50",372/3:"50-100",362/3:"100-250",255/3:"250-1000",245/3:"1000-2500",235/3:"2500-27057"}
+    mapscale=147914382
+    #mapscale=266.0/854.0
+    urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
