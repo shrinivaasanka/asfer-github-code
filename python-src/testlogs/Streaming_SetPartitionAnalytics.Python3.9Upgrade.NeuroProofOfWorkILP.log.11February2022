@@ -1,0 +1,1519 @@
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 30, '(', 4.906890595608519, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 1
+tiles_start: 1
+tiles_end: 2
+tiles_start: 2
+tiles_end: 3
+tiles_start: 3
+tiles_end: 4
+tiles_start: 4
+tiles_end: 5
+tiles_start: 5
+tiles_end: 6
+tiles_start: 6
+tiles_end: 7
+tiles_start: 7
+tiles_end: 8
+tiles_start: 8
+tiles_end: 9
+tiles_start: 9
+tiles_end: 10
+tiles_start: 10
+tiles_end: 11
+tiles_start: 11
+tiles_end: 12
+tiles_start: 12
+tiles_end: 13
+tiles_start: 13
+tiles_end: 14
+tiles_start: 14
+tiles_end: 15
+tiles_start: 15
+tiles_end: 16
+tiles_start: 16
+tiles_end: 17
+tiles_start: 17
+tiles_end: 18
+tiles_start: 18
+tiles_end: 19
+tiles_start: 19
+tiles_end: 20
+tiles_start: 20
+tiles_end: 21
+tiles_start: 21
+tiles_end: 22
+tiles_start: 22
+tiles_end: 23
+tiles_start: 23
+tiles_end: 24
+('factors_accum.value = ', [30, 1, 15, 2, 10, 3])
+('factors of ', 30, '(', 4.906890595608519, ' bits integer) =', [30, 1, 15, 2, 10, 3])
+GLPK Integer Optimizer, v4.65
+22 rows, 20 columns, 42 non-zeros
+20 integer variables, none of which are binary
+Preprocessing...
+2 rows, 15 columns, 18 non-zeros
+15 integer variables, one of which is binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  3.000e+00  ratio =  3.000e+00
+Problem data seem to be well scaled
+Constructing initial basis...
+Size of triangular part is 2
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.65
+2 rows, 15 columns, 18 non-zeros
+*     0: obj =   1.700000000e+01 inf =   0.000e+00 (5)
+*     3: obj =   5.000000000e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+Long-step dual simplex will be used
++     3: mip =     not found yet >=              -inf        (1; 0)
++     3: >>>>>   5.000000000e+00 >=   5.000000000e+00   0.0% (1; 0)
++     3: mip =   5.000000000e+00 >=     tree is empty   0.0% (0; 1)
+INTEGER OPTIMAL SOLUTION FOUND
+('Random Partition:', Partition({28}, {23, 24}, {25, 26}, {27, 29}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22}))
+complementary partition of  Partition({28}, {23, 24}, {25, 26}, {27, 29}, {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22}) : [array([0., 0., 0., 0., 0.]), array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])]
+equidepth partition: [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 0.0, 0.0, 0.0, 0.0, 0.0], [23, 24, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [25, 26, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [27, 29, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [28, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]]
+('square tiles for partition ', 23, ':', {(1, 2, 3, 3)})
+('square tiles for partition ', 2, ':', {(0, 0, 1, 1)})
+('square tiles for partition ', 2, ':', {(0, 0, 1, 1)})
+('square tiles for partition ', 2, ':', {(0, 0, 1, 1)})
+('square tiles for partition ', 1, ':', {(0, 0, 0, 1)})
+('Lagrange Four Square Tiles Cover reduction of Set Partition for ', '30', ',', [23, 2, 2, 2, 1], ':', [(1, 1), (2, 4), (3, 9), (3, 9), (0, 0), (0, 0), (1, 1), (1, 1), (0, 0), (0, 0), (1, 1), (1, 1), (0, 0), (0, 0), (1, 1), (1, 1), (0, 0), (0, 0), (0, 0), (1, 1)])
+('factorslist:', [1, 2, 3, 10, 15, 30])
+('Diophantine A =', array([[1., 2., 3., 3., 0., 0., 1., 1., 0., 0., 1., 1., 0., 0., 1., 1.,
+        0., 0., 0., 1.],
+       [0., 0., 1., 2., 1., 1., 1., 0., 0., 3., 0., 1., 0., 1., 3., 0.,
+        0., 1., 1., 0.]]))
+('Diophantine B =', array([ 2., 15.]))
+C= [ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+
+G= [ 1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+
+H= [ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+
+A= [ 1.00e+00  2.00e+00  3.00e+00  3.00e+00  0.00e+00  0.00e+00  1.00e+00 ... ]
+[ 0.00e+00  0.00e+00  1.00e+00  2.00e+00  1.00e+00  1.00e+00  1.00e+00 ... ]
+
+B= [ 2.00e+00]
+[ 1.50e+01]
+
+I= {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19}
+('status = ', 'optimal', ' : x = ', <20x1 matrix, tc='d'>)
+('t=', 0.0, '; cnt=', 0)
+('t=', 0.0, '; cnt=', 1)
+('t=', 0.0, '; cnt=', 2)
+('t=', 0.0, '; cnt=', 3)
+('t=', 0.0, '; cnt=', 4)
+('t=', 0.0, '; cnt=', 5)
+('t=', 0.0, '; cnt=', 6)
+('t=', 0.0, '; cnt=', 7)
+('t=', 0.0, '; cnt=', 8)
+('t=', 3.0, '; cnt=', 9)
+('t=', 0.0, '; cnt=', 10)
+('t=', 0.0, '; cnt=', 11)
+('t=', 0.0, '; cnt=', 12)
+('t=', 0.0, '; cnt=', 13)
+('t=', 2.0, '; cnt=', 14)
+('t=', 0.0, '; cnt=', 15)
+('t=', 0.0, '; cnt=', 16)
+('t=', 0.0, '; cnt=', 17)
+('t=', 0.0, '; cnt=', 18)
+('t=', 0.0, '; cnt=', 19)
+('(Approximate if least squares is invoked) Rectangle periphery - ', '0.0*1+0.0*2+0.0*3+0.0*3+0.0*0+0.0*0+0.0*1+0.0*1+0.0*0+3.0*0+0.0*1+0.0*1+0.0*0+0.0*0+2.0*1+0.0*1+0.0*0+0.0*0+0.0*0+0.0*1+', ' - side1:', 2.00000000000000)
+('(Approximate if least squares is invoked) Rectangle periphery - ', '0.0*0+0.0*0+0.0*1+0.0*2+0.0*1+0.0*1+0.0*1+0.0*0+0.0*0+3.0*3+0.0*0+0.0*1+0.0*0+0.0*1+2.0*3+0.0*0+0.0*0+0.0*1+0.0*1+0.0*0+', ' - side2:', 15.0000000000000)
+=============================
+Electronic Voting Machine: 1
+=============================
+('publicuniqueidhex:', 'd731e10ba2af8ce068d849249cd1425fa46bd10b:ff20a894-a2c4-4002-ac39-93dd53ea302f:100')
+('Voting_Machine_dict:', defaultdict(<class 'list'>, {'NOTA': ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8']}))
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+('publicuniqueidhex:', '8af5627efba38ec2b12aa294ec310a8c554c954b:ff20a894-a2c4-4002-ac39-93dd53ea302f:100')
+('Voting_Machine_dict:', defaultdict(<class 'list'>, {'NOTA': ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1']}))
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+('publicuniqueidhex:', '02f208fe0d21e5b716cc821b29ba9ab4f3219446:ff20a894-a3c4-4002-ac39-93d153ea3020:100')
+('Voting_Machine_dict:', defaultdict(<class 'list'>, {'CandidateA': ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD']}))
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 8375, '(', 13.03187347511986, ' bits integer) are:')
+tiles_start: 1
+tiles_end: 49
+tiles_start: 49
+tiles_end: 98
+tiles_start: 98
+tiles_end: 147
+tiles_start: 147
+tiles_end: 196
+tiles_start: 196
+tiles_end: 245
+tiles_start: 245
+tiles_end: 294
+tiles_start: 294
+tiles_end: 343
+tiles_start: 343
+tiles_end: 392
+tiles_start: 392
+tiles_end: 441
+tiles_start: 441
+tiles_end: 490
+tiles_start: 490
+tiles_end: 539
+tiles_start: 539
+tiles_end: 588
+tiles_start: 588
+tiles_end: 637
+tiles_start: 637
+tiles_end: 686
+tiles_start: 686
+tiles_end: 735
+tiles_start: 735
+tiles_end: 784
+tiles_start: 784
+tiles_end: 833
+tiles_start: 833
+tiles_end: 882
+tiles_start: 882
+tiles_end: 931
+tiles_start: 931
+tiles_end: 980
+tiles_start: 980
+tiles_end: 1029
+tiles_start: 1029
+tiles_end: 1078
+tiles_start: 1078
+tiles_end: 1127
+tiles_start: 1127
+tiles_end: 1176
+tiles_start: 1176
+tiles_end: 1225
+tiles_start: 1225
+tiles_end: 1274
+tiles_start: 1274
+tiles_end: 1323
+tiles_start: 1323
+tiles_end: 1372
+tiles_start: 1372
+tiles_end: 1421
+tiles_start: 1421
+tiles_end: 1470
+tiles_start: 1470
+tiles_end: 1519
+tiles_start: 1519
+tiles_end: 1568
+tiles_start: 1568
+tiles_end: 1617
+tiles_start: 1617
+tiles_end: 1666
+tiles_start: 1666
+tiles_end: 1715
+tiles_start: 1715
+tiles_end: 1764
+tiles_start: 1764
+tiles_end: 1813
+tiles_start: 1813
+tiles_end: 1862
+tiles_start: 1862
+tiles_end: 1911
+tiles_start: 1911
+tiles_end: 1960
+tiles_start: 1960
+tiles_end: 2009
+tiles_start: 2009
+tiles_end: 2058
+tiles_start: 2058
+tiles_end: 2107
+tiles_start: 2107
+tiles_end: 2156
+tiles_start: 2156
+tiles_end: 2205
+tiles_start: 2205
+tiles_end: 2254
+tiles_start: 2254
+tiles_end: 2303
+tiles_start: 2303
+tiles_end: 2352
+tiles_start: 2352
+tiles_end: 2401
+tiles_start: 2401
+tiles_end: 2450
+tiles_start: 2450
+tiles_end: 2499
+tiles_start: 2499
+tiles_end: 2548
+tiles_start: 2548
+tiles_end: 2597
+tiles_start: 2597
+tiles_end: 2646
+tiles_start: 2646
+tiles_end: 2695
+tiles_start: 2695
+tiles_end: 2744
+tiles_start: 2744
+tiles_end: 2793
+tiles_start: 2793
+tiles_end: 2842
+tiles_start: 2842
+tiles_end: 2891
+tiles_start: 2891
+tiles_end: 2940
+tiles_start: 2940
+tiles_end: 2989
+tiles_start: 2989
+tiles_end: 3038
+tiles_start: 3038
+tiles_end: 3087
+tiles_start: 3087
+tiles_end: 3136
+tiles_start: 3136
+tiles_end: 3185
+tiles_start: 3185
+tiles_end: 3234
+tiles_start: 3234
+tiles_end: 3283
+tiles_start: 3283
+tiles_end: 3332
+tiles_start: 3332
+tiles_end: 3381
+tiles_start: 3381
+tiles_end: 3430
+tiles_start: 3430
+tiles_end: 3479
+tiles_start: 3479
+tiles_end: 3528
+tiles_start: 3528
+tiles_end: 3577
+tiles_start: 3577
+tiles_end: 3626
+tiles_start: 3626
+tiles_end: 3675
+tiles_start: 3675
+tiles_end: 3724
+tiles_start: 3724
+tiles_end: 3773
+tiles_start: 3773
+tiles_end: 3822
+tiles_start: 3822
+tiles_end: 3871
+tiles_start: 3871
+tiles_end: 3920
+tiles_start: 3920
+tiles_end: 3969
+tiles_start: 3969
+tiles_end: 4018
+tiles_start: 4018
+tiles_end: 4067
+tiles_start: 4067
+tiles_end: 4116
+tiles_start: 4116
+tiles_end: 4165
+tiles_start: 4165
+tiles_end: 4214
+tiles_start: 4214
+tiles_end: 4263
+tiles_start: 4263
+tiles_end: 4312
+tiles_start: 4312
+tiles_end: 4361
+tiles_start: 4361
+tiles_end: 4410
+tiles_start: 4410
+tiles_end: 4459
+tiles_start: 4459
+tiles_end: 4508
+tiles_start: 4508
+tiles_end: 4557
+tiles_start: 4557
+tiles_end: 4606
+tiles_start: 4606
+tiles_end: 4655
+tiles_start: 4655
+tiles_end: 4704
+tiles_start: 4704
+tiles_end: 4753
+tiles_start: 4753
+tiles_end: 4802
+tiles_start: 4802
+tiles_end: 4851
+tiles_start: 4851
+tiles_end: 4900
+tiles_start: 4900
+tiles_end: 4949
+tiles_start: 4949
+tiles_end: 4998
+tiles_start: 4998
+tiles_end: 5047
+tiles_start: 5047
+tiles_end: 5096
+tiles_start: 5096
+tiles_end: 5145
+tiles_start: 5145
+tiles_end: 5194
+tiles_start: 5194
+tiles_end: 5243
+tiles_start: 5243
+tiles_end: 5292
+tiles_start: 5292
+tiles_end: 5341
+tiles_start: 5341
+tiles_end: 5390
+tiles_start: 5390
+tiles_end: 5439
+tiles_start: 5439
+tiles_end: 5488
+tiles_start: 5488
+tiles_end: 5537
+tiles_start: 5537
+tiles_end: 5586
+tiles_start: 5586
+tiles_end: 5635
+tiles_start: 5635
+tiles_end: 5684
+tiles_start: 5684
+tiles_end: 5733
+tiles_start: 5733
+tiles_end: 5782
+tiles_start: 5782
+tiles_end: 5831
+tiles_start: 5831
+tiles_end: 5880
+tiles_start: 5880
+tiles_end: 5929
+tiles_start: 5929
+tiles_end: 5978
+tiles_start: 5978
+tiles_end: 6027
+tiles_start: 6027
+tiles_end: 6076
+tiles_start: 6076
+tiles_end: 6125
+tiles_start: 6125
+tiles_end: 6174
+tiles_start: 6174
+tiles_end: 6223
+tiles_start: 6223
+tiles_end: 6272
+tiles_start: 6272
+tiles_end: 6321
+tiles_start: 6321
+tiles_end: 6370
+tiles_start: 6370
+tiles_end: 6419
+tiles_start: 6419
+tiles_end: 6468
+tiles_start: 6468
+tiles_end: 6517
+tiles_start: 6517
+tiles_end: 6566
+tiles_start: 6566
+tiles_end: 6615
+tiles_start: 6615
+tiles_end: 6664
+tiles_start: 6664
+tiles_end: 6713
+tiles_start: 6713
+tiles_end: 6762
+tiles_start: 6762
+tiles_end: 6811
+tiles_start: 6811
+tiles_end: 6860
+tiles_start: 6860
+tiles_end: 6909
+tiles_start: 6909
+tiles_end: 6958
+tiles_start: 6958
+tiles_end: 7007
+tiles_start: 7007
+tiles_end: 7056
+tiles_start: 7056
+tiles_end: 7105
+tiles_start: 7105
+tiles_end: 7154
+tiles_start: 7154
+tiles_end: 7203
+tiles_start: 7203
+tiles_end: 7252
+tiles_start: 7252
+tiles_end: 7301
+tiles_start: 7301
+tiles_end: 7350
+tiles_start: 7350
+tiles_end: 7399
+tiles_start: 7399
+tiles_end: 7448
+tiles_start: 7448
+tiles_end: 7497
+tiles_start: 7497
+tiles_end: 7546
+tiles_start: 7546
+tiles_end: 7595
+tiles_start: 7595
+tiles_end: 7644
+tiles_start: 7644
+tiles_end: 7693
+tiles_start: 7693
+tiles_end: 7742
+tiles_start: 7742
+tiles_end: 7791
+tiles_start: 7791
+tiles_end: 7840
+tiles_start: 7840
+tiles_end: 7889
+tiles_start: 7889
+tiles_end: 7938
+tiles_start: 7938
+tiles_end: 7987
+tiles_start: 7987
+tiles_end: 8036
+tiles_start: 8036
+tiles_end: 8085
+tiles_start: 8085
+tiles_end: 8134
+tiles_start: 8134
+tiles_end: 8183
+tiles_start: 8183
+tiles_end: 8232
+tiles_start: 8232
+tiles_end: 8281
+('factors_accum.value = ', [8375, 1, 1675, 5, 335, 25, 125, 67])
+('factors of ', 8375, '(', 13.03187347511986, ' bits integer) =', [8375, 1, 1675, 5, 335, 25, 125, 67])
+
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+=============================
+Electronic Voting Machine: 1
+=============================
+Voter Already Voted
+('sortedEVM:', [('NOTA', ['$5$rounds=535000$evt.Mt5Y6aSVoQaW$j4VGK5GsaLsAwTEVk3BOdUlLj/EsLbDxMirIeTUpFM8', '$5$rounds=535000$67oMHjDBYNYk9ksa$xUGjRDNQUyLstfUp9oJUev8NODVq6OBR9Ip8QcJlD/1'])])
+=============================
+Electronic Voting Machine: 2
+=============================
+Voter Already Voted
+('sortedEVM:', [('CandidateA', ['$5$rounds=535000$Ecl43kqnd4jPAUGm$/BQMyVA2zgvBmuhiT.pYPxX.VnnUYo0C9r3DQNBk8RD'])])
+=============================
+Electronic Voting Machine: 3
+=============================
+Voter Already Voted
+('sortedEVM:', [])
+('square tiles for partition ', 4948, ':', {(29, 37, 37, 37)})
+('square tiles for partition ', 1353, ':', {(16, 16, 20, 21)})
+('square tiles for partition ', 484, ':', {(11, 11, 11, 11)})
+('square tiles for partition ', 82, ':', {(4, 4, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 68, ':', {(3, 3, 5, 5)})
+('square tiles for partition ', 11, ':', {(0, 1, 1, 3)})
+('square tiles for partition ', 1, ':', {(0, 0, 0, 1)})
+('Neuro Cryptocurrency Proof of Work - Rectangular Area (=Value of Neuro cryptocurrency mined) Factorized and Pair of Money Changing Frobenius Diophantines solved by ILP for factors of integer :', '8375')
+('factorslist:', [1, 67, 5, 1675, 335, 8375, 25, 125])
+('Diophantine A =', array([[29., 37., 37., 37., 16., 16., 20., 21., 11., 11., 11., 11.,  4.,
+         4.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,
+         5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,
+         5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,
+         3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,
+         3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,
+         5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,
+         5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,  3.,  3.,  5.,  5.,
+         0.,  1.,  1.,  3.,  0.,  0.,  0.,  1.],
+       [11., 16.,  5.,  5.,  3.,  3.,  5.,  3.,  3.,  5.,  3.,  3.,  3.,
+         1.,  5., 37.,  5.,  3.,  3.,  5.,  3.,  3.,  5.,  3.,  3.,  5.,
+         5., 21.,  0.,  5.,  3.,  5.,  3., 37.,  5.,  3.,  5.,  3.,  3.,
+         5.,  3.,  3.,  5.,  5.,  3.,  5.,  5.,  3., 11.,  5.,  5.,  3.,
+         3.,  3.,  3.,  0., 11.,  1.,  3.,  5.,  5.,  5.,  5.,  0.,  0.,
+         5.,  5.,  5.,  5.,  3.,  5.,  5.,  3.,  5.,  5.,  3.,  5., 20.,
+         3.,  5., 29.,  3.,  5.,  1.,  5.,  3.,  5.,  3.,  5.,  5.,  5.,
+         3.,  3.,  3.,  4., 37.,  3.,  3.,  5.,  3.,  3., 16.,  3., 11.,
+         3.,  5.,  4.,  3.,  5.,  5.,  5.,  3.]]))
+('Diophantine B =', array([ 67., 125.]))
+C= [ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+[ 1.00e+00]
+
+G= [ 1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  1.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+[ 0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00  0.00e+00 ... ]
+GLPK Integer Optimizer, v4.65
+114 rows, 112 columns, 328 non-zeros
+112 integer variables, none of which are binary
+Preprocessing...
+2 rows, 112 columns, 216 non-zeros
+112 integer variables, 3 of which are binary
+Scaling...
+ A: min|aij| =  1.000e+00  max|aij| =  3.700e+01  ratio =  3.700e+01
+GM: min|aij| =  3.235e-01  max|aij| =  3.091e+00  ratio =  9.553e+00
+EQ: min|aij| =  1.047e-01  max|aij| =  1.000e+00  ratio =  9.553e+00
+2N: min|aij| =  7.812e-02  max|aij| =  1.156e+00  ratio =  1.480e+01
+Constructing initial basis...
+Size of triangular part is 2
+Solving LP relaxation...
+GLPK Simplex Optimizer, v4.65
+2 rows, 112 columns, 216 non-zeros
+      0: obj =   4.733333333e+01 inf =   3.333e-01 (1)
+      1: obj =   4.695862069e+01 inf =   0.000e+00 (0)
+*     6: obj =   4.309523810e+00 inf =   0.000e+00 (0)
+OPTIMAL LP SOLUTION FOUND
+Integer optimization begins...
+Long-step dual simplex will be used
++     6: mip =     not found yet >=              -inf        (1; 0)
++    53: >>>>>   2.200000000e+01 >=   5.000000000e+00  77.3% (45; 0)
++    63: >>>>>   5.000000000e+00 >=   5.000000000e+00   0.0% (6; 81)
++    63: mip =   5.000000000e+00 >=     tree is empty   0.0% (0; 95)
+INTEGER OPTIMAL SOLUTION FOUND
+
+H= [ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+[ 0.00e+00]
+
+A= [ 2.90e+01  3.70e+01  3.70e+01  3.70e+01  1.60e+01  1.60e+01  2.00e+01 ... ]
+[ 1.10e+01  1.60e+01  5.00e+00  5.00e+00  3.00e+00  3.00e+00  5.00e+00 ... ]
+
+B= [ 6.70e+01]
+[ 1.25e+02]
+
+I= {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111}
+('status = ', 'optimal', ' : x = ', <112x1 matrix, tc='d'>)
+('t=', 2.0, '; cnt=', 0)
+('t=', 0.0, '; cnt=', 1)
+('t=', 0.0, '; cnt=', 2)
+('t=', 0.0, '; cnt=', 3)
+('t=', 0.0, '; cnt=', 4)
+('t=', 0.0, '; cnt=', 5)
+('t=', 0.0, '; cnt=', 6)
+('t=', 0.0, '; cnt=', 7)
+('t=', 0.0, '; cnt=', 8)
+('t=', 0.0, '; cnt=', 9)
+('t=', 0.0, '; cnt=', 10)
+('t=', 0.0, '; cnt=', 11)
+('t=', 0.0, '; cnt=', 12)
+('t=', 0.0, '; cnt=', 13)
+('t=', 0.0, '; cnt=', 14)
+('t=', 0.0, '; cnt=', 15)
+('t=', 0.0, '; cnt=', 16)
+('t=', 0.0, '; cnt=', 17)
+('t=', 0.0, '; cnt=', 18)
+('t=', 0.0, '; cnt=', 19)
+('t=', 0.0, '; cnt=', 20)
+('t=', 0.0, '; cnt=', 21)
+('t=', 0.0, '; cnt=', 22)
+('t=', 0.0, '; cnt=', 23)
+('t=', 0.0, '; cnt=', 24)
+('t=', 0.0, '; cnt=', 25)
+('t=', 0.0, '; cnt=', 26)
+('t=', 0.0, '; cnt=', 27)
+('t=', 0.0, '; cnt=', 28)
+('t=', 0.0, '; cnt=', 29)
+('t=', 0.0, '; cnt=', 30)
+('t=', 0.0, '; cnt=', 31)
+('t=', 0.0, '; cnt=', 32)
+('t=', 2.0, '; cnt=', 33)
+('t=', 0.0, '; cnt=', 34)
+('t=', 0.0, '; cnt=', 35)
+('t=', 0.0, '; cnt=', 36)
+('t=', 0.0, '; cnt=', 37)
+('t=', 0.0, '; cnt=', 38)
+('t=', 0.0, '; cnt=', 39)
+('t=', 0.0, '; cnt=', 40)
+('t=', 0.0, '; cnt=', 41)
+('t=', 0.0, '; cnt=', 42)
+('t=', 0.0, '; cnt=', 43)
+('t=', 0.0, '; cnt=', 44)
+('t=', 0.0, '; cnt=', 45)
+('t=', 0.0, '; cnt=', 46)
+('t=', 0.0, '; cnt=', 47)
+('t=', 0.0, '; cnt=', 48)
+('t=', 0.0, '; cnt=', 49)
+('t=', 0.0, '; cnt=', 50)
+('t=', 0.0, '; cnt=', 51)
+('t=', 0.0, '; cnt=', 52)
+('t=', 0.0, '; cnt=', 53)
+('t=', 0.0, '; cnt=', 54)
+('t=', 0.0, '; cnt=', 55)
+('t=', 0.0, '; cnt=', 56)
+('t=', 0.0, '; cnt=', 57)
+('t=', 0.0, '; cnt=', 58)
+('t=', 0.0, '; cnt=', 59)
+('t=', 0.0, '; cnt=', 60)
+('t=', 0.0, '; cnt=', 61)
+('t=', 0.0, '; cnt=', 62)
+('t=', 0.0, '; cnt=', 63)
+('t=', 0.0, '; cnt=', 64)
+('t=', 0.0, '; cnt=', 65)
+('t=', 0.0, '; cnt=', 66)
+('t=', 0.0, '; cnt=', 67)
+('t=', 0.0, '; cnt=', 68)
+('t=', 0.0, '; cnt=', 69)
+('t=', 0.0, '; cnt=', 70)
+('t=', 0.0, '; cnt=', 71)
+('t=', 0.0, '; cnt=', 72)
+('t=', 0.0, '; cnt=', 73)
+('t=', 0.0, '; cnt=', 74)
+('t=', 0.0, '; cnt=', 75)
+('t=', 0.0, '; cnt=', 76)
+('t=', 0.0, '; cnt=', 77)
+('t=', 0.0, '; cnt=', 78)
+('t=', 0.0, '; cnt=', 79)
+('t=', 1.0, '; cnt=', 80)
+('t=', 0.0, '; cnt=', 81)
+('t=', 0.0, '; cnt=', 82)
+('t=', 0.0, '; cnt=', 83)
+('t=', 0.0, '; cnt=', 84)
+('t=', 0.0, '; cnt=', 85)
+('t=', 0.0, '; cnt=', 86)
+('t=', 0.0, '; cnt=', 87)
+('t=', 0.0, '; cnt=', 88)
+('t=', 0.0, '; cnt=', 89)
+('t=', 0.0, '; cnt=', 90)
+('t=', 0.0, '; cnt=', 91)
+('t=', 0.0, '; cnt=', 92)
+('t=', 0.0, '; cnt=', 93)
+('t=', 0.0, '; cnt=', 94)
+('t=', 0.0, '; cnt=', 95)
+('t=', 0.0, '; cnt=', 96)
+('t=', 0.0, '; cnt=', 97)
+('t=', 0.0, '; cnt=', 98)
+('t=', 0.0, '; cnt=', 99)
+('t=', 0.0, '; cnt=', 100)
+('t=', 0.0, '; cnt=', 101)
+('t=', 0.0, '; cnt=', 102)
+('t=', 0.0, '; cnt=', 103)
+('t=', 0.0, '; cnt=', 104)
+('t=', 0.0, '; cnt=', 105)
+('t=', 0.0, '; cnt=', 106)
+('t=', 0.0, '; cnt=', 107)
+('t=', 0.0, '; cnt=', 108)
+('t=', 0.0, '; cnt=', 109)
+('t=', 0.0, '; cnt=', 110)
+('t=', 0.0, '; cnt=', 111)
+('(Approximate if least squares is invoked) Rectangle periphery - ', '2.0*29+0.0*37+0.0*37+0.0*37+0.0*16+0.0*16+0.0*20+0.0*21+0.0*11+0.0*11+0.0*11+0.0*11+0.0*4+0.0*4+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+2.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+1.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*0+0.0*1+0.0*1+0.0*3+0.0*0+0.0*0+0.0*0+0.0*1+', ' - side1:', 67.0000000000000)
+('(Approximate if least squares is invoked) Rectangle periphery - ', '2.0*11+0.0*16+0.0*5+0.0*5+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*3+0.0*1+0.0*5+0.0*37+0.0*5+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*21+0.0*0+0.0*5+0.0*3+0.0*5+0.0*3+2.0*37+0.0*5+0.0*3+0.0*5+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*5+0.0*5+0.0*3+0.0*5+0.0*5+0.0*3+0.0*11+0.0*5+0.0*5+0.0*3+0.0*3+0.0*3+0.0*3+0.0*0+0.0*11+0.0*1+0.0*3+0.0*5+0.0*5+0.0*5+0.0*5+0.0*0+0.0*0+0.0*5+0.0*5+0.0*5+0.0*5+0.0*3+0.0*5+0.0*5+0.0*3+0.0*5+0.0*5+0.0*3+0.0*5+0.0*20+0.0*3+0.0*5+1.0*29+0.0*3+0.0*5+0.0*1+0.0*5+0.0*3+0.0*5+0.0*3+0.0*5+0.0*5+0.0*5+0.0*3+0.0*3+0.0*3+0.0*4+0.0*37+0.0*3+0.0*3+0.0*5+0.0*3+0.0*3+0.0*16+0.0*3+0.0*11+0.0*3+0.0*5+0.0*4+0.0*3+0.0*5+0.0*5+0.0*5+0.0*3+', ' - side2:', 125.000000000000)

@@ -30,6 +30,7 @@ from scipy.sparse.linalg import lsqr
 from scipy.sparse.linalg import lsmr
 from numpy.linalg import solve
 from sympy.combinatorics.partitions import Partition
+from sympy.combinatorics.partitions import random_integer_partition
 from sympy.functions.combinatorial.numbers import nT
 import subprocess
 import operator
@@ -59,20 +60,32 @@ def complementary_set_partition(partition, depth=1):
     print('equidepth partition:',equidepthpartition)
     return complementarypartition
 
-def setpartition_to_tilecover(histogram_partition, number_to_factorize, solution="ILP"):
+def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, solution="ILP",Neuro_Crypto_ProofOfWork=False):
+    squaretiles_cover = []
     from complement import toint
     from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
     from sympy.abc import a, b, c, d, e, f
-    squaretiles_cover = []
-    for hp in histogram_partition:
-        tiles = diop_general_sum_of_squares(
-            a**2 + b**2 + c**2 + d**2 - toint(hp))
-        print(("square tiles for partition ", hp, ":", tiles))
-        for t in list(tiles)[0]:
-            squaretiles_cover.append((t, t*t))
-    print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize,",",
+    if not Neuro_Crypto_ProofOfWork:
+        for hp in histogram_partition:
+            tiles = diop_general_sum_of_squares(
+                 a**2 + b**2 + c**2 + d**2 - toint(hp))
+            print(("square tiles for partition ", hp, ":", tiles))
+            for t in list(tiles)[0]:
+                 squaretiles_cover.append((t, t*t))
+        print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize,",",
            histogram_partition, ":", squaretiles_cover))
-    subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+        subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
+    else:
+        histogram_partition=random_integer_partition(int(number_to_factorize))
+        for hp in histogram_partition:
+            tiles = diop_general_sum_of_squares(
+                 a**2 + b**2 + c**2 + d**2 - toint(hp))
+            print(("square tiles for partition ", hp, ":", tiles))
+            for t in list(tiles)[0]:
+                 squaretiles_cover.append((t, t*t))
+        print(("Neuro Cryptocurrency Proof of Work - Rectangular Area (=Value of Neuro cryptocurrency mined) Factorized and Pair of Money Changing Frobenius Diophantines solved by ILP for factors of integer :", number_to_factorize))
+        subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
                      "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
     factorsfile = open(
         "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
@@ -113,8 +126,8 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize, solution
     y=[]
     for n in equationsA[0]:
         y.append(1)
-    print(("a=", a))
-    print(("b=", b))
+    print(("Diophantine A =", a))
+    print(("Diophantine B =", b))
     if solution=="ILP":
         C = cvxopt.matrix(y,tc='d')
         cnt=0
@@ -159,9 +172,9 @@ def setpartition_to_tilecover(histogram_partition, number_to_factorize, solution
     for t in roundedx:
         print(("t=", t, "; cnt=", cnt))
         side1 += (t*equationsA[0][cnt]) 
-        side1str += str(t*equationsA[0][cnt]) + "+"
+        side1str += str(t) + "*" + str(equationsA[0][cnt]) + "+"
         side2 += (t*equationsA[1][cnt]) 
-        side2str += str(t*equationsA[1][cnt]) + "+"
+        side2str += str(t) + "*" + str(equationsA[1][cnt]) + "+"
         cnt += 1
     print(("(Approximate if least squares is invoked) Rectangle periphery - ",side1str," - side1:", side1))
     print(("(Approximate if least squares is invoked) Rectangle periphery - ",side2str," - side2:", side2))
@@ -183,26 +196,29 @@ def tocluster(histogram, datasource):
     return cluster
 
 
-def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for, Streaming_Analytics_Bertrand=False):
+def electronic_voting_machine(Voting_Machine_dict, unique_id, voted_for, Streaming_Analytics_Bertrand=False, onetimepassword=None):
     semaphorelock = BoundedSemaphore(value=maxvoters)
     semaphorelock.acquire()
     uniqueidf = open(unique_id, "rb")
     publicuniqueidhex = ""
     publicuniqueid = uniqueidf.read()
+    h = hashlib.new("ripemd160")
+    h.update(publicuniqueid)
+    publicuniqueidhex = h.hexdigest()
     if publicuniqueid not in Voted:
-        h = hashlib.new("ripemd160")
-        h.update(publicuniqueid)
-        publicuniqueidhex = h.hexdigest()
+        if onetimepassword is not None:
+            publicuniqueidhex += ":"
+            publicuniqueidhex += onetimepassword
         print(("publicuniqueidhex:", publicuniqueidhex))
         if len(Voted) > 1 and len(Voting_Machine_dict[voted_for]) > 1:
             try:
-                Voting_Machine_dict[voted_for].insert(sha256_crypt.encrypt(
+                Voting_Machine_dict[voted_for].insert(sha256_crypt.hash(
                     publicuniqueidhex), random.randint(0, len(Voting_Machine_dict[voted_for])))
                 Voted.insert(publicuniqueid, random.randint(0, len(Voted)))
             except:
                 print("Encoding exception")
         else:
-            Voting_Machine_dict[voted_for].append(sha256_crypt.encrypt(
+            Voting_Machine_dict[voted_for].append(sha256_crypt.hash(
                 publicuniqueidhex))
             Voted.append(publicuniqueid)
         print(("Voting_Machine_dict:", Voting_Machine_dict))
@@ -331,13 +347,23 @@ if __name__ == "__main__":
     idcontexts = ["testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.txt",
                   "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID2.jpg", "testlogs/Streaming_SetPartitionAnalytics_EVM/PublicUniqueEVM_ID1.pdf"]
     voteridx = 0
-    for voter in range(10):
+    for voter in range(30):
+        print("=============================")
+        print("Electronic Voting Machine: 1")
+        print("=============================")
         electronic_voting_machine(Voting_Machine1_dict, idcontexts[voteridx % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True)
-        electronic_voting_machine(Voting_Machine2_dict, idcontexts[voteridx % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True)
-        electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx % len(idcontexts)],
-                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True)
+                candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
+        print("=============================")
+        print("Electronic Voting Machine: 2")
+        print("=============================")
+        electronic_voting_machine(Voting_Machine2_dict, idcontexts[voteridx*2 % len(idcontexts)],
+                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a3c4-4002-ac39-93d153ea3020:100")
+        print("=============================")
+        print("Electronic Voting Machine: 3")
+        print("=============================")
+        electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx*3 % len(idcontexts)],
+                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
         voteridx += 1
+    setpartition_to_tilecover(None, "8375", solution="ILP",Neuro_Crypto_ProofOfWork=True)
     # electronic_voting_analytics(
     #    [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
