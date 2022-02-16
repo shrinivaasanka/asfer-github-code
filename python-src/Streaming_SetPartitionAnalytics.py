@@ -36,6 +36,8 @@ import subprocess
 import operator
 import cvxopt
 from cvxopt.glpk import ilp
+import cv2
+from DigitalWatermarking import watermark_image
 
 Voting_Machine1_dict = defaultdict(list)
 Voting_Machine2_dict = defaultdict(list)
@@ -155,6 +157,15 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
         roundedx = x
         if x is None:
             return []
+        if Neuro_Crypto_ProofOfWork: 
+            imgtemplate=cv2.imread("testlogs/NeuroCurrencyTemplate.jpg")
+            imgwatermark=cv2.imread("testlogs/NeuroCurrencyWatermark.jpg")
+            factorsuniqueid="-".join(map(str,factorslist))
+            cv2.putText(imgtemplate,number_to_factorize,(320,200),cv2.FONT_HERSHEY_TRIPLEX,3.0,(255,0,0),1,cv2.LINE_AA)
+            cv2.putText(imgtemplate,sha256_crypt.hash(factorsuniqueid),(5,300),cv2.FONT_HERSHEY_SIMPLEX,0.55,(0,0,255),1,cv2.LINE_AA)
+            cv2.imwrite("testlogs/NeuroCryptoCurrency.jpg",imgtemplate)
+            imgcurrency=cv2.imread("testlogs/NeuroCryptoCurrency.jpg")
+            watermark_image("testlogs/NeuroCryptoCurrency.jpg","testlogs/NeuroCurrencyWatermark.jpg")
     else:
         #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
         x = lsmr(a, b, atol=0, btol=0, conlim=0, show=True, x0=initial_guess)
@@ -287,7 +298,7 @@ def electronic_voting_analytics(Voting_Machine_dicts):
 
 
 def adjusted_rand_index():
-    from . import Streaming_AbstractGenerator
+    import Streaming_AbstractGenerator
     from sklearn.metrics.cluster import adjusted_rand_score
     from sklearn.metrics import adjusted_mutual_info_score
     # The text file is updated by a stream of data
@@ -296,8 +307,9 @@ def adjusted_rand_index():
     # inputf=Streaming_AbstractGenerator.StreamAbsGen("Spark_Parquet","Spark_Streaming")
     # inputf=Streaming_AbstractGenerator.StreamAbsGen("AsFer_Encoded_Strings","NeuronRain")
     # inputf=Streaming_AbstractGenerator.StreamAbsGen("Socket_Streaming","localhost")
+    # inputf1 = Streaming_AbstractGenerator.StreamAbsGen("TextHistogramPartition", [
     inputf1 = Streaming_AbstractGenerator.StreamAbsGen("TextHistogramPartition", [
-                                                       "/var/log/kern.log", "/var/log/syslog", "/var/log/ufw.log", "/var/log/dmesg", "/var/log/kern.log"])
+                                                       "/var/log/kern.log", "/var/log/syslog", "/var/log/dmesg", "/var/log/ufw.log", "/var/log/kern.log"])
     histograms = []
     for p in inputf1:
         histograms.append(p)
@@ -364,6 +376,6 @@ if __name__ == "__main__":
         electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx*3 % len(idcontexts)],
                                   candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
         voteridx += 1
-    setpartition_to_tilecover(None, "8375", solution="ILP",Neuro_Crypto_ProofOfWork=True)
-    # electronic_voting_analytics(
-    #    [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
+    setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
+    electronic_voting_analytics(
+        [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
