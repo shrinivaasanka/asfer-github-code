@@ -18147,7 +18147,7 @@ References:
 1217.7 Neuro Cryptocurrency mining rigs theoretically demonstrated earlier try to equate value of a currency in terms of Hardness of computation and simulated value of a commodity which is producible by similar real-life hardness and are potential poverty eradication tools.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
-1218. (THEORY and FEATURE) Music Synthesizer - Python 3.8 upgrade and Fractal implementation - 21 February 2022 - related to 642,643,644,659,1124 and all sections on Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning
+1218. (THEORY and FEATURE) Music Synthesizer - Python 3.8 upgrade and Fractal implementation - 21 February 2022 - related to 3,298,642,643,644,659,681,1124 and all sections on Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Timeseries analysis, Physique recognition and Motion capturing algorithms, SETH
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1218.1 Music Synthesizer in python-src/music_pattern_mining/AudioToBitMatrix.py (from Functions,Automata and Randomness) has been enhanced to
 generate music notes waveform from a fractal dataset. It has also been upgraded to Python 3.8 by 2to3 and autopep8.
@@ -18164,8 +18164,10 @@ generate music notes waveform from a fractal dataset. It has also been upgraded 
 	notes_synthesized_music.wav
 	function_synthesized_music_fractal.wav
 	testlogs/AudioToBitMatrix.log.MusicSynthesizer.21February2022
+1218.7 Similarity between two music waveforms is often computed by Dynamic Time Warping Algorithm, a monotonically increasing match of indices from first sequence to those in second sequence, and by Longest Common Subsequence algorithm. There is no subquadratic algorithm for Dynamic Time Warping unless SETH is False.
 
 References:
 ----------
-1218.7 Deep Learning MIR - https://ccrma.stanford.edu/workshops/deepmir-2017
-1218.8 DeepMIR 2017 Workshop material - https://github.com/bmcfee/stanford-mir 
+1218.8 Deep Learning MIR - https://ccrma.stanford.edu/workshops/deepmir-2017
+1218.9 DeepMIR 2017 Workshop material - https://github.com/bmcfee/stanford-mir 
+1218.10 Dynamic Time Warping for Timeseries Audio-Visual data - match of motion capture sequences for Physique recognition - https://en.wikipedia.org/wiki/Dynamic_time_warping#/media/File:Two_repetitions_of_a_walking_sequence_of_an_individual_recorded_using_a_motion-capture_system.gif 
