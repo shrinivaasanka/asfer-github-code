@@ -18145,3 +18145,27 @@ References:
 1217.5 Proof of work computation earlier has been captured in testlogs/Streaming_SetPartitionAnalytics.NeuroCryptocurrencyWatermarking.log.15February2022. Some commented code on EVM analytics has been uncommented to regenerate JSON persisted Drone EVMs - testlogs/Streaming_SetPartitionAnalytics.EVMs.json
 1217.6 Expirable C++ Objects which could be timed out or expired by reference counting have been implemented in NeuronRain AstroInfer cpp-src/expirable/ and described theoretically in Conceptual Survival Index Timeout WCET OS Scheduler and KingCobra Message-As-Currency Atomic transactional Refcounting (over cloud) within KingCobra linux kernel driver. Refcounting is a bidirectional logical clocktick for objects oscillated by increment and decrement - objects are garbage collected by reaper when refcount is 0. C++ expirable objects which were meant originally for limiting number of views of an Image object (e.g a photo sent over email self-destructs after constant number of views,a privacy feature most sought after),could be suitably used for Visual Cryptocurrency sent over networks as add-on security to limit the transactions involving a currency ID.
 1217.7 Neuro Cryptocurrency mining rigs theoretically demonstrated earlier try to equate value of a currency in terms of Hardness of computation and simulated value of a commodity which is producible by similar real-life hardness and are potential poverty eradication tools.
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+1218. (THEORY and FEATURE) Music Synthesizer - Python 3.8 upgrade and Fractal implementation - 21 February 2022 - related to 642,643,644,659,1124 and all sections on Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning
+---------------------------------------------------------------------------------------------------------------------------------------------
+1218.1 Music Synthesizer in python-src/music_pattern_mining/AudioToBitMatrix.py (from Functions,Automata and Randomness) has been enhanced to
+generate music notes waveform from a fractal dataset. It has also been upgraded to Python 3.8 by 2to3 and autopep8.
+1218.2 Function notes_to_audio() has been updated to include additional boolean argument for enabling fractal waveform and a clause for computing the chaotic Mandelbrot set (Real only) from a logistic function. Samplerate and Amplitude for the waveform have been set accordingly for loading .wav file in Audacity. Fractal set of notes is grown within a loop of eval() by feedback. 
+1218.3 Fractal music waveform is written to separate .wav file - function_synthesized_music_fractal.wav. Scaled notes are cast to NumPy int16.
+1218.4 Amplitude is multiplied by array of notes by NumPy Array broadcast throughout for all types of music synthesis - function,fractal,automata and randomness. Music waveform has been sufficiently amplified now and audible in Audacity. Waveform could be loaded in Audacity and analyzed visually by zooming the track.
+1218.5 Three invocations of music synthesizer below respectively generate music from a quadratic equation, sinusoid and a Fractal Verhulste-Pearl-Reed(VPR) logistic function :
+    	notes_to_audio(function='(x*x+x+1) % 32767',fractal=False)
+    	notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
+    	notes_to_audio(function='5*(x*x-x) % 32767')
+1218.6 Following are logs and music waveforms synthesized from finite state automaton,function,randomness and fractals:
+	automaton_synthesized_music.wav
+	function_synthesized_music.wav
+	notes_synthesized_music.wav
+	function_synthesized_music_fractal.wav
+	testlogs/AudioToBitMatrix.log.MusicSynthesizer.21February2022
+
+References:
+----------
+1218.7 Deep Learning MIR - https://ccrma.stanford.edu/workshops/deepmir-2017
+1218.8 DeepMIR 2017 Workshop material - https://github.com/bmcfee/stanford-mir 
