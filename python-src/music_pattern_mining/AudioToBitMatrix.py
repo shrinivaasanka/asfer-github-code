@@ -27,6 +27,7 @@ from sklearn.preprocessing import scale
 from scipy.spatial.distance import directed_hausdorff
 from scipy.stats import wasserstein_distance
 #from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
+import sys
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -51,7 +52,26 @@ def audio_to_bitmatrix(audio, dur=None, binary=False):
     return (bitmap, waveform, srate)
 
 
-def audio_distance(audio1, audio2, dur=10):
+def dynamic_time_warping(waveform1, waveform2):
+    m = len(waveform1)
+    n = len(waveform2)
+    print(("dynamic_time_warping(): m = ", m))
+    print(("dynamic_time_warping(): n = ", n))
+    dtw = np.zeros((m, n))
+    for i in range(m):
+        for j in range(n):
+            dtw[i, j] = sys.maxsize
+    dtw[0, 0] = 0
+    for i in range(1, m-1):
+        for j in range(1, n-1):
+            cost = abs(waveform1[i] - waveform2[j])
+            print("cost:", cost)
+            dtw[i, j] = cost + min([dtw[i-1, j], dtw[i, j-1], dtw[i-1, j-1]])
+            #print("i=",i,";j=",j,";dtw[i,j] = ", dtw[i, j])
+    return dtw[m-2, n-2]
+
+
+def audio_distance(audio1, audio2, dur=10, dtw=True):
     bitmap1, waveform1, srate1 = audio_to_bitmatrix(audio1, dur)
     bitmap2, waveform2, srate2 = audio_to_bitmatrix(audio2, dur)
     print(("waveform1:", waveform1))
@@ -61,6 +81,10 @@ def audio_distance(audio1, audio2, dur=10):
     print(("Hausdorff Distance similarity between two audio waveforms:",
           hausdorff_distance))
     print(("Earth Mover Distance similarity between two audio waveforms:", emd_distance))
+    if dtw:
+        dtwdistance = dynamic_time_warping(waveform1, waveform2)
+        print(("Dynamic Time Warping distance between two audio waveforms:", dtwdistance))
+        return dtw
     return (hausdorff_distance, emd_distance)
 
 
@@ -221,7 +245,8 @@ def audio_merit(notes):
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
     # speechrecognition_audiograph("testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
-    # audio_distance("./testlogs/JSBach_Musicological_Offering.mp4", "./testlogs/JSBach_Musicological_Offering.mp4")
+    audio_distance("./testlogs/JSBach_Musicological_Offering.mp4",
+                   "./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav", dur=0.01, dtw=True)
     # audio_distance("./testlogs/JSBach_Musicological_Offering.mp4", "./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
     # bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
     # bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
@@ -234,6 +259,6 @@ if __name__ == "__main__":
     # merit=audio_merit(notes[0])
     notes_to_audio()
     notes_to_audio(automaton=True)
-    notes_to_audio(function='(x*x+x+1) % 32767',fractal=False)
+    notes_to_audio(function='(x*x+x+1) % 32767', fractal=False)
     #notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
     notes_to_audio(function='5*(x*x-x) % 32767')
