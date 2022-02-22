@@ -13466,7 +13466,7 @@ input layer, hidden layer and output layer of BackPropagation multilayered perce
 7.Logs have been committed to testlogs/DeepLearning_SoftwareAnalytics.log.8January2019
 
 --------------------------------------------------------------------------------------------------------
-629. (THEORY) Complement Diophantine Equations over Complex Numbers and Algebraic/Arithmetic Circuits for them, Blum-Shub-Smale Turing Machines, Thue and Siegel Equations, Elliptic Curves, Mordell Conjecture and Theorem, ABC Conjecture, Riemann Zeta Function,Chaos - 9 January 2019,12 April 2020,14 November 2021 - related to 24,490,617
+629. (THEORY) Complement Diophantine Equations over Complex Numbers and Algebraic/Arithmetic Circuits for them, Blum-Shub-Smale Turing Machines, Thue and Siegel Equations, Elliptic Curves, Mordell Conjecture and Theorem, ABC Conjecture, Riemann Zeta Function,Chaos,Integer Factorization,Multiplicative Partitions - 9 January 2019,12 April 2020,14 November 2021,23 February 2022 - related to 24,490,617
 --------------------------------------------------------------------------------------------------------
 As mentioned in previous sections, finding Diophantine representation of a complementary set reduces to creating a map f from diophantine set a={a1,a2,...,an} such that f(x,b)=0 for unknown x in {Integers/Reals/Rationals/Complex} and parameter b in a. Discussions previously have been mostly restricted to Integers, Reals and Rationals and terminology "complement function" is applied to a diophantine of integer solutions to x and is totally defined for all x(recursive) throughout all sections of this draft. Extension to Complex Diophantine Sets involves applying a converse of Thue's Equation which exactly solves a known homogenous bivariate diophantine f:
 	f(x,y)=m, m is non-zero integer.
@@ -13481,11 +13481,10 @@ for all alpha(r) in a complex complementary diophantine set CDS={alpha1,alpha2,.
 Siegel Equation generalizes Thue's Theorem for arbitrary diphantine equations in integer coeffients. f(x,y) is decomposed as:
 	f(x,y) = h(x,y) + k(x,y) 
 where h(x,y) is homogenous and Thue's equation applies. Set of complex solutions of f(x,y) adjoined by set of distinct {alpha(r)} form a Riemann compact surface of singularities or an algebraic curve which is the required Complement Diophantine Surface over Complex Numbers. Mordell-Weil Theorem is a classic result which states diophantine elliptic curves of the form:
-	y^2 = x^3 + ax^2 + bx + c 
+	y^2 = x^3 + ax^2 + bx + c
 have finitely many rational solutions which can be obtained by a chord-tangent algorithm and create an abelian group. Elliptic curve diophantines of finite rational solutions are suitable candidates for formalizing finite sets of triples in complement diophantine version of ABC conjecture mentioned in 617 - "...Q1 is the 3 dimensional half-space of Cube tiled by finite sets of triples of quality 1+epsilon for every real epsilon. As mentioned earlier, Pentominoes tiling is an exact cover problem for 2 dimensions...".
 
-Algebraic or Arithmetic circuits for Diophantines over Complex Numbers can be defined by complexity classes over complex numbers (classes Pc, Npc,...). Blum-Shub-Smale Turing Machine model generalizes Turing Machines over Z[2] to any Field Real,Complex,Rationals etc.,For example, Hilbert Nullstellensatz
-problem decides if set of polynomials have common root and is in algebraic complexity class HNc over complex numbers. Riemann Zeta Function can be represented as a disjunctive clauses or non-uniform Hilbert Nullstellensatz algebraic circuit in 0-1-HNc (0 if s is a non-trivial zero else 1) of product polynomials having complex roots (non-trivial zeros): 
+Algebraic or Arithmetic circuits for Diophantines over Complex Numbers can be defined by complexity classes over complex numbers (classes Pc, Npc,...). Blum-Shub-Smale Turing Machine model generalizes Turing Machines over Z[2] to any Field Real,Complex,Rationals etc.,For example, Hilbert Nullstellensatz problem decides if set of polynomials have common root and is in algebraic complexity class HNc over complex numbers. Riemann Zeta Function can be represented as a disjunctive clauses or non-uniform Hilbert Nullstellensatz algebraic circuit in 0-1-HNc (0 if s is a non-trivial zero else 1) of product polynomials having complex roots (non-trivial zeros): 
 	RZF=product_of(1/[1-prime(k)^(-s)]) for all primes 2,3,5,7,...
 Algebraic computation is defined by a binary tree - Algebraic Computation Tree over +,-.%,*,sqrt().From Koiran's Theorem 0-1-NPc (variables are binary but polynomial size certificates are complex) is in AM[2]=BP.NP if Riemann Hypothesis is True which equates conventional complexity classes over Z[2] and algebraic classes. 0-1-HNc is 0-1-NPc-complete and 0-1-HNc is in PSPACE. This is an alternative circuit formulation to Euler-Fourier polynomial mentioned in 24 for Riemann Zeta Function. Number of solutions (non-trivial zeros) to previous RZF circuit can be characterized by counting class equivalent Sharp-0-1-HNc (not in literature). From Riemann Hypothesis, all these solutions must have Re(s) = 0.5.
 
@@ -13506,6 +13505,14 @@ Proving Riemann Hypothesis is equivalent to proving all satisfying assignments (
 Compute infinite series of values of a for every clause of consecutive prime monomial incrementally added to RZFSAT ad infinitum:
 	a1,a2,a3,....
 Previous infinite series should converge to 0.5 if Riemann Hypothesis is true which can be verified by series convergence tests. For finite RZFSAT this series may or may not converge to 0.5.
+
+Every term in Euler product version of RZF earlier could be written as complex power of corresponding prime by following transform:
+	p^s/(p^s - 1) = p^k
+	(or) log[p^s/(p^s - 1)] = k*log(p)
+	=> k = 1/log(p) * {log[p^s/(p^s - 1)]}
+Consequently, RZF could be written as infinite multiplicative partition of complex exponents for all primes solvable by an algebraic computation tree on Blum-Shub-Smale Turing machines over Complex field - non-trivial zeros of RZF input to non-uniform algebraic computation tree should asymptotically evaluate to 0. Usual multiplicative partition(factorisatio numerorum) is limited to integral powers:
+	RZF = p1^c1 * p2^c2 * p3^c3 ... ad infinitum, cn = 1/log(pn) * {log[pn^s/(pn^s - 1)]} for pn = 2,3,5,7,11,13,17,19,... 
+Earlier multiplicative partition version of RZF could be further reduced to factorization product of two polynomials over complex field - one finite and the other infinite - by splitting the infinite product into product of two factor polynomials. Extended RZF written in terms of Gamma function requires zero-knowledge of primes. 
 
 References:
 -----------
