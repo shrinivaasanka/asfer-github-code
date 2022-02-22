@@ -18178,3 +18178,18 @@ References:
 1218.8 Deep Learning MIR - https://ccrma.stanford.edu/workshops/deepmir-2017
 1218.9 DeepMIR 2017 Workshop material - https://github.com/bmcfee/stanford-mir 
 1218.10 Dynamic Time Warping for Timeseries Audio-Visual data - match of motion capture sequences for Physique recognition - https://en.wikipedia.org/wiki/Dynamic_time_warping#/media/File:Two_repetitions_of_a_walking_sequence_of_an_individual_recorded_using_a_motion-capture_system.gif 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1219. (THEORY and FEATURE) Music similarity - Dynamic Time Warping Waveform Distance algorithm implementation - 23 February 2022 - related to 815,1218 and all sections on Intrinsic merit of music, Novelty Detection - Original Music Score, Music clustering, Merit of audio-visuals, Physique recognition, Timeseries analysis - Stock quote tickers-Granger causality, Computer Graphics - Trimesh-Quadmesh Deformations, Face Recognition, Multiple Sequence Alignment, Graphical Event Models
+--------------------------------------------------------------------------------------------------------------------------------------------
+1219.1 AudioToBitMatrix.py has been updated to define a new function dynamic_time_warping() implementing Dynamic Time Warping (DTW) Timeseries sequence similarity algorithm that could find use as broad-spectrum routine across whole gamut of sequence similarity analytics - stock quote timeseries, trimesh-quadmesh sequences of human physiques from motion captures of CCTV footages, DNA multiple sequence alignment, string matching - longest common subsequence among others. Granger causality (timeseries of stockA causing timeseries of another stockB separated by time duration) between two stock quote time series could be found by DTW similarity across timelines and Graphical Event Model of stocks could be established.
+1219.2 Reference pseudocode from https://en.wikipedia.org/wiki/Dynamic_time_warping has been translated to NumPy Python 3.8 function dynamic_time_warping() - in a nutshell this function grows a dynamic programming memoization tableau and populates it by cost minimization function:
+	dtw[i, j] = cost + min([dtw[i-1, j], dtw[i, j-1], dtw[i-1, j-1]])
+1219.3 Two example audio clips - ./testlogs/JSBach_Musicological_Offering.mp4, ./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav have been compared by Dynamic Time Warping and logs are available at python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.DynamicTimeWarping.23February2022
+1219.4 Function audio_distance() has been changed to include a clause and boolean flag argument for enabling dynamic time warping.
+1219.5 Earlier audio clips have been curtailed to 0.01 duration each as np.array() from librosa returned notes are memory hogging (requires few GBs). DTW is a music clustering distance metric quite apt to define creativity and original music score - pattern or style in one's own work and dissimilarity to the rest - a foremost prerequisite for Novelty Detection.
+
+References:
+----------
+1219.6 Using Dynamic Time Warping to Find Patterns in Time Series - [Donald J. Bemdt, James Clifford, Information Systems Department, Stern School of Business] - https://www.aaai.org/Papers/Workshops/1994/WS-94-03/WS94-03-031.pdf
+1219.7 Real-time full-body human gender recognition in (RGB)-D data - https://www.semanticscholar.org/paper/Real-time-full-body-human-gender-recognition-in-Linder-Wehner/2c8743089d9c7df04883405a31b5fbe494f175b4
