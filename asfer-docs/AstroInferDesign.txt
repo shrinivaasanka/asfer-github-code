@@ -18193,3 +18193,18 @@ References:
 ----------
 1219.6 Using Dynamic Time Warping to Find Patterns in Time Series - [Donald J. Bemdt, James Clifford, Information Systems Department, Stern School of Business] - https://www.aaai.org/Papers/Workshops/1994/WS-94-03/WS94-03-031.pdf
 1219.7 Real-time full-body human gender recognition in (RGB)-D data - https://www.semanticscholar.org/paper/Real-time-full-body-human-gender-recognition-in-Linder-Wehner/2c8743089d9c7df04883405a31b5fbe494f175b4
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1220. (THEORY and FEATURE) Music Information Retrieval (MIR) - Learning a polynomial from music waveform - 25 February 2022 - related to 3,298,642,643,644,659,681,1124,1218,1219 and all sections on Merit of Music - MIR, Novelty Detection - Original Music Score, Music clustering, Dynamic Time Warping, Timeseries analysis, AI Music Synthesis, Weighted Automata Learning from Music waveform notes
+-------------------------------------------------------------------------------------------------------------------------------------------- 
+1220.1 Function audio_to_notes() in AudioToBitMatrix.py has been updated to learn a degree 5 polynomial from raw music waveform timeseries returned by librosa. NumPy polyfit() is invoked on the music waveform notes array to fit a degree 5 polynomial. 
+1220.2 Theoretically distance between 2 music waveform timeseries found by Dynamic Time Warping and inner product distance between polynomials of 2 music waveforms f and g - <f,g>=DefiniteIntegral(f(x)g(x)dx) must coincide or be proportional. Novelty or Originality or Similarity of  a music score is therefore quantified algebraically though somewhat superficial ignoring the graph structure found by Weighted Automata.
+1220.3 Exception in hertz to note function - librosa.hz_to_note() - of librosa has been handled.
+1220.4 Following 3 instrumental MP4 music clips of different genres (MP3 files have been upgraded to MP4 as librosa fails to load MP3) - Orient and Western classical - JS Bach and S Balachander in Veena (Amritavarshini) - have been fit to music waveform polynomials and printed to testlogs/AudioToBitMatrix.log.PolyFit.25February2022:
+	notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+	notes2 = audio_to_notes("testlogs/054-SBC-Aanandhamridhakarshini.mp4", dur=20)
+	notes3 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=20)
+1220.5 Following are the coefficients of the degree 5 polynomials learnt for clips earlier in order:
+	polynomial learnt from raw audio-music waveform: [ 1.86408187e-29 -2.44250264e-23  1.12197649e-17 -2.12257382e-12 1.52604679e-07  2.37511803e-03]
+	polynomial learnt from raw audio-music waveform: [ 3.26195558e-31 -3.39615870e-25  1.33295412e-19 -2.28165048e-14 1.22378846e-09 -6.05635122e-05]
+	polynomial learnt from raw audio-music waveform: [-9.67130004e-32  2.01499959e-26  3.51124576e-20 -1.43713102e-14 1.59537748e-09 -4.41037145e-05]
