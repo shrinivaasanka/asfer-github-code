@@ -21,6 +21,7 @@ import math
 import numpy
 import matplotlib.pyplot as plt
 import numpy as np
+from numpy import polyfit
 from scipy.io.wavfile import write
 import ast
 from sklearn.preprocessing import scale
@@ -129,11 +130,17 @@ def audio_to_notes(audio, dur=None):
     print("###################################################")
     if dur is not None:
         waveform, srate = librosa.load(audio, duration=dur)
+    print("raw waveform:", waveform)
+    music_polynomial = polyfit(range(len(waveform)), waveform, 5)
+    print("polynomial learnt from raw audio-music waveform:", music_polynomial)
     freq = np.abs(librosa.stft(waveform))
     print(("Frequencies:", freq))
-    notes = librosa.hz_to_note(freq)
-    print(("Notes:", notes))
-    return notes
+    try:
+        notes = librosa.hz_to_note(freq)
+        print(("Notes:", notes))
+        return notes
+    except Exception as e:
+        print("Exception in librosa - hertz-to-note")
 
 
 def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True):
@@ -245,8 +252,8 @@ def audio_merit(notes):
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
     # speechrecognition_audiograph("testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
-    audio_distance("./testlogs/JSBach_Musicological_Offering.mp4",
-                   "./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav", dur=0.01, dtw=True)
+    # audio_distance("./testlogs/JSBach_Musicological_Offering.mp4",
+    #               "./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav", dur=0.01, dtw=True)
     # audio_distance("./testlogs/JSBach_Musicological_Offering.mp4", "./testlogs/AudioGraphExample_SpeechRecognition_2019-07-09-103018.wav")
     # bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
     # bm=audio_to_bitmatrix("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
@@ -255,10 +262,12 @@ if __name__ == "__main__":
     # features=audio_features(bm)
     # print "Features:",features
     # notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
-    # notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+    notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+    notes2 = audio_to_notes("testlogs/054-SBC-Aanandhamridhakarshini.mp4", dur=20)
+    notes3 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=20)
     # merit=audio_merit(notes[0])
-    notes_to_audio()
-    notes_to_audio(automaton=True)
-    notes_to_audio(function='(x*x+x+1) % 32767', fractal=False)
+    # notes_to_audio()
+    # notes_to_audio(automaton=True)
+    #notes_to_audio(function='(x*x+x+1) % 32767', fractal=False)
     #notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
-    notes_to_audio(function='5*(x*x-x) % 32767')
+    #notes_to_audio(function='5*(x*x-x) % 32767')
