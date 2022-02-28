@@ -13,7 +13,7 @@
 # --------------------------------------------------------------------------------------------------------
 # K.Srinivasan
 # NeuronRain Documentation and Licensing: http://neuronrain-documentation.readthedocs.io/en/latest/
-# Personal website(research): https://sites.google.com/site/kuja27/
+# Personal website(research): https://acadpdrafts.readthedocs.io/en/latest/
 # --------------------------------------------------------------------------------------------------------
 
 import sys
@@ -38,6 +38,12 @@ import cvxopt
 from cvxopt.glpk import ilp
 import cv2
 from DigitalWatermarking import watermark_image
+m = 0
+Tower = [1, 2, 3, 4]
+Tower[0] = []
+Tower[1] = []
+Tower[2] = []
+Tower[3] = []
 
 Voting_Machine1_dict = defaultdict(list)
 Voting_Machine2_dict = defaultdict(list)
@@ -47,22 +53,81 @@ Voted = []
 evm_histograms = []
 maxvoters = 1
 
+
 def complementary_set_partition(partition, depth=1):
     maxlen = -1
     for part in partition:
         if maxlen < len(part):
             maxlen = len(part)
     equidepthlen = maxlen + depth
-    complementarypartition=[]
-    equidepthpartition=[]
+    complementarypartition = []
+    equidepthpartition = []
     for part in partition:
         complementarypartition.append(np.zeros(equidepthlen - len(part)))
-        equidepthpartition.append(list(part) + np.zeros(equidepthlen - len(part)).tolist())
-    print("complementary partition of ", partition, ":",complementarypartition)
-    print('equidepth partition:',equidepthpartition)
+        equidepthpartition.append(
+            list(part) + np.zeros(equidepthlen - len(part)).tolist())
+    print("complementary partition of ", partition, ":", complementarypartition)
+    print('equidepth partition:', equidepthpartition)
     return complementarypartition
 
-def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, solution="ILP",Neuro_Crypto_ProofOfWork=False):
+
+def single_bin_sorted_LIFO_histogram_ToH(n, Neuro_Crypto_ProofOfWork=True):
+    # Towers of Hanoi NP-Hard Neuro Cryptocurrency Proof-of-work - Towers of Hanoi are sorted LIFO single bucket histograms
+    # Two recursions for x to z and z to y - following is a 3 towers recursive implementation printing the histogram towers
+    # simpler recursion has been commented
+    # global m
+    # if n > 0:
+    #	m=m+1
+    #	print("Move " + str(m) + ": top disk of tower x to top disk of tower y through intermediary tower z")
+    #	single_bin_sorted_LIFO_histogram_ToH(n-1,x,z,y)
+    #	single_bin_sorted_LIFO_histogram_ToH(n-1,z,y,x)
+    global Tower
+    n = int(math.log(int(n),2))
+    for x in reversed(range(n)):
+        Tower[1].append(x)
+    print("Tower:", Tower)
+    print_Towers_of_Hanoi(n, 1, 2, 3)
+    if Neuro_Crypto_ProofOfWork:
+        imgtemplate = cv2.imread("testlogs/NeuroCurrencyTemplate.jpg")
+        imgwatermark = cv2.imread("testlogs/NeuroCurrencyWatermark.jpg")
+        cv2.putText(imgtemplate, str(math.pow(2,n)), (320, 200),
+                    cv2.FONT_HERSHEY_TRIPLEX, 3.0, (255, 0, 0), 1, cv2.LINE_AA)
+        cv2.putText(imgtemplate, sha256_crypt.hash(bin(n)), (5, 300),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 1, cv2.LINE_AA)
+        cv2.imwrite("testlogs/NeuroCryptoCurrency.jpg", imgtemplate)
+        imgcurrency = cv2.imread("testlogs/NeuroCryptoCurrency.jpg")
+        watermark_image("testlogs/NeuroCryptoCurrency.jpg",
+                        "testlogs/NeuroCurrencyWatermark.jpg")
+
+
+def print_Towers_of_Hanoi(n, x, y, z):
+    from scipy.stats import wasserstein_distance
+    global Tower
+    global m
+    if n > 0:
+        m += 1
+        print_Towers_of_Hanoi(n-1, x, z, y)
+        disk = Tower[x].pop()
+        Tower[y].append(disk)
+        print("======================= Move " + str(m) +
+              " ================================================")
+        print("Tower 1:", Tower[1])
+        print("Tower 2:", Tower[2])
+        print("Tower 3:", Tower[3])
+        emd12 = 0
+        emd23 = 0
+        emd13 = 0
+        if len(Tower[1]) > 0 and len(Tower[2]) > 0:
+            emd12 = wasserstein_distance(Tower[1], Tower[2])
+        if len(Tower[1]) > 0 and len(Tower[3]) > 0:
+            emd13 = wasserstein_distance(Tower[1], Tower[3])
+        if len(Tower[2]) > 0 and len(Tower[3]) > 0:
+            emd23 = wasserstein_distance(Tower[2], Tower[3])
+        print("Pairwise ToH Earth Mover Distance Triple:", (emd12, emd13, emd23))
+        print_Towers_of_Hanoi(n-1, z, y, x)
+
+
+def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, solution="ILP", Neuro_Crypto_ProofOfWork=False):
     squaretiles_cover = []
     from complement import toint
     from sympy.solvers.diophantine.diophantine import diop_general_sum_of_squares
@@ -70,25 +135,26 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
     if not Neuro_Crypto_ProofOfWork:
         for hp in histogram_partition:
             tiles = diop_general_sum_of_squares(
-                 a**2 + b**2 + c**2 + d**2 - toint(hp))
+                a**2 + b**2 + c**2 + d**2 - toint(hp))
             print(("square tiles for partition ", hp, ":", tiles))
             for t in list(tiles)[0]:
-                 squaretiles_cover.append((t, t*t))
-        print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize,",",
-           histogram_partition, ":", squaretiles_cover))
-        subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
+                squaretiles_cover.append((t, t*t))
+        print(("Lagrange Four Square Tiles Cover reduction of Set Partition for ", number_to_factorize, ",",
+               histogram_partition, ":", squaretiles_cover))
+        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+                        "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
     else:
-        histogram_partition=random_integer_partition(int(number_to_factorize))
+        histogram_partition = random_integer_partition(
+            int(number_to_factorize))
         for hp in histogram_partition:
             tiles = diop_general_sum_of_squares(
-                 a**2 + b**2 + c**2 + d**2 - toint(hp))
+                a**2 + b**2 + c**2 + d**2 - toint(hp))
             print(("square tiles for partition ", hp, ":", tiles))
             for t in list(tiles)[0]:
-                 squaretiles_cover.append((t, t*t))
+                squaretiles_cover.append((t, t*t))
         print(("Neuro Cryptocurrency Proof of Work - Rectangular Area (=Value of Neuro cryptocurrency mined) Factorized and Pair of Money Changing Frobenius Diophantines solved by ILP for factors of integer :", number_to_factorize))
-        subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
+        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+                        "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", number_to_factorize, "1", "False"], shell=False)
     factorsfile = open(
         "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
     factors = json.load(factorsfile)
@@ -114,7 +180,7 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
     for sqtc in squaretiles_cover:
         equation.append(sqtc[0])
     equationsA.append(equation)
-    permutedequation=np.random.permutation(equation)
+    permutedequation = np.random.permutation(equation)
     equationsA.append(permutedequation)
     print(("factorslist:", factorslist))
     if len(factorslist) > 0:
@@ -125,47 +191,50 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
                 break
     a = np.array(equationsA).astype(float)
     b = np.array(equationsB[:2]).astype(float)
-    y=[]
+    y = []
     for n in equationsA[0]:
         y.append(1)
     print(("Diophantine A =", a))
     print(("Diophantine B =", b))
-    if solution=="ILP":
-        C = cvxopt.matrix(y,tc='d')
-        cnt=0
-        h=[]
-        g=[]
+    if solution == "ILP":
+        C = cvxopt.matrix(y, tc='d')
+        cnt = 0
+        h = []
+        g = []
         for v in equationsA[0]:
             row = np.zeros(len(equationsA[0])).tolist()
-            row[cnt]=1
+            row[cnt] = 1
             g.append(row)
             h.append(0)
-            cnt+=1
-        H = cvxopt.matrix(h,tc='d')
-        G = cvxopt.matrix(g,tc='d') 
-        B = cvxopt.matrix(b,tc='d')
-        A = cvxopt.matrix(a,tc='d')
+            cnt += 1
+        H = cvxopt.matrix(h, tc='d')
+        G = cvxopt.matrix(g, tc='d')
+        B = cvxopt.matrix(b, tc='d')
+        A = cvxopt.matrix(a, tc='d')
         I = set(range(len(y)))
-        print("C=",C)
-        print("G=",G)
-        print("H=",H)
-        print("A=",A)
-        print("B=",B)
-        print("I=",I)
-        (status,x) = cvxopt.glpk.ilp(C,-G.T,-H,A,B,I=I)
-        print(("status = ",status," : x = ",x))
+        print("C=", C)
+        print("G=", G)
+        print("H=", H)
+        print("A=", A)
+        print("B=", B)
+        print("I=", I)
+        (status, x) = cvxopt.glpk.ilp(C, -G.T, -H, A, B, I=I)
+        print(("status = ", status, " : x = ", x))
         roundedx = x
         if x is None:
             return []
-        if Neuro_Crypto_ProofOfWork: 
-            imgtemplate=cv2.imread("testlogs/NeuroCurrencyTemplate.jpg")
-            imgwatermark=cv2.imread("testlogs/NeuroCurrencyWatermark.jpg")
-            factorsuniqueid="-".join(map(str,factorslist))
-            cv2.putText(imgtemplate,number_to_factorize,(320,200),cv2.FONT_HERSHEY_TRIPLEX,3.0,(255,0,0),1,cv2.LINE_AA)
-            cv2.putText(imgtemplate,sha256_crypt.hash(factorsuniqueid),(5,300),cv2.FONT_HERSHEY_SIMPLEX,0.55,(0,0,255),1,cv2.LINE_AA)
-            cv2.imwrite("testlogs/NeuroCryptoCurrency.jpg",imgtemplate)
-            imgcurrency=cv2.imread("testlogs/NeuroCryptoCurrency.jpg")
-            watermark_image("testlogs/NeuroCryptoCurrency.jpg","testlogs/NeuroCurrencyWatermark.jpg")
+        if Neuro_Crypto_ProofOfWork:
+            imgtemplate = cv2.imread("testlogs/NeuroCurrencyTemplate.jpg")
+            imgwatermark = cv2.imread("testlogs/NeuroCurrencyWatermark.jpg")
+            factorsuniqueid = "-".join(map(str, factorslist))
+            cv2.putText(imgtemplate, number_to_factorize, (320, 200),
+                        cv2.FONT_HERSHEY_TRIPLEX, 3.0, (255, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(imgtemplate, sha256_crypt.hash(factorsuniqueid), (5, 300),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 1, cv2.LINE_AA)
+            cv2.imwrite("testlogs/NeuroCryptoCurrency.jpg", imgtemplate)
+            imgcurrency = cv2.imread("testlogs/NeuroCryptoCurrency.jpg")
+            watermark_image("testlogs/NeuroCryptoCurrency.jpg",
+                            "testlogs/NeuroCurrencyWatermark.jpg")
     else:
         #x = lsqr(a,b,atol=0,btol=0,conlim=0,show=True)
         x = lsmr(a, b, atol=0, btol=0, conlim=0, show=True, x0=initial_guess)
@@ -173,22 +242,24 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
         print(("x=", x))
         roundedx = []
         for t in x[0]:
-           roundedx.append(abs(round(t)))
-        print(("Randomized rounding:",roundedx))
+            roundedx.append(abs(round(t)))
+        print(("Randomized rounding:", roundedx))
     cnt = 0
-    side1 = 0 
-    side2 = 0 
+    side1 = 0
+    side2 = 0
     side1str = ""
     side2str = ""
     for t in roundedx:
         print(("t=", t, "; cnt=", cnt))
-        side1 += (t*equationsA[0][cnt]) 
+        side1 += (t*equationsA[0][cnt])
         side1str += str(t) + "*" + str(equationsA[0][cnt]) + "+"
-        side2 += (t*equationsA[1][cnt]) 
+        side2 += (t*equationsA[1][cnt])
         side2str += str(t) + "*" + str(equationsA[1][cnt]) + "+"
         cnt += 1
-    print(("(Approximate if least squares is invoked) Rectangle periphery - ",side1str," - side1:", side1))
-    print(("(Approximate if least squares is invoked) Rectangle periphery - ",side2str," - side2:", side2))
+    print(("(Approximate if least squares is invoked) Rectangle periphery - ",
+          side1str, " - side1:", side1))
+    print(("(Approximate if least squares is invoked) Rectangle periphery - ",
+          side2str, " - side2:", side2))
     return squaretiles_cover
 
 
@@ -346,8 +417,8 @@ def adjusted_rand_index():
 
 
 if __name__ == "__main__":
-    #ari=adjusted_rand_index()
-    set1=set(range(random.randint(1,int(sys.argv[1]))))
+    # ari=adjusted_rand_index()
+    set1 = set(range(random.randint(1, int(sys.argv[1]))))
     number_of_partitions = nT(len(set1))
     processes_partitions = Partition(set1)
     randp = processes_partitions + random.randint(1, number_of_partitions)
@@ -364,7 +435,7 @@ if __name__ == "__main__":
         print("Electronic Voting Machine: 1")
         print("=============================")
         electronic_voting_machine(Voting_Machine1_dict, idcontexts[voteridx % len(idcontexts)],
-                candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
+                                  candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4002-ac39-93dd53ea302f:100")
         print("=============================")
         print("Electronic Voting Machine: 2")
         print("=============================")
@@ -376,6 +447,8 @@ if __name__ == "__main__":
         electronic_voting_machine(Voting_Machine3_dict, idcontexts[voteridx*3 % len(idcontexts)],
                                   candidates[int(random.random()*100) % len(candidates)], Streaming_Analytics_Bertrand=True, onetimepassword="ff20a894-a2c4-4102-ac39-93d353ea3020:100")
         voteridx += 1
-    setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
+    #setpartition_to_tilecover(None, sys.argv[1], solution="ILP",Neuro_Crypto_ProofOfWork=True)
+    single_bin_sorted_LIFO_histogram_ToH(
+        "1024", Neuro_Crypto_ProofOfWork=True)
     electronic_voting_analytics(
         [Voting_Machine1_dict, Voting_Machine2_dict, Voting_Machine3_dict])
