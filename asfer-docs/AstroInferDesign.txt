@@ -18209,3 +18209,41 @@ References:
 	polynomial learnt from raw audio-music waveform: [ 1.86408187e-29 -2.44250264e-23  1.12197649e-17 -2.12257382e-12 1.52604679e-07  2.37511803e-03]
 	polynomial learnt from raw audio-music waveform: [ 3.26195558e-31 -3.39615870e-25  1.33295412e-19 -2.28165048e-14 1.22378846e-09 -6.05635122e-05]
 	polynomial learnt from raw audio-music waveform: [-9.67130004e-32  2.01499959e-26  3.51124576e-20 -1.43713102e-14 1.59537748e-09 -4.41037145e-05]
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1221. (THEORY and FEATURE) Fictitious Neuro Cryptocurrency NP-Hard Proof of Work - Moving Mount Fuji - Single Bin Sorted LIFO Histogram - Towers of Hanoi - implementation - 28 February 2022 - related to 112,113,114,488,751,784,785,787,791,841,848,859,1095(a,b,c,d),1209,1215,1216,1217 and all sections on Economic merit, Set Partition analytics, Pseudorandom generators, Computational Geometric Factorization, Money Changing Problem - Frobenius Coin Diophantines, Computational Theory of Value, Poverty Alleviation, Neuro Cryptocurrency implementations in AstroInfer and KingCobra, Optimal Denominations,Computational Economics - Computational Hardness (Labour) Theory of Value, Histogram and Set Partition analytics, Equidepth-Equiheight Histograms, Separate Chaining Hashtables, Timeout gadgets (Refcounted Expirable C++ objects, KingCobra atomic refcounting and Survival Index Timeout) in NeuronRain, Digital Watermarking, Drone Electronic Voting Machines, Numeric Compression by Prime power encoding - Unique Factorization Domain, Multiplicative Partitions, Compressed Sensing (Succinct representation), Large Scale Visuals, Cybercrime analytics, Russian Peasant's Linear Complexity Multiplication Algorithm, K Dimensional Trees, Computer Graphics, Collatz Conjecture, Mandelbrot sets, Earth Mover Distance, Graphical Event Models and Stock Timeseries, AI Music Synthesis
+--------------------------------------------------------------------------------------------------------------------------------------------
+1221.1 Streaming_SetPartitionAnalytics.py has been changed to define a new function single_bin_sorted_LIFO_histogram_ToH() for computing all order preserving moves of a single bin sorted LIFO histogram (a k-d tree or mountain sliced to horizontal disks in 3 dimensions) as Neuro Cryptocurrency Rig Proof of Work - Towers of Hanoi (or Towers of Brahma) - which is NP-Hard (not NP-Complete as no NP algorithm for Towers of Hanoi problem has been found yet). 
+1221.2 Set Partitions to Lagrange Sum of Squares Tile Cover of a Rectangle reduction + Computational Geometric Factorization + Money Changing Problem-Integer Linear Programming Proof of Work implementation earlier is NP-Complete and its hardness is subject to P != NP while NP-Hard class is independent of P != NP and universally present as even undecidable problems are NP-Hard (Halting problem).
+1221.3 Function single_bin_sorted_LIFO_histogram_ToH() internally invokes print_Towers_of_Hanoi() routine recursively for n disks and 3 bins (source,destination and intermediary) and computes Earth mover distance between those triples after every move. Earth mover distance triples and 3 Towers are printed to logs testlogs/Streaming_SetPartitionAnalytics.TowersOfHanoi.NeuroProofOfWork.28February2022 after computing pairwise wasserstein_distance() triples for all O(2^n) moves.
+1221.4 Towers of Hanoi algorithm is based on following pseudocode 2-part recursion for moving top n-1 disks from source x to destination z and source z to destination y having y and x as intermediaries respectively:
+	single_bin_sorted_LIFO_histogram_ToH(n-1,x,z,y)
+	single_bin_sorted_LIFO_histogram_ToH(n-1,z,y,x)
+1221.5 Earth Mover Distance Triples printed sinusoidally fluctuate and always end in 0 exhibiting Collatz sequence behavior and are thus simulators for many naturally arising timeseries Graphical Event Model sequences - bidirectional object refcounting clockticks, Stock quote tickers et al. Stock quote timeseries influenced by high frequency algorithmic trading and manual trading platforms have been simulated by multifractals, Mandelbrot sets, Irrational exuberance and Bounded rationality. Undecidability of Mandelbrot sets implies prediction of market volatility is intractable. Towers of Hanoi and Earth Mover Distance are personifications for any human labour involving mass movement and formalize hardness in terms of simulated labour. Rhythmic ebb and tide of Towers of Hanoi EMD sequence makes it a candidate music waveform for AI Music Synthesis and the undulating histograms printed in intermediate steps are corresponding spectrograms of it. Following are the set of EMD triples for last few Towers of Hanoi POW computation steps grepped from testlogs/Streaming_SetPartitionAnalytics.TowersOfHanoi.NeuroProofOfWork.28February2022 ending in (0,0,0) for 3 towers:
+Pairwise ToH Earth Mover Distance Triple: (4.166666666666667, 2.0, 3.166666666666667)
+Pairwise ToH Earth Mover Distance Triple: (5.5, 2.5, 3.0)
+Pairwise ToH Earth Mover Distance Triple: (5.000000000000001, 0, 0)
+Pairwise ToH Earth Mover Distance Triple: (4.5, 2.0, 6.5)
+Pairwise ToH Earth Mover Distance Triple: (3.5, 2.5, 5.714285714285714)
+Pairwise ToH Earth Mover Distance Triple: (3.25, 0, 0)
+Pairwise ToH Earth Mover Distance Triple: (3.25, 1.0, 3.75)
+Pairwise ToH Earth Mover Distance Triple: (4.214285714285714, 1.5, 4.000000000000001)
+Pairwise ToH Earth Mover Distance Triple: (5.0, 1.0, 5.0)
+Pairwise ToH Earth Mover Distance Triple: (3.5, 2.0, 5.5)
+Pairwise ToH Earth Mover Distance Triple: (0, 0, 5.000000000000001)
+Pairwise ToH Earth Mover Distance Triple: (0, 0, 4.0)
+Pairwise ToH Earth Mover Distance Triple: (4.5, 1.0, 3.75)
+Pairwise ToH Earth Mover Distance Triple: (5.5, 1.5, 4.000000000000001)
+Pairwise ToH Earth Mover Distance Triple: (5.0, 0, 0)
+Pairwise ToH Earth Mover Distance Triple: (4.5, 1.0, 5.5)
+Pairwise ToH Earth Mover Distance Triple: (0, 0, 5.0)
+Pairwise ToH Earth Mover Distance Triple: (0, 0, 0)
+1221.6 Function single_bin_sorted_LIFO_histogram_ToH() prints a digital-watermarked Visual Neuro currency after completion of Towers of Hanoi proof of work. Following are the Neuro currency visuals for an example denomination:
+	testlogs/NeuroCryptoCurrency.jpg
+	testlogs/NeuroCryptoCurrency.jpg_Watermarked.jpg
+
+References:
+-----------
+1221.7 Towers of Hanoi - Datastructures, Algorithms and Applications in Java - [Sartaj Sahni] - Page 320-324
+1221.8 Irrational Exuberance - [Greenspan] - https://www.federalreserve.gov/boarddocs/speeches/1996/19961205.htm
+1221.9 Irrational Exuberance - Dataset for the book - http://www.econ.yale.edu/~shiller/data.htm 
