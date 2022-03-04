@@ -18247,3 +18247,22 @@ References:
 1221.7 Towers of Hanoi - Datastructures, Algorithms and Applications in Java - [Sartaj Sahni] - Page 320-324
 1221.8 Irrational Exuberance - [Greenspan] - https://www.federalreserve.gov/boarddocs/speeches/1996/19961205.htm
 1221.9 Irrational Exuberance - Dataset for the book - http://www.econ.yale.edu/~shiller/data.htm 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1223. (THEORY and FEATURE) Music Information Retrieval - AI Music Synthesis from Sum of Damped Sinusoids - 4 March 2022 - related to 3,298,642,643,644,659,681,1124,1218,1219,1220 and all sections on Merit of Music - MIR, Novelty Detection - Original Music Score, Music clustering, Dynamic Time Warping, Timeseries analysis, AI Music Synthesis, Weighted Automata Learning from Music waveform notes, Speech Synthesis, Fourier analysis
+-------------------------------------------------------------------------------------------------------------------------------------------
+1223.1 notes_to_audio() function in AudioToBitMatrix.py has been changed to synthesize notes from python 3.8 lambda expression and map() instead of a list comprehension earlier.
+1223.2 Lambda expression for any mathematical function is repetitively evaluated within a loop and notes are appended to get an onset-to-onset periodic music waveform timeseries.
+1223.3 There has been sufficient publication prior art analyzing feasibility of speech synthesis from summation of damped sinusoid waveforms for simulating human utterances of syllables. Damped Sinusoid summation has been implemented for music synthesis equivalent in this commit. In a sense, summation of damped sinusoids is the Time domain converse of Fourier spectrum decomposition of music waveform into set of frequencies in Frequency domain. 
+1223.4 notes_to_audio() synthesizer is invoked for a sum of damped sinusoids and an instrumental music waveform simulating thunderbolt has been composed (function_synthesized_music.wav):
+	notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
+corresponding to sum of three damped oscillator waveform frequencies of the form a/(b + x)*sin(2*pi*x/c)
+1223.5 Earlier summation combines 3 damped sinusoids of frequencies 720,1240 and 2400 Hz into a natural rhythmic music. Music waveforms (especially orient) have a distinct periodic damping feature (notable difference could be visually felt by loading testlogs/054-SBC-Aanandhamridhakarshini.mp4 and testlogs/Bach_Flute_Sonata_EFlat.mp4 in Audacity - former has an intriguingly self-similar periodic damped sinusoidal structure)
+1223.6 There have been raging debates on credibility of music synthesis and an orthodox view avers that music cannot be invented but could only be discovered (a notion strikingly similar to "Straight from the Book" of Erdos - Theorems are not invented but only discovered). As a trivia, Permutation of heptatonic scale allows only 5040 waveforms of enjoyable music (7!) discarding major,minor,flat,sharp variants. 
+
+References:
+-----------
+1223.7 Speech Synthesis from Damped Sinusoids - https://www.researchgate.net/publication/11189786_Speech_Synthesis_Using_Damped_Sinusoids - Figure 2. Synthesizing a short segment of a sustained /A/ by summing exponentially damped sinusoids at frequencies corresponding to F1, F2, and F3 and by pulsing the damped sinusoids at onset-to-onset intervals corresponding to the fundamental period
+1223.8 Graphic illustration of Damped Sinusoids - https://www.desmos.com/calculator/hcamzyeujj
+1223.9 The Man who loved only numbers - [Hoffman] - https://archive.nytimes.com/www.nytimes.com/books/first/h/hoffman-man.html?pagewanted=all
+1223.10 Damped Sinusoids - Exponential damp version - https://en.wikipedia.org/wiki/Damping#Damped_sine_wave - Earlier synthesis is based on fractional damp
