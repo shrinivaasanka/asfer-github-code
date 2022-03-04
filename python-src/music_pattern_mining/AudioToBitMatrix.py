@@ -29,6 +29,7 @@ from scipy.spatial.distance import directed_hausdorff
 from scipy.stats import wasserstein_distance
 #from RecursiveLambdaFunctionGrowth import RecursiveLambdaFunctionGrowth
 import sys
+import random
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -162,7 +163,12 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
                 notes.append(function_nplus1)
                 #print("function_nplus1:", function_nplus1)
         else:
-            notes = [amplitude*eval(function) for x in range(0, samplerate*10)]
+            #notes = [amplitude*eval(function) for x in range(0, samplerate*10)]
+            notes = []
+            periodicity = 0
+            while periodicity < 10:
+                notes += list(map(lambda x: amplitude*eval(function), range(0, samplerate)))
+                periodicity += 1
         npnotes = np.asarray(notes)
         #scalednpnotes = np.int16(npnotes/np.max(npnotes)*32767)
         scalednpnotes = npnotes
@@ -262,12 +268,15 @@ if __name__ == "__main__":
     # features=audio_features(bm)
     # print "Features:",features
     # notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
-    notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=20)
-    notes2 = audio_to_notes("testlogs/054-SBC-Aanandhamridhakarshini.mp4", dur=20)
-    notes3 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=20)
+    # notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=20)
+    # notes2 = audio_to_notes("testlogs/054-SBC-Aanandhamridhakarshini.mp4", dur=20)
+    # notes3 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=20)
     # merit=audio_merit(notes[0])
     # notes_to_audio()
     # notes_to_audio(automaton=True)
     #notes_to_audio(function='(x*x+x+1) % 32767', fractal=False)
     #notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
     #notes_to_audio(function='5*(x*x-x) % 32767')
+    #notes_to_audio(function='(300*math.sin(3*x) + 200*math.sin(2*x) + 100*math.sin(x))',fractal=False)
+    notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
+    #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
