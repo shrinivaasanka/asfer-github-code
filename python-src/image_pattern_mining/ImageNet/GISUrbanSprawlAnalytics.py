@@ -227,9 +227,11 @@ if __name__ == "__main__":
     #        iteration+=1
     #graphmining=GSpan([])
     #graphmining.GraphEditDistance(seg7[8],seg8[8])
-    seg9=image_segmentation("testlogs/HRSL_World_NightTimeStreets.jpg")
+    #seg9=image_segmentation("testlogs/HRSL_World_NightTimeStreets.jpg")
     #legend={235/3:"0-1",245/3:"1-50",255/3:"50-100",362/3:"100-250",372/3:"250-1000",382/3:"1000-2500",510/3:"2500-27057"}
-    legend={510/3:"0-1",382/3:"1-50",372/3:"50-100",362/3:"100-250",255/3:"250-1000",245/3:"1000-2500",235/3:"2500-27057"}
-    mapscale=147914382
-    #mapscale=266.0/854.0
-    urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
+    #legend={510/3:"0-1",382/3:"1-50",372/3:"50-100",362/3:"100-250",255/3:"250-1000",245/3:"1000-2500",235/3:"2500-27057"}
+    #mapscale=147914382
+    mapscale=266.0/854.0
+    #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
+    seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
+    urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,-1,sqkmtocontourarearatio=mapscale,legend=None)
