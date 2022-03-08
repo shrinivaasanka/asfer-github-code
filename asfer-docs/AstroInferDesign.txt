@@ -18278,3 +18278,31 @@ References:
 1223.8 Graphic illustration of Damped Sinusoids - https://www.desmos.com/calculator/hcamzyeujj
 1223.9 The Man who loved only numbers - [Hoffman] - https://archive.nytimes.com/www.nytimes.com/books/first/h/hoffman-man.html?pagewanted=all
 1223.10 Damped Sinusoids - Exponential damp version - https://en.wikipedia.org/wiki/Damping#Damped_sine_wave - Earlier synthesis is based on fractional damp
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1224. (THEORY and FEATURE) Music Information Retrieval - AI Music Synthesis from Sum of Damped Sinusoids - 8 March 2022 - related to 3,298,642,643,644,659,681,1124,1218,1219,1223 and all sections on Merit of Music - MIR, Novelty Detection - Original Music Score, Music clustering, Dynamic Time Warping, Timeseries analysis, AI Music Synthesis, Weighted Automata Learning from Music waveform notes, Speech Synthesis, Fourier analysis
+---------------------------------------------------------------------------------------------------------------------------------------------
+1224.1 Some additional audacity music waveform files (.aup and .au) synthesised by AudioToBitMatrix.py from periodic mathematical functions have been added to repositories - simulate an instrumental music
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1225. (THEORY and FEATURE) GIS Urban Sprawl Analytics - SEDAC Urban Expansion Probabilities Projection for Year 2030 - a casestudy of urban sprawls - 8 March 2022 - related to 675,753,1174,1175,1177,1179,1194,1211,1212 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption, Jordan Curve Theorem, Weirstrass Theorem, Cellular Automata, Preferential attachment,Random Graphs,Dynamic Graphs
+---------------------------------------------------------------------------------------------------------------------------------------------
+1225.1 GISUrbanSprawlAnalytics.py has been updated to compute Voronoi tessellation facegraph,Delaunay triangulation,convex hull,contour segments and minimum enclosing circles of SEDAC Urban Expansion Probabilities Projection for Year 2030 (Southern India) - SEDAC2030UrbanExpansionProbabilities.jpg - which is a cellular automaton square grid raster of urban extent expansion probabilities in year 2030 proportionately coded by color legend. 
+1225.2 Color legend is of size 100 for SEDAC Urban Expansion 2030 GIS and ranges from light to dark corresponding to 0% to 100% probabilities of urban expansion. For this reason, default grading legend averageBGR/255 * 100000 (e.g Barcelona in section 1211) has been used to compute population density.
+1225.3 As mentioned in Section 1177, Urban Sprawl Expansion is the dynamic graph growing problem of adding new faces (or composing ears to create new faces) to Urban sprawl facegraph perimeter,a graph theoretic version of preferential attachment. Voronoi-Delaunay Facegraph of SEDAC Urban Expansion Probabilities Projection for Year 2030 computed earlier is a random graph wherein each ear or face is added to the periphery of an urban sprawl with probability assigned by color legend of the grid. Conventional Dynamic Graphs allow dynamic add-delete of vertices and edges while Urban Sprawl Expansion by face-ear composition along the circumference is an one-way Dynamic Graph and irreversible - only addition of edges and vertices are allowed and face of a suburb and its vertices-edges can't be deleted from an expanded urban sprawl.
+1225.4 Most Urban area expansions in South India example previously have been colored in the probability range of 50% (plus or minus) and a projected emergence of megalopolises in 2030 is conspicuous in coastal urban areas of TN (tremendous westward and southward expansion of Chennai Metropolitan Sprawl upto Vellore-Puducherry and gradual coalescence of Puducherry urban sprawl-Cauvery river delta urban sprawl which could be another pearl river delta in the making) and entire west coast of Kerala. 
+1225.5 In terms of realestate, Light shaded colors might indicate a horizontal residential growth while dark shaded regions might witness a vertical growth of skyscrapers.
+1225.6 Following are the images (contours,segments,convex hull,facegraph,Voronoi-Delaunay tessellation,minimum enclosing circles of UAs) and logs for this commit:
+	testlogs/GISUrbanSprawlAnalytics.log.8March2022
+	testlogs/RemoteSensingGIS/SEDAC2030UrbanExpansionProbabilities_FaceGraph.jpg
+	testlogs/RemoteSensingGIS/SEDAC2030UrbanExpansionProbabilities_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/SEDAC2030UrbanExpansionProbabilities_contour_segmented.jpg
+	testlogs/RemoteSensingGIS/SEDAC2030UrbanExpansionProbabilities_convex_hull_segmented.jpg
+	testlogs/RemoteSensingGIS/SEDAC2030UrbanExpansionProbabilities_segmented.jpg
+	testlogs/SEDAC2030UrbanExpansionProbabilities-contourlabelled.jpg
+	testlogs/SEDAC2030UrbanExpansionProbabilities.jpg
+
+References:
+----------
+1225.7 NASA SEDAC Global Grid of Probabilities of Urban Expansion to 2030, v1 (2000 – 2030) - https://sedac.ciesin.columbia.edu/data/set/lulc-global-grid-prob-urban-expansion-2030
+1225.8 Dynamic Graphs - [Harary-Gupta] - https://www.sciencedirect.com/science/article/pii/S0895717797000502
