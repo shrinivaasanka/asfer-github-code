@@ -86,7 +86,7 @@ def draw_voronoi_tessellation(img,centroids):
             except:
                 continue
 
-def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtocontourarearatio=0,legend=None):
+def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
@@ -124,18 +124,16 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
             print("Contour color:",contourcolor)
             averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
             if legend is None:
-                pop_dens = (averageBGR/255) * 100000
+                population_density = (averageBGR/255) * maximum_population_density 
             else:
                 prevcolor=0
                 for color,populationrange in legend.items():
                     populationrangetoks=populationrange.split("-")
                     if averageBGR > prevcolor and averageBGR <= color:
-                        pop_dens = int(populationrangetoks[1])
+                        population_density = int(populationrangetoks[1])
                     prevcolor=color
         except:
-            pop_dens = population_density
-        if population_density == -1:
-            population_density = pop_dens
+            population_density = maximum_population_density
         x,y,w,h = cv2.boundingRect(segment[7][0][n])
         print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
@@ -151,7 +149,7 @@ def urban_sprawl_from_segments(image,segment,population_density=None,sqkmtoconto
         print(("Ratio of urban sprawl contour area to image area:",contourratio))
         urbansprawlsqkmarea=contourarea*sqkmtocontourarearatio
         print(("Square Kilometer Area of Urban Sprawl:", urbansprawlsqkmarea))
-        population_from_area=6.22*urbansprawlsqkmarea*urbansprawlsqkmarea
+        population_from_area=sqkmareatopopulationratio*urbansprawlsqkmarea*urbansprawlsqkmarea
         population_from_density=population_density*urbansprawlsqkmarea
         print(("Population of Urban Sprawl (from density):", population_from_density))
         print(("Population of Urban Sprawl (from area):",population_from_area))
@@ -234,4 +232,4 @@ if __name__ == "__main__":
     mapscale=266.0/854.0
     #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
     seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
-    urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,-1,sqkmtocontourarearatio=mapscale,legend=None)
+    urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
