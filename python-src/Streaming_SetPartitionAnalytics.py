@@ -82,7 +82,7 @@ def single_bin_sorted_LIFO_histogram_ToH(n, Neuro_Crypto_ProofOfWork=True):
     #	single_bin_sorted_LIFO_histogram_ToH(n-1,x,z,y)
     #	single_bin_sorted_LIFO_histogram_ToH(n-1,z,y,x)
     global Tower
-    n = int(math.log(int(n),2))
+    n = int(math.log(int(n), 2))
     for x in reversed(range(n)):
         Tower[1].append(x)
     print("Tower:", Tower)
@@ -90,7 +90,7 @@ def single_bin_sorted_LIFO_histogram_ToH(n, Neuro_Crypto_ProofOfWork=True):
     if Neuro_Crypto_ProofOfWork:
         imgtemplate = cv2.imread("testlogs/NeuroCurrencyTemplate.jpg")
         imgwatermark = cv2.imread("testlogs/NeuroCurrencyWatermark.jpg")
-        cv2.putText(imgtemplate, str(math.pow(2,n)), (320, 200),
+        cv2.putText(imgtemplate, str(int(math.pow(2, n))), (320, 200),
                     cv2.FONT_HERSHEY_TRIPLEX, 3.0, (255, 0, 0), 1, cv2.LINE_AA)
         cv2.putText(imgtemplate, sha256_crypt.hash(bin(n)), (5, 300),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 1, cv2.LINE_AA)
@@ -182,10 +182,14 @@ def setpartition_to_tilecover(histogram_partition=None, number_to_factorize=1, s
     equationsA.append(equation)
     permutedequation = np.random.permutation(equation)
     equationsA.append(permutedequation)
+    factorslist = sorted(factorslist)
+    factorslist.reverse()
+    approxsqrt=int(len(factorslist)/2)
     print(("factorslist:", factorslist))
     if len(factorslist) > 0:
-        for factor in factorslist:
-            if factor != 1 and factor != number_to_factorize:
+        for factor in factorslist[approxsqrt:]:
+            print("number_to_factorize = ",number_to_factorize,"; factor:", factor)
+            if factor != 1 and factor != int(number_to_factorize):
                 equationsB.append(factor)
                 equationsB.append(int(number_to_factorize)/factor)
                 break
