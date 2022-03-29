@@ -18407,3 +18407,12 @@ References:
 1228.9 Kernel lifting in NeuronRain Theory Drafts are mostly devoted to 1-dimensional to 2-dimensional lift by Lagrange Four Square Theorem and 1-dimensional to k-dimensional lift by Chinese Remaindering Theorem (by a ring isomorphism between a ring of integer X mod N=n1*n2*...nk and direct product space of coprime integer rings X mod n1,X mod n2,...,X mod nk):
 	Z/NZ <=> Z/n1Z * Z/n2Z * .... * Z/nkZ
 1228.10 By MRDP Theorem Every Recursively Enumerable Set is Diophantine and earlier shell Turing Machine tree of TOP spaces defined by Turing Jump could be mapped to a corresponding tree of diophantines for the respective shell Turing Machine vertices.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1229. (THEORY and FEATURE) Intrinsic Merit of Texts - TAC 2010 code opensourced - 29 March 2022 - related to 9,36 and all sections on
+Intrinsic Merit Ranking of Texts, Update Summarization, Topic Detection and Tracking, Interview Algorithm, Citation Graph Maxflow-Mincut,
+Meaning Representation
+-------------------------------------------------------------------------------------------------------------------------------------------
+1229.1 An almost 12-13 years old archaic python code (sequential) for publications and PPTs - ArXiv and NIST TAC 2010, US Department of Commerce - https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/blob/master/kuja27_website_mirrored/site/kuja27/PresentationTAC2010.pdf, http://arxiv.org/abs/1006.4458, https://tac.nist.gov//publications/2010/participant.papers/CMI_IIT.proceedings.pdf - has been opensourced (which was originally intended to be part of JAIMINI closedsource private repositories - https://github.com/Brihaspathi/jaimini, https://sourceforge.net/projects/jaimini/ and https://gitlab.com/shrinivaasanka/jaimini ) including TAC2010 dataset logs.
+1229.2 An expanded, sophisticated, parallel (PySpark) implementation of Interview Algorithm and Recursive Gloss Overlap algorithm and its improved formal language version - Recursive Lambda Function Growth algorithm for Meaning Representation - are already part of NeuronRain AstroInfer repositories. 
+1229.3 Disclaimer: Because of mistaken identity issues, it is hereby clarified author did not participate in Text Analysis Conference (TAC 2010), November 15 and 16, 2010, Gaithersburg, Maryland, USA in person despite invitation.
