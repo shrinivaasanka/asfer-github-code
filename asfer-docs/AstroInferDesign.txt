@@ -2620,7 +2620,7 @@ Twitter Streaming python script updated with GetStreamFilter() generator object 
 A Graph Search NetworkX+MatPlotLib Visualizer for WordNet has been implemented in python and has been added to repository. This is an initial code and more algorithms to mine relationships within a text data would be added using WordNet as ontology - with some similarities to WordNet definition subgraph obtained in http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/InterviewAlgorithm/InterviewAlgorithmWithIntrinisicMerit.py. But in this script visualization is more important.
 
 -------------------------------------------------------------
-(FEATURE - DONE) Commits as on 12 May 2015
+1230. (FEATURE - DONE) Commits as on 12 May 2015
 -------------------------------------------------------------
 WordNet Visualizer script has been updated to take and render the WordNet subgraph computed by Recursive Gloss Overlap algorithm in:
 - http://arxiv.org/abs/1006.4458
