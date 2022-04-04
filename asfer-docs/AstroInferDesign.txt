@@ -109,6 +109,8 @@ which is the argmax( Pr(a/t,h), Pr(e/t,h), Pr(i/t,h), Pr(o/t,h), Pr(u/t,h)) and 
 References:
 ----------
 2.15 Variable order Markov model - https://en.wikipedia.org/wiki/Variable-order_Markov_model 
+2.16 DeepMind Ithaca - Restoring and attributing ancient texts using deep neural networks - https://ithaca.deepmind.com/ - a transformer attention model for deeplearning archaeological insciptions and restore missing texts (71% accuracy for an example redacted greek decree text dt.485 BC). Vowelless text decompression is a text restoration algorithm (to restore the lost vowels in a word) and Very High order Markov model and Regular expression model of texts in 2.14 are,in contrast,dictionary based predictors of words without depending on training texts. 
+2.17 DeepMind Ithaca - Paper - https://www.nature.com/articles/s41586-022-04448-z
 
 3. (FEATURE - THEORY - Pairwise LCS implementation DONE) KMeans, KNN and other clustering and classification algorithms implemented thus far, group similar encoded strings for astronomical (or any other) data. Clustered strings can further be mined for patterns with ordering by applying a Longest Common Substring algorithm within each cluster. This gives a fine grained pattern hidden in the encoded input strings. These longest common substrings can then be translated to a rule similar to class association rule (Frequent item set and GSP algorithms are quite expensive and do not fit well for mining patterns in strings).
 
