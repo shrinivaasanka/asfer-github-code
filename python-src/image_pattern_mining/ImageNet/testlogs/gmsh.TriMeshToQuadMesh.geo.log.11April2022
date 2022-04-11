@@ -1,0 +1,22 @@
+gmsh -2 TriMeshToQuadMesh.geo 
+Info    : Running 'gmsh -2 TriMeshToQuadMesh.geo' [Gmsh 4.4.1, 1 node, max. 1 thread]
+Info    : Started on Mon Apr 11 07:50:07 2022
+Info    : Reading 'TriMeshToQuadMesh.geo'...
+Info    : Reading 'testlogs/ExamplePortrait2.jpg'...
+Info    : Done reading 'testlogs/ExamplePortrait2.jpg'
+Info    : Running Plugin(ModifyComponents)...
+Info    : Done running Plugin(ModifyComponents)
+Info    : Done reading 'TriMeshToQuadMesh.geo'
+Info    : Meshing 1D...
+Info    : Meshing curve 1 (Line)
+Info    : Meshing curve 2 (Line)
+Info    : Meshing curve 3 (Line)
+Info    : Meshing curve 4 (Line)
+Info    : Done meshing 1D (5.08826 s)
+Info    : Meshing 2D...
+Info    : Meshing surface 6 (Plane, Delaunay)
+Info    : Done meshing 2D (6.70698 s)
+Info    : 58194 vertices 116390 elements
+Info    : Writing 'TriMeshToQuadMesh.msh'...
+Info    : Done writing 'TriMeshToQuadMesh.msh'
+Info    : Stopped on Mon Apr 11 07:50:27 2022
