@@ -1,0 +1,24 @@
+Info    : Reading 'TriMeshToQuadMesh.msh'...
+Info    : 9 entities
+Info    : 52951 nodes
+Info    : 105904 elements
+Info    : Done reading 'TriMeshToQuadMesh.msh'
+Info    : Recombining 2D mesh...
+Info    : Blossom: 157682 internal 584 closed
+Info    : Blossom recombination completed (Wall 12.2836s, CPU 12.1834s): 52658 quads, 0 triangles, 7 invalid quads, 16 quads with Q < 0.1, avg Q = 0.638971, min Q = -0.116535
+Info    : Done recombining 2D mesh (Wall 12.3297s, CPU 12.2293s)
+-------------------------------------------------------
+Version       : 4.9.5
+License       : GNU General Public License
+Build OS      : Linux64-sdk
+Build date    : 20220221
+Build host    : gmsh.info
+Build options : 64Bit ALGLIB[contrib] ANN[contrib] Bamg Blas[petsc] Blossom Cgns DIntegration Dlopen DomHex Eigen[contrib] Fltk Gmm[contrib] Hxt Jpeg Kbipack Lapack[petsc] LinuxJoystick MathEx[contrib] Med Mesh Metis[contrib] Mmg Mpeg Netgen ONELAB ONELABMetamodel OpenCASCADE OpenCASCADE-CAF OpenGL OpenMP OptHom PETSc Parser Plugins Png Post QuadMeshingTools QuadTri Solver TetGen/BR Voro++[contrib] WinslowUntangler Zlib
+FLTK version  : 1.4.0
+PETSc version : 3.14.4 (real arithmtic)
+OCC version   : 7.6.1
+MED version   : 4.1.0
+Packaged by   : geuzaine
+Web site      : https://gmsh.info
+Issue tracker : https://gitlab.onelab.info/gmsh/gmsh/issues
+-------------------------------------------------------
