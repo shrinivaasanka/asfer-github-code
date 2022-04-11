@@ -18431,3 +18431,26 @@ References:
 ----------
 1232.4 GMSH - https://gmsh.info/
 1232.5 CALFEM - https://calfem-for-python.readthedocs.io/en/latest/calfem_mesh_guide.html
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1233. (THEORY and FEATURE) Merit of Large Scale Visuals - Trimesh and Quadmesh generation from an image by GMSH - 11 April 2022 - related to
+1203,1232 and all sections on Merit of Large Scale Visuals, Physique Recognition From Quadrilateral mesh isomorphism,Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching
+--------------------------------------------------------------------------------------------------------------------------------------------
+1233.1 This commit implements Trimesh and Quadmesh generation from a facial image by loading GEO file for an image in GMSH FLTK GUI and GMSH Python API. 
+1233.2 GMSH GEO has a separate scripting convention and an example CG GMSH GEO script from https://people.montefiore.uliege.be/geuzaine/ for mesh generation by different algorithms (Delaunay Trimesh and Quadmesh) has been suitably changed (TriMeshToQuadMesh.geo) to load a watercolor art by author (a Lenna Digital Image Processing lookalike - http://www.lenna.org/ - testlogs/ExamplePortrait2.jpg - dt.1990). TriMeshToQuadMesh.geo has to be opened in GMSH FLTK GUI (commandline: gmsh TriMeshToQuadMesh.geo 2>&1 > testlogs/gmsh.TriMeshToQuadMesh.geo.log.11April2022) and executed by selecting options for trimesh generation (saved to TriMeshToQuadMesh.msh) and recombination algorithm for converting trimesh to quadmesh (example logs: testlogs/gmsh.TriMeshToQuadMesh.geo.log.11April2022) which is written to testlogs/ExamplePortrait2_mesh.jpg.
+1233.3 Alternatively, TriMeshToQuadMesh.msh trimesh generated in 1233.2 could be recombined to quadmesh by Python script TriMeshToQuadMesh.py (example python gmsh recombination: https://gitlab.onelab.info/gmsh/gmsh/-/issues/784) commandline: python3.7 TriMeshToQuadMesh.py 2>&1 > testlogs/python3.7.TriMeshToQuadMesh.log.11April2022 (example logs: testlogs/python3.7.TriMeshToQuadMesh.log.11April2022)
+1233.4 Following are the affected files (Database,GEO,MSH,Python,JPEG and logs) in this commit:
+	TriMeshToQuadMesh.db
+	TriMeshToQuadMesh.geo
+	TriMeshToQuadMesh.msh
+	TriMeshToQuadMesh.py
+	testlogs/ExamplePortrait2.jpg
+	testlogs/ExamplePortrait2_mesh.jpg
+	testlogs/gmsh.TriMeshToQuadMesh.geo.log.11April2022
+	testlogs/python3.7.TriMeshToQuadMesh.log.11April2022
+1233.5 Quadmesh obtained earlier from GMSH might have to be a Graph object (and instantiation of Graph from Mesh is not obvious in GMSH which might have to be inferred from getNodes() and getElements() API) so as to compute isomorphisms,maximum common subgraphs and approximate topological matching between mesh(s) of faces and physiques. 
+
+References:
+----------
+1233.6 GMSH - [Prof. Christophe Geuzaine] - https://people.montefiore.uliege.be/geuzaine/
+1233.7 GMSH Python API - https://gitlab.onelab.info/gmsh/gmsh/blob/gmsh_4_9_5/api/gmsh.py
