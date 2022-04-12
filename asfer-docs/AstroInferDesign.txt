@@ -18453,9 +18453,10 @@ References:
 	testlogs/ExamplePortrait2_mesh.jpg
 	testlogs/gmsh.TriMeshToQuadMesh.geo.log.11April2022
 	testlogs/python3.7.TriMeshToQuadMesh.log.11April2022
-1233.5 Quadmesh obtained earlier from GMSH might have to be a Graph object (and instantiation of Graph from Mesh is not obvious in GMSH which might have to be inferred from getNodes() and getElements() API) so as to compute isomorphisms,maximum common subgraphs and approximate topological matching between mesh(s) of faces and physiques. 
+1233.5 Quadmesh obtained earlier from GMSH might have to be a Graph object (and instantiation of Graph from Mesh is not obvious in GMSH which might have to be inferred from getNodes() and getElements() API) so as to compute isomorphisms,maximum common subgraphs and approximate topological matching between mesh(s) of faces and physiques. Physique Recognition could also be realized by Dynamic Time Warping analysis of Stream of Quadmesh(s) computed from frames of a video (CCTV footages).
 
 References:
 ----------
 1233.6 GMSH - [Prof. Christophe Geuzaine] - https://people.montefiore.uliege.be/geuzaine/
 1233.7 GMSH Python API - https://gitlab.onelab.info/gmsh/gmsh/blob/gmsh_4_9_5/api/gmsh.py
+1233.8 Dynamic Time Warping models for Physique Recognition - Simultaneous inference for misaligned multivariate functional data - https://arxiv.org/pdf/1606.03295.pdf
