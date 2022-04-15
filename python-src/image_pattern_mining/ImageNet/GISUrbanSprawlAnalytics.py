@@ -55,6 +55,19 @@ from scipy.stats import wasserstein_distance
 from shapely.geometry import Polygon
 from scipy import stats
 
+def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=1000):
+    for newsegment in range(len(segmentedgis[7][0]) - 1):
+        randomcolor=random.randint(1,4)
+        randomcolorbin=fourcoloredsegments[randomcolor]
+        #randomcolorbin.append(segmentedgis[7][0][newsegment])
+        randomcolorbin.append("s"+str(newsegment))
+    for n in range(iterations):
+        randomcolor=random.randint(1,4)
+        randomcolorbin=fourcoloredsegments[randomcolor]
+        randombinelement=randomcolorbin[random.randint(0,len(randomcolorbin)-1)]
+        randomcolorbin.append(randombinelement)
+    return fourcoloredsegments
+
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
         point1 = (triangle[0], triangle[1])
@@ -233,3 +246,6 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
     seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
     urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
+    fourcoloredsegments=defaultdict(list)
+    fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
+    print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
