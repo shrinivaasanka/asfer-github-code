@@ -420,7 +420,7 @@ def image_segmentation(imagefile):
                 except:
                     pass 
             facegraph.add_edge(firstpoint, prevpoint)
-    nx.draw_networkx(facegraph)
+    #nx.draw_networkx(facegraph)
     plt.show()
     write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
     return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph)
@@ -546,4 +546,5 @@ if __name__ == "__main__":
     # random_forest_image_classification(train_images,test_images,train_labels)
     # for im in test_images:
     #    imagenet_imagegraph(im)
-    imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
+    #imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
+    image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
