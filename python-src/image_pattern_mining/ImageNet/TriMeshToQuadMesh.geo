@@ -39,8 +39,8 @@ DefineConstant[
   sizeMin = {Mesh.CharacteristicLengthMin, AutoCheck 0,
     GmshOption "Mesh.CharacteristicLengthMin", Min w/100, Max w, Step 0.1,
     Name "Meshing parameters/Minimum element size"},
-  //save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "testlogs/ExamplePortrait1_mesh.jpg';"),
-  save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "../../testlogs/ExamplePortrait2_mesh.jpg';"),
+  //save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "../../testlogs/ExamplePortrait2_mesh.jpg';"),
+  save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "testlogs/ExamplePortrait1_mesh.jpg';"),
     AutoCheck 0, Macro "GmshParseString",
     Name "Save PNG"}
 ];
