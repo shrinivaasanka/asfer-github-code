@@ -2,7 +2,8 @@ If(PostProcessing.NbViews == 0)
   // Merge the image (this will create a new post-processing view, View[0]), and
   // modify the normalized pixel values (v0) to make them reasonnable
   // characteristic lengths for the mesh
-  Merge "testlogs/ExamplePortrait2.jpg";
+  //Merge "testlogs/ExamplePortrait2.jpg";
+  Merge "../../testlogs/ExamplePortrait1.jpg";
   //Plugin(ModifyComponents).Expression0 = "v0 * 10";
   Plugin(ModifyComponents).Expression0 = "1 + v0^2 * 10";
   Plugin(ModifyComponents).Run;
@@ -25,7 +26,8 @@ Line(4) = {4,1};
 Line Loop(5) = {3,4,1,2};
 Plane Surface(6) = {5};
 
-outfile = StrCat(CurrentDirectory, "testlogs/ExamplePortrait2_mesh.jpg");
+//outfile = StrCat(CurrentDirectory, "testlogs/ExamplePortrait2_mesh.jpg");
+outfile = StrCat(CurrentDirectory, "../../testlogs/ExamplePortrait1_mesh.jpg");
 
 DefineConstant[
   algo = {Mesh.Algorithm, AutoCheck 0, GmshOption "Mesh.Algorithm",
@@ -37,7 +39,8 @@ DefineConstant[
   sizeMin = {Mesh.CharacteristicLengthMin, AutoCheck 0,
     GmshOption "Mesh.CharacteristicLengthMin", Min w/100, Max w, Step 0.1,
     Name "Meshing parameters/Minimum element size"},
-  save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "testlogs/ExamplePortrait2_mesh.jpg';"),
+  //save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "testlogs/ExamplePortrait1_mesh.jpg';"),
+  save = {StrCat("View.ShowScale=0;Print '", CurrentDirectory, "../../testlogs/ExamplePortrait2_mesh.jpg';"),
     AutoCheck 0, Macro "GmshParseString",
     Name "Save PNG"}
 ];

@@ -132,7 +132,7 @@ def face_recognition_image_segmentation_contours(imagefile1):
     return (contours1,contour1polys)
 
 
-def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
+def face_recognition_image_segmentation(imagefile,fromlandmarks=True,bezier_animation=False):
     contours = face_recognition_image_segmentation_contours(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -236,36 +236,45 @@ def face_recognition_image_segmentation(imagefile,fromlandmarks=True):
             voronoifacet = Polygon(polygon)
             print(("Voronoi Facet Area:",voronoifacet.area))
             voronoifacetareas.append(voronoifacet.area)
-    nx.draw_networkx(facegraph)
+    #nx.draw_networkx(facegraph)
     if fromlandmarks:
         draw_voronoi_tessellation(img,landmarkcentroids)
         delaunaymesh=draw_delaunay_triangulation(img,triangles)
     else:
         draw_voronoi_tessellation(img,contourcentroids)
         delaunaymesh=draw_delaunay_triangulation(img,triangles)
-    network=Network("1000px","1000px")
-    network.from_nx(delaunaymesh)
-    imagetok=imagefile.split(".")
-    network.show(imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.html")
+    if bezier_animation:
+        network=Network("1000px","1000px")
+        network.from_nx(delaunaymesh)
+        imagetok=imagefile.split(".")
+        network.show(imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.html")
     plt.show()
+    imagetok=imagefile.split(".")
     write_dot(facegraph, imagetok[0] + "_FaceRecognition_Segmentation_FaceGraph.dot")
     cv2.imwrite(imagetok[0] + "-tessellated.jpg",img)
     cv2.waitKey()
     return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph, sorted(voronoifacetareas), delaunaymesh)
 
-def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism_iterations=25,ismagssymmetry=False,GED=False):
+def facegraph_similarity_metrics(image1name,image2name,image1,image2,isomorphism_iterations=25,ismagssymmetry=False,GED=False,approximate_topological_match=True,match_fraction=0.000001):
     print("====================================================")
     try:
         imageEMDsimilarity1=wasserstein_distance(image1[9],image2[9])
         print("EMD Similarity between Voronoi Facet Areas of the images - ",image1name," and ",image2name,":",imageEMDsimilarity1)
     except:
         print("EMD Similarity exception")
-    epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
-    approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
-    epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
-    approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
-    imageContourDPsimilarity=directed_hausdorff(approx1[0], approx2[0])
-    print(("Hausdorff Distance between DP polynomials approximating two facial image contours - ",image1name," and ",image2name,":", imageContourDPsimilarity))
+    if approximate_topological_match:
+        print("=================================")
+        print("Approximate Topological Match:")
+        print("=================================")
+        epsilon1 = 0.1*cv2.arcLength(image1[7][0][0], True)
+        approx1 = cv2.approxPolyDP(image1[7][0][0], epsilon1, True)
+        epsilon2 = 0.1*cv2.arcLength(image2[7][0][0], True)
+        approx2 = cv2.approxPolyDP(image2[7][0][0], epsilon2, True)
+        fractlenapprox1=int(match_fraction*(len(approx1[0])-1)+1)
+        fractlenapprox2=int(match_fraction*(len(approx2[0])-1)+1)
+        imageContourDPsimilarity=directed_hausdorff(approx1[0][:fractlenapprox1], approx2[0][:fractlenapprox2])
+        print(("Hausdorff Distance between DP polynomials approximating two facial image contours (for matching fraction ",match_fraction,") - ",image1name," and ",image2name,":", imageContourDPsimilarity))
+        return
     fastercouldbeisomorphic = nx.faster_could_be_isomorphic(image1[8],image2[8])
     print(("Voronoi FaceGraphs of two facial images are approximate isomorphic - (True or False):",fastercouldbeisomorphic))
     isVoronoiisomorphic = nx.is_isomorphic(image1[8],image2[8])
@@ -728,7 +737,8 @@ if __name__ == "__main__":
     if TopologicalRecognition == True:
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
         # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-        images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
+        #images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
+        images=["image_pattern_mining/ImageNet/testlogs/ExamplePortrait2_mesh.jpg","testlogs/ExamplePortrait1_mesh.jpg"]
         for img1 in images:
             for img2 in images:
                 print("========",img1,"====",img2,"=============")
@@ -737,10 +747,11 @@ if __name__ == "__main__":
         for img in images:
             cvimg=face_recognition_image_segmentation(img)
             cvimages.append(cvimg)
-        for x in range(len(images)-1):
-            for y in range(len(images)-1):
-                print("========",images[x],"====",images[y],"=============")
-                facegraph_similarity_metrics(images[x],images[y],cvimages[x],cvimages[y],isomorphism_iterations=0)
+        facegraph_similarity_metrics(images[0],images[1],cvimages[0],cvimages[1],isomorphism_iterations=0)
+        #for x in range(len(images)-1):
+        #    for y in range(len(images)-1):
+        #        print("========",images[x],"====",images[y],"=============")
+        #        facegraph_similarity_metrics(images[x],images[y],cvimages[x],cvimages[y],isomorphism_iterations=0)
         exit()
 
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
