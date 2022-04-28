@@ -18,6 +18,7 @@
 
 import cv2
 from keras.applications import ResNet50
+from keras.applications.resnet_v2 import ResNet50V2
 import tensorly as tly
 from tensorly.decomposition import non_negative_parafac
 from sklearn.feature_extraction.image import extract_patches_2d
@@ -95,24 +96,30 @@ def histogram_partition_distance_similarity(imagefile1,imagefile2,type="EMD"):
         print(("EMD Histogram distance similarity between images - " + imagefile1 + " and " + imagefile2 +" :",distance_emd))
 
 def imagenet_imagegraph(imagefile):
+    print("imagenet_imagegraph(): ",imagefile)
     im1 = image.load_img(imagefile, target_size=(224, 224))
     im1array = image.img_to_array(im1)
     im1array = np.expand_dims(im1array, axis=0)
     im1array = preprocess_input(im1array)
-    model = ResNet50(weights="imagenet")
-    preds = model.predict(im1array)
-    decodepreds = decode_predictions(preds)
-    print(("Predictions:", decodepreds))
-    image_to_text = ""
-    for pred in decodepreds[0]:
-        image_to_text += " "
-        image_to_text += pred[1]
-    imagegraph = RecursiveGlossOverlapGraph(image_to_text)
-    print(("ImageGraph:", imagegraph))
-    imageclasses = RecursiveGlossOverlap_Classify(image_to_text)
-    print(("Unsupervised Image Classes:", imageclasses))
-    return (imagegraph, imageclasses)
-
+    models = {"ResNet50":ResNet50(weights="imagenet"),"ResNet50V2":ResNet50V2(weights="imagenet")}
+    imagegrapharray = []
+    imageclassesarray = []
+    for modelname,model in models.items():
+        preds = model.predict(im1array)
+        decodepreds = decode_predictions(preds,top=5)
+        #decodepreds = decode_predictions(preds,top=1)
+        print(("Predictions - ",modelname,":", decodepreds))
+        image_to_text = ""
+        for pred in decodepreds[0]:
+             image_to_text += " "
+             image_to_text += pred[1]
+        imagegraph = RecursiveGlossOverlapGraph(image_to_text)
+        imagegrapharray.append(imagegraph)
+        print(("ImageGraph:", imagegraph))
+        imageclasses = RecursiveGlossOverlap_Classify(image_to_text)
+        imageclassesarray.append(imageclasses)
+        print(("Unsupervised Image Classes:", imageclasses))
+    return (imagegrapharray, imageclassesarray)
 
 def imagenet_videograph(videofile, maxframes, write_eventnet=False):
     vid = cv2.VideoCapture(videofile)
@@ -547,4 +554,5 @@ if __name__ == "__main__":
     # for im in test_images:
     #    imagenet_imagegraph(im)
     #imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
-    image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
+    #image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
+    imagenet_imagegraph("testlogs/The_Ten_Indus_Scripts_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg")

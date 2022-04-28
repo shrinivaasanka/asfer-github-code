@@ -1,0 +1,86 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+imagenet_imagegraph():  testlogs/The_Ten_Indus_Scripts_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg
+('Predictions - ', 'ResNet50', ':', [[('n03857828', 'oscilloscope', 0.18934955)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('equipment', 'oscilloscope'), ('oscilloscope', 'equipment'), ('oscilloscope', 'varying'), ('oscilloscope', 'electronic'), ('oscilloscope', 'electrical'), ('oscilloscope', 'images'), ('oscilloscope', 'provides'), ('oscilloscope', 'quantities'), ('oscilloscope', 'visual'), ('varying', 'oscilloscope'), ('electronic', 'oscilloscope'), ('electrical', 'oscilloscope'), ('images', 'oscilloscope'), ('provides', 'oscilloscope'), ('quantities', 'oscilloscope'), ('visual', 'oscilloscope')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7fbe5cb6bd90>, 8400.0))
+2
+defaultdict(<class 'list'>, {'equipment': ['oscilloscope'], 'varying': ['oscilloscope'], 'electronic': ['oscilloscope'], 'electrical': ['oscilloscope'], 'images': ['oscilloscope'], 'provides': ['oscilloscope'], 'quantities': ['oscilloscope'], 'visual': ['oscilloscope']})
+('definitiongraph networkx edges:', OutEdgeView([('equipment', 'oscilloscope'), ('oscilloscope', 'equipment'), ('oscilloscope', 'varying'), ('oscilloscope', 'electronic'), ('oscilloscope', 'electrical'), ('oscilloscope', 'images'), ('oscilloscope', 'provides'), ('oscilloscope', 'quantities'), ('oscilloscope', 'visual'), ('varying', 'oscilloscope'), ('electronic', 'oscilloscope'), ('electrical', 'oscilloscope'), ('images', 'oscilloscope'), ('provides', 'oscilloscope'), ('quantities', 'oscilloscope'), ('visual', 'oscilloscope')]))
+('Core number (sorted) :', [('equipment', 2), ('oscilloscope', 2), ('varying', 2), ('electronic', 2), ('electrical', 2), ('images', 2), ('provides', 2), ('quantities', 2), ('visual', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'equipment', ',core number=', 2)
+('This document belongs to class:', 'oscilloscope', ',core number=', 2)
+('This document belongs to class:', 'varying', ',core number=', 2)
+('This document belongs to class:', 'electronic', ',core number=', 2)
+('This document belongs to class:', 'electrical', ',core number=', 2)
+('This document belongs to class:', 'images', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('oscilloscope', 1.0), ('equipment', 0.0), ('varying', 0.0), ('electronic', 0.0), ('electrical', 0.0), ('images', 0.0), ('provides', 0.0), ('quantities', 0.0), ('visual', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('oscilloscope', 1.0), ('equipment', 0.5333333333333333), ('varying', 0.5333333333333333), ('electronic', 0.5333333333333333), ('electrical', 0.5333333333333333), ('images', 0.5333333333333333), ('provides', 0.5333333333333333), ('quantities', 0.5333333333333333), ('visual', 0.5333333333333333)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('oscilloscope', 2.0), ('equipment', 0.25), ('varying', 0.25), ('electronic', 0.25), ('electrical', 0.25), ('images', 0.25), ('provides', 0.25), ('quantities', 0.25), ('visual', 0.25)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('oscilloscope', 0.46847028616825603), ('equipment', 0.06644121422896798), ('varying', 0.06644121422896798), ('electronic', 0.06644121422896798), ('electrical', 0.06644121422896798), ('images', 0.06644121422896798), ('provides', 0.06644121422896798), ('quantities', 0.06644121422896798), ('visual', 0.06644121422896798)]
+('Unsupervised Image Classes:', ([('equipment', 2), ('oscilloscope', 2), ('varying', 2), ('electronic', 2), ('electrical', 2), ('images', 2), ('provides', 2), ('quantities', 2), ('visual', 2)], [('oscilloscope', 0.46847028616825603), ('equipment', 0.06644121422896798), ('varying', 0.06644121422896798), ('electronic', 0.06644121422896798), ('electrical', 0.06644121422896798), ('images', 0.06644121422896798), ('provides', 0.06644121422896798), ('quantities', 0.06644121422896798), ('visual', 0.06644121422896798)]))
+('Predictions - ', 'ResNet50V2', ':', [[('n02123597', 'Siamese_cat', 0.9940566)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('breed', 'Siamese_cat'), ('Siamese_cat', 'breed'), ('Siamese_cat', 'tip'), ('Siamese_cat', 'short-haired'), ('Siamese_cat', 'dark'), ('Siamese_cat', 'paws'), ('Siamese_cat', 'ears'), ('Siamese_cat', 'pale'), ('Siamese_cat', 'tail'), ('Siamese_cat', 'slender'), ('Siamese_cat', 'face'), ('Siamese_cat', 'coat'), ('Siamese_cat', 'blue-eyed'), ('Siamese_cat', 'cat'), ('tip', 'Siamese_cat'), ('short-haired', 'Siamese_cat'), ('dark', 'Siamese_cat'), ('paws', 'Siamese_cat'), ('ears', 'Siamese_cat'), ('pale', 'Siamese_cat'), ('tail', 'Siamese_cat'), ('slender', 'Siamese_cat'), ('face', 'Siamese_cat'), ('coat', 'Siamese_cat'), ('blue-eyed', 'Siamese_cat'), ('cat', 'Siamese_cat')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7fbe56c94dd0>, 31624.0))
+2
+defaultdict(<class 'list'>, {'breed': ['Siamese_cat'], 'tip': ['Siamese_cat'], 'short-haired': ['Siamese_cat'], 'dark': ['Siamese_cat'], 'paws': ['Siamese_cat'], 'ears': ['Siamese_cat'], 'pale': ['Siamese_cat'], 'tail': ['Siamese_cat'], 'slender': ['Siamese_cat'], 'face': ['Siamese_cat'], 'coat': ['Siamese_cat'], 'blue-eyed': ['Siamese_cat'], 'cat': ['Siamese_cat']})
+('definitiongraph networkx edges:', OutEdgeView([('breed', 'Siamese_cat'), ('Siamese_cat', 'breed'), ('Siamese_cat', 'tip'), ('Siamese_cat', 'short-haired'), ('Siamese_cat', 'dark'), ('Siamese_cat', 'paws'), ('Siamese_cat', 'ears'), ('Siamese_cat', 'pale'), ('Siamese_cat', 'tail'), ('Siamese_cat', 'slender'), ('Siamese_cat', 'face'), ('Siamese_cat', 'coat'), ('Siamese_cat', 'blue-eyed'), ('Siamese_cat', 'cat'), ('tip', 'Siamese_cat'), ('short-haired', 'Siamese_cat'), ('dark', 'Siamese_cat'), ('paws', 'Siamese_cat'), ('ears', 'Siamese_cat'), ('pale', 'Siamese_cat'), ('tail', 'Siamese_cat'), ('slender', 'Siamese_cat'), ('face', 'Siamese_cat'), ('coat', 'Siamese_cat'), ('blue-eyed', 'Siamese_cat'), ('cat', 'Siamese_cat')]))
+('Core number (sorted) :', [('breed', 2), ('Siamese_cat', 2), ('tip', 2), ('short-haired', 2), ('dark', 2), ('paws', 2), ('ears', 2), ('pale', 2), ('tail', 2), ('slender', 2), ('face', 2), ('coat', 2), ('blue-eyed', 2), ('cat', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'breed', ',core number=', 2)
+('This document belongs to class:', 'Siamese_cat', ',core number=', 2)
+('This document belongs to class:', 'tip', ',core number=', 2)
+('This document belongs to class:', 'short-haired', ',core number=', 2)
+('This document belongs to class:', 'dark', ',core number=', 2)
+('This document belongs to class:', 'paws', ',core number=', 2)
+('This document belongs to class:', 'ears', ',core number=', 2)
+('This document belongs to class:', 'pale', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('Siamese_cat', 1.0), ('breed', 0.0), ('tip', 0.0), ('short-haired', 0.0), ('dark', 0.0), ('paws', 0.0), ('ears', 0.0), ('pale', 0.0), ('tail', 0.0), ('slender', 0.0), ('face', 0.0), ('coat', 0.0), ('blue-eyed', 0.0), ('cat', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('Siamese_cat', 1.0), ('breed', 0.52), ('tip', 0.52), ('short-haired', 0.52), ('dark', 0.52), ('paws', 0.52), ('ears', 0.52), ('pale', 0.52), ('tail', 0.52), ('slender', 0.52), ('face', 0.52), ('coat', 0.52), ('blue-eyed', 0.52), ('cat', 0.52)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('Siamese_cat', 2.0), ('breed', 0.15384615384615385), ('tip', 0.15384615384615385), ('short-haired', 0.15384615384615385), ('dark', 0.15384615384615385), ('paws', 0.15384615384615385), ('ears', 0.15384615384615385), ('pale', 0.15384615384615385), ('tail', 0.15384615384615385), ('slender', 0.15384615384615385), ('face', 0.15384615384615385), ('coat', 0.15384615384615385), ('blue-eyed', 0.15384615384615385), ('cat', 0.15384615384615385)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('Siamese_cat', 0.4652537378175503), ('breed', 0.04113432786018844), ('tip', 0.04113432786018844), ('short-haired', 0.04113432786018844), ('dark', 0.04113432786018844), ('paws', 0.04113432786018844), ('ears', 0.04113432786018844), ('pale', 0.04113432786018844), ('tail', 0.04113432786018844), ('slender', 0.04113432786018844), ('face', 0.04113432786018844), ('coat', 0.04113432786018844), ('blue-eyed', 0.04113432786018844), ('cat', 0.04113432786018844)]
+('Unsupervised Image Classes:', ([('breed', 2), ('Siamese_cat', 2), ('tip', 2), ('short-haired', 2), ('dark', 2), ('paws', 2), ('ears', 2), ('pale', 2), ('tail', 2), ('slender', 2), ('face', 2), ('coat', 2), ('blue-eyed', 2), ('cat', 2)], [('Siamese_cat', 0.4652537378175503), ('breed', 0.04113432786018844), ('tip', 0.04113432786018844), ('short-haired', 0.04113432786018844), ('dark', 0.04113432786018844), ('paws', 0.04113432786018844), ('ears', 0.04113432786018844), ('pale', 0.04113432786018844), ('tail', 0.04113432786018844), ('slender', 0.04113432786018844), ('face', 0.04113432786018844), ('coat', 0.04113432786018844), ('blue-eyed', 0.04113432786018844), ('cat', 0.04113432786018844)]))
