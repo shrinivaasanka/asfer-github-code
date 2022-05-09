@@ -45,8 +45,6 @@ import os
 from scipy.interpolate import splprep, splev
 import numpy
 from sympy.combinatorics.partitions import Partition
-#os.environ['KERAS_BACKEND'] = 'theano'
-os.environ['KERAS_BACKEND'] = 'tensorflow'
 from ImageGraph_Keras_Theano import image_segmentation 
 from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 import random
@@ -54,6 +52,9 @@ from GraphMining_GSpan import GSpan
 from scipy.stats import wasserstein_distance 
 from shapely.geometry import Polygon
 from scipy import stats
+
+os.environ['KERAS_BACKEND'] = 'theano'
+#os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=1000):
     for newsegment in range(len(segmentedgis[7][0]) - 1):

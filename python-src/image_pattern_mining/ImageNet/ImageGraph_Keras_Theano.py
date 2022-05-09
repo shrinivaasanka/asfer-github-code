@@ -46,8 +46,11 @@ import os
 from scipy.interpolate import splprep, splev
 import numpy
 from sympy.combinatorics.partitions import Partition
-#os.environ['KERAS_BACKEND'] = 'theano'
-os.environ['KERAS_BACKEND'] = 'tensorflow'
+import DBSCANClustering
+import GISUrbanSprawlAnalytics
+
+os.environ['KERAS_BACKEND'] = 'theano'
+#os.environ['KERAS_BACKEND'] = 'tensorflow'
 
 
 def medical_imageing(image_source, imagefile):
@@ -429,8 +432,14 @@ def image_segmentation(imagefile):
             facegraph.add_edge(firstpoint, prevpoint)
     #nx.draw_networkx(facegraph)
     plt.show()
+    GISUrbanSprawlAnalytics.draw_voronoi_tessellation(img,contourcentroids)
+    GISUrbanSprawlAnalytics.draw_delaunay_triangulation(img,triangles)
+    imagetok1=imagefile.split(".")
+    imagetok2=imagetok1[0].split("/")
+    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
+    cv2.waitKey()
     write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
-    return (ret, markers, labels, stats, centroids, facets, triangles, contours, facegraph)
+    return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph)
 
 
 def random_forest_image_classification(
@@ -555,4 +564,13 @@ if __name__ == "__main__":
     #    imagenet_imagegraph(im)
     #imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
     #image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
-    imagenet_imagegraph("testlogs/The_Ten_Indus_Scripts_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg")
+    #imagenet_imagegraph("testlogs/The_Ten_Indus_Scripts_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg")
+    histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    dbscan1=DBSCANClustering.DBSCAN("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
+    dbscan2=DBSCANClustering.DBSCAN("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    dbscan1.clustering()
+    dbscan2.clustering()
+    dbscan1.write_clustered_image(neuralnetwork=False)
+    dbscan2.write_clustered_image(neuralnetwork=False)
+    seg1=image_segmentation("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
+    seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
