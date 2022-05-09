@@ -18568,3 +18568,32 @@ References:
 			A B - inscription1 and textgraph1 for its ImageNet predictions
 			B C - inscription2 and textgraph2 for its ImageNet predictions
 set intersection of textgraph1 and textgraph2 from ImageNet predictions of 2 inscriptions isolates the meaning of script B.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1239. (THEORY and FEATURE) Merit of Large Scale Visuals - Astronomy Analytics - DBSCAN Clustering and Segmentation analysis of sky imageries
+for 2 high magnitude seismic events - 9 May 2022 and 10 May 2022 - related to 3,6,8,15,16,59,62,63,147,148 and all sections on analytics of
+textually encoded astronomical datasets, Various algorithms for string analytics, climate analytics, weather analytics, N-Body problem,
+Computational Astrophysics, Computational Geometry
+--------------------------------------------------------------------------------------------------------------------------------------------
+1239.1 NeuronRain has so far been confined to analytics of textual astronomical datasets correlated to terrestial extreme weather events, which are encoded strings of degree alignments (N-body choreography) of celestial bodies on zodiac obtained from an ephemeris client (NASA JPL ephemeris - Maitreya's Dreams Text Client).
+1239.2 This commit extends astronomy analytics to sky imagery of celestial bodies sourced from Planetarium software. Astronomical imagery of celestial bodies are scatterplots of distant objects (constellations,planets,meteor showers are usually circles of varying radii spread out on sky) and visual clustering and segmentation algorithms viz., DBSCAN, Watershed segmentation, Chain approximation contour detection could be suited for classifying the point celestial objects into en-masse clusters. Each cluster thus found is a candidate for gravitational influence on earth's tectonics which in a sense generalizes 12 house static zodiac division over 360 degrees of 30 degrees each, to a sky arbitrarily divided by clustering and segmentation algorithms based on density of objects.
+1239.3 Celestial objects for two high richter scale seismic events and two of the top 10 high deathtoll disasters ever - Tangshan earthquake of 26 July 1976 and Boxing Day Sumatra earthquake of 26 December 2004 (both coinciding with fullmoon or newmoon - fullmoon or newmoon is often cited as prerequisite for a seismic event possibly exacerbated by a solar or lunar eclipse) - have been plotted in The Sky Live planetarium as observed from respective epicentres and captured in two JPG files (includes both above horizon and below horizon bodies) - SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg (7:58 am local time) and SkyLive_TangshanEarthQuake_28July1976_0342.jpg (3:42 am local time) 
+1239.4 Image segmentation in ImageGraph_Keras_Theano.py has been changed to include Delaunay Triangulation and Voronoi Tessellation plots for an image imported from GISUrbanSprawlAnalytics.py. Keras backend has been set to Theano. Return value tuple of image_segmentation() has been updated to return img ndarray and contourcentroids instead of GRANA centroids.
+1239.5 Following computation has been performed on 2 seismic events sky imagery (logs,Voronoi and Delaunay imagery,DBSCAN clustering imagery, Neural network clustering imagery,DOT files of the facegraphs):
+	1239.5.1 Histogram Earth Mover Distance similarity between how sky looked like when two seismic events struck - testlogs/ImageGraph_Keras_Theano.AstronomicalImagery.log.9May2022 - ('EMD Histogram distance similarity between images - testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg and testlogs/SkyLive_ TangshanEarthQuake_28July1976_0342.jpg :', (7.763535976409912, None, array([[1., 0., 0., ..., 0., 0., 0.]...)
+	1239.5.2 DBSCAN clustering of the two sky imagery - testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758_dbscanclustered.jpg, testlogs/SkyLive_TangshanEarthQuake_28July1976_0342_dbscanclustered.jpg - number of DBSCAN clusters differ slightly between two imagery as:
+		number of DBSCAN density clusters: 104719
+		size of image: 869031
+		size of dbscandict: 446804
+		number of DBSCAN density clusters: 105352
+		size of image: 869031
+		size of dbscandict: 446813
+	1239.5.3 Neural network clustering of the two sky imagery - testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758_neuralnetworkclustered.jpg, testlogs/SkyLive_TangshanEarthQuake_28July1976_0342_neuralnetworkclustered.jpg
+	1239.5.4 Watershed segmentation of the two sky imagery - testlogs/RemoteSensingGIS/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758_segmented.jpg, testlogs/RemoteSensingGIS/SkyLive_TangshanEarthQuake_28July1976_0342_segmented.jpg
+	1239.5.5 Voronoi tessellation and Delaunay triangulation around centroids of Chain approximation contours of the two sky imagery - testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758-contourlabelled.jpg, testlogs/SkyLive_TangshanEarthQuake_28July1976_0342-contourlabelled.jpg
+	1239.5.6 DOT files of the facegraphs of 2 imagery - testlogs/RemoteSensingGIS/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot, testlogs/RemoteSensingGIS/SkyLive_TangshanEarthQuake_28July1976_0342_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+1239.6 Of all the clustering data earlier, Watershed segmentation imagery has computed a remarkable visual demarcation of celestial clustering compared to DBSCAN clustering, Neural network clustering, Voronoi-Delaunay tessellation pivoted around Chain approximation contour centroids (which is too fine-grained mesh). Additionally what catches the attention is the unusually high number of meteor showers in Tangshan imagery though clustering is sparse (7.5 richter), while Sumatra imagery has noticeable clustering of bodies around Milky way and less meteor showers (9.1 richter).
+
+References:
+----------
+1239.7 The Sky Live - Online Planetarium - https://theskylive.com/planetarium
