@@ -48,6 +48,7 @@ import numpy
 from sympy.combinatorics.partitions import Partition
 import DBSCANClustering
 import GISUrbanSprawlAnalytics
+from GraphMining_GSpan import GSpan
 
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
@@ -123,6 +124,10 @@ def imagenet_imagegraph(imagefile):
         imageclassesarray.append(imageclasses)
         print(("Unsupervised Image Classes:", imageclasses))
     return (imagegrapharray, imageclassesarray)
+
+def frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphs):
+    gspan = GSpan(imagegraphs)
+    gspan.GraphSet_Projection()
 
 def imagenet_videograph(videofile, maxframes, write_eventnet=False):
     vid = cv2.VideoCapture(videofile)
@@ -564,13 +569,19 @@ if __name__ == "__main__":
     #    imagenet_imagegraph(im)
     #imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
     #image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
-    #imagenet_imagegraph("testlogs/The_Ten_Indus_Scripts_discovered_near_the_northern_gateway_of_the_Dholavira_citadel.jpg")
-    histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
-    dbscan1=DBSCANClustering.DBSCAN("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
-    dbscan2=DBSCANClustering.DBSCAN("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
-    dbscan1.clustering()
-    dbscan2.clustering()
-    dbscan1.write_clustered_image(neuralnetwork=False)
-    dbscan2.write_clustered_image(neuralnetwork=False)
-    seg1=image_segmentation("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
-    seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    imagegraph1=imagenet_imagegraph("testlogs/unicorn-seal_0.jpg")
+    imagegraph2=imagenet_imagegraph("testlogs/bagasra-unicorn-seal.jpg")
+    imagegraph3=imagenet_imagegraph("testlogs/unicorn-seal_1_5.jpg")
+    imagegraphsResNet50=[imagegraph1[0][0][0],imagegraph2[0][0][0],imagegraph3[0][0][0]]
+    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
+    imagegraphsResNet50V2=[imagegraph1[0][1][0],imagegraph2[0][1][0],imagegraph3[0][1][0]]
+    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50V2)
+    #histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    #dbscan1=DBSCANClustering.DBSCAN("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
+    #dbscan2=DBSCANClustering.DBSCAN("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    #dbscan1.clustering()
+    #dbscan2.clustering()
+    #dbscan1.write_clustered_image(neuralnetwork=False)
+    #dbscan2.write_clustered_image(neuralnetwork=False)
+    #seg1=image_segmentation("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
+    #seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
