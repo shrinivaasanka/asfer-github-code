@@ -45,8 +45,8 @@ import os
 from scipy.interpolate import splprep, splev
 import numpy
 from sympy.combinatorics.partitions import Partition
-from ImageGraph_Keras_Theano import image_segmentation 
-from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
+import ImageGraph_Keras_Theano
+#from ImageGraph_Keras_Theano import histogram_partition_distance_similarity 
 import random
 from GraphMining_GSpan import GSpan
 from scipy.stats import wasserstein_distance 
@@ -211,8 +211,8 @@ if __name__ == "__main__":
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
     #seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
     #seg4=image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg")
-    #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
-    #histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
+    #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
+    #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
     #urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
@@ -245,8 +245,9 @@ if __name__ == "__main__":
     #mapscale=147914382
     mapscale=266.0/854.0
     #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
-    seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
-    urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
-    fourcoloredsegments=defaultdict(list)
-    fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
-    print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
+    #seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
+    #urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
+    #fourcoloredsegments=defaultdict(list)
+    #fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
+    #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
+    seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
