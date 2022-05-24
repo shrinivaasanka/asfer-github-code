@@ -100,7 +100,8 @@ def draw_voronoi_tessellation(img,centroids):
             except:
                 continue
 
-def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22):
+
+def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
@@ -184,8 +185,9 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
         ax = fig1.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
         cityid += 1
-    draw_voronoi_tessellation(img,centroids)
-    draw_delaunay_triangulation(img,segment[6])
+    if voronoi_delaunay:
+        draw_voronoi_tessellation(img,centroids)
+        draw_delaunay_triangulation(img,segment[6])
     print("Rankings of Urban Areas - sorted contour areas:")
     print(sorted(UrbanSprawlAreas))
     plt.show()
@@ -251,3 +253,4 @@ if __name__ == "__main__":
     #fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
     #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
     seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
+    ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11)

@@ -333,6 +333,76 @@ def analyze_remotesensing_2d_patches(
         img_hist = np.histogram(patches.flatten())
         print(("Patch histogram :", imagefile, ":", img_hist))
 
+def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterations=3):
+    clusters=defaultdict(list)
+    converged=False
+    centroids=[]
+    cluster_id=0
+    refcontour=segment[8][0][1]
+    for n in range(len(segment[8][0])-1):
+        clusters[cluster_id].append(segment[8][0][n])
+        cluster_id = (cluster_id + 1) % number_of_clusters
+    for cluster_id in range(number_of_clusters):
+        centroids.append(clusters[cluster_id][0])
+    cluster_id=0
+    iteration=0
+    while iteration < maxiterations or not converged:
+        #print("clusters:",clusters)
+        #print("centroids:",centroids)
+        for cluster_id in range(number_of_clusters):
+            for contour in clusters[cluster_id]:
+                distance_to_other_centroids=[]
+                minimum_topological_distance=1000000000000000.0
+                closest_cluster_id=0     
+                for centroid_id in range(number_of_clusters):
+                    #print("contour:",contour)
+                    #print("centroids[centroid_id]:",centroids[centroid_id])
+                    top_dist=directed_hausdorff(contour[0],centroids[centroid_id][0])
+                    distance_to_other_centroids.append(top_dist)
+                    if minimum_topological_distance > top_dist[0]:
+                        minimum_topological_distance=top_dist[0]
+                        closest_cluster_id=centroid_id                                
+                converged=True
+                moved_contour=contour
+                if closest_cluster_id != cluster_id:
+                    clusters[closest_cluster_id].append(moved_contour)
+                    #print("clusters[cluster_id]:",clusters[cluster_id])
+                    #clusters[cluster_id].remove(moved_contour)
+                    curtailed_cluster=[]
+                    for cont in clusters[cluster_id]:
+                        #print("cont:",cont)
+                        #print("moved_contour:",moved_contour)
+                        #print("cont == moved_contour:",cont == moved_contour)
+                        try:
+                            if (cont == moved_contour)[0][0][0] == False:
+                                 curtailed_cluster.append(cont)
+                        except TypeError:
+                                 curtailed_cluster.append(cont)
+                    clusters[cluster_id]=curtailed_cluster
+                    converged=False
+        sumdist=0
+        for cluster_id in range(number_of_clusters):
+            for contour in clusters[cluster_id]:
+                sumdist += directed_hausdorff(contour[0],refcontour[0])[0] 
+            centroid_distance = sumdist / len(clusters[cluster_id])
+            mindistdiff = 50000.0
+            for contour in clusters[cluster_id]:
+                dist = directed_hausdorff(contour[0],refcontour[0])[0]
+                if abs(dist-centroid_distance) < mindistdiff:
+                    mindistdiff = abs(dist-centroid_distance)
+                    centroids[cluster_id]=contour
+            sumdist=0
+        iteration += 1
+    if converged:
+        for cluster_id in range(number_of_clusters):
+            for contour in clusters[cluster_id]:
+                cv2.drawContours(segment[1],contour,-1,(0,(10 * cluster_id) % 255,0),2)
+    plt.show()
+    imagetok1=imagefile.split(".")
+    imagetok2=imagetok1[0].split("/")
+    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
+    cv2.waitKey()
+    print("contour polynomial clusters:",clusters)
 
 def image_segmentation_contours(imagefile1):
     img1 = cv2.imread(imagefile1, 0)
@@ -368,7 +438,7 @@ def image_segmentation_contours(imagefile1):
     return (contours1,contour1polys)
 
 
-def image_segmentation(imagefile):
+def image_segmentation(imagefile,voronoi_delaunay=False):
     contours = image_segmentation_contours(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -423,7 +493,7 @@ def image_segmentation(imagefile):
         for facet in facets[n]:
             for point in facet:
                 try:
-                    print("point:",point)
+                    #print("point:",point)
                     firstvertex = True
                     if firstvertex:
                        prevpoint = str(point[0]) + "#" + str(point[1])
@@ -437,8 +507,9 @@ def image_segmentation(imagefile):
             facegraph.add_edge(firstpoint, prevpoint)
     #nx.draw_networkx(facegraph)
     plt.show()
-    GISUrbanSprawlAnalytics.draw_voronoi_tessellation(img,contourcentroids)
-    GISUrbanSprawlAnalytics.draw_delaunay_triangulation(img,triangles)
+    if voronoi_delaunay:
+        GISUrbanSprawlAnalytics.draw_voronoi_tessellation(img,contourcentroids)
+        GISUrbanSprawlAnalytics.draw_delaunay_triangulation(img,triangles)
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
     cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
