@@ -1,0 +1,236 @@
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 92999829938238982389163727672335, '(', 106.19699901958391, ' bits integer) are:')
+factorization start (in nanoseconds): 1653652427997650226
+tiles_start: 1
+tiles_end: 4007
+tiles_start: 4007
+tiles_end: 8014
+tiles_start: 8014
+tiles_end: 12021
+tiles_start: 12021
+tiles_end: 16028
+tiles_start: 16028
+tiles_end: 20035
+tiles_start: 20035
+tiles_end: 24042
+tiles_start: 24042
+tiles_end: 28049
+tiles_start: 28049
+tiles_end: 32056
+tiles_start: 32056
+tiles_end: 36063
+tiles_start: 36063
+tiles_end: 40070
+tiles_start: 40070
+tiles_end: 44077
+tiles_start: 44077
+tiles_end: 48084
+tiles_start: 48084
+tiles_end: 52091
+tiles_start: 52091
+tiles_end: 56098
+tiles_start: 56098
+tiles_end: 60105
+tiles_start: 60105
+tiles_end: 64112
+tiles_start: 64112
+tiles_end: 68119
+tiles_start: 68119
+tiles_end: 72126
+tiles_start: 72126
+tiles_end: 76133
+tiles_start: 76133
+tiles_end: 80140
+tiles_start: 80140
+tiles_end: 84147
+tiles_start: 84147
+tiles_end: 88154
+ DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 92999829938238982389163727672335 7 False > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log2.27May2022
+=================================================
+xl + intervalmidpoint =  92999829938238982389163727672335
+xl =  92999829938238982389163727672334
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 1, ',', 92999829938238982389163727672335, ') (at ', 'Fri, 27 May 2022 11:53:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4836208736
+=================================================
+=================================================
+xl + intervalmidpoint =  18599965987647796477832745534467
+xl =  18599965987647796477832745534466
+yl =  5
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 5, ',', 18599965987647796477832745534467, ') (at ', 'Fri, 27 May 2022 11:53:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4840717397
+=================================================
+=================================================
+xl + intervalmidpoint =  8454529994385362035378520697485
+xl =  8454529994385362035378520697483
+yl =  11
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 11, ',', 8454529994385362035378520697485, ') (at ', 'Fri, 27 May 2022 11:53:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4847334309
+=================================================
+=================================================
+xl + intervalmidpoint =  1690905998877072407075704139497
+xl =  1690905998877072407075704139496
+yl =  55
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 55, ',', 1690905998877072407075704139497, ') (at ', 'Fri, 27 May 2022 11:53:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4884878815
+=================================================
+=================================================
+xl + intervalmidpoint =  650348461106566310413732361345
+xl =  650348461106566310413732361344
+yl =  143
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 143, ',', 650348461106566310413732361345, ') (at ', 'Fri, 27 May 2022 11:53:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4957073757
+=================================================
+=================================================
+xl + intervalmidpoint =  228500810659063838794014072905
+xl =  228500810659063838794014072903
+yl =  407
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 407, ',', 228500810659063838794014072905, ') (at ', 'Fri, 27 May 2022 11:53:53 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5168464553
+=================================================
+=================================================
+xl + intervalmidpoint =  193346839788438632825704215535
+xl =  193346839788438632825704215530
+yl =  481
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 481, ',', 193346839788438632825704215535, ') (at ', 'Fri, 27 May 2022 11:53:53 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5226838768
+=================================================
+=================================================
+xl + intervalmidpoint =  51466424979656326723388891905
+xl =  51466424979656326723388891900
+yl =  1807
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 1807, ',', 51466424979656326723388891905, ') (at ', 'Fri, 27 May 2022 11:53:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6416920607
+=================================================
+=================================================
+xl + intervalmidpoint =  45700162131812767758802814581
+xl =  45700162131812767758802814580
+yl =  2035
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 2035, ',', 45700162131812767758802814581, ') (at ', 'Fri, 27 May 2022 11:53:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6638693440
+=================================================
+=================================================
+xl + intervalmidpoint =  18082797965825195875785286345
+xl =  18082797965825195875785286340
+yl =  5143
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 5143, ',', 18082797965825195875785286345, ') (at ', 'Fri, 27 May 2022 11:53:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  9320776930
+=================================================
+=================================================
+xl + intervalmidpoint =  17576985435312602984154928685
+xl =  17576985435312602984154928680
+yl =  5291
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 5291, ',', 17576985435312602984154928685, ') (at ', 'Fri, 27 May 2022 11:53:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  9429906794
+=================================================
+=================================================
+xl + intervalmidpoint =  12164791358827859043710101723
+xl =  12164791358827859043710101722
+yl =  7645
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 7645, ',', 12164791358827859043710101723, ') (at ', 'Fri, 27 May 2022 11:53:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  11220634081
+=================================================
+=================================================
+xl + intervalmidpoint =  10293284995931265344677778381
+xl =  10293284995931265344677778380
+yl =  9035
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 9035, ',', 10293284995931265344677778381, ') (at ', 'Fri, 27 May 2022 11:54:00 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  12386992797
+=================================================
+=================================================
+xl + intervalmidpoint =  4678883594280100845936970464
+xl =  4678765907241484247580808355
+yl =  19877
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 19877, ',', 4678765907241484247580808355, ') (at ', 'Fri, 27 May 2022 11:54:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  20578844439
+=================================================
+=================================================
+xl + intervalmidpoint =  3616629910469308210760867291
+xl =  3616559593165039175157057269
+yl =  25715
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 25715, ',', 3616559593165039175157057269, ') (at ', 'Fri, 27 May 2022 11:54:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  25006368354
+=================================================
+=================================================
+xl + intervalmidpoint =  3515463525622527070232044683
+xl =  3515397087062520596830985737
+yl =  26455
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 26455, ',', 3515397087062520596830985737, ') (at ', 'Fri, 27 May 2022 11:54:13 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  25541214561
+=================================================
+=================================================
+xl + intervalmidpoint =  2577422015787942420259739910
+xl =  2577386302087935659151504245
+yl =  36083
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 36083, ',', 2577386302087935659151504245, ') (at ', 'Fri, 27 May 2022 11:54:20 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  32776405996
+=================================================
+=================================================
+xl + intervalmidpoint =  1643905252842741034388772681
+xl =  1643890724165926897798662395
+yl =  56573
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 56573, ',', 1643890724165926897798662395, ') (at ', 'Fri, 27 May 2022 11:54:35 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  47683553951
+=================================================
+=================================================
+xl + intervalmidpoint =  1390994861126642938002418529
+xl =  1390984458909630451983483565
+yl =  66859
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 66859, ',', 1390984458909630451983483565, ') (at ', 'Fri, 27 May 2022 11:54:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  55011908592
+=================================================
+Traceback (most recent call last):
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 413, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]))
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 391, in SearchTiles_and_Factorize
+    tilesearch_nonpersistent)
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 862, in foreach
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1141, in count
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1132, in sum
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1003, in fold
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 889, in collect
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1303, in __call__
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+  File "/usr/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/context.py", line 279, in signal_handler
+KeyboardInterrupt

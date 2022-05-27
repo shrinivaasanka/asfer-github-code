@@ -16,7 +16,7 @@
 # Personal website(research): https://sites.google.com/site/kuja27/
 # --------------------------------------------------------------------------------------------------------
 
-from time import gmtime, strftime
+from time import gmtime, strftime, time_ns
 from pyspark.sql import SQLContext, Row, SparkSession
 from pyspark.accumulators import AccumulatorParam
 import decimal
@@ -40,6 +40,7 @@ factors_accum = None
 factors_of_n = []
 spcon = None
 
+factorization_start=time_ns()
 
 class VectorAccumulatorParam(AccumulatorParam):
     def zero(self, value):
@@ -130,6 +131,7 @@ def hyperbolic_arc_rasterization(n):
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr):
     global factors_accum
+    global factorization_start
     sys.setrecursionlimit(30000)
     intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
     #print "intervalmidpoint = ",intervalmidpoint
@@ -151,6 +153,8 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
             if factorcriterion2 == True:
                 print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            factorization_present=time_ns()
+            print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
             print("=================================================")
             factors_accum.add(xl)
             factors_accum.add(yl)
@@ -346,6 +350,7 @@ def SearchTiles_and_Factorize(n, k):
     global globalcoordinates
     global factors_accum
     global spcon
+    global factorization_start
 
     spcon = SparkSession.builder.master("local[4]").appName(
         "Spark Factorization").getOrCreate().sparkContext
@@ -361,6 +366,8 @@ def SearchTiles_and_Factorize(n, k):
         paralleltileintervals = spcon.parallelize(tileintervalslist)
         paralleltileintervals.foreach(tilesearch)
     else:
+        factorization_start=time_ns()
+        print("factorization start (in nanoseconds):",factorization_start)
         factorsfile = open(
             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
         # hardy_ramanujan_ray_shooting_queries(n)
