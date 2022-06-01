@@ -1,0 +1,565 @@
+python3.7 MaitreyaEncHoro_RuleSearch.py --min_year 2022 --min_month 6 --min_days 1 --min_hours 10 --min_minutes 10 --min_seconds 10 --min_long 77 --min_lat 7 --max_year 2022 --max_month 6 --max_days 1 --max_hours 10 --max_minutes 10 --max_seconds 10 --max_long 78 --max_lat 10 2>&1 > testlogs/MaitreyaEncHoro_RuleSearch.PlanetariumSearch.log.1June2022
+
+[('--min_year', '2022'), ('--min_month', '6'), ('--min_days', '1'), ('--min_hours', '10'), ('--min_minutes', '10'), ('--min_seconds', '10'), ('--min_long', '77'), ('--min_lat', '7'), ('--max_year', '2022'), ('--max_month', '6'), ('--max_days', '1'), ('--max_hours', '10'), ('--max_minutes', '10'), ('--max_seconds', '10'), ('--max_long', '78'), ('--max_lat', '10')]
+[]
+--min_year
+2022
+--min_month
+6
+--min_days
+1
+--min_hours
+10
+--min_minutes
+10
+--min_seconds
+10
+--min_long
+77
+--min_lat
+7
+--max_year
+2022
+--max_month
+6
+--max_days
+1
+--max_hours
+10
+--max_minutes
+10
+--max_seconds
+10
+--max_long
+78
+--max_lat
+10
+__iter__: 77 78
+next_datetime:  2022-06-02 10:10:10
+77.0 7.0
+next_datetime:  2022-06-02 10:10:10
+77.0 7.1
+next_datetime:  2022-06-02 10:10:10
+77.0 7.2
+next_datetime:  2022-06-02 10:10:10
+77.0 7.3
+next_datetime:  2022-06-02 10:10:10
+77.0 7.4
+next_datetime:  2022-06-02 10:10:10
+77.0 7.5
+next_datetime:  2022-06-02 10:10:10
+77.0 7.6
+next_datetime:  2022-06-02 10:10:10
+77.0 7.7
+next_datetime:  2022-06-02 10:10:10
+77.0 7.8
+next_datetime:  2022-06-02 10:10:10
+77.0 8.0
+next_datetime:  2022-06-02 10:10:10
+77.0 8.1
+next_datetime:  2022-06-02 10:10:10
+77.0 8.2
+next_datetime:  2022-06-02 10:10:10
+77.0 8.3
+next_datetime:  2022-06-02 10:10:10
+77.0 8.4
+next_datetime:  2022-06-02 10:10:10
+77.0 8.5
+next_datetime:  2022-06-02 10:10:10
+77.0 8.6
+next_datetime:  2022-06-02 10:10:10
+77.0 8.7
+next_datetime:  2022-06-02 10:10:10
+77.0 8.8
+next_datetime:  2022-06-02 10:10:10
+77.0 9.0
+next_datetime:  2022-06-02 10:10:10
+77.0 9.1
+next_datetime:  2022-06-02 10:10:10
+77.0 9.2
+next_datetime:  2022-06-02 10:10:10
+77.0 9.3
+next_datetime:  2022-06-02 10:10:10
+77.0 9.4
+next_datetime:  2022-06-02 10:10:10
+77.0 9.5
+next_datetime:  2022-06-02 10:10:10
+77.0 9.6
+next_datetime:  2022-06-02 10:10:10
+77.0 9.7
+next_datetime:  2022-06-02 10:10:10
+77.0 9.8
+next_datetime:  2022-06-02 10:10:10
+77.1 7.0
+next_datetime:  2022-06-02 10:10:10
+77.1 7.1
+next_datetime:  2022-06-02 10:10:10
+77.1 7.2
+next_datetime:  2022-06-02 10:10:10
+77.1 7.3
+next_datetime:  2022-06-02 10:10:10
+77.1 7.4
+next_datetime:  2022-06-02 10:10:10
+77.1 7.5
+next_datetime:  2022-06-02 10:10:10
+77.1 7.6
+next_datetime:  2022-06-02 10:10:10
+77.1 7.7
+next_datetime:  2022-06-02 10:10:10
+77.1 7.8
+next_datetime:  2022-06-02 10:10:10
+77.1 8.0
+next_datetime:  2022-06-02 10:10:10
+77.1 8.1
+next_datetime:  2022-06-02 10:10:10
+77.1 8.2
+next_datetime:  2022-06-02 10:10:10
+77.1 8.3
+next_datetime:  2022-06-02 10:10:10
+77.1 8.4
+next_datetime:  2022-06-02 10:10:10
+77.1 8.5
+next_datetime:  2022-06-02 10:10:10
+77.1 8.6
+next_datetime:  2022-06-02 10:10:10
+77.1 8.7
+next_datetime:  2022-06-02 10:10:10
+77.1 8.8
+next_datetime:  2022-06-02 10:10:10
+77.1 9.0
+next_datetime:  2022-06-02 10:10:10
+77.1 9.1
+next_datetime:  2022-06-02 10:10:10
+77.1 9.2
+next_datetime:  2022-06-02 10:10:10
+77.1 9.3
+next_datetime:  2022-06-02 10:10:10
+77.1 9.4
+next_datetime:  2022-06-02 10:10:10
+77.1 9.5
+next_datetime:  2022-06-02 10:10:10
+77.1 9.6
+next_datetime:  2022-06-02 10:10:10
+77.1 9.7
+next_datetime:  2022-06-02 10:10:10
+77.1 9.8
+next_datetime:  2022-06-02 10:10:10
+77.2 7.0
+next_datetime:  2022-06-02 10:10:10
+77.2 7.1
+next_datetime:  2022-06-02 10:10:10
+77.2 7.2
+next_datetime:  2022-06-02 10:10:10
+77.2 7.3
+next_datetime:  2022-06-02 10:10:10
+77.2 7.4
+next_datetime:  2022-06-02 10:10:10
+77.2 7.5
+next_datetime:  2022-06-02 10:10:10
+77.2 7.6
+next_datetime:  2022-06-02 10:10:10
+77.2 7.7
+next_datetime:  2022-06-02 10:10:10
+77.2 7.8
+next_datetime:  2022-06-02 10:10:10
+77.2 8.0
+next_datetime:  2022-06-02 10:10:10
+77.2 8.1
+next_datetime:  2022-06-02 10:10:10
+77.2 8.2
+next_datetime:  2022-06-02 10:10:10
+77.2 8.3
+next_datetime:  2022-06-02 10:10:10
+77.2 8.4
+next_datetime:  2022-06-02 10:10:10
+77.2 8.5
+next_datetime:  2022-06-02 10:10:10
+77.2 8.6
+next_datetime:  2022-06-02 10:10:10
+77.2 8.7
+next_datetime:  2022-06-02 10:10:10
+77.2 8.8
+next_datetime:  2022-06-02 10:10:10
+77.2 9.0
+next_datetime:  2022-06-02 10:10:10
+77.2 9.1
+next_datetime:  2022-06-02 10:10:10
+77.2 9.2
+next_datetime:  2022-06-02 10:10:10
+77.2 9.3
+next_datetime:  2022-06-02 10:10:10
+77.2 9.4
+next_datetime:  2022-06-02 10:10:10
+77.2 9.5
+next_datetime:  2022-06-02 10:10:10
+77.2 9.6
+next_datetime:  2022-06-02 10:10:10
+77.2 9.7
+next_datetime:  2022-06-02 10:10:10
+77.2 9.8
+next_datetime:  2022-06-02 10:10:10
+77.3 7.0
+next_datetime:  2022-06-02 10:10:10
+77.3 7.1
+next_datetime:  2022-06-02 10:10:10
+77.3 7.2
+next_datetime:  2022-06-02 10:10:10
+77.3 7.3
+next_datetime:  2022-06-02 10:10:10
+77.3 7.4
+next_datetime:  2022-06-02 10:10:10
+77.3 7.5
+next_datetime:  2022-06-02 10:10:10
+77.3 7.6
+next_datetime:  2022-06-02 10:10:10
+77.3 7.7
+next_datetime:  2022-06-02 10:10:10
+77.3 7.8
+next_datetime:  2022-06-02 10:10:10
+77.3 8.0
+next_datetime:  2022-06-02 10:10:10
+77.3 8.1
+next_datetime:  2022-06-02 10:10:10
+77.3 8.2
+next_datetime:  2022-06-02 10:10:10
+77.3 8.3
+next_datetime:  2022-06-02 10:10:10
+77.3 8.4
+next_datetime:  2022-06-02 10:10:10
+77.3 8.5
+next_datetime:  2022-06-02 10:10:10
+77.3 8.6
+next_datetime:  2022-06-02 10:10:10
+77.3 8.7
+next_datetime:  2022-06-02 10:10:10
+77.3 8.8
+next_datetime:  2022-06-02 10:10:10
+77.3 9.0
+next_datetime:  2022-06-02 10:10:10
+77.3 9.1
+next_datetime:  2022-06-02 10:10:10
+77.3 9.2
+next_datetime:  2022-06-02 10:10:10
+77.3 9.3
+next_datetime:  2022-06-02 10:10:10
+77.3 9.4
+next_datetime:  2022-06-02 10:10:10
+77.3 9.5
+next_datetime:  2022-06-02 10:10:10
+77.3 9.6
+next_datetime:  2022-06-02 10:10:10
+77.3 9.7
+next_datetime:  2022-06-02 10:10:10
+77.3 9.8
+next_datetime:  2022-06-02 10:10:10
+77.4 7.0
+next_datetime:  2022-06-02 10:10:10
+77.4 7.1
+next_datetime:  2022-06-02 10:10:10
+77.4 7.2
+next_datetime:  2022-06-02 10:10:10
+77.4 7.3
+next_datetime:  2022-06-02 10:10:10
+77.4 7.4
+next_datetime:  2022-06-02 10:10:10
+77.4 7.5
+next_datetime:  2022-06-02 10:10:10
+77.4 7.6
+next_datetime:  2022-06-02 10:10:10
+77.4 7.7
+next_datetime:  2022-06-02 10:10:10
+77.4 7.8
+next_datetime:  2022-06-02 10:10:10
+77.4 8.0
+next_datetime:  2022-06-02 10:10:10
+77.4 8.1
+next_datetime:  2022-06-02 10:10:10
+77.4 8.2
+next_datetime:  2022-06-02 10:10:10
+77.4 8.3
+next_datetime:  2022-06-02 10:10:10
+77.4 8.4
+next_datetime:  2022-06-02 10:10:10
+77.4 8.5
+next_datetime:  2022-06-02 10:10:10
+77.4 8.6
+next_datetime:  2022-06-02 10:10:10
+77.4 8.7
+next_datetime:  2022-06-02 10:10:10
+77.4 8.8
+next_datetime:  2022-06-02 10:10:10
+77.4 9.0
+next_datetime:  2022-06-02 10:10:10
+77.4 9.1
+next_datetime:  2022-06-02 10:10:10
+77.4 9.2
+next_datetime:  2022-06-02 10:10:10
+77.4 9.3
+next_datetime:  2022-06-02 10:10:10
+77.4 9.4
+next_datetime:  2022-06-02 10:10:10
+77.4 9.5
+next_datetime:  2022-06-02 10:10:10
+77.4 9.6
+next_datetime:  2022-06-02 10:10:10
+77.4 9.7
+next_datetime:  2022-06-02 10:10:10
+77.4 9.8
+next_datetime:  2022-06-02 10:10:10
+77.5 7.0
+next_datetime:  2022-06-02 10:10:10
+77.5 7.1
+next_datetime:  2022-06-02 10:10:10
+77.5 7.2
+next_datetime:  2022-06-02 10:10:10
+77.5 7.3
+next_datetime:  2022-06-02 10:10:10
+77.5 7.4
+next_datetime:  2022-06-02 10:10:10
+77.5 7.5
+next_datetime:  2022-06-02 10:10:10
+77.5 7.6
+next_datetime:  2022-06-02 10:10:10
+77.5 7.7
+next_datetime:  2022-06-02 10:10:10
+77.5 7.8
+next_datetime:  2022-06-02 10:10:10
+77.5 8.0
+next_datetime:  2022-06-02 10:10:10
+77.5 8.1
+next_datetime:  2022-06-02 10:10:10
+77.5 8.2
+next_datetime:  2022-06-02 10:10:10
+77.5 8.3
+next_datetime:  2022-06-02 10:10:10
+77.5 8.4
+next_datetime:  2022-06-02 10:10:10
+77.5 8.5
+next_datetime:  2022-06-02 10:10:10
+77.5 8.6
+next_datetime:  2022-06-02 10:10:10
+77.5 8.7
+next_datetime:  2022-06-02 10:10:10
+77.5 8.8
+next_datetime:  2022-06-02 10:10:10
+77.5 9.0
+next_datetime:  2022-06-02 10:10:10
+77.5 9.1
+next_datetime:  2022-06-02 10:10:10
+77.5 9.2
+next_datetime:  2022-06-02 10:10:10
+77.5 9.3
+next_datetime:  2022-06-02 10:10:10
+77.5 9.4
+next_datetime:  2022-06-02 10:10:10
+77.5 9.5
+next_datetime:  2022-06-02 10:10:10
+77.5 9.6
+next_datetime:  2022-06-02 10:10:10
+77.5 9.7
+next_datetime:  2022-06-02 10:10:10
+77.5 9.8
+next_datetime:  2022-06-02 10:10:10
+77.6 7.0
+next_datetime:  2022-06-02 10:10:10
+77.6 7.1
+next_datetime:  2022-06-02 10:10:10
+77.6 7.2
+next_datetime:  2022-06-02 10:10:10
+77.6 7.3
+next_datetime:  2022-06-02 10:10:10
+77.6 7.4
+next_datetime:  2022-06-02 10:10:10
+77.6 7.5
+next_datetime:  2022-06-02 10:10:10
+77.6 7.6
+next_datetime:  2022-06-02 10:10:10
+77.6 7.7
+next_datetime:  2022-06-02 10:10:10
+77.6 7.8
+next_datetime:  2022-06-02 10:10:10
+77.6 8.0
+next_datetime:  2022-06-02 10:10:10
+77.6 8.1
+next_datetime:  2022-06-02 10:10:10
+77.6 8.2
+next_datetime:  2022-06-02 10:10:10
+77.6 8.3
+next_datetime:  2022-06-02 10:10:10
+77.6 8.4
+next_datetime:  2022-06-02 10:10:10
+77.6 8.5
+next_datetime:  2022-06-02 10:10:10
+77.6 8.6
+next_datetime:  2022-06-02 10:10:10
+77.6 8.7
+next_datetime:  2022-06-02 10:10:10
+77.6 8.8
+next_datetime:  2022-06-02 10:10:10
+77.6 9.0
+next_datetime:  2022-06-02 10:10:10
+77.6 9.1
+next_datetime:  2022-06-02 10:10:10
+77.6 9.2
+next_datetime:  2022-06-02 10:10:10
+77.6 9.3
+next_datetime:  2022-06-02 10:10:10
+77.6 9.4
+next_datetime:  2022-06-02 10:10:10
+77.6 9.5
+next_datetime:  2022-06-02 10:10:10
+77.6 9.6
+next_datetime:  2022-06-02 10:10:10
+77.6 9.7
+next_datetime:  2022-06-02 10:10:10
+77.6 9.8
+next_datetime:  2022-06-02 10:10:10
+77.7 7.0
+next_datetime:  2022-06-02 10:10:10
+77.7 7.1
+next_datetime:  2022-06-02 10:10:10
+77.7 7.2
+next_datetime:  2022-06-02 10:10:10
+77.7 7.3
+next_datetime:  2022-06-02 10:10:10
+77.7 7.4
+next_datetime:  2022-06-02 10:10:10
+77.7 7.5
+next_datetime:  2022-06-02 10:10:10
+77.7 7.6
+next_datetime:  2022-06-02 10:10:10
+77.7 7.7
+next_datetime:  2022-06-02 10:10:10
+77.7 7.8
+next_datetime:  2022-06-02 10:10:10
+77.7 8.0
+next_datetime:  2022-06-02 10:10:10
+77.7 8.1
+next_datetime:  2022-06-02 10:10:10
+77.7 8.2
+next_datetime:  2022-06-02 10:10:10
+77.7 8.3
+next_datetime:  2022-06-02 10:10:10
+77.7 8.4
+next_datetime:  2022-06-02 10:10:10
+77.7 8.5
+next_datetime:  2022-06-02 10:10:10
+77.7 8.6
+next_datetime:  2022-06-02 10:10:10
+77.7 8.7
+next_datetime:  2022-06-02 10:10:10
+77.7 8.8
+next_datetime:  2022-06-02 10:10:10
+77.7 9.0
+next_datetime:  2022-06-02 10:10:10
+77.7 9.1
+next_datetime:  2022-06-02 10:10:10
+77.7 9.2
+next_datetime:  2022-06-02 10:10:10
+77.7 9.3
+next_datetime:  2022-06-02 10:10:10
+77.7 9.4
+next_datetime:  2022-06-02 10:10:10
+77.7 9.5
+next_datetime:  2022-06-02 10:10:10
+77.7 9.6
+next_datetime:  2022-06-02 10:10:10
+77.7 9.7
+next_datetime:  2022-06-02 10:10:10
+77.7 9.8
+next_datetime:  2022-06-02 10:10:10
+77.8 7.0
+next_datetime:  2022-06-02 10:10:10
+77.8 7.1
+next_datetime:  2022-06-02 10:10:10
+77.8 7.2
+next_datetime:  2022-06-02 10:10:10
+77.8 7.3
+next_datetime:  2022-06-02 10:10:10
+77.8 7.4
+next_datetime:  2022-06-02 10:10:10
+77.8 7.5
+next_datetime:  2022-06-02 10:10:10
+77.8 7.6
+next_datetime:  2022-06-02 10:10:10
+77.8 7.7
+next_datetime:  2022-06-02 10:10:10
+77.8 7.8
+next_datetime:  2022-06-02 10:10:10
+77.8 8.0
+next_datetime:  2022-06-02 10:10:10
+77.8 8.1
+next_datetime:  2022-06-02 10:10:10
+77.8 8.2
+next_datetime:  2022-06-02 10:10:10
+77.8 8.3
+next_datetime:  2022-06-02 10:10:10
+77.8 8.4
+next_datetime:  2022-06-02 10:10:10
+77.8 8.5
+next_datetime:  2022-06-02 10:10:10
+77.8 8.6
+next_datetime:  2022-06-02 10:10:10
+77.8 8.7
+next_datetime:  2022-06-02 10:10:10
+77.8 8.8
+next_datetime:  2022-06-02 10:10:10
+77.8 9.0
+next_datetime:  2022-06-02 10:10:10
+77.8 9.1
+next_datetime:  2022-06-02 10:10:10
+77.8 9.2
+next_datetime:  2022-06-02 10:10:10
+77.8 9.3
+next_datetime:  2022-06-02 10:10:10
+77.8 9.4
+next_datetime:  2022-06-02 10:10:10
+77.8 9.5
+next_datetime:  2022-06-02 10:10:10
+77.8 9.6
+next_datetime:  2022-06-02 10:10:10
+77.8 9.7
+next_datetime:  2022-06-02 10:10:10
+77.8 9.8
+nextdatetimezonelonglat: [' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:1:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:2:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:3:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:4:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:5:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:6:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:7:0 9:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 7:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 8:8:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:0:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:1:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:2:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:3:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:4:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:5:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:6:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:7:0 " --planet-list', ' --date="2022-6-2 10:10:10 5.5"  --location=" x 77:8:0 9:8:0 " --planet-list']Gtk-Message: 10:40:46.418: Failed to load module "canberra-gtk-module"
+
+ruletoks: ['=========================================\n']
+ruletoks: ['Celestial Configuration 1\n']
+ruletoks: ['=========================================\n']
+ruletoks: ['Venus', 'Rahu', ' Cusp', ' Sun', 'Mercury', ' Cusp', ' Moon', ' Cusp', ' Ascendant', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Ketu', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Saturn', ' Cusp', ' Mars', 'Jupiter\n']
+__iter__: 77 78
+next_datetime:  2022-06-02 10:10:10
+77.0 7.0
+date_time_timezone_longlat:  --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list
+cmd: /usr/bin/maitreya8t  --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list 2>&1 > chartsummary.rulesearch
+============================================
+chart row: ['Sun', '17°42′21″', 'Tau', 'Gem', 'Rohini']
+chart row: ['Moo', '19°48′05″', 'Gem', 'Pis', 'Ardra']
+chart row: ['Mar', '12°06′32″', 'Pis', 'Lib', 'U.Bhadra']
+chart row: ['Mer', 'R01°56′50″', 'Tau', 'Cap', 'Krittika']
+chart row: ['Jup', '09°47′32″', 'Pis', 'Vir', 'U.Bhadra']
+chart row: ['Ven', '11°28′12″', 'Ari', 'Can', 'Aswini']
+chart row: ['Sat', '01°04′39″', 'Aqu', 'Lib', 'Dhanista']
+chart row: ['Rah', '27°17′20″', 'Ari', 'Sag', 'Krittika']
+chart row: ['Ket', '27°17′20″', 'Lib', 'Gem', 'Visakha']
+chart row: ['Asc', '18°03′17″', 'Can', 'Sag', 'Aslesha']
+chart row: []
+signs_planets_dict: defaultdict(<class 'list'>, {'Tau': ['Sun', 'Mer'], 'Gem': ['Moo'], 'Pis': ['Mar', 'Jup'], 'Ari': ['Ven', 'Rah'], 'Aqu': ['Sat'], 'Lib': ['Ket'], 'Can': ['Asc']})
+toString() planetsliststring= Ven , Rah
+toString() planetsliststring= Sun , Mer
+toString() planetsliststring= Moo
+toString() planetsliststring= Asc
+toString() planetsliststring= Ket
+toString() planetsliststring= Sat
+toString() planetsliststring= Mar , Jup
+Encoded chart to be searched: Ven , Rah , Cusp , Sun , Mer , Cusp , Moo , Cusp , Asc , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Ket , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Unoccupied , Cusp , Sat , Cusp , Mar , Jup
+rule_toks: ['Venus', 'Rahu', ' Cusp', ' Sun', 'Mercury', ' Cusp', ' Moon', ' Cusp', ' Ascendant', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Ketu', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Unoccupied', ' Cusp', ' Saturn', ' Cusp', ' Mars', 'Jupiter\n']
+pruned_rule_toks: ['Ven', 'Rah', 'Cus', 'Sun', 'Mer', 'Cus', 'Moo', 'Cus', 'Asc', 'Cus', 'Uno', 'Cus', 'Uno', 'Cus', 'Ket', 'Cus', 'Uno', 'Cus', 'Uno', 'Cus', 'Uno', 'Cus', 'Sat', 'Cus', 'Mar', 'Jup']
+Rule to search: Ven , Rah , Cus , Sun , Mer , Cus , Moo , Cus , Asc , Cus , Uno , Cus , Uno , Cus , Ket , Cus , Uno , Cus , Uno , Cus , Uno , Cus , Sat , Cus , Mar , Jup
+match_chart_and_rule(): pruned_rule =  Ven , Rah , Cus , Sun , Mer , Cus , Moo , Cus , Asc , Cus , Uno , Cus , Uno , Cus , Ket , Cus , Uno , Cus , Uno , Cus , Uno , Cus , Sat , Cus , Mar , Jup
+match_chart_and_rule(): pruned_rule_toks_2d =  ['Ven - Rah ', ' Sun - Mer ', ' Moo ', ' Asc ', ' Uno ', ' Uno ', ' Ket ', ' Uno ', ' Uno ', ' Uno ', ' Sat ', ' Mar - Jup']
+match_chart_and_rule(): pruned_rule_dict =  defaultdict(<class 'list'>, {'Ari': ['Ven', 'Rah'], 'Tau': ['Sun', 'Mer'], 'Gem': ['Moo'], 'Can': ['Asc'], 'Leo': ['Uno'], 'Vir': ['Uno'], 'Lib': ['Ket'], 'Sco': ['Uno'], 'Sag': ['Uno'], 'Cap': ['Uno'], 'Aqu': ['Sat'], 'Pis': ['Mar', 'Jup']})
+match_chart_and_rule(): sign_planets_dict_chart =  defaultdict(<class 'list'>, {'Tau': ['Sun', 'Mer'], 'Gem': ['Moo'], 'Pis': ['Mar', 'Jup'], 'Ari': ['Ven', 'Rah'], 'Aqu': ['Sat'], 'Lib': ['Ket'], 'Can': ['Asc'], 'Leo': [], 'Vir': [], 'Sco': [], 'Sag': [], 'Cap': []})
+patternindex: 1
+There is a Planetarium Rule match for   --date="2022-6-2 10:10:10 5.5"  --location=" x 77:0:0 7:0:0 " --planet-list  for pattern  Venus,Rahu, Cusp, Sun,Mercury, Cusp, Moon, Cusp, Ascendant, Cusp, Unoccupied, Cusp, Unoccupied, Cusp, Ketu, Cusp, Unoccupied, Cusp, Unoccupied, Cusp, Unoccupied, Cusp, Saturn, Cusp, Mars,Jupiter
+
