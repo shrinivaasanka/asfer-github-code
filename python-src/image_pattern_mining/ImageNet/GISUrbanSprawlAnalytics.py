@@ -101,16 +101,16 @@ def draw_voronoi_tessellation(img,centroids):
                 continue
 
 
-def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False):
+def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
     UrbanSprawlAreas=[]
-    print(("Number of segments - Number of Urban areas:",len(segment[7][0])))
+    print(("Number of segments - Number of Urban areas:",len(segment[8][0])))
     fig1 = plt.figure(dpi=100)
     cityid=0
     centroids=[]
-    voronoifacets=segment[5]
+    voronoifacets=segment[6]
     voronoifacetareas=[]
     contourareas=[]
     #print("voronoi facets:",voronoifacets)
@@ -124,18 +124,18 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
             voronoifacet = Polygon(polygon)
             print(("Voronoi Facet (containing the urban sprawl) Area:",voronoifacet.area))
             voronoifacetareas.append(voronoifacet.area)
-    for n in range(len(segment[7][0]) - 1):
-        #print(("Urban Area:",segment[7][0][n]))
-        circumference = cv2.arcLength(segment[7][0][n],True)
-        convexhull = cv2.convexHull(segment[7][0][n])
-        #convexhull = ConvexHull(segment[7][0][n])
-        contourarea = cv2.contourArea(segment[7][0][n])
+    for n in range(len(segment[8][0]) - 1):
+        #print(("Urban Area:",segment[8][0][n]))
+        circumference = cv2.arcLength(segment[8][0][n],True)
+        convexhull = cv2.convexHull(segment[8][0][n])
+        #convexhull = ConvexHull(segment[8][0][n])
+        contourarea = cv2.contourArea(segment[8][0][n])
         contourareas.append(contourarea)
-        cv2.drawContours(img,segment[7][0][n],-1,(0,255,0),2)
-        print("Contour boundary point:",segment[7][0][n][0])
+        cv2.drawContours(img,segment[8][0][n],-1,(0,255,0),2)
+        print("Contour boundary point:",segment[8][0][n][0])
         pop_dens=0
         try:
-            contourcolor = img[segment[7][0][n][0][0][0],segment[7][0][n][0][0][1]]
+            contourcolor = img[segment[8][0][n][0][0][0],segment[8][0][n][0][0][1]]
             print("Contour color:",contourcolor)
             averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
             if legend is None:
@@ -149,10 +149,10 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
                     prevcolor=color
         except:
             population_density = maximum_population_density
-        x,y,w,h = cv2.boundingRect(segment[7][0][n])
+        x,y,w,h = cv2.boundingRect(segment[8][0][n])
         print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
-        (cx,cy),radius=cv2.minEnclosingCircle(segment[7][0][n])
+        (cx,cy),radius=cv2.minEnclosingCircle(segment[8][0][n])
         center=(int(cx),int(cy))
         centroids.append(center)
         radius=int(radius)
@@ -168,7 +168,7 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
         population_from_density=population_density*urbansprawlsqkmarea
         print(("Population of Urban Sprawl (from density):", population_from_density))
         print(("Population of Urban Sprawl (from area):",population_from_area))
-        moments=cv2.moments(segment[7][0][n])
+        moments=cv2.moments(segment[8][0][n])
         if moments['m00'] != 0:
             centroidx = int(moments['m10']/moments['m00'])
             centroidy = int(moments['m01']/moments['m00'])
@@ -187,7 +187,7 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
         cityid += 1
     if voronoi_delaunay:
         draw_voronoi_tessellation(img,centroids)
-        draw_delaunay_triangulation(img,segment[6])
+        draw_delaunay_triangulation(img,segment[7])
     print("Rankings of Urban Areas - sorted contour areas:")
     print(sorted(UrbanSprawlAreas))
     plt.show()
@@ -195,7 +195,7 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
     imagetok2=imagetok1[0].split("/")
     cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
-    facegraph=segment[8] 
+    facegraph=segment[9] 
     print("Number of Vororoi Facets:",len(voronoifacetareas))
     print("Number of Contours:",len(contourareas))
     minsize=min(len(contourareas),len(voronoifacetareas))
@@ -205,6 +205,11 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=None,sqk
     print("Degree centrality of urban sprawl facegraph:",nx.degree_centrality(facegraph))
     print("Closeness centrality of urban sprawl facegraph:",nx.closeness_centrality(facegraph))
     print("PageRank of urban sprawl facegraph:",nx.pagerank(facegraph))
+    facegraphminspanforest=nx.minimum_spanning_edges(facegraph,"boruvka")
+    print("Minimum Spanning Forest Edges of Facegraph:",facegraphminspanforest)
+    facegraphhits=nx.hits(facegraph)
+    print("HITS Hub-Authorities values of Facegraph:", facegraphhits)
+    print(facegraphhits)
     return (UrbanSprawlAreas)
 
 
@@ -212,12 +217,12 @@ if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
     #seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
-    #seg4=image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg")
+    seg4=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",voronoi_delaunay=True)
     #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
     #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
-    #urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4)
+    urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4,voronoi_delaunay=True)
     #seg5=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg")
     #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg",seg5,5000,266.0/854.0)
     #seg6=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg")
@@ -252,5 +257,6 @@ if __name__ == "__main__":
     #fourcoloredsegments=defaultdict(list)
     #fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
     #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
-    seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
-    ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11)
+    #seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
+    #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None)
+    #ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11)
