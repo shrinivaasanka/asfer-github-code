@@ -68,6 +68,9 @@ def medical_imageing(image_source, imagefile):
         contours = image_segmentation_contours(imagefile)
         print(contours)
         return contours
+    if image_source == "fMRI":
+        seg = image_segmentation(imagefile, voronoi_delaunay=True)
+        return seg
 
 def tosig3d(array):
     lenarray=0
@@ -609,6 +612,7 @@ if __name__ == "__main__":
     # video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
     # waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
     # waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
+    seg_fmri=medical_imageing("fMRI","testlogs/medical_imageing/fMRI_MusicStimulus_UCDavis_janata_brain_lg.jpg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg","testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/SEDAC_COVID19_Hotspots_GIS_2021-09-04-10-51-29.jpeg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/JHU_COVID19_Hotspots_GIS_2021-09-04-11-02-11.jpeg")
@@ -640,13 +644,13 @@ if __name__ == "__main__":
     #    imagenet_imagegraph(im)
     #imagenet_videograph("testlogs/3Ducks_VID_20220119_173052.mp4",1)
     #image_segmentation("testlogs/NASA_MODIS_RamSethu_Image07272018_250m.jpg")
-    imagegraph1=imagenet_imagegraph("testlogs/unicorn-seal_0.jpg")
-    imagegraph2=imagenet_imagegraph("testlogs/bagasra-unicorn-seal.jpg")
-    imagegraph3=imagenet_imagegraph("testlogs/unicorn-seal_1_5.jpg")
-    imagegraphsResNet50=[imagegraph1[0][0][0],imagegraph2[0][0][0],imagegraph3[0][0][0]]
-    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
-    imagegraphsResNet50V2=[imagegraph1[0][1][0],imagegraph2[0][1][0],imagegraph3[0][1][0]]
-    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50V2)
+    #imagegraph1=imagenet_imagegraph("testlogs/unicorn-seal_0.jpg")
+    #imagegraph2=imagenet_imagegraph("testlogs/bagasra-unicorn-seal.jpg")
+    #imagegraph3=imagenet_imagegraph("testlogs/unicorn-seal_1_5.jpg")
+    #imagegraphsResNet50=[imagegraph1[0][0][0],imagegraph2[0][0][0],imagegraph3[0][0][0]]
+    #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
+    #imagegraphsResNet50V2=[imagegraph1[0][1][0],imagegraph2[0][1][0],imagegraph3[0][1][0]]
+    #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50V2)
     #histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
     #dbscan1=DBSCANClustering.DBSCAN("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
     #dbscan2=DBSCANClustering.DBSCAN("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
