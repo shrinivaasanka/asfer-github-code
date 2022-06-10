@@ -35,12 +35,15 @@ import numpy as np
 number_to_factorize = 0
 persisted_tiles = False
 HyperbolicRasterizationGraphicsEnabled = "True"
+import faulthandler
 
 factors_accum = None
 factors_of_n = []
 spcon = None
 
 factorization_start=time_ns()
+faulthandler.enable()
+
 
 class VectorAccumulatorParam(AccumulatorParam):
     def zero(self, value):
@@ -381,8 +384,9 @@ def SearchTiles_and_Factorize(n, k):
         #    tilesearch_nonpersistent)
         normal_order_n = (Decimal(math.log(n,2)) ** k)
         tiles_start = 1
-        tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
-        for x in range(int(Decimal(normal_order_n) * Decimal(normal_order_n))):
+        #tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
+        tiles_end = int(Decimal(n)/(Decimal(normal_order_n)))
+        for x in range(int(Decimal(normal_order_n))):
             print("tiles_start:", tiles_start)
             print("tiles_end:", tiles_end)
             tiles = list(range(tiles_start, tiles_end))
@@ -390,7 +394,7 @@ def SearchTiles_and_Factorize(n, k):
             spcon.parallelize(tiles).foreach(
                 tilesearch_nonpersistent)
             tiles_start = tiles_end
-            tiles_end += int(Decimal(n)/(Decimal(normal_order_n) * Decimal(normal_order_n)))
+            tiles_end += int(Decimal(n)/(Decimal(normal_order_n)))
         plt.show()
         print(("factors_accum.value = ", factors_accum.value))
         factors = []
