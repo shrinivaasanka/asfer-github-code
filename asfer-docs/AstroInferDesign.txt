@@ -18867,6 +18867,11 @@ nanoseconds elapsed so far in finding all factors:  768255100634
 	= 2^(20610-20594)
 	= O(2^(16)) = 65536 approximately which is not unusual for cloud computing mapreduce frameworks (though software version is under the purview of mapreduce class MRC) and supercomputers which are under true Nick's class - Fugaku Supercomputer has 158976 parallel processors
 
+References:
+-----------
+1259.1 Rectification of Hyperbola by two ellipses - https://royalsocietypublishing.org/doi/epdf/10.1098/rstl.1811.0007 - O(N/(logN)^k) hyperbolic arc tile segments one each per multicore processor in loop earlier are straightline approximations of the hyperbola
+1259.2 The hyperbola rectification from Maclaurin to Landen and the Lagrange-Legendre transformation for the elliptic integrals - https://arxiv.org/pdf/1209.4909.pdf
+
 ---------------------------------------------------------------------------------------------------------------------------------------------
 1260. (THEORY and FEATURE) People Analytics - Unique Identification - Fingerprint recognition - 17 June 2022 - related to 834,1223,1237 and all sections on Merit of Large Scale Visuals, Physique Recognition From Quadrilateral mesh isomorphism,Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching, Cybercrime analytics, Forensics-Predictive Policing, Fraud Analytics, Birthday Paradox, Contextual Name Parsing, PIPL Name syllable based unique person search, Collision resitant hash functions, Non Fungible Tokens 
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -18877,7 +18882,7 @@ nanoseconds elapsed so far in finding all factors:  768255100634
 1260.5 DeepLearning_ConvolutionNetwork_BackPropagation.py has been refactored as below:
 	1260.5.1 TopologicalRecognition has been changed from a boolean flag to a string of 3 values - "Fingerprint", "Face" or "Handwriting" which are used within 3 clauses for invocation of face, handwriting or fingerprint recognition routines accordingly
 	1260.5.2 Graphics for drawing K-Means clustering of contours has been changed from OpenCV drawContours() to MatPlotLib plot which differentiates the color coded clusters well. 
-	1260.5.3 MatPlotLib show() invocations have been changed to savefig() to write the images for watershed segmets, chain approximation contour segments, Voronoi-Delaunay, K-Means clustered contours as JPEG files.
+	1260.5.3 MatPlotLib show() invocations have been changed to savefig() to write the images for watershed segments, chain approximation contour segments, Voronoi-Delaunay, K-Means clustered contours as JPEG files.
 	1260.5.4 Directory paths for earlier JPEG images written have been made relative by prefixing ./ and new folder RemoteSensingGIS/ has been created under python-src/testlogs
 	1260.5.5 Following are the image files and logs for this update:
 		(logs - clusters and Hausdorff distance between fingerprints) testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.17June2022
