@@ -18866,3 +18866,31 @@ nanoseconds elapsed so far in finding all factors:  768255100634
 	2^(1437*14.33) 
 	= 2^(20610-20594)
 	= O(2^(16)) = 65536 approximately which is not unusual for cloud computing mapreduce frameworks (though software version is under the purview of mapreduce class MRC) and supercomputers which are under true Nick's class - Fugaku Supercomputer has 158976 parallel processors
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+1260. (THEORY and FEATURE) People Analytics - Unique Identification - Fingerprint recognition - 17 June 2022 - related to 834,1223,1237 and all sections on Merit of Large Scale Visuals, Physique Recognition From Quadrilateral mesh isomorphism,Topological Face and Handwriting recognition, Product Homotopy, Unique identification, Homeomorphism and Topological Deformations, Merit of Large Scale Visuals, People Analytics, Computational Geometry, Graph Edit Distance and Earth mover distance, Graph Isomorphism (Exact, Approximate and Subgraph),Graph matching,Graph similarity,Image Search,Quadrilateral Mesh Deformation and Isomorphism,Maximum Common Subgraph Problem and Approximate Topological Matching, Cybercrime analytics, Forensics-Predictive Policing, Fraud Analytics, Birthday Paradox, Contextual Name Parsing, PIPL Name syllable based unique person search, Collision resitant hash functions, Non Fungible Tokens 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1260.1 Various forms of unique identification namely Face, Physique, Handwriting, Gender have been either theoretically analyzed or implemented in NeuronRain through graph theoretic and topological similarity algorithms based on Product Homotopy, Graph Isomorphism, Dynamic time warping timeseries similarity (of human physique mobility), Graph Edit Distance, Netrd Graph distances, TriMesh-QuadMesh and Topological homeomorphic deformations, Voronoi-Delaunay tessellation-triangulation,Maximum Common Subgraph,Approximate Topological Matching among others. 
+1260.2 This update defines a new function fingerprint_recognition() in DeepLearning_ConvolutionNetwork_BackPropagation.py for matching two images of fingerprints (fingerprint1.jpeg and fingerprint2.jpeg) based on Kaggle academic research dataset FVC2000 for fingerprint deeplearning - https://www.kaggle.com/datasets/peace1019/fingerprint-dataset-for-fvc2000-db4-b?resource=download thereby adding fingerprint dimension to unique identification arsenal.
+1260.3 Function fingerprint_recognition() earlier defined computes contour segmentation by chain approximation for two fingerprints, finds the Hausdorff topological distance between two sets of contour polynomials belonging to either, and clusters the fingerprint contour polynomials of the two images by KMeans clustering algorithm in ImageGraph_Keras_Theano.py (contours_kmeans_clustering()) 
+1260.4 Human fingerprints are topologically significant as every fingerprint contains clusters of curves or family of polynomials of almost similar curvature. Contour polynomials-Graph structure from fingerprints could be extracted by watershed, voronoi-delaunay and chain approximation algorithms in image_segmentation() and image_segmentation_contours() functions of ImageGraph_Keras_Theano.py 
+1260.5 DeepLearning_ConvolutionNetwork_BackPropagation.py has been refactored as below:
+	1260.5.1 TopologicalRecognition has been changed from a boolean flag to a string of 3 values - "Fingerprint", "Face" or "Handwriting" which are used within 3 clauses for invocation of face, handwriting or fingerprint recognition routines accordingly
+	1260.5.2 Graphics for drawing K-Means clustering of contours has been changed from OpenCV drawContours() to MatPlotLib plot which differentiates the color coded clusters well. 
+	1260.5.3 MatPlotLib show() invocations have been changed to savefig() to write the images for watershed segmets, chain approximation contour segments, Voronoi-Delaunay, K-Means clustered contours as JPEG files.
+	1260.5.4 Directory paths for earlier JPEG images written have been made relative by prefixing ./ and new folder RemoteSensingGIS/ has been created under python-src/testlogs
+	1260.5.5 Following are the image files and logs for this update:
+		(logs - clusters and Hausdorff distance between fingerprints) testlogs/DeepLearning_ConvolutionNetwork_BackPropagation.log.17June2022
+		(k-means clustering) testlogs/fingerprint1-contourkmeansclustered.jpg
+		(Voronoi-Delaunay set to False) testlogs/fingerprint1-contourlabelled.jpg
+		(Chain approximation contours) testlogs/fingerprint1-contoursegmented.jpg
+		(Fingerprint1) testlogs/fingerprint1.jpeg
+		(k-means clustering) testlogs/fingerprint2-contourkmeansclustered.jpg
+		(Voronoi-Delaunay set to True) testlogs/fingerprint2-contourlabelled.jpg
+		(Chain approximation contours) testlogs/fingerprint2-contoursegmented.jpg
+		(Fingerprint2) testlogs/fingerprint2.jpeg
+		(DOT) testlogs/RemoteSensingGIS/fingerprint1_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+		(Watershed) testlogs/RemoteSensingGIS/fingerprint1_segmented.jpg
+		(DOT) testlogs/RemoteSensingGIS/fingerprint2_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+		(Watershed) testlogs/RemoteSensingGIS/fingerprint2_segmented.jpg
+1260.6 Computational Hardness of unique identification has been studied in theory through collision resistance of hash functions, Minimal Perfect Hash Functions, birthday paradox et al. Designing a dispute-resistant foolproof Unique ID scheme for population and social networks is still a farcry. An example digitally signed unique id string digest for a person: <10-digit fingerprint>:<retinal scan>:<physique or face photo>:<written signature>:<voice>:<ip address or geocoded address>:<timestamp> though theoretically comprehensive, exponentially hard and collision-resistant suffers from lacunae - worn out biometrics-voicemetrics,signature forgery,prosthetics,cosmetic surgically modified eye,face and physiques might mar its efficacy essentially making a compelling case for non-biometric Non Fungible Tokens (unique private event,art and music) as unique id(s). 
