@@ -55,8 +55,10 @@ import dlib
 import netrd
 from networkx.algorithms import isomorphism
 from pyvis.network import Network
+from ImageGraph_Keras_Theano import image_segmentation
+from ImageGraph_Keras_Theano import contours_kmeans_clustering
 
-TopologicalRecognition = True
+TopologicalRecognition = "Fingerprint"
 
 
 def draw_delaunay_triangulation(img, triangles):
@@ -404,6 +406,13 @@ def handwriting_recognition(imagefile1, imagefile2):
     print(("contour1polys:", contour1polys))
     print(("contour2polys:", contour2polys))
 
+def fingerprint_recognition(fingerprint1,fingerprint2):
+    seg1=image_segmentation(fingerprint1,voronoi_delaunay=False)
+    seg2=image_segmentation(fingerprint2,voronoi_delaunay=True)
+    topological_distance=directed_hausdorff(seg1[8][0][0][0],seg2[8][0][0][0])
+    print("fingerprint_recognition(): similarity between ",fingerprint1," and ",fingerprint2,":",topological_distance)
+    contours_kmeans_clustering(fingerprint1,seg1)
+    contours_kmeans_clustering(fingerprint2,seg2)
 
 class DeepLearningConvolution(object):
     def __init__(self, input_bitmap):
@@ -734,10 +743,12 @@ if __name__ == "__main__":
     print("#############################################")
     print("Topological Handwriting and Face Recognition")
     print("#############################################")
-    if TopologicalRecognition == True:
-        # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
-        # handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
-        #images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
+    if TopologicalRecognition == "Handwriting":
+        handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_2.jpg")
+        handwriting_recognition("/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf1_1.jpg","/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/PictureOf8_1.jpg")
+        exit()
+    if TopologicalRecognition == "Face":
+        images=["testlogs/IMG_20160610_071455.jpg","testlogs/IMG_20160610_071603.jpg","testlogs/KSrinivasan_2003.jpg","testlogs/IMG_20171112_180837.jpg","testlogs/ExamplePortrait1.jpg","testlogs/SrinivasanKannan_alias_KaShrinivaasan_alias_ShrinivasKannan_photo.jpeg","testlogs/Shrinivas_Kannan_01Sept2007_sitting.jpg","testlogs/IMG_20220119_165911.jpg"]
         images=["image_pattern_mining/ImageNet/testlogs/ExamplePortrait2_mesh.jpg","testlogs/ExamplePortrait1_mesh.jpg"]
         for img1 in images:
             for img2 in images:
@@ -753,7 +764,9 @@ if __name__ == "__main__":
         #        print("========",images[x],"====",images[y],"=============")
         #        facegraph_similarity_metrics(images[x],images[y],cvimages[x],cvimages[y],isomorphism_iterations=0)
         exit()
-
+    if TopologicalRecognition == "Fingerprint":
+        fingerprint_recognition("testlogs/fingerprint1.jpeg","testlogs/fingerprint2.jpeg")
+        exit()
     input_image1 = ImageToBitMatrix.image_to_bitmatrix(
         "/media/ksrinivasan/Krishna_iResearch/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/testlogs/IMG_20160712_141138.jpg")
     input_image2 = ImageToBitMatrix.image_to_bitmatrix(

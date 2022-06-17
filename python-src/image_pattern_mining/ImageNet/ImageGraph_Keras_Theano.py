@@ -282,30 +282,30 @@ def analyze_remotesensing_RGB_patches(imagefile):
     imagefiletoks2 = imagefiletoks1[0].split("/")
     # Split remotesensing satellite image to Red,Green and Blue Channels
     cv2.imwrite(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_blue.jpg",
         b)
     cv2.imwrite(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_green.jpg",
         g)
     cv2.imwrite(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_red.jpg",
         r)
     im1_blue = cv2.imread(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_blue.jpg")
     im1_green = cv2.imread(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_green.jpg")
     im1_red = cv2.imread(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[2] +
         "_red.jpg")
     im1_blue_hist = np.histogram(im1_blue.flatten())
@@ -397,14 +397,24 @@ def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterati
             sumdist=0
         iteration += 1
     if converged:
+        fig1 = plt.figure(dpi=100)
         for cluster_id in range(number_of_clusters):
             for contour in clusters[cluster_id]:
-                cv2.drawContours(segment[1],contour,-1,(0,(10 * cluster_id) % 255,0),2)
-    plt.show()
+                #cv2.drawContours(segment[1],[contour],0,(10*cluster_id,10*cluster_id,10*cluster_id),2)
+                xaxis = []
+                yaxis = []
+                curve = contour
+                for point in curve:
+                    xaxis.append(point[0][0])
+                    yaxis.append(point[0][1])
+                ax = fig1.add_subplot(111)
+                ax.plot(xaxis, yaxis, color=(0,1.0/float(cluster_id+1),0),rasterized=True)
+    #plt.show()
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
-    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
-    cv2.waitKey()
+    plt.savefig("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg")
+    #cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
+    #cv2.waitKey()
     print("contour polynomial clusters:",clusters)
 
 def image_segmentation_contours(imagefile1):
@@ -436,7 +446,10 @@ def image_segmentation_contours(imagefile1):
                 contour1polys.append(splprep(points.T, k=points.shape[0]-1))
         except Exception as e:
             continue
-    plt.show()
+    #plt.show()
+    imagetok1=imagefile1.split(".")
+    imagetok2=imagetok1[0].split("/")
+    plt.savefig("./testlogs/"+imagetok2[1]+"-contoursegmented.jpg")
     print(("contour1polys:", contour1polys))
     return (contours1,contour1polys)
 
@@ -470,7 +483,7 @@ def image_segmentation(imagefile,voronoi_delaunay=False):
     imagefiletoks1 = imagefile.split(".")
     imagefiletoks2 = imagefiletoks1[0].split("/")
     cv2.imwrite(
-        "testlogs/RemoteSensingGIS/" +
+        "./testlogs/RemoteSensingGIS/" +
         imagefiletoks2[len(imagefiletoks2)-1] +
         "_segmented.jpg",
         img)
@@ -509,15 +522,15 @@ def image_segmentation(imagefile,voronoi_delaunay=False):
                     pass 
             facegraph.add_edge(firstpoint, prevpoint)
     #nx.draw_networkx(facegraph)
-    plt.show()
+    #plt.show()
+    imagetok1=imagefile.split(".")
+    imagetok2=imagetok1[0].split("/")
     if voronoi_delaunay:
         GISUrbanSprawlAnalytics.draw_voronoi_tessellation(img,contourcentroids)
         GISUrbanSprawlAnalytics.draw_delaunay_triangulation(img,triangles)
-    imagetok1=imagefile.split(".")
-    imagetok2=imagetok1[0].split("/")
-    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
+    cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
-    write_dot(facegraph, "testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
+    write_dot(facegraph, "./testlogs/RemoteSensingGIS/" + imagefiletoks2[len(imagefiletoks2)-1] + "_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot")
     return (ret, img, markers, labels, stats, contourcentroids, facets, triangles, contours, facegraph)
 
 
