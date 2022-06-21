@@ -68,7 +68,7 @@ def dynamic_time_warping(waveform1, waveform2):
     for i in range(1, m-1):
         for j in range(1, n-1):
             cost = abs(waveform1[i] - waveform2[j])
-            print("cost:", cost)
+            print(("cost:", cost))
             dtw[i, j] = cost + min([dtw[i-1, j], dtw[i, j-1], dtw[i-1, j-1]])
             #print("i=",i,";j=",j,";dtw[i,j] = ", dtw[i, j])
     return dtw[m-2, n-2]
@@ -132,9 +132,9 @@ def audio_to_notes(audio, dur=None):
     print("###################################################")
     if dur is not None:
         waveform, srate = librosa.load(audio, duration=dur)
-    print("raw waveform:", waveform)
-    music_polynomial = polyfit(range(len(waveform)), waveform, 5)
-    print("polynomial learnt from raw audio-music waveform:", music_polynomial)
+    print(("raw waveform:", waveform))
+    music_polynomial = polyfit(list(range(len(waveform))), waveform, 5)
+    print(("polynomial learnt from raw audio-music waveform:", music_polynomial))
     freq = np.abs(librosa.stft(waveform))
     print(("Frequencies:", freq))
     try:
@@ -168,7 +168,8 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
             notes = []
             periodicity = 0
             while periodicity < 10:
-                notes += list(map(lambda x: amplitude*eval(function), range(0, samplerate)))
+                notes += list([amplitude*eval(function)
+                              for x in range(0, samplerate)])
                 periodicity += 1
         npnotes = np.asarray(notes)
         #scalednpnotes = np.int16(npnotes/np.max(npnotes)*32767)
@@ -249,10 +250,22 @@ def mel_frequency_cepstral_coefficients(audiofile, dur=10):
     print(("zero crossing rate:", librosa.feature.zero_crossing_rate(waveform)))
     return (mfccs, mfccs.shape, mfccs.mean(axis=1), mfccs.var(axis=1))
 
+def weierstrass_fractal_fourier_sinusoids(a, b, n):
+    b = b + 5.7142/a
+    #lambda_function_string = "np.iinfo(np.int16).max * math.pow(" + str(a) + "," + str(1) + ")*math.cos(math.pow(" + str(b) + "," + str(1) + ")*3.1428*x)"
+    lambda_function_string = "math.pow(" + str(a) + "," + str(1) + ")*math.cos(math.pow(" + str(b) + "," + str(1) + ")*3.1428*x)"
+    for i in range(2, n):
+        #lambda_function_string += " + np.iinfo(np.int16).max*math.pow(" + str(a) + "," + str(i) + ")*math.cos(math.pow(" + str(b) + "," + str(i) + ")*3.1428*x)"
+        lambda_function_string += " + math.pow(" + str(a) + "," + str(i) + ")*math.cos(math.pow(" + str(b) + "," + str(i) + ")*3.1428*x)"
+    print(("weierstrass_fractal_fourier_sinusoids(): lambda_function_string = ",
+          lambda_function_string))
+    return lambda_function_string
 
 def audio_merit(notes):
-    mdl_entropy_merit = MinimumDescLength.minimum_descriptive_complexity("".join(notes))
+    mdl_entropy_merit = MinimumDescLength.minimum_descriptive_complexity(
+        "".join(notes))
     print(("Merit of Audio - Minimum Descriptive Length and Entropy:", mdl_entropy_merit))
+
 
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
@@ -267,11 +280,13 @@ if __name__ == "__main__":
     # features=audio_features(bm)
     # print "Features:",features
     # notes=audio_to_notes("/media/Krishna_iResearch_/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/python-src/music_pattern_mining/testlogs/Bach Sonata No 2.mp3",dur=10)
-    notes1 = audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",dur=10)
-    notes2 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=10)
-    mdl1 = audio_merit(notes1[0])
-    mdl2 = audio_merit(notes2[0])
-    MinimumDescLength.normalized_compression_distance("".join(notes1[0]),"".join(notes2[0]))
+    #notes1 = audio_to_notes(
+    #    "testlogs/JSBach_Musicological_Offering.mp4", dur=10)
+    #notes2 = audio_to_notes("testlogs/Bach_Flute_Sonata_EFlat.mp4", dur=10)
+    #mdl1 = audio_merit(notes1[0])
+    #mdl2 = audio_merit(notes2[0])
+    #MinimumDescLength.normalized_compression_distance(
+    #    "".join(notes1[0]), "".join(notes2[0]))
     # merit=audio_merit(notes[0])
     # notes_to_audio()
     # notes_to_audio(automaton=True)
@@ -281,3 +296,5 @@ if __name__ == "__main__":
     #notes_to_audio(function='(300*math.sin(3*x) + 200*math.sin(2*x) + 100*math.sin(x))',fractal=False)
     #notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
+    notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(
+        0.5, 5, 20), fractal=False)
