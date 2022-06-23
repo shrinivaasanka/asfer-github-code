@@ -18917,3 +18917,30 @@ References:
 References:
 ----------
 1261.4 Weierstrass Function - https://en.wikipedia.org/wiki/Weierstrass_function - Continuous everywhere but differentiable nowhere - "...in Weierstrass's original paper, the function was defined as a Fourier series: {\displaystyle f(x)=\sum _{n=0}^{\infty }a^{n}\cos(b^{n}\pi x),}f(x)=\sum _{n=0}^{\infty }a^{n}\cos(b^{n}\pi x), where {\displaystyle 0<a<1} 0 < a < 1, {\displaystyle b} b is a positive odd integer, and {\displaystyle ab >1 + {\frac {3}{2}}\pi .} ab > 1+{\frac {3}{2}}\pi ...."
+
+------------------------------------------------------------------------------------------------------------------------------
+1262. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Moran's I measure of Urban Sprawl Dispersion - 23 June 2022 - related to 1151,1174,1196,1226,1233,1234,1237,1252 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption, Jordan Curve Theorem, Weirstrass Theorem, Cellular Automata-SLEUTH Urban Growth Models, Automatic Delineation of Urban Growth Boundaries, Preferential attachment,Random Graphs,Dynamic Graphs,Separate Chaining Hash tables, Unmanned Aerial Vehicle Navigation-Autonomous Drone Delivery-Drone EVMs-Passenger Drones,Wiring Problem
+------------------------------------------------------------------------------------------------------------------------------
+1262.1 GISUrbanSprawlAnalytics.py has been updated to implement statistical measure of Moran's I in a function urban_sprawl_dispersion() called as subroutine from urban_sprawl_from_segments(). Moran's I is proportional to gravity of an urban area and a quantifier of how spatially dispersed an Urban Sprawl GIS (diffusion factor) is in terms of tree canopy(NDVI),building coverage,land usage,transportation network among others.   
+1262.2 Moran's I ranges from -1 (perfect dispersion) to +1 (lopsided dispersion) with 0 being the inflexion point(random dispersion). Color coded pixels of urban sprawl settlement GIS (SEDAC,HRSL,GHSL) are basically scatterplots of multiple land use segments (29-colored LUIS in 1174.8.5) and Moran's I of those urban sprawl GIS imagery is an analytics measure of equitable distribution of segments in an urban area.
+1262.3 Function urban_sprawl_dispersion() internally invokes PySAL (Python Spatial Abstraction Library) implementations of Lat2W,Moran's I and Moran's p-norm and a new function image3D_to_2D() defined within ImageToBitMatrix.py for flattening 3D OpenCV2 array for an image to 2D array of dimensions height*width, entries of which are sum of RGB values of the respective pixel ordinates.
+1262.4 Urban sprawl diffusion factor (Moran's I dispersion) is computed for (excerpts from testlogs/GISUrbanSprawlAnalytics.log.23June2022.xz): 
+	1) GHSL imagery testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg:
+		Moran's I of the Urban Sprawl dispersion: 0.8848283189311299
+		Moran's p-norm of the Urab Sprawl dispersion: 0.0
+	2) VIIRS imagery NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg
+		Moran's I of the Urban Sprawl dispersion: 0.99
+		Moran's p-norm of the Urab Sprawl dispersion: 0.0
+1262.5 Invocation of contours_kmeans_clustering() has been included in urban_sprawl_from_segments() analytics pipeline and k-means clustering of transit network contours computed from testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg show a distinct 3-cluster layering (big,bigger and biggest) of transportation contours from city centre to suburbs coded in 3 colors automatically delineating urban sprawl boundaries based on transportation contour clusters.  
+1262.6 Following are logs,DOT and imagery for Watershed segments,Chain approximation contour segments,Voronoi-Delaunay,k-means clustering for this commit:
+	testlogs/GHSL_GIS_ChennaiMetropolitanArea-contourkmeansclustered.jpg
+	testlogs/GHSL_GIS_ChennaiMetropolitanArea-contourlabelled.jpg
+	testlogs/GHSL_GIS_ChennaiMetropolitanArea-contoursegmented.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.23June2022.xz
+	testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021-contoursegmented.jpg
+	testlogs/RemoteSensingGIS/GHSL_GIS_ChennaiMetropolitanArea_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/GHSL_GIS_ChennaiMetropolitanArea_segmented.jpg
+
+References:
+----------
+1262.7 Categorization of 48 Mega-Regions by Spatial Patterns of Population Distribution: The Relationship between Spatial Patterns and Population Change - 48th ISOCARP Congress 2012 - [Yuta Uchiyama,Akiko Okabe] - https://www.isocarp.net/Data/case_studies/2130.pdf - Clustering of 48 megaregions by Moran's I, M-value and N-value of population density
