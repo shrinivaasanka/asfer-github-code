@@ -18930,7 +18930,7 @@ References:
 		Moran's p-norm of the Urab Sprawl dispersion: 0.0
 	2) VIIRS imagery NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg
 		Moran's I of the Urban Sprawl dispersion: 0.99
-		Moran's p-norm of the Urab Sprawl dispersion: 0.0
+		Moran's p-norm of the Urban Sprawl dispersion: 0.0
 1262.5 Invocation of contours_kmeans_clustering() has been included in urban_sprawl_from_segments() analytics pipeline and k-means clustering of transit network contours computed from testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg show a distinct 3-cluster layering (big,bigger and biggest) of transportation contours from city centre to suburbs coded in 3 colors automatically delineating urban sprawl boundaries based on transportation contour clusters.  
 1262.6 Following are logs,DOT and imagery for Watershed segments,Chain approximation contour segments,Voronoi-Delaunay,k-means clustering for this commit:
 	testlogs/GHSL_GIS_ChennaiMetropolitanArea-contourkmeansclustered.jpg
@@ -18944,3 +18944,4 @@ References:
 References:
 ----------
 1262.7 Categorization of 48 Mega-Regions by Spatial Patterns of Population Distribution: The Relationship between Spatial Patterns and Population Change - 48th ISOCARP Congress 2012 - [Yuta Uchiyama,Akiko Okabe] - https://www.isocarp.net/Data/case_studies/2130.pdf - Clustering of 48 megaregions by Moran's I, M-value and N-value of population density
+1262.8 ArcGIS Pro Spatial AutoCorrelation - https://pro.arcgis.com/en/pro-app/2.8/tool-reference/spatial-statistics/spatial-autocorrelation.htm
