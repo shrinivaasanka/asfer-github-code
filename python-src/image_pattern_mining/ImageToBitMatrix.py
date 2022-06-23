@@ -18,6 +18,7 @@
 
 from PIL import Image
 import numpy
+import cv2
 
 def image_to_bitmatrix(image):
 	bitmap=[]
@@ -28,6 +29,18 @@ def image_to_bitmatrix(image):
 		bitmap.append(rbit)
 	print("image_to_bitmatrix() for - ",image,":",bitmap)
 	return bitmap
+
+def image3D_to_2D(image):
+        img = cv2.imread(image)
+        img2D = []
+        (h,w) = img.shape[:2]
+        for row in range(h):
+            temp=[]
+            for col in range(w):
+                temp.append(sum(img[row,col].tolist()))
+            img2D.append(temp)
+        print("image3D_to_2D:",img2D)
+        return img2D
 
 def tobit(x):
 	return x*0.001

@@ -52,6 +52,9 @@ from GraphMining_GSpan import GSpan
 from scipy.stats import wasserstein_distance 
 from shapely.geometry import Polygon
 from scipy import stats
+from libpysal.weights import lat2W
+from esda.moran import Moran
+import ImageToBitMatrix
 
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
@@ -100,6 +103,18 @@ def draw_voronoi_tessellation(img,centroids):
             except:
                 continue
 
+def urban_sprawl_dispersion(image):
+    print(("image:",image))
+    img=cv2.imread(image)
+    print("img:",img)
+    print("img.shape:",img.shape)
+    w = lat2W(img.shape[0],img.shape[1])
+    print("lat2W weights the Urban Sprawl dispersion:",w)
+    img2Dmatrix=ImageToBitMatrix.image3D_to_2D(image)
+    print("img2Dmatrix:",img2Dmatrix)
+    MoransI = Moran(img2Dmatrix,w)
+    print("Moran's I of the Urban Sprawl dispersion:",MoransI.I)
+    print("Moran's p-norm of the Urab Sprawl dispersion:",MoransI.p_norm) 
 
 def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False):
     print(("Image:",image))
@@ -107,6 +122,8 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,s
     imagearea=img.shape[0]*img.shape[1]
     UrbanSprawlAreas=[]
     print(("Number of segments - Number of Urban areas:",len(segment[8][0])))
+    urban_sprawl_dispersion(image)
+    ImageGraph_Keras_Theano.contours_kmeans_clustering(image,segment)
     fig1 = plt.figure(dpi=100)
     cityid=0
     centroids=[]
@@ -217,12 +234,12 @@ if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/NightLights_13nasa-india-2016.jpg")
     #seg2=image_segmentation("testlogs/NightLights_13nasa-india-2012.jpg")
     #seg3=image_segmentation("testlogs/NightLights_13nasa-india-2021.jpg")
-    seg4=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",voronoi_delaunay=True)
+    #seg4=ImageGraph_Keras_Theano.image_segmentation("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",voronoi_delaunay=True)
     #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2012.jpg")
     #ImageGraph_Keras_Theano.histogram_partition_distance_similarity("testlogs/NightLights_13nasa-india-2016.jpg","testlogs/NightLights_13nasa-india-2021.jpg")
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2016.jpg",seg1)
     #urban_sprawl_from_segments("testlogs/NightLights_13nasa-india-2012.jpg",seg2)
-    urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4,voronoi_delaunay=True)
+    #urban_sprawl_from_segments("testlogs/NASAVIIRSNightLightsChennaiMetropolitanArea_17November2021.jpg",seg4,voronoi_delaunay=True)
     #seg5=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg")
     #urban_sprawl_from_segments("testlogs/SEDAC_GPW4-11_PopulationEstimate2020_edited.jpeg",seg5,5000,266.0/854.0)
     #seg6=image_segmentation("testlogs/SEDAC_GPW4-11_PopulationDensity2020_edited.jpeg")
@@ -250,7 +267,7 @@ if __name__ == "__main__":
     #legend={235/3:"0-1",245/3:"1-50",255/3:"50-100",362/3:"100-250",372/3:"250-1000",382/3:"1000-2500",510/3:"2500-27057"}
     #legend={510/3:"0-1",382/3:"1-50",372/3:"50-100",362/3:"100-250",255/3:"250-1000",245/3:"1000-2500",235/3:"2500-27057"}
     #mapscale=147914382
-    mapscale=266.0/854.0
+    #mapscale=266.0/854.0
     #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
     #seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
     #urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
@@ -260,3 +277,6 @@ if __name__ == "__main__":
     #seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
     #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None)
     #ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11)
+    seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
+    urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=True)
+
