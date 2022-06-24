@@ -54,10 +54,16 @@ class StreamAbsGen(object):
         self.data_source = data_source
         self.bucket_name = bucket_name
 
-        if self.data_storage == "MongoDB":
+        if self.data_storage == "MongoDB" and self.data_source == "GISAndVisualStreaming":
             import pymongo
             self.mongodbclient = pymongo.MongoClient("localhost",27017)
             self.mongodb = self.mongodbclient.neuronraingis
+            print("MongoDB database:",self.mongodb.name)
+
+        if self.data_storage == "MongoDB" and self.data_source == "JSONStreaming":
+            import pymongo
+            self.mongodbclient = pymongo.MongoClient("localhost",27017)
+            self.mongodb = self.mongodbclient.neuronrainjson
             print("MongoDB database:",self.mongodb.name)
 
         if self.data_storage == "KingCobra":
@@ -141,6 +147,16 @@ class StreamAbsGen(object):
             for img in bucketfiles:
                 print("yielding img:",img)
                 yield img
+
+        if self.data_storage == "MongoDB" and self.data_source == "JSONStreaming":
+            import pymongo
+            self.mongodbclient = pymongo.MongoClient("localhost",27017)
+            self.mongodb = self.mongodbclient.neuronrainjson
+            mongofsfiles = self.mongodb[self.bucket_name].find(filter={})
+            print("mongofsfiles:",mongofsfiles)
+            for json in mongofsfiles:
+                print("yielding json:",json)
+                yield json
 
         if self.data_storage == "Spark_Parquet":
             from pyspark.sql import SparkSession

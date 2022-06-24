@@ -35,6 +35,7 @@ import json
 import tensorflow as tf
 import tensorflow_io as tfio
 from numpy import polyfit
+import Streaming_AbstractGenerator
 
 fig, ax = plt.subplots(1, 1)
 
@@ -167,33 +168,37 @@ class ChaoticHMM(object):
 
 
 if __name__ == "__main__":
-    chaotichmmf=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
-    chaotichmmjson=json.loads(chaotichmmf.read())
-    print("chaotichmmjson:",chaotichmmjson)
-    piplprofile=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
-    piplprofilejson=json.load(piplprofile)
-    print("piplprofilejson:",piplprofilejson)
-    #piplprofiletensor=tf.io.decode_json_example(piplprofilejson["states"])
-    piplprofiletensor_states=tf.convert_to_tensor(piplprofilejson["states"])
-    print("piplprofiletensor - states:",piplprofiletensor_states)
-    chaotichmm = ChaoticHMM(5.0, chaotichmmjson["states"], chaotichmmjson["start_probabilities"], chaotichmmjson["transition_probabilities"], chaotichmmjson["emission_probabilities"], chaotichmmjson["observations"],chaotichmmjson["designations"],chaotichmmjson["career_statemachine"])
-    chaotichmm.chaotic_HMM_viterbi()
-    chaotichmm.career_transition_analytics()
-    designations1=[1,2,3,4,5,6,7]
-    remunerations1=[100000,700000,1000000,1300000,200000,1400000,2500000]
-    durations1=[0.7,5,0.1,2,3,2,0.5]
-    designations2=[2,4,5,7,3,6]
-    remunerations2=[10000,70000,1000000,1300,20000,1500000,3500000]
-    durations2=[7,5,0.3,2,4,1,0.3]
-    print("========================================================")
-    print("Career Polynomial Inner Product Distance - Remunerations")
-    print("========================================================")
-    chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(remunerations1),chaotichmm.normalize(remunerations2))
-    print("========================================================")
-    print("Career Polynomial Inner Product Distance - Designations")
-    print("========================================================")
-    chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(designations1),chaotichmm.normalize(designations2))
-    print("========================================================")
-    print("Career Polynomial Inner Product Distance - Durations")
-    print("========================================================")
-    chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(durations1),chaotichmm.normalize(durations2))
+    #chaotichmmf=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
+    #chaotichmmjson=json.loads(chaotichmmf.read())
+    jsonstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","JSONStreaming","bucket2")
+    for chaotichmmjson in jsonstream: 
+        print("chaotichmmjson:",chaotichmmjson)
+        #piplprofile=open("SocialNetworkAnalysis_PeopleAnalytics_ChaoticHMM.json")
+        #piplprofilejson=json.load(piplprofile)
+        #print("piplprofilejson:",piplprofilejson)
+        #piplprofiletensor=tf.io.decode_json_example(piplprofilejson["states"])
+        #piplprofiletensor_states=tf.convert_to_tensor(piplprofilejson["states"])
+        profiletensor_states=tf.convert_to_tensor(chaotichmmjson["states"])
+        #print("piplprofiletensor - states:",piplprofiletensor_states)
+        print("profiletensor - states:",profiletensor_states)
+        chaotichmm = ChaoticHMM(5.0, chaotichmmjson["states"], chaotichmmjson["start_probabilities"], chaotichmmjson["transition_probabilities"], chaotichmmjson["emission_probabilities"], chaotichmmjson["observations"],chaotichmmjson["designations"],chaotichmmjson["career_statemachine"])
+        chaotichmm.chaotic_HMM_viterbi()
+        chaotichmm.career_transition_analytics()
+        designations1=[1,2,3,4,5,6,7]
+        remunerations1=[100000,700000,1000000,1300000,200000,1400000,2500000]
+        durations1=[0.7,5,0.1,2,3,2,0.5]
+        designations2=[2,4,5,7,3,6]
+        remunerations2=[10000,70000,1000000,1300,20000,1500000,3500000]
+        durations2=[7,5,0.3,2,4,1,0.3]
+        print("========================================================")
+        print("Career Polynomial Inner Product Distance - Remunerations")
+        print("========================================================")
+        chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(remunerations1),chaotichmm.normalize(remunerations2))
+        print("========================================================")
+        print("Career Polynomial Inner Product Distance - Designations")
+        print("========================================================")
+        chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(designations1),chaotichmm.normalize(designations2))
+        print("========================================================")
+        print("Career Polynomial Inner Product Distance - Durations")
+        print("========================================================")
+        chaotichmm.career_polynomial_inner_product_distance(chaotichmm.normalize(durations1),chaotichmm.normalize(durations2))
