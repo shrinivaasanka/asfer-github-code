@@ -18971,7 +18971,7 @@ Edge Detector - related to 1203,1232,1233,1236,1237,1240,1255 and all sections o
 	1264.2.1 Noise filtering by Gaussian 5*5 kernel
 	1264.2.2 Sobel kernel for each pixel to find its first derivative intensity gradient and direction
 	1264.2.3 Non-local maxima pixels based on Gradient are removed.  
-	1264.2.4 Hysteresis thresholding to remove edges which are not within minimum value and maximum intensity gradient value
+	1264.2.4 Hysteresis thresholding to remove edges which are not within minimum and maximum intensity gradient values
 1264.3 Space archaeology (Satellite and Airborne) by GIS infrared imagery from Airborne LIDAR-Synthetic Aperture Radar(SAR) and LandSat satellite imagery has met with much success recently in non-invasively penetrating the superficial ground obstacles (Sand dunes, Trees) to map subterranean artefacts (upto few metres depth) which would have otherwise required random digging, thereby furthering Ground Penetrating Radar (GPR) imageing to next level e.g. new structures discovered underground in Mayan sites,Peru,Iram,Egypt. Canny edge detector is useful in archaeology to identify ancient pathways,drains,viaducts (which are edges) constructed by ancient civilizations.
 1264.4 An example costly LIDAR 3D imagery of a Mayan pyramid - testlogs/Mayan_Canaa_Pyramid_Caracol_LIDAR.jpg - invisible earlier and excavated after LIDAR imageing, has been Canny edge detected by earlier function invoked as part of image_segmentation()
 1264.5 Following are logs,DOT,image files(Voronoi-Delaunay,Watershed,Chain approximation,Canny Edge Detection) for this update:
@@ -18988,3 +18988,4 @@ References:
 1264.6 Space Archaeology - NASA - https://earthobservatory.nasa.gov/images/91071/space-archaeology-in-the-realm-of-resolution
 1264.7 Space Archaeology - LIDAR imagery of Canaa Pyramid - Caracol - https://earthobservatory.nasa.gov/features/SpaceArchaeology
 1264.8 Egypt: What Lies Beneath - Documentary - https://www.discoveryplus.in/videos/egypt-what-lies-beneath/egypts-lost-cities
+1264.9 Satellite Archaeology - https://en.wikipedia.org/wiki/Remote_sensing_(archaeology) - UAV and Remote sensing imagery aided excavations related to Maya and its Collapse, Peru, Iram, Egypt and Roman
