@@ -336,6 +336,16 @@ def analyze_remotesensing_2d_patches(
         img_hist = np.histogram(patches.flatten())
         print(("Patch histogram :", imagefile, ":", img_hist))
 
+def image_segmentation_edge_detection(imagefile):
+    img = cv2.imread(imagefile,0)
+    edges = cv2.Canny(img,100,200)
+    plt.subplot(222)
+    plt.imshow(edges)
+    imagetok1=imagefile.split(".")
+    imagetok2=imagetok1[0].split("/")
+    plt.savefig("./testlogs/"+imagetok2[1]+"-cannyedgedetection.jpg")
+    return edges
+
 def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterations=3):
     clusters=defaultdict(list)
     converged=False
@@ -456,6 +466,7 @@ def image_segmentation_contours(imagefile1):
 
 def image_segmentation(imagefile,voronoi_delaunay=False):
     contours = image_segmentation_contours(imagefile)
+    edges = image_segmentation_edge_detection(imagefile)
     img = cv2.imread(imagefile)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(
@@ -625,7 +636,7 @@ if __name__ == "__main__":
     # video_merit5=inverse_distance_intrinsic_merit(vg_en_tn_prdct5,write_eventnet=True)
     # waveform1=medical_imageing("ECG","testlogs/medical_imageing/norm_2x.png")
     # waveform2=medical_imageing("ECG","testlogs/medical_imageing/infmi_2x.png")
-    seg_fmri=medical_imageing("fMRI","testlogs/medical_imageing/fMRI_MusicStimulus_UCDavis_janata_brain_lg.jpg")
+    #seg_fmri=medical_imageing("fMRI","testlogs/medical_imageing/fMRI_MusicStimulus_UCDavis_janata_brain_lg.jpg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/Google_Maps_SouthernIndia_RoadMap-000.jpg","testlogs/RemoteSensingGIS/ChennaiUrbanSprawl_Page-10-Image-15.jpg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/SEDAC_COVID19_Hotspots_GIS_2021-09-04-10-51-29.jpeg")
     #histogram_partition_distance_similarity("testlogs/RemoteSensingGIS/SEDAC_PopulationDensity_India_2021-09-04-10-49-24.jpeg","testlogs/RemoteSensingGIS/JHU_COVID19_Hotspots_GIS_2021-09-04-11-02-11.jpeg")
@@ -673,3 +684,4 @@ if __name__ == "__main__":
     #dbscan2.write_clustered_image(neuralnetwork=False)
     #seg1=image_segmentation("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
     #seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
+    seg3=image_segmentation("testlogs/Mayan_Canaa_Pyramid_Caracol_LIDAR.jpg",voronoi_delaunay=True)
