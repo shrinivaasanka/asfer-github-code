@@ -116,14 +116,14 @@ def urban_sprawl_dispersion(image):
     print("Moran's I of the Urban Sprawl dispersion:",MoransI.I)
     print("Moran's p-norm of the Urab Sprawl dispersion:",MoransI.p_norm) 
 
-def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False):
+def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=2,maxiterations=2):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
     UrbanSprawlAreas=[]
     print(("Number of segments - Number of Urban areas:",len(segment[8][0])))
     urban_sprawl_dispersion(image)
-    ImageGraph_Keras_Theano.contours_kmeans_clustering(image,segment)
+    ImageGraph_Keras_Theano.contours_kmeans_clustering(image,segment,number_of_clusters=number_of_clusters,maxiterations=maxiterations)
     fig1 = plt.figure(dpi=100)
     cityid=0
     centroids=[]
@@ -267,16 +267,15 @@ if __name__ == "__main__":
     #legend={235/3:"0-1",245/3:"1-50",255/3:"50-100",362/3:"100-250",372/3:"250-1000",382/3:"1000-2500",510/3:"2500-27057"}
     #legend={510/3:"0-1",382/3:"1-50",372/3:"50-100",362/3:"100-250",255/3:"250-1000",245/3:"1000-2500",235/3:"2500-27057"}
     #mapscale=147914382
-    #mapscale=266.0/854.0
+    mapscale=266.0/854.0
     #urban_sprawl_from_segments("testlogs/HRSL_World_NightTimeStreets.jpg",seg9,-1,mapscale,legend)
     #seg10=image_segmentation("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg")
     #urban_sprawl_from_segments("testlogs/SEDAC2030UrbanExpansionProbabilities.jpg",seg10,100000,sqkmtocontourarearatio=mapscale,legend=None)
     #fourcoloredsegments=defaultdict(list)
     #fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
     #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
-    #seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
-    #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None)
-    #ImageGraph_Keras_Theano.contours_kmeans_clustering("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11)
+    seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
+    urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None,voronoi_delaunay=True)
     seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
     urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=True)
 
