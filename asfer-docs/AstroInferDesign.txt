@@ -19010,3 +19010,8 @@ References:
   testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg - Moran's p-norm of the Urban Sprawl dispersion: 0.0
   testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg - Moran's I of the Urban Sprawl dispersion: 0.8848283189311299
   testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg - Moran's p-norm of the Urban Sprawl dispersion: 0.0
+
+References:
+----------
+1265.7 GHSL Atlas of the Human Planet 2016 - https://ghsl.jrc.ec.europa.eu/documents/Atlas_2016.pdf - Section 2.4.3 GHSL Settlement Model: Rural,Urban Cluster,Urban Centre Grids - Section 3.4: City Analysis - Section 3.4.1: 32 Megacities - Canny Edge Detection earlier extracts a lattice grid of transportation network from GIS quite similar to Illustration in Section 2.4.3 of GHSL Atlas
+1265.8 Missing millions: undercounting urbanization in India -  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6934249/ - "... We use a random forest-based model to create a high-resolution (~ 100 m) population grid from district-level data available from the Indian Census for 2001 and 2011, a novel application of such methods to create temporally consistent population grids. We then apply a community-detection clustering algorithm to construct urban agglomerations for the entire country. Compared with the 2011 official statistics, we estimate 12% more of urban population, but find fewer mid-size cities. We also identify urban agglomerations that span jurisdictional boundaries across large portions of Kerala and the Gangetic Plain...." - parallels could be drawn between Minimum enclosing circles-Voronoi-Delaunay based computational geometric community detection and SEDAC-VIIRS estimates of urban sprawls in 1167,1225 and Random Forest model described in this article.
