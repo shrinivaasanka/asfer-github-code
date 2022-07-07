@@ -1,0 +1,88 @@
+__init__():timescale now: <Time tt=2459767.8497245726>
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  mars  from  earth  on  (2022, 7, 7, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 01h 57m 50.00s>, <Angle +10deg 06' 29.1">, <Distance 1.26545 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  sun  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  moon  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  mars  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  mercury  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  jupiter barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  venus barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  saturn barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  uranus barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  neptune barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>)
+sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of  pluto barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  2016-06-29 01:16:38 TT
+radec_match(): datetime: 2016-06-29 01:16:38 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+radec_match(): sun: (<Angle 06h 32m 42.94s>, <Angle +23deg 13' 26.7">, <Distance 1.01665 au>)
+radec_match(): moon: (<Angle 01h 35m 37.98s>, <Angle +06deg 29' 43.3">, <Distance 0.00246204 au>)
+radec_match(): mars: (<Angle 15h 18m 55.06s>, <Angle -20deg 58' 36.2">, <Distance 0.56547 au>)
+radec_match(): mercury: (<Angle 05h 50m 35.49s>, <Angle +23deg 36' 39.7">, <Distance 1.26293 au>)
+radec_match(): jupiter: (<Angle 11h 12m 30.90s>, <Angle +06deg 24' 11.2">, <Distance 5.72292 au>)
+radec_match(): venus: (<Angle 06h 59m 21.26s>, <Angle +23deg 33' 56.6">, <Distance 1.72137 au>)
+radec_match(): saturn: (<Angle 16h 39m 05.37s>, <Angle -20deg 21' 44.9">, <Distance 9.1114 au>)
+radec_match(): uranus: (<Angle 01h 29m 24.07s>, <Angle +08deg 42' 30.4">, <Distance 20.2215 au>)
+radec_match(): neptune: (<Angle 22h 53m 57.94s>, <Angle -07deg 56' 34.4">, <Distance 29.4997 au>)
+radec_match(): pluto: (<Angle 19h 09m 31.99s>, <Angle -21deg 04' 47.4">, <Distance 32.1207 au>)
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  2016-06-30 01:16:38 TT
+radec_match(): datetime: 2016-06-30 01:16:38 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+radec_match(): sun: (<Angle 06h 36m 51.48s>, <Angle +23deg 10' 00.2">, <Distance 1.01668 au>)
+radec_match(): moon: (<Angle 02h 31m 22.65s>, <Angle +10deg 34' 33.0">, <Distance 0.00245137 au>)
+radec_match(): mars: (<Angle 15h 18m 52.30s>, <Angle -20deg 59' 38.8">, <Distance 0.569329 au>)
+radec_match(): mercury: (<Angle 05h 59m 44.01s>, <Angle +23deg 48' 25.1">, <Distance 1.27589 au>)
+radec_match(): jupiter: (<Angle 11h 13m 00.10s>, <Angle +06deg 20' 56.8">, <Distance 5.73755 au>)
+radec_match(): venus: (<Angle 07h 04m 41.95s>, <Angle +23deg 28' 03.9">, <Distance 1.72005 au>)
+radec_match(): saturn: (<Angle 16h 38m 49.66s>, <Angle -20deg 21' 23.4">, <Distance 9.11889 au>)
+radec_match(): uranus: (<Angle 01h 29m 29.51s>, <Angle +08deg 43' 00.7">, <Distance 20.2053 au>)
+radec_match(): neptune: (<Angle 22h 53m 56.12s>, <Angle -07deg 56' 47.9">, <Distance 29.4846 au>)
+radec_match(): pluto: (<Angle 19h 09m 25.79s>, <Angle -21deg 05' 03.4">, <Distance 32.1189 au>)
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  2016-07-01 01:16:38 TT
+radec_match(): datetime: 2016-07-01 01:16:38 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+radec_match(): sun: (<Angle 06h 40m 59.80s>, <Angle +23deg 06' 09.3">, <Distance 1.01671 au>)
+radec_match(): moon: (<Angle 03h 28m 57.16s>, <Angle +14deg 03' 30.1">, <Distance 0.00244646 au>)
+radec_match(): mars: (<Angle 15h 18m 53.00s>, <Angle -21deg 00' 51.0">, <Distance 0.573272 au>)
+radec_match(): mercury: (<Angle 06h 09m 00.53s>, <Angle +23deg 57' 45.2">, <Distance 1.2876 au>)
+radec_match(): jupiter: (<Angle 11h 13m 29.73s>, <Angle +06deg 17' 39.7">, <Distance 5.75209 au>)
+radec_match(): venus: (<Angle 07h 10m 02.14s>, <Angle +23deg 21' 29.5">, <Distance 1.71868 au>)
+radec_match(): saturn: (<Angle 16h 38m 34.17s>, <Angle -20deg 21' 02.3">, <Distance 9.12665 au>)
+radec_match(): uranus: (<Angle 01h 29m 34.77s>, <Angle +08deg 43' 30.1">, <Distance 20.189 au>)
+radec_match(): neptune: (<Angle 22h 53m 54.18s>, <Angle -07deg 57' 02.1">, <Distance 29.4696 au>)
+radec_match(): pluto: (<Angle 19h 09m 19.57s>, <Angle -21deg 05' 19.5">, <Distance 32.1173 au>)
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  2016-07-02 01:16:38 TT
+radec_match(): datetime: 2016-07-02 01:16:38 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+radec_match(): sun: (<Angle 06h 45m 07.89s>, <Angle +23deg 01' 54.2">, <Distance 1.01673 au>)
+radec_match(): moon: (<Angle 04h 28m 14.17s>, <Angle +16deg 40' 40.1">, <Distance 0.00244858 au>)
+radec_match(): mars: (<Angle 15h 18m 57.18s>, <Angle -21deg 02' 12.9">, <Distance 0.577295 au>)
+radec_match(): mercury: (<Angle 06h 18m 23.50s>, <Angle +24deg 04' 31.9">, <Distance 1.29801 au>)
+radec_match(): jupiter: (<Angle 11h 13m 59.79s>, <Angle +06deg 14' 19.8">, <Distance 5.76654 au>)
+radec_match(): venus: (<Angle 07h 15m 21.78s>, <Angle +23deg 14' 13.7">, <Distance 1.71725 au>)
+radec_match(): saturn: (<Angle 16h 38m 18.93s>, <Angle -20deg 20' 41.9">, <Distance 9.13467 au>)
+radec_match(): uranus: (<Angle 01h 29m 39.87s>, <Angle +08deg 43' 58.4">, <Distance 20.1727 au>)
+radec_match(): neptune: (<Angle 22h 53m 52.13s>, <Angle -07deg 57' 17.0">, <Distance 29.4548 au>)
+radec_match(): pluto: (<Angle 19h 09m 13.32s>, <Angle -21deg 05' 35.7">, <Distance 32.1161 au>)
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  2016-07-03 01:16:38 TT
+radec_match(): datetime: 2016-07-03 01:16:38 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+radec_match(): sun: (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>)
+radec_match(): moon: (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>)
+radec_match(): mars: (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>)
+radec_match(): mercury: (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>)
+radec_match(): jupiter: (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>)
+radec_match(): venus: (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>)
+radec_match(): saturn: (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>)
+radec_match(): uranus: (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>)
+radec_match(): neptune: (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>)
+radec_match(): pluto: (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)
+planetarium_search(): found matching datetime =  2016-07-03 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for radec_match() =  -2016-06-29 01:16:12 TT
+radec_match(): datetime: -2016-06-29 01:16:12 TT
+radec_match(): planetradecdict: {'sun': (<Angle 06h 49m 15.70s>, <Angle +22deg 57' 15.0">, <Distance 1.01674 au>), 'moon': (<Angle 05h 28m 36.18s>, <Angle +18deg 13' 24.1">, <Distance 0.00245854 au>), 'mars': (<Angle 15h 19m 04.80s>, <Angle -21deg 03' 44.5">, <Distance 0.581395 au>), 'mercury': (<Angle 06h 27m 51.29s>, <Angle +24deg 08' 39.0">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle 11h 14m 30.27s>, <Angle +06deg 10' 57.3">, <Distance 5.78091 au>), 'venus barycenter': (<Angle 07h 20m 40.81s>, <Angle +23deg 06' 16.8">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle 16h 38m 03.94s>, <Angle -20deg 20' 22.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle 01h 29m 44.80s>, <Angle +08deg 44' 25.7">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle 22h 53m 49.97s>, <Angle -07deg 57' 32.5">, <Distance 29.44 au>), 'pluto barycenter': (<Angle 19h 09m 07.07s>, <Angle -21deg 05' 51.9">, <Distance 32.1152 au>)}
+Exception: ephemeris segment only covers dates 1899-07-28 23:59:18Z through 2053-10-08 23:58:51Z UT
