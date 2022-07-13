@@ -1,0 +1,766 @@
+__init__():timescale now: <Time tt=2459773.978809863>
+SkyField - sky_on_datetime(): Long-Lat position of  mars  from  earth  on  (2022, 7, 7, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -01deg 48' 30.9">, <Angle 30deg 56' 50.4">, <Distance 1.26545 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  sun  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  moon  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  mars  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  mercury  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  jupiter barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  venus barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  saturn barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  uranus barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  neptune barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>)
+SkyField - sky_on_datetime(): Long-Lat position of  pluto barycenter  from  earth  on  (2016, 7, 3, 1, 15, 30)  (Year-Month-Day-Hour-Minute-Second): (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: 2016-06-29 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  2016-06-29 01:16:38 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: 2016-06-29 01:16:38 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+latlon_match(): sun: (<Angle -00deg 00' 07.8">, <Angle 97deg 30' 23.7">, <Distance 1.01665 au>)
+latlon_match(): moon: (<Angle -03deg 13' 55.4">, <Angle 24deg 31' 26.7">, <Distance 0.00246204 au>)
+latlon_match(): mars: (<Angle -02deg 34' 57.7">, <Angle 232deg 50' 04.9">, <Distance 0.56547 au>)
+latlon_match(): mercury: (<Angle +00deg 11' 21.6">, <Angle 87deg 50' 21.7">, <Distance 1.26293 au>)
+latlon_match(): jupiter: (<Angle +01deg 12' 12.9">, <Angle 166deg 35' 05.1">, <Distance 5.72292 au>)
+latlon_match(): venus: (<Angle +00deg 49' 23.3">, <Angle 103deg 34' 19.6">, <Distance 1.72137 au>)
+latlon_match(): saturn: (<Angle +01deg 45' 28.6">, <Angle 251deg 04' 55.3">, <Distance 9.1114 au>)
+latlon_match(): uranus: (<Angle -00deg 36' 27.4">, <Angle 23deg 53' 48.5">, <Distance 20.2215 au>)
+latlon_match(): neptune: (<Angle -00deg 50' 59.9">, <Angle 341deg 44' 58.4">, <Distance 29.4997 au>)
+latlon_match(): pluto: (<Angle +01deg 23' 15.5">, <Angle 286deg 11' 49.9">, <Distance 32.1207 au>)
+Angular separation between  Sun  and  Moon : 73deg 00' 51.1"
+Angular separation between  Sun  and  Mars : 135deg 15' 34.5"
+Angular separation between  Sun  and  Mercury : 09deg 40' 09.0"
+Angular separation between  Sun  and  Jupiter : 69deg 04' 46.0"
+Angular separation between  Sun  and  Venus : 06deg 07' 16.2"
+Angular separation between  Sun  and  Saturn : 153deg 30' 38.9"
+Angular separation between  Sun  and  Uranus : 73deg 36' 52.9"
+Angular separation between  Sun  and  Neptune : 115deg 45' 43.1"
+Angular separation between  Sun  and  Pluto : 171deg 12' 41.2"
+Angular separation between  Moon  and  Sun : 73deg 00' 51.1"
+Angular separation between  Moon  and  Mars : 151deg 06' 58.7"
+Angular separation between  Moon  and  Mercury : 63deg 22' 37.3"
+Angular separation between  Moon  and  Jupiter : 142deg 02' 17.7"
+Angular separation between  Moon  and  Venus : 79deg 07' 04.7"
+Angular separation between  Moon  and  Saturn : 133deg 28' 24.2"
+Angular separation between  Moon  and  Uranus : 02deg 41' 54.8"
+Angular separation between  Moon  and  Neptune : 42deg 48' 48.0"
+Angular separation between  Moon  and  Pluto : 98deg 23' 50.4"
+Angular separation between  Mars  and  Sun : 135deg 15' 34.5"
+Angular separation between  Mars  and  Moon : 151deg 06' 58.7"
+Angular separation between  Mars  and  Mercury : 144deg 55' 02.1"
+Angular separation between  Mars  and  Jupiter : 66deg 20' 03.7"
+Angular separation between  Mars  and  Venus : 129deg 14' 54.8"
+Angular separation between  Mars  and  Saturn : 18deg 45' 02.6"
+Angular separation between  Mars  and  Uranus : 150deg 54' 01.5"
+Angular separation between  Mars  and  Neptune : 108deg 51' 13.9"
+Angular separation between  Mars  and  Pluto : 53deg 29' 40.3"
+Angular separation between  Mercury  and  Sun : 09deg 40' 09.0"
+Angular separation between  Mercury  and  Moon : 63deg 22' 37.3"
+Angular separation between  Mercury  and  Mars : 144deg 55' 02.1"
+Angular separation between  Mercury  and  Jupiter : 78deg 44' 25.4"
+Angular separation between  Mercury  and  Venus : 15deg 44' 41.4"
+Angular separation between  Mercury  and  Saturn : 163deg 07' 18.5"
+Angular separation between  Mercury  and  Uranus : 63deg 57' 01.6"
+Angular separation between  Mercury  and  Neptune : 106deg 05' 55.5"
+Angular separation between  Mercury  and  Pluto : 161deg 35' 13.7"
+Angular separation between  Jupiter  and  Sun : 69deg 04' 46.0"
+Angular separation between  Jupiter  and  Moon : 142deg 02' 17.7"
+Angular separation between  Jupiter  and  Mars : 66deg 20' 03.7"
+Angular separation between  Jupiter  and  Mercury : 78deg 44' 25.4"
+Angular separation between  Jupiter  and  Venus : 62deg 59' 56.8"
+Angular separation between  Jupiter  and  Saturn : 84deg 27' 25.2"
+Angular separation between  Jupiter  and  Uranus : 142deg 41' 18.9"
+Angular separation between  Jupiter  and  Neptune : 175deg 08' 53.8"
+Angular separation between  Jupiter  and  Pluto : 119deg 33' 16.9"
+Angular separation between  Venus  and  Sun : 06deg 07' 16.2"
+Angular separation between  Venus  and  Moon : 79deg 07' 04.7"
+Angular separation between  Venus  and  Mars : 129deg 14' 54.8"
+Angular separation between  Venus  and  Mercury : 15deg 44' 41.4"
+Angular separation between  Venus  and  Jupiter : 62deg 59' 56.8"
+Angular separation between  Venus  and  Saturn : 147deg 24' 03.2"
+Angular separation between Astronomical Positions
+----------------------
+Planet      Longitude                  Latitute     Speed (deg/day) 
+------------------------------------------------------------------------
+Sun         07°05′31.0492″ Cancer      00:00:00.49S 00:57:20.44     
+Moon        01°08′56.8786″ Sagittarius 03:11:38.03S 11:50:27.00     
+Mars        19°33′45.7904″ Pisces      03:46:38.95S 00:28:05.11     
+Mercury     R10°21′36.9338″ Cancer     04:43:13.19S -00:44:46.33    
+Jupiter     05°34′58.3138″ Virgo       01:17:55.52N 00:09:22.52     
+Venus       13°00′38.1429″ Cancer      01:07:07.45N 01:14:00.24     
+Saturn      10°17′6.38605″ Gemini      01:07:13.75S 00:07:18.16     
+Dragon Head 08°13′24.1189″ Capricorn   00:00:00.00  -00:03:10.55    
+Dragon Tail 08°13′24.1189″ Cancer      00:00:00.00  -00:03:10.55    
+Ascendant   29°13′23.7213″ Aries                                    
+
+Ayanamsa
+--------
+Name         Value        
+----------------------------
+Lahiri       356:02:54.50 
+Raman        354:36:08.79 
+Krishnamurti 355:57:06.81 
+Custom       356:02:54.50 
+
+ Venus  and  Uranus : 79deg 41' 23.3"
+Angular separation between  Venus  and  Neptune : 121deg 50' 14.4"
+Angular separation between  Venus  and  Pluto : 176deg 34' 35.8"
+Angular separation between  Saturn  and  Sun : 153deg 30' 38.9"
+Angular separation between  Saturn  and  Moon : 133deg 28' 24.2"
+Angular separation between  Saturn  and  Mars : 18deg 45' 02.6"
+Angular separation between  Saturn  and  Mercury : 163deg 07' 18.5"
+Angular separation between  Saturn  and  Jupiter : 84deg 27' 25.2"
+Angular separation between  Saturn  and  Venus : 147deg 24' 03.2"
+Angular separation between  Saturn  and  Uranus : 132deg 49' 07.8"
+Angular separation between  Saturn  and  Neptune : 90deg 41' 44.9"
+Angular separation between  Saturn  and  Pluto : 35deg 06' 10.4"
+Angular separation between  Uranus  and  Sun : 73deg 36' 52.9"
+Angular separation between  Uranus  and  Moon : 02deg 41' 54.8"
+Angular separation between  Uranus  and  Mars : 150deg 54' 01.5"
+Angular separation between  Uranus  and  Mercury : 63deg 57' 01.6"
+Angular separation between  Uranus  and  Jupiter : 142deg 41' 18.9"
+Angular separation between  Uranus  and  Venus : 79deg 41' 23.3"
+Angular separation between  Uranus  and  Saturn : 132deg 49' 07.8"
+Angular separation between  Uranus  and  Neptune : 42deg 08' 54.1"
+Angular separation between  Uranus  and  Pluto : 97deg 43' 07.9"
+Angular separation between  Neptune  and  Sun : 115deg 45' 43.1"
+Angular separation between  Neptune  and  Moon : 42deg 48' 48.0"
+Angular separation between  Neptune  and  Mars : 108deg 51' 13.9"
+Angular separation between  Neptune  and  Mercury : 106deg 05' 55.5"
+Angular separation between  Neptune  and  Jupiter : 175deg 08' 53.8"
+Angular separation between  Neptune  and  Venus : 121deg 50' 14.4"
+Angular separation between  Neptune  and  Saturn : 90deg 41' 44.9"
+Angular separation between  Neptune  and  Uranus : 42deg 08' 54.1"
+Angular separation between  Neptune  and  Pluto : 55deg 35' 46.5"
+Angular separation between  Pluto  and  Sun : 171deg 12' 41.2"
+Angular separation between  Pluto  and  Moon : 98deg 23' 50.4"
+Angular separation between  Pluto  and  Mars : 53deg 29' 40.3"
+Angular separation between  Pluto  and  Mercury : 161deg 35' 13.7"
+Angular separation between  Pluto  and  Jupiter : 119deg 33' 16.9"
+Angular separation between  Pluto  and  Venus : 176deg 34' 35.8"
+Angular separation between  Pluto  and  Saturn : 35deg 06' 10.4"
+Angular separation between  Pluto  and  Uranus : 97deg 43' 07.9"
+Angular separation between  Pluto  and  Neptune : 55deg 35' 46.5"
+===============================SKYFIELD========================================================
+===============================ASTROPY=========================================================
+2016-06-30 01:16:38 TT
+astropy - earth: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (117.58972497, -51.24544568, 4.25493793e-05)>
+astropy - sun: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (99.20968648, 23.16474367, 1.01669458)>
+astropy - moon: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (99.20968648, 23.16474367, 1.01669458)>
+astropy - mars: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (229.7137166, -20.99695483, 0.56936256)>
+astropy - mercury: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (89.92966793, 23.80528335, 1.27590285)>
+astropy - jupiter: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (168.25180421, 6.34756522, 5.73742964)>
+astropy - venus: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (106.16965429, 23.46698359, 1.72006293)>
+astropy - saturn: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (249.7197016, -20.35575057, 9.11896581)>
+astropy - uranus: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (22.37265324, 8.71552631, 20.20308231)>
+astropy - neptune: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (343.48707073, -7.94526875, 29.48515415)>
+astropy - earthmoon: <SkyCoord (GCRS: obstime=2016-06-30 01:16:38.000, obsgeoloc=(1845367.22504071, -3531390.96806639, 4963754.20287326) m, obsgeovel=(257.49495621, 133.98896771, -0.40399309) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (66.68079615, -31.36383333, 5.25302038e-05)>
+===============================ASTROPY=========================================================
+===============================MAITREYA8T==============================================
+===============================MAITREYA8T==============================================
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: 2016-06-30 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  2016-06-30 01:16:38 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: 2016-06-30 01:16:38 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+latlon_match(): sun: (<Angle -00deg 00' 07.9">, <Angle 98deg 27' 36.6">, <Distance 1.01668 au>)
+latlon_match(): moon: (<Angle -04deg 06' 00.6">, <Angle 38deg 53' 44.9">, <Distance 0.00245137 au>)
+latlon_match(): mars: (<Angle -02deg 36' 08.2">, <Angle 232deg 49' 43.3">, <Distance 0.569329 au>)
+latlon_match(): mercury: (<Angle +00deg 22' 03.7">, <Angle 89deg 56' 00.6">, <Distance 1.27589 au>)
+latlon_match(): jupiter: (<Angle +01deg 12' 03.3">, <Angle 166deg 43' 01.5">, <Distance 5.73755 au>)
+latlon_match(): venus: (<Angle +00deg 51' 21.7">, <Angle 104deg 48' 03.3">, <Distance 1.72005 au>)
+latlon_match(): saturn: (<Angle +01deg 45' 19.4">, <Angle 251deg 01' 13.1">, <Distance 9.11889 au>)
+latlon_match(): uranus: (<Angle -00deg 36' 28.8">, <Angle 23deg 55' 14.9">, <Distance 20.2053 au>)
+latlon_match(): neptune: (<Angle -00deg 51' 02.0">, <Angle 341deg 44' 28.5">, <Distance 29.4846 au>)
+latlon_match(): pluto: (<Angle +01deg 23' 09.9">, <Angle 286deg 10' 21.8">, <Distance 32.1189 au>)
+Angular separation between  Sun  and  Moon : 59deg 39' 11.0"
+Angular separation between  Sun  and  Mars : 134deg 18' 04.0"
+Angular separation between  Sun  and  Mercury : 08deg 32' 04.8"
+Angular separation between  Sun  and  Jupiter : 68deg 15' 30.4"
+Angular separation between  Sun  and  Venus : 06deg 23' 53.8"
+Angular separation between  Sun  and  Saturn : 152deg 29' 52.8"
+Angular separation between  Sun  and  Uranus : 74deg 32' 39.6"
+Angular separation between  Sun  and  Neptune : 116deg 43' 25.7"
+Angular separation between  Sun  and  Pluto : 172deg 10' 33.5"
+Angular separation between  Moon  and  Sun : 59deg 39' 11.0"
+Angular separation between  Moon  and  Mars : 164deg 33' 11.1"
+Angular separation between  Moon  and  Mercury : 51deg 11' 37.0"
+Angular separation between  Moon  and  Jupiter : 127deg 48' 20.1"
+Angular separation between  Moon  and  Venus : 66deg 02' 35.7"
+Angular separation between  Moon  and  Saturn : 147deg 50' 34.8"
+Angular separation between  Moon  and  Uranus : 15deg 21' 48.7"
+Angular separation between  Moon  and  Neptune : 57deg 11' 10.4"
+Angular separation between  Moon  and  Pluto : 112deg 46' 13.7"
+Angular separation between  Mars  and  Sun : 134deg 18' 04.0"
+Angular separation between  Mars  and  Moon : 164deg 33' 11.1"
+Angular separation between  Mars  and  Mercury : 142deg 50' 01.6"
+Angular separation between  Mars  and  Jupiter : 66deg 11' 49.1"
+Angular separation between  Mars  and  Venus : 128deg 00' 59.2"
+Angular separation between  Mars  and  Saturn : 18deg 42' 01.5"
+Angular separation between  Mars  and  Uranus : 150deg 55' 40.9"
+Angular separation between  Mars  and  Neptune : 108deg 51' 02.7"
+Angular separation between  Mars  and  Pluto : 53deg 28' 37.8"
+Angular separation between  Mercury  and  Sun : 08deg 32' 04.8"
+Angular separation between  Mercury  and  Moon : 51deg 11' 37.0"
+Angular separation between  Mercury  and  Mars : 142deg 50' 01.6"
+Angular separation between  Mercury  and  Jupiter : 76deg 46' 31.4"
+Angular separation between  Mercury  and  Venus : 14deg 52' 28.4"
+Angular separation between  Mercury  and  Saturn : 160deg 57' 36.1"
+Angular separation between  Mercury  and  Uranus : 66deg 01' 22.7"
+Angular separation between  Mercury  and  Neptune : 108deg 12' 12.9"
+Angular separation between  Mercury  and  Pluto : 163deg 40' 43.2"
+Angular separation between  Jupiter  and  Sun : 68deg 15' 30.4"
+Angular separation between  Jupiter  and  Moon : 127deg 48' 20.1"
+Angular separation between  Jupiter  and  Mars : 66deg 11' 49.1"
+Angular separation between  Jupiter  and  Mercury : 76deg 46' 31.4"
+Angular separation between  Jupiter  and  Venus : 61deg 54' 08.8"
+Angular separation between  Jupiter  and  Saturn : 84deg 15' 47.4"
+Angular separation between  Jupiter  and  Uranus : 142deg 47' 49.5"
+Angular separation between  Jupiter  and  Neptune : 175deg 00' 29.2"
+Angular separation between  Jupiter  and  Pluto : 119deg 23' 53.3"
+Angular separation between  Venus  and  Sun : 06deg 23' 53.8"
+Angular separation between  Venus  and  Moon : 66deg 02' 35.7"
+Angular separation between  Venus  and  Mars : 128deg 00' 59.2"
+Angular separation between  Venus  and  Mercury : 14deg 52' 28.4"
+Angular separation between  Venus  and  Jupiter : 61deg 54' 08.8"
+Angular separation between  Venus  and  Saturn : 146deg 06' 43.6"
+Angular separation between  Venus  and  Uranus : 80deg 53' 41.7"
+Angular separation between  Venus  and  Neptune : 123deg 04' 28.6"
+Angular separation between  Venus  and  Pluto : 177deg 22' 38.4"
+Angular separation between  Saturn  and  Sun : 152deg 29' 52.8"
+Angular separation between  Saturn  and  Moon : 147deg 50' 34.8"
+Angular separation between  Saturn  and  Mars : 18deg 42' 01.5"
+Angular separation between  Saturn  and  Mercury : 160deg 57' 36.1"
+Angular separation between  Saturn  and  Jupiter : 84deg 15' 47.4"
+Angular separation between  Saturn  and  Venus : 146deg 06' 43.6"
+Angular separation between  Saturn  and  Uranus : 132deg 54' 15.9"
+Angular separation between  Saturn  and  Neptune : 90deg 44' 56.6"
+Angular separation between  Saturn  and  Pluto : 35deg 08' 24.3"
+Angular separation between  Uranus  and  Sun : 74deg 32' 39.6"
+Angular separation between  Uranus  and  Moon : 15deg 21' 48.7"
+Angular separation between  Uranus  and  Mars : 150deg 55' 40.9"
+Angular separation between  Uranus  and  Mercury : 66deg 01' 22.7"
+Angular separation between  Uranus  and  Jupiter : 142deg 47' 49.5"
+Angular separation between  Uranus  and  Venus : 80deg 53' 41.7"
+Angular separation between  Uranus  and  Saturn : 132deg 54' 15.9"
+Angular separation between  Uranus  and  Neptune : 42deg 10' 50.3"
+Angular separation between  Uranus  and  Pluto : 97deg 46' 02.1"
+Angular separation between  Neptune  and  Sun : 116deg 43' 25.7"
+Angular separation between  Neptune  and  Moon : 57deg 11' 10.4"
+Angular separation between  Neptune  and  Mars : 108deg 51' 02.7"
+Angular separation between  Neptune  and  Mercury : 108deg 12' 12.9"
+Angular separation between  Neptune  and  Jupiter : 175deg 00' 29.2"
+Angular separation between  Neptune  and  Venus : 123deg 04' 28.6"
+Angular separation between  Neptune  and  Saturn : 90deg 44' 56.6"
+Angular separation between  Neptune  and  Uranus : 42deg 10' 50.3"
+Angular separation between  Neptune  and  Pluto : 55deg 36' 44.4"
+Angular separation between  Pluto  and  Sun : 172deg 10' 33.5"
+Angular separation between  Pluto  and  Moon : 112deg 46' 13.7"
+Angular separation between  Pluto  and  Mars : 53deg 28' 37.8"
+Angular separation between  Pluto  and  Mercury : 163deg 40' 43.2"
+Angular separation between  Pluto  and  Jupiter : 119deg 23' 53.3"
+Angular separation between  Pluto  and  Venus : 177deg 22' 38.4"
+Angular separation between  Pluto  and  Saturn : 35deg 08' 24.3"
+Angular separation between  Pluto  and  Uranus : 97deg 46' 02.1"
+Angular separation between  Pluto  and  Neptune : 55deg 36' 44.4"
+===============================SKYFIELD========================================================
+===============================ASTROPY=========================================================
+2016-07-01 01:16:38 TT
+astropy - earth: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (118.57437181, -51.24406515, 4.25494044e-05)>
+astropy - sun: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (100.24437419, 23.10064939, 1.01671995)>
+astropy - moon: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (100.24437419, 23.10064939, 1.01671995)>
+astropy - mars: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (229.71668003, -21.01699538, 0.57330636)>
+astropy - mercury: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (92.24843046, 23.96092886, 1.28762056)>
+astropy - jupiter: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (168.37517786, 6.29284033, 5.75197268)>
+astropy - venus: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (107.50378353, 23.35747219, 1.71869035)>Astronomical Positions
+----------------------
+Planet      Longitude                   Latitute     Speed (deg/day) 
+-------------------------------------------------------------------------
+Sun         08°02′51.9225″ Cancer       00:00:00.37S 00:57:21.32     
+Moon        12°58′0.801608″ Sagittarius 02:15:36.99S 11:48:09.88     
+Mars        20°01′39.1401″ Pisces       03:48:22.87S 00:27:41.50     
+Mercury     R09°36′32.2642″ Cancer      04:45:07.06S -00:45:15.01    
+Jupiter     05°44′23.7963″ Virgo        01:17:45.72N 00:09:28.43     
+Venus       14°14′38.6598″ Cancer       01:08:36.73N 01:14:00.81     
+Saturn      10°24′23.5241″ Gemini       01:07:12.00S 00:07:16.10     
+Dragon Head 08°10′13.5784″ Capricorn    00:00:00.00  -00:03:10.53    
+Dragon Tail 08°10′13.5784″ Cancer       00:00:00.00  -00:03:10.53    
+Ascendant   00°15′24.807″ Taurus                                     
+
+Ayanamsa
+--------
+Name         Value        
+----------------------------
+Lahiri       356:02:54.64 
+Raman        354:36:08.93 
+Krishnamurti 355:57:06.94 
+Custom       356:02:54.64 
+
+
+astropy - saturn: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (249.65513195, -20.3499136, 9.12672285)>
+astropy - uranus: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (22.39468852, 8.72371083, 20.18683321)>
+astropy - neptune: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (343.47908669, -7.94917978, 29.4701676)>
+astropy - earthmoon: <SkyCoord (GCRS: obstime=2016-07-01 01:16:38.000, obsgeoloc=(1905837.06501351, -3499262.85765743, 4963658.19590523) m, obsgeovel=(255.15208124, 138.39838342, -0.40010229) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (75.61121954, -28.32504921, 5.38073268e-05)>
+===============================ASTROPY=========================================================
+===============================MAITREYA8T==============================================
+===============================MAITREYA8T==============================================
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: 2016-07-01 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  2016-07-01 01:16:38 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: 2016-07-01 01:16:38 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+latlon_match(): sun: (<Angle -00deg 00' 07.9">, <Angle 99deg 24' 49.7">, <Distance 1.01671 au>)
+latlon_match(): moon: (<Angle -04deg 42' 49.5">, <Angle 53deg 24' 29.5">, <Distance 0.00244646 au>)
+latlon_match(): mars: (<Angle -02deg 37' 15.5">, <Angle 232deg 50' 11.3">, <Distance 0.573272 au>)
+latlon_match(): mercury: (<Angle +00deg 32' 21.6">, <Angle 92deg 03' 09.1">, <Distance 1.2876 au>)
+latlon_match(): jupiter: (<Angle +01deg 11' 53.9">, <Angle 166deg 51' 04.9">, <Distance 5.75209 au>)
+latlon_match(): venus: (<Angle +00deg 53' 17.9">, <Angle 106deg 01' 47.3">, <Distance 1.71868 au>)
+latlon_match(): saturn: (<Angle +01deg 45' 10.2">, <Angle 250deg 57' 34.3">, <Distance 9.12665 au>)
+latlon_match(): uranus: (<Angle -00deg 36' 30.3">, <Angle 23deg 56' 38.6">, <Distance 20.189 au>)
+latlon_match(): neptune: (<Angle -00deg 51' 04.2">, <Angle 341deg 43' 56.9">, <Distance 29.4696 au>)
+latlon_match(): pluto: (<Angle +01deg 23' 04.3">, <Angle 286deg 08' 53.4">, <Distance 32.1173 au>)
+Angular separation between  Sun  and  Moon : 46deg 11' 38.0"
+Angular separation between  Sun  and  Mars : 133deg 21' 23.0"
+Angular separation between  Sun  and  Mercury : 07deg 22' 52.0"
+Angular separation between  Sun  and  Jupiter : 67deg 26' 21.7"
+Angular separation between  Sun  and  Venus : 06deg 40' 31.3"
+Angular separation between  Sun  and  Saturn : 151deg 29' 09.3"
+Angular separation between  Sun  and  Uranus : 75deg 28' 29.1"
+Angular separation between  Sun  and  Neptune : 117deg 41' 10.3"
+Angular separation between  Sun  and  Pluto : 173deg 08' 12.5"
+Angular separation between  Moon  and  Sun : 46deg 11' 38.0"
+Angular separation between  Moon  and  Mars : 172deg 38' 32.3"
+Angular separation between  Moon  and  Mercury : 38deg 57' 41.1"
+Angular separation between  Moon  and  Jupiter : 113deg 27' 33.4"
+Angular separation between  Moon  and  Venus : 52deg 52' 04.9"
+Angular separation between  Moon  and  Saturn : 162deg 14' 20.4"
+Angular separation between  Moon  and  Uranus : 29deg 42' 46.0"
+Angular separation between  Moon  and  Neptune : 71deg 40' 29.3"
+Angular separation between  Moon  and  Pluto : 127deg 15' 08.2"
+Angular separation between  Mars  and  Sun : 133deg 21' 23.0"
+Angular separation between  Mars  and  Moon : 172deg 38' 32.3"
+Angular separation between  Mars  and  Mercury : 140deg 44' 13.3"
+Angular separation between  Mars  and  Jupiter : 66deg 04' 16.8"
+Angular separation between  Mars  and  Venus : 126deg 47' 52.8"
+Angular separation between  Mars  and  Saturn : 18deg 38' 14.9"
+Angular separation between  Mars  and  Uranus : 150deg 56' 28.6"
+Angular separation between  Mars  and  Neptune : 108deg 50' 00.4"
+Angular separation between  Mars  and  Pluto : 53deg 26' 45.4"
+Angular separation between  Mercury  and  Sun : 07deg 22' 52.0"
+Angular separation between  Mercury  and  Moon : 38deg 57' 41.1"
+Angular separation between  Mercury  and  Mars : 140deg 44' 13.3"
+Angular separation between  Mercury  and  Jupiter : 74deg 47' 16.2"
+Angular separation between  Mercury  and  Venus : 13deg 58' 49.9"
+Angular separation between  Mercury  and  Saturn : 158deg 46' 30.0"
+Angular separation between  Mercury  and  Uranus : 68deg 07' 15.9"
+Angular separation between  Mercury  and  Neptune : 110deg 20' 00.5"
+Angular separation between  Mercury  and  Pluto : 165deg 47' 08.6"
+Angular separation between  Jupiter  and  Sun : 67deg 26' 21.7"
+Angular separation between  Jupiter  and  Moon : 113deg 27' 33.4"
+Angular separation between  Jupiter  and  Mars : 66deg 04' 16.8"
+Angular separation between  Jupiter  and  Mercury : 74deg 47' 16.2"
+Angular separation between  Jupiter  and  Venus : 60deg 48' 27.8"
+Angular separation between  Jupiter  and  Saturn : 84deg 04' 05.9"
+Angular separation between  Jupiter  and  Uranus : 142deg 54' 29.9"
+Angular separation between  Jupiter  and  Neptune : 174deg 51' 55.6"
+Angular separation between  Jupiter  and  Pluto : 119deg 14' 22.2"
+Angular separation between  Venus  and  Sun : 06deg 40' 31.3"
+Angular separation between  Venus  and  Moon : 52deg 52' 04.9"
+Angular separation between  Venus  and  Mars : 126deg 47' 52.8"
+Angular separation between  Venus  and  Mercury : 13deg 58' 49.9"
+Angular separation between  Venus  and  Jupiter : 60deg 48' 27.8"
+Angular separation between  Venus  and  Saturn : 144deg 49' 26.8"
+Angular separation between  Venus  and  Uranus : 82deg 06' 02.9"
+Angular separation between  Venus  and  Neptune : 124deg 18' 44.9"
+Angular separation between  Venus  and  Pluto : 177deg 43' 28.6"
+Angular separation between  Saturn  and  Sun : 151deg 29' 09.3"
+Angular separation between  Saturn  and  Moon : 162deg 14' 20.4"
+Angular separation between  Saturn  and  Mars : 18deg 38' 14.9"
+Angular separation between  Saturn  and  Mercury : 158deg 46' 30.0"
+Angular separation between  Saturn  and  Jupiter : 84deg 04' 05.9"
+Angular separation between  Saturn  and  Venus : 144deg 49' 26.8"
+Angular separation between  Saturn  and  Uranus : 132deg 59' 18.0"
+Angular separation between  Saturn  and  Neptune : 90deg 48' 03.1"
+Angular separation between  Saturn  and  Pluto : 35deg 10' 34.6"
+Angular separation between  Uranus  and  Sun : 75deg 28' 29.1"
+Angular separation between  Uranus  and  Moon : 29deg 42' 46.0"
+Angular separation between  Uranus  and  Mars : 150deg 56' 28.6"
+Angular separation between  Uranus  and  Mercury : 68deg 07' 15.9"
+Angular separation between  Astronomical Positions
+----------------------
+Planet      Longitude                  Latitute     Speed (deg/day) 
+------------------------------------------------------------------------
+Sun         09°00′13.7035″ Cancer      00:00:00.24S 00:57:22.26     
+Moon        24°46′10.9369″ Sagittarius 01:13:51.49S 11:48:35.92     
+Mars        20°29′8.59608″ Pisces      03:50:06.41S 00:27:17.32     
+Mercury     R08°51′23.259″ Cancer      04:45:15.08S -00:44:54.70    
+Jupiter     05°53′55.1406″ Virgo       01:17:36.05N 00:09:34.24     
+Venus       15°28′39.7468″ Cancer      01:10:03.00N 01:14:01.38     
+Saturn      10°31′38.5717″ Gemini      01:07:10.33S 00:07:13.98     
+Dragon Head 08°07′3.05285″ Capricorn   00:00:00.00  -00:03:10.52    
+Dragon Tail 08°07′3.05285″ Cancer      00:00:00.00  -00:03:10.52    
+Ascendant   01°17′16.0962″ Taurus                                   
+
+Ayanamsa
+--------
+Name         Value        
+----------------------------
+Lahiri       356:02:54.77 
+Raman        354:36:09.06 
+Krishnamurti 355:57:07.08 
+Custom       356:02:54.77 
+
+Uranus  and  Jupiter : 142deg 54' 29.9"
+Angular separation between  Uranus  and  Venus : 82deg 06' 02.9"
+Angular separation between  Uranus  and  Saturn : 132deg 59' 18.0"
+Angular separation between  Uranus  and  Neptune : 42deg 12' 45.7"
+Angular separation between  Uranus  and  Pluto : 97deg 48' 53.9"
+Angular separation between  Neptune  and  Sun : 117deg 41' 10.3"
+Angular separation between  Neptune  and  Moon : 71deg 40' 29.3"
+Angular separation between  Neptune  and  Mars : 108deg 50' 00.4"
+Angular separation between  Neptune  and  Mercury : 110deg 20' 00.5"
+Angular separation between  Neptune  and  Jupiter : 174deg 51' 55.6"
+Angular separation between  Neptune  and  Venus : 124deg 18' 44.9"
+Angular separation between  Neptune  and  Saturn : 90deg 48' 03.1"
+Angular separation between  Neptune  and  Uranus : 42deg 12' 45.7"
+Angular separation between  Neptune  and  Pluto : 55deg 37' 40.6"
+Angular separation between  Pluto  and  Sun : 173deg 08' 12.5"
+Angular separation between  Pluto  and  Moon : 127deg 15' 08.2"
+Angular separation between  Pluto  and  Mars : 53deg 26' 45.4"
+Angular separation between  Pluto  and  Mercury : 165deg 47' 08.6"
+Angular separation between  Pluto  and  Jupiter : 119deg 14' 22.2"
+Angular separation between  Pluto  and  Venus : 177deg 43' 28.6"
+Angular separation between  Pluto  and  Saturn : 35deg 10' 34.6"
+Angular separation between  Pluto  and  Uranus : 97deg 48' 53.9"
+Angular separation between  Pluto  and  Neptune : 55deg 37' 40.6"
+===============================SKYFIELD========================================================
+===============================ASTROPY=========================================================
+2016-07-02 01:16:38 TT
+astropy - earth: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (119.55899607, -51.24269659, 4.25494294e-05)>
+astropy - sun: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (101.27805786, 23.02982411, 1.01673946)>
+astropy - moon: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (101.27805786, 23.02982411, 1.01673946)>
+astropy - mars: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (229.73408286, -21.03971523, 0.57733029)>
+astropy - mercury: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (94.59411409, 24.0739867, 1.29802587)>
+astropy - jupiter: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (168.50034751, 6.23736009, 5.76642888)>
+astropy - venus: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (108.83561234, 23.23645745, 1.7172582)>
+astropy - saturn: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (249.59156893, -20.34422808, 9.13474033)>
+astropy - uranus: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (22.41601853, 8.73161544, 20.17051319)>
+astropy - neptune: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (343.47062878, -7.95328042, 29.45531392)>
+astropy - earthmoon: <SkyCoord (GCRS: obstime=2016-07-02 01:16:38.000, obsgeoloc=(1965745.78786562, -3466099.21999313, 4963563.01922207) m, obsgeovel=(252.73370406, 142.76684758, -0.3961177) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (84.53452394, -26.05790039, 5.49914658e-05)>
+===============================ASTROPY=========================================================
+===============================MAITREYA8T==============================================
+===============================MAITREYA8T==============================================
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: 2016-07-02 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  2016-07-02 01:16:38 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: 2016-07-02 01:16:38 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+latlon_match(): sun: (<Angle -00deg 00' 07.9">, <Angle 100deg 22' 02.9">, <Distance 1.01673 au>)
+latlon_match(): moon: (<Angle -05deg 01' 30.8">, <Angle 67deg 58' 54.0">, <Distance 0.00244858 au>)
+latlon_match(): mars: (<Angle -02deg 38' 19.6">, <Angle 232deg 51' 28.6">, <Distance 0.577295 au>)
+latlon_match(): mercury: (<Angle +00deg 42' 11.6">, <Angle 94deg 11' 30.9">, <Distance 1.29801 au>)
+latlon_match(): jupiter: (<Angle +01deg 11' 44.5">, <Angle 166deg 59' 15.5">, <Distance 5.76654 au>)
+latlon_match(): venus: (<Angle +00deg 55' 11.9">, <Angle 107deg 15' 31.5">, <Distance 1.71725 au>)
+latlon_match(): saturn: (<Angle +01deg 45' 00.7">, <Angle 250deg 53' 58.9">, <Distance 9.13467 au>)
+latlon_match(): uranus: (<Angle -00deg 36' 31.7">, <Angle 23deg 57' 59.7">, <Distance 20.1727 au>)
+latlon_match(): neptune: (<Angle -00deg 51' 06.3">, <Angle 341deg 43' 23.3">, <Distance 29.4548 au>)
+latlon_match(): pluto: (<Angle +01deg 22' 58.6">, <Angle 286deg 07' 24.8">, <Distance 32.1161 au>)
+Angular separation between  Sun  and  Moon : 32deg 43' 54.9"
+Angular separation between  Sun  and  Mars : 132deg 25' 31.3"
+Angular separation between  Sun  and  Mercury : 06deg 12' 56.1"
+Angular separation between  Sun  and  Jupiter : 66deg 37' 20.0"
+Angular separation between  Sun  and  Venus : 06deg 57' 08.5"
+Angular separation between  Sun  and  Saturn : 150deg 28' 28.7"
+Angular separation between  Sun  and  Uranus : 76deg 24' 21.4"
+Angular separation between  Sun  and  Neptune : 118deg 38' 56.8"
+Angular separation between  Sun  and  Pluto : 174deg 05' 31.3"
+Angular separation between  Moon  and  Sun : 32deg 43' 54.9"
+Angular separation between  Moon  and  Mars : 163deg 03' 02.3"
+Angular separation between  Moon  and  Mercury : 26deg 48' 01.9"
+Angular separation between  Moon  and  Jupiter : 99deg 04' 21.3"
+Angular separation between  Moon  and  Venus : 39deg 40' 54.3"
+Angular separation between  Moon  and  Saturn : 175deg 37' 24.1"
+Angular separation between  Moon  and  Uranus : 44deg 10' 22.2"
+Angular separation between  Moon  and  Neptune : 86deg 12' 21.4"
+Angular separation between  Moon  and  Pluto : 141deg 45' 46.7"
+Angular separation between  Mars  and  Sun : 132deg 25' 31.3"
+Angular separation between  Mars  and  Moon : 163deg 03' 02.3"
+Angular separation between  Mars  and  Mercury : 138deg 37' 54.3"
+Angular separation between  Mars  and  Jupiter : 65deg 57' 26.6"
+Angular separation between  Mars  and  Venus : 125deg 35' 35.5"
+Angular separation between  Mars  and  Saturn : 18deg 33' 43.1"
+Angular separation between  Mars  and  Uranus : 150deg 56' 24.8"
+Angular separation between  Mars  and  Neptune : 108deg 48' 07.0"
+Angular separation between  Mars  and  Pluto : 53deg 24' 03.3"
+Angular separation between  Mercury  and  Sun : 06deg 12' 56.1"
+Angular separation between  Mercury  and  Moon : 26deg 48' 01.9"
+Angular separation between  Mercury  and  Mars : 138deg 37' 54.3"
+Angular separation between  Mercury  and  Jupiter : 72deg 46' 55.9"
+Angular separation between  Mercury  and  Venus : 13deg 04' 02.2"
+Angular separation between  Mercury  and  Saturn : 156deg 34' 16.6"
+Angular separation between  Mercury  and  Uranus : 70deg 14' 24.9"
+Angular separation between  Mercury  and  Neptune : 112deg 29' 02.2"
+Angular separation between  Mercury  and  Pluto : 167deg 53' 57.1"
+Angular separation between  Jupiter  and  Sun : 66deg 37' 20.0"
+Angular separation between  Jupiter  and  Moon : 99deg 04' 21.3"
+Angular separation between  Jupiter  and  Mars : 65deg 57' 26.6"
+Angular separation between  Jupiter  and  Mercury : 72deg 46' 55.9"
+Angular separation between  Jupiter  and  Venus : 59deg 42' 53.6"
+Angular separation between  Jupiter  and  Saturn : 83deg 52' 20.8"
+Angular separation between  Jupiter  and  Uranus : 143deg 01' 20.0"
+Angular separation between  Jupiter  and  Neptune : 174deg 43' 13.0"
+Angular separation between  Jupiter  and  Pluto : 119deg 04' 43.9"
+Angular separation between  Venus  and  Sun : 06deg 57' 08.5"
+Angular separation between  Venus  and  Moon : 39deg 40' 54.3"
+Angular separation between  Venus  and  Mars : 125deg 35' 35.5"
+Angular separation between  Venus  and  Mercury : 13deg 04' 02.2"
+Angular separation between  Venus  and  Jupiter : 59deg 42' 53.6"
+Angular separation between  Venus  and  Saturn : 143deg 32' 12.9"
+Angular separation between  Venus  and  Uranus : 83deg 18' 27.0"
+Angular separation between  Venus  and  Neptune : 125deg 33' 03.0"
+Angular separation between  Venus  and  Pluto : 177deg 25' 39.3"
+Angular separation between  Saturn  and  Sun : 150deg 28' 28.7"
+Angular separation between  Saturn  and  Moon : 175deg 37' 24.1"
+Angular separation between  Saturn  and  Mars : 18deg 33' 43.1"
+Angular separation between  Saturn  and  Mercury : 156deg 34' 16.6"
+Angular separation between  Saturn  and  Jupiter : 83deg 52' 20.8"
+Angular separation between  Saturn  and  Venus : 143deg 32' 12.9"
+Angular separation between  Saturn  and  Uranus : 133deg 04' 13.9"
+Angular separation between  Saturn  and  Neptune : 90deg 51' 04.3"
+Angular separation between  Saturn  and  Pluto : 35deg 12' 41.2"
+Angular separation between  Uranus  and  Sun : 76deg 24' 21.4"
+Angular separation between  Uranus  and  Moon : 44deg 10' 22.2"
+Angular separation between  Uranus  and  Mars : 150deg 56' 24.8"
+Angular separation between  Uranus  and  Mercury : 70deg 14' 24.9"
+Angular separation between  Uranus  and  Jupiter : 143deg 01' 20.0"
+Angular separation between  Uranus  and  Venus : 83deg 18' 27.0"
+Angular separation between  Uranus  and  Saturn : 133deg 04' 13.9"
+Angular separation between  Uranus  and  Neptune : 42deg 14' 40.2"
+Angular separation between  Uranus  and  Pluto : 97deg 51' 43.2"
+Angular separation between  Neptune  and  Sun : 118deg 38' 56.8"
+Angular separation between  Neptune  and  Moon : 86deg 12' 21.4"
+Angular separation between  Neptune  and  Mars : 108deg 48' 07.0"
+Angular separation between  Neptune  and  Mercury : 112deg 29' 02.2"
+Angular separation between  Neptune  and  Jupiter : 174deg 43' 13.0"
+Angular separation between  Neptune  and  Venus : 125deg 33' 03.0"
+Angular separation between  Neptune  and  Saturn : 90deg 51' 04.3"
+Angular separation between  Neptune  and  Uranus : 42deg 14' 40.2"
+Angular separation between  Neptune  and  Pluto : 55deg 38' 35.3"
+Angular separation between  Pluto  and  Sun : 174deg 05' 31.3"
+Angular separation between  Pluto  and  Moon : 141deg 45' 46.7"
+Angular separation between  Pluto  and  Mars : 53deg 24' 03.3"
+Angular separation between  Pluto  and  Mercury : 167deg 53' 57.1"
+Angular separation between  Pluto  and  Jupiter : 119deg 04' 43.9"
+Angular separation between  Pluto  and  Venus : 177deg 25' 39.3"
+Angular separation between  Pluto  and  Saturn : 35deg 12' 41.2"
+Angular separation between  Pluto  and  Uranus : 97deg 51' 43.2"
+Angular separation between  Pluto  and  Neptune : 55deg 38' 35.3"
+===============================SKYFIELD========================================================
+===============================ASTROPY=========================================================
+2016-07-03 01:16:38 TT
+astropy - earth: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (120.54359816, -51.24134307, 4.25494541e-05)>
+astropy - sun: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (102.31063101, 22.95229848, 1.01675288)>
+astropy - moon: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (102.31063101, 22.95229848, 1.01675288)>
+astropy - mars: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (229.76587015, -21.06511529, 0.58143142)>
+astropy - mercury: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (96.959878, 24.14266984, 1.30706126)>
+astropy - jupiter: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (168.6272894, 6.18113385, 5.78079505)>
+astropy - venus: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (110.16491744, 23.10401799, 1.71576633)>
+astropy - saturn: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (249.52904554, -20.33869868, 9.14301557)>
+astropy - uranus: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (22.43663752, 8.73923822, 20.15412686)>
+astropy - neptune: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (343.46170023, -7.95756912, 29.44059788)>
+astropy - earthmoon: <SkyCoord (GCRS: obstime=2016-07-03 01:16:38.000, obsgeoloc=(2025075.55417136, -3431909.64062283, 4963468.88472517) m, obsgeovel=(250.24054051, 147.0930688, -0.39204041) m / s): (ra, dec, distance) in (deg, deg, AU)
+    (93.4156613, -24.56414504, 5.60429326e-05)>Astronomical Positions
+----------------------
+Planet      Longitude                 Latitute     Speed (deg/day) 
+-----------------------------------------------------------------------
+Sun         09°57′36.4535″ Cancer     00:00:00.11S 00:57:23.26     
+Moon        06°36′0.881353″ Capricorn 00:08:46.69S 11:51:26.82     
+Mars        20°56′13.5717″ Pisces     03:51:49.56S 00:26:52.53     
+Mercury     R08°06′59.5973″ Cancer    04:43:35.73S -00:43:44.23    
+Jupiter     06°03′32.2473″ Virgo      01:17:26.51N 00:09:39.96     
+Venus       16°42′41.4039″ Cancer     01:11:26.19N 01:14:01.95     
+Saturn      10°38′51.4566″ Gemini     01:07:08.74S 00:07:11.78     
+Dragon Head 08°03′52.528″ Capricorn   00:00:00.00  -00:03:10.53    
+Dragon Tail 08°03′52.528″ Cancer      00:00:00.00  -00:03:10.53    
+Ascendant   02°18′57.409″ Taurus                                   
+
+Ayanamsa
+--------
+Name         Value        
+----------------------------
+Lahiri       356:02:54.91 
+Raman        354:36:09.20 
+Krishnamurti 355:57:07.22 
+Custom       356:02:54.91 
+
+
+===============================ASTROPY=========================================================
+===============================MAITREYA8T==============================================
+===============================MAITREYA8T==============================================
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: 2016-07-03 01:16:38 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  2016-07-03 01:16:38 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: 2016-07-03 01:16:38 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+latlon_match(): sun: (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>)
+latlon_match(): moon: (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>)
+latlon_match(): mars: (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>)
+latlon_match(): mercury: (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>)
+latlon_match(): jupiter: (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>)
+latlon_match(): venus: (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>)
+latlon_match(): saturn: (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>)
+latlon_match(): uranus: (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>)
+latlon_match(): neptune: (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>)
+latlon_match(): pluto: (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)
+Angular separation between  Sun  and  Moon : 19deg 26' 28.6"
+Angular separation between  Sun  and  Mars : 131deg 30' 28.7"
+Angular separation between  Sun  and  Mercury : 05deg 02' 52.3"
+Angular separation between  Sun  and  Jupiter : 65deg 48' 25.1"
+Angular separation between  Sun  and  Venus : 07deg 13' 45.6"
+Angular separation between  Sun  and  Saturn : 149deg 27' 51.0"
+Angular separation between  Sun  and  Uranus : 77deg 20' 16.5"
+Angular separation between  Sun  and  Neptune : 119deg 36' 45.2"
+Angular separation between  Sun  and  Pluto : 175deg 02' 18.2"
+Angular separation between  Moon  and  Sun : 19deg 26' 28.6"
+Angular separation between  Moon  and  Mars : 149deg 25' 23.0"
+Angular separation between  Moon  and  Mercury : 15deg 00' 52.9"
+Angular separation between  Moon  and  Jupiter : 84deg 44' 12.0"
+Angular separation between  Moon  and  Venus : 26deg 37' 24.2"
+Angular separation between  Moon  and  Saturn : 167deg 53' 29.7"
+Angular separation between  Moon  and  Uranus : 58deg 36' 07.4"
+Angular separation between  Moon  and  Neptune : 100deg 41' 18.8"
+Angular separation between  Moon  and  Pluto : 156deg 11' 14.6"
+Angular separation between  Mars  and  Sun : 131deg 30' 28.7"
+Angular separation between  Mars  and  Moon : 149deg 25' 23.0"
+Angular separation between  Mars  and  Mercury : 136deg 31' 22.5"
+Angular separation between  Mars  and  Jupiter : 65deg 51' 18.6"
+Angular separation between  Mars  and  Venus : 124deg 24' 07.1"
+Angular separation between  Mars  and  Saturn : 18deg 28' 26.3"
+Angular separation between  Mars  and  Uranus : 150deg 55' 29.7"
+Angular separation between  Mars  and  Neptune : 108deg 45' 22.8"
+Angular separation between  Mars  and  Pluto : 53deg 20' 31.8"
+Angular separation between  Mercury  and  Sun : 05deg 02' 52.3"
+Angular separation between  Mercury  and  Moon : 15deg 00' 52.9"
+Angular separation between  Mercury  and  Mars : 136deg 31' 22.5"
+Angular separation between  Mercury  and  Jupiter : 70deg 45' 47.3"
+Angular separation between  Mercury  and  Venus : 12deg 08' 22.3"
+Angular separation between  Mercury  and  Saturn : 154deg 21' 13.2"
+Angular separation between  Mercury  and  Uranus : 72deg 22' 32.5"
+Angular separation between  Mercury  and  Neptune : 114deg 39' 00.8"
+Angular separation between  Mercury  and  Pluto : 170deg 00' 21.0"
+Angular separation between  Jupiter  and  Sun : 65deg 48' 25.1"
+Angular separation between  Jupiter  and  Moon : 84deg 44' 12.0"
+Angular separation between  Jupiter  and  Mars : 65deg 51' 18.6"
+Angular separation between  Jupiter  and  Mercury : 70deg 45' 47.3"
+Angular separation between  Jupiter  and  Venus : 58deg 37' 26.3"
+Angular separation between  Jupiter  and  Saturn : 83deg 40' 32.2"
+Angular separation between  Jupiter  and  Uranus : 143deg 08' 19.7"
+Angular separation between  Jupiter  and  Neptune : 174deg 34' 21.5"
+Angular separation between  Jupiter  and  Pluto : 118deg 54' 58.5"
+Angular separation between  Venus  and  Sun : 07deg 13' 45.6"
+Angular separation between  Venus  and  Moon : 26deg 37' 24.2"
+Angular separation between  Venus  and  Mars : 124deg 24' 07.1"
+Angular separation between  Venus  and  Mercury : 12deg 08' 22.3"
+Angular separation between  Venus  and  Jupiter : 58deg 37' 26.3"
+Angular separation between  Venus  and  Saturn : 142deg 15' 02.1"
+Angular separation between  Venus  and  Uranus : 84deg 30' 53.9"
+Angular separation between  Venus  and  Neptune : 126deg 47' 23.1"
+Angular separation between  Venus  and  Pluto : 176deg 39' 12.6"
+Angular separation between  Saturn  and  Sun : 149deg 27' 51.0"
+Angular separation between  Saturn  and  Moon : 167deg 53' 29.7"
+Angular separation between  Saturn  and  Mars : 18deg 28' 26.3"
+Angular separation between  Saturn  and  Mercury : 154deg 21' 13.2"
+Angular separation between  Saturn  and  Jupiter : 83deg 40' 32.2"
+Angular separation between  Saturn  and  Venus : 142deg 15' 02.1"
+Angular separation between  Saturn  and  Uranus : 133deg 09' 03.6"
+Angular separation between  Saturn  and  Neptune : 90deg 54' 00.2"
+Angular separation between  Saturn  and  Pluto : 35deg 14' 44.0"
+Angular separation between  Uranus  and  Sun : 77deg 20' 16.5"
+Angular separation between  Uranus  and  Moon : 58deg 36' 07.4"
+Angular separation between  Uranus  and  Mars : 150deg 55' 29.7"
+Angular separation between  Uranus  and  Mercury : 72deg 22' 32.5"
+Angular separation between  Uranus  and  Jupiter : 143deg 08' 19.7"
+Angular separation between  Uranus  and  Venus : 84deg 30' 53.9"
+Angular separation between  Uranus  and  Saturn : 133deg 09' 03.6"
+Angular separation between  Uranus  and  Neptune : 42deg 16' 33.8"
+Angular separation between  Uranus  and  Pluto : 97deg 54' 29.9"
+Angular separation between  Neptune  and  Sun : 119deg 36' 45.2"
+Angular separation between  Neptune  and  Moon : 100deg 41' 18.8"
+Angular separation between  Neptune  and  Mars : 108deg 45' 22.8"
+Angular separation between  Neptune  and  Mercury : 114deg 39' 00.8"
+Angular separation between  Neptune  and  Jupiter : 174deg 34' 21.5"
+Angular separation between  Neptune  and  Venus : 126deg 47' 23.1"
+Angular separation between  Neptune  and  Saturn : 90deg 54' 00.2"
+Angular separation between  Neptune  and  Uranus : 42deg 16' 33.8"
+Angular separation between  Neptune  and  Pluto : 55deg 39' 28.4"
+Angular separation between  Pluto  and  Sun : 175deg 02' 18.2"
+Angular separation between  Pluto  and  Moon : 156deg 11' 14.6"
+Angular separation between  Pluto  and  Mars : 53deg 20' 31.8"
+Angular separation between  Pluto  and  Mercury : 170deg 00' 21.0"
+Angular separation between  Pluto  and  Jupiter : 118deg 54' 58.5"
+Angular separation between  Pluto  and  Venus : 176deg 39' 12.6"
+Angular separation between  Pluto  and  Saturn : 35deg 14' 44.0"
+Angular separation between  Pluto  and  Uranus : 97deg 54' 29.9"
+Angular separation between  Pluto  and  Neptune : 55deg 39' 28.4"
+===============================SKYFIELD========================================================
+latlon_match(): FOUND MATCHING DATE AND TIME =  2016-07-03 01:16:38 TT
+planetarium_search(): FOUND MATCHING DATE AND TIME =  2016-07-03 01:16:38 TT
+=================================================================
+SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime: -2016-06-29 01:16:12 TT
+=================================================================
+planetarium_search(): datetime to search for latlon_match() =  -2016-06-29 01:16:12 TT
+===============================SKYFIELD========================================================
+latlon_match(): datetime: -2016-06-29 01:16:12 TT
+latlon_match(): planetradecdict: {'sun': (<Angle -00deg 00' 07.9">, <Angle 101deg 19' 16.2">, <Distance 1.01674 au>), 'moon': (<Angle -05deg 00' 43.7">, <Angle 82deg 30' 45.5">, <Distance 0.00245854 au>), 'mars': (<Angle -02deg 39' 20.6">, <Angle 232deg 53' 35.2">, <Distance 0.581395 au>), 'mercury': (<Angle +00deg 51' 29.8">, <Angle 96deg 20' 49.3">, <Distance 1.30705 au>), 'jupiter barycenter': (<Angle +01deg 11' 35.3">, <Angle 167deg 07' 32.9">, <Distance 5.78091 au>), 'venus barycenter': (<Angle +00deg 57' 03.6">, <Angle 108deg 29' 15.9">, <Distance 1.71576 au>), 'saturn barycenter': (<Angle +01deg 44' 51.1">, <Angle 250deg 50' 27.0">, <Distance 9.14295 au>), 'uranus barycenter': (<Angle -00deg 36' 33.2">, <Angle 23deg 59' 18.0">, <Distance 20.1563 au>), 'neptune barycenter': (<Angle -00deg 51' 08.5">, <Angle 341deg 42' 48.0">, <Distance 29.44 au>), 'pluto barycenter': (<Angle +01deg 22' 52.9">, <Angle 286deg 05' 56.0">, <Distance 32.1152 au>)}
+Exception: ephemeris segment only covers dates 1899-07-28 23:59:18Z through 2053-10-08 23:58:51Z UT

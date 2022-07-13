@@ -18,10 +18,100 @@
 
 from skyfield.api import load
 from skyfield.searchlib import find_discrete
+import os
+import subprocess
+from astropy.time import Time
+from astropy.coordinates import solar_system_ephemeris, EarthLocation
+from astropy.coordinates import get_body_barycentric, get_body, get_moon
 
 planetradecdict={}
 planets=[]
 ts=[]
+
+def latlon_match(datetime):
+    global planets
+    print("===============================SKYFIELD========================================================")
+    print("latlon_match(): datetime:",datetime.tt_strftime())
+    print("latlon_match(): planetradecdict:",planetradecdict)
+    earth=planets["earth"].at(datetime)
+    sun=earth.observe(planets["sun"]).apparent().ecliptic_latlon()
+    print("latlon_match(): sun:",sun)
+    moon=earth.observe(planets["moon"]).apparent().ecliptic_latlon()
+    print("latlon_match(): moon:",moon)
+    mars=earth.observe(planets["mars"]).apparent().ecliptic_latlon()
+    print("latlon_match(): mars:",mars)
+    mercury=earth.observe(planets["mercury"]).apparent().ecliptic_latlon()
+    print("latlon_match(): mercury:",mercury)
+    jupiter=earth.observe(planets["jupiter barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): jupiter:",jupiter)
+    venus=earth.observe(planets["venus barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): venus:",venus)
+    saturn=earth.observe(planets["saturn barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): saturn:",saturn)
+    uranus=earth.observe(planets["uranus barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): uranus:",uranus)
+    neptune=earth.observe(planets["neptune barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): neptune:",neptune)
+    pluto=earth.observe(planets["pluto barycenter"]).apparent().ecliptic_latlon()
+    print("latlon_match(): pluto:",pluto)
+    positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
+    for k1,v1 in positions.items():
+        for k2,v2 in positions.items():
+            if k1 != k2:
+                print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
+    print("===============================SKYFIELD========================================================")
+    if str(sun) != str(planetradecdict["sun"]):
+           return False
+    if str(moon) != str(planetradecdict["moon"]):
+           return False
+    if str(mars) != str(planetradecdict["mars"]):
+           return False
+    if str(mercury) != str(planetradecdict["mercury"]):
+           return False
+    if str(jupiter) != str(planetradecdict["jupiter barycenter"]):
+           return False
+    if str(venus) != str(planetradecdict["venus barycenter"]):
+           return False
+    if str(saturn) != str(planetradecdict["saturn barycenter"]):
+           return False
+    if str(uranus) != str(planetradecdict["uranus barycenter"]):
+           return False
+    if str(neptune) != str(planetradecdict["neptune barycenter"]):
+           return False
+    if str(pluto) != str(planetradecdict["pluto barycenter"]):
+           return False
+    print("latlon_match(): FOUND MATCHING DATE AND TIME = ",datetime.tt_strftime())
+    return True
+
+def astropy_ephemeris(datetime):
+    print("===============================ASTROPY=========================================================")
+    print(datetime.tt_strftime())
+    t=Time(datetime.tt_strftime()[:-3])
+    loc = EarthLocation.of_site('greenwich')
+    with solar_system_ephemeris.set('builtin'):
+         earth = get_body('earth', t, loc)
+         print("astropy - earth:",earth)
+         sun = get_body('sun', t, loc)
+         print("astropy - sun:",sun)
+         moon = get_body('moon', t, loc)
+         print("astropy - moon:",sun)
+         mars = get_body('mars', t, loc)
+         print("astropy - mars:",mars)
+         mercury = get_body('mercury', t, loc)
+         print("astropy - mercury:",mercury)
+         jupiter = get_body('jupiter', t, loc)
+         print("astropy - jupiter:",jupiter)
+         venus = get_body('venus', t, loc)
+         print("astropy - venus:",venus)
+         saturn = get_body('saturn', t, loc)
+         print("astropy - saturn:",saturn)
+         uranus = get_body('uranus', t, loc)
+         print("astropy - uranus:",uranus)
+         neptune = get_body('neptune', t, loc)
+         print("astropy - neptune:",neptune)
+         earthmoon = get_body('earth-moon-barycenter',t,loc)
+         print("astropy - earthmoon:",earthmoon)
+    print("===============================ASTROPY=========================================================")
 
 def radec_match(datetime):
     global planets
@@ -82,7 +172,7 @@ class EphemerisSearch(object):
     def astronomical_event_to_search(self,planetradecdict):
         planetradecdict = planetradecdict
 
-    def planetarium_search(self,datetime1,datetime2,find_discrete=False,step_days=1):
+    def planetarium_search(self,datetime1,datetime2,find_discrete=False,step_days=1,position="latlon"):
         global planets
         global ts
         earth=planets["earth"]
@@ -91,28 +181,48 @@ class EphemerisSearch(object):
         if find_discrete:
             degree_match.step_days = step_days 
             founddatetime,values = find_discrete(datetimeutc1,datetimeutc2,radec_match)
-            print("planetarium_search(): found matching datetime = ",(founddatetime,values))
+            print("planetarium_search(): FOUND MATCHING DATE AND TIME = ",(founddatetime,values))
+            print("=================================================================")
+            print("Maitreya 8t Ephemeris for datetime:",datetime.tt_strftime())
+            subprocess.call(["maitreya8t","--date=\""+ datetime.tt_strftime() + "\"", "--astronomical"],shell=False)
+            print("=================================================================")
         else:
             try:
                 datetime=datetimeutc1
                 while datetime.tt_strftime() != datetimeutc2.tt_strftime():
                      print("=================================================================")
-                     print("planetarium_search(): datetime to search for radec_match() = ",datetime.tt_strftime())
-                     if radec_match(datetime):
-                        print("planetarium_search(): found matching datetime = ",datetime.tt_strftime())
-                        break
+                     print("SkyField,AstroPy,Maitreya 8t Ephemeris are compared for datetime:",datetime.tt_strftime())
+                     print("=================================================================")
+                     if position=="latlon":
+                        print("planetarium_search(): datetime to search for latlon_match() = ",datetime.tt_strftime())
+                        if latlon_match(datetime):
+                           print("planetarium_search(): FOUND MATCHING DATE AND TIME = ",datetime.tt_strftime())
+                           break
+                     if position=="radec_match":
+                        print("planetarium_search(): datetime to search for radec_match() = ",datetime.tt_strftime())
+                        if radec_match(datetime):
+                           print("planetarium_search(): FOUND MATCHING DATE AND TIME = ",datetime.tt_strftime())
+                           break
                      datetime += step_days 
+                     astropy_ephemeris(datetime)
+                     print("===============================MAITREYA8T==============================================")
+                     subprocess.call(["maitreya8t","--date=\""+ datetime.tt_strftime() + "\"", "--astronomical"],shell=False)
+                     print("===============================MAITREYA8T==============================================")
             except Exception as ex:
                 print("Exception:",ex)
         
-    def sky_on_datetime(self,datetime,observedfrom="earth",observed="sun"):
+    def sky_on_datetime(self,datetime,observedfrom="earth",observed="sun",position="latlon"):
         global planets
         t=ts.utc(datetime[0],datetime[1],datetime[2],datetime[3],datetime[4],datetime[5])
         planetobservedfrom=planets[observedfrom]
         planetobserved=planets[observed]
         astrometric=planetobservedfrom.at(t).observe(planetobserved)
-        print("sky_on_datetime(): Right Ascension - Declination (Long-Lat) position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.radec())
-        return astrometric.radec()
+        if position=="radec": 
+            print("sky_on_datetime(): Right Ascension - Declination position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.radec())
+            return astrometric.radec()
+        if position=="latlon":
+            print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
+            return astrometric.apparent().ecliptic_latlon()
 
 if __name__=="__main__":
     ephem=EphemerisSearch("de421.bsp")
