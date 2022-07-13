@@ -114,5 +114,6 @@ NeuronRain Licensing is explained in FAQ: http://neuronrain-documentation.readth
 110. GMSH - FEM - Trimesh and Quadmesh 
 111. PySAL - Python Spatial Abstraction Library
 112. SkyField - Python Astronomy Library
-113. PyEphem - Python Astronomy Library (Optional)
-114. AstroPy - Python Astronomy Library (Optional)
+113. PyEphem - Python Astronomy Library - NASA JPL ephemeris (Optional)
+114. AstroPy - Python Astronomy and Cosmology Library
+115. jplephem - NASA JPL ephemeris - dependency for AstroPy
