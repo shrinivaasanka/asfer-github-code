@@ -23,6 +23,8 @@ import subprocess
 from astropy.time import Time
 from astropy.coordinates import solar_system_ephemeris, EarthLocation
 from astropy.coordinates import get_body_barycentric, get_body, get_moon
+from collections import defaultdict
+import pprint
 
 planetradecdict={}
 planets=[]
@@ -160,6 +162,7 @@ def radec_match(datetime):
            return False
     return True
 
+
 class EphemerisSearch(object):
     def __init__(self,ephemeris):
         global planets
@@ -223,21 +226,42 @@ class EphemerisSearch(object):
         if position=="latlon":
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
+    
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs):
+        angular_separation=defaultdict(list)
+        for date in datesofEWEs:
+            date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
+            earth=planets["earth"].at(date_t)
+            positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
+            for k1,v1 in positions.items():
+               for k2,v2 in positions.items():
+                  if k1 != k2 and v1 != v2:
+                     if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
+                         #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
+                         angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
+        for k3,v3 in angular_separation.items():
+            print("Angular separations for ",k3,":",v3)
 
 if __name__=="__main__":
     ephem=EphemerisSearch("de421.bsp")
-    ephem.sky_on_datetime((2022,7,7,1,15,30),"earth","mars")
-    planetradecdict={}
-    planetradecdict["sun"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","sun")
-    planetradecdict["moon"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","moon")
-    planetradecdict["mars"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","mars")
-    planetradecdict["mercury"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","mercury")
-    planetradecdict["jupiter barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","jupiter barycenter")
-    planetradecdict["venus barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","venus barycenter")
-    planetradecdict["saturn barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","saturn barycenter")
-    planetradecdict["uranus barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","uranus barycenter")
-    planetradecdict["neptune barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","neptune barycenter")
-    planetradecdict["pluto barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","pluto barycenter")
-    ephem.astronomical_event_to_search(planetradecdict)
-    ephem.planetarium_search((2016,6,29,1,15,30),(2022,7,6,1,15,30))
-    ephem.planetarium_search((-2016,6,29,1,15,30),(2022,7,6,1,15,30),step_days=100)
+    #ephem.sky_on_datetime((2022,7,7,1,15,30),"earth","mars")
+    #planetradecdict={}
+    #planetradecdict["sun"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","sun")
+    #planetradecdict["moon"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","moon")
+    #planetradecdict["mars"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","mars")
+    #planetradecdict["mercury"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","mercury")
+    #planetradecdict["jupiter barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","jupiter barycenter")
+    #planetradecdict["venus barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","venus barycenter")
+    #planetradecdict["saturn barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","saturn barycenter")
+    #planetradecdict["uranus barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","uranus barycenter")
+    #planetradecdict["neptune barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","neptune barycenter")
+    #planetradecdict["pluto barycenter"]=ephem.sky_on_datetime((2016,7,3,1,15,30),"earth","pluto barycenter")
+    #ephem.astronomical_event_to_search(planetradecdict)
+    #ephem.planetarium_search((2016,6,29,1,15,30),(2022,7,6,1,15,30))
+    #ephem.planetarium_search((-2016,6,29,1,15,30),(2022,7,6,1,15,30),step_days=100)
+    datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
+    datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
+    print("======================HURRICANES=========================")
+    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
+    print("======================EARTHQUAKES=========================")
+    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
