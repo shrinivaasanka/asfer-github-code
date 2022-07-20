@@ -19103,3 +19103,26 @@ References:
 References:
 ----------
 1269.4 Understanding Quantum Algorithms via Query Complexity - [Andris Ambainis] - https://arxiv.org/pdf/1712.06349.pdf - "... Query complexity is a model of computation in which we have to compute a function f (x1,...,xN) of variables xi which can be accessed via queries. The complexity of an algorithm is measured by the number of queries that it makes...."
+
+------------------------------------------------------------------------------------------------------------------------------
+1270. (THEORY and FEATURE) Astronomy Dataset Analytics - NASA JPL Horizons Ephemeris Lookup Service support and Hubble Ultra Deep Field imagery RGB analytics - 20 July 2022 - related to 731,1206,1236,1255,1266,1267,1268 and all sections on Astronomical Dataset Mining, Archaeoastronomical Dating, Sequence Mining, String analytics, Sequence Alignment, Visual Planetarium Search, Archaeology, Climate and Extreme Weather Event Analytics, Computational Astrophysics, N-Body problem, Merit of Large Scale Visuals, Astronomical algorithms
+------------------------------------------------------------------------------------------------------------------------------
+1270.1 EphemerisSearch.py has been updated to define two new functions jplhorizons_ephemeris() and hubble_deep_field_RGB_analytics() which respectively integrate NASA JPL Horizons Online Ephemeris Lookup API Service and split Hubble Deep Field imagery into RGB Channel for Red-shift distance analysis of Galaxies. 
+1270.2 jplhorizons_ephemeris() wraps the AstroPy AstroQuery NASA JPL Horizons Ephemeris API lookup service ephemerides() for a celestial body id, location (longitude-latitude-elevation) and epochs(range of dates for ephemeris).
+1270.3 jplhorizons_ephemeris() is invoked within sky_on_datetime() if a boolean flag jplhorizons is set to True and the arguments are passed on as heterogeneous array jplhorizonsdata (id is number or name of body,location and epochs are dictionaries).
+1270.4 hubble_deep_field_RGB_analytics() function takes an imagename which could be either a postcard that can be looked-up by ESAHubble.get_postcard() or name of a Hubble Space Telescope Deep Field image already downloaded. Image file is opened in Pillow Image and split into Red-Green-Blue channel ndarrays. Each of RGB channel ndarrays are flattened and histograms are computed per color channel.
+1270.5 Percentage of Pixel colors are obtained from RGB histograms which provide a clue to the distribution and distance of the galaxies in Deep Field. Reddest galaxies are farthest away (gravitational red shift) compared to Green and Blue channel galaxies. Each of RGB channel data are written to FITS files analyzable by fv tool of NASA GSFC. FITS files created are at present removed because of huge sizes. 
+1270.6 Sample computations of hubble_deep_field_RGB_analytics() for 13 billion light years old Hubble Ultra Deep Field Imagery HubbleUltraDeepField_heic0611b.jpg (containing primordial light 800 million years after BigBang and Inflation) from https://esahubble.org/images/heic0611b/ and sky_on_datetime()-jplhorizons_ephemeris() for solar system bodies identified by numeric id(s) have been captured (for a date range) at testlogs/EphemerisSearch.log.20July2022. Hubble postcard RGB analysis for J6FL25S4Q postcard id has been commented. 
+1270.7 Following are the percentage of RGB galaxies by histogram analysis showing slightly higher number of primordial red galaxies than blue and green:
+	('Percentage of Blue Galaxies (Closer) :', 0.0026145)
+	('Percentage of Green Galaxies (Closer) :', 0.0011199375)
+	('Percentage of Red Galaxies (Farthest - Red Shift):', 0.0032260625)
+
+References:
+----------
+1270.8 Deep Field RGB analysis - https://docs.astropy.org/en/stable/generated/examples/io/split-jpeg-to-fits.html#sphx-glr-generated-examples-io-split-jpeg-to-fits-py
+1270.9 Deep Field RGB analysis - https://het.as.utexas.edu/HET/Software/Astropy-1.0/io/fits/usage/examples.html
+1270.10 AstroQuery Hubble - https://astroquery.readthedocs.io/en/latest/esa/hubble/hubble.html#module-astroquery.esa.hubble
+1270.11 FV FITS viewer tool - https://manpages.ubuntu.com/manpages/focal/man1/fv.1.html
+1270.12 How the Universe Works - Webseries - https://www.discoveryplus.in/show/how-the-universe-works
+1270.13 NASA JPL Horizons - https://ssd.jpl.nasa.gov/horizons/
