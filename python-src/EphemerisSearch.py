@@ -25,6 +25,12 @@ from astropy.coordinates import solar_system_ephemeris, EarthLocation
 from astropy.coordinates import get_body_barycentric, get_body, get_moon
 from collections import defaultdict
 import pprint
+from astroquery.esa.hubble import ESAHubble
+from PIL import Image
+from astropy.io import fits
+import numpy as np
+from astroquery.jplhorizons import Horizons
+
 
 planetradecdict={}
 planets=[]
@@ -84,6 +90,13 @@ def latlon_match(datetime):
            return False
     print("latlon_match(): FOUND MATCHING DATE AND TIME = ",datetime.tt_strftime())
     return True
+
+def jplhorizons_ephemeris(body_id,location,epochs):
+    horizons=Horizons(body_id,location,epochs)
+    ephem=horizons.ephemerides()
+    print("jplhorizons_ephemeris(): ephem for ",body_id," at ",location," for date(s) ",epochs)
+    print("=================================")
+    print(ephem)
 
 def astropy_ephemeris(datetime):
     print("===============================ASTROPY=========================================================")
@@ -214,8 +227,11 @@ class EphemerisSearch(object):
             except Exception as ex:
                 print("Exception:",ex)
         
-    def sky_on_datetime(self,datetime,observedfrom="earth",observed="sun",position="latlon"):
+    def sky_on_datetime(self,datetime=None,observedfrom="earth",observed="sun",position="latlon",jplhorizons=False,jplhorizonsdata=None):
         global planets
+        if jplhorizons:
+            jplhorizons_ephemeris(jplhorizonsdata[0],jplhorizonsdata[1],jplhorizonsdata[2])
+            return
         t=ts.utc(datetime[0],datetime[1],datetime[2],datetime[3],datetime[4],datetime[5])
         planetobservedfrom=planets[observedfrom]
         planetobserved=planets[observed]
@@ -242,6 +258,47 @@ class EphemerisSearch(object):
         for k3,v3 in angular_separation.items():
             print("Angular separations for ",k3,":",v3)
 
+    def hubble_deep_field_RGB_analytics(self,imagename,postcard=False):
+        if postcard:
+            esahubble = ESAHubble()
+            esahubble.get_postcard(image, "RAW", 4096, "testlogs/"+image+".jpg")
+        image = Image.open("testlogs/"+imagename+".jpg")
+        xsize,ysize = image.size
+        r, g, b = image.split()
+        rdata = r.getdata()
+        gdata = g.getdata()
+        bdata = b.getdata()
+        print("hubble_deep_field_RGB_analytics(): Red channel data = ",rdata)
+        print("hubble_deep_field_RGB_analytics(): Green channel data = ",gdata)
+        print("hubble_deep_field_RGB_analytics(): Blue channel data = ",bdata)
+        npr = np.reshape(rdata,(ysize,xsize))
+        npg = np.reshape(gdata,(ysize,xsize))
+        npb = np.reshape(bdata,(ysize,xsize))
+        blue_hist = np.histogram(npb.flatten())
+        green_hist = np.histogram(npg.flatten())
+        red_hist = np.histogram(npr.flatten())
+        blue_white = float(blue_hist[0][len(blue_hist[0]) - 1]) / float(sum(blue_hist[0]))
+        green_white = float(green_hist[0][len(green_hist[0]) - 1]) / float(sum(green_hist[0]))
+        red_white = float(red_hist[0][len(red_hist[0]) - 1]) / float(sum(red_hist[0]))
+        print(("Percentage of Blue Galaxies (Closer) :", blue_white))
+        print(("Percentage of Green Galaxies (Closer) :", green_white))
+        print(("Percentage of Red Galaxies (Farthest - Red Shift):", red_white))
+        red = fits.PrimaryHDU(data=npr)
+        red.header["LATOBS"] = "111:11:11"
+        red.header["LONGOBS"] = "50:50"
+        red.writeto("testlogs/red_"+imagename+".fits")
+        green = fits.PrimaryHDU(data=npg)
+        green.header["LATOBS"] = "111:11:11"
+        green.header["LONGOBS"] = "50:50"
+        green.writeto("testlogs/green_"+imagename+".fits")
+        blue = fits.PrimaryHDU(data=npb)
+        blue.header["LATOBS"] = "111:11:11"
+        blue.header["LONGOBS"] = "50:50"
+        blue.writeto("testlogs/blue_"+imagename+".fits")
+        os.remove("testlogs/red_"+imagename+".fits")
+        os.remove("testlogs/green_"+imagename+".fits")
+        os.remove("testlogs/blue_"+imagename+".fits")
+
 if __name__=="__main__":
     ephem=EphemerisSearch("de421.bsp")
     #ephem.sky_on_datetime((2022,7,7,1,15,30),"earth","mars")
@@ -259,9 +316,21 @@ if __name__=="__main__":
     #ephem.astronomical_event_to_search(planetradecdict)
     #ephem.planetarium_search((2016,6,29,1,15,30),(2022,7,6,1,15,30))
     #ephem.planetarium_search((-2016,6,29,1,15,30),(2022,7,6,1,15,30),step_days=100)
-    datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
-    datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
-    print("======================HURRICANES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
-    print("======================EARTHQUAKES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
+    #datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
+    #datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
+    #print("======================HURRICANES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
+    #print("======================EARTHQUAKES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
+    ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["199",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["599",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["299",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["699",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["799",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["899",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["999",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.hubble_deep_field_RGB_analytics("J6FL25S4Q",postcard=True)
