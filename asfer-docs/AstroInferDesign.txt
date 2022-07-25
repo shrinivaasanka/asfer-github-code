@@ -19127,3 +19127,38 @@ References:
 1270.11 FV FITS viewer tool - https://manpages.ubuntu.com/manpages/focal/man1/fv.1.html
 1270.12 How the Universe Works - Webseries - https://www.discoveryplus.in/show/how-the-universe-works
 1270.13 NASA JPL Horizons - https://ssd.jpl.nasa.gov/horizons/
+
+-------------------------------------------------------------------------------------------------------------------------------
+1271. (THEORY and FEATURE) Astronomy Dataset Analytics - Computation of N-Body Gravitational Acceleration for Solar System bodies on days of Extreme Weather Events (Earthquakes and Hurricanes) - 25 July 2022 - related to 731,1206,1236,1255,1266,1267,1268,1270 and all sections on Astronomical Dataset Mining, Archaeoastronomical Dating, Sequence Mining, String analytics, Sequence Alignment, Visual Planetarium Search, Archaeology, Climate and Extreme Weather Event Analytics, Computational Astrophysics, N-Body problem, Merit of Large Scale Visuals, Astronomical algorithms
+------------------------------------------------------------------------------------------------------------------------------- 
+1271.1 This update implements long pending N-Body Gravitational Acceleration computation for Solar system bodies with respect to observations from Earth for dates of Extreme Weather Events (Earthquakes of high magnitude and Category4-Category5 Hurricanes) thus fulfilling the original goal of NeuronRain which was initially astronomy software. 
+1271.2 New function n_body_gravitational_acceleration() has been implemented to compute gravitational acceleration of solar system bodies by considering AstroPy JPL Horizons N-Body simulation Jupyter notebook (function a_t() for vectorial acceleration) from https://amor.cms.hu-berlin.de/~rodrigus/Subsites/Jupyter%20Notebooks/Solar_System_N-Body_Simulation.html as reference.
+1271.3 Function n_body_gravitational_acceleration() is invoked within extreme_weather_events_n_body_analytics() iteratively for Horizons Ephemeris data as Vectors on dates of Extreme Weather Events (JPL Horizons Ephemeris Data Format - r is the Vector of 3D location positions of planets, m is the Vector of planetary masses and v is the Vector of velocities of planets on that day as observed from Earth-Moon barycenter which is center of mass of Earth-Moon situated within Earth and hence seismically sensitive).
+=====================================================================
+1271.4 An example Planetwise gravitational pull (3D components of acceleration) on Earth-Moon Barycenter (Detailed logs: testlogs/EphemerisSearch.log.25July2022) during Hurricane Katrina (Costliest Cat5 Storm Ever to hit US Eastern Seaboard - 23 August 2005):
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-4.59023763e-06 -9.57552083e-06  1.33988806e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-5.00998359e-03  2.89038032e-03 -1.69038687e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-3.06720042e-03  4.51175455e-05  7.63092623e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-0.04877074 -0.0265718   0.00230507]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [ 1.81639208e-04  8.30369383e-05 -4.40933772e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [ 0.00495958  0.01013055 -0.00014766]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [ 3.80719163e-05 -6.09938497e-05 -4.53335739e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-1.37254726e-05  5.37648172e-06  1.97793457e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [-4.74401544e-06  4.54907508e-06  1.56547622e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at Earth-Moon Barycenter on  (2005, 8, 23, 1, 0, 0) : [ 6.90750144e-07  6.08469083e-06 -8.50610615e-07]
+=====================================================================
+1271.5 Another example Planetwise gravitational pull on Earth-Moon Barycenter during Sumatra Boxing Day Earthquake (Subduction of India-Burma plates - 9.1-9.3 magnitude - Duration of 8 minutes - 26 December 2004 - Syzygy Day):
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [-8.49202750e-06 -6.83465500e-06  4.02245707e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 4.74835374e-04 -6.08346634e-03 -1.11752400e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 1.84618951e-03  1.52572942e-03 -1.31875566e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 0.04213648 -0.01067818 -0.00473903]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 1.98371660e-04  2.24260649e-05 -4.53163289e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 0.00874993  0.00720906 -0.00040641]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 2.83958262e-05 -6.65696263e-05  2.86980912e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [-1.34855345e-05  5.99274945e-06  1.96999535e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [-4.62705846e-06  4.66464089e-06  1.05755462e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 8.51278012e-07  6.10016758e-06 -8.98726252e-07]
+ 
+References:
+----------
+1271.6 Solar system N-Body simulation in AstroPy-AstroQuery-JPLHorizons - https://amor.cms.hu-berlin.de/~rodrigus/Subsites/Jupyter%20Notebooks/Solar_System_N-Body_Simulation.html - N-Body Gravitation Equation - "... For a problem of N bodies indexed by  i=1,...N  and known initial positions  ri=(xi,yi,zi)T , velocities  vi=(vxi,vyi,vzi)T , and masses  mi , the function giving the gravitational acceleration being exerted by all other  j  bodies on a given body  i  as per Newton's inverse square law of gravitation is given in vector form by ai→=G∑N−1j=1mjrj→−ri→(|rj→−ri→|2+ϵ2)3/2 ...."
