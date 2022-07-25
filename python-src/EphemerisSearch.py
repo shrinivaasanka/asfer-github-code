@@ -30,6 +30,15 @@ from PIL import Image
 from astropy.io import fits
 import numpy as np
 from astroquery.jplhorizons import Horizons
+import numpy as np
+import scipy as sp
+import time
+import scipy.constants as cs
+import matplotlib.pyplot as plt
+from numba import jit
+from numba import cuda
+from mpl_toolkits.mplot3d import Axes3D
+from astropy.time import Time
 
 
 planetradecdict={}
@@ -257,6 +266,63 @@ class EphemerisSearch(object):
                          angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
         for k3,v3 in angular_separation.items():
             print("Angular separations for ",k3,":",v3)
+        AU = 149597870700
+        D = 24*60*60
+        epsilon = 0.01
+        #Get Starting Parameters for Sun-Pluto from Nasa Horizons
+        r_list = []
+        v_list = []
+        m_list = [[1.989e30],[3.285e23],[4.867e24],[5.972e24],[6.39e23],[1.8989e27],[5.683e26],[8.681e25],[1.024e26],[1.309e22]] #Object masses for Sun-Pluto
+        solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
+        solar_system=["Sun","Moon","Mars","Mercury","Jupiter","Venus","Saturn","Uranus","Neptune","Pluto"]
+        for date in datesofEWEs:
+            print("extreme_weather_events_n_body_analytics(): date:",date)
+            for i in solar_system_bodies.values():
+                obj = Horizons(id=i, location="@earth-moon", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                r_obj = [obj['x'][0], obj['y'][0], obj['z'][0]]
+                v_obj = [obj['vx'][0], obj['vy'][0], obj['vz'][0]]
+                r_list.append(r_obj)
+                v_list.append(v_obj)
+            r_i = np.array(r_list)*AU
+            v_i = np.array(v_list)*AU/D
+            m_i = np.array(m_list)
+            gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
+            for g in range(len(gravity)):
+                print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at Earth-Moon Barycenter on ",date,":",gravity[g])
+            r_list = []
+            v_list = []
+            print("==============================================================")
+
+    def n_body_gravitational_acceleration(self,r,m,epsilon):
+        G = cs.gravitational_constant
+        print("n_body_gravitational_acceleration():r=",r)
+        print("n_body_gravitational_acceleration():m=",m)
+        # positions r = [x,y,z] for all bodies in the N-Body System
+        x = r[:,0:1]
+        y = r[:,1:2]
+        z = r[:,2:3]
+        # matrices that store each pairwise body separation for each [x,y,z] direction: r_j - r_i
+        dx = x.T - x
+        dy = y.T - y
+        dz = z.T - z
+        #matrix 1/r^3 for the absolute value of all pairwise body separations together and
+        #resulting acceleration components in each [x,y,z] direction
+        inv_r3 = (dx**2 + dy**2 + dz**2 + epsilon**2)**(-1.5)
+        print("n_body_gravitational_acceleration(): inv_r3.shape = ",len(inv_r3[0]))
+        print("n_body_gravitational_acceleration(): m.shape = ",len(m))
+        extension = len(inv_r3[0]) - len(m)
+        print("n_body_gravitational_acceleration(): extension = ",extension)
+        new_m = m
+        for e in range(extension):
+            new_m = np.append(new_m,[0.0000])
+        print("n_body_gravitational_acceleration():inv_r3=",inv_r3)
+        print("n_body_gravitational_acceleration(): m.shape after extension = ",len(new_m))
+        ax = G * (dx * inv_r3) @ new_m
+        ay = G * (dy * inv_r3) @ new_m
+        az = G * (dz * inv_r3) @ new_m
+        # pack together the three acceleration components
+        a = np.hstack((ax,ay,az))
+        return a
 
     def hubble_deep_field_RGB_analytics(self,imagename,postcard=False):
         if postcard:
@@ -316,21 +382,21 @@ if __name__=="__main__":
     #ephem.astronomical_event_to_search(planetradecdict)
     #ephem.planetarium_search((2016,6,29,1,15,30),(2022,7,6,1,15,30))
     #ephem.planetarium_search((-2016,6,29,1,15,30),(2022,7,6,1,15,30),step_days=100)
-    #datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
-    #datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
-    #print("======================HURRICANES=========================")
-    #ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
-    #print("======================EARTHQUAKES=========================")
-    #ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
-    ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["199",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["599",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["299",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["699",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["799",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["899",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
-    ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["999",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
+    datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
+    print("======================HURRICANES=========================")
+    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
+    print("======================EARTHQUAKES=========================")
+    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
+    #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["199",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["599",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["299",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["699",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["799",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["899",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
+    #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["999",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.hubble_deep_field_RGB_analytics("J6FL25S4Q",postcard=True)
