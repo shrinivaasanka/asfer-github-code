@@ -39,6 +39,15 @@ from numba import jit
 from numba import cuda
 from mpl_toolkits.mplot3d import Axes3D
 from astropy.time import Time
+from skimage import data
+import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib import cm
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+from skimage.morphology import convex_hull_image
+from skimage import measure
+from scipy.spatial.distance import directed_hausdorff
 
 
 planetradecdict={}
@@ -253,6 +262,7 @@ class EphemerisSearch(object):
             return astrometric.apparent().ecliptic_latlon()
     
     def extreme_weather_events_n_body_analytics(self,datesofEWEs):
+        gravities=[]
         angular_separation=defaultdict(list)
         for date in datesofEWEs:
             date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
@@ -279,6 +289,8 @@ class EphemerisSearch(object):
             print("extreme_weather_events_n_body_analytics(): date:",date)
             for i in solar_system_bodies.values():
                 obj = Horizons(id=i, location="@earth-moon", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                print("extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body :",i,") = ",obj)
+                print("#################################################################")
                 r_obj = [obj['x'][0], obj['y'][0], obj['z'][0]]
                 v_obj = [obj['vx'][0], obj['vy'][0], obj['vz'][0]]
                 r_list.append(r_obj)
@@ -289,9 +301,15 @@ class EphemerisSearch(object):
             gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
             for g in range(len(gravity)):
                 print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at Earth-Moon Barycenter on ",date,":",gravity[g])
+            gravities.append(gravity)
             r_list = []
             v_list = []
             print("==============================================================")
+            for g1 in gravities:
+                for g2 in gravities:
+                    dh=directed_hausdorff(g1,g2)
+                    print("extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration:",dh)
+           
 
     def n_body_gravitational_acceleration(self,r,m,epsilon):
         G = cs.gravitational_constant
@@ -324,7 +342,28 @@ class EphemerisSearch(object):
         a = np.hstack((ax,ay,az))
         return a
 
-    def hubble_deep_field_RGB_analytics(self,imagename,postcard=False):
+    def hubble_deep_field_RGB_analytics(self,imagename=None,postcard=False):
+        if imagename=="skimage_HXDF":
+            channels=["red","green","blue"]
+            fig=plt.figure(imagename)
+            image = data.hubble_deep_field()[0:500,0:500] 
+            for i in range(0,3):
+                fig.add_subplot(1,3,i+1)
+                plt.imshow(image[:,:,i])
+            plt.savefig("testlogs/"+imagename+"Channels.jpg")
+            bins=np.arange(256)
+            fig = plt.figure(imagename+"Histograms")
+            for i in range(0,3):
+                fig.add_subplot(1, 3, i+1)
+                plt.hist(image[:,:,i].flatten(), bins, histtype = "stepfilled",
+                    color="{0}".format(channels[i]))
+                plt.ylim([0,18000])
+                plt.title("{0}".format(channels[i]))
+                plt.grid()
+                plt.xlabel("Pixel value")
+                plt.ylabel("Pixel count")
+            plt.savefig("testlogs/"+imagename+"Histograms.jpg")
+            return
         if postcard:
             esahubble = ESAHubble()
             esahubble.get_postcard(image, "RAW", 4096, "testlogs/"+image+".jpg")
@@ -343,12 +382,26 @@ class EphemerisSearch(object):
         blue_hist = np.histogram(npb.flatten())
         green_hist = np.histogram(npg.flatten())
         red_hist = np.histogram(npr.flatten())
+        rgb=[npr,npg,npb]
         blue_white = float(blue_hist[0][len(blue_hist[0]) - 1]) / float(sum(blue_hist[0]))
         green_white = float(green_hist[0][len(green_hist[0]) - 1]) / float(sum(green_hist[0]))
         red_white = float(red_hist[0][len(red_hist[0]) - 1]) / float(sum(red_hist[0]))
         print(("Percentage of Blue Galaxies (Closer) :", blue_white))
         print(("Percentage of Green Galaxies (Closer) :", green_white))
         print(("Percentage of Red Galaxies (Farthest - Red Shift):", red_white))
+        channels=["red","green","blue"]
+        fig=plt.figure(imagename+"Histograms")
+        bins=np.arange(256)
+        for i in range(0,3):
+            fig.add_subplot(1, 3, i+1)
+            plt.hist(rgb[i].flatten(), bins, histtype = "stepfilled",
+                    color="{0}".format(channels[i]))
+            plt.ylim([0,18000])
+            plt.title("{0}".format(channels[i]))
+            plt.grid()
+            plt.xlabel("Pixel value")
+            plt.ylabel("Pixel count")
+        plt.savefig("testlogs/"+imagename+"Histograms.jpg")
         red = fits.PrimaryHDU(data=npr)
         red.header["LATOBS"] = "111:11:11"
         red.header["LONGOBS"] = "50:50"
@@ -388,7 +441,8 @@ if __name__=="__main__":
     ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
     print("======================EARTHQUAKES=========================")
     ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
-    #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
+    ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
+    ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
