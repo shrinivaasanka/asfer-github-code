@@ -19163,3 +19163,39 @@ extreme_weather_events_n_body_analytics(): gravity of  Pluto  at Earth-Moon Bary
 References:
 ----------
 1271.7 Solar system N-Body simulation in AstroPy-AstroQuery-JPLHorizons - https://amor.cms.hu-berlin.de/~rodrigus/Subsites/Jupyter%20Notebooks/Solar_System_N-Body_Simulation.html - N-Body Gravitation Equation - "... For a problem of N bodies indexed by  i=1,...N  and known initial positions  ri=(xi,yi,zi)T , velocities  vi=(vxi,vyi,vzi)T , and masses  mi , the function giving the gravitational acceleration being exerted by all other  j  bodies on a given body  i  as per Newton's inverse square law of gravitation is given in vector form by ai→=G∑N−1j=1mjrj→−ri→(|rj→−ri→|2+ϵ2)3/2 ...."
+
+-------------------------------------------------------------------------------------------------------------------------------
+1272. (THEORY and FEATURE) Astronomy and Cosmology Datasets Analytics - Hubble eXtreme Deep Field imagery RGB analysis and Distance similarity of N-Body gravitational accelerations - 27 July 2022 - related to 731,1206,1236,1255,1266,1267,1268,1270,1271 and all sections on Astronomical Dataset Mining, Archaeoastronomical Dating, Sequence Mining, String analytics, Sequence Alignment, Visual Planetarium Search, Archaeology, Climate and Extreme Weather Event Analytics, Computational Astrophysics, N-Body problem, Merit of Large Scale Visuals, Astronomical algorithms, Histogram analytics
+------------------------------------------------------------------------------------------------------------------------------- 
+1272.1 Pairwise Hausdorff Distance similarity measures of N-Body gravitational accelerations on days of Extreme Weather Events have been computed within extreme_weather_events_n_body_analytics() function of EphemerisSearch.py
+1272.2 Function hubble_deep_field_RGB_analytics() has been updated to compute RGB channel histograms of Hubble eXtreme Deep Field image (HXDF 2012) from Scikit-Image (skimage) and plot the Histogram and RGB Channel graphics in following files(reference: 1272.5): 
+	testlogs/skimage_HXDFChannels.jpg
+	testlogs/skimage_HXDFHistograms.jpg
+1272.3 RGB channel histogram analysis of Hubble Ultra Deep Field (HUDF in 1270) has been updated to plot Histogram graphics in file testlogs/HubbleUltraDeepField_heic0611bHistograms.jpg. Marked deviation in shapes of RGB histogram bins in testlogs/skimage_HXDFChannels.jpg (HXDF) and testlogs/HubbleUltraDeepField_heic0611bHistograms.jpg (HUDF) could have contributed to RGB ratio asymmetry in 1270. 
+1272.4 Following are some excerpts of logs testlogs/EphemerisSearch.log.27July2022 (almost close-enough Pairwise gravity similarities and Mercury-Venus abnormal gravity vectors):
+...
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.027206568989690528, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02284149980887304, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.01760670123773365, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.031958191350966725, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.033769298297935034, 3, 3)
+...
+Mercury (199)   2455631.5 ... 1.205450513238685 -0.0203938188627328
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at Earth-Moon Barycenter on  (2011, 3, 11, 5, 46, 23) : [-0.04248091 -0.04133797  0.00052057]
+Mercury (199)   2454598.5 ... 0.882339348179382 -0.02192844068446965
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at Earth-Moon Barycenter on  (2008, 5, 12, 6, 27, 59) : [ 0.04121007 -0.00578165 -0.004254  ]
+Mercury (199)   2453365.5 ... 0.9338643038989636 0.02207439343425398
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 0.04213787 -0.01067853 -0.00473918]
+...
+Venus (299)   2455631.5 ... 1.122263766864372 0.006774280431450814
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at Earth-Moon Barycenter on  (2011, 3, 11, 5, 46, 23) : [ 3.89399938e-03  1.05719009e-02 -7.99002829e-05]
+Venus (299)   2454598.5 ... 1.712807970350092 0.001579916105722341
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at Earth-Moon Barycenter on  (2008, 5, 12, 6, 27, 59) : [-0.00944266 -0.00621917  0.00045984]
+Venus (299)   2453365.5 ... 1.518303955991236 0.003995808610124593
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at Earth-Moon Barycenter on  (2004, 12, 26, 0, 58, 52) : [ 0.00875022  0.0072093  -0.00040642]
+
+References:
+----------
+1272.5 Hubble eXtreme Deep Field RGB Histogram analytics - https://scientific-python.readthedocs.io/en/latest/notebooks_rst/5_Image_Processing/02_Examples/Image_Processing_Tutorial_3.html
+1272.6 Hausdorff Distance between 2 sets - http://cgm.cs.mcgill.ca/~godfried/teaching/cg-projects/98/normand/main.htmli
+1272.7 Hubble Ultra Deep Field Flythrough in 3D - 13 billion light years away - https://esahubble.org/videos/heic0714g/ 
