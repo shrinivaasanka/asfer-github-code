@@ -48,6 +48,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from skimage.morphology import convex_hull_image
 from skimage import measure
 from scipy.spatial.distance import directed_hausdorff
+import healpy as hp
+from astroML.datasets import fetch_wmap_temperatures 
 
 
 planetradecdict={}
@@ -261,7 +263,7 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs,loc="@earth-moon"):
         gravities=[]
         angular_separation=defaultdict(list)
         for date in datesofEWEs:
@@ -288,7 +290,7 @@ class EphemerisSearch(object):
         for date in datesofEWEs:
             print("extreme_weather_events_n_body_analytics(): date:",date)
             for i in solar_system_bodies.values():
-                obj = Horizons(id=i, location="@earth-moon", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
                 print("extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body :",i,") = ",obj)
                 print("#################################################################")
                 r_obj = [obj['x'][0], obj['y'][0], obj['z'][0]]
@@ -300,7 +302,7 @@ class EphemerisSearch(object):
             m_i = np.array(m_list)
             gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
             for g in range(len(gravity)):
-                print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at Earth-Moon Barycenter on ",date,":",gravity[g])
+                print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",loc," on ",date,":",gravity[g])
             gravities.append(gravity)
             r_list = []
             v_list = []
@@ -341,6 +343,24 @@ class EphemerisSearch(object):
         # pack together the three acceleration components
         a = np.hstack((ax,ay,az))
         return a
+
+    def WMAP_CMB_analytics(self):
+        wmapmasked=fetch_wmap_temperatures(masked=True)
+        fig = plt.figure(1)
+        hp.mollview(wmapmasked,min=-1,max=1, title="masked WMAP CMB",fig=1,unit=r'$Delta$T (mK)')
+        powerspectrum = hp.anafast(wmapmasked.filled(), lmax=1024)
+        scatter11 = np.arange(len(powerspectrum))
+        plt.savefig("testlogs/WMAP_CMB_1.jpg")
+        fig = plt.figure(3)
+        ax = fig.add_subplot(111)
+        ax.scatter(scatter11, scatter11 * (scatter11 + 1) * powerspectrum, s=4, c="black", lw=0, label='data')
+        ax.set_xlabel(r'$\ell$')
+        ax.set_ylabel(r'$\ell(\ell+1)C_\ell$')
+        ax.set_title('Angular Power (not mask corrected)')
+        ax.legend(loc='upper right')
+        ax.grid()
+        ax.set_xlim(0, 1100)
+        plt.savefig("testlogs/WMAP_CMB_2.jpg")
 
     def hubble_deep_field_RGB_analytics(self,imagename=None,postcard=False):
         if imagename=="skimage_HXDF":
@@ -438,11 +458,12 @@ if __name__=="__main__":
     datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
     datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
     print("======================HURRICANES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes)
+    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes,loc="@0")
     print("======================EARTHQUAKES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes)
-    ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
-    ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
+    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes,loc="@0")
+    #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
+    #ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
+    ephem.WMAP_CMB_analytics()
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
