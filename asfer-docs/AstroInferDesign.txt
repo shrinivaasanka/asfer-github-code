@@ -581,7 +581,6 @@ A.	Design Notes on Mining Numerical Datasets
 
 
 #############################################################################################################################################
-
 ===========================================================================================================================================
 (THEORY) DECIDABILITY OF EXISTENCE AND CONSTRUCTION OF COMPLEMENT OF A FUNCTION (important draft additions to http://arxiv.org/pdf/1106.4102v1.pdf - quite experimental, non-conventional and not necessarily correct)
 ===========================================================================================================================================
@@ -592,7 +591,7 @@ A.	Design Notes on Mining Numerical Datasets
 Thus DFT amd interpolation coincide in the above.
 
 -----------------------------------------------------------------------------------------------------------------------
-24a. Theorems on prime number generating polynomials - special case is to generate all primes or integral complement of xy=z 
+1274. Theorems on prime number generating polynomials - special case is to generate all primes or integral complement of xy=z - related to 24
 -----------------------------------------------------------------------------------------------------------------------
 Legendre - There is no rational algebraic function which always gives primes.
 Goldbach - No polynomial with integer coefficients can give primes for all integer values
@@ -601,7 +600,7 @@ Jones-Sato-Wada-Wiens - Polynomial of degree 25 in 26 variables whose values are
 Polynomial interpolation and Fourier expansion of the boolean function in http://arxiv.org/pdf/1106.4102v1.pdf probably would have non-integral coefficients due to the above.
 
 --------------------------------------------------------------------------------------------
-24b. Circuit construction for the complement function boolean DNF constructed in http://arxiv.org/pdf/1106.4102v1.pdf
+1275. Circuit construction for the complement function boolean DNF constructed in http://arxiv.org/pdf/1106.4102v1.pdf - related to 24
 --------------------------------------------------------------------------------------------
 The DNF constructed for complement function has to be minimized (through some lowerbound techniques) before it is represented as a circuit because the number of clauses could be exponential. The circuit minimization problem has been shown to be NP-complete(unpublished proof by Masek, [GareyJohnson]). The above complement function boolean DNF would yield a constant depth 2 circuit (probably after minimization also) with unbounded fanin. If the size of the circuit is polynomial it is in AC (=NC). The size of the circuit depends on the boolean DNF constructed above which inturn depends on input complement set. Thus circuit depends on input making it a Non-Uniform AC circuit.  Though complement function is undecidable as described in http://arxiv.org/pdf/1106.4102v1.pdf, Non-uniform circuits "decide" undecidable languages by definition.
 
@@ -619,8 +618,8 @@ Thus if a prime number is b-bit, there are b fourier polynomials for each bit of
 where each fxi() is one of the b fourier expansion polynomials for prime bits.
 
 -----------------------------------------------------------------------------------------------------------------------------------
-24c. Riemann Zeta Function written as Euler-Fourier Polynomial :
-------------------------------------------------------------
+1276. Riemann Zeta Function written as Euler-Fourier Polynomial : - related to 24
+-----------------------------------------------------------------------------------------------------------------------------------
 Fourier polynomials for each prime can be substituted in Euler formula and equated to Riemann Zeta Function:
 RZF = Inverse((1-1/P(x1)^s)(1-1/P(x2)^s))...ad infinitum---------------------------------------------------------------------(1).
 
@@ -642,7 +641,7 @@ If RH is true a=0.5 and above becomes, (1)^((0.5-ic)/(0.25+c^2)).
 Thus imaginary part c has one-to-one correspondence to each prime. Non-trivial zeroes are usually found using functional notation of RZF instead of the above - applying Analytic Continuation that extends the domain in steps to be exact. 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-24d. Delving deeper into (1) above which equates Riemann Zeta Function with Complement Function Fourier Polynomials substituted in Euler's infinite product (Hereinafter referred to as Euler-Fourier polynomial) - Pattern in primes from above Euler-Fourier polynomial:
+1277. Delving deeper into (1) above which equates Riemann Zeta Function with Complement Function Fourier Polynomials substituted in Euler's infinite product (Hereinafter referred to as Euler-Fourier polynomial) - Pattern in primes from above Euler-Fourier polynomial: - related to 24
 --------------------------------------------------------------------------------------------------------------------------------------------
 Finding pattern in distribution of primes is equivalent to finding pattern in above set of prime bit circuits or fourier polynomials for each prime - The family of circuits for primes above has to be mined for circuit DAG subgraph patterns which is more of machine learning than complexity (there is almost no complexity theoretic reference to this aspect). The set of fourier polynomials can be mined for linear independence for example. (1),(2) and (3) are multiple ways of expressing same relation between complement function boolean circuit and RZF.
 
@@ -652,9 +651,9 @@ Important thing to note is that what it means to be a zero of the Euler-Fourier 
 
 Sensitivity and Block sensitity of the above complement function circuit should also have a strong relation to prime distribution as sensitivity is the number of input bits or block of bits that are to be flipped for change in value of the circuit(prime bit is the value) . For each Fourier polynomial of a prime bit above the sensitivity measure would differ and  the prime distribution is proportional to collective sensitivity of all the prime bit circuit Fourier polynomials . Also the degree of approximating Fourier polynomial is lower bounded by sensitivity (www.cs.cmu.edu/~odonnell/papers/analysis-survey.pdf).
 
-----------------------------------------------------------------------------------------------------
-24e. Arithmetic Circuit for Euler Product and RZF - Alternative formulation to Euler-Fourier polynomials
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+1278. Arithmetic Circuit for Euler Product and RZF - Alternative formulation to Euler-Fourier polynomials - related to 24
+---------------------------------------------------------------------------------------------------------------------------
 
 Instead of a boolean circuit above can be an arithmetic circuit (with * and + gates with elements of some field as inputs to these) alternatively which is useful in representing polynomials. The division in the above Euler product can be replaced by the transform f/g = f/(1-(1-g)) = f*(1+(1-g)+(1-g)^2+...) by geometric series expansion. This is how division is implemented using powering and hence multiplication in NC circuits. Above Euler product can be represented as a depth 3 Pi-Sigma-Pi ----  * for product of each prime clause, + for subtraction within each clause, * for raising (1/p) to power s ---- circuit assuming 1/p. Powering with complex exponent s requires representing s as a 2*2 matrix M(s) where a and b are real and imaginary parts of s:
 	
@@ -677,9 +676,9 @@ Using Taylor series expansion and Jordan Normal Form above can be written as a h
 
 Eigen values of Chaotic systems Wave modelling Random matrices (matrix as random variable) have been shown to have a striking relation to zeros of RZF - Spacing of Random matrix eigenphases and RZF zeros have been conjectured to be identical (Montgomery). From complexity standpoint, the characteristic polynomial or the determinant of such Random Matrices can be computed by determinant circuits which have polynomial size and polylog depth.
 
------------------------------------------------------------------------------------------------
-24f. Can be ignored - quite Experimental - Different way to reduce the complex exponent in (1) 
------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+1279. Can be ignored - quite Experimental - Different way to reduce the complex exponent in (1) - related to 24
+----------------------------------------------------------------------------------------------------------------
 From (1), P(xi)^s = 1.
 => P(xi) ^ (k+il) = 1 where s=k+il
 => P(xi)^k * P(xi)^(il) - 1 = 0
@@ -738,9 +737,9 @@ More on (7):
 
 Above equates the Fourier polynomial for xi-th prime in terms of exponent of e with Imaginary part l of some RZF zero. It is not necessary that primes have one-one correspondence with zeros in the same order. All above just imply that it is true for some prime(and its Fourier polynomial) and some RZF zero that satisfy these identities.
 
--------------------------------------------------------------------------------------------------------------
-24g. Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function and Special case of Complement Function
--------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+1280. Ramanujan Graphs, Ihara Zeta Function and Riemann Zeta Function and Special case of Complement Function - related to 24
+-----------------------------------------------------------------------------------------------------------------------------
 A graph is Ramanujan graph if it is d-regular and eigen values of its adjacency matrix are sqrt(d-1)*2 or d. Ihara zeta function similar to RZF is a Dirichlet series that is based on prime cycle lengths of a graph defined as ProductOf(1/1-q^(-s*p)) where s is a zero and p prime for a (q+1)-regular graph. Thus a reduction is already available from RZF to a graph. The Ihara Zeta Function satisfies Riemann Hypothesis iff graph is Ramanujan - this follows from Ihara identity that relates Ihara Zeta Function and the adjacency matrix of a graph. Thus proving above conjecture for Euler-Fourier polynomial of complement function for primes boolean and arithmetic circuits family might need this gadget using prime cycles.
 
 If a set of p-regular graphs for all primes is considered,then Riemann Zeta Function can be derived (using Ihara Zeta Function identity) as a function of product of Ihara Zeta Functions for these graphs and a function of the determinants of adjacency matrices for these graphs divided by an infinite product similar to Euler product with (1+1/p^s) clauses instead of (1-1/p^s). This requires computing product of determinants of a function of adjancency matrices for these graphs. A regular connected graph is Ramanujan if and only if it satisfies RH. Zeroes of the individual Ihara zeta functions are also zeroes of this product for the set of graphs and hence for the RZF. Intuitively the product might imply set of all paths of all possible lengths across these graphs. Determinant of the product of adjacent matrices is product of determinants of the matrices and equating it to zero yields eigenvalues. All these graphs have same number of edges and vertices. The eigen values then are of the form sqrt(q^(2-2a)+q^(2a)+2q) were s=a+ib for each of the regular graphs. The RHS of Ihara Zeta Function can be written as [(1+1/q^s)(1-1/q^s)]^[V-E] and the product gives the RZF and the other series mentioned above. Eigen values can be atmost q.
@@ -819,9 +818,9 @@ for some term in the infinite product of LHS which implies that
 
 (21) (SOME EXPERIMENTATION ON DISTRIBUTION OF PRIMES) List of primes read by complement.py is downloaded from https://primes.utm.edu/lists/. IharaIdentity() function in complement.py evaluates Imaginary(s)=b=arccos(v/(2*sqrt(q)))/log(q) by incrementing v by small steps in a loop till it equals 2*sqrt(q). This allows v to be in the range [0,2*sqrt(q)] whereas Ramanujan graphs require it to be 2*sqrt(q-1) or q. Hence non-ramanujan graphs are also allowed. Logs in testlogs/ print all Imaginary(s) iterations of this eigenvalues for all 10000 primes. arccos() function returns radians which is a cyclic measure and hence can take x+2*y*pi where y=0,1,2,3,4,5,6,... which could be arbitrarily large infinite set. Logs print only x with y=0 and not all cycles. Prima facie visual comparison shows this set to be different from Imaginary(RZF) for x alone which could be inaccurate. Sifting through all cycles and verifying if these are indeed Im() parts of RZF might be an arduous task and could be undecidable too because two infinite sets have to be compared for equality. But theoretically the Re() part of (2) which is infinite product of (1) equivalent to Riemann Zeta Function is 0.5 for all while Im() part is computationally intensive. Crucial evidence that comes out of it is the possibility of cyclic values of radians in b=arccos(v/(2*sqrt(q))/log(q) which implies a fixed (prime, eigenvalue) ordered tuple correspond to infinitely many b(s) (Im() parts). Thus 2*sqrt(q)*cos(b*log(q)) = eigen_value is a generating function mining pattern in distribution of primes. Rephrasing, b has generating function: b <= (x + 2*y*pi)/logq, where 0 <= x <= pi/2. SequenceMining.py also has been applied to binary representation of first 10000 prime numbers (Commit Notes 273 below) which is learning theory way of finding patterns in distribution in primes. Logs for the most frequent sequences in prime strings in binary have been committed in testlogs/. These binary sequences mined from first 10000 primes have been plotted in decimal with R+rpy2 function plotter. Function plot in decimal shows sinusoidal patterns in mined sequences with periodic peaks and dips as the length of sequence increases i.e the mined sequences in prime binary strings periodically have leftmost bits set to 1 and rightmost bits set to 1 and viceversa which causes decimals to vacillate significantly. Primes are not regular and context-free languages which are known from formal languages theory. The function doing complementation in complement.py can be translated to Turing Machine by programming languages Brainfuck and Laconic which is equivalent to a lambda function for complement.
 
-----------------------------------------------------
-24h. PAC Learning and Complement Function Construction
-----------------------------------------------------
+-----------------------------------------------------------------------
+1281. PAC Learning and Complement Function Construction - related to 24
+-----------------------------------------------------------------------
 Complement Boolean Function construction described in http://arxiv.org/abs/1106.4102 is in a way an example of PAC learnt Boolean Function - it is rather C Learnt (Correct Learning) because there is no probability or approximation. Complement Boolean Function can be PAC learnt (with upperbounded error) as follows:
         - There are two datasets - dataset1 of size 2^n of consecutive integers and dataset2 of first n-bit prime numbers of size 2^n 
         - Each element of dataset1 is mapped to i-th bit of the corresponding prime number element in the dataset2. Boolean Conjunction is learnt for each of the i mappings (PAC Learning Algorithm: http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html).
@@ -829,60 +828,59 @@ Complement Boolean Function construction described in http://arxiv.org/abs/1106.
 	- An example PAC Boolean Conjunction Learner is at: http://sourceforge.net/p/asfer/code/HEAD/tree/python-src/PACLearning.py
 
 ---------------------------------------------------------------------------------
-24i. Star Complexity and Complement Function Circuit Lowerbound (related to 198)
+1282. Star Complexity and Complement Function Circuit Lowerbound (related to 24,198)
 ---------------------------------------------------------------------------------
 Star Complexity of a Boolean Circuit is the minimum number of AND and OR gates required in monotone circuit graph. Size lowerbound for Complement Function circuit can thus be lowerbounded by Strong Magnification Lemma (Stasys Jukna - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf) - Size(ComplementCircuit) >= Star(ComplementCircuitGraph) - (2 + o(1))*n . Mapping from Boolean Circuit to Graph is done through a bipartite graph gadget wherein a boolean variable x(v1,v2) iff there is an edge from v1 to v2 in the bipartite graph and replacing each boolean literal by an OR of two new variables. Star Complexity views Boolean Circuits as a graph and for most graphs it is Omega(n^2/logn). Obtaining Size Lowerbounds for arbitrary complement functions is non-trivial.
 
-----------------------------
-24j. Additional references:
-----------------------------
-24.1 Google groups thread reference 2003 (OP done by self): https://groups.google.com/forum/#!search/ka_shrinivaasan%7Csort:relevance%7Cspell:false/sci.math/RqsDNc6SBdk/Lgc0wLiFhTMJ
-24.2 Math StackExchange thread 2013: http://math.stackexchange.com/questions/293383/complement-of-a-function-f-2n-n-in-mathbbn-0-n-rightarrow-n1
-24.3 Theory of Negation - http://mentalmodels.princeton.edu/skhemlani/portfolio/negation-theory/ and a quoted excerpt from it :
+-----------------------------------------------
+1283. Additional references - related to 24:
+-----------------------------------------------
+1283.1 Google groups thread reference 2003 (OP done by self): https://groups.google.com/forum/#!search/ka_shrinivaasan%7Csort:relevance%7Cspell:false/sci.math/RqsDNc6SBdk/Lgc0wLiFhTMJ
+1283.2 Math StackExchange thread 2013: http://math.stackexchange.com/questions/293383/complement-of-a-function-f-2n-n-in-mathbbn-0-n-rightarrow-n1
+1283.3 Theory of Negation - http://mentalmodels.princeton.edu/skhemlani/portfolio/negation-theory/ and a quoted excerpt from it :
 "... The principle of negative meaning: negation is a function that takes a single argument, which is a set of fully explicit models of possibilities, and in its core meaning this function returns the complement of the set..."
-24.4 Boolean Complementation [0 or 1 as range and domain] is a special case of Complement Function above (DeMorgan theorem - http://www.ctp.bilkent.edu.tr/~yavuz/BOOLEEAN.html)
-24.5 Interpolation - http://caig.cs.nctu.edu.tw/course/NM07S/slides/chap3_1.pdf 
-24.6 Formal Concept Analysis - http://en.wikipedia.org/wiki/Formal_concept_analysis, http://ijcai.org/papers11/Papers/IJCAI11-227.pdf
-24.7 Prime generating polynomials - http://en.wikipedia.org/wiki/Formula_for_primes
-24.8 Patterns in primes - every even number > 2 is sum of 2 primes - Goldbach conjecture : http://en.wikipedia.org/wiki/Goldbach%27s_conjecture
-24.9 Arbitrarily Long Arithmetic progressions - Green-Tao theorem: http://en.wikipedia.org/wiki/Green%E2%80%93Tao_theorem
-24.10 Prime generating functions - https://www.sonoma.edu/math/colloq/primes_sonoma_state_9_24_08.pdf
-24.11 Hardness of Minimizing and Learning DNF Expressions - https://cs.nyu.edu/~khot/papers/minDNF.pdf
-24.12 DNF Minimization - http://users.cms.caltech.edu/~umans/papers/BU07.pdf
-24.13 DNF Minimization - http://www.cs.toronto.edu/~toni/Papers/mindnf.pdf
-24.14 Riemann Zeta Function Hypothesis - all non-trivial(complex) zeroes of RZF have Re(z) = 0.5 - http://en.wikipedia.org/wiki/Riemann_hypothesis. 
-24.15 Frequent Subgraph Mining - http://research.microsoft.com/pubs/173864/icde08gsearch.pdf
-24.16 Frequent Subgraph Mining - http://glaros.dtc.umn.edu/gkhome/fetch/papers/sigramDMKD05.pdf
-24.17 Roots of polynomials - Beauty of Roots - http://www.math.ucr.edu/home/baez/roots/
-24.18 Circuit lowerbounds (Gate Elimination, Nechiporuk, Krapchenko, etc) - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation_Chapter9.pdf
-24.19 Schwartz-Zippel Lemma for Polynomial Identity Testing - http://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma
-24.20 Schwartz-Zippel Lemma for PIT of multilinear polynomials - http://www.cs.huji.ac.il/~noam/degree.ps
-24.21 Analysis of Boolean Functions - http://analysisofbooleanfunctions.org/
-24.22 Riemann-Siegel Formula for computation of zeros - http://numbers.computation.free.fr/Constants/Miscellaneous/zetaevaluations.html
-24.23 RZF zeros computation - http://math.stackexchange.com/questions/134362/calculating-the-zeroes-of-the-riemann-zeta-function 
-24.24 Online Encyclopedia of Integer Sequences for Prime numbers - all theorems and articles related to primes - https://oeis.org/search?q=2%2C3%2C5%2C7%2C11%2C13%2C17%2C19%2C23%2C29%2C31%2C37%2C41%2C43%2C47%2C&language=english&go=Search
-24.25 Intuitive proof of Schwartz-Zippel lemma - http://rjlipton.wordpress.com/2009/11/30/the-curious-history-of-the-schwartz-zippel-lemma/
-24.26 Random Matrices and RZF zeros - http://www.maths.bris.ac.uk/~majpk/papers/67.pdf
-24.27 Circuit for determinant - S. J. Berkowitz. On computing the determinant in small parallel time using a small number of processors. Inf. Prod. Letters 18, pp. 147–150, 1984.
-24.28 Mangoldt Function, Ihara Zeta Function, Ramanujan Graphs - http://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824
-24.29 Multiplicity of an eigen value in k-regular graph - http://math.stackexchange.com/questions/255334/the-number-of-connected-components-of-a-k-regular-graph-equals-the-multiplicit
-24.30 PAC Learning - http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html
-24.31 Pattern in Prime Digits - [Oliver-Kannan Soundarrajan] - http://arxiv.org/abs/1603.03720 - Prime numbers which are juxtaposed avoid ending in same digit. This has direct bearing on Fourier polynomial of prime complement function and Euler-Fourier polynomial derived above which is binary representation of a prime and a special case of function complementation. If decimal representation of adjacent primes is repulsive in last digit, then last binary bits (LSB) output by the complement circuit should be too.
-24.32 Pattern in Prime Digits - http://www.nature.com/news/peculiar-pattern-found-in-random-prime-numbers-1.19550 - above with assumption of Hardy-Littlewood k-tuple conjecture a generalization of twin primes conjecture to all prime constellations.
-24.33 Pattern in Primes - Ulam's Spiral - [Stainslaw Ulam] - https://www.alpertron.com.ar/ULAM.HTM - Prime numbers are clustered along diagonals of anticlockwise spiral of integers 1,2,3,4,5,6,... ad infinitum.
-24.34 Theory of Negation (Broken URL in 24.3 updated) - http://mentalmodels.princeton.edu/papers/2012negation.pdf
-24.35 Prime Number Theorem - n-th prime is ~ O(nlogn)
-24.36 Riemann Hypothesis prediction of prime distribution - Integral_2_p(n)_[dt/logt] = n + O(sqrt(n(logn)^3)
-24.37 Brainfuck Turing Machine Compiler - https://esolangs.org/wiki/Brainfuck
-24.38 Laconic Turing Machine Compiler - https://esolangs.org/wiki/Laconic
-24.39 Circuit Complexity Lowerbound for Explicit Boolean Functions - http://logic.pdmi.ras.ru/~kulikov/papers/2011_3n_lower_bound_mfcs.pdf - 3n  - o(n)
-24.40 Star Complexity of Boolean Function Circuit - [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
-24.41 Random Matrices, RZF zeroes and Quantum Mechanics - https://www.ias.edu/ideas/2013/primes-random-matrices
-24.42 Jones-Sato-Wada-Wiens Theorem - Polynomial of 25 degree-26 variables for Prime Diophantine set - http://www.math.ualberta.ca/~wiens/home%20page/pubs/diophantine.pdf
-24.43 Energy levels of Erbium Nuclei and zeros of Riemann Zeta Function - http://seedmagazine.com/content/article/prime_numbers_get_hitched/
+1283.4 Boolean Complementation [0 or 1 as range and domain] is a special case of Complement Function above (DeMorgan theorem - http://www.ctp.bilkent.edu.tr/~yavuz/BOOLEEAN.html)
+1283.5 Interpolation - http://caig.cs.nctu.edu.tw/course/NM07S/slides/chap3_1.pdf 
+1283.6 Formal Concept Analysis - http://en.wikipedia.org/wiki/Formal_concept_analysis, http://ijcai.org/papers11/Papers/IJCAI11-227.pdf
+1283.7 Prime generating polynomials - http://en.wikipedia.org/wiki/Formula_for_primes
+1283.8 Patterns in primes - every even number > 2 is sum of 2 primes - Goldbach conjecture : http://en.wikipedia.org/wiki/Goldbach%27s_conjecture
+1283.9 Arbitrarily Long Arithmetic progressions - Green-Tao theorem: http://en.wikipedia.org/wiki/Green%E2%80%93Tao_theorem
+1283.10 Prime generating functions - https://www.sonoma.edu/math/colloq/primes_sonoma_state_9_24_08.pdf
+1283.11 Hardness of Minimizing and Learning DNF Expressions - https://cs.nyu.edu/~khot/papers/minDNF.pdf
+1283.12 DNF Minimization - http://users.cms.caltech.edu/~umans/papers/BU07.pdf
+1283.13 DNF Minimization - http://www.cs.toronto.edu/~toni/Papers/mindnf.pdf
+1283.14 Riemann Zeta Function Hypothesis - all non-trivial(complex) zeroes of RZF have Re(z) = 0.5 - http://en.wikipedia.org/wiki/Riemann_hypothesis. 
+1283.15 Frequent Subgraph Mining - http://research.microsoft.com/pubs/173864/icde08gsearch.pdf
+1283.16 Frequent Subgraph Mining - http://glaros.dtc.umn.edu/gkhome/fetch/papers/sigramDMKD05.pdf
+1283.17 Roots of polynomials - Beauty of Roots - http://www.math.ucr.edu/home/baez/roots/
+1283.18 Circuit lowerbounds (Gate Elimination, Nechiporuk, Krapchenko, etc) - http://cs.brown.edu/~jes/book/pdfs/ModelsOfComputation_Chapter9.pdf
+1283.19 Schwartz-Zippel Lemma for Polynomial Identity Testing - http://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma
+1283.20 Schwartz-Zippel Lemma for PIT of multilinear polynomials - http://www.cs.huji.ac.il/~noam/degree.ps
+1283.21 Analysis of Boolean Functions - http://analysisofbooleanfunctions.org/
+1283.22 Riemann-Siegel Formula for computation of zeros - http://numbers.computation.free.fr/Constants/Miscellaneous/zetaevaluations.html
+1283.23 RZF zeros computation - http://math.stackexchange.com/questions/134362/calculating-the-zeroes-of-the-riemann-zeta-function 
+1283.24 Online Encyclopedia of Integer Sequences for Prime numbers - all theorems and articles related to primes - https://oeis.org/search?q=2%2C3%2C5%2C7%2C11%2C13%2C17%2C19%2C23%2C29%2C31%2C37%2C41%2C43%2C47%2C&language=english&go=Search
+1283.25 Intuitive proof of Schwartz-Zippel lemma - http://rjlipton.wordpress.com/2009/11/30/the-curious-history-of-the-schwartz-zippel-lemma/
+1283.26 Random Matrices and RZF zeros - http://www.maths.bris.ac.uk/~majpk/papers/67.pdf
+1283.27 Circuit for determinant - S. J. Berkowitz. On computing the determinant in small parallel time using a small number of processors. Inf. Prod. Letters 18, pp. 147–150, 1984.
+1283.28 Mangoldt Function, Ihara Zeta Function, Ramanujan Graphs - http://lucatrevisan.wordpress.com/2014/08/18/the-riemann-hypothesis-for-graphs/#more-2824
+1283.29 Multiplicity of an eigen value in k-regular graph - http://math.stackexchange.com/questions/255334/the-number-of-connected-components-of-a-k-regular-graph-equals-the-multiplicit
+1283.30 PAC Learning - http://www.cis.temple.edu/~giorgio/cis587/readings/pac.html
+1283.31 Pattern in Prime Digits - [Oliver-Kannan Soundarrajan] - http://arxiv.org/abs/1603.03720 - Prime numbers which are juxtaposed avoid ending in same digit. This has direct bearing on Fourier polynomial of prime complement function and Euler-Fourier polynomial derived above which is binary representation of a prime and a special case of function complementation. If decimal representation of adjacent primes is repulsive in last digit, then last binary bits (LSB) output by the complement circuit should be too.
+1283.32 Pattern in Prime Digits - http://www.nature.com/news/peculiar-pattern-found-in-random-prime-numbers-1.19550 - above with assumption of Hardy-Littlewood k-tuple conjecture a generalization of twin primes conjecture to all prime constellations.
+1283.33 Pattern in Primes - Ulam's Spiral - [Stainslaw Ulam] - https://www.alpertron.com.ar/ULAM.HTM - Prime numbers are clustered along diagonals of anticlockwise spiral of integers 1,2,3,4,5,6,... ad infinitum.
+1283.34 Theory of Negation (Broken URL in 24.3 updated) - http://mentalmodels.princeton.edu/papers/2012negation.pdf
+1283.35 Prime Number Theorem - n-th prime is ~ O(nlogn)
+1283.36 Riemann Hypothesis prediction of prime distribution - Integral_2_p(n)_[dt/logt] = n + O(sqrt(n(logn)^3)
+1283.37 Brainfuck Turing Machine Compiler - https://esolangs.org/wiki/Brainfuck
+1283.38 Laconic Turing Machine Compiler - https://esolangs.org/wiki/Laconic
+1283.39 Circuit Complexity Lowerbound for Explicit Boolean Functions - http://logic.pdmi.ras.ru/~kulikov/papers/2011_3n_lower_bound_mfcs.pdf - 3n  - o(n)
+1283.40 Star Complexity of Boolean Function Circuit - [Stasys Jukna] - http://www.thi.informatik.uni-frankfurt.de/~jukna/ftp/graph-compl.pdf
+1283.41 Random Matrices, RZF zeroes and Quantum Mechanics - https://www.ias.edu/ideas/2013/primes-random-matrices
+1283.42 Jones-Sato-Wada-Wiens Theorem - Polynomial of 25 degree-26 variables for Prime Diophantine set - http://www.math.ualberta.ca/~wiens/home%20page/pubs/diophantine.pdf
+1283.43 Energy levels of Erbium Nuclei and zeros of Riemann Zeta Function - http://seedmagazine.com/content/article/prime_numbers_get_hitched/
 
-###############################################################################################################################################
-
+#########################################################################################################################################
 
 25. (FEATURE - DONE) Approximating with some probability distribution - Gaussian, Binomial etc., that model the probability of occurence of a datapoint in the set. Kullback-Leibler Divergence python implementation which computes distance in terms of amount of bits between two probability distribution has been added to python-src/. Minimum of the distance for different standard distributions with a dataset is the closest distribution approximation for the dataset.
 
