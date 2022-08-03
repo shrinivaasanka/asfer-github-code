@@ -19212,3 +19212,24 @@ References:
 1273.5 AstroML - https://www.astroml.org/index.html - Machine Learning Algorithms Package for Astronomical Datasets
 1273.6 AstroML Book - https://press.princeton.edu/books/hardcover/9780691198309/statistics-data-mining-and-machine-learning-in-astronomy
 1273.7 AstroML WMAP Power Spectrum Analysis - https://www.astroml.org/examples/datasets/plot_wmap_power_spectra.html
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1284. (THEORY and FEATURE) NeuronRainApps - Wikipedia Textgraph Question-Answering Bot - related to 1133,1134,1204,1263,1269 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains 
+--------------------------------------------------------------------------------------------------------------------------------------------
+1284.1 New Question-Answering Bot python implementation QuestionAnswering.py has been added to NeuronRain AstroInfer repositories within NeuronRainApps/QuestionAnswering/ which (*) takes questions from users as commandline arguments, (*) parses the question into a question textgraph, (*) computes dense subgraphs and core numbers of prominent vertices in question textgraph, (*) searches Wikipedia Corpus through wikipedia python API for top percentile core number vertices in question textgraph to get matching wikipedia pages, (*) for each matching wikipedia page gets the summary as the text "Answer" to the question, (*) parses the answer into an answer textgraph and (*) computes the degree attention of edges of answer textgraph and learns Query-Key-Value weights (by Perceptrons Gradient Descent) through rlfg_transformers_attention_model() function in RecursiveLambdaFunctionGrowth.py 
+1284.2 The summary() function of wikipedia python API which wraps MediaWiki PyWikiBot interface of Wikipedia, provides a crisp natural language summary for the question keywords simulating a GPT3-like background intelligence which could be a Turing test.
+1284.3 Transformers degree attention learnt for answer textgraph could be helpful in cherrypicking prominent and relevant edges of the textgraph vertices of which are highly interdependent thus aiding a traversal of the answer textgraph to print a natural language answer simulating summary() function of MediaWiki API.
+1284.4 Following are 5 questions asked through commandline chosen from varied disciplines - Geography,Physics,History,Sports,Archaeology - and the answers from summary() and answer textgraph degree attention are printed to logs - Last two questions are sourced from OpenAI GPT3 QA examples - https://beta.openai.com/examples/default-qa:
+	python3.7 QuestionAnswering.py "which is the largest country in the world" 2>&1 > testlogs/QuestionAnswering.log1.2August2022 
+	python3.7 QuestionAnswering.py "Define Theory of General Relativity" 2>&1 > testlogs/QuestionAnswering.log2.2August2022 
+	python3.7 QuestionAnswering.py "Who is the Father of Indian Freedom Struggle" 2>&1 > testlogs/QuestionAnswering.log3.2August2022
+	GPT3 - python3.7 QuestionAnswering.py "Where were the 1992 Olympics held" 2>&1 > testlogs/QuestionAnswering.log4.2August2022 
+	GPT3 - python3.7 QuestionAnswering.py "Where is the Valley of Kings?" 2>&1 > testlogs/QuestionAnswering.log5.2August2022
+1284.5 Relevance of answers to questions is along expected lines and multiple answers are allowed per question based on wikipedia matches. For Question 5 earlier following edges have top percentile Query-Key-Value weights laying emphasis on these words in a hypothetical natural language answer (a sentence containing discovery, exploration and land). An example natural language answer could be obtained from edges below by connecting the vertices by a WordNet path between them:
+	Query weight for textgraph edge ( discovery , exploration ): 2.0132
+	Key weight for textgraph edge ( discovery , exploration ): 5.0504
+	Value weight for textgraph edge ( discovery , exploration ): 8.0876
+	Query weight for textgraph edge ( discovery , land ): 3.0338
+	Key weight for textgraph edge ( discovery , land ): 6.2636
+	Value weight for textgraph edge ( discovery , land ): 9.4934
+1284.6 Earlier Bot implementation could have sourced answers from Google search but wikipedia corpus has better open API access compared to Google search code for which has since been commented. 
