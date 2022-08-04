@@ -493,6 +493,7 @@ class RecursiveLambdaFunctionGrowth(object):
                     continue
                 column+=1
             row+=1
+        return (query_weights,key_weights,value_weights,attention)
 
     def machine_translation(self, corenumber=3, definitiongraph=None, languagecode="en", pathsimilarity=0.8):
         nodes = definitiongraph.nodes()
