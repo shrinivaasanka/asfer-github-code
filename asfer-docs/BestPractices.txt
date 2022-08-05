@@ -11,7 +11,7 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 5.Architectural choices are more important than implementation - no complicated overengineering - Occam's Razor. 
 6.VIRGO32 and VIRGO64 linux kernel base mainline PPA versions are not frequently updated having reached minimum stability.
 7.Benchmarks on Single/Multicore/Clusters are committed for salient Cloud implemented features (Factorization, Intrinsic Merit/Fitness, VIRGO system calls-drivers etc.,)
-8.Code Reviews are Self-Reviews only based on QE/QA.
+8.Code Reviews are Self-Reviews (GitHub and GitLab review tool comments by Author) only based on QE/QA logs. Entire NeuronRain repositories are architected and developed by 1 person team (K.Srinivasan - https://acadpdrafts.readthedocs.io/en/latest/) without any peer review. NeuronRain development is free,open and transparent not-for-profit charity effort. Comprehensive logs are committed along with almost every code change in NeuronRain repositories in Sourceforge, GitHub and GitLab available for public review.
 9.To err is human - erroneous commits are corrected as and when found. Bug Tracking is minimal and there are no strict timelines for resolution. Following are bug tracking pages for all Krishna iResearch - NeuronRain repositories: 
 	SourceForge - NeuronRain Research - https://sourceforge.net/u/ka_shrinivaasan/tickets/
 	GitHub - NeuronRain Green - https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/issues
