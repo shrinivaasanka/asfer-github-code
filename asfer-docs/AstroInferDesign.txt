@@ -19255,7 +19255,7 @@ References:
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286. (THEORY) Economic Merit and People Analytics - Mechanism Design of Multiround Majority Voting derived from Simultaneous Ascending 
 Auction - related to 400,790,791 and all sections on Majority Voting, Auction Design, Mechanism Design, Economic Merit, People Analytics,
-Quantitate Majority Circuit - 8 August 2022
+Quantitative Majority Circuit - 8 August 2022
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286.1 Traditional mechanism of simultaneous ascending auctions for pricing commodities could be suitably translated to an Election Design
 Mechanism which allows multiple rounds of voting and flexible values per vote by mapping ascending prices per round (or bidders up the ante every round) to votes by electorate (Price = Vote). 
@@ -19279,3 +19279,7 @@ Voter2 - (Round1,15 votes),(Round2,30 votes),(Round3,45 votes - Highest Bidder)
 Voter3 - (Round1,10 votes),(Round2,20 votes),(Round3,30 votes)
 Total votes for Candidate2 at the end of Round3: 110
 1286.3 Candidate1 wins over Candidate2 (Either by Highest Vote 55 to 45 or Sum of Votes 140 to 110) at the end of Round3. Number of votes per voter per round is arbitrarily non-descending and arbitrary increment-decrement of votes per round per voter is allowed. Multiround voting relaxes traditional voting by permitting voters to rethink decisions on earlier rounds (if negative votes are allowed,votes can descend in next rounds). Votes for Candidates earlier are stored (as secret ballots) either in a separate chaining hashtable or appended to a chronological blockchain per voter. 
+
+References:
+----------
+1286.4 Milgrom-Wilson Auction Design with Information Revelation - https://web.stanford.edu/~jdlevin/Econ%20285/SAA%20and%20Spectrum%20Sales.pdf
