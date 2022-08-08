@@ -34,4 +34,4 @@
 12.Medical Imageing Analytics - find patterns in ECG,MRI,Scan medical images for diagnosis
 13.Image Analytics - Webcam or retinal scan driver captures face or retinal scan image,compares them for match (face or retinal scan as password) in userspace deep learning analytics, exports match = True or False as kernel analytics variables which are read and exported by kernel_analytics VIRGO32 and VIRGO64 drivers and read by some other authentication driver in kernel and message is logged in /var/log/kern.log
 14.Drones/Flights/UAVs - Change pxrc flight controller driver for reading analytics variables exported by kernel_analytics VIRGO32 and VIRGO64 drivers
-
+15.Astronomy analytics - Sequence Mining and N-Body equation solver for gravitational acceleration-extreme weather events correlation,Space imagery analysis
