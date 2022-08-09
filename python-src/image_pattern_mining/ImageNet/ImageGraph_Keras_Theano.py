@@ -673,8 +673,9 @@ if __name__ == "__main__":
     #imagegraph2=imagenet_imagegraph("testlogs/bagasra-unicorn-seal.jpg")
     #imagegraph3=imagenet_imagegraph("testlogs/unicorn-seal_1_5.jpg")
     imagegraph4=imagenet_imagegraph("testlogs/yogic-seal_0.jpg")
-    #imagegraphsResNet50=[imagegraph1[0][0][0],imagegraph2[0][0][0],imagegraph3[0][0][0]]
-    #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
+    imagegraph5=imagenet_imagegraph("testlogs/yogic-seal_1.jpg")
+    imagegraphsResNet50=[imagegraph4[0][0][0],imagegraph5[0][0][0]]
+    frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50)
     #imagegraphsResNet50V2=[imagegraph1[0][1][0],imagegraph2[0][1][0],imagegraph3[0][1][0]]
     #frequent_subgraphs_of_imagenet_prediction_textgraphs(imagegraphsResNet50V2)
     #histogram_partition_distance_similarity("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg","testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
@@ -687,4 +688,4 @@ if __name__ == "__main__":
     #seg1=image_segmentation("testlogs/SkyLive_SumatraBoxingDayEarthQuake_26December2004_0758.jpg")
     #seg2=image_segmentation("testlogs/SkyLive_TangshanEarthQuake_28July1976_0342.jpg")
     #seg3=image_segmentation("testlogs/Mayan_Canaa_Pyramid_Caracol_LIDAR.jpg",voronoi_delaunay=True)
-    seg4=image_segmentation("testlogs/yogic-seal_0.jpg",voronoi_delaunay=True)
+    #seg4=image_segmentation("testlogs/yogic-seal_0.jpg",voronoi_delaunay=True)

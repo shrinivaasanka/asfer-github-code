@@ -1,0 +1,1214 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+imagenet_imagegraph():  testlogs/yogic-seal_0.jpg
+('Predictions - ', 'ResNet50', ':', [[('n02892201', 'brass', 0.7663543), ('n02910353', 'buckle', 0.09748204), ('n04192698', 'shield', 0.05866886), ('n03903868', 'pedestal', 0.014400147), ('n03929855', 'pickelhaube', 0.010885257)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('protective', 'shield'), ('shield', 'protective'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('brass', 'wind'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup-shaped'), ('brass', 'funnel-shaped'), ('brass', 'variable'), ('brass', 'brass'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('consists', 'brass'), ('length', 'brass'), ('structure', 'shield'), ('cup-shaped', 'brass'), ('funnel-shaped', 'brass'), ('buckle', 'buckle'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('variable', 'brass'), ('fasten', 'buckle'), ('worn', 'pickelhaube'), ('pickelhaube', 'worn'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('usually', 'brass'), ('foundation', 'base'), ('base', 'foundation'), ('base', 'support'), ('means', 'brass'), ('helmet', 'pickelhaube'), ('buckles', 'buckle'), ('soldiers', 'pickelhaube'), ('support', 'base'), ('German', 'pickelhaube'), ('spiked', 'pickelhaube'), ('mouthpiece', 'brass'), ('blown', 'brass'), ('instrument', 'brass'), ('tube', 'brass'), ('covering', 'shield')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, 373346.0))
+2
+defaultdict(<class 'list'>, {'protective': ['shield'], 'wind': ['brass'], 'consists': ['brass'], 'length': ['brass'], 'structure': ['shield'], 'cup-shaped': ['brass'], 'funnel-shaped': ['brass'], 'buckle': ['buckle'], 'variable': ['brass'], 'brass': ['brass'], 'fasten': ['buckle'], 'worn': ['pickelhaube'], 'usually': ['brass'], 'foundation': ['base'], 'means': ['brass'], 'helmet': ['pickelhaube'], 'buckles': ['buckle'], 'soldiers': ['pickelhaube'], 'support': ['base'], 'German': ['pickelhaube'], 'spiked': ['pickelhaube'], 'mouthpiece': ['brass'], 'blown': ['brass'], 'instrument': ['brass'], 'tube': ['brass'], 'covering': ['shield']})
+('definitiongraph networkx edges:', OutEdgeView([('protective', 'shield'), ('shield', 'protective'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('brass', 'wind'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup-shaped'), ('brass', 'funnel-shaped'), ('brass', 'variable'), ('brass', 'brass'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('consists', 'brass'), ('length', 'brass'), ('structure', 'shield'), ('cup-shaped', 'brass'), ('funnel-shaped', 'brass'), ('buckle', 'buckle'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('variable', 'brass'), ('fasten', 'buckle'), ('worn', 'pickelhaube'), ('pickelhaube', 'worn'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('usually', 'brass'), ('foundation', 'base'), ('base', 'foundation'), ('base', 'support'), ('means', 'brass'), ('helmet', 'pickelhaube'), ('buckles', 'buckle'), ('soldiers', 'pickelhaube'), ('support', 'base'), ('German', 'pickelhaube'), ('spiked', 'pickelhaube'), ('mouthpiece', 'brass'), ('blown', 'brass'), ('instrument', 'brass'), ('tube', 'brass'), ('covering', 'shield')]))
+('Core number (sorted) :', [('protective', 2), ('shield', 2), ('wind', 2), ('brass', 2), ('consists', 2), ('length', 2), ('structure', 2), ('cup-shaped', 2), ('funnel-shaped', 2), ('buckle', 2), ('variable', 2), ('fasten', 2), ('worn', 2), ('pickelhaube', 2), ('usually', 2), ('foundation', 2), ('base', 2), ('means', 2), ('helmet', 2), ('buckles', 2), ('soldiers', 2), ('support', 2), ('German', 2), ('spiked', 2), ('mouthpiece', 2), ('blown', 2), ('instrument', 2), ('tube', 2), ('covering', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'protective', ',core number=', 2)
+('This document belongs to class:', 'shield', ',core number=', 2)
+('This document belongs to class:', 'wind', ',core number=', 2)
+('This document belongs to class:', 'brass', ',core number=', 2)
+('This document belongs to class:', 'consists', ',core number=', 2)
+('This document belongs to class:', 'length', ',core number=', 2)
+('This document belongs to class:', 'structure', ',core number=', 2)
+('This document belongs to class:', 'cup-shaped', ',core number=', 2)
+('This document belongs to class:', 'funnel-shaped', ',core number=', 2)
+('This document belongs to class:', 'buckle', ',core number=', 2)
+('This document belongs to class:', 'variable', ',core number=', 2)
+('This document belongs to class:', 'fasten', ',core number=', 2)
+('This document belongs to class:', 'worn', ',core number=', 2)
+('This document belongs to class:', 'pickelhaube', ',core number=', 2)
+('This document belongs to class:', 'usually', ',core number=', 2)
+('This document belongs to class:', 'foundation', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('brass', 0.1746031746031746), ('pickelhaube', 0.026455026455026454), ('shield', 0.007936507936507936), ('buckle', 0.0026455026455026454), ('base', 0.0026455026455026454), ('protective', 0.0), ('wind', 0.0), ('consists', 0.0), ('length', 0.0), ('structure', 0.0), ('cup-shaped', 0.0), ('funnel-shaped', 0.0), ('variable', 0.0), ('fasten', 0.0), ('worn', 0.0), ('usually', 0.0), ('foundation', 0.0), ('means', 0.0), ('helmet', 0.0), ('buckles', 0.0), ('soldiers', 0.0), ('support', 0.0), ('German', 0.0), ('spiked', 0.0), ('mouthpiece', 0.0), ('blown', 0.0), ('instrument', 0.0), ('tube', 0.0), ('covering', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('brass', 0.42857142857142855), ('wind', 0.22360248447204967), ('consists', 0.22360248447204967), ('length', 0.22360248447204967), ('cup-shaped', 0.22360248447204967), ('funnel-shaped', 0.22360248447204967), ('variable', 0.22360248447204967), ('usually', 0.22360248447204967), ('means', 0.22360248447204967), ('mouthpiece', 0.22360248447204967), ('blown', 0.22360248447204967), ('instrument', 0.22360248447204967), ('tube', 0.22360248447204967), ('pickelhaube', 0.17857142857142858), ('shield', 0.10714285714285714), ('worn', 0.09920634920634921), ('helmet', 0.09920634920634921), ('soldiers', 0.09920634920634921), ('German', 0.09920634920634921), ('spiked', 0.09920634920634921), ('buckle', 0.07142857142857142), ('base', 0.07142857142857142), ('protective', 0.06428571428571428), ('structure', 0.06428571428571428), ('covering', 0.06428571428571428), ('fasten', 0.047619047619047616), ('foundation', 0.047619047619047616), ('buckles', 0.047619047619047616), ('support', 0.047619047619047616)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('brass', 0.8571428571428571), ('pickelhaube', 0.3571428571428571), ('shield', 0.21428571428571427), ('buckle', 0.14285714285714285), ('base', 0.14285714285714285), ('protective', 0.07142857142857142), ('wind', 0.07142857142857142), ('consists', 0.07142857142857142), ('length', 0.07142857142857142), ('structure', 0.07142857142857142), ('cup-shaped', 0.07142857142857142), ('funnel-shaped', 0.07142857142857142), ('variable', 0.07142857142857142), ('fasten', 0.07142857142857142), ('worn', 0.07142857142857142), ('usually', 0.07142857142857142), ('foundation', 0.07142857142857142), ('means', 0.07142857142857142), ('helmet', 0.07142857142857142), ('buckles', 0.07142857142857142), ('soldiers', 0.07142857142857142), ('support', 0.07142857142857142), ('German', 0.07142857142857142), ('spiked', 0.07142857142857142), ('mouthpiece', 0.07142857142857142), ('blown', 0.07142857142857142), ('instrument', 0.07142857142857142), ('tube', 0.07142857142857142), ('covering', 0.07142857142857142)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('brass', 0.2087566573359813), ('pickelhaube', 0.09785508542625027), ('shield', 0.06616892202346995), ('buckle', 0.05032584032207979), ('base', 0.05032584032207979), ('fasten', 0.026561217769994573), ('foundation', 0.026561217769994573), ('buckles', 0.026561217769994573), ('support', 0.026561217769994573), ('protective', 0.023920704153096214), ('structure', 0.023920704153096214), ('covering', 0.023920704153096214), ('worn', 0.021808293259577533), ('helmet', 0.021808293259577533), ('soldiers', 0.021808293259577533), ('German', 0.021808293259577533), ('spiked', 0.021808293259577533), ('wind', 0.01995993372774868), ('consists', 0.01995993372774868), ('length', 0.01995993372774868), ('cup-shaped', 0.01995993372774868), ('funnel-shaped', 0.01995993372774868), ('variable', 0.01995993372774868), ('usually', 0.01995993372774868), ('means', 0.01995993372774868), ('mouthpiece', 0.01995993372774868), ('blown', 0.01995993372774868), ('instrument', 0.01995993372774868), ('tube', 0.01995993372774868)]
+('Unsupervised Image Classes:', ([('protective', 2), ('shield', 2), ('wind', 2), ('brass', 2), ('consists', 2), ('length', 2), ('structure', 2), ('cup-shaped', 2), ('funnel-shaped', 2), ('buckle', 2), ('variable', 2), ('fasten', 2), ('worn', 2), ('pickelhaube', 2), ('usually', 2), ('foundation', 2), ('base', 2), ('means', 2), ('helmet', 2), ('buckles', 2), ('soldiers', 2), ('support', 2), ('German', 2), ('spiked', 2), ('mouthpiece', 2), ('blown', 2), ('instrument', 2), ('tube', 2), ('covering', 2)], [('brass', 0.2087566573359813), ('pickelhaube', 0.09785508542625027), ('shield', 0.06616892202346995), ('buckle', 0.05032584032207979), ('base', 0.05032584032207979), ('fasten', 0.026561217769994573), ('foundation', 0.026561217769994573), ('buckles', 0.026561217769994573), ('support', 0.026561217769994573), ('protective', 0.023920704153096214), ('structure', 0.023920704153096214), ('covering', 0.023920704153096214), ('worn', 0.021808293259577533), ('helmet', 0.021808293259577533), ('soldiers', 0.021808293259577533), ('German', 0.021808293259577533), ('spiked', 0.021808293259577533), ('wind', 0.01995993372774868), ('consists', 0.01995993372774868), ('length', 0.01995993372774868), ('cup-shaped', 0.01995993372774868), ('funnel-shaped', 0.01995993372774868), ('variable', 0.01995993372774868), ('usually', 0.01995993372774868), ('means', 0.01995993372774868), ('mouthpiece', 0.01995993372774868), ('blown', 0.01995993372774868), ('instrument', 0.01995993372774868), ('tube', 0.01995993372774868)]))
+('Predictions - ', 'ResNet50V2', ':', [[('n02883205', 'bow_tie', 1.0), ('n15075141', 'toilet_tissue', 0.0), ('n02317335', 'starfish', 0.0), ('n02389026', 'sorrel', 0.0), ('n02364673', 'guinea_pig', 0.0)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('man', 'bow_tie'), ('bow_tie', 'man'), ('bow_tie', 'tie'), ('bow_tie', 'ties'), ('bow_tie', 'bow'), ('characterized', 'starfish'), ('starfish', 'characterized'), ('starfish', 'central'), ('starfish', 'five'), ('starfish', 'disk'), ('starfish', 'arms'), ('starfish', 'echinoderms'), ('starfish', 'extending'), ('subjected', 'subject'), ('subject', 'subjected'), ('subject', 'observational'), ('subject', 'investigation'), ('subject', 'someone'), ('subject', 'object'), ('subject', 'person'), ('subject', 'procedures'), ('subject', 'experimental'), ('observational', 'subject'), ('investigation', 'subject'), ('central', 'starfish'), ('someone', 'subject'), ('plant', 'oxalis'), ('oxalis', 'plant'), ('oxalis', 'Oxalis'), ('oxalis', 'flower'), ('oxalis', 'genus'), ('tie', 'bow_tie'), ('toilets', 'toilet_tissue'), ('toilet_tissue', 'toilets'), ('toilet_tissue', 'thin'), ('toilet_tissue', 'paper'), ('toilet_tissue', 'absorbent'), ('toilet_tissue', 'soft'), ('toilet_tissue', 'use'), ('object', 'subject'), ('ties', 'bow_tie'), ('Oxalis', 'oxalis'), ('bow', 'bow_tie'), ('flower', 'oxalis'), ('thin', 'toilet_tissue'), ('person', 'subject'), ('procedures', 'subject'), ('five', 'starfish'), ('experimental', 'subject'), ('disk', 'starfish'), ('arms', 'starfish'), ('echinoderms', 'starfish'), ('paper', 'toilet_tissue'), ('absorbent', 'toilet_tissue'), ('genus', 'oxalis'), ('extending', 'starfish'), ('soft', 'toilet_tissue'), ('use', 'toilet_tissue')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f0a7f280110>, 466102.0))
+2
+defaultdict(<class 'list'>, {'man': ['bow_tie'], 'characterized': ['starfish'], 'subjected': ['subject'], 'observational': ['subject'], 'investigation': ['subject'], 'central': ['starfish'], 'someone': ['subject'], 'plant': ['oxalis'], 'tie': ['bow_tie'], 'toilets': ['toilet_tissue'], 'object': ['subject'], 'ties': ['bow_tie'], 'Oxalis': ['oxalis'], 'bow': ['bow_tie'], 'flower': ['oxalis'], 'thin': ['toilet_tissue'], 'person': ['subject'], 'procedures': ['subject'], 'five': ['starfish'], 'experimental': ['subject'], 'disk': ['starfish'], 'arms': ['starfish'], 'echinoderms': ['starfish'], 'paper': ['toilet_tissue'], 'absorbent': ['toilet_tissue'], 'genus': ['oxalis'], 'extending': ['starfish'], 'soft': ['toilet_tissue'], 'use': ['toilet_tissue']})
+('definitiongraph networkx edges:', OutEdgeView([('man', 'bow_tie'), ('bow_tie', 'man'), ('bow_tie', 'tie'), ('bow_tie', 'ties'), ('bow_tie', 'bow'), ('characterized', 'starfish'), ('starfish', 'characterized'), ('starfish', 'central'), ('starfish', 'five'), ('starfish', 'disk'), ('starfish', 'arms'), ('starfish', 'echinoderms'), ('starfish', 'extending'), ('subjected', 'subject'), ('subject', 'subjected'), ('subject', 'observational'), ('subject', 'investigation'), ('subject', 'someone'), ('subject', 'object'), ('subject', 'person'), ('subject', 'procedures'), ('subject', 'experimental'), ('observational', 'subject'), ('investigation', 'subject'), ('central', 'starfish'), ('someone', 'subject'), ('plant', 'oxalis'), ('oxalis', 'plant'), ('oxalis', 'Oxalis'), ('oxalis', 'flower'), ('oxalis', 'genus'), ('tie', 'bow_tie'), ('toilets', 'toilet_tissue'), ('toilet_tissue', 'toilets'), ('toilet_tissue', 'thin'), ('toilet_tissue', 'paper'), ('toilet_tissue', 'absorbent'), ('toilet_tissue', 'soft'), ('toilet_tissue', 'use'), ('object', 'subject'), ('ties', 'bow_tie'), ('Oxalis', 'oxalis'), ('bow', 'bow_tie'), ('flower', 'oxalis'), ('thin', 'toilet_tissue'), ('person', 'subject'), ('procedures', 'subject'), ('five', 'starfish'), ('experimental', 'subject'), ('disk', 'starfish'), ('arms', 'starfish'), ('echinoderms', 'starfish'), ('paper', 'toilet_tissue'), ('absorbent', 'toilet_tissue'), ('genus', 'oxalis'), ('extending', 'starfish'), ('soft', 'toilet_tissue'), ('use', 'toilet_tissue')]))
+('Core number (sorted) :', [('man', 2), ('bow_tie', 2), ('characterized', 2), ('starfish', 2), ('subjected', 2), ('subject', 2), ('observational', 2), ('investigation', 2), ('central', 2), ('someone', 2), ('plant', 2), ('oxalis', 2), ('tie', 2), ('toilets', 2), ('toilet_tissue', 2), ('object', 2), ('ties', 2), ('Oxalis', 2), ('bow', 2), ('flower', 2), ('thin', 2), ('person', 2), ('procedures', 2), ('five', 2), ('experimental', 2), ('disk', 2), ('arms', 2), ('echinoderms', 2), ('paper', 2), ('absorbent', 2), ('genus', 2), ('extending', 2), ('soft', 2), ('use', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'man', ',core number=', 2)
+('This document belongs to class:', 'bow_tie', ',core number=', 2)
+('This document belongs to class:', 'characterized', ',core number=', 2)
+('This document belongs to class:', 'starfish', ',core number=', 2)
+('This document belongs to class:', 'subjected', ',core number=', 2)
+('This document belongs to class:', 'subject', ',core number=', 2)
+('This document belongs to class:', 'observational', ',core number=', 2)
+('This document belongs to class:', 'investigation', ',core number=', 2)
+('This document belongs to class:', 'central', ',core number=', 2)
+('This document belongs to class:', 'someone', ',core number=', 2)
+('This document belongs to class:', 'plant', ',core number=', 2)
+('This document belongs to class:', 'oxalis', ',core number=', 2)
+('This document belongs to class:', 'tie', ',core number=', 2)
+('This document belongs to class:', 'toilets', ',core number=', 2)
+('This document belongs to class:', 'toilet_tissue', ',core number=', 2)
+('This document belongs to class:', 'object', ',core number=', 2)
+('This document belongs to class:', 'ties', ',core number=', 2)
+('This document belongs to class:', 'Oxalis', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('subject', 0.05303030303030303), ('starfish', 0.03977272727272727), ('toilet_tissue', 0.02840909090909091), ('bow_tie', 0.011363636363636364), ('oxalis', 0.011363636363636364), ('man', 0.0), ('characterized', 0.0), ('subjected', 0.0), ('observational', 0.0), ('investigation', 0.0), ('central', 0.0), ('someone', 0.0), ('plant', 0.0), ('tie', 0.0), ('toilets', 0.0), ('object', 0.0), ('ties', 0.0), ('Oxalis', 0.0), ('bow', 0.0), ('flower', 0.0), ('thin', 0.0), ('person', 0.0), ('procedures', 0.0), ('five', 0.0), ('experimental', 0.0), ('disk', 0.0), ('arms', 0.0), ('echinoderms', 0.0), ('paper', 0.0), ('absorbent', 0.0), ('genus', 0.0), ('extending', 0.0), ('soft', 0.0), ('use', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('subject', 0.24242424242424243), ('starfish', 0.21212121212121213), ('toilet_tissue', 0.18181818181818182), ('subjected', 0.1292929292929293), ('observational', 0.1292929292929293), ('investigation', 0.1292929292929293), ('someone', 0.1292929292929293), ('object', 0.1292929292929293), ('person', 0.1292929292929293), ('procedures', 0.1292929292929293), ('experimental', 0.1292929292929293), ('bow_tie', 0.12121212121212122), ('oxalis', 0.12121212121212122), ('characterized', 0.11421911421911422), ('central', 0.11421911421911422), ('five', 0.11421911421911422), ('disk', 0.11421911421911422), ('arms', 0.11421911421911422), ('echinoderms', 0.11421911421911422), ('extending', 0.11421911421911422), ('toilets', 0.09917355371900825), ('thin', 0.09917355371900825), ('paper', 0.09917355371900825), ('absorbent', 0.09917355371900825), ('soft', 0.09917355371900825), ('use', 0.09917355371900825), ('man', 0.06926406926406926), ('plant', 0.06926406926406926), ('tie', 0.06926406926406926), ('ties', 0.06926406926406926), ('Oxalis', 0.06926406926406926), ('bow', 0.06926406926406926), ('flower', 0.06926406926406926), ('genus', 0.06926406926406926)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('subject', 0.48484848484848486), ('starfish', 0.42424242424242425), ('toilet_tissue', 0.36363636363636365), ('bow_tie', 0.24242424242424243), ('oxalis', 0.24242424242424243), ('man', 0.06060606060606061), ('characterized', 0.06060606060606061), ('subjected', 0.06060606060606061), ('observational', 0.06060606060606061), ('investigation', 0.06060606060606061), ('central', 0.06060606060606061), ('someone', 0.06060606060606061), ('plant', 0.06060606060606061), ('tie', 0.06060606060606061), ('toilets', 0.06060606060606061), ('object', 0.06060606060606061), ('ties', 0.06060606060606061), ('Oxalis', 0.06060606060606061), ('bow', 0.06060606060606061), ('flower', 0.06060606060606061), ('thin', 0.06060606060606061), ('person', 0.06060606060606061), ('procedures', 0.06060606060606061), ('five', 0.06060606060606061), ('experimental', 0.06060606060606061), ('disk', 0.06060606060606061), ('arms', 0.06060606060606061), ('echinoderms', 0.06060606060606061), ('paper', 0.06060606060606061), ('absorbent', 0.06060606060606061), ('genus', 0.06060606060606061), ('extending', 0.06060606060606061), ('soft', 0.06060606060606061), ('use', 0.06060606060606061)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('subject', 0.12400428192300596), ('starfish', 0.11049106517770256), ('toilet_tissue', 0.09697784843239919), ('bow_tie', 0.06995141494179245), ('oxalis', 0.06995141494179245), ('man', 0.01927685214690483), ('plant', 0.01927685214690483), ('tie', 0.01927685214690483), ('ties', 0.01927685214690483), ('Oxalis', 0.01927685214690483), ('bow', 0.01927685214690483), ('flower', 0.01927685214690483), ('genus', 0.01927685214690483), ('toilets', 0.01815075075146288), ('thin', 0.01815075075146288), ('paper', 0.01815075075146288), ('absorbent', 0.01815075075146288), ('soft', 0.01815075075146288), ('use', 0.01815075075146288), ('characterized', 0.017829007495622322), ('central', 0.017829007495622322), ('five', 0.017829007495622322), ('disk', 0.017829007495622322), ('arms', 0.017829007495622322), ('echinoderms', 0.017829007495622322), ('extending', 0.017829007495622322), ('subjected', 0.017587700053741908), ('observational', 0.017587700053741908), ('investigation', 0.017587700053741908), ('someone', 0.017587700053741908), ('object', 0.017587700053741908), ('person', 0.017587700053741908), ('procedures', 0.017587700053741908), ('experimental', 0.017587700053741908)]
+('Unsupervised Image Classes:', ([('man', 2), ('bow_tie', 2), ('characterized', 2), ('starfish', 2), ('subjected', 2), ('subject', 2), ('observational', 2), ('investigation', 2), ('central', 2), ('someone', 2), ('plant', 2), ('oxalis', 2), ('tie', 2), ('toilets', 2), ('toilet_tissue', 2), ('object', 2), ('ties', 2), ('Oxalis', 2), ('bow', 2), ('flower', 2), ('thin', 2), ('person', 2), ('procedures', 2), ('five', 2), ('experimental', 2), ('disk', 2), ('arms', 2), ('echinoderms', 2), ('paper', 2), ('absorbent', 2), ('genus', 2), ('extending', 2), ('soft', 2), ('use', 2)], [('subject', 0.12400428192300596), ('starfish', 0.11049106517770256), ('toilet_tissue', 0.09697784843239919), ('bow_tie', 0.06995141494179245), ('oxalis', 0.06995141494179245), ('man', 0.01927685214690483), ('plant', 0.01927685214690483), ('tie', 0.01927685214690483), ('ties', 0.01927685214690483), ('Oxalis', 0.01927685214690483), ('bow', 0.01927685214690483), ('flower', 0.01927685214690483), ('genus', 0.01927685214690483), ('toilets', 0.01815075075146288), ('thin', 0.01815075075146288), ('paper', 0.01815075075146288), ('absorbent', 0.01815075075146288), ('soft', 0.01815075075146288), ('use', 0.01815075075146288), ('characterized', 0.017829007495622322), ('central', 0.017829007495622322), ('five', 0.017829007495622322), ('disk', 0.017829007495622322), ('arms', 0.017829007495622322), ('echinoderms', 0.017829007495622322), ('extending', 0.017829007495622322), ('subjected', 0.017587700053741908), ('observational', 0.017587700053741908), ('investigation', 0.017587700053741908), ('someone', 0.017587700053741908), ('object', 0.017587700053741908), ('person', 0.017587700053741908), ('procedures', 0.017587700053741908), ('experimental', 0.017587700053741908)]))
+imagenet_imagegraph():  testlogs/yogic-seal_1.jpg
+('Predictions - ', 'ResNet50', ':', [[('n04192698', 'shield', 0.35536176), ('n03929855', 'pickelhaube', 0.19172743), ('n04346328', 'stupa', 0.10517956), ('n03903868', 'pedestal', 0.09620602), ('n02910353', 'buckle', 0.058550343)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('protective', 'shield'), ('shield', 'protective'), ('shield', 'structure'), ('shield', 'covering'), ('structure', 'shield'), ('buckle', 'buckle'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('worn', 'pickelhaube'), ('pickelhaube', 'worn'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('Buddhists', 'stupa'), ('stupa', 'Buddhists'), ('stupa', 'shrine'), ('stupa', 'dome-shaped'), ('stupa', 'erected'), ('fasten', 'buckle'), ('shrine', 'stupa'), ('foundation', 'base'), ('base', 'foundation'), ('base', 'support'), ('helmet', 'pickelhaube'), ('buckles', 'buckle'), ('soldiers', 'pickelhaube'), ('support', 'base'), ('German', 'pickelhaube'), ('spiked', 'pickelhaube'), ('dome-shaped', 'stupa'), ('covering', 'shield'), ('erected', 'stupa')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>, 32745.0))
+2
+defaultdict(<class 'list'>, {'protective': ['shield'], 'structure': ['shield'], 'buckle': ['buckle'], 'worn': ['pickelhaube'], 'Buddhists': ['stupa'], 'fasten': ['buckle'], 'shrine': ['stupa'], 'foundation': ['base'], 'helmet': ['pickelhaube'], 'buckles': ['buckle'], 'soldiers': ['pickelhaube'], 'support': ['base'], 'German': ['pickelhaube'], 'spiked': ['pickelhaube'], 'dome-shaped': ['stupa'], 'covering': ['shield'], 'erected': ['stupa']})
+('definitiongraph networkx edges:', OutEdgeView([('protective', 'shield'), ('shield', 'protective'), ('shield', 'structure'), ('shield', 'covering'), ('structure', 'shield'), ('buckle', 'buckle'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('worn', 'pickelhaube'), ('pickelhaube', 'worn'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('Buddhists', 'stupa'), ('stupa', 'Buddhists'), ('stupa', 'shrine'), ('stupa', 'dome-shaped'), ('stupa', 'erected'), ('fasten', 'buckle'), ('shrine', 'stupa'), ('foundation', 'base'), ('base', 'foundation'), ('base', 'support'), ('helmet', 'pickelhaube'), ('buckles', 'buckle'), ('soldiers', 'pickelhaube'), ('support', 'base'), ('German', 'pickelhaube'), ('spiked', 'pickelhaube'), ('dome-shaped', 'stupa'), ('covering', 'shield'), ('erected', 'stupa')]))
+('Core number (sorted) :', [('protective', 2), ('shield', 2), ('structure', 2), ('buckle', 2), ('worn', 2), ('pickelhaube', 2), ('Buddhists', 2), ('stupa', 2), ('fasten', 2), ('shrine', 2), ('foundation', 2), ('base', 2), ('helmet', 2), ('buckles', 2), ('soldiers', 2), ('support', 2), ('German', 2), ('spiked', 2), ('dome-shaped', 2), ('covering', 2), ('erected', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'protective', ',core number=', 2)
+('This document belongs to class:', 'shield', ',core number=', 2)
+('This document belongs to class:', 'structure', ',core number=', 2)
+('This document belongs to class:', 'buckle', ',core number=', 2)
+('This document belongs to class:', 'worn', ',core number=', 2)
+('This document belongs to class:', 'pickelhaube', ',core number=', 2)
+('This document belongs to class:', 'Buddhists', ',core number=', 2)
+('This document belongs to class:', 'stupa', ',core number=', 2)
+('This document belongs to class:', 'fasten', ',core number=', 2)
+('This document belongs to class:', 'shrine', ',core number=', 2)
+('This document belongs to class:', 'foundation', ',core number=', 2)
+('This document belongs to class:', 'base', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('pickelhaube', 0.05263157894736842), ('stupa', 0.031578947368421054), ('shield', 0.015789473684210527), ('buckle', 0.005263157894736842), ('base', 0.005263157894736842), ('protective', 0.0), ('structure', 0.0), ('worn', 0.0), ('Buddhists', 0.0), ('fasten', 0.0), ('shrine', 0.0), ('foundation', 0.0), ('helmet', 0.0), ('buckles', 0.0), ('soldiers', 0.0), ('support', 0.0), ('German', 0.0), ('spiked', 0.0), ('dome-shaped', 0.0), ('covering', 0.0), ('erected', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('pickelhaube', 0.25), ('stupa', 0.2), ('shield', 0.15), ('worn', 0.1388888888888889), ('helmet', 0.1388888888888889), ('soldiers', 0.1388888888888889), ('German', 0.1388888888888889), ('spiked', 0.1388888888888889), ('Buddhists', 0.11428571428571428), ('shrine', 0.11428571428571428), ('dome-shaped', 0.11428571428571428), ('erected', 0.11428571428571428), ('buckle', 0.1), ('base', 0.1), ('protective', 0.09), ('structure', 0.09), ('covering', 0.09), ('fasten', 0.06666666666666667), ('foundation', 0.06666666666666667), ('buckles', 0.06666666666666667), ('support', 0.06666666666666667)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('pickelhaube', 0.5), ('stupa', 0.4), ('shield', 0.30000000000000004), ('buckle', 0.2), ('base', 0.2), ('protective', 0.1), ('structure', 0.1), ('worn', 0.1), ('Buddhists', 0.1), ('fasten', 0.1), ('shrine', 0.1), ('foundation', 0.1), ('helmet', 0.1), ('buckles', 0.1), ('soldiers', 0.1), ('support', 0.1), ('German', 0.1), ('spiked', 0.1), ('dome-shaped', 0.1), ('covering', 0.1), ('erected', 0.1)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('pickelhaube', 0.13513676877347292), ('stupa', 0.11325733848486655), ('shield', 0.09137790819626024), ('buckle', 0.06949847790765393), ('base', 0.06949847790765393), ('fasten', 0.036679332474744454), ('foundation', 0.036679332474744454), ('buckles', 0.036679332474744454), ('support', 0.036679332474744454), ('protective', 0.033032760759976736), ('structure', 0.033032760759976736), ('covering', 0.033032760759976736), ('Buddhists', 0.031209474902592876), ('shrine', 0.031209474902592876), ('dome-shaped', 0.031209474902592876), ('erected', 0.031209474902592876), ('worn', 0.030115503388162566), ('helmet', 0.030115503388162566), ('soldiers', 0.030115503388162566), ('German', 0.030115503388162566), ('spiked', 0.030115503388162566)]
+('Unsupervised Image Classes:', ([('protective', 2), ('shield', 2), ('structure', 2), ('buckle', 2), ('worn', 2), ('pickelhaube', 2), ('Buddhists', 2), ('stupa', 2), ('fasten', 2), ('shrine', 2), ('foundation', 2), ('base', 2), ('helmet', 2), ('buckles', 2), ('soldiers', 2), ('support', 2), ('German', 2), ('spiked', 2), ('dome-shaped', 2), ('covering', 2), ('erected', 2)], [('pickelhaube', 0.13513676877347292), ('stupa', 0.11325733848486655), ('shield', 0.09137790819626024), ('buckle', 0.06949847790765393), ('base', 0.06949847790765393), ('fasten', 0.036679332474744454), ('foundation', 0.036679332474744454), ('buckles', 0.036679332474744454), ('support', 0.036679332474744454), ('protective', 0.033032760759976736), ('structure', 0.033032760759976736), ('covering', 0.033032760759976736), ('Buddhists', 0.031209474902592876), ('shrine', 0.031209474902592876), ('dome-shaped', 0.031209474902592876), ('erected', 0.031209474902592876), ('worn', 0.030115503388162566), ('helmet', 0.030115503388162566), ('soldiers', 0.030115503388162566), ('German', 0.030115503388162566), ('spiked', 0.030115503388162566)]))
+('Predictions - ', 'ResNet50V2', ':', [[('n02086910', 'papillon', 0.9999727), ('n03794056', 'mousetrap', 2.727726e-05), ('n02089973', 'English_foxhound', 4.2937833e-22), ('n02356798', 'fox_squirrel', 2.4978247e-22), ('n02109047', 'Great_Dane', 2.2800707e-23)]])
+2
+RecursiveGlossOverlapGraph(): textgraph =  [('larger', 'English_foxhound'), ('English_foxhound', 'larger'), ('English_foxhound', 'packs'), ('English_foxhound', 'breed'), ('English_foxhound', 'foxhounds'), ('English_foxhound', 'English'), ('English_foxhound', 'American'), ('English_foxhound', 'originally'), ('English_foxhound', 'hunt'), ('English_foxhound', 'slightly'), ('English_foxhound', 'used'), ('squirrel', 'fox_squirrel'), ('fox_squirrel', 'squirrel'), ('fox_squirrel', 'United'), ('fox_squirrel', 'eastern'), ('fox_squirrel', 'arboreal'), ('fox_squirrel', 'States'), ('fox_squirrel', 'exceptionally'), ('fox_squirrel', 'large'), ('powerful', 'Great_Dane'), ('Great_Dane', 'powerful'), ('Great_Dane', 'breed'), ('Great_Dane', 'smooth-coated'), ('Great_Dane', 'dog'), ('Great_Dane', 'large'), ('United', 'fox_squirrel'), ('packs', 'English_foxhound'), ('eastern', 'fox_squirrel'), ('breed', 'English_foxhound'), ('breed', 'Great_Dane'), ('foxhounds', 'English_foxhound'), ('brown', 'papillon'), ('papillon', 'brown'), ('papillon', 'black-spotted'), ('papillon', 'small'), ('papillon', 'toy'), ('papillon', 'white'), ('papillon', 'slender'), ('papillon', 'erect'), ('papillon', 'spaniel'), ('papillon', 'coat'), ('papillon', 'ears'), ('English', 'English_foxhound'), ('mice', 'mousetrap'), ('mousetrap', 'mice'), ('mousetrap', 'trap'), ('mousetrap', 'catching'), ('black-spotted', 'papillon'), ('smooth-coated', 'Great_Dane'), ('small', 'papillon'), ('arboreal', 'fox_squirrel'), ('American', 'English_foxhound'), ('trap', 'mousetrap'), ('originally', 'English_foxhound'), ('States', 'fox_squirrel'), ('hunt', 'English_foxhound'), ('slightly', 'English_foxhound'), ('dog', 'Great_Dane'), ('toy', 'papillon'), ('white', 'papillon'), ('used', 'English_foxhound'), ('slender', 'papillon'), ('exceptionally', 'fox_squirrel'), ('erect', 'papillon'), ('spaniel', 'papillon'), ('coat', 'papillon'), ('large', 'fox_squirrel'), ('large', 'Great_Dane'), ('ears', 'papillon'), ('catching', 'mousetrap')]
+('ImageGraph:', (<networkx.classes.digraph.DiGraph object at 0x7f0a9123de10>, 2241910.0))
+2
+defaultdict(<class 'list'>, {'larger': ['English_foxhound'], 'squirrel': ['fox_squirrel'], 'powerful': ['Great_Dane'], 'United': ['fox_squirrel'], 'packs': ['English_foxhound'], 'eastern': ['fox_squirrel'], 'breed': ['English_foxhound', 'Great_Dane'], 'foxhounds': ['English_foxhound'], 'brown': ['papillon'], 'English': ['English_foxhound'], 'mice': ['mousetrap'], 'black-spotted': ['papillon'], 'smooth-coated': ['Great_Dane'], 'small': ['papillon'], 'arboreal': ['fox_squirrel'], 'American': ['English_foxhound'], 'trap': ['mousetrap'], 'originally': ['English_foxhound'], 'States': ['fox_squirrel'], 'hunt': ['English_foxhound'], 'slightly': ['English_foxhound'], 'dog': ['Great_Dane'], 'toy': ['papillon'], 'white': ['papillon'], 'used': ['English_foxhound'], 'slender': ['papillon'], 'exceptionally': ['fox_squirrel'], 'erect': ['papillon'], 'spaniel': ['papillon'], 'coat': ['papillon'], 'large': ['fox_squirrel', 'Great_Dane'], 'ears': ['papillon'], 'catching': ['mousetrap']})
+('definitiongraph networkx edges:', OutEdgeView([('larger', 'English_foxhound'), ('English_foxhound', 'larger'), ('English_foxhound', 'packs'), ('English_foxhound', 'breed'), ('English_foxhound', 'foxhounds'), ('English_foxhound', 'English'), ('English_foxhound', 'American'), ('English_foxhound', 'originally'), ('English_foxhound', 'hunt'), ('English_foxhound', 'slightly'), ('English_foxhound', 'used'), ('squirrel', 'fox_squirrel'), ('fox_squirrel', 'squirrel'), ('fox_squirrel', 'United'), ('fox_squirrel', 'eastern'), ('fox_squirrel', 'arboreal'), ('fox_squirrel', 'States'), ('fox_squirrel', 'exceptionally'), ('fox_squirrel', 'large'), ('powerful', 'Great_Dane'), ('Great_Dane', 'powerful'), ('Great_Dane', 'breed'), ('Great_Dane', 'smooth-coated'), ('Great_Dane', 'dog'), ('Great_Dane', 'large'), ('United', 'fox_squirrel'), ('packs', 'English_foxhound'), ('eastern', 'fox_squirrel'), ('breed', 'English_foxhound'), ('breed', 'Great_Dane'), ('foxhounds', 'English_foxhound'), ('brown', 'papillon'), ('papillon', 'brown'), ('papillon', 'black-spotted'), ('papillon', 'small'), ('papillon', 'toy'), ('papillon', 'white'), ('papillon', 'slender'), ('papillon', 'erect'), ('papillon', 'spaniel'), ('papillon', 'coat'), ('papillon', 'ears'), ('English', 'English_foxhound'), ('mice', 'mousetrap'), ('mousetrap', 'mice'), ('mousetrap', 'trap'), ('mousetrap', 'catching'), ('black-spotted', 'papillon'), ('smooth-coated', 'Great_Dane'), ('small', 'papillon'), ('arboreal', 'fox_squirrel'), ('American', 'English_foxhound'), ('trap', 'mousetrap'), ('originally', 'English_foxhound'), ('States', 'fox_squirrel'), ('hunt', 'English_foxhound'), ('slightly', 'English_foxhound'), ('dog', 'Great_Dane'), ('toy', 'papillon'), ('white', 'papillon'), ('used', 'English_foxhound'), ('slender', 'papillon'), ('exceptionally', 'fox_squirrel'), ('erect', 'papillon'), ('spaniel', 'papillon'), ('coat', 'papillon'), ('large', 'fox_squirrel'), ('large', 'Great_Dane'), ('ears', 'papillon'), ('catching', 'mousetrap')]))
+('Core number (sorted) :', [('larger', 2), ('English_foxhound', 2), ('squirrel', 2), ('fox_squirrel', 2), ('powerful', 2), ('Great_Dane', 2), ('United', 2), ('packs', 2), ('eastern', 2), ('breed', 2), ('foxhounds', 2), ('brown', 2), ('papillon', 2), ('English', 2), ('mice', 2), ('mousetrap', 2), ('black-spotted', 2), ('smooth-coated', 2), ('small', 2), ('arboreal', 2), ('American', 2), ('trap', 2), ('originally', 2), ('States', 2), ('hunt', 2), ('slightly', 2), ('dog', 2), ('toy', 2), ('white', 2), ('used', 2), ('slender', 2), ('exceptionally', 2), ('erect', 2), ('spaniel', 2), ('coat', 2), ('large', 2), ('ears', 2), ('catching', 2)])
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+('This document belongs to class:', 'larger', ',core number=', 2)
+('This document belongs to class:', 'English_foxhound', ',core number=', 2)
+('This document belongs to class:', 'squirrel', ',core number=', 2)
+('This document belongs to class:', 'fox_squirrel', ',core number=', 2)
+('This document belongs to class:', 'powerful', ',core number=', 2)
+('This document belongs to class:', 'Great_Dane', ',core number=', 2)
+('This document belongs to class:', 'United', ',core number=', 2)
+('This document belongs to class:', 'packs', ',core number=', 2)
+('This document belongs to class:', 'eastern', ',core number=', 2)
+('This document belongs to class:', 'breed', ',core number=', 2)
+('This document belongs to class:', 'foxhounds', ',core number=', 2)
+('This document belongs to class:', 'brown', ',core number=', 2)
+('This document belongs to class:', 'papillon', ',core number=', 2)
+('This document belongs to class:', 'English', ',core number=', 2)
+('This document belongs to class:', 'mice', ',core number=', 2)
+('This document belongs to class:', 'mousetrap', ',core number=', 2)
+('This document belongs to class:', 'black-spotted', ',core number=', 2)
+('This document belongs to class:', 'smooth-coated', ',core number=', 2)
+('This document belongs to class:', 'small', ',core number=', 2)
+('This document belongs to class:', 'arboreal', ',core number=', 2)
+('\tmax_core_number', 2)
+===================================================================
+Betweenness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('English_foxhound', 0.22972972972972971), ('Great_Dane', 0.2222222222222222), ('breed', 0.18018018018018017), ('fox_squirrel', 0.16666666666666666), ('large', 0.15765765765765766), ('papillon', 0.06756756756756757), ('mousetrap', 0.0045045045045045045), ('larger', 0.0), ('squirrel', 0.0), ('powerful', 0.0), ('United', 0.0), ('packs', 0.0), ('eastern', 0.0), ('foxhounds', 0.0), ('brown', 0.0), ('English', 0.0), ('mice', 0.0), ('black-spotted', 0.0), ('smooth-coated', 0.0), ('small', 0.0), ('arboreal', 0.0), ('American', 0.0), ('trap', 0.0), ('originally', 0.0), ('States', 0.0), ('hunt', 0.0), ('slightly', 0.0), ('dog', 0.0), ('toy', 0.0), ('white', 0.0), ('used', 0.0), ('slender', 0.0), ('exceptionally', 0.0), ('erect', 0.0), ('spaniel', 0.0), ('coat', 0.0), ('ears', 0.0), ('catching', 0.0)]
+===================================================================
+Closeness Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('papillon', 0.2702702702702703), ('Great_Dane', 0.24224224224224225), ('breed', 0.23783783783783785), ('English_foxhound', 0.2255358807082945), ('large', 0.2144439521488702), ('fox_squirrel', 0.18687258687258687), ('powerful', 0.17441441441441444), ('smooth-coated', 0.17441441441441444), ('dog', 0.17441441441441444), ('larger', 0.16558330482381114), ('packs', 0.16558330482381114), ('foxhounds', 0.16558330482381114), ('English', 0.16558330482381114), ('American', 0.16558330482381114), ('originally', 0.16558330482381114), ('hunt', 0.16558330482381114), ('slightly', 0.16558330482381114), ('used', 0.16558330482381114), ('squirrel', 0.14374814374814376), ('United', 0.14374814374814376), ('eastern', 0.14374814374814376), ('arboreal', 0.14374814374814376), ('States', 0.14374814374814376), ('exceptionally', 0.14374814374814376), ('brown', 0.1422475106685633), ('black-spotted', 0.1422475106685633), ('small', 0.1422475106685633), ('toy', 0.1422475106685633), ('white', 0.1422475106685633), ('slender', 0.1422475106685633), ('erect', 0.1422475106685633), ('spaniel', 0.1422475106685633), ('coat', 0.1422475106685633), ('ears', 0.1422475106685633), ('mousetrap', 0.08108108108108109), ('mice', 0.04864864864864865), ('trap', 0.04864864864864865), ('catching', 0.04864864864864865)]
+===================================================================
+Degree Centrality of Recursive Gloss Overlap graph vertices
+===================================================================
+[('English_foxhound', 0.5405405405405406), ('papillon', 0.5405405405405406), ('fox_squirrel', 0.3783783783783784), ('Great_Dane', 0.2702702702702703), ('mousetrap', 0.16216216216216217), ('breed', 0.10810810810810811), ('large', 0.10810810810810811), ('larger', 0.05405405405405406), ('squirrel', 0.05405405405405406), ('powerful', 0.05405405405405406), ('United', 0.05405405405405406), ('packs', 0.05405405405405406), ('eastern', 0.05405405405405406), ('foxhounds', 0.05405405405405406), ('brown', 0.05405405405405406), ('English', 0.05405405405405406), ('mice', 0.05405405405405406), ('black-spotted', 0.05405405405405406), ('smooth-coated', 0.05405405405405406), ('small', 0.05405405405405406), ('arboreal', 0.05405405405405406), ('American', 0.05405405405405406), ('trap', 0.05405405405405406), ('originally', 0.05405405405405406), ('States', 0.05405405405405406), ('hunt', 0.05405405405405406), ('slightly', 0.05405405405405406), ('dog', 0.05405405405405406), ('toy', 0.05405405405405406), ('white', 0.05405405405405406), ('used', 0.05405405405405406), ('slender', 0.05405405405405406), ('exceptionally', 0.05405405405405406), ('erect', 0.05405405405405406), ('spaniel', 0.05405405405405406), ('coat', 0.05405405405405406), ('ears', 0.05405405405405406), ('catching', 0.05405405405405406)]
+===================================================================
+Page Rank of the vertices of RGO Definition Graph (a form of Eigenvector Centrality)
+===================================================================
+[('papillon', 0.13513274537007444), ('English_foxhound', 0.12883791883205656), ('fox_squirrel', 0.09219241386016029), ('Great_Dane', 0.06346017464423953), ('mousetrap', 0.05049733522843759), ('large', 0.025931146691146607), ('breed', 0.02568758236537491), ('mice', 0.018255274222099743), ('trap', 0.018255274222099743), ('catching', 0.018255274222099743), ('brown', 0.015434093884045185), ('black-spotted', 0.015434093884045185), ('small', 0.015434093884045185), ('toy', 0.015434093884045185), ('white', 0.015434093884045185), ('slender', 0.015434093884045185), ('erect', 0.015434093884045185), ('spaniel', 0.015434093884045185), ('coat', 0.015434093884045185), ('ears', 0.015434093884045185), ('squirrel', 0.015142537924758868), ('United', 0.015142537924758868), ('eastern', 0.015142537924758868), ('arboreal', 0.015142537924758868), ('States', 0.015142537924758868), ('exceptionally', 0.015142537924758868), ('larger', 0.014898973598987168), ('packs', 0.014898973598987168), ('foxhounds', 0.014898973598987168), ('English', 0.014898973598987168), ('American', 0.014898973598987168), ('originally', 0.014898973598987168), ('hunt', 0.014898973598987168), ('slightly', 0.014898973598987168), ('used', 0.014898973598987168), ('powerful', 0.014735977187440373), ('smooth-coated', 0.014735977187440373), ('dog', 0.014735977187440373)]
+('Unsupervised Image Classes:', ([('larger', 2), ('English_foxhound', 2), ('squirrel', 2), ('fox_squirrel', 2), ('powerful', 2), ('Great_Dane', 2), ('United', 2), ('packs', 2), ('eastern', 2), ('breed', 2), ('foxhounds', 2), ('brown', 2), ('papillon', 2), ('English', 2), ('mice', 2), ('mousetrap', 2), ('black-spotted', 2), ('smooth-coated', 2), ('small', 2), ('arboreal', 2), ('American', 2), ('trap', 2), ('originally', 2), ('States', 2), ('hunt', 2), ('slightly', 2), ('dog', 2), ('toy', 2), ('white', 2), ('used', 2), ('slender', 2), ('exceptionally', 2), ('erect', 2), ('spaniel', 2), ('coat', 2), ('large', 2), ('ears', 2), ('catching', 2)], [('papillon', 0.13513274537007444), ('English_foxhound', 0.12883791883205656), ('fox_squirrel', 0.09219241386016029), ('Great_Dane', 0.06346017464423953), ('mousetrap', 0.05049733522843759), ('large', 0.025931146691146607), ('breed', 0.02568758236537491), ('mice', 0.018255274222099743), ('trap', 0.018255274222099743), ('catching', 0.018255274222099743), ('brown', 0.015434093884045185), ('black-spotted', 0.015434093884045185), ('small', 0.015434093884045185), ('toy', 0.015434093884045185), ('white', 0.015434093884045185), ('slender', 0.015434093884045185), ('erect', 0.015434093884045185), ('spaniel', 0.015434093884045185), ('coat', 0.015434093884045185), ('ears', 0.015434093884045185), ('squirrel', 0.015142537924758868), ('United', 0.015142537924758868), ('eastern', 0.015142537924758868), ('arboreal', 0.015142537924758868), ('States', 0.015142537924758868), ('exceptionally', 0.015142537924758868), ('larger', 0.014898973598987168), ('packs', 0.014898973598987168), ('foxhounds', 0.014898973598987168), ('English', 0.014898973598987168), ('American', 0.014898973598987168), ('originally', 0.014898973598987168), ('hunt', 0.014898973598987168), ('slightly', 0.014898973598987168), ('used', 0.014898973598987168), ('powerful', 0.014735977187440373), ('smooth-coated', 0.014735977187440373), ('dog', 0.014735977187440373)]))
+{'#base-support#brass-consists#brass-length#brass-cup-shaped#brass-funnel-shaped#brass-variable#brass-usually#brass-means#brass-mouthpiece#brass-blown#brass-instrument#brass-tube#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#wind-brass#worn-pickelhaube': <networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, '#Buddhists-stupa#base-support#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#stupa-shrine#stupa-dome-shaped#stupa-erected#worn-pickelhaube': <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>}
+{'#base-support#brass-consists#brass-length#brass-cup-shaped#brass-funnel-shaped#brass-variable#brass-usually#brass-means#brass-mouthpiece#brass-blown#brass-instrument#brass-tube#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#wind-brass#worn-pickelhaube': <networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, '#Buddhists-stupa#base-support#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#stupa-shrine#stupa-dome-shaped#stupa-erected#worn-pickelhaube': <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>}
+sortedbydfscode: [('#Buddhists-stupa#base-support#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#stupa-shrine#stupa-dome-shaped#stupa-erected#worn-pickelhaube', <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>), ('#base-support#brass-consists#brass-length#brass-cup-shaped#brass-funnel-shaped#brass-variable#brass-usually#brass-means#brass-mouthpiece#brass-blown#brass-instrument#brass-tube#buckle-fasten#buckle-buckles#foundation-base#pickelhaube-helmet#pickelhaube-soldiers#pickelhaube-German#pickelhaube-spiked#protective-shield#shield-structure#shield-covering#wind-brass#worn-pickelhaube', <networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>)]
+smallest: [<networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>, <networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>]
+e: ('protective', 'shield')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('shield', 'protective')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('shield', 'structure')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('shield', 'covering')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('structure', 'shield')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('buckle', 'buckle')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('buckle', 'fasten')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('buckle', 'buckles')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('worn', 'pickelhaube')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('worn', 'pickelhaube')]
+children: [('worn', 'pickelhaube'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'worn')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('pickelhaube', 'helmet')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'soldiers')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'German')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'spiked')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('Buddhists', 'stupa')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['Buddhists', 'stupa']
+ParseChildren(): vertices: ['base', 'support']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('Buddhists', 'stupa'), ('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('Buddhists', 'stupa'), ('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('stupa', 'Buddhists')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('stupa', 'shrine')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('stupa', 'dome-shaped')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('stupa', 'erected')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('fasten', 'buckle')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('shrine', 'stupa')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('foundation', 'base')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('base', 'foundation')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('base', 'support')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+ParseChildren(): vertices: ['base', 'support']
+ParseChildren(): vertices: ['brass', 'consists']
+ParseChildren(): vertices: ['brass', 'length']
+ParseChildren(): vertices: ['brass', 'cup', 'shaped']
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('base', 'support'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['base', 'support']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('base', 'support'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('helmet', 'pickelhaube')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('buckles', 'buckle')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('soldiers', 'pickelhaube')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('support', 'base')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('German', 'pickelhaube')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('spiked', 'pickelhaube')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('dome-shaped', 'stupa')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('covering', 'shield')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('erected', 'stupa')
+Subgraph_Mining: [<networkx.classes.digraph.DiGraph object at 0x7f0a82834fd0>, <networkx.classes.digraph.DiGraph object at 0x7f0a7f00af50>]
+children: []
+e: ('protective', 'shield')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('shield', 'protective')
+Subgraph_Mining: []
+children: []
+e: ('shield', 'structure')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('shield', 'covering')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('wind', 'brass')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'wind')
+Subgraph_Mining: []
+children: []
+e: ('brass', 'consists')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'consists']
+ParseChildren(): vertices: ['brass', 'length']
+ParseChildren(): vertices: ['brass', 'cup', 'shaped']
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'length')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'length']
+ParseChildren(): vertices: ['brass', 'cup', 'shaped']
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'cup-shaped')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'cup', 'shaped']
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'funnel-shaped')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'variable')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('brass', 'usually')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'means')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'mouthpiece')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'blown')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'instrument')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('brass', 'tube')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+children: [('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+e: ('consists', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('length', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('structure', 'shield')
+Subgraph_Mining: []
+children: []
+e: ('cup-shaped', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('funnel-shaped', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('buckle', 'buckle')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('buckle', 'fasten')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('buckle', 'buckles')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('variable', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('fasten', 'buckle')
+Subgraph_Mining: []
+children: []
+e: ('worn', 'pickelhaube')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('worn', 'pickelhaube')]
+children: [('worn', 'pickelhaube'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'worn')
+Subgraph_Mining: []
+children: []
+e: ('pickelhaube', 'helmet')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'soldiers')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'German')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('pickelhaube', 'spiked')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('usually', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('foundation', 'base')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('base', 'foundation')
+Subgraph_Mining: []
+children: []
+e: ('base', 'support')
+Subgraph_Mining: []
+ParseChildren(): vertices: ['base', 'support']
+ParseChildren(): vertices: ['brass', 'consists']
+ParseChildren(): vertices: ['brass', 'length']
+ParseChildren(): vertices: ['brass', 'cup', 'shaped']
+ParseChildren(): vertices: ['brass', 'funnel', 'shaped']
+ParseChildren(): vertices: ['brass', 'variable']
+ParseChildren(): vertices: ['brass', 'usually']
+ParseChildren(): vertices: ['brass', 'means']
+ParseChildren(): vertices: ['brass', 'mouthpiece']
+ParseChildren(): vertices: ['brass', 'blown']
+ParseChildren(): vertices: ['brass', 'instrument']
+ParseChildren(): vertices: ['brass', 'tube']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['wind', 'brass']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('base', 'support'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube')]
+ParseChildren(): vertices: ['base', 'support']
+ParseChildren(): vertices: ['buckle', 'fasten']
+ParseChildren(): vertices: ['buckle', 'buckles']
+ParseChildren(): vertices: ['foundation', 'base']
+ParseChildren(): vertices: ['pickelhaube', 'helmet']
+ParseChildren(): vertices: ['pickelhaube', 'soldiers']
+ParseChildren(): vertices: ['pickelhaube', 'German']
+ParseChildren(): vertices: ['pickelhaube', 'spiked']
+ParseChildren(): vertices: ['protective', 'shield']
+ParseChildren(): vertices: ['shield', 'structure']
+ParseChildren(): vertices: ['shield', 'covering']
+ParseChildren(): vertices: ['stupa', 'shrine']
+ParseChildren(): vertices: ['stupa', 'dome', 'shaped']
+ParseChildren(): vertices: ['stupa', 'erected']
+ParseChildren(): vertices: ['worn', 'pickelhaube']
+ParseChildren(): [('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+children: [('base', 'support'), ('brass', 'consists'), ('brass', 'length'), ('brass', 'cup'), ('brass', 'funnel'), ('brass', 'variable'), ('brass', 'usually'), ('brass', 'means'), ('brass', 'mouthpiece'), ('brass', 'blown'), ('brass', 'instrument'), ('brass', 'tube'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('wind', 'brass'), ('worn', 'pickelhaube'), ('base', 'support'), ('buckle', 'fasten'), ('buckle', 'buckles'), ('foundation', 'base'), ('pickelhaube', 'helmet'), ('pickelhaube', 'soldiers'), ('pickelhaube', 'German'), ('pickelhaube', 'spiked'), ('protective', 'shield'), ('shield', 'structure'), ('shield', 'covering'), ('stupa', 'shrine'), ('stupa', 'dome'), ('stupa', 'erected'), ('worn', 'pickelhaube')]
+e: ('means', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('helmet', 'pickelhaube')
+Subgraph_Mining: []
+children: []
+e: ('buckles', 'buckle')
+Subgraph_Mining: []
+children: []
+e: ('soldiers', 'pickelhaube')
+Subgraph_Mining: []
+children: []
+e: ('support', 'base')
+Subgraph_Mining: []
+children: []
+e: ('German', 'pickelhaube')
+Subgraph_Mining: []
+children: []
+e: ('spiked', 'pickelhaube')
+Subgraph_Mining: []
+children: []
+e: ('mouthpiece', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('blown', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('instrument', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('tube', 'brass')
+Subgraph_Mining: []
+children: []
+e: ('covering', 'shield')
+Subgraph_Mining: []
+children: []
+Mined Frequent Subgraph Edges: {('buckles', 'buckle'), ('base', 'support'), ('cup-shaped', 'brass'), ('means', 'brass'), ('spiked', 'pickelhaube'), ('pickelhaube', 'worn'), ('buckle', 'buckle'), ('covering', 'shield'), ('pickelhaube', 'German'), ('Buddhists', 'stupa'), ('shield', 'covering'), ('worn', 'pickelhaube'), ('brass', 'variable'), ('brass', 'means'), ('stupa', 'dome-shaped'), ('support', 'base'), ('stupa', 'shrine'), ('brass', 'instrument'), ('blown', 'brass'), ('stupa', 'erected'), ('pickelhaube', 'soldiers'), ('wind', 'brass'), ('stupa', 'Buddhists'), ('shrine', 'stupa'), ('erected', 'stupa'), ('fasten', 'buckle'), ('soldiers', 'pickelhaube'), ('brass', 'wind'), ('brass', 'usually'), ('brass', 'blown'), ('consists', 'brass'), ('length', 'brass'), ('dome-shaped', 'stupa'), ('mouthpiece', 'brass'), ('instrument', 'brass'), ('brass', 'cup-shaped'), ('foundation', 'base'), ('pickelhaube', 'spiked'), ('brass', 'brass'), ('brass', 'mouthpiece'), ('tube', 'brass'), ('brass', 'funnel-shaped'), ('structure', 'shield'), ('brass', 'length'), ('pickelhaube', 'helmet'), ('buckle', 'fasten'), ('protective', 'shield'), ('shield', 'protective'), ('funnel-shaped', 'brass'), ('variable', 'brass'), ('base', 'foundation'), ('usually', 'brass'), ('shield', 'structure'), ('helmet', 'pickelhaube'), ('buckle', 'buckles'), ('brass', 'tube'), ('brass', 'consists'), ('German', 'pickelhaube')}
