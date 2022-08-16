@@ -263,21 +263,61 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs,loc="@earth-moon"):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=100):
+        Latlons=[]
+        if datesofEWEs == "Earthquakes":
+            EWEdates=open("earthquakesFrom1900with8plusmag.pygen.txt")
+            datesofEWEs=[]
+            for d in EWEdates:
+                 toks = d.split(" ")
+                 datetoks = toks[0].split("/")
+                 timetoks = toks[1].split(":")
+                 if timetoks[0] == "":
+                    timetoks[0]=0
+                 if timetoks[1] == "":
+                    timetoks[1]=0
+                 ewedate = (int(datetoks[0]), int(datetoks[1]), int(datetoks[2]), int(timetoks[0]), int(timetoks[1]), 0)
+                 datesofEWEs.append(ewedate)
+        else: 
+                if datesofEWEs == "Hurricanes": 
+                    iteration=0
+                    EWEdates=open("hurdat2_1851_2012-jun2013.pygen.txt")
+                    datesofEWEs=[]
+                    for d in EWEdates:
+                        if iteration == maxiterations:
+                            break
+                        toks = d.split(" ")
+                        toks = [x for x in toks if x != ""]
+                        #print("toks:",toks)
+                        datetoks = toks[0].split("/")
+                        timetoks = toks[1].split(":")
+                        longitude = float(toks[2])
+                        latitude = float(toks[3])
+                        latlon={'lon':longitude,'lat':latitude,'elevation':0.0}
+                        Latlons.append(latlon)
+                        if timetoks[0] == "":
+                            timetoks[0]=0
+                        if timetoks[1] == "":
+                            timetoks[1]=0
+                        ewedate = (int(datetoks[0]), int(datetoks[1]), int(datetoks[2]), int(timetoks[0]), int(timetoks[1]), 0)
+                        datesofEWEs.append(ewedate)
+                        iteration += 1
+        print("extreme_weather_events_n_body_analytics(): datesofEWEs = ",datesofEWEs)
         gravities=[]
         angular_separation=defaultdict(list)
-        for date in datesofEWEs:
-            date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
-            earth=planets["earth"].at(date_t)
-            positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
-            for k1,v1 in positions.items():
-               for k2,v2 in positions.items():
-                  if k1 != k2 and v1 != v2:
-                     if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
-                         #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
-                         angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
-        for k3,v3 in angular_separation.items():
-            print("Angular separations for ",k3,":",v3)
+        if angularsep:
+            for date in datesofEWEs:
+                date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
+                earth=planets["earth"].at(date_t)
+                positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
+                for k1,v1 in positions.items():
+                   for k2,v2 in positions.items():
+                      if k1 != k2 and v1 != v2:
+                         if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
+                            #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
+                            angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
+            for k3,v3 in angular_separation.items():
+                print("Angular separations for ",k3,":",v3)
         AU = 149597870700
         D = 24*60*60
         epsilon = 0.01
@@ -287,10 +327,14 @@ class EphemerisSearch(object):
         m_list = [[1.989e30],[3.285e23],[4.867e24],[5.972e24],[6.39e23],[1.8989e27],[5.683e26],[8.681e25],[1.024e26],[1.309e22]] #Object masses for Sun-Pluto
         solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
         solar_system=["Sun","Moon","Mars","Mercury","Jupiter","Venus","Saturn","Uranus","Neptune","Pluto"]
+        cnt=0
         for date in datesofEWEs:
             print("extreme_weather_events_n_body_analytics(): date:",date)
             for i in solar_system_bodies.values():
-                obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                if datesofEWEs=="Hurricanes":
+                    obj = Horizons(id=i, location=Latlon[cnt], epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                else:
+                    obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
                 print("extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body :",i,") = ",obj)
                 print("#################################################################")
                 r_obj = [obj['x'][0], obj['y'][0], obj['z'][0]]
@@ -302,15 +346,19 @@ class EphemerisSearch(object):
             m_i = np.array(m_list)
             gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
             for g in range(len(gravity)):
-                print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",loc," on ",date,":",gravity[g])
+                if len(Latlons) > 0:
+                    print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",Latlons[cnt]," on ",date,":",gravity[g])
+                else:
+                    print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",loc," on ",date,":",gravity[g])
             gravities.append(gravity)
             r_list = []
             v_list = []
-            print("==============================================================")
-            for g1 in gravities:
-                for g2 in gravities:
-                    dh=directed_hausdorff(g1,g2)
-                    print("extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration:",dh)
+            cnt+=1
+        print("==============================================================")
+        for g1 in gravities:
+            for g2 in gravities:
+                dh=directed_hausdorff(g1,g2)
+                print("extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration:",dh)
            
 
     def n_body_gravitational_acceleration(self,r,m,epsilon):
@@ -457,10 +505,16 @@ if __name__=="__main__":
     #ephem.planetarium_search((-2016,6,29,1,15,30),(2022,7,6,1,15,30),step_days=100)
     datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
     datesofearthquakes=[(2011,3,11,5,46,23), (2008,5,12,6,27,59), (2004,12,26,00,58,52), (1999,9,20,17,47,16), (1994,1,17,12,30,54),(1995,1,16,20,46,51),(2009,4,6,1,32,42),(2010,2,27,6,34,13),(1989,10,18,00,4,14),(1992,6,28,11,57,35)]
+    #print("======================HURRICANES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofhurricanes,loc="@0")
+    #print("======================EARTHQUAKES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofearthquakes,loc="@0")
+
+    #print("======================EARTHQUAKES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Earthquakes")
     print("======================HURRICANES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofhurricanes,loc="@0")
-    print("======================EARTHQUAKES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofearthquakes,loc="@0")
+    ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes")
+
     #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
     #ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
     ephem.WMAP_CMB_analytics()
