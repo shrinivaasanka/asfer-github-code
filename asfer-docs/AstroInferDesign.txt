@@ -19318,3 +19318,42 @@ References:
 ----------
 1288.4 The Indus Script:Text,Concordance and Tables - [Iravatham Mahadevan] - TIFR and ASI (1977) - https://ia600906.us.archive.org/34/items/TheIndusScript.TextConcordanceAndTablesIravathanMahadevan/The%20Indus%20Script.%20Text%2C%20Concordance%20and%20Tables%20-Iravathan%20Mahadevan.pdf
 1288.5 Deep Learning Indus Script - https://arxiv.org/pdf/1702.00523.pdf
+
+------------------------------------------------------------------------------------------------------------------------------
+1289. (THEORY and FEATURE) Astronomy and Cosmology Datasets Analytics - N-Body gravitational accelerations computed for USGS (1900-2012) 8+ magnitude Earthquakes and NOAA HURDAT2 (1851-2012) North Atlantic Hurricanes Datasets - 16 August 2022 - related to 17,137,148,445,731,1206,1236,1255,1266,1267,1268,1270,1271,1272,1273 and all sections on Astronomical Dataset Mining, Archaeoastronomical Dating, Sequence Mining, String analytics, Sequence Alignment, Visual Planetarium Search, Archaeology, Climate and Extreme Weather Event Analytics, Computational Astrophysics, N-Body problem, Merit of Large Scale Visuals, Astronomical algorithms, Histogram analytics
+------------------------------------------------------------------------------------------------------------------------------
+1289.1 EphemerisSearch.py has been updated to change and add new parameters to function extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=100) for restricting the number of dates of extreme weather events (EWE) iterated, choice of angular separation computation by boolean flag angularsep and 3 types of values for datesofEWEs ("Earthquakes","Hurricanes",User supplied dates of EWEs)
+1289.2 For datesofEWEs="Earthquakes", datetimes are sourced from USGS 8.0+ earthquakes dataset (1900-2012) which has already been ETLed as textfile in python-src/earthquakesFrom1900with8plusmag.pygen.txt. For datesofEWEs="Hurricanes", datetimes are sourced from NOAA Hurricane Dataset HURDAT2 already ETLed as textfile in python-src/hurdat2_1851_2012-jun2013.pygen.txt. All datetimes are cast to UTC format compatible with JPL Horizons Ephemeris Service. For dateofEWEs supplied by user as array, computations are as usual with no change.
+1289.3 N-Body Solar system gravitational accelerations are computed at Earth-Moon barycenter for USGS Earthquake datasets and with respect to respective longitude-latitude(s) of formation and zero elevation(sea level) for NOAA HURDAT2 Hurricane datasets (restricted to 100 hurricanes as the dataset is huge containing 50000 hurricanes spanning 161 years). This complements String Encoding and GSP Sequence Mining of USGS and NOAA HURDAT2 datasets in python-src/autogen_classifier_dataset/ and documented at asfer-docs/NeuronRain_Research_Celestial_Pattern_Mining.txt  
+1289.4 Computations of N-Body gravitational accelerations for USGS(Earthquake) and NOAA(Hurricane) datasets have been captured separately in following files: 
+	python-src/testlogs/EphemerisSearch.log.Earthquakes.16August2022
+	python-src/testlogs/EphemerisSearch.log.Hurricanes.16August2022
+1289.5 Following are excerpts of computations respectively for Sendai Earthquake on 11 March 2011 (9.0) and first recorded Hurricane (25 June 1851):
+---------------------------------------------------------------------------------
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-3.60092543e-06 -9.97593306e-06  7.52550118e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [ 5.93284102e-03 -1.07378201e-03 -6.98565223e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-2.86408002e-03  1.21006257e-03  9.57056611e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-0.04248091 -0.04133797  0.00052057]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-2.35324463e-04 -5.80881981e-05  5.50732456e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [ 3.89399938e-03  1.05719009e-02 -7.99002829e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [ 6.26683011e-05  1.43778659e-05 -2.74496998e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-1.47148302e-05 -7.17547152e-08  1.90377268e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-5.61349018e-06  3.45933185e-06  5.81269242e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2011, 3, 11, 5, 46, 0) : [-5.46414412e-07  5.75922735e-06 -4.58472382e-07]
+---------------------------------------------------------------------------------
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [ 9.38057871e-06  5.60142035e-06 -4.73504468e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-5.00327362e-04  5.73733377e-03  3.17136748e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-2.89680838e-03 -7.70315656e-04  5.57099428e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-0.04498039  0.00424941  0.00449187]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [ 1.79703311e-04  8.78879940e-05 -4.38943473e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-0.00965776 -0.0058695   0.0004808 ]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-6.04252762e-05 -3.29543490e-05  2.97786557e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-1.26534427e-05 -8.24679688e-06  1.33372066e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-6.19751174e-06  2.31563273e-06  9.50902396e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  {'lon': 28.0, 'lat': 94.8, 'elevation': 0.0}  on  (1851, 6, 25, 0, 0, 0) : [-2.02686099e-06 -1.24640855e-06  7.19837809e-07]
+1289.6 It can be observed that the gravitational acceleration vector components of solar system bodies decrease in value exponentially proportionate to their distance from earth except Mercury anomaly of which is unusually high. 
+
+References:
+----------
+1289.7 NOAA HURDAT2 - https://www.nhc.noaa.gov/data/
+1289.8 USGS Earthquake Hazards Program - https://earthquake.usgs.gov/
