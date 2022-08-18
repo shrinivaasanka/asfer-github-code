@@ -19358,3 +19358,36 @@ References:
 1289.7 NOAA HURDAT2 - https://www.nhc.noaa.gov/data/
 1289.8 USGS Earthquake Hazards Program - https://earthquake.usgs.gov/
 1289.9 Tug of sun, moon could be driving plate motions on ‘imbalanced’ Earth - Earth-Moon Barycenter wobble - https://source.wustl.edu/2022/01/tug-of-sun-moon-could-be-driving-plate-motions-on-imbalanced-earth/ and https://pubs.geoscienceworld.org/books/book/2323/chapter-abstract/131987270/Links-of-planetary-energetics-to-moon-size-orbit - "... Instead, Earth’s plates might be shifting because the sun exerts such a strong gravitational pull on the moon that it has caused the moon’s orbit around Earth to become elongated.  Over time, the position of the barycenter — the center of mass between the orbiting bodies of the Earth and the moon — has moved closer to Earth’s surface and now oscillates 600 km per month relative to the geocenter, Hofmeister said. This sets up internal stresses, as the Earth continues to spin...."
+
+------------------------------------------------------------------------------------------------------------------------------
+1290. (THEORY and FEATURE)  GIS Urban Sprawl Analytics - Facebook (Meta) High Resolution Settlement Layer (HRSL) Population Density Maps - GDAL GeoTIFF to JPEG format Translation - 18 August 2022 - related to 1174,1175,1179,1194,1211 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption
+------------------------------------------------------------------------------------------------------------------------------
+1290.1 GDAL integration which was abandoned due to series of installation issues has been fulfilled after resolving compilation errors based on documentation from https://mothergeo-py.readthedocs.io/en/latest/development/how-to/gdal-ubuntu-pkg.html - libgdal-dev has been compiled after setting env:
+	export CPLUS_INCLUDE_PATH=/usr/include/gdal 
+	export C_INCLUDE_PATH=/usr/include/gdal
+	pip3.7 install GDAL==2.4.2
+1290.2 GDAL C++-Python bindings are imported from osgeo and new function translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000) has been defined which loads a GeoTIFF file by GDAL Open() and translates it to jpeg format by GDAL Translate() 
+1290.3 Function earlier optionally displays the GeoTIFF file in a bounding box (topx,topy,bottomx,bottomy) and its statistics by Raster X-Y sizes, Bands and GetStatistics() if display=True.
+1290.4 World's most accurate population GIS - Facebook - Data For Good at Meta - HRSL 2021 - "HDX - Pakistan & India: High Resolution Population Density Maps - General" from https://data.humdata.org/dataset/2c8cfe67-448f-4a27-94b3-aaa944598cba/resource/e3dbe673-4117-4243-93a8-3366c6e6396b/download/population_ind_pak_general.zip have been downloaded in GeoTIFF format (523.1 MB) and translated to JPEG format by translate_geotiff_to_jpeg(). Display of this high resolution dataset in matplotlib requires 6.92 GB of array memory size per GeoTIFF and might fail in normal desktop configurations and bounding boxes for smaller sizes may not display. This GeoTIFF data set is single band and only grayscale JPEG rendering is possible.  
+1290.5 Following are the logs and JPG files categorized by grid of longitudes and latitudes translated from HRSL GeoTIFFs:
+	testlogs/GISUrbanSprawlAnalytics.log.18August2022
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_80_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_90_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.jpg
+
+References:
+----------
+1290.6 LandSat 9 imagery - https://earthexplorer.usgs.gov/
+1290.7 GDAL python tutorial - https://www.gis.usu.edu/~chrisg/python/2009/lectures/ospy_slides4.pdf
+1290.8 MotherGeo GDAL installation documentation - https://mothergeo-py.readthedocs.io/en/latest/development/how-to/gdal-ubuntu-pkg.html
+1290.9 HDX Facebook - Data for Good at Meta - HRSL - Population Density Maps - https://data.humdata.org/dataset/pakistan-india_all-files-high-resolution-population-density-maps
