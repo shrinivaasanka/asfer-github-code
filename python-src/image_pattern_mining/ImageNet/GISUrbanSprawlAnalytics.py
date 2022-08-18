@@ -55,6 +55,8 @@ from scipy import stats
 from libpysal.weights import lat2W
 from esda.moran import Moran
 import ImageToBitMatrix
+from osgeo import gdal
+
 
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
@@ -71,6 +73,22 @@ def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=100
         randombinelement=randomcolorbin[random.randint(0,len(randomcolorbin)-1)]
         randomcolorbin.append(randombinelement)
     return fourcoloredsegments
+
+def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000):
+    #options = ['-ot Byte','-of JPEG','-b 1','-scale']
+    geotifffiletoks=geotifffile.split(".")
+    if display==True:
+        print("Displaying image...")
+        img = gdal.Open(geotifffile, gdal.GA_ReadOnly)
+        band = img.GetRasterBand(1)
+        arr = band.ReadAsArray(topx,topy,bottomx,bottomy)
+        plt.imshow(arr)
+        print("Raster bands:",img.RasterCount)
+        print("Raster Xsize:",img.RasterXSize)
+        print("Raster Ysize:",img.RasterYSize)
+        band.GetStatistics(True,True)
+    jpegfilename=geotifffiletoks[0].split("/")
+    gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
@@ -274,8 +292,20 @@ if __name__ == "__main__":
     #fourcoloredsegments=defaultdict(list)
     #fourcoloredsegments=polya_urn_urban_growth_model(fourcoloredsegments,seg10)
     #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
-    seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
-    urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None,voronoi_delaunay=True)
-    seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
-    urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=True)
-
+    #seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
+    #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None,voronoi_delaunay=True)
+    #seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
+    #urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=True)
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_80_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_90_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
