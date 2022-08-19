@@ -19391,3 +19391,23 @@ References:
 1290.7 GDAL python tutorial - https://www.gis.usu.edu/~chrisg/python/2009/lectures/ospy_slides4.pdf
 1290.8 MotherGeo GDAL installation documentation - https://mothergeo-py.readthedocs.io/en/latest/development/how-to/gdal-ubuntu-pkg.html
 1290.9 HDX Facebook - Data for Good at Meta - HRSL - Population Density Maps - https://data.humdata.org/dataset/pakistan-india_all-files-high-resolution-population-density-maps
+
+-------------------------------------------------------------------------------------------------------------------------------
+1291. (THEORY and FEATURE)  GIS Urban Sprawl Analytics - Facebook (Meta) High Resolution Settlement Layer (HRSL) Population Estimation from GDAL-Rasterio Georeferencing - 19 August 2022 - related to 1174,1175,1179,1194,1211,1290 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption
+-------------------------------------------------------------------------------------------------------------------------------
+1291.1 New function population_estimate_from_raster_georeferencing(geotifffile,longitude=None,latitude=None) has been implemented in GISUrbanSprawlAnalytics.py which imports Rasterio python bindings for GDAL Georeferencing and computes following for a GeoTIFF (invoked for HRSL raster testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif): 
+	1291.1.1 Coordinate Polygons in the Raster by Rasterio.shapes and Warp() longitude-latitude EPSG:4326 transformations for the polygons which could be the buildings and land usage patterns in zone segment classifications - Residential,Commercial,Industries and Greenery - could be useful for computing land usage percentages.
+	1291.1.2 Population value for a longitude-latitude from HRSL Raster GeoTIFF Georeferencing (pixels to Coordinate reference frame and viceversa) by index() function which maps to a (row,column) pixel on band 1 of the raster data. 
+1291.2 More statistics have been computed within translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000)
+1291.3 Smallest size GeoTIFF file has been chosen which contains NaNs as Larger TIFFs are memory intensive and cause segfault.Following are logs,tif and xml files generated:
+	testlogs/GISUrbanSprawlAnalytics.log.19August2022
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif.aux.xml
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.jpg.aux.xml
+
+References:
+----------
+1291.4 Rasterio Georeferencing 1 - https://rasterio.readthedocs.io/en/latest/topics/georeferencing.html - index() function internally invokes RPC transform while there is an alternative GCP transform https://rasterio.readthedocs.io/en/latest/api/rasterio.transform.html#rasterio.transform.from_gcps
+1291.5 Rasterio Georeferencing 2 - https://rasterio.readthedocs.io/en/latest/quickstart.html#dataset-georeferencing
+1291.6 Rasterio index - https://rasterio.readthedocs.io/en/latest/api/rasterio.io.html#rasterio.io.BufferedDatasetWriter.index
+1291.7 Rasterio Transforms - https://rasterio.readthedocs.io/en/latest/api/rasterio.enums.html#rasterio.enums.TransformMethod - options are gcps,affine and rpcs
