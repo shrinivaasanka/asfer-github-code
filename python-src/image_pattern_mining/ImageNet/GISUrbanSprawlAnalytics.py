@@ -56,6 +56,9 @@ from libpysal.weights import lat2W
 from esda.moran import Moran
 import ImageToBitMatrix
 from osgeo import gdal
+import rasterio
+import rasterio.features
+import rasterio.warp
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -74,6 +77,28 @@ def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=100
         randomcolorbin.append(randombinelement)
     return fourcoloredsegments
 
+def population_estimate_from_raster_georeferencing(geotifffile,longitude=None,latitude=None):
+    print("===================="+geotifffile+"=====================")
+    longlatpolygons=[]
+    raster = rasterio.open(geotifffile)
+    mask = raster.dataset_mask()
+    for geom, val in rasterio.features.shapes(mask, transform=raster.transform):
+        longlatpolygons.append(rasterio.warp.transform_geom(raster.crs, 'EPSG:4326', geom, precision=6))
+    print("Longitude-Latitude Polygons in GeoTIFF raster:")
+    print(longlatpolygons)
+    print("Raster bounds:",raster.bounds)
+    print("Raster height:",raster.height)
+    print("Raster width:",raster.width)
+    print("Raster top left - spatial value:",raster.xy(0,0))
+    print("Raster bottom right - spatial value:",raster.xy(raster.height,raster.width))
+    band1=raster.read(1)
+    print("Raster data:",band1)
+    print("Raster transform:",raster.transform)
+    if longitude is not None and latitude is not None:
+        if longitude > raster.bounds.left and longitude < raster.bounds.right and latitude > raster.bounds.bottom and latitude < raster.bounds.top:
+             row,col=raster.index(longitude,latitude)
+             print("Population estimate from raster:",band1[row,col])
+
 def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000):
     #options = ['-ot Byte','-of JPEG','-b 1','-scale']
     geotifffiletoks=geotifffile.split(".")
@@ -86,7 +111,11 @@ def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=100
         print("Raster bands:",img.RasterCount)
         print("Raster Xsize:",img.RasterXSize)
         print("Raster Ysize:",img.RasterYSize)
-        band.GetStatistics(True,True)
+        band.ComputeStatistics(0)
+        statistics=band.GetStatistics(True,True)
+        metadata=band.GetMetadata()
+        print("Statistics:",statistics)
+        print("MetaData:",metadata)
     jpegfilename=geotifffiletoks[0].split("/")
     gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
 
@@ -296,16 +325,17 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None,voronoi_delaunay=True)
     #seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
     #urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=True)
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_80_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_90_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_80_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_90_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
     translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
+    population_estimate_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif",80.1,30.3)
