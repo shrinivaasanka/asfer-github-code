@@ -59,6 +59,7 @@ from osgeo import gdal
 import rasterio
 import rasterio.features
 import rasterio.warp
+from rasterio.windows import Window
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -77,35 +78,61 @@ def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=100
         randomcolorbin.append(randombinelement)
     return fourcoloredsegments
 
-def population_estimate_from_raster_georeferencing(geotifffile,longitude=None,latitude=None):
+def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100):
     print("===================="+geotifffile+"=====================")
     longlatpolygons=[]
     raster = rasterio.open(geotifffile)
-    mask = raster.dataset_mask()
-    for geom, val in rasterio.features.shapes(mask, transform=raster.transform):
-        longlatpolygons.append(rasterio.warp.transform_geom(raster.crs, 'EPSG:4326', geom, precision=6))
-    print("Longitude-Latitude Polygons in GeoTIFF raster:")
-    print(longlatpolygons)
+    if shapes==True:
+        mask = raster.dataset_mask()
+        for geom, val in rasterio.features.shapes(mask, transform=raster.transform):
+             longlatpolygons.append(rasterio.warp.transform_geom(raster.crs, 'EPSG:4326', geom, precision=6))
+        print("Longitude-Latitude Polygons in GeoTIFF raster:")
+        print(longlatpolygons)
     print("Raster bounds:",raster.bounds)
     print("Raster height:",raster.height)
     print("Raster width:",raster.width)
     print("Raster top left - spatial value:",raster.xy(0,0))
     print("Raster bottom right - spatial value:",raster.xy(raster.height,raster.width))
-    band1=raster.read(1)
-    print("Raster data:",band1)
     print("Raster transform:",raster.transform)
-    if longitude is not None and latitude is not None:
-        if longitude > raster.bounds.left and longitude < raster.bounds.right and latitude > raster.bounds.bottom and latitude < raster.bounds.top:
-             row,col=raster.index(longitude,latitude)
-             print("Population estimate from raster:",band1[row,col])
+    xincrement=int(raster.width/windowslice)
+    yincrement=int(raster.height/windowslice)
+    window_id=0
+    topx=0
+    topy=0
+    bottomx=xincrement
+    bottomy=yincrement
+    searchfound=None
+    for x in range(windowslice):
+        for y in range(windowslice):
+            print("Window id:",window_id)
+            print("Window dimensions:(",topx,",",topy,",",bottomx,",",bottomy,")")
+            banddata=raster.read(bandnum,window=Window(topx,topy,bottomx,bottomy))
+            window_id+=1
+            #print("Raster data:",banddata)
+            if longitude is not None and latitude is not None:
+               if longitude > raster.bounds.left and longitude < raster.bounds.right and latitude > raster.bounds.bottom and latitude < raster.bounds.top:
+                  try:
+                     row,col=raster.index(longitude,latitude)
+                     searchfound=banddata[row,col]
+                     break
+                  except:
+                     print("Searched Longitude-Latitude not found...continuing")
+                     pass
+            topy+=yincrement
+            bottomy+=yincrement
+        topy=0
+        bottomy=yincrement
+        topx+=xincrement
+        bottomx+=xincrement
+    print(datatype + " from raster:",searchfound)
 
-def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000):
+def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000,bandnum=1):
     #options = ['-ot Byte','-of JPEG','-b 1','-scale']
     geotifffiletoks=geotifffile.split(".")
     if display==True:
         print("Displaying image...")
         img = gdal.Open(geotifffile, gdal.GA_ReadOnly)
-        band = img.GetRasterBand(1)
+        band = img.GetRasterBand(bandnum)
         arr = band.ReadAsArray(topx,topy,bottomx,bottomy)
         plt.imshow(arr)
         print("Raster bands:",img.RasterCount)
@@ -117,7 +144,8 @@ def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=100
         print("Statistics:",statistics)
         print("MetaData:",metadata)
     jpegfilename=geotifffiletoks[0].split("/")
-    gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
+    #gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
+    gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[statistics[0],statistics[1]]], outputType = gdal.GDT_UInt16)
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
@@ -337,5 +365,9 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_90_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
-    population_estimate_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif",80.1,30.3)
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
+    #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=80.2707,latitude=13.0827)
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF")
+    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
+    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF",bandnum=1,datatype="Radiance")
