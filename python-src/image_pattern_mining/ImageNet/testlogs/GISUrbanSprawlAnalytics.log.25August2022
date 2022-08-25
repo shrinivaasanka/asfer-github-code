@@ -1,0 +1,2641 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+Displaying image...
+Raster bands: 1
+Raster Xsize: 22976
+Raster Ysize: 27904
+Statistics: [4.058893, 213.967835, 17.193890351057, 11.98434748514]
+MetaData: {'STATISTICS_MAXIMUM': '213.967835', 'STATISTICS_MEAN': '17.193890351057', 'STATISTICS_MINIMUM': '4.058893', 'STATISTICS_STDDEV': '11.98434748514', 'STATISTICS_VALID_PERCENT': '0.552'}
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([12.954486])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.2
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.21000000000001
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.22000000000001
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.23000000000002
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([7.567556])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.24000000000002
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.25000000000003
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.26000000000003
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.27000000000004
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([7.567556])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([29.207433])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.28000000000004
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.0
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.01
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.02
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.03
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.04
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.049999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.059999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.069999999999999
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.079999999999998
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.089999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.099999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.109999999999998
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.129999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.139999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.149999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.159999999999997
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.169999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.179999999999996
+Population from raster for longitude-latitude: [array([nan])]
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.189999999999996
+Population from raster for longitude-latitude: [array([nan])]
+Displaying image...
+Raster bands: 1
+Raster Xsize: 9000
+Raster Ysize: 10000
+Statistics: [0.0, 10000.0, 110.77600604348, 488.58490882307]
+MetaData: {'STATISTICS_MAXIMUM': '10000', 'STATISTICS_MEAN': '110.77600604348', 'STATISTICS_MINIMUM': '0', 'STATISTICS_STDDEV': '488.58490882307', 'STATISTICS_VALID_PERCENT': '76.67'}
+====================testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif=====================
+Raster bounds: BoundingBox(left=7059000.0, bottom=1000000.0, right=7959000.0, top=2000000.0)
+Raster height: 10000
+Raster width: 9000
+Raster top left - spatial value: (7059050.0, 1999950.0)
+Raster bottom right - spatial value: (7959050.0, 999950.0)
+Raster transform: | 100.00, 0.00, 7059000.00|
+| 0.00,-100.00, 2000000.00|
+| 0.00, 0.00, 1.00|
+Raster CRS: ESRI:54009
+Longitude: 80.2707
+Latitude: 13.0827
+Source CRS: EPSG:4326
+Destination CRS: +proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs=True
+Transformed Coordinates: [[7915402.10721301, 1612214.7819872624]]
+BUILT from raster: [array([3699], dtype=uint16)]

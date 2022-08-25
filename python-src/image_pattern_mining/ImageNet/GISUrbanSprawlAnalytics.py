@@ -60,6 +60,8 @@ import rasterio
 import rasterio.features
 import rasterio.warp
 from rasterio.windows import Window
+import fiona.transform
+import rasterio.sample
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -78,7 +80,7 @@ def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=100
         randomcolorbin.append(randombinelement)
     return fourcoloredsegments
 
-def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100):
+def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
     print("===================="+geotifffile+"=====================")
     longlatpolygons=[]
     raster = rasterio.open(geotifffile)
@@ -94,37 +96,57 @@ def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,lati
     print("Raster top left - spatial value:",raster.xy(0,0))
     print("Raster bottom right - spatial value:",raster.xy(raster.height,raster.width))
     print("Raster transform:",raster.transform)
-    xincrement=int(raster.width/windowslice)
-    yincrement=int(raster.height/windowslice)
-    window_id=0
-    topx=0
-    topy=0
-    bottomx=xincrement
-    bottomy=yincrement
-    searchfound=None
-    for x in range(windowslice):
-        for y in range(windowslice):
-            print("Window id:",window_id)
-            print("Window dimensions:(",topx,",",topy,",",bottomx,",",bottomy,")")
-            banddata=raster.read(bandnum,window=Window(topx,topy,bottomx,bottomy))
-            window_id+=1
-            #print("Raster data:",banddata)
-            if longitude is not None and latitude is not None:
-               if longitude > raster.bounds.left and longitude < raster.bounds.right and latitude > raster.bounds.bottom and latitude < raster.bounds.top:
-                  try:
-                     row,col=raster.index(longitude,latitude)
-                     searchfound=banddata[row,col]
-                     break
-                  except:
-                     print("Searched Longitude-Latitude not found...continuing")
-                     pass
-            topy+=yincrement
-            bottomy+=yincrement
+    print("Raster CRS:",raster.crs)
+    print("Longitude:",longitude)
+    print("Latitude:",latitude)
+    if raster.crs == rasterio.crs.CRS.from_string("EPSG:4326"):
+        xincrement=int(raster.width/windowslice)
+        yincrement=int(raster.height/windowslice)
+        window_id=0
+        topx=0
         topy=0
+        bottomx=xincrement
         bottomy=yincrement
-        topx+=xincrement
-        bottomx+=xincrement
-    print(datatype + " from raster:",searchfound)
+        searchfound=None
+        if sample==True:
+            values = list(rasterio.sample.sample_gen(raster,[[longitude,latitude]]))
+            print(datatype + " from raster for longitude-latitude:",values) 
+            return values
+        else:
+            for x in range(windowslice):
+                for y in range(windowslice):
+                    print("Window id:",window_id)
+                    print("Window dimensions:(",topx,",",topy,",",bottomx,",",bottomy,")")
+                    banddata=raster.read(bandnum,window=Window(topx,topy,bottomx,bottomy))
+                    window_id+=1
+                    print("Raster data:",banddata)
+                    if longitude is not None and latitude is not None:
+                        if longitude > raster.bounds.left and longitude < raster.bounds.right and latitude > raster.bounds.bottom and latitude < raster.bounds.top:
+                            try:
+                                searchfound=banddata[row,col]
+                                break
+                            except:
+                                print("Searched Longitude-Latitude not found...continuing")
+                                pass
+                        topy+=yincrement
+                        bottomy+=yincrement
+                    topy=0
+                    bottomy=yincrement
+                    topx+=xincrement
+                    bottomx+=xincrement
+            print(datatype + " from raster:",searchfound)
+            return searchfound
+    else:
+        src_crs = "EPSG:4326"  #WGS84
+        print("Source CRS:",src_crs)
+        dst_crs = raster.crs.to_proj4() #mollweide
+        print("Destination CRS:",dst_crs)
+        lon,lat = fiona.transform.transform(src_crs,dst_crs,[longitude],[latitude])
+        new_coords = [[x,y] for x,y in zip(lon,lat)]
+        print("Transformed Coordinates:",new_coords)
+        values = list(rasterio.sample.sample_gen(raster,new_coords))
+        print(datatype + " from raster:",values) 
+        return values
 
 def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000,bandnum=1):
     #options = ['-ot Byte','-of JPEG','-b 1','-scale']
@@ -357,7 +379,11 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.5.tif")
-    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    for lon in np.arange(80.2,80.3,0.01):
+        for lat in np.arange(13.0,13.2,0.01):
+            #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=80.2707,latitude=13.0827,sample=True,samplewindowsize=5)
+            data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=lon,latitude=lat,sample=True)
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.5.tif")
@@ -366,8 +392,9 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
-    #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=80.2707,latitude=13.0827)
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF")
-    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
-    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF",bandnum=1,datatype="Radiance")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif")
+    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",longitude=80.2707,latitude=13.0827,windowslice=15,datatype="BUILT")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF")
+    #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
+    #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF",bandnum=1,datatype="Radiance")
