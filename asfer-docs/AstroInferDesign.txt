@@ -19432,3 +19432,46 @@ References:
 ----------
 1292.7 LandSat 9 - TIRS-2 and OLI-2 - https://www.usgs.gov/media/images/landsat-9-oli-2-and-tirs-2-instruments
 1292.8 GDAL2tiles - https://gdal.org/programs/gdal2tiles.html - splits TIF file into multiple tiles
+
+------------------------------------------------------------------------------------------------------------------------------
+1295. (THEORY and FEATURE)  GIS Urban Sprawl Analytics - Facebook (Meta) High Resolution Settlement Layer (HRSL) and Global Human Settlement Layer (GHSL) GDAL-Rasterio Georeferencing - Sampling and Mollweide-EPSG transforms reprojections - 25 August 2022 - related to 1174,1175,1179,1194,1211,1290,1291,1292 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption
+------------------------------------------------------------------------------------------------------------------------------
+1295.1 GISUrbanSprawlAnalytics.py now imports fiona transforms and rasterio sample modules. Function data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False) has been updated to add sample as a parameter.
+1295.2 New if-else clause has been introduced which checks the CRS of the raster and if crs is (*) EPSG:4326 and if sample is enabled raster is sampled by sample_gen for data at a longitude-latitude coordinate and if sample is disabled usual window read scan of whole raster is performed to search for data at longitude-latitude (*) other than EPSG:4326 which could most likely be mollweide, EPSG:4326 source longitude-latitude reference system is transformed to destination mollweide reference system ESRI:54009 by reprojection and data is sampled by sample_gen at transformed coordinates.
+1295.3 data_from_raster_georeferencing() is invoked on two datasets : (*) HRSL Indian subcontinent population estimate GeoTIFF - testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif by iterating over a rectangle of longitude-latitude bounding box ensconcing Chennai Metropolitan Area - bounded by topleft-(80.2,13.0) and bottomright-(80.3,13.2) to print population data sampled in rectangle - iteration uses arange() as Python range() is limited to integer values (*) Newly released GHSL R2022A Built Surface dataset testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif for sampling built surface data at longitude=80.2707,latitude=13.0827 of Chennai Metropolitan Agglomeration. 
+1295.4 Following are logs quoted from testlogs/GISUrbanSprawlAnalytics.log.25August2022 for HRSL and GHSL GeoTIFFs:
+...
+==================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif=====================
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 80.29000000000005
+Latitude: 13.119999999999997
+Population from raster for longitude-latitude: [array([48.887234])]
+====================testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif=====================
+Raster bounds: BoundingBox(left=7059000.0, bottom=1000000.0, right=7959000.0, top=2000000.0)
+Raster height: 10000
+Raster width: 9000
+Raster top left - spatial value: (7059050.0, 1999950.0)
+Raster bottom right - spatial value: (7959050.0, 999950.0)
+Raster transform: | 100.00, 0.00, 7059000.00|
+| 0.00,-100.00, 2000000.00|
+| 0.00, 0.00, 1.00|
+Raster CRS: ESRI:54009
+Longitude: 80.2707
+Latitude: 13.0827
+Source CRS: EPSG:4326
+Destination CRS: +proj=moll +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs=True
+Transformed Coordinates: [[7915402.10721301, 1612214.7819872624]]
+BUILT from raster: [array([3699], dtype=uint16)]
+
+References:
+----------
+1295.5 GHSL R2022A BUILT-S dataset - https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2022A/GHS_BUILT_S_GLOBE_R2022A/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100/V1-0/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0.zip
+1295.6 GHSL Data Package 2022 - https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2022.pdf?t=1655995832 
