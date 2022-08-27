@@ -62,6 +62,7 @@ import rasterio.warp
 from rasterio.windows import Window
 import fiona.transform
 import rasterio.sample
+import math
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -79,6 +80,33 @@ def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=100
         randombinelement=randomcolorbin[random.randint(0,len(randomcolorbin)-1)]
         randomcolorbin.append(randombinelement)
     return fourcoloredsegments
+
+def urbansprawl_gini_coefficient(urbansprawldata):
+    sumx=0.0
+    sumxdiffy=0.0
+    nans=0
+    for x in urbansprawldata:
+        if not math.isnan(x):
+            sumx += float(x)
+        else:
+            nans += 1
+    for x in urbansprawldata:
+        for y in urbansprawldata:
+            if not math.isnan(x) and not math.isnan(y):
+                sumxdiffy += abs(float(x)-float(y))
+    giniindex = sumxdiffy / (2*(len(urbansprawldata)-nans)*sumx)
+    print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
+    return giniindex
+
+def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
+    urbansprawlstatistics=[]
+    for lon in np.arange(longx,longy,0.01):
+        for lat in np.arange(latx,laty,0.01):
+            values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
+            urbansprawlstatistics.append(values[0])
+    print("urban_sprawl_from_raster(): urbansprawlstatisitcs = ",urbansprawlstatistics)
+    urbansprawl_gini_coefficient(urbansprawlstatistics)
+    return urbansprawlstatistics
 
 def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
     print("===================="+geotifffile+"=====================")
@@ -379,11 +407,7 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_70_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
-    for lon in np.arange(80.2,80.3,0.01):
-        for lat in np.arange(13.0,13.2,0.01):
-            #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=80.2707,latitude=13.0827,sample=True,samplewindowsize=5)
-            data_from_raster_georeferencing("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",longitude=lon,latitude=lat,sample=True)
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_90_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_60_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_20_lon_70_general-v1.5.tif")
@@ -392,8 +416,10 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_60_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_70_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif")
-    data_from_raster_georeferencing("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",longitude=80.2707,latitude=13.0827,windowslice=15,datatype="BUILT")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif")
+    #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",longitude=80.2707,latitude=13.0827,windowslice=15,datatype="BUILT-S")
+    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT-S")
+    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",dt="Population")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF")
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
