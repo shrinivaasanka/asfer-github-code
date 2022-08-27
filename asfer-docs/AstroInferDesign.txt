@@ -19475,3 +19475,20 @@ References:
 ----------
 1295.5 GHSL R2022A BUILT-S dataset - https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2022A/GHS_BUILT_S_GLOBE_R2022A/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100/V1-0/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0.zip
 1295.6 GHSL Data Package 2022 - https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2022.pdf?t=1655995832 
+
+------------------------------------------------------------------------------------------------------------------------------
+1296. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Facebook (Meta) High Resolution Settlement Layer (HRSL) and Global Human Settlement Layer (GHSL) GDAL-Rasterio Georeferencing - Gini Index of Population and Built-Surface - 28 August 2022 - related to 1174,1175,1179,1194,1211,1290,1291,1292,1295 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from electricity consumption, Poverty alleviation
+-------------------------------------------------------------------------------------------------------------------------------
+1296.1 GISUrbanSprawlAnalytics.py has been updated to define two new functions (*) urbansprawl_gini_coefficient(urbansprawldata) and (*) urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt) for computing Gini Coefficient measure of inequality in an urban sprawl statistical parameter and to wrap the longitude-latitude urban sprawl bounding box computation of data_from_raster_georeferencing() for a raster respectively.
+1296.2 urban_sprawl_from_raster() is computed on following 2 datasets of GHSL R2022A Built-Surface and Facebook Meta HRSL Indian subcontinent Population for Chennai Metropolitan Area Longitude-Latitude (80.2707,13.0827) Bounding Box - (80.1,13.0) to (80.3,13.2):
+    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT-S")
+    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",dt="Population")
+1296.3 Following excerpts of Gini coefficient computations from python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.28August2022 for earlier Built-Surface and Population datasets ignore NaN values by math.isnan() filtering. Gini coefficient is defined as ratio of area bounded by hypotenuse and Lorenz curve to total area of right-angle triangle and ranges from 0 (complete equality) to 1 (complete inequality):
+	Built-Surface - urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.48700616284225207 (48.7%)
+	Population - urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.28008540547871624 (28.0%) ignoring NaNs.
+1296.4 Disparity of 48.7% and 28% between Built-Surface (less equality) and Population (more equality) implies construction activity is not commensurate and hasn't caught up with burgeoning population. 
+
+References:
+----------
+1296.5 Gini coefficient - https://en.wikipedia.org/wiki/Gini_coefficient
+1296.6 Gini coefficient of income disparity - https://data.worldbank.org/indicator/SI.POV.GINI 
