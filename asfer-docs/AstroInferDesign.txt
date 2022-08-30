@@ -19492,3 +19492,55 @@ References:
 ----------
 1296.5 Gini coefficient - https://en.wikipedia.org/wiki/Gini_coefficient
 1296.6 Gini coefficient of income disparity - https://data.worldbank.org/indicator/SI.POV.GINI 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1297. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Facebook (Meta) High Resolution Settlement Layer (HRSL) - Population estimation from GDAL-Rasterio Georeferencing - 30 August 2022 - related to 1174,1175,1179,1194,1211,1290,1291,1292,1295,1296 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation
+------------------------------------------------------------------------------------------------------------------------------- 1297.1 GISUrbanSprawlAnalytics.py has been updated to enhance urban_sprawl_from_segments() by adding a clause for looking up population value for a pixel in JPEG translation of a GeoTIFF raster by raster.xy() and compute population estimation based on it.
+1297.2 Within translate_geotiff_to_jpeg(), gdal.Translate() has been changed to write JPEG file from GeoTIFF raster after scaling down X and Y sizes by function parameter scaledown. Scaling is necessary to reduce JPEG file sizes from actual raster dimensions. Scale parameters have been restored to [[0, 255, 0, 65535]]
+1297.3 Function urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=2,maxiterations=2,populationfromraster="None") has been updated to include an argument populationfromraster for name of raster TIF file. New if clause for reading a raster file has been introduced to find minimum enclosing circle of every contour in JPEG translation of TIF file and centroid of the enclosing circle. Pixel coodinates of contour centroids are lookeup in raster TIF of translated JPEG by xy() to find longitude-latitude after scaling up by factor scaleup to restore the coordinates to GeoTIFF dimensions as JPEG version is scaled down version of TIFF.
+1297.4 Longitude-Latitude earlier is passed on to data_from_raster_georeferencing() to get population at the centroid coordinates within GeoTIFF raster. Scaling up and down earlier might cause some loss in pixel coordinate information because of integer division and actual longitude-latitude might vary and be inaccurate depending on scaling. Scaling has to be resorted to only when size of the raster and translated JPEG are huge and there are out of memory errors while loading. Setting scaleup and scaledown to 1 results in same size of JPEG as raster and doesn't distort the dimensions.
+1297.5 Image file tokenization has been changed to remove hardcoded indices and replace them by last index of the tokens array in both ImageGraph_Keras_Theano.py and GISUrbanSprawlAnalytics.py. Array length check in contours kmeans clustering has been added.
+1297.6 Following are logs,contour-segment-tessellation-edgedetection images and some example population estimates computed within testlogs/GISUrbanSprawlAnalytics.log.30August2022 for urban sprawl contour centroid long-lat (83.56,18.20) looking up Meta HRSL EPSG:4326 Raster FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif (not committed) bounded by longitudes 80-87 and latitudes 13-20 (unscaled GDAL translated JPEG testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg is of size ~25 MB and slow to process which has been scaled to a factor of 50):
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg.aux.xml
+	testlogs/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1-cannyedgedetection.jpg
+	testlogs/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1-contourkmeansclustered.jpg
+	testlogs/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1-contourlabelled.jpg
+	testlogs/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1-contoursegmented.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.30August2022
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1_segmented.jpg
+====================testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif===================
+==
+Raster bounds: BoundingBox(left=79.99819444444445, bottom=12.255416666660466, right=86.38041666667178, top=20.006527777777777)
+Raster height: 27904
+Raster width: 22976
+Raster top left - spatial value: (79.99833333333333, 20.00638888888889)
+Raster bottom right - spatial value: (86.38055555556066, 12.255277777771578)
+Raster transform: | 0.00, 0.00, 80.00|
+| 0.00,-0.00, 20.01|
+| 0.00, 0.00, 1.00|
+Raster CRS: EPSG:4326
+Longitude: 83.60944444444733
+Latitude: 19.77027777777759
+Population from raster for longitude-latitude: [array([14.301587])]
+urban_sprawl_from_segments(): raster values =  [array([14.301587])]
+('Convex Hull of Urban Area:', array([[[ 19, 259]],
+
+       [[ 18, 263]],
+
+       [[ 17, 263]],
+
+       [[ 17, 259]],
+
+       [[ 18, 258]]], dtype=int32))
+('Circumference of Urban Area:', 15.899494767189026)
+('Approximate circular area of Urban Sprawl:', 12.56)
+('Contour Area of Urban Sprawl:', 0.5)
+('Ratio of urban sprawl contour area to image area:', 1.952194657233662e-06)
+('Square Kilometer Area of Urban Sprawl:', 0.1557377049180328)
+('Population of Urban Sprawl (from density):', array([2.22729634]))
+('Population of Urban Sprawl (from area):', 0.1508613276001075)
+('Centroid of the Urban Sprawl:', (17, 262))
+Contour boundary point: [[130 257]]
+urban_sprawl_from_segments(): raster xy longlat =  (83.56777777778063, 18.20083333333189)
