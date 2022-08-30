@@ -176,7 +176,7 @@ def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,lati
         print(datatype + " from raster:",values) 
         return values
 
-def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000,bandnum=1):
+def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=1000,bottomy=1000,bandnum=1,scaledown=50):
     #options = ['-ot Byte','-of JPEG','-b 1','-scale']
     geotifffiletoks=geotifffile.split(".")
     if display==True:
@@ -194,8 +194,8 @@ def translate_geotiff_to_jpeg(geotifffile,display=True,topx=0,topy=0,bottomx=100
         print("Statistics:",statistics)
         print("MetaData:",metadata)
     jpegfilename=geotifffiletoks[0].split("/")
-    #gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
-    gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=1024, height=0, scaleParams=[[statistics[0],statistics[1]]], outputType = gdal.GDT_UInt16)
+    gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=img.RasterXSize/scaledown, height=img.RasterYSize/scaledown, scaleParams=[[0, 255, 0, 65535]], outputType = gdal.GDT_UInt16)
+    #gdal.Translate("testlogs/RemoteSensingGIS/"+jpegfilename[2] + ".jpg",geotifffile,format='JPEG', width=img.RasterXSize, height=img.RasterYSize, scaleParams=[[statistics[0],statistics[1]]], outputType = gdal.GDT_UInt16)
 
 def draw_delaunay_triangulation(img,triangles):
     for triangle in triangles:
@@ -212,7 +212,7 @@ def draw_voronoi_tessellation(img,centroids):
     subdiv = cv2.Subdiv2D(rect)
     print(("subdiv:", subdiv))
     for cent in centroids:
-        print(("centroid:", cent))
+        #print(("centroid:", cent))
         subdiv.insert(tuple(cent))
     triangles = subdiv.getTriangleList()
     print(("image Delaunay triangles:", triangles))
@@ -221,7 +221,7 @@ def draw_voronoi_tessellation(img,centroids):
     for n in range(len(facets)):
         for f in facets[n]:
             fnp=np.array(f)
-            print("facet:",fnp)
+            #print("facet:",fnp)
             try:
                 #cv2.fillConvexPoly(img,fnp,(random.randint(0,255),random.randint(0,255),random.randint(0,255)),cv2.LINE_AA,0)
                 cv2.polylines(img,np.int32([fnp]),True,(0,0,0),1,cv2.LINE_AA,0)
@@ -241,7 +241,7 @@ def urban_sprawl_dispersion(image):
     print("Moran's I of the Urban Sprawl dispersion:",MoransI.I)
     print("Moran's p-norm of the Urab Sprawl dispersion:",MoransI.p_norm) 
 
-def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=2,maxiterations=2):
+def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,sqkmtocontourarearatio=0,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=2,maxiterations=2,populationfromraster="None",scaleup=50):
     print(("Image:",image))
     img=cv2.imread(image)
     imagearea=img.shape[0]*img.shape[1]
@@ -275,22 +275,32 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,s
         contourareas.append(contourarea)
         cv2.drawContours(img,segment[8][0][n],-1,(0,255,0),2)
         print("Contour boundary point:",segment[8][0][n][0])
-        pop_dens=0
-        try:
-            contourcolor = img[segment[8][0][n][0][0][0],segment[8][0][n][0][0][1]]
-            print("Contour color:",contourcolor)
-            averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
-            if legend is None:
-                population_density = (averageBGR/255) * maximum_population_density 
-            else:
-                prevcolor=0
-                for color,populationrange in legend.items():
-                    populationrangetoks=populationrange.split("-")
-                    if averageBGR > prevcolor and averageBGR <= color:
-                        population_density = int(populationrangetoks[1])
-                    prevcolor=color
-        except:
-            population_density = maximum_population_density
+        population_density=0
+        if populationfromraster != "None":
+            raster = rasterio.open(populationfromraster)
+            (cx,cy),radius=cv2.minEnclosingCircle(segment[8][0][n])
+            center=(int(cx),int(cy))
+            longlat=raster.xy(center[0]*scaleup,center[1]*scaleup)
+            print("urban_sprawl_from_segments(): raster xy longlat = ",longlat)
+            values=data_from_raster_georeferencing(populationfromraster,shapes=False,longitude=longlat[0],latitude=longlat[1],bandnum=1,datatype="Population",sample=True)
+            print("urban_sprawl_from_segments(): raster values = ",values)
+            population_density = values[0]
+        else:
+            try:
+               contourcolor = img[segment[8][0][n][0][0][0],segment[8][0][n][0][0][1]]
+               print("Contour color:",contourcolor)
+               averageBGR = int((contourcolor[0] + contourcolor[1] + contourcolor[2])/3)
+               if legend is None:
+                   population_density = (averageBGR/255) * maximum_population_density 
+               else:
+                   prevcolor=0
+                   for color,populationrange in legend.items():
+                       populationrangetoks=populationrange.split("-")
+                       if averageBGR > prevcolor and averageBGR <= color:
+                          population_density = int(populationrangetoks[1])
+                       prevcolor=color
+            except:
+               population_density = maximum_population_density
         x,y,w,h = cv2.boundingRect(segment[8][0][n])
         print(("Convex Hull of Urban Area:" , convexhull))
         print(("Circumference of Urban Area:",circumference))
@@ -335,7 +345,7 @@ def urban_sprawl_from_segments(image,segment,maximum_population_density=100000,s
     plt.show()
     imagetok1=image.split(".")
     imagetok2=imagetok1[0].split("/")
-    cv2.imwrite("testlogs/"+imagetok2[1]+"-contourlabelled.jpg",img)
+    cv2.imwrite("testlogs/"+imagetok2[len(imagetok2)-1]+"-contourlabelled.jpg",img)
     cv2.waitKey()
     facegraph=segment[9] 
     print("Number of Vororoi Facets:",len(voronoifacetareas))
@@ -418,9 +428,12 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_30_lon_80_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif")
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",longitude=80.2707,latitude=13.0827,windowslice=15,datatype="BUILT-S")
-    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT-S")
-    urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",dt="Population")
+    #urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT-S")
+    #urban_sprawl_from_raster(80.1,13.0,80.3,13.2,"testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif",dt="Population")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF")
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF",bandnum=1,datatype="Radiance")
+    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
+    urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
