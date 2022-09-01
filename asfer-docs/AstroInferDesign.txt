@@ -19553,3 +19553,23 @@ urban_sprawl_from_segments(): raster values =  [array([14.301587])]
 ('Centroid of the Urban Sprawl:', (17, 262))
 Contour boundary point: [[130 257]]
 urban_sprawl_from_segments(): raster xy longlat =  (83.56777777778063, 18.20083333333189)
+
+-------------------------------------------------------------------------------------------------------------------------------
+1301. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Polya Urn Urban Growth Model - Revised for N color segments - 2 September 2022 - related to 1174,1175,1179,1194,1211,1234,1290,1291,1292,1295,1296,1297 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation
+-------------------------------------------------------------------------------------------------------------------------------
+1301.1 GISUrbanSprawlAnalytics.py Polya Urn Urban Growth Model function polya_urn_urban_growth_model(image,ncoloredsegments,segmentedgis,iterations=1000) has been changed to add image filename parameter and allow arbitrary number of colored contour segments. Contours segmented earlier from a GIS JPEG image are iterated and an n-colored dictionary of colors-to-segments is populated by looking up the color of contour centroid pixel in image ndarray construed as color of the contour segment.
+1301.2 Contents of Polya Urn before and after growth (by choosing a random colored segment and replicating it) are printed.
+1301.3 GHSL SMOD R2022A Degree of Urbanization JPEG image from https://ghsl.jrc.ec.europa.eu/ghs_smod2022.php for Chennai Metro Sprawl testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg which follows a 3-colored high level zoning (open space-water-vegetation, built space-residential, built space-non-residential) has been segmented for contours,watershed,canny edge detection and grown by Polya Urban Growth Model for 1000 iterations. Non-residential Built space includes both commercial and industrial areas. Following are affected image, DOT and log files:
+	testlogs/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation-cannyedgedetection.jpg
+	testlogs/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation-contourkmeansclustered.jpg
+	testlogs/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation-contourlabelled.jpg
+	testlogs/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation-contoursegmented.jpg
+	testlogs/GISUrbanSprawlAnalytics.log.2September2022
+	testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg
+	testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation_ImageNet_Keras_Theano_Segmentation_FaceGraph.dot
+	testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation_segmented.jpg
+1301.4 Differentiating Industrial and Commercial segments within Non-residential built space is non-trivial and necessary for 4-colored segmentation. While Polluting Manufacturing industries could be discerned by air quality index (PM2.5,PM10) from a datasource, for example, OpenWeatherMap Longitude-Latitude REST API - https://openweathermap.org/api/air-pollution, distinguishing non-polluting Manufacturing-IT-ITES from commercial activity is a problem unless they are of varying building heights or luminosity in NightLights data from VIIRS.
+
+References:
+----------
+1301.5 GHSL R2022A GHS-SMOD Degree of Urbanization - earlier image has been captured from https://ghsl.jrc.ec.europa.eu/visualisation.php#lnlt=@13.26133,79.84039,9z&v=301&ln=1&gr=ds&lv=10000000000000000000000000000000000000011111&lo=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&pg=V 
