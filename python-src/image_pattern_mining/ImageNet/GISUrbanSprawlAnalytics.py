@@ -68,18 +68,34 @@ import math
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 
-def polya_urn_urban_growth_model(fourcoloredsegments,segmentedgis,iterations=1000):
-    for newsegment in range(len(segmentedgis[7][0]) - 1):
-        randomcolor=random.randint(1,4)
-        randomcolorbin=fourcoloredsegments[randomcolor]
-        #randomcolorbin.append(segmentedgis[7][0][newsegment])
-        randomcolorbin.append("s"+str(newsegment))
+def polya_urn_urban_growth_model(image,ncoloredsegments,segmentedgis,iterations=1000):
+    img=cv2.imread(image)
+    print("img shape:",img.shape)
+    for newsegment in range(len(segmentedgis[8][0]) - 1):
+        (cx,cy),radius=cv2.minEnclosingCircle(segmentedgis[8][0][newsegment])
+        center=(int(cx),int(cy))
+        #print("polya_urn_urban_growth_model() - contour center:",center)
+        if center[0] < img.shape[0] and center[1] < img.shape[1]:
+            contourcolor=img[center[0],center[1]]
+            #print("polya_urn_urban_growth_model() - contour color:",contourcolor)
+            randomcolorbin=ncoloredsegments[sum(contourcolor)]
+            randomcolorbin.append("s"+str(newsegment))
+    print("Urban sprawl segments before Polya Urn Growth:")
+    print("==============================================")
+    for color,segments in ncoloredsegments.items():
+        print("color ",color,":",len(segments))
+    colors=list(ncoloredsegments.keys())
     for n in range(iterations):
-        randomcolor=random.randint(1,4)
-        randomcolorbin=fourcoloredsegments[randomcolor]
-        randombinelement=randomcolorbin[random.randint(0,len(randomcolorbin)-1)]
-        randomcolorbin.append(randombinelement)
-    return fourcoloredsegments
+        randomcolor=random.randint(0,len(colors)-1)
+        randomcolorbin=ncoloredsegments[colors[randomcolor]]
+        if len(randomcolorbin) > 1:
+            randombinelement=randomcolorbin[random.randint(0,len(randomcolorbin)-1)]
+            randomcolorbin.append(randombinelement)
+    print("Urban sprawl segments after Polya Urn Growth:")
+    print("==============================================")
+    for color,segments in ncoloredsegments.items():
+        print("color ",color,":",len(segments))
+    return ncoloredsegments
 
 def urbansprawl_gini_coefficient(urbansprawldata):
     sumx=0.0
@@ -434,6 +450,11 @@ if __name__ == "__main__":
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_ST_DRAD.TIF",bandnum=1,datatype="Radiance")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF")
     #data_from_raster_georeferencing("testlogs/RemoteSensingGIS/LC08_L2SP_142051_20220729_20220806_02_T1_SR_B7.TIF",bandnum=1,datatype="Radiance")
-    translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
-    seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
-    urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
+    #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    ncoloredsegments=defaultdict(list)
+    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
+    ncoloredsegments=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments,seg14)
+    urban_sprawl_from_segments("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",seg14,voronoi_delaunay=False,number_of_clusters=3,maxiterations=3)
+    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments.keys())," colored urban sprawl segmentation:",ncoloredsegments)
