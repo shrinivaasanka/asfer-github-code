@@ -1,0 +1,139 @@
+('Spark Python version:', '3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0]')
+('factors of ', 93928329389239283919, '(', 66.34819415248887, ' bits integer) are:')
+factorization start (in nanoseconds): 1662534334774288656
+tiles_start: 1
+tiles_end: 56
+tiles_start: 56
+tiles_end: 112
+tiles_start: 112
+tiles_end: 168
+tiles_start: 168
+tiles_end: 224
+tiles_start: 224
+tiles_end: 280
+tiles_start: 280
+tiles_end: 336
+tiles_start: 336
+tiles_end: 392
+tiles_start: 392
+tiles_end: 448
+tiles_start: 448
+tiles_end: 504
+tiles_start: 504
+tiles_end: 560
+tiles_start: 560
+tiles_end: 616
+tiles_start: 616
+tiles_end: 672
+tiles_start: 672
+tiles_end: 728
+tiles_start: 728
+tiles_end: 784
+tiles_start: 784
+tiles_end: 840
+tiles_start: 840
+tiles_end: 896
+tiles_start: 896
+tiles_end: 952
+tiles_start: 952
+tiles_end: 1008
+tiles_start: 1008
+tiles_end: 1064
+tiles_start: 1064
+tiles_end: 1120
+tiles_start: 1120
+tiles_end: 1176
+tiles_start: 1176
+tiles_end: 1232
+tiles_start: 1232
+tiles_end: 1288
+tiles_start: 1288
+tiles_end: 1344
+tiles_start: 1344
+tiles_end: 1400
+tiles_start: 1400
+tiles_end: 1456
+tiles_start: 1456
+tiles_end: 1512
+tiles_start: 1512
+tiles_end: 1568
+=================================================
+xl + intervalmidpoint =  117410411736549104899
+xl =  93928329389239283919
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 93928329389239283919, ') (at ', 'Wed, 07 Sep 2022 07:05:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4552212138
+=================================================
+=================================================
+xl + intervalmidpoint =  35223123520964731470
+xl =  31309443129746427973
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 31309443129746427973, ') (at ', 'Wed, 07 Sep 2022 07:05:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4552969670
+=================================================
+=================================================
+xl + intervalmidpoint =  4168920416732540681
+xl =  4083840408227794953
+yl =  23
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 23, ',', 4083840408227794953, ') (at ', 'Wed, 07 Sep 2022 07:05:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4863117907
+=================================================
+=================================================
+xl + intervalmidpoint =  3292889708473331218
+xl =  3238907909973768411
+yl =  29
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 29, ',', 3238907909973768411, ') (at ', 'Wed, 07 Sep 2022 07:05:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5041777388
+=================================================
+=================================================
+xl + intervalmidpoint =  1371003565619331163
+xl =  1361280136075931651
+yl =  69
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 69, ',', 1361280136075931651, ') (at ', 'Wed, 07 Sep 2022 07:05:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5640478819
+=================================================
+=================================================
+xl + intervalmidpoint =  1085770265275297365
+xl =  1079635969991256137
+yl =  87
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 87, ',', 1079635969991256137, ') (at ', 'Wed, 07 Sep 2022 07:05:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6037670628
+=================================================
+=================================================
+xl + intervalmidpoint =  140927488793117950
+xl =  140822083042337757
+yl =  667
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 667, ',', 140822083042337757, ') (at ', 'Wed, 07 Sep 2022 07:05:49 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  14773279188
+=================================================
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 417, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]))
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 394, in SearchTiles_and_Factorize
+    spcon.parallelize(tiles).foreach(
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 862, in foreach
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1141, in count
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1132, in sum
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 1003, in fold
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/rdd.py", line 889, in collect
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1303, in __call__
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/python/lib/pyspark.zip/pyspark/context.py", line 279, in signal_handler
+KeyboardInterrupt
