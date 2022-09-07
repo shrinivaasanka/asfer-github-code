@@ -19586,3 +19586,50 @@ References:
 ----------
 1302.4 Number of Returns and Return number in LIDAR - Graphic illustration - https://pro.arcgis.com/en/pro-app/latest/help/data/las-dataset/what-is-lidar-.htm - "... Laser pulses emitted from a lidar system reflect from objects both on and above the ground surface: vegetation, buildings, bridges, and so on. One emitted laser pulse can return to the lidar sensor as one or many returns. Any emitted laser pulse that encounters multiple reflection surfaces as it travels toward the ground is split into as many returns as there are reflective surfaces.  The first returned laser pulse is the most significant return and will be associated with the highest feature in the landscape like a treetop or the top of a building. The first return can also represent the ground, in which case only one return will be detected by the lidar system. Multiple returns are capable of detecting the elevations of several objects within the laser footprint of an outgoing laser pulse. The intermediate returns, in general, are used for vegetation structure, and the last return for bare-earth terrain models. ..."
 1302.5 Laspy tutorial - https://laspy.readthedocs.io/en/latest/complete_tutorial.html
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1303. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.10.4 upgrade - 2232 and 67 bits Quadcore Benchmarks and MATLAB-Pari/GP-FLINT performance numbers comparison - related to 1259 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP - 7 September 2022
+--------------------------------------------------------------------------------------------------------------------------------------------
+1303.1 DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been upgraded to Python 3.10.4 from Python 3.7-3.8 for performance and two random integers 93928329389239283919 (67 bits) and 918289829182891892818298192891893791937177127197279719277127172971271729719279172791727192791771783717391737972974747974927947297497297492794792749729749273927429794797274927947297492794774749279427497927492749747979274979749729797497294797497294729794774297492749274972947972974927497294792749279247927947294792749749792749279742974972974927492749729479274927497297472947927947927947927497297242799274972947297497297494274972974297492797372378273872387827372873872378723872372738728378273728732773872836826386263623628638628368268368263862836826386826386283628368268368263826638263826863826386283682632863826826386238628368623826382638623862863826386283682638263227479247 (2232 bits) have been factorized by DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py on Spark 3.0.1+Python 3.10.4
+1303.2 Following are excerpts of benchmark numbers from:
+	testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.7September2022
+	testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log2.7September2022
+--------------------------------------------------------------------------------------------------------------
+93928329389239283919 - 67 bits - time to first factor
+--------------------------------------------------------------------------------------------------------------
+xl + intervalmidpoint =  35223123520964731470
+xl =  31309443129746427973
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 31309443129746427973, ') (at ', 'Wed, 07 Sep 2022 07:05:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4552969670 (4.55 seconds)
+-------------------------------------------------------------------------------------------------------------------------------------------
+918289829182891892818298192891893791937177127197279719277127172971271729719279172791727192791771783717391737972974747974927947297497297492794792749729749273927429794797274927947297492794774749279427497927492749747979274979749729797497294797497294729794774297492749274972947972974927497294792749279247927947294792749749792749279742974972974927492749729479274927497297472947927947927947927497297242799274972947297497297494274972974297492797372378273872387827372873872378723872372738728378273728732773872836826386263623628638628368268368263862836826386826386283628368268368263826638263826863826386283682632863826826386238628368623826382638623862863826386283682638263227479247 - 2232 bits - time to first factor
+-------------------------------------------------------------------------------------------------------------------------------------------
+xl + intervalmidpoint =  13705818346013311833108928252117817790107121301451936108613838402556294473422077205846674519280175876378981163775742507088476825335780559593952130592981332446678056638765297432049216310369772377304888028768548503701183208652981041753690967126825294474548870111832078730939521984700410407384966407152954148467086458951489444019100641417507088470041040738496640708914887655939223103402207873093988698496641387273096974589466790641407425265632423556326453549662281699587742147348846846692213040727354833922937707257666024308039229377139824833773683975922781884830274153259227818308033788460654125168413173624833236214719979527889907856457292893475579498302741531914376529541
+xl =  13705818346013311833108928252117817790107121301451936108613838402556294473422077205846674519280175876378981163775742507088476825335780559593952130592981332446678056638765297432049216310369772377304888028768548503701183208652981041753690967126825294474548870111832078730939521984700410407384966407152954148467086458951489444019100641417507088470041040738496640708914887655939223103402207873093988698496641387273096974589466790641407425265632423556326453549662281699587742147348846846692213040727354833922937707257666024308039229377139824833773683975922781884830274153259227818308033788460654125168413173624833236214719979527889907856457292893475579498302741531914376529539
+yl =  67
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 67, ',', 13705818346013311833108928252117817790107121301451936108613838402556294473422077205846674519280175876378981163775742507088476825335780559593952130592981332446678056638765297432049216310369772377304888028768548503701183208652981041753690967126825294474548870111832078730939521984700410407384966407152954148467086458951489444019100641417507088470041040738496640708914887655939223103402207873093988698496641387273096974589466790641407425265632423556326453549662281699587742147348846846692213040727354833922937707257666024308039229377139824833773683975922781884830274153259227818308033788460654125168413173624833236214719979527889907856457292893475579498302741531914376529541, ') (at ', 'Wed, 07 Sep 2022 06:54:05 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  12204434562 (12.204 seconds)
+1303.3 Earlier numbers can be contrasted with FLINT (Fast library for Number Theory)-Mathematica-Pari/GP factorization benchmarks quoted from https://www.flintlib.org/benchmarks.html (which are implementations of some special case optimized factoring algorithms) from 16 bits to 64 bits on Highend Octacore-Tencore Intel Xeon E5-2650, 2.00 GHz CPU - https://www.intel.in/content/www/in/en/products/sku/64590/intel-xeon-processor-e52650-20m-cache-2-00-ghz-8-00-gts-intel-qpi/specifications.html - 384 GB RAM 16-Hyperthreaded configuration:
+	n-bits	Mathematica 9.0	Pari/GP 2.5.4	FLINT 2.4 (time in seconds)
+	16	0.0720		0.0160		0.00476
+	24	0.108		0.0560		0.0192
+	32	0.272		0.233		0.0812
+	40	0.960		0.608		0.199
+	48	1.87		1.17		0.430
+	56	2.76		2.28		1.19
+	64	4.60		4.21		3.86
+-------------------------------------------------------------------------------------------
+NeuronRain Computational Geometric Factorization (all factors) on Quadcore 2.00 GHZ 4 GB RAM configuration which is trivial compared to Xeon ES-2650 Octacore (time to first factor):
+-------------------------------------------------------------------------------------------
+	67 bits	- 4.55 seconds
+	2232 bits - 12.204 seconds
+
+References:
+----------
+1303.4 CADO-NFS RSA moduli benchmarks - https://cado-nfs.gitlabpages.inria.fr/
+1303.5 Integer Factorization Benchmarks - https://www.mersenneforum.org/showthread.php?t=15109 - performance numbers for CADO-NFS - 110	digit integer (~350 bits integer) requires 27662 seconds to factorize in CADO-NFS (Xeon Haswell CPUs)
