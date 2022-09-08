@@ -19638,3 +19638,32 @@ References:
 ----------
 1303.4 CADO-NFS RSA moduli benchmarks - https://cado-nfs.gitlabpages.inria.fr/
 1303.5 Integer Factorization Benchmarks - https://www.mersenneforum.org/showthread.php?t=15109 - performance numbers for CADO-NFS - 110	digit integer (~350 bits integer) requires 27662 seconds to factorize in CADO-NFS (Xeon Haswell CPUs)
+
+-------------------------------------------------------------------------------------------------------------------------------
+1304. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Polya Urn Urban Growth Model - Weights Learnt - 8 September 2022 - related to 1174,1175,1177,1179,1194,1211,1234,1290,1291,1292,1295,1296,1297,1301 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, MARA (Multiple Agent Resource Allocation) Facegraph walk coloring DNFSAT algorithm, Preferential Attachment 
+------------------------------------------------------------------------------------------------------------------------------
+1304.1 GISUrbanSprawlAnalytics.py has been updated to learn replication weights of Polya Urn Urban Growth Model sampling which chooses a random colored segment and replicates it while replacing, through function learn_polya_urn_growth_weights().
+1304.2 Function learn_polya_urn_growth_weights(ncolorsegments_date1,ncolorsegments_date2) takes as arguments two n-colored segments of date1(earlier) and date2(later) computed from an urban sprawl segmentation by function polya_urn_urban_growth_model() and returns dictionary of replication weights per color as ratio of lengths of corresponding colored bins within Polya Urns of date2 and date1. 
+1304.3 Function polya_urn_urban_growth_model(image,ncoloredsegments,segmentedgis,iterations=1000,replicationweights=None) additionally takes an optional argument replicationweights which is the dictionary of color-to-weights learnt by learn_polya_urn_growth_weights(). Polya Urn Growth routine has been rewritten, if learnt replicationweights are supplied, to replicate a randomly sampled contour color segment as many times as the color's weight lookedup within replicationweights which makes the Polya Urn Growth a Randomized Controlled Trial or a predictable randomization learnt from the past - contours of different colors grow at different rates based on past historical growth (typical preferential attachment or Rich-get-richer - a trend which may not be disrupted unless a radical new masterplan is drafted). 
+1304.4 Percentage Growth of an Urban Sprawl after Polya Urn UGM process is printed as ratio of total number of segments (all colors) before and after Urn growth. Replication weights are learnt from two GHSL GIS Imagery separated by 3 years for Chennai Metropolitan Area Sprawl - testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg (R2019A) and testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg (R2022A) - and learnt weights are applied to project future growth after 2022 on R2022A testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg (Assumption: Same color coding is used across R2019A and R2022A and images approximately have similar scales) 
+1304.5 Following are 3 trials of Polya Urn Urban Growth Model projections (1000 iterations each) for Chennai Metropolitan Area without and with learnt replication weights quoted from testlogs/GISUrbanSprawlAnalytics.log.8September2022:
+--------------------
+Trial 1
+--------------------
+	(random - no weights learning) R2019A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 24.4270205066345
+	(random - no weights learning) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 101.09689213893967
+	(predictably random - after weights learning based on 3 years growth) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 95.7498482088646
+--------------------
+Trial 2
+--------------------
+	(random - no weights learning) R2019A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 25.03015681544029
+	(random - no weights learning) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 101.64533820840951
+	(predictably random - after weights learning based on 3 years growth) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 76.72727272727273
+-------------------
+Trial 3
+-------------------
+	(random - no weights learning) R2019A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 23.70325693606755
+	(random - no weights learning) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 103.47349177330896
+	(predictably random - after weights learning based on 3 years growth) R2022A - Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model: 85.66265060240964
+1304.6 On an average earlier weights-learnt Polya Urn Growth predicts 76-95% growth of contour segments in Chennai Metropolitan Area based on 3 years growth trend (2019-2022) implying proportional future growth of Urban city center and Urban metro cluster  - From 1174.8.4.3 expanded jurisdiction of Chennai Metropolitan Area in 2018 - 8848 sqkm - might witness urban cluster growth of 76-95% to 17253 sqkms and GHSL (R2019A) city administrative area of Chennai from 1196.4 and 1253.12 - 940 sqkm - might witness urban center growth of 76-95% to 1833 sqkms (rough estimate assuming equal area contours). 
+1304.7 Allocating new segments projected by weights-learnt Polya Urn Model along periphery of Facegraph of the Urban sprawl described in 1234.6 adhering to DNFSAT Facegraph walk arithmetic progression coloring MARA algorithm in 1177 is a sustainable Urban Growth Model assuring equitable growth. 
