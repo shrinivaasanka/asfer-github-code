@@ -19674,3 +19674,22 @@ References:
 ----------
 1304.8 Polya Urn Replacement Matrix - https://warwick.ac.uk/fac/sci/maths/people/staff/stefan_grosskinsky/rcssm/ws2/cecile.pdf and https://arxiv.org/pdf/1611.09478.pdf - For 2 colored Urns, ball of color1 is chosen and replaced by a color1 and b color2 balls while ball of color2 is chosen and replaced by c color1 and d color2 balls causing a replacement matrix [[a,b][c,d]] - such a generic replacement matrix is possible in Urban sprawls when segment growths are interdependent e.g if segment of color1 grows at rate a, segment of color2 grows at rate b (residential segments depend on industrial segments and commercial segments depend on residential segments).
 
+-------------------------------------------------------------------------------------------------------------------------------
+1305. (THEORY and FEATURE) Intrinsic Merit of Music - AI Music Synthesis from Sum of Sinusoids - Signal synthesis from librosa tone() - related to 110,1223,1224,1257,1258,1261 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants - 9 September 2022
+------------------------------------------------------------------------------------------------------------------------------- 
+1305.1 Updated notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=100) in AudioToBitMatrix.py to add new parameter periodicity for length of music waveform synthesized and replace existing synthesis code to compute signal waveform from librosa.tone() which produces far superior music rivalling manual composition by keyboard or piano. 
+1305.2 Lambda function passed on to notes_to_audio() is eval()-ed for each point in range determined by periodicity and resultant function values are deemed as frequencies of signal synthesized by librosa.tone() for duration of 0.25 seconds.
+1305.3 Signals synthesized for all points of the function in periodicity range are concatenated and written to WAV file. 
+1305.4 Following are affected logs and function synthesized waveform files for notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35) which is a sum of damped sinusoids of 3 fourier frequencies:
+	function_synthesized_music.wav
+	testlogs/AudioToBitMatrix.log.9September2022
+1305.5 Synthesized waveform function_synthesized_music.wav can be loaded in Audacity for spectral analysis and playing.
+1305.6 Human compositions could be simulated in earlier AI function synthesis by learning polynomial interpolations from manually composed music waveforms as training data (e.g SciPy interpolate() - https://docs.scipy.org/doc/scipy/reference/interpolate.html) and use a function of learnt interpolation polynomials as baseline for librosa.tone() signal synthesis.
+
+References:
+----------
+1305.7 Virtual instruments - Pianoteq Virtual Piano - https://www.modartt.com/pianoteq 
+1305.8 Python Music Synthesizer - https://mdoege.github.io/PySynth/
+1305.9 Tensorflow Magenta DDSP-VST Neural Music Synthesizer - https://magenta.tensorflow.org/ddsp-vst
+
+
