@@ -145,7 +145,7 @@ def audio_to_notes(audio, dur=None):
         print("Exception in librosa - hertz-to-note")
 
 
-def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True):
+def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=100):
     amplitude = np.iinfo(np.int16).max
     if function != None:
         print("###################################################")
@@ -166,11 +166,18 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
         else:
             #notes = [amplitude*eval(function) for x in range(0, samplerate*10)]
             notes = []
-            periodicity = 0
-            while periodicity < 10:
-                notes += list([amplitude*eval(function)
-                              for x in range(0, samplerate)])
-                periodicity += 1
+            points = []
+            x = 0
+            while x < periodicity:
+                points += list([amplitude*eval(function)])
+                print("points:",points)
+                for point in points:
+                    print("frequency:",point)
+                    signal = librosa.tone(point,duration=0.25)
+                    print("signal:",signal)
+                    for s in signal:
+                        notes.append(s*amplitude) 
+                x += 1
         npnotes = np.asarray(notes)
         #scalednpnotes = np.int16(npnotes/np.max(npnotes)*32767)
         scalednpnotes = npnotes
@@ -292,9 +299,9 @@ if __name__ == "__main__":
     # notes_to_audio(automaton=True)
     #notes_to_audio(function='(x*x+x+1) % 32767', fractal=False)
     #notes_to_audio(function='int(math.sin(x*x+x+1) * 32767)',fractal=False)
-    #notes_to_audio(function='5*(x*x-x) % 32767')
+    #notes_to_audio(function='5*(x*x-x) % 32767',fractal=False)
     #notes_to_audio(function='(300*math.sin(3*x) + 200*math.sin(2*x) + 100*math.sin(x))',fractal=False)
     #notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
-    notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(
-        0.5, 5, 20), fractal=False)
+    #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
+    notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
