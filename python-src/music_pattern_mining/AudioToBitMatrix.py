@@ -31,6 +31,8 @@ from scipy.stats import wasserstein_distance
 import sys
 import random
 import MinimumDescLength
+from scipy.interpolate import barycentric_interpolate 
+from collections import defaultdict
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
@@ -144,6 +146,66 @@ def audio_to_notes(audio, dur=None):
     except Exception as e:
         print("Exception in librosa - hertz-to-note")
 
+def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolation=True):
+    music_interpol_poly=[]
+    synthesized_poly=0
+    if polynomial_interpolation:
+        for music in training_music:
+           waveform, srate = librosa.load(music, duration=dur)
+           x_points = list(range(len(waveform))) 
+           print("x_points:",len(x_points))
+           y_points = waveform
+           print("y_points:",len(y_points))
+           #x = np.linspace(min(x_points),max(x_points),10)
+           #interpol = barycentric_interpolate(x_points,y_points,x)
+           interpol = polyfit(x_points,y_points,5) 
+           print("Interpolated polynomial learnt from music waveform:",interpol)
+           music_interpol_poly.append(interpol)
+        for interpol in music_interpol_poly:
+           synthesized_poly += interpol
+        synth_poly_string=""
+        degree=0
+        for monomial in synthesized_poly:
+            synth_poly_string += str(monomial*np.iinfo(np.int16).max) + "*math.pow(x,"+str(degree)+")+"
+            degree += 1
+        print("Synthesized music polynomial:",synth_poly_string)
+        notes_to_audio(function=synth_poly_string[:len(synth_poly_string)-1], fractal=False, periodicity=35)
+    else:
+        synth_notes=defaultdict()
+        synth_music=[]
+        minnoteslength=np.iinfo(np.int16).max
+        for music in training_music:
+            waveform, srate = librosa.load(music, duration=dur)
+            x_points = list(range(len(waveform))) 
+            print("x_points:",len(x_points))
+            y_points = waveform
+            print("y_points:",len(y_points))
+            freq = np.abs(librosa.stft(waveform))
+            try:
+                print("freq:",freq)
+                notes = librosa.hz_to_note(freq)
+                print("notes from hz_to_note():",len(notes))
+                synth_notes[music]=notes
+                if minnoteslength > len(notes):
+                    minnoteslength=len(notes)
+            except Exception as e:
+                print("Exception in librosa - hertz-to-note")
+                continue
+        iterations=int(minnoteslength/10)
+        print("iterations:",iterations)
+        for it in range(iterations):
+            randindex1=random.randint(0,len(training_music)-1)
+            randindex2=random.randint(0,len(training_music[randindex1])-1)
+            notes=synth_notes[training_music[randindex1]][randindex2]
+            randindex3=random.randint(0,len(notes)-1)
+            frequency=librosa.note_to_hz(notes[randindex3])
+            print("frequency:",frequency)
+            signal = librosa.tone(frequency,duration=1)
+            print("signal:",signal)
+            for s in signal:
+                synth_music.append(s*np.iinfo(np.int16).max) 
+        npsynth = np.asarray(synth_music)
+        write("function_synthesized_music.wav", samplerate, npsynth.astype(np.int16))
 
 def notes_to_audio(automaton=False, function=None, deterministic=True, samplerate=44100, fractal=True, periodicity=100):
     amplitude = np.iinfo(np.int16).max
@@ -304,4 +366,6 @@ if __name__ == "__main__":
     #notes_to_audio(function='((np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/720*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/1240*x) + (np.iinfo(np.int16).max/(1+x))*math.sin(2*3.1428/2400*x))', fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
     #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
-    notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
+    #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
+    music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],dur=10)
+
