@@ -19692,4 +19692,19 @@ References:
 1305.8 Python Music Synthesizer - https://mdoege.github.io/PySynth/
 1305.9 Tensorflow Magenta DDSP-VST Neural Music Synthesizer - https://magenta.tensorflow.org/ddsp-vst
 
-
+----------------------------------------------------------------------------------------------------------------------------
+1306. (THEORY and FEATURE) Intrinsic Merit of Music - AI Music Synthesis from Polynomials Learnt from training data - related to 3,110,1223,1224,1257,1258,1261,1305 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants - 12 September 2022
+---------------------------------------------------------------------------------------------------------------------------- 
+1306.1 AudioToBitMatrix.py has been updated to implement new function music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolation=True) which learns music (based on a boolean flag polynomial_interpolation) from training music waveforms by (*) interpolating training music to polynomials by polyfit() and computing a function over interpolated polynomials which is passed on to notes_to_audio() for synthesizing new music by tone() (*) or mapping training music waveforms to array of notes in CDEFGABC notation by hertz-to-notes and synthesizing signal frequencies (by random sampling) from training music notes collated to new music waveform by notes-to-hertz and tone()
+1306.2 Invocation of SciPy barycentric_interpolate() which is a recent advance in Lagrange interpolation and could be better than polyfit() has been commented due to slowdown. Function computed over polynomial interpolation of music waveforms is simple summation at present and could be arbitrary. Synthesis by random sampling of notes from training music waveforms is discrete version of continuous polynomial interpolation and randomness could be replaced by a predictable sampling function. Synthesized music earlier (random notes sampling especially) could be one of the 68 billion 12-note melodies (Section 1223.14)
+1306.3 Following are logs and synthesized music files from 2 compositions of JS Bach for both the clauses of synthesis - polynomial interpolation and randomly sampled notes:
+	python-src/music_pattern_mining/function_synthesized_music.wav
+	python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log.MusicSynthesizer.12September2022
+	python-src/music_pattern_mining/testlogs/AudioToBitMatrix.log2.MusicSynthesizer.12September2022
+	python-src/music_pattern_mining/testlogs/function_synthesized_music.interpolation.wav.xz
+	python-src/music_pattern_mining/testlogs/function_synthesized_music.random.wav.xz
+	
+References:
+----------
+1306.4 O(n) complexity Barycentric Interpolation improved over O(n^2) Lagrange interpolation - https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.barycentric_interpolate.html#scipy.interpolate.barycentric_interpolate and https://people.maths.ox.ac.uk/trefethen/barycentric.pdf
+1306.5 Polynomial Threshold Functions in terms of Polynomial Interpolations - Exact and Probabilistic polynomials - idea 1 and idea 2 - All Pairs Hamming Nearest Neighbours - [Ryan Williams (Stanford) Joint with Josh Alman (Stanford) and Timothy M. Chan (Waterloo)] - https://simons.berkeley.edu/sites/default/files/docs/6108/simons-threshold-polys-printing.pdf - Similarity of 2 music waveforms could be an all pairs Hamming nearest neighbours problem where sets A and B are music waveforms. 
