@@ -17,6 +17,7 @@
 # --------------------------------------------------------------------------------------------------------
 
 import librosa
+import librosa.display
 import math
 import numpy
 import matplotlib.pyplot as plt
@@ -128,25 +129,35 @@ def audio_features(signal_bitmap):
     return (hist, bin, times, onstrength, onset_frames)
 
 
-def audio_to_notes(audio, dur=None):
+def audio_to_notes(audio, dur=1, music="Carnatic",raaga="chitrambari"):
     print("###################################################")
     print("Audio to Notes")
     print("###################################################")
-    if dur is not None:
-        waveform, srate = librosa.load(audio, duration=dur)
+    waveform, srate = librosa.load(audio, duration=dur)
     print(("raw waveform:", waveform))
     music_polynomial = polyfit(list(range(len(waveform))), waveform, 5)
     print(("polynomial learnt from raw audio-music waveform:", music_polynomial))
     freq = np.abs(librosa.stft(waveform))
     print(("Frequencies:", freq))
     try:
-        notes = librosa.hz_to_note(freq)
-        print(("Notes:", notes))
-        return notes
+        if music == "Carnatic":
+            index = librosa.list_mela()
+            print(index)
+            notes = librosa.hz_to_svara_c(freq,Sa=66,mela=raaga)
+            print(("Carnatic Notes:", notes))
+            return notes
+        if music == "Hindustani":
+            notes = librosa.hz_to_svara_h(freq)
+            print(("Hindustani Notes:", notes))
+            return notes
+        else:
+            notes = librosa.hz_to_note(freq)
+            print(("Notes:", notes))
+            return notes
     except Exception as e:
         print("Exception in librosa - hertz-to-note")
 
-def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolation=True):
+def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False):
     music_interpol_poly=[]
     synthesized_poly=0
     if polynomial_interpolation:
@@ -158,9 +169,24 @@ def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolati
            print("y_points:",len(y_points))
            #x = np.linspace(min(x_points),max(x_points),10)
            #interpol = barycentric_interpolate(x_points,y_points,x)
-           interpol = polyfit(x_points,y_points,5) 
-           print("Interpolated polynomial learnt from music waveform:",interpol)
-           music_interpol_poly.append(interpol)
+           if not polyfeatures:
+                intpoly = polyfit(x_points,y_points,5) 
+           else:
+                spectra=np.abs(librosa.stft(waveform))
+                interpol=librosa.feature.poly_features(S=spectra,order=5)
+                fig, ax = plt.subplots(nrows=5, sharex=True, figsize=(8, 8))
+                times=librosa.times_like(interpol)
+                librosa.display.waveplot(waveform, srate, alpha=0.8)
+                ax[0].plot(times, interpol[0], label='order=5', alpha=0.8)
+                ax[1].plot(times, interpol[1], label='order=5', alpha=0.8)
+                ax[2].plot(times, interpol[2], label='order=5', alpha=0.8)
+                ax[3].plot(times, interpol[3], label='order=5', alpha=0.8)
+                ax[4].plot(times, interpol[4], label='order=5', alpha=0.8)
+                plt.show()
+                print("times:",len(times))
+                print("Librosa poly_features() - Interpolated Degree 5 polynomial learnt from music waveform:",interpol[4])
+                intpoly = polyfit(times,interpol[4],5) 
+           music_interpol_poly.append(intpoly)
         for interpol in music_interpol_poly:
            synthesized_poly += interpol
         synth_poly_string=""
@@ -169,7 +195,7 @@ def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolati
             synth_poly_string += str(monomial*np.iinfo(np.int16).max) + "*math.pow(x,"+str(degree)+")+"
             degree += 1
         print("Synthesized music polynomial:",synth_poly_string)
-        notes_to_audio(function=synth_poly_string[:len(synth_poly_string)-1], fractal=False, periodicity=35)
+        notes_to_audio(function=synth_poly_string[:len(synth_poly_string)-1], fractal=False, periodicity=100)
     else:
         synth_notes=defaultdict()
         synth_music=[]
@@ -231,14 +257,15 @@ def notes_to_audio(automaton=False, function=None, deterministic=True, samplerat
             points = []
             x = 0
             while x < periodicity:
-                points += list([amplitude*eval(function)])
+                points = [amplitude*eval(function)]
                 print("points:",points)
                 for point in points:
-                    print("frequency:",point)
-                    signal = librosa.tone(point,duration=0.25)
+                    print("frequency:",abs(point))
+                    signal = librosa.tone(abs(point),duration=0.25)
                     print("signal:",signal)
+                    print("length of signal:",len(signal))
                     for s in signal:
-                        notes.append(s*amplitude) 
+                        notes.append(amplitude*s) 
                 x += 1
         npnotes = np.asarray(notes)
         #scalednpnotes = np.int16(npnotes/np.max(npnotes)*32767)
@@ -368,4 +395,5 @@ if __name__ == "__main__":
     #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
     music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],dur=10)
+    audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4", dur=10, music="Carnatic")
 
