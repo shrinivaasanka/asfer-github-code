@@ -19728,3 +19728,26 @@ References:
 ----------
 1307.5 Chapter 4: The Synthesis of Sound by Computer -  Section 4.6 - Waveshaping - http://sites.music.columbia.edu/cmc/MusicAndComputers/chapter4/04_06.php - Chebyshev polynomial waveshaper - "... Mathematicians like them for lots of different reasons, but computer musicians like them because they can be used to make weird noises, er, we mean music. These Chebyshev polynomials have the property that if you input a sine wave of amplitude 1.0, you get out a sine wave whose frequency is N times the frequency of the input wave. So, they are like frequency multipliers. If the amplitude of the input sine wave is less than 1.0, then you get a complex mix of harmonics. Generally, the lower the amplitude of the input, the lower the harmonic content. This gives musicians a single number, sometimes called the distortion index, that they can tweak to change the harmonic content of a sound..."
 1307.6 Chapter 4: The Synthesis of Sound by Computer -  Section 4.2 - Additive Synthesis - http://musicandcomputersbook.com/chapter4/04_02.php
+
+----------------------------------------------------------------------------------------------------------------------------
+1308. (THEORY and FEATURE) Intrinsic Merit of Music - Virtual Piano Implementation and Music Synthesis from 12-notes octave - 16 September 2022 - related to 3,110,1223,1224,1257,1258,1261,1305,1306,1307 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants 
+---------------------------------------------------------------------------------------------------------------------------- 
+1308.1 AudioToBitMatrix.py has been updated to import IPython.display, mir_eval.sonify and playsound python3.7 packages. Function  music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None) has been updated to implement a new clause for Virtual Piano Music Synthesizer implementation based on notes passed on to it through virtual_piano_notes. Notes based synthesis is more human than polynomial interpolation and strings of notes alphabets could be programmatically churned out. 
+1308.2 Notes from virtual_piano_notes in usual CDEFGABC 12-note Piano notation [C, C-Sharp (D-Flat), D, D-sharp (E-Flat), E, F, F-Sharp (G-Flat), G, G-Sharp (A-Flat), A, A-Sharp (B-Flat), and B] are converted to frequency domain by note_to_hz() and signals are synthesized from them iteratively by librosa.tone(). Synthesized music is written to separate WAV file virtual_piano_music.wav and plotted as waveform by waveshow() - commented at present. Invocation of mir_eval.sonify.pitch_contour(librosa.times_like(freq),freq,samplerate,amplitudes=amps) has also been commented which is a music synthesizer similar to librosa.tone().
+1308.3 New function all_12notes_melodies() randomly and iteratively chooses a set of notes from concatenation of 12 notes in C-major,A-minor,... (totalling 60 notes) formats by numpy.random.choice() and music_synthesis() is invoked on those to synthesize piano music - For Example following set of notes are programmatically created and synthesizer earlier is a DFA state machine over notes alphabet:
+	virtual piano notes: ['F♯' 'E' 'F' 'D♯' 'F♯' 'A𝄫' 'G' 'C♯' 'D' 'F' 'F𝄪' 'A♯' 'E' 'G' 'G' 'D'
+	 'G♯' 'B' 'B♯' 'E♯' 'A♯' 'G' 'A♯' 'D' 'F♯' 'D' 'D' 'A' 'F♯' 'D' 'A♯' 'B'
+ 	'F♯' 'A♯' 'B' 'F♯' 'G♯' 'C' 'E♯' 'B' 'A' 'A♯' 'C' 'G♯' 'E' 'E♭' 'A♯' 'G♯'
+ 	'A♯' 'C' 'D' 'F♯' 'E' 'D♯' 'D♯' 'D♯' 'G♯' 'D♯' 'B' 'A♯' 'C♯' 'D♯' 'A♯'
+ 	'E' 'E' 'D♯' 'A♯' 'E♭' 'D' 'F' 'A♯' 'C♭' 'B' 'B𝄫' 'G' 'E♯' 'E' 'G' 'C♯'
+ 	'G♯' 'G♯' 'G' 'D' 'D♯' 'C♯' 'A' 'D' 'E' 'D♯' 'C♯' 'D' 'D' 'G♯' 'G♯' 'C♯'
+ 	'F' 'A♯' 'A' 'B' 'E']
+1308.4 Logs testlogs/AudioToBitMatrix.log.16September2022 capture following invocations: 
+    all_12notes_melodies(iterations=2,number_of_notes=100)
+    music_synthesis(virtual_piano_notes=['A','a','B','B','b','b','C','D','E','B','C','E','E','e','F','f','C','d','d','d','g','g','g'])
+1308.5 Function all_12notes_melodies() essentially captures the notion of "Music discovery" or "No music is new" enshrined in 68-billion melodies algorithm of 1223.13. For earlier 100 notes (based on 60 repetitive notes) long synthesis possible melodies are 60^100.
+
+References:
+----------
+1308.6 mir_eval sonify pitch_contour() - https://craffel.github.io/mir_eval/#module-mir_eval.sonify
+1308.7 Piano 101 - https://www.europianosnaples.com/piano-keys-101/
