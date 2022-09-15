@@ -34,9 +34,17 @@ import random
 import MinimumDescLength
 from scipy.interpolate import barycentric_interpolate 
 from collections import defaultdict
+from IPython.display import Audio
+import mir_eval.sonify
+from playsound import playsound
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 
+def all_12notes_melodies(iterations=10,number_of_notes=10):
+    twelvenotes=librosa.key_to_notes("C:maj") + librosa.key_to_notes("A:min") + librosa.key_to_notes("A#:min") + librosa.key_to_notes("G#:maj") + librosa.key_to_notes("Fb:min")
+    for it in range(iterations):
+        randnotes = np.random.choice(twelvenotes, number_of_notes)
+        music_synthesis(virtual_piano_notes=randnotes)
 
 def audio_to_bitmatrix(audio, dur=None, binary=False):
     bitmap = []
@@ -125,9 +133,7 @@ def audio_features(signal_bitmap):
     onset_frames = librosa.onset.onset_detect(
         onset_envelope=onstrength, sr=signal_bitmap[2])
     print(("Notes onsets occur at:", onset_frames))
-
     return (hist, bin, times, onstrength, onset_frames)
-
 
 def audio_to_notes(audio, dur=1, music="Carnatic",raaga="chitrambari"):
     print("###################################################")
@@ -157,9 +163,40 @@ def audio_to_notes(audio, dur=1, music="Carnatic",raaga="chitrambari"):
     except Exception as e:
         print("Exception in librosa - hertz-to-note")
 
-def music_synthesis(training_music,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False):
+def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None):
     music_interpol_poly=[]
     synthesized_poly=0
+    if training_music is None and virtual_piano_notes is not None:
+        print("virtual piano notes:",virtual_piano_notes)
+        freq=librosa.note_to_hz(virtual_piano_notes)
+        print("freq:",freq)
+        #audio=mir_eval.sonify.pitch_contour(librosa.times_like(freq),freq,samplerate,amplitudes=amps)
+        audio=[]
+        for fq in freq:
+            print("frequency:",abs(fq))
+            signal = librosa.tone(abs(fq),duration=0.25)
+            print("signal:",signal)
+            #amps=np.arange(len(signal))
+            #amps.fill(2*np.iinfo(np.int16).max)
+            #signal=mir_eval.sonify.pitch_contour(librosa.times_like(signal),signal,samplerate/100,amplitudes=amps)
+            print("length of signal:",len(signal))
+            #print("length of amplitudes:",len(amps))
+            n=0
+            amps=np.arange(len(signal))
+            amps.fill(2*np.iinfo(np.int16).max)
+            #amps=np.iinfo(np.int16).max*2*np.random.random_sample(len(signal))
+            for s in signal:
+                 audio.append(amps[n]*s) 
+                 n +=1
+        audio=np.asarray(audio)
+        #print("Synthesized audio:",audio)
+        plt.figure(figsize=(14, 5))
+        write("virtual_piano_music.wav", samplerate, audio.astype(np.int16))
+        playsound("virtual_piano_music.wav")
+        waveform, srate = librosa.load("virtual_piano_music.wav")
+        #librosa.display.waveshow(waveform)
+        #plt.show()
+        return
     if polynomial_interpolation:
         for music in training_music:
            waveform, srate = librosa.load(music, duration=dur)
@@ -394,6 +431,7 @@ if __name__ == "__main__":
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
     #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
-    music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],dur=10)
-    audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4", dur=10, music="Carnatic")
-
+    #music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],dur=10)
+    all_12notes_melodies(iterations=2,number_of_notes=100)
+    music_synthesis(virtual_piano_notes=['A','a','B','B','b','b','C','D','E','B','C','E','E','e','F','f','C','d','d','d','g','g','g'])
+    #music_synthesis(virtual_piano_notes=audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",music="WesternClassical")[0])
