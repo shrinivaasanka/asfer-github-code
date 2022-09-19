@@ -19753,3 +19753,14 @@ References:
 1308.7 Piano 101 - https://www.europianosnaples.com/piano-keys-101/
 1308.8 Python Mingus Music Library - http://bspaans.github.io/python-mingus/index.html
 1308.9 Python Piano - https://pypi.org/project/pypiano/
+
+----------------------------------------------------------------------------------------------------------------------------------------
+1309. (THEORY and FEATURE) Intrinsic Merit of Music - Virtual Piano Implementation and Music Synthesis from 12-notes octave - Correction to Frequencies - 19 September 2022 - related to 3,110,1223,1224,1257,1258,1261,1305,1306,1307,1308 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants
+----------------------------------------------------------------------------------------------------------------------------------------
+1309.1 New dictionary piano_notes mapping 12-note octave to frequencies has been introduced to correct the signal synthesis by tone() so that it matches Piano music: 
+piano_notes={'A':440,'B':493.89,'C':261.63,'D':293.67,'E':329.63,'F':349.23,'G':392,'a':466.17,'c':227.18,'d':311.13,'f':370,'g':415.31}
+1309.2 Function all_12notes_melodies(iterations=10,number_of_notes=10,keynotes=88,tempo=0.25) has been changed to add clauses and parameters - keynotes and tempo - which respectively define number of keys (88 or 12) to form octave basis and tempo of music synthesized (duration per note).
+1309.3 New function get_piano_frequencies(virtual_piano_notes) returns the array of frequencies for piano notes sequence passed on to it by lookup of piano_notes dictionary earlier.
+1309.4 Function music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096) has been changed to include amplitude as parameter set to 4096 as default, tempo as parameter for librosa.tone() and replace note_to_hz() by get_piano_frequencies() as note_to_hz() produces different values simulating a drumbeat.
+1309.5 Following notes for "Twinkle Twinkle Little Star" have been synthesized in Virtual Piano and written to virtual_piano_music.wav :
+    music_synthesis(virtual_piano_notes=['C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C','C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C'],tempo=1)
