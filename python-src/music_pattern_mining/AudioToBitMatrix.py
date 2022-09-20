@@ -39,18 +39,29 @@ import mir_eval.sonify
 from playsound import playsound
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
-piano_notes={'A':440,'B':493.89,'C':261.63,'D':293.67,'E':329.63,'F':349.23,'G':392,'a':466.17,'c':227.18,'d':311.13,'f':370,'g':415.31}
+piano_notes={"WesternClassical":{'A':440,'B':493.89,'C':261.63,'D':293.67,'E':329.63,'F':349.23,'G':392,'a':466.17,'c':227.18,'d':311.13,'f':370,'g':415.31},"Carnatic":{'S':240, 'R₁':254.27, 'R₂':269.39, 'R₃':275,'G₁':285.41, 'G₂':302.38, 'G₃':311, 'M₁':320.36, 'M₂':339.41, 'P':359.60, 'D₁':380.98, 'D₂':403.63, 'D₃':415, 'N₁':425,'N₂':453.06, 'N₃':480}}
 
-def all_12notes_melodies(iterations=10,number_of_notes=10,keynotes=88,tempo=0.25):
+
+def all_12notes_melodies(iterations=10,number_of_notes=10,keynotes=88,tempo=0.25,musicgenre="WesternClassical"):
     global piano_notes
     if keynotes==88:
         twelvenotes=librosa.key_to_notes("C:maj") + librosa.key_to_notes("A:min") + librosa.key_to_notes("A#:min") + librosa.key_to_notes("G#:maj") + librosa.key_to_notes("Fb:min")
     if keynotes==12:
-        twelvenotes=list(piano_notes.keys())
+        twelvenotes=list(piano_notes[musicgenre].keys())
     print("twelvenotes:",twelvenotes)
-    for it in range(iterations):
-        randnotes = np.random.choice(twelvenotes, number_of_notes)
-        music_synthesis(virtual_piano_notes=randnotes,tempo=tempo)
+    if musicgenre=="Carnatic":
+        notes=[]
+        for m in range(1,72):
+            melanotes = np.asarray(librosa.mela_to_svara(m))
+            for n in melanotes:
+                notes.append(n)
+        print("Carnatic notes:",notes)
+        randnotes = np.random.choice(notes,number_of_notes) 
+        music_synthesis(virtual_piano_notes=randnotes,tempo=tempo,musicgenre="Carnatic")
+    if musicgenre=="WesternClassical":
+        for it in range(iterations):
+            randnotes = np.random.choice(twelvenotes, number_of_notes)
+            music_synthesis(virtual_piano_notes=randnotes,tempo=tempo,musicgenre=musicgenre)
 
 def audio_to_bitmatrix(audio, dur=None, binary=False):
     bitmap = []
@@ -169,20 +180,20 @@ def audio_to_notes(audio, dur=1, music="Carnatic",raaga="chitrambari"):
     except Exception as e:
         print("Exception in librosa - hertz-to-note")
 
-def get_piano_frequencies(virtual_piano_notes):
+def get_piano_frequencies(virtual_piano_notes,genre="WesternClassical"):
     global piano_notes
     piano_freq=[]
     for n in virtual_piano_notes:
-        piano_freq.append(piano_notes[n])
+        piano_freq.append(piano_notes[genre][n])
     return piano_freq
 
-def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096):
+def music_synthesis(training_music=None,dur=5,samplerate=44100,polynomial_interpolation=True,polyfeatures=False,virtual_piano_notes=None,tempo=1,amplitude=4096,musicgenre="WesternClassical"):
     music_interpol_poly=[]
     synthesized_poly=0
     if training_music is None and virtual_piano_notes is not None:
         print("virtual piano notes:",virtual_piano_notes)
         #freq=librosa.note_to_hz(virtual_piano_notes)
-        freq=get_piano_frequencies(virtual_piano_notes)
+        freq=get_piano_frequencies(virtual_piano_notes,genre=musicgenre)
         print("freq:",freq)
         #audio=mir_eval.sonify.pitch_contour(librosa.times_like(freq),freq,samplerate,amplitudes=amps)
         audio=[]
@@ -448,7 +459,7 @@ if __name__ == "__main__":
     #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
     #music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],dur=10)
-    #all_12notes_melodies(iterations=5,number_of_notes=100,keynotes=12,tempo=0.25)
+    all_12notes_melodies(iterations=5,number_of_notes=100,keynotes=12,tempo=0.5,musicgenre="Carnatic")
     #Twinkle Twinkle Little Star
-    music_synthesis(virtual_piano_notes=['C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C','C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C'],tempo=1)
+    #music_synthesis(virtual_piano_notes=['C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C','C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C'],tempo=1)
     #music_synthesis(virtual_piano_notes=audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",music="WesternClassical")[0])
