@@ -19783,3 +19783,31 @@ References:
 -----------
 1310.6 12 notes in Carnatic,Western and Hindustani - https://ccrma.stanford.edu/~arvindh/cmt/the_12_notes.html
 1310.7 Closure Properties of Regular Languages - http://infolab.stanford.edu/~ullman/ialc/spr10/slides/rs2.pdf
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+1311. (THEORY and FEATURE) Intrinsic Merit of Music - Deep Learnt Automata and Music Synthesis - a Boolean Composition and Learning Theory perspective - 21 September 2022 - related to 3,110,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition
+----------------------------------------------------------------------------------------------------------------------------------------- 
+1311.1 Following example is a walkthrough of how a Music Synthesis based on Convolution Neural Network might look like and how formal language models and Boolean function composition might play a key role as Convolution Kernels in Hidden Layer and Maxpooling Layer of CNN, causing a merger of Boolean Function Composition, Computational Learning Theory and Machine Learning.
+1311.2 For 7 music waveforms of 7 notes each following is an input 2D matrix of 7*7=49 notes in CDEFGABC notation:
+				C-D-E-F-G-A-B
+				F-D-C-F-D-A-D
+				C-F-E-G-D-A-B
+				F-F-E-F-G-A-D
+				C-C-E-F-G-G-B
+				F-D-E-F-G-D-B
+				F-D-E-F-G-D-D
+1311.3 For simplistic 1 Convolution Layer Kernel (which is a Majority function returning majority note in receptive field window of 3*3) of Stride=3 (window jumps 3 elements per entry) and 1 Max Pooling Layer (also a Majority function) - Majority() returns lexicographically maximum note in case of tie:
+			Convolution Layer for input music earlier - Hidden (Majority function as Convolution Kernel)
+			 	C-A-B
+				F-G-B
+				F-G-D
+			Maxpooling Layer (Majority as maximum function)
+				G
+returning G as the most prominent note in 7*7 input 2D music matrix earlier. For massive input matrices, earlier convolution scales to millions of notes learnt in Maxpooling layer. Choice of Majority function earlier is only an example of how deep structure could be learnt (Usually convolution map kernels are bit matrices and convolution layer is computed by linear algebra of input and convolution kernel) and could be replaced by an arbitrary finite state automata learner per stride which replaces each entry of convolution layer matrix by an automaton learnt from receptive field window alphabets. Maxpooling layer likewise could be any of closure operator on automata (Union, Intersection, Difference,Concatenation, Kleene Closure, Reversal, Homomorphism, Inverse Homomorphism) in convolution layer. 
+1311.4 It is obvious that earlier choice of majority function for convolution kernel layer and maxpooling layer indirectly implements a function composition of Majority of Majorities or Depth-2 majority. Replacement of Convolution Kernel and Maxpooling Layer by Automata Learners gives birth to a hybrid Deep Learner of Automata blending the power of Deep Learning, Function composition and Computational Learning Theory in one. 
+1311.5 Music waveforms could be learnt by simple CNN implementation in NeuronRain - python-src/DeepLearning_ConvolutionNetwork_BackPropagation.py  by encoding notes to numeric frequencies in input matrix - which implements 1 Convolution Layer of 3 Kernels and 1 Maxpooling layer of 3 Kernels finally flattened and learnt by Perceptron BackPropagation. Massive Music waveform datasets require on-chip implementations of Deep Learning as input could be a million * million notes matrix.
+
+References:
+----------
+1311.6 Learning and Extracting Finite State Automata with Second-Order Recurrent Neural Networks - https://clgiles.ist.psu.edu/pubs/NC1992-recurrent-NN.pdf and https://direct.mit.edu/neco/article-abstract/4/3/393/5641/Learning-and-Extracting-Finite-State-Automata-with?redirectedFrom=fulltext
+1311.7 Convolution Neural Networks - Graphic Illustrations - https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
