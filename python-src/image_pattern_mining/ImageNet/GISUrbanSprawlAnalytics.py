@@ -82,22 +82,27 @@ def learn_polya_urn_growth_weights(ncolorsegments_date1,ncolorsegments_date2):
 def polya_urn_urban_growth_model(image,ncoloredsegments,segmentedgis,iterations=1000,replicationweights=None):
     img=cv2.imread(image)
     print("img shape:",img.shape)
+    totalareabefore=0
     for newsegment in range(len(segmentedgis[8][0]) - 1):
         (cx,cy),radius=cv2.minEnclosingCircle(segmentedgis[8][0][newsegment])
+        contourarea = cv2.contourArea(segmentedgis[8][0][newsegment])
         center=(int(cx),int(cy))
         #print("polya_urn_urban_growth_model() - contour center:",center)
         if center[0] < img.shape[0] and center[1] < img.shape[1]:
             contourcolor=img[center[0],center[1]]
             #print("polya_urn_urban_growth_model() - contour color:",contourcolor)
             randomcolorbin=ncoloredsegments[sum(contourcolor)]
-            randomcolorbin.append("s"+str(newsegment))
+            randomcolorbin.append(("s"+str(newsegment),contourarea))
     print("Urban sprawl segments before Polya Urn Growth for ",image,":")
     print("==============================================")
     totalsegmentsbefore=0
     for color,segments in ncoloredsegments.items():
         print("color ",color,":",len(segments))
         totalsegmentsbefore += len(segments)
+        for segment in segments:
+            totalareabefore += segment[1]
     print("Total number of segments before Polya Urn Urban Growth:",totalsegmentsbefore)
+    print("Total number of segments after Polya Urn Urban Growth:",totalareabefore)
     colors=list(ncoloredsegments.keys())
     for n in range(iterations):
         randomcolor=random.randint(0,len(colors)-1)
@@ -115,11 +120,16 @@ def polya_urn_urban_growth_model(image,ncoloredsegments,segmentedgis,iterations=
     print("Urban sprawl segments after Polya Urn Growth for ",image,":")
     print("==============================================")
     totalsegmentsafter=0
+    totalareaafter=0
     for color,segments in ncoloredsegments.items():
         print("color ",color,":",len(segments))
         totalsegmentsafter += len(segments)
+        for segment in segments:
+            totalareaafter += segment[1]
     print("Total number of segments after Polya Urn Urban Growth:",totalsegmentsafter)
-    print("Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model:",(totalsegmentsafter-totalsegmentsbefore)*100/totalsegmentsbefore)
+    print("Total Urban sprawl area after Polya Urn Urban Growth:",totalareaafter)
+    print("Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of segments):",(totalsegmentsafter-totalsegmentsbefore)*100/totalsegmentsbefore)
+    print("Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of total area):",(totalareaafter-totalareabefore)*100/totalareabefore)
     return ncoloredsegments
 
 def urbansprawl_gini_coefficient(urbansprawldata):
@@ -456,7 +466,7 @@ if __name__ == "__main__":
     seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
     ncoloredsegments_2019=polya_urn_urban_growth_model("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",ncoloredsegments_2019,seg12)
     #urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=False,number_of_clusters=3,maxiterations=3)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2019.keys())," colored urban sprawl segmentation (2019):",ncoloredsegments_2019)
+    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2019.keys())," colored urban sprawl segmentation (Projection based on R2019A):",ncoloredsegments_2019)
     print("===========================================================================================")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
@@ -482,11 +492,13 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
     #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
+    urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization")
     ncoloredsegments_2022=defaultdict(list)
     seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
     ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14)
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",seg14,voronoi_delaunay=False,number_of_clusters=3,maxiterations=3)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (2022):",ncoloredsegments_2022)
+    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A):",ncoloredsegments_2022)
     print("===========================================================================================")
     repweights=learn_polya_urn_growth_weights(ncoloredsegments_2019,ncoloredsegments_2022)
     ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
+    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
