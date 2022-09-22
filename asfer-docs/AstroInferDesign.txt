@@ -19811,3 +19811,59 @@ References:
 ----------
 1311.6 Learning and Extracting Finite State Automata with Second-Order Recurrent Neural Networks - https://clgiles.ist.psu.edu/pubs/NC1992-recurrent-NN.pdf and https://direct.mit.edu/neco/article-abstract/4/3/393/5641/Learning-and-Extracting-Finite-State-Automata-with?redirectedFrom=fulltext
 1311.7 Convolution Neural Networks - Graphic Illustrations - https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+
+-----------------------------------------------------------------------------------------------------------------------------
+1312. (THEORY and FEATURE)  GIS Urban Sprawl Analytics - Polya Urn Urban Growth Model - Urban sprawl area computation - 22 September 2022 - related to 1174,1175,1177,1179,1194,1211,1234,1290,1291,1292,1295,1296,1297,1301,1304 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, MARA (Multiple Agent Resource Allocation) Facegraph walk coloring DNFSAT algorithm, Preferential Attachment, Fixed Parameter Tractability-Kernelization
+------------------------------------------------------------------------------------------------------------------------------
+1312.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to compute total area of urban sprawl before and after Polya Urn UGM expansion simulation by sum of contour areas (cv2.contourArea()). Area computation reflects percentage growth of urban sprawl better than number of contour segments.
+1312.2 Poly Urn contents are now tuples of the form (<colored_segment>,<contour_area>) for facilitating area computation.
+1312.3 Function urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization") has been invoked for computing Degree of Urbanization of Chennai Metropolitan Area for R2019A dataset from R2019A GHS-SMOD DEGURBA GeoTIFF raster testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif. There is no visual explorer available for R2019A GHS-SMOD as datasets have been replaced by R2022A and Polya Urn UGM has to be populated from settlement classes of the raster pixels instead of contour segments (classes listed in 1312.7). Following are some examples of classes printed from raster for bounding box coordinates: 
+Degree of Urbanization from raster: [array([30], dtype=int16)]
+Degree of Urbanization from raster: [array([30], dtype=int16)]
+Degree of Urbanization from raster: [array([10], dtype=int16)]
+Degree of Urbanization from raster: [array([12], dtype=int16)]
+Degree of Urbanization from raster: [array([12], dtype=int16)]
+Degree of Urbanization from raster: [array([23], dtype=int16)]
+Degree of Urbanization from raster: [array([21], dtype=int16)]
+Degree of Urbanization from raster: [array([21], dtype=int16)]
+Degree of Urbanization from raster: [array([13], dtype=int16)]
+Degree of Urbanization from raster: [array([13], dtype=int16)]
+Degree of Urbanization from raster: [array([12], dtype=int16)]
+Degree of Urbanization from raster: [array([11], dtype=int16)]
+1312.4 Dimensions of the longitude-latitude bounding box have been expanded to match R2022A GHS-SMOD Degree of Urbanization imagery.
+1312.5 Following are Polya Urn UGM projections for Chennai Metropolitan Area (difference in projections with and without learnt replacement matrix is noticeable):
+-----------------------------------------------------------------------------------
+R2019A (future projection based on 2019 data - without learnt replacement matrix):
+-----------------------------------------------------------------------------------
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of segments): 24.668275030156817
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of total area): 4.0728209942696205
+-----------------------------------------------------------------------------------
+R2022A (future projection based on 2022 data - without learnt replacement matrix):
+-----------------------------------------------------------------------------------
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of segments): 95.9780621572212
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of total area): 43.19988994359609
+--------------------------------------------------------------------------------
+R2022A (future projection based on 2022 data - with learnt Replacement matrix):
+--------------------------------------------------------------------------------
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of segments): 90.67325509573811
+Percentage growth of urban sprawl simulated by Polya Urn Urban Growth Model (in terms of total area): 112.80220836963039 (<- 112% growth projected by learning contour segment replacement - replication weights - from 3 years trend between 2019-2022 as against 43% without learning in previous trial)
+
+References and Commentaries:
+----------------------------
+1312.6 GHSL R2019A Degree of Urbanization - GHS-SMOD Dataset - https://ghsl.jrc.ec.europa.eu/ghs_smod2019.php - GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif
+1312.7 Legend for GHSL GHS SMOD Degree of Urbanization settlement classes - Urban centre(city), Urban cluster(metro), Peri-urban, Rural, Water - https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1637939855 - "...  The settlement grid at level 2 represents these definitions on a single layer grid. Each pixel is classified using the following set of codes (classes) and rules (Table 7):
+— Class 30: “Urban Centre grid cell”, if the cell belongs to an Urban Centre spatial entity;
+— Class 23: “Dense Urban Cluster grid cell”, if the cell belongs to a Dense Urban Cluster spatial entity;
+— Class 22: “Semi-dense Urban Cluster grid cell”, if the cell belongs to a Semi-dense Urban Cluster
+spatial entity;
+— Class 21: “Suburban or per-urban grid cell”, if the cell belongs to an Urban Cluster cells at first
+hierarchical level but is not part of a Dense or Semi-dense Urban Cluster;
+— Class 13: “Rural cluster grid cell”, if the cell belongs to a Rural Cluster spatial entity;
+— Class 12: “Low Density Rural grid cell”, if the cell is classified as Rural grid cells at first hierarchical
+level, has more than 50 inhabitant and is not part of a Rural Cluster;
+— Class 11: “Very low density rural grid cell”, if the cell is classified as Rural grid cells at first hierarchical
+level, has less than 50 inhabitant and is not part of a Rural Cluster;
+— Class 10: “Water grid cell”, if the cell has 0.5 share covered by permanent surface water and is not
+populated nor built. ..." 
+1312.8 Table 8 of Logical Formulae for settlement topologies in https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1637939855 - could be used directly within DNFSAT MARA for urban sprawl interior (infill) growth - e.g Class 30 is specified by clause (((Pdens ∨ Bdens) ∧ Tcon) ∧ Pmin) ∨ [iterative_median_filter(3-by-3)] ∨ [gap_fill(<15km2)]. It has to be noted that maximizing the number of satisfying Arithmetic Progression n-colored walks on urban sprawl facegraphs specified by DNFSAT MARA in 1177 is a DNFMAXSAT (conjugate of NP-Hard CNFMAXSAT) problem shown to be W[1] Fixed Parameter Tractable - https://arxiv.org/pdf/1511.05546.pdf - where W[i] is the Weft number i = number of large gates in path from input to output gates of the combinatorial circuit for the algorithm. Simple DNFSAT is trivially in P as it is sufficient to satisfy one clause.
+1312.9 Fundamentals of Parameterized Complexity - [Downey-Fellows] - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2729&rep=rep1&type=pdf
