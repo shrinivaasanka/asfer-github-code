@@ -159,6 +159,22 @@ def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawl_gini_coefficient(urbansprawlstatistics)
     return urbansprawlstatistics
 
+def compare_raster_data(raster1data,raster2data):
+    raster1hist=defaultdict(int)
+    raster2hist=defaultdict(int)
+    for r1 in raster1data:
+        raster1hist[r1[0]] += 1
+    for r2 in raster2data:
+        raster2hist[r2[0]] += 1
+    print("compare_raster_data(): raster1hist = ",raster1hist)
+    print("compare_raster_data(): raster2hist = ",raster2hist)
+    for k1,v1 in raster1hist.items():
+        try:
+            percentagedifference = ((v1-raster2hist[k1])/v1)*100
+            print("Percentage change in ",k1,":",percentagedifference)
+        except:
+            print("Exception in raster histogram dictionary lookup")
+
 def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
     print("===================="+geotifffile+"=====================")
     longlatpolygons=[]
@@ -462,12 +478,13 @@ if __name__ == "__main__":
     #print("Polya Urn Urban Growth Model for 4 colored urban sprawl segmentation:",fourcoloredsegments)
     #seg11=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg")
     #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaTransitNetwork_GoogleMaps_20May2022.jpg",seg11,100000,sqkmtocontourarearatio=mapscale,legend=None,voronoi_delaunay=True)
-    ncoloredsegments_2019=defaultdict(list)
-    seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
-    ncoloredsegments_2019=polya_urn_urban_growth_model("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",ncoloredsegments_2019,seg12)
+
+    #ncoloredsegments_2019=defaultdict(list)
+    #seg12=ImageGraph_Keras_Theano.image_segmentation("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg")
+    #ncoloredsegments_2019=polya_urn_urban_growth_model("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",ncoloredsegments_2019,seg12)
     #urban_sprawl_from_segments("testlogs/GHSL_GIS_ChennaiMetropolitanArea.jpg",seg12,voronoi_delaunay=False,number_of_clusters=3,maxiterations=3)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2019.keys())," colored urban sprawl segmentation (Projection based on R2019A):",ncoloredsegments_2019)
-    print("===========================================================================================")
+    #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2019.keys())," colored urban sprawl segmentation (Projection based on R2019A):",ncoloredsegments_2019)
+    #print("===========================================================================================")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_70_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_80_general-v1.5.tif")
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_0_lon_90_general-v1.5.tif")
@@ -492,13 +509,17 @@ if __name__ == "__main__":
     #translate_geotiff_to_jpeg("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
     #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
-    urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization")
-    ncoloredsegments_2022=defaultdict(list)
-    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
-    ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14)
+
+    r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
+    r2data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    compare_raster_data(r1data,r2data)
+    
+    #ncoloredsegments_2022=defaultdict(list)
+    #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
+    #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14)
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",seg14,voronoi_delaunay=False,number_of_clusters=3,maxiterations=3)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A):",ncoloredsegments_2022)
-    print("===========================================================================================")
-    repweights=learn_polya_urn_growth_weights(ncoloredsegments_2019,ncoloredsegments_2022)
-    ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
-    print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
+    #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A):",ncoloredsegments_2022)
+    #print("===========================================================================================")
+    #repweights=learn_polya_urn_growth_weights(ncoloredsegments_2019,ncoloredsegments_2022)
+    #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
+    #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
