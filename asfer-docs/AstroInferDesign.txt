@@ -19868,3 +19868,40 @@ populated nor built. ..."
 1312.8 Table 8 of Logical Formulae for settlement topologies in https://ghsl.jrc.ec.europa.eu/documents/GHSL_Data_Package_2019.pdf?t=1637939855 - could be used directly within DNFSAT MARA for urban sprawl interior (infill) growth - e.g Class 30 is specified by clause (((Pdens ∨ Bdens) ∧ Tcon) ∧ Pmin) ∨ [iterative_median_filter(3-by-3)] ∨ [gap_fill(<15km2)]. It has to be noted that maximizing the number of satisfying Arithmetic Progression n-colored walks on urban sprawl facegraphs specified by DNFSAT MARA in 1177 is a DNFMAXSAT (conjugate of NP-Hard CNFMAXSAT) problem shown to be W[1] Fixed Parameter Tractable - https://arxiv.org/pdf/1511.05546.pdf - where W[i] is the Weft number i = number of large gates in path from input to output gates of the combinatorial circuit for the algorithm. Simple DNFSAT is trivially in P as it is sufficient to satisfy one clause.
 1312.9 Fundamentals of Parameterized Complexity - [Downey-Fellows] - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.456.2729&rep=rep1&type=pdf
 1312.10 ABSDNFSAT and MAXDNFSAT - W[1] FPT-Hardness - https://drops.dagstuhl.de/opus/volltexte/2022/16172/pdf/LIPIcs-SWAT-2022-12.pdf
+
+------------------------------------------------------------------------------------------------------------------------------
+1313. (THEORY and FEATURE) GIS Urban Sprawl Analytics - Comparison of Raster Data Bounding Boxes between 2 dates - 23 September 2022 - related to 1174,1175,1177,1179,1194,1211,1234,1290,1291,1292,1295,1296,1297,1301,1304,1312 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, MARA (Multiple Agent Resource Allocation) Facegraph walk coloring DNFSAT algorithm, Preferential Attachment, Fixed Parameter Tractability-Kernelization
+------------------------------------------------------------------------------------------------------------------------------
+1313.1 New function compare_raster_data(raster1data,raster2data) computes dictionary histograms from longitude-latitude rectangle bounding boxes data returned by urban_sprawl_from_raster() for 2 GeoTIFF Rasters of 2 time points belonging to same genre. Two Rasters of same datatype (e.g Degree of Urbanization - R2019A and R2022A) are separated by time duration which could be in years. This kind of comparison has no assumption on scale of imagery as same longitude-latitudes are taken into account.
+1313.2 Contents of 2 Dictionary histograms are iterated and percentage change of each bin is printed (as 100*(earlierdate - laterdate)/earlierdate) - Negative percentages imply expansion and Positive percentages imply contraction. Following 2 rasters from GHSL SMOD R2019A and R2022A are compared for change in urbanization between Chennai Metropolitan Sprawl Bounding Boxes of same dimensions and ordinates separated by 3 years:
+    r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
+    r2data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    compare_raster_data(r1data,r2data)
+1313.3 Findings of compare_raster_data() from python-src/image_pattern_mining/ImageNet/testlogs/GISUrbanSprawlAnalytics.log.23September2022 for R2019A and R2022A earlier in a nutshell (changes of class pixels as per 1312.7 in percentages - negative percentages imply expansion of the class pixels):
+	urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.1731406144601959
+	urbansprawl_gini_coefficient(): Gini Index of the dataset =  0.1922834751670601
+	compare_raster_data(): raster1hist =  defaultdict(<class 'int'>, {13: 1454, 11: 3896, 23: 241, 12: 2353, 30: 1040, 21: 148, 22: 5, 10: 535})
+	compare_raster_data(): raster2hist =  defaultdict(<class 'int'>, {21: 4047, 11: 1238, 12: 2023, 30: 1504, 23: 260, 10: 573, 13: 14, 22: 13})
+	Percentage change in  13 : 99.03713892709766
+	Percentage change in  11 : 68.22381930184805
+	Percentage change in  23 : -7.883817427385892
+	Percentage change in  12 : 14.024649383765405
+	Percentage change in  30 : -44.61538461538462
+	Percentage change in  21 : -2634.459459459459
+	Percentage change in  22 : -160.0
+	Percentage change in  10 : -7.102803738317758
+1313.4 Gini coefficient of inequality has increased from 0.17 to 0.19 in 3 years. Following urban and water classes have undergone expansion between 2019 and 2022 for same Chennai Metropolitan Area bounding box sprawl (by negative percentages earlier coinciding with or even bettering Image Facegraph Polya Urn UGM projections): 
+— Class 30: “Urban Centre grid cell”, if the cell belongs to an Urban Centre spatial entity; (44% expansion in City area)
+— Class 23: “Dense Urban Cluster grid cell”, if the cell belongs to a Dense Urban Cluster spatial entity; (7% expansion in dense metro area)
+— Class 22: “Semi-dense Urban Cluster grid cell”, if the cell belongs to a Semi-dense Urban Cluster (160% expansion in semi-dense metro area)
+— Class 21: “Suburban or per-urban grid cell”, if the cell belongs to an Urban Cluster cells at first (Massive 2634% expansion implying suburban fringe has witnessed an abnormal boom)
+— Class 10: “Water grid cell”, if the cell has 0.5 share covered by permanent surface water and is not (7% expansion of waterbodies)
+1313.5 Following rural classes have contracted between 2019 and 2022 (by positive percentages):
+— Class 13: “Rural cluster grid cell”, if the cell belongs to a Rural Cluster spatial entity; (99% decrease in rural clusters)
+— Class 12: “Low Density Rural grid cell”, if the cell is classified as Rural grid cells at first hierarchical
+level, has more than 50 inhabitant and is not part of a Rural Cluster; (14% decrease in low density rural regions)
+— Class 11: “Very low density rural grid cell”, if the cell is classified as Rural grid cells at first hierarchical (68% decrease in very low density rural regions)
+
+References:
+---------
+1313.6 GHSL GHS SMOD R2022A Degree of Urbanization Raster dataset - https://ghsl.jrc.ec.europa.eu/ghs_smod2022.php
