@@ -51,6 +51,10 @@ import json
 import ast
 from networkx.algorithms.approximation.ramsey import ramsey_R2
 import numpy as np
+from scipy.interpolate import barycentric_interpolate
+from scipy.interpolate import lagrange 
+from numpy.polynomial.polynomial import Polynomial
+import matplotlib.pyplot as plt
 
 # Lf=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53]
 Lf = []
@@ -89,7 +93,7 @@ def all_possible_unknowns_four_squares():
     return set(all_possible_unknowns)
 
 
-def complement_diophantine(enumerableset):
+def complement_diophantine(enumerableset, interpol_algorithm="barycentric"):
     global complement_diophantine_map
     print("============================================================================")
     print("Complement Diophantine Sum of Four Squares Mapping Constructed for enumerable set:", enumerableset)
@@ -103,8 +107,19 @@ def complement_diophantine(enumerableset):
     indices=list(map(float,list(range(len(complement_diophantine_map)))))
     print("indices:",indices)
     print("complement_diophantine_map.values():",list(complement_diophantine_map.values()))
-    diop_poly=np.polyfit(np.array(indices),np.array(list(complement_diophantine_map.values())),5)
-    print("PolyFit Least Squares (Vandermonde) Interpolated Degree 5 Polynomial:",diop_poly)
+    if interpol_algorithm == "polyfit":
+        diop_poly=np.polyfit(np.array(indices),np.array(list(complement_diophantine_map.values())),5)
+        print("PolyFit Least Squares (Vandermonde) Interpolated Degree 5 Polynomial:",diop_poly)
+    elif interpol_algorithm == "barycentric":
+        diop_poly = barycentric_interpolate(np.array(indices),np.array(list(complement_diophantine_map.values())),np.array(indices))
+        print("Barycentric Interpolated Polynomial:",diop_poly)
+    elif interpol_algorithm == "lagrange":
+        diop_poly = lagrange(np.array(indices), np.array(list(complement_diophantine_map.values())))
+
+        print("Lagrange Interpolated Polynomial:",diop_poly)
+        x = np.arange(0, len(complement_diophantine_map), 1)
+        plt.plot(x, Polynomial(diop_poly.coef[::-1])(x), label='Polynomial')
+        plt.savefig("testlogs/complement.jpg")
     print("===========================================================================")
     print("Complement Diophantine Map - Unknowns")
     print("===========================================================================")
@@ -216,6 +231,8 @@ if __name__ == "__main__":
     #    print("g(", i, ")=", getgofx(i))
     # IharaIdentity()
     nonsquares = [2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19]
-    complement_diophantine(nonsquares)
+    #complement_diophantine(nonsquares,interpol_algorithm="polyfit")
+    #complement_diophantine(nonsquares,interpol_algorithm="barycentric")
+    complement_diophantine(nonsquares,interpol_algorithm="lagrange")
     #diophantine_factorization_pell_equation(1, 989295)
     #diophantine_factorization_pell_equation(1, -1)
