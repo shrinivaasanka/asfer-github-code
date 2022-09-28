@@ -263,12 +263,14 @@ class EphemerisSearch(object):
             print("SkyField - sky_on_datetime(): Long-Lat position of ",observed," from ",observedfrom," on ",datetime," (Year-Month-Day-Hour-Minute-Second):",astrometric.apparent().ecliptic_latlon())
             return astrometric.apparent().ecliptic_latlon()
     
-    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=100):
+    def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=200):
         Latlons=[]
         if datesofEWEs == "Earthquakes":
             EWEdates=open("earthquakesFrom1900with8plusmag.pygen.txt")
             datesofEWEs=[]
-            for d in EWEdates:
+            EWEdateslines=EWEdates.readlines()
+            EWEdateslines.reverse()
+            for d in EWEdateslines:
                  toks = d.split(" ")
                  datetoks = toks[0].split("/")
                  timetoks = toks[1].split(":")
@@ -282,8 +284,10 @@ class EphemerisSearch(object):
                 if datesofEWEs == "Hurricanes": 
                     iteration=0
                     EWEdates=open("hurdat2_1851_2012-jun2013.pygen.txt")
+                    EWEdateslines=EWEdates.readlines()
+                    EWEdateslines.reverse()
                     datesofEWEs=[]
-                    for d in EWEdates:
+                    for d in EWEdateslines:
                         if iteration == maxiterations:
                             break
                         toks = d.split(" ")
@@ -307,17 +311,18 @@ class EphemerisSearch(object):
         angular_separation=defaultdict(list)
         if angularsep:
             for date in datesofEWEs:
-                date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
-                earth=planets["earth"].at(date_t)
-                positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
-                for k1,v1 in positions.items():
-                   for k2,v2 in positions.items():
-                      if k1 != k2 and v1 != v2:
-                         if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
-                            #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
-                            angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
+                if date[0] >= 1899 and date[0] <= 2053:
+                    date_t=ts.utc(date[0],date[1],date[2],date[3],date[4],date[5])
+                    earth=planets["earth"].at(date_t)
+                    positions={"Sun":earth.observe(planets["sun"]),"Moon":earth.observe(planets["moon"]),"Mars":earth.observe(planets["mars"]),"Mercury":earth.observe(planets["mercury"]),"Jupiter":earth.observe(planets["jupiter barycenter"]),"Venus":earth.observe(planets["venus barycenter"]),"Saturn":earth.observe(planets["saturn barycenter"]),"Uranus":earth.observe(planets["uranus barycenter"]),"Neptune":earth.observe(planets["neptune barycenter"]),"Pluto":earth.observe(planets["pluto barycenter"])}
+                    for k1,v1 in positions.items():
+                        for k2,v2 in positions.items():
+                            if k1 != k2 and v1 != v2:
+                                if k1+"-"+k2 not in positions.keys() and k2+"-"+k1 not in positions.keys():
+                                    #print("Angular separation between ",k1," and ",k2,":",v1.separation_from(v2))
+                                    angular_separation[k1+"-"+k2].append(v1.separation_from(v2))
             for k3,v3 in angular_separation.items():
-                print("Angular separations for ",k3,":",v3)
+                    print("Angular separations for ",k3,":",v3)
         AU = 149597870700
         D = 24*60*60
         epsilon = 0.01
@@ -513,11 +518,12 @@ if __name__=="__main__":
     #print("======================EARTHQUAKES=========================")
     #ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Earthquakes")
     print("======================HURRICANES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes")
+    ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes",angularsep=True)
+    #ephem.extreme_weather_events_n_body_analytics(datesofEWEs=datesofhurricanes,angularsep=True)
 
     #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
     #ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
-    ephem.WMAP_CMB_analytics()
+    #ephem.WMAP_CMB_analytics()
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["10",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["301",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
     #ephem.sky_on_datetime(jplhorizons=True,jplhorizonsdata=["499",{'lon': 78.07, 'lat': 10.56, 'elevation': 0.093},{'start':'2022-07-01', 'stop':'2022-07-11', 'step':'1d'}])
