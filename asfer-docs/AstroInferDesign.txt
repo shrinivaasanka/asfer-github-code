@@ -19950,3 +19950,15 @@ References:
 ----------
 1316.5 The Super Cyclone of 1999 and Lunar Alignment Effect - December 2016 - International Journal of Earth Sciences and Engineering 9(6):2338-2347 - Intensified by Full Moon at Perigee in Syzygy - https://www.researchgate.net/publication/313839574_The_Super_Cyclone_of_1999_and_Lunar_Alignment_Effect - "... The extraordinary intensification of the Super cyclone of 1999 is examined over its entire life period. Luni alignment and particularly full moon at perigee in syzygy stands out as the intensifying cause; ..."
 1316.6 The Super Cyclone of 1999 - 260-300 kmph - https://www.hindustantimes.com/india/revisiting-the-super-cyclone-that-hit-odisha-in-1999/story-S0lDY1STwdrVdMravThCZK.html
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1317. (THEORY and FEATURE) Computational Geometric Integer Factorization - Multiple Integers - Python 3.10.4 upgrade + Spark 3.0.1 Quadcore Benchmarks - related to 1259,1303 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing - 29 September 2022
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1317.1 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py has been upgraded to Python 3.10.4 and 51 consecutive integers from 1000 to 1050, 101 consecutive integers from 10000 to 10100 and 101 integers from 20000 to 20100 have been factorized by Computational Geometric Factorization (253 integers in total). 
+1317.2 Benchmark runtime numbers for factoring 20000 to 20100 have been plotted as observed curve against a theoretical curve for k*logN*logN for k=1 (testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg). Factors are captured in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.29September2022 (1000 to 1050), testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log2.29September2022 (10000 to 10100) and testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log3.29September2022 (20000 to 20100). Earlier consecutive integers factorization includes primes.
+1317.3 Actual versus theoretical runtime curves of testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg are in concurrence and the few spikes could be latencies due to Python Virtual Machine Garbage collection, CPU and Spark scheduling vagaries.
+
+References:
+----------
+1317.4 Implementing and Comparing Integer Factorization Algorithms - https://crypto.stanford.edu/cs359c/17sp/projects/JacquelineSpeiser.pdf
+1317.5 Integer Factoring - [ARJEN K. LENSTRA arjen.lenstra@citicorp.com Citibank, N.A.,] - https://www.fdi.ucm.es/profesor/m_alonso/Documentos/factorizacion/arjlensfac.pdf
