@@ -36,7 +36,9 @@ if __name__=="__main__":
         print("Factorization of ",n, " (",math.log(n,2)," bit integer) ")
         print("================================================================================================")
         starttime=time.time()
-        subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+        #subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
+        #             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", str(n), str(depth), "False"], shell=False)
+        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
                      "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", str(n), str(depth), "False"], shell=False)
         endtime=time.time()
         duration=endtime-starttime
@@ -47,4 +49,4 @@ if __name__=="__main__":
         theoretical_runtimes.append(theoretical)
     plt.plot(range(increment),actual_runtimes)
     plt.plot(range(increment),theoretical_runtimes)
-    plt.show()
+    plt.savefig("testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg")
