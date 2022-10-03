@@ -63,6 +63,7 @@ from datetime import date
 import climetlab
 from tensorflow.keras.layers import Input, Dense, Flatten
 from tensorflow.keras.models import Sequential
+from EphemerisSearch import EphemerisSearch
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -72,6 +73,9 @@ def invert_image(image):
     return invimg
 
 def climate_analytics(datasource,date="",time=""):
+    if datasource == "n-body-analytics":
+        ephem=EphemerisSearch("de421.bsp")
+        ephem.extreme_weather_events_n_body_analytics(datesofEWEs=date,angularsep=True)
     if datasource == "high-low":
         highlow = climetlab.load_dataset("high-low")
         for field, label in highlow.fields():
@@ -173,12 +177,16 @@ def weather_GIS_analytics(image,segment,phenomenon="Cloud"):
 
 
 if __name__ == "__main__":
-    weather_forecast("Chennai")
-    weather_forecast(longitude=80.2707,latitude=13.0827)
+    #weather_forecast("Chennai")
+    #weather_forecast(longitude=80.2707,latitude=13.0827)
     #climate_analytics("ecmwf-copernicus-era5",date="2021-11-29",time="12:00")
     #climate_analytics("ecmwf-mars",date="2021-11-29")
-    climate_analytics("high-low")
-    climate_analytics("noaa-hurricane")
+    #climate_analytics("high-low")
+    #climate_analytics("noaa-hurricane")
+    #datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
+    #North Atlantic Hurricanes - Harvey, Irma, Ian and Bay of Bengal Very Severe Cyclonic Storms - Amphan,Gaja,Varda,Thane,Ockhi
+    datesofstorms=[(2017,8,17,1,00,00),(2017,8,30,1,00,00),(2022,9,23,1,00,00),(2020,5,20,1,00,00),(2018,11,10,1,00,00),(2016,12,6,1,00,00),(2011,12,25,1,00,00),(2017,11,29,1,00,00)]
+    climate_analytics(datasource="n-body-analytics",date=datesofstorms)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")

@@ -1,0 +1,1090 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+__init__():timescale now: <Time tt=2459855.776755932>
+extreme_weather_events_n_body_analytics(): datesofEWEs =  [(2017, 8, 17, 1, 0, 0), (2017, 8, 30, 1, 0, 0), (2022, 9, 23, 1, 0, 0), (2020, 5, 20, 1, 0, 0), (2018, 11, 10, 1, 0, 0), (2016, 12, 6, 1, 0, 0), (2011, 12, 25, 1, 0, 0), (2017, 11, 29, 1, 0, 0)]
+Angular separations for  Sun-Moon : [<Angle 63deg 35' 41.0">, <Angle 97deg 36' 37.7">, <Angle 33deg 52' 36.9">, <Angle 30deg 22' 33.5">, <Angle 28deg 39' 00.4">, <Angle 73deg 45' 38.6">, <Angle 04deg 17' 26.3">, <Angle 117deg 39' 43.0">]
+Angular separations for  Sun-Mars : [<Angle 06deg 45' 26.5">, <Angle 10deg 58' 03.6">, <Angle 102deg 55' 16.0">, <Angle 84deg 49' 16.6">, <Angle 98deg 50' 59.8">, <Angle 65deg 36' 13.0">, <Angle 104deg 37' 05.5">, <Angle 43deg 30' 03.3">]
+Angular separations for  Sun-Mercury : [<Angle 17deg 09' 10.0">, <Angle 06deg 44' 48.6">, <Angle 02deg 58' 16.0">, <Angle 16deg 45' 18.9">, <Angle 22deg 58' 13.0">, <Angle 20deg 00' 02.1">, <Angle 21deg 44' 21.7">, <Angle 21deg 02' 06.8">]
+Angular separations for  Sun-Jupiter : [<Angle 55deg 04' 19.3">, <Angle 44deg 47' 08.5">, <Angle 175deg 30' 28.7">, <Angle 122deg 18' 03.0">, <Angle 12deg 46' 39.8">, <Angle 56deg 41' 42.6">, <Angle 117deg 29' 03.3">, <Angle 26deg 20' 52.4">]
+Angular separations for  Sun-Venus : [<Angle 35deg 10' 50.3">, <Angle 32deg 15' 47.3">, <Angle 07deg 57' 17.9">, <Angle 21deg 42' 14.3">, <Angle 21deg 40' 40.2">, <Angle 43deg 52' 50.7">, <Angle 32deg 26' 50.7">, <Angle 09deg 58' 17.6">]
+Angular separations for  Sun-Saturn : [<Angle 116deg 53' 45.4">, <Angle 104deg 19' 29.2">, <Angle 139deg 18' 05.0">, <Angle 117deg 36' 03.7">, <Angle 48deg 08' 47.3">, <Angle 04deg 12' 06.9">, <Angle 65deg 04' 32.2">, <Angle 20deg 33' 58.2">]
+Angular separations for  Sun-Uranus : [<Angle 115deg 53' 15.3">, <Angle 128deg 37' 52.9">, <Angle 131deg 26' 10.9">, <Angle 21deg 33' 38.1">, <Angle 162deg 16' 51.9">, <Angle 126deg 26' 23.3">, <Angle 87deg 51' 50.0">, <Angle 138deg 03' 23.8">]
+Angular separations for  Sun-Neptune : [<Angle 160deg 57' 06.0">, <Angle 173deg 47' 01.4">, <Angle 173deg 43' 50.2">, <Angle 68deg 50' 46.7">, <Angle 116deg 10' 21.5">, <Angle 84deg 58' 20.5">, <Angle 55deg 50' 31.6">, <Angle 94deg 28' 37.2">]
+Angular separations for  Sun-Pluto : [<Angle 142deg 55' 49.0">, <Angle 130deg 11' 20.3">, <Angle 116deg 08' 57.7">, <Angle 124deg 38' 08.7">, <Angle 61deg 34' 22.0">, <Angle 31deg 46' 26.1">, <Angle 05deg 45' 16.9">, <Angle 40deg 45' 23.1">]
+Angular separations for  Moon-Sun : [<Angle 63deg 35' 41.0">, <Angle 97deg 36' 37.7">, <Angle 33deg 52' 36.9">, <Angle 30deg 22' 33.5">, <Angle 28deg 39' 00.4">, <Angle 73deg 45' 38.6">, <Angle 04deg 17' 26.3">, <Angle 117deg 39' 43.0">]
+Angular separations for  Moon-Mars : [<Angle 57deg 05' 05.4">, <Angle 108deg 21' 52.5">, <Angle 69deg 32' 25.6">, <Angle 54deg 41' 52.2">, <Angle 70deg 34' 09.5">, <Angle 08deg 26' 03.0">, <Angle 108deg 17' 31.5">, <Angle 161deg 02' 57.3">]
+Angular separations for  Moon-Mercury : [<Angle 79deg 45' 49.7">, <Angle 103deg 37' 59.1">, <Angle 34deg 55' 49.0">, <Angle 47deg 07' 33.2">, <Angle 08deg 23' 16.0">, <Angle 53deg 58' 09.5">, <Angle 25deg 26' 24.3">, <Angle 96deg 37' 59.0">]
+Angular separations for  Moon-Jupiter : [<Angle 118deg 33' 21.5">, <Angle 52deg 54' 52.6">, <Angle 142deg 10' 49.6">, <Angle 92deg 12' 29.3">, <Angle 15deg 55' 51.8">, <Angle 130deg 24' 32.3">, <Angle 113deg 43' 34.8">, <Angle 143deg 59' 20.9">]
+Angular separations for  Moon-Venus : [<Angle 28deg 34' 03.0">, <Angle 129deg 43' 34.8">, <Angle 25deg 55' 29.1">, <Angle 52deg 04' 46.5">, <Angle 50deg 19' 37.8">, <Angle 30deg 05' 35.0">, <Angle 28deg 51' 42.5">, <Angle 127deg 37' 59.1">]
+Angular separations for  Moon-Saturn : [<Angle 176deg 27' 10.5">, <Angle 07deg 40' 30.0">, <Angle 171deg 58' 31.7">, <Angle 87deg 31' 34.9">, <Angle 19deg 53' 08.9">, <Angle 69deg 45' 05.9">, <Angle 68deg 47' 14.8">, <Angle 97deg 13' 25.1">]
+Angular separations for  Moon-Uranus : [<Angle 52deg 28' 57.6">, <Angle 133deg 35' 27.7">, <Angle 97deg 53' 33.4">, <Angle 09deg 25' 26.7">, <Angle 133deg 46' 32.5">, <Angle 52deg 42' 02.3">, <Angle 84deg 06' 05.1">, <Angle 20deg 33' 16.6">]
+Angular separations for  Moon-Neptune : [<Angle 97deg 22' 19.0">, <Angle 88deg 35' 34.6">, <Angle 152deg 23' 11.9">, <Angle 38deg 52' 16.9">, <Angle 87deg 47' 02.5">, <Angle 11deg 20' 01.2">, <Angle 52deg 06' 07.4">, <Angle 23deg 23' 24.0">]
+Angular separations for  Moon-Pluto : [<Angle 153deg 17' 47.3">, <Angle 32deg 47' 05.4">, <Angle 149deg 39' 00.3">, <Angle 94deg 28' 59.2">, <Angle 33deg 16' 43.5">, <Angle 41deg 59' 46.1">, <Angle 01deg 57' 49.4">, <Angle 77deg 01' 55.8">]
+Angular separations for  Mars-Sun : [<Angle 06deg 45' 26.5">, <Angle 10deg 58' 03.6">, <Angle 102deg 55' 16.0">, <Angle 84deg 49' 16.6">, <Angle 98deg 50' 59.8">, <Angle 65deg 36' 13.0">, <Angle 104deg 37' 05.5">, <Angle 43deg 30' 03.3">]
+Angular separations for  Mars-Moon : [<Angle 57deg 05' 05.4">, <Angle 108deg 21' 52.5">, <Angle 69deg 32' 25.6">, <Angle 54deg 41' 52.2">, <Angle 70deg 34' 09.5">, <Angle 08deg 26' 03.0">, <Angle 108deg 17' 31.5">, <Angle 161deg 02' 57.3">]
+Angular separations for  Mars-Mercury : [<Angle 23deg 53' 13.5">, <Angle 06deg 57' 30.4">, <Angle 103deg 21' 31.4">, <Angle 101deg 30' 36.9">, <Angle 75deg 58' 11.7">, <Angle 45deg 42' 48.8">, <Angle 82deg 53' 39.4">, <Angle 64deg 29' 43.2">]
+Angular separations for  Mars-Jupiter : [<Angle 61deg 42' 38.2">, <Angle 55deg 40' 11.7">, <Angle 72deg 52' 13.6">, <Angle 37deg 31' 18.9">, <Angle 86deg 07' 13.0">, <Angle 122deg 17' 55.6">, <Angle 137deg 52' 30.0">, <Angle 17deg 09' 29.1">]
+Angular separations for  Mars-Venus : [<Angle 28deg 34' 25.3">, <Angle 21deg 23' 16.0">, <Angle 95deg 06' 55.4">, <Angle 106deg 20' 54.2">, <Angle 120deg 10' 25.9">, <Angle 21deg 46' 55.1">, <Angle 137deg 03' 47.7">, <Angle 33deg 32' 52.1">]
+Angular separations for  Mars-Saturn : [<Angle 123deg 31' 03.0">, <Angle 115deg 11' 50.0">, <Angle 117deg 43' 28.8">, <Angle 32deg 49' 58.7">, <Angle 50deg 45' 49.0">, <Angle 61deg 39' 05.6">, <Angle 39deg 32' 35.1">, <Angle 64deg 01' 31.8">]
+Angular separations for  Mars-Uranus : [<Angle 109deg 14' 11.4">, <Angle 117deg 43' 58.7">, <Angle 28deg 31' 01.8">, <Angle 63deg 15' 48.3">, <Angle 63deg 25' 52.2">, <Angle 60deg 50' 23.0">, <Angle 167deg 20' 37.9">, <Angle 178deg 22' 44.8">]
+Angular separations for  Mars-Neptune : [<Angle 154deg 19' 01.9">, <Angle 162deg 56' 57.8">, <Angle 83deg 12' 37.4">, <Angle 16deg 00' 08.1">, <Angle 17deg 20' 27.0">, <Angle 19deg 22' 38.3">, <Angle 160deg 21' 38.6">, <Angle 137deg 58' 28.3">]
+Angular separations for  Mars-Pluto : [<Angle 149deg 32' 29.7">, <Angle 141deg 03' 27.6">, <Angle 140deg 47' 45.2">, <Angle 39deg 49' 31.5">, <Angle 37deg 19' 22.2">, <Angle 33deg 55' 13.7">, <Angle 108deg 34' 36.7">, <Angle 84deg 14' 10.3">]
+Angular separations for  Mercury-Sun : [<Angle 17deg 09' 10.0">, <Angle 06deg 44' 48.6">, <Angle 02deg 58' 16.0">, <Angle 16deg 45' 18.9">, <Angle 22deg 58' 13.0">, <Angle 20deg 00' 02.1">, <Angle 21deg 44' 21.7">, <Angle 21deg 02' 06.8">]
+Angular separations for  Mercury-Moon : [<Angle 79deg 45' 49.7">, <Angle 103deg 37' 59.1">, <Angle 34deg 55' 49.0">, <Angle 47deg 07' 33.2">, <Angle 08deg 23' 16.0">, <Angle 53deg 58' 09.5">, <Angle 25deg 26' 24.3">, <Angle 96deg 37' 59.0">]
+Angular separations for  Mercury-Mars : [<Angle 23deg 53' 13.5">, <Angle 06deg 57' 30.4">, <Angle 103deg 21' 31.4">, <Angle 101deg 30' 36.9">, <Angle 75deg 58' 11.7">, <Angle 45deg 42' 48.8">, <Angle 82deg 53' 39.4">, <Angle 64deg 29' 43.2">]
+Angular separations for  Mercury-Jupiter : [<Angle 38deg 51' 45.8">, <Angle 50deg 43' 06.6">, <Angle 174deg 08' 39.1">, <Angle 138deg 53' 56.6">, <Angle 10deg 37' 06.2">, <Angle 76deg 37' 13.3">, <Angle 139deg 09' 56.6">, <Angle 47deg 21' 41.2">]
+Angular separations for  Mercury-Venus : [<Angle 51deg 49' 11.5">, <Angle 26deg 43' 05.0">, <Angle 09deg 23' 44.3">, <Angle 04deg 59' 58.7">, <Angle 44deg 15' 04.4">, <Angle 23deg 56' 21.0">, <Angle 54deg 10' 52.4">, <Angle 31deg 00' 20.5">]
+Angular separations for  Mercury-Saturn : [<Angle 100deg 23' 16.1">, <Angle 110deg 07' 06.3">, <Angle 138deg 36' 49.3">, <Angle 134deg 12' 09.6">, <Angle 25deg 32' 07.8">, <Angle 16deg 16' 55.5">, <Angle 43deg 21' 40.6">, <Angle 02deg 59' 49.4">]
+Angular separations for  Mercury-Uranus : [<Angle 132deg 14' 25.6">, <Angle 122deg 45' 36.6">, <Angle 131deg 50' 38.5">, <Angle 38deg 15' 46.1">, <Angle 139deg 21' 14.4">, <Angle 106deg 31' 55.1">, <Angle 109deg 32' 20.2">, <Angle 117deg 04' 31.4">]
+Angular separations for  Mercury-Neptune : [<Angle 174deg 03' 46.0">, <Angle 167deg 17' 38.1">, <Angle 172deg 09' 42.6">, <Angle 85deg 30' 55.2">, <Angle 93deg 18' 36.6">, <Angle 65deg 05' 22.1">, <Angle 77deg 31' 42.6">, <Angle 73deg 30' 54.6">]
+Angular separations for  Mercury-Pluto : [<Angle 126deg 17' 45.9">, <Angle 135deg 53' 40.0">, <Angle 115deg 29' 21.0">, <Angle 141deg 16' 06.6">, <Angle 38deg 50' 15.5">, <Angle 12deg 21' 49.6">, <Angle 25deg 55' 04.9">, <Angle 19deg 58' 17.6">]
+Angular separations for  Jupiter-Sun : [<Angle 55deg 04' 19.3">, <Angle 44deg 47' 08.5">, <Angle 175deg 30' 28.7">, <Angle 122deg 18' 03.0">, <Angle 12deg 46' 39.8">, <Angle 56deg 41' 42.6">, <Angle 117deg 29' 03.3">, <Angle 26deg 20' 52.4">]
+Angular separations for  Jupiter-Moon : [<Angle 118deg 33' 21.5">, <Angle 52deg 54' 52.6">, <Angle 142deg 10' 49.6">, <Angle 92deg 12' 29.3">, <Angle 15deg 55' 51.8">, <Angle 130deg 24' 32.3">, <Angle 113deg 43' 34.8">, <Angle 143deg 59' 20.9">]
+Angular separations for  Jupiter-Mars : [<Angle 61deg 42' 38.2">, <Angle 55deg 40' 11.7">, <Angle 72deg 52' 13.6">, <Angle 37deg 31' 18.9">, <Angle 86deg 07' 13.0">, <Angle 122deg 17' 55.6">, <Angle 137deg 52' 30.0">, <Angle 17deg 09' 29.1">]
+Angular separations for  Jupiter-Mercury : [<Angle 38deg 51' 45.8">, <Angle 50deg 43' 06.6">, <Angle 174deg 08' 39.1">, <Angle 138deg 53' 56.6">, <Angle 10deg 37' 06.2">, <Angle 76deg 37' 13.3">, <Angle 139deg 09' 56.6">, <Angle 47deg 21' 41.2">]
+Angular separations for  Jupiter-Venus : [<Angle 90deg 15' 09.3">, <Angle 77deg 02' 27.7">, <Angle 167deg 59' 08.2">, <Angle 143deg 37' 09.7">, <Angle 34deg 25' 36.0">, <Angle 100deg 33' 17.5">, <Angle 85deg 03' 13.8">, <Angle 16deg 23' 23.3">]
+Angular separations for  Jupiter-Saturn : [<Angle 61deg 49' 26.2">, <Angle 59deg 32' 23.9">, <Angle 44deg 51' 25.0">, <Angle 04deg 42' 00.4">, <Angle 35deg 22' 55.7">, <Angle 60deg 40' 00.7">, <Angle 177deg 13' 05.9">, <Angle 46deg 52' 05.8">]
+Angular separations for  Jupiter-Uranus : [<Angle 170deg 56' 16.3">, <Angle 173deg 23' 24.7">, <Angle 44deg 22' 53.3">, <Angle 100deg 44' 34.8">, <Angle 149deg 31' 52.3">, <Angle 176deg 49' 05.2">, <Angle 29deg 37' 40.8">, <Angle 164deg 23' 07.3">]
+Angular separations for  Jupiter-Neptune : [<Angle 143deg 58' 03.4">, <Angle 141deg 22' 34.9">, <Angle 10deg 20' 38.6">, <Angle 53deg 27' 41.9">, <Angle 103deg 25' 33.6">, <Angle 141deg 39' 49.6">, <Angle 61deg 38' 47.1">, <Angle 120deg 48' 59.6">]
+Angular separations for  Jupiter-Pluto : [<Angle 87deg 51' 30.5">, <Angle 85deg 24' 19.6">, <Angle 67deg 58' 47.8">, <Angle 02deg 26' 53.2">, <Angle 48deg 49' 00.5">, <Angle 88deg 25' 24.4">, <Angle 113deg 18' 46.9">, <Angle 67deg 04' 42.8">]
+Angular separations for  Venus-Sun : [<Angle 35deg 10' 50.3">, <Angle 32deg 15' 47.3">, <Angle 07deg 57' 17.9">, <Angle 21deg 42' 14.3">, <Angle 21deg 40' 40.2">, <Angle 43deg 52' 50.7">, <Angle 32deg 26' 50.7">, <Angle 09deg 58' 17.6">]
+Angular separations for  Venus-Moon : [<Angle 28deg 34' 03.0">, <Angle 129deg 43' 34.8">, <Angle 25deg 55' 29.1">, <Angle 52deg 04' 46.5">, <Angle 50deg 19' 37.8">, <Angle 30deg 05' 35.0">, <Angle 28deg 51' 42.5">, <Angle 127deg 37' 59.1">]
+Angular separations for  Venus-Mars : [<Angle 28deg 34' 25.3">, <Angle 21deg 23' 16.0">, <Angle 95deg 06' 55.4">, <Angle 106deg 20' 54.2">, <Angle 120deg 10' 25.9">, <Angle 21deg 46' 55.1">, <Angle 137deg 03' 47.7">, <Angle 33deg 32' 52.1">]
+Angular separations for  Venus-Mercury : [<Angle 51deg 49' 11.5">, <Angle 26deg 43' 05.0">, <Angle 09deg 23' 44.3">, <Angle 04deg 59' 58.7">, <Angle 44deg 15' 04.4">, <Angle 23deg 56' 21.0">, <Angle 54deg 10' 52.4">, <Angle 31deg 00' 20.5">]
+Angular separations for  Venus-Jupiter : [<Angle 90deg 15' 09.3">, <Angle 77deg 02' 27.7">, <Angle 167deg 59' 08.2">, <Angle 143deg 37' 09.7">, <Angle 34deg 25' 36.0">, <Angle 100deg 33' 17.5">, <Angle 85deg 03' 13.8">, <Angle 16deg 23' 23.3">]
+Angular separations for  Venus-Saturn : [<Angle 152deg 04' 35.4">, <Angle 136deg 34' 44.6">, <Angle 147deg 09' 18.4">, <Angle 138deg 56' 07.8">, <Angle 69deg 41' 42.1">, <Angle 39deg 59' 42.6">, <Angle 97deg 31' 13.0">, <Angle 30deg 28' 53.3">]
+Angular separations for  Venus-Uranus : [<Angle 80deg 42' 30.8">, <Angle 96deg 22' 12.5">, <Angle 123deg 36' 34.1">, <Angle 43deg 08' 59.7">, <Angle 174deg 52' 45.4">, <Angle 82deg 35' 40.3">, <Angle 55deg 27' 30.2">, <Angle 148deg 00' 02.7">]
+Angular separations for  Venus-Neptune : [<Angle 125deg 46' 34.7">, <Angle 141deg 34' 52.5">, <Angle 178deg 18' 38.5">, <Angle 90deg 20' 47.8">, <Angle 137deg 30' 20.1">, <Angle 41deg 09' 11.4">, <Angle 23deg 28' 12.7">, <Angle 104deg 25' 36.3">]
+Angular separations for  Venus-Pluto : [<Angle 178deg 06' 36.7">, <Angle 162deg 26' 37.3">, <Angle 124deg 01' 19.7">, <Angle 146deg 00' 52.9">, <Angle 83deg 04' 22.7">, <Angle 12deg 33' 10.9">, <Angle 28deg 45' 38.6">, <Angle 50deg 41' 24.7">]
+Angular separations for  Saturn-Sun : [<Angle 116deg 53' 45.4">, <Angle 104deg 19' 29.2">, <Angle 139deg 18' 05.0">, <Angle 117deg 36' 03.7">, <Angle 48deg 08' 47.3">, <Angle 04deg 12' 06.9">, <Angle 65deg 04' 32.2">, <Angle 20deg 33' 58.2">]
+Angular separations for  Saturn-Moon : [<Angle 176deg 27' 10.5">, <Angle 07deg 40' 30.0">, <Angle 171deg 58' 31.7">, <Angle 87deg 31' 34.9">, <Angle 19deg 53' 08.9">, <Angle 69deg 45' 05.9">, <Angle 68deg 47' 14.8">, <Angle 97deg 13' 25.1">]
+Angular separations for  Saturn-Mars : [<Angle 123deg 31' 03.0">, <Angle 115deg 11' 50.0">, <Angle 117deg 43' 28.8">, <Angle 32deg 49' 58.7">, <Angle 50deg 45' 49.0">, <Angle 61deg 39' 05.6">, <Angle 39deg 32' 35.1">, <Angle 64deg 01' 31.8">]
+Angular separations for  Saturn-Mercury : [<Angle 100deg 23' 16.1">, <Angle 110deg 07' 06.3">, <Angle 138deg 36' 49.3">, <Angle 134deg 12' 09.6">, <Angle 25deg 32' 07.8">, <Angle 16deg 16' 55.5">, <Angle 43deg 21' 40.6">, <Angle 02deg 59' 49.4">]
+Angular separations for  Saturn-Jupiter : [<Angle 61deg 49' 26.2">, <Angle 59deg 32' 23.9">, <Angle 44deg 51' 25.0">, <Angle 04deg 42' 00.4">, <Angle 35deg 22' 55.7">, <Angle 60deg 40' 00.7">, <Angle 177deg 13' 05.9">, <Angle 46deg 52' 05.8">]
+Angular separations for  Saturn-Venus : [<Angle 152deg 04' 35.4">, <Angle 136deg 34' 44.6">, <Angle 147deg 09' 18.4">, <Angle 138deg 56' 07.8">, <Angle 69deg 41' 42.1">, <Angle 39deg 59' 42.6">, <Angle 97deg 31' 13.0">, <Angle 30deg 28' 53.3">]
+Angular separations for  Saturn-Uranus : [<Angle 127deg 12' 44.0">, <Angle 127deg 02' 32.1">, <Angle 89deg 14' 06.4">, <Angle 96deg 02' 37.2">, <Angle 114deg 08' 56.6">, <Angle 122deg 27' 05.9">, <Angle 152deg 52' 33.8">, <Angle 117deg 31' 10.2">]
+Angular separations for  Saturn-Neptune : [<Angle 82deg 08' 47.4">, <Angle 81deg 50' 22.7">, <Angle 34deg 31' 23.4">, <Angle 48deg 45' 49.7">, <Angle 68deg 02' 52.3">, <Angle 80deg 59' 57.2">, <Angle 120deg 53' 16.2">, <Angle 73deg 57' 07.0">]
+Angular separations for  Saturn-Pluto : [<Angle 26deg 02' 05.0">, <Angle 25deg 51' 56.5">, <Angle 23deg 09' 15.6">, <Angle 07deg 04' 51.1">, <Angle 13deg 26' 28.9">, <Angle 27deg 45' 26.3">, <Angle 69deg 09' 21.0">, <Angle 20deg 12' 39.7">]
+Angular separations for  Uranus-Sun : [<Angle 115deg 53' 15.3">, <Angle 128deg 37' 52.9">, <Angle 131deg 26' 10.9">, <Angle 21deg 33' 38.1">, <Angle 162deg 16' 51.9">, <Angle 126deg 26' 23.3">, <Angle 87deg 51' 50.0">, <Angle 138deg 03' 23.8">]
+Angular separations for  Uranus-Moon : [<Angle 52deg 28' 57.6">, <Angle 133deg 35' 27.7">, <Angle 97deg 53' 33.4">, <Angle 09deg 25' 26.7">, <Angle 133deg 46' 32.5">, <Angle 52deg 42' 02.3">, <Angle 84deg 06' 05.1">, <Angle 20deg 33' 16.6">]
+Angular separations for  Uranus-Mars : [<Angle 109deg 14' 11.4">, <Angle 117deg 43' 58.7">, <Angle 28deg 31' 01.8">, <Angle 63deg 15' 48.3">, <Angle 63deg 25' 52.2">, <Angle 60deg 50' 23.0">, <Angle 167deg 20' 37.9">, <Angle 178deg 22' 44.8">]
+Angular separations for  Uranus-Mercury : [<Angle 132deg 14' 25.6">, <Angle 122deg 45' 36.6">, <Angle 131deg 50' 38.5">, <Angle 38deg 15' 46.1">, <Angle 139deg 21' 14.4">, <Angle 106deg 31' 55.1">, <Angle 109deg 32' 20.2">, <Angle 117deg 04' 31.4">]
+Angular separations for  Uranus-Jupiter : [<Angle 170deg 56' 16.3">, <Angle 173deg 23' 24.7">, <Angle 44deg 22' 53.3">, <Angle 100deg 44' 34.8">, <Angle 149deg 31' 52.3">, <Angle 176deg 49' 05.2">, <Angle 29deg 37' 40.8">, <Angle 164deg 23' 07.3">]
+Angular separations for  Uranus-Venus : [<Angle 80deg 42' 30.8">, <Angle 96deg 22' 12.5">, <Angle 123deg 36' 34.1">, <Angle 43deg 08' 59.7">, <Angle 174deg 52' 45.4">, <Angle 82deg 35' 40.3">, <Angle 55deg 27' 30.2">, <Angle 148deg 00' 02.7">]
+Angular separations for  Uranus-Saturn : [<Angle 127deg 12' 44.0">, <Angle 127deg 02' 32.1">, <Angle 89deg 14' 06.4">, <Angle 96deg 02' 37.2">, <Angle 114deg 08' 56.6">, <Angle 122deg 27' 05.9">, <Angle 152deg 52' 33.8">, <Angle 117deg 31' 10.2">]
+Angular separations for  Uranus-Neptune : [<Angle 45deg 04' 54.2">, <Angle 45deg 13' 04.0">, <Angle 54deg 42' 43.3">, <Angle 47deg 17' 08.6">, <Angle 46deg 06' 36.7">, <Angle 41deg 28' 03.1">, <Angle 32deg 01' 18.6">, <Angle 43deg 34' 46.6">]
+Angular separations for  Uranus-Pluto : [<Angle 101deg 10' 51.2">, <Angle 101deg 10' 46.5">, <Angle 112deg 21' 33.4">, <Angle 103deg 04' 30.7">, <Angle 100deg 42' 57.6">, <Angle 94deg 41' 40.7">, <Angle 83deg 43' 13.4">, <Angle 97deg 18' 38.5">]
+Angular separations for  Neptune-Sun : [<Angle 160deg 57' 06.0">, <Angle 173deg 47' 01.4">, <Angle 173deg 43' 50.2">, <Angle 68deg 50' 46.7">, <Angle 116deg 10' 21.5">, <Angle 84deg 58' 20.5">, <Angle 55deg 50' 31.6">, <Angle 94deg 28' 37.2">]
+Angular separations for  Neptune-Moon : [<Angle 97deg 22' 19.0">, <Angle 88deg 35' 34.6">, <Angle 152deg 23' 11.9">, <Angle 38deg 52' 16.9">, <Angle 87deg 47' 02.5">, <Angle 11deg 20' 01.2">, <Angle 52deg 06' 07.4">, <Angle 23deg 23' 24.0">]
+Angular separations for  Neptune-Mars : [<Angle 154deg 19' 01.9">, <Angle 162deg 56' 57.8">, <Angle 83deg 12' 37.4">, <Angle 16deg 00' 08.1">, <Angle 17deg 20' 27.0">, <Angle 19deg 22' 38.3">, <Angle 160deg 21' 38.6">, <Angle 137deg 58' 28.3">]
+Angular separations for  Neptune-Mercury : [<Angle 174deg 03' 46.0">, <Angle 167deg 17' 38.1">, <Angle 172deg 09' 42.6">, <Angle 85deg 30' 55.2">, <Angle 93deg 18' 36.6">, <Angle 65deg 05' 22.1">, <Angle 77deg 31' 42.6">, <Angle 73deg 30' 54.6">]
+Angular separations for  Neptune-Jupiter : [<Angle 143deg 58' 03.4">, <Angle 141deg 22' 34.9">, <Angle 10deg 20' 38.6">, <Angle 53deg 27' 41.9">, <Angle 103deg 25' 33.6">, <Angle 141deg 39' 49.6">, <Angle 61deg 38' 47.1">, <Angle 120deg 48' 59.6">]
+Angular separations for  Neptune-Venus : [<Angle 125deg 46' 34.7">, <Angle 141deg 34' 52.5">, <Angle 178deg 18' 38.5">, <Angle 90deg 20' 47.8">, <Angle 137deg 30' 20.1">, <Angle 41deg 09' 11.4">, <Angle 23deg 28' 12.7">, <Angle 104deg 25' 36.3">]
+Angular separations for  Neptune-Saturn : [<Angle 82deg 08' 47.4">, <Angle 81deg 50' 22.7">, <Angle 34deg 31' 23.4">, <Angle 48deg 45' 49.7">, <Angle 68deg 02' 52.3">, <Angle 80deg 59' 57.2">, <Angle 120deg 53' 16.2">, <Angle 73deg 57' 07.0">]
+Angular separations for  Neptune-Uranus : [<Angle 45deg 04' 54.2">, <Angle 45deg 13' 04.0">, <Angle 54deg 42' 43.3">, <Angle 47deg 17' 08.6">, <Angle 46deg 06' 36.7">, <Angle 41deg 28' 03.1">, <Angle 32deg 01' 18.6">, <Angle 43deg 34' 46.6">]
+Angular separations for  Neptune-Pluto : [<Angle 56deg 06' 43.4">, <Angle 55deg 58' 27.3">, <Angle 57deg 39' 36.9">, <Angle 55deg 47' 22.0">, <Angle 54deg 36' 34.6">, <Angle 53deg 14' 45.0">, <Angle 51deg 47' 15.4">, <Angle 53deg 44' 27.6">]
+Angular separations for  Pluto-Sun : [<Angle 142deg 55' 49.0">, <Angle 130deg 11' 20.3">, <Angle 116deg 08' 57.7">, <Angle 124deg 38' 08.7">, <Angle 61deg 34' 22.0">, <Angle 31deg 46' 26.1">, <Angle 05deg 45' 16.9">, <Angle 40deg 45' 23.1">]
+Angular separations for  Pluto-Moon : [<Angle 153deg 17' 47.3">, <Angle 32deg 47' 05.4">, <Angle 149deg 39' 00.3">, <Angle 94deg 28' 59.2">, <Angle 33deg 16' 43.5">, <Angle 41deg 59' 46.1">, <Angle 01deg 57' 49.4">, <Angle 77deg 01' 55.8">]
+Angular separations for  Pluto-Mars : [<Angle 149deg 32' 29.7">, <Angle 141deg 03' 27.6">, <Angle 140deg 47' 45.2">, <Angle 39deg 49' 31.5">, <Angle 37deg 19' 22.2">, <Angle 33deg 55' 13.7">, <Angle 108deg 34' 36.7">, <Angle 84deg 14' 10.3">]
+Angular separations for  Pluto-Mercury : [<Angle 126deg 17' 45.9">, <Angle 135deg 53' 40.0">, <Angle 115deg 29' 21.0">, <Angle 141deg 16' 06.6">, <Angle 38deg 50' 15.5">, <Angle 12deg 21' 49.6">, <Angle 25deg 55' 04.9">, <Angle 19deg 58' 17.6">]
+Angular separations for  Pluto-Jupiter : [<Angle 87deg 51' 30.5">, <Angle 85deg 24' 19.6">, <Angle 67deg 58' 47.8">, <Angle 02deg 26' 53.2">, <Angle 48deg 49' 00.5">, <Angle 88deg 25' 24.4">, <Angle 113deg 18' 46.9">, <Angle 67deg 04' 42.8">]
+Angular separations for  Pluto-Venus : [<Angle 178deg 06' 36.7">, <Angle 162deg 26' 37.3">, <Angle 124deg 01' 19.7">, <Angle 146deg 00' 52.9">, <Angle 83deg 04' 22.7">, <Angle 12deg 33' 10.9">, <Angle 28deg 45' 38.6">, <Angle 50deg 41' 24.7">]
+Angular separations for  Pluto-Saturn : [<Angle 26deg 02' 05.0">, <Angle 25deg 51' 56.5">, <Angle 23deg 09' 15.6">, <Angle 07deg 04' 51.1">, <Angle 13deg 26' 28.9">, <Angle 27deg 45' 26.3">, <Angle 69deg 09' 21.0">, <Angle 20deg 12' 39.7">]
+Angular separations for  Pluto-Uranus : [<Angle 101deg 10' 51.2">, <Angle 101deg 10' 46.5">, <Angle 112deg 21' 33.4">, <Angle 103deg 04' 30.7">, <Angle 100deg 42' 57.6">, <Angle 94deg 41' 40.7">, <Angle 83deg 43' 13.4">, <Angle 97deg 18' 38.5">]
+Angular separations for  Pluto-Neptune : [<Angle 56deg 06' 43.4">, <Angle 55deg 58' 27.3">, <Angle 57deg 39' 36.9">, <Angle 55deg 47' 22.0">, <Angle 54deg 36' 34.6">, <Angle 53deg 14' 45.0">, <Angle 51deg 47' 15.4">, <Angle 53deg 44' 27.6">]
+extreme_weather_events_n_body_analytics(): date: (2017, 8, 17, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range             range_rate      
+   ---          d      ...         AU                AU / d        
+---------- ----------- ... ----------------- ----------------------
+  Sun (10)   2457982.5 ... 1.012449967941156 -0.0001890720557748155
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range              range_rate      
+   ---          d      ...          AU                 AU / d        
+---------- ----------- ... ------------------- ----------------------
+Moon (301)   2457982.5 ... 0.00242554515232186 -9.647036287209773e-06
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range             range_rate      
+   ---          d      ...         AU                AU / d        
+---------- ----------- ... ----------------- ----------------------
+Mars (499)   2457982.5 ... 2.653961673405482 -0.0007408876502584088
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range              range_rate     
+     ---           d      ...         AU                 AU / d       
+------------- ----------- ... ------------------ ---------------------
+Mercury (199)   2457982.5 ... 0.6473326407573734 -0.008214571752462641
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Jupiter (599)   2457982.5 ... 5.964096229283959 0.01263901282058033
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Venus (299)   2457982.5 ... 1.253028980222703 0.006322438141895312
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Saturn (699)   2457982.5 ... 9.561699244468103 0.01479154216916931
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Uranus (799)   2457982.5 ... 19.45494552753553 -0.01513716518194411
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range             range_rate     
+     ---           d      ...         AU                AU / d       
+------------- ----------- ... ----------------- ---------------------
+Neptune (899)   2457982.5 ... 28.98863693273312 -0.005354374185621659
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Pluto (999)   2457982.5 ... 32.57406739524139 0.01095666973116319
+#################################################################
+n_body_gravitational_acceleration():r= [[-1.22615185e+11  8.89143227e+10 -3.15126276e+06]
+ [ 6.29213174e+07  3.56090872e+08 -3.00825267e+07]
+ [-2.92235248e+11  2.68637659e+11  7.92582065e+09]
+ [-9.11075283e+10  3.19427084e+10 -7.54896209e+09]
+ [-8.42670694e+11 -2.92647580e+11  1.76934502e+10]
+ [-6.06267110e+10  1.77359738e+11 -2.36707196e+09]
+ [-2.23807925e+11 -1.41247127e+12  3.01205636e+10]
+ [ 2.56472550e+12  1.37543348e+12 -3.00214935e+10]
+ [ 4.14924014e+12 -1.25906325e+12 -7.06983163e+10]
+ [ 1.42700581e+12 -4.65900581e+12  5.96381489e+10]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 2.88709293e-34 6.61564902e-35 3.55213152e-33
+  1.84659916e-36 7.93143595e-34 2.93298373e-37 3.78041584e-38
+  1.11212428e-38 8.02520461e-39]
+ [2.88709293e-34 1.00000000e+06 1.60020750e-35 1.10318408e-33
+  1.40712141e-36 1.52596540e-34 3.41419834e-37 4.05727084e-38
+  1.22610467e-38 8.64015625e-39]
+ [6.61564902e-35 1.60020750e-35 1.00000000e+06 3.32468343e-35
+  2.05776289e-36 6.46503990e-35 2.09903980e-37 3.47611764e-38
+  9.64699996e-39 7.03373720e-39]
+ [3.55213152e-33 1.10318408e-33 3.32468343e-35 1.00000000e+06
+  1.81998765e-36 3.04334594e-34 3.27348539e-37 3.79252733e-38
+  1.14792974e-38 8.34085466e-39]
+ [1.84659916e-36 1.40712141e-36 2.05776289e-36 1.81998765e-36
+  1.00000000e+06 1.31555518e-36 4.77383087e-37 1.83095246e-38
+  7.60384728e-39 8.39044881e-39]
+ [7.93143595e-34 1.52596540e-34 6.46503990e-35 3.04334594e-34
+  1.31555518e-36 1.00000000e+06 2.44822244e-37 4.16045142e-38
+  1.13579444e-38 7.71709120e-39]
+ [2.93298373e-37 3.41419834e-37 2.09903980e-37 3.27348539e-37
+  4.77383087e-37 2.44822244e-37 1.00000000e+06 1.63050743e-38
+  1.19261515e-38 2.06960689e-38]
+ [3.78041584e-38 4.05727084e-38 3.47611764e-38 3.79252733e-38
+  1.83095246e-38 4.16045142e-38 1.63050743e-38 1.00000000e+06
+  3.44073655e-38 4.31713841e-39]
+ [1.11212428e-38 1.22610467e-38 9.64699996e-39 1.14792974e-38
+  7.60384728e-39 1.13579444e-38 1.19261515e-38 3.44073655e-38
+  1.00000000e+06 1.20867655e-38]
+ [8.02520461e-39 8.64015625e-39 7.03373720e-39 8.34085466e-39
+  8.39044881e-39 7.71709120e-39 2.06960689e-38 4.31713841e-39
+  1.20867655e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [ 6.27265627e-06  8.79676525e-06 -2.47814105e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-4.70306262e-03  3.39756396e-03  9.84102857e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [ 1.49157224e-03 -1.57916577e-03 -6.97197426e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-0.01485632  0.02687067  0.00355844]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [ 1.76657141e-04  9.35946952e-05 -4.34128921e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-0.00652685 -0.00931256  0.0002489 ]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [ 3.94571476e-06  5.85077339e-05 -1.17392264e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-1.35018828e-05 -6.46518421e-06  1.50823465e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-6.31520918e-06  1.99264214e-06  1.04524551e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2017, 8, 17, 1, 0, 0) : [-1.65341271e-06  5.06598677e-06 -6.36366827e-08]
+extreme_weather_events_n_body_analytics(): date: (2017, 8, 30, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range             range_rate      
+   ---          d      ...         AU                AU / d        
+---------- ----------- ... ----------------- ----------------------
+  Sun (10)   2457995.5 ... 1.009705441597151 -0.0002315137139808179
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate     
+   ---          d      ...          AU                  AU / d       
+---------- ----------- ... -------------------- ---------------------
+Moon (301)   2457995.5 ... 0.002668840809177475 4.023050804012875e-06
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range            range_rate     
+   ---          d      ...         AU               AU / d       
+---------- ----------- ... ----------------- --------------------
+Mars (499)   2457995.5 ... 2.638783358111755 -0.00159704542142587
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range             range_rate    
+     ---           d      ...         AU                AU / d      
+------------- ----------- ... ------------------ -------------------
+Mercury (199)   2457995.5 ... 0.6497884203999212 0.01091921174375473
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...      range           range_rate    
+     ---           d      ...        AU              AU / d      
+------------- ----------- ... --------------- -------------------
+Jupiter (599)   2457995.5 ... 6.1168816502838 0.01080595238968468
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Venus (299)   2457995.5 ... 1.331862523890898 0.00579911638528091
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range           range_rate    
+    ---           d      ...         AU              AU / d      
+------------ ----------- ... ----------------- ------------------
+Saturn (699)   2457995.5 ... 9.763182103576206 0.0160790179041096
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Uranus (799)   2457995.5 ... 19.27043942109439 -0.01312483187066429
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...      range             range_rate     
+     ---           d      ...        AU                AU / d       
+------------- ----------- ... ---------------- ---------------------
+Neptune (899)   2457995.5 ... 28.9431137821027 -0.001613438221087071
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Pluto (999)   2457995.5 ... 32.73514855918088 0.01371678934838181
+#################################################################
+n_body_gravitational_acceleration():r= [[-1.38608930e+11  6.00300070e+10 -1.88381761e+06]
+ [-1.11227170e+08 -3.81886334e+08  3.45575531e+07]
+ [-3.26024180e+11  2.22433839e+11  8.00087444e+09]
+ [-8.47660327e+10  4.72020960e+10 -5.98963353e+09]
+ [-8.51852867e+11 -3.33758599e+11  1.75930809e+10]
+ [-1.12323413e+11  1.64564682e+11 -8.48180595e+07]
+ [-2.29560349e+11 -1.44209165e+12  2.97268462e+10]
+ [ 2.54537240e+12  1.35307589e+12 -2.99524749e+10]
+ [ 4.13504696e+12 -1.28209898e+12 -7.08592011e+10]
+ [ 1.41695344e+12 -4.68727719e+12  5.78565636e+10]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 2.89872190e-34 6.54658459e-35 5.79521659e-33
+  1.84779480e-36 7.98506811e-34 2.93255785e-37 3.78119020e-38
+  1.11215118e-38 8.01921558e-39]
+ [2.89872190e-34 1.00000000e+06 1.62407959e-35 1.08563547e-33
+  1.30611130e-36 1.25948334e-34 3.21219735e-37 4.17275950e-38
+  1.23194096e-38 8.51666591e-39]
+ [6.54658459e-35 1.62407959e-35 1.00000000e+06 3.75949404e-35
+  2.22957802e-36 9.19630769e-35 2.15691899e-37 3.40190627e-38
+  9.57904612e-39 7.07046501e-39]
+ [5.79521659e-33 1.08563547e-33 3.75949404e-35 1.00000000e+06
+  1.58985976e-36 5.68707296e-34 2.98235319e-37 3.94888047e-38
+  1.15437031e-38 8.15880623e-39]
+ [1.84779480e-36 1.30611130e-36 2.22957802e-36 1.58985976e-36
+  1.00000000e+06 1.40930500e-36 4.86877449e-37 1.83215686e-38
+  7.64131393e-39 8.45111931e-39]
+ [7.98506811e-34 1.25948334e-34 9.19630769e-35 5.68707296e-34
+  1.40930500e-36 1.00000000e+06 2.39082912e-37 4.05183965e-38
+  1.10656136e-38 7.59438866e-39]
+ [2.93255785e-37 3.21219735e-37 2.15691899e-37 2.98235319e-37
+  4.86877449e-37 2.39082912e-37 1.00000000e+06 1.63605466e-38
+  1.19934539e-38 2.07500452e-38]
+ [3.78119020e-38 4.17275950e-38 3.40190627e-38 3.94888047e-38
+  1.83215686e-38 4.05183965e-38 1.63605466e-38 1.00000000e+06
+  3.42986156e-38 4.30856754e-39]
+ [1.11215118e-38 1.23194096e-38 9.57904612e-39 1.15437031e-38
+  7.64131393e-39 1.10656136e-38 1.19934539e-38 3.42986156e-38
+  1.00000000e+06 1.20746660e-38]
+ [8.01921558e-39 8.51666591e-39 7.07046501e-39 8.15880623e-39
+  8.45111931e-39 7.59438866e-39 2.07500452e-38 4.30856754e-39
+  1.20746660e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [ 2.78124266e-06  1.05359338e-05 -2.17336921e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-5.33137023e-03  2.32735122e-03 -1.40642346e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [ 1.63126777e-03 -1.41209545e-03 -6.96439436e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-0.04142471  0.00987728  0.00460696]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [ 1.75102502e-04  9.66649332e-05 -4.31897752e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-2.78634997e-03 -1.10810538e-02  8.79046060e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [ 3.54493307e-06  5.85272465e-05 -1.15827008e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-1.34875855e-05 -6.49906310e-06  1.50521644e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-6.31792404e-06  1.98401176e-06  1.04767552e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2017, 8, 30, 1, 0, 0) : [-1.65852338e-06  5.06150449e-06 -6.16851779e-08]
+extreme_weather_events_n_body_analytics(): date: (2022, 9, 23, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range             range_rate      
+   ---          d      ...         AU                AU / d        
+---------- ----------- ... ----------------- ----------------------
+  Sun (10)   2459845.5 ... 1.003622476384036 -0.0002792216171065373
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate      
+   ---          d      ...          AU                  AU / d        
+---------- ----------- ... -------------------- ----------------------
+Moon (301)   2459845.5 ... 0.002630718954711276 -2.148319135216458e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range              range_rate     
+   ---          d      ...         AU                 AU / d       
+---------- ----------- ... ------------------ ---------------------
+Mars (499)   2459845.5 ... 0.8307244382675967 -0.005845693131774595
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range             range_rate     
+     ---           d      ...         AU                AU / d       
+------------- ----------- ... ------------------ --------------------
+Mercury (199)   2459845.5 ... 0.6492584250691428 0.004369061733902743
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...       range             range_rate      
+     ---           d      ...         AU                AU / d        
+------------- ----------- ... ----------------- ----------------------
+Jupiter (599)   2459845.5 ... 3.954050122916564 -0.0009396727806399416
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Venus (299)   2459845.5 ... 1.699461296145147 0.001325885220786176
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range           range_rate    
+    ---           d      ...         AU              AU / d      
+------------ ----------- ... ----------------- ------------------
+Saturn (699)   2459845.5 ... 9.077061817076336 0.0107732247079146
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Uranus (799)   2459845.5 ... 19.00669271198451 -0.01267161413597408
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range            range_rate     
+     ---           d      ...         AU               AU / d       
+------------- ----------- ... ----------------- --------------------
+Neptune (899)   2459845.5 ... 28.91687461399579 0.002067198451362484
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Pluto (999)   2459845.5 ... 34.15590528221183 0.01607720595321259
+#################################################################
+n_body_gravitational_acceleration():r= [[-1.50136960e+11  9.21086281e+08  7.75227560e+05]
+ [-3.23527805e+08  2.21409893e+08  3.44816632e+07]
+ [ 2.84798547e+10  1.20952874e+11 -1.86497214e+09]
+ [-9.69991549e+10 -3.85132765e+08 -4.98010391e+09]
+ [ 5.89920576e+11  4.00887083e+10 -1.67193743e+10]
+ [-2.51568912e+11  3.61767130e+10  6.33762367e+09]
+ [ 1.02473972e+12 -8.90420511e+11 -3.12570975e+10]
+ [ 1.89316294e+12  2.12138828e+12 -1.86073461e+10]
+ [ 4.29747173e+12 -4.86438678e+11 -9.24647826e+10]
+ [ 2.22708571e+12 -4.59460378e+12 -1.95539302e+11]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 2.97394886e-34 1.00326672e-34 6.57204187e-33
+  2.45499070e-36 8.03364010e-34 3.11580961e-37 3.91593955e-38
+  1.11574934e-38 7.20438244e-39]
+ [2.97394886e-34 1.00000000e+06 5.22786543e-34 1.10223214e-33
+  4.82411377e-36 6.11078956e-35 3.99037415e-37 4.34991706e-38
+  1.23499497e-38 7.49444206e-39]
+ [1.00326672e-34 5.22786543e-34 1.00000000e+06 1.87944188e-34
+  5.47351187e-36 3.98720633e-35 3.49281643e-37 4.88910119e-38
+  1.24646674e-38 7.08528527e-39]
+ [6.57204187e-33 1.10223214e-33 1.87944188e-34 1.00000000e+06
+  3.06785470e-36 2.47663319e-34 3.40410836e-37 4.06185841e-38
+  1.15638933e-38 7.31202188e-39]
+ [2.45499070e-36 4.82411377e-36 5.47351187e-36 3.06785470e-36
+  1.00000000e+06 1.67629691e-36 9.22663292e-37 6.75300066e-38
+  1.90311215e-38 8.40377754e-39]
+ [8.03364010e-34 6.11078956e-35 3.98720633e-35 2.47663319e-34
+  1.67629691e-36 1.00000000e+06 2.54667343e-37 3.73565745e-38
+  1.04086764e-38 6.88591126e-39]
+ [3.11580961e-37 3.99037415e-37 3.49281643e-37 3.40410836e-37
+  9.22663292e-37 2.54667343e-37 1.00000000e+06 3.24698687e-38
+  2.78735980e-38 1.68853102e-38]
+ [3.91593955e-38 4.34991706e-38 4.88910119e-38 4.06185841e-38
+  6.75300066e-38 3.73565745e-38 3.24698687e-38 1.00000000e+06
+  2.23934465e-38 3.28556566e-39]
+ [1.11574934e-38 1.23499497e-38 1.24646674e-38 1.15638933e-38
+  1.90311215e-38 1.04086764e-38 2.78735980e-38 2.23934465e-38
+  1.00000000e+06 1.02633994e-38]
+ [7.20438244e-39 7.49444206e-39 7.08528527e-39 7.31202188e-39
+  8.40377754e-39 6.88591126e-39 1.68853102e-38 3.28556566e-39
+  1.02633994e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-1.01667344e-05  3.58002073e-06  6.31708079e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-5.91655846e-03  2.79087451e-05 -1.28491968e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-2.38032748e-03 -1.59910102e-03  2.48898811e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-0.04636493  0.00114076  0.00434593]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-2.41352548e-04 -1.27974642e-05  5.45359363e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [ 0.01081755 -0.00375995 -0.00067581]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-4.86370543e-05  3.68993410e-05  1.29412944e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-1.06329795e-05 -1.10372641e-05  9.68256993e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-6.59751328e-06  7.22472275e-07  1.37163404e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2022, 9, 23, 1, 0, 0) : [-2.27637082e-06  4.40199308e-06  1.87306630e-07]
+extreme_weather_events_n_body_analytics(): date: (2020, 5, 20, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range             range_rate     
+   ---          d      ...         AU                AU / d       
+---------- ----------- ... ----------------- ---------------------
+  Sun (10)   2458989.5 ... 1.011942010471366 0.0001991778942217118
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate      
+   ---          d      ...          AU                  AU / d        
+---------- ----------- ... -------------------- ----------------------
+Moon (301)   2458989.5 ... 0.002669299147400045 -1.012437202909186e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range             range_rate     
+   ---          d      ...         AU                AU / d       
+---------- ----------- ... ----------------- ---------------------
+Mars (499)   2458989.5 ... 1.091816289870137 -0.007003520856790253
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range            range_rate     
+     ---           d      ...         AU               AU / d       
+------------- ----------- ... ----------------- --------------------
+Mercury (199)   2458989.5 ... 1.134613693812867 -0.01968199108227544
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...       range            range_rate     
+     ---           d      ...         AU               AU / d       
+------------- ----------- ... ----------------- --------------------
+Jupiter (599)   2458989.5 ... 4.564889507590023 -0.01358813103611771
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range              range_rate     
+    ---          d      ...         AU                 AU / d       
+----------- ----------- ... ------------------ ---------------------
+Venus (299)   2458989.5 ... 0.3205862119295444 -0.004121505543404851
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Saturn (699)   2458989.5 ... 9.510293927571313 -0.01480708816455551
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Uranus (799)   2458989.5 ... 20.73909812855508 -0.00610322920833426
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...      range           range_rate     
+     ---           d      ...        AU              AU / d       
+------------- ----------- ... --------------- --------------------
+Neptune (899)   2458989.5 ... 30.281626635686 -0.01568854000375647
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Pluto (999)   2458989.5 ... 33.45790285281133 -0.01337317662709786
+#################################################################
+n_body_gravitational_acceleration():r= [[ 7.75791876e+10  1.29994989e+11 -6.19509960e+06]
+ [ 3.49412569e+08  1.90721692e+08 -3.15234560e+07]
+ [ 1.47162452e+11 -7.06116283e+10 -5.91672110e+09]
+ [ 4.16863075e+10  1.64424098e+11  6.09976799e+09]
+ [ 3.09109287e+11 -6.08930458e+11 -2.11729758e+09]
+ [ 7.76622774e+09  4.72378943e+10  2.88689102e+09]
+ [ 7.45754447e+11 -1.21159852e+12 -3.27612601e+09]
+ [ 2.45622117e+12  1.89527040e+12 -2.42603798e+10]
+ [ 4.46547659e+12 -7.57732556e+11 -8.28614823e+10]
+ [ 2.08114056e+12 -4.55137615e+12 -7.85286555e+10]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 2.90208180e-34 1.04339690e-34 7.94774924e-33
+  2.15369524e-36 7.87045593e-34 2.97020332e-37 3.84724515e-38
+  1.11397370e-38 7.57101405e-39]
+ [2.90208180e-34 1.00000000e+06 2.30481715e-34 2.05469583e-34
+  3.13985943e-36 9.20377757e-33 3.47264947e-37 3.34980380e-38
+  1.07591067e-38 7.97481129e-39]
+ [1.04339690e-34 2.30481715e-34 1.00000000e+06 5.82982893e-35
+  5.62873602e-36 1.63844759e-34 4.67488557e-37 3.58547127e-38
+  1.19554913e-38 8.60024738e-39]
+ [7.94774924e-33 2.05469583e-34 5.82982893e-35 1.00000000e+06
+  1.82481406e-36 5.50180022e-34 2.70776426e-37 3.81329402e-38
+  1.08306522e-38 7.36992646e-39]
+ [2.15369524e-36 3.13985943e-36 5.62873602e-36 1.82481406e-36
+  1.00000000e+06 2.65617368e-36 2.42599140e-36 2.78586946e-38
+  1.38924335e-38 1.23773443e-38]
+ [7.87045593e-34 9.20377757e-33 1.63844759e-34 5.50180022e-34
+  2.65617368e-36 1.00000000e+06 3.21835838e-37 3.46380765e-38
+  1.07529411e-38 7.78749280e-39]
+ [2.97020332e-37 3.47264947e-37 4.67488557e-37 2.70776426e-37
+  2.42599140e-36 3.21835838e-37 1.00000000e+06 2.24152027e-38
+  1.89909899e-38 2.14756285e-38]
+ [3.84724515e-38 3.34980380e-38 3.58547127e-38 3.81329402e-38
+  2.78586946e-38 3.46380765e-38 2.24152027e-38 1.00000000e+06
+  2.71175936e-38 3.71322181e-39]
+ [1.11397370e-38 1.07591067e-38 1.19554913e-38 1.08306522e-38
+  1.38924335e-38 1.07529411e-38 1.89909899e-38 2.71175936e-38
+  1.00000000e+06 1.11162416e-38]
+ [7.57101405e-39 7.97481129e-39 8.60024738e-39 7.36992646e-39
+  1.23773443e-38 7.78749280e-39 2.14756285e-38 3.71322181e-39
+  1.11162416e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-7.06718378e-06 -8.16833548e-06  3.07675652e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [2.98400507e-03 5.05566744e-03 4.38004526e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-9.66703920e-04  2.78109232e-03  8.20515341e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [ 0.03786744 -0.03633359 -0.00644249]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-6.62571064e-05  2.11431356e-04  6.05144836e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [ 0.0072942   0.0086466  -0.00030228]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-2.63757595e-05  5.29512233e-05  1.29172431e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-1.21603086e-05 -9.02706992e-06  1.23999987e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-6.49802189e-06  1.31398344e-06  1.22712236e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2020, 5, 20, 1, 0, 0) : [-2.01666892e-06  4.71280207e-06  7.90632485e-08]
+extreme_weather_events_n_body_analytics(): date: (2018, 11, 10, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range              range_rate      
+   ---          d      ...         AU                 AU / d        
+---------- ----------- ... ------------------ ----------------------
+  Sun (10)   2458432.5 ... 0.9903916234135065 -0.0002378315504388308
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate     
+   ---          d      ...          AU                  AU / d       
+---------- ----------- ... -------------------- ---------------------
+Moon (301)   2458432.5 ... 0.002593753875636798 2.708720139772007e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range            range_rate     
+   ---          d      ...         AU               AU / d       
+---------- ----------- ... ----------------- --------------------
+Mars (499)   2458432.5 ... 0.851475326421507 0.007189440076957834
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range             range_rate     
+     ---           d      ...         AU                AU / d       
+------------- ----------- ... ------------------ --------------------
+Mercury (199)   2458432.5 ... 0.9500877912045995 -0.02087441856104476
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...      range            range_rate     
+     ---           d      ...        AU               AU / d       
+------------- ----------- ... ---------------- --------------------
+Jupiter (599)   2458432.5 ... 6.32589109000781 0.003040814565054282
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range             range_rate     
+    ---          d      ...         AU                AU / d       
+----------- ----------- ... ------------------ --------------------
+Venus (299)   2458432.5 ... 0.2976634931396563 0.003608627044064555
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Saturn (699)   2458432.5 ... 10.69538017045064 0.01236361222889692
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Uranus (799)   2458432.5 ... 18.92208199589841 0.005324695479437739
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Neptune (899)   2458432.5 ... 29.48876860040341 0.01557237601242121
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Pluto (999)   2458432.5 ... 34.13758307793783 0.01574571509639827
+#################################################################
+n_body_gravitational_acceleration():r= [[-1.00521718e+11 -1.08843518e+11  5.24214867e+06]
+ [-9.86999544e+07 -3.74507123e+08  2.37128248e+07]
+ [ 1.05734992e+11 -7.09037362e+10 -4.26085068e+09]
+ [-4.83236385e+10 -1.33491103e+11 -6.79735412e+09]
+ [-4.72097324e+11 -8.20095185e+11  1.12734726e+10]
+ [-4.00300253e+10 -1.93753426e+10 -2.25797785e+09]
+ [ 1.52280736e+11 -1.59266522e+12  1.57352899e+10]
+ [ 2.46086782e+12  1.39866017e+12 -2.75642779e+10]
+ [ 4.22911629e+12 -1.25288368e+12 -7.62279041e+10]
+ [ 1.65360255e+12 -4.83178241e+12 -2.10159611e+09]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 3.09609030e-34 1.08350028e-34 5.09248646e-33
+  1.93462148e-36 7.93330085e-34 2.93186303e-37 3.80855892e-38
+  1.11298796e-38 7.81956869e-39]
+ [3.09609030e-34 1.00000000e+06 4.85276115e-34 3.51122590e-34
+  1.18133678e-36 1.15177362e-32 2.44304359e-37 4.40749911e-38
+  1.16481564e-38 7.50944251e-39]
+ [1.08350028e-34 4.85276115e-34 1.00000000e+06 2.17408503e-34
+  1.18021275e-36 2.70534429e-34 2.83294865e-37 4.67399103e-38
+  1.26652257e-38 7.97039667e-39]
+ [5.09248646e-33 3.51122590e-34 2.17408503e-34 1.00000000e+06
+  1.90235918e-36 6.66049783e-34 3.12844649e-37 3.93487405e-38
+  1.15647123e-38 8.01417320e-39]
+ [1.93462148e-36 1.18133678e-36 1.18021275e-36 1.90235918e-36
+  1.00000000e+06 1.32721326e-36 1.02023676e-36 2.01008186e-38
+  9.49836169e-39 1.06857926e-38]
+ [7.93330085e-34 1.15177362e-32 2.70534429e-34 6.66049783e-34
+  1.32721326e-36 1.00000000e+06 2.51089408e-37 4.20785179e-38
+  1.13910245e-38 7.53091047e-39]
+ [2.93186303e-37 2.44304359e-37 2.83294865e-37 3.12844649e-37
+  1.02023676e-36 2.51089408e-37 1.00000000e+06 1.85323955e-38
+  1.45945882e-38 2.19750903e-38]
+ [3.80855892e-38 4.40749911e-38 4.67399103e-38 3.93487405e-38
+  2.01008186e-38 4.20785179e-38 1.85323955e-38 1.00000000e+06
+  3.08798449e-38 4.03261807e-39]
+ [1.11298796e-38 1.16481564e-38 1.26652257e-38 1.15647123e-38
+  9.49836169e-39 1.13910245e-38 1.45945882e-38 3.08798449e-38
+  1.00000000e+06 1.16603513e-38]
+ [7.81956869e-39 7.50944251e-39 7.97039667e-39 8.01417320e-39
+  1.06857926e-38 7.53091047e-39 2.19750903e-38 4.03261807e-39
+  1.16603513e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [ 6.19972347e-06  8.93133160e-06 -2.41350146e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-4.18577995e-03 -4.48598319e-03 -4.09133410e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-2.97173811e-03 -5.43967094e-04  6.14307481e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-0.03528711  0.0166723   0.00459919]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [ 9.55277741e-05  1.82772730e-04 -2.89609166e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-0.00637072 -0.00942248  0.00023835]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-9.84485123e-06  5.78026356e-05 -6.12820805e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-1.29648769e-05 -7.63210969e-06  1.39545469e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-6.40586763e-06  1.69241047e-06  1.12802453e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2018, 11, 10, 1, 0, 0) : [-1.82354424e-06  4.91045736e-06  2.19523049e-09]
+extreme_weather_events_n_body_analytics(): date: (2016, 12, 6, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range              range_rate      
+   ---          d      ...         AU                 AU / d        
+---------- ----------- ... ------------------ ----------------------
+  Sun (10)   2457728.5 ... 0.9853011914994093 -0.0001384786320173666
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate      
+   ---          d      ...          AU                  AU / d        
+---------- ----------- ... -------------------- ----------------------
+Moon (301)   2457728.5 ... 0.002549858998138159 -3.210434744331327e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range            range_rate    
+   ---          d      ...         AU               AU / d      
+---------- ----------- ... ----------------- -------------------
+Mars (499)   2457728.5 ... 1.469803363562307 0.00643744575881007
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Mercury (199)   2457728.5 ... 1.122260617082228 -0.0202195703142624
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...      range            range_rate     
+     ---           d      ...        AU               AU / d       
+------------- ----------- ... ---------------- --------------------
+Jupiter (599)   2457728.5 ... 5.93435853397136 -0.01353424471522721
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range              range_rate     
+    ---          d      ...         AU                 AU / d       
+----------- ----------- ... ------------------ ---------------------
+Venus (299)   2457728.5 ... 0.9565596364579296 -0.007016948325238286
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...      range            range_rate     
+    ---           d      ...        AU               AU / d       
+------------ ----------- ... ---------------- --------------------
+Saturn (699)   2457728.5 ... 11.0283853817326 0.001132864366436087
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Uranus (799)   2457728.5 ... 19.34137094787598 0.01386743529033199
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Neptune (899)   2457728.5 ... 30.02166993016457 0.01725283588237513
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Pluto (999)   2457728.5 ... 34.05964224626749 0.009669320749370436
+#################################################################
+n_body_gravitational_acceleration():r= [[-4.04730513e+10 -1.41733502e+11  5.54037400e+06]
+ [ 3.21019617e+08 -2.05965438e+08  5.60345264e+06]
+ [ 1.67590617e+11 -1.42247078e+11 -5.11154893e+09]
+ [ 1.14778148e+10 -1.67354696e+11 -6.85408867e+09]
+ [-8.46883691e+11 -2.65658292e+11  1.85645650e+10]
+ [ 6.68759362e+10 -1.26369585e+11 -5.97849624e+09]
+ [-3.40109281e+11 -1.61394969e+12  3.75219135e+10]
+ [ 2.70911153e+12  1.01570675e+12 -3.12983191e+10]
+ [ 4.19465069e+12 -1.60344278e+12 -6.74964262e+10]
+ [ 1.39270447e+12 -4.90030858e+12  9.44572309e+10]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 3.12956911e-34 1.10920896e-34 5.03875647e-33
+  1.83987680e-36 7.80578211e-34 2.94603681e-37 3.76575280e-38
+  1.11157310e-38 8.14275081e-39]
+ [3.12956911e-34 1.00000000e+06 9.45554444e-35 2.12179518e-34
+  1.42805059e-36 3.43644833e-34 2.22738295e-37 4.12918896e-38
+  1.10414858e-38 7.56095466e-39]
+ [1.10920896e-34 9.45554444e-35 1.00000000e+06 2.52911860e-34
+  9.36175676e-37 9.43370330e-34 2.64729296e-37 4.58971084e-38
+  1.27152796e-38 8.42607232e-39]
+ [5.03875647e-33 2.12179518e-34 2.52911860e-34 1.00000000e+06
+  1.54859185e-36 3.05512133e-33 3.02686556e-37 3.91211040e-38
+  1.15553072e-38 8.33842476e-39]
+ [1.83987680e-36 1.42805059e-36 9.36175676e-37 1.54859185e-36
+  1.00000000e+06 1.26497234e-36 3.34542320e-37 1.85129296e-38
+  7.04381617e-39 7.32983775e-39]
+ [7.80578211e-34 3.43644833e-34 9.43370330e-34 3.05512133e-33
+  1.26497234e-36 1.00000000e+06 2.72281770e-37 4.19229729e-38
+  1.18640381e-38 8.21674556e-39]
+ [2.94603681e-37 2.22738295e-37 2.64729296e-37 3.02686556e-37
+  3.34542320e-37 2.72281770e-37 1.00000000e+06 1.53116169e-38
+  1.07148059e-38 1.94937914e-38]
+ [3.76575280e-38 4.12918896e-38 4.58971084e-38 3.91211040e-38
+  1.85129296e-38 4.19229729e-38 1.53116169e-38 1.00000000e+06
+  3.66207220e-38 4.48900204e-39]
+ [1.11157310e-38 1.10414858e-38 1.27152796e-38 1.15553072e-38
+  7.04381617e-39 1.18640381e-38 1.07148059e-38 3.66207220e-38
+  1.00000000e+06 1.23202989e-38]
+ [8.14275081e-39 7.56095466e-39 8.42607232e-39 8.33842476e-39
+  7.32983775e-39 8.21674556e-39 1.94937914e-38 4.48900204e-39
+  1.23202989e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [ 1.07295679e-05  1.45311496e-06 -6.05548101e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-1.69191144e-03 -5.88537349e-03 -2.63677683e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-3.07578920e-03  9.44387552e-06  7.52454907e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-0.03472869  0.01715398  0.00458877]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [ 1.97117799e-04  3.02736607e-05 -4.53671337e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-0.01112388 -0.00159213  0.00062008]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [ 1.17332539e-05  5.76290599e-05 -1.46875887e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-1.37609870e-05 -5.79445465e-06  1.56657580e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-6.25789414e-06  2.15973315e-06  9.97516119e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2016, 12, 6, 1, 0, 0) : [-1.55161544e-06  5.15171723e-06 -1.02263222e-07]
+extreme_weather_events_n_body_analytics(): date: (2011, 12, 25, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range              range_rate      
+   ---          d      ...         AU                 AU / d        
+---------- ----------- ... ------------------ ----------------------
+  Sun (10)   2455920.5 ... 0.9835641383808092 -5.140273347802024e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate     
+   ---          d      ...          AU                  AU / d       
+---------- ----------- ... -------------------- ---------------------
+Moon (301)   2455920.5 ... 0.002445062036542279 2.471450707786749e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range             range_rate     
+   ---          d      ...         AU                AU / d       
+---------- ----------- ... ----------------- ---------------------
+Mars (499)   2455920.5 ... 1.102766709938807 -0.009101109874098488
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Mercury (199)   2455920.5 ... 1.054552425826613 0.02044331964122963
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Jupiter (599)   2455920.5 ... 4.439814637189353 0.01430161643146951
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range             range_rate     
+    ---          d      ...         AU                AU / d       
+----------- ----------- ... ----------------- ---------------------
+Venus (299)   2455920.5 ... 1.330223787126159 -0.005341213110256125
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range            range_rate     
+    ---           d      ...         AU               AU / d       
+------------ ----------- ... ----------------- --------------------
+Saturn (699)   2455920.5 ... 10.06426383903296 -0.01506945050308913
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Uranus (799)   2455920.5 ... 20.08839616238737 0.01724486390720345
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range            range_rate    
+     ---           d      ...         AU               AU / d      
+------------- ----------- ... ----------------- -------------------
+Neptune (899)   2455920.5 ... 30.54321265059437 0.01433074349286289
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Pluto (999)   2455920.5 ... 33.12875667018693 0.001789293019847017
+#################################################################
+n_body_gravitational_acceleration():r= [[ 6.81910039e+09 -1.46981002e+11  4.25322070e+06]
+ [ 3.74759050e+07 -3.63636218e+08  1.25057543e+07]
+ [-1.61212097e+11  3.41097486e+10  7.92450937e+09]
+ [-5.13578848e+10 -1.49075368e+11  5.17112797e+09]
+ [ 5.73933470e+11  3.33959405e+11 -1.46838247e+10]
+ [ 1.14232500e+11 -1.62819791e+11 -6.41193171e+09]
+ [-1.33253912e+12 -6.97990319e+11  6.29094042e+10]
+ [ 3.00479317e+12  2.95850662e+10 -3.81750404e+10]
+ [ 3.89737189e+12 -2.38457110e+12 -4.35632811e+10]
+ [ 5.94696805e+11 -4.90844597e+12  3.39625103e+11]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 3.16265299e-34 6.62267383e-35 5.00946092e-33
+  2.43080216e-36 7.77214492e-34 3.28262888e-37 3.69109652e-38
+  1.10597569e-38 8.98806891e-39]
+ [3.16265299e-34 1.00000000e+06 2.22275678e-34 2.56307901e-34
+  3.41062080e-36 1.27507855e-34 2.93086172e-37 3.68470383e-38
+  1.04843813e-38 8.21683268e-39]
+ [6.62267383e-35 2.22275678e-34 1.00000000e+06 1.02586742e-34
+  1.99572435e-36 2.56901487e-35 3.78537298e-37 3.15010964e-38
+  9.48024258e-39 7.94735572e-39]
+ [5.00946092e-33 2.56307901e-34 1.02586742e-34 1.00000000e+06
+  2.02528614e-36 2.16403337e-34 3.68352327e-37 3.48435555e-38
+  1.07014654e-38 8.95995513e-39]
+ [2.43080216e-36 3.41062080e-36 1.99572435e-36 2.02528614e-36
+  1.00000000e+06 3.22434554e-36 9.79671421e-38 6.80027109e-38
+  1.26323110e-38 6.89333167e-39]
+ [7.77214492e-34 1.27507855e-34 2.56901487e-35 2.16403337e-34
+  3.22434554e-36 1.00000000e+06 2.71607630e-37 4.11240128e-38
+  1.18403341e-38 9.14232067e-39]
+ [3.28262888e-37 2.93086172e-37 3.78537298e-37 3.68352327e-37
+  9.79671421e-38 2.71607630e-37 1.00000000e+06 1.17465417e-38
+  6.02309968e-39 1.00178504e-38]
+ [3.69109652e-38 3.68470383e-38 3.15010964e-38 3.48435555e-38
+  6.80027109e-38 4.11240128e-38 1.17465417e-38 1.00000000e+06
+  5.86453236e-38 5.98514094e-39]
+ [1.10597569e-38 1.04843813e-38 9.48024258e-39 1.07014654e-38
+  1.26323110e-38 1.18403341e-38 6.02309968e-39 5.86453236e-38
+  1.00000000e+06 1.37487033e-38]
+ [8.98806891e-39 8.21683268e-39 7.94735572e-39 8.95995513e-39
+  6.89333167e-39 9.14232067e-39 1.00178504e-38 5.98514094e-39
+  1.37487033e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [ 1.04450166e-05 -1.56637715e-06 -6.20754886e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [ 2.86539825e-04 -6.15834610e-03 -4.48516575e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [ 1.47816951e-03 -1.59275875e-03 -6.96787321e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [ 0.03869309  0.00139241 -0.00343637]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [-1.83198799e-04 -1.55404115e-04  4.74343485e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [-0.01108258  0.00163419  0.000662  ]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [ 5.84165421e-05  2.40301892e-05 -2.74366258e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [-1.47067918e-05 -8.67469593e-07  1.87288067e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [-5.71932824e-06  3.28979493e-06  6.40482837e-08]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2011, 12, 25, 1, 0, 0) : [-7.02344900e-07  5.68883613e-06 -4.05787094e-07]
+extreme_weather_events_n_body_analytics(): date: (2017, 11, 29, 1, 0, 0)
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 10 ) =  targetname datetime_jd ...       range              range_rate      
+   ---          d      ...         AU                 AU / d        
+---------- ----------- ... ------------------ ----------------------
+  Sun (10)   2458086.5 ... 0.9864334107545835 -0.0001694551910840747
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 301 ) =  targetname datetime_jd ...        range               range_rate      
+   ---          d      ...          AU                  AU / d        
+---------- ----------- ... -------------------- ----------------------
+Moon (301)   2458086.5 ... 0.002509016916118743 -4.215213047681846e-05
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 499 ) =  targetname datetime_jd ...       range             range_rate     
+   ---          d      ...         AU                AU / d       
+---------- ----------- ... ----------------- ---------------------
+Mars (499)   2458086.5 ... 2.222679088196019 -0.007326407801675303
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 199 ) =    targetname  datetime_jd ...       range             range_rate     
+     ---           d      ...         AU                AU / d       
+------------- ----------- ... ------------------ --------------------
+Mercury (199)   2458086.5 ... 0.9047954473210985 -0.02314949123224009
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 599 ) =    targetname  datetime_jd ...       range             range_rate     
+     ---           d      ...         AU                AU / d       
+------------- ----------- ... ----------------- ---------------------
+Jupiter (599)   2458086.5 ... 6.303610968218378 -0.007429116814674131
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 299 ) =   targetname datetime_jd ...       range            range_rate     
+    ---          d      ...         AU               AU / d       
+----------- ----------- ... ----------------- --------------------
+Venus (299)   2458086.5 ... 1.674500202500496 0.001731125174121968
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 699 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Saturn (699)   2458086.5 ... 10.98141786192772 0.00581182479973386
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 799 ) =   targetname  datetime_jd ...       range            range_rate    
+    ---           d      ...         AU               AU / d      
+------------ ----------- ... ----------------- -------------------
+Uranus (799)   2458086.5 ... 19.16104816623131 0.01153676984521292
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 899 ) =    targetname  datetime_jd ...       range           range_rate    
+     ---           d      ...         AU              AU / d      
+------------- ----------- ... ----------------- ------------------
+Neptune (899)   2458086.5 ... 29.85141445498786 0.0172717207334243
+#################################################################
+extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body : 999 ) =   targetname datetime_jd ...       range            range_rate    
+    ---          d      ...         AU               AU / d      
+----------- ----------- ... ----------------- -------------------
+Pluto (999)   2458086.5 ... 34.19503267631402 0.01185475146791472
+#################################################################
+n_body_gravitational_acceleration():r= [[-5.83506680e+10 -1.35541927e+11  5.94283257e+06]
+ [ 3.73706493e+08  2.55400209e+07 -2.39577427e+07]
+ [-3.05477945e+11 -1.31174918e+11  6.16240832e+09]
+ [-5.51324779e+09 -1.35157584e+11 -4.80994676e+09]
+ [-7.17847031e+11 -6.11291456e+11  1.67386049e+10]
+ [-1.37276451e+11 -2.09508203e+11  3.54584688e+09]
+ [-7.75111591e+10 -1.64074613e+12  2.69307345e+10]
+ [ 2.60164569e+12  1.20296241e+12 -2.94655234e+10]
+ [ 4.22769226e+12 -1.43665755e+12 -7.19829779e+10]
+ [ 1.53874728e+12 -4.87837877e+12  4.53803592e+10]]
+n_body_gravitational_acceleration():m= [[1.9890e+30]
+ [3.2850e+23]
+ [4.8670e+24]
+ [5.9720e+24]
+ [6.3900e+23]
+ [1.8989e+27]
+ [5.6830e+26]
+ [8.6810e+25]
+ [1.0240e+26]
+ [1.3090e+22]]
+n_body_gravitational_acceleration(): inv_r3.shape =  10
+n_body_gravitational_acceleration(): m.shape =  10
+n_body_gravitational_acceleration(): extension =  0
+n_body_gravitational_acceleration():inv_r3= [[1.00000000e+06 3.10103173e-34 6.61653348e-35 6.69501434e-33
+  1.85845901e-36 7.88874260e-34 2.93021716e-37 3.78667741e-38
+  1.11233551e-38 7.97735818e-39]
+ [3.10103173e-34 1.00000000e+06 2.71148760e-35 4.02887550e-34
+  1.19134921e-36 6.34438810e-35 2.25535002e-37 4.24741930e-38
+  1.12312982e-38 7.47062719e-39]
+ [6.61653348e-35 2.71148760e-35 1.00000000e+06 3.69661173e-35
+  3.94290665e-36 1.56496883e-34 2.80950097e-37 3.05508694e-38
+  9.52163582e-39 7.56970524e-39]
+ [6.69501434e-33 4.02887550e-34 3.69661173e-35 1.00000000e+06
+  1.58830881e-36 2.87448396e-34 2.91812759e-37 3.97308406e-38
+  1.15080883e-38 8.05532157e-39]
+ [1.85845901e-36 1.19134921e-36 3.94290665e-36 1.58830881e-36
+  1.00000000e+06 2.83978411e-36 5.61130037e-37 1.84679369e-38
+  7.92973770e-39 8.89070371e-39]
+ [7.88874260e-34 6.34438810e-35 1.56496883e-34 2.87448396e-34
+  2.83978411e-36 1.00000000e+06 3.40060332e-37 3.41634346e-38
+  1.07231189e-38 8.19133840e-39]
+ [2.93021716e-37 2.25535002e-37 2.80950097e-37 2.91812759e-37
+  5.61130037e-37 3.40060332e-37 1.00000000e+06 1.67624639e-38
+  1.24799732e-38 2.11031302e-38]
+ [3.78667741e-38 4.24741930e-38 3.05508694e-38 3.97308406e-38
+  1.84679369e-38 3.41634346e-38 1.67624639e-38 1.00000000e+06
+  3.35492283e-38 4.24916623e-39]
+ [1.11233551e-38 1.12312982e-38 9.52163582e-39 1.15080883e-38
+  7.92973770e-39 1.07231189e-38 1.24799732e-38 3.35492283e-38
+  1.00000000e+06 1.19895601e-38]
+ [7.97735818e-39 7.47062719e-39 7.56970524e-39 8.05532157e-39
+  8.89070371e-39 8.19133840e-39 2.11031302e-38 4.24916623e-39
+  1.19895601e-38 1.00000000e+06]]
+n_body_gravitational_acceleration(): m.shape after extension =  10
+extreme_weather_events_n_body_analytics(): gravity of  Sun  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-7.75431290e-06 -7.40972145e-06  3.41490884e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Moon  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-2.41860259e-03 -5.58259530e-03  1.25911846e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Mars  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [ 2.17400341e-03 -3.99275908e-05 -5.41275908e-05]
+extreme_weather_events_n_body_analytics(): gravity of  Mercury  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-0.0469654  -0.00034432  0.00428055]
+extreme_weather_events_n_body_analytics(): gravity of  Jupiter  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [ 1.62931076e-04  1.17497765e-04 -4.13274779e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Venus  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [ 0.00826547  0.00774608 -0.00037072]
+extreme_weather_events_n_body_analytics(): gravity of  Saturn  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [ 7.43351435e-07  5.86135150e-05 -1.04837974e-06]
+extreme_weather_events_n_body_analytics(): gravity of  Uranus  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-1.33847564e-05 -6.73707132e-06  1.48319475e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Neptune  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-6.33728925e-06  1.92338163e-06  1.06460463e-07]
+extreme_weather_events_n_body_analytics(): gravity of  Pluto  at  @earth-moon  on  (2017, 11, 29, 1, 0, 0) : [-1.69413869e-06  5.03060592e-06 -4.81218438e-08]
+==============================================================
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02656636338640216, 3, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.028515343118668733, 3, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.028023462952610007, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.022858414431060663, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02214467471063602, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02568093207918784, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.030262281379160705, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03155556335940801, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.010039965566000729, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.041324093315484124, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.009156546376956752, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.009888744567279803, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03168841440089298, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.011631293781942616, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.04068711354029278, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.010039965566000729, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.045627520928383264, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.019079074496493792, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.019796072398598798, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.035477584070038176, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.009430589310038049, 5, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0507117969112887, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.048291205900769685, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.04273164048185538, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.052209739381798174, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.050334270802793575, 3, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03785458566050477, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.05108924711915548, 3, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.022858414431060663, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.009156546376956752, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.019079074496493792, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.037299605084567415, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.005870203935994608, 5, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02876639084395819, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.020640959425022774, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02214467471063602, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.009888744567279803, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.019796072398598798, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03696974466594448, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.007543294372947364, 5, 1)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.028555587401717656, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02135468416701826, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.037471559850873276, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.037319954971700736, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.028481807865395992, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03237802075552297, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0387688544247264, 3, 4)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03867263977779773, 3, 4)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.031234717060245866, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.04161682068275627, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.011631293781942616, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.01133255197161804, 5, 9)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.04629552692972727, 3, 2)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.020640959425022774, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.02135468416701826, 3, 3)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.03611903879140792, 3, 5)
+extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration: (0.0, 5, 5)
