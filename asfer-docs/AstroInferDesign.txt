@@ -19962,3 +19962,29 @@ References:
 ----------
 1317.4 Implementing and Comparing Integer Factorization Algorithms - https://crypto.stanford.edu/cs359c/17sp/projects/JacquelineSpeiser.pdf
 1317.5 Integer Factoring - [ARJEN K. LENSTRA arjen.lenstra@citicorp.com Citibank, N.A.,] - https://www.fdi.ucm.es/profesor/m_alonso/Documentos/factorizacion/arjlensfac.pdf
+
+----------------------------------------------------------------------------------------------------------------------------
+1318. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 3 October 2022 - related to 148,445,446,463,1165,1171,1176,1266,1289,1316 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance, Drone autonomous online shopping delivery, Drone Electronic Voting Machine, Large Scale Visuals Recognition, Artificial Intelligence models for Climate Change, Astronomical algorithms
+----------------------------------------------------------------------------------------------------------------------------- 
+1318.1 GISWeatherAnalytics.py has been updated to integrate N-Body Gravitational Acceleration computation for Solar System bodies implemented in EphemerisSearch.py to correlate climate events and gravitational pull of Solar system N-Body celestial choreographies on Earth and Ocean surface (especially role of Syzygies of solar system bodies). While Sun-Earth-Moon Syzygy has been widely studied and found to have high correlation to storm intensification (Sections 1266,1289,1316), gravitational influence of rest of Solar system planets on Earth has been less studied in literature.
+1318.2 Function climate_analytics(datasource,date="",time="") has been changed to include a clause for "n-body-analytics" datasource which accepts an array of extreme weather event dates, instantiate Ephemeris object (NASA JPL DE421 Ephemeris) and invoke extreme_weather_events_n_body_analytics() on those dates to compute gravitational pull and pairwise angular separation of solar system bodies. 
+1318.3 Function climate_analytics(datasource="n-body-analytics",date=datesofstorms) is invoked for following formation dates of storms:
+	1318.3.1 North Atlantic Hurricanes - Harvey (Category 4 - 17 August 2017), Irma (Category 5 - 30 August 2017), Ian (Category 4 - 23 September 2022) 
+	1318.3.2 Bay of Bengal - Very Severe Cyclonic Storms - Amphan (20 May 2020),Gaja (10 November 2018),Vardah (6 December 2016),Thane (25 December 2011),Ockhi (29 November 2017) 
+1318.4 Following are excerpts of angular separations for Sun-Moon and Venus-Mercury from testlogs/GISWeatherAnalytics.log.3October2022 for earlier storms:
+	Angular separations for  Venus-Mercury : [<Angle 51deg 49' 11.5">, <Angle 26deg 43' 05.0">, <Angle 09deg 23' 44.3">, <Angle 04deg 59' 58.7">, <Angle 44deg 15' 04.4">, <Angle 23deg 56' 21.0">, <Angle 54deg 10' 52.4">, <Angle 31deg 00' 20.5">]
+	Angular separations for  Sun-Moon : [<Angle 63deg 35' 41.0">, <Angle 97deg 36' 37.7">, <Angle 33deg 52' 36.9">, <Angle 30deg 22' 33.5">, <Angle 28deg 39' 00.4">, <Angle 73deg 45' 38.6">, <Angle 04deg 17' 26.3">, <Angle 117deg 39' 43.0">]
+1318.5 Angular separations of Venus-Mercury range from 9 to 54 degrees for all storms which could perhaps be anecdotal evidences for 1266.18 indicating a synergy of Venus and Mercury and not just Venus. Correlation between lowest pressure (millibar) of the storm and angular separations of solar system bodies earlier could be of importance.
+
+References:
+----------
+1318.6 Hurricane Harvey - https://en.wikipedia.org/wiki/Hurricane_Harvey - 215 kmph - Lowest pressure - 937 millibar
+1318.7 Hurricane Irma - https://en.wikipedia.org/wiki/Hurricane_Irma - 285 kmph - Lowest pressure - 914 millibar
+1318.8 Hurricane Ian - https://en.wikipedia.org/wiki/Hurricane_Ian - 250 kmph - Lowest pressure - 936 millibar
+1318.9 Cyclone Thane - https://en.wikipedia.org/wiki/Cyclone_Thane - 165 kmph - Lowest pressure - 969 millibar
+1318.10 Cyclone Gaja - https://en.wikipedia.org/wiki/Cyclone_Gaja - 150 kmph - Lowest pressure - 976 millibar
+1318.11 Cyclone Ockhi - https://en.wikipedia.org/wiki/Cyclone_Ockhi - 185 kmph - Lowest pressure - 976 millibar
+1318.12 Cyclone Vardah - https://en.wikipedia.org/wiki/Cyclone_Vardah - 155 kmph - Lowest pressure - 994 millibar 
+1318.13 Saffir-Simpson scale of Category 1 to 5 - Lower the pressure, higher is the destructive power - https://sciencing.com/barometric-pressure-hurricanes-22734.html - TL;DR - "... The Saffir-Simpson scale ranges from Category 1 hurricanes with a barometric pressure of greater than 980 millibars that cause minimal damage, to Category 5 hurricanes with a central pressure of less than 920 millibars....During their life cycles, each of these storms can expend as much energy as 10,000 nuclear bombs."
+1318.14 Saffir-Simpson scale Hurricane category classification - https://www.nhc.noaa.gov/aboutsshws.php
+1318.15 Super Typhoon Haiyan - https://en.wikipedia.org/wiki/Typhoon_Haiyan - 315 kmph - Lowest pressure - 895 millibar
