@@ -17,6 +17,7 @@ and logs are captured suffixing timestamps in separate testlogs/ folder within C
 	GitHub - NeuronRain Green - https://github.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/issues
 	GitLab - NeuronRain Antariksh - https://gitlab.com/shrinivaasanka/Krishna_iResearch_DoxygenDocs/-/issues
 	(Deprecated) AsFer GitHub issues page - https://github.com/shrinivaasanka/asfer-github-code/issues?q=is%3Aissue+is%3Aclosed). 
+	JIRA Bug Tracking - https://krishnairesearch.atlassian.net/
 10.NeuronRain architecure and development has two worlds - userspace(AsFer) cloud/machine learning and kernelspace(VIRGO/KingCobra/USBmd) cloud/Embedded/IoT/Drones/Robotics - connected by kernel_analytics.conf and live reading of remote sockets for analytics variables from kernel_analytics module. AsFer has more activity compared to others.
 11.No strict deadlines/releases but repositories are source-released periodically.
 12.Bug Reports/Pull Requests are encouraged at Issues tracking pages (item 9) but resolution depends on feasibility and time availability.
