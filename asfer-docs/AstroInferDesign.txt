@@ -19253,6 +19253,9 @@ References:
 ----------
 1285.7 Random Walks for Text Semantic Similarity - [Daniel Ramage, Anna N. Rafferty, and Christopher D. Manning] - https://nlp.stanford.edu/pubs/wordwalk-textgraphs09.pdf
 1285.8 Beta Reduction substitutions - https://www.diderot.one/courses/56/books/275/chapter/3269
+1285.9 Tree-Adjoining Grammars - https://en.wikipedia.org/wiki/Tree-adjoining_grammar - Symbols in CFGs are replaced by Tree adjunctions. Earlier question "Which is the largest city in the world" could be parsed by a Tree-Adjoining-Grammar and Lambda Function composition could be learnt from TAG tree by rule: function_subtreeroot(<leftsubtree>, <rightsubtree>) 
+1285.10 Tree-Adjoining Grammars in Natural Language Processing -  https://www.slideshare.net/jchoi7s/cs571-tree-adjoining-grammar - TAG tree for example sentence - "John will buy a car". Example TAG Lamba Function composition for "Buy a car": VP(Verb,NP(Disjunction,Noun))
+1285.11 Tree-Adjoining Grammars - Dissertation - [K Vijayashanker] - https://repository.upenn.edu/dissertations/AAI8804974/
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286. (THEORY) Economic Merit and People Analytics - Mechanism Design of Multiround Majority Voting derived from Simultaneous Ascending 
