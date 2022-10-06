@@ -32,6 +32,9 @@ from pyspark import SparkContext, SparkConf
 import sys
 from decimal import Decimal
 import numpy as np
+import numba
+from numba import jit
+
 number_to_factorize = 0
 persisted_tiles = False
 HyperbolicRasterizationGraphicsEnabled = "True"
@@ -40,6 +43,7 @@ import faulthandler
 factors_accum = None
 factors_of_n = []
 spcon = None
+maxfactors = 3
 
 factorization_start=time_ns()
 faulthandler.enable()
@@ -102,20 +106,20 @@ class FactorsAccumulatorParam(AccumulatorParam):
 # interval/segment = (xtile_start,y,xtile_end,y)
 ####################################################################################################################################
 
-
 def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
 
 
-def tilesearch_nonpersistent(y):
+def tilesearch_nonpersistent(y,numfactors=maxfactors):
     global number_to_factorize
     n = number_to_factorize
     xtile_start = int(Decimal(n)/Decimal(y))
     xtile_end = int(Decimal(n)/Decimal(y+1))
     #print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
-    binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y)
+    binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y, numfactors)
 
+#@jit
 def hyperbolic_arc_rasterization(n):
     fig = plt.figure(dpi=100)
     for y in range(1,n):
@@ -132,13 +136,15 @@ def hyperbolic_arc_rasterization(n):
                 label='rasterized hyperbolic arc bow')
     plt.show()
 
-def binary_search_interval_nonpersistent(xl, yl, xr, yr):
+#@jit
+def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
     global factors_accum
     global factorization_start
     sys.setrecursionlimit(30000)
     intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
     #print "intervalmidpoint = ",intervalmidpoint
-    if intervalmidpoint > 0:
+    #print("factors_accum.aid:",factors_accum.aid)
+    if intervalmidpoint > 0 and len(factors_accum._value) < numfactors:
         factorcandidate = (xl+intervalmidpoint)*yl
         #print "factorcandidate = ",factorcandidate
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
@@ -161,6 +167,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
             print("=================================================")
             factors_accum.add(xl)
             factors_accum.add(yl)
+            print("factors_accum._value: ", factors_accum._value)
         else:
             if factorcandidate > number_to_factorize:
                 binary_search_interval_nonpersistent(
@@ -170,6 +177,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr):
                     xl+intervalmidpoint, yl, xr, yr)
 
 
+#@jit(parallel=True)
 def tilesearch(tileintervalstr):
     global number_to_factorize
     if(len(tileintervalstr) > 1):
@@ -182,6 +190,7 @@ def tilesearch(tileintervalstr):
         binary_search_interval(xleft, yleft, xright, yright)
 
 
+#@jit(parallel=True)
 def binary_search_interval(xl, yl, xr, yr):
     intervalmidpoint = int((xr-xl)/2)
     if intervalmidpoint >= 0:
@@ -198,6 +207,7 @@ def binary_search_interval(xl, yl, xr, yr):
                 binary_search_interval(xl+int((xr-xl)/2)+1, yl, xr, yr)
 
 
+#@jit(parallel=True)
 def hardy_ramanujan_ray_shooting_queries(n):
     # Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
     # Approximate Prime Factors are y(m) = m*N/kloglogN, m=1,2,3,...,kloglogN
@@ -218,6 +228,7 @@ def hardy_ramanujan_ray_shooting_queries(n):
     print("=============================================================================================================")
 
 
+#@jit(parallel=True)
 def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
     # Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
     # Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
@@ -252,6 +263,7 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
     print("=============================================================================================================")
 
 
+#@jit(parallel=True)
 def baker_harman_pintz_ray_shooting_queries(n):
     # Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
     k = 6.0
@@ -286,6 +298,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
         print("####################################################################")
 
 
+#@jit(parallel=True)
 def cramer_ray_shooting_queries(n):
     # Shoots Ray Queries based on Cramer estimate for Gaps between Primes - p^0.5*log(p)
     k = 6.0
@@ -317,6 +330,7 @@ def cramer_ray_shooting_queries(n):
         print("####################################################################")
 
 
+#@jit(parallel=True)
 def zhang_ray_shooting_queries(n):
     # Shoots Ray Queries based on Yitang Zhang estimate for Gaps between infinitely many Twin Primes
     # of gap < 7 * 10^7 which is refinement of Goldston-Pintz-Yildirim Sieve
@@ -395,6 +409,8 @@ def SearchTiles_and_Factorize(n, k):
                 tilesearch_nonpersistent)
             tiles_start = tiles_end
             tiles_end += int(Decimal(n)/(Decimal(normal_order_n)))
+            if len(factors_accum.value) > maxfactors:
+                break
         plt.show()
         print(("factors_accum.value = ", factors_accum.value))
         factors = []
