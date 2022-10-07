@@ -510,8 +510,14 @@ if __name__ == "__main__":
     #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
 
-    r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
-    r2data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    #Chennai Metropolitan Area Sprawl Bounding Box 1 - R2019A and R2022A comparison
+    #r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
+    #r2data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
+    #compare_raster_data(r1data,r2data)
+
+    #Chennai Metropolitan Area Sprawl Bounding Box 2 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2019A and R2022A comparison
+    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
+    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0_R8_C26.tif",dt="Degree of Urbanization R2022A")
     compare_raster_data(r1data,r2data)
     
     #ncoloredsegments_2022=defaultdict(list)
