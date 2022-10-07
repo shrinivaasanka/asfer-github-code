@@ -20040,3 +20040,12 @@ References:
 ----------
 1320.5 GDAL Longitude-Latitude Bounding Box finder - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257
 1320.6 Chennai Suburban Multimodal Transit Network - https://en.wikipedia.org/wiki/Chennai_Suburban_Railway#/media/File:Chennai_suburban_rail_and_bus_interconnectivity_map.png
+
+-----------------------------------------------------------------------------------------------------------------------------
+1321. (JIRA,THEORY and FEATURE) Computational Geometric Integer Factorization - Multiple Integers - Python 3.10.4 upgrade + Spark 3.0.1 Quadcore Benchmarks 3 - Numba JIT optimization - Configurable number of factors - Factorization-Primality of Consecutive integers from 999 to 1874 - related to 1259,1303,1319 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes - 7 October 2022
+-----------------------------------------------------------------------------------------------------------------------------
+1321.1 Logs for factorization of 875 consecutive integers from 999 to 1874 have been committed at testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.7October2022
+1321.2 Following example awk script can be used to grep the logs for potential prime integers corresponding to spikes in runtimes (> 100):
+grep "in time deltas" testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.7October2022 |awk '{if ($15 > 100) print $5}'
+1193, 1229, 1249, 1277, 1279, 1297, 1301, 1303, 1307, 1319, 1321, 1327, 1361, 1367, 1369, 1373, 1381, 1399, 1409, 1423, 1427, 1429, 1433, 1439, 1447, 1451, 1453, 1459, 1471, 1481, 1483, 1487, 1489, 1493, 1499, 1511, 1523, 1531, 1543, 1549, 1553, 1559, 1567, 1571, 1579, 1583, 1597, 1601, 1607, 1609, 1613, 1619, 1621, 1627, 1637, 1657, 1663, 1667, 1669, 1681, 1693, 1697, 1699, 1709, 1721, 1723, 1733, 1741, 1747, 1753, 1759, 1777, 1783, 1787, 1789, 1801, 1811, 1823, 1831, 1847, 1849, 1861, 1867, 1871, 1873
+1321.3 JIRA issue for factorization of squares - https://krishnairesearch.atlassian.net/browse/NEUR-1 has been opened for erroneous flagging of squares as primes earlier (1369=37*37,1681=41*41)
