@@ -19256,7 +19256,10 @@ References:
 1285.9 Tree-Adjoining Grammars - https://en.wikipedia.org/wiki/Tree-adjoining_grammar - Symbols in CFGs are replaced by Tree adjunctions. Earlier question "Which is the largest city in the world" could be parsed by a Tree-Adjoining-Grammar and Lambda Function composition could be learnt from TAG tree by rule: function_subtreeroot(<leftsubtree>, <rightsubtree>) 
 1285.10 Tree-Adjoining Grammars in Natural Language Processing -  https://www.slideshare.net/jchoi7s/cs571-tree-adjoining-grammar - TAG tree for example sentence - "John will buy a car". Example TAG Lamba Function composition for "Buy a car": VP(Verb,NP(Disjunction,Noun))
 1285.11 Tree-Adjoining Grammars - Dissertation - [K Vijayashanker] - https://repository.upenn.edu/dissertations/AAI8804974/
-
+1285.12 Pumping Lemma for Tree-Adjoining Grammars - [K Vijayashanker] - Dissertation - https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.401.1695&rep=rep1&type=pdf - "... Theorem 4.7 If L is a TAL, then there is a constant n such that if z in L and |z| >= n then z may be written as z=u1v1w1v2u2v3w2v4u3 with v1w1v2v3w2v4 <= n , |v1v2v3v4| >= 1 such that for all i >= 0, z=u1v1^iw1v2^iu2v3^iw2v4^iu3 in L ..." - Pumping Lemma for TALs have far-reaching applications in Natural Language Processing, especially in Sentence summarization and generating natural language answers to queries by Question-Answering bots (two opposing directions) - (*) A longwinding natural language sentence of the form z=u1v1^iw1v2^iu2v3^iw2v4^iu3 could be summarized by parsing it into a pumped version of TAG tree and inferring the summary from it as z=u1v1w1v2u2v3w2v4u3 (*) A smaller natural language sentence of the form z=u1v1w1v2u2v3w2v4u3 could be pumped and expanded to a long sentence of the form z=u1v1^iw1v2^iu2v3^iw2v4^iu3 
+1285.13 Tree-Adjoining Grammars and Lexicalized Grammars - [Aravind Joshi-Yves Schabes] - https://core.ac.uk/download/pdf/76362911.pdf - Figure 3: Derived tree for: "yesterday a man saw Mary" - Tree-Adjoining Grammars are more expressive than CFLs and contained in Context Sensitive Languages - "... CFL c TAL c Indexed Languages c CSL ..." 
+1285.14 Parikh's Theorem - https://en.wikipedia.org/wiki/Parikh%27s_theorem - " ... Parikh's theorem in theoretical computer science says that if one looks only at the number of occurrences of each terminal symbol in a context-free language, without regard to their order, then the language is indistinguishable from a regular language.[1] ... Let {\displaystyle \Sigma =\{a_{1},a_{2},\ldots ,a_{k}\}}\Sigma =\{a_{1},a_{2},\ldots ,a_{k}\} be an alphabet. The Parikh vector of a word is defined as the function {\textstyle p:\Sigma ^{*}\to \mathbb {N} ^{k}}{\textstyle p:\Sigma ^{*}\to \mathbb {N} ^{k}}, given by[1] {\displaystyle p(w)=(|w|_{a_{1}},|w|_{a_{2}},\ldots ,|w|_{a_{k}})}{\displaystyle p(w)=(|w|_{a_{1}},|w|_{a_{2}},\ldots ,|w|_{a_{k}})} ... " - Parikh Vectors are examples of embedding of CFL words on a vectorspace. 
+ 
 -------------------------------------------------------------------------------------------------------------------------------------------
 1286. (THEORY) Economic Merit and People Analytics - Mechanism Design of Multiround Majority Voting derived from Simultaneous Ascending 
 Auction - related to 400,790,791 and all sections on Majority Voting, Auction Design, Mechanism Design, Economic Merit, People Analytics,
@@ -20049,3 +20052,30 @@ References:
 grep "in time deltas" testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.7October2022 |awk '{if ($15 > 100) print $5}'
 1193, 1229, 1249, 1277, 1279, 1297, 1301, 1303, 1307, 1319, 1321, 1327, 1361, 1367, 1369, 1373, 1381, 1399, 1409, 1423, 1427, 1429, 1433, 1439, 1447, 1451, 1453, 1459, 1471, 1481, 1483, 1487, 1489, 1493, 1499, 1511, 1523, 1531, 1543, 1549, 1553, 1559, 1567, 1571, 1579, 1583, 1597, 1601, 1607, 1609, 1613, 1619, 1621, 1627, 1637, 1657, 1663, 1667, 1669, 1681, 1693, 1697, 1699, 1709, 1721, 1723, 1733, 1741, 1747, 1753, 1759, 1777, 1783, 1787, 1789, 1801, 1811, 1823, 1831, 1847, 1849, 1861, 1867, 1871, 1873
 1321.3 JIRA issue for factorization of squares - https://krishnairesearch.atlassian.net/browse/NEUR-1 has been opened for erroneous flagging of squares as primes earlier (1369=37*37,1681=41*41)
+
+-----------------------------------------------------------------------------------------------------------------------------
+1322. (JIRA,THEORY and FEATURE) Computational Geometric Integer Factorization - Multiple Integers - Python 3.10.4 upgrade + Spark 3.0.1 Quadcore Benchmarks 4 - Factorization-SquareRoot-Primality of Consecutive integers from 50000 to 50100 and 9 to 200 - related to 498,601,1226,1259,1303,1319,1321 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization - 10 October 2022
+-----------------------------------------------------------------------------------------------------------------------------
+1322.1 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-1 concerning problem within python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py in finding square roots,a very important special case of factorization. It is worth noting that Newton-Raphson square root algorithm is polylogarithmic - O((logN)^k*loglogN) - which is used for approximate factor rayshooting queries in algorithm of https://kuja27.blogspot.com/2018/04/grafit-course-material-newton-raphson.html - and Computational Geometric Factorization implies general cases of primality testing and factorization are polylogarithmic (O((logN)^kloglogN) if interpolation search is employed) as well which includes almost-squares (integer squareroots). Principal Ideal Algebraic Geometry and Differential Calculus involved in computation of arithmetic progression hyperbolic arc rasterization (rectification) are quite similar to Newton-Raphson algorithm:
+	tile_segment of length delta (from first derivative - tangent - of hyperbolic arc at x) = N/x - N/(x+delta) = N *[delta/x(x+delta)] or N/(x(x+1)) for delta=1
+1322.2 New clause has been added to handle when intervalmidpoint of binary search is 0 and tile x and y ordinates are equal. 
+1322.3 Multiple Consecutive integers from 50000 to 50100 have been factorized and following primes have been captured in python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.10October2022 (spikes in runtimes): 
+	50021,50023,50033,50047,50051,50053,50069,50077,50087,50093
+1322.4 Multiple Consecutive integers from 9 to 200 have been factorized and following square roots have been captured in python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log2.10October2022 :
+('Square root is: ', 3, ' (at ', 'Mon, 10 Oct 2022 09:50:34 GMT', ')')
+('Square root is: ', 4, ' (at ', 'Mon, 10 Oct 2022 09:54:10 GMT', ')')
+('Square root is: ', 5, ' (at ', 'Mon, 10 Oct 2022 09:57:36 GMT', ')')
+('Square root is: ', 6, ' (at ', 'Mon, 10 Oct 2022 10:01:51 GMT', ')')
+('Square root is: ', 7, ' (at ', 'Mon, 10 Oct 2022 10:06:55 GMT', ')')
+('Square root is: ', 8, ' (at ', 'Mon, 10 Oct 2022 10:12:35 GMT', ')')
+('Square root is: ', 9, ' (at ', 'Mon, 10 Oct 2022 10:19:03 GMT', ')')
+('Square root is: ', 10, ' (at ', 'Mon, 10 Oct 2022 10:26:08 GMT', ')')
+('Square root is: ', 11, ' (at ', 'Mon, 10 Oct 2022 10:34:12 GMT', ')')
+('Square root is: ', 12, ' (at ', 'Mon, 10 Oct 2022 10:42:57 GMT', ')')
+('Square root is: ', 13, ' (at ', 'Mon, 10 Oct 2022 10:52:47 GMT', ')')
+('Square root is: ', 14, ' (at ', 'Mon, 10 Oct 2022 11:03:30 GMT', ')')
+1322.5 Runtime plot for factoring integers from 9 to 208 has been captured in python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg and spikes correspond to primes - actual runtimes are far upperbounded by theoretical plot for O(logN*logN). 
+
+References:
+----------
+1322.6 Complexity of Newton-Raphson Square Root Algorithm - https://courses.csail.mit.edu/6.006/fall11/rec/rec12_newton.pdf
