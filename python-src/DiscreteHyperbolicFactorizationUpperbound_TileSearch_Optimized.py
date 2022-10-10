@@ -116,7 +116,7 @@ def tilesearch_nonpersistent(y,numfactors=maxfactors):
     n = number_to_factorize
     xtile_start = int(Decimal(n)/Decimal(y))
     xtile_end = int(Decimal(n)/Decimal(y+1))
-    #print "tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")"
+    #print("tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")")
     binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y, numfactors)
 
 #@jit
@@ -142,14 +142,22 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
     global factorization_start
     sys.setrecursionlimit(30000)
     intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
-    #print "intervalmidpoint = ",intervalmidpoint
+    #print("intervalmidpoint = ",intervalmidpoint)
     #print("factors_accum.aid:",factors_accum.aid)
+    if intervalmidpoint == 0:
+        if number_to_factorize/xl == xl:	
+            print(("Square root is: ",xl," (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            factors_accum.add(xl)
+        elif number_to_factorize/xr == xr:	
+            print(("Square root is: ",xr," (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            factors_accum.add(xr)
     if intervalmidpoint > 0 and len(factors_accum._value) < numfactors:
         factorcandidate = (xl+intervalmidpoint)*yl
-        #print "factorcandidate = ",factorcandidate
+        #print("factorcandidate = ",factorcandidate)
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
             print("=================================================")
             print("xl + intervalmidpoint = ",xl + intervalmidpoint)
+            print("xr + intervalmidpoint = ",xr + intervalmidpoint)
             print("xl = ",xl)
             print("yl = ",yl)
             factorcriterion1=((xl + intervalmidpoint)*yl == number_to_factorize)
@@ -157,8 +165,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
             factorcriterion2=(xl*yl == number_to_factorize)
             print("Factor point verification: xl*yl == number_to_factorize = ",factorcriterion2)
             if factorcriterion1 == True:
-                print(("Factors are: (", yl, ",", (xl+intervalmidpoint) , ") (at ", strftime(
-                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                print(("Factors are: (", yl, ",", (xl+intervalmidpoint) , ") (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             if factorcriterion2 == True:
                 print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
@@ -432,4 +439,4 @@ if __name__ == "__main__":
         hyperbolic_arc_rasterization(number_to_factorize)
     factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]))
     print(("factors of ", number_to_factorize, "(", math.log(
-        number_to_factorize, 2), " bits integer) =", factors))
+        number_to_factorize, 2), " bits integer) =", set(factors)))
