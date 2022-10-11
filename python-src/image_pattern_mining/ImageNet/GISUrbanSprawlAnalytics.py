@@ -175,6 +175,22 @@ def compare_raster_data(raster1data,raster2data):
         except:
             print("Exception in raster histogram dictionary lookup")
 
+def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d):
+    raster2dhist=defaultdict(int)
+    raster3dhist=defaultdict(int)
+    for r1 in rasterdata_2d:
+        raster2dhist[r1[0]] += 1
+    for r2 in rasterdata_3d:
+        raster3dhist[r2[0]] += 1
+    raster2dhist_sorted=sorted(raster2dhist.items(),key=operator.itemgetter(0),reverse=True)
+    raster3dhist_sorted=sorted(raster3dhist.items(),key=operator.itemgetter(0),reverse=True)
+    print("three_dimensional_urban_growth_model(): raster2dhist = ",raster2dhist_sorted)
+    print("three_dimensional_urban_growth_model(): raster3dhist = ",raster3dhist_sorted)
+    raster2dsurfaces=raster2dhist_sorted
+    raster3dvolumes=raster3dhist_sorted
+    maxbuildingheight=raster3dvolumes[0][0]/raster2dsurfaces[0][0]
+    print("three_dimensional_urban_growth_model(): maximum building height = ",maxbuildingheight)
+
 def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
     print("===================="+geotifffile+"=====================")
     longlatpolygons=[]
@@ -516,10 +532,14 @@ if __name__ == "__main__":
     #compare_raster_data(r1data,r2data)
 
     #Chennai Metropolitan Area Sprawl Bounding Box 2 - http://bboxfinder.com/#12.439259,79.271851,13.568572,80.351257 - R2019A and R2022A comparison
-    r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
-    r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0_R8_C26.tif",dt="Degree of Urbanization R2022A")
-    compare_raster_data(r1data,r2data)
-    
+    #r1data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
+    #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0_R8_C26.tif",dt="Degree of Urbanization R2022A")
+    #compare_raster_data(r1data,r2data)
+
+    r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
+    r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
+    three_dimensional_urban_growth_model(r2ddata,r3ddata)
+
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
     #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14)
