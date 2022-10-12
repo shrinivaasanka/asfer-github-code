@@ -16,6 +16,7 @@
 # Personal website(research): https://sites.google.com/site/kuja27/
 # --------------------------------------------------------------------------------------------------------
 
+import faulthandler
 from time import gmtime, strftime, time_ns
 from pyspark.sql import SQLContext, Row, SparkSession
 from pyspark.accumulators import AccumulatorParam
@@ -34,18 +35,18 @@ from decimal import Decimal
 import numpy as np
 import numba
 from numba import jit
+from joblib import Parallel,delayed
 
 number_to_factorize = 0
 persisted_tiles = False
 HyperbolicRasterizationGraphicsEnabled = "True"
-import faulthandler
 
 factors_accum = None
 factors_of_n = []
 spcon = None
 maxfactors = 3
 
-factorization_start=time_ns()
+factorization_start = time_ns()
 faulthandler.enable()
 
 
@@ -61,7 +62,7 @@ class VectorAccumulatorParam(AccumulatorParam):
 
 class FactorsAccumulatorParam(AccumulatorParam):
     def zero(self, value):
-        #return [0.0] * len(value)
+        # return [0.0] * len(value)
         return []
 
     def addInPlace(self, val1, val2):
@@ -71,7 +72,7 @@ class FactorsAccumulatorParam(AccumulatorParam):
             factors_of_n = val1 + val2
         else:
             factors_of_n.append(val2)
-        #print("factors_of_n:",factors_of_n)
+        # print("factors_of_n:",factors_of_n)
         return factors_of_n
 
 ####################################################################################################################################
@@ -106,23 +107,23 @@ class FactorsAccumulatorParam(AccumulatorParam):
 # interval/segment = (xtile_start,y,xtile_end,y)
 ####################################################################################################################################
 
+
 def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
 
-
-def tilesearch_nonpersistent(y,numfactors=maxfactors):
+def tilesearch_nonpersistent(y, numfactors=maxfactors):
     global number_to_factorize
     n = number_to_factorize
     xtile_start = int(Decimal(n)/Decimal(y))
     xtile_end = int(Decimal(n)/Decimal(y+1))
     #print("tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")")
-    binary_search_interval_nonpersistent(xtile_start, y, xtile_end, y, numfactors)
+    binary_search_interval_nonpersistent(
+        xtile_start, y, xtile_end, y, numfactors)
 
-#@jit
 def hyperbolic_arc_rasterization(n):
     fig = plt.figure(dpi=100)
-    for y in range(1,n):
+    for y in range(1, n):
         xtile_start = int(Decimal(n)/Decimal(y))
         xtile_end = int(Decimal(n)/Decimal(y+1))
         xaxis = []
@@ -136,44 +137,51 @@ def hyperbolic_arc_rasterization(n):
                 label='rasterized hyperbolic arc bow')
     plt.show()
 
-#@jit
 def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
     global factors_accum
     global factorization_start
     sys.setrecursionlimit(30000)
     intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
     #print("intervalmidpoint = ",intervalmidpoint)
-    #print("factors_accum.aid:",factors_accum.aid)
+    # print("factors_accum.aid:",factors_accum.aid)
     if intervalmidpoint == 0:
-        if number_to_factorize/xl == xl:	
-            print(("Square root is: ",xl," (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+        if number_to_factorize/xl == xl:
+            print(("Square root is: ", xl, " (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             factors_accum.add(xl)
-        elif number_to_factorize/xr == xr:	
-            print(("Square root is: ",xr," (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+        elif number_to_factorize/xr == xr:
+            print(("Square root is: ", xr, " (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             factors_accum.add(xr)
     if intervalmidpoint > 0 and len(factors_accum._value) < numfactors:
         factorcandidate = (xl+intervalmidpoint)*yl
         #print("factorcandidate = ",factorcandidate)
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
             print("=================================================")
-            print("xl + intervalmidpoint = ",xl + intervalmidpoint)
-            print("xr + intervalmidpoint = ",xr + intervalmidpoint)
-            print("xl = ",xl)
-            print("yl = ",yl)
-            factorcriterion1=((xl + intervalmidpoint)*yl == number_to_factorize)
-            print("Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize = ",factorcriterion1)
-            factorcriterion2=(xl*yl == number_to_factorize)
-            print("Factor point verification: xl*yl == number_to_factorize = ",factorcriterion2)
+            print("xl + intervalmidpoint = ", xl + intervalmidpoint)
+            print("xr + intervalmidpoint = ", xr + intervalmidpoint)
+            print("xl = ", xl)
+            print("yl = ", yl)
+            factorcriterion1 = ((xl + intervalmidpoint) *
+                                yl == number_to_factorize)
+            print("Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize = ", factorcriterion1)
+            factorcriterion2 = (xl*yl == number_to_factorize)
+            print(
+                "Factor point verification: xl*yl == number_to_factorize = ", factorcriterion2)
             if factorcriterion1 == True:
-                print(("Factors are: (", yl, ",", (xl+intervalmidpoint) , ") (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                print(("Factors are: (", yl, ",", (xl+intervalmidpoint),
+                      ") (at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                factors_accum.add(xl+intervalmidpoint)
+                factors_accum.add(yl)
             if factorcriterion2 == True:
-                print(("Factors are: (", yl, ",", xl , ") (at ", strftime(
-                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
-            factorization_present=time_ns()
-            print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
+                print(("Factors are: (", yl, ",", xl, ") (at ", strftime(
+                    "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                factors_accum.add(xl)
+                factors_accum.add(yl)
+            factorization_present = time_ns()
+            print("nanoseconds elapsed so far in finding all factors: ",
+                  factorization_present - factorization_start)
             print("=================================================")
-            factors_accum.add(xl)
-            factors_accum.add(yl)
             print("factors_accum._value: ", factors_accum._value)
         else:
             if factorcandidate > number_to_factorize:
@@ -184,12 +192,12 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
                     xl+intervalmidpoint, yl, xr, yr)
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def tilesearch(tileintervalstr):
     global number_to_factorize
-    if(len(tileintervalstr) > 1):
+    if (len(tileintervalstr) > 1):
         tileinterval = eval(tileintervalstr)
-        #print "tilesearch(): tileinterval=",tileinterval
+        # print "tilesearch(): tileinterval=",tileinterval
         xleft = tileinterval[0]
         yleft = tileinterval[1]
         xright = tileinterval[2]
@@ -197,7 +205,7 @@ def tilesearch(tileintervalstr):
         binary_search_interval(xleft, yleft, xright, yright)
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def binary_search_interval(xl, yl, xr, yr):
     intervalmidpoint = int((xr-xl)/2)
     if intervalmidpoint >= 0:
@@ -214,7 +222,7 @@ def binary_search_interval(xl, yl, xr, yr):
                 binary_search_interval(xl+int((xr-xl)/2)+1, yl, xr, yr)
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def hardy_ramanujan_ray_shooting_queries(n):
     # Shoots Ray Queries to Find Approximate Factors by Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
     # Approximate Prime Factors are y(m) = m*N/kloglogN, m=1,2,3,...,kloglogN
@@ -235,7 +243,7 @@ def hardy_ramanujan_ray_shooting_queries(n):
     print("=============================================================================================================")
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
     # Shoots Ray Queries to Find Approximate Factors by ratio of Prime Number Theorem N/logN and Hardy-Ramanujan Normal Order O(loglogN) for number of prime factors of N
     # Approximate Prime Factors are y(m) = m*N/(logN)(loglogN), m=1,2,3,...,kloglogN
@@ -270,7 +278,7 @@ def hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n):
     print("=============================================================================================================")
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def baker_harman_pintz_ray_shooting_queries(n):
     # Shoots Ray Queries based on Baker-Harman-Pintz estimate for Gaps between Primes - p^0.525
     k = 6.0
@@ -290,7 +298,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
         # for x in spcon.range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))).collect():
         for x in range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))):
             next_prime = prev_prime + math.pow(prev_prime, 0.525)
-            #print "next_prime: next_prime = ",next_prime
+            # print "next_prime: next_prime = ",next_prime
             prime_gaps_sum += math.pow(prev_prime, 0.525)
             prev_prime = next_prime
         approximate_prime_factor = int(
@@ -305,7 +313,7 @@ def baker_harman_pintz_ray_shooting_queries(n):
         print("####################################################################")
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def cramer_ray_shooting_queries(n):
     # Shoots Ray Queries based on Cramer estimate for Gaps between Primes - p^0.5*log(p)
     k = 6.0
@@ -322,7 +330,7 @@ def cramer_ray_shooting_queries(n):
         for x in range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))):
             next_prime = prev_prime + \
                 math.pow(prev_prime, 0.5)*math.log(prev_prime, 2)
-            #print "next_prime: next_prime = ",next_prime
+            # print "next_prime: next_prime = ",next_prime
             prime_gaps_sum += math.pow(prev_prime, 0.5)*math.log(prev_prime, 2)
             prev_prime = next_prime
         approximate_prime_factor = int(
@@ -337,7 +345,7 @@ def cramer_ray_shooting_queries(n):
         print("####################################################################")
 
 
-#@jit(parallel=True)
+# @jit(parallel=True)
 def zhang_ray_shooting_queries(n):
     # Shoots Ray Queries based on Yitang Zhang estimate for Gaps between infinitely many Twin Primes
     # of gap < 7 * 10^7 which is refinement of Goldston-Pintz-Yildirim Sieve
@@ -354,7 +362,7 @@ def zhang_ray_shooting_queries(n):
         prev_prime = approximate_prime_factor
         for x in range(int(l*float(n)/(float(math.log(n, 2)*normal_order_n)))):
             next_prime = prev_prime + 7*10000000
-            #print "next_prime: next_prime = ",next_prime
+            # print "next_prime: next_prime = ",next_prime
             prime_gaps_sum += 7*10000000
             prev_prime = next_prime
         approximate_prime_factor = int(
@@ -368,8 +376,16 @@ def zhang_ray_shooting_queries(n):
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
+@jit(nopython=True)
+def parallel_tile_segments(tiles_per_PRAM,x):
+    tiles_start = x*tiles_per_PRAM + 1 
+    tiles_end = (x+1)*tiles_per_PRAM + 1
+    tiles = list(range(tiles_start, tiles_end))
+    print("tiles:", tiles)
+    return tiles
 
-def SearchTiles_and_Factorize(n, k):
+#@jit(nopython=True)
+def SearchTiles_and_Factorize(n, k, Parallel_for="False"):
     global globalmergedtiles
     global globalcoordinates
     global factors_accum
@@ -384,49 +400,92 @@ def SearchTiles_and_Factorize(n, k):
             "/home/shrinivaasanka/Krishna_iResearch_OpenSource/GitHub/asfer-github-code/cpp-src/miscellaneous/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.tileintervals", "r")
 
         tileintervalslist = tileintervalsf.read().split("\n")
-        #print "tileintervalslist=",tileintervalslist
+        # print "tileintervalslist=",tileintervalslist
         tileintervalslist_accum = spcon.accumulator(
             tilesintervalslist, VectorAccumulatorParam())
         paralleltileintervals = spcon.parallelize(tileintervalslist)
         paralleltileintervals.foreach(tilesearch)
     else:
-        factorization_start=time_ns()
-        print("factorization start (in nanoseconds):",factorization_start)
-        factorsfile = open(
-            "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
-        # hardy_ramanujan_ray_shooting_queries(n)
-        # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
-        # baker_harman_pintz_ray_shooting_queries(n)
-        # cramer_ray_shooting_queries(n)
-        # zhang_ray_shooting_queries(n)
-        factors_accum = spcon.accumulator(
-            factors_of_n, FactorsAccumulatorParam())
-        # spcon.parallelize(spcon.range(1, n).collect()).foreach(
-        #    tilesearch_nonpersistent)
-        normal_order_n = (Decimal(math.log(n,2)) ** k)
-        tiles_start = 1
-        #tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
-        tiles_end = int(Decimal(n)/(Decimal(normal_order_n)))
-        for x in range(int(Decimal(normal_order_n))):
-            print("tiles_start:", tiles_start)
-            print("tiles_end:", tiles_end)
-            tiles = list(range(tiles_start, tiles_end))
-            #print(("len(tiles):", len(tiles)))
-            spcon.parallelize(tiles).foreach(
-                tilesearch_nonpersistent)
-            tiles_start = tiles_end
-            tiles_end += int(Decimal(n)/(Decimal(normal_order_n)))
-            if len(factors_accum.value) > maxfactors:
-                break
-        plt.show()
-        print(("factors_accum.value = ", factors_accum.value))
-        factors = []
-        factordict = {}
-        for f in factors_accum.value:
-            factors.append(f)
-        factordict[n] = list(set(factors))
-        json.dump(factordict, factorsfile)
-        return factors
+        if Parallel_for == "False":
+            factorization_start = time_ns()
+            print("factorization start (in nanoseconds):", factorization_start)
+            factorsfile = open(
+                "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
+            # hardy_ramanujan_ray_shooting_queries(n)
+            # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+            # baker_harman_pintz_ray_shooting_queries(n)
+            # cramer_ray_shooting_queries(n)
+            # zhang_ray_shooting_queries(n)
+            factors_accum = spcon.accumulator(
+                factors_of_n, FactorsAccumulatorParam())
+            # spcon.parallelize(spcon.range(1, n).collect()).foreach(
+            #    tilesearch_nonpersistent)
+            normal_order_n = (Decimal(math.log(n, 2)) ** k)
+            tiles_start = 1
+            #tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
+            tiles_end = int(Decimal(n)/(Decimal(normal_order_n)))
+            for x in range(int(Decimal(normal_order_n))):
+                print("tiles_start:", tiles_start)
+                print("tiles_end:", tiles_end)
+                tiles = list(range(tiles_start, tiles_end))
+                #print(("len(tiles):", len(tiles)))
+                spcon.parallelize(tiles).foreach(
+                    tilesearch_nonpersistent)
+                tiles_start = tiles_end
+                tiles_end += int(Decimal(n)/(Decimal(normal_order_n)))
+                if len(factors_accum.value) > maxfactors:
+                    break
+            plt.show()
+            print(("factors_accum.value = ", factors_accum.value))
+            factors = []
+            factordict = {}
+            for f in factors_accum.value:
+                factors.append(f)
+            factordict[n] = list(set(factors))
+            json.dump(factordict, factorsfile)
+            return factors
+        else:
+            factorization_start = time_ns()
+            print("factorization start (in nanoseconds):", factorization_start)
+            factorsfile = open(
+                "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors", "w")
+            # hardy_ramanujan_ray_shooting_queries(n)
+            # hardy_ramanujan_prime_number_theorem_ray_shooting_queries(n)
+            # baker_harman_pintz_ray_shooting_queries(n)
+            # cramer_ray_shooting_queries(n)
+            # zhang_ray_shooting_queries(n)
+            factors_accum = spcon.accumulator(
+                factors_of_n, FactorsAccumulatorParam())
+            # spcon.parallelize(spcon.range(1, n).collect()).foreach(
+            #    tilesearch_nonpersistent)
+            polylog_n = (Decimal(math.log(n, 2)) ** k)
+            tiles_per_PRAM = int(Decimal(n)/polylog_n)
+
+            #((logN)^k sequential binary or interpolation searches of logN or loglogN time each on N/(logN)^k PRAMS-Multicores
+            #for x in range(int(polylog_n)):
+            #	 print("tiles_start:", tiles_start)
+            #    print("tiles_end:", tiles_end)
+            #    tiles = list(range(tiles_start, tiles_end))
+            #    print(("len(tiles):", len(tiles)))
+            #    spcon.parallelize(tiles).foreach(
+            #        tilesearch_nonpersistent)
+            #    tiles_start = tiles_end
+            #    tiles_end += tiles_per_PRAM
+            #    if len(factors_accum.value) > maxfactors:
+            #        break
+            #Earlier sequential for loop is parallelized by joblib to obtain a 2D array of set of tile segments followed by another nested parallelize() for each tile segment 1D array 
+            tile_segments=Parallel(n_jobs=4)(delayed(parallel_tile_segments)(tiles_per_PRAM,x) for x in range(int(polylog_n)))
+            print("tile_segments:",tile_segments)
+            spcon.parallelize(tile_segments).flatMap(lambda x: x).foreach(tilesearch_nonpersistent)
+            plt.show()
+            print(("factors_accum.value = ", factors_accum.value))
+            factors = []
+            factordict = {}
+            for f in factors_accum.value:
+                factors.append(f)
+            factordict[n] = list(set(factors))
+            json.dump(factordict, factorsfile)
+            return factors
 
 
 if __name__ == "__main__":
@@ -434,9 +493,10 @@ if __name__ == "__main__":
     print(("Spark Python version:", sys.version))
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) are:"))
-    HyperbolicRasterizationGraphicsEnabled=sys.argv[3]
-    if HyperbolicRasterizationGraphicsEnabled=="True":
+    HyperbolicRasterizationGraphicsEnabled = sys.argv[3]
+    Parallel_for=sys.argv[4] 
+    if HyperbolicRasterizationGraphicsEnabled == "True":
         hyperbolic_arc_rasterization(number_to_factorize)
-    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]))
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) =", set(factors)))

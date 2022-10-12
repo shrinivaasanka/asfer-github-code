@@ -1,0 +1,186 @@
+22/10/12 15:35:41 WARN Utils: Your hostname, ksrinivasan-Acer-One-14-Z422 resolves to a loopback address: 127.0.1.1; using 192.168.1.142 instead (on interface wlp1s0)
+22/10/12 15:35:41 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317, '(', 534.54797789537, ' bits integer) are:')
+22/10/12 15:35:46 INFO SparkContext: Running Spark version 3.3.0
+22/10/12 15:35:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/12 15:35:46 INFO ResourceUtils: ==============================================================
+22/10/12 15:35:46 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/10/12 15:35:46 INFO ResourceUtils: ==============================================================
+22/10/12 15:35:46 INFO SparkContext: Submitted application: Spark Factorization
+22/10/12 15:35:46 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 4, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 4.0)
+22/10/12 15:35:46 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+22/10/12 15:35:46 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/10/12 15:35:46 INFO SecurityManager: Changing view acls to: root
+22/10/12 15:35:46 INFO SecurityManager: Changing modify acls to: root
+22/10/12 15:35:46 INFO SecurityManager: Changing view acls groups to: 
+22/10/12 15:35:46 INFO SecurityManager: Changing modify acls groups to: 
+22/10/12 15:35:46 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+22/10/12 15:35:47 INFO Utils: Successfully started service 'sparkDriver' on port 45869.
+22/10/12 15:35:47 INFO SparkEnv: Registering MapOutputTracker
+22/10/12 15:35:48 INFO SparkEnv: Registering BlockManagerMaster
+22/10/12 15:35:48 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/10/12 15:35:48 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/10/12 15:35:48 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/10/12 15:35:48 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a750a8e5-b56c-43c2-ba4a-2a8e645a2fc7
+22/10/12 15:35:48 INFO MemoryStore: MemoryStore started with capacity 2004.6 MiB
+22/10/12 15:35:48 INFO SparkEnv: Registering OutputCommitCoordinator
+22/10/12 15:35:49 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/10/12 15:35:49 INFO Executor: Starting executor ID driver on host 192.168.1.142
+22/10/12 15:35:49 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+22/10/12 15:35:49 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40325.
+22/10/12 15:35:49 INFO NettyBlockTransferService: Server created on 192.168.1.142:40325
+22/10/12 15:35:49 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/10/12 15:35:49 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.142, 40325, None)
+22/10/12 15:35:49 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.142:40325 with 2004.6 MiB RAM, BlockManagerId(driver, 192.168.1.142, 40325, None)
+22/10/12 15:35:49 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.142, 40325, None)
+22/10/12 15:35:49 INFO BlockManager: external shuffle service port = 7337
+22/10/12 15:35:49 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.142, 40325, None)
+factorization start (in nanoseconds): 1665569151429052257
+tiles_start: 1
+tiles_end: 262865
+22/10/12 15:35:53 INFO SparkContext: Starting job: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433
+22/10/12 15:35:53 INFO DAGScheduler: Got job 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433) with 4 output partitions
+22/10/12 15:35:53 INFO DAGScheduler: Final stage: ResultStage 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433)
+22/10/12 15:35:53 INFO DAGScheduler: Parents of final stage: List()
+22/10/12 15:35:53 INFO DAGScheduler: Missing parents: List()
+22/10/12 15:35:53 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433), which has no missing parents
+22/10/12 15:35:53 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 10.7 KiB, free 2004.6 MiB)
+22/10/12 15:35:54 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.5 KiB, free 2004.6 MiB)
+22/10/12 15:35:54 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.1.142:40325 (size: 6.5 KiB, free: 2004.6 MiB)
+22/10/12 15:35:54 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+22/10/12 15:35:54 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+22/10/12 15:35:54 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks resource profile 0
+22/10/12 15:35:54 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.1.142, executor driver, partition 0, PROCESS_LOCAL, 202998 bytes) taskResourceAssignments Map()
+22/10/12 15:35:54 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/10/12 15:35:59 INFO PythonRunner: Times: total = 3695, boot = 1320, init = 37, finish = 2338
+22/10/12 15:35:59 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1462 bytes result sent to driver
+22/10/12 15:35:59 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.1.142, executor driver, partition 1, PROCESS_LOCAL, 334966 bytes) taskResourceAssignments Map()
+22/10/12 15:35:59 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+22/10/12 15:35:59 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 4990 ms on 192.168.1.142 (executor driver) (1/4)
+22/10/12 15:35:59 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 51597
+22/10/12 15:42:30 INFO SparkContext: Invoking stop() from shutdown hook
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 362, in signal_handler
+    self.cancelAllJobs()
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 1447, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+    return f(*a, **kw)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 336, in get_return_value
+    format(target_id, ".", name))
+py4j.protocol.Py4JError: An error occurred while calling o46.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+22/10/12 15:42:30 INFO SparkUI: Stopped Spark web UI at http://192.168.1.142:4040
+22/10/12 15:42:30 INFO DAGScheduler: Job 0 failed: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433, took 397.149413 s
+22/10/12 15:42:30 INFO DAGScheduler: ResultStage 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:433) failed in 396.990 s due to Stage cancelled because SparkContext was shut down
+22/10/12 15:42:30 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/10/12 15:42:30 ERROR Executor: Exception in task 1.0 in stage 0.0 (TID 1): Connection reset
+Traceback (most recent call last):
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 500, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 433, in SearchTiles_and_Factorize
+    tilesearch_nonpersistent)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1163, in foreach
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1521, in count
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1509, in sum
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1336, in fold
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1197, in collect
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 336, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 63, in apport_excepthook
+    from apport.fileutils import likely_packaged, get_recent_crashes
+  File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+    from apport.report import Report
+  File "/usr/lib/python3/dist-packages/apport/report.py", line 30, in <module>
+    import apport.fileutils
+  File "/usr/lib/python3/dist-packages/apport/fileutils.py", line 23, in <module>
+    from apport.packaging_impl import impl as packaging
+  File "/usr/lib/python3/dist-packages/apport/packaging_impl.py", line 24, in <module>
+    import apt
+  File "/usr/lib/python3/dist-packages/apt/__init__.py", line 23, in <module>
+    import apt_pkg
+ModuleNotFoundError: No module named 'apt_pkg'
+
+Original exception was:
+Traceback (most recent call last):
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 500, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 433, in SearchTiles_and_Factorize
+    tilesearch_nonpersistent)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1163, in foreach
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1521, in count
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1509, in sum
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1336, in fold
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1197, in collect
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 336, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe
+22/10/12 15:42:30 INFO MemoryStore: MemoryStore cleared
+22/10/12 15:42:30 INFO BlockManager: BlockManager stopped
+22/10/12 15:42:30 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/10/12 15:42:30 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/10/12 15:42:30 INFO SparkContext: Successfully stopped SparkContext
+22/10/12 15:42:30 INFO ShutdownHookManager: Shutdown hook called
+22/10/12 15:42:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-01ebacdc-800c-48af-acb9-d636f1cabfc7
+22/10/12 15:42:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-01ebacdc-800c-48af-acb9-d636f1cabfc7/pyspark-e5330fe2-500e-47e6-83da-f54fced7c33d
+22/10/12 15:42:30 INFO ShutdownHookManager: Deleting directory /tmp/spark-ba101e76-9454-4f62-abeb-eb81e3c7f8f4
+---------------------------------------------------------------------------------------------------------------------------------
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317 57 False False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log5.12October2022 
+=================================================
+xl + intervalmidpoint =  82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317
+xr + intervalmidpoint =  82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212319
+xl =  82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212316
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 1, ',', 82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317, ') (at ', 'Wed, 12 Oct 2022 10:05:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6016945394
+=================================================
+factors_accum._value:  [82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317, 1]
+=================================================
+xl + intervalmidpoint =  27406540176219900650886706914358700142463641452357798850559011312445106810167452674757677585444001802688964868898930739848364655709110281874820965353543422737439
+xr + intervalmidpoint =  27406540176219900650886706914358700142463641452357798850559011312445106810167452674757677585444001802688964868898930739848364655709110281874820965353543422737441
+xl =  27406540176219900650886706914358700142463641452357798850559011312445106810167452674757677585444001802688964868898930739848364655709110281874820965353543422737438
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 3, ',', 27406540176219900650886706914358700142463641452357798850559011312445106810167452674757677585444001802688964868898930739848364655709110281874820965353543422737439, ') (at ', 'Wed, 12 Oct 2022 10:05:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6043718275
+=================================================
+factors_accum._value:  [82219620528659701952660120743076100427390924357073396551677033937335320430502358024273032756332005408066894606696792219545093967127330845624462896060630268212317, 1, 27406540176219900650886706914358700142463641452357798850559011312445106810167452674757677585444001802688964868898930739848364655709110281874820965353543422737439, 3]
+

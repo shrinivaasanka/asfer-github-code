@@ -1,0 +1,52 @@
+('Spark Python version:', '3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0]')
+('factors of ', 99999, '(', 16.609626047414267, ' bits integer) are:')
+factorization start (in nanoseconds): 1665561202579958573
+tiles_start: 1
+tiles_end: 362
+spark-3.0.1-bin-hadoop3.2/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 99999 2 False False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log2.12October2022
+=================================================
+xl + intervalmidpoint =  124999
+xr + intervalmidpoint =  74999
+xl =  99999
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 99999, ') (at ', 'Wed, 12 Oct 2022 07:53:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4661484141
+=================================================
+factors_accum._value:  [99999, 1]
+=================================================
+xl + intervalmidpoint =  37500
+xr + intervalmidpoint =  29166
+xl =  33333
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 33333, ') (at ', 'Wed, 12 Oct 2022 07:53:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4661815872
+=================================================
+factors_accum._value:  [99999, 1, 33333, 3]
+=================================================
+xl + intervalmidpoint =  816
+xr + intervalmidpoint =  809
+xl =  813
+yl =  123
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 123, ',', 813, ') (at ', 'Wed, 12 Oct 2022 07:53:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  4962225234
+=================================================
+factors_accum._value:  [813, 123]
+=================================================
+xl + intervalmidpoint =  370
+xr + intervalmidpoint =  368
+xl =  369
+yl =  271
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 271, ',', 369, ') (at ', 'Wed, 12 Oct 2022 07:53:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5324595217
+=================================================
+factors_accum._value:  [369, 271]
+('factors_accum.value = ', [99999, 1, 33333, 3, 813, 123, 369, 271])
+('factors of ', 99999, '(', 16.609626047414267, ' bits integer) =', {1, 3, 813, 271, 369, 33333, 123, 99999})

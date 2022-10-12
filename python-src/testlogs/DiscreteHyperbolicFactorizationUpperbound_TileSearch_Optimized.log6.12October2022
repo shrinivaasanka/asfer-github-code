@@ -1,0 +1,100 @@
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+22/10/12 16:07:16 INFO SparkContext: Invoking stop() from shutdown hook
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 362, in signal_handler
+    self.cancelAllJobs()
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 1447, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+    return f(*a, **kw)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 336, in get_return_value
+    format(target_id, ".", name))
+py4j.protocol.Py4JError: An error occurred while calling o46.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+22/10/12 16:07:16 INFO SparkUI: Stopped Spark web UI at http://192.168.1.142:4040
+22/10/12 16:07:16 INFO DAGScheduler: Job 0 failed: foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:479, took 93.233787 s
+22/10/12 16:07:16 INFO DAGScheduler: ResultStage 0 (foreach at /home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:479) failed in 93.059 s due to Stage cancelled because SparkContext was shut down
+22/10/12 16:07:17 ERROR Executor: Exception in task 2.0 in stage 0.0 (TID 2): Connection reset
+22/10/12 16:07:17 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/10/12 16:07:17 INFO MemoryStore: MemoryStore cleared
+22/10/12 16:07:17 INFO BlockManager: BlockManager stopped
+22/10/12 16:07:18 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/10/12 16:07:18 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/10/12 16:07:18 INFO SparkContext: Successfully stopped SparkContext
+22/10/12 16:07:18 INFO ShutdownHookManager: Shutdown hook called
+22/10/12 16:07:18 INFO ShutdownHookManager: Deleting directory /tmp/spark-8074b738-fa6e-44ec-8ed6-bdf7ef3b469e/pyspark-aa819dd5-05a3-4b1f-848b-bc35decb7914
+22/10/12 16:07:18 INFO ShutdownHookManager: Deleting directory /tmp/spark-8074b738-fa6e-44ec-8ed6-bdf7ef3b469e
+22/10/12 16:07:18 INFO ShutdownHookManager: Deleting directory /tmp/spark-e6d8429c-52e4-4b6d-a020-d7d17aa4949c
+Traceback (most recent call last):
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 500, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
+  File "/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 479, in SearchTiles_and_Factorize
+    spcon.parallelize(tile_segments).flatMap(lambda x: x).foreach(tilesearch_nonpersistent)
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1163, in foreach
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1521, in count
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1509, in sum
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1336, in fold
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1197, in collect
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1322, in __call__
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+  File "/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 336, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/apport_python_hook.py", line 63, in apport_excepthook
+    from apport.fileutils import likely_packaged, get_recent_crashes
+  File "/usr/lib/python3/dist-packages/apport/__init__.py", line 5, in <module>
+    from apport.report import Report
+  File "/usr/lib/python3/dist-packages/apport/report.py", line 30, in <module>
+---------------------------------------------------------------------------------------------------------
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 8388607 1 False True 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log6.12October2022
+=================================================
+xl + intervalmidpoint =  10485759
+xr + intervalmidpoint =  6291455
+xl =  8388607
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 8388607, ') (at ', 'Wed, 12 Oct 2022 10:35:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  32103674398
+=================================================
+factors_accum._value:  [8388607, 1]
+=================================================
+xl + intervalmidpoint =  180340
+xr + intervalmidpoint =  176621
+xl =  178481
+yl =  47
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 47, ',', 178481, ') (at ', 'Wed, 12 Oct 2022 10:35:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  32144288203
+=================================================
+factors_accum._value:  [8388607, 1, 178481, 47]
+
