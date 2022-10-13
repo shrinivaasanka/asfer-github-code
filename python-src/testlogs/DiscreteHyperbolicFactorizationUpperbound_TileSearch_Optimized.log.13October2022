@@ -1,0 +1,142 @@
+22/10/13 17:52:14 WARN Utils: Your hostname, ksrinivasan-Acer-One-14-Z422 resolves to a loopback address: 127.0.1.1; using 192.168.1.142 instead (on interface wlp1s0)
+22/10/13 17:52:14 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+('Spark Python version:', '3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0]')
+('factors of ', 2505701953, '(', 31.222567673873087, ' bits integer) are:')
+22/10/13 17:52:20 INFO SparkContext: Running Spark version 3.3.0
+22/10/13 17:52:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/13 17:52:21 INFO ResourceUtils: ==============================================================
+22/10/13 17:52:21 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/10/13 17:52:21 INFO ResourceUtils: ==============================================================
+22/10/13 17:52:21 INFO SparkContext: Submitted application: Spark Factorization
+22/10/13 17:52:21 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 4, script: , vendor: , memory -> name: memory, amount: 3072, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 4.0)
+22/10/13 17:52:21 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+22/10/13 17:52:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/10/13 17:52:21 INFO SecurityManager: Changing view acls to: root
+22/10/13 17:52:21 INFO SecurityManager: Changing modify acls to: root
+22/10/13 17:52:21 INFO SecurityManager: Changing view acls groups to: 
+22/10/13 17:52:21 INFO SecurityManager: Changing modify acls groups to: 
+22/10/13 17:52:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+22/10/13 17:52:22 INFO Utils: Successfully started service 'sparkDriver' on port 37989.
+22/10/13 17:52:22 INFO SparkEnv: Registering MapOutputTracker
+22/10/13 17:52:22 INFO SparkEnv: Registering BlockManagerMaster
+22/10/13 17:52:22 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/10/13 17:52:22 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/10/13 17:52:22 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/10/13 17:52:22 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-e3c2c3d2-5592-4c75-a133-f4c9c7caa023
+22/10/13 17:52:23 INFO MemoryStore: MemoryStore started with capacity 1458.6 MiB
+22/10/13 17:52:23 INFO SparkEnv: Registering OutputCommitCoordinator
+22/10/13 17:52:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/10/13 17:52:24 INFO Executor: Starting executor ID driver on host 192.168.1.142
+22/10/13 17:52:24 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+22/10/13 17:52:24 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35797.
+22/10/13 17:52:24 INFO NettyBlockTransferService: Server created on 192.168.1.142:35797
+22/10/13 17:52:24 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/10/13 17:52:24 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.1.142, 35797, None)
+22/10/13 17:52:24 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.142:35797 with 1458.6 MiB RAM, BlockManagerId(driver, 192.168.1.142, 35797, None)
+22/10/13 17:52:24 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.1.142, 35797, None)
+22/10/13 17:52:24 INFO BlockManager: external shuffle service port = 7337
+22/10/13 17:52:24 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 192.168.1.142, 35797, None)
+factorization start (in nanoseconds): 1665663745791256134
+tiles_start: 50056
+tiles_end: 2620405
+('Factors are: (', 50093, ',', 50021, ') (at ', 'Thu, 13 Oct 2022 12:22:32 GMT', ')')
+22/10/13 17:52:28 INFO SparkContext: Starting job: foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439
+22/10/13 17:52:28 INFO DAGScheduler: Got job 0 (foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439) with 4 output partitions
+22/10/13 17:52:28 INFO DAGScheduler: Final stage: ResultStage 0 (foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439)
+22/10/13 17:52:28 INFO DAGScheduler: Parents of final stage: List()
+22/10/13 17:52:28 INFO DAGScheduler: Missing parents: List()
+22/10/13 17:52:28 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439), which has no missing parents
+22/10/13 17:52:29 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 10.8 KiB, free 1458.6 MiB)
+22/10/13 17:52:30 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 6.6 KiB, free 1458.6 MiB)
+22/10/13 17:52:30 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.1.142:35797 (size: 6.6 KiB, free: 1458.6 MiB)
+22/10/13 17:52:30 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+22/10/13 17:52:30 INFO DAGScheduler: Submitting 4 missing tasks from ResultStage 0 (PythonRDD[1] at foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439) (first 15 tasks are for partitions Vector(0, 1, 2, 3))
+22/10/13 17:52:30 INFO TaskSchedulerImpl: Adding task set 0.0 with 4 tasks resource profile 0
+22/10/13 17:52:30 WARN TaskSetManager: Stage 0 contains a task of very large size (3137 KiB). The maximum recommended task size is 1000 KiB.
+22/10/13 17:52:30 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.1.142, executor driver, partition 0, PROCESS_LOCAL, 3212370 bytes) taskResourceAssignments Map()
+22/10/13 17:52:30 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/10/13 17:52:41 INFO PythonRunner: Times: total = 9960, boot = 1475, init = 254, finish = 8231
+22/10/13 17:52:41 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1318 bytes result sent to driver
+22/10/13 17:52:41 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.1.142, executor driver, partition 1, PROCESS_LOCAL, 3248646 bytes) taskResourceAssignments Map()
+22/10/13 17:52:41 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+22/10/13 17:52:41 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 11037 ms on 192.168.1.142 (executor driver) (1/4)
+22/10/13 17:52:41 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 48163
+22/10/13 17:52:49 INFO PythonRunner: Times: total = 8178, boot = -78, init = 284, finish = 7972
+22/10/13 17:52:49 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 1318 bytes result sent to driver
+22/10/13 17:52:49 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (192.168.1.142, executor driver, partition 2, PROCESS_LOCAL, 3248646 bytes) taskResourceAssignments Map()
+22/10/13 17:52:49 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+22/10/13 17:52:49 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 8334 ms on 192.168.1.142 (executor driver) (2/4)
+22/10/13 17:52:57 INFO PythonRunner: Times: total = 8238, boot = -28, init = 234, finish = 8032
+22/10/13 17:52:57 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 1318 bytes result sent to driver
+22/10/13 17:52:57 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (192.168.1.142, executor driver, partition 3, PROCESS_LOCAL, 3244049 bytes) taskResourceAssignments Map()
+22/10/13 17:52:57 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+22/10/13 17:52:57 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 8322 ms on 192.168.1.142 (executor driver) (3/4)
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 362, in signal_handler
+    self.cancelAllJobs()
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/context.py", line 1447, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+    return f(*a, **kw)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o46.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+22/10/13 17:53:01 INFO SparkContext: Invoking stop() from shutdown hook
+22/10/13 17:53:01 INFO SparkUI: Stopped Spark web UI at http://192.168.1.142:4040
+22/10/13 17:53:01 INFO DAGScheduler: Job 0 failed: foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439, took 32.672654 s
+22/10/13 17:53:01 INFO DAGScheduler: ResultStage 0 (foreach at /media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py:439) failed in 32.531 s due to Stage cancelled because SparkContext was shut down
+22/10/13 17:53:01 ERROR Executor: Exception in task 3.0 in stage 0.0 (TID 3): Connection reset
+22/10/13 17:53:01 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 512, in <module>
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", line 439, in SearchTiles_and_Factorize
+    spcon.parallelize(tiles).foreach(
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1163, in foreach
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1521, in count
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1508, in sum
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1336, in fold
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/rdd.py", line 1197, in collect
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 334, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe
+22/10/13 17:53:01 INFO MemoryStore: MemoryStore cleared
+22/10/13 17:53:01 INFO BlockManager: BlockManager stopped
+22/10/13 17:53:01 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/10/13 17:53:01 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/10/13 17:53:01 INFO SparkContext: Successfully stopped SparkContext
+22/10/13 17:53:01 INFO ShutdownHookManager: Shutdown hook called
+22/10/13 17:53:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-a9d6c34e-c1c9-43c2-be1c-948de7bed56b
+22/10/13 17:53:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-a9d6c34e-c1c9-43c2-be1c-948de7bed56b/pyspark-dc956649-e1e3-4b5d-81d8-150fcc61ccba
+22/10/13 17:53:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-598cc3c5-68ef-4690-9bb8-c1fe26249ea0

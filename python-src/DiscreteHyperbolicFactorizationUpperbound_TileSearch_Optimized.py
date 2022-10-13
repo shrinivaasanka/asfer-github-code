@@ -137,7 +137,7 @@ def hyperbolic_arc_rasterization(n):
                 label='rasterized hyperbolic arc bow')
     plt.show()
 
-def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
+def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
     global factors_accum
     global factorization_start
     sys.setrecursionlimit(30000)
@@ -145,7 +145,13 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=3):
     #print("intervalmidpoint = ",intervalmidpoint)
     # print("factors_accum.aid:",factors_accum.aid)
     if intervalmidpoint == 0:
-        if number_to_factorize/xl == xl:
+        if xl*yl == number_to_factorize:
+            print(("Factors are: (", yl, ",", xl, ") (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+        elif xr*yr == number_to_factorize:
+            print(("Factors are: (", yr, ",", xr, ") (at ", strftime(
+                "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+        elif number_to_factorize/xl == xl:
             print(("Square root is: ", xl, " (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
             factors_accum.add(xl)
@@ -421,9 +427,10 @@ def SearchTiles_and_Factorize(n, k, Parallel_for="False"):
             # spcon.parallelize(spcon.range(1, n).collect()).foreach(
             #    tilesearch_nonpersistent)
             normal_order_n = (Decimal(math.log(n, 2)) ** k)
-            tiles_start = 1
+            #tiles_start = 1
+            tiles_start = int(Decimal(math.sqrt(n)))
             #tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
-            tiles_end = int(Decimal(n)/(Decimal(normal_order_n)))
+            tiles_end = tiles_start + int(Decimal(n)/(Decimal(normal_order_n)))
             for x in range(int(Decimal(normal_order_n))):
                 print("tiles_start:", tiles_start)
                 print("tiles_end:", tiles_end)
@@ -495,6 +502,11 @@ if __name__ == "__main__":
         number_to_factorize, 2), " bits integer) are:"))
     HyperbolicRasterizationGraphicsEnabled = sys.argv[3]
     Parallel_for=sys.argv[4] 
+    number_of_factors=sys.argv[5]
+    if number_of_factors=="all":
+        maxfactors=sys.maxsize
+    else:
+        maxfactors=int(number_of_factors) 
     if HyperbolicRasterizationGraphicsEnabled == "True":
         hyperbolic_arc_rasterization(number_to_factorize)
     factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
