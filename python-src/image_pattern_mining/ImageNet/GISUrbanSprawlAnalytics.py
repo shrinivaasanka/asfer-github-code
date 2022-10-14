@@ -63,6 +63,7 @@ from rasterio.windows import Window
 import fiona.transform
 import rasterio.sample
 import math
+from statistics import mean,median,stdev
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -178,18 +179,29 @@ def compare_raster_data(raster1data,raster2data):
 def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d):
     raster2dhist=defaultdict(int)
     raster3dhist=defaultdict(int)
+    heights=[]
+    for rv,rs in zip(rasterdata_3d,rasterdata_2d):
+        height=rv[0]/rs[0]
+        if not math.isnan(height):
+            heights.append(height)
+    avgbuildingheight=sum(heights)/len(heights)
     for r1 in rasterdata_2d:
         raster2dhist[r1[0]] += 1
     for r2 in rasterdata_3d:
         raster3dhist[r2[0]] += 1
     raster2dhist_sorted=sorted(raster2dhist.items(),key=operator.itemgetter(0),reverse=True)
     raster3dhist_sorted=sorted(raster3dhist.items(),key=operator.itemgetter(0),reverse=True)
-    print("three_dimensional_urban_growth_model(): raster2dhist = ",raster2dhist_sorted)
-    print("three_dimensional_urban_growth_model(): raster3dhist = ",raster3dhist_sorted)
+    #print("three_dimensional_urban_growth_model(): raster2dhist = ",raster2dhist_sorted)
+    #print("three_dimensional_urban_growth_model(): raster3dhist = ",raster3dhist_sorted)
     raster2dsurfaces=raster2dhist_sorted
     raster3dvolumes=raster3dhist_sorted
     maxbuildingheight=raster3dvolumes[0][0]/raster2dsurfaces[0][0]
     print("three_dimensional_urban_growth_model(): maximum building height = ",maxbuildingheight)
+    print("three_dimensional_urban_growth_model(): heights = ",heights)
+    print("three_dimensional_urban_growth_model(): mean(heights) = ",mean(heights))
+    print("three_dimensional_urban_growth_model(): median(heights) = ",median(heights))
+    print("three_dimensional_urban_growth_model(): stdev(heights) = ",stdev(heights))
+
 
 def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
     print("===================="+geotifffile+"=====================")
