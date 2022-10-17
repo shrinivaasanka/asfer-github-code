@@ -20205,7 +20205,7 @@ References:
 	.vectors() '@10' 'ecliptic' N/A 'heliocentriceclipticiau76'
 1327.5 Because of earlier AstroQuery-AstroPy limitations (or could imply Longitude-Latitude is not necessary for vectors computation) Longitude-Latitude arguments are ignored (ephemerides() invocation has been commented which could be reverted if there is an API support for ephemerides() to vectors() conversion) at present and replaced by hardcoded "@0" as below: 
                     obj = Horizons(id=i, location="@0", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors(refplane="earth")
-1327.6 predict_EWE() is invoked to search for matching angular separations between 2 solar system body pairs "Sun-Moon" and "Venus-Mercury" respectively of separation ranges (120-180 degrees) and (0-30 degrees) for dates between 21/10/2022 and 1/12/2022 to match for Sun-Moon-Earth and Venus-Mercury-Earth 3-body syzygies which have been investigated in 1266,1267,1268,1316 and 1318 supra:
+1327.6 predict_EWE() is invoked to search for matching angular separations between 2 solar system body pairs "Sun-Moon" and "Venus-Mercury" respectively of separation ranges (120-180 degrees) and (0-30 and 0-60 degrees) for dates between 21/10/2022 and 1/12/2022 to match for Sun-Moon-Earth and Venus-Mercury-Earth 3-body syzygies which have been investigated in 1266,1267,1268,1316 and 1318 supra:
     predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Sun-Moon",angularsepbounds=('120d','180d'))
     predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Venus-Mercury",angularsepbounds=('0d','30d'))
 1327.7 Following dates match earlier angular separation bound Syzygy queries which coincide with active North-East Monsoon and Bay of Bengal Cyclone seasons in peninsular India predicting heavy rainfall - this forecast differs from MaitreyaEncHoro_RuleSearch.py Sequence Mining - Class Association Rule - based forecast of Section 313 and relies only on patterns found from planetarium search of sky for angular separations learnt from HURDAT2 datasets and does not compute N-Body gravitational accelerations for these dates. Of particular significance are the dates 25/10/2022 and 8/11/2022 which are days of Solar and Lunar Eclipse Syzygies :
@@ -20273,6 +20273,12 @@ Angular separation of Venus-Mercury matches bounds for date: 2022-11-27 00:00:00
 Angular separation of Venus-Mercury matches bounds for date: 2022-11-28 00:00:00.000
 Angular separation of Venus-Mercury matches bounds for date: 2022-11-29 00:00:00.000
 Angular separation of Venus-Mercury matches bounds for date: 2022-11-30 00:00:00.000
+(
+grepped from :
+python-src/testlogs/EphemerisSearch.log.17October2022 - Python 3.7.5 + AstroPy-JPLHorizons - Venus-Mercury 60 degree separation bound search
+python-src/testlogs/EphemerisSearch.log2.17October2022 - Python 3.10.4 + AstroPy-JPLHorizons - Venus-Mercury 30 degree separati
+on bound search
+)
 
 References:
 ----------
