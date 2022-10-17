@@ -20189,3 +20189,91 @@ References:
 1326.6 India Lights API - The Defense Meteorological Satellite Program (DMSP) - http://api.nightlights.io/
 1326.7 NASA WordView Daily NightLights - https://www.earthdata.nasa.gov/learn/backgrounders/nighttime-lights and https://worldview.earthdata.nasa.gov/?v=-218.9957317134641,-81.6598278076184,100.57007868377187,82.92025468333685&l=VIIRS_SNPP_DayNightBand_ENCC,Reference_Labels_15m(hidden),Reference_Features_15m,Coastlines_15m,VIIRS_SNPP_CorrectedReflectance_TrueColor&lg=false&t=2021-05-03-T15%3A25%3A30Z 
 1326.8 Oxfam State of Inequality in India - https://www.oxfam.org/en/india-extreme-inequality-numbers
+
+-----------------------------------------------------------------------------------------------------------------------------
+1327.(JIRA,THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 17 October 2022 - Predictions of Extreme Weather Events - related to 148,313,445,446,463,1165,1171,1176,1266,1289,1316,1318 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance, Drone autonomous online shopping delivery, Drone Electronic Voting Machine, Large Scale Visuals Recognition, Artificial Intelligence models for Climate Change, Astronomical algorithms
+-----------------------------------------------------------------------------------------------------------------------------
+1327.1 This commit resolves two JIRA issues https://krishnairesearch.atlassian.net/browse/NEUR-5 and https://krishnairesearch.atlassian.net/browse/NEUR-6 
+1327.2 python-src/EphemerisSearch.py has been updated to import Angle and SkyCoord from astropy.coordinates. New function predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds) has been implemented to obtain dates range from user for a Longitude-Latitude location, Solar system body pair, range of angular separations between the pair and search the dates range for matching angular separations (SkyCoord.separation()) between the pair of celestial bodies by Angle.is_within_bounds() which could be potential days of extreme weather events (heavy rain or cyclonic storms in this case).
+1327.3 JIRA Bug NEUR-6 raised earlier concerns erroneous overwrite of datesofEWEs variable and the problem in vectors() invocation on Horizons() object when Longitude-Latitudes are supplied. Problem is due to the lack of support for Longitude-Latitude in vectors_async() code at https://astroquery.readthedocs.io/en/latest/_modules/astroquery/jplhorizons/core.html which raises exception ValueError(('cannot use topographic position in state vectors query')) if location is a dictionary of Longitude-Latitude. As an alternative to dictionary, location could be one of the 2300 pre-defined earth sites in https://ssd.jpl.nasa.gov/horizons/manual.html#center which is a numeric id and not in Longitude-Latitude format. But there doesn't seem to be a comprehensive documentation of 2300 earth site codes except 500 which is geocenter. 
+1327.4 From AstroQuery JPL Horizons documentation https://astroquery.readthedocs.io/en/latest/jplhorizons/jplhorizons.html only following locations are supported by Horizons.vectors() though ephermerides() supports Longitude-Latitude dictionaries for locations but there is no API support to map ephemerides() data to vectors() format:
+	-------------------------------------------------
+	Method location refplane refsystem astropy frame
+	-------------------------------------------------
+	.vectors() '@0' 'ecliptic' N/A 'custombarycentricecliptic'
+	.vectors() '@0' 'earth'    N/A 'icrs'
+	.vectors() '@10' 'ecliptic' N/A 'heliocentriceclipticiau76'
+1327.5 Because of earlier AstroQuery-AstroPy limitations (or could imply Longitude-Latitude is not necessary for vectors computation) Longitude-Latitude arguments are ignored (ephemerides() invocation has been commented which could be reverted if there is an API support for ephemerides() to vectors() conversion) at present and replaced by hardcoded "@0" as below: 
+                    obj = Horizons(id=i, location="@0", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors(refplane="earth")
+1327.6 predict_EWE() is invoked to search for matching angular separations between 2 solar system body pairs "Sun-Moon" and "Venus-Mercury" respectively of separation ranges (120-180 degrees) and (0-30 degrees) for dates between 21/10/2022 and 1/12/2022 to match for Sun-Moon-Earth and Venus-Mercury-Earth 3-body syzygies which have been investigated in 1266,1267,1268,1316 and 1318 supra:
+    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Sun-Moon",angularsepbounds=('120d','180d'))
+    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Venus-Mercury",angularsepbounds=('0d','30d'))
+1327.7 Following dates match earlier angular separation bound Syzygy queries which coincide with active North-East Monsoon and Bay of Bengal Cyclone seasons in peninsular India predicting heavy rainfall - this forecast differs from MaitreyaEncHoro_RuleSearch.py Sequence Mining - Class Association Rule - based forecast of Section 313 and relies only on patterns found from planetarium search of sky for angular separations learnt from HURDAT2 datasets and does not compute N-Body gravitational accelerations for these dates. Of particular significance are the dates 25/10/2022 and 8/11/2022 which are days of Solar and Lunar Eclipse Syzygies :
+Angular separation of Sun-Moon matches bounds for date: 2022-10-21 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-22 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-23 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-24 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-25 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-26 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-27 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-28 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-29 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-30 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-10-31 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-01 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-02 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-03 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-04 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-05 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-06 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-07 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-08 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-09 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-10 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-11 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-12 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-13 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-14 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-15 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-16 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-17 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-18 00:00:00.000
+Angular separation of Sun-Moon matches bounds for date: 2022-11-19 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-10-28 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-10-29 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-10-30 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-10-31 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-01 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-02 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-03 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-04 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-05 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-06 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-07 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-08 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-09 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-10 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-11 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-12 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-13 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-14 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-15 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-16 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-17 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-18 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-19 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-20 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-21 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-22 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-23 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-24 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-25 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-26 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-27 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-28 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-29 00:00:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-30 00:00:00.000
+
+References:
+----------
+1327.8 JAWF Climate Prediction Center - India GFS Precipitation Forecasts - 2 weeks ensemble - https://www.cpc.ncep.noaa.gov/products/JAWF_Monitoring/India/GFS_forecasts.shtml 
