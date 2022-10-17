@@ -50,11 +50,30 @@ from skimage import measure
 from scipy.spatial.distance import directed_hausdorff
 import healpy as hp
 from astroML.datasets import fetch_wmap_temperatures 
+from astropy.coordinates import Angle
+from astropy.coordinates import SkyCoord
 
 
 planetradecdict={}
 planets=[]
 ts=[]
+
+def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
+    solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
+    date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]))
+    todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]))
+    bodies=bodypair.split("-")
+    while date != todate: 
+          obj1 = Horizons(id=solar_system_bodies[bodies[0]], location=loc, epochs=date.jd, id_type='id').vectors()
+          obj2 = Horizons(id=solar_system_bodies[bodies[1]], location=loc, epochs=date.jd, id_type='id').vectors()
+          skycoord1 = SkyCoord(x=obj1['x'], y=obj1['y'], z=obj1['z'], unit='au', frame="icrs", representation_type='cartesian')
+          skycoord2 = SkyCoord(x=obj2['x'], y=obj2['y'], z=obj2['z'], unit='au', frame="icrs", representation_type='cartesian')
+          separation = skycoord1.separation(skycoord2)
+          print("Angular separation of " + bodypair + " on " + date.iso + ":",separation)
+          if separation.is_within_bounds(angularsepbounds[0],angularsepbounds[1]):
+              print("Angular separation of " + bodypair + " matches bounds for date:",date.iso)
+          date += 1
+    print("=========================================================================")
 
 def latlon_match(datetime):
     global planets
@@ -286,6 +305,7 @@ class EphemerisSearch(object):
                     EWEdates=open("hurdat2_1851_2012-jun2013.pygen.txt")
                     EWEdateslines=EWEdates.readlines()
                     EWEdateslines.reverse()
+                    argdatesofEWEs=datesofEWEs
                     datesofEWEs=[]
                     for d in EWEdateslines:
                         if iteration == maxiterations:
@@ -335,9 +355,12 @@ class EphemerisSearch(object):
         cnt=0
         for date in datesofEWEs:
             print("extreme_weather_events_n_body_analytics(): date:",date)
+            print("datesofEWEs:",datesofEWEs)
             for i in solar_system_bodies.values():
-                if datesofEWEs=="Hurricanes":
-                    obj = Horizons(id=i, location=Latlon[cnt], epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
+                if argdatesofEWEs=="Hurricanes":
+                    print("Latlons[cnt]:",Latlons[cnt])
+                    obj = Horizons(id=i, location="@0", epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors(refplane="earth")
+                    #obj = Horizons(id=i, location=Latlons[cnt], epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').ephemerides()
                 else:
                     obj = Horizons(id=i, location=loc, epochs=Time(str(date[0])+"-"+str(date[1])+"-"+str(date[2])).jd, id_type='id').vectors()
                 print("extreme_weather_events_n_body_analytics(): Horizons Ephemeris query object for date (body :",i,") = ",obj)
@@ -517,9 +540,12 @@ if __name__=="__main__":
 
     #print("======================EARTHQUAKES=========================")
     #ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Earthquakes")
-    print("======================HURRICANES=========================")
-    ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes",angularsep=True)
+    #print("======================HURRICANES=========================")
+    #ephem.extreme_weather_events_n_body_analytics(datesofEWEs="Hurricanes",angularsep=True)
     #ephem.extreme_weather_events_n_body_analytics(datesofEWEs=datesofhurricanes,angularsep=True)
+
+    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Sun-Moon",angularsepbounds=('120d','180d'))
+    predict_EWE(datefrom=(2022,10,21,1,00,00),dateto=(2022,12,1,1,00,00),loc='@0',bodypair="Venus-Mercury",angularsepbounds=('0d','30d'))
 
     #ephem.hubble_deep_field_RGB_analytics("HubbleUltraDeepField_heic0611b")
     #ephem.hubble_deep_field_RGB_analytics(imagename="skimage_HXDF")
