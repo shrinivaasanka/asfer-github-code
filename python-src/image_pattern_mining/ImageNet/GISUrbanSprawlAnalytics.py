@@ -64,6 +64,9 @@ import fiona.transform
 import rasterio.sample
 import math
 from statistics import mean,median,stdev
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -152,13 +155,18 @@ def urbansprawl_gini_coefficient(urbansprawldata):
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawlstatistics=[]
+    rows=0
     for lon in np.arange(longx,longy,0.01):
+        cols=0
         for lat in np.arange(latx,laty,0.01):
             values=data_from_raster_georeferencing(raster,longitude=lon,latitude=lat,sample=True,datatype=dt)
             urbansprawlstatistics.append(values[0])
+            cols+=1
+        rows+=1
+    print("urban_sprawl_from_raster(): bounding box shape = ",(rows,cols))
     print("urban_sprawl_from_raster(): urbansprawlstatisitcs = ",urbansprawlstatistics)
     urbansprawl_gini_coefficient(urbansprawlstatistics)
-    return urbansprawlstatistics
+    return (urbansprawlstatistics,(rows,cols))
 
 def compare_raster_data(raster1data,raster2data):
     raster1hist=defaultdict(int)
@@ -176,18 +184,19 @@ def compare_raster_data(raster1data,raster2data):
         except:
             print("Exception in raster histogram dictionary lookup")
 
-def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d):
+def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d,longx,latx,longy,laty):
     raster2dhist=defaultdict(int)
     raster3dhist=defaultdict(int)
     heights=[]
-    for rv,rs in zip(rasterdata_3d,rasterdata_2d):
+    for rv,rs in zip(rasterdata_3d[0],rasterdata_2d[0]):
         height=rv[0]/rs[0]
-        if not math.isnan(height):
-            heights.append(height)
+        if math.isnan(height):
+            height=0.0
+        heights.append(height)
     avgbuildingheight=sum(heights)/len(heights)
-    for r1 in rasterdata_2d:
+    for r1 in rasterdata_2d[0]:
         raster2dhist[r1[0]] += 1
-    for r2 in rasterdata_3d:
+    for r2 in rasterdata_3d[0]:
         raster3dhist[r2[0]] += 1
     raster2dhist_sorted=sorted(raster2dhist.items(),key=operator.itemgetter(0),reverse=True)
     raster3dhist_sorted=sorted(raster3dhist.items(),key=operator.itemgetter(0),reverse=True)
@@ -201,6 +210,24 @@ def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d):
     print("three_dimensional_urban_growth_model(): mean(heights) = ",mean(heights))
     print("three_dimensional_urban_growth_model(): median(heights) = ",median(heights))
     print("three_dimensional_urban_growth_model(): stdev(heights) = ",stdev(heights))
+    rows=rasterdata_3d[1][0]
+    cols=rasterdata_3d[1][1]
+    fig=plt.figure()
+    ax = fig.gca(projection="3d")
+    #rows, cols = np.meshgrid(rows, cols)
+    X = np.arange(longx, longy, 0.01)
+    Y = np.arange(latx, laty, 0.01)
+    X, Y = np.meshgrid(X, Y)
+    heights=np.asarray(heights).reshape(cols,rows)
+    print("X.shape:",X.shape)
+    print("Y.shape:",Y.shape)
+    print("heights.shape:",heights.shape)
+    surf = ax.plot_surface(X, Y, heights, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+    ax.set_zlim(-1.01, 1.01)
+    ax.zaxis.set_major_locator(LinearLocator(10))
+    ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
+    fig.colorbar(surf, shrink=0.5, aspect=5)
+    plt.show()
 
 
 def data_from_raster_georeferencing(geotifffile,shapes=False,longitude=None,latitude=None,bandnum=1,datatype="Population",windowslice=100,sample=False):
@@ -550,7 +577,7 @@ if __name__ == "__main__":
 
     r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
     r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
-    three_dimensional_urban_growth_model(r2ddata,r3ddata)
+    three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
