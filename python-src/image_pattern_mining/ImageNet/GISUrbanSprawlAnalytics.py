@@ -184,6 +184,11 @@ def compare_raster_data(raster1data,raster2data):
         except:
             print("Exception in raster histogram dictionary lookup")
 
+def verhulste_ricker_population_growth_model(population_at_t1,intrinsic_growth_rate,carrying_capacity,metropolitan_agglomeration):
+    projected_population_at_t2 = population_at_t1 * math.exp(intrinsic_growth_rate*(1 - population_at_t1/carrying_capacity))
+    print("verhulste_ricker_population_growth_model(): projected " + metropolitan_agglomeration + " = ",projected_population_at_t2)
+    return projected_population_at_t2
+
 def three_dimensional_urban_growth_model(rasterdata_2d,rasterdata_3d,longx,latx,longy,laty):
     raster2dhist=defaultdict(int)
     raster3dhist=defaultdict(int)
@@ -575,9 +580,10 @@ if __name__ == "__main__":
     #r2data=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0_R8_C26.tif",dt="Degree of Urbanization R2022A")
     #compare_raster_data(r1data,r2data)
 
-    r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
-    r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
-    three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
+    #r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
+    #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
+    #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
+    verhulste_ricker_population_growth_model(14730872,2.39,30000000,"Chennai Metropolitan Area Population")
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
