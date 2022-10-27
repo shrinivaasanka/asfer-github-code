@@ -20328,3 +20328,41 @@ References:
 1342.10 Population Dynamics - Carrying Capacity - https://en.wikipedia.org/wiki/Carrying_capacity
 1342.11 UN World Population Prospects - https://population.un.org/wpp/
 1342.12 2022 Population Growth Trend from UN WPP - https://www.macrotrends.net/cities/21321/madras/population
+
+-----------------------------------------------------------------------------------------------------------------------------
+1343. (JIRA,THEORY and FEATURE) GIS Urban Sprawl Analytics - Verhulste Population Growth Model - Population Estimator 2 - Chennai Metropolitan Area Sprawl Example - 27 October 2022 - related to 823,1174,1175,1177,1179,1194,1211,1234,1290,1291,1292,1295,1296,1297,1301,1304,1312,1313,1320,1323,1326,1328,1342 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, MARA (Multiple Agent Resource Allocation) Facegraph walk coloring MAXDNFSAT algorithm, Preferential Attachment, Fixed Parameter Tractability-Kernelization, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models,Fame versus Merit
+----------------------------------------------------------------------------------------------------------------------------- 
+1343.1 Function verhulste_ricker_population_growth_model(population_at_t1,intrinsic_growth_rate,carrying_capacity,metropolitan_agglomeration,fromyear,toyear) has been enhanced to include range of years for population projection (fromyear to toyear) as arguments.
+1343.2 New loop has been introduced to compute Verhulste Population Estimator YoY (Year on Year) assuming constant annual intrinsic growth rate and carrying capacity during fromyear to toyear which is quite a rigid constraint as carrying capacity might increase over the years by infrastructure development (for example if probability-satisfaction method of 1342.8 is applied) and intrinsic growth rate depends on infrastructure and opportunities.
+    for y in range(1,number_of_years):
+        projected_population_at_t2 = population_at_t1 * math.exp(intrinsic_growth_rate*(1 - population_at_t1/carrying_capacity))
+        print("verhulste_ricker_population_growth_model(): projected " + metropolitan_agglomeration + " (year " + str(fromyear+y) + ") = ",projected_population_at_t2)
+        population_at_t1 = projected_population_at_t2
+1343.3 Two different Chennai Metropolitan Area population projection estimates have been derived for year ranges 2020-2050 and 2019-2050 by Verhulste Estimator based on 2 datasources: 
+    1343.3.1 SEDAC Population Estimator v3 - Chennai Metropolitan Area Population Estimates 2020 - 14730872 - verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050) - already computed in 1342 but annual intrinsic growth rate percentage 2.39 has been divided by 100.
+    1343.3.2 Census of India 2011 statistics - Chennai Metropolitan Area Population Estimates 2011 - 15195379 - verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
+1343.4 Notion of intrinsic population growth rate in urban sprawls has uncanny resemblance to intrinsic fitness in social network analysis (ability of a social profile vertex to attract adjacent vertices or Merit counterpart of Fame) 
+1343.5 Following are population projections from testlogs/GISUrbanSprawlAnalytics.log.27October2022 for CMA sprawl of 5904 sqkm:
+===================================================================
+SEDAC 2020 Estimates
+===================================================================
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2021) =  14911158.614131337
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2022) =  15091483.980312804
+...
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2049) =  19791465.09768546
+===================================================================
+Census of India 2011 Estimates
+===================================================================
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2020) =  15375659.645372419
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2021) =  15555844.825401036
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2022) =  15735882.560905077
+...
+verhulste_ricker_population_growth_model(): projected Chennai Metropolitan Area Population (year 2049) =  20363506.68372657 
+1343.6 Earlier code changes resolve 2 JIRA issues : https://krishnairesearch.atlassian.net/browse/NEUR-7 and https://krishnairesearch.atlassian.net/browse/NEUR-8
+
+References:
+-----------
+1343.7 Verhulste Population Growth Model - Notice sur la loi que la population suit dans son accroissement - [Verhulste 1838] - https://userpages.umbc.edu/~rostamia/math481/1838-Verhulst.pdf
+1343.8 SEDAC Population Estimator - https://sedac.ciesin.columbia.edu/mapping/popest/pes-v3/
+1343.9 Wikipedia - Chennai Metropolitan Area - Population Decadal Growth - https://en.wikipedia.org/wiki/List_of_districts_of_Tamil_Nadu#cite_note-Decadal-33
+1343.10 Census of India 2011 - https://web.archive.org/web/20141113182640/http://www.censusindia.gov.in/2011census/PCA/A-2_Data_Tables/33%20A-2%20Tamil%20Nadu.pdf 
