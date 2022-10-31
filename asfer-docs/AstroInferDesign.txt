@@ -20367,3 +20367,34 @@ References:
 1343.8 SEDAC Population Estimator - https://sedac.ciesin.columbia.edu/mapping/popest/pes-v3/
 1343.9 Wikipedia - Chennai Metropolitan Area - Population Decadal Growth - https://en.wikipedia.org/wiki/List_of_districts_of_Tamil_Nadu#cite_note-Decadal-33
 1343.10 Census of India 2011 - https://web.archive.org/web/20141113182640/http://www.censusindia.gov.in/2011census/PCA/A-2_Data_Tables/33%20A-2%20Tamil%20Nadu.pdf 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1348. (THEORY and FEATURE) MultiFractal Detrended Fluctuation Analysis (MFDFA) - for unearthing Fractal structure within any timeseries data (including Music, Medical Imageing-ECG, Meteorology-Precipitation, Seismology-Tremors, NBody Gravitational Accelerations, Economics-Financial Markets) - 31 October 2022 - related to 690,691,692,1257,1315,1316,1327 and all sections on Music Information Retrieval(MIR), Climate analytics and Weather Forecast, Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Chaos and Fractals, Polynomial Interpolation
+-------------------------------------------------------------------------------------------------------------------------------
+1348.1 This commit implements MultiFractal Detrended Fluctuation Analysis (MFDFA) which oflate has been accepted as de-facto standard in analyzing and extracting fractal self-similarity within timeseries datasets across multiple fields - in python-src/MultiFractals.py
+1348.2 Theory behind MultiFractals in a gist - quoted from https://mfdfa.readthedocs.io/en/latest/functions/index.html:
+	"... MFDFA generates a fluctuation function F²(q,s), with s the segment size and q the q-powers, Take a timeseries Xₜ, find the integral Yₜ = cumsum(Xₜ), and segment the timeseries into Nₛ segments of size s.
+	F^2(v,s)=1s∑i=1s[Y(v−1)s+i−yv,i]2, for v=1,2,…,Ns,
+with yv,i the polynomial fittings of order m. Having obtained the variances of each (detrended) segment, average over s and increase s, to obtain the fluctuation function F2q(s) depending on the segment length.
+	F^2q(s)={1Ns∑v=1/Ns[F2(v,s)]^q/2}^1/q
+The fluctuation function F^2q(s) can now be plotted in a log-log scale, the slope of the fluctuation function F^2q(s) vs the s-segment size is the self-similarity scaling h(q) ..."
+1348.3 In simple terms, timeseries is split into multiple segments,detrended by subtracting mean and each segment is fit to an order-n polynomial. Variances of the polynomials fit to each segment are computed and averaged by raising each variance to fractal exponents q/2 and finding 1/q root of their sum. 
+1348.4 Every timeseries data used within NeuronRain - Music waveforms, Medical Imagery-Heartbeats, Weather and Seismic models of NBody gravitational acceleration timeseries for Hurricanes-Earthquakes, Stock quote tickers, Event Timeseries of GEM - could be brought under single umbrella of MFDFA models.
+1348.5 Function stockquote_mfdfa_model() defined within MultiFractals.py imports Yahoo Finance python package (yfinance), obtains price history of a ticker symbol for a period and intervals, and fits the quotes data by MFDFA python package function:
+	def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2):
+		...
+	    lag, dfa = MFDFA(timeseries, lag=lag, q=q_list, order=order)
+		...
+which takes timeseries, lag range of points, list of fractal exponents q and order of polynomial fit to each segment.
+1348.6 Function stockquote_mfdfa_model() has been imported within Streaming_StockMarketData.py and Three ticker symbols TSLA,MSFT and AAPL belonging to IT sector have been fit to MFDFA model (2 year history and 1 week interval) and logs-plots (quite similar fluctuations) of the DFA data for each exponent q could be found in:
+	testlogs/MultiFractals_AAPL.jpg
+	testlogs/MultiFractals_MSFT.jpg
+	testlogs/MultiFractals_TSLA.jpg
+	testlogs/Streaming_StockMarketData.MFDFA.log.31OCtober2022
+1348.7 Files Streaming_StockMarketData.py and Streaming_TimeSeriesData.py have been updated by autopep8 and 2to3-3.9 tools for indentations and Python 3.9 compliance.
+
+References:
+----------
+1348.8 MFDFA Paper - Multifractal Detrended Fluctuation Analysis of Nonstationary Time Series - https://arxiv.org/pdf/physics/0202070.pdf
+1348.9 Analysis of GE Stock Price Timeseries by Traditional methods - First Difference, Log Return - and MFDFA - https://people.engr.ncsu.edu/jwilson/files/thompson14mfdfa.pdf
+1348.10 Wharton Research Data Services For Financial timeseries - https://wrds-www.wharton.upenn.edu/pages/analytics/ 
