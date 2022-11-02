@@ -67,6 +67,7 @@ from statistics import mean,median,stdev
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
+import osmnx
 
 
 os.environ['KERAS_BACKEND'] = 'theano'
@@ -152,6 +153,19 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     giniindex = sumxdiffy / (2*(len(urbansprawldata)-nans)*sumx)
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
+
+def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0):
+    if cityname is not None:
+        roadgraph = osmnx.graph.graph_from_place(cityname)
+    else:
+        roadgraph = osmnx.graph.graph_from_bbox(latx,laty,longx,longy)
+    print("--------- Locations -----------")
+    print(roadgraph.nodes()) 
+    print("--------- Roads ---------------")
+    print(roadgraph.edges())
+    print("Betweenness centrality of urban sprawl road network graph:",nx.betweenness_centrality(nx.Graph(roadgraph)))
+    osmnx.plot_graph(roadgraph)
+    return roadgraph
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawlstatistics=[]
@@ -587,8 +601,12 @@ if __name__ == "__main__":
     #r2ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_S_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_S R2022A")
     #r3ddata=urban_sprawl_from_raster(79.271851,12.439259,80.351257,13.568572,"testlogs/RemoteSensingGIS/GHS_BUILT_V_P2030LIN_GLOBE_R2022A_54009_100_V1_0_R8_C26.tif",dt="BUILT_V R2022A")
     #three_dimensional_urban_growth_model(r2ddata,r3ddata,79.271851,12.439259,80.351257,13.568572)
-    verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
-    verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
+    
+    #verhulste_ricker_population_growth_model(14730872,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2020,toyear=2050)
+    #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
+
+    #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
+    urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
