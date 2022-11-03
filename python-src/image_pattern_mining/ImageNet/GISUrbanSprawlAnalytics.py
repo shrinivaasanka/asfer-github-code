@@ -154,11 +154,20 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
 
-def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0):
+def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000):
     if cityname is not None:
         roadgraph = osmnx.graph.graph_from_place(cityname)
-    else:
+    elif latx > 0 and laty > 0 and longx >0 and longy > 0:
         roadgraph = osmnx.graph.graph_from_bbox(latx,laty,longx,longy)
+    elif address is not None:
+        roadgraph = osmnx.graph.graph_from_address(address,dist=radius) 
+    stats=osmnx.stats.basic_stats(roadgraph)
+    print("Basic statistics about road network graph:",stats)
+    minweightedvertexcover=nx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover(nx.Graph(roadgraph))
+    print("Minimum weighted vertex cover of road network graph:",minweightedvertexcover)
+    scc=nx.strongly_connected_components(nx.DiGraph(roadgraph))
+    for c in scc:
+        print("Strongly connected component of road network graph:",c)
     print("--------- Locations -----------")
     print(roadgraph.nodes()) 
     print("--------- Roads ---------------")
@@ -606,7 +615,13 @@ if __name__ == "__main__":
     #verhulste_ricker_population_growth_model(15195379,2.39/100.0,30000000,"Chennai Metropolitan Area Population",fromyear=2019,toyear=2050)
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
-    urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
+    #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
+    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=3000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
