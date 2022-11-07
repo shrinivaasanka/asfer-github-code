@@ -161,19 +161,25 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
         roadgraph = osmnx.graph.graph_from_bbox(latx,laty,longx,longy)
     elif address is not None:
         roadgraph = osmnx.graph.graph_from_address(address,dist=radius) 
-    stats=osmnx.stats.basic_stats(roadgraph)
+    stats=osmnx.stats.basic_stats(roadgraph,area=math.pi*radius*radius)
     print("Basic statistics about road network graph:",stats)
     minweightedvertexcover=nx.algorithms.approximation.vertex_cover.min_weighted_vertex_cover(nx.Graph(roadgraph))
     print("Minimum weighted vertex cover of road network graph:",minweightedvertexcover)
     scc=nx.strongly_connected_components(nx.DiGraph(roadgraph))
     for c in scc:
         print("Strongly connected component of road network graph:",c)
-    print("--------- Locations -----------")
+    gdf_nodes,gdf_edges=osmnx.graph_to_gdfs(roadgraph,nodes=True,edges=True,node_geometry=True,fill_edge_geometry=True)
+    print("--------- Locations (NetworkX) -----------")
     print(roadgraph.nodes()) 
-    print("--------- Roads ---------------")
+    print("---------- Locations (GeoDataFrames) -------")
+    print(gdf_nodes.to_json())
+    print("--------- Roads (NetworkX) ---------------")
     print(roadgraph.edges())
+    print("--------- Roads (GeoDataFrames) ---------")
+    print(gdf_edges.to_json())
     print("Betweenness centrality of urban sprawl road network graph:",nx.betweenness_centrality(nx.Graph(roadgraph)))
-    osmnx.plot_graph(roadgraph)
+    print("Cheeger Constant - Isoperimetric Number - Edge Expansion of urban sprawl road network graph minimum weight vertex cover:",nx.edge_expansion(roadgraph,minweightedvertexcover))
+    osmnx.plot_graph(roadgraph,bgcolor="w",node_color="g",edge_color="r")
     return roadgraph
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
@@ -616,12 +622,12 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=3000)
-    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=3000)
-    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=3000)
-    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=3000)
-    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=3000)
-    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=3000)
+    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
