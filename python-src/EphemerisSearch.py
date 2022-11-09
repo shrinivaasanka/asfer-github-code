@@ -60,8 +60,8 @@ ts=[]
 
 def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
     solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
-    date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]))
-    todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]))
+    date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
+    todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     bodies=bodypair.split("-")
     while date != todate: 
           obj1 = Horizons(id=solar_system_bodies[bodies[0]], location=loc, epochs=date.jd, id_type='id').vectors()

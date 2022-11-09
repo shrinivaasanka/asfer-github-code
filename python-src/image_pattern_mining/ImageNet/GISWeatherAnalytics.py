@@ -64,6 +64,8 @@ import climetlab
 from tensorflow.keras.layers import Input, Dense, Flatten
 from tensorflow.keras.models import Sequential
 from EphemerisSearch import EphemerisSearch
+from EphemerisSearch import predict_EWE 
+from MultiFractals import precipitation_mfdfa_model
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -72,10 +74,16 @@ def invert_image(image):
     invimg=cv2.bitwise_not(thresh)
     return invimg
 
-def climate_analytics(datasource,date="",time=""):
+def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipitation_timeseries=None):
+    if datasource == "precipitation_MFDFA":
+        if precipitation_timeseries is not None:
+            precipitation_mfdfa_model(precipitation_timeseries,order=2)
     if datasource == "n-body-analytics":
         ephem=EphemerisSearch("de421.bsp")
-        ephem.extreme_weather_events_n_body_analytics(datesofEWEs=date,angularsep=True)
+        if date != "" and time != "":
+            ephem.extreme_weather_events_n_body_analytics(datesofEWEs=date,angularsep=True)
+        if predict_EWE_params is not None:
+            predict_EWE(datefrom=predict_EWE_params['datefrom'],dateto=predict_EWE_params['dateto'],loc=predict_EWE_params['loc'],bodypair=predict_EWE_params['bodypair'],angularsepbounds=predict_EWE_params['angularsepbounds'])
     if datasource == "high-low":
         highlow = climetlab.load_dataset("high-low")
         for field, label in highlow.fields():
@@ -185,8 +193,12 @@ if __name__ == "__main__":
     #climate_analytics("noaa-hurricane")
     #datesofhurricanes=[(2004,9,13,1,00,00),(2004,11,29,1,00,00),(2005,8,23,1,00,00),(2005,10,1,1,00,00),(2006,11,25,1,00,00),(2007,11,11,1,00,00),(2008,4,27,1,00,00),(2008,6,17,1,00,00),(2011,12,13,1,00,00),(2012,11,25,1,00,00),(2013,11,3,1,00,00),(2004,9,13,1,00,00),(2017,9,16,1,00,00),(2019,3,4,1,00,00)]
     #North Atlantic Hurricanes - Harvey, Irma, Ian and Bay of Bengal Very Severe Cyclonic Storms - Amphan,Gaja,Varda,Thane,Ockhi
-    datesofstorms=[(2017,8,17,1,00,00),(2017,8,30,1,00,00),(2022,9,23,1,00,00),(2020,5,20,1,00,00),(2018,11,10,1,00,00),(2016,12,6,1,00,00),(2011,12,25,1,00,00),(2017,11,29,1,00,00)]
-    climate_analytics(datasource="n-body-analytics",date=datesofstorms)
+    #datesofstorms=[(2017,8,17,1,00,00),(2017,8,30,1,00,00),(2022,9,23,1,00,00),(2020,5,20,1,00,00),(2018,11,10,1,00,00),(2016,12,6,1,00,00),(2011,12,25,1,00,00),(2017,11,29,1,00,00)]
+    #climate_analytics(datasource="n-body-analytics",date=datesofstorms)
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','10d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Sun-Moon",'angularsepbounds':('120d','180d')})
+    nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
+    climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")

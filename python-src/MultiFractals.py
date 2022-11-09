@@ -21,6 +21,21 @@ import numpy as np
 from MFDFA import MFDFA
 import matplotlib.pyplot as plt
 
+def precipitation_mfdfa_model(rainfallhistory,order=2):
+    print("--------------MFDFA model for Precipitation ----------------------------")
+    timeseries = np.asarray(rainfallhistory)
+    lag = np.unique(np.logspace(0.5,3,100).astype(int))
+    q_list = np.linspace(-10, 10, 41)
+    q_list = q_list[q_list != 0.0]
+    lag, dfa = MFDFA(timeseries, lag=lag, q=q_list, order=order)
+    print("mfdfa_model(): lag = ",lag)
+    n = 0
+    for curve in dfa:
+        print("mfdfa_model(): curve ",n," = ",curve)
+        plt.plot(dfa)
+        n += 1
+    plt.savefig("testlogs/MultiFractals_Precipitation.jpg")
+
 def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2):
     print("--------------MFDFA model for ",ticker," ----------------------------")
     pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
