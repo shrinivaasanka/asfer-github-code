@@ -20508,10 +20508,11 @@ Cheeger Constant - Isoperimetric Number - Edge Expansion of urban sprawl road ne
 Cheeger Constant - Isoperimetric Number - Edge Expansion of urban sprawl road network graph minimum weight vertex cover: 3.024793388429752
 Cheeger Constant - Isoperimetric Number - Edge Expansion of urban sprawl road network graph minimum weight vertex cover: 3.3214285714285716
 1351.6 This commit resolves two JIRA issues : https://krishnairesearch.atlassian.net/browse/NEUR-9 and https://krishnairesearch.atlassian.net/browse/NEUR-10
+1351.7 Earlier road density statistics could be ranked to obtain an estimate for automatic urban sprawl delineation - for instance, top ranked contiguous regions in terms of road densities (streets, nodes, intersections) could be candidates for extended periurban inclusions into an urban sprawl. 
 
 References:
 ----------
-1351.7 Cheeger's constant - https://en.wikipedia.org/wiki/Cheeger_constant_(graph_theory)#:~:text=In%20mathematics%2C%20the%20Cheeger%20constant,graph%20has%20a%20%22bottleneck%22. - "... Let G be an undirected finite graph with vertex set V(G) and edge set E(G). For a collection of vertices A ⊆ V(G), let ∂A denote the collection of all edges going from a vertex in A to a vertex outside of A (sometimes called the edge boundary of A): h(G):=min {{|dA|}/{|A|}}\ : A subseteq V(G),0<|A| <= 0.5|V(G)|
+1351.8 Cheeger's constant - https://en.wikipedia.org/wiki/Cheeger_constant_(graph_theory)#:~:text=In%20mathematics%2C%20the%20Cheeger%20constant,graph%20has%20a%20%22bottleneck%22. - "... Let G be an undirected finite graph with vertex set V(G) and edge set E(G). For a collection of vertices A ⊆ V(G), let ∂A denote the collection of all edges going from a vertex in A to a vertex outside of A (sometimes called the edge boundary of A): h(G):=min {{|dA|}/{|A|}}\ : A subseteq V(G),0<|A| <= 0.5|V(G)|
 The Cheeger constant is strictly positive if and only if G is a connected graph. Intuitively, if the Cheeger constant is small but positive, then there exists a "bottleneck", in the sense that there are two "large" sets of vertices with "few" links (edges) between them. The Cheeger constant is "large" if any possible division of the vertex set into two subsets has "many" links between those two subsets. ..."
 
 -------------------------------------------------------------------------------------------------------------------------------
