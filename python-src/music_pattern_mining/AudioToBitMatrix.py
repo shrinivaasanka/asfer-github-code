@@ -37,6 +37,7 @@ from collections import defaultdict
 from IPython.display import Audio
 import mir_eval.sonify
 from playsound import playsound
+from MultiFractals import music_mfdfa_model
 
 # states2notes_machine={'s1-s2':'C','s2-s1':'E','s2-s3':'D','s3-s2':'G','s3-s4':'E','s4-s5':'F','s1-s3':'G','s4-s6':'A','s5-s6':'B','s4-s3':'F','s6-s5':'E','s3-s6':'A','s6-s1':'B'}
 piano_notes={"WesternClassical":{'A':440,'B':493.89,'C':261.63,'D':293.67,'E':329.63,'F':349.23,'G':392,'A♯':466.17,'C♯':227.18,'D♯':311.13,'F♯':370,'G♯':415.31},"Carnatic":{'S':240, 'R₁':254.27, 'R₂':269.39, 'R₃':275,'G₁':285.41, 'G₂':302.38, 'G₃':311, 'M₁':320.36, 'M₂':339.41, 'P':359.60, 'D₁':380.98, 'D₂':403.63, 'D₃':415, 'N₁':425,'N₂':453.06, 'N₃':480}}
@@ -418,6 +419,16 @@ def audio_merit(notes):
         "".join(notes))
     print(("Merit of Audio - Minimum Descriptive Length and Entropy:", mdl_entropy_merit))
 
+def generate_virtual_piano_notes(function="",length=10, genre="WesternClassical"):
+    synth_notes=[]
+    x=0
+    notes=list(piano_notes[genre].keys())
+    print("generate_virtual_piano_notes(): notes=",notes)
+    while x < length:
+        note_index = int(eval(function)) % len(notes)
+        synth_notes.append(notes[note_index])
+        x+=1
+    return synth_notes
 
 if __name__ == "__main__":
     # bm=mel_frequency_cepstral_coefficients("./testlogs/JSBach_Musicological_Offering.mp4",dur=20)
@@ -450,8 +461,12 @@ if __name__ == "__main__":
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False)
     #notes_to_audio(function=weierstrass_fractal_fourier_sinusoids(0.5, 5, 20), fractal=False)
     #notes_to_audio(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x))', fractal=False, periodicity=35)
-    music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],musicgenre="WesternClassical",dur=60,polynomial_interpolation=False, tempo=0.25)
+    #music_synthesis(["testlogs/JSBach_Musicological_Offering.mp4","testlogs/Bach_Flute_Sonata_EFlat.mp4"],musicgenre="WesternClassical",dur=60,polynomial_interpolation=False, tempo=0.25)
     #all_12notes_melodies(iterations=5,number_of_notes=100,keynotes=12,tempo=0.5,musicgenre="Carnatic")
     #Twinkle Twinkle Little Star
     #music_synthesis(virtual_piano_notes=['C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C','C','C','G','G','A','A','G','F','F','E','E','D','D','C','G','G','F','F','E','E','D','G','G','F','F','E','E','D','C','C','G','G','A','A','G','F','F','E','E','D','D','C'],tempo=1)
     #music_synthesis(virtual_piano_notes=audio_to_notes("testlogs/JSBach_Musicological_Offering.mp4",music="WesternClassical")[0])
+    music_synthesis(virtual_piano_notes=generate_virtual_piano_notes(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*4800*x))',length=300,genre="WesternClassical"),tempo=0.25)
+    music_mfdfa_model("virtual_piano_music.wav",order=2)
+    music_mfdfa_model("testlogs/Bach_Flute_Sonata_EFlat.mp4",order=2)
+    music_mfdfa_model("testlogs/054-SBC-Aanandhamridhakarshini.mp4",order=2)

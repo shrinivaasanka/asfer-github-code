@@ -20,6 +20,25 @@ import yfinance as yf
 import numpy as np
 from MFDFA import MFDFA
 import matplotlib.pyplot as plt
+import librosa
+
+def music_mfdfa_model(music,order=2,q=41,lagfrom=0.5,lagto=3,lagnum=100):
+    print("--------------MFDFA model for Music ----------------------------")
+    waveform, srate = librosa.load("virtual_piano_music.wav")
+    timeseries = np.asarray(waveform)
+    lag = np.unique(np.logspace(lagfrom,lagto,lagnum).astype(int))
+    q_list = np.linspace(-10, 10, q)
+    q_list = q_list[q_list != 0.0]
+    lag, dfa = MFDFA(timeseries, lag=lag, q=q_list, order=order)
+    print("mfdfa_model(): lag = ",lag)
+    n = 0
+    for curve in dfa:
+        print("mfdfa_model(): curve ",n," = ",curve)
+        plt.plot(dfa)
+        n += 1
+    toks=music.split("/")
+    musicnametoks=toks[len(toks)-1].split(".")
+    plt.savefig("testlogs/MultiFractals_Music_"+musicnametoks[0]+".jpg")
 
 def precipitation_mfdfa_model(rainfallhistory,order=2):
     print("--------------MFDFA model for Precipitation ----------------------------")
