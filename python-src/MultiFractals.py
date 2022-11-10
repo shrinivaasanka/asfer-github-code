@@ -24,7 +24,7 @@ import librosa
 
 def music_mfdfa_model(music,order=2,q=41,lagfrom=0.5,lagto=3,lagnum=100):
     print("--------------MFDFA model for Music ----------------------------")
-    waveform, srate = librosa.load("virtual_piano_music.wav")
+    waveform, srate = librosa.load(music)
     timeseries = np.asarray(waveform)
     lag = np.unique(np.logspace(lagfrom,lagto,lagnum).astype(int))
     q_list = np.linspace(-10, 10, q)
