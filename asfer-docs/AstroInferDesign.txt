@@ -20543,3 +20543,20 @@ References:
 1352.13 RMC Chennai - IMD - https://mausam.imd.gov.in/chennai/mcdata/hydro.pdf
 1352.14 SARIMA, SARIMAX - Seasonal Timeseries Analysis - https://towardsdatascience.com/time-series-forecasting-with-arima-sarima-and-sarimax-ee61099e78f6
 1352.15 Statsmodels - Time Series Analysis - https://www.statsmodels.org/stable/examples/index.html#time-series-analysis 
+
+------------------------------------------------------------------------------------------------------------------------------
+1353. (THEORY and FEATURE) Intrinsic Merit of Music - MFDFA model of Music Waveforms and Piano notes string generation from mathematical functions - 10 November 2022 - related to 3,110,134,298,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310,1311,1315 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition, Longest Common Subsequence, Suffix Trees - Longest Repeated Substring, MultiFractal Detrended Fluctuation Analysis of Non-stationary timeseries
+------------------------------------------------------------------------------------------------------------------------------
+1353.1 python-src/music_pattern_mining/AudioToBitMatrix.py has been changed to implement new function generate_virtual_piano_notes(function="",length=10, genre="WesternClassical") which evaluates a mathematical function passed on as lambda string (by eval()) and maps each point value of function to a WesternClassical or Carnatic music piano 12-note octave symbol. Complex note patterns could be created by generate_virtual_piano_notes() through choice of appropriate mathematical functions. 
+1353.2 music_synthesis() is invoked on virtual_piano_notes obtained from generate_virtual_piano_notes() for an example summation of damped sinusoids (in Fourier frequency domain notation):
+	    music_synthesis(virtual_piano_notes=generate_virtual_piano_notes(function='(np.iinfo(np.int16).max*math.sin(2*3.1428*720*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*1240*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*2400*x) + np.iinfo(np.int16).max*math.sin(2*3.1428*4800*x))',length=300,genre="WesternClassical"),tempo=0.25)
+1353.3 New function music_mfdfa_model(music,order=2,q=41,lagfrom=0.5,lagto=3,lagnum=100) has been defined within MultiFractals.py which loads a music file in librosa and analyzes the music waveform from it as a non-stationary timeseries by MFDFA - function has been parameterized by order of polynomial per segment, lag range and number of exponents(q). Music is non-stationary as mean and variance vary over time depending on notes, pitch and tempo.
+1353.4 Following 3 music files belonging to different genres are analyzed by MFDFA:
+    Synthesized by Virtual Piano - music_mfdfa_model("virtual_piano_music.wav",order=2)
+    JSBach Sonata Flute EFlat - music_mfdfa_model("testlogs/Bach_Flute_Sonata_EFlat.mp4",order=2)
+    Amritavarshini - SBC - music_mfdfa_model("testlogs/054-SBC-Aanandhamridhakarshini.mp4",order=2)
+1353.5 Following are logs and MultiFractal plots for 3 music genres earlier and similarity of all 3 MFDFA plots are remarkable though they belong to different genres:
+	testlogs/AudioToBitMatrix.log.MusicSynthesizer.10November2022
+	testlogs/MultiFractals_Music_054-SBC-Aanandhamridhakarshini.jpg
+	testlogs/MultiFractals_Music_Bach_Flute_Sonata_EFlat.jpg
+	testlogs/MultiFractals_Music_virtual_piano_music.jpg
