@@ -20545,7 +20545,7 @@ References:
 1352.15 Statsmodels - Time Series Analysis - https://www.statsmodels.org/stable/examples/index.html#time-series-analysis 
 
 ------------------------------------------------------------------------------------------------------------------------------
-1353. (THEORY and FEATURE) Intrinsic Merit of Music - MFDFA model of Music Waveforms and Piano notes string generation from mathematical functions - 10 November 2022 - related to 3,110,134,298,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310,1311,1315 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition, Longest Common Subsequence, Suffix Trees - Longest Repeated Substring, MultiFractal Detrended Fluctuation Analysis of Non-stationary timeseries
+1353. (JIRA,THEORY and FEATURE) Intrinsic Merit of Music - MFDFA model of Music Waveforms and Piano notes string generation from mathematical functions - 10 November 2022 - related to 3,110,134,298,1223,1224,1257,1258,1261,1305,1306,1307,1308,1309,1310,1311,1315 and all sections on Music search-Music discovery, Intrinsic Merit of Music, MIR(Music Information Retrieval), Music Similarity and Clustering, AI Music Synthesis from summation of damped sinusoids, Additive Synthesis, fMRI connectomes - OpenNeuro - Psychology of music, Weighted automata, Chaos, Deep Learning, Dynamic Time Warping-Music Timeseries analysis, Music Evoked Autobiographical Memories, Waveshaping, ThoughtNet, Majority Voting (Enjoyable music) Vs Intrinsic (Quality music) - Condorcet Jury Theorem variants,Computational Learning Theory, Boolean Function Composition, Longest Common Subsequence, Suffix Trees - Longest Repeated Substring, MultiFractal Detrended Fluctuation Analysis of Non-stationary timeseries
 ------------------------------------------------------------------------------------------------------------------------------
 1353.1 python-src/music_pattern_mining/AudioToBitMatrix.py has been changed to implement new function generate_virtual_piano_notes(function="",length=10, genre="WesternClassical") which evaluates a mathematical function passed on as lambda string (by eval()) and maps each point value of function to a WesternClassical or Carnatic music piano 12-note octave symbol. Complex note patterns could be created by generate_virtual_piano_notes() through choice of appropriate mathematical functions. 
 1353.2 music_synthesis() is invoked on virtual_piano_notes obtained from generate_virtual_piano_notes() for an example summation of damped sinusoids (in Fourier frequency domain notation):
@@ -20560,3 +20560,13 @@ References:
 	testlogs/MultiFractals_Music_054-SBC-Aanandhamridhakarshini.jpg
 	testlogs/MultiFractals_Music_Bach_Flute_Sonata_EFlat.jpg
 	testlogs/MultiFractals_Music_virtual_piano_music.jpg
+1353.6 Corrections - JIRA bug - https://krishnairesearch.atlassian.net/browse/NEUR-13:
+-------------------------------------------------------------------------------
+(*) MultiFractals.py - librosa.load() now accepts music file name as argument instead of hardcoded virtual_piano_music.wav
+(*) Logs music_pattern_mining/testlogs/AudioToBitMatrix.log.MusicSynthesizer.10November2022 have been rewritten for this update
+(*) All waveforms were similar in MFDFA because of hardcoded name earlier - MFDFA has been recomputed for new set of 3 music waveforms and music_pattern_mining/testlogs/MultiFractals_Music_054-SBC-Aanandhamridhakarshini.jpg has been deleted from repository
+(*) New music waveforms consist of 2 Bach and 1 Virtual Piano Synthesis and MFDFA shows clustering similarity between Bach music versus Function Synthesized Piano Music:
+	JSBach1 - MultiFractals_Music_Bach_Flute_Sonata_EFlat.jpg        
+	Synthesized - MultiFractals_Music_virtual_piano_music.jpg
+	JSBach2 - MultiFractals_Music_JSBach_Musicological_Offering.jpg 
+
