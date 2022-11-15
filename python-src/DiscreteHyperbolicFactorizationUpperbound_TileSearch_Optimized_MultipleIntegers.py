@@ -21,25 +21,31 @@ import sys
 from complement import toint
 import time
 import matplotlib.pyplot as plt
-import subprocess
+import DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized
+import os
+import json
 
 if __name__=="__main__":
     mininteger=toint(sys.argv[1])
-    increment=toint(sys.argv[2])
+    integerrange=toint(sys.argv[2])
     actual_runtimes=[]
     theoretical_runtimes=[]
     depth=toint(sys.argv[3])
     constant=toint(sys.argv[4])
     exp=toint(sys.argv[5])
-    for n in range(mininteger,mininteger+increment):
+    for n in range(mininteger,mininteger+integerrange):
         print("================================================================================================")
         print("Factorization of ",n, " (",math.log(n,2)," bit integer) ")
         print("================================================================================================")
         starttime=time.time()
-        #subprocess.call(["/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-        #             "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", str(n), str(depth), "False"], shell=False)
-        subprocess.call(["/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.0.1-bin-hadoop3.2/bin/spark-submit",
-                     "DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py", str(n), str(depth), "False"], shell=False)
+        number_to_factorize = n 
+        HyperbolicRasterizationGraphicsEnabled = "False" 
+        number_of_factors="1"
+        #factors = DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize(number_to_factorize, depth)
+        os.system("/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + str(number_of_factors) +" False")
+        factorsjsonf=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
+        factors=json.loads(factorsjsonf.read())
+        print(("factors of ", number_to_factorize, "(", math.log(number_to_factorize, 2), " bits integer) =", set(factors)))
         endtime=time.time()
         duration=endtime-starttime
         actual_runtimes.append(duration)

@@ -198,7 +198,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
                     xl+intervalmidpoint, yl, xr, yr)
 
 
-# @jit(parallel=True)
+@jit(parallel=True)
 def tilesearch(tileintervalstr):
     global number_to_factorize
     if (len(tileintervalstr) > 1):
@@ -211,7 +211,7 @@ def tilesearch(tileintervalstr):
         binary_search_interval(xleft, yleft, xright, yright)
 
 
-# @jit(parallel=True)
+@jit(parallel=True)
 def binary_search_interval(xl, yl, xr, yr):
     intervalmidpoint = int((xr-xl)/2)
     if intervalmidpoint >= 0:
@@ -382,7 +382,7 @@ def zhang_ray_shooting_queries(n):
         print(("tangent of ray shooting query angle :", tan_theta))
         print("####################################################################")
 
-@jit(nopython=True)
+#@jit(nopython=True)
 def parallel_tile_segments(tiles_per_PRAM,x):
     tiles_start = x*tiles_per_PRAM + 1 
     tiles_end = (x+1)*tiles_per_PRAM + 1
@@ -391,7 +391,7 @@ def parallel_tile_segments(tiles_per_PRAM,x):
     return tiles
 
 #@jit(nopython=True)
-def SearchTiles_and_Factorize(n, k, Parallel_for="False"):
+def SearchTiles_and_Factorize(n, k, Parallel_for="False", StartFromSquareRoot="False"):
     global globalmergedtiles
     global globalcoordinates
     global factors_accum
@@ -427,8 +427,10 @@ def SearchTiles_and_Factorize(n, k, Parallel_for="False"):
             # spcon.parallelize(spcon.range(1, n).collect()).foreach(
             #    tilesearch_nonpersistent)
             normal_order_n = (Decimal(math.log(n, 2)) ** k)
-            #tiles_start = 1
-            tiles_start = int(Decimal(math.sqrt(n)))
+            if StartFromSquareRoot=="True":
+                tiles_start = int(Decimal(math.sqrt(n)))
+            else:
+                tiles_start = 1
             #tiles_end = int(Decimal(n)/(Decimal(normal_order_n)*Decimal(normal_order_n)))
             tiles_end = tiles_start + int(Decimal(n)/(Decimal(normal_order_n)))
             for x in range(int(Decimal(normal_order_n))):
@@ -503,12 +505,13 @@ if __name__ == "__main__":
     HyperbolicRasterizationGraphicsEnabled = sys.argv[3]
     Parallel_for=sys.argv[4] 
     number_of_factors=sys.argv[5]
+    StartFromSquareRoot=sys.argv[6]
     if number_of_factors=="all":
         maxfactors=sys.maxsize
     else:
         maxfactors=int(number_of_factors) 
     if HyperbolicRasterizationGraphicsEnabled == "True":
         hyperbolic_arc_rasterization(number_to_factorize)
-    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for)
+    factors = SearchTiles_and_Factorize(number_to_factorize, int(sys.argv[2]), Parallel_for, StartFromSquareRoot)
     print(("factors of ", number_to_factorize, "(", math.log(
         number_to_factorize, 2), " bits integer) =", set(factors)))

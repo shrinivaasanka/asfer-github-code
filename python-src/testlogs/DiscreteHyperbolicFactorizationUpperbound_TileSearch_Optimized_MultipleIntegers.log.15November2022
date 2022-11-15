@@ -1,0 +1,3428 @@
+================================================================================================
+Factorization of  9000  ( 13.135709286104401  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9000, '(', 13.135709286104401, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513573415397529
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11250
+xr + intervalmidpoint =  6750
+xl =  9000
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9000, ') (at ', 'Tue, 15 Nov 2022 11:59:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6361350616
+=================================================
+factors_accum._value:  [9000, 1]
+=================================================
+xl + intervalmidpoint =  5250
+xr + intervalmidpoint =  3750
+xl =  4500
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4500, ') (at ', 'Tue, 15 Nov 2022 11:59:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6585200414
+=================================================
+factors_accum._value:  [4500, 2]
+=================================================
+xl + intervalmidpoint =  3375
+xr + intervalmidpoint =  2625
+xl =  3000
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3000, ') (at ', 'Tue, 15 Nov 2022 11:59:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6807096206
+=================================================
+factors_accum._value:  [3000, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9000, 1, 4500, 2, 3000, 3])
+('factors of ', 9000, '(', 13.135709286104401, ' bits integer) =', {1, 2, 3, 9000, 4500, 3000})
+('factors of ', 9000, '(', 13.135709286104401, ' bits integer) =', {'9000'})
+Time - Factorization of  9000  ( 13.135709286104401  bit integer) was done in time deltas: 25.02541732788086
+Time - Theoretical Factorization of  9000  ( 13.135709286104401  bit integer) time : 172.54685844904938
+================================================================================================
+Factorization of  9001  ( 13.135869576648522  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9001, '(', 13.135869576648522, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513598355974605
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11251
+xr + intervalmidpoint =  6750
+xl =  9001
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9001, ') (at ', 'Tue, 15 Nov 2022 12:00:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5795036208
+=================================================
+factors_accum._value:  [9001, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9001, 1])
+('factors of ', 9001, '(', 13.135869576648522, ' bits integer) =', {9001, 1})
+('factors of ', 9001, '(', 13.135869576648522, ' bits integer) =', {'9001'})
+Time - Factorization of  9001  ( 13.135869576648522  bit integer) was done in time deltas: 21.08809995651245
+Time - Theoretical Factorization of  9001  ( 13.135869576648522  bit integer) time : 172.55106953472023
+================================================================================================
+Factorization of  9002  ( 13.136029849385551  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9002, '(', 13.136029849385551, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513619536505059
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11252
+xr + intervalmidpoint =  6751
+xl =  9002
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9002, ') (at ', 'Tue, 15 Nov 2022 12:00:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6848560167
+=================================================
+factors_accum._value:  [9002, 1]
+=================================================
+xl + intervalmidpoint =  5251
+xr + intervalmidpoint =  3750
+xl =  4501
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4501, ') (at ', 'Tue, 15 Nov 2022 12:00:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7070633487
+=================================================
+factors_accum._value:  [4501, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9002, 1, 4501, 2])
+('factors of ', 9002, '(', 13.136029849385551, ' bits integer) =', {1, 9002, 2, 4501})
+('factors of ', 9002, '(', 13.136029849385551, ' bits integer) =', {'9002'})
+Time - Factorization of  9002  ( 13.136029849385551  bit integer) was done in time deltas: 22.3484046459198
+Time - Theoretical Factorization of  9002  ( 13.136029849385551  bit integer) time : 172.55528020394817
+================================================================================================
+Factorization of  9003  ( 13.136190104319445  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9003, '(', 13.136190104319445, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513642897662603
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11254
+xr + intervalmidpoint =  6752
+xl =  9003
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9003, ') (at ', 'Tue, 15 Nov 2022 12:00:49 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6205402410
+=================================================
+factors_accum._value:  [9003, 1]
+=================================================
+xl + intervalmidpoint =  3376
+xr + intervalmidpoint =  2625
+xl =  3001
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3001, ') (at ', 'Tue, 15 Nov 2022 12:00:49 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6666437477
+=================================================
+factors_accum._value:  [3001, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9003, 1, 3001, 3])
+('factors of ', 9003, '(', 13.136190104319445, ' bits integer) =', {3, 1, 3001, 9003})
+('factors of ', 9003, '(', 13.136190104319445, ' bits integer) =', {'9003'})
+Time - Factorization of  9003  ( 13.136190104319445  bit integer) was done in time deltas: 22.602613925933838
+Time - Theoretical Factorization of  9003  ( 13.136190104319445  bit integer) time : 172.5594904568201
+================================================================================================
+Factorization of  9004  ( 13.136350341454156  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9004, '(', 13.136350341454156, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513664339250049
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11255
+xr + intervalmidpoint =  6753
+xl =  9004
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9004, ') (at ', 'Tue, 15 Nov 2022 12:01:10 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5863673471
+=================================================
+factors_accum._value:  [9004, 1]
+=================================================
+xl + intervalmidpoint =  5252
+xr + intervalmidpoint =  3751
+xl =  4502
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4502, ') (at ', 'Tue, 15 Nov 2022 12:01:10 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6086614259
+=================================================
+factors_accum._value:  [4502, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9004, 1, 4502, 2])
+('factors of ', 9004, '(', 13.136350341454156, ' bits integer) =', {1, 2, 9004, 4502})
+('factors of ', 9004, '(', 13.136350341454156, ' bits integer) =', {'9004'})
+Time - Factorization of  9004  ( 13.136350341454156  bit integer) was done in time deltas: 21.107535362243652
+Time - Theoretical Factorization of  9004  ( 13.136350341454156  bit integer) time : 172.56370029342273
+================================================================================================
+Factorization of  9005  ( 13.136510560793637  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9005, '(', 13.136510560793637, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513687575368702
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11256
+xr + intervalmidpoint =  6753
+xl =  9005
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9005, ') (at ', 'Tue, 15 Nov 2022 12:01:34 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6738150154
+=================================================
+factors_accum._value:  [9005, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9005, 1])
+('factors of ', 9005, '(', 13.136510560793637, ' bits integer) =', {1, 9005})
+('factors of ', 9005, '(', 13.136510560793637, ' bits integer) =', {'9005'})
+Time - Factorization of  9005  ( 13.136510560793637  bit integer) was done in time deltas: 24.37018370628357
+Time - Theoretical Factorization of  9005  ( 13.136510560793637  bit integer) time : 172.56790971384274
+================================================================================================
+Factorization of  9006  ( 13.136670762341845  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9006, '(', 13.136670762341845, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513711028978209
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11257
+xr + intervalmidpoint =  6754
+xl =  9006
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9006, ') (at ', 'Tue, 15 Nov 2022 12:01:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6116025444
+=================================================
+factors_accum._value:  [9006, 1]
+=================================================
+xl + intervalmidpoint =  5253
+xr + intervalmidpoint =  3752
+xl =  4503
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4503, ') (at ', 'Tue, 15 Nov 2022 12:01:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6355070631
+=================================================
+factors_accum._value:  [4503, 2]
+=================================================
+xl + intervalmidpoint =  3377
+xr + intervalmidpoint =  2626
+xl =  3002
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3002, ') (at ', 'Tue, 15 Nov 2022 12:01:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6576954454
+=================================================
+factors_accum._value:  [3002, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9006, 1, 4503, 2, 3002, 3])
+('factors of ', 9006, '(', 13.136670762341845, ' bits integer) =', {1, 2, 3, 9006, 4503, 3002})
+('factors of ', 9006, '(', 13.136670762341845, ' bits integer) =', {'9006'})
+Time - Factorization of  9006  ( 13.136670762341845  bit integer) was done in time deltas: 22.573283195495605
+Time - Theoretical Factorization of  9006  ( 13.136670762341845  bit integer) time : 172.57211871816708
+================================================================================================
+Factorization of  9007  ( 13.136830946102725  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9007, '(', 13.136830946102725, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513733556798015
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11259
+xr + intervalmidpoint =  6755
+xl =  9007
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9007, ') (at ', 'Tue, 15 Nov 2022 12:02:19 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5938853786
+=================================================
+factors_accum._value:  [9007, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9007, 1])
+('factors of ', 9007, '(', 13.136830946102725, ' bits integer) =', {1, 9007})
+('factors of ', 9007, '(', 13.136830946102725, ' bits integer) =', {'9007'})
+Time - Factorization of  9007  ( 13.136830946102725  bit integer) was done in time deltas: 22.38016700744629
+Time - Theoretical Factorization of  9007  ( 13.136830946102725  bit integer) time : 172.5763273064822
+================================================================================================
+Factorization of  9008  ( 13.136991112080231  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9008, '(', 13.136991112080231, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513755411950715
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11260
+xr + intervalmidpoint =  6756
+xl =  9008
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9008, ') (at ', 'Tue, 15 Nov 2022 12:02:41 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6275319814
+=================================================
+factors_accum._value:  [9008, 1]
+=================================================
+xl + intervalmidpoint =  5255
+xr + intervalmidpoint =  3753
+xl =  4504
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4504, ') (at ', 'Tue, 15 Nov 2022 12:02:41 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6498609678
+=================================================
+factors_accum._value:  [4504, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9008, 1, 4504, 2])
+('factors of ', 9008, '(', 13.136991112080231, ' bits integer) =', {9008, 1, 2, 4504})
+('factors of ', 9008, '(', 13.136991112080231, ' bits integer) =', {'9008'})
+Time - Factorization of  9008  ( 13.136991112080231  bit integer) was done in time deltas: 22.167545318603516
+Time - Theoretical Factorization of  9008  ( 13.136991112080231  bit integer) time : 172.580535478875
+================================================================================================
+Factorization of  9009  ( 13.137151260278307  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9009, '(', 13.137151260278307, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513777730636368
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11261
+xr + intervalmidpoint =  6756
+xl =  9009
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9009, ') (at ', 'Tue, 15 Nov 2022 12:03:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6326820027
+=================================================
+factors_accum._value:  [9009, 1]
+=================================================
+xl + intervalmidpoint =  3378
+xr + intervalmidpoint =  2627
+xl =  3003
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3003, ') (at ', 'Tue, 15 Nov 2022 12:03:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6787928958
+=================================================
+factors_accum._value:  [3003, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9009, 1, 3003, 3])
+('factors of ', 9009, '(', 13.137151260278307, ' bits integer) =', {3, 9009, 3003, 1})
+('factors of ', 9009, '(', 13.137151260278307, ' bits integer) =', {'9009'})
+Time - Factorization of  9009  ( 13.137151260278307  bit integer) was done in time deltas: 22.510982275009155
+Time - Theoretical Factorization of  9009  ( 13.137151260278307  bit integer) time : 172.58474323543192
+================================================================================================
+Factorization of  9010  ( 13.137311390700903  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9010, '(', 13.137311390700903, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513799923509913
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11262
+xr + intervalmidpoint =  6757
+xl =  9010
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9010, ') (at ', 'Tue, 15 Nov 2022 12:03:25 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5811909339
+=================================================
+factors_accum._value:  [9010, 1]
+=================================================
+xl + intervalmidpoint =  5256
+xr + intervalmidpoint =  3754
+xl =  4505
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4505, ') (at ', 'Tue, 15 Nov 2022 12:03:25 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6043573357
+=================================================
+factors_accum._value:  [4505, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9010, 1, 4505, 2])
+('factors of ', 9010, '(', 13.137311390700903, ' bits integer) =', {1, 9010, 2, 4505})
+('factors of ', 9010, '(', 13.137311390700903, ' bits integer) =', {'9010'})
+Time - Factorization of  9010  ( 13.137311390700903  bit integer) was done in time deltas: 21.595728874206543
+Time - Theoretical Factorization of  9010  ( 13.137311390700903  bit integer) time : 172.5889505762397
+================================================================================================
+Factorization of  9011  ( 13.137471503351962  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9011, '(', 13.137471503351962, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513821648003117
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11264
+xr + intervalmidpoint =  6758
+xl =  9011
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9011, ') (at ', 'Tue, 15 Nov 2022 12:03:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6363945250
+=================================================
+factors_accum._value:  [9011, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9011, 1])
+('factors of ', 9011, '(', 13.137471503351962, ' bits integer) =', {1, 9011})
+('factors of ', 9011, '(', 13.137471503351962, ' bits integer) =', {'9011'})
+Time - Factorization of  9011  ( 13.137471503351962  bit integer) was done in time deltas: 22.42562699317932
+Time - Theoretical Factorization of  9011  ( 13.137471503351962  bit integer) time : 172.59315750138487
+================================================================================================
+Factorization of  9012  ( 13.137631598235428  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9012, '(', 13.137631598235428, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513846133450488
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11265
+xr + intervalmidpoint =  6759
+xl =  9012
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9012, ') (at ', 'Tue, 15 Nov 2022 12:04:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6394587265
+=================================================
+factors_accum._value:  [9012, 1]
+=================================================
+xl + intervalmidpoint =  5257
+xr + intervalmidpoint =  3755
+xl =  4506
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4506, ') (at ', 'Tue, 15 Nov 2022 12:04:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6618722570
+=================================================
+factors_accum._value:  [4506, 2]
+=================================================
+xl + intervalmidpoint =  3379
+xr + intervalmidpoint =  2628
+xl =  3004
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3004, ') (at ', 'Tue, 15 Nov 2022 12:04:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6853651331
+=================================================
+factors_accum._value:  [3004, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9012, 1, 4506, 2, 3004, 3])
+('factors of ', 9012, '(', 13.137631598235428, ' bits integer) =', {1, 2, 3, 9012, 4506, 3004})
+('factors of ', 9012, '(', 13.137631598235428, ' bits integer) =', {'9012'})
+Time - Factorization of  9012  ( 13.137631598235428  bit integer) was done in time deltas: 24.553718328475952
+Time - Theoretical Factorization of  9012  ( 13.137631598235428  bit integer) time : 172.59736401095398
+================================================================================================
+Factorization of  9013  ( 13.137791675355247  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9013, '(', 13.137791675355247, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513868967320142
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11266
+xr + intervalmidpoint =  6759
+xl =  9013
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9013, ') (at ', 'Tue, 15 Nov 2022 12:04:34 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5958335480
+=================================================
+factors_accum._value:  [9013, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9013, 1])
+('factors of ', 9013, '(', 13.137791675355247, ' bits integer) =', {1, 9013})
+('factors of ', 9013, '(', 13.137791675355247, ' bits integer) =', {'9013'})
+Time - Factorization of  9013  ( 13.137791675355247  bit integer) was done in time deltas: 22.1310932636261
+Time - Theoretical Factorization of  9013  ( 13.137791675355247  bit integer) time : 172.60157010503363
+================================================================================================
+Factorization of  9014  ( 13.137951734715358  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9014, '(', 13.137951734715358, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513903832677130
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11267
+xr + intervalmidpoint =  6760
+xl =  9014
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9014, ') (at ', 'Tue, 15 Nov 2022 12:05:15 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  11927079094
+=================================================
+factors_accum._value:  [9014, 1]
+=================================================
+xl + intervalmidpoint =  5258
+xr + intervalmidpoint =  3755
+xl =  4507
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4507, ') (at ', 'Tue, 15 Nov 2022 12:05:16 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  12425666443
+=================================================
+factors_accum._value:  [4507, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9014, 1, 4507, 2])
+('factors of ', 9014, '(', 13.137951734715358, ' bits integer) =', {1, 2, 4507, 9014})
+('factors of ', 9014, '(', 13.137951734715358, ' bits integer) =', {'9014'})
+Time - Factorization of  9014  ( 13.137951734715358  bit integer) was done in time deltas: 42.26563596725464
+Time - Theoretical Factorization of  9014  ( 13.137951734715358  bit integer) time : 172.6057757837103
+================================================================================================
+Factorization of  9015  ( 13.138111776319706  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9015, '(', 13.138111776319706, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513934768284880
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11269
+xr + intervalmidpoint =  6761
+xl =  9015
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9015, ') (at ', 'Tue, 15 Nov 2022 12:05:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6176349149
+=================================================
+factors_accum._value:  [9015, 1]
+=================================================
+xl + intervalmidpoint =  3381
+xr + intervalmidpoint =  2629
+xl =  3005
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3005, ') (at ', 'Tue, 15 Nov 2022 12:05:41 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6631708729
+=================================================
+factors_accum._value:  [3005, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9015, 1, 3005, 3])
+('factors of ', 9015, '(', 13.138111776319706, ' bits integer) =', {1, 3, 3005, 9015})
+('factors of ', 9015, '(', 13.138111776319706, ' bits integer) =', {'9015'})
+Time - Factorization of  9015  ( 13.138111776319706  bit integer) was done in time deltas: 23.815354108810425
+Time - Theoretical Factorization of  9015  ( 13.138111776319706  bit integer) time : 172.60998104707053
+================================================================================================
+Factorization of  9016  ( 13.138271800172223  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9016, '(', 13.138271800172223, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513957043863026
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11270
+xr + intervalmidpoint =  6762
+xl =  9016
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9016, ') (at ', 'Tue, 15 Nov 2022 12:06:03 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6216418438
+=================================================
+factors_accum._value:  [9016, 1]
+=================================================
+xl + intervalmidpoint =  5259
+xr + intervalmidpoint =  3756
+xl =  4508
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4508, ') (at ', 'Tue, 15 Nov 2022 12:06:03 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6448714169
+=================================================
+factors_accum._value:  [4508, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9016, 1, 4508, 2])
+('factors of ', 9016, '(', 13.138271800172223, ' bits integer) =', {9016, 1, 2, 4508})
+('factors of ', 9016, '(', 13.138271800172223, ' bits integer) =', {'9016'})
+Time - Factorization of  9016  ( 13.138271800172223  bit integer) was done in time deltas: 22.428727626800537
+Time - Theoretical Factorization of  9016  ( 13.138271800172223  bit integer) time : 172.61418589520068
+================================================================================================
+Factorization of  9017  ( 13.13843180627685  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9017, '(', 13.13843180627685, ' bits integer) are:')
+factorization start (in nanoseconds): 1668513979108964303
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11271
+xr + intervalmidpoint =  6762
+xl =  9017
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9017, ') (at ', 'Tue, 15 Nov 2022 12:06:24 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5850601091
+=================================================
+factors_accum._value:  [9017, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9017, 1])
+('factors of ', 9017, '(', 13.13843180627685, ' bits integer) =', {9017, 1})
+('factors of ', 9017, '(', 13.13843180627685, ' bits integer) =', {'9017'})
+Time - Factorization of  9017  ( 13.13843180627685  bit integer) was done in time deltas: 21.734923601150513
+Time - Theoretical Factorization of  9017  ( 13.13843180627685  bit integer) time : 172.6183903281872
+================================================================================================
+Factorization of  9018  ( 13.13859179463752  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9018, '(', 13.13859179463752, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514002432689964
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11272
+xr + intervalmidpoint =  6763
+xl =  9018
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9018, ') (at ', 'Tue, 15 Nov 2022 12:06:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5986179706
+=================================================
+factors_accum._value:  [9018, 1]
+=================================================
+xl + intervalmidpoint =  5260
+xr + intervalmidpoint =  3757
+xl =  4509
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4509, ') (at ', 'Tue, 15 Nov 2022 12:06:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6209218435
+=================================================
+factors_accum._value:  [4509, 2]
+=================================================
+xl + intervalmidpoint =  3382
+xr + intervalmidpoint =  2630
+xl =  3006
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3006, ') (at ', 'Tue, 15 Nov 2022 12:06:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6431270007
+=================================================
+factors_accum._value:  [3006, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9018, 1, 4509, 2, 3006, 3])
+('factors of ', 9018, '(', 13.13859179463752, ' bits integer) =', {1, 2, 3, 9018, 4509, 3006})
+('factors of ', 9018, '(', 13.13859179463752, ' bits integer) =', {'9018'})
+Time - Factorization of  9018  ( 13.13859179463752  bit integer) was done in time deltas: 23.253552675247192
+Time - Theoretical Factorization of  9018  ( 13.13859179463752  bit integer) time : 172.62259434611636
+================================================================================================
+Factorization of  9019  ( 13.138751765258174  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9019, '(', 13.138751765258174, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514023952593305
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11274
+xr + intervalmidpoint =  6764
+xl =  9019
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9019, ') (at ', 'Tue, 15 Nov 2022 12:07:10 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6410757228
+=================================================
+factors_accum._value:  [9019, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9019, 1])
+('factors of ', 9019, '(', 13.138751765258174, ' bits integer) =', {1, 9019})
+('factors of ', 9019, '(', 13.138751765258174, ' bits integer) =', {'9019'})
+Time - Factorization of  9019  ( 13.138751765258174  bit integer) was done in time deltas: 22.00659441947937
+Time - Theoretical Factorization of  9019  ( 13.138751765258174  bit integer) time : 172.62679794907478
+================================================================================================
+Factorization of  9020  ( 13.138911718142744  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9020, '(', 13.138911718142744, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514048202631625
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11275
+xr + intervalmidpoint =  6765
+xl =  9020
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9020, ') (at ', 'Tue, 15 Nov 2022 12:07:35 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7084416564
+=================================================
+factors_accum._value:  [9020, 1]
+=================================================
+xl + intervalmidpoint =  5262
+xr + intervalmidpoint =  3758
+xl =  4510
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4510, ') (at ', 'Tue, 15 Nov 2022 12:07:35 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7307422818
+=================================================
+factors_accum._value:  [4510, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9020, 1, 4510, 2])
+('factors of ', 9020, '(', 13.138911718142744, ' bits integer) =', {1, 2, 9020, 4510})
+('factors of ', 9020, '(', 13.138911718142744, ' bits integer) =', {'9020'})
+Time - Factorization of  9020  ( 13.138911718142744  bit integer) was done in time deltas: 24.86693525314331
+Time - Theoretical Factorization of  9020  ( 13.138911718142744  bit integer) time : 172.6310011371487
+================================================================================================
+Factorization of  9021  ( 13.13907165329516  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9021, '(', 13.13907165329516, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514070939305711
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11276
+xr + intervalmidpoint =  6765
+xl =  9021
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9021, ') (at ', 'Tue, 15 Nov 2022 12:07:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6246888376
+=================================================
+factors_accum._value:  [9021, 1]
+=================================================
+xl + intervalmidpoint =  3383
+xr + intervalmidpoint =  2631
+xl =  3007
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3007, ') (at ', 'Tue, 15 Nov 2022 12:07:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6695582453
+=================================================
+factors_accum._value:  [3007, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9021, 1, 3007, 3])
+('factors of ', 9021, '(', 13.13907165329516, ' bits integer) =', {1, 3, 9021, 3007})
+('factors of ', 9021, '(', 13.13907165329516, ' bits integer) =', {'9021'})
+Time - Factorization of  9021  ( 13.13907165329516  bit integer) was done in time deltas: 21.86474585533142
+Time - Theoretical Factorization of  9021  ( 13.13907165329516  bit integer) time : 172.6352039104244
+================================================================================================
+Factorization of  9022  ( 13.139231570719355  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9022, '(', 13.139231570719355, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514092417977365
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11277
+xr + intervalmidpoint =  6766
+xl =  9022
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9022, ') (at ', 'Tue, 15 Nov 2022 12:08:18 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6065885728
+=================================================
+factors_accum._value:  [9022, 1]
+=================================================
+xl + intervalmidpoint =  5263
+xr + intervalmidpoint =  3759
+xl =  4511
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4511, ') (at ', 'Tue, 15 Nov 2022 12:08:18 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6288534820
+=================================================
+factors_accum._value:  [4511, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9022, 1, 4511, 2])
+('factors of ', 9022, '(', 13.139231570719355, ' bits integer) =', {1, 2, 9022, 4511})
+('factors of ', 9022, '(', 13.139231570719355, ' bits integer) =', {'9022'})
+Time - Factorization of  9022  ( 13.139231570719355  bit integer) was done in time deltas: 21.358829498291016
+Time - Theoretical Factorization of  9022  ( 13.139231570719355  bit integer) time : 172.6394062689882
+================================================================================================
+Factorization of  9023  ( 13.139391470419257  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9023, '(', 13.139391470419257, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514113788809157
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11279
+xr + intervalmidpoint =  6767
+xl =  9023
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9023, ') (at ', 'Tue, 15 Nov 2022 12:08:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5882849785
+=================================================
+factors_accum._value:  [9023, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9023, 1])
+('factors of ', 9023, '(', 13.139391470419257, ' bits integer) =', {1, 9023})
+('factors of ', 9023, '(', 13.139391470419257, ' bits integer) =', {'9023'})
+Time - Factorization of  9023  ( 13.139391470419257  bit integer) was done in time deltas: 21.153815031051636
+Time - Theoretical Factorization of  9023  ( 13.139391470419257  bit integer) time : 172.64360821292632
+================================================================================================
+Factorization of  9024  ( 13.139551352398795  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9024, '(', 13.139551352398795, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514135041449336
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11280
+xr + intervalmidpoint =  6768
+xl =  9024
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9024, ') (at ', 'Tue, 15 Nov 2022 12:09:00 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5813058388
+=================================================
+factors_accum._value:  [9024, 1]
+=================================================
+xl + intervalmidpoint =  5264
+xr + intervalmidpoint =  3760
+xl =  4512
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4512, ') (at ', 'Tue, 15 Nov 2022 12:09:01 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6044936216
+=================================================
+factors_accum._value:  [4512, 2]
+=================================================
+xl + intervalmidpoint =  3384
+xr + intervalmidpoint =  2632
+xl =  3008
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3008, ') (at ', 'Tue, 15 Nov 2022 12:09:01 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6273169899
+=================================================
+factors_accum._value:  [3008, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9024, 1, 4512, 2, 3008, 3])
+('factors of ', 9024, '(', 13.139551352398795, ' bits integer) =', {9024, 1, 2, 4512, 3008, 3})
+('factors of ', 9024, '(', 13.139551352398795, ' bits integer) =', {'9024'})
+Time - Factorization of  9024  ( 13.139551352398795  bit integer) was done in time deltas: 21.18486213684082
+Time - Theoretical Factorization of  9024  ( 13.139551352398795  bit integer) time : 172.64780974232502
+================================================================================================
+Factorization of  9025  ( 13.139711216661896  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9025, '(', 13.139711216661896, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514156253562653
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11281
+xr + intervalmidpoint =  6768
+xl =  9025
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9025, ') (at ', 'Tue, 15 Nov 2022 12:09:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6092367016
+=================================================
+factors_accum._value:  [9025, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9025, 1])
+('factors of ', 9025, '(', 13.139711216661896, ' bits integer) =', {9025, 1})
+('factors of ', 9025, '(', 13.139711216661896, ' bits integer) =', {'9025'})
+Time - Factorization of  9025  ( 13.139711216661896  bit integer) was done in time deltas: 21.50748085975647
+Time - Theoretical Factorization of  9025  ( 13.139711216661896  bit integer) time : 172.65201085727043
+================================================================================================
+Factorization of  9026  ( 13.139871063212489  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9026, '(', 13.139871063212489, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514177705085898
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11282
+xr + intervalmidpoint =  6769
+xl =  9026
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9026, ') (at ', 'Tue, 15 Nov 2022 12:09:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6226693279
+=================================================
+factors_accum._value:  [9026, 1]
+=================================================
+xl + intervalmidpoint =  5265
+xr + intervalmidpoint =  3760
+xl =  4513
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4513, ') (at ', 'Tue, 15 Nov 2022 12:09:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6449650566
+=================================================
+factors_accum._value:  [4513, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9026, 1, 4513, 2])
+('factors of ', 9026, '(', 13.139871063212489, ' bits integer) =', {2, 1, 9026, 4513})
+('factors of ', 9026, '(', 13.139871063212489, ' bits integer) =', {'9026'})
+Time - Factorization of  9026  ( 13.139871063212489  bit integer) was done in time deltas: 21.504037141799927
+Time - Theoretical Factorization of  9026  ( 13.139871063212489  bit integer) time : 172.6562115578489
+================================================================================================
+Factorization of  9027  ( 13.140030892054492  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9027, '(', 13.140030892054492, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514199124230834
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11284
+xr + intervalmidpoint =  6770
+xl =  9027
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9027, ') (at ', 'Tue, 15 Nov 2022 12:10:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5788069488
+=================================================
+factors_accum._value:  [9027, 1]
+=================================================
+xl + intervalmidpoint =  3385
+xr + intervalmidpoint =  2632
+xl =  3009
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3009, ') (at ', 'Tue, 15 Nov 2022 12:10:05 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6246872201
+=================================================
+factors_accum._value:  [3009, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9027, 1, 3009, 3])
+('factors of ', 9027, '(', 13.140030892054492, ' bits integer) =', {3, 1, 9027, 3009})
+('factors of ', 9027, '(', 13.140030892054492, ' bits integer) =', {'9027'})
+Time - Factorization of  9027  ( 13.140030892054492  bit integer) was done in time deltas: 21.016223669052124
+Time - Theoretical Factorization of  9027  ( 13.140030892054492  bit integer) time : 172.66041184414638
+================================================================================================
+Factorization of  9028  ( 13.140190703191838  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9028, '(', 13.140190703191838, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514220318157392
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11285
+xr + intervalmidpoint =  6771
+xl =  9028
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9028, ') (at ', 'Tue, 15 Nov 2022 12:10:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5747322911
+=================================================
+factors_accum._value:  [9028, 1]
+=================================================
+xl + intervalmidpoint =  5266
+xr + intervalmidpoint =  3761
+xl =  4514
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4514, ') (at ', 'Tue, 15 Nov 2022 12:10:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5973290475
+=================================================
+factors_accum._value:  [4514, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9028, 1, 4514, 2])
+('factors of ', 9028, '(', 13.140190703191838, ' bits integer) =', {1, 4514, 2, 9028})
+('factors of ', 9028, '(', 13.140190703191838, ' bits integer) =', {'9028'})
+Time - Factorization of  9028  ( 13.140190703191838  bit integer) was done in time deltas: 21.16425633430481
+Time - Theoretical Factorization of  9028  ( 13.140190703191838  bit integer) time : 172.6646117162492
+================================================================================================
+Factorization of  9029  ( 13.14035049662844  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9029, '(', 13.14035049662844, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514241343726972
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11286
+xr + intervalmidpoint =  6771
+xl =  9029
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9029, ') (at ', 'Tue, 15 Nov 2022 12:10:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5819528619
+=================================================
+factors_accum._value:  [9029, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9029, 1])
+('factors of ', 9029, '(', 13.14035049662844, ' bits integer) =', {1, 9029})
+('factors of ', 9029, '(', 13.14035049662844, ' bits integer) =', {'9029'})
+Time - Factorization of  9029  ( 13.14035049662844  bit integer) was done in time deltas: 21.138718605041504
+Time - Theoretical Factorization of  9029  ( 13.14035049662844  bit integer) time : 172.66881117424327
+================================================================================================
+Factorization of  9030  ( 13.140510272368221  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9030, '(', 13.140510272368221, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514262485975645
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11287
+xr + intervalmidpoint =  6772
+xl =  9030
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9030, ') (at ', 'Tue, 15 Nov 2022 12:11:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5853365391
+=================================================
+factors_accum._value:  [9030, 1]
+=================================================
+xl + intervalmidpoint =  5267
+xr + intervalmidpoint =  3762
+xl =  4515
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4515, ') (at ', 'Tue, 15 Nov 2022 12:11:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6082001355
+=================================================
+factors_accum._value:  [4515, 2]
+=================================================
+xl + intervalmidpoint =  3386
+xr + intervalmidpoint =  2633
+xl =  3010
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3010, ') (at ', 'Tue, 15 Nov 2022 12:11:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6316468078
+=================================================
+factors_accum._value:  [3010, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9030, 1, 4515, 2, 3010, 3])
+('factors of ', 9030, '(', 13.140510272368221, ' bits integer) =', {1, 3010, 2, 4515, 3, 9030})
+('factors of ', 9030, '(', 13.140510272368221, ' bits integer) =', {'9030'})
+Time - Factorization of  9030  ( 13.140510272368221  bit integer) was done in time deltas: 21.17735195159912
+Time - Theoretical Factorization of  9030  ( 13.140510272368221  bit integer) time : 172.67301021821476
+================================================================================================
+Factorization of  9031  ( 13.140670030415102  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9031, '(', 13.140670030415102, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514283690021336
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11289
+xr + intervalmidpoint =  6773
+xl =  9031
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9031, ') (at ', 'Tue, 15 Nov 2022 12:11:29 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6012230436
+=================================================
+factors_accum._value:  [9031, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9031, 1])
+('factors of ', 9031, '(', 13.140670030415102, ' bits integer) =', {1, 9031})
+('factors of ', 9031, '(', 13.140670030415102, ' bits integer) =', {'9031'})
+Time - Factorization of  9031  ( 13.140670030415102  bit integer) was done in time deltas: 21.314112424850464
+Time - Theoretical Factorization of  9031  ( 13.140670030415102  bit integer) time : 172.67720884824962
+================================================================================================
+Factorization of  9032  ( 13.140829770773003  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9032, '(', 13.140829770773003, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514305038232945
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11290
+xr + intervalmidpoint =  6774
+xl =  9032
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9032, ') (at ', 'Tue, 15 Nov 2022 12:11:50 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5920682102
+=================================================
+factors_accum._value:  [9032, 1]
+=================================================
+xl + intervalmidpoint =  5269
+xr + intervalmidpoint =  3763
+xl =  4516
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4516, ') (at ', 'Tue, 15 Nov 2022 12:11:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6139007038
+=================================================
+factors_accum._value:  [4516, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9032, 1, 4516, 2])
+('factors of ', 9032, '(', 13.140829770773003, ' bits integer) =', {9032, 1, 2, 4516})
+('factors of ', 9032, '(', 13.140829770773003, ' bits integer) =', {'9032'})
+Time - Factorization of  9032  ( 13.140829770773003  bit integer) was done in time deltas: 21.308315992355347
+Time - Theoretical Factorization of  9032  ( 13.140829770773003  bit integer) time : 172.68140706443404
+================================================================================================
+Factorization of  9033  ( 13.140989493445833  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9033, '(', 13.140989493445833, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514326256066167
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11291
+xr + intervalmidpoint =  6774
+xl =  9033
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9033, ') (at ', 'Tue, 15 Nov 2022 12:12:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5763537157
+=================================================
+factors_accum._value:  [9033, 1]
+=================================================
+xl + intervalmidpoint =  3387
+xr + intervalmidpoint =  2634
+xl =  3011
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3011, ') (at ', 'Tue, 15 Nov 2022 12:12:12 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6203027362
+=================================================
+factors_accum._value:  [3011, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9033, 1, 3011, 3])
+('factors of ', 9033, '(', 13.140989493445833, ' bits integer) =', {3, 9033, 3011, 1})
+('factors of ', 9033, '(', 13.140989493445833, ' bits integer) =', {'9033'})
+Time - Factorization of  9033  ( 13.140989493445833  bit integer) was done in time deltas: 21.013565063476562
+Time - Theoretical Factorization of  9033  ( 13.140989493445833  bit integer) time : 172.68560486685377
+================================================================================================
+Factorization of  9034  ( 13.141149198437516  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9034, '(', 13.141149198437516, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514347341711590
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11292
+xr + intervalmidpoint =  6775
+xl =  9034
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9034, ') (at ', 'Tue, 15 Nov 2022 12:12:33 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5910546395
+=================================================
+factors_accum._value:  [9034, 1]
+=================================================
+xl + intervalmidpoint =  5270
+xr + intervalmidpoint =  3764
+xl =  4517
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4517, ') (at ', 'Tue, 15 Nov 2022 12:12:33 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6137849996
+=================================================
+factors_accum._value:  [4517, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9034, 1, 4517, 2])
+('factors of ', 9034, '(', 13.141149198437516, ' bits integer) =', {1, 9034, 2, 4517})
+('factors of ', 9034, '(', 13.141149198437516, ' bits integer) =', {'9034'})
+Time - Factorization of  9034  ( 13.141149198437516  bit integer) was done in time deltas: 21.316750049591064
+Time - Theoretical Factorization of  9034  ( 13.141149198437516  bit integer) time : 172.68980225559497
+================================================================================================
+Factorization of  9035  ( 13.141308885751963  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9035, '(', 13.141308885751963, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514368624831600
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11294
+xr + intervalmidpoint =  6776
+xl =  9035
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9035, ') (at ', 'Tue, 15 Nov 2022 12:12:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5932198603
+=================================================
+factors_accum._value:  [9035, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9035, 1])
+('factors of ', 9035, '(', 13.141308885751963, ' bits integer) =', {1, 9035})
+('factors of ', 9035, '(', 13.141308885751963, ' bits integer) =', {'9035'})
+Time - Factorization of  9035  ( 13.141308885751963  bit integer) was done in time deltas: 21.243728637695312
+Time - Theoretical Factorization of  9035  ( 13.141308885751963  bit integer) time : 172.6939992307435
+================================================================================================
+Factorization of  9036  ( 13.141468555393086  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9036, '(', 13.141468555393086, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514389747980774
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11295
+xr + intervalmidpoint =  6777
+xl =  9036
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9036, ') (at ', 'Tue, 15 Nov 2022 12:13:15 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5913530394
+=================================================
+factors_accum._value:  [9036, 1]
+=================================================
+xl + intervalmidpoint =  5271
+xr + intervalmidpoint =  3765
+xl =  4518
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4518, ') (at ', 'Tue, 15 Nov 2022 12:13:15 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6136002445
+=================================================
+factors_accum._value:  [4518, 2]
+=================================================
+xl + intervalmidpoint =  3388
+xr + intervalmidpoint =  2635
+xl =  3012
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3012, ') (at ', 'Tue, 15 Nov 2022 12:13:16 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6360279339
+=================================================
+factors_accum._value:  [3012, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9036, 1, 4518, 2, 3012, 3])
+('factors of ', 9036, '(', 13.141468555393086, ' bits integer) =', {1, 2, 3, 3012, 4518, 9036})
+('factors of ', 9036, '(', 13.141468555393086, ' bits integer) =', {'9036'})
+Time - Factorization of  9036  ( 13.141468555393086  bit integer) was done in time deltas: 21.07392430305481
+Time - Theoretical Factorization of  9036  ( 13.141468555393086  bit integer) time : 172.69819579238523
+================================================================================================
+Factorization of  9037  ( 13.141628207364795  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9037, '(', 13.141628207364795, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514410850552929
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11296
+xr + intervalmidpoint =  6777
+xl =  9037
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9037, ') (at ', 'Tue, 15 Nov 2022 12:13:36 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6035778208
+=================================================
+factors_accum._value:  [9037, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9037, 1])
+('factors of ', 9037, '(', 13.141628207364795, ' bits integer) =', {1, 9037})
+('factors of ', 9037, '(', 13.141628207364795, ' bits integer) =', {'9037'})
+Time - Factorization of  9037  ( 13.141628207364795  bit integer) was done in time deltas: 21.26088786125183
+Time - Theoretical Factorization of  9037  ( 13.141628207364795  bit integer) time : 172.70239194060602
+================================================================================================
+Factorization of  9038  ( 13.141787841671006  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9038, '(', 13.141787841671006, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514432231976260
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11297
+xr + intervalmidpoint =  6778
+xl =  9038
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9038, ') (at ', 'Tue, 15 Nov 2022 12:13:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5696577381
+=================================================
+factors_accum._value:  [9038, 1]
+=================================================
+xl + intervalmidpoint =  5272
+xr + intervalmidpoint =  3765
+xl =  4519
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4519, ') (at ', 'Tue, 15 Nov 2022 12:13:58 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5923787046
+=================================================
+factors_accum._value:  [4519, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9038, 1, 4519, 2])
+('factors of ', 9038, '(', 13.141787841671006, ' bits integer) =', {1, 2, 9038, 4519})
+('factors of ', 9038, '(', 13.141787841671006, ' bits integer) =', {'9038'})
+Time - Factorization of  9038  ( 13.141787841671006  bit integer) was done in time deltas: 21.038819313049316
+Time - Theoretical Factorization of  9038  ( 13.141787841671006  bit integer) time : 172.70658767549187
+================================================================================================
+Factorization of  9039  ( 13.14194745831562  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9039, '(', 13.14194745831562, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514453263559065
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11299
+xr + intervalmidpoint =  6779
+xl =  9039
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9039, ') (at ', 'Tue, 15 Nov 2022 12:14:19 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6058372973
+=================================================
+factors_accum._value:  [9039, 1]
+=================================================
+xl + intervalmidpoint =  3390
+xr + intervalmidpoint =  2636
+xl =  3013
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3013, ') (at ', 'Tue, 15 Nov 2022 12:14:19 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6509943346
+=================================================
+factors_accum._value:  [3013, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9039, 1, 3013, 3])
+('factors of ', 9039, '(', 13.14194745831562, ' bits integer) =', {1, 3, 3013, 9039})
+('factors of ', 9039, '(', 13.14194745831562, ' bits integer) =', {'9039'})
+Time - Factorization of  9039  ( 13.14194745831562  bit integer) was done in time deltas: 21.32614040374756
+Time - Theoretical Factorization of  9039  ( 13.14194745831562  bit integer) time : 172.71078299712838
+================================================================================================
+Factorization of  9040  ( 13.14210705730255  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9040, '(', 13.14210705730255, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514474538273539
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11300
+xr + intervalmidpoint =  6780
+xl =  9040
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9040, ') (at ', 'Tue, 15 Nov 2022 12:14:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6184822687
+=================================================
+factors_accum._value:  [9040, 1]
+=================================================
+xl + intervalmidpoint =  5273
+xr + intervalmidpoint =  3766
+xl =  4520
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4520, ') (at ', 'Tue, 15 Nov 2022 12:14:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6406031458
+=================================================
+factors_accum._value:  [4520, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9040, 1, 4520, 2])
+('factors of ', 9040, '(', 13.14210705730255, ' bits integer) =', {9040, 1, 2, 4520})
+('factors of ', 9040, '(', 13.14210705730255, ' bits integer) =', {'9040'})
+Time - Factorization of  9040  ( 13.14210705730255  bit integer) was done in time deltas: 21.448281288146973
+Time - Theoretical Factorization of  9040  ( 13.14210705730255  bit integer) time : 172.71497790560147
+================================================================================================
+Factorization of  9041  ( 13.142266638635704  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9041, '(', 13.142266638635704, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514496072090975
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11301
+xr + intervalmidpoint =  6780
+xl =  9041
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9041, ') (at ', 'Tue, 15 Nov 2022 12:15:01 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5848366728
+=================================================
+factors_accum._value:  [9041, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9041, 1])
+('factors of ', 9041, '(', 13.142266638635704, ' bits integer) =', {9041, 1})
+('factors of ', 9041, '(', 13.142266638635704, ' bits integer) =', {'9041'})
+Time - Factorization of  9041  ( 13.142266638635704  bit integer) was done in time deltas: 21.223284244537354
+Time - Theoretical Factorization of  9041  ( 13.142266638635704  bit integer) time : 172.719172400997
+================================================================================================
+Factorization of  9042  ( 13.142426202318982  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9042, '(', 13.142426202318982, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514517231378340
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11302
+xr + intervalmidpoint =  6781
+xl =  9042
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9042, ') (at ', 'Tue, 15 Nov 2022 12:15:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5742194676
+=================================================
+factors_accum._value:  [9042, 1]
+=================================================
+xl + intervalmidpoint =  5274
+xr + intervalmidpoint =  3767
+xl =  4521
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4521, ') (at ', 'Tue, 15 Nov 2022 12:15:23 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6013615272
+=================================================
+factors_accum._value:  [4521, 2]
+=================================================
+xl + intervalmidpoint =  3391
+xr + intervalmidpoint =  2637
+xl =  3014
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3014, ') (at ', 'Tue, 15 Nov 2022 12:15:23 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6239511599
+=================================================
+factors_accum._value:  [3014, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9042, 1, 4521, 2, 3014, 3])
+('factors of ', 9042, '(', 13.142426202318982, ' bits integer) =', {1, 2, 3, 3014, 4521, 9042})
+('factors of ', 9042, '(', 13.142426202318982, ' bits integer) =', {'9042'})
+Time - Factorization of  9042  ( 13.142426202318982  bit integer) was done in time deltas: 21.082260847091675
+Time - Theoretical Factorization of  9042  ( 13.142426202318982  bit integer) time : 172.72336648340053
+================================================================================================
+Factorization of  9043  ( 13.14258574835629  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9043, '(', 13.14258574835629, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514538318926109
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11304
+xr + intervalmidpoint =  6782
+xl =  9043
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9043, ') (at ', 'Tue, 15 Nov 2022 12:15:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6167581054
+=================================================
+factors_accum._value:  [9043, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9043, 1])
+('factors of ', 9043, '(', 13.14258574835629, ' bits integer) =', {1, 9043})
+('factors of ', 9043, '(', 13.14258574835629, ' bits integer) =', {'9043'})
+Time - Factorization of  9043  ( 13.14258574835629  bit integer) was done in time deltas: 21.484025716781616
+Time - Theoretical Factorization of  9043  ( 13.14258574835629  bit integer) time : 172.72756015289784
+================================================================================================
+Factorization of  9044  ( 13.142745276751528  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9044, '(', 13.142745276751528, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514559728999710
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11305
+xr + intervalmidpoint =  6783
+xl =  9044
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9044, ') (at ', 'Tue, 15 Nov 2022 12:16:06 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6366811473
+=================================================
+factors_accum._value:  [9044, 1]
+=================================================
+xl + intervalmidpoint =  5276
+xr + intervalmidpoint =  3768
+xl =  4522
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4522, ') (at ', 'Tue, 15 Nov 2022 12:16:06 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6601211252
+=================================================
+factors_accum._value:  [4522, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9044, 1, 4522, 2])
+('factors of ', 9044, '(', 13.142745276751528, ' bits integer) =', {1, 4522, 2, 9044})
+('factors of ', 9044, '(', 13.142745276751528, ' bits integer) =', {'9044'})
+Time - Factorization of  9044  ( 13.142745276751528  bit integer) was done in time deltas: 21.600253582000732
+Time - Theoretical Factorization of  9044  ( 13.142745276751528  bit integer) time : 172.7317534095746
+================================================================================================
+Factorization of  9045  ( 13.142904787508604  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9045, '(', 13.142904787508604, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514581539056432
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11306
+xr + intervalmidpoint =  6783
+xl =  9045
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9045, ') (at ', 'Tue, 15 Nov 2022 12:16:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5725787500
+=================================================
+factors_accum._value:  [9045, 1]
+=================================================
+xl + intervalmidpoint =  3392
+xr + intervalmidpoint =  2638
+xl =  3015
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3015, ') (at ', 'Tue, 15 Nov 2022 12:16:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6173534253
+=================================================
+factors_accum._value:  [3015, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9045, 1, 3015, 3])
+('factors of ', 9045, '(', 13.142904787508604, ' bits integer) =', {1, 3, 9045, 3015})
+('factors of ', 9045, '(', 13.142904787508604, ' bits integer) =', {'9045'})
+Time - Factorization of  9045  ( 13.142904787508604  bit integer) was done in time deltas: 21.17430591583252
+Time - Theoretical Factorization of  9045  ( 13.142904787508604  bit integer) time : 172.73594625351657
+================================================================================================
+Factorization of  9046  ( 13.143064280631412  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9046, '(', 13.143064280631412, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514602548875886
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11307
+xr + intervalmidpoint =  6784
+xl =  9046
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9046, ') (at ', 'Tue, 15 Nov 2022 12:16:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5771738814
+=================================================
+factors_accum._value:  [9046, 1]
+=================================================
+xl + intervalmidpoint =  5277
+xr + intervalmidpoint =  3769
+xl =  4523
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4523, ') (at ', 'Tue, 15 Nov 2022 12:16:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5996997326
+=================================================
+factors_accum._value:  [4523, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9046, 1, 4523, 2])
+('factors of ', 9046, '(', 13.143064280631412, ' bits integer) =', {1, 2, 4523, 9046})
+('factors of ', 9046, '(', 13.143064280631412, ' bits integer) =', {'9046'})
+Time - Factorization of  9046  ( 13.143064280631412  bit integer) was done in time deltas: 21.050291538238525
+Time - Theoretical Factorization of  9046  ( 13.143064280631412  bit integer) time : 172.7401386848093
+================================================================================================
+Factorization of  9047  ( 13.143223756123852  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9047, '(', 13.143223756123852, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514623664484377
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11309
+xr + intervalmidpoint =  6785
+xl =  9047
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9047, ') (at ', 'Tue, 15 Nov 2022 12:17:09 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6026821228
+=================================================
+factors_accum._value:  [9047, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9047, 1])
+('factors of ', 9047, '(', 13.143223756123852, ' bits integer) =', {1, 9047})
+('factors of ', 9047, '(', 13.143223756123852, ' bits integer) =', {'9047'})
+Time - Factorization of  9047  ( 13.143223756123852  bit integer) was done in time deltas: 21.390709400177002
+Time - Theoretical Factorization of  9047  ( 13.143223756123852  bit integer) time : 172.7443307035384
+================================================================================================
+Factorization of  9048  ( 13.143383213989821  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9048, '(', 13.143383213989821, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514644998555441
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11310
+xr + intervalmidpoint =  6786
+xl =  9048
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9048, ') (at ', 'Tue, 15 Nov 2022 12:17:31 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6165665190
+=================================================
+factors_accum._value:  [9048, 1]
+=================================================
+xl + intervalmidpoint =  5278
+xr + intervalmidpoint =  3770
+xl =  4524
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4524, ') (at ', 'Tue, 15 Nov 2022 12:17:31 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6392534062
+=================================================
+factors_accum._value:  [4524, 2]
+=================================================
+xl + intervalmidpoint =  3393
+xr + intervalmidpoint =  2639
+xl =  3016
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3016, ') (at ', 'Tue, 15 Nov 2022 12:17:31 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6623107768
+=================================================
+factors_accum._value:  [3016, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9048, 1, 4524, 2, 3016, 3])
+('factors of ', 9048, '(', 13.143383213989821, ' bits integer) =', {1, 2, 3, 3016, 4524, 9048})
+('factors of ', 9048, '(', 13.143383213989821, ' bits integer) =', {'9048'})
+Time - Factorization of  9048  ( 13.143383213989821  bit integer) was done in time deltas: 21.434494018554688
+Time - Theoretical Factorization of  9048  ( 13.143383213989821  bit integer) time : 172.74852230978942
+================================================================================================
+Factorization of  9049  ( 13.143542654233215  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9049, '(', 13.143542654233215, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514666386451356
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11311
+xr + intervalmidpoint =  6786
+xl =  9049
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9049, ') (at ', 'Tue, 15 Nov 2022 12:17:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5822878697
+=================================================
+factors_accum._value:  [9049, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9049, 1])
+('factors of ', 9049, '(', 13.143542654233215, ' bits integer) =', {9049, 1})
+('factors of ', 9049, '(', 13.143542654233215, ' bits integer) =', {'9049'})
+Time - Factorization of  9049  ( 13.143542654233215  bit integer) was done in time deltas: 21.085360288619995
+Time - Theoretical Factorization of  9049  ( 13.143542654233215  bit integer) time : 172.75271350364793
+================================================================================================
+Factorization of  9050  ( 13.143702076857931  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9050, '(', 13.143702076857931, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514687593688777
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11312
+xr + intervalmidpoint =  6787
+xl =  9050
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9050, ') (at ', 'Tue, 15 Nov 2022 12:18:13 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6065798173
+=================================================
+factors_accum._value:  [9050, 1]
+=================================================
+xl + intervalmidpoint =  5279
+xr + intervalmidpoint =  3770
+xl =  4525
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4525, ') (at ', 'Tue, 15 Nov 2022 12:18:13 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6287332134
+=================================================
+factors_accum._value:  [4525, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9050, 1, 4525, 2])
+('factors of ', 9050, '(', 13.143702076857931, ' bits integer) =', {1, 9050, 2, 4525})
+('factors of ', 9050, '(', 13.143702076857931, ' bits integer) =', {'9050'})
+Time - Factorization of  9050  ( 13.143702076857931  bit integer) was done in time deltas: 21.422950506210327
+Time - Theoretical Factorization of  9050  ( 13.143702076857931  bit integer) time : 172.75690428519948
+================================================================================================
+Factorization of  9051  ( 13.143861481867859  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9051, '(', 13.143861481867859, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514708935998722
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11314
+xr + intervalmidpoint =  6788
+xl =  9051
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9051, ') (at ', 'Tue, 15 Nov 2022 12:18:34 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5784833978
+=================================================
+factors_accum._value:  [9051, 1]
+=================================================
+xl + intervalmidpoint =  3394
+xr + intervalmidpoint =  2639
+xl =  3017
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3017, ') (at ', 'Tue, 15 Nov 2022 12:18:35 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6237788838
+=================================================
+factors_accum._value:  [3017, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9051, 1, 3017, 3])
+('factors of ', 9051, '(', 13.143861481867859, ' bits integer) =', {3, 1, 9051, 3017})
+('factors of ', 9051, '(', 13.143861481867859, ' bits integer) =', {'9051'})
+Time - Factorization of  9051  ( 13.143861481867859  bit integer) was done in time deltas: 21.047609090805054
+Time - Theoretical Factorization of  9051  ( 13.143861481867859  bit integer) time : 172.76109465452956
+================================================================================================
+Factorization of  9052  ( 13.144020869266893  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9052, '(', 13.144020869266893, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514730047408017
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11315
+xr + intervalmidpoint =  6789
+xl =  9052
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9052, ') (at ', 'Tue, 15 Nov 2022 12:18:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7303573896
+=================================================
+factors_accum._value:  [9052, 1]
+=================================================
+xl + intervalmidpoint =  5280
+xr + intervalmidpoint =  3771
+xl =  4526
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4526, ') (at ', 'Tue, 15 Nov 2022 12:18:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7535397798
+=================================================
+factors_accum._value:  [4526, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9052, 1, 4526, 2])
+('factors of ', 9052, '(', 13.144020869266893, ' bits integer) =', {1, 2, 9052, 4526})
+('factors of ', 9052, '(', 13.144020869266893, ' bits integer) =', {'9052'})
+Time - Factorization of  9052  ( 13.144020869266893  bit integer) was done in time deltas: 22.73962116241455
+Time - Theoretical Factorization of  9052  ( 13.144020869266893  bit integer) time : 172.7652846117236
+================================================================================================
+Factorization of  9053  ( 13.144180239058924  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9053, '(', 13.144180239058924, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514752800870358
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11316
+xr + intervalmidpoint =  6789
+xl =  9053
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9053, ') (at ', 'Tue, 15 Nov 2022 12:19:18 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5860184818
+=================================================
+factors_accum._value:  [9053, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9053, 1])
+('factors of ', 9053, '(', 13.144180239058924, ' bits integer) =', {1, 9053})
+('factors of ', 9053, '(', 13.144180239058924, ' bits integer) =', {'9053'})
+Time - Factorization of  9053  ( 13.144180239058924  bit integer) was done in time deltas: 21.256589889526367
+Time - Theoretical Factorization of  9053  ( 13.144180239058924  bit integer) time : 172.76947415686712
+================================================================================================
+Factorization of  9054  ( 13.14433959124784  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9054, '(', 13.14433959124784, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514773999394755
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11317
+xr + intervalmidpoint =  6790
+xl =  9054
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9054, ') (at ', 'Tue, 15 Nov 2022 12:19:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6184314252
+=================================================
+factors_accum._value:  [9054, 1]
+=================================================
+xl + intervalmidpoint =  5281
+xr + intervalmidpoint =  3772
+xl =  4527
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4527, ') (at ', 'Tue, 15 Nov 2022 12:19:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6417193806
+=================================================
+factors_accum._value:  [4527, 2]
+=================================================
+xl + intervalmidpoint =  3395
+xr + intervalmidpoint =  2640
+xl =  3018
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3018, ') (at ', 'Tue, 15 Nov 2022 12:19:40 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6641169236
+=================================================
+factors_accum._value:  [3018, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9054, 1, 4527, 2, 3018, 3])
+('factors of ', 9054, '(', 13.14433959124784, ' bits integer) =', {1, 2, 3, 3018, 4527, 9054})
+('factors of ', 9054, '(', 13.14433959124784, ' bits integer) =', {'9054'})
+Time - Factorization of  9054  ( 13.14433959124784  bit integer) was done in time deltas: 21.474879264831543
+Time - Theoretical Factorization of  9054  ( 13.14433959124784  bit integer) time : 172.77366329004545
+================================================================================================
+Factorization of  9055  ( 13.14449892583753  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9055, '(', 13.14449892583753, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514795596691437
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11319
+xr + intervalmidpoint =  6791
+xl =  9055
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9055, ') (at ', 'Tue, 15 Nov 2022 12:20:01 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5760346277
+=================================================
+factors_accum._value:  [9055, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9055, 1])
+('factors of ', 9055, '(', 13.14449892583753, ' bits integer) =', {1, 9055})
+('factors of ', 9055, '(', 13.14449892583753, ' bits integer) =', {'9055'})
+Time - Factorization of  9055  ( 13.14449892583753  bit integer) was done in time deltas: 21.168705940246582
+Time - Theoretical Factorization of  9055  ( 13.14449892583753  bit integer) time : 172.77785201134398
+================================================================================================
+Factorization of  9056  ( 13.144658242831884  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9056, '(', 13.144658242831884, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514816605688601
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11320
+xr + intervalmidpoint =  6792
+xl =  9056
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9056, ') (at ', 'Tue, 15 Nov 2022 12:20:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6157798332
+=================================================
+factors_accum._value:  [9056, 1]
+=================================================
+xl + intervalmidpoint =  5283
+xr + intervalmidpoint =  3773
+xl =  4528
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4528, ') (at ', 'Tue, 15 Nov 2022 12:20:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6388674126
+=================================================
+factors_accum._value:  [4528, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9056, 1, 4528, 2])
+('factors of ', 9056, '(', 13.144658242831884, ' bits integer) =', {9056, 1, 2, 4528})
+('factors of ', 9056, '(', 13.144658242831884, ' bits integer) =', {'9056'})
+Time - Factorization of  9056  ( 13.144658242831884  bit integer) was done in time deltas: 21.39003014564514
+Time - Theoretical Factorization of  9056  ( 13.144658242831884  bit integer) time : 172.78204032084818
+================================================================================================
+Factorization of  9057  ( 13.144817542234781  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9057, '(', 13.144817542234781, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514838151425426
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11321
+xr + intervalmidpoint =  6792
+xl =  9057
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9057, ') (at ', 'Tue, 15 Nov 2022 12:20:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5867124357
+=================================================
+factors_accum._value:  [9057, 1]
+=================================================
+xl + intervalmidpoint =  3396
+xr + intervalmidpoint =  2641
+xl =  3019
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3019, ') (at ', 'Tue, 15 Nov 2022 12:20:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6314911769
+=================================================
+factors_accum._value:  [3019, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9057, 1, 3019, 3])
+('factors of ', 9057, '(', 13.144817542234781, ' bits integer) =', {3, 9057, 3019, 1})
+('factors of ', 9057, '(', 13.144817542234781, ' bits integer) =', {'9057'})
+Time - Factorization of  9057  ( 13.144817542234781  bit integer) was done in time deltas: 21.272598266601562
+Time - Theoretical Factorization of  9057  ( 13.144817542234781  bit integer) time : 172.78622821864323
+================================================================================================
+Factorization of  9058  ( 13.144976824050111  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9058, '(', 13.144976824050111, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514859364279528
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11322
+xr + intervalmidpoint =  6793
+xl =  9058
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9058, ') (at ', 'Tue, 15 Nov 2022 12:21:05 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5734276297
+=================================================
+factors_accum._value:  [9058, 1]
+=================================================
+xl + intervalmidpoint =  5284
+xr + intervalmidpoint =  3774
+xl =  4529
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4529, ') (at ', 'Tue, 15 Nov 2022 12:21:05 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5959642542
+=================================================
+factors_accum._value:  [4529, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9058, 1, 4529, 2])
+('factors of ', 9058, '(', 13.144976824050111, ' bits integer) =', {2, 1, 9058, 4529})
+('factors of ', 9058, '(', 13.144976824050111, ' bits integer) =', {'9058'})
+Time - Factorization of  9058  ( 13.144976824050111  bit integer) was done in time deltas: 21.078667163848877
+Time - Theoretical Factorization of  9058  ( 13.144976824050111  bit integer) time : 172.79041570481456
+================================================================================================
+Factorization of  9059  ( 13.145136088281758  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9059, '(', 13.145136088281758, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514880440653401
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11324
+xr + intervalmidpoint =  6794
+xl =  9059
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9059, ') (at ', 'Tue, 15 Nov 2022 12:21:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5971714015
+=================================================
+factors_accum._value:  [9059, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9059, 1])
+('factors of ', 9059, '(', 13.145136088281758, ' bits integer) =', {1, 9059})
+('factors of ', 9059, '(', 13.145136088281758, ' bits integer) =', {'9059'})
+Time - Factorization of  9059  ( 13.145136088281758  bit integer) was done in time deltas: 21.33733558654785
+Time - Theoretical Factorization of  9059  ( 13.145136088281758  bit integer) time : 172.79460277944744
+================================================================================================
+Factorization of  9060  ( 13.145295334933598  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9060, '(', 13.145295334933598, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514901714192535
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11325
+xr + intervalmidpoint =  6795
+xl =  9060
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9060, ') (at ', 'Tue, 15 Nov 2022 12:21:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5870716731
+=================================================
+factors_accum._value:  [9060, 1]
+=================================================
+xl + intervalmidpoint =  5285
+xr + intervalmidpoint =  3775
+xl =  4530
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4530, ') (at ', 'Tue, 15 Nov 2022 12:21:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6095798880
+=================================================
+factors_accum._value:  [4530, 2]
+=================================================
+xl + intervalmidpoint =  3397
+xr + intervalmidpoint =  2642
+xl =  3020
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3020, ') (at ', 'Tue, 15 Nov 2022 12:21:48 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6322725725
+=================================================
+factors_accum._value:  [3020, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9060, 1, 4530, 2, 3020, 3])
+('factors of ', 9060, '(', 13.145295334933598, ' bits integer) =', {1, 2, 3, 9060, 3020, 4530})
+('factors of ', 9060, '(', 13.145295334933598, ' bits integer) =', {'9060'})
+Time - Factorization of  9060  ( 13.145295334933598  bit integer) was done in time deltas: 21.165255546569824
+Time - Theoretical Factorization of  9060  ( 13.145295334933598  bit integer) time : 172.79878944262703
+================================================================================================
+Factorization of  9061  ( 13.145454564009516  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9061, '(', 13.145454564009516, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514922985171589
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11326
+xr + intervalmidpoint =  6795
+xl =  9061
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9061, ') (at ', 'Tue, 15 Nov 2022 12:22:09 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6130488569
+=================================================
+factors_accum._value:  [9061, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9061, 1])
+('factors of ', 9061, '(', 13.145454564009516, ' bits integer) =', {1, 9061})
+('factors of ', 9061, '(', 13.145454564009516, ' bits integer) =', {'9061'})
+Time - Factorization of  9061  ( 13.145454564009516  bit integer) was done in time deltas: 21.541093349456787
+Time - Theoretical Factorization of  9061  ( 13.145454564009516  bit integer) time : 172.8029756944386
+================================================================================================
+Factorization of  9062  ( 13.145613775513388  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9062, '(', 13.145613775513388, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514944521470902
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11327
+xr + intervalmidpoint =  6796
+xl =  9062
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9062, ') (at ', 'Tue, 15 Nov 2022 12:22:30 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6093700554
+=================================================
+factors_accum._value:  [9062, 1]
+=================================================
+xl + intervalmidpoint =  5286
+xr + intervalmidpoint =  3775
+xl =  4531
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4531, ') (at ', 'Tue, 15 Nov 2022 12:22:30 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6318866778
+=================================================
+factors_accum._value:  [4531, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9062, 1, 4531, 2])
+('factors of ', 9062, '(', 13.145613775513388, ' bits integer) =', {1, 2, 4531, 9062})
+('factors of ', 9062, '(', 13.145613775513388, ' bits integer) =', {'9062'})
+Time - Factorization of  9062  ( 13.145613775513388  bit integer) was done in time deltas: 21.498486757278442
+Time - Theoretical Factorization of  9062  ( 13.145613775513388  bit integer) time : 172.80716153496735
+================================================================================================
+Factorization of  9063  ( 13.145772969449096  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9063, '(', 13.145772969449096, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514965872271341
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11329
+xr + intervalmidpoint =  6797
+xl =  9063
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9063, ') (at ', 'Tue, 15 Nov 2022 12:22:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5687658851
+=================================================
+factors_accum._value:  [9063, 1]
+=================================================
+xl + intervalmidpoint =  3399
+xr + intervalmidpoint =  2643
+xl =  3021
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3021, ') (at ', 'Tue, 15 Nov 2022 12:22:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6145671625
+=================================================
+factors_accum._value:  [3021, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9063, 1, 3021, 3])
+('factors of ', 9063, '(', 13.145772969449096, ' bits integer) =', {1, 3, 3021, 9063})
+('factors of ', 9063, '(', 13.145772969449096, ' bits integer) =', {'9063'})
+Time - Factorization of  9063  ( 13.145772969449096  bit integer) was done in time deltas: 20.961626052856445
+Time - Theoretical Factorization of  9063  ( 13.145772969449096  bit integer) time : 172.8113469642985
+================================================================================================
+Factorization of  9064  ( 13.145932145820517  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9064, '(', 13.145932145820517, ' bits integer) are:')
+factorization start (in nanoseconds): 1668514987180867611
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11330
+xr + intervalmidpoint =  6798
+xl =  9064
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9064, ') (at ', 'Tue, 15 Nov 2022 12:23:13 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5935023821
+=================================================
+factors_accum._value:  [9064, 1]
+=================================================
+xl + intervalmidpoint =  5287
+xr + intervalmidpoint =  3776
+xl =  4532
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4532, ') (at ', 'Tue, 15 Nov 2022 12:23:13 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6158513795
+=================================================
+factors_accum._value:  [4532, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9064, 1, 4532, 2])
+('factors of ', 9064, '(', 13.145932145820517, ' bits integer) =', {9064, 1, 2, 4532})
+('factors of ', 9064, '(', 13.145932145820517, ' bits integer) =', {'9064'})
+Time - Factorization of  9064  ( 13.145932145820517  bit integer) was done in time deltas: 21.718327045440674
+Time - Theoretical Factorization of  9064  ( 13.145932145820517  bit integer) time : 172.81553198251723
+================================================================================================
+Factorization of  9065  ( 13.146091304631522  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9065, '(', 13.146091304631522, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515008561171414
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11331
+xr + intervalmidpoint =  6798
+xl =  9065
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9065, ') (at ', 'Tue, 15 Nov 2022 12:23:34 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5994427439
+=================================================
+factors_accum._value:  [9065, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9065, 1])
+('factors of ', 9065, '(', 13.146091304631522, ' bits integer) =', {9065, 1})
+('factors of ', 9065, '(', 13.146091304631522, ' bits integer) =', {'9065'})
+Time - Factorization of  9065  ( 13.146091304631522  bit integer) was done in time deltas: 21.27466583251953
+Time - Theoretical Factorization of  9065  ( 13.146091304631522  bit integer) time : 172.81971658970852
+================================================================================================
+Factorization of  9066  ( 13.146250445885986  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9066, '(', 13.146250445885986, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515029976086374
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11332
+xr + intervalmidpoint =  6799
+xl =  9066
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9066, ') (at ', 'Tue, 15 Nov 2022 12:23:55 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5882139518
+=================================================
+factors_accum._value:  [9066, 1]
+=================================================
+xl + intervalmidpoint =  5288
+xr + intervalmidpoint =  3777
+xl =  4533
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4533, ') (at ', 'Tue, 15 Nov 2022 12:23:56 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6108059209
+=================================================
+factors_accum._value:  [4533, 2]
+=================================================
+xl + intervalmidpoint =  3400
+xr + intervalmidpoint =  2644
+xl =  3022
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3022, ') (at ', 'Tue, 15 Nov 2022 12:23:56 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6339057846
+=================================================
+factors_accum._value:  [3022, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9066, 1, 4533, 2, 3022, 3])
+('factors of ', 9066, '(', 13.146250445885986, ' bits integer) =', {1, 2, 3, 9066, 3022, 4533})
+('factors of ', 9066, '(', 13.146250445885986, ' bits integer) =', {'9066'})
+Time - Factorization of  9066  ( 13.146250445885986  bit integer) was done in time deltas: 21.295631647109985
+Time - Theoretical Factorization of  9066  ( 13.146250445885986  bit integer) time : 172.82390078595748
+================================================================================================
+Factorization of  9067  ( 13.146409569587783  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9067, '(', 13.146409569587783, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515051649581233
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11334
+xr + intervalmidpoint =  6800
+xl =  9067
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9067, ') (at ', 'Tue, 15 Nov 2022 12:24:17 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6001467053
+=================================================
+factors_accum._value:  [9067, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9067, 1])
+('factors of ', 9067, '(', 13.146409569587783, ' bits integer) =', {1, 9067})
+('factors of ', 9067, '(', 13.146409569587783, ' bits integer) =', {'9067'})
+Time - Factorization of  9067  ( 13.146409569587783  bit integer) was done in time deltas: 21.923551321029663
+Time - Theoretical Factorization of  9067  ( 13.146409569587783  bit integer) time : 172.82808457134925
+================================================================================================
+Factorization of  9068  ( 13.146568675740786  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9068, '(', 13.146568675740786, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515075065840729
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11335
+xr + intervalmidpoint =  6801
+xl =  9068
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9068, ') (at ', 'Tue, 15 Nov 2022 12:24:41 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6676687374
+=================================================
+factors_accum._value:  [9068, 1]
+=================================================
+xl + intervalmidpoint =  5290
+xr + intervalmidpoint =  3778
+xl =  4534
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4534, ') (at ', 'Tue, 15 Nov 2022 12:24:41 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6922683792
+=================================================
+factors_accum._value:  [4534, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9068, 1, 4534, 2])
+('factors of ', 9068, '(', 13.146568675740786, ' bits integer) =', {1, 2, 9068, 4534})
+('factors of ', 9068, '(', 13.146568675740786, ' bits integer) =', {'9068'})
+Time - Factorization of  9068  ( 13.146568675740786  bit integer) was done in time deltas: 24.109899759292603
+Time - Theoretical Factorization of  9068  ( 13.146568675740786  bit integer) time : 172.83226794596885
+================================================================================================
+Factorization of  9069  ( 13.146727764348864  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9069, '(', 13.146727764348864, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515097630658982
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11336
+xr + intervalmidpoint =  6801
+xl =  9069
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9069, ') (at ', 'Tue, 15 Nov 2022 12:25:03 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5898506939
+=================================================
+factors_accum._value:  [9069, 1]
+=================================================
+xl + intervalmidpoint =  3401
+xr + intervalmidpoint =  2645
+xl =  3023
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3023, ') (at ', 'Tue, 15 Nov 2022 12:25:03 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6363198909
+=================================================
+factors_accum._value:  [3023, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9069, 1, 3023, 3])
+('factors of ', 9069, '(', 13.146727764348864, ' bits integer) =', {1, 3, 9069, 3023})
+('factors of ', 9069, '(', 13.146727764348864, ' bits integer) =', {'9069'})
+Time - Factorization of  9069  ( 13.146727764348864  bit integer) was done in time deltas: 21.717156648635864
+Time - Theoretical Factorization of  9069  ( 13.146727764348864  bit integer) time : 172.83645090990126
+================================================================================================
+Factorization of  9070  ( 13.146886835415884  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9070, '(', 13.146886835415884, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515119277285911
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11337
+xr + intervalmidpoint =  6802
+xl =  9070
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9070, ') (at ', 'Tue, 15 Nov 2022 12:25:25 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6110630415
+=================================================
+factors_accum._value:  [9070, 1]
+=================================================
+xl + intervalmidpoint =  5291
+xr + intervalmidpoint =  3779
+xl =  4535
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4535, ') (at ', 'Tue, 15 Nov 2022 12:25:25 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6333917367
+=================================================
+factors_accum._value:  [4535, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9070, 1, 4535, 2])
+('factors of ', 9070, '(', 13.146886835415884, ' bits integer) =', {1, 2, 9070, 4535})
+('factors of ', 9070, '(', 13.146886835415884, ' bits integer) =', {'9070'})
+Time - Factorization of  9070  ( 13.146886835415884  bit integer) was done in time deltas: 21.795519590377808
+Time - Theoretical Factorization of  9070  ( 13.146886835415884  bit integer) time : 172.84063346323148
+================================================================================================
+Factorization of  9071  ( 13.14704588894572  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9071, '(', 13.14704588894572, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515140728890715
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11339
+xr + intervalmidpoint =  6803
+xl =  9071
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9071, ') (at ', 'Tue, 15 Nov 2022 12:25:46 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5856354802
+=================================================
+factors_accum._value:  [9071, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9071, 1])
+('factors of ', 9071, '(', 13.14704588894572, ' bits integer) =', {1, 9071})
+('factors of ', 9071, '(', 13.14704588894572, ' bits integer) =', {'9071'})
+Time - Factorization of  9071  ( 13.14704588894572  bit integer) was done in time deltas: 21.155938148498535
+Time - Theoretical Factorization of  9071  ( 13.14704588894572  bit integer) time : 172.84481560604453
+================================================================================================
+Factorization of  9072  ( 13.14720492494223  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9072, '(', 13.14720492494223, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515161782752226
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11340
+xr + intervalmidpoint =  6804
+xl =  9072
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9072, ') (at ', 'Tue, 15 Nov 2022 12:26:07 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6192202677
+=================================================
+factors_accum._value:  [9072, 1]
+=================================================
+xl + intervalmidpoint =  5292
+xr + intervalmidpoint =  3780
+xl =  4536
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4536, ') (at ', 'Tue, 15 Nov 2022 12:26:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6420779175
+=================================================
+factors_accum._value:  [4536, 2]
+=================================================
+xl + intervalmidpoint =  3402
+xr + intervalmidpoint =  2646
+xl =  3024
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3024, ') (at ', 'Tue, 15 Nov 2022 12:26:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6644684984
+=================================================
+factors_accum._value:  [3024, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9072, 1, 4536, 2, 3024, 3])
+('factors of ', 9072, '(', 13.14720492494223, ' bits integer) =', {1, 2, 3, 9072, 3024, 4536})
+('factors of ', 9072, '(', 13.14720492494223, ' bits integer) =', {'9072'})
+Time - Factorization of  9072  ( 13.14720492494223  bit integer) was done in time deltas: 21.38685917854309
+Time - Theoretical Factorization of  9072  ( 13.14720492494223  bit integer) time : 172.84899733842522
+================================================================================================
+Factorization of  9073  ( 13.147363943409283  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9073, '(', 13.147363943409283, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515183226881820
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11341
+xr + intervalmidpoint =  6804
+xl =  9073
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9073, ') (at ', 'Tue, 15 Nov 2022 12:26:29 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5923483162
+=================================================
+factors_accum._value:  [9073, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9073, 1])
+('factors of ', 9073, '(', 13.147363943409283, ' bits integer) =', {9073, 1})
+('factors of ', 9073, '(', 13.147363943409283, ' bits integer) =', {'9073'})
+Time - Factorization of  9073  ( 13.147363943409283  bit integer) was done in time deltas: 21.17620325088501
+Time - Theoretical Factorization of  9073  ( 13.147363943409283  bit integer) time : 172.8531786604585
+================================================================================================
+Factorization of  9074  ( 13.147522944350744  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9074, '(', 13.147522944350744, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515204394431396
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11342
+xr + intervalmidpoint =  6805
+xl =  9074
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9074, ') (at ', 'Tue, 15 Nov 2022 12:26:50 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5795703580
+=================================================
+factors_accum._value:  [9074, 1]
+=================================================
+xl + intervalmidpoint =  5293
+xr + intervalmidpoint =  3780
+xl =  4537
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4537, ') (at ', 'Tue, 15 Nov 2022 12:26:50 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6026924271
+=================================================
+factors_accum._value:  [4537, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9074, 1, 4537, 2])
+('factors of ', 9074, '(', 13.147522944350744, ' bits integer) =', {2, 1, 9074, 4537})
+('factors of ', 9074, '(', 13.147522944350744, ' bits integer) =', {'9074'})
+Time - Factorization of  9074  ( 13.147522944350744  bit integer) was done in time deltas: 21.026997566223145
+Time - Theoretical Factorization of  9074  ( 13.147522944350744  bit integer) time : 172.85735957222926
+================================================================================================
+Factorization of  9075  ( 13.147681927770476  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9075, '(', 13.147681927770476, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515225679552351
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11344
+xr + intervalmidpoint =  6806
+xl =  9075
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9075, ') (at ', 'Tue, 15 Nov 2022 12:27:11 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5808109167
+=================================================
+factors_accum._value:  [9075, 1]
+=================================================
+xl + intervalmidpoint =  3403
+xr + intervalmidpoint =  2646
+xl =  3025
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3025, ') (at ', 'Tue, 15 Nov 2022 12:27:11 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6260703214
+=================================================
+factors_accum._value:  [3025, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9075, 1, 3025, 3])
+('factors of ', 9075, '(', 13.147681927770476, ' bits integer) =', {3, 1, 9075, 3025})
+('factors of ', 9075, '(', 13.147681927770476, ' bits integer) =', {'9075'})
+Time - Factorization of  9075  ( 13.147681927770476  bit integer) was done in time deltas: 21.297464847564697
+Time - Theoretical Factorization of  9075  ( 13.147681927770476  bit integer) time : 172.86154007382237
+================================================================================================
+Factorization of  9076  ( 13.147840893672338  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9076, '(', 13.147840893672338, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515246698425871
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11345
+xr + intervalmidpoint =  6807
+xl =  9076
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9076, ') (at ', 'Tue, 15 Nov 2022 12:27:32 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6097992199
+=================================================
+factors_accum._value:  [9076, 1]
+=================================================
+xl + intervalmidpoint =  5294
+xr + intervalmidpoint =  3781
+xl =  4538
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4538, ') (at ', 'Tue, 15 Nov 2022 12:27:33 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6317177928
+=================================================
+factors_accum._value:  [4538, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9076, 1, 4538, 2])
+('factors of ', 9076, '(', 13.147840893672338, ' bits integer) =', {1, 4538, 2, 9076})
+('factors of ', 9076, '(', 13.147840893672338, ' bits integer) =', {'9076'})
+Time - Factorization of  9076  ( 13.147840893672338  bit integer) was done in time deltas: 21.269489765167236
+Time - Theoretical Factorization of  9076  ( 13.147840893672338  bit integer) time : 172.86572016532264
+================================================================================================
+Factorization of  9077  ( 13.147999842060191  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9077, '(', 13.147999842060191, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515268285788919
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11346
+xr + intervalmidpoint =  6807
+xl =  9077
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9077, ') (at ', 'Tue, 15 Nov 2022 12:27:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6436387386
+=================================================
+factors_accum._value:  [9077, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9077, 1])
+('factors of ', 9077, '(', 13.147999842060191, ' bits integer) =', {1, 9077})
+('factors of ', 9077, '(', 13.147999842060191, ' bits integer) =', {'9077'})
+Time - Factorization of  9077  ( 13.147999842060191  bit integer) was done in time deltas: 22.032475233078003
+Time - Theoretical Factorization of  9077  ( 13.147999842060191  bit integer) time : 172.8698998468148
+================================================================================================
+Factorization of  9078  ( 13.148158772937894  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9078, '(', 13.148158772937894, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515290585553216
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11347
+xr + intervalmidpoint =  6808
+xl =  9078
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9078, ') (at ', 'Tue, 15 Nov 2022 12:28:16 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6204976223
+=================================================
+factors_accum._value:  [9078, 1]
+=================================================
+xl + intervalmidpoint =  5295
+xr + intervalmidpoint =  3782
+xl =  4539
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4539, ') (at ', 'Tue, 15 Nov 2022 12:28:17 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6427067638
+=================================================
+factors_accum._value:  [4539, 2]
+=================================================
+xl + intervalmidpoint =  3404
+xr + intervalmidpoint =  2647
+xl =  3026
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3026, ') (at ', 'Tue, 15 Nov 2022 12:28:17 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6650319282
+=================================================
+factors_accum._value:  [3026, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9078, 1, 4539, 2, 3026, 3])
+('factors of ', 9078, '(', 13.148158772937894, ' bits integer) =', {1, 2, 3, 3026, 9078, 4539})
+('factors of ', 9078, '(', 13.148158772937894, ' bits integer) =', {'9078'})
+Time - Factorization of  9078  ( 13.148158772937894  bit integer) was done in time deltas: 22.003820180892944
+Time - Theoretical Factorization of  9078  ( 13.148158772937894  bit integer) time : 172.8740791183837
+================================================================================================
+Factorization of  9079  ( 13.148317686309303  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9079, '(', 13.148317686309303, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515312211006687
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11349
+xr + intervalmidpoint =  6809
+xl =  9079
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9079, ') (at ', 'Tue, 15 Nov 2022 12:28:38 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6195988525
+=================================================
+factors_accum._value:  [9079, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9079, 1])
+('factors of ', 9079, '(', 13.148317686309303, ' bits integer) =', {1, 9079})
+('factors of ', 9079, '(', 13.148317686309303, ' bits integer) =', {'9079'})
+Time - Factorization of  9079  ( 13.148317686309303  bit integer) was done in time deltas: 21.65728449821472
+Time - Theoretical Factorization of  9079  ( 13.148317686309303  bit integer) time : 172.87825798011403
+================================================================================================
+Factorization of  9080  ( 13.14847658217828  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9080, '(', 13.14847658217828, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515333930861585
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11350
+xr + intervalmidpoint =  6810
+xl =  9080
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9080, ') (at ', 'Tue, 15 Nov 2022 12:28:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5969292699
+=================================================
+factors_accum._value:  [9080, 1]
+=================================================
+xl + intervalmidpoint =  5297
+xr + intervalmidpoint =  3783
+xl =  4540
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4540, ') (at ', 'Tue, 15 Nov 2022 12:29:00 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6199311547
+=================================================
+factors_accum._value:  [4540, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9080, 1, 4540, 2])
+('factors of ', 9080, '(', 13.14847658217828, ' bits integer) =', {9080, 1, 2, 4540})
+('factors of ', 9080, '(', 13.14847658217828, ' bits integer) =', {'9080'})
+Time - Factorization of  9080  ( 13.14847658217828  bit integer) was done in time deltas: 21.477476119995117
+Time - Theoretical Factorization of  9080  ( 13.14847658217828  bit integer) time : 172.8824364320906
+================================================================================================
+Factorization of  9081  ( 13.14863546054867  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9081, '(', 13.14863546054867, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515355635995216
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11351
+xr + intervalmidpoint =  6810
+xl =  9081
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9081, ') (at ', 'Tue, 15 Nov 2022 12:29:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7062619264
+=================================================
+factors_accum._value:  [9081, 1]
+=================================================
+xl + intervalmidpoint =  3405
+xr + intervalmidpoint =  2648
+xl =  3027
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3027, ') (at ', 'Tue, 15 Nov 2022 12:29:23 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  7526472628
+=================================================
+factors_accum._value:  [3027, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9081, 1, 3027, 3])
+('factors of ', 9081, '(', 13.14863546054867, ' bits integer) =', {3, 9081, 3027, 1})
+('factors of ', 9081, '(', 13.14863546054867, ' bits integer) =', {'9081'})
+Time - Factorization of  9081  ( 13.14863546054867  bit integer) was done in time deltas: 22.809261322021484
+Time - Theoretical Factorization of  9081  ( 13.14863546054867  bit integer) time : 172.88661447439793
+================================================================================================
+Factorization of  9082  ( 13.148794321424335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9082, '(', 13.148794321424335, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515378176264146
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11352
+xr + intervalmidpoint =  6811
+xl =  9082
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9082, ') (at ', 'Tue, 15 Nov 2022 12:29:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6224962266
+=================================================
+factors_accum._value:  [9082, 1]
+=================================================
+xl + intervalmidpoint =  5298
+xr + intervalmidpoint =  3784
+xl =  4541
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4541, ') (at ', 'Tue, 15 Nov 2022 12:29:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6448497715
+=================================================
+factors_accum._value:  [4541, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9082, 1, 4541, 2])
+('factors of ', 9082, '(', 13.148794321424335, ' bits integer) =', {1, 9082, 2, 4541})
+('factors of ', 9082, '(', 13.148794321424335, ' bits integer) =', {'9082'})
+Time - Factorization of  9082  ( 13.148794321424335  bit integer) was done in time deltas: 21.639185905456543
+Time - Theoretical Factorization of  9082  ( 13.148794321424335  bit integer) time : 172.89079210712083
+================================================================================================
+Factorization of  9083  ( 13.148953164809123  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9083, '(', 13.148953164809123, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515399770844628
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11354
+xr + intervalmidpoint =  6812
+xl =  9083
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9083, ') (at ', 'Tue, 15 Nov 2022 12:30:05 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6024791200
+=================================================
+factors_accum._value:  [9083, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9083, 1])
+('factors of ', 9083, '(', 13.148953164809123, ' bits integer) =', {1, 9083})
+('factors of ', 9083, '(', 13.148953164809123, ' bits integer) =', {'9083'})
+Time - Factorization of  9083  ( 13.148953164809123  bit integer) was done in time deltas: 21.434539318084717
+Time - Theoretical Factorization of  9083  ( 13.148953164809123  bit integer) time : 172.89496933034386
+================================================================================================
+Factorization of  9084  ( 13.149111990706887  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9084, '(', 13.149111990706887, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515421271031085
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11355
+xr + intervalmidpoint =  6813
+xl =  9084
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9084, ') (at ', 'Tue, 15 Nov 2022 12:30:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6133599203
+=================================================
+factors_accum._value:  [9084, 1]
+=================================================
+xl + intervalmidpoint =  5299
+xr + intervalmidpoint =  3785
+xl =  4542
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4542, ') (at ', 'Tue, 15 Nov 2022 12:30:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6360699696
+=================================================
+factors_accum._value:  [4542, 2]
+=================================================
+xl + intervalmidpoint =  3406
+xr + intervalmidpoint =  2649
+xl =  3028
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3028, ') (at ', 'Tue, 15 Nov 2022 12:30:27 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6590919643
+=================================================
+factors_accum._value:  [3028, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9084, 1, 4542, 2, 3028, 3])
+('factors of ', 9084, '(', 13.149111990706887, ' bits integer) =', {1, 2, 3, 3028, 9084, 4542})
+('factors of ', 9084, '(', 13.149111990706887, ' bits integer) =', {'9084'})
+Time - Factorization of  9084  ( 13.149111990706887  bit integer) was done in time deltas: 21.60231614112854
+Time - Theoretical Factorization of  9084  ( 13.149111990706887  bit integer) time : 172.89914614415162
+================================================================================================
+Factorization of  9085  ( 13.149270799121478  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9085, '(', 13.149270799121478, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515442774936466
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11356
+xr + intervalmidpoint =  6813
+xl =  9085
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9085, ') (at ', 'Tue, 15 Nov 2022 12:30:49 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6236821319
+=================================================
+factors_accum._value:  [9085, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9085, 1])
+('factors of ', 9085, '(', 13.149270799121478, ' bits integer) =', {1, 9085})
+('factors of ', 9085, '(', 13.149270799121478, ' bits integer) =', {'9085'})
+Time - Factorization of  9085  ( 13.149270799121478  bit integer) was done in time deltas: 21.659778833389282
+Time - Theoretical Factorization of  9085  ( 13.149270799121478  bit integer) time : 172.90332254862878
+================================================================================================
+Factorization of  9086  ( 13.149429590056743  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9086, '(', 13.149429590056743, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515465027657539
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11357
+xr + intervalmidpoint =  6814
+xl =  9086
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9086, ') (at ', 'Tue, 15 Nov 2022 12:31:11 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6169775507
+=================================================
+factors_accum._value:  [9086, 1]
+=================================================
+xl + intervalmidpoint =  5300
+xr + intervalmidpoint =  3785
+xl =  4543
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4543, ') (at ', 'Tue, 15 Nov 2022 12:31:11 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6396540747
+=================================================
+factors_accum._value:  [4543, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9086, 1, 4543, 2])
+('factors of ', 9086, '(', 13.149429590056743, ' bits integer) =', {1, 2, 9086, 4543})
+('factors of ', 9086, '(', 13.149429590056743, ' bits integer) =', {'9086'})
+Time - Factorization of  9086  ( 13.149429590056743  bit integer) was done in time deltas: 22.207778453826904
+Time - Theoretical Factorization of  9086  ( 13.149429590056743  bit integer) time : 172.90749854385984
+================================================================================================
+Factorization of  9087  ( 13.149588363516528  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9087, '(', 13.149588363516528, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515487061873494
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11359
+xr + intervalmidpoint =  6815
+xl =  9087
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9087, ') (at ', 'Tue, 15 Nov 2022 12:31:33 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6426000951
+=================================================
+factors_accum._value:  [9087, 1]
+=================================================
+xl + intervalmidpoint =  3408
+xr + intervalmidpoint =  2650
+xl =  3029
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3029, ') (at ', 'Tue, 15 Nov 2022 12:31:33 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6875514144
+=================================================
+factors_accum._value:  [3029, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9087, 1, 3029, 3])
+('factors of ', 9087, '(', 13.149588363516528, ' bits integer) =', {1, 3, 3029, 9087})
+('factors of ', 9087, '(', 13.149588363516528, ' bits integer) =', {'9087'})
+Time - Factorization of  9087  ( 13.149588363516528  bit integer) was done in time deltas: 22.233598709106445
+Time - Theoretical Factorization of  9087  ( 13.149588363516528  bit integer) time : 172.91167412992928
+================================================================================================
+Factorization of  9088  ( 13.149747119504681  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9088, '(', 13.149747119504681, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515508650996555
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11360
+xr + intervalmidpoint =  6816
+xl =  9088
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9088, ') (at ', 'Tue, 15 Nov 2022 12:31:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6093250718
+=================================================
+factors_accum._value:  [9088, 1]
+=================================================
+xl + intervalmidpoint =  5301
+xr + intervalmidpoint =  3786
+xl =  4544
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4544, ') (at ', 'Tue, 15 Nov 2022 12:31:54 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6316996448
+=================================================
+factors_accum._value:  [4544, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9088, 1, 4544, 2])
+('factors of ', 9088, '(', 13.149747119504681, ' bits integer) =', {9088, 1, 2, 4544})
+('factors of ', 9088, '(', 13.149747119504681, ' bits integer) =', {'9088'})
+Time - Factorization of  9088  ( 13.149747119504681  bit integer) was done in time deltas: 21.266297578811646
+Time - Theoretical Factorization of  9088  ( 13.149747119504681  bit integer) time : 172.91584930692167
+================================================================================================
+Factorization of  9089  ( 13.149905858025049  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9089, '(', 13.149905858025049, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515530401114206
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11361
+xr + intervalmidpoint =  6816
+xl =  9089
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9089, ') (at ', 'Tue, 15 Nov 2022 12:32:16 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5970043579
+=================================================
+factors_accum._value:  [9089, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9089, 1])
+('factors of ', 9089, '(', 13.149905858025049, ' bits integer) =', {9089, 1})
+('factors of ', 9089, '(', 13.149905858025049, ' bits integer) =', {'9089'})
+Time - Factorization of  9089  ( 13.149905858025049  bit integer) was done in time deltas: 21.644148349761963
+Time - Theoretical Factorization of  9089  ( 13.149905858025049  bit integer) time : 172.92002407492149
+================================================================================================
+Factorization of  9090  ( 13.15006457908147  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9090, '(', 13.15006457908147, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515552431859818
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11362
+xr + intervalmidpoint =  6817
+xl =  9090
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9090, ') (at ', 'Tue, 15 Nov 2022 12:32:38 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6209955316
+=================================================
+factors_accum._value:  [9090, 1]
+=================================================
+xl + intervalmidpoint =  5302
+xr + intervalmidpoint =  3787
+xl =  4545
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4545, ') (at ', 'Tue, 15 Nov 2022 12:32:38 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6434266162
+=================================================
+factors_accum._value:  [4545, 2]
+=================================================
+xl + intervalmidpoint =  3409
+xr + intervalmidpoint =  2651
+xl =  3030
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3030, ') (at ', 'Tue, 15 Nov 2022 12:32:39 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6671129708
+=================================================
+factors_accum._value:  [3030, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9090, 1, 4545, 2, 3030, 3])
+('factors of ', 9090, '(', 13.15006457908147, ' bits integer) =', {1, 9090, 2, 4545, 3, 3030})
+('factors of ', 9090, '(', 13.15006457908147, ' bits integer) =', {'9090'})
+Time - Factorization of  9090  ( 13.15006457908147  bit integer) was done in time deltas: 22.26070284843445
+Time - Theoretical Factorization of  9090  ( 13.15006457908147  bit integer) time : 172.9241984340131
+================================================================================================
+Factorization of  9091  ( 13.15022328267779  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9091, '(', 13.15022328267779, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515574493075690
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11364
+xr + intervalmidpoint =  6818
+xl =  9091
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9091, ') (at ', 'Tue, 15 Nov 2022 12:33:00 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6415321171
+=================================================
+factors_accum._value:  [9091, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9091, 1])
+('factors of ', 9091, '(', 13.15022328267779, ' bits integer) =', {1, 9091})
+('factors of ', 9091, '(', 13.15022328267779, ' bits integer) =', {'9091'})
+Time - Factorization of  9091  ( 13.15022328267779  bit integer) was done in time deltas: 22.187557220458984
+Time - Theoretical Factorization of  9091  ( 13.15022328267779  bit integer) time : 172.928372384281
+================================================================================================
+Factorization of  9092  ( 13.150381968817848  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9092, '(', 13.150381968817848, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515596161986781
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11365
+xr + intervalmidpoint =  6819
+xl =  9092
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9092, ') (at ', 'Tue, 15 Nov 2022 12:33:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5907731574
+=================================================
+factors_accum._value:  [9092, 1]
+=================================================
+xl + intervalmidpoint =  5304
+xr + intervalmidpoint =  3788
+xl =  4546
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4546, ') (at ', 'Tue, 15 Nov 2022 12:33:22 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6133497061
+=================================================
+factors_accum._value:  [4546, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9092, 1, 4546, 2])
+('factors of ', 9092, '(', 13.150381968817848, ' bits integer) =', {1, 4546, 2, 9092})
+('factors of ', 9092, '(', 13.150381968817848, ' bits integer) =', {'9092'})
+Time - Factorization of  9092  ( 13.150381968817848  bit integer) was done in time deltas: 21.17960476875305
+Time - Theoretical Factorization of  9092  ( 13.150381968817848  bit integer) time : 172.9325459258096
+================================================================================================
+Factorization of  9093  ( 13.150540637505484  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9093, '(', 13.150540637505484, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515617258139762
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11366
+xr + intervalmidpoint =  6819
+xl =  9093
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9093, ') (at ', 'Tue, 15 Nov 2022 12:33:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6054871475
+=================================================
+factors_accum._value:  [9093, 1]
+=================================================
+xl + intervalmidpoint =  3410
+xr + intervalmidpoint =  2652
+xl =  3031
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3031, ') (at ', 'Tue, 15 Nov 2022 12:33:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6502208262
+=================================================
+factors_accum._value:  [3031, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9093, 1, 3031, 3])
+('factors of ', 9093, '(', 13.150540637505484, ' bits integer) =', {1, 3, 9093, 3031})
+('factors of ', 9093, '(', 13.150540637505484, ' bits integer) =', {'9093'})
+Time - Factorization of  9093  ( 13.150540637505484  bit integer) was done in time deltas: 21.27003288269043
+Time - Theoretical Factorization of  9093  ( 13.150540637505484  bit integer) time : 172.93671905868314
+================================================================================================
+Factorization of  9094  ( 13.150699288744539  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9094, '(', 13.150699288744539, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515638590505505
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11367
+xr + intervalmidpoint =  6820
+xl =  9094
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9094, ') (at ', 'Tue, 15 Nov 2022 12:34:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5873564277
+=================================================
+factors_accum._value:  [9094, 1]
+=================================================
+xl + intervalmidpoint =  5305
+xr + intervalmidpoint =  3789
+xl =  4547
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4547, ') (at ', 'Tue, 15 Nov 2022 12:34:04 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6093058638
+=================================================
+factors_accum._value:  [4547, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9094, 1, 4547, 2])
+('factors of ', 9094, '(', 13.150699288744539, ' bits integer) =', {1, 2, 4547, 9094})
+('factors of ', 9094, '(', 13.150699288744539, ' bits integer) =', {'9094'})
+Time - Factorization of  9094  ( 13.150699288744539  bit integer) was done in time deltas: 21.094326972961426
+Time - Theoretical Factorization of  9094  ( 13.150699288744539  bit integer) time : 172.9408917829861
+================================================================================================
+Factorization of  9095  ( 13.15085792253885  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9095, '(', 13.15085792253885, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515659744157478
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11369
+xr + intervalmidpoint =  6821
+xl =  9095
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9095, ') (at ', 'Tue, 15 Nov 2022 12:34:25 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6039705969
+=================================================
+factors_accum._value:  [9095, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9095, 1])
+('factors of ', 9095, '(', 13.15085792253885, ' bits integer) =', {1, 9095})
+('factors of ', 9095, '(', 13.15085792253885, ' bits integer) =', {'9095'})
+Time - Factorization of  9095  ( 13.15085792253885  bit integer) was done in time deltas: 21.378575086593628
+Time - Theoretical Factorization of  9095  ( 13.15085792253885  bit integer) time : 172.94506409880287
+================================================================================================
+Factorization of  9096  ( 13.151016538892248  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9096, '(', 13.151016538892248, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515681398691396
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11370
+xr + intervalmidpoint =  6822
+xl =  9096
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9096, ') (at ', 'Tue, 15 Nov 2022 12:34:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6075312009
+=================================================
+factors_accum._value:  [9096, 1]
+=================================================
+xl + intervalmidpoint =  5306
+xr + intervalmidpoint =  3790
+xl =  4548
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4548, ') (at ', 'Tue, 15 Nov 2022 12:34:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6304633186
+=================================================
+factors_accum._value:  [4548, 2]
+=================================================
+xl + intervalmidpoint =  3411
+xr + intervalmidpoint =  2653
+xl =  3032
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3032, ') (at ', 'Tue, 15 Nov 2022 12:34:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6531491745
+=================================================
+factors_accum._value:  [3032, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9096, 1, 4548, 2, 3032, 3])
+('factors of ', 9096, '(', 13.151016538892248, ' bits integer) =', {1, 2, 3, 4548, 9096, 3032})
+('factors of ', 9096, '(', 13.151016538892248, ' bits integer) =', {'9096'})
+Time - Factorization of  9096  ( 13.151016538892248  bit integer) was done in time deltas: 21.643552780151367
+Time - Theoretical Factorization of  9096  ( 13.151016538892248  bit integer) time : 172.94923600621746
+================================================================================================
+Factorization of  9097  ( 13.151175137808572  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9097, '(', 13.151175137808572, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515702693331680
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11371
+xr + intervalmidpoint =  6822
+xl =  9097
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9097, ') (at ', 'Tue, 15 Nov 2022 12:35:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6136911844
+=================================================
+factors_accum._value:  [9097, 1]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9097, 1])
+('factors of ', 9097, '(', 13.151175137808572, ' bits integer) =', {9097, 1})
+('factors of ', 9097, '(', 13.151175137808572, ' bits integer) =', {'9097'})
+Time - Factorization of  9097  ( 13.151175137808572  bit integer) was done in time deltas: 21.414236068725586
+Time - Theoretical Factorization of  9097  ( 13.151175137808572  bit integer) time : 172.95340750531432
+================================================================================================
+Factorization of  9098  ( 13.151333719291653  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9098, '(', 13.151333719291653, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515724107999365
+tiles_start: 1
+tiles_end: 4
+=================================================
+xl + intervalmidpoint =  11372
+xr + intervalmidpoint =  6823
+xl =  9098
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9098, ') (at ', 'Tue, 15 Nov 2022 12:35:29 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5763718108
+=================================================
+factors_accum._value:  [9098, 1]
+=================================================
+xl + intervalmidpoint =  5307
+xr + intervalmidpoint =  3790
+xl =  4549
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 2, ',', 4549, ') (at ', 'Tue, 15 Nov 2022 12:35:30 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5985565123
+=================================================
+factors_accum._value:  [4549, 2]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9098, 1, 4549, 2])
+('factors of ', 9098, '(', 13.151333719291653, ' bits integer) =', {1, 9098, 2, 4549})
+('factors of ', 9098, '(', 13.151333719291653, ' bits integer) =', {'9098'})
+Time - Factorization of  9098  ( 13.151333719291653  bit integer) was done in time deltas: 21.016696214675903
+Time - Theoretical Factorization of  9098  ( 13.151333719291653  bit integer) time : 172.95757859617763
+================================================================================================
+Factorization of  9099  ( 13.151492283345327  bit integer) 
+================================================================================================
+('Spark Python version:', '3.10.6 (main, Nov  2 2022, 18:53:38) [GCC 11.3.0]')
+('factors of ', 9099, '(', 13.151492283345327, ' bits integer) are:')
+factorization start (in nanoseconds): 1668515745285314295
+tiles_start: 1
+tiles_end: 5
+=================================================
+xl + intervalmidpoint =  11374
+xr + intervalmidpoint =  6824
+xl =  9099
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 1, ',', 9099, ') (at ', 'Tue, 15 Nov 2022 12:35:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5822282841
+=================================================
+factors_accum._value:  [9099, 1]
+=================================================
+xl + intervalmidpoint =  3412
+xr + intervalmidpoint =  2653
+xl =  3033
+yl =  3
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  False
+Factor point verification: xl*yl == number_to_factorize =  True
+('Factors are: (', 3, ',', 3033, ') (at ', 'Tue, 15 Nov 2022 12:35:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6416968689
+=================================================
+factors_accum._value:  [3033, 3]
+libEGL warning: DRI2: failed to authenticate
+('factors_accum.value = ', [9099, 1, 3033, 3])
+('factors of ', 9099, '(', 13.151492283345327, ' bits integer) =', {3, 1, 9099, 3033})
+('factors of ', 9099, '(', 13.151492283345327, ' bits integer) =', {'9099'})
+Time - Factorization of  9099  ( 13.151492283345327  bit integer) was done in time deltas: 21.605672121047974
+Time - Theoretical Factorization of  9099  ( 13.151492283345327  bit integer) time : 172.9617492788917
+Traceback (most recent call last):
+  File "/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/Krishna_iResearch_OpenSource_wc1/GitHub/asfer-github-code/python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py", line 56, in <module>
+    plt.plot(range(increment),actual_runtimes)
+NameError: name 'increment' is not defined
