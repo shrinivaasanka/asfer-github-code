@@ -21,7 +21,6 @@ import sys
 from complement import toint
 import time
 import matplotlib.pyplot as plt
-import DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized
 import os
 import json
 
@@ -53,6 +52,6 @@ if __name__=="__main__":
         theoretical=constant*math.pow(math.log(n,2),exp)
         print("Time - Theoretical Factorization of ",n, " (",math.log(n,2)," bit integer) time :",theoretical)
         theoretical_runtimes.append(theoretical)
-    plt.plot(range(increment),actual_runtimes)
-    plt.plot(range(increment),theoretical_runtimes)
+    plt.plot(range(integerrange),actual_runtimes)
+    plt.plot(range(integerrange),theoretical_runtimes)
     plt.savefig("testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg")
