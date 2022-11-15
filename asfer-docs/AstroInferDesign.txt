@@ -14366,16 +14366,12 @@ histograms.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 675. (FEATURE) Urban Planning Analytics - Analysis of Remote Sensing GIS Imagery of Urban Sprawls - 3 July 2019
 ---------------------------------------------------------------------------------------------------------------------------------------------
-1.Analyzing Builtup land, Water bodies etc., of an urban sprawl is crucial for urban planners and is an apt application of image analysis. Urban sprawl is defined as expanse of urbanization in suburbs and is not measured by governance limits. For example rankings of metropolitan areas in India is: https://en.wikipedia.org/wiki/List_of_metropolitan_areas_in_India ("...
-Rank	Metropolitan area	State/Territory	Population
-Area
-(in km2/sq mi)
-1	Central National Capital Region	Delhi, Haryana, Uttar Pradesh	25,735,000 (2016)[3]	2,163 (835)[3]
-2	Mumbai Metropolitan Region	Maharashtra	20,800,000 (2005)[4]	4,354 (1,681)[5]
-3	Kolkata metropolitan area	West Bengal	14,720,000 (2001)[6]	1,851 (715)[7]
-4	Chennai metropolitan area	Tamil Nadu	13,300,253 (2011)	1,189 (459)...")
-which is measure of urbanization.
-
+1.Analyzing Builtup land, Water bodies etc., of an urban sprawl is crucial for urban planners and is an apt application of image analysis. Urban sprawl is defined as arborescence (in graph theoretic terms) of suburban facegraph often delineated by traffic patterns, road densities and road gravity induced built-up surfaces and is not measured by governance limits. For example rankings of metropolitan areas in India from https://en.wikipedia.org/wiki/List_of_metropolitan_areas_in_India and https://www.hindutamil.in/news/tamilnadu/888256-spread-over-an-area-of-5-904-sq-km-with-4-corporations-12-municipalities-chennai-becomes-indias-3rd-largest-city.html are (based on 2022 estimates):
+        Metropolitan area               State/Territory                                 Population      Area (sqkm)
+        1. National Capital Region      Delhi, Haryana, Uttar Pradesh, Rajasthan        20,965,000      2,163   
+        2. Mumbai                       Maharashtra                                     20,961,000      4,354
+        3. Chennai                      Tamilnadu                                       15,900,000      5,904  
+        4. Kolkata                      West Bengal                                     15,134,000      1,851   
 2.Convex Hull based on Scipy Spatial for urban sprawls has already been implemented in ImageGraph_Keras_Theano.py for GIS images from SEDAC (http://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/) which is also invoked in Drone Online Shopping Delivery NeuronRain usecase
 3.A Machine Learning (Random Forests) and entropy based analysis of Chennai Urban Sprawl - https://www.mdpi.com/1099-4300/19/4/163/pdf - studies the growth of built area and dwindling of water bodies from 1991 to 2016 and predicts scenario for 2027. Images referred to in this article are drawn from various Remote Sensing satellite sources (LandSat, ISRO-Bhuvan Geo Platform - https://bhuvan.nrsc.gov.in/bhuvan_links.php etc.,) and are great references for Chennai Urban Sprawl Land Usage,Water bodies,Greenery etc.,.
 4.Images from https://www.mdpi.com/1099-4300/19/4/163/pdf have been extracted and are analyzed for Red, Green and Blue Channels in this commit. New python function analyze_remotesensing_RGB_patches() has been implemented for this which invokes OpenCV2 split() of the image to Red,Green,Blue channels.
