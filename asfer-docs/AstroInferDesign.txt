@@ -20571,3 +20571,34 @@ References:
 	Synthesized - MultiFractals_Music_virtual_piano_music.jpg
 	JSBach2 - MultiFractals_Music_JSBach_Musicological_Offering.jpg 
 
+----------------------------------------------------------------------------------------------------------------------------
+1355. (JIRA,THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.10.6 + Spark 3.3.0 Quadcore Benchmarks - Optional Square Root Optimization, Refactoring of Multiple Integer Factorization, Linux Pollard-Rho Factor Command Benchmarks comparison - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 15 November 2022
+-----------------------------------------------------------------------------------------------------------------------------
+1355.1 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to add a boolean parameter StartFromSquareRoot to SearchTiles_and_Factorize(n, k, Parallel_for="False", StartFromSquareRoot="False") for optionally choosing square root optimization (single CPU divmod-sqrt instruction) which begins binary searching for factors from square root of N to N along the rasterized hyperbolic arc tile segments instead of 1 to N.
+1355.2 StartFromSquareRoot is passed on as commandline boolean flag to python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py by sys.argv[6].
+1355.3 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py has been changed to import os and DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized modules. Commandline argument sys.argv[2] has been renamed as integerrange from increment.
+1355.4 subprocess.call() within python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py has been replaced by os.system() for its simpler syntax - subprocess and os.system wrap respectively popen() and system() system calls. Direct invocation of DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize() is the obvious choice but Spark executors go erratic in cross-module invocation of a spark parallelized routine and since has been commented.
+1355.5 Linux factor command implements Pollard-Rho algorithm which is slower for integers greater than 127 bits. NeuronRain computational geometric factorization has been benchmarked versus Pollard-Rho Linux Factor command for following integers and runtimes are tabulated in logs:
+###################################################################################################
+testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.10Upgrade.log.15November2022 - 9120291920012909120901920910290192010210291921 - 153 bits
+###################################################################################################
+NeuronRain - 6.2 seconds:
+-------------------------
+factors_accum._value:  [9120291920012909120901920910290192010210291921, 1, 3040097306670969706967306970096730670070097307, 3]
+
+Factor command - Pollard Rho - 4.2 seconds - prime factors:
+---------------------------------------------
+9120291920012909120901920910290192010210291921: 3 10398403 82543659788243 3541906718137937516688883
+
+###################################################################################################
+testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.Python3.10Upgrade.log2.15November2022 - 912029192001290912090192091029019201021029192193023029309239923902932321 - 240 bits
+###################################################################################################
+NeuronRain - 13.7 seconds:
+-------------------------
+factors_accum._value:  [304009730667096970696730697009673067007009730731007676436413307967644107, 3]
+factors_accum._value:  [130289884571612987441456013004145600145861313170431861329891417700418903, 7]
+factors_accum._value:  [43429961523870995813818671001381866715287104390143953776630472566806301, 21]
+
+Factor command - Pollard Rho - no result,interrupted after 42 minutes
+------------------------------------------------------- 
+1355.6 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-14
