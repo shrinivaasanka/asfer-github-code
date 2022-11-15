@@ -20602,3 +20602,12 @@ factors_accum._value:  [43429961523870995813818671001381866715287104390143953776
 Factor command - Pollard Rho - no result,interrupted after 42 minutes
 ------------------------------------------------------- 
 1355.6 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-14
+
+----------------------------------------------------------------------------------------------------------------------------
+1356. (JIRA,THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.10.6 + Spark 3.3.0 Quadcore Benchmarks - Multiple Consecutive Integers - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 16 November 2022
+-----------------------------------------------------------------------------------------------------------------------------
+1356.1 Multiple consecutive integers from 9000 to 9100 have been factorized by python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py for code changes in Section 1355.
+1356.2 Logs and theoretical-actual runtime plots (for O((logN)^2)) are at:
+        testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg
+        testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.15November2022
+1356.3 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-14
