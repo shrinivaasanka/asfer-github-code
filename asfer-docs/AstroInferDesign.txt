@@ -20529,6 +20529,9 @@ The Cheeger constant is strictly positive if and only if G is a connected graph.
 1352.6 An example timeseries of North East Monsoon Rainfall from https://mausam.imd.gov.in/chennai/mcdata/hydro.pdf has been modelled by MFDFA:
     nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
+Precipitation timeseries are unique which preserve annual rainfall average over many decades though short term day-to-day fluctuations are unpredictable implying an order in random data - dating of extreme weather events in medium range weather forecasting is feasible to some extent by projecting a precipitation timeseries based on known average. For example following timeseries for 17 cms rain over 4 days could be approximately projected to 10 days by a priori knowledge of average rainfall:
+                2,3,10,2,day5,day6,day7,day8,day9,day10  = 50 cms (seasonal annual average for 10 days)
+as 33 centimetres precipitation is highly likely over next 6 days possibly caused by extreme weather events. Average normal monsoon rainfall in India is revised every decade - https://www.financialexpress.com/lifestyle/science/imd-pegs-new-all-india-rainfall-normal-at-87-cm/2492190/ - "... The new all India annual rainfall normal, based on the 1971-2021 data, has been fixed at 1160.1 mm compared to the earlier normal of 1176.9 mm based on the 1961-2010 data. ..."
 1352.7 Predictions from predict_EWE() and rainfall MFDFA model have been captured in following logs and images:
 	image_pattern_mining/ImageNet/testlogs/GISWeatherAnalytics.log.9November2022
 	image_pattern_mining/ImageNet/testlogs/MultiFractals_Precipitation.jpg
