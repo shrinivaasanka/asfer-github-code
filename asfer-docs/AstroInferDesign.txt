@@ -20615,3 +20615,75 @@ Factor command - Pollard Rho - no result,interrupted after 42 minutes
         testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg
         testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.log.15November2022
 1356.3 This commit resolves JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-14
+
+------------------------------------------------------------------------------------------------------------------------------
+1358. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 22 November 2022 - Prediction of Extreme Weather Events based on angular separations-NBody gravitational accelerations of few more pairs of solar system bodies from Sequence Mining - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance, Drone autonomous online shopping delivery, Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+------------------------------------------------------------------------------------------------------------------------------
+1358.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to compute predict_EWE() angular separation search for few more solar system body pairs and new date range 22 November 2022 - 31 December 2022 from Sequence Mined body pairs of HURDAT2 dataset in Section 172 having high class association rule support - Venus-Mercury (19.5798949737%) , Mercury-Jupiter (11.9279819955%) and Jupiter-Venus (11.0277569392%) :
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+1358.2 Following are dates matching 30 degree angular separations of three pairs above implying precipitation with high probability in geographic areas under seasonal monsoon activity (22 November 2022-8 December 2022 and 16 December 2022-27 December 2022):
+Angular separation of Venus-Mercury on 2022-11-22 17:30:00.000: [7d36m28.40821885s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-22 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-23 17:30:00.000: [8d42m35.00775519s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-23 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-24 17:30:00.000: [9d50m36.02749517s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-24 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-25 17:30:00.000: [11d00m24.62193288s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-25 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-26 17:30:00.000: [12d12m01.27995635s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-26 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-27 17:30:00.000: [13d25m31.01990856s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-27 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-28 17:30:00.000: [14d41m01.86307955s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-28 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-29 17:30:00.000: [15d58m43.97444152s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-29 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-30 17:30:00.000: [17d18m49.16827706s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-30 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-01 17:30:00.000: [18d41m30.62191374s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-01 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-02 17:30:00.000: [20d07m02.7124476s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-02 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-03 17:30:00.000: [21d35m40.92809131s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-03 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-04 17:30:00.000: [23d07m41.82528595s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-04 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-05 17:30:00.000: [24d43m23.01330957s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-05 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-06 17:30:00.000: [26d23m03.15389377s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-06 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-07 17:30:00.000: [28d07m01.96639836s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-07 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-08 17:30:00.000: [29d55m40.23048009s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-08 17:30:00.000
+---------
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-16 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-17 17:30:00.000: [23d14m54.31296893s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-17 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-18 17:30:00.000: [18d49m25.14077136s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-18 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-19 17:30:00.000: [14d16m44.15034129s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-19 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-20 17:30:00.000: [9d39m31.03469044s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-20 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-21 17:30:00.000: [5d11m50.79478856s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-21 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-22 17:30:00.000: [3d08m19.1974257s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-22 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-23 17:30:00.000: [6d50m35.13973457s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-23 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-24 17:30:00.000: [11d57m44.31447172s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-24 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-25 17:30:00.000: [17d25m46.74770108s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-25 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-26 17:30:00.000: [23d06m18.70854917s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-26 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-27 17:30:00.000: [28d56m40.37861651s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-27 17:30:00.000
+1358.3 An Indian astronomy text - Brihat Samhita of Varahamihira - mentions proximity of Venus-Mercury, Jupiter-Mercury and Jupiter-Venus as major factor influencing rainfall thus concurring with three AprioriGSP Sequence Mined Class Association Rules from HURDAT2 100 year hurricane datasets earlier.
+
+References:
+----------
+1358.4 Brihat Samhita - Volume 1 - [Ramakrishna Bhat] - Published by Motilal Banarsidas - https://ia802906.us.archive.org/16/items/brihatsamhitawithenglishtranslationramakrishnabhattm.part1mlbd_305_s/Brihat%20Samhita%20with%20English%20Translation%20Ramakrishna%20Bhatt%20M.%20Part%201%20MLBD.pdf - Chapter 28 - Signs of Immediate Rain - Page 280 - "Samagame Patati Jalam Gna-Shukrayor Gna-Jeevayor Guru-Sitayoscha sangame" (Samagame Patati Jalam - Water falls, GnaShukra - Mercury+Venus, GnaJeeva-Mercury+Jupiter, GuruSita-Jupiter+Venus Sangame-in conjunction or within 30 degrees)  
