@@ -1,0 +1,165 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+__init__():timescale now: <Time tt=2459905.8490859396>
+Angular separation of Venus-Mercury on 2022-11-22 17:30:00.000: [7d36m28.40821885s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-22 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-23 17:30:00.000: [8d42m35.00775519s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-23 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-24 17:30:00.000: [9d50m36.02749517s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-24 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-25 17:30:00.000: [11d00m24.62193288s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-25 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-26 17:30:00.000: [12d12m01.27995635s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-26 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-27 17:30:00.000: [13d25m31.01990856s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-27 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-28 17:30:00.000: [14d41m01.86307955s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-28 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-29 17:30:00.000: [15d58m43.97444152s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-29 17:30:00.000
+Angular separation of Venus-Mercury on 2022-11-30 17:30:00.000: [17d18m49.16827706s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-11-30 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-01 17:30:00.000: [18d41m30.62191374s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-01 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-02 17:30:00.000: [20d07m02.7124476s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-02 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-03 17:30:00.000: [21d35m40.92809131s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-03 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-04 17:30:00.000: [23d07m41.82528595s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-04 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-05 17:30:00.000: [24d43m23.01330957s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-05 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-06 17:30:00.000: [26d23m03.15389377s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-06 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-07 17:30:00.000: [28d07m01.96639836s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-07 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-08 17:30:00.000: [29d55m40.23048009s]
+Angular separation of Venus-Mercury matches bounds for date: 2022-12-08 17:30:00.000
+Angular separation of Venus-Mercury on 2022-12-09 17:30:00.000: [31d49m19.77850155s]
+Angular separation of Venus-Mercury on 2022-12-10 17:30:00.000: [33d48m23.46947645s]
+Angular separation of Venus-Mercury on 2022-12-11 17:30:00.000: [35d53m15.13531357s]
+Angular separation of Venus-Mercury on 2022-12-12 17:30:00.000: [38d04m19.48861718s]
+Angular separation of Venus-Mercury on 2022-12-13 17:30:00.000: [40d22m01.97942572s]
+Angular separation of Venus-Mercury on 2022-12-14 17:30:00.000: [42d46m48.5861435s]
+Angular separation of Venus-Mercury on 2022-12-15 17:30:00.000: [45d19m05.5237315s]
+Angular separation of Venus-Mercury on 2022-12-16 17:30:00.000: [47d59m18.850265s]
+Angular separation of Venus-Mercury on 2022-12-17 17:30:00.000: [50d47m53.95168768s]
+Angular separation of Venus-Mercury on 2022-12-18 17:30:00.000: [53d45m14.88464403s]
+Angular separation of Venus-Mercury on 2022-12-19 17:30:00.000: [56d51m43.55953545s]
+Angular separation of Venus-Mercury on 2022-12-20 17:30:00.000: [60d07m38.75153221s]
+Angular separation of Venus-Mercury on 2022-12-21 17:30:00.000: [63d33m14.93744194s]
+Angular separation of Venus-Mercury on 2022-12-22 17:30:00.000: [67d08m40.97229303s]
+Angular separation of Venus-Mercury on 2022-12-23 17:30:00.000: [70d53m58.64202751s]
+Angular separation of Venus-Mercury on 2022-12-24 17:30:00.000: [74d49m01.15762386s]
+Angular separation of Venus-Mercury on 2022-12-25 17:30:00.000: [78d53m31.68942842s]
+Angular separation of Venus-Mercury on 2022-12-26 17:30:00.000: [83d07m02.0742753s]
+Angular separation of Venus-Mercury on 2022-12-27 17:30:00.000: [87d28m51.85530592s]
+Angular separation of Venus-Mercury on 2022-12-28 17:30:00.000: [91d58m07.82634096s]
+Angular separation of Venus-Mercury on 2022-12-29 17:30:00.000: [96d33m44.23990771s]
+Angular separation of Venus-Mercury on 2022-12-30 17:30:00.000: [101d14m23.79385974s]
+=========================================================================
+__init__():timescale now: <Time tt=2459905.8491268554>
+Angular separation of Mercury-Jupiter on 2022-11-22 17:30:00.000: [104d23m15.51924323s]
+Angular separation of Mercury-Jupiter on 2022-11-23 17:30:00.000: [101d42m46.31622974s]
+Angular separation of Mercury-Jupiter on 2022-11-24 17:30:00.000: [99d01m23.69835701s]
+Angular separation of Mercury-Jupiter on 2022-11-25 17:30:00.000: [96d18m55.18383061s]
+Angular separation of Mercury-Jupiter on 2022-11-26 17:30:00.000: [93d35m07.92537472s]
+Angular separation of Mercury-Jupiter on 2022-11-27 17:30:00.000: [90d49m48.78920173s]
+Angular separation of Mercury-Jupiter on 2022-11-28 17:30:00.000: [88d02m44.18003678s]
+Angular separation of Mercury-Jupiter on 2022-11-29 17:30:00.000: [85d13m40.01605385s]
+Angular separation of Mercury-Jupiter on 2022-11-30 17:30:00.000: [82d22m21.7379288s]
+Angular separation of Mercury-Jupiter on 2022-12-01 17:30:00.000: [79d28m34.11209935s]
+Angular separation of Mercury-Jupiter on 2022-12-02 17:30:00.000: [76d32m01.29723671s]
+Angular separation of Mercury-Jupiter on 2022-12-03 17:30:00.000: [73d32m26.67878111s]
+Angular separation of Mercury-Jupiter on 2022-12-04 17:30:00.000: [70d29m32.97812228s]
+Angular separation of Mercury-Jupiter on 2022-12-05 17:30:00.000: [67d23m02.05018039s]
+Angular separation of Mercury-Jupiter on 2022-12-06 17:30:00.000: [64d12m34.91146619s]
+Angular separation of Mercury-Jupiter on 2022-12-07 17:30:00.000: [60d57m51.73887968s]
+Angular separation of Mercury-Jupiter on 2022-12-08 17:30:00.000: [57d38m31.76383869s]
+Angular separation of Mercury-Jupiter on 2022-12-09 17:30:00.000: [54d14m13.37960015s]
+Angular separation of Mercury-Jupiter on 2022-12-10 17:30:00.000: [50d44m34.09300627s]
+Angular separation of Mercury-Jupiter on 2022-12-11 17:30:00.000: [47d09m10.81586494s]
+Angular separation of Mercury-Jupiter on 2022-12-12 17:30:00.000: [43d27m39.88278171s]
+Angular separation of Mercury-Jupiter on 2022-12-13 17:30:00.000: [39d39m37.47576112s]
+Angular separation of Mercury-Jupiter on 2022-12-14 17:30:00.000: [35d44m40.14652766s]
+Angular separation of Mercury-Jupiter on 2022-12-15 17:30:00.000: [31d42m25.67904756s]
+Angular separation of Mercury-Jupiter on 2022-12-16 17:30:00.000: [27d32m34.78404441s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-16 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-17 17:30:00.000: [23d14m54.31296893s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-17 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-18 17:30:00.000: [18d49m25.14077136s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-18 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-19 17:30:00.000: [14d16m44.15034129s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-19 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-20 17:30:00.000: [9d39m31.03469044s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-20 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-21 17:30:00.000: [5d11m50.79478856s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-21 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-22 17:30:00.000: [3d08m19.1974257s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-22 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-23 17:30:00.000: [6d50m35.13973457s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-23 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-24 17:30:00.000: [11d57m44.31447172s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-24 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-25 17:30:00.000: [17d25m46.74770108s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-25 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-26 17:30:00.000: [23d06m18.70854917s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-26 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-27 17:30:00.000: [28d56m40.37861651s]
+Angular separation of Mercury-Jupiter matches bounds for date: 2022-12-27 17:30:00.000
+Angular separation of Mercury-Jupiter on 2022-12-28 17:30:00.000: [34d55m15.23210599s]
+Angular separation of Mercury-Jupiter on 2022-12-29 17:30:00.000: [41d00m38.10080787s]
+Angular separation of Mercury-Jupiter on 2022-12-30 17:30:00.000: [47d11m21.75026251s]
+=========================================================================
+__init__():timescale now: <Time tt=2459905.8491569003>
+Angular separation of Jupiter-Venus on 2022-11-22 17:30:00.000: [110d56m05.61757246s]
+Angular separation of Jupiter-Venus on 2022-11-23 17:30:00.000: [109d26m28.49738297s]
+Angular separation of Jupiter-Venus on 2022-11-24 17:30:00.000: [107d56m51.17989017s]
+Angular separation of Jupiter-Venus on 2022-11-25 17:30:00.000: [106d27m13.6367201s]
+Angular separation of Jupiter-Venus on 2022-11-26 17:30:00.000: [104d57m35.78519645s]
+Angular separation of Jupiter-Venus on 2022-11-27 17:30:00.000: [103d27m57.6224134s]
+Angular separation of Jupiter-Venus on 2022-11-28 17:30:00.000: [101d58m19.10537206s]
+Angular separation of Jupiter-Venus on 2022-11-29 17:30:00.000: [100d28m40.18326881s]
+Angular separation of Jupiter-Venus on 2022-11-30 17:30:00.000: [98d59m00.86404357s]
+Angular separation of Jupiter-Venus on 2022-12-01 17:30:00.000: [97d29m21.07602119s]
+Angular separation of Jupiter-Venus on 2022-12-02 17:30:00.000: [95d59m40.79202279s]
+Angular separation of Jupiter-Venus on 2022-12-03 17:30:00.000: [94d29m59.91995453s]
+Angular separation of Jupiter-Venus on 2022-12-04 17:30:00.000: [93d00m18.46631299s]
+Angular separation of Jupiter-Venus on 2022-12-05 17:30:00.000: [91d30m36.38121766s]
+Angular separation of Jupiter-Venus on 2022-12-06 17:30:00.000: [90d00m53.6272444s]
+Angular separation of Jupiter-Venus on 2022-12-07 17:30:00.000: [88d31m10.20553972s]
+Angular separation of Jupiter-Venus on 2022-12-08 17:30:00.000: [87d01m26.05978918s]
+Angular separation of Jupiter-Venus on 2022-12-09 17:30:00.000: [85d31m41.16611517s]
+Angular separation of Jupiter-Venus on 2022-12-10 17:30:00.000: [84d01m55.42873594s]
+Angular separation of Jupiter-Venus on 2022-12-11 17:30:00.000: [82d32m08.86073385s]
+Angular separation of Jupiter-Venus on 2022-12-12 17:30:00.000: [81d02m21.40502094s]
+Angular separation of Jupiter-Venus on 2022-12-13 17:30:00.000: [79d32m33.03500033s]
+Angular separation of Jupiter-Venus on 2022-12-14 17:30:00.000: [78d02m43.73992073s]
+Angular separation of Jupiter-Venus on 2022-12-15 17:30:00.000: [76d32m53.47809735s]
+Angular separation of Jupiter-Venus on 2022-12-16 17:30:00.000: [75d03m02.22513358s]
+Angular separation of Jupiter-Venus on 2022-12-17 17:30:00.000: [73d33m09.88559326s]
+Angular separation of Jupiter-Venus on 2022-12-18 17:30:00.000: [72d03m16.47807536s]
+Angular separation of Jupiter-Venus on 2022-12-19 17:30:00.000: [70d33m21.94482229s]
+Angular separation of Jupiter-Venus on 2022-12-20 17:30:00.000: [69d03m26.27585477s]
+Angular separation of Jupiter-Venus on 2022-12-21 17:30:00.000: [67d33m29.45538397s]
+Angular separation of Jupiter-Venus on 2022-12-22 17:30:00.000: [66d03m31.46604175s]
+Angular separation of Jupiter-Venus on 2022-12-23 17:30:00.000: [64d33m32.28943727s]
+Angular separation of Jupiter-Venus on 2022-12-24 17:30:00.000: [63d03m31.84197833s]
+Angular separation of Jupiter-Venus on 2022-12-25 17:30:00.000: [61d33m30.15038356s]
+Angular separation of Jupiter-Venus on 2022-12-26 17:30:00.000: [60d03m27.16327097s]
+Angular separation of Jupiter-Venus on 2022-12-27 17:30:00.000: [58d33m22.88839438s]
+Angular separation of Jupiter-Venus on 2022-12-28 17:30:00.000: [57d03m17.30575565s]
+Angular separation of Jupiter-Venus on 2022-12-29 17:30:00.000: [55d33m10.42192533s]
+Angular separation of Jupiter-Venus on 2022-12-30 17:30:00.000: [54d03m02.22193291s]
+=========================================================================

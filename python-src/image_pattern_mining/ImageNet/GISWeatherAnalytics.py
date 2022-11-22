@@ -195,10 +195,13 @@ if __name__ == "__main__":
     #North Atlantic Hurricanes - Harvey, Irma, Ian and Bay of Bengal Very Severe Cyclonic Storms - Amphan,Gaja,Varda,Thane,Ockhi
     #datesofstorms=[(2017,8,17,1,00,00),(2017,8,30,1,00,00),(2022,9,23,1,00,00),(2020,5,20,1,00,00),(2018,11,10,1,00,00),(2016,12,6,1,00,00),(2011,12,25,1,00,00),(2017,11,29,1,00,00)]
     #climate_analytics(datasource="n-body-analytics",date=datesofstorms)
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','10d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Sun-Moon",'angularsepbounds':('120d','180d')})
-    nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
-    climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','10d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,10,21,17,30,00),'dateto':(2022,12,15,17,30,00),'loc':'@0','bodypair':"Sun-Moon",'angularsepbounds':('120d','180d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,22,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodypair':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+    #nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
+    #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
