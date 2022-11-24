@@ -52,6 +52,8 @@ import healpy as hp
 from astroML.datasets import fetch_wmap_temperatures 
 from astropy.coordinates import Angle
 from astropy.coordinates import SkyCoord
+from scipy.linalg import norm
+import matplotlib.pyplot as plt
 
 
 planetradecdict={}
@@ -59,6 +61,8 @@ planets=[]
 ts=[]
 
 def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
+    ephem=EphemerisSearch("de421.bsp")
+    range_gravities={}
     solar_system_bodies={"Sun":10,"Moon":301,"Mars":499,"Mercury":199,"Jupiter":599,"Venus":299,"Saturn":699,"Uranus":799,"Neptune":899,"Pluto":999}
     date=Time(str(datefrom[0])+"-"+str(datefrom[1])+"-"+str(datefrom[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
     todate=Time(str(dateto[0])+"-"+str(dateto[1])+"-"+str(dateto[2]) + " " + str(datefrom[3]) + ":" + str(datefrom[4]) + ":" + str(datefrom[5]))
@@ -72,8 +76,29 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
           print("Angular separation of " + bodypair + " on " + date.iso + ":",separation)
           if separation.is_within_bounds(angularsepbounds[0],angularsepbounds[1]):
               print("Angular separation of " + bodypair + " matches bounds for date:",date.iso)
+          datetimetoks=date.iso.split(" ")
+          datetoks=datetimetoks[0].split("-")
+          timetoks=datetimetoks[1].split(":")
+          print("datetoks:",datetoks)
+          print("timetoks:",timetoks)
+          gravities=ephem.extreme_weather_events_n_body_analytics([(datetoks[0],datetoks[1],datetoks[2],timetoks[0],timetoks[1],timetoks[2])],loc=loc)
+          range_gravities[date]=gravities
           date += 1
     print("=========================================================================")
+    print("predict_EWE(): N-Body gravitational acceleration on location " + loc + " for " + bodypair + " during date range ",datefrom," to ",dateto, ":")
+    bodypairtoks=bodypair.split("-")
+    body1_gravity_l2norms=[]
+    body2_gravity_l2norms=[]
+    for date,g in range_gravities.items():
+        print("Gravity L2 Norm of ",bodypairtoks[0]," on ",date,":",norm(g[0][bodypairtoks[0]]))
+        print("Gravity L2 Norm of ",bodypairtoks[1]," on ",date,":",norm(g[0][bodypairtoks[1]]))
+        body1_gravity_l2norms.append(norm(g[0][bodypairtoks[0]]))
+        body2_gravity_l2norms.append(norm(g[0][bodypairtoks[1]]))
+    plt.plot(body1_gravity_l2norms,label=bodypair + "(" + bodypairtoks[0] + ")")
+    plt.plot(body2_gravity_l2norms,label=bodypair + "(" + bodypairtoks[1] + ")")
+    plt.legend()
+    #plt.savefig("./testlogs/GISWeatherAnalytics.Gravity.jpg")
+    plt.show()
 
 def latlon_match(datetime):
     global planets
@@ -284,6 +309,7 @@ class EphemerisSearch(object):
     
     def extreme_weather_events_n_body_analytics(self,datesofEWEs=None,loc="@earth-moon",angularsep=False,maxiterations=200):
         Latlons=[]
+        argdatesofEWEs=datesofEWEs
         if datesofEWEs == "Earthquakes":
             EWEdates=open("earthquakesFrom1900with8plusmag.pygen.txt")
             datesofEWEs=[]
@@ -305,7 +331,6 @@ class EphemerisSearch(object):
                     EWEdates=open("hurdat2_1851_2012-jun2013.pygen.txt")
                     EWEdateslines=EWEdates.readlines()
                     EWEdateslines.reverse()
-                    argdatesofEWEs=datesofEWEs
                     datesofEWEs=[]
                     for d in EWEdateslines:
                         if iteration == maxiterations:
@@ -373,20 +398,23 @@ class EphemerisSearch(object):
             v_i = np.array(v_list)*AU/D
             m_i = np.array(m_list)
             gravity=self.n_body_gravitational_acceleration(r_i,m_i,epsilon)
+            gravitydict={}
             for g in range(len(gravity)):
                 if len(Latlons) > 0:
                     print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",Latlons[cnt]," on ",date,":",gravity[g])
                 else:
                     print("extreme_weather_events_n_body_analytics(): gravity of ",solar_system[g]," at ",loc," on ",date,":",gravity[g])
-            gravities.append(gravity)
+                gravitydict[solar_system[g]]=gravity[g]
+            gravities.append(gravitydict)
             r_list = []
             v_list = []
             cnt+=1
         print("==============================================================")
-        for g1 in gravities:
-            for g2 in gravities:
-                dh=directed_hausdorff(g1,g2)
+        for g1 in gravities[0].values():
+            for g2 in gravities[0].values():
+                dh=directed_hausdorff([g1],[g2])
                 print("extreme_weather_events_n_body_analytics(): Pairwise Directed hausdorff Distance of Gravitational Acceleration:",dh)
+        return gravities
            
 
     def n_body_gravitational_acceleration(self,r,m,epsilon):
