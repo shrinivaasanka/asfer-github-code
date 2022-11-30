@@ -49,6 +49,7 @@ from sympy.combinatorics.partitions import Partition
 import DBSCANClustering
 import GISUrbanSprawlAnalytics
 from GraphMining_GSpan import GSpan
+import gc
 
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
@@ -336,18 +337,22 @@ def analyze_remotesensing_2d_patches(
         img_hist = np.histogram(patches.flatten())
         print(("Patch histogram :", imagefile, ":", img_hist))
 
-def image_segmentation_edge_detection(imagefile):
+def image_segmentation_edge_detection(imagefile,plot="savefig"):
     img = cv2.imread(imagefile,0)
     edges = cv2.Canny(img,100,200)
     plt.subplot(222)
     plt.imshow(edges)
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
-    plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-cannyedgedetection.jpg")
+    gc.collect()
+    if plot == "savefig":
+        plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-cannyedgedetection.jpg")
+    elif plot == "show":
+        plt.show()
     print("image_segmentation_edge_detection(): edges = ",edges)
     return edges
 
-def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterations=3):
+def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterations=3,plot="savefig"):
     clusters=defaultdict(list)
     converged=False
     centroids=[]
@@ -424,12 +429,16 @@ def contours_kmeans_clustering(imagefile,segment,number_of_clusters=3,maxiterati
     #plt.show()
     imagetok1=imagefile.split(".")
     imagetok2=imagetok1[0].split("/")
-    plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contourkmeansclustered.jpg")
+    gc.collect()
+    if plot=="savefig":
+        plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contourkmeansclustered.jpg")
+    if plot == "show":
+        plt.show()
     #cv2.imwrite("./testlogs/"+imagetok2[1]+"-contourkmeansclustered.jpg",segment[1])
     #cv2.waitKey()
     print("contour polynomial clusters:",clusters)
 
-def image_segmentation_contours(imagefile1):
+def image_segmentation_contours(imagefile1,plot="savefig"):
     img1 = cv2.imread(imagefile1, 0)
     ret, thresh1 = cv2.threshold(
         img1, 0, 255, cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
@@ -452,7 +461,7 @@ def image_segmentation_contours(imagefile1):
         ax = fig1.add_subplot(111)
         ax.plot(xaxis, yaxis, rasterized=True)
         points = numpy.stack((xaxis, yaxis), axis=-1)
-        #print("points:",points.shape[0])
+        print("points:",points.shape[0])
         try:
             if points.shape[0] > 3:
                 contour1polys.append(splprep(points.T, k=points.shape[0]-1))
@@ -461,7 +470,11 @@ def image_segmentation_contours(imagefile1):
     #plt.show()
     imagetok1=imagefile1.split(".")
     imagetok2=imagetok1[0].split("/")
-    plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg")
+    gc.collect()
+    if plot == "savefig":
+        plt.savefig("./testlogs/"+imagetok2[len(imagetok2)-1]+"-contoursegmented.jpg")
+    elif plot == "show":
+        plt.show()
     #print(("contour1polys:", contour1polys))
     return (contours1,contour1polys)
 

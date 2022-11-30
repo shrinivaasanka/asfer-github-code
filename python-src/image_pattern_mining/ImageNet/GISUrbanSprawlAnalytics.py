@@ -50,6 +50,7 @@ import ImageGraph_Keras_Theano
 import random
 from GraphMining_GSpan import GSpan
 from scipy.stats import wasserstein_distance 
+import shapely
 from shapely.geometry import Polygon
 from scipy import stats
 from libpysal.weights import lat2W
@@ -65,11 +66,14 @@ import rasterio.sample
 import math
 from statistics import mean,median,stdev
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.style as mplstyle
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import osmnx
+import DBSCANClustering
 
-
+mplstyle.use('fast')
+shapely.speedups.disable()
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
 
@@ -603,6 +607,13 @@ if __name__ == "__main__":
     #seg13=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg")
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
 
+    #Chennai Metropolitan Area - GHSL R2022A BUILT-V overlay DBSCAN analysis
+    dbscan1=DBSCANClustering.DBSCAN("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
+    dbscan1.clustering()
+    dbscan1.write_clustered_image(neuralnetwork=True)
+    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
+    urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg",seg14,maximum_population_density=11422,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=5,maxiterations=5)
+
     #Chennai Metropolitan Area Sprawl Bounding Box 1 - R2019A and R2022A comparison
     #r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
     #r2data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_P2030_GLOBE_R2022A_54009_1000_V1_0.tif",dt="Degree of Urbanization R2022A")
@@ -622,12 +633,12 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
