@@ -20794,4 +20794,21 @@ References:
 	testlogs/RemoteSensingGIS/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay_segmented.jpg
 1362.7 DBSCAN neural network density thresholding - testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay_neuralnetworkclustered.jpg - shows marked concentration of built-up volume corresponding to 2634% boom in class 21 periurban pixels of GHSL R2022A SMOD raster (Sections 1313,1320) and high road densities (Sections 1350,1351).
 
- 
+-------------------------------------------------------------------------------------------------------------------------------
+1363. (JIRA,THEORY and FEATURE) GIS Urban Sprawl Analytics -  Overlay of GHSL R2022A BUILT-V Visualization and Chennai Metropolitan Area Map and its DBSCAN clustering - 2 December 2022 - related to 823,1163,1164,1174,1175,1177,1179,1194,1211,1226,1234,1290,1291,1292,1295,1296,1297,1301,1302,1304,1312,1313,1320,1323,1326,1328,1342,1343,1349,1350,1351,1362 and all sections on GIS Urban Sprawl Analytics, Merit of Large Scale Visuals, Gridded Population Estimators (SEDAC GPW4 and GHSL convex hull estimators), DBSCAN and Neural Network Urban Extent Learners, Computational Geometry, Intrinsic Merit Rankings, R Ricker Population Estimation, Community detection, Social Network Analytics, Space filling by Curves, Unequal Circle and Polynomial packing, Computational Geometry and Polygonal packing by Voronoi Tessellation, Four color theorem, Economic Merit, Computational Economics - GDP estimation from Urban sprawl demographics, electricity consumption, Poverty alleviation, Preferential Attachment, Automatic Delineation of Urban Sprawls, Cellular Automata-SLEUTH-Polya Urn-Dynamic Facegraph Urban Growth Models, Autonomous Driving, Expander Graphs
+-------------------------------------------------------------------------------------------------------------------------------
+1363.1 python-src/DBSCANClustering.py has been updated to introduce fraction of image as parameter to DBSCAN __init__() constructor. Image is sliced for the fraction specified before clustering.
+1363.2 Neural network thresholding has been made similar to conventional thresholding and inequality has been reversed:
+                         if evaledthreshold < threshold:
+1363.3 Function clustering(self,maxclusters=100000,neuralnetwork=False) now accepts maximum number of clusters as additional argument for limiting the runtime while processing huge images.
+1363.4 Two versions of find_neighbours() with and without neuralnetwork have been made into if-else clause depending on neuralnetwork flag. Erroneous remove() from seedpoints array have been commented (DBSCAN pseudocode from https://en.wikipedia.org/wiki/DBSCAN has been exactly adhered to)
+1363.5 In write_clustered_image(self,neuralnetwork=False,fraction=1) clause for undefined cluster labels (-1) has been introduced which was missing until now.
+1363.6 DBSCAN clustering densities for BUILT-V overlay has been computed as below and logged to testlogs/DBSCANClustering.log.2December2022:
+    dbscan3=DBSCAN("image_pattern_mining/ImageNet/testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
+    dbscan3.clustering()
+    dbscan3.write_clustered_image(neuralnetwork=False)
+1363.7 find_neighbours() function has been implemented at present as a square of side 2*epsilon which results in somewhat tiled clustering in ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay_dbscanclustered.jpg . Circular neighbourhood of area Pi*epsilon*epsilon could cluster better but approximation of circular vicinity on 2-D array is non-trivial (which reduces to rasterization of a circle). Cluster statistics for this image are:
+	number of DBSCAN density clusters: 15684
+	size of image: 1272000
+	size of dbscandict: 719114
+1363.8 This commit resolves JIRA issue: https://krishnairesearch.atlassian.net/browse/NEUR-17 
