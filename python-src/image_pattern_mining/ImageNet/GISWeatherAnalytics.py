@@ -17,7 +17,7 @@
 # --------------------------------------------------------------------------------------------------------
 
 import cv2
-from keras.applications import ResNet50
+#from keras.applications import ResNet50
 import tensorly as tly
 from tensorly.decomposition import non_negative_parafac
 from sklearn.feature_extraction.image import extract_patches_2d
@@ -68,6 +68,7 @@ from EphemerisSearch import predict_EWE
 from MultiFractals import precipitation_mfdfa_model
 import itertools
 import json
+from sklearn.mixture import GaussianMixture
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -77,6 +78,10 @@ def invert_image(image):
     return invimg
 
 def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipitation_timeseries=None):
+    if datasource == "precipitation_GaussianMixture":
+        precipitation_timeseries_2D=list(zip(list(range(len(precipitation_timeseries))),precipitation_timeseries))
+        gmm = GaussianMixture(n_components=2,random_state=0).fit(precipitation_timeseries_2D)
+        print("climate_analytics(): GMM mean:",gmm.means_)
     if datasource == "precipitation_MFDFA":
         if precipitation_timeseries is not None:
             precipitation_mfdfa_model(precipitation_timeseries,order=2)
@@ -221,14 +226,16 @@ if __name__ == "__main__":
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,12,8,17,30,00),'dateto':(2022,12,27,17,30,00),'loc':'@0','bodypair':"Venus-Mercury",'angularsepbounds':('0d','30d')})
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,12,8,17,30,00),'dateto':(2022,12,27,17,30,00),'loc':'@0','bodypair':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,12,8,17,30,00),'dateto':(2022,12,27,17,30,00),'loc':'@0','bodypair':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
-    sequence_mining_CAR_search("../../MinedClassAssociationRules.json",pEWEparams={'datefrom':(2022,12,8,17,30,00),'dateto':(2022,12,27,17,30,00),'loc':'@0','angularsepbounds':('0d','30d')},maxiterations=5)
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')})
+
+    #sequence_mining_CAR_search("../../MinedClassAssociationRules.json",pEWEparams={'datefrom':(2022,12,8,17,30,00),'dateto':(2022,12,27,17,30,00),'loc':'@0','angularsepbounds':('0d','30d')},maxiterations=5)
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')})
     nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
+    climate_analytics(datasource="precipitation_GaussianMixture",precipitation_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
