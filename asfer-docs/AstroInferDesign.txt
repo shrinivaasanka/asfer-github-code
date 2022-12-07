@@ -20832,3 +20832,41 @@ References:
 1364.7 Scikit Learn Gaussian Mixture Model - https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html
 1364.8 ECMWF Supercomputing Factsheet - https://www.ecmwf.int/en/about/media-centre/focus/2022/fact-sheet-supercomputing-ecmwf - " ... ECMWF’s Atos BullSequana XH2000 supercomputer facility is housed in ECMWF’s data centre in Bologna, Italy. While an average desktop PC has 2 or 4 processors, ECMWF’s Atos supercomputer has over one million processors spread across 4 clusters and a performance of about 30 petaflops (1015 or a million billion calculations per second)...."
 1364.9 Himalayan Tsunami and Cloudburst - Chorabari and Kedarnath - 2013 - Cumulonimbus clouds - http://gbpihedenvis.nic.in/PDFs/Disaster%20Data/Disaster%20Data%20Uttarakhand/Papers/The_Himalayan_Tsunami_Cloudburst_Flas.pdf - "... Himalayas is warming at least twice as fast as the globe [8]. There are 389 high altitudinal glacial lakes in Uttarakhand (118) and Himachal Pradesh (271) [9].It is now being observed that these high altitudinal lakes are being melt faster than past. ... In 2013, Monsoon arrived before the normal time. This extra tropical depression pulled the Monsoon towards western Himalaya. Due to collusion between two air-masses, the formation of cumulonimbus cloud generated rapidly. More over the faster rate of evaporation of glacial lakes in Uttarakhand especially the Chorabari tal (Gandhi Lake) increased the volume of the cloud. The concentrations of the clouds were so high that there was a multiday cloud burst in Kedar Dome and surrounding areas. ..."
+
+------------------------------------------------------------------------------------------------------------------------------
+1365. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.7.5 + Spark 3.3.0 Quadcore Benchmarks - Linux Elliptic Curve Factorization gmp-ecm comparison - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 7 December 2022
+------------------------------------------------------------------------------------------------------------------------------
+1365.1 Lenstra's Elliptic Curve Method Factorization (ECM) - https://en.wikipedia.org/wiki/Lenstra_elliptic-curve_factorization - is the fastest factorization algorithm known for small integers of size 60 bits and below and is based on elliptic curves.
+1365.2 Huge 169 bits random integer 392093092302392039932839293283823823892838298392891 has been factorized by NeuronRain Computational Geometric Factorization in 26.75 seconds (26750878058 nanoseconds) on quadcore (4 PRAMs) and Python 3.7.5 + Spark 3.3.0.Following are the first pair of factors (small and huge) captured in python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.169bits_ECM.7December2022: 
+----------------------------------------------------
+bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 392093092302392039932839293283823823892838298392891 20 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.62bits_ECM.7December2022
+=================================================
+xl + intervalmidpoint =  36201005659901397833333883601128596056951186261
+xr + intervalmidpoint =  36201005659901397833333883601128596056951186271
+xl =  36201005659901397833333883601128596056951186256
+yl =  10831
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 10831, ',', 36201005659901397833333883601128596056951186261, ') (at ', 'Wed, 07 Dec 2022 06:59:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  26750878058
+=================================================
+factors_accum._value:  [36201005659901397833333883601128596056951186261, 10831]
+----------------------------------------------------
+1365.3 ECM Ubuntu implementation by GMP-ECM - http://ecm.gforge.inria.fr/ - has been used to factorize same 169 integer 392093092302392039932839293283823823892838298392891 which found first factor in 1215.184 seconds (1215184 milliseconds) for B1=1000000000 (ECM requires a text file input which has been created as EllipticCurveFactorization.txt):
+--------------------------------------
+ecm 1000000000 < EllipticCurveFactorization.txt
+GMP-ECM 7.0.4 [configured with GMP 6.1.2, --enable-asm-redc] [ECM]
+Input number is 392093092302392039932839293283823823892838298392891 (51 digits)
+Using B1=1000000000, B2=19071176724616, polynomial Dickson(30), sigma=1:204879369
+Step 1 took 1215184ms
+********** Factor found in step 1: 10964185373573
+Found composite factor of 14 digits: 10964185373573
+Prime cofactor 35761260772501610413094560738700549567 has 38 digits
+--------------------------------------
+1365.4 For a random integer above, computational geometric factorization is approximately 47 times faster though factors found are of different sizes. Lenstra's ECM is subexponential time and one of the three prominent factorization algorithms others being General Number Field Sieve and Polynomial Quadratic Sieve
+1365.5 Depth of the polylogarithmic non-uniform NC circuit is set to 20 or runtime is O((logN)^20) which would require N/(logN)^20 PRAMs by definition of NC (or) 2^169 / 169^20 = 2^169/2^148 = 2^21 = 2097152 multicores-PRAMs  
+
+References:
+----------
+1365.6 Lenstra's Elliptic Curve Factorization - [HW Lenstra] - https://wstein.org/edu/Fall2001/124/lenstra/lenstra.pdf
+
