@@ -1,0 +1,30 @@
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 392093092302392039932839293283823823892838298392891, '(', 168.06760096977564, ' bits integer) are:')
+factorization start (in nanoseconds): 1670396356464975538
+tiles_start: 1
+tiles_end: 1212577
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 392093092302392039932839293283823823892838298392891 20 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.62bits_ECM.7December2022
+=================================================
+xl + intervalmidpoint =  36201005659901397833333883601128596056951186261
+xr + intervalmidpoint =  36201005659901397833333883601128596056951186271
+xl =  36201005659901397833333883601128596056951186256
+yl =  10831
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 10831, ',', 36201005659901397833333883601128596056951186261, ') (at ', 'Wed, 07 Dec 2022 06:59:43 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  26750878058
+=================================================
+factors_accum._value:  [36201005659901397833333883601128596056951186261, 10831]
+[interrupted]
+
+##########################################################################################################
+Lenstra Elliptic Curve Factorization - GMP-ECM
+##########################################################################################################
+ecm 1000000000 < EllipticCurveFactorization.txt 
+GMP-ECM 7.0.4 [configured with GMP 6.1.2, --enable-asm-redc] [ECM]
+Input number is 392093092302392039932839293283823823892838298392891 (51 digits)
+Using B1=1000000000, B2=19071176724616, polynomial Dickson(30), sigma=1:204879369
+Step 1 took 1215184ms
+********** Factor found in step 1: 10964185373573
+Found composite factor of 14 digits: 10964185373573
+Prime cofactor 35761260772501610413094560738700549567 has 38 digits
