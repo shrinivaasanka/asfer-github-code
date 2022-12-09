@@ -20870,3 +20870,22 @@ References:
 ----------
 1365.6 Lenstra's Elliptic Curve Factorization - [HW Lenstra] - https://wstein.org/edu/Fall2001/124/lenstra/lenstra.pdf
 
+------------------------------------------------------------------------------------------------------------------------------
+1366. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.7.5 + Spark 3.3.0 Quadcore Benchmarks - Linux General Number Field Sieve Factorization (CADO-NFS) comparison - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 9 December 2022
+------------------------------------------------------------------------------------------------------------------------------
+1366.1 NeuronRain Computation Geometric Factorization has been benchmarked versus General Number Field Sieve CADO-NFS implementation which is presently the fastest subexponential time factorization algorithm known.
+1366.2 General Number Field Sieve is the factorization choice for integers greater than 10^100 (or 333 bits). Huge 539 bits random integer 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921 has been factorized by DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py equivalent to a non-uniform polylogdepth Nick's class circuit of depth 57 and first 4 factors (2 pairs of small and huge factors) have been found in 25.43 seconds (25431624829 nanoseconds) and first factor pair was found in 6.6 seconds:
+	spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921 57 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.539bits_GNFS.9December2022
+	('Factors are: (', 43, ',', 23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347, ') (at ', 'Fri, 09 Dec 2022 08:17:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6607918873
+	('Factors are: (', 2931, ',', 338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086291, ') (at ', 'Fri, 09 Dec 2022 08:18:10 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  25431624829
+	factors_accum._value:  [23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347, 43, 338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086291, 2931]
+1366.3 Random 539 bits integer above has been factorized again by CADO-NFS implementation for 4 server threads and computation has been interrupted in polynomial selection as ETA is printed as atleast 36 hours:
+	Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_8000-9000 as ok (0.9% => ETA Sun Dec 11 01:26:36 2022)
+1366.4 Both computations from NeuronRain Computational Geometric Factorization and CADO-NFS have been captured in python-src/testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.539bits_GNFS.9December2022
+
+References:
+----------
+1366.5 CADO-NFS - https://cado-nfs.gitlabpages.inria.fr/ 
+ 
