@@ -1,0 +1,128 @@
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921 57 False False all False 2>&1 > testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.539bits_GNFS.9December2022
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921, '(', 538.139349282641, ' bits integer) are:')
+factorization start (in nanoseconds): 1670573865549728159
+tiles_start: 1
+tiles_end: 2163144
+=================================================
+xl + intervalmidpoint =  23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347
+xr + intervalmidpoint =  23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928349
+xl =  23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928346
+yl =  43
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 43, ',', 23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347, ') (at ', 'Fri, 09 Dec 2022 08:17:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6607918873
+=================================================
+factors_accum._value:  [23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347, 43]
+=================================================
+xl + intervalmidpoint =  338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086291
+xr + intervalmidpoint =  338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086293
+xl =  338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086290
+yl =  2931
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+('Factors are: (', 2931, ',', 338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086291, ') (at ', 'Fri, 09 Dec 2022 08:18:10 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  25431624829
+=================================================
+factors_accum._value:  [23047165771928332137863460764927739996027658118670065564926237042160029981146092626021585881206795327972391146321585879369332306727487974858795183532376323928347, 43, 338119456906488666642145620229236717785462060424023479799327257868605011664715790828702897608970385227844701225461682979488669119509376635594743395391396086291, 2931]
+^C22/12/09 13:48:14 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0): Connection reset
+-----------------------------------------------------------------------------------------------------------------
+#####################################################################################################
+General Number Field Sieve - CADO-NFS Factorization - Quadcore - 4 threads
+#####################################################################################################
+# ./cado-nfs.py 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921 -t 4
+Info:root: Using default parameter file ./parameters/factor/params.c160
+Info:root: No database exists yet
+Info:root: Created temporary directory /tmp/cado.fdgmx781
+Info:Database: Opened connection to database /tmp/cado.fdgmx781/c160.db
+Info:root: Set tasks.threads=4 based on --server-threads 4
+Info:root: tasks.threads = 4 [via tasks.threads]
+Info:root: tasks.polyselect.threads = 2 [via tasks.polyselect.threads]
+Info:root: tasks.sieve.las.threads = 2 [via tasks.sieve.las.threads]
+Info:root: tasks.linalg.bwc.threads = 4 [via tasks.threads]
+Info:root: tasks.sqrt.threads = 4 [via tasks.threads]
+Info:root: slaves.scriptpath is /home/ksrinivasan/cado-nfs/build/ksrinivasan-Acer-One-14-Z422
+Info:root: Command line parameters: ./cado-nfs.py 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921 -t 4
+Info:root: If this computation gets interrupted, it can be resumed with ./cado-nfs.py /tmp/cado.fdgmx781/c160.parameters_snapshot.0
+Info:Server Launcher: Adding ksrinivasan-Acer-One-14-Z422 to whitelist to allow clients on localhost to connect
+Info:HTTP server: Using non-threaded HTTPS server
+Info:HTTP server: Using whitelist: localhost,ksrinivasan-Acer-One-14-Z422
+Info:Lattice Sieving: param rels_wanted is 0
+Info:Complete Factorization / Discrete logarithm: Factoring 991028128192918281928128812891892819829189299102812819291828192812881289189281982918928192891892199102812819291828192812881289189281982918928192891892181928918921
+Info:HTTP server: serving at https://ksrinivasan-Acer-One-14-Z422:35069 (0.0.0.0)
+Info:HTTP server: For debugging purposes, the URL above can be accessed if the server.only_registered=False parameter is added
+Info:HTTP server: You can start additional cado-nfs-client.py scripts with parameters: --server=https://ksrinivasan-Acer-One-14-Z422:35069 --certsha1=c5388c8aaef20858b8f4736a496f3a9f827585bb
+Info:HTTP server: If you want to start additional clients, remember to add their hosts to server.whitelist
+Info:Client Launcher: Starting client id localhost on host localhost
+Info:Client Launcher: Starting client id localhost+2 on host localhost
+Info:Client Launcher: Running clients: localhost (Host localhost, PID 7681), localhost+2 (Host localhost, PID 7683)
+Info:Polynomial Selection (size optimized): Starting
+Info:Polynomial Selection (size optimized): 0 polynomials in queue from previous run
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_0-1000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_1000-2000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_2000-3000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_3000-4000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_4000-5000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_5000-6000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_6000-7000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_7000-8000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_8000-9000 to database
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_9000-10000 to database
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_0-1000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_10000-11000 to database
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_1000-2000 to client localhost+2
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_11000-12000 to database
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_2000-3000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_12000-13000 to database
+Info:Polynomial Selection (size optimized): Parsed 65 polynomials, added 65 to priority queue (has 65/200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 49.230000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_0-1000 as ok (0.1% => ETA Unknown)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_3000-4000 to client localhost+2
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_13000-14000 to database
+Info:Polynomial Selection (size optimized): Parsed 89 polynomials, added 89 to priority queue (has 154/200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 49.520000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_1000-2000 as ok (0.2% => ETA Mon Dec 12 07:47:23 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_4000-5000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_14000-15000 to database
+Info:Polynomial Selection (size optimized): Parsed 69 polynomials, added 67 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 48.850000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_2000-3000 as ok (0.3% => ETA Sun Dec 11 23:41:05 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_5000-6000 to client localhost+2
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_15000-16000 to database
+Info:Polynomial Selection (size optimized): Parsed 91 polynomials, added 66 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 47.210000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_3000-4000 as ok (0.4% => ETA Sun Dec 11 09:16:57 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_6000-7000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_16000-17000 to database
+Info:Polynomial Selection (size optimized): Parsed 64 polynomials, added 30 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 47.070000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_4000-5000 as ok (0.5% => ETA Sun Dec 11 07:55:13 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_7000-8000 to client localhost+2
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_17000-18000 to database
+Info:Polynomial Selection (size optimized): Parsed 65 polynomials, added 30 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 46.930000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_5000-6000 as ok (0.6% => ETA Sun Dec 11 01:41:18 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_8000-9000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_18000-19000 to database
+Info:Polynomial Selection (size optimized): Parsed 73 polynomials, added 32 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 46.780000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_6000-7000 as ok (0.7% => ETA Sun Dec 11 03:36:05 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_9000-10000 to client localhost+2
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_19000-20000 to database
+Info:Polynomial Selection (size optimized): Parsed 79 polynomials, added 30 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 46.680000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_7000-8000 as ok (0.8% => ETA Sat Dec 10 23:31:28 2022)
+Info:HTTP server: 127.0.0.1 Sending workunit c160_polyselect1_10000-11000 to client localhost
+Info:Polynomial Selection (size optimized): Adding workunit c160_polyselect1_20000-21000 to database
+Info:Polynomial Selection (size optimized): Parsed 64 polynomials, added 11 to priority queue (has 200)
+Info:Polynomial Selection (size optimized): Worst polynomial in queue now has exp_E 46.670000
+Info:Polynomial Selection (size optimized): Marking workunit c160_polyselect1_8000-9000 as ok (0.9% => ETA Sun Dec 11 01:26:36 2022)
+^CInfo:HTTP server: Got notification to stop serving Workunits
+Info:Client Launcher: Stopped client localhost (Host localhost, PID 7681)
+Info:Client Launcher: Stopped client localhost+2 (Host localhost, PID 7683)
+Info:HTTP server: Shutting down HTTP server
+Critical:Complete Factorization / Discrete logarithm: Received KeyboardInterrupt. Terminating
+Info:root: Computation data kept in /tmp/cado.fdgmx781
+Error occurred, terminating
+[interrupted]
