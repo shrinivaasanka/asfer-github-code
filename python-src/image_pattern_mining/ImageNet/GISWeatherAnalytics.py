@@ -69,6 +69,7 @@ from MultiFractals import precipitation_mfdfa_model
 import itertools
 import json
 from sklearn.mixture import GaussianMixture
+from scipy.signal import find_peaks
 
 def invert_image(image):
     img=cv2.imread(image)
@@ -79,9 +80,30 @@ def invert_image(image):
 
 def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipitation_timeseries=None):
     if datasource == "precipitation_GaussianMixture":
-        precipitation_timeseries_2D=list(zip(list(range(len(precipitation_timeseries))),precipitation_timeseries))
-        gmm = GaussianMixture(n_components=2,random_state=0).fit(precipitation_timeseries_2D)
-        print("climate_analytics(): GMM mean:",gmm.means_)
+        if precipitation_timeseries is not None:
+            precipitation_timeseries_2D=list(zip(list(range(len(precipitation_timeseries["timeseries"]))),precipitation_timeseries["timeseries"]))
+            precipitation_timeseries_forecast_2D=list(zip(list(range(len(precipitation_timeseries["forecast_timeseries"]))),precipitation_timeseries["forecast_timeseries"]))
+            print("climate_analytics(): precipitation_timeseries_2D = ",precipitation_timeseries_2D)
+        if predict_EWE_params is not None:
+            print("climate_analytics(): N-Body conjunction to be searched pairwise:",predict_EWE_params['bodyconjunctions'])
+            bodies=predict_EWE_params['bodyconjunctions'].split("-")
+            bodypairs=itertools.combinations(bodies,2)
+            for bp in bodypairs:
+                gravityl2norms=predict_EWE(datefrom=predict_EWE_params['datefrom'],dateto=predict_EWE_params['dateto'],loc=predict_EWE_params['loc'],bodypair="-".join(bp),angularsepbounds=predict_EWE_params['angularsepbounds'])
+                modes_body1=find_peaks(gravityl2norms[0])
+                modes_body2=find_peaks(gravityl2norms[1])
+                no_of_modes_body1=len(modes_body1)
+                no_of_modes_body2=len(modes_body2)
+                modes_trainingdata=find_peaks(precipitation_timeseries['timeseries'])
+                gmm_fit = GaussianMixture(n_components=len(modes_trainingdata),random_state=0).fit(precipitation_timeseries_2D)
+                print("climate_analytics(): GMM mean fit from training timeseries:",gmm_fit.means_)
+                gmm_predict_body1_fit = GaussianMixture(n_components=no_of_modes_body1,random_state=0,means_init=gmm_fit.means_).fit(precipitation_timeseries_2D)
+                gmm_predict_body1_predict = gmm_predict_body1_fit.predict_proba(precipitation_timeseries_forecast_2D)
+                gmm_predict_body2_fit = GaussianMixture(n_components=no_of_modes_body2,random_state=0,means_init=gmm_fit.means_).fit(precipitation_timeseries_2D)
+                gmm_predict_body2_predict = gmm_predict_body2_fit.predict_proba(precipitation_timeseries_forecast_2D)
+                print("climate_analytics(): number of N-Body gravity peaks (modes of predicted GMM for average seasonal rainfall ",precipitation_timeseries['averageseasonalrainfall'],") for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",(no_of_modes_body1,no_of_modes_body2)) 
+                print("climate_analytics(): GMM probabilities of user supplied Forecast rainfall timeseries for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",gmm_predict_body1_predict) 
+                print("climate_analytics(): GMM probabilities of user supplied Forecast rainfall timeseries for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",gmm_predict_body2_predict) 
     if datasource == "precipitation_MFDFA":
         if precipitation_timeseries is not None:
             precipitation_mfdfa_model(precipitation_timeseries,order=2)
@@ -235,7 +257,9 @@ if __name__ == "__main__":
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')})
     nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
-    climate_analytics(datasource="precipitation_GaussianMixture",precipitation_timeseries=nem_rainfall_timeseries)
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
+    climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")

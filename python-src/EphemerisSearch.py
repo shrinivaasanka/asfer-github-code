@@ -99,6 +99,7 @@ def predict_EWE(datefrom,dateto,loc,bodypair,angularsepbounds):
     plt.legend()
     #plt.savefig("./testlogs/GISWeatherAnalytics.Gravity.jpg")
     plt.show()
+    return (body1_gravity_l2norms,body2_gravity_l2norms)
 
 def latlon_match(datetime):
     global planets
