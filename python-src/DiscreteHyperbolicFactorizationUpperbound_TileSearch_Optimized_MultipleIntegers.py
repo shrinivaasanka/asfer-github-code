@@ -32,6 +32,7 @@ if __name__=="__main__":
     depth=toint(sys.argv[3])
     constant=toint(sys.argv[4])
     exp=toint(sys.argv[5])
+    spark_dir=sys.argv[6]
     for n in range(mininteger,mininteger+integerrange):
         print("================================================================================================")
         print("Factorization of ",n, " (",math.log(n,2)," bit integer) ")
@@ -41,7 +42,7 @@ if __name__=="__main__":
         HyperbolicRasterizationGraphicsEnabled = "False" 
         number_of_factors="1"
         #factors = DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize(number_to_factorize, depth)
-        os.system("/media/ksrinivasan/84f7d6fd-3d43-4215-8dcc-52b5fe1bffc6/home/ksrinivasan/spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + str(number_of_factors) +" False")
+        os.system(spark_dir+"/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + str(number_of_factors) +" False")
         factorsjsonf=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
         factors=json.loads(factorsjsonf.read())
         print(("factors of ", number_to_factorize, "(", math.log(number_to_factorize, 2), " bits integer) =", set(factors)))
