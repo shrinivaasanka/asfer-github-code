@@ -20964,3 +20964,73 @@ References:
 nanoseconds elapsed so far in finding all factors:  14827094874
 1369.4 CADO-NFS General Number Field Sieve Factorization commandline (4 server threads = multicores):  ./cado-nfs.py --parameters parameters/factor/params.c155 992302389823982983982938839829839823818029109201902901920910290192091029019209109209120910290192091209109209138392897287238728737237827387283787238723791792819281982981928182819289182989923023898239829839829388398298398238180291092019029019209102901920910290192091092091209102901920912091092091383928972872387287372378273872837872387237917928192819829819281828192891829819289812989199230238982398298398293883982983982381802910920190290192091029019209102901920910920912091029019209120910920913839289728723872873723782738728378723872379179281928198298192818281928918298192899230238982398298398293883982983982381802910920190290192091029019209102901920910920912091029019209120910920913839289728723872873723782738728378723872379179281928198298192818281928918298992302389823982983982938839829839823818029109201902901920910290192091029019209109209120910290192091209109209138392897287238728737237827387283787238723791792819281982981928182819289182981928981298919923023898239829839829388398298398238180291092019029019209102901920910290192091092091209102901920912091092091383928972872387287372378273872837872387237917928192819829819281828192891829819289812989119289812989198129891192898992302389823982983982938839829839823818029109283232366299 -t 4
 1369.5 CADO-NFS run earlier had to be abandoned after almost 1 hour because of slowdown in Polynomial Selection and no ETA was printed (which should be significantly higher  (at least 8 times for 4096 bits) than 36 hours for 539 bits in Section 1366) - CADO-NFS logs in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.4096bits_GNFS.14December2022 
+
+-----------------------------------------------------------------------------------------------------------------------------
+1372. (THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.10.6 + Spark 3.3.0 Quadcore Multiple Consecutive Integers Benchmarks - Linux General Number Field Sieve Factorization (CADO-NFS) comparison 3 - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 22 December 2022
+-----------------------------------------------------------------------------------------------------------------------------
+1372.1 New wrapper python script multiple-cado-nfs.py has been added to repository to loop through a range of consecutive integers and factorize each integer in the range by cado-nfs.py.
+1372.2 Ten 94 bits integers from 9910281281929182821212121221 to 9910281281929182821212121230 have been factorized by multiple-cado-nfs.py CADO-NFS SNFS-GNFS wrapper and following are the excerpts of testlogs/multiple-cado-nfs.log for GNFS factoring of 10 consecutive 94-bits integers on quadcore (server threads=4) - total duration for factoring 10 integers is 10 minutes 23 seconds:
+PID837 2022-12-13 16:47:16,984 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121221
+PID837 2022-12-13 16:48:04,015 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 10.35/46.6608
+PID2814 2022-12-13 16:48:36,055 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121221
+PID2814 2022-12-13 16:49:23,636 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 10.28/47.2363
+PID4099 2022-12-13 16:49:29,809 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121222
+PID4099 2022-12-13 16:50:17,774 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 9.2/47.4745
+PID5690 2022-12-13 16:50:24,542 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121223
+PID5690 2022-12-13 16:51:14,230 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 18.68/49.3089
+PID6827 2022-12-13 16:51:20,915 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121224
+PID6827 2022-12-13 16:52:07,117 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 8.2/45.8551
+PID8125 2022-12-13 16:52:14,066 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121225
+PID8125 2022-12-13 16:53:04,078 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 15.93/49.6659
+PID9481 2022-12-13 16:53:10,451 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121226
+PID9481 2022-12-13 16:54:01,726 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 15.99/51.0721
+PID10846 2022-12-13 16:54:10,245 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121227
+PID10846 2022-12-13 16:54:59,591 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 13.92/49.1274
+PID12246 2022-12-13 16:55:07,797 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121228
+PID12246 2022-12-13 16:55:56,913 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 13.03/48.7576
+PID13823 2022-12-13 16:56:03,546 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121229
+PID13823 2022-12-13 16:56:47,938 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 8.48/43.9535
+PID15361 2022-12-13 16:56:54,213 Info:Complete Factorization / Discrete logarithm: Factoring 9910281281929182821212121230
+PID15361 2022-12-13 16:57:39,550 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 9.05/44.9134
+1372.3 Ten 94 bits integers 9910281281929182821212121221 to 9910281281929182821212121230 have been factorized by NeuronRain Computational Geometric Factorization - DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py - after small code change to add an argument for Spark directory and following are excerpts of testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.94bits_GNFS.log.22December2022 - total duration for factoring 10 integers is 4 minutes 33 seconds :
+('Factors are: (', 1, ',', 9910281281929182821212121221, ') (at ', 'Wed, 21 Dec 2022 09:15:24 GMT', ')')
+('Factors are: (', 29, ',', 341733837307902855903866249, ') (at ', 'Wed, 21 Dec 2022 09:15:24 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121222, ') (at ', 'Wed, 21 Dec 2022 09:15:57 GMT', ')')
+('Factors are: (', 2, ',', 4955140640964591410606060611, ') (at ', 'Wed, 21 Dec 2022 09:15:57 GMT', ')')
+('Factors are: (', 8947, ',', 1107665282433126502873826, ') (at ', 'Wed, 21 Dec 2022 09:15:58 GMT', ')')
+('Factors are: (', 13147, ',', 753805528404136519450226, ') (at ', 'Wed, 21 Dec 2022 09:16:00 GMT', ')')
+('Factors are: (', 17894, ',', 553832641216563251436913, ') (at ', 'Wed, 21 Dec 2022 09:16:02 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121223, ') (at ', 'Wed, 21 Dec 2022 09:16:25 GMT', ')')
+('Factors are: (', 3, ',', 3303427093976394273737373741, ') (at ', 'Wed, 21 Dec 2022 09:16:25 GMT', ')')
+('Factors are: (', 17469, ',', 567306730890673926453267, ') (at ', 'Wed, 21 Dec 2022 09:16:31 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121224, ') (at ', 'Wed, 21 Dec 2022 09:16:55 GMT', ')')
+('Factors are: (', 2, ',', 4955140640964591410606060612, ') (at ', 'Wed, 21 Dec 2022 09:16:55 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121225, ') (at ', 'Wed, 21 Dec 2022 09:17:23 GMT', ')')
+('Factors are: (', 5, ',', 1982056256385836564242424245, ') (at ', 'Wed, 21 Dec 2022 09:17:23 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121226, ') (at ', 'Wed, 21 Dec 2022 09:17:52 GMT', ')')
+('Factors are: (', 2, ',', 4955140640964591410606060613, ') (at ', 'Wed, 21 Dec 2022 09:17:52 GMT', ')')
+('Factors are: (', 9254, ',', 1070918660247372252130119, ') (at ', 'Wed, 21 Dec 2022 09:17:54 GMT', ')')
+('Factors are: (', 10169, ',', 974558096364360588180954, ') (at ', 'Wed, 21 Dec 2022 09:17:54 GMT', ')')
+('Factors are: (', 13881, ',', 713945773498248168086746, ') (at ', 'Wed, 21 Dec 2022 09:17:55 GMT', ')')
+('Factors are: (', 20338, ',', 487279048182180294090477, ') (at ', 'Wed, 21 Dec 2022 09:17:58 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121227, ') (at ', 'Wed, 21 Dec 2022 09:18:20 GMT', ')')
+('Factors are: (', 8389, ',', 1181342386688423271094543, ') (at ', 'Wed, 21 Dec 2022 09:18:24 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121228, ') (at ', 'Wed, 21 Dec 2022 09:18:52 GMT', ')')
+('Factors are: (', 2, ',', 4955140640964591410606060614, ') (at ', 'Wed, 21 Dec 2022 09:18:52 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121229, ') (at ', 'Wed, 21 Dec 2022 09:19:21 GMT', ')')
+('Factors are: (', 3, ',', 3303427093976394273737373743, ') (at ', 'Wed, 21 Dec 2022 09:19:21 GMT', ')')
+('Factors are: (', 1, ',', 9910281281929182821212121230, ') (at ', 'Wed, 21 Dec 2022 09:19:50 GMT', ')')
+('Factors are: (', 2, ',', 4955140640964591410606060615, ') (at ', 'Wed, 21 Dec 2022 09:19:50 GMT', ')')
+('Factors are: (', 8122, ',', 1220177454066631718937715, ') (at ', 'Wed, 21 Dec 2022 09:19:52 GMT', ')')
+('Factors are: (', 12214, ',', 811387037983394696349445, ') (at ', 'Wed, 21 Dec 2022 09:19:53 GMT', ')')
+('Factors are: (', 20305, ',', 488070981626652687575086, ') (at ', 'Wed, 21 Dec 2022 09:19:57 GMT', ')')
+1372.4 multiple-cado-nfs.py wraps around cado-nfs.py by backup of the logs,removes files from logs directory before proceeding to next integer and appends to existing logs - necessary because cado-nfs.py stalls in Square Root (a,b) files creation as logs folder is non-empty.   
+1372.5 It needs to be observed that Spark-Python is a huge overhead in above numbers as heavy marshalling takes place between Spark Python + Py4J and Java in NeuronRain implementation which is absent in cado-nfs.py. CADO-NFS implements its own distributed computing framework (multiple IP address for servers, server threads for multicores) based on lightweight Clustering MPI C++ API (GMP) for parallelizing GNFS - IntelMPI, OpenMPI for Mellanox Infiniband,Intel Omni-Path - Refer cado-nfs source tree READMEs in cado-nfs/linalg/bwc/. It is also worth noting that mere parallelism was not enough to better GNFS in benchmarks so far - it also matters on what gets parallelized: CADO-NFS parallelizes linear algebra and sieving which themselves are broad search spaces involving lethargic polynomial selection while NeuronRain computational geometric factorization searches a narrow set of points on a hyperbolic arc (an affine Algebraic Variety over Galois Field or union of unions of intersections of Principal Ideals mentioned in Section 601) on rectified hyperbolic arc by parallel planar point location. Comparison above is not apples-to-apples exactly as factors found are different, software implementations are different and NeuronRain is at disadvantage as it is implemented for cloud computing and not for HPC clusters running performant C++ MPI cluster frameworks while CADO-NFS is HPC implementation. 
+1372.6 CADO-NFS also requires setting the following additional config parameters in parameters/factor/params.c30 for logging:
+tasks.workdir = multiple-cado-nfs-logs
+tasks.name = multiple-cado-nfs
+
+References:
+-----------
+1372.7 OpenMPI for High Performance Computing - https://www.open-mpi.org/
+
