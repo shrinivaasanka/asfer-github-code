@@ -112,11 +112,13 @@ def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
 
-def tilesearch_nonpersistent(y, numfactors=maxfactors):
+def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1):
     global number_to_factorize
     n = number_to_factorize
-    xtile_start = int(Decimal(n)/Decimal(y))
-    xtile_end = int(Decimal(n)/Decimal(y+1))
+    xtile_start = int(Decimal(n)/Decimal(y))-padding
+    if xtile_start < 0:
+        xtile_start = int(Decimal(n)/Decimal(y))
+    xtile_end = int(Decimal(n)/Decimal(y+1))+padding
     #print("tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")")
     binary_search_interval_nonpersistent(
         xtile_start, y, xtile_end, y, numfactors)
@@ -141,16 +143,23 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
     global factors_accum
     global factorization_start
     sys.setrecursionlimit(30000)
-    intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/2))
-    #print("intervalmidpoint = ",intervalmidpoint)
-    # print("factors_accum.aid:",factors_accum.aid)
+    #intervalmidpoint = abs(int((Decimal(xr)-Decimal(xl))/Decimal(2)))
+    if Decimal(xr) > Decimal(xl):
+        intervalmidpoint = (int((Decimal(xr)-Decimal(xl))/Decimal(2)))
+    else:
+        intervalmidpoint = (int((Decimal(xl)-Decimal(xr))/Decimal(2)))
+    print("intervalmidpoint = ",intervalmidpoint)
+    print("factors_accum.aid:",factors_accum.aid)
+    print("factors_accum._value:",factors_accum._value)
     if intervalmidpoint == 0:
         if xl*yl == number_to_factorize:
             print(("Factors are: (", yl, ",", xl, ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            factors_accum.add(xl)
         elif xr*yr == number_to_factorize:
             print(("Factors are: (", yr, ",", xr, ") (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+            factors_accum.add(xr)
         elif number_to_factorize/xl == xl:
             print(("Square root is: ", xl, " (at ", strftime(
                 "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
@@ -161,11 +170,10 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
             factors_accum.add(xr)
     if intervalmidpoint > 0 and len(factors_accum._value) < numfactors:
         factorcandidate = (xl+intervalmidpoint)*yl
-        #print("factorcandidate = ",factorcandidate)
-        if factorcandidate == number_to_factorize or xl*yl == number_to_factorize:
+        print("factorcandidate = ",factorcandidate)
+        if factorcandidate == number_to_factorize or xl*yl == number_to_factorize or xr*yr == number_to_factorize or xl*xl == number_to_factorize or xr*xr == number_to_factorize:
             print("=================================================")
             print("xl + intervalmidpoint = ", xl + intervalmidpoint)
-            print("xr + intervalmidpoint = ", xr + intervalmidpoint)
             print("xl = ", xl)
             print("yl = ", yl)
             factorcriterion1 = ((xl + intervalmidpoint) *
@@ -174,6 +182,15 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
             factorcriterion2 = (xl*yl == number_to_factorize)
             print(
                 "Factor point verification: xl*yl == number_to_factorize = ", factorcriterion2)
+            factorcriterion3 = (xr*yr == number_to_factorize)
+            print(
+                "Factor point verification: xr*yr == number_to_factorize = ", factorcriterion3)
+            factorcriterion4 = (xr*xr == number_to_factorize)
+            print(
+                "Factor point verification: xr*xr == number_to_factorize = ", factorcriterion4)
+            factorcriterion5 = (xl*xl == number_to_factorize)
+            print(
+                "Factor point verification: xl*xl == number_to_factorize = ", factorcriterion5)
             if factorcriterion1 == True:
                 print(("Factors are: (", yl, ",", (xl+intervalmidpoint),
                       ") (at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
@@ -184,6 +201,19 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
                     "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
                 factors_accum.add(xl)
                 factors_accum.add(yl)
+            if factorcriterion3 == True:
+                print(("Factors are: (", yr, ",", xr, ") (at ", strftime(
+                    "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                factors_accum.add(xr)
+                factors_accum.add(yr)
+            if factorcriterion4 == True:
+                print(("Square root is: (", xr, ") (at ", strftime(
+                    "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                factors_accum.add(xr)
+            if factorcriterion5 == True:
+                print(("Square root is: (", xl, ") (at ", strftime(
+                    "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
+                factors_accum.add(xl)
             factorization_present = time_ns()
             print("nanoseconds elapsed so far in finding all factors: ",
                   factorization_present - factorization_start)

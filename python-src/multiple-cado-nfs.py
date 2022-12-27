@@ -28,6 +28,10 @@ if __name__=="__main__":
         print("GNFS factorization of ",n)
         print("==========================")
         os.system("./cado-nfs.py --filelog INFO "+str(n)+" -t 4 ")
+        #print("==========================")
+        #print("SNFS factorization of ",n)
+        #print("==========================")
+        #os.system("./cado-nfs.py --parameters parameters/factor/parameters.F9 --filelog INFO "+str(n)+" -t 4 ")
         os.system("cat ./multiple-cado-nfs-logs/multiple-cado-nfs.log >> ./multiple-cado-nfs.log")
         os.system("rm -rf multiple-cado-nfs-logs/*")
 
