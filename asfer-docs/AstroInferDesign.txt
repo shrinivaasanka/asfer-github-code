@@ -21142,3 +21142,57 @@ References:
 1373.9 Efficient Algorithms for All-to-All Communications in Multiport Message-Passing Systems - Index and Concatenation all-to-all communication complexity lowerbounds for MPI - https://authors.library.caltech.edu/12348/1/BRUieeetpds97.pdf
 1373.10 Allgather and Allgatherv MPI algorithms implemented in OpenMPI - https://www.sciencedirect.com/science/article/abs/pii/S016781911830320X
 1373.11 Derandomization of Grover's quantum search algorithm by amplitude amplification and its classical implications - Sections 9.4 and 9.6 - http://mmrc.amss.cas.cn/tlb/201702/W020170224608150244118.pdf
+
+-------------------------------------------------------------------------------------------------------------------------------
+1374. (JIRA,THEORY and FEATURE) Computational Geometric Integer Factorization - Python 3.7 + Spark 3.3.0 Quadcore Multiple Consecutive Integers Benchmarks - Linux General Number Field Sieve Factorization (CADO-NFS) comparison 5 and multiple enhancements to NeuronRain Computational Geometric Factorization - related to 498,562,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369,1372,1373 and all sections on Integer Factorization,Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition,Grover Search,Quadratic Rational Beziers-Grobner Bases - 30 December 2022
+-------------------------------------------------------------------------------------------------------------------------------
+1374.1 Multiple consecutive 97 bits integers in the range of 100000000000000000000000000000 to 100000000000000000000000000010 are factorized by GNFS (CADO-NFS) and NeuronRain computational geometric factorization. 
+1374.2 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to correct maximum factors if-else clause by stop()-ping the SparkSession and exit()-ing after maximum factors are found. 
+1374.3 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py has been updated to print nanoseconds timestamps before and after consecutive integer factorization. Number of factors which was hardcoded to 1 earlier was perhaps limiting the number of factors printed in 1373 which has been made a command line parameter resolving https://krishnairesearch.atlassian.net/browse/NEUR-19 though round off error in extreme cases may not be ruled out as rasterization used is naive and not Graphics grade. Check for maxfactors on Spark accumulator length is not global at present and local to executor instance (as Spark global state can't be broadcast from an instance though there distributed caches - redis,memcache - might reflect the state globally) which might limit per instance factors and reduce step might print more factors than the maximum limit. Rasterization algorithm described for quadratic rational Beziers (a unifying concept of ellipse,hyperbola,parabola) in listing 13 of https://zingl.github.io/Bresenham.pdf for plotting hyperbola segmentwise could be a sophisticated alternative to naive rasterization implemented at present. Grobner bases are subsets of ideal I of a polynomial ring K[x1,x2,...,xn] which contain generating set of polynomials g1,g2,...,gm. Ideal I of polynomial ring K[x1,x2,...,xn] is a subset of K under addition and for all k in K and i in I, k*i in I. Grobner bases have been shown to generate any conical section by obtaining polynomial equation of quadratic rational Beziers and parameters of quadratic rational Beziers (Buchberger algorithm) determine whether the curve is hyperbola,ellipse or hyperbola.  
+1374.4 JSON factors file read has been commented as redundant.
+1374.5 Numbers head-to-head (not a fair comparison as platforms are HPC OpenMPI versus Cloud MapReduce) - Factors computed are different in CADO-NFS and NeuronRain - durations are almost same for CADO-NFS and NeuronRain as CADO-NFS is optimized for small integers and slows down in polynomial selection only for big integers above 200 bits:
+----------------------------
+1374.5.1 CADO-NFS - approximately 15.5 minutes - 9 97-bits integers - mostly prime factors - on an average ~1 minute per integer
+---------------------------- 
+PID10925 2022-12-30 12:38:59,425 Info:Square Root: Factors: 11 59 154083204930662557781201849
+PID12284 2022-12-30 12:40:17,138 Info:Square Root: Factors: 2 3 7 17041 445847 313378923550840603
+PID13578 2022-12-30 12:41:22,171 Info:Square Root: Factors: 31 295183134022089846821 10928153
+PID15218 2022-12-30 12:42:28,623 Info:Square Root: Factors: 2 41 16183 53731 701248902272927557
+PID16576 2022-12-30 12:43:39,576 Info:Square Root: Factors: 3 5 19 347 577 1752467013532462655147
+PID17774 2022-12-30 12:44:56,086 Info:Square Root: Factors: 2 17 353 8331944675887352107982003
+PID18938 2022-12-30 12:46:03,278 Info:Square Root: Factors: 53 827 2281490269444000821336497
+PID20341 2022-12-30 12:47:24,953 Info:Square Root: Factors: 2 3 103 1361 2647 53047 23519935674229
+PID21815 2022-12-30 12:49:10,995 Info:Square Root: Factors: 13 7 23 607696954219 12047047 6526241
+-------
+PID7485 2022-12-30 12:35:45,218 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 23.8/65.7797
+PID9574 2022-12-30 12:37:52,230 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 22.69/57.7058
+PID10925 2022-12-30 12:38:59,794 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 29.06/60.7773
+PID12284 2022-12-30 12:40:17,219 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 24.55/70.5466
+PID13578 2022-12-30 12:41:22,726 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 14.55/57.6136
+PID15218 2022-12-30 12:42:28,919 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 25.25/58.705
+PID16576 2022-12-30 12:43:39,726 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 25.49/63.6579
+PID17774 2022-12-30 12:44:56,496 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 28.76/67.6902
+PID18938 2022-12-30 12:46:03,736 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 18.69/59.8216
+PID20341 2022-12-30 12:47:25,590 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 22.67/70.29
+PID21815 2022-12-30 12:49:11,637 Info:Complete Factorization / Discrete logarithm: Total cpu/elapsed time for entire Complete Factorization 16.48/94.0504
+---------------------------------------------------------------
+1374.5.2 NeuronRain Computational Geometric Factorization - 16.437814537933335 minutes - 10 97-bits integers - prime and composite factors - on the average 5 seconds per factor
+---------------------------------------------------------------
+1.factors_accum.value: [100000000000000000000000000000, 1, 50000000000000000000000000000, 2, 2500000000000000000000000, 40000, 2441406250000000000000000, 40960, 1280000000000000000000000, 78125, 1250000000000000000000000, 80000, 800000000000000000000000, 125000, 781250000000000000000000, 128000]
+1.factors_accum.value: [100000000000000000000000000001, 1, 9090909090909090909090909091, 11]
+1.factors_accum.value: [100000000000000000000000000002, 1, 50000000000000000000000000001, 2, 1956066740997202824560374, 51123, 978033370498601412280187, 102246, 838314317570229781954446, 119287]
+1.factors_accum.value: [100000000000000000000000000003, 1, 3225806451612903225806451613, 31]
+1.factors_accum.value: [100000000000000000000000000004, 1, 50000000000000000000000000002, 2, 1861123001619177011408684, 53731, 1544830995489093493171847, 64732, 930561500809588505704342, 107462]
+1.factors_accum.value: [100000000000000000000000000005, 1, 20000000000000000000000000001, 5, 1824318161087293624008027, 54815, 1011173466808230952019819, 98895]
+1.factors_accum.value: [100000000000000000000000000006, 1, 50000000000000000000000000003, 2]
+1.factors_accum.value: [100000000000000000000000000007, 1, 1886792452830188679245283019, 53, 2281490269444000821336497, 43831]
+1.factors_accum.value: [100000000000000000000000000008, 1, 50000000000000000000000000004, 2, 2098812072367040255215548, 47646, 2040982937382643481100498, 48996, 1049406036183520127607774, 95292, 1020491468691321740550249, 97992, 713353259667720051646776, 140183, 699604024122346751738516, 142938]
+1.factors_accum.value: [100000000000000000000000000009, 1, 7692307692307692307692307693, 13]
+
+References:
+----------
+1374.6 Determining implicit equation of conic section from quadratic rational B´ezier curve using Gr¨obner basis - https://iopscience.iop.org/article/10.1088/1742-6596/2106/1/012017/pdf
+1374.7 Buchberger algorithm for common zeros of set of polynomials - https://en.wikipedia.org/wiki/Buchberger%27s_algorithm 
+1374.8 Grover's search algorithm - illustrations of k iterations of VU rotations till element is found (almost) and Derandomization by amplitude amplification in 1/sqrt(p) repetitions - https://www.cs.umd.edu/~amchilds/talks/qalg-cssqi11.pdf - "Majority view is that derandomization should be possible: P=BPP"
+1374.9 Quantum Computation by Adiabatic Evolution - [Farhi-Goldstone-Gutmann-Sipser] - https://arxiv.org/pdf/quant-ph/0001106.pdf
+1374.10 Limitations of Quantum Computation - page 314 - http://mmrc.amss.cas.cn/tlb/201702/W020170224608150244118.pdf - "... Section 9.3 showed that Grover’s search algorithm is optimal. In 1999, Ambainis [20], building on work of Buhrman and de Wolf [73] and Farhi, Goldstone, Gutmann, and Sipser [117], showed that for searching an ordered list, quantum computation can give no more than a constant factor improvement over the best possible classical algorithms..." - Amplitude amplification condition of QNC version of Computational Geometric Factorization in 562 requires the classical probability of complex amplitude Bi for a point on rectified hyperbola to be 1 satisfying the identity: (modulus(Bi))^2 = f(xi,yi)^2 + g(xi,yi)^2 = floor(1 - abs(xi*yi/N - 1)) which is 1 when xi*yi = N (factor points). From [Farhi-Goldstone-Gutmann-Sipser] result, quantum search may be only constant factor better than classical search for unstructured data. [Brasser-Hoyer-Tapp] derandomization of Grover search in Section 9.4 of 1373.11 by amplitude amplification implies Grover search version of Quantum Computational Geometric Factorization in 562 - by iterations of UV rotations till factor point (xi*yi=N) is found - is also derandomizable but search time is O(sqrt(N)) and cost of U,V rotations are prohibitive (O(N)) making derandomization of quantum factorization in 562 less attractive in the context of [Farhi-Goldstone-Gutmann-Sipser] constant factor speedup for unstructured list search - Set of points on rectified hyperbola rasterization is unstructured data apt for Grover search to locate factor point. 
