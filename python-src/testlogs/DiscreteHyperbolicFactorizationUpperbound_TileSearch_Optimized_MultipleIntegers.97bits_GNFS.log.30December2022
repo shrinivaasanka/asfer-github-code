@@ -1,0 +1,708 @@
+ python3.7 DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.py 100000000000000000000000000000 10 12 1 2 /home/ksrinivasan/spark-3.3.0-bin-hadoop3/ 4
+('Multiple Integer Factorization start: (at ', 'Fri, 30 Dec 2022 09:27:32 GMT', ')')
+================================================================================================
+Factorization of  100000000000000000000000000000  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000000, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672392468252249318
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000000
+xl =  99999999999999999999999999999
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:27:55 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6766200377
+=================================================
+factors_accum._value:  [100000000000000000000000000000, 1]
+=================================================
+xl + intervalmidpoint =  50000000000000000000000000000
+xl =  49999999999999999999999999999
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 2, ',', 50000000000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:27:55 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6767941995
+=================================================
+factors_accum._value:  [100000000000000000000000000000, 1, 50000000000000000000000000000, 2]
+=================================================
+xl + intervalmidpoint =  2500000000000000000000000
+xl =  2499999999999999999999999
+yl =  40000
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 40000, ',', 2500000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:27:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  8843916514
+=================================================
+factors_accum._value:  [2500000000000000000000000, 40000]
+=================================================
+xl + intervalmidpoint =  2441406250000000000000000
+xl =  2441406249999999999999999
+yl =  40960
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 40960, ',', 2441406250000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:27:57 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  9720965204
+=================================================
+factors_accum._value:  [2500000000000000000000000, 40000, 2441406250000000000000000, 40960]
+=================================================
+xl + intervalmidpoint =  1280000000000000000000000
+xl =  1279999999999999999999999
+yl =  78125
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 78125, ',', 1280000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:27:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  10968785898
+=================================================
+factors_accum._value:  [1280000000000000000000000, 78125]
+=================================================
+xl + intervalmidpoint =  1250000000000000000000000
+xl =  1249999999999999999999999
+yl =  80000
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 80000, ',', 1250000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:28:00 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  12644397333
+=================================================
+factors_accum._value:  [1280000000000000000000000, 78125, 1250000000000000000000000, 80000]
+=================================================
+xl + intervalmidpoint =  800000000000000000000000
+xl =  799999999999999999999999
+yl =  125000
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 125000, ',', 800000000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:28:09 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  20911417472
+=================================================
+factors_accum._value:  [800000000000000000000000, 125000]
+=================================================
+xl + intervalmidpoint =  781250000000000000000000
+xl =  781249999999999999999999
+yl =  128000
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 128000, ',', 781250000000000000000000, ') (at ', 'Fri, 30 Dec 2022 09:28:11 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  23661656544
+=================================================
+factors_accum._value:  [800000000000000000000000, 125000, 781250000000000000000000, 128000]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000000, 1, 50000000000000000000000000000, 2, 2500000000000000000000000, 40000, 2441406250000000000000000, 40960, 1280000000000000000000000, 78125, 1250000000000000000000000, 80000, 800000000000000000000000, 125000, 781250000000000000000000, 128000]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000000  ( 96.3359147517335  bit integer) was done in time deltas: 42.05827355384827
+Time - Theoretical Factorization of  100000000000000000000000000000  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000001  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000001, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672392510262419648
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000001
+xl =  99999999999999999999999999999
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000001, ') (at ', 'Fri, 30 Dec 2022 09:28:36 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6189985842
+=================================================
+factors_accum._value:  [100000000000000000000000000001, 1]
+=================================================
+xl + intervalmidpoint =  9090909090909090909090909091
+xl =  9090909090909090909090909090
+yl =  11
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 11, ',', 9090909090909090909090909091, ') (at ', 'Fri, 30 Dec 2022 09:28:36 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  6203126914
+=================================================
+factors_accum._value:  [100000000000000000000000000001, 1, 9090909090909090909090909091, 11]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000001, 1, 9090909090909090909090909091, 11]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000001  ( 96.3359147517335  bit integer) was done in time deltas: 132.4641454219818
+Time - Theoretical Factorization of  100000000000000000000000000001  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000002  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000002, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672392642281751044
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000002
+xl =  100000000000000000000000000001
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000002, ') (at ', 'Fri, 30 Dec 2022 09:30:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5341818676
+=================================================
+factors_accum._value:  [100000000000000000000000000002, 1]
+=================================================
+xl + intervalmidpoint =  50000000000000000000000000001
+xl =  50000000000000000000000000000
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 2, ',', 50000000000000000000000000001, ') (at ', 'Fri, 30 Dec 2022 09:30:47 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5343321085
+=================================================
+factors_accum._value:  [100000000000000000000000000002, 1, 50000000000000000000000000001, 2]
+=================================================
+xl + intervalmidpoint =  1956066740997202824560374
+xl =  1956066740997202824560373
+yl =  51123
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 51123, ',', 1956066740997202824560374, ') (at ', 'Fri, 30 Dec 2022 09:30:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  17344101607
+=================================================
+factors_accum._value:  [1956066740997202824560374, 51123]
+=================================================
+xl + intervalmidpoint =  978033370498601412280187
+xl =  978033370498601412280186
+yl =  102246
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 102246, ',', 978033370498601412280187, ') (at ', 'Fri, 30 Dec 2022 09:31:44 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  62456458124
+=================================================
+factors_accum._value:  [978033370498601412280187, 102246]
+=================================================
+xl + intervalmidpoint =  838314317570229781954446
+xl =  838314317570229781954445
+yl =  119287
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 119287, ',', 838314317570229781954446, ') (at ', 'Fri, 30 Dec 2022 09:31:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  77292675947
+=================================================
+factors_accum._value:  [838314317570229781954446, 119287]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000002, 1, 50000000000000000000000000001, 2, 1956066740997202824560374, 51123, 978033370498601412280187, 102246, 838314317570229781954446, 119287]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000002  ( 96.3359147517335  bit integer) was done in time deltas: 126.3155791759491
+Time - Theoretical Factorization of  100000000000000000000000000002  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000003  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000003, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672392768118029990
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000003
+xl =  100000000000000000000000000002
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000003, ') (at ', 'Fri, 30 Dec 2022 09:32:53 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5467131574
+=================================================
+factors_accum._value:  [100000000000000000000000000003, 1]
+=================================================
+xl + intervalmidpoint =  3225806451612903225806451613
+xl =  3225806451612903225806451612
+yl =  31
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 31, ',', 3225806451612903225806451613, ') (at ', 'Fri, 30 Dec 2022 09:32:53 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5502378580
+=================================================
+factors_accum._value:  [100000000000000000000000000003, 1, 3225806451612903225806451613, 31]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000003, 1, 3225806451612903225806451613, 31]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000003  ( 96.3359147517335  bit integer) was done in time deltas: 121.43198990821838
+Time - Theoretical Factorization of  100000000000000000000000000003  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000004  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000004, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672392889896685254
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000004
+xl =  99999999999999999999999999999
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000004, ') (at ', 'Fri, 30 Dec 2022 09:34:55 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5449300828
+=================================================
+factors_accum._value:  [100000000000000000000000000004, 1]
+=================================================
+xl + intervalmidpoint =  50000000000000000000000000002
+xl =  49999999999999999999999999999
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 2, ',', 50000000000000000000000000002, ') (at ', 'Fri, 30 Dec 2022 09:34:55 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5450843392
+=================================================
+factors_accum._value:  [100000000000000000000000000004, 1, 50000000000000000000000000002, 2]
+=================================================
+xl + intervalmidpoint =  1861123001619177011408684
+xl =  1861123001619177011408683
+yl =  53731
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 53731, ',', 1861123001619177011408684, ') (at ', 'Fri, 30 Dec 2022 09:35:09 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  19938714934
+=================================================
+factors_accum._value:  [1861123001619177011408684, 53731]
+=================================================
+xl + intervalmidpoint =  1544830995489093493171847
+xl =  1544830995489093493171846
+yl =  64732
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 64732, ',', 1544830995489093493171847, ') (at ', 'Fri, 30 Dec 2022 09:35:19 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  29786186712
+=================================================
+factors_accum._value:  [1861123001619177011408684, 53731, 1544830995489093493171847, 64732]
+=================================================
+xl + intervalmidpoint =  930561500809588505704342
+xl =  930561500809588505704341
+yl =  107462
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 107462, ',', 930561500809588505704342, ') (at ', 'Fri, 30 Dec 2022 09:35:46 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  56126413657
+=================================================
+factors_accum._value:  [930561500809588505704342, 107462]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000004, 1, 50000000000000000000000000002, 2, 1861123001619177011408684, 53731, 1544830995489093493171847, 64732, 930561500809588505704342, 107462]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000004  ( 96.3359147517335  bit integer) was done in time deltas: 115.4992687702179
+Time - Theoretical Factorization of  100000000000000000000000000004  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000005  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000005, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672393005535916571
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000005
+xl =  100000000000000000000000000004
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000005, ') (at ', 'Fri, 30 Dec 2022 09:36:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5663482650
+=================================================
+factors_accum._value:  [100000000000000000000000000005, 1]
+=================================================
+xl + intervalmidpoint =  20000000000000000000000000001
+xl =  19999999999999999999999999999
+yl =  5
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 5, ',', 20000000000000000000000000001, ') (at ', 'Fri, 30 Dec 2022 09:36:51 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5668814064
+=================================================
+factors_accum._value:  [100000000000000000000000000005, 1, 20000000000000000000000000001, 5]
+=================================================
+xl + intervalmidpoint =  1824318161087293624008027
+xl =  1824318161087293624008026
+yl =  54815
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 54815, ',', 1824318161087293624008027, ') (at ', 'Fri, 30 Dec 2022 09:37:06 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  21034105052
+=================================================
+factors_accum._value:  [1824318161087293624008027, 54815]
+=================================================
+xl + intervalmidpoint =  1011173466808230952019819
+xl =  1011173466808230952019818
+yl =  98895
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 98895, ',', 1011173466808230952019819, ') (at ', 'Fri, 30 Dec 2022 09:37:45 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  60330405914
+=================================================
+factors_accum._value:  [1011173466808230952019819, 98895]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000005, 1, 20000000000000000000000000001, 5, 1824318161087293624008027, 54815, 1011173466808230952019819, 98895]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000005  ( 96.3359147517335  bit integer) was done in time deltas: 127.50883316993713
+Time - Theoretical Factorization of  100000000000000000000000000005  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000006  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000006, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672393132893318629
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000006
+xl =  100000000000000000000000000004
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000006, ') (at ', 'Fri, 30 Dec 2022 09:38:58 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5261208673
+=================================================
+factors_accum._value:  [100000000000000000000000000006, 1]
+=================================================
+xl + intervalmidpoint =  50000000000000000000000000003
+xl =  50000000000000000000000000002
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 2, ',', 50000000000000000000000000003, ') (at ', 'Fri, 30 Dec 2022 09:38:58 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5262760810
+=================================================
+factors_accum._value:  [100000000000000000000000000006, 1, 50000000000000000000000000003, 2]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000006, 1, 50000000000000000000000000003, 2]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000006  ( 96.3359147517335  bit integer) was done in time deltas: 120.29526925086975
+Time - Theoretical Factorization of  100000000000000000000000000006  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000007  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000007, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672393252814829206
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000007
+xl =  100000000000000000000000000006
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000007, ') (at ', 'Fri, 30 Dec 2022 09:40:58 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5444560197
+=================================================
+factors_accum._value:  [100000000000000000000000000007, 1]
+=================================================
+xl + intervalmidpoint =  1886792452830188679245283019
+xl =  1886792452830188679245283018
+yl =  53
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 53, ',', 1886792452830188679245283019, ') (at ', 'Fri, 30 Dec 2022 09:40:58 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5504547785
+=================================================
+factors_accum._value:  [100000000000000000000000000007, 1, 1886792452830188679245283019, 53]
+=================================================
+xl + intervalmidpoint =  2281490269444000821336497
+xl =  2281490269444000821336496
+yl =  43831
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 43831, ',', 2281490269444000821336497, ') (at ', 'Fri, 30 Dec 2022 09:41:03 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  10679820331
+=================================================
+factors_accum._value:  [2281490269444000821336497, 43831]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000007, 1, 1886792452830188679245283019, 53, 2281490269444000821336497, 43831]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000007  ( 96.3359147517335  bit integer) was done in time deltas: 120.53337574005127
+Time - Theoretical Factorization of  100000000000000000000000000007  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000008  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000008, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672393373630577350
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000008
+xl =  100000000000000000000000000007
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000008, ') (at ', 'Fri, 30 Dec 2022 09:42:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5399311528
+=================================================
+factors_accum._value:  [100000000000000000000000000008, 1]
+=================================================
+xl + intervalmidpoint =  50000000000000000000000000004
+xl =  50000000000000000000000000003
+yl =  2
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 2, ',', 50000000000000000000000000004, ') (at ', 'Fri, 30 Dec 2022 09:42:59 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5400859678
+=================================================
+factors_accum._value:  [100000000000000000000000000008, 1, 50000000000000000000000000004, 2]
+=================================================
+xl + intervalmidpoint =  2098812072367040255215548
+xl =  2098812072367040255215547
+yl =  47646
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 47646, ',', 2098812072367040255215548, ') (at ', 'Fri, 30 Dec 2022 09:43:08 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  14666027760
+=================================================
+factors_accum._value:  [2098812072367040255215548, 47646]
+=================================================
+xl + intervalmidpoint =  2040982937382643481100498
+xl =  2040982937382643481100497
+yl =  48996
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 48996, ',', 2040982937382643481100498, ') (at ', 'Fri, 30 Dec 2022 09:43:09 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  15924273198
+=================================================
+factors_accum._value:  [2098812072367040255215548, 47646, 2040982937382643481100498, 48996]
+=================================================
+xl + intervalmidpoint =  1049406036183520127607774
+xl =  1049406036183520127607773
+yl =  95292
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 95292, ',', 1049406036183520127607774, ') (at ', 'Fri, 30 Dec 2022 09:43:26 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  32478202827
+=================================================
+factors_accum._value:  [1049406036183520127607774, 95292]
+=================================================
+xl + intervalmidpoint =  1020491468691321740550249
+xl =  1020491468691321740550248
+yl =  97992
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 97992, ',', 1020491468691321740550249, ') (at ', 'Fri, 30 Dec 2022 09:43:28 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  34929162376
+=================================================
+factors_accum._value:  [1049406036183520127607774, 95292, 1020491468691321740550249, 97992]
+=================================================
+xl + intervalmidpoint =  713353259667720051646776
+xl =  713353259667720051646775
+yl =  140183
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 140183, ',', 713353259667720051646776, ') (at ', 'Fri, 30 Dec 2022 09:43:49 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  56150928399
+=================================================
+factors_accum._value:  [713353259667720051646776, 140183]
+=================================================
+xl + intervalmidpoint =  699604024122346751738516
+xl =  699604024122346751738515
+yl =  142938
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 142938, ',', 699604024122346751738516, ') (at ', 'Fri, 30 Dec 2022 09:43:52 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  58583609529
+=================================================
+factors_accum._value:  [713353259667720051646776, 140183, 699604024122346751738516, 142938]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000008, 1, 50000000000000000000000000004, 2, 2098812072367040255215548, 47646, 2040982937382643481100498, 48996, 1049406036183520127607774, 95292, 1020491468691321740550249, 97992, 713353259667720051646776, 140183, 699604024122346751738516, 142938]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000008  ( 96.3359147517335  bit integer) was done in time deltas: 75.83189129829407
+Time - Theoretical Factorization of  100000000000000000000000000008  ( 96.3359147517335  bit integer) time : 9280.608471053263
+================================================================================================
+Factorization of  100000000000000000000000000009  ( 96.3359147517335  bit integer) 
+================================================================================================
+('Spark Python version:', '3.7.5 (default, Nov  7 2019, 10:50:52) \n[GCC 8.3.0]')
+('factors of ', 100000000000000000000000000009, '(', 96.3359147517335, ' bits integer) are:')
+factorization start (in nanoseconds): 1672393449258869113
+tiles_start: 1
+tiles_end: 156510
+maxfactors: 4
+1.factors_accum.value: []
+=================================================
+xl + intervalmidpoint =  100000000000000000000000000009
+xl =  99999999999999999999999999999
+yl =  1
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 1, ',', 100000000000000000000000000009, ') (at ', 'Fri, 30 Dec 2022 09:44:14 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5246674349
+=================================================
+factors_accum._value:  [100000000000000000000000000009, 1]
+=================================================
+xl + intervalmidpoint =  7692307692307692307692307693
+xl =  7692307692307692307692307692
+yl =  13
+Factor point verification: (xl + intervalmidpoint)*yl == number_to_factorize =  True
+Factor point verification: xl*yl == number_to_factorize =  False
+Factor point verification: xr*yr == number_to_factorize =  False
+Factor point verification: xr*xr == number_to_factorize =  False
+Factor point verification: xl*xl == number_to_factorize =  False
+('Factors are: (', 13, ',', 7692307692307692307692307693, ') (at ', 'Fri, 30 Dec 2022 09:44:14 GMT', ')')
+nanoseconds elapsed so far in finding all factors:  5262252481
+=================================================
+factors_accum._value:  [100000000000000000000000000009, 1, 7692307692307692307692307693, 13]
+tiles_start: 156510
+tiles_end: 313019
+maxfactors: 4
+1.factors_accum.value: [100000000000000000000000000009, 1, 7692307692307692307692307693, 13]
+factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting
+Time - Factorization of  100000000000000000000000000009  ( 96.3359147517335  bit integer) was done in time deltas: 129.1972997188568
+Time - Theoretical Factorization of  100000000000000000000000000009  ( 96.3359147517335  bit integer) time : 9280.608471053263
+('Multiple Integer Factorization end: (at ', 'Fri, 30 Dec 2022 09:46:03 GMT', ')')
+-------------------------------------------------------------------------------------------
+

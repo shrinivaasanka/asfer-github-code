@@ -148,9 +148,9 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
         intervalmidpoint = (int((Decimal(xr)-Decimal(xl))/Decimal(2)))
     else:
         intervalmidpoint = (int((Decimal(xl)-Decimal(xr))/Decimal(2)))
-    print("intervalmidpoint = ",intervalmidpoint)
-    print("factors_accum.aid:",factors_accum.aid)
-    print("factors_accum._value:",factors_accum._value)
+    #print("intervalmidpoint = ",intervalmidpoint)
+    #print("factors_accum.aid:",factors_accum.aid)
+    #print("factors_accum._value:",factors_accum._value)
     if intervalmidpoint == 0:
         if xl*yl == number_to_factorize:
             print(("Factors are: (", yl, ",", xl, ") (at ", strftime(
@@ -170,7 +170,7 @@ def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
             factors_accum.add(xr)
     if intervalmidpoint > 0 and len(factors_accum._value) < numfactors:
         factorcandidate = (xl+intervalmidpoint)*yl
-        print("factorcandidate = ",factorcandidate)
+        #print("factorcandidate = ",factorcandidate)
         if factorcandidate == number_to_factorize or xl*yl == number_to_factorize or xr*yr == number_to_factorize or xl*xl == number_to_factorize or xr*xr == number_to_factorize:
             print("=================================================")
             print("xl + intervalmidpoint = ", xl + intervalmidpoint)
@@ -468,14 +468,17 @@ def SearchTiles_and_Factorize(n, k, Parallel_for="False", StartFromSquareRoot="F
                 print("tiles_end:", tiles_end)
                 tiles = list(range(tiles_start, tiles_end))
                 #print(("len(tiles):", len(tiles)))
-                spcon.parallelize(tiles).foreach(
-                    tilesearch_nonpersistent)
+                print("maxfactors:",maxfactors)
+                print("1.factors_accum.value:",factors_accum.value)
+                if len(factors_accum.value) >= maxfactors:
+                    spcon.stop()
+                    sys.exit("factors_accum.value > maxfactors, Factorization ends,Spark session is stopped and exiting")
+                else:
+                    spcon.parallelize(tiles).foreach(tilesearch_nonpersistent)
                 tiles_start = tiles_end
                 tiles_end += int(Decimal(n)/(Decimal(normal_order_n)))
-                if len(factors_accum.value) > maxfactors:
-                    break
             plt.show()
-            print(("factors_accum.value = ", factors_accum.value))
+            print(("2.factors_accum.value = ", factors_accum.value))
             factors = []
             factordict = {}
             for f in factors_accum.value:
@@ -517,7 +520,7 @@ def SearchTiles_and_Factorize(n, k, Parallel_for="False", StartFromSquareRoot="F
             print("tile_segments:",tile_segments)
             spcon.parallelize(tile_segments).flatMap(lambda x: x).foreach(tilesearch_nonpersistent)
             plt.show()
-            print(("factors_accum.value = ", factors_accum.value))
+            print(("3.factors_accum.value = ", factors_accum.value))
             factors = []
             factordict = {}
             for f in factors_accum.value:

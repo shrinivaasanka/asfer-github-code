@@ -23,6 +23,7 @@ import time
 import matplotlib.pyplot as plt
 import os
 import json
+from time import gmtime, strftime, time_ns
 
 if __name__=="__main__":
     mininteger=toint(sys.argv[1])
@@ -33,6 +34,8 @@ if __name__=="__main__":
     constant=toint(sys.argv[4])
     exp=toint(sys.argv[5])
     spark_dir=sys.argv[6]
+    number_of_factors=sys.argv[7]
+    print(("Multiple Integer Factorization start: (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
     for n in range(mininteger,mininteger+integerrange):
         print("================================================================================================")
         print("Factorization of ",n, " (",math.log(n,2)," bit integer) ")
@@ -40,12 +43,11 @@ if __name__=="__main__":
         starttime=time.time()
         number_to_factorize = n 
         HyperbolicRasterizationGraphicsEnabled = "False" 
-        number_of_factors="1"
         #factors = DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.SearchTiles_and_Factorize(number_to_factorize, depth)
         os.system(spark_dir+"/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py " + str(n) + " " + str(depth) + " " + HyperbolicRasterizationGraphicsEnabled  + " False " + str(number_of_factors) +" False")
-        factorsjsonf=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
-        factors=json.loads(factorsjsonf.read())
-        print(("factors of ", number_to_factorize, "(", math.log(number_to_factorize, 2), " bits integer) =", set(factors)))
+        #factorsjsonf=open("DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.factors")
+        #factors=json.loads(factorsjsonf.read())
+        #print(("factors of ", number_to_factorize, "(", math.log(number_to_factorize, 2), " bits integer) =", set(factors)))
         endtime=time.time()
         duration=endtime-starttime
         actual_runtimes.append(duration)
@@ -53,6 +55,7 @@ if __name__=="__main__":
         theoretical=constant*math.pow(math.log(n,2),exp)
         print("Time - Theoretical Factorization of ",n, " (",math.log(n,2)," bit integer) time :",theoretical)
         theoretical_runtimes.append(theoretical)
+    print(("Multiple Integer Factorization end: (at ", strftime( "%a, %d %b %Y %H:%M:%S GMT", gmtime()), ")"))
     plt.plot(range(integerrange),actual_runtimes)
     plt.plot(range(integerrange),theoretical_runtimes)
     plt.savefig("testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized_MultipleIntegers.jpg")
