@@ -21197,3 +21197,74 @@ References:
 1374.9 Quantum Computation by Adiabatic Evolution - [Farhi-Goldstone-Gutmann-Sipser] - https://arxiv.org/pdf/quant-ph/0001106.pdf
 1374.10 Limitations of Quantum Computation - page 314 - http://mmrc.amss.cas.cn/tlb/201702/W020170224608150244118.pdf - "... Section 9.3 showed that Grover’s search algorithm is optimal. In 1999, Ambainis [20], building on work of Buhrman and de Wolf [73] and Farhi, Goldstone, Gutmann, and Sipser [117], showed that for searching an ordered list, quantum computation can give no more than a constant factor improvement over the best possible classical algorithms..." - Amplitude amplification condition of QNC version of Computational Geometric Factorization in 562 requires the classical probability of complex amplitude Bi for a point on rectified hyperbola to be 1 satisfying the identity: (modulus(Bi))^2 = f(xi,yi)^2 + g(xi,yi)^2 = floor(1 - abs(xi*yi/N - 1)) which is 1 when xi*yi = N (factor points). From [Farhi-Goldstone-Gutmann-Sipser] result, quantum search may be only constant factor better than classical search for unstructured data. [Brasser-Hoyer-Tapp] derandomization of Grover search in Section 9.4 of 1373.11 by amplitude amplification implies Grover search version of Quantum Computational Geometric Factorization in 562 - by iterations of UV rotations till factor point (xi*yi=N) is found - is also derandomizable but search time is O(sqrt(N)) and cost of U,V rotations are prohibitive (O(N)) making derandomization of quantum factorization in 562 less attractive in the context of [Farhi-Goldstone-Gutmann-Sipser] constant factor speedup for unstructured list search - Set of points on rectified hyperbola rasterization is unstructured data apt for Grover search to locate factor point. 
 1374.11 Practical applications of integer factorization - Cooley-Tukey Fast Fourier Transform algorithm - https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm - FFT algorithms depend on integer factorization and are of complexity O(NlogN). Fast factorization algorithms improve FFTs which are central to music synthesis, large scale visuals, large integer multiplications, telecom FDM (5G) among others - NC algorithm for FFTs could bring down runtime of O(NlogN) to O((logN)^k) and thus revolutionize any depending technologies.
+
+-------------------------------------------------------------------------------------------------------------------------------
+1375. (THEORY and FEATURE) Granger causality of timeseries data (including Music, Medical Imageing-ECG, Meteorology-Precipitation, Seismology-Tremors, NBody Gravitational Accelerations, Economics-Financial Markets) - 4 January 2023 - related to 690,691,692,1257,1315,1316,1327,1348 and all sections on Music Information Retrieval(MIR), Climate analytics and Weather Forecast, Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Causal Event Models (CEM),Chaos and Fractals, Polynomial Interpolation, EventNet causality
+-------------------------------------------------------------------------------------------------------------------------------
+1375.1 python-src/MultiFractals.py has been updated to import function for granger cauality tests from statsmodels. 
+1375.2 Function stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2,lagfrom=0.5,lagto=3,lagnum=100) has been redefined to remove hardcoded minimum and maximum lag ranges and number of lags and make them function arguments. 
+1375.3 New function granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3) has been defined to compare two stock quote ticker timeseries by statsmodels grangercausalitytests() which comprises 4 statistical tests (ssr R, ssr Chi-squared, likelihood and parameter F). Null hypothesis: Timeseries Y does not cause Timeseries X. Timeseries Y Granger-causes Timeseries X if p-value if array of ordered pairs of two timeseries X and Y - (x1,y1),(x2,y2),(x3,y3),...,(xn,yn) - is more than a threshold rejecting Null hypothesis.  
+1375,4 python-src/Streaming_StockMarketData.py has been updated to import granger_causality() from python-src/MultiFractals.py.
+1375.5 Two pairs of stocks TSLA-AAPL and TSLA-MSFT are compared for Granger causality:
+    granger_causality("TSLA","AAPL",period='2y',interval='1wk',maxlag=3)
+    granger_causality("TSLA","MSFT",period='2y',interval='1wk',maxlag=3)
+and following are pairwise p-value correlations:
+===========================================================
+Granger causality between  TSLA  and  AAPL
+===========================================================
+Granger Causality
+number of lags (no zero) 1
+ssr based F test:         F=0.0422  , p=0.8376  , df_denom=102, df_num=1
+ssr based chi2 test:   chi2=0.0435  , p=0.8348  , df=1
+likelihood ratio test: chi2=0.0435  , p=0.8348  , df=1
+parameter F test:         F=0.0422  , p=0.8376  , df_denom=102, df_num=1
+Granger Causality
+number of lags (no zero) 2
+ssr based F test:         F=0.0087  , p=0.9913  , df_denom=99, df_num=2
+ssr based chi2 test:   chi2=0.0183  , p=0.9909  , df=2
+likelihood ratio test: chi2=0.0183  , p=0.9909  , df=2
+parameter F test:         F=0.0087  , p=0.9913  , df_denom=99, df_num=2
+Granger Causality
+number of lags (no zero) 3
+ssr based F test:         F=0.0693  , p=0.9762  , df_denom=96, df_num=3
+ssr based chi2 test:   chi2=0.2230  , p=0.9738  , df=3
+likelihood ratio test: chi2=0.2228  , p=0.9738  , df=3
+parameter F test:         F=0.0693  , p=0.9762  , df_denom=96, df_num=3
+===========================================================
+Granger causality between  TSLA  and  MSFT
+===========================================================
+Granger Causality
+number of lags (no zero) 1
+ssr based F test:         F=3.1986  , p=0.0767  , df_denom=102, df_num=1
+ssr based chi2 test:   chi2=3.2927  , p=0.0696  , df=1
+likelihood ratio test: chi2=3.2421  , p=0.0718  , df=1
+parameter F test:         F=3.1986  , p=0.0767  , df_denom=102, df_num=1
+Granger Causality
+number of lags (no zero) 2
+ssr based F test:         F=2.5681  , p=0.0818  , df_denom=99, df_num=2
+ssr based chi2 test:   chi2=5.3957  , p=0.0674  , df=2
+likelihood ratio test: chi2=5.2604  , p=0.0721  , df=2
+parameter F test:         F=2.5681  , p=0.0818  , df_denom=99, df_num=2
+Granger Causality
+number of lags (no zero) 3
+ssr based F test:         F=1.7780  , p=0.1565  , df_denom=96, df_num=3
+ssr based chi2 test:   chi2=5.7229  , p=0.1259  , df=3
+likelihood ratio test: chi2=5.5696  , p=0.1345  , df=3
+parameter F test:         F=1.7780  , p=0.1565  , df_denom=96, df_num=3
+-------------------
+1375.6 High p-value for TSLA and AAPL (~99%) implies AAPL Granger-causes TSLA (or causality between Apple and Tesla) and Low p-value for TSLA and MSFT (~15%) implies there is no Microsoft-Tesla causality. 
+1375.7 Edges of a Graphical Event Model (GEM) or Causal Event Model (CEM) could be added dynamically based on pairwise Granger causality p-values of multiple event timeseries each of which is a vertex in GEM or CEM. For example, GEM for economic markets could be inferred by high Granger causality between timeseries for oil prices, commodity prices, automobile stocks, banking stocks (high vehicle loans), interest rates and inflation creating following causality edges between events: 
+				Interest rates (adjusted to lower money circulation and inflation)
+				     |
+	Oil ----- Automobile ----- Banking ----- Inflation (high money circulation)
+			|			   |
+		  Commodity prices -----------------
+1375.8 Similarly correlation between N-Body gravity timeseries of solar system and terrestrial extreme weather event timeseries could be Granger-caused (Granger causality is more of a forecast of one variable based on past values of another or deferred causality) and Music timeseries could be correlated for causal similarities.
+
+References:
+----------
+1375.8 Tesla is like an ‘iPhone on wheels.’ And consumers are locked into its ecosystem.  Tesla is bringing the strategies pioneered by Apple to the auto industry. Consumers are learning that’s not always a good thing -  https://www.washingtonpost.com/technology/2021/05/14/tesla-apple-tech/
+1375.9 Granger Causality - Feedback and Causality models - http://tyigit.bilkent.edu.tr/metrics2/read/Investigating%20%20Causal%20Relations%20by%20Econometric%20Models%20and%20Cross-Spectral%20Methods.pdf - Feedback is mutual causality when timeseries X causes timeseries Y and viceversa and fundamental factor in Chaotic processes.  
+1375.10 Sharpe Ratio of Portfolio in High Frequency Trading algorithms - Extent of return awarded to an investor for specific market risk - https://en.wikipedia.org/wiki/Sharpe_ratio - High Sharpe ratio funds have high returns.
+1375.11 Martingales - https://en.wikipedia.org/wiki/Martingale_(probability_theory) - Betting strategies - conditional next value of an observation given past history is dependent only on last observation - could be constrasted against Feedback in Granger causality in which value of variable at present is dependent on history. 
+1375.12 Mutual Fund Separation Theorem for No-risk-free and risk-free assets - https://en.wikipedia.org/wiki/Mutual_fund_separation_theorem - optimal portfolio investment by holding appropriate ratio of mutual funds such that number of mutual funds is less than number of assets in portfolio. 
