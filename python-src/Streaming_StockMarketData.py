@@ -28,6 +28,7 @@ import atexit
 from Streaming_TimeSeriesData import compute_mean, moving_averages, autoregression, ARMA, ARIMA
 import numpy as np
 from MultiFractals import stockquote_mfdfa_model
+from MultiFractals import granger_causality 
 
 cnt = 0
 
@@ -38,6 +39,8 @@ if __name__ == "__main__":
     stockquote_mfdfa_model("TSLA")
     stockquote_mfdfa_model("MSFT")
     stockquote_mfdfa_model("AAPL")
+    granger_causality("TSLA","AAPL",period='2y',interval='1wk',maxlag=3)
+    granger_causality("TSLA","MSFT",period='2y',interval='1wk',maxlag=3)
     # for k,v in ystockquote.get_historical_prices('GOOG', '2010-01-01', '2016-06-25').items():
     for v in historic_data:
         #print v['High']

@@ -21,6 +21,7 @@ import numpy as np
 from MFDFA import MFDFA
 import matplotlib.pyplot as plt
 import librosa
+from statsmodels.tsa.stattools import grangercausalitytests
 
 def music_mfdfa_model(music,order=2,q=41,lagfrom=0.5,lagto=3,lagnum=100):
     print("--------------MFDFA model for Music ----------------------------")
@@ -55,11 +56,11 @@ def precipitation_mfdfa_model(rainfallhistory,order=2):
         n += 1
     plt.savefig("testlogs/MultiFractals_Precipitation.jpg")
 
-def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2):
+def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2,lagfrom=0.5,lagto=3,lagnum=100):
     print("--------------MFDFA model for ",ticker," ----------------------------")
     pricehistory = yf.Ticker(ticker).history(period=period,interval=interval,actions=False)
     timeseries = np.asarray(list(pricehistory["Open"]))
-    lag = np.unique(np.logspace(0.5,3,100).astype(int))
+    lag = np.unique(np.logspace(lagfrom,lagto,lagnum).astype(int))
     q_list = np.linspace(-10, 10, 41)
     q_list = q_list[q_list != 0.0]
     lag, dfa = MFDFA(timeseries, lag=lag, q=q_list, order=order)
@@ -70,3 +71,17 @@ def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2):
         plt.plot(dfa)
         n += 1
     plt.savefig("testlogs/MultiFractals_"+ticker+".jpg")
+
+def granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3):
+    print("===========================================================")
+    print("Granger causality between ",ticker1," and ",ticker2)
+    print("===========================================================")
+    timeseries=[]
+    pricehistory1 = yf.Ticker(ticker1).history(period=period,interval=interval,actions=False)
+    timeseries1 = np.asarray(list(pricehistory1["Open"]))
+    pricehistory2 = yf.Ticker(ticker2).history(period=period,interval=interval,actions=False)
+    timeseries2 = np.asarray(list(pricehistory2["Open"]))
+    for t1,t2 in zip(timeseries1,timeseries2):
+        timeseries.append([t1,t2])
+    granger=grangercausalitytests(timeseries,maxlag)
+    print("Granger Causality of two timeseries: ",granger)
