@@ -21270,3 +21270,26 @@ References:
 1375.10 Sharpe Ratio of Portfolio in High Frequency Trading algorithms - Extent of return awarded to an investor for specific market risk - https://en.wikipedia.org/wiki/Sharpe_ratio - High Sharpe ratio funds have high returns.
 1375.11 Martingales - https://en.wikipedia.org/wiki/Martingale_(probability_theory) - Betting strategies - conditional next value of an observation given past history is dependent only on last observation - could be constrasted against Feedback in Granger causality in which value of variable at present is dependent on history. 
 1375.12 Mutual Fund Separation Theorem for No-risk-free and risk-free assets - https://en.wikipedia.org/wiki/Mutual_fund_separation_theorem - optimal portfolio investment by holding appropriate ratio of mutual funds such that number of mutual funds is less than number of assets in portfolio. 
+
+-------------------------------------------------------------------------------------------------------------------------------
+1376. (THEORY and FEATURE) Granger causality of timeseries data (including Music, Medical Imageing-ECG, Meteorology-Precipitation, Seismology-Tremors, NBody Gravitational Accelerations, Economics-Financial Markets) - 9 January 2023 - related to 690,691,692,1257,1315,1316,1327,1348,1375 and all sections on Music Information Retrieval(MIR), Climate analytics and Weather Forecast, Computational Economics-Quantitative Finance and TimeSeries Analysis, Graphical Event Models (GEM), Causal Event Models (CEM),Chaos and Fractals, Polynomial Interpolation, EventNet causality
+-------------------------------------------------------------------------------------------------------------------------------
+1376.1 python-src/MultiFractals.py has been updated to import write_dot,matplotlib plot, networkx and graphviz.
+1376.2 New multipurpose function granger_causality_GraphicalEventModel(dictoftimeseries,GEM_edge_probability_threshold=0.5,maxlag=3) has been defined to read a dictionary of event timeseries (map of event_name--to--event_timeseries) and iterate through the dictionary to infer top p-value (of 4 statistical tests) Granger causality edges between each pair of event timeseries in the dictionary.
+1376.3 An edge is added to a NetworkX GEM DiGraph for the inferred causality direction if maximum p-value exceeds threshold (which is 50% by default or majority support). 
+1376.4 GEM NetworkX graph is written to a DOT file testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.dot and read as GraphViz object for rendering it to a JPG file testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv.jpg.
+1376.5 Function granger_causality() has been renamed to stockquote_granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3) and returns the timeseries for 2 stockquote tickers.
+1376.6 python-src/Streaming_StockMarketData.py has been updated to import stockquote_granger_causality() and granger_causality_GraphicalEventModel() functions.
+1376.7 stockquote_granger_causality() has been computed for 6 pairs of tech stock quotes as below,dictionary of timeseries for each of the stock quotes is processed by granger_causality_GraphicalEventModel(dictoftimeseries) to draw a Graphical Event Model in testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv.jpg (shows dependency of one stock on the other):
+    ret1=stockquote_granger_causality("TSLA","AAPL",period='2y',interval='1wk',maxlag=3)
+    ret2=stockquote_granger_causality("TSLA","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret3=stockquote_granger_causality("AMZN","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret4=stockquote_granger_causality("GOOGL","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret5=stockquote_granger_causality("IBM","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret6=stockquote_granger_causality("GOOGL","MSFT",period='2y',interval='1wk',maxlag=3)
+1376.8 Function granger_causality_GraphicalEventModel() is independent of event category and any set of event timeseries (music,precipitation,seismology,astronomical,financial,medical and so on) could be inspected (heterogeneously between categories of events) for Granger-causality pairwise and GEM could be drawn for those events. Following are the GraphViz,DOT,JPEG and log files for this commit - testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv.jpg shows causality between 5 of 6 stocks:
+	testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.dot
+	testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv
+	testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv.jpg
+	testlogs/Streaming_StockMarketData.log.9January2023
+
