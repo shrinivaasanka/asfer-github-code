@@ -1,0 +1,10 @@
+strict digraph  {
+AAPL;
+TSLA;
+GOOGL;
+AMZN;
+IBM;
+AAPL -> TSLA;
+AAPL -> IBM;
+GOOGL -> AMZN;
+}

@@ -22,6 +22,10 @@ from MFDFA import MFDFA
 import matplotlib.pyplot as plt
 import librosa
 from statsmodels.tsa.stattools import grangercausalitytests
+from networkx.drawing.nx_pydot import write_dot
+import matplotlib.pyplot as plt
+import networkx as nx
+from graphviz import Source
 
 def music_mfdfa_model(music,order=2,q=41,lagfrom=0.5,lagto=3,lagnum=100):
     print("--------------MFDFA model for Music ----------------------------")
@@ -72,7 +76,32 @@ def stockquote_mfdfa_model(ticker,period='2y',interval='1wk',order=2,lagfrom=0.5
         n += 1
     plt.savefig("testlogs/MultiFractals_"+ticker+".jpg")
 
-def granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3):
+def granger_causality_GraphicalEventModel(dictoftimeseries,GEM_edge_probability_threshold=0.5,maxlag=3):
+    print("granger_causality_GraphicalEventModel(): dictoftimeseries = ",dictoftimeseries)
+    nxgem=nx.DiGraph()
+    for t1k,t1v in dictoftimeseries.items():
+        for t2k,t2v in dictoftimeseries.items():
+            timeseries=[]
+            if t1k != t2k:
+                for t1,t2 in zip(t1v,t2v):
+                     timeseries.append([t1,t2])
+                print("granger_causality_GraphicalEventModel(): timeseries = ",timeseries)
+                granger=grangercausalitytests(timeseries,maxlag)
+                ssrftest=granger[1][0]["ssr_ftest"][1]
+                ssr_chi2test=granger[1][0]["ssr_chi2test"][1]
+                lrtest=granger[1][0]["lrtest"][1]
+                paramsftest=granger[1][0]["params_ftest"][1]
+                maxpvalue=max([ssrftest,ssr_chi2test,lrtest,paramsftest])
+                print("granger_causality_GraphicalEventModel(): maxpvalue = ",maxpvalue)
+                if maxpvalue > GEM_edge_probability_threshold:
+                    nxgem.add_edge(t2k,t1k)
+    print("granger_causality_GraphicalEventModel(): GEM nodes = ",nxgem.nodes())
+    print("granger_causality_GraphicalEventModel(): GEM edges = ",nxgem.edges())
+    write_dot(nxgem,"testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.dot")
+    s=Source.from_file("testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.dot")
+    s.render("testlogs/GrangerCausality_EventTimeseriesGraphicalEventModel.gv",format="jpg",view=True)
+
+def stockquote_granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3):
     print("===========================================================")
     print("Granger causality between ",ticker1," and ",ticker2)
     print("===========================================================")
@@ -85,3 +114,4 @@ def granger_causality(ticker1,ticker2,period='2y',interval='1wk',maxlag=3):
         timeseries.append([t1,t2])
     granger=grangercausalitytests(timeseries,maxlag)
     print("Granger Causality of two timeseries: ",granger)
+    return [(ticker1,timeseries1),(ticker2,timeseries2)]

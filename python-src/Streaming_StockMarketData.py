@@ -28,7 +28,8 @@ import atexit
 from Streaming_TimeSeriesData import compute_mean, moving_averages, autoregression, ARMA, ARIMA
 import numpy as np
 from MultiFractals import stockquote_mfdfa_model
-from MultiFractals import granger_causality 
+from MultiFractals import stockquote_granger_causality 
+from MultiFractals import granger_causality_GraphicalEventModel
 
 cnt = 0
 
@@ -39,8 +40,26 @@ if __name__ == "__main__":
     stockquote_mfdfa_model("TSLA")
     stockquote_mfdfa_model("MSFT")
     stockquote_mfdfa_model("AAPL")
-    granger_causality("TSLA","AAPL",period='2y',interval='1wk',maxlag=3)
-    granger_causality("TSLA","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret1=stockquote_granger_causality("TSLA","AAPL",period='2y',interval='1wk',maxlag=3)
+    ret2=stockquote_granger_causality("TSLA","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret3=stockquote_granger_causality("AMZN","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret4=stockquote_granger_causality("GOOGL","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret5=stockquote_granger_causality("IBM","MSFT",period='2y',interval='1wk',maxlag=3)
+    ret6=stockquote_granger_causality("GOOGL","MSFT",period='2y',interval='1wk',maxlag=3)
+    dictoftimeseries={}
+    dictoftimeseries[ret1[0][0]]=ret1[0][1]
+    dictoftimeseries[ret1[1][0]]=ret1[1][1]
+    dictoftimeseries[ret2[0][0]]=ret2[0][1]
+    dictoftimeseries[ret2[1][0]]=ret2[1][1]
+    dictoftimeseries[ret3[0][0]]=ret3[0][1]
+    dictoftimeseries[ret3[1][0]]=ret3[1][1]
+    dictoftimeseries[ret4[0][0]]=ret4[0][1]
+    dictoftimeseries[ret4[1][0]]=ret4[1][1]
+    dictoftimeseries[ret5[0][0]]=ret5[0][1]
+    dictoftimeseries[ret5[1][0]]=ret5[1][1]
+    dictoftimeseries[ret6[0][0]]=ret6[0][1]
+    dictoftimeseries[ret6[1][0]]=ret6[1][1]
+    granger_causality_GraphicalEventModel(dictoftimeseries)
     # for k,v in ystockquote.get_historical_prices('GOOG', '2010-01-01', '2016-06-25').items():
     for v in historic_data:
         #print v['High']
