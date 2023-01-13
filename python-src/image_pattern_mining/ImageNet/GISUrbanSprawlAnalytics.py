@@ -158,7 +158,7 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
 
-def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000):
+def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1):
     if cityname is not None:
         roadgraph = osmnx.graph.graph_from_place(cityname)
     elif latx > 0 and laty > 0 and longx >0 and longy > 0:
@@ -183,6 +183,24 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
     print(gdf_edges.to_json())
     print("Betweenness centrality of urban sprawl road network graph:",nx.betweenness_centrality(nx.Graph(roadgraph)))
     print("Cheeger Constant - Isoperimetric Number - Edge Expansion of urban sprawl road network graph minimum weight vertex cover:",nx.edge_expansion(roadgraph,minweightedvertexcover))
+    print("Maxflow-Mincut of urban sprawl road network graph:")
+    roadnetworkvertices=list(roadgraph.nodes())
+    roadnetworkedges=list(roadgraph.edges())
+    print("roadnetworkvertices:",roadnetworkvertices)
+    print("roadnetworkedges:",roadnetworkedges)
+    for e in roadnetworkedges:
+        print("roadgraph[e[0]][e[1]]:",roadgraph[e[0]][e[1]])
+        roadgraph[e[0]][e[1]][0]["capacity"] = defaultcapacity
+    rand1=random.randint(0,len(roadnetworkvertices)-1)
+    rand2=random.randint(0,len(roadnetworkvertices)-1)
+    s=roadnetworkvertices[rand1]
+    t=roadnetworkvertices[rand2]
+    cut_value,partition = nx.minimum_cut(nx.Graph(roadgraph),s,t)
+    reachable,nonreachable = partition
+    cutset = set()
+    for u,neighbours in ((n,roadgraph[n]) for n in reachable):
+        cutset.update((u,v) for v in neighbours if v in nonreachable)
+    print("sorted cutset:",sorted(cutset))
     osmnx.plot_graph(roadgraph,bgcolor="w",node_color="g",edge_color="r")
     return roadgraph
 
@@ -608,11 +626,11 @@ if __name__ == "__main__":
     #urban_sprawl_from_segments("testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.jpg",seg13,maximum_population_density=100000,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=True,number_of_clusters=3,maxiterations=3,populationfromraster="testlogs/RemoteSensingGIS/FacebookMetaHRSL_IndiaPak_population_10_lon_80_general-v1.5.tif")
 
     #Chennai Metropolitan Area - GHSL R2022A BUILT-V overlay DBSCAN analysis
-    dbscan1=DBSCANClustering.DBSCAN("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
-    dbscan1.clustering()
-    dbscan1.write_clustered_image(neuralnetwork=True)
-    seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
-    urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg",seg14,maximum_population_density=11422,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=5,maxiterations=5)
+    #dbscan1=DBSCANClustering.DBSCAN("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
+    #dbscan1.clustering()
+    #dbscan1.write_clustered_image(neuralnetwork=True)
+    #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg")
+    #urban_sprawl_from_segments("testlogs/ChennaiMetropolitanAreaExpansion21October2022_GHSLR2022A_BUILT-V-overlay.jpg",seg14,maximum_population_density=11422,sqkmtocontourarearatio=mapscale,legend=None,sqkmareatopopulationratio=6.22,voronoi_delaunay=False,number_of_clusters=5,maxiterations=5)
 
     #Chennai Metropolitan Area Sprawl Bounding Box 1 - R2019A and R2022A comparison
     #r1data=urban_sprawl_from_raster(79.07,12.41,80.3,13.19,"testlogs/RemoteSensingGIS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V2_0.tif",dt="Degree of Urbanization R2019A")
@@ -633,12 +651,13 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    #urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
-    #urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
