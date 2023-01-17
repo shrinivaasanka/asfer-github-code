@@ -21307,7 +21307,7 @@ References:
 ------------------------------------------------------------------------------------------------------------------------------
 1377.1 python-src/image_pattern_mining/ImageNet/GISUrbanSprawlAnalytics.py has been updated to redefine function urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1) for adding a new parameter defaultcapacity (capacity of a carriageway).
 1377.2 Maxflow-Mincut bottleneck measure of OSMnx transportation network graph is printed for roads between random source-sink pairs by minimum_cut() NetworkX API which, along with betweenness centrality of the graph, is a theoretical estimate of traffic congestion.
-1377.3 Default capacity parameter (defaultcapacity) has to be set by the invoking function having prior knowledge of road capacity or from a live traffic API. Following example JavaScript code from https://developers.google.com/maps/documentation/javascript/examples/layer-traffic retrieves realtime traffic data for longitude-latitude and there is no Python API yet:
+1377.3 Default capacity parameter (defaultcapacity) has to be set by the invoking function having prior knowledge of road capacity (number of lanes of the carriageway for example) or from a live traffic API. Following example JavaScript code from https://developers.google.com/maps/documentation/javascript/examples/layer-traffic retrieves realtime traffic data for longitude-latitude and there is no Python API yet:
 	function initMap() {
 		const map = new google.maps.Map(document.getElementById("map"), {
     		zoom: 13,
