@@ -71,6 +71,9 @@ from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import osmnx
 import DBSCANClustering
+from descartes import PolygonPatch
+from shapely.geometry import Point, LineString, Polygon
+import geopandas as geo
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -158,7 +161,7 @@ def urbansprawl_gini_coefficient(urbansprawldata):
     print("urbansprawl_gini_coefficient(): Gini Index of the dataset = ",giniindex)
     return giniindex
 
-def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1):
+def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,address=None,radius=1000,defaultcapacity=1,travel_speed=30,trip_times=[10,15,20,25,30]):
     if cityname is not None:
         roadgraph = osmnx.graph.graph_from_place(cityname)
     elif latx > 0 and laty > 0 and longx >0 and longy > 0:
@@ -173,6 +176,32 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
     for c in scc:
         print("Strongly connected component of road network graph:",c)
     gdf_nodes,gdf_edges=osmnx.graph_to_gdfs(roadgraph,nodes=True,edges=True,node_geometry=True,fill_edge_geometry=True)
+    x, y = gdf_nodes['geometry'].unary_union.centroid.xy
+    center_node = osmnx.get_nearest_node(roadgraph, (y[0], x[0]))
+    roadgraph = osmnx.project_graph(roadgraph)
+    meters_per_minute = travel_speed * 1000 / 60
+    for u, v, k, data in roadgraph.edges(data=True, keys=True):
+        data['time'] = data['length'] / meters_per_minute
+    isochrone_colors = osmnx.plot.get_colors(n=len(trip_times), cmap='plasma', start=0, return_hex=True)
+    node_colors = {}
+    for trip_time, color in zip(sorted(trip_times, reverse=True), isochrone_colors):
+        subgraph = nx.ego_graph(roadgraph, center_node, radius=trip_time, distance='time')
+        for node in subgraph.nodes():
+            node_colors[node] = color
+    nc = [node_colors[node] if node in node_colors else 'none' for node in roadgraph.nodes()]
+    ns = [15 if node in node_colors else 0 for node in roadgraph.nodes()]
+    fig, ax = osmnx.plot_graph(roadgraph, node_color=nc, node_size=ns, node_alpha=0.8, node_zorder=2, bgcolor='k', edge_linewidth=0.2, edge_color='#999999')
+    isochrone_polys = []
+    for trip_time in sorted(trip_times, reverse=True):
+        subgraph = nx.ego_graph(roadgraph, center_node, radius=trip_time, distance='time')
+        node_points = [Point((data['x'], data['y'])) for node, data in subgraph.nodes(data=True)]
+        bounding_poly = geo.GeoSeries(node_points).unary_union.convex_hull
+        isochrone_polys.append(bounding_poly)
+    fig, ax = osmnx.plot_graph(roadgraph, show=False, close=False, edge_color='#999999', edge_alpha=0.2, node_size=0, bgcolor='k')
+    for polygon, fc in zip(isochrone_polys, isochrone_colors):
+        patch = PolygonPatch(polygon, fc=fc, ec='none', alpha=0.6, zorder=-1)
+        ax.add_patch(patch)
+    plt.show()
     print("--------- Locations (NetworkX) -----------")
     print(roadgraph.nodes()) 
     print("---------- Locations (GeoDataFrames) -------")
