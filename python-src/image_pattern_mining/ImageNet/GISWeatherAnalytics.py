@@ -290,12 +290,19 @@ if __name__ == "__main__":
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')})
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')})
-    nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
+
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Saturn-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mars",'angularsepbounds':('0d','180d')})
+
+    #nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
-    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2022,12,13,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+    #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2022,12,13,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
