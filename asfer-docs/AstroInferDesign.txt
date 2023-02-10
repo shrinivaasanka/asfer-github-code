@@ -21401,3 +21401,51 @@ References:
 -----------
 1386.4 Isochrone maps in OSMnx - above code change is based on OSMnx documentation example - https://geoffboeing.com/2017/08/isochrone-maps-osmnx-python/, IPython notebook - https://github.com/gboeing/osmnx-examples/blob/v0.13.0/notebooks/13-isolines-isochrones.ipynb 
 1386.5 Isochrone maps in Urban planning - https://en.wikipedia.org/wiki/Isochrone_map - Isochrones could be derived from convex hulls of graded Google live traffic markers (1377.7) 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1388. (THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 10 February 2023 - N-Body gravity analysis of some extreme weather and seismic events during first week of February 2023  - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+--------------------------------------------------------------------------------------------------------------------------------------------
+1388.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to analyze N-Body gravitational accelerations for few solar system body conjunctions in Sequence mined class association rules for Earthquakes and Hurricanes (Section 148 and Section 1358) from 31 January 2023 to 10 February 2023 which might be correlated. Three events occurred during this daterange: 1) An unseasonal depression over Bay of Bengal bringing heavy rainfall to east coast of Tamilnadu-India 2) A high intensity Turkiye-Syria earthquake (7.8 richter, Mercalli intensity 11 (maximum 12)) 3) Once in 50000 years Oort cloud Comet ZTF was closest to earth (and its gravity could be non-negligible being a long-tailed comet of few million kilometers) - Following are the n-body conjunctions analyzed for their gravitational effects - prominent among them are Venus-Sun-Mercury (a sequence mined rule and for their alleged role in heavy rainfall) and Sun-Mars(which is a sequence mined rule in few past earthquakes - Sendai 2011,Nepal and Chile 2015) :
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Saturn-Mercury",'angularsepbounds':('0d','30d')})
+    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mars",'angularsepbounds':('0d','180d')})
+1388.2 Following are the logs and graphics capturing pairwise gravitational intensities derived from above sequence mined rules:
+	testlogs/GISWeatherAnalytics.Jupiter-Mercury.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Jupiter-Venus.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Saturn-Mercury.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Sun-Mars.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Sun-Mercury.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Sun-Saturn.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Venus-Mercury.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.Venus-Sun.Gravity.10February2023.jpg
+	testlogs/GISWeatherAnalytics.log.10February2023
+1388.3 Most conspicuous in these graphics are Mercury (sharp declining curve - peak around 1 February 2023), Mars (gradual decline - peak around 1 February 2023) and Venus gravity L2 norms (gradual increase - peak around 10 February 2023) when earlier events unfolded.
+1388.4 Following are matching N-Body pairs for above daterange and angular separations of 30 and 180 degrees - Jupiter-Venus separated by <30 degrees (high support of 11.8% in HURDAT2 Hurricane datasets sequence mining - Section 172) and Sun-Mars separated by <180 degrees - These two pairs were also amongst top percentile SequenceMined CARs from USGS Earthquake datasets in Section 148 tantalizingly coinciding with earthquake on 6 February 2023:
+Angular separation of Jupiter-Venus matches bounds for date: 2023-01-31 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-01 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-02 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-03 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-04 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-05 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-06 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-07 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-08 17:30:00.000
+Angular separation of Jupiter-Venus matches bounds for date: 2023-02-09 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-01-31 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-01 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-02 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-03 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-04 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-05 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-06 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-07 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-08 17:30:00.000
+Angular separation of Sun-Mars matches bounds for date: 2023-02-09 17:30:00.000
+
+References:
+-----------
+1388.4 Horizons Ephemeris for Comet ZTF C/2022 E3 - https://ssd.jpl.nasa.gov/horizons_batch.cgi?batch=1&COMMAND=%272022+E3%27&START_TIME=%272023-02-01%2017:55%27&STOP_TIME=%272023-02-02%27&STEP_SIZE=%271%20day%27&QUANTITIES=%2719,20,22,25,39%27
+1388.5 Trajectory of Depression over Bay of Bengal during first week of February 2023 - https://twitter.com/Indiametdept/status/1620890753638727680/photo/4
+1388.9 Turkiye-Syria Earthquake - 6 February 2023 - https://en.wikipedia.org/wiki/2023_Turkey%E2%80%93Syria_earthquake
