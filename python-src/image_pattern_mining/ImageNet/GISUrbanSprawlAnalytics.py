@@ -74,11 +74,16 @@ import DBSCANClustering
 from descartes import PolygonPatch
 from shapely.geometry import Point, LineString, Polygon
 import geopandas as geo
+import geemap
+import ee
+import seaborn
+import pandas
 
 mplstyle.use('fast')
 shapely.speedups.disable()
 os.environ['KERAS_BACKEND'] = 'theano'
 #os.environ['KERAS_BACKEND'] = 'tensorflow'
+citygeometry=[]
 
 def learn_polya_urn_growth_weights(ncolorsegments_date1,ncolorsegments_date2):
     replicationweights=defaultdict(int)
@@ -232,6 +237,51 @@ def urban_sprawl_road_network_OSM(cityname=None,latx=0,laty=0,longx=0,longy=0,ad
     print("sorted cutset:",sorted(cutset))
     osmnx.plot_graph(roadgraph,bgcolor="w",node_color="g",edge_color="r")
     return roadgraph
+
+def GEE_city_average_radiance(viirsimagery):
+    global citygeometry
+    print("citygeometry:",citygeometry)
+    return viirsimagery.reduceRegions(reducer=ee.Reducer.mean(),collection=citygeometry,scale=500)
+
+def GEE_get_date(viirsimagery):
+    return viirsimagery.set('date',viirsimagery.date().format())
+
+def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter,cities):
+    global citygeometry
+    ee.Authenticate()
+    ee.Initialize(project="urbansprawlviirsanalytics")
+    viirs = ee.ImageCollection(imagecollection).select(nightlightsparameter)
+    citygeometry = ee.FeatureCollection(featurecollection).filter(ee.Filter.inList('ADM1_NAME',cities))
+    reduced_cities = viirs.map(GEE_city_average_radiance).flatten()
+    reduced_dates = viirs.map(GEE_get_date)
+    columns = ['ADM1_NAME','mean']
+    cities_list = reduced_cities.reduceColumns(ee.Reducer.toList(len(columns)),columns).values().getInfo()
+    dates_list = reduced_dates.reduceColumns(ee.Reducer.toList(1),["date"]).values().getInfo()
+    print("cities_list:",cities_list)
+    print("dates_list:",dates_list)
+    citiespdf = pandas.DataFrame(numpy.array(cities_list).squeeze(),columns=columns)
+    datespdf = pandas.DataFrame(numpy.array(dates_list).squeeze(),columns=["date"])
+    for city in cities:
+        citiespdf.loc[citiespdf["ADM1_NAME"]==city,"dates"] = numpy.array(dates_list).squeeze() 
+    #joinedpdf=citiespdf.join(datespdf)
+    citiespdf["dates"]=pandas.to_datetime(citiespdf["dates"])
+    citiespdf["mean"]=citiespdf["mean"].astype(float)
+    citiespdf.set_index("dates",inplace=True)
+    print("-------- citiespdf ----------")
+    print(citiespdf)
+    fig,ax = plt.subplots(figsize=(15,7))
+    for city in cities:
+        radiance=citiespdf.loc[citiespdf["ADM1_NAME"]==city,:]
+        print("------------radiance-----------")
+        print(radiance)
+        print(radiance.index)
+        seaborn.lineplot(data=radiance,x=radiance.index,y="mean",label=city,ax=ax)
+    ax.set_ylabel("average radiance",fontsize=1)
+    ax.set_xlabel("date",fontsize=8)
+    ax.legend(fontsize=8)
+    ax.set_title("Mean radiance",fontsize=8)
+    plt.show()
+    return radiance
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawlstatistics=[]
@@ -680,13 +730,13 @@ if __name__ == "__main__":
 
     #urban_sprawl_road_network_OSM(cityname="Kumbakonam")
     #urban_sprawl_road_network_OSM(latx=11.007927,laty=10.922989,longx=79.456730,longy=79.313908)
-    urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
-    urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Uthiramerur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Madurantakam, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Sholinghur, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Ranipet, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Cheyyar, Tamil Nadu, India",radius=6000)
+    #urban_sprawl_road_network_OSM(address="Sricity, AP, India",radius=6000)
 
     #ncoloredsegments_2022=defaultdict(list)
     #seg14=ImageGraph_Keras_Theano.image_segmentation("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg")
@@ -697,3 +747,4 @@ if __name__ == "__main__":
     #repweights=learn_polya_urn_growth_weights(ncoloredsegments_2019,ncoloredsegments_2022)
     #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
     #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
+    urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",['Berlin','Seoul','Sao Paulo'])
