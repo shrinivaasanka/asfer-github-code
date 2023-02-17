@@ -78,6 +78,7 @@ import geemap
 import ee
 import seaborn
 import pandas
+import json 
 
 mplstyle.use('fast')
 shapely.speedups.disable()
@@ -246,42 +247,57 @@ def GEE_city_average_radiance(viirsimagery):
 def GEE_get_date(viirsimagery):
     return viirsimagery.set('date',viirsimagery.date().format())
 
-def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter,cities):
+def urban_sprawl_from_GEE(imagecollection,featurecollection,nightlightsparameter,cities=None,boundingbox=None,daterange=None):
     global citygeometry
     ee.Authenticate()
     ee.Initialize(project="urbansprawlviirsanalytics")
-    viirs = ee.ImageCollection(imagecollection).select(nightlightsparameter)
-    citygeometry = ee.FeatureCollection(featurecollection).filter(ee.Filter.inList('ADM1_NAME',cities))
-    reduced_cities = viirs.map(GEE_city_average_radiance).flatten()
-    reduced_dates = viirs.map(GEE_get_date)
-    columns = ['ADM1_NAME','mean']
-    cities_list = reduced_cities.reduceColumns(ee.Reducer.toList(len(columns)),columns).values().getInfo()
-    dates_list = reduced_dates.reduceColumns(ee.Reducer.toList(1),["date"]).values().getInfo()
-    print("cities_list:",cities_list)
-    print("dates_list:",dates_list)
-    citiespdf = pandas.DataFrame(numpy.array(cities_list).squeeze(),columns=columns)
-    datespdf = pandas.DataFrame(numpy.array(dates_list).squeeze(),columns=["date"])
-    for city in cities:
-        citiespdf.loc[citiespdf["ADM1_NAME"]==city,"dates"] = numpy.array(dates_list).squeeze() 
-    #joinedpdf=citiespdf.join(datespdf)
-    citiespdf["dates"]=pandas.to_datetime(citiespdf["dates"])
-    citiespdf["mean"]=citiespdf["mean"].astype(float)
-    citiespdf.set_index("dates",inplace=True)
-    print("-------- citiespdf ----------")
-    print(citiespdf)
-    fig,ax = plt.subplots(figsize=(15,7))
-    for city in cities:
-        radiance=citiespdf.loc[citiespdf["ADM1_NAME"]==city,:]
-        print("------------radiance-----------")
-        print(radiance)
-        print(radiance.index)
-        seaborn.lineplot(data=radiance,x=radiance.index,y="mean",label=city,ax=ax)
-    ax.set_ylabel("average radiance",fontsize=1)
-    ax.set_xlabel("date",fontsize=8)
-    ax.legend(fontsize=8)
-    ax.set_title("Mean radiance",fontsize=8)
-    plt.show()
-    return radiance
+    if boundingbox != None and daterange != None:
+        fig,ax = plt.subplots(figsize=(15,7))
+        radiance=[]
+        viirs = ee.ImageCollection(imagecollection).filterDate(daterange[0],daterange[1]).select(nightlightsparameter)
+        citygeometry = viirs.filterBounds(ee.Geometry.BBox(boundingbox[0],boundingbox[1],boundingbox[2],boundingbox[3]))
+        print("citygeometry:",citygeometry)
+        urbansprawlBBaverageradiance = viirs.map(GEE_city_average_radiance).flatten().getInfo()
+        print(json.dumps(urbansprawlBBaverageradiance,indent=4))
+        for n in range(len(urbansprawlBBaverageradiance["features"])):
+            radiance.append(urbansprawlBBaverageradiance["features"][n]["properties"]["mean"])
+        print("radiance:",radiance)
+        ax.plot(list(range(len(radiance))),radiance) 
+        plt.show()
+        return radiance
+    elif cities != None:
+        viirs = ee.ImageCollection(imagecollection).select(nightlightsparameter)
+        citygeometry = ee.FeatureCollection(featurecollection).filter(ee.Filter.inList('ADM1_NAME',cities))
+        reduced_cities = viirs.map(GEE_city_average_radiance).flatten()
+        reduced_dates = viirs.map(GEE_get_date)
+        columns = ['ADM1_NAME','mean']
+        cities_list = reduced_cities.reduceColumns(ee.Reducer.toList(len(columns)),columns).values().getInfo()
+        dates_list = reduced_dates.reduceColumns(ee.Reducer.toList(1),["date"]).values().getInfo()
+        print("cities_list:",cities_list)
+        print("dates_list:",dates_list)
+        citiespdf = pandas.DataFrame(numpy.array(cities_list).squeeze(),columns=columns)
+        datespdf = pandas.DataFrame(numpy.array(dates_list).squeeze(),columns=["date"])
+        for city in cities:
+            citiespdf.loc[citiespdf["ADM1_NAME"]==city,"dates"] = numpy.array(dates_list).squeeze() 
+        #joinedpdf=citiespdf.join(datespdf)
+        citiespdf["dates"]=pandas.to_datetime(citiespdf["dates"])
+        citiespdf["mean"]=citiespdf["mean"].astype(float)
+        citiespdf.set_index("dates",inplace=True)
+        print("-------- citiespdf ----------")
+        print(citiespdf)
+        fig,ax = plt.subplots(figsize=(15,7))
+        for city in cities:
+           radiance=citiespdf.loc[citiespdf["ADM1_NAME"]==city,:]
+           print("------------radiance-----------")
+           print(radiance)
+           print(radiance.index)
+           seaborn.lineplot(data=radiance,x=radiance.index,y="mean",label=city,ax=ax)
+        ax.set_ylabel("average radiance",fontsize=1)
+        ax.set_xlabel("date",fontsize=8)
+        ax.legend(fontsize=8)
+        ax.set_title("Mean radiance",fontsize=8)
+        plt.show()
+        return radiance
 
 def urban_sprawl_from_raster(longx,latx,longy,laty,raster,dt):
     urbansprawlstatistics=[]
@@ -747,4 +763,5 @@ if __name__ == "__main__":
     #repweights=learn_polya_urn_growth_weights(ncoloredsegments_2019,ncoloredsegments_2022)
     #ncoloredsegments_2022=polya_urn_urban_growth_model("testlogs/RemoteSensingGIS/ChennaiMetropolitanArea_GHSL_R2022A_GHS_SMOD_DegreeOfUrbanisation.jpg",ncoloredsegments_2022,seg14,replicationweights=repweights)
     #print("Polya Urn Urban Growth Model for ",len(ncoloredsegments_2022.keys())," colored urban sprawl segmentation (Projection based on R2022A) - based on replacement matrix learnt from R2019A to R2022A:",ncoloredsegments_2022)
-    urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",['Berlin','Seoul','Sao Paulo'])
+    #urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",['Berlin','Seoul','Sao Paulo'])
+    urban_sprawl_from_GEE("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG","FAO/GAUL/2015/level1","avg_rad",boundingbox=[79.271851,12.439259,80.351257,13.568572],daterange=['2021-11-01','2023-02-01'])
