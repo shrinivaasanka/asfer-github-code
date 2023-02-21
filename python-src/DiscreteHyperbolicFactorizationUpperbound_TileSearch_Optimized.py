@@ -112,7 +112,7 @@ def toint(primestr):
     if primestr != '' and not None:
         return int(decimal.Decimal(primestr))
 
-def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1):
+def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1, binarysearch="iterative"):
     global number_to_factorize
     n = number_to_factorize
     xtile_start = int(Decimal(n)/Decimal(y))-padding
@@ -120,8 +120,10 @@ def tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1):
         xtile_start = int(Decimal(n)/Decimal(y))
     xtile_end = int(Decimal(n)/Decimal(y+1))+padding
     #print("tilesearch_nonpersistent(): (",xtile_start,",",y,",",xtile_end,",",y,")")
-    binary_search_interval_nonpersistent(
-        xtile_start, y, xtile_end, y, numfactors)
+    if binarysearch == "recursive":
+        binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
+    elif binarysearch == "iterative":
+        iterative_binary_search_interval_nonpersistent( xtile_start, y, xtile_end, y, numfactors)
 
 def hyperbolic_arc_rasterization(n):
     fig = plt.figure(dpi=100)
@@ -138,6 +140,45 @@ def hyperbolic_arc_rasterization(n):
         ax.plot(xaxis, yaxis, 'r-', rasterized=True, lw=5, alpha=0.6,
                 label='rasterized hyperbolic arc bow')
     plt.show()
+
+def iterative_binary_search_interval_nonpersistent(xl,yl,xr,yr,numfactors=maxfactors):
+    global factors_accum
+    global factorization_start
+    #print("iterative_binary_search_interval_nonpersistent(): binary seach of rasterized hyperbolic arc bow tilesegment xy = ",number_to_factorize," - segment(",xl,",",yl,",",xr,",",yr,")")
+    xl_clone=Decimal(xl)
+    yl_clone=Decimal(yl)
+    xr_clone=Decimal(xr)
+    yr_clone=Decimal(yr)
+    while xl_clone <= xr_clone:
+        midpoint = Decimal((xl_clone+xr_clone)/2)
+        #print("Midpoint = ",midpoint)
+        factorcandidate = Decimal(midpoint*yl_clone)
+        if xl_clone==xr_clone:
+             return
+        #print("Factor candidate point : ",factorcandidate)
+        if factorcandidate==number_to_factorize:
+             print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",midpoint,",",yl_clone,"]")
+             factors_accum.add(factorcandidate)
+             factorization_present = time_ns()
+             print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
+        if xl_clone*yl_clone==number_to_factorize:
+             print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",xl_clone,",",yl_clone,"]")
+             factorization_present = time_ns()
+             print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
+             factors_accum.add(xl_clone)
+             factors_accum.add(yl_clone)
+        if xr_clone*yr_clone==number_to_factorize:
+             print("at ", strftime("%a, %d %b %Y %H:%M:%S GMT", gmtime()), ") - Factor point located : [",xr_clone,",",yr_clone,"]")
+             factorization_present = time_ns()
+             print("nanoseconds elapsed so far in finding all factors: ", factorization_present - factorization_start)
+             factors_accum.add(xr_clone)
+             factors_accum.add(yr_clone)
+        if factorcandidate > number_to_factorize:
+             #print("factorcandiate > num_fact")
+             xr_clone = xl_clone + midpoint
+        else:
+             #print("factorcandiate < num_fact")
+             xl_clone = xl_clone + midpoint
 
 def binary_search_interval_nonpersistent(xl, yl, xr, yr, numfactors=maxfactors):
     global factors_accum

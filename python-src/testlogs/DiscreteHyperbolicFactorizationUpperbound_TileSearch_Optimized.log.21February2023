@@ -1,0 +1,45 @@
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 999323828321 5 False False all False |grep located
+at  Fri, 17 Feb 2023 19:09:58 GMT ) - Factor point located : [ 666211 , 1500011 ]
+nanoseconds elapsed so far in finding all factors:  64192314898
+at  Fri, 17 Feb 2023 19:11:55 GMT ) - Factor point located : [ 222677 , 4487773 ]
+nanoseconds elapsed so far in finding all factors:  180817888475
+----------------------------------------------------------------------------------------------------------------------------
+spark-3.3.0-bin-hadoop3/bin/spark-submit DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py 999999999999 5 False False all False | grep located
+at  Tue, 21 Feb 2023 10:50:10 GMT ) - Factor point located : [ 999999 , 1000001 ]
+nanoseconds elapsed so far in finding all factors:  55402330227
+at  Tue, 21 Feb 2023 10:50:11 GMT ) - Factor point located : [ 980199 , 1020201 ]
+nanoseconds elapsed so far in finding all factors:  56476470951
+at  Tue, 21 Feb 2023 10:50:15 GMT ) - Factor point located : [ 909909 , 1099011 ]
+nanoseconds elapsed so far in finding all factors:  60835359310
+at  Tue, 21 Feb 2023 10:50:16 GMT ) - Factor point located : [ 900991 , 1109889 ]
+nanoseconds elapsed so far in finding all factors:  61498688237
+at  Tue, 21 Feb 2023 10:50:19 GMT ) - Factor point located : [ 863247 , 1158417 ]
+nanoseconds elapsed so far in finding all factors:  64099010885
+at  Tue, 21 Feb 2023 10:50:28 GMT ) - Factor point located : [ 762377 , 1311687 ]
+nanoseconds elapsed so far in finding all factors:  72947859577
+at  Tue, 21 Feb 2023 10:50:33 GMT ) - Factor point located : [ 706293 , 1415843 ]
+nanoseconds elapsed so far in finding all factors:  78514134446
+at  Tue, 21 Feb 2023 10:50:43 GMT ) - Factor point located : [ 623763 , 1603173 ]
+nanoseconds elapsed so far in finding all factors:  87942880026
+at  Tue, 21 Feb 2023 10:50:56 GMT ) - Factor point located : [ 534391 , 1871289 ]
+nanoseconds elapsed so far in finding all factors:  101263156573
+at  Tue, 21 Feb 2023 10:51:16 GMT ) - Factor point located : [ 437229 , 2287131 ]
+nanoseconds elapsed so far in finding all factors:  121012449979
+at  Tue, 21 Feb 2023 10:51:27 GMT ) - Factor point located : [ 389961 , 2564359 ]
+nanoseconds elapsed so far in finding all factors:  132606629288
+at  Tue, 21 Feb 2023 10:51:28 GMT ) - Factor point located : [ 386139 , 2589741 ]
+nanoseconds elapsed so far in finding all factors:  133596200260
+at  Tue, 21 Feb 2023 10:51:34 GMT ) - Factor point located : [ 369963 , 2702973 ]
+nanoseconds elapsed so far in finding all factors:  139332965636
+at  Tue, 21 Feb 2023 10:51:35 GMT ) - Factor point located : [ 366337 , 2729727 ]
+nanoseconds elapsed so far in finding all factors:  140611215279
+at  Tue, 21 Feb 2023 10:51:46 GMT ) - Factor point located : [ 340067 , 2940597 ]
+nanoseconds elapsed so far in finding all factors:  151349721401
+at  Tue, 21 Feb 2023 10:51:49 GMT ) - Factor point located : [ 333333 , 3000003 ]
+nanoseconds elapsed so far in finding all factors:  154319374200
+at  Tue, 21 Feb 2023 10:51:52 GMT ) - Factor point located : [ 326733 , 3060603 ]
+nanoseconds elapsed so far in finding all factors:  157356528015
+at  Tue, 21 Feb 2023 10:52:03 GMT ) - Factor point located : [ 303303 , 3297033 ]
+nanoseconds elapsed so far in finding all factors:  168871430244
+
+
