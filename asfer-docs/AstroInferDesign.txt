@@ -21498,7 +21498,15 @@ References:
 References:
 ----------
 1398.5 Google Earth Engine Python API tutorial - https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb - There is often a requirement to export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python for protocol buffer compatibility
-1398.6 Using open data and open-source software to develop spatial indicators of urban design and transport features for achieving healthy and sustainable cities - [Geoff Boeing et al] - Table 1 ranking of cities on indicators:Healthy food market, Convenience store, Public transport stop (OSM or GTFS), Public transport stop with regular service (30 min), Public transport stop with regular service (20 min), Public open space, Public open space >1·5 hectares, PM2.5 emission in tonnes - "... Chennai 19·7% 15·6% 39·1% 3·2% 3·2% 41·1% 11·3% 657·9 " - https://www.thelancet.com/action/showPdf?pii=S2214-109X%2822%2900072-9
+1398.6 Using open data and open-source software to develop spatial indicators of urban design and transport features for achieving healthy and sustainable cities - [Geoff Boeing et al] - Table 1 ranking of cities on indicators:Healthy food market, Convenience store, Public transport stop (OSM or GTFS), Public transport stop with regular service (30 min), Public transport stop with regular service (20 min), Public open space, Public open space >1·5 hectares, PM2.5 emission in tonnes - "... Chennai 19·7% 15·6% 39·1% 3·2% 3·2% 41·1% 11·3% 657·9 " - https://www.thelancet.com/action/showPdf?pii=S2214-109X%2822%2900072-9 - Distance to market spatial indicator could be computed from urban sprawl facegraph 4-coloring (residential,commercial,industry,greenery-water) by following algorithm:
+        for every pair of  (residential_seg(n),commercial_seg(n)) segment vertices on urban sprawl facegraph
+        {
+                totaldistance = totaldistance + distance(residential_seg(n),commercial_seg(n))
+                number_of_pairs = number_of_pairs + 1
+        }
+        average distance between residential and commercial segments (or Distance to market) = totaldistance / number_of_pairs
+For optimal MARA and sustainable growth of urban sprawls, average distance to commercial markets from residential areas has to
+be minimized.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1401. (THEORY and FEATURE) Computational Geometric Integer Factorization - DMRC PySpark Cloud version - Iterative Binary Search implementation - related to 498,601,1226,1259,1303,1319,1321,1323,1324,1325,1355,1365,1366,1369,1379,1381,1384,1385 and all sections on Integer Factorization (DMRC MapReduce PySpark and NC HPC Rust implementations),Computational Geometry,Set Partitions-to-Tile Cover reduction by Lagranges Four Square Theorem and ILP,Primality Testing,RSA Semiprimes,Almost-Square Bounding Boxes in Large Scale Visual Recognition,Pell's Equation,Brahmagupta's Chakravala,Approximate Factoring by Newton-Raphson Rayshooting queries,Algebraic Geometry of Computational Geometric Factorization,Quantum computation and Derandomization of BQP Factorization by Condorcet Jury Theorem Majority-BQPVoterSAT boolean composition - 21 February 2023
