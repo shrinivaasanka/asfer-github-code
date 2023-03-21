@@ -21536,3 +21536,41 @@ be minimized.
 1401.1 python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py has been updated to change function tilesearch_nonpersistent(y, numfactors=maxfactors, padding=1, binarysearch="iterative") to choose between recursive and iterative binary search implementations through flag binarysearch depending on which either binary_search_interval_nonpersistent() or iterative_binary_search_interval_nonpersistent() are called.
 1401.2 New function iterative_binary_search_interval_nonpersistent(xl,yl,xr,yr,numfactors=maxfactors) has been defined in python-src/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.py (which so far depends only on recursive binary search and often prone to stack overflow redressed by setrecursionlimit()) which is a verbatim Python translated port of Rust High Performance Computing Rayon parallel iterator factorization NC implementation in https://github.com/shrinivaasanka/Grafit/blob/master/course_material/Programming/Rust/rasterization/src/main.rs
 1401.3 Iterative binary search parallel factor point location has been made the default choice. Two example integers 999323828321 and 999999999999 have been factorized by iterative binary search point location and the factor points are in testlogs/DiscreteHyperbolicFactorizationUpperbound_TileSearch_Optimized.log.21February2023 
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+1404. (JIRA,THEORY and FEATURE) GIS Weather Analytics and Climate Analytics - 21 March 2023 - Resolution of a JIRA issue and N-Body gravity predictive analysis of some extreme weather events between Mid-March to Mid-April 2023  - related to 148,172,313,445,446,463,1165,1171,1176,1266,1289,1316,1318,1327,1358,1359,1360,1361,1364,1367,1368,1388 and all sections on Correlation between gravitational effects of Mined Celestial N-Body Patterns and terrestrial extreme weather events (or Gravitational effects on climate change), Drone natural obstacle avoidance-Drone autonomous online shopping delivery-Drone Electronic Voting Machine, Artificial Intelligence models for Climate Change, Astronomical algorithms, Multifractals, Timeseries analysis, Sequence Mining-Class Association Rules
+-------------------------------------------------------------------------------------------------------------------------------------------
+1404.1 python-src/image_pattern_mining/ImageNet/GISWeatherAnalytics.py has been updated to comment redundant Keras imports.
+1404.2 Gaussian Ensemble Forecast function was not looping through all possible bodypairs of a bodyconjunction passed on as arguments which has been raised as a JIRA issue https://krishnairesearch.atlassian.net/browse/NEUR-21 and rectified in this update by looping through gmm_gravities which is returned from climate_analytics populated by a for loop appending tuples of gravity L2 norms for each pair. 
+1404.3 Gaussian Ensemble Forecast is computed for the date range of 13 March 2023 and 13 April 2023 for conjunctions Venus-Mercury-Jupiter:
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,3,13,17,30,00),'dateto':(2023,4,13,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+1404.4 Logs and Plots of Gravity L2 norms for the pairs Venus-Mercury, Venus-Jupiter and Mercury-Jupiter for this date range are in:
+	testlogs/GISWeatherAnalytics.Mercury-Jupiter.Gravity.21March2023.jpg
+	testlogs/GISWeatherAnalytics.Mercury-Venus.Gravity.21March2023.jpg
+	testlogs/GISWeatherAnalytics.Venus-Jupiter.Gravity.21March2023.jpg
+	testlogs/GISWeatherAnalytics.log.21March2023
+1404.5 Notable in the above gravity plots is the abnormal peak of Mercury gravity (steep ebb and tide) during first week of April 2023 (maximum on 7 April 2023). Following are the matching dates for <30 degree angular separation Ephemeris Search for Mercury-Jupiter and Venus-Mercury which are prominent Sequence mined CARs from HURDAT2 dataset (and coincidentally mentioned in 1358.4) indicating heightened probability of rainfall activity potentially caused by gravity induced low pressure (Section 1361.13 - ECMWF buoyancy equations involving gravity constant):
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-16 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-17 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-18 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-19 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-20 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-21 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-22 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-23 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-24 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-25 17:30:00.000
+Angular separation of Mercury-Jupiter matches bounds for date: 2023-03-26 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-03-31 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-01 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-02 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-03 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-04 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-05 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-06 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-07 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-08 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-09 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-10 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-11 17:30:00.000
+Angular separation of Venus-Mercury matches bounds for date: 2023-04-12 17:30:00.000
