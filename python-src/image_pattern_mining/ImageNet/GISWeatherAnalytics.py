@@ -36,10 +36,10 @@ import networkx as nx
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlap_Classify
 from RecursiveGlossOverlap_Classifier import RecursiveGlossOverlapGraph
 import numpy as np
-from keras import backend
-from keras.applications.imagenet_utils import preprocess_input
-from keras.applications.imagenet_utils import decode_predictions
-from keras.preprocessing import image
+#from keras import backend
+#from keras.applications.imagenet_utils import preprocess_input
+#from keras.applications.imagenet_utils import decode_predictions
+#from keras.preprocessing import image
 from networkx.drawing.nx_pydot import write_dot
 import os
 from scipy.interpolate import splprep, splev
@@ -95,17 +95,18 @@ def gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams=None,days=5,for
         candidate_partition_dict=candidate_partition.as_dict()
         print("gaussian_ensemble_forecast_rainfall_timeseries(): length of candidate rainfall timeseries forecast partition = ",sum(candidate_partition_dict.values()))
         if sum(candidate_partition_dict.values()) == days:
-             gmm_gravity=climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params=predEWEparams,precipitation_timeseries={"timeseries":historic_training_timeseries,"averageseasonalrainfall":forecast_seasonal_rainfall,'forecast_timeseries':candidate_partition_dict.values()})
+             gmm_gravities=climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params=predEWEparams,precipitation_timeseries={"timeseries":historic_training_timeseries,"averageseasonalrainfall":forecast_seasonal_rainfall,'forecast_timeseries':candidate_partition_dict.values()})
              print("gaussian_ensemble_forecast_rainfall_timeseries(): rainfall forecast timeseries ferrers:")
              print(candidate_partition.as_ferrers())
-             gmm_gravity_l2_norm1=norm(gmm_gravity[0])
-             gmm_gravity_l2_norm2=norm(gmm_gravity[1])
-             if gmm_gravity_l2_norm1 > maxgravitynorm:
-                 maxgravitynorm=gmm_gravity_l2_norm1
-                 maxgravitypartition=candidate_partition
-             if gmm_gravity_l2_norm2 > maxgravitynorm:
-                 maxgravitynorm=gmm_gravity_l2_norm2
-                 maxgravitypartition=candidate_partition
+             for gmm_gravity in gmm_gravities:
+                gmm_gravity_l2_norm1=norm(gmm_gravity[0])
+                gmm_gravity_l2_norm2=norm(gmm_gravity[1])
+                if gmm_gravity_l2_norm1 > maxgravitynorm:
+                    maxgravitynorm=gmm_gravity_l2_norm1
+                    maxgravitypartition=candidate_partition
+                if gmm_gravity_l2_norm2 > maxgravitynorm:
+                    maxgravitynorm=gmm_gravity_l2_norm2
+                    maxgravitypartition=candidate_partition
         p = candidate_partition
         if iterations > maxiterations:
             break
@@ -122,6 +123,7 @@ def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipi
             print("climate_analytics(): N-Body conjunction to be searched pairwise:",predict_EWE_params['bodyconjunctions'])
             bodies=predict_EWE_params['bodyconjunctions'].split("-")
             bodypairs=itertools.combinations(bodies,2)
+            bodypair_predict=[]
             for bp in bodypairs:
                 gravityl2norms=predict_EWE(datefrom=predict_EWE_params['datefrom'],dateto=predict_EWE_params['dateto'],loc=predict_EWE_params['loc'],bodypair="-".join(bp),angularsepbounds=predict_EWE_params['angularsepbounds'])
                 modes_body1=find_peaks(gravityl2norms[0])
@@ -138,7 +140,8 @@ def climate_analytics(datasource,date="",time="",predict_EWE_params=None,precipi
                 print("climate_analytics(): number of N-Body gravity peaks (modes of predicted GMM for average seasonal rainfall ",precipitation_timeseries['averageseasonalrainfall'],") for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",(no_of_modes_body1,no_of_modes_body2)) 
                 print("climate_analytics(): GMM probabilities of user supplied Forecast rainfall timeseries for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",gmm_predict_body1_predict) 
                 print("climate_analytics(): GMM probabilities of user supplied Forecast rainfall timeseries for bodypair ",bp," for daterange ",predict_EWE_params['datefrom'],"-",predict_EWE_params['dateto'],":",gmm_predict_body2_predict) 
-                return (gmm_predict_body1_predict,gmm_predict_body2_predict)
+                bodypair_predict.append((gmm_predict_body1_predict,gmm_predict_body2_predict))
+            return bodypair_predict
     if datasource == "precipitation_MFDFA":
         if precipitation_timeseries is not None:
             precipitation_mfdfa_model(precipitation_timeseries,order=2)
@@ -291,18 +294,19 @@ if __name__ == "__main__":
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
     #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2022,11,28,17,30,00),'dateto':(2022,12,8,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')})
 
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Mercury",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Saturn-Mercury",'angularsepbounds':('0d','30d')})
-    climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mars",'angularsepbounds':('0d','180d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Mercury",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Sun-Mercury",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Jupiter-Venus",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Saturn-Mercury",'angularsepbounds':('0d','30d')})
+    #climate_analytics(datasource="n-body-analytics",predict_EWE_params={'datefrom':(2023,1,31,17,30,00),'dateto':(2023,2,10,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Mars",'angularsepbounds':('0d','180d')})
 
-    #nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
+    nem_rainfall_timeseries=[2,1,3,1,4,2,1,8,21,10,6,4,8,16,9,14,8,6,10,16,5,2,1,1,1,1,3,4,2,4,14,18,10,10,5,8,2,4]
     #climate_analytics(datasource="precipitation_MFDFA",precipitation_timeseries=nem_rainfall_timeseries)
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Venus",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #climate_analytics(datasource="precipitation_GaussianMixture",predict_EWE_params={'datefrom':(2022,12,12,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Sun-Moon",'angularsepbounds':('0d','30d')},precipitation_timeseries={"timeseries":nem_rainfall_timeseries,"averageseasonalrainfall":100,'forecast_timeseries':[10,2,12,25,30,1,2,3,4,10]})
     #gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2022,12,13,17,30,00),'dateto':(2022,12,31,17,30,00),'loc':'@0','bodyconjunctions':"Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
+    gaussian_ensemble_forecast_rainfall_timeseries(predEWEparams={'datefrom':(2023,3,13,17,30,00),'dateto':(2023,4,13,17,30,00),'loc':'@0','bodyconjunctions':"Venus-Mercury-Jupiter",'angularsepbounds':('0d','30d')},days=5,forecast_seasonal_rainfall=10,historic_training_timeseries=nem_rainfall_timeseries)
     #seg3=image_segmentation("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg")
     #weather_GIS_analytics("testlogs/Windy_WeatherGIS_2021-11-11-13-07-51.jpg",seg3)
     #gisstream=Streaming_AbstractGenerator.StreamAbsGen("MongoDB","GISAndVisualStreaming","bucket1")
