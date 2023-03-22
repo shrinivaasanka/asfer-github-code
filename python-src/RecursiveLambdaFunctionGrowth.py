@@ -35,6 +35,7 @@ from PyDictionary import PyDictionary
 from googletrans import Translator
 import goslate
 from Transformers_PerceptronAndGradient import LinearPerceptronGradient
+import nltk
 
 # Graph Tensor Neuron Network (Graph Neural Network + Tensor Neuron) evaluation of lambda composition tree of a random walk of
 # Recursive Gloss Overlap graph of a text
@@ -253,8 +254,11 @@ class RecursiveLambdaFunctionGrowth(object):
             # Hence approximating the transversal with a k-core which is the Graph counterpart of
             # Hypergraph transversal. Other measures create a summary too : Vertex Cover is NP-hard while Edge Cover is Polynomial Time.
             definitiongraph.remove_edges_from(nx.selfloop_edges(definitiongraph))
-            richclubcoeff = nx.rich_club_coefficient(
-                definitiongraph.to_undirected())
+            richclubcoeff=[]
+            try:
+                richclubcoeff = nx.rich_club_coefficient(definitiongraph.to_undirected())
+            except Exception as ex:
+                print("create_summary(): rich_club_coefficient() - ",ex)
             print("Rich Club Coefficient of the Recursive Gloss Overlap Definition Graph:", richclubcoeff)
             kcore = nx.k_core(definitiongraph, corenumber)
             print("Text Summarized by k-core(subgraph having vertices of degree atleast k) on the Recursive Gloss Overlap graph:")
@@ -458,6 +462,18 @@ class RecursiveLambdaFunctionGrowth(object):
         print("intrinsic_merit_dict:", intrinsic_merit_dict)
         return intrinsic_merit_dict
 
+    def tree_adjoining_grammar_annotated(self,grammar,text):
+        print("grammar :",grammar)
+        try:
+            chartparser=nltk.ChartParser(grammar)
+            for tree in chartparser.parse(text.split()):
+                  print("tree_adjoining_grammar_annotated(): ChartParser tree = ",tree)
+            rdparser=nltk.RecursiveDescentParser(grammar)
+            for tree in rdparser.parse(text.split()):
+                  print("tree_adjoining_grammar_annotated(): Recursive Descent Parser tree = ",tree)
+        except Exception as ex:
+            print("Exception:",ex)
+
     def rlfg_transformers_attention_model(self,definitiongraph,query_weights,key_weights,value_weights,variables):
         degreedict=definitiongraph.degree()
         attention=[]
@@ -634,6 +650,42 @@ if __name__ == "__main__":
     lambdafn = RecursiveLambdaFunctionGrowth()
     text = open("RecursiveLambdaFunctionGrowth.txt", "r")
     textread = text.read()
+    groucho_grammar = nltk.CFG.fromstring("""
+        S -> NP VP
+        PP -> P NP
+        NP -> Det N | Det N PP | 'I'
+        VP -> V NP | VP PP
+        Det -> 'an' | 'my'
+        N -> 'elephant' | 'pajamas'
+        V -> 'shot'
+        P -> 'in'
+        """)
+    grammar1 = nltk.CFG.fromstring("""
+        S -> NP VP
+        VP -> V NP | V NP PP
+        PP -> P NP
+        V -> "saw" | "ate" | "walked"
+        NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+        Det -> "a" | "an" | "the" | "my"
+        N -> "man" | "dog" | "cat" | "telescope" | "park"
+        P -> "in" | "on" | "by" | "with"
+        """)
+    grammar2 = nltk.CFG.fromstring("""
+        S  -> NP VP
+        NP -> Det Nom | PropN
+        Nom -> Adj Nom | N
+        VP -> V Adj | V NP | V S | V NP PP
+        PP -> P NP
+        PropN -> 'Buster' | 'Chatterer' | 'Joe'
+        Det -> 'the' | 'a'
+        Adj  -> 'angry' | 'frightened' |  'little' | 'tall'
+        N -> 'bear' | 'squirrel' | 'tree' | 'fish' | 'log'
+        V ->  'chased'  | 'saw' | 'said' | 'thought' | 'was' | 'put'
+        P -> 'on'
+        """)
+    lambdafn.tree_adjoining_grammar_annotated(groucho_grammar,"I shot an elephant in my pajamas")
+    lambdafn.tree_adjoining_grammar_annotated(grammar1,"Mary saw Bob")
+    lambdafn.tree_adjoining_grammar_annotated(grammar2,"the angry bear chased the frightened little squirrel")
     lambdafn.grow_lambda_function3(textread)
     summary = lambdafn.create_summary(
         textread, graphtraversedsummary=True, shortestpath=True)
