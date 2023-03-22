@@ -21574,3 +21574,53 @@ Angular separation of Venus-Mercury matches bounds for date: 2023-04-09 17:30:00
 Angular separation of Venus-Mercury matches bounds for date: 2023-04-10 17:30:00.000
 Angular separation of Venus-Mercury matches bounds for date: 2023-04-11 17:30:00.000
 Angular separation of Venus-Mercury matches bounds for date: 2023-04-12 17:30:00.000
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1405. (THEORY and FEATURE) Recursive Lambda Function Growth - Tree Adjoining Grammar - CFG Parser for English Language from NLTK - related to 249,707,829,1133,1134,1204,1263,1269,1284,1285 and all sections on Intrinsic Merit of Texts, Question-Answering, Embedding in vectorspace, Machine Translation, Transformers Attention Model,Named Entity Recognition and Meaning Representation, Complexity models of Question-Answering (multiple choice,open-ended,adaptive and static) - LTF,PTF,Switching Circuits,TQBF,Markov Chains, Mildly Context Sensitive Grammars-Tree Adjoining Grammars for Natural Languages - 22 March 2023
+-------------------------------------------------------------------------------------------------------------------------------------------
+1405.1 Natural Languages are Mildly Context Sensitive (or CFG+ - computational power between CFG and CSG) and there have been multiple linguistic efforts - Chomsky Minimalistic Grammar, Tree Adjoining Grammar (TAG), XTAG - https://www.cis.upenn.edu/~xtag/, XMG-2 - https://github.com/spetitjean/XMG-2/wiki - to define mildly context sensitive grammar (MCSG) for natural languages.
+1405.2 python-src/RecursiveLambdaFunctionGrowth.py has been updated to define a new function tree_adjoining_grammar_annotated(self,grammar,text) to parse parts of speech annotations (Noun, Verb, Noun Phrase, Verb Phrase, Pronoun, Determiner etc.,) for a natural language sentence based on NLTK Context Free Grammar parsers for English (Chart Parser and Recursive Descent Parser) - https://www.nltk.org/book/ch08.html.
+1405.3 Following 3 grammars in NLTK book (https://www.nltk.org/book/ch08.html) are parsed by NLTK CFG parsers for 3 example sentences : 
+    groucho_grammar = nltk.CFG.fromstring("""
+        S -> NP VP
+        PP -> P NP
+        NP -> Det N | Det N PP | 'I'
+        VP -> V NP | VP PP
+        Det -> 'an' | 'my'
+        N -> 'elephant' | 'pajamas'
+        V -> 'shot'
+        P -> 'in'
+        """)
+    grammar1 = nltk.CFG.fromstring("""
+        S -> NP VP
+        VP -> V NP | V NP PP
+        PP -> P NP
+        V -> "saw" | "ate" | "walked"
+        NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+        Det -> "a" | "an" | "the" | "my"
+        N -> "man" | "dog" | "cat" | "telescope" | "park"
+        P -> "in" | "on" | "by" | "with"
+        """)
+    grammar2 = nltk.CFG.fromstring("""
+        S  -> NP VP
+        NP -> Det Nom | PropN
+        Nom -> Adj Nom | N
+        VP -> V Adj | V NP | V S | V NP PP
+        PP -> P NP
+        PropN -> 'Buster' | 'Chatterer' | 'Joe'
+        Det -> 'the' | 'a'
+        Adj  -> 'angry' | 'frightened' |  'little' | 'tall'
+        N -> 'bear' | 'squirrel' | 'tree' | 'fish' | 'log'
+        V ->  'chased'  | 'saw' | 'said' | 'thought' | 'was' | 'put'
+        P -> 'on'
+        """)
+    lambdafn.tree_adjoining_grammar_annotated(groucho_grammar,"I shot an elephant in my pajamas")
+    lambdafn.tree_adjoining_grammar_annotated(grammar1,"Mary saw Bob")
+    lambdafn.tree_adjoining_grammar_annotated(grammar2,"the angry bear chased the frightened little squirrel")
+1405.4 Earlier function tree_adjoining_grammar_annotated() accepts a text and a grammar which at present is restricted to CFG parsers of NLTK and could be extended to more generic mildly context sensitive tree adjoining grammars implemented by linguists (e.g XTAG, XMG-2).Text file  python-src/RecursiveLambdaFunctionGrowth.txt has been updated to a text from news article https://www.thehindu.com/news/cities/chennai/government-issues-order-for-expanding-chennai-metropolitan-planning-area-to-5904-sq-km/article66041750.ece
+
+References:
+-----------
+1405.5 XTAG project has a published set of grammar rules for English language - XTAG Research Group, A Lexicalized Tree Adjoining Grammar for English, IRCS, University of Pennsylvania},  2001,IRCS-01-03 - https://www.cis.upenn.edu/~xtag/gramrelease.html
+1405.6 Hardness of Natural Language Grammar and various TAG efforts - https://www.nltk.org/book/ch08.html - "..... So far, we have only considered "toy grammars," small grammars that illustrate the key aspects of parsing. But there is an obvious question as to whether the approach can be scaled up to cover large corpora of natural languages. How hard would it be to construct such a set of productions by hand? In general, the answer is: very hard. Even if we allow ourselves to use various formal devices that give much more succinct representations of grammar productions, it is still extremely difficult to keep control of the complex interactions between the many productions required to cover the major constructions of a language. In other words, it is hard to modularize grammars so that one portion can be developed independently of the other parts. This in turn means that it is difficult to distribute the task of grammar writing across a team of linguists. Another difficulty is that as the grammar expands to cover a wider and wider range of constructions, there is a corresponding increase in the number of analyses which are admitted for any one sentence. In other words, ambiguity increases with coverage.  Despite these problems, some large collaborative projects have achieved interesting and impressive results in developing rule-based grammars for several languages. Examples are the Lexical Functional Grammar (LFG) Pargram project, the Head-Driven Phrase Structure Grammar (HPSG) LinGO Matrix framework, and the Lexicalized Tree Adjoining Grammar XTAG Project. .....
+1405.7 Chomsky Minimalistic Grammar - https://en.wikipedia.org/wiki/Minimalist_grammar - example derivation of sentence "who did John see"
