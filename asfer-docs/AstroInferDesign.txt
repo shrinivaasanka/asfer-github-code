@@ -21640,3 +21640,20 @@ References:
 References:
 ----------
 1406.5 Google trends - https://trends.google.com/home?geo=IN&hl=en-US - Who searches what: Map of search queries to location of search
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+1407. (THEORY and FEATURE) Social network analysis and People analytics - Opinion Mining - Sentiment Analysis - 24 March 2023 - related to Section 1380,1406 and all sections on Majority Voting, Approximate Majority,Election analytics-Psephology-Opinion polls,Reservoir Sampling,Topic detection and tracking,Social network analysis and People analytics from Twitter-Facebook-LinkedIn-PIPL streams
+--------------------------------------------------------------------------------------------------------------------------------------------
+1407.1 python-src/SocialNetworkAnalysis_OpinionMining.py has been updated to import TextBlob and NeuronRain SentimentAnalyzer. 
+1407.2 New function sentiment_analyzer(text,algorithm=None) has been defined to analyze Opinion in every result from Google News for a query by following algorithms:
+	1407.2.1 Recursive Gloss Overlap Belief Propagation
+	1407.2.2 Recursive Gloss Overlap Belief Propagation Markov Random Fields
+	1407.2.3 TextBlob Sentiment Analyzer
+	1407.2.4 SentiWordNet
+1407.3 Function opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=3) has been redefined to limit the maximum number of articles by argument maxarticles
+1407.4 Conflated opinion which is a concatenation of summaries from all Newspaper3k article texts is printed as "summarizedopinion".
+1407.5 Sentiment analysis by above algorithms for an example news article is captured in logs:
+ 	Opinion-RGO-BeliefPropagation-SentimentAnalysis.txt
+	Opinion-RGO-MRF-BeliefPropagation-SentimentAnalysis.txt
+	testlogs/SocialNetworkAnalysis_OpinionMining.log2.24March2023
+
