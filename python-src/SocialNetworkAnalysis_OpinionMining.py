@@ -19,11 +19,54 @@
 from GoogleNews import GoogleNews
 from newspaper import Article
 import pandas
+from textblob import TextBlob
+import SentimentAnalyzer
 
-def opinion_mining(query,fromdate,todate,maxpages=2):
+def sentiment_analyzer(text,algorithm=None):
+    if algorithm=="RGO_Belief_Propagation":
+         outputfile = 'Opinion-RGO-BeliefPropagation-SentimentAnalysis.txt'
+         output = open(outputfile, 'w')
+         nxg=SentimentAnalyzer.SentimentAnalysis_RGO(text,output)
+         print("==================================================================================")
+         print("Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the opinion")
+         print("==================================================================================")
+         dfs_belief_propagated_posscore, dfs_belief_propagated_negscore, core_belief_propagated_posscore, core_belief_propagated_negscore = SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation(nxg)
+         print("K-Core DFS belief_propagated_posscore:",float(dfs_belief_propagated_posscore))
+         print("K-Core DFS belief_propagated_negscore:",float(dfs_belief_propagated_negscore))
+         print("Core Number belief_propagated_posscore:",float(core_belief_propagated_posscore))
+         print("Core Number belief_propagated_negscore:",float(core_belief_propagated_negscore))
+    if algorithm=="RGO_Belief_Propagation_MRF":
+         outputfile = 'Opinion-RGO-MRF-BeliefPropagation-SentimentAnalysis.txt'
+         output = open(outputfile, 'w')
+         nxg=SentimentAnalyzer.SentimentAnalysis_RGO(text,output)
+         posscore,negscore,objscore=SentimentAnalyzer.SentimentAnalysis_RGO_Belief_Propagation_MarkovRandomFields(nxg)
+         print("==================================================================================")
+         print("Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the opinion")
+         print("==================================================================================")
+         print("Positivity:",posscore)
+         print("Negativity:",negscore)
+         print("Objectivity:",objscore)
+    if algorithm=="TextBlob":
+         textblobsummary=TextBlob(text)
+         print("==================================================================================")
+         print("Sentiment Analysis (trivial - TextBlob) of the opinion")
+         print("==================================================================================")
+         print(textblobsummary.sentiment)
+    if algorithm=="SentiWordNet":
+         print("==================================================================================")
+         print("Sentiment Analysis (trivial - SentiWordNet summation) of the opinion")
+         print("==================================================================================")
+         posscore,negscore,objscore=SentimentAnalyzer.SentimentAnalysis_SentiWordNet(text)
+         print("Positivity:",posscore)
+         print("Negativity:",negscore)
+         print("Objectivity:",objscore)
+
+def opinion_mining(query,fromdate,todate,maxpages=2,maxarticles=1):
     gn=GoogleNews(start=fromdate,end=todate)
     gn.search(query)
     opinion=[]
+    summarizedopinion=""
+    noofarticles=0
     for page in range(maxpages):
         gn.getpage(page)
         results=gn.result()
@@ -31,6 +74,9 @@ def opinion_mining(query,fromdate,todate,maxpages=2):
         for index in df.index:
             newsjson={}
             try:
+                if noofarticles==maxarticles:
+                    break
+                noofarticles+=1
                 article=Article(df['link'][index])
                 article.download()
                 article.parse()
@@ -39,16 +85,23 @@ def opinion_mining(query,fromdate,todate,maxpages=2):
                 newsjson['Media']=df['media'][index]
                 newsjson['Title']=article.title
                 newsjson['Article']=article.text
-                print(article.text)
+                #print(article.text)
                 newsjson['Summary']=article.summary
+                sentiment_analyzer(article.summary,algorithm="SentiWordNet")
+                sentiment_analyzer(article.summary,algorithm="TextBlob")
+                sentiment_analyzer(article.summary,algorithm="RGO_Belief_Propagation")
+                sentiment_analyzer(article.summary,algorithm="RGO_Belief_Propagation_MRF")
+                sentiment_analyzer(article.summary)
                 opinion.append(newsjson)
+                summarizedopinion+= " " + article.summary
             except Exception as ex:
                 print(ex)
     opiniondf=pandas.DataFrame(opinion)
     print(opiniondf)
+    print("summarizedopinion:",summarizedopinion)
     return opiniondf
 
 if __name__=="__main__":
-    opinion_mining("Chennai Metropolitan Area Expansion","01/10/2022","01/03/2023")
+    opinion_mining("Chennai Metropolitan Area Expansion","27/02/2023","01/03/2023")
 
 

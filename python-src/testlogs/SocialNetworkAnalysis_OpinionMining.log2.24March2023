@@ -1,0 +1,1872 @@
+*** Introductory Examples for the NLTK Book ***
+Loading text1, ..., text9 and sent1, ..., sent9
+Type the name of the text or sentence to view it.
+Type: 'texts()' or 'sents()' to list the materials.
+text1: Moby Dick by Herman Melville 1851
+text2: Sense and Sensibility by Jane Austen 1811
+text3: The Book of Genesis
+text4: Inaugural Address Corpus
+text5: Chat Corpus
+text6: Monty Python and the Holy Grail
+text7: Wall Street Journal
+text8: Personals Corpus
+text9: The Man Who Was Thursday by G . K . Chesterton 1908
+==================================================================================
+Sentiment Analysis (trivial - SentiWordNet summation) of the opinion
+==================================================================================
+Positivity: 1.875
+Negativity: 0.75
+Objectivity: 55.375
+==================================================================================
+Sentiment Analysis (trivial - TextBlob) of the opinion
+==================================================================================
+Sentiment(polarity=0.11931818181818181, subjectivity=0.39177489177489183)
+defaultdict(<class 'list'>, {'equivalent': ['metropolitan'], 'sonata': ['development'], 'accusation': ['presentment', 'notification'], 'convenient': ['commodious', 'convenient'], 'decision': ['volition', 'will'], 'sugar': ['deoxyadenosine_monophosphate', 'A'], 'grand': ['presentment', 'notification'], 'government': ['policy'], 'preceded': ['many'], 'purely': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'sometimes': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'fortify': ['wall', 'palisade', 'fence', 'fence_in', 'surround'], 'toward': ['in', 'inwards', 'inward', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'firmness': ['decisiveness', 'decision'], 'equidistant': ['center', 'centre', 'midpoint'], 'four': ['deoxyadenosine_monophosphate', 'A'], 'cause': ['make', 'create'], 'goal': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'aim', 'object', 'objective', 'target'], 'day': ['today'], 'yesterday': ['today'], 'figure': ['center', 'centre', 'midpoint'], 'tomorrow': ['today'], 'case': ['constantly', 'invariably', 'always'], 'evidenced': ['decisiveness', 'decision'], 'Nadu': ['Chennai', 'Madras'], 'common': ['deoxyadenosine_monophosphate', 'A'], 'abilities': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'allow': ['admit', 'let_in', 'include'], 'become': ['make', 'create'], 'chosen': ['option', 'alternative', 'choice'], 'part': ['admit', 'let_in', 'include'], 'current': ['Modern', 'New'], 'became': ['Greenwich_Village', 'Village'], 'places': ['about', 'around'], 'desired': ['dressed_ore', 'concentrate'], 'undergo': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'suffer', 'sustain', 'have', 'get'], 'one': ['deoxyadenosine_monophosphate', 'A', 'option', 'alternative', 'choice', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'writing': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'ribose': ['deoxyadenosine_monophosphate', 'A'], 'mined': ['dressed_ore', 'concentrate'], 'attained': ['aim', 'object', 'objective', 'target'], 'choice': ['volition', 'will'], 'Madras': ['Chennai', 'Madras'], 'argument': ['policy'], 'noun': ['be'], 'boundary': ['town', 'town'], 'communication': ['fast-paced'], 'district': ['Greenwich_Village', 'Village'], 'century': ['Greenwich_Village', 'Village'], 'Air': ['major'], 'volume': ['expansion', 'enlargement', 'expansion', 'enlargement'], 'conscious': ['volition', 'will'], 'growing': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'formerly': ['Chennai', 'Madras'], 'length': ['kilometer', 'kilometre', 'km', 'klick'], 'unfolding': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'country': ['India', 'Republic_of_India', 'Bharat'], 'rights': ['admit', 'let_in', 'include'], 'belief': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'jury': ['presentment', 'notification'], 'ideas': ['adopt', 'follow', 'espouse'], 'something': ['expansion', 'enlargement', 'expansion', 'enlargement', 'on'], 'Bengal': ['Chennai', 'Madras'], 'organism': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'extent': ['such'], 'injuries': ['suffer', 'sustain', 'have', 'get'], 'commissioned': ['major'], 'music': ['development'], 'DNA': ['deoxyadenosine_monophosphate', 'A'], 'functions': ['admit', 'let_in', 'include'], 'theories': ['adopt', 'follow', 'espouse'], 'quantity': ['expansion', 'enlargement', 'expansion', 'enlargement'], 'musical': ['development'], 'populated': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban'], 'simple': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'events': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'moment': ['today'], 'bishop': ['metropolitan'], 'right': ['admit', 'let_in', 'include'], 'purpose': ['decisiveness', 'decision'], 'moon': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'things': ['option', 'alternative', 'choice'], 'sense': ['commodious', 'convenient'], 'function': ['on'], 'captain': ['major'], 'resoluteness': ['decisiveness', 'decision'], 'rationalizing': ['policy'], 'group': ['deoxyadenosine_monophosphate', 'A'], 'Meredith': ['volition', 'will'], 'letter': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'number': ['many', 'option', 'alternative', 'choice'], 'action': ['policy'], 'copula': ['be'], 'living': ['Modern', 'New'], 'ore': ['dressed_ore', 'concentrate'], 'come': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'moving': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'change': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'constantly', 'invariably', 'always'], 'plans': ['adopt', 'follow', 'espouse'], 'degree': ['such'], 'inside': ['in', 'inwards', 'inward'], 'title': ['metropolitan'], 'physical': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'archbishop': ['metropolitan'], 'printing': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'writers': ['Greenwich_Village', 'Village'], 'responsibilities': ['admit', 'let_in', 'include'], 'amounting': ['many'], 'developed': ['development'], 'ends': ['center', 'centre', 'midpoint'], 'among': ['about', 'around'], 'nucleotides': ['deoxyadenosine_monophosphate', 'A'], 'extremities': ['center', 'centre', 'midpoint'], 'nouns': ['many'], 'densely': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban'], 'impurities': ['dressed_ore', 'concentrate'], 'several': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'independence': ['India', 'Republic_of_India', 'Bharat'], 'follow': ['adopt', 'follow', 'espouse'], 'western': ['metropolitan'], 'phosphate': ['deoxyadenosine_monophosphate', 'A'], 'proceeds': ['fast-paced'], 'every': ['constantly', 'invariably', 'always'], 'opposed': ['today'], 'policies': ['adopt', 'follow', 'espouse'], 'major': ['development'], 'Manhattan': ['Greenwich_Village', 'Village'], 'attainable': ['aim', 'object', 'objective', 'target'], 'equal': ['kilometer', 'kilometre', 'km', 'klick'], 'strategies': ['adopt', 'follow', 'espouse'], 'quantifier': ['many'], 'stage': ['Modern', 'New'], 'earth': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'populous': ['India', 'Republic_of_India', 'Bharat'], 'rapidly': ['fast-paced'], 'Tamil': ['Chennai', 'Madras'], 'course': ['policy'], 'southern': ['India', 'Republic_of_India', 'Bharat'], 'predicate': ['be'], 'features': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'urban': ['city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'town'], 'make': ['make', 'create'], 'miles': ['kilometer', 'kilometre', 'km', 'klick'], 'form': ['development'], 'fixed': ['town', 'town'], 'city': ['Chennai', 'Madras', 'town', 'urban', 'town'], 'initiative': ['presentment', 'notification'], 'variation': ['constantly', 'invariably', 'always'], 'districts': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'often': ['many'], '`': ['many', 'Greenwich_Village', 'Village', 'commodious', 'convenient'], 'effective': ['on'], 'alphabetic': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'illnesses': ['suffer', 'sustain', 'have', 'get'], 'proper': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'Eastern': ['metropolitan'], 'Christianity': ['metropolitan'], 'process': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'States': ['major'], 'intention': ['volition', 'will'], 'movement': ['development', 'about', 'around'], 'military': ['major'], 'Orthodox': ['metropolitan'], 'relating': ['urban'], '20th': ['Greenwich_Village', 'Village'], 'Village': ['Greenwich_Village', 'Village'], 'quality': ['be'], 'appearance': ['become', 'suit'], 'archaic': ['commodious', 'convenient'], 'artists': ['Greenwich_Village', 'Village'], 'mainly': ['Greenwich_Village', 'Village'], '0.621371': ['kilometer', 'kilometre', 'km', 'klick'], 'act': ['expansion', 'enlargement', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'expansion', 'enlargement'], 'attributes': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'building': ['deoxyadenosine_monophosphate', 'A'], 'biological': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'participation': ['admit', 'let_in', 'include'], 'gradually': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'especially': ['development'], 'present': ['today'], 'made': ['presentment', 'notification'], 'Marines': ['major'], 'without': ['constantly', 'invariably', 'always'], 'left': ['dressed_ore', 'concentrate'], 'administrative': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'many': ['Greenwich_Village', 'Village', 'about', 'around'], 'unit': ['kilometer', 'kilometre', 'km', 'klick'], 'large': ['city', 'metropolis', 'urban_center', 'many', 'city', 'metropolis', 'urban_center', 'commodious', 'convenient', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'direction': ['about', 'around'], 'used': ['deoxyadenosine_monophosphate', 'A', 'many', 'Modern', 'New', 'be', 'about', 'around', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'Church': ['metropolitan'], 'include': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'permit': ['admit', 'let_in', 'include'], 'second': ['India', 'Republic_of_India', 'Bharat'], 'Force': ['major'], 'intended': ['aim', 'object', 'objective', 'target'], 'exercise': ['admit', 'let_in', 'include'], 'line': ['center', 'centre', 'midpoint', 'policy'], 'capability': ['volition', 'will'], 'orbits': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'point': ['center', 'centre', 'midpoint'], 'indefinite': ['many'], 'world': ['India', 'Republic_of_India', 'Bharat'], 'enhance': ['become', 'suit'], 'choose': ['adopt', 'follow', 'espouse'], 'adjective': ['be'], 'United': ['major', 'India', 'Republic_of_India', 'Bharat'], 'particular': ['about', 'around'], 'George': ['volition', 'will'], 'themes': ['development'], 'removed': ['dressed_ore', 'concentrate'], '1000': ['kilometer', 'kilometre', 'km', 'klick'], 'surround': ['wall', 'palisade', 'fence', 'fence_in', 'surround'], 'includes': ['today'], 'wall': ['wall', 'palisade', 'fence', 'fence_in', 'surround'], 'believed': ['aim', 'object', 'objective', 'target'], 'equipment': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'republic': ['India', 'Republic_of_India', 'Bharat'], 'Kingdom': ['India', 'Republic_of_India', 'Bharat'], 'doubt': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'achieved': ['India', 'Republic_of_India', 'Bharat'], 'man-made': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'Army': ['major'], 'changing': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'subcontinent': ['India', 'Republic_of_India', 'Bharat'], 'section': ['development'], 'home': ['Greenwich_Village', 'Village'], 'meters': ['kilometer', 'kilometre', 'km', 'klick'], 'Asian': ['India', 'Republic_of_India', 'Bharat'], 'forward': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'freedom': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'different': ['about', 'around'], 'language': ['Modern', 'New'], 'residential': ['Greenwich_Village', 'Village'], 'development': ['Modern', 'New'], 'roomy': ['commodious', 'convenient'], 'state': ['on'], 'composition': ['development'], 'scope': ['expansion', 'enlargement', 'expansion', 'enlargement'], 'required': ['on'], 'organically': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'patriarch': ['metropolitan'], 'trait': ['decisiveness', 'decision'], 'crime': ['presentment', 'notification'], 'complex': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'count': ['many'], 'biology': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'concerned': ['urban'], 'mineral': ['dressed_ore', 'concentrate'], 'size': ['expansion', 'enlargement', 'expansion', 'enlargement'], 'metric': ['kilometer', 'kilometre', 'km', 'klick'], 'order': ['wall', 'palisade', 'fence', 'fence_in', 'surround'], 'first': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'extreme': ['such'], 'smaller': ['town', 'town'], 'lieutenant': ['major'], 'Asia': ['India', 'Republic_of_India', 'Bharat'], 'area': ['city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'urban', 'town'], 'elaborated': ['development'], 'character': ['decisiveness', 'decision'], '1947': ['India', 'Republic_of_India', 'Bharat'], 'names': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'increasing': ['expansion', 'enlargement', 'expansion', 'enlargement'], 'emphasis': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], "'": ['many', 'Greenwich_Village', 'Village', 'commodious', 'convenient'], 'colonel': ['major'], 'officer': ['major'], 'given': ['metropolitan'], 'individual': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'Bay': ['Chennai', 'Madras'], 'level': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'around': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'position': ['metropolitan'], 'independent': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'involved': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'characters': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule']})
+Core number (sorted) : [('development', 12), ('purely', 12), ('growth', 12), ('growing', 12), ('maturation', 12), ('ontogeny', 12), ('ontogenesis', 12), ('unfolding', 12), ('organism', 12), ('simple', 12), ('events', 12), ('process', 12), ('biological', 12), ('gradually', 12), ('changing', 12), ('organically', 12), ('complex', 12), ('biology', 12), ('individual', 12), ('level', 12), ('involved', 12), ('sometimes', 10), ('capital', 10), ('capital_letter', 10), ('uppercase', 10), ('upper-case_letter', 10), ('majuscule', 10), ('toward', 10), ('progress', 10), ('progression', 10), ('procession', 10), ('advance', 10), ('advancement', 10), ('forward_motion', 10), ('onward_motion', 10), ('goal', 10), ('undergo', 10), ('grow', 10), ('develop', 10), ('produce', 10), ('get', 10), ('acquire', 10), ('one', 10), ('writing', 10), ('letter', 10), ('come', 10), ('moving', 10), ('change', 10), ('physical', 10), ('printing', 10), ('features', 10), ('alphabetic', 10), ('proper', 10), ('act', 10), ('attributes', 10), ('large', 10), ('used', 10), ('forward', 10), ('first', 10), ('names', 10), ('emphasis', 10), ('characters', 10), ('convenient', 8), ('commodious', 8), ('many', 8), ('fortify', 8), ('wall', 8), ('palisade', 8), ('fence', 8), ('fence_in', 8), ('surround', 8), ('aim', 8), ('object', 8), ('objective', 8), ('target', 8), ('abilities', 8), ('assurance', 8), ('self-assurance', 8), ('confidence', 8), ('self-confidence', 8), ('authority', 8), ('sureness', 8), ('Greenwich_Village', 8), ('Village', 8), ('attained', 8), ('length', 8), ('kilometer', 8), ('kilometre', 8), ('km', 8), ('klick', 8), ('belief', 8), ('populated', 8), ('city', 8), ('metropolis', 8), ('urban_center', 8), ('urban', 8), ('densely', 8), ('attainable', 8), ('equal', 8), ('miles', 8), ('`', 8), ('0.621371', 8), ('unit', 8), ('intended', 8), ('1000', 8), ('believed', 8), ('doubt', 8), ('meters', 8), ('freedom', 8), ('metric', 8), ('order', 8), ('area', 8), ("'", 8), ('equidistant', 6), ('center', 6), ('centre', 6), ('midpoint', 6), ('figure', 6), ('case', 6), ('constantly', 6), ('invariably', 6), ('always', 6), ('allow', 6), ('admit', 6), ('let_in', 6), ('include', 6), ('chosen', 6), ('option', 6), ('alternative', 6), ('choice', 6), ('part', 6), ('about', 6), ('around', 6), ('suffer', 6), ('sustain', 6), ('have', 6), ('town', 6), ('country', 6), ('India', 6), ('Republic_of_India', 6), ('Bharat', 6), ('rights', 6), ('ideas', 6), ('adopt', 6), ('follow', 6), ('espouse', 6), ('injuries', 6), ('functions', 6), ('theories', 6), ('right', 6), ('moon', 6), ('satellite', 6), ('artificial_satellite', 6), ('orbiter', 6), ('things', 6), ('number', 6), ('plans', 6), ('responsibilities', 6), ('ends', 6), ('extremities', 6), ('several', 6), ('independence', 6), ('every', 6), ('policies', 6), ('strategies', 6), ('earth', 6), ('populous', 6), ('southern', 6), ('variation', 6), ('districts', 6), ('illnesses', 6), ('movement', 6), ('participation', 6), ('without', 6), ('administrative', 6), ('permit', 6), ('second', 6), ('exercise', 6), ('line', 6), ('orbits', 6), ('point', 6), ('world', 6), ('choose', 6), ('United', 6), ('equipment', 6), ('republic', 6), ('Kingdom', 6), ('achieved', 6), ('man-made', 6), ('subcontinent', 6), ('Asian', 6), ('Asia', 6), ('1947', 6), ('independent', 6), ('accusation', 4), ('presentment', 4), ('notification', 4), ('decision', 4), ('volition', 4), ('will', 4), ('sugar', 4), ('deoxyadenosine_monophosphate', 4), ('A', 4), ('grand', 4), ('in', 4), ('inwards', 4), ('inward', 4), ('firmness', 4), ('decisiveness', 4), ('four', 4), ('cause', 4), ('make', 4), ('create', 4), ('evidenced', 4), ('Nadu', 4), ('Chennai', 4), ('Madras', 4), ('common', 4), ('become', 4), ('current', 4), ('Modern', 4), ('New', 4), ('became', 4), ('places', 4), ('desired', 4), ('dressed_ore', 4), ('concentrate', 4), ('ribose', 4), ('mined', 4), ('district', 4), ('century', 4), ('major', 4), ('volume', 4), ('expansion', 4), ('enlargement', 4), ('conscious', 4), ('formerly', 4), ('jury', 4), ('something', 4), ('Bengal', 4), ('DNA', 4), ('quantity', 4), ('purpose', 4), ('sense', 4), ('resoluteness', 4), ('group', 4), ('Meredith', 4), ('living', 4), ('ore', 4), ('inside', 4), ('writers', 4), ('among', 4), ('nucleotides', 4), ('impurities', 4), ('phosphate', 4), ('Manhattan', 4), ('stage', 4), ('Tamil', 4), ('initiative', 4), ('intention', 4), ('20th', 4), ('appearance', 4), ('suit', 4), ('archaic', 4), ('artists', 4), ('mainly', 4), ('building', 4), ('made', 4), ('left', 4), ('direction', 4), ('capability', 4), ('enhance', 4), ('particular', 4), ('George', 4), ('removed', 4), ('home', 4), ('different', 4), ('language', 4), ('residential', 4), ('roomy', 4), ('scope', 4), ('trait', 4), ('crime', 4), ('mineral', 4), ('size', 4), ('character', 4), ('increasing', 4), ('Bay', 4), ('equivalent', 2), ('metropolitan', 2), ('sonata', 2), ('government', 2), ('policy', 2), ('preceded', 2), ('day', 2), ('today', 2), ('yesterday', 2), ('tomorrow', 2), ('argument', 2), ('noun', 2), ('be', 2), ('boundary', 2), ('communication', 2), ('fast-paced', 2), ('Air', 2), ('on', 2), ('extent', 2), ('such', 2), ('commissioned', 2), ('music', 2), ('musical', 2), ('moment', 2), ('bishop', 2), ('function', 2), ('captain', 2), ('rationalizing', 2), ('action', 2), ('copula', 2), ('degree', 2), ('title', 2), ('archbishop', 2), ('amounting', 2), ('developed', 2), ('nouns', 2), ('western', 2), ('proceeds', 2), ('opposed', 2), ('quantifier', 2), ('rapidly', 2), ('course', 2), ('predicate', 2), ('form', 2), ('fixed', 2), ('often', 2), ('effective', 2), ('Eastern', 2), ('Christianity', 2), ('States', 2), ('military', 2), ('Orthodox', 2), ('relating', 2), ('quality', 2), ('especially', 2), ('present', 2), ('Marines', 2), ('Church', 2), ('Force', 2), ('indefinite', 2), ('adjective', 2), ('themes', 2), ('includes', 2), ('Army', 2), ('section', 2), ('state', 2), ('composition', 2), ('required', 2), ('patriarch', 2), ('count', 2), ('concerned', 2), ('extreme', 2), ('smaller', 2), ('lieutenant', 2), ('elaborated', 2), ('colonel', 2), ('officer', 2), ('given', 2), ('position', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: development ,core number= 12
+This document belongs to class: purely ,core number= 12
+This document belongs to class: growth ,core number= 12
+This document belongs to class: growing ,core number= 12
+This document belongs to class: maturation ,core number= 12
+This document belongs to class: ontogeny ,core number= 12
+This document belongs to class: ontogenesis ,core number= 12
+This document belongs to class: unfolding ,core number= 12
+This document belongs to class: organism ,core number= 12
+This document belongs to class: simple ,core number= 12
+This document belongs to class: events ,core number= 12
+This document belongs to class: process ,core number= 12
+This document belongs to class: biological ,core number= 12
+This document belongs to class: gradually ,core number= 12
+This document belongs to class: changing ,core number= 12
+This document belongs to class: organically ,core number= 12
+This document belongs to class: complex ,core number= 12
+This document belongs to class: biology ,core number= 12
+This document belongs to class: individual ,core number= 12
+This document belongs to class: level ,core number= 12
+This document belongs to class: involved ,core number= 12
+This document belongs to class: sometimes ,core number= 10
+This document belongs to class: capital ,core number= 10
+This document belongs to class: capital_letter ,core number= 10
+This document belongs to class: uppercase ,core number= 10
+This document belongs to class: upper-case_letter ,core number= 10
+This document belongs to class: majuscule ,core number= 10
+This document belongs to class: toward ,core number= 10
+This document belongs to class: progress ,core number= 10
+This document belongs to class: progression ,core number= 10
+This document belongs to class: procession ,core number= 10
+This document belongs to class: advance ,core number= 10
+This document belongs to class: advancement ,core number= 10
+This document belongs to class: forward_motion ,core number= 10
+This document belongs to class: onward_motion ,core number= 10
+This document belongs to class: goal ,core number= 10
+This document belongs to class: undergo ,core number= 10
+This document belongs to class: grow ,core number= 10
+	max_core_number 12
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('metropolitan', 0.01648526052065531), ('development', 0.01544566146437181), ('major', 0.013463656840436605), ('many', 0.01083744766286425), ('today', 0.010230503756869708), ('Greenwich_Village', 0.00890178105471444), ('Village', 0.00890178105471444), ('India', 0.007531061026780154), ('Republic_of_India', 0.007531061026780154), ('Bharat', 0.007531061026780154), ('growing', 0.007100397134504658), ('policy', 0.007096619203667181), ('city', 0.007016980432222365), ('deoxyadenosine_monophosphate', 0.006915183071986414), ('A', 0.006915183071986414), ('used', 0.006853124008002713), ('around', 0.006697058115126841), ('be', 0.006518055088672936), ('include', 0.006358974823032062), ('decision', 0.006080242092648919), ('on', 0.006064596231590963), ('dressed_ore', 0.005852174022219776), ('concentrate', 0.005852174022219776), ('growth', 0.005744021402449466), ('maturation', 0.005744021402449466), ('ontogeny', 0.005744021402449466), ('ontogenesis', 0.005744021402449466), ('toward', 0.005442484808722124), ('urban', 0.005422665517285303), ('goal', 0.005357569489900403), ('capital', 0.005291267948732214), ('capital_letter', 0.005291267948732214), ('uppercase', 0.005291267948732214), ('upper-case_letter', 0.005291267948732214), ('majuscule', 0.005291267948732214), ('presentment', 0.005226698345841218), ('notification', 0.005226698345841218), ('fast-paced', 0.005226698345841218), ('such', 0.005226698345841218), ('metropolis', 0.005206976810178166), ('urban_center', 0.005206976810178166), ('expansion', 0.00513255769407395), ('enlargement', 0.00513255769407395), ('about', 0.005089396217114146), ('large', 0.005069420728668715), ('volition', 0.005065188921453964), ('will', 0.005065188921453964), ('admit', 0.005014985990791332), ('let_in', 0.005014985990791332), ('decisiveness', 0.004850406117589267), ('one', 0.004795865306985261), ('Chennai', 0.004789113741001324), ('Madras', 0.004789113741001324), ('act', 0.0047188320105454925), ('follow', 0.00468132720535667), ('town', 0.004566574925888693), ('center', 0.00418640760898019), ('centre', 0.00418640760898019), ('midpoint', 0.00418640760898019), ('undergo', 0.0041709020032732295), ('adopt', 0.0041667846750475124), ('espouse', 0.0041667846750475124), ('convenient', 0.004161031954685372), ('commodious', 0.004161031954685372), ('change', 0.004147552061072667), ('get', 0.004075805667639205), ('become', 0.004044695391083166), ('kilometer', 0.003975746993084096), ('kilometre', 0.003975746993084096), ('km', 0.003975746993084096), ('klick', 0.003975746993084096), ('Modern', 0.003837455063432023), ('New', 0.003837455063432023), ('satellite', 0.0037829440681629582), ('artificial_satellite', 0.0037829440681629582), ('orbiter', 0.0037829440681629582), ('choice', 0.003723690994537195), ('moving', 0.0034720629573433115), ('forward', 0.0034720629573433115), ('abilities', 0.0033502713167055356), ('belief', 0.0033502713167055356), ('doubt', 0.0033502713167055356), ('freedom', 0.0033502713167055356), ('wall', 0.003291052682527902), ('surround', 0.003291052682527902), ('line', 0.0031954159740086073), ('constantly', 0.0031103244645321725), ('invariably', 0.0031103244645321725), ('always', 0.0031103244645321725), ('`', 0.003075986408336433), ("'", 0.003075986408336433), ('grow', 0.0030339670853989096), ('develop', 0.0030339670853989096), ('produce', 0.0030339670853989096), ('acquire', 0.0030339670853989096), ('make', 0.003030312979264177), ('create', 0.003030312979264177), ('area', 0.0029117802789312597), ('fortify', 0.002803944138720908), ('order', 0.002803944138720908), ('aim', 0.0027727051853539578), ('object', 0.0027727051853539578), ('objective', 0.0027727051853539578), ('target', 0.0027727051853539578), ('something', 0.002686727205822737), ('United', 0.0026625386700319187), ('progress', 0.002573974568202227), ('progression', 0.002573974568202227), ('procession', 0.002573974568202227), ('advance', 0.002573974568202227), ('advancement', 0.002573974568202227), ('forward_motion', 0.002573974568202227), ('onward_motion', 0.002573974568202227), ('number', 0.002572257255291058), ('come', 0.0025611784831476208), ('physical', 0.0025611784831476208), ('features', 0.0025611784831476208), ('attributes', 0.0025611784831476208), ('option', 0.002493855019477542), ('alternative', 0.002493855019477542), ('injuries', 0.002451528319166911), ('illnesses', 0.002451528319166911), ('inside', 0.0023791411974278583), ('purely', 0.002368611693730442), ('unfolding', 0.002368611693730442), ('organism', 0.002368611693730442), ('simple', 0.002368611693730442), ('events', 0.002368611693730442), ('process', 0.002368611693730442), ('biological', 0.002368611693730442), ('gradually', 0.002368611693730442), ('changing', 0.002368611693730442), ('organically', 0.002368611693730442), ('complex', 0.002368611693730442), ('biology', 0.002368611693730442), ('individual', 0.002368611693730442), ('level', 0.002368611693730442), ('involved', 0.002368611693730442), ('suit', 0.0023275192040636285), ('assurance', 0.002307811856074601), ('self-assurance', 0.002307811856074601), ('confidence', 0.002307811856074601), ('self-confidence', 0.002307811856074601), ('authority', 0.002307811856074601), ('sureness', 0.002307811856074601), ('palisade', 0.0022945252799304013), ('fence', 0.0022945252799304013), ('fence_in', 0.0022945252799304013), ('attained', 0.002294225878606136), ('attainable', 0.002294225878606136), ('intended', 0.002294225878606136), ('believed', 0.002294225878606136), ('populated', 0.0022648487701550173), ('densely', 0.0022648487701550173), ('appearance', 0.0022574166977725463), ('enhance', 0.0022574166977725463), ('equidistant', 0.002189515384996792), ('figure', 0.002189515384996792), ('ends', 0.002189515384996792), ('extremities', 0.002189515384996792), ('point', 0.002189515384996792), ('sometimes', 0.002139097155492506), ('writing', 0.002139097155492506), ('letter', 0.002139097155492506), ('printing', 0.002139097155492506), ('alphabetic', 0.002139097155492506), ('proper', 0.002139097155492506), ('first', 0.002139097155492506), ('names', 0.002139097155492506), ('emphasis', 0.002139097155492506), ('characters', 0.002139097155492506), ('cause', 0.002125895533068584), ('length', 0.0020993199639484147), ('equal', 0.0020993199639484147), ('miles', 0.0020993199639484147), ('0.621371', 0.0020993199639484147), ('unit', 0.0020993199639484147), ('1000', 0.0020993199639484147), ('meters', 0.0020993199639484147), ('metric', 0.0020993199639484147), ('moon', 0.002016381244061741), ('earth', 0.002016381244061741), ('orbits', 0.002016381244061741), ('equipment', 0.002016381244061741), ('man-made', 0.002016381244061741), ('chosen', 0.0019964926846261213), ('things', 0.0019964926846261213), ('case', 0.001995092923974093), ('every', 0.001995092923974093), ('variation', 0.001995092923974093), ('without', 0.001995092923974093), ('ideas', 0.0019180440345818472), ('theories', 0.0019180440345818472), ('plans', 0.0019180440345818472), ('policies', 0.0019180440345818472), ('strategies', 0.0019180440345818472), ('choose', 0.0019180440345818472), ('movement', 0.0019046195699066576), ('suffer', 0.0018936853311741623), ('sustain', 0.0018936853311741623), ('have', 0.0018936853311741623), ('accusation', 0.001890828071822228), ('grand', 0.001890828071822228), ('jury', 0.001890828071822228), ('initiative', 0.001890828071822228), ('made', 0.001890828071822228), ('crime', 0.001890828071822228), ('communication', 0.0018908280718222276), ('extent', 0.0018908280718222276), ('degree', 0.0018908280718222276), ('proceeds', 0.0018908280718222276), ('rapidly', 0.0018908280718222276), ('extreme', 0.0018908280718222276), ('desired', 0.0018312589597861738), ('mined', 0.0018312589597861738), ('ore', 0.0018312589597861738), ('impurities', 0.0018312589597861738), ('left', 0.0018312589597861738), ('removed', 0.0018312589597861738), ('mineral', 0.0018312589597861738), ('allow', 0.0018066041113668821), ('part', 0.0018066041113668821), ('rights', 0.0018066041113668821), ('functions', 0.0018066041113668821), ('right', 0.0018066041113668821), ('responsibilities', 0.0018066041113668821), ('participation', 0.0018066041113668821), ('permit', 0.0018066041113668821), ('exercise', 0.0018066041113668821), ('country', 0.0017819373155430842), ('independence', 0.0017819373155430842), ('populous', 0.0017819373155430842), ('southern', 0.0017819373155430842), ('second', 0.0017819373155430842), ('world', 0.0017819373155430842), ('republic', 0.0017819373155430842), ('Kingdom', 0.0017819373155430842), ('achieved', 0.0017819373155430842), ('subcontinent', 0.0017819373155430842), ('Asian', 0.0017819373155430842), ('Asia', 0.0017819373155430842), ('1947', 0.0017819373155430842), ('several', 0.0017527081782897761), ('districts', 0.0017527081782897761), ('administrative', 0.0017527081782897761), ('independent', 0.0017527081782897761), ('firmness', 0.0017421856046895517), ('evidenced', 0.0017421856046895517), ('purpose', 0.0017421856046895517), ('resoluteness', 0.0017421856046895517), ('trait', 0.0017421856046895517), ('character', 0.0017421856046895517), ('volume', 0.001655488399251228), ('quantity', 0.001655488399251228), ('scope', 0.001655488399251228), ('size', 0.001655488399251228), ('increasing', 0.001655488399251228), ('day', 0.0016525516236780141), ('yesterday', 0.0016525516236780141), ('tomorrow', 0.0016525516236780141), ('moment', 0.0016525516236780141), ('opposed', 0.0016525516236780141), ('present', 0.0016525516236780141), ('includes', 0.0016525516236780141), ('conscious', 0.001638555321108699), ('Meredith', 0.001638555321108699), ('intention', 0.001638555321108699), ('capability', 0.001638555321108699), ('George', 0.001638555321108699), ('equivalent', 0.0015780902336329466), ('bishop', 0.0015780902336329466), ('title', 0.0015780902336329466), ('archbishop', 0.0015780902336329466), ('western', 0.0015780902336329466), ('Eastern', 0.0015780902336329466), ('Christianity', 0.0015780902336329466), ('Orthodox', 0.0015780902336329466), ('Church', 0.0015780902336329466), ('patriarch', 0.0015780902336329466), ('given', 0.0015780902336329466), ('position', 0.0015780902336329466), ('Nadu', 0.0015717914593170014), ('formerly', 0.0015717914593170014), ('Bengal', 0.0015717914593170014), ('Tamil', 0.0015717914593170014), ('Bay', 0.0015717914593170014), ('in', 0.0015453418684198876), ('inwards', 0.0015453418684198876), ('inward', 0.0015453418684198876), ('current', 0.001496137784808501), ('living', 0.001496137784808501), ('stage', 0.001496137784808501), ('language', 0.001496137784808501), ('became', 0.0014896516674009546), ('district', 0.0014896516674009546), ('century', 0.0014896516674009546), ('writers', 0.0014896516674009546), ('Manhattan', 0.0014896516674009546), ('20th', 0.0014896516674009546), ('artists', 0.0014896516674009546), ('mainly', 0.0014896516674009546), ('home', 0.0014896516674009546), ('residential', 0.0014896516674009546), ('sugar', 0.0014777141589647257), ('four', 0.0014777141589647257), ('common', 0.0014777141589647257), ('ribose', 0.0014777141589647257), ('DNA', 0.0014777141589647257), ('group', 0.0014777141589647257), ('nucleotides', 0.0014777141589647257), ('phosphate', 0.0014777141589647257), ('building', 0.0014777141589647257), ('places', 0.0014670263814334575), ('among', 0.0014670263814334575), ('direction', 0.0014670263814334575), ('particular', 0.0014670263814334575), ('different', 0.0014670263814334575), ('function', 0.0014399581526205554), ('effective', 0.0014399581526205554), ('state', 0.0014399581526205554), ('required', 0.0014399581526205554), ('sense', 0.0014192895163195884), ('archaic', 0.0014192895163195884), ('roomy', 0.0014192895163195884), ('government', 0.0014146199350608618), ('argument', 0.0014146199350608618), ('rationalizing', 0.0014146199350608618), ('action', 0.0014146199350608618), ('course', 0.0014146199350608618), ('noun', 0.001332261340834771), ('copula', 0.001332261340834771), ('predicate', 0.001332261340834771), ('quality', 0.001332261340834771), ('adjective', 0.001332261340834771), ('Air', 0.0012893207005378817), ('commissioned', 0.0012893207005378817), ('captain', 0.0012893207005378817), ('States', 0.0012893207005378817), ('military', 0.0012893207005378817), ('Marines', 0.0012893207005378817), ('Force', 0.0012893207005378817), ('Army', 0.0012893207005378817), ('lieutenant', 0.0012893207005378817), ('colonel', 0.0012893207005378817), ('officer', 0.0012893207005378817), ('boundary', 0.0010556508548252887), ('fixed', 0.0010556508548252887), ('smaller', 0.0010556508548252887), ('preceded', 0.000984483916713983), ('amounting', 0.000984483916713983), ('nouns', 0.000984483916713983), ('quantifier', 0.000984483916713983), ('often', 0.000984483916713983), ('indefinite', 0.000984483916713983), ('count', 0.000984483916713983), ('relating', 0.0009208599379142877), ('concerned', 0.0009208599379142877), ('sonata', 0.0008463125345222469), ('music', 0.0008463125345222469), ('musical', 0.0008463125345222469), ('developed', 0.0008463125345222469), ('form', 0.0008463125345222469), ('especially', 0.0008463125345222469), ('themes', 0.0008463125345222469), ('section', 0.0008463125345222469), ('composition', 0.0008463125345222469), ('elaborated', 0.0008463125345222469)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.875
+Negativity =  0.75
+Objectivity =  55.375
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  development :  0.0
+posscore of  development :  0.0
+negscore of  growth :  0.0
+posscore of  growth :  0.0
+negscore of  growing :  0.0
+posscore of  growing :  0.0
+negscore of  maturation :  0.0
+posscore of  maturation :  0.0
+negscore of  unfolding :  0.0
+posscore of  unfolding :  0.0
+negscore of  simple :  0.0
+posscore of  simple :  0.0
+negscore of  events :  0.0
+posscore of  events :  0.0
+negscore of  process :  0.0
+posscore of  process :  0.0
+negscore of  changing :  0.0
+posscore of  changing :  0.0
+negscore of  organically :  0.0
+posscore of  organically :  0.0
+negscore of  complex :  0.0
+posscore of  complex :  0.0
+negscore of  biology :  0.0
+posscore of  biology :  0.0
+negscore of  individual :  0.0
+posscore of  individual :  0.0
+negscore of  level :  0.25
+posscore of  level :  0.0
+negscore of  involved :  0.0
+posscore of  involved :  0.0
+negscore of  capital :  0.0
+posscore of  capital :  0.0
+negscore of  majuscule :  0.0
+posscore of  majuscule :  0.0
+negscore of  progress :  0.0
+posscore of  progress :  0.0
+negscore of  progression :  0.0
+posscore of  progression :  0.125
+negscore of  procession :  0.0
+posscore of  procession :  0.125
+negscore of  advance :  0.0
+posscore of  advance :  0.0
+negscore of  advancement :  0.0
+posscore of  advancement :  0.0
+negscore of  goal :  0.0
+posscore of  goal :  0.0
+negscore of  grow :  0.0
+posscore of  grow :  0.0
+negscore of  develop :  0.0
+posscore of  develop :  0.0
+negscore of  produce :  0.0
+posscore of  produce :  0.0
+negscore of  get :  0.0
+posscore of  get :  0.0
+negscore of  acquire :  0.0
+posscore of  acquire :  0.125
+negscore of  one :  0.0
+posscore of  one :  0.0
+negscore of  writing :  0.0
+posscore of  writing :  0.0
+negscore of  letter :  0.0
+posscore of  letter :  0.0
+negscore of  come :  0.0
+posscore of  come :  0.0
+negscore of  moving :  0.0
+posscore of  moving :  0.0
+negscore of  change :  0.0
+posscore of  change :  0.0
+negscore of  physical :  0.0
+posscore of  physical :  0.0
+negscore of  printing :  0.0
+posscore of  printing :  0.0
+negscore of  features :  0.0
+posscore of  features :  0.0
+negscore of  proper :  0.0
+posscore of  proper :  0.75
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  attributes :  0.0
+posscore of  attributes :  0.0
+negscore of  large :  0.0
+posscore of  large :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  forward :  0.0
+posscore of  forward :  0.0
+negscore of  first :  0.0
+posscore of  first :  0.0
+negscore of  names :  0.0
+posscore of  names :  0.0
+negscore of  emphasis :  0.0
+posscore of  emphasis :  0.75
+negscore of  characters :  0.0
+posscore of  characters :  0.0
+negscore of  fortify :  0.0
+posscore of  fortify :  0.0
+negscore of  wall :  0.0
+posscore of  wall :  0.0
+negscore of  fence :  0.0
+posscore of  fence :  0.0
+negscore of  surround :  0.0
+posscore of  surround :  0.0
+negscore of  aim :  0.0
+posscore of  aim :  0.0
+negscore of  object :  0.0
+posscore of  object :  0.0
+negscore of  objective :  0.0
+posscore of  objective :  0.0
+negscore of  target :  0.0
+posscore of  target :  0.0
+negscore of  assurance :  0.0
+posscore of  assurance :  0.0
+negscore of  confidence :  0.0
+posscore of  confidence :  0.0
+negscore of  authority :  0.0
+posscore of  authority :  0.0
+negscore of  Village :  0.0
+posscore of  Village :  0.0
+negscore of  attained :  0.125
+posscore of  attained :  0.125
+negscore of  length :  0.0
+posscore of  length :  0.0
+negscore of  populated :  0.0
+posscore of  populated :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  equal :  0.0
+posscore of  equal :  0.0
+negscore of  miles :  0.0
+posscore of  miles :  0.0
+negscore of  unit :  0.0
+posscore of  unit :  0.0
+negscore of  intended :  0.0
+posscore of  intended :  0.0
+negscore of  believed :  0.0
+posscore of  believed :  0.125
+negscore of  doubt :  0.0
+posscore of  doubt :  0.125
+negscore of  meters :  0.0
+posscore of  meters :  0.0
+negscore of  metric :  0.0
+posscore of  metric :  0.0
+negscore of  order :  0.0
+posscore of  order :  0.0
+negscore of  area :  0.0
+posscore of  area :  0.0
+negscore of  center :  0.0
+posscore of  center :  0.0
+negscore of  centre :  0.0
+posscore of  centre :  0.0
+negscore of  figure :  0.0
+posscore of  figure :  0.0
+negscore of  case :  0.0
+posscore of  case :  0.0
+negscore of  always :  0.0
+posscore of  always :  0.0
+negscore of  allow :  0.0
+posscore of  allow :  0.0
+negscore of  admit :  0.0
+posscore of  admit :  0.125
+negscore of  include :  0.0
+posscore of  include :  0.0
+negscore of  chosen :  0.0
+posscore of  chosen :  0.0
+negscore of  option :  0.25
+posscore of  option :  0.0
+negscore of  alternative :  0.125
+posscore of  alternative :  0.0
+negscore of  choice :  0.0
+posscore of  choice :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  about :  0.0
+posscore of  about :  0.0
+negscore of  around :  0.0
+posscore of  around :  0.0
+negscore of  suffer :  0.0
+posscore of  suffer :  0.0
+negscore of  sustain :  0.0
+posscore of  sustain :  0.0
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  town :  0.0
+posscore of  town :  0.0
+negscore of  country :  0.0
+posscore of  country :  0.0
+negscore of  rights :  0.0
+posscore of  rights :  0.0
+negscore of  ideas :  0.0
+posscore of  ideas :  0.125
+negscore of  adopt :  0.0
+posscore of  adopt :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  espouse :  0.0
+posscore of  espouse :  0.0
+negscore of  injuries :  0.625
+posscore of  injuries :  0.0
+negscore of  functions :  0.0
+posscore of  functions :  0.0
+negscore of  theories :  0.0
+posscore of  theories :  0.0
+negscore of  right :  0.0
+posscore of  right :  0.0
+negscore of  moon :  0.0
+posscore of  moon :  0.0
+negscore of  satellite :  0.0
+posscore of  satellite :  0.0
+negscore of  things :  0.0
+posscore of  things :  0.0
+negscore of  number :  0.375
+posscore of  number :  0.0
+negscore of  plans :  0.0
+posscore of  plans :  0.0
+negscore of  responsibilities :  0.0
+posscore of  responsibilities :  0.0
+negscore of  ends :  0.0
+posscore of  ends :  0.0
+negscore of  extremities :  0.0
+posscore of  extremities :  0.0
+negscore of  several :  0.5
+posscore of  several :  0.0
+negscore of  independence :  0.0
+posscore of  independence :  0.0
+negscore of  policies :  0.0
+posscore of  policies :  0.0
+negscore of  earth :  0.0
+posscore of  earth :  0.0
+negscore of  southern :  0.0
+posscore of  southern :  0.0
+negscore of  variation :  0.0
+posscore of  variation :  0.0
+negscore of  movement :  0.125
+posscore of  movement :  0.0
+negscore of  permit :  0.0
+posscore of  permit :  0.0
+negscore of  second :  0.0
+posscore of  second :  0.0
+negscore of  exercise :  0.0
+posscore of  exercise :  0.0
+negscore of  line :  0.0
+posscore of  line :  0.0
+negscore of  orbits :  0.0
+posscore of  orbits :  0.0
+negscore of  point :  0.0
+posscore of  point :  0.0
+negscore of  world :  0.0
+posscore of  world :  0.0
+negscore of  choose :  0.0
+posscore of  choose :  0.0
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  Kingdom :  0.0
+posscore of  Kingdom :  0.0
+negscore of  independent :  0.0
+posscore of  independent :  0.0
+negscore of  presentment :  0.0
+posscore of  presentment :  0.0
+negscore of  notification :  0.0
+posscore of  notification :  0.0
+negscore of  decision :  0.0
+posscore of  decision :  0.0
+negscore of  will :  0.0
+posscore of  will :  0.125
+negscore of  sugar :  0.0
+posscore of  sugar :  0.0
+negscore of  A :  0.0
+posscore of  A :  0.0
+negscore of  grand :  0.0
+posscore of  grand :  0.0
+negscore of  in :  0.0
+posscore of  in :  0.0
+negscore of  inward :  0.0
+posscore of  inward :  0.0
+negscore of  firmness :  0.0
+posscore of  firmness :  0.25
+negscore of  four :  0.0
+posscore of  four :  0.0
+negscore of  cause :  0.0
+posscore of  cause :  0.0
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  create :  0.0
+posscore of  create :  0.0
+negscore of  evidenced :  0.0
+posscore of  evidenced :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  common :  0.0
+posscore of  common :  0.0
+negscore of  become :  0.0
+posscore of  become :  0.0
+negscore of  current :  0.0
+posscore of  current :  0.0
+negscore of  Modern :  0.0
+posscore of  Modern :  0.0
+negscore of  New :  0.0
+posscore of  New :  0.375
+negscore of  became :  0.0
+posscore of  became :  0.0
+negscore of  places :  0.0
+posscore of  places :  0.0
+negscore of  desired :  0.0
+posscore of  desired :  0.25
+negscore of  concentrate :  0.0
+posscore of  concentrate :  0.125
+negscore of  mined :  0.125
+posscore of  mined :  0.0
+negscore of  major :  0.0
+posscore of  major :  0.0
+negscore of  volume :  0.0
+posscore of  volume :  0.0
+negscore of  expansion :  0.0
+posscore of  expansion :  0.0
+negscore of  enlargement :  0.0
+posscore of  enlargement :  0.0
+negscore of  conscious :  0.25
+posscore of  conscious :  0.125
+negscore of  quantity :  0.375
+posscore of  quantity :  0.0
+negscore of  purpose :  0.0
+posscore of  purpose :  0.0
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  living :  0.0
+posscore of  living :  0.0
+negscore of  inside :  0.0
+posscore of  inside :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  initiative :  0.0
+posscore of  initiative :  0.375
+negscore of  intention :  0.0
+posscore of  intention :  0.0
+negscore of  appearance :  0.0
+posscore of  appearance :  0.0
+negscore of  suit :  0.0
+posscore of  suit :  0.0
+negscore of  building :  0.0
+posscore of  building :  0.0
+negscore of  made :  0.0
+posscore of  made :  0.0
+negscore of  left :  0.0
+posscore of  left :  0.0
+negscore of  direction :  0.0
+posscore of  direction :  0.0
+negscore of  capability :  0.125
+posscore of  capability :  0.625
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  George :  0.0
+posscore of  George :  0.0
+negscore of  removed :  0.0
+posscore of  removed :  0.0
+negscore of  home :  0.0
+posscore of  home :  0.0
+negscore of  different :  0.0
+posscore of  different :  0.625
+negscore of  language :  0.0
+posscore of  language :  0.0
+negscore of  scope :  0.0
+posscore of  scope :  0.0
+negscore of  mineral :  0.0
+posscore of  mineral :  0.25
+negscore of  size :  0.375
+posscore of  size :  0.125
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  increasing :  0.0
+posscore of  increasing :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  equivalent :  0.0
+posscore of  equivalent :  0.0
+negscore of  metropolitan :  0.0
+posscore of  metropolitan :  0.0
+negscore of  government :  0.0
+posscore of  government :  0.0
+negscore of  policy :  0.0
+posscore of  policy :  0.0
+negscore of  preceded :  0.0
+posscore of  preceded :  0.0
+negscore of  day :  0.0
+posscore of  day :  0.0
+negscore of  today :  0.0
+posscore of  today :  0.125
+negscore of  yesterday :  0.0
+posscore of  yesterday :  0.0
+negscore of  tomorrow :  0.0
+posscore of  tomorrow :  0.0
+negscore of  argument :  0.0
+posscore of  argument :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  boundary :  0.0
+posscore of  boundary :  0.0
+negscore of  communication :  0.0
+posscore of  communication :  0.0
+negscore of  Air :  0.0
+posscore of  Air :  0.0
+negscore of  on :  0.0
+posscore of  on :  0.0
+negscore of  commissioned :  0.0
+posscore of  commissioned :  0.0
+negscore of  music :  0.0
+posscore of  music :  0.0
+negscore of  musical :  0.0
+posscore of  musical :  0.0
+negscore of  moment :  0.0
+posscore of  moment :  0.0
+negscore of  bishop :  0.0
+posscore of  bishop :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  captain :  0.0
+posscore of  captain :  0.375
+negscore of  rationalizing :  0.0
+posscore of  rationalizing :  0.0
+negscore of  action :  0.0
+posscore of  action :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  title :  0.0
+posscore of  title :  0.0
+negscore of  amounting :  0.0
+posscore of  amounting :  0.0
+negscore of  developed :  0.0
+posscore of  developed :  0.0
+negscore of  western :  0.0
+posscore of  western :  0.0
+negscore of  proceeds :  0.0
+posscore of  proceeds :  0.0
+negscore of  opposed :  0.0
+posscore of  opposed :  0.0
+negscore of  course :  0.0
+posscore of  course :  0.0
+negscore of  predicate :  0.0
+posscore of  predicate :  0.0
+negscore of  form :  0.0
+posscore of  form :  0.0
+negscore of  fixed :  0.125
+posscore of  fixed :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  effective :  0.125
+posscore of  effective :  0.25
+negscore of  Eastern :  0.0
+posscore of  Eastern :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  military :  0.0
+posscore of  military :  0.0
+negscore of  Orthodox :  0.0
+posscore of  Orthodox :  0.0
+negscore of  relating :  0.0
+posscore of  relating :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  present :  0.0
+posscore of  present :  0.0
+negscore of  Marines :  0.0
+posscore of  Marines :  0.0
+negscore of  Church :  0.0
+posscore of  Church :  0.0
+negscore of  Force :  0.0
+posscore of  Force :  0.0
+negscore of  adjective :  0.0
+posscore of  adjective :  0.0
+negscore of  themes :  0.0
+posscore of  themes :  0.0
+negscore of  includes :  0.0
+posscore of  includes :  0.0
+negscore of  Army :  0.0
+posscore of  Army :  0.0
+negscore of  section :  0.0
+posscore of  section :  0.125
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  composition :  0.0
+posscore of  composition :  0.0
+negscore of  required :  0.25
+posscore of  required :  0.25
+negscore of  patriarch :  0.0
+posscore of  patriarch :  0.0
+negscore of  count :  0.0
+posscore of  count :  0.0
+negscore of  concerned :  0.0
+posscore of  concerned :  0.0
+negscore of  extreme :  0.0
+posscore of  extreme :  0.125
+negscore of  smaller :  0.125
+posscore of  smaller :  0.0
+negscore of  lieutenant :  0.0
+posscore of  lieutenant :  0.0
+negscore of  elaborated :  0.0
+posscore of  elaborated :  0.0
+negscore of  officer :  0.0
+posscore of  officer :  0.0
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  position :  0.0
+posscore of  position :  0.0
+==================================================================================
+Sentiment Analysis (Belief Propagation of Sentiment in the RGO graph) of the opinion
+==================================================================================
+Core Number: RGO_sentiment_analysis_belief_propagation: 12.000325, 7.625337
+K-Core DFS: RGO_sentiment_analysis_belief_propagation: 186.000000, 185.093750
+K-Core DFS belief_propagated_posscore: 186.0
+K-Core DFS belief_propagated_negscore: 185.09375
+Core Number belief_propagated_posscore: 12.000324999999961
+Core Number belief_propagated_negscore: 7.625337000000016
+defaultdict(<class 'list'>, {'equivalent': ['metropolitan', 'metropolitan'], 'sonata': ['development', 'development'], 'accusation': ['presentment', 'notification', 'presentment', 'notification'], 'convenient': ['commodious', 'convenient', 'commodious', 'convenient'], 'decision': ['volition', 'will', 'volition', 'will'], 'sugar': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'grand': ['presentment', 'notification', 'presentment', 'notification'], 'government': ['policy', 'policy'], 'preceded': ['many', 'many'], 'purely': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'sometimes': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'fortify': ['wall', 'palisade', 'fence', 'fence_in', 'surround', 'wall', 'palisade', 'fence', 'fence_in', 'surround'], 'toward': ['in', 'inwards', 'inward', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'in', 'inwards', 'inward', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'firmness': ['decisiveness', 'decision', 'decisiveness', 'decision'], 'equidistant': ['center', 'centre', 'midpoint', 'center', 'centre', 'midpoint'], 'four': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'cause': ['make', 'create', 'make', 'create'], 'goal': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'aim', 'object', 'objective', 'target', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'aim', 'object', 'objective', 'target'], 'day': ['today', 'today'], 'yesterday': ['today', 'today'], 'figure': ['center', 'centre', 'midpoint', 'center', 'centre', 'midpoint'], 'tomorrow': ['today', 'today'], 'case': ['constantly', 'invariably', 'always', 'constantly', 'invariably', 'always'], 'evidenced': ['decisiveness', 'decision', 'decisiveness', 'decision'], 'Nadu': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'common': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'abilities': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness', 'assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'allow': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'become': ['make', 'create', 'make', 'create'], 'chosen': ['option', 'alternative', 'choice', 'option', 'alternative', 'choice'], 'part': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'current': ['Modern', 'New', 'Modern', 'New'], 'became': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'places': ['about', 'around', 'about', 'around'], 'desired': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'undergo': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'suffer', 'sustain', 'have', 'get', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'suffer', 'sustain', 'have', 'get'], 'one': ['deoxyadenosine_monophosphate', 'A', 'option', 'alternative', 'choice', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'deoxyadenosine_monophosphate', 'A', 'option', 'alternative', 'choice', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'writing': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'ribose': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'mined': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'attained': ['aim', 'object', 'objective', 'target', 'aim', 'object', 'objective', 'target'], 'choice': ['volition', 'will', 'volition', 'will'], 'Madras': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'argument': ['policy', 'policy'], 'noun': ['be', 'be'], 'boundary': ['town', 'town', 'town', 'town'], 'communication': ['fast-paced', 'fast-paced'], 'district': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'century': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'Air': ['major', 'major'], 'volume': ['expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement'], 'conscious': ['volition', 'will', 'volition', 'will'], 'growing': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'formerly': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'length': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'unfolding': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'country': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'rights': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'belief': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness', 'assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'jury': ['presentment', 'notification', 'presentment', 'notification'], 'ideas': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'something': ['expansion', 'enlargement', 'expansion', 'enlargement', 'on', 'expansion', 'enlargement', 'expansion', 'enlargement', 'on'], 'Bengal': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'organism': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'extent': ['such', 'such'], 'injuries': ['suffer', 'sustain', 'have', 'get', 'suffer', 'sustain', 'have', 'get'], 'commissioned': ['major', 'major'], 'music': ['development', 'development'], 'DNA': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'functions': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'theories': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'quantity': ['expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement'], 'musical': ['development', 'development'], 'populated': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban'], 'simple': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'events': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'moment': ['today', 'today'], 'bishop': ['metropolitan', 'metropolitan'], 'right': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'purpose': ['decisiveness', 'decision', 'decisiveness', 'decision'], 'moon': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'things': ['option', 'alternative', 'choice', 'option', 'alternative', 'choice'], 'sense': ['commodious', 'convenient', 'commodious', 'convenient'], 'function': ['on', 'on'], 'captain': ['major', 'major'], 'resoluteness': ['decisiveness', 'decision', 'decisiveness', 'decision'], 'rationalizing': ['policy', 'policy'], 'group': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'Meredith': ['volition', 'will', 'volition', 'will'], 'letter': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'number': ['many', 'option', 'alternative', 'choice', 'many', 'option', 'alternative', 'choice'], 'action': ['policy', 'policy'], 'copula': ['be', 'be'], 'living': ['Modern', 'New', 'Modern', 'New'], 'ore': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'come': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'moving': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'change': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'constantly', 'invariably', 'always', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'constantly', 'invariably', 'always'], 'plans': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'degree': ['such', 'such'], 'inside': ['in', 'inwards', 'inward', 'in', 'inwards', 'inward'], 'title': ['metropolitan', 'metropolitan'], 'physical': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'archbishop': ['metropolitan', 'metropolitan'], 'printing': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'writers': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'responsibilities': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'amounting': ['many', 'many'], 'developed': ['development', 'development'], 'ends': ['center', 'centre', 'midpoint', 'center', 'centre', 'midpoint'], 'among': ['about', 'around', 'about', 'around'], 'nucleotides': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'extremities': ['center', 'centre', 'midpoint', 'center', 'centre', 'midpoint'], 'nouns': ['many', 'many'], 'densely': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'urban'], 'impurities': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'several': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'independence': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'follow': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'western': ['metropolitan', 'metropolitan'], 'phosphate': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'proceeds': ['fast-paced', 'fast-paced'], 'every': ['constantly', 'invariably', 'always', 'constantly', 'invariably', 'always'], 'opposed': ['today', 'today'], 'policies': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'major': ['development', 'development'], 'Manhattan': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'attainable': ['aim', 'object', 'objective', 'target', 'aim', 'object', 'objective', 'target'], 'equal': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'strategies': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'quantifier': ['many', 'many'], 'stage': ['Modern', 'New', 'Modern', 'New'], 'earth': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'populous': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'rapidly': ['fast-paced', 'fast-paced'], 'Tamil': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'course': ['policy', 'policy'], 'southern': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'predicate': ['be', 'be'], 'features': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'urban': ['city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'town'], 'make': ['make', 'create', 'make', 'create'], 'miles': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'form': ['development', 'development'], 'fixed': ['town', 'town', 'town', 'town'], 'city': ['Chennai', 'Madras', 'town', 'urban', 'town', 'Chennai', 'Madras', 'town', 'urban', 'town'], 'initiative': ['presentment', 'notification', 'presentment', 'notification'], 'variation': ['constantly', 'invariably', 'always', 'constantly', 'invariably', 'always'], 'districts': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'often': ['many', 'many'], '`': ['many', 'Greenwich_Village', 'Village', 'commodious', 'convenient', 'many', 'Greenwich_Village', 'Village', 'commodious', 'convenient'], 'effective': ['on', 'on'], 'alphabetic': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'illnesses': ['suffer', 'sustain', 'have', 'get', 'suffer', 'sustain', 'have', 'get'], 'proper': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'Eastern': ['metropolitan', 'metropolitan'], 'Christianity': ['metropolitan', 'metropolitan'], 'process': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'States': ['major', 'major'], 'intention': ['volition', 'will', 'volition', 'will'], 'movement': ['development', 'about', 'around', 'development', 'about', 'around'], 'military': ['major', 'major'], 'Orthodox': ['metropolitan', 'metropolitan'], 'relating': ['urban', 'urban'], '20th': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'Village': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'quality': ['be', 'be'], 'appearance': ['become', 'suit', 'become', 'suit'], 'archaic': ['commodious', 'convenient', 'commodious', 'convenient'], 'artists': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'mainly': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], '0.621371': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'act': ['expansion', 'enlargement', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'expansion', 'enlargement', 'expansion', 'enlargement', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'expansion', 'enlargement'], 'attributes': ['grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire', 'grow', 'develop', 'produce', 'get', 'acquire'], 'building': ['deoxyadenosine_monophosphate', 'A', 'deoxyadenosine_monophosphate', 'A'], 'biological': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'participation': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'gradually': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'especially': ['development', 'development'], 'present': ['today', 'today'], 'made': ['presentment', 'notification', 'presentment', 'notification'], 'Marines': ['major', 'major'], 'without': ['constantly', 'invariably', 'always', 'constantly', 'invariably', 'always'], 'left': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'administrative': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'many': ['Greenwich_Village', 'Village', 'about', 'around', 'Greenwich_Village', 'Village', 'about', 'around'], 'unit': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'large': ['city', 'metropolis', 'urban_center', 'many', 'city', 'metropolis', 'urban_center', 'commodious', 'convenient', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'city', 'metropolis', 'urban_center', 'many', 'city', 'metropolis', 'urban_center', 'commodious', 'convenient', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'direction': ['about', 'around', 'about', 'around'], 'used': ['deoxyadenosine_monophosphate', 'A', 'many', 'Modern', 'New', 'be', 'about', 'around', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'deoxyadenosine_monophosphate', 'A', 'many', 'Modern', 'New', 'be', 'about', 'around', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'Church': ['metropolitan', 'metropolitan'], 'include': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'permit': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'second': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'Force': ['major', 'major'], 'intended': ['aim', 'object', 'objective', 'target', 'aim', 'object', 'objective', 'target'], 'exercise': ['admit', 'let_in', 'include', 'admit', 'let_in', 'include'], 'line': ['center', 'centre', 'midpoint', 'policy', 'center', 'centre', 'midpoint', 'policy'], 'capability': ['volition', 'will', 'volition', 'will'], 'orbits': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'point': ['center', 'centre', 'midpoint', 'center', 'centre', 'midpoint'], 'indefinite': ['many', 'many'], 'world': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'enhance': ['become', 'suit', 'become', 'suit'], 'choose': ['adopt', 'follow', 'espouse', 'adopt', 'follow', 'espouse'], 'adjective': ['be', 'be'], 'United': ['major', 'India', 'Republic_of_India', 'Bharat', 'major', 'India', 'Republic_of_India', 'Bharat'], 'particular': ['about', 'around', 'about', 'around'], 'George': ['volition', 'will', 'volition', 'will'], 'themes': ['development', 'development'], 'removed': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], '1000': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'surround': ['wall', 'palisade', 'fence', 'fence_in', 'surround', 'wall', 'palisade', 'fence', 'fence_in', 'surround'], 'includes': ['today', 'today'], 'wall': ['wall', 'palisade', 'fence', 'fence_in', 'surround', 'wall', 'palisade', 'fence', 'fence_in', 'surround'], 'believed': ['aim', 'object', 'objective', 'target', 'aim', 'object', 'objective', 'target'], 'equipment': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'republic': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'Kingdom': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'doubt': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness', 'assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'achieved': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'man-made': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'Army': ['major', 'major'], 'changing': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'subcontinent': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'section': ['development', 'development'], 'home': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'meters': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'Asian': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'forward': ['progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion', 'progress', 'progression', 'procession', 'advance', 'advancement', 'forward_motion', 'onward_motion'], 'freedom': ['assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness', 'assurance', 'self-assurance', 'confidence', 'self-confidence', 'authority', 'sureness'], 'different': ['about', 'around', 'about', 'around'], 'language': ['Modern', 'New', 'Modern', 'New'], 'residential': ['Greenwich_Village', 'Village', 'Greenwich_Village', 'Village'], 'development': ['Modern', 'New', 'Modern', 'New'], 'roomy': ['commodious', 'convenient', 'commodious', 'convenient'], 'state': ['on', 'on'], 'composition': ['development', 'development'], 'scope': ['expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement'], 'required': ['on', 'on'], 'organically': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'patriarch': ['metropolitan', 'metropolitan'], 'trait': ['decisiveness', 'decision', 'decisiveness', 'decision'], 'crime': ['presentment', 'notification', 'presentment', 'notification'], 'complex': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'count': ['many', 'many'], 'biology': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'concerned': ['urban', 'urban'], 'mineral': ['dressed_ore', 'concentrate', 'dressed_ore', 'concentrate'], 'size': ['expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement'], 'metric': ['kilometer', 'kilometre', 'km', 'klick', 'kilometer', 'kilometre', 'km', 'klick'], 'order': ['wall', 'palisade', 'fence', 'fence_in', 'surround', 'wall', 'palisade', 'fence', 'fence_in', 'surround'], 'first': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'extreme': ['such', 'such'], 'smaller': ['town', 'town', 'town', 'town'], 'lieutenant': ['major', 'major'], 'Asia': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'area': ['city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'urban', 'town', 'city', 'metropolis', 'urban_center', 'town', 'city', 'metropolis', 'urban_center', 'urban', 'town'], 'elaborated': ['development', 'development'], 'character': ['decisiveness', 'decision', 'decisiveness', 'decision'], '1947': ['India', 'Republic_of_India', 'Bharat', 'India', 'Republic_of_India', 'Bharat'], 'names': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], 'increasing': ['expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement', 'expansion', 'enlargement'], 'emphasis': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule'], "'": ['many', 'Greenwich_Village', 'Village', 'commodious', 'convenient', 'many', 'Greenwich_Village', 'Village', 'commodious', 'convenient'], 'colonel': ['major', 'major'], 'officer': ['major', 'major'], 'given': ['metropolitan', 'metropolitan'], 'individual': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'Bay': ['Chennai', 'Madras', 'Chennai', 'Madras'], 'level': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'around': ['satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter', 'satellite', 'artificial_satellite', 'orbiter'], 'position': ['metropolitan', 'metropolitan'], 'independent': ['city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center', 'city', 'metropolis', 'urban_center'], 'involved': ['growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis', 'growth', 'growing', 'maturation', 'development', 'ontogeny', 'ontogenesis'], 'characters': ['capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule', 'capital', 'capital_letter', 'uppercase', 'upper-case_letter', 'majuscule']})
+Core number (sorted) : [('development', 12), ('purely', 12), ('growth', 12), ('growing', 12), ('maturation', 12), ('ontogeny', 12), ('ontogenesis', 12), ('unfolding', 12), ('organism', 12), ('simple', 12), ('events', 12), ('process', 12), ('biological', 12), ('gradually', 12), ('changing', 12), ('organically', 12), ('complex', 12), ('biology', 12), ('individual', 12), ('level', 12), ('involved', 12), ('sometimes', 10), ('capital', 10), ('capital_letter', 10), ('uppercase', 10), ('upper-case_letter', 10), ('majuscule', 10), ('toward', 10), ('progress', 10), ('progression', 10), ('procession', 10), ('advance', 10), ('advancement', 10), ('forward_motion', 10), ('onward_motion', 10), ('goal', 10), ('undergo', 10), ('grow', 10), ('develop', 10), ('produce', 10), ('get', 10), ('acquire', 10), ('one', 10), ('writing', 10), ('letter', 10), ('come', 10), ('moving', 10), ('change', 10), ('physical', 10), ('printing', 10), ('features', 10), ('alphabetic', 10), ('proper', 10), ('act', 10), ('attributes', 10), ('large', 10), ('used', 10), ('forward', 10), ('first', 10), ('names', 10), ('emphasis', 10), ('characters', 10), ('convenient', 8), ('commodious', 8), ('many', 8), ('fortify', 8), ('wall', 8), ('palisade', 8), ('fence', 8), ('fence_in', 8), ('surround', 8), ('aim', 8), ('object', 8), ('objective', 8), ('target', 8), ('abilities', 8), ('assurance', 8), ('self-assurance', 8), ('confidence', 8), ('self-confidence', 8), ('authority', 8), ('sureness', 8), ('Greenwich_Village', 8), ('Village', 8), ('attained', 8), ('length', 8), ('kilometer', 8), ('kilometre', 8), ('km', 8), ('klick', 8), ('belief', 8), ('populated', 8), ('city', 8), ('metropolis', 8), ('urban_center', 8), ('urban', 8), ('densely', 8), ('attainable', 8), ('equal', 8), ('miles', 8), ('`', 8), ('0.621371', 8), ('unit', 8), ('intended', 8), ('1000', 8), ('believed', 8), ('doubt', 8), ('meters', 8), ('freedom', 8), ('metric', 8), ('order', 8), ('area', 8), ("'", 8), ('equidistant', 6), ('center', 6), ('centre', 6), ('midpoint', 6), ('figure', 6), ('case', 6), ('constantly', 6), ('invariably', 6), ('always', 6), ('allow', 6), ('admit', 6), ('let_in', 6), ('include', 6), ('chosen', 6), ('option', 6), ('alternative', 6), ('choice', 6), ('part', 6), ('about', 6), ('around', 6), ('suffer', 6), ('sustain', 6), ('have', 6), ('town', 6), ('country', 6), ('India', 6), ('Republic_of_India', 6), ('Bharat', 6), ('rights', 6), ('ideas', 6), ('adopt', 6), ('follow', 6), ('espouse', 6), ('injuries', 6), ('functions', 6), ('theories', 6), ('right', 6), ('moon', 6), ('satellite', 6), ('artificial_satellite', 6), ('orbiter', 6), ('things', 6), ('number', 6), ('plans', 6), ('responsibilities', 6), ('ends', 6), ('extremities', 6), ('several', 6), ('independence', 6), ('every', 6), ('policies', 6), ('strategies', 6), ('earth', 6), ('populous', 6), ('southern', 6), ('variation', 6), ('districts', 6), ('illnesses', 6), ('movement', 6), ('participation', 6), ('without', 6), ('administrative', 6), ('permit', 6), ('second', 6), ('exercise', 6), ('line', 6), ('orbits', 6), ('point', 6), ('world', 6), ('choose', 6), ('United', 6), ('equipment', 6), ('republic', 6), ('Kingdom', 6), ('achieved', 6), ('man-made', 6), ('subcontinent', 6), ('Asian', 6), ('Asia', 6), ('1947', 6), ('independent', 6), ('accusation', 4), ('presentment', 4), ('notification', 4), ('decision', 4), ('volition', 4), ('will', 4), ('sugar', 4), ('deoxyadenosine_monophosphate', 4), ('A', 4), ('grand', 4), ('in', 4), ('inwards', 4), ('inward', 4), ('firmness', 4), ('decisiveness', 4), ('four', 4), ('cause', 4), ('make', 4), ('create', 4), ('evidenced', 4), ('Nadu', 4), ('Chennai', 4), ('Madras', 4), ('common', 4), ('become', 4), ('current', 4), ('Modern', 4), ('New', 4), ('became', 4), ('places', 4), ('desired', 4), ('dressed_ore', 4), ('concentrate', 4), ('ribose', 4), ('mined', 4), ('district', 4), ('century', 4), ('major', 4), ('volume', 4), ('expansion', 4), ('enlargement', 4), ('conscious', 4), ('formerly', 4), ('jury', 4), ('something', 4), ('Bengal', 4), ('DNA', 4), ('quantity', 4), ('purpose', 4), ('sense', 4), ('resoluteness', 4), ('group', 4), ('Meredith', 4), ('living', 4), ('ore', 4), ('inside', 4), ('writers', 4), ('among', 4), ('nucleotides', 4), ('impurities', 4), ('phosphate', 4), ('Manhattan', 4), ('stage', 4), ('Tamil', 4), ('initiative', 4), ('intention', 4), ('20th', 4), ('appearance', 4), ('suit', 4), ('archaic', 4), ('artists', 4), ('mainly', 4), ('building', 4), ('made', 4), ('left', 4), ('direction', 4), ('capability', 4), ('enhance', 4), ('particular', 4), ('George', 4), ('removed', 4), ('home', 4), ('different', 4), ('language', 4), ('residential', 4), ('roomy', 4), ('scope', 4), ('trait', 4), ('crime', 4), ('mineral', 4), ('size', 4), ('character', 4), ('increasing', 4), ('Bay', 4), ('equivalent', 2), ('metropolitan', 2), ('sonata', 2), ('government', 2), ('policy', 2), ('preceded', 2), ('day', 2), ('today', 2), ('yesterday', 2), ('tomorrow', 2), ('argument', 2), ('noun', 2), ('be', 2), ('boundary', 2), ('communication', 2), ('fast-paced', 2), ('Air', 2), ('on', 2), ('extent', 2), ('such', 2), ('commissioned', 2), ('music', 2), ('musical', 2), ('moment', 2), ('bishop', 2), ('function', 2), ('captain', 2), ('rationalizing', 2), ('action', 2), ('copula', 2), ('degree', 2), ('title', 2), ('archbishop', 2), ('amounting', 2), ('developed', 2), ('nouns', 2), ('western', 2), ('proceeds', 2), ('opposed', 2), ('quantifier', 2), ('rapidly', 2), ('course', 2), ('predicate', 2), ('form', 2), ('fixed', 2), ('often', 2), ('effective', 2), ('Eastern', 2), ('Christianity', 2), ('States', 2), ('military', 2), ('Orthodox', 2), ('relating', 2), ('quality', 2), ('especially', 2), ('present', 2), ('Marines', 2), ('Church', 2), ('Force', 2), ('indefinite', 2), ('adjective', 2), ('themes', 2), ('includes', 2), ('Army', 2), ('section', 2), ('state', 2), ('composition', 2), ('required', 2), ('patriarch', 2), ('count', 2), ('concerned', 2), ('extreme', 2), ('smaller', 2), ('lieutenant', 2), ('elaborated', 2), ('colonel', 2), ('officer', 2), ('given', 2), ('position', 2)]
+=============================================================================================================
+Unsupervised Classification based on top percentile Core numbers of the definition graph(subgraph of WordNet)
+=============================================================================================================
+This document belongs to class: development ,core number= 12
+This document belongs to class: purely ,core number= 12
+This document belongs to class: growth ,core number= 12
+This document belongs to class: growing ,core number= 12
+This document belongs to class: maturation ,core number= 12
+This document belongs to class: ontogeny ,core number= 12
+This document belongs to class: ontogenesis ,core number= 12
+This document belongs to class: unfolding ,core number= 12
+This document belongs to class: organism ,core number= 12
+This document belongs to class: simple ,core number= 12
+This document belongs to class: events ,core number= 12
+This document belongs to class: process ,core number= 12
+This document belongs to class: biological ,core number= 12
+This document belongs to class: gradually ,core number= 12
+This document belongs to class: changing ,core number= 12
+This document belongs to class: organically ,core number= 12
+This document belongs to class: complex ,core number= 12
+This document belongs to class: biology ,core number= 12
+This document belongs to class: individual ,core number= 12
+This document belongs to class: level ,core number= 12
+This document belongs to class: involved ,core number= 12
+This document belongs to class: sometimes ,core number= 10
+This document belongs to class: capital ,core number= 10
+This document belongs to class: capital_letter ,core number= 10
+This document belongs to class: uppercase ,core number= 10
+This document belongs to class: upper-case_letter ,core number= 10
+This document belongs to class: majuscule ,core number= 10
+This document belongs to class: toward ,core number= 10
+This document belongs to class: progress ,core number= 10
+This document belongs to class: progression ,core number= 10
+This document belongs to class: procession ,core number= 10
+This document belongs to class: advance ,core number= 10
+This document belongs to class: advancement ,core number= 10
+This document belongs to class: forward_motion ,core number= 10
+This document belongs to class: onward_motion ,core number= 10
+This document belongs to class: goal ,core number= 10
+This document belongs to class: undergo ,core number= 10
+This document belongs to class: grow ,core number= 10
+	max_core_number 12
+===================================================================
+Page Rank of the vertices of RGO Definition Graph
+===================================================================
+[('metropolitan', 0.01648526052065531), ('development', 0.01544566146437181), ('major', 0.013463656840436605), ('many', 0.01083744766286425), ('today', 0.010230503756869708), ('Greenwich_Village', 0.00890178105471444), ('Village', 0.00890178105471444), ('India', 0.007531061026780154), ('Republic_of_India', 0.007531061026780154), ('Bharat', 0.007531061026780154), ('growing', 0.007100397134504658), ('policy', 0.007096619203667181), ('city', 0.007016980432222365), ('deoxyadenosine_monophosphate', 0.006915183071986414), ('A', 0.006915183071986414), ('used', 0.006853124008002713), ('around', 0.006697058115126841), ('be', 0.006518055088672936), ('include', 0.006358974823032062), ('decision', 0.006080242092648919), ('on', 0.006064596231590963), ('dressed_ore', 0.005852174022219776), ('concentrate', 0.005852174022219776), ('growth', 0.005744021402449466), ('maturation', 0.005744021402449466), ('ontogeny', 0.005744021402449466), ('ontogenesis', 0.005744021402449466), ('toward', 0.005442484808722124), ('urban', 0.005422665517285303), ('goal', 0.005357569489900403), ('capital', 0.005291267948732214), ('capital_letter', 0.005291267948732214), ('uppercase', 0.005291267948732214), ('upper-case_letter', 0.005291267948732214), ('majuscule', 0.005291267948732214), ('presentment', 0.005226698345841218), ('notification', 0.005226698345841218), ('fast-paced', 0.005226698345841218), ('such', 0.005226698345841218), ('metropolis', 0.005206976810178166), ('urban_center', 0.005206976810178166), ('expansion', 0.00513255769407395), ('enlargement', 0.00513255769407395), ('about', 0.005089396217114146), ('large', 0.005069420728668715), ('volition', 0.005065188921453964), ('will', 0.005065188921453964), ('admit', 0.005014985990791332), ('let_in', 0.005014985990791332), ('decisiveness', 0.004850406117589267), ('one', 0.004795865306985261), ('Chennai', 0.004789113741001324), ('Madras', 0.004789113741001324), ('act', 0.0047188320105454925), ('follow', 0.00468132720535667), ('town', 0.004566574925888693), ('center', 0.00418640760898019), ('centre', 0.00418640760898019), ('midpoint', 0.00418640760898019), ('undergo', 0.0041709020032732295), ('adopt', 0.0041667846750475124), ('espouse', 0.0041667846750475124), ('convenient', 0.004161031954685372), ('commodious', 0.004161031954685372), ('change', 0.004147552061072667), ('get', 0.004075805667639205), ('become', 0.004044695391083166), ('kilometer', 0.003975746993084096), ('kilometre', 0.003975746993084096), ('km', 0.003975746993084096), ('klick', 0.003975746993084096), ('Modern', 0.003837455063432023), ('New', 0.003837455063432023), ('satellite', 0.0037829440681629582), ('artificial_satellite', 0.0037829440681629582), ('orbiter', 0.0037829440681629582), ('choice', 0.003723690994537195), ('moving', 0.0034720629573433115), ('forward', 0.0034720629573433115), ('abilities', 0.0033502713167055356), ('belief', 0.0033502713167055356), ('doubt', 0.0033502713167055356), ('freedom', 0.0033502713167055356), ('wall', 0.003291052682527902), ('surround', 0.003291052682527902), ('line', 0.0031954159740086073), ('constantly', 0.0031103244645321725), ('invariably', 0.0031103244645321725), ('always', 0.0031103244645321725), ('`', 0.003075986408336433), ("'", 0.003075986408336433), ('grow', 0.0030339670853989096), ('develop', 0.0030339670853989096), ('produce', 0.0030339670853989096), ('acquire', 0.0030339670853989096), ('make', 0.003030312979264177), ('create', 0.003030312979264177), ('area', 0.0029117802789312597), ('fortify', 0.002803944138720908), ('order', 0.002803944138720908), ('aim', 0.0027727051853539578), ('object', 0.0027727051853539578), ('objective', 0.0027727051853539578), ('target', 0.0027727051853539578), ('something', 0.002686727205822737), ('United', 0.0026625386700319187), ('progress', 0.002573974568202227), ('progression', 0.002573974568202227), ('procession', 0.002573974568202227), ('advance', 0.002573974568202227), ('advancement', 0.002573974568202227), ('forward_motion', 0.002573974568202227), ('onward_motion', 0.002573974568202227), ('number', 0.002572257255291058), ('come', 0.0025611784831476208), ('physical', 0.0025611784831476208), ('features', 0.0025611784831476208), ('attributes', 0.0025611784831476208), ('option', 0.002493855019477542), ('alternative', 0.002493855019477542), ('injuries', 0.002451528319166911), ('illnesses', 0.002451528319166911), ('inside', 0.0023791411974278583), ('purely', 0.002368611693730442), ('unfolding', 0.002368611693730442), ('organism', 0.002368611693730442), ('simple', 0.002368611693730442), ('events', 0.002368611693730442), ('process', 0.002368611693730442), ('biological', 0.002368611693730442), ('gradually', 0.002368611693730442), ('changing', 0.002368611693730442), ('organically', 0.002368611693730442), ('complex', 0.002368611693730442), ('biology', 0.002368611693730442), ('individual', 0.002368611693730442), ('level', 0.002368611693730442), ('involved', 0.002368611693730442), ('suit', 0.0023275192040636285), ('assurance', 0.002307811856074601), ('self-assurance', 0.002307811856074601), ('confidence', 0.002307811856074601), ('self-confidence', 0.002307811856074601), ('authority', 0.002307811856074601), ('sureness', 0.002307811856074601), ('palisade', 0.0022945252799304013), ('fence', 0.0022945252799304013), ('fence_in', 0.0022945252799304013), ('attained', 0.002294225878606136), ('attainable', 0.002294225878606136), ('intended', 0.002294225878606136), ('believed', 0.002294225878606136), ('populated', 0.0022648487701550173), ('densely', 0.0022648487701550173), ('appearance', 0.0022574166977725463), ('enhance', 0.0022574166977725463), ('equidistant', 0.002189515384996792), ('figure', 0.002189515384996792), ('ends', 0.002189515384996792), ('extremities', 0.002189515384996792), ('point', 0.002189515384996792), ('sometimes', 0.002139097155492506), ('writing', 0.002139097155492506), ('letter', 0.002139097155492506), ('printing', 0.002139097155492506), ('alphabetic', 0.002139097155492506), ('proper', 0.002139097155492506), ('first', 0.002139097155492506), ('names', 0.002139097155492506), ('emphasis', 0.002139097155492506), ('characters', 0.002139097155492506), ('cause', 0.002125895533068584), ('length', 0.0020993199639484147), ('equal', 0.0020993199639484147), ('miles', 0.0020993199639484147), ('0.621371', 0.0020993199639484147), ('unit', 0.0020993199639484147), ('1000', 0.0020993199639484147), ('meters', 0.0020993199639484147), ('metric', 0.0020993199639484147), ('moon', 0.002016381244061741), ('earth', 0.002016381244061741), ('orbits', 0.002016381244061741), ('equipment', 0.002016381244061741), ('man-made', 0.002016381244061741), ('chosen', 0.0019964926846261213), ('things', 0.0019964926846261213), ('case', 0.001995092923974093), ('every', 0.001995092923974093), ('variation', 0.001995092923974093), ('without', 0.001995092923974093), ('ideas', 0.0019180440345818472), ('theories', 0.0019180440345818472), ('plans', 0.0019180440345818472), ('policies', 0.0019180440345818472), ('strategies', 0.0019180440345818472), ('choose', 0.0019180440345818472), ('movement', 0.0019046195699066576), ('suffer', 0.0018936853311741623), ('sustain', 0.0018936853311741623), ('have', 0.0018936853311741623), ('accusation', 0.001890828071822228), ('grand', 0.001890828071822228), ('jury', 0.001890828071822228), ('initiative', 0.001890828071822228), ('made', 0.001890828071822228), ('crime', 0.001890828071822228), ('communication', 0.0018908280718222276), ('extent', 0.0018908280718222276), ('degree', 0.0018908280718222276), ('proceeds', 0.0018908280718222276), ('rapidly', 0.0018908280718222276), ('extreme', 0.0018908280718222276), ('desired', 0.0018312589597861738), ('mined', 0.0018312589597861738), ('ore', 0.0018312589597861738), ('impurities', 0.0018312589597861738), ('left', 0.0018312589597861738), ('removed', 0.0018312589597861738), ('mineral', 0.0018312589597861738), ('allow', 0.0018066041113668821), ('part', 0.0018066041113668821), ('rights', 0.0018066041113668821), ('functions', 0.0018066041113668821), ('right', 0.0018066041113668821), ('responsibilities', 0.0018066041113668821), ('participation', 0.0018066041113668821), ('permit', 0.0018066041113668821), ('exercise', 0.0018066041113668821), ('country', 0.0017819373155430842), ('independence', 0.0017819373155430842), ('populous', 0.0017819373155430842), ('southern', 0.0017819373155430842), ('second', 0.0017819373155430842), ('world', 0.0017819373155430842), ('republic', 0.0017819373155430842), ('Kingdom', 0.0017819373155430842), ('achieved', 0.0017819373155430842), ('subcontinent', 0.0017819373155430842), ('Asian', 0.0017819373155430842), ('Asia', 0.0017819373155430842), ('1947', 0.0017819373155430842), ('several', 0.0017527081782897761), ('districts', 0.0017527081782897761), ('administrative', 0.0017527081782897761), ('independent', 0.0017527081782897761), ('firmness', 0.0017421856046895517), ('evidenced', 0.0017421856046895517), ('purpose', 0.0017421856046895517), ('resoluteness', 0.0017421856046895517), ('trait', 0.0017421856046895517), ('character', 0.0017421856046895517), ('volume', 0.001655488399251228), ('quantity', 0.001655488399251228), ('scope', 0.001655488399251228), ('size', 0.001655488399251228), ('increasing', 0.001655488399251228), ('day', 0.0016525516236780141), ('yesterday', 0.0016525516236780141), ('tomorrow', 0.0016525516236780141), ('moment', 0.0016525516236780141), ('opposed', 0.0016525516236780141), ('present', 0.0016525516236780141), ('includes', 0.0016525516236780141), ('conscious', 0.001638555321108699), ('Meredith', 0.001638555321108699), ('intention', 0.001638555321108699), ('capability', 0.001638555321108699), ('George', 0.001638555321108699), ('equivalent', 0.0015780902336329466), ('bishop', 0.0015780902336329466), ('title', 0.0015780902336329466), ('archbishop', 0.0015780902336329466), ('western', 0.0015780902336329466), ('Eastern', 0.0015780902336329466), ('Christianity', 0.0015780902336329466), ('Orthodox', 0.0015780902336329466), ('Church', 0.0015780902336329466), ('patriarch', 0.0015780902336329466), ('given', 0.0015780902336329466), ('position', 0.0015780902336329466), ('Nadu', 0.0015717914593170014), ('formerly', 0.0015717914593170014), ('Bengal', 0.0015717914593170014), ('Tamil', 0.0015717914593170014), ('Bay', 0.0015717914593170014), ('in', 0.0015453418684198876), ('inwards', 0.0015453418684198876), ('inward', 0.0015453418684198876), ('current', 0.001496137784808501), ('living', 0.001496137784808501), ('stage', 0.001496137784808501), ('language', 0.001496137784808501), ('became', 0.0014896516674009546), ('district', 0.0014896516674009546), ('century', 0.0014896516674009546), ('writers', 0.0014896516674009546), ('Manhattan', 0.0014896516674009546), ('20th', 0.0014896516674009546), ('artists', 0.0014896516674009546), ('mainly', 0.0014896516674009546), ('home', 0.0014896516674009546), ('residential', 0.0014896516674009546), ('sugar', 0.0014777141589647257), ('four', 0.0014777141589647257), ('common', 0.0014777141589647257), ('ribose', 0.0014777141589647257), ('DNA', 0.0014777141589647257), ('group', 0.0014777141589647257), ('nucleotides', 0.0014777141589647257), ('phosphate', 0.0014777141589647257), ('building', 0.0014777141589647257), ('places', 0.0014670263814334575), ('among', 0.0014670263814334575), ('direction', 0.0014670263814334575), ('particular', 0.0014670263814334575), ('different', 0.0014670263814334575), ('function', 0.0014399581526205554), ('effective', 0.0014399581526205554), ('state', 0.0014399581526205554), ('required', 0.0014399581526205554), ('sense', 0.0014192895163195884), ('archaic', 0.0014192895163195884), ('roomy', 0.0014192895163195884), ('government', 0.0014146199350608618), ('argument', 0.0014146199350608618), ('rationalizing', 0.0014146199350608618), ('action', 0.0014146199350608618), ('course', 0.0014146199350608618), ('noun', 0.001332261340834771), ('copula', 0.001332261340834771), ('predicate', 0.001332261340834771), ('quality', 0.001332261340834771), ('adjective', 0.001332261340834771), ('Air', 0.0012893207005378817), ('commissioned', 0.0012893207005378817), ('captain', 0.0012893207005378817), ('States', 0.0012893207005378817), ('military', 0.0012893207005378817), ('Marines', 0.0012893207005378817), ('Force', 0.0012893207005378817), ('Army', 0.0012893207005378817), ('lieutenant', 0.0012893207005378817), ('colonel', 0.0012893207005378817), ('officer', 0.0012893207005378817), ('boundary', 0.0010556508548252887), ('fixed', 0.0010556508548252887), ('smaller', 0.0010556508548252887), ('preceded', 0.000984483916713983), ('amounting', 0.000984483916713983), ('nouns', 0.000984483916713983), ('quantifier', 0.000984483916713983), ('often', 0.000984483916713983), ('indefinite', 0.000984483916713983), ('count', 0.000984483916713983), ('relating', 0.0009208599379142877), ('concerned', 0.0009208599379142877), ('sonata', 0.0008463125345222469), ('music', 0.0008463125345222469), ('musical', 0.0008463125345222469), ('developed', 0.0008463125345222469), ('form', 0.0008463125345222469), ('especially', 0.0008463125345222469), ('themes', 0.0008463125345222469), ('section', 0.0008463125345222469), ('composition', 0.0008463125345222469), ('elaborated', 0.0008463125345222469)]
+==============================================================================
+Sentiment Analysis (Applying SentiWordNet to the tokenized text) of the text
+==============================================================================
+Positivity =  1.875
+Negativity =  0.75
+Objectivity =  55.375
+==========================================================================================================
+Sentiment Analysis (Applying SentiWordNet to the top core-numbered words in RGO graph of text) of the text
+==========================================================================================================
+negscore of  development :  0.0
+posscore of  development :  0.0
+negscore of  growth :  0.0
+posscore of  growth :  0.0
+negscore of  growing :  0.0
+posscore of  growing :  0.0
+negscore of  maturation :  0.0
+posscore of  maturation :  0.0
+negscore of  unfolding :  0.0
+posscore of  unfolding :  0.0
+negscore of  simple :  0.0
+posscore of  simple :  0.0
+negscore of  events :  0.0
+posscore of  events :  0.0
+negscore of  process :  0.0
+posscore of  process :  0.0
+negscore of  changing :  0.0
+posscore of  changing :  0.0
+negscore of  organically :  0.0
+posscore of  organically :  0.0
+negscore of  complex :  0.0
+posscore of  complex :  0.0
+negscore of  biology :  0.0
+posscore of  biology :  0.0
+negscore of  individual :  0.0
+posscore of  individual :  0.0
+negscore of  level :  0.25
+posscore of  level :  0.0
+negscore of  involved :  0.0
+posscore of  involved :  0.0
+negscore of  capital :  0.0
+posscore of  capital :  0.0
+negscore of  majuscule :  0.0
+posscore of  majuscule :  0.0
+negscore of  progress :  0.0
+posscore of  progress :  0.0
+negscore of  progression :  0.0
+posscore of  progression :  0.125
+negscore of  procession :  0.0
+posscore of  procession :  0.125
+negscore of  advance :  0.0
+posscore of  advance :  0.0
+negscore of  advancement :  0.0
+posscore of  advancement :  0.0
+negscore of  goal :  0.0
+posscore of  goal :  0.0
+negscore of  grow :  0.0
+posscore of  grow :  0.0
+negscore of  develop :  0.0
+posscore of  develop :  0.0
+negscore of  produce :  0.0
+posscore of  produce :  0.0
+negscore of  get :  0.0
+posscore of  get :  0.0
+negscore of  acquire :  0.0
+posscore of  acquire :  0.125
+negscore of  one :  0.0
+posscore of  one :  0.0
+negscore of  writing :  0.0
+posscore of  writing :  0.0
+negscore of  letter :  0.0
+posscore of  letter :  0.0
+negscore of  come :  0.0
+posscore of  come :  0.0
+negscore of  moving :  0.0
+posscore of  moving :  0.0
+negscore of  change :  0.0
+posscore of  change :  0.0
+negscore of  physical :  0.0
+posscore of  physical :  0.0
+negscore of  printing :  0.0
+posscore of  printing :  0.0
+negscore of  features :  0.0
+posscore of  features :  0.0
+negscore of  proper :  0.0
+posscore of  proper :  0.75
+negscore of  act :  0.0
+posscore of  act :  0.0
+negscore of  attributes :  0.0
+posscore of  attributes :  0.0
+negscore of  large :  0.0
+posscore of  large :  0.0
+negscore of  used :  0.0
+posscore of  used :  0.0
+negscore of  forward :  0.0
+posscore of  forward :  0.0
+negscore of  first :  0.0
+posscore of  first :  0.0
+negscore of  names :  0.0
+posscore of  names :  0.0
+negscore of  emphasis :  0.0
+posscore of  emphasis :  0.75
+negscore of  characters :  0.0
+posscore of  characters :  0.0
+negscore of  fortify :  0.0
+posscore of  fortify :  0.0
+negscore of  wall :  0.0
+posscore of  wall :  0.0
+negscore of  fence :  0.0
+posscore of  fence :  0.0
+negscore of  surround :  0.0
+posscore of  surround :  0.0
+negscore of  aim :  0.0
+posscore of  aim :  0.0
+negscore of  object :  0.0
+posscore of  object :  0.0
+negscore of  objective :  0.0
+posscore of  objective :  0.0
+negscore of  target :  0.0
+posscore of  target :  0.0
+negscore of  assurance :  0.0
+posscore of  assurance :  0.0
+negscore of  confidence :  0.0
+posscore of  confidence :  0.0
+negscore of  authority :  0.0
+posscore of  authority :  0.0
+negscore of  Village :  0.0
+posscore of  Village :  0.0
+negscore of  attained :  0.125
+posscore of  attained :  0.125
+negscore of  length :  0.0
+posscore of  length :  0.0
+negscore of  populated :  0.0
+posscore of  populated :  0.0
+negscore of  city :  0.0
+posscore of  city :  0.0
+negscore of  equal :  0.0
+posscore of  equal :  0.0
+negscore of  miles :  0.0
+posscore of  miles :  0.0
+negscore of  unit :  0.0
+posscore of  unit :  0.0
+negscore of  intended :  0.0
+posscore of  intended :  0.0
+negscore of  believed :  0.0
+posscore of  believed :  0.125
+negscore of  doubt :  0.0
+posscore of  doubt :  0.125
+negscore of  meters :  0.0
+posscore of  meters :  0.0
+negscore of  metric :  0.0
+posscore of  metric :  0.0
+negscore of  order :  0.0
+posscore of  order :  0.0
+negscore of  area :  0.0
+posscore of  area :  0.0
+negscore of  center :  0.0
+posscore of  center :  0.0
+negscore of  centre :  0.0
+posscore of  centre :  0.0
+negscore of  figure :  0.0
+posscore of  figure :  0.0
+negscore of  case :  0.0
+posscore of  case :  0.0
+negscore of  always :  0.0
+posscore of  always :  0.0
+negscore of  allow :  0.0
+posscore of  allow :  0.0
+negscore of  admit :  0.0
+posscore of  admit :  0.125
+negscore of  include :  0.0
+posscore of  include :  0.0
+negscore of  chosen :  0.0
+posscore of  chosen :  0.0
+negscore of  option :  0.25
+posscore of  option :  0.0
+negscore of  alternative :  0.125
+posscore of  alternative :  0.0
+negscore of  choice :  0.0
+posscore of  choice :  0.0
+negscore of  part :  0.0
+posscore of  part :  0.0
+negscore of  about :  0.0
+posscore of  about :  0.0
+negscore of  around :  0.0
+posscore of  around :  0.0
+negscore of  suffer :  0.0
+posscore of  suffer :  0.0
+negscore of  sustain :  0.0
+posscore of  sustain :  0.0
+negscore of  have :  0.0
+posscore of  have :  0.0
+negscore of  town :  0.0
+posscore of  town :  0.0
+negscore of  country :  0.0
+posscore of  country :  0.0
+negscore of  rights :  0.0
+posscore of  rights :  0.0
+negscore of  ideas :  0.0
+posscore of  ideas :  0.125
+negscore of  adopt :  0.0
+posscore of  adopt :  0.0
+negscore of  follow :  0.0
+posscore of  follow :  0.0
+negscore of  espouse :  0.0
+posscore of  espouse :  0.0
+negscore of  injuries :  0.625
+posscore of  injuries :  0.0
+negscore of  functions :  0.0
+posscore of  functions :  0.0
+negscore of  theories :  0.0
+posscore of  theories :  0.0
+negscore of  right :  0.0
+posscore of  right :  0.0
+negscore of  moon :  0.0
+posscore of  moon :  0.0
+negscore of  satellite :  0.0
+posscore of  satellite :  0.0
+negscore of  things :  0.0
+posscore of  things :  0.0
+negscore of  number :  0.375
+posscore of  number :  0.0
+negscore of  plans :  0.0
+posscore of  plans :  0.0
+negscore of  responsibilities :  0.0
+posscore of  responsibilities :  0.0
+negscore of  ends :  0.0
+posscore of  ends :  0.0
+negscore of  extremities :  0.0
+posscore of  extremities :  0.0
+negscore of  several :  0.5
+posscore of  several :  0.0
+negscore of  independence :  0.0
+posscore of  independence :  0.0
+negscore of  policies :  0.0
+posscore of  policies :  0.0
+negscore of  earth :  0.0
+posscore of  earth :  0.0
+negscore of  southern :  0.0
+posscore of  southern :  0.0
+negscore of  variation :  0.0
+posscore of  variation :  0.0
+negscore of  movement :  0.125
+posscore of  movement :  0.0
+negscore of  permit :  0.0
+posscore of  permit :  0.0
+negscore of  second :  0.0
+posscore of  second :  0.0
+negscore of  exercise :  0.0
+posscore of  exercise :  0.0
+negscore of  line :  0.0
+posscore of  line :  0.0
+negscore of  orbits :  0.0
+posscore of  orbits :  0.0
+negscore of  point :  0.0
+posscore of  point :  0.0
+negscore of  world :  0.0
+posscore of  world :  0.0
+negscore of  choose :  0.0
+posscore of  choose :  0.0
+negscore of  United :  0.0
+posscore of  United :  0.0
+negscore of  Kingdom :  0.0
+posscore of  Kingdom :  0.0
+negscore of  independent :  0.0
+posscore of  independent :  0.0
+negscore of  presentment :  0.0
+posscore of  presentment :  0.0
+negscore of  notification :  0.0
+posscore of  notification :  0.0
+negscore of  decision :  0.0
+posscore of  decision :  0.0
+negscore of  will :  0.0
+posscore of  will :  0.125
+negscore of  sugar :  0.0
+posscore of  sugar :  0.0
+negscore of  A :  0.0
+posscore of  A :  0.0
+negscore of  grand :  0.0
+posscore of  grand :  0.0
+negscore of  in :  0.0
+posscore of  in :  0.0
+negscore of  inward :  0.0
+posscore of  inward :  0.0
+negscore of  firmness :  0.0
+posscore of  firmness :  0.25
+negscore of  four :  0.0
+posscore of  four :  0.0
+negscore of  cause :  0.0
+posscore of  cause :  0.0
+negscore of  make :  0.0
+posscore of  make :  0.5
+negscore of  create :  0.0
+posscore of  create :  0.0
+negscore of  evidenced :  0.0
+posscore of  evidenced :  0.0
+negscore of  Madras :  0.0
+posscore of  Madras :  0.0
+negscore of  common :  0.0
+posscore of  common :  0.0
+negscore of  become :  0.0
+posscore of  become :  0.0
+negscore of  current :  0.0
+posscore of  current :  0.0
+negscore of  Modern :  0.0
+posscore of  Modern :  0.0
+negscore of  New :  0.0
+posscore of  New :  0.375
+negscore of  became :  0.0
+posscore of  became :  0.0
+negscore of  places :  0.0
+posscore of  places :  0.0
+negscore of  desired :  0.0
+posscore of  desired :  0.25
+negscore of  concentrate :  0.0
+posscore of  concentrate :  0.125
+negscore of  mined :  0.125
+posscore of  mined :  0.0
+negscore of  major :  0.0
+posscore of  major :  0.0
+negscore of  volume :  0.0
+posscore of  volume :  0.0
+negscore of  expansion :  0.0
+posscore of  expansion :  0.0
+negscore of  enlargement :  0.0
+posscore of  enlargement :  0.0
+negscore of  conscious :  0.25
+posscore of  conscious :  0.125
+negscore of  quantity :  0.375
+posscore of  quantity :  0.0
+negscore of  purpose :  0.0
+posscore of  purpose :  0.0
+negscore of  sense :  0.0
+posscore of  sense :  0.375
+negscore of  group :  0.0
+posscore of  group :  0.0
+negscore of  living :  0.0
+posscore of  living :  0.0
+negscore of  inside :  0.0
+posscore of  inside :  0.0
+negscore of  stage :  0.0
+posscore of  stage :  0.0
+negscore of  Tamil :  0.0
+posscore of  Tamil :  0.0
+negscore of  initiative :  0.0
+posscore of  initiative :  0.375
+negscore of  intention :  0.0
+posscore of  intention :  0.0
+negscore of  appearance :  0.0
+posscore of  appearance :  0.0
+negscore of  suit :  0.0
+posscore of  suit :  0.0
+negscore of  building :  0.0
+posscore of  building :  0.0
+negscore of  made :  0.0
+posscore of  made :  0.0
+negscore of  left :  0.0
+posscore of  left :  0.0
+negscore of  direction :  0.0
+posscore of  direction :  0.0
+negscore of  capability :  0.125
+posscore of  capability :  0.625
+negscore of  particular :  0.0
+posscore of  particular :  0.0
+negscore of  George :  0.0
+posscore of  George :  0.0
+negscore of  removed :  0.0
+posscore of  removed :  0.0
+negscore of  home :  0.0
+posscore of  home :  0.0
+negscore of  different :  0.0
+posscore of  different :  0.625
+negscore of  language :  0.0
+posscore of  language :  0.0
+negscore of  scope :  0.0
+posscore of  scope :  0.0
+negscore of  mineral :  0.0
+posscore of  mineral :  0.25
+negscore of  size :  0.375
+posscore of  size :  0.125
+negscore of  character :  0.0
+posscore of  character :  0.0
+negscore of  increasing :  0.0
+posscore of  increasing :  0.0
+negscore of  Bay :  0.0
+posscore of  Bay :  0.0
+negscore of  equivalent :  0.0
+posscore of  equivalent :  0.0
+negscore of  metropolitan :  0.0
+posscore of  metropolitan :  0.0
+negscore of  government :  0.0
+posscore of  government :  0.0
+negscore of  policy :  0.0
+posscore of  policy :  0.0
+negscore of  preceded :  0.0
+posscore of  preceded :  0.0
+negscore of  day :  0.0
+posscore of  day :  0.0
+negscore of  today :  0.0
+posscore of  today :  0.125
+negscore of  yesterday :  0.0
+posscore of  yesterday :  0.0
+negscore of  tomorrow :  0.0
+posscore of  tomorrow :  0.0
+negscore of  argument :  0.0
+posscore of  argument :  0.0
+negscore of  be :  0.0
+posscore of  be :  0.0
+negscore of  boundary :  0.0
+posscore of  boundary :  0.0
+negscore of  communication :  0.0
+posscore of  communication :  0.0
+negscore of  Air :  0.0
+posscore of  Air :  0.0
+negscore of  on :  0.0
+posscore of  on :  0.0
+negscore of  commissioned :  0.0
+posscore of  commissioned :  0.0
+negscore of  music :  0.0
+posscore of  music :  0.0
+negscore of  musical :  0.0
+posscore of  musical :  0.0
+negscore of  moment :  0.0
+posscore of  moment :  0.0
+negscore of  bishop :  0.0
+posscore of  bishop :  0.0
+negscore of  function :  0.0
+posscore of  function :  0.0
+negscore of  captain :  0.0
+posscore of  captain :  0.375
+negscore of  rationalizing :  0.0
+posscore of  rationalizing :  0.0
+negscore of  action :  0.0
+posscore of  action :  0.0
+negscore of  degree :  0.25
+posscore of  degree :  0.0
+negscore of  title :  0.0
+posscore of  title :  0.0
+negscore of  amounting :  0.0
+posscore of  amounting :  0.0
+negscore of  developed :  0.0
+posscore of  developed :  0.0
+negscore of  western :  0.0
+posscore of  western :  0.0
+negscore of  proceeds :  0.0
+posscore of  proceeds :  0.0
+negscore of  opposed :  0.0
+posscore of  opposed :  0.0
+negscore of  course :  0.0
+posscore of  course :  0.0
+negscore of  predicate :  0.0
+posscore of  predicate :  0.0
+negscore of  form :  0.0
+posscore of  form :  0.0
+negscore of  fixed :  0.125
+posscore of  fixed :  0.0
+negscore of  often :  0.0
+posscore of  often :  0.0
+negscore of  effective :  0.125
+posscore of  effective :  0.25
+negscore of  Eastern :  0.0
+posscore of  Eastern :  0.0
+negscore of  States :  0.0
+posscore of  States :  0.0
+negscore of  military :  0.0
+posscore of  military :  0.0
+negscore of  Orthodox :  0.0
+posscore of  Orthodox :  0.0
+negscore of  relating :  0.0
+posscore of  relating :  0.0
+negscore of  quality :  0.0
+posscore of  quality :  0.375
+negscore of  present :  0.0
+posscore of  present :  0.0
+negscore of  Marines :  0.0
+posscore of  Marines :  0.0
+negscore of  Church :  0.0
+posscore of  Church :  0.0
+negscore of  Force :  0.0
+posscore of  Force :  0.0
+negscore of  adjective :  0.0
+posscore of  adjective :  0.0
+negscore of  themes :  0.0
+posscore of  themes :  0.0
+negscore of  includes :  0.0
+posscore of  includes :  0.0
+negscore of  Army :  0.0
+posscore of  Army :  0.0
+negscore of  section :  0.0
+posscore of  section :  0.125
+negscore of  state :  0.0
+posscore of  state :  0.0
+negscore of  composition :  0.0
+posscore of  composition :  0.0
+negscore of  required :  0.25
+posscore of  required :  0.25
+negscore of  patriarch :  0.0
+posscore of  patriarch :  0.0
+negscore of  count :  0.0
+posscore of  count :  0.0
+negscore of  concerned :  0.0
+posscore of  concerned :  0.0
+negscore of  extreme :  0.0
+posscore of  extreme :  0.125
+negscore of  smaller :  0.125
+posscore of  smaller :  0.0
+negscore of  lieutenant :  0.0
+posscore of  lieutenant :  0.0
+negscore of  elaborated :  0.0
+posscore of  elaborated :  0.0
+negscore of  officer :  0.0
+posscore of  officer :  0.0
+negscore of  given :  0.125
+posscore of  given :  0.0
+negscore of  position :  0.0
+posscore of  position :  0.0
+clique: ['equivalent', 'metropolitan']
+clique: ['accusation', 'notification']
+clique: ['accusation', 'presentment']
+clique: ['convenient', 'commodious', 'archaic']
+clique: ['convenient', 'commodious', 'large']
+clique: ['convenient', 'commodious', '`']
+clique: ['convenient', 'commodious', 'roomy']
+clique: ['convenient', 'commodious', "'"]
+clique: ['convenient', 'commodious', 'sense']
+clique: ['decision', 'resoluteness']
+clique: ['decision', 'evidenced']
+clique: ['decision', 'trait']
+clique: ['decision', 'character']
+clique: ['decision', 'will']
+clique: ['decision', 'purpose']
+clique: ['decision', 'firmness']
+clique: ['decision', 'volition']
+clique: ['sugar', 'deoxyadenosine_monophosphate']
+clique: ['sugar', 'A']
+clique: ['grand', 'notification']
+clique: ['grand', 'presentment']
+clique: ['government', 'policy']
+clique: ['preceded', 'many']
+clique: ['sometimes', 'uppercase']
+clique: ['sometimes', 'capital']
+clique: ['sometimes', 'majuscule']
+clique: ['sometimes', 'capital_letter']
+clique: ['sometimes', 'upper-case_letter']
+clique: ['fortify', 'wall', 'surround', 'fence_in']
+clique: ['fortify', 'wall', 'surround', 'palisade']
+clique: ['fortify', 'wall', 'surround', 'fence']
+clique: ['toward', 'inwards']
+clique: ['toward', 'in']
+clique: ['toward', 'advance']
+clique: ['toward', 'procession']
+clique: ['toward', 'progression']
+clique: ['toward', 'forward_motion']
+clique: ['toward', 'onward_motion']
+clique: ['toward', 'progress']
+clique: ['toward', 'advancement']
+clique: ['toward', 'inward']
+clique: ['equidistant', 'centre']
+clique: ['equidistant', 'midpoint']
+clique: ['equidistant', 'center']
+clique: ['four', 'deoxyadenosine_monophosphate']
+clique: ['four', 'A']
+clique: ['cause', 'make', 'create']
+clique: ['goal', 'objective']
+clique: ['goal', 'procession']
+clique: ['goal', 'advance']
+clique: ['goal', 'progression']
+clique: ['goal', 'forward_motion']
+clique: ['goal', 'onward_motion']
+clique: ['goal', 'progress']
+clique: ['goal', 'aim']
+clique: ['goal', 'target']
+clique: ['goal', 'advancement']
+clique: ['goal', 'object']
+clique: ['day', 'today']
+clique: ['yesterday', 'today']
+clique: ['progress', 'forward']
+clique: ['progress', 'moving']
+clique: ['progress', 'act']
+clique: ['maturation', 'growing', 'biological']
+clique: ['maturation', 'growing', 'organically']
+clique: ['maturation', 'growing', 'individual']
+clique: ['maturation', 'growing', 'purely']
+clique: ['maturation', 'growing', 'simple']
+clique: ['maturation', 'growing', 'events']
+clique: ['maturation', 'growing', 'process']
+clique: ['maturation', 'growing', 'gradually']
+clique: ['maturation', 'growing', 'level']
+clique: ['maturation', 'growing', 'changing']
+clique: ['maturation', 'growing', 'unfolding']
+clique: ['maturation', 'growing', 'organism']
+clique: ['maturation', 'growing', 'involved']
+clique: ['maturation', 'growing', 'complex']
+clique: ['maturation', 'growing', 'biology']
+clique: ['sustain', 'undergo']
+clique: ['sustain', 'injuries']
+clique: ['sustain', 'illnesses']
+clique: ['figure', 'centre']
+clique: ['figure', 'midpoint']
+clique: ['figure', 'center']
+clique: ['tomorrow', 'today']
+clique: ['case', 'invariably']
+clique: ['case', 'constantly']
+clique: ['case', 'always']
+clique: ['evidenced', 'decisiveness']
+clique: ['Nadu', 'Madras', 'Chennai']
+clique: ['common', 'deoxyadenosine_monophosphate']
+clique: ['common', 'A']
+clique: ['abilities', 'sureness']
+clique: ['abilities', 'assurance']
+clique: ['abilities', 'authority']
+clique: ['abilities', 'confidence']
+clique: ['abilities', 'self-assurance']
+clique: ['abilities', 'self-confidence']
+clique: ['allow', 'let_in']
+clique: ['allow', 'admit']
+clique: ['allow', 'include']
+clique: ['become', 'enhance']
+clique: ['become', 'appearance']
+clique: ['become', 'create', 'make']
+clique: ['chosen', 'alternative']
+clique: ['chosen', 'choice']
+clique: ['chosen', 'option']
+clique: ['part', 'let_in']
+clique: ['part', 'admit']
+clique: ['part', 'include']
+clique: ['current', 'New']
+clique: ['current', 'Modern']
+clique: ['centre', 'ends']
+clique: ['centre', 'extremities']
+clique: ['centre', 'line']
+clique: ['centre', 'point']
+clique: ['Republic_of_India', 'Asian']
+clique: ['Republic_of_India', 'Asia']
+clique: ['Republic_of_India', 'independence']
+clique: ['Republic_of_India', 'second']
+clique: ['Republic_of_India', 'world']
+clique: ['Republic_of_India', 'Kingdom']
+clique: ['Republic_of_India', 'republic']
+clique: ['Republic_of_India', '1947']
+clique: ['Republic_of_India', 'achieved']
+clique: ['Republic_of_India', 'southern']
+clique: ['Republic_of_India', 'United']
+clique: ['Republic_of_India', 'subcontinent']
+clique: ['Republic_of_India', 'country']
+clique: ['Republic_of_India', 'populous']
+clique: ['kilometre', 'meters']
+clique: ['kilometre', 'unit']
+clique: ['kilometre', 'equal']
+clique: ['kilometre', 'metric']
+clique: ['kilometre', '0.621371']
+clique: ['kilometre', 'miles']
+clique: ['kilometre', 'length']
+clique: ['kilometre', '1000']
+clique: ['became', 'Greenwich_Village', 'Village']
+clique: ['self-confidence', 'doubt']
+clique: ['self-confidence', 'freedom']
+clique: ['self-confidence', 'belief']
+clique: ['places', 'around']
+clique: ['places', 'about']
+clique: ['desired', 'concentrate']
+clique: ['desired', 'dressed_ore']
+clique: ['undergo', 'produce']
+clique: ['undergo', 'get']
+clique: ['undergo', 'have']
+clique: ['undergo', 'acquire']
+clique: ['undergo', 'suffer']
+clique: ['undergo', 'develop']
+clique: ['undergo', 'grow']
+clique: ['one', 'deoxyadenosine_monophosphate']
+clique: ['one', 'choice']
+clique: ['one', 'uppercase']
+clique: ['one', 'capital']
+clique: ['one', 'option']
+clique: ['one', 'majuscule']
+clique: ['one', 'A']
+clique: ['one', 'alternative']
+clique: ['one', 'capital_letter']
+clique: ['one', 'upper-case_letter']
+clique: ['majuscule', 'writing']
+clique: ['majuscule', 'large']
+clique: ['majuscule', 'names']
+clique: ['majuscule', 'letter']
+clique: ['majuscule', 'first']
+clique: ['majuscule', 'emphasis']
+clique: ['majuscule', 'printing']
+clique: ['majuscule', 'used']
+clique: ['majuscule', 'characters']
+clique: ['majuscule', 'alphabetic']
+clique: ['majuscule', 'proper']
+clique: ['writing', 'upper-case_letter']
+clique: ['writing', 'capital']
+clique: ['writing', 'uppercase']
+clique: ['writing', 'capital_letter']
+clique: ['ribose', 'deoxyadenosine_monophosphate']
+clique: ['ribose', 'A']
+clique: ['suffer', 'injuries']
+clique: ['suffer', 'illnesses']
+clique: ['capital_letter', 'large']
+clique: ['capital_letter', 'names']
+clique: ['capital_letter', 'letter']
+clique: ['capital_letter', 'first']
+clique: ['capital_letter', 'emphasis']
+clique: ['capital_letter', 'printing']
+clique: ['capital_letter', 'used']
+clique: ['capital_letter', 'characters']
+clique: ['capital_letter', 'alphabetic']
+clique: ['capital_letter', 'proper']
+clique: ['mined', 'concentrate']
+clique: ['mined', 'dressed_ore']
+clique: ['objective', 'attainable']
+clique: ['objective', 'believed']
+clique: ['objective', 'intended']
+clique: ['objective', 'attained']
+clique: ['attained', 'target']
+clique: ['attained', 'object']
+clique: ['attained', 'aim']
+clique: ['choice', 'will']
+clique: ['choice', 'things']
+clique: ['choice', 'volition']
+clique: ['choice', 'number']
+clique: ['Madras', 'Chennai', 'Bay']
+clique: ['Madras', 'Chennai', 'Tamil']
+clique: ['Madras', 'Chennai', 'Bengal']
+clique: ['Madras', 'Chennai', 'formerly']
+clique: ['Madras', 'Chennai', 'city']
+clique: ['argument', 'policy']
+clique: ['noun', 'be']
+clique: ['authority', 'doubt']
+clique: ['authority', 'freedom']
+clique: ['authority', 'belief']
+clique: ['boundary', 'town']
+clique: ['communication', 'fast-paced']
+clique: ['district', 'Greenwich_Village', 'Village']
+clique: ['century', 'Greenwich_Village', 'Village']
+clique: ['Air', 'major']
+clique: ['presentment', 'crime']
+clique: ['presentment', 'initiative']
+clique: ['presentment', 'jury']
+clique: ['presentment', 'made']
+clique: ['in', 'inside']
+clique: ['volume', 'expansion']
+clique: ['volume', 'enlargement']
+clique: ['conscious', 'will']
+clique: ['conscious', 'volition']
+clique: ['alternative', 'things']
+clique: ['alternative', 'number']
+clique: ['length', 'km']
+clique: ['length', 'klick']
+clique: ['length', 'kilometer']
+clique: ['country', 'India']
+clique: ['country', 'Bharat']
+clique: ['let_in', 'participation']
+clique: ['let_in', 'rights']
+clique: ['let_in', 'permit']
+clique: ['let_in', 'right']
+clique: ['let_in', 'exercise']
+clique: ['let_in', 'responsibilities']
+clique: ['let_in', 'functions']
+clique: ['kilometer', 'meters']
+clique: ['kilometer', 'unit']
+clique: ['kilometer', 'equal']
+clique: ['kilometer', 'metric']
+clique: ['kilometer', '0.621371']
+clique: ['kilometer', 'miles']
+clique: ['kilometer', '1000']
+clique: ['suit', 'enhance']
+clique: ['suit', 'appearance']
+clique: ['rights', 'admit']
+clique: ['rights', 'include']
+clique: ['inwards', 'inside']
+clique: ['option', 'things']
+clique: ['option', 'number']
+clique: ['belief', 'sureness']
+clique: ['belief', 'self-assurance']
+clique: ['belief', 'confidence']
+clique: ['belief', 'assurance']
+clique: ['procession', 'forward']
+clique: ['procession', 'moving']
+clique: ['procession', 'act']
+clique: ['jury', 'notification']
+clique: ['ideas', 'follow', 'espouse']
+clique: ['ideas', 'follow', 'adopt']
+clique: ['something', 'expansion']
+clique: ['something', 'enlargement']
+clique: ['something', 'on']
+clique: ['satellite', 'orbits']
+clique: ['satellite', 'around']
+clique: ['satellite', 'equipment']
+clique: ['satellite', 'earth']
+clique: ['satellite', 'man-made']
+clique: ['satellite', 'moon']
+clique: ['growth', 'growing', 'biological']
+clique: ['growth', 'growing', 'organically']
+clique: ['growth', 'growing', 'individual']
+clique: ['growth', 'growing', 'purely']
+clique: ['growth', 'growing', 'simple']
+clique: ['growth', 'growing', 'events']
+clique: ['growth', 'growing', 'process']
+clique: ['growth', 'growing', 'gradually']
+clique: ['growth', 'growing', 'level']
+clique: ['growth', 'growing', 'changing']
+clique: ['growth', 'growing', 'unfolding']
+clique: ['growth', 'growing', 'organism']
+clique: ['growth', 'growing', 'involved']
+clique: ['growth', 'growing', 'complex']
+clique: ['growth', 'growing', 'biology']
+clique: ['extent', 'such']
+clique: ['uppercase', 'large']
+clique: ['uppercase', 'names']
+clique: ['uppercase', 'letter']
+clique: ['uppercase', 'first']
+clique: ['uppercase', 'emphasis']
+clique: ['uppercase', 'printing']
+clique: ['uppercase', 'used']
+clique: ['uppercase', 'characters']
+clique: ['uppercase', 'alphabetic']
+clique: ['uppercase', 'proper']
+clique: ['injuries', 'have']
+clique: ['injuries', 'get']
+clique: ['invariably', 'without']
+clique: ['invariably', 'variation']
+clique: ['invariably', 'every']
+clique: ['invariably', 'change']
+clique: ['urban_center', 'several']
+clique: ['urban_center', 'urban', 'densely']
+clique: ['urban_center', 'urban', 'area']
+clique: ['urban_center', 'urban', 'populated']
+clique: ['urban_center', 'large']
+clique: ['urban_center', 'districts']
+clique: ['urban_center', 'independent']
+clique: ['urban_center', 'include']
+clique: ['urban_center', 'administrative']
+clique: ['commissioned', 'major']
+clique: ['DNA', 'deoxyadenosine_monophosphate']
+clique: ['DNA', 'A']
+clique: ['functions', 'admit']
+clique: ['functions', 'include']
+clique: ['theories', 'follow', 'espouse']
+clique: ['theories', 'follow', 'adopt']
+clique: ['quantity', 'expansion']
+clique: ['quantity', 'enlargement']
+clique: ['populated', 'urban', 'metropolis']
+clique: ['populated', 'urban', 'city']
+clique: ['moment', 'today']
+clique: ['bishop', 'metropolitan']
+clique: ['right', 'admit']
+clique: ['right', 'include']
+clique: ['purpose', 'decisiveness']
+clique: ['moon', 'artificial_satellite']
+clique: ['moon', 'orbiter']
+clique: ['develop', 'features']
+clique: ['develop', 'come']
+clique: ['develop', 'physical']
+clique: ['develop', 'change']
+clique: ['develop', 'attributes']
+clique: ['function', 'on']
+clique: ['captain', 'major']
+clique: ['resoluteness', 'decisiveness']
+clique: ['rationalizing', 'policy']
+clique: ['group', 'deoxyadenosine_monophosphate']
+clique: ['group', 'A']
+clique: ['Meredith', 'will']
+clique: ['Meredith', 'volition']
+clique: ['letter', 'upper-case_letter']
+clique: ['letter', 'capital']
+clique: ['forward_motion', 'forward']
+clique: ['forward_motion', 'moving']
+clique: ['forward_motion', 'act']
+clique: ['onward_motion', 'forward']
+clique: ['onward_motion', 'moving']
+clique: ['onward_motion', 'act']
+clique: ['number', 'many']
+clique: ['action', 'policy']
+clique: ['orbiter', 'orbits']
+clique: ['orbiter', 'around']
+clique: ['orbiter', 'equipment']
+clique: ['orbiter', 'earth']
+clique: ['orbiter', 'man-made']
+clique: ['copula', 'be']
+clique: ['living', 'New']
+clique: ['living', 'Modern']
+clique: ['decisiveness', 'trait']
+clique: ['decisiveness', 'character']
+clique: ['decisiveness', 'firmness']
+clique: ['ore', 'concentrate']
+clique: ['ore', 'dressed_ore']
+clique: ['come', 'produce']
+clique: ['come', 'get']
+clique: ['come', 'acquire']
+clique: ['come', 'grow']
+clique: ['moving', 'advance']
+clique: ['moving', 'progression']
+clique: ['moving', 'advancement']
+clique: ['change', 'produce']
+clique: ['change', 'get']
+clique: ['change', 'acquire']
+clique: ['change', 'constantly']
+clique: ['change', 'always']
+clique: ['change', 'grow']
+clique: ['admit', 'exercise']
+clique: ['admit', 'participation']
+clique: ['admit', 'responsibilities']
+clique: ['admit', 'permit']
+clique: ['upper-case_letter', 'large']
+clique: ['upper-case_letter', 'names']
+clique: ['upper-case_letter', 'first']
+clique: ['upper-case_letter', 'emphasis']
+clique: ['upper-case_letter', 'printing']
+clique: ['upper-case_letter', 'used']
+clique: ['upper-case_letter', 'characters']
+clique: ['upper-case_letter', 'alphabetic']
+clique: ['upper-case_letter', 'proper']
+clique: ['plans', 'follow', 'espouse']
+clique: ['plans', 'follow', 'adopt']
+clique: ['degree', 'such']
+clique: ['inside', 'inward']
+clique: ['title', 'metropolitan']
+clique: ['physical', 'produce']
+clique: ['physical', 'get']
+clique: ['physical', 'acquire']
+clique: ['physical', 'grow']
+clique: ['archbishop', 'metropolitan']
+clique: ['ontogeny', 'growing', 'biological']
+clique: ['ontogeny', 'growing', 'organically']
+clique: ['ontogeny', 'growing', 'individual']
+clique: ['ontogeny', 'growing', 'purely']
+clique: ['ontogeny', 'growing', 'simple']
+clique: ['ontogeny', 'growing', 'events']
+clique: ['ontogeny', 'growing', 'process']
+clique: ['ontogeny', 'growing', 'gradually']
+clique: ['ontogeny', 'growing', 'level']
+clique: ['ontogeny', 'growing', 'changing']
+clique: ['ontogeny', 'growing', 'unfolding']
+clique: ['ontogeny', 'growing', 'organism']
+clique: ['ontogeny', 'growing', 'involved']
+clique: ['ontogeny', 'growing', 'complex']
+clique: ['ontogeny', 'growing', 'biology']
+clique: ['printing', 'capital']
+clique: ['writers', 'Greenwich_Village', 'Village']
+clique: ['responsibilities', 'include']
+clique: ['amounting', 'many']
+clique: ['fast-paced', 'proceeds']
+clique: ['fast-paced', 'rapidly']
+clique: ['ends', 'midpoint']
+clique: ['ends', 'center']
+clique: ['among', 'around']
+clique: ['among', 'about']
+clique: ['espouse', 'follow', 'choose']
+clique: ['espouse', 'follow', 'strategies']
+clique: ['espouse', 'follow', 'policies']
+clique: ['nucleotides', 'deoxyadenosine_monophosphate']
+clique: ['nucleotides', 'A']
+clique: ['extremities', 'midpoint']
+clique: ['extremities', 'center']
+clique: ['nouns', 'many']
+clique: ['impurities', 'concentrate']
+clique: ['impurities', 'dressed_ore']
+clique: ['densely', 'urban', 'metropolis']
+clique: ['densely', 'urban', 'city']
+clique: ['several', 'metropolis']
+clique: ['several', 'city']
+clique: ['independence', 'India']
+clique: ['independence', 'Bharat']
+clique: ['follow', 'adopt', 'choose']
+clique: ['follow', 'adopt', 'strategies']
+clique: ['follow', 'adopt', 'policies']
+clique: ['western', 'metropolitan']
+clique: ['phosphate', 'deoxyadenosine_monophosphate']
+clique: ['phosphate', 'A']
+clique: ['every', 'constantly']
+clique: ['every', 'always']
+clique: ['opposed', 'today']
+clique: ['India', 'Asian']
+clique: ['India', 'Asia']
+clique: ['India', 'second']
+clique: ['India', 'world']
+clique: ['India', 'Kingdom']
+clique: ['India', 'republic']
+clique: ['India', '1947']
+clique: ['India', 'achieved']
+clique: ['India', 'southern']
+clique: ['India', 'United']
+clique: ['India', 'subcontinent']
+clique: ['India', 'populous']
+clique: ['constantly', 'without']
+clique: ['constantly', 'variation']
+clique: ['grow', 'features']
+clique: ['grow', 'attributes']
+clique: ['deoxyadenosine_monophosphate', 'building']
+clique: ['deoxyadenosine_monophosphate', 'used']
+clique: ['Manhattan', 'Greenwich_Village', 'Village']
+clique: ['attainable', 'target']
+clique: ['attainable', 'object']
+clique: ['attainable', 'aim']
+clique: ['quantifier', 'many']
+clique: ['equal', 'km']
+clique: ['equal', 'klick']
+clique: ['ontogenesis', 'growing', 'biological']
+clique: ['ontogenesis', 'growing', 'organically']
+clique: ['ontogenesis', 'growing', 'individual']
+clique: ['ontogenesis', 'growing', 'purely']
+clique: ['ontogenesis', 'growing', 'simple']
+clique: ['ontogenesis', 'growing', 'events']
+clique: ['ontogenesis', 'growing', 'process']
+clique: ['ontogenesis', 'growing', 'gradually']
+clique: ['ontogenesis', 'growing', 'level']
+clique: ['ontogenesis', 'growing', 'changing']
+clique: ['ontogenesis', 'growing', 'unfolding']
+clique: ['ontogenesis', 'growing', 'organism']
+clique: ['ontogenesis', 'growing', 'involved']
+clique: ['ontogenesis', 'growing', 'complex']
+clique: ['ontogenesis', 'growing', 'biology']
+clique: ['stage', 'New']
+clique: ['stage', 'Modern']
+clique: ['will', 'George']
+clique: ['will', 'intention']
+clique: ['will', 'capability']
+clique: ['earth', 'artificial_satellite']
+clique: ['populous', 'Bharat']
+clique: ['sureness', 'doubt']
+clique: ['sureness', 'freedom']
+clique: ['concentrate', 'removed']
+clique: ['concentrate', 'left']
+clique: ['concentrate', 'mineral']
+clique: ['capital', 'large']
+clique: ['capital', 'names']
+clique: ['capital', 'first']
+clique: ['capital', 'emphasis']
+clique: ['capital', 'used']
+clique: ['capital', 'characters']
+clique: ['capital', 'alphabetic']
+clique: ['capital', 'proper']
+clique: ['course', 'policy']
+clique: ['southern', 'Bharat']
+clique: ['enlargement', 'scope']
+clique: ['enlargement', 'size']
+clique: ['enlargement', 'increasing']
+clique: ['enlargement', 'act']
+clique: ['Bharat', 'Asian']
+clique: ['Bharat', 'Asia']
+clique: ['Bharat', 'second']
+clique: ['Bharat', 'world']
+clique: ['Bharat', 'Kingdom']
+clique: ['Bharat', 'republic']
+clique: ['Bharat', '1947']
+clique: ['Bharat', 'achieved']
+clique: ['Bharat', 'United']
+clique: ['Bharat', 'subcontinent']
+clique: ['predicate', 'be']
+clique: ['features', 'produce']
+clique: ['features', 'get']
+clique: ['features', 'acquire']
+clique: ['urban', 'concerned']
+clique: ['urban', 'relating']
+clique: ['urban', 'area', 'town', 'city']
+clique: ['urban', 'area', 'metropolis']
+clique: ['klick', 'meters']
+clique: ['klick', 'unit']
+clique: ['klick', 'metric']
+clique: ['klick', '0.621371']
+clique: ['klick', 'miles']
+clique: ['klick', '1000']
+clique: ['A', 'building']
+clique: ['A', 'used']
+clique: ['about', 'different']
+clique: ['about', 'direction']
+clique: ['about', 'particular']
+clique: ['about', 'used', 'many']
+clique: ['about', 'movement']
+clique: ['fence_in', 'order', 'wall', 'surround']
+clique: ['miles', 'km']
+clique: ['fixed', 'town']
+clique: ['city', 'large']
+clique: ['city', 'districts']
+clique: ['city', 'independent']
+clique: ['city', 'include']
+clique: ['city', 'administrative']
+clique: ['be', 'adjective']
+clique: ['be', 'quality']
+clique: ['be', 'used']
+clique: ['initiative', 'notification']
+clique: ['variation', 'always']
+clique: ['districts', 'metropolis']
+clique: ['often', 'many']
+clique: ['`', 'Greenwich_Village', 'many', 'Village']
+clique: ['effective', 'on']
+clique: ['illnesses', 'have']
+clique: ['illnesses', 'get']
+clique: ['Eastern', 'metropolitan']
+clique: ['km', 'meters']
+clique: ['km', 'unit']
+clique: ['km', 'metric']
+clique: ['km', '0.621371']
+clique: ['km', '1000']
+clique: ['Christianity', 'metropolitan']
+clique: ['States', 'major']
+clique: ['policy', 'line']
+clique: ['intention', 'volition']
+clique: ['town', 'smaller']
+clique: ['military', 'major']
+clique: ['Orthodox', 'metropolitan']
+clique: ['20th', 'Greenwich_Village', 'Village']
+clique: ['Village', 'Greenwich_Village', 'artists']
+clique: ['Village', 'Greenwich_Village', 'mainly']
+clique: ['Village', 'Greenwich_Village', 'residential']
+clique: ['Village', 'Greenwich_Village', 'home']
+clique: ['Village', 'Greenwich_Village', 'many', "'"]
+clique: ['notification', 'crime']
+clique: ['notification', 'made']
+clique: ['confidence', 'doubt']
+clique: ['confidence', 'freedom']
+clique: ['artificial_satellite', 'orbits']
+clique: ['artificial_satellite', 'around']
+clique: ['artificial_satellite', 'man-made']
+clique: ['artificial_satellite', 'equipment']
+clique: ['assurance', 'doubt']
+clique: ['assurance', 'freedom']
+clique: ['acquire', 'attributes']
+clique: ['midpoint', 'line']
+clique: ['midpoint', 'point']
+clique: ['act', 'expansion']
+clique: ['act', 'advance']
+clique: ['act', 'progression']
+clique: ['act', 'advancement']
+clique: ['always', 'without']
+clique: ['self-assurance', 'doubt']
+clique: ['self-assurance', 'freedom']
+clique: ['attributes', 'produce']
+clique: ['attributes', 'get']
+clique: ['participation', 'include']
+clique: ['present', 'today']
+clique: ['Marines', 'major']
+clique: ['metropolitan', 'patriarch']
+clique: ['metropolitan', 'given']
+clique: ['metropolitan', 'Church']
+clique: ['metropolitan', 'position']
+clique: ['object', 'believed']
+clique: ['object', 'intended']
+clique: ['left', 'dressed_ore']
+clique: ['many', 'indefinite']
+clique: ['many', 'around', 'used']
+clique: ['many', 'large']
+clique: ['many', 'count']
+clique: ['administrative', 'metropolis']
+clique: ['large', 'metropolis']
+clique: ['direction', 'around']
+clique: ['used', 'New']
+clique: ['used', 'Modern']
+clique: ['volition', 'George']
+clique: ['volition', 'capability']
+clique: ['include', 'metropolis']
+clique: ['include', 'exercise']
+clique: ['include', 'permit']
+clique: ['Force', 'major']
+clique: ['intended', 'target']
+clique: ['intended', 'aim']
+clique: ['progression', 'forward']
+clique: ['metropolis', 'independent']
+clique: ['fence', 'order', 'wall', 'surround']
+clique: ['line', 'center']
+clique: ['point', 'center']
+clique: ['United', 'major']
+clique: ['aim', 'believed']
+clique: ['particular', 'around']
+clique: ['dressed_ore', 'removed']
+clique: ['dressed_ore', 'mineral']
+clique: ['surround', 'wall', 'palisade', 'order']
+clique: ['includes', 'today']
+clique: ['believed', 'target']
+clique: ['Army', 'major']
+clique: ['such', 'extreme']
+clique: ['forward', 'advance']
+clique: ['forward', 'advancement']
+clique: ['different', 'around']
+clique: ['language', 'New']
+clique: ['language', 'Modern']
+clique: ['development', 'composition']
+clique: ['development', 'New']
+clique: ['development', 'developed']
+clique: ['development', 'musical']
+clique: ['development', 'themes']
+clique: ['development', 'elaborated']
+clique: ['development', 'sonata']
+clique: ['development', 'growing', 'biological']
+clique: ['development', 'growing', 'organically']
+clique: ['development', 'growing', 'individual']
+clique: ['development', 'growing', 'purely']
+clique: ['development', 'growing', 'simple']
+clique: ['development', 'growing', 'events']
+clique: ['development', 'growing', 'gradually']
+clique: ['development', 'growing', 'level']
+clique: ['development', 'growing', 'process']
+clique: ['development', 'growing', 'changing']
+clique: ['development', 'growing', 'unfolding']
+clique: ['development', 'growing', 'organism']
+clique: ['development', 'growing', 'involved']
+clique: ['development', 'growing', 'complex']
+clique: ['development', 'growing', 'biology']
+clique: ['development', 'Modern']
+clique: ['development', 'especially']
+clique: ['development', 'form']
+clique: ['development', 'major']
+clique: ['development', 'movement']
+clique: ['development', 'music']
+clique: ['development', 'section']
+clique: ['state', 'on']
+clique: ['expansion', 'scope']
+clique: ['expansion', 'size']
+clique: ['expansion', 'increasing']
+clique: ['required', 'on']
+clique: ['lieutenant', 'major']
+clique: ['colonel', 'major']
+clique: ['officer', 'major']
+clique: ['around', 'movement']
+==================================================================================
+Sentiment Analysis (Markov Random Fields Cliques Belief Propagation) of the opinion
+==================================================================================
+Positivity: 0.0
+Negativity: 0.0
+Objectivity: 1.2942745747291002e-10
+          Date  ...                                            Summary
+0  1 month ago  ...  This notification follows the decision of the ...
+
+[1 rows x 5 columns]
+summarizedopinion:  This notification follows the decision of the Chennai Metropolitan Development Authority (CMDA) for the expansion of Chennai city from 1,189 sq km to 5,904 sq km.
+This expansion will include as many as 1,225 new villages — in surrounding growth centres of Kancheepuram, Minjur, Tiruvallur, Thirumazhisai and Chengalpet — to develop as new town areas, for decongestion of Chennai.
+Policy For Developing Satellite TownsThe major cities in India today are constantly growing, with the fast-paced progress and expansion of India’s economy.
+Such expansions have become the convenient alternative for urban growth, creating satellite towns.
+The CMDA aims to concentrate on creating Thirumazhisai, Minjur, Tiruvallur, Kancheepuram and Chengalpet as satellite towns around the state’s capital city.
