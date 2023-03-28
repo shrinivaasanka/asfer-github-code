@@ -1,9 +1,9 @@
 NeuronRain Licensing is explained in FAQ: http://neuronrain-documentation.readthedocs.io/en/latest/
 -------------------------------------------------------------------------------------------------------------------------------------------
-1245. NeuronRain Depends on Following Opensource C,Python,Java and C++ packages - Copyright/Copyleft licenses apply per respective codebases below:
+1245. NeuronRain Depends on Following Opensource C,Python,Java,Rust,R,Go and C++ packages - Copyright/Copyleft licenses apply per respective codebases below:
 -------------------------------------------------------------------------------------------------------------------------------------------
 1. Boost C++ and Python libraries (1.64.0) 
-2. g++
+2. gcc and g++
 3. Python NLTK
 4. NetworkX 2.5
 5. Matplotlib
@@ -58,7 +58,7 @@ NeuronRain Licensing is explained in FAQ: http://neuronrain-documentation.readth
 54. Python transaction 2.1.2
 55. OpenSSL development libraries for C++
 56. DictDiffer - https://github.com/inveniosoftware/dictdiffer
-57. Python 2.7.x, 3.4, 3.6, 3.7.5, 3.8.5, 3.9.0
+57. Python 2.7.x, 3.4, 3.6, 3.7.5, 3.8.5, 3.9.0, 3.11
 58. Facebook SDK for Python 3.4
 59. Empath (https://arxiv.org/pdf/1602.06979.pdf)
 60. Scikit-Learn
@@ -138,7 +138,7 @@ NeuronRain Licensing is explained in FAQ: http://neuronrain-documentation.readth
 134. OSMnx - https://osmnx.readthedocs.io/en/stable/
 135. Optional - For benchmarks -  gmp-ecm - Elliptic Curve Factorization - Ubuntu package - https://members.loria.fr/pzimmermann/records/ecm/devel.html
 136. Optional - For benchmarks - cado-nfs and OpenMPI - General Number Field Sieve - https://cado-nfs.gitlabpages.inria.fr/
-137. Statsmodels - https://www.statsmodels.org/stable/index.html
+137. Statsmodels - Timeseries Analysis and Granger causality - https://www.statsmodels.org/stable/index.html
 138. Descartes
 139. Geopandas
 140. AngularJS (NeuronRain GUI)
@@ -150,3 +150,7 @@ NeuronRain Licensing is explained in FAQ: http://neuronrain-documentation.readth
 146. GoogleNews Python - https://pypi.org/project/GoogleNews/
 147. Newspaper3k - https://newspaper.readthedocs.io/en/latest/
 148. TextBlob - for Opinion mining
+149. NLTK VADER Sentiment Analyzer - for Opinion mining
+150. Rust language installation - for High Performance Computing 32 bits integer factorization
+151. Rust Rayon Parallel Iterator Crate - for High Performance Computing 32 bits integer factorization
+152. Go language installation 
